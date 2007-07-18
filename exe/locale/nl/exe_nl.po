@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-19 04:56+1200\n"
-"PO-Revision-Date: 2007-07-08 20:16+1200\n"
-"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
+"PO-Revision-Date: 2007-07-19 09:11+1200\n"
+"Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,7 +69,7 @@ msgstr "<dl>  <dt>Om inzicht in basisbegrippen of om leesvaardigheid te toetsen:
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Klik &lt;Selecteer een MP3&gt; en ga naar het MP3       bestand dat je wilt invoegen</li> <li>Klik op het neerklapmenuom de positie te selecteren       waar je het bestand wilt weergeven op het scherm.>/li>  <li>Voeg een relevante tekst toe aan het MP3 bestand.</li> <li>Kies de stijl om het iDevice        weer te geven. Bvb. \"lichte nadruk\" voegt een rand en een icoon toe aan de getoonde inhoud van het iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -137,7 +137,6 @@ msgstr ""
 " <i>Toon/verberg woord</i> aan te klikken.</p>"
 
 #: exe/engine/field.py:1265
-#, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Als deze optie uitstaat, zijn een klein aantal spelfouten toegestaan. Als ze aanstaat, moet het antwoord qua spelling en hoofdlettergebruik volledig correct zijn.</p><p><strong>Voorbeeld:</strong> Als het juiste antwoord <code>Olifant</code> is, worden zowel <code>olifant</code> als <code>Olipant</code> aanvaard als <em>\"voldoende juist\"</em> omdat er maar één letter fout is, zelfs als \"Hoofdlettergevoelig\" geactiveerd is.</p><p>Als \"Hoofdlettergevoelig\" uitstaat, wordt de kleine <code>e</code> natuurlijk ook genegeerd als fout. Bovendien wordt <code>Olipant</code> aanvaard, omdat het maar één spelfout bevat.</p><p>Maar met zowel \"Streng verbeteren\" en \"Hoofdlettergevoelig\" ingeschakeld, is het enige juiste antwoord \"Olifant\". Zet u nu \"Hoofdlettergevoelig\" uit, dan wordt ook \"olifant\" aanvaard.</p>"
 
@@ -420,7 +419,6 @@ msgstr ""
 "let op elementen die de student kunnen helpen of hinderen bij het uitvoeren."
 
 #: exe/webui/element.py:1154
-#, fuzzy
 msgid "Answsers"
 msgstr "Toon antwoorden"
 
@@ -443,15 +441,15 @@ msgstr "Bijlage"
 #: exe/engine/attachmentidevice.py:103
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "Bijlage %s zonder parentNode"
+msgstr "Bijlage %s zonder koppeling"
 
 #: exe/engine/rssidevice.py:40 exe/engine/multimediaidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Auckland University of Technology"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr "Opschrift knop"
+msgstr "Opschrift/titel knop"
 
 #: exe/webui/preferencespage.py:103 exe/webui/editorpane.py:267
 msgid "Cancel"
@@ -510,7 +508,7 @@ msgstr ""
 
 #: exe/xului/mainpage.py:212
 msgid "Clear Recent Projects List"
-msgstr "Wis de recente project lijst"
+msgstr "Wis de onlangs geopende projecten"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -520,7 +518,7 @@ msgid ""
 msgstr ""
 "Klik\n"
 "op de afbeelding beneden of op de knop \"Afbeelding toevoegen\" om een\n"
-"afbeedling te vergroten."
+"afbeelding te vergroten."
 
 #: exe/engine/attachmentidevice.py:67
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
@@ -979,9 +977,8 @@ msgstr "Voorbeeld Voorbeeld"
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: exe/webui/editorpage.py:246
-#, fuzzy
 msgid "Export iDevice"
-msgstr "iDevices"
+msgstr "Exporteer het iDevice"
 
 #: exe/xului/mainpage.py:794 exe/xului/mainpage.py:813
 #: exe/xului/mainpage.py:847 exe/xului/mainpage.py:869
@@ -1073,11 +1070,11 @@ msgstr "Frans Wikipedia-artikel"
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "GNU Free Documentation License"
 
 #: exe/webui/appletblock.py:88
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/wikipediablock.py:100
 msgid "German Wikipedia Article"
@@ -1109,7 +1106,7 @@ msgstr "Verbergen"
 
 #: exe/webui/questionelement.py:127
 msgid "Hide Feedback"
-msgstr "Toon/verberg feedback"
+msgstr "Verberg feedback"
 
 #: exe/webui/element.py:997
 msgid "Hide/Show Word"
@@ -1241,7 +1238,6 @@ msgid "Left"
 msgstr "Links"
 
 #: exe/export/pages.py:68 exe/export/textexport.py:53
-#, fuzzy
 msgid "Licensed under the "
 msgstr "Dit artikel valt onder de licensiebepalingen van"
 
@@ -1251,7 +1247,7 @@ msgstr "Laden"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:255
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/webui/wikipediablock.py:104
 msgid "Magyar Wikipedia Article"
@@ -1286,7 +1282,6 @@ msgid "Move Up"
 msgstr "Omhoog"
 
 #: exe/engine/multichoiceidevice.py:57
-#, fuzzy
 msgid "Multi-choice"
 msgstr "Meerkeuzevraag"
 
@@ -1469,9 +1464,9 @@ msgid "Preview"
 msgstr "Voorbeeld"
 
 #: exe/xului/mainpage.py:515
-#, fuzzy, python-format
+#, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
+msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 
 #: exe/engine/galleryidevice.py:589 exe/export/ipodpage.py:109
 #: exe/export/scormexport.py:311 exe/export/websitepage.py:186
@@ -1518,7 +1513,7 @@ msgid ""
 "you have just inserted."
 msgstr ""
 "Geef een naam voor de\n"
-"toegevoegde afbeelding."
+"zojuist toegevoegde afbeelding."
 
 #: exe/engine/truefalseidevice.py:116 exe/engine/truefalseidevice.py:203
 msgid ""
@@ -1827,7 +1822,7 @@ msgstr "Streng verbeteren?"
 
 #: exe/webui/element.py:1107 exe/webui/editorpane.py:420
 msgid "Submit"
-msgstr "Verzend antwoord"
+msgstr "Verzenden"
 
 #: exe/webui/quiztestblock.py:355 exe/webui/element.py:1665
 msgid "Submit Answer"
@@ -2013,7 +2008,7 @@ msgstr ""
 
 #: exe/engine/package.py:83
 msgid "Topic"
-msgstr "Topic"
+msgstr "Onderwerp"
 
 #: exe/webui/truefalseelement.py:104 exe/webui/truefalseelement.py:177
 msgid "True"
@@ -2099,7 +2094,7 @@ msgstr "Download onmogelijk vanaf %s <br/>Controleer de spelling en het adres en
 
 #: exe/engine/package.py:83
 msgid "Unit"
-msgstr "Unit"
+msgstr "Eenheid"
 
 #: exe/engine/flashwithtextidevice.py:50 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
@@ -2142,7 +2137,7 @@ msgid ""
 msgstr ""
 "Dit element kan op verschillende manieren gebruikt worden. Bijv. om\n"
 "de voornaamste punten uit de tekst samen te vatten, of om een vraag\n"
-"te stellen of een stelling te poneren en zo verdere analyse of discussie\n"
+"te stellen of een stelling aan te bieden en zo verdere analyse of discussie\n"
 "op gang te helpen."
 
 #: exe/engine/galleryidevice.py:413
@@ -2165,7 +2160,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
+msgstr "Gebruik het neerklapmenu om aan te geven  of het iDivice een bepaald formaat krijgt  om het beter te laten opvallen; Bvb. een kader en een icoon toevoegen."
 
 #: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:419
 msgid "What to read"
@@ -2198,9 +2193,8 @@ msgstr ""
 "</ul>\n"
 
 #: exe/engine/wikipediaidevice.py:52
-#, fuzzy
 msgid "Wiki Article"
-msgstr "Wikibooks-artikel"
+msgstr "Wiki-artikel"
 
 #: exe/webui/wikipediablock.py:110
 msgid "Wikibooks Article"
@@ -2212,11 +2206,11 @@ msgstr "Wikieducator inhoud"
 
 #: exe/webui/wikipediablock.py:111
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:112
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wiktionary"
 
 #: exe/webui/element.py:1815
 msgid "Wrong"
@@ -2227,7 +2221,6 @@ msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr "Je kunt de toolbalk gebruiken of latex handmatig in het tekstveld invoeren."
 
 #: exe/webui/editorpane.py:64
-#, fuzzy
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Uw iDevice verschijnt in het iDevice-paneel met deze benaming. Dit veld is verplicht. Als u het niet invult, wordt u gevraagd om een label op te geven."
 
@@ -2255,7 +2248,7 @@ msgstr "eXe project"
 #: exe/engine/appletidevice.py:86
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "bestand %s zonder parentNode"
+msgstr "bestand %s zonder doelbestemming"
 
 #: exe/engine/wikipediaidevice.py:204
 msgid "http://en.wikipedia.org/"
@@ -2294,9 +2287,8 @@ msgid "label"
 msgstr "label"
 
 #: exe/webui/element.py:1396
-#, fuzzy
 msgid "newline"
-msgstr "Interlingua "
+msgstr "nieuwe regel"
 
 #: exe/webui/element.py:1395
 msgid "text"
@@ -2403,7 +2395,7 @@ msgstr "Onderwerp:"
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
-msgstr "VK_DELETE"
+msgstr "VK_WISSEN"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg',this.parentNode.parentNode);"
@@ -2420,6 +2412,12 @@ msgid ""
 "                vocabulary or formal classification scheme.\n"
 "             "
 msgstr ""
+"\n"
+"                Onderwerp wordt standaard uitgedrukt worden met sleutelwoorden,\n"
+"               sleutelzinnen of \n"
+"              classificatie code die het best het onderwerp omschrijven.\n"
+"                In de praktijk gebruik je best een uitdrukking uit een standaard lijst of uit een erkend classificatie schema.\n"
+"            "
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2502,6 +2500,10 @@ msgid ""
 "                 encoding the date value is defined in a profile called\n"
 "                 "
 msgstr ""
+"\n"
+"                De datum zal standdaard de datum van aanmaak weergeven\n"
+"                of de datum wanneer het document beschikbaar gesteld werd. In de praktijk wordt\n"
+"                   de datum weergegeven volgend een overeengekomen profiel,\n"
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2541,6 +2543,8 @@ msgid ""
 "                 and includes (among others) dates of the form YYYY-MM-DD.\n"
 "            "
 msgstr ""
+"\n"
+"               en bevat (naast andere gegevens) de datum in de vorm van JJJJ-MM-DD.\n"
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2581,11 +2585,15 @@ msgid ""
 "              genres, for content. Recommended best practice is to select a value\n"
 "              from a controlled vocabulary or controlled classification scheme."
 msgstr ""
+"\n"
+"                Type bevat waarden die de algemene categorie, funcies of\n"
+"                het genre vermelden.In de praktijk kun je best waarden gebruiken\n"
+"                uit een algemeen aanvaarde lijst of algemeen aanvaard schema."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
@@ -2600,11 +2608,14 @@ msgid ""
 "              use the FORMAT element.\n"
 "            "
 msgstr ""
+"\n"
+"                Om de fysieke of digitale weergave van het document weer te geven,\n"
+"                 gebruik je het FORMAAT element.\n"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="P"
 #: modifiers="control" id="file-print-key" oncommand="filePrint()">
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
@@ -2647,7 +2658,7 @@ msgstr "label=\"Nieuw\" accesskey=\"n\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
 msgid "Developing Nations 2.0"
-msgstr ""
+msgstr "2.0 ontwikkelaars"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2677,9 +2688,8 @@ msgstr "SCORM 1.2"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
-#, fuzzy
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"Vernieuwen\" accesskey=\"v\""
+msgstr "label=\"Recente projecten...\" accesskey=\"R\""
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
@@ -2790,9 +2800,8 @@ msgstr "Bewaar"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
-#, fuzzy
 msgid "Afar "
-msgstr "Amharic "
+msgstr "Afar(Ethiopië)"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2827,7 +2836,7 @@ msgstr "Map met webinhoud"
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
 msgid "Amharic "
-msgstr "Amharic "
+msgstr "Amhaars"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile','','')" label="Zip File">
@@ -2867,24 +2876,21 @@ msgstr "label=\"Tekstbestand\" accesskey=\"t\""
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
-#, fuzzy
 msgid "Assamese "
-msgstr "Vietnamees"
+msgstr "Assamitisch"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
-#, fuzzy
 msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"Nieuw\" accesskey=\"n\""
+msgstr "label=\"iPod notities\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
-#, fuzzy
 msgid "Avestan "
-msgstr "Tibetaans"
+msgstr "Avestaans"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2963,9 +2969,8 @@ msgstr "Voorkeuren"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
-#, fuzzy
 msgid "Bihari "
-msgstr "Amharic "
+msgstr "Biharisch"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3069,14 +3074,13 @@ msgstr "Catalaans"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
-#, fuzzy
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"Website\" accesskey=\"w\""
+msgstr "label=\"eXe IRC chat\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
 msgid "Chamorro "
-msgstr ""
+msgstr "Chamorroe"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3116,7 +3120,7 @@ msgstr "Nieuwe pagina"
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
 msgid "Church Slavic "
-msgstr ""
+msgstr "Church Slavonic"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3129,7 +3133,7 @@ msgstr "Hernoemen"
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
 msgid "Chuvash "
-msgstr ""
+msgstr "Shuvash"
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3146,9 +3150,8 @@ msgstr "Cornwallisch"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
-#, fuzzy
 msgid "iDevices"
-msgstr "Nieuw iDevice"
+msgstr "iDevices"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
@@ -3197,7 +3200,7 @@ msgstr "Deens"
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
 msgid "Dzongkha; Bhutani "
-msgstr ""
+msgstr "Dzongkha; Bhutani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
 #: label="English ">
@@ -3261,20 +3264,18 @@ msgstr "Duits"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
-#, fuzzy
 msgid "Guarani "
-msgstr "Bulgaars"
+msgstr "Guarani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
 #: label="Gujarati ">
-#, fuzzy
 msgid "Gujarati "
-msgstr "Marathi "
+msgstr "Gujarati"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
 #: label="Hausa (?) ">
 msgid "Hausa (?) "
-msgstr ""
+msgstr "Hausa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
@@ -3289,7 +3290,7 @@ msgstr "Hindi "
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
 msgid "Hiri Motu "
-msgstr ""
+msgstr "Hiri Motu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
 #: label="Hungarian ">
@@ -3299,7 +3300,7 @@ msgstr "Hongaars"
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
 #: label="Herero ">
 msgid "Herero "
-msgstr ""
+msgstr "Herero"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
 #: label="Interlingua ">
@@ -3320,7 +3321,7 @@ msgstr "Interlingua "
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
 #: label="Inupiak ">
 msgid "Inupiak "
-msgstr ""
+msgstr "Inupiak"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
 #: label="Ido ">
@@ -3360,12 +3361,12 @@ msgstr "Javaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
 #: label="Kikuyu ">
 msgid "Kikuyu "
-msgstr ""
+msgstr "Kikuyu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
 #: label="Kuanyama ">
 msgid "Kuanyama "
-msgstr ""
+msgstr "Kuanyaams"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
 #: label="Kazakh ">
@@ -3385,7 +3386,7 @@ msgstr "Khmer; Cambodiaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
 #: label="Kannada ">
 msgid "Kannada "
-msgstr ""
+msgstr "Kannada(Indië)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
 #: label="Korean ">
@@ -3395,17 +3396,17 @@ msgstr "Koreaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
 #: label="Kashmiri ">
 msgid "Kashmiri "
-msgstr ""
+msgstr "Kashmiri"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
 #: label="Kinyarwanda ">
 msgid "Kinyarwanda "
-msgstr ""
+msgstr "Kinyarwanda"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
 #: label="Kirghiz ">
 msgid "Kirghiz "
-msgstr ""
+msgstr "Kirghisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
 #: label="Komi ">
@@ -3449,19 +3450,18 @@ msgstr "Lets"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
 #: label="Malagasy ">
-#, fuzzy
 msgid "Malagasy "
-msgstr "Maleis"
+msgstr "Masikoro-Malagasi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
 #: label="Manx ">
 msgid "Manx "
-msgstr "Mannisch"
+msgstr "Manx"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
 #: label="Marshall ">
 msgid "Marshall "
-msgstr ""
+msgstr "Marshall"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
 #: label="Maori ">
@@ -3480,9 +3480,8 @@ msgstr "Wiskunde"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
-#, fuzzy
 msgid "Malayalam "
-msgstr "Maleis"
+msgstr "Malayalamees"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
 #: label="Moldavian ">
@@ -3517,7 +3516,7 @@ msgstr "Noors Bokmål "
 #: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
 #: label="Ndebele, North ">
 msgid "Ndebele, North "
-msgstr ""
+msgstr "Noord-Ndebele"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
 #: label="Nepali ">
@@ -3526,9 +3525,8 @@ msgstr "Nepalees"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
 #: label="Ndonga ">
-#, fuzzy
 msgid "Ndonga "
-msgstr "Mongools"
+msgstr "Ndonga(Namibië)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
 #: label="Dutch ">
@@ -3548,42 +3546,42 @@ msgstr "Noors"
 #: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
 #: label="Ndebele, South ">
 msgid "Ndebele, South "
-msgstr ""
+msgstr "Zuid-Ndebele"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
 #: label="Navajo ">
 msgid "Navajo "
-msgstr ""
+msgstr "Navajo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
 #: label="Chichewa; Nyanja ">
 msgid "Chichewa; Nyanja "
-msgstr ""
+msgstr "Chichewa; Nyanja"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
 #: label="Occitan; Provençal ">
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Occitan; Provencaals"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
 #: label="(Afan) Oromo ">
 msgid "(Afan) Oromo "
-msgstr ""
+msgstr "(Afan) Oromo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior"
 #: label="Oriya ">
 msgid "Oriya "
-msgstr ""
+msgstr "Oriya(Indisch)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
 #: label="Ossetian; Ossetic ">
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Ossetian; Ossetisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
 #: label="Panjabi; Punjabi ">
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Panjabi; Punjabi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
 #: label="Pali ">
@@ -3603,7 +3601,7 @@ msgstr "Pools"
 #: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
 #: label="Pashto, Pushto ">
 msgid "Pashto, Pushto "
-msgstr ""
+msgstr "Pashto, Pushto"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
 #: label="Portuguese ">
@@ -3613,7 +3611,7 @@ msgstr "Portugees"
 #: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
 #: label="Quechua ">
 msgid "Quechua "
-msgstr ""
+msgstr "Quechua"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
 #: label="Rhaeto-Romance ">
@@ -3623,7 +3621,7 @@ msgstr "Rhetoromaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn"
 #: label="Rundi; Kirundi ">
 msgid "Rundi; Kirundi "
-msgstr ""
+msgstr "Rundisch; Kirundisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
 #: label="Romanian ">
@@ -3652,19 +3650,18 @@ msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
 #: label="Samoan ">
-#, fuzzy
 msgid "Samoan "
-msgstr "Shona "
+msgstr "Samoaans"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg"
 #: label="Sango; Sangro ">
 msgid "Sango; Sangro "
-msgstr ""
+msgstr "Sango; Sangro"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist"
 #: label="Sesotho; Sotho, Southern ">
 msgid "Sesotho; Sotho, Southern "
-msgstr ""
+msgstr "Sesotho; Sotho, Southern"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
 #: label="Shona ">
@@ -3673,9 +3670,8 @@ msgstr "Shona "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd"
 #: label="Sindhi ">
-#, fuzzy
 msgid "Sindhi "
-msgstr "Hindi "
+msgstr "Sindhi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
 #: label="Serbian ">
@@ -3710,13 +3706,12 @@ msgstr "Spaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
 #: label="Swati; Siswati ">
 msgid "Swati; Siswati "
-msgstr ""
+msgstr "Swati; Siswati"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu"
 #: label="Sundanese ">
-#, fuzzy
 msgid "Sundanese "
-msgstr "Singalees"
+msgstr "Sundanees"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
 #: label="Swahili ">
@@ -3740,26 +3735,23 @@ msgstr "Tahitisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
 #: label="Tajik ">
-#, fuzzy
 msgid "Tajik "
-msgstr "Thais"
+msgstr "Tadjieks"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
 #: label="Tamil ">
-#, fuzzy
 msgid "Tamil "
-msgstr "Thais"
+msgstr "Tamil"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
 #: label="Tatar ">
-#, fuzzy
 msgid "Tatar "
-msgstr "Tahitisch"
+msgstr "Tatar"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
 #: label="Telugu ">
 msgid "Telugu "
-msgstr ""
+msgstr "Telugu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
 #: label="Thai ">
@@ -3774,24 +3766,22 @@ msgstr "Tibetaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
 #: label="Tigrinya ">
 msgid "Tigrinya "
-msgstr ""
+msgstr "Tigrinya"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
 #: label="Tsonga ">
-#, fuzzy
 msgid "Tsonga "
-msgstr "Mongools"
+msgstr "Tsongaals"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
 #: label="Tswana; Setswana ">
 msgid "Tswana; Setswana "
-msgstr ""
+msgstr "Tswana; Setswana"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
 #: label="Tongan ">
-#, fuzzy
 msgid "Tongan  "
-msgstr "Mongools"
+msgstr "Tongaans"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
 #: label="Turkish ">
@@ -3805,14 +3795,13 @@ msgstr "Turkmeens"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
 #: label="Twi ">
-#, fuzzy
 msgid "Twi "
-msgstr "Thais"
+msgstr "Twi(Ghana)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug"
 #: label="Uighur ">
 msgid "Uighur "
-msgstr ""
+msgstr "Uighur"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
 #: label="Ukrainian ">
@@ -3822,7 +3811,7 @@ msgstr "Oekraiens"
 #: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
 #: label="Urdu ">
 msgid "Urdu "
-msgstr ""
+msgstr "Urdu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
 #: label="Uzbek ">
@@ -3855,19 +3844,17 @@ msgstr "Wallisch"
 #: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo"
 #: label="Wolof ">
 msgid "Wolof "
-msgstr ""
+msgstr "Wolof"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh"
 #: label="Xhosa ">
-#, fuzzy
 msgid "Xhosa "
-msgstr "Shona "
+msgstr "Xhosa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
 #: label="Yiddish (formerly ji) ">
-#, fuzzy
 msgid "Yiddish (formerly ji) "
-msgstr "Indonesisch"
+msgstr "Jiddish"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
 #: label="Yoruba ">
