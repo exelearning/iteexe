@@ -32,6 +32,11 @@ function onLoadHandler() {
     runFuncArray(onLoadHandlers)
 }
 
+// r3m0: starting to connect mimetext to TinyMCE for math:
+curr_edits_math_num = 1
+// will reset to #1 with each new edit, 
+// but can at least use a unique math# within that edit session.
+
 // Strings to be translated
 SELECT_AN_IMAGE    = "Select an image";
 IMAGE_FILES        = "Image Files";
@@ -254,7 +259,7 @@ function changeGalleryImage(galleryId, imageId) {
 // Called by the tinyMCE (as per the user's request) to provide an 
 // image file name to add to the package's field and idevice
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
-    
+
     var local_imagePath = ""
     // ask user for iamge or media, depending on type requested:
     if (type == "image") {
@@ -263,7 +268,6 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     else if (type == "media") {
        local_imagePath = askUserForMedia();
     }
-
 
     win.focus();
 
