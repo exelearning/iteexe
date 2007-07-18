@@ -381,11 +381,13 @@ class MainPage(RenderableLivePage):
         related to the following ClearParentTempPrintDirs(), return a
         local URL corresponding to the exported_dir
         """
-        rel_name = exported_dir.replace(G.application.tempWebDir, "", 1)
+        rel_name = exported_dir[len(G.application.tempWebDir):]
         if sys.platform[:3] == "win":
             rel_name = rel_name.replace('\\', '/')
-        http_relative_pathname = "http://127.0.0.1:"+str(self.config.port) \
-                                     +'/'+rel_name
+        if rel_name.startswith('/'):
+            rel_name = rel_name[1:]
+        http_relative_pathname = "http://127.0.0.1:" + str(self.config.port) \
+                                     + '/' + rel_name
         log.debug('printdir http_relative_pathname=' + http_relative_pathname)
         return http_relative_pathname
 
