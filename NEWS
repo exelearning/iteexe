@@ -2,7 +2,11 @@ Next Release
 * Add ability to embed media in text areas using TinyMCE toolbar
 * Fix display of header image in Properties... Package
 * Fix rapid clicking of outline pane buttons
+* Fix HTML emitted for gallerypopup
+* Fix printing on WINE
+* Fix gallery iDevice's deletion of thumbnail when removing image
 * Improve loading time of large packages
+* Translation updates
 * Upgrade TinyMCE to 2.1.1.1
 
 Version 0.96 (r2976)
