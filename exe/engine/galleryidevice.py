@@ -383,7 +383,7 @@ class GalleryImages(Persistable, list):
         """
         Represents 'GalleryImages' as a string for the programmer
         """
-        return '<GalleryImages for "' + repr(self.idevice) + '">'
+        return '<GalleryImages for "' + repr(self.idevice) + '", containing: ' + repr(self[0:len(self)]) + '>'
 
 
 # ===========================================================================
@@ -471,6 +471,10 @@ these in a gallery context rather then individually.</p>"""),
         Renders an HTML page that show's the image
         (Only realy needed for stupid IE)
         """
+        # r3m0: trying to figure out ticket #947
+        import pdb
+        pdb.set_trace()
+
         _ShowsResources.export()
         try:
             # Choose our style dir
