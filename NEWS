@@ -1,6 +1,7 @@
-Next Release
+Version 0.97 (r3024)
 * Add ability to embed media in text areas using TinyMCE toolbar
 * Fix display of header image in Properties... Package
+* Fix web export when package references a missing header image
 * Fix rapid clicking of outline pane buttons
 * Fix HTML emitted for gallerypopup
 * Fix printing on WINE
