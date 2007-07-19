@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2007-06-12 20:24+1200\n"
 "Last-Translator: Aleksander POTOCNIK <Aleksander.Potocnik@siol.net>\n"
 "Language-Team: Institut OKO, iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -1754,7 +1754,7 @@ msgstr ""
 "Nastavi maksimalno stopnjo povečave \n"
 "kot odstotek prvotne velikosti slike"
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr "Nastavitve shranjene "
 

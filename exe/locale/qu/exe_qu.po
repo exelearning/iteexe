@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2006-07-28 15:36+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Matthew <msherborne@gmail.com>\n"
@@ -1494,7 +1494,7 @@ msgid ""
 "as a percentage of the original image size"
 msgstr ""
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr ""
 

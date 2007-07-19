@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2007-07-13 11:10+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\n"
@@ -1738,7 +1738,7 @@ msgstr ""
 "Ustaw maksymalne powiekszenie, \n"
 "jako procent orygianlnych wymiarów obrazu"
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr "Ustawienia zapisane"
 

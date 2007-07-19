@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2006-07-28 15:30+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -1735,7 +1735,7 @@ msgstr ""
 "Impostare il masimo livello di ingrandimento, \n"
 "come percentuale delle dimensioni originali dell'immagine"
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr "Impostazioni salvate"
 

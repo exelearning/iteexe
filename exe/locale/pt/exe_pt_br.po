@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2007-04-26 04:22-0000\n"
 "Last-Translator: Carlos Baptista <baptista.carlos@gmail.com>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -1753,7 +1753,7 @@ msgstr ""
 "Seleccionar o nível máximo da apliação, \n"
 "como percentagem do tamanho original"
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr "Guardar alterações"
 

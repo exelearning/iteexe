@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Raidell Avello <ravello@ehtcf.cu>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -1662,7 +1662,7 @@ msgstr ""
 "Fije el nivel máximo del zumbido, \n"
 "como porcentaje del tamaño original de la imagen"
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr "Ajustes grabado"
 

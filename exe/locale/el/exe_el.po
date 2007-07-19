@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-19 04:56+1200\n"
+"POT-Creation-Date: 2007-07-20 21:24+1200\n"
 "PO-Revision-Date: 2006-05-12 14:15+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -1725,7 +1725,7 @@ msgstr ""
 "Ορίστε ένα μέγιστο επίπεδο μεγένθυνσης, \n"
 "ως ποσοστό του αρχικού μεγέθους εικόνας"
 
-#: exe/xului/propertiespage.py:200
+#: exe/xului/propertiespage.py:201
 msgid "Settings saved"
 msgstr "Οι ρυθμίσεις αποθηκεύθηκαν"
 
