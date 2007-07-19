@@ -70,7 +70,8 @@ class TextEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = common.textInput("name"+self.id, self.field.name, 25)
+        html  = "<b>%s</b><br/>" % _("Text Line")
+        html += common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
@@ -105,7 +106,8 @@ class TextAreaEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = common.textInput("name"+self.id, self.field.name, 25)
+        html  = "<b>%s</b><br/>" % _("Text Box")
+        html += common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
@@ -142,7 +144,8 @@ class FeedbackEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html = "<b>%s </b>" % _("Button Caption")
+        html  = "<b>%s</b><br/>" % _("Feedback")
+        html += "<b>%s </b>" % _("Button Caption")
         html += common.textInput("btnCaption"+self.id, 
                                  self.field.buttonCaption, 25)
         html += "<br/><br/>"
@@ -292,7 +295,8 @@ class MultimediaEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = common.textInput("name"+self.id, self.field.name, 25)
+        html  = "<b>%s</b><br/>" % _("MP3")
+        html += common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
@@ -338,7 +342,8 @@ class AttachmentEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = common.textInput("name"+self.id, self.field.name, 25)
+        html  = "<b>%s</b><br/>" % _("Attachment")
+        html += common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
