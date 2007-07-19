@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-19 04:56+1200\n"
-"PO-Revision-Date: 2007-07-19 09:11+1200\n"
+"PO-Revision-Date: 2007-07-19 12:36+1200\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -1932,7 +1932,6 @@ msgstr ""
 "het iDevice vrije tekst te gebruiken om meer uitleg\\bij de afbeelding te plaatsen."
 
 #: exe/webui/editorpane.py:69
-#, fuzzy
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "In het dialoogveld doelstelling beschrijft u voor andere gebruikers wat de bedoeling van dit iDevice is."
 
@@ -2779,9 +2778,8 @@ msgstr "Boomstructuur bijwerken"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
-#, fuzzy
 msgid "Abkhazian "
-msgstr "Albanees"
+msgstr "Abkhazian"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2897,15 +2895,13 @@ msgstr "Avestaans"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
-#, fuzzy
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"Samenvoegen\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
-#, fuzzy
 msgid "Aymara "
-msgstr "Amharic "
+msgstr "Aymara"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2931,7 +2927,7 @@ msgstr "label=\"Pakket uitpakken\" accesskey=\"u\""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
 msgid "Bashkir "
-msgstr ""
+msgstr "Baskir"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2984,7 +2980,7 @@ msgstr "label=\"weergave vernieuwen\" accesskey=\"v\""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
 msgid "Bislama "
-msgstr ""
+msgstr "Bislama"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3087,7 +3083,6 @@ msgstr "Chamorroe"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
-#, fuzzy
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"Info\" accesskey=\"i\""
 
@@ -3314,7 +3309,6 @@ msgstr "Indonesisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
 #: label="Interlingue ">
-#, fuzzy
 msgid "Interlingue "
 msgstr "Interlingua "
 
@@ -3346,7 +3340,7 @@ msgstr "Italiaans"
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
 #: label="Inuktitut ">
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
@@ -3476,7 +3470,7 @@ msgstr "Macedonisch"
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
 #: label="Marathi ">
 msgid "Marathi "
-msgstr "Wiskunde"
+msgstr "Marathi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
@@ -3506,7 +3500,7 @@ msgstr "Maltees"
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
 #: label="Nauru ">
 msgid "Nauru "
-msgstr ""
+msgstr "Nauru"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
 #: label="Norwegian Bokmål ">
@@ -3646,7 +3640,7 @@ msgstr "Sardinisch"
 #: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise"
 #: label="Northern Sami ">
 msgid "Northern Sami "
-msgstr ""
+msgstr "Northern Sami"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
 #: label="Samoan ">
@@ -3859,16 +3853,15 @@ msgstr "Jiddish"
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
 #: label="Yoruba ">
 msgid "Yoruba "
-msgstr ""
+msgstr "Yoruba"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
 #: label="Zhuang ">
 msgid "Zhuang "
-msgstr ""
+msgstr "Zhuang"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
 #: label="Zulu ">
-#, fuzzy
 msgid "Zulu "
 msgstr "Zoeloe"
 
