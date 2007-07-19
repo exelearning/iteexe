@@ -471,10 +471,6 @@ these in a gallery context rather then individually.</p>"""),
         Renders an HTML page that show's the image
         (Only realy needed for stupid IE)
         """
-        # r3m0: trying to figure out ticket #947
-        import pdb
-        pdb.set_trace()
-
         _ShowsResources.export()
         try:
             # Choose our style dir
