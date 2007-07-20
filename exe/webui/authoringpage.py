@@ -161,7 +161,9 @@ class AuthoringPage(RenderableResource):
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,media,"
-        html += u" contextmenu,paste,directionality\","
+        #html += u" contextmenu,paste,directionality\","
+        # r3m0: trying to add a new custom plugin, exemath:
+        html += u" contextmenu,paste,directionality,exemath\",\n"
         #
         html += u" theme : \"advanced\",\n"
         html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
@@ -171,24 +173,19 @@ class AuthoringPage(RenderableResource):
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
-        ##########
-        #html += u" theme_advanced_buttons2 : \"image,tablecontrols,separator,"
-        # r3m0, WILL BE adding movies/flash with the media plugin, via:
         html += u" theme_advanced_buttons2 : \"image,media,tablecontrols,separator,"
-        # Note these default media plugin supports:
-        #  [media_types]
-        #  Name/Value list of format mappings to file extensions, Defaults to: 
-        # flash=swf;shockwave=dcr;qt=mov,qt,mpg,mp3,mp4,mpeg;shockwave=dcr;wmp=avi,wmv,wm,asf,asx,wmx,wvx;rmp=rm,ra,ram.
-        ########
-        ########
         html += u"link,unlink,separator,undo,redo,separator,"
         html += u" charmap,removeformat,cleanup,code,help\",\n"
+        # r3m0: will be adding a new custom plugin, exemath:
+        #html += u" charmap,removeformat,cleanup,code,help,separator,exemath\",\n"
+        html += u" theme_advanced_buttons3 : \"\",\n"
+        # r3m0: in process of testing and developing exemath:
+        #html += u" theme_advanced_buttons3 : \"separator,exemath,separator\",\n"
+        #html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
 
         # the image-handling callback function for tinyMCE's image button:
         html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
         
-        html += u" theme_advanced_buttons3 : \"\",\n"
-
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
         html += u"    theme_advanced_resize_horizontal : false,\n"
         html += u"    theme_advanced_resizing : true\n"

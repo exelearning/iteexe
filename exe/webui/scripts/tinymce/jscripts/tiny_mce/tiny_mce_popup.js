@@ -275,6 +275,23 @@ TinyMCE_Popup.prototype = {
 			eval("tinyMCEPopup.windowOpener." + cb + "(element_id, url, type, window);");
 	},
 
+
+        // A variation on the above openBrowser(), to allow a source element_id 
+        // that differs from a destination element_id. (see exemath plugin for example)
+	openBrowser2 : function(src_element_id, dst_element_id, type, option) {
+		var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
+		var src_val = document.getElementById(src_element_id).value;
+
+		tinyMCE.setWindowArg("window", window);
+		tinyMCE.setWindowArg("document", document);
+
+		// Call to external callback
+		if (eval('typeof(tinyMCEPopup.windowOpener.' + cb + ')') == "undefined")
+			alert("Callback function: " + cb + " could not be found.");
+		else
+			eval("tinyMCEPopup.windowOpener." + cb + "(dst_element_id, src_val, type, window);");
+	},
+
 	importClass : function(c) {
 		var n;
 

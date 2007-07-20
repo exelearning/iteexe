@@ -339,6 +339,34 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
 }
 
 
+// Called by the tinyMCE (as per the user's request) to generate an 
+// image file of the specified math (LaTeX source, compiled by mimetex)
+// to add to the package's field and idevice
+function makeMathImage_viaTinyMCE(field_name, url, type, win) {
+
+    var local_imagePath = ""
+
+    alert("r3m0 test: called makeMathImage_viaTinyMCE() & not doing YET anyting!"  + ", field_name = " + field_name + ", url = " + url  + ", type = " + type + ", win = " + win);
+
+    win.focus();
+
+    // and even though this is still testing, go ahead and set a return value:
+    var full_previewImage_url = "/previews/test_math.gif"
+    // set the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = full_previewImage_url;
+    // PreviewImage is only available for images:
+    if (type == "image") {
+       win.showPreviewImage(full_previewImage_url);
+    }
+
+    // if the user hits CANCEL, then bail "immediately",
+    // i.e., after bringing the tinyMCE image dialog back into focus, above.
+    if (local_imagePath == "") {
+       return;
+    }
+}
+
+
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');
     var elementId = id.substring(3, id.length);

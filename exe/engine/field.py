@@ -301,6 +301,8 @@ class FieldWithResources(Field):
         resources_in_use = self.ListActiveImageResources(new_content)
         # and eventually, maybe something like:
         #new_content.append(ProcessPreviewedMedia(new_content))
+        # but note: the media resources are actually found within
+        # ListActiveImageResources() as well!  So no need at this time.
 
         self.RemoveZombieResources(resources_in_use)
 
