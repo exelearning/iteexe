@@ -49,6 +49,8 @@ from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
+# r3m0: for the new exemath TinyMCE plugin:
+from exe.engine.mimetex          import compile
 
 
 log = logging.getLogger(__name__)
@@ -121,6 +123,7 @@ class MainPage(RenderableLivePage):
                                                  'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir,   'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice,   'previewTinyMCEimage')
+        setUpHandler(self.handleTinyMCEmath,     'generateTinyMCEmath')
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
 
@@ -531,6 +534,123 @@ class MainPage(RenderableLivePage):
                 callback_errors = "Image file %s not found, cannot preview" \
                         % localImagePath
                 errors += 1
+
+        try:
+            server_filename = previewDir.joinpath(preview_filename);
+            log.debug("handleTinyMCEimageChoice copying image from \'"\
+                    + local_filename + "\' to \'" \
+                    + server_filename.abspath().encode('utf-8') + "\'.");
+            shutil.copyfile(local_filename, \
+                    server_filename.abspath().encode('utf-8'));
+
+            # new optional description file to provide the 
+            # actual base filename, such that once it is later processed
+            # copied into the resources directory, it can be done with
+            # only the basename.   Otherwise the resource filenames
+            # are too long for some users, preventing them from making
+            # backup CDs of the content, for example.
+            # 
+            # Remember that the full path of the
+            # file is only used here as an easy way to keep the names
+            # unique WITHOUT requiring a roundtrip call from the Javascript
+            # to this server, and back again, a process which does not
+            # seem to work with tinyMCE in the mix.  BUT, once tinyMCE's
+            # part is done, and this image processed, it can be returned
+            # to just its basename, since the resource parts have their
+            # own unique-ification mechanisms already in place.
+
+            descrip_file_path = Path(server_filename+".exe_info")
+            log.debug("handleTinyMCEimageChoice creating preview " \
+                    + "description file \'" \
+                    + descrip_file_path.abspath().encode('utf-8') + "\'.");
+            descrip_file = open(descrip_file_path, 'wb')
+
+            descrip_file.write("basename="+os.path.basename(local_filename))
+
+            descrip_file.flush()
+            descrip_file.close()
+
+        except Exception, e:
+            client.alert(_('SAVE FAILED!\n%s' % str(e)))
+            log.error("handleTinyMCEimageChoice unable to copy local image "\
+                    +"file to server prevew, error = " + str(e))
+            raise
+
+    def handleTinyMCEmath(self, client, tinyMCEwin, tinyMCEwin_name, \
+                             tinyMCEfield, latex_source, \
+                             preview_image_filename, preview_math_srcfile):
+        """
+        Based off of handleTinyMCEimageChoice(), 
+        handleTinyMCEmath() is similar in that it places a .gif math image 
+        (and a corresponding .tex LaTeX source file) into the previews dir.
+        Rather than copying the image from a user-selected directory, though,
+        this routine actually generates the math image using mimetex.
+        """
+        server_filename = ""
+        callback_errors = ""
+        errors = 0
+
+        print "HEY HEY!! Just sahyin HI from handleTinyMCEmath, yo!"
+        print "  LaTeX source = " + latex_source
+        print "  Writing output image to: " + preview_image_filename
+        print "  Writing source LaTeX to: " + preview_math_srcfile
+        print "  -> need to embed the source LaTeX name into its img tag!"
+        print "  & beware of the file name changes during resourcification."
+        print "  (note: this might be were it'll be simpler to have the "
+        print "  source LaTex filename merely = original.gif.tex ??)"
+        print "  WARNING: also choosing an arbitrary fontsize! need to pass!"
+        # but for now, just choose an arbitrary font-size:
+        math_fontsize = 10
+        # Q: is that supposed to be a STRING or an INT? == INT!
+
+
+        webDir     = Path(G.application.tempWebDir)
+        previewDir  = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("image previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert( \
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview tinyMCE-chosen image: "+
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            callback_errors =  "Preview dir is a file, cannot replace"
+            errors += 1
+
+        #if errors == 0:
+        #    localImagePath = Path(local_filename)
+        #    if not localImagePath.exists() or not localImagePath.isfile():
+        #        client.alert( \
+        #             _(u'Image file %s is not found, cannot preview it') \
+        #             % localImagePath)
+        #        log.error("Couldn't find tinyMCE-chosen image: %s" \
+        #                % localImagePath)
+        #        callback_errors = "Image file %s not found, cannot preview" \
+        #                % localImagePath
+        #        errors += 1
+
+        # the mimetex usage code was swiped from the Math iDevice:
+        if latex_source <> "":
+            # may want to move this up above, to check for errors first?
+            tempFileName = compile(latex_source, math_fontsize)
+
+            # HERE: copy the file into previews
+            server_filename = previewDir.joinpath(preview_image_filename);
+            log.debug("handleTinyMCEmath copying math image from \'"\
+                    + tempFileName + "\' to \'" \
+                    + server_filename.abspath().encode('utf-8') + "\'.");
+            shutil.copyfile(tempFileName, \
+                    server_filename.abspath().encode('utf-8'));
+
+
+            # Delete the temp file made by compile 
+            Path(tempFileName).remove()
+        return
+
 
         try:
             server_filename = previewDir.joinpath(preview_filename);

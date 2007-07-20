@@ -83,25 +83,25 @@ function init() {
 	var html = "";
 
 	// Image list src
-	html = getImageListHTML('imagelistsrc','src','onSelectMainImage');
-	if (html == "")
-		document.getElementById("imagelistsrcrow").style.display = 'none';
-	else
-		document.getElementById("imagelistsrccontainer").innerHTML = html;
+	//html = getImageListHTML('imagelistsrc','src','onSelectMainImage');
+	//if (html == "")
+//		document.getElementById("imagelistsrcrow").style.display = 'none';
+//	else
+//		document.getElementById("imagelistsrccontainer").innerHTML = html;
 
-	// Image list oversrc
-	html = getImageListHTML('imagelistover','onmouseoversrc');
-	if (html == "")
-		document.getElementById("imagelistoverrow").style.display = 'none';
-	else
-		document.getElementById("imagelistovercontainer").innerHTML = html;
+////	// Image list oversrc
+//	html = getImageListHTML('imagelistover','onmouseoversrc');
+//	if (html == "")
+//		document.getElementById("imagelistoverrow").style.display = 'none';
+//	else
+//		document.getElementById("imagelistovercontainer").innerHTML = html;
 
 	// Image list outsrc
-	html = getImageListHTML('imagelistout','onmouseoutsrc');
-	if (html == "")
-		document.getElementById("imagelistoutrow").style.display = 'none';
-	else
-		document.getElementById("imagelistoutcontainer").innerHTML = html;
+//	html = getImageListHTML('imagelistout','onmouseoutsrc');
+//	if (html == "")
+//		document.getElementById("imagelistoutrow").style.display = 'none';
+//	else
+//		document.getElementById("imagelistoutcontainer").innerHTML = html;
 
 	// Src browser
 	//html = getBrowserHTML('srcbrowser','src','image','advimage');
@@ -152,6 +152,8 @@ function init() {
 	formObj.insert.value = tinyMCE.getLang('lang_' + action, 'Insert', true); 
 
 	if (action == "update") {
+                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step A');
+
 		var src = tinyMCE.getAttrib(elm, 'src');
 		var onmouseoversrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseover')));
 		var onmouseoutsrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseout')));
@@ -211,22 +213,35 @@ function init() {
 		selectByValue(formObj, 'imagelistout', onmouseoutsrc);
 
 		updateStyle();
+                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step B: b4 preview');
+	        // r3m0: 
 		showPreviewImage(src, true);
+                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step C: after preview');
 		changeAppearance();
+	        // r3m0: 
+                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step D: after changeAppearance');
 
 		window.focus();
 	} else
+                //alert('r3m0: called init() in exemaths functions.js!!! action != update, step A');
 		addClassesToList('classlist', 'advimage_styles');
+
+        //alert('r3m0: called init() in exemaths functions.js!!! , step B');
 
 	// If option enabled default contrain proportions to checked
 	if (tinyMCE.getParam("advimage_constrain_proportions", true))
 		formObj.constrain.checked = true;
 
-	// Check swap image if valid data
-	if (formObj.onmouseoversrc.value != "" || formObj.onmouseoutsrc.value != "")
-		setSwapImageDisabled(false);
-	else
-		setSwapImageDisabled(true);
+        //alert('r3m0: called init() in exemaths functions.js!!! , step C');
+
+// r3m0: didn't seem to work:
+//	// Check swap image if valid data
+//	if (formObj.onmouseoversrc.value != "" || formObj.onmouseoutsrc.value != "")
+//		setSwapImageDisabled(false);
+//	else
+//		setSwapImageDisabled(true);
+
+        //alert('r3m0: called init() in exemaths functions.js!!! , step D');
 }
 
 function setSwapImageDisabled(state) {
@@ -321,6 +336,8 @@ function insertAction() {
 	var src = formObj.src.value;
 	var onmouseoversrc = formObj.onmouseoversrc.value;
 	var onmouseoutsrc = formObj.onmouseoutsrc.value;
+
+        alert('r3m0 NOT YET HERE!!!! : called insertAction() in exemaths functions.js!!!');
 
 	if (!AutoValidator.validate(formObj)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
@@ -505,24 +522,37 @@ function onSelectMainImage(target_form_element, name, value) {
 	formObj.title.value = name;
 
 	resetImageData();
-	showPreviewImage(formObj.elements[target_form_element].value, false);
+	// r3m0: 
+        // showPreviewImage(formObj.elements[target_form_element].value, false);
 }
 
 function showPreviewImage(src, start) {
 	var formObj = document.forms[0];
+
+	// r3m0: 
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step A');
 
 	selectByValue(document.forms[0], 'imagelistsrc', src);
 
 	var elm = document.getElementById('prev');
 	var src = src == "" ? src : tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'], src);
 
+	// r3m0: 
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step B');
+
 	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
 		resetImageData();
+
+	// r3m0: 
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step C');
 
 	if (src == "")
 		elm.innerHTML = "";
 	else
 		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
+
+	// r3m0: 
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step D');
 }
 
 function updateImageData(start) {
@@ -578,5 +608,7 @@ function getImageListHTML(elm_id, target_form_element, onchange_func) {
 	// tinyMCE.debug('-- image list start --', html, '-- image list end --');
 }
 
-// While loading
-preinit();
+// r3m0: try disabling this:
+// // While loading
+//preinit();
+

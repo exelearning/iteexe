@@ -1,18 +1,19 @@
 // UK lang variables
 
 tinyMCE.addToLang('exemath',{
+generate_title : 'Generate eXe LaTeX Math Image',
 desc : 'LaTeX to Math for eXe',
-tab_general : 'eXe Math tab: General',
-tab_appearance : 'BOGUS Appearance',
+tab_general : 'eXe Math Image: Generate',
+tab_appearance : 'eXe Math Image: Appearance',
 tab_advanced : 'BOGUS Advanced',
 compile_tooltip : 'Generate Math Image',
-general : 'BOGUS eXe Math General',
+general : 'eXe Math Image Generation',
 latex_source : 'LaTeX source',
 preview : 'BOGUS eXe Math Preview (what IS the difference?!?!?)',
 constrain_proportions : 'BOGUS Constrain proportions',
 langdir : 'BOGUS Language direction',
 langcode : 'BOGUS Language code',
-image_src : 'eXe Math Image filename (once generated)',
+image_src : 'eXe Math Image filename',
 long_desc : 'BOGUS eXe Math Long description link',
 image_alt : 'Math Image ALT description',
 style : 'BOGUS Style',

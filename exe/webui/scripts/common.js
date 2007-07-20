@@ -342,28 +342,70 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
 // Called by the tinyMCE (as per the user's request) to generate an 
 // image file of the specified math (LaTeX source, compiled by mimetex)
 // to add to the package's field and idevice
-function makeMathImage_viaTinyMCE(field_name, url, type, win) {
+function makeMathImage_viaTinyMCE(field_name, src_latex, type, win) {
 
     var local_imagePath = ""
 
-    alert("r3m0 test: called makeMathImage_viaTinyMCE() & not doing YET anyting!"  + ", field_name = " + field_name + ", url = " + url  + ", type = " + type + ", win = " + win);
+    // to help unique-ify each previewed math image:
+    // note: leave the "/preview" off of it, allowing the server to do that:
+    var preview_basename = "eXe_LaTeX_math_"+curr_edits_math_num
+    var preview_math_imagefile = preview_basename+".gif"
+    // may want to later simplify a subsequent file-lookup process,
+    // but just appending the ".tex" to the full image name, as such:
+    //var preview_math_srcfile = preview_math_imagefile + ".tex"
+    // Until then, though, do it proper-like:
+    var preview_math_srcfile = preview_basename+".tex"
+   
+    curr_edits_math_num += 1
+
+    //alert("r3m0 test: called makeMathImage_viaTinyMCE() & not doing YET anyting!\n"  + ", field_name = " + field_name + ", src_latex = " + src_latex  + ", type = " + type + ", win = " + win + "\n preview files to be: " + preview_math_imagefile + ", and: " + preview_math_srcfile);
+
+
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    // pass the file information on to the server,
+    // to copy it into the server's "previews" directory:
+    window.parent.nevow_clientToServerEvent('generateTinyMCEmath', this, 
+                  '', win, win.name, field_name, 
+                  src_latex, preview_math_imagefile, preview_math_srcfile)
+
+
+    // and once the image has been generated, it SHOULD be sitting here:
+    var full_preview_url = "/previews/"+preview_math_imagefile;
+
+    //alert("r3m0 test: makeMathImage_viaTinyMCE() Now about to call showPreviewImage with: win= " + win + ",  field_name = " + field_name + ", value = " + full_preview_url);
 
     win.focus();
 
-    // and even though this is still testing, go ahead and set a return value:
-    var full_previewImage_url = "/previews/test_math.gif"
-    // set the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = full_previewImage_url;
+    // first, clear out any old value in the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = ""; 
     // PreviewImage is only available for images:
     if (type == "image") {
-       win.showPreviewImage(full_previewImage_url);
+       win.showPreviewImage(" ");
+    }
+    // the above two commands are the only way to really 
+    // ensure that we can trigger the onchange event below:
+
+    // set the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = full_preview_url;
+    // then force its onchange event:
+    // PreviewImage is only available for images:
+    if (type == "image") {
+       win.showPreviewImage(full_preview_url);
     }
 
-    // if the user hits CANCEL, then bail "immediately",
-    // i.e., after bringing the tinyMCE image dialog back into focus, above.
-    if (local_imagePath == "") {
-       return;
-    }
+    // this onchange works, but it's dirty because it is hardcoding the 
+    // onChange=".." event of that field, and if that were to ever change 
+    // in tinyMCE, then this would be out of sync.
+
+//    // and finally, be sure to update the tinyMCE window's image data:
+//    if (win.getImageData) {
+//        win.getImageData();
+//    }
+//    else {
+//        if (window.tinyMCE.getImageData) {
+//           window.tinyMCE.getImageData();
+//        }
+//    }    
 }
 
 
