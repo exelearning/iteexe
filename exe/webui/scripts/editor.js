@@ -1,6 +1,7 @@
 function ideviceExists(ideviceName) {
     var ele = document.getElementById('ideviceSelect');
     var ideviceNameLower = ideviceName.toLowerCase()
+    
     for (var i = 0; i < ele.options.length; i++) {
         if (ele.options.item(i).value.toLowerCase() == ideviceNameLower) {
             return true;
@@ -14,7 +15,7 @@ function saveIdevice(title){
     if (title == "none")
         title1 = document.getElementById('title').value
     else
-        title1 = title
+        title1 = title.replace("+", " ")
     
     var theForm = document.getElementById('contentForm')
     

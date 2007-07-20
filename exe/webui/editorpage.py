@@ -30,6 +30,7 @@ from exe.webui.renderable      import RenderableResource
 from exe.engine.package        import Package
 from exe.engine.path           import Path
 from exe.engine.field          import MultimediaField
+from cgi                       import escape
 
 log = logging.getLogger(__name__)
 
@@ -238,7 +239,8 @@ class EditorPage(RenderableResource):
         title = "none"
         if self.editorPane.idevice.edit == False:
             title = self.editorPane.idevice.title
-        html += 'onclick=saveIdevice("%s") value="%s"/>' % (title, _("Save"))
+            title = title.replace(" ", "+")
+        html += 'onclick=saveIdevice("%s") value="%s"/>' % (escape(title), _("Save"))
         html += u'<br/><input class="button" type="button" name="import" onclick="importPackage(\'package\')"' 
         html += u' value="%s" />'  % _("Import iDevice")
         html += u'<br/><input class="button" type="button" name="export" '
