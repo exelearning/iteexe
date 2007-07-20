@@ -334,10 +334,8 @@ function insertAction() {
 	var elm = inst.getFocusElement();
 	var formObj = document.forms[0];
 	var src = formObj.src.value;
-	var onmouseoversrc = formObj.onmouseoversrc.value;
-	var onmouseoutsrc = formObj.onmouseoutsrc.value;
-
-        alert('r3m0 NOT YET HERE!!!! : called insertAction() in exemaths functions.js!!!');
+	//var onmouseoversrc = formObj.onmouseoversrc.value;
+	//var onmouseoutsrc = formObj.onmouseoutsrc.value;
 
 	if (!AutoValidator.validate(formObj)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
@@ -349,11 +347,11 @@ function insertAction() {
 			return;
 	}
 
-	if (onmouseoversrc && onmouseoversrc != "")
-		onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
+	//if (onmouseoversrc && onmouseoversrc != "")
+	//	onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
 
-	if (onmouseoutsrc && onmouseoutsrc != "")
-		onmouseoutsrc = "this.src='" + convertURL(onmouseoutsrc, tinyMCE.imgElement) + "';";
+	//if (onmouseoutsrc && onmouseoutsrc != "")
+	//	onmouseoutsrc = "this.src='" + convertURL(onmouseoutsrc, tinyMCE.imgElement) + "';";
 
 	if (elm != null && elm.nodeName == "IMG") {
 		setAttrib(elm, 'src', convertURL(src, tinyMCE.imgElement));
@@ -365,8 +363,8 @@ function insertAction() {
 		setAttrib(elm, 'hspace');
 		setAttrib(elm, 'width');
 		setAttrib(elm, 'height');
-		setAttrib(elm, 'onmouseover', onmouseoversrc);
-		setAttrib(elm, 'onmouseout', onmouseoutsrc);
+		//setAttrib(elm, 'onmouseover', onmouseoversrc);
+		//setAttrib(elm, 'onmouseout', onmouseoutsrc);
 		setAttrib(elm, 'id');
 		setAttrib(elm, 'dir');
 		setAttrib(elm, 'lang');
@@ -397,8 +395,8 @@ function insertAction() {
 		html += makeAttrib('hspace');
 		html += makeAttrib('width');
 		html += makeAttrib('height');
-		html += makeAttrib('onmouseover', onmouseoversrc);
-		html += makeAttrib('onmouseout', onmouseoutsrc);
+		//html += makeAttrib('onmouseover', onmouseoversrc);
+		//html += makeAttrib('onmouseout', onmouseoutsrc);
 		html += makeAttrib('id');
 		html += makeAttrib('dir');
 		html += makeAttrib('lang');
@@ -522,8 +520,7 @@ function onSelectMainImage(target_form_element, name, value) {
 	formObj.title.value = name;
 
 	resetImageData();
-	// r3m0: 
-        // showPreviewImage(formObj.elements[target_form_element].value, false);
+        showPreviewImage(formObj.elements[target_form_element].value, false);
 }
 
 function showPreviewImage(src, start) {
@@ -540,8 +537,8 @@ function showPreviewImage(src, start) {
 	// r3m0: 
         //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step B');
 
-	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
-		resetImageData();
+//	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
+//		resetImageData();
 
 	// r3m0: 
         //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step C');
@@ -571,6 +568,10 @@ function updateImageData(start) {
 
 function resetImageData() {
 	var formObj = document.forms[0];
+
+	// r3m0: 
+        alert('r3m0: called resetImageData() in exemaths functions.js!!! probably due to error');
+
 	formObj.width.value = formObj.height.value = "";	
 }
 
