@@ -80,7 +80,6 @@ function openBrower2(img_id, source_form_element, target_form_element, type, opt
 	var img = document.getElementById(img_id);
 
 	if (img.className != "mceButtonDisabled")
-		//tinyMCEPopup.openBrowser(target_form_element, type, option);
 		tinyMCEPopup.openBrowser2(source_form_element, target_form_element, type, option);
 }
 
