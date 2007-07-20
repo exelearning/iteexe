@@ -69,14 +69,19 @@ display them as links in your content. From here you can edit the bookmarks and 
         Load the rss
         """
         content = ""
-        rssDic = feedparser.parse(url)
-        length = len(rssDic['entries'])
-        print str(length)
-        if length > 0 :
-            for i in range(0, length):
-                content += '<p><A href="%s">%s</A></P>' %(
-                    rssDic['entries'][i].link, rssDic['entries'][i].title)          
-
+        try:
+            rssDic = feedparser.parse(url)
+            length = len(rssDic['entries'])
+            if length > 0 :
+                for i in range(0, length):
+                    content += '<p><A href="%s">%s</A></P>' %(
+                        rssDic['entries'][i].link, rssDic['entries'][i].title)          
+        except IOError, error:
+            log.warning(unicode(error))
+            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+            
+        if content == "":
+            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
         self.rss.content = unicode(content)
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
