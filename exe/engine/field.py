@@ -567,6 +567,19 @@ class FieldWithResources(Field):
         """
         new_content = content
 
+        # first, clear out any empty images.
+        # Image and the new Math are unfortunately capable
+        # of submitting an empty image, which will show as:
+        #   <img src="/" />
+        # (note that at least the media plugin still embeds a full 
+        #  and valid empty-media tag, so no worries about them.)
+        # These should be stopped in the plugin itself, but until then:
+        empty_image_str = "<img src=\"/\" />"
+        if new_content.find(empty_image_str)  >= 0: 
+            new_content = new_content.replace(empty_image_str, "");
+            log.warn("Empty image tag(s) removed from content");
+
+
         # By this point, tinyMCE's javascript file browser handler:
         #         common.js's: chooseImage_viaTinyMCE() 
         # has already copied the file into the web-server's relative 
