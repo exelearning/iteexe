@@ -481,7 +481,10 @@ these in a gallery context rather then individually.</p>"""),
                 styleDir = 'default'
             # Render!
             img = self.images[0]
-            data = docType() + flatten(
+            data = '''<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml2/DTD/xhtml1-transitional.dtd">\n'''
+            data = data + flatten(
                T.html[
                  T.head[
                    T.title[self.title],

@@ -301,7 +301,7 @@ class GalleryBlock(Block):
                         u');"',
                         u'           style="cursor: pointer; align:center top;">',
                         u'          <img alt="%s"' % title,
-                        u'               src="%s"/>' % image.thumbnailSrc,
+                        u'               src="%s"/>' % urllib.quote(image.thumbnailSrc),
                         u'        </a>',
                         u'        <div style="align:center;width=100%">',
                         u'          %s' % (image.caption or '&nbsp;'),
