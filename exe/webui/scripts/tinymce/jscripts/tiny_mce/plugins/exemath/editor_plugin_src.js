@@ -8,7 +8,7 @@
 /* Import plugin specific language pack */
 tinyMCE.importPluginLanguagePack('exemath');
 
-var TinyMCE_AdvancedImagePlugin = {
+var TinyMCE_ExeMathPlugin = {
 	getInfo : function() {
 		return {
 			longname : 'eXe math LaTeX-based plugin using mimetex',
@@ -152,4 +152,4 @@ var TinyMCE_AdvancedImagePlugin = {
 };
 
 //tinyMCE.addPlugin("advimage", TinyMCE_AdvancedImagePlugin);
-tinyMCE.addPlugin("exemath", TinyMCE_AdvancedImagePlugin);
+tinyMCE.addPlugin("exemath", TinyMCE_ExeMathPlugin);
