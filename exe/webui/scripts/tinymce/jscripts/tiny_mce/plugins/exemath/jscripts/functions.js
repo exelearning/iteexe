@@ -42,10 +42,9 @@ function getImageSrc(str) {
 	return "";
 }
 
+
 // r3m0: brand new function to call up the math-compiling callback in JS:
-//function getMathBrowserHTML(id, target_form_element, type, prefix) {
 function getMathBrowserHTML(id, source_form_element, target_form_element, type, prefix) {
-        // parms: 'mathsrcbrowser','src','image','exemath');
         var option = prefix + "_" + type + "_browser_callback";
         var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
         //alert("r3m0: HERE IN!!!! getMathBrowserHTML. for id= " + id + ", source_form_element = " + source_form_element + ", target_form_element = " + target_form_element+  ", option = " + option + ", cb = " + cb);
@@ -54,17 +53,12 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 
         var html = "";
 
-        //html += '<a id="' + id + '_link" href="javascript:openBrower(\'' + id + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
-        // use the new utils/form_utils.js' openBrower2() to get into tiny_mce_popup.js's openBrowser2()
         html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
         //html += '<img id="' + id + '" src="' + themeBaseURL + '/images/browse.gif"';
-        // update to a different image for this, too, since it's 
-        // no longer actually a file-browser button.
-        // how about just using the same math image again?  (need to copy it into the advanced themes images dir!)
         html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
-        html += ' onmouseover="this.className=\'mceButtonOver\';"';
-        html += ' onmouseout="this.className=\'mceButtonNormal\';"';
-        html += ' onmousedown="this.className=\'mceButtonDown\';"';
+//        html += ' onmouseover="this.className=\'mceButtonOver\';"';
+//        html += ' onmouseout="this.className=\'mceButtonNormal\';"';
+//        html += ' onmousedown="this.className=\'mceButtonDown\';"';
         html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
         html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" /></a>';
 
@@ -83,13 +77,14 @@ function init() {
 	var html = "";
 
 	// Image list src
-	//html = getImageListHTML('imagelistsrc','src','onSelectMainImage');
-	//if (html == "")
-//		document.getElementById("imagelistsrcrow").style.display = 'none';
-//	else
-//		document.getElementById("imagelistsrccontainer").innerHTML = html;
+	html = getImageListHTML('imagelistsrc','src','onSelectMainImage');
+        //alert('r3m0: in init(), getImageListHTML just returned html='+html);
+	if (html == "")
+		document.getElementById("imagelistsrcrow").style.display = 'none';
+	else
+		document.getElementById("imagelistsrccontainer").innerHTML = html;
 
-////	// Image list oversrc
+	// Image list oversrc
 //	html = getImageListHTML('imagelistover','onmouseoversrc');
 //	if (html == "")
 //		document.getElementById("imagelistoverrow").style.display = 'none';
@@ -105,45 +100,34 @@ function init() {
 
 	// Src browser
 	//html = getBrowserHTML('srcbrowser','src','image','advimage');
-	//document.getElementById("srcbrowsercontainer").innerHTML = html;
-        // r3m0: upgrading to math:
-	//html = getBrowserHTML('mathsrcbrowser','src','image','exemath');
-        // okay, the above works fine in creating a file browser to tie to the following 'mathsrcbrowser' field,
-        // BUT, how about some slightly different behavior, from a different tooltip when hovering over the button, 
-        // to (more importantly) being able to read in the source from one field, but write an image filename in another.
-	//html = getMathBrowserHTML('mathsrcbrowser','src','image','exemath');
-        // add dest parm.  source element = 'title', destination element = 'src'
-	html = getMathBrowserHTML('mathsrcbrowser','latex_source','src','image','exemath');
-
-	document.getElementById("mathsrcbrowsercontainer").innerHTML = html;
+	//html = getMathBrowserHTML('srcbrowser', 'title', 'src','image','exemath');
+	html = getMathBrowserHTML('srcbrowser', 'latex_source', 'src','image','exemath');
+	document.getElementById("srcbrowsercontainer").innerHTML = html;
 
 	// Over browser
-        // r3m0: disable these:
-	//html = getBrowserHTML('oversrcbrowser','onmouseoversrc','image','advimage');
-	//document.getElementById("onmouseoversrccontainer").innerHTML = html;
+//	html = getBrowserHTML('oversrcbrowser','onmouseoversrc','image','advimage');
+//	document.getElementById("onmouseoversrccontainer").innerHTML = html;
 
 	// Out browser
-        // r3m0: disable these:
-	//html = getBrowserHTML('outsrcbrowser','onmouseoutsrc','image','advimage');
-	//document.getElementById("onmouseoutsrccontainer").innerHTML = html;
+//	html = getBrowserHTML('outsrcbrowser','onmouseoutsrc','image','advimage');
+//	document.getElementById("onmouseoutsrccontainer").innerHTML = html;
 
 	// Longdesc browser
-        // r3m0: disable these:
-	//html = getBrowserHTML('longdescbrowser','longdesc','file','advimage');
-	//document.getElementById("longdesccontainer").innerHTML = html;
+//	html = getBrowserHTML('longdescbrowser','longdesc','file','advimage');
+//	document.getElementById("longdesccontainer").innerHTML = html;
 
 	// Resize some elements
 	if (isVisible('srcbrowser'))
 		document.getElementById('src').style.width = '260px';
 
-	if (isVisible('oversrcbrowser'))
-		document.getElementById('onmouseoversrc').style.width = '260px';
+//	if (isVisible('oversrcbrowser'))
+//		document.getElementById('onmouseoversrc').style.width = '260px';
 
-	if (isVisible('outsrcbrowser'))
-		document.getElementById('onmouseoutsrc').style.width = '260px';
+//	if (isVisible('outsrcbrowser'))
+//		document.getElementById('onmouseoutsrc').style.width = '260px';
 
-	if (isVisible('longdescbrowser'))
-		document.getElementById('longdesc').style.width = '180px';
+//	if (isVisible('longdescbrowser'))
+//		document.getElementById('longdesc').style.width = '180px';
 
 	// Check action
 	if (elm != null && elm.nodeName == "IMG")
@@ -152,11 +136,9 @@ function init() {
 	formObj.insert.value = tinyMCE.getLang('lang_' + action, 'Insert', true); 
 
 	if (action == "update") {
-                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step A');
-
 		var src = tinyMCE.getAttrib(elm, 'src');
-		var onmouseoversrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseover')));
-		var onmouseoutsrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseout')));
+//		var onmouseoversrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseover')));
+//		var onmouseoutsrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseout')));
 
 		src = convertURL(src, elm, true);
 
@@ -169,11 +151,11 @@ function init() {
 				src = convertURL(src, elm, true);
 		}
 
-		if (onmouseoversrc != "" && tinyMCE.getParam('convert_urls'))
-			onmouseoversrc = convertURL(onmouseoversrc, elm, true);
+//		if (onmouseoversrc != "" && tinyMCE.getParam('convert_urls'))
+//			onmouseoversrc = convertURL(onmouseoversrc, elm, true);
 
-		if (onmouseoutsrc != "" && tinyMCE.getParam('convert_urls'))
-			onmouseoutsrc = convertURL(onmouseoutsrc, elm, true);
+//		if (onmouseoutsrc != "" && tinyMCE.getParam('convert_urls'))
+//			onmouseoutsrc = convertURL(onmouseoutsrc, elm, true);
 
 		// Setup form data
 		var style = tinyMCE.parseStyle(tinyMCE.getAttrib(elm, "style"));
@@ -190,8 +172,8 @@ function init() {
 		formObj.hspace.value = tinyMCE.getAttrib(elm, 'hspace');
 		formObj.width.value  = orgImageWidth;
 		formObj.height.value = orgImageHeight;
-		formObj.onmouseoversrc.value = onmouseoversrc;
-		formObj.onmouseoutsrc.value  = onmouseoutsrc;
+//		formObj.onmouseoversrc.value = onmouseoversrc;
+//		formObj.onmouseoutsrc.value  = onmouseoutsrc;
 		formObj.id.value  = tinyMCE.getAttrib(elm, 'id');
 		formObj.dir.value  = tinyMCE.getAttrib(elm, 'dir');
 		formObj.lang.value  = tinyMCE.getAttrib(elm, 'lang');
@@ -209,39 +191,26 @@ function init() {
 
 		selectByValue(formObj, 'classlist', tinyMCE.getAttrib(elm, 'class'));
 		selectByValue(formObj, 'imagelistsrc', src);
-		selectByValue(formObj, 'imagelistover', onmouseoversrc);
-		selectByValue(formObj, 'imagelistout', onmouseoutsrc);
+//		selectByValue(formObj, 'imagelistover', onmouseoversrc);
+//		selectByValue(formObj, 'imagelistout', onmouseoutsrc);
 
 		updateStyle();
-                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step B: b4 preview');
-	        // r3m0: 
 		showPreviewImage(src, true);
-                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step C: after preview');
 		changeAppearance();
-	        // r3m0: 
-                //alert('r3m0: called init() in exemaths functions.js!!! action = update, step D: after changeAppearance');
 
 		window.focus();
 	} else
-                //alert('r3m0: called init() in exemaths functions.js!!! action != update, step A');
 		addClassesToList('classlist', 'advimage_styles');
-
-        //alert('r3m0: called init() in exemaths functions.js!!! , step B');
 
 	// If option enabled default contrain proportions to checked
 	if (tinyMCE.getParam("advimage_constrain_proportions", true))
 		formObj.constrain.checked = true;
 
-        //alert('r3m0: called init() in exemaths functions.js!!! , step C');
-
-// r3m0: didn't seem to work:
-//	// Check swap image if valid data
+	// Check swap image if valid data
 //	if (formObj.onmouseoversrc.value != "" || formObj.onmouseoutsrc.value != "")
 //		setSwapImageDisabled(false);
 //	else
 //		setSwapImageDisabled(true);
-
-        //alert('r3m0: called init() in exemaths functions.js!!! , step D');
 }
 
 function setSwapImageDisabled(state) {
@@ -334,8 +303,8 @@ function insertAction() {
 	var elm = inst.getFocusElement();
 	var formObj = document.forms[0];
 	var src = formObj.src.value;
-	//var onmouseoversrc = formObj.onmouseoversrc.value;
-	//var onmouseoutsrc = formObj.onmouseoutsrc.value;
+//	var onmouseoversrc = formObj.onmouseoversrc.value;
+//	var onmouseoutsrc = formObj.onmouseoutsrc.value;
 
 	if (!AutoValidator.validate(formObj)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
@@ -347,11 +316,11 @@ function insertAction() {
 			return;
 	}
 
-	//if (onmouseoversrc && onmouseoversrc != "")
-	//	onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
+//	if (onmouseoversrc && onmouseoversrc != "")
+//		onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
 
-	//if (onmouseoutsrc && onmouseoutsrc != "")
-	//	onmouseoutsrc = "this.src='" + convertURL(onmouseoutsrc, tinyMCE.imgElement) + "';";
+//	if (onmouseoutsrc && onmouseoutsrc != "")
+//		onmouseoutsrc = "this.src='" + convertURL(onmouseoutsrc, tinyMCE.imgElement) + "';";
 
 	if (elm != null && elm.nodeName == "IMG") {
 		setAttrib(elm, 'src', convertURL(src, tinyMCE.imgElement));
@@ -363,8 +332,8 @@ function insertAction() {
 		setAttrib(elm, 'hspace');
 		setAttrib(elm, 'width');
 		setAttrib(elm, 'height');
-		//setAttrib(elm, 'onmouseover', onmouseoversrc);
-		//setAttrib(elm, 'onmouseout', onmouseoutsrc);
+//		setAttrib(elm, 'onmouseover', onmouseoversrc);
+//		setAttrib(elm, 'onmouseout', onmouseoutsrc);
 		setAttrib(elm, 'id');
 		setAttrib(elm, 'dir');
 		setAttrib(elm, 'lang');
@@ -395,8 +364,8 @@ function insertAction() {
 		html += makeAttrib('hspace');
 		html += makeAttrib('width');
 		html += makeAttrib('height');
-		//html += makeAttrib('onmouseover', onmouseoversrc);
-		//html += makeAttrib('onmouseout', onmouseoutsrc);
+//		html += makeAttrib('onmouseover', onmouseoversrc);
+//		html += makeAttrib('onmouseout', onmouseoutsrc);
 		html += makeAttrib('id');
 		html += makeAttrib('dir');
 		html += makeAttrib('lang');
@@ -433,7 +402,7 @@ function changeAppearance() {
 function changeMouseMove() {
 	var formObj = document.forms[0];
 
-	setSwapImageDisabled(!formObj.onmousemovecheck.checked);
+//	setSwapImageDisabled(!formObj.onmousemovecheck.checked);
 }
 
 function updateStyle() {
@@ -520,27 +489,24 @@ function onSelectMainImage(target_form_element, name, value) {
 	formObj.title.value = name;
 
 	resetImageData();
-        showPreviewImage(formObj.elements[target_form_element].value, false);
+	showPreviewImage(formObj.elements[target_form_element].value, false);
 }
 
 function showPreviewImage(src, start) {
-	var formObj = document.forms[0];
+	var formObj = document.forms[0]; 
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step A, src='+src+',start='+start);
 
-	// r3m0: 
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step A');
 
 	selectByValue(document.forms[0], 'imagelistsrc', src);
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step A2, src now='+src);
 
 	var elm = document.getElementById('prev');
 	var src = src == "" ? src : tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'], src);
+        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step B, elm='+elm+', src='+src);
 
-	// r3m0: 
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step B');
+	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
+		resetImageData();
 
-//	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
-//		resetImageData();
-
-	// r3m0: 
         //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step C');
 
 	if (src == "")
@@ -548,7 +514,6 @@ function showPreviewImage(src, start) {
 	else
 		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
 
-	// r3m0: 
         //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step D');
 }
 
@@ -568,10 +533,7 @@ function updateImageData(start) {
 
 function resetImageData() {
 	var formObj = document.forms[0];
-
-	// r3m0: 
-        alert('r3m0: called resetImageData() in exemaths functions.js!!! probably due to error');
-
+        //alert('r3m0: called resetImageData()!!!! previously, formObj width='+formObj.width.value+', and height='+formObj.height.value);
 	formObj.width.value = formObj.height.value = "";	
 }
 
@@ -585,8 +547,10 @@ function getSelectValue(form_obj, field_name) {
 }
 
 function getImageListHTML(elm_id, target_form_element, onchange_func) {
+        //alert('r3m0: called getImageList()');
 	if (typeof(tinyMCEImageList) == "undefined" || tinyMCEImageList.length == 0)
 		return "";
+        //alert('r3m0: and still in getImageList()');
 
 	var html = "";
 
@@ -609,7 +573,5 @@ function getImageListHTML(elm_id, target_form_element, onchange_func) {
 	// tinyMCE.debug('-- image list start --', html, '-- image list end --');
 }
 
-// r3m0: try disabling this:
-// // While loading
-//preinit();
-
+// While loading
+preinit();

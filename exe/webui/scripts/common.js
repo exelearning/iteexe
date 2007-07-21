@@ -346,6 +346,12 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, type, win) {
 
     var local_imagePath = ""
 
+    //alert("r3m0 test: called makeMathImage_viaTinyMCE() & not doing YET anyting!\n"  + ", field_name = " + field_name + ", src_latex = " + src_latex  + ", type = " + type + ", win = " + win + "\n preview files to be: " + preview_math_imagefile + ", and: " + preview_math_srcfile);
+
+    if (src_latex == "") {
+       return;
+    }
+
     // to help unique-ify each previewed math image:
     // note: leave the "/preview" off of it, allowing the server to do that:
     var preview_basename = "eXe_LaTeX_math_"+curr_edits_math_num
@@ -357,9 +363,6 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, type, win) {
     var preview_math_srcfile = preview_basename+".tex"
    
     curr_edits_math_num += 1
-
-    //alert("r3m0 test: called makeMathImage_viaTinyMCE() & not doing YET anyting!\n"  + ", field_name = " + field_name + ", src_latex = " + src_latex  + ", type = " + type + ", win = " + win + "\n preview files to be: " + preview_math_imagefile + ", and: " + preview_math_srcfile);
-
 
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     // pass the file information on to the server,

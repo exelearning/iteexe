@@ -465,7 +465,7 @@ function onSelectMainImage(target_form_element, name, value) {
 }
 
 function showPreviewImage(src, start) {
-	var formObj = document.forms[0];
+	var formObj = document.forms[0]; 
 
 	selectByValue(document.forms[0], 'imagelistsrc', src);
 
@@ -479,6 +479,7 @@ function showPreviewImage(src, start) {
 		elm.innerHTML = "";
 	else
 		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
+
 }
 
 function updateImageData(start) {

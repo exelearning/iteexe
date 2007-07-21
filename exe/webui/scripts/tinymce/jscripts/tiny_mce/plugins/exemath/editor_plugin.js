@@ -8,7 +8,7 @@
 /* Import plugin specific language pack */
 tinyMCE.importPluginLanguagePack('exemath');
 
-var TinyMCE_ExeMathPlugin = {
+var TinyMCE_AdvancedImagePlugin = {
 	getInfo : function() {
 		return {
 			longname : 'eXe math LaTeX-based plugin using mimetex',
@@ -21,11 +21,9 @@ var TinyMCE_ExeMathPlugin = {
 
 	getControlHTML : function(cn) {
 		switch (cn) {
+			//case "image":
 			case "exemath":
-				// return tinyMCE.getButtonHTML(cn, 'lang_image_desc', '{$pluginurl}/images/exemath.gif', 'mceExeMath');
-                                // hey, the ABOVE works ^^^^^^^^^^^^  BUT until we have our OWN real icon, just use:
-				//return tinyMCE.getButtonHTML(cn, 'lang_exemath_desc', '{$pluginurl}/images/visualaid.gif', 'mceExeMath');
-                                // and the above works great, too!
+				//return tinyMCE.getButtonHTML(cn, 'lang_image_desc', '{$themeurl}/images/image.gif', 'mceAdvImage');
 				return tinyMCE.getButtonHTML(cn, 'lang_exemath_desc', '{$pluginurl}/images/exemath.gif', 'mceExeMath');
 		}
 
@@ -39,7 +37,6 @@ var TinyMCE_ExeMathPlugin = {
 				var template = new Array();
 
 				//template['file']   = '../../plugins/advimage/image.htm';
-				//template['file']   = '../../plugins/exemath/image.htm';
 				template['file']   = '../../plugins/exemath/exemath.htm';
 				template['width']  = 480;
 				template['height'] = 380;
@@ -118,7 +115,8 @@ var TinyMCE_ExeMathPlugin = {
 
 		do {
 			if (node.nodeName == "IMG" && tinyMCE.getAttrib(node, 'class').indexOf('mceItem') == -1) {
-				tinyMCE.switchClass(editor_id + '_advimage', 'mceButtonSelected');
+				//tinyMCE.switchClass(editor_id + '_advimage', 'mceButtonSelected');
+				tinyMCE.switchClass(editor_id + '_exemath', 'mceButtonSelected');
 				return true;
 			}
 		} while ((node = node.parentNode));
@@ -153,4 +151,5 @@ var TinyMCE_ExeMathPlugin = {
 	}
 };
 
-tinyMCE.addPlugin("exemath", TinyMCE_ExeMathPlugin);
+//tinyMCE.addPlugin("advimage", TinyMCE_AdvancedImagePlugin);
+tinyMCE.addPlugin("exemath", TinyMCE_AdvancedImagePlugin);
