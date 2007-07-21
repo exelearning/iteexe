@@ -2,6 +2,7 @@
 
 tinyMCE.addToLang('exemath',{
 desc : 'LaTeX to Math for eXe',
+contextmenu_update : 'LaTeX Math Image properties',
 generate_title : 'Generate eXe LaTeX Math Image',
 compile_tooltip : 'Generated Math Image',
 latex_source : 'LaTeX source',

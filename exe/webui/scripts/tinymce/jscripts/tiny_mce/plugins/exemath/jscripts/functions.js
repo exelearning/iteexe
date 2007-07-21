@@ -131,7 +131,8 @@ function init() {
 
 	// Check action
 	if (elm != null && elm.nodeName == "IMG")
-		action = "update";
+		action = "update"; 
+	//alert('r3m0: start of init(), and action now = '+action);
 
 	formObj.insert.value = tinyMCE.getLang('lang_' + action, 'Insert', true); 
 
@@ -141,6 +142,7 @@ function init() {
 //		var onmouseoutsrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseout')));
 
 		src = convertURL(src, elm, true);
+	        //alert('r3m0: in init(), after convertURL, src= '+src);
 
 		// Use mce_src if found
 		var mceRealSrc = tinyMCE.getAttrib(elm, 'mce_src');
@@ -150,6 +152,7 @@ function init() {
 			if (tinyMCE.getParam('convert_urls'))
 				src = convertURL(src, elm, true);
 		}
+		//alert('r3m0: in init(), after mceRealSrc, src= '+src);
 
 //		if (onmouseoversrc != "" && tinyMCE.getParam('convert_urls'))
 //			onmouseoversrc = convertURL(onmouseoversrc, elm, true);
@@ -164,8 +167,11 @@ function init() {
 		orgImageWidth = trimSize(getStyle(elm, 'width'))
 		orgImageHeight = trimSize(getStyle(elm, 'height'));
 
+		//alert('r3m0: in init(), before formObjs...');
+
 		formObj.src.value    = src;
 		formObj.alt.value    = tinyMCE.getAttrib(elm, 'alt');
+
 		formObj.title.value  = tinyMCE.getAttrib(elm, 'title');
 		formObj.border.value = trimSize(getStyle(elm, 'border', 'borderWidth'));
 		formObj.vspace.value = tinyMCE.getAttrib(elm, 'vspace');
@@ -177,9 +183,10 @@ function init() {
 		formObj.id.value  = tinyMCE.getAttrib(elm, 'id');
 		formObj.dir.value  = tinyMCE.getAttrib(elm, 'dir');
 		formObj.lang.value  = tinyMCE.getAttrib(elm, 'lang');
-		formObj.longdesc.value  = tinyMCE.getAttrib(elm, 'longdesc');
-		formObj.usemap.value  = tinyMCE.getAttrib(elm, 'usemap');
+//		formObj.longdesc.value  = tinyMCE.getAttrib(elm, 'longdesc');
+//		formObj.usemap.value  = tinyMCE.getAttrib(elm, 'usemap');
 		formObj.style.value  = tinyMCE.serializeStyle(style);
+
 
 		// Select by the values
 		if (tinyMCE.isMSIE)
@@ -195,7 +202,9 @@ function init() {
 //		selectByValue(formObj, 'imagelistout', onmouseoutsrc);
 
 		updateStyle();
+		//alert('r3m0: in init(),  just before showPreviewImage with src='+src);
 		showPreviewImage(src, true);
+		//alert('r3m0: in init(),  just after showPreviewImage with src='+src);
 		changeAppearance();
 
 		window.focus();
@@ -325,6 +334,11 @@ function insertAction() {
 	if (elm != null && elm.nodeName == "IMG") {
 		setAttrib(elm, 'src', convertURL(src, tinyMCE.imgElement));
 		setAttrib(elm, 'mce_src', src);
+
+		// r3m0: trying to force the exe_math_latex attribute:
+		setAttrib(elm, 'exe_math_latex', 'bogus1=UpdatedExistingMathImage');
+                // this IS used in updating an existing image!!!!!
+
 		setAttrib(elm, 'alt');
 		setAttrib(elm, 'title');
 		setAttrib(elm, 'border');
@@ -357,6 +371,11 @@ function insertAction() {
 
 		html += makeAttrib('src', convertURL(src, tinyMCE.imgElement));
 		html += makeAttrib('mce_src', src);
+
+		// r3m0: trying to force the exe_math_latex attribute:
+		html += makeAttrib('exe_math_latex', 'bogus2=NewMathImage');
+                // this IS used in creating a new image!!!!!
+
 		html += makeAttrib('alt');
 		html += makeAttrib('title');
 		html += makeAttrib('border');
@@ -487,6 +506,10 @@ function onSelectMainImage(target_form_element, name, value) {
 
 	formObj.alt.value = name;
 	formObj.title.value = name;
+
+	// r3m0: trying to force the exe_math_latex attribute:
+	//setAttrib(elm, 'exe_math_latex', 'bogus1');
+	formObj.exe_math_latex.value    = 'bogus4';
 
 	resetImageData();
 	showPreviewImage(formObj.elements[target_form_element].value, false);

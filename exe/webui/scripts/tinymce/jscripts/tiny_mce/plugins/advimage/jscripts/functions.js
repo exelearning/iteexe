@@ -166,7 +166,7 @@ function init() {
 		selectByValue(formObj, 'imagelistover', onmouseoversrc);
 		selectByValue(formObj, 'imagelistout', onmouseoutsrc);
 
-		updateStyle();
+		updateStyle(); 
 		showPreviewImage(src, true);
 		changeAppearance();
 
