@@ -534,13 +534,17 @@ function showPreviewImage(src, start) {
 
 	if (src == "")
 		elm.innerHTML = "";
-	else
-		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
+	else {
+		//elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
+		// r3m0: add the src to the exemath previews, 
+		// such that updateImageData() can load its .tex source as well:
+		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start +', \'' + src + '\');" onerror="resetImageData();" />'
+	}
 
         //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step D');
 }
 
-function updateImageData(start) {
+function updateImageData(start, src) {
 	var formObj = document.forms[0];
 
 	preloadImg = document.getElementById('previewImg');
@@ -552,6 +556,77 @@ function updateImageData(start) {
 		formObj.height.value = preloadImg.height;
 
 	updateStyle();
+
+	//////////////////////////////////////
+	// with hardcoded example for now, expecting "/previews/example_math.tex"
+	// NOTE: for some reason the alerts seem to cause problems during this stage of the image's load.
+	if (src != "") {
+	   // this is an exemath image to preview, meaning that it should have its .tex at: 
+	   // 	/previews/eXe_LaTeX_math_#.gif.tex
+	   //var input_filename = "/previews/example_math.tex"
+	   var input_filename = src+".tex" 
+	   //alert('r3m0: testing to load in the corresponding data file from:' + input_filename); 
+	   objXml = new XMLHttpRequest();
+
+	   //alert('r3m0: after xmlhttprequest.');
+	   objXml.open("GET",input_filename,false);
+	   //alert('r3m0: after open with a GET');
+	   objXml.send(null);
+	   //alert('r3m0: after send');
+	   //alert(objXml.responseText);
+
+// NEXT UP in this prototype:
+// See how to get the input_filename from the image element's "exemath_..." attribute,
+// which SHOULD have already been loaded by this point, but could be in another instance
+// of this Javascript code?  hmmmmmm....
+// Assuming that we CAN get access to this,
+// a) if the attribute is NOT found (as might be the case for a brand-new image),
+//    then just break out of the following, no worries.
+// b) UNLESS.... what about the case where a math image is called to update?
+//	the first time it loads will be fine, cuz it'll use that attribute (if able to find :-)),
+//	BUT, what if future calls to Generate Math Image result in the new images,
+//	but leave the old attribute lying around in memory?  it would keep reverting back to the
+//	old LaTeX source, even though the image will have been properly updated.
+//	Coder beware :-)
+//	If this turns out to be  a problem, can we ensure that either
+//	- the system updates its own exemath attribute first,
+//	- or that we force that attribute in the image itself?  hmmm, that logic's not right.
+//	MIGHT need to make assumptions about the file name being the same as the imagename + .tex ???
+// and to do this, might be as easy as simply adding the 'src' value to the:
+// 		onload="updateImageData(' + start + ')
+// call that's set to the image in: showPreviewImage(src, start)
+          
+	   var found_source = 1;
+	   if (objXml.responseText == "" || (objXml.responseText.substr(0,"<html>".length) == "<html>" && objXml.responseText.indexOf("404 - No Such Resource") >= 0 && objXml.responseText.indexOf("File not found") >= 0)) {
+	       // then we can be pretty darned sure that it wasn't found :-)
+	       found_source = 0;
+	   }
+
+	   if (found_source) {
+	      alert('r3m0: found source LaTeX = ' + objXml.responseText);
+	      latex_source_elem = document.getElementById('latex_source');
+	      latex_source_elem.value = objXml.responseText;
+	   }
+	   else {
+	      // OR, have the above 
+	      // (a) see if the return text starts with <html>, 
+	      //	unless it actually starts with the "http://127.0.0.1:<port#>"
+	      //	which it shouldn't.
+	      // and
+	      // (b) also check 404 or for 'File not found.' in the embedded HTML
+	      // <html>
+	      // <head><title>404 - No Such Resource</title></head>
+	      // <body><h1>No Such Resource</h1>
+	      // <p>File not found.</p>
+	      // </body></html>
+	      alert('r3m0: no or empty source math found in: ' + input_filename +  ' .  returned was: ' + objXml.responseText);
+	      // can we log a warning somewhere?  at least a better alert?  
+	      // or just quietly don't have it there (to avoid translation issues)?
+	   }
+	}
+
+
+	// Q: should objXml then be deleted once complete? we don't want no RAM-leaks, eh!
 }
 
 function resetImageData() {

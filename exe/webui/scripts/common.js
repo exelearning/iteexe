@@ -356,11 +356,9 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, type, win) {
     // note: leave the "/preview" off of it, allowing the server to do that:
     var preview_basename = "eXe_LaTeX_math_"+curr_edits_math_num
     var preview_math_imagefile = preview_basename+".gif"
-    // may want to later simplify a subsequent file-lookup process,
-    // but just appending the ".tex" to the full image name, as such:
-    //var preview_math_srcfile = preview_math_imagefile + ".tex"
-    // Until then, though, do it proper-like:
-    var preview_math_srcfile = preview_basename+".tex"
+    // Simplify the subsequent file-lookup process,  by just appending 
+    // the ".tex" to the full image name, as such:
+    var preview_math_srcfile = preview_math_imagefile+".tex"
    
     curr_edits_math_num += 1
 

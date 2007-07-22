@@ -638,7 +638,7 @@ class MainPage(RenderableLivePage):
             # may want to move this up above, to check for errors first?
             tempFileName = compile(latex_source, math_fontsize)
 
-            # HERE: copy the file into previews
+            # copy the file into previews
             server_filename = previewDir.joinpath(preview_image_filename);
             log.debug("handleTinyMCEmath copying math image from \'"\
                     + tempFileName + "\' to \'" \
@@ -646,6 +646,15 @@ class MainPage(RenderableLivePage):
             shutil.copyfile(tempFileName, \
                     server_filename.abspath().encode('utf-8'));
 
+            # and write the latex_source out into the preview_math_srcfile:
+            math_filename = previewDir.joinpath(preview_math_srcfile);
+            log.debug("writing LaTeX source into \'" \
+                    + math_filename.abspath().encode('utf-8') + "\'.");
+            math_file = open(math_filename, 'wb')
+            # do we need to append a \n here?:
+            math_file.write(latex_source);
+            math_file.flush()
+            math_file.close()
 
             # Delete the temp file made by compile 
             Path(tempFileName).remove()
