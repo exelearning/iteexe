@@ -336,8 +336,15 @@ function insertAction() {
 		setAttrib(elm, 'mce_src', src);
 
 		// r3m0: trying to force the exe_math_latex attribute:
-		setAttrib(elm, 'exe_math_latex', 'bogus1=UpdatedExistingMathImage');
-                // this IS used in updating an existing image!!!!!
+		//setAttrib(elm, 'exe_math_latex', 'bogus1=UpdatedExistingMathImage');
+                // UPDATE: this IS used in updating an existing image!!!!!
+		// TRY THIS FIRST: but beware of generating NEW images - may need to update it somehow???
+		setAttrib(elm, 'exe_math_latex', src+'.tex');
+		// the above looks great for first time, new images!
+		// the only issue being that the .gifs are stored as "../previews/",
+		// so, making that match here:
+		//setAttrib(elm, 'exe_math_latex', '..'+src+'.tex');
+		// Leave this to ProcessPreviewedImages to take into account, and for /previews only!
 
 		setAttrib(elm, 'alt');
 		setAttrib(elm, 'title');
@@ -373,8 +380,19 @@ function insertAction() {
 		html += makeAttrib('mce_src', src);
 
 		// r3m0: trying to force the exe_math_latex attribute:
-		html += makeAttrib('exe_math_latex', 'bogus2=NewMathImage');
-                // this IS used in creating a new image!!!!!
+		// html += makeAttrib('exe_math_latex', 'bogus2=NewMathImage');
+		// try to maintain the source name, if possible:
+		html += makeAttrib('exe_math_latex', src+'.tex');
+		// the above looks great for first time, new images!
+		// the only issue being that the .gifs are stored as "../previews/",
+		// so, making that match here:
+		//html += makeAttrib('exe_math_latex', '..'+src+'.tex');
+		// BUT: beware of how this might work (or not) with the images once resourcified,
+		// for those ARE properly shown as being stored in "/resources/".
+		// MIGHT need to either make this smarter here, or back in ProcessPreviewedImages.
+		// Ahhhhhhh, maybe that one will just be done in the UPDATE part, yah?
+		// Leave this to ProcessPreviewedImages to take into account, and for /previews only!
+                // for INSERT: this IS used in creating a new image!!!!!
 
 		html += makeAttrib('alt');
 		html += makeAttrib('title');

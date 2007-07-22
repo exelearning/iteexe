@@ -306,6 +306,14 @@ class FieldWithResources(Field):
 
         self.RemoveZombieResources(resources_in_use)
 
+        #r3m0: log that we're not yet doing the math files!
+        log.warn("r3m0: ====> FIX HERE: we are NOT yet taking into account the paired .tex math source files, and these could have been removed!!!!!")
+        # and furthermore, what DO we want to do about the Massaging of these?
+        # which brings up the question of.... do we even export them?
+        # if not, then the massaging could just remove the attributes which
+        # point to the source files, yes?
+        # perhaps this is best for now, at least until anybody requests it?
+
         return new_content
 
     # A note on the eventual ProcessPreviewedMedia(): 
@@ -564,6 +572,18 @@ class FieldWithResources(Field):
         to build up the corresponding resources from any images (etc.) added
         in by the tinyMCE image-browser plug-in,
         which will have put them into src="../previews/"
+
+        Now updated to include special math images as well, as generated
+        by our custom exemath plugin to TinyMCE.  These are to follow the
+        naming convention of "eXe_LaTeX_math_#.gif" (where the # is only
+        guaranteed to be unique per Preview session, and can therefore end
+        up being resource-ified into "eXe_LaTeX_math_#.#.gif"). Furthermore,
+        they are to be paired with a source LateX file which is to be of
+        the same name, followed by .tex, e.g., "eXe_LaTeX_math_#.gif.tex"
+        (and to maintain this pairing, as a resource will need to be named
+        "eXe_LaTeX_math_#.#.gif.tex" if applicable, where this does differ
+        slightly from what could be its automatic unique-ified 
+        resource-ification of: "eXe_LaTeX_math_#.gif.#.tex"!!!)
         """
         new_content = content
 
@@ -741,6 +761,34 @@ class FieldWithResources(Field):
                                                      new_src_string)
                    log.debug("ProcessPreviewedImages: built resource: " \
                            + resource_url)
+
+                   # r3m0: 
+                   # check to see if this was an exemath image.
+                   # If so, then go ahead and handle its counterpart
+                   # LaTeX source file as well.
+                   # Begin by seeing if this file began with the naming scheme:
+                   # WARNING: THERE MIGHT BE A DISCREPENCY:
+                   # the math source are being stored as "/previews/..."
+                   # while the actual images are still getting "../previews".
+                   # So, COULD take that into account here, OR...
+                   # just making them match up back in exemath.
+                   # (can more easily do here...)
+                   # BUT, BEWARE of any problems due to this once they
+                   # are resourcified! and further UPDATE edits are done.
+                   if resource_path.find("eXe_LaTeX_math_") >= 0:
+                   
+                       log.debug("r3m0: =====> hey, cool, this might be a math image!")
+                       # Remember that the actual image is 
+                       preview_math_src = file_url_str.replace("../previews",\
+                               "/previews") + ".tex"
+                       log.debug("r3m0: looking for an exe_math_latex tag that begins with: " + preview_math_src)
+                       #new_content = self.ProcessPairedMathSource(new_content,\
+                       #        file_url_str, resource_path, resource_url)
+                       log.debug("r3m0: and will change its name to " \
+                               + resource_path + ".tex, and change its tag "\
+                               + " to point to " + resource_url + ".tex")
+
+
                else:
                    log.warn("file '"+file_name_str+"' does not exist; " \
                            + "unable to include it as a possible image " \
