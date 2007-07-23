@@ -344,7 +344,21 @@ function insertAction() {
 		// the only issue being that the .gifs are stored as "../previews/",
 		// so, making that match here:
 		//setAttrib(elm, 'exe_math_latex', '..'+src+'.tex');
-		// Leave this to ProcessPreviewedImages to take into account, and for /previews only!
+		//////////////////////////////////
+		// Okay, here's the deal :-)
+		// This is the UPDATE page, so typically images will come in at source = "/resources/..."
+		// BUT, it's possible for the image to be freshly generated again, in which
+		// case it will come in with source = "/previews/...",
+		// but remember that this (and advimage itself, from which this came),
+		// has the "feature" somewhere that source = "/previews" will be saved out somewhere
+		// as source = "../previews", AND that this "feature" is actually used in eXe to
+		// distinguish between images and media (which properly keeps "/previews").
+		// So, while the INSERT mode, below, always forces the "../previews" for new images,
+		// only do so here if this one is coming again from previews:
+		if (src.substr(0,"/previews".length) == "/previews") {
+		   setAttrib(elm, 'exe_math_latex', '..'+src+'.tex');
+		}
+
 
 		setAttrib(elm, 'alt');
 		setAttrib(elm, 'title');
@@ -382,16 +396,17 @@ function insertAction() {
 		// r3m0: trying to force the exe_math_latex attribute:
 		// html += makeAttrib('exe_math_latex', 'bogus2=NewMathImage');
 		// try to maintain the source name, if possible:
-		html += makeAttrib('exe_math_latex', src+'.tex');
+		//html += makeAttrib('exe_math_latex', src+'.tex');
 		// the above looks great for first time, new images!
 		// the only issue being that the .gifs are stored as "../previews/",
 		// so, making that match here:
-		//html += makeAttrib('exe_math_latex', '..'+src+'.tex');
+		html += makeAttrib('exe_math_latex', '..'+src+'.tex');
 		// BUT: beware of how this might work (or not) with the images once resourcified,
 		// for those ARE properly shown as being stored in "/resources/".
 		// MIGHT need to either make this smarter here, or back in ProcessPreviewedImages.
 		// Ahhhhhhh, maybe that one will just be done in the UPDATE part, yah?
 		// Leave this to ProcessPreviewedImages to take into account, and for /previews only!
+                // that way, they'll also match when a math-image is Updated, showing it as ../previews.
                 // for INSERT: this IS used in creating a new image!!!!!
 
 		html += makeAttrib('alt');
@@ -621,7 +636,7 @@ function updateImageData(start, src) {
 	   }
 
 	   if (found_source) {
-	      alert('r3m0: found source LaTeX = ' + objXml.responseText);
+	      //alert('r3m0: found source LaTeX = ' + objXml.responseText);
 	      latex_source_elem = document.getElementById('latex_source');
 	      latex_source_elem.value = objXml.responseText;
 	   }
@@ -637,7 +652,8 @@ function updateImageData(start, src) {
 	      // <body><h1>No Such Resource</h1>
 	      // <p>File not found.</p>
 	      // </body></html>
-	      alert('r3m0: no or empty source math found in: ' + input_filename +  ' .  returned was: ' + objXml.responseText);
+	      //alert('r3m0: no or empty source math found in: ' + input_filename +  ' .  returned was: ' + objXml.responseText);
+	      alert('Warning: no source math found in: ' + input_filename);
 	      // can we log a warning somewhere?  at least a better alert?  
 	      // or just quietly don't have it there (to avoid translation issues)?
 	   }

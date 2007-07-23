@@ -255,26 +255,26 @@ class FieldWithResources(Field):
         """
         Find and return the name of all active image resources,
         to help find those no longer in use and in need of purging.
+        This finds images and media as well, since they both use src="...".
+        It now also finds any math-images' paired exe_math_latex sources, too!
         """
         resources_in_use =  []
+        search_strings = ["src=\"resources/", "exe_math_latex=\"resources/"]
 
-        search_str = "src=\"resources/" 
-        found_pos = content.find(search_str) 
-        while found_pos >= 0: 
-            end_pos = content.find('\"', found_pos+len(search_str)) 
-            # assume well-formed with matching quote:
-            if end_pos > 0: 
-                # extract the actual resource name, after src=\"resources:
-                resource_str = content[found_pos+len(search_str):end_pos] 
-                # NEXT: add it to the resources_in_use, if not already!
-                resources_in_use.append(resource_str)
-                # ====> may need to test with an element using same image 2x
-                # AND be sure to save the same string used in images[],
-                # if that means keeping the resources/ bit for storageName?
-                # AND, beware of possibly needing to escape/unescape spaces.
-            
-            # Find the next source image in the content, continuing the loop:
-            found_pos = content.find(search_str, found_pos+1) 
+        for search_num in range(len(search_strings)): 
+            #search_str = "src=\"resources/" 
+            search_str = search_strings[search_num] 
+            found_pos = content.find(search_str) 
+            while found_pos >= 0: 
+                end_pos = content.find('\"', found_pos+len(search_str)) 
+                # assume well-formed with matching quote: 
+                if end_pos > 0: 
+                    # extract the actual resource name, after src=\"resources:
+                    resource_str = content[found_pos+len(search_str):end_pos] 
+                    # NEXT: add it to the resources_in_use, if not already!
+                    resources_in_use.append(resource_str)
+                # Find the next source image in the content, continuing:
+                found_pos = content.find(search_str, found_pos+1) 
 
         return resources_in_use
 
@@ -567,6 +567,122 @@ class FieldWithResources(Field):
         # end ProcessPreviewedMedia()
 
 
+    def ProcessPairedMathSource(self, content, preview_math_src, \
+            math_image_resource_filename, math_image_resource_url):
+        """
+        to build up the corresponding LaTeX math-source file resources 
+        from any math images added.  called from ProcessPreviewedImages() as:
+        #log.debug("r3m0: looking for an exe_math_latex tag that equals:"
+        #         + preview_math_src) 
+        new_content = self.ProcessPairedMathSource(new_content,\ 
+                preview_math_src, resource_path, resource_url) 
+        #log.debug("r3m0: and will change its name to " \ 
+        #        + resource_path + ".tex, and change its tag "\ 
+        #        + " to point to " + resource_url + ".tex")
+        """
+        new_content = content
+        log.debug('r3m0: welcome to ProcessPairedMathSource(): ' \
+                + 'exe_math_latex='+preview_math_src)
+        # we are given the exe_math_latex attribute =: 
+        #       "src=\"../previews/eXe_LaTeX_math_1.gif.tex\""
+        # 1. strip out just the filename:
+        # BUT SAVE preview_math_file for later string replacement....
+        quoteless_math_src  = preview_math_src.replace("\"","")
+        preview_math_file = quoteless_math_src.replace("src=","")
+        math_file = preview_math_file.replace("../previews/","")
+
+        log.debug('   looking for preview exe_math_latex file: ' + math_file);
+        # 2. check for the file existing in the previews dir
+        webDir     = Path(G.application.tempWebDir)
+        previewDir  = webDir.joinpath('previews')
+        full_math_filename = previewDir.joinpath(math_file);
+
+        # and now, extract just the filename string back out of that:
+        math_file_name_str = full_math_filename.abspath().encode('utf-8');
+
+        # Be sure to check that this file even exists before even 
+        # attempting to create a corresponding GalleryImage resource:
+        if os.path.exists(math_file_name_str) \
+        and os.path.isfile(math_file_name_str): 
+            log.debug('    good, found it!!!!!') 
+            # 3. If (and only if) the resource_path name differs from it,
+            expected_mathsrc_resource_filename = \
+                    math_image_resource_filename+".tex"
+            if (math_file != expected_mathsrc_resource_filename):
+                log.debug('     BUT, it no longer syncs to the image file, '\
+                        + 'which is now named: ' \
+                        + math_image_resource_filename)
+                # 3a.   then go ahead and copy to the new filename,
+                #    using the allyourbase subdirectory, just in case: 
+                # copy previewDir/longfile to
+                #             previewDir/bases/basename 
+                # (don't worry if this overwrites a previous one) 
+                bases_dir = previewDir.joinpath('allyourbase') 
+                if not bases_dir.exists(): 
+                    bases_dir.makedirs() 
+                base_file_name = bases_dir.joinpath(\
+                        expected_mathsrc_resource_filename) 
+                base_file_str = \
+                    base_file_name.abspath().encode('utf-8') 
+                log.debug('To keep sync with the math image resource, ' \
+                        + 'copying math source to: ' + base_file_str \
+                        + ' (before resource-ifying).')
+                shutil.copyfile(math_file_name_str, base_file_str)
+
+                # 3b. set the new math filenames:
+                full_math_filename = base_file_name
+                math_file_name_str = base_file_str
+
+            else:
+                log.debug('    which still syncs with the image file.')
+
+            # 4. make the actual resource via GalleryImage 
+
+            # Not sure why this can't be imported up top, but it gives 
+            # ImportError: cannot import name GalleryImages, 
+            # so here it be: 
+            from exe.engine.galleryidevice  import GalleryImage
+
+            # note: the middle GalleryImage field is currently 
+            # an unused caption: 
+            new_GalleryImage = GalleryImage(self, \
+                    '', math_file_name_str, \
+                    mkThumbnail=False) 
+            new_GalleryImageResource = new_GalleryImage._imageResource 
+            mathsrc_resource_path = new_GalleryImageResource._storageName 
+            # and re-concatenate from the global resources name, 
+            # to build the webUrl to the resource: 
+            mathsrc_resource_url = new_GalleryImage.resourcesUrl \
+                    + mathsrc_resource_path
+
+            # AND compare with the newly built resource_url from above,
+            # to ensure that we've got what we had expected, jah!
+            if (mathsrc_resource_url != math_image_resource_url+".tex"):
+                log.warn('The math source was resource-ified differently ' \
+                        + 'than expected, to: ' + mathsrc_resource_url \
+                        + '; using it anyhow')
+            else:
+                log.debug('math source was resource-ified properly to: ' \
+                        + mathsrc_resource_url)
+
+            # 5. do a global string replace of the old attribute with the new,
+            #   rebuilding the full attribute to: "src=\"/ <path w/ resources> \""
+            from_str = "exe_math_latex=\""+preview_math_file+"\""
+            to_str =   "exe_math_latex=\""+mathsrc_resource_url+"\""
+            log.debug('replacing exe_math_latex from: ' + from_str \
+                    + ', to: ' + to_str + '.')
+            new_content = new_content.replace(from_str, to_str)
+
+            return new_content
+
+        else:
+            log.warn('ProcessPairedMathSource did not find math source at: '\
+                    + full_math_filename + '; original LaTeX will be absent.')
+            return content
+
+        # end ProcessPairedMathSource()
+
+
     def ProcessPreviewedImages(self, content):
         """
         to build up the corresponding resources from any images (etc.) added
@@ -779,14 +895,17 @@ class FieldWithResources(Field):
                    
                        log.debug("r3m0: =====> hey, cool, this might be a math image!")
                        # Remember that the actual image is 
-                       preview_math_src = file_url_str.replace("../previews",\
-                               "/previews") + ".tex"
-                       log.debug("r3m0: looking for an exe_math_latex tag that begins with: " + preview_math_src)
-                       #new_content = self.ProcessPairedMathSource(new_content,\
-                       #        file_url_str, resource_path, resource_url)
-                       log.debug("r3m0: and will change its name to " \
-                               + resource_path + ".tex, and change its tag "\
-                               + " to point to " + resource_url + ".tex")
+                       #preview_math_src=file_url_str.replace("../previews",\
+                       #        "/previews") + ".tex\""
+                       # "../previews" is now set in exemath to match:
+                       preview_math_src = file_url_str + ".tex\""
+
+                       #log.debug("r3m0: looking for an exe_math_latex tag that equals: " + preview_math_src)
+                       new_content = self.ProcessPairedMathSource(new_content,\
+                               preview_math_src, resource_path, resource_url)
+                       #log.debug("r3m0: and will change its name to " \
+                       #        + resource_path + ".tex, and change its tag "\
+                       #        + " to point to " + resource_url + ".tex")
 
 
                else:

@@ -173,21 +173,16 @@ class AuthoringPage(RenderableResource):
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
-        html += u" theme_advanced_buttons2 : \"image,media,tablecontrols,separator,"
-        html += u"link,unlink,separator,undo,redo,separator,"
+        html += u" theme_advanced_buttons2 : \"image,media,exemath,tablecontrols,"
+        html += u"separator,link,unlink,separator,undo,redo,separator,"
         html += u" charmap,removeformat,cleanup,code,help\",\n"
-        # r3m0: will be adding a new custom plugin, exemath:
-        #html += u" charmap,removeformat,cleanup,code,help,separator,exemath\",\n"
-        ############
-        # HERE: disable exemath before checkins to SVN until ready:
+        
         html += u" theme_advanced_buttons3 : \"\",\n"
-        # r3m0: in process of testing and developing exemath:
-        #html += u" theme_advanced_buttons3 : \"separator,exemath,separator\",\n"
-        #html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
-        ############
-
+       
         # the image-handling callback function for tinyMCE's image button:
         html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        # and the callback to generate exemath's LaTeX images via mimetex:
+        html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
         
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
         html += u"    theme_advanced_resize_horizontal : false,\n"

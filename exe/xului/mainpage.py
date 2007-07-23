@@ -599,6 +599,7 @@ class MainPage(RenderableLivePage):
         print "  (note: this might be were it'll be simpler to have the "
         print "  source LaTex filename merely = original.gif.tex ??)"
         print "  WARNING: also choosing an arbitrary fontsize! need to pass!"
+        print "  AND: this fontsize will need to be saved out as an attribute!"
         # but for now, just choose an arbitrary font-size:
         math_fontsize = 10
         # Q: is that supposed to be a STRING or an INT? == INT!
