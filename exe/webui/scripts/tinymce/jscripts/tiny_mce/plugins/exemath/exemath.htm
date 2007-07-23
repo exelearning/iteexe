@@ -134,13 +134,16 @@
 			<br />
 		</div>
 
+		<!-- <textarea id="latex_source2" name="latex_source2" rows="5" cols="40" value="" />  -->
 						<table class="properties">
 							<tr>
-								<td class="column1"><label id="titlelabel" for="title">{$lang_exemath_latex_source}</label></td> 
+								<!-- <td class="column1"><label id="titlelabel" for="title">{$lang_exemath_latex_source}</label></td>  -->
+								<td nowrap="FALSE" class="column1"><label id="latex_source_label" for="latex_source">{$lang_exemath_latex_source}</label></td> 
 								<td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
 									<tr> 
 								          <!-- <td><input id="title" name="title" type="text" value="" /></td>  -->
-									  <td><input id="latex_source" name="latex_source" type="textarea" rows="5" cols="40" value="" /></td> 
+									  <!-- <td><input id="latex_source" name="latex_source" type="textarea" rows="5" cols="40" value="" /></td>  -->
+									  <td><textarea id="latex_source" name="latex_source" rows="5" cols="40" value="" /></textarea></td> 
 								          <!-- <td id="srcbrowsercontainer">&nbsp;</td> -->
 									  <td id="srcbrowsercontainer"> </td>
 									</tr>
@@ -148,8 +151,10 @@
 							</tr>
 							<tr>
 								<!-- <td class="column1"><label id="srclabel" for="src">{$lang_insert_image_src}</label></td> -->
-								<td class="column1"><label id="srclabel" for="src">{$lang_exemath_image_src}</label></td>
-								<td colspan="2"><input readonly name="src" type="text" id="src" value="" onchange="showPreviewImage(this.value);" /></td> 
+								<td class="column1"><label id="srclabel" for="src"></label></td>
+								<!-- <td class="column1"><label id="srclabel" for="src">{$lang_exemath_image_src}</label></td> -->
+								<td colspan="2"><input readonly name="src" type="hidden" id="src" value="" onchange="showPreviewImage(this.value);" /></td> 
+								<!-- <td colspan="2"><input readonly name="src" type="text" id="src" value="" onchange="showPreviewImage(this.value);" /></td> -->
 								<!-- <td colspan="2"><input name="src" type="text" id="src" value="" onchange="showPreviewImage(this.value);" /></td>  -->
 							</tr>
 							<tr id="imagelistsrcrow">
@@ -157,7 +162,7 @@
 								<td colspan="2" id="imagelistsrccontainer">&nbsp;</td>
 							</tr>
 							<tr> 
-								<td class="column1"><label id="altlabel" for="alt">{$lang_exemath_image_alt}</label></td> 
+								<td nowrap="FALSE" class="column1"><label id="altlabel" for="alt">{$lang_exemath_image_alt}</label></td> 
 								<td colspan="2"><input id="alt" name="alt" type="text" value="" /></td> 
 							</tr> 
 						</table>
