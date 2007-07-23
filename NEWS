@@ -1,6 +1,8 @@
 Next Version
-* Add message to RSS iDevice for when feed fails
 * Add ability to insert MimeTeX math images in any field with TinyMCE
+* Add message to RSS iDevice for when feed fails
+* Add labels to items added in the iDevice editor edit display
+* Fix Image Gallery popup to start at images beyond first row
 
 Version 0.97 (r3024)
 * Add ability to embed media in text areas using TinyMCE toolbar

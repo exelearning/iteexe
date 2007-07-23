@@ -67,16 +67,16 @@ class GalleryBlock(Block):
         i = 0
         for image in self.idevice.images:
             i += 1
-            if i == 1:
+            if i % self.thumbnailsPerRow == 1:
                 html += ['    <tr>']
             html += [u'      <td width="%spx">' % (width+6)]
             html += perCell(image, i-1)
             html += [u'      </td>']
-            if i == self.thumbnailsPerRow:
+            if i % self.thumbnailsPerRow == 0:
                 html += ['    </tr>']
-                i = 0
-        if 0 < i < self.thumbnailsPerRow :
-            html += ['<td></td>'] * (self.thumbnailsPerRow - i)
+        if 0 < i % self.thumbnailsPerRow :
+            html += ['<td></td>'] * (self.thumbnailsPerRow -
+                    (i % self.thumbnailsPerRow))
             html.append('</tr>')
         html += [u'  </tbody>',
                  u'</table>']
