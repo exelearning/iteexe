@@ -705,5 +705,35 @@ function getImageListHTML(elm_id, target_form_element, onchange_func) {
 	// tinyMCE.debug('-- image list start --', html, '-- image list end --');
 }
 
+//////////////////////////////////////
+// insertAtCursor() and insertSymbol()
+// both swiped straight from common.js:
+
+//insertAtCursor(document.formName.fieldName, ?~Qthis value?~R);
+function insertAtCursor(myField, myValue, num) {
+    //MOZILLA/NETSCAPE support
+
+    if (myField.selectionStart || myField.selectionStart == '0') {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        myField.value = myField.value.substring(0, startPos)
+            + myValue
+            + myField.value.substring(endPos, myField.value.length);
+        myField.selectionStart = startPos + myValue.length - num
+    } else {
+        myField.value += myValue;
+    }
+    myField.selectionEnd = myField.selectionStart
+    myField.focus();
+}
+
+//used by maths idevice
+function insertSymbol(id, string, num){
+    var ele = document.getElementById(id);
+    insertAtCursor(ele, string, num)
+}
+
+
+
 // While loading
 preinit();

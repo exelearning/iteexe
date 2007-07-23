@@ -591,13 +591,6 @@ class MainPage(RenderableLivePage):
         errors = 0
 
         print "HEY HEY!! Just sahyin HI from handleTinyMCEmath, yo!"
-        print "  LaTeX source = " + latex_source
-        print "  Writing output image to: " + preview_image_filename
-        print "  Writing source LaTeX to: " + preview_math_srcfile
-        print "  -> need to embed the source LaTeX name into its img tag!"
-        print "  & beware of the file name changes during resourcification."
-        print "  (note: this might be were it'll be simpler to have the "
-        print "  source LaTex filename merely = original.gif.tex ??)"
         print "  WARNING: also choosing an arbitrary fontsize! need to pass!"
         print "  AND: this fontsize will need to be saved out as an attribute!"
         # but for now, just choose an arbitrary font-size:

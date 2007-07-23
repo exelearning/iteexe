@@ -38,12 +38,14 @@ var TinyMCE_ExeMathPlugin = {
 
 				//template['file']   = '../../plugins/advimage/image.htm';
 				template['file']   = '../../plugins/exemath/exemath.htm';
-				template['width']  = 480;
-				template['height'] = 380;
+				//template['width']  = 480;
+				//template['height'] = 380;
+				template['width']  = 580;
+				template['height'] = 430;
 
 				// Language specific width and height addons
-				template['width']  += tinyMCE.getLang('lang_advimage_delta_width', 0);
-				template['height'] += tinyMCE.getLang('lang_advimage_delta_height', 0);
+				//template['width']  += tinyMCE.getLang('lang_advimage_delta_width', 0);
+				//template['height'] += tinyMCE.getLang('lang_advimage_delta_height', 0);
 
 				var inst = tinyMCE.getInstanceById(editor_id);
 				var elm = inst.getFocusElement();
