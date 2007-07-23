@@ -37,12 +37,7 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
-    persistenceVersion = 3
-    # r3m0: trying to upgrade FlashWithText -> FreeText with Flash embedded
-    #persistenceVersion = 4
-    # and this upgrade looks good, BUT, first release the addition of media 
-    # embedding as eXe v0.97 BEFORE then releasing a version which
-    # subtracts any of their iDevices.
+    persistenceVersion = 4
 
 
     def __init__(self):
