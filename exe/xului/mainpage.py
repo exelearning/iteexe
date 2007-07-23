@@ -731,10 +731,10 @@ class MainPage(RenderableLivePage):
                 printit = 1
             exported_dir = self.exportSinglePage(client, filename, webDir, \
                                                  stylesDir, printit)
-            # and truncate the local webserver filesystem from the above 
-            # absolute path, giving only the relative web path:
-            web_printdir = self.get_printdir_relative2web(exported_dir)
-            if printit == 1:
+            # the above will return None if the desired exported directory
+            # already exists (printing always goes to a new temp dir, though):
+            if printit == 1 and not exported_dir is None:
+                web_printdir = self.get_printdir_relative2web(exported_dir)
                 # now that this has ben exported, go ahead and trigger 
                 # the requested printing callback:
                 client.call(print_callback, filename, exported_dir, \
