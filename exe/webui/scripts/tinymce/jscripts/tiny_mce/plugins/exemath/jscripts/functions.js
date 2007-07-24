@@ -53,19 +53,57 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 
         var html = "";
 
+	//html += '<CENTER>&nbsp;{$lang_exemath_compile_label}<BR>';
+	// hmmmm, the above does NOT translate!  
+	// so, for now, as a test, merely put:
+	//html += '<CENTER>&nbsp;until button,<BR>r3m0 say...<BR>PREVIEW:<BR>';
+	html += '<CENTER>&nbsp;Preview:<BR>';
+	// and see how the INSERT/UPDATE/CANCEL buttons are created, and how their $lang is used,
+	// but beware that it might be more difficult to do in this getMathBrowserHTML????
+	// regardless, do need to upgrade to a real button,
+	// and PERHAPS one that can utilize the image as well? (no worries if not, though!)
+	// MIGHT be able to include the label name to translate in the original .htm tag, as:
+	//	<td id="srcbrowsercontainer" name-or-label={$lang_exemath_compile_label}>
+
         html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
+	// and try to put a label with the button: 
+
         //html += '<img id="' + id + '" src="' + themeBaseURL + '/images/browse.gif"';
         html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
 //        html += ' onmouseover="this.className=\'mceButtonOver\';"';
 //        html += ' onmouseout="this.className=\'mceButtonNormal\';"';
 //        html += ' onmousedown="this.className=\'mceButtonDown\';"';
         html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
-        html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" /></a>';
+        //html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" /></a>';
+        html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
+	html += '</CENTER>';
+	html += '</a>';
 
         //alert("r3m0: still setting up image dialog via utils/form_utils.js's getBrowserHTML. returning html = " + html);
 
         return html;
 } // getMathBrowserHTML()
+
+
+
+// r3m0: double new function to actually DO the math-compiling callback in JS:
+// (goodies swiped from getMathBrowserHTML(), this actually performs the callback right now)
+function doMathBrowser(id, source_form_element, target_form_element, type, prefix) {
+        var option = prefix + "_" + type + "_browser_callback";
+        var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
+        //alert("r3m0: HERE IN!!!! doMathBrowser. for id= " + id + ", source_form_element = " + source_form_element + ", target_form_element = " + target_form_element+  ", option = " + option + ", cb = " + cb);
+        if (cb == null)
+                return "";
+
+        var html = "";
+
+        //html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
+	// perhaps this needs to refer to the tinyMCE object for the following openBrower2()???:
+        openBrower2(id, source_form_element , target_form_element , type , option );
+
+        return html;
+} // doMathBrowser()
+
 
 function init() {
 	tinyMCEPopup.resizeToInnerSize();
@@ -309,6 +347,14 @@ function makeAttrib(attrib, value) {
 
 function insertAction() {
 	var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
+
+        //alert('r3m0: testing new call to do one final math-image generate before the insert.');
+	// MAY want to also set a flag if the latex_source has changed, using an onChange() on it,
+	// to see if this is even necessary, but begin for forcing it:
+	doMathBrowser('srcbrowser', 'latex_source', 'src','image','exemath');
+        //alert('r3m0: AFTER new call to do one final math-image generate; continuing with the insert.');
+
+
 	var elm = inst.getFocusElement();
 	var formObj = document.forms[0];
 	var src = formObj.src.value;
