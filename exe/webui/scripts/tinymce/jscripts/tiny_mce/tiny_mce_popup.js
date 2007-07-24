@@ -292,6 +292,23 @@ TinyMCE_Popup.prototype = {
 			eval("tinyMCEPopup.windowOpener." + cb + "(dst_element_id, src_val, type, window);");
 	},
 
+        // Another variation on the above openBrowser(), to allow a second source element_id 
+        // that differs from a destination element_id. (see exemath plugin for example)
+	openBrowser3 : function(src_element_id, src2_element_id, dst_element_id, type, option) {
+		var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
+		var src_val = document.getElementById(src_element_id).value;
+		var src2_val = document.getElementById(src2_element_id).value;
+
+		tinyMCE.setWindowArg("window", window);
+		tinyMCE.setWindowArg("document", document);
+
+		// Call to external callback
+		if (eval('typeof(tinyMCEPopup.windowOpener.' + cb + ')') == "undefined")
+			alert("Callback function: " + cb + " could not be found.");
+		else
+			eval("tinyMCEPopup.windowOpener." + cb + "(dst_element_id, src_val, src2_val, type, window);");
+	},
+
 	importClass : function(c) {
 		var n;
 

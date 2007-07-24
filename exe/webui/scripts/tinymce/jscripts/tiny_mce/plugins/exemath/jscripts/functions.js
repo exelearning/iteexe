@@ -44,7 +44,7 @@ function getImageSrc(str) {
 
 
 // r3m0: brand new function to call up the math-compiling callback in JS:
-function getMathBrowserHTML(id, source_form_element, target_form_element, type, prefix) {
+function getMathBrowserHTML(id, source_form_element, font_size_element, target_form_element, type, prefix) {
         var option = prefix + "_" + type + "_browser_callback";
         var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
         //alert("r3m0: HERE IN!!!! getMathBrowserHTML. for id= " + id + ", source_form_element = " + source_form_element + ", target_form_element = " + target_form_element+  ", option = " + option + ", cb = " + cb);
@@ -68,7 +68,7 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 	html += '<CENTER>&nbsp;';
 	html += '<BUTTON type=\"button\" name=\"PREVIEW\"';
 	//html += ' id="' + id + '_link"';
-        html += 'onclick="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" ';
+        html += 'onclick="javascript:openBrower3(\'' + id + '\',\'' + source_form_element + '\',\'' + font_size_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" ';
 	html += '>';
 	///////
 	// the icon image:
@@ -99,7 +99,7 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 
 // r3m0: double new function to actually DO the math-compiling callback in JS:
 // (goodies swiped from getMathBrowserHTML(), this actually performs the callback right now)
-function doMathBrowser(id, source_form_element, target_form_element, type, prefix) {
+function doMathBrowser(id, source_form_element, font_size_element, target_form_element, type, prefix) {
         var option = prefix + "_" + type + "_browser_callback";
         var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
         //alert("r3m0: HERE IN!!!! doMathBrowser. for id= " + id + ", source_form_element = " + source_form_element + ", target_form_element = " + target_form_element+  ", option = " + option + ", cb = " + cb);
@@ -110,7 +110,7 @@ function doMathBrowser(id, source_form_element, target_form_element, type, prefi
 
         //html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
 	// perhaps this needs to refer to the tinyMCE object for the following openBrower2()???:
-        openBrower2(id, source_form_element , target_form_element , type , option );
+        openBrower3(id, source_form_element, font_size_element, target_form_element, type, option );
 
         return html;
 } // doMathBrowser()
@@ -150,7 +150,7 @@ function init() {
 	// Src browser
 	//html = getBrowserHTML('srcbrowser','src','image','advimage');
 	//html = getMathBrowserHTML('srcbrowser', 'title', 'src','image','exemath');
-	html = getMathBrowserHTML('srcbrowser', 'latex_source', 'src','image','exemath');
+	html = getMathBrowserHTML('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
 	document.getElementById("srcbrowsercontainer").innerHTML = html;
 
 	// Over browser
@@ -220,6 +220,9 @@ function init() {
 
 		formObj.src.value    = src;
 		formObj.alt.value    = tinyMCE.getAttrib(elm, 'alt');
+
+		// testing font_size:
+		formObj.math_font_size.value    = tinyMCE.getAttrib(elm, 'exe_math_size');
 
 
 		formObj.title.value  = tinyMCE.getAttrib(elm, 'title');
@@ -365,13 +368,14 @@ function insertAction() {
         //alert('r3m0: testing new call to do one final math-image generate before the insert.');
 	// MAY want to also set a flag if the latex_source has changed, using an onChange() on it,
 	// to see if this is even necessary, but begin for forcing it:
-	doMathBrowser('srcbrowser', 'latex_source', 'src','image','exemath');
+	doMathBrowser('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
         //alert('r3m0: AFTER new call to do one final math-image generate; continuing with the insert.');
 
 
 	var elm = inst.getFocusElement();
 	var formObj = document.forms[0];
 	var src = formObj.src.value;
+        var font_size = formObj.math_font_size.value;
 //	var onmouseoversrc = formObj.onmouseoversrc.value;
 //	var onmouseoutsrc = formObj.onmouseoutsrc.value;
 
@@ -419,7 +423,7 @@ function insertAction() {
 		   setAttrib(elm, 'exe_math_latex', '..'+src+'.tex');
 		}
 
-
+		setAttrib(elm, 'exe_math_size', font_size);
 		setAttrib(elm, 'alt');
 
 		// r3m0: trying to maintain the title:
@@ -474,6 +478,8 @@ function insertAction() {
 		// Leave this to ProcessPreviewedImages to take into account, and for /previews only!
                 // that way, they'll also match when a math-image is Updated, showing it as ../previews.
                 // for INSERT: this IS used in creating a new image!!!!!
+
+		html += makeAttrib('exe_math_size', font_size);
 
 		html += makeAttrib('alt');
 		html += makeAttrib('title');

@@ -342,11 +342,11 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
 // Called by the tinyMCE (as per the user's request) to generate an 
 // image file of the specified math (LaTeX source, compiled by mimetex)
 // to add to the package's field and idevice
-function makeMathImage_viaTinyMCE(field_name, src_latex, type, win) {
+function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
 
     var local_imagePath = ""
 
-    //alert("r3m0 test: called makeMathImage_viaTinyMCE() & not doing YET anyting!\n"  + ", field_name = " + field_name + ", src_latex = " + src_latex  + ", type = " + type + ", win = " + win + "\n preview files to be: " + preview_math_imagefile + ", and: " + preview_math_srcfile);
+    //alert("r3m0 test: called makeMathImage_viaTinyMCE() with:\n"  + "font_size = " + font_size + ", field_name = " + field_name + ", src_latex = " + src_latex  + ", type = " + type + ", win = " + win + "\n preview files to be: " + preview_math_imagefile + ", and: " + preview_math_srcfile);
 
     if (src_latex == "") {
        return;
@@ -367,7 +367,7 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, type, win) {
     // to copy it into the server's "previews" directory:
     window.parent.nevow_clientToServerEvent('generateTinyMCEmath', this, 
                   '', win, win.name, field_name, 
-                  src_latex, preview_math_imagefile, preview_math_srcfile)
+                  src_latex, font_size, preview_math_imagefile, preview_math_srcfile)
 
 
     // and once the image has been generated, it SHOULD be sitting here:

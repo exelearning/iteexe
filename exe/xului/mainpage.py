@@ -577,7 +577,7 @@ class MainPage(RenderableLivePage):
             raise
 
     def handleTinyMCEmath(self, client, tinyMCEwin, tinyMCEwin_name, \
-                             tinyMCEfield, latex_source, \
+                             tinyMCEfield, latex_source, math_fontsize, \
                              preview_image_filename, preview_math_srcfile):
         """
         Based off of handleTinyMCEimageChoice(), 
@@ -589,14 +589,6 @@ class MainPage(RenderableLivePage):
         server_filename = ""
         callback_errors = ""
         errors = 0
-
-        print "HEY HEY!! Just sahyin HI from handleTinyMCEmath, yo!"
-        print "  WARNING: also choosing an arbitrary fontsize! need to pass!"
-        print "  AND: this fontsize will need to be saved out as an attribute!"
-        # but for now, just choose an arbitrary font-size:
-        math_fontsize = 10
-        # Q: is that supposed to be a STRING or an INT? == INT!
-
 
         webDir     = Path(G.application.tempWebDir)
         previewDir  = webDir.joinpath('previews')

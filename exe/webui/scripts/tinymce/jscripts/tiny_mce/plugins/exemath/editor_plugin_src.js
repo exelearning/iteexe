@@ -41,7 +41,7 @@ var TinyMCE_ExeMathPlugin = {
 				//template['width']  = 480;
 				//template['height'] = 380;
 				template['width']  = 580;
-				template['height'] = 480;
+				template['height'] = 600;
 
 				// Language specific width and height addons
 				//template['width']  += tinyMCE.getLang('lang_advimage_delta_width', 0);

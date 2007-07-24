@@ -83,6 +83,16 @@ function openBrower2(img_id, source_form_element, target_form_element, type, opt
 		tinyMCEPopup.openBrowser2(source_form_element, target_form_element, type, option);
 }
 
+
+// likewise, nearly the same as openBrower2, but allows two source elements
+// to differ from the destination targe element, as used by exemath plugin:
+function openBrower3(img_id, source_form_element, source2_form_element, target_form_element, type, option) {
+	var img = document.getElementById(img_id);
+
+	if (img.className != "mceButtonDisabled")
+		tinyMCEPopup.openBrowser3(source_form_element, source2_form_element, target_form_element, type, option);
+}
+
 function selectByValue(form_obj, field_name, value, add_custom, ignore_case) {
 	if (!form_obj || !form_obj.elements[field_name])
 		return;

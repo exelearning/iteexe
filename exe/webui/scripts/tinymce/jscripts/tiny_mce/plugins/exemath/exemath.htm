@@ -30,12 +30,29 @@
 
                 <!-- these insertSymbols taken straight from the maths iDevice: -->
 		<div class="maths">
-			<a onclick="insertSymbol('latex_source', '\\begin{verbatim}\\end{verbatim}', 14);" title="">{$lang_exemath_insert_text}</a>
-			<br>
-			<a onclick="insertSymbol('latex_source', '\\\\\n', 0);" title="">{$lang_exemath_insert_newline}</a> 
-			<br>
-			{$lang_exemath_insert_symbols}
-			<br>
+			<table>
+			   <tr>
+				   <td>
+					   {$lang_exemath_font_size}<select name="math_font_size" id="math_font_size">
+				<option value="1">1</option> 
+				<option value="2">2</option> 
+				<option value="3">3</option> 
+				<option value="4" selected="selected">4</option> 
+				<option value="5">5</option> 
+				<option value="6">6</option> 
+				<option value="7">7</option> 
+				<option value="8">8</option> 
+				<option value="9">9</option> 
+				<option value="10">10</option> 
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>{$lang_exemath_insert_symbols}</td> 
+	</tr>
+</table>
+<center>
+<hr>
 			<a onclick="insertSymbol('latex_source', '\\alpha', 0);" title="alpha"><img alt="symbol" src="/images/maths/greek letters/alpha.gif"/></a>
 			<a onclick="insertSymbol('latex_source', '\\beta', 0);" title="beta"><img alt="symbol" src="/images/maths/greek letters/beta.gif"/></a>
 			<a onclick="insertSymbol('latex_source', '\\chi', 0);" title="chi"><img alt="symbol" src="/images/maths/greek letters/chi.gif"/></a>
@@ -133,6 +150,20 @@
 			<a onclick="insertSymbol('latex_source', '\\supseteq', 0);" title="supseteq"><img alt="symbol" src="/images/maths/relations/supseteq.gif"/></a>
 			<a onclick="insertSymbol('latex_source', '\\vdash', 0);" title="vdash"><img alt="symbol" src="/images/maths/relations/vdash.gif"/></a>
 			<br />
+
+			<table>
+				<tr></tr>
+	<tr>
+		<td> <button type="button" name="verbatim_button" onclick="insertSymbol('latex_source', '\\begin{verbatim}\\end{verbatim}', 14);" title="">{$lang_exemath_insert_text}</button></td>
+		<td> <button type="button" name="newline_button" onclick="insertSymbol('latex_source', '\\\\\n', 0);" title="">{$lang_exemath_insert_newline}</button> </td>
+	</tr>
+</table>
+</center>
+<hr>
+<br>
+{$lang_exemath_insert_latex}
+<br>
+
 		</div>
 
 						<table class="properties">
@@ -143,7 +174,7 @@
 									<tr> 
 								          <!-- <td><input id="title" name="title" type="text" value="" /></td>  -->
 									  <!-- <td><input id="latex_source" name="latex_source" type="textarea" rows="5" cols="40" value="" /></td>  -->
-									  <td><textarea id="latex_source" name="latex_source" rows="5" cols="50" value="" /></textarea></td> 
+									  <td><textarea id="latex_source" name="latex_source" rows="8" cols="50" value="" /></textarea></td> 
 								          <!-- <td id="srcbrowsercontainer">&nbsp;</td> -->
 									  <td id="srcbrowsercontainer"> </td>
 									</tr>
