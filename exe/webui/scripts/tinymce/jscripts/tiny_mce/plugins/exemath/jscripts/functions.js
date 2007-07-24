@@ -56,8 +56,28 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 	//html += '<CENTER>&nbsp;{$lang_exemath_compile_label}<BR>';
 	// hmmmm, the above does NOT translate!  
 	// so, for now, as a test, merely put:
-	//html += '<CENTER>&nbsp;until button,<BR>r3m0 say...<BR>PREVIEW:<BR>';
-	html += '<CENTER>&nbsp;Preview:<BR>';
+	////////////////////////////////////////
+	//html += '<CENTER>&nbsp;until button,<BR>r3m0 say...<BR>';
+	html += '<CENTER>&nbsp;';
+	html += '<BUTTON type=\"button\" name=\"PREVIEW\"';
+	//html += ' id="' + id + '_link"';
+        html += 'onclick="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" ';
+	html += '>';
+	//html += 'click me';
+	//html += 'PREVIEW';
+	//html += '{$lang_exemath_compile_tooltip}';
+	///////
+        html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
+        html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
+        html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
+	///////
+	html += "<BR>";
+	html += tinyMCE.getLang('lang_exemath_compile_label');
+	// nope - the above language ISN'T working, so see below steps, and also 
+	// see if we have a javascript call to do that translation right here.
+	html += '</BUTTON><BR>';
+	//html += '<CENTER>&nbsp;Preview:<BR>';
+	////////////////////////////////////////
 	// and see how the INSERT/UPDATE/CANCEL buttons are created, and how their $lang is used,
 	// but beware that it might be more difficult to do in this getMathBrowserHTML????
 	// regardless, do need to upgrade to a real button,
@@ -67,15 +87,10 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 
         html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
 	// and try to put a label with the button: 
+        //html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
+        //html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
+        //html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
 
-        //html += '<img id="' + id + '" src="' + themeBaseURL + '/images/browse.gif"';
-        html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
-//        html += ' onmouseover="this.className=\'mceButtonOver\';"';
-//        html += ' onmouseout="this.className=\'mceButtonNormal\';"';
-//        html += ' onmousedown="this.className=\'mceButtonDown\';"';
-        html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
-        //html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" /></a>';
-        html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
 	html += '</CENTER>';
 	html += '</a>';
 
