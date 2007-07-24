@@ -81,6 +81,7 @@ You can get the gettext tools from the following sites:
 import os
 import sys
 import re
+import shutil
 
 # Try to work even with no python path
 try:
@@ -300,6 +301,8 @@ def generateAppFil():
     for pth, glb in toSearch:
         for fn in Path(pth).glob(glb):
             output.write(fn + '\n')
+    output.write('twisted/persisted/styles.py\n')
+    output.close()
 
 def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     """Build the Portable Object Template file for the application.
@@ -802,6 +805,15 @@ if __name__ == "__main__":
     elif curdir.basename() == 'locale':
         (curdir/'..'/'..').chdir()
     print 'Running from: %s' % Path('.').abspath()
+    # make sure any old build is not around to be scanned for strings
+    shutil.rmtree('build', ignore_errors=True)
+    shutil.rmtree('debian/python2.4-exe', ignore_errors=True)
+    shutil.rmtree('debian/python2.5-exe', ignore_errors=True)
+    shutil.rmtree('debian/python-exe', ignore_errors=True)
+    try:
+        os.remove('debian')
+    except OSError:
+        pass
     # Fill out the options
     option = {}
     option['forceEnglish'] = 0

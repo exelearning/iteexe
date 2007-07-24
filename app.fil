@@ -114,3 +114,4 @@ exe/xului/idevicepane.py
 exe/xului/propertiespage.py
 exe/xului/mainpage.py
 exe/xului/stylemenu.py
+twisted/persisted/styles.py
