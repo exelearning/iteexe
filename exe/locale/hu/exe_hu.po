@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-23 23:31+1200\n"
+"POT-Creation-Date: 2007-07-25 00:26+1200\n"
 "PO-Revision-Date: 2007-07-09 08:32+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -28,9 +28,9 @@ msgstr ""
 "<p>A GeoGebra applethez válassza a GeoGebrát, majd töltse \n"
 "fel azt .ggb állományt, amit a GeoGebrában készített.</p>"
 
-#: exe/xului/mainpage.py:279 exe/xului/mainpage.py:812
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:279 exe/xului/mainpage.py:806
+#: exe/xului/mainpage.py:927 exe/xului/mainpage.py:983
+#: exe/xului/mainpage.py:1004
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -53,8 +53,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "--Áthelyezés--"
 
-#: exe/xului/mainpage.py:297 exe/xului/mainpage.py:721
-#: exe/xului/mainpage.py:804
+#: exe/xului/mainpage.py:297 exe/xului/mainpage.py:715
+#: exe/xului/mainpage.py:798
 msgid ". Please use ASCII names."
 msgstr ". Kérem használjon ASCII nevet."
 
@@ -122,15 +122,15 @@ msgstr ""
 "</p><p> Válassza ki az elrejteni kívánt szavakat, és a \"Szó elrejtése/megjelenítése\" \n"
 "gombra kattintva rejtse el azokat.</p>"
 
-#: exe/engine/field.py:1328
+#: exe/engine/field.py:1447
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Ha ez az opció <strong>nincs</strong> beállítva, az eXe néhány helyesírási hiba, elírás esetén is elfogadja a választ. Ha <strong>be van jelölve</strong>, csak a helyesírásilag kifogástalan és a megfelelő betűméretű (kis/nagy) alakot fogadja el.</p> <p><strong>Példa:</strong> Ha a helyes válasz a Mihály, mindkét szó a <em>Míhály</em> és a <em>Mihaly</em> is elfogadásra kerül. Az algoritmus csak egy betű eltérést enged meg, ha a nagybetűs írásmód ellenőrzése be van kapcsolva.</p> <p>Ha a nagybetűs írásmód figyelése ki van kapcsolva a kis <em>m</em>-mel írott <em>mihaly</em> szót is helyesként fogadja el az eXe. </p> <p>Ha mind a  \"Pontos értékelés\" mind a \"Nagybetűs írásmód ellenőrzése\" be van állítva, csak a helyes Mihály szó kerül elfogadásra. ha csak a \"Pontos értékelés\" van beállítva, de a \"Nagybetűs írásmód ellenőrzése\" nem, a \"mihály\" szót is elfogadja.</p>"
 
-#: exe/engine/field.py:1349
+#: exe/engine/field.py:1468
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Ha ez az opció be van állítva, az eXe  különbséget tesz a kis- és nagybetűs írásmód között.Az eredetitől eltérő írásmód esetén hibásnak jelöli a választ. </p>"
 
-#: exe/engine/field.py:1354
+#: exe/engine/field.py:1473
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -140,15 +140,15 @@ msgstr ""
 "Ahogy a tanuló gépeli a szavakat, az eXe színnel jelöli, hogy helyes-e. \n"
 "Sőt, az utolsó betűket automatikusan kitölti.</p>"
 
-#: exe/engine/field.py:1603
+#: exe/engine/field.py:1722
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Válasszon egy szimbólumot az alábbi szövegből vagy írja be a kézzel a matematikai formulát LATEX formátumban. A végső megjelenés megtekintéséhez kattintson az &lt;Előnézet&gt; gombra.</p>"
 
-#: exe/engine/idevicestore.py:276
+#: exe/engine/idevicestore.py:278
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegység tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. Kerülje a túl sok különböző típusú vagy besorolású tevékenység használatát, mert a tanulókat megzavarhatja. Általában három négy különböző típus több, mint megfelelő egy tananyagegységen belül .</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik nyújt többet. </li></ol>"
 
-#: exe/engine/idevicestore.py:271
+#: exe/engine/idevicestore.py:273
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -180,7 +180,7 @@ msgstr ""
 "az eXe-ban végrehajtott változtatások sem fognak frissülni a Wikipédiában. </p> <p>A Wikipédia tartalmak \n"
 "a GNU Szabad Dokumentáció licenc alá esnek.</p>"
 
-#: exe/engine/idevicestore.py:379
+#: exe/engine/idevicestore.py:381
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -250,9 +250,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Tevékenységek"
 
-#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:354
-#: exe/engine/idevicestore.py:362 exe/engine/idevicestore.py:423
-#: exe/engine/idevicestore.py:460 exe/engine/idevicestore.py:468
+#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
+#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
+#: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
 #: exe/webui/questionelement.py:92
 msgid "Activity"
 msgstr "Tevékenység"
@@ -355,7 +355,7 @@ msgstr ""
 "Az igazítás lehetővé teszi \n"
 "hogy meghatározzuk, hogy a médialejátszó hol helyezkedjen el a képernyőn."
 
-#: exe/engine/field.py:1392
+#: exe/engine/field.py:1511
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -399,7 +399,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:357 exe/engine/idevicestore.py:463
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -448,8 +448,8 @@ msgstr "Gomb felirata"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: exe/xului/mainpage.py:297 exe/xului/mainpage.py:719
-#: exe/xului/mainpage.py:804
+#: exe/xului/mainpage.py:297 exe/xului/mainpage.py:713
+#: exe/xului/mainpage.py:798
 msgid "Cannot access directory named "
 msgstr "Nem nevezheti át a könyvtárat"
 
@@ -522,7 +522,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Kattintson a <strong>Válasszon egy állományt</strong> gombra, majd keresse meg a csatolni kívánt állományt és válassza ki."
 
-#: exe/engine/field.py:944
+#: exe/engine/field.py:1063
 msgid "Click Here"
 msgstr "Kattintson ide"
 
@@ -534,7 +534,7 @@ msgstr "A teljes utasítás megjelenítéséhez kattintson egyet!"
 msgid "Click here"
 msgstr "Kattintson ide"
 
-#: exe/engine/field.py:1611
+#: exe/engine/field.py:1730
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -546,14 +546,16 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Kattintson a \"Kép hozzáadása\" gombra és válasszon egy képet. A képek alatt található egy címke, amit érdemes kitölteni. A jó gyakorlat kialakítása érdekében adja meg itt a kép eredeti méretét (pl.: 450 x 320). Célszerű, ha a képeket azonos méretűre méretezi át, s így tölti fel a galériába. A felhasználók hálásak lesznek."
 
-#: exe/engine/galleryidevice.py:596 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:600 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:248 exe/webui/block.py:249
 #: exe/webui/element.py:1947 exe/webui/element.py:1948
 #: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
 #: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 msgid "Close"
 msgstr "Bezárás"
 
@@ -578,7 +580,7 @@ msgstr "Helyes"
 msgid "Correct!"
 msgstr "Helyes!"
 
-#: exe/xului/mainpage.py:1060
+#: exe/xului/mainpage.py:1054
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Az állományt nem lehet betölteni. Kérem, küldje el e-mail-ben az állományt a bugs@exelearning.org címre!"
 
@@ -601,8 +603,11 @@ msgstr ""
 #: exe/webui/editorelement.py:247 exe/webui/editorelement.py:302
 #: exe/webui/editorelement.py:349 exe/webui/galleryblock.py:257
 #: exe/webui/block.py:219 exe/webui/editorpage.py:234
-#: exe/webui/editorpage.py:237 exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/editorpage.py:237
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
 msgstr "Törlés"
 
@@ -645,7 +650,7 @@ msgstr ""
 "tevékenységeket. Adja meg azoknak az utasításokat, \n"
 "amelyek rávezethetik a tanulót egy dilemma megoldására."
 
-#: exe/engine/idevicestore.py:350 exe/engine/idevicestore.py:456
+#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -653,7 +658,7 @@ msgstr ""
 "Írja le azokat a tanuló számára szükséges előismereteket, amelyek a \n"
 "soron következő tananyag hatékony elsajátításához szükségesek."
 
-#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
+#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:426
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -661,11 +666,11 @@ msgstr ""
 "Írja le a tanuló által vállalt ovasmányokhoz kapcsolódó feladatokat. \n"
 "Ez hasznos segítség a tanuló számára."
 
-#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:469
+#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:471
 msgid "Describe the tasks the learners should complete."
 msgstr "Írja le azokat a feladatokat, amelyeket a tanulónak teljesíteni kell!"
 
-#: exe/engine/flashwithtextidevice.py:58 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:53 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Leírás"
 
@@ -673,9 +678,15 @@ msgstr "Leírás"
 # value="Description:"
 # exe/xului/templates/dublincore.xul:<label
 #: exe/engine/attachmentidevice.py:63 exe/engine/attachmentidevice.py:149
-#: exe/xului/templates/packageproperties.xul:<label value="Description:"
-#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
-#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Description:" id="ppDescription" style="width:8em" tooltiptext="An
+#: account of the content resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: id="dcDescription"
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Description:"
 msgstr "Leírás:"
 
@@ -686,9 +697,12 @@ msgstr "Megjelenítés:"
 # exe/xului/templates/packageproperties.xul:<button
 # exe/xului/templates/exportproperties.xul:<button
 # exe/xului/templates/dublincore.xul:<button
-#: exe/webui/block.py:211 exe/xului/templates/exportproperties.xul:<button
+#: exe/webui/block.py:211
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/exportproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
 #: label="Done">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/exportproperties.xul:<button
+#: exe/xului/templates/exportproperties.xul:<button
 msgid "Done"
 msgstr "Rendben"
 
@@ -715,17 +729,17 @@ msgstr "HIBA Az Element.renderView közvetlenül hívta a %s osztályt"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "HIBA: Az Block.renderViewContent közvetlen hívás"
 
-#: exe/xului/mainpage.py:746 exe/xului/mainpage.py:753
-#: exe/xului/mainpage.py:756 exe/xului/mainpage.py:759
-#: exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:740 exe/xului/mainpage.py:747
+#: exe/xului/mainpage.py:750 exe/xului/mainpage.py:753
+#: exe/xului/mainpage.py:911
 msgid "EXPORT FAILED!"
 msgstr "SIKERTELEN EXPORTÁLÁS!"
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:901 exe/xului/mainpage.py:915
+#: exe/xului/mainpage.py:928 exe/xului/mainpage.py:934
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:984
+#: exe/xului/mainpage.py:990 exe/xului/mainpage.py:1005
+#: exe/xului/mainpage.py:1011
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -744,7 +758,7 @@ msgstr ""
 "SIKERTELEN EXPORTÁLÁS!\n"
 "Az utolsó sikeres export: %s."
 
-#: exe/xului/mainpage.py:813 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:807 exe/xului/mainpage.py:816
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -757,6 +771,10 @@ msgstr ""
 #: exe/webui/editorpage.py:268
 msgid "Edit"
 msgstr "Szerkesztés"
+
+#: twisted/persisted/styles.py:300
+msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
+msgstr ""
 
 #: exe/webui/wikipediablock.py:138 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:100 exe/webui/editorpane.py:328
@@ -873,7 +891,7 @@ msgstr ""
 "Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
 "az piros \"X\"-re kattintva a válasz sorában."
 
-#: exe/engine/field.py:1804
+#: exe/engine/field.py:1923
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -883,7 +901,7 @@ msgstr ""
 "Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
 "a piros \"X\"-re kattintva a válasz sorában."
 
-#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
+#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -893,7 +911,7 @@ msgstr ""
 "A hivatkozások formája függ az Ön tanszékén, karán előnyben \n"
 "részesített formától."
 
-#: exe/engine/flashwithtextidevice.py:66 exe/engine/flashwithtextidevice.py:94
+#: exe/engine/flashwithtextidevice.py:61 exe/engine/flashwithtextidevice.py:89
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -924,7 +942,7 @@ msgstr ""
 "Írja be a kérdést! \n"
 "Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a kétértelmű fogylmazást!"
 
-#: exe/engine/field.py:1796
+#: exe/engine/field.py:1915
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -941,7 +959,7 @@ msgstr ""
 "Írja be azt a szöveget, \n"
 "                                                ami a képhez kapcsolódik."
 
-#: exe/engine/flashwithtextidevice.py:59
+#: exe/engine/flashwithtextidevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
@@ -974,9 +992,9 @@ msgstr "Mintapélda"
 msgid "Export iDevice"
 msgstr "Exportálás"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:917 exe/xului/mainpage.py:936
+#: exe/xului/mainpage.py:970 exe/xului/mainpage.py:992
+#: exe/xului/mainpage.py:1013
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportálva %s"
@@ -993,11 +1011,11 @@ msgstr "Extra nagy"
 msgid "False"
 msgstr "Hamis"
 
-#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
+#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1683
-#: exe/engine/field.py:1695 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1802
+#: exe/engine/field.py:1814 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1763
 #: exe/webui/editorpane.py:251
@@ -1013,17 +1031,17 @@ msgstr ""
 "ha nem írnak adatokat ebbe a mezőbe."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1813 exe/engine/field.py:1838
+#: exe/engine/field.py:1932 exe/engine/field.py:1957
 msgid "Feedback:"
 msgstr "Visszajelzés:"
 
-#: exe/xului/mainpage.py:1056
+#: exe/xului/mainpage.py:1050
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "A(z) %s állomány nem létezik vagy nem olvasható."
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:846 exe/xului/mainpage.py:888
+#: exe/xului/mainpage.py:955
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
@@ -1036,12 +1054,12 @@ msgstr "Állománynév:"
 msgid "Flash Movie"
 msgstr "Flash videó"
 
-#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashwithtextidevice.py:56
+#: exe/engine/flashwithtextidevice.py:44 exe/engine/flashwithtextidevice.py:51
 msgid "Flash with Text"
 msgstr "Flash animáció"
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
+#: exe/xului/mainpage.py:961
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "A %s könyvtárnév már létezik. Kérem, válasszon más nevet, vagy törölje a létező könyvtárat, s próbálja újra!"
@@ -1060,8 +1078,10 @@ msgstr "Francia nyelvű Wikipédia szócikk"
 
 # exe/xului/templates/packageproperties.xul:<menuitem
 #: exe/webui/wikipediablock.py:203
-#: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
-#: Documentation License" id="ppmigfdl" label="GNU License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="GNU Free Documentation License" id="ppmigfdl" label="GNU License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "GNU Free Documentation License"
 msgstr "GNU Szabad dokumentáció licenc"
 
@@ -1106,7 +1126,7 @@ msgid "Hide/Show Word"
 msgstr "Szó elrejtése/megjelenítése"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1721 exe/engine/field.py:1741
+#: exe/engine/field.py:1840 exe/engine/field.py:1860
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1951
 msgid "Hint"
@@ -1281,7 +1301,7 @@ msgstr "Név"
 msgid "New iDevice"
 msgstr "Új iDevice modul"
 
-#: exe/engine/galleryidevice.py:600 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:604 exe/export/ipodpage.py:115
 #: exe/export/scormexport.py:312 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Következő"
@@ -1311,8 +1331,10 @@ msgstr "Nincs kiemelés"
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
 #: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:93
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
-#: exe/xului/templates/packageproperties.xul:<menuitem value="None"
-#: id="ppminone" label="None">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="None" id="ppminone" label="None">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "None"
 msgstr "Egyik sem"
 
@@ -1320,12 +1342,12 @@ msgstr "Egyik sem"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:335
-#: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:441
+#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:337
+#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:443
 msgid "Objectives"
 msgstr "Célok"
 
-#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:435
+#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:437
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1335,7 +1357,7 @@ msgstr ""
 "a tananyagegység elsajátítása után. Mire lesznek képesek, milyen készségeket fejleszt \n"
 "a tananyag"
 
-#: exe/engine/field.py:1498 exe/engine/field.py:1562
+#: exe/engine/field.py:1617 exe/engine/field.py:1681
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1343,7 +1365,7 @@ msgstr ""
 "Csak .flv (Flash video) fájlt válasszon \n"
 "ehhez az iDevice modulhoz."
 
-#: exe/engine/field.py:1434 exe/engine/field.py:1478
+#: exe/engine/field.py:1553 exe/engine/field.py:1597
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1352,13 +1374,13 @@ msgstr ""
 "ehhez az iDevice modulhoz."
 
 #: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:1679 exe/engine/field.py:1692
+#: exe/engine/field.py:1798 exe/engine/field.py:1811
 #: exe/webui/testquestionelement.py:100 exe/webui/element.py:1615
 #: exe/webui/element.py:1739 exe/webui/element.py:1744
 msgid "Option"
 msgstr "Beállítás"
 
-#: exe/engine/field.py:1763 exe/engine/field.py:1773
+#: exe/engine/field.py:1882 exe/engine/field.py:1892
 #: exe/webui/testquestionelement.py:96 exe/webui/element.py:1611
 msgid "Options"
 msgstr "Beállítások"
@@ -1375,7 +1397,7 @@ msgstr "Tervező nézet"
 msgid "Own site"
 msgstr "Saját oldal"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:818
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "A csomag ki lett bontva a következő helyre: %s"
@@ -1426,12 +1448,12 @@ msgstr "Lengyel nyelvű Wikipédia szócikk"
 msgid "Portugese Wikipedia Article"
 msgstr "Portugál nyelvű Wikipédia szócikk"
 
-#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:349
-#: exe/engine/idevicestore.py:445 exe/engine/idevicestore.py:455
+#: exe/engine/idevicestore.py:341 exe/engine/idevicestore.py:351
+#: exe/engine/idevicestore.py:447 exe/engine/idevicestore.py:457
 msgid "Preknowledge"
 msgstr "Előismeret"
 
-#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:448
+#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:450
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1450,18 +1472,18 @@ msgstr ""
 msgid "Preview"
 msgstr "Előnézet"
 
-#: exe/xului/mainpage.py:518 exe/xului/mainpage.py:616
+#: exe/xului/mainpage.py:518 exe/xului/mainpage.py:610
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/engine/galleryidevice.py:592 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:596 exe/export/ipodpage.py:109
 #: exe/export/scormexport.py:311 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Előző"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1139
-#: exe/engine/field.py:1186
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1258
+#: exe/engine/field.py:1305
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1485,7 +1507,7 @@ msgstr ""
 "Adjon meg egy feliratot a \n"
 "beillesztett Flash videóhoz."
 
-#: exe/engine/flashwithtextidevice.py:64 exe/engine/flashwithtextidevice.py:92
+#: exe/engine/flashwithtextidevice.py:59 exe/engine/flashwithtextidevice.py:87
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1531,13 +1553,13 @@ msgid "Put instructions for learners here"
 msgstr "Itt adja meg a tanulóknak szóló utasításokat!"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1718 exe/engine/field.py:1737
+#: exe/engine/field.py:1837 exe/engine/field.py:1856
 msgid "Question"
 msgstr "Kérdés"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1799 exe/engine/field.py:1835 exe/webui/element.py:1595
+#: exe/engine/field.py:1918 exe/engine/field.py:1954 exe/webui/element.py:1595
 msgid "Question:"
 msgstr "Kérdés:"
 
@@ -1558,12 +1580,12 @@ msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat!"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat."
 
-#: exe/engine/idevicestore.py:232 exe/engine/idevicestore.py:268
+#: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
 #: exe/engine/genericidevice.py:198
 msgid "Reading Activity"
 msgstr "Olvasnivaló"
 
-#: exe/engine/idevicestore.py:376 exe/engine/genericidevice.py:196
+#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:196
 msgid "Reading Activity 0.11"
 msgstr "Olvasnivaló 0.11"
 
@@ -1606,7 +1628,7 @@ msgid "SAVE FAILED!"
 msgstr "SIKERTELEN MENTÉS!"
 
 #: exe/xului/mainpage.py:310 exe/xului/mainpage.py:574
-#: exe/xului/mainpage.py:700 exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:694 exe/xului/mainpage.py:860
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1646,8 +1668,11 @@ msgstr "Válasszon egy Flash animációt"
 
 # exe/xului/templates/dublincore.xul:<menulist
 #: exe/webui/preferencespage.py:93
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
-#: 'red'" id="dc_language" label="Select Language">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menulist
+#: onchange="this.style.color = 'red'" id="dc_language" label="Select
+#: Language">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menulist
+#: exe/xului/templates/dublincore.xul:<menulist
 msgid "Select Language"
 msgstr "Válasszon nyelvet"
 
@@ -1680,7 +1705,7 @@ msgstr "Válasszon egy képet"
 msgid "Select an image (JPG file)"
 msgstr "Válaszzon egy képet (JPG fájl)"
 
-#: exe/engine/field.py:1808
+#: exe/engine/field.py:1927
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1776,7 +1801,7 @@ msgstr "Kicsi"
 msgid "Some emphasis"
 msgstr "Kiemelés"
 
-#: exe/xului/mainpage.py:1065
+#: exe/xului/mainpage.py:1059
 msgid "Sorry, wrong file format"
 msgstr "Sajnálom, rossz fájlformátum"
 
@@ -1785,7 +1810,7 @@ msgstr "Sajnálom, rossz fájlformátum"
 msgid "Sorry, wrong file format."
 msgstr "Sajnálom, rossz fájlformátum"
 
-#: exe/xului/mainpage.py:1063
+#: exe/xului/mainpage.py:1057
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1818,7 +1843,7 @@ msgstr "Válasz elküldése"
 msgid "Swedish Wikipedia Article"
 msgstr "Svéd nyelvű Wikipédia szócikk"
 
-#: exe/engine/idevicestore.py:384
+#: exe/engine/idevicestore.py:386
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegység tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. Kerülje a túl sok különböző típusú vagy besorolású tevékenység használatát, mert a tanulókat megzavarhatja. Általában három négy különböző típus több, mint megfelelő egy tananyagegységen belül .</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik nyújt többet. </li></ol>"
 
@@ -1866,7 +1891,7 @@ msgstr ""
 "jeleníti meg azt. Ez azt jelenti, hogy tanulóknak nem kell ablakokkal bűvészkedniük. \n"
 "Ezt a modult akkor használjuk, ha online tartalmat akarunk megjeleníteni."
 
-#: exe/engine/flashwithtextidevice.py:51
+#: exe/engine/flashwithtextidevice.py:46
 msgid ""
 "The flash with text idevice allows you to \n"
 "associate additional textual information to a flash file. This may be useful \n"
@@ -2016,7 +2041,7 @@ msgstr ""
 "hogy igaz-e. Ez a kérdéstrípus jól használható tényszerű információk esetében, \n"
 "amikor a válasz vagy-vagy alapon dől el."
 
-#: exe/engine/field.py:1574
+#: exe/engine/field.py:1693
 msgid "Type a discussion topic here."
 msgstr "Írja be a megbeszélés témáját!"
 
@@ -2048,13 +2073,13 @@ msgstr ""
 "válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\",\n"
 "ha mást választott a tanuló."
 
-#: exe/engine/field.py:1811
+#: exe/engine/field.py:1930
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr "Írjon a tanulók számára egy visszajelzés!"
 
-#: exe/engine/idevicestore.py:336 exe/engine/idevicestore.py:442
+#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
 msgid "Type the learning objectives for this resource."
 msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
@@ -2086,11 +2111,11 @@ msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen �
 msgid "Unit"
 msgstr "Egység"
 
-#: exe/engine/flashwithtextidevice.py:50 exe/engine/imagewithtextidevice.py:44
+#: exe/engine/flashwithtextidevice.py:45 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
-#: exe/engine/idevicestore.py:270 exe/engine/idevicestore.py:328
-#: exe/engine/idevicestore.py:356 exe/engine/idevicestore.py:378
-#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:462
+#: exe/engine/idevicestore.py:272 exe/engine/idevicestore.py:330
+#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
+#: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:43 exe/engine/multichoiceidevice.py:58
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
@@ -2119,7 +2144,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Feltöltés"
 
-#: exe/engine/idevicestore.py:320 exe/engine/idevicestore.py:428
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2152,7 +2177,7 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Ezt a legördülő menüt használhatja arra, hogy a modul megjelenését. Ha meg szeretné különböztetni a modult a környezetéstől, válassza a \"Kiemelés\" opciót. Ilyenkor a modult ikonnal azonosítja, s keretben jelenik meg."
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:419
+#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
 msgid "What to read"
 msgstr "Amit olvasnia kell"
 
@@ -2249,8 +2274,11 @@ msgstr "iDeice %s nincs csomag"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:419 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:419
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "iDevice Editor"
 msgstr "iDevice szerkesztő"
 
@@ -2283,131 +2311,181 @@ msgid "title"
 msgstr "cím"
 
 # exe/xului/templates/dublincore.xul:<caption
-#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
-#: label="Dublin Core Metadata">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<caption
+#: id="dcCaptionMetadata" label="Dublin Core Metadata">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<caption
+#: exe/xului/templates/dublincore.xul:<caption
 msgid "Dublin Core Metadata"
 msgstr "Dublin Core metaadat"
 
 # exe/xului/templates/exportproperties.xul:<caption
-#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
-#: label="SCORM 1.2 Options">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/exportproperties.xul:<caption
+#: id="ppScolinks" label="SCORM 1.2 Options">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/exportproperties.xul:<caption
+#: exe/xului/templates/exportproperties.xul:<caption
 msgid "SCORM 1.2 Options"
 msgstr "SCORM 1.2 opciók"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" label="Insert Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="insertPackage()" label="Insert Package">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "Insert Package"
 msgstr "Csomag beszúrása"
 
 # exe/xului/templates/metadata.xul:<tab
-#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/metadata.xul:<tab
+#: label="Dublin Core">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/metadata.xul:<tab
+#: exe/xului/templates/metadata.xul:<tab
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
 # exe/xului/templates/packageproperties.xul:<caption
-#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
-#: label="Project Properties">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<caption
+#: id="pptitle" label="Project Properties">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<caption
+#: exe/xului/templates/packageproperties.xul:<caption
 msgid "Project Properties"
 msgstr "Projektbeállítások"
 
 # exe/xului/templates/properties.xul:<tab
-#: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/properties.xul:<tab
+#: id="tabPackage" label="Package">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/properties.xul:<tab
+#: exe/xului/templates/properties.xul:<tab
 msgid "Package"
 msgstr "Csomag"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Title:"
-#: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
-#: style="width:8em" tooltiptext="The name given to the resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Title:" id="dcTitle" style="width:8em" tooltiptext="The name given
+#: to the resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Title:"
 msgstr "Cím:"
 
 # exe/xului/templates/exportproperties.xul:<checkbox
-#: exe/xului/templates/exportproperties.xul:<checkbox
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add
 #: Previous/Next links within SCOs?" tooltiptext="Checking this box will cause
 #: eXe to add Previous and Next individual pages your SCO. The LMS also still
 #: kind of functionality." checked="false">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/exportproperties.xul:<checkbox
+#: exe/xului/templates/exportproperties.xul:<checkbox
 msgid "Add Previous/Next links within SCOs?"
 msgstr "Adja az SCO-hoz az Előző/Következő hivatkozást?"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" label="Extract Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="extractPackage()" label="Extract Package">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "Extract Package"
 msgstr "Kicsomagolás"
 
 # exe/xului/templates/metadata.xul:<tab
-#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/metadata.xul:<tab
+#: label="IEEE LOM">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/metadata.xul:<tab
+#: exe/xului/templates/metadata.xul:<tab
 msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Project Title:"
-#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
-#: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Project Title:" id="ppProjectTitle" style="width:8em"
+#: tooltiptext="The project's title.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Project Title:"
 msgstr "A projekt címe:"
 
 # exe/xului/templates/properties.xul:<tab
-#: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/properties.xul:<tab
+#: id="tabMetadata" label="Metadata">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/properties.xul:<tab
+#: exe/xului/templates/properties.xul:<tab
 msgid "Metadata"
 msgstr "Metaadat"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Creator:"
-#: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
-#: style="width:8em" tooltiptext="An entity primarily responsible for making
-#: the content of resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Creator:" id="dcCreator" style="width:8em" tooltiptext="An entity
+#: primarily responsible for making the content of resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Creator:"
 msgstr "Alkotó:"
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="addChild"
-#: exe/xului/templates/mainpage.xul:<key n:render="addChild"
-#: keycode="VK_INSERT" id="addChildKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="addChild" keycode="VK_INSERT" id="addChildKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Header Background:"
-#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
-#: header (an 100px high is recommended).">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Header Background:" id="ppBackgroundImg" style="width:8em"
+#: tooltiptext="Background image for a header (an 100px high is
+#: recommended).">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Header Background:"
 msgstr "Élőfej háttere:"
 
 # exe/xului/templates/properties.xul:<tab
-#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/properties.xul:<tab
+#: id="tabExport" label="Export">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/properties.xul:<tab
+#: exe/xului/templates/properties.xul:<tab
 msgid "Export"
 msgstr "Exportálás"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Subject:"
-#: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
-#: style="width:8em" tooltiptext="The topic of the content resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of
+#: the content resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Subject:"
 msgstr "Tárgy:"
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="delNode"
-#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
-#: keycode="VK_DELETE" id="delNodeKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
 # exe/xului/templates/packageproperties.xul:<button
-#: exe/xului/templates/packageproperties.xul:<button
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg',this.parentNode.parentNode);"
 #: id="loadImage" label="Load Image">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<button
+#: exe/xului/templates/packageproperties.xul:<button
 msgid "Load Image"
 msgstr "Kép betöltése"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescSubject">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                Typically, Subject will be expressed as keywords, key phrases or\n"
@@ -2425,87 +2503,113 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="renNode"
-#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
-#: modifiers="control" id="renNodeKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="renNode" key="R" modifiers="control" id="renNodeKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "R"
 msgstr "R"
 
 # exe/xului/templates/packageproperties.xul:<button
-#: exe/xului/templates/packageproperties.xul:<button
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<button
+#: exe/xului/templates/packageproperties.xul:<button
 msgid "Clear Image"
 msgstr "Kép törlése"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Publisher:"
-#: exe/xului/templates/dublincore.xul:<label value="Publisher:"
-#: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
-#: making the resource available.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Publisher:" id="dcPublisher" style="width:8em" tooltiptext="An
+#: entity responsible for making the resource available.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Publisher:"
 msgstr "Kiadó:"
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="promote"
-#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
-#: modifiers="control" id="promoteKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
 # exe/xului/templates/packageproperties.xul:<checkbox
-#: exe/xului/templates/packageproperties.xul:<checkbox
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<checkbox
 #: oncommand="this.style.color = 'red';" id="pp_backgroundImgTile" label="Tile
 #: background image?" checked="false">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<checkbox
+#: exe/xului/templates/packageproperties.xul:<checkbox
 msgid "Tile background image?"
 msgstr "Kitöltés mozaikszerűen?"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Contributors:"
-#: exe/xului/templates/dublincore.xul:<label value="Contributors:"
-#: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
-#: for making contributions to the content of resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An
+#: entity responsible for making contributions to the content of resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Contributors:"
 msgstr "Közreműködők:"
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="demote"
-#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
-#: modifiers="control" id="demoteKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="demote" keycode="VK_RIGHT" modifiers="control" id="demoteKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Author:"
-#: exe/xului/templates/packageproperties.xul:<label value="Author:"
-#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
-#: resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author
+#: of the resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Author:"
 msgstr "Szerző:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Date:"
-#: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
-#: style="width:8em" tooltiptext="A date of an event in the lifecycle
-#: resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Date:" id="dcDate" style="width:8em" tooltiptext="A date of an event
+#: in the lifecycle resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Date:"
 msgstr "Dátum:"
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="up"
-#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
-#: modifiers="control" id="upKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="up" key="U" modifiers="control" id="upKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "U"
 msgstr "U"
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="License:"
-#: exe/xului/templates/packageproperties.xul:<label value="License:"
-#: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="License:" id="ppLicense" style="width:8em" tooltiptext="Select a
+#: license.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "License:"
 msgstr "Licenc:"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescDate">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                 Typically, Date will be associated with the creation or\n"
@@ -2521,18 +2625,25 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="down"
-#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
-#: modifiers="control" id="downKey">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="down" key="D" modifiers="control" id="downKey">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "D"
 msgstr "D"
 
 # exe/xului/templates/packageproperties.xul:<menulist
-#: exe/xului/templates/packageproperties.xul:<menulist
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menulist
 #: onchange="this.style.color = 'red'" id="pp_license" label="Select License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menulist
+#: exe/xului/templates/packageproperties.xul:<menulist
 msgid "Select License"
 msgstr "Válasszon licenctípust"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescDate">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid ""
 " \n"
 "                 "
@@ -2540,18 +2651,27 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
-#: modifiers="control" id="file-new-key" oncommand="fileNew()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="translate" key="N" modifiers="control" id="file-new-key"
+#: oncommand="fileNew()">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "N"
 msgstr "N"
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution 2.5 License" id="ppcca1"
+#: label="Creative License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution 2.5 License"
 msgstr "Creative Commons Attribution 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescDate">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                 and includes (among others) dates of the form YYYY-MM-DD.\n"
@@ -2560,40 +2680,57 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
-#: modifiers="control" id="file-save-key" oncommand="fileSave()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="translate" key="S" modifiers="control" id="file-save-key"
+#: oncommand="fileSave()">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "S"
 msgstr "S"
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-ShareAlike 2.5 License" id="ppcca2"
+#: label="Creative License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr "Creative Commons Attribution-ShareAlike 2.5 License"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Type:"
-#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
-#: style="width:8em" tooltiptext="The nature or genre of the content
-#: resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Type:" id="dcType" style="width:8em" tooltiptext="The nature or
+#: genre of the content resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Type:"
 msgstr "Típus:"
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
-#: modifiers="control" id="file-open-key" oncommand="fileOpen()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="translate" key="O" modifiers="control" id="file-open-key"
+#: oncommand="fileOpen()">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "O"
 msgstr "O"
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NoDerivs 2.5 License" id="ppcca3"
+#: label="Creative License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr "Creative Commons Attribution-NoDerivs 2.5 License"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescType">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "              Type includes terms describing general categories, functions, or\n"
@@ -2608,19 +2745,27 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
-#: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="translate" key="Q" modifiers="control" id="file-quit-key"
+#: oncommand="fileQuit()">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "Q"
 msgstr "Q"
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
-#: License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NonCommercial 2.5 License" id="ppcca4"
+#: label="Creative License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescType">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "              To describe the physical or digital manifestation of the resource,\n"
@@ -2630,1457 +2775,1942 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="P"
-#: modifiers="control" id="file-print-key" oncommand="filePrint()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: n:render="translate" key="P" modifiers="control" id="file-print-key"
+#: oncommand="filePrint()">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key
 msgid "P"
 msgstr "P"
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
-#: label="Creative License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+#: id="ppcca5" label="Creative License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Format:"
-#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
-#: style="width:8em" tooltiptext="Select a Format.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Format:" id="dcFormat" style="width:8em" tooltiptext="Select a
+#: Format.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Format:"
 msgstr "Formátum:"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
-#: accesskey="f" label="File">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="file-menu" accesskey="f" label="File">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Fájl\" accesskey=\"f\""
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
-#: License">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+#: id="ppcca6" label="Creative License">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 
 # exe/xului/templates/dublincore.xul:<menulist
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
-#: 'red'" id="dc_format" label="Select Format">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menulist
+#: onchange="this.style.color = 'red'" id="dc_format" label="Select Format">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menulist
+#: exe/xului/templates/dublincore.xul:<menulist
 msgid "Select Format"
 msgstr "Válasszo formátumot"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n"
+#: label="New">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Új\" accesskey=\"ú\""
 
 # exe/xului/templates/packageproperties.xul:<menuitem
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
-#: Nations 2.0" id="ppdn" label="Developing 2.0">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: value="Developing Nations 2.0" id="ppdn" label="Developing 2.0">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
+#: exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Developing Nations 2.0"
 msgstr "Fejlődő országok 2.0"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
-#: label="XHTML">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="XHTML" id="dcmiXHTML" label="XHTML">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "XHTML"
 msgstr "XHTML"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" key="file-open-key" oncommand="fileOpen()"
+#: accesskey="o" label="Open">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Megnyitás...\" accesskey=\"n\""
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Footer:"
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Footer:" id="ppFooter" style="width:8em" tooltiptext="Web pages
+#: footer.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Footer:"
 msgstr "Élőláb:"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
-#: id="dcmiSCORM" label="SCORM 1.2">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent
+#: Projects...">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"Legutóbbi projektek...\" accesskey=\"r\""
 
 # exe/xului/templates/packageproperties.xul:<caption
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<caption
+#: id="ppCaptionTaxonomy" label="Taxonomy">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<caption
+#: exe/xului/templates/packageproperties.xul:<caption
 msgid "Taxonomy"
 msgstr "Tartalomegységek"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
-#: label="IMS Content Package 1.1.3">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "IMS Content Package 1.1.3"
 msgstr "IMS tartalomcsomag 1.1.3"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" key="file-save-key" oncommand="fileSave()"
+#: accesskey="s" label="Save">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Mentés\" accesskey=\"m\""
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Level 1:"
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name
+#: for level 1 nodes">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Level 1:"
 msgstr "1. szint"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Identifier:"
-#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
-#: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
-#: to the resource within a given context.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An
+#: unambiguous reference to the resource within a given context.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Identifier:"
 msgstr "Azonosító:"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save
+#: As...">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Mentés másként...\" accesskey=\"á\""
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Level 2:"
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Level 2:" id="ppLevel2" style="width:8em" tooltiptext="Default name
+#: for level 2 nodes">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Level 2:"
 msgstr "2. szint"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Source:"
-#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
-#: style="width:8em" tooltiptext="A Reference to a resource from which the
-#: present is derived.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to
+#: a resource from which the present is derived.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Source:"
 msgstr "Forrás:"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" key="file-print-key" oncommand="filePrint()"
+#: accesskey="p" label="Print">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Print\" accesskey=\"p\""
 msgstr "label=\"Nyomtatás\" accesskey=\"n\""
 
 # exe/xului/templates/packageproperties.xul:<label
 # value="Level 3:"
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name
+#: for level 3 nodes">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
+#: exe/xului/templates/packageproperties.xul:<label
 msgid "Level 3:"
 msgstr "3. szint"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Language:"
-#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
-#: style="width:8em" tooltiptext="Select a language.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a
+#: language.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Language:"
 msgstr "Nyelv:"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="export-menu" accesskey="e" label="Export">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="export-menu" accesskey="e" label="Export">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Export\" accesskey=\"e\""
 
 # exe/xului/templates/packageproperties.xul:<button
 # flex="0" oncommand="submitForm(this.parentNode.parentNode, 'window.parent.location.reload(true);');" id="ppBtnUpdateTree" label="Update Tree" tooltiptext="Submit changes and update the tree display">
-#: exe/xului/templates/packageproperties.xul:<button flex="0"
-#: oncommand="submitForm(this.parentNode.parentNode,
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<button
+#: flex="0" oncommand="submitForm(this.parentNode.parentNode,
 #: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
 #: display">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<button
+#: exe/xului/templates/packageproperties.xul:<button
 msgid "Update Tree"
 msgstr "Fa frissítése"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
-#: label="Abkhazian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ab" id="dcmiab" label="Abkhazian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Abkhazian "
 msgstr "Abház"
 
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<button
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Apply"> exe/xului/templates/dublincore.xul:<button
+#: label="Apply">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<button
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<button
+#: exe/xului/templates/packageproperties.xul:<button
+#: exe/xului/templates/dublincore.xul:<button
 msgid "Apply"
 msgstr "Mentés"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
-#: label="Afar ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="aa" id="dcmiaa" label="Afar ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Afar "
 msgstr "Afar"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
-#: Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="exportPackage('ims','','')" accesskey="i"
+#: label="IMS Content Package">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS tartalomcsomag\" accesskey=\"i\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
-#: label="Afrikaans ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="af" id="dcmiaf" label="Afrikaans ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Afrikaans "
 msgstr "Afriakai"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="website" label="Web Site">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="Web Site" id="dcmiWebSite"
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Web Site"
 msgstr "Weboldal"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
-#: label="Albanian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sq" id="dcmisq" label="Albanian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Albanian "
 msgstr "Albán"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="exportPackage('webSite','','')"
+#: label="Self-contained Folder">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "Self-contained Folder"
 msgstr "Könyvtárba rendezve"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
-#: label="Amharic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="am" id="dcmiam" label="Amharic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Amharic "
 msgstr "Amharic"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip File">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="exportPackage('zipFile','','')" label="Zip
+#: File">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "Zip File"
 msgstr "Zip állomány"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
-#: label="Arabic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ar" id="dcmiar" label="Arabic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Arabic "
 msgstr "Arab"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
-#: Page">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="exportPackage('singlePage','','')"
+#: accesskey="p" label="Single Page">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Egyetlen oldal\" accesskey=\"o\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
-#: label="Armenian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="hy" id="dcmihy" label="Armenian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Armenian "
 msgstr "Örmény"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
-#: File">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="exportPackage('textFile','','')"
+#: accesskey="t" label="Text File">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"Szöveges fájl\" accesskey=\"z\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
-#: label="Assamese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="as" id="dcmias" label="Assamese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Assamese "
 msgstr "Assami"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="exportPackage('ipod', '', '')"
+#: accesskey="n" label="iPod Notes">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"iPod Notes\" accesskey=\"n\""
 msgstr "label=\"Új\" accesskey=\"ú\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
-#: label="Avestan ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ae" id="dcmiae" label="Avestan ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Avestan "
 msgstr "Avesztáni"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="merging-menu" accesskey="m" label="Merging">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"Egyesítés\" accesskey=\"g\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
-#: label="Aymara ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ay" id="dcmiay" label="Aymara ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Aymara "
 msgstr "Aymara"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="insertPackage()" accesskey="i"
+#: label="Insert Package">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"Csomag beszúrása\" accesskey=\"b\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
-#: label="Azerbaijani ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="az" id="dcmiaz" label="Azerbaijani ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Azerbaijani "
 msgstr "Azerbajdzsán"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="extractPackage()" accesskey="E"
+#: label="Extract Package">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"Csomag kibontása\" accesskey=\"k\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ba" id="dcmiba" label="Bashkir ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bashkir "
 msgstr "Baskír"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr "label=\"Kilépés\" accesskey=\"k\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="eu" id="dcmieu" label="Basque ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Basque "
 msgstr "Baszk"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="tools-menu" accesskey="t" label="Tools">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Eszközök\" accesskey=\"e\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="bn" id="dcmibn" label="Bengali; Bangla ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bengali; Bangla "
 msgstr "Bengáli"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="toolsPreferences()" label="Preferences">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "Preferences"
 msgstr "Beállítások"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="bh" id="dcmibh" label="Bihari ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bihari "
 msgstr "Bihari"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh Display">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="window.location = window.location"
+#: id="refresh-menu" accesskey="r" label="Refresh Display">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Refresh Display\" accesskey=\"r\""
 msgstr "label=\"Képernyő frissítése\" accesskey=\"r\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="bi" id="dcmibi" label="Bislama ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bislama "
 msgstr "Bislama"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="styles-menu" accesskey="s" label="Styles">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"Stílus\" accesskey=\"t\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="bs" id="dcmibs" label="Bosnian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bosnian "
 msgstr "Bosnyák"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: n:render="translate" id="help-menu" accesskey="h" label="Help">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Súgó\" accesskey=\"s\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="br" id="dcmibr" label="Breton ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Breton "
 msgstr "Breton"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
 #: label="Online eXe Manual">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Megnyitás...\" accesskey=\"n\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="be" id="dcmibe" label="Byelorussian; Belarusian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Byelorussian; Belarusian "
 msgstr "Belorusz"
 
 # exe/xului/templates/mainpage.xul:<menu
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
 #: label="Tips and Tricks">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 msgstr "label=\"Eszközök\" accesskey=\"e\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="bg" id="dcmibg" label="Bulgarian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bulgarian "
 msgstr "Bolgár"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
 #: label="Release Notes">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Release Notes\" accesskey=\"n\""
 msgstr "label=\"Új\" accesskey=\"ú\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="my" id="dcmimy" label="Burmese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Burmese "
 msgstr "Burmai"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"Hibabejelentés\" accesskey=\"h\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ca" id="dcmica" label="Catalan ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Catalan "
 msgstr "Katalán"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"eXe online csevegés\" accesskey=\"c\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ch" id="dcmich" label="Chamorro ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chamorro "
 msgstr "Kamorró"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="aboutPage()" accesskey="a" label="About eXe">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="aboutPage()" accesskey="a" label="About
+#: eXe">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"Névjegy\" accesskey=\"n\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ce" id="dcmice" label="Chechen ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chechen "
 msgstr "Csecsen"
 
 # exe/xului/templates/mainpage.xul:<label
 # n:render="debugInfo"
-#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
-#: value="debugInfo">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: n:render="debugInfo" value="debugInfo">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<label
 msgid "debugInfo"
 msgstr "nyomkövetési információ"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="zh" id="dcmizh" label="Chinese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chinese "
 msgstr "Kínai"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # n:render="addChild"
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
-#: key="addChildKey" id="btnAdd" label="Add Page">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: n:render="addChild" key="addChildKey" id="btnAdd" label="Add Page">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
 msgid "Add Page"
 msgstr "Új lap"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="cu" id="dcmicu" label="Church Slavic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Church Slavic "
 msgstr "Egyházi szláv"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # n:render="renNode"
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
-#: key="renNodeKey" id="btnRename" label="Rename">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
 msgid "Rename"
 msgstr "Átnevezés"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="cv" id="dcmicv" label="Chuvash ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chuvash "
 msgstr "Csuvas"
 
 # exe/xului/templates/mainpage.xul:<label
 # n:render="outlinePane"
-#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
-#: value="outlinePane">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: n:render="outlinePane" flex="1" value="outlinePane">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<label
 msgid "outlinePane"
 msgstr "Tervező nézet"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="kw" id="dcmikw" label="Cornish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Cornish "
 msgstr "Cornish"
 
 # exe/xului/templates/mainpage.xul:<label
-#: exe/xului/templates/mainpage.xul:<label value="iDevices"
-#: style="margin-top:5px;">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: value="iDevices" style="margin-top:5px;">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<label
 msgid "iDevices"
 msgstr "iDevice modulok"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="co" id="dcmico" label="Corsican ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Corsican "
 msgstr "Korzikai"
 
 # exe/xului/templates/mainpage.xul:<label
 # n:render="idevicePane"
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: n:render="idevicePane" flex="1" value="iDevicePane">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<label
 msgid "iDevicePane"
 msgstr "iDevice modulok"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="hr" id="dcmihr" label="Croatian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Croatian "
 msgstr "Horvát"
 
 # exe/xului/templates/mainpage.xul:<tab
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
+#: n:render="translate" label="Authoring">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<tab
+#: exe/xului/templates/mainpage.xul:<tab
 msgid "Authoring"
 msgstr "Szerzői nézet"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
-#: label="Czech ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="cs" id="dcmics" label="Czech ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Czech "
 msgstr "Cseh"
 
 # exe/xului/templates/mainpage.xul:<tab
 # n:render="translate"
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
+#: n:render="translate" label="Properties">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<tab
+#: exe/xului/templates/mainpage.xul:<tab
 msgid "Properties"
 msgstr "Tulajdonságok"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
-#: label="Danish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="da" id="dcmida" label="Danish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Danish "
 msgstr "Dán"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
-#: label="Dzongkha; Bhutani ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Dzongkha; Bhutani "
 msgstr "Dzongkha"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
-#: label="English ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="en" id="dcmien" label="English ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "English "
 msgstr "Angol"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
-#: label="Esperanto ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="eo" id="dcmieo" label="Esperanto ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Esperanto "
 msgstr "Eszperantó"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
-#: label="Estonian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="et" id="dcmiet" label="Estonian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Estonian "
 msgstr "Észt"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
-#: label="Finnish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="fi" id="dcmifi" label="Finnish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Finnish "
 msgstr "Finn"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
-#: label="Fijian; Fiji ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="fj" id="dcmifj" label="Fijian; Fiji ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Fijian; Fiji "
 msgstr "Fidzsi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
-#: label="Faroese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="fo" id="dcmifo" label="Faroese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Faroese "
 msgstr "Faroese"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
-#: label="French ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="fr" id="dcmifr" label="French ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "French "
 msgstr "Francia"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
-#: label="Frisian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="fy" id="dcmify" label="Frisian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Frisian "
 msgstr "Fríz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
-#: label="Scots; Gaelic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="gd" id="dcmigd" label="Scots; Gaelic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Scots; Gaelic "
 msgstr "Skót"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
-#: label="Gallegan; Galician ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="gl" id="dcmigl" label="Gallegan; Galician ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Gallegan; Galician "
 msgstr "Gallíciai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
-#: label="Georgian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ka" id="dcmika" label="Georgian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Georgian "
 msgstr "Grúz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
-#: label="German ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="de" id="dcmide" label="German ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "German "
 msgstr "Német"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
-#: label="Guarani ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="gn" id="dcmign" label="Guarani ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Guarani "
 msgstr "Guarani"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
-#: label="Gujarati ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="gu" id="dcmigu" label="Gujarati ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Gujarati "
 msgstr "Gujarati"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
-#: label="Hausa (?) ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ha" id="dcmiha" label="Hausa (?) ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hausa (?) "
 msgstr "Hausa"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
-#: label="Hebrew (formerly iw) ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="he" id="dcmihe" label="Hebrew (formerly iw) ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hebrew (formerly iw) "
 msgstr "Héber"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
-#: label="Hindi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="hi" id="dcmihi" label="Hindi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hindi "
 msgstr "Hindi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
-#: label="Hiri Motu ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ho" id="dcmiho" label="Hiri Motu ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hiri Motu "
 msgstr "Hiri Motu"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
-#: label="Hungarian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="hu" id="dcmihu" label="Hungarian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hungarian "
 msgstr "Magyar"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
-#: label="Herero ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="hz" id="dcmihz" label="Herero ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Herero "
 msgstr "Herero"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
-#: label="Interlingua ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ia" id="dcmiia" label="Interlingua ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Interlingua "
 msgstr "Nemzetközi nyelv"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
-#: label="Indonesian (formerly in) ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="id" id="dcmiid" label="Indonesian (formerly in) ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Indonesian (formerly in) "
 msgstr "Indonéz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
-#: label="Interlingue ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ie" id="dcmiie" label="Interlingue ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Interlingue "
 msgstr "Occidental nyelv"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
-#: label="Inupiak ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ik" id="dcmiik" label="Inupiak ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Inupiak "
 msgstr "Inupiak"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
-#: label="Ido ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="io" id="dcmiio" label="Ido ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ido "
 msgstr "Ido"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
-#: label="Icelandic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="is" id="dcmiis" label="Icelandic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Icelandic "
 msgstr "Izlandi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
-#: label="Irish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ga" id="dcmiga" label="Irish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Irish "
 msgstr "Ír"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
-#: label="Italian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="it" id="dcmiit" label="Italian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Italian "
 msgstr "Olasz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
-#: label="Inuktitut ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="iu" id="dcmiiu" label="Inuktitut ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Inuktitut "
 msgstr "Inuktitut"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
-#: label="Japanese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ja" id="dcmija" label="Japanese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Japanese "
 msgstr "Japán"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
-#: label="Javanese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="jv" id="dcmijv" label="Javanese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Javanese "
 msgstr "Jávai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
-#: label="Kikuyu ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ki" id="dcmiki" label="Kikuyu ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kikuyu "
 msgstr "Kikuyu"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
-#: label="Kuanyama ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="kj" id="dcmikj" label="Kuanyama ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kuanyama "
 msgstr "Kuanyama"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
-#: label="Kazakh ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="kk" id="dcmikk" label="Kazakh ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kazakh "
 msgstr "Kazah"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
-#: label="Kalaallisut; Greenlandic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kalaallisut; Greenlandic "
 msgstr "Kalaalisut; Gröllandi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
-#: label="Khmer; Cambodian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="km" id="dcmikm" label="Khmer; Cambodian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Khmer; Cambodian "
 msgstr "Kmer; kambodzsai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
-#: label="Kannada ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="kn" id="dcmikn" label="Kannada ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kannada "
 msgstr "Kanadai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
-#: label="Korean ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ko" id="dcmiko" label="Korean ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Korean "
 msgstr "Koreai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
-#: label="Kashmiri ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ks" id="dcmiks" label="Kashmiri ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kashmiri "
 msgstr "Kasmíri"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
-#: label="Kinyarwanda ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="rw" id="dcmirw" label="Kinyarwanda ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kinyarwanda "
 msgstr "Kinyarwanda"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
-#: label="Kirghiz ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ky" id="dcmiky" label="Kirghiz ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kirghiz "
 msgstr "Kirgiz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
-#: label="Komi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="kv" id="dcmikv" label="Komi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Komi "
 msgstr "Komi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
-#: label="Kurdish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ku" id="dcmiku" label="Kurdish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kurdish "
 msgstr "Kurd"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
-#: label="Latin ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="la" id="dcmila" label="Latin ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Latin "
 msgstr "Latin"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
-#: label="Letzeburgesch ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="lb" id="dcmilb" label="Letzeburgesch ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Letzeburgesch "
 msgstr "Letzeburgesch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
-#: label="Lingala ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ln" id="dcmiln" label="Lingala ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Lingala "
 msgstr "Lingala"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
-#: label="Lao; Laotian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="lo" id="dcmilo" label="Lao; Laotian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Lao; Laotian "
 msgstr "Lao"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
-#: label="Lithuanian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="lt" id="dcmilt" label="Lithuanian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Lithuanian "
 msgstr "Litván"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
-#: label="Latvian; Lettish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="lv" id="dcmilv" label="Latvian; Lettish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Latvian; Lettish "
 msgstr "Lett"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
-#: label="Malagasy ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mg" id="dcmimg" label="Malagasy ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Malagasy "
 msgstr "Malagesi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
-#: label="Manx ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="gv" id="dcmigv" label="Manx ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Manx "
 msgstr "Manx"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
-#: label="Marshall ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mh" id="dcmimh" label="Marshall ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Marshall "
 msgstr "Marshall szigeteki"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
-#: label="Maori ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mi" id="dcmimi" label="Maori ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Maori "
 msgstr "Maori"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
-#: label="Macedonian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mk" id="dcmimk" label="Macedonian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Macedonian "
 msgstr "Makedón"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
-#: label="Marathi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mr" id="dcmimr" label="Marathi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Marathi "
 msgstr "Marathi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
-#: label="Malayalam ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ml" id="dcmiml" label="Malayalam ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Malayalam "
 msgstr "Malayalam"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
-#: label="Moldavian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mo" id="dcmimo" label="Moldavian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Moldavian "
 msgstr "Moldáv"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
-#: label="Mongolian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mn" id="dcmimn" label="Mongolian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Mongolian "
 msgstr "Mongol"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
-#: label="Malay ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ms" id="dcmims" label="Malay ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Malay "
 msgstr "Maláj"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
-#: label="Maltese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="mt" id="dcmimt" label="Maltese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Maltese "
 msgstr "Máltai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
-#: label="Nauru ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="na" id="dcmina" label="Nauru ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Nauru "
 msgstr "Nauru"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
-#: label="Norwegian Bokmål ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="nb" id="dcminb" label="Norwegian Bokmål ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 #, fuzzy
 msgid "Norwegian Bokmål "
 msgstr "Norvég"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 # value="nd" id="dcmind" label="Ndebele, North ">
-#: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
-#: label="Ndebele, North ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="nd" id="dcmind" label="Ndebele, North ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndebele, North "
 msgstr "Ndebele észak"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
-#: label="Nepali ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ne" id="dcmine" label="Nepali ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Nepali "
 msgstr "Nepáli"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
-#: label="Ndonga ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ng" id="dcming" label="Ndonga ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndonga "
 msgstr "Ndonga"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
-#: label="Dutch ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="nl" id="dcminl" label="Dutch ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Dutch "
 msgstr "Holland"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
-#: label="Norwegian Nynorsk ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="nn" id="dcminn" label="Norwegian Nynorsk ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian Nynorsk "
 msgstr "Norvég"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino"
-#: label="Norwegian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="no" id="dcmino" label="Norwegian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian "
 msgstr "Norvég"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 # value="nr" id="dcminr" label="Ndebele, South ">
-#: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
-#: label="Ndebele, South ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="nr" id="dcminr" label="Ndebele, South ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndebele, South "
 msgstr "Ndebele déli"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
-#: label="Navajo ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="nv" id="dcminv" label="Navajo ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Navajo "
 msgstr "Navaho"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
-#: label="Chichewa; Nyanja ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ny" id="dcminy" label="Chichewa; Nyanja ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chichewa; Nyanja "
 msgstr "Csikeva"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
-#: label="Occitan; Provençal ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="oc" id="dcmioc" label="Occitan; Provençal ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 #, fuzzy
 msgid "Occitan; Provençal "
 msgstr "Provanszál"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
-#: label="(Afan) Oromo ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="om" id="dcmiom" label="(Afan) Oromo ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "(Afan) Oromo "
 msgstr "Oromo"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior"
-#: label="Oriya ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="or" id="dcmior" label="Oriya ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Oriya "
 msgstr "Oriya"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
-#: label="Ossetian; Ossetic ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="os" id="dcmios" label="Ossetian; Ossetic ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ossetian; Ossetic "
 msgstr "Oszét"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
-#: label="Panjabi; Punjabi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="pa" id="dcmipa" label="Panjabi; Punjabi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Panjabi; Punjabi "
 msgstr "Pandzsabi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
-#: label="Pali ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="pi" id="dcmipi" label="Pali ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Pali "
 msgstr "Pali"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
-#: label="Persian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="fa" id="dcmifa" label="Persian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Persian "
 msgstr "Perzsa"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl"
-#: label="Polish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="pl" id="dcmipl" label="Polish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Polish "
 msgstr "Lengyel"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 # value="ps" id="dcmips" label="Pashto, Pushto ">
-#: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
-#: label="Pashto, Pushto ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ps" id="dcmips" label="Pashto, Pushto ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Pashto, Pushto "
 msgstr "Pastu"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
-#: label="Portuguese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="pt" id="dcmipt" label="Portuguese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Portuguese "
 msgstr "Portugál"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
-#: label="Quechua ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="qu" id="dcmiqu" label="Quechua ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Quechua "
 msgstr "Kecsua"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
-#: label="Rhaeto-Romance ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="rm" id="dcmirm" label="Rhaeto-Romance ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Rhaeto-Romance "
 msgstr "Rhaeto-Romance"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn"
-#: label="Rundi; Kirundi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="rn" id="dcmirn" label="Rundi; Kirundi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Rundi; Kirundi "
 msgstr "Rundi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
-#: label="Romanian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ro" id="dcmiro" label="Romanian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Romanian "
 msgstr "Román"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru"
-#: label="Russian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ru" id="dcmiru" label="Russian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Russian "
 msgstr "Orosz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa"
-#: label="Sanskrit ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sa" id="dcmisa" label="Sanskrit ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sanskrit "
 msgstr "Szanszkrit"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc"
-#: label="Sardinian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sc" id="dcmisc" label="Sardinian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sardinian "
 msgstr "Szardíniai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise"
-#: label="Northern Sami ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="se" id="dcmise" label="Northern Sami ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Northern Sami "
 msgstr "Észak számi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
-#: label="Samoan ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sm" id="dcmism" label="Samoan ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Samoan "
 msgstr "Szamoai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg"
-#: label="Sango; Sangro ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sg" id="dcmisg" label="Sango; Sangro ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sango; Sangro "
 msgstr "Sango"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 # value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
-#: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist"
-#: label="Sesotho; Sotho, Southern ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sesotho; Sotho, Southern "
 msgstr "Sesotoi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
-#: label="Shona ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sn" id="dcmisn" label="Shona ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Shona "
 msgstr "Shona"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd"
-#: label="Sindhi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sd" id="dcmisd" label="Sindhi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sindhi "
 msgstr "Shindi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
-#: label="Serbian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sr" id="dcmisr" label="Serbian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Serbian "
 msgstr "Szerb"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi"
-#: label="Sinhalese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="si" id="dcmisi" label="Sinhalese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sinhalese "
 msgstr "Szingaléz"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk"
-#: label="Slovak ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sk" id="dcmisk" label="Slovak ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Slovak "
 msgstr "Szlovák"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl"
-#: label="Slovenian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sl" id="dcmisl" label="Slovenian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Slovenian "
 msgstr "Szlovén"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso"
-#: label="Somali ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="so" id="dcmiso" label="Somali ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Somali "
 msgstr "Szomáli"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
-#: label="Spanish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="es" id="dcmies" label="Spanish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Spanish "
 msgstr "Spanyol"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
-#: label="Swati; Siswati ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ss" id="dcmiss" label="Swati; Siswati ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swati; Siswati "
 msgstr "Swati"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu"
-#: label="Sundanese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="su" id="dcmisu" label="Sundanese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sundanese "
 msgstr "Szudáni"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
-#: label="Swahili ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sw" id="dcmisw" label="Swahili ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swahili "
 msgstr "Swahili"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv"
-#: label="Swedish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="sv" id="dcmisv" label="Swedish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swedish "
 msgstr "Svéd"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl"
-#: label="Tagalog ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tl" id="dcmitl" label="Tagalog ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tagalog "
 msgstr "Tagalog"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity"
-#: label="Tahitian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ty" id="dcmity" label="Tahitian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tahitian "
 msgstr "Tahiti"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
-#: label="Tajik ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tg" id="dcmitg" label="Tajik ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tajik "
 msgstr "Tadzsig"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
-#: label="Tamil ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ta" id="dcmita" label="Tamil ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tamil "
 msgstr "Tamil"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
-#: label="Tatar ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tt" id="dcmitt" label="Tatar ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tatar "
 msgstr "Tatár"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
-#: label="Telugu ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="te" id="dcmite" label="Telugu ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Telugu "
 msgstr "Telugu"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
-#: label="Thai ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="th" id="dcmith" label="Thai ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Thai "
 msgstr "Thai"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
-#: label="Tibetan ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="bo" id="dcmibo" label="Tibetan ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tibetan "
 msgstr "Tibeti"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
-#: label="Tigrinya ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ti" id="dcmiti" label="Tigrinya ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tigrinya "
 msgstr "Tigrinya"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
-#: label="Tsonga ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ts" id="dcmits" label="Tsonga ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tsonga "
 msgstr "Tsonga"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
-#: label="Tswana; Setswana ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tn" id="dcmitn" label="Tswana; Setswana ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tswana; Setswana "
 msgstr "Tswana"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
-#: label="Tongan ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="to" id="dcmito" label="Tongan ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tongan  "
 msgstr "Tongan"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
-#: label="Turkish ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tr" id="dcmitr" label="Turkish ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Turkish "
 msgstr "Török"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk"
-#: label="Turkmen ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tk" id="dcmitk" label="Turkmen ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Turkmen "
 msgstr "Türkmén"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
-#: label="Twi ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="tw" id="dcmitw" label="Twi ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Twi "
 msgstr "Twi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug"
-#: label="Uighur ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ug" id="dcmiug" label="Uighur ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Uighur "
 msgstr "Uighur"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
-#: label="Ukrainian ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="uk" id="dcmiuk" label="Ukrainian ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ukrainian "
 msgstr "Ukrán"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
-#: label="Urdu ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="ur" id="dcmiur" label="Urdu ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Urdu "
 msgstr "Urdu"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
-#: label="Uzbek ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="uz" id="dcmiuz" label="Uzbek ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Uzbek "
 msgstr "Üzbég"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi"
-#: label="Vietnamese ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="vi" id="dcmivi" label="Vietnamese ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Vietnamese "
 msgstr "Vietnámi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
-#: label="Volapük; Volapuk ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="vo" id="dcmivo" label="Volapük; Volapuk ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 #, fuzzy
 msgid "Volapük; Volapuk "
 msgstr "Volapuk"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa"
-#: label="Walloon ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="wa" id="dcmiwa" label="Walloon ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Walloon "
 msgstr "Wallon"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
-#: label="Welsh ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="cy" id="dcmicy" label="Welsh ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Welsh "
 msgstr "Welszi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo"
-#: label="Wolof ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="wo" id="dcmiwo" label="Wolof ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Wolof "
 msgstr "Wolof"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh"
-#: label="Xhosa ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="xh" id="dcmixh" label="Xhosa ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Xhosa "
 msgstr "Xhosa"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
-#: label="Yiddish (formerly ji) ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="yi" id="dcmiyi" label="Yiddish (formerly ji) ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Yiddish (formerly ji) "
 msgstr "Jiddis"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
-#: label="Yoruba ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="yo" id="dcmiyo" label="Yoruba ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Yoruba "
 msgstr "Yoroba"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
-#: label="Zhuang ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="za" id="dcmiza" label="Zhuang ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Zhuang "
 msgstr "Zhuang"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
-#: label="Zulu ">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: value="zu" id="dcmizu" label="Zulu ">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem
 #, fuzzy
 msgid "Zulu "
 msgstr "Zulu"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Relation:"
-#: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
-#: style="width:8em" tooltiptext="A reference to a related resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A
+#: reference to a related resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Relation:"
 msgstr "Kapcsolat:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Coverage:"
-#: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
-#: style="width:8em" tooltiptext="The extent or scope of the content
-#: resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Coverage:" id="dcCoverage" style="width:8em" tooltiptext="The extent
+#: or scope of the content resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Coverage:"
 msgstr "Átfedés:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Rights:"
-#: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
-#: style="width:8em" tooltiptext="Information about rights held in and over
-#: the resource.">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
+#: value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information
+#: about rights held in and over the resource.">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
+#: exe/xului/templates/dublincore.xul:<label
 msgid "Rights:"
 msgstr "Jogok:"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<description
+#: id="dcDescRights">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<description
+#: exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Jellemzően a \"Jogok\" elem tartalmazza a forrás jogkezelésére vonatkozó álláspontokat, vagy hivatkozik egy ide vonatkozó szolgáltatásra. A jogok gyakran tartalmazzák a szellemi tulajdonjogot,a szerzői jogot és egyéb tulajdonjogokat. Ha a \"Jogok\" elem hiányzik, nincs feltétel, amely alapján megállapítható lenne a forrás jogállása és egyéb jogok."
 
