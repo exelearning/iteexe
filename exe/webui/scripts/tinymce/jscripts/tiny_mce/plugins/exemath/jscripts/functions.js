@@ -53,9 +53,16 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 
         var html = "";
 
-	//html += '<CENTER>&nbsp;{$lang_exemath_compile_label}<BR>';
-	// hmmmm, the above does NOT translate!  
-	// so, for now, as a test, merely put:
+	////////////////////////////////////////
+	// Note: not sure exactly how the following is working quite yet, but it seems
+	// to need the img embedded within the button, somehow due to the id I'm sure.
+	// May want to remove the icon at some point, but then will need to clear this up.
+	// Most likely also related to the <a id="[id]_link" href=javascript:openBrower2(id,..)
+	// that occurs at the end, which really does seem an odd place for it, considering that
+	// the buttons onclick does an openBrower2 already.  hmmmmmm, something is odd here.
+	// BUT, still works with the end <a href=javascript:openBrower2> commented out, at least!
+	// so, there's still some id that goes along with the img that should be applied to the 
+	// button itself in order to remove the icon image, if ever so desired. should be "easy as"!
 	////////////////////////////////////////
 	//html += '<CENTER>&nbsp;until button,<BR>r3m0 say...<BR>';
 	html += '<CENTER>&nbsp;';
@@ -63,29 +70,18 @@ function getMathBrowserHTML(id, source_form_element, target_form_element, type, 
 	//html += ' id="' + id + '_link"';
         html += 'onclick="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" ';
 	html += '>';
-	//html += 'click me';
-	//html += 'PREVIEW';
-	//html += '{$lang_exemath_compile_tooltip}';
 	///////
+	// the icon image:
         html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
         html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
         html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
 	///////
 	html += "<BR>";
 	html += tinyMCE.getLang('lang_exemath_compile_label');
-	// nope - the above language ISN'T working, so see below steps, and also 
-	// see if we have a javascript call to do that translation right here.
 	html += '</BUTTON><BR>';
-	//html += '<CENTER>&nbsp;Preview:<BR>';
 	////////////////////////////////////////
-	// and see how the INSERT/UPDATE/CANCEL buttons are created, and how their $lang is used,
-	// but beware that it might be more difficult to do in this getMathBrowserHTML????
-	// regardless, do need to upgrade to a real button,
-	// and PERHAPS one that can utilize the image as well? (no worries if not, though!)
-	// MIGHT be able to include the label name to translate in the original .htm tag, as:
-	//	<td id="srcbrowsercontainer" name-or-label={$lang_exemath_compile_label}>
 
-        html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
+        //html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
 	// and try to put a label with the button: 
         //html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
         //html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
@@ -225,7 +221,10 @@ function init() {
 		formObj.src.value    = src;
 		formObj.alt.value    = tinyMCE.getAttrib(elm, 'alt');
 
+
 		formObj.title.value  = tinyMCE.getAttrib(elm, 'title');
+		//alert('r3m0: init called with alt='+formObj.alt.value+', and title='+formObj.title.value);
+
 		formObj.border.value = trimSize(getStyle(elm, 'border', 'borderWidth'));
 		formObj.vspace.value = tinyMCE.getAttrib(elm, 'vspace');
 		formObj.hspace.value = tinyMCE.getAttrib(elm, 'hspace');
@@ -422,7 +421,13 @@ function insertAction() {
 
 
 		setAttrib(elm, 'alt');
-		setAttrib(elm, 'title');
+
+		// r3m0: trying to maintain the title:
+	        var keep_title = formObj.title.value;
+		//alert('r3m0: insertAction() called, and setting title to:'+formObj.title.value);
+		//setAttrib(elm, 'title');
+		setAttrib(elm, 'title', keep_title);
+
 		setAttrib(elm, 'border');
 		setAttrib(elm, 'vspace');
 		setAttrib(elm, 'hspace');
@@ -506,6 +511,12 @@ function changeAppearance() {
 
 	if (img) {
 		img.align = formObj.align.value;
+
+		// r3m0: trying to maintain the title:
+		//alert('r3m0: changeAppearance called, and setting title to:'+formObj.title.value);
+		// images are loading with title=undefined!
+		img.title = formObj.title.value;
+
 		img.border = formObj.border.value;
 		img.hspace = formObj.hspace.value;
 		img.vspace = formObj.vspace.value;
