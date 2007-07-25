@@ -384,11 +384,6 @@ function insertAction() {
 		return false;
 	}
 
-	if (tinyMCE.getParam("accessibility_warnings")) {
-		if (formObj.alt.value == "" && !confirm(tinyMCE.getLang('lang_advimage_missing_alt', '', true)))
-			return;
-	}
-
 //	if (onmouseoversrc && onmouseoversrc != "")
 //		onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
 
