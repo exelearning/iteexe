@@ -10,7 +10,7 @@ from exe import globals as G
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
 log = logging.getLogger(__name__)
 
-def compile(latex, fontsize=4):
+def compile(latex, fontsize=4, latex_is_file=False):
     """
     Takes a latex string and returns the path to a gif rendering
     'latex' is the latex string
@@ -49,7 +49,11 @@ def compile(latex, fontsize=4):
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
         else:
             startupinfo = None
-        process = subprocess.Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
+        log.debug(u"about to call mimetex command with latex=\""+latex+"\".")
+        if not latex_is_file: 
+            process = subprocess.Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo) 
+        else: 
+            process = subprocess.Popen([cmd, '-d', '-f', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
         returnCode = process.wait()
         log.debug(u"mimetex returnCode=%d", returnCode)
         if returnCode != 0:

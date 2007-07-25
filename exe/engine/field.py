@@ -306,14 +306,6 @@ class FieldWithResources(Field):
 
         self.RemoveZombieResources(resources_in_use)
 
-        #r3m0: log that we're not yet doing the math files!
-        log.warn("r3m0: ====> FIX HERE: we are NOT yet taking into account the paired .tex math source files, and these could have been removed!!!!!")
-        # and furthermore, what DO we want to do about the Massaging of these?
-        # which brings up the question of.... do we even export them?
-        # if not, then the massaging could just remove the attributes which
-        # point to the source files, yes?
-        # perhaps this is best for now, at least until anybody requests it?
-
         return new_content
 
     # A note on the eventual ProcessPreviewedMedia(): 
@@ -581,7 +573,7 @@ class FieldWithResources(Field):
         #        + " to point to " + resource_url + ".tex")
         """
         new_content = content
-        log.debug('r3m0: welcome to ProcessPairedMathSource(): ' \
+        log.debug('ProcessPairedMathSource: processing ' \
                 + 'exe_math_latex='+preview_math_src)
         # we are given the exe_math_latex attribute =: 
         #       "src=\"../previews/eXe_LaTeX_math_1.gif.tex\""
@@ -591,7 +583,7 @@ class FieldWithResources(Field):
         preview_math_file = quoteless_math_src.replace("src=","")
         math_file = preview_math_file.replace("../previews/","")
 
-        log.debug('   looking for preview exe_math_latex file: ' + math_file);
+        #log.debug('   looking for preview exe_math_latex file: ' + math_file);
         # 2. check for the file existing in the previews dir
         webDir     = Path(G.application.tempWebDir)
         previewDir  = webDir.joinpath('previews')
@@ -604,12 +596,11 @@ class FieldWithResources(Field):
         # attempting to create a corresponding GalleryImage resource:
         if os.path.exists(math_file_name_str) \
         and os.path.isfile(math_file_name_str): 
-            log.debug('    good, found it!!!!!') 
             # 3. If (and only if) the resource_path name differs from it,
             expected_mathsrc_resource_filename = \
                     math_image_resource_filename+".tex"
             if (math_file != expected_mathsrc_resource_filename):
-                log.debug('     BUT, it no longer syncs to the image file, '\
+                log.debug('Note: it no longer syncs to the image file, '\
                         + 'which is now named: ' \
                         + math_image_resource_filename)
                 # 3a.   then go ahead and copy to the new filename,
@@ -634,7 +625,7 @@ class FieldWithResources(Field):
                 math_file_name_str = base_file_str
 
             else:
-                log.debug('    which still syncs with the image file.')
+                log.debug('And this exe_math_latex file still syncs with the image file.')
 
             # 4. make the actual resource via GalleryImage 
 
@@ -669,8 +660,8 @@ class FieldWithResources(Field):
             #   rebuilding the full attribute to: "src=\"/ <path w/ resources> \""
             from_str = "exe_math_latex=\""+preview_math_file+"\""
             to_str =   "exe_math_latex=\""+mathsrc_resource_url+"\""
-            log.debug('replacing exe_math_latex from: ' + from_str \
-                    + ', to: ' + to_str + '.')
+            #log.debug('replacing exe_math_latex from: ' + from_str \
+            #        + ', to: ' + to_str + '.')
             new_content = new_content.replace(from_str, to_str)
 
             return new_content
@@ -893,7 +884,7 @@ class FieldWithResources(Field):
                    # are resourcified! and further UPDATE edits are done.
                    if resource_path.find("eXe_LaTeX_math_") >= 0:
                    
-                       log.debug("r3m0: =====> hey, cool, this might be a math image!")
+                       #log.debug("r3m0: =====> hey, cool, this might be a math image!")
                        # Remember that the actual image is 
                        #preview_math_src=file_url_str.replace("../previews",\
                        #        "/previews") + ".tex\""
@@ -996,6 +987,13 @@ class FieldWithResources(Field):
         resources_url_src = "src=\"resources/"
         exported_src = "src=\""
         export_content = content.replace(resources_url_src,exported_src)
+
+        # and any math-image's counterpart LaTeX source files,
+        # since they are exported as resources as well:
+        resources_url_src = "exe_math_latex=\"resources/"
+        exported_src = "exe_math_latex=\""
+        export_content = export_content.replace(resources_url_src,exported_src)
+
         return export_content
 
 
