@@ -106,10 +106,10 @@ class GalleryBlock(Block):
         action = request.args.get('action', [''])[0]
         if action.startswith('gallery.'):
             self.processGallery(action)
-        if action == 'done':
-            self.idevice.recreateResources()
         if self.mode == Block.Edit:
             self.processCaptions(request)
+        if action == 'done':
+            self.idevice.recreateResources()
         # Let our ancestor deal with the rest
         Block.process(self, request)
 
