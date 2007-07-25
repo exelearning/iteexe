@@ -252,7 +252,8 @@ data is entered into this field."""))
         html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
         html += common.submitButton("addAttachment", _("Attachment"))
         html += common.elementInstruc(self.attachInstruc) + "<br/>"
-        html += common.submitButton("addMP3", _("MP3"))
+        #  r3m0: testing disabling of adding MP3 fields, since now embeddable:
+        #html += common.submitButton("addMP3", _("MP3"))
         html += common.elementInstruc(self.mp3Instruc) + "<br/>"
         html += "</fieldset>\n"
 
