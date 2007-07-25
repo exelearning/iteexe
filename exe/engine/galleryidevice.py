@@ -31,14 +31,12 @@ from exe.engine.idevice   import Idevice
 from exe.engine.field     import TextField
 from exe.engine.path      import Path, TempDirPath, toUnicode
 from exe.engine.persist   import Persistable
-from nevow                import tags as T
-from nevow.stan           import raw
-from nevow.flat           import flatten
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from exe.webui.common     import docType
 from exe    import globals as G
 import os
+import codecs
 
 log = logging.getLogger(__name__)
 
@@ -450,6 +448,7 @@ these in a gallery context rather then individually.</p>"""),
         Recreates all the thumbnails and html pages from the original image
         resources.
         """
+        log.debug(u'recreateResources for %d images' % (len(self.images)))
         if len(self.images) > 0:
             self._createHTMLPopupFile()
         for image in self.images:
@@ -481,144 +480,131 @@ these in a gallery context rather then individually.</p>"""),
                 styleDir = 'default'
             # Render!
             img = self.images[0]
-            data = '''<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml2/DTD/xhtml1-transitional.dtd">\n'''
-            data = data + flatten(
-               T.html[
-                 T.head[
-                   T.title[self.title],
-                   T.meta(**{'http-equiv': 'content-type',
-                       'content': "text/html; charset=UTF-8"}),
-                   # One style import for preview mode
-                   T.style(type="text/css")[
-                    '@import url(/style/base.css);'],
-                   T.style(type="text/css")[
-                    '@import url(/style/%s/content.css);' % styleDir],
-                   # One style import for export mode
-                   T.style(type="text/css")[
-                    '@import url(base.css);'],
-                   T.style(type="text/css")[
-                    '@import url(content.css);'],
-                   T.inlineJS(
-                         '\n'.join([
-                            '  var maxWidth = %s;' % self.previewSize[0],
-                            '  var maxHeight = %s;' % self.previewSize[1],
-                            '  var thWidth = maxWidth; var thHeight = maxHeight;',
-                            '  var images = %s;' % [img.imageSrc.encode('utf-8') for img in self.images],
-                            '  var titles = %s;' % [img.caption.encode('utf-8') for img in self.images],
-                            '  var imageIdx = 0;',
-                            '  var p = window.location.href.search(/=(\d+)$/);',
-                            '  if (p >= 0) {',
-                            '    imageIdx = parseInt(window.location.href.substr(p+1));',
-                            '    if ((imageIdx < 0) || (imageIdx > (images.length - 1))) { imageIdx = 0; }',
-                            '  }',
-                            '  var imageExpanded = false;',
-                            '  var imgObj = new Image();',
-                            '  imgObj.onload = function () { getShrinkMod(); toggleZoom(); }',
-                            '  imgObj.src = images[imageIdx];',
-                            '',
-                            'function getShrinkMod() {',
-                            '  thWidth = imgObj.width;',
-                            '  thHeight = imgObj.height;',
-                            '  if (imgObj.width > maxWidth) {',
-                            '    thHeight = imgObj.height * maxWidth / imgObj.width;',
-                            '    thWidth = maxWidth;',
-                            '  }',
-                            '  if (thHeight > maxHeight) {',
-                            '    thWidth = thWidth * maxHeight / thHeight;',
-                            '    thHeight = maxHeight;',
-                            '  }',
-                            '}',
-                            'function toggleZoom() {',
-                            '  var imgEle = document.getElementById("the_image");',
-                            '  if (imageExpanded) {',
-                            '    imgEle.width = thWidth; imgEle.height = thHeight;',
-                            '  } else {',
-                            '    imgEle.width = imgObj.width; imgEle.height = imgObj.height;',
-                            '  }',
-                            '  imageExpanded = !imageExpanded;',
-                            '}',
-                            '',
-                            '// Goes one image forward (if possible), then updates the screen',
-                            'function next() {',
-                            '    if (imageIdx < images.length - 1) {',
-                            '        imageIdx++;',
-                            '        imageExpanded = true;',
-                            '        updateWindow();',
-                            '    }',
-                            '}',
-                            '',
-                            '// Goes one image back (if possible), then updates the screen',
-                            'function prev() {',
-                            '    if (imageIdx > 0) {',
-                            '        imageIdx--;',
-                            '        imageExpanded = true;',
-                            '        updateWindow();',
-                            '    }',
-                            '}',
-                            '',
-                            '// Updates the screen',
-                            'function updateWindow() {',
-                            '    // Show/hide previous button',
-                            '    var btnPrev = document.getElementById("btnPrev");',
-                            '    if (imageIdx > 0) {',
-                            '        btnPrev.style.display = "block";',
-                            '    } else {',
-                            '        btnPrev.style.display = "none";',
-                            '    }',
-                            '    // Show/hide next button',
-                            '    var btnNext = document.getElementById("btnNext");',
-                            '    if (imageIdx < images.length - 1) {',
-                            '        btnNext.style.display = "block";',
-                            '    } else {',
-                            '        btnNext.style.display = "none";',
-                            '    }',
-                            '    // Update image',
-                            '    var imgEle = document.getElementById("the_image");',
-                            '    imgObj.src = images[imageIdx];',
-                            '    imgEle.src = images[imageIdx];',
-                            '    // Update title',
-                            '    var title = document.getElementById("nodeTitle");',
-                            '    if (titles[imageIdx] == "") {',
-                            '        title.innerHTML = "&nbsp;"',
-                            '    } else {',
-                            '        title.innerHTML = titles[imageIdx];',
-                            '    }',
-                            '}', ])),
-                 ],
-                 T.body(onLoad="updateWindow()")[
-                   T.h1(id='nodeTitle')[img.caption],
-                   T.p(align='center') [
-                     T.table(width="100%")[
-                       T.tr[
-                         T.td(align="right", width="33%")[
-                           T.a(href='javascript:prev()', id='btnPrev')[_('Previous')]
-                         ],
-                         T.td(align="center", width="33%")[
-                           T.a(href='javascript:window.close()')[
-                             _('Close')
-                           ],
-                         ],
-                         T.td(align="left", width="33%")[
-                            T.a(href='javascript:next()', id='btnNext')[_('Next')]
-                         ]
-                       ],
-                       T.tr[
-                         T.td(width="100%", align="center", colspan=3)[
-                             T.a(href="javascript:toggleZoom()")[
-                                 T.img(id='the_image',
-                                       src=unicode(img.imageSrc),
-                                       width=min(img.size[0], self.previewSize[0]),
-                                       height=min(img.size[1], self.previewSize[1]))
-                             ]
-                         ]
-                       ]
-                     ]
-                   ]
-                 ]
-               ]
-             )
+            data = docType() + u'''<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>%s</title>
+    <!-- preview mode -->
+    <style type="text/css">@import url(/style/base.css);</style>
+    <style type="text/css">@import url(/style/%s/content.css);</style>
+    <!-- export mode -->
+    <style type="text/css">@import url(base.css);</style>
+    <style type="text/css">@import url(content.css);</style>
+    <script type="text/javascript">
+//<![CDATA[
+  var maxWidth = %s;
+  var maxHeight = %s;
+  var thWidth = maxWidth; var thHeight = maxHeight;
+''' % (self.title, styleDir,
+        self.previewSize[0], self.previewSize[1])
+            data += '''
+  var images = %s''' % [img.imageSrc for img in self.images]
+            data += '''
+  var titles = ['''
+            for img in self.images:
+                data += "'" + img.caption + "',"
+            if len(self.images) > 0:
+                data = data[:-1]
+            data += ''']
+  var imageIdx = 0;
+  var p = window.location.href.search(/=(\d+)$/);
+  if (p >= 0) {
+    imageIdx = parseInt(window.location.href.substr(p+1));
+    if ((imageIdx < 0) || (imageIdx > (images.length - 1))) { imageIdx = 0; }
+  }
+  var imageExpanded = false;
+  var imgObj = new Image();
+  imgObj.onload = function () { getShrinkMod(); toggleZoom(); }
+  imgObj.src = images[imageIdx];
+
+function getShrinkMod() {
+  thWidth = imgObj.width;
+  thHeight = imgObj.height;
+  if (imgObj.width > maxWidth) {
+    thHeight = imgObj.height * maxWidth / imgObj.width;
+    thWidth = maxWidth;
+  }
+  if (thHeight > maxHeight) {
+    thWidth = thWidth * maxHeight / thHeight;
+    thHeight = maxHeight;
+  }
+}
+function toggleZoom() {
+  var imgEle = document.getElementById("the_image");
+  if (imageExpanded) {
+    imgEle.width = thWidth; imgEle.height = thHeight;
+  } else {
+    imgEle.width = imgObj.width; imgEle.height = imgObj.height;
+  }
+  imageExpanded = !imageExpanded;
+}
+
+// Goes one image forward (if possible), then updates the screen
+function next() {
+    if (imageIdx < images.length - 1) {
+        imageIdx++;
+        imageExpanded = true;
+        updateWindow();
+    }
+}
+
+// Goes one image back (if possible), then updates the screen
+function prev() {
+    if (imageIdx > 0) {
+        imageIdx--;
+        imageExpanded = true;
+        updateWindow();
+    }
+}
+
+// Updates the screen
+function updateWindow() {
+    // Show/hide previous button
+    var btnPrev = document.getElementById("btnPrev");
+    if (imageIdx > 0) {
+        btnPrev.style.display = "block";
+    } else {
+        btnPrev.style.display = "none";
+    }
+    // Show/hide next button
+    var btnNext = document.getElementById("btnNext");
+    if (imageIdx < images.length - 1) {
+        btnNext.style.display = "block";
+    } else {
+        btnNext.style.display = "none";
+    }
+    // Update image
+    var imgEle = document.getElementById("the_image");
+    imgObj.src = images[imageIdx];
+    imgEle.src = images[imageIdx];
+    // Update title
+    var title = document.getElementById("nodeTitle");
+    if (titles[imageIdx] == "") {
+        title.innerHTML = "&nbsp;"
+    } else {
+        title.innerHTML = titles[imageIdx];
+    }
+}
+//]]>
+</script></head>
+<body onLoad="updateWindow()">
+  <h1 id="nodeTitle">%s</h1>
+  <p align="center">
+    <table width="100%%">
+      <tr>
+         <td width="33%%" align="right"><a href="javascript:prev()" id="btnPrev">%s</a></td>
+         <td width="33%%" align="center"><a href="javascript:window.close()">%s</a></td>
+         <td width="33%%" align="left"><a href="javascript:next()" id="btnNext">%s</a></td>
+      </tr>
+      <tr>
+        <td colspan="3" align="center" width="100%%"><a href="javascript:toggleZoom()"><img width="%s" height="%s" id="the_image" src="%s" /></a></td>
+      </tr>
+    </table>
+  </p>
+</body></html>
+''' % (img.caption, _('Previous'), _('Close'), _('Next'),
+        self.previewSize[0], self.previewSize[1], unicode(img.imageSrc))
+
         finally:
             _ShowsResources.preview()
         # Create the HTML popup window
@@ -626,7 +612,7 @@ these in a gallery context rather then individually.</p>"""),
         htmlPath = Path(tmpDir/'galleryPopup.html')
         log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
         try:
-            htmlFile = open(htmlPath, 'wb')
+            htmlFile = codecs.open(htmlPath, encoding='utf-8', mode='wb')
             htmlFile.write(data)
             htmlFile.close()
             if not self._htmlResource is None:
