@@ -37,7 +37,13 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
+    #persistenceVersion = 4
+    # r3m0: putting this back to version 3, now that we will still keep FlashWithText around,
+    # and simply disable it from the config file.
+    #persistenceVersion = 3
+    # or, so that we don't have to put our exe's generic.data back a version, just leave it at:
     persistenceVersion = 4
+
 
 
     def __init__(self):
@@ -90,8 +96,9 @@ The width and height dimensions will alter proportionally.""")
 dimensions (in pixels) and determine the alignment of the image on screen. 
 The width and height dimensions will alter proportionally.""")
         self.flash._upgradeFieldToVersion3()
-    
-    def upgradeToVersion4(self):
+   
+    # r3m0: testing this WITHOUT the upgrade, by just disabling from the config file:
+    def NoLonger_upgradeToVersion4(self):
         """
         Converting FlashWithTextIdevice -> FreeTextIdevice,
         now that FreeText can hold embeddded .swf Flash Object media.
