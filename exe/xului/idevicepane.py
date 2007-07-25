@@ -99,7 +99,9 @@ class IdevicePane(Renderable):
             return cmp(pt1.title, pt2.title)
         prototypes.sort(sortfunc)
         for prototype in prototypes:
-            if prototype._title.lower() not in G.application.config.hiddeniDevices:
+            if prototype._title.lower() not in G.application.config.hiddeniDevices \
+            and prototype._title.lower() \
+            not in G.application.config.deprecatediDevices:
                 html += self.__renderPrototype(prototype)
 
         html += u"</listbox>\n"

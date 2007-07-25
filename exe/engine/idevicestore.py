@@ -124,8 +124,6 @@ class IdeviceStore:
         from exe.engine.titleidevice          import TitleIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
-        # converting FlashWithTextIdevice -> FreeTextIdevice:
-        # BUT: bringing it back to instead just disable it in the config file!
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
@@ -160,8 +158,6 @@ class IdeviceStore:
         self.extended.append(AttachmentIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
-        # converting FlashWithTextIdevice -> FreeTextIdevice:
-        # BUT: bringing it back to instead just disable it in the config file!
         self.extended.append(FlashWithTextIdevice())
         self.extended.append(ExternalUrlIdevice())
         self.extended.append(MathIdevice())

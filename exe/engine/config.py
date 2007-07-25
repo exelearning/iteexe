@@ -79,9 +79,11 @@ class Config:
         self.recentProjects = []
         # canonical (English) names of iDevices not to show in the iDevice pane
         self.hiddeniDevices = []
-        # likewise, a canonical (English) names of iDevices not to show in the iDevice pane
-        # but these are ones that the configuration can specify to turn ON:
-        self.deprecatediDevices = ['flash with text', 'flash movie', 'mp3', 'maths']
+        # likewise, a canonical (English) names of iDevices not to show in the
+        # iDevice pane but, contrary to the hiddens, these are ones that the 
+        # configuration can specify to turn ON:
+        self.deprecatediDevices = [ "flash with text", "flash movie", \
+                                    "mp3", "maths"]
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -240,6 +242,18 @@ class Config:
                 if value == "0" or value == "no" or value == "false" or \
                         value == "off":
                     self.hiddeniDevices.append(key.lower())
+
+        #self.deprecatediDevices = [ "flash with text", "flash movie", ...]
+        # and UN-Load from the list of "deprecated" iDevices
+        if self.configParser.has_section('deprecated'):
+            deprecatedSection = self.configParser.deprecated
+            for key,value in deprecatedSection.items():
+                # emulate standard library's getboolean()
+                value = value.strip().lower()
+                if value == "1" or value == "yes" or value == "true" or \
+                        value == "on":
+                    if key.lower() in self.deprecatediDevices:
+                        self.deprecatediDevices.remove(key.lower())
 
         # Load the "user" section
         if self.configParser.has_section('user'):
