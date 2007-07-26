@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -297,13 +298,12 @@ class QuizTestBlock(Block):
      
            calcRawScore();
            
-           actualScore = ( rawScore / numQuestions ) * 100;
-           actualScore1 =  Math.round(rawScore / numQuestions * 100);
+           actualScore = Math.round(rawScore / numQuestions * 100);
         """
-        scriptStr += 'alert("Your score is " + actualScore1 + "%")'
+        scriptStr += 'alert("Your score is " + actualScore + "%")'
         scriptStr += """   
            
-           doLMSSetValue( "cmi.core.score.raw", rawScore );
+           doLMSSetValue( "cmi.core.score.raw", actualScore+"" );
            
            var mode = doLMSGetValue( "cmi.core.lesson_mode" );
      
