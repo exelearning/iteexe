@@ -127,7 +127,8 @@ class IdeviceStore:
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
-        from exe.engine.mathidevice           import MathIdevice
+        # converting Maths Idevice -> FreeTextIdevice:
+        #from exe.engine.mathidevice           import MathIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice        
         from exe.engine.rssidevice            import RssIdevice 
         from exe.engine.multiselectidevice    import MultiSelectIdevice
@@ -160,7 +161,8 @@ class IdeviceStore:
         self.extended.append(ClozeIdevice())
         self.extended.append(FlashWithTextIdevice())
         self.extended.append(ExternalUrlIdevice())
-        self.extended.append(MathIdevice())
+        # converting Maths Idevice -> FreeTextIdevice:
+        #self.extended.append(MathIdevice())
         self.extended.append(MultimediaIdevice())
         self.extended.append(RssIdevice())
         self.extended.append(MultiSelectIdevice())

@@ -418,6 +418,7 @@ function insertAction() {
 		   setAttrib(elm, 'exe_math_latex', '..'+src+'.tex');
 		}
 
+
 		setAttrib(elm, 'exe_math_size', font_size);
 		setAttrib(elm, 'alt');
 

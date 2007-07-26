@@ -82,8 +82,7 @@ class Config:
         # likewise, a canonical (English) names of iDevices not to show in the
         # iDevice pane but, contrary to the hiddens, these are ones that the 
         # configuration can specify to turn ON:
-        self.deprecatediDevices = [ "flash with text", "flash movie", \
-                                    "mp3", "maths"]
+        self.deprecatediDevices = [ "flash with text", "flash movie", "mp3"]
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()

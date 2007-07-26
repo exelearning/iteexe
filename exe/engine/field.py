@@ -286,6 +286,13 @@ class FieldWithResources(Field):
         This is a wrapper around the specific types of previews,
         images, media, etc..
         """
+        #################################
+        # Part 0: remove any previous math source files which are no 
+        # longer in use; otherwise we get naming discrepencies in the case
+        # that identical math source is used with a new previewed math image
+        # (e.g., when changing only the font size)
+        resources_in_use = self.ListActiveImageResources(content)
+        self.RemoveZombieResources(resources_in_use)
 
         #################################
         # Part 1: process any newly added resources
