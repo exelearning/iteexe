@@ -93,11 +93,11 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
   }
 
   function setText(textID) {
-      var help = document.getElementById(textID).collapsed;
+      var help = document.getElementById(textID).hidden;
       if (help == false) {
-          document.getElementById(textID).collapsed=true; 
+          document.getElementById(textID).hidden=true; 
       } else {
-          document.getElementById(textID).collapsed=false;
+          document.getElementById(textID).hidden=false;
       }
   }
 

@@ -18,7 +18,7 @@
           <textbox id="dc_subject" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
         </hbox>
-        <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;">
+        <hbox flex="0" id="dc-subject" hidden="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
              <description id="dcDescSubject">
                 Typically, Subject will be expressed as keywords, key phrases or
@@ -45,7 +45,7 @@
           <textbox id="dc_date" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
         </hbox>
-        <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;">
+        <hbox flex="0" id="dc-date" hidden="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
             <description id="dcDescDate">
                  Typically, Date will be associated with the creation or
@@ -62,7 +62,7 @@
           <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
         </hbox>
-        <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
+        <hbox flex="0" id="dc-type" hidden="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
             <description id="dcDescType">
               Type includes terms describing general categories, functions, or
@@ -283,7 +283,7 @@
           <textbox id="dc_rights" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
         </hbox>
-        <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;">
+        <hbox flex="0" id="dc-rights" hidden="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
             <description id="dcDescRights">Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
           </groupbox>
