@@ -39,17 +39,18 @@ curr_edits_math_num = 1
 
 // Strings to be translated
 SELECT_AN_IMAGE    = "Select an image";
-IMAGE_FILES        = "Image Files";
-JPEG_FILES         = "JPEG Files";
+IMAGE_FILES        = "Image Files (.jpg, .jpeg, .png, .gif)";
+JPEG_FILES         = "JPEG Files (.jpg, .jpeg)";
 SELECT_A_FILE      = "Select a file";
-FLASH_MOVIE        = "Flash Movie";
-FLASH_OBJECT       = "Flash Object";
+FLASH_MOVIE        = "Flash Movie (.flv)";
+FLASH_OBJECT       = "Flash Object (.swf)";
 SELECT_AN_MP3_FILE = "Select an mp3 file";
-MP3_AUDIO          = "MP3 Audio";
-SHOCKWAVE_FILES    = "Shockwave Director Files"
-QUICKTIME_FILES    = "Quicktime Files"
-WINDOWSMEDIA_FILES = "Windows Media Player Files"
-REALMEDIA_AUDIO    = "RealMedia Audio Files"
+MP3_AUDIO          = "MP3 Audio (.mp3)";
+SHOCKWAVE_FILES    = "Shockwave Director Files (.dcr)"
+QUICKTIME_FILES    = "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
+WINDOWSMEDIA_FILES = "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
+REALMEDIA_AUDIO    = "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
+
 
 
 SELECT_A_PACKAGE   = "Select a package";
@@ -123,7 +124,7 @@ function askUserForMedia() {
     // but also add filters for each media type supported by tinyMCE's media plugin:
     fp.appendFilter(FLASH_OBJECT, "*.swf");
     fp.appendFilter(QUICKTIME_FILES, "*.mov; *.qt; *.mpg; *.mp3; *.mp4; *.mpeg");
-    fp.appendFilter(SHOCKWAVE_FILES, "*.dcr");
+    //fp.appendFilter(SHOCKWAVE_FILES, "*.dcr");
     fp.appendFilter(WINDOWSMEDIA_FILES, "*.avi; *.wmv; *.wm; *.asf; *.asx; *.wmx; *.wvx");
     fp.appendFilter(REALMEDIA_AUDIO, "*.rm; *.ra; *.ram; *.mp3");
     var res = fp.show();
