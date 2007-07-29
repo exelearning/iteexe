@@ -64,7 +64,10 @@ function init() {
 
 		switch (type) {
 			case "flash":
-				setBool(pl, 'flash', 'play');
+				//setBool(pl, 'flash', 'play');
+				// r3m0: try it as autoplay:
+				//setBool(pl, 'flash', 'autoPlay');
+			        // disabling. Flash SWF's play/autoplay seems to be overridden by the flash object itself.
 				setBool(pl, 'flash', 'loop');
 				setBool(pl, 'flash', 'menu');
 				setBool(pl, 'flash', 'swliveconnect');
@@ -343,7 +346,12 @@ function serializeParameters() {
 
 	switch (f.media_type.options[f.media_type.selectedIndex].value) {
 		case "flash":
-			s += getBool('flash', 'play', true);
+			// r3m0, was: s += getBool('flash', 'play', true);
+			//s += getBool('flash', 'play', 'force_to_ALWAYS_show');
+			// and try it as autoplay:
+			//s += getBool('flash', 'autoPlay', 'force_to_ALWAYS_show');
+			// disabling. Flash SWF's play/autoplay seems to be overridden by the flash object itself.
+
 			s += getBool('flash', 'loop', true);
 			s += getBool('flash', 'menu', true);
 			s += getBool('flash', 'swliveconnect', false);
@@ -357,7 +365,10 @@ function serializeParameters() {
 
 		case "qt":
 			s += getBool('qt', 'loop', false);
-			s += getBool('qt', 'autoplay', false);
+			// r3m0,  was: s += getBool('qt', 'autoplay', false);
+                        // which that caused it to never show autoplay=false, which is what it needs!
+			// so, force it to show regardless:
+			s += getBool('qt', 'autoplay', 'force_to_ALWAYS_show');
 			s += getBool('qt', 'cache', false);
 			s += getBool('qt', 'controller', true);
 			s += getBool('qt', 'correction', false, 'none', 'full');
@@ -387,7 +398,9 @@ function serializeParameters() {
 		break;
 
 		case "wmp":
-			s += getBool('wmp', 'autostart', true);
+			// r3m0, was: s += getBool('wmp', 'autostart', true);
+			// but force it to show regardless:
+			s += getBool('wmp', 'autostart', 'force_to_ALWAYS_show');
 			s += getBool('wmp', 'enabled', false);
 			s += getBool('wmp', 'enablecontextmenu', true);
 			s += getBool('wmp', 'fullscreen', false);
@@ -408,7 +421,9 @@ function serializeParameters() {
 		break;
 
 		case "rmp":
-			s += getBool('rmp', 'autostart', false);
+			// r3m0, was: s += getBool('rmp', 'autostart', false);
+			// but force it to show regardless:
+			s += getBool('rmp', 'autostart', 'force_to_ALWAYS_show');
 			s += getBool('rmp', 'loop', false);
 			s += getBool('rmp', 'autogotourl', true);
 			s += getBool('rmp', 'center', false);
@@ -440,10 +455,25 @@ function serializeParameters() {
 }
 
 function setBool(pl, p, n) {
+        //if (n=='autoplay' || n=='playeveryframe') {
+        if (n=='autoPlay' || n=='autoplay' || n=='loop') {
+           //alert('r3m0 test betterButterBooler... setBool for p_n:'+p+'_'+n+' ,with pl[n]='+pl[n]);
+        }
 	if (typeof(pl[n]) == "undefined")
 		return;
 
-	document.forms[0].elements[p + "_" + n].checked = pl[n];
+        // r3m0: this previous version:
+	//document.forms[0].elements[p + "_" + n].checked = pl[n];
+	// was under the assumption that only TRUE parameters were listed,
+	// and this is no longer the case, since QT's autoplay, for example, 
+	// must be shown when false.  So now check the value before checking:
+	////////////
+	// hang on, though, was it already starting to work
+	// a) still in authoring page, immediate UPDATE? ahhhh, hangs onto it?
+	// b) after green checkbox, later UPDATE? no, failed.  So...
+	if (pl[n] != "false") {
+	   document.forms[0].elements[p + "_" + n].checked = pl[n];
+	}
 }
 
 function setStr(pl, p, n) {
@@ -463,6 +493,10 @@ function getBool(p, n, d, tv, fv) {
 
 	tv = typeof(tv) == 'undefined' ? 'true' : "'" + jsEncode(tv) + "'";
 	fv = typeof(fv) == 'undefined' ? 'false' : "'" + jsEncode(fv) + "'";
+        //if (n=='autoplay' || n=='playeveryframe') {
+        if (n=='autoPlay' || n=='autoplay' || n=='loop') {
+           //alert('r3m0 test getBool for p_n:'+p+'_'+n+' and d='+d+', (with tv='+tv+', fv='+fv+') ='+v);
+        }
 
 	return (v == d) ? '' : n + (v ? ':' + tv + ',' : ':' + fv + ',');
 }
@@ -470,6 +504,7 @@ function getBool(p, n, d, tv, fv) {
 function getStr(p, n, d) {
 	var e = document.forms[0].elements[(p != null ? p + "_" : "") + n];
 	var v = e.type == "text" ? e.value : e.options[e.selectedIndex].value;
+//alert('r3m0 test getStr for p_n:'+p+'_'+n+'='+v+'=='+jsEncode(v));
 
 	return ((n == d || v == '') ? '' : n + ":'" + jsEncode(v) + "',");
 }

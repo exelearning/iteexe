@@ -157,6 +157,12 @@ class AuthoringPage(RenderableResource):
         html += u"valid_elements : \"*[*]\",\n"
         html += u"verify_html : false, \n"
         html += u"apply_source_formatting : true, \n"
+        # r3m0: testing to remove TinyMCE's escaping/quoting of HTML:
+        #html += u"apply_source_formatting : false, \n"
+        #html += u"cleanup_on_startup : false, \n"
+        #html += u"cleanup : false, \n"
+        # hmmmm, still not what we're looking for :-(
+        #
         html += u"gecko_spellcheck : true, \n"
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
