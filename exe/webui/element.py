@@ -1515,15 +1515,19 @@ class SelectOptionElement(Element):
         ident = self.field.question.id + str(self.index)
         html  = '<tr><td>'      
         html += u'<input type="checkbox" id="%s"' % ident
-        html += u' value="%s" />\n' %str(self.field.isCorrect)
+        html += u' value="%s" onclick="showOptionFeedback(\'%s\')"/>\n' %(str(self.field.isCorrect), ident)
+                
         ansIdent = "ans" + self.field.question.id + str(self.index)
         html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
         if preview: 
             html += self.answerElement.renderPreview()
         else:
             html += self.answerElement.renderView()
-        html += "</div></td></tr>\n"
-       
+        html += "</div></td></tr><tr><td></td><td>\n"
+        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '1')
+        html += _("Correct") + "</div>"
+        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '0')
+        html += _("Incorrect") + "</td></tr></div>"
         return html
     
     
@@ -1662,9 +1666,8 @@ class SelectquestionElement(Element):
             html += element.renderView(preview)      
         html += "</table>"   
         html += '<input type="button" name="submitSelect"' 
-        html += ' value="%s" ' % _("Submit Answer")
-        html += 'onclick="calcScore(%d, \'%s\')"/> ' %(len(self.options), 
-                                                       self.field.id)
+        html += ' value="%s" ' % _("Show Feedback")
+        html += 'onclick="showFeedback(\'%s\')"/> ' %(self.field.id) 
         html += "<br/>\n"
         html += '<div id="%s" style="display:none">' % ("f"+self.field.id)
 

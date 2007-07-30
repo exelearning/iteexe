@@ -1161,3 +1161,24 @@ function calcScore(num, ident){
     fele.style.display = "block"
     alert(YOUR_SCORE_IS  + score + "/" + num)
 }
+
+// sued for multi-select option's feedback
+function showOptionFeedback(ident){
+    var ele = document.getElementById(ident)
+    var ele0 = document.getElementById(ident+"0")
+    var ele1 = document.getElementById(ident + "1")
+    ckd = "False"
+    if (ele.checked==1)
+        chk = "True"
+        if (ele.value == chk)
+            ele1.style.display = "block"
+        else
+            ele0.style.display = "block"
+        
+}
+
+// used to show question's feedback for multi-select idevice 
+function showFeedback(ident){
+    var fele = document.getElementById("f"+ident)
+    fele.style.display = "block"
+}
