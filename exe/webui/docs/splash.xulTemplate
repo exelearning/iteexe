@@ -11,22 +11,27 @@
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
     xmlns:html="http://www.w3.org/1999/xhtml"
   >
-
+    <spacer height="30"/>
     <description>
       <html:center>
         <html:img src="../images/exe_logo.png"/>
       </html:center>
     </description>
+    <spacer height="20"/>
 
+    <row>
+    <spacer width="20"/>
     <groupbox>
       <caption label="Load Status (this may take some time)" /> 
       <row>
         <description><html:b>Loading: </html:b> LOADING_FILE_NAME</description>
       </row>
       <row>
-        <progressmeter id="pm" mode="undetermined" value="" width="540"/>
+        <progressmeter id="pm" mode="undetermined" value="" width="520"/>
       </row>
     </groupbox>
+    <spacer width="20"/>
+    </row>
     <script type="text/javascript" >
 
       function ol()
