@@ -85,6 +85,9 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
+        # translate the "don't close the window" message
+        red_x = _("Please use eXe's\n   File... Quit\nmenu to close eXe.")
+
     def getChild(self, name, request):
         """
         Try and find the child for the name given
