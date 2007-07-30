@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -184,8 +185,10 @@ class Manifest(object):
         xmlStr += u"<organization identifier=\""+orgId
         xmlStr += u"\" structure=\"hierarchical\">  \n"
 
-        title  = escape(self.package.root.titleShort)
-        
+        if self.package.title != '':
+            title = escape(self.package.title)
+        else:
+            title  = escape(self.package.root.titleShort)
         xmlStr += u"<title>"+title+"</title>\n"
         
         depth = 0
