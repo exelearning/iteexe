@@ -626,6 +626,7 @@ class MainPage(RenderableLivePage):
             # such that it can then be passed into the compile command:
             math_filename = previewDir.joinpath(preview_math_srcfile)
             math_filename_str = math_filename.abspath().encode('utf-8')
+            log.info("handleTinyMCEmath: using LaTeX source: " + latex_source)
             log.debug("writing LaTeX source into \'" \
                     + math_filename_str + "\'.")
             math_file = open(math_filename, 'wb')
