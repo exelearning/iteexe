@@ -19,7 +19,7 @@
     </description>
 
     <groupbox>
-      <caption label="Load Status" /> 
+      <caption label="Load Status (this may take some time)" /> 
       <row>
         <description><html:b>Loading: </html:b> LOADING_FILE_NAME</description>
       </row>
