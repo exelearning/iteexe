@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-31 02:13+1200\n"
+"POT-Creation-Date: 2007-07-31 21:41+1200\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Fredrik Paulsson <frepa@frepa.org>\n"
@@ -80,7 +80,7 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:70
+#: exe/engine/attachmentidevice.py:71
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Ge den bifogade filen en etikett. Det är bra att även ange filtyp. T.ex. pdf, ppt, etc.</p><p> Det är också bra att ange filens storlek för att ge användare en uppfattning om hur lång tid nerladdningen kommer att ta.</P> Exempelvis: <conde>Att göra en IUP.odt (500 kb)</code></p>"
 
@@ -98,22 +98,22 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "Fyll i texten till slutövningen genom att klistra in eller skriva i fältet. Markera ord som du vill dölja genom att dubbelklicka på ordet och klicka på <i>Visa/dölj ord</i> -knappen."
 
-#: exe/engine/field.py:1452
+#: exe/engine/field.py:1453
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:1473
+#: exe/engine/field.py:1474
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr ""
 
-#: exe/engine/field.py:1478
+#: exe/engine/field.py:1479
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 
-#: exe/engine/field.py:1727
+#: exe/engine/field.py:1728
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:159
+#: exe/engine/casestudyidevice.py:160
 #, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
@@ -253,7 +253,7 @@ msgstr "Lägg till interaktiv feedback till din iDevice"
 msgid "Add an mp3 file to your iDevice."
 msgstr "Lägg till interaktiv feedback till din iDevice"
 
-#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1627
+#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1631
 #, fuzzy
 msgid "Add another Option"
 msgstr "Lägg till ytterligare ett val"
@@ -268,7 +268,7 @@ msgstr "Lägg till ytterligare en fråga"
 msgid "Add another activity"
 msgstr "Lägg till ytterligare ett val"
 
-#: exe/webui/element.py:1908
+#: exe/webui/element.py:1911
 msgid "Add another option"
 msgstr "Lägg till ytterligare ett val"
 
@@ -304,7 +304,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr ""
 
-#: exe/engine/field.py:1516
+#: exe/engine/field.py:1517
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -364,12 +364,12 @@ msgstr ""
 msgid "Article"
 msgstr "Artikel"
 
-#: exe/engine/attachmentidevice.py:42 exe/webui/editorelement.py:345
+#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:345
 #: exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "Bilaga"
 
-#: exe/engine/attachmentidevice.py:103
+#: exe/engine/attachmentidevice.py:104
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Bilaga %s har ingen föräldranod"
@@ -399,7 +399,7 @@ msgstr "Har ej tillträde till"
 msgid "Caption:"
 msgstr "Rubrik:"
 
-#: exe/engine/casestudyidevice.py:157
+#: exe/engine/casestudyidevice.py:158
 msgid "Case Study"
 msgstr "Fallstudie"
 
@@ -427,7 +427,7 @@ msgstr "Välj bild"
 msgid "Choose an MP3 file"
 msgstr "Välj bild"
 
-#: exe/engine/casestudyidevice.py:62
+#: exe/engine/casestudyidevice.py:63
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr ""
 
@@ -450,11 +450,11 @@ msgid ""
 "magnified."
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:67
+#: exe/engine/attachmentidevice.py:68
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klicka på <strong>Välj fil</strong>, navigera till filen och välj den."
 
-#: exe/engine/field.py:1068
+#: exe/engine/field.py:1069
 #, fuzzy
 msgid "Click Here"
 msgstr "Klicka här"
@@ -467,7 +467,7 @@ msgstr ""
 msgid "Click here"
 msgstr "Klicka här"
 
-#: exe/engine/field.py:1735
+#: exe/engine/field.py:1736
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -483,7 +483,7 @@ msgstr ""
 #: exe/engine/galleryidevice.py:605 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:248 exe/webui/block.py:249
-#: exe/webui/element.py:1947 exe/webui/element.py:1948
+#: exe/webui/element.py:1950 exe/webui/element.py:1951
 #: exe/webui/editorpane.py:357 exe/webui/editorpane.py:358
 #: exe/webui/editorpane.py:378 exe/webui/editorpane.py:379
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -504,8 +504,9 @@ msgstr "Stäng aktivitet"
 msgid "Cloze Text"
 msgstr "Stäng"
 
-#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1613
-#: exe/webui/element.py:1744 exe/webui/element.py:1813
+#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1528
+#: exe/webui/element.py:1617 exe/webui/element.py:1747
+#: exe/webui/element.py:1816
 msgid "Correct"
 msgstr "Rätt"
 
@@ -517,7 +518,7 @@ msgstr "Rätt!"
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
-#: exe/engine/casestudyidevice.py:176
+#: exe/engine/casestudyidevice.py:177
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -548,12 +549,12 @@ msgid "Delete Image"
 msgstr "Välj bild"
 
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1504
-#: exe/webui/element.py:1762
+#: exe/webui/element.py:1765
 msgid "Delete option"
 msgstr "Ta bort alternativ"
 
 #: exe/webui/questionelement.py:103 exe/webui/truefalseelement.py:118
-#: exe/webui/element.py:1600 exe/webui/element.py:1893
+#: exe/webui/element.py:1604 exe/webui/element.py:1896
 msgid "Delete question"
 msgstr "Ta bort fråga"
 
@@ -567,7 +568,7 @@ msgstr ""
 " sina resultat för en övning. (Rubriker är användbara för att ge\n"
 " reflektiv feedback.)"
 
-#: exe/engine/casestudyidevice.py:185
+#: exe/engine/casestudyidevice.py:186
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -595,7 +596,7 @@ msgstr "Beskriv den uppgift som eleven skall göra."
 msgid "Description"
 msgstr "Beskrivning"
 
-#: exe/engine/attachmentidevice.py:63 exe/engine/attachmentidevice.py:149
+#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:150
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
@@ -651,7 +652,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:326 exe/export/scormexport.py:441
+#: exe/export/imsexport.py:330 exe/export/scormexport.py:444
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -741,7 +742,7 @@ msgid ""
 " instructions or additional learning information."
 msgstr ""
 
-#: exe/engine/quiztestidevice.py:95 exe/engine/quiztestidevice.py:122
+#: exe/engine/quiztestidevice.py:96 exe/engine/quiztestidevice.py:123
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -783,7 +784,7 @@ msgstr ""
 " att klicka på\n"
 " \"x\" intill respektive alternativ."
 
-#: exe/engine/field.py:1928
+#: exe/engine/field.py:1929
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -824,15 +825,15 @@ msgstr "Skriv instruktioner här"
 msgid "Enter the label here"
 msgstr "Skriv en titel här"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:92
-#: exe/engine/quiztestidevice.py:130
+#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
 
-#: exe/engine/field.py:1920
+#: exe/engine/field.py:1921
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -866,7 +867,7 @@ msgstr ""
 "Tillåt automatiska förslag (auto completion)\n"
 " när användaren fyller i."
 
-#: exe/engine/attachmentidevice.py:56
+#: exe/engine/attachmentidevice.py:57
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
@@ -908,10 +909,10 @@ msgstr "Falskt"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1807
-#: exe/engine/field.py:1819 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1808
+#: exe/engine/field.py:1820 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
-#: exe/webui/common.py:206 exe/webui/element.py:1763
+#: exe/webui/common.py:206 exe/webui/element.py:1766
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Återkoppling"
@@ -923,7 +924,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1937 exe/engine/field.py:1962
+#: exe/engine/field.py:1938 exe/engine/field.py:1963
 #, fuzzy
 msgid "Feedback:"
 msgstr "Återkoppling"
@@ -1023,9 +1024,9 @@ msgid "Hide/Show Word"
 msgstr "Dölj/visa ord"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1845 exe/engine/field.py:1865
+#: exe/engine/field.py:1846 exe/engine/field.py:1866
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:1951
+#: exe/webui/element.py:1954
 msgid "Hint"
 msgstr "Ledtråd"
 
@@ -1056,7 +1057,7 @@ msgstr "iDevice Editor"
 msgid "Icons"
 msgstr "Ikoner"
 
-#: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:61
+#: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:62
 msgid "Image"
 msgstr "Bild"
 
@@ -1083,6 +1084,10 @@ msgstr "Bild med text"
 #, fuzzy
 msgid "Import iDevice"
 msgstr "iDevicePane"
+
+#: exe/webui/element.py:1530
+msgid "Incorrect"
+msgstr "Fel"
 
 #: exe/webui/truefalseelement.py:213 exe/webui/truefalseelement.py:216
 msgid "Incorrect!"
@@ -1223,7 +1228,7 @@ msgid "New iDevice"
 msgstr "Ny iDevice"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:312 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:315 exe/export/websitepage.py:192
 #, fuzzy
 msgid "Next"
 msgstr "Text"
@@ -1279,27 +1284,27 @@ msgstr ""
 " definiera vad eleverna skall kunna när\n"
 " de avslutat momentet"
 
-#: exe/engine/field.py:1622 exe/engine/field.py:1686
+#: exe/engine/field.py:1623 exe/engine/field.py:1687
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/engine/field.py:1558 exe/engine/field.py:1602
+#: exe/engine/field.py:1559 exe/engine/field.py:1603
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:1803 exe/engine/field.py:1816
-#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1615
-#: exe/webui/element.py:1739 exe/webui/element.py:1744
+#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
+#: exe/engine/field.py:1804 exe/engine/field.py:1817
+#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1619
+#: exe/webui/element.py:1742 exe/webui/element.py:1747
 msgid "Option"
 msgstr "Val"
 
-#: exe/engine/field.py:1887 exe/engine/field.py:1897
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1611
+#: exe/engine/field.py:1888 exe/engine/field.py:1898
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1615
 #, fuzzy
 msgid "Options"
 msgstr "Val"
@@ -1407,13 +1412,13 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Filnamn %s är en fil, kan inte ersätta den"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:311 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:314 exe/export/websitepage.py:186
 #, fuzzy
 msgid "Previous"
 msgstr "Förhandsgranska"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1263
-#: exe/engine/field.py:1310
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1264
+#: exe/engine/field.py:1311
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1468,7 +1473,7 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr ""
 
-#: exe/engine/casestudyidevice.py:189
+#: exe/engine/casestudyidevice.py:190
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1483,13 +1488,13 @@ msgid "Put instructions for learners here"
 msgstr "Fyll i elevinstruktioner"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1842 exe/engine/field.py:1861
+#: exe/engine/field.py:1843 exe/engine/field.py:1862
 msgid "Question"
 msgstr "Fråga"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
-#: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1923 exe/engine/field.py:1959 exe/webui/element.py:1595
+#: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
+#: exe/engine/field.py:1924 exe/engine/field.py:1960 exe/webui/element.py:1599
 msgid "Question:"
 msgstr "Fråga:"
 
@@ -1573,7 +1578,7 @@ msgid ""
 "Last succesful save is %s."
 msgstr ""
 
-#: exe/engine/quiztestidevice.py:181
+#: exe/engine/quiztestidevice.py:182
 #, fuzzy
 msgid "SCORM Quiz"
 msgstr "SCORM-test experimentellt"
@@ -1635,7 +1640,7 @@ msgstr "Välj bild"
 msgid "Select an image (JPG file)"
 msgstr "Välj bild"
 
-#: exe/engine/field.py:1932
+#: exe/engine/field.py:1933
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1692,7 +1697,7 @@ msgstr "Välj bild %s"
 msgid "Show Answers"
 msgstr "Visa/göm svar"
 
-#: exe/webui/questionelement.py:122
+#: exe/webui/questionelement.py:122 exe/webui/element.py:1669
 #, fuzzy
 msgid "Show Feedback"
 msgstr "Visa/Göm återkoppling"
@@ -1752,7 +1757,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Wikipedia-artikel"
 
-#: exe/engine/casestudyidevice.py:180 exe/engine/casestudyidevice.py:263
+#: exe/engine/casestudyidevice.py:181 exe/engine/casestudyidevice.py:264
 msgid "Story:"
 msgstr "Story:"
 
@@ -1765,7 +1770,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Skicka svar"
 
-#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1665
+#: exe/webui/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "Skicka svar"
 
@@ -1802,7 +1807,7 @@ msgid ""
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:44
+#: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
 msgstr "Bifoga-iDevicen används för att bifoga existerande filer till ditt .elp innehåll. Du kan till exempel bifoga en PDF-fil eller en PPT-presentation som du vill ge eleverna tillgång till. Dessa kan bifogas och ges en märkning som indikerar deras innehåll och storlek. Eleverna kan klicka på den bifogade filen för att ladda ner den."
 
@@ -1913,7 +1918,7 @@ msgstr "Tips:"
 msgid "Title"
 msgstr "titel"
 
-#: exe/engine/quiztestidevice.py:98 exe/engine/quiztestidevice.py:138
+#: exe/engine/quiztestidevice.py:99 exe/engine/quiztestidevice.py:139
 #, fuzzy
 msgid ""
 "To indicate the correct answer, \n"
@@ -1944,7 +1949,7 @@ msgstr ""
 "Sant/falskt-frågor presenterar ett påstående som eleven skall ta ställning till. Denna typ av frågor kan ibland lämpa sig\n"
 " för faktafrågor ellerfrågor som kan besvaras med antingen eller."
 
-#: exe/engine/field.py:1698
+#: exe/engine/field.py:1699
 #, fuzzy
 msgid "Type a discussion topic here."
 msgstr "Diskussionsämne:"
@@ -1976,7 +1981,7 @@ msgstr ""
 "\"Rätt svar\" som indikation på val av rätt svar, respektive \n"
 "\"Fel svar\" för alla andra alternativ."
 
-#: exe/engine/field.py:1935
+#: exe/engine/field.py:1936
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2017,16 +2022,16 @@ msgstr "Enhet"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:43 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:44 exe/engine/quiztestidevice.py:182
-#: exe/engine/casestudyidevice.py:158 exe/idevices/exampleidevice.py:40
+#: exe/engine/mathidevice.py:44 exe/engine/quiztestidevice.py:183
+#: exe/engine/casestudyidevice.py:159 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "University of Auckland"
 
-#: exe/engine/quiztestidevice.py:183
+#: exe/engine/quiztestidevice.py:184
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2112,7 +2117,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1815
+#: exe/webui/element.py:1818
 msgid "Wrong"
 msgstr ""
 
@@ -2134,7 +2139,7 @@ msgstr "Artikel"
 msgid "blank for original size"
 msgstr "Lämna blank för originalstorlek"
 
-#: exe/export/imsexport.py:189 exe/export/scormexport.py:276
+#: exe/export/imsexport.py:193 exe/export/scormexport.py:279
 msgid "eXe"
 msgstr "eXe"
 
@@ -2156,7 +2161,7 @@ msgstr "Bilaga %s har ingen föräldranod"
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:105 exe/engine/appletidevice.py:87
+#: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s har inget paket"
@@ -2327,11 +2332,11 @@ msgid "R"
 msgstr "R"
 
 #: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="clearImage('pp_backgroundImg',this.parentNode.parentNode);"
-#: id="clearImage" label="Clear Image">
+#: oncommand="window.location.reload(true);" id="showImage" label="Show
+#: Image">
 #, fuzzy
-msgid "Clear Image"
-msgstr "Välj bild"
+msgid "Show Image"
+msgstr "Välj bild %s"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -2345,11 +2350,12 @@ msgstr ""
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
-#: exe/xului/templates/packageproperties.xul:<checkbox
-#: oncommand="this.style.color = 'red';" id="pp_backgroundImgTile" label="Tile
-#: background image?" checked="false">
-msgid "Tile background image?"
-msgstr ""
+#: exe/xului/templates/packageproperties.xul:<button
+#: oncommand="clearImage('pp_backgroundImg',this.parentNode.parentNode);"
+#: id="clearImage" label="Clear Image">
+#, fuzzy
+msgid "Clear Image"
+msgstr "Välj bild"
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
@@ -2363,12 +2369,11 @@ msgstr ""
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Author:"
-#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
-#: resource.">
-#, fuzzy
-msgid "Author:"
-msgstr "Författare"
+#: exe/xului/templates/packageproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_backgroundImgTile" label="Tile
+#: background image?" checked="false">
+msgid "Tile background image?"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
@@ -2383,11 +2388,12 @@ msgstr ""
 msgid "U"
 msgstr "U"
 
-#: exe/xului/templates/packageproperties.xul:<label value="License:"
-#: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
+#: exe/xului/templates/packageproperties.xul:<label value="Author:"
+#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
+#: resource.">
 #, fuzzy
-msgid "License:"
-msgstr "Välj språk"
+msgid "Author:"
+msgstr "Författare"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2405,10 +2411,10 @@ msgstr ""
 msgid "D"
 msgstr "D"
 
-#: exe/xului/templates/packageproperties.xul:<menulist
-#: onchange="this.style.color = 'red'" id="pp_license" label="Select License">
+#: exe/xului/templates/packageproperties.xul:<label value="License:"
+#: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
 #, fuzzy
-msgid "Select License"
+msgid "License:"
 msgstr "Välj språk"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
@@ -2424,10 +2430,11 @@ msgstr ""
 msgid "N"
 msgstr "N"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution 2.5 License" id="ppcca1" label="Creative License">
-msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+#: exe/xului/templates/packageproperties.xul:<menulist
+#: onchange="this.style.color = 'red'" id="pp_license" label="Select License">
+#, fuzzy
+msgid "Select License"
+msgstr "Välj språk"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2444,8 +2451,8 @@ msgid "S"
 msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
-msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+msgid "Creative Commons Attribution 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
@@ -2463,8 +2470,8 @@ msgid "O"
 msgstr "O"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
-msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
@@ -2481,9 +2488,8 @@ msgid "Q"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
-#: License">
-msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
@@ -2500,9 +2506,9 @@ msgid "P"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
-#: label="Creative License">
-msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: License">
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
@@ -2518,9 +2524,9 @@ msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Fil\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
-#: License">
-msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: label="Creative License">
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
@@ -2535,9 +2541,10 @@ msgstr "Välj bild"
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Ny\" accesskey=\"n\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
-#: Nations 2.0" id="ppdn" label="Developing 2.0">
-msgid "Developing Nations 2.0"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
+#: License">
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
@@ -2551,9 +2558,9 @@ msgstr ""
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Öppna\" accesskey=\"o\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
-msgid "Footer:"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
+#: Nations 2.0" id="ppdn" label="Developing 2.0">
+msgid "Developing Nations 2.0"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
@@ -2569,10 +2576,10 @@ msgstr "SCORM-test experimentellt"
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"Uppdatera\" accesskey=\"r\""
 
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
-msgid "Taxonomy"
-msgstr "Taxonomi"
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
+#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+msgid "Footer:"
+msgstr ""
 
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
@@ -2587,12 +2594,10 @@ msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Spara\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
-#, fuzzy
-msgid "Level 1:"
-msgstr "Nivå 1:"
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
+#: label="Taxonomy">
+msgid "Taxonomy"
+msgstr "Taxonomi"
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2607,12 +2612,12 @@ msgstr "Bildgalleri"
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Spara som...\" accesskey=\"a\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
 #, fuzzy
-msgid "Level 2:"
-msgstr "Nivå 2:"
+msgid "Level 1:"
+msgstr "Nivå 1:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2628,12 +2633,12 @@ msgstr "Story:"
 msgid "label=\"Print\" accesskey=\"p\""
 msgstr "label=\"Om\" accesskey=\"a\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
 #, fuzzy
-msgid "Level 3:"
-msgstr "Nivå 3:"
+msgid "Level 2:"
+msgstr "Nivå 2:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2647,13 +2652,12 @@ msgstr "Välj språk"
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Exportera\" accesskey=\"e\""
 
-#: exe/xului/templates/packageproperties.xul:<button flex="0"
-#: oncommand="submitForm(this.parentNode.parentNode,
-#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
-#: label="Update Tree" tooltiptext="Submit changes and update the tree
-#: display">
-msgid "Update Tree"
-msgstr ""
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+#, fuzzy
+msgid "Level 3:"
+msgstr "Nivå 3:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
@@ -2667,12 +2671,12 @@ msgstr "Rubrik:"
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-msgid "Apply"
+#: exe/xului/templates/packageproperties.xul:<button flex="0"
+#: oncommand="submitForm(this.parentNode.parentNode,
+#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
+#: label="Update Tree" tooltiptext="Submit changes and update the tree
+#: display">
+msgid "Update Tree"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
@@ -2687,6 +2691,14 @@ msgstr "Artikel"
 #: Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+
+#: exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+msgid "Apply"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -4087,9 +4099,6 @@ msgstr ""
 
 #~ msgid "Reference"
 #~ msgstr "Referens"
-
-#~ msgid "Incorrect"
-#~ msgstr "Fel"
 
 #~ msgid "Content"
 #~ msgstr "Innehåll"
