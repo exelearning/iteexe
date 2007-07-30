@@ -116,20 +116,18 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
           image.src  = 'file://'+fp.file.path;
           image.removeAttribute('width');
           image.removeAttribute('height');
-		  
+		  submitForm(node)
       }
-	  submitForm(node)
-	  setTimeout(window.location.reload(true), 4000);
+	  
   }
  
   // Called by the user to clear an image from the package
   function clearImage(elementId, node) {
       var image = document.getElementById(elementId);
       image.src    = '';
-      image.width  = '400';
-      image.height = '100';
+    //  image.width  = '400';
+    //  image.height = '100';
 	  submitForm(node)
-	  setTimeout(window.location.reload(true), 4000);
   }
   
   function collectIds(ids, start) {
@@ -175,7 +173,6 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
             nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), fieldIds.length);
         }
     }
-	//window.location.reload(true);
   }
   ]]>
   </script>

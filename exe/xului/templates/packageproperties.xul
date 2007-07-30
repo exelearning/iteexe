@@ -74,6 +74,8 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
                  <hbox flex="0">
                      <button id="loadImage"  label="Load Image" 
                          oncommand="addImage('pp_backgroundImg',this.parentNode.parentNode);"/>
+                     <button id="showImage"  label="Show Image" 
+                         oncommand="window.location.reload(true);"/>
                      <button id="clearImage" label="Clear Image" 
                          oncommand="clearImage('pp_backgroundImg',this.parentNode.parentNode);"/>
                      <checkbox id="pp_backgroundImgTile" 
