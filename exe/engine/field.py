@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1801,11 +1802,11 @@ class QuizOptionField(Field):
         self.idevice = idevice
 
         self.answerTextArea = TextAreaField(x_(u'Option'), 
-                                  idevice._answerInstruc, x_(u''))
+                                  idevice._answerInstruc, u'')
         self.answerTextArea.idevice = idevice
 
         self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
-                                    idevice._feedbackInstruc, x_(u''))
+                                    idevice._feedbackInstruc, u'')
         self.feedbackTextArea.idevice = idevice
 
     def upgradeToVersion1(self):
@@ -1840,10 +1841,10 @@ class QuizQuestionField(Field):
         self.options              = []
         self.idevice              = idevice
         self.questionTextArea     = TextAreaField(x_(u'Question'), 
-                                        idevice._questionInstruc, x_(u''))
+                                        idevice._questionInstruc, u'')
         self.questionTextArea.idevice     = idevice
         self.hintTextArea         = TextAreaField(x_(u'Hint'), 
-                                        idevice._hintInstruc, x_(u''))
+                                        idevice._hintInstruc, u'')
         self.hintTextArea.idevice         = idevice
 
     def addOption(self):
@@ -1885,7 +1886,7 @@ class SelectOptionField(Field):
         self.idevice = idevice
 
         self.answerTextArea    = TextAreaField(x_(u'Options'), 
-                                     question._optionInstruc, x_(u''))
+                                     question._optionInstruc, u'')
         self.answerTextArea.idevice = idevice
 
 
@@ -1921,7 +1922,7 @@ class SelectQuestionField(Field):
 The question should be clear and unambiguous. Avoid negative premises as these 
 can tend to confuse learners.""")
         self.questionTextArea = TextAreaField(x_(u'Question:'), 
-                                    self.questionInstruc, x_(u''))
+                                    self.questionInstruc, u'')
         self.questionTextArea.idevice = idevice
 
         self.options              = []
@@ -1935,7 +1936,7 @@ options as required by clicking the check box beside the option.""")
         self.feedbackInstruc       = x_(u"""Type in the feedback you want 
 to provide the learner with.""")
         self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
-                                    self.feedbackInstruc, x_(u''))
+                                    self.feedbackInstruc, u'')
         self.feedbackTextArea.idevice = idevice
     
     
