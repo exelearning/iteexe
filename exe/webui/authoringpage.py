@@ -167,21 +167,19 @@ class AuthoringPage(RenderableResource):
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,media,"
-        #html += u" contextmenu,paste,directionality\","
-        # r3m0: trying to add a new custom plugin, exemath:
         html += u" contextmenu,paste,directionality,exemath\",\n"
-        #
         html += u" theme : \"advanced\",\n"
         html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
         html += u"theme_advanced_toolbar_location : \"top\",\n"  
         html += u" theme_advanced_buttons1 : \"newdocument,separator,"
-        html += u"bold,italic,underline,fontsizeselect,forecolor,separator,sub,sup,separator,"
+        html += u"bold,italic,underline,fontselect,fontsizeselect,forecolor,"
+        html += u"backcolor,separator,sub,sup,separator,"
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
-        html += u" theme_advanced_buttons2 : \"image,media,exemath,tablecontrols,"
+        html += u" theme_advanced_buttons2 : \"image,media,exemath,hr,advhr,tablecontrols,"
         html += u"separator,link,unlink,separator,undo,redo,separator,"
-        html += u" charmap,removeformat,cleanup,code,help\",\n"
+        html += u" charmap,removeformat,cleanup,code,undo,redo,help\",\n"
         
         html += u" theme_advanced_buttons3 : \"\",\n"
        
@@ -189,7 +187,7 @@ class AuthoringPage(RenderableResource):
         html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
         # and the callback to generate exemath's LaTeX images via mimetex:
         html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
-        
+
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
         html += u"    theme_advanced_resize_horizontal : false,\n"
         html += u"    theme_advanced_resizing : true\n"
