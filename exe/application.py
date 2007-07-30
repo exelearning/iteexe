@@ -41,6 +41,7 @@ from exe.engine.translate    import installSafeTranslate
 from exe.engine              import version
 from exe                     import globals
 import logging
+import re
  
 log = logging.getLogger(__name__)
 
@@ -177,18 +178,64 @@ class Application:
         self.webServer.run()
 
     def _loadPackage(self, packagePath):
-        """
-        Convenience function for loading the first package that we'll browse to
-        """
-        try:
+        #"""
+        #Convenience function for loading the first package that we'll browse to
+        #"""
+        #try:
+
+            ###################################################################
+            #This section has just been added to do a loading splash screen 
+            ###################################################################
+            log.info("webDir: " + self.config.webDir)
+            inSplashFile =  self.config.webDir + "/docs/splash.xulTemplate"
+            outSplashFile = self.config.webDir + "/docs/splash.xul"
+            log.info("outSplashFile: " + outSplashFile)
+
+            inSplashFH = open(inSplashFile,"r")
+            outSplashFH = open(outSplashFile,"w")
+            for line in inSplashFH:
+                line = re.sub("LOADING_FILE_NAME",packagePath,line)
+                outSplashFH.write(line)
+            inSplashFH.close()
+            outSplashFH.close()
+   
+            outSplashData = self.config.webDir + "/docs/splash.dat"
+            outSplashFH = open(outSplashData,"w")
+            outSplashFH.write("8")
+            outSplashFH.close()
+
+            log.info("packagePath: " + packagePath)
+            elpFile = packagePath
+            elpFile = re.sub(re.compile("\.elp$",re.IGNORECASE),"",elpFile)
+            elpFile = re.sub(".*(\/|\\\\)","",elpFile) 
+            log.info("elpfile: " + elpFile)
+            launchBrowser(self.config, elpFile)
+
             package = self.packageStore.loadPackage(packagePath)
-            log.debug("loading package "+package.name)
+            port = self.config.port
+            editorUrl = u'http://127.0.0.1:%d/%s' % (port, package.name)
+            log.info("package.name: "+package.name)
+            log.info("editorUrl: " + editorUrl)
+            outSplashFH = open(outSplashData,"w")
+            outSplashFH.write("100;" + editorUrl)
+            outSplashFH.close()
+
             self.webServer.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
+
+            ###################################################################
+            #secton ends
+            ###################################################################
+
+            # package = self.packageStore.loadPackage(packagePath)
+            # log.debug("loading package "+package.name)
+            # self.webServer.root.bindNewPackage(package)
+            # launchBrowser(self.config, package.name)
+
             return package
-        except Exception, e:
-            log.error('Error loading first Package (%s): %s' % (packagePath, e))
-            return None
+
+        #except Exception, e:
+        #    log.error('Error loading first Package (%s): %s' % (packagePath, e))
+        #    return None
 
     def launch(self):
         """
