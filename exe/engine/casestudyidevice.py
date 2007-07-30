@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -46,10 +47,10 @@ class Question(Persistable):
         """
         Initialize 
         """
-        self.questionTextArea = TextAreaField(x_(u''), x_(u''), x_(u''))
+        self.questionTextArea = TextAreaField(u'', u'', u'')
         self.questionTextArea.idevice = idevice 
 
-        self.feedbackTextArea = TextAreaField(x_(u''), x_(u''), x_(u''))
+        self.feedbackTextArea = TextAreaField(u'', u'', u'')
         self.feedbackTextArea.idevice = idevice
 
     def setupImage(self, idevice):
@@ -264,11 +265,11 @@ situation.""")
                                  self._storyInstruc, self.story)
         self.storyTextArea.idevice = self
         for question in self.questions:
-            question.questionTextArea = TextAreaField(x_(u''), 
-                                            x_(u''), question.question)
+            question.questionTextArea = TextAreaField(u'', 
+                                            u'', question.question)
             question.questionTextArea.idevice = self
-            question.feedbackTextArea = TextAreaField(x_(u''), 
-                                            x_(u''), question.feedback)
+            question.feedbackTextArea = TextAreaField(u'', 
+                                            u'', question.feedback)
             question.feedbackTextArea.idevice = self
 
     def upgradeToVersion8(self):

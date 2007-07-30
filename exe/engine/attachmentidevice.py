@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -61,7 +62,7 @@ class AttachmentIdevice(Idevice):
                                       u"material should be used.")
 
         self.descriptionTextArea   = TextAreaField(x_(u'Description:'), 
-                                          self._descriptionInstruc, x_(u''))
+                                          self._descriptionInstruc, u'')
         self.descriptionTextArea.idevice = self
 
         self._filenameInstruc   = x_(u'Click <strong>Select a file</strong>, '

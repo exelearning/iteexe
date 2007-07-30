@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -99,7 +100,7 @@ Click on the &lt;Add another option&gt; button to add another answer.""")
 click the radio button next to the correct option.""")
     
         self.questionTextArea      = TextAreaField(x_(u'Question:'),
-                                         self._questionInstruc, x_(u''))
+                                         self._questionInstruc, u'')
         self.questionTextArea.idevice = self.idevice
 
         self.addOption()
