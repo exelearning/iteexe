@@ -402,7 +402,8 @@ class ScormExport(object):
 
         schemasDir.copylist(('imscp_rootv1p1p2.xsd',
                             'imsmd_rootv1p2p1.xsd',
-                            'adlcp_rootv1p2.xsd'), outputDir)
+                            'adlcp_rootv1p2.xsd',
+                            'ims_xml.xsd'), outputDir)
  
 
         # copy players for media idevices.                
