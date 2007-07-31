@@ -1162,23 +1162,24 @@ function calcScore(num, ident){
     alert(YOUR_SCORE_IS  + score + "/" + num)
 }
 
-// sued for multi-select option's feedback
-function showOptionFeedback(ident){
-    var ele = document.getElementById(ident)
-    var ele0 = document.getElementById(ident+"0")
-    var ele1 = document.getElementById(ident + "1")
-    ckd = "False"
-    if (ele.checked==1)
-        chk = "True"
-        if (ele.value == chk)
-            ele1.style.display = "block"
-        else
-            ele0.style.display = "block"
-        
-}
-
 // used to show question's feedback for multi-select idevice 
-function showFeedback(ident){
+function showFeedback(num, ident){
+    for(i=0; i<num; i++){
+        var ele = document.getElementById(ident+i.toString())
+        var ele0 = document.getElementById(ident+i.toString()+"0")
+        var ele1 = document.getElementById(ident+i.toString()+"1")
+        var ansele = document.getElementById("ans"+ident+i.toString())
+        chk = "False"
+        if (ele.checked==1)
+            chk = "True"   
+        if (chk == ele.value){
+            ele1.style.display = "block"
+            ansele.style.color = "black"
+        }else{            
+            ele0.style.display = "block"
+            ansele.style.color = "red"
+        }
+    }
     var fele = document.getElementById("f"+ident)
     fele.style.display = "block"
 }

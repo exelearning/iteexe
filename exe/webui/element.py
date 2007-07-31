@@ -1515,7 +1515,7 @@ class SelectOptionElement(Element):
         ident = self.field.question.id + str(self.index)
         html  = '<tr><td>'      
         html += u'<input type="checkbox" id="%s"' % ident
-        html += u' value="%s" onclick="showOptionFeedback(\'%s\')"/>\n' %(str(self.field.isCorrect), ident)
+        html += u' value="%s" />\n' %str(self.field.isCorrect)
                 
         ansIdent = "ans" + self.field.question.id + str(self.index)
         html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
@@ -1667,7 +1667,7 @@ class SelectquestionElement(Element):
         html += "</table>"   
         html += '<input type="button" name="submitSelect"' 
         html += ' value="%s" ' % _("Show Feedback")
-        html += 'onclick="showFeedback(\'%s\')"/> ' %(self.field.id) 
+        html += 'onclick="showFeedback(%d,\'%s\')"/> ' %(len(self.field.options),self.field.id) 
         html += "<br/>\n"
         html += '<div id="%s" style="display:none">' % ("f"+self.field.id)
 
