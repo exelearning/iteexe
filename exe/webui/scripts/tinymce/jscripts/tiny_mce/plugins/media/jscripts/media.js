@@ -64,10 +64,6 @@ function init() {
 
 		switch (type) {
 			case "flash":
-				//setBool(pl, 'flash', 'play');
-				// r3m0: try it as autoplay:
-				//setBool(pl, 'flash', 'autoPlay');
-			        // disabling. Flash SWF's play/autoplay seems to be overridden by the flash object itself.
 				setBool(pl, 'flash', 'loop');
 				setBool(pl, 'flash', 'menu');
 				setBool(pl, 'flash', 'swliveconnect');
@@ -212,8 +208,6 @@ function insertMedia() {
 				break;
 		}
 
-                // r3m0: merged in changes from v2.1.1.1, from f.width.height to f.height.height
-                // and then still added a fix to that, to f.height.value:
 		if (fe.width != f.width.value || fe.height != f.height.value)
 			tinyMCE.selectedInstance.repaint();
 
@@ -346,12 +340,6 @@ function serializeParameters() {
 
 	switch (f.media_type.options[f.media_type.selectedIndex].value) {
 		case "flash":
-			// r3m0, was: s += getBool('flash', 'play', true);
-			//s += getBool('flash', 'play', 'force_to_ALWAYS_show');
-			// and try it as autoplay:
-			//s += getBool('flash', 'autoPlay', 'force_to_ALWAYS_show');
-			// disabling. Flash SWF's play/autoplay seems to be overridden by the flash object itself.
-
 			s += getBool('flash', 'loop', true);
 			s += getBool('flash', 'menu', true);
 			s += getBool('flash', 'swliveconnect', false);
@@ -365,9 +353,6 @@ function serializeParameters() {
 
 		case "qt":
 			s += getBool('qt', 'loop', false);
-			// r3m0,  was: s += getBool('qt', 'autoplay', false);
-                        // which that caused it to never show autoplay=false, which is what it needs!
-			// so, force it to show regardless:
 			s += getBool('qt', 'autoplay', 'force_to_ALWAYS_show');
 			s += getBool('qt', 'cache', false);
 			s += getBool('qt', 'controller', true);
@@ -398,9 +383,7 @@ function serializeParameters() {
 		break;
 
 		case "wmp":
-			// r3m0, was: s += getBool('wmp', 'autostart', true);
-			// but force it to show regardless:
-			s += getBool('wmp', 'autostart', 'force_to_ALWAYS_show');
+			s += getBool('wmp', 'autostart', 'force_to_ALWAYS_show', '1', '0');
 			s += getBool('wmp', 'enabled', false);
 			s += getBool('wmp', 'enablecontextmenu', true);
 			s += getBool('wmp', 'fullscreen', false);
@@ -421,8 +404,6 @@ function serializeParameters() {
 		break;
 
 		case "rmp":
-			// r3m0, was: s += getBool('rmp', 'autostart', false);
-			// but force it to show regardless:
 			s += getBool('rmp', 'autostart', 'force_to_ALWAYS_show');
 			s += getBool('rmp', 'loop', false);
 			s += getBool('rmp', 'autogotourl', true);
@@ -455,23 +436,10 @@ function serializeParameters() {
 }
 
 function setBool(pl, p, n) {
-        //if (n=='autoplay' || n=='playeveryframe') {
-        if (n=='autoPlay' || n=='autoplay' || n=='loop') {
-           //alert('r3m0 test betterButterBooler... setBool for p_n:'+p+'_'+n+' ,with pl[n]='+pl[n]);
-        }
 	if (typeof(pl[n]) == "undefined")
 		return;
 
-        // r3m0: this previous version:
-	//document.forms[0].elements[p + "_" + n].checked = pl[n];
-	// was under the assumption that only TRUE parameters were listed,
-	// and this is no longer the case, since QT's autoplay, for example, 
-	// must be shown when false.  So now check the value before checking:
-	////////////
-	// hang on, though, was it already starting to work
-	// a) still in authoring page, immediate UPDATE? ahhhh, hangs onto it?
-	// b) after green checkbox, later UPDATE? no, failed.  So...
-	if (pl[n] != "false") {
+	if (pl[n] != "false" && pl[n] != "0") {
 	   document.forms[0].elements[p + "_" + n].checked = pl[n];
 	}
 }
@@ -493,10 +461,6 @@ function getBool(p, n, d, tv, fv) {
 
 	tv = typeof(tv) == 'undefined' ? 'true' : "'" + jsEncode(tv) + "'";
 	fv = typeof(fv) == 'undefined' ? 'false' : "'" + jsEncode(fv) + "'";
-        //if (n=='autoplay' || n=='playeveryframe') {
-        if (n=='autoPlay' || n=='autoplay' || n=='loop') {
-           //alert('r3m0 test getBool for p_n:'+p+'_'+n+' and d='+d+', (with tv='+tv+', fv='+fv+') ='+v);
-        }
 
 	return (v == d) ? '' : n + (v ? ':' + tv + ',' : ':' + fv + ',');
 }
@@ -504,7 +468,6 @@ function getBool(p, n, d, tv, fv) {
 function getStr(p, n, d) {
 	var e = document.forms[0].elements[(p != null ? p + "_" : "") + n];
 	var v = e.type == "text" ? e.value : e.options[e.selectedIndex].value;
-//alert('r3m0 test getStr for p_n:'+p+'_'+n+'='+v+'=='+jsEncode(v));
 
 	return ((n == d || v == '') ? '' : n + ":'" + jsEncode(v) + "',");
 }
@@ -577,8 +540,7 @@ function generatePreview(c) {
 		case "wmp":
 			cls = tinyMCE.getParam('media_wmp6_compatible') ? 'clsid:05589FA1-C356-11CE-BF01-00AA0055595A' : 'clsid:6BF52A52-394A-11D3-B153-00C04F79FAA6';
 			codebase = 'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701';
-			//type = 'application/x-mplayer2';
-                        // r3m0: Windows Media Player hack, appears to actually need:
+                        //  eXe Windows Media Player hack:
                         type = 'video/x-ms-wmv';
 			break;
 
@@ -608,11 +570,9 @@ function generatePreview(c) {
 	pl.name = !pl.name ? 'eobj' : pl.name;
 	pl.align = !pl.align ? '' : pl.align;
 
-	//h += '<object classid="clsid:' + cls + '" codebase="' + codebase + '" width="' + pl.width + '" height="' + pl.height + '" id="' + pl.id + '" name="' + pl.name + '" align="' + pl.align + '">';
-        // r3m0: Windows Media Player hack:
 	h += '<object';
 	if (f.media_type.options[f.media_type.selectedIndex].value == "wmp") {
-            // r3m0: WMP is a slightly different format, no classid, but instead, replace it with the type and data src (yes, both redundant):
+            // eXe Windows Media Player hack:
             h += ' type="' + type + '" data="' + pl.src + '"';
         }
         else {

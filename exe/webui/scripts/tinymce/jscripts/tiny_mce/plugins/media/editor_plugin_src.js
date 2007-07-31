@@ -80,7 +80,6 @@ var TinyMCE_MediaPlugin = {
 					if (/mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia)/.test(nl[i].className)) {
 						nl[i].width = nl[i].title.replace(/.*width:[^0-9]?([0-9]+)%?.*/g, '$1');
 						nl[i].height = nl[i].title.replace(/.*height:[^0-9]?([0-9]+)%?.*/g, '$1');
-						//nl[i].align = nl[i].title.replace(/.*align:([a-z]+).*/gi, '$1');
 					}
 				}
 
@@ -100,7 +99,7 @@ var TinyMCE_MediaPlugin = {
 						case 'clsid:6bf52a52-394a-11d3-b153-00c04f79faa6':
 						case 'clsid:22d6f312-b0f6-11d0-94ab-0080c74c7e95':
 						case 'clsid:05589fa1-c356-11ce-bf01-00aa0055595a':
-						// r3m0 testing WMP hack: 
+						// WMP hack for eXe: 
 						case 'clsid:BOGUSID_FOR_WINDOWSMEDIA_VIA_TINYMCE'.toLowerCase():
 							nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemWindowsMedia', d, nl[i]), nl[i]);
 							break;
@@ -127,8 +126,7 @@ var TinyMCE_MediaPlugin = {
 							TinyMCE_MediaPlugin._createImgFromEmbed(nl[i], d, 'mceItemShockWave');
 							break;
 
-						//case 'application/x-mplayer2': 
-						// r3m0 testing WMP hack: 
+						// WMP hack for eXe: 
 						case 'video/x-ms-wmv':
 							TinyMCE_MediaPlugin._createImgFromEmbed(nl[i], d, 'mceItemWindowsMedia');
 							break;
@@ -186,10 +184,8 @@ var TinyMCE_MediaPlugin = {
 								break;
 
 							case 'mceItemWindowsMedia':
-								//ci = tinyMCE.getParam('media_wmp6_compatible') ? '05589FA1-C356-11CE-BF01-00AA0055595A' : '6BF52A52-394A-11D3-B153-00C04F79FAA6';
 								cb = 'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701';
-								//mt = 'application/x-mplayer2';
-                                                                // r3m0 testing WMP hack:
+								// WMP hack for eXe:
 								ci = 'BOGUSID_FOR_WINDOWSMEDIA_VIA_TINYMCE'
 								mt = 'video/x-ms-wmv';
 								break;
@@ -358,14 +354,9 @@ var TinyMCE_MediaPlugin = {
 		p.width = at.width ? at.width : p.width;
 		p.height = at.height ? at.height : p.height;
 
-		//h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"'; 
 		h += '<object'
-		// r3m0 testing WMP hack for WindowsMedia: 
-		if (mt == 'video/x-ms-wmv') {
-		    //h += ' type="' + mt + '" data="' + p.src + '"';
-		    // the above works the first time, but doesn't allow round-trip editing.
-		    // trying using the now included, but bogus, classid, after all: 
-                    // ci = 'BOGUSID_FOR_WINDOWSMEDIA_VIA_TINYMCE'
+		if (mt == 'video/x-ms-wmv') { 
+		    // WMP hack for eXe:
 		    h += ' classid="clsid:' + cls + '"'
 		    h += ' type="' + mt + '" data="' + p.src + '"';
 		}
@@ -383,14 +374,11 @@ var TinyMCE_MediaPlugin = {
 		h += '>';
 
 		for (n in p) {
-			//if (p[n] && typeof(p[n]) != "function") {
-                        // r3m0: merging in changes for v2.1.1:
                         if (typeof(p[n]) != "undefined" && typeof(p[n]) != "function") {
 				h += '<param name="' + n + '" value="' + p[n] + '" />';
 
 				// Add extra url parameter if it's an absolute URL on WMP
-				//if (n == 'src' && p[n].indexOf('://') != -1 && mt == 'application/x-mplayer2')
-				// r3m0 testing WMP hack:
+				// with WMP hack for eXe:
 				if (n == 'src' && p[n].indexOf('://') != -1 && mt == 'video/x-ms-wmv')
 					h += '<param name="url" value="' + p[n] + '" />';
 			}
@@ -403,8 +391,7 @@ var TinyMCE_MediaPlugin = {
 				continue;
 
 			// Skip url parameter for embed tag on WMP
-			//if (!(n == 'url' && mt == 'application/x-mplayer2'))
-			// r3m0 testing WMP hack:
+			// with WMP hack for eXe:
 			if (!(n == 'url' && mt == 'video/x-ms-wmv'))
 				h += ' ' + n + '="' + p[n] + '"';
 		}
