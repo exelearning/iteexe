@@ -61,8 +61,6 @@ def launchBrowser(config, packageName):
     """
     log.info(u"Browser path: " + config.browserPath)
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
-    url = "-chrome file://\"" + config.webDir + "/docs/splash.xul\""
-
     log.info(u"url "+url)
 
     profile_src = "linux-profile"
@@ -117,8 +115,6 @@ def launchBrowser(config, packageName):
                       '-profile', 
                       '"' + config.configDir/profile + '"', 
                       url)
-            log.info(u'Launching firefox: ' + config.configDir/profile )
-            log.info(u'Launching firefox: ' + url)
         except OSError:
             print u"Cannot launch Firefox, please manually run Firefox"
             print u"and go to", url     
@@ -130,5 +126,5 @@ def launchBrowser(config, packageName):
         launchString += ' -profile "' + config.configDir/profile + '/" '
         launchString += url
         launchString += "&"
-        log.info(u'Launching firefox: ' + launchString)
+        log.info(u'Launching firefox with: ' + launchString)
         os.system(launchString)
