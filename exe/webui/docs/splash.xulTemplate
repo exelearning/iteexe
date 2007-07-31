@@ -5,7 +5,7 @@
   ?>
   <window 
     id="MySecondWindow" 
-    title="eXe is loading" 
+    title="eXe" 
     onload="return ol()" onclose="return ex()" 
     width="600" height="300" screenX="200" screenY="300"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -22,9 +22,9 @@
     <row>
     <spacer width="20"/>
     <groupbox>
-      <caption label="Load Status (this may take some time)" /> 
+      <caption label="" /> 
       <row>
-        <description><html:b>Loading: </html:b> LOADING_FILE_NAME</description>
+        <description><html:b></html:b> LOADING_FILE_NAME</description>
       </row>
       <row>
         <progressmeter id="pm" mode="undetermined" value="" width="520"/>
@@ -42,7 +42,7 @@
 
       function olStart()
       {
-        //window.open("http://127.0.0.1:51235/","eXe (eLeaning XHTML editor)");
+        //window.open("http://127.0.0.1:51235/","eXe");
       }
 
       function olEnd() { window.close(); }
@@ -85,7 +85,7 @@ function updatepage(str)
   {
     clearInterval(interval)
     setProgress(100) //set bar to 100
-    window.open(results[1],"eXe (eLeaning XHTML editor)");
+    window.open(results[1],"eXe");
     setTimeout('olEnd()', 3000);
   }
 }
