@@ -90,5 +90,6 @@ align_center : 'Center',
 align_top_left : 'Top left',
 align_top_right : 'Top right',
 align_bottom_left : 'Bottom left',
-align_bottom_right : 'Bottom right'
+align_bottom_right : 'Bottom right',
+select_media_type : 'Must have an installed media type selected',
 });

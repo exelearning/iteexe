@@ -43,6 +43,7 @@ class Config:
     optionNames = {
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browserPath'),
+                   #'assumeMediaPlugins'),
         'user': ('locale',),
     }
 
@@ -214,6 +215,15 @@ class Config:
             self.browserPath    = Path(system.browserPath)
             self.dataDir        = Path(system.dataDir)
             self.configDir      = Path(system.configDir)
+            
+            self.assumeMediaPlugins = False;
+            if self.configParser.has_option('system', \
+                    'assumeMediaPlugins'):
+               value = system.assumeMediaPlugins.strip().lower()
+               if value == "1" or value == "yes" or value == "true" or \
+                   value == "on":
+                       self.assumeMediaPlugins = True;
+
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
             self.dataDir = tempfile.gettempdir()

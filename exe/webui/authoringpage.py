@@ -177,9 +177,9 @@ class AuthoringPage(RenderableResource):
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,charmap,help\",\n"
-        html += u" theme_advanced_buttons2 : \"image,media,exemath,advhr,fontselect,"
-        html += u"tablecontrols,separator,link,unlink,separator,undo,redo,separator,"
-        html += u" code,removeformat\",\n"
+        html += u" theme_advanced_buttons2 : \"image,media,exemath,advhr,"
+        html += u"fontselect,tablecontrols,separator,link,unlink,separator,"
+        html += u" undo,redo,separator,code,removeformat\",\n"
         
         html += u" theme_advanced_buttons3 : \"\",\n"
        
@@ -187,6 +187,10 @@ class AuthoringPage(RenderableResource):
         html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
         # and the callback to generate exemath's LaTeX images via mimetex:
         html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
+
+        # to override any browser plugin checks, and allow media to be added:
+        if G.application.config.assumeMediaPlugins: 
+            html += u"exe_assume_media_plugins : true,\n"
 
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
         html += u"    theme_advanced_resize_horizontal : false,\n"

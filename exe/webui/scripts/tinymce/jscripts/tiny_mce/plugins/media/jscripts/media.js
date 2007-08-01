@@ -8,12 +8,48 @@ if (url != null) {
 	document.write('<sc'+'ript language="javascript" type="text/javascript" src="' + url + '"></sc'+'ript>');
 }
 
+function enable_media_type(f, max_plugin, expected_pos, name ) {
+   if (f.media_type.options[expected_pos].value != name) { 
+      var pos = 0; 
+      while (pos <= max_plugin) { 
+         if (f.media_type.options[pos].value == name) { 
+	    f.media_type.options[pos].disabled=""; 
+	    pos = max_plugin; 
+	 } 
+	 pos += 1; 
+      } 
+   } 
+   else { 
+      f.media_type.options[expected_pos].disabled=""; 
+   }
+}
+
 function init() {
 	var pl = "", f, val;
-	var type = "flash", fe, i;
+	var type = "none", fe, i;
 
 	tinyMCEPopup.resizeToInnerSize();
 	f = document.forms[0]
+
+	var max_plugin = f.media_type.options.length;
+	var assume_plugins =  tinyMCE.getParam("exe_assume_media_plugins");
+	if (assume_plugins || tinyMCEPopup.windowOpener.detectFlash()) {
+	   var flash_pos = 1;  // shortcut to expected hardcoded select position
+           enable_media_type(f, max_plugin,  flash_pos, "flash");
+	}
+        if (assume_plugins || tinyMCEPopup.windowOpener.detectQuickTime()) {
+	   var qt_pos = 2;  // shortcut to expected hardcoded select position
+           enable_media_type(f, max_plugin,  qt_pos, "qt");
+	}
+	if (assume_plugins || tinyMCEPopup.windowOpener.detectWindowsMedia()) {
+	   var wmp_pos = 3;  // shortcut to expected hardcoded select position
+           enable_media_type(f, max_plugin,  wmp_pos, "wmp");
+	}
+        if (assume_plugins || tinyMCEPopup.windowOpener.detectReal()) {
+	   var real_pos = 4;  // shortcut to expected hardcoded select position
+           enable_media_type(f, max_plugin,  real_pos, "rmp");
+	}
+
 
 	fe = tinyMCE.selectedInstance.getFocusElement();
 	if (/mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia)/.test(tinyMCE.getAttrib(fe, 'class'))) {
@@ -40,6 +76,15 @@ function init() {
 				type = 'rmp';
 				break;
 		}
+		// In case this media type was disbled due to lack of its browser plugin,
+		// but such a media type is now being loaded - don't want it uneditable.
+		// So, go ahead and enable it now that we've already got media of this type:
+	        var any_pos = 0;  // search through all the media types until we find this one:
+                enable_media_type(f, max_plugin,  any_pos, type);
+		// Note that this override really opens back up the problem that disabling
+		// the media types was trying to solve anyhow, in that once a file with such media
+		// is loaded, the eXe FireFox will once again complain of any missing plugin.
+		// As such, all of this protection is really just a first pass filter for new .elps.
 
 		document.forms[0].insert.value = tinyMCE.getLang('lang_update', 'Insert', true); 
 	}
@@ -176,6 +221,13 @@ function init() {
 function insertMedia() {
 	var fe, f = document.forms[0], h;
 
+	var type =  f.media_type.options[f.media_type.selectedIndex].value;
+        if (type == "none") {
+           alert(tinyMCE.getLang('lang_media_select_media_type'));
+           return false;
+        } 
+
+
 	if (!AutoValidator.validate(f)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
 		return false;
@@ -283,6 +335,10 @@ function getType(v) {
 		f.width.value = '425';
 		f.height.value = '350';
 		f.src.value = 'http://www.youtube.com/v/' + v.substring('http://www.youtube.com/watch?v='.length);
+		// now, in case the current Flash media type is disabled due to no plugin, enable for this:
+	        var max_plugin = f.media_type.options.length;
+	        var flash_pos = 2;  // shortcut to expected hardcoded select position
+                enable_media_type(f, max_plugin,  flash_pos, "flash");
 		return 'flash';
 	}
 
@@ -291,6 +347,10 @@ function getType(v) {
 		f.width.value = '425';
 		f.height.value = '326';
 		f.src.value = 'http://video.google.com/googleplayer.swf?docId=' + v.substring('http://video.google.com/videoplay?docid='.length) + '&hl=en';
+		// now, in case the current Flash media type is disabled due to no plugin, enable for this:
+	        var max_plugin = f.media_type.options.length;
+	        var flash_pos = 2;  // shortcut to expected hardcoded select position
+                enable_media_type(f, max_plugin,  flash_pos, "flash");
 		return 'flash';
 	}
 
@@ -489,6 +549,11 @@ function jsEncode(s) {
 
 function generatePreview(c) {
 	var f = document.forms[0], p = document.getElementById('prev'), h = '', cls, pl, n, type, codebase, wp, hp, nw, nh;
+
+	var type =  f.media_type.options[f.media_type.selectedIndex].value;
+        if (type == "none") {
+           return false;
+        } 
 
 	p.innerHTML = '<!-- x --->';
 

@@ -29,11 +29,12 @@
 								<td><label for="media_type">{$lang_media_type}</label></td>
 								<td>
 									<select id="media_type" name="media_type" onchange="changedType(this.value);generatePreview();">
-										<option value="flash">Flash SWF Object</option>
-										<option value="qt">Quicktime</option>
+										<option value="none">None</option>
+										<option value="flash" disabled="disabled">Flash Object</option>
+										<option value="qt" disabled="disabled">Quicktime</option>
 										<!-- <option value="shockwave">ShockWave Director</option> -->
-										<option value="wmp">Windows Media</option>
-										<option value="rmp">Real Media (audio)</option>
+										<option value="wmp" disabled="disabled">Windows Media</option>
+										<option value="rmp" disabled="disabled">Real Media (audio)</option>
 									</select>
 								</td>
 							</tr>
@@ -116,6 +117,9 @@
 					</table>
 				</fieldset>
 
+				<fieldset id="none_options">
+				</fieldset>
+
 				<fieldset id="flash_options">
 					<legend>{$lang_media_flash_options}</legend>
 
@@ -139,7 +143,6 @@
 									<option value="">{$lang_not_set}</option> 
 									<option value="showall">showall</option>
 									<option value="noborder">noborder</option>
-									<!-- <option value="exactfit">exactfit</option> -->
 									<option value="exactfit" selected="yes">exactfit</option>
 								</select>
 							</td>
@@ -176,10 +179,6 @@
 							<td colspan="2">
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
-										<!-- <td><input type="checkbox" class="checkbox" id="flash_play" name="flash_play" checked="checked" onchange="generatePreview();" /></td> -->
-										<!-- okay, switch the following from flash play to flash autoPlay, see if that helps: Nope! -->
-										<!-- disabling this checkbox for Flash, since it seems to be overridden by the content anyhow : -->
-										<!-- <td><input type="checkbox" class="checkbox" id="flash_autoPlay" name="flash_autoPlay" onchange="generatePreview();" /></td> -->
 										<!-- <td><label for="flash_autoPlay">{$lang_media_play}</label></td> -->
 									</tr>
 								</table>
@@ -246,7 +245,6 @@
 							<td colspan="2">
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
-										<!-- <td><input type="checkbox" class="checkbox" id="qt_autoplay" name="qt_autoplay" checked="checked" onchange="generatePreview();" /></td> -->
 										<td><input type="checkbox" class="checkbox" id="qt_autoplay" name="qt_autoplay" onchange="generatePreview();" /></td>
 										<td><label for="qt_autoplay">{$lang_media_play}</label></td>
 									</tr>
@@ -338,7 +336,6 @@
 							<td><label for="qt_scale">{$lang_media_scale}</label></td>
 							<td><select id="qt_scale" name="qt_scale" class="mceEditableSelect" onchange="generatePreview();"> 
 									<option value="">{$lang_not_set}</option> 
-									<!-- <option value="tofit">tofit</option> -->
 									<option value="tofit" selected="yes">tofit</option>
 									<option value="aspect">aspect</option>
 								</select>
@@ -393,7 +390,6 @@
 							<td colspan="2">
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
-										<!-- <td><input type="checkbox" class="checkbox" id="wmp_autostart" name="wmp_autostart" checked="checked" onchange="generatePreview();" /></td> -->
 										<td><input type="checkbox" class="checkbox" id="wmp_autostart" name="wmp_autostart" onchange="generatePreview();" /></td>
 										<td><label for="wmp_autostart">{$lang_media_autostart}</label></td>
 									</tr>
@@ -454,7 +450,6 @@
 							<td colspan="2">
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
-										<!-- <td><input type="checkbox" class="checkbox" id="wmp_stretchtofit" name="wmp_stretchtofit" onchange="generatePreview();" /></td> -->
 										<td><input type="checkbox" class="checkbox" id="wmp_stretchtofit" checked="checked" name="wmp_stretchtofit" onchange="generatePreview();" /></td>
 										<td><label for="wmp_stretchtofit">{$lang_media_stretchtofit}</label></td>
 									</tr>
