@@ -28,7 +28,7 @@ user_pref("dom.popup_allowed_events", "change click dblclick mouseup reset submi
 user_pref("dom.disable_open_during_load", false);
 user_pref("extensions.checkCompatibility", false);
 user_pref("extensions.ignoreMTimeChanges", true);
-user_pref("extensions.lastAppVersion", "1.5.0.8");
+user_pref("extensions.lastAppVersion", "2.0.0.6");
 user_pref("extensions.update.autoUpdateEnabled", false);
 user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.interval", 63072000);
