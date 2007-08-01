@@ -32,10 +32,9 @@ function onLoadHandler() {
     runFuncArray(onLoadHandlers)
 }
 
-// r3m0: starting to connect mimetext to TinyMCE for math:
 curr_edits_math_num = 1
-// will reset to #1 with each new edit, 
-// but can at least use a unique math# within that edit session.
+// for unique mimetex images from exemath. will reset to #1 w/ each new edit, 
+// but will create  unique math# within each edit session to the previews dir.
 
 // Strings to be translated
 SELECT_AN_IMAGE    = "Select an image";
@@ -339,7 +338,6 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     }    
 }
 
-
 // Called by the tinyMCE (as per the user's request) to generate an 
 // image file of the specified math (LaTeX source, compiled by mimetex)
 // to add to the package's field and idevice
@@ -347,14 +345,11 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
 
     var local_imagePath = ""
 
-    //alert("r3m0 test: called makeMathImage_viaTinyMCE() with:\n"  + "font_size = " + font_size + ", field_name = " + field_name + ", src_latex = " + src_latex  + ", type = " + type + ", win = " + win + "\n preview files to be: " + preview_math_imagefile + ", and: " + preview_math_srcfile);
-
     if (src_latex == "") {
        return;
     }
 
     // to help unique-ify each previewed math image:
-    // note: leave the "/preview" off of it, allowing the server to do that:
     var preview_basename = "eXe_LaTeX_math_"+curr_edits_math_num
     var preview_math_imagefile = preview_basename+".gif"
     // Simplify the subsequent file-lookup process,  by just appending 
@@ -365,20 +360,18 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
 
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     // pass the file information on to the server,
-    // to copy it into the server's "previews" directory:
+    // to generate the image into the server's "previews" directory:
     window.parent.nevow_clientToServerEvent('generateTinyMCEmath', this, 
                   '', win, win.name, field_name, 
-                  src_latex, font_size, preview_math_imagefile, preview_math_srcfile)
+                  src_latex, font_size, preview_math_imagefile, 
+                  preview_math_srcfile)
 
-
-    // and once the image has been generated, it SHOULD be sitting here:
+    // once the image has been generated, it SHOULD be sitting here:
     var full_preview_url = "/previews/"+preview_math_imagefile;
-
-    //alert("r3m0 test: makeMathImage_viaTinyMCE() Now about to call showPreviewImage with: win= " + win + ",  field_name = " + field_name + ", value = " + full_preview_url);
 
     win.focus();
 
-    // first, clear out any old value in the tinyMCE image filename field:
+    // clear out any old value in the tinyMCE image filename field:
     win.document.forms[0].elements[field_name].value = ""; 
     // PreviewImage is only available for images:
     if (type == "image") {
@@ -395,19 +388,6 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
        win.showPreviewImage(full_preview_url);
     }
 
-    // this onchange works, but it's dirty because it is hardcoding the 
-    // onChange=".." event of that field, and if that were to ever change 
-    // in tinyMCE, then this would be out of sync.
-
-//    // and finally, be sure to update the tinyMCE window's image data:
-//    if (win.getImageData) {
-//        win.getImageData();
-//    }
-//    else {
-//        if (window.tinyMCE.getImageData) {
-//           window.tinyMCE.getImageData();
-//        }
-//    }    
 }
 
 
