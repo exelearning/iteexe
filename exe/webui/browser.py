@@ -55,12 +55,16 @@ def setBrowserVersion(browserPath, profile_dir):
     if vs:
         setVersionInPrefs(vs.group('vs'), profile_dir)
 
-def launchBrowser(config, packageName):
+def launchBrowser(config, packageName,splash):
     """
     Launch the webbrowser (Firefox) for this platform
     """
     log.info(u"Browser path: " + config.browserPath)
-    url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
+    if(splash):
+       url = "-chrome \"file://" + config.webDir + "/docs/splash.xul\""
+    else:
+       url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
+
     log.info(u"url "+url)
 
     profile_src = "linux-profile"
@@ -113,6 +117,8 @@ def launchBrowser(config, packageName):
                       '-profile', 
                       '"' + config.configDir/profile + '"', 
                       url)
+            log.info(u'Launching firefox: ' + config.configDir/profile )
+            log.info(u'Launching firefox: ' + url)
         except OSError:
             print u"Cannot launch Firefox, please manually run Firefox"
             print u"and go to", url     
@@ -124,5 +130,5 @@ def launchBrowser(config, packageName):
         launchString += ' -profile "' + config.configDir/profile + '/" '
         launchString += url
         launchString += "&"
-        log.info(u'Launching firefox with: ' + launchString)
+        log.info(u'Launching firefox: ' + launchString)
         os.system(launchString)
