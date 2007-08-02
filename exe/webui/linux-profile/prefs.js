@@ -51,4 +51,4 @@ user_pref("capability.policy.policynames", "allowclipboard");
 user_pref("capability.policy.allowclipboard.sites", "http://127.0.0.1:8081 http://127.0.0.1:51235 http://127.0.0.1:51236");
 user_pref("capability.policy.allowclipboard.Clipboard.cutcopy", "allAccess");
 user_pref("capability.policy.allowclipboard.Clipboard.paste", "allAccess");
-user_pref("plugin.default_plugin_disabled", "false");
+user_pref("plugin.default_plugin_disabled", false);
