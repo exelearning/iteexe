@@ -552,7 +552,7 @@ function generatePreview(c) {
 
 	var type =  f.media_type.options[f.media_type.selectedIndex].value;
         if (type == "none") {
-           return false;
+           return;
         } 
 
 	p.innerHTML = '<!-- x --->';

@@ -46,7 +46,7 @@ var TinyMCE_MediaPlugin = {
 				tinyMCE.openWindow({
 						file : '../../plugins/media/media.htm',
 						width : 430 + tinyMCE.getLang('lang_media_delta_width', 0),
-						height : 470 + tinyMCE.getLang('lang_media_delta_height', 0)
+						height : 500 + tinyMCE.getLang('lang_media_delta_height', 0)
 					}, {
 						editor_id : editor_id,
 						inline : "yes"
