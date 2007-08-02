@@ -73,6 +73,12 @@ class Manifest(object):
         out = open(self.outputDir/'dublincore.xml', 'wb')
         out.write(xml.encode('utf8'))
         out.close()
+        templateFilename = self.config.xulDir/'templates'/'imslrm.xml'
+        template = open(templateFilename, 'rb').read()
+        xml = template % self.package.dublinCore.__dict__
+        out = open(self.outputDir/'imslrm.xml', 'wb')
+        out.write(xml.encode('utf8'))
+        out.close()
         
     def createForumXML(self):
         """
@@ -160,7 +166,7 @@ class Manifest(object):
             xmlStr += u"<metadata> \n"
             xmlStr += u" <schema>ADL SCORM</schema> \n"
             xmlStr += u" <schemaversion>1.2</schemaversion> \n"
-            xmlStr += u" <adlcp:location>dublincore.xml"
+            xmlStr += u" <adlcp:location>imslrm.xml"
             xmlStr += u"</adlcp:location> \n"
             xmlStr += u"</metadata> \n"
         else:
