@@ -101,8 +101,6 @@ def launchBrowser(config, packageName):
     # the extension update check
     if sys.platform[:5] == u"linux":
         setBrowserVersion(config.browserPath, config.configDir/profile)
-    elif sys.platform[:3] == u"win":
-        setVersionInPrefs('2.0.0.1', config.configDir/profile)
 
     if sys.platform[:3] == u"win":
         try:
