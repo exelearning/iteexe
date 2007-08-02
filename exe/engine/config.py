@@ -43,7 +43,6 @@ class Config:
     optionNames = {
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browserPath'),
-                   #'assumeMediaPlugins'),
         'user': ('locale',),
     }
 
@@ -62,7 +61,8 @@ class Config:
         self.xulDir      = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
-        # port is the port the exe webserver will listen on (previous default was 8081)
+        # port is the port the exe webserver will listen on 
+        # (previous default, which earlier users might still use, was 8081)
         self.port        = 51235
         # dataDir is the default directory that is shown to the user
         # to save packages and exports in
@@ -84,6 +84,9 @@ class Config:
         # iDevice pane but, contrary to the hiddens, these are ones that the 
         # configuration can specify to turn ON:
         self.deprecatediDevices = [ "flash with text", "flash movie", "mp3"]
+        # by default, only allow embedding of media types for which a 
+        # browser plugin is found:
+        self.assumeMediaPlugins = False;
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
