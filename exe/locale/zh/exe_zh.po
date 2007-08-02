@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-31 21:41+1200\n"
+"POT-Creation-Date: 2007-08-03 23:21+1200\n"
 "PO-Revision-Date: 2007-06-21 10:57+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -624,7 +624,7 @@ msgstr ""
 "导出失败!\n"
 "%s"
 
-#: exe/export/imsexport.py:330 exe/export/scormexport.py:444
+#: exe/export/imsexport.py:330 exe/export/scormexport.py:451
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -1149,7 +1149,7 @@ msgid "New iDevice"
 msgstr "新的 iDevice"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:321 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "下一页"
 
@@ -1315,7 +1315,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "予览文件夹%s是个文档, 无法取代它"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:314 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:320 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前一页"
 
@@ -1983,7 +1983,7 @@ msgstr "文章"
 msgid "blank for original size"
 msgstr "空白为原来的大小尺寸"
 
-#: exe/export/imsexport.py:193 exe/export/scormexport.py:279
+#: exe/export/imsexport.py:193 exe/export/scormexport.py:285
 msgid "eXe"
 msgstr "eXe"
 

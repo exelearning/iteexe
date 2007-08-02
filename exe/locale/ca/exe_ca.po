@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-31 21:41+1200\n"
+"POT-Creation-Date: 2007-08-03 23:21+1200\n"
 "PO-Revision-Date: 2007-07-05 16:56+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -697,7 +697,7 @@ msgstr ""
 "Exportació errònia !\n"
 "%s"
 
-#: exe/export/imsexport.py:330 exe/export/scormexport.py:444
+#: exe/export/imsexport.py:330 exe/export/scormexport.py:451
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -1260,7 +1260,7 @@ msgid "New iDevice"
 msgstr "Nou iDevice"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:321 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Següent"
 
@@ -1438,7 +1438,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "La carpeta de vistes prèvies %s és un arxiu, no pot ser reemplaçat"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:314 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:320 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Anterior"
 
@@ -2190,7 +2190,7 @@ msgstr "article"
 msgid "blank for original size"
 msgstr "espai per la mida original"
 
-#: exe/export/imsexport.py:193 exe/export/scormexport.py:279
+#: exe/export/imsexport.py:193 exe/export/scormexport.py:285
 msgid "eXe"
 msgstr "eXe"
 

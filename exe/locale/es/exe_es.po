@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-31 21:41+1200\n"
+"POT-Creation-Date: 2007-08-03 23:21+1200\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -508,7 +508,8 @@ msgstr "Click aquí"
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
-msgstr "Haga click en el botón Previsualizar \n"
+msgstr ""
+"Haga click en el botón Previsualizar \n"
 "                                  para convertir el text LATEX en imagen."
 
 #: exe/engine/galleryidevice.py:421
@@ -686,10 +687,11 @@ msgstr "LA EXPORTACIÓN FALLÓ!"
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
-msgstr "LA EXPORTACIÓN FALLÓ!\n"
+msgstr ""
+"LA EXPORTACIÓN FALLÓ!\n"
 "%s"
 
-#: exe/export/imsexport.py:330 exe/export/scormexport.py:444
+#: exe/export/imsexport.py:330 exe/export/scormexport.py:451
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -1244,7 +1246,7 @@ msgid "New iDevice"
 msgstr "Nuevo iDevice"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:321 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Siguiente"
 
@@ -1417,7 +1419,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directorio %s es un archivo, no se puede remplazar"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:314 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:320 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Anterior"
 
@@ -2168,7 +2170,7 @@ msgstr "Artículo"
 msgid "blank for original size"
 msgstr "blanco para el tamaño original"
 
-#: exe/export/imsexport.py:193 exe/export/scormexport.py:279
+#: exe/export/imsexport.py:193 exe/export/scormexport.py:285
 msgid "eXe"
 msgstr "eXe"
 

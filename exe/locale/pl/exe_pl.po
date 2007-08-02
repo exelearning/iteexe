@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-31 21:41+1200\n"
+"POT-Creation-Date: 2007-08-03 23:21+1200\n"
 "PO-Revision-Date: 2007-07-27 07:46+1200\n"
 "Last-Translator: Arek Felińczak <drakonus@o2.pl>\n"
 "Language-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\n"
@@ -735,7 +735,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:330 exe/export/scormexport.py:444
+#: exe/export/imsexport.py:330 exe/export/scormexport.py:451
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -1311,7 +1311,7 @@ msgid "New iDevice"
 msgstr "Nowy obiekt"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:321 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Następny"
 
@@ -1488,7 +1488,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nazwa %s jest plikiem, nie można jej zmienić"
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:314 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:320 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Poprzedni"
 
@@ -2246,7 +2246,7 @@ msgstr "artykuł "
 msgid "blank for original size"
 msgstr "puste dla właściwego rozmiaru"
 
-#: exe/export/imsexport.py:193 exe/export/scormexport.py:279
+#: exe/export/imsexport.py:193 exe/export/scormexport.py:285
 msgid "eXe"
 msgstr "eXe "
 

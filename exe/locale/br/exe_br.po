@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-31 21:41+1200\n"
+"POT-Creation-Date: 2007-08-03 23:21+1200\n"
 "PO-Revision-Date: 2007-08-01 08:35+1200\n"
 "Last-Translator: quilleverejil <jil.quillevere@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -605,7 +605,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:330 exe/export/scormexport.py:444
+#: exe/export/imsexport.py:330 exe/export/scormexport.py:451
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -1112,7 +1112,7 @@ msgid "New iDevice"
 msgstr ""
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:321 exe/export/websitepage.py:192
 msgid "Next"
 msgstr ""
 
@@ -1278,7 +1278,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
 #: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:314 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:320 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr ""
 
@@ -1930,7 +1930,7 @@ msgstr ""
 msgid "blank for original size"
 msgstr ""
 
-#: exe/export/imsexport.py:193 exe/export/scormexport.py:279
+#: exe/export/imsexport.py:193 exe/export/scormexport.py:285
 msgid "eXe"
 msgstr ""
 
