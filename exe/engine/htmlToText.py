@@ -17,6 +17,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 import os
+import re
+from htmlentitydefs import name2codepoint
 
 class HtmlToText(object):
   
@@ -24,6 +26,7 @@ class HtmlToText(object):
     self.html = html
     
   def convertToText(self):
+    
     lastch = ""
     text   = ""
     tag    = ""
@@ -44,11 +47,27 @@ class HtmlToText(object):
       elif not (lastch in whitespace and ch in whitespace):         
         text += ch
       lastch = ch
-    text = text.replace('&nbsp;','')
-    text = text.replace('&lt;', '<')
-    text = text.replace('&gt;', '>')
-    text = text.replace('&quot;', '"')
+      
+    text = self.unescape(text)
+    #text = text.replace('&nbsp;','')
+    #text = text.replace('&lt;', '<')
+    #text = text.replace('&gt;', '>')
+    #text = text.replace('&quot;', '"')
     return text
+  
+  def unescape(self, data):
+      """
+      convert html entitydefs into unicode characters
+      """
+      chunks = re.split("&(#?\w+);", data)
+      for i in range(1, len(chunks), 2):
+          if chunks[i] in name2codepoint:
+              chunks[i] = unichr(name2codepoint[chunks[i]])
+          elif re.match("#\d+$", chunks[i]):
+              chunks[i] = unichr(int(chunks[i][1:]))
+          elif re.match("#x[0-9a-fA-F]+$", chunks[i]):
+              chunks[i] = unichr(int(chunks[i][2:], 16))
+      return "".join(chunks)
     
     
   
