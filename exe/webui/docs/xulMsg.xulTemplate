@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+  <?xml-stylesheet 
+    href="chrome://global/skin/" 
+    type="text/css"
+  ?>
+  <window 
+    id="MySecondWindow" 
+    title="eXe" 
+    onload="" onclose="" 
+    width="420" height="200" screenX="150" screenY="300"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+  >
+    <spacer height="20"/>
+    <row>
+      <spacer width="20"/>
+      <column>
+      <spacer height="20"/>
+      <description>
+        <html:img src="../images/exe_logo.png"/>
+      </description>
+      </column>
+      <spacer width="20"/>
+      <groupbox width="200" max-width="200">
+        <caption label="eXe" /> 
+        <row>
+          <description width="180">XUL_MESSAGE</description>
+        </row>
+      </groupbox>
+      <spacer width="20"/>
+    </row>
+      <spacer height="20"/>
+    <row>
+      <spacer flex="1"/>
+      <button label="OK" oncommand="oc()"/>
+      <spacer flex="1"/>
+    </row>
+    <spacer height="20"/>
+    <script type="text/javascript" >
+      function oc() { window.close(); }
+
+      function ol()
+      {
+        setTimeout('olStart()', 1000);
+        loopMe();
+      }
+
+      function olStart()
+      {
+        //window.open("http://127.0.0.1:51235/","eXe");
+      }
+
+      function olEnd() { window.close(); }
+
+      c=0
+      function ex()
+      { 
+        c+=1
+        if(c==0) { return true } 
+        else 
+        {
+          alert("please wait until package has loaded before closing");
+          return false 
+        }
+      }
+
+      var interval = FALSE
+
+      function loopMe()
+      { interval = setInterval('urlGet("splash.dat")',1000) }
+
+function urlGet(strURL)
+{
+    var req = false;
+    var self = this;
+    if (window.XMLHttpRequest) { self.req = new XMLHttpRequest() }
+    self.req.open('POST', strURL, true)
+    self.req.setRequestHeader('Content-Type', 'text/plain')
+    self.req.onreadystatechange = function()
+    { if (self.req.readyState == 4) { updatepage(self.req.responseText) } }
+    self.req.send("")
+}
+
+
+function updatepage(str)
+{
+  var results = str.split(";")
+  //setProgress(results[0]) //set bar to whatever is in splashLoad.dat
+  if(results[1])
+  {
+    clearInterval(interval)
+    setProgress(100) //set bar to 100
+    window.open(results[1],"eXe");
+    setTimeout('olEnd()', 3000);
+  }
+}
+
+      function setProgress(progressValue)
+      {
+        var mpm = document.getElementById("pm");
+        mpm.mode = "determined"
+        mpm.value = progressValue;
+      }
+    </script>
+
+  </window>
