@@ -25,7 +25,7 @@ Version Information
 import re
 
 project        = "exe"
-release        = "0.98.0"
+release        = "0.98.1"
 revision       = "$Revision$"[11:-2]
 # if it is available, get the SVN revision
 try:
