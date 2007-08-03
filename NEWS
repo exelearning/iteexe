@@ -1,15 +1,20 @@
-Next Version
+Version 0.98 (r3136)
 * Add ability to insert MimeTeX math images in any field with TinyMCE
 * Add message to RSS iDevice for when feed fails
 * Add labels to items added in the iDevice editor edit display
 * Add feedback display for each option of multi-select iDevice (not score)
+* Add font family, background colors, advanced horizontal rule to TinyMCE
 * Fix Image Gallery popup to start at images beyond first row
+* Fix Image Gallery to handle unicode captions and previous/next
 * Fix SCORM Quiz scoring to send normalized 0..100 score to LMS
 * Fix SCORM 1.2 export that was missing ims_xml schema
 * Fix display of package header image by adding a Show Image button
+* Change embedded media to default to auto-fit and not autoplay
+* Attempt to decode HTML character entities on text export
 * Start using IMS LRM metadata for SCORM 1.2 exports
 * Upgrade Maths iDevice into math image in a Free Text iDevice
 * Deprecate media iDevices (can be re-enabled in exe.conf)
+* Many translation updates
 * Update Firefox to 2.0.0.6
 
 Version 0.97 (r3024)
