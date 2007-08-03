@@ -184,7 +184,10 @@ class AuthoringPage(RenderableResource):
         html += u" theme_advanced_buttons3 : \"\",\n"
        
         # the image-handling callback function for tinyMCE's image button:
-        html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        html += u"advimage_image_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        # as recyled into the tinyMCE media plugin's media callback:
+        html += u"media_media_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+
         # and the callback to generate exemath's LaTeX images via mimetex:
         html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
 
