@@ -49,7 +49,6 @@ from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
-# r3m0: for the new exemath TinyMCE plugin:
 from exe.engine.mimetex          import compile
 
 
@@ -539,6 +538,8 @@ class MainPage(RenderableLivePage):
                 errors += 1
 
         try:
+            # joinpath needs its join arguments to already be in Unicode:
+            preview_filename = toUnicode(preview_filename);
             server_filename = previewDir.joinpath(preview_filename);
             log.debug("handleTinyMCEimageChoice copying image from \'"\
                     + local_filename + "\' to \'" \

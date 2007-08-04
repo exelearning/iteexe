@@ -24,7 +24,7 @@ Simple fields which can be used to build up a generic iDevice.
 
 import logging
 from exe.engine.persist   import Persistable
-from exe.engine.path      import Path
+from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from exe.engine.mimetex   import compile
@@ -475,7 +475,9 @@ class FieldWithResources(Field):
                            bases_dir = previewDir.joinpath('allyourbase')
                            if not bases_dir.exists():
                                bases_dir.makedirs()
-                           base_file_name = bases_dir.joinpath(basename_value)
+                           # joinpath needs its arguments to be in Unicode:
+                           base_file_name = bases_dir.joinpath( \
+                                   toUnicode(basename_value))
                            base_file_str = \
                                    base_file_name.abspath().encode('utf-8')
                            shutil.copyfile(file_name_str, base_file_str)
@@ -823,7 +825,9 @@ class FieldWithResources(Field):
                            bases_dir = previewDir.joinpath('allyourbase')
                            if not bases_dir.exists():
                                bases_dir.makedirs()
-                           base_file_name = bases_dir.joinpath(basename_value)
+                           # joinpath needs its arguments to be in Unicode:
+                           base_file_name = bases_dir.joinpath( \
+                                   toUnicode(basename_value))
                            base_file_str = \
                                    base_file_name.abspath().encode('utf-8')
                            shutil.copyfile(file_name_str, base_file_str)
