@@ -291,13 +291,11 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     preview_imageName = newImageStr;
     full_previewImage_url = "/previews/"+preview_imageName;
 
-
     // pass the file information on to the server,
     // to copy it into the server's "previews" directory:
     window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, 
                   '', win, win.name, field_name, unescaped_local_imagePath, 
                   preview_imageName)
-
 
     // first, clear out any old value in the tinyMCE image filename field:
     win.document.forms[0].elements[field_name].value = ""; 

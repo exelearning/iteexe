@@ -157,12 +157,23 @@ class AuthoringPage(RenderableResource):
         html += u"valid_elements : \"*[*]\",\n"
         html += u"verify_html : false, \n"
         html += u"apply_source_formatting : true, \n"
+        ###########
         # r3m0: testing to remove TinyMCE's escaping/quoting of HTML:
         #html += u"apply_source_formatting : false, \n"
-        #html += u"cleanup_on_startup : false, \n"
+        html += u"cleanup_on_startup : false, \n"
         #html += u"cleanup : false, \n"
-        # hmmmm, still not what we're looking for :-(
-        #
+        # 
+        # to preserve spaces (note: be sure to use TinyMCE's HTML button!),
+        # the following was recommended by eXe user Javier Lafora Rey at
+        # http://eduforge.org/forum/forum.php?thread_id=1654&forum_id=298
+        html += u"preformatted : true, \n"
+        # and, supposedly to not escape any, use::
+        #html += u"entity_encoding : \"raw\", \n"
+        # or, perhaps to get &npsp's kept, use: 
+        html += u"entity_encoding : \"named\", \n"
+        # or can convert symbols to #s with:
+        #html += u"entity_encoding : \"numeric\", \n"
+        #############
         html += u"gecko_spellcheck : true, \n"
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"

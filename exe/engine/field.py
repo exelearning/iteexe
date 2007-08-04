@@ -31,6 +31,7 @@ from exe.engine.mimetex   import compile
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 from htmlentitydefs       import name2codepoint
+from exe.engine.htmlToText import HtmlToText
 from exe                  import globals as G
 import os
 import re
@@ -421,10 +422,15 @@ class FieldWithResources(Field):
 
                # and to get the actual file path, 
                # rather than the complete URL:
-               input_file_name_str = file_url_str[len(search_str):]
-               # which may now be: "MEDIA_FILE"
 
-               log.debug("ProcessPreviewedMedia: found file = " \
+               # first compensate for how TinyMCE HTML-escapes accents, etc:
+               pre_input_file_name_str = file_url_str[len(search_str):]
+               log.debug("ProcessPreviewedImages: found escaped file = " \
+                           + pre_input_file_name_str)
+               converter = HtmlToText(pre_input_file_name_str)
+               input_file_name_str = converter.convertToText()
+
+               log.debug("ProcessPreviewedImages: unescaped filename = " \
                            + input_file_name_str)
 
                webDir     = Path(G.application.tempWebDir)
@@ -524,7 +530,8 @@ class FieldWithResources(Field):
                    # BUT, since we'll also be replacing this entire tag-
                    # parsing mechanism, no worries, just do it:
                    #######
-                   embed_search_str = "src=\"/previews/"+input_file_name_str
+                   embed_search_str = "src=\"/previews/"+pre_input_file_name_str
+
                    embed_replace_str = "src=\"" + resource_url
                    new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
@@ -536,7 +543,7 @@ class FieldWithResources(Field):
                    # in the initial object tag, and now using media
                    # type = x-ms-wmv
                    ######
-                   embed_search_str = "x-ms-wmv\" data=\"/previews/"+input_file_name_str
+                   embed_search_str = "x-ms-wmv\" data=\"/previews/"+pre_input_file_name_str
                    embed_replace_str = "x-ms-wmv\" data=\"" + resource_url
                    new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
@@ -573,14 +580,7 @@ class FieldWithResources(Field):
             math_image_resource_filename, math_image_resource_url):
         """
         to build up the corresponding LaTeX math-source file resources 
-        from any math images added.  called from ProcessPreviewedImages() as:
-        #log.debug("r3m0: looking for an exe_math_latex tag that equals:"
-        #         + preview_math_src) 
-        new_content = self.ProcessPairedMathSource(new_content,\ 
-                preview_math_src, resource_path, resource_url) 
-        #log.debug("r3m0: and will change its name to " \ 
-        #        + resource_path + ".tex, and change its tag "\ 
-        #        + " to point to " + resource_url + ".tex")
+        from any math images added.  called from ProcessPreviewedImages().
         """
         new_content = content
         log.debug('ProcessPairedMathSource: processing ' \
@@ -772,9 +772,15 @@ class FieldWithResources(Field):
                file_url_str = new_content[found_pos:end_pos] 
                # and to get the actual file path, 
                # rather than the complete URL:
-               input_file_name_str = file_url_str[len(search_str):]
 
-               log.debug("ProcessPreviewedImages: found file = " \
+               # first compensate for how TinyMCE HTML-escapes accents:
+               pre_input_file_name_str = file_url_str[len(search_str):]
+               log.debug("ProcessPreviewedImages: found escaped file = " \
+                           + pre_input_file_name_str)
+               converter = HtmlToText(pre_input_file_name_str)
+               input_file_name_str = converter.convertToText()
+
+               log.debug("ProcessPreviewedImages: unescaped filename = " \
                            + input_file_name_str)
 
                webDir     = Path(G.application.tempWebDir)
@@ -881,7 +887,6 @@ class FieldWithResources(Field):
                    log.debug("ProcessPreviewedImages: built resource: " \
                            + resource_url)
 
-                   # r3m0: 
                    # check to see if this was an exemath image.
                    # If so, then go ahead and handle its counterpart
                    # LaTeX source file as well.
@@ -896,19 +901,14 @@ class FieldWithResources(Field):
                    # are resourcified! and further UPDATE edits are done.
                    if resource_path.find("eXe_LaTeX_math_") >= 0:
                    
-                       #log.debug("r3m0: =====> hey, cool, this might be a math image!")
                        # Remember that the actual image is 
                        #preview_math_src=file_url_str.replace("../previews",\
                        #        "/previews") + ".tex\""
                        # "../previews" is now set in exemath to match:
                        preview_math_src = file_url_str + ".tex\""
 
-                       #log.debug("r3m0: looking for an exe_math_latex tag that equals: " + preview_math_src)
                        new_content = self.ProcessPairedMathSource(new_content,\
                                preview_math_src, resource_path, resource_url)
-                       #log.debug("r3m0: and will change its name to " \
-                       #        + resource_path + ".tex, and change its tag "\
-                       #        + " to point to " + resource_url + ".tex")
 
 
                else:
