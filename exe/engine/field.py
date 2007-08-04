@@ -425,12 +425,12 @@ class FieldWithResources(Field):
 
                # first compensate for how TinyMCE HTML-escapes accents, etc:
                pre_input_file_name_str = file_url_str[len(search_str):]
-               log.debug("ProcessPreviewedImages: found escaped file = " \
+               log.debug("ProcessPreviewedMedia: found escaped file = " \
                            + pre_input_file_name_str)
                converter = HtmlToText(pre_input_file_name_str)
                input_file_name_str = converter.convertToText()
 
-               log.debug("ProcessPreviewedImages: unescaped filename = " \
+               log.debug("ProcessPreviewedMedia: unescaped filename = " \
                            + input_file_name_str)
 
                webDir     = Path(G.application.tempWebDir)
