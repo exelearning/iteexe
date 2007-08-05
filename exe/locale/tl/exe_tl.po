@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-03 23:21+1200\n"
+"POT-Creation-Date: 2007-08-06 21:49+1200\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:771
-#: exe/xului/mainpage.py:892 exe/xului/mainpage.py:948
-#: exe/xului/mainpage.py:969
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:772
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:949
+#: exe/xului/mainpage.py:970
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -52,8 +52,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Ilipat Sa---"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:680
-#: exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:681
+#: exe/xului/mainpage.py:764
 msgid ". Please use ASCII names."
 msgstr ". Gumamit po ng mga pangalang ASCII."
 
@@ -123,16 +123,16 @@ msgstr ""
 "sa pamamagitan ng pagteklado ng direkta sa pitak.</p><p> Para mapili ang mga salitang itatago, idoble klik ang salita at\n"
 "iklik ang Itago/Ilantad ang Salita na buton sa ibaba.</p>"
 
-#: exe/engine/field.py:1453
+#: exe/engine/field.py:1501
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Kapag walang tsek, tatanggapin ang maliit na bilang ng maling baybay at laki ng titik.  Kapag may tsek, tanging eksaktong tugma sa baybay at laki ng titik ang tatanggapin.</p><p><strong>Halimbawa:</strong> Kung ang tamang sagot ay <code>Elepante</code> ang <code>elepante</code> at <code>Elipante</code> ay parehong hahatulan na <em>\"malapit na\"</em> ng algoritmo dahil isang titik lamang ang mali, kahit na buhay ang \"Suriin ang Laki ng Titik\".</p><p>Kapag patay ang pagsusuri ng laki ng titik sa halimbawa sa itaas, ang maliit na titik na  <code>e</code> ay hindi ituturing na mali at tatanggapin din ang  <code>elipante</code> </p><p>Kung sabay pinagana ang  \"Istriktong Marka\" at \"Suriin ang Laki ng Titik\", ang tanging wastong sagot ay \"Elepante\". Kung ang tsinekan lamang ay  \"Istriktong Marka\" at hindi ang  \"Suriin ang Laki ng Titik\", ang \"elepante\" ay tatanggapin din. </p>"
 
-#: exe/engine/field.py:1474
+#: exe/engine/field.py:1522
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Kapag tsinekan ang opsiyong ito, ang mga ipinasang sagot na iba ang laki ng titik ay mamarkahang mali.</p>"
 
-#: exe/engine/field.py:1479
+#: exe/engine/field.py:1527
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -143,7 +143,7 @@ msgstr ""
 "habang nagtiteklado ang mag-aaral sa halip na markahan lahat ng \n"
 "salita sa dulo ng pagsasanay.</p>"
 
-#: exe/engine/field.py:1728
+#: exe/engine/field.py:1776
 #, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Pumili ng mga simbolo sa editor ng teksto sa ibaba upang makalikha ng pormulang pangmatematika.  Ang bawat simbolo ay ipapakita sa pitak na pandispley, sa wikang pangmatematika na LATEX, at maaari itong silipin sa pamamagitan ng &lt;Silipin&gt; na buton sa ibaba."
@@ -370,7 +370,7 @@ msgstr ""
 "Sa paghahanay ay maaari kang\n"
 "pumili kung saan sa iskrin ipoposisyon ang media player."
 
-#: exe/engine/field.py:1517
+#: exe/engine/field.py:1565
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -466,8 +466,8 @@ msgstr "Pamagat ng Buton"
 msgid "Cancel"
 msgstr "Balewalain"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:678
-#: exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:679
+#: exe/xului/mainpage.py:764
 msgid "Cannot access directory named "
 msgstr "Hindi mapasok ang pinangalanang direktoryo "
 
@@ -517,7 +517,7 @@ msgstr ""
 "piksel ay katumbas ng humigit-kumulang 3 cm. Bayaang blangko ang \n"
 "mga pitak kung nais mong ipakita ang larawan sa orihinal nitong laki."
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:217
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -535,7 +535,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Iklik ang <strong>Pumili ng sako</strong>, hanapin ang sako na nais mong ilakip at piliin ito."
 
-#: exe/engine/field.py:1069
+#: exe/engine/field.py:1114
 msgid "Click Here"
 msgstr "Iklik Ito"
 
@@ -547,7 +547,7 @@ msgstr "Iklik para sa mga panuto ng pagkumpleto"
 msgid "Click here"
 msgstr "Iklik ito"
 
-#: exe/engine/field.py:1736
+#: exe/engine/field.py:1784
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -593,7 +593,7 @@ msgstr "Wasto"
 msgid "Correct!"
 msgstr "Wasto!"
 
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:1020
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Hindi maikarga ang sako, paki-email ang sako sa bugs@exelearning.org"
 
@@ -721,17 +721,17 @@ msgstr "ERROR direktang tinawag ang Element.renderView ng %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: direktang tinawag ang Block.renderViewContent"
 
-#: exe/xului/mainpage.py:705 exe/xului/mainpage.py:712
-#: exe/xului/mainpage.py:715 exe/xului/mainpage.py:718
-#: exe/xului/mainpage.py:876
+#: exe/xului/mainpage.py:706 exe/xului/mainpage.py:713
+#: exe/xului/mainpage.py:716 exe/xului/mainpage.py:719
+#: exe/xului/mainpage.py:877
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:866 exe/xului/mainpage.py:880
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:899
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:949
-#: exe/xului/mainpage.py:955 exe/xului/mainpage.py:970
-#: exe/xului/mainpage.py:976
+#: exe/xului/mainpage.py:867 exe/xului/mainpage.py:881
+#: exe/xului/mainpage.py:894 exe/xului/mainpage.py:900
+#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:950
+#: exe/xului/mainpage.py:956 exe/xului/mainpage.py:971
+#: exe/xului/mainpage.py:977
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -746,7 +746,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:772 exe/xului/mainpage.py:781
+#: exe/xului/mainpage.py:773 exe/xului/mainpage.py:782
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -758,7 +758,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Iedit"
 
-#: twisted/persisted/styles.py:300
+#: twisted/persisted/styles.py:299
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -882,7 +882,7 @@ msgstr ""
 "\"Magdagdag ng Isa Pang Opsiyon\". Magbura ng opsiyon sa pamamagitan ng\n"
 "pagklik sa pulang \"X\"sa tabi ng Opsiyon."
 
-#: exe/engine/field.py:1929
+#: exe/engine/field.py:1977
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -936,7 +936,7 @@ msgstr ""
 "Dapat ay malinaw ang tanong. Iwasan ang mga negatibong pangungusap.\n"
 "dahil medyo nakakalito ito."
 
-#: exe/engine/field.py:1921
+#: exe/engine/field.py:1969
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -988,9 +988,9 @@ msgstr "Halimbawa Halimbawa"
 msgid "Export iDevice"
 msgstr "iDevices"
 
-#: exe/xului/mainpage.py:882 exe/xului/mainpage.py:901
-#: exe/xului/mainpage.py:935 exe/xului/mainpage.py:957
-#: exe/xului/mainpage.py:978
+#: exe/xului/mainpage.py:883 exe/xului/mainpage.py:902
+#: exe/xului/mainpage.py:936 exe/xului/mainpage.py:958
+#: exe/xului/mainpage.py:979
 #, python-format
 msgid "Exported to %s"
 msgstr "Iniluwas sa %s"
@@ -1010,8 +1010,8 @@ msgstr "Mali"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1808
-#: exe/engine/field.py:1820 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1856
+#: exe/engine/field.py:1868 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1766
 #: exe/webui/editorpane.py:251
@@ -1027,17 +1027,17 @@ msgstr ""
 "walang datos na ipinasok sa pitak na ito."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1938 exe/engine/field.py:1963
+#: exe/engine/field.py:1986 exe/engine/field.py:2011
 msgid "Feedback:"
 msgstr "Puna:"
 
-#: exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1016
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:811 exe/xului/mainpage.py:853
-#: exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:812 exe/xului/mainpage.py:854
+#: exe/xului/mainpage.py:921
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ang ngalan ng sako na %s ay isa nang sako, hindi ito mapapalitan"
@@ -1055,8 +1055,8 @@ msgstr "Pelikulang Flash"
 msgid "Flash with Text"
 msgstr "Flash na may Teksto"
 
-#: exe/xului/mainpage.py:817 exe/xului/mainpage.py:859
-#: exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:818 exe/xului/mainpage.py:860
+#: exe/xului/mainpage.py:927
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1121,7 +1121,7 @@ msgid "Hide/Show Word"
 msgstr "Itago/Ilantad ang Salita"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1846 exe/engine/field.py:1866
+#: exe/engine/field.py:1894 exe/engine/field.py:1914
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1954
 msgid "Hint"
@@ -1162,7 +1162,7 @@ msgstr "Galeriya ng Larawan"
 msgid "Image Magnifier"
 msgstr "Pampalaki ng Larawan"
 
-#: exe/xului/mainpage.py:533
+#: exe/xului/mainpage.py:532
 #, fuzzy, python-format
 msgid "Image file %s is not found, cannot preview it"
 msgstr "Ang ngalan ng sako na %s ay isa nang sako, hindi ito mapapalitan"
@@ -1271,7 +1271,7 @@ msgstr "Maksimum na zoom"
 msgid "Medium"
 msgstr "Katamtaman"
 
-#: exe/xului/mainpage.py:647
+#: exe/xului/mainpage.py:648
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1365,7 +1365,7 @@ msgstr ""
 "itakda ang dapat magawa ng mag-aaral kapag nakumpleto na nila ang \n"
 "aralin."
 
-#: exe/engine/field.py:1623 exe/engine/field.py:1687
+#: exe/engine/field.py:1671 exe/engine/field.py:1735
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1373,7 +1373,7 @@ msgstr ""
 "Piliin lamang ang .flv (Flash Video File) para \n"
 "sa iDevice na ito."
 
-#: exe/engine/field.py:1559 exe/engine/field.py:1603
+#: exe/engine/field.py:1607 exe/engine/field.py:1651
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1382,13 +1382,13 @@ msgstr ""
 "sa iDevice na ito."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:1804 exe/engine/field.py:1817
+#: exe/engine/field.py:1852 exe/engine/field.py:1865
 #: exe/webui/testquestionelement.py:100 exe/webui/element.py:1619
 #: exe/webui/element.py:1742 exe/webui/element.py:1747
 msgid "Option"
 msgstr "Opsiyon"
 
-#: exe/engine/field.py:1888 exe/engine/field.py:1898
+#: exe/engine/field.py:1936 exe/engine/field.py:1946
 #: exe/webui/testquestionelement.py:96 exe/webui/element.py:1615
 msgid "Options"
 msgstr "Mga opsiyon"
@@ -1405,12 +1405,12 @@ msgstr "Balangkas"
 msgid "Own site"
 msgstr "Sariling site"
 
-#: exe/xului/mainpage.py:783
+#: exe/xului/mainpage.py:784
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Isinilid ang pakete sa: %s"
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:315
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Isinilid ang pakete sa: %s"
@@ -1450,7 +1450,7 @@ msgstr "Piliin po ang wastong sagot sa bawat tanong."
 msgid "Please upload a .ggb file."
 msgstr ""
 
-#: exe/xului/mainpage.py:89
+#: exe/xului/mainpage.py:88
 msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
@@ -1489,7 +1489,7 @@ msgstr ""
 msgid "Preview"
 msgstr "Silipin"
 
-#: exe/xului/mainpage.py:521 exe/xului/mainpage.py:605
+#: exe/xului/mainpage.py:520 exe/xului/mainpage.py:606
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ang ngalan ng sako na %s ay isa nang sako, hindi ito mapapalitan"
@@ -1499,8 +1499,8 @@ msgstr "Ang ngalan ng sako na %s ay isa nang sako, hindi ito mapapalitan"
 msgid "Previous"
 msgstr "Nakaraan"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1264
-#: exe/engine/field.py:1311
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1309
+#: exe/engine/field.py:1356
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1574,14 +1574,14 @@ msgid "Put instructions for learners here"
 msgstr "Maglagay ng mga panuto para sa mag-aaral dito"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1843 exe/engine/field.py:1862
+#: exe/engine/field.py:1891 exe/engine/field.py:1910
 #, fuzzy
 msgid "Question"
 msgstr "Tanong:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:1924 exe/engine/field.py:1960 exe/webui/element.py:1599
+#: exe/engine/field.py:1972 exe/engine/field.py:2008 exe/webui/element.py:1599
 msgid "Question:"
 msgstr "Tanong:"
 
@@ -1645,12 +1645,12 @@ msgstr "Patayin at patakbuhin muli"
 msgid "Right"
 msgstr "Kanan"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:308
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:577
-#: exe/xului/mainpage.py:825
+#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:578
+#: exe/xului/mainpage.py:826
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1720,7 +1720,7 @@ msgstr "Pumili ng larawan"
 msgid "Select an image (JPG file)"
 msgstr "Pumili ng larawan (sakong JPG)"
 
-#: exe/engine/field.py:1933
+#: exe/engine/field.py:1981
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1817,7 +1817,7 @@ msgstr "Maliit"
 msgid "Some emphasis"
 msgstr "Kaunting diin"
 
-#: exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1025
 msgid "Sorry, wrong file format"
 msgstr "Paumanhin, mali ang anyo ng sako"
 
@@ -1826,7 +1826,7 @@ msgstr "Paumanhin, mali ang anyo ng sako"
 msgid "Sorry, wrong file format."
 msgstr "Paumanhin, mali ang anyo ng sako"
 
-#: exe/xului/mainpage.py:1022
+#: exe/xului/mainpage.py:1023
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2064,7 +2064,7 @@ msgstr ""
 "tanong ay mahusay para sa mga impormasyong katunayan at impormasyon \n"
 "na masasagot ng alinman sa dalawang tugon."
 
-#: exe/engine/field.py:1699
+#: exe/engine/field.py:1747
 msgid "Type a discussion topic here."
 msgstr "Magteklado ng paksa ng usapin dito."
 
@@ -2096,7 +2096,7 @@ msgstr ""
 "punang: \"Wastong sagot\" kapag pinili ang wastong sagot, o \"Maling sagot\"\n"
 "kapag pinili nila ang iba pang alternatibo."
 
-#: exe/engine/field.py:1936
+#: exe/engine/field.py:1984
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

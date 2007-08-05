@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-03 23:21+1200\n"
+"POT-Creation-Date: 2007-08-06 21:49+1200\n"
 "PO-Revision-Date: 2007-07-19 12:49+1200\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -28,9 +28,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr "<p> Si l'applet que vous souhaitez ajouter a été générée par l'une des applications de cette liste déroulante, sélectionnez la, puis ajoutez les données du fichier de l'applet générées par votre programme </p><p> par exemple: pour des applets générées par Geogebra, sélectionnez Geogebra, puis ajoutez le fichier .ggb que vous avez créé sous Geogebra.</p>"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:771
-#: exe/xului/mainpage.py:892 exe/xului/mainpage.py:948
-#: exe/xului/mainpage.py:969
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:772
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:949
+#: exe/xului/mainpage.py:970
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -53,8 +53,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Déplacer vers---"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:680
-#: exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:681
+#: exe/xului/mainpage.py:764
 msgid ". Please use ASCII names."
 msgstr ".Utilisez des noms ASCII SVP."
 
@@ -113,22 +113,22 @@ msgstr ""
 "<p>Rédigez le texte pour l'activité \"remplir les blancs\" dans le champ prévu\n"
 " soit en le \"copiant-collant\" depuis une autre source, soit en le tapant directement dans le champ.</p> <p> Pour cacher les mots à trouver: \"double-clicquer\" sur le mot pour le sélectionner et clicquer ensuite sur le bouton \"Cacher/Montrer\" de la barre en-dessous.</p>"
 
-#: exe/engine/field.py:1453
+#: exe/engine/field.py:1501
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p> Si vous ne cochez pas cette case: un petit nombre d'erreurs de caractères ou d'emploi des majuscules sera toléré. Si vous la cochez, aucune erreur ne sera acceptée.</p> <p> <strong> Par exemple:</strong> Si la bonne réponse est: <code>Elephant</code> alors <code>elephant</code> et <code>Eliphant</code> seront admis comme <em>\"assez proche\"</em> par l'algorithme, en ce sens qu'il n'y aurait qu'un caractère faux, même si \"Validation des Majuscules\" est coché.</p> <p> Si la case \"Validation des Majuscules\" n'est pas cochée dans l'exemple ci-dessus, le <code>e</code> minuscule ne sera pas considéré comme une faute et donc <code>eliphant</code> sera également accepté.</p> <p> Si seule la case \"marquage strictement identique\" est cochée et si celle de \"Validation des Majuscules\" ne l'est pas: <code>elephant</code> sera également accepté."
 
-#: exe/engine/field.py:1474
+#: exe/engine/field.py:1522
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p> Si cette case est cochée, les réponses soumises avec des différences de Majuscules seront traitées comme incorrectes.</p>"
 
-#: exe/engine/field.py:1479
+#: exe/engine/field.py:1527
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr "<p> Si cette case est cochée, chaque mot tapé sera validé au fur et à mesure de l'avancement de l'exercice et non pas à la fin de celui-ci.</p>"
 
-#: exe/engine/field.py:1728
+#: exe/engine/field.py:1776
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p> Choisissez les symboles mathématiques à partir de l'éditeur de texte ci-dessous pour créer vos formules. Chaque symbole sera visualisé dans le champ en langage mathématique LATEX, dont un aperçu peut être demandé par le bouton &lt;Aperçu&gt; situé en-dessous."
 
@@ -307,7 +307,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "La mise en page vous permet de choisir le positionnement du lecteur à l'écran."
 
-#: exe/engine/field.py:1517
+#: exe/engine/field.py:1565
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -391,8 +391,8 @@ msgstr "bouton de légende"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:678
-#: exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:679
+#: exe/xului/mainpage.py:764
 msgid "Cannot access directory named "
 msgstr "l'application ne peut accéder à ce répertoire"
 
@@ -438,7 +438,7 @@ msgid ""
 "image to display at its original size."
 msgstr "Choisir la taille que vous souhaitez pour la mise en page de votre image. les grandeurs sont mesurées en nombre de pixels. En général, 100 pixels sont équivalents à 3 cm. Laissez ces champs non renseignés si vous voulez conserver à l'image sa taille d'origine."
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:217
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr "Clicquer sur l'image ci-dessous ou sur le bouton \"Ajouter l'image\" afi
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Clicquez sur <strong> Choisir un fichier </strong>,naviguez jusqu'au fichier que vous souhaitez attacher et sélectionner le."
 
-#: exe/engine/field.py:1069
+#: exe/engine/field.py:1114
 msgid "Click Here"
 msgstr "Clicquer ici"
 
@@ -465,7 +465,7 @@ msgstr "Clicquer pour obtenir les consignes de réalisation de la tâche"
 msgid "Click here"
 msgstr "Clicquer ici"
 
-#: exe/engine/field.py:1736
+#: exe/engine/field.py:1784
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -508,7 +508,7 @@ msgstr "Exact"
 msgid "Correct!"
 msgstr "Exact !"
 
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:1020
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Si vous ne pouvez télécharger le fichier, merci d'adresser un e-mail à bugs@exelearning.org"
 
@@ -623,17 +623,17 @@ msgstr "ERREUR Element.renderView appelé directement par la classe %s"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERREUR: Block.renderViewContent appelé directement "
 
-#: exe/xului/mainpage.py:705 exe/xului/mainpage.py:712
-#: exe/xului/mainpage.py:715 exe/xului/mainpage.py:718
-#: exe/xului/mainpage.py:876
+#: exe/xului/mainpage.py:706 exe/xului/mainpage.py:713
+#: exe/xului/mainpage.py:716 exe/xului/mainpage.py:719
+#: exe/xului/mainpage.py:877
 msgid "EXPORT FAILED!"
 msgstr "L'EXPORT A ECHOUE!"
 
-#: exe/xului/mainpage.py:866 exe/xului/mainpage.py:880
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:899
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:949
-#: exe/xului/mainpage.py:955 exe/xului/mainpage.py:970
-#: exe/xului/mainpage.py:976
+#: exe/xului/mainpage.py:867 exe/xului/mainpage.py:881
+#: exe/xului/mainpage.py:894 exe/xului/mainpage.py:900
+#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:950
+#: exe/xului/mainpage.py:956 exe/xului/mainpage.py:971
+#: exe/xului/mainpage.py:977
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -652,7 +652,7 @@ msgstr ""
 "L'EXPORT A ECHOUE!\n"
 "La dernière exportation réussie est %s "
 
-#: exe/xului/mainpage.py:772 exe/xului/mainpage.py:781
+#: exe/xului/mainpage.py:773 exe/xului/mainpage.py:782
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -666,7 +666,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Editer"
 
-#: twisted/persisted/styles.py:300
+#: twisted/persisted/styles.py:299
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -767,7 +767,7 @@ msgstr ""
 "Rédigez les options possibles ici.\n"
 " Vous pouvez ajouter de nouveaux choix en clicquant sur le bouton \"Ajouter une nouvelle option\". Supprimez les options en clicquant sur l'icône \"X\" rouge qui se trouve sur le coté de l'option."
 
-#: exe/engine/field.py:1929
+#: exe/engine/field.py:1977
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -811,7 +811,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr "Rédigez ici la question introductive. Celle-ci doit être claire et sans ambiguité. Evitez les intitulés négatifs qui peuvent prêter à contre-sens."
 
-#: exe/engine/field.py:1921
+#: exe/engine/field.py:1969
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -852,9 +852,9 @@ msgstr "Exemple Exemple"
 msgid "Export iDevice"
 msgstr "Export d' outils pédagogiques"
 
-#: exe/xului/mainpage.py:882 exe/xului/mainpage.py:901
-#: exe/xului/mainpage.py:935 exe/xului/mainpage.py:957
-#: exe/xului/mainpage.py:978
+#: exe/xului/mainpage.py:883 exe/xului/mainpage.py:902
+#: exe/xului/mainpage.py:936 exe/xului/mainpage.py:958
+#: exe/xului/mainpage.py:979
 #, python-format
 msgid "Exported to %s"
 msgstr "Exporté vers %s"
@@ -874,8 +874,8 @@ msgstr "Faux"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1808
-#: exe/engine/field.py:1820 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1856
+#: exe/engine/field.py:1868 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1766
 #: exe/webui/editorpane.py:251
@@ -889,17 +889,17 @@ msgid ""
 msgstr "Le bouton \"Echo en retour\" n'apparaîtra pas si ce champ est laissé vide."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1938 exe/engine/field.py:1963
+#: exe/engine/field.py:1986 exe/engine/field.py:2011
 msgid "Feedback:"
 msgstr "Echo en retour: "
 
-#: exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1016
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Le fichier %s n'existe pas ou n'est pas lisible."
 
-#: exe/xului/mainpage.py:811 exe/xului/mainpage.py:853
-#: exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:812 exe/xului/mainpage.py:854
+#: exe/xului/mainpage.py:921
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
@@ -916,8 +916,8 @@ msgstr "Film Flash (.flv)"
 msgid "Flash with Text"
 msgstr "Film Flash (.swf) avec boite \"Texte\""
 
-#: exe/xului/mainpage.py:817 exe/xului/mainpage.py:859
-#: exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:818 exe/xului/mainpage.py:860
+#: exe/xului/mainpage.py:927
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Le nom de dossier %s existe déjà. Choisissez un autre nom ou supprimez SVP l'existant et réessayez."
@@ -981,7 +981,7 @@ msgid "Hide/Show Word"
 msgstr "Cacher / Montrer le mot"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1846 exe/engine/field.py:1866
+#: exe/engine/field.py:1894 exe/engine/field.py:1914
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1954
 msgid "Hint"
@@ -1021,7 +1021,7 @@ msgstr "Galerie d'images"
 msgid "Image Magnifier"
 msgstr "Loupe"
 
-#: exe/xului/mainpage.py:533
+#: exe/xului/mainpage.py:532
 #, python-format
 msgid "Image file %s is not found, cannot preview it"
 msgstr "le nom de fichier image%s n'est pas trouvé, impossible de voir"
@@ -1126,7 +1126,7 @@ msgstr "Agrandissement maximum"
 msgid "Medium"
 msgstr "Moyen"
 
-#: exe/xului/mainpage.py:647
+#: exe/xului/mainpage.py:648
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1215,26 +1215,26 @@ msgid ""
 "learning tasks."
 msgstr "Les objectifs décrivent les compétences attendues à l'issue de l'apprentissage et définissent ce que les apprenants sont capables de réaliser lorsqu'ils ont achevé le parcours proposé."
 
-#: exe/engine/field.py:1623 exe/engine/field.py:1687
+#: exe/engine/field.py:1671 exe/engine/field.py:1735
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "Ne sélectionner que les fichiers .flv (Flash vidéo Files) pour cet outil pédagogique."
 
-#: exe/engine/field.py:1559 exe/engine/field.py:1603
+#: exe/engine/field.py:1607 exe/engine/field.py:1651
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "Ne sélectionner que les fichiers .swf (Flash Objects) pour cet outil pédagogique."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:1804 exe/engine/field.py:1817
+#: exe/engine/field.py:1852 exe/engine/field.py:1865
 #: exe/webui/testquestionelement.py:100 exe/webui/element.py:1619
 #: exe/webui/element.py:1742 exe/webui/element.py:1747
 msgid "Option"
 msgstr "Option"
 
-#: exe/engine/field.py:1888 exe/engine/field.py:1898
+#: exe/engine/field.py:1936 exe/engine/field.py:1946
 #: exe/webui/testquestionelement.py:96 exe/webui/element.py:1615
 msgid "Options"
 msgstr "Options"
@@ -1251,12 +1251,12 @@ msgstr "Plan"
 msgid "Own site"
 msgstr "Site personnel"
 
-#: exe/xului/mainpage.py:783
+#: exe/xului/mainpage.py:784
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Dossier extrait vers:%s"
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:315
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Dossier sauvegardé sous:%s"
@@ -1293,7 +1293,7 @@ msgstr "SVP: sélectionnez une réponse correcte pour chaque question."
 msgid "Please upload a .ggb file."
 msgstr "SVP: Chargez un fichier .ggb."
 
-#: exe/xului/mainpage.py:89
+#: exe/xului/mainpage.py:88
 msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
@@ -1329,7 +1329,7 @@ msgstr ""
 msgid "Preview"
 msgstr "Prévisualisation"
 
-#: exe/xului/mainpage.py:521 exe/xului/mainpage.py:605
+#: exe/xului/mainpage.py:520 exe/xului/mainpage.py:606
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
@@ -1339,8 +1339,8 @@ msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
 msgid "Previous"
 msgstr "Précédent"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1264
-#: exe/engine/field.py:1311
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1309
+#: exe/engine/field.py:1356
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1408,13 +1408,13 @@ msgid "Put instructions for learners here"
 msgstr "Donnez ici les consignes aux apprenants"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1843 exe/engine/field.py:1862
+#: exe/engine/field.py:1891 exe/engine/field.py:1910
 msgid "Question"
 msgstr "Question"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:1924 exe/engine/field.py:1960 exe/webui/element.py:1599
+#: exe/engine/field.py:1972 exe/engine/field.py:2008 exe/webui/element.py:1599
 msgid "Question:"
 msgstr "Question:"
 
@@ -1471,12 +1471,12 @@ msgstr "Recommencer"
 msgid "Right"
 msgstr "à droite"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:308
 msgid "SAVE FAILED!"
 msgstr "LA SAUVEGARDE A ECHOUE!"
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:577
-#: exe/xului/mainpage.py:825
+#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:578
+#: exe/xului/mainpage.py:826
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1549,7 +1549,7 @@ msgstr "Choisissez une image"
 msgid "Select an image (JPG file)"
 msgstr "Choisissez une image (.jpg)"
 
-#: exe/engine/field.py:1933
+#: exe/engine/field.py:1981
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1635,7 +1635,7 @@ msgstr "Petit"
 msgid "Some emphasis"
 msgstr "Importance"
 
-#: exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1025
 msgid "Sorry, wrong file format"
 msgstr "Désolé, ce n'est pas le bon format de fichier "
 
@@ -1643,7 +1643,7 @@ msgstr "Désolé, ce n'est pas le bon format de fichier "
 msgid "Sorry, wrong file format."
 msgstr "Désolé, ce n'est pas le bon format de fichier "
 
-#: exe/xului/mainpage.py:1022
+#: exe/xului/mainpage.py:1023
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1837,7 +1837,7 @@ msgid ""
 "responses."
 msgstr "L'exercice \"Vrai ou Faux\" présente un ou des énoncés sur lesquels l'apprenant doit décider de leur véracité ou non.Ce type d'exercice convient bien pour des informations reposant sur des faits ou encore pour des énoncés qui se prêtent à des réponses du type soit l'un soit l'autre."
 
-#: exe/engine/field.py:1699
+#: exe/engine/field.py:1747
 msgid "Type a discussion topic here."
 msgstr "Rédigez ici un sujet de discussion."
 
@@ -1859,7 +1859,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "Rédigez ici l'écho que vous souhaitez transmettre à l'apprenant suite à son choix. Si vous n'y rédigez pas d'écho particulier, eXe éxécutera automatiquement l'écho par défaut comme suit: \"réponse correcte\" comme indiqué pour la sélection de la bonne réponse ou \"mauvaise réponse\" pour la sélection des autres options."
 
-#: exe/engine/field.py:1936
+#: exe/engine/field.py:1984
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

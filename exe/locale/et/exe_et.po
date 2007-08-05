@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-03 23:21+1200\n"
+"POT-Creation-Date: 2007-08-06 21:49+1200\n"
 "PO-Revision-Date: 2007-07-13 08:14+1200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -33,9 +33,9 @@ msgstr ""
 "siis lisa selles rakenduses genereeritud andme/appleti fail. </p>\n"
 "<p>Näiteks Geogebra appletit puhul, vali geogebra, ja siis lisa .ggb fail.</p>"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:771
-#: exe/xului/mainpage.py:892 exe/xului/mainpage.py:948
-#: exe/xului/mainpage.py:969
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:772
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:949
+#: exe/xului/mainpage.py:970
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -58,8 +58,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Liiguta---"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:680
-#: exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:681
+#: exe/xului/mainpage.py:764
 msgid ". Please use ASCII names."
 msgstr ". Palun kasuta ASCII nimesid."
 
@@ -122,15 +122,15 @@ msgstr ""
 "<p>Sisesta \"Täida lüngad\"-ülesandele tekst, trükkides selle lünkade täitmise\n"
 " väljadesse, kas kopeerides mõnest muust allikast või sisestades teksti otse sellesse välja.</p><p> Et valida peidetavad sõnad, tee antud sõnal topelt-klikk selle valimiseks ja kliki Peida/Näita Sõna nupul.</p>"
 
-#: exe/engine/field.py:1453
+#: exe/engine/field.py:1501
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Kui jätta see valimata, aktsepteeritakse väikest hulka õigekirja ja suur/väike-tähtede vigu. Kui on valitud, ei aktsepteerita ühtegi viga.</p><p><strong>Näiteks:</strong> Kui õige vastus on <code>Elevant</code> siis nii <code>elevant</code> kui ka <code>elivant</code> loetakse algoritmi poolt <em>\"piisavalt õigeks\"</em>, kuna ainult üks täht on valesti, isegi siis kui \"Kontrolli suuri-väikseid tähti\" on valitus.</p><p>Kui suurte/väike-tähtede kontrollimine ei ole aktiivne, ei peeta väiketäht <code>e</code> veaks ja ka <code>elivant</code> on aktsepteeritud.</p><p>Kui nii \"Kindel märkimine\" kui ka \"Kontrolli suuri-väikseid tähti\" on valitud, on ainuke õige vastus \"Elevant\". Kui ainult \"Kindel märkimine\" on valitud ja \"Kontrolli suuri-väikseid tähti\" mitte, siis loetakse ka \"elevant\" õigeks.</p>"
 
-#: exe/engine/field.py:1474
+#: exe/engine/field.py:1522
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Selle valiku puhul märgitakse erinevused suurte-väikeste tähtede kasutamisel vastustes valeks.</p>"
 
-#: exe/engine/field.py:1479
+#: exe/engine/field.py:1527
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -140,7 +140,7 @@ msgstr ""
 "juba sisestamise ajal, mitte ei märgita \n"
 "kõiki sõnu ülesande lõpus."
 
-#: exe/engine/field.py:1728
+#: exe/engine/field.py:1776
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Vali alltoodud tekstiredaktoris vajalikud sümbolid või sisesta LATEX-kood käsitsi, et luua matemaatilist valemit. Sisestatud valemite eelvaateks kliki alltoodud nupul &lt;PEelvaade&gt;.</p>"
 
@@ -347,7 +347,7 @@ msgstr ""
 "Joondamine lubab sul valida, \n"
 "kuhu ekraanil meediapleier asetada."
 
-#: exe/engine/field.py:1517
+#: exe/engine/field.py:1565
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -438,8 +438,8 @@ msgstr "Nupu tekst"
 msgid "Cancel"
 msgstr "Tühista"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:678
-#: exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:679
+#: exe/xului/mainpage.py:764
 msgid "Cannot access directory named "
 msgstr "Puudub ligipääs kataloogile nimega"
 
@@ -490,7 +490,7 @@ msgstr ""
 "Jäta mõlemad väljad tühjaks kui soovid \n"
 "pilti kuvada originaalsuuruses."
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:217
 msgid "Clear Recent Projects List"
 msgstr "Puhasta hiljutiste projektide nimekiri"
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klili <strong>Vali fail</strong>, mine failini, mida soovid manusesse panna ja vali see."
 
-#: exe/engine/field.py:1069
+#: exe/engine/field.py:1114
 msgid "Click Here"
 msgstr "Kliki siia"
 
@@ -520,7 +520,7 @@ msgstr "Kliki, et näha läbimise juhendit"
 msgid "Click here"
 msgstr "Kliki siia"
 
-#: exe/engine/field.py:1736
+#: exe/engine/field.py:1784
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -565,7 +565,7 @@ msgstr "Õige"
 msgid "Correct!"
 msgstr "Õige !"
 
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:1020
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Faili laadmine ebaõnnestus, palun saatke fail e-postiga aadressile bugs@exelearning.org"
 
@@ -694,17 +694,17 @@ msgstr "ERROR Element.renderView called directly %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:705 exe/xului/mainpage.py:712
-#: exe/xului/mainpage.py:715 exe/xului/mainpage.py:718
-#: exe/xului/mainpage.py:876
+#: exe/xului/mainpage.py:706 exe/xului/mainpage.py:713
+#: exe/xului/mainpage.py:716 exe/xului/mainpage.py:719
+#: exe/xului/mainpage.py:877
 msgid "EXPORT FAILED!"
 msgstr "EXPORT EBAÕNNESTUS!"
 
-#: exe/xului/mainpage.py:866 exe/xului/mainpage.py:880
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:899
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:949
-#: exe/xului/mainpage.py:955 exe/xului/mainpage.py:970
-#: exe/xului/mainpage.py:976
+#: exe/xului/mainpage.py:867 exe/xului/mainpage.py:881
+#: exe/xului/mainpage.py:894 exe/xului/mainpage.py:900
+#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:950
+#: exe/xului/mainpage.py:956 exe/xului/mainpage.py:971
+#: exe/xului/mainpage.py:977
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -723,7 +723,7 @@ msgstr ""
 "EXPORT EBAÕNNESTUS!\n"
 "Viimane õnnestunud eksport on %s."
 
-#: exe/xului/mainpage.py:772 exe/xului/mainpage.py:781
+#: exe/xului/mainpage.py:773 exe/xului/mainpage.py:782
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -737,7 +737,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Redigeeri"
 
-#: twisted/persisted/styles.py:300
+#: twisted/persisted/styles.py:299
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -849,7 +849,7 @@ msgstr ""
 "Sisesta siia kõik võimalikud valikud.  \n"
 "Võid valikuid lisada klikkides \"Lisa veel valikuid\" nupul. Valikute kustutamiseks kliki punasel \"X\" märgil iga valiku kõrval."
 
-#: exe/engine/field.py:1929
+#: exe/engine/field.py:1977
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -899,7 +899,7 @@ msgstr ""
 "See peaks olema selga ja üheselt mõistetav. Väldi negatiivseid eellauseid, \n"
 "kuna need kalduvad kahemõttelisuse ja ebaselguse poole."
 
-#: exe/engine/field.py:1921
+#: exe/engine/field.py:1969
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -949,9 +949,9 @@ msgstr "Näitlik näide"
 msgid "Export iDevice"
 msgstr "Ekspordi iDevice"
 
-#: exe/xului/mainpage.py:882 exe/xului/mainpage.py:901
-#: exe/xului/mainpage.py:935 exe/xului/mainpage.py:957
-#: exe/xului/mainpage.py:978
+#: exe/xului/mainpage.py:883 exe/xului/mainpage.py:902
+#: exe/xului/mainpage.py:936 exe/xului/mainpage.py:958
+#: exe/xului/mainpage.py:979
 #, python-format
 msgid "Exported to %s"
 msgstr "Eksporditud: %s"
@@ -971,8 +971,8 @@ msgstr "Väär"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1808
-#: exe/engine/field.py:1820 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1856
+#: exe/engine/field.py:1868 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1766
 #: exe/webui/editorpane.py:251
@@ -988,17 +988,17 @@ msgstr ""
 "pole infot sisestatud."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1938 exe/engine/field.py:1963
+#: exe/engine/field.py:1986 exe/engine/field.py:2011
 msgid "Feedback:"
 msgstr "Tagasiside:"
 
-#: exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1016
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Fail %s ei eksisteeri või ei ole loetav."
 
-#: exe/xului/mainpage.py:811 exe/xului/mainpage.py:853
-#: exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:812 exe/xului/mainpage.py:854
+#: exe/xului/mainpage.py:921
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Failinimi %s on fail, ei saa asendada"
@@ -1015,8 +1015,8 @@ msgstr "Flash video"
 msgid "Flash with Text"
 msgstr "Flash tekstiga"
 
-#: exe/xului/mainpage.py:817 exe/xului/mainpage.py:859
-#: exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:818 exe/xului/mainpage.py:860
+#: exe/xului/mainpage.py:927
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Kataloogi nimi %s juba eksisteerib. Palun vali uus nimi või kustuta mõni olemasolev ja proovi siis uuesti."
@@ -1080,7 +1080,7 @@ msgid "Hide/Show Word"
 msgstr "Peida / näita sõna"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1846 exe/engine/field.py:1866
+#: exe/engine/field.py:1894 exe/engine/field.py:1914
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1954
 msgid "Hint"
@@ -1120,7 +1120,7 @@ msgstr "Pildigalerii"
 msgid "Image Magnifier"
 msgstr "Pildi luup"
 
-#: exe/xului/mainpage.py:533
+#: exe/xului/mainpage.py:532
 #, python-format
 msgid "Image file %s is not found, cannot preview it"
 msgstr "Pildifaili %s ei leitud, ei ole võimalik eelvaadet teha"
@@ -1224,7 +1224,7 @@ msgstr "Maksimaalne suurendus"
 msgid "Medium"
 msgstr "Keskmine"
 
-#: exe/xului/mainpage.py:647
+#: exe/xului/mainpage.py:648
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1315,7 +1315,7 @@ msgstr ""
 "Eesmärgid kirjeldavad õppimise oodatud tulemus ja peaksid defineerima\n"
 "selle, mida õpilased on võimelised tegema peale õppetükkide läbimist."
 
-#: exe/engine/field.py:1623 exe/engine/field.py:1687
+#: exe/engine/field.py:1671 exe/engine/field.py:1735
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1323,7 +1323,7 @@ msgstr ""
 "Vali ainult .flv (Flash Video Files) selle  \n"
 "iDevice jaoks."
 
-#: exe/engine/field.py:1559 exe/engine/field.py:1603
+#: exe/engine/field.py:1607 exe/engine/field.py:1651
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1332,13 +1332,13 @@ msgstr ""
 "iDevice jaoks."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:1804 exe/engine/field.py:1817
+#: exe/engine/field.py:1852 exe/engine/field.py:1865
 #: exe/webui/testquestionelement.py:100 exe/webui/element.py:1619
 #: exe/webui/element.py:1742 exe/webui/element.py:1747
 msgid "Option"
 msgstr "Valik"
 
-#: exe/engine/field.py:1888 exe/engine/field.py:1898
+#: exe/engine/field.py:1936 exe/engine/field.py:1946
 #: exe/webui/testquestionelement.py:96 exe/webui/element.py:1615
 msgid "Options"
 msgstr "Valikud"
@@ -1355,12 +1355,12 @@ msgstr "Ülevaade"
 msgid "Own site"
 msgstr "Oma veeb"
 
-#: exe/xului/mainpage.py:783
+#: exe/xului/mainpage.py:784
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pakett lahti pakitud siia: %s"
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:315
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakett salvestatud siia: %s"
@@ -1397,7 +1397,7 @@ msgstr "Palun vali iga küsimuse jaoks õige vastus."
 msgid "Please upload a .ggb file."
 msgstr "Palun lae üles .ggb fail."
 
-#: exe/xului/mainpage.py:89
+#: exe/xului/mainpage.py:88
 msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
@@ -1434,7 +1434,7 @@ msgstr ""
 msgid "Preview"
 msgstr "Eelvaade"
 
-#: exe/xului/mainpage.py:521 exe/xului/mainpage.py:605
+#: exe/xului/mainpage.py:520 exe/xului/mainpage.py:606
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Eelvaate kataloog %s on fail, ei saa asendada"
@@ -1444,8 +1444,8 @@ msgstr "Eelvaate kataloog %s on fail, ei saa asendada"
 msgid "Previous"
 msgstr "Eelmine"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1264
-#: exe/engine/field.py:1311
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1309
+#: exe/engine/field.py:1356
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1509,13 +1509,13 @@ msgid "Put instructions for learners here"
 msgstr "Sisesta siia instruktsioonid õpilastele"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1843 exe/engine/field.py:1862
+#: exe/engine/field.py:1891 exe/engine/field.py:1910
 msgid "Question"
 msgstr "Küsimus"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:1924 exe/engine/field.py:1960 exe/webui/element.py:1599
+#: exe/engine/field.py:1972 exe/engine/field.py:2008 exe/webui/element.py:1599
 msgid "Question:"
 msgstr "Küsimus:"
 
@@ -1578,12 +1578,12 @@ msgstr "Alusta uuesti"
 msgid "Right"
 msgstr "Parem"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:308
 msgid "SAVE FAILED!"
 msgstr "SALVESTAMINE EBAÕNNESTUS!"
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:577
-#: exe/xului/mainpage.py:825
+#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:578
+#: exe/xului/mainpage.py:826
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1656,7 +1656,7 @@ msgstr "Vali pilt"
 msgid "Select an image (JPG file)"
 msgstr "Vali pilt (JPG fail)"
 
-#: exe/engine/field.py:1933
+#: exe/engine/field.py:1981
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1751,7 +1751,7 @@ msgstr "Väike"
 msgid "Some emphasis"
 msgstr "Mõningane rõhuasetus"
 
-#: exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1025
 msgid "Sorry, wrong file format"
 msgstr "Vabandust, vale failiformaat"
 
@@ -1759,7 +1759,7 @@ msgstr "Vabandust, vale failiformaat"
 msgid "Sorry, wrong file format."
 msgstr "Vabandust, vale failiformaat."
 
-#: exe/xului/mainpage.py:1022
+#: exe/xului/mainpage.py:1023
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1985,7 +1985,7 @@ msgstr ""
 "õpilane peab otsustama selle tõesuse üle. Seda tüüpi küsimused töötavad \n"
 " hästi nii faktuaalse kui ka sellise informatsiooni puhul, mida võib mõlemat pidi mõista."
 
-#: exe/engine/field.py:1699
+#: exe/engine/field.py:1747
 msgid "Type a discussion topic here."
 msgstr "Sisesta siia vestluse teema:"
 
@@ -2017,7 +2017,7 @@ msgstr ""
 "\"Õige vastus\" nagu näidatud õige vastuse valimisel; või \n"
 "\"Vale vastus\" teistele vastusevariantidele."
 
-#: exe/engine/field.py:1936
+#: exe/engine/field.py:1984
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
