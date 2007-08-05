@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-03 23:21+1200\n"
-"PO-Revision-Date: 2007-02-27 14:54+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-08-06 09:45+1200\n"
+"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-EXE-Language: 日本語\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Pootle 0.6.3.20060116\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:146
 msgid ""
@@ -2820,9 +2820,8 @@ msgstr "ブルトン語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
 #: label="Online eXe Manual">
-#, fuzzy
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
-msgstr "label=\"ファイルを開く\" accesskey=\"o\""
+msgstr "label=\"オンラインeXeマニュアル\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
@@ -2832,9 +2831,8 @@ msgstr "ベラルーシ語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
 #: label="Tips and Tricks">
-#, fuzzy
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"ツール\" accesskey=\"t\""
+msgstr "label=\"ヒント\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -2844,9 +2842,8 @@ msgstr "ブルガリア語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
 #: label="Release Notes">
-#, fuzzy
 msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"新規作成\" accesskey=\"n\""
+msgstr "label=\"リリースノート\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
