@@ -55,12 +55,20 @@ def setBrowserVersion(browserPath, profile_dir):
     if vs:
         setVersionInPrefs(vs.group('vs'), profile_dir)
 
-def launchBrowser(config, packageName):
+def launchBrowser(config, packageName, openMode):
     """
     Launch the webbrowser (Firefox) for this platform
     """
     log.info(u"Browser path: " + config.browserPath)
-    url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
+    if(openMode == "splash"):
+       url = "-chrome \"file://" + config.webDir + "/docs/splash.xul\""
+       url = "-chrome \"file://" + packageName + "\""
+    elif(openMode == "xulMsg"):
+       url = "-chrome \"file://" + config.webDir + "/docs/xulMsg.xul\""
+       url = "-chrome \"file://" + packageName + "\""
+    else:
+       url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
+    log.info("openMode: " + openMode)
     log.info(u"url "+url)
 
     profile_src = "linux-profile"
@@ -80,7 +88,7 @@ def launchBrowser(config, packageName):
     (config.webDir/profile_src).copytreeFilter(config.configDir/profile,
             filterDir=lambda dirName: dirName.basename() != '.svn')
 
-    # if in debug mode, don't allow eXeex to remove all the Firefox "debug" features
+    # if debug mode, don't allow eXeex to remove the Firefox "debug" features
     # lines containing 'debug' are deleted from the XUL file
     if log.getEffectiveLevel() == logging.DEBUG:
         try:
@@ -113,6 +121,8 @@ def launchBrowser(config, packageName):
                       '-profile', 
                       '"' + config.configDir/profile + '"', 
                       url)
+            log.info(u'Launching firefox: ' + config.configDir/profile )
+            log.info(u'Launching firefox: ' + url)
         except OSError:
             print u"Cannot launch Firefox, please manually run Firefox"
             print u"and go to", url     
@@ -124,5 +134,5 @@ def launchBrowser(config, packageName):
         launchString += ' -profile "' + config.configDir/profile + '/" '
         launchString += url
         launchString += "&"
-        log.info(u'Launching firefox with: ' + launchString)
+        log.info(u'Launching firefox: ' + launchString)
         os.system(launchString)

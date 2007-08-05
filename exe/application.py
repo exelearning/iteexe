@@ -26,6 +26,9 @@ Main application class, pulls together everything and runs it.
 import os
 import sys
 import shutil
+import time
+import re
+
 from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -40,7 +43,9 @@ from exe.engine.packagestore import PackageStore
 from exe.engine.translate    import installSafeTranslate
 from exe.engine              import version
 from exe                     import globals
+from exe.engine.path         import TempDirPath
 import logging
+import re
  
 log = logging.getLogger(__name__)
 
@@ -86,11 +91,44 @@ class Application:
         Main function, starts eXe
         """
         self.processArgs()
+
         self.loadConfiguration()
+        eXeStart = globals.application.tempWebDir
+        eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
+        eXeStart = eXeStart + '/tmpExeStartupTime'
+
+        #self.xulMessage('hi')
+        if os.path.exists(eXeStart):
+            inStartFH=open(eXeStart, "r")
+            lastRunTimeS = 0
+            for line in inStartFH:
+                lastRunTimeS = int(line)
+            inStartFH.close()
+            log.info('lastRunTimeS: ' + `lastRunTimeS`)
+
+            currentTime = int (time.time())
+            currentTime2 = int (time.time())
+            log.info('currentTime: ' + `currentTime`)
+            if(currentTime <= lastRunTimeS + 3 and currentTime >= lastRunTimeS):
+                self.xulMessage(_('eXe appears to already be running'))
+                #self.xulMessage('eXe appears to already be running: <html:br/>lastRunTimes: ' + `lastRunTimeS` + '<html:br/> currentTime: ' + `currentTime` + '<html:br/>currentTime2: ' + `currentTime2`)
+                return None
+            #else:
+            #    self.xulMessage('eXe appears to already be safe: <html:br/>' + `lastRunTimeS` + '<html:br/>' + `currentTime` + '<html:br/>' + `currentTime2`)
+
+        else:
+            log.info('eXeStart: ' + eXeStart)
+            log.info('tempWebDir: ' + globals.application.tempWebDir)
+            #self.xulMessage('no file: ' + eXeStart)
+
+        log.info('logThis1')
+
         # if a document was double clicked to launch on Win32,
         #   make sure we have the long pathname
         if sys.platform[:3] == "win" and self.packagePath is not None:
             self.packagePath = self.config.getLongPathName(self.packagePath)
+        log.info('logThis2')
+
         installSafeTranslate()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
@@ -100,6 +138,8 @@ class Application:
             self.serve()
             log.info('done serving')
         else:
+            self.xulMessage(_('eXe appears to already be running'))
+            log.error('eXe appears to already be running')
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
         shutil.rmtree(self.tempWebDir, True)
 
@@ -177,28 +217,94 @@ class Application:
         self.webServer.run()
 
     def _loadPackage(self, packagePath):
-        """
-        Convenience function for loading the first package that we'll browse to
-        """
-        try:
+        #"""
+        #Convenience function for loading the first package that we'll browse to
+        #"""
+        #try:
+            #XXXX xxxx
+            log.info("webDir: " + self.config.webDir)
+            log.info("tempWebDir: " + self.tempWebDir)
+            inSplashFile =  self.config.webDir + "/docs/splash.xulTemplate"
+
+            outSplashFile = self.config.webDir + "/docs/splash.xul"
+            outSplashData = self.config.webDir + "/docs/splash.dat"
+
+            outSplashFile = self.tempWebDir + "/splash.xul"
+            outSplashData = self.tempWebDir + "/splash.dat"
+
+            log.info("inSplashFile: " + inSplashFile)
+            log.info("outSplashFile: " + outSplashFile)
+            log.info("outSplashData: " + outSplashData)
+
+            #resets any splash page data
+            outSplashFH = open(outSplashData, "w")
+            outSplashFH.write("")
+            outSplashFH.close()
+
+            inSplashFH = open(inSplashFile, "r")
+            outSplashFH = open(outSplashFile, "w")
+            for line in inSplashFH:
+                line = line.replace("LOADING_FILE_NAME", packagePath)
+                outSplashFH.write(line)
+            inSplashFH.close()
+            outSplashFH.close()
+   
+            log.info("packagePath: " + packagePath)
+            launchBrowser(self.config, outSplashFile, "splash")
+            shutil.copyfile(self.config.webDir + '/images/exe_logo.png', 
+                                      self.tempWebDir + '/exe_logo.png')
+
             package = self.packageStore.loadPackage(packagePath)
-            log.debug("loading package "+package.name)
+            port = self.config.port
+            editorUrl = u'http://127.0.0.1:%d/%s' % (port, package.name)
+            log.info("package.name: "+package.name)
+            log.info("editorUrl: " + editorUrl)
+            log.info("TempDirPath: " + editorUrl)
+            outSplashFH = open(outSplashData, "w")
+            outSplashFH.write("100;" + editorUrl)
+            outSplashFH.close()
+
             self.webServer.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
             return package
-        except Exception, e:
-            log.error('Error loading first Package (%s): %s' % (packagePath, e))
-            return None
+
+        #except Exception, e:
+        #    log.error('Error loading first Package (%s): %s' % (packagePath, e))
+        #    return None
+
+
+    def xulMessage(self, msg):
+        """
+        launches the web browser and displays a message 
+        without the need of a running/responding webserver
+        """
+        inXulMsgFile =  self.config.webDir + "/docs/xulMsg.xulTemplate"
+        outXulMsgFile = self.tempWebDir + "/xulMsg.xul"
+        log.info("outXulMsgFile: " + outXulMsgFile)
+        log.info("xulMessage: " + msg)
+
+        inXulMsgFH = open(inXulMsgFile, "r")
+        outXulMsgFH = open(outXulMsgFile, "w")
+        for line in inXulMsgFH:
+            line = re.sub("XUL_MESSAGE", msg, line)
+            outXulMsgFH.write(line)
+        inXulMsgFH.close()
+        outXulMsgFH.close()
+        launchBrowser(self.config, outXulMsgFile, "xulMsg")
+        shutil.copyfile(self.config.webDir + '/images/exe_logo.png', self.tempWebDir + '/exe_logo.png')
+        #allow sufficient time for the file to be read before exiting 
+        #which automatically deletes the tempWebDir and all files
+        time.sleep(3)
 
     def launch(self):
         """
         launches the webbrowser
         """
+
         package = None
         if self.packagePath:
             package = self._loadPackage(self.packagePath)
         if not package:
-            launchBrowser(self.config, "")
+            launchBrowser(self.config, "", "")
 
     def usage(self):
         """

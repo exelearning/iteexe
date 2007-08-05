@@ -17,7 +17,7 @@
       <column>
       <spacer height="20"/>
       <description>
-        <html:img src="../images/exe_logo.png"/>
+        <html:img src="exe_logo.png"/>
       </description>
       </column>
       <spacer width="20"/>

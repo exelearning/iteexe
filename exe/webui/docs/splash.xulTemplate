@@ -14,7 +14,7 @@
     <spacer height="30"/>
     <description>
       <html:center>
-        <html:img src="../images/exe_logo.png"/>
+        <html:img src="exe_logo.png"/>
       </html:center>
     </description>
     <spacer height="20"/>
@@ -25,6 +25,8 @@
       <caption label="" /> 
       <row>
         <description><html:b></html:b> LOADING_FILE_NAME</description>
+        <spacer width="5"/>
+        <description id="loadPercent"></description>
       </row>
       <row>
         <progressmeter id="pm" mode="undetermined" value="" width="520"/>
@@ -36,18 +38,18 @@
     <script type="text/javascript" >
       function ol()
       {
-        setTimeout('olStart()', 1000);
         loopMe();
+        setTimeout('olStart()', 1000);
       }
 
       function olStart()
       {
-        //window.open("http://127.0.0.1:51235/","eXe");
       }
 
       function olEnd() { window.close(); }
 
       c=0
+
       function ex()
       { 
         c+=1
@@ -59,17 +61,17 @@
         }
       }
 
-      var interval = FALSE
+      var interval = 0
 
       function loopMe()
       { interval = setInterval('urlGet("splash.dat")',1000) }
 
-      function urlGet(strURL)
+      function urlGet(URL)
       {
         var req = false;
         var self = this;
         if (window.XMLHttpRequest) { self.req = new XMLHttpRequest() }
-        self.req.open('POST', strURL, true)
+        self.req.open('POST', URL, true)
         self.req.setRequestHeader('Content-Type', 'text/plain')
         self.req.onreadystatechange = function()
         { if (self.req.readyState == 4) { updatepage(self.req.responseText) } }
@@ -80,7 +82,10 @@
       function updatepage(str)
       {
         var results = str.split(";")
-        //setProgress(results[0]) //set bar to whatever is in splashLoad.dat
+        if(results[0])
+        {
+          setProgress(results[0]) //set bar to whatever is in splash.dat
+        }
         if(results[1])
         {
           clearInterval(interval)
@@ -92,10 +97,14 @@
 
       function setProgress(progressValue)
       {
+        progressValue =  parseInt(progressValue)
         var mpm = document.getElementById("pm");
+        var pl = document.getElementById("loadPercent");
+        pl.value = "(" + progressValue + "%)"
         mpm.mode = "determined"
         mpm.value = progressValue;
       }
+      //setProgress(10)
     </script>
 
   </window>
