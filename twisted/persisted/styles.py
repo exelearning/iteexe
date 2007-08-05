@@ -287,7 +287,6 @@ class Versioned:
             # end of bogus-extraction support
             #################################
 
-
             # ugly hack, but it's what the user expects, really
             if (Versioned not in base.__bases__ and
                 not base.__dict__.has_key('persistenceVersion')):
@@ -306,4 +305,12 @@ class Versioned:
                     method(self)
                 else:
                     log.msg( 'Warning: cannot upgrade %s to version %s' % (base, persistVers) )
+
+            # new eXe re-persistence handler to be called here after any and 
+            # all upgrades of this base class, but, BEFORE any registered
+            # afterUpgradeHandlers, which occur after ALL the object upgrades.
+            # (Note: persistenceVersion must be defined to even make it here)
+            if base.__dict__.has_key("TwistedRePersist"):
+                method = base.__dict__.get("TwistedRePersist")
+                method(self)
 

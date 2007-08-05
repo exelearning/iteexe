@@ -150,6 +150,10 @@ class FieldWithResources(Field):
 
     persistenceVersion = 1
 
+    # do not save the following redundant fields with the .elp, but instead 
+    # regenerate them from content_w_resourcePaths in 'TwistedRePresist':
+    nonpersistant      = ['content', 'content_wo_resourcePaths']
+
     def __init__(self, name, instruc="", content=""):
         """
         Initialize 
@@ -189,7 +193,38 @@ class FieldWithResources(Field):
         if hasattr(self.idevice, 'parentNode'): 
             self.parentNode = self.idevice.parentNode
         ############
-            
+
+    # to be called by twisted after any upgrades to this class,
+    # but before any of its subclass upgrades occur:
+    def TwistedRePersist(self): 
+        if hasattr(self, "content_w_resourcePaths"):
+            if not hasattr(self, "content"):
+                log.debug("FieldWithResources TwistedRePersistence: " \
+                        + "recreating content")
+                # set default content to be for previewing:
+                self.content = self.content_w_resourcePaths
+            else:
+                # looks like an elp that was created >= 0.95 but <= 0.99:
+                log.debug("FieldWithResources TwistedRePersistence: " \
+                        + "content already exists (probably an older elp)")
+
+            if not hasattr(self, "content_wo_resourcePaths"):
+                log.debug("FieldWithResources TwistedRePersistence: " \
+                        + "recreating content_wo_resourcePaths")
+                self.content_wo_resourcePaths = \
+                        self.MassageContentForRenderView(\
+                                self.content_w_resourcePaths)
+            else:
+                # looks like an elp that was created >= 0.95 but <= 0.99:
+                log.debug("FieldWithResources TwistedRePersistence: " \
+                    + "content_wo_resourcePaths already exists (older elp)")
+        else:
+            log.warn("FieldWithResources TwistedRePersistence: " \
+                    + "content_w_resourcePaths not found " \
+                    + "(probably an older elp)")
+
+
+
     # genImageId is needed for GalleryImage:    
     def genImageId(self): 
         """
@@ -1038,6 +1073,9 @@ class TextAreaField(FieldWithResources):
     """
     persistenceVersion = 1
 
+    # these will be recreated in FieldWithResources' TwistedRePersist:
+    nonpersistant      = ['content', 'content_wo_resourcePaths']
+
     def __init__(self, name, instruc="", content=""):
         """
         Initialize 
@@ -1063,6 +1101,9 @@ class FeedbackField(FieldWithResources):
     """
 
     persistenceVersion = 2
+
+    # these will be recreated in FieldWithResources' TwistedRePersist:
+    nonpersistant      = ['content', 'content_wo_resourcePaths']
 
     def __init__(self, name, instruc=""):
         """
@@ -1437,6 +1478,9 @@ class ClozeField(FieldWithResources):
 
     regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
     persistenceVersion = 3
+
+    # these will be recreated in FieldWithResources' TwistedRePersist:
+    nonpersistant      = ['content', 'content_wo_resourcePaths']
 
     def __init__(self, name, instruc):
         """
