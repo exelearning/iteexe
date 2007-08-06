@@ -88,6 +88,9 @@ class TestquestionElement(object):
         Returns an XHTML string with the form element for editing this element
         """
         html  = u"<div class=\"iDevice\">\n"
+        html += common.submitImage(self.id, self.idevice.id,  
+                "/images/stock-cancel.png", 
+                _("Delete question")) 
         html += self.questionElement.renderEdit()
 
         html += u"<table width =\"100%%\">"
