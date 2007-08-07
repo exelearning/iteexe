@@ -94,6 +94,7 @@ class WikipediaBlock(Block):
         html += common.textInput("title" + self.id, self.idevice.title) + "<br/><br/>"
 
         sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/wiki/"),
+                 (_(u"Catalan Wikipedia Article"), "http://ca.wikipedia.org/wiki/"),
                  (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/wiki/"),
                  (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/wiki/"),
                  (_(u"French Wikipedia Article"),  "http://fr.wikipedia.org/wiki/"),
