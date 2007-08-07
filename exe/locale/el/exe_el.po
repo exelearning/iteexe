@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-06 21:49+1200\n"
+"POT-Creation-Date: 2007-08-08 03:00+1200\n"
 "PO-Revision-Date: 2006-05-12 14:15+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -120,16 +120,16 @@ msgstr ""
 " Για να επιλέξετε τις λέξεις που επιθυμείτε να αποκρύψετε, κάντε διπλό κλικ στη λέξη για να την επιλέξετε\n"
 "και στη συνέχεια κλικ στο κουμπί <i>Απόκρυψη/Εμφάνιση Λέξης</i>."
 
-#: exe/engine/field.py:1501
+#: exe/engine/field.py:1513
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Εάν αυτή η επιλογή αφεθεί μη επιλεγμένη, ένας μικρός αριθμός γραμματικών και πεζών-κεφαλαίων λαθών θα είναι αποδεκτός. Αν επιλεγεί, μόνο ακριβές ταίριασμα στην ορθογραφία και στα πεζά-κεφαλαία γράμματα θα είναι αποδεκτό.</p><p><strong>Για παράδειγμα:</strong> εάν η σωστή απάντηση είναι < code>Ελέφαντας</code> τότε και το< code>ελέφαντας</code> και το <code>Ελίφαντας</code> θα κριθούν <em> \"αρκετά σωστά \"</em > από τον αλγόριθμο δεδομένου ότι έχει μόνο ένα γράμμα λανθασμένο, ακόμα κι αν ο \"Έλεγχος κεφαλαιοποίησης \"είναι ενεργοποιημένος.</p><p>Αν ο έλεγχος κεφαλαιοποίησης είναι απενεργοποιημένος στο ανωτέρω παράδειγμα, το πεζό < code>ε</code > δεν θα θεωρηθεί λάθος και το < code>ελίφαντας</code > θα γίνει επίσης αποδεκτό.</p><p>Αν και τα δύο \"Αυστηρή βαθμολογία \"και \"Έλεγχος Κεφαλαιοποίησης \" είναι ενεργοποιημένα, η μόνη σωστή απάντηση είναι \"Ελέφαντας \". Εάν μόνο το \"Αυστηρή βαθμολογία \" είναι ενεργοποιημένο και ο \"Έλεγχος Κεφαλαιοποίησης\"δεν είναι, τότε και το \"ελέφαντας \" θα γίνει αποδεκτό.</p >"
 
-#: exe/engine/field.py:1522
+#: exe/engine/field.py:1534
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Αν επιλεγεί αυτή η επιλογή, οι υποβληθείσες απαντήσεις με διαφορετική κεφαλαιοποίηση θα βαθμολογηθούν ως λάθος.</p>"
 
-#: exe/engine/field.py:1527
+#: exe/engine/field.py:1539
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -140,7 +140,7 @@ msgstr ""
 "πληκτρολογείται από το σπουδαστή, αντί όλες οι λέξεις να βαθμολογηθούν στο τέλος\n"
 "της άσκησης.</p>"
 
-#: exe/engine/field.py:1776
+#: exe/engine/field.py:1788
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr "Προσθέστε αλληλεπιδραστική ανατροφοδό
 msgid "Add an mp3 file to your iDevice."
 msgstr "Προσθέστε αλληλεπιδραστική ανατροφοδότηση στο εκπαιδευτικό εργαλείο σας. "
 
-#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1631
+#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1631
 msgid "Add another Option"
 msgstr "Προσθήκη άλλης επιλογής"
 
@@ -363,7 +363,7 @@ msgstr ""
 "Η στοίχιση σας επιτρέπει να\n"
 "επιλέξετε σε ποια θέση στην οθόνη θα τοποθετηθεί η εικόνα."
 
-#: exe/engine/field.py:1565
+#: exe/engine/field.py:1577
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -474,6 +474,11 @@ msgstr "Λεζάντα:"
 msgid "Case Study"
 msgstr "Μελέτη σκοπιμότητας"
 
+#: exe/webui/wikipediablock.py:97
+#, fuzzy
+msgid "Catalan Wikipedia Article"
+msgstr "Άρθρο της Ιταλικής Βίκι εγκυκλοπαίδειας"
+
 #: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
 msgid "Change Image"
 msgstr "Αλλαγή εικόνας"
@@ -482,7 +487,7 @@ msgstr "Αλλαγή εικόνας"
 msgid "Check Caps?"
 msgstr "Έλεγχος για κεφαλαία;"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:98
 msgid "Chinese Wikipedia Article"
 msgstr "Άρθρο της Κινέζικης Βίκι εγκυκλοπαίδειας"
 
@@ -529,7 +534,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Κάντε κλικ στο <strong>Επιλέξτε αρχείο</strong> και επιλέξτε το αρχείο που θέλετε να επισυνάψετε."
 
-#: exe/engine/field.py:1114
+#: exe/engine/field.py:1126
 msgid "Click Here"
 msgstr "Κάντε κλικ εδώ "
 
@@ -541,7 +546,7 @@ msgstr "Κλικ για οδηγίες συμπλήρωσης"
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/engine/field.py:1784
+#: exe/engine/field.py:1796
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -577,7 +582,7 @@ msgstr "Δραστηριότητα συμπλήρωσης κενών"
 msgid "Cloze Text"
 msgstr "Κείμενο συμπλήρωσης κενών"
 
-#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1528
+#: exe/webui/testquestionelement.py:101 exe/webui/element.py:1528
 #: exe/webui/element.py:1617 exe/webui/element.py:1747
 #: exe/webui/element.py:1816
 msgid "Correct"
@@ -626,8 +631,9 @@ msgstr "Διαγραφή εικόνας"
 msgid "Delete option"
 msgstr "Επιλογή διαγραφής"
 
-#: exe/webui/questionelement.py:103 exe/webui/truefalseelement.py:118
-#: exe/webui/element.py:1604 exe/webui/element.py:1896
+#: exe/webui/testquestionelement.py:93 exe/webui/questionelement.py:103
+#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1604
+#: exe/webui/element.py:1896
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -691,7 +697,7 @@ msgstr "Απεικόνιση ως:"
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
-#: exe/webui/wikipediablock.py:98
+#: exe/webui/wikipediablock.py:99
 msgid "Dutch Wikipedia Article"
 msgstr "Άρθρο της Ολλανδικής Βίκι εγκυκλοπαίδειας"
 
@@ -755,7 +761,7 @@ msgstr "Επεξεργασία"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:138 exe/webui/multimediablock.py:100
+#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:100 exe/webui/editorpane.py:329
 msgid "Emphasis"
 msgstr "Έμφαση"
@@ -863,7 +869,7 @@ msgstr ""
 "Μπορείτε να προσθέσετε επιλογές κάνοντας κλικ στο κουμπί \"Προσθήκη Άλλης Επιλογής\".\n"
 "Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο \"x\" δεξιά από κάθε επιλογή."
 
-#: exe/engine/field.py:1977
+#: exe/engine/field.py:1989
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -916,7 +922,7 @@ msgstr ""
 "Η αποστολή θα πρέπει να είναι ξεκάθαρη και αναμφίβολη. Αποφύγετε αρνητικές προϋποθέσεις \n"
 "καθώς τείνουν να είναι αμφίβολες."
 
-#: exe/engine/field.py:1969
+#: exe/engine/field.py:1981
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -990,8 +996,8 @@ msgstr "Λάθος"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1856
-#: exe/engine/field.py:1868 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1868
+#: exe/engine/field.py:1880 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1766
 #: exe/webui/editorpane.py:251
@@ -1007,7 +1013,7 @@ msgstr ""
 "δεν εισαχθούν δεδομένα σ' αυτό το πεδίο."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1986 exe/engine/field.py:2011
+#: exe/engine/field.py:1998 exe/engine/field.py:2023
 msgid "Feedback:"
 msgstr "Ανατροφοδότηση: "
 
@@ -1049,11 +1055,11 @@ msgstr "Ύψος πλαισίου:"
 msgid "Free Text"
 msgstr "Ελεύθερο κείμενο"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:100
 msgid "French Wikipedia Article"
 msgstr "Άρθρο της Γαλλικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/wikipediablock.py:203
+#: exe/webui/wikipediablock.py:204
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -1063,7 +1069,7 @@ msgstr "GNU Άδεια Δωρεάν Τεκμηρίωσης"
 msgid "Geogebra"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:100
+#: exe/webui/wikipediablock.py:101
 msgid "German Wikipedia Article"
 msgstr "Άρθρο της Γερμανικής Βίκι εγκυκλοπαίδειας"
 
@@ -1083,7 +1089,7 @@ msgstr "Πήγαινε εμπρός"
 msgid "Go Forward (Not Available)"
 msgstr "Πήγαινε εμπρός (Μη διαθέσιμο)"
 
-#: exe/webui/wikipediablock.py:101
+#: exe/webui/wikipediablock.py:102
 #, fuzzy
 msgid "Greek Wikipedia Article"
 msgstr "Άρθρο της Γαλλικής Βίκι εγκυκλοπαίδειας"
@@ -1102,7 +1108,7 @@ msgid "Hide/Show Word"
 msgstr "Απόκρυψη/Εμφάνιση Λέξης"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1894 exe/engine/field.py:1914
+#: exe/engine/field.py:1906 exe/engine/field.py:1926
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1954
 msgid "Hint"
@@ -1190,15 +1196,15 @@ msgstr "Οδηγίες"
 msgid "Instructions For Learners"
 msgstr "Οδηγίες για μαθητές"
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:205
 msgid "It uses material from the "
 msgstr "Χρησιμοποιεί υλικό από"
 
-#: exe/webui/wikipediablock.py:102
+#: exe/webui/wikipediablock.py:103
 msgid "Italian Wikipedia Article"
 msgstr "Άρθρο της Ιταλικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/wikipediablock.py:103
+#: exe/webui/wikipediablock.py:104
 msgid "Japanese Wikipedia Article"
 msgstr "Άρθρο της Ιαπωνικής Βίκι εγκυκλοπαίδειας"
 
@@ -1226,7 +1232,7 @@ msgstr "Αριστερά"
 msgid "Licensed under the "
 msgstr "Αυτό το άρθρο εξουσιοδοτείται κάτω από "
 
-#: exe/webui/wikipediablock.py:131 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Φόρτωση"
 
@@ -1234,7 +1240,7 @@ msgstr "Φόρτωση"
 msgid "MP3"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:104
+#: exe/webui/wikipediablock.py:105
 #, fuzzy
 msgid "Magyar Wikipedia Article"
 msgstr "Άρθρο της Βίκι εγκυκλοπαίδειας"
@@ -1313,7 +1319,7 @@ msgstr "Δεν υπάρχουν διαθέσιμα εικονίδια. Αποτ�
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Δεν υπάρχει διαθέσιμο εικονίδιο. Αποτυχία σμίκρυνσης της αρχικής εικόνας."
 
-#: exe/webui/wikipediablock.py:135 exe/webui/multimediablock.py:97
+#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:97
 #: exe/webui/rssblock.py:97 exe/webui/editorpane.py:332
 msgid "No emphasis"
 msgstr "Χωρίς έμφαση"
@@ -1345,7 +1351,7 @@ msgstr ""
 " θα πρέπει να καθορίζουν τι θα μπορούν να κάνουν\n"
 " όταν τελειώσουν το μάθημα."
 
-#: exe/engine/field.py:1671 exe/engine/field.py:1735
+#: exe/engine/field.py:1683 exe/engine/field.py:1747
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1353,7 +1359,7 @@ msgstr ""
 "Επιλέξτε μόνο .flv (Αρχεία Βίντεο Flash) για \n"
 "αυτό το εκπαιδευτικό εργαλείο."
 
-#: exe/engine/field.py:1607 exe/engine/field.py:1651
+#: exe/engine/field.py:1619 exe/engine/field.py:1663
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1362,18 +1368,18 @@ msgstr ""
 "αυτό το εκπαιδευτικό εργαλείο."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:1852 exe/engine/field.py:1865
-#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1619
+#: exe/engine/field.py:1864 exe/engine/field.py:1877
+#: exe/webui/testquestionelement.py:103 exe/webui/element.py:1619
 #: exe/webui/element.py:1742 exe/webui/element.py:1747
 msgid "Option"
 msgstr "Επιλογή"
 
-#: exe/engine/field.py:1936 exe/engine/field.py:1946
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1615
+#: exe/engine/field.py:1948 exe/engine/field.py:1958
+#: exe/webui/testquestionelement.py:99 exe/webui/element.py:1615
 msgid "Options"
 msgstr "Επιλογές"
 
-#: exe/webui/wikipediablock.py:114 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
 msgid "Other"
 msgstr "Άλλο"
 
@@ -1381,7 +1387,7 @@ msgstr "Άλλο"
 msgid "Outline"
 msgstr "Περίγραμμα"
 
-#: exe/webui/wikipediablock.py:126
+#: exe/webui/wikipediablock.py:127
 msgid "Own site"
 msgstr ""
 
@@ -1437,11 +1443,11 @@ msgid ""
 "menu to close eXe."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:105
+#: exe/webui/wikipediablock.py:106
 msgid "Polish Wikipedia Article"
 msgstr "Άρθρο της Πολωνικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/wikipediablock.py:106
+#: exe/webui/wikipediablock.py:107
 msgid "Portugese Wikipedia Article"
 msgstr "Άρθρο της Πορτογαλλικής Βίκι εγκυκλοπαίδειας"
 
@@ -1478,8 +1484,8 @@ msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να �
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1309
-#: exe/engine/field.py:1356
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1321
+#: exe/engine/field.py:1368
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1549,13 +1555,13 @@ msgid "Put instructions for learners here"
 msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1891 exe/engine/field.py:1910
+#: exe/engine/field.py:1903 exe/engine/field.py:1922
 msgid "Question"
 msgstr "Ερώτηση"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:1972 exe/engine/field.py:2008 exe/webui/element.py:1599
+#: exe/engine/field.py:1984 exe/engine/field.py:2020 exe/webui/element.py:1599
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -1696,7 +1702,7 @@ msgstr "Επιλογή εικόνας"
 msgid "Select an image (JPG file)"
 msgstr "Επιλογή εικόνας (αρχείο JPG)"
 
-#: exe/engine/field.py:1981
+#: exe/engine/field.py:1993
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1774,7 +1780,7 @@ msgstr "Εμφάνιση/Καθαρισμός Απαντήσεων"
 msgid "Show/Hide Feedback"
 msgstr "Εμφάνιση/Απόκρυψη Ανατροφοδότησης"
 
-#: exe/webui/wikipediablock.py:116
+#: exe/webui/wikipediablock.py:117
 msgid "Site"
 msgstr "Τόπος"
 
@@ -1782,7 +1788,7 @@ msgstr "Τόπος"
 msgid "Size of magnifying glass: "
 msgstr "Μέγεθος μεγενθυντικού φακού:"
 
-#: exe/webui/wikipediablock.py:107
+#: exe/webui/wikipediablock.py:108
 msgid "Slovenian Wikipedia Article"
 msgstr "Άρθρο της Σλοβακικής Βίκι εγκυκλοπαίδειας"
 
@@ -1790,7 +1796,7 @@ msgstr "Άρθρο της Σλοβακικής Βίκι εγκυκλοπαίδε
 msgid "Small"
 msgstr "Μικρό"
 
-#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:98
+#: exe/webui/wikipediablock.py:137 exe/webui/multimediablock.py:98
 #: exe/webui/rssblock.py:98 exe/webui/editorpane.py:333
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
@@ -1813,7 +1819,7 @@ msgstr ""
 "Συγνώμη, λάθος μορφή αρχείου:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:108
+#: exe/webui/wikipediablock.py:109
 msgid "Spanish Wikipedia Article"
 msgstr "Άρθρο της Ισπανικής Βίκι εγκυκλοπαίδειας"
 
@@ -1833,7 +1839,7 @@ msgstr "Υποβολή"
 msgid "Submit Answer"
 msgstr "Καταχώριση απάντησης"
 
-#: exe/webui/wikipediablock.py:109
+#: exe/webui/wikipediablock.py:110
 msgid "Swedish Wikipedia Article"
 msgstr "Άρθρο της Σουηδικής Βίκι εγκυκλοπαίδειας"
 
@@ -1928,7 +1934,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Ο διάλογος σκοπού σας επιτρέπει να περιγράψετε το σκοπό της συσκευής σε άλλους πιθανούς χρήστες."
 
-#: exe/webui/wikipediablock.py:200
+#: exe/webui/wikipediablock.py:201
 msgid "This article is licensed under the "
 msgstr "Αυτό το άρθρο εξουσιοδοτείται κάτω από "
 
@@ -2022,7 +2028,7 @@ msgstr ""
 " όπου ο μαθητής πρέπει να αποφασίσει αν η φράση είναι αληθής. Αυτός ο τύπος ερώτησης\n"
 " δουλεύει εντάξει για τεκμηριωμένες πληροφορίες και πληροφορίες που προσφέρονται σε μια μόνο από τις δυο απαντήσεις."
 
-#: exe/engine/field.py:1747
+#: exe/engine/field.py:1759
 msgid "Type a discussion topic here."
 msgstr "Πληκτρολογήστε ένα θέμα συζήτησης εδώ."
 
@@ -2052,7 +2058,7 @@ msgstr ""
 "το eXe θα παρέχει την εξής αυτόματη ανατροφοδότηση: \"Σωστή απάντηση\"\n"
 " που δηλώνει τη σωστή απάντηση ή \"Λάθος απάντηση\" για τις εναλλακτικές."
 
-#: exe/engine/field.py:1984
+#: exe/engine/field.py:1996
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2191,19 +2197,19 @@ msgstr ""
 msgid "Wiki Article"
 msgstr "Άρθρο βιβλίων Βίκι"
 
-#: exe/webui/wikipediablock.py:110
+#: exe/webui/wikipediablock.py:111
 msgid "Wikibooks Article"
 msgstr "Άρθρο βιβλίων Βίκι"
 
-#: exe/webui/wikipediablock.py:113
+#: exe/webui/wikipediablock.py:114
 msgid "Wikieducator Content"
 msgstr "Περιεχόμενο εκπαιδευτή Βίκι"
 
-#: exe/webui/wikipediablock.py:111
+#: exe/webui/wikipediablock.py:112
 msgid "Wikiversity"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:112
+#: exe/webui/wikipediablock.py:113
 msgid "Wiktionary"
 msgstr ""
 
@@ -2220,7 +2226,7 @@ msgstr ""
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Το νέο εκπαιδευτικό εργαλείο θα εμφανιστεί στην περιοχή εκπαιδευτικών εργαλείων με αυτόν τον τίτλο. Αυτό το πεδίο είναι υποχρεωτικό και θα σας ζητηθεί να δώσετε ένα όνομα αν προσπαθήσετε να καταχωρήσετε το εκπαιδευτικό εργαλείο σας χωρίς όνομα."
 
-#: exe/webui/wikipediablock.py:215
+#: exe/webui/wikipediablock.py:216
 msgid "article "
 msgstr "Άρθρο "
 
@@ -2239,6 +2245,10 @@ msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως
 
 #: exe/engine/galleryidevice.py:407
 msgid "eXe Project"
+msgstr ""
+
+#: exe/application.py:113 exe/application.py:141
+msgid "eXe appears to already be running"
 msgstr ""
 
 #: exe/engine/appletidevice.py:86

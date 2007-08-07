@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-06 21:49+1200\n"
+"POT-Creation-Date: 2007-08-08 03:00+1200\n"
 "PO-Revision-Date: 2007-07-19 12:49+1200\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -113,22 +113,22 @@ msgstr ""
 "<p>Rédigez le texte pour l'activité \"remplir les blancs\" dans le champ prévu\n"
 " soit en le \"copiant-collant\" depuis une autre source, soit en le tapant directement dans le champ.</p> <p> Pour cacher les mots à trouver: \"double-clicquer\" sur le mot pour le sélectionner et clicquer ensuite sur le bouton \"Cacher/Montrer\" de la barre en-dessous.</p>"
 
-#: exe/engine/field.py:1501
+#: exe/engine/field.py:1513
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p> Si vous ne cochez pas cette case: un petit nombre d'erreurs de caractères ou d'emploi des majuscules sera toléré. Si vous la cochez, aucune erreur ne sera acceptée.</p> <p> <strong> Par exemple:</strong> Si la bonne réponse est: <code>Elephant</code> alors <code>elephant</code> et <code>Eliphant</code> seront admis comme <em>\"assez proche\"</em> par l'algorithme, en ce sens qu'il n'y aurait qu'un caractère faux, même si \"Validation des Majuscules\" est coché.</p> <p> Si la case \"Validation des Majuscules\" n'est pas cochée dans l'exemple ci-dessus, le <code>e</code> minuscule ne sera pas considéré comme une faute et donc <code>eliphant</code> sera également accepté.</p> <p> Si seule la case \"marquage strictement identique\" est cochée et si celle de \"Validation des Majuscules\" ne l'est pas: <code>elephant</code> sera également accepté."
 
-#: exe/engine/field.py:1522
+#: exe/engine/field.py:1534
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p> Si cette case est cochée, les réponses soumises avec des différences de Majuscules seront traitées comme incorrectes.</p>"
 
-#: exe/engine/field.py:1527
+#: exe/engine/field.py:1539
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr "<p> Si cette case est cochée, chaque mot tapé sera validé au fur et à mesure de l'avancement de l'exercice et non pas à la fin de celui-ci.</p>"
 
-#: exe/engine/field.py:1776
+#: exe/engine/field.py:1788
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p> Choisissez les symboles mathématiques à partir de l'éditeur de texte ci-dessous pour créer vos formules. Chaque symbole sera visualisé dans le champ en langage mathématique LATEX, dont un aperçu peut être demandé par le bouton &lt;Aperçu&gt; situé en-dessous."
 
@@ -260,7 +260,7 @@ msgstr "Ajouter un \"écho en retour\" interactif à votre outil"
 msgid "Add an mp3 file to your iDevice."
 msgstr "Ajouter un fichier mp3 à votre outil"
 
-#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1631
+#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1631
 msgid "Add another Option"
 msgstr "Ajouter une autre option"
 
@@ -307,7 +307,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "La mise en page vous permet de choisir le positionnement du lecteur à l'écran."
 
-#: exe/engine/field.py:1565
+#: exe/engine/field.py:1577
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -406,6 +406,11 @@ msgstr "titre-légende"
 msgid "Case Study"
 msgstr "Étude de cas"
 
+#: exe/webui/wikipediablock.py:97
+#, fuzzy
+msgid "Catalan Wikipedia Article"
+msgstr "Article de l'encyclopédie Wikipédia en italien"
+
 #: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
 msgid "Change Image"
 msgstr "Modifier l'image "
@@ -414,7 +419,7 @@ msgstr "Modifier l'image "
 msgid "Check Caps?"
 msgstr "Valider les Majuscules ?"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:98
 msgid "Chinese Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipedia en chinois"
 
@@ -453,7 +458,7 @@ msgstr "Clicquer sur l'image ci-dessous ou sur le bouton \"Ajouter l'image\" afi
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Clicquez sur <strong> Choisir un fichier </strong>,naviguez jusqu'au fichier que vous souhaitez attacher et sélectionner le."
 
-#: exe/engine/field.py:1114
+#: exe/engine/field.py:1126
 msgid "Click Here"
 msgstr "Clicquer ici"
 
@@ -465,7 +470,7 @@ msgstr "Clicquer pour obtenir les consignes de réalisation de la tâche"
 msgid "Click here"
 msgstr "Clicquer ici"
 
-#: exe/engine/field.py:1784
+#: exe/engine/field.py:1796
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -498,7 +503,7 @@ msgstr "Activité \"remplir les blancs\""
 msgid "Cloze Text"
 msgstr "Texte à trous"
 
-#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1528
+#: exe/webui/testquestionelement.py:101 exe/webui/element.py:1528
 #: exe/webui/element.py:1617 exe/webui/element.py:1747
 #: exe/webui/element.py:1816
 msgid "Correct"
@@ -543,8 +548,9 @@ msgstr "Supprimer l'image"
 msgid "Delete option"
 msgstr "Supprimer l'option"
 
-#: exe/webui/questionelement.py:103 exe/webui/truefalseelement.py:118
-#: exe/webui/element.py:1604 exe/webui/element.py:1896
+#: exe/webui/testquestionelement.py:93 exe/webui/questionelement.py:103
+#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1604
+#: exe/webui/element.py:1896
 msgid "Delete question"
 msgstr "Supprimer la question"
 
@@ -600,7 +606,7 @@ msgstr "Afficher comme:"
 msgid "Done"
 msgstr "Validé"
 
-#: exe/webui/wikipediablock.py:98
+#: exe/webui/wikipediablock.py:99
 msgid "Dutch Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en hollandais"
 
@@ -670,7 +676,7 @@ msgstr "Editer"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:138 exe/webui/multimediablock.py:100
+#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:100 exe/webui/editorpane.py:329
 msgid "Emphasis"
 msgstr "Importance"
@@ -767,7 +773,7 @@ msgstr ""
 "Rédigez les options possibles ici.\n"
 " Vous pouvez ajouter de nouveaux choix en clicquant sur le bouton \"Ajouter une nouvelle option\". Supprimez les options en clicquant sur l'icône \"X\" rouge qui se trouve sur le coté de l'option."
 
-#: exe/engine/field.py:1977
+#: exe/engine/field.py:1989
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -811,7 +817,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr "Rédigez ici la question introductive. Celle-ci doit être claire et sans ambiguité. Evitez les intitulés négatifs qui peuvent prêter à contre-sens."
 
-#: exe/engine/field.py:1969
+#: exe/engine/field.py:1981
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -874,8 +880,8 @@ msgstr "Faux"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1856
-#: exe/engine/field.py:1868 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1868
+#: exe/engine/field.py:1880 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1766
 #: exe/webui/editorpane.py:251
@@ -889,7 +895,7 @@ msgid ""
 msgstr "Le bouton \"Echo en retour\" n'apparaîtra pas si ce champ est laissé vide."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1986 exe/engine/field.py:2011
+#: exe/engine/field.py:1998 exe/engine/field.py:2023
 msgid "Feedback:"
 msgstr "Echo en retour: "
 
@@ -930,11 +936,11 @@ msgstr "Hauteur du cadre :"
 msgid "Free Text"
 msgstr "Texte libre"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:100
 msgid "French Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en français"
 
-#: exe/webui/wikipediablock.py:203
+#: exe/webui/wikipediablock.py:204
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -944,7 +950,7 @@ msgstr "Licence de documentation libre GNU"
 msgid "Geogebra"
 msgstr "Geogebra"
 
-#: exe/webui/wikipediablock.py:100
+#: exe/webui/wikipediablock.py:101
 msgid "German Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en allemand"
 
@@ -964,7 +970,7 @@ msgstr "Avancer"
 msgid "Go Forward (Not Available)"
 msgstr "Avancer( non disponible)"
 
-#: exe/webui/wikipediablock.py:101
+#: exe/webui/wikipediablock.py:102
 msgid "Greek Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en grec"
 
@@ -981,7 +987,7 @@ msgid "Hide/Show Word"
 msgstr "Cacher / Montrer le mot"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1894 exe/engine/field.py:1914
+#: exe/engine/field.py:1906 exe/engine/field.py:1926
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1954
 msgid "Hint"
@@ -1068,15 +1074,15 @@ msgstr "Consignes"
 msgid "Instructions For Learners"
 msgstr "Consignes pour les apprenants"
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:205
 msgid "It uses material from the "
 msgstr "Utilise du matériel provenant de"
 
-#: exe/webui/wikipediablock.py:102
+#: exe/webui/wikipediablock.py:103
 msgid "Italian Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en italien"
 
-#: exe/webui/wikipediablock.py:103
+#: exe/webui/wikipediablock.py:104
 msgid "Japanese Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en japonais"
 
@@ -1102,7 +1108,7 @@ msgstr "à gauche"
 msgid "Licensed under the "
 msgstr "Régi pour les droits associés par la licence"
 
-#: exe/webui/wikipediablock.py:131 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Charger"
 
@@ -1110,7 +1116,7 @@ msgstr "Charger"
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/webui/wikipediablock.py:104
+#: exe/webui/wikipediablock.py:105
 msgid "Magyar Wikipedia Article"
 msgstr "Magyar Article de l'encyclpédie Wikipédia"
 
@@ -1186,7 +1192,7 @@ msgstr "Aucune description disponible. L'image ne peut être réduite."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Aucune description disponible. L'image d'origine ne peut être réduite."
 
-#: exe/webui/wikipediablock.py:135 exe/webui/multimediablock.py:97
+#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:97
 #: exe/webui/rssblock.py:97 exe/webui/editorpane.py:332
 msgid "No emphasis"
 msgstr "Pas d'accentuation"
@@ -1215,31 +1221,31 @@ msgid ""
 "learning tasks."
 msgstr "Les objectifs décrivent les compétences attendues à l'issue de l'apprentissage et définissent ce que les apprenants sont capables de réaliser lorsqu'ils ont achevé le parcours proposé."
 
-#: exe/engine/field.py:1671 exe/engine/field.py:1735
+#: exe/engine/field.py:1683 exe/engine/field.py:1747
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "Ne sélectionner que les fichiers .flv (Flash vidéo Files) pour cet outil pédagogique."
 
-#: exe/engine/field.py:1607 exe/engine/field.py:1651
+#: exe/engine/field.py:1619 exe/engine/field.py:1663
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "Ne sélectionner que les fichiers .swf (Flash Objects) pour cet outil pédagogique."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:1852 exe/engine/field.py:1865
-#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1619
+#: exe/engine/field.py:1864 exe/engine/field.py:1877
+#: exe/webui/testquestionelement.py:103 exe/webui/element.py:1619
 #: exe/webui/element.py:1742 exe/webui/element.py:1747
 msgid "Option"
 msgstr "Option"
 
-#: exe/engine/field.py:1936 exe/engine/field.py:1946
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1615
+#: exe/engine/field.py:1948 exe/engine/field.py:1958
+#: exe/webui/testquestionelement.py:99 exe/webui/element.py:1615
 msgid "Options"
 msgstr "Options"
 
-#: exe/webui/wikipediablock.py:114 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
 msgid "Other"
 msgstr "Autre"
 
@@ -1247,7 +1253,7 @@ msgstr "Autre"
 msgid "Outline"
 msgstr "Plan"
 
-#: exe/webui/wikipediablock.py:126
+#: exe/webui/wikipediablock.py:127
 msgid "Own site"
 msgstr "Site personnel"
 
@@ -1300,11 +1306,11 @@ msgid ""
 "menu to close eXe."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:105
+#: exe/webui/wikipediablock.py:106
 msgid "Polish Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en polonais"
 
-#: exe/webui/wikipediablock.py:106
+#: exe/webui/wikipediablock.py:107
 msgid "Portugese Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en portuguais"
 
@@ -1339,8 +1345,8 @@ msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
 msgid "Previous"
 msgstr "Précédent"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1309
-#: exe/engine/field.py:1356
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1321
+#: exe/engine/field.py:1368
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1408,13 +1414,13 @@ msgid "Put instructions for learners here"
 msgstr "Donnez ici les consignes aux apprenants"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1891 exe/engine/field.py:1910
+#: exe/engine/field.py:1903 exe/engine/field.py:1922
 msgid "Question"
 msgstr "Question"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:1972 exe/engine/field.py:2008 exe/webui/element.py:1599
+#: exe/engine/field.py:1984 exe/engine/field.py:2020 exe/webui/element.py:1599
 msgid "Question:"
 msgstr "Question:"
 
@@ -1549,7 +1555,7 @@ msgstr "Choisissez une image"
 msgid "Select an image (JPG file)"
 msgstr "Choisissez une image (.jpg)"
 
-#: exe/engine/field.py:1981
+#: exe/engine/field.py:1993
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1614,7 +1620,7 @@ msgstr "Montrer/Effacer les réponses"
 msgid "Show/Hide Feedback"
 msgstr "Montrer/ Cacher l'écho"
 
-#: exe/webui/wikipediablock.py:116
+#: exe/webui/wikipediablock.py:117
 msgid "Site"
 msgstr "site"
 
@@ -1622,7 +1628,7 @@ msgstr "site"
 msgid "Size of magnifying glass: "
 msgstr "Taille d'agrandissement de la loupe :"
 
-#: exe/webui/wikipediablock.py:107
+#: exe/webui/wikipediablock.py:108
 msgid "Slovenian Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en slovène"
 
@@ -1630,7 +1636,7 @@ msgstr "Article de l'encyclopédie Wikipédia en slovène"
 msgid "Small"
 msgstr "Petit"
 
-#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:98
+#: exe/webui/wikipediablock.py:137 exe/webui/multimediablock.py:98
 #: exe/webui/rssblock.py:98 exe/webui/editorpane.py:333
 msgid "Some emphasis"
 msgstr "Importance"
@@ -1652,7 +1658,7 @@ msgstr ""
 "Désolé, ce n'est pas le bon format de fichier:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:108
+#: exe/webui/wikipediablock.py:109
 msgid "Spanish Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en espagnol"
 
@@ -1672,7 +1678,7 @@ msgstr "Valider "
 msgid "Submit Answer"
 msgstr "Valider la réponse"
 
-#: exe/webui/wikipediablock.py:109
+#: exe/webui/wikipediablock.py:110
 msgid "Swedish Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en suédois"
 
@@ -1756,7 +1762,7 @@ msgstr "Le langage mathématique LATEX a été implémenté afin de vous permett
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "La boite de dialogue \"intention\" vous permet de décrire votre \"intention\" d'utilisation de l'outil pour d'autres utilisateurs possibles."
 
-#: exe/webui/wikipediablock.py:200
+#: exe/webui/wikipediablock.py:201
 msgid "This article is licensed under the "
 msgstr "Cet article est régi pour les droits associés par la licence"
 
@@ -1837,7 +1843,7 @@ msgid ""
 "responses."
 msgstr "L'exercice \"Vrai ou Faux\" présente un ou des énoncés sur lesquels l'apprenant doit décider de leur véracité ou non.Ce type d'exercice convient bien pour des informations reposant sur des faits ou encore pour des énoncés qui se prêtent à des réponses du type soit l'un soit l'autre."
 
-#: exe/engine/field.py:1747
+#: exe/engine/field.py:1759
 msgid "Type a discussion topic here."
 msgstr "Rédigez ici un sujet de discussion."
 
@@ -1859,7 +1865,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "Rédigez ici l'écho que vous souhaitez transmettre à l'apprenant suite à son choix. Si vous n'y rédigez pas d'écho particulier, eXe éxécutera automatiquement l'écho par défaut comme suit: \"réponse correcte\" comme indiqué pour la sélection de la bonne réponse ou \"mauvaise réponse\" pour la sélection des autres options."
 
-#: exe/engine/field.py:1984
+#: exe/engine/field.py:1996
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1979,19 +1985,19 @@ msgstr ""
 msgid "Wiki Article"
 msgstr "Article Wiki"
 
-#: exe/webui/wikipediablock.py:110
+#: exe/webui/wikipediablock.py:111
 msgid "Wikibooks Article"
 msgstr "Article de l'encyclopédie WikiLivres"
 
-#: exe/webui/wikipediablock.py:113
+#: exe/webui/wikipediablock.py:114
 msgid "Wikieducator Content"
 msgstr "Contenu de l'encyclopédie Wikiéducation"
 
-#: exe/webui/wikipediablock.py:111
+#: exe/webui/wikipediablock.py:112
 msgid "Wikiversity"
 msgstr "Université Wiki"
 
-#: exe/webui/wikipediablock.py:112
+#: exe/webui/wikipediablock.py:113
 msgid "Wiktionary"
 msgstr "Dictionnaire Wiki"
 
@@ -2007,7 +2013,7 @@ msgstr "Vous pouvez utiliser la barre de titres ou insérer manuellement le symb
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Votre nouvel outil pédagogique apparaîtra dans le panneau OUTILS avec ce titre. Ce champ est obligatoire et si vous essayez de valider votre outil sans titre, une boite de dialogue vous demandera de rédiger un titre."
 
-#: exe/webui/wikipediablock.py:215
+#: exe/webui/wikipediablock.py:216
 msgid "article "
 msgstr "article"
 
@@ -2027,6 +2033,10 @@ msgstr "eXe: éditeur XHTML pour l'e-apprentissage ou l'e-education"
 #: exe/engine/galleryidevice.py:407
 msgid "eXe Project"
 msgstr "eXe project"
+
+#: exe/application.py:113 exe/application.py:141
+msgid "eXe appears to already be running"
+msgstr ""
 
 #: exe/engine/appletidevice.py:86
 #, python-format
