@@ -534,7 +534,6 @@ class MainPage(RenderableLivePage):
             log.debug('r3m0: in unicode, local_filename=' + local_filename)
 
             localImagePath = Path(local_filename)
-            #localImagePath = Path(local_filename, encoding='utf-8')
             log.debug('r3m0: after Path, localImagePath = ' + localImagePath);
             if not localImagePath.exists() or not localImagePath.isfile():
                 client.alert( \
@@ -556,10 +555,8 @@ class MainPage(RenderableLivePage):
             log.debug("handleTinyMCEimageChoice copying image from \'"\
                     + local_filename + "\' to \'" \
                     + server_filename.abspath() + "\'.");
-                    #+ server_filename.abspath().encode('utf-8') + "\'.");
             shutil.copyfile(local_filename, \
                     server_filename.abspath());
-                    #server_filename.abspath().encode('utf-8'));
 
             # new optional description file to provide the 
             # actual base filename, such that once it is later processed
@@ -581,7 +578,6 @@ class MainPage(RenderableLivePage):
             log.debug("handleTinyMCEimageChoice creating preview " \
                     + "description file \'" \
                     + descrip_file_path.abspath() + "\'.");
-                    #+ descrip_file_path.abspath().encode('utf-8') + "\'.");
             descrip_file = open(descrip_file_path, 'wb')
 
             # one more safety measure against TinyMCE, otherwise it will 
@@ -590,7 +586,6 @@ class MainPage(RenderableLivePage):
             unamped_local_filename  = unspaced_filename.replace('&', '_and_')
             log.debug("and setting new file basename as: " 
                     + unamped_local_filename);
-            #descrip_file.write("basename="+os.path.basename(unamped_local_filename))
             my_basename = os.path.basename(unamped_local_filename)
             descrip_file.write((u"basename="+my_basename).encode('utf-8'))
 
