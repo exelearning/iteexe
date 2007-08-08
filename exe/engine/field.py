@@ -491,7 +491,9 @@ class FieldWithResources(Field):
                    if os.path.exists(descrip_file_path) \
                    and os.path.isfile(descrip_file_path): 
                        descrip_file = open(descrip_file_path, 'rb')
-                       basename_info = descrip_file.read()
+                       basename_info = descrip_file.read().decode('utf-8')
+                       log.debug("ProcessPreviewedMedia: decoded basename = " \
+                           + basename_info)
                        # split out the value of this "basename=file" key 
                        basename_key_str = "basename="
                        basename_found_pos = basename_info.find(basename_key_str) 
@@ -514,8 +516,9 @@ class FieldWithResources(Field):
                            # joinpath needs its arguments to be in Unicode:
                            base_file_name = bases_dir.joinpath( \
                                    toUnicode(basename_value))
-                           base_file_str = \
-                                   base_file_name.abspath().encode('utf-8')
+                           base_file_str = base_file_name.abspath()
+                           log.debug("ProcessPreviewedMedia: copied to basefile = " \
+                                  + base_file_str)
                            shutil.copyfile(file_name_str, base_file_str)
                         
                            # finally, change the name that's used in the 
@@ -841,7 +844,9 @@ class FieldWithResources(Field):
                    if os.path.exists(descrip_file_path) \
                    and os.path.isfile(descrip_file_path): 
                        descrip_file = open(descrip_file_path, 'rb')
-                       basename_info = descrip_file.read()
+                       basename_info = descrip_file.read().decode('utf-8')
+                       log.debug("ProcessPreviewedImages: decoded basename = " \
+                           + basename_info)
                        # split out the value of this "basename=file" key 
                        basename_key_str = "basename="
                        basename_found_pos = basename_info.find(basename_key_str) 
@@ -864,8 +869,10 @@ class FieldWithResources(Field):
                            # joinpath needs its arguments to be in Unicode:
                            base_file_name = bases_dir.joinpath( \
                                    toUnicode(basename_value))
-                           base_file_str = \
-                                   base_file_name.abspath().encode('utf-8')
+                           base_file_str =  base_file_name.abspath()
+                           log.debug("ProcessPreviewedImages: copied to basefile = " \
+                                  + base_file_str)
+
                            shutil.copyfile(file_name_str, base_file_str)
                         
                            # finally, change the name that's used in the 

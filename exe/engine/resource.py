@@ -61,7 +61,11 @@ class _Resource(Persistable):
         # _storageName may be changed when the package is set
         self._storageName = self._fn2ascii(resourceFile)
         # self._userName is the basename name originally given by the user
+
+        # r3m0 waz here, and undid the following for a moment:
         self._userName = resourceFile.encode('utf-8')
+        #self._userName = resourceFile
+
         self._originalFile = resourceFile
         try:
             self.checksum = resourceFile.md5

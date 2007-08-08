@@ -168,9 +168,9 @@ class AuthoringPage(RenderableResource):
         # http://eduforge.org/forum/forum.php?thread_id=1654&forum_id=298
         html += u"preformatted : true, \n"
         # and, supposedly to not escape any, use::
-        #html += u"entity_encoding : \"raw\", \n"
+        html += u"entity_encoding : \"raw\", \n"
         # or, perhaps to get &npsp's kept, use: 
-        html += u"entity_encoding : \"named\", \n"
+        #html += u"entity_encoding : \"named\", \n"
         # or can convert symbols to #s with:
         #html += u"entity_encoding : \"numeric\", \n"
         #############

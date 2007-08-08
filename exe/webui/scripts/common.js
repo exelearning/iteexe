@@ -277,18 +277,28 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
        return;
     }
 
+    //alert('r3m0: welcome to chooseImage, local='+local_imagePath);
+
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     // UNescape, to remove the %20's for spaces, etc.:
     var unescaped_local_imagePath = unescape(local_imagePath);
     var oldImageStr = new String(unescaped_local_imagePath);
 
+    //alert('r3m0: welcome to chooseImage, unescaped local='+unescaped_local_imagePath);
 
-    // and replace any path delimiters (':', '\', or '/') or '%' with _:
-    var RegExp1 = /[\\\/\:\%]/g;
+    // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
+    // with '_':
+    var RegExp1 = /[\ \\\/\:\%\&]/g;
     var ReplaceStr1 = new String("_");
     var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
 
-    preview_imageName = newImageStr;
+    // For simplicity across various file encoding schemes, etc.,
+    // just ensure that the TinyMCE media window also gets a URI safe link, 
+    // for doing its showPreview():
+    early_preview_imageName = encodeURIComponent(newImageStr);
+    // and one more escaping of the '%'s to '_'s, to flatten for simplicity:
+    preview_imageName  = early_preview_imageName.replace(RegExp1, ReplaceStr1);
+    //alert('r3m0: new URIencoded safe preview name = ' + preview_imageName);
     full_previewImage_url = "/previews/"+preview_imageName;
 
     // pass the file information on to the server,

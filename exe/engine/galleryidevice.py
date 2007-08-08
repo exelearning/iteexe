@@ -122,6 +122,7 @@ class GalleryImage(_ShowsResources):
 
         if originalImagePath is not None:
             originalImagePath = Path(originalImagePath)
+
             # Copy the original image
             self._imageResource = Resource(self.parent, originalImagePath)
         # Create the thumbnail

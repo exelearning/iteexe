@@ -508,6 +508,9 @@ class MainPage(RenderableLivePage):
         callback_errors = ""
         errors = 0
 
+        log.debug('r3m0: image local = ' + local_filename 
+                + ', base=' + os.path.basename(local_filename))
+
         webDir     = Path(G.application.tempWebDir)
         previewDir  = webDir.joinpath('previews')
 
@@ -526,7 +529,13 @@ class MainPage(RenderableLivePage):
             errors += 1
 
         if errors == 0:
+            log.debug('r3m0: originally, local_filename=' + local_filename)
+            local_filename = unicode(local_filename, 'utf-8')
+            log.debug('r3m0: in unicode, local_filename=' + local_filename)
+
             localImagePath = Path(local_filename)
+            #localImagePath = Path(local_filename, encoding='utf-8')
+            log.debug('r3m0: after Path, localImagePath = ' + localImagePath);
             if not localImagePath.exists() or not localImagePath.isfile():
                 client.alert( \
                      _(u'Image file %s is not found, cannot preview it') \
@@ -539,13 +548,18 @@ class MainPage(RenderableLivePage):
 
         try:
             # joinpath needs its join arguments to already be in Unicode:
-            preview_filename = toUnicode(preview_filename);
+            #preview_filename = toUnicode(preview_filename);
+            # but that's okay, cuz preview_filename is now URI safe, right?
+            log.debug('URIencoded preview filename=' + preview_filename);
+
             server_filename = previewDir.joinpath(preview_filename);
             log.debug("handleTinyMCEimageChoice copying image from \'"\
                     + local_filename + "\' to \'" \
-                    + server_filename.abspath().encode('utf-8') + "\'.");
+                    + server_filename.abspath() + "\'.");
+                    #+ server_filename.abspath().encode('utf-8') + "\'.");
             shutil.copyfile(local_filename, \
-                    server_filename.abspath().encode('utf-8'));
+                    server_filename.abspath());
+                    #server_filename.abspath().encode('utf-8'));
 
             # new optional description file to provide the 
             # actual base filename, such that once it is later processed
@@ -566,10 +580,19 @@ class MainPage(RenderableLivePage):
             descrip_file_path = Path(server_filename+".exe_info")
             log.debug("handleTinyMCEimageChoice creating preview " \
                     + "description file \'" \
-                    + descrip_file_path.abspath().encode('utf-8') + "\'.");
+                    + descrip_file_path.abspath() + "\'.");
+                    #+ descrip_file_path.abspath().encode('utf-8') + "\'.");
             descrip_file = open(descrip_file_path, 'wb')
 
-            descrip_file.write("basename="+os.path.basename(local_filename))
+            # one more safety measure against TinyMCE, otherwise it will 
+            # later take ampersands and entity-escape them into '&amp;':
+            unspaced_filename  = local_filename.replace(' ','_')
+            unamped_local_filename  = unspaced_filename.replace('&', '_and_')
+            log.debug("and setting new file basename as: " 
+                    + unamped_local_filename);
+            #descrip_file.write("basename="+os.path.basename(unamped_local_filename))
+            my_basename = os.path.basename(unamped_local_filename)
+            descrip_file.write((u"basename="+my_basename).encode('utf-8'))
 
             descrip_file.flush()
             descrip_file.close()
