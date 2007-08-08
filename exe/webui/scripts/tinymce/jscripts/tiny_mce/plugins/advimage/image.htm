@@ -46,6 +46,25 @@
 								<td class="column1"><label id="titlelabel" for="title">{$lang_advimage_title}</label></td> 
 								<td colspan="2"><input id="title" name="title" type="text" value="" /></td> 
 							</tr>
+
+						<tr>
+							<td class="column1"><label id="widthlabel" for="width">{$lang_insert_image_dimensions}</label></td>
+							<td nowrap="nowrap">
+								<input name="width" type="text" id="width" value="" size="5" maxlength="5" class="size" onchange="changeHeight();" /> x 
+								<input name="height" type="text" id="height" value="" size="5" maxlength="5" class="size" onchange="changeWidth();" /> px
+							</td>
+						</tr>
+
+						<tr>
+							<td>&nbsp;</td>
+							<td><table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td><input id="constrain" type="checkbox" name="constrain" class="checkbox" /></td>
+										<td><label id="constrainlabel" for="constrain">{$lang_advimage_constrain_proportions}</label></td>
+									</tr>
+								</table></td>
+						</tr>
+
 						</table>
 				</fieldset>
 
@@ -84,24 +103,6 @@
 									erat volutpat.
 								</div>
 							</td>
-						</tr>
-
-						<tr>
-							<td class="column1"><label id="widthlabel" for="width">{$lang_insert_image_dimensions}</label></td>
-							<td nowrap="nowrap">
-								<input name="width" type="text" id="width" value="" size="5" maxlength="5" class="size" onchange="changeHeight();" /> x 
-								<input name="height" type="text" id="height" value="" size="5" maxlength="5" class="size" onchange="changeWidth();" /> px
-							</td>
-						</tr>
-
-						<tr>
-							<td>&nbsp;</td>
-							<td><table border="0" cellpadding="0" cellspacing="0">
-									<tr>
-										<td><input id="constrain" type="checkbox" name="constrain" class="checkbox" /></td>
-										<td><label id="constrainlabel" for="constrain">{$lang_advimage_constrain_proportions}</label></td>
-									</tr>
-								</table></td>
 						</tr>
 
 						<tr>
