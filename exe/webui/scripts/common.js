@@ -1162,9 +1162,11 @@ function showFeedback(num, ident){
             chk = "True"   
         if (chk == ele.value){
             ele1.style.display = "block"
+			ele0.style.display = "none"
             ansele.style.color = "black"
         }else{            
             ele0.style.display = "block"
+			ele1.style.display = "none"
             ansele.style.color = "red"
         }
     }
