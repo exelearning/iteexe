@@ -30,7 +30,10 @@ log = logging.getLogger(__name__)
 class TestoptionElement(object):
     """
     TestOptionElement is responsible for a block of option.  Used by
-    TestquestionElement.
+    TestquestionElement.  
+    == SCORM Quiz Testoption, 
+    pretty much the same as MultiSelect's SelectoptionElement,
+    but with enough subtle variations that you'd better pay attention :-)
     """
     def __init__(self, index, question, questionId, option, idevice):
         """
@@ -85,16 +88,38 @@ class TestoptionElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        html = u"<tr><td>"
-        html += self.answerElement.renderEdit()
+        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
+        html += common.elementInstruc(self.question.optionInstruc)
+
+        header = ""
+        if self.index == 0: 
+            header = _("Correct") + " " + _("Option")
+
+        html += u"</td><td align=\"right\"><b>%s</b>\n" % header
+        html += u"</td><td>\n"
+        if self.index == 0: 
+             html += common.elementInstruc(self.question.correctAnswerInstruc)
+        html += "</td></tr><tr><td colspan=2>\n"
+
+        # rather than using answerElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format 
+        # (in a table, with an extra delete-option X to the right)
+        #html += common.richTextArea("ans"+self.id, 
+        html += common.richTextArea(self.answerId,
+                self.answerElement.field.content_w_resourcePaths)
+
         html += "</td><td align=\"center\">\n"
-        html += common.option("c"+self.keyId, self.option.isCorrect, self.id)
-        html += "</td><td>\n"
+        html += common.option("c"+self.keyId, 
+                self.option.isCorrect, self.id)
+        html += "<br><br><br><br>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _(u"Delete option"))
         html += "</td></tr>\n"
+
         return html
+
 
     def renderPreview(self):
         """

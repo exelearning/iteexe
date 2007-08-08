@@ -1490,15 +1490,32 @@ class SelectOptionElement(Element):
     def renderEdit(self):
         """
         Returns an XHTML string for editing this option element
+        code is pretty much straight from the Multi-Option aka QuizOption
         """
-        html = u"<tr><td>"
+        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
+        html += common.elementInstruc(self.field.question._optionInstruc)
 
-        html += self.answerElement.renderEdit()
+        header = ""
+        if self.index == 0:
+            header = _("Correct") + " " + _("Option")
 
+        html += u"</td><td align=\"right\"><b>%s</b>\n" % header
+        html += u"</td><td>\n"
+        if self.index == 0: 
+             html += common.elementInstruc(self.field.question._correctAnswerInstruc)
+        html += "</td></tr><tr><td colspan=2>\n" 
+
+        # rather than using answerElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format 
+        # (in a table, with an extra delete-option X to the right)
+        html += common.richTextArea("ans"+self.id, 
+                          self.answerElement.field.content_w_resourcePaths)
+        
         html += "</td><td align=\"center\">\n"
         html += common.checkbox("c"+self.id, 
                               self.field.isCorrect, self.index)
-        html += "</td><td>\n"
+        html += "<br><br><br><br>\n"
         html += common.submitImage("del"+self.id, self.field.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _(u"Delete option"))
@@ -1614,9 +1631,6 @@ class SelectquestionElement(Element):
         html += u"<tr>"
         html += u"<th>%s " % _("Options")
         html += common.elementInstruc(self.field.optionInstruc)
-        html += u"</th><th align=\"left\">%s "  % _("Correct")
-        html += common.elementInstruc(self.field.correctAnswerInstruc)
-        html += u"<br/>" + _("Option")
         html += u"</th>"
         html += u"</tr>"
         html += u"</thead>"
@@ -1739,15 +1753,18 @@ class QuizOptionElement(Element):
         """
         Returns an XHTML string for editing this option element
         """
-        html  = u"<tr><td align=\"center\"><b>%s</b>" % _("Option")
+        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
         html += common.elementInstruc(self.field.idevice.answerInstruc)
-        header = ""
 
+        header = ""
         if self.index == 0:
-            header = _("Correct") + "<br/>" + _("Option")
-        html += u"</td><td align=\"center\"><b>%s</b>\n" % header
-        html += common.elementInstruc(self.field.idevice.keyInstruc)
-        html += "</td><td></td></tr><tr><td>\n" 
+            header = _("Correct") + " " + _("Option")
+
+        html += u"</td><td align=\"right\"><b>%s</b>\n" % header
+        html += u"</td><td>\n"
+        if self.index == 0: 
+            html += common.elementInstruc(self.field.idevice.keyInstruc)
+        html += "</td></tr><tr><td colspan=2>\n" 
 
         # rather than using answerElement.renderEdit(),
         # access the appropriate content_w_resourcePaths attribute directly,
@@ -1759,22 +1776,24 @@ class QuizOptionElement(Element):
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.field.question.id, 
                               self.field.isCorrect, self.index)   
-        html += "</td><td>\n"
+        html += "<br><br><br><br>\n"
         html += common.submitImage("del"+self.id, self.field.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _(u"Delete option"))
-        html += "</td></tr><tr><td align=\"center\"><b>%s</b>" % _("Feedback")
+        html += "</td></tr>\n"
+
+        html += "<tr><td align=\"left\"><b>%s</b>" % _("Feedback")
         html += common.elementInstruc(self.field.idevice.feedbackInstruc)
-        html += "</td><td></td><td></td></tr><tr><td>\n" 
-        
+        html += "</td><td></td></tr><tr><td colspan=2>\n" 
+         
         # likewise, rather than using feedbackElement.renderEdit(),
         # access the appropriate content_w_resourcePaths attribute directly,
         # since this is in a customised output format 
-        # (though less so, only difference being the header is centered)
+        # (though less so now that the header isn't even centered)
         html += common.richTextArea('f'+self.id, 
                          self.feedbackElement.field.content_w_resourcePaths)
-        
-        html += "</td><td></td><td></td></tr>\n"
+         
+        html += "</td></tr>\n"
 
         return html
     

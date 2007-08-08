@@ -34,6 +34,8 @@ class TestquestionElement(object):
     """
     TestQuestionElement is responsible for a block of question.  
     Used by QuizTestBlock
+    == SCORM Quiz Testquestion, 
+    pretty much the same as MultiSelect's SelectquestionElement
     """
     def __init__(self, index, idevice, question):
         """
@@ -98,9 +100,6 @@ class TestquestionElement(object):
         html += u"<tr>"
         html += u"<th>%s " % _("Options")
         html += common.elementInstruc(self.question.optionInstruc)
-        html += u"</th><th align=\"left\">%s "  % _("Correct")
-        html += common.elementInstruc(self.question.correctAnswerInstruc)
-        html += u"<br/>" + _("Option")
         html += u"</th>"
         html += u"</tr>"
         html += u"</thead>"
