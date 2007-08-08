@@ -110,6 +110,7 @@ function init() {
 		switch (type) {
 			case "flash":
 				setBool(pl, 'flash', 'loop');
+				setBool(pl, 'flash', 'play');
 				setBool(pl, 'flash', 'menu');
 				setBool(pl, 'flash', 'swliveconnect');
 				setStr(pl, 'flash', 'quality');
@@ -401,6 +402,7 @@ function serializeParameters() {
 	switch (f.media_type.options[f.media_type.selectedIndex].value) {
 		case "flash":
 			s += getBool('flash', 'loop', true);
+			s += getBool('flash', 'play', 'force_to_ALWAYS_show');
 			s += getBool('flash', 'menu', true);
 			s += getBool('flash', 'swliveconnect', false);
 			s += getStr('flash', 'quality');
