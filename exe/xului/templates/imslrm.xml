@@ -19,6 +19,16 @@
     <description>
       <langstring>%(description)s</langstring>
     </description>
+    <aggregationlevel>
+      <vocabulary>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">3</langstring>
+        </value>
+      </vocabulary>
+    </aggregationlevel>
   </general>
 
   <lifecycle>
@@ -32,7 +42,7 @@
 	</value>
       </role>
       <centity>
-        <vcard>BEGIN:vCard FN:%(creator)s END:vCard</vcard>
+        <vcard>BEGIN:vCard %(creator)s END:vCard</vcard>
       </centity>
       <date>
         <datetime>%(date)s</datetime>
@@ -48,7 +58,7 @@
 	</value>
       </role>
       <centity>
-        <vcard>BEGIN:vCard FN:%(publisher)s END:vCard</vcard>
+        <vcard>BEGIN:vCard %(publisher)s END:vCard</vcard>
       </centity>
       <date>
         <datetime>%(date)s</datetime>
@@ -64,7 +74,7 @@
 	</value>
       </role>
       <centity>
-        <vcard>BEGIN:vCard FN:%(contributors)s END:vCard</vcard>
+        <vcard>BEGIN:vCard %(contributors)s END:vCard</vcard>
       </centity>
       <date>
         <datetime>%(date)s</datetime>
