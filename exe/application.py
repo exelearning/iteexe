@@ -97,7 +97,6 @@ class Application:
         eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
         eXeStart = eXeStart + '/tmpExeStartupTime'
 
-        #self.xulMessage('hi')
         if os.path.exists(eXeStart):
             inStartFH=open(eXeStart, "r")
             lastRunTimeS = 0
@@ -110,16 +109,13 @@ class Application:
             currentTime2 = int (time.time())
             log.info('currentTime: ' + `currentTime`)
             if(currentTime <= lastRunTimeS + 3 and currentTime >= lastRunTimeS):
-                self.xulMessage(_('eXe appears to already be running'))
-                #self.xulMessage('eXe appears to already be running: <html:br/>lastRunTimes: ' + `lastRunTimeS` + '<html:br/> currentTime: ' + `currentTime` + '<html:br/>currentTime2: ' + `currentTime2`)
+                #self.xulMessage(_('eXe appears to already be running'))
+                #log.info('eXe appears to already be running: <html:br/>lastRunTimes: ' + `lastRunTimeS` + '<html:br/> currentTime: ' + `currentTime` + '<html:br/>currentTime2: ' + `currentTime2`)
                 return None
-            #else:
-            #    self.xulMessage('eXe appears to already be safe: <html:br/>' + `lastRunTimeS` + '<html:br/>' + `currentTime` + '<html:br/>' + `currentTime2`)
 
         else:
             log.info('eXeStart: ' + eXeStart)
             log.info('tempWebDir: ' + globals.application.tempWebDir)
-            #self.xulMessage('no file: ' + eXeStart)
 
         log.info('logThis1')
 
@@ -138,7 +134,7 @@ class Application:
             self.serve()
             log.info('done serving')
         else:
-            self.xulMessage(_('eXe appears to already be running'))
+            #self.xulMessage(_('eXe appears to already be running'))
             log.error('eXe appears to already be running')
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
         shutil.rmtree(self.tempWebDir, True)
@@ -220,7 +216,7 @@ class Application:
         #"""
         #Convenience function for loading the first package that we'll browse to
         #"""
-        #try:
+        try:
             #XXXX xxxx
             log.info("webDir: " + self.config.webDir)
             log.info("tempWebDir: " + self.tempWebDir)
@@ -243,13 +239,16 @@ class Application:
 
             inSplashFH = open(inSplashFile, "r")
             outSplashFH = open(outSplashFile, "w")
+            pleaseWaitLoad = _(u'Please wait until loading finishes')
             for line in inSplashFH:
                 line = line.replace("LOADING_FILE_NAME", packagePath)
+                line = line.replace("PLEASE_WAIT_LOAD", pleaseWaitLoad)
                 outSplashFH.write(line)
             inSplashFH.close()
             outSplashFH.close()
    
             log.info("packagePath: " + packagePath)
+
             launchBrowser(self.config, outSplashFile, "splash")
             shutil.copyfile(self.config.webDir + '/images/exe_logo.png', 
                                       self.tempWebDir + '/exe_logo.png')
@@ -267,9 +266,20 @@ class Application:
             self.webServer.root.bindNewPackage(package)
             return package
 
-        #except Exception, e:
-        #    log.error('Error loading first Package (%s): %s' % (packagePath, e))
-        #    return None
+        except Exception, e:
+            log.error('Error loading first Package (%s): %s' % (packagePath, e))
+            message = _(u'Sorry, wrong file format')
+
+            outSplashFH=open(globals.application.tempWebDir + \
+                               '/splash.dat',"w")
+            message = re.sub(";",":",message)
+            port = self.config.port
+            outSplashFH.write("100;http://127.0.0.1:" + `port` + "/;" + \
+                               message)
+            outSplashFH.close()
+
+            return None
+
 
 
     def xulMessage(self, msg):
@@ -303,7 +313,7 @@ class Application:
         package = None
         if self.packagePath:
             package = self._loadPackage(self.packagePath)
-        if not package:
+        else:
             launchBrowser(self.config, "", "")
 
     def usage(self):

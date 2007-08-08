@@ -34,34 +34,25 @@
     </groupbox>
     <spacer width="20"/>
     </row>
-
     <script type="text/javascript" >
-      function ol()
-      {
-        loopMe();
-        setTimeout('olStart()', 1000);
-      }
+      closeCount=0
+      allowClose = 0
+      var interval = 0
 
-      function olStart()
-      {
-      }
-
+      function ol() { loopMe() }
       function olEnd() { window.close(); }
 
-      c=0
 
       function ex()
       { 
-        c+=1
-        if(c==0) { return true } 
+        closeCount+=1
+        if(closeCount==0 || allowClose) { return true } 
         else 
         {
-          alert("please wait until package has loaded before closing");
+          alert("PLEASE_WAIT_LOAD");
           return false 
         }
       }
-
-      var interval = 0
 
       function loopMe()
       { interval = setInterval('urlGet("splash.dat")',1000) }
@@ -78,20 +69,41 @@
         self.req.send("")
       }
 
+      function olOpenWin()
+      {
+          window.open(openUrl, "eXe");
+          allowClose = 1
+      }
 
+      openUrl = ""
       function updatepage(str)
       {
         var results = str.split(";")
-        if(results[0])
-        {
-          setProgress(results[0]) //set bar to whatever is in splash.dat
-        }
-        if(results[1])
+        if(results[2])
         {
           clearInterval(interval)
-          setProgress(100) //set bar to 100
+          var pl = document.getElementById("loadPercent");
+          pl.value = "(" + results[2] + ")"
+          alert(results[2])
           window.open(results[1], "eXe");
-          setTimeout('olEnd()', 3000);
+          allowClose = 1
+          setTimeout('olEnd()', 3000)
+        }
+        else
+        {
+          if(results[0])
+          {
+            setProgress(results[0]) //set bar to whatever is in splash.dat
+          }
+
+          if(results[1])
+          {
+            clearInterval(interval)
+            setProgress(100) //set bar to 100
+            openUrl = results[1]
+            setTimeout('olOpenWin()', 500);
+            setTimeout('olEnd()', 3000);
+          }
         }
       }
 
@@ -104,7 +116,6 @@
         mpm.mode = "determined"
         mpm.value = progressValue;
       }
-      //setProgress(10)
     </script>
 
   </window>
