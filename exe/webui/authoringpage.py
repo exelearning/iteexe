@@ -166,7 +166,9 @@ class AuthoringPage(RenderableResource):
         # to preserve spaces (note: be sure to use TinyMCE's HTML button!),
         # the following was recommended by eXe user Javier Lafora Rey at
         # http://eduforge.org/forum/forum.php?thread_id=1654&forum_id=298
-        html += u"preformatted : true, \n"
+        #html += u"preformatted : true, \n"
+        # and apparently it causes other people problems! see:
+        # http://eduforge.org/forum/forum.php?thread_id=1682&forum_id=298
         # and, supposedly to not escape any, use::
         html += u"entity_encoding : \"raw\", \n"
         # or, perhaps to get &npsp's kept, use: 
