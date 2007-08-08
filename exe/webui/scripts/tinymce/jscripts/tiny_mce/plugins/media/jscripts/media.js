@@ -32,7 +32,10 @@ function init() {
 	f = document.forms[0]
 
 	var max_plugin = f.media_type.options.length;
-	var assume_plugins =  tinyMCE.getParam("exe_assume_media_plugins");
+	//var assume_plugins =  tinyMCE.getParam("exe_assume_media_plugins");
+        // begin backing this out, and let all media types show.  Here's the quick version:  ;-)
+	var assume_plugins =  1;
+
 	if (assume_plugins || tinyMCEPopup.windowOpener.detectFlash()) {
 	   var flash_pos = 1;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  flash_pos, "flash");
