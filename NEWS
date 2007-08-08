@@ -1,3 +1,17 @@
+Next Release
+* Add splash screen for when launching eXe by double-clicking .elp
+* Add warning screen for trying to launch multiple copies of eXe
+* Add warning for trying to run an older version of eXe with newer data
+* Add Catalan Wikipedia
+* Fix re-enable Flash autoplay attribute
+* Fix multi-select option feedback
+* Fix SCORM Quiz to allow deleting individual questions
+* Remove media plugin detection allowing authoring without media plugin
+* Allow specifying VCARD type in metadata fields for SCORM export
+* Allow non-ASCII characters in embedded media filenames
+* Slightly reduce eXe package size by not storing multiple copies of text
+* Updated German, Japanese, and Chinese translations
+
 Version 0.98 (r3136)
 * Add ability to insert MimeTeX math images in any field with TinyMCE
 * Add message to RSS iDevice for when feed fails
