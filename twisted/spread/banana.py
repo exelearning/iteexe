@@ -25,6 +25,7 @@ from exe                import globals
 import types, copy, cStringIO, struct
 import time
 import re
+import os
 import logging
 log = logging.getLogger(__name__)
 
@@ -140,6 +141,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
         eXeStart = globals.application.tempWebDir
         eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
         eXeStart = eXeStart + '/tmpExeStartupTime'
+        chmodOnceOnly=1
 
         ##### XXXX xxxx
         while buffer:
@@ -160,10 +162,14 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
             if(updateTime > updateTimeLast):
                 curBufLen = len(buffer)
                 percentDone = int( (90 * (bufLen - curBufLen)/bufLen) + 10 )
+
                 outStartFH=open(eXeStart, "w")
                 outStartFH.write(`updateTime`)
                 outStartFH.close()
-                
+                if(chmodOnceOnly):
+                    os.chmod(eXeStart,0666)
+                    chmodOnceOnly=0
+
                 if(percentDone > percentDoneLast):
                     outSplashFH=open(globals.application.tempWebDir + \
                                        '/splash.dat',"w")
