@@ -36,7 +36,7 @@ class AnswerOption(Persistable):
     A TestQuestion is built up of question and AnswerOptions.  Each
     answerOption can be rendered as an XHTML element
     """
-
+    persistenceVersion = 1
     def __init__(self, question, idevice, answer="", isCorrect=False):
         """
         Initialize 
@@ -50,6 +50,13 @@ class AnswerOption(Persistable):
         self.answerTextArea.idevice = idevice
 
         self.isCorrect = isCorrect
+        self.checked = False
+        
+    def upgradeToVersion1(self):
+        """
+        Upgrades to v 0.99
+        """
+        self.checked = False
 
     def upgrade_setIdevice(self, idevice, question):
         """

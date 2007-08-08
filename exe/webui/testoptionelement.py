@@ -47,6 +47,7 @@ class TestoptionElement(object):
         self.answerId   = "optionAnswer"+ unicode(index) + "q" + questionId
         self.keyId      = "key" + questionId   
         self.idevice    = idevice
+        self.checked    = False
 
         # to compensate for the strange unpickling timing when objects are 
         # loaded from an elp, ensure that proper idevices are set:
@@ -65,6 +66,7 @@ class TestoptionElement(object):
         """
         log.debug("process " + repr(request.args))
         
+        self.option.checked = False        
         if self.answerId in request.args:
             self.answerElement.process(request)
                         
@@ -79,6 +81,8 @@ class TestoptionElement(object):
         if self.keyId in request.args:
             if request.args[self.keyId][0] == unicode(self.index):
                 self.question.userAns = self.index
+                if "submitScore" in request.args:
+                    self.option.checked = True
             
         if "action" in request.args and request.args["action"][0] == self.id:
             self.question.options.remove(self.option)
@@ -134,11 +138,14 @@ class TestoptionElement(object):
         log.debug("renderView called")
 
         html  = '<tr><td>'
-        html += common.option(self.keyId, 0, unicode(self.index))
-        html += '</td><td>\n'
+        
         if preview: 
+            html += common.option(self.keyId, self.option.checked, unicode(self.index))
+            html += '</td><td>\n'
             html += self.answerElement.renderPreview()
         else:
+            html += common.option(self.keyId, 0, unicode(self.index))
+            html += '</td><td>\n'
             html += self.answerElement.renderView()
         html += "</td></tr>\n"
        
