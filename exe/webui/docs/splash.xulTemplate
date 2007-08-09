@@ -109,10 +109,10 @@
 
       function setProgress(progressValue)
       {
-        progressValue =  parseInt(progressValue)
+        progressValue =  progressValue/10
         var mpm = document.getElementById("pm");
         var pl = document.getElementById("loadPercent");
-        pl.value = "(" + progressValue + "%)"
+        pl.value = "(" + progressValue.toPrecision(3) + "%)"
         mpm.mode = "determined"
         mpm.value = progressValue;
       }

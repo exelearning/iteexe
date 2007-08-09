@@ -161,7 +161,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
             updateTime = int (time.time())
             if(updateTime > updateTimeLast):
                 curBufLen = len(buffer)
-                percentDone = int( (90 * (bufLen - curBufLen)/bufLen) + 10 )
+                percentDone = int( (900 * (bufLen - curBufLen)/bufLen) + 100 )
 
                 outStartFH=open(eXeStart, "w")
                 outStartFH.write(`updateTime`)
