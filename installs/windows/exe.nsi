@@ -26,6 +26,7 @@ Icon "..\..\dist\eXe_icon.ico"
 
 ;!define MUI_FINISHPAGE_RUN "$INSTDIR\exe.exe"
 ;!define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
+!define MUI_WELCOMEFINISHPAGE_BITMAP "win.bmp"
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "..\..\dist\exeLicense.txt"
