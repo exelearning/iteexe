@@ -58,7 +58,6 @@ class TestoptionElement(object):
         self.answerElement.id = self.answerId
   
         
-
     def process(self, request):
         """
         Process arguments from the web server.  Return any which apply to this 
@@ -138,14 +137,12 @@ class TestoptionElement(object):
         log.debug("renderView called")
 
         html  = '<tr><td>'
+        html += common.option(self.keyId, 0, unicode(self.index))
+        html += '</td><td>\n'
         
         if preview: 
-            html += common.option(self.keyId, self.option.checked, unicode(self.index))
-            html += '</td><td>\n'
             html += self.answerElement.renderPreview()
-        else:
-            html += common.option(self.keyId, 0, unicode(self.index))
-            html += '</td><td>\n'
+        else:            
             html += self.answerElement.renderView()
         html += "</td></tr>\n"
        
