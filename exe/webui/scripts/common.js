@@ -261,11 +261,16 @@ function changeGalleryImage(galleryId, imageId) {
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
 
     var local_imagePath = ""
-    // ask user for iamge or media, depending on type requested:
+    // ask user for image or media, depending on type requested:
     if (type == "image") {
        local_imagePath = askUserForImage(false);
     }
     else if (type == "media") {
+       local_imagePath = askUserForMedia();
+    }
+    else if (type == "file") {
+       // new for advlink plugin, to link ANY resource into text:
+       // re-use the Media browser, which defaults to All file types (*.*)
        local_imagePath = askUserForMedia();
     }
 
@@ -277,14 +282,10 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
        return;
     }
 
-    //alert('r3m0: welcome to chooseImage, local='+local_imagePath);
-
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     // UNescape, to remove the %20's for spaces, etc.:
     var unescaped_local_imagePath = unescape(local_imagePath);
     var oldImageStr = new String(unescaped_local_imagePath);
-
-    //alert('r3m0: welcome to chooseImage, unescaped local='+unescaped_local_imagePath);
 
     // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
     // with '_':
@@ -298,7 +299,6 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     early_preview_imageName = encodeURIComponent(newImageStr);
     // and one more escaping of the '%'s to '_'s, to flatten for simplicity:
     preview_imageName  = early_preview_imageName.replace(RegExp1, ReplaceStr1);
-    //alert('r3m0: new URIencoded safe preview name = ' + preview_imageName);
     full_previewImage_url = "/previews/"+preview_imageName;
 
     // pass the file information on to the server,

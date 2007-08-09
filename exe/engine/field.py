@@ -289,12 +289,14 @@ class FieldWithResources(Field):
         to help find those no longer in use and in need of purging.
         This finds images and media as well, since they both use src="...".
         It now also finds any math-images' paired exe_math_latex sources, too!
+        And NOW also finds ANY other resource file embedded as an href via
+        the advlink text-link plugin.
         """
         resources_in_use =  []
-        search_strings = ["src=\"resources/", "exe_math_latex=\"resources/"]
+        search_strings = ["src=\"resources/", "exe_math_latex=\"resources/", \
+                "href=\"resources/"]
 
         for search_num in range(len(search_strings)): 
-            #search_str = "src=\"resources/" 
             search_str = search_strings[search_num] 
             found_pos = content.find(search_str) 
             while found_pos >= 0: 
@@ -329,8 +331,8 @@ class FieldWithResources(Field):
         #################################
         # Part 1: process any newly added resources
         new_content = self.ProcessPreviewedImages(content)
-        # and eventually:
         new_content = self.ProcessPreviewedMedia(new_content)
+        new_content = self.ProcessPreviewedLinkResources(new_content)
 
         #################################
         # Part 2: remove any freshly removed resources via
@@ -716,6 +718,222 @@ class FieldWithResources(Field):
 
         # end ProcessPairedMathSource()
 
+    def ProcessPreviewedLinkResources(self, content):
+        """
+        NOTE: now that we have 3 versions of ProcessPreviewed*(),
+        it might be time to begin exploring a much better, consolidated, 
+        approach!  But for now, quickly throw in yet another variation,
+        designed to look for <a href="../previews/....">text</a>
+
+        As per ProcessPreviewedMedia(), this was:
+        STOLEN from ProcessPreviewedImages(), the functionality here is
+        EXTREMELY close, yet just different enough to make it worth
+        processing in a separate pass.
+
+        To build up the corresponding resources from any resource added
+        in by the tinyMCE advlink-browser plug-in.
+        """
+        new_content = content
+
+        # first, clear out any empty hrefs:
+        #   <a href="/">
+        # These should be stopped in the plugin itself, but until then:
+        empty_image_str = "<a href=\"/\">"
+        if new_content.find(empty_image_str)  >= 0: 
+            #new_content = new_content.replace(empty_image_str, "");
+            # rather than just pulling out this first tag, though,
+            # (and searching for, or leaving the following </a>),
+            # howzabout pointing it OUR home page :-)
+            default_href = "<a href=\"http://www.exelearning.org\">"
+            new_content = new_content.replace(empty_image_str, default_href);
+            log.warn("Empty href tag(s) pointed to eXe homepage");
+
+
+        # By this point, tinyMCE's javascript file browser handler:
+        #         common.js's: chooseImage_viaTinyMCE() 
+        # has already copied the file into the web-server's relative 
+        # directory "/previews", BUT, something in tinyMCE's handler 
+        # switches "/previews" to "../previews", so beware.....
+        # 
+
+        # DESIGN NOTE: eventually the following processing should be
+        # enhanced to look at the HTML tags passed in, and ensure that
+        # what is being found as 'href="../previews/.."' is really within
+        # an A tag, etc.
+        # For now, though, this easy parsing is working well:
+        search_str = "href=\"../previews/" 
+
+        found_pos = new_content.find(search_str) 
+        while found_pos >= 0: 
+            end_pos = new_content.find('\"', found_pos+len(search_str)) 
+            if end_pos == -1: 
+                # now unlikely that this has already been quoted out, 
+                # since the search_str INCLUDES a \", but check anyway:
+                end_pos = new_content.find('&quot', found_pos+1) 
+            else: 
+                # okay, the end position \" was found, BUT beware of this 
+                # strange case, where the image file:/// URLs 
+                # were entered manually in one part of it 
+                # (and therefore escaped to &quot), AND another quote occurs 
+                # further below (perhaps even in a non-quoted file:/// via 
+                # a tinyMCE browser, but really from anything!) 
+                # So..... see if a &quot; is found in the file-name, and 
+                # if so, back the end_pos up to there.  
+                # NOTE: until actually looking at the HTML tags, and/or
+                # we might be able to do this more programmatically by 
+                # first seeing HOW the file:// is initially quoted, 
+                # whether by a \" or by &quot;, but for now, 
+                # just check this one.
+                end_pos2 = new_content.find('&quot', found_pos+1) 
+                if end_pos2 > 0 and end_pos2 < end_pos:
+                    end_pos = end_pos2
+            if end_pos >= found_pos:
+               # next, extract the actual file url, to be replaced later 
+               # by the local resource file:
+               file_url_str = new_content[found_pos:end_pos] 
+               # and to get the actual file path, 
+               # rather than the complete URL:
+
+               # first compensate for how TinyMCE HTML-escapes accents:
+               pre_input_file_name_str = file_url_str[len(search_str):]
+               log.debug("ProcessPreviewedLinkResources: found escaped file = "\
+                           + pre_input_file_name_str)
+               converter = HtmlToText(pre_input_file_name_str)
+               input_file_name_str = converter.convertToText()
+
+               log.debug("ProcessPreviewedLinkResources: unescaped filename = "\
+                           + input_file_name_str)
+
+               webDir     = Path(G.application.tempWebDir)
+               previewDir  = webDir.joinpath('previews')
+               server_filename = previewDir.joinpath(input_file_name_str);
+
+               # and now, extract just the filename string back out of that:
+               file_name_str = server_filename.abspath().encode('utf-8');
+
+               # Be sure to check that this file even exists before even 
+               # attempting to create a corresponding GalleryImage resource:
+               if os.path.exists(file_name_str) \
+               and os.path.isfile(file_name_str): 
+
+                   # Although full filenames (including flatted representations
+                   # of their source directory tree) were used to help keep the
+                   # filenames here in previewDir unique, this does cause
+                   # problems with the filenames being too long, if they
+                   # are kept that way.
+                   # So.... if an optional .exe_info file is coupled to
+                   # this one, go ahead and read in its original basename,
+                   # in order to rename the file back to something shorter.
+                   # After all, the resource process has its own uniqueifier.
+
+                   # test for the optional .exe_info:
+                   basename_value = ""
+                   descrip_file_path = Path(server_filename + ".exe_info")
+                   if os.path.exists(descrip_file_path) \
+                   and os.path.isfile(descrip_file_path): 
+                       descrip_file = open(descrip_file_path, 'rb')
+                       basename_info = descrip_file.read().decode('utf-8')
+                       log.debug("ProcessPreviewedImages: decoded basename = " \
+                           + basename_info)
+                       # split out the value of this "basename=file" key 
+                       basename_key_str = "basename="
+                       basename_found_pos = basename_info.find(basename_key_str) 
+                       # should be right there at the very beginning:
+                       if basename_found_pos == 0: 
+                           basename_value = \
+                                   basename_info[len(basename_key_str):] 
+                           # BEWARE: don't just change its name here in this 
+                           # dir, since it might be needed multiple times, and 
+                           # we won't want to delete it yet, but not deleting 
+                           # it might lead to name collision, so, make a 
+                           # temporary subdir bases, &: 
+
+                           # copy previewDir/longfile to
+                           #             previewDir/bases/basename
+                           # (don't worry if this overwrites a previous one)
+                           bases_dir = previewDir.joinpath('allyourbase')
+                           if not bases_dir.exists():
+                               bases_dir.makedirs()
+                           # joinpath needs its arguments to be in Unicode:
+                           base_file_name = bases_dir.joinpath( \
+                                   toUnicode(basename_value))
+                           base_file_str =  base_file_name.abspath()
+                           log.debug("ProcessPreviewedImages: copied to basefile = " \
+                                  + base_file_str)
+
+                           shutil.copyfile(file_name_str, base_file_str)
+                        
+                           # finally, change the name that's used in the 
+                           # resource creation in the below GalleryImage
+                           file_name_str = base_file_str
+
+                   # in passing GalleryImage into the FieldWithResources,
+                   # this field needs to be sure to have an updated
+                   # parentNode, courtesy of its idevice:
+                   self.setParentNode()
+                   
+                   # Not sure why this can't be imported up top, but it gives 
+                   # ImportError: cannot import name GalleryImages, 
+                   # so here it be:
+                   from exe.engine.galleryidevice  import GalleryImage
+
+                   # note: the middle GalleryImage field is currently
+                   # an unused caption:
+                   new_GalleryImage = GalleryImage(self, \
+                                                    '', file_name_str, \
+                                                    mkThumbnail=False)
+                   new_GalleryImageResource = new_GalleryImage._imageResource
+                   resource_path = new_GalleryImageResource._storageName
+                   # and re-concatenate from the global resources name, 
+                   # to build the webUrl to the resource:
+                   resource_url = new_GalleryImage.resourcesUrl+resource_path
+                   # and finally, go ahead and replace the filename:
+                   new_src_string = "href=\""+resource_url
+
+                   new_content = new_content.replace(file_url_str, 
+                                                     new_src_string)
+                   log.debug("ProcessPreviewedImages: built resource: " \
+                           + resource_url)
+
+
+
+               else:
+                   log.warn("file '"+file_name_str+"' does not exist; " \
+                           + "unable to include it as a possible file " \
+                           + "resource for this TextAreaElement.")
+                   # IDEALLY: would like to replace the entire 
+                   #  <img src=.....> tag with text saying "[WARNING:...]",
+                   # but this requires more parsing than we have already done
+                   # and should really wait until the full-on HTML tags
+                   # are checked, in which case an ALT tag can be used.
+                   # For now, merely replacing the filename itself with some
+                   # warning text that includes the filename:
+
+                   #filename_warning = "src=\"WARNING_FILE="+file_name_str \
+                   #        +"=DOES_NOT_EXIST"
+                   # just like for empty hrefs,
+                   # just point the errors to exelearning.org :-)
+                   filename_warning = "href=\"http://www.exelearning.org\">"
+                   new_content = new_content.replace(file_url_str, 
+                                                     filename_warning)
+                   # note: while this technique IS less than ideal, 
+                   # also remember that files will typically be
+                   # selected using the Image browser, and "should" 
+                   # therefore "always" exist. :-)
+    
+                   # DESIGN NOTE: see how GalleryImage's _saveFiles() does
+                   # the "No Thumbnail Available. Could not load original..."
+            else:
+               # end_pos < found_pos (probably == -1)
+               log.warn("ProcessPreviewedLinkResources: file URL string appears " \
+                        + "to NOT have a terminating quote.")
+    
+            # Find the next source image in the content, continuing the loop:
+            found_pos = new_content.find(search_str, found_pos+1) 
+        
+        return new_content
+        # end ProcessPreviewedLinkResources()
+
 
     def ProcessPreviewedImages(self, content):
         """
@@ -991,8 +1209,9 @@ class FieldWithResources(Field):
         images, media, etc..
         """
         new_content = self.MassageImageContentForRenderView(content)
-        # and soon:
         new_content = self.MassageMediaContentForRenderView(new_content)
+        new_content = self.MassageLinkResourceContentForRenderView(new_content)
+
         return new_content 
     
     
@@ -1022,6 +1241,21 @@ class FieldWithResources(Field):
         exported_src = "x-ms-wmv\" data=\"" 
         export_content = export_content.replace(resources_url_src,exported_src)
         
+        return export_content
+
+    def MassageLinkResourceContentForRenderView(self, content):
+        """
+        Stolen and Modified straight from MassageImageContentForRenderView()
+        Returns an XHTML string for viewing this resource-laden element 
+        upon export, since the resources will be flattened no longer exist 
+        in the system resources directory....
+        """
+        # this is used for exports/prints, etc., and needs to ensure that 
+        # any resource paths are removed:
+        resources_url_src = "href=\"resources/"
+        exported_src = "href=\""
+        export_content = content.replace(resources_url_src,exported_src)
+
         return export_content
 
     

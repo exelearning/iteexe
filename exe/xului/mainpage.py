@@ -508,7 +508,7 @@ class MainPage(RenderableLivePage):
         callback_errors = ""
         errors = 0
 
-        log.debug('r3m0: image local = ' + local_filename 
+        log.debug('handleTinyMCEimageChoice: image local = ' + local_filename 
                 + ', base=' + os.path.basename(local_filename))
 
         webDir     = Path(G.application.tempWebDir)
@@ -529,12 +529,15 @@ class MainPage(RenderableLivePage):
             errors += 1
 
         if errors == 0:
-            log.debug('r3m0: originally, local_filename=' + local_filename)
+            log.debug('handleTinyMCEimageChoice: originally, local_filename='
+                    + local_filename)
             local_filename = unicode(local_filename, 'utf-8')
-            log.debug('r3m0: in unicode, local_filename=' + local_filename)
+            log.debug('handleTinyMCEimageChoice: in unicode, local_filename='
+                    + local_filename)
 
             localImagePath = Path(local_filename)
-            log.debug('r3m0: after Path, localImagePath = ' + localImagePath);
+            log.debug('handleTinyMCEimageChoice: after Path, localImagePath= '
+                    + localImagePath);
             if not localImagePath.exists() or not localImagePath.isfile():
                 client.alert( \
                      _(u'Image file %s is not found, cannot preview it') \

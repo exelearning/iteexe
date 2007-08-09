@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +29,7 @@ from exe             import globals as G
 
 log = logging.getLogger(__name__)
 
-def replaceLinks(matchobj):
+def replaceLinks(matchobj, package_name):
     """ replace external links with calls to user's preferred browser """
     anchor = matchobj.group(0)
     do = re.search(r'(?i)href\s*=\s*"?([^>"]+)"?', anchor)
@@ -38,6 +39,11 @@ def replaceLinks(matchobj):
     and not do.group(1).find('http://127.0.0.1') >= 0:
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
                 r'''href="\1" onclick="window.parent.browseURL('\1'); return false"''',
+                anchor)
+    elif do \
+    and do.group(1).startswith('resources/'):
+        return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
+                r'''href="\1" onclick="window.parent.browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, package_name),
                 anchor)
     else:
         return anchor
@@ -207,7 +213,8 @@ class TextAreaElement(ElementWithResources):
         # to render, choose the content with the preview-able resource paths:
         self.field.content = self.field.content_w_resourcePaths
 
-        content = re.sub(r'(?i)<\s*a[^>]+>', replaceLinks,
+        content = re.sub(r'(?i)<\s*a[^>]+>',
+                lambda mo: replaceLinks(mo, self.field.idevice.parentNode.package.name),
                 self.field.content)
         return self.renderView(content=content, visible=visible, \
                                class_=class_, preview=True)
@@ -347,7 +354,8 @@ class PlainTextAreaElement(Element):
 
 
     def renderPreview(self):
-        content = re.sub(r'(?i)<\s*a[^>]+>', replaceLinks,
+        content = re.sub(r'(?i)<\s*a[^>]+>',
+                lambda mo: replaceLinks(mo, self.field.idevice.parentNode.package.name),
                 self.field.content)
         return self.renderView(content=content)
 

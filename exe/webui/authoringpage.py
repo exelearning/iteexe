@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -158,23 +159,10 @@ class AuthoringPage(RenderableResource):
         html += u"verify_html : false, \n"
         html += u"apply_source_formatting : true, \n"
         ###########
-        # r3m0: testing to remove TinyMCE's escaping/quoting of HTML:
-        #html += u"apply_source_formatting : false, \n"
+        # testing TinyMCE's escaping/quoting of HTML:
         html += u"cleanup_on_startup : false, \n"
         #html += u"cleanup : false, \n"
-        # 
-        # to preserve spaces (note: be sure to use TinyMCE's HTML button!),
-        # the following was recommended by eXe user Javier Lafora Rey at
-        # http://eduforge.org/forum/forum.php?thread_id=1654&forum_id=298
-        #html += u"preformatted : true, \n"
-        # and apparently it causes other people problems! see:
-        # http://eduforge.org/forum/forum.php?thread_id=1682&forum_id=298
-        # and, supposedly to not escape any, use::
         html += u"entity_encoding : \"raw\", \n"
-        # or, perhaps to get &npsp's kept, use: 
-        #html += u"entity_encoding : \"named\", \n"
-        # or can convert symbols to #s with:
-        #html += u"entity_encoding : \"numeric\", \n"
         #############
         html += u"gecko_spellcheck : true, \n"
         html += u" mode : \"textareas\",\n"
@@ -200,6 +188,8 @@ class AuthoringPage(RenderableResource):
         html += u"advimage_image_browser_callback : \"chooseImage_viaTinyMCE\",\n"
         # as recyled into the tinyMCE media plugin's media callback:
         html += u"media_media_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        # and again recyled for the tinyMCE advlink plugin's text-link: 
+        html += u"advlink_file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
 
         # and the callback to generate exemath's LaTeX images via mimetex:
         html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
