@@ -3,6 +3,7 @@ Next Release
 * Add warning screen for trying to launch multiple copies of eXe
 * Add warning for trying to run an older version of eXe with newer data
 * Add Catalan Wikipedia
+* Add file browser to rich text editor link popup for including files
 * Fix re-enable Flash autoplay attribute
 * Fix multi-select option feedback
 * Fix SCORM Quiz to allow deleting individual questions
