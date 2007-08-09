@@ -260,7 +260,7 @@ class Application:
             log.info("editorUrl: " + editorUrl)
             log.info("TempDirPath: " + editorUrl)
             outSplashFH = open(outSplashData, "w")
-            outSplashFH.write("100;" + editorUrl)
+            outSplashFH.write("1000;" + editorUrl)
             outSplashFH.close()
 
             self.webServer.root.bindNewPackage(package)
@@ -274,7 +274,7 @@ class Application:
                                '/splash.dat',"w")
             message = re.sub(";",":",message)
             port = self.config.port
-            outSplashFH.write("100;http://127.0.0.1:" + `port` + "/;" + \
+            outSplashFH.write("1000;http://127.0.0.1:" + `port` + "/;" + \
                                message)
             outSplashFH.close()
 
