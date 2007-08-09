@@ -23,6 +23,7 @@ Classes to XHTML elements.  Used by GenericBlock
 import os 
 import logging
 import re
+import urllib
 from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
@@ -42,8 +43,9 @@ def replaceLinks(matchobj, package_name):
                 anchor)
     elif do \
     and do.group(1).startswith('resources/'):
+        clean_url = urllib.quote(package_name.encode('utf-8'))
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="window.parent.browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, package_name),
+                r'''href="\1" onclick="window.parent.browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, clean_url),
                 anchor)
     else:
         return anchor
