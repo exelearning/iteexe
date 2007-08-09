@@ -180,7 +180,7 @@ class AuthoringPage(RenderableResource):
         html += u"cut,copy,paste,pastetext,charmap,help\",\n"
         html += u" theme_advanced_buttons2 : \"image,media,exemath,advhr,"
         html += u"fontselect,tablecontrols,separator,link,unlink,separator,"
-        html += u" undo,redo,separator,cleanup,code,removeformat\",\n"
+        html += u" undo,redo,separator,code,removeformat\",\n"
         
         html += u" theme_advanced_buttons3 : \"\",\n"
        
