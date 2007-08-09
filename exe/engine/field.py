@@ -519,8 +519,8 @@ class FieldWithResources(Field):
                            base_file_name = bases_dir.joinpath( \
                                    toUnicode(basename_value))
                            base_file_str = base_file_name.abspath()
-                           log.debug("ProcessPreviewedMedia: copied to basefile = " \
-                                  + base_file_str)
+                           log.debug("ProcessPreviewedMedia: copied to "
+                                  + "basefile = " + base_file_str)
                            shutil.copyfile(file_name_str, base_file_str)
                         
                            # finally, change the name that's used in the 
@@ -578,7 +578,8 @@ class FieldWithResources(Field):
                    # in the initial object tag, and now using media
                    # type = x-ms-wmv
                    ######
-                   embed_search_str = "x-ms-wmv\" data=\"/previews/"+pre_input_file_name_str
+                   embed_search_str = "x-ms-wmv\" data=\"/previews/"\
+                           + pre_input_file_name_str
                    embed_replace_str = "x-ms-wmv\" data=\"" + resource_url
                    new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
@@ -670,7 +671,8 @@ class FieldWithResources(Field):
                 math_file_name_str = base_file_str
 
             else:
-                log.debug('And this exe_math_latex file still syncs with the image file.')
+                log.debug('And this exe_math_latex file still syncs with the '
+                        + 'image file.')
 
             # 4. make the actual resource via GalleryImage 
 
@@ -702,7 +704,7 @@ class FieldWithResources(Field):
                         + mathsrc_resource_url)
 
             # 5. do a global string replace of the old attribute with the new,
-            #   rebuilding the full attribute to: "src=\"/ <path w/ resources> \""
+            #rebuilding the full attribute to: "href=\"/ <path w/ resources> \""
             from_str = "exe_math_latex=\""+preview_math_file+"\""
             to_str =   "exe_math_latex=\""+mathsrc_resource_url+"\""
             #log.debug('replacing exe_math_latex from: ' + from_str \
@@ -833,8 +835,8 @@ class FieldWithResources(Field):
                    and os.path.isfile(descrip_file_path): 
                        descrip_file = open(descrip_file_path, 'rb')
                        basename_info = descrip_file.read().decode('utf-8')
-                       log.debug("ProcessPreviewedImages: decoded basename = " \
-                           + basename_info)
+                       log.debug("ProcessPreviewedLinkResources: decoded "
+                           + "basename = " + basename_info)
                        # split out the value of this "basename=file" key 
                        basename_key_str = "basename="
                        basename_found_pos = basename_info.find(basename_key_str) 
@@ -858,8 +860,8 @@ class FieldWithResources(Field):
                            base_file_name = bases_dir.joinpath( \
                                    toUnicode(basename_value))
                            base_file_str =  base_file_name.abspath()
-                           log.debug("ProcessPreviewedImages: copied to basefile = " \
-                                  + base_file_str)
+                           log.debug("ProcessPreviewedLinkResources: copied "
+                                  + " to basefile = " + base_file_str)
 
                            shutil.copyfile(file_name_str, base_file_str)
                         
@@ -892,7 +894,7 @@ class FieldWithResources(Field):
 
                    new_content = new_content.replace(file_url_str, 
                                                      new_src_string)
-                   log.debug("ProcessPreviewedImages: built resource: " \
+                   log.debug("ProcessPreviewedLinkResources: built resource: "\
                            + resource_url)
 
 
@@ -925,8 +927,8 @@ class FieldWithResources(Field):
                    # the "No Thumbnail Available. Could not load original..."
             else:
                # end_pos < found_pos (probably == -1)
-               log.warn("ProcessPreviewedLinkResources: file URL string appears " \
-                        + "to NOT have a terminating quote.")
+               log.warn("ProcessPreviewedLinkResources: file URL string " \
+                        + "appears to NOT have a terminating quote.")
     
             # Find the next source image in the content, continuing the loop:
             found_pos = new_content.find(search_str, found_pos+1) 
@@ -1088,8 +1090,8 @@ class FieldWithResources(Field):
                            base_file_name = bases_dir.joinpath( \
                                    toUnicode(basename_value))
                            base_file_str =  base_file_name.abspath()
-                           log.debug("ProcessPreviewedImages: copied to basefile = " \
-                                  + base_file_str)
+                           log.debug("ProcessPreviewedImages: copied to "
+                                  + "basefile = " + base_file_str)
 
                            shutil.copyfile(file_name_str, base_file_str)
                         
