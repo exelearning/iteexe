@@ -102,7 +102,7 @@ class Manifest(object):
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
 
-        if self.packaage.title != '':
+        if self.package.title != '':
             title = escape(self.package.title)
         else:
             title  = escape(self.package.root.titleShort)
