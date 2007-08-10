@@ -105,8 +105,7 @@ class Field(Persistable):
         Return which variables we should persist
         """
         if G.application.persistNonPersistants:
-            toPersist = dict([(key, value) 
-                    for key, value in self.__dict__.items() ])
+            toPersist = self.__dict__
         else: 
             toPersist = dict([(key, value) 
                     for key, value in self.__dict__.items() 

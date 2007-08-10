@@ -7,6 +7,7 @@ Next Release
 * Fix re-enable Flash autoplay attribute
 * Fix multi-select option feedback
 * Fix SCORM Quiz to allow deleting individual questions
+* Change text export to decode HTML entities into UTF-8 string
 * Remove media plugin detection allowing authoring without media plugin
 * Allow specifying VCARD type in metadata fields for SCORM export
 * Allow non-ASCII characters in embedded media filenames
