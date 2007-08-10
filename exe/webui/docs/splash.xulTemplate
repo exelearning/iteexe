@@ -99,7 +99,7 @@
           if(results[1])
           {
             clearInterval(interval)
-            setProgress(100) //set bar to 100
+            setProgress(1000) //set bar to 100
             openUrl = results[1]
             setTimeout('olOpenWin()', 500);
             setTimeout('olEnd()', 3000);
