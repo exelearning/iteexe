@@ -285,7 +285,7 @@ class Versioned:
                     #####
             #
             # end of bogus-extraction support
-            #################################
+            ################################# 
 
             # ugly hack, but it's what the user expects, really
             if (Versioned not in base.__bases__ and

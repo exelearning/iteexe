@@ -24,6 +24,7 @@ import logging
 from copy               import deepcopy
 from exe.engine.persist import Persistable
 from exe.engine.path    import toUnicode
+from exe                import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -116,11 +117,19 @@ class Node(Persistable):
         The newly inserted node is automatically selected.
         """
         log.debug(u"clone " + self.title)
+
+        # copy any nonpersistables of interest as well:
+        G.application.persistNonPersistants = True
+
         # Setting self.parent in the copy to None, so it doesn't 
         # go up copying the whole tree
         newNode = deepcopy(self, {id(self._package): newPackage,
                                   id(self.parent): None})
         newNode._id = newPackage._regNewNode(newNode)
+
+        # return nonpersistables to normal status:
+        G.application.persistNonPersistants = False
+
         # Give all the new nodes id's
         for node in newNode.walkDescendants():
             node._id = newPackage._regNewNode(node)

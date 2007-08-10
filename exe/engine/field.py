@@ -32,11 +32,13 @@ from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 from htmlentitydefs       import name2codepoint
 from exe.engine.htmlToText import HtmlToText
+from twisted.persisted.styles import Versioned
 from exe                  import globals as G
 import os
 import re
 import urllib
 import shutil
+
 log = logging.getLogger(__name__)
 
 
@@ -91,6 +93,26 @@ class Field(Persistable):
         else:
             return None
     idevice = property(getIDevice, setIDevice)
+
+    def __getstate__(self): 
+        """
+        Override Persistable's getstate, to recognize when this is an actual
+        file save (in which case, do not save the nonpersistant attributes),
+        or a copy (as used in in file insert, to merge other files).
+        Currently, only node's copyToPackage will indicate that this is 
+        for a copy, by setting G.application.persistNonPersistants
+
+        Return which variables we should persist
+        """
+        if G.application.persistNonPersistants:
+            toPersist = dict([(key, value) 
+                    for key, value in self.__dict__.items() ])
+        else: 
+            toPersist = dict([(key, value) 
+                    for key, value in self.__dict__.items() 
+                    if key not in self.nonpersistant])
+    
+        return Versioned.__getstate__(self, toPersist)
 
     def upgradeToVersion1(self):
         """
@@ -151,7 +173,7 @@ class FieldWithResources(Field):
     persistenceVersion = 2
 
     # do not save the following redundant fields with the .elp, but instead 
-    # regenerate them from content_w_resourcePaths in 'TwistedRePresist':
+    # regenerate them from content_w_resourcePaths in 'TwistedRePersist':
     nonpersistant      = ['content', 'content_wo_resourcePaths']
 
     def __init__(self, name, instruc="", content=""):
@@ -200,20 +222,16 @@ class FieldWithResources(Field):
         but before any of its subclass upgrades occur:
         """
         if hasattr(self, "content_w_resourcePaths"):
-            if not hasattr(self, "content"):
-                # set default content to be for previewing:
-                self.content = self.content_w_resourcePaths
-            #else:  looks like an elp that was created >= 0.95 but <= 0.99:
-            # go ahead and use that content,
-            # but it will be removed next time it's saved
+            log.debug('TwistedRePersist for FieldWithResources')
+            # recreate the content and content_wo_resourcePaths 
+            # from the persistent content_w_resourcePaths:
 
-            if not hasattr(self, "content_wo_resourcePaths"):
-                self.content_wo_resourcePaths = \
-                        self.MassageContentForRenderView(\
-                                self.content_w_resourcePaths)
-            # else: looks like an elp that was created >= 0.95 but <= 0.99:
-            # go ahead and use that content_w_resourcePaths,
-            # but it will be removed next time it's saved
+            # set default content for previewing mode:
+            self.content = self.content_w_resourcePaths 
+
+            # and content for exporting/printing:
+            self.content_wo_resourcePaths = \
+                self.MassageContentForRenderView(self.content_w_resourcePaths)
 
         #else: looks like an earlier elp, created < 0.95
         # let its subclass just fall through its normal upgrade path to 
