@@ -83,7 +83,8 @@ class Config:
         # likewise, a canonical (English) names of iDevices not to show in the
         # iDevice pane but, contrary to the hiddens, these are ones that the 
         # configuration can specify to turn ON:
-        self.deprecatediDevices = [ "flash with text", "flash movie", "mp3"]
+        self.deprecatediDevices = [ "flash with text", "flash movie", "mp3", \
+                                    "attachment"]
         # by default, only allow embedding of media types for which a 
         # browser plugin is found:
         self.assumeMediaPlugins = False;
