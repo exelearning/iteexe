@@ -1,4 +1,4 @@
-Next Release
+Version 0.99 (r3186)
 * Add splash screen for when launching eXe by double-clicking .elp
 * Add warning screen for trying to launch multiple copies of eXe
 * Add warning for trying to run an older version of eXe with newer data
