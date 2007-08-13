@@ -324,7 +324,7 @@ class MainPage(RenderableLivePage):
 
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
-        package = self._loadPackage(client, filename)
+        package = self._loadPackage(client, filename, newLoad=True)
         packageStore = self.webServer.application.packageStore
         packageStore.addPackage(package)
         self.root.bindNewPackage(package)
@@ -768,8 +768,10 @@ class MainPage(RenderableLivePage):
         """
         Load the package and insert in current node
         """
-        loadedPackage = self._loadPackage(client, filename)
-        newNode = loadedPackage.root.copyToPackage(self.package, self.package.currentNode)
+        loadedPackage = self._loadPackage(client, filename, newLoad=False,
+                                          destinationPackage=self.package)
+        newNode = loadedPackage.root.copyToPackage(self.package, 
+                                                   self.package.currentNode)
         client.sendScript((u'top.location = "/%s"' % \
                           self.package.name).encode('utf8'))
 
@@ -1018,7 +1020,8 @@ class MainPage(RenderableLivePage):
             log.debug(u"firefox file://"+filename+"&")
             os.system("firefox file://"+filename+"&")
 
-    def _loadPackage(self, client, filename):
+    def _loadPackage(self, client, filename, newLoad=True,
+                     destinationPackage=None):
         """Load the package named 'filename'"""
         try:
             encoding = sys.getfilesystemencoding()
@@ -1036,7 +1039,7 @@ class MainPage(RenderableLivePage):
                 except IOError:
                     client.alert(_(u'File %s does not exist or is not readable.') % filename2)
                     return None
-            package = Package.load(filename2)
+            package = Package.load(filename2, newLoad, destinationPackage)
             if package is None:
                 raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))
         except Exception, exc:

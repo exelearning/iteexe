@@ -301,7 +301,7 @@ class Package(Persistable):
         return newPackage
 
     @staticmethod
-    def load(filename):
+    def load(filename, newLoad=True, destinationPackage=None):
         """
         Load package from disk, returns a package.
         """
@@ -328,7 +328,46 @@ class Package(Persistable):
             newPackage = decodeObjectRaw(toDecode)
             G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
-            doUpgrade(newPackage)
+
+            if newLoad: 
+                # provide newPackage to doUpgrade's versionUpgrade() to
+                # correct old corrupt extracted packages by setting the
+                # any corrupt package references to the new package:
+
+                log.debug("load() about to doUpgrade newPackage \"" 
+                        + newPackage._name + "\" " + repr(newPackage) )
+                if hasattr(newPackage, 'resourceDir'):
+                    log.debug("newPackage resourceDir = "
+                            + newPackage.resourceDir)
+                else:
+                    # even though it was just set above? should not get here:
+                    log.error("newPackage resourceDir has NO resourceDir!")
+
+                doUpgrade(newPackage)
+            else: 
+                # and when merging, automatically set package references to
+                # the destinationPackage, into which this is being merged:
+
+                log.debug("load() about to merge doUpgrade newPackage \"" 
+                        + newPackage._name + "\" " + repr(newPackage)
+                        + " INTO destinatioPackage \"" 
+                        + destinationPackage._name + "\" " 
+                        + repr(destinationPackage))
+                
+                log.debug("using their resourceDirs:")
+                if hasattr(newPackage, 'resourceDir'):
+                    log.debug("   newPackage resourceDir = " 
+                            + newPackage.resourceDir)
+                else:
+                    log.error("newPackage has NO resourceDir!")
+                if hasattr(destinationPackage, 'resourceDir'):
+                    log.debug("   destinationPackage resourceDir = " 
+                            + destinationPackage.resourceDir)
+                else:
+                    log.error("destinationPackage has NO resourceDir!")
+
+                doUpgrade(destinationPackage, 
+                        isMerge=True, preMergePackage=newPackage)
 
         except:
             import traceback

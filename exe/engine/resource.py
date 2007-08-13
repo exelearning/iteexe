@@ -104,11 +104,20 @@ class _Resource(Persistable):
                 log.warn("Resource " + repr(self) + " has no checksum " \
                         + "(probably no source file), but is being removed "\
                         + "anyway, so ignoring.")
-            else:
-                log.warn("Resource " + repr(self) + " has no checksum " \
+            else: 
+                if hasattr(self._package, 'resourceDir'):
+                    log.warn("Resource " + repr(self) + " has no checksum " \
+                        + "(probably old resource), and is being added to "\
+                        + "valid package " + repr(package) )
+                    log.warn("This resource should have been upgraded first!" \
+                            + " Will be ignoring...")
+                else:
+                    log.warn("Resource " + repr(self) + " has no checksum " \
                         + "(probably no source file), and was being added to "\
-                        + "package " + repr(package) + "; setting to None.")
-                package = None
+                        + "invalid package " + repr(package) 
+                        + "; setting to None.")
+                # either way, play it safe and set its package to None and bail:
+                self._package = None
             return
 
         if self._package:
@@ -172,6 +181,13 @@ class _Resource(Persistable):
                     return
 
         # Add ourselves to our new package's list of resources
+
+        if not hasattr(self._package, 'resources'):
+            log.error("_AddOurselvesToPackage called with an invalid package: " 
+                    + " no resources on package " + repr(self._package)
+                    + "; possibly after a deepcopy")
+            return
+
         siblings = self._package.resources.setdefault(self.checksum, [])
         if siblings:
             # If we're in the resource dir, and already have a filename that's different to our siblings, delete the original file
@@ -235,7 +251,6 @@ class _Resource(Persistable):
                 setattr(miniMe, key, new)
         if miniMe.package:
             miniMe._addOurselvesToPackage(self.path)
-        #if miniMe._idevice: miniMe._idevice.userResources.append(miniMe)
         return miniMe
     
     # Protected methods
@@ -288,6 +303,36 @@ class Resource(_Resource):
         else:
             return self._storageName
 
+    def checksumCheck(self):
+        """
+        Ensures the the md5 is correct.             
+        There was a period in which resource checksums were being created 
+        before the resource zip file was fully closed, and not flushed out
+        """
+        if self.path.isfile(): 
+            new_md5 = self.path.md5
+        else:
+            new_md5 = None
+
+        if self.checksum != new_md5: 
+            old_md5 = self.checksum
+            log.warn("checksumCheck() found old md5 for " + repr(self) 
+                    + "; replacing with: " + new_md5) 
+            self.checksum = new_md5
+
+            # go ahead and adjust this within the package, as well:
+            if hasattr(self._package, 'resources'): 
+                # Remove our old md5 from the package's list of resources:
+                siblings = self._package.resources[old_md5]
+                siblings.remove(self)
+                if len(siblings) == 0:
+                    # We are the last user of this file
+                    del self._package.resources[old_md5]
+                # And add our new md5 to the package's list of resources:
+                siblings = self._package.resources.setdefault(new_md5, [])
+                siblings.append(self)
+
+
     def upgradeToVersion2(self):
         """
         a wrapper to addSelfToPackageList(self), such that it might be called
@@ -305,6 +350,17 @@ class Resource(_Resource):
         """
         # List our selves in our package's resources list
         if self._package:
+            if not hasattr(self._package, 'resourceDir'):
+                # the package itself appears to be entirely bogus:
+                log.warn("resource " + repr(self) + " in addSelfToPackage with "
+                        + "invalid self._package = \"" + self._package._name 
+                        + "\" " + repr(self._package) 
+                        + ". Setting to None and returning")
+                # rather than going through self._setPackage(), which will
+                # cause further problems trying to disconnect from this invalid
+                # one, just go ahead and set self._package directly:
+                self._package = None
+                return
             if not hasattr(self._package, 'resources'):
                 # Because jelly seems to have no order of upgrading children and parents
                 # We have to modify the package here!

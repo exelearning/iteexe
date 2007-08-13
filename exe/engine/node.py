@@ -121,11 +121,17 @@ class Node(Persistable):
         # copy any nonpersistables of interest as well:
         G.application.persistNonPersistants = True
 
-        # Setting self.parent in the copy to None, so it doesn't 
-        # go up copying the whole tree
-        newNode = deepcopy(self, {id(self._package): newPackage,
-                                  id(self.parent): None})
-        newNode._id = newPackage._regNewNode(newNode)
+        try: 
+            # Setting self.parent in the copy to None, so it doesn't 
+            # go up copying the whole tree 
+            newNode = deepcopy(self, {id(self._package): newPackage,
+                                  id(self.parent): None}) 
+            newNode._id = newPackage._regNewNode(newNode)
+        except Exception, e:
+            # and be sure to return nonpersistables to normal status: 
+            G.application.persistNonPersistants = False
+            # before continuing with the exception:
+            raise
 
         # return nonpersistables to normal status:
         G.application.persistNonPersistants = False
@@ -147,9 +153,13 @@ class Node(Persistable):
         """Iterates over our ancestors"""
         if self.parent: # All top level nodes have no ancestors
             node = self
-            while node is not self.package.root:
-                node = node.parent
-                yield node
+            while node is not None and node is not self.package.root:
+                if not hasattr(node, 'parent'):
+                    log.warn("ancestor node has no parent")
+                    node = None
+                else: 
+                    node = node.parent
+                    yield node
 
 
     def isAncestorOf(self, node):

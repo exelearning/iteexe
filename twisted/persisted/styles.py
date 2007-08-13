@@ -18,8 +18,11 @@ try:
 except ImportError:
     import StringIO
 
-# Twisted Imports
-from twisted.python import log
+from exe                import globals as G
+# Use the eXe logger directly:
+import logging
+log = logging.getLogger(__name__)
+
 
 try:
     from new import instancemethod
@@ -51,13 +54,13 @@ def unpickleMethod(im_name,
                                  im_class)
         return bound
     except AttributeError:
-        log.msg("Method",im_name,"not on class",im_class)
+        log.error("Method" + im_name + "not on class" + im_class)
         assert im_self is not None,"No recourse: no instance to guess from."
         # Attempt a common fix before bailing -- if classes have
         # changed around since we pickled this method, we may still be
         # able to get it by looking on the instance's current class.
         unbound = getattr(im_self.__class__,im_name)
-        log.msg("Attempting fixup with",unbound)
+        log.error("Attempting fixup with" + unbound)
         if im_self is None:
             return unbound
         bound=instancemethod(unbound.im_func,
@@ -76,9 +79,9 @@ def pickleModule(module):
 def unpickleModule(name):
     'support function for copy_reg to unpickle module refs'
     if oldModules.has_key(name):
-        log.msg("Module has moved: %s" % name)
+        log.info("Module has moved: " + name)
         name = oldModules[name]
-        log.msg(name)
+        log.info(name)
     return __import__(name,{},{},'x')
 
 
@@ -122,34 +125,53 @@ class Ephemeral:
     """
 
     def __getstate__(self):
-        log.msg( "WARNING: serializing ephemeral %s" % self )
+        log.warn( "WARNING: serializing ephemeral " + self )
         import gc
         for r in gc.get_referrers(self):
-            log.msg( " referred to by %s" % (r,))
+            log.warn( " referred to by " + (r,))
         return None
 
     def __setstate__(self, state):
-        log.msg( "WARNING: unserializing ephemeral %s" % self.__class__ )
+        log.warn( "WARNING: unserializing ephemeral " + self.__class__ )
         self.__class__ = Ephemeral
 
 
 versionedsToUpgrade = {}
 upgraded = {}
 
-def doUpgrade(newPackage=None):
+def doUpgrade(newPackage=None, isMerge=False, preMergePackage=None):
     global versionedsToUpgrade, upgraded
-    for versioned in versionedsToUpgrade.values():
-        requireUpgrade(versioned, newPackage)
+    try: 
+        # Two-pass system for merges, to be sure that no old/corrupt files
+        # cause any problems, since we don't actually have a rollback system:
+        if isMerge:
+            # just check all the objects, but don't actually change any, 
+            # letting any exception stop this before the real requireUpgrade()
+            log.debug("doUpgrade performing a pre-Merge safety check.")
+            for versioned in versionedsToUpgrade.values(): 
+                requireUpgrade(versioned, newPackage, 
+                    isMerge, preMergePackage, mergeCheck=True)
+            log.debug("doUpgrade completed the pre-Merge safety check.")
+        for versioned in versionedsToUpgrade.values(): 
+            requireUpgrade(versioned, newPackage, 
+                    isMerge, preMergePackage, mergeCheck=False)
+    except Exception, exc:
+        # clear out any remaining upgrades before continuing:
+        versionedsToUpgrade = {}
+        upgraded = {}
+        raise
     versionedsToUpgrade = {}
     upgraded = {}
 
-def requireUpgrade(obj, newPackage=None):
+def requireUpgrade(obj, newPackage=None, 
+        isMerge=False, preMergePackage=None, mergeCheck=False):
     """Require that a Versioned instance be upgraded completely first.
     """
     objID = id(obj)
     if objID in versionedsToUpgrade and objID not in upgraded:
-        upgraded[objID] = 1
-        obj.versionUpgrade(newPackage)
+        if not mergeCheck: 
+            upgraded[objID] = 1
+        obj.versionUpgrade(newPackage, isMerge, preMergePackage, mergeCheck)
         return obj
 
 from twisted.python import reflect
@@ -185,7 +207,13 @@ class Versioned:
     persistenceForgets = ()
 
     def __setstate__(self, state):
-        versionedsToUpgrade[id(self)] = self
+        # Do NOT flag this object ToUpgrade if this setstate is called 
+        # during a deepcopy during a package merge's copyToPackage().
+        # This is because the object has already been upgraded during its
+        # initial load, and does not need to be flagged for another upgrade:
+        if not G.application.persistNonPersistants: 
+            versionedsToUpgrade[id(self)] = self
+
         self.__dict__ = state
 
     def __getstate__(self, dict=None):
@@ -204,7 +232,8 @@ class Versioned:
                 dct['%s.persistenceVersion' % reflect.qual(base)] = base.persistenceVersion
         return dct
 
-    def versionUpgrade(self, newPackage=None):
+    def versionUpgrade(self, newPackage=None, 
+                       isMerge=False, preMergePackage=None, mergeCheck=False):
         """(internal) Do a version upgrade.
         """
         bases = _aybabtu(self.__class__)
@@ -256,35 +285,72 @@ class Versioned:
             # be sure to do another Extract Package on the root node
             # of this file, which will NOW work properly ;-)
             #
-            if repr(self.__class__)=="<class 'exe.engine.resource.Resource'>":
+            # Note: this now also applies to the merging of packages,
+            # automatically reconnecting these objects to the new package:
+            #
+            if repr(base)=="<class 'exe.engine.resource.Resource'>":
                 if newPackage is not None and self._package != newPackage:
-                    # swap to a proper package on resources, IF the
-                    # current package is NOT the one that we're really using:
-                    ##### warning: this goes into Twisted's logs, not eXe's:
-                    log.msg("Resource ",repr(self), \
-                           "linked to extraneous old package; relinking.")
-                    #####
-                    self._package = newPackage
+                    # The following more extreme package comparison really only
+                    # applies to resources, since other objects that might need
+                    # their packages switched are "simple enough" to do it here
+                    if self._package is not None: 
+                        if isMerge and self._package == preMergePackage:
+                            # doing a valid merge, from the preMerge-load.
+                            # requires that resources have already been
+                            # upgraded to at LEAST have their checksum,
+                            # otherwise can't do the real package move 
+                            # using self._setPackage(newPackage)
+                            if hasattr(self, 'checksum'):
+                                # then go ahead and properly update 
+                                if not mergeCheck:
+                                    log.debug("relinking Resource " 
+                                            + repr(self) \
+                                            + " to new merge package.") 
+                                    self._setPackage(newPackage)
+                            else:
+                                log.error("Old package: unable to "
+                                        + "relink old Resource "
+                                        + repr(self)
+                                        + " to new merge package. "
+                                        + " Please upgrade package first!")
+                                #  May want to include the package name here:
+                                raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
 
-            elif repr(self.__class__) == "<class 'exe.engine.node.Node'>":
+                        else:
+                            # This appears to be a corrupt resource, pointing 
+                            # to an invalid package.  For non-merge loads, we
+                            # can just reset its package directly, and any
+                            # subsequent upgrades can handle the rest.
+                            if not mergeCheck:
+                                log.warn("relinking corrupt Resource " \
+                                    +repr(self) + " to new package.") 
+                                self._package = newPackage
+                    else:
+                        log.debug("ignoring Resource "+repr(self) \
+                            + " as it no longer applies to any package.") 
+
+            elif repr(base) == "<class 'exe.engine.node.Node'>":
                 if newPackage is not None and self._package != newPackage:
                     # swap to a proper package on Nodes, IF the
                     # current package is NOT the one that we're really using:
-                    ##### warning: this goes into Twisted's logs, not eXe's:
-                    log.msg("Node ", repr(self) , \
-                           "linked to extraneous old package; relinking.")
-                    #####
-                    self._package = newPackage
+                    if not mergeCheck:
+                        log.debug("relinking Node \""+ self._title  + "\"" \
+                            +" to new package." )
+                        self._package = newPackage
 
-            elif repr(self.__class__)=="<class 'exe.engine.package.Package'>":
+            elif repr(base)=="<class 'exe.engine.package.Package'>":
                 # see here if this package is the same as the newPackage
                 if newPackage is not None and self != newPackage:
-                    ##### warning: this goes into Twisted's logs, not eXe's:
-                    log.msg("Package ", repr(self) , \
-                          "appears to be extraneous old package; ignoring.")
-                    #####
+                    if not mergeCheck:
+                        log.debug("ignoring old Package object \"" 
+                            + self._name + "\" " + repr(self))
+
+            if mergeCheck:
+                # only need to test the above compatibility checks, 
+                # do not go into the actual upgrades.  bail out for this base:
+                continue
             #
-            # end of bogus-extraction support
+            # end of bogus-extraction support (with new merging support!)
             ################################# 
 
             # ugly hack, but it's what the user expects, really
@@ -301,10 +367,16 @@ class Versioned:
                 persistVers = persistVers + 1
                 method = base.__dict__.get('upgradeToVersion%s' % persistVers, None)
                 if method:
-                    log.msg( "Upgrading %s (of %s @ %s) to version %s" % (reflect.qual(base), reflect.qual(self.__class__), id(self), persistVers) )
+                    log.debug( "Upgrading " + reflect.qual(base) + " (of " \
+                            +  reflect.qual(self.__class__) + " @ " \
+                            +  str(id(self)) + ") to version " \
+                            + str(persistVers) )
                     method(self)
                 else:
-                    log.msg( 'Warning: cannot upgrade %s to version %s' % (base, persistVers) )
+                    log.debug( 'no upgrade method for ' \
+                               + reflect.qual(base)\
+                               + ' to version ' + str(persistVers) )
+
 
             # new eXe re-persistence handler to be called here after any and 
             # all upgrades of this base class, but, BEFORE any registered

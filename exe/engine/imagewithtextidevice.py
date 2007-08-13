@@ -153,6 +153,11 @@ you have just inserted.""")
         # from old code doing faulty Extracts, or somesuch nonesense)
         imageResource_exists = False
         if self.image.imageResource:
+            # also ensure that it has the correct md5 checksum, since there was 
+            # a period in which resource checksums were being created before
+            # the resource zip file was fully closed, and not flushed out:
+            self.image.imageResource.checksumCheck()
+
             if os.path.exists(self.image.imageResource.path) and \
             os.path.isfile(self.image.imageResource.path): 
                 imageResource_exists = True
