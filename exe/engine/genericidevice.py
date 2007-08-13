@@ -90,6 +90,8 @@ class GenericIdevice(Idevice):
         """
         initializes nextFieldId if it is still 0
         """
+        if not hasattr(self, 'nextFieldId'):
+            self.nextFieldId = 0
         if self.nextFieldId == 0:
             log.debug(u"nextFieldId==0 for self.class_ %s" % (self.class_))
             maxId = 0
@@ -184,8 +186,9 @@ class GenericIdevice(Idevice):
         if self.class_ == 'reading':
             # Upgrade the feedback field
             for i, field in enumerate(self.fields):
-                if isinstance(field, TextAreaField) and \
-                   field.name in (_(u'Feedback'), u'Feedback'):
+                if isinstance(field, TextAreaField) \
+                and hasattr(field, 'name') \
+                and field.name in (_(u'Feedback'), u'Feedback'):
                     newField = FeedbackField(field.name, field.instruc)
                     Field.nextId -= 1
                     newField._id = field._id
