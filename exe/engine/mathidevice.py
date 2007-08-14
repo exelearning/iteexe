@@ -22,7 +22,6 @@ import logging
 from exe.engine.idevice import Idevice
 from exe.engine.field   import MathField
 log = logging.getLogger(__name__)
-# r3m0: for upgrade -> FreeText:
 from exe.engine.path      import Path
 from exe.engine.freetextidevice   import FreeTextIdevice
 from exe                       import globals as G
@@ -35,7 +34,6 @@ class MathIdevice(Idevice):
     MathIdevice: just has a block of text
     """
 
-    # r3m0: try upgrading Maths iDevice -> FreeText with embedded image:
     persistenceVersion = 1
     
 

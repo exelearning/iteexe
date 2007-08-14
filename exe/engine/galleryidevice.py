@@ -270,8 +270,10 @@ class GalleryImage(_ShowsResources):
     imageSrc = property(lambda self: '%s%s' % (self.resourcesUrl , self._imageResource.storageName))
 
     thumbnailSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._thumbnailResource.storageName))
-    # r3m0: note that the above thumbnailSrc should also have some 
+    # note that the above thumbnailSrc might also eventually want some 
     # error checking for cases where self.makeThumbnail == false
+    # For now, though, it is left to the objects using makeThumbnail==false
+    # to not inappropriately reference thumbnailSrc.
 
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
