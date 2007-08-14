@@ -66,16 +66,34 @@ class Manifest(object):
         if filename == "discussionforum.xml":
             out.write(self.createForumXML().encode('utf8'))
         out.close()
+        # if user did not supply metadata title, description or creator
+        #  then use package title, description, or creator in imslrm
+        #  if they did not supply a package title, use the package name
+        lrm = self.package.dublinCore.__dict__.copy()
+        if lrm.get('title', '') == '':
+            lrm['title'] = self.package.title
+        if lrm['title'] == '':
+            lrm['title'] = self.package.name
+        if lrm.get('description', '') == '':
+            lrm['description'] = self.package.description
+        if lrm['description'] == '':
+            lrm['description'] = self.package.name
+        if lrm.get('creator', '') == '':
+            lrm['creator'] = self.package.author
         # Metadata
         templateFilename = self.config.xulDir/'templates'/'dublincore.xml'
         template = open(templateFilename, 'rb').read()
-        xml = template % self.package.dublinCore.__dict__
+        xml = template % lrm
         out = open(self.outputDir/'dublincore.xml', 'wb')
         out.write(xml.encode('utf8'))
         out.close()
+        # if they don't look like VCARD entries, coerce to fn:
+        for f in ('creator', 'publisher', 'contributors'):
+            if re.match('.*[:;]', lrm[f]) == None:
+                lrm[f] = u'FN:' + lrm[f]
         templateFilename = self.config.xulDir/'templates'/'imslrm.xml'
         template = open(templateFilename, 'rb').read()
-        xml = template % self.package.dublinCore.__dict__
+        xml = template % lrm
         out = open(self.outputDir/'imslrm.xml', 'wb')
         out.write(xml.encode('utf8'))
         out.close()
