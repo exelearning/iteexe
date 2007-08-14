@@ -30,6 +30,7 @@
    color: #909090;
    text-align: center; 
  }
+
  #version {
    font-weight: bold;
    color: #909090;
@@ -40,7 +41,7 @@
   font-size: x-small; 
   text-align: center; 
  }
- 
+
  #aboutDialog {
    padding: 0px 0px 10px 0px;
  }
