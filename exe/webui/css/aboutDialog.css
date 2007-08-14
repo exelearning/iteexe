@@ -25,6 +25,11 @@
  
   }
 
+ #eXeName {
+   font-weight: bold;
+   color: #909090;
+   text-align: center; 
+ }
  #version {
    font-weight: bold;
    color: #909090;
