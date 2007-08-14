@@ -69,7 +69,7 @@ class WebsiteExport(object):
             WebsitePage = module.WebsitePage
 
         self.pages = [ WebsitePage("index", 1, package.root) ]
-        self.generatePages(package.root, 1)
+        self.generatePages(package.root, 1, 1)
         uniquifyNames(self.pages)
 
         prevPage = None
@@ -191,17 +191,22 @@ class WebsiteExport(object):
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
 
 
-    def generatePages(self, node, depth):
+    def generatePages(self, node, depth, isZip=False):
         """
         Recursively generate pages and store in pages member variable
         for retrieving later
         """           
         for child in node.children:
-            pageName = child.titleShort.lower().replace(" ", "_")
-            pageName = re.sub(r"\W", "", pageName)
-            if not pageName:
-                pageName = "__"
-
+            if isZip:
+                pageName = child.titleShort.lower().replace(" ", "_")
+                pageName = re.sub(r"\W", "", pageName)
+                if not pageName:
+                    pageName = "__"
+            else:
+                pageName = child.titleShort
             self.pages.append(WebsitePage(pageName, depth, child))
-            self.generatePages(child, depth + 1)
+            if isZip:
+                self.generatePages(child, depth + 1, 1)
+            else:
+                self.generatePages(child, depth + 1)
 
