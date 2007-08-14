@@ -43,35 +43,21 @@ function getImageSrc(str) {
 }
 
 
-// r3m0: brand new function to call up the math-compiling callback in JS:
+// setup the math browser callback:
 function getMathBrowserHTML(id, source_form_element, font_size_element, target_form_element, type, prefix) {
         var option = prefix + "_" + type + "_browser_callback";
         var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
-        //alert("r3m0: HERE IN!!!! getMathBrowserHTML. for id= " + id + ", source_form_element = " + source_form_element + ", target_form_element = " + target_form_element+  ", option = " + option + ", cb = " + cb);
         if (cb == null)
                 return "";
 
         var html = "";
 
-	////////////////////////////////////////
-	// Note: not sure exactly how the following is working quite yet, but it seems
-	// to need the img embedded within the button, somehow due to the id I'm sure.
-	// May want to remove the icon at some point, but then will need to clear this up.
-	// Most likely also related to the <a id="[id]_link" href=javascript:openBrower2(id,..)
-	// that occurs at the end, which really does seem an odd place for it, considering that
-	// the buttons onclick does an openBrower2 already.  hmmmmmm, something is odd here.
-	// BUT, still works with the end <a href=javascript:openBrower2> commented out, at least!
-	// so, there's still some id that goes along with the img that should be applied to the 
-	// button itself in order to remove the icon image, if ever so desired. should be "easy as"!
-	////////////////////////////////////////
-	//html += '<CENTER>&nbsp;until button,<BR>r3m0 say...<BR>';
 	html += '<CENTER>&nbsp;';
 	html += '<BUTTON type=\"button\" name=\"PREVIEW\"';
-	//html += ' id="' + id + '_link"';
         html += 'onclick="javascript:openBrower3(\'' + id + '\',\'' + source_form_element + '\',\'' + font_size_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" ';
 	html += '>';
 	///////
-	// the icon image:
+	// add the icon image into the button:
         html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
         html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
         html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
@@ -79,37 +65,24 @@ function getMathBrowserHTML(id, source_form_element, font_size_element, target_f
 	html += "<BR>";
 	html += tinyMCE.getLang('lang_exemath_compile_label');
 	html += '</BUTTON><BR>';
-	////////////////////////////////////////
-
-        //html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
-	// and try to put a label with the button: 
-        //html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
-        //html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
-        //html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
 
 	html += '</CENTER>';
 	html += '</a>';
-
-        //alert("r3m0: still setting up image dialog via utils/form_utils.js's getBrowserHTML. returning html = " + html);
 
         return html;
 } // getMathBrowserHTML()
 
 
 
-// r3m0: double new function to actually DO the math-compiling callback in JS:
-// (goodies swiped from getMathBrowserHTML(), this actually performs the callback right now)
+// very similar to getMathBrowserHTML, but to actually perform the math-compiling callback right now:
 function doMathBrowser(id, source_form_element, font_size_element, target_form_element, type, prefix) {
         var option = prefix + "_" + type + "_browser_callback";
         var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
-        //alert("r3m0: HERE IN!!!! doMathBrowser. for id= " + id + ", source_form_element = " + source_form_element + ", target_form_element = " + target_form_element+  ", option = " + option + ", cb = " + cb);
         if (cb == null)
                 return "";
 
         var html = "";
 
-        //html += '<a id="' + id + '_link" href="javascript:openBrower2(\'' + id + '\',\'' + source_form_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" onmousedown="return false;">';
-	// perhaps this needs to refer to the tinyMCE object for the following openBrower2()???:
         openBrower3(id, source_form_element, font_size_element, target_form_element, type, option );
 
         return html;
@@ -127,71 +100,30 @@ function init() {
 
 	// Image list src
 	html = getImageListHTML('imagelistsrc','src','onSelectMainImage');
-        //alert('r3m0: in init(), getImageListHTML just returned html='+html);
 	if (html == "")
 		document.getElementById("imagelistsrcrow").style.display = 'none';
 	else
 		document.getElementById("imagelistsrccontainer").innerHTML = html;
 
-	// Image list oversrc
-//	html = getImageListHTML('imagelistover','onmouseoversrc');
-//	if (html == "")
-//		document.getElementById("imagelistoverrow").style.display = 'none';
-//	else
-//		document.getElementById("imagelistovercontainer").innerHTML = html;
-
-	// Image list outsrc
-//	html = getImageListHTML('imagelistout','onmouseoutsrc');
-//	if (html == "")
-//		document.getElementById("imagelistoutrow").style.display = 'none';
-//	else
-//		document.getElementById("imagelistoutcontainer").innerHTML = html;
 
 	// Src browser
-	//html = getBrowserHTML('srcbrowser','src','image','advimage');
-	//html = getMathBrowserHTML('srcbrowser', 'title', 'src','image','exemath');
 	html = getMathBrowserHTML('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
 	document.getElementById("srcbrowsercontainer").innerHTML = html;
-
-	// Over browser
-//	html = getBrowserHTML('oversrcbrowser','onmouseoversrc','image','advimage');
-//	document.getElementById("onmouseoversrccontainer").innerHTML = html;
-
-	// Out browser
-//	html = getBrowserHTML('outsrcbrowser','onmouseoutsrc','image','advimage');
-//	document.getElementById("onmouseoutsrccontainer").innerHTML = html;
-
-	// Longdesc browser
-//	html = getBrowserHTML('longdescbrowser','longdesc','file','advimage');
-//	document.getElementById("longdesccontainer").innerHTML = html;
 
 	// Resize some elements
 	if (isVisible('srcbrowser'))
 		document.getElementById('src').style.width = '260px';
 
-//	if (isVisible('oversrcbrowser'))
-//		document.getElementById('onmouseoversrc').style.width = '260px';
-
-//	if (isVisible('outsrcbrowser'))
-//		document.getElementById('onmouseoutsrc').style.width = '260px';
-
-//	if (isVisible('longdescbrowser'))
-//		document.getElementById('longdesc').style.width = '180px';
-
 	// Check action
 	if (elm != null && elm.nodeName == "IMG")
 		action = "update"; 
-	//alert('r3m0: start of init(), and action now = '+action);
 
 	formObj.insert.value = tinyMCE.getLang('lang_' + action, 'Insert', true); 
 
 	if (action == "update") {
 		var src = tinyMCE.getAttrib(elm, 'src');
-//		var onmouseoversrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseover')));
-//		var onmouseoutsrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseout')));
 
 		src = convertURL(src, elm, true);
-	        //alert('r3m0: in init(), after convertURL, src= '+src);
 
 		// Use mce_src if found
 		var mceRealSrc = tinyMCE.getAttrib(elm, 'mce_src');
@@ -201,13 +133,6 @@ function init() {
 			if (tinyMCE.getParam('convert_urls'))
 				src = convertURL(src, elm, true);
 		}
-		//alert('r3m0: in init(), after mceRealSrc, src= '+src);
-
-//		if (onmouseoversrc != "" && tinyMCE.getParam('convert_urls'))
-//			onmouseoversrc = convertURL(onmouseoversrc, elm, true);
-
-//		if (onmouseoutsrc != "" && tinyMCE.getParam('convert_urls'))
-//			onmouseoutsrc = convertURL(onmouseoutsrc, elm, true);
 
 		// Setup form data
 		var style = tinyMCE.parseStyle(tinyMCE.getAttrib(elm, "style"));
@@ -215,8 +140,6 @@ function init() {
 		// Store away old size
 		orgImageWidth = trimSize(getStyle(elm, 'width'))
 		orgImageHeight = trimSize(getStyle(elm, 'height'));
-
-		//alert('r3m0: in init(), before formObjs...');
 
 		formObj.src.value    = src;
 		formObj.alt.value    = tinyMCE.getAttrib(elm, 'alt');
@@ -226,20 +149,15 @@ function init() {
 
 
 		formObj.title.value  = tinyMCE.getAttrib(elm, 'title');
-		//alert('r3m0: init called with alt='+formObj.alt.value+', and title='+formObj.title.value);
 
 		formObj.border.value = trimSize(getStyle(elm, 'border', 'borderWidth'));
 		formObj.vspace.value = tinyMCE.getAttrib(elm, 'vspace');
 		formObj.hspace.value = tinyMCE.getAttrib(elm, 'hspace');
 		formObj.width.value  = orgImageWidth;
 		formObj.height.value = orgImageHeight;
-//		formObj.onmouseoversrc.value = onmouseoversrc;
-//		formObj.onmouseoutsrc.value  = onmouseoutsrc;
 		formObj.id.value  = tinyMCE.getAttrib(elm, 'id');
 		formObj.dir.value  = tinyMCE.getAttrib(elm, 'dir');
 		formObj.lang.value  = tinyMCE.getAttrib(elm, 'lang');
-//		formObj.longdesc.value  = tinyMCE.getAttrib(elm, 'longdesc');
-//		formObj.usemap.value  = tinyMCE.getAttrib(elm, 'usemap');
 		formObj.style.value  = tinyMCE.serializeStyle(style);
 
 
@@ -253,13 +171,9 @@ function init() {
 
 		selectByValue(formObj, 'classlist', tinyMCE.getAttrib(elm, 'class'));
 		selectByValue(formObj, 'imagelistsrc', src);
-//		selectByValue(formObj, 'imagelistover', onmouseoversrc);
-//		selectByValue(formObj, 'imagelistout', onmouseoutsrc);
 
 		updateStyle();
-		//alert('r3m0: in init(),  just before showPreviewImage with src='+src);
 		showPreviewImage(src, true);
-		//alert('r3m0: in init(),  just after showPreviewImage with src='+src);
 		changeAppearance();
 
 		window.focus();
@@ -270,11 +184,6 @@ function init() {
 	if (tinyMCE.getParam("advimage_constrain_proportions", true))
 		formObj.constrain.checked = true;
 
-	// Check swap image if valid data
-//	if (formObj.onmouseoversrc.value != "" || formObj.onmouseoutsrc.value != "")
-//		setSwapImageDisabled(false);
-//	else
-//		setSwapImageDisabled(true);
 }
 
 function setSwapImageDisabled(state) {
@@ -365,51 +274,30 @@ function makeAttrib(attrib, value) {
 function insertAction() {
 	var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
 
-        //alert('r3m0: testing new call to do one final math-image generate before the insert.');
-	// MAY want to also set a flag if the latex_source has changed, using an onChange() on it,
-	// to see if this is even necessary, but begin for forcing it:
+        // force a final math-image generate before the insert, in case any LaTeX has changed:
 	doMathBrowser('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
-        //alert('r3m0: AFTER new call to do one final math-image generate; continuing with the insert.');
 
 
 	var elm = inst.getFocusElement();
 	var formObj = document.forms[0];
 	var src = formObj.src.value;
         var font_size = formObj.math_font_size.value;
-//	var onmouseoversrc = formObj.onmouseoversrc.value;
-//	var onmouseoutsrc = formObj.onmouseoutsrc.value;
 
 	if (!AutoValidator.validate(formObj)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
 		return false;
 	}
 
-//	if (onmouseoversrc && onmouseoversrc != "")
-//		onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
-
-//	if (onmouseoutsrc && onmouseoutsrc != "")
-//		onmouseoutsrc = "this.src='" + convertURL(onmouseoutsrc, tinyMCE.imgElement) + "';";
-
 	if (elm != null && elm.nodeName == "IMG") {
 		setAttrib(elm, 'src', convertURL(src, tinyMCE.imgElement));
 		setAttrib(elm, 'mce_src', src);
 
-		// r3m0: trying to force the exe_math_latex attribute:
-		//setAttrib(elm, 'exe_math_latex', 'bogus1=UpdatedExistingMathImage');
-                // UPDATE: this IS used in updating an existing image!!!!!
-		// TRY THIS FIRST: but beware of generating NEW images - may need to update it somehow???
 		setAttrib(elm, 'exe_math_latex', src+'.tex');
-		// the above looks great for first time, new images!
-		// the only issue being that the .gifs are stored as "../previews/",
-		// so, making that match here:
-		//setAttrib(elm, 'exe_math_latex', '..'+src+'.tex');
-		//////////////////////////////////
-		// Okay, here's the deal :-)
 		// This is the UPDATE page, so typically images will come in at source = "/resources/..."
 		// BUT, it's possible for the image to be freshly generated again, in which
 		// case it will come in with source = "/previews/...",
 		// but remember that this (and advimage itself, from which this came),
-		// has the "feature" somewhere that source = "/previews" will be saved out somewhere
+		// has the "feature" somehow that source = "/previews" will be saved out somewhere
 		// as source = "../previews", AND that this "feature" is actually used in eXe to
 		// distinguish between images and media (which properly keeps "/previews").
 		// So, while the INSERT mode, below, always forces the "../previews" for new images,
@@ -422,10 +310,7 @@ function insertAction() {
 		setAttrib(elm, 'exe_math_size', font_size);
 		setAttrib(elm, 'alt');
 
-		// r3m0: trying to maintain the title:
 	        var keep_title = formObj.title.value;
-		//alert('r3m0: insertAction() called, and setting title to:'+formObj.title.value);
-		//setAttrib(elm, 'title');
 		setAttrib(elm, 'title', keep_title);
 
 		setAttrib(elm, 'border');
@@ -433,8 +318,6 @@ function insertAction() {
 		setAttrib(elm, 'hspace');
 		setAttrib(elm, 'width');
 		setAttrib(elm, 'height');
-//		setAttrib(elm, 'onmouseover', onmouseoversrc);
-//		setAttrib(elm, 'onmouseout', onmouseoutsrc);
 		setAttrib(elm, 'id');
 		setAttrib(elm, 'dir');
 		setAttrib(elm, 'lang');
@@ -443,8 +326,6 @@ function insertAction() {
 		setAttrib(elm, 'style');
 		setAttrib(elm, 'class', getSelectValue(formObj, 'classlist'));
 		setAttrib(elm, 'align', getSelectValue(formObj, 'align'));
-
-		//tinyMCEPopup.execCommand("mceRepaint");
 
 		// Repaint if dimensions changed
 		if (formObj.width.value != orgImageWidth || formObj.height.value != orgImageHeight)
@@ -459,21 +340,13 @@ function insertAction() {
 		html += makeAttrib('src', convertURL(src, tinyMCE.imgElement));
 		html += makeAttrib('mce_src', src);
 
-		// r3m0: trying to force the exe_math_latex attribute:
-		// html += makeAttrib('exe_math_latex', 'bogus2=NewMathImage');
-		// try to maintain the source name, if possible:
-		//html += makeAttrib('exe_math_latex', src+'.tex');
-		// the above looks great for first time, new images!
-		// the only issue being that the .gifs are stored as "../previews/",
+		// The corresponding generated math .gifs are stored as "../previews/",
 		// so, making that match here:
 		html += makeAttrib('exe_math_latex', '..'+src+'.tex');
-		// BUT: beware of how this might work (or not) with the images once resourcified,
-		// for those ARE properly shown as being stored in "/resources/".
-		// MIGHT need to either make this smarter here, or back in ProcessPreviewedImages.
-		// Ahhhhhhh, maybe that one will just be done in the UPDATE part, yah?
-		// Leave this to ProcessPreviewedImages to take into account, and for /previews only!
+		// this INSERT mode, therefore, always forces the "../previews" for new images.
+                // See the above UPDATE mode comments for a bit more explanation.
+		// Leave this to our ProcessPreviewedImages to take into account, and for /previews only!
                 // that way, they'll also match when a math-image is Updated, showing it as ../previews.
-                // for INSERT: this IS used in creating a new image!!!!!
 
 		html += makeAttrib('exe_math_size', font_size);
 
@@ -484,8 +357,6 @@ function insertAction() {
 		html += makeAttrib('hspace');
 		html += makeAttrib('width');
 		html += makeAttrib('height');
-//		html += makeAttrib('onmouseover', onmouseoversrc);
-//		html += makeAttrib('onmouseout', onmouseoutsrc);
 		html += makeAttrib('id');
 		html += makeAttrib('dir');
 		html += makeAttrib('lang');
@@ -514,9 +385,6 @@ function changeAppearance() {
 	if (img) {
 		img.align = formObj.align.value;
 
-		// r3m0: trying to maintain the title:
-		//alert('r3m0: changeAppearance called, and setting title to:'+formObj.title.value);
-		// images are loading with title=undefined!
 		img.title = formObj.title.value;
 
 		img.border = formObj.border.value;
@@ -527,8 +395,6 @@ function changeAppearance() {
 
 function changeMouseMove() {
 	var formObj = document.forms[0];
-
-//	setSwapImageDisabled(!formObj.onmousemovecheck.checked);
 }
 
 function updateStyle() {
@@ -614,41 +480,27 @@ function onSelectMainImage(target_form_element, name, value) {
 	formObj.alt.value = name;
 	formObj.title.value = name;
 
-	// r3m0: trying to force the exe_math_latex attribute:
-	//setAttrib(elm, 'exe_math_latex', 'bogus1');
-	formObj.exe_math_latex.value    = 'bogus4';
-
 	resetImageData();
 	showPreviewImage(formObj.elements[target_form_element].value, false);
 }
 
 function showPreviewImage(src, start) {
 	var formObj = document.forms[0]; 
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step A, src='+src+',start='+start);
-
 
 	selectByValue(document.forms[0], 'imagelistsrc', src);
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step A2, src now='+src);
 
 	var elm = document.getElementById('prev');
 	var src = src == "" ? src : tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'], src);
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step B, elm='+elm+', src='+src);
 
 	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
 		resetImageData();
 
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step C');
-
 	if (src == "")
 		elm.innerHTML = "";
 	else {
-		//elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
-		// r3m0: add the src to the exemath previews, 
-		// such that updateImageData() can load its .tex source as well:
 		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start +', \'' + src + '\');" onerror="resetImageData();" />'
 	}
 
-        //alert('r3m0: called showPreviewImage() in exemaths functions.js!!! at step D');
 }
 
 function updateImageData(start, src) {
@@ -664,45 +516,16 @@ function updateImageData(start, src) {
 
 	updateStyle();
 
-	//////////////////////////////////////
-	// with hardcoded example for now, expecting "/previews/example_math.tex"
-	// NOTE: for some reason the alerts seem to cause problems during this stage of the image's load.
 	if (src != "") {
 	   // this is an exemath image to preview, meaning that it should have its .tex at: 
-	   // 	/previews/eXe_LaTeX_math_#.gif.tex
-	   //var input_filename = "/previews/example_math.tex"
+	   // 	resources/eXe_LaTeX_math_#.gif.tex or  ../previews/eXe_LaTeX_math_#.gif.tex
+           // request the contents of that file, to update our LaTeX source field:
+
 	   var input_filename = src+".tex" 
-	   //alert('r3m0: testing to load in the corresponding data file from:' + input_filename); 
 	   objXml = new XMLHttpRequest();
-
-	   //alert('r3m0: after xmlhttprequest.');
 	   objXml.open("GET",input_filename,false);
-	   //alert('r3m0: after open with a GET');
 	   objXml.send(null);
-	   //alert('r3m0: after send');
-	   //alert(objXml.responseText);
 
-// NEXT UP in this prototype:
-// See how to get the input_filename from the image element's "exemath_..." attribute,
-// which SHOULD have already been loaded by this point, but could be in another instance
-// of this Javascript code?  hmmmmmm....
-// Assuming that we CAN get access to this,
-// a) if the attribute is NOT found (as might be the case for a brand-new image),
-//    then just break out of the following, no worries.
-// b) UNLESS.... what about the case where a math image is called to update?
-//	the first time it loads will be fine, cuz it'll use that attribute (if able to find :-)),
-//	BUT, what if future calls to Generate Math Image result in the new images,
-//	but leave the old attribute lying around in memory?  it would keep reverting back to the
-//	old LaTeX source, even though the image will have been properly updated.
-//	Coder beware :-)
-//	If this turns out to be  a problem, can we ensure that either
-//	- the system updates its own exemath attribute first,
-//	- or that we force that attribute in the image itself?  hmmm, that logic's not right.
-//	MIGHT need to make assumptions about the file name being the same as the imagename + .tex ???
-// and to do this, might be as easy as simply adding the 'src' value to the:
-// 		onload="updateImageData(' + start + ')
-// call that's set to the image in: showPreviewImage(src, start)
-          
 	   var found_source = 1;
 	   if (objXml.responseText == "" || (objXml.responseText.substr(0,"<html>".length) == "<html>" && objXml.responseText.indexOf("404 - No Such Resource") >= 0 && objXml.responseText.indexOf("File not found") >= 0)) {
 	       // then we can be pretty darned sure that it wasn't found :-)
@@ -710,36 +533,17 @@ function updateImageData(start, src) {
 	   }
 
 	   if (found_source) {
-	      //alert('r3m0: found source LaTeX = ' + objXml.responseText);
 	      latex_source_elem = document.getElementById('latex_source');
 	      latex_source_elem.value = objXml.responseText;
 	   }
 	   else {
-	      // OR, have the above 
-	      // (a) see if the return text starts with <html>, 
-	      //	unless it actually starts with the "http://127.0.0.1:<port#>"
-	      //	which it shouldn't.
-	      // and
-	      // (b) also check 404 or for 'File not found.' in the embedded HTML
-	      // <html>
-	      // <head><title>404 - No Such Resource</title></head>
-	      // <body><h1>No Such Resource</h1>
-	      // <p>File not found.</p>
-	      // </body></html>
-	      //alert('r3m0: no or empty source math found in: ' + input_filename +  ' .  returned was: ' + objXml.responseText);
 	      alert('Warning: no source math found in: ' + input_filename);
-	      // can we log a warning somewhere?  at least a better alert?  
-	      // or just quietly don't have it there (to avoid translation issues)?
 	   }
 	}
-
-
-	// Q: should objXml then be deleted once complete? we don't want no RAM-leaks, eh!
 }
 
 function resetImageData() {
 	var formObj = document.forms[0];
-        //alert('r3m0: called resetImageData()!!!! previously, formObj width='+formObj.width.value+', and height='+formObj.height.value);
 	formObj.width.value = formObj.height.value = "";	
 }
 
@@ -753,10 +557,8 @@ function getSelectValue(form_obj, field_name) {
 }
 
 function getImageListHTML(elm_id, target_form_element, onchange_func) {
-        //alert('r3m0: called getImageList()');
 	if (typeof(tinyMCEImageList) == "undefined" || tinyMCEImageList.length == 0)
 		return "";
-        //alert('r3m0: and still in getImageList()');
 
 	var html = "";
 
@@ -775,15 +577,13 @@ function getImageListHTML(elm_id, target_form_element, onchange_func) {
 	html += '</select>';
 
 	return html;
-
-	// tinyMCE.debug('-- image list start --', html, '-- image list end --');
 }
 
 //////////////////////////////////////
 // insertAtCursor() and insertSymbol()
-// both swiped straight from common.js:
+// both swiped straight from common.js,
+// for the old maths idevice:
 
-//insertAtCursor(document.formName.fieldName, ?~Qthis value?~R);
 function insertAtCursor(myField, myValue, num) {
     //MOZILLA/NETSCAPE support
 
@@ -801,7 +601,6 @@ function insertAtCursor(myField, myValue, num) {
     myField.focus();
 }
 
-//used by maths idevice
 function insertSymbol(id, string, num){
     var ele = document.getElementById(id);
     insertAtCursor(ele, string, num)
