@@ -757,16 +757,20 @@ class FieldWithResources(Field):
         # first, clear out any empty hrefs:
         #   <a href="/">
         # These should be stopped in the plugin itself, but until then:
-        empty_image_str = "<a href=\"/\">"
-        if new_content.find(empty_image_str)  >= 0: 
+        # (and yes, a regexp would be better here! == next up.)
+        empty_image_str1 = "<a href=\"/\">"
+        empty_image_str2 = "<a href=\"../\">"
+        if new_content.find(empty_image_str1) >= 0 \
+        or new_content.find(empty_image_str2) >= 0: 
             #new_content = new_content.replace(empty_image_str, "");
             # rather than just pulling out this first tag, though,
             # (and searching for, or leaving the following </a>),
-            # howzabout pointing it OUR home page :-)
-            default_href = "<a href=\"http://www.exelearning.org\">"
-            new_content = new_content.replace(empty_image_str, default_href);
-            log.warn("Empty href tag(s) pointed to eXe homepage");
-
+            # howzabout pointing it a nonexistant resource, which
+            # will also utilize their default web browser:
+            default_href = "<a href=\"resources/.missingURL\">"
+            new_content = new_content.replace(empty_image_str1, default_href);
+            new_content = new_content.replace(empty_image_str2, default_href);
+            log.warn("Empty href tag(s) pointed to resources/.missingURL");
 
         # By this point, tinyMCE's javascript file browser handler:
         #         common.js's: chooseImage_viaTinyMCE() 
@@ -931,8 +935,9 @@ class FieldWithResources(Field):
                    #filename_warning = "src=\"WARNING_FILE="+file_name_str \
                    #        +"=DOES_NOT_EXIST"
                    # just like for empty hrefs,
-                   # just point the errors to exelearning.org :-)
-                   filename_warning = "href=\"http://www.exelearning.org\">"
+                   # howzabout pointing it a nonexistant resource, which
+                   # will also utilize their default web browser:
+                   filename_warning = "href=\"resources/.missingURL"
                    new_content = new_content.replace(file_url_str, 
                                                      filename_warning)
                    # note: while this technique IS less than ideal, 
