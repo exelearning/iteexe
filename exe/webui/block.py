@@ -241,7 +241,8 @@ class Block(Renderable):
             html += u'onmousedown="Javascript:updateCoords(event);" '
             html += u"onclick=\"Javascript:showMe('p"+self.id+"', 420, 240);\" "
             html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
-            html += u'<img alt="%s" src="/images/info.png" ' % _('Information')
+            html += u'<img alt="%s" class="info" src="/images/info.png" ' \
+                    % _('Information')
             html += u'style="align:middle;" /></a>\n'
             html += u'<div id="p%s" style="display:none;">' % self.id
             html += u'<div style="float:right;">'

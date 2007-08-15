@@ -600,7 +600,7 @@ function updateWindow() {
          <td width="33%%" align="left"><a href="javascript:next()" id="btnNext">%s</a></td>
       </tr>
       <tr>
-        <td colspan="3" align="center" width="100%%"><a href="javascript:toggleZoom()"><img width="%s" height="%s" id="the_image" src="%s" /></a></td>
+        <td colspan="3" align="center" width="100%%"><a href="javascript:toggleZoom()"><img class="gallery" width="%s" height="%s" id="the_image" src="%s" /></a></td>
       </tr>
     </table>
   </p>

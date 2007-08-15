@@ -209,7 +209,7 @@ class GalleryBlock(Block):
                         u"'%s', '%s')" % (self.id, image.id) +
                         u'">'])
                 result = [changeGalleryImage,
-                          u'          <img',
+                          u'          <img class="submit"',
                           u'           alt="%s"' % image.caption,
                           u'           style="align:center top;"',
                           u'           src="%s"/>' % image.thumbnailSrc,
@@ -222,6 +222,7 @@ class GalleryBlock(Block):
                           # Edit button
                           changeGalleryImage,
                           u'          <img alt="%s"' % _(u'Change Image'),
+                          u'           class="submit"'
                           u'           src="/images/stock-edit.png"/>'
                           u'        </a>']
                 # Move left button
@@ -230,18 +231,21 @@ class GalleryBlock(Block):
                           u'        <a title="%s"' % _(u'Move Image Left'),
                           u'           href="javascript:%s">' % submitLink('moveLeft'),
                           u'        <img alt="%s"' % _(u'Go Back'),
+                          u'         class="submit"'
                           u'         src="/images/stock-go-back.png"/>'
                           u'        </a>',
                           ]
                 else:
                     result += [
-                          u'        <img src="/images/stock-go-back-off.png"/>']
+                          u'        <img class="submit"'
+                          u'         src="/images/stock-go-back-off.png"/>']
                 # Move right button
                 if image.index < len(image.parent.images)-1:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Right'),
                           u'           href="javascript:%s">' % submitLink('moveRight'),
                           u'        <img alt="%s"' % _(u'Go Forward'),
+                          u'         class="submit"'
                           u'         src="/images/stock-go-forward.png"/>',
                           u'        </a>',
                           ]
@@ -249,12 +253,14 @@ class GalleryBlock(Block):
                     result += [
                           u'        ' + 
                           u'<img alt="%s" ' % _(u'Go Forward (Not Available)'),
+                          u' class="submit"'
                           u' src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
                           u'           href="javascript:%s">' % submitLink('delete'),
-                          u'        <img alt="%s" ' % _(u'Delete'),
+                          u'        <img class="submit" alt="%s" ' \
+                                                        % _(u'Delete'),
                           u'             src="/images/stock-delete.png"/>',
                           u'        </a>',
                           u'      </span>']
@@ -300,7 +306,7 @@ class GalleryBlock(Block):
                         u"',screenY='+((screen.height/2)-(480/2))" +
                         u');"',
                         u'           style="cursor: pointer; align:center top;">',
-                        u'          <img alt="%s"' % title,
+                        u'          <img class="gallery" alt="%s"' % title,
                         u'               src="%s"/>' % urllib.quote(image.thumbnailSrc),
                         u'        </a>',
                         u'        <div style="align:center;width=100%">',

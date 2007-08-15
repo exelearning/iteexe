@@ -27,7 +27,14 @@ a:hover {
 }
 
 img {
-    border: 0;
+    /* r3m0: this one applies to the eXe edit images as well */
+    /* border: 0; */
+}
+
+/* r3m0: */
+/* img.submit, img.movePrev, img.moveNext { */
+img.submit, img.help, img.info, img.gallery {
+	border: 0;
 }
 
 li {
