@@ -78,7 +78,7 @@ class AboutPage(RenderableResource):
         xul += u'             value="eLearning XHTML editor"/>\n'
         xul += u'      <label id="version" \n'
         xul += u'             value="eXe Version '+version.release+'"/>\n'
-        xul += u'      <label style="text-align: center;" \n'
+        xul += u'      <label id="revision" style="text-align: center;" \n'
         xul += u'             value="Revision: '+version.revision+'" />\n'
         xul += u'      <description id="copyright">'
         xul += u'Copyright 2004-2007 eXe Project,<html:br/>'
