@@ -81,7 +81,7 @@ div#nodeDecoration {
 .iDevice p, .iDevice div.block {
     padding-left: 24px;
     padding-right: 20px;
-    line-height: 16px;
+    line-height: 115%
     text-align: left;
 }
 

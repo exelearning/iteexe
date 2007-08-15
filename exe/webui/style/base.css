@@ -144,7 +144,7 @@ div.thumb div a img {
 div.thumb div div.thumbcaption {
     border: none;
     text-align: left;
-    line-height: 1.4em;
+    line-height: 1.4em; 
     padding: .3em 0 .1em 0;
 }
 div.magnify {
