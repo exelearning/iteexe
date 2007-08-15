@@ -1,3 +1,8 @@
+Next Release
+* Fix styles to use relative line height rather than absolute
+* Change export to folder to not change UTF-8 filenames
+* Update About box
+
 Version 0.99 (r3186)
 * Add splash screen for when launching eXe by double-clicking .elp
 * Add warning screen for trying to launch multiple copies of eXe
