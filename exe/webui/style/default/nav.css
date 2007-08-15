@@ -20,15 +20,12 @@ body {
 /* LEFT-HAND NAVIGATION */
 
 #navcontainer {
-   background-image:url(top_nav.jpg);
-   background-position:top left;
-   background-repeat:no-repeat;
    z-index:1000;
    width: 250px;
    height: 100%; /* the holly hack for IE! */
    float: left;
    margin-top: 0px;
-   padding-top: 88px;
+   padding-top: 60px;
    text-align:left;
    position:absolute;
    background-color:transparent;
