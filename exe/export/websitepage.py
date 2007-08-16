@@ -159,7 +159,7 @@ class WebsitePage(Page):
                     html += escape(page.node.titleShort)
                     html += "</div>\n"
                 else:
-                    html += "<div><a href=\""+page.name+".html\" "
+                    html += "<div><a href=\""+quote(page.name)+".html\" "
                     if page.node.children:
                         html += "class=\"withChild\""
                     else:
@@ -182,13 +182,13 @@ class WebsitePage(Page):
         html = "<div class=\"noprt\" align=\"right\">"
 
         if prevPage:
-            html += "<a href=\""+prevPage.name+".html\">"
+            html += "<a href=\""+quote(prevPage.name)+".html\">"
             html += "&laquo; %s</a>" % _('Previous')
 
         if nextPage:
             if prevPage:
                 html += " | "
-            html += "<a href=\""+nextPage.name+".html\">"
+            html += "<a href=\""+quote(nextPage.name)+".html\">"
             html += " %s &raquo;</a>" % _('Next')
             
         html += "</div>\n"
