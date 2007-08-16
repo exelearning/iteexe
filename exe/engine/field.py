@@ -338,6 +338,15 @@ class FieldWithResources(Field):
         images, media, etc..
         """
         #################################
+        # overall safety check:
+        # while most iDevices only call process if their action != "delete",
+        # some can still go ahead and call process even after being deleted!
+        # So, ensure that we are actually still attached in a package:
+        if not hasattr(self.idevice, 'parentNode') \
+        or self.idevice.parentNode is None: 
+            return content
+
+        #################################
         # Part 0: remove any previous math source files which are no 
         # longer in use; otherwise we get naming discrepencies in the case
         # that identical math source is used with a new previewed math image
