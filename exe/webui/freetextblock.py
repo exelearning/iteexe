@@ -50,9 +50,12 @@ class FreeTextBlock(Block):
         apply to this block
         """
         Block.process(self, request)
-        content = self.contentElement.process(request)
-        if content:
-            self.idevice.content = content
+
+        if (u"action" not in request.args or 
+            request.args[u"action"][0] != u"delete"): 
+            content = self.contentElement.process(request) 
+            if content: 
+                self.idevice.content = content
 
 
     def renderEdit(self, style):
