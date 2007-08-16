@@ -137,7 +137,10 @@ class _Resource(Persistable):
         # Remove our old file if necessary
         if oldPackage and self.checksum not in oldPackage.resources:
             if oldPath.exists():
-                oldPath.remove()
+                try: 
+                    oldPath.remove()
+                except WindowsError:
+                    pass
             else:
                 log.error("Tried to delete a resource that's already not there anymore: "
                           "filename=\"%s\" userName=\"%s\"" % (oldPath, self.userName))
@@ -205,7 +208,7 @@ class _Resource(Persistable):
                 storageName = self._fn2ascii(filename)
                 storageName = (self._package.resourceDir/storageName).unique()
                 self._storageName = str(storageName.basename())
-                oldPath.copy(self.path)
+                oldPath.copyfile(self.path)
         siblings.append(self)
 
     # Public methods
