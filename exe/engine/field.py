@@ -344,6 +344,9 @@ class FieldWithResources(Field):
         # So, ensure that we are actually still attached in a package:
         if not hasattr(self.idevice, 'parentNode') \
         or self.idevice.parentNode is None: 
+            log.debug('ProcessPreviewed called, but without a '
+                       + 'idevice.parentNode; probably from a new object '
+                       + 'that was immediately deleted; bailing.')
             return content
 
         #################################
