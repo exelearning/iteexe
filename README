@@ -27,7 +27,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 SUPPORT
 =======
 If you have any problems or have any feedback please report them at
-http://exelearning.org or email exe@exelearning.org
+https://eduforge.org/forum/forum.php?forum_id=298 or email
+exe@exelearning.org
 
 
 KNOWN BUGS
@@ -40,10 +41,11 @@ WINDOWS
 
 INSTALLATION
 ------------
-- Download exe_install_windows.exe and double click it then follow the
-  instructions. 
+- Download eXe-install-X.YY.exe, double click it to launch the installer,
+  and then follow the instructions. 
 - You will be asked what directory to install eXe in.  The default will
-  normally be fine.
+  normally be fine.  (You should always use the same directory when
+  installing a new version of eXe.)
 - The installer will create an eXe icon on the desktop and a menu-item under
   "All Programs".
 
@@ -51,8 +53,8 @@ RUNNING
 -------
 Double click on the shortcut on the desktop to launch eXe.
 
-A window with "Welcome to eXe: the eLearning XML editor" and a Firefox browser
-will start.  To close eXe you will need to exit both of these.  Remember to
+To close eXe you must use the File... Quit menu item.  Do not simply try
+to close the eXe display window with the window close button.  Remember to
 save your content before exiting.
 
 The first time you run you may get asked if you want to allow eXe

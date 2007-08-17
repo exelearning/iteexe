@@ -1,5 +1,11 @@
-Next Release
+Version 1.00 (r3219)
 * Fix styles to use relative line height rather than absolute
+* Fix splash progress bar to indicate 100%
+* Fix iDevice deletion issues including read-only resources
+* Fix display of embedded image borders
+* Fix header text display in single page export and printing
+* Make merging packages more robust
+* Make default IMS/SCORM Metadata title description from package values
 * Change export to folder to not change UTF-8 filenames
 * Update About box
 
