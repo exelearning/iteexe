@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 03:00+1200\n"
+"POT-Creation-Date: 2007-08-20 21:16+1200\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -26,9 +26,9 @@ msgstr ""
 "<p>Наприклад: Для Geogebra аплетів, виберіть geogebra, \n"
 "тоді завантажте файл .ggb який ви створили в Geogebra.</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:772
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:949
-#: exe/xului/mainpage.py:970
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:795
+#: exe/xului/mainpage.py:916 exe/xului/mainpage.py:972
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -51,8 +51,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Перемістити---"
 
-#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:681
-#: exe/xului/mainpage.py:764
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
+#: exe/xului/mainpage.py:787
 msgid ". Please use ASCII names."
 msgstr ". Будь ласка використовуйте ASCII імена."
 
@@ -122,15 +122,15 @@ msgstr ""
 "кліком і натисніть кнопку \n"
 "<strong>Сховати/Показати Слово</strong>.</p>"
 
-#: exe/engine/field.py:1513
+#: exe/engine/field.py:1790
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Якщо залишити невідміченим невелика кількість спелінгових та капітальних помилок буде прийматись. Якщо відмітити цей пункт то прийняті будуть тільки ті слова що повністю співпадають капітально і по спелінгу.</p><p><strong>Наприклад:</strong> Якщо правильна відповідь <code>Elephant</code> то і <code>elephant</code> і <code>Eliphant</code> буде прийнято як <em>\"майже правильно\"</em> бо згідно алгоритму вони відрізняються тільки на одну букву, навіть якщо \"Перевірити Регістр\" ввімкнено.</p><p>Якщо перевірка великих букв вимкнена, то варіант відповіді з <code>e</code> не буде прийнятий за помилку і <code>eliphant</code> буде прийнято також.</p><p>Якщо обидві \"Перевірити Читабельність\" і \"Перевірити Регістр\" ввімкнено, єдиним правильним варіантом відповіді буде \"Elephant\". В випадку якщо \"Перевірити Читабельність\" ввімкнено і \"Перевірити Регістр\" вимкнено, \"elephant\" буде прийнято як правильну відповідь.</p>"
 
-#: exe/engine/field.py:1534
+#: exe/engine/field.py:1811
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Якщо цю опцію відмічено, відповідь, в якій регістр букв буде неспівпадати з оригіналом, буде прийнято як неправильна.</p>"
 
-#: exe/engine/field.py:1539
+#: exe/engine/field.py:1816
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -141,7 +141,7 @@ msgstr ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 
-#: exe/engine/field.py:1788
+#: exe/engine/field.py:2065
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Виберіть символ з спеціального поля внизу або введіть LATEX вручну для того щоб створити математичні формули. Для того щоб переглянути результат використовуйте кнопку <strong>Попередній перегляд</strong>.</p>"
 
@@ -187,7 +187,7 @@ msgstr ""
 "Зворотний зв'язок використовується для того щоб повідомити \n"
 "студенту деякі додаткові інструкції.</p>"
 
-#: exe/engine/galleryidevice.py:408
+#: exe/engine/galleryidevice.py:411
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -238,7 +238,7 @@ msgstr ""
 "Підказку можна добавити, щоб допомогти \n"
 "учневі відповісти на питання."
 
-#: exe/webui/editorpane.py:260
+#: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Дії"
 
@@ -253,11 +253,11 @@ msgstr "Діяльність"
 msgid "Add Field"
 msgstr "Додати Поле"
 
-#: exe/webui/element.py:412
+#: exe/webui/element.py:422
 msgid "Add Image"
 msgstr "Додати Зображення"
 
-#: exe/webui/element.py:822
+#: exe/webui/element.py:832
 msgid "Add JPEG Image"
 msgstr "Додати JPEG Зображення"
 
@@ -298,7 +298,7 @@ msgstr "Додає інтерактивне поле зворотнього зв
 msgid "Add an mp3 file to your iDevice."
 msgstr "Додати mp3 файл до вашого iDevice."
 
-#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1631
+#: exe/webui/testquestionelement.py:113 exe/webui/element.py:1655
 msgid "Add another Option"
 msgstr "Додати іншу Опцію"
 
@@ -310,7 +310,7 @@ msgstr "Додати інше Питання"
 msgid "Add another activity"
 msgstr "Додати іншу діяльність"
 
-#: exe/webui/element.py:1911
+#: exe/webui/element.py:1940
 msgid "Add another option"
 msgstr "Додати іншу опцію"
 
@@ -349,7 +349,7 @@ msgstr ""
 "Вирівнювання надає змогу вибрати де буде знаходитись \n"
 "плеєр на екрані."
 
-#: exe/engine/field.py:1577
+#: exe/engine/field.py:1854
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -399,7 +399,7 @@ msgid ""
 "that may help or hinder the learner in the performance of the task."
 msgstr "Діяльність може бути визначена як завдання або набір завдань які учень повинен виконати. Опишіть завдання і всі питання які можуть виникати у студентів."
 
-#: exe/webui/element.py:1154
+#: exe/webui/element.py:1164
 msgid "Answsers"
 msgstr "Відповіді"
 
@@ -416,7 +416,6 @@ msgid "Article"
 msgstr "Стаття"
 
 #: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:345
-#: exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "Прикріплення"
 
@@ -433,18 +432,18 @@ msgstr "Auckland University of Technology"
 msgid "Button Caption"
 msgstr "Заголовок Кнопки"
 
-#: exe/webui/preferencespage.py:103 exe/webui/editorpane.py:268
+#: exe/webui/preferencespage.py:103 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Відміна"
 
-#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:679
-#: exe/xului/mainpage.py:764
+#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:700
+#: exe/xului/mainpage.py:787
 msgid "Cannot access directory named "
 msgstr "Неможу отримати доступ до директорії "
 
 #: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:328
 #: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:89
-#: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:528
+#: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:538
 msgid "Caption:"
 msgstr "Заголовок:"
 
@@ -461,7 +460,7 @@ msgstr "Wikipedia - Італійський"
 msgid "Change Image"
 msgstr "Змінити Зображення"
 
-#: exe/webui/element.py:1007
+#: exe/webui/element.py:1017
 msgid "Check Caps?"
 msgstr "Перевірити Регістр?"
 
@@ -513,11 +512,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Клацніть <strong>Вибрати файл</strong> та виберіть файл який ви хочете додати."
 
-#: exe/engine/field.py:1126
+#: exe/engine/field.py:1403
 msgid "Click Here"
 msgstr "Клацніть Тут"
 
-#: exe/webui/common.py:293 exe/webui/common.py:296
+#: exe/webui/common.py:293 exe/webui/common.py:297
 msgid "Click for completion instructions"
 msgstr "Клацніть для інструкцій що до завершення"
 
@@ -525,22 +524,22 @@ msgstr "Клацніть для інструкцій що до завершен�
 msgid "Click here"
 msgstr "Клацніть тут"
 
-#: exe/engine/field.py:1796
+#: exe/engine/field.py:2073
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr "Клацніть на кнопці <strong>Попередній перегляд</strong> для того щоб подивитись як ваша формула буде виглядати в формі малюнка."
 
-#: exe/engine/galleryidevice.py:421
+#: exe/engine/galleryidevice.py:424
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Клацніть на <strong>Додати зображення</strong> для того, щоб вибрати файл що містить зображення. Зображення з'явиться внизу, де ви зможете підписати його. Корисно додавати розмір файлу в підпис."
 
-#: exe/engine/galleryidevice.py:605 exe/webui/truefalseelement.py:140
-#: exe/webui/truefalseelement.py:141 exe/webui/common.py:301
-#: exe/webui/common.py:302 exe/webui/block.py:248 exe/webui/block.py:249
-#: exe/webui/element.py:1950 exe/webui/element.py:1951
-#: exe/webui/editorpane.py:357 exe/webui/editorpane.py:358
-#: exe/webui/editorpane.py:378 exe/webui/editorpane.py:379
+#: exe/engine/galleryidevice.py:608 exe/webui/truefalseelement.py:140
+#: exe/webui/truefalseelement.py:141 exe/webui/common.py:302
+#: exe/webui/common.py:303 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/element.py:1979 exe/webui/element.py:1980
+#: exe/webui/editorpane.py:358 exe/webui/editorpane.py:359
+#: exe/webui/editorpane.py:379 exe/webui/editorpane.py:380
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
@@ -554,13 +553,13 @@ msgstr "Пропущені слова"
 msgid "Cloze Activity"
 msgstr "Вправа \"Пропущені Слова\""
 
-#: exe/webui/element.py:989
+#: exe/webui/element.py:999
 msgid "Cloze Text"
 msgstr "Текст Завдання"
 
-#: exe/webui/testquestionelement.py:101 exe/webui/element.py:1528
-#: exe/webui/element.py:1617 exe/webui/element.py:1747
-#: exe/webui/element.py:1816
+#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
+#: exe/webui/element.py:1555 exe/webui/element.py:1771
+#: exe/webui/element.py:1845
 msgid "Correct"
 msgstr "Правильна"
 
@@ -568,7 +567,7 @@ msgstr "Правильна"
 msgid "Correct!"
 msgstr "Правильно!"
 
-#: exe/xului/mainpage.py:1020
+#: exe/xului/mainpage.py:1044
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Неможу завантажити файл, будь ласка відішліть файл сюди: bugs@exelearning.org"
 
@@ -589,7 +588,7 @@ msgstr ""
 #: exe/webui/editorelement.py:77 exe/webui/editorelement.py:113
 #: exe/webui/editorelement.py:155 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:247 exe/webui/editorelement.py:302
-#: exe/webui/editorelement.py:349 exe/webui/galleryblock.py:257
+#: exe/webui/editorelement.py:349 exe/webui/galleryblock.py:263
 #: exe/webui/block.py:219 exe/webui/editorpage.py:234
 #: exe/webui/editorpage.py:237 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
@@ -600,18 +599,18 @@ msgstr "Видалити"
 msgid "Delete File"
 msgstr "Видалити Файл"
 
-#: exe/webui/galleryblock.py:255
+#: exe/webui/galleryblock.py:260
 msgid "Delete Image"
 msgstr "Видалити Зображення"
 
-#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1504
-#: exe/webui/element.py:1765
+#: exe/webui/testoptionelement.py:118 exe/webui/element.py:1531
+#: exe/webui/element.py:1792
 msgid "Delete option"
 msgstr "Видалити опцію"
 
-#: exe/webui/testquestionelement.py:93 exe/webui/questionelement.py:103
-#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1604
-#: exe/webui/element.py:1896
+#: exe/webui/testquestionelement.py:95 exe/webui/questionelement.py:103
+#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1631
+#: exe/webui/element.py:1925
 msgid "Delete question"
 msgstr "Видалити питання"
 
@@ -652,7 +651,7 @@ msgstr "Опишіть детально завдання. Це допомага�
 msgid "Describe the tasks the learners should complete."
 msgstr "Опишіть завдання, яке учні повинні виконати."
 
-#: exe/engine/flashwithtextidevice.py:59 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:52 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Опис"
 
@@ -666,7 +665,7 @@ msgstr "Опис"
 msgid "Description:"
 msgstr "Опис:"
 
-#: exe/webui/element.py:438 exe/webui/element.py:844 exe/webui/element.py:1208
+#: exe/webui/element.py:448 exe/webui/element.py:854 exe/webui/element.py:1218
 msgid "Display as:"
 msgstr "Показати як:"
 
@@ -681,37 +680,37 @@ msgstr "Готово"
 msgid "Dutch Wikipedia Article"
 msgstr "Wikipedia - Датський"
 
-#: exe/webui/element.py:62
+#: exe/webui/element.py:70
 #, fuzzy, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROR Element.process called directly with %s class"
 
-#: exe/webui/element.py:71
+#: exe/webui/element.py:79
 #, fuzzy, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROR Element.renderEdit called directly with %s class"
 
-#: exe/webui/element.py:88
+#: exe/webui/element.py:96
 #, fuzzy, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR Element.renderView called directly with %s class"
 
-#: exe/webui/block.py:323
+#: exe/webui/block.py:324
 #, fuzzy
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:706 exe/xului/mainpage.py:713
-#: exe/xului/mainpage.py:716 exe/xului/mainpage.py:719
-#: exe/xului/mainpage.py:877
+#: exe/xului/mainpage.py:727 exe/xului/mainpage.py:734
+#: exe/xului/mainpage.py:737 exe/xului/mainpage.py:740
+#: exe/xului/mainpage.py:900
 msgid "EXPORT FAILED!"
 msgstr "Помилка при експортуванні!"
 
-#: exe/xului/mainpage.py:867 exe/xului/mainpage.py:881
-#: exe/xului/mainpage.py:894 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:950
-#: exe/xului/mainpage.py:956 exe/xului/mainpage.py:971
-#: exe/xului/mainpage.py:977
+#: exe/xului/mainpage.py:890 exe/xului/mainpage.py:904
+#: exe/xului/mainpage.py:917 exe/xului/mainpage.py:923
+#: exe/xului/mainpage.py:957 exe/xului/mainpage.py:973
+#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:994
+#: exe/xului/mainpage.py:1000
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -720,7 +719,7 @@ msgstr ""
 "Помилка при експортуванні!\n"
 "%s"
 
-#: exe/export/imsexport.py:330 exe/export/scormexport.py:451
+#: exe/export/imsexport.py:344 exe/export/scormexport.py:469
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -730,7 +729,7 @@ msgstr ""
 "Помилка при експортуванні!\n"
 "Останній вдалий експорт %s."
 
-#: exe/xului/mainpage.py:773 exe/xului/mainpage.py:782
+#: exe/xului/mainpage.py:796 exe/xului/mainpage.py:805
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -739,17 +738,17 @@ msgstr ""
 "Помилка!\n"
 "%s"
 
-#: exe/webui/block.py:332 exe/webui/editorpane.py:265
+#: exe/webui/block.py:333 exe/webui/editorpane.py:266
 #: exe/webui/editorpage.py:268
 msgid "Edit"
 msgstr "Редагувати"
 
-#: twisted/persisted/styles.py:299
+#: twisted/persisted/styles.py:365
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
 #: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:100 exe/webui/editorpane.py:329
+#: exe/webui/rssblock.py:100 exe/webui/editorpane.py:330
 msgid "Emphasis"
 msgstr "Акцент"
 
@@ -789,7 +788,7 @@ msgid ""
 "to reflect upon."
 msgstr "Введіть питання для учнів, щоб так би мовити \"кинути тінь\"."
 
-#: exe/engine/galleryidevice.py:420
+#: exe/engine/galleryidevice.py:423
 msgid "Enter a title for the gallery"
 msgstr "Введіть заголовок галереї"
 
@@ -858,7 +857,7 @@ msgstr ""
 "Введіть доступний варіант відповіді(опцію). \n"
 "Ви можете добавляти варіанти відповіді клацнувши на кнопку <strong>Додати іншу опцію</strong> та видаляти зайві варіанти клацнувши на червоний \"Х\" праворуч ві відповідної опції."
 
-#: exe/engine/field.py:1989
+#: exe/engine/field.py:2266
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -874,7 +873,7 @@ msgid ""
 "department."
 msgstr "Введіть деталі читання, зокрема довідкові деталі. "
 
-#: exe/engine/flashwithtextidevice.py:67 exe/engine/flashwithtextidevice.py:95
+#: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:88
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -906,7 +905,7 @@ msgstr ""
 "Запитання має бути зрозумілим і однозначним. Уникайте \n"
 "негативних передумов, так як це може запутати студента."
 
-#: exe/engine/field.py:1981
+#: exe/engine/field.py:2258
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -922,7 +921,7 @@ msgid ""
 "                                                associate with the image."
 msgstr "Введіть текст який ви хочете прикріпити до зображення."
 
-#: exe/engine/flashwithtextidevice.py:60
+#: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
@@ -951,9 +950,9 @@ msgstr "Приклад Прикладу"
 msgid "Export iDevice"
 msgstr "Експортувати iDevice"
 
-#: exe/xului/mainpage.py:883 exe/xului/mainpage.py:902
-#: exe/xului/mainpage.py:936 exe/xului/mainpage.py:958
-#: exe/xului/mainpage.py:979
+#: exe/xului/mainpage.py:906 exe/xului/mainpage.py:925
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:981
+#: exe/xului/mainpage.py:1002
 #, python-format
 msgid "Exported to %s"
 msgstr "Експортовано до %s"
@@ -971,12 +970,12 @@ msgid "False"
 msgstr "Неправильно"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
-#: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
+#: exe/engine/genericidevice.py:191 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1868
-#: exe/engine/field.py:1880 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2145
+#: exe/engine/field.py:2157 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
-#: exe/webui/common.py:206 exe/webui/element.py:1766
+#: exe/webui/common.py:206 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Зворотний зв'язок"
@@ -990,22 +989,22 @@ msgstr ""
 "це поле не буде заповнено."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1998 exe/engine/field.py:2023
+#: exe/engine/field.py:2275 exe/engine/field.py:2300
 msgid "Feedback:"
 msgstr "Зворотний зв'язок:"
 
-#: exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1040
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Файл %s не існує або його неможливо прочитати."
 
-#: exe/xului/mainpage.py:812 exe/xului/mainpage.py:854
-#: exe/xului/mainpage.py:921
+#: exe/xului/mainpage.py:835 exe/xului/mainpage.py:877
+#: exe/xului/mainpage.py:944
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:724
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:734
 msgid "Filename:"
 msgstr "Назва файлу:"
 
@@ -1013,12 +1012,12 @@ msgstr "Назва файлу:"
 msgid "Flash Movie"
 msgstr "Флеш Ролик"
 
-#: exe/engine/flashwithtextidevice.py:50 exe/engine/flashwithtextidevice.py:57
+#: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
 msgstr "Флеш з Текстом"
 
-#: exe/xului/mainpage.py:818 exe/xului/mainpage.py:860
-#: exe/xului/mainpage.py:927
+#: exe/xului/mainpage.py:841 exe/xului/mainpage.py:883
+#: exe/xului/mainpage.py:950
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Директорія з назвою %s вже існує. Будь ласка виберіть іншу назву або видаліть існуючу директорію і спробуйте знову."
@@ -1050,19 +1049,19 @@ msgstr "Geogebra"
 msgid "German Wikipedia Article"
 msgstr "Wikipedia - Німецький"
 
-#: exe/webui/element.py:1092
+#: exe/webui/element.py:1102
 msgid "Get score"
 msgstr "Отримати відмітку"
 
-#: exe/webui/galleryblock.py:232
+#: exe/webui/galleryblock.py:233
 msgid "Go Back"
 msgstr "Назад"
 
-#: exe/webui/galleryblock.py:244
+#: exe/webui/galleryblock.py:247
 msgid "Go Forward"
 msgstr "Вперед"
 
-#: exe/webui/galleryblock.py:251
+#: exe/webui/galleryblock.py:255
 msgid "Go Forward (Not Available)"
 msgstr "Вперед (Недоступно)"
 
@@ -1078,14 +1077,14 @@ msgstr "Сховати"
 msgid "Hide Feedback"
 msgstr "Сховати Зворотний Зв'язок"
 
-#: exe/webui/element.py:997
+#: exe/webui/element.py:1007
 msgid "Hide/Show Word"
 msgstr "Сховати/Показати Слово"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1906 exe/engine/field.py:1926
+#: exe/engine/field.py:2183 exe/engine/field.py:2203
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:1954
+#: exe/webui/element.py:1983
 msgid "Hint"
 msgstr "Натяк"
 
@@ -1094,8 +1093,8 @@ msgid "Home"
 msgstr "Домашня сторінка"
 
 #: exe/webui/multichoiceblock.py:145 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:331
-#: exe/webui/block.py:287
+#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:337
+#: exe/webui/block.py:288
 msgid "IDevice Icon"
 msgstr "IDevice іконка"
 
@@ -1107,7 +1106,7 @@ msgstr "IDevice іконка питання"
 msgid "IDevice broken"
 msgstr "IDevice пошкоджено"
 
-#: exe/webui/editorpane.py:360
+#: exe/webui/editorpane.py:361
 msgid "Icons"
 msgstr "Іконки"
 
@@ -1115,7 +1114,7 @@ msgstr "Іконки"
 msgid "Image"
 msgstr "Зображення"
 
-#: exe/engine/galleryidevice.py:406
+#: exe/engine/galleryidevice.py:409
 msgid "Image Gallery"
 msgstr "Галерея Зображень"
 
@@ -1123,7 +1122,7 @@ msgstr "Галерея Зображень"
 msgid "Image Magnifier"
 msgstr "Магічне Зображення"
 
-#: exe/xului/mainpage.py:532
+#: exe/xului/mainpage.py:543
 #, fuzzy, python-format
 msgid "Image file %s is not found, cannot preview it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
@@ -1137,7 +1136,7 @@ msgstr "Зображення з Текстом"
 msgid "Import iDevice"
 msgstr "Імпортувати iDevices"
 
-#: exe/webui/element.py:1530
+#: exe/webui/element.py:1557
 #, fuzzy
 msgid "Incorrect"
 msgstr "Неправильно!"
@@ -1146,11 +1145,11 @@ msgstr "Неправильно!"
 msgid "Incorrect!"
 msgstr "Неправильно!"
 
-#: exe/webui/editorpane.py:374
+#: exe/webui/editorpane.py:375
 msgid "Info"
 msgstr "Інфо"
 
-#: exe/webui/block.py:244
+#: exe/webui/block.py:245
 msgid "Information"
 msgstr "Інформація"
 
@@ -1158,7 +1157,7 @@ msgstr "Інформація"
 msgid "Initial Zoom"
 msgstr "Первинний розмір:"
 
-#: exe/webui/element.py:1012
+#: exe/webui/element.py:1022
 msgid "Instant Marking?"
 msgstr "Миттєве позначення?"
 
@@ -1218,7 +1217,7 @@ msgstr "MP3"
 msgid "Magyar Wikipedia Article"
 msgstr "Wikipedia - Італійський"
 
-#: exe/engine/mathidevice.py:43 exe/engine/mathidevice.py:56
+#: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
 msgstr "Математичні формули"
 
@@ -1230,7 +1229,7 @@ msgstr "Максимальне збільшення"
 msgid "Medium"
 msgstr "Середній"
 
-#: exe/xului/mainpage.py:648
+#: exe/xului/mainpage.py:669
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1241,11 +1240,11 @@ msgstr ""
 msgid "Move Down"
 msgstr "Посунути Вниз"
 
-#: exe/webui/galleryblock.py:230
+#: exe/webui/galleryblock.py:231
 msgid "Move Image Left"
 msgstr "Посунути зображення ліворуч"
 
-#: exe/webui/galleryblock.py:242
+#: exe/webui/galleryblock.py:245
 msgid "Move Image Right"
 msgstr "Посунути зображення праворуч"
 
@@ -1261,7 +1260,7 @@ msgstr "Мульти-можливість"
 msgid "Multi-select"
 msgstr "Мульти-вибір"
 
-#: exe/webui/editorpane.py:322
+#: exe/webui/editorpane.py:323
 msgid "Name"
 msgstr "Ім'я"
 
@@ -1269,29 +1268,29 @@ msgstr "Ім'я"
 msgid "New iDevice"
 msgstr "Новий iDevice"
 
-#: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:321 exe/export/websitepage.py:192
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Далі"
 
-#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:283
+#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:289
 msgid "No Images Loaded"
 msgstr "Немає завантажених зображень"
 
-#: exe/engine/galleryidevice.py:136
+#: exe/engine/galleryidevice.py:137
 msgid "No Thumbnail Available. Could not load original image."
 msgstr "Немає доступних Thumbnail. Неможливо завантажити оригінальне зображення."
 
-#: exe/engine/galleryidevice.py:170
+#: exe/engine/galleryidevice.py:171
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Немає доступних Thumbnail. Неможливо скоротити зображення."
 
-#: exe/engine/galleryidevice.py:144
+#: exe/engine/galleryidevice.py:145
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Немає доступних Thumbnail. Неможливо змінити оригінальне зображення."
 
 #: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:97
-#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:332
+#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:333
 msgid "No emphasis"
 msgstr "Нема акценту"
 
@@ -1320,7 +1319,7 @@ msgid ""
 "learning tasks."
 msgstr "Завдання описує очікувані результати вивчення і повинне визначити, що учні зможуть зробити, коли вони закінчать цей навчальний курс."
 
-#: exe/engine/field.py:1683 exe/engine/field.py:1747
+#: exe/engine/field.py:1960 exe/engine/field.py:2024
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1328,7 +1327,7 @@ msgstr ""
 "Можна долучати лише .flv (Flash Video Files) для \n"
 "цього iDevice."
 
-#: exe/engine/field.py:1619 exe/engine/field.py:1663
+#: exe/engine/field.py:1896 exe/engine/field.py:1940
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1337,14 +1336,15 @@ msgstr ""
 "цього iDevice."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:1864 exe/engine/field.py:1877
-#: exe/webui/testquestionelement.py:103 exe/webui/element.py:1619
-#: exe/webui/element.py:1742 exe/webui/element.py:1747
+#: exe/engine/field.py:2141 exe/engine/field.py:2154
+#: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
+#: exe/webui/element.py:1505 exe/webui/element.py:1510
+#: exe/webui/element.py:1766 exe/webui/element.py:1771
 msgid "Option"
 msgstr "Опція"
 
-#: exe/engine/field.py:1948 exe/engine/field.py:1958
-#: exe/webui/testquestionelement.py:99 exe/webui/element.py:1615
+#: exe/engine/field.py:2225 exe/engine/field.py:2235
+#: exe/webui/testquestionelement.py:101 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Опції"
 
@@ -1360,21 +1360,25 @@ msgstr "Структура"
 msgid "Own site"
 msgstr "Власний сайт"
 
-#: exe/xului/mainpage.py:784
+#: exe/xului/mainpage.py:807
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Пакет розпаковано в: %s"
+
+#: twisted/persisted/styles.py:317
+msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
+msgstr ""
 
 #: exe/xului/mainpage.py:315
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Пакет збережено в: %s"
 
-#: exe/webui/block.py:240 exe/webui/editorpane.py:370
+#: exe/webui/block.py:240 exe/webui/editorpane.py:371
 msgid "Pedagogical Help"
 msgstr "Педагогічна Допомога"
 
-#: exe/webui/editorpane.py:326
+#: exe/webui/editorpane.py:327
 msgid "Pedagogical Tip"
 msgstr "Педагогічна Порада"
 
@@ -1386,11 +1390,11 @@ msgstr "Будь ласка введіть назву для iDevice."
 msgid "Please enter<br />an idevice name."
 msgstr "Будь ласка введіть <br />назву для iDevice."
 
-#: exe/webui/element.py:1270
+#: exe/webui/element.py:1280
 msgid "Please select a .flv file."
 msgstr "Будь ласка виберіть .flv файл."
 
-#: exe/webui/element.py:793
+#: exe/webui/element.py:803
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "Будь ласка виберіть .flv файл."
@@ -1408,6 +1412,10 @@ msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
 "menu to close eXe."
+msgstr ""
+
+#: exe/application.py:243
+msgid "Please wait until loading finishes"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:106
@@ -1437,22 +1445,22 @@ msgstr ""
 "<li>        Учні повинні манти 4 рівень Англійської мови </li>\n"
 "<li>        Учні повинні вміти використовувати прилади </li></ul>\n"
 
-#: exe/webui/element.py:1413 exe/webui/editorpane.py:263
+#: exe/webui/element.py:1423 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "Попередній перегляд"
 
-#: exe/xului/mainpage.py:520 exe/xului/mainpage.py:606
+#: exe/xului/mainpage.py:523 exe/xului/mainpage.py:627
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/engine/galleryidevice.py:605 exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:320 exe/export/websitepage.py:186
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Назад"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1321
-#: exe/engine/field.py:1368
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1598
+#: exe/engine/field.py:1645
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1472,7 +1480,7 @@ msgid ""
 "you have just inserted."
 msgstr "Введіть заголовок для флеш ролику."
 
-#: exe/engine/flashwithtextidevice.py:65 exe/engine/flashwithtextidevice.py:93
+#: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:86
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1506,7 +1514,7 @@ msgid ""
 "situation."
 msgstr "Забезпечує пов'язаний зворотний зв'язок."
 
-#: exe/webui/block.py:254
+#: exe/webui/block.py:255
 msgid "Purpose"
 msgstr "Інформація"
 
@@ -1515,13 +1523,13 @@ msgid "Put instructions for learners here"
 msgstr "Вписуйте інструкції для студентів тут"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1903 exe/engine/field.py:1922
+#: exe/engine/field.py:2180 exe/engine/field.py:2199
 msgid "Question"
 msgstr "Запитання"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:1984 exe/engine/field.py:2020 exe/webui/element.py:1599
+#: exe/engine/field.py:2261 exe/engine/field.py:2297 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "Запитання:"
 
@@ -1543,11 +1551,11 @@ msgid "Read the paragraph below and fill in the missing words."
 msgstr "Прочитайте параграф внизу і проставте пропущені слова."
 
 #: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
-#: exe/engine/genericidevice.py:198
+#: exe/engine/genericidevice.py:201
 msgid "Reading Activity"
 msgstr "Читання"
 
-#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:196
+#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:199
 msgid "Reading Activity 0.11"
 msgstr "Reading Activity 0.11"
 
@@ -1575,7 +1583,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Відображення питання:"
 
-#: exe/webui/element.py:1112
+#: exe/webui/element.py:1122
 msgid "Restart"
 msgstr "Перезавантажити"
 
@@ -1589,8 +1597,8 @@ msgstr "Праворуч"
 msgid "SAVE FAILED!"
 msgstr "Помилка при збереженні!"
 
-#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:578
-#: exe/xului/mainpage.py:826
+#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:599
+#: exe/xului/mainpage.py:849
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1608,7 +1616,7 @@ msgstr ""
 "Помилка при збереженні!\n"
 "Останнє вдале збереження %s."
 
-#: exe/engine/quiztestidevice.py:182
+#: exe/engine/quiztestidevice.py:181
 msgid "SCORM Quiz"
 msgstr "SCORM Quiz"
 
@@ -1624,7 +1632,7 @@ msgstr "Зберегти"
 msgid "Section"
 msgstr "Секція"
 
-#: exe/webui/editorelement.py:270 exe/webui/element.py:1204
+#: exe/webui/editorelement.py:270 exe/webui/element.py:1214
 msgid "Select Flash Object"
 msgstr "Вибрати флеш Об'єкт"
 
@@ -1640,31 +1648,31 @@ msgid "Select MP3 file"
 msgstr "Вибрати MP3 файл"
 
 #: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:367
-#: exe/webui/element.py:734
+#: exe/webui/element.py:744
 msgid "Select a file"
 msgstr "Вибрати файл"
 
-#: exe/webui/element.py:1286
+#: exe/webui/element.py:1296
 msgid "Select a flash video"
 msgstr "Вибрати флеш ролик"
 
-#: exe/webui/element.py:1399
+#: exe/webui/element.py:1409
 msgid "Select a font size: "
 msgstr "Розмір шрифта:"
 
-#: exe/webui/element.py:522
+#: exe/webui/element.py:532
 msgid "Select an MP3"
 msgstr "Вибрати MP3 файл"
 
-#: exe/webui/element.py:435
+#: exe/webui/element.py:445
 msgid "Select an image"
 msgstr "Вибрати зображення"
 
-#: exe/webui/element.py:838
+#: exe/webui/element.py:848
 msgid "Select an image (JPG file)"
 msgstr "Вибрати зображення (JPG файл)"
 
-#: exe/engine/field.py:1993
+#: exe/engine/field.py:2270
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1717,24 +1725,24 @@ msgstr ""
 msgid "Settings saved"
 msgstr "Налаштування збережено"
 
-#: exe/webui/galleryblock.py:291
+#: exe/webui/galleryblock.py:297
 #, python-format
 msgid "Show %s Image"
 msgstr "Показати %s Зображення"
 
-#: exe/webui/element.py:1119
+#: exe/webui/element.py:1129
 msgid "Show Answers"
 msgstr "Показати Відповідь"
 
-#: exe/webui/questionelement.py:122 exe/webui/element.py:1669
+#: exe/webui/questionelement.py:122 exe/webui/element.py:1693
 msgid "Show Feedback"
 msgstr "Показати Зворотний Зв'язок"
 
-#: exe/webui/element.py:1103
+#: exe/webui/element.py:1113
 msgid "Show/Clear Answers"
 msgstr "Показати/Очистити Відповіді"
 
-#: exe/webui/element.py:1098
+#: exe/webui/element.py:1108
 msgid "Show/Hide Feedback"
 msgstr "Показати/Сховати Зворотний зв'язок"
 
@@ -1755,11 +1763,11 @@ msgid "Small"
 msgstr "Малий"
 
 #: exe/webui/wikipediablock.py:137 exe/webui/multimediablock.py:98
-#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:333
+#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:334
 msgid "Some emphasis"
 msgstr "Певний акцент"
 
-#: exe/xului/mainpage.py:1025
+#: exe/application.py:272 exe/xului/mainpage.py:1049
 msgid "Sorry, wrong file format"
 msgstr "Вибечта, невірний формат файлу"
 
@@ -1768,7 +1776,7 @@ msgstr "Вибечта, невірний формат файлу"
 msgid "Sorry, wrong file format."
 msgstr "Вибечта, невірний формат файлу"
 
-#: exe/xului/mainpage.py:1023
+#: exe/xului/mainpage.py:1047
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1785,11 +1793,11 @@ msgstr "Wikipedia - Іспанський"
 msgid "Story:"
 msgstr "Історія:"
 
-#: exe/webui/element.py:1002
+#: exe/webui/element.py:1012
 msgid "Strict Marking?"
 msgstr "Перевірити Читабельність?"
 
-#: exe/webui/element.py:1107 exe/webui/editorpane.py:421
+#: exe/webui/element.py:1117 exe/webui/editorpane.py:422
 msgid "Submit"
 msgstr "Підтвердити"
 
@@ -1847,7 +1855,7 @@ msgstr ""
 "потрібної інформації. \n"
 "Працює тільки на ресурсах що мають прямий достум в інтернет."
 
-#: exe/engine/flashwithtextidevice.py:52
+#: exe/engine/flashwithtextidevice.py:45
 msgid ""
 "The flash with text idevice allows you to \n"
 "associate additional textual information to a flash file. This may be useful \n"
@@ -1870,7 +1878,7 @@ msgid ""
 "delivered."
 msgstr "Основою навчального ресурсу є написання контексту, наведення інструкцій і надання головної інформації. Це загальна структура в якій поєднується інформація різних типів і надається студентові."
 
-#: exe/engine/mathidevice.py:45
+#: exe/engine/mathidevice.py:43
 msgid ""
 "The mathematical language LATEX has been \n"
 "                        used to enable your to insert mathematical formula \n"
@@ -1935,7 +1943,7 @@ msgstr ""
 "Ви намагаєтесь видалити iDevice.\n"
 "Ви впевнені що хочете цього?"
 
-#: exe/webui/block.py:258
+#: exe/webui/block.py:259
 msgid "Tip:"
 msgstr "Порада:"
 
@@ -1975,7 +1983,7 @@ msgstr ""
 "є одночасно завданням і інформаційним джерелом про те чи інше \n"
 "твердження."
 
-#: exe/engine/field.py:1759
+#: exe/engine/field.py:2036
 msgid "Type a discussion topic here."
 msgstr "Введіть тему обговорення тут."
 
@@ -2009,7 +2017,7 @@ msgstr ""
 "стандартну інформацію, виводячи повідомлення про \n"
 "правильну чи неправильну відповідь."
 
-#: exe/engine/field.py:1996
+#: exe/engine/field.py:2273
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2046,7 +2054,7 @@ msgstr "Неможливо завантажити з %s <br/>Будь ласка
 msgid "Unit"
 msgstr "Одиниця"
 
-#: exe/engine/flashwithtextidevice.py:51 exe/engine/imagewithtextidevice.py:44
+#: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
 #: exe/engine/idevicestore.py:272 exe/engine/idevicestore.py:330
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
@@ -2056,12 +2064,12 @@ msgstr "Одиниця"
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:44 exe/engine/quiztestidevice.py:183
+#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:182
 #: exe/engine/casestudyidevice.py:159 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "University of Auckland"
 
-#: exe/engine/quiztestidevice.py:184
+#: exe/engine/quiztestidevice.py:183
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2085,7 +2093,7 @@ msgstr ""
 "для подальшого аналізу читання, висловлюючи питання або \n"
 "висвітлюючи твердження, щоб почати дебати."
 
-#: exe/engine/galleryidevice.py:411
+#: exe/engine/galleryidevice.py:414
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr ""
 "Використовуйте цей iDevice якщо вам потрібно показати \n"
@@ -2154,11 +2162,11 @@ msgstr "Wikiversity"
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: exe/webui/element.py:1818
+#: exe/webui/element.py:1847
 msgid "Wrong"
 msgstr "Неправильно"
 
-#: exe/engine/mathidevice.py:57
+#: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr "Ви можете використовуваси спеціальне меню, або ввести Latex вручну в текстовій зоні."
 
@@ -2170,11 +2178,11 @@ msgstr "Ваш новий iDevice з'явиться в списку iDevice (і�
 msgid "article "
 msgstr "стаття"
 
-#: exe/webui/element.py:452 exe/webui/element.py:860
+#: exe/webui/element.py:462 exe/webui/element.py:870
 msgid "blank for original size"
 msgstr "залишити пустими для оригінального розміру"
 
-#: exe/export/imsexport.py:193 exe/export/scormexport.py:285
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:303
 msgid "eXe"
 msgstr "eXe"
 
@@ -2183,12 +2191,8 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"
 
-#: exe/engine/galleryidevice.py:407
+#: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
-msgstr ""
-
-#: exe/application.py:113 exe/application.py:141
-msgid "eXe appears to already be running"
 msgstr ""
 
 #: exe/engine/appletidevice.py:86
@@ -2207,12 +2211,12 @@ msgstr "iDevice %s немає пакету"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:419 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:458 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
-#: exe/webui/block.py:308
+#: exe/webui/block.py:309
 msgid "iDevice icon"
 msgstr "iDevice іконка"
 
@@ -2228,11 +2232,11 @@ msgstr "ключ-код"
 msgid "label"
 msgstr "надпис"
 
-#: exe/webui/element.py:1396
+#: exe/webui/element.py:1406
 msgid "newline"
 msgstr "нова лінія"
 
-#: exe/webui/element.py:1395
+#: exe/webui/element.py:1405
 msgid "text"
 msgstr "текст"
 
