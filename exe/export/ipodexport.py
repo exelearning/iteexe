@@ -2,6 +2,7 @@
 # eXe 
 # Copyright 2004-2005, University of Auckland
 # Copyright 2007 Tairawhiti Polytechnic
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,6 +24,7 @@ IpodExport will export a package as a folder full of iPod Notes
 
 import logging
 import re
+import codecs
 from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
@@ -48,7 +50,6 @@ class IpodExport(object):
     def export(self, package):
         """ 
         Export as iPod notes
-        Cleans up the previous packages pages and performs the export
         """
         outputDir = self.filename
         if not outputDir.exists(): 
@@ -93,7 +94,8 @@ class IpodExport(object):
                     '  ' * page.depth,
                     page.node.titleShort)
 
-        outfile = open(outputDir / "index.linx", "wt")
+        outfile = codecs.open(outputDir / "index.linx", mode='w',
+                encoding='utf-8')
         outfile.write(html)
         outfile.close()
 

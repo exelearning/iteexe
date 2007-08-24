@@ -1,3 +1,8 @@
+Next Release
+* Fix iPod Notes export to write UTF-8 index (non-ASCII node names)
+* Change license footer text so translators can ignore trailing space
+* Updated DE translation
+
 Version 1.00 (r3219)
 * Fix styles to use relative line height rather than absolute
 * Fix splash progress bar to indicate 100%
