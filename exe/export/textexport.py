@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,8 +51,8 @@ class TextExport(object):
         self.html  = "***" + escape(package.title) + "***"
         self.renderNode(package.root)
         if package.license <> "None":
-            self.html += "<br/>***" + _("Licensed under the ")
-            self.html += package.license + "***<br/>"
+            self.html += "<br/>***" + _("Licensed under the")
+            self.html += " " + package.license + "***<br/>"
         if package.footer <> "":
             self.html += "<p>" + package.footer + "</p>"
         self.save(self.filename)

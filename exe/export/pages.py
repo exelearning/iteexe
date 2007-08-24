@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -65,8 +66,8 @@ class Page(object):
         
         if license <> "None":
             html += '<p align="center">'
-            html += _("Licensed under the ")
-            html += '<a href="%s">%s</a></p>' % (licenses[license], license)
+            html += _("Licensed under the")
+            html += ' <a href="%s">%s</a></p>' % (licenses[license], license)
             
         return html
     
