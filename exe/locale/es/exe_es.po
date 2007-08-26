@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -1183,8 +1183,9 @@ msgstr "Largo"
 msgid "Left"
 msgstr "Izquierda"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
-msgid "Licensed under the "
+#: exe/export/pages.py:69 exe/export/textexport.py:54
+#, fuzzy
+msgid "Licensed under the"
 msgstr "Este artículo está licenciado bajo"
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1250,7 +1251,7 @@ msgstr "Nombre"
 msgid "New iDevice"
 msgstr "Nuevo iDevice"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Siguiente"
@@ -1432,7 +1433,7 @@ msgstr "Visualización previa"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directorio %s es un archivo, no se puede remplazar"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Anterior"

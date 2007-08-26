@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2007-08-06 09:45+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -1173,8 +1173,9 @@ msgstr "大"
 msgid "Left"
 msgstr "左"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
-msgid "Licensed under the "
+#: exe/export/pages.py:69 exe/export/textexport.py:54
+#, fuzzy
+msgid "Licensed under the"
 msgstr "掲載許諾"
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1241,7 +1242,7 @@ msgstr "名前"
 msgid "New iDevice"
 msgstr "新しい iDeｖice"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "次へ"
@@ -1424,7 +1425,7 @@ msgstr "プレビュー"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前へ"

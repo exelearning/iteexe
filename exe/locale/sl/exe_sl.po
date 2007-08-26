@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2007-06-12 20:24+1200\n"
 "Last-Translator: Aleksander POTOCNIK <Aleksander.Potocnik@siol.net>\n"
 "Language-Team: Institut OKO, iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -1253,9 +1253,9 @@ msgstr "Levo"
 msgid "Left"
 msgstr "Levo"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
+#: exe/export/pages.py:69 exe/export/textexport.py:54
 #, fuzzy
-msgid "Licensed under the "
+msgid "Licensed under the"
 msgstr "Ta članek je licenciran pod "
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1324,7 +1324,7 @@ msgstr "Ime"
 msgid "New iDevice"
 msgstr "Nova  ucSredstva"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Naprej"
@@ -1514,7 +1514,7 @@ msgstr "Predogled"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ime datoteke %s je datoteka, ni je mogoče zamenjati."
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Prejšnji"

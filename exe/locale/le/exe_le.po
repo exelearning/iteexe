@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2006-07-28 15:32+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: l33t <l33t@exelearning.org>\n"
@@ -1115,8 +1115,8 @@ msgstr "4DD 1m49e"
 msgid "Left"
 msgstr ""
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
-msgid "Licensed under the "
+#: exe/export/pages.py:69 exe/export/textexport.py:54
+msgid "Licensed under the"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1182,7 +1182,7 @@ msgstr ""
 msgid "New iDevice"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr ""
@@ -1362,7 +1362,7 @@ msgstr ""
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr ""

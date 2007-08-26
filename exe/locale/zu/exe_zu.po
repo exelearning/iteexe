@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -1212,9 +1212,9 @@ msgstr "Okukhulu"
 msgid "Left"
 msgstr "Kwesokunxele"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
+#: exe/export/pages.py:69 exe/export/textexport.py:54
 #, fuzzy
-msgid "Licensed under the "
+msgid "Licensed under the"
 msgstr "Lokhu kulandisa okubhaliwe kugunyazwe ngaphansi kwe"
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1283,7 +1283,7 @@ msgstr "iGama"
 msgid "New iDevice"
 msgstr "I-iDevice eNtsha"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Okulandelayo"
@@ -1473,7 +1473,7 @@ msgstr "Umboniso"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Kwangaphambili"

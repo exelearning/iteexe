@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2007-07-27 07:46+1200\n"
 "Last-Translator: Arek Felińczak <drakonus@o2.pl>\n"
 "Language-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\n"
@@ -1243,9 +1243,9 @@ msgstr "Duże"
 msgid "Left"
 msgstr "Lewa"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
+#: exe/export/pages.py:69 exe/export/textexport.py:54
 #, fuzzy
-msgid "Licensed under the "
+msgid "Licensed under the"
 msgstr "Artykuł jest rozpowszechniany na licencji "
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1315,7 +1315,7 @@ msgstr "Nazwa"
 msgid "New iDevice"
 msgstr "Nowy obiekt"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Następny"
@@ -1501,7 +1501,7 @@ msgstr "Przegląd"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nazwa %s jest plikiem, nie można jej zmienić"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Poprzedni"

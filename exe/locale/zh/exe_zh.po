@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2007-08-08 10:27+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -1084,8 +1084,9 @@ msgstr "大"
 msgid "Left"
 msgstr "左"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
-msgid "Licensed under the "
+#: exe/export/pages.py:69 exe/export/textexport.py:54
+#, fuzzy
+msgid "Licensed under the"
 msgstr "Licensed under the "
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1153,7 +1154,7 @@ msgstr "名称"
 msgid "New iDevice"
 msgstr "新的 iDevice"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "下一页"
@@ -1331,7 +1332,7 @@ msgstr "预览"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "予览文件夹%s是个文档, 无法取代它"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前一页"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 21:16+1200\n"
+"POT-Creation-Date: 2007-08-27 21:59+1200\n"
 "PO-Revision-Date: 2006-08-12 05:37+1200\n"
 "Last-Translator: \n"
 "Language-Team: Samuel Sarpong & J.P.Antwi-Danso <srnsam@yahoo.com, portnass2003@yahoo.com>\n"
@@ -1096,9 +1096,9 @@ msgstr "Mfonin"
 msgid "Left"
 msgstr "Bɛkum"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
+#: exe/export/pages.py:69 exe/export/textexport.py:54
 #, fuzzy
-msgid "Licensed under the "
+msgid "Licensed under the"
 msgstr "Atwerɛsɛm yi ho tumi fi"
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
@@ -1169,7 +1169,7 @@ msgstr "Edin"
 msgid "New iDevice"
 msgstr "Atifi asɛm foforɔ"
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:339 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Nea ɛdi hɔ"
@@ -1351,7 +1351,7 @@ msgstr "Oyikyerɛ"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Dada"
