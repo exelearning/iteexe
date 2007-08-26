@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-20 21:16+1200\n"
-"PO-Revision-Date: 2007-07-19 12:49+1200\n"
-"Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
+"PO-Revision-Date: 2007-08-27 00:10+1200\n"
+"Last-Translator: jil quillevere <jil.quillevere@free.fr>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -406,9 +406,8 @@ msgid "Case Study"
 msgstr "Étude de cas"
 
 #: exe/webui/wikipediablock.py:97
-#, fuzzy
 msgid "Catalan Wikipedia Article"
-msgstr "Article de l'encyclopédie Wikipédia en italien"
+msgstr "Article de l'encyclopédie Wikipédia en catalan"
 
 #: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
 msgid "Change Image"
@@ -444,7 +443,7 @@ msgstr "Choisir la taille que vous souhaitez pour la mise en page de votre image
 
 #: exe/xului/mainpage.py:217
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Réactualiser la liste des projets récents"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -673,7 +672,7 @@ msgstr "Editer"
 
 #: twisted/persisted/styles.py:365
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr ""
+msgstr "Le dossier que vous souhaitez charger, ou les outils et fichiers qu'il incorpore ont été créés avec une version d'Exe plus récente que celle que vous utilisez. SVP, faites une mise à jour d'Exelearning et réessayez"
 
 #: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:100 exe/webui/editorpane.py:330
@@ -1040,9 +1039,8 @@ msgid "Import iDevice"
 msgstr "Importation d'outils pédagogiques"
 
 #: exe/webui/element.py:1557
-#, fuzzy
 msgid "Incorrect"
-msgstr "Incorrect !"
+msgstr "Incorrect "
 
 #: exe/webui/truefalseelement.py:213 exe/webui/truefalseelement.py:216
 msgid "Incorrect!"
@@ -1137,6 +1135,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"La compilation du script MimeTeX a échoué! \n"
+" %s"
 
 #: exe/webui/block.py:233
 msgid "Move Down"
@@ -1264,7 +1264,7 @@ msgstr "Dossier extrait vers:%s"
 
 #: twisted/persisted/styles.py:317
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
-msgstr ""
+msgstr "Le dossier est ancien. SVP, faites une mise à jour du dossier ( en utilisant Ouvrir le fichier .elp puis Enregistrer sous...) avant d'essayer de l'incorporer dans un nouveau dossier!"
 
 #: exe/xului/mainpage.py:315
 #, python-format
@@ -1308,11 +1308,11 @@ msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
 "menu to close eXe."
-msgstr ""
+msgstr "SVP: utilisez la fonction fermer du menu pour quitter Exe."
 
 #: exe/application.py:243
 msgid "Please wait until loading finishes"
-msgstr ""
+msgstr "SVP: attendez jusqu'à la fin du téléchargement"
 
 #: exe/webui/wikipediablock.py:106
 msgid "Polish Wikipedia Article"
@@ -1344,9 +1344,9 @@ msgid "Preview"
 msgstr "Prévisualisation"
 
 #: exe/xului/mainpage.py:523 exe/xului/mainpage.py:627
-#, fuzzy, python-format
+#, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
+msgstr "le répertoire de prévisualisation %s est un fichier, et ne peut être remplacé."
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:109
 #: exe/export/scormexport.py:338 exe/export/websitepage.py:186
@@ -1900,9 +1900,9 @@ msgid "Unable to download from %s <br/>Please check the spelling and connection 
 msgstr "Impossible de télécharger depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
 
 #: exe/engine/rssidevice.py:81 exe/engine/rssidevice.py:84
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
-msgstr "Impossible de télécharger depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
+msgstr "Impossible de télécharger le flux RSS depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2207,9 +2207,8 @@ msgstr "R"
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="window.location.reload(true);" id="showImage" label="Show
 #: Image">
-#, fuzzy
 msgid "Show Image"
-msgstr "Montrer l'image %s "
+msgstr "Montrer l'image"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -2361,6 +2360,8 @@ msgid ""
 "              use the FORMAT element.\n"
 "            "
 msgstr ""
+"\n"
+" Pour décrire la ressource, utiliser FORMAT"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="P"
 #: modifiers="control" id="file-print-key" oncommand="filePrint()">
