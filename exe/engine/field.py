@@ -526,8 +526,7 @@ class FieldWithResources(Field):
                if os.path.exists(file_name_str) \
                and os.path.isfile(file_name_str): 
 
-                   # r3m0:
-                   # determine if this is an eXe MP3, which replicates
+                   # first, determine if this is an eXe MP3, which replicates
                    # the old MP3 iDevice behaviour by also embedding its
                    # player, XSPF_PLAYER:
                    embed_mp3_player = False
@@ -660,7 +659,6 @@ class FieldWithResources(Field):
                    # and if this is an embedded MP3, go ahead and update its
                    # exe_mp3 parm as well:
                    #####
-                   # r3m0:
                    if embed_mp3_player:
                        embed_search_str = "<param name=\"exe_mp3\" " \
                            + "value=\"/previews/" \
