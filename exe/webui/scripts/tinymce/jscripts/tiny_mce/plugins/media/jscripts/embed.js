@@ -11,6 +11,30 @@ function writeFlash(p) {
 	);
 }
 
+function writeMP3(p) {
+// Note that writeEmbed passes on additional attributes for MP3 as well...
+        // indicate that this Flash is specifically an mp3player with:
+        p.id = "mp3player";
+	writeEmbed(
+		'D27CDB6E-AE6D-11cf-96B8-444553540000',
+		'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0',
+		'application/x-shockwave-flash',
+		p
+	);
+}
+
+function writeFlowPlayer(p) {
+// Note that writeEmbed will pass on additional attributes for FlowPlayer as well...
+        // indicate that this Flash is specifically an FLV flowplayer with:
+        p.id = "flowplayer";
+	writeEmbed(
+		'D27CDB6E-AE6D-11cf-96B8-444553540000',
+		'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0',
+		'application/x-shockwave-flash',
+		p
+	);
+}
+
 function writeShockWave(p) {
 	writeEmbed(
 	'166B1BCA-3F9C-11CF-8075-444553540000',
@@ -70,6 +94,27 @@ function writeEmbed(cls, cb, mt, p) {
 
 	for (n in p)
 		h += '<param name="' + n + '" value="' + p[n] + '">';
+
+        // MP3 hack for eXe:
+	// putting this AFTER all of the above p[], to ensure that it will FOLLOW
+	// the p.src attribute, for easier parsing within eXe.
+        if (mt == 'application/x-shockwave-flash' && p.id == 'mp3player') {
+		if (typeof(p.exe_mp3) == "undefined") {
+                	// want to include the actual source name in this parm, 
+                	// to confirm to eXe the source to which it applies:
+                	h += '<param name="exe_mp3" value="' + p.src + '" />';
+		}
+        }
+        // FLV hack for eXe:
+	// likwise, putting this AFTER all of the above p[], to ensure that it will FOLLOW
+	// the p.src attribute, for easier parsing within eXe.
+        if (mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
+		if (typeof(p.exe_flv) == "undefined") {
+                	// want to include the actual source name in this parm, 
+                	// to confirm to eXe the source to which it applies:
+                	h += '<param name="exe_flv" value="' + p.src + '" />';
+		}
+        }
 
 	h += '<embed type="' + mt + '"';
 

@@ -300,24 +300,44 @@ class FieldWithResources(Field):
                 # resource directory, if it's not still in use elsewhere:
                 del self.images[image_num]
 
-    def ListActiveImageResources(self, content):
+    def ListActiveResources(self, content):
         """
         Find and return the name of all active image resources,
         to help find those no longer in use and in need of purging.
         This finds images and media as well, since they both use src="...".
+
         It now also finds any math-images' paired exe_math_latex sources, too!
+
         And NOW also finds ANY other resource file embedded as an href via
         the advlink text-link plugin.
+
+        And the embedded mp3s that use xspf_player.swf;
         """
         resources_in_use =  []
         search_strings = ["src=\"resources/", "exe_math_latex=\"resources/", \
-                "href=\"resources/"]
+                "href=\"resources/", \
+                "src=\"../templates/xspf_player.swf?song_url=resources/"]
 
         for search_num in range(len(search_strings)): 
             search_str = search_strings[search_num] 
+            embedded_mp3 = False
+            if search_str == \
+                "src=\"../templates/xspf_player.swf?song_url=resources/":
+                embedded_mp3 = True
             found_pos = content.find(search_str) 
             while found_pos >= 0: 
-                end_pos = content.find('\"', found_pos+len(search_str)) 
+                if not embedded_mp3:
+                    # i.e., most normal search strings, look for terminating ":
+                    end_pos = content.find('\"', found_pos+len(search_str)) 
+                else:
+                    # the xspf_player src search strings should end on the 
+                    # next parameter, &song_title=:
+                    end_pos = content.find('&song_title=', 
+                            found_pos+len(search_str)) 
+                    if end_pos <= 0:
+                        # since TinyMCE can turn & into &amp;, also look for:
+                        end_pos = content.find('&amp;song_title=', 
+                            found_pos+len(search_str)) 
                 # assume well-formed with matching quote: 
                 if end_pos > 0: 
                     # extract the actual resource name, after src=\"resources:
@@ -354,7 +374,7 @@ class FieldWithResources(Field):
         # longer in use; otherwise we get naming discrepencies in the case
         # that identical math source is used with a new previewed math image
         # (e.g., when changing only the font size)
-        resources_in_use = self.ListActiveImageResources(content)
+        resources_in_use = self.ListActiveResources(content)
         self.RemoveZombieResources(resources_in_use)
 
         #################################
@@ -368,11 +388,11 @@ class FieldWithResources(Field):
         # a new resource counting mechanism, to determine which
         # resources are no longer in use, and need purging.
 
-        resources_in_use = self.ListActiveImageResources(new_content)
+        resources_in_use = self.ListActiveResources(new_content)
         # and eventually, maybe something like:
         #new_content.append(ProcessPreviewedMedia(new_content))
         # but note: the media resources are actually found within
-        # ListActiveImageResources() as well!  So no need at this time.
+        # ListActiveResources() as well!  So no need at this time.
 
         self.RemoveZombieResources(resources_in_use)
 
@@ -506,6 +526,18 @@ class FieldWithResources(Field):
                if os.path.exists(file_name_str) \
                and os.path.isfile(file_name_str): 
 
+                   # r3m0:
+                   # determine if this is an eXe MP3, which replicates
+                   # the old MP3 iDevice behaviour by also embedding its
+                   # player, XSPF_PLAYER:
+                   embed_mp3_player = False
+                   exe_mp3_parmline = "<param name=\"exe_mp3\" " \
+                           + "value=\"/previews/" \
+                           + pre_input_file_name_str
+                   if new_content.find(exe_mp3_parmline) >= 0:
+                       embed_mp3_player = True
+                       log.debug('ProcessPreviewedMedia: this is an eXe mp3.')
+
                    # Although full filenames (including flatted representations
                    # of their source directory tree) were used to help keep the
                    # filenames here in previewDir unique, this does cause
@@ -575,7 +607,18 @@ class FieldWithResources(Field):
                    resource_path = new_GalleryImageResource._storageName
                    # and re-concatenate from the global resources name, 
                    # to build the webUrl to the resource:
-                   resource_url = new_GalleryImage.resourcesUrl+resource_path
+                   resource_url = new_GalleryImage.resourcesUrl+resource_path 
+                   
+                   if embed_mp3_player:
+                       # then precede the url with the xspf mp3 player info:
+                       resource_url = "../templates/xspf_player.swf" \
+                               + "?song_url=" + resource_url \
+                               + "&song_title=" + resource_path \
+                       # do NOT embed the mp3 player as a resource,
+                       # merely copy it out upon export, as indicated by:
+                       self.idevice.systemResources += ['xspf_player.swf']
+
+
                    # and finally, go ahead and replace the filename for:
                    #search_str = "<param name=\"src\" value=\"/previews/" 
                    new_src_string = "<param name=\"src\" value=\""+resource_url
@@ -611,6 +654,20 @@ class FieldWithResources(Field):
                            + pre_input_file_name_str
                    embed_replace_str = "x-ms-wmv\" data=\"" + resource_url
                    new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+
+                   #####
+                   # and if this is an embedded MP3, go ahead and update its
+                   # exe_mp3 parm as well:
+                   #####
+                   # r3m0:
+                   if embed_mp3_player:
+                       embed_search_str = "<param name=\"exe_mp3\" " \
+                           + "value=\"/previews/" \
+                           + pre_input_file_name_str
+                       embed_replace_str = "<param name=\"exe_mp3\" " \
+                           + "value=\"" + resource_url
+                       new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
 
                else:
@@ -1276,6 +1333,42 @@ class FieldWithResources(Field):
         resources_url_src = "x-ms-wmv\" data=\"resources/" 
         exported_src = "x-ms-wmv\" data=\"" 
         export_content = export_content.replace(resources_url_src,exported_src)
+
+        # for mp3 using the embedded XSPF player (which will be exported and
+        # no longer require the ../templates prefix), also need to look for 
+        # each occurrence of...  
+        # a) the mp3 <embed> tag's:
+        #   "src=\"../templates/xspf_player.swf?song_url=resources/"
+        resources_url_src = \
+                "src=\"../templates/xspf_player.swf?song_url=resources/"
+        exported_src =  "src=\"xspf_player.swf?song_url="
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # b) the exe_mp3 info <embed> tag's:
+        #   "exe_mp3=\"../templates/xspf_player.swf?song_url=resources/"
+        resources_url_src = \
+                "exe_mp3=\"../templates/xspf_player.swf?song_url=resources/"
+        exported_src =  "exe_mp3=\"xspf_player.swf?song_url="
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # AND c) the mp3's <param> tag's:
+        #  "<param name=\"src\" \
+        #       value=\"../templates/xspf_player.swf?song_url=resources/"
+        resources_url_src = "<param name=\"src\" "\
+                + "value=\"../templates/xspf_player.swf?song_url=resources/"
+        exported_src = "<param name=\"src\" value=\"xspf_player.swf?song_url="
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # AND d) the exe_mp3's info <param> tag's:
+        #  "<param name=\"exe_mp3\" \
+        #       value=\"../templates/xspf_player.swf?song_url=resources/"
+        resources_url_src = "<param name=\"exe_mp3\" "\
+                + "value=\"../templates/xspf_player.swf?song_url=resources/"
+        exported_src = "<param name=\"exe_mp3\" "\
+                + "value=\"xspf_player.swf?song_url="
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # FINALLY, note that all 4 of the above MP3 replacements probably
+        # could have been done by simply replacing:
+        #     "../templates/xspf_player.swf?song_url=resources/"
+        # regardless of the context, but it seemed a bit safer to ensure
+        # that they were be replaced in expected locations only.
         
         return export_content
 

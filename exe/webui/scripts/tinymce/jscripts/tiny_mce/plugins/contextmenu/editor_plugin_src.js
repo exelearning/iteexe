@@ -118,7 +118,7 @@ var TinyMCE_ContextMenuPlugin = {
 						// If flash
 						if (tinyMCE.hasPlugin('flash') && tinyMCE.getAttrib(elm, 'class').indexOf('mceItemFlash') != -1)
 							contextMenu.addItem(tinyMCE.baseURL + "/plugins/flash/images/flash.gif", "$lang_flash_props", "mceFlash");
-						else if (tinyMCE.hasPlugin('media') && /mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia)/.test(tinyMCE.getAttrib(elm, 'class')))
+						else if (tinyMCE.hasPlugin('media') && /mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia|MP3|FlowPlayer)/.test(tinyMCE.getAttrib(elm, 'class')))
 							contextMenu.addItem(tinyMCE.baseURL + "/plugins/media/images/media.gif", "$lang_media_title", "mceMedia");
 						else if (tinyMCE.hasPlugin('exemath') && tinyMCE.getAttrib(elm, 'exe_math_latex') != "")
 							contextMenu.addItem(tinyMCE.baseURL + "/plugins/exemath/images/exemath.gif", "$lang_exemath_contextmenu_update", "mceExeMath");

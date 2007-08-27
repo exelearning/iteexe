@@ -52,10 +52,20 @@ function init() {
 	   var real_pos = 4;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  real_pos, "rmp");
 	}
+	// always allow the eXe MP3 because player is embedded (no detection mechanism, either):
+	var mp3_pos = 5;  // shortcut to expected hardcoded select position
+        enable_media_type(f, max_plugin,  mp3_pos, "mp3");
+
+	// r3m0: (once implemented...) always allow the FlowPlayer FLVs (no detection mechanism, either):
+        // but currently not implemented, nor showing in the .htm!
+        //if (1) {
+	//   var flv_pos = 6;  // shortcut to expected hardcoded select position
+        //   enable_media_type(f, max_plugin,  flv_pos, "flp");
+	//}
 
 
 	fe = tinyMCE.selectedInstance.getFocusElement();
-	if (/mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia)/.test(tinyMCE.getAttrib(fe, 'class'))) {
+	if (/mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia|MP3|FlowPlayer)/.test(tinyMCE.getAttrib(fe, 'class'))) {
 		pl = "x={" + fe.title + "};";
 
 		switch (tinyMCE.getAttrib(fe, 'class')) {
@@ -77,6 +87,14 @@ function init() {
 
 			case 'mceItemRealMedia':
 				type = 'rmp';
+				break;
+			
+			case 'mceItemMP3':
+				type = 'mp3';
+				break;
+
+			case 'mceItemFlowPlayer':
+				type = 'flp';
 				break;
 		}
 		// In case this media type was disbled due to lack of its browser plugin,
@@ -241,7 +259,7 @@ function insertMedia() {
 	f.height.value = f.height.value == "" ? 100 : f.height.value;
 
 	fe = tinyMCE.selectedInstance.getFocusElement();
-	if (fe != null && /mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia)/.test(tinyMCE.getAttrib(fe, 'class'))) {
+	if (fe != null && /mceItem(Flash|ShockWave|WindowsMedia|QuickTime|RealMedia|MP3|FlowPlayer)/.test(tinyMCE.getAttrib(fe, 'class'))) {
 		switch (f.media_type.options[f.media_type.selectedIndex].value) {
 			case "flash":
 				fe.className = "mceItemFlash";
@@ -261,6 +279,14 @@ function insertMedia() {
 
 			case "rmp":
 				fe.className = "mceItemRealMedia";
+				break;
+
+			case "mp3":
+				fe.className = "mceItemMP3";
+				break;
+
+			case "flp":
+				fe.className = "mceItemFlowPlayer";
 				break;
 		}
 
@@ -295,6 +321,14 @@ function insertMedia() {
 
 			case "rmp":
 				h += ' class="mceItemRealMedia"';
+				break;
+
+			case "mp3":
+				h += ' class="mceItemMP3"';
+				break;
+
+			case "flp":
+				h += ' class="mceItemFlowPlayer"';
 				break;
 		}
 
@@ -396,6 +430,10 @@ function changedType(t) {
 	d.getElementById('shockwave_options').style.display = 'none';
 	d.getElementById('wmp_options').style.display = 'none';
 	d.getElementById('rmp_options').style.display = 'none';
+        // r3m0, not yet:
+	//d.getElementById('mp3_options').style.display = 'none';
+	//d.getElementById('flp_options').style.display = 'none';
+
 	d.getElementById(t + '_options').style.display = 'block';
 }
 
@@ -564,6 +602,13 @@ function generatePreview(c) {
 
 	nw = parseInt(f.width.value);
 	nh = parseInt(f.height.value);
+
+        // provide reasonably first-pass sizes for the mp3 player, if not yet specified:
+	if (f.media_type.options[f.media_type.selectedIndex].value == "mp3"
+            && f.width.value == "" && f.height.value == "") {
+	    f.height.value = 15;
+            f.width.value = 400;
+        }
 
 	if (f.width.value != "" && f.height.value != "") {
 		if (f.constrain.checked) {
