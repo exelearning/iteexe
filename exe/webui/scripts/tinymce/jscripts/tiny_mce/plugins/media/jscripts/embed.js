@@ -26,10 +26,19 @@ function writeMP3(p) {
 function writeFlowPlayer(p) {
 // Note that writeEmbed will pass on additional attributes for FlowPlayer as well...
         // indicate that this Flash is specifically an FLV flowplayer with:
+	// no classid or codebase!
         p.id = "flowplayer";
+	// and do set the object's data to the initial eXe templates directory: 
+	p.data="../templates/flowPlayer.swf"; 
+	// at least until these flashvars are built into options an the FLV's appearance tab, 
+	// continue to hardcode the same parameters that were in use with the old 
+	// Flash Movie iDevice: 
+	p.flashvars="config={ autoPlay: false, loop: false, initialScale: 'scale', " 
+	    + "showLoopButton: false, showPlayListButtons: false, playList: [ { " 
+	    + "url: '" + pl.src + "' }, ]}";
 	writeEmbed(
-		'D27CDB6E-AE6D-11cf-96B8-444553540000',
-		'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0',
+		'',
+		'',
 		'application/x-shockwave-flash',
 		p
 	);
@@ -79,11 +88,18 @@ function writeEmbed(cls, cb, mt, p) {
         if (mt == 'video/x-ms-wmv') {
 	    // eXe WMP hack:
 	    h += ' type="' + mt + '" data="' + p.src + '"';
+            h += ' codebase="' + cb + '"';
+        } 
+	else if (mt == 'application/x-shockwave-flash'
+                 && p.id == 'flowplayer') {
+            // embedded FLV player - no classid or codebase:
+            h += ' type="' + mt + '"';
+            h += ' data="' + p.data + '"';
         }
         else {
 	    h += ' classid="clsid:' + cls + '"';
+            h += ' codebase="' + cb + '"';
         }
-        h += ' codebase="' + cb + '"';
 
 	h += typeof(p.id) != "undefined" ? 'id="' + p.id + '"' : '';
 	h += typeof(p.name) != "undefined" ? 'name="' + p.name + '"' : '';

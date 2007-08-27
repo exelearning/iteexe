@@ -537,6 +537,22 @@ class FieldWithResources(Field):
                        embed_mp3_player = True
                        log.debug('ProcessPreviewedMedia: this is an eXe mp3.')
 
+                   # likewise, determine if this is an eXe FLV, which replicates
+                   # the old Flash Movie iDevice behaviour by also embedding its
+                   # player, flowPlayer.swf:
+                   embed_flv_player = False
+                   exe_flv_parmline = "<param name=\"exe_flv\" " \
+                           + "value=\"/previews/" \
+                           + pre_input_file_name_str
+                   if new_content.find(exe_flv_parmline) >= 0:
+                       embed_flv_player = True
+                       log.debug('ProcessPreviewedMedia: this is an eXe flv.')
+                       if embed_mp3_player:
+                           # shouldn't see both tags, but if we do, then go with FLV,
+                           # and just override the mp3 entirely, for easier handling:
+                           log.warn('ProcessPreviewedMedia: using FLV rather than mp3!')
+                           embed_mp3_player = False
+
                    # Although full filenames (including flatted representations
                    # of their source directory tree) were used to help keep the
                    # filenames here in previewDir unique, this does cause
@@ -617,6 +633,12 @@ class FieldWithResources(Field):
                        # merely copy it out upon export, as indicated by:
                        self.idevice.systemResources += ['xspf_player.swf']
 
+                   if embed_flv_player:
+                       # the resource_url can be left the same, and...
+                       # do NOT embed the flv player as a resource,
+                       # merely copy it out upon export, as indicated by:
+                       self.idevice.systemResources += ['flowPlayer.swf']
+
 
                    # and finally, go ahead and replace the filename for:
                    #search_str = "<param name=\"src\" value=\"/previews/" 
@@ -665,6 +687,26 @@ class FieldWithResources(Field):
                            + pre_input_file_name_str
                        embed_replace_str = "<param name=\"exe_mp3\" " \
                            + "value=\"" + resource_url
+                       new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+
+                   #####
+                   # and if this is an embedded FLV, go ahead and update its
+                   # exe_flv parm as well:
+                   #####
+                   if embed_flv_player:
+                       embed_search_str = "<param name=\"exe_flv\" " \
+                           + "value=\"/previews/" \
+                           + pre_input_file_name_str
+                       embed_replace_str = "<param name=\"exe_flv\" " \
+                           + "value=\"" + resource_url
+                       new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+                       # as well as its flashvars param, 
+                       # which contains a playlist url:
+                       embed_search_str = "playList: [ { url: '/previews/" \
+                           + pre_input_file_name_str
+                       embed_replace_str = "playList: [ { url: '" + resource_url
                        new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
 
@@ -1313,6 +1355,7 @@ class FieldWithResources(Field):
         upon export, since the resources will be flattened no longer exist 
         in the system resources directory....
         """
+        ###########################
         # this is used for exports/prints, etc., and needs to ensure that 
         # any resource paths are removed:
         resources_url_src = "src=\"resources/"
@@ -1326,12 +1369,14 @@ class FieldWithResources(Field):
         exported_src = "<param name=\"src\" value=\""
         export_content = export_content.replace(resources_url_src,exported_src)
 
+        ###########################
         # and now, for Windows Media Player, there's another hack 
         # that requires yet another data massaging: 
         resources_url_src = "x-ms-wmv\" data=\"resources/" 
         exported_src = "x-ms-wmv\" data=\"" 
         export_content = export_content.replace(resources_url_src,exported_src)
 
+        ###########################
         # for mp3 using the embedded XSPF player (which will be exported and
         # no longer require the ../templates prefix), also need to look for 
         # each occurrence of...  
@@ -1368,6 +1413,44 @@ class FieldWithResources(Field):
         # regardless of the context, but it seemed a bit safer to ensure
         # that they were be replaced in expected locations only.
         
+        ###########################
+        # for flv using the embedded flowplayer (which will be exported and
+        # no longer require the ../templates prefix), also need to look for 
+        # each occurrence of...  
+        # a) the flv <object> tag's:
+        #   "data=\"../templates/flowPlayer.swf"
+        resources_url_src = \
+                "data=\"../templates/flowPlayer.swf"
+        exported_src =  "data=\"flowPlayer.swf"
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # b) the flv <param> tag's:
+        #   <param name="data" value="../templates/flowPlayer.swf"
+        resources_url_src = "<param name=\"data\" "\
+                + "value=\"../templates/flowPlayer.swf"
+        exported_src = "<param name=\"data\" value=\"flowPlayer.swf"
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # c) the exe_flv info <embed> tag's:
+        #   "exe_flv=\"resources/"
+        resources_url_src = \
+                "exe_flv=\"resources/"
+        exported_src =  "exe_flv=\""
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # d) the exe_flv's info <param> tag's:
+        #  "<param name=\"exe_flv\" \
+        #       value=\"resources/"
+        resources_url_src = "<param name=\"exe_flv\" "\
+                + "value=\"resources/"
+        exported_src = "<param name=\"exe_flv\" "\
+                + "value=\""
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # and finally, e) the flashvars playlist url:
+        #    playList: [ { url: 'resources/'
+        resources_url_src = "playList: [ { url: 'resources/" 
+        exported_src = "playList: [ { url: '" 
+        export_content = export_content.replace(resources_url_src,exported_src)
+
+
+
         return export_content
 
     def MassageLinkResourceContentForRenderView(self, content):

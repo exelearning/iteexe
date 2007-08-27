@@ -94,9 +94,6 @@ var TinyMCE_MediaPlugin = {
 							if (flash_id == 'mp3player') {
 							    nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemMP3', d, nl[i]), nl[i]);
 							}
-							else if (flash_id == 'flowplayer') {
-							    nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemFlowPlayer', d, nl[i]), nl[i]);
-							}
 							else {
 							    // normal Flash here:
 							    nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemFlash', d, nl[i]), nl[i]);
@@ -122,6 +119,13 @@ var TinyMCE_MediaPlugin = {
 						case 'clsid:cfcdaa03-8be4-11cf-b84b-0020afbbccfa':
 							nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemRealMedia', d, nl[i]), nl[i]);
 							break;
+
+						case '':
+							// new embedded FLV FlowPlayer uses NO classid nor codebase. double check its id, though:
+							flash_id = tinyMCE.getAttrib(nl[i], "id").toLowerCase();
+							if (flash_id == 'flowplayer') {
+							    nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemFlowPlayer', d, nl[i]), nl[i]);
+							}
 
 					}
 				}
@@ -236,12 +240,20 @@ var TinyMCE_MediaPlugin = {
 								break;
 
 							case 'mceItemFlowPlayer':
-							        // sorta from: case 'mceItemFlash':
-								ci = 'd27cdb6e-ae6d-11cf-96b8-444553540000';
+							        // use NO classid OR codebase for the flowplayer:
+								ci = '';
+								cb = '';
 								// but also setting a specific type parameter:
 								pl.id="flowplayer"
-								cb = 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0';
+								// and do set the object's data to the initial eXe templates directory:
+								pl.data="../templates/flowPlayer.swf";
 								mt = 'application/x-shockwave-flash';
+								// at least until these flashvars are built into options an the FLV's appearance tab,
+								// continue to hardcode the same parameters that were in use with the old
+								// Flash Movie iDevice:
+								pl.flashvars="config={ autoPlay: false, loop: false, initialScale: 'scale', " 
+								    + "showLoopButton: false, showPlayListButtons: false, playList: [ { " 
+								    + "url: '" + pl.src + "' }, ]}";
 								break;
 						}
 
@@ -409,12 +421,19 @@ var TinyMCE_MediaPlugin = {
 		    // WMP hack for eXe:
 		    h += ' classid="clsid:' + cls + '"'
 		    h += ' type="' + mt + '" data="' + p.src + '"';
+		    h += ' codebase="' + cb + '"'; 
+		}
+		else if (mt == 'application/x-shockwave-flash' 
+			&& p.id == 'flowplayer') {
+		    // embedded FLV player - no classid or codebase:
+		    h += ' type="' + mt + '"';
+		    h += ' data="' + p.data + '"';
 		}
 		else
 		{
 		    h += ' classid="clsid:' + cls + '"'
+		    h += ' codebase="' + cb + '"'; 
 		}
-		h += ' codebase="' + cb + '"'; 
 
 		h += typeof(p.id) != "undefined" ? ' id="' + p.id + '"' : '';
 		h += typeof(p.name) != "undefined" ? ' name="' + p.name + '"' : '';

@@ -56,12 +56,9 @@ function init() {
 	var mp3_pos = 5;  // shortcut to expected hardcoded select position
         enable_media_type(f, max_plugin,  mp3_pos, "mp3");
 
-	// r3m0: (once implemented...) always allow the FlowPlayer FLVs (no detection mechanism, either):
-        // but currently not implemented, nor showing in the .htm!
-        //if (1) {
-	//   var flv_pos = 6;  // shortcut to expected hardcoded select position
-        //   enable_media_type(f, max_plugin,  flv_pos, "flp");
-	//}
+	// always allow the eXe MP3 because player is embedded (no detection mechanism, either):
+	 var flv_pos = 6;  // shortcut to expected hardcoded select position
+         enable_media_type(f, max_plugin,  flv_pos, "flp");
 
 
 	fe = tinyMCE.selectedInstance.getFocusElement();
@@ -430,7 +427,7 @@ function changedType(t) {
 	d.getElementById('shockwave_options').style.display = 'none';
 	d.getElementById('wmp_options').style.display = 'none';
 	d.getElementById('rmp_options').style.display = 'none';
-        // r3m0, not yet:
+        // not yet(?):
 	//d.getElementById('mp3_options').style.display = 'none';
 	//d.getElementById('flp_options').style.display = 'none';
 
@@ -597,6 +594,13 @@ function generatePreview(c) {
         if (type == "none") {
            return;
         } 
+        // same for FlowPlayer FLVs, since they will just ask for a Flash plugin:
+        // eventually might be nice to also clear out any previous preview..
+        // PERHAPS this could later "preview" the same image the eXe previews for FLVs,
+        // the one that says "you will see this on export", but for now, no preview at all:
+        if (type == "flp") {
+           return;
+        }
 
 	p.innerHTML = '<!-- x --->';
 
@@ -664,6 +668,13 @@ function generatePreview(c) {
 			codebase = 'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701';
 			type = 'audio/x-pn-realaudio-plugin';
 			break;
+
+		case "mp3":
+			cls = 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000';
+			codebase = 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0';
+			type = 'application/x-shockwave-flash';
+			break;
+
 	}
 
 	if (pl == '') {
