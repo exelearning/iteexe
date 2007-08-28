@@ -312,6 +312,12 @@ class FieldWithResources(Field):
         the advlink text-link plugin.
 
         And the embedded mp3s that use xspf_player.swf;
+
+        AND the embedded FLVs that use flowPlayer.swf, 
+        even though they still use src="resources/" in their embed tag,
+        their src param has been changed to flv_src="resources/" to avoid
+        problems with IE upon export.  Luckily, the src="resources" will still
+        find BOTH such occurrences :-)
         """
         resources_in_use =  []
         search_strings = ["src=\"resources/", "exe_math_latex=\"resources/", \
@@ -642,7 +648,15 @@ class FieldWithResources(Field):
 
                    # and finally, go ahead and replace the filename for:
                    #search_str = "<param name=\"src\" value=\"/previews/" 
-                   new_src_string = "<param name=\"src\" value=\""+resource_url
+                   if not embed_flv_player:
+                       new_src_string = "<param name=\"src\" value=\""\
+                               +resource_url
+                   else:
+                       # although the src param was initially used to find
+                       # this FLV, change it to an flv_src param here so
+                       # that IE can properly play these:
+                       new_src_string = "<param name=\"flv_src\" value=\""\
+                               +resource_url
                    new_content = new_content.replace(file_url_str, 
                                                      new_src_string)
                    log.debug("ProcessPreviewedMedia: built resource: " \
@@ -659,8 +673,13 @@ class FieldWithResources(Field):
                    # parsing mechanism, no worries, just do it:
                    #######
                    embed_search_str = "src=\"/previews/"+pre_input_file_name_str
-
-                   embed_replace_str = "src=\"" + resource_url
+                   if not embed_flv_player:
+                       embed_replace_str = "src=\"" + resource_url
+                   else:
+                       # as with the FLVs src param tag, above, go ahead and
+                       # and change its embed src to  flv_src here so
+                       # that TinyMCE will retain the flv_src information.
+                       embed_replace_str = "flv_src=\"" + resource_url
                    new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
 
@@ -1429,13 +1448,28 @@ class FieldWithResources(Field):
                 + "value=\"../templates/flowPlayer.swf"
         exported_src = "<param name=\"data\" value=\"flowPlayer.swf"
         export_content = export_content.replace(resources_url_src,exported_src)
-        # c) the exe_flv info <embed> tag's:
+        # c) the flv <param> tag's:
+        #   <param name="movie" value="../templates/flowPlayer.swf"
+        resources_url_src = "<param name=\"movie\" "\
+                + "value=\"../templates/flowPlayer.swf"
+        exported_src = "<param name=\"movie\" value=\"flowPlayer.swf"
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # d) the flv's <param> tag's:
+        #  "<param name=\"flv_src\" \
+        #       value=\"resources/"
+        # (kept around instead of the src param tag, which does not work in IE)
+        resources_url_src = "<param name=\"flv_src\" "\
+                + "value=\"resources/"
+        exported_src = "<param name=\"flv_src\" "\
+                + "value=\""
+        export_content = export_content.replace(resources_url_src,exported_src)
+        # e) the exe_flv info <embed> tag's:
         #   "exe_flv=\"resources/"
         resources_url_src = \
                 "exe_flv=\"resources/"
         exported_src =  "exe_flv=\""
         export_content = export_content.replace(resources_url_src,exported_src)
-        # d) the exe_flv's info <param> tag's:
+        # f) the exe_flv's info <param> tag's:
         #  "<param name=\"exe_flv\" \
         #       value=\"resources/"
         resources_url_src = "<param name=\"exe_flv\" "\
@@ -1443,7 +1477,7 @@ class FieldWithResources(Field):
         exported_src = "<param name=\"exe_flv\" "\
                 + "value=\""
         export_content = export_content.replace(resources_url_src,exported_src)
-        # and finally, e) the flashvars playlist url:
+        # and finally, g) the flashvars playlist url:
         #    playList: [ { url: 'resources/'
         resources_url_src = "playList: [ { url: 'resources/" 
         exported_src = "playList: [ { url: '" 

@@ -206,6 +206,10 @@ function init() {
 				setStr(pl, 'rmp', 'numloop');
 				setStr(pl, 'rmp', 'scriptcallbacks');
 			break;
+
+			case "flp":
+				setStr(pl, 'flp', 'flv_src');
+			break;
 		}
 
 		setStr(pl, null, 'src');
@@ -427,9 +431,9 @@ function changedType(t) {
 	d.getElementById('shockwave_options').style.display = 'none';
 	d.getElementById('wmp_options').style.display = 'none';
 	d.getElementById('rmp_options').style.display = 'none';
-        // not yet(?):
-	//d.getElementById('mp3_options').style.display = 'none';
-	//d.getElementById('flp_options').style.display = 'none';
+	d.getElementById('none_options').style.display = 'none';
+	d.getElementById('mp3_options').style.display = 'none';
+	d.getElementById('flp_options').style.display = 'none';
 
 	d.getElementById(t + '_options').style.display = 'block';
 }
@@ -518,6 +522,10 @@ function serializeParameters() {
 			s += getStr('rmp', 'numloop');
 			s += getStr('rmp', 'scriptcallbacks');
 		break;
+
+		case "flp":
+			s += getStr('flp', 'flv_src');
+		break;
 	}
 
 	s += getStr(null, 'id');
@@ -550,7 +558,8 @@ function setStr(pl, p, n) {
 	if (typeof(pl[n]) == "undefined")
 		return;
 
-	if (e.type == "text")
+	// accommodate hidden fields in the same manner as text:
+	if (e.type == "text" || e.type == "hidden")
 		e.value = pl[n];
 	else
 		selectByValue(f, (p != null ? p + "_" : '') + n, pl[n]);
@@ -567,7 +576,9 @@ function getBool(p, n, d, tv, fv) {
 
 function getStr(p, n, d) {
 	var e = document.forms[0].elements[(p != null ? p + "_" : "") + n];
-	var v = e.type == "text" ? e.value : e.options[e.selectedIndex].value;
+	// var v = e.type == "text" ? e.value : e.options[e.selectedIndex].value;
+        // accommodate hidden fields in the same manner as text:
+	var v = ((e.type == "text" || e.type == "hidden")? e.value : e.options[e.selectedIndex].value);
 
 	return ((n == d || v == '') ? '' : n + ":'" + jsEncode(v) + "',");
 }

@@ -30,12 +30,13 @@ function writeFlowPlayer(p) {
         p.id = "flowplayer";
 	// and do set the object's data to the initial eXe templates directory: 
 	p.data="../templates/flowPlayer.swf"; 
+	p.movie="../templates/flowPlayer.swf"; 
 	// at least until these flashvars are built into options an the FLV's appearance tab, 
 	// continue to hardcode the same parameters that were in use with the old 
 	// Flash Movie iDevice: 
 	p.flashvars="config={ autoPlay: false, loop: false, initialScale: 'scale', " 
 	    + "showLoopButton: false, showPlayListButtons: false, playList: [ { " 
-	    + "url: '" + pl.src + "' }, ]}";
+	    + "url: '" + p.src + "' }, ]}";
 	writeEmbed(
 		'',
 		'',
@@ -84,6 +85,7 @@ function writeWindowsMedia(p) {
 
 function writeEmbed(cls, cb, mt, p) {
 	var h = '', n;
+	var flv_skip_src = 0;  // to help with FLV src hack
 
         if (mt == 'video/x-ms-wmv') {
 	    // eXe WMP hack:
@@ -108,8 +110,36 @@ function writeEmbed(cls, cb, mt, p) {
 	h += typeof(p.align) != "undefined" ? 'align="' + p.align + '"' : '';
 	h += '>';
 
-	for (n in p)
-		h += '<param name="' + n + '" value="' + p[n] + '">';
+        // FLV hack for eXe: 
+	if (mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
+            // both src and flv_src parameters are saved with an FLV,
+            // but only write out src if they have changed (if they differ at all),
+            // and only write out flv_src if they have not.
+            // This is because only the src should be used when embedding a new resource,
+            // and for FLVs, otherwise just keep the flv-src since IE doesn't like its src:
+            if (p.src == p.flv_src) {
+                    flv_skip_src = 1;
+                    // implying to also NOT skip the flv_src param
+            }
+            else {
+                    flv_skip_src = 0;
+                    // implying to also skip the flv_src param
+            }
+        }
+
+	for (n in p) { 
+		if ((n == 'src' || n == 'flv_src') 
+		    && mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') { 
+		    // FLV hack for eXe: 
+		    if ((flv_skip_src && n == 'flv_src') || (!flv_skip_src && n == 'src')) { 
+		        h += '<param name="' + n + '" value="' + p[n] + '" />'; 
+		    } 
+		    // else: skip the other :-) 
+		}
+                else {
+                    h += '<param name="' + n + '" value="' + p[n] + '" />';
+                }
+	}
 
         // MP3 hack for eXe:
 	// putting this AFTER all of the above p[], to ensure that it will FOLLOW
@@ -134,8 +164,21 @@ function writeEmbed(cls, cb, mt, p) {
 
 	h += '<embed type="' + mt + '"';
 
-	for (n in p)
-		h += n + '="' + p[n] + '" ';
+	for (n in p) { 
+	    // FLV hack: 
+	    if ((n == 'src' || n == 'flv_src') 
+	        && mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') { 
+		if ((flv_skip_src && n == 'flv_src') || (!flv_skip_src && n == 'src')) { 
+		    // will include it below 
+		}
+                else {
+                    // else: skip the other :-)
+                    continue;
+                }
+            }
+
+	    h += n + '="' + p[n] + '" ';
+	}
 
 	h += '></embed></object>';
 

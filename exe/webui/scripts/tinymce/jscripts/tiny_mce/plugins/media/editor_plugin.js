@@ -247,6 +247,7 @@ var TinyMCE_MediaPlugin = {
 								pl.id="flowplayer"
 								// and do set the object's data to the initial eXe templates directory:
 								pl.data="../templates/flowPlayer.swf";
+								pl.movie="../templates/flowPlayer.swf";
 								mt = 'application/x-shockwave-flash';
 								// at least until these flashvars are built into options an the FLV's appearance tab,
 								// continue to hardcode the same parameters that were in use with the old
@@ -399,6 +400,14 @@ var TinyMCE_MediaPlugin = {
 			al.movie = null;
 		}
 
+		// FLV hack: now that FLVs cannot export their src,
+		// allow their flv_src to override any earlier src,
+		// especially because they also have a movie param that 
+		// references the flowPlayer.swf rather than the source FLV:
+		if (al.flv_src) {
+			al.src = al.flv_src;
+		}
+
 		for (an in al) {
 			if (al[an] != null && typeof(al[an]) != "function" && al[an] != '')
 				ti += an.toLowerCase() + ':\'' + al[an] + "',";
@@ -412,6 +421,7 @@ var TinyMCE_MediaPlugin = {
 
 	_getEmbed : function(cls, cb, mt, p, at) {
 		var h = '', n;
+		var flv_skip_src = 0;  // to help with FLV src hack
 
 		p.width = at.width ? at.width : p.width;
 		p.height = at.height ? at.height : p.height;
@@ -442,9 +452,37 @@ var TinyMCE_MediaPlugin = {
 		h += typeof(p.align) != "undefined" ? ' align="' + p.align + '"' : '';
 		h += '>';
 
+		// FLV hack for eXe:
+		if (mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
+			// both src and flv_src parameters are saved with an FLV,
+			// but only write out src if they have changed (if they differ at all),
+			// and only write out flv_src if they have not.
+			// This is because only the src should be used when embedding a new resource,
+			// and for FLVs, otherwise just keep the flv-src since IE doesn't like its src:
+			if (p.src == p.flv_src) {
+				flv_skip_src = 1;
+				// implying to also NOT skip the flv_src param
+			}
+			else {
+				flv_skip_src = 0;
+				// implying to also skip the flv_src param
+			}
+		}
+
 		for (n in p) {
                         if (typeof(p[n]) != "undefined" && typeof(p[n]) != "function") {
-				h += '<param name="' + n + '" value="' + p[n] + '" />';
+
+				if ((n == 'src' || n == 'flv_src') 
+				    && mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
+				    // FLV hack for eXe:
+				    if ((flv_skip_src && n == 'flv_src') || (!flv_skip_src && n == 'src')) {
+				        h += '<param name="' + n + '" value="' + p[n] + '" />';
+				    }
+				    // else: skip the other :-)
+				}
+				else {
+				    h += '<param name="' + n + '" value="' + p[n] + '" />';
+				}
 
 				// Add extra url parameter if it's an absolute URL on WMP
 				// with WMP hack for eXe:
@@ -479,6 +517,18 @@ var TinyMCE_MediaPlugin = {
 		for (n in p) {
 			if (typeof(p[n]) == "function")
 				continue;
+
+			// FLV hack: 
+			if ((n == 'src' || n == 'flv_src') 
+			    && mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
+			    if ((flv_skip_src && n == 'flv_src') || (!flv_skip_src && n == 'src')) {
+			        // will include it below
+			    }
+			    else {
+			        // else: skip the other :-)
+				continue;
+			    }
+			}
 
 			// Skip url parameter for embed tag on WMP
 			// with WMP hack for eXe:
