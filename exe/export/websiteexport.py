@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -69,7 +70,7 @@ class WebsiteExport(object):
             WebsitePage = module.WebsitePage
 
         self.pages = [ WebsitePage("index", 1, package.root) ]
-        self.generatePages(package.root, 1, 1)
+        self.generatePages(package.root, 1)
         uniquifyNames(self.pages)
 
         prevPage = None
@@ -191,22 +192,17 @@ class WebsiteExport(object):
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
 
 
-    def generatePages(self, node, depth, isZip=False):
+    def generatePages(self, node, depth):
         """
         Recursively generate pages and store in pages member variable
         for retrieving later
         """           
         for child in node.children:
-            if isZip:
-                pageName = child.titleShort.lower().replace(" ", "_")
-                pageName = re.sub(r"\W", "", pageName)
-                if not pageName:
-                    pageName = "__"
-            else:
-                pageName = child.titleShort
+            pageName = child.titleShort.lower().replace(" ", "_")
+            pageName = re.sub(r"\W", "", pageName)
+            if not pageName:
+                pageName = "__"
+
             self.pages.append(WebsitePage(pageName, depth, child))
-            if isZip:
-                self.generatePages(child, depth + 1, 1)
-            else:
-                self.generatePages(child, depth + 1)
+            self.generatePages(child, depth + 1)
 
