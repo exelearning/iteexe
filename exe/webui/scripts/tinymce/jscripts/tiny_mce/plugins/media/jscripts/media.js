@@ -612,18 +612,22 @@ function generatePreview(c) {
         if (type == "flp") {
            return;
         }
+	// and likewise for the embedded mp3 player: don't preview here,
+        // lest users get confused when they see it ask for a missing plugin:
+        if (type == "mp3") {
+	   // but first, go ahead and set a reasonable first-pass
+	   // height and width, if not already specified:
+           if (f.width.value == "" && f.height.value == "") {
+	      f.height.value = 15;
+              f.width.value = 400;
+           }
+           return;
+        }
 
 	p.innerHTML = '<!-- x --->';
 
 	nw = parseInt(f.width.value);
 	nh = parseInt(f.height.value);
-
-        // provide reasonably first-pass sizes for the mp3 player, if not yet specified:
-	if (f.media_type.options[f.media_type.selectedIndex].value == "mp3"
-            && f.width.value == "" && f.height.value == "") {
-	    f.height.value = 15;
-            f.width.value = 400;
-        }
 
 	if (f.width.value != "" && f.height.value != "") {
 		if (f.constrain.checked) {
