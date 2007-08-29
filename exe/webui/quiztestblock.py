@@ -148,7 +148,7 @@ class QuizTestBlock(Block):
         Return an XHTML string for generating the javascript for web export
         """
         scriptStr  = '<script type="text/javascript">\n'
-        scriptStr += '<!--\n'
+        scriptStr += '<!-- //<![CDATA[\n'
         scriptStr += "var numQuestions = " 
         scriptStr += str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
@@ -215,7 +215,7 @@ class QuizTestBlock(Block):
             alert("Your score is " + actualScore + "%%")
            
         }
-    -->
+//]]>    -->
     </script>\n""" % self.idevice.id
 
         return scriptStr
@@ -226,7 +226,7 @@ class QuizTestBlock(Block):
         Return an XHTML string for generating the javascript for scorm export
         """
         scriptStr  = '<script type="text/javascript">\n'
-        scriptStr += '<!--\n'
+        scriptStr += '<!-- //<![CDATA[\n'
         scriptStr += "var numQuestions = "
         scriptStr += unicode(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
@@ -328,7 +328,7 @@ class QuizTestBlock(Block):
          doLMSFinish();
           
         }
--->
+//]]> -->
 </script>\n""" % self.idevice.passRate
 
         return scriptStr
