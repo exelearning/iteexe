@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -195,30 +195,18 @@ class TrueFalseElement(object):
         Note: this won't really matter all that much, since these won't yet
         show up in exported printouts, BUT the image paths will be correct.
         """
-        is_preview=1
-        return self.renderFeedbackView(is_preview)
+        return self.renderFeedbackView(is_preview=True)
 
-    def renderFeedbackView(self, is_preview=0):
+    def renderFeedbackView(self, is_preview=False):
         """
         return xhtml string for display this option's feedback
         """
-        if is_preview:
-            feedbackStr1 = _(u"Correct!") + " " \
-                    + self.question_feedback.renderPreview()
-        else: 
-            feedbackStr1 = _(u"Correct!") + " " \
-                    + self.question_feedback.renderView()
-
-        if is_preview:
-            feedbackStr2 = _(u"Incorrect!") + " " \
-                    + self.question_feedback.renderPreview()
-        else: 
-            feedbackStr2 = _(u"Incorrect!") + " " \
-                    + self.question_feedback.renderView()
+        feedbackStr1 = _(u"Correct!") + " "
+        feedbackStr2 = _(u"Incorrect!") + " "
 
         if not self.question.isCorrect:
             feedbackStr1, feedbackStr2 = feedbackStr2, feedbackStr1 
-            
+
         feedbackId1 = "0" + "b" + self.id
         feedbackId2 = "1" + "b" + self.id
         html  = u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId1
@@ -227,6 +215,13 @@ class TrueFalseElement(object):
         html += u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId2
         html += u'display: none;">' 
         html += feedbackStr2 + '</div>\n'
+        html += u'<div id="sfbk%s" style="color: rgb(0, 51, 204);' % self.id
+        html += u'display: none;">' 
+        if is_preview:
+            html += self.question_feedback.renderPreview()
+        else:
+            html += self.question_feedback.renderView()
+        html += u'</div>\n'
         
         return html
         
