@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -335,7 +335,7 @@ class ScormPage(Page):
         html += u"</div>\n"
         if self.node.package.scolinks:
             html += u'<a class="previouslink" '
-            html += u'href="javascript: goBack();">%s</a> | <a class="nextlink"' % _('Previous')
+            html += u'href="javascript: goBack();">%s</a> | <a class="nextlink" ' % _('Previous')
             html += u'href="javascript: goForward();">%s</a>' % _('Next')
         html += self.renderLicense()
         html += self.renderFooter()
