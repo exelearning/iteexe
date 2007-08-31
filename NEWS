@@ -1,8 +1,12 @@
 Next Release
+* Add embedded MP3 player as a rich text editor media type
+* Add FLV player as rich text editor media type
 * Fix web folder export to convert filenames to safe ASCII characters
 * Fix iPod Notes export to write UTF-8 index (non-ASCII node names)
+* Fix XHTML generated for SCORM Quiz
+* Fix XHTML generated for True-False question feedback
 * Change license footer text so translators can ignore trailing space
-* Updated DE,FR,IT translations
+* Updated DE,FR,IT,PL translations
 
 Version 1.00 (r3219)
 * Fix styles to use relative line height rather than absolute
