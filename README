@@ -157,6 +157,24 @@ Netscape Communications Corporation.
 Portions created by the Initial Developer are Copyright (C) 1998
 the Initial Developer. All Rights Reserved.
 
+ * Fabricio Zuardi for XSPF Web Music Player mp3 player
+
+Music Player is Open Source Software, licensed under the BSD and can be used 
+and modified by anyone, including for commercial purposes.
+
+XSPF Web Music Player is a flash-based web application that uses xspf playlist
+format to play mp3 songs. XSPF is the XML Shareable Playlist Format. The 
+software is written in Actionscript 2.
+
+For more information on XSPF, see: http://musicplayer.sourceforge.net/
+
+ * Anssi Piirainen for FlowPlayer FLV video player
+
+FlowPlayer is a free Flash video player. 
+License: Apache License V2.0 
+
+For more information on FlowPlayer, see: http://flowplayer.org/
+
  * John Forkosh Associates, Inc. for mimeTeX 
 
 mimeTeX is distributed under the terms of the GNU General Public License.
