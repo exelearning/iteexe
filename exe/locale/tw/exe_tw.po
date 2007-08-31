@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-27 21:59+1200\n"
+"POT-Creation-Date: 2007-09-01 02:52+1200\n"
 "PO-Revision-Date: 2006-08-12 05:37+1200\n"
 "Last-Translator: \n"
 "Language-Team: Samuel Sarpong and J.P.Antwi-Danso <srnsam@yahoo.com, portnass2003@yahoo.com>\n"
@@ -102,16 +102,16 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "<p>Tintim dwumadie a akwan deda mu yi bi, wopɛ a wobɛtintim foforɔ anaa sɛ wobɛkɔ akɔ twa afiri baabi aba.</p><p> Sɛ wopɛ sɛ wode asɛmfua bi sie a, fa “akura no” to so na mia so mprɛnu. "
 
-#: exe/engine/field.py:1790
+#: exe/engine/field.py:1998
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p> Sɛ yɛamfa wie a yɛnhunu mfosoɔ a yɛyɛ wɔ ɔkasa no ho. Sɛ yɛfa nso a mfosoɔ biara bɛda adi pefee.</p><p><kɛseɛ>Sɛ ebia :</kɛseɛ> Sɛ mmuaeɛ no yɛ  <code>Ɔsono</code> ne mmienu <code>Ɔsono</code> ne <code>Ɔsoro</code> bɛbɛn<em>\"ho pa ara\"</em> efiri sɛ atwerɛdeɛ baako pɛ na ɛsesa. Mpo sɛ\" yɛhwɛ atwerɛdeɛ akɛseɛ\" a</p><p>sɛ yɛmfa mpo a, atwerɛdeɛ nketewa<code>e</code> no nyɛ mfomsoɔ <code>eliphant</code> afedie no bɛfa no pɛpɛɛpɛ.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" sɛ yɛfa a mmuaeɛ no bɛyɛ nokwarɛ \"Ɔsono\". If only \"Strict Marking\" is checked and \"Check Capitilization\" nyɛ, \"Ɔsono\" na ɛbɛfa.</p>"
 
-#: exe/engine/field.py:1811
+#: exe/engine/field.py:2019
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p> sɛ wofa wei a, na wo nyiano no wode atwerɛdeɛ kɛseɛ hyɛ aseɛ a, wobɛte.</p>"
 
-#: exe/engine/field.py:1816
+#: exe/engine/field.py:2024
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -119,7 +119,7 @@ msgid ""
 "exercise.</p>"
 msgstr "<p> wofa wie nso a, afidie no ntwɛn mma wo nwie ansa na woatwa ama wo, na mmom woretwerɛ nyinaa na afidie no rehwɛ sɛ woatwa anaa nso sɛ woate.</p>"
 
-#: exe/engine/field.py:2065
+#: exe/engine/field.py:2273
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -245,7 +245,7 @@ msgstr ""
 msgid "Add an mp3 file to your iDevice."
 msgstr ""
 
-#: exe/webui/testquestionelement.py:113 exe/webui/element.py:1655
+#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1655
 msgid "Add another Option"
 msgstr "Fa foforɔ ka ho"
 
@@ -293,7 +293,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr ""
 
-#: exe/engine/field.py:1854
+#: exe/engine/field.py:2062
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -436,7 +436,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr ""
 
-#: exe/engine/field.py:1403
+#: exe/engine/field.py:1611
 msgid "Click Here"
 msgstr "Mia ha"
 
@@ -448,7 +448,7 @@ msgstr ""
 msgid "Click here"
 msgstr "Mia ha"
 
-#: exe/engine/field.py:2073
+#: exe/engine/field.py:2281
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -489,7 +489,7 @@ msgstr "Akenkansɛm"
 msgid "Correct"
 msgstr "Nokwarɛ/Ampa"
 
-#: exe/webui/truefalseelement.py:206 exe/webui/truefalseelement.py:209
+#: exe/webui/truefalseelement.py:204
 #, fuzzy
 msgid "Correct!"
 msgstr "Nokwarɛ/Ampa"
@@ -532,7 +532,7 @@ msgstr "Mfonin ani te"
 msgid "Delete option"
 msgstr "Nkɔmpɔbɔ"
 
-#: exe/webui/testquestionelement.py:95 exe/webui/questionelement.py:103
+#: exe/webui/testquestionelement.py:96 exe/webui/questionelement.py:103
 #: exe/webui/truefalseelement.py:118 exe/webui/element.py:1631
 #: exe/webui/element.py:1925
 #, fuzzy
@@ -633,7 +633,7 @@ msgid ""
 msgstr ""
 
 #: exe/export/imsexport.py:344 exe/export/scormexport.py:469
-#: exe/export/websiteexport.py:87
+#: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -747,7 +747,7 @@ msgid ""
 "by clicking the red \"X\" next to the Option."
 msgstr ""
 
-#: exe/engine/field.py:2266
+#: exe/engine/field.py:2474
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -788,7 +788,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr "Twerɛ nsɛmmisa a nteaseɛ wɔ mu."
 
-#: exe/engine/field.py:2258
+#: exe/engine/field.py:2466
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -857,8 +857,8 @@ msgstr "Daabi"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:191 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2145
-#: exe/engine/field.py:2157 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2353
+#: exe/engine/field.py:2365 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
@@ -872,7 +872,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:2275 exe/engine/field.py:2300
+#: exe/engine/field.py:2483 exe/engine/field.py:2508
 #, fuzzy
 msgid "Feedback:"
 msgstr "Mmuaeɛ"
@@ -971,7 +971,7 @@ msgid "Hide/Show Word"
 msgstr ""
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:2183 exe/engine/field.py:2203
+#: exe/engine/field.py:2391 exe/engine/field.py:2411
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1030,7 +1030,7 @@ msgstr "Atifi asɛm foforɔ"
 msgid "Incorrect"
 msgstr "Nokwarɛ/Ampa"
 
-#: exe/webui/truefalseelement.py:213 exe/webui/truefalseelement.py:216
+#: exe/webui/truefalseelement.py:205
 #, fuzzy
 msgid "Incorrect!"
 msgstr "Nokwarɛ/Ampa"
@@ -1221,28 +1221,28 @@ msgid ""
 "learning tasks."
 msgstr ""
 
-#: exe/engine/field.py:1960 exe/engine/field.py:2024
+#: exe/engine/field.py:2168 exe/engine/field.py:2232
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/engine/field.py:1896 exe/engine/field.py:1940
+#: exe/engine/field.py:2104 exe/engine/field.py:2148
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:2141 exe/engine/field.py:2154
+#: exe/engine/field.py:2349 exe/engine/field.py:2362
 #: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
 #: exe/webui/element.py:1505 exe/webui/element.py:1510
 #: exe/webui/element.py:1766 exe/webui/element.py:1771
 msgid "Option"
 msgstr "Ɛkwan"
 
-#: exe/engine/field.py:2225 exe/engine/field.py:2235
-#: exe/webui/testquestionelement.py:101 exe/webui/element.py:1642
+#: exe/engine/field.py:2433 exe/engine/field.py:2443
+#: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Akwan"
 
@@ -1356,8 +1356,8 @@ msgstr ""
 msgid "Previous"
 msgstr "Dada"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1598
-#: exe/engine/field.py:1645
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1806
+#: exe/engine/field.py:1853
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1415,14 +1415,14 @@ msgid "Put instructions for learners here"
 msgstr ""
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:2180 exe/engine/field.py:2199
+#: exe/engine/field.py:2388 exe/engine/field.py:2407
 #, fuzzy
 msgid "Question"
 msgstr "Nsɛmmisa"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:2261 exe/engine/field.py:2297 exe/webui/element.py:1626
+#: exe/engine/field.py:2469 exe/engine/field.py:2505 exe/webui/element.py:1626
 #, fuzzy
 msgid "Question:"
 msgstr "Nsɛmmisa"
@@ -1562,7 +1562,7 @@ msgstr "Yi mfonin"
 msgid "Select an image (JPG file)"
 msgstr "Fa mfonin bi (JPG file)"
 
-#: exe/engine/field.py:2270
+#: exe/engine/field.py:2478
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1854,7 +1854,7 @@ msgid ""
 "responses."
 msgstr ""
 
-#: exe/engine/field.py:2036
+#: exe/engine/field.py:2244
 msgid "Type a discussion topic here."
 msgstr "Twerɛ nkitahodie no atifiasɛm wɔ ha."
 
@@ -1876,7 +1876,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
 
-#: exe/engine/field.py:2273
+#: exe/engine/field.py:2481
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

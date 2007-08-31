@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-27 21:59+1200\n"
+"POT-Creation-Date: 2007-09-01 02:52+1200\n"
 "PO-Revision-Date: 2007-08-06 09:45+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -117,16 +117,16 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "<p>空所補充のフィールドに空所補充による学習活動で用いるテキストを入力してください。他のリソースからコピーしたものを貼付け（ペースト）ることもできますし、直接フィールドに入力することもできます。</p><p>空所とする単語を選択するには、単語をダブルクリックし、その後、下にある「単語を隠す／表示する」ボタンをクリックしてください。</p>"
 
-#: exe/engine/field.py:1790
+#: exe/engine/field.py:1998
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>この機能をチェックしない場合は、いくらかのスペルや大文字小文字のエラーは許容されます。この機能をチェックした場合、スペル、大文字小文字の区別とも完璧にマッチした場合のみ正解として許容されます。</p><p><strong>例：</strong>もし正解が<code>Elephant</code>の場合、<code>elephant</code>や<code>Eliphant</code>は、一字しか違っていないことから、アルゴリズムにより<em>\"ほぼ正解\"</em>とみなされます。これは仮に\"大文字小文字を区別する\" 設定となっている場合もそうです。</p><p>上の例で「大文字小文字を区別する」が設定されてない場合、, 小文字の<code>e</code>は、間違いと見なされません。また<code>eliphant</code>についても許容されます。</p><p>\"厳しく採点する\"と\"大文字小文字をチェックする\"の両方が設定されている場合、\"Elephant\"が唯一の正解となります。.\"厳しく採点する\"が設定され、 \"大文字小文字をチェックする\"の設定がされていない場合のみ、 \"elephant\"は許容されます。</p>"
 
-#: exe/engine/field.py:1811
+#: exe/engine/field.py:2019
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>このオプションをチェックした場合、提出された解答は,大文字小文字が一致しない場合、「不正解」として採点されます。</p>"
 
-#: exe/engine/field.py:1816
+#: exe/engine/field.py:2024
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -134,7 +134,7 @@ msgid ""
 "exercise.</p>"
 msgstr "<p>このオプションが設定された場合, 学習者が全問題を解答後一括採点するのではなく、解答を入力する度採点されます。</p>"
 
-#: exe/engine/field.py:2065
+#: exe/engine/field.py:2273
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。</P>"
 
@@ -281,7 +281,7 @@ msgstr "iDeviceにインタラクティブなフィードバックを追加"
 msgid "Add an mp3 file to your iDevice."
 msgstr "iDeviceにmp3ファイルを追加"
 
-#: exe/webui/testquestionelement.py:113 exe/webui/element.py:1655
+#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1655
 msgid "Add another Option"
 msgstr "別のオプションを追加"
 
@@ -328,7 +328,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "「配置」により、画面のどの部分にメディアプレーヤーを配置するか決めることができます。"
 
-#: exe/engine/field.py:1854
+#: exe/engine/field.py:2062
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -488,7 +488,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "<strong>ファイルの選択</strong>をクリックし, 添付するファイルを探し、そのファイルを選択してください。"
 
-#: exe/engine/field.py:1403
+#: exe/engine/field.py:1611
 msgid "Click Here"
 msgstr "ここをクリックする"
 
@@ -500,7 +500,7 @@ msgstr "ガイドを表示するため、クリックしてください"
 msgid "Click here"
 msgstr "ここをクリックする"
 
-#: exe/engine/field.py:2073
+#: exe/engine/field.py:2281
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -541,7 +541,7 @@ msgstr "空所補充用テキスト"
 msgid "Correct"
 msgstr "正解"
 
-#: exe/webui/truefalseelement.py:206 exe/webui/truefalseelement.py:209
+#: exe/webui/truefalseelement.py:204
 msgid "Correct!"
 msgstr "正解！"
 
@@ -583,7 +583,7 @@ msgstr "画像の削除"
 msgid "Delete option"
 msgstr "オプションの削除"
 
-#: exe/webui/testquestionelement.py:95 exe/webui/questionelement.py:103
+#: exe/webui/testquestionelement.py:96 exe/webui/questionelement.py:103
 #: exe/webui/truefalseelement.py:118 exe/webui/element.py:1631
 #: exe/webui/element.py:1925
 msgid "Delete question"
@@ -684,7 +684,7 @@ msgstr ""
 "%s"
 
 #: exe/export/imsexport.py:344 exe/export/scormexport.py:469
-#: exe/export/websiteexport.py:87
+#: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -825,7 +825,7 @@ msgstr ""
 "オプションの追加ができます。オプションの横にある赤い \"X\" をクリック \n"
 "するとオプションが削除できます。"
 
-#: exe/engine/field.py:2266
+#: exe/engine/field.py:2474
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -878,7 +878,7 @@ msgstr ""
 "質問は明確に、またあいまいにならないようにしてください。消極的な表現は避け、\n"
 "あいまいな表現にならないように、明確に記述してください。"
 
-#: exe/engine/field.py:2258
+#: exe/engine/field.py:2466
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -946,8 +946,8 @@ msgstr "間違い"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:191 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2145
-#: exe/engine/field.py:2157 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2353
+#: exe/engine/field.py:2365 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
 #: exe/webui/common.py:206 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
@@ -963,7 +963,7 @@ msgstr ""
 "フィードバックボタンは表示されません。"
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:2275 exe/engine/field.py:2300
+#: exe/engine/field.py:2483 exe/engine/field.py:2508
 msgid "Feedback:"
 msgstr "フィードバック："
 
@@ -1055,7 +1055,7 @@ msgid "Hide/Show Word"
 msgstr "単語を隠す／表示する"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:2183 exe/engine/field.py:2203
+#: exe/engine/field.py:2391 exe/engine/field.py:2411
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1114,7 +1114,7 @@ msgstr "iDevicesのインポート"
 msgid "Incorrect"
 msgstr "不正解！"
 
-#: exe/webui/truefalseelement.py:213 exe/webui/truefalseelement.py:216
+#: exe/webui/truefalseelement.py:205
 msgid "Incorrect!"
 msgstr "不正解！"
 
@@ -1294,28 +1294,28 @@ msgstr ""
 "「目的」では、学習者の期待される学習結果を記述するとともに、学習タスクの\n"
 "終了後、学習者が何ができるようになるかを定義する必要があります。"
 
-#: exe/engine/field.py:1960 exe/engine/field.py:2024
+#: exe/engine/field.py:2168 exe/engine/field.py:2232
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "このiDeviceでは.flv（フラッシュムービーファイル）のみ選択できます。"
 
-#: exe/engine/field.py:1896 exe/engine/field.py:1940
+#: exe/engine/field.py:2104 exe/engine/field.py:2148
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "このiDeviceでは.swf（フラッシュオブジェクト）のみ選択できます。"
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:2141 exe/engine/field.py:2154
+#: exe/engine/field.py:2349 exe/engine/field.py:2362
 #: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
 #: exe/webui/element.py:1505 exe/webui/element.py:1510
 #: exe/webui/element.py:1766 exe/webui/element.py:1771
 msgid "Option"
 msgstr "オプション"
 
-#: exe/engine/field.py:2225 exe/engine/field.py:2235
-#: exe/webui/testquestionelement.py:101 exe/webui/element.py:1642
+#: exe/engine/field.py:2433 exe/engine/field.py:2443
+#: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "オプション"
 
@@ -1430,8 +1430,8 @@ msgstr "Filename %s はファイルです。取り替えることはできませ
 msgid "Previous"
 msgstr "前へ"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1598
-#: exe/engine/field.py:1645
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1806
+#: exe/engine/field.py:1853
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1493,13 +1493,13 @@ msgid "Put instructions for learners here"
 msgstr "学習者への指示をここに記入してください"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:2180 exe/engine/field.py:2199
+#: exe/engine/field.py:2388 exe/engine/field.py:2407
 msgid "Question"
 msgstr "質問"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:2261 exe/engine/field.py:2297 exe/webui/element.py:1626
+#: exe/engine/field.py:2469 exe/engine/field.py:2505 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "質問："
 
@@ -1640,7 +1640,7 @@ msgstr "画像の選択"
 msgid "Select an image (JPG file)"
 msgstr "画像（jpegファイル）の選択"
 
-#: exe/engine/field.py:2270
+#: exe/engine/field.py:2478
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1960,7 +1960,7 @@ msgstr ""
 "質問形式です。この種類の質問形式は、事実に基づいた情報や、正しいか間違って\n"
 "いるかの判断がしやすい情報を利用する際に効果があります。"
 
-#: exe/engine/field.py:2036
+#: exe/engine/field.py:2244
 msgid "Type a discussion topic here."
 msgstr "ここにディスカッション用のトピックをタイプしてください。"
 
@@ -1990,7 +1990,7 @@ msgstr ""
 "自動的に提示します。\n"
 " 正答の場合、\"正解\"、正答以外のオプションを選んだ場合、\"不正解\""
 
-#: exe/engine/field.py:2273
+#: exe/engine/field.py:2481
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
