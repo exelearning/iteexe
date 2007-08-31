@@ -5,8 +5,11 @@
 	background-color: #ffffcc;
 }
 
-.mceItemMP3, .mceItemFlowPlayer {
-	background-image: url('../images/media.gif');
+.mceItemFlowPlayer {
+	background-image: url('../images/flv.gif');
+}
+.mceItemMP3 {
+	background-image: url('../images/mp3.gif');
 }
 .mceItemShockWave {
 	background-image: url('../images/shockwave.gif');
