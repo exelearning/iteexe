@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -128,12 +129,12 @@ class TestquestionElement(object):
         """
         Returns an XHTML string for viewing this element
         """
-        html  = "<b>"
+        html  = u""
         if preview: 
             html += self.questionElement.renderPreview()
         else:
             html += self.questionElement.renderView()
-        html += "</b><br/>\n"
+        html += "<br/>\n"
 
         html += "<table>"
         for element in self.options:
