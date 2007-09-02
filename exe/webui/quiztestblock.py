@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -120,7 +120,8 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<form id="quizForm%s" ' % self.idevice.id
+        html  = u'<form name="quizForm%s" id="quizForm%s" ' % (
+                self.idevice.id, self.idevice.id)
         html += u'action="javascript:calcScore2();">\n'
         html += u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
@@ -211,7 +212,7 @@ class QuizTestBlock(Block):
      
             calcRawScore();
             actualScore =  Math.round(rawScore / numQuestions * 100);
-            document.getElementById("quizForm%s").submitB.disabled = "True"
+            document.getElementById("quizForm%s").submitB.disabled = true;
             alert("Your score is " + actualScore + "%%")
            
         }
@@ -293,7 +294,11 @@ class QuizTestBlock(Block):
         function calcScore2()
         {
            computeTime();  // the student has stopped here.
-     
+       """
+        scriptStr += """
+           document.getElementById("quizForm%s").submitB.disabled = true;
+       """ % (self.idevice.id)
+        scriptStr += """
            getAnswer();
      
            calcRawScore();

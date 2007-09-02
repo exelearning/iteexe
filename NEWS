@@ -2,6 +2,7 @@ Next Release
 * Add embedded MP3 player as a rich text editor media type
 * Add FLV player as rich text editor media type
 * Add DIV around each iDevice on web/ims/scorm export
+* Add disabling SUBMIT ANSWERS button in SCORM Quiz after first submission
 * Fix web folder export to convert filenames to safe ASCII characters
 * Fix iPod Notes export to write UTF-8 index (non-ASCII node names)
 * Fix XHTML generated for SCORM Quiz
