@@ -80,13 +80,6 @@ class Manifest(object):
             lrm['description'] = self.package.name
         if lrm.get('creator', '') == '':
             lrm['creator'] = self.package.author
-        # Metadata
-        templateFilename = self.config.xulDir/'templates'/'dublincore.xml'
-        template = open(templateFilename, 'rb').read()
-        xml = template % lrm
-        out = open(self.outputDir/'dublincore.xml', 'wb')
-        out.write(xml.encode('utf8'))
-        out.close()
         # if they don't look like VCARD entries, coerce to fn:
         for f in ('creator', 'publisher', 'contributors'):
             if re.match('.*[:;]', lrm[f]) == None:
