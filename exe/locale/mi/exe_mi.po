@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-01 02:52+1200\n"
+"POT-Creation-Date: 2007-09-03 21:15+1200\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -700,7 +700,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:344 exe/export/scormexport.py:469
+#: exe/export/imsexport.py:346 exe/export/scormexport.py:464
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1259,7 +1259,7 @@ msgid "New iDevice"
 msgstr "iDevice Hou"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:339 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:195
 #, fuzzy
 msgid "Next"
 msgstr "Kupu"
@@ -1449,7 +1449,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:338 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:333 exe/export/websitepage.py:189
 #, fuzzy
 msgid "Previous"
 msgstr "Tirohia"
@@ -1619,7 +1619,7 @@ msgstr ""
 msgid "SCORM Quiz"
 msgstr "SCORM Whakamātautau Pākiki"
 
-#: exe/webui/quiztestblock.py:139
+#: exe/webui/quiztestblock.py:140
 msgid "SUBMIT ANSWERS"
 msgstr "TUKU MAI NGĀ WHAKAUTU"
 
@@ -1805,7 +1805,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Tuku Whakautu"
 
-#: exe/webui/quiztestblock.py:355
+#: exe/webui/quiztestblock.py:360
 msgid "Submit Answer"
 msgstr "Tuku Whakautu"
 
@@ -2184,7 +2184,7 @@ msgstr "Tuhipānui"
 msgid "blank for original size"
 msgstr "piako mō te rahi pono"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:303
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
 msgid "eXe"
 msgstr "eXe"
 
@@ -2211,7 +2211,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Kāore te iDevice %s he mōkī"
 
-#: exe/engine/package.py:458 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Ētita iDevice"

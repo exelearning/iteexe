@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-01 02:52+1200\n"
+"POT-Creation-Date: 2007-09-03 21:15+1200\n"
 "PO-Revision-Date: 2007-07-05 16:56+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -701,7 +701,7 @@ msgstr ""
 "Exportació errònia !\n"
 "%s"
 
-#: exe/export/imsexport.py:344 exe/export/scormexport.py:469
+#: exe/export/imsexport.py:346 exe/export/scormexport.py:464
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1265,7 +1265,7 @@ msgid "New iDevice"
 msgstr "Nou iDevice"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:339 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:195
 msgid "Next"
 msgstr "Següent"
 
@@ -1452,7 +1452,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "La carpeta de vistes prèvies %s és un arxiu, no pot ser reemplaçat"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:338 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:333 exe/export/websitepage.py:189
 msgid "Previous"
 msgstr "Anterior"
 
@@ -1625,7 +1625,7 @@ msgstr ""
 msgid "SCORM Quiz"
 msgstr "Prova SCORM"
 
-#: exe/webui/quiztestblock.py:139
+#: exe/webui/quiztestblock.py:140
 msgid "SUBMIT ANSWERS"
 msgstr "ENVIAR RESPOSTES"
 
@@ -1805,7 +1805,7 @@ msgstr "Marcatge estricte ?"
 msgid "Submit"
 msgstr "Envia"
 
-#: exe/webui/quiztestblock.py:355
+#: exe/webui/quiztestblock.py:360
 msgid "Submit Answer"
 msgstr "Envia la Resposta"
 
@@ -2204,7 +2204,7 @@ msgstr "article"
 msgid "blank for original size"
 msgstr "espai per la mida original"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:303
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
 msgid "eXe"
 msgstr "eXe"
 
@@ -2231,7 +2231,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no té paquet"
 
-#: exe/engine/package.py:458 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor iDevice"

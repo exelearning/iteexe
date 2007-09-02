@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-01 02:52+1200\n"
+"POT-Creation-Date: 2007-09-03 21:15+1200\n"
 "PO-Revision-Date: 2007-07-09 08:32+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -738,7 +738,7 @@ msgstr ""
 "SIKERTELEN EXPORTÁLÁS!\n"
 "%s"
 
-#: exe/export/imsexport.py:344 exe/export/scormexport.py:469
+#: exe/export/imsexport.py:346 exe/export/scormexport.py:464
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1302,7 +1302,7 @@ msgid "New iDevice"
 msgstr "Új iDevice modul"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:339 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:195
 msgid "Next"
 msgstr "Következő"
 
@@ -1492,7 +1492,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:338 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:333 exe/export/websitepage.py:189
 msgid "Previous"
 msgstr "Előző"
 
@@ -1664,7 +1664,7 @@ msgstr ""
 msgid "SCORM Quiz"
 msgstr "SCORM Teszt"
 
-#: exe/webui/quiztestblock.py:139
+#: exe/webui/quiztestblock.py:140
 msgid "SUBMIT ANSWERS"
 msgstr "VÁLASZ KÜLDÉSE"
 
@@ -1846,7 +1846,7 @@ msgstr "Pontos értékelés?"
 msgid "Submit"
 msgstr "Elküld"
 
-#: exe/webui/quiztestblock.py:355
+#: exe/webui/quiztestblock.py:360
 msgid "Submit Answer"
 msgstr "Válasz elküldése"
 
@@ -2256,7 +2256,7 @@ msgstr "cikk"
 msgid "blank for original size"
 msgstr "Hagyja üresen, ha a képet az eredeti méretben akarja megjeleníteni."
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:303
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
 msgid "eXe"
 msgstr "eXe"
 
@@ -2285,7 +2285,7 @@ msgstr "iDeice %s nincs csomag"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:458 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice szerkesztő"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-01 02:52+1200\n"
+"POT-Creation-Date: 2007-09-03 21:15+1200\n"
 "PO-Revision-Date: 2007-08-06 09:45+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -683,7 +683,7 @@ msgstr ""
 "エキスポートに失敗しました！\n"
 "%s"
 
-#: exe/export/imsexport.py:344 exe/export/scormexport.py:469
+#: exe/export/imsexport.py:346 exe/export/scormexport.py:464
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1243,7 +1243,7 @@ msgid "New iDevice"
 msgstr "新しい iDeｖice"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:339 exe/export/websitepage.py:192
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:195
 msgid "Next"
 msgstr "次へ"
 
@@ -1426,7 +1426,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:338 exe/export/websitepage.py:186
+#: exe/export/scormexport.py:333 exe/export/websitepage.py:189
 msgid "Previous"
 msgstr "前へ"
 
@@ -1589,7 +1589,7 @@ msgstr ""
 msgid "SCORM Quiz"
 msgstr "SCORM クイズ"
 
-#: exe/webui/quiztestblock.py:139
+#: exe/webui/quiztestblock.py:140
 msgid "SUBMIT ANSWERS"
 msgstr "解答を提出"
 
@@ -1767,7 +1767,7 @@ msgstr "厳しく採点しますか？"
 msgid "Submit"
 msgstr "提出する"
 
-#: exe/webui/quiztestblock.py:355
+#: exe/webui/quiztestblock.py:360
 msgid "Submit Answer"
 msgstr "解答を提出する"
 
@@ -2161,7 +2161,7 @@ msgstr "記事"
 msgid "blank for original size"
 msgstr "オリジナルのサイズにするため空白"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:303
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
 msgid "eXe"
 msgstr "eXe"
 
@@ -2188,7 +2188,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s はパッケージをもっていません"
 
-#: exe/engine/package.py:458 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "ｉＤｅｖｉｃｅ編集"
