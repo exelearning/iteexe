@@ -1,12 +1,14 @@
 """A more user friendly configParser
 
 Copyright 2005-2006 Matthew Sherborne. 
+Copyright 2005-2007 eXe Project, New Zealand Tertiary Education Commisssion
 
 Released under the GPL2 license found at
 http://www.fsf.org/licensing/licenses/gpl.txt
 """
 
 import re, os
+import codecs
 
 exSection = re.compile('\[(?P<sectionname>(\w|\s)+)\]\s*')
 exOption = re.compile("""\s*                # Ignore white space at the beginning
@@ -124,6 +126,10 @@ class ConfigParser(object):
         # However, in some other less popular encodings, line ending chars are
         # different
         lines = file_.readlines()
+        # the codecs utf_8_sig decoder is only available in Python 2.5+,
+        # so process by hand
+        if lines[0].startswith(codecs.BOM_UTF8):
+            lines[0] = lines[0][3:]
         # Store each line as a unicode string internally
         for i, line in enumerate(lines):
             if not isinstance(line, unicode):
