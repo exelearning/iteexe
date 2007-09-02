@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -106,6 +107,7 @@ class WebsitePage(Page):
         html += '</p></div>\n'
 
         for idevice in self.node.idevices:
+            html += u'<div class="%s" id="id%s">' %  (idevice.klass, idevice.id)
             block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
@@ -114,6 +116,7 @@ class WebsitePage(Page):
                 html += block.renderJavascriptForWeb()
             if idevice.title != "Forum Discussion":
                 html += block.renderView(style)
+            html += u'</div>\n'     # iDevice div
         
         html += self.getNavigationLink(prevPage, nextPage)
         # writes the footer for each page 

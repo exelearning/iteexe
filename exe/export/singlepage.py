@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -117,6 +118,7 @@ class SinglePage(Page):
         style = self.node.package.style
 
         for idevice in node.idevices:
+            html += u'<div class="%s" id="id%s">' % (idevice.klass, idevice.id)
             block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
@@ -124,6 +126,7 @@ class SinglePage(Page):
             if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForWeb()
             html += block.renderView(style)
+            html += u'</div>\n'     # iDevice div
 
         for child in node.children:
             html += self.renderNode(child)

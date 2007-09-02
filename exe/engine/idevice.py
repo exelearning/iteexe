@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -94,6 +95,16 @@ class Idevice(Persistable):
     purpose  = lateTranslate('purpose')
     tip      = lateTranslate('tip')
 
+    def get_klass(self):
+        if hasattr(self, 'class_'):
+            if self.class_ == '':
+                return u'customIdevice'
+            else:
+                return self.class_ + u'Idevice'
+        else:
+            klass = str(self.__class__).split('.')[-1]
+            return klass[:-2]
+    klass = property(get_klass)
 
     def __cmp__(self, other):
         """
