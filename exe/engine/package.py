@@ -259,12 +259,11 @@ class Package(Persistable):
                 return
         # Save in recentDocuments list
         recentProjects = G.application.config.recentProjects
-        fn = filename.encode('utf-8')
-        if fn in recentProjects:
+        if filename in recentProjects:
             # If we're already number one, carry on
-            if recentProjects[0] == fn: 
+            if recentProjects[0] == filename:
                 return
-            recentProjects.remove(fn)
+            recentProjects.remove(filename)
         recentProjects.insert(0, filename)
         del recentProjects[5:] # Delete any older names from the list
         G.application.config.configParser.write() # Save the settings
