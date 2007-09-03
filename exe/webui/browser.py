@@ -2,7 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This module is for the TwiSteD web server.
 #
@@ -41,8 +41,7 @@ def setVersionInPrefs(version_string, profile_dir):
         prefs = open(prefs, 'wt')
         for line in lines:
             if line.find("extensions.lastAppVersion") > -1:
-                line = re.sub(r'\d+\.\d+\.\d+\.\d+',
-                        version_string, line, 1)
+                line = re.sub(r'\d+(\.\d+)+', version_string, line, 1)
                 log.info(u"updated browser version in prefs: " + line)
             prefs.write(line)
     except IOError:
@@ -51,7 +50,7 @@ def setVersionInPrefs(version_string, profile_dir):
 def setBrowserVersion(browserPath, profile_dir):
     version = os.popen(browserPath + " -v", "r").read()
     log.info(u"Firefox version: " + version)
-    vs = re.search(r"(?P<vs>\d+\.\d+\.\d+\.\d+)", version)
+    vs = re.search(r"Firefox\s+(?P<vs>\d+(\.\d+)+)", version)
     if vs:
         setVersionInPrefs(vs.group('vs'), profile_dir)
 
