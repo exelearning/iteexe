@@ -1,4 +1,4 @@
-Next Release
+Version 1.01 (r3265)
 * Add embedded MP3 player as a rich text editor media type
 * Add FLV player as rich text editor media type
 * Add DIV around each iDevice on web/ims/scorm export
@@ -10,6 +10,7 @@ Next Release
 * Fix reading of exe.conf files that have UTF-8 "byte order mark"
 * Fix insertion of non-ASCII package names in Recent Projects list
 * Change license footer text so translators can ignore trailing space
+* Change RPM spec file to work better with openSUSE
 * Remove deprecated dublincore.xml metadata file from SCORM 1.2 packages
 * Updated DE,FR,IT,PL translations
 
