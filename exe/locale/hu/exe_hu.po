@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-03 21:15+1200\n"
+"POT-Creation-Date: 2007-09-05 21:42+1200\n"
 "PO-Revision-Date: 2007-07-09 08:32+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -738,7 +738,7 @@ msgstr ""
 "SIKERTELEN EXPORTÁLÁS!\n"
 "%s"
 
-#: exe/export/imsexport.py:346 exe/export/scormexport.py:464
+#: exe/export/imsexport.py:347 exe/export/scormexport.py:465
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1302,7 +1302,7 @@ msgid "New iDevice"
 msgstr "Új iDevice modul"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:195
+#: exe/export/scormexport.py:335 exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Következő"
 
@@ -1492,7 +1492,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:189
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Előző"
 
