@@ -177,6 +177,10 @@ class ConfigParser(object):
             lines = file_.readlines()
         except IOError:
             lines = []
+        # the codecs utf_8_sig decoder is only available in Python 2.5+,
+        # so process by hand, silently stripping the signature
+        if len(lines) > 0 and lines[0].startswith(codecs.BOM_UTF8):
+            lines[0] = lines[0][3:]
         section = None
         sectionName = None
         sectionOffsets = {}
