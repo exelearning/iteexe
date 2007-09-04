@@ -316,7 +316,8 @@ class ScormPage(Page):
         html += u'</p></div>\n'
 
         for idevice in self.node.idevices:
-            html += u'<div class="%s" id="id%s">' % (idevice.klass, idevice.id)
+            html += u'<div class="%s" id="id%s">\n' % (idevice.klass,
+                    idevice.id)
             block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
