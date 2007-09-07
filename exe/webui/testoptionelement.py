@@ -93,7 +93,7 @@ class TestoptionElement(object):
 
         header = ""
         if self.index == 0: 
-            header = _("Correct") + " " + _("Option")
+            header = _("Correct Option")
 
         html += u"</td><td align=\"right\"><b>%s</b>\n" % header
         html += u"</td><td>\n"
