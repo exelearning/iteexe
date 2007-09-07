@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-03 21:15+1200\n"
-"PO-Revision-Date: 2007-09-06 19:06+1200\n"
+"PO-Revision-Date: 2007-09-07 20:13+1200\n"
 "Last-Translator: Juniza Pratama <juniza.p@ggtc.or.id>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -66,7 +66,7 @@ msgstr "<dl>  <dt>Jika tujuan anda adalah untuk menguji pemahaman konsep pokok a
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>Klik &lt;Pilih sebuah berkas MP3&gt; dan cfbrowse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+msgstr "<ol>  <li>Klik &lt;Pilih &gt; dan cari berkas MP3       yang anda ingin sisipkan</li> <li>Klik pada menu \"dropdown\" untuk memilih posisi        yang anda inginkan pada layar.</li>  <li>Masukan sebuah judul opsional untuk berkas anda.</li> <li>Masukan teks yang relevan untuk berkas MP3 tersebut.</li> <li>Pilih tipe gaya yang anda inginkan bagi iDevice untuk       ditampilkan contoh. 'Beberapa Penekanan' pada batasan dan ikon tampilan isi iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -87,14 +87,30 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"Gambar pada \"iDevice\" teks dapat digunakan dengan sejumlah cara untuk mendukung baik\n"
+"sisi emosional (afektiv) dan dimensi tugas pembelajaran(kognitiv) dari isi\n"
+"eXe. \n"
+"</p><p>\n"
+"<b>Integrasi visual dengan ringkasan verbal</b>\n"
+"</p><p>\n"
+"Psikolog kognitiv mengindikasikan bahwa penyajian dengan a\n"
+"gambar yang representativ dan ringkasan verbal yang berhubungan (yang mana ditampilkan\n"
+"bersamaan) dapat mengurangi beban pembelajaran kognitiv dan meningkatkan daya tahan belajar.\n"
+"\"iDevice\" ini dapat digunakan untuk menyajikan gambar (foto, diagram, atau\n"
+"grafik) dengan sebuah ringkasan verbal yang singkat mencakup titik - titik utama yang berhubungan dengan\n"
+"gambar. Sebagai contoh, jika anda mengajarkan fungsi mesin 4 tak\n"
+"anda dapat memiliki sebuah gambar visual untuk setiap 4 posisi mesin \n"
+"piston dengan sebuah ringkasan singkat dari setiap aspek kunci dari setiap gambar.\n"
+"</p>"
 
 #: exe/engine/attachmentidevice.py:71
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
+msgstr "<p>Berikan label untuk setiap sisipan (\"attachment\"). Informasi tipe berkas juga sangat berguna. Seperti. pdf, ppt, dll.</p><p>Ukuran dari berkas juga dianjurkan sehingga setelah paket anda diekspor ke sebuah situs web, orang - orang akan mendapat gambaran akan berapa lama sisipan tersebut dapat di ambil (\"download\").</p><p>Sebagai contoh: <code>Perkiraan Penjualan.doc (500kb)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr ""
+msgstr "<p>Latihan \"cloze\" adalah teks atau kalimat - kalimat dimana siswa harus mengisi bagian -bagian yang hilang. Hal ini seringkali digunakan untuk tujuan - tujuan sebagai berikut:</p><ol><li>Untuk menguji konsep kunci pengetahuan (Hal ini dapat saja berupa sebuah pengujian awal, latihan penyusunan, atau pengujian tambahan).</li><li>Untuk menguji pemahaman bacaan.</li><li>Untuk menguji pengetahuan perbendaharaan kata.</li><li>Untuk menguji pembentukan kata dan/atau tingkatan tata bahasa. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -103,10 +119,14 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
+"<p>Masukan teks untuk aktivitas \"cloze\" ke dalam area \"cloze\" \n"
+"dengan cara menempelkan (\"paste\") teks dari sumber lain atau dengan cara mengetik teks secara langsung ke dalam \n"
+"area.</p><p> Untuk memilih kata yang akan disembunyikan, klik dua kali kata tersebut untuk memilihnya dan \n"
+"klik tombol Sembunyikan/Tampilkan (\"Hide/Show\") di bawah ini.</p>"
 
 #: exe/engine/field.py:1998
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr ""
+msgstr "<p>Jika dibiarkan tak terpilih kesalahan kecil dalam hal ejaan dan kapitalisasi akan dapat diterima. Jika dalam keadaan terpilih hanya ejaan dan kapitalisasi yang benar yang dapat diterima.</p><p><strong>Sebagai contoh:</strong> Jika jawaban yang benar adalah  <code>Gajah</code> maka baik <code>gajah</code> dan <code>gajih</code> akan dinilai <em>\"hampir benar\"</em> oleh algoritma dikarenakan hanya satu kata yang salah, bahkan jika Uji Kapitalisasi (\"Check Capitilization\") dalam keadaan aktif.</p><p>Jika kapitalisasi tidak aktif dalam contoh di atas, huruf kecil <code>g</code> tidak akan dianggap sebagai kesalahan dan <code>gajih</code> juga masih dapat diterima.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 
 #: exe/engine/field.py:2019
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
