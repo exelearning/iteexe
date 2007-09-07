@@ -8,12 +8,13 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-03 21:15+1200\n"
-"PO-Revision-Date: 2007-03-02 10:24+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-09-06 19:06+1200\n"
+"Last-Translator: Juniza Pratama <juniza.p@ggtc.or.id>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:146
 msgid ""
@@ -23,6 +24,11 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Jika \"applet\" yang anda tambahkan telah dihasilkan \n"
+" oleh salah satu program di daftar \"drop down\" ini, silahkan pilih, \n"
+" lalu tambah berkas \"data/applet\" yang dihasilkan oleh program anda. </p>\n"
+"<p>contoh. Untuk applet - applet Geogebra, pilih geogebra, lalu tambahkan berkas .ggb yang \n"
+" anda buat di Geogebra.</p>"
 
 #: exe/xului/mainpage.py:281 exe/xului/mainpage.py:795
 #: exe/xului/mainpage.py:916 exe/xului/mainpage.py:972
@@ -32,6 +38,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" sudah ada.\n"
+"Coba lagi dengan sebuah nama yang lain"
 
 #: exe/engine/appletidevice.py:64
 msgid ""
@@ -39,23 +47,26 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
+"\"Cari berkas .txt (di berkas applet) \n"
+"dan buka berkas tersebut. Salin isi berkas ini <ctrl A, ctrl C> ke dalam baris kode applet \n"
+"."
 
 #: exe/webui/block.py:235
 msgid "---Move To---"
-msgstr ""
+msgstr "---Pindah Ke---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
 #: exe/xului/mainpage.py:787
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Tolong gunakan nama - nama ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
+msgstr "<dl>  <dt>Jika tujuan anda adalah untuk menguji pemahaman konsep pokok atau pemahaman bacaan  </dt>  <dd>    <p>  Tulis sebuah konsep ringkasan atau bacaan yang cukup panjang untuk menguji pengetahuan sasaran, tapi cukup singkat agar tidak melelahkan. Kurang dari satu halaman ketikan kemungkinan akan mencukupi, sedangkan untuk siswa - siswa muda atau pemula bahkan kurang dari itu.    </p>    <p>Pilih kata - kata di dalam teks yang merupakan kunci untuk pemahaman konsep. Hal ini dapat saja berupa kate kerja, kata benda, dan kata kunci keterangan. Pilih alternatif - alternatif dengan sebuah jawaban yang jelas.    </p>  </dd>  <dt>Jika tujuan anda adalah untuk menguji perbendaharaan pengetahuan  </dt>  <dd><p>Tulis sebuah teks menggunakan sasaran perbendaharaan kata. Kata ini sebaiknya \"coherent\" dan \"cohesive\", dan memiliki panjang yang cukup. Sorot kata - kata sasaran di dalam teks. Pilih alternatif dengan sebuah jawaban yang jelas.</p>  </dd>  <dt>Jika tujuan anda adalah untuk menguji formasi kata/\"grammar\":  </dt>  <dd>  <p>Tulis sebuah teks menggunakan bentuk sasaran. Teks ini sebaiknya \"coherent\" dan \"cohesive\", dan memiliki panjang yang cukup. Ingat bahwa tujuannya bukanlah pengetahuan perbendaharaan kate, jadi arti dari akar kata sebaiknya telah dikenal oleh siswa.  </p>  <p>Sorot kata - kata sasaran di dalam teks. Sediakan alternatif dengan akar kata yang sama tapi memiliki \"affixes\" yang berbeda. Mengajak rekan kerja anda untuk menguji ujian/latihan merupakan sebuah ide yang bagus untuk meyakinkan bahwa segalanya akan berjalan sesuai rencana!  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Klik &lt;Pilih sebuah berkas MP3&gt; dan cfbrowse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
