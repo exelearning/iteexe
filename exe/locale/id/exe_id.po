@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-03 21:15+1200\n"
+"POT-Creation-Date: 2007-09-09 22:18+1200\n"
 "PO-Revision-Date: 2007-09-07 20:13+1200\n"
 "Last-Translator: Juniza Pratama <juniza.p@ggtc.or.id>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -494,10 +494,13 @@ msgstr ""
 msgid "Cloze Text"
 msgstr ""
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
-#: exe/webui/element.py:1555 exe/webui/element.py:1771
-#: exe/webui/element.py:1845
+#: exe/webui/element.py:1555 exe/webui/element.py:1845
 msgid "Correct"
+msgstr ""
+
+#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
+#: exe/webui/element.py:1771
+msgid "Correct Option"
 msgstr ""
 
 #: exe/webui/truefalseelement.py:204
@@ -635,7 +638,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:346 exe/export/scormexport.py:464
+#: exe/export/imsexport.py:347 exe/export/scormexport.py:465
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1142,7 +1145,7 @@ msgid "New iDevice"
 msgstr ""
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:195
+#: exe/export/scormexport.py:335 exe/export/websitepage.py:196
 msgid "Next"
 msgstr ""
 
@@ -1205,9 +1208,8 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
 #: exe/engine/field.py:2349 exe/engine/field.py:2362
-#: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
-#: exe/webui/element.py:1505 exe/webui/element.py:1510
-#: exe/webui/element.py:1766 exe/webui/element.py:1771
+#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
+#: exe/webui/element.py:1766
 msgid "Option"
 msgstr ""
 
@@ -1317,7 +1319,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:189
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr ""
 

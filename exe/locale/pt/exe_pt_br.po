@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 21:42+1200\n"
+"POT-Creation-Date: 2007-09-09 22:18+1200\n"
 "PO-Revision-Date: 2007-04-26 04:22-0000\n"
 "Last-Translator: Carlos Baptista <baptista.carlos@gmail.com>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -586,10 +586,14 @@ msgstr "Actividade Cloze"
 msgid "Cloze Text"
 msgstr "Texto Cloze"
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
-#: exe/webui/element.py:1555 exe/webui/element.py:1771
-#: exe/webui/element.py:1845
+#: exe/webui/element.py:1555 exe/webui/element.py:1845
 msgid "Correct"
+msgstr "Correcto"
+
+#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
+#: exe/webui/element.py:1771
+#, fuzzy
+msgid "Correct Option"
 msgstr "Correcto"
 
 #: exe/webui/truefalseelement.py:204
@@ -1389,9 +1393,8 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
 #: exe/engine/field.py:2349 exe/engine/field.py:2362
-#: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
-#: exe/webui/element.py:1505 exe/webui/element.py:1510
-#: exe/webui/element.py:1766 exe/webui/element.py:1771
+#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
+#: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Opção"
 

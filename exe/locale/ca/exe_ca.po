@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 21:42+1200\n"
+"POT-Creation-Date: 2007-09-09 22:18+1200\n"
 "PO-Revision-Date: 2007-07-05 16:56+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -544,10 +544,14 @@ msgstr "Activitat de buits"
 msgid "Cloze Text"
 msgstr "Text amb buits"
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
-#: exe/webui/element.py:1555 exe/webui/element.py:1771
-#: exe/webui/element.py:1845
+#: exe/webui/element.py:1555 exe/webui/element.py:1845
 msgid "Correct"
+msgstr "Correcte"
+
+#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
+#: exe/webui/element.py:1771
+#, fuzzy
+msgid "Correct Option"
 msgstr "Correcte"
 
 #: exe/webui/truefalseelement.py:204
@@ -1335,9 +1339,8 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
 #: exe/engine/field.py:2349 exe/engine/field.py:2362
-#: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
-#: exe/webui/element.py:1505 exe/webui/element.py:1510
-#: exe/webui/element.py:1766 exe/webui/element.py:1771
+#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
+#: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Opció"
 

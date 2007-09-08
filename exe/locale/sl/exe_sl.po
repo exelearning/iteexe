@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 21:42+1200\n"
+"POT-Creation-Date: 2007-09-09 22:18+1200\n"
 "PO-Revision-Date: 2007-06-12 20:24+1200\n"
 "Last-Translator: Aleksander POTOCNIK <Aleksander.Potocnik@siol.net>\n"
 "Language-Team: Institut OKO, iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -601,10 +601,14 @@ msgstr "Sobesedilno izpolnjevanje "
 msgid "Cloze Text"
 msgstr "Sobesedilno besedilo"
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
-#: exe/webui/element.py:1555 exe/webui/element.py:1771
-#: exe/webui/element.py:1845
+#: exe/webui/element.py:1555 exe/webui/element.py:1845
 msgid "Correct"
+msgstr "Pravilno"
+
+#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
+#: exe/webui/element.py:1771
+#, fuzzy
+msgid "Correct Option"
 msgstr "Pravilno"
 
 #: exe/webui/truefalseelement.py:204
@@ -1395,9 +1399,8 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
 #: exe/engine/field.py:2349 exe/engine/field.py:2362
-#: exe/webui/testoptionelement.py:91 exe/webui/testoptionelement.py:96
-#: exe/webui/element.py:1505 exe/webui/element.py:1510
-#: exe/webui/element.py:1766 exe/webui/element.py:1771
+#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
+#: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Možnosti"
 
