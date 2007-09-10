@@ -65,7 +65,23 @@ function getBrowserHTML(id, target_form_element, type, prefix) {
 	html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_browse') + '" /></a>';
 
 	return html;
-}
+} // getBrowserHTML()
+
+// a "live" version of the above getBrowserHTML(), rather
+// than embedding the file-browser callback in the HTML,
+// the following doBrowserHTML() will call the callback:
+function doBrowserHTML(id, target_form_element, type, prefix) {
+	var option = prefix + "_" + type + "_browser_callback";
+	var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
+	if (cb == null)
+		return "";
+
+	var html = "";
+
+        openBrower(id, target_form_element, type, option);
+
+	return html;
+} // doBrowserHTML()
 
 function openBrower(img_id, target_form_element, type, option) {
 	var img = document.getElementById(img_id);

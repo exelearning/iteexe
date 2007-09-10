@@ -186,10 +186,17 @@ class AuthoringPage(RenderableResource):
        
         # the image-handling callback function for tinyMCE's image button:
         html += u"advimage_image_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-        # as recyled into the tinyMCE media plugin's media callback:
+        # and manually entered filenames as well, via image2insert w/o file browser:
+        html += u"advimage_image2insert_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        # the media-handling callback function for tinyMCE's media button:
         html += u"media_media_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-        # and again recyled for the tinyMCE advlink plugin's text-link: 
+        # and manually entered filenames as well, via media2insert w/o file browser:
+        html += u"media_media2insert_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+
+        # the link-handling callback function for tinyMCE's media button:
         html += u"advlink_file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        # and manually entered filenames as well, via media2insert w/o file browser:
+        html += u"advlink_file2insert_browser_callback : \"chooseImage_viaTinyMCE\",\n"
 
         # and the callback to generate exemath's LaTeX images via mimetex:
         html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"

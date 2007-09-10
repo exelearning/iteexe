@@ -274,6 +274,11 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
        // re-use the Media browser, which defaults to All file types (*.*)
        local_imagePath = askUserForMedia();
     }
+    else if (type == "image2insert" || type == "media2insert" || type == "file2insert") {
+        // new direct insert capabilities, no file browser needed.
+        // just copy the passed-in URL directly, no browser necessary:
+        local_imagePath = url;
+    }
 
     win.focus();
 

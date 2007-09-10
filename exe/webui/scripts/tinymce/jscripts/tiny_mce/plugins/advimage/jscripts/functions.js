@@ -283,6 +283,17 @@ function insertAction() {
 		return false;
 	}
 
+	// Apply the same file-browser button magic to any filenames which were
+	// typed into the URL field by hand, rather than selected via the browser button,
+	// as will apply to any !http: and !file: which isn't in the resource or previews dirs:
+	if (src.search('resources/')!=0 && src.search('/previews/')!=0 && src.search('../previews/')!=0 && src.search('http:')!=0 && src.search('file:')!=0) {
+	    // looks like a hand-typed filename, 
+	    // so use type image2insert to indicate that no browser or preview is necessary:
+	    doBrowserHTML('srcbrowser','src','image2insert','advimage');
+	    src = formObj.src.value;
+        }
+
+
 	if (onmouseoversrc && onmouseoversrc != "")
 		onmouseoversrc = "this.src='" + convertURL(onmouseoversrc, tinyMCE.imgElement) + "';";
 
@@ -467,13 +478,10 @@ function showPreviewImage(src, start) {
 	var elm = document.getElementById('prev');
 	var src = src == "" ? src : tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'], src);
 
-	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
-		resetImageData();
-
 	if (src == "")
 		elm.innerHTML = "";
 	else
-		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" onerror="resetImageData();" />'
+		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start + ');" />'
 
 }
 
@@ -481,6 +489,10 @@ function updateImageData(start) {
 	var formObj = document.forms[0];
 
 	preloadImg = document.getElementById('previewImg');
+
+	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true)) {
+		resetImageData();
+        }
 
 	if (!start && formObj.width.value == "")
 		formObj.width.value = preloadImg.width;
