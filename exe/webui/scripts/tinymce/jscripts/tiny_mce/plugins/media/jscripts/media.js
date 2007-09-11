@@ -250,11 +250,21 @@ function insertMedia() {
            return false;
         } 
 
-
 	if (!AutoValidator.validate(f)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
 		return false;
 	}
+
+	var src = f.src.value;
+	// Apply the same file-browser button magic to any filenames which were
+        // typed into the URL field by hand, rather than selected via the browser button,
+        // as will apply to any !http: and !file: which isn't in the resource or previews dirs:
+        if (src.search('resources/')!=0 && src.search('/previews/')!=0 && src.search('../previews/')!=0 && src.search('http:')!=0 && src.search('file:')!=0) {
+            // looks like a hand-typed filename, 
+            // so use type media2insert to indicate that no browser or preview is necessary:
+            doBrowserHTML('filebrowser','src','media2insert','media');
+            src = f.src.value;
+        }
 
 	f.width.value = f.width.value == "" ? 100 : f.width.value;
 	f.height.value = f.height.value == "" ? 100 : f.height.value;
