@@ -540,7 +540,7 @@ class MainPage(RenderableLivePage):
                     + localImagePath);
             if not localImagePath.exists() or not localImagePath.isfile():
                 client.alert( \
-                     _(u'Image file %s is not found, cannot preview it') \
+                     _(u'Local file %s is not found, cannot preview it') \
                      % localImagePath)
                 log.error("Couldn't find tinyMCE-chosen image: %s" \
                         % localImagePath)
