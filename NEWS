@@ -1,6 +1,8 @@
 Next Release
 * Add ability to type attachment name into url box (without browse button)
-* Add TH translation
+* Add CSS divs around nodes in single page and print exports for pagination
+* Change default Windows configuration file to use relative paths
+* Add ID, TH translations
 
 Version 1.01 (r3265)
 * Add embedded MP3 player as a rich text editor media type
