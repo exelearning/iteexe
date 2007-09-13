@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe config
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,26 +34,26 @@ PROGRAMFILES   = 0x0026
 
 # ===========================================================================
 class WinConfig(Config):
-    """
-    The WinConfig overrides the Config class with Windows specific
-    configuration
-    """
+    """Override the Config class with Windows specific configuration."""
 
     def _overrideDefaultVals(self):
-        """Sets the default values
-        for windows"""
+        """Set the default values for Windows."""
         exeDir = self.exePath.dirname()
-        self.browserPath = exeDir/'Mozilla Firefox'/'firefox.exe'
+        self.browserPath = Path('./Mozilla Firefox/firefox.exe')
+        # if no Firefox is bundled, fall back to system Firefox
         if not self.browserPath.isfile():
             programFiles = Path(self.__getWinFolder(PROGRAMFILES))
             self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
         self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
+        self.webDir    = Path('.')
+        self.xulDir    = Path('.')
+        self.localeDir = Path ('./locale')
 
     def _getConfigPathOptions(self):
         """
-        Returns the best options for the
-        location of the config file under windows
+        Return the best options for the
+        location of the config file under Windows.
         """
         # Find out where our nice config file is
         folders = map(self.__getWinFolder, [APPDATA, COMMON_APPDATA])
