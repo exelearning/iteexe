@@ -110,7 +110,8 @@ class SinglePage(Page):
         Returns an XHTML string for this node and recurse for the children
         """
         html = ""
-        html += '<div id=\"nodeDecoration\">'
+        html += '<div class="node">\n'
+        html += '  <div id=\"nodeDecoration\">'
         html += '<p id=\"nodeTitle\">'
         html += escape(node.titleLong)
         html += '</p></div>\n'
@@ -118,7 +119,7 @@ class SinglePage(Page):
         style = self.node.package.style
 
         for idevice in node.idevices:
-            html += u'<div class="%s" id="id%s">\n' % (idevice.klass,
+            html += u'  <div class="%s" id="id%s">\n' % (idevice.klass,
                     idevice.id)
             block = g_blockFactory.createBlock(None, idevice)
             if not block:
@@ -127,7 +128,9 @@ class SinglePage(Page):
             if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForWeb()
             html += block.renderView(style)
-            html += u'</div>\n'     # iDevice div
+            html += u'  </div>\n'     # iDevice div
+
+        html += '</div>\n'          # node div
 
         for child in node.children:
             html += self.renderNode(child)
