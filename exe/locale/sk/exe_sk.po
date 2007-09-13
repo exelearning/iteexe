@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2007-03-26 14:18+1200\n"
 "Last-Translator: \n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -1046,11 +1046,6 @@ msgstr "Obrázková galéria"
 msgid "Image Magnifier"
 msgstr "Zväčšovacie sklo na obrázky"
 
-#: exe/xului/mainpage.py:543
-#, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr ""
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Obrázok s textom"
@@ -1133,6 +1128,11 @@ msgstr "Tento článok spadá pod licenciu "
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Nahrať"
+
+#: exe/xului/mainpage.py:543
+#, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

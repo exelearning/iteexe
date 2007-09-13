@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2006-07-28 15:36+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -1153,11 +1153,6 @@ msgstr "Galeria de Imagens"
 msgid "Image Magnifier"
 msgstr "Ampliador de Imagem"
 
-#: exe/xului/mainpage.py:543
-#, fuzzy, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "Nome do ficheiro %s não pode ser alterado"
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Imagem com Texto"
@@ -1240,6 +1235,11 @@ msgstr "Este artigo está licenciado segundo"
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Carregar"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Nome do ficheiro %s não pode ser alterado"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

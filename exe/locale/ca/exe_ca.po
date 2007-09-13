@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2007-07-05 16:56+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -1123,11 +1123,6 @@ msgstr "Galeria d'imatges"
 msgid "Image Magnifier"
 msgstr "Zoom d'imatges"
 
-#: exe/xului/mainpage.py:543
-#, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "L'arxiu de la imatge %s no s'ha trobat, no és pot mostrar la vista previa "
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Imatge amb text"
@@ -1208,6 +1203,11 @@ msgstr "Llicenciat sota"
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Carregar"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "L'arxiu de la imatge %s no s'ha trobat, no és pot mostrar la vista previa "
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

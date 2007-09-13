@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Fredrik Paulsson <frepa@frepa.org>\n"
@@ -1079,11 +1079,6 @@ msgstr "Bildgalleri"
 msgid "Image Magnifier"
 msgstr "Bildgalleri"
 
-#: exe/xului/mainpage.py:543
-#, fuzzy, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "Filnamn %s är en fil, kan inte ersätta den"
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Bild med text"
@@ -1171,6 +1166,11 @@ msgstr ""
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Ladda"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Filnamn %s är en fil, kan inte ersätta den"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

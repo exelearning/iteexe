@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2007-08-19 19:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <ralf.hilgenstock@dialoge.net>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -1183,11 +1183,6 @@ msgstr "Bildergalerie"
 msgid "Image Magnifier"
 msgstr "Bild mit Lupe"
 
-#: exe/xului/mainpage.py:543
-#, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "Die Bilddatei %s wurde nicht gefunden. Sie kann nicht angezeigt werden."
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Bild mit Text"
@@ -1270,6 +1265,11 @@ msgstr "Der Beitrag ist lizenziert unter der "
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Laden"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Die Bilddatei %s wurde nicht gefunden. Sie kann nicht angezeigt werden."
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

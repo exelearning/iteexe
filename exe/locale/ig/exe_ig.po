@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2006-09-22 10:21+1200\n"
 "Last-Translator: EXE Team <exe@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -974,11 +974,6 @@ msgstr ""
 msgid "Image Magnifier"
 msgstr ""
 
-#: exe/xului/mainpage.py:543
-#, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr ""
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr ""
@@ -1056,6 +1051,11 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
+msgstr ""
+
+#: exe/xului/mainpage.py:543
+#, python-format
+msgid "Local file %s is not found, cannot preview it"
 msgstr ""
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298

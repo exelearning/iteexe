@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2007-08-31 07:28+1200\n"
 "Last-Translator: Lechoslaw Hojnacki <lhojnacki@gmail.com>\n"
 "Language-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\n"
@@ -1148,11 +1148,6 @@ msgstr "Galeria obrazów"
 msgid "Image Magnifier"
 msgstr "Obraz z powiększaniem"
 
-#: exe/xului/mainpage.py:543
-#, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "Pliku obrazu %s nie znaleziono, podgląd niemożliwy"
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Obraz z tekstem"
@@ -1237,6 +1232,11 @@ msgstr "Treść jest rozpowszechniana na licencji"
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Wczytaj"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Pliku obrazu %s nie znaleziono, podgląd niemożliwy"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2006-07-31 14:47+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -1026,11 +1026,6 @@ msgstr "圖像畫廊"
 msgid "Image Magnifier"
 msgstr "圖像放大器"
 
-#: exe/xului/mainpage.py:543
-#, fuzzy, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "檔案名稱%s是個文件，無法覆寫它"
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "文字及插圖"
@@ -1116,6 +1111,11 @@ msgstr "This article is licensed under the "
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "載入"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "檔案名稱%s是個文件，無法覆寫它"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

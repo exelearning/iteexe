@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -1137,11 +1137,6 @@ msgstr "Umtapo Wezithombe"
 msgid "Image Magnifier"
 msgstr "Isikhilsa Sisthombe"
 
-#: exe/xului/mainpage.py:543
-#, fuzzy, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Isithombe Esinokubhaliwe"
@@ -1224,6 +1219,11 @@ msgstr "Lokhu kulandisa okubhaliwe kugunyazwe ngaphansi kwe"
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Layisha"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"

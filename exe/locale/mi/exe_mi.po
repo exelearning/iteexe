@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 22:18+1200\n"
+"POT-Creation-Date: 2007-09-14 04:48+1200\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -1109,11 +1109,6 @@ msgstr "Taiwhanga Pikitia"
 msgid "Image Magnifier"
 msgstr "Taiwhanga Pikitia"
 
-#: exe/xului/mainpage.py:543
-#, fuzzy, python-format
-msgid "Image file %s is not found, cannot preview it"
-msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
-
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
 msgstr "Pikitia me ngā tuhinga"
@@ -1197,6 +1192,11 @@ msgstr ""
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "utaina"
+
+#: exe/xului/mainpage.py:543
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
 msgid "MP3"
