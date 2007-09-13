@@ -272,5 +272,6 @@ div.tleft {
 
 #main {margin-left: 10px; }
 
+div.node { page-break-after: always; }
 }
 
