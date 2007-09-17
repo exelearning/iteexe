@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-14 04:48+1200\n"
-"PO-Revision-Date: 2007-09-12 10:39+1200\n"
+"PO-Revision-Date: 2007-09-17 10:09+1200\n"
 "Last-Translator: Juniza Pratama <juniza.pratama@igi-alliance.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -1840,24 +1840,24 @@ msgstr "Artikel Wikipedia Swedia"
 
 #: exe/engine/idevicestore.py:386
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
+msgstr "Guru sebaiknya mengingat hal berikut ini ketika menggunakan \"iDevice\" ini: <ol><li>Pikirkan tentang jumlah beraneka aktivitas yang direncanakan untuk sumber anda yang akan secara visual diisyaratkan pada isi. Hindari menggunakan terlalu banyak jenis atau klasifikasi aktivitas yang akan membingungkan siswa. Biasanya 3 atau 4 jenis adalah lebih dari cukup untuk sebuah sumber daya pelajaran.</li><li>Dari sudut pandang desain visual, hindari memiliki 2 \"iDevices\" segera satu sama lain tanpa ada teks diantaranya. Jika hal ini terpaksa dilakukan, lebih baik gabungkan 2 pertanyaan atau kegiatan ke dalam 1 \"iDevice\". </li><li>Pikirkan tentang aktivitas dimana keuntungan yang terlihat melakukan aktivitas tersebut setimpal dengan waktu dan usaha yang akan dikeluarkan untuk menyelesaikan aktivitas tersebut.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:53 exe/engine/multimediaidevice.py:64
 msgid "Text"
-msgstr ""
+msgstr "Teks"
 
 #: exe/webui/editorelement.py:109 exe/webui/editorpane.py:249
 msgid "Text Box"
-msgstr ""
+msgstr "Kotak Teks"
 
 #: exe/webui/editorelement.py:73 exe/webui/editorpane.py:247
 msgid "Text Line"
-msgstr ""
+msgstr "Baris Teks"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
+msgstr "\"iDevice\" MP3 mengizinkan anda untuk menyisipkan berkas MP3 pada isi bersamaan dengan instruksi teks pelajaran yang relevan."
 
 #: exe/engine/rssidevice.py:41
 msgid ""
@@ -1865,10 +1865,13 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"RSS \"iDevice\" digunakan \n"
+"untuk menyediakan materi baru untuk komputer pengguna. Dengan menggunakan\n"
+"\"iDevice\" anda dapat menyediakan tautan dari sebuah umpan (feed) yang anda pilihkan untuk siswa lihat."
 
 #: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
+msgstr "Sisipan \"iDevice\" digunakan untuk menyisipkan berkas yang sudah ada ke dalam dokumen .elp. Sebagai contoh anda mungkin saja memiliki sebuah berkas dokumen PDF atau berkas presentasi PPT yang anda inginkan untuk diakses siswa, ini bisa disisipkan dan diberi label untuk memberi keterangan mengenai isi sisipan dan sebesar apa. Siswa dapat  melakukan klik pada tautan sisipan dan dapat mengunduhnya."
 
 #: exe/engine/externalurlidevice.py:39
 msgid ""
@@ -1878,6 +1881,11 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"\"iDevice\" situs web eksternal mengambil situs tersebut \n"
+"kedalam sebuah bingkai yang menyatu dalam eXe ketimbang membukanya pada sebuah kotak popup. \n"
+"Hal ini berarti siswa tidak mendapat jendela yang bertumpuk. \n"
+"\"iDevice\" ini sebaiknya hanya digunakan jika \n"
+"akan dilihat oleh siswa secara \"online\"."
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1886,6 +1894,10 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
+"\"iDevice\" flash dengan teks mengizinkan anda untuk \n"
+"mengasosiasikan informasi teks pada berkas flash. Hal ini berguna \n"
+"ketika anda menginginkan anda untuk menyediakan instruksi edukasi mengenai berkas flash \n"
+"yang akan disaksikan oleh siswa."
 
 #: exe/engine/imagemagnifieridevice.py:42
 msgid ""
@@ -1893,6 +1905,9 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Pembesar gambar adalah alat pembesar yang memungkinkan\n"
+"siswa untuk memperbesar tampilan gambar yang diberikan. Menggerakan \n"
+"kaca pembesar di atas gambar memungkinkan untuk detail yang lebih besar dapat dipelajari."
 
 #: exe/engine/freetextidevice.py:39
 msgid ""
