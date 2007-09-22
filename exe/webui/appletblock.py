@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2007 eXe Project  http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -166,7 +167,7 @@ class AppletBlock(Block):
         """        
         log.debug("renderView")
         html  = u"<!-- applet iDevice -->\n"
-        html += u"<div class=\"iDevice\> "
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
 
         appletcode = self.idevice.appletCode
