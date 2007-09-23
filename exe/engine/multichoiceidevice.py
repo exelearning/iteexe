@@ -25,6 +25,7 @@ from twisted.spread       import jelly
 from exe.engine.idevice   import Idevice
 from exe.engine.field     import QuizQuestionField, QuizOptionField
 from exe.engine.translate import lateTranslate
+from exe                  import globals as G
 log = logging.getLogger(__name__)
 
 
@@ -195,7 +196,6 @@ for the other options.""")
         length = len(self.options)
         if length >0:
             self.addQuestion()
-           # self.questions[0].qusetion = self.question
             self.questions[0].hint = self.hint
             self.questions[0].question = self.question
             
@@ -213,5 +213,68 @@ for the other options.""")
             self.question = ""
             self.options  = []
             self.hint     = ""
+
+    def upgradeTo8SafetyCheck(self):
+        """
+        Handles the post-upgrade issues which require all of its child objects
+        to have already been upgraded, not just this multichoiceidevice itself.
+        But this is essentially a missing upgradeToVersion8 (as described in,
+        and called by, its TwistedRePersist, to follow)
+        """
+        if not hasattr(self.questions[0], 'question'):
+            # does NOT have a self.questions[0].question anymore 
+            # -> already new enough. 
+            return
+
+        if (self.questions[0].question != 
+                self.questions[0].questionTextArea.content):
+            # .question is the original pre-upgrade string,
+            # and .questionTextArea has been created to hold its content,
+            # but is now created as the latest persistenceVersion,==1.
+            # Therefore the actual data was not yet properly migrated
+            # from .question to .questionTextArea, and this is caused by
+            # forcing the upgrade call that we know to be needed:
+            self.questions[0].upgradeToVersion1()
+
+            # next up, ensure that each options has been properly upgraded:
+            length = len(self.questions[0].options)
+            if length >0:
+                for i in range(0, length):
+                    # from the original self.options[i].answer
+                    if (self.questions[0].options[i].answer != 
+                            self.questions[0].options[i].answerTextArea): 
+                        # As with .question -> .questionTextArea, .answer 
+                        # was not yet properly migrated to .answerTextArea,
+                        # and this is caused by forcing the upgrade call 
+                        # that we know to be needed:
+                        self.questions[0].options[i].upgradeToVersion1() 
+                    # finally, delete the old answer and feedback: 
+                    del self.questions[0].options[i].answer
+                    del self.questions[0].options[i].feedback
+
+        # finally, delete the old question and hint:
+        del self.questions[0].question
+        del self.questions[0].hint
+
+    def TwistedRePersist(self):
+        """
+        Handles any post-upgrade issues 
+        (such as typically re-persisting non-persistent data)
+        In this case, this is to handle a MultiChoiceIdevice Upgrade case
+        that slipped between the cracks....
+        """
+        # A missing upgrade path should have been implemented as 
+        #    upgradeToVersion8
+        # but it's now too late to put in a version8,
+        # primarily because we have frozen our persistence versions:
+        # as of v1.00, so that all >= v1.00 elps are compatible.
+
+        # But rather than doing the missing upgrade right here, 
+        # after multichoiceidevice itself has gone through its other upgrades,
+        # we need to ensure that all of its related objects have also gone
+        # through their upgrades.
+        # So, put this as an afterUpgradeHandler:
+        G.application.afterUpgradeHandlers.append(self.upgradeTo8SafetyCheck)
+
 
 # ===========================================================================
