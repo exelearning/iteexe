@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2007-08-19 19:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <ralf.hilgenstock@dialoge.net>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -385,7 +385,7 @@ msgstr ""
 "Automatisches Vervollständigen zulassen \n"
 "wenn Teilnehmer/innen die Lücken ausfüllen."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -793,7 +793,7 @@ msgstr ""
 "Geben \n"
 "Sie einen Text ein, der mit der Datei verbunden werden soll"
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -802,7 +802,7 @@ msgstr ""
 "Wenn Sie keinen Hinweis eingeben wollen,\n"
 "lassen Sie das Feld leer."
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr ""
 "Geben Sie hier Ihren Hinweis ein. \n"
@@ -888,7 +888,7 @@ msgstr ""
 "Geben Sie die URL ein, die angezeigt werden soll\n"
 "und wählen Sie die Größe des Bereichs in dem sie angezeigt werden soll."
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -944,7 +944,7 @@ msgstr "Anweisung für die Vervollständigung hier einfügen."
 msgid "Enter the label here"
 msgstr "Bezeichnung hier einfügen."
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1316,7 +1316,7 @@ msgstr "Bild nach rechts verschieben"
 msgid "Move Up"
 msgstr "Aufwärts"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 msgid "Multi-choice"
 msgstr "Multiple-Choice "
 
@@ -1599,7 +1599,7 @@ msgstr "Zweck"
 msgid "Put instructions for learners here"
 msgstr "Anweisung für Teilnehmer/innen hier einfügen."
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 msgid "Question"
 msgstr "Frage"
@@ -1767,7 +1767,7 @@ msgstr ""
 "Wählen Sie die gewünschte Sprache\n"
 "für die Begriffssuche in Wikipedia."
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -2086,7 +2086,7 @@ msgstr ""
 msgid "Type a discussion topic here."
 msgstr "Diskussionsthema hier eingeben:"
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2158,7 +2158,7 @@ msgstr "Einheit"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -2221,7 +2221,7 @@ msgstr "Wählen Sie im Pulldown-Menu aus, ob das iDevice in besonderer Weise mit
 msgid "What to read"
 msgstr "Lesetexte"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"

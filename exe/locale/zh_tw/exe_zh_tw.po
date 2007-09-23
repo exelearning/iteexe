@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2006-07-31 14:47+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -315,7 +315,7 @@ msgstr "當學生填空時，允許自動完成。"
 msgid "Allow auto completion when user filling the gaps."
 msgstr "當學生填空時，允許自動完成。"
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -685,13 +685,13 @@ msgid ""
 "the text you wish to associate with the file."
 msgstr "輸入有關文件的描述。"
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
@@ -752,7 +752,7 @@ msgid ""
 "and select the size of the area to display it in."
 msgstr "輸入所要顯示網頁的網址並選擇顯示的大小尺寸。"
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -792,7 +792,7 @@ msgstr "在此輸入完成說明"
 msgid "Enter the label here"
 msgstr "在此輸入標題"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1162,7 +1162,7 @@ msgstr "圖片移向右邊"
 msgid "Move Up"
 msgstr "上移"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 #, fuzzy
 msgid "Multi-choice"
 msgstr "選擇題"
@@ -1419,7 +1419,7 @@ msgstr "用途"
 msgid "Put instructions for learners here"
 msgstr "在此輸入完成說明"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 #, fuzzy
 msgid "Question"
@@ -1581,7 +1581,7 @@ msgid ""
 "of Wikipedia to search and enter search term."
 msgstr "選擇適當的維基語言版本來搜尋，並輸入關鍵詞。"
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -1857,7 +1857,7 @@ msgstr "是非題提供一個陳述句，讓學生判斷其陳述是否正確。
 msgid "Type a discussion topic here."
 msgstr "輸入討論主題:"
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -1916,7 +1916,7 @@ msgstr "單元"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -1969,7 +1969,7 @@ msgstr ""
 msgid "What to read"
 msgstr "檢視資料"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"

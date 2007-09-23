@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2007-07-09 08:32+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -367,7 +367,7 @@ msgstr ""
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Automatikus befejezés engedélyezése, amikor a felhasználó kitölti a mezőt."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -785,7 +785,7 @@ msgid ""
 "the text you wish to associate with the file."
 msgstr "Írja be azt a szöveget, amely kapcsolódik az állományhoz."
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -793,7 +793,7 @@ msgstr ""
 "Írjon egy útmutatót a kérdés megoldásához! \n"
 "Ha nem kíván útmutatót, figyelmeztetést írni, hagyja üresen ezt a mezőt!"
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Írjon egy útmutatást! Ha nem kíván útmutatást adni a megoldáshoz, hagyja üresen ezt a mezőt!"
 
@@ -875,7 +875,7 @@ msgstr ""
 "Adja meg annak az oldalnak az URL-jét, amit be szertne mutatni,\n"
 "és válassza ki a megjelenítendő terület méretét!"
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -926,7 +926,7 @@ msgstr "A befejezéshez írja be ide az utasításait"
 msgid "Enter the label here"
 msgstr "Írja be a címke nevét!"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1289,7 +1289,7 @@ msgstr "Kép áthelyezése jobbra"
 msgid "Move Up"
 msgstr "Fel"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 msgid "Multi-choice"
 msgstr "Feleletválaszós teszt"
 
@@ -1569,7 +1569,7 @@ msgstr "Hogyan használjuk a modult?"
 msgid "Put instructions for learners here"
 msgstr "Itt adja meg a tanulóknak szóló utasításokat!"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 msgid "Question"
 msgstr "Kérdés"
@@ -1739,7 +1739,7 @@ msgstr ""
 "Válassza ki a Wikipédiának azt a nyelvi változatát, \n"
 "amelyben keresni szeretne és keressen egy kifejezésre!"
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -2059,7 +2059,7 @@ msgstr ""
 msgid "Type a discussion topic here."
 msgstr "Írja be a megbeszélés témáját!"
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2131,7 +2131,7 @@ msgstr "Egység"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -2195,7 +2195,7 @@ msgstr "Ezt a legördülő menüt használhatja arra, hogy a modul megjelenésé
 msgid "What to read"
 msgstr "Amit olvasnia kell"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"

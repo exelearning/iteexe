@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2007-07-20 14:24+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Umožňuje automatické doplnění, když uživatel vyplňuje mezery."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -774,7 +774,7 @@ msgstr ""
 "Vložte text, \n"
 "který si přejete připojit k souboru."
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -782,7 +782,7 @@ msgstr ""
 "Vložte radu. Pokud nechcete žádnou radu uvádět, \n"
 "nechejte pole prázdné."
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Vložte radu. Pokud nechcete žádnou radu uvádět, nechejte pole prázdné."
 
@@ -863,7 +863,7 @@ msgstr ""
 "Vložte URL, které si přejete zobrazit,\n"
 "a vyberte rozměr oblasti, ve které se bude zobrazovat."
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -914,7 +914,7 @@ msgstr "Vložte instrukce pro vyplnění"
 msgid "Enter the label here"
 msgstr "Vložte popisek"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1275,7 +1275,7 @@ msgstr "Posunout obrázek doprava"
 msgid "Move Up"
 msgstr "Posunout nahoru"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 msgid "Multi-choice"
 msgstr "Vícenásobná volba"
 
@@ -1555,7 +1555,7 @@ msgstr "Záměr"
 msgid "Put instructions for learners here"
 msgstr "Sem vložte instrukce pro studenty"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 msgid "Question"
 msgstr "Otázka"
@@ -1723,7 +1723,7 @@ msgstr ""
 "Vyberte odpovídající jazykovou verzi Wikipedie \n"
 "a vložte pojem, který se má vyhledat."
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -2043,7 +2043,7 @@ msgstr ""
 msgid "Type a discussion topic here."
 msgstr "Vepište diskuzní téma."
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2117,7 +2117,7 @@ msgstr "Jednotka"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -2180,7 +2180,7 @@ msgstr "V tomto seznamu vyberte, jestli má být pro iDevice použito nějaké r
 msgid "What to read"
 msgstr "Co číst"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2006-07-28 15:29+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team:  <sfj@fb.is>\n"
@@ -352,7 +352,7 @@ msgstr ""
 "Heimila sjálfvirka útfyllingu þegar \n"
 "                                   notandi fyllir í eyðurnar."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 #, fuzzy
 msgid ""
 "Although more often used in formal testing \n"
@@ -750,7 +750,7 @@ msgstr ""
 "Heimila sjálfvirka útfyllingu þegar \n"
 "                                   notandi fyllir í eyðurnar."
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -758,7 +758,7 @@ msgstr ""
 "Sláðu inn vísbendingu. Ef þú \n"
 " vilt ekki gefa vísbendingu hafðu þá þennan reit auðann."
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr ""
 "Sláðu inn vísbendingu. Ef þú \n"
@@ -825,7 +825,7 @@ msgid ""
 "and select the size of the area to display it in."
 msgstr ""
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -875,7 +875,7 @@ msgstr "Skráðu leiðbeiningar hér"
 msgid "Enter the label here"
 msgstr "Skráðu innihald snepils hér"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1257,7 +1257,7 @@ msgstr "Engar myndir til staðar"
 msgid "Move Up"
 msgstr "Færa upp"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 #, fuzzy
 msgid "Multi-choice"
 msgstr "Valspurningar"
@@ -1538,7 +1538,7 @@ msgstr "Tilgangur"
 msgid "Put instructions for learners here"
 msgstr "Skráðu leiðbeiningar til nemenda hér"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 msgid "Question"
 msgstr "Spurning"
@@ -1708,7 +1708,7 @@ msgid ""
 "of Wikipedia to search and enter search term."
 msgstr ""
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -1996,7 +1996,7 @@ msgstr "Rétt/rangt spurningar fela í sér fullyrðingu sem nemandinn verður a
 msgid "Type a discussion topic here."
 msgstr "Umræðuefni:"
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 #, fuzzy
 msgid ""
 "Type in the feedback that you want the \n"
@@ -2066,7 +2066,7 @@ msgstr "Eining"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -2124,7 +2124,7 @@ msgstr ""
 msgid "What to read"
 msgstr "Hvert er lesefnið"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 #, fuzzy
 msgid ""
 "When building an MCQ consider the following: <ul>\n"

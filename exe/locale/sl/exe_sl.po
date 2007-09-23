@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2007-06-12 20:24+1200\n"
 "Last-Translator: Aleksander POTOCNIK <Aleksander.Potocnik@siol.net>\n"
 "Language-Team: Institut OKO, iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -396,7 +396,7 @@ msgstr ""
 "Omogoči avtomatično dokončanje kadar \n"
 " uporabnik iizpolnjuje prazna mesta."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 #, fuzzy
 msgid ""
 "Although more often used in formal testing \n"
@@ -806,7 +806,7 @@ msgstr ""
 "Vpišite\n"
 "besedilo ki ga želite povezati z datoteko."
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -814,7 +814,7 @@ msgstr ""
 "Tukaj vpišite namig.Če ne\n"
 "neželite  ponuditi namiga, pustite to polje prazno."
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Tukaj vpišite namig. Če ne želite ponuditi namiga, pustite to polje prazno.  "
 
@@ -888,7 +888,7 @@ msgstr ""
 "Vpišite spletni naslov katerega želite prikazati \n"
 "in izberite velikost področja  v katerem ga želite prikazati."
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -940,7 +940,7 @@ msgstr "Tukaj vnesite navodila za izpolnitev "
 msgid "Enter the label here"
 msgstr "Tukaj vnesite označbo"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1311,7 +1311,7 @@ msgstr "Premakni sliko desno"
 msgid "Move Up"
 msgstr "Premakni Navzgor"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 #, fuzzy
 msgid "Multi-choice"
 msgstr "Več izbirna vprašanja"
@@ -1594,7 +1594,7 @@ msgstr "Namen"
 msgid "Put instructions for learners here"
 msgstr "Tukaj postavite navodila za slušatelje"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 #, fuzzy
 msgid "Question"
@@ -1764,7 +1764,7 @@ msgstr ""
 "Izberite ustrezno jezikovno različico Wikipedije \n"
 "za iskanje in vnesite iskalne pogoje."
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -2076,7 +2076,7 @@ msgstr ""
 msgid "Type a discussion topic here."
 msgstr "Tukaj vpišite razpravo predmeta"
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2148,7 +2148,7 @@ msgstr "Enota"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -2212,7 +2212,7 @@ msgstr ""
 msgid "What to read"
 msgstr "Kaj prebrati"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"

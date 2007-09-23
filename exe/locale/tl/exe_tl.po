@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 00:18+1200\n"
+"POT-Creation-Date: 2007-09-24 09:11+1200\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -382,7 +382,7 @@ msgstr ""
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Pahintulutan ang kusang pagkumpleto kapag pinupuno ng tagagamit ang mga patlang."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -788,7 +788,7 @@ msgstr ""
 "Ipasok \n"
 "ang teksto na nais mong iugnay sa sako."
 
-#: exe/engine/multichoiceidevice.py:96
+#: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -796,7 +796,7 @@ msgstr ""
 "Ipasok ang himaton dito. Kung ayaw\n"
 "mong magbigay ng himaton, iwang blangko ang pitak."
 
-#: exe/engine/multichoiceidevice.py:141
+#: exe/engine/multichoiceidevice.py:142
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Ipasok ang himaton dito. Kung ayaw mong magbigay ng himaton, iwang blangko ang pitak."
 
@@ -880,7 +880,7 @@ msgstr ""
 "Ipasok ang URL na nais mong ipakita\n"
 "at piliin ang laki ng pook na pagtatanghalan nito."
 
-#: exe/engine/multichoiceidevice.py:103
+#: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -934,7 +934,7 @@ msgstr "Ipasok ang mga panuto para sa pagkumpleto dito"
 msgid "Enter the label here"
 msgstr "Ipasok ang etiketa rito"
 
-#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:93
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:93
 #: exe/engine/quiztestidevice.py:131
 msgid ""
 "Enter the question stem. \n"
@@ -1303,7 +1303,7 @@ msgstr "Ilipat ang Larawan Pakanan"
 msgid "Move Up"
 msgstr "Ilipat Pataas"
 
-#: exe/engine/multichoiceidevice.py:57
+#: exe/engine/multichoiceidevice.py:58
 #, fuzzy
 msgid "Multi-choice"
 msgstr "Maraming-Pagpipiliang-Tanong"
@@ -1590,7 +1590,7 @@ msgstr "Tungkulin"
 msgid "Put instructions for learners here"
 msgstr "Maglagay ng mga panuto para sa mag-aaral dito"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
 #: exe/engine/field.py:2388 exe/engine/field.py:2407
 #, fuzzy
 msgid "Question"
@@ -1758,7 +1758,7 @@ msgstr ""
 "Piliin ang angkop na bersiyon ng wika\n"
 "ng Wikipedia na hahanapan at ipasok ang terminong hahanapin."
 
-#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -2085,7 +2085,7 @@ msgstr ""
 msgid "Type a discussion topic here."
 msgstr "Magteklado ng paksa ng usapin dito."
 
-#: exe/engine/multichoiceidevice.py:106
+#: exe/engine/multichoiceidevice.py:107
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2157,7 +2157,7 @@ msgstr "Yunit"
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:58
+#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
@@ -2224,7 +2224,7 @@ msgstr ""
 msgid "What to read"
 msgstr "Ano ang babasahin"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:73
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
