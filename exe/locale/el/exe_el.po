@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2006-05-12 14:15+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -331,7 +331,7 @@ msgstr "Προσθέστε άλλη επιλογή"
 msgid "Add another question"
 msgstr "Προσθήκη ερώτησης"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Προσθήκη αρχείων"
 
@@ -424,11 +424,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Εμφάνιση Απαντήσεων"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Κώδικας Applet:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 #, fuzzy
 msgid "Applet Type"
 msgstr "Κώδικας Applet:"
@@ -621,7 +621,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Διαγραφή αρχείου"
 
@@ -1068,7 +1068,7 @@ msgstr "Άρθρο της Γαλλικής Βίκι εγκυκλοπαίδεια
 msgid "GNU Free Documentation License"
 msgstr "GNU Άδεια Δωρεάν Τεκμηρίωσης"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1382,7 +1382,7 @@ msgstr "Επιλογή"
 msgid "Options"
 msgstr "Επιλογές"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Άλλο"
 
@@ -1439,7 +1439,7 @@ msgstr "Παρακαλώ επιλέξτε ομάδα συζήτησης."
 msgid "Please select a correct answer for each question."
 msgstr "Παρακαλώ επιλέξτε μια σωστή απάντηση για κάθε ερώτηση."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -2136,7 +2136,7 @@ msgstr ""
 "να μάθει και να εξασκηθεί κάνοντας χρήση της πληροφορίας η της επιδεξιότητάς τουl.\n"
 " "
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Εκφόρτωση"
 

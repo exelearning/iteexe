@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-08-19 19:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <ralf.hilgenstock@dialoge.net>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -340,7 +340,7 @@ msgstr "Weitere Antworten hinzufügen"
 msgid "Add another question"
 msgstr "Eine weitere Frage hinzufügen"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Dateien hinzufügen"
 
@@ -431,11 +431,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Antworten "
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Applet Code:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr "Anwendungstyp"
 
@@ -627,7 +627,7 @@ msgstr "Löschen"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Datei löschen"
 
@@ -1098,7 +1098,7 @@ msgstr "Wikipedia Artikel (Französisch)"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr "Geogebra"
 
@@ -1413,7 +1413,7 @@ msgstr "Antwort"
 msgid "Options"
 msgstr "Antworten"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Andere"
 
@@ -1467,7 +1467,7 @@ msgstr "Bitte eine jpg-Datei auswählen."
 msgid "Please select a correct answer for each question."
 msgstr "Wählen Sie bitte zu jeder Frage die richtige Antwort aus."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr "Laden Sie bitte eine .gbb-Datei hoch."
 
@@ -2181,7 +2181,7 @@ msgstr ""
 "Teilnehmer/in Zeit hatte, sich vorzubereiten und die Informationen\n"
 "und Fähigkeiten bereits erproben konnte."
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Upload"
 

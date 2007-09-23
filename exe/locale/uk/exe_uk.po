@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -318,7 +318,7 @@ msgstr "Додати іншу опцію"
 msgid "Add another question"
 msgstr "Додати інше питання"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Додати файли"
 
@@ -403,11 +403,11 @@ msgstr "Діяльність може бути визначена як завд�
 msgid "Answsers"
 msgstr "Відповіді"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Код Аплету:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr "Тип Аплету "
 
@@ -599,7 +599,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Видалити"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Видалити Файл"
 
@@ -1045,7 +1045,7 @@ msgstr "Wikipedia - Французький"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr "Geogebra"
 
@@ -1352,7 +1352,7 @@ msgstr "Опція"
 msgid "Options"
 msgstr "Опції"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Інший"
 
@@ -1407,7 +1407,7 @@ msgstr "Будь ласка виберіть .flv файл."
 msgid "Please select a correct answer for each question."
 msgstr "Будь ласка виберіть правильну відповідь для кожного запитання."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr "Будь ласка завантажте .ggb файл."
 
@@ -2082,7 +2082,7 @@ msgid ""
 " "
 msgstr "На відміну від MCQ система опитування SCORM використовуэться для опитування студентів по темі без забезпечення зворотнього зв'язку, що вказує правильну чи неправильну відповідь. Також серйозна відмінніст полягає в тому що система визначає відсоток правильних відповідей і згідно чого повідомляє студента здав він екзамен чи ні."
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Завантажити"
 

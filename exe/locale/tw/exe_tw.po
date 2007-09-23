@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2006-08-12 05:37+1200\n"
 "Last-Translator: \n"
 "Language-Team: Samuel Sarpong and J.P.Antwi-Danso <srnsam@yahoo.com, portnass2003@yahoo.com>\n"
@@ -266,7 +266,7 @@ msgstr "Fa foforɔ ka ho"
 msgid "Add another question"
 msgstr "Fa asɛmbisa fororɔ ka ho"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Adwuma bi a woatintim ka ho"
 
@@ -333,11 +333,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Yi mmuaɛ no kyerɛ"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr ""
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr ""
 
@@ -520,7 +520,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 #, fuzzy
 msgid "Delete File"
 msgstr "Yi nea watintim no mu baako"
@@ -931,7 +931,7 @@ msgstr "Wikipedia Ntwerɛnsɛm"
 msgid "GNU Free Documentation License"
 msgstr ""
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1249,7 +1249,7 @@ msgstr "Ɛkwan"
 msgid "Options"
 msgstr "Akwan"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Foforɔ"
 
@@ -1308,7 +1308,7 @@ msgstr "Mepa wo kyew fa."
 msgid "Please select a correct answer for each question."
 msgstr "Mepa wo kyɛw fa emmuae a eye ma asemmisa no."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -1938,7 +1938,7 @@ msgid ""
 " "
 msgstr ""
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 #, fuzzy
 msgid "Upload"
 msgstr "Fa gu so"

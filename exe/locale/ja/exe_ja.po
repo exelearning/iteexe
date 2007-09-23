@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-09-03 19:22+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -301,7 +301,7 @@ msgstr "別のオプションを追加"
 msgid "Add another question"
 msgstr "別の質問を追加"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "ファイルを追加"
 
@@ -383,11 +383,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "解答"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "アプレットコード："
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr "アプレットタイプ："
 
@@ -574,7 +574,7 @@ msgstr ""
 msgid "Delete"
 msgstr "削除"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "ファイルの削除"
 
@@ -1018,7 +1018,7 @@ msgstr "フランス語ウィキペディア記事"
 msgid "GNU Free Documentation License"
 msgstr "GNU（グニュー）フリードキュメンテーションライセンス"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr "Geogebra"
 
@@ -1322,7 +1322,7 @@ msgstr "オプション"
 msgid "Options"
 msgstr "オプション"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "その他"
 
@@ -1378,7 +1378,7 @@ msgstr "フォーラムを選択してください"
 msgid "Please select a correct answer for each question."
 msgstr "それぞれの質問に対して正しい解答を選んでください。"
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr "ggbファイルをアップロードしてください。"
 
@@ -2058,7 +2058,7 @@ msgstr ""
 "提供しないで、あるトピックに関する学習者の知識をテストするのに利用できます。\n"
 "このクイズは、学習者が情報や技能を用いて学習したり演習をした後、よく利用されます。"
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "アップロード"
 

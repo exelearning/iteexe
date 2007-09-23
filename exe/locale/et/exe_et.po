@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-07-13 08:14+1200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -316,7 +316,7 @@ msgstr "Lisa veel valikuid"
 msgid "Add another question"
 msgstr "Lisa veel küsimusi"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Lisa fail"
 
@@ -404,11 +404,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Vastused"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Appleti kood:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr "Appleti tüüp"
 
@@ -601,7 +601,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Kustuta"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Kustuta fail"
 
@@ -1048,7 +1048,7 @@ msgstr "Prantsuse Wikipedia artikkel"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr "Geogebra"
 
@@ -1353,7 +1353,7 @@ msgstr "Valik"
 msgid "Options"
 msgstr "Valikud"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Muu"
 
@@ -1407,7 +1407,7 @@ msgstr "Palun vali .jpg fail."
 msgid "Please select a correct answer for each question."
 msgstr "Palun vali iga küsimuse jaoks õige vastus."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr "Palun lae üles .ggb fail."
 
@@ -2106,7 +2106,7 @@ msgstr ""
 " aega õppida ning harjutada kasutades \n"
 "õpitud informatsiooni või oskust."
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Üleslaadimine"
 

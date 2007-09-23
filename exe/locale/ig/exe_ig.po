@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2006-09-22 10:21+1200\n"
 "Last-Translator: EXE Team <exe@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -257,7 +257,7 @@ msgstr ""
 msgid "Add another question"
 msgstr ""
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr ""
 
@@ -323,11 +323,11 @@ msgstr ""
 msgid "Answsers"
 msgstr ""
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr ""
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr ""
 
@@ -502,7 +502,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr ""
 
@@ -893,7 +893,7 @@ msgstr ""
 msgid "GNU Free Documentation License"
 msgstr ""
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1191,7 +1191,7 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr ""
 
@@ -1245,7 +1245,7 @@ msgstr ""
 msgid "Please select a correct answer for each question."
 msgstr ""
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -1855,7 +1855,7 @@ msgid ""
 " "
 msgstr ""
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr ""
 

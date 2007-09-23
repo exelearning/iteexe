@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-06-12 20:24+1200\n"
 "Last-Translator: Aleksander POTOCNIK <Aleksander.Potocnik@siol.net>\n"
 "Language-Team: Institut OKO, iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -350,7 +350,7 @@ msgstr "Dodaj drugo možnost"
 msgid "Add another question"
 msgstr "Dodaj drugo vprašanje"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Dodaj datoteke"
 
@@ -444,11 +444,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Prikaži odgovor"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Koda Applet-ov:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 #, fuzzy
 msgid "Applet Type"
 msgstr "Koda Applet-ov:"
@@ -641,7 +641,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Izbriši"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Izbriši Datoteko  "
 
@@ -1094,7 +1094,7 @@ msgstr "Francoski članki iz Wikipedije"
 msgid "GNU Free Documentation License"
 msgstr "GNU licenca proste dokumentacije "
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1409,7 +1409,7 @@ msgstr "Možnosti"
 msgid "Options"
 msgstr "Možnosti  "
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Ostalo"
 
@@ -1466,7 +1466,7 @@ msgstr "Prosim izberite razpravo."
 msgid "Please select a correct answer for each question."
 msgstr "Prosim izberite  pravilen odgovore za vsako posamezno vprašanje"
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -2171,7 +2171,7 @@ msgstr ""
 "čas za učenje in ponavljanje z uporabo informacij ali veščin. \n"
 " "
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Naloži  "
 

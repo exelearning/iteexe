@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-03-26 14:18+1200\n"
 "Last-Translator: \n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -277,7 +277,7 @@ msgstr "Pridať ďalšiu možnosť"
 msgid "Add another question"
 msgstr "Pridať ďalšiu otázku"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Pridať súbory"
 
@@ -354,11 +354,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Zobraziť odpovede"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Kód Applet-u:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 #, fuzzy
 msgid "Applet Type"
 msgstr "Kód Applet-u:"
@@ -543,7 +543,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Zmazať"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Zmazať súbor"
 
@@ -962,7 +962,7 @@ msgstr "Francúzsky článok vo formáte Wikipedia"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1275,7 +1275,7 @@ msgstr "Možnosť «opt_01»"
 msgid "Options"
 msgstr "Možnosti «opt_02»"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Iné"
 
@@ -1332,7 +1332,7 @@ msgstr "Prosím, zvoľte fórum."
 msgid "Please select a correct answer for each question."
 msgstr "Prosím označte správnu odpoveď pre každú otázku."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -1979,7 +1979,7 @@ msgid ""
 " "
 msgstr ""
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Upload"
 

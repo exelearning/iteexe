@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2006-07-28 15:36+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -333,7 +333,7 @@ msgstr "Adicionar outra opção"
 msgid "Add another question"
 msgstr "Adicionar outra questão"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Adicionar ficheiros"
 
@@ -424,11 +424,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Apresentar Respostas"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Código Applet:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 #, fuzzy
 msgid "Applet Type"
 msgstr "Código Applet:"
@@ -621,7 +621,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Eliminar"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Eliminar Ficheiro"
 
@@ -1069,7 +1069,7 @@ msgstr "Artigo Wikipédia Francês"
 msgid "GNU Free Documentation License"
 msgstr "GNU Licença de Documentação Livre"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1384,7 +1384,7 @@ msgstr "Opção"
 msgid "Options"
 msgstr "Opções"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Outro"
 
@@ -1441,7 +1441,7 @@ msgstr "Por favor escolher um forum."
 msgid "Please select a correct answer for each question."
 msgstr "Seleccione a resposta correcta para cada questão."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -2144,7 +2144,7 @@ msgstr ""
 "o conhecimento da resposta correcta. O quiz ficará disponível aos aluno quando estes \n"
 "tiverem tido tempo para aprender e praticar usando a informação ou perícia."
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Upload"
 

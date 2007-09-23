@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2007-07-20 14:24+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -325,7 +325,7 @@ msgstr "Přidat další volbu"
 msgid "Add another question"
 msgstr "Přidat další otázku"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Připojit soubory"
 
@@ -413,11 +413,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Odpovědi"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Kód appletu:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 msgid "Applet Type"
 msgstr "Typ appletu"
 
@@ -607,7 +607,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Smazat"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Smazat soubor"
 
@@ -1065,7 +1065,7 @@ msgstr "Článek ve Wikipedii francouzsky"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation Licence"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr "Geogebra"
 
@@ -1371,7 +1371,7 @@ msgstr "Volba"
 msgid "Options"
 msgstr "Volby"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Jiný"
 
@@ -1425,7 +1425,7 @@ msgstr "Vyberte prosím soubor .jpg."
 msgid "Please select a correct answer for each question."
 msgstr "Vyberte prosím ke každé otázce správnou odpověď."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr "Nahrajte prosím soubor .ggb."
 
@@ -2140,7 +2140,7 @@ msgstr ""
 "k praktickému vyzkoušení informací či dovednosti.\n"
 " "
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Načíst soubor"
 

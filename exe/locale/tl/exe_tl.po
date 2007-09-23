@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-14 04:48+1200\n"
+"POT-Creation-Date: 2007-09-24 00:18+1200\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -339,7 +339,7 @@ msgstr "Magdagdag ng isa pang opsiyon"
 msgid "Add another question"
 msgstr "Magdagdag ng isa pang tanong"
 
-#: exe/webui/appletblock.py:108
+#: exe/webui/appletblock.py:109
 msgid "Add files"
 msgstr "Magdagdag ng sako"
 
@@ -431,11 +431,11 @@ msgstr ""
 msgid "Answsers"
 msgstr "Ipakita ang mga Sagot"
 
-#: exe/webui/appletblock.py:114
+#: exe/webui/appletblock.py:115
 msgid "Applet Code:"
 msgstr "Applet Code:"
 
-#: exe/webui/appletblock.py:90
+#: exe/webui/appletblock.py:91
 #, fuzzy
 msgid "Applet Type"
 msgstr "Applet Code:"
@@ -627,7 +627,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Burahin"
 
-#: exe/webui/appletblock.py:127
+#: exe/webui/appletblock.py:128
 msgid "Delete File"
 msgstr "Burahin ang Sako"
 
@@ -1088,7 +1088,7 @@ msgstr "Pranses na Artikulong Wikipedia"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/appletblock.py:88
+#: exe/webui/appletblock.py:89
 msgid "Geogebra"
 msgstr ""
 
@@ -1402,7 +1402,7 @@ msgstr "Opsiyon"
 msgid "Options"
 msgstr "Mga opsiyon"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
 msgstr "Iba pa"
 
@@ -1459,7 +1459,7 @@ msgstr "Pumili po ng talakayan."
 msgid "Please select a correct answer for each question."
 msgstr "Piliin po ang wastong sagot sa bawat tanong."
 
-#: exe/webui/appletblock.py:71
+#: exe/webui/appletblock.py:72
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -2181,7 +2181,7 @@ msgstr ""
 "impormasyon o kasanayan.\n"
 " "
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:111
 msgid "Upload"
 msgstr "Iahon"
 
