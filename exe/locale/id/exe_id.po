@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-14 04:48+1200\n"
-"PO-Revision-Date: 2007-09-17 10:09+1200\n"
+"PO-Revision-Date: 2007-09-22 15:56+1200\n"
 "Last-Translator: Juniza Pratama <juniza.pratama@igi-alliance.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -1916,6 +1916,10 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"Kebanyakan dari sumber daya pelajaran akan berupa \n"
+"membentuk konteks, menyampaikan instruksi dan menyediakan informasi umum.\n"
+"Hal ini menyediakan bingkai kerja dimana aktivitas pembelajaran dibangun dan \n"
+"disampaikan."
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1928,20 +1932,30 @@ msgid ""
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
 msgstr ""
+"Bahasa matematika LATEX sudah \n"
+"digunakan untuk mengaktifkan rumus matematika anda \n"
+"kedalam materi. Hal ini dilakukan dengan menerjemahkan \n"
+"LATEX pada sebuah gambar yang kemudian akan ditampilkan\n"
+"pada materi eXe anda. Kami akan menyarankan anda untuk \n"
+"menggunakan \"iDevice\" Teks Bebas untuk menyediakan \n"
+"catatan penjelasan dan instruksi pelajaran disekitar \n"
+"gambar rumus ini."
 
 #: exe/webui/editorpane.py:69
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
-msgstr ""
+msgstr "Dialog tujuan mengizinkan anda untuk menggambarkan maksud tujuan anda pada pengguna yang potensial."
 
 #: exe/webui/wikipediablock.py:201
 msgid "This article is licensed under the "
-msgstr ""
+msgstr "Artikel ini memiliki izin dari"
 
 #: exe/engine/imagemagnifieridevice.py:93
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
+"Hal ini memilih ukuran awal dari \n"
+"kaca pembesar"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1951,56 +1965,67 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"\"iDevice\" hanya mendukung format berkas video flash (.FLV) , dan tidak akan\n"
+"menerima format video lainnya. Walaupun begitu anda dapat melakukan konversi format video yang lain\n"
+"(seperti mov, wmf etc) ke format .FLV menggunakan enkoder pihak ketiga. Hal ini tidak \n"
+"diikutsertakan dengan eXe. Pengguna juga perlu untuk mengunduh pemutar video Flash 8\n"
+"dari http://www.macromedia.com/ untuk memainkan video."
 
 #: exe/engine/freetextidevice.py:68
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Ini adalah isian teks bebas materi pembelajaran dapat dimasukan."
 
 #: exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Ini adalah sebuah isian teks bebas."
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Ini adalah contoh dari plugin \"iDevice\"\n"
+"yang dibuat oleh pengguna."
 
 #: exe/webui/editorpane.py:68
 msgid "This is an optional field."
-msgstr ""
+msgstr "Ini adalah isian yang opsional."
 
 #: exe/webui/block.py:214
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
+"Ini akan menghapus \"iDevice\" ini.\n"
+"Apakah anda yakin ?"
 
 #: exe/webui/block.py:259
 msgid "Tip:"
-msgstr ""
+msgstr "Tip:"
 
 #: exe/webui/galleryblock.py:181
 msgid "Title"
-msgstr ""
+msgstr "Judul"
 
 #: exe/engine/quiztestidevice.py:99 exe/engine/quiztestidevice.py:139
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Untuk mengindikasikan jawaban yang benar, \n"
+"klik tombol radio di sebelah opsi yang benar."
 
 #: exe/engine/package.py:83
 msgid "Topic"
-msgstr ""
+msgstr "Topik"
 
 #: exe/webui/truefalseelement.py:104 exe/webui/truefalseelement.py:177
 msgid "True"
-msgstr ""
+msgstr "Benar"
 
 #: exe/engine/truefalseidevice.py:94
 msgid "True-False Question"
-msgstr ""
+msgstr "Pertanyaan Benar-Salah"
 
 #: exe/engine/truefalseidevice.py:96
 msgid ""
@@ -2012,7 +2037,7 @@ msgstr ""
 
 #: exe/engine/field.py:2244
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Ketik sebuah topik diskusi di sini."
 
 #: exe/engine/multichoiceidevice.py:106
 msgid ""
@@ -2022,6 +2047,11 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other options."
 msgstr ""
+"Ketik umpan balik yang ingin anda ingin \n"
+"perlihatkan pada siswa ketika memilih pilihan tertentu. jika anda tidak menyelesaikan \n"
+"kotak ini, eXe akan otomatis menyediakan umpan balik standar sebagai berikut: \"Jawaban \n"
+"benar\" untuk pilihan jawaban yang benar; atau or \"Jawaban salah\"\n"
+"untuk pilihan yang salah."
 
 #: exe/engine/truefalseidevice.py:183
 msgid ""
@@ -2031,16 +2061,23 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Ketik umpan balik yang ingin anda ingin \n"
+"perlihatkan pada siswa ketika memilih pilihan tertentu. jika anda tidak menyelesaikan \n"
+"kotak ini, eXe akan otomatis menyediakan umpan balik standar sebagai berikut: \"Jawaban \n"
+"benar\" untuk pilihan jawaban yang benar; atau or \"Jawaban salah\"\n"
+"untuk pilihan yang salah."
 
 #: exe/engine/field.py:2481
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
+"Ketik pada umpan balik yang ingin anda \n"
+"sediakan bagi siswa."
 
 #: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Ketik tujuan belajar untuk sumber daya ini."
 
 #: exe/engine/truefalseidevice.py:104
 msgid ""
@@ -2048,24 +2085,27 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
 "be ambiguous."
 msgstr ""
+"Ketik akar pertanyaan. Pertanyaan \n"
+"sebaiknya jelas dan tidak bermakna ganda. Hindari dasar pikiran negatif karena hal ini cenderung \n"
+"bermakna ganda."
 
 #: exe/webui/externalurlblock.py:61
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:122
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "Tidak dapat mengunduh dari %s <br/>Tolong periksa ejaan dan hubungan lalu coba lagi."
 
 #: exe/engine/rssidevice.py:81 exe/engine/rssidevice.py:84
 #, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "Tidak dapat mengunduh umpan RSS dari %s <br/>Tolong periksa ejaan dan hubungan lalu coba lagi."
 
 #: exe/engine/package.py:83
 msgid "Unit"
-msgstr ""
+msgstr "Unit"
 
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
@@ -2080,7 +2120,7 @@ msgstr ""
 #: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:182
 #: exe/engine/casestudyidevice.py:159 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr ""
+msgstr "Universitas Auckland"
 
 #: exe/engine/quiztestidevice.py:183
 msgid ""
@@ -2090,10 +2130,14 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"Tidak seperti MCQ, kuis SCORM digunakan untuk menguji \n"
+"pengetahuan siswa pada sebuah topik tanpa menyediakan umpan balik \n"
+"untuk jawaban yang benar. Kuis akan sering diberikan ketika siswa sudah memiliki waktu \n"
+"untuk belajar dan latihan menggunakan informasi atau keahlian.\n"
 
 #: exe/webui/appletblock.py:110
 msgid "Upload"
-msgstr ""
+msgstr "Kirim"
 
 #: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 msgid ""
@@ -2101,14 +2145,17 @@ msgid ""
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Gunakan umpan balik untuk menyediakan sebuah pokok - pokok ringkasan yang tercakup pada bacaan, \n"
+"atau sebagai sebuah titik mulai untuk analisa lanjutan bagi bacaan menyediakan pertanyaan \n"
+"atau pernyataan untuk memulai debat."
 
 #: exe/engine/galleryidevice.py:414
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Gunakan \"iDevice\" ini jika anda memiliki banyak gambar untuk ditunjukan."
 
 #: exe/webui/editorpane.py:76
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
-msgstr ""
+msgstr "Gunakan isian ini untuk menggambarkan maksud anda dan pedagogi dibelakang pengembangan perangkat. Hal ini dapat berguna jika \"iDevice\" anda akan dieksport untuk digunakan oleh yang lain."
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
@@ -2116,14 +2163,17 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Gunakan isian ini untuk memasukan teks. \"iDevice ini \n"
+"tidak memiliki titik penekanan walaupun pembentukan terbatas dapat saja diterapkan \n"
+"pada teks melalui tombol pengubahan teks yang diasosiakan dengan isian."
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
+msgstr "Gunakan menu tarik bawah ini untuk memilih perlu tidaknya \"iDevice\" untuk memiliki bentuk tertentu agar gampang dikenal; sebagai contoh. sebuah garis batasan dan sebuah ikon."
 
 #: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
 msgid "What to read"
-msgstr ""
+msgstr "Apa yang harus dibaca"
 
 #: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
 msgid ""
@@ -2139,139 +2189,150 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Ketika membangun sebuah MCQ pertimbangkan hal berikut ini: <ul>\n"
+"<li> Gunakan kata yang telah akrab dengan siswa dan memiliki \n"
+"hubungan dengan pelajaran mereka </li>\n"
+"<li> Jaga agar respons tetap padat berisi </li>\n"
+"<li> Adanya konsistensi antara akar permasalahan dan respons </li>\n"
+"<li> Sediakan opsi yang cukup untuk merangsang siswa berpikir mengenai respon mereka\n"
+"</li>\n"
+"<li> Coba untuk meyakinkan bahwa respon yang benar tidak lebih rinci ketimbang \n"
+"pengalih perhatian </li>\n"
+"<li> Pengalih perhatian sebaiknya tidak benar tapi jelas </li>\n"
+"</ul>\n"
 
 #: exe/engine/wikipediaidevice.py:52
 msgid "Wiki Article"
-msgstr ""
+msgstr "Artikel Wiki"
 
 #: exe/webui/wikipediablock.py:111
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Artikel Wikibooks"
 
 #: exe/webui/wikipediablock.py:114
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Isi Wikieducator"
 
 #: exe/webui/wikipediablock.py:112
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:113
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wikitionary"
 
 #: exe/webui/element.py:1847
 msgid "Wrong"
-msgstr ""
+msgstr "Salah"
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr ""
+msgstr "Anda dapat menggunakan balok perangkat atau memasukan latex secara manual pada area teks."
 
 #: exe/webui/editorpane.py:64
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
-msgstr ""
+msgstr "\"iDevice\" baru anda akan muncul pada panel \"iDevice\" dengan nama ini. Ini merupakan isian wajib dan anda harus mengisi label jika anda mencoba untuk membuat \"iDevice\" tanpa label tersebut."
 
 #: exe/webui/wikipediablock.py:216
 msgid "article "
-msgstr ""
+msgstr "artikel"
 
 #: exe/webui/element.py:462 exe/webui/element.py:870
 msgid "blank for original size"
-msgstr ""
+msgstr "kosongkan untuk ukuran aslinya"
 
 #: exe/export/imsexport.py:207 exe/export/scormexport.py:296
 msgid "eXe"
-msgstr ""
+msgstr "eXe"
 
 #: exe/webui/preferencespage.py:84 exe/webui/common.py:67
 #: exe/webui/editorpage.py:218
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : elearning XHTML editor"
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
-msgstr ""
+msgstr "Proyek eXe"
 
 #: exe/engine/appletidevice.py:86
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "berkas %s tidak memiliki simpulInduk"
 
 #: exe/engine/wikipediaidevice.py:204
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "\"iDevice\" %s tidak memiliki paket"
 
 #: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
-msgstr ""
+msgstr "Editor \"iDevice\""
 
 #: exe/webui/block.py:309
 msgid "iDevice icon"
-msgstr ""
+msgstr "ikon \"iDevice\""
 
 #: exe/webui/renderable.py:250
 msgid "key"
-msgstr ""
+msgstr "kunci"
 
 #: exe/webui/renderable.py:252
 msgid "keycode"
-msgstr ""
+msgstr "kodekunci"
 
 #: exe/webui/renderable.py:243
 msgid "label"
-msgstr ""
+msgstr "label"
 
 #: exe/webui/element.py:1406
 msgid "newline"
-msgstr ""
+msgstr "garisbaru"
 
 #: exe/webui/element.py:1405
 msgid "text"
-msgstr ""
+msgstr "teks"
 
 #: exe/webui/renderable.py:255
 msgid "title"
-msgstr ""
+msgstr "judul"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Metadata Inti Dublin"
 
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
 #: label="SCORM 1.2 Options">
 msgid "SCORM 1.2 Options"
-msgstr ""
+msgstr "Opsi SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
 msgid "Insert Package"
-msgstr ""
+msgstr "Sisipkan Paket"
 
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 msgid "Dublin Core"
-msgstr ""
+msgstr "Inti Dublin"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
-msgstr ""
+msgstr "Properti Proyek"
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
-msgstr ""
+msgstr "Paket"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
 msgid "Title:"
-msgstr ""
+msgstr "Judul:"
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'red';" id="pp_scolinks" label="Add
@@ -2279,31 +2340,31 @@ msgstr ""
 #: eXe to add Previous and Next individual pages your SCO. The LMS also still
 #: kind of functionality." checked="false">
 msgid "Add Previous/Next links within SCOs?"
-msgstr ""
+msgstr "Tambah tautan Kembali/Lanjut pada SCOs?"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 msgid "Extract Package"
-msgstr ""
+msgstr "Ekstrak Paket"
 
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 msgid "IEEE LOM"
-msgstr ""
+msgstr "IEEE LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 msgid "Project Title:"
-msgstr ""
+msgstr "Judul Proyek:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "Creator:"
-msgstr ""
+msgstr "Pembuat:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2314,16 +2375,16 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Header Background:"
-msgstr ""
+msgstr "Latar Kepala"
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
-msgstr ""
+msgstr "Ekspor"
 
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "Subject:"
-msgstr ""
+msgstr "Subyek:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
@@ -2334,7 +2395,7 @@ msgstr "VK_DELETE"
 #: oncommand="addImage('pp_backgroundImg',this.parentNode.parentNode);"
 #: id="loadImage" label="Load Image">
 msgid "Load Image"
-msgstr ""
+msgstr "Muat Gambar"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
@@ -2345,23 +2406,28 @@ msgid ""
 "                vocabulary or formal classification scheme.\n"
 "             "
 msgstr ""
+"\n"
+"Secara tipikal, Subyek akan dibuat berdasarkan kata kunci, frasa kunci atau\n"
+"kode klasifikasi yang menggambarkan sebuah topic dari sumber daya.\n"
+"Langkah yang disarankan adalah untuk memilih sebuah nilai dari kosa kata\n"
+"yang terkendali atau skema klasifikasi normal.\n"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="window.location.reload(true);" id="showImage" label="Show
 #: Image">
 msgid "Show Image"
-msgstr ""
+msgstr "Tunjukan Gambar"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "Publisher:"
-msgstr ""
+msgstr "Penerbit:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
@@ -2372,13 +2438,13 @@ msgstr "VK_LEFT"
 #: oncommand="clearImage('pp_backgroundImg',this.parentNode.parentNode);"
 #: id="clearImage" label="Clear Image">
 msgid "Clear Image"
-msgstr ""
+msgstr "Bersihkan Gambar"
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "Contributors:"
-msgstr ""
+msgstr "Kontributor:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
@@ -2389,24 +2455,24 @@ msgstr "VK_RIGHT"
 #: oncommand="this.style.color = 'red';" id="pp_backgroundImgTile" label="Tile
 #: background image?" checked="false">
 msgid "Tile background image?"
-msgstr ""
+msgstr "Gambar latar dibuat ubin?"
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "Date:"
-msgstr ""
+msgstr "Tanggal:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Author:"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Author:"
-msgstr ""
+msgstr "Pembuat:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2416,16 +2482,20 @@ msgid ""
 "                 encoding the date value is defined in a profile called\n"
 "                 "
 msgstr ""
+"\n"
+"Secara tipikal, tanggal akan diasosiasikan pada saat sumber daya tersebut dibuat\n"
+"atau mulai tersedia. Sebuah cara terbaik yang direkomendasikan untuk \n"
+"mengatur nilai tanggal adalah mendefinisikan pada sebuah profil yang dinamakan\n"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: exe/xului/templates/packageproperties.xul:<label value="License:"
 #: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
 msgid "License:"
-msgstr ""
+msgstr "Izin:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2436,12 +2506,12 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: exe/xului/templates/packageproperties.xul:<menulist
 #: onchange="this.style.color = 'red'" id="pp_license" label="Select License">
 msgid "Select License"
-msgstr ""
+msgstr "Pilih Perizinan"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2449,32 +2519,34 @@ msgid ""
 "                 and includes (among others) dates of the form YYYY-MM-DD.\n"
 "            "
 msgstr ""
+"\n"
+"dan menyertakan (diantara lainnya) tanggal dalam bentuk TTTT-BB-tt.\n"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution 2.5 License" id="ppcca1" label="Creative License">
 msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+msgstr "Perizinan Creative Commons Attribution 2.5"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "Type:"
-msgstr ""
+msgstr "Tipe:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Perizinan Creative Commons Attribution-ShareAlike 2.5"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
