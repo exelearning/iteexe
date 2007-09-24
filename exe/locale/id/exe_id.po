@@ -399,6 +399,7 @@ msgstr ""
 "<li> Hindari tata bahawa dan struktur pertanyaan yang mungkin malah menyediakan \n"
 "jawaban</li>\n"
 "</ul>\n"
+" "
 
 #: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
 msgid ""
@@ -2134,6 +2135,7 @@ msgstr ""
 "pengetahuan siswa pada sebuah topik tanpa menyediakan umpan balik \n"
 "untuk jawaban yang benar. Kuis akan sering diberikan ketika siswa sudah memiliki waktu \n"
 "untuk belajar dan latihan menggunakan informasi atau keahlian.\n"
+" "
 
 #: exe/webui/appletblock.py:111
 msgid "Upload"
@@ -2411,6 +2413,7 @@ msgstr ""
 "kode klasifikasi yang menggambarkan sebuah topic dari sumber daya.\n"
 "Langkah yang disarankan adalah untuk memilih sebuah nilai dari kosa kata\n"
 "yang terkendali atau skema klasifikasi normal.\n"
+"             "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2486,6 +2489,7 @@ msgstr ""
 "Secara tipikal, tanggal akan diasosiasikan pada saat sumber daya tersebut dibuat\n"
 "atau mulai tersedia. Sebuah cara terbaik yang direkomendasikan untuk \n"
 "mengatur nilai tanggal adalah mendefinisikan pada sebuah profil yang dinamakan\n"
+"                 "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
@@ -2521,6 +2525,7 @@ msgid ""
 msgstr ""
 "\n"
 "dan menyertakan (diantara lainnya) tanggal dalam bentuk TTTT-BB-tt.\n"
+"            "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
