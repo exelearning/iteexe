@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-24 09:11+1200\n"
-"PO-Revision-Date: 2007-07-19 12:36+1200\n"
+"PO-Revision-Date: 2007-09-25 09:10+1200\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -471,9 +471,8 @@ msgid "Case Study"
 msgstr "Gevalstudie"
 
 #: exe/webui/wikipediablock.py:97
-#, fuzzy
 msgid "Catalan Wikipedia Article"
-msgstr "Italiaans Wikipedia-artikel"
+msgstr "Catalaans Wikipedia-artikel"
 
 #: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
 msgid "Change Image"
@@ -582,9 +581,8 @@ msgstr "Juist"
 
 #: exe/webui/testoptionelement.py:96 exe/webui/element.py:1510
 #: exe/webui/element.py:1771
-#, fuzzy
 msgid "Correct Option"
-msgstr "Juist"
+msgstr "Juiste keuze"
 
 #: exe/webui/truefalseelement.py:204
 msgid "Correct!"
@@ -769,7 +767,7 @@ msgstr "Bewerken"
 
 #: twisted/persisted/styles.py:365
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr ""
+msgstr "Uw idevice/generic.data bestand of het pakket dat je probeert te openen was aangemaakt in een nieuwere versie van eXe.  Uprade uw eXe versie en probeer opnieuw."
 
 #: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:100 exe/webui/editorpane.py:330
@@ -1185,7 +1183,6 @@ msgid "Import iDevice"
 msgstr "iDevices importeren"
 
 #: exe/webui/element.py:1557
-#, fuzzy
 msgid "Incorrect"
 msgstr "Verkeerd!"
 
@@ -1252,7 +1249,6 @@ msgid "Left"
 msgstr "Links"
 
 #: exe/export/pages.py:69 exe/export/textexport.py:54
-#, fuzzy
 msgid "Licensed under the"
 msgstr "Dit artikel valt onder de licensiebepalingen van"
 
@@ -1261,7 +1257,7 @@ msgid "Load"
 msgstr "Laden"
 
 #: exe/xului/mainpage.py:543
-#, fuzzy, python-format
+#, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Bestandsnaam %s niet gevonden, kan niet voorvertonen"
 
@@ -1291,6 +1287,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Compileren MimeTeX mislukt!\n"
+"%s"
 
 #: exe/webui/block.py:233
 msgid "Move Down"
@@ -1424,7 +1422,7 @@ msgstr "Pakket uitgepakt naar: %s"
 
 #: twisted/persisted/styles.py:317
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
-msgstr ""
+msgstr "Pakket is verouderd. Doe een upgrade (gebruik Bestand..Open, daarna opslaan via Bestand..Opslaan als) vooraleer je het probeert in te voegen in een ander pakket!"
 
 #: exe/xului/mainpage.py:315
 #, python-format
@@ -1469,10 +1467,13 @@ msgid ""
 "   File... Quit\n"
 "menu to close eXe."
 msgstr ""
+"Gebruik aub het eXe's\n"
+"   Bestand... Afsluiten\n"
+"menu om eXe af te sluiten."
 
 #: exe/application.py:243
 msgid "Please wait until loading finishes"
-msgstr ""
+msgstr "Wachten tot het laadproces voltooid is aub"
 
 #: exe/webui/wikipediablock.py:106
 msgid "Polish Wikipedia Article"
@@ -2134,9 +2135,9 @@ msgid "Unable to download from %s <br/>Please check the spelling and connection 
 msgstr "Download onmogelijk vanaf %s <br/>Controleer de spelling en het adres en probeer opnieuw."
 
 #: exe/engine/rssidevice.py:81 exe/engine/rssidevice.py:84
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
-msgstr "Download onmogelijk vanaf %s <br/>Controleer de spelling en het adres en probeer opnieuw."
+msgstr "RSS feed laden onmogelijk vanaf %s <br/>Controleer de spelling en het adres en probeer opnieuw."
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2476,9 +2477,8 @@ msgstr "R"
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="window.location.reload(true);" id="showImage" label="Show
 #: Image">
-#, fuzzy
 msgid "Show Image"
-msgstr "Toon afbeelding %s"
+msgstr "Toon afbeelding"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
