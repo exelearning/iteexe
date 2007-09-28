@@ -330,7 +330,11 @@ class Versioned:
                             + " as it no longer applies to any package.") 
 
             elif repr(base) == "<class 'exe.engine.node.Node'>":
-                if newPackage is not None and self._package != newPackage:
+                # Note: some VERY old and corrupt packages have come in that
+                # don't even have the proper ._package attribute, nor ._id,
+                # or ._title, etc.  So ensure that the node at least has that:
+                if hasattr(self, '_package') \
+                and newPackage is not None and self._package != newPackage:
                     # swap to a proper package on Nodes, IF the
                     # current package is NOT the one that we're really using:
                     if not mergeCheck:

@@ -123,7 +123,13 @@ class _Resource(Persistable):
         if self._package:
             # Remove our self from old package's list of resources
             siblings = self._package.resources[self.checksum]
-            siblings.remove(self)
+            try: 
+                siblings.remove(self) 
+            except Exception, e:
+                # this can occur with old corrupt files, wherein the resource 
+                # was not actually properly connected to the package.  
+                # Proceed anyhow, as if it just removed...
+                bogus_condition = 1
             if len(siblings) == 0:
                 # We are the last user of this file
                 del self._package.resources[self.checksum]
@@ -312,10 +318,69 @@ class Resource(_Resource):
         There was a period in which resource checksums were being created 
         before the resource zip file was fully closed, and not flushed out
         """
-        if self.path.isfile(): 
-            new_md5 = self.path.md5
-        else:
-            new_md5 = None
+        # The following self.path.isfile() is now wrapped in a try/except
+        # because apparently some very old and corrupt files
+        # seems to THINK it has a resource, but the following
+        # check of self.path.isfile() throws an exception for:
+        #     <type 'exceptions.AttributeError'>: 
+        #     'str' object has no attribute 'isfile'
+        # because self.path (the property defined above) may not be able
+        # to find self._package, and therefore returns only _storageName.
+        try: 
+            if self.path.isfile(): 
+                new_md5 = self.path.md5 
+            else: 
+                new_md5 = None
+        except Exception, e:
+            bogus_condition = 1
+            # But see if we can recover anyhow.  
+            # See if this was caused bcause no self._package,
+            # and therefore no self._package/resourceDir is defined.
+            # If this is the case, and it's from a corrupt old idevice,
+            # then  see if we can find the resourceDir of the new package
+            # into which it is being loaded, and use that to determine 
+            # the resource and its checksum:
+            found_resource = False
+            this_resource_path = ""
+            if hasattr(self, '_idevice') and self._idevice is not None:
+                if hasattr(self._idevice, 'parentNode') \
+                and self._idevice.parentNode is not None:
+                    if hasattr(self._idevice.parentNode, 'package')\
+                    and self._idevice.parentNode.package is not None:
+                        if hasattr(self._idevice.parentNode.package, \
+                                'resourceDir')\
+                        and self._idevice.parentNode.package.resourceDir \
+                        is not None: 
+                            this_resource_path = \
+                                self._idevice.parentNode.package.resourceDir \
+                                + "/" + self._storageName
+                            if os.path.isfile(this_resource_path):
+                                found_resource = True
+                                new_md5 = this_resource_path.md5
+                                # and try setting its valid package as well:
+                                self._package = self._idevice.parentNode.package
+                                # such that the calling ImageWithText idevice
+                                # can properly find this resource and convert
+                                # it (it's the only place calling this :-) )
+                                # NOTE: since this really is only being called
+                                # to convert this old corrupt resource from
+                                # ImageWithText, and delete the ImageWithText,
+                                # do not bother with any of the other normal
+                                # issues of adding a resource to a package,
+                                # (primarily the _addOurselvesToPackage()
+                                #  activities such as adding to the package's
+                                #  resources.setdefault(self.checksum, []) etc)
+                                # since _setPackage() will now safely handle
+                                # removal of an invalid resource.
+            if not found_resource:
+                new_md5 = None 
+                log.warn('Failed to do a checksumCheck on resource ' + self
+                    + ', with unknown path, but storageName = ' 
+                    + self._storageName) 
+            else:
+                log.warn('checksumCheck not able to find resource path '
+                        + 'directly, since no package, but did find a path '
+                        + 'to it at: ' + this_resource_path)
 
         if self.checksum != new_md5: 
             old_md5 = self.checksum

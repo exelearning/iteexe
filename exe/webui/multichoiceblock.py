@@ -148,7 +148,7 @@ class MultichoiceBlock(Block):
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += "<div class=\"iDevice_inner\">\n"
-        
+
         for element in self.questionElements:
             html += element.renderPreview("/images/panel-amusements.png", 
                                           "/images/stock-stop.png") 
