@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 09:11+1200\n"
+"POT-Creation-Date: 2007-10-01 21:22+1300\n"
 "PO-Revision-Date: 2007-08-19 19:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <ralf.hilgenstock@dialoge.net>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -772,7 +772,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: twisted/persisted/styles.py:365
+#: twisted/persisted/styles.py:369
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Die idevice/generic.data Datei oder das von Ihnen geladene Paket wurde mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie Ihre eXe Version und versuchen Sie es dann noch einmal. "
 

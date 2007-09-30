@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 09:11+1200\n"
+"POT-Creation-Date: 2007-10-01 21:22+1300\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -767,7 +767,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Iedit"
 
-#: twisted/persisted/styles.py:365
+#: twisted/persisted/styles.py:369
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 

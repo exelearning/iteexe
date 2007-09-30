@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-24 09:11+1200\n"
+"POT-Creation-Date: 2007-10-01 21:22+1300\n"
 "PO-Revision-Date: 2007-07-05 16:56+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -729,7 +729,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Editar"
 
-#: twisted/persisted/styles.py:365
+#: twisted/persisted/styles.py:369
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
