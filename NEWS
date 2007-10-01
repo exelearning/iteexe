@@ -1,7 +1,8 @@
-Next Release
-* Add ability to type attachment name into url box (without browse button)
+Version 1.02 (r3303)
+* Add ability to type resource name into url box (without browse button)
 * Add CSS divs around nodes in single page and print exports for pagination
 * Add detailed uninstall name, links, icon for Windows
+* Make reading very old eXe packages more robust if corruption encountered
 * Fix XHTML for div wrapper of Java Applet iDevice export
 * Add ID, TH translations
 
