@@ -1,7 +1,7 @@
 /*  ===========================================================================
      eXe
      Copyright 2004-2005, University of Auckland
-     Auckland University of Technology & Tairawhiti Polytechnic, 2006.
+     Copyright 2004-2007 eXe Project, http://eXeLearning.org/
 
      These style elements are only used in the editing pane of eXe. They do not 
      apply when content is exported. Brent.  
@@ -45,7 +45,6 @@ font-weight: bold;
 font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
-
 .flash {
  border: 1px dashed #6699cc;
  background-image: url(../images/flash_placeholder.gif); 
@@ -53,10 +52,10 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
  background-repeat: no-repeat;
 }
 
-
-
 p.editModeHeading {
  font-weight: bold;
+ color: red;
+ border: 1px solid red;
 }
 
 .maths {
@@ -67,7 +66,6 @@ color: #000000;
 
 .maths a { color: #000000; }
  
-
 /* adds tiny bit of padding to edit.png when in preview mode */
 img.submit {
     padding: 0 0 2px 2px;

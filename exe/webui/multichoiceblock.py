@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2007 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -93,8 +93,7 @@ class MultichoiceBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
         if self.idevice.message<>"":
-            html += '<span style="color:red">' 
-            html += common.editModeHeading(self.idevice.message) + '</span>'
+            html += common.editModeHeading(self.idevice.message)
         html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
             
         for element in self.questionElements:
