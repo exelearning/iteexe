@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2007 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,7 +51,7 @@ class EditorElement(Element):
             self.field.instruc = unicode(request.args["instruc"+self.id][0], 
                                          'utf8')
                         
-        if "object" in request.args and request.args["object"][0] == self.id:
+        if "object" in request.args and unicode(request.args["object"][0], 'utf8') == self.id:
             if request.args["action"][0] == "deleteField":
                 self.field.idevice.fields.remove(self.field)
                 

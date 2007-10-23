@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2007 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -83,8 +84,9 @@ class EditorPage(RenderableResource):
                     copyIdevice = self.editorPane.idevice.clone()
                     self.__saveChanges(idevice, copyIdevice)
                 
+                selected_idevice = request.args["object"][0].decode("utf-8")
                 for idevice in genericIdevices:
-                    if idevice.title == request.args["object"][0]:
+                    if idevice.title == selected_idevice:
                         break
                 self.isNewIdevice = False
                 self.editorPane.setIdevice(idevice)               
