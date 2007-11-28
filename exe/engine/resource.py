@@ -382,14 +382,24 @@ class Resource(_Resource):
                         + 'directly, since no package, but did find a path '
                         + 'to it at: ' + this_resource_path)
 
-        if self.checksum != new_md5: 
+        if not hasattr(self, 'checksum'):
+            log.warn("checksumCheck() found NO checksum attribute for " 
+                    + repr(self) + "; setting to new md5 of: " + str(new_md5))
+            self.checksum = new_md5
+            # go ahead and add this to the package, as well:
+            if new_md5 is not None and hasattr(self._package, 'resources'): 
+                # And add our new md5 to the package's list of resources:
+                siblings = self._package.resources.setdefault(new_md5, [])
+                siblings.append(self)
+
+        elif self.checksum != new_md5: 
             old_md5 = self.checksum
             log.warn("checksumCheck() found old md5 for " + repr(self) 
-                    + "; replacing with: " + new_md5) 
+                    + "; replacing with: " + str(new_md5)) 
             self.checksum = new_md5
 
             # go ahead and adjust this within the package, as well:
-            if hasattr(self._package, 'resources'): 
+            if new_md5 is not None and hasattr(self._package, 'resources'): 
                 # Remove our old md5 from the package's list of resources:
                 siblings = self._package.resources[old_md5]
                 siblings.remove(self)
