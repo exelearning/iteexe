@@ -399,16 +399,17 @@ class Resource(_Resource):
             self.checksum = new_md5
 
             # go ahead and adjust this within the package, as well:
-            if new_md5 is not None and hasattr(self._package, 'resources'): 
+            if hasattr(self._package, 'resources'): 
                 # Remove our old md5 from the package's list of resources:
                 siblings = self._package.resources[old_md5]
                 siblings.remove(self)
                 if len(siblings) == 0:
                     # We are the last user of this file
                     del self._package.resources[old_md5]
-                # And add our new md5 to the package's list of resources:
-                siblings = self._package.resources.setdefault(new_md5, [])
-                siblings.append(self)
+                if new_md5 is not None: 
+                    # And add our new md5 to the package's list of resources:
+                    siblings = self._package.resources.setdefault(new_md5, [])
+                    siblings.append(self)
 
 
     def upgradeToVersion2(self):
