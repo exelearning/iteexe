@@ -289,6 +289,9 @@ class Versioned:
             # automatically reconnecting these objects to the new package:
             #
             if repr(base)=="<class 'exe.engine.resource.Resource'>":
+                # map out the elp structure:
+                #log.debug("LOADING RESOURCE = \"" + repr(self) + "\"...")
+                #
                 if newPackage is not None and self._package != newPackage:
                     # The following more extreme package comparison really only
                     # applies to resources, since other objects that might need
@@ -298,24 +301,27 @@ class Versioned:
                             # doing a valid merge, from the preMerge-load.
                             # requires that resources have already been
                             # upgraded to at LEAST have their checksum,
-                            # otherwise can't do the real package move 
-                            # using self._setPackage(newPackage)
-                            if hasattr(self, 'checksum'):
-                                # then go ahead and properly update 
-                                if not mergeCheck:
-                                    log.debug("relinking Resource " 
-                                            + repr(self) \
-                                            + " to new merge package.") 
-                                    self._setPackage(newPackage)
-                            else:
+                            if not hasattr(self, 'checksum'):
                                 log.error("Old package: unable to "
-                                        + "relink old Resource "
+                                        + "relink old Resource (w/o checksum) "
                                         + repr(self)
                                         + " to new merge package. "
                                         + " Please upgrade package first!")
                                 #  May want to include the package name here:
                                 raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
-
+                        elif isMerge:
+                            # this is a merge with a resource that is
+                            # pointing to an old package, not even the
+                            # preMergePackage.  Whether or not it has
+                            # the checksum attribute, this needs to be
+                            # upgraded and corrected via a straight LOAD:
+                            log.error("Old package: unable to "
+                                    + "relink old Resource (w/ wrong package) "
+                                    + repr(self)
+                                    + " to new merge package. "
+                                    + " Please upgrade package first!")
+                            #  May want to include the package name here:
+                            raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
                         else:
                             # This appears to be a corrupt resource, pointing 
                             # to an invalid package.  For non-merge loads, we
@@ -330,31 +336,46 @@ class Versioned:
                             + " as it no longer applies to any package.") 
 
             elif repr(base) == "<class 'exe.engine.node.Node'>":
+                # map out the elp structure:
+                #log.debug("LOADING NODE = \"" + self._title + "\"...")
+                #
                 # Note: some VERY old and corrupt packages have come in that
                 # don't even have the proper ._package attribute, nor ._id,
                 # or ._title, etc.  So ensure that the node at least has that:
                 if hasattr(self, '_package') \
                 and newPackage is not None and self._package != newPackage:
-                    # swap to a proper package on Nodes, IF the
-                    # current package is NOT the one that we're really using:
-                    if not mergeCheck:
+                    if isMerge and self._package != preMergePackage:
+                        # This appears to be a corrupt Node.
+                        # Refer them to the standard LOAD procedure
+                        # to fix the elp before trying to MERGE:
+                        log.error("Old package: unable to "
+                                + "relink old Node (w/ wrong package) "
+                                + repr(self)
+                                + " to new merge package. "
+                                + " Please upgrade package first!")
+                        #  May want to include the package name here:
+                        raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
+                    elif not isMerge:
+                        # swap to a proper package on Nodes, IF the current
+                        # package is NOT the one that we're really using:
                         log.debug("relinking Node \""+ self._title  + "\"" \
                             +" to new package." )
                         self._package = newPackage
 
             elif repr(base)=="<class 'exe.engine.package.Package'>":
+                # map out the elp structure:
+                #log.debug("LOADING PACKAGE = \"" + self._name + "\"...")
+                #
                 # see here if this package is the same as the newPackage
                 if newPackage is not None and self != newPackage:
                     if not mergeCheck:
                         log.debug("ignoring old Package object \"" 
                             + self._name + "\" " + repr(self))
 
-            if mergeCheck:
-                # only need to test the above compatibility checks, 
-                # do not go into the actual upgrades.  bail out for this base:
-                continue
             #
             # end of bogus-extraction support (with new merging support!)
+            # but note that a mergeCheck will now continue on through,
+            # since merge will not be used if any object upgrades required:
             ################################# 
 
             # ugly hack, but it's what the user expects, really
@@ -365,19 +386,28 @@ class Versioned:
             pverName = '%s.persistenceVersion' % reflect.qual(base)
             persistVers = (self.__dict__.get(pverName) or 0)
             if persistVers:
-                del self.__dict__[pverName]
+                if not mergeCheck: 
+                    del self.__dict__[pverName]
             assert persistVers <=  currentVers, x_("Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again.")
             while persistVers < currentVers:
                 persistVers = persistVers + 1
                 method = base.__dict__.get('upgradeToVersion%s' % persistVers, None)
                 if method:
+                    if mergeCheck or isMerge: 
+                        log.error("Old package with updates necessary:"
+                                + " unable to insert.  " 
+                                + " Please upgrade package first!") 
+                        #  May want to include the package name here: 
+                        raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
+
                     log.debug( "Upgrading " + reflect.qual(base) + " (of " \
                             +  reflect.qual(self.__class__) + " @ " \
                             +  str(id(self)) + ") to version " \
                             + str(persistVers) )
                     method(self)
                 else:
-                    log.debug( 'no upgrade method for ' \
+                    if not mergeCheck: 
+                        log.debug( 'no upgrade method for ' \
                                + reflect.qual(base)\
                                + ' to version ' + str(persistVers) )
 
@@ -386,7 +416,8 @@ class Versioned:
             # all upgrades of this base class, but, BEFORE any registered
             # afterUpgradeHandlers, which occur after ALL the object upgrades.
             # (Note: persistenceVersion must be defined to even make it here)
-            if base.__dict__.has_key("TwistedRePersist"):
-                method = base.__dict__.get("TwistedRePersist")
-                method(self)
+            if not mergeCheck: 
+                if base.__dict__.has_key("TwistedRePersist"): 
+                    method = base.__dict__.get("TwistedRePersist") 
+                    method(self)
 
