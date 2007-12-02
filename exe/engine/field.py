@@ -221,7 +221,6 @@ class FieldWithResources(Field):
         but before any of its subclass upgrades occur:
         """
         if hasattr(self, "content_w_resourcePaths"):
-            log.debug('TwistedRePersist for FieldWithResources')
             # recreate the content and content_wo_resourcePaths 
             # from the persistent content_w_resourcePaths:
 
