@@ -509,7 +509,6 @@ class Resource(_Resource):
                         if self in this_idevice.userResources:
                             just_found_idevice = True
 
-                        # r3m0: ======> TEST THIS path right here!!!!!!
                         elif hasattr(this_idevice, 'fields'):
                             # check through each of this idevice's fields,
                             # to see if it is supposed to be there.
