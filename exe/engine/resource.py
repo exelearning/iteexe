@@ -463,5 +463,94 @@ class Resource(_Resource):
         """
         return '<%s.%s for "%s" at %s>' % (__name__, self.__class__.__name__, self._storageName, id(self))
 
+    def launch_testForZombies(self):
+        """
+        a wrapper to testForZombieResources(self), such that it might be called
+        after the package has been loaded and upgraded.  Otherwise, due 
+        to the seemingly random upgrading of the package and resource objects,
+        this might be called too early.
+        """
+        # launch the zombie resource check on any resource without an idevice:
+        # (knowing that in some cases, this could indeed still be valid)
+        if self._idevice is None:
+            G.application.afterUpgradeHandlers.append(
+                    self.testForZombieResources)
+
+    def testForZombieResources(self):
+        """ 
+        testing a possible post-load confirmation that this resource 
+        is indeed attached to something.  
+        to be called from twisted/persist/styles.py upon load of a Resource.
+        """
+        if self._package is None \
+        or self.checksum not in self._package.resources:
+            # most definitely appears to be a zombie:
+            log.warn("Removing zombie Resource \"" + str(self) + "\".")
+            self.delete()
+            del self
+        elif self._package is not None and self._idevice is None\
+        and self != self._package._backgroundImg:
+            # okay, this resource IS listed in the package's resources,
+            # but does not have an idevice, nor is it a background image.
+            # So....
+            # cycle through all of the pacakge nodes to find any idevice
+            # for which this is indeed a resource, and reset the _idevice
+            # field on this resource once found, 
+            # OR, determine that it actually is a zombie:
+            found_idevice = None
+
+            if self._package.root: 
+                # import FieldWithResources for class comparisons below.
+                from exe.engine.field     import FieldWithResources
+                for this_node in self._package.root.walkDescendants():
+                    for this_idevice in this_node.idevices:
+                        just_found_idevice = False
+
+                        if self in this_idevice.userResources:
+                            just_found_idevice = True
+
+                        # r3m0: ======> TEST THIS path right here!!!!!!
+                        elif hasattr(this_idevice, 'fields'):
+                            # check through each of this idevice's fields,
+                            # to see if it is supposed to be there.
+                            for this_field in this_idevice.fields:
+                                if isinstance(this_field, FieldWithResources) \
+                                and hasattr(this_field, 'images') :
+                                    # field is capable of embedding resources
+                                    for this_image in this_field.images:
+                                        if hasattr(this_image, 
+                                                '_imageResource') \
+                                        and self == this_image._imageResource:
+                                            just_found_idevice = True
+
+                        elif hasattr(this_idevice, 'content') \
+                        and isinstance(this_idevice.content, 
+                                FieldWithResources) \
+                        and hasattr(this_idevice.content, 'images') :
+                            # this is a generic content idevice also
+                            # capable of embedding resources:
+                            for this_image in this_idevice.content.images:
+                                if hasattr(this_image, '_imageResource') \
+                                and self == this_image._imageResource:
+                                    just_found_idevice = True
+
+                        if just_found_idevice:
+                            # now go ahead and report and reattach:
+                            if found_idevice:
+                                log.warn("Multiple idevices found for "
+                                        + " non-zombie Resource \"" + str(self)
+                                        + "\" when re-attaching.")
+                            just_found_idevice = True
+                            found_idevice = this_idevice
+                            found_idevice.userResources.append(self)
+                            self._idevice = found_idevice
+                            log.warn("Re-attached non-zombie Resource \""
+                                    + str(self) + "\" to iDevice.")
+
+            # if not found in ANY idevice, it probably IS a zombie
+            if found_idevice is None:
+                log.warn("Removing zombie Resource \"" + str(self) + "\".")
+                self.delete()
+                del self
 
 # ===========================================================================

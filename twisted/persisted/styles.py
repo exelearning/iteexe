@@ -290,7 +290,8 @@ class Versioned:
             #
             if repr(base)=="<class 'exe.engine.resource.Resource'>":
                 # map out the elp structure:
-                #log.debug("LOADING RESOURCE = \"" + repr(self) + "\"...")
+                if not mergeCheck: 
+                    log.debug("LOADING RESOURCE = \"" + repr(self) + "\"")
                 #
                 if newPackage is not None and self._package != newPackage:
                     # The following more extreme package comparison really only
@@ -335,9 +336,18 @@ class Versioned:
                         log.debug("ignoring Resource "+repr(self) \
                             + " as it no longer applies to any package.") 
 
+                # launch zombie check for Resources,
+                # to be done AFTER the all objects have been updated....
+                if not mergeCheck: 
+                    if base.__dict__.has_key("launch_testForZombies"): 
+                        method = base.__dict__.get("launch_testForZombies") 
+                        method(self)
+
+
             elif repr(base) == "<class 'exe.engine.node.Node'>":
                 # map out the elp structure:
-                #log.debug("LOADING NODE = \"" + self._title + "\"...")
+                if not mergeCheck: 
+                    log.debug("LOADING NODE = \"" + self._title + "\"")
                 #
                 # Note: some VERY old and corrupt packages have come in that
                 # don't even have the proper ._package attribute, nor ._id,
@@ -362,9 +372,17 @@ class Versioned:
                             +" to new package." )
                         self._package = newPackage
 
+                # launch zombie check for Nodes,
+                # to be done AFTER the all objects have been updated....
+                if not mergeCheck: 
+                    if base.__dict__.has_key("launch_testForZombies"): 
+                        method = base.__dict__.get("launch_testForZombies") 
+                        method(self)
+
             elif repr(base)=="<class 'exe.engine.package.Package'>":
                 # map out the elp structure:
-                #log.debug("LOADING PACKAGE = \"" + self._name + "\"...")
+                if not mergeCheck: 
+                    log.debug("LOADING PACKAGE = \"" + self._name + "\"")
                 #
                 # see here if this package is the same as the newPackage
                 if newPackage is not None and self != newPackage:

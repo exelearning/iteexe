@@ -327,6 +327,7 @@ class Package(Persistable):
             newPackage = decodeObjectRaw(toDecode)
             G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
+            G.application.afterUpgradeZombies2Delete = []
 
             if newLoad: 
                 # provide newPackage to doUpgrade's versionUpgrade() to
@@ -349,7 +350,7 @@ class Package(Persistable):
 
                 log.debug("load() about to merge doUpgrade newPackage \"" 
                         + newPackage._name + "\" " + repr(newPackage)
-                        + " INTO destinatioPackage \"" 
+                        + " INTO destinationPackage \"" 
                         + destinationPackage._name + "\" " 
                         + repr(destinationPackage))
                 
@@ -412,6 +413,11 @@ class Package(Persistable):
                 handler()
 
         G.application.afterUpgradeHandlers = []
+
+        for zombie in G.application.afterUpgradeZombies2Delete:
+            zombie.delete(pruningZombies=True) 
+            del zombie
+        G.application.afterUpgradeZombies2Delete = []
 
         newPackage.updateRecentDocuments(newPackage.filename)
         newPackage.isChanged = False

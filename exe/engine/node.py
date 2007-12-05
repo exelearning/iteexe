@@ -189,25 +189,108 @@ class Node(Persistable):
         return Node(self.package, self)
 
 
-    def delete(self):
+    def delete(self, pruningZombies=False):
         """
         Delete a node with all its children
         """
-        log.debug(u"delete ")
-        # Remove ourself from the id dict and our parents child thing
-        del self.package._nodeIdDict[self.id]
+        delete_msg = ""
+        if pruningZombies:
+            delete_msg += "pruning zombie Node "
+        else:
+            delete_msg += "deleting Node "
+        delete_msg += "[parent="
         if self.parent:
-            self.parent.children.remove(self)
+            delete_msg += "\"" + self.parent._title + "\"] \""
+        else:
+            delete_msg += "None] \""
+        delete_msg += self._title + "\""
+
+        if pruningZombies: 
+            log.warn(delete_msg)
+        else:
+            log.debug(delete_msg)
+
+        # Remove ourself from the id dict and our parents child thing
+        # (zombie nodes may not even be listed)
+        if self.package is not None \
+        and self.id in self.package._nodeIdDict \
+        and self.package._nodeIdDict[self.id] == self: 
+            # okay, this node IS in the package's node ID dictionary.
+            # do NOT delete it if we are pruningZombies,
+            # as that is to be done as SAFELY as possible,
+            # and zombies are usually NOT in the node ID dictionary:
+
+            if pruningZombies:
+                # BEWARE, as zombies are not usually in the node ID dictionary,
+                # unless a full zombie tree, or the root itself, from an
+                # earlier version of Extract which left its parent tree zombied
+
+                if self.package and self.package.root == self:
+                    # okay, this is a valid root-node, with a parent left over:
+                    if self.parent and self in self.parent.children: 
+                        self.parent.children.remove(self)
+                    self.parent = None
+                    log.warn("While pruning zombie nodes, found ROOT node \"" 
+                        + self._title + "\" still in package node dictionary. "
+                        + "Stopping the prune on this part of the node tree.")
+                    # and bail, leaving its children and idevices in place
+                    self.package.isChanged = True
+                    return
+                elif self.parent:
+                    if self in self.parent.children: 
+                        self.parent.children.remove(self)
+                    self.parent = None
+                    log.warn("While pruning zombie nodes, found node \"" 
+                        + self._title + "\" still in package node dictionary. "
+                        + "Stopping the prune on this part of the node tree.")
+                    # and bail, leaving its children and idevices in place
+                    self.package.isChanged = True
+                    return
+
+                # else this is a stand-alone zombie tree
+                del self.package._nodeIdDict[self.id]
+                # and continue on with the pruning / standard deleting...
+
+            else: 
+                # standard delete, which IS expected to be in the node ID dict:
+                del self.package._nodeIdDict[self.id]
+                # and continue on with the pruning / standard deleting...
+
+        if self.parent:
+            # (zombie nodes will NOT necessarily be in the parent's children):
+            if self in self.parent.children: 
+                self.parent.children.remove(self)
+            self.parent = None
 
         # Remove all children from package id-dict and our own children list
-        while self.children:
-            self.children[0].delete()
+        # use reverse for loop to delete, in case of any problems deleting:
+        num_children = len(self.children)
+        for i in range(num_children-1, -1, -1):
+            if self.children[i].parent is None:
+                log.warn('reconnecting child node before deletion from node')
+                self.children[i].parent = self
+            elif self.children[i].parent != self:
+                log.warn('about to delete child node from node, '\
+                        'but it points to a different parentNode.')
+                # continuing on with the delete anyhow, though...
+            self.children[i].delete(pruningZombies)
 
         # Let all the iDevices know they're being deleted too
-        while self.idevices:
+        # use reverse for loop to delete, in case of any problems deleting:
+        num_idevices = len(self.idevices)
+        for i in range(num_idevices-1, -1, -1):
+            if self.idevices[i].parentNode is None:
+                log.warn('reconnecting iDevice before deletion from node')
+                self.idevices[i].parentNode = self
+            elif self.idevices[i].parentNode != self:
+                log.warn('about to delete iDevice from node, '\
+                        'but it points to a different parentNode.')
+                # continuing on with the delete anyhow, though...
             self.idevices[0].delete()
-  
-        self.package.isChanged = True
+
+        if self.package: 
+            self.package.isChanged = True
+            self._package = None
 
 
     def addIdevice(self, idevice):
@@ -378,5 +461,39 @@ class Node(Persistable):
         log.debug(u"upgradeToVersion2 ")
         self._title = self._title.title
         
-        
+    def launch_testForZombies(self):
+        """
+        a wrapper to testForZombieNodes(self), such that it might be called
+        after the package has been loaded and upgraded.  Otherwise, due 
+        to the seemingly random upgrading of the package and resource objects,
+        this might be called too early.
+        """
+        # only bother launching the zombie node sub-tree check 
+        # on potential root nodes, either valid or of zombie trees:
+        if self.parent is None: 
+            # supposedly the root of a sub-tree, but it could also be a zombie.
+            # Allow all of the package to load up and upgrade before testing:
+            G.application.afterUpgradeHandlers.append(self.testForZombieNodes)
+        elif not self in self.parent.children: 
+            # this seems a child which is not properly connected to its parent:
+            G.application.afterUpgradeHandlers.append(self.testForZombieNodes)
+
+    def testForZombieNodes(self):
+        """ 
+        testing a possible post-load confirmation that this resource 
+        is indeed attached to something.  
+        to be called from twisted/persist/styles.py upon load of a Node.
+        """
+        # remembering that this is only launched for this nodes
+        # with parent==None or not in the parent's children list.
+        if self._package is None or self._package.root != self: 
+            log.warn("Found zombie Node \"" + self._title + "\".")
+            # disconnect it from any package, parent, and idevice links,
+            # and go through and delete any and all children nodes:
+            zombie_preface = u"ZOMBIE("
+            if self._title[0:len(zombie_preface)] != zombie_preface: 
+                self._title = zombie_preface + self._title + ")"
+            G.application.afterUpgradeZombies2Delete.append(self)
+
+
 # ===========================================================================
