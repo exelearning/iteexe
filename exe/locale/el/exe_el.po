@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-01 21:22+1300\n"
+"POT-Creation-Date: 2007-12-07 19:55+1300\n"
 "PO-Revision-Date: 2006-05-12 14:15+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -120,16 +120,16 @@ msgstr ""
 " Για να επιλέξετε τις λέξεις που επιθυμείτε να αποκρύψετε, κάντε διπλό κλικ στη λέξη για να την επιλέξετε\n"
 "και στη συνέχεια κλικ στο κουμπί <i>Απόκρυψη/Εμφάνιση Λέξης</i>."
 
-#: exe/engine/field.py:1998
+#: exe/engine/field.py:1997
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Εάν αυτή η επιλογή αφεθεί μη επιλεγμένη, ένας μικρός αριθμός γραμματικών και πεζών-κεφαλαίων λαθών θα είναι αποδεκτός. Αν επιλεγεί, μόνο ακριβές ταίριασμα στην ορθογραφία και στα πεζά-κεφαλαία γράμματα θα είναι αποδεκτό.</p><p><strong>Για παράδειγμα:</strong> εάν η σωστή απάντηση είναι < code>Ελέφαντας</code> τότε και το< code>ελέφαντας</code> και το <code>Ελίφαντας</code> θα κριθούν <em> \"αρκετά σωστά \"</em > από τον αλγόριθμο δεδομένου ότι έχει μόνο ένα γράμμα λανθασμένο, ακόμα κι αν ο \"Έλεγχος κεφαλαιοποίησης \"είναι ενεργοποιημένος.</p><p>Αν ο έλεγχος κεφαλαιοποίησης είναι απενεργοποιημένος στο ανωτέρω παράδειγμα, το πεζό < code>ε</code > δεν θα θεωρηθεί λάθος και το < code>ελίφαντας</code > θα γίνει επίσης αποδεκτό.</p><p>Αν και τα δύο \"Αυστηρή βαθμολογία \"και \"Έλεγχος Κεφαλαιοποίησης \" είναι ενεργοποιημένα, η μόνη σωστή απάντηση είναι \"Ελέφαντας \". Εάν μόνο το \"Αυστηρή βαθμολογία \" είναι ενεργοποιημένο και ο \"Έλεγχος Κεφαλαιοποίησης\"δεν είναι, τότε και το \"ελέφαντας \" θα γίνει αποδεκτό.</p >"
 
-#: exe/engine/field.py:2019
+#: exe/engine/field.py:2018
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Αν επιλεγεί αυτή η επιλογή, οι υποβληθείσες απαντήσεις με διαφορετική κεφαλαιοποίηση θα βαθμολογηθούν ως λάθος.</p>"
 
-#: exe/engine/field.py:2024
+#: exe/engine/field.py:2023
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -140,7 +140,7 @@ msgstr ""
 "πληκτρολογείται από το σπουδαστή, αντί όλες οι λέξεις να βαθμολογηθούν στο τέλος\n"
 "της άσκησης.</p>"
 
-#: exe/engine/field.py:2273
+#: exe/engine/field.py:2272
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -327,7 +327,7 @@ msgstr "Προσθήκη άλλης επιλογής"
 msgid "Add another option"
 msgstr "Προσθέστε άλλη επιλογή"
 
-#: exe/webui/multichoiceblock.py:105 exe/webui/truefalseblock.py:94
+#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:94
 msgid "Add another question"
 msgstr "Προσθήκη ερώτησης"
 
@@ -340,7 +340,7 @@ msgid "Add images"
 msgstr "Προσθήκη εικόνων"
 
 #: exe/webui/flashwithtextblock.py:85 exe/webui/multimediablock.py:89
-#: exe/webui/editorelement.py:226 exe/webui/imagemagnifierblock.py:114
+#: exe/webui/editorelement.py:227 exe/webui/imagemagnifierblock.py:114
 #: exe/webui/flashmovieblock.py:84 exe/webui/imagewithtextblock.py:85
 msgid "Align:"
 msgstr "Στοίχιση:"
@@ -363,7 +363,7 @@ msgstr ""
 "Η στοίχιση σας επιτρέπει να\n"
 "επιλέξετε σε ποια θέση στην οθόνη θα τοποθετηθεί η εικόνα."
 
-#: exe/engine/field.py:2062
+#: exe/engine/field.py:2061
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -437,7 +437,7 @@ msgstr "Κώδικας Applet:"
 msgid "Article"
 msgstr "Άρθρο"
 
-#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:345
+#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:346
 msgid "Attachment"
 msgstr "Επισύναψη"
 
@@ -450,7 +450,7 @@ msgstr "Το επισυναπτόμενο αρχείο %s δεν έχει πατ
 msgid "Auckland University of Technology"
 msgstr ""
 
-#: exe/webui/editorelement.py:148
+#: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "Λεζάντα Κουμπιού:"
 
@@ -463,7 +463,7 @@ msgstr "Ακύρωση"
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση στον κατάλογο"
 
-#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:328
+#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:329
 #: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:89
 #: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:538
 msgid "Caption:"
@@ -533,11 +533,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Κάντε κλικ στο <strong>Επιλέξτε αρχείο</strong> και επιλέξτε το αρχείο που θέλετε να επισυνάψετε."
 
-#: exe/engine/field.py:1611
+#: exe/engine/field.py:1610
 msgid "Click Here"
 msgstr "Κάντε κλικ εδώ "
 
-#: exe/webui/common.py:293 exe/webui/common.py:297
+#: exe/webui/common.py:294 exe/webui/common.py:298
 msgid "Click for completion instructions"
 msgstr "Κλικ για οδηγίες συμπλήρωσης"
 
@@ -545,7 +545,7 @@ msgstr "Κλικ για οδηγίες συμπλήρωσης"
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/engine/field.py:2281
+#: exe/engine/field.py:2280
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -559,8 +559,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Κάντε κλικ στο κουμπί Προσθήκη εκόνων για να επιλέξετε ένα αρχείο εικόνας. Η εικόνα θα εμφανιστεί παρακάτω όπου θα πρέπει να της βάλετε μια ετικέτα. Είναι καλή πρακτική να ορίζετε το μέγεθος αρχείου στην ετικέτα."
 
 #: exe/engine/galleryidevice.py:608 exe/webui/truefalseelement.py:140
-#: exe/webui/truefalseelement.py:141 exe/webui/common.py:302
-#: exe/webui/common.py:303 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:141 exe/webui/common.py:303
+#: exe/webui/common.py:304 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:1979 exe/webui/element.py:1980
 #: exe/webui/editorpane.py:358 exe/webui/editorpane.py:359
 #: exe/webui/editorpane.py:379 exe/webui/editorpane.py:380
@@ -611,12 +611,12 @@ msgstr ""
 "που εμπλέκονται στην ιστορία. Θα πρέπει επίσης να επιτρέπει να ληφθεί κάποια ενέργεια\n"
 "ώστε να βρεθεί λύση για την κατάσταση."
 
-#: exe/webui/editorelement.py:77 exe/webui/editorelement.py:113
-#: exe/webui/editorelement.py:155 exe/webui/editorelement.py:196
-#: exe/webui/editorelement.py:247 exe/webui/editorelement.py:302
-#: exe/webui/editorelement.py:349 exe/webui/galleryblock.py:263
-#: exe/webui/block.py:219 exe/webui/editorpage.py:234
-#: exe/webui/editorpage.py:237 exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/editorelement.py:78 exe/webui/editorelement.py:114
+#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:197
+#: exe/webui/editorelement.py:248 exe/webui/editorelement.py:303
+#: exe/webui/editorelement.py:350 exe/webui/galleryblock.py:263
+#: exe/webui/block.py:219 exe/webui/editorpage.py:236
+#: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "Διαγραφή"
@@ -756,11 +756,11 @@ msgid ""
 msgstr ""
 
 #: exe/webui/block.py:333 exe/webui/editorpane.py:266
-#: exe/webui/editorpage.py:268
+#: exe/webui/editorpage.py:270
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: twisted/persisted/styles.py:369
+#: twisted/persisted/styles.py:409
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -872,7 +872,7 @@ msgstr ""
 "Μπορείτε να προσθέσετε επιλογές κάνοντας κλικ στο κουμπί \"Προσθήκη Άλλης Επιλογής\".\n"
 "Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο \"x\" δεξιά από κάθε επιλογή."
 
-#: exe/engine/field.py:2474
+#: exe/engine/field.py:2473
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -925,7 +925,7 @@ msgstr ""
 "Η αποστολή θα πρέπει να είναι ξεκάθαρη και αναμφίβολη. Αποφύγετε αρνητικές προϋποθέσεις \n"
 "καθώς τείνουν να είναι αμφίβολες."
 
-#: exe/engine/field.py:2466
+#: exe/engine/field.py:2465
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -972,7 +972,7 @@ msgstr "Παράδειγμα"
 msgid "Example Example"
 msgstr "Παράδειγμα Παράδειγμα"
 
-#: exe/webui/editorpage.py:248
+#: exe/webui/editorpage.py:250
 #, fuzzy
 msgid "Export iDevice"
 msgstr "Εκπαιδευτικά εργαλεία"
@@ -999,10 +999,10 @@ msgstr "Λάθος"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:191 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2353
-#: exe/engine/field.py:2365 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
-#: exe/webui/common.py:206 exe/webui/element.py:1795
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2352
+#: exe/engine/field.py:2364 exe/webui/clozeblock.py:158
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:96
+#: exe/webui/common.py:207 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
@@ -1016,7 +1016,7 @@ msgstr ""
 "δεν εισαχθούν δεδομένα σ' αυτό το πεδίο."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:2483 exe/engine/field.py:2508
+#: exe/engine/field.py:2482 exe/engine/field.py:2507
 msgid "Feedback:"
 msgstr "Ανατροφοδότηση: "
 
@@ -1111,7 +1111,7 @@ msgid "Hide/Show Word"
 msgstr "Απόκρυψη/Εμφάνιση Λέξης"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:2391 exe/engine/field.py:2411
+#: exe/engine/field.py:2390 exe/engine/field.py:2410
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1121,13 +1121,13 @@ msgstr "Συμβουλή"
 msgid "Home"
 msgstr "Αρχή"
 
-#: exe/webui/multichoiceblock.py:145 exe/webui/genericblock.py:78
+#: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:337
 #: exe/webui/block.py:288
 msgid "IDevice Icon"
 msgstr "Εικονίδιο Εκπαιδευτικού Εργαλείου"
 
-#: exe/webui/multichoiceblock.py:121
+#: exe/webui/multichoiceblock.py:120
 msgid "IDevice Question Icon"
 msgstr "Εικονίδιο Εκπαιδευτικού Εργαλείου Ερώτησης"
 
@@ -1156,7 +1156,7 @@ msgstr "Μεγενθυντής εικόνας"
 msgid "Image with Text"
 msgstr "Εικόνα με κείμενο"
 
-#: exe/webui/editorpage.py:245
+#: exe/webui/editorpage.py:247
 #, fuzzy
 msgid "Import iDevice"
 msgstr "Εκπαιδευτικά εργαλεία"
@@ -1186,7 +1186,7 @@ msgid "Instant Marking?"
 msgstr "Άμεση βαθμολογία;"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:115
-#: exe/engine/truefalseidevice.py:202 exe/webui/common.py:287
+#: exe/engine/truefalseidevice.py:202 exe/webui/common.py:288
 msgid "Instructions"
 msgstr "Οδηγίες"
 
@@ -1220,7 +1220,7 @@ msgid "Large"
 msgstr "Μεγάλο"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:222 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Αριστερά"
@@ -1239,7 +1239,7 @@ msgstr "Φόρτωση"
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να αντικατασταθεί"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:299
 msgid "MP3"
 msgstr ""
 
@@ -1297,7 +1297,7 @@ msgstr ""
 msgid "Name"
 msgstr "Όνομα"
 
-#: exe/webui/editorpage.py:273
+#: exe/webui/editorpage.py:275
 msgid "New iDevice"
 msgstr "Νέο εκπαιδευτικό εργαλείο"
 
@@ -1328,7 +1328,7 @@ msgid "No emphasis"
 msgstr "Χωρίς έμφαση"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
@@ -1354,7 +1354,7 @@ msgstr ""
 " θα πρέπει να καθορίζουν τι θα μπορούν να κάνουν\n"
 " όταν τελειώσουν το μάθημα."
 
-#: exe/engine/field.py:2168 exe/engine/field.py:2232
+#: exe/engine/field.py:2167 exe/engine/field.py:2231
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1362,7 +1362,7 @@ msgstr ""
 "Επιλέξτε μόνο .flv (Αρχεία Βίντεο Flash) για \n"
 "αυτό το εκπαιδευτικό εργαλείο."
 
-#: exe/engine/field.py:2104 exe/engine/field.py:2148
+#: exe/engine/field.py:2103 exe/engine/field.py:2147
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1371,13 +1371,13 @@ msgstr ""
 "αυτό το εκπαιδευτικό εργαλείο."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:2349 exe/engine/field.py:2362
+#: exe/engine/field.py:2348 exe/engine/field.py:2361
 #: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
 #: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Επιλογή"
 
-#: exe/engine/field.py:2433 exe/engine/field.py:2443
+#: exe/engine/field.py:2432 exe/engine/field.py:2442
 #: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Επιλογές"
@@ -1399,7 +1399,8 @@ msgstr ""
 msgid "Package extracted to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
 
-#: twisted/persisted/styles.py:317
+#: twisted/persisted/styles.py:312 twisted/persisted/styles.py:325
+#: twisted/persisted/styles.py:367 twisted/persisted/styles.py:419
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1416,7 +1417,7 @@ msgstr "Παιδαγωγική βοήθεια"
 msgid "Pedagogical Tip"
 msgstr "Παιδαγωγική συμβουλή"
 
-#: exe/webui/editorpage.py:108
+#: exe/webui/editorpage.py:110
 msgid "Please enter an idevice name."
 msgstr "Παρακαλώ εισάγετε ένα όνομα για το εκπαιδευτικό εργαλείο"
 
@@ -1495,8 +1496,8 @@ msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να �
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1806
-#: exe/engine/field.py:1853
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1805
+#: exe/engine/field.py:1852
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1566,17 +1567,17 @@ msgid "Put instructions for learners here"
 msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2388 exe/engine/field.py:2407
+#: exe/engine/field.py:2387 exe/engine/field.py:2406
 msgid "Question"
 msgstr "Ερώτηση"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:2469 exe/engine/field.py:2505 exe/webui/element.py:1626
+#: exe/engine/field.py:2468 exe/engine/field.py:2504 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "Ερώτηση:"
 
-#: exe/webui/editorpage.py:251
+#: exe/webui/editorpage.py:253
 #, fuzzy
 msgid "Quit"
 msgstr "Υποβολή"
@@ -1631,7 +1632,7 @@ msgid "Restart"
 msgstr "Επανεκκίνηση"
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Δεξιά"
@@ -1663,7 +1664,7 @@ msgstr "Κουίζ τύπου SCORM"
 msgid "SUBMIT ANSWERS"
 msgstr "ΚΑΤΑΧΩΡΗΣΗ ΑΠΑΝΤΗΣΕΩΝ"
 
-#: exe/webui/editorpage.py:243
+#: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Αποθήκευση"
 
@@ -1671,7 +1672,7 @@ msgstr "Αποθήκευση"
 msgid "Section"
 msgstr "Ενότητα"
 
-#: exe/webui/editorelement.py:270 exe/webui/element.py:1214
+#: exe/webui/editorelement.py:271 exe/webui/element.py:1214
 msgid "Select Flash Object"
 msgstr "Επιλογή αρχείου flash "
 
@@ -1681,12 +1682,12 @@ msgstr "Επιλογή αρχείου flash "
 msgid "Select Language"
 msgstr "Επιλογή γλώσσας"
 
-#: exe/webui/editorelement.py:325
+#: exe/webui/editorelement.py:326
 #, fuzzy
 msgid "Select MP3 file"
 msgstr "Επιλογή αρχείου"
 
-#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:367
+#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:368
 #: exe/webui/element.py:744
 msgid "Select a file"
 msgstr "Επιλογή αρχείου"
@@ -1713,7 +1714,7 @@ msgstr "Επιλογή εικόνας"
 msgid "Select an image (JPG file)"
 msgstr "Επιλογή εικόνας (αρχείο JPG)"
 
-#: exe/engine/field.py:2478
+#: exe/engine/field.py:2477
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1816,7 +1817,7 @@ msgstr "Μερική έμφαση"
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
 
-#: exe/webui/editorpage.py:170 exe/webui/editorpage.py:182
+#: exe/webui/editorpage.py:172 exe/webui/editorpage.py:184
 #, fuzzy
 msgid "Sorry, wrong file format."
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
@@ -1863,11 +1864,11 @@ msgstr "Οι δάσκαλοι πρέπει να λάβουν τα εξής υπ�
 msgid "Text"
 msgstr "Κείμενο"
 
-#: exe/webui/editorelement.py:109 exe/webui/editorpane.py:249
+#: exe/webui/editorelement.py:110 exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "Πλαίσιο κειμένου"
 
-#: exe/webui/editorelement.py:73 exe/webui/editorpane.py:247
+#: exe/webui/editorelement.py:74 exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "Γραμμή κειμένου"
 
@@ -2039,7 +2040,7 @@ msgstr ""
 " όπου ο μαθητής πρέπει να αποφασίσει αν η φράση είναι αληθής. Αυτός ο τύπος ερώτησης\n"
 " δουλεύει εντάξει για τεκμηριωμένες πληροφορίες και πληροφορίες που προσφέρονται σε μια μόνο από τις δυο απαντήσεις."
 
-#: exe/engine/field.py:2244
+#: exe/engine/field.py:2243
 msgid "Type a discussion topic here."
 msgstr "Πληκτρολογήστε ένα θέμα συζήτησης εδώ."
 
@@ -2069,7 +2070,7 @@ msgstr ""
 "το eXe θα παρέχει την εξής αυτόματη ανατροφοδότηση: \"Σωστή απάντηση\"\n"
 " που δηλώνει τη σωστή απάντηση ή \"Λάθος απάντηση\" για τις εναλλακτικές."
 
-#: exe/engine/field.py:2481
+#: exe/engine/field.py:2480
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2249,8 +2250,8 @@ msgstr "κενό για αρχικό μέγεθος"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:84 exe/webui/common.py:67
-#: exe/webui/editorpage.py:218
+#: exe/webui/preferencespage.py:84 exe/webui/common.py:68
+#: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως μάθηση"
 
@@ -2272,7 +2273,7 @@ msgstr "http://el.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
 
-#: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:463 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
@@ -2371,6 +2372,10 @@ msgstr "Μεταδεδομένα"
 #: the content of resource.">
 msgid "Creator:"
 msgstr "Δημιουργός:"
+
+#: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
+msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">

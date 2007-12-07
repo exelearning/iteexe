@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-01 21:22+1300\n"
+"POT-Creation-Date: 2007-12-07 19:55+1300\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -113,16 +113,16 @@ msgstr ""
 "esikhaleni.&lt;/p&gt;&lt;p&gt;Ukukhetha amagama azofihlwa, cindezela kabili egameni ukulikhetha bese \n"
 "ucindezela inkinobho Fihla/Bonisa Igama ngezansi.&lt;/p&gt;"
 
-#: exe/engine/field.py:1998
+#: exe/engine/field.py:1997
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "&lt;p&gt;Uma kushiywe kungenamaka amaphutha amancane obizelomagama nosonhlamvukazi ayokwamukelwa.Uma kunomaka ubizelomagama okuyilo nosonhlamvukazi okuyibo kuphela okuyokwamukelwa.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Ngokwesibonelo:&lt;/strong&gt; Uma impendulo efanele ku &lt;code&gt;Indlovu&lt;/code&gt; kokubili &lt;code&gt;indlovu&lt;/code&gt; no &lt;code&gt;Indhlovu&lt;/code&gt; kuyokwahlulelwa &lt;em&gt;\"close enough\"&lt;/em&gt; ngeqoqo lemithetho njengokunohlamvu olulodwa oluyiphutha, noma ngabe uku \"Hlola Osonhlamvukazi\" kusebenza.&lt;/p&gt;&lt;p&gt;Uma ukuhlola osonhlamvukazi kungasebenzi esibonelweni esingaphezulu, uhlamvu oluncane &lt;code&gt;e&lt;/code&gt; ngeke luthathwe njengoluyiphutha futhi          &lt;code&gt;indhlovu&lt;/code&gt;iyokwamukelwa.&lt;/p&gt;&lt;p&gt;Uma kokubili \"Ukumaka Ngokungathi Sina\" noku \"Hlola Osonhlamvukazi\" kusebenza, Impendulo efanele u \"Indlovu\" kuphela.Uma \"Ukumaka Ngokungathi Sina\" kuphela kusebenza uku \"Hlola Osonhlamvukazi\" kungasebenzi, u \"indlovu\" uyokwamukelwa.&lt;/p&gt;"
 
-#: exe/engine/field.py:2019
+#: exe/engine/field.py:2018
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "&lt;p&gt;Uma lokhu kunomaka, izimpendulo ezithunyelwe zinosonhlamvukazi abahlukile ziyomakwa njengeziyiphutha.&lt;/p&gt;"
 
-#: exe/engine/field.py:2024
+#: exe/engine/field.py:2023
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -133,7 +133,7 @@ msgstr ""
 " umfundi elithayipha esikhundleni sokuthi onke amagama amakwe ekupheleni \n"
 "kwesivivinyo.&lt;/p&gt;"
 
-#: exe/engine/field.py:2273
+#: exe/engine/field.py:2272
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -316,7 +316,7 @@ msgstr "Faka okunye Okungakhethwa"
 msgid "Add another option"
 msgstr "Faka okunye okungakhethwa"
 
-#: exe/webui/multichoiceblock.py:105 exe/webui/truefalseblock.py:94
+#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:94
 msgid "Add another question"
 msgstr "Faka omunye umbuzo"
 
@@ -329,7 +329,7 @@ msgid "Add images"
 msgstr "Faka izithombe"
 
 #: exe/webui/flashwithtextblock.py:85 exe/webui/multimediablock.py:89
-#: exe/webui/editorelement.py:226 exe/webui/imagemagnifierblock.py:114
+#: exe/webui/editorelement.py:227 exe/webui/imagemagnifierblock.py:114
 #: exe/webui/flashmovieblock.py:84 exe/webui/imagewithtextblock.py:85
 msgid "Align:"
 msgstr "Qondanisa:"
@@ -352,7 +352,7 @@ msgstr ""
 "Ukuqondanusa kukuvumela ukuba \n"
 "ukhethe ukuthi isithombe kumele sibe kuphi kwisibonisi."
 
-#: exe/engine/field.py:2062
+#: exe/engine/field.py:2061
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -423,7 +423,7 @@ msgstr "Ikhodi ye-Applet:"
 msgid "Article"
 msgstr "Ukulandisa Okubhaliwe"
 
-#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:345
+#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:346
 msgid "Attachment"
 msgstr "Isinamathiselo"
 
@@ -436,7 +436,7 @@ msgstr "Isinamathiselo %s asinawo umsuka"
 msgid "Auckland University of Technology"
 msgstr ""
 
-#: exe/webui/editorelement.py:148
+#: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "Inkinobho yokulandisa ngamafuphi"
 
@@ -449,7 +449,7 @@ msgstr "Nqamula"
 msgid "Cannot access directory named "
 msgstr "Isiqondisi esinikeziwe asifinyeleleki"
 
-#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:328
+#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:329
 #: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:89
 #: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:538
 msgid "Caption:"
@@ -519,11 +519,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Cindezela &lt;strong&gt;Khetha ifayela&lt;/strong&gt;,bheka ifayela ofuna ukulinamathisela bese ulikhetha."
 
-#: exe/engine/field.py:1611
+#: exe/engine/field.py:1610
 msgid "Click Here"
 msgstr "Cindezela lapha"
 
-#: exe/webui/common.py:293 exe/webui/common.py:297
+#: exe/webui/common.py:294 exe/webui/common.py:298
 msgid "Click for completion instructions"
 msgstr ""
 
@@ -531,7 +531,7 @@ msgstr ""
 msgid "Click here"
 msgstr "Cindezela lapha"
 
-#: exe/engine/field.py:2281
+#: exe/engine/field.py:2280
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -545,8 +545,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr ""
 
 #: exe/engine/galleryidevice.py:608 exe/webui/truefalseelement.py:140
-#: exe/webui/truefalseelement.py:141 exe/webui/common.py:302
-#: exe/webui/common.py:303 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:141 exe/webui/common.py:303
+#: exe/webui/common.py:304 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:1979 exe/webui/element.py:1980
 #: exe/webui/editorpane.py:358 exe/webui/editorpane.py:359
 #: exe/webui/editorpane.py:379 exe/webui/editorpane.py:380
@@ -597,12 +597,12 @@ msgstr ""
 "abasendabeni kanye nesimo.Kumele futhi ivumele ukwenziwa kokuthile \n"
 "ngenjongo yokuthola isixazululo kuleso simo."
 
-#: exe/webui/editorelement.py:77 exe/webui/editorelement.py:113
-#: exe/webui/editorelement.py:155 exe/webui/editorelement.py:196
-#: exe/webui/editorelement.py:247 exe/webui/editorelement.py:302
-#: exe/webui/editorelement.py:349 exe/webui/galleryblock.py:263
-#: exe/webui/block.py:219 exe/webui/editorpage.py:234
-#: exe/webui/editorpage.py:237 exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/editorelement.py:78 exe/webui/editorelement.py:114
+#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:197
+#: exe/webui/editorelement.py:248 exe/webui/editorelement.py:303
+#: exe/webui/editorelement.py:350 exe/webui/galleryblock.py:263
+#: exe/webui/block.py:219 exe/webui/editorpage.py:236
+#: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "Susa"
@@ -742,11 +742,11 @@ msgid ""
 msgstr ""
 
 #: exe/webui/block.py:333 exe/webui/editorpane.py:266
-#: exe/webui/editorpage.py:268
+#: exe/webui/editorpage.py:270
 msgid "Edit"
 msgstr "Lungisa"
 
-#: twisted/persisted/styles.py:369
+#: twisted/persisted/styles.py:409
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -857,7 +857,7 @@ msgstr ""
 "Ungongeza okukhethwayo ngokucindezela inkinobho \"Ongeza Ngokunye Okukhethwayo\".Cima okukhethwayo \n"
 "ngokucindezela u \"X\" obomvu eceleni kwakho."
 
-#: exe/engine/field.py:2474
+#: exe/engine/field.py:2473
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -910,7 +910,7 @@ msgstr ""
 "Umbuzo kumele ucace unganiki imibono eyahlukene. Gwema ukulandisa okuzwakala kuliqiniso kungeyilo \n"
 "ngoba kubangela imibono eyahlukile."
 
-#: exe/engine/field.py:2466
+#: exe/engine/field.py:2465
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -957,7 +957,7 @@ msgstr "Isibonelo"
 msgid "Example Example"
 msgstr "Isibonelo Isibonelo"
 
-#: exe/webui/editorpage.py:248
+#: exe/webui/editorpage.py:250
 #, fuzzy
 msgid "Export iDevice"
 msgstr "iDevices"
@@ -984,10 +984,10 @@ msgstr "Amanga"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:191 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2353
-#: exe/engine/field.py:2365 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:147 exe/webui/questionelement.py:96
-#: exe/webui/common.py:206 exe/webui/element.py:1795
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:2352
+#: exe/engine/field.py:2364 exe/webui/clozeblock.py:158
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:96
+#: exe/webui/common.py:207 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Umbono ngokwenziwe"
@@ -1001,7 +1001,7 @@ msgstr ""
 "kungekho okufakiwe kulesi sikhala."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:2483 exe/engine/field.py:2508
+#: exe/engine/field.py:2482 exe/engine/field.py:2507
 msgid "Feedback:"
 msgstr "Umbono ngokwenziwe:"
 
@@ -1096,7 +1096,7 @@ msgid "Hide/Show Word"
 msgstr "Fihla/Bonisa iGama"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:2391 exe/engine/field.py:2411
+#: exe/engine/field.py:2390 exe/engine/field.py:2410
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1106,13 +1106,13 @@ msgstr "Icebiso"
 msgid "Home"
 msgstr "iKhaya"
 
-#: exe/webui/multichoiceblock.py:145 exe/webui/genericblock.py:78
+#: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:337
 #: exe/webui/block.py:288
 msgid "IDevice Icon"
 msgstr "Isithonjana Se-iDevice"
 
-#: exe/webui/multichoiceblock.py:121
+#: exe/webui/multichoiceblock.py:120
 msgid "IDevice Question Icon"
 msgstr "Isithonjana Sombuzo We-iDevice"
 
@@ -1141,7 +1141,7 @@ msgstr "Isikhilsa Sisthombe"
 msgid "Image with Text"
 msgstr "Isithombe Esinokubhaliwe"
 
-#: exe/webui/editorpage.py:245
+#: exe/webui/editorpage.py:247
 #, fuzzy
 msgid "Import iDevice"
 msgstr "iDevices"
@@ -1172,7 +1172,7 @@ msgid "Instant Marking?"
 msgstr "Ukumaka ngaso leso sikhathi?"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:115
-#: exe/engine/truefalseidevice.py:202 exe/webui/common.py:287
+#: exe/engine/truefalseidevice.py:202 exe/webui/common.py:288
 msgid "Instructions"
 msgstr "Izilayezo"
 
@@ -1206,7 +1206,7 @@ msgid "Large"
 msgstr "Okukhulu"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:222 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Kwesokunxele"
@@ -1225,7 +1225,7 @@ msgstr "Layisha"
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:298
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:299
 msgid "MP3"
 msgstr ""
 
@@ -1283,7 +1283,7 @@ msgstr ""
 msgid "Name"
 msgstr "iGama"
 
-#: exe/webui/editorpage.py:273
+#: exe/webui/editorpage.py:275
 msgid "New iDevice"
 msgstr "I-iDevice eNtsha"
 
@@ -1314,7 +1314,7 @@ msgid "No emphasis"
 msgstr "Akukho ukugcizelela"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
@@ -1340,7 +1340,7 @@ msgstr ""
 "zichaze ukuthi yini abafundi abayokwazi ukuyenza uma sebeqedile\n"
 "imisebenzi yesifundo."
 
-#: exe/engine/field.py:2168 exe/engine/field.py:2232
+#: exe/engine/field.py:2167 exe/engine/field.py:2231
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1348,7 +1348,7 @@ msgstr ""
 "Khethela le-iDevice i- .flv (Flash Video Files) \n"
 "kuphela."
 
-#: exe/engine/field.py:2104 exe/engine/field.py:2148
+#: exe/engine/field.py:2103 exe/engine/field.py:2147
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1357,13 +1357,13 @@ msgstr ""
 "kuphela."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:71
-#: exe/engine/field.py:2349 exe/engine/field.py:2362
+#: exe/engine/field.py:2348 exe/engine/field.py:2361
 #: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
 #: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Okukhethwayo"
 
-#: exe/engine/field.py:2433 exe/engine/field.py:2443
+#: exe/engine/field.py:2432 exe/engine/field.py:2442
 #: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Okukhethwayo"
@@ -1385,7 +1385,8 @@ msgstr ""
 msgid "Package extracted to: %s"
 msgstr "iPhakethe ligcinwe e: %s"
 
-#: twisted/persisted/styles.py:317
+#: twisted/persisted/styles.py:312 twisted/persisted/styles.py:325
+#: twisted/persisted/styles.py:367 twisted/persisted/styles.py:419
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1402,7 +1403,7 @@ msgstr "Usizo Lukamfundisi"
 msgid "Pedagogical Tip"
 msgstr "Icebiso Likamfundisi"
 
-#: exe/webui/editorpage.py:108
+#: exe/webui/editorpage.py:110
 msgid "Please enter an idevice name."
 msgstr "Ucelwa ukuba ufake igama le-idevice."
 
@@ -1481,8 +1482,8 @@ msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 msgid "Previous"
 msgstr "Kwangaphambili"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1806
-#: exe/engine/field.py:1853
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1805
+#: exe/engine/field.py:1852
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1552,18 +1553,18 @@ msgid "Put instructions for learners here"
 msgstr "Faka iziyalezo zabafundi lapha"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2388 exe/engine/field.py:2407
+#: exe/engine/field.py:2387 exe/engine/field.py:2406
 #, fuzzy
 msgid "Question"
 msgstr "Umbuzo:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:102 exe/engine/quiztestidevice.py:158
-#: exe/engine/field.py:2469 exe/engine/field.py:2505 exe/webui/element.py:1626
+#: exe/engine/field.py:2468 exe/engine/field.py:2504 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "Umbuzo:"
 
-#: exe/webui/editorpage.py:251
+#: exe/webui/editorpage.py:253
 #, fuzzy
 msgid "Quit"
 msgstr "Thumela"
@@ -1618,7 +1619,7 @@ msgid "Restart"
 msgstr "Phinduqale"
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Kwesokudla"
@@ -1650,7 +1651,7 @@ msgstr "Isiphico se-SCORM"
 msgid "SUBMIT ANSWERS"
 msgstr "THUMELA IZIMPENDULO"
 
-#: exe/webui/editorpage.py:243
+#: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Gcina"
 
@@ -1658,7 +1659,7 @@ msgstr "Gcina"
 msgid "Section"
 msgstr "iSigaba"
 
-#: exe/webui/editorelement.py:270 exe/webui/element.py:1214
+#: exe/webui/editorelement.py:271 exe/webui/element.py:1214
 msgid "Select Flash Object"
 msgstr "Khetha isiThombe esiBanizayo"
 
@@ -1668,12 +1669,12 @@ msgstr "Khetha isiThombe esiBanizayo"
 msgid "Select Language"
 msgstr "Khetha uLimi"
 
-#: exe/webui/editorelement.py:325
+#: exe/webui/editorelement.py:326
 #, fuzzy
 msgid "Select MP3 file"
 msgstr "Khetha ifayela"
 
-#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:367
+#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:368
 #: exe/webui/element.py:744
 msgid "Select a file"
 msgstr "Khetha ifayela"
@@ -1700,7 +1701,7 @@ msgstr "Ketha isithombe"
 msgid "Select an image (JPG file)"
 msgstr "Khetha isithombe (JPG file)"
 
-#: exe/engine/field.py:2478
+#: exe/engine/field.py:2477
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1803,7 +1804,7 @@ msgstr "Ukugcizelela okuyingcosana"
 msgid "Sorry, wrong file format"
 msgstr "Xola, isakhiwo sefayela esiyiphutha"
 
-#: exe/webui/editorpage.py:170 exe/webui/editorpage.py:182
+#: exe/webui/editorpage.py:172 exe/webui/editorpage.py:184
 #, fuzzy
 msgid "Sorry, wrong file format."
 msgstr "Xola, isakhiwo sefayela esiyiphutha"
@@ -1850,11 +1851,11 @@ msgstr "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-i
 msgid "Text"
 msgstr "Okubhaliwe"
 
-#: exe/webui/editorelement.py:109 exe/webui/editorpane.py:249
+#: exe/webui/editorelement.py:110 exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "iBhokisi lokuBhaliwe"
 
-#: exe/webui/editorelement.py:73 exe/webui/editorpane.py:247
+#: exe/webui/editorelement.py:74 exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "UMugqa wokuBhaliwe"
 
@@ -2022,7 +2023,7 @@ msgstr ""
 "kahle ngokwazisa okungokoqobo nokwazisa okuzibeka kweyodwa \n"
 "yalezimpendulo."
 
-#: exe/engine/field.py:2244
+#: exe/engine/field.py:2243
 msgid "Type a discussion topic here."
 msgstr "Thayipha isihloko sengxoxo lapha."
 
@@ -2054,7 +2055,7 @@ msgstr ""
 "\"Impendulo efanele\" njengoba kuboniswa ukukhethwa kwempendulo efanele; noma \n"
 " \"Impendulo eyiphutha\" ngokunye okukhethwayo."
 
-#: exe/engine/field.py:2481
+#: exe/engine/field.py:2480
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2230,8 +2231,8 @@ msgstr "akunalutho kobungako bokuqala"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:84 exe/webui/common.py:67
-#: exe/webui/editorpage.py:218
+#: exe/webui/preferencespage.py:84 exe/webui/common.py:68
+#: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : umhleli we-XHTML ye-elearning"
 
@@ -2253,7 +2254,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "I-iDevice %s ayinaphakethe"
 
-#: exe/engine/package.py:457 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:463 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "uMhleli we-iDevice"
@@ -2352,6 +2353,10 @@ msgstr "Metadata"
 #: the content of resource.">
 msgid "Creator:"
 msgstr "Umqambi:"
+
+#: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
+msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
