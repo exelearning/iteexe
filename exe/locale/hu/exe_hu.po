@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-01 21:22+1300\n"
-"PO-Revision-Date: 2007-07-09 08:32+1200\n"
+"PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
 "MIME-Version: 1.0\n"
@@ -1291,7 +1291,7 @@ msgstr "Fel"
 
 #: exe/engine/multichoiceidevice.py:58
 msgid "Multi-choice"
-msgstr "Feleletválaszós teszt"
+msgstr "Feleletválasztós teszt"
 
 #: exe/engine/multiselectidevice.py:41
 msgid "Multi-select"

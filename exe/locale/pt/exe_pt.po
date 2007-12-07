@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-01 21:22+1300\n"
-"PO-Revision-Date: 2006-07-28 15:36+1200\n"
-"Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
+"PO-Revision-Date: 2007-12-07 18:02+1300\n"
+"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 0.8\n"
+"X-Generator: Pootle 0.10.1\n"
 "X-EXE-Language: Português (de Brasil)\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: PORTUGAL\n"
@@ -2875,9 +2875,8 @@ msgstr "Bashkir "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
-#, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Acerca\" accesskey=\"a\""
+msgstr "label=\"Encerrar\" accesskey=\"q\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -2998,9 +2997,8 @@ msgstr "Chamorro "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
-#, fuzzy
 msgid "label=\"About eXe\" accesskey=\"a\""
-msgstr "label=\"Acerca\" accesskey=\"a\""
+msgstr "label=\"About\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
