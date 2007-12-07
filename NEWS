@@ -1,3 +1,7 @@
+Next Release
+* Add note that SCORM export previous/next requires non-standard extension
+* Make importing old packages more robust (and remove unused resources)
+
 Version 1.02 (r3303)
 * Add ability to type resource name into url box (without browse button)
 * Add CSS divs around nodes in single page and print exports for pagination
