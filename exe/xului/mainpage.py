@@ -736,6 +736,9 @@ class MainPage(RenderableLivePage):
         elif exportType == "scorm2004":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm2004")
+        elif exportType == "commoncartridge":
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            self.exportScorm(client, filename, stylesDir, "commoncartridge")
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)

@@ -58,6 +58,7 @@
                     <menuseparator/>
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
+                    <menuitem label="Common Cartridge" accesskey="c" oncommand="exportPackage('commoncartridge','','')"/>
                     <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm','','')"/>
 		    <!--<menuitem label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004','','')"/>-->
                     <menuitem n:render="translate" label="IMS Content Package" accesskey="i" oncommand="exportPackage('ims','','')"/>

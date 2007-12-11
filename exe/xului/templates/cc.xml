@@ -1,0 +1,20 @@
+<metadata>
+  <schema>IMS Common Cartridge</schema>
+  <schemaversion>1.0.0</schemaversion>
+  <lom xmlns="http://ltsc/ieee.org/xs/imscc/LOM">
+    <general>
+      <title>%(title)s</title>
+      <identifier>%(identifier)s</identifier>
+      <description>%(description)s</description>
+    </general>
+    <technical>
+      <format>text/html</format>
+    </technical>
+    <rights>
+      <copyrightandotherrestrictions>
+        <value>yes</value>
+      </copyrightandotherrestrictions>
+      <description>%(rights)s</description>
+    </rights>
+  </lom>
+</metadata>

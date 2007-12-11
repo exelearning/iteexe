@@ -1,7 +1,7 @@
 // ===========================================================================
 // eXe
 // Copyright 2004-2005, University of Auckland
-// Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+// Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -39,6 +39,7 @@ ABOUT = "About";
 SELECT_THE_PARENT_FOLDER_FOR_EXPORT_ = "Select the parent folder for export.";
 EXPORT_TEXT_PACKAGE_AS = "Export text package as";
 TEXT_FILE = "Text File";
+EXPORT_COMMONCARTRIDGE_AS = "Export Common Cartridge as";
 EXPORT_SCORM_PACKAGE_AS = "Export SCORM package as";
 EXPORT_IMS_PACKAGE_AS = "Export IMS package as";
 EXPORT_WEBSITE_PACKAGE_AS = "Export Website package as";
@@ -615,6 +616,8 @@ function exportPackage(exportType, exportDir, printCallback) {
             title = EXPORT_IMS_PACKAGE_AS;
         else if (exportType == "zipFile")
             title = EXPORT_WEBSITE_PACKAGE_AS;
+	else if (exportType == "commoncartridge")
+	    title = EXPORT_COMMONCARTRIDGE_AS;
         else
             title = INVALID_VALUE_PASSED_TO_EXPORTPACKAGE;
         fp.init(window, title, nsIFilePicker.modeSave);
