@@ -240,21 +240,29 @@ for the other options.""")
             length = len(self.questions[0].options)
             if length >0:
                 for i in range(0, length):
-                    # from the original self.options[i].answer
-                    if (self.questions[0].options[i].answer != 
+                    # note that even though it is an older multichoice,
+                    # newer options could have been added, which might
+                    # not have the .answer or .feedback:
+                    if hasattr(self.questions[0].options[i], 'answer'):
+                        # from the original self.options[i].answer
+                        if (self.questions[0].options[i].answer != 
                             self.questions[0].options[i].answerTextArea): 
-                        # As with .question -> .questionTextArea, .answer 
-                        # was not yet properly migrated to .answerTextArea,
-                        # and this is caused by forcing the upgrade call 
-                        # that we know to be needed:
-                        self.questions[0].options[i].upgradeToVersion1() 
-                    # finally, delete the old answer and feedback: 
-                    del self.questions[0].options[i].answer
-                    del self.questions[0].options[i].feedback
+                            # As with .question -> .questionTextArea, .answer 
+                            # was not yet properly migrated to .answerTextArea,
+                            # and this is caused by forcing the upgrade call 
+                            # that we know to be needed:
+                            self.questions[0].options[i].upgradeToVersion1() 
+                        # finally, delete the old answer: 
+                        del self.questions[0].options[i].answer
+                    if hasattr(self.questions[0].options[i], 'feedback'): 
+                        # and finally, delete the old feedback: 
+                        del self.questions[0].options[i].feedback
 
         # finally, delete the old question and hint:
-        del self.questions[0].question
-        del self.questions[0].hint
+        if hasattr(self.questions[0], 'question'):
+            del self.questions[0].question
+        if hasattr(self.questions[0], 'hint'):
+            del self.questions[0].hint
 
     def TwistedRePersist(self):
         """
