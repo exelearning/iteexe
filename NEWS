@@ -1,5 +1,6 @@
 Next Release
 * Add note that SCORM export previous/next requires non-standard extension
+* Add prototype IMS Common Cartridge export (no quizzing)
 * Make importing old packages more robust (and remove unused resources)
 
 Version 1.02 (r3303)
