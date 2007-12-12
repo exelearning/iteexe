@@ -2,6 +2,8 @@ Next Release
 * Add note that SCORM export previous/next requires non-standard extension
 * Add prototype IMS Common Cartridge export (no quizzing)
 * Make importing old packages more robust (and remove unused resources)
+* Fix merging packages that contain resources with same name as main package
+* Fix upgrading of multichoice questions
 
 Version 1.02 (r3303)
 * Add ability to type resource name into url box (without browse button)
