@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-07 19:55+1300\n"
+"POT-Creation-Date: 2007-12-12 15:31+1300\n"
 "PO-Revision-Date: 2007-08-31 07:28+1200\n"
 "Last-Translator: Lechoslaw Hojnacki <lhojnacki@gmail.com>\n"
 "Language-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\n"
@@ -34,9 +34,9 @@ msgstr ""
 "<p>np. Dla apletów Geogebra, wybierz geogebra, potem dodaj plik .ggb \n"
 "stworzony w programie Geogebra.</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:795
-#: exe/xului/mainpage.py:916 exe/xului/mainpage.py:972
-#: exe/xului/mainpage.py:993
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:798
+#: exe/xului/mainpage.py:919 exe/xului/mainpage.py:975
+#: exe/xului/mainpage.py:996
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -60,7 +60,7 @@ msgid "---Move To---"
 msgstr "---Przenieś do---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:790
 msgid ". Please use ASCII names."
 msgstr ". Proszę używać nazw ASCII."
 
@@ -446,7 +446,7 @@ msgid "Cancel"
 msgstr "Anuluj"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:700
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:790
 msgid "Cannot access directory named "
 msgstr "Brak dostępu do katalogu"
 
@@ -579,7 +579,7 @@ msgstr "Poprawnie"
 msgid "Correct!"
 msgstr "Dobrze!"
 
-#: exe/xului/mainpage.py:1044
+#: exe/xului/mainpage.py:1047
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Załadowanie pliku nie było możliwe. Zawiadom: bugs@exelearning.org"
 
@@ -716,15 +716,15 @@ msgstr "BŁĄD: Block.renderViewContent wywołany bezpośrednio"
 
 #: exe/xului/mainpage.py:727 exe/xului/mainpage.py:734
 #: exe/xului/mainpage.py:737 exe/xului/mainpage.py:740
-#: exe/xului/mainpage.py:900
+#: exe/xului/mainpage.py:743 exe/xului/mainpage.py:903
 msgid "EXPORT FAILED!"
 msgstr "EKSPORT NIEUDANY!"
 
-#: exe/xului/mainpage.py:890 exe/xului/mainpage.py:904
-#: exe/xului/mainpage.py:917 exe/xului/mainpage.py:923
-#: exe/xului/mainpage.py:957 exe/xului/mainpage.py:973
-#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:994
-#: exe/xului/mainpage.py:1000
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:907
+#: exe/xului/mainpage.py:920 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:976
+#: exe/xului/mainpage.py:982 exe/xului/mainpage.py:997
+#: exe/xului/mainpage.py:1003
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -733,7 +733,7 @@ msgstr ""
 "EKSPORT NIEUDANY!\n"
 "%s"
 
-#: exe/export/imsexport.py:347 exe/export/scormexport.py:465
+#: exe/export/imsexport.py:347 exe/export/scormexport.py:439
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -743,7 +743,7 @@ msgstr ""
 "EKSPORT NIEUDANY!\n"
 "Ostatni udany eksport: %s."
 
-#: exe/xului/mainpage.py:796 exe/xului/mainpage.py:805
+#: exe/xului/mainpage.py:799 exe/xului/mainpage.py:808
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -968,9 +968,9 @@ msgstr "Przykład Przykład"
 msgid "Export iDevice"
 msgstr "Eksport Obiektu"
 
-#: exe/xului/mainpage.py:906 exe/xului/mainpage.py:925
-#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:981
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:909 exe/xului/mainpage.py:928
+#: exe/xului/mainpage.py:962 exe/xului/mainpage.py:984
+#: exe/xului/mainpage.py:1005
 #, python-format
 msgid "Exported to %s"
 msgstr "Wyeksportowano do  %s"
@@ -1011,13 +1011,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Opinia zwrotna:"
 
-#: exe/xului/mainpage.py:1040
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:835 exe/xului/mainpage.py:877
-#: exe/xului/mainpage.py:944
+#: exe/xului/mainpage.py:838 exe/xului/mainpage.py:880
+#: exe/xului/mainpage.py:947
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nazwa %s jest plikiem, nie można jej zmienić"
@@ -1037,8 +1037,8 @@ msgstr "Animacja Flash"
 msgid "Flash with Text"
 msgstr "Flash z tekstem"
 
-#: exe/xului/mainpage.py:841 exe/xului/mainpage.py:883
-#: exe/xului/mainpage.py:950
+#: exe/xului/mainpage.py:844 exe/xului/mainpage.py:886
+#: exe/xului/mainpage.py:953
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1298,7 +1298,7 @@ msgid "New iDevice"
 msgstr "Nowy iObiekt"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:335 exe/export/websitepage.py:196
+#: exe/export/scormexport.py:304 exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Następny"
 
@@ -1386,7 +1386,7 @@ msgstr "Struktura"
 msgid "Own site"
 msgstr "Własna strona"
 
-#: exe/xului/mainpage.py:807
+#: exe/xului/mainpage.py:810
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pakiet zapisany do: %s"
@@ -1481,7 +1481,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Katalog %s jest plikiem, nie można nadpisać"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:190
+#: exe/export/scormexport.py:303 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Poprzedni"
 
@@ -1632,7 +1632,7 @@ msgid "SAVE FAILED!"
 msgstr "ZAPIS NIEUDANY!"
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:599
-#: exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:852
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1801,7 +1801,7 @@ msgstr "Mały"
 msgid "Some emphasis"
 msgstr "Wyróżnienie"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1049
+#: exe/application.py:272 exe/xului/mainpage.py:1052
 msgid "Sorry, wrong file format"
 msgstr "Zły format pliku"
 
@@ -1809,7 +1809,7 @@ msgstr "Zły format pliku"
 msgid "Sorry, wrong file format."
 msgstr "Niestety, zły format pliku."
 
-#: exe/xului/mainpage.py:1047
+#: exe/xului/mainpage.py:1050
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2229,7 +2229,7 @@ msgstr "artykuł "
 msgid "blank for original size"
 msgstr "puste dla właściwego rozmiaru"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:262
 msgid "eXe"
 msgstr "eXe "
 
@@ -2782,9 +2782,11 @@ msgstr "Abkhazian "
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
+#: label="Common Cartridge">
+#, fuzzy
+msgid "label=\"Common Cartridge\" accesskey=\"c\""
+msgstr "label=\"Pojedyncza strona\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2802,11 +2804,10 @@ msgstr "Afar"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
-#: Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"Pakiet IMS\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -2821,21 +2822,25 @@ msgstr "Zastosuj"
 msgid "Afrikaans "
 msgstr "Afrikaans "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
-msgid "Web Site"
-msgstr "Strona internetowa"
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
+#: Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"Pakiet IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
 msgid "Albanian "
 msgstr "Albański"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
-msgid "Self-contained Folder"
-msgstr "Folder z plikami"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: Site" id="dcmiWebSite"
+msgid "Web Site"
+msgstr "Strona internetowa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -2843,14 +2848,24 @@ msgid "Amharic "
 msgstr "Amharic "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip File">
-msgid "Zip File"
-msgstr "Plik ZIP"
+#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
+msgid "Self-contained Folder"
+msgstr "Folder z plikami"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
 msgstr "Arabski"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile','','')" label="Zip File">
+msgid "Zip File"
+msgstr "Plik ZIP"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
+#: label="Armenian ">
+msgid "Armenian "
+msgstr "Armeński"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2861,10 +2876,10 @@ msgstr "Arabski"
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Pojedyncza strona\" accesskey=\"p\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
-#: label="Armenian ">
-msgid "Armenian "
-msgstr "Armeński"
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
+#: label="Assamese ">
+msgid "Assamese "
+msgstr "Assamese "
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -2875,10 +2890,10 @@ msgstr "Armeński"
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"Plik tekstowy\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
-#: label="Assamese ">
-msgid "Assamese "
-msgstr "Assamese "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: label="Avestan ">
+msgid "Avestan "
+msgstr "Avestan "
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2888,19 +2903,6 @@ msgstr "Assamese "
 msgid "label=\"iPod Notes\" accesskey=\"n\""
 msgstr "label=\"Notatki IPod\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
-#: label="Avestan ">
-msgid "Avestan "
-msgstr "Avestan "
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
-msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Łączenie\" accesskey=\"m\""
-
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
 msgid "Aymara "
@@ -2909,10 +2911,10 @@ msgstr "Aymara "
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Wstaw pakiet\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
+msgid "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"Łączenie\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -2923,9 +2925,9 @@ msgstr "Azerbaijani "
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Rozpakuj pakiet\" accesskey=\"e\""
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"Wstaw pakiet\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -2936,14 +2938,27 @@ msgstr "Bashkir "
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Koniec\" accesskey=\"q\""
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Rozpakuj pakiet\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
 msgid "Basque "
 msgstr "Baskijski"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"Koniec\" accesskey=\"q\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: label="Bengali; Bangla ">
+msgid "Bengali; Bangla "
+msgstr "Bengali; Bangla "
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -2952,19 +2967,6 @@ msgstr "Baskijski"
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Narzędzia\" accesskey=\"t\""
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
-msgid "Bengali; Bangla "
-msgstr "Bengali; Bangla "
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "Preferencje"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
@@ -2975,23 +2977,23 @@ msgstr "Bihari "
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh Display">
-msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Odśwież\" accesskey=\"r\""
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Preferencje"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
 msgid "Bislama "
 msgstr "Bislama "
 
-# exe/xului/templates/mainpage.xul:<menu
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Style\" accesskey=\"s\""
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh Display">
+msgid "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"Odśwież\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
@@ -3001,15 +3003,28 @@ msgstr "Bośniacki"
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Pomoc\" accesskey=\"h\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Style\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton ">
 msgid "Breton "
 msgstr "Breton "
+
+# exe/xului/templates/mainpage.xul:<menu
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: accesskey="h" label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Pomoc\" accesskey=\"h\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "Białoruski"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3020,10 +3035,10 @@ msgstr "Breton "
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Podręcznik online eXe\" accesskey=\"m\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "Białoruski"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "Bułgarski"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3034,10 +3049,10 @@ msgstr "Białoruski"
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 msgstr "label=\"Porady i triki\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "Bułgarski"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "Burmese "
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3048,10 +3063,10 @@ msgstr "Bułgarski"
 msgid "label=\"Release Notes\" accesskey=\"n\""
 msgstr "label=\"Historia wersji\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "Burmese "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "Catalan "
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3062,10 +3077,10 @@ msgstr "Burmese "
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"Zgłoś problem\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "Catalan "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr "Chamorro "
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3076,10 +3091,10 @@ msgstr "Catalan "
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"Czat eXe\" accesskey=\"c\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr "Chamorro "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "Chechen "
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3089,10 +3104,10 @@ msgstr "Chamorro "
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"O eXe\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "Chechen "
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: label="Chinese ">
+msgid "Chinese "
+msgstr "Chinese "
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3102,10 +3117,10 @@ msgstr "Chechen "
 msgid "debugInfo"
 msgstr "debugInfo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
-msgid "Chinese "
-msgstr "Chinese "
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr "Church Slavic "
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3115,10 +3130,10 @@ msgstr "Chinese "
 msgid "Add Page"
 msgstr "Dodaj pozycję"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
-msgstr "Church Slavic "
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
+msgstr "Chuvash "
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3128,10 +3143,10 @@ msgstr "Church Slavic "
 msgid "Rename"
 msgstr "Zmień nazwę"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
-msgstr "Chuvash "
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
+msgstr "Cornish "
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3141,20 +3156,20 @@ msgstr "Chuvash "
 msgid "outlinePane"
 msgstr "zarys Panelu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr "Cornish "
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: label="Corsican ">
+msgid "Corsican "
+msgstr "Corsican "
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
 msgstr "iObiekty"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
-msgid "Corsican "
-msgstr "Corsican "
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: label="Croatian ">
+msgid "Croatian "
+msgstr "Chorwacki"
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3163,19 +3178,6 @@ msgstr "Corsican "
 #: value="iDevicePane">
 msgid "iDevicePane"
 msgstr "Panel iObiektów"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
-msgid "Croatian "
-msgstr "Chorwacki"
-
-# exe/xului/templates/mainpage.xul:<tab
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
-# exe/xului/templates/mainpage.xul:<tab
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
-msgid "Authoring"
-msgstr "Tworzenie treści"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
@@ -3186,14 +3188,22 @@ msgstr "Czeski"
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
-msgid "Properties"
-msgstr "Właściwości"
+#: label="Authoring">
+msgid "Authoring"
+msgstr "Tworzenie treści"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish ">
 msgid "Danish "
 msgstr "Duński"
+
+# exe/xului/templates/mainpage.xul:<tab
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
+# exe/xului/templates/mainpage.xul:<tab
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
+msgid "Properties"
+msgstr "Właściwości"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">

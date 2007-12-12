@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-07 19:55+1300\n"
+"POT-Creation-Date: 2007-12-12 15:31+1300\n"
 "PO-Revision-Date: 2006-07-31 14:47+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -29,9 +29,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:795
-#: exe/xului/mainpage.py:916 exe/xului/mainpage.py:972
-#: exe/xului/mainpage.py:993
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:798
+#: exe/xului/mainpage.py:919 exe/xului/mainpage.py:975
+#: exe/xului/mainpage.py:996
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -50,7 +50,7 @@ msgid "---Move To---"
 msgstr "---移至---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:790
 msgid ". Please use ASCII names."
 msgstr "。請使用ASCII碼，如英文、拼音等來命名路徑，包括其中所有的檔案夾。"
 
@@ -380,7 +380,7 @@ msgid "Cancel"
 msgstr "取消"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:700
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:790
 msgid "Cannot access directory named "
 msgstr "不能識別路徑名稱"
 
@@ -507,7 +507,7 @@ msgstr "正確"
 msgid "Correct!"
 msgstr "正確!"
 
-#: exe/xului/mainpage.py:1044
+#: exe/xului/mainpage.py:1047
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
@@ -631,22 +631,22 @@ msgstr "ERROR: Block.renderViewContent called directly"
 
 #: exe/xului/mainpage.py:727 exe/xului/mainpage.py:734
 #: exe/xului/mainpage.py:737 exe/xului/mainpage.py:740
-#: exe/xului/mainpage.py:900
+#: exe/xului/mainpage.py:743 exe/xului/mainpage.py:903
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:890 exe/xului/mainpage.py:904
-#: exe/xului/mainpage.py:917 exe/xului/mainpage.py:923
-#: exe/xului/mainpage.py:957 exe/xului/mainpage.py:973
-#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:994
-#: exe/xului/mainpage.py:1000
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:907
+#: exe/xului/mainpage.py:920 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:976
+#: exe/xului/mainpage.py:982 exe/xului/mainpage.py:997
+#: exe/xului/mainpage.py:1003
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:347 exe/export/scormexport.py:465
+#: exe/export/imsexport.py:347 exe/export/scormexport.py:439
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -654,7 +654,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:796 exe/xului/mainpage.py:805
+#: exe/xului/mainpage.py:799 exe/xului/mainpage.py:808
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -843,9 +843,9 @@ msgstr "例子 例子"
 msgid "Export iDevice"
 msgstr "iDevice"
 
-#: exe/xului/mainpage.py:906 exe/xului/mainpage.py:925
-#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:981
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:909 exe/xului/mainpage.py:928
+#: exe/xului/mainpage.py:962 exe/xului/mainpage.py:984
+#: exe/xului/mainpage.py:1005
 #, python-format
 msgid "Exported to %s"
 msgstr "匯出至 %s"
@@ -884,13 +884,13 @@ msgstr "如果此欄空白，評語按鈕將不顯示。"
 msgid "Feedback:"
 msgstr "評語:"
 
-#: exe/xului/mainpage.py:1040
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:835 exe/xului/mainpage.py:877
-#: exe/xului/mainpage.py:944
+#: exe/xului/mainpage.py:838 exe/xului/mainpage.py:880
+#: exe/xului/mainpage.py:947
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
@@ -912,8 +912,8 @@ msgstr "Flash 電影"
 msgid "Flash with Text"
 msgstr "文字及Flash"
 
-#: exe/xului/mainpage.py:841 exe/xului/mainpage.py:883
-#: exe/xului/mainpage.py:950
+#: exe/xului/mainpage.py:844 exe/xului/mainpage.py:886
+#: exe/xului/mainpage.py:953
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1180,7 +1180,7 @@ msgid "New iDevice"
 msgstr "新的 iDevice"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:335 exe/export/websitepage.py:196
+#: exe/export/scormexport.py:304 exe/export/websitepage.py:196
 msgid "Next"
 msgstr "下一頁"
 
@@ -1265,7 +1265,7 @@ msgstr "目錄"
 msgid "Own site"
 msgstr ""
 
-#: exe/xului/mainpage.py:807
+#: exe/xului/mainpage.py:810
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "教材存至: %s"
@@ -1358,7 +1358,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:190
+#: exe/export/scormexport.py:303 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "前一頁"
 
@@ -1491,7 +1491,7 @@ msgid "SAVE FAILED!"
 msgstr ""
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:599
-#: exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:852
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1654,7 +1654,7 @@ msgstr "小"
 msgid "Some emphasis"
 msgstr "一般強調"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1049
+#: exe/application.py:272 exe/xului/mainpage.py:1052
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 
@@ -1663,7 +1663,7 @@ msgstr "對不起，檔案格式錯誤"
 msgid "Sorry, wrong file format."
 msgstr "對不起，檔案格式錯誤"
 
-#: exe/xului/mainpage.py:1047
+#: exe/xului/mainpage.py:1050
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2035,7 +2035,7 @@ msgstr "文章"
 msgid "blank for original size"
 msgstr "空白為原來的大小尺寸"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:262
 msgid "eXe"
 msgstr "eXe"
 
@@ -2653,9 +2653,11 @@ msgstr "阿布哈西亞語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
+#: label="Common Cartridge">
+#, fuzzy
+msgid "label=\"Common Cartridge\" accesskey=\"c\""
+msgstr "label=\"單一網頁\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2674,11 +2676,10 @@ msgstr "阿法爾語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
-#: Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -2694,11 +2695,15 @@ msgstr "Applet Code:"
 msgid "Afrikaans "
 msgstr "南非荷蘭語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
-msgid "Web Site"
-msgstr "網頁"
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
+#: Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
@@ -2706,10 +2711,11 @@ msgstr "網頁"
 msgid "Albanian "
 msgstr "阿爾巴尼亞語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
-msgid "Self-contained Folder"
-msgstr ""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: Site" id="dcmiWebSite"
+msgid "Web Site"
+msgstr "網頁"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -2717,14 +2723,25 @@ msgid "Amharic "
 msgstr "阿比西尼亞語"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip File">
-msgid "Zip File"
+#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
+msgid "Self-contained Folder"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
 msgstr "阿拉伯語"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile','','')" label="Zip File">
+msgid "Zip File"
+msgstr ""
+
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
+#: label="Armenian ">
+msgid "Armenian "
+msgstr "亞美尼亞語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2736,11 +2753,10 @@ msgstr "阿拉伯語"
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"單一網頁\" accesskey=\"p\""
 
-# exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
-#: label="Armenian ">
-msgid "Armenian "
-msgstr "亞美尼亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
+#: label="Assamese ">
+msgid "Assamese "
+msgstr "阿薩姆語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2753,10 +2769,10 @@ msgstr "亞美尼亞語"
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"檔案\" accesskey=\"f\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
-#: label="Assamese ">
-msgid "Assamese "
-msgstr "阿薩姆語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: label="Avestan ">
+msgid "Avestan "
+msgstr "阿維斯陀語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2768,10 +2784,10 @@ msgstr "阿薩姆語"
 msgid "label=\"iPod Notes\" accesskey=\"n\""
 msgstr "label=\"新增檔案\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
-#: label="Avestan ">
-msgid "Avestan "
-msgstr "阿維斯陀語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
+#: label="Aymara ">
+msgid "Aymara "
+msgstr "艾馬拉語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2782,20 +2798,6 @@ msgstr "阿維斯陀語"
 #, fuzzy
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"合併\" accesskey=\"e\""
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
-#: label="Aymara ">
-msgid "Aymara "
-msgstr "艾馬拉語"
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"插入教材\" accesskey=\"i\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
@@ -2808,9 +2810,9 @@ msgstr "亞塞拜然語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"引出教材\" accesskey=\"i\""
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"插入教材\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -2822,15 +2824,29 @@ msgstr "巴什基爾語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
-#, fuzzy
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"關於\" accesskey=\"a\""
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"引出教材\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
 msgid "Basque "
 msgstr "巴斯克語"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+#, fuzzy
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"關於\" accesskey=\"a\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: label="Bengali; Bangla ">
+msgid "Bengali; Bangla "
+msgstr "孟加拉語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2841,10 +2857,10 @@ msgstr "巴斯克語"
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"工具\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
-msgid "Bengali; Bangla "
-msgstr "孟加拉語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "Bihari "
+msgstr "比哈里語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2855,10 +2871,10 @@ msgstr "孟加拉語"
 msgid "Preferences"
 msgstr "使用偏好"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
-msgid "Bihari "
-msgstr "比哈里語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "Bislama "
+msgstr "比斯拉馬語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2871,10 +2887,10 @@ msgstr "比哈里語"
 msgid "label=\"Refresh Display\" accesskey=\"r\""
 msgstr "label=\"重新載入\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
-msgid "Bislama "
-msgstr "比斯拉馬語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: label="Bosnian ">
+msgid "Bosnian "
+msgstr "波西尼亞語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2885,10 +2901,10 @@ msgstr "比斯拉馬語"
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"頁面風格\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
-msgid "Bosnian "
-msgstr "波西尼亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr "不列塔尼語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2899,10 +2915,10 @@ msgstr "波西尼亞語"
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"輔助\" accesskey=\"h\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
-msgstr "不列塔尼語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "白俄語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2915,10 +2931,11 @@ msgstr "不列塔尼語"
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
 msgstr "label=\"開啟\" accesskey=\"o\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "白俄語"
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "保加利亞語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2931,11 +2948,10 @@ msgstr "白俄語"
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 msgstr "label=\"工具\" accesskey=\"t\""
 
-# exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "保加利亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "緬甸語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2948,10 +2964,11 @@ msgstr "保加利亞語"
 msgid "label=\"Release Notes\" accesskey=\"n\""
 msgstr "label=\"新增檔案\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "緬甸語"
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "加泰羅尼亞語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -2964,11 +2981,10 @@ msgstr "緬甸語"
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"報告問題\" accesskey=\"R\""
 
-# exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "加泰羅尼亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr "查莫羅語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2981,10 +2997,10 @@ msgstr "加泰羅尼亞語"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"網站\" accesskey=\"w\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr "查莫羅語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "車臣語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2996,10 +3012,10 @@ msgstr "查莫羅語"
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"關於\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "車臣語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: label="Chinese ">
+msgid "Chinese "
+msgstr "中文"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
@@ -3010,10 +3026,10 @@ msgstr "車臣語"
 msgid "debugInfo"
 msgstr "debugInfo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
-msgid "Chinese "
-msgstr "中文"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr "教會斯拉夫語"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
@@ -3024,10 +3040,10 @@ msgstr "中文"
 msgid "Add Page"
 msgstr "加入頁面"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
-msgstr "教會斯拉夫語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
+msgstr "楚瓦什語"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
@@ -3038,10 +3054,10 @@ msgstr "教會斯拉夫語"
 msgid "Rename"
 msgstr "重新命名"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
-msgstr "楚瓦什語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
+msgstr "科尼什語"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
@@ -3052,20 +3068,20 @@ msgstr "楚瓦什語"
 msgid "outlinePane"
 msgstr "目錄欄"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr "科尼什語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: label="Corsican ">
+msgid "Corsican "
+msgstr "科西嘉語"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
 msgstr "iDevice"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
-msgid "Corsican "
-msgstr "科西嘉語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: label="Croatian ">
+msgid "Croatian "
+msgstr "克羅埃西亞語"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
@@ -3075,20 +3091,6 @@ msgstr "科西嘉語"
 #: value="iDevicePane">
 msgid "iDevicePane"
 msgstr "iDevice欄"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
-msgid "Croatian "
-msgstr "克羅埃西亞語"
-
-# exe/xului/templates/mainpage.xul:<tab
-# exe/xului/templates/mainpage.xul:<tab
-# exe/xului/templates/mainpage.xul:<tab
-# exe/xului/templates/mainpage.xul:<tab
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
-msgid "Authoring"
-msgstr "製作"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
@@ -3100,15 +3102,24 @@ msgstr "捷克語"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
-msgid "Properties"
-msgstr "屬性"
+#: label="Authoring">
+msgid "Authoring"
+msgstr "製作"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish ">
 msgid "Danish "
 msgstr "丹麥語"
+
+# exe/xului/templates/mainpage.xul:<tab
+# exe/xului/templates/mainpage.xul:<tab
+# exe/xului/templates/mainpage.xul:<tab
+# exe/xului/templates/mainpage.xul:<tab
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
+msgid "Properties"
+msgstr "屬性"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-07 19:55+1300\n"
+"POT-Creation-Date: 2007-12-12 15:31+1300\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:795
-#: exe/xului/mainpage.py:916 exe/xului/mainpage.py:972
-#: exe/xului/mainpage.py:993
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:798
+#: exe/xului/mainpage.py:919 exe/xului/mainpage.py:975
+#: exe/xului/mainpage.py:996
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -48,7 +48,7 @@ msgid "---Move To---"
 msgstr "---Neke Ki---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:790
 msgid ". Please use ASCII names."
 msgstr ". Whakamahia mai ngā ingoa ASCII."
 
@@ -434,7 +434,7 @@ msgid "Cancel"
 msgstr "Whakakore"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:700
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:790
 msgid "Cannot access directory named "
 msgstr "Kāore e āhei te uru ngā rārangi kōpaki kua tapaina"
 
@@ -566,7 +566,7 @@ msgstr "Tika"
 msgid "Correct!"
 msgstr "Tika!"
 
-#: exe/xului/mainpage.py:1044
+#: exe/xului/mainpage.py:1047
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
@@ -689,22 +689,22 @@ msgstr "Huānga HAPA. Kua tauaro te Kati.KitengaTuhinga"
 
 #: exe/xului/mainpage.py:727 exe/xului/mainpage.py:734
 #: exe/xului/mainpage.py:737 exe/xului/mainpage.py:740
-#: exe/xului/mainpage.py:900
+#: exe/xului/mainpage.py:743 exe/xului/mainpage.py:903
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:890 exe/xului/mainpage.py:904
-#: exe/xului/mainpage.py:917 exe/xului/mainpage.py:923
-#: exe/xului/mainpage.py:957 exe/xului/mainpage.py:973
-#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:994
-#: exe/xului/mainpage.py:1000
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:907
+#: exe/xului/mainpage.py:920 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:976
+#: exe/xului/mainpage.py:982 exe/xului/mainpage.py:997
+#: exe/xului/mainpage.py:1003
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:347 exe/export/scormexport.py:465
+#: exe/export/imsexport.py:347 exe/export/scormexport.py:439
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -712,7 +712,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:796 exe/xului/mainpage.py:805
+#: exe/xului/mainpage.py:799 exe/xului/mainpage.py:808
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -931,9 +931,9 @@ msgstr ""
 msgid "Export iDevice"
 msgstr "Pihanga iDevice"
 
-#: exe/xului/mainpage.py:906 exe/xului/mainpage.py:925
-#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:981
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:909 exe/xului/mainpage.py:928
+#: exe/xului/mainpage.py:962 exe/xului/mainpage.py:984
+#: exe/xului/mainpage.py:1005
 #, python-format
 msgid "Exported to %s"
 msgstr "I maitai ki %s"
@@ -974,13 +974,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Urupare"
 
-#: exe/xului/mainpage.py:1040
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:835 exe/xului/mainpage.py:877
-#: exe/xului/mainpage.py:944
+#: exe/xului/mainpage.py:838 exe/xului/mainpage.py:880
+#: exe/xului/mainpage.py:947
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
@@ -998,8 +998,8 @@ msgstr "Kiriata Kohiko"
 msgid "Flash with Text"
 msgstr "Tuhituhi mā te Kohiko"
 
-#: exe/xului/mainpage.py:841 exe/xului/mainpage.py:883
-#: exe/xului/mainpage.py:950
+#: exe/xului/mainpage.py:844 exe/xului/mainpage.py:886
+#: exe/xului/mainpage.py:953
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1263,7 +1263,7 @@ msgid "New iDevice"
 msgstr "iDevice Hou"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:335 exe/export/websitepage.py:196
+#: exe/export/scormexport.py:304 exe/export/websitepage.py:196
 #, fuzzy
 msgid "Next"
 msgstr "Kupu"
@@ -1355,7 +1355,7 @@ msgstr "Whakahuahua"
 msgid "Own site"
 msgstr ""
 
-#: exe/xului/mainpage.py:807
+#: exe/xului/mainpage.py:810
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Mōkī i tiakina ki: %s"
@@ -1453,7 +1453,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 
 #: exe/engine/galleryidevice.py:608 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:190
+#: exe/export/scormexport.py:303 exe/export/websitepage.py:190
 #, fuzzy
 msgid "Previous"
 msgstr "Tirohia"
@@ -1604,7 +1604,7 @@ msgid "SAVE FAILED!"
 msgstr ""
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:599
-#: exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:852
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1774,7 +1774,7 @@ msgstr "Tapanga"
 msgid "Some emphasis"
 msgstr "Āhua arotahi"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1049
+#: exe/application.py:272 exe/xului/mainpage.py:1052
 msgid "Sorry, wrong file format"
 msgstr "Hē te hōputu kōnae"
 
@@ -1783,7 +1783,7 @@ msgstr "Hē te hōputu kōnae"
 msgid "Sorry, wrong file format."
 msgstr "Hē te hōputu kōnae"
 
-#: exe/xului/mainpage.py:1047
+#: exe/xului/mainpage.py:1050
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2188,7 +2188,7 @@ msgstr "Tuhipānui"
 msgid "blank for original size"
 msgstr "piako mō te rahi pono"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:296
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:262
 msgid "eXe"
 msgstr "eXe"
 
@@ -2689,9 +2689,11 @@ msgid "Abkhazian "
 msgstr "Tapanga"
 
 #: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
+#: label="Common Cartridge">
+#, fuzzy
+msgid "label=\"Common Cartridge\" accesskey=\"c\""
+msgstr "label=\"Whārangi Takitahi\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2707,11 +2709,10 @@ msgstr ""
 msgid "Afar "
 msgstr "Tuhipānui"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
-#: Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"Mōki Ihirangi IMS\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -2727,12 +2728,11 @@ msgstr ""
 msgid "Afrikaans "
 msgstr "Tapanga"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
-#, fuzzy
-msgid "Web Site"
-msgstr "taitara"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
+#: Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"Mōki Ihirangi IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
@@ -2740,10 +2740,12 @@ msgstr "taitara"
 msgid "Albanian "
 msgstr "Tapanga"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
-msgid "Self-contained Folder"
-msgstr ""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: Site" id="dcmiWebSite"
+#, fuzzy
+msgid "Web Site"
+msgstr "taitara"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -2752,8 +2754,8 @@ msgid "Amharic "
 msgstr "Tuhipānui"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip File">
-msgid "Zip File"
+#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
+msgid "Self-contained Folder"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
@@ -2763,10 +2765,9 @@ msgid "Arabic "
 msgstr "Tuhipānui"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
-#: Page">
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Whārangi Takitahi\" accesskey=\"p\""
+#: oncommand="exportPackage('zipFile','','')" label="Zip File">
+msgid "Zip File"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
@@ -2775,11 +2776,10 @@ msgid "Armenian "
 msgstr "Tapanga"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
-#: File">
-#, fuzzy
-msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Kōnae\" accesskey=\"f\""
+#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
+#: Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Whārangi Takitahi\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
@@ -2788,10 +2788,11 @@ msgid "Assamese "
 msgstr "Tapaina Anō"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
+#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
+#: File">
 #, fuzzy
-msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"Hou\" accesskey=\"n\""
+msgid "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"Kōnae\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -2799,11 +2800,11 @@ msgstr "label=\"Hou\" accesskey=\"n\""
 msgid "Avestan "
 msgstr "Tapanga"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
 #, fuzzy
-msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Tūwhera\" accesskey=\"o\""
+msgid "label=\"iPod Notes\" accesskey=\"n\""
+msgstr "label=\"Hou\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -2811,11 +2812,11 @@ msgstr "label=\"Tūwhera\" accesskey=\"o\""
 msgid "Aymara "
 msgstr "Tuhipānui"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
 #, fuzzy
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Mōki Ihirangi IMS\" accesskey=\"i\""
+msgid "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"Tūwhera\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -2824,9 +2825,9 @@ msgid "Azerbaijani "
 msgstr "Tapanga"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #, fuzzy
-msgid "label=\"Extract Package\" accesskey=\"E\""
+msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"Mōki Ihirangi IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
@@ -2835,30 +2836,31 @@ msgid "Bashkir "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #, fuzzy
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"E Pā Ana\" accesskey=\"a\""
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Mōki Ihirangi IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
 msgid "Basque "
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Pāraha\" accesskey=\"t\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+#, fuzzy
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"E Pā Ana\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
 msgid "Bengali; Bangla "
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "Ngā Hiahia"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Pāraha\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
@@ -2867,21 +2869,21 @@ msgid "Bihari "
 msgstr "Tuhipānui"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh Display">
-#, fuzzy
-msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Whakahou\" accesskey=\"r\""
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Ngā Hiahia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
 msgid "Bislama "
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Āhuatanga\" accesskey=\"s\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh Display">
+#, fuzzy
+msgid "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"Whakahou\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
@@ -2889,14 +2891,24 @@ msgstr "label=\"Āhuatanga\" accesskey=\"s\""
 msgid "Bosnian "
 msgstr "Tapanga"
 
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Āhuatanga\" accesskey=\"s\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Āwhina\" accesskey=\"h\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
@@ -2906,10 +2918,11 @@ msgstr ""
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Tūwhera\" accesskey=\"o\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr ""
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+#, fuzzy
+msgid "Bulgarian "
+msgstr "Tapanga"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
@@ -2918,11 +2931,11 @@ msgstr ""
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 msgstr "label=\"Pāraha\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
 #, fuzzy
-msgid "Bulgarian "
-msgstr "Tapanga"
+msgid "Burmese "
+msgstr "Teka"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
@@ -2931,11 +2944,11 @@ msgstr "Tapanga"
 msgid "label=\"Release Notes\" accesskey=\"n\""
 msgstr "label=\"Hou\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
 #, fuzzy
-msgid "Burmese "
-msgstr "Teka"
+msgid "Catalan "
+msgstr "Tapanga"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
@@ -2944,11 +2957,10 @@ msgstr "Teka"
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"Maitai\" accesskey=\"e\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-#, fuzzy
-msgid "Catalan "
-msgstr "Tapanga"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
@@ -2957,10 +2969,11 @@ msgstr "Tapanga"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"Pae Tukutuku\" accesskey=\"w\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr ""
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+#, fuzzy
+msgid "Chechen "
+msgstr "Tapaina Anō"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
@@ -2968,10 +2981,10 @@ msgstr ""
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"E Pā Ana\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: label="Chinese ">
 #, fuzzy
-msgid "Chechen "
+msgid "Chinese "
 msgstr "Tapaina Anō"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
@@ -2979,20 +2992,19 @@ msgstr "Tapaina Anō"
 msgid "debugInfo"
 msgstr "WhakakoreNgārara"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
-#, fuzzy
-msgid "Chinese "
-msgstr "Tapaina Anō"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
 msgstr "Tāpiri Whārangi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
@@ -3000,9 +3012,9 @@ msgstr ""
 msgid "Rename"
 msgstr "Tapaina Anō"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
@@ -3010,26 +3022,16 @@ msgstr ""
 msgid "outlinePane"
 msgstr "PihangaIhirangi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr ""
-
-#: exe/xului/templates/mainpage.xul:<label value="iDevices"
-#: style="margin-top:5px;">
-#, fuzzy
-msgid "iDevices"
-msgstr "Pihanga iDevice"
-
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
 #, fuzzy
 msgid "Corsican "
 msgstr "Tapanga"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
-msgid "iDevicePane"
+#: exe/xului/templates/mainpage.xul:<label value="iDevices"
+#: style="margin-top:5px;">
+#, fuzzy
+msgid "iDevices"
 msgstr "Pihanga iDevice"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
@@ -3038,10 +3040,10 @@ msgstr "Pihanga iDevice"
 msgid "Croatian "
 msgstr "Tapanga"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
-msgid "Authoring"
-msgstr "Whakatika"
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
+#: value="iDevicePane">
+msgid "iDevicePane"
+msgstr "Pihanga iDevice"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
@@ -3049,14 +3051,19 @@ msgid "Czech "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
-msgid "Properties"
-msgstr "Āhuatanga"
+#: label="Authoring">
+msgid "Authoring"
+msgstr "Whakatika"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish ">
 msgid "Danish "
 msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
+msgid "Properties"
+msgstr "Āhuatanga"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
