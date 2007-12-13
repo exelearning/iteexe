@@ -129,7 +129,7 @@ within Wikipedia.""")
         while self.userResources:
             self.userResources[0].delete()
         self.images        = {}
-            
+
         # Download the images
         bits = url.split('/')
         netloc = '%s//%s' % (bits[0], bits[2])
@@ -146,8 +146,12 @@ within Wikipedia.""")
                     else:
                         imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
+                new_resource = Resource(self, tmpDir/imageName)
+                if new_resource._storageName != imageName:
+                    # looks like it was changed due to a possible conflict,
+                    # so reset the imageName accordingly for the content:
+                    imageName = new_resource._storageName
                 self.images[imageName] = True
-                Resource(self, tmpDir/imageName)
             # We have to use absolute URLs if we want the images to
             # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
