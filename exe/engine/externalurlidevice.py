@@ -51,6 +51,14 @@ and select the size of the area to display it in.""")
         #Properties
     urlInstruc = lateTranslate('urlInstruc')
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        # NOTE that the ExternalURL iDevice has NO additional resources:
+        return None
+
+
     def upgradeToVersion1(self):
         """
         Upgrades exe to v0.10

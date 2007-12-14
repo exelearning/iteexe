@@ -620,30 +620,10 @@ class Resource(_Resource):
 
                         if self in this_idevice.userResources:
                             just_found_idevice = True
-
-                        elif hasattr(this_idevice, 'fields'):
-                            # check through each of this idevice's fields,
-                            # to see if it is supposed to be there.
-                            for this_field in this_idevice.fields:
-                                if isinstance(this_field, FieldWithResources) \
-                                and hasattr(this_field, 'images') :
-                                    # field is capable of embedding resources
-                                    for this_image in this_field.images:
-                                        if hasattr(this_image, 
-                                                '_imageResource') \
-                                        and self == this_image._imageResource:
-                                            just_found_idevice = True
-
-                        elif hasattr(this_idevice, 'content') \
-                        and isinstance(this_idevice.content, 
-                                FieldWithResources) \
-                        and hasattr(this_idevice.content, 'images') :
-                            # this is a generic content idevice also
-                            # capable of embedding resources:
-                            for this_image in this_idevice.content.images:
-                                if hasattr(this_image, '_imageResource') \
-                                and self == this_image._imageResource:
-                                    just_found_idevice = True
+                        else: 
+                            this_field = this_idevice.getResourcesField(self) 
+                            if this_field is not None: 
+                                just_found_idevice = True
 
                         if just_found_idevice:
                             # now go ahead and report and reattach:
@@ -656,7 +636,8 @@ class Resource(_Resource):
                             found_idevice.userResources.append(self)
                             self._idevice = found_idevice
                             log.warn("Re-attached non-zombie Resource \""
-                                    + str(self) + "\" to iDevice.")
+                                    + str(self) + "\" to iDevice: "
+                                    + repr(found_idevice))
 
             # if not found in ANY idevice, it probably IS a zombie
             if found_idevice is None:
