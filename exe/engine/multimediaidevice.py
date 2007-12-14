@@ -80,6 +80,21 @@ choose where on the screen the media player will be positioned.""")
     alignInstruc       = lateTranslate('alignInstruc')
 
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        if this_resource == self.media.mediaResource:
+            return self.media
+
+        for this_image in self.text.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.text
+
+        return None
+       
+
     def upgradeToVersion2(self):
         """
         (We skipped version 1 by accident)

@@ -79,4 +79,15 @@ distractors </li>
         question.addOption()
         self.questions.append(question)
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_question in self.questions:
+            this_field = this_question.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
+
 # ===========================================================================

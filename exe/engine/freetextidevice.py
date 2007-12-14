@@ -50,6 +50,18 @@ text through the text editing buttons associated with the field."""),
         if content:
             self.edit = False
 
+   
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.content.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.content
+
+        return None
+       
 
     def upgradeToVersion1(self):
         """

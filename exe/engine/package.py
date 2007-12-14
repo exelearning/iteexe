@@ -447,6 +447,22 @@ class Package(Persistable):
         for fn in existingFiles - usedFiles:
             (self.resourceDir/fn).remove()
 
+    def findResourceByName(self, queryName):
+        """
+        Support for merging, and anywhere else that unique names might be
+        checked before actually comparing against the files (as will be 
+        done by the resource class itself in its _addOurselvesToPackage() )
+        """
+        foundResource = None
+        queryResources = self.resources
+        for this_checksum in queryResources:
+            for this_resource in queryResources[this_checksum]:
+                if queryName == this_resource.storageName:
+                    foundResource = this_resource
+                    return foundResource
+        return foundResource
+
+
     def upgradeToVersion1(self):
         """
         Called to upgrade from 0.3 release

@@ -115,6 +115,25 @@ class AttachmentIdevice(Idevice):
         else:
             log.error('File %s is not a file' % resourceFile)
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.descriptionTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.descriptionTextArea
+
+        # if this_resource wasn't found in the above TextArea, but is still
+        # listed within the iDevice's userResources, then we can assume
+        # that this_resource is the attached resource, even though that
+        # has no direct field.
+        # As such, merely return the resource itself, to indicate that
+        # it DOES belong to this iDevice, but is not a FieldWithResources:
+        if this_resource in self.userResources:
+            return this_resource
+
+        return None
        
     def upgradeToVersion1(self):
         """

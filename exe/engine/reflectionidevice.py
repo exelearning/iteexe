@@ -70,6 +70,23 @@ reflective feedback.)""")
     answerInstruc   = lateTranslate('answerInstruc')
 
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.activityTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.activityTextArea
+
+        for this_image in self.answerTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.answerTextArea
+
+        return None
+
+
     def upgradeToVersion1(self):
         """
         Upgrades the node from version 0 to 1.

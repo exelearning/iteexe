@@ -52,6 +52,30 @@ class TrueFalseQuestion(Persistable):
                                 self.idevice.hintInstruc, hint)
         self.hintTextArea.idevice = idevice
 
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.questionTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.questionTextArea
+
+        for this_image in self.feedbackTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.feedbackTextArea
+
+        for this_image in self.hintTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.hintTextArea
+
+        return None
+
+
+
     def upgrade_setIdevice(self, idevice):
         """
         While some of this might typically be done in an automatic upgrade
@@ -132,6 +156,23 @@ completed."""),
         Add a new question to this iDevice. 
         """
         self.questions.append(TrueFalseQuestion(self))
+
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.instructionsForLearners.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.instructionsForLearners
+
+        for this_question in self.questions:
+            this_field = this_question.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
 
 
     def upgradeToVersion1(self):

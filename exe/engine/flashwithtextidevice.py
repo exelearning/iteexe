@@ -64,7 +64,22 @@ The width and height dimensions will alter proportionally.""")
     # Properties
     captionInstruc   = lateTranslate('captionInstruc')
     dimensionInstruc = lateTranslate('dimensionInstruc')
-    
+   
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        if this_resource == self.flash.flashResource:
+            return self.flash
+
+        for this_image in self.text.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.text
+
+        return None
+       
+
     def upgradeToVersion1(self):
         """
         Upgrades exe to v0.10

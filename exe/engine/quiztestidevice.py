@@ -51,6 +51,17 @@ class AnswerOption(Persistable):
 
         self.isCorrect = isCorrect
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.answerTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource: 
+                return self.answerTextArea
+
+        return None
+
     def upgrade_setIdevice(self, idevice, question):
         """
         While some of this might typically be done in an automatic upgrade
@@ -115,7 +126,25 @@ click the radio button next to the correct option.""")
         Add a new option to this question. 
         """
         self.options.append(AnswerOption(self, self.idevice))
-        
+       
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.questionTextArea.images: 
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource: 
+                return self.questionTextArea
+
+        for this_option in self.options:
+            this_field = this_option.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
+
+
     def upgradeToVersion1(self):
         """
         Upgrades to v 0.13
@@ -200,6 +229,17 @@ time to learn and practice using the information or skill.
         Add a new question to this iDevice. 
         """
         self.questions.append(TestQuestion(self))
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_question in self.questions:
+            this_field = this_question.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
 
 
     def upgradeToVersion2(self):

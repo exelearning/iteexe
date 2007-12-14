@@ -2353,6 +2353,23 @@ class QuizOptionField(Field):
                                     idevice._feedbackInstruc, u'')
         self.feedbackTextArea.idevice = idevice
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.answerTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.answerTextArea
+
+        for this_image in self.feedbackTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.feedbackTextArea
+
+        return None
+
+
     def upgradeToVersion1(self):
         """
         Upgrades to somewhere before version 0.25 (post-v0.24) 
@@ -2398,6 +2415,28 @@ class QuizQuestionField(Field):
         option = QuizOptionField(self, self.idevice)
         self.options.append(option)
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.questionTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.questionTextArea
+
+        for this_image in self.hintTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.hintTextArea
+
+        for this_option in self.options:
+            this_field = this_option.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
+
+
     def upgradeToVersion1(self):
         """
         Upgrades to somewhere before version 0.25 (post-v0.24) 
@@ -2433,6 +2472,17 @@ class SelectOptionField(Field):
                                      question._optionInstruc, u'')
         self.answerTextArea.idevice = idevice
 
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.answerTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.answerTextArea
+
+        return None
 
     def upgradeToVersion1(self):
         """
@@ -2495,6 +2545,28 @@ to provide the learner with.""")
         """
         option = SelectOptionField(self, self.idevice)
         self.options.append(option)
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.questionTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.questionTextArea
+
+        for this_image in self.feedbackTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.feedbackTextArea
+
+        for this_option in self.options:
+            this_field = this_option.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
+
 
     def upgradeToVersion1(self):
         """

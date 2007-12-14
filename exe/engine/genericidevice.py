@@ -111,6 +111,28 @@ class GenericIdevice(Idevice):
     def __iter__(self):
         return iter(self.fields)
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for these 
+        Generic iDevices:
+        """
+        from exe.engine.field            import FieldWithResources
+        if hasattr(self, 'fields'): 
+            # check through each of this idevice's fields,
+            # to see if it is supposed to be there.
+            for this_field in self.fields: 
+                if isinstance(this_field, FieldWithResources) \
+                and hasattr(this_field, 'images') : 
+                    # field is capable of embedding resources
+                    for this_image in this_field.images: 
+                        if hasattr(this_image, '_imageResource') \
+                        and this_resource == this_image._imageResource: 
+                            return this_field
+
+        # else, not found in the above loop:
+        return None
+
+
  
     def upgradeToVersion1(self):
         """

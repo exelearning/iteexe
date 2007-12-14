@@ -63,7 +63,18 @@ display them as links in your content. From here you can edit the bookmarks and 
     # Properties
     urlInstruc      = lateTranslate('urlInstruc')
 
-   
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.rss.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.rss
+
+        return None
+
     def loadRss(self, url):
         """
         Load the rss

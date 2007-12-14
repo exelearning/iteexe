@@ -76,6 +76,20 @@ you created in Geogebra.</p>""")
     codeInstruc = lateTranslate('codeInstruc')
     typeInstruc = lateTranslate('typeInstruc')
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        # if this_resource is listed within the iDevice's userResources, 
+        # then we can assume that this_resource is indeed a valid resource, 
+        # even though that has no direct field.
+        # As such, merely return the resource itself, to indicate that
+        # it DOES belong to this iDevice, but is not a FieldWithResources:
+        if this_resource in self.userResources:
+            return this_resource
+
+        return None
+       
     def uploadFile(self, filePath):
         """
         Store the upload files in the package

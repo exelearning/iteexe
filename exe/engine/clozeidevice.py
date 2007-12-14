@@ -138,6 +138,29 @@ click on the Hide/Show Word button below.</p>"""))
                        doc="Read only, use 'self.content.encodedContent = x' "
                            "instead")
 
+    def getResourcesField(self, this_resource): 
+        """ 
+        implement the specific resource finding mechanism for this iDevice: 
+        """ 
+        for this_image in self._content.images: 
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource: 
+                return self._content
+
+        for this_image in self.instructionsForLearners.images: 
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource: 
+                return self.instructionsForLearners
+
+        for this_image in self.feedback.images: 
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource: 
+                return self.feedback
+        
+        return None
+
+
+
     def upgradeToVersion1(self):
         """
         Upgrades exe to v0.10

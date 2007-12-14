@@ -463,6 +463,118 @@ class Resource(_Resource):
         """
         return '<%s.%s for "%s" at %s>' % (__name__, self.__class__.__name__, self._storageName, id(self))
 
+
+    def renameForMerging(self, newPackage):
+        """
+        to help the merging code in twisted/persisted/styles.py
+        when it finds that this resource's storageName is already 
+        in use with the merging destination package, newPackage.
+        Finds a new unique name by prepending "m1_", "m2_", etc...
+        note: new name should, of course, be unique to both the resource's
+        current source package, as well as the destinateion newPackage.
+        """ 
+        old_name = self._storageName
+        found_new_name = False
+        new_name_attempt = 0
+        preMergePackage = self.package
+
+        if self.checksum in newPackage.resources:
+            # okay, this resource IS already in the newPackage,
+            # but does it have the same name?
+            if self._storageName  \
+            == newPackage.resources[self.checksum][0]._storageName:
+                # nothing else to do, so leave found_name_name as False:
+                found_new_name = False
+            else:
+                # names differ!
+                # ==> we need to rebuild the iDevice content from below,
+                # but just set the new_name as that which is already
+                # stored in the newPackage:
+                new_name = newPackage.resources[self.checksum][0]._storageName
+                found_new_name = True
+            
+        while not found_new_name: 
+            # try prepending a merge suffix to the storageName, 
+            # and see if that already exists in EITHER the src OR dst package.
+            # try "m1_", or "m2_", etc...
+            new_name_attempt += 1 
+            new_name_suffix = "m" \
+                + str(new_name_attempt) + "_"
+            new_name = new_name_suffix \
+                + self.storageName 
+
+            if newPackage.findResourceByName(new_name) is None \
+            and preMergePackage.findResourceByName(new_name) is None:
+                found_new_name = True
+
+        if found_new_name:
+            log.warn("Renaming Resource from \""
+                    + self.storageName + "\" to \""
+                    + new_name)
+            # rename the actual file, which is still located
+            # in the preMergePackage temporary resourceDir:
+            old_path = Path(preMergePackage.resourceDir)\
+                    .joinpath(self.storageName) 
+            new_path = Path(preMergePackage.resourceDir)\
+                    .joinpath(new_name)
+            newFullFileName = Path(old_path).rename(new_path)
+            # and update the renamed storage naem:
+            self._storageName = new_name
+
+            # And also update references to this resource
+            # in its content, according to the specific _idevice
+            from exe.engine.appletidevice    import AppletIdevice
+            from exe.engine.galleryidevice   import GalleryIdevice
+
+            if isinstance(self._idevice, AppletIdevice):
+                # note that it COULD make it this far IF an AppletIdevice
+                # has the same resource, but by a different storageName, as
+                # another iDevice in the destination package:
+                raise Exception(_(u"renamed a Resource for an Applet Idevice, and it should not have even made it this far!"))
+
+            elif isinstance(self._idevice, GalleryIdevice):
+                # Re-generate the GalleryIdevice popupHTML,
+                # but it's best to re-generate as an AfterUpgradeHandler,
+                # since its OTHER resources (some of which might themselves
+                # be renamed with the merge) might not have been updated yet!
+                if self._idevice._createHTMLPopupFile not in \
+                G.application.afterUpgradeHandlers:
+                    G.application.afterUpgradeHandlers.append(
+                        self._idevice._createHTMLPopupFile)
+
+            else:
+                # if this is one of the many iDevices (generic or otherwise)
+                # which uses a FieldWithResources field, then the content
+                # will need to be changed directly.
+
+                this_field = self._idevice.getResourcesField(self)
+                from exe.engine.field            import FieldWithResources
+                if this_field is not None\
+                and isinstance(this_field, FieldWithResources):
+                    # 1. just change .content_w_resourcePaths directly:
+                    old_resource_path = "resources/" + old_name
+                    new_resource_path = "resources/" + new_name
+                    this_field.content_w_resourcePaths = \
+                        this_field.content_w_resourcePaths.replace(
+                            old_resource_path, new_resource_path)
+                    # 2. copy .content_w_resourcePaths  directly into .content
+                    # ONLY IF .content is already defined!
+                    if hasattr(this_field, 'content'):
+                        this_field.content = this_field.content_w_resourcePaths
+                    # 3. re-create .content_wo_resourcePaths through Massage*()
+                    # ONLY IF .content_wo_resourcePaths is already defined!
+                    if hasattr(this_field, 'content_wo_resourcePaths'):
+                        this_field.content_wo_resourcePaths = \
+                                this_field.MassageContentForRenderView()
+                else:
+                    # Any other iDevice is assumed to simply have a direct
+                    # link to the resource and need nothing else done.
+                    # ==> nothing else to do, eh?
+                    log.warn("Unaware of any other specific resource-renaming "
+                            + "activities necessary for this type of idevice: "
+                            + repr(self._idevice))
+
+
     def launch_testForZombies(self):
         """
         a wrapper to testForZombieResources(self), such that it might be called
@@ -493,7 +605,7 @@ class Resource(_Resource):
             # okay, this resource IS listed in the package's resources,
             # but does not have an idevice, nor is it a background image.
             # So....
-            # cycle through all of the pacakge nodes to find any idevice
+            # cycle through all of the package nodes to find any idevice
             # for which this is indeed a resource, and reset the _idevice
             # field on this resource once found, 
             # OR, determine that it actually is a zombie:

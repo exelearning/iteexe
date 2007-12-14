@@ -209,6 +209,19 @@ class Idevice(Persistable):
         if self.parentNode:
             self.parentNode.idevices.remove(self)
         parentNode.addIdevice(self)
+
+    def getResourcesField(self, this_resource):
+        """
+        Allow resources to easily find their specific corresponding field,
+        to help out with loading and especially merging scenarios for resources
+        with names already in use, for example.
+        This method is expected to be overridden within each specific iDevice.
+        """
+        # in the parent iDevice class, merely return a None,
+        # and let each specific iDevice class implement its own version:
+        log.warn("getResourcesField called on iDevice; no specific implementation "
+                + "available for this particular iDevice class: " + repr(self) )
+        return None
         
         
     # Protected Methods

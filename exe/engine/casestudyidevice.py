@@ -65,6 +65,24 @@ class Question(Persistable):
         self.image.idevice = idevice
         self.image.defaultImage = idevice.defaultImage
         self.image.isFeedback   = True
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice's
+        Question object:
+        """
+        for this_image in self.questionTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.questionTextArea
+
+        for this_image in self.feedbackTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.feedbackTextArea
+
+        return None
+
         
     def upgradeToVersion1(self):
         """
@@ -207,6 +225,22 @@ situation.""")
         Add a new question to this iDevice. 
         """
         self.questions.append(Question(self))
+
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.storyTextArea.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.storyTextArea
+
+        for this_question in self.questions:
+            this_field = this_question.getResourcesField(this_resource)
+            if this_field is not None:
+                return this_field
+
+        return None
 
 
     def upgradeToVersion1(self):

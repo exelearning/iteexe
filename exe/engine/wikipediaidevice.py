@@ -176,6 +176,25 @@ within Wikipedia.""")
         return content
 
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """ 
+        for this_image in self.article.images: 
+            if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.article
+
+        # NOTE that WikipediaIdevices list their images 
+        # in the idevice's .userResources, not in its .article.images...  
+        # a slightly different (and earlier) approach to embedding images: 
+        for this_image in self.userResources: 
+            if this_resource == this_image: 
+                return self.article
+
+        return None
+
+
     def __getstate__(self):
         """
         Re-write the img URLs just in case the class name has changed

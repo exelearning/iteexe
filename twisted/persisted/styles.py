@@ -19,6 +19,8 @@ except ImportError:
     import StringIO
 
 from exe                import globals as G
+from exe.engine.path    import Path
+
 # Use the eXe logger directly:
 import logging
 log = logging.getLogger(__name__)
@@ -335,6 +337,96 @@ class Versioned:
                     else:
                         log.debug("ignoring Resource "+repr(self) \
                             + " as it no longer applies to any package.") 
+
+                # check for the merging of duplicate resources/names
+                if mergeCheck:
+                    if self.checksum in newPackage.resources:
+                        log.warn("this Resource already exists in the "
+                            + "destination merge package")
+                        # Be careful, though, as it might have assumed a
+                        # different name in the destination .elp:
+                        existing_name = newPackage.resources[self.checksum][0]\
+                                ._storageName
+                        if self._storageName != existing_name:
+                            log.warn(".... but Resource \"" 
+                                    + self._storageName
+                                    + "\" was called \"" + existing_name
+                                    + "\" in the destination"
+                                    + " package.")
+                        # go ahead and run through the "rename" anyhow,
+                        # one which will rename it to the existing name:
+                        from exe.engine.appletidevice import AppletIdevice
+                        if not isinstance(self._idevice, AppletIdevice):
+                            self.renameForMerging(newPackage)
+                        else:
+                            log.error("Unable to merge duplicate resource "
+                                    + "with different name in iDevice = "
+                                    + repr(self._idevice)
+                                    + ", Node = " 
+                                    + self._idevice.parentNode.title
+                                    + ", name: \""
+                                    + self.storageName
+                                    + "\", and original name = \""
+                                    + existing_name + "\".")
+                            # and, as with the below....
+                            # Allow the log.error to list EACH and EVERY
+                            # problem duplicate-name resource BEFORE
+                            # actually throwing the exception below,
+                            # during the isMerge (and not mergeCheck)
+
+                    else: 
+                        # ensure a unique name in the merged package: 
+                        this_res = newPackage.findResourceByName(
+                                self.storageName)
+                        if this_res is not None \
+                        and self.storageName == this_res.storageName:
+                            log.warn("merging into package that already"
+                                + " has another resource of this name.")
+                            # when trying to merge in a duplicate-name resource,
+                            # ensure that it is part of an iDevice that we
+                            # CAN properly update all occurrences:
+                            from exe.engine.appletidevice import AppletIdevice
+                            if not isinstance(self._idevice, AppletIdevice):
+                                self.renameForMerging(newPackage)
+                            else:
+                                log.error("Unable to merge duplicate resource "
+                                        + "name in iDevice = "
+                                        + repr(self._idevice)
+                                        + ", Node = " 
+                                        + self._idevice.parentNode.title
+                                        + ", name: \""
+                                        + self.storageName
+                                        + "\".")
+                                # Allow the log.error to list EACH and EVERY
+                                # problem duplicate-name resource BEFORE
+                                # actually throwing the exception below,
+                                # during the isMerge (and not mergeCheck)
+
+                # continue check for the merging of duplicate resource names
+                elif isMerge:
+                    # either of the above two log.error cases, once they
+                    # have printed out all of the log messages during the 
+                    # the mergeCheck pass.  Now in the final isMerge pass,
+                    # go ahead and terminate the process with an exception:
+                    if (self.checksum in newPackage.resources \
+                    and self.storageName != \
+                    newPackage.resources[self.checksum][0]._storageName) \
+                    or ( not self.checksum in newPackage.resources \
+                    and newPackage.findResourceByName(self.storageName) \
+                    is not None):
+                        # Merely throw the exception here:
+                        # all handle-able duplicate resource names
+                        # are already taken care of above, during the mergeCheck
+                        # where the warnings have already been logged for
+                        # any and ALL non-handle-able ones.
+                        # i.e., all problem resources are now listed in the log,
+                        # so it's reasonable to stop the merge with an exception
+                        #
+                        # @ least for now, include the specific Java Applet info
+                        # since it is the ONLY iDevice unable to handle this.
+                        raise Exception(_(u"Unable to merge: duplicate Java Applet resource names exist (including: \"" + self.storageName + "\"). Please see the log file for the names of ALL such problem resources."))
+
+
 
                 # launch zombie check for Resources,
                 # to be done AFTER the all objects have been updated....

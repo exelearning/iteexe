@@ -432,6 +432,18 @@ these in a gallery context rather then individually.</p>"""),
     titleInstruc = lateTranslate('titleInstruc')
     htmlSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._htmlResource.storageName))
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        for this_image in self.images:
+            if hasattr(this_image, '_imageResource') \
+            and this_resource == this_image._imageResource:
+                return self.images
+
+        return None
+       
+
     def genImageId(self):
         """Generate a unique id for an image.
         Called by 'GalleryImage'"""
