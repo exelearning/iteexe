@@ -3015,7 +3015,7 @@ msgstr "Chechenia"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
 msgid "label=\"About eXe\" accesskey=\"a\""
-msgstr "label=\"About\" accesskey=\"a\""
+msgstr "label=\"Sobre o eXe\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">

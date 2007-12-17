@@ -2755,9 +2755,8 @@ msgstr "Fonte:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
-#, fuzzy
 msgid "label=\"Print\" accesskey=\"p\""
-msgstr "label=\"Acerca\" accesskey=\"a\""
+msgstr "label=\"Imprimir\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -2935,7 +2934,7 @@ msgstr "Basco"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Encerrar\" accesskey=\"q\""
+msgstr "label=\"Sair\" accesskey=\"q\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
