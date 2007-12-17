@@ -427,7 +427,7 @@ function insertAction() {
         // Apply the same file-browser button magic to any filenames which were
         // typed into the URL field by hand, rather than selected via the browser button,
         // as will apply to any !mailto: and !http: and !file: which isn't in the resource or previews dirs:
-        if (src.search('resources/')!=0 && src.search('/previews/')!=0 && src.search('../previews/')!=0 && src.search('http:')!=0 && src.search('file:')!=0 && src.search('mailto:')!= 0) {
+        if (src.search('resources/')!=0 && src.search('/previews/')!=0 && src.search('../previews/')!=0 && src.search('http:')!=0 && src.search('https:')!=0 && src.search('file:')!=0 && src.search('mailto:')!= 0) {
             // looks like a hand-typed filename, 
             // so use type file2insert to indicate that no browser or preview is necessary:
             doBrowserHTML('hrefbrowser','href','file2insert','advlink');
