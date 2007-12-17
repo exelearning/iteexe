@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-12 15:31+1300\n"
-"PO-Revision-Date: 2007-09-25 09:10+1200\n"
+"PO-Revision-Date: 2007-12-15 11:53+1300\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -569,11 +569,11 @@ msgstr "Cloze"
 
 #: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
-msgstr "Cloze-activiteit"
+msgstr "Invuloefening"
 
 #: exe/webui/element.py:999
 msgid "Cloze Text"
-msgstr "Cloze-tekst"
+msgstr "Invultekst"
 
 #: exe/webui/element.py:1555 exe/webui/element.py:1845
 msgid "Correct"
@@ -657,7 +657,7 @@ msgid ""
 "presented. "
 msgstr ""
 "Omschrijf de activiteiten die bij de\n"
-"case story horen. Dit kan in de vorm van vragen of instructies voor acties\n"
+"gevalstudie horen. Dit kan in de vorm van vragen of instructies voor acties\n"
 "die de leerling kunnen helpen om tot een oplossing van het probleem te komen."
 
 #: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
@@ -1745,7 +1745,7 @@ msgid ""
 "options as required by clicking the check box beside the option."
 msgstr ""
 "Duid alle juiste antwoorden aan\n"
-"die nodig zijndoor het keuzerondje aan te klikken."
+"die nodig zijn door het keuzerondje aan te klikken."
 
 #: exe/webui/quiztestblock.py:104
 msgid "Select pass rate: "
@@ -2416,7 +2416,7 @@ msgstr "Opsteller:"
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
 msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
-msgstr ""
+msgstr "Door deze optie aan te vinken plaatst eXe de Vorige-Volgende links op elke pagina van het leerpakket.  Dit is geen standaard uitbreiding voor SCORM 1.2 en zal alleen in sommige Moodle versies werken "
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2987,7 +2987,7 @@ msgstr "Azerbeidjaans"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Pakket invoegen\" accesskey=\"i\""
+msgstr "label=\"Pakket importeren\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3000,7 +3000,7 @@ msgstr "Baskir"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Pakket uitpakken\" accesskey=\"u\""
+msgstr "label=\"Pakket exporteren\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3957,7 +3957,7 @@ msgstr "Rechten:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr "Standaard zullen de rechten van deze bron worden weergegeven, of verwijzen naar een bron waar de rechten worden weergegeven.De rechten bevatten dikwijls info over de intelectuele eigendomsrechten (IPR, copyright, en andere eigendomsrechten. Wanneer deze rechten niet vermeld staan kunnen nooit de rechten van het werkworden opgeëist."
+msgstr "Standaard zullen de rechten van deze bron worden weergegeven, of verwijzen naar een bron waar de rechten worden weergegeven.De rechten bevatten dikwijls info over de intelectuele eigendomsrechten (IPR, copyright, en andere eigendomsrechten. Wanneer deze rechten niet vermeld staan kunnen nooit de rechten van het werk worden opgeëist."
 
 #~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
 #~ msgstr "Afbeelding toevoegen aan iDevice."
