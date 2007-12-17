@@ -4,6 +4,7 @@ Next Release
 * Make importing old packages more robust (and remove unused resources)
 * Fix merging packages that contain resources with same name as main package
 * Fix upgrading of multichoice questions
+* Fix SCORM Quiz pass rate to signal pass for scores of exactly the rate
 * Update to BeautifulSoup 3.0.5
 
 Version 1.02 (r3303)

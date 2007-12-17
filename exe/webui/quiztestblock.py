@@ -313,7 +313,7 @@ class QuizTestBlock(Block):
            var mode = doLMSGetValue( "cmi.core.lesson_mode" );
      
                if ( mode != "review"  &&  mode != "browse" ){
-                 if ( actualScore <= %s )
+                 if ( actualScore < %s )
                  {
                    doLMSSetValue( "cmi.core.lesson_status", "failed" );
                  }
