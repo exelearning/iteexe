@@ -99,7 +99,7 @@ class _Resource(Persistable):
 
         # new safety mechanism for old corrupt packages which
         # have non-existent resources that are being deleted:
-        if not hasattr(self, 'checksum'):
+        if not hasattr(self, 'checksum') or self.checksum is None:
             if package is None:
                 log.warn("Resource " + repr(self) + " has no checksum " \
                         + "(probably no source file), but is being removed "\
@@ -171,7 +171,7 @@ class _Resource(Persistable):
         """
         # new safety mechanism for old corrupt packages which
         # have non-existent resources that are being deleted and such:
-        if not hasattr(self, 'checksum'):
+        if not hasattr(self, 'checksum') or self.checksum is None:
             if self._package is None:
                 log.warn("Resource " + repr(self) + " has no checksum " \
                         + "(probably no source file), but is being removed "\
@@ -374,7 +374,8 @@ class Resource(_Resource):
                                 # removal of an invalid resource.
             if not found_resource:
                 new_md5 = None 
-                log.warn('Failed to do a checksumCheck on resource ' + self
+                log.warn('Failed to do a checksumCheck on resource ' 
+                    + repr(self)
                     + ', with unknown path, but storageName = ' 
                     + self._storageName) 
             else:
@@ -444,6 +445,12 @@ class Resource(_Resource):
                 # Because jelly seems to have no order of upgrading children and parents
                 # We have to modify the package here!
                 self._package.resources = {}
+        elif self._package is None:
+            log.warn("resource " + repr(self) + " in addSelfToPackageList with "
+                    + "self._package = None (perhaps a zombie already deleted?). "
+                    + "Returning.")
+            return
+
         self._userName = self._storageName
         if self.path.isfile():
             self.checksum = self.path.md5
@@ -477,6 +484,9 @@ class Resource(_Resource):
         found_new_name = False
         new_name_attempt = 0
         preMergePackage = self.package
+
+        # make sure that this possibly old resource HAS a proper checksum:
+        self.checksumCheck()
 
         if self.checksum in newPackage.resources:
             # okay, this resource IS already in the newPackage,
@@ -594,6 +604,9 @@ class Resource(_Resource):
         is indeed attached to something.  
         to be called from twisted/persist/styles.py upon load of a Resource.
         """
+        # make sure that this possibly old resource HAS a proper checksum:
+        self.checksumCheck()
+
         if self._package is None \
         or self.checksum not in self._package.resources:
             # most definitely appears to be a zombie:
