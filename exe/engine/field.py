@@ -2357,15 +2357,21 @@ class QuizOptionField(Field):
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.answerTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.answerTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'answerTextArea')\
+        and hasattr(self.answerTextArea, 'images'):
+            for this_image in self.answerTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.answerTextArea
 
-        for this_image in self.feedbackTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.feedbackTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'feedbackTextArea')\
+        and hasattr(self.feedbackTextArea, 'images'):
+            for this_image in self.feedbackTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.feedbackTextArea
 
         return None
 
@@ -2419,15 +2425,21 @@ class QuizQuestionField(Field):
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.questionTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.questionTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'questionTextArea')\
+        and hasattr(self.questionTextArea, 'images'):
+            for this_image in self.questionTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.questionTextArea
 
-        for this_image in self.hintTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.hintTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'hintTextArea')\
+        and hasattr(self.hintTextArea, 'images'):
+            for this_image in self.hintTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.hintTextArea
 
         for this_option in self.options:
             this_field = this_option.getResourcesField(this_resource)
@@ -2477,10 +2489,13 @@ class SelectOptionField(Field):
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.answerTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.answerTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'answerTextArea')\
+        and hasattr(self.answerTextArea, 'images'):
+            for this_image in self.answerTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.answerTextArea
 
         return None
 
@@ -2550,15 +2565,21 @@ to provide the learner with.""")
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.questionTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.questionTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'questionTextArea')\
+        and hasattr(self.questionTextArea, 'images'):
+            for this_image in self.questionTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.questionTextArea
 
-        for this_image in self.feedbackTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.feedbackTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'feedbackTextArea')\
+        and hasattr(self.feedbackTextArea, 'images'):
+            for this_image in self.feedbackTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.feedbackTextArea
 
         for this_option in self.options:
             this_field = this_option.getResourcesField(this_resource)

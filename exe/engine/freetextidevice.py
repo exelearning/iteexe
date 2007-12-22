@@ -55,10 +55,12 @@ text through the text editing buttons associated with the field."""),
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.content.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.content
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'content') and hasattr(self.content, 'images'):
+            for this_image in self.content.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.content
 
         return None
        

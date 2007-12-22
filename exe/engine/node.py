@@ -60,7 +60,10 @@ class Node(Persistable):
         Returns our id.
         Used property to make it read only
         """
-        return self._id
+        if hasattr(self, '_id'): 
+            return self._id
+        else:
+            return None
     id = property(getId)
 
 
@@ -70,7 +73,10 @@ class Node(Persistable):
         Returns our package.
         Makes it read only
         """
-        return self._package
+        if hasattr(self, '_package'): 
+            return self._package
+        else:
+            return None
     package = property(getPackage)
 
 
@@ -88,10 +94,13 @@ class Node(Persistable):
         """
         Returns our title as a string
         """
-        if self._title:
+        if hasattr(self, '_title') and self._title:
             return toUnicode(self._title)
-        else:
+        elif hasattr(self, '_package'):
             return _(toUnicode(self.package.levelName(self.level - 1)))
+        else:
+            return u'Unknown Node [no title or package]'
+
 
 
     def setTitle(self, title):
@@ -199,11 +208,12 @@ class Node(Persistable):
         else:
             delete_msg += "deleting Node "
         delete_msg += "[parent="
-        if self.parent:
+        if hasattr(self, 'parent') and self.parent:
             delete_msg += "\"" + self.parent._title + "\"] \""
         else:
             delete_msg += "None] \""
-        delete_msg += self._title + "\""
+        delete_msg += self.getTitle() + "\" nodeId=" + str(self.getId()) \
+            + ", @ \"" + str(id(self)) +"\""
 
         if pruningZombies: 
             log.warn(delete_msg)
@@ -212,7 +222,7 @@ class Node(Persistable):
 
         # Remove ourself from the id dict and our parents child thing
         # (zombie nodes may not even be listed)
-        if self.package is not None \
+        if hasattr(self, '_package') and self.package is not None \
         and self.id in self.package._nodeIdDict \
         and self.package._nodeIdDict[self.id] == self: 
             # okay, this node IS in the package's node ID dictionary.
@@ -256,15 +266,18 @@ class Node(Persistable):
                 del self.package._nodeIdDict[self.id]
                 # and continue on with the pruning / standard deleting...
 
-        if self.parent:
+        if hasattr(self, 'parent') and self.parent:
             # (zombie nodes will NOT necessarily be in the parent's children):
-            if self in self.parent.children: 
+            if hasattr(self.parent, 'children')\
+            and self in self.parent.children: 
                 self.parent.children.remove(self)
             self.parent = None
 
         # Remove all children from package id-dict and our own children list
         # use reverse for loop to delete, in case of any problems deleting:
-        num_children = len(self.children)
+        num_children = 0
+        if hasattr(self, 'children'):
+            num_children = len(self.children)
         for i in range(num_children-1, -1, -1):
             if self.children[i].parent is None:
                 log.warn('reconnecting child node before deletion from node')
@@ -277,7 +290,9 @@ class Node(Persistable):
 
         # Let all the iDevices know they're being deleted too
         # use reverse for loop to delete, in case of any problems deleting:
-        num_idevices = len(self.idevices)
+        num_idevices = 0
+        if hasattr(self, 'idevices'): 
+            num_idevices = len(self.idevices)
         for i in range(num_idevices-1, -1, -1):
             if self.idevices[i].parentNode is None:
                 log.warn('reconnecting iDevice before deletion from node')
@@ -470,11 +485,12 @@ class Node(Persistable):
         """
         # only bother launching the zombie node sub-tree check 
         # on potential root nodes, either valid or of zombie trees:
-        if self.parent is None: 
+        if not hasattr(self, 'parent') or self.parent is None: 
             # supposedly the root of a sub-tree, but it could also be a zombie.
             # Allow all of the package to load up and upgrade before testing:
             G.application.afterUpgradeHandlers.append(self.testForZombieNodes)
-        elif not self in self.parent.children: 
+        elif not hasattr(self.parent, 'children')\
+        or not self in self.parent.children: 
             # this seems a child which is not properly connected to its parent:
             G.application.afterUpgradeHandlers.append(self.testForZombieNodes)
 
@@ -486,8 +502,14 @@ class Node(Persistable):
         """
         # remembering that this is only launched for this nodes
         # with parent==None or not in the parent's children list.
-        if self._package is None or self._package.root != self: 
-            log.warn("Found zombie Node \"" + self._title + "\".")
+        if not hasattr(self, '_package') or self._package is None\
+        or not hasattr(self._package, 'root') or self._package.root != self: 
+            log.warn("Found zombie Node \"" + self.getTitle() 
+                + "\", nodeId=" + str(self.getId()) 
+                + " @ " + str(id(self)) + ".")
+            if not hasattr(self, '_title'):
+                # then explicitly set its _title attribute to update below
+                self._title = self.getTitle()
             # disconnect it from any package, parent, and idevice links,
             # and go through and delete any and all children nodes:
             zombie_preface = u"ZOMBIE("

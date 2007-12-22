@@ -71,15 +71,21 @@ class Question(Persistable):
         implement the specific resource finding mechanism for this iDevice's
         Question object:
         """
-        for this_image in self.questionTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.questionTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'questionTextArea')\
+        and hasattr(self.questionTextArea, 'images'):
+            for this_image in self.questionTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.questionTextArea
 
-        for this_image in self.feedbackTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.feedbackTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'feedbackTextArea')\
+        and hasattr(self.feedbackTextArea, 'images'):
+            for this_image in self.feedbackTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.feedbackTextArea
 
         return None
 
@@ -230,10 +236,13 @@ situation.""")
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.storyTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.storyTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'storyTextArea')\
+        and hasattr(self.storyTextArea, 'images'):
+            for this_image in self.storyTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.storyTextArea
 
         for this_question in self.questions:
             this_field = this_question.getResourcesField(this_resource)

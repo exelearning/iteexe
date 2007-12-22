@@ -180,10 +180,12 @@ within Wikipedia.""")
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.article.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.article
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'article') and hasattr(self.article, 'images'):
+            for this_image in self.article.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.article
 
         # NOTE that WikipediaIdevices list their images 
         # in the idevice's .userResources, not in its .article.images...  

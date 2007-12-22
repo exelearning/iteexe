@@ -436,10 +436,12 @@ these in a gallery context rather then individually.</p>"""),
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.images
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'images'):
+            for this_image in self.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.images
 
         return None
        

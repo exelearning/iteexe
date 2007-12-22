@@ -57,20 +57,29 @@ class TrueFalseQuestion(Persistable):
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.questionTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.questionTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'questionTextArea')\
+        and hasattr(self.questionTextArea, 'images'):
+            for this_image in self.questionTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.questionTextArea
 
-        for this_image in self.feedbackTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.feedbackTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'feedbackTextArea')\
+        and hasattr(self.feedbackTextArea, 'images'):
+            for this_image in self.feedbackTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.feedbackTextArea
 
-        for this_image in self.hintTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.hintTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'hintTextArea')\
+        and hasattr(self.hintTextArea, 'images'):
+            for this_image in self.hintTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.hintTextArea
 
         return None
 
@@ -162,10 +171,13 @@ completed."""),
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.instructionsForLearners.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.instructionsForLearners
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'instructionsForLearners')\
+        and hasattr(self.instructionsForLearners, 'images'):
+            for this_image in self.instructionsForLearners.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.instructionsForLearners
 
         for this_question in self.questions:
             this_field = this_question.getResourcesField(this_resource)

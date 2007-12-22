@@ -239,5 +239,25 @@ you have just inserted.""")
         # finally: delete THIS idevice itself, deleting it from the node
         self.delete()
 
+   
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'image') and hasattr(self.image, 'imageResource'):
+            if this_resource == self.image.imageResource:
+                return self.image
+
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'text') and hasattr(self.text, 'images'):
+            for this_image in self.text.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.text
+
+        return None
+       
+
                 
 # ===========================================================================

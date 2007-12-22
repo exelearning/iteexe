@@ -120,11 +120,15 @@ class _Resource(Persistable):
                 self._package = None
             return
 
-        if self._package:
+        if self._package and hasattr(self._package, 'resources')\
+        and self.checksum in self._package.resources:
             # Remove our self from old package's list of resources
             siblings = self._package.resources[self.checksum]
             try: 
-                siblings.remove(self) 
+                # remove any multiple occurrences of this as well:
+                # (as might in corrupt files)
+                while self in siblings: 
+                    siblings.remove(self) 
             except Exception, e:
                 # this can occur with old corrupt files, wherein the resource 
                 # was not actually properly connected to the package.  
@@ -134,24 +138,38 @@ class _Resource(Persistable):
                 # We are the last user of this file
                 del self._package.resources[self.checksum]
             oldPath = self.path
-        else:
-            assert hasattr(self, '_originalFile')
+
+        elif hasattr(self, '_originalFile'):
             oldPath = self._originalFile
+        else:
+            log.warn("Tried to remove a resource (\"" + repr(self)
+                    + "\") from what seems to be a "
+                    + "corrupt package: \"" + repr(self._package) 
+                    + "\"; setting oldPackage to None.")
+            # but let the new package fall right through, trying:
+            oldPath = None
+            oldPackage = None
+
         self._package = package
         if self._package:
             self._addOurselvesToPackage(oldPath)
         # Remove our old file if necessary
         if oldPackage and self.checksum not in oldPackage.resources:
-            if oldPath.exists():
+            # ensure that oldPath really is an actual Path object as well.
+            # on old corrupt files, oldPath is sometimes coming in as a 
+            # string, perhaps when no resourceDir on its corrupt package(?).
+            if oldPath and isinstance(oldPath, Path) and oldPath.exists():
                 try: 
                     oldPath.remove()
                 except WindowsError:
                     pass
             else:
-                log.error("Tried to delete a resource that's already not there anymore: "
-                          "filename=\"%s\" userName=\"%s\"" % (oldPath, self.userName))
+                log.error("Tried to delete a resource that's already not "
+                    + " there anymore: filename=\"%s\" "
+                    + "userName=\"%s\"" % (oldPath, self.userName))
         # If our Idevice has not already moved, cut ourselves off from it
-        if self._idevice and self._idevice.parentNode.package is not self._package:
+        if self._idevice \
+        and self._idevice.parentNode.package is not self._package:
             self._idevice.userResources.remove(self)
             self._idevice = None
 
@@ -196,6 +214,11 @@ class _Resource(Persistable):
                     + " no resources on package " + repr(self._package)
                     + "; possibly after a deepcopy")
             return
+        if not hasattr(self._package, 'resourceDir'):
+            log.error("_AddOurselvesToPackage called with an invalid package: " 
+                    + " no resourceDir on package " + repr(self._package)
+                    + "; possibly an old/corrupt resource or package")
+            return
 
         siblings = self._package.resources.setdefault(self.checksum, [])
         if siblings:
@@ -215,7 +238,9 @@ class _Resource(Persistable):
                 storageName = (self._package.resourceDir/storageName).unique()
                 self._storageName = str(storageName.basename())
                 oldPath.copyfile(self.path)
-        siblings.append(self)
+        if self not in siblings:
+            # prevent doubling-up (as might occur when cleaning corrupt files)
+            siblings.append(self)
 
     # Public methods
 
@@ -307,7 +332,8 @@ class Resource(_Resource):
         """
         Returns the path to the resource
         """
-        if self._package:
+        if hasattr(self, '_package') and self._package\
+        and hasattr(self._package, 'resourceDir'):
             return self._package.resourceDir/self._storageName
         else:
             return self._storageName
@@ -391,7 +417,10 @@ class Resource(_Resource):
             if new_md5 is not None and hasattr(self._package, 'resources'): 
                 # And add our new md5 to the package's list of resources:
                 siblings = self._package.resources.setdefault(new_md5, [])
-                siblings.append(self)
+                if self not in siblings:
+                    # prevent doubling-up 
+                    # (as might occur when cleaning corrupt files)
+                    siblings.append(self)
 
         elif self.checksum != new_md5: 
             old_md5 = self.checksum
@@ -403,14 +432,21 @@ class Resource(_Resource):
             if hasattr(self._package, 'resources'): 
                 # Remove our old md5 from the package's list of resources:
                 siblings = self._package.resources[old_md5]
-                siblings.remove(self)
+                # remove any multiple occurrences of this as well:
+                # (as might in corrupt files)
+                while self in siblings: 
+                    siblings.remove(self)
                 if len(siblings) == 0:
                     # We are the last user of this file
                     del self._package.resources[old_md5]
                 if new_md5 is not None: 
                     # And add our new md5 to the package's list of resources:
                     siblings = self._package.resources.setdefault(new_md5, [])
-                    siblings.append(self)
+
+                    if self not in siblings:
+                        # prevent doubling-up 
+                        # (as might occur when cleaning corrupt files)
+                        siblings.append(self)
 
 
     def upgradeToVersion2(self):
@@ -598,21 +634,64 @@ class Resource(_Resource):
             G.application.afterUpgradeHandlers.append(
                     self.testForZombieResources)
 
-    def testForZombieResources(self):
+    def testForAndDeleteZombieResources(self):
+        """
+        A quick wrapper around testForZombieResources to force the
+        deleteZombie parameter to True (normally defaults to False).
+        This additional wrapper is here such that the afterUpgradeHandler
+        can call this directly, and not require any particular parameters.
+        """
+        self.testForZombieResources(deleteZombie=True)
+
+    def testForZombieResources(self, deleteZombie=False):
         """ 
         testing a possible post-load confirmation that this resource 
         is indeed attached to something.  
         to be called from twisted/persist/styles.py upon load of a Resource.
+
+        to accomodate random loading issues, in which, for example, two
+        resource objects pointing to the same file are loaded, and one is
+        a zombie to be deleted - we want to ensure that the valid one has
+        been found and properly re-attach all non-zombies before actually 
+        deleting any resources and inadvertently deleting the resource file!
+
+        With a new deleteZombie parameter, this supports a first-pass call
+        which merely tries to re-attach any potential zombie resources.
+        If STILL a zombie, then the launched 2nd-pass test can delete it.
         """
         # make sure that this possibly old resource HAS a proper checksum:
         self.checksumCheck()
 
+        if self._package is not None\
+        and not hasattr(self._package, 'resources'):
+            # perhaps the package has not yet loaded up?
+            if not deleteZombie:
+                log.warn("1st pass: Checking zombie Resource \"" + str(self) 
+                    + "\", but package does not yet have resources;"
+                    + " ignoring for now.")
+                # but add the second-pass call, 
+                # after cycling through all other resources 1 time:
+                G.application.afterUpgradeHandlers.append(
+                    self.testForAndDeleteZombieResources)
+                return
+            else:
+                log.warn("2nd pass: Checking zombie Resource \"" + str(self) 
+                    + "\", but package does not yet have resources. deleting.")
+                self.delete() 
+                del self
+                return
+
         if self._package is None \
         or self.checksum not in self._package.resources:
             # most definitely appears to be a zombie:
-            log.warn("Removing zombie Resource \"" + str(self) + "\".")
-            self.delete()
-            del self
+            if deleteZombie: 
+                log.warn("Removing zombie Resource \"" + str(self) + "\".") 
+                self.delete() 
+                del self
+            else:
+                log.warn("1st pass: not yet removing zombie Resource \""
+                        + str(self) + "\".")
+
         elif self._package is not None and self._idevice is None\
         and self != self._package._backgroundImg:
             # okay, this resource IS listed in the package's resources,
@@ -654,8 +733,16 @@ class Resource(_Resource):
 
             # if not found in ANY idevice, it probably IS a zombie
             if found_idevice is None:
-                log.warn("Removing zombie Resource \"" + str(self) + "\".")
-                self.delete()
-                del self
+                if deleteZombie: 
+                    log.warn("Removing zombie Resource \"" + str(self) + "\".") 
+                    self.delete() 
+                    del self 
+                else: 
+                    log.warn("1st pass: not yet removing zombie Resource \""
+                        + str(self) + "\".")
+                    # but add the second-pass call, 
+                    # after cycling through all other resources 1 time:
+                    G.application.afterUpgradeHandlers.append(
+                        self.testForAndDeleteZombieResources)
 
 # ===========================================================================

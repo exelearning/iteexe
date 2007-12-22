@@ -142,20 +142,27 @@ click on the Hide/Show Word button below.</p>"""))
         """ 
         implement the specific resource finding mechanism for this iDevice: 
         """ 
-        for this_image in self._content.images: 
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource: 
-                return self._content
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, '_content') and hasattr(self._content, 'images'):
+            for this_image in self._content.images: 
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self._content
 
-        for this_image in self.instructionsForLearners.images: 
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource: 
-                return self.instructionsForLearners
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'instructionsForLearners')\
+        and hasattr(self.instructionsForLearners, 'images'):
+            for this_image in self.instructionsForLearners.images: 
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.instructionsForLearners
 
-        for this_image in self.feedback.images: 
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource: 
-                return self.feedback
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'feedback') and hasattr(self.feedback, 'images'):
+            for this_image in self.feedback.images: 
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.feedback
         
         return None
 

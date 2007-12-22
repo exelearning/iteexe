@@ -219,8 +219,9 @@ class Idevice(Persistable):
         """
         # in the parent iDevice class, merely return a None,
         # and let each specific iDevice class implement its own version:
-        log.warn("getResourcesField called on iDevice; no specific implementation "
-                + "available for this particular iDevice class: " + repr(self) )
+        log.warn("getResourcesField called on iDevice; no specific "
+                + "implementation available for this particular iDevice "
+                + "class: " + repr(self) )
         return None
         
         

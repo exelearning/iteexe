@@ -65,13 +65,17 @@ you have just inserted.""")
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        if this_resource == self.flash.flashResource:
-            return self.flash
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'flash') and hasattr(self.flash, 'flashResource'):
+            if this_resource == self.flash.flashResource:
+                return self.flash
 
-        for this_image in self.text.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.text
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'text') and hasattr(self.text, 'images'):
+            for this_image in self.text.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.text
 
         return None
        

@@ -291,7 +291,7 @@ class Versioned:
             # automatically reconnecting these objects to the new package:
             #
             if repr(base)=="<class 'exe.engine.resource.Resource'>":
-                # map out the elp structure:
+                # print out the elp objects:
                 if not mergeCheck: 
                     log.debug("LOADING RESOURCE = \"" + repr(self) + "\"")
                 #
@@ -331,9 +331,11 @@ class Versioned:
                             # can just reset its package directly, and any
                             # subsequent upgrades can handle the rest.
                             if not mergeCheck:
-                                log.warn("relinking corrupt Resource " \
-                                    +repr(self) + " to new package.") 
-                                self._package = newPackage
+                                # try WITHOUT relinking,
+                                # since zombie checks are now done:
+                                log.warn("NOT relinking corrupt Resource " \
+                                    +repr(self) + " to new package."
+                                    + " (letting zombie check correct it)") 
                     else:
                         log.debug("ignoring Resource "+repr(self) \
                             + " as it no longer applies to any package.") 
@@ -341,25 +343,28 @@ class Versioned:
                 # check for the merging of duplicate resources/names
                 if mergeCheck:
                     if self.checksum in newPackage.resources:
-                        log.warn("this Resource already exists in the "
+                        log.warn("this Resource \"" + self._storageName
+                            + "\" already exists in the "
                             + "destination merge package")
                         # Be careful, though, as it might have assumed a
                         # different name in the destination .elp:
                         existing_name = newPackage.resources[self.checksum][0]\
                                 ._storageName
-                        if self._storageName != existing_name:
+                        if self._storageName == existing_name:
+                            log.warn(".... and shares the same name.  easy!")
+                        else:
                             log.warn(".... but Resource \"" 
                                     + self._storageName
                                     + "\" was called \"" + existing_name
                                     + "\" in the destination"
                                     + " package.")
-                        # go ahead and run through the "rename" anyhow,
-                        # one which will rename it to the existing name:
-                        from exe.engine.appletidevice import AppletIdevice
-                        if not isinstance(self._idevice, AppletIdevice):
-                            self.renameForMerging(newPackage)
-                        else:
-                            log.error("Unable to merge duplicate resource "
+                            # go ahead and run through the "rename" anyhow,
+                            # one which will rename it to the existing name:
+                            from exe.engine.appletidevice import AppletIdevice
+                            if not isinstance(self._idevice, AppletIdevice):
+                                self.renameForMerging(newPackage)
+                            else:
+                                log.error("Unable to merge duplicate resource "
                                     + "with different name in iDevice = "
                                     + repr(self._idevice)
                                     + ", Node = " 
@@ -368,11 +373,11 @@ class Versioned:
                                     + self.storageName
                                     + "\", and original name = \""
                                     + existing_name + "\".")
-                            # and, as with the below....
-                            # Allow the log.error to list EACH and EVERY
-                            # problem duplicate-name resource BEFORE
-                            # actually throwing the exception below,
-                            # during the isMerge (and not mergeCheck)
+                                # and, as with the below....
+                                # Allow the log.error to list EACH and EVERY
+                                # problem duplicate-name resource BEFORE
+                                # actually throwing the exception below,
+                                # during the isMerge (and not mergeCheck)
 
                     else: 
                         # ensure a unique name in the merged package: 
@@ -430,16 +435,25 @@ class Versioned:
 
                 # launch zombie check for Resources,
                 # to be done AFTER the all objects have been updated....
+                #
                 if not mergeCheck: 
+                    # first pass test, to see if a potential zombie resource
+                    # and to fix it if not, but don't delete it quite yet,
+                    # but call it a second time after going through all other
+                    # resources....
+                    # (for random timing issues in loading resources, etc.)
                     if base.__dict__.has_key("launch_testForZombies"): 
                         method = base.__dict__.get("launch_testForZombies") 
                         method(self)
 
 
+
             elif repr(base) == "<class 'exe.engine.node.Node'>":
-                # map out the elp structure:
+                # print out the elp objects:
                 if not mergeCheck: 
-                    log.debug("LOADING NODE = \"" + self._title + "\"")
+                    log.debug("LOADING NODE = \"" + self.getTitle() + "\", "
+                         + "nodeId=" + str(self.getId()) + ", @ \"" 
+                         + str(id(self)) + "\"")
                 #
                 # Note: some VERY old and corrupt packages have come in that
                 # don't even have the proper ._package attribute, nor ._id,
@@ -460,19 +474,22 @@ class Versioned:
                     elif not isMerge:
                         # swap to a proper package on Nodes, IF the current
                         # package is NOT the one that we're really using:
-                        log.debug("relinking Node \""+ self._title  + "\"" \
-                            +" to new package." )
+
+                        log.debug("TRY relinking Node \""+ self.getTitle() 
+                            + "\""  +" to new package." 
+                            + " (and zombie check will later confirm it)") 
                         self._package = newPackage
 
                 # launch zombie check for Nodes,
                 # to be done AFTER the all objects have been updated....
+                #
                 if not mergeCheck: 
                     if base.__dict__.has_key("launch_testForZombies"): 
                         method = base.__dict__.get("launch_testForZombies") 
                         method(self)
 
             elif repr(base)=="<class 'exe.engine.package.Package'>":
-                # map out the elp structure:
+                # print out the elp objects:
                 if not mergeCheck: 
                     log.debug("LOADING PACKAGE = \"" + self._name + "\"")
                 #

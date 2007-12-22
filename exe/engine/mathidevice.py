@@ -55,6 +55,18 @@ class MathIdevice(Idevice):
                                       x_(u"""You can use the toolbar or enter latex manually into the textarea. """))
         self.content.idevice = self
 
+    def getResourcesField(self, this_resource):
+        """
+        implement the specific resource finding mechanism for this iDevice:
+        """
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'content') and hasattr(self.content, 'gifResource'):
+            if this_resource == self.content.gifResource:
+                return self.content
+
+        return None
+       
+
     def upgradeToVersion1(self):
         """
         Converting MathsIdevice -> FreeTextIdevice,

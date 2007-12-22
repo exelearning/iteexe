@@ -68,10 +68,12 @@ display them as links in your content. From here you can edit the bookmarks and 
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.rss.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.rss
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'rss') and hasattr(self.rss, 'images'):
+            for this_image in self.rss.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.rss
 
         return None
 

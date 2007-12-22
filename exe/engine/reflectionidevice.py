@@ -74,15 +74,21 @@ reflective feedback.)""")
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.activityTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.activityTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'activityTextArea')\
+        and hasattr(self.activityTextArea, 'images'):
+            for this_image in self.activityTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.activityTextArea
 
-        for this_image in self.answerTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-                and this_resource == this_image._imageResource: 
-                    return self.answerTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'answerTextArea')\
+        and hasattr(self.answerTextArea, 'images'):
+            for this_image in self.answerTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                    and this_resource == this_image._imageResource: 
+                        return self.answerTextArea
 
         return None
 

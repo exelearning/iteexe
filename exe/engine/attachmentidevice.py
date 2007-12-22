@@ -119,10 +119,13 @@ class AttachmentIdevice(Idevice):
         """
         implement the specific resource finding mechanism for this iDevice:
         """
-        for this_image in self.descriptionTextArea.images:
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource:
-                return self.descriptionTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'descriptionTextArea')\
+        and hasattr(self.descriptionTextArea, 'images'):
+            for this_image in self.descriptionTextArea.images:
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource:
+                    return self.descriptionTextArea
 
         # if this_resource wasn't found in the above TextArea, but is still
         # listed within the iDevice's userResources, then we can assume

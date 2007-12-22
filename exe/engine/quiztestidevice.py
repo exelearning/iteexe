@@ -55,10 +55,13 @@ class AnswerOption(Persistable):
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.answerTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource: 
-                return self.answerTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'answerTextArea')\
+        and hasattr(self.answerTextArea, 'images'):
+            for this_image in self.answerTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.answerTextArea
 
         return None
 
@@ -132,10 +135,13 @@ click the radio button next to the correct option.""")
         """
         implement the specific resource finding mechanism for this iDevice:
         """ 
-        for this_image in self.questionTextArea.images: 
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource: 
-                return self.questionTextArea
+        # be warned that before upgrading, this iDevice field could not exist:
+        if hasattr(self, 'questionTextArea')\
+        and hasattr(self.questionTextArea, 'images'):
+            for this_image in self.questionTextArea.images: 
+                if hasattr(this_image, '_imageResource') \
+                and this_resource == this_image._imageResource: 
+                    return self.questionTextArea
 
         for this_option in self.options:
             this_field = this_option.getResourcesField(this_resource)
