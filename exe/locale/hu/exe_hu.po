@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-19 00:35+1300\n"
+"POT-Creation-Date: 2007-12-24 16:12+1300\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -208,7 +208,7 @@ msgstr ""
 msgid "?????"
 msgstr "Adjon címet a szintnek!"
 
-#: exe/engine/casestudyidevice.py:178
+#: exe/engine/casestudyidevice.py:184
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -238,7 +238,7 @@ msgstr ""
 "Például ha osztályteremben, csoportokat kialakítva dolgoznak, s az esetet különböző aspektusból \n"
 "vizsgálják, és hogy milyen gondolatok, vélemények fogalmazódhatnak meg az osztályban. </li></ul>"
 
-#: exe/engine/truefalseidevice.py:125
+#: exe/engine/truefalseidevice.py:134
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -339,7 +339,7 @@ msgid "Align:"
 msgstr "Igazítás:"
 
 #: exe/engine/imagemagnifieridevice.py:65
-#: exe/engine/imagemagnifieridevice.py:102
+#: exe/engine/imagemagnifieridevice.py:107
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
@@ -363,7 +363,7 @@ msgstr ""
 "Automatikus befejezés engedélyezése, \n"
 "                                       amikor a felhasználó kitölti a mezőt."
 
-#: exe/engine/clozeidevice.py:184
+#: exe/engine/clozeidevice.py:191
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Automatikus befejezés engedélyezése, amikor a felhasználó kitölti a mezőt."
 
@@ -458,7 +458,7 @@ msgstr "Nem nevezheti át a könyvtárat"
 msgid "Caption:"
 msgstr "Felirat:"
 
-#: exe/engine/casestudyidevice.py:176
+#: exe/engine/casestudyidevice.py:182
 msgid "Case Study"
 msgstr "Esettanulmány"
 
@@ -550,7 +550,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Kattintson a \"Kép hozzáadása\" gombra és válasszon egy képet. A képek alatt található egy címke, amit érdemes kitölteni. A jó gyakorlat kialakítása érdekében adja meg itt a kép eredeti méretét (pl.: 450 x 320). Célszerű, ha a képeket azonos méretűre méretezi át, s így tölti fel a galériába. A felhasználók hálásak lesznek."
 
-#: exe/engine/galleryidevice.py:620 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:622 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:303
 #: exe/webui/common.py:304 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:1979 exe/webui/element.py:1980
@@ -591,7 +591,7 @@ msgstr "Helyes!"
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Az állományt nem lehet betölteni. Kérem, küldje el e-mail-ben az állományt a bugs@exelearning.org címre!"
 
-#: exe/engine/casestudyidevice.py:195
+#: exe/engine/casestudyidevice.py:201
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -644,7 +644,7 @@ msgstr ""
 "hogyan értékeljék a gyakorlatot. (A magyarázatok hasznos eszközök \n"
 "a gondolkodtató visszacsatolás biztosítására.)"
 
-#: exe/engine/casestudyidevice.py:204
+#: exe/engine/casestudyidevice.py:210
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -682,7 +682,7 @@ msgstr "Leírás"
 # exe/xului/templates/packageproperties.xul:<label
 # value="Description:"
 # exe/xului/templates/dublincore.xul:<label
-#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:169
+#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:172
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
@@ -766,7 +766,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: twisted/persisted/styles.py:501
+#: twisted/persisted/styles.py:518
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -797,7 +797,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Írjon egy útmutatást! Ha nem kíván útmutatást adni a megoldáshoz, hagyja üresen ezt a mezőt!"
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:275
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:277
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -838,7 +838,7 @@ msgstr ""
 "a hírcsatorna címei. Ebben az ablakban tovább tudja szerkeszteni a huvatkozásokat, illetve \n"
 "utasításokat, magyarázatokat írhat be."
 
-#: exe/engine/quiztestidevice.py:107 exe/engine/quiztestidevice.py:152
+#: exe/engine/quiztestidevice.py:110 exe/engine/quiztestidevice.py:158
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -849,7 +849,7 @@ msgstr ""
 "Kattintson az &lt;Új válasz hozzáadása&gt; gombra az új \n"
 "válaszlehetőség megadása érdekében."
 
-#: exe/engine/truefalseidevice.py:132
+#: exe/engine/truefalseidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
@@ -885,7 +885,7 @@ msgstr ""
 "Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
 "az piros \"X\"-re kattintva a válasz sorában."
 
-#: exe/engine/field.py:2523
+#: exe/engine/field.py:2538
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -906,7 +906,7 @@ msgstr ""
 "részesített formától."
 
 #: exe/engine/flashwithtextidevice.py:60
-#: exe/engine/flashwithtextidevice.py:103
+#: exe/engine/flashwithtextidevice.py:107
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -927,8 +927,8 @@ msgstr "A befejezéshez írja be ide az utasításait"
 msgid "Enter the label here"
 msgstr "Írja be a címke nevét!"
 
-#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:104
-#: exe/engine/quiztestidevice.py:160
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:107
+#: exe/engine/quiztestidevice.py:166
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -937,7 +937,7 @@ msgstr ""
 "Írja be a kérdést! \n"
 "Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a kétértelmű fogylmazást!"
 
-#: exe/engine/field.py:2515
+#: exe/engine/field.py:2530
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -1008,9 +1008,9 @@ msgstr "Hamis"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:213 exe/engine/clozeidevice.py:127
-#: exe/engine/clozeidevice.py:175 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:99 exe/engine/field.py:2352
-#: exe/engine/field.py:2381 exe/webui/clozeblock.py:158
+#: exe/engine/clozeidevice.py:182 exe/engine/truefalseidevice.py:48
+#: exe/engine/truefalseidevice.py:108 exe/engine/field.py:2352
+#: exe/engine/field.py:2387 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:96
 #: exe/webui/common.py:207 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
@@ -1025,8 +1025,8 @@ msgstr ""
 "A Visszajelzés gomb nem fog megójelenni, \n"
 "ha nem írnak adatokat ebbe a mezőbe."
 
-#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:147
-#: exe/engine/field.py:2532 exe/engine/field.py:2579
+#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:153
+#: exe/engine/field.py:2547 exe/engine/field.py:2600
 msgid "Feedback:"
 msgstr "Visszajelzés:"
 
@@ -1118,8 +1118,8 @@ msgstr "Visszajelzés elrejtése"
 msgid "Hide/Show Word"
 msgstr "Szó elrejtése/megjelenítése"
 
-#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:102
-#: exe/engine/field.py:2407 exe/engine/field.py:2449
+#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:111
+#: exe/engine/field.py:2413 exe/engine/field.py:2461
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1193,12 +1193,12 @@ msgstr "Kezdeti nagyítás"
 msgid "Instant Marking?"
 msgstr "Azonnali értékelés?"
 
-#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:139
-#: exe/engine/truefalseidevice.py:243 exe/webui/common.py:288
+#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:148
+#: exe/engine/truefalseidevice.py:255 exe/webui/common.py:288
 msgid "Instructions"
 msgstr "Utasítás"
 
-#: exe/engine/clozeidevice.py:170
+#: exe/engine/clozeidevice.py:177
 msgid "Instructions For Learners"
 msgstr "Utasítás a tanulónak"
 
@@ -1306,7 +1306,7 @@ msgstr "Név"
 msgid "New iDevice"
 msgstr "Új iDevice modul"
 
-#: exe/engine/galleryidevice.py:620 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:622 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:304 exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Következő"
@@ -1376,14 +1376,14 @@ msgstr ""
 "Csak .swf (Flash animáció) fájlt válasszon \n"
 "ehhez az iDevice modulhoz."
 
-#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:82
-#: exe/engine/field.py:2348 exe/engine/field.py:2378
+#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:85
+#: exe/engine/field.py:2348 exe/engine/field.py:2384
 #: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
 #: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Beállítás"
 
-#: exe/engine/field.py:2471 exe/engine/field.py:2492
+#: exe/engine/field.py:2483 exe/engine/field.py:2507
 #: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Beállítások"
@@ -1406,7 +1406,7 @@ msgid "Package extracted to: %s"
 msgstr "A csomag ki lett bontva a következő helyre: %s"
 
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:459 twisted/persisted/styles.py:511
+#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1496,7 +1496,7 @@ msgstr "Előnézet"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/engine/galleryidevice.py:620 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:622 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:303 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Előző"
@@ -1518,7 +1518,7 @@ msgstr ""
 "Adjon meg egy feiratot \n"
 "a nagyítandó képhez."
 
-#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:92
+#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:96
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
@@ -1527,7 +1527,7 @@ msgstr ""
 "beillesztett Flash videóhoz."
 
 #: exe/engine/flashwithtextidevice.py:58
-#: exe/engine/flashwithtextidevice.py:101
+#: exe/engine/flashwithtextidevice.py:105
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1544,7 +1544,7 @@ msgstr ""
 "Adjon meg egy feliratot \n"
 "a beillesztett képhez."
 
-#: exe/engine/truefalseidevice.py:140 exe/engine/truefalseidevice.py:244
+#: exe/engine/truefalseidevice.py:149 exe/engine/truefalseidevice.py:256
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1558,7 +1558,7 @@ msgstr ""
 "Itt adja meg a teszt megoldására vonatkozó utasításait! \n"
 "Ha nem ír be saját szöveget, az alapértelmezett szöveg jelenik meg.\n"
 
-#: exe/engine/casestudyidevice.py:208
+#: exe/engine/casestudyidevice.py:214
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1568,18 +1568,18 @@ msgstr "Adjon meg egy a helyzethez illő visszajelzést!"
 msgid "Purpose"
 msgstr "Hogyan használjuk a modult?"
 
-#: exe/engine/clozeidevice.py:171
+#: exe/engine/clozeidevice.py:178
 msgid "Put instructions for learners here"
 msgstr "Itt adja meg a tanulóknak szóló utasításokat!"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2404 exe/engine/field.py:2445
+#: exe/engine/field.py:2410 exe/engine/field.py:2457
 msgid "Question"
 msgstr "Kérdés"
 
-#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:96
-#: exe/engine/quiztestidevice.py:113 exe/engine/quiztestidevice.py:187
-#: exe/engine/field.py:2518 exe/engine/field.py:2576 exe/webui/element.py:1626
+#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:105
+#: exe/engine/quiztestidevice.py:116 exe/engine/quiztestidevice.py:193
+#: exe/engine/field.py:2533 exe/engine/field.py:2597 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "Kérdés:"
 
@@ -1592,11 +1592,11 @@ msgstr "Elküld"
 msgid "RSS"
 msgstr "RSS"
 
-#: exe/engine/clozeidevice.py:172
+#: exe/engine/clozeidevice.py:179
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat!"
 
-#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:246
+#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:258
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat."
 
@@ -1629,7 +1629,7 @@ msgstr ""
 "és portfóliók hasznos eszközök a megfigyelési adatok gyűjtésére. \n"
 "A magyarázatok és az útmutatók pedig hatásos visszacsatolási eszközök."
 
-#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:144
+#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:150
 msgid "Reflective question:"
 msgstr "Gondolatébresztő kérdés:"
 
@@ -1666,7 +1666,7 @@ msgstr ""
 "SIKERTELEN MENTÉS!\n"
 "Az utolsó sikeres mentés: %s."
 
-#: exe/engine/quiztestidevice.py:210
+#: exe/engine/quiztestidevice.py:216
 msgid "SCORM Quiz"
 msgstr "SCORM Teszt"
 
@@ -1722,7 +1722,7 @@ msgstr "Válasszon egy képet"
 msgid "Select an image (JPG file)"
 msgstr "Válaszzon egy képet (JPG fájl)"
 
-#: exe/engine/field.py:2527
+#: exe/engine/field.py:2542
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1734,7 +1734,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Határozza meg teszt elfogadásának szintjét:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:273
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:275
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1755,7 +1755,7 @@ msgid "Select the size of the magnifying glass"
 msgstr "Válassza ki a nagyító méretét"
 
 #: exe/engine/imagemagnifieridevice.py:67
-#: exe/engine/imagemagnifieridevice.py:104
+#: exe/engine/imagemagnifieridevice.py:109
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
@@ -1764,7 +1764,7 @@ msgstr ""
 "az eredeti képméret százalékában megadva!"
 
 #: exe/engine/imagemagnifieridevice.py:69
-#: exe/engine/imagemagnifieridevice.py:106
+#: exe/engine/imagemagnifieridevice.py:111
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
@@ -1840,7 +1840,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Spanyol nyelvű Wikipédia szócikk"
 
-#: exe/engine/casestudyidevice.py:199 exe/engine/casestudyidevice.py:298
+#: exe/engine/casestudyidevice.py:205 exe/engine/casestudyidevice.py:307
 msgid "Story:"
 msgstr "Történet:"
 
@@ -1972,7 +1972,7 @@ msgstr "A társalgás lehetőséget teret az ön számára, hogy megossza más f
 msgid "This article is licensed under the "
 msgstr "Ez a cikk a következő licenc alá esik: "
 
-#: exe/engine/imagemagnifieridevice.py:108
+#: exe/engine/imagemagnifieridevice.py:113
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
@@ -1991,7 +1991,7 @@ msgstr ""
 "konvertálnia kell .FLV formátumuvá. Az eXe nem biztosítja a lejátszó plugint (Flash 8 player), \n"
 "azt a felhasználónak kell letöltenie a http://www.macromedia.com címről."
 
-#: exe/engine/freetextidevice.py:80
+#: exe/engine/freetextidevice.py:82
 msgid "This is a free text field general learning content can be entered."
 msgstr "Ez egy szövegmező a tananyag beírásához."
 
@@ -2027,7 +2027,7 @@ msgstr "Tipp:"
 msgid "Title"
 msgstr "Cím"
 
-#: exe/engine/quiztestidevice.py:110 exe/engine/quiztestidevice.py:168
+#: exe/engine/quiztestidevice.py:113 exe/engine/quiztestidevice.py:174
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -2043,11 +2043,11 @@ msgstr "Téma"
 msgid "True"
 msgstr "Igaz"
 
-#: exe/engine/truefalseidevice.py:118
+#: exe/engine/truefalseidevice.py:127
 msgid "True-False Question"
 msgstr "Igaz-Hamis kérdés"
 
-#: exe/engine/truefalseidevice.py:120
+#: exe/engine/truefalseidevice.py:129
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -2076,7 +2076,7 @@ msgstr ""
 "válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\",\n"
 "ha mást választott a tanuló."
 
-#: exe/engine/truefalseidevice.py:224
+#: exe/engine/truefalseidevice.py:236
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -2090,7 +2090,7 @@ msgstr ""
 "válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\",\n"
 "ha mást választott a tanuló."
 
-#: exe/engine/field.py:2530
+#: exe/engine/field.py:2545
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2100,7 +2100,7 @@ msgstr "Írjon a tanulók számára egy visszajelzés!"
 msgid "Type the learning objectives for this resource."
 msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
-#: exe/engine/truefalseidevice.py:128
+#: exe/engine/truefalseidevice.py:137
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -2119,12 +2119,12 @@ msgstr "URL:"
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e, vagy rendben van-e az internetkapcsolata és próbálja újra."
 
-#: exe/engine/rssidevice.py:92 exe/engine/rssidevice.py:95
+#: exe/engine/rssidevice.py:94 exe/engine/rssidevice.py:97
 #, fuzzy, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e, vagy rendben van-e az internetkapcsolata és próbálja újra."
 
-#: twisted/persisted/styles.py:427
+#: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2139,15 +2139,15 @@ msgstr "Egység"
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
-#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:119
+#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:128
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:211
-#: exe/engine/casestudyidevice.py:177 exe/idevices/exampleidevice.py:40
+#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:217
+#: exe/engine/casestudyidevice.py:183 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Aucklandi Egyetem"
 
-#: exe/engine/quiztestidevice.py:212
+#: exe/engine/quiztestidevice.py:218
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2284,7 +2284,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "Fájl %s nincs szülőcsomópont"
 
-#: exe/engine/wikipediaidevice.py:227
+#: exe/engine/wikipediaidevice.py:229
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -2320,7 +2320,7 @@ msgstr "címke"
 msgid "newline"
 msgstr "új sor"
 
-#: exe/engine/resource.py:533
+#: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-19 00:35+1300\n"
+"POT-Creation-Date: 2007-12-24 16:12+1300\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -202,7 +202,7 @@ msgstr ""
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:178
+#: exe/engine/casestudyidevice.py:184
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -230,7 +230,7 @@ msgstr ""
 "взятись до прикладу вивчення.</li>\n"
 "<li>\tДе краще розмістити приклад в курсі вивчення</li></ul>"
 
-#: exe/engine/truefalseidevice.py:125
+#: exe/engine/truefalseidevice.py:134
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -333,7 +333,7 @@ msgid "Align:"
 msgstr "Вирівнювання:"
 
 #: exe/engine/imagemagnifieridevice.py:65
-#: exe/engine/imagemagnifieridevice.py:102
+#: exe/engine/imagemagnifieridevice.py:107
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
@@ -357,7 +357,7 @@ msgstr ""
 "Дозволяє автозавершення коли \n"
 "користувач заповняє прогалини."
 
-#: exe/engine/clozeidevice.py:184
+#: exe/engine/clozeidevice.py:191
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Дозволяє автозавершення коли користувач заповняє прогалини."
 
@@ -447,7 +447,7 @@ msgstr "Неможу отримати доступ до директорії "
 msgid "Caption:"
 msgstr "Заголовок:"
 
-#: exe/engine/casestudyidevice.py:176
+#: exe/engine/casestudyidevice.py:182
 msgid "Case Study"
 msgstr "Приклад для вивчення"
 
@@ -534,7 +534,7 @@ msgstr "Клацніть на кнопці <strong>Попередній пере
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Клацніть на <strong>Додати зображення</strong> для того, щоб вибрати файл що містить зображення. Зображення з'явиться внизу, де ви зможете підписати його. Корисно додавати розмір файлу в підпис."
 
-#: exe/engine/galleryidevice.py:620 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:622 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:303
 #: exe/webui/common.py:304 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:1979 exe/webui/element.py:1980
@@ -575,7 +575,7 @@ msgstr "Правильно!"
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Неможу завантажити файл, будь ласка відішліть файл сюди: bugs@exelearning.org"
 
-#: exe/engine/casestudyidevice.py:195
+#: exe/engine/casestudyidevice.py:201
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -625,7 +625,7 @@ msgid ""
 "reflective feedback.)"
 msgstr "Опишіть як учні будуть отримувати доступ до вправ. (Рубрики - корисно використовувати для забезпечення мислячого зворотного зв'язку.)"
 
-#: exe/engine/casestudyidevice.py:204
+#: exe/engine/casestudyidevice.py:210
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -662,7 +662,7 @@ msgstr "Опис"
 # exe/xului/templates/packageproperties.xul:<label
 # value="Description:"
 # exe/xului/templates/dublincore.xul:<label
-#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:169
+#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:172
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
@@ -747,7 +747,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Редагувати"
 
-#: twisted/persisted/styles.py:501
+#: twisted/persisted/styles.py:518
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -780,7 +780,7 @@ msgstr ""
 "Введіть допоміжний натяк. Якщо ви \n"
 "не хочете додавати допоміжну інформацію, залиште це поле пустим."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:275
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:277
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -814,7 +814,7 @@ msgstr ""
 "(найчастіше отакою <img src=\"/images/feed-icon.png\" />) \n"
 "або текстом \"RSS\"."
 
-#: exe/engine/quiztestidevice.py:107 exe/engine/quiztestidevice.py:152
+#: exe/engine/quiztestidevice.py:110 exe/engine/quiztestidevice.py:158
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -826,7 +826,7 @@ msgstr ""
 "<strong>Додати іншу Опцію</strong> для того щоб ввести \n"
 "декілька відповідей."
 
-#: exe/engine/truefalseidevice.py:132
+#: exe/engine/truefalseidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
@@ -861,7 +861,7 @@ msgstr ""
 "Введіть доступний варіант відповіді(опцію). \n"
 "Ви можете добавляти варіанти відповіді клацнувши на кнопку <strong>Додати іншу опцію</strong> та видаляти зайві варіанти клацнувши на червоний \"Х\" праворуч ві відповідної опції."
 
-#: exe/engine/field.py:2523
+#: exe/engine/field.py:2538
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -878,7 +878,7 @@ msgid ""
 msgstr "Введіть деталі читання, зокрема довідкові деталі. "
 
 #: exe/engine/flashwithtextidevice.py:60
-#: exe/engine/flashwithtextidevice.py:103
+#: exe/engine/flashwithtextidevice.py:107
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -899,8 +899,8 @@ msgstr "Введіть інструкції що до завершення ту�
 msgid "Enter the label here"
 msgstr "Введіть назву тут"
 
-#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:104
-#: exe/engine/quiztestidevice.py:160
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:107
+#: exe/engine/quiztestidevice.py:166
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -910,7 +910,7 @@ msgstr ""
 "Запитання має бути зрозумілим і однозначним. Уникайте \n"
 "негативних передумов, так як це може запутати студента."
 
-#: exe/engine/field.py:2515
+#: exe/engine/field.py:2530
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -976,9 +976,9 @@ msgstr "Неправильно"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:213 exe/engine/clozeidevice.py:127
-#: exe/engine/clozeidevice.py:175 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:99 exe/engine/field.py:2352
-#: exe/engine/field.py:2381 exe/webui/clozeblock.py:158
+#: exe/engine/clozeidevice.py:182 exe/engine/truefalseidevice.py:48
+#: exe/engine/truefalseidevice.py:108 exe/engine/field.py:2352
+#: exe/engine/field.py:2387 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:96
 #: exe/webui/common.py:207 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
@@ -993,8 +993,8 @@ msgstr ""
 "Клавіша зворотний зв'язок не з'явиться якщо \n"
 "це поле не буде заповнено."
 
-#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:147
-#: exe/engine/field.py:2532 exe/engine/field.py:2579
+#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:153
+#: exe/engine/field.py:2547 exe/engine/field.py:2600
 msgid "Feedback:"
 msgstr "Зворотний зв'язок:"
 
@@ -1086,8 +1086,8 @@ msgstr "Сховати Зворотний Зв'язок"
 msgid "Hide/Show Word"
 msgstr "Сховати/Показати Слово"
 
-#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:102
-#: exe/engine/field.py:2407 exe/engine/field.py:2449
+#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:111
+#: exe/engine/field.py:2413 exe/engine/field.py:2461
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1161,12 +1161,12 @@ msgstr "Первинний розмір:"
 msgid "Instant Marking?"
 msgstr "Миттєве позначення?"
 
-#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:139
-#: exe/engine/truefalseidevice.py:243 exe/webui/common.py:288
+#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:148
+#: exe/engine/truefalseidevice.py:255 exe/webui/common.py:288
 msgid "Instructions"
 msgstr "Інструкції"
 
-#: exe/engine/clozeidevice.py:170
+#: exe/engine/clozeidevice.py:177
 msgid "Instructions For Learners"
 msgstr "Інструкції для Студентів"
 
@@ -1274,7 +1274,7 @@ msgstr "Ім'я"
 msgid "New iDevice"
 msgstr "Новий iDevice"
 
-#: exe/engine/galleryidevice.py:620 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:622 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:304 exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Далі"
@@ -1341,14 +1341,14 @@ msgstr ""
 "Можна долучати лише .swf (Flash Objects) для \n"
 "цього iDevice."
 
-#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:82
-#: exe/engine/field.py:2348 exe/engine/field.py:2378
+#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:85
+#: exe/engine/field.py:2348 exe/engine/field.py:2384
 #: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
 #: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Опція"
 
-#: exe/engine/field.py:2471 exe/engine/field.py:2492
+#: exe/engine/field.py:2483 exe/engine/field.py:2507
 #: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Опції"
@@ -1371,7 +1371,7 @@ msgid "Package extracted to: %s"
 msgstr "Пакет розпаковано в: %s"
 
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:459 twisted/persisted/styles.py:511
+#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1460,7 +1460,7 @@ msgstr "Попередній перегляд"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/engine/galleryidevice.py:620 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:622 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:303 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Назад"
@@ -1480,14 +1480,14 @@ msgid ""
 "image to be magnified."
 msgstr "Введіть заголовок зображення."
 
-#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:92
+#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:96
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr "Введіть заголовок для флеш ролику."
 
 #: exe/engine/flashwithtextidevice.py:58
-#: exe/engine/flashwithtextidevice.py:101
+#: exe/engine/flashwithtextidevice.py:105
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1500,7 +1500,7 @@ msgid ""
 "you have just inserted."
 msgstr "Введіть заголовок зображення."
 
-#: exe/engine/truefalseidevice.py:140 exe/engine/truefalseidevice.py:244
+#: exe/engine/truefalseidevice.py:149 exe/engine/truefalseidevice.py:256
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1515,7 +1515,7 @@ msgstr ""
 "Стандартний текст буде введено якщо ви залишите \n"
 "це поле без змін.\n"
 
-#: exe/engine/casestudyidevice.py:208
+#: exe/engine/casestudyidevice.py:214
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1525,18 +1525,18 @@ msgstr "Забезпечує пов'язаний зворотний зв'язо�
 msgid "Purpose"
 msgstr "Інформація"
 
-#: exe/engine/clozeidevice.py:171
+#: exe/engine/clozeidevice.py:178
 msgid "Put instructions for learners here"
 msgstr "Вписуйте інструкції для студентів тут"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2404 exe/engine/field.py:2445
+#: exe/engine/field.py:2410 exe/engine/field.py:2457
 msgid "Question"
 msgstr "Запитання"
 
-#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:96
-#: exe/engine/quiztestidevice.py:113 exe/engine/quiztestidevice.py:187
-#: exe/engine/field.py:2518 exe/engine/field.py:2576 exe/webui/element.py:1626
+#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:105
+#: exe/engine/quiztestidevice.py:116 exe/engine/quiztestidevice.py:193
+#: exe/engine/field.py:2533 exe/engine/field.py:2597 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "Запитання:"
 
@@ -1549,11 +1549,11 @@ msgstr "Підтвердити"
 msgid "RSS"
 msgstr "RSS"
 
-#: exe/engine/clozeidevice.py:172
+#: exe/engine/clozeidevice.py:179
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Прочитайте параграф внизу і проставте пропущені слова"
 
-#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:246
+#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:258
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Прочитайте параграф внизу і проставте пропущені слова."
 
@@ -1586,7 +1586,7 @@ msgstr ""
 "даних. Рубрики і інструкції можуть бути ефективними інструментами \n"
 "зворотнього зв'язку."
 
-#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:144
+#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:150
 msgid "Reflective question:"
 msgstr "Відображення питання:"
 
@@ -1623,7 +1623,7 @@ msgstr ""
 "Помилка при збереженні!\n"
 "Останнє вдале збереження %s."
 
-#: exe/engine/quiztestidevice.py:210
+#: exe/engine/quiztestidevice.py:216
 msgid "SCORM Quiz"
 msgstr "SCORM Quiz"
 
@@ -1679,7 +1679,7 @@ msgstr "Вибрати зображення"
 msgid "Select an image (JPG file)"
 msgstr "Вибрати зображення (JPG файл)"
 
-#: exe/engine/field.py:2527
+#: exe/engine/field.py:2542
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1689,7 +1689,7 @@ msgstr "Відмітьте всі правильні відповіді, ста�
 msgid "Select pass rate: "
 msgstr "Вибрати прохідний бал:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:273
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:275
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1710,7 +1710,7 @@ msgid "Select the size of the magnifying glass"
 msgstr "Виберіть розмір магічного скельця"
 
 #: exe/engine/imagemagnifieridevice.py:67
-#: exe/engine/imagemagnifieridevice.py:104
+#: exe/engine/imagemagnifieridevice.py:109
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
@@ -1720,7 +1720,7 @@ msgstr ""
 "оригінального розміру."
 
 #: exe/engine/imagemagnifieridevice.py:69
-#: exe/engine/imagemagnifieridevice.py:106
+#: exe/engine/imagemagnifieridevice.py:111
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
@@ -1796,7 +1796,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Wikipedia - Іспанський"
 
-#: exe/engine/casestudyidevice.py:199 exe/engine/casestudyidevice.py:298
+#: exe/engine/casestudyidevice.py:205 exe/engine/casestudyidevice.py:307
 msgid "Story:"
 msgstr "Історія:"
 
@@ -1905,7 +1905,7 @@ msgstr "Діалог мети дозволяє вам описувати ваш�
 msgid "This article is licensed under the "
 msgstr "Ліцензія на цю статтю належать "
 
-#: exe/engine/imagemagnifieridevice.py:108
+#: exe/engine/imagemagnifieridevice.py:113
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
@@ -1922,7 +1922,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr "Цей iDevice - підтримує тільки  Flash Video File (.FLV) формат, і не прийме ніякий інший формат.  Ви можете конвертувати інші формати (такі як mov, wmf та інші) в .FLV формат використовуючи спеціальні програми. Функції конвертування не є вбудованими в eXe. Користувачі також муситимуть завантажити Флеш плеєр з офіційного сайту http://www.macromedia.com/ для того щоб переглядати відео ролики."
 
-#: exe/engine/freetextidevice.py:80
+#: exe/engine/freetextidevice.py:82
 msgid "This is a free text field general learning content can be entered."
 msgstr "Це поле з вільним текстом. Сюди можна вводити основну навчальну інформацію."
 
@@ -1958,7 +1958,7 @@ msgstr "Порада:"
 msgid "Title"
 msgstr "Заголовок"
 
-#: exe/engine/quiztestidevice.py:110 exe/engine/quiztestidevice.py:168
+#: exe/engine/quiztestidevice.py:113 exe/engine/quiztestidevice.py:174
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -1974,11 +1974,11 @@ msgstr "Тема"
 msgid "True"
 msgstr "Правильно"
 
-#: exe/engine/truefalseidevice.py:118
+#: exe/engine/truefalseidevice.py:127
 msgid "True-False Question"
 msgstr "Питання типу Правильно/Неправильно"
 
-#: exe/engine/truefalseidevice.py:120
+#: exe/engine/truefalseidevice.py:129
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -2009,7 +2009,7 @@ msgstr ""
 "стандартну інформацію, виводячи повідомлення про \n"
 "правильну чи неправильну відповідь."
 
-#: exe/engine/truefalseidevice.py:224
+#: exe/engine/truefalseidevice.py:236
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -2024,7 +2024,7 @@ msgstr ""
 "стандартну інформацію, виводячи повідомлення про \n"
 "правильну чи неправильну відповідь."
 
-#: exe/engine/field.py:2530
+#: exe/engine/field.py:2545
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2036,7 +2036,7 @@ msgstr ""
 msgid "Type the learning objectives for this resource."
 msgstr "Введіть повчальні завдання для цього ресурсу."
 
-#: exe/engine/truefalseidevice.py:128
+#: exe/engine/truefalseidevice.py:137
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -2052,12 +2052,12 @@ msgstr "Адреса (URL):"
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Неможливо завантажити з %s <br/>Будь ласка перевірте правельність написання, та налаштування з'єднання після чого пробуйте знов."
 
-#: exe/engine/rssidevice.py:92 exe/engine/rssidevice.py:95
+#: exe/engine/rssidevice.py:94 exe/engine/rssidevice.py:97
 #, fuzzy, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Неможливо завантажити з %s <br/>Будь ласка перевірте правельність написання, та налаштування з'єднання після чого пробуйте знов."
 
-#: twisted/persisted/styles.py:427
+#: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2072,15 +2072,15 @@ msgstr "Одиниця"
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
-#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:119
+#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:128
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:211
-#: exe/engine/casestudyidevice.py:177 exe/idevices/exampleidevice.py:40
+#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:217
+#: exe/engine/casestudyidevice.py:183 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "University of Auckland"
 
-#: exe/engine/quiztestidevice.py:212
+#: exe/engine/quiztestidevice.py:218
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2211,7 +2211,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:227
+#: exe/engine/wikipediaidevice.py:229
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -2247,7 +2247,7 @@ msgstr "надпис"
 msgid "newline"
 msgstr "нова лінія"
 
-#: exe/engine/resource.py:533
+#: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 

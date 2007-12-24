@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-19 00:35+1300\n"
+"POT-Creation-Date: 2007-12-24 16:12+1300\n"
 "PO-Revision-Date: 2007-09-24 21:14+1200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -206,7 +206,7 @@ msgstr ""
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:178
+#: exe/engine/casestudyidevice.py:184
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -231,7 +231,7 @@ msgstr ""
 "<li>\tKuidas see juhtumi kirjeldus sobib ülejäänud kursusesse</li>\n"
 "<li>\tKuidas õpilased suhtlevad õppematerjalidega ja üksteisega, nt. kas klassiruumi puhul on võimalik gruppides töötada juhtumi erinevate aspektide kallal, ja kui on, siis kuidas on korraldatud ideede tagasisidestus klassile</li></ul>"
 
-#: exe/engine/truefalseidevice.py:125
+#: exe/engine/truefalseidevice.py:134
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -331,7 +331,7 @@ msgid "Align:"
 msgstr "Reasta:"
 
 #: exe/engine/imagemagnifieridevice.py:65
-#: exe/engine/imagemagnifieridevice.py:102
+#: exe/engine/imagemagnifieridevice.py:107
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
@@ -355,7 +355,7 @@ msgstr ""
 "Luba automaatne täitmine \n"
 " kui kasutaja lünkasid täidab."
 
-#: exe/engine/clozeidevice.py:184
+#: exe/engine/clozeidevice.py:191
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Luba automaatne täitmine kui kasutaja lünkasid täidab."
 
@@ -448,7 +448,7 @@ msgstr "Puudub ligipääs kataloogile nimega"
 msgid "Caption:"
 msgstr "Pealkiri:"
 
-#: exe/engine/casestudyidevice.py:176
+#: exe/engine/casestudyidevice.py:182
 msgid "Case Study"
 msgstr "Juhtumi kirjeldus"
 
@@ -535,7 +535,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Pildi-faili lisamiseks kliki \"Lisa pildid\" nupul. Pilt ilmub allapoole, kus võid selle märgendada. Hea tava on märgendisse lisada ka faili suurus."
 
-#: exe/engine/galleryidevice.py:620 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:622 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:303
 #: exe/webui/common.py:304 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:1979 exe/webui/element.py:1980
@@ -575,7 +575,7 @@ msgstr "Õige !"
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Faili laadmine ebaõnnestus, palun saatke fail e-postiga aadressile bugs@exelearning.org"
 
-#: exe/engine/casestudyidevice.py:195
+#: exe/engine/casestudyidevice.py:201
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -628,7 +628,7 @@ msgstr ""
 "ülesannete tulemusi. (Rubriigid on kasulikud vahendid pakkumaks  \n"
 "kaalutletud tagasisidet."
 
-#: exe/engine/casestudyidevice.py:204
+#: exe/engine/casestudyidevice.py:210
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -663,7 +663,7 @@ msgstr "Kirjelda ülesanded, mida õpilane peab läbima"
 msgid "Description"
 msgstr "Kirjeldus"
 
-#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:169
+#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:172
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
@@ -744,7 +744,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Redigeeri"
 
-#: twisted/persisted/styles.py:501
+#: twisted/persisted/styles.py:518
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Kas iDevice/generic.data fail või sinu laetav pakett loodi uuema eXe versioonia. Palun uuenda eXe versiooni ja proovi uuesti."
 
@@ -775,7 +775,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Sisesta siia vihje. Kui sa seda teha ei soovi, võid selle välja tühjaks jätta."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:275
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:277
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -814,7 +814,7 @@ msgstr ""
 "Siit edasi võid neid linke redigeerida ja lisada\n"
 "juhiseid või täiendava õppeinfot."
 
-#: exe/engine/quiztestidevice.py:107 exe/engine/quiztestidevice.py:152
+#: exe/engine/quiztestidevice.py:110 exe/engine/quiztestidevice.py:158
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -824,7 +824,7 @@ msgstr ""
 "õigele vastusele ka 3-4 eksitavat vastusevarianti. \n"
 "Kliki nupul &lt;Lisa valik&gt;, et lisada uus vastusevariant."
 
-#: exe/engine/truefalseidevice.py:132
+#: exe/engine/truefalseidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
@@ -856,7 +856,7 @@ msgstr ""
 "Sisesta siia kõik võimalikud valikud.  \n"
 "Võid valikuid lisada klikkides \"Lisa veel valikuid\" nupul. Valikute kustutamiseks kliki punasel \"X\" märgil iga valiku kõrval."
 
-#: exe/engine/field.py:2523
+#: exe/engine/field.py:2538
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -875,7 +875,7 @@ msgstr ""
 "sõltub teie teaduskonna või instituudi eelistusest."
 
 #: exe/engine/flashwithtextidevice.py:60
-#: exe/engine/flashwithtextidevice.py:103
+#: exe/engine/flashwithtextidevice.py:107
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -896,8 +896,8 @@ msgstr "Sisesta siia juhendid läbimiseks"
 msgid "Enter the label here"
 msgstr "Sisesta märge siia"
 
-#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:104
-#: exe/engine/quiztestidevice.py:160
+#: exe/engine/multichoiceidevice.py:99 exe/engine/quiztestidevice.py:107
+#: exe/engine/quiztestidevice.py:166
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -907,7 +907,7 @@ msgstr ""
 "See peaks olema selga ja üheselt mõistetav. Väldi negatiivseid eellauseid, \n"
 "kuna need kalduvad kahemõttelisuse ja ebaselguse poole."
 
-#: exe/engine/field.py:2515
+#: exe/engine/field.py:2530
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -978,9 +978,9 @@ msgstr "Väär"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:213 exe/engine/clozeidevice.py:127
-#: exe/engine/clozeidevice.py:175 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:99 exe/engine/field.py:2352
-#: exe/engine/field.py:2381 exe/webui/clozeblock.py:158
+#: exe/engine/clozeidevice.py:182 exe/engine/truefalseidevice.py:48
+#: exe/engine/truefalseidevice.py:108 exe/engine/field.py:2352
+#: exe/engine/field.py:2387 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:96
 #: exe/webui/common.py:207 exe/webui/element.py:1795
 #: exe/webui/editorpane.py:251
@@ -995,8 +995,8 @@ msgstr ""
 "Tagasiside nuppu ei näidata, kui sellesse välja  \n"
 "pole infot sisestatud."
 
-#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:147
-#: exe/engine/field.py:2532 exe/engine/field.py:2579
+#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:153
+#: exe/engine/field.py:2547 exe/engine/field.py:2600
 msgid "Feedback:"
 msgstr "Tagasiside:"
 
@@ -1087,8 +1087,8 @@ msgstr "Peida tagasiside"
 msgid "Hide/Show Word"
 msgstr "Peida / näita sõna"
 
-#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:102
-#: exe/engine/field.py:2407 exe/engine/field.py:2449
+#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:111
+#: exe/engine/field.py:2413 exe/engine/field.py:2461
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1983
 msgid "Hint"
@@ -1160,12 +1160,12 @@ msgstr "Algne suurendus"
 msgid "Instant Marking?"
 msgstr "Kohene märkimine ?"
 
-#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:139
-#: exe/engine/truefalseidevice.py:243 exe/webui/common.py:288
+#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:148
+#: exe/engine/truefalseidevice.py:255 exe/webui/common.py:288
 msgid "Instructions"
 msgstr "Juhised"
 
-#: exe/engine/clozeidevice.py:170
+#: exe/engine/clozeidevice.py:177
 msgid "Instructions For Learners"
 msgstr "Juhised õpilastele"
 
@@ -1273,7 +1273,7 @@ msgstr "Nimi"
 msgid "New iDevice"
 msgstr "Uus iDevice"
 
-#: exe/engine/galleryidevice.py:620 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:622 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:304 exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Järgmine"
@@ -1341,14 +1341,14 @@ msgstr ""
 "Vali ainult .swf (Flash Objects) selle  \n"
 "iDevice jaoks."
 
-#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:82
-#: exe/engine/field.py:2348 exe/engine/field.py:2378
+#: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:85
+#: exe/engine/field.py:2348 exe/engine/field.py:2384
 #: exe/webui/testoptionelement.py:91 exe/webui/element.py:1505
 #: exe/webui/element.py:1766
 msgid "Option"
 msgstr "Valik"
 
-#: exe/engine/field.py:2471 exe/engine/field.py:2492
+#: exe/engine/field.py:2483 exe/engine/field.py:2507
 #: exe/webui/testquestionelement.py:102 exe/webui/element.py:1642
 msgid "Options"
 msgstr "Valikud"
@@ -1371,7 +1371,7 @@ msgid "Package extracted to: %s"
 msgstr "Pakett lahti pakitud siia: %s"
 
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:459 twisted/persisted/styles.py:511
+#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Pakett on vana. Palun uuenda seda (kasutades Fail...Ava ja seejärel Fail..Salvesta kui..) enne kui üritad seda mõnda teise paketti integreerida!"
 
@@ -1460,7 +1460,7 @@ msgstr "Eelvaade"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Eelvaate kataloog %s on fail, ei saa asendada"
 
-#: exe/engine/galleryidevice.py:620 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:622 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:303 exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Eelmine"
@@ -1480,14 +1480,14 @@ msgid ""
 "image to be magnified."
 msgstr "Lisa märgend suurendatavale pildile."
 
-#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:92
+#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:96
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr "Lisa äsja sisestatud Flash-failile märgend."
 
 #: exe/engine/flashwithtextidevice.py:58
-#: exe/engine/flashwithtextidevice.py:101
+#: exe/engine/flashwithtextidevice.py:105
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1500,7 +1500,7 @@ msgid ""
 "you have just inserted."
 msgstr "Lisa just sisestatud pildile märgend."
 
-#: exe/engine/truefalseidevice.py:140 exe/engine/truefalseidevice.py:244
+#: exe/engine/truefalseidevice.py:149 exe/engine/truefalseidevice.py:256
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1514,7 +1514,7 @@ msgstr ""
 "Sisesta juhised lünkade täitmiseks. Kui seda välja ei muudeta, siis sisestatakse \n"
 "automaatselt vaikimisi tekst. \n"
 
-#: exe/engine/casestudyidevice.py:208
+#: exe/engine/casestudyidevice.py:214
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1526,18 +1526,18 @@ msgstr ""
 msgid "Purpose"
 msgstr "Eesmärk"
 
-#: exe/engine/clozeidevice.py:171
+#: exe/engine/clozeidevice.py:178
 msgid "Put instructions for learners here"
 msgstr "Sisesta siia instruktsioonid õpilastele"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2404 exe/engine/field.py:2445
+#: exe/engine/field.py:2410 exe/engine/field.py:2457
 msgid "Question"
 msgstr "Küsimus"
 
-#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:96
-#: exe/engine/quiztestidevice.py:113 exe/engine/quiztestidevice.py:187
-#: exe/engine/field.py:2518 exe/engine/field.py:2576 exe/webui/element.py:1626
+#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:105
+#: exe/engine/quiztestidevice.py:116 exe/engine/quiztestidevice.py:193
+#: exe/engine/field.py:2533 exe/engine/field.py:2597 exe/webui/element.py:1626
 msgid "Question:"
 msgstr "Küsimus:"
 
@@ -1549,11 +1549,11 @@ msgstr "Välju"
 msgid "RSS"
 msgstr "RSS"
 
-#: exe/engine/clozeidevice.py:172
+#: exe/engine/clozeidevice.py:179
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Loe läbi allolev paragraaf ja sisesta puuduvad sõnad"
 
-#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:246
+#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:258
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Loe läbi allolev paragraaf ja täida lüngad."
 
@@ -1586,7 +1586,7 @@ msgstr ""
 "on kasulikud vahendid vaatlusandmete kogumiseks. Rubriigid ja giidid  \n"
 "on efektiivsed tagasisidevahendid."
 
-#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:144
+#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:150
 msgid "Reflective question:"
 msgstr "Mõtisklev küsimus:"
 
@@ -1623,7 +1623,7 @@ msgstr ""
 "SALVESTAMINE EBAÕNNESTUS!\n"
 "Viimane õnnestunud salvestamine on %s."
 
-#: exe/engine/quiztestidevice.py:210
+#: exe/engine/quiztestidevice.py:216
 msgid "SCORM Quiz"
 msgstr "SCORM Test"
 
@@ -1678,7 +1678,7 @@ msgstr "Vali pilt"
 msgid "Select an image (JPG file)"
 msgstr "Vali pilt (JPG fail)"
 
-#: exe/engine/field.py:2527
+#: exe/engine/field.py:2542
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1690,7 +1690,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Vali läbimise aste:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:273
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:275
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1709,7 +1709,7 @@ msgid "Select the size of the magnifying glass"
 msgstr "Vali luubi suurus:"
 
 #: exe/engine/imagemagnifieridevice.py:67
-#: exe/engine/imagemagnifieridevice.py:104
+#: exe/engine/imagemagnifieridevice.py:109
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
@@ -1719,7 +1719,7 @@ msgstr ""
 "originaalpildi suurusest"
 
 #: exe/engine/imagemagnifieridevice.py:69
-#: exe/engine/imagemagnifieridevice.py:106
+#: exe/engine/imagemagnifieridevice.py:111
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
@@ -1794,7 +1794,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Hispaania Wikipedia artikkel"
 
-#: exe/engine/casestudyidevice.py:199 exe/engine/casestudyidevice.py:298
+#: exe/engine/casestudyidevice.py:205 exe/engine/casestudyidevice.py:307
 msgid "Story:"
 msgstr "Lugu:"
 
@@ -1923,7 +1923,7 @@ msgstr "Selle dialoogi eesmärk on kirjeldada sinu iDevice sihtkasutust teistele
 msgid "This article is licensed under the "
 msgstr "See artikkel on litsentseeritud"
 
-#: exe/engine/imagemagnifieridevice.py:108
+#: exe/engine/imagemagnifieridevice.py:113
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
@@ -1942,7 +1942,7 @@ msgstr ""
 "neid ei sisalda. Kasutajad peavad Flash Video vaatamiseks alla laadima Flash 8\n"
 "mängija sellelt aadressilt: http://www.macromedia.com/"
 
-#: exe/engine/freetextidevice.py:80
+#: exe/engine/freetextidevice.py:82
 msgid "This is a free text field general learning content can be entered."
 msgstr "See on vaba tekstiväli õppematerjali sisule."
 
@@ -1976,7 +1976,7 @@ msgstr "Vihje:"
 msgid "Title"
 msgstr "Pealkiri"
 
-#: exe/engine/quiztestidevice.py:110 exe/engine/quiztestidevice.py:168
+#: exe/engine/quiztestidevice.py:113 exe/engine/quiztestidevice.py:174
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -1992,11 +1992,11 @@ msgstr "Teema"
 msgid "True"
 msgstr "Tõene"
 
-#: exe/engine/truefalseidevice.py:118
+#: exe/engine/truefalseidevice.py:127
 msgid "True-False Question"
 msgstr "Tõene / Väär küsimus"
 
-#: exe/engine/truefalseidevice.py:120
+#: exe/engine/truefalseidevice.py:129
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -2025,7 +2025,7 @@ msgstr ""
 "\"Õige vastus\" nagu näidatud õige vastuse valimisel; või \n"
 "\"Vale vastus\" teistele vastusevariantidele."
 
-#: exe/engine/truefalseidevice.py:224
+#: exe/engine/truefalseidevice.py:236
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -2039,7 +2039,7 @@ msgstr ""
 "\"Õige vastus\" nagu näidatud õige vastuse valimisel; või \n"
 "\"Vale vastus\" teistele vastusevariantidele."
 
-#: exe/engine/field.py:2530
+#: exe/engine/field.py:2545
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2051,7 +2051,7 @@ msgstr ""
 msgid "Type the learning objectives for this resource."
 msgstr "Sisesta selle ressursi õppe-eesmärgid."
 
-#: exe/engine/truefalseidevice.py:128
+#: exe/engine/truefalseidevice.py:137
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -2070,12 +2070,12 @@ msgstr "URL:"
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Allalaadimine siit ebaõnnestus: %s<br/>Palun kontrolli õigekirja ning ühendust ja proovi uuesti."
 
-#: exe/engine/rssidevice.py:92 exe/engine/rssidevice.py:95
+#: exe/engine/rssidevice.py:94 exe/engine/rssidevice.py:97
 #, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "RSS-kanali allalaadimine ebaõnnestus: %s<br/>Palun kontrolli õigekirja ning ühendust ja proovi uuesti."
 
-#: twisted/persisted/styles.py:427
+#: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2090,15 +2090,15 @@ msgstr "Osa"
 #: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:59
-#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:119
+#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:128
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:211
-#: exe/engine/casestudyidevice.py:177 exe/idevices/exampleidevice.py:40
+#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:217
+#: exe/engine/casestudyidevice.py:183 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Aucklandi Ülikool"
 
-#: exe/engine/quiztestidevice.py:212
+#: exe/engine/quiztestidevice.py:218
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2234,7 +2234,7 @@ msgstr "eXe Projekt"
 msgid "file %s has no parentNode"
 msgstr "failil  %s puudub parentNode"
 
-#: exe/engine/wikipediaidevice.py:227
+#: exe/engine/wikipediaidevice.py:229
 msgid "http://en.wikipedia.org/"
 msgstr "http://et.wikipedia.org/"
 
@@ -2268,7 +2268,7 @@ msgstr "märge"
 msgid "newline"
 msgstr "uus rida"
 
-#: exe/engine/resource.py:533
+#: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 
