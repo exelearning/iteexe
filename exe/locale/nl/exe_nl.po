@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-24 16:12+1300\n"
-"PO-Revision-Date: 2007-12-15 11:53+1300\n"
+"PO-Revision-Date: 2007-12-28 03:09+1300\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -123,7 +123,7 @@ msgstr "<p>Geef de bijlage een naam. Het is handig om het bestandstype te vermel
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr "<p>Een cloze-toets of -oefening bestaat uit een zin of tekst waarin woorden weggelaten zijn, en de student de ontbrekende woorden moet invullen. Ze worden vaak gebruikt in volgende gevallen:</p><ol><li>Om de kennis van basisbegrippen te toetsen (als starttoets, formatieve oefening of eindtoets).</li><li>Om leesvaardigheid te toetsen.</li><li>Om kennis van de woordenschat te toetsen (bijv. voor anderstaligen).</li><li>Om woordvorming en/of grammaticale kennis te toetsen. </li></ol>"
+msgstr "<p>Een invuloefening bestaat uit een zin of tekst waarin woorden weggelaten zijn, en de student de ontbrekende woorden moet invullen. Ze worden vaak gebruikt in volgende gevallen:</p><ol><li>Om de kennis van basisbegrippen te toetsen (als starttoets, formatieve oefening of eindtoets).</li><li>Om leesvaardigheid te toetsen.</li><li>Om kennis van de woordenschat te toetsen (bijv. voor anderstaligen).</li><li>Om woordvorming en/of grammaticale kennis te toetsen. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -132,7 +132,7 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
-"<p>Typ of kopieer de tekst van de cloze-oefening in het tekstveld.\n"
+"<p>Typ of kopieer de tekst van de invuloefening in het tekstveld.\n"
 " Selecteer een woord om te verbergen door erop te dubbelklikken en de knop\n"
 " <i>Toon/verberg woord</i> aan te klikken.</p>"
 
@@ -370,11 +370,11 @@ msgid ""
 "                                       user filling the gaps."
 msgstr ""
 "Zet automatisch aanvullen aan \n"
-"bij invullen van gatentekst."
+"bij invullen van de invulwoorden."
 
 #: exe/engine/clozeidevice.py:191
 msgid "Allow auto completion when user filling the gaps."
-msgstr "Zet automatisch aanvullen aan bij invullen van gatentekst."
+msgstr "Zet automatisch aanvullen aan bij invullen van invulwoorden."
 
 #: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
@@ -2144,7 +2144,7 @@ msgstr "RSS feed laden onmogelijk vanaf %s <br/>Controleer de spelling en het ad
 
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
-msgstr ""
+msgstr "Samenvoegen onmogelijk: deze Java Applet bronnaam bestaat reeds (bevat: \""
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2346,7 +2346,7 @@ msgstr "nieuwe regel"
 
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
-msgstr ""
+msgstr "hernoem een bron voor een Applet iDevice, om dit te vermijden"
 
 #: exe/webui/element.py:1405
 msgid "text"
@@ -2851,9 +2851,8 @@ msgstr "Abkhazian"
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
 #: label="Common Cartridge">
-#, fuzzy
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"Webpagina\" accesskey=\"p\""
+msgstr "label=\"Gemeenschappelijk\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
