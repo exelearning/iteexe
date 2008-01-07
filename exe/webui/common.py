@@ -112,6 +112,11 @@ def textArea(name, value="", disabled="", cols="80", rows="8"):
 def richTextArea(name, value="", width="100%", height=100):
     """Adds a editor to a form"""
     log.debug(u"richTextArea %s, height=%s" % (value, height))
+    # to counter TinyMCE's ampersand-processing:
+    safe_value = value.replace('&','&amp;')
+    if safe_value != value:
+        value = safe_value
+        log.debug(u"richTextArea pre-processed value to: %s" % value)
     html  = u'<textarea name="%s" ' % name
     html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
     html += u'class="mceEditor" '
