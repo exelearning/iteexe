@@ -20,7 +20,7 @@ function saveIdevice(title){
     var theForm = document.getElementById('contentForm')
     
     if (ideviceExists(title1)){
-        if (confirm('Do you want to overwrite the exsiting idevice ' + title1 + '?')){
+        if (confirm('Do you want to overwrite the existing idevice ' + title1 + '?')){
             theForm.action.value = "save"
         }else
             return
