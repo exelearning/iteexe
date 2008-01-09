@@ -583,10 +583,12 @@ class MainPage(RenderableLivePage):
                     + descrip_file_path.abspath() + "\'.");
             descrip_file = open(descrip_file_path, 'wb')
 
-            # one more safety measure against TinyMCE, otherwise it will 
-            # later take ampersands and entity-escape them into '&amp;':
+            # safety measures against TinyMCE, otherwise it will 
+            # later take ampersands and entity-escape them into '&amp;',
+            # and filenames with hash signs will not be found, etc.:
             unspaced_filename  = local_filename.replace(' ','_')
-            unamped_local_filename  = unspaced_filename.replace('&', '_and_')
+            unhashed_filename  = unspaced_filename.replace('#', '_num_')
+            unamped_local_filename  = unhashed_filename.replace('&', '_and_')
             log.debug("and setting new file basename as: " 
                     + unamped_local_filename);
             my_basename = os.path.basename(unamped_local_filename)
