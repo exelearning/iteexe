@@ -137,20 +137,6 @@ you have just inserted.""")
         """ 
         G.application.afterUpgradeHandlers.append(self.convertToFreeText)
 
-    def getResourcesField(self, this_resource): 
-        """
-        implement the specific resource finding mechanism for this iDevice: 
-        """
-        if this_resource == self.image.imageResource: 
-            return self.image
-            
-        for this_image in self.text.images: 
-            if hasattr(this_image, '_imageResource') \
-            and this_resource == this_image._imageResource: 
-                return self.text
-
-        return None
-
     def convertToFreeText(self):
         """
         Actually do the Converting of 
