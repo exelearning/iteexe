@@ -324,8 +324,9 @@ data is entered into this field."""))
             html += common.elementInstruc(self.nameInstruc) + "<br/>"
             html += '<input type="text" name= "title" id="title" value="%s"/>' % self.idevice.title
    
+            this_package = None
             html += common.formField('richTextArea', _(u"Pedagogical Tip"),'tip',
-                                     '', self.tipInstruc, self.tip)
+                                     '', self.tipInstruc, this_package, self.tip)
      
             html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"

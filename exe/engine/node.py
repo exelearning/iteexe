@@ -102,6 +102,21 @@ class Node(Persistable):
             return u'Unknown Node [no title or package]'
 
 
+    def GetFullNodePath(self):
+        """
+        A general purpose single-line node-naming convention,
+        currently only used for the anchor names, to
+        provide a path to its specific node.
+        """
+        full_path = "EXE-NODE"
+        # first go through all of the parentNode's ancestor nodes:
+        for node in self.ancestors(): 
+            full_path = full_path + ":" + node.getTitle()
+            # ===> will probably need to have this create an HTML-safe name!
+        # and finally, add this parentNode itself:
+        full_path = full_path + ":" + self.getTitle()
+        return full_path
+
 
     def setTitle(self, title):
         """

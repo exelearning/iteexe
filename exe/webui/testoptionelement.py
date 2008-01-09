@@ -105,9 +105,15 @@ class TestoptionElement(object):
         # access the appropriate content_w_resourcePaths attribute directly,
         # since this is in a customised output format 
         # (in a table, with an extra delete-option X to the right)
-        #html += common.richTextArea("ans"+self.id, 
+
+        this_package = None 
+        if self.answerElement.field_idevice is not None \
+        and self.answerElement.field_idevice.parentNode is not None: 
+            this_package = self.answerElement.field_idevice.parentNode.package
+
         html += common.richTextArea(self.answerId,
-                self.answerElement.field.content_w_resourcePaths)
+                self.answerElement.field.content_w_resourcePaths,
+                package=this_package)
 
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.keyId, 

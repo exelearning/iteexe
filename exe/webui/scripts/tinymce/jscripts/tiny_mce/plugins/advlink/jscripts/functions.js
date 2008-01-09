@@ -400,7 +400,9 @@ function setAttrib(elm, attrib, value) {
 
 function getAnchorListHTML(id, target) {
 	var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
-	var nodes = inst.getBody().getElementsByTagName("a"), name, i;
+	//var nodes = inst.getBody().getElementsByTagName("a"), name, i;
+        // determine available tags using eXe_anchors instead, to allow access to the entire document's list of anchors:
+	var nodes = inst.getBody().getElementsByTagName("exe_tmp_anchor"), name, i;
 	var html = "";
 
 	html += '<select id="' + id + '" name="' + id + '" class="mceAnchorList" onfocus="tinyMCE.addSelectAccessibility(event, this, window);" onchange="this.form.' + target + '.value=';
@@ -409,7 +411,9 @@ function getAnchorListHTML(id, target) {
 
 	for (i=0; i<nodes.length; i++) {
 		if ((name = tinyMCE.getAttrib(nodes[i], "name")) != "")
-			html += '<option value="#' + name + '">' + name + '</option>';
+			//html += '<option value="#' + name + '">' + name + '</option>';
+                        // all of the exe_tmp_anchor names now automatically include the # in the full node pathname, so...
+			html += '<option value="' + name + '">' + name + '</option>';
 	}
 
 	html += '</select>';

@@ -76,10 +76,11 @@ class TextEditorElement(EditorElement):
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
-        #html += "<br/>\n"
-        #html += common.textInput(self.id, "", 40, "Disabled")
         html += "<br/>\n"
-        html += common.richTextArea("instruc"+self.id, self.field.instruc)
+
+        this_package = None
+        html += common.richTextArea("instruc"+self.id, self.field.instruc, 
+                package=this_package)
         html += "<br/>"
         return html
     
@@ -112,13 +113,13 @@ class TextAreaEditorElement(EditorElement):
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
-        #html += "<br/>\n"
-        #html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
+
+        this_package = None
         html += common.formField('richTextArea', '','instruc',
-                                 self.id, '',
+                                 self.id, '', 
+                                 this_package,
                                  self.field.instruc)
-        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
@@ -154,13 +155,13 @@ class FeedbackEditorElement(EditorElement):
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
-        #html += "<br/>\n"
-        #html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
+
+        this_package = None
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
+                                 this_package,
                                  self.field.instruc)
-        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
@@ -201,10 +202,12 @@ class ImageEditorElement(EditorElement):
                              self.field.width,
                              self.field.height)
         html += "<br/>\n"
+
+        this_package = None
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
+                                 this_package,
                                  self.field.instruc)
-        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         return html
     
 
@@ -247,15 +250,12 @@ class FlashEditorElement(EditorElement):
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
         html += "<br/>\n"
-        #html += common.flsh("img"+self.id, 
-                             #"/images/"+ImageEditorElement.DefaultImage,
-                             #self.field.width,
-                             #self.field.height)
-        #html += "<br/>\n"
+
+        this_package = None
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
+                                 this_package,
                                  self.field.instruc)
-        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         return html
     
 
@@ -271,17 +271,6 @@ class FlashEditorElement(EditorElement):
         html += u' value="%s" />' % _(u"Select Flash Object")
         if self.field.instruc != "":
             html += common.elementInstruc(self.field.instruc)
-        #html += common.flash("",
-                             #self.field.width,
-                             #self.field.height)
-        #floatArr    = [[_(u'Left'), 'left'],
-                      #[_(u'Right'), 'right'],
-                      #[_(u'None'),  'none']]
-
-        #html += common.formField('select', _("Align:"),
-                                 #"float" + self.id, '',
-                                 #'',
-                                 #floatArr, '')
         html += "<br/>\n"
         return html
     
@@ -302,15 +291,12 @@ class MultimediaEditorElement(EditorElement):
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
         html += "<br/>\n"
-        #html += common.flsh("img"+self.id, 
-                             #"/images/"+ImageEditorElement.DefaultImage,
-                             #self.field.width,
-                             #self.field.height)
-        #html += "<br/>\n"
+
+        this_package = None
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
+                                 this_package,
                                  self.field.instruc)
-        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         return html
     
 
@@ -350,8 +336,10 @@ class AttachmentEditorElement(EditorElement):
                                    _("Delete"), 1)
         html += "<br/>\n"
 
+        this_package = None
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
+                                 this_package,
                                  self.field.instruc)
         return html
     

@@ -275,6 +275,15 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
        local_imagePath = askUserForMedia();
     }
     else if (type == "image2insert" || type == "media2insert" || type == "file2insert") {
+        if (type == "file2insert" && url.indexOf('#') >= 0) {
+            // looks like a link to an internal anchor due to the #, so do
+            // not proceed any further, since there is no more action necessary:
+            return;
+            // UNLESS this causes problems with embedding real filenames w/ #!!
+            // But this will only be for links or filenames typed by hand;
+            // those textlink URLs inserted via its file browser will use 
+            // type=file rather than type=file2insert
+        }
         // new direct insert capabilities, no file browser needed.
         // just copy the passed-in URL directly, no browser necessary:
         local_imagePath = url;

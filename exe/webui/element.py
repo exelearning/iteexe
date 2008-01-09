@@ -202,8 +202,14 @@ class TextAreaElement(ElementWithResources):
 
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
+
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
         html = common.formField('richTextArea',self.field.name,'',
                                 self.id, self.field.instruc,
+                                this_package,
                                 self.field.content,
                                 str(self.width), str(self.height))
         return html
@@ -277,8 +283,13 @@ class FeedbackElement(ElementWithResources):
         # to render, choose the content with the preview-able resource paths:
         self.field.feedback = self.field.content_w_resourcePaths
 
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
         html = common.formField('richTextArea',self.field.name,'',
                                 self.id, self.field.instruc,
+                                this_package,
                                 self.field.feedback)
         return html
 
@@ -994,10 +1005,16 @@ class ClozeElement(ElementWithResources):
         # to render, choose the content with the preview-able resource paths:
         self.field.encodedContent = self.field.content_w_resourcePaths
 
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+
         html = [
             # Render the iframe box
             common.formField('richTextArea', _('Cloze Text'),'',
                              self.editorId, self.field.instruc,
+                             this_package,
                              self.field.encodedContent),
             # Render our toolbar
             u'<table style="width: 100%;">',
@@ -1519,8 +1536,15 @@ class SelectOptionElement(Element):
         # access the appropriate content_w_resourcePaths attribute directly,
         # since this is in a customised output format 
         # (in a table, with an extra delete-option X to the right)
+
+        this_package = None
+        if self.answerElement.field_idevice is not None \
+        and self.answerElement.field_idevice.parentNode is not None:
+            this_package = self.answerElement.field_idevice.parentNode.package
+
         html += common.richTextArea("ans"+self.id, 
-                          self.answerElement.field.content_w_resourcePaths)
+                          self.answerElement.field.content_w_resourcePaths,
+                          package=this_package)
         
         html += "</td><td align=\"center\">\n"
         html += common.checkbox("c"+self.id, 
@@ -1633,8 +1657,15 @@ class SelectquestionElement(Element):
         # access the appropriate content_w_resourcePaths attribute directly,
         # since this is in a customised output format 
         # (an extra delete-question X to the right of the question-mark)
+
+        this_package = None
+        if self.questionElement.field_idevice is not None \
+        and self.questionElement.field_idevice.parentNode is not None:
+            this_package = self.questionElement.field_idevice.parentNode.package
+
         html += common.richTextArea("question"+self.id, 
-                       self.questionElement.field.content_w_resourcePaths)
+                       self.questionElement.field.content_w_resourcePaths,
+                       package=this_package)
 
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
@@ -1780,8 +1811,15 @@ class QuizOptionElement(Element):
         # access the appropriate content_w_resourcePaths attribute directly,
         # since this is in a customised output format 
         # (in a table, with an extra delete-option X to the right)
+
+        this_package = None
+        if self.answerElement.field_idevice is not None \
+        and self.answerElement.field_idevice.parentNode is not None:
+            this_package = self.answerElement.field_idevice.parentNode.package
+
         html += common.richTextArea("ans"+self.id, 
-                          self.answerElement.field.content_w_resourcePaths)
+                          self.answerElement.field.content_w_resourcePaths,
+                          package=this_package)
         
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.field.question.id, 
@@ -1800,8 +1838,15 @@ class QuizOptionElement(Element):
         # access the appropriate content_w_resourcePaths attribute directly,
         # since this is in a customised output format 
         # (though less so now that the header isn't even centered)
+
+        this_package = None
+        if self.feedbackElement.field_idevice is not None \
+        and self.feedbackElement.field_idevice.parentNode is not None:
+            this_package = self.feedbackElement.field_idevice.parentNode.package
+
         html += common.richTextArea('f'+self.id, 
-                         self.feedbackElement.field.content_w_resourcePaths)
+                         self.feedbackElement.field.content_w_resourcePaths,
+                         package=this_package)
          
         html += "</td></tr>\n"
 

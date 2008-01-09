@@ -109,7 +109,7 @@ def textArea(name, value="", disabled="", cols="80", rows="8"):
     return html
 
 
-def richTextArea(name, value="", width="100%", height=100):
+def richTextArea(name, value="", width="100%", height=100, package=None):
     """Adds a editor to a form"""
     log.debug(u"richTextArea %s, height=%s" % (value, height))
     # to counter TinyMCE's ampersand-processing:
@@ -121,6 +121,22 @@ def richTextArea(name, value="", width="100%", height=100):
     html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
     html += u'class="mceEditor" '
     html += u'cols="52" rows="8">'
+    ########
+    # add exe_tmp_anchor tags 
+    # for ALL anchors available in the entire doc!
+    # (otherwise TinyMCE will only see those anchors within this field)
+    if package is not None and hasattr(package, 'anchor_fields') \
+    and package.anchor_fields is not None:
+        log.debug(u"richTextArea adding exe_tmp_anchor tags....")
+        for anchor_field in package.anchor_fields: 
+            anchor_field_path = anchor_field.GetFullNodePath()
+            for anchor_name in anchor_field.anchor_names:
+                full_anchor_name = anchor_field_path + "#" + anchor_name
+                html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
+                    % (full_anchor_name, full_anchor_name)
+    # these exe_tmp_anchor tags will be removed when processed by
+    # FieldWithResources' ProcessPreviewed()
+    ########
     html += value
     html += u'</textarea><br/>'
     return html
@@ -312,7 +328,8 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html += u'</div>\n'
     return html
 
-def formField(type_, caption, action, object_='', instruction='', *args, **kwargs):
+def formField(type_, caption, action, object_='', instruction='', \
+        package=None, *args, **kwargs):
     """
     A standard way for showing any form field nicely
     """
@@ -325,7 +342,7 @@ def formField(type_, caption, action, object_='', instruction='', *args, **kwarg
     if type_ == 'select':
         html += select(action, object_, *args, **kwargs)
     elif type_ == 'richTextArea':
-        html += richTextArea(action+object_, *args, **kwargs)
+        html += richTextArea(action+object_, package=package, *args, **kwargs)
     elif type_ == 'textArea':
         html += textArea(action+object_, *args, **kwargs)
     elif type_ == 'textInput':

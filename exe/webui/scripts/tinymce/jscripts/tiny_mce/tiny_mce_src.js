@@ -6944,10 +6944,18 @@ var TinyMCE_ForceParagraphs = {
 			for (i=0; i<nodes.length; i++) {
 				if (!isEmptyHTML(nodes[i].nodeValue))
 					return false;
-			}
+                       } 
 
-			// No images, no tables, no hrs, no text content then it's empty
-			return true;
+                        // Check for exe_tmp_anchors, lest they disappear with the first RETURN key!
+                        if (para.getElementsByTagName("exe_tmp_anchor").length > 0) 
+                            return false; 
+                        // BEWARE that any other element not listed in this function (e.g., <A> Anchors!)
+                        // will go disappearing after a RETURN, if not amongst other tags listed above.
+                        // So, e.g., simply inserting an anchor and then hitting RETURN will blank out the <A>!
+                        // Oh well, that's TinyMCE's own fun.  We just need to ensure to maintain the exe_tmp_anchors.
+
+                        // No images, no tables, no hrs, no text content then it's empty
+                        return true;
 		}
 
 	//	tinyMCE.debug(body.innerHTML);

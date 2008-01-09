@@ -235,6 +235,10 @@ class FieldWithResources(Field):
         # let its subclass just fall through its normal upgrade path to 
         # generate content_w_resourcePaths from its content, no worries.
 
+        # if anchors[] does not already exist, then set it via ListActiveAnchors
+        if not hasattr(self, 'anchors'):
+            self.anchors = self.ListActiveAnchors(self.content)
+
 
     # genImageId is needed for GalleryImage:    
     def genImageId(self): 
@@ -354,6 +358,82 @@ class FieldWithResources(Field):
 
         return resources_in_use
 
+    def RemoveTemporaryAnchors(self, content): 
+        """
+        # exe/webui/common.py's richTextArea() adds a temporary
+        # exe_tmp_anchor tag for each available anchor in the package,
+        # such that TinyMCE can allow linking to ANY such anchor.
+        # (otherwise JUST looks for anchors within the particular textfield).
+        # So, now, remove them:
+        """
+        # search through all <exe_tmp_anchor ....> tags, 
+        # clearing out all the way until its close </exe_tmp_anchor>
+        new_content = content
+        next_anchor_pos = new_content.find('<exe_tmp_anchor ')
+        closing_tag = '</exe_tmp_anchor>'
+        while next_anchor_pos >= 0: 
+            next_end_pos = new_content.find(closing_tag, next_anchor_pos)
+            if next_end_pos >= 0: 
+                # the next_end_pos is actual the start of the closing tag,
+                # so find the end of the entire tag pair, as:
+                next_end_pos += len(closing_tag)
+                this_tmp_anchor = new_content[next_anchor_pos : next_end_pos ] 
+                new_content = new_content.replace(this_tmp_anchor, '')
+            else:
+                # seems that a tag isn't properly closed.
+                # at least move the current position forward,
+                # so that we don't get caught into an infinite loop here:
+                next_anchor_pos += 1
+            next_anchor_pos = new_content.find('<exe_tmp_anchor ', 
+                    next_anchor_pos)
+
+        return new_content
+
+    def ListActiveAnchors(self, content):
+        """
+        to build up the list of all anchors currently within this field's 
+        new content to process.
+        assuming TinyMCE anchor tag conventions of:
+               <a title="TITLE" name="NAME"></a>
+        and that TITLE==NAME
+        """
+        anchor_names = []
+        starting_tag_bits = '<a title="'
+        next_anchor_pos = content.find(starting_tag_bits)
+        middle_tag_bits = '" name="'
+        closing_tag_bits = '"></a>'
+        while next_anchor_pos >= 0:
+            # and the title and name should exist before the closing:
+            title_start_pos = next_anchor_pos + len(starting_tag_bits)
+            title_end_pos = content.find(middle_tag_bits, next_anchor_pos)
+            this_anchor_title = content[title_start_pos : title_end_pos ]
+
+            name_start_pos = title_end_pos + len(middle_tag_bits)
+            name_end_pos = content.find(closing_tag_bits, next_anchor_pos)
+            this_anchor_name = content[name_start_pos : name_end_pos ]
+
+            # could compare the positions here to ensure they are in order,
+            # as well as compare the title AND the name, which should match.
+            # warn if they are not matching, but for now just go with the name.
+            if this_anchor_name: 
+                anchor_names.append(this_anchor_name)
+
+            next_end_pos = name_end_pos + len(closing_tag_bits)
+            next_anchor_pos = content.find(starting_tag_bits, next_end_pos)
+
+        return anchor_names
+
+    def GetFullNodePath(self): 
+        """
+        Really a general purpose single-line node-naming convention,
+        but for the moment, it is only used for the actual anchors, to
+        provide a path to its specific node.
+        """
+        full_path = ""
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            full_path = self.idevice.parentNode.GetFullNodePath()
+        return full_path
+
     def ProcessPreviewed(self, content): 
         """
         to build up the corresponding resources from any images (etc.) added
@@ -363,7 +443,7 @@ class FieldWithResources(Field):
         images, media, etc..
         """
         #################################
-        # overall safety check:
+        # Part -2: overall safety check:
         # while most iDevices only call process if their action != "delete",
         # some can still go ahead and call process even after being deleted!
         # So, ensure that we are actually still attached in a package:
@@ -375,16 +455,57 @@ class FieldWithResources(Field):
             return content
 
         #################################
-        # Part 0: remove any previous math source files which are no 
-        # longer in use; otherwise we get naming discrepencies in the case
+        # Part -1: remove temporary anchor tags:
+        # exe/webui/common.py's richTextArea() adds a temporary
+        # exe_tmp_anchor tag for each available anchor in the package,
+        # such that TinyMCE can allow linking to any such anchor.
+        # Now, remove them:
+        new_content = self.RemoveTemporaryAnchors(content)
+
+        #################################
+        # Part 0a: remove any previous math source files (and other resources)
+        # which are no longer in use; 
+        # otherwise we get naming discrepencies in the case
         # that identical math source is used with a new previewed math image
         # (e.g., when changing only the font size)
-        resources_in_use = self.ListActiveResources(content)
+        resources_in_use = self.ListActiveResources(new_content)
         self.RemoveZombieResources(resources_in_use)
 
         #################################
-        # Part 1: process any newly added resources
-        new_content = self.ProcessPreviewedImages(content)
+        # Part 0b:  
+        # determine active anchors appropriately here:
+        self.anchor_names = self.ListActiveAnchors(new_content)
+
+        # r3m0: TO ADD:
+        # ====> want to compare against the previously existing 
+        # anchor_names as listed in the old content, to see which
+        # anchors have been removed.  Then perform node-tree-wide searching 
+        # for any such link, and (a) rename it to 'invalid', or (b) remove it?
+        # UNTIL THEN.....
+        # NOTE: if anchors are removed, invalid links could indeed exist 
+        # throughout rest of the content to now non-existent anchors.
+        # Let the user beware!  
+
+        # if this field has anchors, ensure that it is in the package's list:
+        if len(self.anchor_names) > 0:
+            if not hasattr(self.idevice.parentNode.package, 'anchor_fields'):
+                self.idevice.parentNode.package.anchor_fields = []
+            if self not in self.idevice.parentNode.package.anchor_fields:
+                self.idevice.parentNode.package.anchor_fields.append(self)
+        else:
+            if hasattr(self.idevice.parentNode.package, 'anchor_fields') \
+            and self in self.idevice.parentNode.package.anchor_fields:
+                self.idevice.parentNode.package.anchor_fields.remove(self)
+
+        # r3m0: TO ADD:
+        # ==> be most especially aware of MOVING/RENAMING nodes,
+        # and of MERGING/INSERTING packages, in which case nodes ARE 'moved',
+        # and of MOVING iDevices across nodes....
+
+
+        #################################
+        # finally... Part 1: process any newly added resources
+        new_content = self.ProcessPreviewedImages(new_content)
         new_content = self.ProcessPreviewedMedia(new_content)
         new_content = self.ProcessPreviewedLinkResources(new_content)
 
