@@ -1,9 +1,12 @@
 Next Release
 * Add note that SCORM export previous/next requires non-standard extension
 * Add prototype IMS Common Cartridge export (no quizzing)
+* Add Rel-License microformat to license urls in exported content
 * Make importing old packages more robust (and remove unused resources)
 * Fix merging packages that contain resources with same name as main package
 * Fix upgrading of multichoice questions
+* Fix escaping of ampersands in rich text fields, allowing HTML embedding
+* Fix embedding of images and media with '#' in name
 * Fix SCORM Quiz pass rate to signal pass for scores of exactly the rate
 * Update to BeautifulSoup 3.0.5
 
