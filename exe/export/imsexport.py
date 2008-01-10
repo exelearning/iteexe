@@ -230,7 +230,8 @@ class IMSPage(Page):
             if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForWeb()
             if idevice.title != "Forum Discussion":
-                html += block.renderView(self.node.package.style)
+                html += self.processInternalLinks(
+                        block.renderView(self.node.package.style))
             html += u'</div>\n'     # iDevice div
 
         html += u"</div>\n"
@@ -242,6 +243,15 @@ class IMSPage(Page):
         return html
 
 
+    def processInternalLinks(self, html):
+        """
+        take care of any internal links which are in the form of:
+           href="EXE-NODE:Home:Topic:etc#Anchor"
+        For this IMS Export, go ahead and remove the link entirely,
+        leaving only its text, since such links are not to be in the LMS.
+        """
+        return common.removeInternalLinks(html)
+        
         
 # ===========================================================================
 class IMSExport(object):
