@@ -127,16 +127,50 @@ class SinglePage(Page):
                 raise Error("Unable to render iDevice.")
             if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForWeb()
-            html += block.renderView(style)
+            html += self.processInternalLinks(block.renderView(style))
             html += u'  </div>\n'     # iDevice div
 
         html += '</div>\n'          # node div
 
         for child in node.children:
             html += self.renderNode(child)
-            
+
         return html
 
-        
-   
 
+    def processInternalLinks(self, html):
+        """
+        take care of any internal links which are in the form of:
+           href="EXE-NODE:Home:Topic:etc#Anchor"
+        For this SinglePage Export, go ahead and keep the #Anchor portion,
+        but remove the 'EXE-NODE:Home:Topic:etc', since it is all 
+        exported into the same file.
+        """
+        intlink_start = 'href="EXE-NODE:'
+        intlink_pre   = 'href="'
+        next_link_pos = html.find(intlink_start)
+        while next_link_pos >= 0: 
+            link_name_start_pos = next_link_pos + len(intlink_pre)
+            link_name_end_pos = html.find('"', link_name_start_pos)
+            if link_name_end_pos >= 0: 
+                link_name = html[link_name_start_pos : link_name_end_pos] 
+                log.debug("rendering internal link: " + link_name)
+                # assuming that any '#'s in the node name have been escaped,
+                # the first '#' should be the actual anchor:
+                node_name_end_pos = link_name.find('#')
+                if node_name_end_pos < 0:
+                    # no hash found, => use the whole thing as the node name:
+                    node_name_end_pos = len(link_name) - 1
+                link_node_name = link_name[0 : node_name_end_pos]
+                if link_node_name: 
+                    # finally, FOR SINGLE-PAGE EXPORT,
+                    # remove this particular node name:
+                    old_node_name = intlink_pre + link_node_name
+                    no_node_name = intlink_pre
+                    html = html.replace(old_node_name, no_node_name, 1)
+            # else the href quote is unclosed.  ignore, eh?
+            next_link_pos = html.find(intlink_start, next_link_pos+1)
+            
+
+        return html
+        
