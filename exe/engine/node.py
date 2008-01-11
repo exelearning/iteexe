@@ -115,20 +115,15 @@ class Node(Persistable):
         A general purpose single-line node-naming convention,
         currently only used for the anchor names, to
         provide a path to its specific node.
+        Create this path in an HTML-safe name, to closely match 
+        the names used upon export of the corresponding files.
         """
         full_path = "EXE-NODE"
         # first go through all of the parentNode's ancestor nodes:
         for node in self.ancestors(): 
             full_path = full_path + ":" + quote(node.getTitle().encode('utf8'))
-            # ===> will probably need to have this create an HTML-safe name!
-        # and finally, add this parentNode itself:
-
-        log.debug('GetFullNodePath quoting ' + self.getTitle() 
-                + ', from parent path = ' + full_path)
-
+        # and finally, add this node itself:
         full_path = full_path + ":" + quote(self.getTitle().encode('utf8'))
-        log.debug('GetFullNodePath quoting ' + self.getTitle() 
-                + ', with full path = ' + full_path)
         return full_path
 
 
