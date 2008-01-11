@@ -29,7 +29,7 @@ from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.pages         import Page, uniquifyNames
-
+from exe.webui                import common 
 log = logging.getLogger(__name__)
 
 
@@ -116,7 +116,8 @@ class WebsitePage(Page):
             if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForWeb()
             if idevice.title != "Forum Discussion":
-                html += block.renderView(style)
+                html += self.processInternalLinks(self.node.package,
+                        block.renderView(style))
             html += u'</div>\n'     # iDevice div
         
         html += self.getNavigationLink(prevPage, nextPage)
@@ -199,3 +200,13 @@ class WebsitePage(Page):
         return html
 
 
+
+    def processInternalLinks(self, package, html):
+        """
+        take care of any internal links which are in the form of:
+           href="EXE-NODE:Home:Topic:etc#Anchor"
+        For this WebSite Export, go ahead and process the link entirely,
+        using the fully exported (and unique) file names for each node.
+        """
+        return common.renderInternalLinkNodeFilenames(package, html)
+        

@@ -477,3 +477,79 @@ def removeInternalLinkNodes(html):
     return html
         
 
+def findLinkedNode(package, exe_node_path, anchor_name):
+    """
+    find the node which corresponds to the exe_node_name of the form:
+       "EXE-NODE:Home:Topic:etc" of the  href="EXE-NODE:Home:Topic:etc#Anchor"
+    rather than searching through the entire node-tree, shortcut straight
+    to the package's list of anchor_fields
+    """
+    if hasattr(package, 'anchor_fields') and package.anchor_fields:
+        for anchor_field in package.anchor_fields:
+            if anchor_field.GetFullNodePath() == exe_node_path:
+                if anchor_name:
+                    # now ensure that this field has an anchor of this name:
+                    if anchor_name in  anchor_field.anchor_names: 
+                        # break out and return this matching field's node:
+                        return anchor_field.idevice.parentNode
+                else: 
+                    # with no anchor_name, there is no way to further 
+                    # determine if this is the correct field/node or not,
+                    # so just break out and return the first matching one:
+                    return anchor_field.idevice.parentNode
+    return None
+
+       
+def renderInternalLinkNodeFilenames(package, html):
+    """
+    take care of any internal links which are in the form of:
+       href="EXE-NODE:Home:Topic:etc#Anchor"
+    For this WebSite Export, go ahead and keep the #Anchor portion,
+    but replace the 'EXE-NODE:Home:Topic:etc' Node portion, 
+    with the actual target's filename, now temporarily stored in the 
+    Node's tmp_export_filename attribute, after being processed by
+    the export's Page:uniquifyNames()
+    """
+    intlink_start = 'href="EXE-NODE:'
+    intlink_pre   = 'href="'
+    next_link_pos = html.find(intlink_start)
+    while next_link_pos >= 0: 
+        link_name_start_pos = next_link_pos + len(intlink_pre)
+        link_name_end_pos = html.find('"', link_name_start_pos)
+        if link_name_end_pos >= 0: 
+            link_name = html[link_name_start_pos : link_name_end_pos] 
+            log.debug("rendering internal link: " + link_name)
+            # assuming that any '#'s in the node name have been escaped,
+            # the first '#' should be the actual anchor:
+            node_name_end_pos = link_name.find('#')
+            if node_name_end_pos < 0:
+                # no hash found, => use the whole thing as the node name:
+                node_name_end_pos = len(link_name) - 1
+                link_anchor_name = ""
+            else:
+                link_anchor_name = link_name[node_name_end_pos+1 : ]
+            link_node_name = link_name[0 : node_name_end_pos]
+
+            found_node = None
+            if link_node_name: 
+                # Okay, FOR WEBSITE EXPORT, need to find the actual node
+                # being referenced by this link, and its actual export filename:
+                found_node = findLinkedNode(package, link_node_name,
+                        link_anchor_name)
+                if found_node and hasattr(found_node, 'tmp_export_filename'):
+                    # Finally, replace this particular node name 
+                    # with its actual export filename: 
+                    old_node_name = intlink_pre + link_node_name 
+                    new_node_name = intlink_pre + found_node.tmp_export_filename
+                    html = html.replace(old_node_name, new_node_name, 1)
+
+            if found_node is None:
+                log.warn('Export unable to find corresponding node; '
+                        + 'unable to render link to: ' + link_node_name)
+
+        # else the href quote is unclosed.  ignore, eh?
+        next_link_pos = html.find(intlink_start, next_link_pos+1)
+            
+    return html
+        
+

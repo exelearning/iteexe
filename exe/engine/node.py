@@ -25,6 +25,8 @@ from copy               import deepcopy
 from exe.engine.persist import Persistable
 from exe.engine.path    import toUnicode
 from exe                import globals as G
+from urllib             import quote
+
 
 log = logging.getLogger(__name__)
 
@@ -36,6 +38,12 @@ class Node(Persistable):
 
     # Class attributes
     persistenceVersion = 2
+
+    # temporary variable for the exported filename,
+    #     [ as used by export's Page:uniquifyNames() ]
+    # such that links to any anchors on this node may be resolved.
+    # ensure that it is not saved with the .elp:
+    nonpersistant      = ['tmp_export_filename']
 
     def __init__(self, package, parent=None, title=""):
         """
@@ -111,10 +119,16 @@ class Node(Persistable):
         full_path = "EXE-NODE"
         # first go through all of the parentNode's ancestor nodes:
         for node in self.ancestors(): 
-            full_path = full_path + ":" + node.getTitle()
+            full_path = full_path + ":" + quote(node.getTitle().encode('utf8'))
             # ===> will probably need to have this create an HTML-safe name!
         # and finally, add this parentNode itself:
-        full_path = full_path + ":" + self.getTitle()
+
+        log.debug('GetFullNodePath quoting ' + self.getTitle() 
+                + ', from parent path = ' + full_path)
+
+        full_path = full_path + ":" + quote(self.getTitle().encode('utf8'))
+        log.debug('GetFullNodePath quoting ' + self.getTitle() 
+                + ', with full path = ' + full_path)
         return full_path
 
 

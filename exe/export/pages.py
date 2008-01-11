@@ -22,6 +22,8 @@ Export Pages functions
 """
 
 import logging
+from urllib                   import quote
+
 
 log = logging.getLogger(__name__)
 
@@ -104,4 +106,8 @@ def uniquifyNames(pages):
         if uniquifier:
             pageNames[page.name] = uniquifier + 1
             page.name += unicode(uniquifier)
+        # for export, temporarily set this unique name on the node itself,
+        # such that any links to it can use the proper target; also 
+        # including the quote() & ".html", as per WebsitePage's:
+        page.node.tmp_export_filename = quote(page.name)+".html"
 

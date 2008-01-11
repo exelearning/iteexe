@@ -235,9 +235,24 @@ class FieldWithResources(Field):
         # let its subclass just fall through its normal upgrade path to 
         # generate content_w_resourcePaths from its content, no worries.
 
-        # if anchors[] does not already exist, then set it via ListActiveAnchors
-        if not hasattr(self, 'anchors'):
-            self.anchors = self.ListActiveAnchors(self.content)
+        # if anchor_names[] does not already exist, 
+        # then set it via ListActiveAnchors
+        if not hasattr(self, 'anchor_names'):
+            self.anchor_names = self.ListActiveAnchors(self.content)
+        # AND update self in the package list, as necessary:
+        # if this field has anchors, ensure that it is in the package's list:
+        if self.idevice is not None and self.idevice.parentNode is not None\
+        and self.idevice.parentNode.package is not None: 
+            if len(self.anchor_names) > 0:
+                if not hasattr(self.idevice.parentNode.package, 'anchor_fields'):
+                    self.idevice.parentNode.package.anchor_fields = []
+                if self not in self.idevice.parentNode.package.anchor_fields:
+                    self.idevice.parentNode.package.anchor_fields.append(self)
+            else:
+                if hasattr(self.idevice.parentNode.package, 'anchor_fields') \
+                and self in self.idevice.parentNode.package.anchor_fields:
+                    self.idevice.parentNode.package.anchor_fields.remove(self)
+
 
 
     # genImageId is needed for GalleryImage:    
