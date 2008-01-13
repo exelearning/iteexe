@@ -401,7 +401,7 @@ def removeInternalLinks(html):
         if link_name_end_pos >= 0: 
             link_name = html[link_name_start_pos : link_name_end_pos] 
             href_link_name = html[next_link_pos : link_name_end_pos] 
-            log.warn("non-Web Export, removing internal link: " + link_name)
+            log.warn("Export removing internal link: " + link_name)
 
             # Okay, try backing up to find the beginning <a of the href:
             # =====> Ideally, eventually do the full tag processing here!
@@ -457,7 +457,8 @@ def removeInternalLinkNodes(html):
         link_name_end_pos = html.find('"', link_name_start_pos)
         if link_name_end_pos >= 0: 
             link_name = html[link_name_start_pos : link_name_end_pos] 
-            log.debug("rendering internal link: " + link_name)
+            log.debug("Export rendering internal link, without nodename: " 
+                    + link_name)
             # assuming that any '#'s in the node name have been escaped,
             # the first '#' should be the actual anchor:
             node_name_end_pos = link_name.find('#')
@@ -510,6 +511,7 @@ def renderInternalLinkNodeFilenames(package, html):
     Node's tmp_export_filename attribute, after being processed by
     the export's Page:uniquifyNames()
     """
+    found_all_anchors = True
     intlink_start = 'href="EXE-NODE:'
     intlink_pre   = 'href="'
     next_link_pos = html.find(intlink_start)
@@ -518,7 +520,7 @@ def renderInternalLinkNodeFilenames(package, html):
         link_name_end_pos = html.find('"', link_name_start_pos)
         if link_name_end_pos >= 0: 
             link_name = html[link_name_start_pos : link_name_end_pos] 
-            log.debug("rendering internal link: " + link_name)
+            log.debug("Export rendering internal link: " + link_name)
             # assuming that any '#'s in the node name have been escaped,
             # the first '#' should be the actual anchor:
             node_name_end_pos = link_name.find('#')
@@ -541,14 +543,22 @@ def renderInternalLinkNodeFilenames(package, html):
                     # with its actual export filename: 
                     old_node_name = intlink_pre + link_node_name 
                     new_node_name = intlink_pre + found_node.tmp_export_filename
+                    if link_anchor_name:
+                        old_node_name = old_node_name + "#" + link_anchor_name
+                        new_node_name = new_node_name + "#" + link_anchor_name
                     html = html.replace(old_node_name, new_node_name, 1)
 
             if found_node is None:
-                log.warn('Export unable to find corresponding node; '
-                        + 'unable to render link to: ' + link_node_name)
+                found_all_anchors = False
+                log.warn('Export unable to find corresponding node&anchor; '
+                        + 'unable to render link to: ' + link_name)
 
         # else the href quote is unclosed.  ignore, eh?
         next_link_pos = html.find(intlink_start, next_link_pos+1)
+
+    if not found_all_anchors:
+        # then go ahead and clear out any remaining invalid links:
+        html = removeInternalLinks(html)
             
     return html
         
