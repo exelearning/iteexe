@@ -428,6 +428,15 @@ class FieldWithResources(Field):
         self.content_wo_resourcePaths = common.removeInternalLinks(
                 self.content_wo_resourcePaths, full_anchor_name)
 
+        # and just in case this removal was actually part of an anchor rename,
+        # (which, though supported in TinyMCE, cannot be confirmed by eXe- yet?)
+        # and they wonder why all of their internal links were removed:
+        this_node_path = ""
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_node_path = self.idevice.parentNode.GetFullNodePath()
+        log.warn('Removed internal link to anchor: ' + full_anchor_name
+                + ' from node: ' + this_node_path)
+
 
     def RenameInternalLinkToAnchor(self, dst_field, old_full_anchor_name,
                                     new_full_anchor_name):
