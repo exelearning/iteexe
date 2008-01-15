@@ -777,6 +777,10 @@ class MainPage(RenderableLivePage):
                                           destinationPackage=self.package)
         newNode = loadedPackage.root.copyToPackage(self.package, 
                                                    self.package.currentNode)
+        # trigger a rename of all of the internal nodes and links,
+        # and to add any such anchors into the dest package via isMerge:
+        newNode.RenamedNodePath(isMerge=True)
+
         client.sendScript((u'top.location = "/%s"' % \
                           self.package.name).encode('utf8'))
 

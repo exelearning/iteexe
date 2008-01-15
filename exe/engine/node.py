@@ -154,7 +154,7 @@ class Node(Persistable):
 
 
 
-    def RenamedNode(self):
+    def RenamedNodePath(self, isMerge=False):
         """
         To update all of the anchors (if any) that are defined within
         any of this node's various iDevice fields, and any 
@@ -172,6 +172,21 @@ class Node(Persistable):
 
         # First rename all of the source-links to anchors in this node's fields:
         for this_field in self.anchor_fields:
+            if isMerge and hasattr(this_field, 'anchor_names') \
+            and len(this_field.anchor_names) > 0:
+                # merging this field into a destination package,
+                # setup the internal linking data structures:
+
+                if not hasattr(self.package, 'anchor_fields'):
+                    self.package.anchor_fields = []
+                if this_field not in self.package.anchor_fields:
+                    self.package.anchor_fields.append(this_field)
+
+                if not hasattr(self.package, 'anchor_nodes'):
+                    self.package.anchor_nodes = []
+                if self not in self.package.anchor_nodes:
+                    self.package.anchor_nodes.append(self)
+
             if hasattr(this_field, 'anchor_names') \
             and hasattr(this_field, 'anchors_linked_from_fields'):
                 for this_anchor_name in this_field.anchor_names:
@@ -185,7 +200,7 @@ class Node(Persistable):
 
         # Then do the same for all of this node's children nodes:
         for child_node in self.children:
-            child_node.RenamedNode()
+            child_node.RenamedNodePath(isMerge)
 
 
 
@@ -429,7 +444,7 @@ class Node(Persistable):
                 newParent.children.append(self)
 
         # and trigger an update of this node's anchor paths as well:
-        self.RenamedNode()
+        self.RenamedNodePath()
 
         self.package.isChanged = True
 
