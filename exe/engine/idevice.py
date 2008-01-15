@@ -156,8 +156,10 @@ class Idevice(Persistable):
             # and NOW we can finally properly delete it!
             self.userResources[i].delete()
 
-
         if self.parentNode:
+            # first remove any internal anchors' links:
+            self.ChangedParentNode(self.parentNode, None)
+
             self.parentNode.idevices.remove(self)
             self.parentNode = None
 
@@ -205,10 +207,89 @@ class Idevice(Persistable):
     def setParentNode(self, parentNode):
         """
         Change parentNode
+        Now includes support for renaming any internal anchors and their links.
         """
+        old_node = None
         if self.parentNode:
+            old_node = self.parentNode
             self.parentNode.idevices.remove(self)
         parentNode.addIdevice(self)
+        # and update any internal anchors and their links:
+        self.ChangedParentNode(old_node, parentNode)
+
+
+    def ChangedParentNode(self, old_node, new_node):
+        """
+        To update all fo the anchors (if any) that are defined within
+        any of this iDevice's variouos fields, and any 
+        internal links corresponding to those anchors.
+        This is essentially a variation of Node:RenamedNode()
+        """
+        # only need to continue on if there are any anchor_fields within
+        # this particular iDevice.  Rather than having each different idevice
+        # type look through each of its fields, the easiest approach to this
+        # is to simply check on the node's list of anchor_fields to see if
+        # any of those use THIS idevice:
+
+        if old_node is None or not hasattr(old_node, 'anchor_fields'):
+            # no anchors here, then!
+            return
+
+        # Must use the old_node's last_full_node_path rather than 
+        # the old_node's GetFullNodePath() primarily for a node delete, where
+        # the node itself will have already been disconnected from the tree.
+        old_node_path = old_node.last_full_node_path
+        old_package = old_node.package
+        if new_node: 
+            new_node_path = new_node.GetFullNodePath()
+            new_package = new_node.package
+        else:
+            # as called during a delete of this iDevice:
+            new_node_path = ""
+            new_package = None
+
+        for this_field in old_node.anchor_fields:
+            if this_field.idevice == self:
+                # okay, this is an applicable field with some anchors:
+                if hasattr(this_field, 'anchor_names') \
+                and hasattr(this_field, 'anchors_linked_from_fields'): 
+                    for this_anchor_name in this_field.anchor_names: 
+                        old_full_link_name = old_node_path + "#" \
+                                + this_anchor_name 
+                        new_full_link_name = new_node_path + "#" + \
+                                this_anchor_name 
+                        for that_field in \
+                        this_field.anchors_linked_from_fields[this_anchor_name]:
+                            if new_node:
+                                that_field.RenameInternalLinkToAnchor( 
+                                    this_field, old_full_link_name, 
+                                    new_full_link_name) 
+                            else:
+                                # appears that this is being deleted:
+                                that_field.RemoveInternalLinkToAnchor( 
+                                    this_field, old_full_link_name)
+
+                # and change not only the link names to the anchors, (as above) 
+                # but also the package and node internal data structures....  
+                old_node.anchor_fields.remove(this_field)
+                if len(old_node.anchor_fields) == 0:
+                    # remove the old_node from the package's anchor_nodes:
+                    if old_package and hasattr(old_package, 'anchor_nodes') \
+                    and old_node in old_package.anchor_nodes:
+                        old_package.anchor_nodes.remove(old_node)
+
+                if new_node:
+                    if not hasattr(new_node, 'anchor_fields'):
+                        new_node.anchor_fields = []
+                    if this_field not in new_node.anchor_fields: 
+                        new_node.anchor_fields.append(this_field)
+                    if new_package:
+                        if not hasattr(new_package, 'anchor_nodes'):
+                            new_package.anchor_nodes = []
+                        if new_node not in new_package.anchor_nodes:
+                            new_package.anchor_nodes.append(new_node)
+
+        return
 
     def getResourcesField(self, this_resource):
         """

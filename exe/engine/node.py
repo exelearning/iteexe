@@ -60,6 +60,9 @@ class Node(Persistable):
         self.children = []
         self.idevices = []
 
+        # set its initial old node path for internal anchors, before any moves
+        self.last_full_node_path = self.GetFullNodePath()
+
     # Properties
 
     # id
@@ -109,22 +112,81 @@ class Node(Persistable):
         else:
             return u'Unknown Node [no title or package]'
 
+    def TwistedRePersist(self):
+        """
+        Handles any post-upgrade issues 
+        (such as typically re-persisting non-persistent data)
+        that slipped between the cracks....
+        """
+        # add a brand-new new Node variable, to support the renaming 
+        # of any internal anchors within its fields.
+        # Store the current full node path, such that any renames or moves
+        # can reference the previous path and update anchors & any links:
+        self.last_full_node_path = self.GetFullNodePath()
 
-    def GetFullNodePath(self):
+
+
+    def GetFullNodePath(self, new_node_title=""):
         """
         A general purpose single-line node-naming convention,
         currently only used for the anchor names, to
         provide a path to its specific node.
         Create this path in an HTML-safe name, to closely match 
         the names used upon export of the corresponding files.
+        Optional new_node_title allows the determination of the
+        full path name should this node's name change.
         """
         full_path = "EXE-NODE"
         # first go through all of the parentNode's ancestor nodes:
-        for node in self.ancestors(): 
+        this_nodes_ancestors = list(self.ancestors())
+        num_ancestors = len(this_nodes_ancestors)
+        for loop in range(num_ancestors-1, -1, -1):
+            node = this_nodes_ancestors[loop]
             full_path = full_path + ":" + quote(node.getTitle().encode('utf8'))
+
         # and finally, add this node itself:
-        full_path = full_path + ":" + quote(self.getTitle().encode('utf8'))
+        if new_node_title == "":
+            full_path = full_path + ":" + quote(self.getTitle().encode('utf8'))
+        else:
+            # a new_node_title was specified, create this path with the new name
+            full_path = full_path + ":" + quote(new_node_title.encode('utf8'))
         return full_path
+
+
+
+    def RenamedNode(self):
+        """
+        To update all of the anchors (if any) that are defined within
+        any of this node's various iDevice fields, and any 
+        internal links corresponding to those anchors.
+        Called AFTER the actual rename has occurred.
+        """
+        if not hasattr(self, 'anchor_fields'):
+            self.anchor_fields = []
+
+        old_node_path = self.last_full_node_path
+        new_node_path = self.GetFullNodePath()
+        self.last_full_node_path = new_node_path
+        log.debug('Renaming node path after a rename, from "' + old_node_path 
+                + '" to "' + new_node_path)
+
+        # First rename all of the source-links to anchors in this node's fields:
+        for this_field in self.anchor_fields:
+            if hasattr(this_field, 'anchor_names') \
+            and hasattr(this_field, 'anchors_linked_from_fields'):
+                for this_anchor_name in this_field.anchor_names:
+                    old_full_link_name = old_node_path + "#" + this_anchor_name
+                    new_full_link_name = new_node_path + "#" + this_anchor_name
+                    for that_field in this_field.anchors_linked_from_fields[\
+                        this_anchor_name]:
+                        that_field.RenameInternalLinkToAnchor(\
+                                this_field, old_full_link_name, 
+                                new_full_link_name)
+
+        # Then do the same for all of this node's children nodes:
+        for child_node in self.children:
+            child_node.RenamedNode()
+
 
 
     def setTitle(self, title):
@@ -365,6 +427,9 @@ class Node(Persistable):
                     children.insert(children.index(nextSibling), self)
             else:
                 newParent.children.append(self)
+
+        # and trigger an update of this node's anchor paths as well:
+        self.RenamedNode()
 
         self.package.isChanged = True
 

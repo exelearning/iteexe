@@ -382,7 +382,7 @@ def editModeHeading(text):
 
 
 
-def removeInternalLinks(html):
+def removeInternalLinks(html, anchor_name=""):
     """
     take care of any internal links which are in the form of:
        href="EXE-NODE:Home:Topic:etc#Anchor"
@@ -401,7 +401,10 @@ def removeInternalLinks(html):
         if link_name_end_pos >= 0: 
             link_name = html[link_name_start_pos : link_name_end_pos] 
             href_link_name = html[next_link_pos : link_name_end_pos] 
-            log.warn("Export removing internal link: " + link_name)
+            if anchor_name == "": 
+                # if no specific one specified, then removing all of them:
+                log.warn("Export removing internal link: " + link_name)
+                # otherwise we don't yet know if this link should be removed
 
             # Okay, try backing up to find the beginning <a of the href:
             # =====> Ideally, eventually do the full tag processing here!
@@ -433,7 +436,11 @@ def removeInternalLinks(html):
                 # remove this particular node name:
                 # and try removing the entire href="" bit of it,
                 # still leaving the <a ...></a>
-                html = html.replace(full_link_name, link_text, 1)
+
+                # now this routine is also coded to allow the removal of
+                # a single anchor.  If so, ensure that it IS the requested:
+                if anchor_name == "" or anchor_name == link_name: 
+                    html = html.replace(full_link_name, link_text, 1)
 
         # else the href quote is unclosed.  ignore, eh?
         last_end_pos = next_link_pos+1
@@ -478,9 +485,10 @@ def removeInternalLinkNodes(html):
     return html
         
 
-def findLinkedNode(package, exe_node_path, anchor_name):
+
+def findLinkedField(package, exe_node_path, anchor_name):
     """
-    find the node which corresponds to the exe_node_name of the form:
+    find the field which corresponds to the exe_node_name of the form:
        "EXE-NODE:Home:Topic:etc" of the  href="EXE-NODE:Home:Topic:etc#Anchor"
     rather than searching through the entire node-tree, shortcut straight
     to the package's list of anchor_fields
@@ -492,14 +500,40 @@ def findLinkedNode(package, exe_node_path, anchor_name):
                     # now ensure that this field has an anchor of this name:
                     if anchor_name in  anchor_field.anchor_names: 
                         # break out and return this matching field's node:
-                        return anchor_field.idevice.parentNode
+                        #return anchor_field.idevice.parentNode
+                        return anchor_field
                 else: 
                     # with no anchor_name, there is no way to further 
                     # determine if this is the correct field/node or not,
                     # so just break out and return the first matching one:
-                    return anchor_field.idevice.parentNode
+                    #return anchor_field.idevice.parentNode
+                    return anchor_field
     return None
 
+
+def findLinkedNode(package, exe_node_path, anchor_name):
+    """
+    find the node which corresponds to the exe_node_name of the form:
+       "EXE-NODE:Home:Topic:etc" of the  href="EXE-NODE:Home:Topic:etc#Anchor"
+    just a wrapper around common.findLinkedField()
+    """
+    linked_node = None
+    linked_field = findLinkedField(package, exe_node_path, anchor_name)
+    if linked_field and linked_field.idevice is not None:
+        linked_node = linked_field.idevice.parentNode
+    return linked_node
+
+def getAnchorNameFromLinkName(link_name):
+    """
+    little helper to pull out of the (possibly optional?) Anchor from 
+       href="EXE-NODE:Home:Topic:etc#Anchor"
+    """ 
+    anchor_name = ""
+    anchor_pos = link_name.find('#') 
+    if anchor_pos >= 0: 
+        # hash found, => strip off the anchor:
+        anchor_name = link_name[anchor_pos + 1 : ]
+    return anchor_name
        
 def renderInternalLinkNodeFilenames(package, html):
     """

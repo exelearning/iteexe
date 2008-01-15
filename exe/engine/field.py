@@ -33,6 +33,7 @@ from exe.engine.flvreader import FLVReader
 from htmlentitydefs       import name2codepoint
 from exe.engine.htmlToText import HtmlToText
 from twisted.persisted.styles import Versioned
+from exe.webui                import common
 from exe                  import globals as G
 import os
 import re
@@ -235,24 +236,26 @@ class FieldWithResources(Field):
         # let its subclass just fall through its normal upgrade path to 
         # generate content_w_resourcePaths from its content, no worries.
 
+
         # if anchor_names[] does not already exist, 
         # then set it via ListActiveAnchors
         if not hasattr(self, 'anchor_names'):
             self.anchor_names = self.ListActiveAnchors(self.content)
+        if not hasattr(self, 'anchors_linked_from_fields'): 
+            self.anchors_linked_from_fields = {}
+            # { 'anchor_name' -> [src_field1, src_field2, ...] }
+            # note: yes, this could have been combined into anchor_names
+            # except that this was coded incrementally, and anchor_names
+            # was therefore already in use purely as a list of names. oh well!
+
         # AND update self in the package list, as necessary:
         # if this field has anchors, ensure that it is in the package's list:
-        if self.idevice is not None and self.idevice.parentNode is not None\
-        and self.idevice.parentNode.package is not None: 
-            if len(self.anchor_names) > 0:
-                if not hasattr(self.idevice.parentNode.package, 'anchor_fields'):
-                    self.idevice.parentNode.package.anchor_fields = []
-                if self not in self.idevice.parentNode.package.anchor_fields:
-                    self.idevice.parentNode.package.anchor_fields.append(self)
-            else:
-                if hasattr(self.idevice.parentNode.package, 'anchor_fields') \
-                and self in self.idevice.parentNode.package.anchor_fields:
-                    self.idevice.parentNode.package.anchor_fields.remove(self)
+        self.ProcessInternalAnchors(self.content)
 
+        # and prepare for internal links to any such anchors via:
+        if not hasattr(self, 'intlinks_to_anchors'): 
+            self.intlinks_to_anchors = {}
+            # { 'full_anchor_path1' -> dst_field1; etc. }
 
 
     # genImageId is needed for GalleryImage:    
@@ -404,6 +407,63 @@ class FieldWithResources(Field):
 
         return new_content
 
+    def RemoveInternalLinkToAnchor(self, dst_field, full_anchor_name):
+        """
+        Called by a linked destination field when its anchor is removed,
+        this will remove references to the anchor from this link source field.
+        """
+        if hasattr(self, 'intlinks_to_anchors'): 
+            if full_anchor_name in self.intlinks_to_anchors.keys(): 
+                if dst_field != self.intlinks_to_anchors[full_anchor_name]: 
+                    log.warn('RemoveInternalLinkToAnchor found a different '
+                        + 'link-destination field than expected; '
+                        + 'removing anyway.')
+                del self.intlinks_to_anchors[full_anchor_name]
+            else:
+                log.warn('RemoveInternalLinkToAnchor did not find the'
+                        + 'link-destination anchor as expected; '
+                        + 'removing anyway.')
+
+        # and remove the HREF to the full_anchor_name from all of its content*s
+        self.content = common.removeInternalLinks(
+                self.content, full_anchor_name)
+        self.content_w_resourcePaths = common.removeInternalLinks(
+                self.content_w_resourcePaths, full_anchor_name)
+        self.content_wo_resourcePaths = common.removeInternalLinks(
+                self.content_wo_resourcePaths, full_anchor_name)
+
+
+    def RenameInternalLinkToAnchor(self, dst_field, old_full_anchor_name,
+                                    new_full_anchor_name):
+        """
+        Called by a linked destination field when its anchor is removed,
+        this will remove references to the anchor from this link source field.
+        """
+        if hasattr(self, 'intlinks_to_anchors'): 
+            if old_full_anchor_name in self.intlinks_to_anchors.keys(): 
+                if dst_field != self.intlinks_to_anchors[old_full_anchor_name]: 
+                    log.warn('RenameInternalLinkToAnchor found a different '
+                        + 'link-destination field than expected; '
+                        + 'renaming anyway.')
+                self.intlinks_to_anchors[new_full_anchor_name] = dst_field
+                del self.intlinks_to_anchors[old_full_anchor_name]
+            else:
+                log.warn('RenameInternalLinkToAnchor did not find the'
+                        + 'link-destination anchor as expected; '
+                        + 'renaming anyway.')
+                self.intlinks_to_anchors[new_full_anchor_name] = dst_field
+
+        old_intlink = 'href="' + old_full_anchor_name + '"'
+        new_intlink = 'href="' + new_full_anchor_name + '"'
+        # and rename the HREF to the full_anchor_name in all of its content*s
+        self.content = self.content.replace(old_intlink, new_intlink)
+        self.content_w_resourcePaths = self.content_w_resourcePaths.replace(
+                old_intlink, new_intlink)
+        self.content_wo_resourcePaths = self.content_wo_resourcePaths.replace(
+                old_intlink, new_intlink)
+
+
+
     def ListActiveAnchors(self, content):
         """
         to build up the list of all anchors currently within this field's 
@@ -437,6 +497,57 @@ class FieldWithResources(Field):
             next_anchor_pos = content.find(starting_tag_bits, next_end_pos)
 
         return anchor_names
+
+    def ListActiveInternalLinks(self, content):
+        """
+        to build up the list of all internal links currently within this 
+        field's new content to process, merely looking for href="EXE-NODE:..."
+        into the fields var: intlinks_to_anchors, 
+        which is created here as: intlinks_names_n_fields
+        """
+        intlinks_names_n_fields = {}
+
+        this_package = None
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_package = self.idevice.parentNode.package
+
+        intlink_start = 'href="EXE-NODE:'
+        intlink_pre   = 'href="'
+        next_link_pos = content.find(intlink_start)
+        while next_link_pos >= 0: 
+            link_name_start_pos = next_link_pos + len(intlink_pre)
+            link_name_end_pos = content.find('"', link_name_start_pos)
+            if link_name_end_pos >= 0: 
+                link_name = content[link_name_start_pos : link_name_end_pos]
+                #log.debug("Export rendering internal link, without nodename: "
+                #    + link_name) 
+
+                # assuming that any '#'s in the node name have been escaped,
+                # the first '#' should be the actual anchor: 
+                node_name_end_pos = link_name.find('#') 
+                if node_name_end_pos < 0: 
+                    # no hash found, => use the whole thing as the node name: 
+                    node_name_end_pos = len(link_name) - 1 
+                    link_anchor_name = ""
+                else:
+                    link_anchor_name = link_name[node_name_end_pos + 1 : ]
+                link_node_name = link_name[0 : node_name_end_pos]
+                if link_node_name: 
+                    # finally, store this particular node name:
+                    # AND point it to the actual node!
+                    link_field = common.findLinkedField(this_package, 
+                            link_node_name, link_anchor_name)
+                    intlinks_names_n_fields[link_name] = link_field
+                    # Note that this link COULD occur multiple times,
+                    # but it *should* still point to the same link_field
+                    # (unless multiple anchors of the same name are created)
+
+
+            # else the href quote is unclosed.  ignore, eh?
+            next_link_pos = content.find(intlink_start, next_link_pos+1)
+            
+        return intlinks_names_n_fields
+
 
     def GetFullNodePath(self): 
         """
@@ -489,33 +600,21 @@ class FieldWithResources(Field):
         #################################
         # Part 0b:  
         # determine active anchors appropriately here:
-        self.anchor_names = self.ListActiveAnchors(new_content)
+        #self.anchor_names = self.ListActiveAnchors(new_content)
+        # moved this into the following ProcessInternalAnchors(), below...
+
+        # if field has anchors, ensure that it is in the package's list, etc:
+        self.ProcessInternalAnchors(new_content)
+        # and likewise, handle any internal links in this field:
+        self.ProcessInternalLinks(new_content)
 
         # r3m0: TO ADD:
-        # ====> want to compare against the previously existing 
-        # anchor_names as listed in the old content, to see which
-        # anchors have been removed.  Then perform node-tree-wide searching 
-        # for any such link, and (a) rename it to 'invalid', or (b) remove it?
-        # UNTIL THEN.....
-        # NOTE: if anchors are removed, invalid links could indeed exist 
-        # throughout rest of the content to now non-existent anchors.
-        # Let the user beware!  
-
-        # if this field has anchors, ensure that it is in the package's list:
-        if len(self.anchor_names) > 0:
-            if not hasattr(self.idevice.parentNode.package, 'anchor_fields'):
-                self.idevice.parentNode.package.anchor_fields = []
-            if self not in self.idevice.parentNode.package.anchor_fields:
-                self.idevice.parentNode.package.anchor_fields.append(self)
-        else:
-            if hasattr(self.idevice.parentNode.package, 'anchor_fields') \
-            and self in self.idevice.parentNode.package.anchor_fields:
-                self.idevice.parentNode.package.anchor_fields.remove(self)
-
-        # r3m0: TO ADD:
-        # ==> be most especially aware of MOVING/RENAMING nodes,
+        # ==> be most especially aware of:
+        # DONE: MOVING/RENAMING nodes,
+        # DONE: MOVING iDevices across nodes....
+        # DONE: DELETING nodes and iDevices,
         # and of MERGING/INSERTING packages, in which case nodes ARE 'moved',
-        # and of MOVING iDevices across nodes....
+        # and of EXTRACTING packages, where links or anchors may be zombied.
 
 
         #################################
@@ -538,6 +637,202 @@ class FieldWithResources(Field):
         self.RemoveZombieResources(resources_in_use)
 
         return new_content
+    
+    def RemoveInternalAnchor(self, this_anchor_name):
+        """
+        clear out the internal data structures for this anchor,
+        once it has been found to have been removed from the content.
+        """ 
+        # clear out all of the source links to this anchor:
+        if hasattr(self, 'anchors_linked_from_fields') \
+        and this_anchor_name in self.anchors_linked_from_fields.keys(): 
+            full_anchor_name = self.GetFullNodePath() \
+                + "#" + this_anchor_name 
+            for that_field in self.anchors_linked_from_fields[\
+                this_anchor_name]: 
+                that_field.RemoveInternalLinkToAnchor(\
+                    self, full_anchor_name)
+            del self.anchors_linked_from_fields[this_anchor_name]
+
+        # and clear out the corresponding data structures:
+        if this_anchor_name in self.anchor_names:
+            self.anchor_names.remove(this_anchor_name)
+
+        if len(self.anchor_names) == 0:
+            # then also clear out the package and node references:
+            if self.idevice is not None and self.idevice.parentNode is not None\
+            and self.idevice.parentNode.package is not None: 
+                this_parentNode = self.idevice.parentNode
+                this_package = this_parentNode.package
+
+                if hasattr(this_parentNode, 'anchor_fields') \
+                and self in this_parentNode.anchor_fields:
+                    this_parentNode.anchor_fields.remove(self)
+
+                if hasattr(this_parentNode, 'anchor_fields') \
+                and len(this_parentNode.anchor_fields) == 0 \
+                and hasattr(this_package, 'anchor_nodes') \
+                and this_parentNode in this_package.anchor_nodes:
+                    this_package.anchor_nodes.remove(this_parentNode)
+
+                if hasattr(this_package, 'anchor_fields') \
+                and self in this_package.anchor_fields:
+                    this_package.anchor_fields.remove(self)
+
+        return
+
+
+    def AddInternalAnchor(self, this_anchor_name):
+        """
+        setup the internal data structures for this anchor,
+        once it has been found to exist in the content.
+        """ 
+        # and setup the corresponding data structures:
+        if this_anchor_name not in self.anchor_names:
+            self.anchor_names.append(this_anchor_name)
+
+        if len(self.anchor_names) > 0:
+            # and it should indeed now have a length.
+            # setup the package and node references:
+            if self.idevice is not None and self.idevice.parentNode is not None\
+            and self.idevice.parentNode.package is not None: 
+                this_parentNode = self.idevice.parentNode
+                this_package = this_parentNode.package
+
+                if not hasattr(this_parentNode, 'anchor_fields'):
+                    this_parentNode.anchor_fields = []
+                if self not in this_parentNode.anchor_fields:
+                    this_parentNode.anchor_fields.append(self)
+
+                if not hasattr(this_package, 'anchor_nodes'):
+                    this_package.anchor_nodes = []
+                if this_parentNode not in this_package.anchor_nodes:
+                    this_package.anchor_nodes.append(this_parentNode)
+
+                if not hasattr(this_package, 'anchor_fields'):
+                    this_package.anchor_fields = []
+                if self not in this_package.anchor_fields:
+                    this_package.anchor_fields.append(self)
+
+        # setup empty source links to this anchor:
+        if not hasattr(self, 'anchors_linked_from_fields'):
+            self.anchors_linked_from_fields = {}
+        if this_anchor_name not in self.anchors_linked_from_fields.values(): 
+            self.anchors_linked_from_fields.setdefault(this_anchor_name, [])
+
+        return
+
+
+    def ProcessInternalAnchors(self, html_content):
+        """
+        Perform all of the data structure linking for internal anchors,
+        using the self.anchor_names which will be updated
+        via ListActiveAnchors(), and connecting (or disconnecting) to/from
+        the package's anchor_field and anchor_nodes lists, as well as the
+        parentNode's anchor_fields list.  While many of these lists are
+        indeed rather redundant, they will save lots of processing time
+        when looking for all the places an anchor is referenced, etc.
+        """
+        if hasattr(self, 'anchor_names'): 
+            old_anchor_names = self.anchor_names
+        else:
+            old_anchor_names = []
+        new_anchor_names = self.ListActiveAnchors(html_content)
+
+        # Add any new anchor_names...
+        for this_anchor in new_anchor_names:
+            if this_anchor not in old_anchor_names:
+                self.AddInternalAnchor(this_anchor)
+
+        # Remove any old_anchor_names which are no longer in use!
+        for this_anchor in old_anchor_names:
+            if this_anchor not in new_anchor_names:
+                self.RemoveInternalAnchor(this_anchor)
+
+        self.anchor_names = new_anchor_names
+
+        return
+
+
+
+    def RemoveInternalLink(self, link_anchor_name, link_field):
+        """
+        clear out the internal data structures for this internal link,
+        once it has been found to no longer exist in the content.
+        """ 
+        # beware of links for which the anchor is not found
+        # (as might occur with mismatched escaped anchor names, etc.)
+        if link_field is None:
+            log.warn('Did not find link_field; unable to remove internal link '
+                    + 'data structures for:' + link_anchor_name)
+            return
+
+        # remove this field from the source links of the destination anchor:
+        if hasattr(link_field, 'anchors_linked_from_fields') \
+        and link_anchor_name in link_field.anchors_linked_from_fields.values() \
+        and self in link_field.anchors_linked_from_fields[link_anchor_name]:
+            link_field.anchors_linked_from_fields[link_anchor_name].remove(self)
+
+        return
+
+
+    def AddInternalLink(self, link_anchor_name, link_field):
+        """
+        setup the internal data structures for this internal link,
+        once it has been found to exist in the content.
+        """ 
+        # beware of links for which the anchor is not found
+        # (as might occur with mismatched escaped anchor names, etc.)
+        if link_field is None:
+            log.warn('Did not find link_field; unable to add internal link '
+                    + 'data structures for:' + link_anchor_name)
+            return
+
+        # add this field to the source links of the destination anchor:
+        if not hasattr(link_field, 'anchors_linked_from_fields'):
+            link_field.anchors_linked_from_fields = {}
+        if link_anchor_name not in \
+            link_field.anchors_linked_from_fields.values(): 
+            link_field.anchors_linked_from_fields.setdefault(
+                    link_anchor_name, [])
+        if self not in link_field.anchors_linked_from_fields[link_anchor_name]:
+            link_field.anchors_linked_from_fields[link_anchor_name].append(self)
+
+        return
+
+
+    def ProcessInternalLinks(self, html_content):
+        """
+        Perform all of the data structure linking for internal links.
+        Source side of an internal link to a destination anchor already
+        taken care of by ProcessInternalAnchors().
+        """
+        if hasattr(self, 'intlinks_to_anchors'):
+            old_intlinks = self.intlinks_to_anchors
+        else:
+            old_intlinks = {}
+        new_intlinks_to_anchors = self.ListActiveInternalLinks(html_content)
+
+        # Add any new links...
+        for this_link_name in new_intlinks_to_anchors.keys():
+            if this_link_name not in old_intlinks.keys():
+                this_anchor_name = common.getAnchorNameFromLinkName(
+                        this_link_name)
+                self.AddInternalLink(this_anchor_name,
+                        new_intlinks_to_anchors[this_link_name])
+
+        # Remove any old links which are no longer in use!
+        for this_link_name in old_intlinks.keys():
+            if this_link_name not in new_intlinks_to_anchors.keys():
+                this_anchor_name = common.getAnchorNameFromLinkName(
+                        this_link_name)
+                self.RemoveInternalLink(this_anchor_name,
+                        old_intlinks[this_link_name])
+
+        self.intlinks_to_anchors = new_intlinks_to_anchors
+
+        return
+
 
     # A note on the eventual ProcessPreviewedMedia(): 
     # since these are no longer IMAGES, per se, to be stored as resources,

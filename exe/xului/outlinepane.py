@@ -114,7 +114,12 @@ class OutlinePane(Renderable):
             client.call('enableButtons')
             return
         node = self.package.findNode(nodeId)
+
         node.title = unicode(newName, 'utf8')
+        # and send a signal to the node that it needs to change its anchors,
+        # and those of ALL of its children nodes, as well:
+        node.RenamedNode()
+
         params = [s.replace('"', '\\"') for s in 
                   [node.titleShort, node.titleLong, node.title]]
         command = u'XHRenNode("%s", "%s", "%s")' % tuple(params)
