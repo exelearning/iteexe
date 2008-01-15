@@ -237,20 +237,16 @@ class FieldWithResources(Field):
         # generate content_w_resourcePaths from its content, no worries.
 
 
-        # if anchor_names[] does not already exist, 
-        # then set it via ListActiveAnchors
+        # if anchor_names[] does not already exist, then set it 
+        # via ListActiveAnchors, now a part of ProcessInternalAnchors:
         if not hasattr(self, 'anchor_names'):
-            self.anchor_names = self.ListActiveAnchors(self.content)
+            self.ProcessInternalAnchors(self.content)
         if not hasattr(self, 'anchors_linked_from_fields'): 
             self.anchors_linked_from_fields = {}
             # { 'anchor_name' -> [src_field1, src_field2, ...] }
             # note: yes, this could have been combined into anchor_names
             # except that this was coded incrementally, and anchor_names
             # was therefore already in use purely as a list of names. oh well!
-
-        # AND update self in the package list, as necessary:
-        # if this field has anchors, ensure that it is in the package's list:
-        self.ProcessInternalAnchors(self.content)
 
         # and prepare for internal links to any such anchors via:
         if not hasattr(self, 'intlinks_to_anchors'): 
@@ -600,9 +596,6 @@ class FieldWithResources(Field):
         #################################
         # Part 0b:  
         # determine active anchors appropriately here:
-        #self.anchor_names = self.ListActiveAnchors(new_content)
-        # moved this into the following ProcessInternalAnchors(), below...
-
         # if field has anchors, ensure that it is in the package's list, etc:
         self.ProcessInternalAnchors(new_content)
         # and likewise, handle any internal links in this field:
