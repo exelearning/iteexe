@@ -83,6 +83,21 @@ class TrueFalseQuestion(Persistable):
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'questionTextArea'):
+            fields_list.append(self.questionTextArea)
+        if hasattr(self, 'feedbackTextArea'):
+            fields_list.append(self.feedbackTextArea)
+        if hasattr(self, 'hintTextArea'):
+            fields_list.append(self.hintTextArea)
+
+        return fields_list
 
 
     def upgrade_setIdevice(self, idevice):
@@ -185,6 +200,21 @@ completed."""),
                 return this_field
 
         return None
+
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'instructionsForLearners'):
+            fields_list.append(self.instructionsForLearners)
+
+        for this_question in self.questions:
+            fields_list.extend(this_question.getRichTextFields())
+
+        return fields_list
 
 
     def upgradeToVersion1(self):

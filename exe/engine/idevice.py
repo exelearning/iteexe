@@ -304,6 +304,20 @@ class Idevice(Persistable):
                 + "implementation available for this particular iDevice "
                 + "class: " + repr(self) )
         return None
+
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        Currently used by Extract to find all fields which have internal links.
+        """
+        # in the parent iDevice class, merely return an empty list,
+        # and let each specific iDevice class implement its own version:
+        log.warn("getRichTextFields called on iDevice; no specific "
+                + "implementation available for this particular iDevice "
+                + "class: " + repr(self) )
+        return []
         
         
     # Protected Methods

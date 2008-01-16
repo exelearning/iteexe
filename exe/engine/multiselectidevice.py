@@ -90,4 +90,17 @@ distractors </li>
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+
+        for this_question in self.questions:
+            fields_list.extend(this_question.getRichTextFields())
+
+        return fields_list
+
 # ===========================================================================

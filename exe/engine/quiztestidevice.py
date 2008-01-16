@@ -65,6 +65,18 @@ class AnswerOption(Persistable):
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'answerTextArea'):
+            fields_list.append(self.answerTextArea)
+
+        return fields_list
+
     def upgrade_setIdevice(self, idevice, question):
         """
         While some of this might typically be done in an automatic upgrade
@@ -149,6 +161,21 @@ click the radio button next to the correct option.""")
                 return this_field
 
         return None
+
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'questionTextArea'):
+            fields_list.append(self.questionTextArea)
+
+        for this_option in self.options:
+            fields_list.extend(this_option.getRichTextFields())
+
+        return fields_list
 
 
     def upgradeToVersion1(self):
@@ -246,6 +273,20 @@ time to learn and practice using the information or skill.
                 return this_field
 
         return None
+
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+
+        for this_question in self.questions:
+            fields_list.extend(this_question.getRichTextFields())
+
+        return fields_list
+
 
 
     def upgradeToVersion2(self):

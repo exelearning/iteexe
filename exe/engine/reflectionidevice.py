@@ -92,6 +92,20 @@ reflective feedback.)""")
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'activityTextArea'):
+            fields_list.append(self.activityTextArea)
+        if hasattr(self, 'answerTextArea'):
+            fields_list.append(self.answerTextArea)
+
+        return fields_list
+
 
     def upgradeToVersion1(self):
         """

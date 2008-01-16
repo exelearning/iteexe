@@ -142,7 +142,14 @@ class Node(Persistable):
         num_ancestors = len(this_nodes_ancestors)
         for loop in range(num_ancestors-1, -1, -1):
             node = this_nodes_ancestors[loop]
-            full_path = full_path + ":" + quote(node.getTitle().encode('utf8'))
+            if node is not None:
+                # note: if node is None,
+                #   appears to be an invalid ancestor in an Extracted package,
+                #   but continue on, since it was probably one of the top nodes 
+                #   above the extraction that is None. 
+                # but this node IS valid, so add it to the path:
+                full_path = full_path + ":" \
+                        + quote(node.getTitle().encode('utf8'))
 
         # and finally, add this node itself:
         if new_node_title == "":
@@ -154,12 +161,14 @@ class Node(Persistable):
 
 
 
-    def RenamedNodePath(self, isMerge=False):
+    def RenamedNodePath(self, isMerge=False, isExtract=False):
         """
         To update all of the anchors (if any) that are defined within
         any of this node's various iDevice fields, and any 
         internal links corresponding to those anchors.
         Called AFTER the actual rename has occurred.
+        NOTE: isMerge & isExtract will also attempt to connect all the data 
+        structures, and isExtract will also try to clear out any orphaned links.
         """
         if not hasattr(self, 'anchor_fields'):
             self.anchor_fields = []
@@ -167,12 +176,14 @@ class Node(Persistable):
         old_node_path = self.last_full_node_path
         new_node_path = self.GetFullNodePath()
         self.last_full_node_path = new_node_path
-        log.debug('Renaming node path after a rename, from "' + old_node_path 
+        log.debug('Renaming node path, from "' + old_node_path 
                 + '" to "' + new_node_path)
+
+        current_package = self.package
 
         # First rename all of the source-links to anchors in this node's fields:
         for this_field in self.anchor_fields:
-            if isMerge and hasattr(this_field, 'anchor_names') \
+            if (isMerge or isExtract) and hasattr(this_field, 'anchor_names') \
             and len(this_field.anchor_names) > 0:
                 # merging this field into a destination package,
                 # setup the internal linking data structures:
@@ -187,6 +198,7 @@ class Node(Persistable):
                 if self not in self.package.anchor_nodes:
                     self.package.anchor_nodes.append(self)
 
+            # now, for ANY type of node renaming, update corresponding links:
             if hasattr(this_field, 'anchor_names') \
             and hasattr(this_field, 'anchors_linked_from_fields'):
                 for this_anchor_name in this_field.anchor_names:
@@ -194,13 +206,68 @@ class Node(Persistable):
                     new_full_link_name = new_node_path + "#" + this_anchor_name
                     for that_field in this_field.anchors_linked_from_fields[\
                         this_anchor_name]:
-                        that_field.RenameInternalLinkToAnchor(\
+                        that_field_is_valid = True
+                        if isExtract: 
+                            # first ensure that each linked_from_field is 
+                            # still in the extracted package.
+                            # as with the subsequent isExtract link detection...
+                            # Now, carefully check that the this_anchor_field
+                            # is indeed in the current extracte sub-package,
+                            # being especially aware of zombie nodes which are 
+                            # unfortunately included with the sub-package, but 
+                            # are NOT actually listed within its _nodeIdDict!
+                            if that_field.idevice is None \
+                            or that_field.idevice.parentNode is None \
+                            or that_field.idevice.parentNode.package \
+                            != current_package \
+                            or that_field.idevice.parentNode.id \
+                            not in current_package._nodeIdDict \
+                            or current_package._nodeIdDict[ \
+                            that_field.idevice.parentNode.id] \
+                            != that_field.idevice.parentNode:
+                                that_field_is_valid = False
+                                # and remove the corresponding link here.
+                                this_field.anchors_linked_from_fields[\
+                                        this_anchor_name].remove(that_field)
+                        if that_field_is_valid: 
+                            that_field.RenameInternalLinkToAnchor(\
                                 this_field, old_full_link_name, 
                                 new_full_link_name)
 
+        # and for package extractions, also ensure that any internal links 
+        # in ANY of its fields are to anchors that still exist in this package:
+        if isExtract:
+            for this_idevice in self.idevices:
+                for this_field in this_idevice.getRichTextFields(): 
+                    if hasattr(this_field, 'intlinks_to_anchors') \
+                    and len(this_field.intlinks_to_anchors) > 0: 
+                        for this_link_name \
+                        in this_field.intlinks_to_anchors.keys(): 
+                            this_anchor_field = \
+                                this_field.intlinks_to_anchors[this_link_name] 
+                            # Now, carefully check that the this_anchor_field
+                            # is indeed in the current extracte sub-package,
+                            # being especially aware of zombie nodes which are 
+                            # unfortunately included with the sub-package, but 
+                            # are NOT actually listed within its _nodeIdDict!
+                            if this_anchor_field.idevice is None \
+                            or this_anchor_field.idevice.parentNode is None \
+                            or this_anchor_field.idevice.parentNode.package \
+                            != current_package \
+                            or this_anchor_field.idevice.parentNode.id \
+                            not in current_package._nodeIdDict \
+                            or current_package._nodeIdDict[ \
+                            this_anchor_field.idevice.parentNode.id] \
+                            != this_anchor_field.idevice.parentNode:
+                                # then this internal link points to an anchor 
+                                # which is NO LONGER a VALID part of this
+                                # newly extracted sub-package.  Remove it:
+                                this_field.RemoveInternalLinkToAnchor( \
+                                        this_anchor_field, this_link_name)
+
         # Then do the same for all of this node's children nodes:
         for child_node in self.children:
-            child_node.RenamedNodePath(isMerge)
+            child_node.RenamedNodePath(isMerge, isExtract)
 
 
 
@@ -380,14 +447,16 @@ class Node(Persistable):
         if hasattr(self, 'children'):
             num_children = len(self.children)
         for i in range(num_children-1, -1, -1):
-            if self.children[i].parent is None:
-                log.warn('reconnecting child node before deletion from node')
-                self.children[i].parent = self
-            elif self.children[i].parent != self:
-                log.warn('about to delete child node from node, '\
-                        'but it points to a different parentNode.')
-                # continuing on with the delete anyhow, though...
-            self.children[i].delete(pruningZombies)
+            # safety check for extracted nodes, ensure that children[i] is valid
+            if self.children[i]:
+                if self.children[i].parent is None:
+                    log.warn('reconnecting child node before deletion from node')
+                    self.children[i].parent = self
+                elif self.children[i].parent != self:
+                    log.warn('about to delete child node from node, '\
+                            'but it points to a different parentNode.')
+                    # continuing on with the delete anyhow, though...
+                self.children[i].delete(pruningZombies)
 
         # Let all the iDevices know they're being deleted too
         # use reverse for loop to delete, in case of any problems deleting:

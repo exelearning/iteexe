@@ -610,14 +610,6 @@ class FieldWithResources(Field):
         # and likewise, handle any internal links in this field:
         self.ProcessInternalLinks(new_content)
 
-        # r3m0: TO ADD:
-        # ==> be most especially aware of:
-        # DONE: MOVING/RENAMING nodes,
-        # DONE: MOVING iDevices across nodes....
-        # DONE: DELETING nodes and iDevices,
-        # and of MERGING/INSERTING packages, in which case nodes ARE 'moved',
-        # and of EXTRACTING packages, where links or anchors may be zombied.
-
 
         #################################
         # finally... Part 1: process any newly added resources
@@ -2808,6 +2800,19 @@ class QuizOptionField(Field):
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'answerTextArea'):
+            fields_list.append(self.answerTextArea)
+        if hasattr(self, 'feedbackTextArea'):
+            fields_list.append(self.feedbackTextArea)
+        return fields_list
+        
 
     def upgradeToVersion1(self):
         """
@@ -2881,6 +2886,24 @@ class QuizQuestionField(Field):
 
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'questionTextArea'):
+            fields_list.append(self.questionTextArea)
+        if hasattr(self, 'hintTextArea'):
+            fields_list.append(self.hintTextArea)
+
+        for this_option in self.options:
+            fields_list.extend(this_option.getRichTextFields())
+
+        return fields_list
+        
 
     def upgradeToVersion1(self):
         """
@@ -2931,6 +2954,19 @@ class SelectOptionField(Field):
                     return self.answerTextArea
 
         return None
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'answerTextArea'):
+            fields_list.append(self.answerTextArea)
+
+        return fields_list
+        
 
     def upgradeToVersion1(self):
         """
@@ -3021,7 +3057,24 @@ to provide the learner with.""")
 
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'questionTextArea'):
+            fields_list.append(self.questionTextArea)
+        if hasattr(self, 'feedbackTextArea'):
+            fields_list.append(self.feedbackTextArea)
 
+        for this_option in self.options:
+            fields_list.extend(this_option.getRichTextFields())
+
+        return fields_list
+        
     def upgradeToVersion1(self):
         """
         Upgrades to somewhere before version 0.25 (post-v0.24) 

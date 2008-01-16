@@ -89,6 +89,20 @@ class Question(Persistable):
 
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'questionTextArea'):
+            fields_list.append(self.questionTextArea)
+        if hasattr(self, 'feedbackTextArea'):
+            fields_list.append(self.feedbackTextArea)
+        return fields_list
+        
         
     def upgradeToVersion1(self):
         """
@@ -251,6 +265,22 @@ situation.""")
 
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'storyTextArea'):
+            fields_list.append(self.storyTextArea)
+
+        for this_question in self.questions:
+            fields_list.extend(this_question.getRichTextFields())
+
+        return fields_list
+        
 
     def upgradeToVersion1(self):
         """

@@ -808,6 +808,14 @@ class MainPage(RenderableLivePage):
         try:
             # Create a new package for the extracted nodes
             newPackage = self.package.extractNode()
+
+            # trigger a rename of all of the internal nodes and links,
+            # and to remove any old anchors from the dest package,
+            # and remove any zombie links via isExtract:
+            newNode = newPackage.root
+            if newNode: 
+                newNode.RenamedNodePath(isExtract=True)
+
             # Save the new package
             newPackage.save(filename)
         except Exception, e:

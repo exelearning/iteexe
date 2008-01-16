@@ -90,6 +90,15 @@ you created in Geogebra.</p>""")
 
         return None
        
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        # Applet iDevice has no rich-text fields:
+        return []
+        
     def uploadFile(self, filePath):
         """
         Store the upload files in the package

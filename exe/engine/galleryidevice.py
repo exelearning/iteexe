@@ -445,6 +445,15 @@ these in a gallery context rather then individually.</p>"""),
 
         return None
        
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        # GalleryIdevice has no rich-text fields:
+        return []
+        
 
     def genImageId(self):
         """Generate a unique id for an image.

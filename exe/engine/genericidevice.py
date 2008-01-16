@@ -132,7 +132,26 @@ class GenericIdevice(Idevice):
         # else, not found in the above loop:
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        # All of Generic iDevice's rich-text fields are in... fields!
+        # Some of the fields may NOT be rich-text, though,
+        # so this needs a bit more parsing:
+        fields_list = []
 
+        from exe.engine.field            import FieldWithResources
+        if hasattr(self, 'fields'): 
+            for this_field in self.fields: 
+                if isinstance(this_field, FieldWithResources):
+                    fields_list.append(this_field)
+
+        return fields_list
+        
  
     def upgradeToVersion1(self):
         """

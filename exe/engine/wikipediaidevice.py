@@ -196,6 +196,18 @@ within Wikipedia.""")
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'article'):
+            fields_list.append(self.article)
+
+        return fields_list
+
 
     def __getstate__(self):
         """

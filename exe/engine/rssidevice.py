@@ -77,6 +77,19 @@ display them as links in your content. From here you can edit the bookmarks and 
 
         return None
 
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'rss'):
+            fields_list.append(self.rss)
+
+        return fields_list
+
+
     def loadRss(self, url):
         """
         Load the rss

@@ -58,6 +58,16 @@ and select the size of the area to display it in.""")
         # NOTE that the ExternalURL iDevice has NO additional resources:
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of its fields without having to know the specifics of each 
+        iDevice type.  
+        """
+        # ExternalURL has no rich-text fields:
+        return []
+        
 
     def upgradeToVersion1(self):
         """

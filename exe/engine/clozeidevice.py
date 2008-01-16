@@ -166,6 +166,22 @@ click on the Hide/Show Word button below.</p>"""))
         
         return None
 
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, '_content'):
+            fields_list.append(self._content)
+        if hasattr(self, 'instructionsForLearners'):
+            fields_list.append(self.instructionsForLearners)
+        if hasattr(self, 'feedback'):
+            fields_list.append(self.feedback)
+        return fields_list
+        
 
 
     def upgradeToVersion1(self):
