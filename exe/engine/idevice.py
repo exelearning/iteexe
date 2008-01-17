@@ -248,7 +248,9 @@ class Idevice(Persistable):
             new_node_path = ""
             new_package = None
 
-        for this_field in old_node.anchor_fields:
+        num_fields=len(old_node.anchor_fields) 
+        for field_loop in range(num_fields-1, -1, -1):
+            this_field = old_node.anchor_fields[field_loop]
             if this_field.idevice == self:
                 # okay, this is an applicable field with some anchors:
                 if hasattr(this_field, 'anchor_names') \
