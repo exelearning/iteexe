@@ -253,32 +253,8 @@ class Idevice(Persistable):
             this_field = old_node.anchor_fields[field_loop]
             if this_field.idevice == self:
                 # okay, this is an applicable field with some anchors:
-                if hasattr(this_field, 'anchor_names') \
-                and hasattr(this_field, 'anchors_linked_from_fields'): 
-                    for this_anchor_name in this_field.anchor_names: 
-                        old_full_link_name = old_node_path + "#" \
-                                + this_anchor_name 
-                        new_full_link_name = new_node_path + "#" + \
-                                this_anchor_name 
-                        for that_field in \
-                        this_field.anchors_linked_from_fields[this_anchor_name]:
-                            if new_node:
-                                that_field.RenameInternalLinkToAnchor( 
-                                    this_field, old_full_link_name, 
-                                    new_full_link_name) 
-                            else:
-                                # appears that this is being deleted:
-                                that_field.RemoveInternalLinkToAnchor( 
-                                    this_field, old_full_link_name)
-
-                # and change not only the link names to the anchors, (as above) 
-                # but also the package and node internal data structures....  
-                old_node.anchor_fields.remove(this_field)
-                if len(old_node.anchor_fields) == 0:
-                    # remove the old_node from the package's anchor_nodes:
-                    if old_package and hasattr(old_package, 'anchor_nodes') \
-                    and old_node in old_package.anchor_nodes:
-                        old_package.anchor_nodes.remove(old_node)
+                this_field.ReplaceAllInternalAnchorsLinks(oldNode=old_node, 
+                        newNode=new_node)
 
                 if new_node:
                     if not hasattr(new_node, 'anchor_fields'):

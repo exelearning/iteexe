@@ -1511,6 +1511,9 @@ class SelectOptionElement(Element):
             
         if "action" in request.args and \
            request.args["action"][0] == "del"+self.id:
+            # before deleting the option object, remove any internal anchors:
+            for o_field in self.field.getRichTextFields():
+                 o_field.ReplaceAllInternalAnchorsLinks()  
             self.field.question.options.remove(self.field)
 
 
@@ -1636,6 +1639,9 @@ class SelectquestionElement(Element):
             
         if "action" in request.args and \
            request.args["action"][0] == "del" + self.id:
+            # before deleting the questions object, remove any internal anchors:
+            for q_field in self.field.getRichTextFields():
+                 q_field.ReplaceAllInternalAnchorsLinks()  
             self.field.idevice.questions.remove(self.field)
 
         for element in self.options:
@@ -1787,6 +1793,9 @@ class QuizOptionElement(Element):
             
         if "action" in request.args and \
            request.args["action"][0] == "del"+self.id:
+            # before deleting the option object, remove any internal anchors:
+            for o_field in self.field.getRichTextFields():
+                 o_field.ReplaceAllInternalAnchorsLinks()  
             self.field.question.options.remove(self.field)
 
 
@@ -1955,6 +1964,9 @@ class QuizQuestionElement(Element):
             
         if "action" in request.args and \
            request.args["action"][0] == "del" + self.id:
+            # before deleting the question object, remove any internal anchors:
+            for q_field in self.field.getRichTextFields():
+                 q_field.ReplaceAllInternalAnchorsLinks()  
             self.field.idevice.questions.remove(self.field)
 
         for element in self.options:

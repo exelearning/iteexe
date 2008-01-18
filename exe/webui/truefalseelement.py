@@ -92,6 +92,9 @@ class TrueFalseElement(object):
             self.question_feedback.process(request)
             
         if "action" in request.args and request.args["action"][0] == self.id:
+            # before deleting the question object, remove any internal anchors:
+            for q_field in self.question.getRichTextFields():
+                 q_field.ReplaceAllInternalAnchorsLinks()  
             self.idevice.questions.remove(self.question)
 
     def renderEdit(self):

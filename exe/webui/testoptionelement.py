@@ -81,6 +81,9 @@ class TestoptionElement(object):
                 self.question.userAns = self.index
             
         if "action" in request.args and request.args["action"][0] == self.id:
+            # before deleting the option object, remove any internal anchors:
+            for o_field in self.option.getRichTextFields():
+                 o_field.ReplaceAllInternalAnchorsLinks()  
             self.question.options.remove(self.option)
 
 

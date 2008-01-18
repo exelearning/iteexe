@@ -438,6 +438,70 @@ class FieldWithResources(Field):
                 + ' from node: ' + this_node_path)
 
 
+    def ReplaceAllInternalAnchorsLinks(self, oldNode=None, newNode=None):
+        """
+        An ensemble wrapper around RemoveInternalLinkToAnchor(), 
+        or RenameInternalLinkToAnchor(), depending on its usage to 
+        remove or replace ALL internal links to ALL anchors within this field.
+        To be called by multi-object idevice's delete object action
+        (for example, when a Multi-Choice removes an option or a question), or 
+        when the idevice itself is deleted or moved, via its ChangedParentNode
+        which could have already changed the node with a move.
+        As such, allow the old_node to be passed in, as the fields
+        anchors data structures may still be stored there, and not yet on
+        its new parentNode.
+        Likewise new_node allows this to also be used for idevice moves,
+        where the internal anchors are not actually being removed but replaced.
+        """
+        old_node_path = ""
+        old_package = None
+        if oldNode is None and newNode is None:
+            # no optional oldNode or newNode was passed in, 
+            # so just use the default of the current idevice.parentNode:
+            if self.idevice is not None:
+                oldNode = self.idevice.parentNode
+        if oldNode: 
+            old_node_path = oldNode.last_full_node_path 
+            old_package = oldNode.package
+
+        new_node_path = ""
+        new_package = None
+        if newNode: 
+            new_node_path = newNode.GetFullNodePath()
+            new_package = newNode.package
+
+        if hasattr(self, 'anchor_names') \
+        and hasattr(self, 'anchors_linked_from_fields'): 
+            for this_anchor_name in self.anchor_names: 
+                old_full_link_name = old_node_path + "#" \
+                        + this_anchor_name 
+                new_full_link_name = new_node_path + "#" + \
+                        this_anchor_name 
+                for that_field in \
+                self.anchors_linked_from_fields[this_anchor_name]:
+                    if newNode:
+                        that_field.RenameInternalLinkToAnchor( 
+                            self, old_full_link_name, 
+                            new_full_link_name) 
+                    else:
+                        # appears that this is being deleted:
+                        that_field.RemoveInternalLinkToAnchor( 
+                            self, old_full_link_name)
+
+        # and change not only the link names to the anchors, (as above) 
+        # but also the package and node internal data structures....  
+        if oldNode is not None \
+        and hasattr(oldNode, 'anchor_fields') \
+        and self in oldNode.anchor_fields:
+            oldNode.anchor_fields.remove(self)
+            if len(oldNode.anchor_fields) == 0:
+                # remove the oldNode from the package's anchor_nodes:
+                if old_package and hasattr(old_package, 'anchor_nodes') \
+                and oldNode in old_package.anchor_nodes:
+                    old_package.anchor_nodes.remove(oldNode)
+
+
+
     def RenameInternalLinkToAnchor(self, dst_field, old_full_anchor_name,
                                     new_full_anchor_name):
         """
