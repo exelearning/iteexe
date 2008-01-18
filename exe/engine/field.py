@@ -434,6 +434,9 @@ class FieldWithResources(Field):
         this_node_path = ""
         if self.idevice is not None and self.idevice.parentNode is not None:
             this_node_path = self.idevice.parentNode.GetFullNodePath()
+        else:
+            # probably in the process of deleting this iDevice/node:
+            this_node_path = "<disconnected>"
         log.warn('Removed internal link to anchor: ' + full_anchor_name
                 + ' from node: ' + this_node_path)
 
@@ -461,6 +464,9 @@ class FieldWithResources(Field):
             if self.idevice is not None:
                 oldNode = self.idevice.parentNode
         if oldNode: 
+            # Must use the old_node's last_full_node_path rather than the 
+            # old_node's GetFullNodePath() primarily for a node delete, where 
+            # the node itself will have already been disconnected from the tree.
             old_node_path = oldNode.last_full_node_path 
             old_package = oldNode.package
 
@@ -493,6 +499,10 @@ class FieldWithResources(Field):
         if oldNode is not None \
         and hasattr(oldNode, 'anchor_fields') \
         and self in oldNode.anchor_fields:
+            # remove this old field from the package's anchor_nodes:
+            if old_package and hasattr(old_package, 'anchor_fields') \
+            and self in old_package.anchor_fields:
+                old_package.anchor_fields.remove(self)
             oldNode.anchor_fields.remove(self)
             if len(oldNode.anchor_fields) == 0:
                 # remove the oldNode from the package's anchor_nodes:

@@ -235,19 +235,6 @@ class Idevice(Persistable):
             # no anchors here, then!
             return
 
-        # Must use the old_node's last_full_node_path rather than 
-        # the old_node's GetFullNodePath() primarily for a node delete, where
-        # the node itself will have already been disconnected from the tree.
-        old_node_path = old_node.last_full_node_path
-        old_package = old_node.package
-        if new_node: 
-            new_node_path = new_node.GetFullNodePath()
-            new_package = new_node.package
-        else:
-            # as called during a delete of this iDevice:
-            new_node_path = ""
-            new_package = None
-
         num_fields=len(old_node.anchor_fields) 
         for field_loop in range(num_fields-1, -1, -1):
             this_field = old_node.anchor_fields[field_loop]
