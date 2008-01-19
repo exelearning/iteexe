@@ -91,7 +91,11 @@ class AttachmentBlock(Block):
             label += self.idevice.userResources[0].storageName
             label += u'</span>\n'
         html += u'<div>' 
+        this_package = None
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_package = self.idevice.parentNode.package
         html += common.formField('textInput',
+                                 this_package,
                                  label,
                                  'path'+self.id, '',
                                  self.idevice.filenameInstruc,

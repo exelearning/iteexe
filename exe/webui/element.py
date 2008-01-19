@@ -143,7 +143,9 @@ class TextElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html = common.formField('textInput', self.field.name, '',
+        # package not needed for the TextElement, only for rich-text fields:
+        this_package = None
+        html = common.formField('textInput', this_package, self.field.name, '',
                                 self.id, '', self.field.content)
        
         return html
@@ -202,14 +204,13 @@ class TextAreaElement(ElementWithResources):
 
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
-
         this_package = None
         if self.field_idevice is not None \
         and self.field_idevice.parentNode is not None:
             this_package = self.field_idevice.parentNode.package
-        html = common.formField('richTextArea',self.field.name,'',
+        html = common.formField('richTextArea', this_package, 
+                                self.field.name,'',
                                 self.id, self.field.instruc,
-                                this_package,
                                 self.field.content,
                                 str(self.width), str(self.height))
         return html
@@ -287,9 +288,9 @@ class FeedbackElement(ElementWithResources):
         if self.field_idevice is not None \
         and self.field_idevice.parentNode is not None:
             this_package = self.field_idevice.parentNode.package
-        html = common.formField('richTextArea',self.field.name,'',
+        html = common.formField('richTextArea', this_package, 
+                                self.field.name,'',
                                 self.id, self.field.instruc,
-                                this_package,
                                 self.field.feedback)
         return html
 
@@ -359,7 +360,9 @@ class PlainTextAreaElement(Element):
         """
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
-        html = common.formField('textArea',self.field.name,'',
+        # package not needed for PlainTextArea, only for rich-text fields:
+        this_package = None
+        html = common.formField('textArea', this_package, self.field.name,'',
                                 self.id, self.field.instruc,
                                 self.field.content, '',
                                 self.cols, self.rows)
@@ -1012,9 +1015,8 @@ class ClozeElement(ElementWithResources):
 
         html = [
             # Render the iframe box
-            common.formField('richTextArea', _('Cloze Text'),'',
+            common.formField('richTextArea', this_package, _('Cloze Text'),'',
                              self.editorId, self.field.instruc,
-                             this_package,
                              self.field.encodedContent),
             # Render our toolbar
             u'<table style="width: 100%;">',

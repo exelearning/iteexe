@@ -110,8 +110,12 @@ class ImageMagnifierBlock(Block):
         # Image
         html += self.imageMagnifierElement.renderEdit()       
 
+        this_package = None
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_package = self.idevice.parentNode.package
+
         # Align
-        html += common.formField('select', _("Align:"),
+        html += common.formField('select', this_package, _("Align:"),
                                  "float" + self.id, '',
                                  self.idevice.alignInstruc,
                                  floatArr, self.idevice.float)
@@ -123,14 +127,14 @@ class ImageMagnifierBlock(Block):
 
         # Initial Zoom Size
         selection = self.idevice.imageMagnifier.initialZSize
-        html += common.formField('select', _(u"Initial Zoom"),
+        html += common.formField('select', this_package, _(u"Initial Zoom"),
                                  "initial" + self.id, '',
                                  self.idevice.initialZoomInstruc,
                                  zoomOpts, selection)
             
         # Maximum Zoom
         selection = self.idevice.imageMagnifier.maxZSize
-        html += common.formField('select', _(u"Maximum zoom"),
+        html += common.formField('select', this_package, _(u"Maximum zoom"),
                                  "maxZoom" + self.id, '',
                                  self.idevice.maxZoomInstruc,
                                  zoomOpts, selection)
@@ -140,7 +144,8 @@ class ImageMagnifierBlock(Block):
                           [_(u'Medium'),'2'],
                           [_(u'Large'),'3'],
                           [_(u'Extra large'),'4'],]
-        html += common.formField('select', _(u"Size of magnifying glass: "),
+        html += common.formField('select', this_package, 
+                                 _(u"Size of magnifying glass: "),
                                  "glass" + self.id, '',
                                  self.idevice.glassSizeInstruc,
                                  glassSizeArr, 

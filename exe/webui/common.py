@@ -328,10 +328,11 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html += u'</div>\n'
     return html
 
-def formField(type_, caption, action, object_='', instruction='', \
-        package=None, *args, **kwargs):
+def formField(type_, package, caption, action, object_='', instruction='', \
+        *args, **kwargs):
     """
     A standard way for showing any form field nicely
+    package is only needed for richTextArea, to present all available internal anchors.
     """
     html  = '<div class="block">'
     html += '<strong>%s</strong>' % caption

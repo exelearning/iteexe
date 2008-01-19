@@ -114,7 +114,10 @@ class WikipediaBlock(Block):
                  (_(u"Wikieducator Content"),      "http://wikieducator.org/"),
                  (_(u"Other"),                     "")]          
 
-        html += common.formField('select', _('Site'),'s',
+        this_package = None
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_package = self.idevice.parentNode.package
+        html += common.formField('select', this_package, _('Site'),'s',
                                  'site'+self.id,
                                  self.idevice.langInstruc,
                                  sites,
@@ -136,7 +139,7 @@ class WikipediaBlock(Block):
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
                           (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
 
-        html += common.formField('select', _('Emphasis'),
+        html += common.formField('select', this_package, _('Emphasis'),
                                  'emphasis', self.id, 
                                  '', # TODO: Instructions
                                  emphasisValues,

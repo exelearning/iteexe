@@ -90,7 +90,9 @@ class PreferencesPage(RenderableResource):
         html += u"<form method=\"post\" action=\"\" "
         html += u"id=\"contentForm\" >"  
 
-        html += common.formField('select', _(u"Select Language"),
+        # package not needed for the preferences, only for rich-text fields:
+        this_package = None
+        html += common.formField('select', this_package, _(u"Select Language"),
                                  'locale',
                                  options = self.localeNames,
                                  selection = self.config.locale)

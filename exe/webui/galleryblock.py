@@ -177,8 +177,11 @@ class GalleryBlock(Block):
         Renders a table of thumbnails allowing the user to
         move/add/delete/change each gallery image
         """
+        this_package = None
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_package = self.idevice.parentNode.package
         html = [u'<div class="iDevice">',
-                common.formField('textInput', _('Title'),
+                common.formField('textInput', this_package, _('Title'),
                                  "title"+self.id, '',
                                  self.idevice.titleInstruc,
                                  self.idevice.title),

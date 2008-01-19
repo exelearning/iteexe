@@ -69,7 +69,10 @@ class ExternalUrlBlock(Block):
                      ['super-size', '800']]
         html += u"</div>\n"
         html += u'<div class="block">\n'
-        html += common.formField('select', _('Frame Height:'), 
+        this_package = None
+        if self.idevice is not None and self.idevice.parentNode is not None:
+            this_package = self.idevice.parentNode.package
+        html += common.formField('select', this_package, _('Frame Height:'), 
                                  "height"+self.id,
                                  options = heightArr,
                                  selection = self.idevice.height)

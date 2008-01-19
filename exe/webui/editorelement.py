@@ -116,9 +116,8 @@ class TextAreaEditorElement(EditorElement):
         html += "<br/>\n"
 
         this_package = None
-        html += common.formField('richTextArea', '','instruc',
+        html += common.formField('richTextArea', this_package, '','instruc',
                                  self.id, '', 
-                                 this_package,
                                  self.field.instruc)
         html += "<br/>"
         return html
@@ -158,9 +157,8 @@ class FeedbackEditorElement(EditorElement):
         html += "<br/>\n"
 
         this_package = None
-        html += common.formField('richTextArea', '','instruc',
+        html += common.formField('richTextArea', this_package, '','instruc',
                                  self.id, '',
-                                 this_package,
                                  self.field.instruc)
         html += "<br/>"
         return html
@@ -204,9 +202,8 @@ class ImageEditorElement(EditorElement):
         html += "<br/>\n"
 
         this_package = None
-        html += common.formField('richTextArea', '','instruc',
+        html += common.formField('richTextArea', this_package, '','instruc',
                                  self.id, '',
-                                 this_package,
                                  self.field.instruc)
         return html
     
@@ -227,7 +224,8 @@ class ImageEditorElement(EditorElement):
                       [_(u'Right'), 'right'],
                       [_(u'None'),  'none']]
 
-        html += common.formField('select', _("Align:"),
+        this_package = None
+        html += common.formField('select', this_package, _("Align:"),
                                  "float" + self.id, '',
                                  '',
                                  floatArr, '')
@@ -252,9 +250,8 @@ class FlashEditorElement(EditorElement):
         html += "<br/>\n"
 
         this_package = None
-        html += common.formField('richTextArea', '','instruc',
+        html += common.formField('richTextArea', this_package, '','instruc',
                                  self.id, '',
-                                 this_package,
                                  self.field.instruc)
         return html
     
@@ -293,9 +290,8 @@ class MultimediaEditorElement(EditorElement):
         html += "<br/>\n"
 
         this_package = None
-        html += common.formField('richTextArea', '','instruc',
+        html += common.formField('richTextArea', this_package, '','instruc',
                                  self.id, '',
-                                 this_package,
                                  self.field.instruc)
         return html
     
@@ -337,9 +333,8 @@ class AttachmentEditorElement(EditorElement):
         html += "<br/>\n"
 
         this_package = None
-        html += common.formField('richTextArea', '','instruc',
+        html += common.formField('richTextArea', this_package, '','instruc',
                                  self.id, '',
-                                 this_package,
                                  self.field.instruc)
         return html
     

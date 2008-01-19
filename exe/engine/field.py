@@ -499,7 +499,7 @@ class FieldWithResources(Field):
         if oldNode is not None \
         and hasattr(oldNode, 'anchor_fields') \
         and self in oldNode.anchor_fields:
-            # remove this old field from the package's anchor_nodes:
+            # remove this old field from the package's anchor_fields:
             if old_package and hasattr(old_package, 'anchor_fields') \
             and self in old_package.anchor_fields:
                 old_package.anchor_fields.remove(self)
@@ -756,6 +756,8 @@ class FieldWithResources(Field):
         once it has been found to exist in the content.
         """ 
         # and setup the corresponding data structures:
+        if not hasattr(self, 'anchor_names'):
+            self.anchor_names = []
         if this_anchor_name not in self.anchor_names:
             self.anchor_names.append(this_anchor_name)
 
