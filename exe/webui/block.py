@@ -186,7 +186,7 @@ class Block(Renderable):
             log.error('%s:\n%s' % (str(e), '\n'.join(format_tb(sys.exc_traceback))))
             html += broken % str(e)
             if self.mode == Block.Edit:
-                html += renderEditButtons()
+                html += self.renderEditButtons()
             if self.mode == Block.Preview:
                 html += self.renderViewButtons()
         return html
