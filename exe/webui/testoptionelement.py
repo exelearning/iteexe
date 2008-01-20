@@ -84,6 +84,7 @@ class TestoptionElement(object):
             # before deleting the option object, remove any internal anchors:
             for o_field in self.option.getRichTextFields():
                  o_field.ReplaceAllInternalAnchorsLinks()  
+                 o_field.RemoveAllInternalLinks()  
             self.question.options.remove(self.option)
 
 

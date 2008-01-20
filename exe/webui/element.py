@@ -1516,6 +1516,7 @@ class SelectOptionElement(Element):
             # before deleting the option object, remove any internal anchors:
             for o_field in self.field.getRichTextFields():
                  o_field.ReplaceAllInternalAnchorsLinks()  
+                 o_field.RemoveAllInternalLinks()  
             self.field.question.options.remove(self.field)
 
 
@@ -1644,6 +1645,7 @@ class SelectquestionElement(Element):
             # before deleting the questions object, remove any internal anchors:
             for q_field in self.field.getRichTextFields():
                  q_field.ReplaceAllInternalAnchorsLinks()  
+                 q_field.RemoveAllInternalLinks()  
             self.field.idevice.questions.remove(self.field)
 
         for element in self.options:
@@ -1798,6 +1800,7 @@ class QuizOptionElement(Element):
             # before deleting the option object, remove any internal anchors:
             for o_field in self.field.getRichTextFields():
                  o_field.ReplaceAllInternalAnchorsLinks()  
+                 o_field.RemoveAllInternalLinks()  
             self.field.question.options.remove(self.field)
 
 
@@ -1969,6 +1972,7 @@ class QuizQuestionElement(Element):
             # before deleting the question object, remove any internal anchors:
             for q_field in self.field.getRichTextFields():
                  q_field.ReplaceAllInternalAnchorsLinks()  
+                 q_field.RemoveAllInternalLinks()  
             self.field.idevice.questions.remove(self.field)
 
         for element in self.options:

@@ -95,6 +95,7 @@ class TrueFalseElement(object):
             # before deleting the question object, remove any internal anchors:
             for q_field in self.question.getRichTextFields():
                  q_field.ReplaceAllInternalAnchorsLinks()  
+                 q_field.RemoveAllInternalLinks()  
             self.idevice.questions.remove(self.question)
 
     def renderEdit(self):

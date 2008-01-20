@@ -221,29 +221,24 @@ class Idevice(Persistable):
     def ChangedParentNode(self, old_node, new_node):
         """
         To update all fo the anchors (if any) that are defined within
-        any of this iDevice's variouos fields, and any 
+        any of this iDevice's various fields, and any 
         internal links corresponding to those anchors.
         This is essentially a variation of Node:RenamedNode()
+        It also removes any internal links from the data structures as well, 
+        if this iDevice is being deleted
         """
-        # only need to continue on if there are any anchor_fields within
-        # this particular iDevice.  Rather than having each different idevice
-        # type look through each of its fields, the easiest approach to this
-        # is to simply check on the node's list of anchor_fields to see if
-        # any of those use THIS idevice:
-
-        if old_node is None or not hasattr(old_node, 'anchor_fields'):
-            # no anchors here, then!
-            return
-
-        num_fields=len(old_node.anchor_fields) 
+        my_fields = self.getRichTextFields()
+        num_fields = len(my_fields)
         for field_loop in range(num_fields-1, -1, -1):
-            this_field = old_node.anchor_fields[field_loop]
-            if this_field.idevice == self:
+            this_field = my_fields[field_loop]
+            if hasattr(this_field, 'anchor_names') \
+            and len(this_field.anchor_names) > 0:
                 # okay, this is an applicable field with some anchors:
                 this_field.ReplaceAllInternalAnchorsLinks(oldNode=old_node, 
                         newNode=new_node)
 
                 if new_node:
+                    # add this particular anchor field into the new node's list:
                     if not hasattr(new_node, 'anchor_fields'):
                         new_node.anchor_fields = []
                     if this_field not in new_node.anchor_fields: 
@@ -253,6 +248,15 @@ class Idevice(Persistable):
                             new_package.anchor_nodes = []
                         if new_node not in new_package.anchor_nodes:
                             new_package.anchor_nodes.append(new_node)
+
+            # now, regardless of whether or not that field has any anchors,
+            # if this idevice is being deleted (new_node is None), then
+            # go ahead and remove any of its internal links
+            # from the corresponding data structures:
+            if not new_node \
+            and hasattr(this_field, 'intlinks_to_anchors') \
+            and len(this_field.intlinks_to_anchors) > 0:
+                this_field.RemoveAllInternalLinks()
 
         return
 

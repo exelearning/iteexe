@@ -403,20 +403,20 @@ class FieldWithResources(Field):
 
         return new_content
 
-    def RemoveInternalLinkToAnchor(self, dst_field, full_anchor_name):
+    def RemoveInternalLinkToRemovedAnchor(self, dst_field, full_anchor_name):
         """
         Called by a linked destination field when its anchor is removed,
         this will remove references to the anchor from this link source field.
-        """
+        """ 
         if hasattr(self, 'intlinks_to_anchors'): 
             if full_anchor_name in self.intlinks_to_anchors.keys(): 
                 if dst_field != self.intlinks_to_anchors[full_anchor_name]: 
-                    log.warn('RemoveInternalLinkToAnchor found a different '
-                        + 'link-destination field than expected; '
+                    log.warn('RemoveInternalLinkToRemovedAnchor found a '
+                        + 'different link-destination field than expected; '
                         + 'removing anyway.')
                 del self.intlinks_to_anchors[full_anchor_name]
             else:
-                log.warn('RemoveInternalLinkToAnchor did not find the'
+                log.warn('RemoveInternalLinkToRemovedAnchor did not find the '
                         + 'link-destination anchor as expected; '
                         + 'removing anyway.')
 
@@ -437,13 +437,13 @@ class FieldWithResources(Field):
         else:
             # probably in the process of deleting this iDevice/node:
             this_node_path = "<disconnected>"
-        log.warn('Removed internal link to anchor: ' + full_anchor_name
+        log.warn('Removed internal link to removed-anchor: ' + full_anchor_name
                 + ' from node: ' + this_node_path)
 
 
     def ReplaceAllInternalAnchorsLinks(self, oldNode=None, newNode=None):
         """
-        An ensemble wrapper around RemoveInternalLinkToAnchor(), 
+        An ensemble wrapper around RemoveInternalLinkToRemovedAnchor(), 
         or RenameInternalLinkToAnchor(), depending on its usage to 
         remove or replace ALL internal links to ALL anchors within this field.
         To be called by multi-object idevice's delete object action
@@ -491,7 +491,7 @@ class FieldWithResources(Field):
                             new_full_link_name) 
                     else:
                         # appears that this is being deleted:
-                        that_field.RemoveInternalLinkToAnchor( 
+                        that_field.RemoveInternalLinkToRemovedAnchor( 
                             self, old_full_link_name)
 
         # and change not only the link names to the anchors, (as above) 
@@ -718,7 +718,7 @@ class FieldWithResources(Field):
                 + "#" + this_anchor_name 
             for that_field in self.anchors_linked_from_fields[\
                 this_anchor_name]: 
-                that_field.RemoveInternalLinkToAnchor(\
+                that_field.RemoveInternalLinkToRemovedAnchor(\
                     self, full_anchor_name)
             del self.anchors_linked_from_fields[this_anchor_name]
 
@@ -825,7 +825,27 @@ class FieldWithResources(Field):
 
 
 
-    def RemoveInternalLink(self, link_anchor_name, link_field):
+    def RemoveAllInternalLinks(self):
+        """
+        Ensemble method wrapper around RemoveInternalLink(),
+        to remove ALL internal links of this field from
+        the corresponding data structures, for when
+        nodes or idevices are deleted, etc.
+        """
+        if not hasattr(self, 'intlinks_to_anchors'):
+            self.intlinks_to_anchors = {}
+
+        # Remove any links, as they are no longer in use!
+        for this_link_name in self.intlinks_to_anchors.keys():
+            this_anchor_name = common.getAnchorNameFromLinkName(
+                    this_link_name)
+            self.RemoveInternalLink(this_link_name, this_anchor_name,
+                    self.intlinks_to_anchors[this_link_name])
+
+        return
+
+
+    def RemoveInternalLink(self, full_link_name, link_anchor_name, link_field):
         """
         clear out the internal data structures for this internal link,
         once it has been found to no longer exist in the content.
@@ -839,9 +859,11 @@ class FieldWithResources(Field):
 
         # remove this field from the source links of the destination anchor:
         if hasattr(link_field, 'anchors_linked_from_fields') \
-        and link_anchor_name in link_field.anchors_linked_from_fields.values() \
+        and link_anchor_name in link_field.anchors_linked_from_fields.keys() \
         and self in link_field.anchors_linked_from_fields[link_anchor_name]:
             link_field.anchors_linked_from_fields[link_anchor_name].remove(self)
+
+        log.debug('Removed internal link to anchor: ' + full_link_name)
 
         return
 
@@ -896,7 +918,7 @@ class FieldWithResources(Field):
             if this_link_name not in new_intlinks_to_anchors.keys():
                 this_anchor_name = common.getAnchorNameFromLinkName(
                         this_link_name)
-                self.RemoveInternalLink(this_anchor_name,
+                self.RemoveInternalLink(this_link_name, this_anchor_name,
                         old_intlinks[this_link_name])
 
         self.intlinks_to_anchors = new_intlinks_to_anchors
