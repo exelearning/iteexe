@@ -204,7 +204,7 @@ class WebsitePage(Page):
     def processInternalLinks(self, package, html):
         """
         take care of any internal links which are in the form of:
-           href="EXE-NODE:Home:Topic:etc#Anchor"
+           href="exe-node:Home:Topic:etc#Anchor"
         For this WebSite Export, go ahead and process the link entirely,
         using the fully exported (and unique) file names for each node.
         """

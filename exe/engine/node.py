@@ -136,7 +136,8 @@ class Node(Persistable):
         Optional new_node_title allows the determination of the
         full path name should this node's name change.
         """
-        full_path = "EXE-NODE"
+        # use lower-case for the exe-node, for TinyMCE copy/paste compatibility:
+        full_path = "exe-node"
         # first go through all of the parentNode's ancestor nodes:
         this_nodes_ancestors = list(self.ancestors())
         num_ancestors = len(this_nodes_ancestors)

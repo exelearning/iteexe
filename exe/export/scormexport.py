@@ -313,7 +313,7 @@ class ScormPage(Page):
     def processInternalLinks(self, html):
         """
         take care of any internal links which are in the form of:
-           href="EXE-NODE:Home:Topic:etc#Anchor"
+           href="exe-node:Home:Topic:etc#Anchor"
         For this SCORM Export, go ahead and remove the link entirely,
         leaving only its text, since such links are not to be in the LMS.
         """

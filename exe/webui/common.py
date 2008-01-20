@@ -386,13 +386,14 @@ def editModeHeading(text):
 def removeInternalLinks(html, anchor_name=""):
     """
     take care of any internal links which are in the form of:
-       href="EXE-NODE:Home:Topic:etc#Anchor"
+       href="exe-node:Home:Topic:etc#Anchor"
     For this non-Web  Export, go ahead and remove the link entirely,
     leaving only its text, since such links are not to be in the LMS.
     Used by:  SCORM, IMS, and Common Cartridge exports
     (note that the Text and iPod exports already remove any HTML tags)
     """
-    intlink_start = 'href="EXE-NODE:'
+    # use lower-case for the exe-node, for TinyMCE copy/paste compatibility
+    intlink_start = 'href="exe-node:'
     intlink_pre   = 'href="'
     last_end_pos = 0
     next_link_pos = html.find(intlink_start)
@@ -452,12 +453,13 @@ def removeInternalLinks(html, anchor_name=""):
 def removeInternalLinkNodes(html):
     """
     take care of any internal links which are in the form of:
-       href="EXE-NODE:Home:Topic:etc#Anchor"
+       href="exe-node:Home:Topic:etc#Anchor"
     For this SinglePage Export, go ahead and keep the #Anchor portion,
-    but remove the 'EXE-NODE:Home:Topic:etc' Node portion, 
+    but remove the 'exe-node:Home:Topic:etc' Node portion, 
     since it is all exported into the same file.
     """
-    intlink_start = 'href="EXE-NODE:'
+    # use lower-case for the exe-node, for TinyMCE copy/paste compatibility
+    intlink_start = 'href="exe-node:'
     intlink_pre   = 'href="'
     next_link_pos = html.find(intlink_start)
     while next_link_pos >= 0: 
@@ -490,7 +492,7 @@ def removeInternalLinkNodes(html):
 def findLinkedField(package, exe_node_path, anchor_name):
     """
     find the field which corresponds to the exe_node_name of the form:
-       "EXE-NODE:Home:Topic:etc" of the  href="EXE-NODE:Home:Topic:etc#Anchor"
+       "exe-node:Home:Topic:etc" of the  href="exe-node:Home:Topic:etc#Anchor"
     rather than searching through the entire node-tree, shortcut straight
     to the package's list of anchor_fields
     """
@@ -515,7 +517,7 @@ def findLinkedField(package, exe_node_path, anchor_name):
 def findLinkedNode(package, exe_node_path, anchor_name):
     """
     find the node which corresponds to the exe_node_name of the form:
-       "EXE-NODE:Home:Topic:etc" of the  href="EXE-NODE:Home:Topic:etc#Anchor"
+       "exe-node:Home:Topic:etc" of the  href="exe-node:Home:Topic:etc#Anchor"
     just a wrapper around common.findLinkedField()
     """
     linked_node = None
@@ -527,7 +529,7 @@ def findLinkedNode(package, exe_node_path, anchor_name):
 def getAnchorNameFromLinkName(link_name):
     """
     little helper to pull out of the (possibly optional?) Anchor from 
-       href="EXE-NODE:Home:Topic:etc#Anchor"
+       href="exe-node:Home:Topic:etc#Anchor"
     """ 
     anchor_name = ""
     anchor_pos = link_name.find('#') 
@@ -539,15 +541,16 @@ def getAnchorNameFromLinkName(link_name):
 def renderInternalLinkNodeFilenames(package, html):
     """
     take care of any internal links which are in the form of:
-       href="EXE-NODE:Home:Topic:etc#Anchor"
+       href="exe-node:Home:Topic:etc#Anchor"
     For this WebSite Export, go ahead and keep the #Anchor portion,
-    but replace the 'EXE-NODE:Home:Topic:etc' Node portion, 
+    but replace the 'exe-node:Home:Topic:etc' Node portion, 
     with the actual target's filename, now temporarily stored in the 
     Node's tmp_export_filename attribute, after being processed by
     the export's Page:uniquifyNames()
     """
     found_all_anchors = True
-    intlink_start = 'href="EXE-NODE:'
+    # use lower-case for the exe-node, for TinyMCE copy/paste compatibility
+    intlink_start = 'href="exe-node:'
     intlink_pre   = 'href="'
     next_link_pos = html.find(intlink_start)
     while next_link_pos >= 0: 

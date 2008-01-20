@@ -580,7 +580,7 @@ class FieldWithResources(Field):
     def ListActiveInternalLinks(self, content):
         """
         to build up the list of all internal links currently within this 
-        field's new content to process, merely looking for href="EXE-NODE:..."
+        field's new content to process, merely looking for href="exe-node:..."
         into the fields var: intlinks_to_anchors, 
         which is created here as: intlinks_names_n_fields
         """
@@ -590,7 +590,8 @@ class FieldWithResources(Field):
         if self.idevice is not None and self.idevice.parentNode is not None:
             this_package = self.idevice.parentNode.package
 
-        intlink_start = 'href="EXE-NODE:'
+        # use lower-case for the exe-node, for TinyMCE copy/paste compatibility:
+        intlink_start = 'href="exe-node:'
         intlink_pre   = 'href="'
         next_link_pos = content.find(intlink_start)
         while next_link_pos >= 0: 
