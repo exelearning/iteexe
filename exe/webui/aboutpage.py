@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
-# Copyright 2004-2007 eXe Project, Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -82,11 +82,10 @@ class AboutPage(RenderableResource):
         xul += u'      <label id="revision" style="text-align: center;" \n'
         xul += u'             value="Revision: '+version.revision+'" />\n'
         xul += u'      <description id="copyright">'
-        xul += u'Copyright 2004-2007 eXe Project,<html:br/>'
-        xul += u'       New Zealand Tertiary Education Commission.<html:br/>\n'
+        xul += u'Copyright 2004-2008 eXe Project,<html:br/>'
+        xul += u'       http://eXeLearning.org/<html:br/>\n'
         xul += u'<html:br/>\n'
-        xul += u'email: exe@exelearning.org<html:br/>\n'
-        xul += u'www.exelearning.org\n'
+        xul += u'email: exe@exelearning.org\n'
         xul += u'      </description>\n'
         xul += u'      <vbox id="detailsBox" align="center" flex="1">\n'
         xul += u'        <iframe id="creditsIframe" \n'
