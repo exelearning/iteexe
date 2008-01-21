@@ -146,6 +146,7 @@
                 <menuitem id="dcmigl" value="gl" label="Gallegan; Galician "/>
                 <menuitem id="dcmika" value="ka" label="Georgian "/>
                 <menuitem id="dcmide" value="de" label="German "/>
+                <menuitem id="dcmiel" value="el" label="Greek "/>
                 <menuitem id="dcmign" value="gn" label="Guarani "/>
                 <menuitem id="dcmigu" value="gu" label="Gujarati "/>
                 <menuitem id="dcmiha" value="ha" label="Hausa (?) "/>
