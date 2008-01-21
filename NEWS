@@ -1,4 +1,5 @@
-Next Release
+Version 1.03 (r3373)
+* Add linking across pages within a package (only for web export)
 * Add note that SCORM export previous/next requires non-standard extension
 * Add prototype IMS Common Cartridge export (no quizzing)
 * Add Rel-License microformat to license urls in exported content
@@ -9,6 +10,7 @@ Next Release
 * Fix embedding of images and media with '#' in name
 * Fix SCORM Quiz pass rate to signal pass for scores of exactly the rate
 * Update to BeautifulSoup 3.0.5
+* Translation updates
 
 Version 1.02 (r3303)
 * Add ability to type resource name into url box (without browse button)
