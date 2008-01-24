@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-16 16:19+1300\n"
-"PO-Revision-Date: 2006-07-31 14:47+1200\n"
-"Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
+"PO-Revision-Date: 2008-01-23 16:53+1300\n"
+"Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-Poedit-Language: Traditional Chinese\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:169
 msgid ""
@@ -201,7 +202,7 @@ msgstr "動作"
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
 #: exe/webui/questionelement.py:92
 msgid "Activity"
-msgstr "學習作用中"
+msgstr "學習活動"
 
 #: exe/webui/editorpane.py:246
 #, fuzzy
@@ -220,9 +221,8 @@ msgid "Add JPEG Image"
 msgstr "加入JPEG圖片"
 
 #: exe/webui/editorpane.py:88
-#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr "加入互動式評語。"
+msgstr "加入Flash動畫"
 
 #: exe/webui/editorpane.py:81
 #, fuzzy
@@ -242,19 +242,16 @@ msgid ""
 msgstr "載入除.txt文件外所有的applet文件。使用\"加入文件\"和\"上傳\"按鈕,一次載入一個文件。已上傳的文件將顯示在Applet code欄欄位下面。"
 
 #: exe/webui/editorpane.py:90
-#, fuzzy
 msgid "Add an attachment file to your iDevice."
-msgstr "加入互動式評語。"
+msgstr "加入附檔"
 
 #: exe/webui/editorpane.py:87
-#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "加入互動式評語。"
+msgstr "加入互動式評語"
 
 #: exe/webui/editorpane.py:89
-#, fuzzy
 msgid "Add an mp3 file to your iDevice."
-msgstr "加入互動式評語。"
+msgstr "加入MP3檔案"
 
 #: exe/webui/testquestionelement.py:114 exe/webui/element.py:1686
 msgid "Add another Option"
@@ -265,9 +262,8 @@ msgid "Add another Question"
 msgstr "加入問題"
 
 #: exe/webui/casestudyblock.py:99
-#, fuzzy
 msgid "Add another activity"
-msgstr "加入選項"
+msgstr "加入活動"
 
 #: exe/webui/element.py:1985
 msgid "Add another option"
@@ -2556,14 +2552,13 @@ msgstr "SCORM 1.2"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
-#, fuzzy
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"重新載入\" accesskey=\"r\""
+msgstr "label=\"最近專案\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Footer:"
-msgstr ""
+msgstr "頁尾"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2586,13 +2581,13 @@ msgstr "label=\"儲存\" accesskey=\"s\""
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
 msgid "Taxonomy"
-msgstr "分類別名稱"
+msgstr "分類法"
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "Identifier:"
-msgstr "教材碼:"
+msgstr "識別碼:"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2621,9 +2616,8 @@ msgstr "來源:"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
-#, fuzzy
 msgid "label=\"Print\" accesskey=\"p\""
-msgstr "label=\"關於\" accesskey=\"a\""
+msgstr "label=\"列印\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -2665,9 +2659,8 @@ msgstr "阿布哈西亞語"
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
 #: label="Common Cartridge">
-#, fuzzy
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"單一網頁\" accesskey=\"p\""
+msgstr "label=\"通用匣\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2675,7 +2668,7 @@ msgstr "label=\"單一網頁\" accesskey=\"p\""
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
 #: display">
 msgid "Update Tree"
-msgstr "更新目錄樹"
+msgstr "更新樹狀目錄"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
@@ -2696,9 +2689,8 @@ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 #: label="Apply"> exe/xului/templates/exportproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
 #: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-#, fuzzy
 msgid "Apply"
-msgstr "Applet Code:"
+msgstr "套用"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -2713,7 +2705,7 @@ msgstr "南非荷蘭語"
 #: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
 #: Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS 內容包裹\" accesskey=\"i\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
@@ -2735,7 +2727,7 @@ msgstr "阿比西尼亞語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "資料夾"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
@@ -2745,7 +2737,7 @@ msgstr "阿拉伯語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile','','')" label="Zip File">
 msgid "Zip File"
-msgstr ""
+msgstr "Zip檔案"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
@@ -2775,9 +2767,8 @@ msgstr "阿薩姆語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
 #: File">
-#, fuzzy
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"檔案\" accesskey=\"f\""
+msgstr "label=\"文字檔案\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -2790,9 +2781,8 @@ msgstr "阿維斯陀語"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
-#, fuzzy
 msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"新增檔案\" accesskey=\"n\""
+msgstr "label=\"iPod 註記\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -2836,7 +2826,7 @@ msgstr "巴什基爾語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"引出教材\" accesskey=\"i\""
+msgstr "label=\"解壓教材\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -2849,9 +2839,8 @@ msgstr "巴斯克語"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
-#, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"關於\" accesskey=\"a\""
+msgstr "label=\"離開\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
@@ -2893,9 +2882,8 @@ msgstr "比斯拉馬語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh Display">
-#, fuzzy
 msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"重新載入\" accesskey=\"r\""
+msgstr "label=\"更新顯示\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
@@ -2937,9 +2925,8 @@ msgstr "白俄語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
 #: label="Online eXe Manual">
-#, fuzzy
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
-msgstr "label=\"開啟\" accesskey=\"o\""
+msgstr "label=\"線上手冊\" accesskey=\"o\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
@@ -2954,9 +2941,8 @@ msgstr "保加利亞語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
 #: label="Tips and Tricks">
-#, fuzzy
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"工具\" accesskey=\"t\""
+msgstr "label=\"要訣\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
@@ -2970,9 +2956,8 @@ msgstr "緬甸語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
 #: label="Release Notes">
-#, fuzzy
 msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"新增檔案\" accesskey=\"n\""
+msgstr "label=\"版本說明\" accesskey=\"n\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
@@ -3003,9 +2988,8 @@ msgstr "查莫羅語"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
-#, fuzzy
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"網站\" accesskey=\"w\""
+msgstr "label=\"eXe 聊天室\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
@@ -3018,9 +3002,8 @@ msgstr "車臣語"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
-#, fuzzy
 msgid "label=\"About eXe\" accesskey=\"a\""
-msgstr "label=\"關於\" accesskey=\"a\""
+msgstr "label=\"關於 eXe\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
@@ -3048,7 +3031,7 @@ msgstr "教會斯拉夫語"
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
-msgstr "加入頁面"
+msgstr "增加頁面"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
