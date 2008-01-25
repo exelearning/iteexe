@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-16 16:19+1300\n"
+"POT-Creation-Date: 2008-01-25 13:30+1300\n"
 "PO-Revision-Date: 2007-12-20 11:34+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -127,15 +127,15 @@ msgstr ""
 "želite skriti, dvakrat kliknite na besedo in kliknite na gumb\n"
 "<i>Skrij/Prikaži besedo.</p>"
 
-#: exe/engine/field.py:2422
+#: exe/engine/field.py:2521
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Možnost dovoljuje manjše število napak črkovanja ali uporabe različne velikosti črk. Izbrana možnost dovoljuje le natančno določen odgovor, kot je zapisan v rešitvi.</p><p><strong>Primer:</strong> Če je pravilni odgovor na vprašanje <code>Čebela</code>, se upošteva oba odgovora; <code>Čebela</code> in <code>čebela</code>, saj sta si odgovora <em>\" zelo blizu \"</em> in je napačno zapisana le ena velika črka, tudi če je določena možnost \"preverjanje velikih črk\".</p><p>V primeru, da možnosti preverjanja velikih črk ni izbrana, pa se v zgornjem primeru, velika črka ne bo štela kot napaka. V tem primeru bo med pravilnimi odgovori tudi beseda <code>čebula</code>.</p><p>Če sta določeni obe možnosti \"Strogo označevanje\" in \"Preverjanje velikosti črk\", je edini pravilni odgovor \"Čebela\".</p>"
 
-#: exe/engine/field.py:2443
+#: exe/engine/field.py:2542
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Izbrana možnost omogoča, da se bodo predloženi odgovori z različnimi velikimi črkami označili kot pravilni.</p>"
 
-#: exe/engine/field.py:2448
+#: exe/engine/field.py:2547
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -145,7 +145,7 @@ msgstr ""
 "v trenutku, ko bo natipkana in ne samo na koncu, ko bodo natipkane vse besede\n"
 "izbrane vaje.</p> "
 
-#: exe/engine/field.py:2697
+#: exe/engine/field.py:2796
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>V besedilnem urejevalniku spodaj izberite simbole ali ročno vpišite LATEX ukaze za zapis matematične enačbe. Za predogled, kako je vaša LATEX enačba videti, pritisnite spodnji gumb &lt;Predogled&gt;.</p>"
 
@@ -260,7 +260,7 @@ msgstr "Dejanja"
 #: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
 #: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
-#: exe/webui/questionelement.py:92
+#: exe/webui/questionelement.py:96
 msgid "Activity"
 msgstr "Dejavnost"
 
@@ -268,11 +268,11 @@ msgstr "Dejavnost"
 msgid "Add Field"
 msgstr "Dodaj polje"
 
-#: exe/webui/element.py:433
+#: exe/webui/element.py:436
 msgid "Add Image"
 msgstr "Dodaj sliko"
 
-#: exe/webui/element.py:843
+#: exe/webui/element.py:846
 msgid "Add JPEG Image"
 msgstr "Dodaj JPEG sliko"
 
@@ -310,7 +310,7 @@ msgstr "Dodajte interaktivni odziv poučevalni enoti."
 msgid "Add an mp3 file to your iDevice."
 msgstr "Dodajte MP3 datoteko vašemi poučevalni enoti."
 
-#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1686
+#: exe/webui/testquestionelement.py:118 exe/webui/element.py:1696
 msgid "Add another Option"
 msgstr "Dodaj novo možnost"
 
@@ -322,7 +322,7 @@ msgstr "Dodaj drugo vprašanje"
 msgid "Add another activity"
 msgstr "Dodaj novo dejavnost"
 
-#: exe/webui/element.py:1985
+#: exe/webui/element.py:2003
 msgid "Add another option"
 msgstr "Dodaj novo možnost"
 
@@ -334,13 +334,13 @@ msgstr "Dodaj drugo vprašanje"
 msgid "Add files"
 msgstr "Dodaj datoteke"
 
-#: exe/webui/galleryblock.py:188
+#: exe/webui/galleryblock.py:191
 msgid "Add images"
 msgstr "Dodaj slike"
 
-#: exe/webui/flashwithtextblock.py:85 exe/webui/multimediablock.py:89
-#: exe/webui/editorelement.py:230 exe/webui/imagemagnifierblock.py:114
-#: exe/webui/flashmovieblock.py:84 exe/webui/imagewithtextblock.py:85
+#: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
+#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:118
+#: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "Poravnava:"
 
@@ -361,7 +361,7 @@ msgstr ""
 "Poravnava vam omogoča, da izberete\n"
 "kje na ekranu bo postavljen predvajalnik."
 
-#: exe/engine/field.py:2486
+#: exe/engine/field.py:2585
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -416,7 +416,7 @@ msgstr ""
 "učenec izpolniti. Nalogo morate podati razumljivo, razmislite pa tudi o\n"
 "pogojih, ki lahko ovirajo učenca pri izvajanju."
 
-#: exe/webui/element.py:1181
+#: exe/webui/element.py:1183
 msgid "Answsers"
 msgstr "Odgovori"
 
@@ -432,7 +432,7 @@ msgstr "Vrsta apleta"
 msgid "Article"
 msgstr "Članek"
 
-#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:332
+#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
 msgid "Attachment"
 msgstr "Priponka"
 
@@ -445,11 +445,11 @@ msgstr "Priponka %s nima nadrejenega vozlišča"
 msgid "Auckland University of Technology"
 msgstr "Tehnološka Univerza v Aucklandu"
 
-#: exe/webui/editorelement.py:150
+#: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "Naslov gumba"
 
-#: exe/webui/preferencespage.py:103 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Prekliči"
 
@@ -458,9 +458,9 @@ msgstr "Prekliči"
 msgid "Cannot access directory named "
 msgstr "Ni mogoč dostop do mape z imenom"
 
-#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:315
-#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:89
-#: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:549
+#: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
+#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:92
+#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:552
 msgid "Caption:"
 msgstr "Naslov:"
 
@@ -472,11 +472,11 @@ msgstr "Študij primera"
 msgid "Catalan Wikipedia Article"
 msgstr "Katalanski članek iz Wikipedije"
 
-#: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
+#: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
 msgid "Change Image"
 msgstr "Zamenjaj sliko"
 
-#: exe/webui/element.py:1034
+#: exe/webui/element.py:1036
 msgid "Check Caps?"
 msgstr "Check Caps?"
 
@@ -526,7 +526,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Kliknite <strong>izberi datoteko</strong>, prebrskajte med datotekami in izberite tisto, ki jo želite pripeti."
 
-#: exe/engine/field.py:2035
+#: exe/engine/field.py:2134
 msgid "Click Here"
 msgstr "Pritisnite tukaj"
 
@@ -538,7 +538,7 @@ msgstr "Tukaj vnesite navodila za izpolnitev"
 msgid "Click here"
 msgstr "Pritisnite tukaj"
 
-#: exe/engine/field.py:2705
+#: exe/engine/field.py:2804
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -550,12 +550,12 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr " Kliknite na gumb dodajanja slike in izberite slikovno datoteko. Slika se bo prikazala pod kazalnikom za vpis oznake. Vedno je dobro, da v oznako vnesete tudi velikost datoteke."
 
-#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:140
-#: exe/webui/truefalseelement.py:141 exe/webui/common.py:324
+#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
 #: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
-#: exe/webui/element.py:2024 exe/webui/element.py:2025
-#: exe/webui/editorpane.py:359 exe/webui/editorpane.py:360
-#: exe/webui/editorpane.py:380 exe/webui/editorpane.py:381
+#: exe/webui/element.py:2042 exe/webui/element.py:2043
+#: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
+#: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
@@ -569,20 +569,20 @@ msgstr "Dopolnilna naloga"
 msgid "Cloze Activity"
 msgstr "Dopolnjevanje"
 
-#: exe/webui/element.py:1015
+#: exe/webui/element.py:1018
 msgid "Cloze Text"
 msgstr "Besedilo dopolnjevanja"
 
-#: exe/webui/element.py:1579 exe/webui/element.py:1890
+#: exe/webui/element.py:1585 exe/webui/element.py:1904
 msgid "Correct"
 msgstr "Pravilno"
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1527
-#: exe/webui/element.py:1802
+#: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
+#: exe/webui/element.py:1816
 msgid "Correct Option"
 msgstr "Pravilna izbira"
 
-#: exe/webui/truefalseelement.py:204
+#: exe/webui/truefalseelement.py:208
 msgid "Correct!"
 msgstr "Pravilno!"
 
@@ -603,9 +603,9 @@ msgstr ""
 "katerimi pomagamo razrešiti problem."
 
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
-#: exe/webui/editorelement.py:157 exe/webui/editorelement.py:198
-#: exe/webui/editorelement.py:251 exe/webui/editorelement.py:292
-#: exe/webui/editorelement.py:336 exe/webui/galleryblock.py:263
+#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
+#: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
+#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:266
 #: exe/webui/block.py:219 exe/webui/editorpage.py:236
 #: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
@@ -616,18 +616,18 @@ msgstr "Izbriši"
 msgid "Delete File"
 msgstr "Izbriši Datoteko"
 
-#: exe/webui/galleryblock.py:260
+#: exe/webui/galleryblock.py:263
 msgid "Delete Image"
 msgstr "Izbriši sliko"
 
-#: exe/webui/testoptionelement.py:124 exe/webui/element.py:1555
-#: exe/webui/element.py:1830
+#: exe/webui/testoptionelement.py:128 exe/webui/element.py:1561
+#: exe/webui/element.py:1844
 msgid "Delete option"
 msgstr "Izbrišite možnost"
 
-#: exe/webui/testquestionelement.py:96 exe/webui/questionelement.py:103
-#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1655
-#: exe/webui/element.py:1970
+#: exe/webui/testquestionelement.py:100 exe/webui/questionelement.py:107
+#: exe/webui/truefalseelement.py:122 exe/webui/element.py:1665
+#: exe/webui/element.py:1988
 msgid "Delete question"
 msgstr "Izbrišite vprašanje"
 
@@ -684,7 +684,7 @@ msgstr "Opis"
 msgid "Description:"
 msgstr "Opis:"
 
-#: exe/webui/element.py:459 exe/webui/element.py:865 exe/webui/element.py:1235
+#: exe/webui/element.py:462 exe/webui/element.py:868 exe/webui/element.py:1237
 msgid "Display as:"
 msgstr "Prikaži kot:"
 
@@ -762,8 +762,8 @@ msgstr "Uredi"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Vaša poučevalna enota, datoteka generic.data ali pa paket, ki ga nalagate je bil ustvarjen z novejšo različico programa eXe. Prosimo, da posodobite program in poskušate znova."
 
-#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:100 exe/webui/editorpane.py:331
+#: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
+#: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Poudarki"
 
@@ -879,7 +879,7 @@ msgstr ""
 "Lahko dodate možnosti z klikom na \"Dodaj novo možnost\" gumb. Te lahko izbrišete\n"
 "s klikom na rdeči \"X\" ob vnesenih možnostih."
 
-#: exe/engine/field.py:3007
+#: exe/engine/field.py:3106
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -932,7 +932,7 @@ msgstr ""
 "Vprašanje mora biti jasno in nedvoumno. Izogibajte se negativnim osnovam \n"
 "saj le te se nagibajo k nejasnostim."
 
-#: exe/engine/field.py:2999
+#: exe/engine/field.py:3098
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -993,21 +993,21 @@ msgstr "Izvoženo v %s"
 msgid "External Web Site"
 msgstr "Zunanja spletna stran"
 
-#: exe/webui/imagemagnifierblock.py:142
+#: exe/webui/imagemagnifierblock.py:146
 msgid "Extra large"
 msgstr "Zelo velik"
 
-#: exe/webui/truefalseelement.py:106 exe/webui/truefalseelement.py:179
+#: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
 msgid "False"
 msgstr "Nepravilno"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2777
-#: exe/engine/field.py:2825 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:149 exe/webui/questionelement.py:96
-#: exe/webui/common.py:228 exe/webui/element.py:1833
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2876
+#: exe/engine/field.py:2924 exe/webui/clozeblock.py:158
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
+#: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Odziv"
@@ -1021,7 +1021,7 @@ msgstr ""
 "ni vnesenega opisa odziva."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3016 exe/engine/field.py:3086
+#: exe/engine/field.py:3115 exe/engine/field.py:3185
 msgid "Feedback:"
 msgstr "Odziv:"
 
@@ -1036,7 +1036,7 @@ msgstr "Datoteka %s ne obstaja ali pa je ni mogoče prebrati."
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ime datoteke %s je datoteka, ni je mogoče zamenjati."
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:745
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:748
 msgid "Filename:"
 msgstr "Ime datoteke:"
 
@@ -1054,7 +1054,7 @@ msgstr "Flash z besedilom"
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Ime mape %s že obstaja. Prosim, izberite novo ime ali pa izbrišite obstoječo mapo in poskusite znova."
 
-#: exe/webui/externalurlblock.py:72
+#: exe/webui/externalurlblock.py:75
 msgid "Frame Height:"
 msgstr "Višina okvirja:  "
 
@@ -1066,7 +1066,7 @@ msgstr "Samostojno besedilo"
 msgid "French Wikipedia Article"
 msgstr "Francoski članek iz Wikipedije"
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:207
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -1080,19 +1080,19 @@ msgstr "Geogebra"
 msgid "German Wikipedia Article"
 msgstr "Nemški članek iz Wikipedije"
 
-#: exe/webui/element.py:1119
+#: exe/webui/element.py:1121
 msgid "Get score"
 msgstr "Pridobi rezultat"
 
-#: exe/webui/galleryblock.py:233
+#: exe/webui/galleryblock.py:236
 msgid "Go Back"
 msgstr "Pojdi nazaj "
 
-#: exe/webui/galleryblock.py:247
+#: exe/webui/galleryblock.py:250
 msgid "Go Forward"
 msgstr "Pojdi naprej"
 
-#: exe/webui/galleryblock.py:255
+#: exe/webui/galleryblock.py:258
 msgid "Go Forward (Not Available)"
 msgstr "Pojdi naprej (ni na voljo)"
 
@@ -1104,18 +1104,18 @@ msgstr "Grški članek iz Wikipedije"
 msgid "Hide"
 msgstr "Skrij"
 
-#: exe/webui/questionelement.py:127
+#: exe/webui/questionelement.py:131
 msgid "Hide Feedback"
 msgstr "Skrivanje odzivov"
 
-#: exe/webui/element.py:1024
+#: exe/webui/element.py:1026
 msgid "Hide/Show Word"
 msgstr "Skrij/prikaži besedo"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2851 exe/engine/field.py:2917
-#: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:2028
+#: exe/engine/field.py:2950 exe/engine/field.py:3016
+#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
+#: exe/webui/element.py:2046
 msgid "Hint"
 msgstr "Namig"
 
@@ -1124,7 +1124,7 @@ msgid "Home"
 msgstr "Domov"
 
 #: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:337
+#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:340
 #: exe/webui/block.py:288
 msgid "IDevice Icon"
 msgstr "Ikona poučevalne enote"
@@ -1137,7 +1137,7 @@ msgstr "Ikona vprašanja poučevalne enote"
 msgid "IDevice broken"
 msgstr "Pokvarjena poučevalna enota"
 
-#: exe/webui/editorpane.py:362
+#: exe/webui/editorpane.py:363
 msgid "Icons"
 msgstr "Ikone"
 
@@ -1161,15 +1161,15 @@ msgstr "Slika z besedilom"
 msgid "Import iDevice"
 msgstr "Uvoz poučevalne enote"
 
-#: exe/webui/element.py:1581
+#: exe/webui/element.py:1587
 msgid "Incorrect"
 msgstr "Nepravilno"
 
-#: exe/webui/truefalseelement.py:205
+#: exe/webui/truefalseelement.py:209
 msgid "Incorrect!"
 msgstr "Nepravilno!"
 
-#: exe/webui/editorpane.py:376
+#: exe/webui/editorpane.py:377
 msgid "Info"
 msgstr "Info"
 
@@ -1177,11 +1177,11 @@ msgstr "Info"
 msgid "Information"
 msgstr "Podrobnosti"
 
-#: exe/webui/imagemagnifierblock.py:126
+#: exe/webui/imagemagnifierblock.py:130
 msgid "Initial Zoom"
 msgstr "Začetna povečava "
 
-#: exe/webui/element.py:1039
+#: exe/webui/element.py:1041
 msgid "Instant Marking?"
 msgstr "Trenutni zaznamek?"
 
@@ -1194,7 +1194,7 @@ msgstr "Navodila"
 msgid "Instructions For Learners"
 msgstr "Navodila za učence"
 
-#: exe/webui/wikipediablock.py:205
+#: exe/webui/wikipediablock.py:208
 msgid "It uses material from the "
 msgstr "Uporablja materiale iz"
 
@@ -1210,16 +1210,16 @@ msgstr "Japonski članek iz Wikipedije"
 msgid "Java Applet"
 msgstr "Java apleti"
 
-#: exe/webui/attachmentblock.py:104
+#: exe/webui/attachmentblock.py:108
 msgid "Label:"
 msgstr "Oznaka:"
 
-#: exe/webui/imagemagnifierblock.py:141
+#: exe/webui/imagemagnifierblock.py:145
 msgid "Large"
 msgstr "Levo"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:226 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Levo"
@@ -1228,7 +1228,7 @@ msgstr "Levo"
 msgid "Licensed under the"
 msgstr "Pod licenco"
 
-#: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:135 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Naloži"
 
@@ -1237,7 +1237,7 @@ msgstr "Naloži"
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Krajevne datoteke %s ni mogoče najti, zato je ni mogoče prikazati."
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:288
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
 msgstr "MP3"
 
@@ -1249,11 +1249,11 @@ msgstr "Madžarski članek iz Wikipedije"
 msgid "Maths"
 msgstr "Matematika"
 
-#: exe/webui/imagemagnifierblock.py:133
+#: exe/webui/imagemagnifierblock.py:137
 msgid "Maximum zoom"
 msgstr "Največja povečava"
 
-#: exe/webui/imagemagnifierblock.py:140
+#: exe/webui/imagemagnifierblock.py:144
 msgid "Medium"
 msgstr "Srednje"
 
@@ -1270,11 +1270,11 @@ msgstr ""
 msgid "Move Down"
 msgstr "Premakni Navzdol"
 
-#: exe/webui/galleryblock.py:231
+#: exe/webui/galleryblock.py:234
 msgid "Move Image Left"
 msgstr "Premakni sliko levo"
 
-#: exe/webui/galleryblock.py:245
+#: exe/webui/galleryblock.py:248
 msgid "Move Image Right"
 msgstr "Premakni sliko desno"
 
@@ -1303,7 +1303,7 @@ msgstr "Nova poučevalna enota"
 msgid "Next"
 msgstr "Naprej"
 
-#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:289
+#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
 msgid "No Images Loaded"
 msgstr "Nobena slika ni naložena"
 
@@ -1319,20 +1319,20 @@ msgstr "Na voljo ni nobene sličice. Ni mogoče skrčiti slike."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Na voljo ni nobene sličice. Ni mogoče skrčiti originalne slike."
 
-#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:97
-#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:334
+#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
+#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:335
 msgid "No emphasis"
 msgstr "Ni poudarka"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
 msgstr "Brez"
 
-#: exe/webui/preferencespage.py:100
+#: exe/webui/preferencespage.py:102
 msgid "OK"
 msgstr "V redu"
 
@@ -1351,7 +1351,7 @@ msgstr ""
 "opredeliti, kaj naj bi bili učenci sposobni narediti, \n"
 "ko bodo zaključili z reševanjem nalog. "
 
-#: exe/engine/field.py:2592 exe/engine/field.py:2656
+#: exe/engine/field.py:2691 exe/engine/field.py:2755
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1359,7 +1359,7 @@ msgstr ""
 "Izberite samo. flv.(Flash video datoteke) za \n"
 "to poučevalno enoto."
 
-#: exe/engine/field.py:2528 exe/engine/field.py:2572
+#: exe/engine/field.py:2627 exe/engine/field.py:2671
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1368,14 +1368,14 @@ msgstr ""
 "to poučevalno enoto."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2773 exe/engine/field.py:2822
-#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1522
-#: exe/webui/element.py:1797
+#: exe/engine/field.py:2872 exe/engine/field.py:2921
+#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
+#: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Možnost"
 
-#: exe/engine/field.py:2939 exe/engine/field.py:2976
-#: exe/webui/testquestionelement.py:102 exe/webui/element.py:1673
+#: exe/engine/field.py:3038 exe/engine/field.py:3075
+#: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Možnosti"
 
@@ -1387,7 +1387,7 @@ msgstr "Ostalo"
 msgid "Outline"
 msgstr "Razvrstitev"
 
-#: exe/webui/wikipediablock.py:127
+#: exe/webui/wikipediablock.py:130
 msgid "Own site"
 msgstr "Lastna stran"
 
@@ -1406,11 +1406,11 @@ msgstr "Paket je star. Prosim, posodobite ga (paket odprite in ga nato shranite 
 msgid "Package saved to: %s"
 msgstr "Paket shranjen v: %s"
 
-#: exe/webui/block.py:240 exe/webui/editorpane.py:372
+#: exe/webui/block.py:240 exe/webui/editorpane.py:373
 msgid "Pedagogical Help"
 msgstr "Pedagoška pomoč"
 
-#: exe/webui/editorpane.py:328
+#: exe/webui/editorpane.py:329
 msgid "Pedagogical Tip"
 msgstr "Pedagoški namig"
 
@@ -1422,11 +1422,11 @@ msgstr "Prosim, vnesite ime poučevalne enote"
 msgid "Please enter<br />an idevice name."
 msgstr "Prosim, vnesite<br /> ime poučevalne enote."
 
-#: exe/webui/element.py:1297
+#: exe/webui/element.py:1299
 msgid "Please select a .flv file."
 msgstr "Prosim, izberite .flv datoteko."
 
-#: exe/webui/element.py:814
+#: exe/webui/element.py:817
 msgid "Please select a .jpg file."
 msgstr "Prosim, izberite .jpg datoteko."
 
@@ -1479,7 +1479,7 @@ msgstr ""
 "<li>        Učenci morajo obvladati 4. raven angleščine </li>\n"
 "<li>        Učenci morajo biti sposobni uporabljati običajne pripomočke</li></ul>\n"
 
-#: exe/webui/element.py:1440 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1442 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "Predogled"
 
@@ -1493,8 +1493,8 @@ msgstr "Mapa predogleda %s je datoteka, zato je ni mogoče zamenjati"
 msgid "Previous"
 msgstr "Predhodni"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2230
-#: exe/engine/field.py:2277
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2329
+#: exe/engine/field.py:2376
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1569,13 +1569,13 @@ msgid "Put instructions for learners here"
 msgstr "Tukaj vnesite navodila za učence"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2848 exe/engine/field.py:2913
+#: exe/engine/field.py:2947 exe/engine/field.py:3012
 msgid "Question"
 msgstr "Vprašanje"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3002 exe/engine/field.py:3083 exe/webui/element.py:1650
+#: exe/engine/field.py:3101 exe/engine/field.py:3182 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Vprašanje:"
 
@@ -1628,12 +1628,12 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Vprašanje za razmislek:"
 
-#: exe/webui/element.py:1139
+#: exe/webui/element.py:1141
 msgid "Restart"
 msgstr "Ponovno naloži"
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:227 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Desno"
@@ -1677,46 +1677,46 @@ msgstr "Shrani"
 msgid "Section"
 msgstr "Tema"
 
-#: exe/webui/editorelement.py:271 exe/webui/element.py:1231
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1233
 msgid "Select Flash Object"
 msgstr "Izberi Flash predmet"
 
-#: exe/webui/preferencespage.py:93
+#: exe/webui/preferencespage.py:95
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr "Izberite Jezik"
 
-#: exe/webui/editorelement.py:312
+#: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
 msgstr "Izbor MP3 datoteke"
 
-#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:356
-#: exe/webui/element.py:755
+#: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
+#: exe/webui/element.py:758
 msgid "Select a file"
 msgstr "Izberite datoteko"
 
-#: exe/webui/element.py:1313
+#: exe/webui/element.py:1315
 msgid "Select a flash video"
 msgstr "Izberite flash video datoteko"
 
-#: exe/webui/element.py:1426
+#: exe/webui/element.py:1428
 msgid "Select a font size: "
 msgstr "Izbor velikosti pisave:"
 
-#: exe/webui/element.py:543
+#: exe/webui/element.py:546
 msgid "Select an MP3"
 msgstr "Izbor MP3"
 
-#: exe/webui/element.py:456
+#: exe/webui/element.py:459
 msgid "Select an image"
 msgstr "Izberite sliko"
 
-#: exe/webui/element.py:859
+#: exe/webui/element.py:862
 msgid "Select an image (JPG file)"
 msgstr "Izberite sliko (datoteka JPG)"
 
-#: exe/engine/field.py:3011
+#: exe/engine/field.py:3110
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1770,32 +1770,32 @@ msgstr ""
 msgid "Settings saved"
 msgstr "Nastavitve shranjene "
 
-#: exe/webui/galleryblock.py:297
+#: exe/webui/galleryblock.py:300
 #, python-format
 msgid "Show %s Image"
 msgstr "Prikaži %s sliko"
 
-#: exe/webui/element.py:1146
+#: exe/webui/element.py:1148
 msgid "Show Answers"
 msgstr "Prikaži odgovore"
 
-#: exe/webui/questionelement.py:122 exe/webui/element.py:1724
+#: exe/webui/questionelement.py:126 exe/webui/element.py:1734
 msgid "Show Feedback"
 msgstr "Prikaži odzive"
 
-#: exe/webui/element.py:1130
+#: exe/webui/element.py:1132
 msgid "Show/Clear Answers"
 msgstr "Prikaži/izbriši odgovor"
 
-#: exe/webui/element.py:1125
+#: exe/webui/element.py:1127
 msgid "Show/Hide Feedback"
 msgstr "Prikaži/skrij odziv"
 
-#: exe/webui/wikipediablock.py:117
+#: exe/webui/wikipediablock.py:120
 msgid "Site"
 msgstr "Stran"
 
-#: exe/webui/imagemagnifierblock.py:143
+#: exe/webui/imagemagnifierblock.py:148
 msgid "Size of magnifying glass: "
 msgstr "Velikost povečevala: "
 
@@ -1803,12 +1803,12 @@ msgstr "Velikost povečevala: "
 msgid "Slovenian Wikipedia Article"
 msgstr "Slovenski članek iz Wikipedije"
 
-#: exe/webui/imagemagnifierblock.py:139
+#: exe/webui/imagemagnifierblock.py:143
 msgid "Small"
 msgstr "Majhen"
 
-#: exe/webui/wikipediablock.py:137 exe/webui/multimediablock.py:98
-#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:335
+#: exe/webui/wikipediablock.py:140 exe/webui/multimediablock.py:101
+#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:336
 msgid "Some emphasis"
 msgstr "Nekaj poudarkov"
 
@@ -1837,11 +1837,11 @@ msgstr "Španski članek iz Wikipedije"
 msgid "Story:"
 msgstr "Zgodba:"
 
-#: exe/webui/element.py:1029
+#: exe/webui/element.py:1031
 msgid "Strict Marking?"
 msgstr "Natančno označevanje?"
 
-#: exe/webui/element.py:1134 exe/webui/editorpane.py:423
+#: exe/webui/element.py:1136 exe/webui/editorpane.py:424
 msgid "Submit"
 msgstr "Predložite"
 
@@ -1960,7 +1960,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Pogovorno okno o namenu omogoča opis poučevalne enote za druge uporabnike."
 
-#: exe/webui/wikipediablock.py:201
+#: exe/webui/wikipediablock.py:204
 msgid "This article is licensed under the "
 msgstr "Ta članek je pod licenco"
 
@@ -2016,7 +2016,7 @@ msgstr "S tem boste izbrisali poučevalno enoto.\\nAli zares želite nadaljevati
 msgid "Tip:"
 msgstr "Vrsta:"
 
-#: exe/webui/galleryblock.py:181
+#: exe/webui/galleryblock.py:184
 msgid "Title"
 msgstr "Naslov"
 
@@ -2032,7 +2032,7 @@ msgstr ""
 msgid "Topic"
 msgstr "Vsebina"
 
-#: exe/webui/truefalseelement.py:104 exe/webui/truefalseelement.py:177
+#: exe/webui/truefalseelement.py:108 exe/webui/truefalseelement.py:181
 msgid "True"
 msgstr "Pravilno"
 
@@ -2052,7 +2052,7 @@ msgstr ""
 "je dobra za vprašanja o dejstvih ter podrobnosti, ki same ponujajo enega od\n"
 "obeh mogočih odgovorov."
 
-#: exe/engine/field.py:2668
+#: exe/engine/field.py:2767
 msgid "Type a discussion topic here."
 msgstr "Tukaj vpišite naslov vsebine za razpravo."
 
@@ -2084,7 +2084,7 @@ msgstr ""
 "\"Pravilni odgovor\", ki se prikaže z izbiro pravilnega odgovora; ali \n"
 "\"Napačen odgovor \" za vse ostale možnosti."
 
-#: exe/engine/field.py:3014
+#: exe/engine/field.py:3113
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2243,7 +2243,7 @@ msgstr "Wikiverza"
 msgid "Wiktionary"
 msgstr "Wikislovar"
 
-#: exe/webui/element.py:1892
+#: exe/webui/element.py:1906
 msgid "Wrong"
 msgstr "Napačno"
 
@@ -2255,11 +2255,11 @@ msgstr "Orodno vrstico lahko uporabite za vnos latex kode neposredno v besedilno
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Vaša nova enota se bo s tem naslovom pojavila v oknu poučevalnih enot. To polje je obvezno, zato boste opomnjeni, da vnesete naslov."
 
-#: exe/webui/wikipediablock.py:216
+#: exe/webui/wikipediablock.py:219
 msgid "article "
 msgstr "članek "
 
-#: exe/webui/element.py:473 exe/webui/element.py:881
+#: exe/webui/element.py:476 exe/webui/element.py:884
 msgid "blank for original size"
 msgstr "prazno za polno velikost"
 
@@ -2311,7 +2311,7 @@ msgstr "Tipkovna koda"
 msgid "label"
 msgstr "oznaka"
 
-#: exe/webui/element.py:1423
+#: exe/webui/element.py:1425
 msgid "newline"
 msgstr "nova vrstica"
 
@@ -2319,7 +2319,7 @@ msgstr "nova vrstica"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 
-#: exe/webui/element.py:1422
+#: exe/webui/element.py:1424
 msgid "text"
 msgstr "besedilo"
 
@@ -3167,6 +3167,11 @@ msgstr "gruzijščina"
 #: label="German ">
 msgid "German "
 msgstr "nemščina"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
+#: label="Greek ">
+msgid "Greek "
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">

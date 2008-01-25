@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-16 16:19+1300\n"
+"POT-Creation-Date: 2008-01-25 13:30+1300\n"
 "PO-Revision-Date: 2007-08-24 19:39+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -123,16 +123,16 @@ msgstr ""
 "campo. </p><p> Per selezionare le parole da nascondere, doppio click sulla parola\n"
 "da selezionare e premere sul pulsante Nascondi/Mostra Parola in basso.</p>"
 
-#: exe/engine/field.py:2422
+#: exe/engine/field.py:2521
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Se si lascia disabilitato saranno accettati solo un piccolo numero di errori ortografici o maiuscolo/minuscolo. Se abilitato sarà accettata l'esatta corrispondenza ortografica e di maiuscolo/minuscolo.</p><p><strong>Per esempio:</strong> Se la risposta corretta è <code>Elefante</code> quindi entrambe <code>elefante</code> e <code>Elifante</code> saranno giudicate <em>\"abbastanza vicino\"</em> dall'algoritmo anche se si ha una lettera errata, quando \"Verifica Maiuscolo/Minuscolo\" è abilitato.</p><p>Se la verifica Maiuscolo/minuscolo è disabilitata nell'esempio precedente, la lettera minuscola <code>e</code> non sarà  considerata un errore e <code>elifante</code> sarà anch'essa accettata.</p><p>Se entrambe \"Verifica stringente\" and \"Verifica Maiuscolo/Minuscolo\" sono impostate, la sola risposta corretta è  \"Elefante\". Solo se \"Verifica stringente\" è abilitata e \"Verifica Maiuscolo/Minuscolo\" non lo è, \"elefante\" sarà anche essa accettata.</p>"
 
-#: exe/engine/field.py:2443
+#: exe/engine/field.py:2542
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Se questa opzione è abilitata, le risposte inviate con diversi formati Maiuscolo/Minuscolo sono identificate come sbagliate.</p>"
 
-#: exe/engine/field.py:2448
+#: exe/engine/field.py:2547
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -143,7 +143,7 @@ msgstr ""
 "lo studente la inserisce invece di evidenziare tutte le parole alla fine\n"
 "dell'esercizio.</p>"
 
-#: exe/engine/field.py:2697
+#: exe/engine/field.py:2796
 #, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Seleziona i simboli dall'area di testo sottostante per creare formule matematiche. Ogni simbolo verrà visalizzato nel campo col linguaggio matematico LATEX la cui anteprima può essere vista usando il bottone  &lt;Anteprima&gt;."
@@ -256,7 +256,7 @@ msgstr "Azioni"
 #: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
 #: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
-#: exe/webui/questionelement.py:92
+#: exe/webui/questionelement.py:96
 msgid "Activity"
 msgstr "Attività"
 
@@ -265,11 +265,11 @@ msgstr "Attività"
 msgid "Add Field"
 msgstr "Aggiungere files"
 
-#: exe/webui/element.py:433
+#: exe/webui/element.py:436
 msgid "Add Image"
 msgstr "Aggiungi Immagine"
 
-#: exe/webui/element.py:843
+#: exe/webui/element.py:846
 msgid "Add JPEG Image"
 msgstr "Aggiungi Immagine JPEG"
 
@@ -313,7 +313,7 @@ msgstr "Aggiungere risposte interattive all'iDevice."
 msgid "Add an mp3 file to your iDevice."
 msgstr "Aggiungere risposte interattive all'iDevice."
 
-#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1686
+#: exe/webui/testquestionelement.py:118 exe/webui/element.py:1696
 msgid "Add another Option"
 msgstr "Aggiungere un'altra Opzione"
 
@@ -326,7 +326,7 @@ msgstr "Aggiungere un'altra Domanda"
 msgid "Add another activity"
 msgstr "Aggiungere un'altra Opzione"
 
-#: exe/webui/element.py:1985
+#: exe/webui/element.py:2003
 msgid "Add another option"
 msgstr "Aggiungere un'altra opzione"
 
@@ -338,13 +338,13 @@ msgstr "Aggiungere un'altra domanda"
 msgid "Add files"
 msgstr "Aggiungere files"
 
-#: exe/webui/galleryblock.py:188
+#: exe/webui/galleryblock.py:191
 msgid "Add images"
 msgstr "Aggiungere immagini"
 
-#: exe/webui/flashwithtextblock.py:85 exe/webui/multimediablock.py:89
-#: exe/webui/editorelement.py:230 exe/webui/imagemagnifierblock.py:114
-#: exe/webui/flashmovieblock.py:84 exe/webui/imagewithtextblock.py:85
+#: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
+#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:118
+#: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "Allineamento:"
 
@@ -365,7 +365,7 @@ msgstr ""
 "Allineamento che permette \n"
 "di scegliere dove sarà posizionato il media player nello schermo."
 
-#: exe/engine/field.py:2486
+#: exe/engine/field.py:2585
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -421,7 +421,7 @@ msgstr ""
 "e considerare ogni condizione che può aiutare oppure ostacolare lo studente \n"
 "nelle prestazioni del processo."
 
-#: exe/webui/element.py:1181
+#: exe/webui/element.py:1183
 #, fuzzy
 msgid "Answsers"
 msgstr "Mostra le Risposte"
@@ -439,7 +439,7 @@ msgstr "Codice Applet:"
 msgid "Article"
 msgstr "Articolo"
 
-#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:332
+#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
 msgid "Attachment"
 msgstr "Allegato"
 
@@ -452,11 +452,11 @@ msgstr "L'allegato %s non ha un nodo genitore"
 msgid "Auckland University of Technology"
 msgstr ""
 
-#: exe/webui/editorelement.py:150
+#: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "Testo del Pulsante"
 
-#: exe/webui/preferencespage.py:103 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -465,9 +465,9 @@ msgstr "Annulla"
 msgid "Cannot access directory named "
 msgstr "Impossibile accedere alla directory "
 
-#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:315
-#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:89
-#: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:549
+#: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
+#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:92
+#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:552
 msgid "Caption:"
 msgstr "Didascalia:"
 
@@ -480,11 +480,11 @@ msgstr "Caso di studio"
 msgid "Catalan Wikipedia Article"
 msgstr "Articolo Wikipedia in Italiano"
 
-#: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
+#: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
 msgid "Change Image"
 msgstr "Cambiare Immagine"
 
-#: exe/webui/element.py:1034
+#: exe/webui/element.py:1036
 msgid "Check Caps?"
 msgstr "Verifica Maiuscolo?"
 
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Premere <strong>Seleziona un file</strong>, raggiungere il file che si vuole allegare e selezionarlo."
 
-#: exe/engine/field.py:2035
+#: exe/engine/field.py:2134
 msgid "Click Here"
 msgstr "Premere Qui"
 
@@ -546,7 +546,7 @@ msgstr "Premere per le istruzioni di completamento"
 msgid "Click here"
 msgstr "Premere Qui"
 
-#: exe/engine/field.py:2705
+#: exe/engine/field.py:2804
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -559,12 +559,12 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Premere sul pulsante Aggiungi Immagini per selezionare un file di immagine. L'immagine apparirà sotto dove potrete identificarla.  E sempre buona pratica mettere la dimensione del file (in bytes) nell'etichetta."
 
-#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:140
-#: exe/webui/truefalseelement.py:141 exe/webui/common.py:324
+#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
 #: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
-#: exe/webui/element.py:2024 exe/webui/element.py:2025
-#: exe/webui/editorpane.py:359 exe/webui/editorpane.py:360
-#: exe/webui/editorpane.py:380 exe/webui/editorpane.py:381
+#: exe/webui/element.py:2042 exe/webui/element.py:2043
+#: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
+#: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
@@ -578,21 +578,21 @@ msgstr "Cloze"
 msgid "Cloze Activity"
 msgstr "Attività Cloze"
 
-#: exe/webui/element.py:1015
+#: exe/webui/element.py:1018
 msgid "Cloze Text"
 msgstr "Testo Cloze"
 
-#: exe/webui/element.py:1579 exe/webui/element.py:1890
+#: exe/webui/element.py:1585 exe/webui/element.py:1904
 msgid "Correct"
 msgstr "Corretto"
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1527
-#: exe/webui/element.py:1802
+#: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
+#: exe/webui/element.py:1816
 #, fuzzy
 msgid "Correct Option"
 msgstr "Corretto"
 
-#: exe/webui/truefalseelement.py:204
+#: exe/webui/truefalseelement.py:208
 msgid "Correct!"
 msgstr "Corretto!"
 
@@ -613,9 +613,9 @@ msgstr ""
 "una qualche azione per la risoluzione della situazione."
 
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
-#: exe/webui/editorelement.py:157 exe/webui/editorelement.py:198
-#: exe/webui/editorelement.py:251 exe/webui/editorelement.py:292
-#: exe/webui/editorelement.py:336 exe/webui/galleryblock.py:263
+#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
+#: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
+#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:266
 #: exe/webui/block.py:219 exe/webui/editorpage.py:236
 #: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
@@ -626,18 +626,18 @@ msgstr "Elimina"
 msgid "Delete File"
 msgstr "Elinina File"
 
-#: exe/webui/galleryblock.py:260
+#: exe/webui/galleryblock.py:263
 msgid "Delete Image"
 msgstr "Elimina Immagine"
 
-#: exe/webui/testoptionelement.py:124 exe/webui/element.py:1555
-#: exe/webui/element.py:1830
+#: exe/webui/testoptionelement.py:128 exe/webui/element.py:1561
+#: exe/webui/element.py:1844
 msgid "Delete option"
 msgstr "Elimina opzione"
 
-#: exe/webui/testquestionelement.py:96 exe/webui/questionelement.py:103
-#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1655
-#: exe/webui/element.py:1970
+#: exe/webui/testquestionelement.py:100 exe/webui/questionelement.py:107
+#: exe/webui/truefalseelement.py:122 exe/webui/element.py:1665
+#: exe/webui/element.py:1988
 msgid "Delete question"
 msgstr "Elimina domanda"
 
@@ -693,7 +693,7 @@ msgstr "Descrizione"
 msgid "Description:"
 msgstr "Descrizione:"
 
-#: exe/webui/element.py:459 exe/webui/element.py:865 exe/webui/element.py:1235
+#: exe/webui/element.py:462 exe/webui/element.py:868 exe/webui/element.py:1237
 msgid "Display as:"
 msgstr "Visualizza come:"
 
@@ -765,8 +765,8 @@ msgstr "Edita"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:100 exe/webui/editorpane.py:331
+#: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
+#: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Enfasi"
 
@@ -882,7 +882,7 @@ msgstr ""
 "Si possono aggiungere le Opzioni premendo il pulsante \"Aggiungere un'altra opzione\". \n"
 "Per cancellare le opzioni premere sulla \"X\" rossa vicino alle Opzioni."
 
-#: exe/engine/field.py:3007
+#: exe/engine/field.py:3106
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -936,7 +936,7 @@ msgstr ""
 "La domanda dovrebbe essere chiara ed inequivocabile. Evitare premesse \n"
 "in forma negativa che tendono ad essere ambigue."
 
-#: exe/engine/field.py:2999
+#: exe/engine/field.py:3098
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -999,21 +999,21 @@ msgstr "Esportato a %s"
 msgid "External Web Site"
 msgstr "Sito Web Esterno"
 
-#: exe/webui/imagemagnifierblock.py:142
+#: exe/webui/imagemagnifierblock.py:146
 msgid "Extra large"
 msgstr "Molto grande"
 
-#: exe/webui/truefalseelement.py:106 exe/webui/truefalseelement.py:179
+#: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
 msgid "False"
 msgstr "Falso"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2777
-#: exe/engine/field.py:2825 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:149 exe/webui/questionelement.py:96
-#: exe/webui/common.py:228 exe/webui/element.py:1833
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2876
+#: exe/engine/field.py:2924 exe/webui/clozeblock.py:158
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
+#: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Informazioni di ritorno"
@@ -1027,7 +1027,7 @@ msgstr ""
 "se i dati non vengono inseriti in questo campo."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3016 exe/engine/field.py:3086
+#: exe/engine/field.py:3115 exe/engine/field.py:3185
 msgid "Feedback:"
 msgstr "Informazioni di ritorno:"
 
@@ -1042,7 +1042,7 @@ msgstr ""
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nome file %s è un file, non si può sostituire"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:745
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:748
 #, fuzzy
 msgid "Filename:"
 msgstr "Nome file"
@@ -1061,7 +1061,7 @@ msgstr "Flash con testo"
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
 
-#: exe/webui/externalurlblock.py:72
+#: exe/webui/externalurlblock.py:75
 msgid "Frame Height:"
 msgstr "Altezza Frame:"
 
@@ -1073,7 +1073,7 @@ msgstr "Testo libero"
 msgid "French Wikipedia Article"
 msgstr "Articolo Wikipedia in Francese"
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:207
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -1087,19 +1087,19 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Articolo Wikipedia in Tedesco"
 
-#: exe/webui/element.py:1119
+#: exe/webui/element.py:1121
 msgid "Get score"
 msgstr "Visualizza punteggio"
 
-#: exe/webui/galleryblock.py:233
+#: exe/webui/galleryblock.py:236
 msgid "Go Back"
 msgstr "Vai indietro"
 
-#: exe/webui/galleryblock.py:247
+#: exe/webui/galleryblock.py:250
 msgid "Go Forward"
 msgstr "Vai avanti"
 
-#: exe/webui/galleryblock.py:255
+#: exe/webui/galleryblock.py:258
 msgid "Go Forward (Not Available)"
 msgstr "Vai direttamente (Non disponibile)"
 
@@ -1112,18 +1112,18 @@ msgstr "Articolo Wikipedia in Francese"
 msgid "Hide"
 msgstr "Nascondere"
 
-#: exe/webui/questionelement.py:127
+#: exe/webui/questionelement.py:131
 msgid "Hide Feedback"
 msgstr "Nascondere informazioni di ritorno"
 
-#: exe/webui/element.py:1024
+#: exe/webui/element.py:1026
 msgid "Hide/Show Word"
 msgstr "Nascondere/Mostrare Parole"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2851 exe/engine/field.py:2917
-#: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:2028
+#: exe/engine/field.py:2950 exe/engine/field.py:3016
+#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
+#: exe/webui/element.py:2046
 msgid "Hint"
 msgstr "Suggerimento"
 
@@ -1132,7 +1132,7 @@ msgid "Home"
 msgstr "Inizio"
 
 #: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:337
+#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:340
 #: exe/webui/block.py:288
 msgid "IDevice Icon"
 msgstr "Icona iDevice"
@@ -1146,7 +1146,7 @@ msgstr "Icona domanda iDevice"
 msgid "IDevice broken"
 msgstr "Icona iDevice"
 
-#: exe/webui/editorpane.py:362
+#: exe/webui/editorpane.py:363
 msgid "Icons"
 msgstr "Icona"
 
@@ -1171,16 +1171,16 @@ msgstr "Immagine con Testo"
 msgid "Import iDevice"
 msgstr "iDevices"
 
-#: exe/webui/element.py:1581
+#: exe/webui/element.py:1587
 #, fuzzy
 msgid "Incorrect"
 msgstr "Sbagliato!"
 
-#: exe/webui/truefalseelement.py:205
+#: exe/webui/truefalseelement.py:209
 msgid "Incorrect!"
 msgstr "Sbagliato!"
 
-#: exe/webui/editorpane.py:376
+#: exe/webui/editorpane.py:377
 msgid "Info"
 msgstr "Info"
 
@@ -1188,11 +1188,11 @@ msgstr "Info"
 msgid "Information"
 msgstr "Informazioni"
 
-#: exe/webui/imagemagnifierblock.py:126
+#: exe/webui/imagemagnifierblock.py:130
 msgid "Initial Zoom"
 msgstr "Zoom iniziale"
 
-#: exe/webui/element.py:1039
+#: exe/webui/element.py:1041
 msgid "Instant Marking?"
 msgstr "Marcatura istantanea?"
 
@@ -1205,7 +1205,7 @@ msgstr "Istruzioni"
 msgid "Instructions For Learners"
 msgstr "Istruzioni per gli Studenti"
 
-#: exe/webui/wikipediablock.py:205
+#: exe/webui/wikipediablock.py:208
 msgid "It uses material from the "
 msgstr "Esso usa materiale da"
 
@@ -1221,17 +1221,17 @@ msgstr "Articolo Wikipedia in Giapponese"
 msgid "Java Applet"
 msgstr "Applet Java"
 
-#: exe/webui/attachmentblock.py:104
+#: exe/webui/attachmentblock.py:108
 #, fuzzy
 msgid "Label:"
 msgstr "Etichetta"
 
-#: exe/webui/imagemagnifierblock.py:141
+#: exe/webui/imagemagnifierblock.py:145
 msgid "Large"
 msgstr "Largo"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:226 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Sinistra"
@@ -1241,7 +1241,7 @@ msgstr "Sinistra"
 msgid "Licensed under the"
 msgstr "Questo articolo è sotto la licenza"
 
-#: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:135 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "Carica"
 
@@ -1250,7 +1250,7 @@ msgstr "Carica"
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Nome file %s è un file, non si può sostituire"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:288
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
 msgstr "MP3"
 
@@ -1263,11 +1263,11 @@ msgstr "Articolo Wikipedia"
 msgid "Maths"
 msgstr "Maths"
 
-#: exe/webui/imagemagnifierblock.py:133
+#: exe/webui/imagemagnifierblock.py:137
 msgid "Maximum zoom"
 msgstr "Zoom massimo"
 
-#: exe/webui/imagemagnifierblock.py:140
+#: exe/webui/imagemagnifierblock.py:144
 msgid "Medium"
 msgstr "Medio"
 
@@ -1282,11 +1282,11 @@ msgstr ""
 msgid "Move Down"
 msgstr "Muovi in basso"
 
-#: exe/webui/galleryblock.py:231
+#: exe/webui/galleryblock.py:234
 msgid "Move Image Left"
 msgstr "Muove Immagine a Sinistra"
 
-#: exe/webui/galleryblock.py:245
+#: exe/webui/galleryblock.py:248
 msgid "Move Image Right"
 msgstr "Muove Immagine a Destra"
 
@@ -1316,7 +1316,7 @@ msgstr "Nuovo iDevice"
 msgid "Next"
 msgstr "Prossimo"
 
-#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:289
+#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
 msgid "No Images Loaded"
 msgstr "Non è stata caricata nessuna immagine"
 
@@ -1332,20 +1332,20 @@ msgstr "Nessuna miniatura disponibile. Impossibile rimpicciolire l'immagine."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Nessuna miniatura disponibile. Impossibile rimpicciolire l'immagine originale."
 
-#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:97
-#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:334
+#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
+#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:335
 msgid "No emphasis"
 msgstr "Nessuna enfasi"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
 msgstr "Nessuno"
 
-#: exe/webui/preferencespage.py:100
+#: exe/webui/preferencespage.py:102
 msgid "OK"
 msgstr "OK"
 
@@ -1364,7 +1364,7 @@ msgstr ""
 "definire che cosa gli studenti potranno fare quando essi hanno completato\n"
 "i compiti appresi."
 
-#: exe/engine/field.py:2592 exe/engine/field.py:2656
+#: exe/engine/field.py:2691 exe/engine/field.py:2755
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1372,7 +1372,7 @@ msgstr ""
 "Selezionare solamente .flv (Flash Video Files) per \n"
 "questo iDevice."
 
-#: exe/engine/field.py:2528 exe/engine/field.py:2572
+#: exe/engine/field.py:2627 exe/engine/field.py:2671
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1381,14 +1381,14 @@ msgstr ""
 "questo iDevice."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2773 exe/engine/field.py:2822
-#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1522
-#: exe/webui/element.py:1797
+#: exe/engine/field.py:2872 exe/engine/field.py:2921
+#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
+#: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Opzione"
 
-#: exe/engine/field.py:2939 exe/engine/field.py:2976
-#: exe/webui/testquestionelement.py:102 exe/webui/element.py:1673
+#: exe/engine/field.py:3038 exe/engine/field.py:3075
+#: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Opzioni"
 
@@ -1400,7 +1400,7 @@ msgstr "Altro"
 msgid "Outline"
 msgstr "Outline"
 
-#: exe/webui/wikipediablock.py:127
+#: exe/webui/wikipediablock.py:130
 msgid "Own site"
 msgstr "Sito proprio"
 
@@ -1419,11 +1419,11 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "Pacchetto salvato in: %s"
 
-#: exe/webui/block.py:240 exe/webui/editorpane.py:372
+#: exe/webui/block.py:240 exe/webui/editorpane.py:373
 msgid "Pedagogical Help"
 msgstr "Aiuto Pedagogico"
 
-#: exe/webui/editorpane.py:328
+#: exe/webui/editorpane.py:329
 msgid "Pedagogical Tip"
 msgstr "Suggerimento Pedagogico"
 
@@ -1436,12 +1436,12 @@ msgstr "Inserire il nome di un iDevice."
 msgid "Please enter<br />an idevice name."
 msgstr "Inserire il nome di un iDevice."
 
-#: exe/webui/element.py:1297
+#: exe/webui/element.py:1299
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "Selezionare un Forum."
 
-#: exe/webui/element.py:814
+#: exe/webui/element.py:817
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "Selezionare un Forum."
@@ -1492,7 +1492,7 @@ msgstr ""
 "<li>        Gli studenti devono avere un livello 4 in inglese </li>\n"
 "<li>        Gli studenti devono essere abili ad assemblare utensili standard di potenza </li></ul>\n"
 
-#: exe/webui/element.py:1440 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1442 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "Anteprima"
 
@@ -1506,8 +1506,8 @@ msgstr "Nome file %s è un file, non si può sostituire"
 msgid "Previous"
 msgstr "Precedente"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2230
-#: exe/engine/field.py:2277
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2329
+#: exe/engine/field.py:2376
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1582,14 +1582,14 @@ msgid "Put instructions for learners here"
 msgstr "Inserire quà le istruzione per gli studenti"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2848 exe/engine/field.py:2913
+#: exe/engine/field.py:2947 exe/engine/field.py:3012
 #, fuzzy
 msgid "Question"
 msgstr "Domanda:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3002 exe/engine/field.py:3083 exe/webui/element.py:1650
+#: exe/engine/field.py:3101 exe/engine/field.py:3182 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Domanda:"
 
@@ -1644,12 +1644,12 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Domanda di Riflessione:"
 
-#: exe/webui/element.py:1139
+#: exe/webui/element.py:1141
 msgid "Restart"
 msgstr "Riavvia"
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:227 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Corretto"
@@ -1689,47 +1689,47 @@ msgstr "Salva"
 msgid "Section"
 msgstr "Sezione"
 
-#: exe/webui/editorelement.py:271 exe/webui/element.py:1231
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1233
 msgid "Select Flash Object"
 msgstr "Selezionare oggetto Flash"
 
-#: exe/webui/preferencespage.py:93
+#: exe/webui/preferencespage.py:95
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr "Selezionare un lingua"
 
-#: exe/webui/editorelement.py:312
+#: exe/webui/editorelement.py:308
 #, fuzzy
 msgid "Select MP3 file"
 msgstr "Selezionare un File"
 
-#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:356
-#: exe/webui/element.py:755
+#: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
+#: exe/webui/element.py:758
 msgid "Select a file"
 msgstr "Selezionare un File"
 
-#: exe/webui/element.py:1313
+#: exe/webui/element.py:1315
 msgid "Select a flash video"
 msgstr "Selezionare un video Flash"
 
-#: exe/webui/element.py:1426
+#: exe/webui/element.py:1428
 msgid "Select a font size: "
 msgstr "Selezionare una dimensione font: "
 
-#: exe/webui/element.py:543
+#: exe/webui/element.py:546
 msgid "Select an MP3"
 msgstr "Selezionare un file MP3"
 
-#: exe/webui/element.py:456
+#: exe/webui/element.py:459
 msgid "Select an image"
 msgstr "Selezionare una immagine"
 
-#: exe/webui/element.py:859
+#: exe/webui/element.py:862
 msgid "Select an image (JPG file)"
 msgstr "Selezionare una immagine (file JPG)"
 
-#: exe/engine/field.py:3011
+#: exe/engine/field.py:3110
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1784,32 +1784,32 @@ msgstr ""
 msgid "Settings saved"
 msgstr "Impostazioni salvate"
 
-#: exe/webui/galleryblock.py:297
+#: exe/webui/galleryblock.py:300
 #, python-format
 msgid "Show %s Image"
 msgstr "Mostra %s Immagine"
 
-#: exe/webui/element.py:1146
+#: exe/webui/element.py:1148
 msgid "Show Answers"
 msgstr "Mostra le Risposte"
 
-#: exe/webui/questionelement.py:122 exe/webui/element.py:1724
+#: exe/webui/questionelement.py:126 exe/webui/element.py:1734
 msgid "Show Feedback"
 msgstr "Mostra le informazioni di ritorno"
 
-#: exe/webui/element.py:1130
+#: exe/webui/element.py:1132
 msgid "Show/Clear Answers"
 msgstr "Mostra/Cancella Risposte"
 
-#: exe/webui/element.py:1125
+#: exe/webui/element.py:1127
 msgid "Show/Hide Feedback"
 msgstr "Mostra/Nascondi informazioni di ritorno"
 
-#: exe/webui/wikipediablock.py:117
+#: exe/webui/wikipediablock.py:120
 msgid "Site"
 msgstr "Sito"
 
-#: exe/webui/imagemagnifierblock.py:143
+#: exe/webui/imagemagnifierblock.py:148
 msgid "Size of magnifying glass: "
 msgstr "Dimensione della lente di ingrandimento: "
 
@@ -1817,12 +1817,12 @@ msgstr "Dimensione della lente di ingrandimento: "
 msgid "Slovenian Wikipedia Article"
 msgstr "Articolo Wikipedia in Sloveno"
 
-#: exe/webui/imagemagnifierblock.py:139
+#: exe/webui/imagemagnifierblock.py:143
 msgid "Small"
 msgstr "Piccolo"
 
-#: exe/webui/wikipediablock.py:137 exe/webui/multimediablock.py:98
-#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:335
+#: exe/webui/wikipediablock.py:140 exe/webui/multimediablock.py:101
+#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:336
 msgid "Some emphasis"
 msgstr "Una certa enfasi"
 
@@ -1852,11 +1852,11 @@ msgstr "Articolo Wikipedia in Spagnolo"
 msgid "Story:"
 msgstr "Storia:"
 
-#: exe/webui/element.py:1029
+#: exe/webui/element.py:1031
 msgid "Strict Marking?"
 msgstr "Verifica stringente?"
 
-#: exe/webui/element.py:1134 exe/webui/editorpane.py:423
+#: exe/webui/element.py:1136 exe/webui/editorpane.py:424
 msgid "Submit"
 msgstr "Invia"
 
@@ -1972,7 +1972,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Lo scopo del dialogo è di permette di descrivere gli scopi dell'iDevice per gli altri potenziali utenti."
 
-#: exe/webui/wikipediablock.py:201
+#: exe/webui/wikipediablock.py:204
 msgid "This article is licensed under the "
 msgstr "Questo articolo è sotto la licenza"
 
@@ -2030,7 +2030,7 @@ msgstr ""
 msgid "Tip:"
 msgstr "Suggerimento:"
 
-#: exe/webui/galleryblock.py:181
+#: exe/webui/galleryblock.py:184
 msgid "Title"
 msgstr "Titolo"
 
@@ -2046,7 +2046,7 @@ msgstr ""
 msgid "Topic"
 msgstr "Argomento"
 
-#: exe/webui/truefalseelement.py:104 exe/webui/truefalseelement.py:177
+#: exe/webui/truefalseelement.py:108 exe/webui/truefalseelement.py:181
 msgid "True"
 msgstr "Vero"
 
@@ -2066,7 +2066,7 @@ msgstr ""
 "funzionano bene per le informazioni effettive (Vero) e per le informazioni \n"
 "che si prestano ad una o all'altra risposta (Vero e Falso)."
 
-#: exe/engine/field.py:2668
+#: exe/engine/field.py:2767
 msgid "Type a discussion topic here."
 msgstr "Scrivere qui un argomento di discussione."
 
@@ -2098,7 +2098,7 @@ msgstr ""
 "\"Risposta Corretta\"  per indicare la selezione di una risposta corretta; oppure \n"
 "\"Risposta Sbagliata\" per le altre alternative."
 
-#: exe/engine/field.py:3014
+#: exe/engine/field.py:3113
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2255,7 +2255,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1892
+#: exe/webui/element.py:1906
 msgid "Wrong"
 msgstr "Sbagliato"
 
@@ -2268,11 +2268,11 @@ msgstr "Utilizzare la barra degli strumenti o inserire manualmente il latex nel 
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Il nuovo iDevice verrà visualizzato nel pannello con questo titolo. Questo è un campo obbligatorio e verrà richiesto l'inserimento di una etichetta se si conferma un iDevice senza di esso."
 
-#: exe/webui/wikipediablock.py:216
+#: exe/webui/wikipediablock.py:219
 msgid "article "
 msgstr "articolo"
 
-#: exe/webui/element.py:473 exe/webui/element.py:881
+#: exe/webui/element.py:476 exe/webui/element.py:884
 msgid "blank for original size"
 msgstr "vuoto per dimensioni originali"
 
@@ -2326,7 +2326,7 @@ msgstr "codice tasto"
 msgid "label"
 msgstr "etichetta"
 
-#: exe/webui/element.py:1423
+#: exe/webui/element.py:1425
 msgid "newline"
 msgstr "nuova linea"
 
@@ -2334,7 +2334,7 @@ msgstr "nuova linea"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 
-#: exe/webui/element.py:1422
+#: exe/webui/element.py:1424
 msgid "text"
 msgstr "testo"
 
@@ -3189,6 +3189,11 @@ msgstr "Georgian "
 msgid "German "
 msgstr "German "
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
+#: label="Greek ">
+msgid "Greek "
+msgstr "Greek "
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
 msgid "Guarani "
@@ -4009,9 +4014,6 @@ msgstr "Tipicamente, un elemento di diritti conterrà una dichiarazione sulla ge
 
 #~ msgid "label=\"Register Online\" accesskey=\"R\""
 #~ msgstr "label=\"Registrazione Online\" accesskey=\"R\""
-
-#~ msgid "Greek "
-#~ msgstr "Greek "
 
 #~ msgid "Tonga (?) "
 #~ msgstr "Tonga (?) "

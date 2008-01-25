@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-16 16:19+1300\n"
+"POT-Creation-Date: 2008-01-25 13:30+1300\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -125,22 +125,22 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "Tāuru he kupu mō tau mahi tiriwā kupu (cloze) i te whakapiri, patonga rānei ki roto i te āpure tiriwā kupu. Ki te tīpako ngā kupu koe e hia huna ana, patopato i te kupu, ā, patoa te pātene <i>Huna/Whakaatu Kupu<i>."
 
-#: exe/engine/field.py:2422
+#: exe/engine/field.py:2521
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2443
+#: exe/engine/field.py:2542
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2448
+#: exe/engine/field.py:2547
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2697
+#: exe/engine/field.py:2796
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -231,7 +231,7 @@ msgstr "mahi"
 #: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
 #: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
-#: exe/webui/questionelement.py:92
+#: exe/webui/questionelement.py:96
 msgid "Activity"
 msgstr "Ngohe"
 
@@ -240,12 +240,12 @@ msgstr "Ngohe"
 msgid "Add Field"
 msgstr "Tāpiri pikitia"
 
-#: exe/webui/element.py:433
+#: exe/webui/element.py:436
 #, fuzzy
 msgid "Add Image"
 msgstr "Tāpiri pikitia"
 
-#: exe/webui/element.py:843
+#: exe/webui/element.py:846
 #, fuzzy
 msgid "Add JPEG Image"
 msgstr "Tāpiri Whārangi"
@@ -287,7 +287,7 @@ msgstr "Tāpiria he whakawhitiwhiti kōrero ki tau iDevice"
 msgid "Add an mp3 file to your iDevice."
 msgstr "Tāpiria he whakawhitiwhiti kōrero ki tau iDevice"
 
-#: exe/webui/testquestionelement.py:114 exe/webui/element.py:1686
+#: exe/webui/testquestionelement.py:118 exe/webui/element.py:1696
 #, fuzzy
 msgid "Add another Option"
 msgstr "Tāpiri he kōwhiringa anō"
@@ -302,7 +302,7 @@ msgstr "Tāpiri he pātai anō"
 msgid "Add another activity"
 msgstr "Tāpiri he kōwhiringa anō"
 
-#: exe/webui/element.py:1985
+#: exe/webui/element.py:2003
 msgid "Add another option"
 msgstr "Tāpiri he kōwhiringa anō"
 
@@ -315,13 +315,13 @@ msgstr "Tāpiri he pātai anō"
 msgid "Add files"
 msgstr "Tāpiri pikitia"
 
-#: exe/webui/galleryblock.py:188
+#: exe/webui/galleryblock.py:191
 msgid "Add images"
 msgstr "Tāpiri pikitia"
 
-#: exe/webui/flashwithtextblock.py:85 exe/webui/multimediablock.py:89
-#: exe/webui/editorelement.py:230 exe/webui/imagemagnifierblock.py:114
-#: exe/webui/flashmovieblock.py:84 exe/webui/imagewithtextblock.py:85
+#: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
+#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:118
+#: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "Tiaro"
 
@@ -338,7 +338,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr ""
 
-#: exe/engine/field.py:2486
+#: exe/engine/field.py:2585
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -395,7 +395,7 @@ msgstr ""
 "Ko te ngohe he mahi, ngā mahi rānei mā te ākonga e whakamutu. Whakarite he kōrero tuakī o ngā mahi, ā, āta whakaaro ki ngā āhuatanga\n"
 "hei āwhina hei whakakōroiroi rānei i te ākonga e whakatutuki i ana mahi."
 
-#: exe/webui/element.py:1181
+#: exe/webui/element.py:1183
 #, fuzzy
 msgid "Answsers"
 msgstr "Whakaatu/Wātea Pātai"
@@ -412,7 +412,7 @@ msgstr ""
 msgid "Article"
 msgstr "Tuhipānui"
 
-#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:332
+#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
 msgid "Attachment"
 msgstr "Āpitihanga"
 
@@ -425,11 +425,11 @@ msgstr "Kāore he Kōpukumatua %s  mā roto te Āpitihanga."
 msgid "Auckland University of Technology"
 msgstr ""
 
-#: exe/webui/editorelement.py:150
+#: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "Pātene Tapanga"
 
-#: exe/webui/preferencespage.py:103 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Whakakore"
 
@@ -438,9 +438,9 @@ msgstr "Whakakore"
 msgid "Cannot access directory named "
 msgstr "Kāore e āhei te uru ngā rārangi kōpaki kua tapaina"
 
-#: exe/webui/flashwithtextblock.py:90 exe/webui/editorelement.py:315
-#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:89
-#: exe/webui/imagewithtextblock.py:90 exe/webui/element.py:549
+#: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
+#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:92
+#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:552
 msgid "Caption:"
 msgstr "Tapanga"
 
@@ -453,12 +453,12 @@ msgstr "Rangahautanga"
 msgid "Catalan Wikipedia Article"
 msgstr "Tuhipānui Wikipedia Ītariana"
 
-#: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
+#: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
 #, fuzzy
 msgid "Change Image"
 msgstr "Tīpako pikitia"
 
-#: exe/webui/element.py:1034
+#: exe/webui/element.py:1036
 msgid "Check Caps?"
 msgstr ""
 
@@ -503,7 +503,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Patoa <strong>Tīpako he kōnae</strong>, tiro he kōnae e hiahia ana koe ki te tīpako me te āpiti."
 
-#: exe/engine/field.py:2035
+#: exe/engine/field.py:2134
 msgid "Click Here"
 msgstr "Pāwhiri Kōnei"
 
@@ -515,7 +515,7 @@ msgstr ""
 msgid "Click here"
 msgstr "Pāwhiri Kōnei"
 
-#: exe/engine/field.py:2705
+#: exe/engine/field.py:2804
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -528,12 +528,12 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr ""
 
-#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:140
-#: exe/webui/truefalseelement.py:141 exe/webui/common.py:324
+#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
 #: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
-#: exe/webui/element.py:2024 exe/webui/element.py:2025
-#: exe/webui/editorpane.py:359 exe/webui/editorpane.py:360
-#: exe/webui/editorpane.py:380 exe/webui/editorpane.py:381
+#: exe/webui/element.py:2042 exe/webui/element.py:2043
+#: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
+#: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
@@ -547,22 +547,22 @@ msgstr "Tiriwā Kupu"
 msgid "Cloze Activity"
 msgstr "Ngohe Tiriwā Kupu"
 
-#: exe/webui/element.py:1015
+#: exe/webui/element.py:1018
 #, fuzzy
 msgid "Cloze Text"
 msgstr "Tiriwā Kupu"
 
-#: exe/webui/element.py:1579 exe/webui/element.py:1890
+#: exe/webui/element.py:1585 exe/webui/element.py:1904
 msgid "Correct"
 msgstr "Tika"
 
-#: exe/webui/testoptionelement.py:96 exe/webui/element.py:1527
-#: exe/webui/element.py:1802
+#: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
+#: exe/webui/element.py:1816
 #, fuzzy
 msgid "Correct Option"
 msgstr "Tika"
 
-#: exe/webui/truefalseelement.py:204
+#: exe/webui/truefalseelement.py:208
 msgid "Correct!"
 msgstr "Tika!"
 
@@ -579,9 +579,9 @@ msgid ""
 msgstr ""
 
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
-#: exe/webui/editorelement.py:157 exe/webui/editorelement.py:198
-#: exe/webui/editorelement.py:251 exe/webui/editorelement.py:292
-#: exe/webui/editorelement.py:336 exe/webui/galleryblock.py:263
+#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
+#: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
+#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:266
 #: exe/webui/block.py:219 exe/webui/editorpage.py:236
 #: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
@@ -593,19 +593,19 @@ msgstr "Whakakore"
 msgid "Delete File"
 msgstr "Whakakore"
 
-#: exe/webui/galleryblock.py:260
+#: exe/webui/galleryblock.py:263
 #, fuzzy
 msgid "Delete Image"
 msgstr "Tīpako pikitia"
 
-#: exe/webui/testoptionelement.py:124 exe/webui/element.py:1555
-#: exe/webui/element.py:1830
+#: exe/webui/testoptionelement.py:128 exe/webui/element.py:1561
+#: exe/webui/element.py:1844
 msgid "Delete option"
 msgstr "Kōwhiringa Whakakore"
 
-#: exe/webui/testquestionelement.py:96 exe/webui/questionelement.py:103
-#: exe/webui/truefalseelement.py:118 exe/webui/element.py:1655
-#: exe/webui/element.py:1970
+#: exe/webui/testquestionelement.py:100 exe/webui/questionelement.py:107
+#: exe/webui/truefalseelement.py:122 exe/webui/element.py:1665
+#: exe/webui/element.py:1988
 msgid "Delete question"
 msgstr "Whakakore pātai"
 
@@ -656,7 +656,7 @@ msgstr "Whakaaturanga"
 msgid "Description:"
 msgstr "Whakaaturanga:"
 
-#: exe/webui/element.py:459 exe/webui/element.py:865 exe/webui/element.py:1235
+#: exe/webui/element.py:462 exe/webui/element.py:868 exe/webui/element.py:1237
 msgid "Display as:"
 msgstr "Whakaatu hei:"
 
@@ -728,8 +728,8 @@ msgstr "Whakatika"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:100 exe/webui/editorpane.py:331
+#: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
+#: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Miramira"
 
@@ -831,7 +831,7 @@ msgstr ""
 " o te pātene \"TĀPIRI HE KŌWHIRINGA ANŌ\" , ka taea e koe te tāpiri ngā kōwhiringa.  Mā te patopato o te pātene \n"
 " \"x\" , ka taea e koe te whakakore ngā kōwhiringa."
 
-#: exe/engine/field.py:3007
+#: exe/engine/field.py:3106
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -881,7 +881,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr ""
 
-#: exe/engine/field.py:2999
+#: exe/engine/field.py:3098
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -943,22 +943,22 @@ msgstr "I maitai ki %s"
 msgid "External Web Site"
 msgstr "Pae Tukutuku a Waho"
 
-#: exe/webui/imagemagnifierblock.py:142
+#: exe/webui/imagemagnifierblock.py:146
 #, fuzzy
 msgid "Extra large"
 msgstr "label=\"Mōki Ihirangi IMS\" accesskey=\"i\""
 
-#: exe/webui/truefalseelement.py:106 exe/webui/truefalseelement.py:179
+#: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
 msgid "False"
 msgstr "Teka"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2777
-#: exe/engine/field.py:2825 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:149 exe/webui/questionelement.py:96
-#: exe/webui/common.py:228 exe/webui/element.py:1833
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2876
+#: exe/engine/field.py:2924 exe/webui/clozeblock.py:158
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
+#: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Urupare"
@@ -970,7 +970,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3016 exe/engine/field.py:3086
+#: exe/engine/field.py:3115 exe/engine/field.py:3185
 #, fuzzy
 msgid "Feedback:"
 msgstr "Urupare"
@@ -986,7 +986,7 @@ msgstr ""
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:745
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:748
 #, fuzzy
 msgid "Filename:"
 msgstr "Tapaina Anō"
@@ -1005,7 +1005,7 @@ msgstr "Tuhituhi mā te Kohiko"
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
 
-#: exe/webui/externalurlblock.py:72
+#: exe/webui/externalurlblock.py:75
 msgid "Frame Height:"
 msgstr ""
 
@@ -1017,7 +1017,7 @@ msgstr "Tuhi Wātea"
 msgid "French Wikipedia Article"
 msgstr "Tuhipānui Wikipedia Wīwī"
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:207
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -1031,19 +1031,19 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Tuhipānui Wikipedia Tiamana"
 
-#: exe/webui/element.py:1119
+#: exe/webui/element.py:1121
 msgid "Get score"
 msgstr "Kimi Māka"
 
-#: exe/webui/galleryblock.py:233
+#: exe/webui/galleryblock.py:236
 msgid "Go Back"
 msgstr ""
 
-#: exe/webui/galleryblock.py:247
+#: exe/webui/galleryblock.py:250
 msgid "Go Forward"
 msgstr ""
 
-#: exe/webui/galleryblock.py:255
+#: exe/webui/galleryblock.py:258
 msgid "Go Forward (Not Available)"
 msgstr ""
 
@@ -1056,19 +1056,19 @@ msgstr "Tuhipānui Wikipedia Wīwī"
 msgid "Hide"
 msgstr "Huna"
 
-#: exe/webui/questionelement.py:127
+#: exe/webui/questionelement.py:131
 #, fuzzy
 msgid "Hide Feedback"
 msgstr "Whakaatu/Huna Urupare"
 
-#: exe/webui/element.py:1024
+#: exe/webui/element.py:1026
 msgid "Hide/Show Word"
 msgstr "Huna/Whakaatu Kupu"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2851 exe/engine/field.py:2917
-#: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:2028
+#: exe/engine/field.py:2950 exe/engine/field.py:3016
+#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
+#: exe/webui/element.py:2046
 msgid "Hint"
 msgstr "Tohu Aki"
 
@@ -1077,7 +1077,7 @@ msgid "Home"
 msgstr "Kāinga"
 
 #: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:337
+#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:340
 #: exe/webui/block.py:288
 #, fuzzy
 msgid "IDevice Icon"
@@ -1093,7 +1093,7 @@ msgstr "Whakakore pātai"
 msgid "IDevice broken"
 msgstr "Ētita iDevice"
 
-#: exe/webui/editorpane.py:362
+#: exe/webui/editorpane.py:363
 msgid "Icons"
 msgstr "Ata"
 
@@ -1119,15 +1119,15 @@ msgstr "Pikitia me ngā tuhinga"
 msgid "Import iDevice"
 msgstr "Pihanga iDevice"
 
-#: exe/webui/element.py:1581
+#: exe/webui/element.py:1587
 msgid "Incorrect"
 msgstr "Hē"
 
-#: exe/webui/truefalseelement.py:205
+#: exe/webui/truefalseelement.py:209
 msgid "Incorrect!"
 msgstr "Hē!"
 
-#: exe/webui/editorpane.py:376
+#: exe/webui/editorpane.py:377
 #, fuzzy
 msgid "Info"
 msgstr "WhakakoreNgārara"
@@ -1137,11 +1137,11 @@ msgstr "WhakakoreNgārara"
 msgid "Information"
 msgstr "Ngā Tohutohu"
 
-#: exe/webui/imagemagnifierblock.py:126
+#: exe/webui/imagemagnifierblock.py:130
 msgid "Initial Zoom"
 msgstr ""
 
-#: exe/webui/element.py:1039
+#: exe/webui/element.py:1041
 msgid "Instant Marking?"
 msgstr ""
 
@@ -1154,7 +1154,7 @@ msgstr "Ngā Tohutohu"
 msgid "Instructions For Learners"
 msgstr "Tohutohu mō ngā Ākonga"
 
-#: exe/webui/wikipediablock.py:205
+#: exe/webui/wikipediablock.py:208
 msgid "It uses material from the "
 msgstr ""
 
@@ -1170,18 +1170,18 @@ msgstr "Tuhipānui Wikipedia Hapani"
 msgid "Java Applet"
 msgstr ""
 
-#: exe/webui/attachmentblock.py:104
+#: exe/webui/attachmentblock.py:108
 #, fuzzy
 msgid "Label:"
 msgstr "Tapanga"
 
-#: exe/webui/imagemagnifierblock.py:141
+#: exe/webui/imagemagnifierblock.py:145
 #, fuzzy
 msgid "Large"
 msgstr "Tapanga"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:226 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Mauī"
@@ -1190,7 +1190,7 @@ msgstr "Mauī"
 msgid "Licensed under the"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:135 exe/webui/rssblock.py:93
 msgid "Load"
 msgstr "utaina"
 
@@ -1199,7 +1199,7 @@ msgstr "utaina"
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:288
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
 msgstr ""
 
@@ -1213,11 +1213,11 @@ msgstr "Tuhipānui Wikipedia"
 msgid "Maths"
 msgstr "Tuhipānui"
 
-#: exe/webui/imagemagnifierblock.py:133
+#: exe/webui/imagemagnifierblock.py:137
 msgid "Maximum zoom"
 msgstr ""
 
-#: exe/webui/imagemagnifierblock.py:140
+#: exe/webui/imagemagnifierblock.py:144
 msgid "Medium"
 msgstr ""
 
@@ -1232,12 +1232,12 @@ msgstr ""
 msgid "Move Down"
 msgstr "Neke Whakararo"
 
-#: exe/webui/galleryblock.py:231
+#: exe/webui/galleryblock.py:234
 #, fuzzy
 msgid "Move Image Left"
 msgstr "Korekau ngā pikitia e Utauta"
 
-#: exe/webui/galleryblock.py:245
+#: exe/webui/galleryblock.py:248
 #, fuzzy
 msgid "Move Image Right"
 msgstr "Korekau ngā pikitia e Utauta"
@@ -1269,7 +1269,7 @@ msgstr "iDevice Hou"
 msgid "Next"
 msgstr "Kupu"
 
-#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:289
+#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
 msgid "No Images Loaded"
 msgstr "Korekau ngā pikitia e Utauta"
 
@@ -1287,20 +1287,20 @@ msgstr "Korekau ngā karakōnui kei reira. Kāore e taea te tīngongotia."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Korekau ngā karakōnui kei reira. Kāore e taea te tīngongotia."
 
-#: exe/webui/wikipediablock.py:136 exe/webui/multimediablock.py:97
-#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:334
+#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
+#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:335
 msgid "No emphasis"
 msgstr "Arotahi kore"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
 msgstr "Kore"
 
-#: exe/webui/preferencespage.py:100
+#: exe/webui/preferencespage.py:102
 msgid "OK"
 msgstr "Pai"
 
@@ -1319,27 +1319,27 @@ msgstr ""
 " o ngā  mātauranga. Kia whakatauria ngā pūkenga mō ngā ākonga e mutu ai\n"
 " ngā momo hei mahi."
 
-#: exe/engine/field.py:2592 exe/engine/field.py:2656
+#: exe/engine/field.py:2691 exe/engine/field.py:2755
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/engine/field.py:2528 exe/engine/field.py:2572
+#: exe/engine/field.py:2627 exe/engine/field.py:2671
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2773 exe/engine/field.py:2822
-#: exe/webui/testoptionelement.py:91 exe/webui/element.py:1522
-#: exe/webui/element.py:1797
+#: exe/engine/field.py:2872 exe/engine/field.py:2921
+#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
+#: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Kōwhiri"
 
-#: exe/engine/field.py:2939 exe/engine/field.py:2976
-#: exe/webui/testquestionelement.py:102 exe/webui/element.py:1673
+#: exe/engine/field.py:3038 exe/engine/field.py:3075
+#: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 #, fuzzy
 msgid "Options"
 msgstr "Kōwhiri"
@@ -1352,7 +1352,7 @@ msgstr ""
 msgid "Outline"
 msgstr "Whakahuahua"
 
-#: exe/webui/wikipediablock.py:127
+#: exe/webui/wikipediablock.py:130
 msgid "Own site"
 msgstr ""
 
@@ -1371,11 +1371,11 @@ msgstr ""
 msgid "Package saved to: %s"
 msgstr "Mōkī i tiakina ki: %s"
 
-#: exe/webui/block.py:240 exe/webui/editorpane.py:372
+#: exe/webui/block.py:240 exe/webui/editorpane.py:373
 msgid "Pedagogical Help"
 msgstr "Hei Mahi Āwhina"
 
-#: exe/webui/editorpane.py:328
+#: exe/webui/editorpane.py:329
 msgid "Pedagogical Tip"
 msgstr "Hei Mahi Akiaki"
 
@@ -1388,12 +1388,12 @@ msgstr "Tāuru mai he ingoa idevice."
 msgid "Please enter<br />an idevice name."
 msgstr "Tāuru mai he ingoa idevice."
 
-#: exe/webui/element.py:1297
+#: exe/webui/element.py:1299
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "Tāuru mai he ingoa idevice."
 
-#: exe/webui/element.py:814
+#: exe/webui/element.py:817
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "Tāuru mai he ingoa idevice."
@@ -1444,7 +1444,7 @@ msgstr ""
 "<li>        Me mātau ngā ākonga ki te reanga tuawhā o te reo Pākehā</li>\n"
 "<li>        Me mātau ngā ākonga ki te hangahanga mihini</li></ul>\n"
 
-#: exe/webui/element.py:1440 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1442 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "Tirohia"
 
@@ -1459,8 +1459,8 @@ msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 msgid "Previous"
 msgstr "Tirohia"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2230
-#: exe/engine/field.py:2277
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2329
+#: exe/engine/field.py:2376
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1531,13 +1531,13 @@ msgid "Put instructions for learners here"
 msgstr "Waiho ngā tohutohu mō ngā ākonga kōnina."
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2848 exe/engine/field.py:2913
+#: exe/engine/field.py:2947 exe/engine/field.py:3012
 msgid "Question"
 msgstr "Pātai"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3002 exe/engine/field.py:3083 exe/webui/element.py:1650
+#: exe/engine/field.py:3101 exe/engine/field.py:3182 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Pātai:"
 
@@ -1591,12 +1591,12 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Pātai Whakapūmahara:"
 
-#: exe/webui/element.py:1139
+#: exe/webui/element.py:1141
 msgid "Restart"
 msgstr ""
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:227 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Matau"
@@ -1637,52 +1637,52 @@ msgstr "Tiaki"
 msgid "Section"
 msgstr "Wāhanga"
 
-#: exe/webui/editorelement.py:271 exe/webui/element.py:1231
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1233
 #, fuzzy
 msgid "Select Flash Object"
 msgstr "Tipako he kōnae kohiko"
 
-#: exe/webui/preferencespage.py:93
+#: exe/webui/preferencespage.py:95
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr "Tīpako Reo"
 
-#: exe/webui/editorelement.py:312
+#: exe/webui/editorelement.py:308
 #, fuzzy
 msgid "Select MP3 file"
 msgstr "Tīpako kōnae"
 
-#: exe/webui/attachmentblock.py:100 exe/webui/editorelement.py:356
-#: exe/webui/element.py:755
+#: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
+#: exe/webui/element.py:758
 msgid "Select a file"
 msgstr "Tīpako kōnae"
 
-#: exe/webui/element.py:1313
+#: exe/webui/element.py:1315
 #, fuzzy
 msgid "Select a flash video"
 msgstr "Tipako he kiriata kohiko"
 
-#: exe/webui/element.py:1426
+#: exe/webui/element.py:1428
 #, fuzzy
 msgid "Select a font size: "
 msgstr "Tīpako kōnae"
 
-#: exe/webui/element.py:543
+#: exe/webui/element.py:546
 #, fuzzy
 msgid "Select an MP3"
 msgstr "Tīpako kōnae"
 
-#: exe/webui/element.py:456
+#: exe/webui/element.py:459
 msgid "Select an image"
 msgstr "Tīpako pikitia"
 
-#: exe/webui/element.py:859
+#: exe/webui/element.py:862
 #, fuzzy
 msgid "Select an image (JPG file)"
 msgstr "Tīpako pikitia"
 
-#: exe/engine/field.py:3011
+#: exe/engine/field.py:3110
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1729,35 +1729,35 @@ msgstr ""
 msgid "Settings saved"
 msgstr ""
 
-#: exe/webui/galleryblock.py:297
+#: exe/webui/galleryblock.py:300
 #, fuzzy, python-format
 msgid "Show %s Image"
 msgstr "Tīpako pikitia %s"
 
-#: exe/webui/element.py:1146
+#: exe/webui/element.py:1148
 #, fuzzy
 msgid "Show Answers"
 msgstr "Whakaatu/Wātea Pātai"
 
-#: exe/webui/questionelement.py:122 exe/webui/element.py:1724
+#: exe/webui/questionelement.py:126 exe/webui/element.py:1734
 #, fuzzy
 msgid "Show Feedback"
 msgstr "Whakaatu/Huna Urupare"
 
-#: exe/webui/element.py:1130
+#: exe/webui/element.py:1132
 msgid "Show/Clear Answers"
 msgstr "Whakaatu/Wātea Pātai"
 
-#: exe/webui/element.py:1125
+#: exe/webui/element.py:1127
 msgid "Show/Hide Feedback"
 msgstr "Whakaatu/Huna Urupare"
 
-#: exe/webui/wikipediablock.py:117
+#: exe/webui/wikipediablock.py:120
 #, fuzzy
 msgid "Site"
 msgstr "taitara"
 
-#: exe/webui/imagemagnifierblock.py:143
+#: exe/webui/imagemagnifierblock.py:148
 msgid "Size of magnifying glass: "
 msgstr ""
 
@@ -1766,13 +1766,13 @@ msgstr ""
 msgid "Slovenian Wikipedia Article"
 msgstr "Tuhipānui Wikipedia Ītariana"
 
-#: exe/webui/imagemagnifierblock.py:139
+#: exe/webui/imagemagnifierblock.py:143
 #, fuzzy
 msgid "Small"
 msgstr "Tapanga"
 
-#: exe/webui/wikipediablock.py:137 exe/webui/multimediablock.py:98
-#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:335
+#: exe/webui/wikipediablock.py:140 exe/webui/multimediablock.py:101
+#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:336
 msgid "Some emphasis"
 msgstr "Āhua arotahi"
 
@@ -1802,11 +1802,11 @@ msgstr "Tuhipānui Wikipedia Spanish"
 msgid "Story:"
 msgstr "Pūkōrero:"
 
-#: exe/webui/element.py:1029
+#: exe/webui/element.py:1031
 msgid "Strict Marking?"
 msgstr ""
 
-#: exe/webui/element.py:1134 exe/webui/editorpane.py:423
+#: exe/webui/element.py:1136 exe/webui/editorpane.py:424
 #, fuzzy
 msgid "Submit"
 msgstr "Tuku Whakautu"
@@ -1905,7 +1905,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Ko te tīkanga o te whakawhiti whakaaro hei whakamārama i ngōu wawata mō te pūrere ki ngērā atu kaimahi."
 
-#: exe/webui/wikipediablock.py:201
+#: exe/webui/wikipediablock.py:204
 msgid "This article is licensed under the "
 msgstr ""
 
@@ -1954,7 +1954,7 @@ msgstr "Ka whakakore i tēnei iDevice.\\nHaere tonu?"
 msgid "Tip:"
 msgstr "Aki:"
 
-#: exe/webui/galleryblock.py:181
+#: exe/webui/galleryblock.py:184
 #, fuzzy
 msgid "Title"
 msgstr "taitara"
@@ -1972,7 +1972,7 @@ msgstr ""
 msgid "Topic"
 msgstr "Kaupapa"
 
-#: exe/webui/truefalseelement.py:104 exe/webui/truefalseelement.py:177
+#: exe/webui/truefalseelement.py:108 exe/webui/truefalseelement.py:181
 msgid "True"
 msgstr "Pono"
 
@@ -1991,7 +1991,7 @@ msgstr ""
 " te akonga kia kimi māramatanga, mehemea e tika ana te kōrero. Ko tēnei pātai he rawe mō ngā \n"
 " kōrero pūmau."
 
-#: exe/engine/field.py:2668
+#: exe/engine/field.py:2767
 #, fuzzy
 msgid "Type a discussion topic here."
 msgstr "Kaupapa kōrerorero:"
@@ -2024,7 +2024,7 @@ msgstr ""
 " te pouaka nei, nā eXe ka whangaia aunoa he urupare, pēnei ai: \n"
 "\"Whakautu tika\" ngā whakaturanga mō te whiringa tika;  \"whakautu hē\" ngā whakaaturanga mō ngā whakautu hē."
 
-#: exe/engine/field.py:3014
+#: exe/engine/field.py:3113
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2172,7 +2172,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1892
+#: exe/webui/element.py:1906
 msgid "Wrong"
 msgstr ""
 
@@ -2185,12 +2185,12 @@ msgstr ""
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Ka whakaatu mai te iDevice hou ki te pihanga iDevice o tēnei taitara.  He mea herea tēnei kia uru mai koe he tapanga."
 
-#: exe/webui/wikipediablock.py:216
+#: exe/webui/wikipediablock.py:219
 #, fuzzy
 msgid "article "
 msgstr "Tuhipānui"
 
-#: exe/webui/element.py:473 exe/webui/element.py:881
+#: exe/webui/element.py:476 exe/webui/element.py:884
 msgid "blank for original size"
 msgstr "piako mō te rahi pono"
 
@@ -2243,7 +2243,7 @@ msgstr "waeherekī"
 msgid "label"
 msgstr "tapanga"
 
-#: exe/webui/element.py:1423
+#: exe/webui/element.py:1425
 #, fuzzy
 msgid "newline"
 msgstr "Tapanga"
@@ -2252,7 +2252,7 @@ msgstr "Tapanga"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 
-#: exe/webui/element.py:1422
+#: exe/webui/element.py:1424
 #, fuzzy
 msgid "text"
 msgstr "Kupu"
@@ -3144,6 +3144,11 @@ msgstr "Tapanga"
 #, fuzzy
 msgid "German "
 msgstr "Tapanga"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
+#: label="Greek ">
+msgid "Greek "
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
