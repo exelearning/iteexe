@@ -1,7 +1,6 @@
-# EXELearning Portuguese (Brazilian) PO file
-# Copyright (C) 2004-2006 EXELearning.org
+# EXELearning Portuguese PO file
+# Copyright (C) 2004-2008 EXELearning.org
 # This file is distributed under the same license as the EXE package.
-# Matthew Sherborne <msherborne@gmail.com>
 #
 msgid ""
 msgstr ""
@@ -15,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 0.10.1\n"
-"X-EXE-Language: Português (de Brasil)\n"
+"X-EXE-Language: Português\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: PORTUGAL\n"
 

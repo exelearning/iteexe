@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Pootle 0.10.1\n"
 "X-EXE-Language: Português (de Brasil)\n"
 "X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: PORTUGAL\n"
+"X-Poedit-Country: BRAZIL\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:169
 msgid ""
