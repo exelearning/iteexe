@@ -8,12 +8,13 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-25 13:30+1300\n"
-"PO-Revision-Date: 2007-03-02 10:24+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-01-29 09:06+1300\n"
+"Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:169
 msgid ""
@@ -23,6 +24,11 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+"<p>Hvis appletten du legger til var generert\n"
+"av en av en av programmene i denne rullegardinmenyen, vennligst velg den. \n"
+"Legg deretter til data/applettfilen som ble generert av ditt program.</p>\n"
+"<p>Eks. For Geogebra-appletter, velg geogebra. Legg så til .ggd-filen som \n"
+"du laget i Geogebra.</p> "
 
 #: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
 #: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
@@ -32,6 +38,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" finnes allerede.\n"
+"Vennligst prøv igjen med et annet filnavn"
 
 #: exe/engine/appletidevice.py:64
 msgid ""
@@ -39,15 +47,18 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
+"\"Finn .txt filen (i applet filen) \n"
+"og åpne den. Kopier innholdet i denne filen <ctrl A, ctrl C> inn i appletens \n"
+"kodefelt."
 
 #: exe/webui/block.py:235
 msgid "---Move To---"
-msgstr ""
+msgstr "---Flytt til---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
 #: exe/xului/mainpage.py:796
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Vennligst bruk ASCII navn."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
@@ -181,30 +192,30 @@ msgstr ""
 
 #: exe/webui/editorpane.py:261
 msgid "Actions"
-msgstr ""
+msgstr "Handlinger"
 
 #: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
 #: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
 #: exe/webui/questionelement.py:96
 msgid "Activity"
-msgstr ""
+msgstr "Aktivitet"
 
 #: exe/webui/editorpane.py:246
 msgid "Add Field"
-msgstr ""
+msgstr "Legg til felt"
 
 #: exe/webui/element.py:436
 msgid "Add Image"
-msgstr ""
+msgstr "Legg til bilde"
 
 #: exe/webui/element.py:846
 msgid "Add JPEG Image"
-msgstr ""
+msgstr "Legg til JPEG bilde"
 
 #: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Legg til en flash video i din iDevice."
 
 #: exe/webui/editorpane.py:81
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
@@ -212,7 +223,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:84
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr ""
+msgstr "Legg til et skrivefelt i en iDevice. Brukes til å legge inn større mengder skriftlig innhold."
 
 #: exe/engine/appletidevice.py:61
 msgid ""
@@ -223,49 +234,49 @@ msgstr ""
 
 #: exe/webui/editorpane.py:90
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Legg til en vedlagt fil i din iDevice."
 
 #: exe/webui/editorpane.py:87
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Legg til et felt for interaktiv tilbakemelding i din iDevice."
 
 #: exe/webui/editorpane.py:89
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Legg til en MP3-fil i din iDevice."
 
 #: exe/webui/testquestionelement.py:118 exe/webui/element.py:1696
 msgid "Add another Option"
-msgstr ""
+msgstr "Legg til et nytt alternativ"
 
 #: exe/webui/quiztestblock.py:101 exe/webui/multiselectblock.py:79
 msgid "Add another Question"
-msgstr ""
+msgstr "Legg til et nytt spørsmål"
 
 #: exe/webui/casestudyblock.py:99
 msgid "Add another activity"
-msgstr ""
+msgstr "Legg til en ny aktivitet"
 
 #: exe/webui/element.py:2003
 msgid "Add another option"
-msgstr ""
+msgstr "Legg til et nytt alternativ"
 
 #: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:94
 msgid "Add another question"
-msgstr ""
+msgstr "Legg til et nytt spørsmål"
 
 #: exe/webui/appletblock.py:109
 msgid "Add files"
-msgstr ""
+msgstr "Legg til filer"
 
 #: exe/webui/galleryblock.py:191
 msgid "Add images"
-msgstr ""
+msgstr "Legg til bilder"
 
 #: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
 #: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:118
 #: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
-msgstr ""
+msgstr "Justering:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:119
@@ -273,12 +284,16 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Justeringen lar deg \n"
+"velge hvor på skjermen bildet skal plasseres."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Justeringen lar deg \n"
+"velge hvor på skjermen mediaspilleren skal plasseres."
 
 #: exe/engine/field.py:2585
 msgid ""
@@ -317,7 +332,7 @@ msgstr ""
 
 #: exe/webui/element.py:1183
 msgid "Answsers"
-msgstr ""
+msgstr "Svar"
 
 #: exe/webui/appletblock.py:115
 msgid "Applet Code:"
@@ -350,18 +365,18 @@ msgstr ""
 
 #: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
 #: exe/xului/mainpage.py:796
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Kan ikke åpne mappen"
 
 #: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
 #: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:92
 #: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:552
 msgid "Caption:"
-msgstr ""
+msgstr "Bildetekst:"
 
 #: exe/engine/casestudyidevice.py:196
 msgid "Case Study"
@@ -373,7 +388,7 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
 msgid "Change Image"
-msgstr ""
+msgstr "Endre bilde"
 
 #: exe/webui/element.py:1036
 msgid "Check Caps?"
@@ -381,15 +396,15 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:98
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Kinesisk Wikipediaartikkel"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr ""
+msgstr "Velg et bilde"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Velg en MP3-fil"
 
 #: exe/engine/casestudyidevice.py:63
 msgid "Choose an optional image to be shown to the student on completion of this question"
@@ -413,14 +428,17 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
 msgstr ""
+"Klikk \n"
+"på bildet under eller \"Legg til bilde\"-knappen for å velge en bildefil som skal \n"
+"forstørres."
 
 #: exe/engine/attachmentidevice.py:68
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr ""
+msgstr "Klikk på <strong>Velg en fil</strong>, finn bildet du vil legge ved og velg det."
 
 #: exe/engine/field.py:2134
 msgid "Click Here"
-msgstr ""
+msgstr "Klikk her"
 
 #: exe/webui/common.py:315 exe/webui/common.py:319
 msgid "Click for completion instructions"
@@ -428,7 +446,7 @@ msgstr ""
 
 #: exe/webui/reflectionblock.py:113
 msgid "Click here"
-msgstr ""
+msgstr "Klikk her"
 
 #: exe/engine/field.py:2804
 msgid ""
@@ -449,7 +467,7 @@ msgstr ""
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
@@ -465,20 +483,20 @@ msgstr ""
 
 #: exe/webui/element.py:1585 exe/webui/element.py:1904
 msgid "Correct"
-msgstr ""
+msgstr "Riktig"
 
 #: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
 #: exe/webui/element.py:1816
 msgid "Correct Option"
-msgstr ""
+msgstr "Riktig valg"
 
 #: exe/webui/truefalseelement.py:208
 msgid "Correct!"
-msgstr ""
+msgstr "Riktig!"
 
 #: exe/xului/mainpage.py:1061
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Kunne ikke åpne filen, vennligst send filen til bugs@exelearning.org"
 
 #: exe/engine/casestudyidevice.py:215
 msgid ""
@@ -496,26 +514,26 @@ msgstr ""
 #: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 #: exe/webui/appletblock.py:128
 msgid "Delete File"
-msgstr ""
+msgstr "Slett fil"
 
 #: exe/webui/galleryblock.py:263
 msgid "Delete Image"
-msgstr ""
+msgstr "Slett bilde"
 
 #: exe/webui/testoptionelement.py:128 exe/webui/element.py:1561
 #: exe/webui/element.py:1844
 msgid "Delete option"
-msgstr ""
+msgstr "Slett valg"
 
 #: exe/webui/testquestionelement.py:100 exe/webui/questionelement.py:107
 #: exe/webui/truefalseelement.py:122 exe/webui/element.py:1665
 #: exe/webui/element.py:1988
 msgid "Delete question"
-msgstr ""
+msgstr "Slett spørsmål"
 
 #: exe/engine/reflectionidevice.py:55
 msgid ""
@@ -550,26 +568,26 @@ msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:52 exe/engine/flashmovieidevice.py:52
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 #: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:185
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivelse:"
 
 #: exe/webui/element.py:462 exe/webui/element.py:868 exe/webui/element.py:1237
 msgid "Display as:"
-msgstr ""
+msgstr "Vis som:"
 
 #: exe/webui/block.py:211
 msgid "Done"
-msgstr ""
+msgstr "Ferdig"
 
 #: exe/webui/wikipediablock.py:99
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Nederlandsk Wikipediaartikkel"
 
 #: exe/webui/element.py:70
 #, python-format
@@ -625,36 +643,40 @@ msgstr ""
 #: exe/webui/block.py:333 exe/webui/editorpane.py:266
 #: exe/webui/editorpage.py:270
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 #: twisted/persisted/styles.py:518
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr ""
+msgstr "idevices/generic.data filen eller pakken du prøver å åpne er laget med en nyere versjon av eXe.  Vennligst oppgrader eXe og prøv igjen."
 
 #: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
 msgid "Emphasis"
-msgstr ""
+msgstr "Uthev"
 
 #: exe/webui/wikipediablock.py:96
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Engelsk Wikipedia-artikkel"
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Skriv \n"
+"teksten du vil forbinde med filen."
 
 #: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Skriv et hint her. Hvis du \n"
+"ikke vil gi noe hint, lar du feltet vært tomt."
 
 #: exe/engine/multichoiceidevice.py:166
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr ""
+msgstr "Skriv et hint her. Hvis du ikke vil gi noe hint, lar du feltet være tomt."
 
 #: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:289
 msgid ""
@@ -712,6 +734,8 @@ msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Skriv nettadressen du vil vise \n"
+"og velg størrelse på området du vil vise den i."
 
 #: exe/engine/multichoiceidevice.py:104
 msgid ""
@@ -792,34 +816,34 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
-msgstr ""
+msgstr "Eksempel"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Eksempel eksempel"
 
 #: exe/webui/editorpage.py:250
 msgid "Export iDevice"
-msgstr ""
+msgstr "Eksporter iDevice"
 
 #: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
 #: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
 #: exe/xului/mainpage.py:1019
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Eksportert til %s"
 
 #: exe/engine/externalurlidevice.py:37
 msgid "External Web Site"
-msgstr ""
+msgstr "Ekstern nettside"
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Extra large"
-msgstr ""
+msgstr "Ekstra stor"
 
 #: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
 msgid "False"
-msgstr ""
+msgstr "Feil"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
@@ -830,7 +854,7 @@ msgstr ""
 #: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
-msgstr ""
+msgstr "Tilbakemelding"
 
 #: exe/webui/editorpane.py:158
 msgid ""
@@ -841,12 +865,12 @@ msgstr ""
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
 #: exe/engine/field.py:3115 exe/engine/field.py:3185
 msgid "Feedback:"
-msgstr ""
+msgstr "Tilbakemelding:"
 
 #: exe/xului/mainpage.py:1057
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "Filen %s eksisterer ikke eller er ikke lesbar."
 
 #: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
 #: exe/xului/mainpage.py:961
@@ -856,39 +880,39 @@ msgstr ""
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:748
 msgid "Filename:"
-msgstr ""
+msgstr "Filnavn:"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Flash video"
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash med tekst"
 
 #: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
 #: exe/xului/mainpage.py:967
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
-msgstr ""
+msgstr "Mappen %s eksisterer allerede. Vennligst velg en annen eller slett den eksisterende, og prøv igjen."
 
 #: exe/webui/externalurlblock.py:75
 msgid "Frame Height:"
-msgstr ""
+msgstr "Rammehøyde:"
 
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
-msgstr ""
+msgstr "Fritekst"
 
 #: exe/webui/wikipediablock.py:100
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Fransk Wikipedia-artikkel"
 
 #: exe/webui/wikipediablock.py:207
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "GNU fri dokumentasjonslisens"
 
 #: exe/webui/appletblock.py:89
 msgid "Geogebra"
@@ -896,7 +920,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:101
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Tysk Wikipedia-artikkel"
 
 #: exe/webui/element.py:1121
 msgid "Get score"
@@ -904,42 +928,42 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:236
 msgid "Go Back"
-msgstr ""
+msgstr "Gå tilbake"
 
 #: exe/webui/galleryblock.py:250
 msgid "Go Forward"
-msgstr ""
+msgstr "Gå fremover"
 
 #: exe/webui/galleryblock.py:258
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Gå fremover (Ikke tilgjengelig)"
 
 #: exe/webui/wikipediablock.py:102
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Gresk Wikipedia-artikkel"
 
 #: exe/webui/reflectionblock.py:117
 msgid "Hide"
-msgstr ""
+msgstr "Skjul"
 
 #: exe/webui/questionelement.py:131
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Skjul tilbakemelding"
 
 #: exe/webui/element.py:1026
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Skjul/Vis ord"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
 #: exe/engine/field.py:2950 exe/engine/field.py:3016
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
-msgstr ""
+msgstr "Hint"
 
 #: exe/engine/package.py:104
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 #: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:340
@@ -957,43 +981,43 @@ msgstr ""
 
 #: exe/webui/editorpane.py:363
 msgid "Icons"
-msgstr ""
+msgstr "Ikoner"
 
 #: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:62
 msgid "Image"
-msgstr ""
+msgstr "Bilde"
 
 #: exe/engine/galleryidevice.py:409
 msgid "Image Gallery"
-msgstr ""
+msgstr "Bildealbum"
 
 #: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Bildeforstørrer"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr ""
+msgstr "Bilde med tekst"
 
 #: exe/webui/editorpage.py:247
 msgid "Import iDevice"
-msgstr ""
+msgstr "Importer iDevice"
 
 #: exe/webui/element.py:1587
 msgid "Incorrect"
-msgstr ""
+msgstr "Feil"
 
 #: exe/webui/truefalseelement.py:209
 msgid "Incorrect!"
-msgstr ""
+msgstr "Feil!"
 
 #: exe/webui/editorpane.py:377
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: exe/webui/block.py:245
 msgid "Information"
-msgstr ""
+msgstr "Informasjon"
 
 #: exe/webui/imagemagnifierblock.py:130
 msgid "Initial Zoom"
@@ -1018,11 +1042,11 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:103
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Italiensk Wikipedia-artikkel"
 
 #: exe/webui/wikipediablock.py:104
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Japansk Wikipedia-artikkel"
 
 #: exe/engine/appletidevice.py:52
 msgid "Java Applet"
@@ -1034,46 +1058,46 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:145
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
 #: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
-msgstr ""
+msgstr "Venstre"
 
 #: exe/export/pages.py:71 exe/export/textexport.py:54
 msgid "Licensed under the"
-msgstr ""
+msgstr "Lisensiert under"
 
 #: exe/webui/wikipediablock.py:135 exe/webui/rssblock.py:93
 msgid "Load"
-msgstr ""
+msgstr "Åpne"
 
 #: exe/xului/mainpage.py:543
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "Den lokale filen %s ble ikke funnet. Kan ikke forhåndsvise den"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/webui/wikipediablock.py:105
 msgid "Magyar Wikipedia Article"
-msgstr ""
+msgstr "Ungarsk Wikipedia-artikkel"
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr ""
+msgstr "Matematikk"
 
 #: exe/webui/imagemagnifierblock.py:137
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Maksimal zoom"
 
 #: exe/webui/imagemagnifierblock.py:144
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: exe/xului/mainpage.py:671
 #, python-format
@@ -1084,19 +1108,19 @@ msgstr ""
 
 #: exe/webui/block.py:233
 msgid "Move Down"
-msgstr ""
+msgstr "Flytt ned"
 
 #: exe/webui/galleryblock.py:234
 msgid "Move Image Left"
-msgstr ""
+msgstr "Flytt bildet til venstre"
 
 #: exe/webui/galleryblock.py:248
 msgid "Move Image Right"
-msgstr ""
+msgstr "Flytt bildet til høyre"
 
 #: exe/webui/block.py:226
 msgid "Move Up"
-msgstr ""
+msgstr "Flytt opp"
 
 #: exe/engine/multichoiceidevice.py:58
 msgid "Multi-choice"
@@ -1108,37 +1132,37 @@ msgstr ""
 
 #: exe/webui/editorpane.py:323
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: exe/webui/editorpage.py:275
 msgid "New iDevice"
-msgstr ""
+msgstr "Ny iDevice"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:305 exe/export/websitepage.py:197
 msgid "Next"
-msgstr ""
+msgstr "Neste"
 
 #: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Ingen bilder er åpnet"
 
 #: exe/engine/galleryidevice.py:137
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Miniatyrbilde er ikke tilgjengelig. Kunne ikke åpne det opprinnelige bildet."
 
 #: exe/engine/galleryidevice.py:171
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Miniatyrbilde er ikke tilgjengelig. Kunne ikke krympe bildet."
 
 #: exe/engine/galleryidevice.py:145
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Miniatyrbilde er ikke tilgjengelig. Kunne ikke krympe det opprinnelige bildet."
 
 #: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:97 exe/webui/editorpane.py:335
 msgid "No emphasis"
-msgstr ""
+msgstr "Ingen utheving"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
 #: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
@@ -1146,11 +1170,11 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: exe/webui/preferencespage.py:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:337
 #: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:443
@@ -1169,28 +1193,32 @@ msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Velg kun .flv (Flash Video filer) til \n"
+"denne iDevice."
 
 #: exe/engine/field.py:2627 exe/engine/field.py:2671
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Velg kun .swf (Flash objekter) til \n"
+"denne iDevice."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
 #: exe/engine/field.py:2872 exe/engine/field.py:2921
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
-msgstr ""
+msgstr "Alternativ"
 
 #: exe/engine/field.py:3038 exe/engine/field.py:3075
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
-msgstr ""
+msgstr "Alternativer"
 
 #: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
 msgid "Other"
-msgstr ""
+msgstr "Annet"
 
 #: exe/xului/outlinepane.py:263
 msgid "Outline"
@@ -1198,22 +1226,22 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:130
 msgid "Own site"
-msgstr ""
+msgstr "Egen side"
 
 #: exe/xului/mainpage.py:824
 #, python-format
 msgid "Package extracted to: %s"
-msgstr ""
+msgstr "Pakke åpnet i: %s"
 
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
 #: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
-msgstr ""
+msgstr "Pakken er gammel. Vennligst oppgrader den (bruk Fil..Åpen etterfulgt av Fil..Lagre som) før du prøver å legge den inn i en annen pakke!"
 
 #: exe/xului/mainpage.py:315
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Pakke lagret i: %s"
 
 #: exe/webui/block.py:240 exe/webui/editorpane.py:373
 msgid "Pedagogical Help"
