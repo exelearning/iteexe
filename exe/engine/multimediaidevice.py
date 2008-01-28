@@ -98,6 +98,18 @@ choose where on the screen the media player will be positioned.""")
 
         return None
        
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'text'):
+            fields_list.append(self.text)
+        return fields_list
+        
 
     def upgradeToVersion2(self):
         """

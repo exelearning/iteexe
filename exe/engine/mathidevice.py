@@ -66,6 +66,16 @@ class MathIdevice(Idevice):
 
         return None
        
+      
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        # Math iDevice has no rich-text fields:
+        return []
+        
 
     def upgradeToVersion1(self):
         """

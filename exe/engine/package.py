@@ -414,8 +414,19 @@ class Package(Persistable):
 
         G.application.afterUpgradeHandlers = []
 
-        for zombie in G.application.afterUpgradeZombies2Delete:
-            zombie.delete(pruningZombies=True) 
+        num_zombies = len(G.application.afterUpgradeZombies2Delete)
+        for i in range(num_zombies-1, -1, -1):
+            zombie = G.application.afterUpgradeZombies2Delete[i]
+            # now, the zombie list can contain nodes OR resources to delete.
+            # if zombie is a node, then also pass in a pruning parameter..
+            zombie_is_node = False
+            if isinstance(zombie, Node):
+                zombie_is_node = True
+
+            if zombie_is_node: 
+                zombie.delete(pruningZombies=True) 
+            else:
+                zombie.delete() 
             del zombie
         G.application.afterUpgradeZombies2Delete = []
 

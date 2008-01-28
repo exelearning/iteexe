@@ -64,7 +64,17 @@ text through the text editing buttons associated with the field."""),
 
         return None
        
-
+    def getRichTextFields(self):
+        """
+        Like getResourcesField(), a general helper to allow nodes to search 
+        through all of their fields without having to know the specifics of each
+        iDevice type.  
+        """
+        fields_list = []
+        if hasattr(self, 'content'):
+            fields_list.append(self.content)
+        return fields_list
+        
     def upgradeToVersion1(self):
         """
         Upgrades the node from version 0 (eXe version 0.4) to 1.

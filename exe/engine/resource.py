@@ -403,7 +403,7 @@ class Resource(_Resource):
                 log.warn('Failed to do a checksumCheck on resource ' 
                     + repr(self)
                     + ', with unknown path, but storageName = ' 
-                    + self._storageName) 
+                    + repr(self._storageName)) 
             else:
                 log.warn('checksumCheck not able to find resource path '
                         + 'directly, since no package, but did find a path '
@@ -677,20 +677,24 @@ class Resource(_Resource):
             else:
                 log.warn("2nd pass: Checking zombie Resource \"" + str(self) 
                     + "\", but package does not yet have resources. deleting.")
-                self.delete() 
-                del self
+                G.application.afterUpgradeZombies2Delete.append(self)
                 return
 
         if self._package is None \
         or self.checksum not in self._package.resources:
             # most definitely appears to be a zombie:
             if deleteZombie: 
-                log.warn("Removing zombie Resource \"" + str(self) + "\".") 
-                self.delete() 
-                del self
+                log.warn("Removing zombie Resource \"" + str(self) 
+                        + "\"; not in package resources.") 
+                G.application.afterUpgradeZombies2Delete.append(self)
             else:
                 log.warn("1st pass: not yet removing zombie Resource \""
-                        + str(self) + "\".")
+                        + str(self) + "\"; not in package resources.")
+                # but add the second-pass call, 
+                # after cycling through all other resources 1 time:
+                G.application.afterUpgradeHandlers.append(
+                    self.testForAndDeleteZombieResources)
+                return
 
         elif self._package is not None and self._idevice is None\
         and self != self._package._backgroundImg:
@@ -704,9 +708,9 @@ class Resource(_Resource):
             found_idevice = None
 
             if self._package.root: 
-                # import FieldWithResources for class comparisons below.
-                from exe.engine.field     import FieldWithResources
-                for this_node in self._package.root.walkDescendants():
+                root_and_children = list(self._package.root.walkDescendants())
+                root_and_children.append(self._package.root)
+                for this_node in root_and_children:
                     for this_idevice in this_node.idevices:
                         just_found_idevice = False
 
@@ -734,12 +738,12 @@ class Resource(_Resource):
             # if not found in ANY idevice, it probably IS a zombie
             if found_idevice is None:
                 if deleteZombie: 
-                    log.warn("Removing zombie Resource \"" + str(self) + "\".") 
-                    self.delete() 
-                    del self 
+                    log.warn("Removing zombie Resource \"" + str(self) 
+                            + "\"; no corresponding iDevice found.") 
+                    G.application.afterUpgradeZombies2Delete.append(self)
                 else: 
                     log.warn("1st pass: not yet removing zombie Resource \""
-                        + str(self) + "\".")
+                        + str(self) + "\"; no corresponding iDevice found.")
                     # but add the second-pass call, 
                     # after cycling through all other resources 1 time:
                     G.application.afterUpgradeHandlers.append(
