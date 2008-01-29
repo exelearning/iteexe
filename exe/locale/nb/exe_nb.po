@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-25 13:30+1300\n"
-"PO-Revision-Date: 2008-01-29 11:59+1300\n"
+"PO-Revision-Date: 2008-01-29 13:12+1300\n"
 "Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -1540,45 +1540,51 @@ msgstr "Velg en Flash-video"
 
 #: exe/webui/element.py:1428
 msgid "Select a font size: "
-msgstr ""
+msgstr "Velg skriftstørrelse"
 
 #: exe/webui/element.py:546
 msgid "Select an MP3"
-msgstr ""
+msgstr "Velg en MP3"
 
 #: exe/webui/element.py:459
 msgid "Select an image"
-msgstr ""
+msgstr "Velg et bilde"
 
 #: exe/webui/element.py:862
 msgid "Select an image (JPG file)"
-msgstr ""
+msgstr "Velg et bilde (JPG-fil)"
 
 #: exe/engine/field.py:3110
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Velg så mange riktige svaralternativer \n"
+"som nødvendig ved å klikke på avkryssingsboksen ved siden av alternativet."
 
 #: exe/webui/quiztestblock.py:104
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Velg grense for bestått:"
 
 #: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:287
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Velg språkversjonen av Wikipedia \n"
+"du vil søke i, og skriv søkeordet."
 
 #: exe/engine/multichoiceidevice.py:102
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Velg riktig alternativ ved å klikke \n"
+"på radioknappen."
 
 #: exe/engine/imagemagnifieridevice.py:71
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Velg størrelse på forstørrelsesglasset."
 
 #: exe/engine/imagemagnifieridevice.py:67
 #: exe/engine/imagemagnifieridevice.py:121
@@ -1586,6 +1592,8 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Angi graden av zoom når iDevicen åpnes, \n"
+"som en prosentverdi av den opprinnelige størrelsen på bildet."
 
 #: exe/engine/imagemagnifieridevice.py:69
 #: exe/engine/imagemagnifieridevice.py:123
@@ -1593,60 +1601,62 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Angi maksimal zoom, som en \n"
+"prosentverdi av den opprinnelige størrelsen på bildet."
 
 #: exe/xului/propertiespage.py:201
 msgid "Settings saved"
-msgstr ""
+msgstr "Innstillingene er lagret"
 
 #: exe/webui/galleryblock.py:300
 #, python-format
 msgid "Show %s Image"
-msgstr ""
+msgstr "Vis %s bilde"
 
 #: exe/webui/element.py:1148
 msgid "Show Answers"
-msgstr ""
+msgstr "Vis svar"
 
 #: exe/webui/questionelement.py:126 exe/webui/element.py:1734
 msgid "Show Feedback"
-msgstr ""
+msgstr "Vis tilbakemelding"
 
 #: exe/webui/element.py:1132
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Vis/slett svar"
 
 #: exe/webui/element.py:1127
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Vis/skjul tilbakemelding"
 
 #: exe/webui/wikipediablock.py:120
 msgid "Site"
-msgstr ""
+msgstr "Side"
 
 #: exe/webui/imagemagnifierblock.py:148
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Størrelse på forstørrelsesglass:"
 
 #: exe/webui/wikipediablock.py:108
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Slovensk Wikipedia-artikkel"
 
 #: exe/webui/imagemagnifierblock.py:143
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: exe/webui/wikipediablock.py:140 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:98 exe/webui/editorpane.py:336
 msgid "Some emphasis"
-msgstr ""
+msgstr "Noe uthevet"
 
 #: exe/application.py:272 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Beklager, feil filformat"
 
 #: exe/webui/editorpage.py:172 exe/webui/editorpage.py:184
 msgid "Sorry, wrong file format."
-msgstr ""
+msgstr "Beklager, feil filformat."
 
 #: exe/xului/mainpage.py:1064
 #, python-format
@@ -1654,14 +1664,16 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Beklager, feil filformat:\n"
+"%s"
 
 #: exe/webui/wikipediablock.py:109
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Spansk Wikipedia-artikkel"
 
 #: exe/engine/casestudyidevice.py:219 exe/engine/casestudyidevice.py:337
 msgid "Story:"
-msgstr ""
+msgstr "Historie:"
 
 #: exe/webui/element.py:1031
 msgid "Strict Marking?"
@@ -1669,15 +1681,15 @@ msgstr ""
 
 #: exe/webui/element.py:1136 exe/webui/editorpane.py:424
 msgid "Submit"
-msgstr ""
+msgstr "Send inn"
 
 #: exe/webui/quiztestblock.py:360
 msgid "Submit Answer"
-msgstr ""
+msgstr "Saen inn svar"
 
 #: exe/webui/wikipediablock.py:110
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Svensk Wikipedia-artikkel"
 
 #: exe/engine/idevicestore.py:386
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -1686,19 +1698,19 @@ msgstr ""
 #: exe/engine/imagewithtextidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:53 exe/engine/multimediaidevice.py:64
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:249
 msgid "Text Box"
-msgstr ""
+msgstr "Tekstboks"
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:247
 msgid "Text Line"
-msgstr ""
+msgstr "Tekstlinje"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
+msgstr "MP3 iDevice lar deg legge inn en MP3-fil sammen med skriftlige instruksjoner."
 
 #: exe/engine/rssidevice.py:41
 msgid ""
@@ -1706,10 +1718,13 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"RSS iDevice brukes for å \n"
+"tilføre nytt innhold til en brukers maskin. Når du bruker denne iDevicen \n"
+"kan du tilføre lenker fra en kilde du ønsker at studentene skal se på."
 
 #: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
+msgstr "Vedleggs iDevicen brukes for i legge eksisterende filer inn i din .elp-fils innhold. For eksempel har du kanskje en PDF-fil eller en PPT-presentasjonsfil du ønsker å gi brukerne tilgang til. Disse kan legges inn og merkes for å anngi hva vedlegget er og hvor stor filen er. Brukerne kan klikke på den vedlagte linken og laste ned vedlegget."
 
 #: exe/engine/externalurlidevice.py:39
 msgid ""
@@ -1719,6 +1734,10 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"Den eksterne nettside iDevicen åpner en ekstern nettside \n"
+"i en egen rammen i ditt eXe-innhold i stede for å åpne den i et popup vindu. \n"
+"Dette betyr at brukerne ikke trenger å sjonglere mellom ulike vinduer. \n"
+"Denne iDevicen må kun brukes hvis innholdet skal vises til brukere som er koblet til internett. "
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1727,6 +1746,9 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
+"Flash med tekst iDevicen lar deg knytte \n"
+"skriftlig informasjon til en flashfil. Dette kan \n"
+"være nyttig hvis du ønsker å gi brukeren instruksjoner angående flashfilen brukeren skal se."
 
 #: exe/engine/imagemagnifieridevice.py:42
 msgid ""
@@ -1734,6 +1756,9 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Bildeforstørreren er et forstørrelsesverktøy som \n"
+"lar brukerne forstørre visningen av et bilde de har fått. Ved å føre \n"
+"forstørrelsesglasset over bildet kan man studere detaljer."
 
 #: exe/engine/freetextidevice.py:39
 msgid ""
@@ -1742,6 +1767,9 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"Størstedelen av en læringsressurs vil sette stoffet inn \n"
+"i en sammenheng, gi instruksjoner og generel informasjon. \n"
+"Dette gir deg et rammeverk som læringsaktiviteter kan bygges og leveres gjennom."
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1761,7 +1789,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:204
 msgid "This article is licensed under the "
-msgstr ""
+msgstr "Denne artikkelen er lisensiert under"
 
 #: exe/engine/imagemagnifieridevice.py:125
 msgid ""
@@ -1780,53 +1808,59 @@ msgstr ""
 
 #: exe/engine/freetextidevice.py:82
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Dette er et fritekstfelt. Genrelt læringsinnhold kan skrives her."
 
 #: exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Dette er et fritekstfelt."
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Dette er et eksempel på en \n"
+"brukerprodusert iDevice plugin."
 
 #: exe/webui/editorpane.py:68
 msgid "This is an optional field."
-msgstr ""
+msgstr "Dette er et valgfritt felt."
 
 #: exe/webui/block.py:214
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
+"Dette vil slette denne iDevicen.\n"
+"Ønsker du virkelig å gjøre dette?"
 
 #: exe/webui/block.py:259
 msgid "Tip:"
-msgstr ""
+msgstr "Tips:"
 
 #: exe/webui/galleryblock.py:184
 msgid "Title"
-msgstr ""
+msgstr "Tittel"
 
 #: exe/engine/quiztestidevice.py:125 exe/engine/quiztestidevice.py:201
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"For å markere riktig svar, \n"
+"klikk radioknappen ved siden av det riktige alternativet."
 
 #: exe/engine/package.py:83
 msgid "Topic"
-msgstr ""
+msgstr "Emne"
 
 #: exe/webui/truefalseelement.py:108 exe/webui/truefalseelement.py:181
 msgid "True"
-msgstr ""
+msgstr "Sant"
 
 #: exe/engine/truefalseidevice.py:142
 msgid "True-False Question"
-msgstr ""
+msgstr "Sant-Usant spørsmål"
 
 #: exe/engine/truefalseidevice.py:144
 msgid ""
@@ -1835,10 +1869,14 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
+"Sant-/usantspørsmål gir et utsagn brukeren \n"
+"må velge om er sant eller usant. Denne typen spørsmål passer \n"
+"best for faktainformasjon eller informasjon som kan gi \n"
+" enten/eller svar."
 
 #: exe/engine/field.py:2767
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Skriv et diskusjonstema her."
 
 #: exe/engine/multichoiceidevice.py:107
 msgid ""
