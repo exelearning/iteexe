@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-08-24 19:39+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -1998,7 +1998,7 @@ msgstr ""
 "utenti inoltre è richiesto di effettuare il download di Flash Player 8 da http://www.macromedia.com\n"
 "per visualizzare i video."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Questo è un campo di testo libero in cui può essere inserito i contenuti generali per l'apprendimento."
 
@@ -2303,7 +2303,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "L'iDevice %s non ha un pacchetto"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #, fuzzy
 msgid "iDevice Editor"

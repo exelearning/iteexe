@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-12-28 03:09+1300\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -2007,7 +2007,7 @@ msgstr ""
 "Bovendien is de Flash Player nodig om de film te bekijken; deze is beschikbaar\n"
 "op http://www.macromedia.com/"
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Vrij tekstveld om algemene leerinhoud in te voeren"
 
@@ -2316,7 +2316,7 @@ msgstr "iDevice %s heeft geen inhoud"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice-editor"

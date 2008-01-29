@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -1961,7 +1961,7 @@ msgstr ""
 "akutholakali ne-eXe.Abasebenzisi bazodinga ukulayishela ezansi i-Flash 8\n"
 "player ku-http://www.macromedia.com/ ukudlala umboniso."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Lesi isikhala esikhululekile sokubhalwayo ulwazi jikelele lokufunda lungafakwa lapha."
 
@@ -2260,7 +2260,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "I-iDevice %s ayinaphakethe"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "uMhleli we-iDevice"

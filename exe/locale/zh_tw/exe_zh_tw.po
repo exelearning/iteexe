@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2008-01-23 16:53+1300\n"
 "Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -1794,7 +1794,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr "這個 iDevice只支援Flash Video文件(.FLV)格式，而非其他視訊文件格式。"
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "這是一個自由文字欄欄位，可輸入一般的課程內容。"
 
@@ -2068,7 +2068,7 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 編輯器"

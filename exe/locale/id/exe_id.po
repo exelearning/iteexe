@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-12-04 01:11+1300\n"
 "Last-Translator: Toha Mustofa <toha.mustofa@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1975,7 +1975,7 @@ msgstr ""
 "diikutsertakan dengan eXe. Pengguna juga perlu untuk mengunduh pemutar video Flash 8\n"
 "dari http://www.macromedia.com/ untuk memainkan video."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Ini adalah isian teks bebas materi pembelajaran dapat dimasukan."
 
@@ -2277,7 +2277,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "\"iDevice\" %s tidak memiliki paket"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor \"iDevice\""

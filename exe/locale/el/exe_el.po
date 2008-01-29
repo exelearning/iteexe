@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2006-05-12 14:15+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -1975,7 +1975,7 @@ msgstr ""
 "το πρόγραμμα αναπαραγωγής Flash 8\n"
 " από το http://www.macromedia.com/ για να αναπαράγουν το βίντεο."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Πεδίο ελεύθερου κειμένου όπου μπορεί να εισαχθεί μαθησιακό περιεχόμενο γενικής φύσης."
 
@@ -2279,7 +2279,7 @@ msgstr "http://el.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"

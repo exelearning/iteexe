@@ -7,13 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2008-01-29 13:12+1300\n"
 "Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-EXE-Language: Bokmål\n"
 "X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:169
@@ -1806,7 +1807,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Dette er et fritekstfelt. Genrelt læringsinnhold kan skrives her."
 
@@ -2075,7 +2076,7 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""

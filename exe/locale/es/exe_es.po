@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -1924,7 +1924,7 @@ msgstr ""
 "acceptara otros formatos de videos. Pero se puede convertir otros formatos de video (por ejemplo mov, wmf, etc) into el formato .FLV usando encodadores de tercer partidos.\n"
 "Estos no viene con eXe. Se necesitara el Flash 8 player de http://www.macromedia.com/ para mostrar el video."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Este es un campo de texto libre que el contenido de aprendizaje puede ser ingresado."
 
@@ -2222,7 +2222,7 @@ msgstr "http://es.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no tiene paquete"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Redactor del iDevice"

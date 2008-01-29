@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-12-20 11:34+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -1986,7 +1986,7 @@ msgstr ""
 "Ta orodja niso del programa eXe. Uporabniki morajo za ogled animacij\n"
 "prenesti predvajalnik Flash 8 z naslova http://www.macromedia.com/."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "To je prosto besedno polje za vnos splošne učne vsebine."
 
@@ -2290,7 +2290,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "poučevalna enota %s nima določenega paketa"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Urejevalnik poučevalnih enot"

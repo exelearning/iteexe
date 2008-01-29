@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -1922,7 +1922,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr "Цей iDevice - підтримує тільки  Flash Video File (.FLV) формат, і не прийме ніякий інший формат.  Ви можете конвертувати інші формати (такі як mov, wmf та інші) в .FLV формат використовуючи спеціальні програми. Функції конвертування не є вбудованими в eXe. Користувачі також муситимуть завантажити Флеш плеєр з офіційного сайту http://www.macromedia.com/ для того щоб переглядати відео ролики."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Це поле з вільним текстом. Сюди можна вводити основну навчальну інформацію."
 
@@ -2222,7 +2222,7 @@ msgstr "iDevice %s немає пакету"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"

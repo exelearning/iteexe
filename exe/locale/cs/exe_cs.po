@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-07-20 14:24+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -1974,7 +1974,7 @@ msgstr ""
 "Ty ale v eXe nenajdete. Uživatelé si také musí pro přehrání flashe nainstalovat \n"
 "přehrávač ze stránek http://www.macromedia.com."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Toto je volné textové pole, kam může být vložen všeobecný výukový obsah."
 
@@ -2278,7 +2278,7 @@ msgstr "http://cs.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "IDevice %s nemá balíček"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor iDevice"

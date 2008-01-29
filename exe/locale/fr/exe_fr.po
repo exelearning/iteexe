@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-12-12 15:23+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1794,7 +1794,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr "Cet outil n'autorise que le format Flash vidéo File (.flv) et n'accepte aucun autre format vidéo. Vous pouvez cependant convertir les autres formats (ex: mov, wmf,etc..) au format .flv à l'aide d'outils de conversion. Ceux-ci ne sont pas intégrés sous eXe. Les utilisateurs doivent également disposer du lecteur Flash 8 (http://www.macromedia.com) sur le poste client pour lire la vidéo."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Ceci est un champ de \"Texte libre\" où vous pouvez insérer du contenu d'ordre général concernant l'apprentissage."
 
@@ -2065,7 +2065,7 @@ msgstr "http://fr.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "L'outil pédagogique %s n'a pas de dossier"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editeur d'outil pédagogique"

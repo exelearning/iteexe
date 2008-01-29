@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-25 13:30+1300\n"
+"POT-Creation-Date: 2008-01-29 14:45+1300\n"
 "PO-Revision-Date: 2007-06-27 11:47-0000\n"
 "Last-Translator: \n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -2013,7 +2013,7 @@ msgstr ""
 "Estes não são suportados no eXe. Os utilizadores necessitam do player do Flash 8 \n"
 "disponível em http:\\www.macromedia.com para ver o vídeo."
 
-#: exe/engine/freetextidevice.py:82
+#: exe/engine/freetextidevice.py:92
 msgid "This is a free text field general learning content can be entered."
 msgstr "Este é um campo de texto livre e de conteúdo geral de aprendizagem que pode ser introduzido"
 
@@ -2322,7 +2322,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s não tem pacote"
 
-#: exe/engine/package.py:479 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:490 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor iDevice"
