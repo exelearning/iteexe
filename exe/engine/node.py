@@ -178,7 +178,12 @@ class Node(Persistable):
         new_node_path = self.GetFullNodePath()
         self.last_full_node_path = new_node_path
         log.debug('Renaming node path, from "' + old_node_path 
-                + '" to "' + new_node_path)
+                + '" to "' + new_node_path + '"')
+
+        if old_node_path == new_node_path:
+            # as can happen when extracting the entire package,
+            # then there is no need to do anything here!
+            return
 
         current_package = self.package
 
