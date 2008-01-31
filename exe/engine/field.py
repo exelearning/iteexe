@@ -240,7 +240,10 @@ class FieldWithResources(Field):
         # if anchor_names[] does not already exist, then set it 
         # via ListActiveAnchors, now a part of ProcessInternalAnchors:
         if not hasattr(self, 'anchor_names'):
-            self.ProcessInternalAnchors(self.content)
+            if hasattr(self, 'content'): 
+                self.ProcessInternalAnchors(self.content)
+            else:
+                self.anchor_names = []
         if not hasattr(self, 'anchors_linked_from_fields'): 
             self.anchors_linked_from_fields = {}
             # { 'anchor_name' -> [src_field1, src_field2, ...] }
