@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-29 14:45+1300\n"
+"POT-Creation-Date: 2008-02-04 15:56+1300\n"
 "PO-Revision-Date: 2008-01-07 16:08+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -117,22 +117,22 @@ msgstr ""
 "<p>Entreu el text per l'activitat de buits al camp de buits\n"
 " pegant el text des d'un altra font o teclejant el text directament al camp.</p><p> Per seleccionar paraules per amagar, feu doble clic sobre la paraula per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p>"
 
-#: exe/engine/field.py:2521
+#: exe/engine/field.py:2524
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Si ho deixeu no seleccionat un nombre petit d'errors seran acceptats. Si ho deixeu seleccionat sols s'acceptarà una comparació exacta.. </p><p><strong>Per exemple:</strong> Si la paraula correcta és <code>Elefant</code> i poseu <code>elefant</code> serà jutjat com<em>\"close enough\" incorrecta</em> pel algoritme sols si té una lletra incorrecta, sempre que \"Comprovar errades\" estiga seleccionat.</p><p>Si la casella \"Comprovar errades\" no està  seleccionada al exemple d'abans , la lletra<code>e</code> no serà considerada un error i <code>elefant</code> serà acceptada.</p><p> Si seleccioneu \"Marcatge estricte\" i \"Comprovar errades\" al mateix temps , la única paraula correcta serà \"Elefant\". Si sols seleccioneu \"marcatge estricte\" i \"Comprovar errades\" no ho està, \"elefant\" també serà acceptada.</p>"
 
-#: exe/engine/field.py:2542
+#: exe/engine/field.py:2545
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Si aquesta opció està seleccionada, posar respostes amb un recompte d'errors superior a un serà considerat un error.</p>"
 
-#: exe/engine/field.py:2547
+#: exe/engine/field.py:2550
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr "<p>Si marqueu aquesta opció, cada paraula serà marcada com l'estudiant l'escriu, tanmateix totes les paraules seran marcades al final de l'exercici.</p>"
 
-#: exe/engine/field.py:2796
+#: exe/engine/field.py:2799
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Seleccioneu símbols des de l'editor de text o entreu LATEX manualment per crear la formula matemàtica. Per veure com el vostre LATEX és mostrat empreu el botó &lt;Vista prèvia&gt;  de sota.</p>"
 
@@ -340,7 +340,7 @@ msgstr ""
 "L'alineament et permet escollir on serà col·locat \n"
 " el reproductor multimèdia  en la pantalla."
 
-#: exe/engine/field.py:2585
+#: exe/engine/field.py:2588
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -501,7 +501,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Premeu <strong>Seleccioneu un arxiu</strong>, navegueu fins aquest arxiu que voleu adjuntar i seleccioneu-lo."
 
-#: exe/engine/field.py:2134
+#: exe/engine/field.py:2137
 msgid "Click Here"
 msgstr "Prem Ací"
 
@@ -513,7 +513,7 @@ msgstr "Prem per mirar les instruccions d'emplenat"
 msgid "Click here"
 msgstr "Prem ací"
 
-#: exe/engine/field.py:2804
+#: exe/engine/field.py:2807
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -854,7 +854,7 @@ msgstr ""
 " Podeu afegir opcions prement el botó \"Afegir un altra opció\". Podeu esborrar opcions \n"
 " prement la \"X\" roja al costat de la opció."
 
-#: exe/engine/field.py:3106
+#: exe/engine/field.py:3109
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -907,7 +907,7 @@ msgstr ""
 " La pregunta hauria de ser clara i inequívoca. Evita premisses negatives \n"
 " doncs aquestes tendeixen a ser ambigues."
 
-#: exe/engine/field.py:3098
+#: exe/engine/field.py:3101
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -978,8 +978,8 @@ msgstr "Fals"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2876
-#: exe/engine/field.py:2924 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
+#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
 #: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
@@ -995,7 +995,7 @@ msgstr ""
 " data no la poses en aquest camp."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3115 exe/engine/field.py:3185
+#: exe/engine/field.py:3118 exe/engine/field.py:3188
 msgid "Feedback:"
 msgstr "Realimentació:"
 
@@ -1087,7 +1087,7 @@ msgid "Hide/Show Word"
 msgstr "Amaga/Mostra la paraula"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2950 exe/engine/field.py:3016
+#: exe/engine/field.py:2953 exe/engine/field.py:3019
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1325,7 +1325,7 @@ msgstr ""
 " i haurien de definir allò que els alumnes seran  capaços de fer \n"
 " quan hagen completat les tasques d'aprenentatge."
 
-#: exe/engine/field.py:2691 exe/engine/field.py:2755
+#: exe/engine/field.py:2694 exe/engine/field.py:2758
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1333,7 +1333,7 @@ msgstr ""
 "Seleccioneu sols .flv ( arxius de vídeo flash) per \n"
 " aquest iDevice."
 
-#: exe/engine/field.py:2627 exe/engine/field.py:2671
+#: exe/engine/field.py:2630 exe/engine/field.py:2674
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1342,13 +1342,13 @@ msgstr ""
 "aquest iDevice."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2872 exe/engine/field.py:2921
+#: exe/engine/field.py:2875 exe/engine/field.py:2924
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Opció"
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3075
+#: exe/engine/field.py:3041 exe/engine/field.py:3078
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Opcions"
@@ -1467,8 +1467,8 @@ msgstr "La carpeta de vistes prèvies %s és un arxiu, no pot ser reemplaçat"
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2329
-#: exe/engine/field.py:2376
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
+#: exe/engine/field.py:2379
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1544,13 +1544,13 @@ msgid "Put instructions for learners here"
 msgstr "Posa instruccions per als alumnes ací"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2947 exe/engine/field.py:3012
+#: exe/engine/field.py:2950 exe/engine/field.py:3015
 msgid "Question"
 msgstr "Pregunta"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3101 exe/engine/field.py:3182 exe/webui/element.py:1660
+#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Pregunta:"
 
@@ -1690,7 +1690,7 @@ msgstr "Seleccionar una imatge"
 msgid "Select an image (JPG file)"
 msgstr "Seleccionar una imatge (arxiu JPG)"
 
-#: exe/engine/field.py:3110
+#: exe/engine/field.py:3113
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -2020,7 +2020,7 @@ msgstr ""
 " que els alumnes han de decidir si és certa o falsa. \n"
 " Aquest tipus de qüestions funcionen bé amb preguntes breus segons siga la resposta."
 
-#: exe/engine/field.py:2767
+#: exe/engine/field.py:2770
 msgid "Type a discussion topic here."
 msgstr "Escriu un tema de discussió ací."
 
@@ -2050,7 +2050,7 @@ msgstr ""
 "\"Resposta correcta\" quan la resposta siga correcta ; o \n"
 "\"Resposta incorrecte\" quan siga incorrecta."
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3116
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

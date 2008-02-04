@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-29 14:45+1300\n"
+"POT-Creation-Date: 2008-02-04 15:56+1300\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Fredrik Paulsson <frepa@frepa.org>\n"
@@ -98,22 +98,22 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "Fyll i texten till slutövningen genom att klistra in eller skriva i fältet. Markera ord som du vill dölja genom att dubbelklicka på ordet och klicka på <i>Visa/dölj ord</i> -knappen."
 
-#: exe/engine/field.py:2521
+#: exe/engine/field.py:2524
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2542
+#: exe/engine/field.py:2545
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2547
+#: exe/engine/field.py:2550
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2796
+#: exe/engine/field.py:2799
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -304,7 +304,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr ""
 
-#: exe/engine/field.py:2585
+#: exe/engine/field.py:2588
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -458,7 +458,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klicka på <strong>Välj fil</strong>, navigera till filen och välj den."
 
-#: exe/engine/field.py:2134
+#: exe/engine/field.py:2137
 #, fuzzy
 msgid "Click Here"
 msgstr "Klicka här"
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Click here"
 msgstr "Klicka här"
 
-#: exe/engine/field.py:2804
+#: exe/engine/field.py:2807
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -793,7 +793,7 @@ msgstr ""
 " att klicka på\n"
 " \"x\" intill respektive alternativ."
 
-#: exe/engine/field.py:3106
+#: exe/engine/field.py:3109
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -843,7 +843,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr ""
 
-#: exe/engine/field.py:3098
+#: exe/engine/field.py:3101
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -919,8 +919,8 @@ msgstr "Falskt"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2876
-#: exe/engine/field.py:2924 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
+#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
 #: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
@@ -934,7 +934,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3115 exe/engine/field.py:3185
+#: exe/engine/field.py:3118 exe/engine/field.py:3188
 #, fuzzy
 msgid "Feedback:"
 msgstr "Återkoppling"
@@ -1034,7 +1034,7 @@ msgid "Hide/Show Word"
 msgstr "Dölj/visa ord"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2950 exe/engine/field.py:3016
+#: exe/engine/field.py:2953 exe/engine/field.py:3019
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1294,26 +1294,26 @@ msgstr ""
 " definiera vad eleverna skall kunna när\n"
 " de avslutat momentet"
 
-#: exe/engine/field.py:2691 exe/engine/field.py:2755
+#: exe/engine/field.py:2694 exe/engine/field.py:2758
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/engine/field.py:2627 exe/engine/field.py:2671
+#: exe/engine/field.py:2630 exe/engine/field.py:2674
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2872 exe/engine/field.py:2921
+#: exe/engine/field.py:2875 exe/engine/field.py:2924
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Val"
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3075
+#: exe/engine/field.py:3041 exe/engine/field.py:3078
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 #, fuzzy
 msgid "Options"
@@ -1436,8 +1436,8 @@ msgstr "Filnamn %s är en fil, kan inte ersätta den"
 msgid "Previous"
 msgstr "Förhandsgranska"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2329
-#: exe/engine/field.py:2376
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
+#: exe/engine/field.py:2379
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1508,13 +1508,13 @@ msgid "Put instructions for learners here"
 msgstr "Fyll i elevinstruktioner"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2947 exe/engine/field.py:3012
+#: exe/engine/field.py:2950 exe/engine/field.py:3015
 msgid "Question"
 msgstr "Fråga"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3101 exe/engine/field.py:3182 exe/webui/element.py:1660
+#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Fråga:"
 
@@ -1660,7 +1660,7 @@ msgstr "Välj bild"
 msgid "Select an image (JPG file)"
 msgstr "Välj bild"
 
-#: exe/engine/field.py:3110
+#: exe/engine/field.py:3113
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1969,7 +1969,7 @@ msgstr ""
 "Sant/falskt-frågor presenterar ett påstående som eleven skall ta ställning till. Denna typ av frågor kan ibland lämpa sig\n"
 " för faktafrågor ellerfrågor som kan besvaras med antingen eller."
 
-#: exe/engine/field.py:2767
+#: exe/engine/field.py:2770
 #, fuzzy
 msgid "Type a discussion topic here."
 msgstr "Diskussionsämne:"
@@ -2001,7 +2001,7 @@ msgstr ""
 "\"Rätt svar\" som indikation på val av rätt svar, respektive \n"
 "\"Fel svar\" för alla andra alternativ."
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3116
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-29 14:45+1300\n"
+"POT-Creation-Date: 2008-02-04 15:56+1300\n"
 "PO-Revision-Date: 2007-08-24 19:39+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -123,16 +123,16 @@ msgstr ""
 "campo. </p><p> Per selezionare le parole da nascondere, doppio click sulla parola\n"
 "da selezionare e premere sul pulsante Nascondi/Mostra Parola in basso.</p>"
 
-#: exe/engine/field.py:2521
+#: exe/engine/field.py:2524
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Se si lascia disabilitato saranno accettati solo un piccolo numero di errori ortografici o maiuscolo/minuscolo. Se abilitato sarà accettata l'esatta corrispondenza ortografica e di maiuscolo/minuscolo.</p><p><strong>Per esempio:</strong> Se la risposta corretta è <code>Elefante</code> quindi entrambe <code>elefante</code> e <code>Elifante</code> saranno giudicate <em>\"abbastanza vicino\"</em> dall'algoritmo anche se si ha una lettera errata, quando \"Verifica Maiuscolo/Minuscolo\" è abilitato.</p><p>Se la verifica Maiuscolo/minuscolo è disabilitata nell'esempio precedente, la lettera minuscola <code>e</code> non sarà  considerata un errore e <code>elifante</code> sarà anch'essa accettata.</p><p>Se entrambe \"Verifica stringente\" and \"Verifica Maiuscolo/Minuscolo\" sono impostate, la sola risposta corretta è  \"Elefante\". Solo se \"Verifica stringente\" è abilitata e \"Verifica Maiuscolo/Minuscolo\" non lo è, \"elefante\" sarà anche essa accettata.</p>"
 
-#: exe/engine/field.py:2542
+#: exe/engine/field.py:2545
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Se questa opzione è abilitata, le risposte inviate con diversi formati Maiuscolo/Minuscolo sono identificate come sbagliate.</p>"
 
-#: exe/engine/field.py:2547
+#: exe/engine/field.py:2550
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -143,7 +143,7 @@ msgstr ""
 "lo studente la inserisce invece di evidenziare tutte le parole alla fine\n"
 "dell'esercizio.</p>"
 
-#: exe/engine/field.py:2796
+#: exe/engine/field.py:2799
 #, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Seleziona i simboli dall'area di testo sottostante per creare formule matematiche. Ogni simbolo verrà visalizzato nel campo col linguaggio matematico LATEX la cui anteprima può essere vista usando il bottone  &lt;Anteprima&gt;."
@@ -365,7 +365,7 @@ msgstr ""
 "Allineamento che permette \n"
 "di scegliere dove sarà posizionato il media player nello schermo."
 
-#: exe/engine/field.py:2585
+#: exe/engine/field.py:2588
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Premere <strong>Seleziona un file</strong>, raggiungere il file che si vuole allegare e selezionarlo."
 
-#: exe/engine/field.py:2134
+#: exe/engine/field.py:2137
 msgid "Click Here"
 msgstr "Premere Qui"
 
@@ -546,7 +546,7 @@ msgstr "Premere per le istruzioni di completamento"
 msgid "Click here"
 msgstr "Premere Qui"
 
-#: exe/engine/field.py:2804
+#: exe/engine/field.py:2807
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -882,7 +882,7 @@ msgstr ""
 "Si possono aggiungere le Opzioni premendo il pulsante \"Aggiungere un'altra opzione\". \n"
 "Per cancellare le opzioni premere sulla \"X\" rossa vicino alle Opzioni."
 
-#: exe/engine/field.py:3106
+#: exe/engine/field.py:3109
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -936,7 +936,7 @@ msgstr ""
 "La domanda dovrebbe essere chiara ed inequivocabile. Evitare premesse \n"
 "in forma negativa che tendono ad essere ambigue."
 
-#: exe/engine/field.py:3098
+#: exe/engine/field.py:3101
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -1010,8 +1010,8 @@ msgstr "Falso"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2876
-#: exe/engine/field.py:2924 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
+#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
 #: exe/webui/common.py:228 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
@@ -1027,7 +1027,7 @@ msgstr ""
 "se i dati non vengono inseriti in questo campo."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3115 exe/engine/field.py:3185
+#: exe/engine/field.py:3118 exe/engine/field.py:3188
 msgid "Feedback:"
 msgstr "Informazioni di ritorno:"
 
@@ -1121,7 +1121,7 @@ msgid "Hide/Show Word"
 msgstr "Nascondere/Mostrare Parole"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2950 exe/engine/field.py:3016
+#: exe/engine/field.py:2953 exe/engine/field.py:3019
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1364,7 +1364,7 @@ msgstr ""
 "definire che cosa gli studenti potranno fare quando essi hanno completato\n"
 "i compiti appresi."
 
-#: exe/engine/field.py:2691 exe/engine/field.py:2755
+#: exe/engine/field.py:2694 exe/engine/field.py:2758
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1372,7 +1372,7 @@ msgstr ""
 "Selezionare solamente .flv (Flash Video Files) per \n"
 "questo iDevice."
 
-#: exe/engine/field.py:2627 exe/engine/field.py:2671
+#: exe/engine/field.py:2630 exe/engine/field.py:2674
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1381,13 +1381,13 @@ msgstr ""
 "questo iDevice."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2872 exe/engine/field.py:2921
+#: exe/engine/field.py:2875 exe/engine/field.py:2924
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Opzione"
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3075
+#: exe/engine/field.py:3041 exe/engine/field.py:3078
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Opzioni"
@@ -1506,8 +1506,8 @@ msgstr "Nome file %s è un file, non si può sostituire"
 msgid "Previous"
 msgstr "Precedente"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2329
-#: exe/engine/field.py:2376
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
+#: exe/engine/field.py:2379
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1582,14 +1582,14 @@ msgid "Put instructions for learners here"
 msgstr "Inserire quà le istruzione per gli studenti"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2947 exe/engine/field.py:3012
+#: exe/engine/field.py:2950 exe/engine/field.py:3015
 #, fuzzy
 msgid "Question"
 msgstr "Domanda:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3101 exe/engine/field.py:3182 exe/webui/element.py:1660
+#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Domanda:"
 
@@ -1729,7 +1729,7 @@ msgstr "Selezionare una immagine"
 msgid "Select an image (JPG file)"
 msgstr "Selezionare una immagine (file JPG)"
 
-#: exe/engine/field.py:3110
+#: exe/engine/field.py:3113
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -2066,7 +2066,7 @@ msgstr ""
 "funzionano bene per le informazioni effettive (Vero) e per le informazioni \n"
 "che si prestano ad una o all'altra risposta (Vero e Falso)."
 
-#: exe/engine/field.py:2767
+#: exe/engine/field.py:2770
 msgid "Type a discussion topic here."
 msgstr "Scrivere qui un argomento di discussione."
 
@@ -2098,7 +2098,7 @@ msgstr ""
 "\"Risposta Corretta\"  per indicare la selezione di una risposta corretta; oppure \n"
 "\"Risposta Sbagliata\" per le altre alternative."
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3116
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
