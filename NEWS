@@ -1,4 +1,4 @@
-Version 1.03 (r3373)
+Version 1.03 (r3373) 2008-01-21
 * Add linking across pages within a package (only for web export)
 * Add note that SCORM export previous/next requires non-standard extension
 * Add prototype IMS Common Cartridge export (no quizzing)
@@ -12,7 +12,7 @@ Version 1.03 (r3373)
 * Update to BeautifulSoup 3.0.5
 * Translation updates
 
-Version 1.02 (r3303)
+Version 1.02 (r3303) 2007-10-01
 * Add ability to type resource name into url box (without browse button)
 * Add CSS divs around nodes in single page and print exports for pagination
 * Add detailed uninstall name, links, icon for Windows
@@ -20,7 +20,7 @@ Version 1.02 (r3303)
 * Fix XHTML for div wrapper of Java Applet iDevice export
 * Add ID, TH translations
 
-Version 1.01 (r3265)
+Version 1.01 (r3265) 2007-09-05
 * Add embedded MP3 player as a rich text editor media type
 * Add FLV player as rich text editor media type
 * Add DIV around each iDevice on web/ims/scorm export
@@ -36,7 +36,7 @@ Version 1.01 (r3265)
 * Remove deprecated dublincore.xml metadata file from SCORM 1.2 packages
 * Updated DE,FR,IT,PL translations
 
-Version 1.00 (r3219)
+Version 1.00 (r3219) 2007-08-17
 * Fix styles to use relative line height rather than absolute
 * Fix splash progress bar to indicate 100%
 * Fix iDevice deletion issues including read-only resources
@@ -47,7 +47,7 @@ Version 1.00 (r3219)
 * Change export to folder to not change UTF-8 filenames
 * Update About box
 
-Version 0.99 (r3186)
+Version 0.99 (r3186) 2007-08-10
 * Add splash screen for when launching eXe by double-clicking .elp
 * Add warning screen for trying to launch multiple copies of eXe
 * Add warning for trying to run an older version of eXe with newer data
@@ -63,7 +63,7 @@ Version 0.99 (r3186)
 * Slightly reduce eXe package size by not storing multiple copies of text
 * Updated German, Japanese, and Chinese translations
 
-Version 0.98 (r3136)
+Version 0.98 (r3136) 2007-08-03
 * Add ability to insert MimeTeX math images in any field with TinyMCE
 * Add message to RSS iDevice for when feed fails
 * Add labels to items added in the iDevice editor edit display
@@ -82,7 +82,7 @@ Version 0.98 (r3136)
 * Many translation updates
 * Update Firefox to 2.0.0.6
 
-Version 0.97 (r3024)
+Version 0.97 (r3024) 2007-07-19
 * Add ability to embed media in text areas using TinyMCE toolbar
 * Fix display of header image in Properties... Package
 * Fix web export when package references a missing header image
@@ -94,7 +94,7 @@ Version 0.97 (r3024)
 * Translation updates
 * Upgrade TinyMCE to 2.1.1.1
 
-Version 0.96 (r2976)
+Version 0.96 (r2976) 2007-07-10
 * Add ability to edit (delete) broken iDevices in a package
 * Allow preferences to change locale without triggering POSTDATA message
 * Greatly improve the ability to load packages created with older versions
@@ -109,7 +109,7 @@ Version 0.96 (r2976)
 * Change custom iDevices to open attachments in preferred browser
 * Change spec file so RPM can be built on F7 in addition to FC6
 
-Version 0.95 (r2931)
+Version 0.95 (r2931) 2007-06-24
 * Add ability to embed images in text areas with TinyMCE
 * Remove Image With Text iDevice, migrates to Free Text iDevice
 * Remove image field from iDevice editor
@@ -128,7 +128,7 @@ Version 0.95 (r2931)
 * Translation updates, including addition of Catalan
 * Update to BeautifulSoup 3.0.4
 
-Version 0.24 (r2857)
+Version 0.24 (r2857) 2007-05-31
 * Rewrite anchor tags in textareas in preview mode to use local browser
 * Restrict Image Magnifier selection to jpg images
 * Fix position of iDevice edit button in preview mode
@@ -157,7 +157,7 @@ Version 0.24 (r2857)
 * Update to Python 2.5.1
 * Update to BeautifulSoup 2.1.1 for wiki parsing
 
-Version 0.23 (r2729)
+Version 0.23 (r2729) 2007-04-02
 * Change FLV player to FlowPlayer
 * Move Refresh menu button to a Tools menu item
 * Add links to online manual, tips and tricks, and release notes to Help menu
@@ -171,7 +171,7 @@ Version 0.23 (r2729)
 * Disable Nevow timeout exceptions that could be triggered by Firefox dialogs
 * Update to TinyMCE 2.1.0
 
-Version 0.22 (r2674)
+Version 0.22 (r2674) 2007-03-20
 * Add File... Print to print an entire course (same as export singlepage)
 * Add attachment icon in preview mode
 * Add Slate style
