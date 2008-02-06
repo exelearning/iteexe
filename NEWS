@@ -1,3 +1,5 @@
+* Automate building Debian changelog and versioning
+
 Version 1.03 (r3373) 2008-01-21
 * Add linking across pages within a package (only for web export)
 * Add note that SCORM export previous/next requires non-standard extension
