@@ -35,6 +35,7 @@ from exe.engine.htmlToText import HtmlToText
 from twisted.persisted.styles import Versioned
 from exe.webui                import common
 from exe                  import globals as G
+from exe.engine.node      import Node
 import os
 import re
 import urllib
@@ -620,6 +621,14 @@ class FieldWithResources(Field):
                     # AND point it to the actual node!
                     link_field = common.findLinkedField(this_package, 
                             link_node_name, link_anchor_name)
+                    # to support the automatic "auto_top" anchors:
+                    if link_field is None and link_anchor_name == u"auto_top":
+                        # go ahead and find the corresponding Node instead:
+                        link_field = common.findLinkedNode(this_package, 
+                            link_node_name, link_anchor_name, 
+                            check_fields=False)
+                        # just beware that anything referencing the link_field
+                        # must now check if it is a Field or a Node, eh!
                     intlinks_names_n_fields[link_name] = link_field
                     # Note that this link COULD occur multiple times,
                     # but it *should* still point to the same link_field
@@ -741,8 +750,13 @@ class FieldWithResources(Field):
                 and self in this_parentNode.anchor_fields:
                     this_parentNode.anchor_fields.remove(self)
 
-                if hasattr(this_parentNode, 'anchor_fields') \
-                and len(this_parentNode.anchor_fields) == 0 \
+                # remove this node from the package's anchor_nodes list
+                # IF it has no more anchor_fields NOR any links to its auto_top:
+                if (not hasattr(this_parentNode, 'anchor_fields') \
+                or len(this_parentNode.anchor_fields) == 0) \
+                and (not hasattr(this_parentNode, 
+                    'top_anchors_linked_from_fields') \
+                or len(this_parentNode.top_anchors_linked_from_fields) == 0) \
                 and hasattr(this_package, 'anchor_nodes') \
                 and this_parentNode in this_package.anchor_nodes:
                     this_package.anchor_nodes.remove(this_parentNode)
@@ -854,11 +868,45 @@ class FieldWithResources(Field):
         clear out the internal data structures for this internal link,
         once it has been found to no longer exist in the content.
         """ 
+        # only specify a link_node if no link_field is specifically used:
+        link_node = None
+        this_package = None
+        if self.idevice and self.idevice.parentNode:
+            this_package = self.idevice.parentNode.package
+
+        # ListActiveInternalLinks() is now returning the Nodes for auto_tops:
+        if isinstance(link_field, Node):
+            link_node = link_field
+
         # beware of links for which the anchor is not found
         # (as might occur with mismatched escaped anchor names, etc.)
         if link_field is None:
-            log.warn('Did not find link_field; unable to remove internal link '
-                    + 'data structures for:' + link_anchor_name)
+            link_node_name = full_link_name[ 0 : -(len(link_anchor_name)+1)]
+            found_node = common.findLinkedNode(this_package, 
+                            link_node_name, link_anchor_name)
+            if found_node:
+                link_node = found_node
+            else: 
+                log.warn('Did not find link_field; unable to remove '
+                    + 'internal link data structures for:' + link_anchor_name)
+                return
+
+        if link_node:
+            # not linked to a field, but just to a node, as per an auto_top:
+            if not hasattr(link_node, 'top_anchors_linked_from_fields'):
+                link_node.top_anchors_linked_from_fields = []
+            if self in link_node.top_anchors_linked_from_fields:
+                link_node.top_anchors_linked_from_fields.remove(self)
+            # and if the node's auto_top was the only reason it was
+            # listed in the package's anchor_nodes, then remove that as well:
+            if len(link_node.top_anchors_linked_from_fields)==0 \
+            and (not hasattr(link_node, 'anchor_fields') \
+            or len(link_node.anchor_fields) == 0):
+                if this_package and not hasattr(this_package, 'anchor_nodes'):
+                    this_package.anchor_nodes = []
+                if this_package and link_node in this_package.anchor_nodes:
+                    this_package.anchor_nodes.remove(link_node)
+            log.debug('Removed internal link to auto_top: ' + full_link_name)
             return
 
         # remove this field from the source links of the destination anchor:
@@ -872,16 +920,44 @@ class FieldWithResources(Field):
         return
 
 
-    def AddInternalLink(self, link_anchor_name, link_field):
+    def AddInternalLink(self, full_link_name, link_anchor_name, link_field):
         """
         setup the internal data structures for this internal link,
         once it has been found to exist in the content.
         """ 
+        # only specify a link_node if no link_field is specifically used:
+        link_node = None
+        this_package = None
+        if self.idevice and self.idevice.parentNode:
+            this_package = self.idevice.parentNode.package
+
+        # ListActiveInternalLinks() is now returning the Nodes for auto_tops:
+        if isinstance(link_field, Node):
+            link_node = link_field
+
         # beware of links for which the anchor is not found
         # (as might occur with mismatched escaped anchor names, etc.)
         if link_field is None:
-            log.warn('Did not find link_field; unable to add internal link '
+            link_node_name = full_link_name[ 0 : -(len(link_anchor_name)+1)]
+            found_node = common.findLinkedNode(this_package, 
+                            link_node_name, link_anchor_name)
+            if found_node:
+                link_node = found_node
+            else:
+                log.warn('Did not find link_field; unable to add internal link '
                     + 'data structures for:' + link_anchor_name)
+                return
+
+        if link_node:
+            # not linked to a field, but just to a node, as per an auto_top:
+            if not hasattr(link_node, 'top_anchors_linked_from_fields'):
+                link_node.top_anchors_linked_from_fields = []
+            if self not in link_node.top_anchors_linked_from_fields:
+                link_node.top_anchors_linked_from_fields.append(self)
+            if this_package and not hasattr(this_package, 'anchor_nodes'):
+                this_package.anchor_nodes = []
+            if this_package and link_node not in this_package.anchor_nodes:
+                this_package.anchor_nodes.append(link_node)
             return
 
         # add this field to the source links of the destination anchor:
@@ -914,7 +990,7 @@ class FieldWithResources(Field):
             if this_link_name not in old_intlinks.keys():
                 this_anchor_name = common.getAnchorNameFromLinkName(
                         this_link_name)
-                self.AddInternalLink(this_anchor_name,
+                self.AddInternalLink(this_link_name, this_anchor_name,
                         new_intlinks_to_anchors[this_link_name])
 
         # Remove any old links which are no longer in use!

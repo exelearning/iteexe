@@ -127,13 +127,26 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     # (otherwise TinyMCE will only see those anchors within this field)
     if package is not None and hasattr(package, 'anchor_fields') \
     and package.anchor_fields is not None:
-        log.debug(u"richTextArea adding exe_tmp_anchor tags....")
+        log.debug(u"richTextArea adding exe_tmp_anchor tags for user anchors.")
         for anchor_field in package.anchor_fields: 
             anchor_field_path = anchor_field.GetFullNodePath()
             for anchor_name in anchor_field.anchor_names:
                 full_anchor_name = anchor_field_path + "#" + anchor_name
                 html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
                     % (full_anchor_name, full_anchor_name)
+    # and below the user-defined anchors, also show "auto_top" anchors for ALL:
+    if package is not None and package.root is not None:
+        log.debug(u"richTextArea adding exe_tmp_anchor auto_top for ALL nodes.")
+        node_anchors = True
+        if node_anchors:
+            root_node = package.root
+            anchor_node_path = root_node.GetFullNodePath() + "#auto_top"
+            html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
+                % (anchor_node_path, anchor_node_path)
+            for this_node in root_node.walkDescendants():
+                anchor_node_path = this_node.GetFullNodePath() + "#auto_top"
+                html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
+                    % (anchor_node_path, anchor_node_path)
     # these exe_tmp_anchor tags will be removed when processed by
     # FieldWithResources' ProcessPreviewed()
     ########
@@ -511,19 +524,42 @@ def findLinkedField(package, exe_node_path, anchor_name):
                     # so just break out and return the first matching one:
                     #return anchor_field.idevice.parentNode
                     return anchor_field
+
     return None
 
 
-def findLinkedNode(package, exe_node_path, anchor_name):
+def findLinkedNode(package, exe_node_path, anchor_name, check_fields=True):
     """
     find the node which corresponds to the exe_node_name of the form:
        "exe-node:Home:Topic:etc" of the  href="exe-node:Home:Topic:etc#Anchor"
     just a wrapper around common.findLinkedField()
     """
     linked_node = None
-    linked_field = findLinkedField(package, exe_node_path, anchor_name)
+    linked_field = None
+    if check_fields: 
+        linked_field = findLinkedField(package, exe_node_path, anchor_name)
     if linked_field and linked_field.idevice is not None:
         linked_node = linked_field.idevice.parentNode
+    elif anchor_name == u"auto_top" and package is not None and package.root:
+        # allow the node "auto_top" to be found, 
+        # even if no anchors are explicitly specified.
+        # IF this node has already been linked to:
+        if hasattr(package, 'anchor_nodes') and package.anchor_nodes:
+            for anchor_node in package.anchor_nodes:
+                if anchor_node.GetFullNodePath() == exe_node_path:
+                    return anchor_node
+        # and for those which have not yet been linked to,
+        # go ahead and do a complete and proper walkthru all package nodes:
+        root_node = package.root
+        this_node_path = root_node.GetFullNodePath()
+        if this_node_path == exe_node_path:
+            return root_node
+        else:
+            for this_node in root_node.walkDescendants():
+                this_node_path = this_node.GetFullNodePath() 
+                if this_node_path == exe_node_path:
+                    return this_node
+
     return linked_node
 
 def getAnchorNameFromLinkName(link_name):

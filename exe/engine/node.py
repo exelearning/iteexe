@@ -26,6 +26,7 @@ from exe.engine.persist import Persistable
 from exe.engine.path    import toUnicode
 from exe                import globals as G
 from urllib             import quote
+from exe.webui                import common
 
 
 log = logging.getLogger(__name__)
@@ -107,7 +108,7 @@ class Node(Persistable):
         """
         if hasattr(self, '_title') and self._title:
             return toUnicode(self._title)
-        elif hasattr(self, '_package'):
+        elif hasattr(self, '_package') and self.package is not None:
             return _(toUnicode(self.package.levelName(self.level - 1)))
         else:
             return u'Unknown Node [no title or package]'
@@ -170,6 +171,9 @@ class Node(Persistable):
         Called AFTER the actual rename has occurred.
         NOTE: isMerge & isExtract will also attempt to connect all the data 
         structures, and isExtract will also try to clear out any orphaned links.
+        AND: especially for extracts, continue on through all the child nodes
+        even if the node names & path appear to be the same, since the objects
+        actually differ and internal linking data structures need to be updated.
         """
         if not hasattr(self, 'anchor_fields'):
             self.anchor_fields = []
@@ -179,11 +183,6 @@ class Node(Persistable):
         self.last_full_node_path = new_node_path
         log.debug('Renaming node path, from "' + old_node_path 
                 + '" to "' + new_node_path + '"')
-
-        if old_node_path == new_node_path:
-            # as can happen when extracting the entire package,
-            # then there is no need to do anything here!
-            return
 
         current_package = self.package
 
@@ -210,15 +209,21 @@ class Node(Persistable):
                 for this_anchor_name in this_field.anchor_names:
                     old_full_link_name = old_node_path + "#" + this_anchor_name
                     new_full_link_name = new_node_path + "#" + this_anchor_name
-                    for that_field in this_field.anchors_linked_from_fields[\
-                        this_anchor_name]:
+
+                    # Remove any linked fields that no longer apply, 
+                    # using reverse for loop to delete: 
+                    num_links = len(this_field.anchors_linked_from_fields[\
+                            this_anchor_name])
+                    for i in range(num_links-1, -1, -1):
+                        that_field = this_field.anchors_linked_from_fields[\
+                            this_anchor_name][i]
                         that_field_is_valid = True
                         if isExtract: 
                             # first ensure that each linked_from_field is 
                             # still in the extracted package.
                             # as with the subsequent isExtract link detection...
                             # Now, carefully check that the this_anchor_field
-                            # is indeed in the current extracte sub-package,
+                            # is indeed in the current extracted sub-package,
                             # being especially aware of zombie nodes which are 
                             # unfortunately included with the sub-package, but 
                             # are NOT actually listed within its _nodeIdDict!
@@ -237,8 +242,69 @@ class Node(Persistable):
                                         this_anchor_name].remove(that_field)
                         if that_field_is_valid: 
                             that_field.RenameInternalLinkToAnchor(\
-                                this_field, old_full_link_name, 
-                                new_full_link_name)
+                                this_field, unicode(old_full_link_name), 
+                                unicode(new_full_link_name))
+
+        # And a variation of the above, for all source-links to #auto_top,
+        # which is directly to this node, and not to any of its fields:
+        this_anchor_name = u"auto_top"
+        old_full_link_name = old_node_path + "#" + this_anchor_name
+        new_full_link_name = new_node_path + "#" + this_anchor_name
+        if not hasattr(self, 'top_anchors_linked_from_fields'):
+            self.top_anchors_linked_from_fields = []
+        num_links = len(self.top_anchors_linked_from_fields)
+        num_top_links = num_links
+        if (isMerge or isExtract):
+            # merging this node into a destination package,
+            # setup the internal linking data structures:
+            if not hasattr(self.package, 'anchor_nodes'):
+                self.package.anchor_nodes = []
+            if num_links > 0 and self not in self.package.anchor_nodes:
+                self.package.anchor_nodes.append(self)
+        # Remove any linked fields that no longer apply, 
+        # using reverse for loop to delete: 
+        for i in range(num_links-1, -1, -1):
+            # now, for ANY type of node renaming, update corresponding links:
+            that_field = self.top_anchors_linked_from_fields[i]
+            that_field_is_valid = True
+            if isExtract: 
+                # first ensure that each linked_from_field is 
+                # still in the extracted package.
+                # as with the subsequent isExtract link detection...
+                # Now, carefully check that the this_anchor_field
+                # is indeed in the current extracte sub-package,
+                # being especially aware of zombie nodes which are 
+                # unfortunately included with the sub-package, but 
+                # are NOT actually listed within its _nodeIdDict!
+                if that_field.idevice is None \
+                or that_field.idevice.parentNode is None \
+                or that_field.idevice.parentNode.package \
+                != current_package \
+                or that_field.idevice.parentNode.id \
+                not in current_package._nodeIdDict \
+                or current_package._nodeIdDict[ \
+                that_field.idevice.parentNode.id] \
+                != that_field.idevice.parentNode:
+                    that_field_is_valid = False
+                    # and remove the corresponding link here.
+                    self.top_anchors_linked_from_fields.remove(that_field)
+            if that_field_is_valid: 
+                # for auto_top, uses the actual Node as the anchor_field:
+                anchor_field = self
+                that_field.RenameInternalLinkToAnchor(\
+                    anchor_field, unicode(old_full_link_name), 
+                    unicode(new_full_link_name))
+        # and determine if any links to this node remain
+        num_links = len(self.top_anchors_linked_from_fields)
+        if num_top_links > 0 and num_links <= 0:
+            # there WERE links to this node's auto_top, 
+            # but they no longer apply to this extracted sub-package.
+            # If no other anchors are in any of this node's fields, then 
+            # no need for this node to be in the package's anchor_nodes list:
+            if len(self.anchor_fields) <= 0:
+                if self.package and hasattr(self.package, 'anchor_nodes') \
+                and self in self.package.anchor_nodes:
+                    self.package.anchor_nodes.remove(self)
 
         # and for package extractions, also ensure that any internal links 
         # in ANY of its fields are to anchors that still exist in this package:
@@ -247,29 +313,49 @@ class Node(Persistable):
                 for this_field in this_idevice.getRichTextFields(): 
                     if hasattr(this_field, 'intlinks_to_anchors') \
                     and len(this_field.intlinks_to_anchors) > 0: 
-                        for this_link_name \
-                        in this_field.intlinks_to_anchors.keys(): 
+
+                        # Remove any linked fields that no longer apply, 
+                        # using reverse for loop to delete: 
+                        these_link_names = this_field.intlinks_to_anchors.keys()
+                        num_links = len(these_link_names)
+                        for i in range(num_links-1, -1, -1):
+                            this_link_name = these_link_names[i]
                             this_anchor_field = \
                                 this_field.intlinks_to_anchors[this_link_name] 
                             # Now, carefully check that the this_anchor_field
-                            # is indeed in the current extracte sub-package,
+                            # is indeed in the current extracted sub-package,
                             # being especially aware of zombie nodes which are 
                             # unfortunately included with the sub-package, but 
                             # are NOT actually listed within its _nodeIdDict!
-                            if this_anchor_field.idevice is None \
-                            or this_anchor_field.idevice.parentNode is None \
-                            or this_anchor_field.idevice.parentNode.package \
-                            != current_package \
-                            or this_anchor_field.idevice.parentNode.id \
+
+                            # could not import this at the top:
+                            from exe.engine.field         import Field
+
+                            this_link_node = None
+                            this_anchor_name = common.getAnchorNameFromLinkName(
+                                    this_link_name)
+                            if this_anchor_field \
+                            and isinstance(this_anchor_field, Field) \
+                            and this_anchor_name != u"auto_top": 
+                                if this_anchor_field.idevice is not None \
+                                and this_anchor_field.idevice.parentNode:
+                                    this_link_node = \
+                                        this_anchor_field.idevice.parentNode
+                            elif this_anchor_field \
+                            and isinstance(this_anchor_field, Node):
+                                # can be a Node for an auto_top link
+                                this_link_node = this_anchor_field
+                            if this_link_node is None \
+                            or this_link_node.package != current_package \
+                            or this_link_node.id \
                             not in current_package._nodeIdDict \
-                            or current_package._nodeIdDict[ \
-                            this_anchor_field.idevice.parentNode.id] \
-                            != this_anchor_field.idevice.parentNode:
-                                # then this internal link points to an anchor 
+                            or current_package._nodeIdDict[this_link_node.id] \
+                            != this_link_node:
+                                # this internal link points to an anchor 
                                 # which is NO LONGER a VALID part of this
                                 # newly extracted sub-package.  Remove it:
-                                this_field.RemoveInternalLinkToAnchor( \
-                                        this_anchor_field, this_link_name)
+                                this_field.RemoveInternalLinkToRemovedAnchor( \
+                                    this_anchor_field, unicode(this_link_name))
 
         # Then do the same for all of this node's children nodes:
         for child_node in self.children:
@@ -393,6 +479,19 @@ class Node(Persistable):
             log.warn(delete_msg)
         else:
             log.debug(delete_msg)
+
+        this_node_path = self.GetFullNodePath()
+        this_anchor_name = u"auto_top"
+        full_link_name = this_node_path + "#" + this_anchor_name
+        if not hasattr(self, 'top_anchors_linked_from_fields'):
+            self.top_anchors_linked_from_fields = []
+        for this_field in self.top_anchors_linked_from_fields: 
+            # this internal link points to an anchor which is NO LONGER VALID.
+            # Remove it. 
+            # Now that intlinks_to_anchors can store nodes for auto_top...
+            this_anchor_field = self
+            this_field.RemoveInternalLinkToRemovedAnchor( \
+                    this_anchor_field, full_link_name)
 
         # Remove ourself from the id dict and our parents child thing
         # (zombie nodes may not even be listed)
