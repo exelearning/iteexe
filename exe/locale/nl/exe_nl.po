@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-04 15:56+1300\n"
+"POT-Creation-Date: 2008-02-18 08:53+1300\n"
 "PO-Revision-Date: 2008-01-30 05:51+1300\n"
 "Last-Translator: Leo Vandijck <l.vandijck@collegemaaseik.be>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -136,15 +136,15 @@ msgstr ""
 " Selecteer een woord om te verbergen door erop te dubbelklikken en de knop\n"
 " <i>Toon/verberg woord</i> aan te klikken.</p>"
 
-#: exe/engine/field.py:2524
+#: exe/engine/field.py:2600
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Als deze optie uitstaat, zijn een klein aantal spelfouten toegestaan. Als ze aanstaat, moet het antwoord qua spelling en hoofdlettergebruik volledig correct zijn.</p><p><strong>Voorbeeld:</strong> Als het juiste antwoord <code>Olifant</code> is, worden zowel <code>olifant</code> als <code>Olipant</code> aanvaard als <em>\"voldoende juist\"</em> omdat er maar één letter fout is, zelfs als \"Hoofdlettergevoelig\" geactiveerd is.</p><p>Als \"Hoofdlettergevoelig\" uitstaat, wordt de kleine <code>e</code> natuurlijk ook genegeerd als fout. Bovendien wordt <code>Olipant</code> aanvaard, omdat het maar één spelfout bevat.</p><p>Maar met zowel \"Streng verbeteren\" en \"Hoofdlettergevoelig\" ingeschakeld, is het enige juiste antwoord \"Olifant\". Zet u nu \"Hoofdlettergevoelig\" uit, dan wordt ook \"olifant\" aanvaard.</p>"
 
-#: exe/engine/field.py:2545
+#: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Vink deze optie aan om bij het verbeteren ook op hoofd- en kleine letters te letten.</p>"
 
-#: exe/engine/field.py:2550
+#: exe/engine/field.py:2626
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -154,7 +154,7 @@ msgstr ""
 "tijdens het intypen verbeterd en niet pas bij het afronden van de oefening.\n"
 "</p>"
 
-#: exe/engine/field.py:2799
+#: exe/engine/field.py:2875
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Selecteer symbolen uit de teksteditor hieronder of voeg manueel wiskundige formules toe. Klik op de &lt;Preview&gt-knop om uw LATEX te bekijken."
 
@@ -364,7 +364,7 @@ msgstr ""
 "Met uitlijning bepaalt u waar \n"
 "de mediaspeler op het scherm komt."
 
-#: exe/engine/field.py:2588
+#: exe/engine/field.py:2664
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -528,11 +528,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klik op <strong>Kies een bestand</strong> en blader naar een bestand om het te selecteren."
 
-#: exe/engine/field.py:2137
+#: exe/engine/field.py:2213
 msgid "Click Here"
 msgstr "Klik hier"
 
-#: exe/webui/common.py:315 exe/webui/common.py:319
+#: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
 msgstr "Klik voor aanwijzingen"
 
@@ -540,7 +540,7 @@ msgstr "Klik voor aanwijzingen"
 msgid "Click here"
 msgstr "Klik hier"
 
-#: exe/engine/field.py:2807
+#: exe/engine/field.py:2883
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -553,8 +553,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Klik op de knop Afbeelding toevoegen om een afbeelding te selecteren. De afbeelding wordt getoond en u kan een label toevoegen. Tip: vermeld de bestandsgrootte in het label."
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
-#: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:2042 exe/webui/element.py:2043
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -885,7 +885,7 @@ msgstr ""
 "de knop \"VOEG ALTERNATIEF TOE\". Wis een alternatief door te klikken op de\n"
 "\"x\" naast een alternatief."
 
-#: exe/engine/field.py:3109
+#: exe/engine/field.py:3185
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -939,7 +939,7 @@ msgstr ""
 "De vraag moet duidelijk en ondubbelzinnig zijn. Vermijd negatieve beweringen\n"
 "want deze zijn vaak misleidend."
 
-#: exe/engine/field.py:3101
+#: exe/engine/field.py:3177
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -1014,10 +1014,10 @@ msgstr "Fout"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
-#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:228 exe/webui/element.py:1847
+#: exe/webui/common.py:241 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Feedback"
@@ -1031,7 +1031,7 @@ msgstr ""
 "geen Feedback-knop getoond."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3118 exe/engine/field.py:3188
+#: exe/engine/field.py:3194 exe/engine/field.py:3264
 msgid "Feedback:"
 msgstr "Feedback:"
 
@@ -1126,7 +1126,7 @@ msgid "Hide/Show Word"
 msgstr "Toon/verberg woord"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2953 exe/engine/field.py:3019
+#: exe/engine/field.py:3029 exe/engine/field.py:3095
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1211,7 +1211,7 @@ msgid "Instant Marking?"
 msgstr "Onmiddellijk verbeteren?"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:163
-#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:309
+#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:322
 msgid "Instructions"
 msgstr "Aanwijzingen"
 
@@ -1376,7 +1376,7 @@ msgstr ""
 "Deze geven aan wat de student heeft bijgeleerd na het voltooien van de\n"
 "leeropdrachten."
 
-#: exe/engine/field.py:2694 exe/engine/field.py:2758
+#: exe/engine/field.py:2770 exe/engine/field.py:2834
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1384,7 +1384,7 @@ msgstr ""
 "Alleen .flv (Flash-videobestanden)\n"
 "voor dit iDevice."
 
-#: exe/engine/field.py:2630 exe/engine/field.py:2674
+#: exe/engine/field.py:2706 exe/engine/field.py:2750
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1393,13 +1393,13 @@ msgstr ""
 "dit iDevice."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2875 exe/engine/field.py:2924
+#: exe/engine/field.py:2951 exe/engine/field.py:3000
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Alternatief"
 
-#: exe/engine/field.py:3041 exe/engine/field.py:3078
+#: exe/engine/field.py:3117 exe/engine/field.py:3154
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Alternatieven"
@@ -1518,8 +1518,8 @@ msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 msgid "Previous"
 msgstr "Vorige"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
-#: exe/engine/field.py:2379
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2408
+#: exe/engine/field.py:2455
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1594,13 +1594,13 @@ msgid "Put instructions for learners here"
 msgstr "Geef aanwijzingen voor de studenten"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2950 exe/engine/field.py:3015
+#: exe/engine/field.py:3026 exe/engine/field.py:3091
 msgid "Question"
 msgstr "Vraag:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Vraag:"
 
@@ -1741,7 +1741,7 @@ msgstr "Kies een afbeelding"
 msgid "Select an image (JPG file)"
 msgstr "Kies een afbeelding (JPG-bestand)"
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3189
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -2074,7 +2074,7 @@ msgstr ""
 "moet beslissen of deze bewering juist of fout is. Dit soort vraag is o.m. geschikt\n"
 "voor feitelijke informatie en voor ofwel/ofwel-antwoorden."
 
-#: exe/engine/field.py:2770
+#: exe/engine/field.py:2846
 msgid "Type a discussion topic here."
 msgstr "Geef een discussie-onderwerp."
 
@@ -2106,7 +2106,7 @@ msgstr ""
 "\"Juist antwoord\" bij het antwoord dat als zodanig is aangeduid; of \n"
 "\"Fout antwoord\" bij de andere alternatieven."
 
-#: exe/engine/field.py:3116
+#: exe/engine/field.py:3192
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

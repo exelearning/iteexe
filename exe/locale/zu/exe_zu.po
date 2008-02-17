@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-04 15:56+1300\n"
+"POT-Creation-Date: 2008-02-18 08:53+1300\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -113,16 +113,16 @@ msgstr ""
 "esikhaleni.&lt;/p&gt;&lt;p&gt;Ukukhetha amagama azofihlwa, cindezela kabili egameni ukulikhetha bese \n"
 "ucindezela inkinobho Fihla/Bonisa Igama ngezansi.&lt;/p&gt;"
 
-#: exe/engine/field.py:2524
+#: exe/engine/field.py:2600
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "&lt;p&gt;Uma kushiywe kungenamaka amaphutha amancane obizelomagama nosonhlamvukazi ayokwamukelwa.Uma kunomaka ubizelomagama okuyilo nosonhlamvukazi okuyibo kuphela okuyokwamukelwa.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Ngokwesibonelo:&lt;/strong&gt; Uma impendulo efanele ku &lt;code&gt;Indlovu&lt;/code&gt; kokubili &lt;code&gt;indlovu&lt;/code&gt; no &lt;code&gt;Indhlovu&lt;/code&gt; kuyokwahlulelwa &lt;em&gt;\"close enough\"&lt;/em&gt; ngeqoqo lemithetho njengokunohlamvu olulodwa oluyiphutha, noma ngabe uku \"Hlola Osonhlamvukazi\" kusebenza.&lt;/p&gt;&lt;p&gt;Uma ukuhlola osonhlamvukazi kungasebenzi esibonelweni esingaphezulu, uhlamvu oluncane &lt;code&gt;e&lt;/code&gt; ngeke luthathwe njengoluyiphutha futhi          &lt;code&gt;indhlovu&lt;/code&gt;iyokwamukelwa.&lt;/p&gt;&lt;p&gt;Uma kokubili \"Ukumaka Ngokungathi Sina\" noku \"Hlola Osonhlamvukazi\" kusebenza, Impendulo efanele u \"Indlovu\" kuphela.Uma \"Ukumaka Ngokungathi Sina\" kuphela kusebenza uku \"Hlola Osonhlamvukazi\" kungasebenzi, u \"indlovu\" uyokwamukelwa.&lt;/p&gt;"
 
-#: exe/engine/field.py:2545
+#: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "&lt;p&gt;Uma lokhu kunomaka, izimpendulo ezithunyelwe zinosonhlamvukazi abahlukile ziyomakwa njengeziyiphutha.&lt;/p&gt;"
 
-#: exe/engine/field.py:2550
+#: exe/engine/field.py:2626
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -133,7 +133,7 @@ msgstr ""
 " umfundi elithayipha esikhundleni sokuthi onke amagama amakwe ekupheleni \n"
 "kwesivivinyo.&lt;/p&gt;"
 
-#: exe/engine/field.py:2799
+#: exe/engine/field.py:2875
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -352,7 +352,7 @@ msgstr ""
 "Ukuqondanusa kukuvumela ukuba \n"
 "ukhethe ukuthi isithombe kumele sibe kuphi kwisibonisi."
 
-#: exe/engine/field.py:2588
+#: exe/engine/field.py:2664
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -519,11 +519,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Cindezela &lt;strong&gt;Khetha ifayela&lt;/strong&gt;,bheka ifayela ofuna ukulinamathisela bese ulikhetha."
 
-#: exe/engine/field.py:2137
+#: exe/engine/field.py:2213
 msgid "Click Here"
 msgstr "Cindezela lapha"
 
-#: exe/webui/common.py:315 exe/webui/common.py:319
+#: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
 msgstr ""
 
@@ -531,7 +531,7 @@ msgstr ""
 msgid "Click here"
 msgstr "Cindezela lapha"
 
-#: exe/engine/field.py:2807
+#: exe/engine/field.py:2883
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -545,8 +545,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr ""
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
-#: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:2042 exe/webui/element.py:2043
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -857,7 +857,7 @@ msgstr ""
 "Ungongeza okukhethwayo ngokucindezela inkinobho \"Ongeza Ngokunye Okukhethwayo\".Cima okukhethwayo \n"
 "ngokucindezela u \"X\" obomvu eceleni kwakho."
 
-#: exe/engine/field.py:3109
+#: exe/engine/field.py:3185
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -911,7 +911,7 @@ msgstr ""
 "Umbuzo kumele ucace unganiki imibono eyahlukene. Gwema ukulandisa okuzwakala kuliqiniso kungeyilo \n"
 "ngoba kubangela imibono eyahlukile."
 
-#: exe/engine/field.py:3101
+#: exe/engine/field.py:3177
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -985,10 +985,10 @@ msgstr "Amanga"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
-#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:228 exe/webui/element.py:1847
+#: exe/webui/common.py:241 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Umbono ngokwenziwe"
@@ -1002,7 +1002,7 @@ msgstr ""
 "kungekho okufakiwe kulesi sikhala."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3118 exe/engine/field.py:3188
+#: exe/engine/field.py:3194 exe/engine/field.py:3264
 msgid "Feedback:"
 msgstr "Umbono ngokwenziwe:"
 
@@ -1097,7 +1097,7 @@ msgid "Hide/Show Word"
 msgstr "Fihla/Bonisa iGama"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2953 exe/engine/field.py:3019
+#: exe/engine/field.py:3029 exe/engine/field.py:3095
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1173,7 +1173,7 @@ msgid "Instant Marking?"
 msgstr "Ukumaka ngaso leso sikhathi?"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:163
-#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:309
+#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:322
 msgid "Instructions"
 msgstr "Izilayezo"
 
@@ -1341,7 +1341,7 @@ msgstr ""
 "zichaze ukuthi yini abafundi abayokwazi ukuyenza uma sebeqedile\n"
 "imisebenzi yesifundo."
 
-#: exe/engine/field.py:2694 exe/engine/field.py:2758
+#: exe/engine/field.py:2770 exe/engine/field.py:2834
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1349,7 +1349,7 @@ msgstr ""
 "Khethela le-iDevice i- .flv (Flash Video Files) \n"
 "kuphela."
 
-#: exe/engine/field.py:2630 exe/engine/field.py:2674
+#: exe/engine/field.py:2706 exe/engine/field.py:2750
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1358,13 +1358,13 @@ msgstr ""
 "kuphela."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2875 exe/engine/field.py:2924
+#: exe/engine/field.py:2951 exe/engine/field.py:3000
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Okukhethwayo"
 
-#: exe/engine/field.py:3041 exe/engine/field.py:3078
+#: exe/engine/field.py:3117 exe/engine/field.py:3154
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Okukhethwayo"
@@ -1483,8 +1483,8 @@ msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 msgid "Previous"
 msgstr "Kwangaphambili"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
-#: exe/engine/field.py:2379
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2408
+#: exe/engine/field.py:2455
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1555,14 +1555,14 @@ msgid "Put instructions for learners here"
 msgstr "Faka iziyalezo zabafundi lapha"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2950 exe/engine/field.py:3015
+#: exe/engine/field.py:3026 exe/engine/field.py:3091
 #, fuzzy
 msgid "Question"
 msgstr "Umbuzo:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Umbuzo:"
 
@@ -1703,7 +1703,7 @@ msgstr "Ketha isithombe"
 msgid "Select an image (JPG file)"
 msgstr "Khetha isithombe (JPG file)"
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3189
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -2025,7 +2025,7 @@ msgstr ""
 "kahle ngokwazisa okungokoqobo nokwazisa okuzibeka kweyodwa \n"
 "yalezimpendulo."
 
-#: exe/engine/field.py:2770
+#: exe/engine/field.py:2846
 msgid "Type a discussion topic here."
 msgstr "Thayipha isihloko sengxoxo lapha."
 
@@ -2057,7 +2057,7 @@ msgstr ""
 "\"Impendulo efanele\" njengoba kuboniswa ukukhethwa kwempendulo efanele; noma \n"
 " \"Impendulo eyiphutha\" ngokunye okukhethwayo."
 
-#: exe/engine/field.py:3116
+#: exe/engine/field.py:3192
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

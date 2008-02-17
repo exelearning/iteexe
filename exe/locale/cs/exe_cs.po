@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-04 15:56+1300\n"
+"POT-Creation-Date: 2008-02-18 08:53+1300\n"
 "PO-Revision-Date: 2007-07-20 14:24+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -128,15 +128,15 @@ msgstr ""
 "<p> Slova, která chcete skrýt, vyberte dvojklikem. \n"
 " Poté klikněte na tlačítko Skryj/zobraz slovo umístěné níže.</p>"
 
-#: exe/engine/field.py:2524
+#: exe/engine/field.py:2600
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Pokud zůstane nezatrženo, drobné překlepy a rozdíly ve velikosti písmen budou tolerovány. Pokud bude zatrženo, je očekávána přesná shoda ve velikosti písmen a bez překlepů.</p><p><strong>Například:</strong> Pokud je správná odpověď <code>Slon</code>, pak <code>slon</code> i <code>Slom</code> bude posouzen jako <em>\"dostatečně blízký\"</em>, protože je špatně jen jedno písmeno, dokonce i v případě, že se kontroluje velikost písmen.</p><p>Pokud je kontrola velikosti písmen v předešlém příkladě vypnuta, pak písmeno <code>m</code> nebude považováno za chybu a <code>slom</code> bude také přijat.</p><p>Pokud je zapnuto \"Přesné označení\" i \"Kontrola velkých písmen\", jedinou správnou odpovědí je \"Slon\". Pokud je zatrženo pouze \"Přesné označení\" a \"Kontrola velkých písmen\" není zapnuta, pak bude přijat také \"slon\".</p>"
 
-#: exe/engine/field.py:2545
+#: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Je-li volba vybrána, odpovědi s odlišnou velikostí písmen budou označeny jako chybné (neplatné).</p>"
 
-#: exe/engine/field.py:2550
+#: exe/engine/field.py:2626
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -146,7 +146,7 @@ msgstr ""
 "Je to lepší, než aby byla všechna slova označena na konci cvičení.\n"
 "</p>"
 
-#: exe/engine/field.py:2799
+#: exe/engine/field.py:2875
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Pokud chcete vytvořit matematickou rovnici, vyberte symboly z textového editoru. Každý symbol se zobrazí v náhledu pomocí jazyka LaTeX, náhled zobrazíte pomocí tlačítka níže.</p>"
 
@@ -356,7 +356,7 @@ msgstr ""
 "Zarovnání umožňuje \n"
 "zvolit umístění přehrávače médií na obrazovce."
 
-#: exe/engine/field.py:2588
+#: exe/engine/field.py:2664
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -520,11 +520,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klikněte na <strong>Vybrat soubor</strong>,najděte soubor, který chcete načíst a označte jej."
 
-#: exe/engine/field.py:2137
+#: exe/engine/field.py:2213
 msgid "Click Here"
 msgstr "Klikněte sem"
 
-#: exe/webui/common.py:315 exe/webui/common.py:319
+#: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
 msgstr "Klikněte pro doplnění instrukcí"
 
@@ -532,7 +532,7 @@ msgstr "Klikněte pro doplnění instrukcí"
 msgid "Click here"
 msgstr "Klikněte sem"
 
-#: exe/engine/field.py:2807
+#: exe/engine/field.py:2883
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -545,8 +545,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Pro vložení obrázku klikněte na tlačítko \"Přidat obrázky\". Obrázek se objeví dole, kde jej budete moct doplnit popiskem. Bývá dobrým zvykem do popisu vepsat také velikost obrázku."
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
-#: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:2042 exe/webui/element.py:2043
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -873,7 +873,7 @@ msgstr ""
 "Tlačítkem \"Přidat další volbu\" vytvoříte další volbu. \n"
 "Smazat položku můžete kliknutím na červené \"X\" vedle odpovědi, kterou si přejete odstranit."
 
-#: exe/engine/field.py:3109
+#: exe/engine/field.py:3185
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -926,7 +926,7 @@ msgstr ""
 "Zadání by mělo být jasné a jednoznačné. Vyvarujte se negativních formulací, \n"
 "protože vyznívají nejednoznačně."
 
-#: exe/engine/field.py:3101
+#: exe/engine/field.py:3177
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -998,10 +998,10 @@ msgstr "Ne"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
-#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:228 exe/webui/element.py:1847
+#: exe/webui/common.py:241 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Zpětná vazba"
@@ -1015,7 +1015,7 @@ msgstr ""
 "nebudou do tohoto pole vložena žádná data."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3118 exe/engine/field.py:3188
+#: exe/engine/field.py:3194 exe/engine/field.py:3264
 msgid "Feedback:"
 msgstr "Zpětná vazba:"
 
@@ -1107,7 +1107,7 @@ msgid "Hide/Show Word"
 msgstr "Skrýt/zobrazit slovo"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2953 exe/engine/field.py:3019
+#: exe/engine/field.py:3029 exe/engine/field.py:3095
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1181,7 +1181,7 @@ msgid "Instant Marking?"
 msgstr "Okamžité označení?"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:163
-#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:309
+#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:322
 msgid "Instructions"
 msgstr "Pokyny"
 
@@ -1344,7 +1344,7 @@ msgstr ""
 "Cíle popisují očekávané výstupy výuky a měly by \n"
 "určovat, co by měli studenti zvládnout po dokončení úkolů."
 
-#: exe/engine/field.py:2694 exe/engine/field.py:2758
+#: exe/engine/field.py:2770 exe/engine/field.py:2834
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1352,7 +1352,7 @@ msgstr ""
 "Videa je možné vkládat pouze \n"
 "ve formátu .flv (Flash Video Files)."
 
-#: exe/engine/field.py:2630 exe/engine/field.py:2674
+#: exe/engine/field.py:2706 exe/engine/field.py:2750
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1361,13 +1361,13 @@ msgstr ""
 "soubory swf (Flash Objects)."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2875 exe/engine/field.py:2924
+#: exe/engine/field.py:2951 exe/engine/field.py:3000
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Volba"
 
-#: exe/engine/field.py:3041 exe/engine/field.py:3078
+#: exe/engine/field.py:3117 exe/engine/field.py:3154
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Volby"
@@ -1483,8 +1483,8 @@ msgstr "Adresář s náhledy %s už existuje, nelze jej nahradit"
 msgid "Previous"
 msgstr "Předchozí"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
-#: exe/engine/field.py:2379
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2408
+#: exe/engine/field.py:2455
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1559,13 +1559,13 @@ msgid "Put instructions for learners here"
 msgstr "Sem vložte instrukce pro studenty"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2950 exe/engine/field.py:3015
+#: exe/engine/field.py:3026 exe/engine/field.py:3091
 msgid "Question"
 msgstr "Otázka"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Otázka:"
 
@@ -1706,7 +1706,7 @@ msgstr "Vyberte obrázek"
 msgid "Select an image (JPG file)"
 msgstr "Vyberte obrázek (.jpg soubor)"
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3189
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -2042,7 +2042,7 @@ msgstr ""
 "pro faktické informace a pro informace, které poskytují \n"
 "reakce buď/a nebo."
 
-#: exe/engine/field.py:2770
+#: exe/engine/field.py:2846
 msgid "Type a discussion topic here."
 msgstr "Vepište diskuzní téma."
 
@@ -2074,7 +2074,7 @@ msgstr ""
 "\"Správná odpověď\" při výběru správné odpovědi, \n"
 "nebo \"Špatná odpověď\" pro ostatní alternativy."
 
-#: exe/engine/field.py:3116
+#: exe/engine/field.py:3192
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."

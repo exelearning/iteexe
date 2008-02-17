@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-04 15:56+1300\n"
+"POT-Creation-Date: 2008-02-18 08:53+1300\n"
 "PO-Revision-Date: 2008-02-18 08:16+1300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -120,16 +120,16 @@ msgstr ""
 " Για να επιλέξετε τις λέξεις που επιθυμείτε να αποκρύψετε, κάντε διπλό κλικ στη λέξη για να την επιλέξετε\n"
 "και στη συνέχεια κλικ στο κουμπί <i>Απόκρυψη/Εμφάνιση Λέξης</i>."
 
-#: exe/engine/field.py:2524
+#: exe/engine/field.py:2600
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Εάν αυτή η επιλογή αφεθεί μη επιλεγμένη, ένας μικρός αριθμός γραμματικών και πεζών-κεφαλαίων λαθών θα είναι αποδεκτός. Αν επιλεγεί, μόνο ακριβές ταίριασμα στην ορθογραφία και στα πεζά-κεφαλαία γράμματα θα είναι αποδεκτό.</p><p><strong>Για παράδειγμα:</strong> εάν η σωστή απάντηση είναι < code>Ελέφαντας</code> τότε και το< code>ελέφαντας</code> και το <code>Ελίφαντας</code> θα κριθούν <em> \"αρκετά σωστά \"</em > από τον αλγόριθμο δεδομένου ότι έχει μόνο ένα γράμμα λανθασμένο, ακόμα κι αν ο \"Έλεγχος κεφαλαιοποίησης \"είναι ενεργοποιημένος.</p><p>Αν ο έλεγχος κεφαλαιοποίησης είναι απενεργοποιημένος στο ανωτέρω παράδειγμα, το πεζό < code>ε</code > δεν θα θεωρηθεί λάθος και το < code>ελίφαντας</code > θα γίνει επίσης αποδεκτό.</p><p>Αν και τα δύο \"Αυστηρή βαθμολογία \"και \"Έλεγχος Κεφαλαιοποίησης \" είναι ενεργοποιημένα, η μόνη σωστή απάντηση είναι \"Ελέφαντας \". Εάν μόνο το \"Αυστηρή βαθμολογία \" είναι ενεργοποιημένο και ο \"Έλεγχος Κεφαλαιοποίησης\"δεν είναι, τότε και το \"ελέφαντας \" θα γίνει αποδεκτό.</p >"
 
-#: exe/engine/field.py:2545
+#: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Αν επιλεγεί αυτή η επιλογή, οι υποβληθείσες απαντήσεις με διαφορετική κεφαλαιοποίηση θα βαθμολογηθούν ως λάθος.</p>"
 
-#: exe/engine/field.py:2550
+#: exe/engine/field.py:2626
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -140,7 +140,7 @@ msgstr ""
 "πληκτρολογείται από το σπουδαστή, αντί όλες οι λέξεις να βαθμολογηθούν στο τέλος\n"
 "της άσκησης.</p>"
 
-#: exe/engine/field.py:2799
+#: exe/engine/field.py:2875
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -363,7 +363,7 @@ msgstr ""
 "Η στοίχιση σας επιτρέπει να\n"
 "επιλέξετε σε ποια θέση στην οθόνη θα τοποθετηθεί η εικόνα."
 
-#: exe/engine/field.py:2588
+#: exe/engine/field.py:2664
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -532,11 +532,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Κάντε κλικ στο <strong>Επιλέξτε αρχείο</strong> και επιλέξτε το αρχείο που θέλετε να επισυνάψετε."
 
-#: exe/engine/field.py:2137
+#: exe/engine/field.py:2213
 msgid "Click Here"
 msgstr "Κάντε κλικ εδώ "
 
-#: exe/webui/common.py:315 exe/webui/common.py:319
+#: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
 msgstr "Κλικ για οδηγίες συμπλήρωσης"
 
@@ -544,7 +544,7 @@ msgstr "Κλικ για οδηγίες συμπλήρωσης"
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/engine/field.py:2807
+#: exe/engine/field.py:2883
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -558,8 +558,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Κάντε κλικ στο κουμπί Προσθήκη εκόνων για να επιλέξετε ένα αρχείο εικόνας. Η εικόνα θα εμφανιστεί παρακάτω όπου θα πρέπει να της βάλετε μια ετικέτα. Είναι καλή πρακτική να ορίζετε το μέγεθος αρχείου στην ετικέτα."
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
-#: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:2042 exe/webui/element.py:2043
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -871,7 +871,7 @@ msgstr ""
 "Μπορείτε να προσθέσετε επιλογές κάνοντας κλικ στο κουμπί \"Προσθήκη Άλλης Επιλογής\".\n"
 "Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο \"x\" δεξιά από κάθε επιλογή."
 
-#: exe/engine/field.py:3109
+#: exe/engine/field.py:3185
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -924,7 +924,7 @@ msgstr ""
 "Η αποστολή θα πρέπει να είναι ξεκάθαρη και αναμφίβολη. Αποφύγετε αρνητικές προϋποθέσεις \n"
 "καθώς τείνουν να είναι αμφίβολες."
 
-#: exe/engine/field.py:3101
+#: exe/engine/field.py:3177
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -998,10 +998,10 @@ msgstr "Λάθος"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
-#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:228 exe/webui/element.py:1847
+#: exe/webui/common.py:241 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
@@ -1015,7 +1015,7 @@ msgstr ""
 "δεν εισαχθούν δεδομένα σ' αυτό το πεδίο."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3118 exe/engine/field.py:3188
+#: exe/engine/field.py:3194 exe/engine/field.py:3264
 msgid "Feedback:"
 msgstr "Ανατροφοδότηση: "
 
@@ -1110,7 +1110,7 @@ msgid "Hide/Show Word"
 msgstr "Απόκρυψη/Εμφάνιση Λέξης"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2953 exe/engine/field.py:3019
+#: exe/engine/field.py:3029 exe/engine/field.py:3095
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1185,7 +1185,7 @@ msgid "Instant Marking?"
 msgstr "Άμεση βαθμολογία;"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:163
-#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:309
+#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:322
 msgid "Instructions"
 msgstr "Οδηγίες"
 
@@ -1353,7 +1353,7 @@ msgstr ""
 " θα πρέπει να καθορίζουν τι θα μπορούν να κάνουν\n"
 " όταν τελειώσουν το μάθημα."
 
-#: exe/engine/field.py:2694 exe/engine/field.py:2758
+#: exe/engine/field.py:2770 exe/engine/field.py:2834
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1361,7 +1361,7 @@ msgstr ""
 "Επιλέξτε μόνο .flv (Αρχεία Βίντεο Flash) για \n"
 "αυτό το εκπαιδευτικό εργαλείο."
 
-#: exe/engine/field.py:2630 exe/engine/field.py:2674
+#: exe/engine/field.py:2706 exe/engine/field.py:2750
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1370,13 +1370,13 @@ msgstr ""
 "αυτό το εκπαιδευτικό εργαλείο."
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2875 exe/engine/field.py:2924
+#: exe/engine/field.py:2951 exe/engine/field.py:3000
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "Επιλογή"
 
-#: exe/engine/field.py:3041 exe/engine/field.py:3078
+#: exe/engine/field.py:3117 exe/engine/field.py:3154
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "Επιλογές"
@@ -1495,8 +1495,8 @@ msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να �
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
-#: exe/engine/field.py:2379
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2408
+#: exe/engine/field.py:2455
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1567,13 +1567,13 @@ msgid "Put instructions for learners here"
 msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2950 exe/engine/field.py:3015
+#: exe/engine/field.py:3026 exe/engine/field.py:3091
 msgid "Question"
 msgstr "Ερώτηση"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -1714,7 +1714,7 @@ msgstr "Επιλογή εικόνας"
 msgid "Select an image (JPG file)"
 msgstr "Επιλογή εικόνας (αρχείο JPG)"
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3189
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -2040,7 +2040,7 @@ msgstr ""
 " όπου ο μαθητής πρέπει να αποφασίσει αν η φράση είναι αληθής. Αυτός ο τύπος ερώτησης\n"
 " δουλεύει εντάξει για τεκμηριωμένες πληροφορίες και πληροφορίες που προσφέρονται σε μια μόνο από τις δυο απαντήσεις."
 
-#: exe/engine/field.py:2770
+#: exe/engine/field.py:2846
 msgid "Type a discussion topic here."
 msgstr "Πληκτρολογήστε ένα θέμα συζήτησης εδώ."
 
@@ -2070,7 +2070,7 @@ msgstr ""
 "το eXe θα παρέχει την εξής αυτόματη ανατροφοδότηση: \"Σωστή απάντηση\"\n"
 " που δηλώνει τη σωστή απάντηση ή \"Λάθος απάντηση\" για τις εναλλακτικές."
 
-#: exe/engine/field.py:3116
+#: exe/engine/field.py:3192
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
