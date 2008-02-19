@@ -1,3 +1,4 @@
+* Improve Wiki Article idevice handling of pages without content div
 * Automate building Debian changelog and versioning
 
 Version 1.03 (r3373) 2008-01-21

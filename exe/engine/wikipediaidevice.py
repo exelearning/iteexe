@@ -112,10 +112,14 @@ within Wikipedia.""")
         content = soup.first('div', {'id': "content"})
 
         # remove the wiktionary, wikimedia commons, and categories boxes
-        infoboxes = content.findAll('div', {'class' : 'infobox sisterproject'})
-        [infobox.extract() for infobox in infoboxes]
-        catboxes = content.findAll('div', {'id' : 'catlinks'})
-        [catbox.extract() for catbox in catboxes]
+        if content:
+            infoboxes = content.findAll('div',
+                    {'class' : 'infobox sisterproject'})
+            [infobox.extract() for infobox in infoboxes]
+            catboxes = content.findAll('div', {'id' : 'catlinks'})
+            [catbox.extract() for catbox in catboxes]
+        else:
+            content = soup.first('body')
 
         if not content:
             log.error("no content")
