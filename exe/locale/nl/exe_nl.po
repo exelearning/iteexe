@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-18 08:53+1300\n"
+"POT-Creation-Date: 2008-02-20 00:13+1300\n"
 "PO-Revision-Date: 2008-01-30 05:51+1300\n"
 "Last-Translator: Leo Vandijck <l.vandijck@collegemaaseik.be>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -798,7 +798,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Geef een hint op. Laat het veld leeg om geen hint te geven."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:289
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:293
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1753,7 +1753,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Kies slaagpercentage:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:287
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:291
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -2132,7 +2132,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:122
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Download onmogelijk vanaf %s <br/>Controleer de spelling en het adres en probeer opnieuw."
@@ -2304,7 +2304,7 @@ msgstr "eXe-project"
 msgid "file %s has no parentNode"
 msgstr "bestand %s zonder doelbestemming"
 
-#: exe/engine/wikipediaidevice.py:241
+#: exe/engine/wikipediaidevice.py:245
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 

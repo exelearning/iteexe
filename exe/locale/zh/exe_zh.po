@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-18 08:53+1300\n"
+"POT-Creation-Date: 2008-02-20 00:13+1300\n"
 "PO-Revision-Date: 2007-08-08 10:27+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -685,7 +685,7 @@ msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:289
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:293
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1555,7 +1555,7 @@ msgstr "选择所有正确选项."
 msgid "Select pass rate: "
 msgstr "选择及格线"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:287
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:291
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1872,7 +1872,7 @@ msgstr "输入问题. 问题的陈述应是清楚而不含糊的."
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:122
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
@@ -2029,7 +2029,7 @@ msgstr "eXe项目"
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:241
+#: exe/engine/wikipediaidevice.py:245
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
