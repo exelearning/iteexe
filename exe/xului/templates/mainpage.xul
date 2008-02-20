@@ -132,8 +132,8 @@
                <!-- buttons for promoting/demoting and moving nodes -->
               <toolbox>
                 <toolbar grippyhidden="true">
-                   <toolbarbutton id="btnPromote" n:render="promote" key="promoteKey" image="/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
-                   <toolbarbutton id="btnDemote" n:render="demote" key="demoteKey" image="/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
+                   <toolbarbutton id="btnPromote" n:render="promote" key="promoteKey" image="/images/stock-goto-first.png" tooltiptext="Promote node up in hierarchy"/>
+                   <toolbarbutton id="btnDemote" n:render="demote" key="demoteKey" image="/images/stock-goto-last.png" tooltiptext="Demote node down in hierarchy"/>
                    <toolbarbutton id="btnUp" n:render="up" key="upKey" image="/images/stock-go-up.png" tooltiptext="Move node up"/>
                    <toolbarbutton id="btnDown" n:render="down" key="downKey" image="/images/stock-go-down.png" tooltiptext="Move node down"/>
                  </toolbar>
