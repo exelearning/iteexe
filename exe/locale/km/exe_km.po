@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-04 15:56+1300\n"
+"POT-Creation-Date: 2008-02-20 16:50+1300\n"
 "PO-Revision-Date: 2008-02-20 08:14+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -129,15 +129,15 @@ msgstr ""
 "</p><p> ដើម្បី​ជ្រើស​ពាក្យ​ដើម្បី​លាក់ គឺ​ត្រូវ​ចុច​លើ​ពាក្យ​ពីរ​ដង​ដើម្បី​ជ្រើស​វា ហើយ \n"
 "ចុច​លើ​ប៊ូតុង​លាក់​/​បង្ហាញ​ពាក្យ​នៅ​ខាងក្រោម ។</p>"
 
-#: exe/engine/field.py:2524
+#: exe/engine/field.py:2600
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>ប្រសិន​បើ​មិន​ធីក នោះ​កំហុស​អក្ខរាវិរុទ្ធ និង​ការ​សរសេរ​អក្សរ​ធំ​មួយ​ចំនួន​តូច គឺ​នឹង​ទទួល​យក ។ ប្រសិន​បើ​បាន​ធីក នោះ​គឺ​នឹង​ទទួល​យក​តែ​អក្ខរាវិរុទ្ធ និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ ៖</strong> ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> នោះ​ពាក្យ <code>elephant</code> និង <code>Eliphant</code> នឹង​ត្រូវកំណត់ថា<em>\"ជិត​ត្រូវ\"</em> ដោយ​ក្បួនដោះស្រាយ ព្រោះ​វា​មាន​តួអក្សរ​ដែល​ខុស​តែមួយ​ គឺ​ប្រសិន​បើ​ធីក \"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" ។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ នោះ​ការ​សរសេរ​អក្សរតូច <code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ <code>eliphant</code> ក៏​នឹង​ត្រូវ​ទទួល​យកដែរ ។</p><p>ប្រសិន​បើបាន​កំណត់​ទាំង \"សម្គាល់​យ៉ាង​តឹងរឹង\" ទាំង \"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" នោះ​គឺ​ទទួល​យក​តែ​ចម្លើយ​ដែលត្រឹមត្រូវ​ទេ​គឺ \"Elephant\" ។ ប្រសិន​ធីកតែ \"សម្គាល់យ៉ាងតឹងរឹង\" ហើយ​មិនបាន​ធីក \"ពិនិត្យ​ការ​សរសេរ​អក្សរធំ\" នោះ \"elephant\" ក៏​នឹងត្រូវបាន​ទទួល​យកដែរ ។</p>"
 
-#: exe/engine/field.py:2545
+#: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>ប្រសិន​បើ​បាន​ធីក​ជម្រើស​នេះ នោះ​ចម្លើយ​ដែលបាន​ដាក់ស្នើ​ដែល​មាន​តួអក្សរ​ផ្សេងគ្នា នឹង​ត្រូវ​បាន​សម្គាល់​ថា​មិនត្រឹមត្រូវ ។</p>"
 
-#: exe/engine/field.py:2550
+#: exe/engine/field.py:2626
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -147,7 +147,7 @@ msgstr ""
 "ដែល​អ្នក​សិក្សា​វាយវា ជាជាង​ដែល​សម្គាល់​វា​នៅពេល​ដែល​ធ្វើ​លំហាត់​ចប់ ។\n"
 "</p>"
 
-#: exe/engine/field.py:2799
+#: exe/engine/field.py:2875
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>ជ្រើស​និមិត្តសញ្ញា​ពី​កម្មវិធី​និពន្ធ​អត្ថបទ​ខាងក្រោម ឬ​បញ្ចូល LATEX ដោយ​ដៃ​ដើម្បី​បង្កើត​រូបមន្ត​គណិត​វិទ្យា ។ ដើម្បី​មើល LATEX របស់​អ្នក​ជាមុន ដូច​ដែល​វា​នឹង​បង្ហាញ គឺ​ត្រូវ​ប្រើ​ប៊ូតុង &lt;មើល​ជាមុន&gt; នៅ​ខាងក្រោម ។</p>"
 
@@ -184,8 +184,8 @@ msgstr ""
 "iDevice អត្ថបទ​វិីីផភីៀ​ថត​ច្បាប់​ចម្លង​រូបថត​មាតិកា​អត្ថបទ ។ \n"
 "ការ​ផ្លាស់ប្ដូរ​នៅ​ក្នុង​វិីគីភីៀ Wikipedia នឹង​មិន​ធ្វើ​ឲ្យច្បាប់ចម្លង​នីមួយ​ៗនៅ​ក្នុង eXe \n"
 "ទាន់សម័យទេ នោះ​ច្បាប់ចម្លង​អត្ថបទ​ថ្មី នឹង​ត្រូវ​បាន​ជ្រើស ។ ដូចនេះ​ដែរ \n"
-"ការ​ផ្លាស់ប្ដូរ​ដែលបាន​ធ្វើ​នៅ​ក្នុង eXe នឹង​មិនត្រូវបាន​ធ្វើ​ឲ្យ​ទាន់សម័យ​នៅ​ក្នុង​វិីគីភីៀ​ទេ ។ \n</p> "
-"<p>មាតិកា​វវីគីភីៀ គឺ​ស្ថិត​នៅ​ក្រោម​អាជ្ញាបណ្ណ​ឯកសារ​សេរី​របស់ GNU ។</p>"
+"ការ​ផ្លាស់ប្ដូរ​ដែលបាន​ធ្វើ​នៅ​ក្នុង eXe នឹង​មិនត្រូវបាន​ធ្វើ​ឲ្យ​ទាន់សម័យ​នៅ​ក្នុង​វិីគីភីៀ​ទេ ។ \n"
+"</p> <p>មាតិកា​វវីគីភីៀ គឺ​ស្ថិត​នៅ​ក្រោម​អាជ្ញាបណ្ណ​ឯកសារ​សេរី​របស់ GNU ។</p>"
 
 #: exe/engine/idevicestore.py:381
 msgid ""
@@ -232,8 +232,8 @@ msgid ""
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
 "ករណីសិក្សា គឺ​ជា​ឧបករណ៍​ដែល​​ផ្ដល់​ឲ្យ​អ្នក​សិក្សា​នូវ \n"
-"ការ​បន្លំ​ដែល​មាន​មូលដ្ឋានលើ​ការ​​អប់រំ ។ ជាទូទៅ​វា​បង្កើត​ស្ថានភាព​ដែល​មាន​មូលដ្ឋាន​ក្នុង​ភាព​ពិត \n "
-"និង​ស្នើ​ឲ្យ​អ្នក​សិក្សា​ពន្យល់បង្ហាញ ឬ​ពិពណ៌នា​នូវ​អំពើ​ដែល​ពួកគេ​បំពេញការងារ ឬ​ដោះស្រាយ \n"
+"ការ​បន្លំ​ដែល​មាន​មូលដ្ឋានលើ​ការ​​អប់រំ ។ ជាទូទៅ​វា​បង្កើត​ស្ថានភាព​ដែល​មាន​មូលដ្ឋាន​ក្នុង​ភាព​ពិត \n"
+" និង​ស្នើ​ឲ្យ​អ្នក​សិក្សា​ពន្យល់បង្ហាញ ឬ​ពិពណ៌នា​នូវ​អំពើ​ដែល​ពួកគេ​បំពេញការងារ ឬ​ដោះស្រាយ \n"
 "ស្ថានភាព ។ ករណីសិក្សា​ អនុញ្ញាត​ឲ្យ​អ្នក​សិក្សា​អនុវត្ត​ចំណេះដឹង​ផ្ទាល់ខ្លួន​របស់​គេ និង \n"
 "បទពិសោធន៍​ក្នុងការ​បំពេញ​កិច្ចការ​ដែល​បាន​ផ្ដល់ ។ នៅពេល​បង្កើត​ករណី​សិក្សា \n"
 "គឺ​ត្រូវ​គិតពិចារណា​ដូចខាងក្រោម ៖<ul> \n"
@@ -360,7 +360,7 @@ msgstr ""
 "ការ​តម្រឹម អនុញ្ញាត​ឲ្យ​អ្នក \n"
 "ជ្រើស​កន្លែង​ដែលត្រូវដាក់​កម្មវិធី​ចាក់​មេឌៀ​នៅលើ​អេក្រង់ ។"
 
-#: exe/engine/field.py:2588
+#: exe/engine/field.py:2664
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -524,11 +524,11 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "ចុច <strong>ជ្រើស​ឯកសារ</strong> ហើយ​រកមើល​ឯកសារ​ដែល​អ្នក​ចង់​ភ្ជាប់ ហើយ​ជ្រើស​វា ។"
 
-#: exe/engine/field.py:2137
+#: exe/engine/field.py:2213
 msgid "Click Here"
 msgstr "ចុច​នៅ​ទីនេះ"
 
-#: exe/webui/common.py:315 exe/webui/common.py:319
+#: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
 msgstr "ចុច ដើម្បី​មើល​សេចក្ដី​ណែនាំ​អំពី​ការ​បំពេញ"
 
@@ -536,7 +536,7 @@ msgstr "ចុច ដើម្បី​មើល​សេចក្ដី​ណ�
 msgid "Click here"
 msgstr "ចុច​នៅ​ទីនេះ"
 
-#: exe/engine/field.py:2807
+#: exe/engine/field.py:2883
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -549,8 +549,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:324
-#: exe/webui/common.py:325 exe/webui/block.py:249 exe/webui/block.py:250
+#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
 #: exe/webui/element.py:2042 exe/webui/element.py:2043
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -789,7 +789,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "បញ្ចូល​ព័ត៌មាន​ជំនួយ​នៅ​ទីនេះ ។ ប្រសិន​បើ​អ្នក​មិន​ចង់​ផ្ដល់​ព័ត៌មាន​ជំនួយ​ទេ គឺ​សូម​ទុកវា​ឲ្យ​នៅ​ទទេ ។"
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:289
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:293
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -877,7 +877,7 @@ msgstr ""
 "អ្នក​អាច​បន្ថែម​ជម្រើស ដោយ​ចុច​ប៊ូតុង \"បន្ថែម​ជម្រើស​ផ្សេងទៀត\" ។ លុប​ជម្រើស​ \n"
 "ដោយ​ចុច​សញ្ញា \"X\" ពណ៌​ក្រហម​នៅ​ជាប់​នឹង​ជម្រើស ។"
 
-#: exe/engine/field.py:3109
+#: exe/engine/field.py:3185
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -930,7 +930,7 @@ msgstr ""
 "សំណួរ​ត្រូវ​តែ​ច្បាស់ ហើយ​មាន​ន័យ​ច្បាស់លាស់ ។ ជៀសវាង​ពី​ការ​សន្មត់​អវិជ្ជមាន \n"
 "ដោយសារ​តែ​​មាន​ភាព​មិន​ច្បាស់លាស់ ។"
 
-#: exe/engine/field.py:3101
+#: exe/engine/field.py:3177
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -1002,10 +1002,10 @@ msgstr "ខុស"
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2879
-#: exe/engine/field.py:2927 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:228 exe/webui/element.py:1847
+#: exe/webui/common.py:241 exe/webui/element.py:1847
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "មតិ​អ្នកប្រើ"
@@ -1019,7 +1019,7 @@ msgstr ""
 "បញ្ចូល​ទិន្នន័យ​ទៅ​ក្នុង​វាល​នេះ ។"
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
-#: exe/engine/field.py:3118 exe/engine/field.py:3188
+#: exe/engine/field.py:3194 exe/engine/field.py:3264
 msgid "Feedback:"
 msgstr "មតិអ្នក​ប្រើ ៖"
 
@@ -1111,7 +1111,7 @@ msgid "Hide/Show Word"
 msgstr "លាក់​/​បង្ហាញ​ពាក្យ"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
-#: exe/engine/field.py:2953 exe/engine/field.py:3019
+#: exe/engine/field.py:3029 exe/engine/field.py:3095
 #: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
 #: exe/webui/element.py:2046
 msgid "Hint"
@@ -1184,7 +1184,7 @@ msgid "Instant Marking?"
 msgstr "សម្គាល់​លឿន ?"
 
 #: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:163
-#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:309
+#: exe/engine/truefalseidevice.py:285 exe/webui/common.py:322
 msgid "Instructions"
 msgstr "សេចក្ដី​ណែនាំ"
 
@@ -1349,7 +1349,7 @@ msgstr ""
 "កំណត់​អំពី​អ្វី​ដែល​អ្នក​សិក្សា​អាច​ទទួល​យក​បាន បន្ទាប់​ពី​បាន​បញ្ចប់​ការ\n"
 "សិក្សា ។"
 
-#: exe/engine/field.py:2694 exe/engine/field.py:2758
+#: exe/engine/field.py:2770 exe/engine/field.py:2834
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1357,7 +1357,7 @@ msgstr ""
 "ជ្រើស​តែ .flv (ឯកសារ​វីដេអូ Flash) សម្រាប់ \n"
 "iDevice នេះ ។"
 
-#: exe/engine/field.py:2630 exe/engine/field.py:2674
+#: exe/engine/field.py:2706 exe/engine/field.py:2750
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1366,13 +1366,13 @@ msgstr ""
 "iDevice នេះ ។"
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
-#: exe/engine/field.py:2875 exe/engine/field.py:2924
+#: exe/engine/field.py:2951 exe/engine/field.py:3000
 #: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
 #: exe/webui/element.py:1811
 msgid "Option"
 msgstr "ជម្រើស"
 
-#: exe/engine/field.py:3041 exe/engine/field.py:3078
+#: exe/engine/field.py:3117 exe/engine/field.py:3154
 #: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
 msgid "Options"
 msgstr "ជម្រើស"
@@ -1491,8 +1491,8 @@ msgstr "ថត​មើល​ជាមុន %s គឺ​ជា​ឯកសា�
 msgid "Previous"
 msgstr "មុន"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2332
-#: exe/engine/field.py:2379
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2408
+#: exe/engine/field.py:2455
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1567,13 +1567,13 @@ msgid "Put instructions for learners here"
 msgstr "ដាក់​សេចក្ដី​ណែនាំ​សម្រាប់​អ្នកសិក្សា​នៅ​ទីនេះ"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:130
-#: exe/engine/field.py:2950 exe/engine/field.py:3015
+#: exe/engine/field.py:3026 exe/engine/field.py:3091
 msgid "Question"
 msgstr "សំណួរ"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3104 exe/engine/field.py:3185 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
 msgid "Question:"
 msgstr "សំណួរ ៖"
 
@@ -1714,7 +1714,7 @@ msgstr "ជ្រើស​រូបភាព"
 msgid "Select an image (JPG file)"
 msgstr "ជ្រើស​រូបភាព (ឯកសារ JPG)"
 
-#: exe/engine/field.py:3113
+#: exe/engine/field.py:3189
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1726,7 +1726,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "ជ្រើស​អត្រា​ដែល​ជាប់ ៖ "
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:287
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:291
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -2052,7 +2052,7 @@ msgstr ""
 "សម្រាប់​ព័ត៌មាន​ពិត​ជាក់ស្ដែង និង​ព័ត៌មាន​ដែល​ដែល​ផ្ដល់​ឲ្យ​ខ្លួន​ឯង ឬ \n"
 "ចម្លើយ ។"
 
-#: exe/engine/field.py:2770
+#: exe/engine/field.py:2846
 msgid "Type a discussion topic here."
 msgstr "វាយ​បញ្ចូល​ប្រធានបទ​ពិភាក្សា​នៅ​ទីនេះ ។"
 
@@ -2084,7 +2084,7 @@ msgstr ""
 "\"ចម្លើយ​ត្រឹមត្រូវ\" ដូចដែល​បាន​បង្ហាញ​ដោយ​ជម្រើស​សម្រាប់​ចម្លើយ​ត្រឹមត្រូវ ឬ\n"
 "\"ចម្លើយ​មិនត្រឹមត្រូវ\" សម្រាប់​ការ​សំណួរ​ផ្សេងទៀត ។"
 
-#: exe/engine/field.py:3116
+#: exe/engine/field.py:3192
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2110,7 +2110,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL ៖"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:122
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "មិនអាច​ទាញយក​ពី %s បានទេ<br/>សូម​ពិនិត្យ​មើល​អក្ខរាវិរុទ្ធ និង​ការ​តភ្ជាប់ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
@@ -2118,15 +2118,11 @@ msgstr "មិនអាច​ទាញយក​ពី %s បានទេ<br/>ស
 #: exe/engine/rssidevice.py:107 exe/engine/rssidevice.py:110
 #, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
-"មិនអាច​ផ្ទុក​មតិព័ត៌មាន RSS ពី %s បាន​ទេ<br/>សូម​ពិនិត្យ​មើល​អក្ខរាវិរុទ្ធ "
-"និង​ការតភ្ជាប់ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
+msgstr "មិនអាច​ផ្ទុក​មតិព័ត៌មាន RSS ពី %s បាន​ទេ<br/>សូម​ពិនិត្យ​មើល​អក្ខរាវិរុទ្ធ និង​ការតភ្ជាប់ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
 
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
-msgstr ""
-"មិនអាច​​បញ្ចូល​​គ្នា​បានទេ ៖ ស្ទួន​ឈ្មោះ​ធនធាន​អាប់ភ្លេត Java ដែលមាន (រួមមាន "
-"៖ \""
+msgstr "មិនអាច​​បញ្ចូល​​គ្នា​បានទេ ៖ ស្ទួន​ឈ្មោះ​ធនធាន​អាប់ភ្លេត Java ដែលមាន (រួមមាន ៖ \""
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2156,10 +2152,8 @@ msgid ""
 " "
 msgstr ""
 "ហាក់​ដូចជា SCORM មិនប្រើ​សំណួរ​ពហុជ្រើសរើស​ដើម្បី​សាកល្បង \n"
-"ចំណេះដឹង​របស់​អ្នក​សិក្សា​លើ​ប្រធានបទ "
-"ដោយ​មិនផ្ដល់មតិអ្នកប្រើ​ដល់​អ្នក​សិក្សា ដើម្បី \n"
-"កែ​ចម្លើយ​នោះទេ ។ កម្រង​សំណួរ នឹង​ត្រូវបាន​ផ្ដល់ "
-"នៅពេល​ដែល​អ្នកសិក្សា​មាន​ពេលវេលា \n"
+"ចំណេះដឹង​របស់​អ្នក​សិក្សា​លើ​ប្រធានបទ ដោយ​មិនផ្ដល់មតិអ្នកប្រើ​ដល់​អ្នក​សិក្សា ដើម្បី \n"
+"កែ​ចម្លើយ​នោះទេ ។ កម្រង​សំណួរ នឹង​ត្រូវបាន​ផ្ដល់ នៅពេល​ដែល​អ្នកសិក្សា​មាន​ពេលវេលា \n"
 "សិក្សា និង​អនុវត្ត ដោយប្រើ​ព័ត៌មាន ឬ​ជំនាញ ។\n"
 " "
 
@@ -2173,8 +2167,7 @@ msgid ""
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
-"ប្រើ​​មតិអ្នក​ប្រើ "
-"ដើម្បី​ផ្ដល់​សេចក្ដី​សង្ខេប​របស់​ចំណុច​ដែល​បាន​គ្រប​នៅ​ក្នុង​ការ​អាន \n"
+"ប្រើ​​មតិអ្នក​ប្រើ ដើម្បី​ផ្ដល់​សេចក្ដី​សង្ខេប​របស់​ចំណុច​ដែល​បាន​គ្រប​នៅ​ក្នុង​ការ​អាន \n"
 "ឬ​ជា​ចំណុច​ចាប់ផ្ដើម​សម្រាប់​ការ​វិភាគ​បន្ថែម​នៃ​ការ​អាន ដោយ​ចោទ​ជា​សំណួរ \n"
 "ឬ​ផ្ដល់​ជា​ប្រធាន​បទ​ដើម្បី​ចាប់ផ្ដើម​ពិភាក្សា​វែកញែក ។"
 
@@ -2193,17 +2186,12 @@ msgid ""
 "text through the text editing buttons associated with the field."
 msgstr ""
 "ប្រើ​វាលនេះ​ដើម្បី​បញ្ចូល​អត្ថបទ ។ \n"
-"iDevice នេះ​មិនមាន​ការ​បញ្ជាក់​ដែលបាន​អនុវត្ត​ទេ "
-"ទោះបី​ជា​​បាន​អនុវត្ត​ការ​ធ្វើ​ទ្រង់ទ្រាយ​ \n"
-"ដែលបាន​កំណត់​ទៅកាន់​អត្ថបទ "
-"តាម​ប៊ូតុង​កែសម្រួល​អត្ថបទ​ដែល​បាន​ភ្ជាប់​ជាមួយ​វាល​ក៏ដោយ ។"
+"iDevice នេះ​មិនមាន​ការ​បញ្ជាក់​ដែលបាន​អនុវត្ត​ទេ ទោះបី​ជា​​បាន​អនុវត្ត​ការ​ធ្វើ​ទ្រង់ទ្រាយ​ \n"
+"ដែលបាន​កំណត់​ទៅកាន់​អត្ថបទ តាម​ប៊ូតុង​កែសម្រួល​អត្ថបទ​ដែល​បាន​ភ្ជាប់​ជាមួយ​វាល​ក៏ដោយ ។"
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
-"ប្រើ​ម៉ឺនុយ​ទម្លាក់​ចុះ​នេះ ដើម្បី​ជ្រើស​ថាតើ​ iDevice "
-"គួរ​តែ​អនុវត្ត​ការ​ធ្វើ​ទ្រង់ទ្រាយ​ណាមួយ​ចំពោះ​វា​ដើម្បី​ឲ្យ​ចំណាំវា​ឬក៏​អត់ "
-"។ ឧទាហរណ៍ ស៊ុម ឬ​រូបតំណាង ។"
+msgstr "ប្រើ​ម៉ឺនុយ​ទម្លាក់​ចុះ​នេះ ដើម្បី​ជ្រើស​ថាតើ​ iDevice គួរ​តែ​អនុវត្ត​ការ​ធ្វើ​ទ្រង់ទ្រាយ​ណាមួយ​ចំពោះ​វា​ដើម្បី​ឲ្យ​ចំណាំវា​ឬក៏​អត់ ។ ឧទាហរណ៍ ស៊ុម ឬ​រូបតំណាង ។"
 
 #: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
 msgid "What to read"
@@ -2291,7 +2279,7 @@ msgstr "គម្រោង eXe"
 msgid "file %s has no parentNode"
 msgstr "ឯកសារ %s មិនមាន parentNode"
 
-#: exe/engine/wikipediaidevice.py:241
+#: exe/engine/wikipediaidevice.py:245
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -2447,12 +2435,9 @@ msgid ""
 "             "
 msgstr ""
 "\n"
-"                តាម​ធម្មតា ប្រធាន​បទ នឹងត្រូវ​បាន​​បង្ហាញ​ជា​ពាក្យ​គន្លឹះ "
-"ជា​ឃ្លា​គន្លឹះ ឬ​ជា\n"
+"                តាម​ធម្មតា ប្រធាន​បទ នឹងត្រូវ​បាន​​បង្ហាញ​ជា​ពាក្យ​គន្លឹះ ជា​ឃ្លា​គន្លឹះ ឬ​ជា\n"
 "                កូដ​ចំណាត់ថ្នាក់ ដែល​ពិពណ៌នា​អំពី​ប្រធានបទ​របស់​ធនធាន ។\n"
-"                ការ​អនុវត្ត​ល្អ​បំផុត​ដែល​បានផ្ដល់​អនុសាសន៍​​នោះ​គឺ "
-"ជ្រើស​តម្លៃ​ពី​វាក្យសព្ទ​ដែល​បាន​ត្រួតពិនិត្យ "
-"ឬ​គ្រោងការណ៍​ចាត់ថ្នាក់​ជា​ផ្លូវការ ។\n"
+"                ការ​អនុវត្ត​ល្អ​បំផុត​ដែល​បានផ្ដល់​អនុសាសន៍​​នោះ​គឺ ជ្រើស​តម្លៃ​ពី​វាក្យសព្ទ​ដែល​បាន​ត្រួតពិនិត្យ ឬ​គ្រោងការណ៍​ចាត់ថ្នាក់​ជា​ផ្លូវការ ។\n"
 "             "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
@@ -2526,10 +2511,8 @@ msgid ""
 "                 "
 msgstr ""
 "\n"
-"                 តាម​ធម្មតា "
-"កាលបរិច្ឆេទ​នឹង​ត្រូវបាន​ភ្ជាប់​ជាមួយ​នឹង​ការ​បង្កើត ឬ\n"
-"                 ការ​ដែល​មាន​ធនធាន ។ "
-"ការ​អនុវត្ត​ល្អ​បំផុត​​ដែល​បាន​ផ្ដល់​អនុសាសន៍​សម្រាប់​ការ​អ៊ិនកូដ​តម្លៃ\n"
+"                 តាម​ធម្មតា កាលបរិច្ឆេទ​នឹង​ត្រូវបាន​ភ្ជាប់​ជាមួយ​នឹង​ការ​បង្កើត ឬ\n"
+"                 ការ​ដែល​មាន​ធនធាន ។ ការ​អនុវត្ត​ល្អ​បំផុត​​ដែល​បាន​ផ្ដល់​អនុសាសន៍​សម្រាប់​ការ​អ៊ិនកូដ​តម្លៃ\n"
 "                 កាលបរិច្ឆេទ​នោះ​គឺ​កំណត់​នៅ​ក្នុង​ទម្រង់​ដែល​បាន​ហៅ\n"
 "                 "
 
@@ -2606,10 +2589,8 @@ msgid ""
 msgstr ""
 "\n"
 "              ប្រភេទ រួមមាន​ពាក្យ​ដែល​ពិពណ៌នា​អំពី​ប្រភេទ​ទូទៅ មុខងារ ឬ\n"
-"              ប្រភេទ​សម្រាប់​មាតិកា ។ "
-"ការ​អនុវត្ត​ល្អ​បំផុត​ដែល​បានផ្ដល់​អនុសាសន៍ គឺ​ត្រូវ​ជ្រើស​តម្លៃ​ពី\n"
-"              វាក្យសព្ទ​ដែល​បាន​ត្រួតពិនិត្យ "
-"ឬ​គ្រោងការណ៍​ចាត់ថ្នាក់​ដែល​បាន​ត្រួតពិនិត្យ ។"
+"              ប្រភេទ​សម្រាប់​មាតិកា ។ ការ​អនុវត្ត​ល្អ​បំផុត​ដែល​បានផ្ដល់​អនុសាសន៍ គឺ​ត្រូវ​ជ្រើស​តម្លៃ​ពី\n"
+"              វាក្យសព្ទ​ដែល​បាន​ត្រួតពិនិត្យ ឬ​គ្រោងការណ៍​ចាត់ថ្នាក់​ដែល​បាន​ត្រួតពិនិត្យ ។"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
@@ -3812,10 +3793,4 @@ msgstr "សិទ្ធិ ៖"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
-"តាម​ធម្មតា សិទ្ធិ​នឹងមាន​ការ​ពន្យល់​ពីការ​គ្រប់គ្រង​សិទ្ធិ​របស់​ធនធាន "
-"ឬ​យោង​ការ​ផ្ដល់​សេវា​ព័ត៌មាន ។ ព័ត៌មាន​សិទ្ធិ ភាគច្រើន​មាន​កម្មសិទ្ធិ​បញ្ញា "
-"ការ​រក្សាសិទ្ធិ និង​កម្មសិទ្ធិ​ផ្សេងទៀត ។ ប្រសិន​បើ​គ្មាន​សិទ្ធិ​ទេ "
-"ក៏​គ្មាន​ការ​សន្មត់​អំពី​ស្ថានភាព​នៃ​សិទ្ធិ​ទាំងនេះ​ "
-"និង​សិទ្ធិ​ផ្សេងទៀត​របស់​ធនធាន​ដែរ ។"
-
+msgstr "តាម​ធម្មតា សិទ្ធិ​នឹងមាន​ការ​ពន្យល់​ពីការ​គ្រប់គ្រង​សិទ្ធិ​របស់​ធនធាន ឬ​យោង​ការ​ផ្ដល់​សេវា​ព័ត៌មាន ។ ព័ត៌មាន​សិទ្ធិ ភាគច្រើន​មាន​កម្មសិទ្ធិ​បញ្ញា ការ​រក្សាសិទ្ធិ និង​កម្មសិទ្ធិ​ផ្សេងទៀត ។ ប្រសិន​បើ​គ្មាន​សិទ្ធិ​ទេ ក៏​គ្មាន​ការ​សន្មត់​អំពី​ស្ថានភាព​នៃ​សិទ្ធិ​ទាំងនេះ​ និង​សិទ្ធិ​ផ្សេងទៀត​របស់​ធនធាន​ដែរ ។"
