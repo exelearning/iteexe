@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# $Id: idevicepane.py 1162 2005-08-18 05:40:48Z matthew $
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -245,6 +245,9 @@ class _RenderablePageMetaClass(type):
             value = attributes.get('value')
             if value is not None:
                 ctx.tag.attributes['value'] = _(value)
+            tooltiptext = attributes.get('tooltiptext')
+            if tooltiptext is not None:
+                ctx.tag.attributes['tooltiptext'] = _(tooltiptext)
         elif ctx.tag.tagName == 'key':
             if 'key' in attributes:
                 ctx.tag.attributes['key'] = _(attributes['key'])
@@ -253,6 +256,8 @@ class _RenderablePageMetaClass(type):
         elif ctx.tag.tagName == 'window':
             if 'title' in attributes:
                 ctx.tag.attributes['title'] = _(attributes['title'])
+        elif 'tooltiptext' in attributes:
+            ctx.tag.attributes['tooltiptext'] = _(attributes['tooltiptext'])
         return ctx.tag
 
 

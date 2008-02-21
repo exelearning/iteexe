@@ -451,14 +451,20 @@ def xul2dict(doc, messages, seq, filename):
             else:
                 toTranslate = node.getAttribute('label')
         elif node.nodeName == 'label':
+            if node.hasAttribute('tooltiptext'):
+                messages, seq = doTranslate(node,
+                        node.getAttribute('tooltiptext'),
+                        messages, seq, filename)
             toTranslate = node.getAttribute('value')
         elif node.nodeName == 'key':
             if node.hasAttribute('key'):
                 toTranslate = node.getAttribute('key')
             else:
                 toTranslate = node.getAttribute('keycode')
-        elif node.hasAttribute('window'):
+        elif node.nodeName == 'window':
             toTranslate = node.getAttribute('title')
+        elif node.hasAttribute('tooltiptext'):
+            toTranslate = node.getAttribute('tooltiptext')
 
         if toTranslate:
             # Write it in the file
