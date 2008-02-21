@@ -77,7 +77,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
     } else if (start.nodeName == 'label') {
       nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value);
       if (start.hasAttribute('tooltiptext')) {
-        nevow_clientToServerEvent('translate', this, '', start.id, 'tooltiptext', start.tooltiptext)
+        nevow_clientToServerEvent('translate', this, '', start.id, 'tooltiptext', start.getAttribute('tooltiptext'))
       }
     } else if (start.nodeName == 'key') {
         if (start.hasAttribute('key')) {
