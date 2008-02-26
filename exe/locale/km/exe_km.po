@@ -63,11 +63,36 @@ msgstr "---ផ្លាស់ទី​ទៅ---"
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
 #: exe/xului/mainpage.py:796
 msgid ". Please use ASCII names."
-msgstr " ។ សូម​ជ្រើស​ឈ្មោះ ASCII ។"
+msgstr " ។ សូម​ជ្រើស​ឈ្មោះ ASCII ។"
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>ប្រសិន​បើ​អ្នក​មានគោលបំណង​ចង់​សាកល្បង​ការ​ស្វែងយល់​អំពី​គោលគំនិត​ស្នូល ឬ​ការ​យល់ដឹង​ពី​ការ​អាន  </dt>  <dd>    <p>  សរសេរ​សេចក្ដី​សង្ខេប​អំពី​គោលគំនិត ឬអាន​ឲ្យបាន​ច្រើន​ដើម្បី​សាកល្បង​ចំណេះដឹង ជា​​គោល ប៉ុន្តែ​ការ​អាន​បាន​តិច​មិនប្រាកដ​ថាមិនមាន​ប្រយោជន៍​នេះ​ទេ ។ អត្ថបទ​តិច​ជាង​មួយ​ទំព័រ គឺ​ប្រហែល​ជា​គ្រប់គ្រាន់ ប៉ុន្តែ​ប្រហែល​ជា​មិនគ្រប់គ្រាន់​​សម្រាប់​សិស្ស​ក្មេងៗ ឬ​អ្នក​ទើប​នឹង​ចាប់ផ្ដើម ។    </p>    <p>ជ្រើស​ពាក្យ​នៅ​ក្នុង​អត្ថបទ ដែល​ជា​គន្លឹះ​ក្នុង​ការ​ស្វែងយល់​អំពី​គោលគំនិត ។ វា​អាចជា​កិរិយាស័ព្ទ នាម និង​គុណកិរិយា ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។    </p>  </dd>  <dt>ប្រសិន​បើ​អ្នក​មាន​គោល​បំណង​ចង់​សាកល្បង​ចំណេះ​ដឹង​ខាង​វាក្យសព្ទ  </dt>  <dd><p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយប្រើ​វាក្យសព្ទគោល ។ អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់គ្នា និង​មាន​ប្រវែង​សមរម្យ ។ បន្លិច​ពាក្យគោល​នៅ​ក្នុង​អត្ថបទ ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។</p>  </dd>  <dt>ប្រសិន​បើ​អ្នក​មាន​គោលបំណង​ចង់​សាកល្បង​វេយ្យាករណ៍/ការ​បង្កើត​ពាក្យ ។  </dt>  <dd>  <p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយ​ប្រើ​ទម្រង់​គោល ។ អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់​គ្នា ហើយ​មាន​ប្រវែង​សមរម្យ ។ ចងចាំ​ថា ​គោលបំណង​មិនមែន​ជា​ចំណេះដឹង​ខាង​វាក្យសព្ទ​ទេ ដូច្នេះ​អត្ថន័យ​ស្នូល​របស់​ពាក្យ​ដើម គឺ​គួរតែ​សិស្ស​ស្គាល់​ច្បាស់ ។  </p>  <p>បន្លិច​ពាក្យ​គោល​នៅ​ក្នុង​អត្ថបទ ។ ផ្ដល់​ការ​ជំនួស​ដោយ​ពាក្យ​ដូចគ្នា​នៅ​ខាងដើម ប៉ុន្តែ​ពាក្យ​បន្ថែម​ខាងចុង​ខុសគ្នា ។ វា​ជា​គំនិត​ល្អ ដែល​ឲ្យ​សិស្ស​មហាវិទ្យាល័យ​សាកល្បង​ធ្វើ​លំហាត់​ទាំងនេះ ដើម្បី​កុំឲ្យ​មាន​ការ​ភ្ញាក់ផ្អើល !  </p>  </dd></dl>"
+msgstr ""
+"<dl>  "
+"<dt>ប្រសិន​បើ​អ្នក​មានគោលបំណង​ចង់​សាកល្បង​ការ​ស្វែងយល់​អំពី​គោលគំនិត​ស្នូល "
+"ឬ​ការ​យល់ដឹង​ពី​ការ​អាន  </dt>  <dd>    <p>  "
+"សរសេរ​សេចក្ដី​សង្ខេប​អំពី​គោលគំនិត ឬអាន​ឲ្យបាន​ច្រើន​ដើម្បី​សាកល្បង​ចំណេះដឹង "
+"ជា​​គោល ប៉ុន្តែ​ការ​អាន​បាន​តិច​មិនប្រាកដ​ថាមិនមាន​ប្រយោជន៍​នេះ​ទេ ។ "
+"អត្ថបទ​តិច​ជាង​មួយ​ទំព័រ គឺ​ប្រហែល​ជា​គ្រប់គ្រាន់ "
+"ប៉ុន្តែ​ប្រហែល​ជា​មិនគ្រប់គ្រាន់​​សម្រាប់​សិស្ស​ក្មេងៗ "
+"ឬ​អ្នក​ទើប​នឹង​ចាប់ផ្ដើម ។    </p>    <p>ជ្រើស​ពាក្យ​នៅ​ក្នុង​អត្ថបទ "
+"ដែល​ជា​គន្លឹះ​ក្នុង​ការ​ស្វែងយល់​អំពី​គោលគំនិត ។ វា​អាចជា​កិរិយាស័ព្ទ នាម "
+"និង​គុណកិរិយា ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។    </p>  </dd> "
+" <dt>ប្រសិន​បើ​អ្នក​មាន​គោល​បំណង​ចង់​សាកល្បង​ចំណេះ​ដឹង​ខាង​វាក្យសព្ទ  </dt> "
+" <dd><p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយប្រើ​វាក្យសព្ទគោល ។ "
+"អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់គ្នា និង​មាន​ប្រវែង​សមរម្យ ។ "
+"បន្លិច​ពាក្យគោល​នៅ​ក្នុង​អត្ថបទ ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ "
+"។</p>  </dd>  "
+"<dt>ប្រសិន​បើ​អ្នក​មាន​គោលបំណង​ចង់​សាកល្បង​វេយ្យាករណ៍/ការ​បង្កើត​ពាក្យ ។  "
+"</dt>  <dd>  <p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយ​ប្រើ​ទម្រង់​គោល ។ "
+"អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់​គ្នា ហើយ​មាន​ប្រវែង​សមរម្យ ។ "
+"ចងចាំ​ថា ​គោលបំណង​មិនមែន​ជា​ចំណេះដឹង​ខាង​វាក្យសព្ទ​ទេ "
+"ដូច្នេះ​អត្ថន័យ​ស្នូល​របស់​ពាក្យ​ដើម គឺ​គួរតែ​សិស្ស​ស្គាល់​ច្បាស់ ។  </p>  "
+"<p>បន្លិច​ពាក្យ​គោល​នៅ​ក្នុង​អត្ថបទ ។ "
+"ផ្ដល់​ការ​ជំនួស​ដោយ​ពាក្យ​ដូចគ្នា​នៅ​ខាងដើម "
+"ប៉ុន្តែ​ពាក្យ​បន្ថែម​ខាងចុង​ខុសគ្នា ។ វា​ជា​គំនិត​ល្អ "
+"ដែល​ឲ្យ​សិស្ស​មហាវិទ្យាល័យ​សាកល្បង​ធ្វើ​លំហាត់​ទាំងនេះ "
+"ដើម្បី​កុំឲ្យ​មាន​ការ​ភ្ញាក់ផ្អើល !  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
@@ -111,7 +136,12 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:71
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr "<p>ផ្ដល់​ស្លាក​ឲ្យ​ឯកសារ​ភ្ជាប់ ។ វា​មាន​ប្រយោជន៍ បើ​រួមបញ្ចូល​ប្រភេទ​ឯកសារ ។ ឧ. pdf, ppt ។ល។</p><p>បើ​រួមបញ្ចូល​ទំហំ​ឯកសារ​ ក៏​ល្អ​ដែរ ដូច្នេះ​បន្ទាប់​ពី​បាន​នាំចេញ​កញ្ចប់​របស់​អ្នក​ទៅ​តំបន់បណ្ដាញ នោះ​អ្នក​ផ្សេងទៀត​នឹង​ដឹង​អំពី​រយៈពេល​ដែល​ត្រូវ​ទាញយក​ឯកសារ​ភ្ជាប់​នេះ ។</p><p>ឧទាហរណ៍ ៖ <code>Sales Forecast.doc (500kb)</code></p>"
+msgstr ""
+"<p>ផ្ដល់​ស្លាក​ឲ្យ​ឯកសារ​ភ្ជាប់ ។ វា​មាន​ប្រយោជន៍ បើ​រួមបញ្ចូល​ប្រភេទ​ឯកសារ "
+"។ ឧ. pdf, ppt ។ល។</p><p>បើ​រួមបញ្ចូល​ទំហំ​ឯកសារ​ ក៏​ល្អ​ដែរ "
+"ដូច្នេះ​បន្ទាប់​ពី​បាន​នាំចេញ​កញ្ចប់​របស់​អ្នក​ទៅ​តំបន់បណ្ដាញ "
+"នោះ​អ្នក​ផ្សេងទៀត​នឹង​ដឹង​អំពី​រយៈពេល​ដែល​ត្រូវ​ទាញយក​ឯកសារ​ភ្ជាប់​នេះ "
+"។</p><p>ឧទាហរណ៍ ៖ <code>Sales Forecast.doc (500kb)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
@@ -281,7 +311,9 @@ msgstr "បន្ថែម​វីដេអូ flash ទៅ iDevice របស�
 
 #: exe/webui/editorpane.py:81
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr "បន្ថែម​បន្ទាត់​អត្ថបទ​ទោល​ទៅ iDevice ។ វា​មាន​ប្រយោជន៍ បើ​អ្នក​ចង់​ដាក់​ស្លាក​នៅ​ក្នុង iDevice ។"
+msgstr ""
+"បន្ថែម​បន្ទាត់​អត្ថបទ​ទោល​ទៅ iDevice ។ វា​មាន​ប្រយោជន៍ "
+"បើ​អ្នក​ចង់​ដាក់​ស្លាក​នៅ​ក្នុង iDevice ។"
 
 #: exe/webui/editorpane.py:84
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
@@ -546,7 +578,10 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:424
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr "ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
+msgstr ""
+"ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព "
+"នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ "
+"ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
 #: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
@@ -2657,7 +2692,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
 #: accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"File\" accesskey=\"f\""
+msgstr "label=\"ឯកសារ\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
@@ -2677,7 +2712,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"New\" accesskey=\"n\""
+msgstr "label=\"ថ្មី\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
@@ -2693,7 +2728,7 @@ msgstr "ប្រភេទ ឬ​របៀប​​នៃ​មាតិកា�
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"Open\" accesskey=\"o\""
+msgstr "label=\"បើក\" accesskey=\"o\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
@@ -2710,7 +2745,7 @@ msgstr "ប្រភេទ ៖"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"គម្រោង​ថ្មីៗ...\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
@@ -2733,7 +2768,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"Save\" accesskey=\"s\""
+msgstr "label=\"រក្សាទុក\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
@@ -2756,7 +2791,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"Save As...\" accesskey=\"a\""
+msgstr "label=\"រក្សាទុកជា...\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
@@ -2771,7 +2806,7 @@ msgstr "ជ្រើស​ទ្រង់ទ្រាយ​ ។"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
 msgid "label=\"Print\" accesskey=\"p\""
-msgstr "label=\"Print\" accesskey=\"p\""
+msgstr "label=\"បោះពុម្ព\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2786,7 +2821,7 @@ msgstr "ទ្រង់ទ្រាយ ៖"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"នាំចេញ\" accesskey=\"e\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2802,7 +2837,7 @@ msgstr "ជ្រើស​ទ្រង់ទ្រាយ"
 #: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
 #: label="Common Cartridge">
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"Common Cartridge\" accesskey=\"c\""
+msgstr "label=\"ដុំហ្វីល​ធម្មតា\" accesskey=\"c\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
@@ -2834,7 +2869,7 @@ msgstr "SCORM 1.2"
 #: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
 #: Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"កញ្ចប់​មាតិកា​របស់ IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2903,7 +2938,7 @@ msgstr "សេចក្ដីយោង​ទៅ​ធនធាន​​ពី​
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
 #: Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"ទំព័រ​ទោល\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -2921,7 +2956,7 @@ msgstr "ប្រភព ៖"
 #: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
 #: File">
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"ឯកសារ​អត្ថបទ\" accesskey=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -2937,7 +2972,7 @@ msgstr "ជ្រើស​ភាសា ។"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
 msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"iPod Notes\" accesskey=\"n\""
+msgstr "label=\"ថ្នាំង iPod\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2955,7 +2990,7 @@ msgstr "ភាសា ៖"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
 msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"ការ​បញ្ចូល​គ្នា\" accesskey=\"m\""
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -2973,7 +3008,7 @@ msgstr "អាប់ខាហ្ស៊ាន"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"បញ្ចូល​កញ្ចប់\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
@@ -2983,7 +3018,7 @@ msgstr "អាហ្វារ"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"ស្រង់​កញ្ចប់​ចេញ\" accesskey=\"E\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -2993,7 +3028,7 @@ msgstr "អាហ្វ្រីកាអាន "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"ចេញ\" accesskey=\"q\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
@@ -3003,7 +3038,7 @@ msgstr "អាល់បានី "
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"ឧបករណ៍\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -3024,7 +3059,7 @@ msgstr "អារ៉ាប់"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh Display">
 msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"ធ្វើ​ឲ្យ​កា​របង្ហាញ​ស្រស់\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
@@ -3034,7 +3069,7 @@ msgstr "​អារមេនី"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"រចនាប័ទ្ម\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
@@ -3044,7 +3079,7 @@ msgstr "អាសាមីស"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"ជំនួយ\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -3055,7 +3090,7 @@ msgstr "អាវែស្តង់"
 #: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
 #: label="Online eXe Manual">
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Online eXe Manual\" accesskey=\"m\""
+msgstr "label=\"សៀវភៅ​ដៃ eXe លើ​បណ្ដាញ\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3066,7 +3101,7 @@ msgstr "អាយម៉ារ៉ា​"
 #: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
 #: label="Tips and Tricks">
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"Tips and Tricks\" accesskey=\"t\""
+msgstr "label=\"ដំណោះស្រាយ​ខ្លីៗ\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3077,7 +3112,7 @@ msgstr "អាហ្ស៊ែរបែហ្ស៊ង់ "
 #: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
 #: label="Release Notes">
 msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"ឯកសារ​ចេញ​ផ្សាយ\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3088,7 +3123,7 @@ msgstr "បាសគៀរ "
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"r\""
-msgstr "label=\"Report an Issue\" accesskey=\"r\""
+msgstr "label=\"រាយការណ៍​​បញ្ហា\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3099,7 +3134,7 @@ msgstr "​​បាស្កេ"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"ជជែក​បន្តផ្ទាល់​របស់ eXe\" accesskey=\"c\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
@@ -3109,7 +3144,7 @@ msgstr "​បេន្កាលី បង់ហ្គ្លា"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
 msgid "label=\"About eXe\" accesskey=\"a\""
-msgstr "label=\"About eXe\" accesskey=\"a\""
+msgstr "label=\"អំពី eXe\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
@@ -3976,4 +4011,3 @@ msgstr "សិទ្ធិ ៖"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "តាម​ធម្មតា សិទ្ធិ​នឹងមាន​ការ​ពន្យល់​ពីការ​គ្រប់គ្រង​សិទ្ធិ​របស់​ធនធាន ឬ​យោង​ការ​ផ្ដល់​សេវា​ព័ត៌មាន ។ ព័ត៌មាន​សិទ្ធិ ភាគច្រើន​មាន​កម្មសិទ្ធិ​បញ្ញា ការ​រក្សាសិទ្ធិ និង​កម្មសិទ្ធិ​ផ្សេងទៀត ។ ប្រសិន​បើ​គ្មាន​សិទ្ធិ​ទេ ក៏​គ្មាន​ការ​សន្មត់​អំពី​ស្ថានភាព​នៃ​សិទ្ធិ​ទាំងនេះ​ និង​សិទ្ធិ​ផ្សេងទៀត​របស់​ធនធាន​ដែរ ។"
-
