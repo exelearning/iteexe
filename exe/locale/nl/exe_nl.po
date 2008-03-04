@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-21 15:03+1300\n"
-"PO-Revision-Date: 2008-01-30 05:51+1300\n"
-"Last-Translator: Leo Vandijck <l.vandijck@collegemaaseik.be>\n"
+"PO-Revision-Date: 2008-03-04 14:56+1300\n"
+"Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1009,7 +1009,7 @@ msgstr "Extra groot"
 
 #: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
 msgid "False"
-msgstr "Fout"
+msgstr "Niet waar"
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
@@ -1566,7 +1566,7 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
-"Geef aanwijzingen om de Juist/Fout-vraag op\n"
+"Geef aanwijzingen om de Waar/Niet waar-vraag op\n"
 "te lossen."
 
 #: exe/engine/clozeidevice.py:115
@@ -1574,7 +1574,7 @@ msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr ""
-"Leg uit hoe de cloze-oefening ingevuld moet worden.\n"
+"Leg uit hoe de invuloefening opgelost moet worden.\n"
 "Als u dit veld niet verandert, wordt een standaardtekst getoond.\n"
 
 #: exe/engine/casestudyidevice.py:228
@@ -2061,7 +2061,7 @@ msgstr "Waar"
 
 #: exe/engine/truefalseidevice.py:142
 msgid "True-False Question"
-msgstr "Waar/onwaar-vraag"
+msgstr "Waar/Niet waar-vraag"
 
 #: exe/engine/truefalseidevice.py:144
 msgid ""
@@ -2070,8 +2070,8 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
-"Een ja/neen-vraag bevat een bewering en de student\n"
-"moet beslissen of deze bewering juist of fout is. Dit soort vraag is o.m. geschikt\n"
+"Een Waar/niet waar-vraag bevat een bewering en de student\n"
+"moet beslissen of deze bewering waar is of niet. Dit soort vraag is o.m. geschikt\n"
 "voor feitelijke informatie en voor ofwel/ofwel-antwoorden."
 
 #: exe/engine/field.py:2846
@@ -2358,14 +2358,14 @@ msgstr "titel"
 
 #: exe/webui/renderable.py:260
 msgid "tooltiptext"
-msgstr ""
+msgstr "tooltiptext"
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: class="dialog" autostretch="always" title="eXeex - About"
 #: onload="sizeToContent()" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
-msgstr ""
+msgstr "eXeex - Over"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
@@ -2375,7 +2375,7 @@ msgstr "Dublin Core Metadatering"
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
 #: label="SCORM 1.2 Options">
 msgid "SCORM 1.2 Options"
-msgstr "Opties SCORM 1.2"
+msgstr "SCORM 1.2 Opties"
 
 #: exe/xului/templates/mainpage.xul:<window
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -2383,7 +2383,7 @@ msgstr "Opties SCORM 1.2"
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
-msgstr ""
+msgstr "exelearning"
 
 #: exe/xului/templates/metadata.xul:<window
 #: xmlns:html="http://www.w3.org/1999/xhtml"
@@ -2395,19 +2395,17 @@ msgstr "Dublin Core"
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
-msgstr "Eigenschappen project"
+msgstr "Projecteigenschappen"
 
 #: exe/xului/templates/properties.xul:<window onload="fillInForms();
 #: translate(document.documentElement, 0);"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1" title="Package Properties">
-#, fuzzy
 msgid "Package Properties"
-msgstr "Eigenschappen project"
+msgstr "Pakketeigenschappen"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
-#, fuzzy
 msgid "The name given to the resource."
 msgstr "Geef de leerdoelstellingen voor deze bron."
 
@@ -2431,9 +2429,8 @@ msgstr "IEEE-LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
-#, fuzzy
 msgid "The project's title."
-msgstr "Titel project:"
+msgstr "Projecttitel."
 
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
@@ -2458,7 +2455,7 @@ msgstr "Pakket uitpakken"
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 msgid "Project Title:"
-msgstr "Titel project:"
+msgstr "Projecttitel:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
@@ -2468,7 +2465,7 @@ msgstr "Metadata"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr ""
+msgstr "De verantwoordelijke voor het aanmaken van de bron."
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2482,7 +2479,7 @@ msgstr "VK_INVOEGEN"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
+msgstr "Achtergrond afbeelding voor de hoofding (hoogte 100px is aanbevolen)"
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2492,7 +2489,7 @@ msgstr "Exporteren"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "Creator:"
-msgstr "Opsteller:"
+msgstr "Auteur:"
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2511,7 +2508,7 @@ msgstr "Achtergrond voor header:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "Het onderwerp van deze bron"
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2580,7 +2577,7 @@ msgstr "Afbeelding wissen"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "An entity responsible for making the resource available."
-msgstr ""
+msgstr "De verantwoordelijke aanbieder van dit werk"
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2614,13 +2611,13 @@ msgstr "D"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Verantwoordelijke auteur voor deze bron."
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "An entity responsible for making contributions to the content of the resource."
-msgstr ""
+msgstr "De verantwoordelijke voor de bijdragen aan dit werk."
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2652,7 +2649,6 @@ msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<label value="License:"
 #: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
-#, fuzzy
 msgid "Select a license."
 msgstr "Kies de licentie"
 
@@ -2660,7 +2656,7 @@ msgstr "Kies de licentie"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Een datum of gebeurtenis tijdens het bestaan van dit werk."
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2761,7 +2757,7 @@ msgstr "Creative Commons Naamsvermelding-geen afgeleide werken 2.5 LLicentie"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "The nature or genre of the content of the resource."
-msgstr ""
+msgstr "De oorsprong of soort bron."
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2850,7 +2846,6 @@ msgstr "2.0 ontwikkelaars"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
-#, fuzzy
 msgid "Select a Format."
 msgstr "Kies een formaat"
 
@@ -2865,7 +2860,7 @@ msgstr "label=\"Afdrukken\" accesskey=\"i\""
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Web pages footer."
-msgstr ""
+msgstr "Webpagina voettekst."
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
@@ -2903,7 +2898,7 @@ msgstr "label=\"Gemeenschappelijk\" accesskey=\"p\""
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "An account of the content of the resource."
-msgstr ""
+msgstr "Een account van de broninhoud."
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2941,7 +2936,7 @@ msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Standaard naam voor niveau 1 elementen"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
@@ -2965,7 +2960,7 @@ msgstr "Niveau 1:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "An unambiguous reference to the resource within a given context."
-msgstr ""
+msgstr "Een unieke referentie naar de bron volgens een gegeven context."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
@@ -2976,7 +2971,7 @@ msgstr "Map met webinhoud"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Standaard naam voor niveau 2 elementen"
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2999,7 +2994,7 @@ msgstr "Niveau 2:"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr ""
+msgstr "Een referentie naar de bron waaruit dit werk is afgeleid."
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3014,7 +3009,7 @@ msgstr "label=\"Webpagina\" accesskey=\"p\""
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Standaard naam voor niveau 3 elementen"
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -3039,7 +3034,6 @@ msgstr "Niveau 3:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
-#, fuzzy
 msgid "Select a language."
 msgstr "Kies de taal"
 
@@ -3332,7 +3326,7 @@ msgstr "Wit-Russisch"
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
 #: tooltiptext="Promote node up in hierarchy">
 msgid "Promote node up in hierarchy"
-msgstr ""
+msgstr "Element verhogen in de hierarchie"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -3343,7 +3337,7 @@ msgstr "Bulgaars"
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
 #: tooltiptext="Demote node down in hierarchy">
 msgid "Demote node down in hierarchy"
-msgstr ""
+msgstr "Elemant verlagen in de hierarchie"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
@@ -3352,9 +3346,8 @@ msgstr "Burmees"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
-#, fuzzy
 msgid "Move node up"
-msgstr "Omhoog"
+msgstr "Verplaats naar omhoog"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
@@ -3364,9 +3357,8 @@ msgstr "Catalaans"
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
 #: tooltiptext="Move node down">
-#, fuzzy
 msgid "Move node down"
-msgstr "Omlaag"
+msgstr "Verplaats naar beneden"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
@@ -4128,7 +4120,7 @@ msgstr "Zoeloe"
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "A reference to a related resource."
-msgstr ""
+msgstr "Verwijzing naar een gelijkaardige bron."
 
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
@@ -4139,7 +4131,7 @@ msgstr "Relatie:"
 #: style="width:8em" tooltiptext="The extent or scope of the content
 #: resource.">
 msgid "The extent or scope of the content of the resource."
-msgstr ""
+msgstr "De uitbreiding van de broninhoud"
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
@@ -4151,7 +4143,7 @@ msgstr "Bereik:"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Information about rights held in and over the resource."
-msgstr ""
+msgstr "informatie over de rechten van de bron."
 
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
 #: style="width:8em" tooltiptext="Information about rights held in and over
