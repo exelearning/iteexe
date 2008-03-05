@@ -1,7 +1,7 @@
 /*
 ===========================================================================
 eXe
-Copyright 2007. eXelearning.
+Copyright 2007-2008. eXelearning Project, http://eXeLearning.org/
 style sheet for default theme
 see: http://exelearning.org/Creating_a_new_Style for more info on how
 to modify this style for your needs.
@@ -29,7 +29,6 @@ a:hover {
 p#nodeTitle { 
    color: #4d4d4d;
    font-size: 32px;
-   letter-spacing: -1px;
    text-align:left;
    padding-right: 30px;
 }
@@ -75,7 +74,6 @@ div#nodeDecoration {
    color: #568D14;
    font-size: 24px;
    font-weight:bold;
-   letter-spacing:-1px;
    vertical-align: top;
    background: #FFF; 
    padding-bottom: 10px;
@@ -91,7 +89,6 @@ div#nodeDecoration {
    color: #568D14;
    font-size: 24px;
    font-weight:bold;
-   letter-spacing:-1px;
    vertical-align: top;
    background: transparent; 
    padding-bottom: 4px;

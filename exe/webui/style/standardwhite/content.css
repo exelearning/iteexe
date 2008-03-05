@@ -25,7 +25,6 @@ p#nodeTitle {
     color: #4D4D4D;
     font-size: 18px;
     font-weight: bold;
-    letter-spacing: 3px;
     display: inline;
 }
 
@@ -71,7 +70,6 @@ input.feedbackbutton {
 .iDeviceTitle {
     color: #000;
     font-size: 17px;
-    letter-spacing: 1px;
     font-weight: normal;
 }    
 
