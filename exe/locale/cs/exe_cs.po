@@ -1,16 +1,16 @@
 # translation of exe_cs.po to
 # EXELearning Czech PO file
-# Copyright (C) 2004-2006 EXELearning.org
+# Copyright (C) 2004-2008 EXELearning.org
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 #
-# Vlastimil Ott <vlastimil@e-ott.info>, 2007.
+# Vlastimil Ott <vlastimil@e-ott.info>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-21 15:03+1300\n"
-"PO-Revision-Date: 2007-07-20 14:24+0200\n"
+"PO-Revision-Date: 2008-03-13 20:45+0100\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "<dl>  <dt>Pokud je vaším cílem otestovat pochopení principu nebo por
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>Klikněte &lt;Vybrat MP3 soubor&gt; a označte MP3 soubor, který chcete vložit.</li> <li>Klikněte do rozbalovacího menu a vyberte pozici, kde se má soubor zobrazovat.</li>  <li>Vložte popisek souboru.</li> <li>Připojte k MP3 souboru odpovídající text.</li> <li>Vyberte styl zobrazení iDevice, např. 'Zvýraznění' vytvoří ikonu a okraj kolem iDevice.</li></ol>"
+msgstr "<ol>  <li>Klepněte &lt;Vybrat MP3 soubor&gt; a označte MP3 soubor, který chcete vložit.</li> <li>Klepněte do rozbalovacího menu a vyberte pozici, kde se má soubor zobrazovat.</li>  <li>Vložte popisek souboru.</li> <li>Připojte k MP3 souboru odpovídající text.</li> <li>Vyberte styl zobrazení iDevice, např. 'Zvýraznění' vytvoří ikonu a okraj kolem iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -125,8 +125,8 @@ msgid ""
 msgstr ""
 "<p>Vložte do testového políčka text pro zkušební aktivitu. \n"
 "Buď jej můžete zkopírovat z jiného zdroje, nebo jej do políčka přímo napsat.</p>\n"
-"<p> Slova, která chcete skrýt, vyberte dvojklikem. \n"
-" Poté klikněte na tlačítko Skryj/zobraz slovo umístěné níže.</p>"
+"<p> Slova, která chcete skrýt, vyberte dvojitým klepnutím. \n"
+" Poté klepněte na tlačítko Skryj/zobraz slovo umístěné níže.</p>"
 
 #: exe/engine/field.py:2600
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
@@ -134,7 +134,7 @@ msgstr "<p>Pokud zůstane nezatrženo, drobné překlepy a rozdíly ve velikosti
 
 #: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr "<p>Je-li volba vybrána, odpovědi s odlišnou velikostí písmen budou označeny jako chybné (neplatné).</p>"
+msgstr "<p>Je-li volba zatržena, odpovědi s odlišnou velikostí písmen budou označeny jako chybné (neplatné).</p>"
 
 #: exe/engine/field.py:2626
 msgid ""
@@ -462,9 +462,8 @@ msgid "Case Study"
 msgstr "Případová studie"
 
 #: exe/webui/wikipediablock.py:97
-#, fuzzy
 msgid "Catalan Wikipedia Article"
-msgstr "Článek ve Wikipedii italsky"
+msgstr "Článek ve Wikipedii katalánsky"
 
 #: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
 msgid "Change Image"
@@ -512,37 +511,37 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
 msgstr ""
-"Klikněte \n"
+"Klepněte \n"
 "na obrázek dole nebo na tlačítko \"Vložit obrázek\" pro vložení obrázku, který \n"
 "se bude zvětšovat."
 
 #: exe/engine/attachmentidevice.py:68
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr "Klikněte na <strong>Vybrat soubor</strong>,najděte soubor, který chcete načíst a označte jej."
+msgstr "Klepněte na <strong>Vybrat soubor</strong>,najděte soubor, který chcete načíst a označte jej."
 
 #: exe/engine/field.py:2213
 msgid "Click Here"
-msgstr "Klikněte sem"
+msgstr "Klepněte sem"
 
 #: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
-msgstr "Klikněte pro doplnění instrukcí"
+msgstr "Klepněte pro doplnění instrukcí"
 
 #: exe/webui/reflectionblock.py:113
 msgid "Click here"
-msgstr "Klikněte sem"
+msgstr "Klepněte sem"
 
 #: exe/engine/field.py:2883
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
-"Kliknutím na tlačítko Náhled převedete \n"
+"Klepnutím na tlačítko Náhled převedete \n"
 "                                 zápis v LaTeXu na obrázek."
 
 #: exe/engine/galleryidevice.py:424
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr "Pro vložení obrázku klikněte na tlačítko \"Přidat obrázky\". Obrázek se objeví dole, kde jej budete moct doplnit popiskem. Bývá dobrým zvykem do popisu vepsat také velikost obrázku."
+msgstr "Pro vložení obrázku klepněte na tlačítko \"Přidat obrázky\". Obrázek se objeví dole, kde jej budete moct doplnit popiskem. Bývá dobrým zvykem do popisu vepsat také velikost obrázku."
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
 #: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
@@ -557,15 +556,15 @@ msgstr "Zavřít"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
-msgstr "Zkušební test"
+msgstr "Cloze test (doplňovačka)"
 
 #: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
-msgstr "Aktivita zkušební test"
+msgstr "Cloze test (doplňovačka)"
 
 #: exe/webui/element.py:1018
 msgid "Cloze Text"
-msgstr "Text zkušebního testu"
+msgstr "Text Cloze testu"
 
 #: exe/webui/element.py:1585 exe/webui/element.py:1904
 msgid "Correct"
@@ -573,9 +572,8 @@ msgstr "Správně"
 
 #: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
 #: exe/webui/element.py:1816
-#, fuzzy
 msgid "Correct Option"
-msgstr "Správně"
+msgstr "Správná volba"
 
 #: exe/webui/truefalseelement.py:208
 msgid "Correct!"
@@ -755,7 +753,7 @@ msgstr "Editovat"
 
 #: twisted/persisted/styles.py:518
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr ""
+msgstr "Soubor generic.data, nebo iDevice, nebo balíček, který načítáte, byl vytvořen novější verzí eXe. Aktualizujte, prosím, svou verzi eXe a zkuste to znovu."
 
 #: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
@@ -820,8 +818,8 @@ msgid ""
 msgstr ""
 "Zadejte adresu RSS zdroje, který si přejete vložit do obsahu.\n"
 "RSS zdroje jsou obvykle označeny malou ikonou (jako např. <img src=\"/images/feed-icon.png\" />) nebo textem \"RSS\".\n"
-"Pokud na ikonu nebo text kliknete, RSS kanál se zobrazí přímo ve vašem prohlížeči.\n"
-"Kliknutím pravým tlačítkem myši na ikonu se zobrazí nabídka, \n"
+"Pokud na ikonu nebo text klepnete, RSS kanál se zobrazí přímo ve vašem prohlížeči.\n"
+"Klepnutím pravým tlačítkem myši na ikonu se zobrazí nabídka, \n"
 "zvolte \"Kopírovat adresu odkazu\" a v eXe tuto adresu vložte do políčka v RSS iDevice.\n"
 "Poté stiskněte Načíst. Informace z RSS kanálu se načtou a zobrazí se jako odkazy."
 
@@ -833,7 +831,7 @@ msgid ""
 msgstr ""
 "Vložte volbu odpovědi. Uveďte několik hodnověrných, ale nesprávných možností \n"
 "(obvykle tak 3-4) a k nim přidejte správnou odpověď.\n"
-"Klikněte na tlačítko &lt;Přidat jinou volbu&gt; pro přidání další odpovědi."
+"Klepněte na tlačítko &lt;Přidat jinou volbu&gt; pro přidání další odpovědi."
 
 #: exe/engine/truefalseidevice.py:156
 msgid ""
@@ -871,7 +869,7 @@ msgid ""
 msgstr ""
 "Vepište možné volby. \n"
 "Tlačítkem \"Přidat další volbu\" vytvoříte další volbu. \n"
-"Smazat položku můžete kliknutím na červené \"X\" vedle odpovědi, kterou si přejete odstranit."
+"Smazat položku můžete klepnutím na červené \"X\" vedle odpovědi, kterou si přejete odstranit."
 
 #: exe/engine/field.py:3185
 msgid ""
@@ -880,7 +878,7 @@ msgid ""
 "clicking the red X next to the option."
 msgstr ""
 "Vepište možné volby. \n"
-"Tlačítkem \"Přidat další volbu\" vytvoříte další volbu. Smazat položku můžete kliknutím\n"
+"Tlačítkem \"Přidat další volbu\" vytvoříte další volbu. Smazat položku můžete klepnutím\n"
 "na červené X vedle odpovědi, kterou si přejete odstranit."
 
 #: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
@@ -1156,9 +1154,8 @@ msgid "Import iDevice"
 msgstr "Importovat"
 
 #: exe/webui/element.py:1587
-#, fuzzy
 msgid "Incorrect"
-msgstr "Chyba!"
+msgstr "Nesprávně"
 
 #: exe/webui/truefalseelement.py:209
 msgid "Incorrect!"
@@ -1220,7 +1217,6 @@ msgid "Left"
 msgstr "Doleva"
 
 #: exe/export/pages.py:71 exe/export/textexport.py:54
-#, fuzzy
 msgid "Licensed under the"
 msgstr "Licencováno pod"
 
@@ -1229,9 +1225,9 @@ msgid "Load"
 msgstr "Načíst"
 
 #: exe/xului/mainpage.py:543
-#, fuzzy, python-format
+#, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr "Soubor s obrázkem %s nebyl nalezen, nelze jej zobrazit"
+msgstr "Místní soubor %s nebyl nalezen, nelze jej zobrazit"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
@@ -1259,6 +1255,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Kompilace pomoci mimeTeX selhala!\n"
+"%s"
 
 #: exe/webui/block.py:233
 msgid "Move Down"
@@ -1295,7 +1293,7 @@ msgstr "Nový iDevice"
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:305 exe/export/websitepage.py:197
 msgid "Next"
-msgstr "Další"
+msgstr "Následující"
 
 #: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
 msgid "No Images Loaded"
@@ -1392,7 +1390,7 @@ msgstr "Soubory rozbaleny do: %s"
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
 #: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
-msgstr ""
+msgstr "Balíček je zastaralý. Pomocí položky Soubor-Otevřít a následně Uložit jako... jej aktualizujte. Teprve potom jej můžete vložit do jiného balíčku!"
 
 #: exe/xului/mainpage.py:315
 #, python-format
@@ -1437,10 +1435,13 @@ msgid ""
 "   File... Quit\n"
 "menu to close eXe."
 msgstr ""
+"Pro ukončení programu eXe\n"
+"prosím použijte položku\n"
+"Konec v nabídce Soubor."
 
 #: exe/application.py:243
 msgid "Please wait until loading finishes"
-msgstr ""
+msgstr "Počkejte prosím, dokud načítání neskončí"
 
 #: exe/webui/wikipediablock.py:106
 msgid "Polish Wikipedia Article"
@@ -1711,7 +1712,7 @@ msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
-"Vyberte požadovaný počet správných odpovědí kliknutím \n"
+"Vyberte požadovaný počet správných odpovědí klepnutím \n"
 "na zaškrtávací tlačítko vedle odpovědi."
 
 #: exe/webui/quiztestblock.py:104
@@ -1731,7 +1732,7 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
-"Vyberte správnou volbu kliknutím \n"
+"Vyberte správnou volbu klepnutím \n"
 " na přepínač."
 
 #: exe/engine/imagemagnifieridevice.py:71
@@ -1875,7 +1876,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr "IDevice příloha se používá pro připojení existujících souborů k vašemu obsahu. Například pokud máte PDF soubor nebo PPT prezentaci, kterou chcete zpřístupnit studentům, lze ji připojit jako přílohu společně s názvem a velikostí souboru. Studenti si pak mohou kliknutím na odkaz tuto přílohu stáhnout."
+msgstr "IDevice příloha se používá pro připojení existujících souborů k vašemu obsahu. Například pokud máte PDF soubor nebo PPT prezentaci, kterou chcete zpřístupnit studentům, lze ji připojit jako přílohu společně s názvem a velikostí souboru. Studenti si pak mohou klepnutím na odkaz tuto přílohu stáhnout."
 
 #: exe/engine/externalurlidevice.py:39
 msgid ""
@@ -2016,7 +2017,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr ""
 "K označení správné odpovědi \n"
-"klikněte na přepínač vedle dané možnosti."
+"klepněte na přepínač vedle dané možnosti."
 
 #: exe/engine/package.py:83
 msgid "Topic"
@@ -2106,13 +2107,13 @@ msgid "Unable to download from %s <br/>Please check the spelling and connection 
 msgstr "Nelze stahovat z %s <br/>Překontrolujte, prosím, zadaný text a také připojení a zkuste to znovu."
 
 #: exe/engine/rssidevice.py:107 exe/engine/rssidevice.py:110
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
-msgstr "Nelze stahovat z %s <br/>Překontrolujte, prosím, zadaný text a také připojení a zkuste to znovu."
+msgstr "Nelze načíst RSS kanál %s <br/>Překontrolujte, prosím, zadaný text a také připojení a zkuste to znovu."
 
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
-msgstr ""
+msgstr "Není možné spojit: duplicitní jméno prostředku typu Java applet (včetně: \""
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2317,14 +2318,14 @@ msgstr "nadpis"
 
 #: exe/webui/renderable.py:260
 msgid "tooltiptext"
-msgstr ""
+msgstr "text plovoucích tipů"
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: class="dialog" autostretch="always" title="eXeex - About"
 #: onload="sizeToContent()" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
-msgstr ""
+msgstr "eXeex - O programu"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
@@ -2342,7 +2343,7 @@ msgstr "Volby SCORM 1.2"
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
-msgstr ""
+msgstr "exelearning"
 
 #: exe/xului/templates/metadata.xul:<window
 #: xmlns:html="http://www.w3.org/1999/xhtml"
@@ -2360,15 +2361,13 @@ msgstr "Nastavení projektu"
 #: translate(document.documentElement, 0);"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1" title="Package Properties">
-#, fuzzy
 msgid "Package Properties"
-msgstr "Nastavení projektu"
+msgstr "Vlastnosti balíčku"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
-#, fuzzy
 msgid "The name given to the resource."
-msgstr "Vepište výukové cíle tohoto prostředku."
+msgstr "Název prostředku."
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'red';" id="pp_scolinks" label="Add
@@ -2389,9 +2388,8 @@ msgstr "IEEE LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
-#, fuzzy
 msgid "The project's title."
-msgstr "Název projektu:"
+msgstr "Název projektu."
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
@@ -2404,7 +2402,7 @@ msgstr "Nadpis:"
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
 msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
-msgstr ""
+msgstr "Zatrhnutí tohoto přepínače umožní přidat do individuálních stránek v SCO odkazy Předchozí a Následující. Je ovšem vyžadováno nestandardní rozšíření SCORM 1.2, což funguje jen v některých verzích Moodle."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
@@ -2424,7 +2422,7 @@ msgstr "Metadata"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr ""
+msgstr "Entita primárně zodpovědná za obsah prostředku."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2435,7 +2433,7 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
+msgstr "Obrázek pro pozadí hlavičky (doporučuje se výška 100px)."
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2461,7 +2459,7 @@ msgstr "Pozadí záhlaví:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "Téma obsahu v prostředku."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2487,9 +2485,8 @@ msgstr "VK_LEFT"
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="window.location.reload(true);" id="showImage" label="Show
 #: Image">
-#, fuzzy
 msgid "Show Image"
-msgstr "Zobrazit obrázek %s"
+msgstr "Zobrazit obrázek"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
@@ -2522,7 +2519,7 @@ msgstr "Smazat obrázek"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "An entity responsible for making the resource available."
-msgstr ""
+msgstr "Entita odpovědná za dostupnost prostředku."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
@@ -2550,13 +2547,13 @@ msgstr "D"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Primární autor prostředku."
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "An entity responsible for making contributions to the content of the resource."
-msgstr ""
+msgstr "Entita odpovědná za vytváření příspěvků do obsahu prostředku."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
@@ -2582,15 +2579,14 @@ msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<label value="License:"
 #: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
-#, fuzzy
 msgid "Select a license."
-msgstr "Zvolte licenci"
+msgstr "Zvolte licenci."
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Datum události v životnosti prostředku."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
@@ -2684,7 +2680,7 @@ msgstr "Creative Commons Attribution-NoDerivs 2.5 License"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "The nature or genre of the content of the resource."
-msgstr ""
+msgstr "Povaha nebo žánr obsahu daného prostředku."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
@@ -2761,9 +2757,8 @@ msgstr "Developing Nations 2.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
-#, fuzzy
 msgid "Select a Format."
-msgstr "Vybrat formát"
+msgstr "Vyberte formát."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
@@ -2773,7 +2768,7 @@ msgstr "label=\"Tisk...\" accesskey=\"t\""
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Web pages footer."
-msgstr ""
+msgstr "Patička webových stránek."
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
@@ -2798,15 +2793,14 @@ msgstr "Vybrat formát"
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
 #: label="Common Cartridge">
-#, fuzzy
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"Jedna strana\" accesskey=\"j\""
+msgstr "label=\"Common Cartridge\" accesskey=\"c\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "An account of the content of the resource."
-msgstr ""
+msgstr "Popis obsahu daného prostředku."
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2838,7 +2832,7 @@ msgstr "label=\"IMS balíček\" accesskey=\"i\""
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Předvolené jméno pro uzly první úrovně"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
@@ -2861,7 +2855,7 @@ msgstr "Úroveň 1:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "An unambiguous reference to the resource within a given context."
-msgstr ""
+msgstr "Jednoznačný odkaz na prostředek v zadaném kontextu."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
@@ -2872,7 +2866,7 @@ msgstr "Do nové složky"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Předvolené jméno pro uzly druhé úrovně"
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2895,7 +2889,7 @@ msgstr "Úroveň 2:"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr ""
+msgstr "Odkaz na prostředek, z něhož je současný prostředek odvozen."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
@@ -2907,7 +2901,7 @@ msgstr "label=\"Jedna strana\" accesskey=\"j\""
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Předvolené jméno pro uzly třetí úrovně"
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2929,9 +2923,8 @@ msgstr "Úroveň 3:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
-#, fuzzy
 msgid "Select a language."
-msgstr "Vyberte jazyk"
+msgstr "Vyberte jazyk."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
@@ -3159,7 +3152,7 @@ msgstr "běloruština "
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
 #: tooltiptext="Promote node up in hierarchy">
 msgid "Promote node up in hierarchy"
-msgstr ""
+msgstr "Uzel nahoru ve struktuře"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -3170,7 +3163,7 @@ msgstr "bulharština "
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
 #: tooltiptext="Demote node down in hierarchy">
 msgid "Demote node down in hierarchy"
-msgstr ""
+msgstr "Uzel dolů ve struktuře"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
@@ -3179,9 +3172,8 @@ msgstr "barmština "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
-#, fuzzy
 msgid "Move node up"
-msgstr "Posunout nahoru"
+msgstr "O uzel výše"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
@@ -3191,9 +3183,8 @@ msgstr "katalánština "
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
 #: tooltiptext="Move node down">
-#, fuzzy
 msgid "Move node down"
-msgstr "Posunout dolů"
+msgstr "O uzel níže"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
@@ -3333,7 +3324,7 @@ msgstr "němčina "
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek ">
 msgid "Greek "
-msgstr ""
+msgstr "řečtina"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
@@ -3943,7 +3934,7 @@ msgstr "zulština "
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "A reference to a related resource."
-msgstr ""
+msgstr "Odkaz na spřízněný prostředek."
 
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
@@ -3954,7 +3945,7 @@ msgstr "Vztah:"
 #: style="width:8em" tooltiptext="The extent or scope of the content
 #: resource.">
 msgid "The extent or scope of the content of the resource."
-msgstr ""
+msgstr "Obsahové rozmezí prostředku."
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
@@ -3966,7 +3957,7 @@ msgstr "Rozsah:"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Information about rights held in and over the resource."
-msgstr ""
+msgstr "Informace o právech týkajících se prostředku a jeho obsahu."
 
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
 #: style="width:8em" tooltiptext="Information about rights held in and over
@@ -3977,3 +3968,4 @@ msgstr "Práva:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Typicky bude v položce Práva obsažena pasáž o oprávnění k daným zdrojům nebo odkaz na takové informace. Informace o oprávnění zahrnují často Intellectual Property Rights (IPR), copyright a jiná vlastnická práva. Pokud nebude položka Práva uvedena, nelze vytvářet předpoklady o stavu jakýchkoli práv vztažených k prostředkům a zdrojům."
+

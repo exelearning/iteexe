@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-13 14:56+1300\n"
-"PO-Revision-Date: 2008-03-12 01:29-0100\n"
-"Last-Translator: Tomas vilarino Fidalgo <vifito@cesga.es>\n"
+"PO-Revision-Date: 2008-03-14 00:35+1300\n"
+"Last-Translator: Tomás Vilariño <vifito@cesga.es>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-EXE-Language: Galego\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:169
 msgid ""
@@ -2325,14 +2326,14 @@ msgstr "título"
 
 #: exe/webui/renderable.py:260
 msgid "tooltiptext"
-msgstr ""
+msgstr "texto da indicación"
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: class="dialog" autostretch="always" title="eXeex - About"
 #: onload="sizeToContent()" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
-msgstr ""
+msgstr "eXeex - Acerca de "
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
@@ -2350,7 +2351,7 @@ msgstr "Opcións de SCORM 1.2"
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
-msgstr ""
+msgstr "exelearning"
 
 #: exe/xului/templates/metadata.xul:<window
 #: xmlns:html="http://www.w3.org/1999/xhtml"
@@ -2443,7 +2444,7 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
+msgstr "Imaxe de fondo para unha cabeceira (unha imaxe duns 100px é a recomendada)."
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2469,7 +2470,7 @@ msgstr "Fondo da cabeceira:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "O tema do contido do recurso"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2529,7 +2530,7 @@ msgstr "Eliminar imaxe"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "An entity responsible for making the resource available."
-msgstr ""
+msgstr "Unha entidade responsable de facer o recurso dispoñible."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
@@ -2557,13 +2558,13 @@ msgstr "D"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Autor principal do recurso"
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "An entity responsible for making contributions to the content of the resource."
-msgstr ""
+msgstr "Unha entidade responsable para facer as contribucións ao contido do recurso."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
@@ -2597,7 +2598,7 @@ msgstr "Seleccionar Licenza"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Unha data do evento no ciclo de vida do recurso."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
@@ -2691,7 +2692,7 @@ msgstr "Licenza Creative Commons Attribution-NoDerivs 2.5"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "The nature or genre of the content of the resource."
-msgstr ""
+msgstr "A natureza ou xénero do contido do recurso."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
@@ -2780,7 +2781,7 @@ msgstr "label=\"Imprimir\" accesskey=\"i\""
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Web pages footer."
-msgstr ""
+msgstr "Pé de páxinas web."
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
@@ -2812,7 +2813,7 @@ msgstr "label=\"Common Cartridge\" accesskey=\"p\""
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "An account of the content of the resource."
-msgstr ""
+msgstr "Unha conta do contido do recurso."
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2844,7 +2845,7 @@ msgstr "label=\"Paquete de contido IMS\" accesskey=\"i\""
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Nome por defecto para os nodos de nivel 1"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
@@ -2867,7 +2868,7 @@ msgstr "Nivel 1:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "An unambiguous reference to the resource within a given context."
-msgstr ""
+msgstr "Unha referencia inequívoca para o recurso dentro dun contexto dado."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
@@ -2878,7 +2879,7 @@ msgstr "Cartafol independente"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Nome por defecto para os nodos de nivel 2"
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2901,7 +2902,7 @@ msgstr "Nivel 2:"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr ""
+msgstr "Unha referencia a un recurso do que o presente recurso se deriva."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
@@ -2913,7 +2914,7 @@ msgstr "label=\"Páxina única\" accesskey=\"p\""
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Nome por defecto para os nodos de nivel 3"
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -3949,7 +3950,7 @@ msgstr "Zulú "
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "A reference to a related resource."
-msgstr ""
+msgstr "Unha referencia a un recurso relacionado."
 
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
@@ -3960,7 +3961,7 @@ msgstr "Relación:"
 #: style="width:8em" tooltiptext="The extent or scope of the content
 #: resource.">
 msgid "The extent or scope of the content of the resource."
-msgstr ""
+msgstr "A extensión ou ámbito do contido do recurso."
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
