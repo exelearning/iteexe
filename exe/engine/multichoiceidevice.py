@@ -245,6 +245,12 @@ for the other options.""")
         But this is essentially a missing upgradeToVersion8 (as described in,
         and called by, its TwistedRePersist, to follow)
         """
+        if not hasattr(self, 'questions'):
+            # not sure why it wouldn't even have this, but define it:
+            self.questions        = []
+        if len(self.questions) == 0:
+            # no question defined yet, nothing to upgrade there:
+            return
         if not hasattr(self.questions[0], 'question'):
             # does NOT have a self.questions[0].question anymore 
             # -> already new enough. 
