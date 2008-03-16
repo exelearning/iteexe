@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -87,7 +87,7 @@ within Wikipedia.""")
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
         try:
             url  = (self.site or self.ownUrl)
-            if not url.endswith('/'): url += '/'
+            if not url.endswith('/') and name <> '': url += '/'
             if '://' not in url: url = 'http://' + url
             url += name
             net  = urllib.urlopen(url)
