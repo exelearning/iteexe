@@ -102,7 +102,7 @@ on obtaining and building eXe and its dependencies.
 CREDITS
 =======
 
-* Secret Labs AB and Fredrik Lundh for The Python Imaging Library (PIL) 
+ * Secret Labs AB and Fredrik Lundh for The Python Imaging Library (PIL) 
 
 The Python Imaging Library (PIL) is
 
@@ -253,6 +253,16 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE, DAMMIT.
+
+ * GeoGebra is Copyright 2001-2008 Geogebra Inc.
+
+GeoGebra is a free and multi-platform dynamic mathematics software for
+schools that joins geometry, algebra, and calculus.  The application
+used is licensed under the GNU General Public License.  (See the COPYING
+file.)
+
+More information about GeoGebra and the source code are available from
+http://www.geogebra.org/
 
  * iPod is a trademark of Apple Inc.
 
