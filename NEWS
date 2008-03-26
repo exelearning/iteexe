@@ -1,4 +1,5 @@
 * Add ability to translate tooltips
+* Fix handling of multi-select questions with 10 or more options
 * Improve Wiki Article idevice handling of pages without content div
 * Remove CSS letter-spacing to improve rendering with some fonts (Khmer)
 * Automate building Debian changelog and versioning

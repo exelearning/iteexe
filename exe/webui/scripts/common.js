@@ -1172,8 +1172,8 @@ function calcScore(num, ident){
 function showFeedback(num, ident){
     for(i=0; i<num; i++){
         var ele = document.getElementById(ident+i.toString())
-        var ele0 = document.getElementById(ident+i.toString()+"0")
-        var ele1 = document.getElementById(ident+i.toString()+"1")
+        var ele0 = document.getElementById(ident+i.toString()+"_0")
+        var ele1 = document.getElementById(ident+i.toString()+"_1")
         var ansele = document.getElementById("ans"+ident+i.toString())
         chk = "False"
         if (ele.checked==1)

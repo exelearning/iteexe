@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1581,9 +1581,9 @@ class SelectOptionElement(Element):
         else:
             html += self.answerElement.renderView()
         html += "</div></td></tr><tr><td></td><td>\n"
-        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '1')
+        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '_1')
         html += _("Correct") + "</div>"
-        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '0')
+        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '_0')
         html += _("Incorrect") + "</td></tr></div>"
         return html
     
