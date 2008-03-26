@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-18 14:54+1300\n"
+"POT-Creation-Date: 2008-03-26 14:13+1300\n"
 "PO-Revision-Date: 2008-03-16 14:35+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <flu.project@gmail.com>\n"
@@ -729,7 +729,7 @@ msgstr ""
 "ЕКСПОРТИРАНЕТО СЕ ПРОВАЛИ!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:450
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1302,7 +1302,7 @@ msgid "New iDevice"
 msgstr "Ново Помощно средство"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Следващ"
 
@@ -1494,7 +1494,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Папката за преглед %s е файл, не може да се замени"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:304 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Следващ"
 

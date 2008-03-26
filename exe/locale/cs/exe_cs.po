@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-21 15:03+1300\n"
+"POT-Creation-Date: 2008-03-26 14:13+1300\n"
 "PO-Revision-Date: 2008-03-13 20:45+0100\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -727,7 +727,7 @@ msgstr ""
 "EXPORT SE NEZDAŘIL!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:450
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1291,7 +1291,7 @@ msgid "New iDevice"
 msgstr "Nový iDevice"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Následující"
 
@@ -1480,7 +1480,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Adresář s náhledy %s už existuje, nelze jej nahradit"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:304 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Předchozí"
 
@@ -3968,4 +3968,3 @@ msgstr "Práva:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Typicky bude v položce Práva obsažena pasáž o oprávnění k daným zdrojům nebo odkaz na takové informace. Informace o oprávnění zahrnují často Intellectual Property Rights (IPR), copyright a jiná vlastnická práva. Pokud nebude položka Práva uvedena, nelze vytvářet předpoklady o stavu jakýchkoli práv vztažených k prostředkům a zdrojům."
-

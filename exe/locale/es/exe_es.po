@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-21 15:03+1300\n"
+"POT-Creation-Date: 2008-03-26 14:13+1300\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -700,7 +700,7 @@ msgstr ""
 "LA EXPORTACIÓN FALLÓ!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:450
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1257,7 +1257,7 @@ msgid "New iDevice"
 msgstr "Nuevo iDevice"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Siguiente"
 
@@ -1439,7 +1439,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directorio %s es un archivo, no se puede remplazar"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:304 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Anterior"
 

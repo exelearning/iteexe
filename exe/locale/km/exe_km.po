@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-21 15:03+1300\n"
+"POT-Creation-Date: 2008-03-26 14:13+1300\n"
 "PO-Revision-Date: 2008-02-22 08:38+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -67,32 +67,7 @@ msgstr " ។ សូម​ជ្រើស​ឈ្មោះ ASCII ។"
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
-"<dl>  "
-"<dt>ប្រសិន​បើ​អ្នក​មានគោលបំណង​ចង់​សាកល្បង​ការ​ស្វែងយល់​អំពី​គោលគំនិត​ស្នូល "
-"ឬ​ការ​យល់ដឹង​ពី​ការ​អាន  </dt>  <dd>    <p>  "
-"សរសេរ​សេចក្ដី​សង្ខេប​អំពី​គោលគំនិត ឬអាន​ឲ្យបាន​ច្រើន​ដើម្បី​សាកល្បង​ចំណេះដឹង "
-"ជា​​គោល ប៉ុន្តែ​ការ​អាន​បាន​តិច​មិនប្រាកដ​ថាមិនមាន​ប្រយោជន៍​នេះ​ទេ ។ "
-"អត្ថបទ​តិច​ជាង​មួយ​ទំព័រ គឺ​ប្រហែល​ជា​គ្រប់គ្រាន់ "
-"ប៉ុន្តែ​ប្រហែល​ជា​មិនគ្រប់គ្រាន់​​សម្រាប់​សិស្ស​ក្មេងៗ "
-"ឬ​អ្នក​ទើប​នឹង​ចាប់ផ្ដើម ។    </p>    <p>ជ្រើស​ពាក្យ​នៅ​ក្នុង​អត្ថបទ "
-"ដែល​ជា​គន្លឹះ​ក្នុង​ការ​ស្វែងយល់​អំពី​គោលគំនិត ។ វា​អាចជា​កិរិយាស័ព្ទ នាម "
-"និង​គុណកិរិយា ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។    </p>  </dd> "
-" <dt>ប្រសិន​បើ​អ្នក​មាន​គោល​បំណង​ចង់​សាកល្បង​ចំណេះ​ដឹង​ខាង​វាក្យសព្ទ  </dt> "
-" <dd><p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយប្រើ​វាក្យសព្ទគោល ។ "
-"អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់គ្នា និង​មាន​ប្រវែង​សមរម្យ ។ "
-"បន្លិច​ពាក្យគោល​នៅ​ក្នុង​អត្ថបទ ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ "
-"។</p>  </dd>  "
-"<dt>ប្រសិន​បើ​អ្នក​មាន​គោលបំណង​ចង់​សាកល្បង​វេយ្យាករណ៍/ការ​បង្កើត​ពាក្យ ។  "
-"</dt>  <dd>  <p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយ​ប្រើ​ទម្រង់​គោល ។ "
-"អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់​គ្នា ហើយ​មាន​ប្រវែង​សមរម្យ ។ "
-"ចងចាំ​ថា ​គោលបំណង​មិនមែន​ជា​ចំណេះដឹង​ខាង​វាក្យសព្ទ​ទេ "
-"ដូច្នេះ​អត្ថន័យ​ស្នូល​របស់​ពាក្យ​ដើម គឺ​គួរតែ​សិស្ស​ស្គាល់​ច្បាស់ ។  </p>  "
-"<p>បន្លិច​ពាក្យ​គោល​នៅ​ក្នុង​អត្ថបទ ។ "
-"ផ្ដល់​ការ​ជំនួស​ដោយ​ពាក្យ​ដូចគ្នា​នៅ​ខាងដើម "
-"ប៉ុន្តែ​ពាក្យ​បន្ថែម​ខាងចុង​ខុសគ្នា ។ វា​ជា​គំនិត​ល្អ "
-"ដែល​ឲ្យ​សិស្ស​មហាវិទ្យាល័យ​សាកល្បង​ធ្វើ​លំហាត់​ទាំងនេះ "
-"ដើម្បី​កុំឲ្យ​មាន​ការ​ភ្ញាក់ផ្អើល !  </p>  </dd></dl>"
+msgstr "<dl>  <dt>ប្រសិន​បើ​អ្នក​មានគោលបំណង​ចង់​សាកល្បង​ការ​ស្វែងយល់​អំពី​គោលគំនិត​ស្នូល ឬ​ការ​យល់ដឹង​ពី​ការ​អាន  </dt>  <dd>    <p>  សរសេរ​សេចក្ដី​សង្ខេប​អំពី​គោលគំនិត ឬអាន​ឲ្យបាន​ច្រើន​ដើម្បី​សាកល្បង​ចំណេះដឹង ជា​​គោល ប៉ុន្តែ​ការ​អាន​បាន​តិច​មិនប្រាកដ​ថាមិនមាន​ប្រយោជន៍​នេះ​ទេ ។ អត្ថបទ​តិច​ជាង​មួយ​ទំព័រ គឺ​ប្រហែល​ជា​គ្រប់គ្រាន់ ប៉ុន្តែ​ប្រហែល​ជា​មិនគ្រប់គ្រាន់​​សម្រាប់​សិស្ស​ក្មេងៗ ឬ​អ្នក​ទើប​នឹង​ចាប់ផ្ដើម ។    </p>    <p>ជ្រើស​ពាក្យ​នៅ​ក្នុង​អត្ថបទ ដែល​ជា​គន្លឹះ​ក្នុង​ការ​ស្វែងយល់​អំពី​គោលគំនិត ។ វា​អាចជា​កិរិយាស័ព្ទ នាម និង​គុណកិរិយា ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។    </p>  </dd>  <dt>ប្រសិន​បើ​អ្នក​មាន​គោល​បំណង​ចង់​សាកល្បង​ចំណេះ​ដឹង​ខាង​វាក្យសព្ទ  </dt>  <dd><p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយប្រើ​វាក្យសព្ទគោល ។ អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់គ្នា និង​មាន​ប្រវែង​សមរម្យ ។ បន្លិច​ពាក្យគោល​នៅ​ក្នុង​អត្ថបទ ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។</p>  </dd>  <dt>ប្រសិន​បើ​អ្នក​មាន​គោលបំណង​ចង់​សាកល្បង​វេយ្យាករណ៍/ការ​បង្កើត​ពាក្យ ។  </dt>  <dd>  <p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយ​ប្រើ​ទម្រង់​គោល ។ អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់​គ្នា ហើយ​មាន​ប្រវែង​សមរម្យ ។ ចងចាំ​ថា ​គោលបំណង​មិនមែន​ជា​ចំណេះដឹង​ខាង​វាក្យសព្ទ​ទេ ដូច្នេះ​អត្ថន័យ​ស្នូល​របស់​ពាក្យ​ដើម គឺ​គួរតែ​សិស្ស​ស្គាល់​ច្បាស់ ។  </p>  <p>បន្លិច​ពាក្យ​គោល​នៅ​ក្នុង​អត្ថបទ ។ ផ្ដល់​ការ​ជំនួស​ដោយ​ពាក្យ​ដូចគ្នា​នៅ​ខាងដើម ប៉ុន្តែ​ពាក្យ​បន្ថែម​ខាងចុង​ខុសគ្នា ។ វា​ជា​គំនិត​ល្អ ដែល​ឲ្យ​សិស្ស​មហាវិទ្យាល័យ​សាកល្បង​ធ្វើ​លំហាត់​ទាំងនេះ ដើម្បី​កុំឲ្យ​មាន​ការ​ភ្ញាក់ផ្អើល !  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
@@ -136,12 +111,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:71
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
-"<p>ផ្ដល់​ស្លាក​ឲ្យ​ឯកសារ​ភ្ជាប់ ។ វា​មាន​ប្រយោជន៍ បើ​រួមបញ្ចូល​ប្រភេទ​ឯកសារ "
-"។ ឧ. pdf, ppt ។ល។</p><p>បើ​រួមបញ្ចូល​ទំហំ​ឯកសារ​ ក៏​ល្អ​ដែរ "
-"ដូច្នេះ​បន្ទាប់​ពី​បាន​នាំចេញ​កញ្ចប់​របស់​អ្នក​ទៅ​តំបន់បណ្ដាញ "
-"នោះ​អ្នក​ផ្សេងទៀត​នឹង​ដឹង​អំពី​រយៈពេល​ដែល​ត្រូវ​ទាញយក​ឯកសារ​ភ្ជាប់​នេះ "
-"។</p><p>ឧទាហរណ៍ ៖ <code>Sales Forecast.doc (500kb)</code></p>"
+msgstr "<p>ផ្ដល់​ស្លាក​ឲ្យ​ឯកសារ​ភ្ជាប់ ។ វា​មាន​ប្រយោជន៍ បើ​រួមបញ្ចូល​ប្រភេទ​ឯកសារ ។ ឧ. pdf, ppt ។ល។</p><p>បើ​រួមបញ្ចូល​ទំហំ​ឯកសារ​ ក៏​ល្អ​ដែរ ដូច្នេះ​បន្ទាប់​ពី​បាន​នាំចេញ​កញ្ចប់​របស់​អ្នក​ទៅ​តំបន់បណ្ដាញ នោះ​អ្នក​ផ្សេងទៀត​នឹង​ដឹង​អំពី​រយៈពេល​ដែល​ត្រូវ​ទាញយក​ឯកសារ​ភ្ជាប់​នេះ ។</p><p>ឧទាហរណ៍ ៖ <code>Sales Forecast.doc (500kb)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
@@ -311,9 +281,7 @@ msgstr "បន្ថែម​វីដេអូ flash ទៅ iDevice របស�
 
 #: exe/webui/editorpane.py:81
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr ""
-"បន្ថែម​បន្ទាត់​អត្ថបទ​ទោល​ទៅ iDevice ។ វា​មាន​ប្រយោជន៍ "
-"បើ​អ្នក​ចង់​ដាក់​ស្លាក​នៅ​ក្នុង iDevice ។"
+msgstr "បន្ថែម​បន្ទាត់​អត្ថបទ​ទោល​ទៅ iDevice ។ វា​មាន​ប្រយោជន៍ បើ​អ្នក​ចង់​ដាក់​ស្លាក​នៅ​ក្នុង iDevice ។"
 
 #: exe/webui/editorpane.py:84
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
@@ -578,10 +546,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:424
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
-"ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព "
-"នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ "
-"ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
+msgstr "ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
 #: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
@@ -767,7 +732,7 @@ msgstr ""
 "ការ​នាំចេញ​បាន​បរាជ័យ !\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:450
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1332,7 +1297,7 @@ msgid "New iDevice"
 msgstr "iDevice ថ្មី"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "បន្ទាប់"
 
@@ -1522,7 +1487,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "ថត​មើល​ជាមុន %s គឺ​ជា​ឯកសារ មិន​អាច​ជំនួស​វា​បានទេ"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:304 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "មុន"
 

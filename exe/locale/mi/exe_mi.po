@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-21 15:03+1300\n"
+"POT-Creation-Date: 2008-03-26 14:13+1300\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -704,7 +704,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:450
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1264,7 +1264,7 @@ msgid "New iDevice"
 msgstr "iDevice Hou"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
 #, fuzzy
 msgid "Next"
 msgstr "Kupu"
@@ -1454,7 +1454,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ingoakōnae %s he kōnae, kāore e taea te whakahou"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:304 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
 #, fuzzy
 msgid "Previous"
 msgstr "Tirohia"
