@@ -2510,6 +2510,7 @@ msgstr ""
 "                códigos de clasificación que describen o tema dun recurso.\n"
 "                A práctica máis recomendada é seleccionar un valor dun vocabulario \n"
 "                controlado ou dun esquema de clasificación formal.\n"
+"             "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
