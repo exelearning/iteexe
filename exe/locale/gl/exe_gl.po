@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-13 14:56+1300\n"
-"PO-Revision-Date: 2008-03-14 00:35+1300\n"
-"Last-Translator: Tomás Vilariño <vifito@cesga.es>\n"
+"PO-Revision-Date: 2008-03-20 06:59+1300\n"
+"Last-Translator: Gonçalo Cordeiro <gzcordeiro@gmail.com>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,7 +63,7 @@ msgstr ". Use nomes ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Se o seu obxectivo é probar a comprensión dos conceptos chave ou a verificación da leitura do aluno</dt>  <dd>    <p>  Escriba un resumo do concepto ou da lectura o suficientemente longo como para para probar adecuadamente o coñecemento do obxectivo, mais o suficientemente curto como para non producir fatiga. Bastará normalmente con menos de unha páxina, mais pode ser aínda meno no caso de estudantes novos ou principiantes.    </p>    <p>Seleccione as palabras chave no texto para a comprensión dos conceptos. Estas palabras chave serán probabelmente verbos, nomes, e adverbios. Escolla alternativas cunha resposta clara.    </p>  </dd>  <dt> Se o seu objectivo é probar o coñecemento do vocabulario  </dt>  <dd><p> Escriba un texto usando o vocabulario de destino. Este texto debe ser coherente, cohesivo e ter a extensión apropiada. Realce as palabras chave no texto. Escolla alternativas cunha resposta clara.</p>  </dd>  <dt> Se o seu obxectivo é verificar a formación sintáctica ou gramatical:  </dt>  <dd>  <p>Escriba un texto usando as palabras de destino. Este texto debe ser coherente, cohesivo e ter a extensión apropiada. Recorde que o obxectivo non é o coñecemento do vocabulario, así que o significado esencial da raíz das palabras debería ser ben coñecida polos estudantes.  </p>  <p>Realce as palabras chave no texto. Proporcione alternativas coa mesma palabra raíz, mais con diferentes afixos. É unha boa idea pedirlle a un colega que probe o exercicio para garantir que non hai sorpresas!  </p>  </dd></dl>"
+msgstr "<dl>  <dt>Se o seu obxectivo é probar a comprensión dos conceptos chave ou a verificación da lectura do aluno</dt>  <dd>    <p>  Escriba un resumo do concepto ou da lectura o suficientemente longo como para probar adecuadamente o coñecemento do obxectivo, mais o suficientemente curto como para non producir fatiga. Bastará normalmente con menos dunha páxina, mais pode ser aínda menos no caso de estudantes novos ou principiantes.    </p>    <p>Seleccione as palabras chave no texto para a comprensión dos conceptos. Estas palabras chave serán probabelmente verbos, nomes, e adverbios. Escolla alternativas cunha resposta clara.    </p>  </dd>  <dt> Se o seu objectivo é probar o coñecemento do vocabulario  </dt>  <dd><p> Escriba un texto usando o vocabulario de destino. Este texto debe ser coherente, cohesivo e ter a extensión apropiada. Realce as palabras chave no texto. Escolla alternativas cunha resposta clara.</p>  </dd>  <dt> Se o seu obxectivo é verificar a formación sintáctica ou gramatical:  </dt>  <dd>  <p>Escriba un texto usando as palabras de destino. Este texto debe ser coherente, cohesivo e ter a extensión apropiada. Recorde que o obxectivo non é o coñecemento do vocabulario, así que o significado esencial da raíz das palabras debería ser ben coñecida polos estudantes.  </p>  <p>Realce as palabras chave no texto. Proporcione alternativas coa mesma palabra raíz, mais con diferentes afixos. É unha boa idea pedirlle a un colega que probe o exercicio para garantir que non hai sorpresas!  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
@@ -111,7 +111,7 @@ msgstr "<p>Asígnelle unha etiqueta ao anexo. É útil incluír o tipo de fichei
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr "<p>Os exercicios de 'espazos baleiros' son textos ou frases en que os estudantes deben encher os espazos coas palabras que faltan. Úsanse normalmente coas seguintes finalidades:</p><ol><li>Para verificar o coñecemento dos conceptos chave dun curso (podería ser un test de precoñecemento, un exercicio formativo ou unha verificación sumativa).</li><li>Para verificar a comprensión lectora.</li><li>Para verificar os coñecementos de vocabulario.</li><li>Para verificar a formación de palabras ou a competencia gramatical. </li></ol>"
+msgstr "<p>Os exercicios de espazos baleiros son textos ou frases en que os estudantes deben encher os espazos coas palabras que faltan. Úsanse normalmente coas seguintes finalidades:</p><ol><li>Para verificar o coñecemento dos conceptos chave dun curso (podería ser un test de precoñecemento, un exercicio formativo ou unha verificación sumativa).</li><li>Para verificar a comprensión lectora.</li><li>Para verificar os coñecementos de vocabulario.</li><li>Para verificar a formación de palabras ou a competencia gramatical. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -127,7 +127,7 @@ msgstr ""
 
 #: exe/engine/field.py:2600
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr "<p>Se se deixa sen marcar aceptarase un pequeno número de erros ortográficos e de maiúsculas/minúsculas. Se se marca só se aceptará unha resposta exacta en termos de ortografía e maiúsculas/minúsculas.</p><p><strong>Por exemplo:</strong> Se a resposta correcta é <code>Elefante</code> entón tanto <code>elefante</code> como <code>Elefantes</code> serán xulgados como <em>\"suficientemente correctos\"</em>polo algoritmo, xa que só ten unha letra errada, aínda que \"Verificar Maiúsculas \" estea activada.</p><p>Se a verificación das maiúsculas está desactivada no exemplo anterior, a minúscula  <code>e</code> non se considerará como un erro e <code>elefante</code> tamén será aceptada.</p><p>Se tanto \"Marcación estrita\" como \"Verificar maiúsculas\" están seleccionadas, a única resposta correcta é \"Elefante\". Se só está seleccionada a \"Marcación estrita\" e \"Verificar Maiúsculas \" non o está, \"elefante \" será entón aceptada.</p>"
+msgstr "<p>Se se deixa sen marcar aceptarase un pequeno número de erros ortográficos e de maiúsculas/minúsculas. Se se marca só se aceptará unha resposta exacta en termos de ortografía e maiúsculas/minúsculas.</p><p><strong>Por exemplo:</strong> Se a resposta correcta é <code>Elefante</code> entón tanto <code>elefante</code> como <code>Elefantes</code> serán xulgados como <em>\"suficientemente correctos\"</em> polo algoritmo, xa que só ten unha letra errada, aínda que \"Verificar Maiúsculas\" estea activada.</p><p>Se a verificación das maiúsculas está desactivada no exemplo anterior, a minúscula <code>e</code> non se considerará como un erro e <code>elefante</code> tamén será aceptada.</p><p>Se tanto \"Marcación estrita\" como \"Verificar maiúsculas\" están seleccionadas, a única resposta correcta é \"Elefante\". Se só está seleccionada a \"Marcación estrita\" e \"Verificar Maiúsculas\" non o está, \"elefante\" será entón aceptada.</p>"
 
 #: exe/engine/field.py:2621
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
@@ -140,7 +140,7 @@ msgid ""
 "exercise.</p>"
 msgstr ""
 "<p>Se se marca esta opción, cada palabra será marcada no momento \n"
-"en que o alumno a escriba  en vez de marcar todas as palabras ao final \n"
+"en que o alumno a escriba en vez de marcar todas as palabras ao final \n"
 "do exercicio.</p>"
 
 #: exe/engine/field.py:2875
@@ -161,8 +161,8 @@ msgid ""
 msgstr ""
 "<p>A actividade de lectura usarase en primeiro lugar \n"
 "para verificar a comprensión dun texto dado. Isto pódese facer \n"
-"solicitándolle ao alunmo que reflicta sobre a lectura e que responda a algunhas preguntas sobre\n"
-"ela ou ben tendo comletado eles algunha outra tarefa (probabelmente máis física)\n"
+"solicitándolle ao alumno que reflicta sobre a lectura e que responda a algunhas preguntas sobre\n"
+"ela ou ben tendo completado eles algunha outra tarefa probabelmente máis física \n"
 "baseada na lectura.</p>"
 
 #: exe/engine/wikipediaidevice.py:54
@@ -177,8 +177,8 @@ msgid ""
 msgstr ""
 "<p>O iDevice Wikipedia permítelle localizar \n"
 "contido existente na Wikipedia e descargalo para o seu recurso \n"
-"eXe. O iDevice Artigo da Wikipedia saca unha copia \"instantánea\" do contido do \n"
-"artigo. As mudanzas no artigo da Wikipedia non se actualizan automaticamente a instantánea  \n"
+"eXe. O iDevice Artigo da Wikipedia saca unha copia instantánea do contido do \n"
+"artigo. As mudanzas no artigo da Wikipedia non se actualizan automaticamente a instantánea \n"
 "copiada no eXe, será necesario facer unha nova copia instantánea do artigo. Da mesma maneira, \n"
 "as modificacións feitas no eXe non serán actualizadas na Wikipedia. </p> <p>Os contidos da Wikipedia \n"
 "están baixo a licenza GNU de documentación libre.</p>"
@@ -239,7 +239,7 @@ msgstr ""
 "<li>\tOnde encaixa o estudo de caso en relación co resto do curso?</li>\n"
 "<li>\tComo interactuarán os alumnos cos materiais e entre eles? Por exemplo: \n"
 "No caso de estaren nunha aula, pódense definir equipos que traballen en diferentes tarefas\n"
-"do estudo de caso?  e en caso afirmativo, como son transmitidas de volta as ideas á clase?</li></ul>"
+"do estudo de caso e en caso afirmativo, como son transmitidas de volta as ideas á clase?</li></ul>"
 
 #: exe/engine/truefalseidevice.py:149
 msgid ""
@@ -270,7 +270,7 @@ msgstr "Engadir unha imaxe"
 
 #: exe/webui/element.py:846
 msgid "Add JPEG Image"
-msgstr "Engadir unha imaxe JPEG "
+msgstr "Engadir unha imaxe JPEG"
 
 #: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
@@ -312,7 +312,7 @@ msgstr "Engadir outra Opción"
 
 #: exe/webui/quiztestblock.py:101 exe/webui/multiselectblock.py:79
 msgid "Add another Question"
-msgstr "Engadir outra Cuestión"
+msgstr "Engadir outra Pregunta"
 
 #: exe/webui/casestudyblock.py:99
 msgid "Add another activity"
@@ -367,7 +367,7 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:207
 msgid "Allow auto completion when user filling the gaps."
-msgstr "Permitir o completado automático cando o usuario encha os espazos. "
+msgstr "Permitir o completado automático cando o usuario encha os espazos."
 
 #: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:60
 msgid ""
@@ -421,7 +421,7 @@ msgstr "Código da miniaplicación:"
 
 #: exe/webui/appletblock.py:91
 msgid "Applet Type"
-msgstr "Tipo de miniaplicación:"
+msgstr "Tipo de miniaplicación"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -595,7 +595,7 @@ msgstr ""
 "Elabore o a historia do caso. Un bo caso é aquel \n"
 "que describe unha controversia ou define a escena describindo os personaxes \n"
 "que fan parte da situación. Debe permitir ademais iniciar algunha acción \n"
-"no sentido de obter a resolución da situación.  "
+"no sentido de obter a resolución da situación."
 
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
@@ -634,7 +634,7 @@ msgid ""
 msgstr ""
 "Describa como os alumnos valorarán \n"
 "o que fagan no exercicio. (Os encabezamentos son dispositivos útiles para fornecer \n"
-"unha reflexión na resposta.) "
+"unha reflexión na resposta.)"
 
 #: exe/engine/casestudyidevice.py:224
 msgid ""
@@ -654,7 +654,7 @@ msgid ""
 "complete this learning."
 msgstr ""
 "Describa os requisitos previos de coñecemento que os alumnos deberían ter \n"
-"para completar eficazmente esta lección. "
+"para completar eficazmente esta lección."
 
 #: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:426
 msgid ""
@@ -745,7 +745,7 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"FALLOU A EXTRACCCIÓN!\n"
+"FALLOU A EXTRACCIÓN!\n"
 "%s"
 
 #: exe/webui/block.py:333 exe/webui/editorpane.py:266
@@ -882,7 +882,7 @@ msgid ""
 msgstr ""
 "Introduza as opcións dispoñíbeis aquí. \n"
 "Pode engadir máis opcións premendo o botón \"Engadir outra opción\". Elimine opcións \n"
-"premendo o \"X\" vermello ao lado da opción."
+"premendo o X vermello ao lado da opción."
 
 #: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid ""
@@ -892,7 +892,7 @@ msgid ""
 msgstr ""
 "Introduza os pormenores das lecturas incluíndo os detalles das referencias.\n"
 "O estilo de referencias que se vai usar dependerá das preferencias do seu departamento ou \n"
-"facultade. "
+"facultade."
 
 #: exe/engine/flashwithtextidevice.py:60
 #: exe/engine/flashwithtextidevice.py:120
@@ -1013,7 +1013,7 @@ msgid ""
 "data is entered into this field."
 msgstr ""
 "O botón de restroacción non aparecerá se \n"
-"non se introducen datos neste campo. "
+"non se introducen datos neste campo."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:167
 #: exe/engine/field.py:3194 exe/engine/field.py:3264
@@ -1059,7 +1059,7 @@ msgstr "Texto libre"
 
 #: exe/webui/wikipediablock.py:100
 msgid "French Wikipedia Article"
-msgstr "Artigo da Wikipédia en francés"
+msgstr "Artigo da Wikipedia en francés"
 
 #: exe/webui/wikipediablock.py:207
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
@@ -1093,7 +1093,7 @@ msgstr "Adiante (non dispoñíbel)"
 
 #: exe/webui/wikipediablock.py:102
 msgid "Greek Wikipedia Article"
-msgstr "Artigo da Wikipédia en grego"
+msgstr "Artigo da Wikipedia en grego"
 
 #: exe/webui/reflectionblock.py:117
 msgid "Hide"
@@ -1126,7 +1126,7 @@ msgstr "Icona iDevice"
 
 #: exe/webui/multichoiceblock.py:120
 msgid "IDevice Question Icon"
-msgstr "Icona de pregunta iDevice "
+msgstr "Icona de pregunta iDevice"
 
 #: exe/webui/block.py:172
 msgid "IDevice broken"
@@ -1511,7 +1511,7 @@ msgid ""
 "you have just inserted."
 msgstr ""
 "Proporcione un título para o filme flash \n"
-"que ven de de inserir."
+"que ven de inserir."
 
 #: exe/engine/flashwithtextidevice.py:58
 #: exe/engine/flashwithtextidevice.py:118
@@ -1520,7 +1520,7 @@ msgid ""
 "                                  have just inserted."
 msgstr ""
 "Proporcione un título para o filme flash que \n"
-"                                  ven de de inserir."
+"                                  ven de inserir."
 
 #: exe/engine/imagewithtextidevice.py:71
 #: exe/engine/imagewithtextidevice.py:118
@@ -1529,7 +1529,7 @@ msgid ""
 "you have just inserted."
 msgstr ""
 "Proporcione un título para a imaxe \n"
-"que ven de de inserir."
+"que ven de inserir."
 
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:286
 msgid ""
@@ -1617,7 +1617,7 @@ msgstr ""
 "unha oportunidade para observar e reflexionar sobre as súas observacións antes de presentalas \n"
 "como unha peza do traballo académico. Os xornais, diarios, perfís e os cartafoles \n"
 "son ferramentas útiles para recoller os datos da observación. Os títulos e guias poden \n"
-"ser ferramentas de retroacción eficaces.  "
+"ser ferramentas de retroacción eficaces."
 
 #: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:164
 msgid "Reflective question:"
@@ -1721,7 +1721,7 @@ msgstr ""
 
 #: exe/webui/quiztestblock.py:104
 msgid "Select pass rate: "
-msgstr "Seleccionar a porcentaxe de aprobado: "
+msgstr "Seleccionar a porcentaxe para aprobar: "
 
 #: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:291
 msgid ""
@@ -1729,7 +1729,7 @@ msgid ""
 "of Wikipedia to search and enter search term."
 msgstr ""
 "Seleccione a versión de lingua correcta \n"
-"da Wikipedia en que buscar e introducir o termo de busca.  "
+"da Wikipedia en que buscar e introducir o termo de busca."
 
 #: exe/engine/multichoiceidevice.py:102
 msgid ""
@@ -1737,7 +1737,7 @@ msgid ""
 "on the radio button."
 msgstr ""
 "Seleccione a opción correcta premendo \n"
-"o botón de opción. "
+"o botón de opción."
 
 #: exe/engine/imagemagnifieridevice.py:71
 msgid "Select the size of the magnifying glass"
@@ -1987,7 +1987,7 @@ msgstr "Este é un campo de texto libre onde se pode introducir contidos xerais 
 
 #: exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "Este é un campo de texto libre. "
+msgstr "Este é un campo de texto libre."
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
@@ -2276,7 +2276,7 @@ msgstr "Proxecto do eXe"
 #: exe/engine/appletidevice.py:109
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "o ficheiro %s non ten un nó pai"
+msgstr "o ficheiro %s non ten un nodo pai"
 
 #: exe/engine/wikipediaidevice.py:245
 msgid "http://en.wikipedia.org/"
@@ -2333,7 +2333,7 @@ msgstr "texto da indicación"
 #: onload="sizeToContent()" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
-msgstr "eXeex - Acerca de "
+msgstr "eXeex - Sobre"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
@@ -2369,15 +2369,13 @@ msgstr "Propiedades do proxecto"
 #: translate(document.documentElement, 0);"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1" title="Package Properties">
-#, fuzzy
 msgid "Package Properties"
-msgstr "Propiedades do proxecto"
+msgstr "Propiedades do paquete"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
-#, fuzzy
 msgid "The name given to the resource."
-msgstr "Escriba o obxectivo de aprendizaxe para este recurso."
+msgstr "O nome dado ao recurso."
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'red';" id="pp_scolinks" label="Add
@@ -2398,9 +2396,8 @@ msgstr "IEEE LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
-#, fuzzy
 msgid "The project's title."
-msgstr "Título do proxecto:"
+msgstr "O título do proxecto."
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
@@ -2433,7 +2430,7 @@ msgstr "Metadatos"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr ""
+msgstr "Unha entidade primaria responsable de crear o contido do recurso."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2444,7 +2441,7 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imaxe de fondo para unha cabeceira (unha imaxe duns 100px é a recomendada)."
+msgstr "Imaxe de fondo para unha cabeceira (unha imaxe duns 100px é o recomendado)."
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2470,7 +2467,7 @@ msgstr "Fondo da cabeceira:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr "O tema do contido do recurso"
+msgstr "O tema do contido do recurso."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2513,7 +2510,6 @@ msgstr ""
 "                códigos de clasificación que describen o tema dun recurso.\n"
 "                A práctica máis recomendada é seleccionar un valor dun vocabulario \n"
 "                controlado ou dun esquema de clasificación formal.\n"
-" "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
@@ -2558,7 +2554,7 @@ msgstr "D"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Primary author of the resource."
-msgstr "Autor principal do recurso"
+msgstr "Autor principal do recurso."
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
@@ -2590,9 +2586,8 @@ msgstr "E"
 
 #: exe/xului/templates/packageproperties.xul:<label value="License:"
 #: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
-#, fuzzy
 msgid "Select a license."
-msgstr "Seleccionar Licenza"
+msgstr "Seleccionar unha Licenza."
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
@@ -2769,9 +2764,8 @@ msgstr "Developing Nations 2.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
-#, fuzzy
 msgid "Select a Format."
-msgstr "Seleccionar formato"
+msgstr "Seleccione un formato."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
@@ -2936,9 +2930,8 @@ msgstr "Nivel 3:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
-#, fuzzy
 msgid "Select a language."
-msgstr "Seleccionar lingua"
+msgstr "Seleccione un idioma."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
@@ -3166,7 +3159,7 @@ msgstr "Bielorruso "
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
 #: tooltiptext="Promote node up in hierarchy">
 msgid "Promote node up in hierarchy"
-msgstr ""
+msgstr "Promover o nodo un lugar arriba na xerarquía"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -3177,7 +3170,7 @@ msgstr "Búlgaro "
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
 #: tooltiptext="Demote node down in hierarchy">
 msgid "Demote node down in hierarchy"
-msgstr ""
+msgstr "Degradar o nodo un lugar abaixo na xerarquía"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
@@ -3186,9 +3179,8 @@ msgstr "Burmese "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
-#, fuzzy
 msgid "Move node up"
-msgstr "Mover arriba"
+msgstr "Mover o nodo arriba"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
@@ -3198,9 +3190,8 @@ msgstr "Catalán "
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
 #: tooltiptext="Move node down">
-#, fuzzy
 msgid "Move node down"
-msgstr "Mover abaixo"
+msgstr "Mover o nodo abaixo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
@@ -3325,7 +3316,7 @@ msgstr "Gaélico escocés "
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
 msgid "Gallegan; Galician "
-msgstr "Galego; Galiza "
+msgstr "Galego"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
 #: label="Georgian ">
@@ -3340,7 +3331,7 @@ msgstr "Alemán "
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek ">
 msgid "Greek "
-msgstr ""
+msgstr "Grego"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
@@ -3365,7 +3356,7 @@ msgstr "Hebreo (antigamente iw) "
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
 #: label="Hindi ">
 msgid "Hindi "
-msgstr "Hindú "
+msgstr "Hindi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
@@ -3973,7 +3964,7 @@ msgstr "Cobertura:"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Information about rights held in and over the resource."
-msgstr ""
+msgstr "Información sobre os dereitos mantidos en e sobre o recurso."
 
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
 #: style="width:8em" tooltiptext="Information about rights held in and over
