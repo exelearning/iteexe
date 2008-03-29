@@ -1,7 +1,7 @@
 // ===========================================================================
 // eXe
 // Copyright 2004-2005, University of Auckland
-// Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
+// Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -619,7 +619,6 @@ function uploadFile(blockId) {
 function showMe(ident, w, h)
 {
     var elmDiv = document.getElementById('popupmessage');
-
     hideMe();
         
     if (!elmDiv || 
@@ -628,15 +627,15 @@ function showMe(ident, w, h)
         elmDiv = document.createElement('div');
         elmDiv.id = 'popupmessage';
         elmDiv.className="popupDiv";
+	var xloc = (xpos+w > 740) ? Math.max(0, xpos-w-15) : xpos;
         elmDiv.style.cssText = 'position:absolute; left: ' + 
-                               (xpos) + 'px; top: '+(ypos - h/2) + 
+                               (xloc) + 'px; top: '+(ypos - h/2) + 
                                'px; width: ' + w + 'px;';
         elmDiv.innerHTML = document.getElementById(ident).innerHTML;
         document.body.appendChild(elmDiv);
         new dragElement('popupmessage');
     }
 }
-            
 
 function hideMe() {
     var elmDiv = document.getElementById('popupmessage');
@@ -646,12 +645,10 @@ function hideMe() {
     }
 }
 
-
 function updateCoords(e) {
     if (objBrowse == "Microsoft Internet Explorer") {
         xpos = e.offsetX;
         ypos = e.offsetY;
-
     } else {
         xpos = e.pageX;
         ypos = e.pageY;
