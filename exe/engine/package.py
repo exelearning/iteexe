@@ -307,7 +307,7 @@ class Package(Persistable):
         if not zipfile.is_zipfile(filename):
             return None
 
-        zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
+        zippedFile = zipfile.ZipFile(filename, "r")
         
         # Get the jellied package data
         toDecode   = zippedFile.read(u"content.data")
