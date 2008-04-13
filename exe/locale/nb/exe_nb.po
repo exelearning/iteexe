@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 14:13+1300\n"
+"POT-Creation-Date: 2008-04-14 11:39+1200\n"
 "PO-Revision-Date: 2008-02-25 11:27+1300\n"
 "Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1294,7 +1294,7 @@ msgstr ""
 "Fil...Avslutt\n"
 "meny for å lukke eXe."
 
-#: exe/application.py:243
+#: exe/application.py:244
 msgid "Please wait until loading finishes"
 msgstr "Vennligst vent til lastingen er ferdig."
 
@@ -1651,7 +1651,7 @@ msgstr "Liten"
 msgid "Some emphasis"
 msgstr "Noe uthevet"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
 msgstr "Beklager, feil filformat"
 

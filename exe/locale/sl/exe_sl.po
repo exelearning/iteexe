@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 14:13+1300\n"
+"POT-Creation-Date: 2008-04-14 11:39+1200\n"
 "PO-Revision-Date: 2008-03-06 08:03+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -1447,7 +1447,7 @@ msgstr ""
 "   Datoteka ... Zaključi\n"
 "iz menuja za izhod iz programa."
 
-#: exe/application.py:243
+#: exe/application.py:244
 msgid "Please wait until loading finishes"
 msgstr "Prosim, počakajte, dokler se nalaganje ne konča"
 
@@ -1811,7 +1811,7 @@ msgstr "Majhen"
 msgid "Some emphasis"
 msgstr "Nekaj poudarkov"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
 msgstr "Oprostite, napačen format datoteke "
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 14:13+1300\n"
+"POT-Creation-Date: 2008-04-14 11:39+1200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -1455,7 +1455,7 @@ msgid ""
 "menu to close eXe."
 msgstr ""
 
-#: exe/application.py:243
+#: exe/application.py:244
 msgid "Please wait until loading finishes"
 msgstr ""
 
@@ -1818,7 +1818,7 @@ msgstr "Kicsi"
 msgid "Some emphasis"
 msgstr "Kiemelés"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
 msgstr "Sajnálom, rossz fájlformátum"
 

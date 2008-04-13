@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 14:13+1300\n"
+"POT-Creation-Date: 2008-04-14 11:39+1200\n"
 "PO-Revision-Date: 2008-01-23 16:53+1300\n"
 "Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -1319,7 +1319,7 @@ msgid ""
 "menu to close eXe."
 msgstr ""
 
-#: exe/application.py:243
+#: exe/application.py:244
 msgid "Please wait until loading finishes"
 msgstr ""
 
@@ -1652,7 +1652,7 @@ msgstr "小"
 msgid "Some emphasis"
 msgstr "一般強調"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 

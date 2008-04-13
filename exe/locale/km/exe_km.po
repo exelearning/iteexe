@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 14:13+1300\n"
+"POT-Creation-Date: 2008-04-14 11:39+1200\n"
 "PO-Revision-Date: 2008-02-22 08:38+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1446,7 +1446,7 @@ msgstr ""
 "   ឯកសារ... ចេញ\n"
 "របស់ eXe ដើម្បី​បិទ eXe ។"
 
-#: exe/application.py:243
+#: exe/application.py:244
 msgid "Please wait until loading finishes"
 msgstr "សូម​រង់ចាំ រហូត​ទាល់​តែការ​​ផ្ទុក​ចប់"
 
@@ -1810,7 +1810,7 @@ msgstr "តូច"
 msgid "Some emphasis"
 msgstr "ការ​សង្កត់​សំឡេង​មួយ​ចំនួន"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
 msgstr "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ"
 

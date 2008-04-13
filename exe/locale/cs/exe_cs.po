@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 14:13+1300\n"
+"POT-Creation-Date: 2008-04-14 11:39+1200\n"
 "PO-Revision-Date: 2008-03-13 20:45+0100\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -1439,7 +1439,7 @@ msgstr ""
 "prosím použijte položku\n"
 "Konec v nabídce Soubor."
 
-#: exe/application.py:243
+#: exe/application.py:244
 msgid "Please wait until loading finishes"
 msgstr "Počkejte prosím, dokud načítání neskončí"
 
@@ -1803,7 +1803,7 @@ msgstr "Malý"
 msgid "Some emphasis"
 msgstr "Částečné zvýraznění"
 
-#: exe/application.py:272 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1066
 msgid "Sorry, wrong file format"
 msgstr "Je mi líto, špatný formát souboru"
 
