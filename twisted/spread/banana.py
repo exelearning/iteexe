@@ -138,10 +138,13 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
         percentDoneLast = 0
         updateTimeLast = 0
 
-        eXeStart = globals.application.tempWebDir
-        eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
-        eXeStart = eXeStart + '/tmpExeStartupTime'
-        chmodOnceOnly=1
+        eXeStart = os.path.join(
+                os.path.dirname(globals.application.tempWebDir),
+                'tmpExeStartupTime')
+        # make an eXe lock file per user
+        if os.name == 'posix':
+            eXeStart = eXeStart + '.' + str(os.getuid())
+        chmodOnceOnly = True
 
         ##### XXXX xxxx
         while buffer:
@@ -168,7 +171,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                 outStartFH.close()
                 if(chmodOnceOnly):
                     os.chmod(eXeStart,0666)
-                    chmodOnceOnly=0
+                    chmodOnceOnly = False
 
                 if(percentDone > percentDoneLast):
                     outSplashFH=open(globals.application.tempWebDir + \
