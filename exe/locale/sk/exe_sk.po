@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-26 14:13+1300\n"
-"PO-Revision-Date: 2008-04-09 07:54+1200\n"
-"Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
+"PO-Revision-Date: 2008-04-10 00:35+1200\n"
+"Last-Translator: Miroslav Fikar <miroslav.fikar@gmail.com>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,6 +208,16 @@ msgstr ""
 #: exe/engine/idevicestore.py:278
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"<p>Učitelia by mali pri používaní iDevice myslieť na následujúce: "
+"</p><ol><li> Premýšľajte nad množstvom rôznych plánovaných aktivít, ktoré "
+"budú v obsahu vizuálne označené. Vyhnite sa príliš veľkému množstvu rôznych "
+"typov či triedení aktivít, pretože to môže zmiasť študentov. Obvykle tri až "
+"štyri rôzne typy presahujú adekvátnosť výukových zdrojov.</li><li> Z "
+"obrazového hľadiska sa vyvarujte dvom ihneď po sebe nasledujúcim iDevice bez "
+"vloženého textu medzi nimi. Pokiaľ je to možné, radšej zhrnite dve otázky "
+"či prípady do jedného iDevice.</li><li>Uvažujte nad aktivitami, u ktorých "
+"očakávaný prínos preváži nad časom a úsilím nutným pre dokončenie týchto "
+"aktivít.</li></ol>"
 
 #: exe/engine/idevicestore.py:273
 msgid ""
@@ -504,9 +514,8 @@ msgid "Choose an Image"
 msgstr "Zvoľte obrázok"
 
 #: exe/engine/multimediaidevice.py:49
-#, fuzzy
 msgid "Choose an MP3 file"
-msgstr "Zvoľte LMS"
+msgstr "Zvoľte MP3 súbor"
 
 #: exe/engine/casestudyidevice.py:63
 msgid "Choose an optional image to be shown to the student on completion of this question"
@@ -1423,6 +1432,8 @@ msgid ""
 "   File... Quit\n"
 "menu to close eXe."
 msgstr ""
+"Na ukončenie programu použite menu\n"
+"   Súbor... Koniec."
 
 #: exe/application.py:243
 msgid "Please wait until loading finishes"
@@ -1548,9 +1559,8 @@ msgid "Question:"
 msgstr "Otázka:"
 
 #: exe/webui/editorpage.py:253
-#, fuzzy
 msgid "Quit"
-msgstr "Potvrdiť"
+msgstr "Koniec"
 
 #: exe/engine/rssidevice.py:39 exe/engine/rssidevice.py:47
 msgid "RSS"
@@ -2890,7 +2900,7 @@ msgstr "Africky."
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"O Koniec...\" accesskey=\"o\""
+msgstr "label=\"Koniec\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
