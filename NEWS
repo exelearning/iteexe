@@ -1,4 +1,6 @@
+* Add offline snapshot of manual, release notes
 * Add ability to translate tooltips
+* Add ability for multiple users on posix systems to each run eXe
 * Fix handling of multi-select questions with 10 or more options
 * Fix tip display at right edge of windows
 * Improve Wiki Article idevice handling of pages without content div
