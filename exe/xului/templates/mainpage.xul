@@ -98,10 +98,10 @@
            <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
 		<menuitem n:render="translate" label="Online eXe Manual" accesskey="m" oncommand="browseURL('http://exelearning.org/manual.php')"/>
-		<menuitem n:render="translate" label="Tips and Tricks" accesskey="t" oncommand="browseURL('http://exelearning.org/tips.php')"/>
 		<menuitem n:render="translate" label="Release Notes" accesskey="n" oncommand="browseURL('file://%s/NEWS')"/>
 		<menuseparator/>
                 <!-- <menuitem n:render="translate" label="Register Online" accesskey="R" oncommand="registerOnline()"/> -->
+		<menuitem n:render="translate" label="eXe Web Site" accesskey="w" oncommand="browseURL('http://exelearning.org/')"/>
 		<menuitem n:render="translate" label="Report an Issue" accesskey="r" oncommand="browseURL('http://exelearning.org/issue.php')"/>
 		<menuitem n:render="translate" label="eXe Live Chat" accesskey="c" oncommand="browseURL('http://exelearning.org/irc.php')"/>
                 <menuseparator/>
