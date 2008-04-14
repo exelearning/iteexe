@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2005, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -760,7 +760,10 @@ class MainPage(RenderableLivePage):
         reactor.stop()
 
     def handleBrowseURL(self, client, url):
-        """visit the specified URL using the system browser"""
+        """visit the specified URL using the system browser
+        
+        if the URL contains %s, substitute the local webDir"""
+        url = url.replace('%s', self.config.webDir)
         if hasattr(os, 'startfile'):
             os.startfile(url)
         elif sys.platform[:6] == "darwin":
