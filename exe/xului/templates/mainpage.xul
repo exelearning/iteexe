@@ -98,7 +98,7 @@
            <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
 		<menuitem n:render="translate" label="eXe Manual" accesskey="m" oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"/>
-		<menuitem n:render="translate" label="Release Notes" accesskey="n" oncommand="browseURL('file://%s/NEWS')"/>
+		<menuitem n:render="translate" label="Release Notes" accesskey="n" oncommand="browseURL('file://%t')"/>
 		<menuseparator/>
                 <!-- <menuitem n:render="translate" label="Register Online" accesskey="R" oncommand="registerOnline()"/> -->
 		<menuitem n:render="translate" label="eXe Web Site" accesskey="w" oncommand="browseURL('http://exelearning.org/')"/>

@@ -762,8 +762,31 @@ class MainPage(RenderableLivePage):
     def handleBrowseURL(self, client, url):
         """visit the specified URL using the system browser
         
-        if the URL contains %s, substitute the local webDir"""
-        url = url.replace('%s', self.config.webDir)
+        if the URL contains %s, substitute the local webDir
+        if the URL contains %t, show a temp file containing NEWS and README """
+        if url.find('%t') > -1:
+            release_notes = os.path.join(G.application.tempWebDir,
+                    'Release_Notes.html')
+            f = open(release_notes, 'wt')
+            f.write('''<html><head><title>eXe Release Notes</title></head>
+                <body><pre>\n''')
+            try:
+                news = open(os.path.join(self.config.webDir, 'NEWS'),
+                        'rt').read()
+                readme = open(os.path.join(self.config.webDir, 'README'),
+                        'rt').read()
+            except IOError:
+                # fail silently if we can't read either of the files
+                pass
+            f.write(news)
+            f.write('</pre><hr><pre>\n')
+            f.write(readme)
+            f.write('</pre></body></html>')
+            f.close()
+            url = url.replace('%t', release_notes)
+        else:
+            url = url.replace('%s', self.config.webDir)
+        log.debug(u'browseURL: ' + url)
         if hasattr(os, 'startfile'):
             os.startfile(url)
         elif sys.platform[:6] == "darwin":
