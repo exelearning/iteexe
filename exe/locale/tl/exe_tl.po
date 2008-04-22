@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 11:39+1200\n"
+"POT-Creation-Date: 2008-04-23 10:26+1200\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1036
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -53,7 +53,7 @@ msgid "---Move To---"
 msgstr "---Ilipat Sa---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid ". Please use ASCII names."
 msgstr ". Gumamit po ng mga pangalang ASCII."
 
@@ -466,7 +466,7 @@ msgid "Cancel"
 msgstr "Balewalain"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid "Cannot access directory named "
 msgstr "Hindi mapasok ang pinangalanang direktoryo "
 
@@ -601,7 +601,7 @@ msgstr "Wasto"
 msgid "Correct!"
 msgstr "Wasto!"
 
-#: exe/xului/mainpage.py:1061
+#: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Hindi maikarga ang sako, paki-email ang sako sa bugs@exelearning.org"
 
@@ -732,15 +732,15 @@ msgstr "ERROR: direktang tinawag ang Block.renderViewContent"
 
 #: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -755,7 +755,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -998,9 +998,9 @@ msgstr "Halimbawa Halimbawa"
 msgid "Export iDevice"
 msgstr "iDevices"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
+#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid "Exported to %s"
 msgstr "Iniluwas sa %s"
@@ -1041,13 +1041,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Puna:"
 
-#: exe/xului/mainpage.py:1057
+#: exe/xului/mainpage.py:1083
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:987
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ang ngalan ng sako na %s ay isa nang sako, hindi ito mapapalitan"
@@ -1065,8 +1065,8 @@ msgstr "Pelikulang Flash"
 msgid "Flash with Text"
 msgstr "Flash na may Teksto"
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1415,7 +1415,7 @@ msgstr "Balangkas"
 msgid "Own site"
 msgstr "Sariling site"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:850
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Isinilid ang pakete sa: %s"
@@ -1670,7 +1670,7 @@ msgid "SAVE FAILED!"
 msgstr ""
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:892
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1837,7 +1837,7 @@ msgstr "Maliit"
 msgid "Some emphasis"
 msgstr "Kaunting diin"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1092
 msgid "Sorry, wrong file format"
 msgstr "Paumanhin, mali ang anyo ng sako"
 
@@ -1846,7 +1846,7 @@ msgstr "Paumanhin, mali ang anyo ng sako"
 msgid "Sorry, wrong file format."
 msgstr "Paumanhin, mali ang anyo ng sako"
 
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1090
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3099,10 +3099,10 @@ msgid "Avestan "
 msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
-#: label="Online eXe Manual">
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
 #, fuzzy
-msgid "label=\"Online eXe Manual\" accesskey=\"m\""
+msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Buksan\" accesskey=\"b\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -3111,11 +3111,10 @@ msgid "Aymara "
 msgstr "Aymara "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
-#: label="Tips and Tricks">
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
 #, fuzzy
-msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"Gamit\" accesskey=\"g\""
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Bago\" accesskey=\"g\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3123,11 +3122,11 @@ msgid "Azerbaijani "
 msgstr "Azerbaijani "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
-#: label="Release Notes">
+#: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
+#: Web Site">
 #, fuzzy
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Bago\" accesskey=\"g\""
+msgid "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"Sakong Teksto\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -4034,6 +4033,10 @@ msgstr "Karapatan:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Karaniwan, ang Karapatan na elemento ay maglalaman ng pahayag na pangangasiwa ng karapatan sa rekurso o pagsangguni sa isang serbisyo na naghahandog ng ganitong impormasyon. Kalimitang sinasaklaw ng impormasyong Karapatan ang Intellectual Property Rights (IPR), Copyright, atbpng. Karapatang-Ari. Kung walang elementong Karapatan, walang puwedeng akalain hinggil sa estado nito o iba pang karapatan na may kinalaman sa rekurso."
+
+#, fuzzy
+#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
+#~ msgstr "label=\"Gamit\" accesskey=\"g\""
 
 #, fuzzy
 #~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."

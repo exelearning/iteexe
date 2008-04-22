@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 11:39+1200\n"
+"POT-Creation-Date: 2008-04-23 10:26+1200\n"
 "PO-Revision-Date: 2007-09-12 06:29+1200\n"
 "Last-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1036
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -48,7 +48,7 @@ msgid "---Move To---"
 msgstr "---ย้ายไปที่---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid ". Please use ASCII names."
 msgstr ". กรุณาใช้ชื่อที่เป็น ASCII"
 
@@ -356,7 +356,7 @@ msgid "Cancel"
 msgstr "ยกเลิก"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid "Cannot access directory named "
 msgstr "ไม่สามารถเข้าถึง directory ชื่อนี้ได้"
 
@@ -480,7 +480,7 @@ msgstr "ถูกต้อง"
 msgid "Correct!"
 msgstr "ถูกต้อง!"
 
-#: exe/xului/mainpage.py:1061
+#: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "ไม่สามารถโหลดไฟล์ได้, กรุณาส่ง email แจ้งมาที่ bugs@exelearning.org"
 
@@ -596,15 +596,15 @@ msgstr ""
 
 #: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
 msgstr "การส่งออกล้มเหลว!"
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -623,7 +623,7 @@ msgstr ""
 "การส่งออกล้มเหลว!\n"
 "การส่งออกที่สำเร็จครั้งล่าสุดคือ %s"
 
-#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -812,9 +812,9 @@ msgstr "ตัวอย่าง ตัวอย่าง"
 msgid "Export iDevice"
 msgstr "ส่งออก IDevice"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
+#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid "Exported to %s"
 msgstr "ส่งออกไปยัง %s"
@@ -855,13 +855,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr ""
 
-#: exe/xului/mainpage.py:1057
+#: exe/xului/mainpage.py:1083
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "ไฟล์ %s ไม่มี หรือ ไม่สามารถอ่านได้"
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:987
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "ไฟล์ที่ชื่อ %s , ไม่สามารถเขียนทับได้"
@@ -878,8 +878,8 @@ msgstr ""
 msgid "Flash with Text"
 msgstr "Flash กับตัวหนังสือ"
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1216,7 +1216,7 @@ msgstr "โดยรวม"
 msgid "Own site"
 msgstr "ไซต์ของตัวเอง"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:850
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "แพคเกจ ถูกแตกออกสู่ที่ : %s"
@@ -1441,7 +1441,7 @@ msgid "SAVE FAILED!"
 msgstr "การบันทึก (Save) ล้มเหลว!"
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:892
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1608,7 +1608,7 @@ msgstr "เล็ก"
 msgid "Some emphasis"
 msgstr "ส่วนที่ต้องการเน้นย้ำ"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1092
 msgid "Sorry, wrong file format"
 msgstr "ขออภัย, รูปแบบไฟล์ไม่ถูกต้อง"
 
@@ -1616,7 +1616,7 @@ msgstr "ขออภัย, รูปแบบไฟล์ไม่ถูกต�
 msgid "Sorry, wrong file format."
 msgstr "ขออภัย, รูปแบบไฟล์ไม่ถูกต้อง."
 
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1090
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2758,9 +2758,10 @@ msgid "Avestan "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
-#: label="Online eXe Manual">
-msgid "label=\"Online eXe Manual\" accesskey=\"m\""
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"วิธีใช้ eXe ออนไลน์ (ภาษาอังกฤษ)\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -2769,10 +2770,9 @@ msgid "Aymara "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
-#: label="Tips and Tricks">
-msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"เกร็ด,เคล็ดลับต่าง ๆ \" accesskey=\"t\""
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -2780,10 +2780,11 @@ msgid "Azerbaijani "
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
-#: label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr ""
+#: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
+#: Web Site">
+#, fuzzy
+msgid "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"รูปแบบ (Styles)\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3684,3 +3685,6 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+
+#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
+#~ msgstr "label=\"เกร็ด,เคล็ดลับต่าง ๆ \" accesskey=\"t\""

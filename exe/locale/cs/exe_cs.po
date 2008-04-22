@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 11:39+1200\n"
+"POT-Creation-Date: 2008-04-23 10:26+1200\n"
 "PO-Revision-Date: 2008-03-13 20:45+0100\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -34,9 +34,9 @@ msgstr ""
 "<p>Např. pro applety Geogebra vyberte geogebra a připojte soubor .ggb, \n"
 "který jste v programu Geogebra vytvořili. </p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1036
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -60,7 +60,7 @@ msgid "---Move To---"
 msgstr "---Přesunout do---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid ". Please use ASCII names."
 msgstr ". Prosím, použijte název v ASCII."
 
@@ -447,7 +447,7 @@ msgid "Cancel"
 msgstr "Zrušit"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid "Cannot access directory named "
 msgstr "Nemohu číst z adresáře "
 
@@ -579,7 +579,7 @@ msgstr "Správná volba"
 msgid "Correct!"
 msgstr "Správně!"
 
-#: exe/xului/mainpage.py:1061
+#: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Nepodařilo se načíst soubor. Budeme rádi, když nám pošlete upozornění mailem na adresu bugs@exelearning.org"
 
@@ -710,15 +710,15 @@ msgstr "CHYBA: Block.renderViewContent volán přímo "
 
 #: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
 msgstr "EXPORT SE NEZDAŘIL!"
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -737,7 +737,7 @@ msgstr ""
 "EXPORT SE NEZDAŘIL!\n"
 "Poslední úspěšný export je %s."
 
-#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -974,9 +974,9 @@ msgstr "Příklad Příklad"
 msgid "Export iDevice"
 msgstr "Exportovat"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
+#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportováno do %s"
@@ -1017,13 +1017,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Zpětná vazba:"
 
-#: exe/xului/mainpage.py:1057
+#: exe/xului/mainpage.py:1083
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Soubor %s neexistuje nebo jej nelze číst."
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:987
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Název souboru %s už je použit, nelze jej nahradit"
@@ -1040,8 +1040,8 @@ msgstr "Flash video"
 msgid "Flash with Text"
 msgstr "Flash s popisem"
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Adresář jménem %s už existuje. Vyberte prosím jiný nebo smažte existující a zkuste to znovu."
@@ -1382,7 +1382,7 @@ msgstr "Osnova"
 msgid "Own site"
 msgstr "Vlastní web"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:850
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Soubory rozbaleny do: %s"
@@ -1634,7 +1634,7 @@ msgid "SAVE FAILED!"
 msgstr "ULOŽENÍ SE NEZDAŘILO!"
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:892
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1803,7 +1803,7 @@ msgstr "Malý"
 msgid "Some emphasis"
 msgstr "Částečné zvýraznění"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1092
 msgid "Sorry, wrong file format"
 msgstr "Je mi líto, špatný formát souboru"
 
@@ -1811,7 +1811,7 @@ msgstr "Je mi líto, špatný formát souboru"
 msgid "Sorry, wrong file format."
 msgstr "Je mi líto, špatný formát souboru."
 
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1090
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3044,9 +3044,10 @@ msgid "Avestan "
 msgstr "avestánština "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
-#: label="Online eXe Manual">
-msgid "label=\"Online eXe Manual\" accesskey=\"m\""
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Online eXe manuál\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -3055,10 +3056,9 @@ msgid "Aymara "
 msgstr "ajmarština "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
-#: label="Tips and Tricks">
-msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"Tipy a triky\" accesskey=\"t\""
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Poznámky k vydání\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3066,10 +3066,11 @@ msgid "Azerbaijani "
 msgstr "ázerbájdžánština "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
-#: label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Poznámky k vydání\" accesskey=\"p\""
+#: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
+#: Web Site">
+#, fuzzy
+msgid "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"eXe chat\" accesskey=\"x\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3968,3 +3969,6 @@ msgstr "Práva:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Typicky bude v položce Práva obsažena pasáž o oprávnění k daným zdrojům nebo odkaz na takové informace. Informace o oprávnění zahrnují často Intellectual Property Rights (IPR), copyright a jiná vlastnická práva. Pokud nebude položka Práva uvedena, nelze vytvářet předpoklady o stavu jakýchkoli práv vztažených k prostředkům a zdrojům."
+
+#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
+#~ msgstr "label=\"Tipy a triky\" accesskey=\"t\""

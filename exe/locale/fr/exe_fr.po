@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 11:39+1200\n"
+"POT-Creation-Date: 2008-04-23 10:26+1200\n"
 "PO-Revision-Date: 2007-12-12 15:23+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -28,9 +28,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr "<p> Si l'applet que vous souhaitez ajouter a été générée par l'une des applications de cette liste déroulante, sélectionnez la, puis ajoutez les données du fichier de l'applet générées par votre programme </p><p> par exemple: pour des applets générées par Geogebra, sélectionnez Geogebra, puis ajoutez le fichier .ggb que vous avez créé sous Geogebra.</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1036
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -54,7 +54,7 @@ msgid "---Move To---"
 msgstr "---Déplacer vers---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid ". Please use ASCII names."
 msgstr ".Utilisez des noms ASCII SVP."
 
@@ -391,7 +391,7 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid "Cannot access directory named "
 msgstr "l'application ne peut accéder à ce répertoire"
 
@@ -514,7 +514,7 @@ msgstr "Option correcte"
 msgid "Correct!"
 msgstr "Exact !"
 
-#: exe/xului/mainpage.py:1061
+#: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Si vous ne pouvez télécharger le fichier, merci d'adresser un e-mail à bugs@exelearning.org"
 
@@ -632,15 +632,15 @@ msgstr "ERREUR: Block.renderViewContent appelé directement "
 
 #: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
 msgstr "L'EXPORT A ECHOUE!"
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -659,7 +659,7 @@ msgstr ""
 "L'EXPORT A ECHOUE!\n"
 "La dernière exportation réussie est %s "
 
-#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -860,9 +860,9 @@ msgstr "Exemple Exemple"
 msgid "Export iDevice"
 msgstr "Export d' outils pédagogiques"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
+#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid "Exported to %s"
 msgstr "Exporté vers %s"
@@ -901,13 +901,13 @@ msgstr "Le bouton \"Echo en retour\" n'apparaîtra pas si ce champ est laissé v
 msgid "Feedback:"
 msgstr "Echo en retour: "
 
-#: exe/xului/mainpage.py:1057
+#: exe/xului/mainpage.py:1083
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Le fichier %s n'existe pas ou n'est pas lisible."
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:987
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
@@ -924,8 +924,8 @@ msgstr "Film Flash (.flv)"
 msgid "Flash with Text"
 msgstr "Film Flash (.swf) avec boite \"Texte\""
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Le nom de dossier %s existe déjà. Choisissez un autre nom ou supprimez SVP l'existant et réessayez."
@@ -1260,7 +1260,7 @@ msgstr "Plan"
 msgid "Own site"
 msgstr "Site personnel"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:850
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Dossier extrait vers:%s"
@@ -1495,7 +1495,7 @@ msgid "SAVE FAILED!"
 msgstr "LA SAUVEGARDE A ECHOUE!"
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:892
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1654,7 +1654,7 @@ msgstr "Petit"
 msgid "Some emphasis"
 msgstr "Importance"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1092
 msgid "Sorry, wrong file format"
 msgstr "Désolé, ce n'est pas le bon format de fichier "
 
@@ -1662,7 +1662,7 @@ msgstr "Désolé, ce n'est pas le bon format de fichier "
 msgid "Sorry, wrong file format."
 msgstr "Désolé, ce n'est pas le bon format de fichier "
 
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1090
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2825,9 +2825,10 @@ msgid "Avestan "
 msgstr "Avestan"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
-#: label="Online eXe Manual">
-msgid "label=\"Online eXe Manual\" accesskey=\"m\""
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"online manuel d'eXe\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -2836,10 +2837,9 @@ msgid "Aymara "
 msgstr "Aymara"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
-#: label="Tips and Tricks">
-msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"les tips et les trucs\" accesskey=\"t\""
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Info du version\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -2847,10 +2847,11 @@ msgid "Azerbaijani "
 msgstr "Azerbaijani"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
-#: label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Info du version\" accesskey=\"n\""
+#: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
+#: Web Site">
+#, fuzzy
+msgid "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"Causerie Exe\" accesskey=\"c\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3751,6 +3752,9 @@ msgstr "Droits:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Un élément d'information de DROITS comprend communément un énoncé des règles de droits attachés à la ressource. L'information sur les droits englobe souvent les droits de propriété intellectuelle, le Copyright et différents droits de propriété et/ou d'usage. Si l'élément d'information de DROITS est non renseigné, aucune hypothèse ne peut être faite à propos de ceux-ci dans le respect de la ressource."
+
+#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
+#~ msgstr "label=\"les tips et les trucs\" accesskey=\"t\""
 
 #~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
 #~ msgstr "Ajouter une image à votre outil pédagogique. Permet à l'utilisateur d'insérer une image au sein de l'outil"

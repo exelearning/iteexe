@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 11:39+1200\n"
+"POT-Creation-Date: 2008-04-23 10:26+1200\n"
 "PO-Revision-Date: 2008-03-06 08:03+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -30,9 +30,9 @@ msgstr ""
 "<p>Primer: za Geogebra aplete, s seznama izberite geogebra,\n"
 "nato dodajte .ggb datoteko, ki ste jo ustvarili v Geogebri.</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1036
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -56,7 +56,7 @@ msgid "---Move To---"
 msgstr "--- premakni v ---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid ". Please use ASCII names."
 msgstr ". Prosimo, uporabljajte ASCII imena."
 
@@ -453,7 +453,7 @@ msgid "Cancel"
 msgstr "Prekliči"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid "Cannot access directory named "
 msgstr "Ni mogoč dostop do mape z imenom"
 
@@ -585,7 +585,7 @@ msgstr "Pravilna izbira"
 msgid "Correct!"
 msgstr "Pravilno!"
 
-#: exe/xului/mainpage.py:1061
+#: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Ni mogoče naložiti datoteke, prosim, pošljite sporočilo na bugs@exelearning.org"
 
@@ -716,15 +716,15 @@ msgstr "NAPAKA: Block.renderViewContent klican neposredno"
 
 #: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
 msgstr "Napaka med izvozom!"
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -743,7 +743,7 @@ msgstr ""
 "Napaka med izvozom!\n"
 "Zadnji uspešni izvoz je %s"
 
-#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -981,9 +981,9 @@ msgstr "Primer primera"
 msgid "Export iDevice"
 msgstr "Izvoz poučevalne enote"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
+#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid "Exported to %s"
 msgstr "Izvoženo v %s"
@@ -1024,13 +1024,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Odziv:"
 
-#: exe/xului/mainpage.py:1057
+#: exe/xului/mainpage.py:1083
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Datoteka %s ne obstaja ali pa je ni mogoče prebrati."
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:987
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ime datoteke %s je datoteka, ni je mogoče zamenjati."
@@ -1047,8 +1047,8 @@ msgstr "Flash film"
 msgid "Flash with Text"
 msgstr "Flash z besedilom"
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Ime mape %s že obstaja. Prosim, izberite novo ime ali pa izbrišite obstoječo mapo in poskusite znova."
@@ -1390,7 +1390,7 @@ msgstr "Razvrstitev"
 msgid "Own site"
 msgstr "Lastna stran"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:850
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Paket je razširjen v: %s"
@@ -1642,7 +1642,7 @@ msgid "SAVE FAILED!"
 msgstr "Napaka med shranjevanjem!"
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:892
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1811,7 +1811,7 @@ msgstr "Majhen"
 msgid "Some emphasis"
 msgstr "Nekaj poudarkov"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1092
 msgid "Sorry, wrong file format"
 msgstr "Oprostite, napačen format datoteke "
 
@@ -1819,7 +1819,7 @@ msgstr "Oprostite, napačen format datoteke "
 msgid "Sorry, wrong file format."
 msgstr "Oprostite, napačna oblika datoteke."
 
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1090
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3054,9 +3054,10 @@ msgid "Avestan "
 msgstr "avestanščina"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
-#: label="Online eXe Manual">
-msgid "label=\"Online eXe Manual\" accesskey=\"m\""
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Spletni eXe priročnik\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -3065,10 +3066,9 @@ msgid "Aymara "
 msgstr "ajmarščina"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
-#: label="Tips and Tricks">
-msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"Namigi in triki\" accesskey=\"t\""
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Opombe o različici\" accesskey=\"č\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3076,10 +3076,11 @@ msgid "Azerbaijani "
 msgstr "azerbajdžanščina"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
-#: label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Opombe o različici\" accesskey=\"č\""
+#: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
+#: Web Site">
+#, fuzzy
+msgid "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"Spletno eXe klepetanje\" accesskey=\"x\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3978,3 +3979,6 @@ msgstr "Lastništvo:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Običajno vsebuje element lastništva določilo upravljanja pravic za vir, reference in druge storitve, ki so namenjene določevanju podrobnosti vsebine. Dovoljenj pogosto povezujemo z intelektualno lastnino, avtorskimi pravicami in drugimi lastniškimi pravicami. V primeru, da element lastništva ni določen, ni mogoče ugotoviti pod kakšno licenco so viri na spletni strani objavljeni."
+
+#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
+#~ msgstr "label=\"Namigi in triki\" accesskey=\"t\""

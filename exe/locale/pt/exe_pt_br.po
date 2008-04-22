@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 11:39+1200\n"
+"POT-Creation-Date: 2008-04-23 10:26+1200\n"
 "PO-Revision-Date: 2007-12-07 18:03+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -33,9 +33,9 @@ msgstr ""
 "<p>ex. Para os applets Geogebra sleccionar geogebra, depois adicionar o ficheiro .ggb que \n"
 "criou em Geogebra.</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:989
-#: exe/xului/mainpage.py:1010
+#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
+#: exe/xului/mainpage.py:1036
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -60,7 +60,7 @@ msgid "---Move To---"
 msgstr "---Mover para---"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nomes ASCII."
 
@@ -464,7 +464,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:796
+#: exe/xului/mainpage.py:822
 msgid "Cannot access directory named "
 msgstr "Não é permitido o acesso ao nome do directório"
 
@@ -600,7 +600,7 @@ msgstr "Correcto"
 msgid "Correct!"
 msgstr "Correcto!"
 
-#: exe/xului/mainpage.py:1061
+#: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Não consigo carregar o ficheiro, por favor, enviar ficheiro para bugs@exelearning.org"
 
@@ -731,15 +731,15 @@ msgstr "ERRO: Block.renderViewContent chamado directamente"
 
 #: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:917
+#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
 msgstr "FALHOU EXPORTAÇÃO"
 
-#: exe/xului/mainpage.py:907 exe/xului/mainpage.py:921
-#: exe/xului/mainpage.py:934 exe/xului/mainpage.py:940
-#: exe/xului/mainpage.py:974 exe/xului/mainpage.py:990
-#: exe/xului/mainpage.py:996 exe/xului/mainpage.py:1011
-#: exe/xului/mainpage.py:1017
+#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
+#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
+#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
+#: exe/xului/mainpage.py:1043
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -758,7 +758,7 @@ msgstr ""
 "EXPORTAÇÃO FALHADA!\n"
 "A última exportação com sucesso foi %s."
 
-#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -999,9 +999,9 @@ msgstr "Exemplo Exemplo"
 msgid "Export iDevice"
 msgstr "iDvices"
 
-#: exe/xului/mainpage.py:923 exe/xului/mainpage.py:942
-#: exe/xului/mainpage.py:976 exe/xului/mainpage.py:998
-#: exe/xului/mainpage.py:1019
+#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
+#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado para %s"
@@ -1042,13 +1042,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Resposta:"
 
-#: exe/xului/mainpage.py:1057
+#: exe/xului/mainpage.py:1083
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Ficheiro %s não existe ou indecifrado."
 
-#: exe/xului/mainpage.py:852 exe/xului/mainpage.py:894
-#: exe/xului/mainpage.py:961
+#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
+#: exe/xului/mainpage.py:987
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
@@ -1066,8 +1066,8 @@ msgstr "Filme Flash"
 msgid "Flash with Text"
 msgstr "Flash com Texto"
 
-#: exe/xului/mainpage.py:858 exe/xului/mainpage.py:900
-#: exe/xului/mainpage.py:967
+#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
+#: exe/xului/mainpage.py:993
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Noma da pasta %s já existe. Por favor escolher outro ou eliminar o existente e tentar novamente."
@@ -1416,7 +1416,7 @@ msgstr "Diagrama"
 msgid "Own site"
 msgstr "Sítio do autor"
 
-#: exe/xului/mainpage.py:824
+#: exe/xului/mainpage.py:850
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Módulo guardado para: %s"
@@ -1669,7 +1669,7 @@ msgid "SAVE FAILED!"
 msgstr "FICHEIRO GUARDADO"
 
 #: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:866
+#: exe/xului/mainpage.py:892
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1844,7 +1844,7 @@ msgstr "Pequeno"
 msgid "Some emphasis"
 msgstr "Alguma ênfase"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1066
+#: exe/application.py:273 exe/xului/mainpage.py:1092
 msgid "Sorry, wrong file format"
 msgstr "Desculpe, formato de ficheiro incorrecto"
 
@@ -1853,7 +1853,7 @@ msgstr "Desculpe, formato de ficheiro incorrecto"
 msgid "Sorry, wrong file format."
 msgstr "Desculpe, formato de ficheiro incorrecto"
 
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1090
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3102,10 +3102,10 @@ msgid "Avestan "
 msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
-#: label="Online eXe Manual">
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
 #, fuzzy
-msgid "label=\"Online eXe Manual\" accesskey=\"m\""
+msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Abrir\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -3114,11 +3114,10 @@ msgid "Aymara "
 msgstr "Aymara "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
-#: label="Tips and Tricks">
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
 #, fuzzy
-msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"Ferramentas\" accesskey=\"t\""
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Novo\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3126,11 +3125,11 @@ msgid "Azerbaijani "
 msgstr "Azerbaijan"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
-#: label="Release Notes">
+#: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
+#: Web Site">
 #, fuzzy
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Novo\" accesskey=\"n\""
+msgid "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"Sítio Web\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -4036,6 +4035,10 @@ msgstr "Direitos:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Tipicamente o elemento Direitos (Rights) contém um afirmação relativa aos direitos para o recurso ou uma referência a um serviço que fornece essa informação. Os direitos de informação frequentemente  andam de mãos dadas com os direitos de propriedade intelectual . Se os direitos de autor estão ausentes não se pode assumir qualquer informação relativamente a estes direitos no recurso em causa."
+
+#, fuzzy
+#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
+#~ msgstr "label=\"Ferramentas\" accesskey=\"t\""
 
 #, fuzzy
 #~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
