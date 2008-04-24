@@ -153,11 +153,11 @@ class Manifest(object):
         # Metadata
 
         if self.scormType == "commoncartridge":
-            xmlStr += u"<organizations>\n"
-            xmlStr += u'  <organization identifier="%s" structure="rooted-heirarchy">' % orgId
+            xmlStr += u'<organizations default="%s">\n' % orgId
+            xmlStr += u'  <organization identifier="%s" structure="rooted-heirarchy">\n' % orgId
         else:
             xmlStr += u"<organizations default=\""+orgId+"\">  \n"
-            xmlStr += u'  <organization identifier="%s" structure="hierarchical">' % orgId
+            xmlStr += u'  <organization identifier="%s" structure="hierarchical">\n' % orgId
 
             if self.package.title != '':
                 title = escape(self.package.title)
