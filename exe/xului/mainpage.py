@@ -775,12 +775,12 @@ class MainPage(RenderableLivePage):
                         'rt').read()
                 readme = open(os.path.join(self.config.webDir, 'README'),
                         'rt').read()
+                f.write(news)
+                f.write('</pre><hr><pre>\n')
+                f.write(readme)
             except IOError:
                 # fail silently if we can't read either of the files
                 pass
-            f.write(news)
-            f.write('</pre><hr><pre>\n')
-            f.write(readme)
             f.write('</pre></body></html>')
             f.close()
             url = url.replace('%t', release_notes)
