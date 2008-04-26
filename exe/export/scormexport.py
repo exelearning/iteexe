@@ -356,9 +356,8 @@ class ScormExport(object):
         # But not nav.css
         styleFiles  = [self.styleDir/'..'/'base.css']
         styleFiles += [self.styleDir/'..'/'popup_bg.gif']
-        styleFiles += self.styleDir.files("*.css")
-        if "nav.css" in styleFiles:
-            styleFiles.remove("nav.css")
+        styleFiles += [f for f in self.styleDir.files("*.css")
+                if f.basename() <> "nav.css"] 
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
         styleFiles += self.styleDir.files("*.png")

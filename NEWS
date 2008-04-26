@@ -3,6 +3,8 @@
 * Add ability for multiple users on posix systems to each run eXe
 * Fix handling of multi-select questions with 10 or more options
 * Fix tip display at right edge of windows
+* Fix Common Cartridge resource references
+* Improve Common Cartridge metadata formation
 * Improve Wiki Article idevice handling of pages without content div
 * Remove CSS letter-spacing to improve rendering with some fonts (Khmer)
 * Automate building Debian changelog and versioning
