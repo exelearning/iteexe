@@ -8,6 +8,7 @@
 * Improve Wiki Article idevice handling of pages without content div
 * Remove CSS letter-spacing to improve rendering with some fonts (Khmer)
 * Automate building Debian changelog and versioning
+* Update to BeautifulSoup 3.0.6 (character coding detection issues)
 * Translation updates
 
 Version 1.03 (r3373) 2008-01-21

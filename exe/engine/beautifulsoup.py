@@ -79,8 +79,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE, DAMMIT.
 from __future__ import generators
 
 __author__ = "Leonard Richardson (leonardr@segfault.org)"
-__version__ = "3.0.5"
-__copyright__ = "Copyright (c) 2004-2007 Leonard Richardson"
+__version__ = "3.0.6"
+__copyright__ = "Copyright (c) 2004-2008 Leonard Richardson"
 __license__ = "New-style BSD"
 
 from sgmllib import SGMLParser, SGMLParseError
@@ -157,6 +157,7 @@ class PageElement:
         if self.nextSibling:
             self.nextSibling.previousSibling = self.previousSibling
         self.previousSibling = self.nextSibling = None
+        return self
 
     def _lastRecursiveChild(self):
         "Finds the last element beneath this object to be parsed."
@@ -237,8 +238,9 @@ class PageElement:
     def findAllNext(self, name=None, attrs={}, text=None, limit=None,
                     **kwargs):
         """Returns all items that match the given criteria and appear
-        before after Tag in the document."""
-        return self._findAll(name, attrs, text, limit, self.nextGenerator)
+        after this Tag in the document."""
+        return self._findAll(name, attrs, text, limit, self.nextGenerator,
+                             **kwargs)
 
     def findNextSibling(self, name=None, attrs={}, text=None, **kwargs):
         """Returns the closest sibling to this Tag that matches the
@@ -402,7 +404,7 @@ class NavigableString(unicode, PageElement):
             raise AttributeError, "'%s' object has no attribute '%s'" % (self.__class__.__name__, attr)
 
     def __unicode__(self):
-        return unicode(str(self))
+        return str(self).decode(DEFAULT_OUTPUT_ENCODING)
 
     def __str__(self, encoding=DEFAULT_OUTPUT_ENCODING):
         if encoding:
@@ -687,6 +689,16 @@ class Tag(PageElement):
                 s.append("\n")
             s = ''.join(s)
         return s
+
+    def decompose(self):
+        """Recursively destroys the contents of this tree."""
+        contents = [i for i in self.contents]
+        for i in contents:
+            if isinstance(i, Tag):
+                i.decompose()
+            else:
+                i.extract()
+        self.extract()
 
     def prettify(self, encoding=DEFAULT_OUTPUT_ENCODING):
         return self.__str__(encoding, True)
@@ -1512,7 +1524,7 @@ class BeautifulSoup(BeautifulStoneSoup):
                     # worked. Rewrite the meta tag.
                     newAttr = self.CHARSET_RE.sub\
                               (lambda(match):match.group(1) +
-                               "%SOUP-ENCODING%", value)
+                               "%SOUP-ENCODING%", contentType)
                     attrs[contentTypeIndex] = (attrs[contentTypeIndex][0],
                                                newAttr)
                     tagNeedsEncodingSubstitution = True
@@ -1646,20 +1658,19 @@ try:
     import chardet
 #    import chardet.constants
 #    chardet.constants._debug = 1
-except:
+except ImportError:
     chardet = None
-chardet = None
 
 # cjkcodecs and iconv_codec make Python know about more character encodings.
 # Both are available from http://cjkpython.i18n.org/
 # They're built in if you use Python 2.4.
 try:
     import cjkcodecs.aliases
-except:
+except ImportError:
     pass
 try:
     import iconv_codec
-except:
+except ImportError:
     pass
 
 class UnicodeDammit:
