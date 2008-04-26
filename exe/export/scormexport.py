@@ -266,15 +266,15 @@ class ScormPage(Page):
         html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"
-        html += u"<script type=\"text/javascript\" "
-        html += u"src=\"APIWrapper.js\"></script>\n" 
-        html += u"<script type=\"text/javascript\" "
-        html += u"src=\"SCOFunctions.js\"></script>\n"             
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         if self.scormType == 'commoncartridge':
             html += u"<body>"
         else:
+            html += u"<script type=\"text/javascript\" "
+            html += u"src=\"APIWrapper.js\"></script>\n" 
+            html += u"<script type=\"text/javascript\" "
+            html += u"src=\"SCOFunctions.js\"></script>\n"             
             html += u'<body onload="loadPage()" '
             html += u'onunload="unloadPage()">'
         html += u"<div id=\"outer\">\n"
@@ -393,10 +393,14 @@ class ScormExport(object):
             manifest.save("discussionforum.xml")
         
         # Copy the scripts
-        self.scriptsDir.copylist(('APIWrapper.js', 
-                                  'SCOFunctions.js', 
-                                  'libot_drag.js',
-                                  'common.js'), outputDir)
+        if self.scormType == "commoncartridge":
+            self.scriptsDir.copylist(('libot_drag.js',
+                                      'common.js'), outputDir)
+        else:
+            self.scriptsDir.copylist(('APIWrapper.js', 
+                                      'SCOFunctions.js', 
+                                      'libot_drag.js',
+                                      'common.js'), outputDir)
         schemasDir = ""
         if self.scormType == "scorm1.2":
             schemasDir = self.schemasDir/"scorm1.2"
