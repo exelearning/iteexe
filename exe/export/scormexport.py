@@ -54,6 +54,7 @@ class Manifest(object):
         self.itemStr      = ""
         self.resStr       = ""
         self.scormType    = scormType
+        self.dependencies = {}
 
 
     def createMetaData(self, template):
@@ -211,6 +212,8 @@ class Manifest(object):
     <file href="%s"/>
     <file href="base.css"/>
     <file href="content.css"/>""" % (filename, filename)
+            self.dependencies["base.css"] = True
+            self.dependencies["content.css"] = True
         else:
             self.resStr += "adlcp:scormtype=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
@@ -225,6 +228,7 @@ class Manifest(object):
 
         for resource in page.node.getResources():            
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
+            self.dependencies[resource] = True
 
         self.resStr += fileStr
         self.resStr += "  </resource>\n"
@@ -352,23 +356,6 @@ class ScormExport(object):
         # First do the export to a temporary directory
         outputDir = TempDirPath()
 
-        # Copy the style sheet files to the output dir
-        # But not nav.css
-        styleFiles  = [self.styleDir/'..'/'base.css']
-        styleFiles += [self.styleDir/'..'/'popup_bg.gif']
-        styleFiles += [f for f in self.styleDir.files("*.css")
-                if f.basename() <> "nav.css"] 
-        styleFiles += self.styleDir.files("*.jpg")
-        styleFiles += self.styleDir.files("*.gif")
-        styleFiles += self.styleDir.files("*.png")
-        styleFiles += self.styleDir.files("*.js")
-        styleFiles += self.styleDir.files("*.html")
-        self.styleDir.copylist(styleFiles, outputDir)
-
-        # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
-      
-            
         # Export the package content
         self.pages = [ ScormPage("index", 1, package.root,
             scormType=self.scormType) ]
@@ -391,6 +378,29 @@ class ScormExport(object):
         if self.hasForum:
             manifest.save("discussionforum.xml")
         
+        # Copy the style sheet files to the output dir
+        # But not nav.css
+        styleFiles  = [self.styleDir/'..'/'base.css']
+        styleFiles += [self.styleDir/'..'/'popup_bg.gif']
+        styleFiles += [f for f in self.styleDir.files("*.css")
+                if f.basename() <> "nav.css"] 
+        styleFiles += self.styleDir.files("*.jpg")
+        styleFiles += self.styleDir.files("*.gif")
+        styleFiles += self.styleDir.files("*.png")
+        styleFiles += self.styleDir.files("*.js")
+        styleFiles += self.styleDir.files("*.html")
+        # FIXME for now, only copy files referenced in Common Cartridge
+        # this really should apply to all exports, but without a manifest
+        # of the files needed by an included stylesheet it is too restrictive
+        if self.scormType == "commoncartridge":
+            for sf in styleFiles[:]:
+                if sf.basename() not in manifest.dependencies:
+                    styleFiles.remove(sf)
+        self.styleDir.copylist(styleFiles, outputDir)
+
+        # copy the package's resource files
+        package.resourceDir.copyfiles(outputDir)
+
         # Copy the scripts
         if self.scormType == "commoncartridge":
             self.scriptsDir.copylist(('libot_drag.js',
