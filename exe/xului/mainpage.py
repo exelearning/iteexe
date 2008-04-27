@@ -113,6 +113,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleSavePackage,     'savePackage')
         setUpHandler(self.handleLoadPackage,     'loadPackage')
         setUpHandler(self.handleLoadRecent,      'loadRecent')
+        setUpHandler(self.handleLoadTutorial,    'loadTutorial')
         setUpHandler(self.handleClearRecent,     'clearRecent')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleQuit,            'quit')
@@ -336,6 +337,14 @@ class MainPage(RenderableLivePage):
         Loads a file from our recent files list
         """
         filename = self.config.recentProjects[int(number) - 1]
+        self.handleLoadPackage(client, filename)
+
+    def handleLoadTutorial(self, client):
+        """
+        Loads the tutorial file, from the Help menu
+        """
+        filename = self.config.webDir.joinpath("docs")\
+                .joinpath("eXe-tutorial.elp")
         self.handleLoadPackage(client, filename)
 
     def handleClearRecent(self, client):

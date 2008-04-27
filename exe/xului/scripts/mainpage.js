@@ -380,6 +380,18 @@ function fileOpen2() {
     }
 }
 
+// Opens the tutorial document
+function fileOpenTutorial() {
+    askDirty("fileOpenTutorial2();")
+}
+
+// Actually does the opening of the tutorial document, 
+// once the current package has  been saved or discarded
+function fileOpenTutorial2() {
+    nevow_clientToServerEvent('loadTutorial', this, '')
+}
+
+
 // Opens a recent document
 function fileOpenRecent(number) {
     askDirty("fileOpenRecent2('" + number + "');")
