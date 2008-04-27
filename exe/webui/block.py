@@ -90,6 +90,9 @@ class Block(Renderable):
                 
             elif request.args[u"action"][0] == u"demote":
                 self.processDemote(request)
+
+            elif request.args[u"action"][0] == u"cancel":
+                self.idevice.edit = False
         
         else:
             self.idevice.lastIdevice = False
@@ -200,15 +203,23 @@ class Block(Renderable):
         return u"ERROR Block.renderEdit called directly"
 
 
-    def renderEditButtons(self):
+    def renderEditButtons(self, undo=True):
         """
         Returns an XHTML string for the edit buttons
         """
         
-       
         html  = common.submitImage(u"done", self.id, 
                                    u"/images/stock-apply.png", 
                                    _(u"Done"),1)
+
+        if undo:
+            html  += common.submitImage(u"cancel", self.id, 
+                                   u"/images/stock-undo.png", 
+                                   _(u"Undo Edits"),1)
+        else:
+            html  += common.submitImage(u"no_cancel", self.id, 
+                                   u"/images/stock-undoNOT.png", 
+                                   _(u"Can NOT Undo Edits"),1)
 
         html += common.confirmThenSubmitImage(
             _(u"This will delete this iDevice."

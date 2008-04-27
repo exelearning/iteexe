@@ -87,6 +87,9 @@ class QuestionElement(object):
                  q_field.ReplaceAllInternalAnchorsLinks()  
                  q_field.RemoveAllInternalLinks()  
             self.idevice.questions.remove(self.question)
+            # disable Undo once an activity has been deleted:
+            self.idevice.undo = False
+
 
     def renderEdit(self):
         """

@@ -135,7 +135,8 @@ class TextElement(Element):
         """
         Process arguments from the web server.
         """
-        if self.id in request.args:
+        if self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.content = request.args[self.id][0]
 
 
@@ -182,6 +183,16 @@ class TextAreaElement(ElementWithResources):
         """
         Process arguments from the web server.
         """
+        if request.args[u"action"][0] == u"cancel":
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.content = self.field.content_wo_resourcePaths
+            return
+
         if self.id in request.args:
             # process any new images and other resources courtesy of tinyMCE:
 
@@ -240,9 +251,15 @@ class TextAreaElement(ElementWithResources):
         if content is None:
             if preview:
                 # render the resource content with resource paths: 
+                if not hasattr(self.field, 'content_w_resourcePaths'):
+                    # safety measure, in case not yet set.  could set to "" or:
+                    self.field.content_w_resourcePaths = self.field.content
                 self.field.content = self.field.content_w_resourcePaths
             else:
                 # render with the flattened content, withOUT resource paths: 
+                if not hasattr(self.field, 'content_wo_resourcePaths'):
+                    # safety measure, in case not yet set.  could set to "" or:
+                    self.field.content_wo_resourcePaths = self.field.content
                 self.field.content = self.field.content_wo_resourcePaths
             content = self.field.content
         return '<div id="ta%s" class="%s" %s>%s</div>' % (
@@ -265,6 +282,16 @@ class FeedbackElement(ElementWithResources):
         """
         Process arguments from the web server.
         """
+        if request.args[u"action"][0] == u"cancel":
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.content = self.field.content_wo_resourcePaths
+            return
+
         if self.id in request.args:
             # process any new images and other resources courtesy of tinyMCE:
 
@@ -399,18 +426,22 @@ class ImageElement(Element):
         """
         Process arguments from the web server.
         """
-        if "path"+self.id in request.args:
+        if "path"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.setImage(request.args["path"+self.id][0])
 
-        if "width"+self.id in request.args:
+        if "width"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.width = request.args["width"+self.id][0]
 
-        if "height"+self.id in request.args:
+        if "height"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.height = request.args["height"+self.id][0]
             
         if "action" in request.args and request.args["action"][0]=="addImage" and \
            request.args["object"][0]==self.id:
             self.field.idevice.edit = True
+            self.field.idevice.undo = False
 
 
     def renderEdit(self):
@@ -816,15 +847,21 @@ class MagnifierElement(Element):
             elif path <> "":
                 self.field.message = _(u"Please select a .jpg file.")
                 self.field.idevice.edit = True
+            # disabling Undo once an image has been added:
+            self.field.idevice.undo = False
 
-        if "width"+self.id in request.args:
+        if "width"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.width = request.args["width"+self.id][0]
 
-        if "height"+self.id in request.args:
+        if "height"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.height = request.args["height"+self.id][0]
             
         if "action" in request.args and request.args["action"][0]=="addJpgImage" and \
            request.args["object"][0]==self.id:
+            # disabling Undo once an image has been added:
+            self.field.idevice.undo = False
             self.field.idevice.edit = True
             
             
@@ -982,6 +1019,17 @@ class ClozeElement(ElementWithResources):
         """
         Sets the encodedContent of our field
         """
+        if request.args[u"action"][0] == u"cancel":
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+                self.field.idevice.edit = True
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.idevice.edit = True
+            return
+
         if self.editorId in request.args:
             # process any new images and other resources courtesy of tinyMCE:
 
@@ -1502,13 +1550,16 @@ class SelectOptionElement(Element):
         """
         log.debug("process " + repr(request.args))
         
-        if self.answerId in request.args:
+        if self.answerId in request.args \
+        and request.args["action"][0] != "cancel":
             self.answerElement.process(request)
                         
-        if "c"+self.id in request.args:
+        if "c"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.isCorrect = True 
             log.debug("option " + repr(self.field.isCorrect))
-        elif "ans"+self.id in request.args:
+        elif "ans"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.isCorrect = False
             
         if "action" in request.args and \
@@ -1518,6 +1569,7 @@ class SelectOptionElement(Element):
                  o_field.ReplaceAllInternalAnchorsLinks()  
                  o_field.RemoveAllInternalLinks()  
             self.field.question.options.remove(self.field)
+            self.field.idevice.undo = False
 
 
     def renderEdit(self):
@@ -1630,14 +1682,17 @@ class SelectquestionElement(Element):
         """
         log.info("process " + repr(request.args))
         
-        if self.questionId in request.args:
+        if self.questionId in request.args \
+        and request.args["action"][0] != "cancel":
             self.questionElement.process(request)
             
         if ("addOption"+unicode(self.id)) in request.args: 
             self.field.addOption()
             self.field.idevice.edit = True
+            self.field.idevice.undo = False
             
-        if self.feedbackId in request.args:
+        if self.feedbackId in request.args \
+        and request.args["action"][0] != "cancel":
             self.feedbackElement.process(request)
             
         if "action" in request.args and \
@@ -1647,6 +1702,7 @@ class SelectquestionElement(Element):
                  q_field.ReplaceAllInternalAnchorsLinks()  
                  q_field.RemoveAllInternalLinks()  
             self.field.idevice.questions.remove(self.field)
+            self.field.idevice.undo = False
 
         for element in self.options:
             element.process(request)
@@ -1783,16 +1839,20 @@ class QuizOptionElement(Element):
         """
         log.debug("process " + repr(request.args))
         
-        if self.answerId in request.args: 
+        if self.answerId in request.args \
+        and request.args["action"][0] != "cancel":
             self.answerElement.process(request)
             
-        if self.feedbackId in request.args: 
+        if self.feedbackId in request.args \
+        and request.args["action"][0] != "cancel":
             self.feedbackElement.process(request)
                         
-        if ("c"+self.field.question.id in request.args and 
-            request.args["c"+self.field.question.id][0]==str(self.index)):
+        if ("c"+self.field.question.id in request.args \
+        and request.args["c"+self.field.question.id][0]==str(self.index) \
+        and request.args["action"][0] != "cancel"):
             self.field.isCorrect = True 
-        elif "ans"+self.id in request.args:
+        elif "ans"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.field.isCorrect = False
             
         if "action" in request.args and \
@@ -1802,6 +1862,8 @@ class QuizOptionElement(Element):
                  o_field.ReplaceAllInternalAnchorsLinks()  
                  o_field.RemoveAllInternalLinks()  
             self.field.question.options.remove(self.field)
+            # disable Undo once an option has been deleted:
+            self.field.idevice.undo = False
 
 
     def renderEdit(self):
@@ -1894,7 +1956,8 @@ class QuizOptionElement(Element):
         return xhtml string for display this option's feedback
         """
         feedbackStr = ""
-        if self.feedbackElement.field.content != "": 
+        if hasattr(self.feedbackElement.field, 'content')\
+        and self.feedbackElement.field.content != "": 
             if preview: 
                 feedbackStr = self.feedbackElement.renderPreview() 
             else: 
@@ -1965,6 +2028,8 @@ class QuizQuestionElement(Element):
         if ("addOption"+unicode(self.id)) in request.args: 
             self.field.addOption()
             self.field.idevice.edit = True
+            # disable Undo once an option has been added:
+            self.field.idevice.undo = False
             
             
         if "action" in request.args and \
@@ -1974,6 +2039,8 @@ class QuizQuestionElement(Element):
                  q_field.ReplaceAllInternalAnchorsLinks()  
                  q_field.RemoveAllInternalLinks()  
             self.field.idevice.questions.remove(self.field)
+            # disable Undo once a question has been deleted:
+            self.field.idevice.undo = False
 
         for element in self.options:
             element.process(request)

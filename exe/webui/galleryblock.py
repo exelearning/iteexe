@@ -50,6 +50,9 @@ class GalleryBlock(Block):
         'parent' is our parent 'Renderable' instance
         """
         Block.__init__(self, parent, idevice)
+
+        if not hasattr(self.idevice,'undo'):
+            self.idevice.undo = True
         
     # Protected Methods
 
@@ -93,7 +96,8 @@ class GalleryBlock(Block):
         
         obj = request.args.get('object', [''])[0]
         
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
             if obj != self.id:
                 self.idevice.recreateResources()
@@ -106,10 +110,13 @@ class GalleryBlock(Block):
         action = request.args.get('action', [''])[0]
         if action.startswith('gallery.'):
             self.processGallery(action)
-        if self.mode == Block.Edit:
+        if self.mode == Block.Edit \
+        and request.args["action"][0] != "cancel":
             self.processCaptions(request)
         if action == 'done':
             self.idevice.recreateResources()
+            # reenable the undo flag for next time:
+            self.idevice.undo = True
         # Let our ancestor deal with the rest
         Block.process(self, request)
 
@@ -137,12 +144,16 @@ class GalleryBlock(Block):
                         filename = filename[:start] + code + filename[end:]
                         match = self.unicodeRe.search(filename)
                     self.idevice.addImage(filename)
+                # disable Undo following such an action:
+                self.idevice.undo = False
             # Edit/change an image
             if action == 'changeImage':
                 data = params.split('.', 2)
                 imageId = '.'.join(data[:2])
                 filename = data[2]
                 self.idevice.images[imageId].imageFilename = filename
+                # disable Undo following such an action:
+                self.idevice.undo = False
             # Move image one left
             if action == 'moveLeft':
                 imgs = self.idevice.images
@@ -150,6 +161,8 @@ class GalleryBlock(Block):
                 index = imgs.index(img)
                 if index > 0:
                     imgs[index-1], imgs[index] = imgs[index], imgs[index-1]
+                # disable Undo following such an action:
+                self.idevice.undo = False
             # Move image one right
             if action == 'moveRight':
                 imgs = self.idevice.images
@@ -157,9 +170,13 @@ class GalleryBlock(Block):
                 index = imgs.index(img)
                 if index < len(imgs):
                     imgs[index+1], imgs[index] = imgs[index], imgs[index+1]
+                # disable Undo following such an action:
+                self.idevice.undo = False
             # Delete an image?
             if action == 'delete':
                 del self.idevice.images[params]
+                # disable Undo following such an action:
+                self.idevice.undo = False
 
     def processCaptions(self, request): 
         """
@@ -269,7 +286,7 @@ class GalleryBlock(Block):
                           u'      </span>']
                 return result
             html += self._generateTable(genCell)
-        html += [self.renderEditButtons(),
+        html += [self.renderEditButtons(undo=self.idevice.undo),
                  u'</div>']
         return u'\n    '.join(html)
 

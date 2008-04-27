@@ -49,6 +49,9 @@ class RssBlock(Block):
         self.rssElement = TextAreaElement(idevice.rss)
         self.rssElement.height = 300
 
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
+
 
     def process(self, request):
         """
@@ -57,19 +60,26 @@ class RssBlock(Block):
         """
         log.debug("process " + repr(request.args))
         
-        if 'emphasis'+self.id in request.args:
+        if 'emphasis'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
             
-        if 'site'+self.id in request.args:
+        if 'site'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.site = request.args['site'+self.id][0]
 
-        if 'title'+self.id in request.args:
+        if 'title'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args['title'+self.id][0]
             
-        if "url" + self.id in request.args:
+        if "url" + self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.url = request.args['url'+ self.id][0]
 
-        if 'loadRss'+self.id in request.args:
+        if 'loadRss'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
+            # disable Undo once a question has been added:
+            self.idevice.undo = False
             self.idevice.loadRss(request.args['url'+ self.id][0])
         else:
             Block.process(self, request)
@@ -77,7 +87,9 @@ class RssBlock(Block):
                 request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.rssElement.process(request)
-
+                if request.args["action"][0] == "done":
+                    # reenable ehe undo flag for next time: 
+                    del self.idevice.undo
 
     def renderEdit(self, style):
         """
@@ -106,7 +118,7 @@ class RssBlock(Block):
                                  emphasisValues,
                                  self.idevice.emphasis)
 
-        html += self.renderEditButtons()
+        html += self.renderEditButtons(undo=self.idevice.undo)
         html += u"</div>\n"
         return html
 

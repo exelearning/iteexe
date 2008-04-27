@@ -53,19 +53,21 @@ class ReflectionBlock(Block):
 
         self.previewing        = False # In view or preview render
 
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
+
 
     def process(self, request):
         """
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        
-        self.activityElement.process(request)
 
-        self.answerElement.process(request)
-        
-        if "title"+self.id in request.args:
-            self.idevice.title = request.args["title"+self.id][0]
+        if request.args["action"][0] != "cancel":
+            self.activityElement.process(request)
+            self.answerElement.process(request)
+            if "title"+self.id in request.args:
+                self.idevice.title = request.args["title"+self.id][0]
         
 
     def renderEdit(self, style):

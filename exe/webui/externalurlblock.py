@@ -41,6 +41,10 @@ class ExternalUrlBlock(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
+        if request.args[u"action"][0] == u"cancel":
+            self.idevice.edit = False
+            return
+
         Block.process(self, request)
         if "url"+self.id in request.args:
             self.idevice.url = request.args["url"+self.id][0]

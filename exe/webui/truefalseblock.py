@@ -52,6 +52,9 @@ class TrueFalseBlock(Block):
             idevice.instructionsForLearners.idevice = idevice
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
+
+        if not hasattr(self.idevice,'undo'):
+            self.idevice.undo = True
         
         i = 0
         for question in idevice.questions:
@@ -70,12 +73,20 @@ class TrueFalseBlock(Block):
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            # disable Undo once a question has been added: 
+            self.idevice.undo = False
         
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
 
         for element in self.questionElements:
             element.process(request)
+
+        if ("action" in request.args and request.args["action"][0] == "done" 
+        or not self.idevice.edit): 
+            # reenable the undo flag for next time: 
+            del self.idevice.undo
 
 
     def renderEdit(self, style):
@@ -93,7 +104,7 @@ class TrueFalseBlock(Block):
             
         value = _(u"Add another question")    
         html += common.submitButton("addQuestion"+unicode(self.id), value)
-        html += u"<br /><br />" + self.renderEditButtons()
+        html += u"<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
         html += u"</div>\n"
 
         return html

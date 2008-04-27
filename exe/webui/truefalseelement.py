@@ -75,20 +75,24 @@ class TrueFalseElement(object):
         """
         log.debug("process " + repr(request.args))
         
-        if self.questionId in request.args:
+        if self.questionId in request.args \
+        and request.args["action"][0] != "cancel":
             self.question_question.process(request)
             
-        if self.hintId in request.args:
+        if self.hintId in request.args \
+        and request.args["action"][0] != "cancel":
             self.question_hint.process(request)
                         
-        if self.keyId in request.args:
+        if self.keyId in request.args \
+        and request.args["action"][0] != "cancel":
             if request.args[self.keyId][0] == "true":
                 self.question.isCorrect = True 
                 log.debug("question " + repr(self.question.isCorrect))
             else:
                 self.question.isCorrect = False        
         
-        if self.feedbackId in request.args:
+        if self.feedbackId in request.args \
+        and request.args["action"][0] != "cancel":
             self.question_feedback.process(request)
             
         if "action" in request.args and request.args["action"][0] == self.id:
@@ -97,6 +101,8 @@ class TrueFalseElement(object):
                  q_field.ReplaceAllInternalAnchorsLinks()  
                  q_field.RemoveAllInternalLinks()  
             self.idevice.questions.remove(self.question)
+            # disable Undo once a question has been deleted: 
+            self.idevice.undo = False
 
     def renderEdit(self):
         """

@@ -41,6 +41,8 @@ class MultiSelectBlock(Block):
         Block.__init__(self, parent, idevice)
         self.idevice           = idevice
         self.questionElements  = []
+        if not hasattr(self.idevice,'undo'):
+            self.idevice.undo = True
 
         for question in idevice.questions:
             self.questionElements.append(SelectquestionElement(question))
@@ -56,12 +58,20 @@ class MultiSelectBlock(Block):
         if ("addQuestion"+self.id) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            # disable Undo once a question has been added:
+            self.idevice.undo = False
 
         for element in self.questionElements:
             element.process(request)
 
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
+
+        if ("action" in request.args and request.args["action"][0] == "done"
+            or not self.idevice.edit):
+            # reenable the undo flag for next time:
+            del self.idevice.undo
             
 
     def renderEdit(self, style):
@@ -80,7 +90,8 @@ class MultiSelectBlock(Block):
         html += "<br/>" 
         html += common.submitButton("addQuestion"+self.id, value)
         
-        html += "<br/><br/>" + self.renderEditButtons()
+        html += "<br/><br/>" 
+        html += self.renderEditButtons(undo=self.idevice.undo)
         html += "</div>\n"
 
 

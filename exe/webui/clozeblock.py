@@ -61,7 +61,8 @@ class ClozeBlock(Block):
         """
         Handles changes in the paragraph text from editing
         """
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]

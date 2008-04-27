@@ -49,6 +49,15 @@ class FreeTextBlock(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
+        if request.args[u"action"][0] == u"cancel":
+            self.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.idevice.content, 'content_w_resourcePaths'):
+                self.idevice.content.content_w_resourcePaths = ""
+            if not hasattr(self.idevice.content, 'content_wo_resourcePaths'):
+                self.idevice.content.content_wo_resourcePaths = ""
+            return
+
         Block.process(self, request)
 
         if (u"action" not in request.args or 

@@ -47,6 +47,8 @@ class WikipediaBlock(Block):
             idevice.article.idevice = idevice
         self.articleElement = TextAreaElement(idevice.article)
         self.articleElement.height = 300
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
 
 
     def process(self, request):
@@ -56,16 +58,22 @@ class WikipediaBlock(Block):
         """
         log.debug("process " + repr(request.args))
         
-        if 'emphasis'+self.id in request.args:
+        if 'emphasis'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
+            # disable Undo once an emphasis has changed: 
+            self.idevice.undo = False
             
-        if 'ssite'+self.id in request.args:
+        if 'ssite'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.site = request.args['ssite'+self.id][0]
             
-        if 'ownUrl'+self.id in request.args:
+        if 'ownUrl'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.ownUrl = request.args['ownUrl'+self.id][0]
 
-        if 'title'+self.id in request.args:
+        if 'title'+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args['title'+self.id][0]
             
         if ("object" in request.args and request.args["object"][0] == "site" + self.id):
@@ -73,14 +81,18 @@ class WikipediaBlock(Block):
         elif 'loadWikipedia'+self.id in request.args:
             # If they've hit "load" instead of "the tick"
             self.idevice.loadArticle(request.args['article'][0])
+            # disable Undo once an article has been loaded: 
+            self.idevice.undo = False
         else:
             # If they hit "the tick" instead of "load"
             Block.process(self, request)
-            if (u"action" not in request.args or
-                request.args[u"action"][0] != u"delete"):
+            if (u"action" not in request.args \
+            or request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.articleElement.process(request)
-                
+                if request.args[u"action"][0] == u"done":
+                    # reenable the undo flag for next time: 
+                    del self.idevice.undo
         
             
     def renderEdit(self, style):
@@ -145,7 +157,7 @@ class WikipediaBlock(Block):
                                  emphasisValues,
                                  self.idevice.emphasis)
 
-        html += self.renderEditButtons()
+        html += self.renderEditButtons(undo=self.idevice.undo)
         html += u"</div>\n"
         return html
 

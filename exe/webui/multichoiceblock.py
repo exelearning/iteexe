@@ -49,6 +49,9 @@ class MultichoiceBlock(Block):
       #  self.hint            = idevice.hint
         self.hintInstruc     = idevice.hintInstruc
 
+        if not hasattr(self.idevice,'undo'):
+            self.idevice.undo = True
+
         
         for question in idevice.questions:
             self.questionElements.append(QuizQuestionElement(question))
@@ -65,8 +68,11 @@ class MultichoiceBlock(Block):
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            # disable Undo once a question has been added:
+            self.idevice.undo = False
         
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
 
         for element in self.questionElements:
@@ -74,6 +80,8 @@ class MultichoiceBlock(Block):
         
         if ("action" in request.args and request.args["action"][0] == "done"
             or not self.idevice.edit):
+            # reenable the undo flag for next time:
+            del self.idevice.undo
             for question in self.idevice.questions:
                 isAnswered = False
                 for option in question.options:
@@ -103,7 +111,8 @@ class MultichoiceBlock(Block):
         html += "<br/>"
         value = _("Add another question")    
         html += common.submitButton("addQuestion"+unicode(self.id), value)
-        html += "<br /><br />" + self.renderEditButtons()
+        html += "<br /><br />" 
+        html += self.renderEditButtons(undo=self.idevice.undo)
         html += "</div>\n"
 
         return html

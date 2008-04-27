@@ -41,6 +41,8 @@ class QuizTestBlock(Block):
         self.idevice           = idevice
         self.questionElements  = []
         self.message = False
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
 
         i = 0
         for question in idevice.questions:
@@ -58,8 +60,11 @@ class QuizTestBlock(Block):
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            # disable Undo once a question has been added: 
+            self.idevice.undo = False
             
-        if "passrate" in request.args:
+        if "passrate" in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.passRate = request.args["passrate"][0]
 
 
@@ -70,16 +75,20 @@ class QuizTestBlock(Block):
         if ("action" in request.args and request.args["action"][0] == "done"
             or not self.idevice.edit):
             self.idevice.isAnswered = True
+            # reenable the undo flag for next time:
+            del self.idevice.undo
             for question in self.idevice.questions:
                 if question.correctAns == -2:
                     self.idevice.isAnswered = False
                     self.idevice.edit = True
                     break
             
-        if "submitScore" in request.args:
+        if "submitScore" in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.score = self.__calcScore()
             
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
             
 
@@ -110,7 +119,7 @@ class QuizTestBlock(Block):
             else:
                 html += template % (str(i), '', str(i))
         html += "</select>\n"
-        html += "<br /><br />" + self.renderEditButtons()
+        html += "<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
         html += "</div>\n"
         self.idevice.isAnswered = True
 

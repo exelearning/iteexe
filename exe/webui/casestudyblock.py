@@ -55,6 +55,10 @@ class CasestudyBlock(Block):
         self.storyInstruc      = idevice.storyInstruc
         self.feedbackInstruc   = idevice.feedbackInstruc
         self.previewing        = False # In view or preview render 
+
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
+
         i = 0
         
         for question in idevice.questions:
@@ -73,13 +77,20 @@ class CasestudyBlock(Block):
         if (u"addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            # disable Undo once another activity has been added:
+            self.idevice.undo = False
+
             
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
             
         if "action" in request.args and request.args[u"action"][0] != u"delete":
             for element in self.questionElements:
                 element.process(request)
+            if request.args[u"action"][0] == u'done':
+                # reenable the undo flag for next time:
+                self.idevice.undo = True
 
 
     def renderEdit(self, style):
@@ -98,7 +109,7 @@ class CasestudyBlock(Block):
         html += u"</table>\n"
         value = _(u"Add another activity")    
         html += common.submitButton(u"addQuestion"+unicode(self.id), value)
-        html += u"<br /><br />" + self.renderEditButtons()
+        html += u"<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
         html += u"</div>\n"
         return html
 

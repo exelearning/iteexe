@@ -50,6 +50,9 @@ class ImageMagnifierBlock(Block):
             idevice.text.idevice = idevice
         self.textElement  = TextAreaElement(idevice.text)
 
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
+
 
     def process(self, request):
         """
@@ -59,26 +62,35 @@ class ImageMagnifierBlock(Block):
         log.debug("process " + repr(request.args))
         Block.process(self, request)
 
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
+        if (u"action" not in request.args 
+            or (request.args[u"action"][0] != u"delete"
+                and request.args["action"][0] != "cancel")):
             self.imageMagnifierElement.process(request)
             self.textElement.process(request)
-            
-        if "float"+self.id in request.args:
+            if request.args[u"action"][0] == u"done":
+                # reenable the undo flag for next time: 
+                del self.idevice.undo
+
+        if "float"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.float = request.args["float"+self.id][0]
             
-        if "caption"+self.id in request.args:
+        if "caption"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.caption = request.args["caption"+self.id][0]
             
-        if "glass"+self.id in request.args:
+        if "glass"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.imageMagnifier.glassSize = \
                 request.args["glass"+self.id][0]
             
-        if "initial"+self.id in request.args:
+        if "initial"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.imageMagnifier.initialZSize = \
                 request.args["initial"+self.id][0]
                 
-        if "maxZoom"+self.id in request.args:
+        if "maxZoom"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.imageMagnifier.maxZSize = \
                 request.args["maxZoom"+self.id][0]
 
@@ -151,7 +163,7 @@ class ImageMagnifierBlock(Block):
                                  glassSizeArr, 
                                  self.idevice.imageMagnifier.glassSize)
             
-        html += self.renderEditButtons()
+        html += self.renderEditButtons(undo=self.idevice.undo)
         html += u"</div>\n"
         return html
 

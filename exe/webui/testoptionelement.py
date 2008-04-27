@@ -56,6 +56,9 @@ class TestoptionElement(object):
             option.answerTextArea.idevice = idevice
         self.answerElement = TextAreaElement(option.answerTextArea)
         self.answerElement.id = self.answerId
+
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
   
         
     def process(self, request):
@@ -65,10 +68,12 @@ class TestoptionElement(object):
         """
         log.debug("process " + repr(request.args))
       
-        if self.answerId in request.args:
+        if self.answerId in request.args \
+        and request.args["action"][0] != "cancel":
             self.answerElement.process(request)
                         
-        if "c"+self.keyId in request.args:
+        if "c"+self.keyId in request.args \
+        and request.args["action"][0] != "cancel":
             if request.args["c"+self.keyId][0] == self.id:
                 self.option.isCorrect = True 
                 self.question.correctAns = self.index
@@ -76,7 +81,8 @@ class TestoptionElement(object):
             else:
                 self.option.isCorrect = False
                 
-        if self.keyId in request.args:
+        if self.keyId in request.args \
+        and request.args["action"][0] != "cancel":
             if request.args[self.keyId][0] == unicode(self.index):
                 self.question.userAns = self.index
             
@@ -86,6 +92,8 @@ class TestoptionElement(object):
                  o_field.ReplaceAllInternalAnchorsLinks()  
                  o_field.RemoveAllInternalLinks()  
             self.question.options.remove(self.option)
+            # disable Undo once an option has been deleted: 
+            self.field.idevice.undo = False
 
 
     def renderEdit(self):

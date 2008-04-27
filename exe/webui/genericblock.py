@@ -50,7 +50,8 @@ class GenericBlock(Block):
             for element in self.elements:
                 element.process(request)
                 
-        if "title"+self.id in request.args:
+        if "title"+self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.title = request.args["title"+self.id][0]
 
     def renderEdit(self, style):

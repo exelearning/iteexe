@@ -41,6 +41,9 @@ class AppletBlock(Block):
         """
         Block.__init__(self, parent, idevice)
 
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
+                                        
 
     def process(self, request):
         """
@@ -51,18 +54,23 @@ class AppletBlock(Block):
         Block.process(self, request)
       
            
-        if "code" + self.id in request.args:
+        if "code" + self.id in request.args \
+        and request.args["action"][0] != "cancel":
             self.idevice.appletCode = request.args["code" + self.id][0]
                     
         if "action" in request.args and request.args["action"][0] == self.id:
             self.idevice.deleteFile(request.args["object"][0])
             self.idevice.edit = True
+            self.idevice.undo = False
             
         if "action" in request.args and request.args["action"][0] == "changeType" + self.id:
             self.idevice.type = request.args["object"][0]
             self.idevice.copyFiles()
             self.idevice.edit = True
+            self.idevice.undo = False
             
+        if "action" in request.args and request.args["action"][0] == "done":
+            del self.idevice.undo
             
         if "upload" + self.id in request.args:
             if "path" + self.id in request.args:
@@ -74,6 +82,7 @@ class AppletBlock(Block):
                         self.idevice.uploadFile(filePath)
                         self.idevice.message = ""                   
             self.idevice.edit = True    
+            self.idevice.undo = False
 
 
     def renderEdit(self, style):
@@ -130,7 +139,7 @@ class AppletBlock(Block):
             html += '</table>'
            
         html += u'<br/>\n'
-        html += self.renderEditButtons()
+        html += self.renderEditButtons(undo=self.idevice.undo)
         html += u'\n</div>\n'
 
         return html
