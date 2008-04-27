@@ -206,14 +206,18 @@ class Manifest(object):
         self.resStr += "  <resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
 
-        # Add the scorm type
+        # FIXME force dependency on popup_bg.gif on every page
+        # because it isn't a "resource" so we can't tell which
+        # pages will use it from content.css
         if self.scormType == "commoncartridge":
             self.resStr += """href="%s">
     <file href="%s"/>
     <file href="base.css"/>
-    <file href="content.css"/>""" % (filename, filename)
+    <file href="content.css"/>
+    <file href="popup_bg.gif"/>""" % (filename, filename)
             self.dependencies["base.css"] = True
             self.dependencies["content.css"] = True
+            self.dependencies["popup_bg.gif"] = True
         else:
             self.resStr += "adlcp:scormtype=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
@@ -221,6 +225,7 @@ class Manifest(object):
     <file href="%s"/>
     <file href="base.css"/>
     <file href="content.css"/>
+    <file href="popup_bg.gif"/>
     <file href="APIWrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         self.resStr += "\n"
