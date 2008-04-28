@@ -79,7 +79,7 @@ class TestquestionElement(object):
             self.question.addOption()
             self.idevice.edit = True
             # disable Undo once an option has been added: 
-            self.field.idevice.undo = False
+            self.idevice.undo = False
             
         if "action" in request.args and request.args["action"][0] == self.id:
             # before deleting the question object, remove any internal anchors:
@@ -88,7 +88,7 @@ class TestquestionElement(object):
                  q_field.RemoveAllInternalLinks()  
             self.idevice.questions.remove(self.question)
             # disable Undo once a question has been deleted: 
-            self.field.idevice.undo = False
+            self.idevice.undo = False
 
         for element in self.options:
             element.process(request)

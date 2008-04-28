@@ -59,25 +59,27 @@ class RssBlock(Block):
         apply to this block
         """
         log.debug("process " + repr(request.args))
+
+        is_cancel = common.requestHasCancel(request)
         
         if 'emphasis'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
             
         if 'site'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.site = request.args['site'+self.id][0]
 
         if 'title'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args['title'+self.id][0]
             
         if "url" + self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.url = request.args['url'+ self.id][0]
 
         if 'loadRss'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             # disable Undo once a question has been added:
             self.idevice.undo = False
             self.idevice.loadRss(request.args['url'+ self.id][0])
@@ -87,8 +89,10 @@ class RssBlock(Block):
                 request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.rssElement.process(request)
-                if request.args["action"][0] == "done":
-                    # reenable ehe undo flag for next time: 
+            if "action" in request.args \
+            and request.args["action"][0] == "done":
+                # remove the undo flag in order to reenable it next time:
+                if hasattr(self.idevice,'undo'): 
                     del self.idevice.undo
 
     def renderEdit(self, style):

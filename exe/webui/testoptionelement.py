@@ -67,13 +67,15 @@ class TestoptionElement(object):
         element.
         """
         log.debug("process " + repr(request.args))
+
+        is_cancel = common.requestHasCancel(request)
       
         if self.answerId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.answerElement.process(request)
                         
         if "c"+self.keyId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             if request.args["c"+self.keyId][0] == self.id:
                 self.option.isCorrect = True 
                 self.question.correctAns = self.index
@@ -82,7 +84,7 @@ class TestoptionElement(object):
                 self.option.isCorrect = False
                 
         if self.keyId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             if request.args[self.keyId][0] == unicode(self.index):
                 self.question.userAns = self.index
             
@@ -93,7 +95,7 @@ class TestoptionElement(object):
                  o_field.RemoveAllInternalLinks()  
             self.question.options.remove(self.option)
             # disable Undo once an option has been deleted: 
-            self.field.idevice.undo = False
+            self.idevice.undo = False
 
 
     def renderEdit(self):

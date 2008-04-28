@@ -52,7 +52,6 @@ class MultichoiceBlock(Block):
         if not hasattr(self.idevice,'undo'):
             self.idevice.undo = True
 
-        
         for question in idevice.questions:
             self.questionElements.append(QuizQuestionElement(question))
 
@@ -63,7 +62,8 @@ class MultichoiceBlock(Block):
         """
         Block.process(self, request)
         self.idevice.message = ""
-  
+
+        is_cancel = common.requestHasCancel(request)
     
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
@@ -72,7 +72,7 @@ class MultichoiceBlock(Block):
             self.idevice.undo = False
         
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
 
         for element in self.questionElements:
@@ -80,8 +80,9 @@ class MultichoiceBlock(Block):
         
         if ("action" in request.args and request.args["action"][0] == "done"
             or not self.idevice.edit):
-            # reenable the undo flag for next time:
-            del self.idevice.undo
+            # remove the undo flag in order to reenable it next time:
+            if hasattr(self.idevice,'undo'): 
+                del self.idevice.undo
             for question in self.idevice.questions:
                 isAnswered = False
                 for option in question.options:

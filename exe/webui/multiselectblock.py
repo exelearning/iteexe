@@ -54,6 +54,7 @@ class MultiSelectBlock(Block):
         """
         Block.process(self, request)
         
+        is_cancel = common.requestHasCancel(request)
             
         if ("addQuestion"+self.id) in request.args: 
             self.idevice.addQuestion()
@@ -65,13 +66,14 @@ class MultiSelectBlock(Block):
             element.process(request)
 
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
 
         if ("action" in request.args and request.args["action"][0] == "done"
             or not self.idevice.edit):
-            # reenable the undo flag for next time:
-            del self.idevice.undo
+            # remove the undo flag in order to reenable it next time:
+            if hasattr(self.idevice,'undo'): 
+                del self.idevice.undo
             
 
     def renderEdit(self, style):

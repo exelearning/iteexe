@@ -637,3 +637,14 @@ def renderInternalLinkNodeFilenames(package, html):
     return html
         
 
+
+def requestHasCancel(request):
+    """
+    simply detect if the current request contains an action of type cancel.
+    """
+    is_cancel = False
+    if u"action" in request.args \
+    and request.args[u"action"][0]==u"cancel": 
+        is_cancel = True
+    return is_cancel
+

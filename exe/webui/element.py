@@ -135,8 +135,10 @@ class TextElement(Element):
         """
         Process arguments from the web server.
         """
+        is_cancel = common.requestHasCancel(request)
+
         if self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.content = request.args[self.id][0]
 
 
@@ -183,7 +185,9 @@ class TextAreaElement(ElementWithResources):
         """
         Process arguments from the web server.
         """
-        if request.args[u"action"][0] == u"cancel":
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
             self.field.idevice.edit = False
             # but double-check for first-edits, and ensure proper attributes:
             if not hasattr(self.field, 'content_w_resourcePaths'):
@@ -282,7 +286,9 @@ class FeedbackElement(ElementWithResources):
         """
         Process arguments from the web server.
         """
-        if request.args[u"action"][0] == u"cancel":
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
             self.field.idevice.edit = False
             # but double-check for first-edits, and ensure proper attributes:
             if not hasattr(self.field, 'content_w_resourcePaths'):
@@ -426,16 +432,18 @@ class ImageElement(Element):
         """
         Process arguments from the web server.
         """
+        is_cancel = common.requestHasCancel(request)
+
         if "path"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.setImage(request.args["path"+self.id][0])
 
         if "width"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.width = request.args["width"+self.id][0]
 
         if "height"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.height = request.args["height"+self.id][0]
             
         if "action" in request.args and request.args["action"][0]=="addImage" and \
@@ -839,6 +847,8 @@ class MagnifierElement(Element):
         """
         Process arguments from the web server.
         """
+        is_cancel = common.requestHasCancel(request)
+
         self.field.message = ""
         if "path"+self.id in request.args:
             path = request.args["path"+self.id][0]
@@ -851,11 +861,11 @@ class MagnifierElement(Element):
             self.field.idevice.undo = False
 
         if "width"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.width = request.args["width"+self.id][0]
 
         if "height"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.height = request.args["height"+self.id][0]
             
         if "action" in request.args and request.args["action"][0]=="addJpgImage" and \
@@ -1019,7 +1029,9 @@ class ClozeElement(ElementWithResources):
         """
         Sets the encodedContent of our field
         """
-        if request.args[u"action"][0] == u"cancel":
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
             self.field.idevice.edit = False
             # but double-check for first-edits, and ensure proper attributes:
             if not hasattr(self.field, 'content_w_resourcePaths'):
@@ -1549,17 +1561,18 @@ class SelectOptionElement(Element):
         Return any which apply to this element.
         """
         log.debug("process " + repr(request.args))
+
+        is_cancel = common.requestHasCancel(request)
         
-        if self.answerId in request.args \
-        and request.args["action"][0] != "cancel":
+        if self.answerId in request.args:
             self.answerElement.process(request)
                         
         if "c"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.isCorrect = True 
             log.debug("option " + repr(self.field.isCorrect))
         elif "ans"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.isCorrect = False
             
         if "action" in request.args and \
@@ -1681,9 +1694,10 @@ class SelectquestionElement(Element):
         Process the request arguments from the web server
         """
         log.info("process " + repr(request.args))
+
+        is_cancel = common.requestHasCancel(request)
         
-        if self.questionId in request.args \
-        and request.args["action"][0] != "cancel":
+        if self.questionId in request.args:
             self.questionElement.process(request)
             
         if ("addOption"+unicode(self.id)) in request.args: 
@@ -1691,8 +1705,7 @@ class SelectquestionElement(Element):
             self.field.idevice.edit = True
             self.field.idevice.undo = False
             
-        if self.feedbackId in request.args \
-        and request.args["action"][0] != "cancel":
+        if self.feedbackId in request.args:
             self.feedbackElement.process(request)
             
         if "action" in request.args and \
@@ -1838,21 +1851,21 @@ class QuizOptionElement(Element):
         Return any which apply to this element.
         """
         log.debug("process " + repr(request.args))
+
+        is_cancel = common.requestHasCancel(request)
         
-        if self.answerId in request.args \
-        and request.args["action"][0] != "cancel":
+        if self.answerId in request.args:
             self.answerElement.process(request)
             
-        if self.feedbackId in request.args \
-        and request.args["action"][0] != "cancel":
+        if self.feedbackId in request.args:
             self.feedbackElement.process(request)
                         
         if ("c"+self.field.question.id in request.args \
         and request.args["c"+self.field.question.id][0]==str(self.index) \
-        and request.args["action"][0] != "cancel"):
+        and not is_cancel):
             self.field.isCorrect = True 
         elif "ans"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.field.isCorrect = False
             
         if "action" in request.args and \

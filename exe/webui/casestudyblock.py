@@ -72,6 +72,8 @@ class CasestudyBlock(Block):
         """
         Block.process(self, request)
 
+        is_cancel = common.requestHasCancel(request)
+
         self.storyElement.process(request)
             
         if (u"addQuestion"+unicode(self.id)) in request.args: 
@@ -82,15 +84,16 @@ class CasestudyBlock(Block):
 
             
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
             
         if "action" in request.args and request.args[u"action"][0] != u"delete":
             for element in self.questionElements:
                 element.process(request)
             if request.args[u"action"][0] == u'done':
-                # reenable the undo flag for next time:
-                self.idevice.undo = True
+                # remove the undo flag in order to reenable it next time:
+                if hasattr(self.idevice,'undo'): 
+                    del self.idevice.undo
 
 
     def renderEdit(self, style):

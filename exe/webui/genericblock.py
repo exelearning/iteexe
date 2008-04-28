@@ -38,12 +38,16 @@ class GenericBlock(Block):
         self.elements = []
         for field in self.idevice:
             self.elements.append(g_elementFactory.createElement(field))
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
 
 
     def process(self, request):
         """
         Process the request arguments from the web server
         """
+        is_cancel = common.requestHasCancel(request)
+
         Block.process(self, request)
         if (u"action" not in request.args or
             request.args[u"action"][0] != u"delete"):
@@ -51,7 +55,7 @@ class GenericBlock(Block):
                 element.process(request)
                 
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
 
     def renderEdit(self, style):

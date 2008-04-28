@@ -52,10 +52,11 @@ class AppletBlock(Block):
         """
         log.debug("process " + repr(request.args))
         Block.process(self, request)
+
+        is_cancel = common.requestHasCancel(request)
       
-           
         if "code" + self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.appletCode = request.args["code" + self.id][0]
                     
         if "action" in request.args and request.args["action"][0] == self.id:
@@ -70,7 +71,9 @@ class AppletBlock(Block):
             self.idevice.undo = False
             
         if "action" in request.args and request.args["action"][0] == "done":
-            del self.idevice.undo
+            # remove the undo flag in order to reenable it next time:
+            if hasattr(self.idevice,'undo'): 
+                del self.idevice.undo
             
         if "upload" + self.id in request.args:
             if "path" + self.id in request.args:

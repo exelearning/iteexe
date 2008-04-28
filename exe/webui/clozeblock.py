@@ -56,13 +56,17 @@ class ClozeBlock(Block):
         self.feedbackElement = \
             TextAreaElement(idevice.feedback)
         self.previewing        = False # In view or preview render
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
 
     def process(self, request):
         """
         Handles changes in the paragraph text from editing
         """
+        is_cancel = common.requestHasCancel(request)
+
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]

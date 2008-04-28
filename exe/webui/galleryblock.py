@@ -93,11 +93,13 @@ class GalleryBlock(Block):
         """
         log.debug("process " + repr(request.args))
         # If the commit is not to do with us forget it
+
+        is_cancel = common.requestHasCancel(request)
         
         obj = request.args.get('object', [''])[0]
         
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
             if obj != self.id:
                 self.idevice.recreateResources()
@@ -111,12 +113,13 @@ class GalleryBlock(Block):
         if action.startswith('gallery.'):
             self.processGallery(action)
         if self.mode == Block.Edit \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.processCaptions(request)
         if action == 'done':
             self.idevice.recreateResources()
-            # reenable the undo flag for next time:
-            self.idevice.undo = True
+            # remove the undo flag in order to reenable it next time:
+            if hasattr(self.idevice,'undo'): 
+                del self.idevice.undo
         # Let our ancestor deal with the rest
         Block.process(self, request)
 

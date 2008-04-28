@@ -23,6 +23,7 @@ FreeTextBlock can render and process FreeTextIdevices as XHTML
 import logging
 from exe.webui.block            import Block
 from exe.webui.element          import TextAreaElement
+from exe.webui                     import common
 
 log = logging.getLogger(__name__)
 
@@ -42,6 +43,8 @@ class FreeTextBlock(Block):
 
         self.contentElement = TextAreaElement(idevice.content)
         self.contentElement.height = 250
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
 
 
     def process(self, request):
@@ -49,7 +52,9 @@ class FreeTextBlock(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
-        if request.args[u"action"][0] == u"cancel":
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
             self.idevice.edit = False
             # but double-check for first-edits, and ensure proper attributes:
             if not hasattr(self.idevice.content, 'content_w_resourcePaths'):

@@ -74,17 +74,19 @@ class TrueFalseElement(object):
         element.
         """
         log.debug("process " + repr(request.args))
-        
+
+        is_cancel = common.requestHasCancel(request)
+
         if self.questionId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.question_question.process(request)
             
         if self.hintId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.question_hint.process(request)
                         
         if self.keyId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             if request.args[self.keyId][0] == "true":
                 self.question.isCorrect = True 
                 log.debug("question " + repr(self.question.isCorrect))
@@ -92,7 +94,7 @@ class TrueFalseElement(object):
                 self.question.isCorrect = False        
         
         if self.feedbackId in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.question_feedback.process(request)
             
         if "action" in request.args and request.args["action"][0] == self.id:

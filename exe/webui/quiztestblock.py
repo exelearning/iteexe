@@ -56,6 +56,7 @@ class QuizTestBlock(Block):
         """
         Block.process(self, request)
         
+        is_cancel = common.requestHasCancel(request)
             
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
@@ -64,7 +65,7 @@ class QuizTestBlock(Block):
             self.idevice.undo = False
             
         if "passrate" in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.passRate = request.args["passrate"][0]
 
 
@@ -75,8 +76,9 @@ class QuizTestBlock(Block):
         if ("action" in request.args and request.args["action"][0] == "done"
             or not self.idevice.edit):
             self.idevice.isAnswered = True
-            # reenable the undo flag for next time:
-            del self.idevice.undo
+            # remove the undo flag in order to reenable it next time:
+            if hasattr(self.idevice,'undo'): 
+                del self.idevice.undo
             for question in self.idevice.questions:
                 if question.correctAns == -2:
                     self.idevice.isAnswered = False
@@ -84,11 +86,11 @@ class QuizTestBlock(Block):
                     break
             
         if "submitScore" in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.score = self.__calcScore()
             
         if "title"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
             
 

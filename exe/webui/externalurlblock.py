@@ -34,6 +34,8 @@ class ExternalUrlBlock(Block):
     """
     def __init__(self, parent, idevice):
         Block.__init__(self, parent, idevice)
+        if not hasattr(self.idevice,'undo'): 
+            self.idevice.undo = True
 
 
     def process(self, request):
@@ -41,12 +43,11 @@ class ExternalUrlBlock(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
-        if request.args[u"action"][0] == u"cancel":
-            self.idevice.edit = False
-            return
+        is_cancel = common.requestHasCancel(request)
 
         Block.process(self, request)
-        if "url"+self.id in request.args:
+        if "url"+self.id in request.args \
+        and not is_cancel:
             self.idevice.url = request.args["url"+self.id][0]
             if (self.idevice.url and 
                 not self.idevice.url.startswith("http://") and 
@@ -54,7 +55,8 @@ class ExternalUrlBlock(Block):
                 not self.idevice.url.startswith("ftp://")):
                 self.idevice.url = "http://" + self.idevice.url
 
-        if "height"+self.id in request.args:
+        if "height"+self.id in request.args \
+        and not is_cancel:
             self.idevice.height = request.args["height"+self.id][0]
 
     def renderEdit(self, style):

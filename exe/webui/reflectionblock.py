@@ -63,7 +63,9 @@ class ReflectionBlock(Block):
         """
         Block.process(self, request)
 
-        if request.args["action"][0] != "cancel":
+        is_cancel = common.requestHasCancel(request)
+
+        if not is_cancel:
             self.activityElement.process(request)
             self.answerElement.process(request)
             if "title"+self.id in request.args:

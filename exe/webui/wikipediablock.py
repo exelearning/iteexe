@@ -57,23 +57,25 @@ class WikipediaBlock(Block):
         apply to this block
         """
         log.debug("process " + repr(request.args))
+
+        is_cancel = common.requestHasCancel(request)
         
         if 'emphasis'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
             # disable Undo once an emphasis has changed: 
             self.idevice.undo = False
             
         if 'ssite'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.site = request.args['ssite'+self.id][0]
             
         if 'ownUrl'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.ownUrl = request.args['ownUrl'+self.id][0]
 
         if 'title'+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.title = request.args['title'+self.id][0]
             
         if ("object" in request.args and request.args["object"][0] == "site" + self.id):
@@ -90,8 +92,10 @@ class WikipediaBlock(Block):
             or request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.articleElement.process(request)
-                if request.args[u"action"][0] == u"done":
-                    # reenable the undo flag for next time: 
+            if "action" in request.args \
+            and request.args["action"][0] == "done":
+                # remove the undo flag in order to reenable it next time:
+                if hasattr(self.idevice,'undo'): 
                     del self.idevice.undo
         
             

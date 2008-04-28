@@ -62,35 +62,39 @@ class ImageMagnifierBlock(Block):
         log.debug("process " + repr(request.args))
         Block.process(self, request)
 
+        is_cancel = common.requestHasCancel(request)
+
         if (u"action" not in request.args 
             or (request.args[u"action"][0] != u"delete"
-                and request.args["action"][0] != "cancel")):
+                and not is_cancel)):
             self.imageMagnifierElement.process(request)
             self.textElement.process(request)
-            if request.args[u"action"][0] == u"done":
-                # reenable the undo flag for next time: 
+
+        if "action" in request.args and request.args["action"][0] == "done":
+            # remove the undo flag in order to reenable it next time:
+            if hasattr(self.idevice,'undo'): 
                 del self.idevice.undo
 
         if "float"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.float = request.args["float"+self.id][0]
             
         if "caption"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.caption = request.args["caption"+self.id][0]
             
         if "glass"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.imageMagnifier.glassSize = \
                 request.args["glass"+self.id][0]
             
         if "initial"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.imageMagnifier.initialZSize = \
                 request.args["initial"+self.id][0]
                 
         if "maxZoom"+self.id in request.args \
-        and request.args["action"][0] != "cancel":
+        and not is_cancel:
             self.idevice.imageMagnifier.maxZSize = \
                 request.args["maxZoom"+self.id][0]
 
