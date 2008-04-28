@@ -32,7 +32,6 @@ g_files = { '.': ["README",
                   "eXe_icon.ico",
                   "exe/webui/mr_x.gif",
                   "exe/msvcr71.dll",
-                  "doc/eXe-tutorial.elp", 
                   "installs/windows/exeLicense.txt",]}
 g_oldBase = "exe/webui"
 g_newBase = "."

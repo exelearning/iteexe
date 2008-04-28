@@ -11,7 +11,6 @@ g_files = { '/usr/share/exe': ["README",
                                "COPYING", 
                                "NEWS", 
                                "ChangeLog",
-                               "doc/eXe-tutorial.elp",
                                "exe/webui/mr_x.gif"]}
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"

@@ -42,7 +42,6 @@ files = { '../Resources/exe': ["README",
                              "COPYING", 
                              "NEWS", 
                              "ChangeLog",
-                             "doc/eXe-tutorial.elp",
                              "exe/webui/mr_x.gif"],
           '../Resources' : ["exe_elp.icns"],
         }
