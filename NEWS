@@ -6,6 +6,7 @@
 * Fix Common Cartridge resource references
 * Improve Common Cartridge metadata formation
 * Improve Wiki Article idevice handling of pages without content div
+* Improve Firefox version detection for 3.0b series (Linux)
 * Remove CSS letter-spacing to improve rendering with some fonts (Khmer)
 * Automate building Debian changelog and versioning
 * Update to BeautifulSoup 3.0.6 (character coding detection issues)
