@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-23 10:26+1200\n"
+"POT-Creation-Date: 2008-04-28 13:50+1200\n"
 "PO-Revision-Date: 2008-04-22 18:13+0200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,9 +33,9 @@ msgstr ""
 "<p>π.χ. Για μικροεφαρμογές Geogebra , επιλέξτε geogebra, μετά προσθέστε το αρχείο .ggb που \n"
 "δημιουργήσατε στο Geogebra.</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
-#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
-#: exe/xului/mainpage.py:1036
+#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -54,12 +54,12 @@ msgstr ""
 "και ανοίξτε το. Αντιγράψτε όλα τα περιεχόμενά του <ctrl A, ctrl C> στο πεδίο κώδικα\n"
 "της μικρoεφαρμογής."
 
-#: exe/webui/block.py:235
+#: exe/webui/block.py:246
 msgid "---Move To---"
 msgstr "---Μετακίνηση σε---"
 
-#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:713
+#: exe/xului/mainpage.py:831
 msgid ". Please use ASCII names."
 msgstr ". Παρακαλώ, χρησιμοποιήστε ονόματα ASCII."
 
@@ -260,7 +260,7 @@ msgstr "Ενέργειες"
 #: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
 #: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
-#: exe/webui/questionelement.py:96
+#: exe/webui/questionelement.py:99
 msgid "Activity"
 msgstr "Ελεύθερη Δραστηριότητα"
 
@@ -268,11 +268,11 @@ msgstr "Ελεύθερη Δραστηριότητα"
 msgid "Add Field"
 msgstr "Προσθήκη πεδίου"
 
-#: exe/webui/element.py:436
+#: exe/webui/element.py:467
 msgid "Add Image"
 msgstr "Προσθήκη εικόνας"
 
-#: exe/webui/element.py:846
+#: exe/webui/element.py:883
 msgid "Add JPEG Image"
 msgstr "Προσθήκη εικόνας JPEG"
 
@@ -311,36 +311,36 @@ msgstr "Προσθήκη πεδίου αλληλεπιδραστικής ανα�
 msgid "Add an mp3 file to your iDevice."
 msgstr "Προσθή αρχείου MP3 στην ηΔραστηριότητα."
 
-#: exe/webui/testquestionelement.py:118 exe/webui/element.py:1696
+#: exe/webui/testquestionelement.py:122 exe/webui/element.py:1752
 msgid "Add another Option"
 msgstr "Προσθήκη άλλης Eπιλογής"
 
-#: exe/webui/quiztestblock.py:101 exe/webui/multiselectblock.py:79
+#: exe/webui/quiztestblock.py:110 exe/webui/multiselectblock.py:89
 msgid "Add another Question"
 msgstr "Προσθήκη άλλης Eρώτησης"
 
-#: exe/webui/casestudyblock.py:99
+#: exe/webui/casestudyblock.py:110
 msgid "Add another activity"
 msgstr "Προσθήκη άλλης δραστηριότητας"
 
-#: exe/webui/element.py:2003
+#: exe/webui/element.py:2070
 msgid "Add another option"
 msgstr "Προσθήκη άλλης επιλογής"
 
-#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:94
+#: exe/webui/multichoiceblock.py:112 exe/webui/truefalseblock.py:105
 msgid "Add another question"
 msgstr "Προσθήκη άλλης ερώτησης"
 
-#: exe/webui/appletblock.py:109
+#: exe/webui/appletblock.py:118
 msgid "Add files"
 msgstr "Προσθήκη αρχείων"
 
-#: exe/webui/galleryblock.py:191
+#: exe/webui/galleryblock.py:208
 msgid "Add images"
 msgstr "Προσθήκη εικόνων"
 
 #: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:118
+#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:130
 #: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "Στοίχιση:"
@@ -419,15 +419,15 @@ msgstr ""
 "πιστεύετε ότι θα βοηθήσουν ή θα δυσκολέψουν τον μαθητή στην εκτέλεση\n"
 "της εργασίας."
 
-#: exe/webui/element.py:1183
+#: exe/webui/element.py:1231
 msgid "Answsers"
 msgstr "Απαντήσεις"
 
-#: exe/webui/appletblock.py:115
+#: exe/webui/appletblock.py:124
 msgid "Applet Code:"
 msgstr "Κωδικός Μικροεφαρμογής:"
 
-#: exe/webui/appletblock.py:91
+#: exe/webui/appletblock.py:100
 msgid "Applet Type"
 msgstr "Είδος μικροεφαρμογής"
 
@@ -452,18 +452,22 @@ msgstr "Τεχνολογικό Πανεπιστήμιο του Όκλαντ"
 msgid "Button Caption"
 msgstr "Ετικέτα Πλήκτρου"
 
+#: exe/webui/block.py:222
+msgid "Can NOT Undo Edits"
+msgstr ""
+
 #: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:711
+#: exe/xului/mainpage.py:831
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση του επώνυμου καταλόγου"
 
 #: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
-#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:92
-#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:552
+#: exe/webui/imagemagnifierblock.py:110 exe/webui/flashmovieblock.py:92
+#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:583
 msgid "Caption:"
 msgstr "Ετικέτα:"
 
@@ -471,19 +475,19 @@ msgstr "Ετικέτα:"
 msgid "Case Study"
 msgstr "Μελέτη Περίπτωσης"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:109
 msgid "Catalan Wikipedia Article"
 msgstr "Άρθρο της καταλανικής Βικιπαίδειας"
 
-#: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
+#: exe/webui/galleryblock.py:226 exe/webui/galleryblock.py:244
 msgid "Change Image"
 msgstr "Αλλαγή εικόνας"
 
-#: exe/webui/element.py:1036
+#: exe/webui/element.py:1084
 msgid "Check Caps?"
 msgstr "Έλεγχος για κεφαλαία;"
 
-#: exe/webui/wikipediablock.py:98
+#: exe/webui/wikipediablock.py:110
 msgid "Chinese Wikipedia Article"
 msgstr "Άρθρο της κινέζικης Βικιπαίδειας"
 
@@ -511,7 +515,7 @@ msgstr ""
 "εικονοστοιχεία είναι περίπου 3cm. Αφήστε και τα δυο πεδία κενά αν \n"
 "θέλετε η εικόνα να εμφανιστεί με το αρχικό της μέγεθος."
 
-#: exe/xului/mainpage.py:217
+#: exe/xului/mainpage.py:218
 msgid "Clear Recent Projects List"
 msgstr "Καθαρισμός Λίστας Πρόσφατων Έργων"
 
@@ -537,7 +541,7 @@ msgstr "Κάντε κλικ εδώ "
 msgid "Click for completion instructions"
 msgstr "Κλικ για οδηγίες συμπλήρωσης"
 
-#: exe/webui/reflectionblock.py:113
+#: exe/webui/reflectionblock.py:115
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
@@ -553,10 +557,10 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Κάντε κλικ στο πλήκτρο Προσθήκη Εικόνων για να επιλέξετε ένα αρχείο εικόνας. Η εικόνα θα εμφανιστεί πιο κάτω και θα πρέπει να της βάλετε μια ετικέτα. Είναι πάντα μια καλή πρακτική να ορίζετε το μέγεθος αρχείου στην ετικέτα."
 
-#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
-#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
-#: exe/webui/element.py:2042 exe/webui/element.py:2043
+#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:150
+#: exe/webui/truefalseelement.py:151 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
+#: exe/webui/element.py:2109 exe/webui/element.py:2110
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -572,24 +576,24 @@ msgstr "Συμπλήρωση κενών"
 msgid "Cloze Activity"
 msgstr "Συμπλήρωσης Κενών"
 
-#: exe/webui/element.py:1018
+#: exe/webui/element.py:1066
 msgid "Cloze Text"
 msgstr "Κείμενο Συμπλήρωσης Κενών"
 
-#: exe/webui/element.py:1585 exe/webui/element.py:1904
+#: exe/webui/element.py:1637 exe/webui/element.py:1967
 msgid "Correct"
 msgstr "Σωστό"
 
-#: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
-#: exe/webui/element.py:1816
+#: exe/webui/testoptionelement.py:108 exe/webui/element.py:1585
+#: exe/webui/element.py:1878
 msgid "Correct Option"
 msgstr "Σωστή Επιλογή"
 
-#: exe/webui/truefalseelement.py:208
+#: exe/webui/truefalseelement.py:214
 msgid "Correct!"
 msgstr "Σωστό!"
 
-#: exe/xului/mainpage.py:1087
+#: exe/xului/mainpage.py:1096
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Αδύνατη η φόρτωση του αρχείου. Παρακαλώ στείλτε το αρχείο στο bugs@exelearning.org"
 
@@ -608,29 +612,29 @@ msgstr ""
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
-#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:266
-#: exe/webui/block.py:219 exe/webui/editorpage.py:236
+#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:283
+#: exe/webui/block.py:230 exe/webui/editorpage.py:236
 #: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: exe/webui/appletblock.py:128
+#: exe/webui/appletblock.py:137
 msgid "Delete File"
 msgstr "Διαγραφή Αρχείου"
 
-#: exe/webui/galleryblock.py:263
+#: exe/webui/galleryblock.py:280
 msgid "Delete Image"
 msgstr "Διαγραφή Εικόνας"
 
-#: exe/webui/testoptionelement.py:128 exe/webui/element.py:1561
-#: exe/webui/element.py:1844
+#: exe/webui/testoptionelement.py:136 exe/webui/element.py:1613
+#: exe/webui/element.py:1906
 msgid "Delete option"
 msgstr "Διαγραφή επιλογής"
 
-#: exe/webui/testquestionelement.py:100 exe/webui/questionelement.py:107
-#: exe/webui/truefalseelement.py:122 exe/webui/element.py:1665
-#: exe/webui/element.py:1988
+#: exe/webui/testquestionelement.py:104 exe/webui/questionelement.py:110
+#: exe/webui/truefalseelement.py:128 exe/webui/element.py:1721
+#: exe/webui/element.py:2055
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -688,15 +692,15 @@ msgstr "Περιγραφή"
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: exe/webui/element.py:462 exe/webui/element.py:868 exe/webui/element.py:1237
+#: exe/webui/element.py:493 exe/webui/element.py:905 exe/webui/element.py:1285
 msgid "Display as:"
 msgstr "Εμφάνιση ως:"
 
-#: exe/webui/block.py:211
+#: exe/webui/block.py:213
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:111
 msgid "Dutch Wikipedia Article"
 msgstr "Άρθρο της ολλανδικής Βικιπαίδειας"
 
@@ -715,21 +719,21 @@ msgstr "ΣΦΑΛΜΑ: Απευθείας κλήση του element.renderEdit μ
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ΣΦΑΛΜΑ: Απευθείας κλήση του element.renderView μέσω της κλάσης %s"
 
-#: exe/webui/block.py:324
+#: exe/webui/block.py:335
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ΣΦΑΛΜΑ:  Άμεση κλήση του block.renderViewContent"
 
-#: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
-#: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
+#: exe/xului/mainpage.py:738 exe/xului/mainpage.py:745
+#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:751
+#: exe/xului/mainpage.py:754 exe/xului/mainpage.py:952
 msgid "EXPORT FAILED!"
 msgstr "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!"
 
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
-#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
-#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
-#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
-#: exe/xului/mainpage.py:1043
+#: exe/xului/mainpage.py:942 exe/xului/mainpage.py:956
+#: exe/xului/mainpage.py:969 exe/xului/mainpage.py:975
+#: exe/xului/mainpage.py:1009 exe/xului/mainpage.py:1025
+#: exe/xului/mainpage.py:1031 exe/xului/mainpage.py:1046
+#: exe/xului/mainpage.py:1052
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -738,7 +742,7 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:470
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -748,7 +752,7 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "Η τελευταία επιτυχής εξαγωγή είναι %s."
 
-#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
+#: exe/xului/mainpage.py:840 exe/xului/mainpage.py:857
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -757,7 +761,7 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/webui/block.py:333 exe/webui/editorpane.py:266
+#: exe/webui/block.py:344 exe/webui/editorpane.py:266
 #: exe/webui/editorpage.py:270
 msgid "Edit"
 msgstr "Επεξεργασία"
@@ -766,12 +770,12 @@ msgstr "Επεξεργασία"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Ή το αρχείο ηΔραστηριότητες/generic.data ή το πακέτο που προσπαθείτε να φορτώσετε, δημιουργήθηκαν με μια νεότερη έκδοση του eXe. Παρακαλώ αναβαθμίστε το eXe και προσπαθήστε πάλι."
 
-#: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
+#: exe/webui/wikipediablock.py:154 exe/webui/multimediablock.py:103
+#: exe/webui/rssblock.py:115 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Έμφαση"
 
-#: exe/webui/wikipediablock.py:96
+#: exe/webui/wikipediablock.py:108
 msgid "English Wikipedia Article"
 msgstr "Άρθρο της αγγλικής Βικιπαίδειας"
 
@@ -988,9 +992,9 @@ msgstr "Παράδειγμα Παράδειγμα"
 msgid "Export iDevice"
 msgstr "Εξαγωγή ηΔραστηριότητας"
 
-#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
-#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
-#: exe/xului/mainpage.py:1045
+#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
+#: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
+#: exe/xului/mainpage.py:1054
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωγή στο %s"
@@ -999,11 +1003,11 @@ msgstr "Εξαγωγή στο %s"
 msgid "External Web Site"
 msgstr "Εξωτερικός Διαδικτυακός Τόπος"
 
-#: exe/webui/imagemagnifierblock.py:146
+#: exe/webui/imagemagnifierblock.py:158
 msgid "Extra large"
 msgstr "Πολύ μεγάλο"
 
-#: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
+#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:189
 msgid "False"
 msgstr "Λάθος"
 
@@ -1011,9 +1015,9 @@ msgstr "Λάθος"
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
 #: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
-#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:241 exe/webui/element.py:1847
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:159
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:103
+#: exe/webui/common.py:241 exe/webui/element.py:1909
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
@@ -1031,18 +1035,18 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Ανατροφοδότηση: "
 
-#: exe/xului/mainpage.py:1083
+#: exe/xului/mainpage.py:1092
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Το αρχείο %s δεν υπάρχει ή δεν είναι αναγνώσιμο."
 
-#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
-#: exe/xului/mainpage.py:987
+#: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
+#: exe/xului/mainpage.py:996
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το όνομα αρχείου %s είναι αρχείο και δεν μπορεί να αντικατασταθεί"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:748
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:779
 msgid "Filename:"
 msgstr "Όνομα αρχείου:"
 
@@ -1054,13 +1058,13 @@ msgstr "Ταινία Flash"
 msgid "Flash with Text"
 msgstr "Ταινία Flash με Κείμενο"
 
-#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
-#: exe/xului/mainpage.py:993
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
+#: exe/xului/mainpage.py:1002
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Το όνομα αρχείου %s υπάρχει ήδη. Παρακαλώ επιλέξτε άλλο όνομα ή διαγράψτε το υπάρχον και ξαναπροσπαθήστε."
 
-#: exe/webui/externalurlblock.py:75
+#: exe/webui/externalurlblock.py:79
 msgid "Frame Height:"
 msgstr "Ύψος πλαισίου:"
 
@@ -1068,60 +1072,60 @@ msgstr "Ύψος πλαισίου:"
 msgid "Free Text"
 msgstr "Ελεύθερο κείμενο"
 
-#: exe/webui/wikipediablock.py:100
+#: exe/webui/wikipediablock.py:112
 msgid "French Wikipedia Article"
 msgstr "Άρθρο της γαλλικής Βικιπαίδειας"
 
-#: exe/webui/wikipediablock.py:207
+#: exe/webui/wikipediablock.py:219
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
 msgstr "Άδειας Δωρεάν Τεκμηρίωσης GNU"
 
-#: exe/webui/appletblock.py:89
+#: exe/webui/appletblock.py:98
 msgid "Geogebra"
 msgstr "Geogebra"
 
-#: exe/webui/wikipediablock.py:101
+#: exe/webui/wikipediablock.py:113
 msgid "German Wikipedia Article"
 msgstr "Άρθρο της γερμανικής Βικιπαίδειας"
 
-#: exe/webui/element.py:1121
+#: exe/webui/element.py:1169
 msgid "Get score"
 msgstr "Λήψη βαθμολογίας"
 
-#: exe/webui/galleryblock.py:236
+#: exe/webui/galleryblock.py:253
 msgid "Go Back"
 msgstr "Πίσω"
 
-#: exe/webui/galleryblock.py:250
+#: exe/webui/galleryblock.py:267
 msgid "Go Forward"
 msgstr "Μπροστά"
 
-#: exe/webui/galleryblock.py:258
+#: exe/webui/galleryblock.py:275
 msgid "Go Forward (Not Available)"
 msgstr "Μπροστά (Μη διαθέσιμο)"
 
-#: exe/webui/wikipediablock.py:102
+#: exe/webui/wikipediablock.py:114
 msgid "Greek Wikipedia Article"
 msgstr "Άρθρο της ελληνικής Βικιπαίδειας"
 
-#: exe/webui/reflectionblock.py:117
+#: exe/webui/reflectionblock.py:119
 msgid "Hide"
 msgstr "Απόκρυψη"
 
-#: exe/webui/questionelement.py:131
+#: exe/webui/questionelement.py:134
 msgid "Hide Feedback"
 msgstr "Απόκρυψη Ανατροφοδότησης"
 
-#: exe/webui/element.py:1026
+#: exe/webui/element.py:1074
 msgid "Hide/Show Word"
 msgstr "Απόκρυψη/Εμφάνιση Λέξης"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
 #: exe/engine/field.py:3029 exe/engine/field.py:3095
-#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
-#: exe/webui/element.py:2046
+#: exe/webui/truefalseelement.py:144 exe/webui/truefalseelement.py:154
+#: exe/webui/element.py:2113
 msgid "Hint"
 msgstr "Συμβουλή"
 
@@ -1129,17 +1133,17 @@ msgstr "Συμβουλή"
 msgid "Home"
 msgstr "Αρχή"
 
-#: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:340
-#: exe/webui/block.py:288
+#: exe/webui/multichoiceblock.py:153 exe/webui/genericblock.py:79
+#: exe/webui/genericblock.py:105 exe/webui/galleryblock.py:357
+#: exe/webui/block.py:299
 msgid "IDevice Icon"
 msgstr "Εικονίδιο ηΔραστηριότητας"
 
-#: exe/webui/multichoiceblock.py:120
+#: exe/webui/multichoiceblock.py:129
 msgid "IDevice Question Icon"
 msgstr "Εικονίδιο ηΔραστηριότητας Ερώτησης"
 
-#: exe/webui/block.py:172
+#: exe/webui/block.py:175
 msgid "IDevice broken"
 msgstr "Κατεστραμμένη ηΔραστηριότητα"
 
@@ -1167,11 +1171,11 @@ msgstr "Εικόνα με Κείμενο"
 msgid "Import iDevice"
 msgstr "Εισαγωγή ηΔραστηριότητας"
 
-#: exe/webui/element.py:1587
+#: exe/webui/element.py:1639
 msgid "Incorrect"
 msgstr "Λάθος"
 
-#: exe/webui/truefalseelement.py:209
+#: exe/webui/truefalseelement.py:215
 msgid "Incorrect!"
 msgstr "Λάθος!"
 
@@ -1179,15 +1183,15 @@ msgstr "Λάθος!"
 msgid "Info"
 msgstr "Πληροφορίες"
 
-#: exe/webui/block.py:245
+#: exe/webui/block.py:256
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: exe/webui/imagemagnifierblock.py:130
+#: exe/webui/imagemagnifierblock.py:142
 msgid "Initial Zoom"
 msgstr "Αρχική Μεγέθυνση"
 
-#: exe/webui/element.py:1041
+#: exe/webui/element.py:1089
 msgid "Instant Marking?"
 msgstr "Άμεση βαθμολογία;"
 
@@ -1200,15 +1204,15 @@ msgstr "Οδηγίες"
 msgid "Instructions For Learners"
 msgstr "Οδηγίες για τους Μαθητές"
 
-#: exe/webui/wikipediablock.py:208
+#: exe/webui/wikipediablock.py:220
 msgid "It uses material from the "
 msgstr "Χρησιμοποιεί υλικό από "
 
-#: exe/webui/wikipediablock.py:103
+#: exe/webui/wikipediablock.py:115
 msgid "Italian Wikipedia Article"
 msgstr "Άρθρο της ιταλικής Βικιπαίδειας"
 
-#: exe/webui/wikipediablock.py:104
+#: exe/webui/wikipediablock.py:116
 msgid "Japanese Wikipedia Article"
 msgstr "Άρθρο της ιαπωνικής Βικιπαίδειας"
 
@@ -1220,12 +1224,12 @@ msgstr "Μικροεφαρμογή Java"
 msgid "Label:"
 msgstr "Ετικέτα:"
 
-#: exe/webui/imagemagnifierblock.py:145
+#: exe/webui/imagemagnifierblock.py:157
 msgid "Large"
 msgstr "Μεγάλο"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:103
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Αριστερά"
@@ -1234,11 +1238,11 @@ msgstr "Αριστερά"
 msgid "Licensed under the"
 msgstr "Αδειοδοτημένο υπό τους όρους"
 
-#: exe/webui/wikipediablock.py:135 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:147 exe/webui/rssblock.py:105
 msgid "Load"
 msgstr "Φόρτωση"
 
-#: exe/xului/mainpage.py:543
+#: exe/xului/mainpage.py:552
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Το τοπικό αρχείο %s δεν βρέθηκε και δεν μπορεί να γίνει προεπισκόπησή του."
@@ -1247,7 +1251,7 @@ msgstr "Το τοπικό αρχείο %s δεν βρέθηκε και δεν μ
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/webui/wikipediablock.py:105
+#: exe/webui/wikipediablock.py:117
 msgid "Magyar Wikipedia Article"
 msgstr "Άρθρο της ουγγρικής Βικιπαίδειας"
 
@@ -1255,15 +1259,15 @@ msgstr "Άρθρο της ουγγρικής Βικιπαίδειας"
 msgid "Maths"
 msgstr "Μαθηματικά"
 
-#: exe/webui/imagemagnifierblock.py:137
+#: exe/webui/imagemagnifierblock.py:149
 msgid "Maximum zoom"
 msgstr "Μέγιστη μεγέθυνση "
 
-#: exe/webui/imagemagnifierblock.py:144
+#: exe/webui/imagemagnifierblock.py:156
 msgid "Medium"
 msgstr "Μέτριο"
 
-#: exe/xului/mainpage.py:671
+#: exe/xului/mainpage.py:680
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1272,19 +1276,19 @@ msgstr ""
 "Η μεταγλώττιση του Mime TeX απέτυχε!\n"
 "%s"
 
-#: exe/webui/block.py:233
+#: exe/webui/block.py:244
 msgid "Move Down"
 msgstr "Μετακίνηση κάτω"
 
-#: exe/webui/galleryblock.py:234
+#: exe/webui/galleryblock.py:251
 msgid "Move Image Left"
 msgstr "Μετακίνηση Εικόνας αριστερά"
 
-#: exe/webui/galleryblock.py:248
+#: exe/webui/galleryblock.py:265
 msgid "Move Image Right"
 msgstr "Μετακίνηση Εικόνας δεξιά"
 
-#: exe/webui/block.py:226
+#: exe/webui/block.py:237
 msgid "Move Up"
 msgstr "Μετακίνηση πάνω"
 
@@ -1305,11 +1309,11 @@ msgid "New iDevice"
 msgstr "Νέα ηΔραστηριότητα"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:315 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Επόμενο"
 
-#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
+#: exe/webui/galleryblock.py:215 exe/webui/galleryblock.py:309
 msgid "No Images Loaded"
 msgstr "Δεν φορτώθηκαν εικόνες"
 
@@ -1325,13 +1329,13 @@ msgstr "Δεν υπάρχει διαθέσιμη μικρογραφία. Απο�
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία σμίκρυνσης της αρχικής εικόνας."
 
-#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:335
+#: exe/webui/wikipediablock.py:151 exe/webui/multimediablock.py:100
+#: exe/webui/rssblock.py:109 exe/webui/editorpane.py:335
 msgid "No emphasis"
 msgstr "Χωρίς έμφαση"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:105
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
@@ -1375,17 +1379,17 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
 #: exe/engine/field.py:2951 exe/engine/field.py:3000
-#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
-#: exe/webui/element.py:1811
+#: exe/webui/testoptionelement.py:103 exe/webui/element.py:1580
+#: exe/webui/element.py:1873
 msgid "Option"
 msgstr "Επιλογή"
 
 #: exe/engine/field.py:3117 exe/engine/field.py:3154
-#: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
+#: exe/webui/testquestionelement.py:110 exe/webui/element.py:1739
 msgid "Options"
 msgstr "Επιλογές"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
+#: exe/webui/wikipediablock.py:127 exe/webui/appletblock.py:99
 msgid "Other"
 msgstr "Άλλο"
 
@@ -1393,11 +1397,11 @@ msgstr "Άλλο"
 msgid "Outline"
 msgstr "Περίγραμμα"
 
-#: exe/webui/wikipediablock.py:130
+#: exe/webui/wikipediablock.py:142
 msgid "Own site"
 msgstr "Προσωπικός διαδικτυακός τόπος"
 
-#: exe/xului/mainpage.py:850
+#: exe/xului/mainpage.py:859
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Το πακέτο έχει εξαχθεί στο: %s"
@@ -1409,12 +1413,12 @@ msgstr ""
 "Το πακέτο είναι παλιό. Παρακαλώ αναβαθμίστε το (Αρχείο... Άνοιγμα... ακολουθούμενο από Αρχείο... Αποθήκευση ως...) πριν\n"
 "προσπαθήσετε να το εισάγετε σε ένα άλλο πακέτο!"
 
-#: exe/xului/mainpage.py:315
+#: exe/xului/mainpage.py:316
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
 
-#: exe/webui/block.py:240 exe/webui/editorpane.py:373
+#: exe/webui/block.py:251 exe/webui/editorpane.py:373
 msgid "Pedagogical Help"
 msgstr "Παιδαγωγική βοήθεια"
 
@@ -1430,19 +1434,19 @@ msgstr "Παρακαλώ εισάγετε ένα όνομα για την ηΔρ
 msgid "Please enter<br />an idevice name."
 msgstr "Παρακαλώ εισάγετε<br />ένα όνομα για την ηΔραστηριότητα."
 
-#: exe/webui/element.py:1299
+#: exe/webui/element.py:1347
 msgid "Please select a .flv file."
 msgstr "Παρακαλώ επιλέξτε ένα αρχείο .flv."
 
-#: exe/webui/element.py:817
+#: exe/webui/element.py:848
 msgid "Please select a .jpg file."
 msgstr "Παρακαλώ επιλέξτε ένα αρχείο .jpg."
 
-#: exe/webui/multichoiceblock.py:86 exe/webui/quiztestblock.py:93
+#: exe/webui/multichoiceblock.py:94 exe/webui/quiztestblock.py:102
 msgid "Please select a correct answer for each question."
 msgstr "Παρακαλώ επιλέξτε μια σωστή απάντηση για κάθε ερώτηση."
 
-#: exe/webui/appletblock.py:72
+#: exe/webui/appletblock.py:80
 msgid "Please upload a .ggb file."
 msgstr "Παρακαλώ αποφορτώστε ένα .ggb αρχείο."
 
@@ -1460,11 +1464,11 @@ msgstr ""
 msgid "Please wait until loading finishes"
 msgstr "Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η φόρτωση"
 
-#: exe/webui/wikipediablock.py:106
+#: exe/webui/wikipediablock.py:118
 msgid "Polish Wikipedia Article"
 msgstr "Άρθρο της πολωνικής Βικιπαίδειας"
 
-#: exe/webui/wikipediablock.py:107
+#: exe/webui/wikipediablock.py:119
 msgid "Portugese Wikipedia Article"
 msgstr "Άρθρο της πορτογαλλικής Βικιπαίδειας"
 
@@ -1487,17 +1491,17 @@ msgstr ""
 "<li>         Οι μαθητές πρέπει να έχουν γνώση αγγλικής γλώσσας επιπέδου 4 </li>\n"
 "<li>        Οι μαθητές πρέπει να μπορούν να συνθέσουν προκαθορισμένα εργαλεία </li></ul>\n"
 
-#: exe/webui/element.py:1442 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1490 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "Προεπισκόπιση"
 
-#: exe/xului/mainpage.py:523 exe/xului/mainpage.py:629
+#: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ο φάκελος προεπισκόπησης %s είναι ένα αρχείο και δεν μπορεί να αντικατασταθεί"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:314 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Προηγούμενο"
 
@@ -1568,7 +1572,7 @@ msgstr ""
 "Δώστε σχετική ανατροφοδότηση για την\n"
 "κατάσταση."
 
-#: exe/webui/block.py:255
+#: exe/webui/block.py:266
 msgid "Purpose"
 msgstr "Σκοπός"
 
@@ -1583,7 +1587,7 @@ msgstr "Ερώτηση"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1716
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -1636,22 +1640,22 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Ερώτηση στοχασμού:"
 
-#: exe/webui/element.py:1141
+#: exe/webui/element.py:1189
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:104
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Δεξιά"
 
-#: exe/xului/mainpage.py:308
+#: exe/xului/mainpage.py:309
 msgid "SAVE FAILED!"
 msgstr "Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!"
 
-#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:892
+#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
+#: exe/xului/mainpage.py:901
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1673,7 +1677,7 @@ msgstr ""
 msgid "SCORM Quiz"
 msgstr "Κουίζ τύπου SCORM"
 
-#: exe/webui/quiztestblock.py:140
+#: exe/webui/quiztestblock.py:149
 msgid "SUBMIT ANSWERS"
 msgstr "ΥΠΟΒΟΛΗ ΑΠΑΝΤΗΣΕΩΝ"
 
@@ -1685,7 +1689,7 @@ msgstr "Αποθήκευση"
 msgid "Section"
 msgstr "Ενότητα"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1233
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1281
 msgid "Select Flash Object"
 msgstr "Επιλογή αντικειμένου flash "
 
@@ -1700,27 +1704,27 @@ msgid "Select MP3 file"
 msgstr "Επιλογή αρχείου MP3"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:758
+#: exe/webui/element.py:789
 msgid "Select a file"
 msgstr "Επιλογή αρχείου"
 
-#: exe/webui/element.py:1315
+#: exe/webui/element.py:1363
 msgid "Select a flash video"
 msgstr "Επιλογή ταινίας flash "
 
-#: exe/webui/element.py:1428
+#: exe/webui/element.py:1476
 msgid "Select a font size: "
 msgstr "Επιλογή μεγέθους γραμματοσειράς:"
 
-#: exe/webui/element.py:546
+#: exe/webui/element.py:577
 msgid "Select an MP3"
 msgstr "Επιλογή αρχείου MP3"
 
-#: exe/webui/element.py:459
+#: exe/webui/element.py:490
 msgid "Select an image"
 msgstr "Επιλογή εικόνας"
 
-#: exe/webui/element.py:862
+#: exe/webui/element.py:899
 msgid "Select an image (JPG file)"
 msgstr "Επιλογή εικόνας (αρχείο JPG)"
 
@@ -1732,7 +1736,7 @@ msgstr ""
 "Επιλογή, όσο γίνεται περισσότερων \n"
 "κριτηρίων για τη σωστή απάντηση, κάνοντας κλικ στο πεδίο δίπλα σε κάθε επιλογή."
 
-#: exe/webui/quiztestblock.py:104
+#: exe/webui/quiztestblock.py:113
 msgid "Select pass rate: "
 msgstr "Επιλογή βαθμολογικής βάσης:"
 
@@ -1778,49 +1782,49 @@ msgstr ""
 msgid "Settings saved"
 msgstr "Οι ρυθμίσεις αποθηκεύθηκαν"
 
-#: exe/webui/galleryblock.py:300
+#: exe/webui/galleryblock.py:317
 #, python-format
 msgid "Show %s Image"
 msgstr "Εμφάνιση εικόνας %s"
 
-#: exe/webui/element.py:1148
+#: exe/webui/element.py:1196
 msgid "Show Answers"
 msgstr "Εμφάνιση Απαντήσεων"
 
-#: exe/webui/questionelement.py:126 exe/webui/element.py:1734
+#: exe/webui/questionelement.py:129 exe/webui/element.py:1790
 msgid "Show Feedback"
 msgstr "Εμφάνιση Ανατροφοδότησης"
 
-#: exe/webui/element.py:1132
+#: exe/webui/element.py:1180
 msgid "Show/Clear Answers"
 msgstr "Εμφάνιση/Απόκρυψη Απαντήσεων"
 
-#: exe/webui/element.py:1127
+#: exe/webui/element.py:1175
 msgid "Show/Hide Feedback"
 msgstr "Εμφάνιση/Απόκρυψη Ανατροφοδότησης"
 
-#: exe/webui/wikipediablock.py:120
+#: exe/webui/wikipediablock.py:132
 msgid "Site"
 msgstr "Τόπος"
 
-#: exe/webui/imagemagnifierblock.py:148
+#: exe/webui/imagemagnifierblock.py:160
 msgid "Size of magnifying glass: "
 msgstr "Μέγεθος μεγεθυντικού φακού:"
 
-#: exe/webui/wikipediablock.py:108
+#: exe/webui/wikipediablock.py:120
 msgid "Slovenian Wikipedia Article"
 msgstr "Άρθρο της σλοβένικης Βικιπαίδειας"
 
-#: exe/webui/imagemagnifierblock.py:143
+#: exe/webui/imagemagnifierblock.py:155
 msgid "Small"
 msgstr "Μικρό"
 
-#: exe/webui/wikipediablock.py:140 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:336
+#: exe/webui/wikipediablock.py:152 exe/webui/multimediablock.py:101
+#: exe/webui/rssblock.py:110 exe/webui/editorpane.py:336
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1092
+#: exe/application.py:273 exe/xului/mainpage.py:1101
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λανθασμένη μορφή αρχείου."
 
@@ -1828,7 +1832,7 @@ msgstr "Συγνώμη, λανθασμένη μορφή αρχείου."
 msgid "Sorry, wrong file format."
 msgstr "Συγνώμη, λανθασμένη μορφή αρχείου."
 
-#: exe/xului/mainpage.py:1090
+#: exe/xului/mainpage.py:1099
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1837,7 +1841,7 @@ msgstr ""
 "Συγνώμη, λανθασμένη μορφή αρχείου:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:109
+#: exe/webui/wikipediablock.py:121
 msgid "Spanish Wikipedia Article"
 msgstr "Άρθρο της ισπανικής Βικιπαίδειας"
 
@@ -1845,19 +1849,19 @@ msgstr "Άρθρο της ισπανικής Βικιπαίδειας"
 msgid "Story:"
 msgstr "Σενάριο:"
 
-#: exe/webui/element.py:1031
+#: exe/webui/element.py:1079
 msgid "Strict Marking?"
 msgstr "Αυστηρή βαθμολογία;"
 
-#: exe/webui/element.py:1136 exe/webui/editorpane.py:424
+#: exe/webui/element.py:1184 exe/webui/editorpane.py:424
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: exe/webui/quiztestblock.py:360
+#: exe/webui/quiztestblock.py:369
 msgid "Submit Answer"
 msgstr "Υποβολή απάντησης"
 
-#: exe/webui/wikipediablock.py:110
+#: exe/webui/wikipediablock.py:122
 msgid "Swedish Wikipedia Article"
 msgstr "Άρθρο της σουηδικής Βικιπαίδειας"
 
@@ -1968,7 +1972,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Επιδίωξη του διαλόγου είναι να περιγράψετε τον επιδιωκόμενο στόχο της ηΔραστηριότητας σε άλλους πιθανούς χρήστες."
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:216
 msgid "This article is licensed under the "
 msgstr "Αυτό το άρθρο υπόκειται στους όρους της "
 
@@ -2015,7 +2019,7 @@ msgstr ""
 msgid "This is an optional field."
 msgstr "Το πεδίο είναι προαιρετικό."
 
-#: exe/webui/block.py:214
+#: exe/webui/block.py:225
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
@@ -2023,11 +2027,11 @@ msgstr ""
 "Η ηΔραστηριότητα θα διαγραφεί.\n"
 "Είστε σίγουροι ότι θέλετε να προχωρήσετε;"
 
-#: exe/webui/block.py:259
+#: exe/webui/block.py:270
 msgid "Tip:"
 msgstr "Συμβουλή:"
 
-#: exe/webui/galleryblock.py:184
+#: exe/webui/galleryblock.py:201
 msgid "Title"
 msgstr "Τίτλος "
 
@@ -2044,7 +2048,7 @@ msgstr ""
 msgid "Topic"
 msgstr "Κεφάλαιο"
 
-#: exe/webui/truefalseelement.py:108 exe/webui/truefalseelement.py:181
+#: exe/webui/truefalseelement.py:114 exe/webui/truefalseelement.py:187
 msgid "True"
 msgstr "Σωστό"
 
@@ -2116,7 +2120,7 @@ msgstr ""
 "Η ερώτηση θα πρέπει να είναι σαφής και κατανοητή. Αποφύγετε αρνητικές προτάσεις \n"
 "καθώς τείνουν να δημιουργούν αμφιβολίες."
 
-#: exe/webui/externalurlblock.py:61
+#: exe/webui/externalurlblock.py:65
 msgid "URL:"
 msgstr "URL:"
 
@@ -2133,6 +2137,10 @@ msgstr "Αδυναμία φόρτωσης του τροφοδότη RSS από %
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "Αδυναμία συγχώνευσης: ένα πανομοιότυπο όνομα μιας Java μικροεφαρμογής υπάρχει (περιλαμβάνει: \""
+
+#: exe/webui/block.py:218
+msgid "Undo Edits"
+msgstr ""
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2167,7 +2175,7 @@ msgstr ""
 "να μάθει και να εξασκηθεί, κάνοντας χρήση της πληροφορίας ή της επιδεξιότητάς του.\n"
 " "
 
-#: exe/webui/appletblock.py:111
+#: exe/webui/appletblock.py:120
 msgid "Upload"
 msgstr "Αποφόρτωση"
 
@@ -2237,23 +2245,23 @@ msgstr ""
 msgid "Wiki Article"
 msgstr "Άρθρο Βίκι"
 
-#: exe/webui/wikipediablock.py:111
+#: exe/webui/wikipediablock.py:123
 msgid "Wikibooks Article"
 msgstr "Άρθρο ΒικιΒιβλίων"
 
-#: exe/webui/wikipediablock.py:114
+#: exe/webui/wikipediablock.py:126
 msgid "Wikieducator Content"
 msgstr "Περιεχόμενο ΒικιΕκπαιδευτή"
 
-#: exe/webui/wikipediablock.py:112
+#: exe/webui/wikipediablock.py:124
 msgid "Wikiversity"
 msgstr "Βικιεπιστήμιο"
 
-#: exe/webui/wikipediablock.py:113
+#: exe/webui/wikipediablock.py:125
 msgid "Wiktionary"
 msgstr "Βικιλεξικό"
 
-#: exe/webui/element.py:1906
+#: exe/webui/element.py:1969
 msgid "Wrong"
 msgstr "Λάθος"
 
@@ -2265,15 +2273,15 @@ msgstr "Μπορείτε να χρησιμοποιήσετε τη γραμμή �
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Η νέα ηΔραστηριότητα θα εμφανιστεί με αυτόν τον τίτλο στο παράθυρο των ηΔραστηριοτήτων. Αυτό είναι ένα υποχρεωτικό πεδίο, στο οποίο θα παρακινηθείτε να εισάγετε έναν τίτλο, σε περίπτωση που επιχειρήσετε να υποβάλλετε την ηΔραστηριότητα χωρίς αυτόν."
 
-#: exe/webui/wikipediablock.py:219
+#: exe/webui/wikipediablock.py:231
 msgid "article "
 msgstr "Άρθρο "
 
-#: exe/webui/element.py:476 exe/webui/element.py:884
+#: exe/webui/element.py:507 exe/webui/element.py:921
 msgid "blank for original size"
 msgstr "κενό για το αρχικό μέγεθος"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:262
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:271
 msgid "eXe"
 msgstr "eXe"
 
@@ -2305,7 +2313,7 @@ msgstr "Η ηΔραστηριότητα %s δεν έχει πακέτο"
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής ηΔραστηριότητας"
 
-#: exe/webui/block.py:309
+#: exe/webui/block.py:320
 msgid "iDevice icon"
 msgstr "Εικονίδιο ηΔραστηριότητας"
 
@@ -2321,7 +2329,7 @@ msgstr "κωδικός κλειδιού"
 msgid "label"
 msgstr "Ετικέτα"
 
-#: exe/webui/element.py:1425
+#: exe/webui/element.py:1473
 msgid "newline"
 msgstr "νέα γραμμή"
 
@@ -2329,7 +2337,7 @@ msgstr "νέα γραμμή"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr "μετονομάστε έναν εκπαιδευτικό πόρο για μια μικροεφαρμογή ηΔραστηριότητας και δεν θα χρειαστεί να το ξανακάνετε!"
 
-#: exe/webui/element.py:1424
+#: exe/webui/element.py:1472
 msgid "text"
 msgstr "κείμενο"
 
@@ -3066,10 +3074,9 @@ msgid "Avestan "
 msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
-#: accesskey="m" label="eXe Manual">
+#: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
 #, fuzzy
-msgid "label=\"eXe Manual\" accesskey=\"m\""
+msgid "label=\"eXe Tutorial\" accesskey=\"u\""
 msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"μ\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -3078,14 +3085,26 @@ msgid "Aymara "
 msgstr "Aymara "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Σημειώσεις έκδοσης\" accesskey=\"n\""
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
+msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"μ\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 msgid "Azerbaijani "
 msgstr "Αζερμπαϊτζανικά"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Σημειώσεις έκδοσης\" accesskey=\"n\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: label="Bashkir ">
+msgid "Bashkir "
+msgstr "Bashkir "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
@@ -3094,10 +3113,10 @@ msgstr "Αζερμπαϊτζανικά"
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
 msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"ψ\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
-msgid "Bashkir "
-msgstr "Bashkir "
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
+#: label="Basque ">
+msgid "Basque "
+msgstr "Βασκικά"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
@@ -3105,10 +3124,10 @@ msgstr "Bashkir "
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"Αναφορά ενός ζητήματος\" accesskey=\"ρ\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
-msgid "Basque "
-msgstr "Βασκικά"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: label="Bengali; Bangla ">
+msgid "Bengali; Bangla "
+msgstr "Μπεγκάλι; Μπάγκλα"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
@@ -3116,60 +3135,60 @@ msgstr "Βασκικά"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"ψ\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
-msgid "Bengali; Bangla "
-msgstr "Μπεγκάλι; Μπάγκλα"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "Bihari "
+msgstr "Bihari "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"Σχετικά με το eXe\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
-msgid "Bihari "
-msgstr "Bihari "
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "Bislama "
+msgstr "Bislama "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo">
 msgid "debugInfo"
 msgstr "Πληροφορίες εκσφαλμάτωσης"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
-msgid "Bislama "
-msgstr "Bislama "
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: label="Bosnian ">
+msgid "Bosnian "
+msgstr "Βοσνιακά"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
 msgstr "Προσθήκη σελίδας"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
-msgid "Bosnian "
-msgstr "Βοσνιακά"
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr "Βρετoνικά"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
 msgstr "Μετονομασία"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
-msgstr "Βρετoνικά"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "Λευκορωσικά"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
 msgstr "Περίγραμμα πλαισίου"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "Λευκορωσικά"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "Βουλγαρικά"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="promote"
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
@@ -3177,10 +3196,10 @@ msgstr "Λευκορωσικά"
 msgid "Promote node up in hierarchy"
 msgstr "Προβιβασμός του κόμβου στην ιεραρχία"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "Βουλγαρικά"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "Burmese"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="demote"
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
@@ -3188,20 +3207,20 @@ msgstr "Βουλγαρικά"
 msgid "Demote node down in hierarchy"
 msgstr "Υποβιβασμός του κόμβου στην ιεραρχία"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "Burmese"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "Καταλανικά"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
 msgid "Move node up"
 msgstr "Μετακίνηση κόμβου επάνω"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "Καταλανικά"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr "Chamorro "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
@@ -3209,35 +3228,25 @@ msgstr "Καταλανικά"
 msgid "Move node down"
 msgstr "Μετακίνηση κόμβου κάτω"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr "Chamorro "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "Τσετσένικα"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
 msgstr "ηΔραστηριότητες"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "Τσετσένικα"
-
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
-msgid "iDevicePane"
-msgstr "Πλαίσιο ηΔραστηριοτήτων"
-
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
 msgid "Chinese "
 msgstr "Κινέζικα"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
-msgid "Authoring"
-msgstr "Συγγραφή"
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
+#: value="iDevicePane">
+msgid "iDevicePane"
+msgstr "Πλαίσιο ηΔραστηριοτήτων"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
@@ -3245,14 +3254,19 @@ msgid "Church Slavic "
 msgstr "Παλαιοσλαβικά"
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
-msgid "Properties"
-msgstr "Ιδιότητες"
+#: label="Authoring">
+msgid "Authoring"
+msgstr "Συγγραφή"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
 msgid "Chuvash "
 msgstr "Τουρκικά των Ουραλίων"
+
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
+msgid "Properties"
+msgstr "Ιδιότητες"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish ">

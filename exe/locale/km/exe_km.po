@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-23 10:26+1200\n"
+"POT-Creation-Date: 2008-04-28 13:50+1200\n"
 "PO-Revision-Date: 2008-02-22 08:38+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -35,9 +35,9 @@ msgstr ""
 "<p>ឧ. ចំពោះ​អាប់ភ្លេត Geogebra គឺ​ត្រូវ​ជ្រើស geogebra បន្ទាប់​មក​បន្ថែម​ឯកសារ .ggb ដែល \n"
 "អ្នក​បាន​បង្កើត​ក្នុង Geogebra ។</p>"
 
-#: exe/xului/mainpage.py:281 exe/xului/mainpage.py:830
-#: exe/xului/mainpage.py:959 exe/xului/mainpage.py:1015
-#: exe/xului/mainpage.py:1036
+#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
+#: exe/xului/mainpage.py:1045
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -56,12 +56,12 @@ msgstr ""
 "ហើយ​បើក​វា ។ ចម្លង​មាតិកា​របស់​ឯកសារ​នេះ <បញ្ជា​(ctrl) A, បញ្ជា​(ctrl) C> ទៅ​ដាក់​ក្នុង \n"
 "វាល​កូដ​អាប់ភ្លេត ។"
 
-#: exe/webui/block.py:235
+#: exe/webui/block.py:246
 msgid "---Move To---"
 msgstr "---ផ្លាស់ទី​ទៅ---"
 
-#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:704
-#: exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:713
+#: exe/xului/mainpage.py:831
 msgid ". Please use ASCII names."
 msgstr " ។ សូម​ជ្រើស​ឈ្មោះ ASCII ។"
 
@@ -259,7 +259,7 @@ msgstr "អំពើ"
 #: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
 #: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
 #: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
-#: exe/webui/questionelement.py:96
+#: exe/webui/questionelement.py:99
 msgid "Activity"
 msgstr "សកម្មភាព"
 
@@ -267,11 +267,11 @@ msgstr "សកម្មភាព"
 msgid "Add Field"
 msgstr "បន្ថែម​វាល"
 
-#: exe/webui/element.py:436
+#: exe/webui/element.py:467
 msgid "Add Image"
 msgstr "បន្ថែម​រូបភាព"
 
-#: exe/webui/element.py:846
+#: exe/webui/element.py:883
 msgid "Add JPEG Image"
 msgstr "បន្ថែម​រូបភាព JPEG"
 
@@ -309,36 +309,36 @@ msgstr "បន្ថែម​វាល​អន្តរ​មតិព័ត៌
 msgid "Add an mp3 file to your iDevice."
 msgstr "បន្ថែម​ឯកសារ mp3 ទៅ iDevice របស់​អ្នក ។"
 
-#: exe/webui/testquestionelement.py:118 exe/webui/element.py:1696
+#: exe/webui/testquestionelement.py:122 exe/webui/element.py:1752
 msgid "Add another Option"
 msgstr "បន្ថែម​ជម្រើស​ផ្សេងៗ"
 
-#: exe/webui/quiztestblock.py:101 exe/webui/multiselectblock.py:79
+#: exe/webui/quiztestblock.py:110 exe/webui/multiselectblock.py:89
 msgid "Add another Question"
 msgstr "បន្ថែម​សំណួរ​ផ្សេងៗ"
 
-#: exe/webui/casestudyblock.py:99
+#: exe/webui/casestudyblock.py:110
 msgid "Add another activity"
 msgstr "បន្ថែម​សកម្មភាព​ផ្សេងៗ"
 
-#: exe/webui/element.py:2003
+#: exe/webui/element.py:2070
 msgid "Add another option"
 msgstr "បន្ថែម​ជម្រើស​ផ្សេងៗ"
 
-#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:94
+#: exe/webui/multichoiceblock.py:112 exe/webui/truefalseblock.py:105
 msgid "Add another question"
 msgstr "បន្ថែម​សំណួរ​ផ្សេងៗ"
 
-#: exe/webui/appletblock.py:109
+#: exe/webui/appletblock.py:118
 msgid "Add files"
 msgstr "បន្ថែម​ឯកសារ"
 
-#: exe/webui/galleryblock.py:191
+#: exe/webui/galleryblock.py:208
 msgid "Add images"
 msgstr "បន្ថែម​រូបភាព"
 
 #: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:118
+#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:130
 #: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "តម្រឹម ៖"
@@ -414,15 +414,15 @@ msgstr ""
 "ត្រូវ​បំពេញ ។ ផ្ដល់​ការ​ពន្យល់​អំពី​កិច្ចការ​ឲ្យ​បាន​ច្បាស់លាស់ និង​កំណត់​លក្ខខណ្ឌ\n"
 "ដែល​អាច​ជួយ​ដល់​អ្នក​សិក្សា​ក្នុង​ការ​ធ្វើ​កិច្ចការ ។"
 
-#: exe/webui/element.py:1183
+#: exe/webui/element.py:1231
 msgid "Answsers"
 msgstr "ចម្លើយ"
 
-#: exe/webui/appletblock.py:115
+#: exe/webui/appletblock.py:124
 msgid "Applet Code:"
 msgstr "កូដ​អាប់ភ្លេត ៖"
 
-#: exe/webui/appletblock.py:91
+#: exe/webui/appletblock.py:100
 msgid "Applet Type"
 msgstr "ប្រភេទ​អាប់ភ្លេត"
 
@@ -447,18 +447,22 @@ msgstr "សកលវិទ្យាល័យ​បច្ចេកវិទ្យ
 msgid "Button Caption"
 msgstr "ចំណង​ជើង​ប៊ូតុង"
 
+#: exe/webui/block.py:222
+msgid "Can NOT Undo Edits"
+msgstr ""
+
 #: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "បោះបង់"
 
-#: exe/xului/mainpage.py:299 exe/xului/mainpage.py:702
-#: exe/xului/mainpage.py:822
+#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:711
+#: exe/xului/mainpage.py:831
 msgid "Cannot access directory named "
 msgstr "មិន​អាច​ចូល​ដំណើរការ​ថត "
 
 #: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
-#: exe/webui/imagemagnifierblock.py:98 exe/webui/flashmovieblock.py:92
-#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:552
+#: exe/webui/imagemagnifierblock.py:110 exe/webui/flashmovieblock.py:92
+#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:583
 msgid "Caption:"
 msgstr "ចំណងជើង ៖"
 
@@ -466,19 +470,19 @@ msgstr "ចំណងជើង ៖"
 msgid "Case Study"
 msgstr "ករណី​សិក្សា"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:109
 msgid "Catalan Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​កាតាឡាន"
 
-#: exe/webui/galleryblock.py:209 exe/webui/galleryblock.py:227
+#: exe/webui/galleryblock.py:226 exe/webui/galleryblock.py:244
 msgid "Change Image"
 msgstr "ផ្លាស់ប្ដូរ​រូបភាព"
 
-#: exe/webui/element.py:1036
+#: exe/webui/element.py:1084
 msgid "Check Caps?"
 msgstr "ពនិត្យ​ការ​សរសេរ​អក្សរធំ​ឬ ?"
 
-#: exe/webui/wikipediablock.py:98
+#: exe/webui/wikipediablock.py:110
 msgid "Chinese Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​ចិន"
 
@@ -506,7 +510,7 @@ msgstr ""
 "ប្រសិន​បើ​អ្នក​ចង់​បង្ហាញ​រូបភាព​តាម​ទំហំ​ដើម​របស់​វា គឺ​អ្នក​ត្រូវ​ទុកវាល​ទាំង​ពីរ\n"
 "​ឲ្យ​នៅ​ទទេ ។"
 
-#: exe/xului/mainpage.py:217
+#: exe/xului/mainpage.py:218
 msgid "Clear Recent Projects List"
 msgstr "ជម្រះ​បញ្ជី​គម្រោង​បច្ចុប្បន្ន"
 
@@ -532,7 +536,7 @@ msgstr "ចុច​នៅ​ទីនេះ"
 msgid "Click for completion instructions"
 msgstr "ចុច ដើម្បី​មើល​សេចក្ដី​ណែនាំ​អំពី​ការ​បំពេញ"
 
-#: exe/webui/reflectionblock.py:113
+#: exe/webui/reflectionblock.py:115
 msgid "Click here"
 msgstr "ចុច​នៅ​ទីនេះ"
 
@@ -548,10 +552,10 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
 
-#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
-#: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
-#: exe/webui/common.py:338 exe/webui/block.py:249 exe/webui/block.py:250
-#: exe/webui/element.py:2042 exe/webui/element.py:2043
+#: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:150
+#: exe/webui/truefalseelement.py:151 exe/webui/common.py:337
+#: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
+#: exe/webui/element.py:2109 exe/webui/element.py:2110
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -567,24 +571,24 @@ msgstr "Cloze"
 msgid "Cloze Activity"
 msgstr "សកម្មភាព Cloze"
 
-#: exe/webui/element.py:1018
+#: exe/webui/element.py:1066
 msgid "Cloze Text"
 msgstr "អត្ថបទ Cloze"
 
-#: exe/webui/element.py:1585 exe/webui/element.py:1904
+#: exe/webui/element.py:1637 exe/webui/element.py:1967
 msgid "Correct"
 msgstr "ត្រឹមត្រូវ"
 
-#: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
-#: exe/webui/element.py:1816
+#: exe/webui/testoptionelement.py:108 exe/webui/element.py:1585
+#: exe/webui/element.py:1878
 msgid "Correct Option"
 msgstr "ជម្រើស​ត្រឹមត្រូវ"
 
-#: exe/webui/truefalseelement.py:208
+#: exe/webui/truefalseelement.py:214
 msgid "Correct!"
 msgstr "ត្រឹមត្រូវ !"
 
-#: exe/xului/mainpage.py:1087
+#: exe/xului/mainpage.py:1096
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "មិនអាច​ផ្ទុក​ឯកសារ​បានឡើយ សូម​ផ្ញើ​អ៊ីមែល​ឯកសារ​ទៅ bugs@exelearning.org"
 
@@ -603,29 +607,29 @@ msgstr ""
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
-#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:266
-#: exe/webui/block.py:219 exe/webui/editorpage.py:236
+#: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:283
+#: exe/webui/block.py:230 exe/webui/editorpage.py:236
 #: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "លុប"
 
-#: exe/webui/appletblock.py:128
+#: exe/webui/appletblock.py:137
 msgid "Delete File"
 msgstr "លុប​ឯកសារ"
 
-#: exe/webui/galleryblock.py:263
+#: exe/webui/galleryblock.py:280
 msgid "Delete Image"
 msgstr "លុប​រូបភាព"
 
-#: exe/webui/testoptionelement.py:128 exe/webui/element.py:1561
-#: exe/webui/element.py:1844
+#: exe/webui/testoptionelement.py:136 exe/webui/element.py:1613
+#: exe/webui/element.py:1906
 msgid "Delete option"
 msgstr "លុប​ជម្រើស"
 
-#: exe/webui/testquestionelement.py:100 exe/webui/questionelement.py:107
-#: exe/webui/truefalseelement.py:122 exe/webui/element.py:1665
-#: exe/webui/element.py:1988
+#: exe/webui/testquestionelement.py:104 exe/webui/questionelement.py:110
+#: exe/webui/truefalseelement.py:128 exe/webui/element.py:1721
+#: exe/webui/element.py:2055
 msgid "Delete question"
 msgstr "លុប​សំណួរ"
 
@@ -682,15 +686,15 @@ msgstr "សេចក្ដី​ពិពណ៌នា"
 msgid "Description:"
 msgstr "សេចក្ដី​ពិពណ៌នា ៖"
 
-#: exe/webui/element.py:462 exe/webui/element.py:868 exe/webui/element.py:1237
+#: exe/webui/element.py:493 exe/webui/element.py:905 exe/webui/element.py:1285
 msgid "Display as:"
 msgstr "បង្ហាញ​ជា ៖"
 
-#: exe/webui/block.py:211
+#: exe/webui/block.py:213
 msgid "Done"
 msgstr "ធ្វើ​រួច"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:111
 msgid "Dutch Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​ហុល្លង់"
 
@@ -709,21 +713,21 @@ msgstr "កំហុស Element.renderEdit បាន​ហៅ​ដោយផ្�
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "កំហុស Element.renderView បាន​ហៅ​ដោយផ្ទាល់​ជា​មួយ​ថ្នាក់ %s"
 
-#: exe/webui/block.py:324
+#: exe/webui/block.py:335
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "កំហុស ៖ Block.renderViewContent បាន​ហៅ​ដោយ​ផ្ទាល់"
 
-#: exe/xului/mainpage.py:729 exe/xului/mainpage.py:736
-#: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
-#: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
+#: exe/xului/mainpage.py:738 exe/xului/mainpage.py:745
+#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:751
+#: exe/xului/mainpage.py:754 exe/xului/mainpage.py:952
 msgid "EXPORT FAILED!"
 msgstr "ការ​នាំចេញ​បាន​បរាជ័យ !"
 
-#: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
-#: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
-#: exe/xului/mainpage.py:1000 exe/xului/mainpage.py:1016
-#: exe/xului/mainpage.py:1022 exe/xului/mainpage.py:1037
-#: exe/xului/mainpage.py:1043
+#: exe/xului/mainpage.py:942 exe/xului/mainpage.py:956
+#: exe/xului/mainpage.py:969 exe/xului/mainpage.py:975
+#: exe/xului/mainpage.py:1009 exe/xului/mainpage.py:1025
+#: exe/xului/mainpage.py:1031 exe/xului/mainpage.py:1046
+#: exe/xului/mainpage.py:1052
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -732,7 +736,7 @@ msgstr ""
 "ការ​នាំចេញ​បាន​បរាជ័យ !\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:452
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:470
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -742,7 +746,7 @@ msgstr ""
 "ការ​នាំចេញ​បាន​បរាជ័យ !\n"
 "ការ​នាំចេញ​ជោគជ័យ​ចុង​ក្រោយ​គឺ %s ។"
 
-#: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
+#: exe/xului/mainpage.py:840 exe/xului/mainpage.py:857
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -751,7 +755,7 @@ msgstr ""
 "ការ​ស្រង់ចេញ​បាន​បរាជ័យ !\n"
 "%s"
 
-#: exe/webui/block.py:333 exe/webui/editorpane.py:266
+#: exe/webui/block.py:344 exe/webui/editorpane.py:266
 #: exe/webui/editorpage.py:270
 msgid "Edit"
 msgstr "កែសម្រួល"
@@ -760,12 +764,12 @@ msgstr "កែសម្រួល"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "ទាំង​ឯកសារ idevices/generic.data ឬ​កញ្ចប់​ដែល​អ្នក​កំពុង​ផ្ទុក គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
 
-#: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
+#: exe/webui/wikipediablock.py:154 exe/webui/multimediablock.py:103
+#: exe/webui/rssblock.py:115 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "សង្កត់​ន័យ"
 
-#: exe/webui/wikipediablock.py:96
+#: exe/webui/wikipediablock.py:108
 msgid "English Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​អង់គ្លេស"
 
@@ -980,9 +984,9 @@ msgstr "ឧទាហរណ៍ ឧទាហរណ៍"
 msgid "Export iDevice"
 msgstr "នាំចេញ iDevice"
 
-#: exe/xului/mainpage.py:949 exe/xului/mainpage.py:968
-#: exe/xului/mainpage.py:1002 exe/xului/mainpage.py:1024
-#: exe/xului/mainpage.py:1045
+#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
+#: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
+#: exe/xului/mainpage.py:1054
 #, python-format
 msgid "Exported to %s"
 msgstr "បាន​នាំចេញ​ទៅ %s"
@@ -991,11 +995,11 @@ msgstr "បាន​នាំចេញ​ទៅ %s"
 msgid "External Web Site"
 msgstr "តំបន់​បណ្ដាញ​ខាងក្រៅ"
 
-#: exe/webui/imagemagnifierblock.py:146
+#: exe/webui/imagemagnifierblock.py:158
 msgid "Extra large"
 msgstr "ធំ​សម្បើម"
 
-#: exe/webui/truefalseelement.py:110 exe/webui/truefalseelement.py:183
+#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:189
 msgid "False"
 msgstr "ខុស"
 
@@ -1003,9 +1007,9 @@ msgstr "ខុស"
 #: exe/engine/genericidevice.py:232 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:198 exe/engine/truefalseidevice.py:48
 #: exe/engine/truefalseidevice.py:123 exe/engine/field.py:2955
-#: exe/engine/field.py:3003 exe/webui/clozeblock.py:158
-#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:100
-#: exe/webui/common.py:241 exe/webui/element.py:1847
+#: exe/engine/field.py:3003 exe/webui/clozeblock.py:159
+#: exe/webui/editorelement.py:148 exe/webui/questionelement.py:103
+#: exe/webui/common.py:241 exe/webui/element.py:1909
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "មតិ​អ្នកប្រើ"
@@ -1023,18 +1027,18 @@ msgstr ""
 msgid "Feedback:"
 msgstr "មតិអ្នក​ប្រើ ៖"
 
-#: exe/xului/mainpage.py:1083
+#: exe/xului/mainpage.py:1092
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "មិនមាន​ឯកសារ %s ឬ​មិនអាច​អានបាន ។"
 
-#: exe/xului/mainpage.py:878 exe/xului/mainpage.py:920
-#: exe/xului/mainpage.py:987
+#: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
+#: exe/xului/mainpage.py:996
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "ឈ្មោះ​ឯកសារ %s គឺ​ជា​ឯកសារ មិន​អាច​ជំនួស​វា​បាន​ទេ"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:748
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:779
 msgid "Filename:"
 msgstr "ឈ្មោះ​ឯកសារ ៖"
 
@@ -1046,13 +1050,13 @@ msgstr "ភាពយន្ត Flash"
 msgid "Flash with Text"
 msgstr "Flash មាន​អត្ថបទ"
 
-#: exe/xului/mainpage.py:884 exe/xului/mainpage.py:926
-#: exe/xului/mainpage.py:993
+#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
+#: exe/xului/mainpage.py:1002
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "មាន​ថត %s រួចហើយ ។ សូម​ជ្រើស​ឈ្មោះ​ផ្សេង ឬ​លុប​ថត​ដែល​មាន បន្ទាប់​មក​ព្យាយាម​ម្ដងទៀត ។"
 
-#: exe/webui/externalurlblock.py:75
+#: exe/webui/externalurlblock.py:79
 msgid "Frame Height:"
 msgstr "កម្ពស់​ស៊ុម ៖"
 
@@ -1060,60 +1064,60 @@ msgstr "កម្ពស់​ស៊ុម ៖"
 msgid "Free Text"
 msgstr "អត្ថបទ​សេរី"
 
-#: exe/webui/wikipediablock.py:100
+#: exe/webui/wikipediablock.py:112
 msgid "French Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​បារាំង"
 
-#: exe/webui/wikipediablock.py:207
+#: exe/webui/wikipediablock.py:219
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
 msgstr "​លក្ខខណ្ឌ​អាជ្ញាបណ្ណ​ឯកសារ​ឥតគិត​ថ្លៃ​របស់ GNU"
 
-#: exe/webui/appletblock.py:89
+#: exe/webui/appletblock.py:98
 msgid "Geogebra"
 msgstr "Geogebra"
 
-#: exe/webui/wikipediablock.py:101
+#: exe/webui/wikipediablock.py:113
 msgid "German Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​អាល្លឺម៉ង់"
 
-#: exe/webui/element.py:1121
+#: exe/webui/element.py:1169
 msgid "Get score"
 msgstr "ទទួល​ពិន្ទុ"
 
-#: exe/webui/galleryblock.py:236
+#: exe/webui/galleryblock.py:253
 msgid "Go Back"
 msgstr "ថយក្រោយ"
 
-#: exe/webui/galleryblock.py:250
+#: exe/webui/galleryblock.py:267
 msgid "Go Forward"
 msgstr "ទៅមុខ"
 
-#: exe/webui/galleryblock.py:258
+#: exe/webui/galleryblock.py:275
 msgid "Go Forward (Not Available)"
 msgstr "ទៅមុខ (មិនមាន)"
 
-#: exe/webui/wikipediablock.py:102
+#: exe/webui/wikipediablock.py:114
 msgid "Greek Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​ក្រិក"
 
-#: exe/webui/reflectionblock.py:117
+#: exe/webui/reflectionblock.py:119
 msgid "Hide"
 msgstr "លាក់"
 
-#: exe/webui/questionelement.py:131
+#: exe/webui/questionelement.py:134
 msgid "Hide Feedback"
 msgstr "លាក់​មតិ​អ្នក​ប្រើ"
 
-#: exe/webui/element.py:1026
+#: exe/webui/element.py:1074
 msgid "Hide/Show Word"
 msgstr "លាក់​/​បង្ហាញ​ពាក្យ"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:126
 #: exe/engine/field.py:3029 exe/engine/field.py:3095
-#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:148
-#: exe/webui/element.py:2046
+#: exe/webui/truefalseelement.py:144 exe/webui/truefalseelement.py:154
+#: exe/webui/element.py:2113
 msgid "Hint"
 msgstr "ព័ត៌មាន​ជំនួយ"
 
@@ -1121,17 +1125,17 @@ msgstr "ព័ត៌មាន​ជំនួយ"
 msgid "Home"
 msgstr "ដើម"
 
-#: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:340
-#: exe/webui/block.py:288
+#: exe/webui/multichoiceblock.py:153 exe/webui/genericblock.py:79
+#: exe/webui/genericblock.py:105 exe/webui/galleryblock.py:357
+#: exe/webui/block.py:299
 msgid "IDevice Icon"
 msgstr "រូបតំណាង IDevice"
 
-#: exe/webui/multichoiceblock.py:120
+#: exe/webui/multichoiceblock.py:129
 msgid "IDevice Question Icon"
 msgstr "រូបតំណាង​សំណួរ IDevice"
 
-#: exe/webui/block.py:172
+#: exe/webui/block.py:175
 msgid "IDevice broken"
 msgstr "IDevice ខូច"
 
@@ -1159,11 +1163,11 @@ msgstr "រូបភាព​មាន​អត្ថបទ"
 msgid "Import iDevice"
 msgstr "នាំចូល iDevice"
 
-#: exe/webui/element.py:1587
+#: exe/webui/element.py:1639
 msgid "Incorrect"
 msgstr "មិន​ត្រឹមត្រូវ"
 
-#: exe/webui/truefalseelement.py:209
+#: exe/webui/truefalseelement.py:215
 msgid "Incorrect!"
 msgstr "មិន​ត្រឹមត្រូវ !"
 
@@ -1171,15 +1175,15 @@ msgstr "មិន​ត្រឹមត្រូវ !"
 msgid "Info"
 msgstr "ព័ត៌មាន"
 
-#: exe/webui/block.py:245
+#: exe/webui/block.py:256
 msgid "Information"
 msgstr "ព័ត៌មាន"
 
-#: exe/webui/imagemagnifierblock.py:130
+#: exe/webui/imagemagnifierblock.py:142
 msgid "Initial Zoom"
 msgstr "ចាប់ផ្ដើម​ពង្រីក"
 
-#: exe/webui/element.py:1041
+#: exe/webui/element.py:1089
 msgid "Instant Marking?"
 msgstr "សម្គាល់​លឿន ?"
 
@@ -1192,15 +1196,15 @@ msgstr "សេចក្ដី​ណែនាំ"
 msgid "Instructions For Learners"
 msgstr "សេចក្ដី​ណែនាំ​សម្រាប់​អ្នក​សិក្សា"
 
-#: exe/webui/wikipediablock.py:208
+#: exe/webui/wikipediablock.py:220
 msgid "It uses material from the "
 msgstr "វា​ប្រើ​សម្ភារៈ​ពី "
 
-#: exe/webui/wikipediablock.py:103
+#: exe/webui/wikipediablock.py:115
 msgid "Italian Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​អ៊ីតាលី"
 
-#: exe/webui/wikipediablock.py:104
+#: exe/webui/wikipediablock.py:116
 msgid "Japanese Wikipedia Article"
 msgstr "អត្ថបទ​វីឌីភីឌៀ​ជប៉ុន"
 
@@ -1212,12 +1216,12 @@ msgstr "អាប់ភ្លេត Java"
 msgid "Label:"
 msgstr "ស្លាក ៖"
 
-#: exe/webui/imagemagnifierblock.py:145
+#: exe/webui/imagemagnifierblock.py:157
 msgid "Large"
 msgstr "ធំ"
 
 #: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:91
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:103
 #: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "ឆ្វេង"
@@ -1226,11 +1230,11 @@ msgstr "ឆ្វេង"
 msgid "Licensed under the"
 msgstr "ដាក់​អាជ្ញាបណ្ណ​ក្រោម "
 
-#: exe/webui/wikipediablock.py:135 exe/webui/rssblock.py:93
+#: exe/webui/wikipediablock.py:147 exe/webui/rssblock.py:105
 msgid "Load"
 msgstr "ផ្ទុក"
 
-#: exe/xului/mainpage.py:543
+#: exe/xului/mainpage.py:552
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "រក​មិនឃើញ​ឯកសារ​មូលដ្ឋាន %s ទេ ! មិនអាច​មើល​វា​ជាមុន​បាន​ឡើយ"
@@ -1239,7 +1243,7 @@ msgstr "រក​មិនឃើញ​ឯកសារ​មូលដ្ឋាន
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/webui/wikipediablock.py:105
+#: exe/webui/wikipediablock.py:117
 msgid "Magyar Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​ម៉ាយ៉ា"
 
@@ -1247,15 +1251,15 @@ msgstr "អត្ថបទ​វីគីភីឌៀ​ម៉ាយ៉ា"
 msgid "Maths"
 msgstr "គណិត​វិទ្យា"
 
-#: exe/webui/imagemagnifierblock.py:137
+#: exe/webui/imagemagnifierblock.py:149
 msgid "Maximum zoom"
 msgstr "ពង្រីក​អតិបរមា"
 
-#: exe/webui/imagemagnifierblock.py:144
+#: exe/webui/imagemagnifierblock.py:156
 msgid "Medium"
 msgstr "មធ្យម"
 
-#: exe/xului/mainpage.py:671
+#: exe/xului/mainpage.py:680
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1264,19 +1268,19 @@ msgstr ""
 "ការ​ចងក្រង MimeTeX បាន​បរាជ័យ !\n"
 "%s"
 
-#: exe/webui/block.py:233
+#: exe/webui/block.py:244
 msgid "Move Down"
 msgstr "ផ្លាស់ទី​ចុះក្រោម"
 
-#: exe/webui/galleryblock.py:234
+#: exe/webui/galleryblock.py:251
 msgid "Move Image Left"
 msgstr "ផ្លាស់ទី​រូបភាព​ទៅ​ឆ្វេង"
 
-#: exe/webui/galleryblock.py:248
+#: exe/webui/galleryblock.py:265
 msgid "Move Image Right"
 msgstr "ផ្លាស់ទី​រូបភាព​ទៅ​ស្ដាំ"
 
-#: exe/webui/block.py:226
+#: exe/webui/block.py:237
 msgid "Move Up"
 msgstr "ផ្លាស់ទី​ឡើងលើ"
 
@@ -1297,11 +1301,11 @@ msgid "New iDevice"
 msgstr "iDevice ថ្មី"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:306 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:315 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "បន្ទាប់"
 
-#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:292
+#: exe/webui/galleryblock.py:215 exe/webui/galleryblock.py:309
 msgid "No Images Loaded"
 msgstr "គ្មាន​រូបភាព​ដែល​ផ្ទុកទេ"
 
@@ -1317,13 +1321,13 @@ msgstr "មិនមាន​រូបភាព​តូចៗ​ទេ ។ ម
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "មិនមាន​រូបភាព​តូចៗ​ទេ ។ មិន​អាច​បង្រួញ​រូបភាព​ដើម​បាន​ឡើយ ។"
 
-#: exe/webui/wikipediablock.py:139 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:97 exe/webui/editorpane.py:335
+#: exe/webui/wikipediablock.py:151 exe/webui/multimediablock.py:100
+#: exe/webui/rssblock.py:109 exe/webui/editorpane.py:335
 msgid "No emphasis"
 msgstr "គ្មាន​ការ​សង្កត់​សំឡេង"
 
 #: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:93
+#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:105
 #: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
@@ -1367,17 +1371,17 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:47 exe/engine/quiztestidevice.py:97
 #: exe/engine/field.py:2951 exe/engine/field.py:3000
-#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1528
-#: exe/webui/element.py:1811
+#: exe/webui/testoptionelement.py:103 exe/webui/element.py:1580
+#: exe/webui/element.py:1873
 msgid "Option"
 msgstr "ជម្រើស"
 
 #: exe/engine/field.py:3117 exe/engine/field.py:3154
-#: exe/webui/testquestionelement.py:106 exe/webui/element.py:1683
+#: exe/webui/testquestionelement.py:110 exe/webui/element.py:1739
 msgid "Options"
 msgstr "ជម្រើស"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/appletblock.py:90
+#: exe/webui/wikipediablock.py:127 exe/webui/appletblock.py:99
 msgid "Other"
 msgstr "ផ្សេងទៀត"
 
@@ -1385,11 +1389,11 @@ msgstr "ផ្សេងទៀត"
 msgid "Outline"
 msgstr "គ្រោង"
 
-#: exe/webui/wikipediablock.py:130
+#: exe/webui/wikipediablock.py:142
 msgid "Own site"
 msgstr "តំបន់​បណ្ដាញ​ផ្ទាល់ខ្លួន"
 
-#: exe/xului/mainpage.py:850
+#: exe/xului/mainpage.py:859
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "បាន​ស្រង់​កញ្ចប់​ចេញ​ទៅ ៖ %s"
@@ -1399,12 +1403,12 @@ msgstr "បាន​ស្រង់​កញ្ចប់​ចេញ​ទៅ �
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "កញ្ចប់​គឺ​ចាស់ ។ សូម​ធ្វើ​ឲ្យ​វា​ប្រសើរ​ឡើង (ដោយប្រើ ឯកសារ..បើក រួច​ហើយ ឯកសារ..រក្សាទុក​ជា) មុនពេល​បញ្ចូល​វា​ទៅ​ក្នុង​កញ្ចប់​មួយ​ផ្សេង​ទៀត !"
 
-#: exe/xului/mainpage.py:315
+#: exe/xului/mainpage.py:316
 #, python-format
 msgid "Package saved to: %s"
 msgstr "បាន​រក្សាទុក​កញ្ចប់​ទៅ ៖ %s"
 
-#: exe/webui/block.py:240 exe/webui/editorpane.py:373
+#: exe/webui/block.py:251 exe/webui/editorpane.py:373
 msgid "Pedagogical Help"
 msgstr "ជំនួយ​ខាង​ផ្នែក​​គរុកោសល្យ"
 
@@ -1420,19 +1424,19 @@ msgstr "សូម​បញ្ចូល​ឈ្មោះ idevice ។"
 msgid "Please enter<br />an idevice name."
 msgstr "សូម​បញ្ចូល<br />ឈ្មោះ idevice ។"
 
-#: exe/webui/element.py:1299
+#: exe/webui/element.py:1347
 msgid "Please select a .flv file."
 msgstr "សូម​ជ្រើស​ឯកសារ .flv ។"
 
-#: exe/webui/element.py:817
+#: exe/webui/element.py:848
 msgid "Please select a .jpg file."
 msgstr "សូម​ជ្រើស​ឯកសារ .jpg ។"
 
-#: exe/webui/multichoiceblock.py:86 exe/webui/quiztestblock.py:93
+#: exe/webui/multichoiceblock.py:94 exe/webui/quiztestblock.py:102
 msgid "Please select a correct answer for each question."
 msgstr "សូម​ជ្រើស​ចម្លើយ​ត្រឹមត្រូវ សម្រាប់​សំណួរ​នីមួយៗ ។"
 
-#: exe/webui/appletblock.py:72
+#: exe/webui/appletblock.py:80
 msgid "Please upload a .ggb file."
 msgstr "សូម​ផ្ទុកឡើង​ឯកសារ .ggb ។"
 
@@ -1450,11 +1454,11 @@ msgstr ""
 msgid "Please wait until loading finishes"
 msgstr "សូម​រង់ចាំ រហូត​ទាល់​តែការ​​ផ្ទុក​ចប់"
 
-#: exe/webui/wikipediablock.py:106
+#: exe/webui/wikipediablock.py:118
 msgid "Polish Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​ប៉ូឡូញ"
 
-#: exe/webui/wikipediablock.py:107
+#: exe/webui/wikipediablock.py:119
 msgid "Portugese Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​ព័រទុយហ្គាល់"
 
@@ -1477,17 +1481,17 @@ msgstr ""
 "<li>        អ្នក​សិក្សា​ត្រូវតែ​មាន​ចំណេះ​ដឹង​ភាសា​អង់គ្លេស​កម្រិត ៤ </li>\n"
 "<li>        អ្នក​សិក្សា​ត្រូវតែ​អាច​ដំឡើង​នូវ​ឧបករណ៍​ដ៏មាន​ថាមពល​​ជាលក្ខណៈ​ស្តង់ដារ </li></ul>\n"
 
-#: exe/webui/element.py:1442 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1490 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "មើល​ជាមុន"
 
-#: exe/xului/mainpage.py:523 exe/xului/mainpage.py:629
+#: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "ថត​មើល​ជាមុន %s គឺ​ជា​ឯកសារ មិន​អាច​ជំនួស​វា​បានទេ"
 
 #: exe/engine/galleryidevice.py:631 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:305 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:314 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "មុន"
 
@@ -1558,7 +1562,7 @@ msgstr ""
 "ផ្ដល់​មតិអ្នកប្រើ​ដែល​ទាក់ទង​នៅលើ \n"
 "ស្ថានភាព ។"
 
-#: exe/webui/block.py:255
+#: exe/webui/block.py:266
 msgid "Purpose"
 msgstr "គោលបំណង"
 
@@ -1573,7 +1577,7 @@ msgstr "សំណួរ"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:120
 #: exe/engine/quiztestidevice.py:128 exe/engine/quiztestidevice.py:220
-#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1660
+#: exe/engine/field.py:3180 exe/engine/field.py:3261 exe/webui/element.py:1716
 msgid "Question:"
 msgstr "សំណួរ ៖"
 
@@ -1626,22 +1630,22 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "សំណួរ​ដែល​ឆ្លើយតប ៖"
 
-#: exe/webui/element.py:1141
+#: exe/webui/element.py:1189
 msgid "Restart"
 msgstr "ចាប់ផ្ដើម​ឡើងវិញ"
 
 #: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:92
+#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:104
 #: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "ត្រឹមត្រូវ"
 
-#: exe/xului/mainpage.py:308
+#: exe/xului/mainpage.py:309
 msgid "SAVE FAILED!"
 msgstr "ការ​រក្សាទុក​បាន​បរាជ័យ !"
 
-#: exe/xului/mainpage.py:312 exe/xului/mainpage.py:601
-#: exe/xului/mainpage.py:892
+#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
+#: exe/xului/mainpage.py:901
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1663,7 +1667,7 @@ msgstr ""
 msgid "SCORM Quiz"
 msgstr "កម្រង​សំណួរ SCORM"
 
-#: exe/webui/quiztestblock.py:140
+#: exe/webui/quiztestblock.py:149
 msgid "SUBMIT ANSWERS"
 msgstr "ដាក់ស្នើ​ចម្លើយ"
 
@@ -1675,7 +1679,7 @@ msgstr "រក្សាទុក"
 msgid "Section"
 msgstr "ផ្នែក"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1233
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1281
 msgid "Select Flash Object"
 msgstr "ជ្រើស​វត្ថុ Flash"
 
@@ -1690,27 +1694,27 @@ msgid "Select MP3 file"
 msgstr "ជ្រើស​ឯកសារ MP3"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:758
+#: exe/webui/element.py:789
 msgid "Select a file"
 msgstr "ជ្រើស​​ឯកសារ"
 
-#: exe/webui/element.py:1315
+#: exe/webui/element.py:1363
 msgid "Select a flash video"
 msgstr "ជ្រើស​វីដេអូ flash"
 
-#: exe/webui/element.py:1428
+#: exe/webui/element.py:1476
 msgid "Select a font size: "
 msgstr "ជ្រើស​ទំហំ​ពុម្ពអក្សរ ៖ "
 
-#: exe/webui/element.py:546
+#: exe/webui/element.py:577
 msgid "Select an MP3"
 msgstr "ជ្រើស MP3"
 
-#: exe/webui/element.py:459
+#: exe/webui/element.py:490
 msgid "Select an image"
 msgstr "ជ្រើស​រូបភាព"
 
-#: exe/webui/element.py:862
+#: exe/webui/element.py:899
 msgid "Select an image (JPG file)"
 msgstr "ជ្រើស​រូបភាព (ឯកសារ JPG)"
 
@@ -1722,7 +1726,7 @@ msgstr ""
 "ជ្រើស​ជម្រើស​ចម្លើយ​ត្រឹមត្រូវ​ច្រើន \n"
 "តាម​ដែលត្រូវ​ការ ដោយ​ចុច​ប្រអប់​ធីក​នៅ​ជាប់​នឹង​ជម្រើស ។"
 
-#: exe/webui/quiztestblock.py:104
+#: exe/webui/quiztestblock.py:113
 msgid "Select pass rate: "
 msgstr "ជ្រើស​អត្រា​ដែល​ជាប់ ៖ "
 
@@ -1768,49 +1772,49 @@ msgstr ""
 msgid "Settings saved"
 msgstr "ការ​កំណត់​ត្រូវបាន​រក្សាទុក"
 
-#: exe/webui/galleryblock.py:300
+#: exe/webui/galleryblock.py:317
 #, python-format
 msgid "Show %s Image"
 msgstr "បង្ហាញ​រូបភាព %s"
 
-#: exe/webui/element.py:1148
+#: exe/webui/element.py:1196
 msgid "Show Answers"
 msgstr "បង្ហាញ​ចម្លើយ"
 
-#: exe/webui/questionelement.py:126 exe/webui/element.py:1734
+#: exe/webui/questionelement.py:129 exe/webui/element.py:1790
 msgid "Show Feedback"
 msgstr "បង្ហាញ​មតិអ្នកប្រើ"
 
-#: exe/webui/element.py:1132
+#: exe/webui/element.py:1180
 msgid "Show/Clear Answers"
 msgstr "បង្ហាញ/​ជម្រះ​ចម្លើយ"
 
-#: exe/webui/element.py:1127
+#: exe/webui/element.py:1175
 msgid "Show/Hide Feedback"
 msgstr "បង្ហាញ/​លាក់​មតិ​អ្នកប្រើ"
 
-#: exe/webui/wikipediablock.py:120
+#: exe/webui/wikipediablock.py:132
 msgid "Site"
 msgstr "តំបន់​បណ្ដាញ"
 
-#: exe/webui/imagemagnifierblock.py:148
+#: exe/webui/imagemagnifierblock.py:160
 msgid "Size of magnifying glass: "
 msgstr "ទំហំ​កែវពង្រីក ៖ "
 
-#: exe/webui/wikipediablock.py:108
+#: exe/webui/wikipediablock.py:120
 msgid "Slovenian Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​ស្លូវ៉ានី"
 
-#: exe/webui/imagemagnifierblock.py:143
+#: exe/webui/imagemagnifierblock.py:155
 msgid "Small"
 msgstr "តូច"
 
-#: exe/webui/wikipediablock.py:140 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:98 exe/webui/editorpane.py:336
+#: exe/webui/wikipediablock.py:152 exe/webui/multimediablock.py:101
+#: exe/webui/rssblock.py:110 exe/webui/editorpane.py:336
 msgid "Some emphasis"
 msgstr "ការ​សង្កត់​សំឡេង​មួយ​ចំនួន"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1092
+#: exe/application.py:273 exe/xului/mainpage.py:1101
 msgid "Sorry, wrong file format"
 msgstr "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ"
 
@@ -1818,7 +1822,7 @@ msgstr "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រា�
 msgid "Sorry, wrong file format."
 msgstr "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ ។"
 
-#: exe/xului/mainpage.py:1090
+#: exe/xului/mainpage.py:1099
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1827,7 +1831,7 @@ msgstr ""
 "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ ៖\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:109
+#: exe/webui/wikipediablock.py:121
 msgid "Spanish Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​អេស្ប៉ាញ"
 
@@ -1835,19 +1839,19 @@ msgstr "អត្ថបទ​វីគីភីឌៀ​​អេស្ប៉ា
 msgid "Story:"
 msgstr "រឿងរ៉ាវ ៖"
 
-#: exe/webui/element.py:1031
+#: exe/webui/element.py:1079
 msgid "Strict Marking?"
 msgstr "សម្គាល់​យ៉ាង​តឹងរឹង​ឬ ?"
 
-#: exe/webui/element.py:1136 exe/webui/editorpane.py:424
+#: exe/webui/element.py:1184 exe/webui/editorpane.py:424
 msgid "Submit"
 msgstr "ដាក់ស្នើ"
 
-#: exe/webui/quiztestblock.py:360
+#: exe/webui/quiztestblock.py:369
 msgid "Submit Answer"
 msgstr "ដាក់ស្នើ​ចម្លើយ"
 
-#: exe/webui/wikipediablock.py:110
+#: exe/webui/wikipediablock.py:122
 msgid "Swedish Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​ស៊ុយអែត"
 
@@ -1958,7 +1962,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "ប្រអប់​គោលបំណង អនុញ្ញាត​ឲ្យ​អ្នក​ពិពណ៌នា​អំពី​គោលបំណង​បម្រុង​​នៃ iDevice របស់​អ្នក​ចំពោះ​អ្នកប្រើ​ដែល​មាន​សក្ដានុភាព​ផ្សេងទៀត ។"
 
-#: exe/webui/wikipediablock.py:204
+#: exe/webui/wikipediablock.py:216
 msgid "This article is licensed under the "
 msgstr "អត្ថបទ​នេះ​ស្ថិតក្រោម​អាជ្ញាបណ្ណ "
 
@@ -2004,7 +2008,7 @@ msgstr ""
 msgid "This is an optional field."
 msgstr "នេះ​ជា​វាល​ស្រេចចិត្ត ។"
 
-#: exe/webui/block.py:214
+#: exe/webui/block.py:225
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
@@ -2012,11 +2016,11 @@ msgstr ""
 "វា​នឹង​លុប iDevice នេះ ។\n"
 "តើ​អ្នក​ពិតជា​ចង់​លុប​មែន​ឬ ?"
 
-#: exe/webui/block.py:259
+#: exe/webui/block.py:270
 msgid "Tip:"
 msgstr "ព័ត៌មាន​ជំនួយ ៖"
 
-#: exe/webui/galleryblock.py:184
+#: exe/webui/galleryblock.py:201
 msgid "Title"
 msgstr "ចំណងជើង"
 
@@ -2032,7 +2036,7 @@ msgstr ""
 msgid "Topic"
 msgstr "ប្រធាន​បទ"
 
-#: exe/webui/truefalseelement.py:108 exe/webui/truefalseelement.py:181
+#: exe/webui/truefalseelement.py:114 exe/webui/truefalseelement.py:187
 msgid "True"
 msgstr "ត្រូវ"
 
@@ -2106,7 +2110,7 @@ msgstr ""
 "និង​មាន​អត្ថន័យ​ច្បាស់លាស់ ។ ជៀសវាង​ពី​ការ​សន្មត់​អវិជ្ជមាន \n"
 "ដោយសារ​តែ​​មាន​ភាព​មិនច្បាស់លាស់ ។"
 
-#: exe/webui/externalurlblock.py:61
+#: exe/webui/externalurlblock.py:65
 msgid "URL:"
 msgstr "URL ៖"
 
@@ -2123,6 +2127,10 @@ msgstr "មិនអាច​ផ្ទុក​មតិព័ត៌មាន RS
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "មិនអាច​​បញ្ចូល​​គ្នា​បានទេ ៖ ស្ទួន​ឈ្មោះ​ធនធាន​អាប់ភ្លេត Java ដែលមាន (រួមមាន ៖ \""
+
+#: exe/webui/block.py:218
+msgid "Undo Edits"
+msgstr ""
 
 #: exe/engine/package.py:83
 msgid "Unit"
@@ -2157,7 +2165,7 @@ msgstr ""
 "សិក្សា និង​អនុវត្ត ដោយប្រើ​ព័ត៌មាន ឬ​ជំនាញ ។\n"
 " "
 
-#: exe/webui/appletblock.py:111
+#: exe/webui/appletblock.py:120
 msgid "Upload"
 msgstr "ផ្ទុក​ឡើង"
 
@@ -2225,23 +2233,23 @@ msgstr ""
 msgid "Wiki Article"
 msgstr "អត្ថបទ​វីគី"
 
-#: exe/webui/wikipediablock.py:111
+#: exe/webui/wikipediablock.py:123
 msgid "Wikibooks Article"
 msgstr "អត្ថបទ Wikibooks"
 
-#: exe/webui/wikipediablock.py:114
+#: exe/webui/wikipediablock.py:126
 msgid "Wikieducator Content"
 msgstr "មាតិកា Wikieducator"
 
-#: exe/webui/wikipediablock.py:112
+#: exe/webui/wikipediablock.py:124
 msgid "Wikiversity"
 msgstr "Wikiversity"
 
-#: exe/webui/wikipediablock.py:113
+#: exe/webui/wikipediablock.py:125
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: exe/webui/element.py:1906
+#: exe/webui/element.py:1969
 msgid "Wrong"
 msgstr "ខុស"
 
@@ -2253,15 +2261,15 @@ msgstr "អ្នកអាច​ប្រើ​របារ​ឧបករណ៍
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "iDevice ថ្មី​របស់​អ្នក​នឹង​បង្ហាញ​នៅ​ក្នុង​ស្លាបព្រិល iDevice ដោយ​មាន​ចំណងជើង​ផង ។ នេះ​ជា​វាល​ចាំបាច់ ហើយ​អ្នក​គឺ​ត្រូវ​បញ្ចូល​ស្លាក នៅពេល​ដែល​អ្នក​ដាក់ស្នើ iDevice ដោយគ្មានស្លាក ។"
 
-#: exe/webui/wikipediablock.py:219
+#: exe/webui/wikipediablock.py:231
 msgid "article "
 msgstr "អត្ថបទ "
 
-#: exe/webui/element.py:476 exe/webui/element.py:884
+#: exe/webui/element.py:507 exe/webui/element.py:921
 msgid "blank for original size"
 msgstr "ទទេ ដើម្បី​ប្រើ​ទំហំ​ដើម"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:262
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:271
 msgid "eXe"
 msgstr "eXe"
 
@@ -2293,7 +2301,7 @@ msgstr "iDevice %s មិនមាន​កញ្ចប់​ទេ"
 msgid "iDevice Editor"
 msgstr "កម្មវិធី​និពន្ធ iDevice"
 
-#: exe/webui/block.py:309
+#: exe/webui/block.py:320
 msgid "iDevice icon"
 msgstr "រូបតំណាង iDevice"
 
@@ -2309,7 +2317,7 @@ msgstr "កូដ​សោ"
 msgid "label"
 msgstr "ស្លាក"
 
-#: exe/webui/element.py:1425
+#: exe/webui/element.py:1473
 msgid "newline"
 msgstr "បន្ទាត់​ថ្មី"
 
@@ -2317,7 +2325,7 @@ msgstr "បន្ទាត់​ថ្មី"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr "ប្ដូរ​ឈ្មោះ​ធនធាន​សម្រាប់ Idevice អាប់ភ្លេត ហើយមិនគួរ​ធ្វើ​ដូចនេះ​ច្រើនដង​ពេកទេ !"
 
-#: exe/webui/element.py:1424
+#: exe/webui/element.py:1472
 msgid "text"
 msgstr "អត្ថបទ"
 
@@ -3052,10 +3060,9 @@ msgid "Avestan "
 msgstr "អាវែស្តង់"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
-#: accesskey="m" label="eXe Manual">
+#: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
 #, fuzzy
-msgid "label=\"eXe Manual\" accesskey=\"m\""
+msgid "label=\"eXe Tutorial\" accesskey=\"u\""
 msgstr "label=\"សៀវភៅ​ដៃ eXe លើ​បណ្ដាញ\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
@@ -3064,14 +3071,26 @@ msgid "Aymara "
 msgstr "អាយម៉ារ៉ា​"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"ឯកសារ​ចេញ​ផ្សាយ\" accesskey=\"n\""
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
+msgstr "label=\"សៀវភៅ​ដៃ eXe លើ​បណ្ដាញ\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 msgid "Azerbaijani "
 msgstr "អាហ្ស៊ែរបែហ្ស៊ង់ "
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"ឯកសារ​ចេញ​ផ្សាយ\" accesskey=\"n\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: label="Bashkir ">
+msgid "Bashkir "
+msgstr "បាសគៀរ "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
@@ -3080,10 +3099,10 @@ msgstr "អាហ្ស៊ែរបែហ្ស៊ង់ "
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
 msgstr "label=\"ជជែក​បន្តផ្ទាល់​របស់ eXe\" accesskey=\"c\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
-msgid "Bashkir "
-msgstr "បាសគៀរ "
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
+#: label="Basque ">
+msgid "Basque "
+msgstr "​​បាស្កេ"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
@@ -3091,10 +3110,10 @@ msgstr "បាសគៀរ "
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"រាយការណ៍​​បញ្ហា\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
-msgid "Basque "
-msgstr "​​បាស្កេ"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: label="Bengali; Bangla ">
+msgid "Bengali; Bangla "
+msgstr "​បេន្កាលី បង់ហ្គ្លា"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
@@ -3102,60 +3121,60 @@ msgstr "​​បាស្កេ"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"ជជែក​បន្តផ្ទាល់​របស់ eXe\" accesskey=\"c\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
-msgid "Bengali; Bangla "
-msgstr "​បេន្កាលី បង់ហ្គ្លា"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "Bihari "
+msgstr "បិហារី "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"អំពី eXe\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
-msgid "Bihari "
-msgstr "បិហារី "
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "Bislama "
+msgstr "បីសឡាម៉ា"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo">
 msgid "debugInfo"
 msgstr "ព័ត៌មាន​បំបាត់​កំហុស"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
-msgid "Bislama "
-msgstr "បីសឡាម៉ា"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: label="Bosnian ">
+msgid "Bosnian "
+msgstr "បូស្នី "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
 msgstr "បន្ថែម​ទំព័រ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
-msgid "Bosnian "
-msgstr "បូស្នី "
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr "ប្រេតុង"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
 msgstr "ប្ដូរ​ឈ្មោះ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
-msgstr "ប្រេតុង"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "​​បេឡារុស្ស "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
 msgstr "ស្លាបព្រិល​គ្រោង"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "​​បេឡារុស្ស "
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "ប៊ុលហ្គារី "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="promote"
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
@@ -3163,10 +3182,10 @@ msgstr "​​បេឡារុស្ស "
 msgid "Promote node up in hierarchy"
 msgstr "បង្កើន​ថ្នាំង​ឡើង​លើ​ក្នុង​ឋានានុក្រម"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "ប៊ុលហ្គារី "
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "ភូមា "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="demote"
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
@@ -3174,20 +3193,20 @@ msgstr "ប៊ុលហ្គារី "
 msgid "Demote node down in hierarchy"
 msgstr "បន្ថយ​ថ្នាំង​ចុះក្រោម​នៅ​ក្នុង​ឋានានុក្រម"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "ភូមា "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "កាតាឡាន "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
 msgid "Move node up"
 msgstr "ផ្លាស់ទី​ថ្នាំង​​ឡើងលើ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "កាតាឡាន "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr "ចាមូរូ"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
@@ -3195,35 +3214,25 @@ msgstr "កាតាឡាន "
 msgid "Move node down"
 msgstr "ផ្លាស់ទី​ថ្នាំង​​ចុះក្រោម"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr "ចាមូរូ"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "ចេចេន"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
 msgstr "iDevices"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "ចេចេន"
-
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
-msgid "iDevicePane"
-msgstr "ស្លាបព្រិល iDevice"
-
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
 msgid "Chinese "
 msgstr "ចិន"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
-msgid "Authoring"
-msgstr "បង្កើត"
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
+#: value="iDevicePane">
+msgid "iDevicePane"
+msgstr "ស្លាបព្រិល iDevice"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
@@ -3231,14 +3240,19 @@ msgid "Church Slavic "
 msgstr "ឆឺច​ស្លាវិក"
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
-msgid "Properties"
-msgstr "លក្ខណៈ​សម្បត្តិ"
+#: label="Authoring">
+msgid "Authoring"
+msgstr "បង្កើត"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
 msgid "Chuvash "
 msgstr "ជូវ៉ាស"
+
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
+msgid "Properties"
+msgstr "លក្ខណៈ​សម្បត្តិ"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish ">
