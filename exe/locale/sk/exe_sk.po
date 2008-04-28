@@ -1,5 +1,5 @@
 # EXELearning Slovak PO file
-# Copyright (C) 2004-2006 EXELearning.org
+# Copyright (C) 2004-2008 EXELearning.org
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-04-23 10:26+1200\n"
-"PO-Revision-Date: 2008-04-21 03:25+1200\n"
+"PO-Revision-Date: 2008-04-23 22:55+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
 "MIME-Version: 1.0\n"
@@ -486,6 +486,8 @@ msgstr "Zvoľte MP3 súbor"
 #: exe/engine/casestudyidevice.py:63
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr ""
+"Zvolte nepovinný obrázok, ktorý bude zobrazený študentovi po dokončení "
+"otázky"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -494,6 +496,10 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
 msgstr ""
+"Vyberte veľkosť, v ktorej sa má obrázok zobraziť. \n"
+"Jednotky sú pixely. Na predstavu: 100 pixelov sa rovná približne 3cm. \n"
+"Pokiaľ si prajete použiť obrázok v pôvodnej veľkosti,\n"
+"nechajte políčka prázdne."
 
 #: exe/xului/mainpage.py:217
 msgid "Clear Recent Projects List"
@@ -519,24 +525,26 @@ msgstr "Prosím, kliknite"
 
 #: exe/webui/common.py:328 exe/webui/common.py:332
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Kliknite pre doplnenie inštrukcií"
 
 #: exe/webui/reflectionblock.py:113
 msgid "Click here"
 msgstr "Kliknúť sem"
 
 #: exe/engine/field.py:2883
-#, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
-"Vložte text, ktorý chcete priradiť \n"
-"                                 k obrázku."
+"Kliknutím na tlačítko Náhľad pevediete \n"
+"                                  zápis v latexe na obrázok."
 
 #: exe/engine/galleryidevice.py:424
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr ""
+"Na vloženie obrázku kliknite na tlačítko \"Pridať obrázky\". Obrázok sa objaví "
+"dole, kde ho budete môcť doplniť popisom. Býva dobrým zvykom do popisu "
+"vpísať tiež veľkosť obrázku."
 
 #: exe/engine/galleryidevice.py:631 exe/webui/truefalseelement.py:144
 #: exe/webui/truefalseelement.py:145 exe/webui/common.py:337
@@ -567,9 +575,8 @@ msgstr "Správne"
 
 #: exe/webui/testoptionelement.py:100 exe/webui/element.py:1533
 #: exe/webui/element.py:1816
-#, fuzzy
 msgid "Correct Option"
-msgstr "Správne"
+msgstr "Správna voľba"
 
 #: exe/webui/truefalseelement.py:208
 msgid "Correct!"
@@ -578,6 +585,8 @@ msgstr "Správne!"
 #: exe/xului/mainpage.py:1087
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
+"Nepodarilo sa načítať súbor. Prosím pošlite upozornenie mailom na adresu "
+"bugs@exelearning.org"
 
 #: exe/engine/casestudyidevice.py:215
 msgid ""
@@ -586,6 +595,11 @@ msgid ""
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Vytvoriť prípadovú štúdiu.\n"
+"Dobrým príkladom je zachytenie kontroverznej situácie \n"
+"alebo scény popisom chovania zainteresovaných osôb. Mala by sa tiež vziať do "
+"úvahy \n"
+"možnosť reakcie, ktorá napomôže vyriešeniu situácie."
 
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
@@ -622,6 +636,9 @@ msgid ""
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
 msgstr ""
+"Popíšte ako budú študenti hodnotiť \n"
+" svoj výkon po ukončení daného cvičenia. \n"
+"(Táto rubrika je užitočná na poskytnutie spätnej väzby.)"
 
 #: exe/engine/casestudyidevice.py:224
 msgid ""
@@ -630,6 +647,10 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
 msgstr ""
+"Popíšte úlohy vzťahujúce sa k uvedenému prípadu.\n"
+"Mali by byť položené formou otázok či \n"
+"inštrukcií pre aktivitu, ktorá by mala študentov naviesť \n"
+"k vyriešeniu prezentovanej dilemy. "
 
 #: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
 msgid ""
@@ -697,7 +718,7 @@ msgstr "CHYBA: „Block.renderViewContent“ bol volaný priamo"
 #: exe/xului/mainpage.py:739 exe/xului/mainpage.py:742
 #: exe/xului/mainpage.py:745 exe/xului/mainpage.py:943
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "EXPORT ZLYHAL!"
 
 #: exe/xului/mainpage.py:933 exe/xului/mainpage.py:947
 #: exe/xului/mainpage.py:960 exe/xului/mainpage.py:966
@@ -709,6 +730,8 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"EXPORT ZLYHAL!\n"
+"%s"
 
 #: exe/export/imsexport.py:357 exe/export/scormexport.py:452
 #: exe/export/websiteexport.py:88
@@ -717,6 +740,8 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"EXPORT ZLYHAL!\n"
+"Posledný úspešný export je %s."
 
 #: exe/xului/mainpage.py:831 exe/xului/mainpage.py:848
 #, python-format
@@ -724,6 +749,8 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"EXTRAKT ZLYHAL!\n"
+"%s"
 
 #: exe/webui/block.py:333 exe/webui/editorpane.py:266
 #: exe/webui/editorpage.py:270
@@ -733,6 +760,9 @@ msgstr "Upraviť"
 #: twisted/persisted/styles.py:518
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+"Buď váš idevice/generic.data súbor alebo balíček, ktorý načítavate, bol "
+"vytvorený novšou verziou eXe. Aktualizujte, prosím, vašu verziu eXe a skúste "
+"to znovu."
 
 #: exe/webui/wikipediablock.py:142 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:103 exe/webui/editorpane.py:332
@@ -781,7 +811,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:423
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Vložte názov galérie"
 
 #: exe/engine/rssidevice.py:50
 msgid ""
@@ -795,6 +825,17 @@ msgid ""
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Zadajte adresu RSS zdroja, ktorý si prajete vložiť do obsahu.\n"
+"RSS zdroje sú obvykle označené malou ikonou (ako napr. <img src=\"/images"
+"/feed-icon.png\" />) alebo textom \"RSS\".\n"
+"Pokiaľ na ikonu alebo text kliknete, RSS kanál sa zobrazí priamo vo vašom "
+"prehliadači.\n"
+"Kliknutím pravým tlačítkom myši na ikonu sa zobrazí ponuka, \n"
+"zvolte \"Kopírovať adresu odkazu\" a v eXe túto adresu vložte do políčka v RSS "
+"iDevice.\n"
+"Potom stlačte Načítať. Informácie z RSS kanálu sa načítajú a zobrazia sa ako "
+"odkazy.Odtiaľto môžete editovať záložky a pridávať\n"
+"inštrukcie a dodatočné informácie."
 
 #: exe/engine/quiztestidevice.py:122 exe/engine/quiztestidevice.py:185
 msgid ""
@@ -838,6 +879,10 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Vložte možné voľby. \n"
+"Tlačítkom \"Pridať ďalšiu voľbu\" vytvoríte ďalšiu voľbu. \n"
+"Zmazať položku môžete kliknutím na červené \"X\" vedľa odpovede, ktorú si "
+"želáte odstrániť."
 
 #: exe/engine/field.py:3185
 msgid ""
@@ -845,6 +890,10 @@ msgid ""
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Vložte možné voľby. \n"
+"Tlačítkom \"Pridať ďalšiu voľbu\" vytvoríte ďalšiu voľbu. \n"
+"Zmazať položku môžete kliknutím na červené \"X\" vedľa odpovede, ktorú si "
+"želáte odstrániť."
 
 #: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid ""
@@ -852,6 +901,9 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Vložte detaily k výkladu vrátane odkazov. \n"
+"Štýl odkazov závisí na zvyklostiach vašej fakulty či \n"
+" oddelenia."
 
 #: exe/engine/flashwithtextidevice.py:60
 #: exe/engine/flashwithtextidevice.py:120
@@ -860,6 +912,9 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Vložte veľkosť flash ukážky \n"
+" (v pixeloch) a nastavte pozíciu obrázku na obrazovke.\n"
+" Šírka a výška sa zmení proporcionálne."
 
 #: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
 #: exe/webui/editorpane.py:184
