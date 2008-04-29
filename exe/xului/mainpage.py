@@ -778,14 +778,14 @@ class MainPage(RenderableLivePage):
                     'Release_Notes.html')
             f = open(release_notes, 'wt')
             f.write('''<html><head><title>eXe Release Notes</title></head>
-                <body><pre>\n''')
+                <body><h1>News</h1><pre>\n''')
             try:
                 news = open(os.path.join(self.config.webDir, 'NEWS'),
                         'rt').read()
                 readme = open(os.path.join(self.config.webDir, 'README'),
                         'rt').read()
                 f.write(news)
-                f.write('</pre><hr><pre>\n')
+                f.write('</pre><hr><h1>Read Me</h1><pre>\n')
                 f.write(readme)
             except IOError:
                 # fail silently if we can't read either of the files
