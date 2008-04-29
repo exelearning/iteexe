@@ -52,6 +52,10 @@ You could call this function in the onchange handler of a single element passing
 this.parentNode to do auto updates of just this field (and any siblings) if you want.
 -->
 
+<?xul-overlay href="/xultemplates/packageproperties.xul"?>
+<?xul-overlay href="/xultemplates/dublincore.xul"?>
+<?xul-overlay href="/xultemplates/exportproperties.xul"?>
+
 <window title="Package Properties"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:n="http://nevow.com/ns/nevow/0.1"
@@ -59,10 +63,6 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
 
 <n:invisible n:render="liveid"/>
 <n:invisible n:render="liveglue"/>
-
-<?xul-overlay href="/xultemplates/packageproperties.xul"?>
-<?xul-overlay href="/xultemplates/dublincore.xul"?>
-<?xul-overlay href="/xultemplates/exportproperties.xul"?>
 
   <script>
   <![CDATA[
