@@ -3,6 +3,7 @@
 # setup.py
 import glob
 import os
+import time
 import subprocess
 from distutils.command.install import install
 from distutils.core            import setup
@@ -17,13 +18,17 @@ try:
 except OSError:
     pass
 
+revision = None
 try:
     psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
     psvn.wait()
     revision = psvn.stdout.read().strip()
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 except OSError:
     print "*** Warning: 'svnversion' tool not available to update revision number"
+finally:
+    if revision is None or revision == 'exported':
+        revision = time.strftime('%Y%m%d%H%M')
+    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 
 from exe.engine                import version
 
