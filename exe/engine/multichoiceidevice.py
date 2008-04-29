@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +27,7 @@ from exe.engine.idevice   import Idevice
 from exe.engine.field     import QuizQuestionField, QuizOptionField
 from exe.engine.translate import lateTranslate
 from exe                  import globals as G
+import re
 log = logging.getLogger(__name__)
 
 
@@ -155,6 +157,124 @@ for the other options.""")
             fields_list.extend(this_question.getRichTextFields())
 
         return fields_list
+
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Multi-choice Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
+
+        inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
+        # copied and modified from CaseStudy:
+
+        mc_questions = inner.findAll(name='div', attrs={'class' : 'question'})
+        if len(mc_questions) < 1:
+            # need to remove the default 1st question
+            del self.questions[0]
+
+        for question_num in range(len(mc_questions)):
+            if question_num > 0:
+                # only created with the first question, add others:
+                self.addQuestion()
+
+            question = mc_questions[question_num]
+
+            questions = question.findAll(name='div', 
+                    attrs={'class' : 'block' , 
+                    'id' : re.compile('^taquestion') })
+            if len(questions) == 1:
+                # ELSE: should warn of unexpected result!
+                inner_question = questions[0]
+                self.questions[question_num].questionTextArea.content_wo_resourcePaths \
+                        = inner_question.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].questionTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].questionTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].questionTextArea.content_wo_resourcePaths)
+                self.questions[question_num].questionTextArea.content = \
+                        self.questions[question_num].questionTextArea.content_w_resourcePaths
+
+
+            hints = question.findAll(name='div', 
+                    attrs={'class' : 'block' , 'id' : re.compile('^tahint') })
+            if len(hints) == 1:
+                # no warning otherwise, since hint is optional
+                inner_hint = hints[0]
+                self.questions[question_num].hintTextArea.content_wo_resourcePaths \
+                        = inner_hint.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].hintTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].hintTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].hintTextArea.content_wo_resourcePaths)
+                self.questions[question_num].hintTextArea.content = \
+                        self.questions[question_num].hintTextArea.content_w_resourcePaths
+            else:
+                self.questions[question_num].hintTextArea.content = ""
+                self.questions[question_num].hintTextArea.content_w_resourcePaths \
+                        = ""
+                self.questions[question_num].hintTextArea.content_wo_resourcePaths \
+                        = ""
+            options = question.findAll(name='div', 
+                    attrs={'class' : 'block' , 'id' : re.compile('^taans') })
+            feedbacks = question.findAll(name='div', 
+                    attrs={'id' : re.compile('^sa') })
+            # the feedbacks now have the correctness
+            # of the option embedded as well, in the even_steven :-)
+            #####
+            # NOTE also that feedbacks will just have Correct or Wrong
+            # (perhaps translated? but no divs, that's the important part!)
+            # but if one was defined, it will appear in a div such as:
+            # <div id="taf18_5" class="block" style="display:block">FB</div> 
+            if len(options) < 1:
+                # need to remove the default 1st option
+                del self.questions[question_num].options[0]
+
+            for option_loop in range(0, len(options)):
+                if option_loop >= 1:
+                    # more options than created by default:
+                    self.questions[question_num].addOption()
+
+                self.questions[question_num].options[option_loop].answerTextArea.content_wo_resourcePaths \
+                        = options[option_loop].renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].options[option_loop].answerTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].options[option_loop].answerTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].options[option_loop].answerTextArea.content_wo_resourcePaths)
+                self.questions[question_num].options[option_loop].answerTextArea.content \
+                        = self.questions[question_num].options[option_loop].answerTextArea.content_w_resourcePaths
+
+                inner_feedback = feedbacks[option_loop].find(name='div', 
+                        id=re.compile('^taf')) 
+                if inner_feedback:
+                    self.questions[question_num].options[option_loop].feedbackTextArea.content_wo_resourcePaths \
+                            = inner_feedback.renderContents().decode('utf-8')
+                    # and add the LOCAL resource paths back in:
+                    self.questions[question_num].options[option_loop].feedbackTextArea.content_w_resourcePaths \
+                            = self.questions[question_num].options[option_loop].feedbackTextArea.MassageResourceDirsIntoContent( \
+                                self.questions[question_num].options[option_loop].feedbackTextArea.content_wo_resourcePaths)
+                    self.questions[question_num].options[option_loop].feedbackTextArea.content \
+                            = self.questions[question_num].options[option_loop].feedbackTextArea.content_w_resourcePaths
+                else:
+                    # no user-defined feedback, just using the default:
+                    self.questions[question_num].options[option_loop].feedbackTextArea.content \
+                            = ""
+                    self.questions[question_num].options[option_loop].feedbackTextArea.content_w_resourcePaths \
+                            = ""
+                    self.questions[question_num].options[option_loop].feedbackTextArea.content_wo_resourcePaths \
+                            = ""
+
+                # and finally, see if this is a correct answer:
+                even_score = int(feedbacks[option_loop].attrMap['even_steven'])
+                if not (even_score % 2):
+                    # i.e., if it IS even, then this is correct:
+                    self.questions[question_num].options[option_loop].isCorrect \
+                            = True
+
+                            
+
 
     def upgradeToVersion1(self):
         """

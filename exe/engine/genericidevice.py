@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,6 +26,7 @@ from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
 from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField 
 from exe.engine.field   import ImageField, AttachmentField
+import re
 import logging
 log = logging.getLogger(__name__)
 
@@ -151,6 +153,66 @@ class GenericIdevice(Idevice):
                     fields_list.append(this_field)
 
         return fields_list
+
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Generic Idevice, with content in fields[]:
+        title = i.find(name='span', 
+                attrs={'class' : 'iDeviceTitle' }) 
+        self.title = title.renderContents().decode('utf-8') 
+
+        if self.class_ in ("objectives", "activity", "preknowledge", "generic"):
+            inner = i.find(name='div', 
+                attrs={'class' : 'iDevice_inner' }) 
+            inner_content = inner.find(name='div', 
+                    attrs={'id' : re.compile('^ta') }) 
+            self.fields[0].content_wo_resourcePaths = \
+                inner_content.renderContents().decode('utf-8') 
+            # and add the LOCAL resources back in: 
+            self.fields[0].content_w_resourcePaths = \
+                self.fields[0].MassageResourceDirsIntoContent( \
+                self.fields[0].content_wo_resourcePaths)
+            self.fields[0].content = self.fields[0].content_w_resourcePaths
+
+        elif self.class_ == "reading":
+            readings = i.findAll(name='div', attrs={'id' : re.compile('^ta') }) 
+            # should be exactly two of these:                    
+            # 1st = field[0] == What to Read 
+            if len(readings) >= 1: 
+                self.fields[0].content_wo_resourcePaths = \
+                        readings[0].renderContents().decode('utf-8') 
+                # and add the LOCAL resource paths back in:
+                self.fields[0].content_w_resourcePaths = \
+                    self.fields[0].MassageResourceDirsIntoContent( \
+                        self.fields[0].content_wo_resourcePaths)
+                self.fields[0].content = \
+                    self.fields[0].content_w_resourcePaths
+            # 2nd = field[1] == Activity
+            if len(readings) >= 2: 
+                self.fields[1].content_wo_resourcePaths = \
+                        readings[1].renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.fields[1].content_w_resourcePaths = \
+                    self.fields[1].MassageResourceDirsIntoContent(\
+                        self.fields[1].content_wo_resourcePaths)
+                self.fields[1].content = \
+                    self.fields[1].content_w_resourcePaths
+            # if available, feedback is the 3rd field:
+            feedback = i.find(name='div', attrs={'class' : 'feedback' , \
+                    'id' : re.compile('^fb')  })
+            if feedback is not None:
+                self.fields[2].content_wo_resourcePaths = \
+                    feedback.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.fields[2].content_w_resourcePaths = \
+                    self.fields[2].MassageResourceDirsIntoContent( \
+                        self.fields[2].content_wo_resourcePaths)
+                self.fields[2].content = \
+                        self.fields[2].content_w_resourcePaths
+
         
  
     def upgradeToVersion1(self):

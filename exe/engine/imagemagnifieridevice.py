@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -111,6 +112,28 @@ as a percentage of the original image size""")
 
         return fields_list
 
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # ImageMagnifier Idevice:
+        #======> WARNING - NOT YET BURSTING!!!!!!!!
+
+        #title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        #idevice.title = title.renderContents().decode('utf-8')
+        # no title for this idevice
+        # WARNING: not yet loading the image or its parameters:
+        # Could be in the following tag:
+        # <param name="FlashVars" \
+        #   value="glassSize=2&height=189&width=267 \
+        #   &initialZoomSize=100&file=sunflowers.jpg \
+        #   &maxZoomSize=150&targetColor=#FF0000&borderWidth=12
+                    
+        #inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
+        #idevice.fields[0].content = inner.renderContents().decode('utf-8')
+        #idevice.fields[0].content_w_resourcePaths = inner.renderContents().decode('utf-8')
+        #idevice.fields[0].content_wo_resourcePaths = inner.renderContents().decode('utf-8')
 
     def upgradeToVersion1(self):
         """

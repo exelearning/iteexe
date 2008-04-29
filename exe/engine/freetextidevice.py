@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -74,6 +75,34 @@ text through the text editing buttons associated with the field."""),
         if hasattr(self, 'content'):
             fields_list.append(self.content)
         return fields_list
+
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Free Text Idevice:
+        #title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        #idevice.title = title.renderContents().decode('utf-8')
+        # no title for this iDevice.
+
+        # FreeText is also a catch-all idevice for any other which
+        # is unable to be burst on its own.
+        if i.attrMap['class']=="FreeTextIdevice":
+            # For a REAL FreeText, just read the inner div with class:
+            inner = i.find(name='div', 
+                attrs={'class' : 'block' , 'style' : 'display:block' })
+        else:
+            # But for all others, read the whole thing:
+            inner = i
+
+        self.content.content_wo_resourcePaths = \
+                inner.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.content.content_w_resourcePaths = \
+                self.content.MassageResourceDirsIntoContent( \
+                    self.content.content_wo_resourcePaths)
+        self.content.content = self.content.content_w_resourcePaths
         
     def upgradeToVersion1(self):
         """

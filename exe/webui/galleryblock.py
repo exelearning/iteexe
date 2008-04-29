@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007 New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -332,7 +332,9 @@ class GalleryBlock(Block):
                         u'          <img class="gallery" alt="%s"' % title,
                         u'               src="%s"/>' % urllib.quote(image.thumbnailSrc),
                         u'        </a>',
-                        u'        <div style="align:center;width=100%">',
+                        u'         <div class="gallery_image" value="%s"></div>'\
+                                % urllib.quote(image.imageSrc),
+                        u'        <div class="caption" style="align:center;width=100%">',
                         u'          %s' % (image.caption or '&nbsp;'),
                         u'        </div>']
             html = self._generateTable(genCell)
@@ -363,6 +365,12 @@ class GalleryBlock(Block):
                      u'<span class="iDeviceTitle">',      
                      self.idevice.title,
                      '</span><br/>']
+            popup = ""
+            if self.idevice._htmlResource is not None:
+                popup = self.idevice.htmlSrc
+            html += [u'<div class="gallery_popup" value="%s"></div>' \
+                    % popup]
+
             html += [self.renderViewContent()]
             html += [u'</div>']
             return u'\n    '.join(html)

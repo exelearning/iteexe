@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,6 +25,8 @@ i.e. the "package".
 import logging
 import time
 import zipfile 
+import re
+from xml.dom                   import minidom
 from exe.engine.path           import Path, TempDirPath, toUnicode
 from exe.engine.node           import Node
 from exe.engine.genericidevice import GenericIdevice
@@ -34,8 +36,211 @@ from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import Versioned, doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
+from exe.engine.beautifulsoup  import BeautifulSoup
 
 log = logging.getLogger(__name__)
+
+
+def clonePrototypeIdevice(title):
+    idevice = None
+
+    for prototype in G.application.ideviceStore.getIdevices(): 
+        if prototype.get_title() == title:
+            log.debug('have prototype of:' + prototype.get_title()) 
+            idevice = prototype.clone() 
+            idevice.edit = False
+            break 
+
+    return idevice
+
+def burstIdevice(idev_type, i, node): 
+    # given the iDevice type and the BeautifulSoup fragment i, burst it:
+    idevice = clonePrototypeIdevice(idev_type)
+    if idevice is None:
+        log.warn("unable to clone " + idev_type + " idevice")
+        freetext_idevice = clonePrototypeIdevice('Free Text')
+        if freetext_idevice is None:
+            log.error("unable to clone Free Text for " + idev_type 
+                    + " idevice")
+            return
+        idevice = freetext_idevice
+
+    # For idevices such as GalleryImage, where resources are being attached,
+    # the idevice should already be attached to a node before bursting it open:
+    node.addIdevice(idevice)
+
+    idevice.burstHTML(i)
+    return idevice
+
+def loadNodesIdevices(node, s):
+    soup = BeautifulSoup(s)
+    body = soup.find('body')
+
+    if body:
+        idevices = body.findAll(name='div', 
+                attrs={'class' : re.compile('Idevice$') })
+        if len(idevices) > 0:
+            for i in idevices: 
+                # WARNING: none of the idevices yet re-attach their media,
+                # but they do attempt to re-attach images and other links.
+
+                if i.attrMap['class']=="activityIdevice":
+                    idevice = burstIdevice('Activity', i, node)
+                elif i.attrMap['class']=="objectivesIdevice":
+                    idevice = burstIdevice('Objectives', i, node)
+                elif i.attrMap['class']=="preknowledgeIdevice":
+                    idevice = burstIdevice('Preknowledge', i, node)
+                elif i.attrMap['class']=="readingIdevice":
+                    idevice = burstIdevice('Reading Activity', i, node)
+                # the above are all Generic iDevices;
+                # below are all others:
+                elif i.attrMap['class']=="RssIdevice":
+                    idevice = burstIdevice('RSS', i, node)
+                elif i.attrMap['class']=="WikipediaIdevice":
+                    # WARNING: Wiki problems loading images with accents, etc:
+                    idevice = burstIdevice('Wiki Article', i, node)
+                elif i.attrMap['class']=="ReflectionIdevice":
+                    idevice = burstIdevice('Reflection', i, node)
+                elif i.attrMap['class']=="GalleryIdevice":
+                    # WARNING: Gallery problems with the popup html:
+                    idevice = burstIdevice('Image Gallery', i, node)
+                elif i.attrMap['class']=="ImageMagnifierIdevice":
+                    # WARNING: Magnifier missing major bursting components:
+                    idevice = burstIdevice('Image Magnifier', i, node)
+                elif i.attrMap['class']=="AppletIdevice":
+                    # WARNING: Applet missing file bursting components:
+                    idevice = burstIdevice('Java Applet', i, node)
+                elif i.attrMap['class']=="ExternalUrlIdevice":
+                    idevice = burstIdevice('External Web Site', i, node)
+                elif i.attrMap['class']=="ClozeIdevice":
+                    idevice = burstIdevice('Cloze Activity', i, node)
+                elif i.attrMap['class']=="FreeTextIdevice":
+                    idevice = burstIdevice('Free Text', i, node)
+                elif i.attrMap['class']=="CasestudyIdevice":
+                    idevice = burstIdevice('Case Study', i, node)
+                elif i.attrMap['class']=="MultichoiceIdevice":
+                    idevice = burstIdevice('Multi-choice', i, node)
+                elif i.attrMap['class']=="MultiSelectIdevice":
+                    idevice = burstIdevice('Multi-select', i, node)
+                elif i.attrMap['class']=="QuizTestIdevice":
+                    idevice = burstIdevice('SCORM Quiz', i, node)
+                elif i.attrMap['class']=="TrueFalseIdevice":
+                    idevice = burstIdevice('True-False Question', i, node)
+                else:
+                    # NOTE: no custom idevices burst yet,
+                    # nor any deprecated idevices. Just burst into a FreeText:
+                    log.warn("unburstable idevice " + i.attrMap['class'] + 
+                            "; bursting into Free Text")
+                    idevice = burstIdevice('Free Text', i, node)
+
+        else:
+            # no idevices listed on this page,
+            # just create a free-text for the entire page:
+            log.warn("no idevices found on this node, bursting into Free Text.")
+            idevice = burstIdevice('Free Text', i, node)
+
+    else:
+        log.warn("unable to read the body of this node.")
+
+
+def test_for_node(html_content):
+    # to see if this html really is an exe-generated node
+    exe_string = u"<!-- Created using eXe: http://exelearning.org -->"
+    if html_content.decode('utf-8').find(exe_string) >= 0:
+        return True
+    else:
+        return False
+
+def loadNode(pass_num, resourceDir, zippedFile, node, doc, item, level):
+    # populate this node
+    # 1st pass = merely unzipping all resources such that they are available,
+    # 2nd pass = loading the actual node idevices.
+    titles = item.getElementsByTagName('title')
+    node.setTitle(titles[0].firstChild.data)
+    node_resource = item.attributes['identifierref'].value
+    log.debug('*' * level + ' ' + titles[0].firstChild.data + '->' + item.attributes['identifierref'].value)
+
+    for resource in doc.getElementsByTagName('resource'):
+        if resource.attributes['identifier'].value == node_resource:
+            for file in resource.childNodes:
+                if file.nodeName == 'file':
+                    filename = file.attributes['href'].value
+
+                    is_exe_node_html = False
+                    if filename.endswith('.html') \
+                    and filename != "fdl.html" \
+                    and not filename.startswith("galleryPopup"):
+                        # fdl.html is the wikipedia license, ignore it
+                        # as well as any galleryPopups:
+                        is_exe_node_html = \
+                                test_for_node(zippedFile.read(filename))
+
+                    if is_exe_node_html:
+                        if pass_num == 1:
+                            # 2nd pass call to actually load the nodes:
+                            log.debug('loading idevices from node: ' + filename)
+                            loadNodesIdevices(node, zippedFile.read(filename))
+                    elif filename == "fdl.html" or \
+                    filename.startswith("galleryPopup."):
+                        # let these be re-created upon bursting.
+                        if pass_num == 0:
+                            # 1st pass call to unzip the resources:
+                            log.debug('ignoring resource file: '+ filename)
+                    else:
+                        if pass_num == 0:
+                            # 1st pass call to unzip the resources:
+                            try:
+                                zipinfo = zippedFile.getinfo(filename)
+                                log.debug('unzipping resource file: '
+                                        + resourceDir/filename )
+                                outFile = open(resourceDir/filename, "wb") 
+                                outFile.write(zippedFile.read(filename)) 
+                                outFile.flush() 
+                                outFile.close()
+                            except:
+                                log.warn('error unzipping resource file: '
+                                        + resourceDir/filename )
+                        ##########
+                        # WARNING: the resource is now in the resourceDir,
+                        # BUT it is NOT YET added into any of the project,
+                        # much less to the specific idevices or fields!
+                        # Although they WILL be saved out with the project
+                        # upon the next Save.
+                        ##########
+            break
+
+    # process this node's children
+    for subitem in item.childNodes:
+        if subitem.nodeName == 'item': 
+            # for the first pass, of unzipping only, do not
+            # create any child nodes, just cruise on with this one:
+            next_node = node
+            if pass_num == 1:
+                # if this is actually loading the nodes:
+                next_node = node.createChild()
+            loadNode(pass_num, resourceDir, zippedFile, next_node,
+                    doc, subitem, level+1)
+
+def loadCC(zippedFile, filename):
+    """
+    Load an IMS Common Cartridge or Content Package from filename
+    """
+    package = Package(Path(filename).namebase)
+    xmldoc = minidom.parseString( zippedFile.read('imsmanifest.xml')) 
+
+    organizations_list = xmldoc.getElementsByTagName('organizations')
+    level = 0
+    # now a two-pass system to first unzip all applicable resources:
+    for pass_num in range(2):
+        for organizations in organizations_list:
+            organization_list = organizations.getElementsByTagName(
+                    'organization')
+            for organization in organization_list:
+                for item in organization.childNodes:
+                    if item.nodeName == 'item':
+                        loadNode(pass_num, package.resourceDir, zippedFile, 
+                                package.root, xmldoc, item, level)
+    return package
 
 # ===========================================================================
 class DublinCore(Jellyable, Unjellyable):
@@ -309,9 +514,18 @@ class Package(Persistable):
 
         zippedFile = zipfile.ZipFile(filename, "r")
         
-        # Get the jellied package data
-        toDecode   = zippedFile.read(u"content.data")
+        try:
+            # Get the jellied package data
+            toDecode   = zippedFile.read(u"content.data")
+        except KeyError:
+            log.info("no content.data, trying Common Cartridge/Content Package")
+            newPackage = loadCC(zippedFile, filename)
+            newPackage.tempFile = False
+            newPackage.isChanged = False
+            newPackage.filename = Path(filename)
 
+            return newPackage
+            
         # Need to add a TempDirPath because it is a nonpersistant member
         resourceDir = TempDirPath()
 

@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -2125,6 +2125,131 @@ class FieldWithResources(Field):
 
         return export_content
 
+
+    def MassageResourceDirsIntoContent(self, content): 
+        """
+        helper to CC-bursting for import 
+        of previously exported Common Cartridges.
+        Since the resource directory has already been flattened,
+        need to try and re-insert the resourcedir "resources/":
+
+        This is a wrapper around the specific types of previews,
+        images, media, etc..
+        """
+        new_content = self.MassageResourceDirsIntoImageContent(content)
+        # and later, add:
+        #new_content = self.MassageResourceDirsIntoMediaContent(new_content)
+        new_content = self.MassageResourceDirsIntoLinkResourceContent(new_content)
+
+        return new_content 
+    
+    def MassageResourceDirsIntoImageContent(self, content):
+        """
+        Does a quick job to find all images and re-add the resourceDir,
+        but BEWARE that this could find NON-resource images and
+        mistakenly add a "resources/" prefix to them as well.
+        """
+        # WARNING: this is NOT actually re-linking the resources
+        # into this field, yet, either!
+
+        # this is used for exports/prints, etc., and needs to ensure that 
+        # any resource paths are re-added:
+        imported_src = "src=\""
+        resources_url_src = "src=\"resources/"
+        import_content = content
+
+        search_str = imported_src
+        found_pos = import_content.find(search_str) 
+        while found_pos >= 0: 
+            # most normal search strings, look for terminating ":
+            end_pos = import_content.find('\"', found_pos+len(search_str)) 
+            # assume well-formed with matching quote: 
+            if end_pos > 0: 
+                # extract the actual resource name, after src=\"resources:
+                #resource_str = content[found_pos+len(search_str):end_pos] 
+                # allow the src= for now:
+                resource_str = import_content[found_pos:end_pos] 
+                # NOW, does the name start with a src="http:" or src="file:"?
+                # if NOT, then process it more:
+                if not resource_str.startswith("src=\"http:") and \
+                not resource_str.startswith("src=\"file:") :
+                    ########
+                    # add the resources dir here:
+                    imported_resource_str = resource_str.replace("src=\"", 
+                            "src=\"resources/")
+                    # WARNING: still trying to figure out the following cases 
+                    # with images imported from Wikipedia that have accents:
+                    #if resource_str.find("%C3") >= 0:
+                    #    import pdb
+                    #    pdb.set_trace()
+                    #    watch_wacky_filename = 1
+                    #    #imported_resource_str = imported_resource_str.replace(
+                    #    #        "%", "%%")
+                    #    # nope, that doesn't help!
+                    import_content = import_content.replace(
+                            resource_str, imported_resource_str)
+                    # and increment the found_pos by the resource name length:
+                    found_pos += len(imported_resource_str)
+            # Find the next source image in the content, continuing:
+            found_pos = import_content.find(search_str, found_pos+1) 
+
+        # and any math-image's counterpart LaTeX source files,
+        # since they are exported as resources as well:
+        imported_src = "exe_math_latex=\""
+        resources_url_src = "exe_math_latex=\"resources/"
+        import_content = import_content.replace(imported_src, resources_url_src)
+        # note: maybe this content.replace() is okay though, since
+        # it deals with only internally-generated filenames for exe_math source.
+
+        return import_content
+
+    
+    def MassageResourceDirsIntoLinkResourceContent(self, content):
+        """
+        Does a quick job to find all hrefs and re-add the resourceDir,
+        but BEWARE that this could find NON-resource images and
+        mistakenly add a "resources/" prefix to them as well.
+        """
+        # WARNING: that this is NOT actually re-linking the resources
+        # into this field, yet, either!
+
+        # this is used for exports/prints, etc., and needs to ensure that 
+        # any resource paths are re-added:
+        imported_src = "href=\""
+        resources_url_src = "href=\"resources/"
+        import_content = content
+
+        search_str = imported_src
+        found_pos = import_content.find(search_str) 
+        while found_pos >= 0: 
+            # most normal search strings, look for terminating ":
+            end_pos = import_content.find('\"', found_pos+len(search_str)) 
+            # assume well-formed with matching quote: 
+            if end_pos > 0: 
+                # extract the actual resource name, after src=\"resources:
+                #resource_str = content[found_pos+len(search_str):end_pos] 
+                # allow the src= for now:
+                resource_str = import_content[found_pos:end_pos] 
+                # NOW, does the name start with a src="http:" or src="file:"?
+                # if NOT, then process it more:
+                if not resource_str.startswith("href=\"http:") and \
+                not resource_str.startswith("href=\"file:") :
+                    ########
+                    # add the resources dir here:
+                    imported_resource_str = resource_str.replace("href=\"", 
+                            "href=\"resources/")
+                    # WARNING: BEWARE of the same issues with filenames
+                    # as in the above MassageResourceDirsIntoImageContent().
+                    import_content = import_content.replace(
+                            resource_str, imported_resource_str)
+                    # and increment the found_pos by the resource name length:
+                    found_pos += len(imported_resource_str)
+            # Find the next source image in the content, continuing:
+            found_pos = import_content.find(search_str, found_pos+1) 
+
+        return import_content
+
+    
 
     def upgradeToVersion1(self):
         """

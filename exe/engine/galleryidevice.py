@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -454,6 +454,38 @@ these in a gallery context rather then individually.</p>"""),
         # GalleryIdevice has no rich-text fields:
         return []
         
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+
+        resourceDir = self.parentNode.package.resourceDir
+
+        # GalleryImage Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
+
+        images = i.findAll(name='div', attrs={'class' : 'gallery_image' })
+        # image src is stored in the image div tag's value
+        captions = i.findAll(name='div', attrs={'class' : 'caption' })
+        popup = i.find(name='div', attrs={'class' : 'gallery_popup' })
+
+        for image_loop in range(len(images)):
+            image = images[image_loop].attrMap['value'].decode('utf-8')
+            caption = captions[image_loop].renderContents().decode('utf-8')
+            gallery_image = self.addImage(resourceDir/image)
+            gallery_image._caption.content = caption
+
+        # ====> NOW Also Add the HTML file!!!!!!!
+        #popup_file = popup.attrMap['value'].decode('utf-8')
+        #self._htmlResource = Resource(self, resourceDir/popup_file)
+        # the above seems to behave wacky, only showing the last image,
+        # so for now, try to just re-generate the popup:
+        if len(images) > 0:
+            self._createHTMLPopupFile()
+            # WARNING!!!!! the above still doesn't quite work for the popup!
+            # Dunno, but even once freshly generated, it only shows the last one
 
     def genImageId(self):
         """Generate a unique id for an image.

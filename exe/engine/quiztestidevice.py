@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
 from exe.engine.field     import TextAreaField
+import re
 
 log = logging.getLogger(__name__)
 
@@ -287,6 +288,77 @@ time to learn and practice using the information or skill.
 
         return fields_list
 
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # SCORM QuizTest Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
+
+        inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
+
+        passrate = inner.find(name='div', attrs={'class' : 'passrate' })
+        self.passRate = passrate.attrMap['value'].decode('utf-8')
+
+        # copied and modified from Multi-Select:
+
+        sc_questions = inner.findAll(name='div', attrs={'class' : 'question'})
+        if len(sc_questions) < 1:
+            # need to remove the default 1st question
+            del self.questions[0]
+
+        for question_num in range(len(sc_questions)):
+            if question_num > 0:
+                # only created with the first question, add others:
+                self.addQuestion()
+
+            question = sc_questions[question_num]
+
+            questions = question.findAll(name='div', attrs={'class' : 'block', 
+                    'id' : re.compile('^taquestion') })
+            if len(questions) == 1:
+                # ELSE: should warn of unexpected result!
+                inner_question = questions[0]
+                self.questions[question_num].questionTextArea.content_wo_resourcePaths \
+                        = inner_question.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].questionTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].questionTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].questionTextArea.content_wo_resourcePaths)
+                self.questions[question_num].questionTextArea.content \
+                        = self.questions[question_num].questionTextArea.content_w_resourcePaths
+
+            options = question.findAll(name='div', attrs={'class' : 'block', 
+                    'id' : re.compile('^taoptionAnswer') })
+            answers = question.findAll(name='input', attrs={'type' : 'radio'})
+            if len(options) < 1:
+                # need to remove the default 1st option
+                del self.questions[question_num].options[0]
+
+            for option_loop in range(0, len(options)):
+                if option_loop >= 1:
+                    # more options than created by default:
+                    self.questions[question_num].addOption()
+
+                self.questions[question_num].options[option_loop].answerTextArea.content_wo_resourcePaths \
+                        = options[option_loop].renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].options[option_loop].answerTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].options[option_loop].answerTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].options[option_loop].answerTextArea.content_wo_resourcePaths)
+                self.questions[question_num].options[option_loop].answerTextArea.content \
+                        = self.questions[question_num].options[option_loop].answerTextArea.content_w_resourcePaths
+                # and finally, see if this is a correct answer:
+                this_answer = answers[option_loop].attrMap['value']
+                if this_answer == "0":
+                    # then this option is correct:
+                    self.questions[question_num].options[option_loop].isCorrect\
+                            = True
+                    # and SCORM quiz also has an overall correctAnswer;
+                    # since it only allows one answer, this must be it:
+                    self.questions[question_num].correctAns = option_loop
 
 
     def upgradeToVersion2(self):

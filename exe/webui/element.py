@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1649,7 +1649,8 @@ class SelectOptionElement(Element):
         html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '_1')
         html += _("Correct") + "</div>"
         html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '_0')
-        html += _("Incorrect") + "</td></tr></div>"
+        html += _("Incorrect") + "</div>"
+        html += "</td></tr>"
         return html
     
     
@@ -1776,7 +1777,10 @@ class SelectquestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        return self.doRender(img, preview=False)
+        html = "<div class=\"question\">\n" 
+        html += self.doRender(img, preview=False)
+        html += "</div>\n" 
+        return html
 
     def renderPreview(self,img=None):
         """ 
@@ -1982,7 +1986,17 @@ class QuizOptionElement(Element):
                 feedbackStr = _("Wrong")
         html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' \
                       % (str(self.index), self.field.question.id)
-        html += 'display: none;">' 
+        # try putting in the correct answer as an even number.
+        # start off with a sorta random looking number:
+        to_even = self.index+5
+        if to_even % 2:
+            to_even += 1
+        # now we have an even number here.
+        # if it is a false answer, then add another to make it odd:
+        if not self.field.isCorrect:
+            to_even += 1
+        html += 'display: none;" even_steven="%s">' % (str(to_even))
+
         html += feedbackStr 
         html += '</div>\n'
         
@@ -2089,7 +2103,11 @@ class QuizQuestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        return self.doRender(img1, img2, preview=False)
+        html = "<div class=\"question\">\n" 
+        html += self.doRender(img1, img2, preview=False)
+        html += "</div>\n" 
+        return html
+
 
     def renderPreview(self, img1=None, img2=None):
         """ 
@@ -2107,7 +2125,7 @@ class QuizQuestionElement(Element):
             html  = self.questionElement.renderView()
         html += " &nbsp;&nbsp;\n"
 
-        if self.hintElement.field.content:
+        if self.hintElement.field.content.strip():
             html += '<span '
             html += ' style="background-image:url(\'%s\');">' % img1
             html += '\n<a onmousedown="javascript:updateCoords(event);'

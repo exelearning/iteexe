@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +27,7 @@ import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
 from exe.engine.field     import TextAreaField
+import re
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -106,6 +108,37 @@ reflective feedback.)""")
 
         return fields_list
 
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Reflection Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
+
+        reflections = i.findAll(name='div', attrs={'id' : re.compile('^ta') })
+        # should be exactly two of these:
+        # 1st = field[0] == Activity
+        if len(reflections) >= 1:
+            self.activityTextArea.content_wo_resourcePaths = \
+                    reflections[0].renderContents().decode('utf-8')
+            # and add the LOCAL resource paths back in:
+            self.activityTextArea.content_w_resourcePaths = \
+                    self.activityTextArea.MassageResourceDirsIntoContent( \
+                        self.activityTextArea.content_wo_resourcePaths)
+            self.activityTextArea.content = \
+                    self.activityTextArea.content_w_resourcePaths
+        # 2nd = field[1] == Answer
+        if len(reflections) >= 2:
+            self.answerTextArea.content_wo_resourcePaths = \
+                    reflections[1].renderContents().decode('utf-8')
+            # and add the LOCAL resource paths back in:
+            self.answerTextArea.content_w_resourcePaths = \
+                    self.answerTextArea.MassageResourceDirsIntoContent( \
+                        self.answerTextArea.content_wo_resourcePaths)
+            self.answerTextArea.content = \
+                    self.answerTextArea.content_w_resourcePaths
 
     def upgradeToVersion1(self):
         """

@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@ from exe.engine.path      import toUnicode
 from exe                  import globals as G
 from exe.engine.field     import TextAreaField
 import os
+import re
 
 log = logging.getLogger(__name__)
 
@@ -281,6 +282,74 @@ situation.""")
 
         return fields_list
         
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # CaseStudy Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
+
+        inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
+
+        story = inner.find(name='div', 
+                attrs={'class' : 'block' , 'id' : re.compile('^ta') })
+        self.storyTextArea.content_wo_resourcePaths = \
+                story.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.storyTextArea.content_w_resourcePaths = \
+                self.storyTextArea.MassageResourceDirsIntoContent( \
+                    self.storyTextArea.content_wo_resourcePaths)
+        self.storyTextArea.content = self.storyTextArea.content_w_resourcePaths
+
+        case_questions = inner.findAll(name='div', attrs={'class' : 'question'})
+        for question_num in range(len(case_questions)):
+            if question_num > 0:
+                # only created with the first question, add others:
+                self.addQuestion()
+
+            question = case_questions[question_num]
+
+            case_stories = question.findAll(name='div', 
+                    attrs={'class' : 'block' , 
+                        'id' : re.compile('^taquesQuestion') })
+            if len(case_stories) == 1:
+                # ELSE: should warn of unexpected result!
+                inner_question = case_stories[0]
+                self.questions[question_num].questionTextArea.content = \
+                        inner_question.renderContents().decode('utf-8')
+                self.questions[question_num].questionTextArea.content_w_resourcePaths \
+                        = inner_question.renderContents().decode('utf-8')
+                self.questions[question_num].questionTextArea.content_wo_resourcePaths \
+                        = inner_question.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].questionTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].questionTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].questionTextArea.content_wo_resourcePaths)
+                self.questions[question_num].questionTextArea.content = \
+                        self.questions[question_num].questionTextArea.content_w_resourcePaths
+
+            case_feedbacks = question.findAll(name='div', 
+                    attrs={'class' : 'feedback' , 'id' : re.compile('^sq') })
+            if len(case_feedbacks) == 1:
+                # no warning otherwise, since feedback is optional
+                inner_feedback = case_feedbacks[0]
+                self.questions[question_num].feedbackTextArea.content_wo_resourcePaths \
+                        = inner_feedback.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].feedbackTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].feedbackTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].feedbackTextArea.content_wo_resourcePaths)
+                self.questions[question_num].feedbackTextArea.content = \
+                        self.questions[question_num].feedbackTextArea.content_w_resourcePaths
+            else:
+                self.questions[question_num].feedbackTextArea.content = ""
+                self.questions[question_num].feedbackTextArea.content_w_resourcePaths \
+                        = ""
+                self.questions[question_num].feedbackTextArea.content_wo_resourcePaths \
+                        = ""
+
 
     def upgradeToVersion1(self):
         """

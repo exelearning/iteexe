@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,7 +19,7 @@
 # ===========================================================================
 """
 QuestionElement is responsible for a block of option.  
-Used by MultichoiceBlock and CaseStudyBlock
+Used by CaseStudyBlock
 """
 
 import logging
@@ -123,7 +124,7 @@ class QuestionElement(object):
         else:
             html  = self.question_question.renderView()
 
-        if  self.question_feedback.field.content != "" :            
+        if  self.question_feedback.field.content.strip() != "" :            
             html += '<div id="view%s" style="display:block;">' % self.id
             html += common.feedbackButton('btnshow' + self.id,
                         _(u"Show Feedback"),
@@ -155,7 +156,10 @@ class QuestionElement(object):
         """
         Returns an XHTML string for viewing this question element
         """
-        return self.doRender(preview=False)
+        html = "<div class=\"question\">\n"
+        html += self.doRender(preview=False)
+        html += "</div>\n"
+        return html
     
     def renderPreview(self):
         """

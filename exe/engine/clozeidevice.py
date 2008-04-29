@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,6 +28,7 @@ from exe.engine.path    import Path
 from exe.engine.field   import ClozeField, TextAreaField
 from exe.engine.persist import Persistable
 import Image
+import re
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -182,7 +184,86 @@ click on the Hide/Show Word button below.</p>"""))
             fields_list.append(self.feedback)
         return fields_list
         
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Cloze Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
 
+        inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
+
+        instruct = inner.find(name='div', 
+                attrs={'class' : 'block' , 'style' : 'display:block' })
+        self.instructionsForLearners.content_wo_resourcePaths = \
+                instruct.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.instructionsForLearners.content_w_resourcePaths = \
+                self.instructionsForLearners.MassageResourceDirsIntoContent( \
+                    self.instructionsForLearners.content_wo_resourcePaths)
+        self.instructionsForLearners.content = \
+                self.instructionsForLearners.content_w_resourcePaths
+
+        content = inner.find(name='div', attrs={'id' : re.compile('^cloze') })
+        rebuilt_contents = ""
+        for this_content in content.contents:
+            if not this_content.__str__().startswith('<input'):
+                if this_content.__str__().startswith('<span'):
+                    # Now, decode the answer
+                    # with code reverse-engineered from:
+                    # a) Cloze's getClozeAnswer() in common.js
+                    # b) ClozeElement's renderView() + encrypt()
+                    answer = ""
+                    code_key = 'X'
+                    code = this_content.renderContents()
+                    code = code.decode('base64')
+                    # now in the form %uABCD%uEFGH%uIJKL....
+                    char_pos = 0
+                    while char_pos < len(code):
+                        # first 2 chars = %u, replace with 0x to get int
+                        # next 4 = the encoded unichr
+                        this_code_char = "0x" + code[char_pos+2 : char_pos+6]
+                        this_code_ord = int(this_code_char, 16)
+                        letter = chr(ord(code_key)^this_code_ord)
+                        answer += letter
+                        # key SHOULD be ^'d by letter, but seems to be:
+                        code_key = letter
+                        char_pos += 6
+                    rebuilt_contents += "<U>" + answer + "</U>"
+                elif not this_content.__str__().startswith('<div'):
+                    # this should be the un-clozed text:
+                    rebuilt_contents +=  this_content.__str__()
+        self._content.content_wo_resourcePaths = rebuilt_contents
+        # and add the LOCAL resource paths back in:
+        self._content.content_w_resourcePaths = \
+                self._content.MassageResourceDirsIntoContent( \
+                    self._content.content_wo_resourcePaths)
+        self._content.content = self._content.content_w_resourcePaths
+
+        feedback = inner.find(name='div', attrs={'class' : 'feedback' })
+        self.feedback.content_wo_resourcePaths = \
+                feedback.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.feedback.content_w_resourcePaths = \
+                self.feedback.MassageResourceDirsIntoContent( \
+                    self.feedback.content_wo_resourcePaths)
+        self.feedback.content = self.feedback.content_w_resourcePaths
+
+        # and each cloze flag field (strict, case, instant):
+        flag_strict = inner.find(name='input', 
+                attrs={'id' : re.compile('^clozeFlag.*strictMarking$') })
+        if flag_strict.attrMap['value']=="true":
+            self._content.strictMarking = True
+        flag_caps = inner.find(name='input', 
+                attrs={'id' : re.compile('^clozeFlag.*checkCaps$') })
+        if flag_caps.attrMap['value']=="true":
+            self._content.checkCaps = True
+        flag_instant = inner.find(name='input', 
+                attrs={'id' : re.compile('^clozeFlag.*instantMarking$') })
+        if flag_instant.attrMap['value']=="true":
+            self._content.instantMarking = True
 
     def upgradeToVersion1(self):
         """

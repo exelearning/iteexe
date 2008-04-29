@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -68,6 +69,33 @@ and select the size of the area to display it in.""")
         # ExternalURL has no rich-text fields:
         return []
         
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # External Web Site Idevice:
+        #title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        #idevice.title = title.renderContents().decode('utf-8')
+        # no title for this iDevice.
+
+        inner = i.find(name='iframe').__str__()
+        # 1. the url: <iframe src="HERE" ... ></iframe>
+        url_start_pos = inner.find('src=\"')
+        if url_start_pos >= 0:
+            url_start_pos += len('src=\"')
+            url_end_pos = inner.find('\"', url_start_pos)
+            if url_end_pos >= url_start_pos:
+                self.url = inner[url_start_pos : url_end_pos].decode('utf-8')
+
+        # 2. the height: <iframe height="###px" ... ></iframe>
+        height_start_pos = inner.find('height=\"')
+        if height_start_pos >= 0:
+            height_start_pos += len('height=\"')
+            height_end_pos = inner.find('px\"', height_start_pos)
+            if height_end_pos >= height_start_pos:
+                self.height = \
+                    inner[height_start_pos : height_end_pos].decode('utf-8')
 
     def upgradeToVersion1(self):
         """

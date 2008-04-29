@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -137,7 +137,7 @@ class TrueFalseElement(object):
         """
         is_preview = 0
         html  = self.renderQuestion(is_preview)
-        if self.question.hintTextArea.content<>"":
+        if self.question.hintTextArea.content.strip() != "":
             html += u'<span '
             html += u'style="background-image:url(\'panel-amusements.png\');">'
             html += u'\n<a onmousedown="Javascript:updateCoords(event);'
@@ -216,16 +216,29 @@ class TrueFalseElement(object):
         feedbackStr1 = _(u"Correct!") + " "
         feedbackStr2 = _(u"Incorrect!") + " "
 
+        # embed a score_representation as well, even==true,
+        # so that Correct/Incorrect doesn't need to be un-translated
+        # upon bursting from a CC export.
+        # start off with a sorta random looking number:
+        to_even1 = int(self.idevice.id)+5
+        if to_even1 % 2:
+            # ensure that to_even1 is indeed even, correct:
+            to_even1 += 1
+        # and ensure that to_even2 is odd, incorrect:
+        to_even2 = to_even1 + 1
+
+
         if not self.question.isCorrect:
             feedbackStr1, feedbackStr2 = feedbackStr2, feedbackStr1 
+            to_even1, to_even2 = to_even2, to_even1
 
         feedbackId1 = "0" + "b" + self.id
         feedbackId2 = "1" + "b" + self.id
         html  = u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId1
-        html += u'display: none;">' 
+        html += u'display: none;" even_steven="%s">' % (str(to_even1))
         html += feedbackStr1 + '</div>\n'
         html += u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId2
-        html += u'display: none;">' 
+        html += u'display: none;" even_steven="%s">' % (str(to_even2))
         html += feedbackStr2 + '</div>\n'
         html += u'<div id="sfbk%s" style="color: rgb(0, 51, 204);' % self.id
         html += u'display: none;">' 

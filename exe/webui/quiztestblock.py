@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -141,6 +141,7 @@ class QuizTestBlock(Block):
         html += u'<span class="iDeviceTitle">'
         html += self.idevice.title+'</span>\n'
         html += u'<div class="iDevice_inner">\n'
+        html += u'<div class="passrate" value="%s"></div>\n' % self.idevice.passRate
         for element in self.questionElements:
             if preview: 
                 html += element.renderPreview() + "<br/>"  

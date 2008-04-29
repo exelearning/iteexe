@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,6 +26,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
 from exe.engine.field     import TextAreaField
+import re
 log = logging.getLogger(__name__)
 
 
@@ -98,7 +100,7 @@ class TrueFalseQuestion(Persistable):
             fields_list.append(self.hintTextArea)
 
         return fields_list
-
+                   
 
     def upgrade_setIdevice(self, idevice):
         """
@@ -215,6 +217,111 @@ completed."""),
             fields_list.extend(this_question.getRichTextFields())
 
         return fields_list
+
+
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # True-False Idevice:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        self.title = title.renderContents().decode('utf-8')
+
+        inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
+
+        instruct = inner.find(name='div', attrs={'class' : 'block' , 
+                'style' : 'display:block' })
+        self.instructionsForLearners.content_wo_resourcePaths = \
+                instruct.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.instructionsForLearners.content_w_resourcePaths = \
+                self.instructionsForLearners.MassageResourceDirsIntoContent( \
+                    self.instructionsForLearners.content_wo_resourcePaths)
+        self.instructionsForLearners.content = \
+                self.instructionsForLearners.content_w_resourcePaths
+
+        # copied and modified from Multi-Select, and others :-) :
+
+        tf_questions = inner.findAll(name='div', attrs={'class' : 'question'})
+        if len(tf_questions) < 1:
+            # need to remove the default 1st question
+            del self.questions[0]
+
+        for question_num in range(len(tf_questions)):
+            if question_num > 0:
+                # only created with the first question, add others:
+                self.addQuestion()
+
+            question = tf_questions[question_num]
+
+            questions = question.findAll(name='div', attrs={'class' : 'block', 
+                    'id' : re.compile('^taquestion') })
+            if len(questions) == 1:
+                # ELSE: should warn of unexpected result!
+                inner_question = questions[0]
+                self.questions[question_num].questionTextArea.content_wo_resourcePaths \
+                        = inner_question.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].questionTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].questionTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].questionTextArea.content_wo_resourcePaths)
+                self.questions[question_num].questionTextArea.content = \
+                        self.questions[question_num].questionTextArea.content_w_resourcePaths
+
+            answer_true = question.find(name='div', 
+                    attrs={'id' : re.compile('^s0b') })
+            answer_false = question.find(name='div', 
+                    attrs={'id' : re.compile('^s1b') })
+            # true-false only has 1 feedback per question:
+            feedbacks = question.findAll(name='div', 
+                    attrs={'id' : re.compile('^sfb') })
+            # true-false only has 1 hint per question:
+            hints = question.findAll(name='div', 
+                    attrs={'id' : re.compile('^tahint') })
+
+            # and finally, see if this is a correct answer:
+            even_score = int(answer_true.attrMap['even_steven'])
+            if not (even_score % 2):
+                # i.e., if it IS even, then this is correct:
+                self.questions[question_num].isCorrect = True
+
+            if len(hints) >= 1:
+                inner_hint = hints[0]
+                self.questions[question_num].hintTextArea.content_wo_resourcePaths \
+                        = inner_hint.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].hintTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].hintTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].hintTextArea.content_wo_resourcePaths)
+                self.questions[question_num].hintTextArea.content = \
+                        self.questions[question_num].hintTextArea.content_w_resourcePaths
+            else:
+                # no user-defined feedback, just using the default:
+                self.questions[question_num].hintTextArea.content = ""
+                self.questions[question_num].hintTextArea.content_w_resourcePaths \
+                        = ""
+                self.questions[question_num].hintTextArea.content_wo_resourcePaths \
+                        = ""
+
+
+            if len(feedbacks) >= 1:
+                inner_feedback = feedbacks[0]
+                self.questions[question_num].feedbackTextArea.content_wo_resourcePaths \
+                        = inner_feedback.renderContents().decode('utf-8')
+                # and add the LOCAL resource paths back in:
+                self.questions[question_num].feedbackTextArea.content_w_resourcePaths \
+                        = self.questions[question_num].feedbackTextArea.MassageResourceDirsIntoContent( \
+                            self.questions[question_num].feedbackTextArea.content_wo_resourcePaths)
+                self.questions[question_num].feedbackTextArea.content = \
+                        self.questions[question_num].feedbackTextArea.content_w_resourcePaths
+            else:
+                # no user-defined feedback, just using the default:
+                self.questions[question_num].feedbackTextArea.content = ""
+                self.questions[question_num].feedbackTextArea.content_w_resourcePaths \
+                        = ""
+                self.questions[question_num].feedbackTextArea.content_wo_resourcePaths \
+                        = ""
 
 
     def upgradeToVersion1(self):

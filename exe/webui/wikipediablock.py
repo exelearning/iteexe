@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -207,6 +208,14 @@ class WikipediaBlock(Block):
         content = re.sub(r'src="resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+
+        html += u"<div class=\"wiki_site\" value=\"" + self.idevice.site \
+                + "\"></div>"
+        html += u"<div class=\"article_name\" value=\"" + self.idevice.articleName \
+                + "\"></div>"
+        html += u"<div class=\"own_url\" value=\"" + self.idevice.ownUrl \
+                + "\"></div>\n"
+
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
                 html += u'<img alt="iDevice icon" class="iDevice_icon" '

@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -114,7 +115,7 @@ class ClozeBlock(Block):
         Returns an XHTML string for this block
         """
         # Only show feedback button if feedback is present
-        if self.feedbackElement.field.content:
+        if self.feedbackElement.field.content.strip():
             # Cloze Idevice needs id of div for feedback content
             feedbackID = self.feedbackElement.id
             if self.previewing: 

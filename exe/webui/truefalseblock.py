@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -154,8 +155,10 @@ class TrueFalseBlock(Block):
         html += self.instructionElement.renderView()
         
         for element in self.questionElements:
+            html += "<div class=\"question\">\n"
             html += element.renderQuestionView()
             html += element.renderFeedbackView()
+            html += "</div>\n"
             
         html += u"</div>\n"    
         html += u"</div>\n"

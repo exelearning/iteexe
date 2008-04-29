@@ -271,6 +271,7 @@ class ScormPage(Page):
         html += u"<title>"+_("eXe")+"</title>\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
+        html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"

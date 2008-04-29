@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -99,6 +100,25 @@ you created in Geogebra.</p>""")
         # Applet iDevice has no rich-text fields:
         return []
         
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Java Applet Idevice:
+        #title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        #idevice.title = title.renderContents().decode('utf-8')
+        # no title for this idevice.
+
+        # =====> WARNING: not yet loading any of the files!
+        #
+        # BEWARE also of the appletCode line breaks loading as <br/>,
+        # may want change this back to \n or \r\n?
+
+        # AND: also need to load the applet type: Geogebra or Other.
+        inner = i.find(name='div', attrs={'class' : 'iDevice emphasis0' })
+        self.appletCode= inner.renderContents().decode('utf-8')
+
     def uploadFile(self, filePath):
         """
         Store the upload files in the package

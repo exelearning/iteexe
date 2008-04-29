@@ -213,6 +213,42 @@ within Wikipedia.""")
         return fields_list
 
 
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # Wiki Article Idevice:
+        # option title for Wikipedia, with mode emphasis:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        if title is not None: 
+            self.title = title.renderContents().decode('utf-8')
+            self.emphasis=Idevice.SomeEmphasis
+
+        wiki = i.find(name='div', attrs={'id' : re.compile('^ta') })
+        self.article.content_wo_resourcePaths = \
+                wiki.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.article.content_w_resourcePaths = \
+                self.article.MassageResourceDirsIntoContent( \
+                    self.article.content_wo_resourcePaths)
+        self.article.content = self.article.content_w_resourcePaths
+
+        site = i.find(name='div', attrs={'class' : 'wiki_site' })
+        if site is not None: 
+            self.site = site.attrMap['value'].decode('utf-8')
+
+        name = i.find(name='div', attrs={'class' : 'article_name' })
+        if name is not None: 
+            # WARNING: the following crashes on accented characters, eg:
+            #  'ascii' codec can't encode character u'\xe8' in 
+            #  position 11: ordinal not in range(128)
+            self.articleName = name.attrMap['value'].decode('utf-8')
+
+        own_url = i.find(name='div', attrs={'class' : 'own_url' })
+        if own_url is not None: 
+            self.own_url = own_url.attrMap['value'].decode('utf-8')
+
     def __getstate__(self):
         """
         Re-write the img URLs just in case the class name has changed

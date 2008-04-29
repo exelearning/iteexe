@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -117,6 +118,32 @@ display them as links in your content. From here you can edit the bookmarks and 
         self.rss.content_w_resourcePaths = self.rss.content
         self.rss.content_wo_resourcePaths = self.rss.content
 
+    def burstHTML(self, i):
+        """
+        takes a BeautifulSoup fragment (i) and bursts its contents to 
+        import this idevice from a CommonCartridge export
+        """
+        # RSS Idevice:
+        # option title for RSS, with mode emphasis:
+        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        if title is not None: 
+            self.title = title.renderContents().decode('utf-8')
+            self.emphasis=Idevice.SomeEmphasis
+
+        rss = i.find(name='div', attrs={'id' : re.compile('^ta') })
+        self.rss.content_wo_resourcePaths = rss.renderContents().decode('utf-8')
+        # and add the LOCAL resource paths back in:
+        self.rss.content_w_resourcePaths = \
+                self.rss.MassageResourceDirsIntoContent( \
+                    self.rss.content_wo_resourcePaths)
+        self.rss.content = self.rss.content_w_resourcePaths
+
+        # WARNING: the following COULD crash on accented characters, eg:
+        #  'ascii' codec can't encode character u'\xe8' in 
+        #  position 11: ordinal not in range(128)
+        url = i.find(name='div', attrs={'class' : 'rss_url' })
+        if url is not None: 
+            self.url = url.attrMap['value'].decode('utf-8')
 
 
 # ===========================================================================
