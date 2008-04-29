@@ -96,6 +96,12 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
             <menupopup>
               <menuitem id="ppminone"  label="None" value="None"/>
               <menuitem id="ppmigfdl"   label="GNU Free Documentation License" value="GNU Free Documentation License"/>
+              <menuitem id="ppcc31"   label="Creative Commons Attribution 3.0 License" value="Creative Commons Attribution 3.0 License"/>
+              <menuitem id="ppcc32"   label="Creative Commons Attribution Share Alike 3.0 License" value="Creative Commons Attribution Share Alike 3.0 License"/>
+              <menuitem id="ppcc33"   label="Creative Commons Attribution No Derivatives 3.0 License" value="Creative Commons Attribution No Derivatives 3.0 License"/>
+              <menuitem id="ppcc34"   label="Creative Commons Attribution Non-commercial 3.0 License" value="Creative Commons Attribution Non-commercial 3.0 License"/>
+              <menuitem id="ppcc35"   label="Creative Commons Attribution Non-commercial Share Alike 3.0 License" value="Creative Commons Attribution Non-commercial Share Alike 3.0 License"/>
+              <menuitem id="ppcc36"   label="Creative Commons Attribution Non-commercial No Derivatives 3.0 License" value="Creative Commons Attribution Non-commercial No Derivatives 3.0 License"/>
               <menuitem id="ppcca1"   label="Creative Commons Attribution 2.5 License" value="Creative Commons Attribution 2.5 License"/>
               <menuitem id="ppcca2"   label="Creative Commons Attribution-ShareAlike 2.5 License" value="Creative Commons Attribution-ShareAlike 2.5 License"/>
               <menuitem id="ppcca3"   label="Creative Commons Attribution-NoDerivs 2.5 License" value="Creative Commons Attribution-NoDerivs 2.5 License"/>

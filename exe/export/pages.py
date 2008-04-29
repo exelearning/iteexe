@@ -48,6 +48,18 @@ class Page(object):
         """
         licenses = {"GNU Free Documentation License":
                      "http://www.gnu.org/copyleft/fdl.html", 
+                     "Creative Commons Attribution 3.0 License":
+                     "http://creativecommons.org/licenses/by/3.0/",
+                     "Creative Commons Attribution Share Alike 3.0 License":
+                     "http://creativecommons.org/licenses/by-sa/3.0/",
+                     "Creative Commons Attribution No Derivatives 3.0 License":
+                     "http://creativecommons.org/licenses/by-nd/3.0/",
+                     "Creative Commons Attribution Non-commercial 3.0 License":
+                     "http://creativecommons.org/licenses/by-nc/3.0/",
+                     "Creative Commons Attribution Non-commercial Share Alike 3.0 License":
+                     "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+                     "Creative Commons Attribution Non-commercial No Derivatives 3.0 License":
+                     "http://creativecommons.org/licenses/by-nc-nd/3.0/",
                      "Creative Commons Attribution 2.5 License":
                      "http://creativecommons.org/licenses/by/2.5/",
                      "Creative Commons Attribution-ShareAlike 2.5 License":
@@ -66,7 +78,7 @@ class Page(object):
         
         license = self.node.package.license
         
-        if license <> "None":
+        if license <> "None" and licenses.has_key(license):
             html += '<p align="center">'
             html += _("Licensed under the")
             html += ' <a rel="license" href="%s">%s</a></p>' % (licenses[license], license)
