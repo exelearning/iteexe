@@ -4,6 +4,7 @@
 * Fix handling of multi-select questions with 10 or more options
 * Fix tip display at right edge of windows
 * Fix Common Cartridge resource references
+* Fix package property display with Firefox 3.0 (no translations)
 * Improve Common Cartridge metadata formation
 * Improve Wiki Article idevice handling of pages without content div
 * Improve Firefox version detection for 3.0b series (Linux)

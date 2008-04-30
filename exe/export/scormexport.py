@@ -23,6 +23,7 @@ Exports an eXe package as a SCORM package
 
 import logging
 import re
+import time
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
@@ -58,9 +59,12 @@ class Manifest(object):
 
 
     def createMetaData(self, template):
-        # if user did not supply metadata title, description or creator
-        #  then use package title, description, or creator in imslrm
-        #  if they did not supply a package title, use the package name
+        """
+        if user did not supply metadata title, description or creator
+        then use package title, description, or creator in imslrm
+        if they did not supply a package title, use the package name
+        if they did not supply a date, use today
+        """
         lrm = self.package.dublinCore.__dict__.copy()
         if lrm.get('title', '') == '':
             lrm['title'] = self.package.title
@@ -72,6 +76,8 @@ class Manifest(object):
             lrm['description'] = self.package.name
         if lrm.get('creator', '') == '':
             lrm['creator'] = self.package.author
+        if lrm['date'] == '':
+            lrm['date'] = time.strftime('%Y-%m-%d')
         # if they don't look like VCARD entries, coerce to fn:
         for f in ('creator', 'publisher', 'contributors'):
             if re.match('.*[:;]', lrm[f]) == None:
@@ -154,8 +160,9 @@ class Manifest(object):
         # Metadata
 
         if self.scormType == "commoncartridge":
-            xmlStr += u'<organizations>\n'
-            xmlStr += u'  <organization identifier="%s" structure="rooted-hierarchy">\n' % orgId
+            xmlStr += u'''<organizations>
+  <organization identifier="%s" structure="rooted-hierarchy">
+    <item>\n''' % orgId
         else:
             xmlStr += u"<organizations default=\""+orgId+"\">  \n"
             xmlStr += u'  <organization identifier="%s" structure="hierarchical">\n' % orgId
@@ -179,6 +186,8 @@ class Manifest(object):
             depth -= 1
 
         xmlStr += self.itemStr
+        if self.scormType == "commoncartridge":
+            xmlStr += "    </item>\n"
         xmlStr += "  </organization>\n"
         xmlStr += "</organizations>\n"
         xmlStr += "<resources>\n"
