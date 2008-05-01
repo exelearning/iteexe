@@ -162,7 +162,8 @@ class Manifest(object):
         if self.scormType == "commoncartridge":
             xmlStr += u'''<organizations>
   <organization identifier="%s" structure="rooted-hierarchy">
-    <item>\n''' % orgId
+    <item identifier="eXeCC-%s">\n''' % (orgId,
+            unicode(self.idGenerator.generate()))
         else:
             xmlStr += u"<organizations default=\""+orgId+"\">  \n"
             xmlStr += u'  <organization identifier="%s" structure="hierarchical">\n' % orgId
@@ -173,17 +174,23 @@ class Manifest(object):
                 title  = escape(self.package.root.titleShort)
             xmlStr += u"<title>"+title+"</title>\n"
         
-        depth = 0
-        for page in self.pages:
-            while depth >= page.depth:
+        if self.scormType == "commoncartridge":
+            # FIXME flatten hierarchy
+            for page in self.pages:
+                self.genItemResStr(page)
+                self.itemStr += "</item>\n"
+        else:
+            depth = 0
+            for page in self.pages:
+                while depth >= page.depth:
+                    self.itemStr += "</item>\n"
+                    depth -= 1
+                self.genItemResStr(page)
+                depth = page.depth
+
+            while depth >= 1:
                 self.itemStr += "</item>\n"
                 depth -= 1
-            self.genItemResStr(page)
-            depth = page.depth
-
-        while depth >= 1:
-            self.itemStr += "</item>\n"
-            depth -= 1
 
         xmlStr += self.itemStr
         if self.scormType == "commoncartridge":
@@ -199,15 +206,17 @@ class Manifest(object):
             
     def genItemResStr(self, page):
         """
-        Returning xlm string for items and resources
+        Returning xml string for items and resources
         """
         itemId   = "ITEM-"+unicode(self.idGenerator.generate())
         resId    = "RES-"+unicode(self.idGenerator.generate())
         filename = page.name+".html"
             
         
-        self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
-        self.itemStr += "identifierref=\""+resId+"\">\n"
+        self.itemStr += '<item identifier="'+itemId+'" '
+        if self.scormType != "commoncartridge":
+            self.itemStr += 'isvisible="true" '
+        self.itemStr += 'identifierref="'+resId+'">\n'
         self.itemStr += "    <title>"
         self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
