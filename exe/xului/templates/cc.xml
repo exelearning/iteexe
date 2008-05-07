@@ -1,7 +1,7 @@
 <metadata>
   <schema>IMS Common Cartridge</schema>
   <schemaversion>1.0.0</schemaversion>
-  <lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+  <lom xmlns="http://ltsc.ieee.org/xsd/imscc/LOM">
     <general>
       <title><string>%(title)s</string></title>
       <description><string>%(description)s</string></description>
