@@ -2,7 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -94,13 +94,9 @@ class Application:
         self.processArgs()
 
         self.loadConfiguration()
-        eXeStart = os.path.join(
-                os.path.dirname(globals.application.tempWebDir),
-                'tmpExeStartupTime')
-        # make an eXe lock file per user
-        if os.name == 'posix':
-            eXeStart = eXeStart + '.' + str(os.getuid())
-        log.debug(u'eXeStart: ' + eXeStart)
+        eXeStart = globals.application.tempWebDir
+        eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
+        eXeStart = eXeStart + '/tmpExeStartupTime'
 
         if os.path.exists(eXeStart):
             inStartFH=open(eXeStart, "r")
@@ -117,6 +113,10 @@ class Application:
                 #self.xulMessage(_('eXe appears to already be running'))
                 #log.info('eXe appears to already be running: <html:br/>lastRunTimes: ' + `lastRunTimeS` + '<html:br/> currentTime: ' + `currentTime` + '<html:br/>currentTime2: ' + `currentTime2`)
                 return None
+
+        else:
+            log.info('eXeStart: ' + eXeStart)
+            log.info('tempWebDir: ' + globals.application.tempWebDir)
 
         # if a document was double clicked to launch on Win32,
         #   make sure we have the long pathname
