@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-04-29 16:14+1200\n"
-"PO-Revision-Date: 2008-04-23 22:55+1200\n"
+"PO-Revision-Date: 2008-05-07 22:09+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
 "MIME-Version: 1.0\n"
@@ -921,6 +921,10 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Vložte otázku. \n"
+"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych "
+"formulácií, \n"
+"pretože vyznievajú nejednoznačne."
 
 #: exe/engine/field.py:3302
 msgid ""
@@ -928,6 +932,10 @@ msgid ""
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
 "can tend to confuse learners."
 msgstr ""
+"Vložte otázku. \n"
+"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych "
+"formulácií, \n"
+"pretože môžu študentov miasť."
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
@@ -956,6 +964,9 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:57
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
+"Vložte text, ktorý si prajete pripojiť ku stiahnutému súboru. Môžete doň "
+"vložiť inštrukcie, ktoré budete od študenta požadovať po stiahnutí súboru "
+"alebo ako má byť materiál použitý."
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
@@ -966,9 +977,8 @@ msgid "Example Example"
 msgstr "Príklad „príklad“"
 
 #: exe/webui/editorpage.py:250
-#, fuzzy
 msgid "Export iDevice"
-msgstr "Prostriedky iDevice"
+msgstr "Exportovať iDevice"
 
 #: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
 #: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
@@ -1005,6 +1015,8 @@ msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"Tlačítko spätnej väzby sa neobjaví, pokiaľ \n"
+"nebudú do tohoto poľa vložené žiadne dáta."
 
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
 #: exe/engine/field.py:3319 exe/engine/field.py:3389
@@ -1014,18 +1026,17 @@ msgstr "Spätná väzba:"
 #: exe/xului/mainpage.py:1092
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "Súbor %s neexistuje alebo sa nedá čítať."
 
 #: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
 #: exe/xului/mainpage.py:996
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "Názov súboru %s je už použitý, nedá sa nahradiť"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:787
-#, fuzzy
 msgid "Filename:"
-msgstr "Premenovať"
+msgstr "Názov súboru"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
@@ -1033,17 +1044,19 @@ msgstr "Flash animácia"
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr "Flash v texte"
+msgstr "Flash s textom"
 
 #: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
 #: exe/xului/mainpage.py:1002
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
+"Adresár s názvom %s už existuje. Vyberte prosím iný alebo zmažte existujúci "
+"a skúste to znovu."
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr "Veľkosť rámu:"
+msgstr "Výška rámu:"
 
 #: exe/engine/freetextidevice.py:38 exe/engine/freetextidevice.py:45
 msgid "Free Text"
@@ -1061,7 +1074,7 @@ msgstr "GNU Free Documentation License"
 
 #: exe/webui/appletblock.py:101
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/wikipediablock.py:118
 msgid "German Wikipedia Article"
@@ -1084,18 +1097,16 @@ msgid "Go Forward (Not Available)"
 msgstr "Vpred (nedostupné)"
 
 #: exe/webui/wikipediablock.py:119
-#, fuzzy
 msgid "Greek Wikipedia Article"
-msgstr "Francúzsky článok vo formáte Wikipedia"
+msgstr "Grécky článok vo formáte Wikipedia"
 
 #: exe/webui/reflectionblock.py:121
 msgid "Hide"
 msgstr "Skryť"
 
 #: exe/webui/questionelement.py:135
-#, fuzzy
 msgid "Hide Feedback"
-msgstr "Zobraziť / Skryť spätnú väzbu"
+msgstr "Skryť spätnú väzbu"
 
 #: exe/webui/element.py:1086
 msgid "Hide/Show Word"
@@ -1123,9 +1134,8 @@ msgid "IDevice Question Icon"
 msgstr "Ikona otáznika pros. iDevice"
 
 #: exe/webui/block.py:175
-#, fuzzy
 msgid "IDevice broken"
-msgstr "Ikona prostriedku iDevice"
+msgstr "IDevice nefunkčné"
 
 #: exe/webui/editorpane.py:363
 msgid "Icons"
@@ -1148,14 +1158,12 @@ msgid "Image with Text"
 msgstr "Obrázok s textom"
 
 #: exe/webui/editorpage.py:247
-#, fuzzy
 msgid "Import iDevice"
-msgstr "Prostriedky iDevice"
+msgstr "Importovať iDevice"
 
 #: exe/webui/element.py:1652
-#, fuzzy
 msgid "Incorrect"
-msgstr "Nesprávne!"
+msgstr "Nesprávne"
 
 #: exe/webui/truefalseelement.py:217
 msgid "Incorrect!"
@@ -1203,9 +1211,8 @@ msgid "Java Applet"
 msgstr "Java Applet"
 
 #: exe/webui/attachmentblock.py:108
-#, fuzzy
 msgid "Label:"
-msgstr "Menovka"
+msgstr "Menovka:"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
@@ -1218,9 +1225,8 @@ msgid "Left"
 msgstr "Vľavo"
 
 #: exe/export/pages.py:71 exe/export/textexport.py:54
-#, fuzzy
 msgid "Licensed under the"
-msgstr "Tento článok spadá pod licenciu "
+msgstr "Licencované pod"
 
 #: exe/webui/wikipediablock.py:152 exe/webui/rssblock.py:110
 msgid "Load"
@@ -1229,21 +1235,19 @@ msgstr "Nahrať"
 #: exe/xului/mainpage.py:552
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr ""
+msgstr "Lokálny súbor %s nebol nájdený, nedá sa zobraziť"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/webui/wikipediablock.py:122
-#, fuzzy
 msgid "Magyar Wikipedia Article"
-msgstr "Článok vo formáte Wikipedia"
+msgstr "Maďarský článok vo formáte Wikipedia"
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
-#, fuzzy
 msgid "Maths"
-msgstr "článok"
+msgstr "Matematika"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
@@ -1259,6 +1263,8 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
+"Kompilácia pomocou mimeTeX zlyhala!\n"
+"%s"
 
 #: exe/webui/block.py:244
 msgid "Move Down"
@@ -1277,13 +1283,12 @@ msgid "Move Up"
 msgstr "Presunúť hore"
 
 #: exe/engine/multichoiceidevice.py:60
-#, fuzzy
 msgid "Multi-choice"
-msgstr "Otázka „Viacnásobná voľba“"
+msgstr "Viacnásobná voľba"
 
 #: exe/engine/multiselectidevice.py:43
 msgid "Multi-select"
-msgstr ""
+msgstr "Viacnásobný výber"
 
 #: exe/webui/editorpane.py:323
 msgid "Name"
@@ -1328,7 +1333,6 @@ msgid "None"
 msgstr "«nič»"
 
 #: exe/webui/preferencespage.py:102
-#, fuzzy
 msgid "OK"
 msgstr "OK"
 
@@ -1343,6 +1347,8 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Ciele popisujú očakávané výstupy výuky a mali by \n"
+"určovať, čo by mali študenti zvládnuť po dokončení úloh."
 
 #: exe/engine/field.py:2895 exe/engine/field.py:2959
 msgid ""
@@ -1382,17 +1388,19 @@ msgstr "Náčrt"
 
 #: exe/webui/wikipediablock.py:147
 msgid "Own site"
-msgstr ""
+msgstr "Vlastný web"
 
 #: exe/xului/mainpage.py:859
-#, fuzzy, python-format
+#, python-format
 msgid "Package extracted to: %s"
-msgstr "Balík uložený do: %s"
+msgstr "Súbory rozbalené do: %s"
 
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
 #: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
+"Balík je zastaralý. Pomocou položky Súbor-Otvoriť a následne Uložiť ako... "
+"ho aktualizujte. Až potom ho môžete vložiť do iného balíčku!"
 
 #: exe/xului/mainpage.py:316
 #, python-format
@@ -1412,19 +1420,16 @@ msgid "Please enter an idevice name."
 msgstr "Prosím, vložte názov prostriedku iDevice."
 
 #: exe/webui/editorpane.py:195
-#, fuzzy
 msgid "Please enter<br />an idevice name."
-msgstr "Prosím, vložte názov prostriedku iDevice."
+msgstr "Prosím,vložte <br />názov iDevice."
 
 #: exe/webui/element.py:1359
-#, fuzzy
 msgid "Please select a .flv file."
-msgstr "Prosím, zvoľte fórum."
+msgstr "Vyberte prosím súbor .flv (Flash Video)."
 
 #: exe/webui/element.py:858
-#, fuzzy
 msgid "Please select a .jpg file."
-msgstr "Prosím, zvoľte fórum."
+msgstr "Vyberte prosím súbor .jpg."
 
 #: exe/webui/multichoiceblock.py:95 exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
@@ -1432,7 +1437,7 @@ msgstr "Prosím označte správnu odpoveď pre každú otázku."
 
 #: exe/webui/appletblock.py:83
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Nahrajte prosím súbor .ggb."
 
 #: exe/xului/mainpage.py:88
 msgid ""
@@ -1445,7 +1450,7 @@ msgstr ""
 
 #: exe/application.py:244
 msgid "Please wait until loading finishes"
-msgstr ""
+msgstr "Počkajte prosím, pokiaľ načítanie neskončí"
 
 #: exe/webui/wikipediablock.py:123
 msgid "Polish Wikipedia Article"
@@ -1468,6 +1473,11 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
+"Predchádzajúci poznatok odkazuje na poznatky, ktoré by študenti mali mať, \n"
+"aby mohli efektívne dokončiť cvičenie. \n"
+"Príklad predchádzajúceho poznatku môže byť:<ul>\n"
+"<li> Študenti musia mať Level 4 English </li>\n"
+"<li> Študenti musia byť schopní zostaviť bežné elektrické náradie.</li></ul>\n"
 
 #: exe/webui/element.py:1502 exe/webui/editorpane.py:264
 msgid "Preview"
@@ -1476,7 +1486,7 @@ msgstr "Ukážka"
 #: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr ""
+msgstr "Adresár s ukážkami %s už existuje, nedá sa nahradiť"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:315 exe/export/websitepage.py:191
@@ -1489,13 +1499,15 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Napíšte popis k MP3 súboru. \n"
+"Bude sa zobrazovať tiež pri prehrávaní v prehrávači."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
-"Zadajte popisok obrázka, \n"
+"Zadajte popis obrázka, \n"
 "ktorý má byť zväčšený."
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
@@ -1503,7 +1515,7 @@ msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
-"Zadajte popisok pre flashovú animáciu, \n"
+"Zadajte popis pre flashovú animáciu, \n"
 "ktorú ste práve vložili."
 
 #: exe/engine/flashwithtextidevice.py:58
@@ -1512,7 +1524,7 @@ msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
-"Zadajte poisok pre flash, ktorý \n"
+"Zadajte popis pre flash, ktorý \n"
 "                                  ste práve vložili."
 
 #: exe/engine/imagewithtextidevice.py:71
@@ -1521,7 +1533,7 @@ msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
-"Zadajte popisok obrázka, ktorý \n"
+"Zadajte popis obrázka, ktorý \n"
 "ste práve vložili."
 
 #: exe/engine/truefalseidevice.py:166 exe/engine/truefalseidevice.py:393
@@ -1529,13 +1541,15 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Uveďte inštrukcie, ako by mali byť zodpovedané \n"
+"otázky áno/nie."
 
 #: exe/engine/clozeidevice.py:117
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr ""
-"Zadajte pokyny, ako má byť doplňovačka dokončená. \n"
+"Zadajte pokyny, ako má byť skúšobný test dokončený. \n"
 "Ak nezadáte nič, automaticky sa vloží predvolený text.\n"
 
 #: exe/engine/casestudyidevice.py:229
@@ -1556,9 +1570,8 @@ msgstr "Sem vložte pokyny pre študentov (žiakov)"
 
 #: exe/engine/multiselectidevice.py:80 exe/engine/multichoiceidevice.py:132
 #: exe/engine/field.py:3151 exe/engine/field.py:3216
-#, fuzzy
 msgid "Question"
-msgstr "Otázka:"
+msgstr "Otázka"
 
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1572,15 +1585,15 @@ msgstr "Koniec"
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/clozeidevice.py:276
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "Prečitajte si doleuvedený odstavec a vyplňte chýbajúce slová"
+msgstr "Prečítajte si doleuvedený odstavec a vyplňte chýbajúce slová"
 
 #: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
 msgid "Read the paragraph below and fill in the missing words."
-msgstr "Prečitajte si doleuvedený odstavec a vyplňte chýbajúce slová."
+msgstr "Prečítajte si doleuvedený odstavec a vyplňte chýbajúce slová."
 
 #: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
 #: exe/engine/genericidevice.py:304
@@ -1604,6 +1617,12 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
 msgstr ""
+"Reflexia je výuková metóda často používaná na prepojenie teórie s praxou.\n"
+"Reflexia dáva študentom možnosť nahliadať a reflektovať vlastnú činnosť \n"
+"skôr, než je prezentovaná ako časť akademickej práce. \n"
+"Príspevky, zápisky, profily a portfólia \n"
+"sú bežné nástroje na získavanie pozorovaných dát.\n"
+"Rubriky a sprievodca môžu byť efektívne nástroje spätnej väzby."
 
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
 msgid "Reflective question:"
@@ -1621,7 +1640,7 @@ msgstr "Vpravo"
 
 #: exe/xului/mainpage.py:309
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "Uloženie zlyhalo!"
 
 #: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
 #: exe/xului/mainpage.py:901
@@ -1630,6 +1649,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"Uloženie zlyhalo!\n"
+"%s"
 
 #: exe/engine/package.py:445 exe/engine/package.py:452
 #, python-format
@@ -1637,6 +1658,8 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"Uloženie zlyhalo!\n"
+"Posledné úspešné uloženie je %s."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
@@ -1665,9 +1688,8 @@ msgid "Select Language"
 msgstr "Zvoľte jazyk"
 
 #: exe/webui/editorelement.py:308
-#, fuzzy
 msgid "Select MP3 file"
-msgstr "Vyberte súbor"
+msgstr "Zvoľte MP3 súbor"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:797
@@ -1679,14 +1701,12 @@ msgid "Select a flash video"
 msgstr "Vyberte Flash animáciu"
 
 #: exe/webui/element.py:1488
-#, fuzzy
 msgid "Select a font size: "
-msgstr "Vyberte súbor"
+msgstr "Zvoľte veľkosť písma"
 
 #: exe/webui/element.py:585
-#, fuzzy
 msgid "Select an MP3"
-msgstr "Vyberte súbor"
+msgstr "Zvoľte MP3"
 
 #: exe/webui/element.py:498
 msgid "Select an image"
@@ -1701,6 +1721,8 @@ msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
+"Vyberte požadovaný počet správnych odpovedí kliknutím \n"
+"na zaškrtávacie tlačítko vedľa odpovede."
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
@@ -1711,17 +1733,20 @@ msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Vyberte odpovedajúcu jazykovú verziu Wikipedie \n"
+"a vložte pojem, ktorý sa má vyhľadať."
 
 #: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Vyberte správnu možnosť kliknutím \n"
+"na prepínač."
 
 #: exe/engine/imagemagnifieridevice.py:72
-#, fuzzy
 msgid "Select the size of the magnifying glass"
-msgstr "Veľkosť zväčšovacieho skla:"
+msgstr "Vyberte veľkosť zväčšovacieho skla"
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1734,13 +1759,12 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
-#, fuzzy
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
-"Nastavte prvotnú úroveň zväčšenia \n"
-"platnú po nahratí prostriedku iDevice, v percentách originálnej veľkosti obrázka"
+"Nastavte maximálne možné priblíženie \n"
+"v percentách vzhľadom k originálnej veľkosti obrázku"
 
 #: exe/xului/propertiespage.py:201
 msgid "Settings saved"
@@ -1756,9 +1780,8 @@ msgid "Show Answers"
 msgstr "Zobraziť odpovede"
 
 #: exe/webui/questionelement.py:130 exe/webui/element.py:1807
-#, fuzzy
 msgid "Show Feedback"
-msgstr "Zobraziť / Skryť spätnú väzbu"
+msgstr "Zobraziť spätnú väzbu"
 
 #: exe/webui/element.py:1192
 msgid "Show/Clear Answers"
@@ -1777,9 +1800,8 @@ msgid "Size of magnifying glass: "
 msgstr "Veľkosť zväčšovacieho skla:"
 
 #: exe/webui/wikipediablock.py:125
-#, fuzzy
 msgid "Slovenian Wikipedia Article"
-msgstr "Taliansky článok vo formáte Wikipedia"
+msgstr "Slovínsky článok vo formáte Wikipedia"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
@@ -1788,16 +1810,15 @@ msgstr "Malý"
 #: exe/webui/wikipediablock.py:157 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/editorpane.py:336
 msgid "Some emphasis"
-msgstr "Nejaké zvýraznenie"
+msgstr "Čiastočné zvýraznenie"
 
 #: exe/application.py:273 exe/xului/mainpage.py:1101
 msgid "Sorry, wrong file format"
 msgstr "Prepáčte, nesprávny formát súboru "
 
 #: exe/webui/editorpage.py:172 exe/webui/editorpage.py:184
-#, fuzzy
 msgid "Sorry, wrong file format."
-msgstr "Prepáčte, nesprávny formát súboru "
+msgstr "Prepáčte, nesprávny formát súboru."
 
 #: exe/xului/mainpage.py:1099
 #, python-format
@@ -1830,11 +1851,20 @@ msgstr "Odoslať odpoveď"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Swedish Wikipedia Article"
-msgstr "Španielsky článok vo formáte Wikipedia"
+msgstr "Šwédsky článok vo formáte Wikipedia"
 
 #: exe/engine/idevicestore.py:386
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"Učitelia by pri použití tohoto iDevice mali brať do úvahy: <ol><li> "
+"Premýšľajte nad množstvom rôznych zamýšľaných aktivít, ktoré budú v obsahu "
+"vizuálne označené. Vyhnite sa príliš veľkému množstvu rôznych typov či "
+"klasifikácií aktivít, pretože to môže viesť k zmäteniu študentov. Obvykle "
+"stačia tri až štyri rôzne typy na jednu výukovú jednotku.</li><li> Pre "
+"prehľadnosť sa vždy snažte vkladať medzi dve iDevice text. Pokiaľ to ale "
+"nejde, radšej zhrnite dve otázky či prípady do jedného iDevice.</li><li> "
+"Berte do úvahy aktivity, u ktorých predpokladaný efekt prevažuje nad časom a "
+"úsilím, ktoré sú nutné na ich dokončenie.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/multimediaidevice.py:64
@@ -1852,6 +1882,8 @@ msgstr "Riadok textu"
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
 msgstr ""
+"MP3 iDevice umožňuje do obsahu načítať MP3 súbor a pripojiť k nemu "
+"inštrukcie."
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -1859,10 +1891,17 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"RSS iDevice ponúka študentovi nové informácie. \n"
+"Slúži k načítaniu obsahu RSS zdroja do pripravovaného materiálu."
 
 #: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
 msgstr ""
+"IDevice príloha sa používa na pripojenie existujúcich súborov k vašemu "
+"obsahu. Napríklad pokiaľ máte PDF súbor alebo PPT prezentáciu, ktorú chcete "
+"sprístupniť študentom, možno ju pripojiť ako prílohu spoločne s názvom a "
+"veľkosťou súboru. Študenti si potom môžu kliknutím na odkaz túto prílohu "
+"stiahnuť."
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1872,6 +1911,12 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"IDevice pre externý web načíta externú webovú stránku \n"
+"do rámu vnútri vášho výukového obsahu, čo je lepšie ako načítanie do "
+"vyskakovacieho okna. \n"
+"To znamená, že študenti nie sú takýmito oknami obťažovaní.\n"
+"Toto iDevice by malo byť použité iba vtedy, keď máte istotu, \n"
+"že študenti budú pripojení na internet."
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1880,6 +1925,11 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
+"IDevice flash s popisom vám umožňuje \n"
+"spojiť si s flash súborom dodatočné textové informácie. To môže byť "
+"praktické, \n"
+"pokiaľ chcete flash, ktorý študent sleduje, \n"
+"doplniť o výukové inštrukcie."
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1887,6 +1937,9 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"Lupa je nástroj umožňujúci \n"
+"študentom zväčšiť si náhľad na obrázok, ktorý im bol poskytnutý. \n"
+"Pohybom lupy nad obrázkom je možné pozorovať väčšie detaily."
 
 #: exe/engine/freetextidevice.py:40
 msgid ""
@@ -1895,6 +1948,10 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"Prevažná časť výukového prostriedku bude vytvárať kontext, \n"
+"poskytovať pokyny a všeobecné informácie.\n"
+"Tak vznikne štruktúra, v ktorej sú vytvárané \n"
+"a sprostredkované výukové aktivity."
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1907,11 +1964,19 @@ msgid ""
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
 msgstr ""
+"Matematický jazyk LaTeX je použitý, \n"
+"                        aby vám umožnil zápis matematických vzorcov \n"
+"                        v obsahu. Zápis je spracovaný a vytvorený \n"
+"                        obrázok sa vloží do vášho obsahu. \n"
+"                        Odporúčame vám, aby ste na vysvetlenie \n"
+"                        a inštrukcie použili blízko tohoto obrázku \n"
+"                        iDevice Text."
 
 #: exe/webui/editorpane.py:69
-#, fuzzy
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
-msgstr "Pedagogický tip umožňuje charakterizovať zamýšľané použitie a pedagogické pozadie vyvíjaného prostriedku."
+msgstr ""
+"Dialóg vám umožňuje popísať cieľ vášho zámeru ostatným potenciálnym "
+"užívateľom."
 
 #: exe/webui/wikipediablock.py:229
 msgid "This article is licensed under the "
@@ -1933,6 +1998,12 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Toto iDevice podporuje iba súbory Flash Video (.flv), \n"
+"neakceptuje iné video formáty. Takéto video formáty (napr. mov, wmv apod.) \n"
+"môžete konvertovať do formátu flv prostredníctvom iných programov.\n"
+"Tie ale v eXe nenájdete. Užívatelia si tiež musia na prehrávanie flashu "
+"nainštalovať \n"
+"prehrávač zo stránok http://www.macromedia.com."
 
 #: exe/engine/freetextidevice.py:121
 msgid "This is a free text field general learning content can be entered."
@@ -1955,12 +2026,11 @@ msgid "This is an optional field."
 msgstr "Toto je voliteľné pole."
 
 #: exe/webui/block.py:225
-#, fuzzy
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
-"Táto akcia vymaže tento prostriedok iDevice.\n"
+"Táto akcia vymaže tento iDevice.\n"
 "Skutočne to chcete urobiť?"
 
 #: exe/webui/block.py:270
@@ -1968,15 +2038,16 @@ msgid "Tip:"
 msgstr "Tip:"
 
 #: exe/webui/galleryblock.py:204
-#, fuzzy
 msgid "Title"
-msgstr "Titulok: "
+msgstr "Názov"
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Na označenie správnej odpovede \n"
+"kliknite na prepínač vedľa danej možnosti."
 
 #: exe/engine/package.py:288
 msgid "Topic"
@@ -1997,6 +2068,10 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
+"Otázky Pravda/Lož uvádzajú tvrdenie, u ktorého \n"
+"musí študent rozhodnúť, či je pravdivé. Tento druh otázok je vhodný \n"
+"pre faktické informácie a informácie, ktoré poskytujú \n"
+"reakcie buď/alebo."
 
 #: exe/engine/field.py:2971
 msgid "Type a discussion topic here."
@@ -2034,6 +2109,8 @@ msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
+"Vložte spätnú väzbu, ktorú \n"
+"chcete študentovi poskytnúť."
 
 #: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
 msgid "Type the learning objectives for this resource."
@@ -2045,6 +2122,9 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
 "be ambiguous."
 msgstr ""
+"Vpíšte obsah otázky. Otázka by mala byť položená jasne a jednoznačne. \n"
+"Vyhnite s negatívnym tvrdeniam, pretože \n"
+"môžu študenta zmiasť."
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -2054,11 +2134,15 @@ msgstr "URL:"
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
+"Nedá sa stiahnuť z %s <br/>Prekontrolujte, prosím, zadaný text a tiež "
+"pripojenie a skúste to znovu."
 
 #: exe/engine/rssidevice.py:108 exe/engine/rssidevice.py:111
 #, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
+"Nedá sa načítať RSS kanál %s <br/>Prekontrolujte, prosím, zadaný text a tiež "
+"pripojenie a skúste to znovu."
 
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
@@ -4019,6 +4103,11 @@ msgstr "Práva: "
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+"Typicky bude v položke Práva obsiahnutá pasáž o oprávnení k daným zdrojom "
+"alebo odkaz na takéto informácie. Informácie o oprávnení zahrňujú často "
+"Intellectual Property Rights (IPR), copyright a iné vlastnícke práva. Pokiaľ "
+"nebude položka Práva uvedená, nemožno vytvárať predpoklady o stave "
+"akýchkoľvek práv vzťahujúcich sa k prostriedkom a zdrojom."
 
 #~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 #~ msgstr "label=\"Tipy a triky\" accesskey=\"t\""
