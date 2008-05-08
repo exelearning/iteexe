@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-29 16:14+1200\n"
+"POT-Creation-Date: 2008-05-08 14:29+1200\n"
 "PO-Revision-Date: 2008-03-20 06:59+1300\n"
 "Last-Translator: Gonçalo Cordeiro <gzcordeiro@gmail.com>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
@@ -733,7 +733,7 @@ msgstr ""
 "FALLOU A EXPORTACIÓN!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:471
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1223,7 +1223,7 @@ msgstr "Grande"
 msgid "Left"
 msgstr "Esquerda"
 
-#: exe/export/pages.py:71 exe/export/textexport.py:54
+#: exe/export/pages.py:83 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "Licenciado baixo a"
 
@@ -1298,7 +1298,7 @@ msgid "New iDevice"
 msgstr "Novo iDevice"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:316 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Seguinte"
 
@@ -1488,7 +1488,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "O directorio de previsualización %s é un  ficheiro, non se pode substituír"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Anterior"
 
@@ -2268,7 +2268,7 @@ msgstr "artigo "
 msgid "blank for original size"
 msgstr "en branco para o tamaño orixinal"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:271
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
 msgid "eXe"
 msgstr "eXe"
 
@@ -2650,8 +2650,9 @@ msgid "P"
 msgstr "P"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution 2.5 License" id="ppcca1" label="Creative License">
-msgid "Creative Commons Attribution 2.5 License"
+#: Attribution 3.0 License" id="ppcc31" label="Creative License">
+#, fuzzy
+msgid "Creative Commons Attribution 3.0 License"
 msgstr "Licenza Creative Commons Attribution 2.5"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
@@ -2668,8 +2669,9 @@ msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Ficheiro\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
-msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+#: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
+#, fuzzy
+msgid "Creative Commons Attribution Share Alike 3.0 License"
 msgstr "Licenza Creative Commons Attribution-ShareAlike 2.5"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
@@ -2688,8 +2690,10 @@ msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Novo\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
-msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+#: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
+#: License">
+#, fuzzy
+msgid "Creative Commons Attribution No Derivatives 3.0 License"
 msgstr "Licenza Creative Commons Attribution-NoDerivs 2.5"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
@@ -2704,9 +2708,10 @@ msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Abrir\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
-msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+#, fuzzy
+msgid "Creative Commons Attribution Non-commercial 3.0 License"
 msgstr "Licenza Creative Commons Attribution-NonCommercial 2.5"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
@@ -2721,9 +2726,10 @@ msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"Actualizar\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
 #: label="Creative License">
-msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+#, fuzzy
+msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
 msgstr "Licenza Creative Commons Attribution-NonCommercial-ShareAlike 2.5"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
@@ -2744,9 +2750,10 @@ msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Gardar\" accesskey=\"g\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
-#: License">
-msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+#: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
+#: label="Creative License">
+#, fuzzy
+msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
 msgstr "Licenza Creative Commons Attribution-NonCommercial-NoDerivs 2.5"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
@@ -2766,10 +2773,10 @@ msgstr ""
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Gardar como...\" accesskey=\"c\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
-#: Nations 2.0" id="ppdn" label="Developing 2.0">
-msgid "Developing Nations 2.0"
-msgstr "Developing Nations 2.0"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+msgid "Creative Commons Attribution 2.5 License"
+msgstr "Licenza Creative Commons Attribution 2.5"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
@@ -2781,10 +2788,10 @@ msgstr "Seleccione un formato."
 msgid "label=\"Print\" accesskey=\"p\""
 msgstr "label=\"Imprimir\" accesskey=\"i\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
-msgid "Web pages footer."
-msgstr "Pé de páxinas web."
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr "Licenza Creative Commons Attribution-ShareAlike 2.5"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
@@ -2796,10 +2803,10 @@ msgstr "Formato:"
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Exportar\" accesskey=\"e\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
-msgid "Footer:"
-msgstr "Pé de páxina:"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr "Licenza Creative Commons Attribution-NoDerivs 2.5"
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_format" label="Select Format">
@@ -2812,11 +2819,11 @@ msgstr "Seleccionar formato"
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
 msgstr "label=\"Common Cartridge\" accesskey=\"p\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Description:"
-#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
-#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
-msgid "An account of the content of the resource."
-msgstr "Unha conta do contido do recurso."
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: License">
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr "Licenza Creative Commons Attribution-NonCommercial 2.5"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2828,10 +2835,11 @@ msgstr "XHTML"
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
-msgid "Taxonomy"
-msgstr "Taxonomía"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: label="Creative License">
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr "Licenza Creative Commons Attribution-NonCommercial-ShareAlike 2.5"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
@@ -2844,11 +2852,11 @@ msgstr "SCORM 1.2"
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"Paquete de contido IMS\" accesskey=\"i\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
-msgid "Default name for level 1 nodes"
-msgstr "Nome por defecto para os nodos de nivel 1"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
+#: License">
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr "Licenza Creative Commons Attribution-NonCommercial-NoDerivs 2.5"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
@@ -2861,11 +2869,10 @@ msgstr "Paquete de contido IMS 1.1.3"
 msgid "Web Site"
 msgstr "Sitio Web"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
-msgid "Level 1:"
-msgstr "Nivel 1:"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
+#: Nations 2.0" id="ppdn" label="Developing 2.0">
+msgid "Developing Nations 2.0"
+msgstr "Developing Nations 2.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2878,11 +2885,10 @@ msgstr "Unha referencia inequívoca para o recurso dentro dun contexto dado."
 msgid "Self-contained Folder"
 msgstr "Cartafol independente"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
-msgid "Default name for level 2 nodes"
-msgstr "Nome por defecto para os nodos de nivel 2"
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
+#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+msgid "Web pages footer."
+msgstr "Pé de páxinas web."
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2895,11 +2901,10 @@ msgstr "Identificador:"
 msgid "Zip File"
 msgstr "Ficheiro ZIP"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
-msgid "Level 2:"
-msgstr "Nivel 2:"
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
+#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+msgid "Footer:"
+msgstr "Pé de páxina:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2913,11 +2918,11 @@ msgstr "Unha referencia a un recurso do que o presente recurso se deriva."
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Páxina única\" accesskey=\"p\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
-msgid "Default name for level 3 nodes"
-msgstr "Nome por defecto para os nodos de nivel 3"
+#: exe/xului/templates/packageproperties.xul:<label value="Description:"
+#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
+#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
+msgid "An account of the content of the resource."
+msgstr "Unha conta do contido do recurso."
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2931,11 +2936,10 @@ msgstr "Fonte:"
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"Ficheiro\" accesskey=\"f\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
-msgid "Level 3:"
-msgstr "Nivel 3:"
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
+#: label="Taxonomy">
+msgid "Taxonomy"
+msgstr "Taxonomía"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2947,13 +2951,11 @@ msgstr "Seleccione un idioma."
 msgid "label=\"iPod Notes\" accesskey=\"n\""
 msgstr "label=\"Novo\" accesskey=\"n\""
 
-#: exe/xului/templates/packageproperties.xul:<button flex="0"
-#: oncommand="submitForm(this.parentNode.parentNode,
-#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
-#: label="Update Tree" tooltiptext="Submit changes and update the tree
-#: display">
-msgid "Update Tree"
-msgstr "Actualizar a árbore"
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+msgid "Default name for level 1 nodes"
+msgstr "Nome por defecto para os nodos de nivel 1"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2965,13 +2967,11 @@ msgstr "Idioma:"
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"Unir\" accesskey=\"u\""
 
-#: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-msgid "Apply"
-msgstr "Aplicar"
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+msgid "Level 1:"
+msgstr "Nivel 1:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
@@ -2983,6 +2983,12 @@ msgstr "Abkhazian "
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"Inserir paquete\" accesskey=\"i\""
 
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: nodes">
+msgid "Default name for level 2 nodes"
+msgstr "Nome por defecto para os nodos de nivel 2"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
 msgid "Afar "
@@ -2992,6 +2998,12 @@ msgstr "Afar "
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"Extraer paquete\" accesskey=\"E\""
+
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: nodes">
+msgid "Level 2:"
+msgstr "Nivel 2:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -3003,6 +3015,12 @@ msgstr "Afrikaans "
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr "label=\"Saír\" accesskey=\"q\""
 
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+msgid "Default name for level 3 nodes"
+msgstr "Nome por defecto para os nodos de nivel 3"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
 msgid "Albanian "
@@ -3012,6 +3030,12 @@ msgstr "Albanés "
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Ferramentas\" accesskey=\"t\""
+
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+msgid "Level 3:"
+msgstr "Nivel 3:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -3023,6 +3047,14 @@ msgstr "Amárico "
 msgid "Preferences"
 msgstr "Preferencias"
 
+#: exe/xului/templates/packageproperties.xul:<button flex="0"
+#: oncommand="submitForm(this.parentNode.parentNode,
+#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
+#: label="Update Tree" tooltiptext="Submit changes and update the tree
+#: display">
+msgid "Update Tree"
+msgstr "Actualizar a árbore"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
@@ -3033,6 +3065,14 @@ msgstr "Árabe "
 #: accesskey="r" label="Refresh Display">
 msgid "label=\"Refresh Display\" accesskey=\"r\""
 msgstr "label=\"Actualizar a pantalla\" accesskey=\"r\""
+
+#: exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+msgid "Apply"
+msgstr "Aplicar"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">

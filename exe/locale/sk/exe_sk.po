@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-29 16:14+1200\n"
+"POT-Creation-Date: 2008-05-08 14:29+1200\n"
 "PO-Revision-Date: 2008-05-07 22:09+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -729,7 +729,7 @@ msgstr ""
 "EXPORT ZLYHAL!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:471
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -922,8 +922,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr ""
 "Vložte otázku. \n"
-"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych "
-"formulácií, \n"
+"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych formulácií, \n"
 "pretože vyznievajú nejednoznačne."
 
 #: exe/engine/field.py:3302
@@ -933,8 +932,7 @@ msgid ""
 "can tend to confuse learners."
 msgstr ""
 "Vložte otázku. \n"
-"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych "
-"formulácií, \n"
+"Zadanie by malo byť jasné a jednoznačné. Vyvarujte sa negatívnych formulácií, \n"
 "pretože môžu študentov miasť."
 
 #: exe/engine/imagewithtextidevice.py:66
@@ -963,10 +961,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:57
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr ""
-"Vložte text, ktorý si prajete pripojiť ku stiahnutému súboru. Môžete doň "
-"vložiť inštrukcie, ktoré budete od študenta požadovať po stiahnutí súboru "
-"alebo ako má byť materiál použitý."
+msgstr "Vložte text, ktorý si prajete pripojiť ku stiahnutému súboru. Môžete doň vložiť inštrukcie, ktoré budete od študenta požadovať po stiahnutí súboru alebo ako má byť materiál použitý."
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
@@ -1050,9 +1045,7 @@ msgstr "Flash s textom"
 #: exe/xului/mainpage.py:1002
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
-msgstr ""
-"Adresár s názvom %s už existuje. Vyberte prosím iný alebo zmažte existujúci "
-"a skúste to znovu."
+msgstr "Adresár s názvom %s už existuje. Vyberte prosím iný alebo zmažte existujúci a skúste to znovu."
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
@@ -1224,7 +1217,7 @@ msgstr "Veľké"
 msgid "Left"
 msgstr "Vľavo"
 
-#: exe/export/pages.py:71 exe/export/textexport.py:54
+#: exe/export/pages.py:83 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "Licencované pod"
 
@@ -1299,7 +1292,7 @@ msgid "New iDevice"
 msgstr "Nový prostriedok iDevice"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:316 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Ďalej"
 
@@ -1398,9 +1391,7 @@ msgstr "Súbory rozbalené do: %s"
 #: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
 #: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
-msgstr ""
-"Balík je zastaralý. Pomocou položky Súbor-Otvoriť a následne Uložiť ako... "
-"ho aktualizujte. Až potom ho môžete vložiť do iného balíčku!"
+msgstr "Balík je zastaralý. Pomocou položky Súbor-Otvoriť a následne Uložiť ako... ho aktualizujte. Až potom ho môžete vložiť do iného balíčku!"
 
 #: exe/xului/mainpage.py:316
 #, python-format
@@ -1489,7 +1480,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Adresár s ukážkami %s už existuje, nedá sa nahradiť"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:315 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Predošlý"
 
@@ -1855,16 +1846,7 @@ msgstr "Šwédsky článok vo formáte Wikipedia"
 
 #: exe/engine/idevicestore.py:386
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
-"Učitelia by pri použití tohoto iDevice mali brať do úvahy: <ol><li> "
-"Premýšľajte nad množstvom rôznych zamýšľaných aktivít, ktoré budú v obsahu "
-"vizuálne označené. Vyhnite sa príliš veľkému množstvu rôznych typov či "
-"klasifikácií aktivít, pretože to môže viesť k zmäteniu študentov. Obvykle "
-"stačia tri až štyri rôzne typy na jednu výukovú jednotku.</li><li> Pre "
-"prehľadnosť sa vždy snažte vkladať medzi dve iDevice text. Pokiaľ to ale "
-"nejde, radšej zhrnite dve otázky či prípady do jedného iDevice.</li><li> "
-"Berte do úvahy aktivity, u ktorých predpokladaný efekt prevažuje nad časom a "
-"úsilím, ktoré sú nutné na ich dokončenie.</li></ol>"
+msgstr "Učitelia by pri použití tohoto iDevice mali brať do úvahy: <ol><li> Premýšľajte nad množstvom rôznych zamýšľaných aktivít, ktoré budú v obsahu vizuálne označené. Vyhnite sa príliš veľkému množstvu rôznych typov či klasifikácií aktivít, pretože to môže viesť k zmäteniu študentov. Obvykle stačia tri až štyri rôzne typy na jednu výukovú jednotku.</li><li> Pre prehľadnosť sa vždy snažte vkladať medzi dve iDevice text. Pokiaľ to ale nejde, radšej zhrnite dve otázky či prípady do jedného iDevice.</li><li> Berte do úvahy aktivity, u ktorých predpokladaný efekt prevažuje nad časom a úsilím, ktoré sú nutné na ich dokončenie.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/multimediaidevice.py:64
@@ -1881,9 +1863,7 @@ msgstr "Riadok textu"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
-"MP3 iDevice umožňuje do obsahu načítať MP3 súbor a pripojiť k nemu "
-"inštrukcie."
+msgstr "MP3 iDevice umožňuje do obsahu načítať MP3 súbor a pripojiť k nemu inštrukcie."
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -1896,12 +1876,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
-"IDevice príloha sa používa na pripojenie existujúcich súborov k vašemu "
-"obsahu. Napríklad pokiaľ máte PDF súbor alebo PPT prezentáciu, ktorú chcete "
-"sprístupniť študentom, možno ju pripojiť ako prílohu spoločne s názvom a "
-"veľkosťou súboru. Študenti si potom môžu kliknutím na odkaz túto prílohu "
-"stiahnuť."
+msgstr "IDevice príloha sa používa na pripojenie existujúcich súborov k vašemu obsahu. Napríklad pokiaľ máte PDF súbor alebo PPT prezentáciu, ktorú chcete sprístupniť študentom, možno ju pripojiť ako prílohu spoločne s názvom a veľkosťou súboru. Študenti si potom môžu kliknutím na odkaz túto prílohu stiahnuť."
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1912,8 +1887,7 @@ msgid ""
 "will be viewed by learners online."
 msgstr ""
 "IDevice pre externý web načíta externú webovú stránku \n"
-"do rámu vnútri vášho výukového obsahu, čo je lepšie ako načítanie do "
-"vyskakovacieho okna. \n"
+"do rámu vnútri vášho výukového obsahu, čo je lepšie ako načítanie do vyskakovacieho okna. \n"
 "To znamená, že študenti nie sú takýmito oknami obťažovaní.\n"
 "Toto iDevice by malo byť použité iba vtedy, keď máte istotu, \n"
 "že študenti budú pripojení na internet."
@@ -1926,8 +1900,7 @@ msgid ""
 "the learners will view."
 msgstr ""
 "IDevice flash s popisom vám umožňuje \n"
-"spojiť si s flash súborom dodatočné textové informácie. To môže byť "
-"praktické, \n"
+"spojiť si s flash súborom dodatočné textové informácie. To môže byť praktické, \n"
 "pokiaľ chcete flash, ktorý študent sleduje, \n"
 "doplniť o výukové inštrukcie."
 
@@ -1974,9 +1947,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:69
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
-msgstr ""
-"Dialóg vám umožňuje popísať cieľ vášho zámeru ostatným potenciálnym "
-"užívateľom."
+msgstr "Dialóg vám umožňuje popísať cieľ vášho zámeru ostatným potenciálnym užívateľom."
 
 #: exe/webui/wikipediablock.py:229
 msgid "This article is licensed under the "
@@ -2001,8 +1972,7 @@ msgstr ""
 "Toto iDevice podporuje iba súbory Flash Video (.flv), \n"
 "neakceptuje iné video formáty. Takéto video formáty (napr. mov, wmv apod.) \n"
 "môžete konvertovať do formátu flv prostredníctvom iných programov.\n"
-"Tie ale v eXe nenájdete. Užívatelia si tiež musia na prehrávanie flashu "
-"nainštalovať \n"
+"Tie ale v eXe nenájdete. Užívatelia si tiež musia na prehrávanie flashu nainštalovať \n"
 "prehrávač zo stránok http://www.macromedia.com."
 
 #: exe/engine/freetextidevice.py:121
@@ -2133,16 +2103,12 @@ msgstr "URL:"
 #: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
-"Nedá sa stiahnuť z %s <br/>Prekontrolujte, prosím, zadaný text a tiež "
-"pripojenie a skúste to znovu."
+msgstr "Nedá sa stiahnuť z %s <br/>Prekontrolujte, prosím, zadaný text a tiež pripojenie a skúste to znovu."
 
 #: exe/engine/rssidevice.py:108 exe/engine/rssidevice.py:111
 #, python-format
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
-"Nedá sa načítať RSS kanál %s <br/>Prekontrolujte, prosím, zadaný text a tiež "
-"pripojenie a skúste to znovu."
+msgstr "Nedá sa načítať RSS kanál %s <br/>Prekontrolujte, prosím, zadaný text a tiež pripojenie a skúste to znovu."
 
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
@@ -2272,7 +2238,7 @@ msgstr "článok"
 msgid "blank for original size"
 msgstr "prázdne pre originálnu veľkosť"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:271
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
 msgid "eXe"
 msgstr "eXe"
 
@@ -2656,8 +2622,8 @@ msgid "P"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution 2.5 License" id="ppcca1" label="Creative License">
-msgid "Creative Commons Attribution 2.5 License"
+#: Attribution 3.0 License" id="ppcc31" label="Creative License">
+msgid "Creative Commons Attribution 3.0 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
@@ -2672,8 +2638,8 @@ msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Súbor\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
-msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+#: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
+msgid "Creative Commons Attribution Share Alike 3.0 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
@@ -2689,8 +2655,9 @@ msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Nový\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
-msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+#: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
+#: License">
+msgid "Creative Commons Attribution No Derivatives 3.0 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
@@ -2705,9 +2672,9 @@ msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Otvoriť\" accesskey=\"o\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
-msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+msgid "Creative Commons Attribution Non-commercial 3.0 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
@@ -2722,9 +2689,9 @@ msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"Posledné projekty\" accesskey=\"o\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
 #: label="Creative License">
-msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
@@ -2741,9 +2708,9 @@ msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Uložiť\" accesskey=\"u\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
-#: License">
-msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+#: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
+#: label="Creative License">
+msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
@@ -2759,9 +2726,9 @@ msgstr ""
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Uložiť ako...\" accesskey=\"a\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
-#: Nations 2.0" id="ppdn" label="Developing 2.0">
-msgid "Developing Nations 2.0"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+msgid "Creative Commons Attribution 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
@@ -2775,9 +2742,9 @@ msgstr "Výber formátu"
 msgid "label=\"Print\" accesskey=\"p\""
 msgstr "label=\"Tlač...\" accesskey=\"o\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
-msgid "Web pages footer."
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
@@ -2790,9 +2757,9 @@ msgstr "Formát: "
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Exportovať\" accesskey=\"e\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
-msgid "Footer:"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
@@ -2807,10 +2774,10 @@ msgstr "Výber formátu"
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
 msgstr "label=\"Jednoduchá stránka\" accesskey=\"j\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Description:"
-#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
-#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
-msgid "An account of the content of the resource."
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: License">
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
@@ -2823,10 +2790,11 @@ msgstr "XHTML"
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"c\""
 
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
-msgid "Taxonomy"
-msgstr "Taxonómia"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: label="Creative License">
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
@@ -2839,11 +2807,11 @@ msgstr "SCORM 1.2"
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"Obsahový balíček IMS\" accesskey=\"i\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
-msgid "Default name for level 1 nodes"
-msgstr "Predvolené meno pre uzly prvej úrovne"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
+#: License">
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
@@ -2856,11 +2824,10 @@ msgstr "obsahový balík IMS 1.1.3"
 msgid "Web Site"
 msgstr "Webové sídlo"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
-msgid "Level 1:"
-msgstr "Úroveň 1:"
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
+#: Nations 2.0" id="ppdn" label="Developing 2.0">
+msgid "Developing Nations 2.0"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2873,11 +2840,10 @@ msgstr ""
 msgid "Self-contained Folder"
 msgstr ""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
-msgid "Default name for level 2 nodes"
-msgstr "Predvolené meno pre uzly druhej úrovne"
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
+#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+msgid "Web pages footer."
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2890,11 +2856,10 @@ msgstr "Identifikátor:"
 msgid "Zip File"
 msgstr ""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
-msgid "Level 2:"
-msgstr "Úroveň 2:"
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
+#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+msgid "Footer:"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2908,11 +2873,11 @@ msgstr ""
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Jednoduchá stránka\" accesskey=\"j\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
-msgid "Default name for level 3 nodes"
-msgstr "Predvolené meno pre uzly tretej úrovne"
+#: exe/xului/templates/packageproperties.xul:<label value="Description:"
+#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
+#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
+msgid "An account of the content of the resource."
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2927,11 +2892,10 @@ msgstr "Zdroj:"
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"Súbor\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
-msgid "Level 3:"
-msgstr "Úroveň 3:"
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
+#: label="Taxonomy">
+msgid "Taxonomy"
+msgstr "Taxonómia"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2945,13 +2909,11 @@ msgstr "Zvoľte jazyk"
 msgid "label=\"iPod Notes\" accesskey=\"n\""
 msgstr "label=\"Nový\" accesskey=\"n\""
 
-#: exe/xului/templates/packageproperties.xul:<button flex="0"
-#: oncommand="submitForm(this.parentNode.parentNode,
-#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
-#: label="Update Tree" tooltiptext="Submit changes and update the tree
-#: display">
-msgid "Update Tree"
-msgstr ""
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+msgid "Default name for level 1 nodes"
+msgstr "Predvolené meno pre uzly prvej úrovne"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2963,14 +2925,11 @@ msgstr "Jazyk:"
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"Zlučovanie\" accesskey=\"z\""
 
-#: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-#, fuzzy
-msgid "Apply"
-msgstr "Kód Applet-u:"
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+msgid "Level 1:"
+msgstr "Úroveň 1:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
@@ -2983,6 +2942,12 @@ msgstr "Albánsky."
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"Vložiť balíček\" accesskey=\"i\""
 
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: nodes">
+msgid "Default name for level 2 nodes"
+msgstr "Predvolené meno pre uzly druhej úrovne"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
 #, fuzzy
@@ -2993,6 +2958,12 @@ msgstr "článok"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"Rozbaliť balíček\" accesskey=\"E\""
+
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: nodes">
+msgid "Level 2:"
+msgstr "Úroveň 2:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -3005,6 +2976,12 @@ msgstr "Africky."
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr "label=\"Koniec\" accesskey=\"o\""
 
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+msgid "Default name for level 3 nodes"
+msgstr "Predvolené meno pre uzly tretej úrovne"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
 #, fuzzy
@@ -3015,6 +2992,12 @@ msgstr "Albánsky."
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Nástroje\" accesskey=\"t\""
+
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+msgid "Level 3:"
+msgstr "Úroveň 3:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -3027,6 +3010,14 @@ msgstr "článok"
 msgid "Preferences"
 msgstr "Vlastnosti"
 
+#: exe/xului/templates/packageproperties.xul:<button flex="0"
+#: oncommand="submitForm(this.parentNode.parentNode,
+#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
+#: label="Update Tree" tooltiptext="Submit changes and update the tree
+#: display">
+msgid "Update Tree"
+msgstr ""
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 #, fuzzy
@@ -3038,6 +3029,15 @@ msgstr "Arabsky."
 #: accesskey="r" label="Refresh Display">
 msgid "label=\"Refresh Display\" accesskey=\"r\""
 msgstr "label=\"Obnoviť\" accesskey=\"o\""
+
+#: exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+#, fuzzy
+msgid "Apply"
+msgstr "Kód Applet-u:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
@@ -4102,12 +4102,7 @@ msgstr "Práva: "
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
-"Typicky bude v položke Práva obsiahnutá pasáž o oprávnení k daným zdrojom "
-"alebo odkaz na takéto informácie. Informácie o oprávnení zahrňujú často "
-"Intellectual Property Rights (IPR), copyright a iné vlastnícke práva. Pokiaľ "
-"nebude položka Práva uvedená, nemožno vytvárať predpoklady o stave "
-"akýchkoľvek práv vzťahujúcich sa k prostriedkom a zdrojom."
+msgstr "Typicky bude v položke Práva obsiahnutá pasáž o oprávnení k daným zdrojom alebo odkaz na takéto informácie. Informácie o oprávnení zahrňujú často Intellectual Property Rights (IPR), copyright a iné vlastnícke práva. Pokiaľ nebude položka Práva uvedená, nemožno vytvárať predpoklady o stave akýchkoľvek práv vzťahujúcich sa k prostriedkom a zdrojom."
 
 #~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 #~ msgstr "label=\"Tipy a triky\" accesskey=\"t\""
