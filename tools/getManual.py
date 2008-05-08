@@ -84,6 +84,8 @@ def fix_link(url):
         return url
     elif url.startswith('User:'):
         return 'http://wikieducator.org/' + url
+    elif url.startswith('#'):
+        return url
     return url.split('/')[-1] + '.html'
 
 if not url.startswith('http://wikieducator.org/') \
