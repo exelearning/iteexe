@@ -87,8 +87,8 @@ window manager, you should find an eXe entry in your Accessories menu.
 UBUNTU LINUX 
 ============
 
-There are separate DPKGs for Dapper/Edgy (Python 2.4) and Feisty (Python
-2.5).
+There are separate DPKGs for Dapper/Edgy (6.06 and 6.10 using Python 2.4)
+and Feisty/Gutsy/Hardy (7.04, 7.10, and 8.04 using Python 2.5).
 
 From the command line type exe to start.
 
