@@ -236,6 +236,8 @@ class Manifest(object):
             self.dependencies["base.css"] = True
             self.dependencies["content.css"] = True
             self.dependencies["popup_bg.gif"] = True
+            if page.node.package.backgroundImg:
+                self.dependencies[page.node.package.backgroundImg.basename()] = True
         else:
             self.resStr += "adlcp:scormtype=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
