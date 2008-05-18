@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 14:29+1200\n"
+"POT-Creation-Date: 2008-05-19 09:04+1200\n"
 "PO-Revision-Date: 2008-04-22 18:13+0200\n"
-"Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>Language-Team:  <en@li.org>\n"
+"Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -742,7 +743,7 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1309,7 +1310,7 @@ msgid "New iDevice"
 msgstr "Νέα ηΔραστηριότητα"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Επόμενο"
 
@@ -1501,7 +1502,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Ο φάκελος προεπισκόπησης %s είναι ένα αρχείο και δεν μπορεί να αντικατασταθεί"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Προηγούμενο"
 
@@ -2281,7 +2282,7 @@ msgstr "Άρθρο "
 msgid "blank for original size"
 msgstr "κενό για το αρχικό μέγεθος"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
 msgid "eXe"
 msgstr "eXe"
 

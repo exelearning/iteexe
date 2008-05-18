@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 14:29+1200\n"
+"POT-Creation-Date: 2008-05-19 09:04+1200\n"
 "PO-Revision-Date: 2008-02-22 08:38+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -736,7 +736,7 @@ msgstr ""
 "ការ​នាំចេញ​បាន​បរាជ័យ !\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1301,7 +1301,7 @@ msgid "New iDevice"
 msgstr "iDevice ថ្មី"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "បន្ទាប់"
 
@@ -1491,7 +1491,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "ថត​មើល​ជាមុន %s គឺ​ជា​ឯកសារ មិន​អាច​ជំនួស​វា​បានទេ"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "មុន"
 
@@ -2269,7 +2269,7 @@ msgstr "អត្ថបទ "
 msgid "blank for original size"
 msgstr "ទទេ ដើម្បី​ប្រើ​ទំហំ​ដើម"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
 msgid "eXe"
 msgstr "eXe"
 

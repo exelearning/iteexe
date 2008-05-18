@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 14:29+1200\n"
+"POT-Creation-Date: 2008-05-19 09:04+1200\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -729,7 +729,7 @@ msgstr ""
 "EXPORT ZLYHAL!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1292,7 +1292,7 @@ msgid "New iDevice"
 msgstr "Nový prostriedok iDevice"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Ďalej"
 
@@ -1480,7 +1480,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Adresár s ukážkami %s už existuje, nedá sa nahradiť"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Predošlý"
 
@@ -2112,9 +2112,7 @@ msgstr "Nedá sa načítať RSS kanál %s <br/>Prekontrolujte, prosím, zadaný 
 
 #: twisted/persisted/styles.py:432
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
-msgstr ""
-"Nie je možné spojiť: duplicitné meno prostriedku typu Java applet (vrátane: "
-"\""
+msgstr "Nie je možné spojiť: duplicitné meno prostriedku typu Java applet (vrátane: \""
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
@@ -2150,7 +2148,7 @@ msgstr ""
 "Na rozdiel od otázok s viacnásobným výberom odpovedí je SCORM kvíz \n"
 "používaný na testovanie znalostí študentov bez poskytnutí spätnej väzby \n"
 "Kvíz sa zadáva v okamžiku, keď mal študent čas\n"
-"na praktické vyskúšanie informácií či zručností.\n"
+"na praktické vyskúšanie informácií či zručností."
 
 #: exe/webui/appletblock.py:123
 msgid "Upload"
@@ -2172,10 +2170,7 @@ msgstr "Tento prostriedok iDevice použite, ak máte množstvo obrázkov, ktoré
 
 #: exe/webui/editorpane.py:76
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
-msgstr ""
-"Použite toto políčko na popísanie zamýšľaného použitia a pedagogického "
-"zámeru. To je dôležité pre prípad, že chcete tento iDevice poskytnúť iným "
-"užívateľom."
+msgstr "Použite toto políčko na popísanie zamýšľaného použitia a pedagogického zámeru. To je dôležité pre prípad, že chcete tento iDevice poskytnúť iným užívateľom."
 
 #: exe/engine/freetextidevice.py:46
 msgid ""
@@ -2184,15 +2179,12 @@ msgid ""
 "text through the text editing buttons associated with the field."
 msgstr ""
 "Toto pole použite na vloženie textu.\n"
-"Tento iDevice nemá žiadne zvýraznenie, hoci sa dá text obmedzene formátovať "
-"prostredníctvom \n"
+"Tento iDevice nemá žiadne zvýraznenie, hoci sa dá text obmedzene formátovať prostredníctvom \n"
 "editačných tlačidiel pri políčku."
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
-"V tomto zozname vyberte, či má byť pre iDevice použité nejaké rozlišovacie "
-"formátovanie, napr. okraj a ikona."
+msgstr "V tomto zozname vyberte, či má byť pre iDevice použité nejaké rozlišovacie formátovanie, napr. okraj a ikona."
 
 #: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
 msgid "What to read"
@@ -2212,17 +2204,13 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"Pri zostavovaní otázok s viacnásobným výberom odpovedí zvažujte nasledujúce: "
-"<ul>\n"
-"<li>Používajte frázy, ktoré študenti dobre poznajú a už sa s nimi stretli "
-"pri štúdiu.</li>\n"
+"Pri zostavovaní otázok s viacnásobným výberom odpovedí zvažujte nasledujúce: <ul>\n"
+"<li>Používajte frázy, ktoré študenti dobre poznajú a už sa s nimi stretli pri štúdiu.</li>\n"
 "<li>Odpovede by mali byť stručné a výstižné.</li>\n"
 "<li>Mali by byť udržované konzistencie medzi otázkou a odpoveďou.</li>\n"
-"<li>Poskytnite dostatok možností, ktoré študentov donútia, aby o svojej "
-"odpovedi premýšľali.\n"
+"<li>Poskytnite dostatok možností, ktoré študentov donútia, aby o svojej odpovedi premýšľali.\n"
 "</li>\n"
-"<li> Presvedčte sa, že správne odpovede nie sú popísané detailnejšie než tie "
-"zavádzajúce.</li>\n"
+"<li> Presvedčte sa, že správne odpovede nie sú popísané detailnejšie než tie zavádzajúce.</li>\n"
 "<li> Zavádzajúce odpovede by mali byť nesprávne, ale uveriteľné. </li>\n"
 "</ul>\n"
 
@@ -2256,10 +2244,7 @@ msgstr "Použite panel nástrojov alebo vložte LaTeX do políčka ručne."
 
 #: exe/webui/editorpane.py:64
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
-msgstr ""
-"Váš nový iDevice sa bude zobrazovat na paneli iDevice pod týmto názvom. Toto "
-"pole je povinné a pokiaľ sa pokúsite uložiť iDevice bez názvu, budete "
-"vyzvaní, aby ste nejaký zadali."
+msgstr "Váš nový iDevice sa bude zobrazovat na paneli iDevice pod týmto názvom. Toto pole je povinné a pokiaľ sa pokúsite uložiť iDevice bez názvu, budete vyzvaní, aby ste nejaký zadali."
 
 #: exe/webui/wikipediablock.py:244
 msgid "article "
@@ -2269,7 +2254,7 @@ msgstr "článok"
 msgid "blank for original size"
 msgstr "prázdne pre originálnu veľkosť"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
 msgid "eXe"
 msgstr "eXe"
 
@@ -2323,9 +2308,7 @@ msgstr "nový riadok"
 
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
-msgstr ""
-"premenoval sa zdroj idevice appletu a to by sa ešte nemalo urobiť do tejto "
-"miery!"
+msgstr "premenoval sa zdroj idevice appletu a to by sa ešte nemalo urobiť do tejto miery!"
 
 #: exe/webui/element.py:1484
 msgid "text"
@@ -2421,10 +2404,7 @@ msgstr "Titulok:"
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
 msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
-msgstr ""
-"Overovanie tohoto prepínača umožní pridať do individuálnych stránok v SCO "
-"odkazy Predchádzajúce a Nasledujúce. Je samozrejme vyžadované neštandardné "
-"rozšírenie SCORM 1.2, ktoré funguje len v niektorých verziách Moodle."
+msgstr "Overovanie tohoto prepínača umožní pridať do individuálnych stránok v SCO odkazy Predchádzajúce a Nasledujúce. Je samozrejme vyžadované neštandardné rozšírenie SCORM 1.2, ktoré funguje len v niektorých verziách Moodle."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
@@ -2520,8 +2500,7 @@ msgid ""
 "             "
 msgstr ""
 "\n"
-"                Väčšinou je Predmet vyjadrený ako kľúčové slovo, kľúčová "
-"fráza alebo \n"
+"                Väčšinou je Predmet vyjadrený ako kľúčové slovo, kľúčová fráza alebo \n"
 "                ako kód, ktorý popisuje tému prostriedku.\n"
 "                Doporučený osvedčený postup je vybrať hodnotu zo \n"
 "                slovníka alebo z odbornej terminológie.\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 14:29+1200\n"
+"POT-Creation-Date: 2008-05-19 09:04+1200\n"
 "PO-Revision-Date: 2008-05-17 04:03+1200\n"
 "Last-Translator: mayer giovanni <mayer.giovanni@rodari-rossano.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -31,8 +31,7 @@ msgstr ""
 "<p>Se l'applet che stai per aggiungere è stata realizzata \n"
 "da uno dei programmi in menù, per favore selezionalo,  \n"
 "poi aggiungi il file dell'applet generati dal tuo programma.  </p>\n"
-"<p>es. Per applet di Geogebra, seleziona Geogebra, poi aggiungi il file con "
-"estensione .ggb che \n"
+"<p>es. Per applet di Geogebra, seleziona Geogebra, poi aggiungi il file con estensione .ggb che \n"
 "realizzato con il programma Geogebra.</p>"
 
 #: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
@@ -150,11 +149,7 @@ msgstr ""
 
 #: exe/engine/field.py:3000
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr ""
-"<p>Seleziona i simboli dall'area di testo sottostante per creare formule "
-"matematiche. Ogni simbolo verrà visualizzato nel campo col linguaggio "
-"matematico LATEX la cui anteprima può essere vista usando il bottone  "
-"&lt;Anteprima&gt;."
+msgstr "<p>Seleziona i simboli dall'area di testo sottostante per creare formule matematiche. Ogni simbolo verrà visualizzato nel campo col linguaggio matematico LATEX la cui anteprima può essere vista usando il bottone  &lt;Anteprima&gt;."
 
 #: exe/engine/idevicestore.py:278
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -753,7 +748,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1324,7 +1319,7 @@ msgid "New iDevice"
 msgstr "Nuovo iDevice"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Prossimo"
 
@@ -1517,7 +1512,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nome file %s è un file, non si può sostituire"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Precedente"
 
@@ -2226,9 +2221,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
-"Usa il menù a discesa per selezionare la formattazione da applicare "
-"all'iDevice, per distinguerla; ad esempio un bordo o un'icona."
+msgstr "Usa il menù a discesa per selezionare la formattazione da applicare all'iDevice, per distinguerla; ad esempio un bordo o un'icona."
 
 #: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
 msgid "What to read"
@@ -2301,7 +2294,7 @@ msgstr "articolo"
 msgid "blank for original size"
 msgstr "vuoto per dimensioni originali"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
 msgid "eXe"
 msgstr "eXe"
 
@@ -2455,10 +2448,7 @@ msgstr "Titolo:"
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
 msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
-msgstr ""
-"Spuntando la casella, eXe aggiunge i link Precedente e Successivo a ciascuna "
-"pagina dello SCO. Questo richiede una estensione non standard di SCORM 1.2 "
-"ed è soltanto applicabile ad alcune versioni di Moodle. "
+msgstr "Spuntando la casella, eXe aggiunge i link Precedente e Successivo a ciascuna pagina dello SCO. Questo richiede una estensione non standard di SCORM 1.2 ed è soltanto applicabile ad alcune versioni di Moodle. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
@@ -2489,9 +2479,7 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
-"Immagine di sfondo per l'intestazione (si raccomanda  un'immagine alta "
-"100px)."
+msgstr "Immagine di sfondo per l'intestazione (si raccomanda  un'immagine alta 100px)."
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2724,6 +2712,7 @@ msgid ""
 msgstr ""
 "\n"
 "e comprende (tra gli altri) date nel formato YYYY-MM-DD.\n"
+" "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">

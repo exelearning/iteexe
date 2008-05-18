@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 14:29+1200\n"
+"POT-Creation-Date: 2008-05-19 09:04+1200\n"
 "PO-Revision-Date: 2007-06-27 11:47-0000\n"
 "Last-Translator: \n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -747,7 +747,7 @@ msgstr ""
 "A exportação falhou! \n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:489
+#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1322,7 +1322,7 @@ msgid "New iDevice"
 msgstr "Novo iDevice"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:334 exe/export/websitepage.py:197
+#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Próximo"
 
@@ -1511,7 +1511,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
 
 #: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:333 exe/export/websitepage.py:191
+#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Anterior"
 
@@ -2303,7 +2303,7 @@ msgstr "artigo"
 msgid "blank for original size"
 msgstr "vazio para o tamanho inicial"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:289
+#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
 msgid "eXe"
 msgstr "eXe"
 
