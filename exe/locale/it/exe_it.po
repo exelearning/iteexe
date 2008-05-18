@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-08 14:29+1200\n"
-"PO-Revision-Date: 2007-08-24 19:39+1200\n"
-"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
+"PO-Revision-Date: 2008-05-17 04:03+1200\n"
+"Last-Translator: mayer giovanni <mayer.giovanni@rodari-rossano.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.0.1\n"
 "X-EXE-Language: Italian\n"
 "X-Poedit-Language: Italiano\n"
 "X-Poedit-Country: ITALY\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
 msgid ""
@@ -28,6 +28,12 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+"<p>Se l'applet che stai per aggiungere è stata realizzata \n"
+"da uno dei programmi in menù, per favore selezionalo,  \n"
+"poi aggiungi il file dell'applet generati dal tuo programma.  </p>\n"
+"<p>es. Per applet di Geogebra, seleziona Geogebra, poi aggiungi il file con "
+"estensione .ggb che \n"
+"realizzato con il programma Geogebra.</p>"
 
 #: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
 #: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
@@ -133,7 +139,6 @@ msgid "<p>If this option is checked, submitted answers with different capitaliza
 msgstr "<p>Se questa opzione è abilitata, le risposte inviate con diversi formati Maiuscolo/Minuscolo sono identificate come sbagliate.</p>"
 
 #: exe/engine/field.py:2751
-#, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -144,9 +149,12 @@ msgstr ""
 "dell'esercizio.</p>"
 
 #: exe/engine/field.py:3000
-#, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr "<p>Seleziona i simboli dall'area di testo sottostante per creare formule matematiche. Ogni simbolo verrà visalizzato nel campo col linguaggio matematico LATEX la cui anteprima può essere vista usando il bottone  &lt;Anteprima&gt;."
+msgstr ""
+"<p>Seleziona i simboli dall'area di testo sottostante per creare formule "
+"matematiche. Ogni simbolo verrà visualizzato nel campo col linguaggio "
+"matematico LATEX la cui anteprima può essere vista usando il bottone  "
+"&lt;Anteprima&gt;."
 
 #: exe/engine/idevicestore.py:278
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -1456,7 +1464,7 @@ msgstr "Selezionare la risposta corretta per ogni domanda."
 
 #: exe/webui/appletblock.py:83
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Per favore carica un file .ggb"
 
 #: exe/xului/mainpage.py:88
 msgid ""
@@ -1464,10 +1472,13 @@ msgid ""
 "   File... Quit\n"
 "menu to close eXe."
 msgstr ""
+"Per favore usa dal menù \n"
+" File... il comando Quit \n"
+" per chiudere il programma."
 
 #: exe/application.py:244
 msgid "Please wait until loading finishes"
-msgstr ""
+msgstr "Per favore attendi la fine del caricamento"
 
 #: exe/webui/wikipediablock.py:123
 msgid "Polish Wikipedia Article"
@@ -1660,7 +1671,7 @@ msgstr "Corretto"
 
 #: exe/xului/mainpage.py:309
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "SALVATAGGIO FALLITO!"
 
 #: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
 #: exe/xului/mainpage.py:901
@@ -1669,6 +1680,8 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"SALVATAGGIO FALLITO!\n"
+"%s"
 
 #: exe/engine/package.py:445 exe/engine/package.py:452
 #, python-format
@@ -1676,6 +1689,8 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"SALVATAGGIO FALLITO!\n"
+"L'ultimo salvataggio con successo è %s."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
@@ -2142,7 +2157,7 @@ msgstr ""
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
-msgstr ""
+msgstr "Annulla Modifiche"
 
 #: exe/engine/package.py:288
 msgid "Unit"
@@ -2212,6 +2227,8 @@ msgstr ""
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
+"Usa il menù a discesa per selezionare la formattazione da applicare "
+"all'iDevice, per distinguerla; ad esempio un bordo o un'icona."
 
 #: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
 msgid "What to read"
@@ -2295,7 +2312,7 @@ msgstr "eXe : elearning XHTML editor"
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
-msgstr ""
+msgstr "Progetto eXe"
 
 #: exe/engine/appletidevice.py:129
 #, python-format
@@ -2389,15 +2406,14 @@ msgstr "Dublin Core"
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
-msgstr "Proprietà del progetto"
+msgstr "Proprietà del Progetto"
 
 #: exe/xului/templates/properties.xul:<window onload="fillInForms();
 #: translate(document.documentElement, 0);"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1" title="Package Properties">
-#, fuzzy
 msgid "Package Properties"
-msgstr "Proprietà del progetto"
+msgstr "Proprietà del Pacchetto"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
@@ -2440,6 +2456,9 @@ msgstr "Titolo:"
 #: exe/xului/templates/exportproperties.xul:<description id="ppscolinks">
 msgid "Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
+"Spuntando la casella, eXe aggiunge i link Precedente e Successivo a ciascuna "
+"pagina dello SCO. Questo richiede una estensione non standard di SCORM 1.2 "
+"ed è soltanto applicabile ad alcune versioni di Moodle. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
@@ -2459,7 +2478,7 @@ msgstr "Metadata"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr ""
+msgstr "Una entità principalmente responsabile del contenuto della risorsa."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2471,6 +2490,8 @@ msgstr "VK_INSERT"
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
 msgstr ""
+"Immagine di sfondo per l'intestazione (si raccomanda  un'immagine alta "
+"100px)."
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2491,12 +2512,12 @@ msgstr "VK_DELETE"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Header Background:"
-msgstr ""
+msgstr "Sfondo Intestazione:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "L'argomento del contenuto della risorsa."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2557,7 +2578,7 @@ msgstr "Cancella Immagine"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "An entity responsible for making the resource available."
-msgstr ""
+msgstr "Una entità responsabile di rendere disponibile la risorsa."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
@@ -2585,13 +2606,13 @@ msgstr "D"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Autore principale della risorsa."
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "An entity responsible for making contributions to the content of the resource."
-msgstr ""
+msgstr "Una entità responsabile di contribuire al contenuto della risorsa."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
@@ -2625,7 +2646,7 @@ msgstr "Selezionare un lingua"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Una data di un evento nel ciclo di vita delle risorse."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
@@ -2701,6 +2722,8 @@ msgid ""
 "                 and includes (among others) dates of the form YYYY-MM-DD.\n"
 "            "
 msgstr ""
+"\n"
+"e comprende (tra gli altri) date nel formato YYYY-MM-DD.\n"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
@@ -2717,7 +2740,7 @@ msgstr ""
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "The nature or genre of the content of the resource."
-msgstr ""
+msgstr "La natura o il genere del contenuto della risorsa."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
@@ -2918,7 +2941,7 @@ msgstr "File Zip"
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Footer:"
-msgstr ""
+msgstr "Piè di pagina:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2963,15 +2986,14 @@ msgstr "Selezionare un lingua"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
-#, fuzzy
 msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"Nuovo\" accesskey=\"n\""
+msgstr "label=\"iPod Note\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Nome preimpostato per i nomi di livello 1"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -3004,7 +3026,7 @@ msgstr "label=\"Inserisci Pacchetto\" accesskey=\"i\""
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Nome preimpostato per nodi di livello 2"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
@@ -3036,7 +3058,7 @@ msgstr "label=\"Quit\" accesskey=\"q\""
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Nome preimpostato per i nodi di livello 3"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
@@ -3120,9 +3142,8 @@ msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Apri\" accesskey=\"o\""
+msgstr "label=\"eXe Tutoriale\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3132,9 +3153,8 @@ msgstr "Aymara "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
 #: accesskey="m" label="eXe Manual">
-#, fuzzy
 msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Apri\" accesskey=\"o\""
+msgstr "label=\"eXe Manuale\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3155,9 +3175,8 @@ msgstr "Bashkir "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
-#, fuzzy
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"File Testo\" accesskey=\"t\""
+msgstr "label=\"eXe Web Site\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3167,9 +3186,8 @@ msgstr "Basque "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
-#, fuzzy
 msgid "label=\"Report an Issue\" accesskey=\"r\""
-msgstr "label=\"Riportare un problema\" accesskey=\"R\""
+msgstr "label=\"Riportare un problema\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">

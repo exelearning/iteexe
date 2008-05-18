@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-08 14:29+1200\n"
-"PO-Revision-Date: 2008-03-13 20:45+0100\n"
-"Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
-"Language-Team:  <cs@li.org>\n"
+"PO-Revision-Date: 2008-05-19 06:25+1200\n"
+"Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
+"Language-Team: <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Pootle 1.0.1\n"
 "X-EXE-Language: Česky\n"
 "X-Poedit-Language: Czech\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
 msgid ""
@@ -444,7 +444,7 @@ msgstr "Popisek tlačítka"
 
 #: exe/webui/block.py:222
 msgid "Can NOT Undo Edits"
-msgstr ""
+msgstr "Nie je možné zrušiť úpravy"
 
 #: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
