@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-19 09:04+1200\n"
-"PO-Revision-Date: 2008-04-22 18:13+0200\n"
+"PO-Revision-Date: 2008-05-24 01:18+1200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
-"Language-Team:  <en@li.org>\n"
+"Language-Team: <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.0.1\n"
 "X-Poedit-Language: Ελληνικά\n"
 "X-EXE-Language: Ελληνικά\n"
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
 msgid ""
@@ -455,7 +455,7 @@ msgstr "Ετικέτα Πλήκτρου"
 
 #: exe/webui/block.py:222
 msgid "Can NOT Undo Edits"
-msgstr ""
+msgstr "Δεν επιτρέπεται η Αναίρεση ενεργειών επεξεργασίας"
 
 #: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
@@ -2141,7 +2141,7 @@ msgstr "Αδυναμία συγχώνευσης: ένα πανομοιότυπο
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
-msgstr ""
+msgstr "Αναίρεση ενεργειών επεξεργασίας"
 
 #: exe/engine/package.py:288
 msgid "Unit"
@@ -2543,7 +2543,7 @@ msgstr "VK_RIGHT"
 #: oncommand="clearImage('pp_backgroundImg',this.parentNode.parentNode);"
 #: id="clearImage" label="Clear Image">
 msgid "Clear Image"
-msgstr "Απόκρυψη εικόνας"
+msgstr "Καθαρισμός εικόνας"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -2666,9 +2666,8 @@ msgstr "P"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution 3.0 License" id="ppcc31" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution 3.0 License"
-msgstr "Άδεια Creative Commons Attribution 2.5"
+msgstr "Άδεια Creative Commons Attribution 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2685,9 +2684,8 @@ msgstr "label=\"Αρχείο\" accesskey=\"φ\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr "Άδεια Creative Commons Attribution-ShareAlike 2.5"
+msgstr "Άδεια Creative Commons Attribution-ShareAlike 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2707,9 +2705,8 @@ msgstr "label=\"Δημιουργία\" accesskey=\"ν\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr "Άδεια Creative Commons Attribution-NoDerivs 2.5"
+msgstr "Άδεια Creative Commons Attribution No Derivatives 3.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2725,9 +2722,8 @@ msgstr "label=\"Άνοιγμα\" accesskey=\"ο\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr "Άδεια Creative Commons Attribution-NonCommercial 2.5"
+msgstr "Άδεια Creative Commons Attribution Non-Commercial 3.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2743,9 +2739,8 @@ msgstr "label=\"Πρόσφατα Έργα...\" accesskey=\"ρ\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr "Άδεια Creative Commons Attribution-NonCommercial-ShareAlike 2.5"
+msgstr "Άδεια Creative Commons Attribution Non-commercial Share Alike 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2767,9 +2762,8 @@ msgstr "label=\"Αποθήκευση\" accesskey=\"σ\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr "Άδεια Creative Commons Attribution-NonCommercial-NoDerivs 2.5"
+msgstr "Άδεια Creative Commons Attribution Non-commercial No Derivatives 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -3044,7 +3038,7 @@ msgstr "Αλβανικά"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Εργαλεία\" accesskey=\"τ\""
+msgstr "label=\"Εργαλεία\" accesskey=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -3079,7 +3073,7 @@ msgstr "Αραβικά"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh Display">
 msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Ανανέωση Εμφάνισης\" accesskey=\"ρ\""
+msgstr "label=\"Ανανέωση Εμφάνισης\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -3107,7 +3101,7 @@ msgstr "Assamese"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Βοήθεια\" accesskey=\"η\""
+msgstr "label=\"Βοήθεια\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -3116,9 +3110,8 @@ msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"μ\""
+msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3128,9 +3121,8 @@ msgstr "Aymara "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
 #: accesskey="m" label="eXe Manual">
-#, fuzzy
 msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"μ\""
+msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3150,9 +3142,8 @@ msgstr "Bashkir "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
-#, fuzzy
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"ψ\""
+msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3163,7 +3154,7 @@ msgstr "Βασκικά"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"r\""
-msgstr "label=\"Αναφορά ενός ζητήματος\" accesskey=\"ρ\""
+msgstr "label=\"Αναφορά ενός ζητήματος\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
@@ -3174,7 +3165,7 @@ msgstr "Μπεγκάλι; Μπάγκλα"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"ψ\""
+msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"c\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
