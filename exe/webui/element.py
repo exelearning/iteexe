@@ -1974,7 +1974,7 @@ class QuizOptionElement(Element):
         """
         feedbackStr = ""
         if hasattr(self.feedbackElement.field, 'content')\
-        and self.feedbackElement.field.content != "": 
+        and self.feedbackElement.field.content.strip() != "": 
             if preview: 
                 feedbackStr = self.feedbackElement.renderPreview() 
             else: 
