@@ -19,7 +19,7 @@ except ImportError:
     import StringIO
 
 from exe                import globals as G
-from exe.engine.path    import Path
+from exe.engine.path    import Path 
 
 # Use the eXe logger directly:
 import logging
@@ -143,6 +143,11 @@ upgraded = {}
 
 def doUpgrade(newPackage=None, isMerge=False, preMergePackage=None):
     global versionedsToUpgrade, upgraded
+
+    # prepare to save the maximum field ID seen upon load,
+    # so that it can be set AFTER load, when the Field class is available:
+    G.application.maxFieldId = 1 
+
     try: 
         # Two-pass system for merges, to be sure that no old/corrupt files
         # cause any problems, since we don't actually have a rollback system:
@@ -499,6 +504,24 @@ class Versioned:
                         log.debug("ignoring old Package object \"" 
                             + self._name + "\" " + repr(self))
 
+            elif repr(base)=="<class 'exe.engine.field.Field'>":
+                # do not normally print out each field object (way too many).
+                # but DO check its ID, to find the largest current field id #:
+                if not mergeCheck: 
+                    # Beware: some of the initial objects are not ints,
+                    # but strings, and have an ._id with "#_##"
+                    # even though its _id should JUST be the ## field id.
+                    if type(self._id) is int:
+                        this_id = self._id
+                    else:
+                        found_under = self._id.find('_')
+                        if found_under >= 0:
+                            this_id = (int)(self._id[found_under+1:])
+                        else:
+                            this_id = (int)(self._id)
+                    if this_id > G.application.maxFieldId:
+                        G.application.maxFieldId = this_id 
+                #
             #
             # end of bogus-extraction support (with new merging support!)
             # but note that a mergeCheck will now continue on through,

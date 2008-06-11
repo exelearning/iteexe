@@ -37,6 +37,7 @@ from exe.engine.resource       import Resource
 from twisted.persisted.styles  import Versioned, doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
 from exe.engine.beautifulsoup  import BeautifulSoup
+from exe.engine.field          import Field
 
 log = logging.getLogger(__name__)
 
@@ -558,6 +559,11 @@ class Package(Persistable):
                     log.error("newPackage resourceDir has NO resourceDir!")
 
                 doUpgrade(newPackage)
+
+                # after doUpgrade, compare the largest found field ID:
+                if G.application.maxFieldId >= Field.nextId:
+                    Field.nextId = G.application.maxFieldId + 1
+
             else: 
                 # and when merging, automatically set package references to
                 # the destinationPackage, into which this is being merged:
@@ -582,6 +588,10 @@ class Package(Persistable):
 
                 doUpgrade(destinationPackage, 
                         isMerge=True, preMergePackage=newPackage)
+
+                # after doUpgrade, compare the largest found field ID:
+                if G.application.maxFieldId >= Field.nextId:
+                    Field.nextId = G.application.maxFieldId + 1
 
         except:
             import traceback
