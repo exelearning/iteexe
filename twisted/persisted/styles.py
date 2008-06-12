@@ -19,7 +19,7 @@ except ImportError:
     import StringIO
 
 from exe                import globals as G
-from exe.engine.path    import Path 
+from exe.engine.path    import Path
 
 # Use the eXe logger directly:
 import logging
