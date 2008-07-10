@@ -2,7 +2,6 @@
 # eXe Project <exe@exelearning.org>, 2008.
 # Auk Piseth <piseth_dv@khmeros.info>, 2008.
 # Khoem Sokhem <khoemsokhem@khmeros.info>, 2008.
-# Khoem Sokhem<khoemsokhem@khmeros.info>,2008-02-19 08:40+0700.
 # EXELearning Khmer PO file.
 # Copyright (C) 2004-2008
 # This file is distributed under the same license as the EXE package.
@@ -11,7 +10,7 @@ msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-19 09:04+1200\n"
-"PO-Revision-Date: 2008-02-22 08:38+0700\n"
+"PO-Revision-Date: 2008-07-09 14:15+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
 "MIME-Version: 1.0\n"
@@ -449,7 +448,7 @@ msgstr "ចំណង​ជើង​ប៊ូតុង"
 
 #: exe/webui/block.py:222
 msgid "Can NOT Undo Edits"
-msgstr ""
+msgstr "មិន​អាច​មិន​ធ្វើ​ការ​កែសម្រួល​វិញ"
 
 #: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
 msgid "Cancel"
@@ -2130,7 +2129,7 @@ msgstr "មិនអាច​​បញ្ចូល​​គ្នា​បាន
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
-msgstr ""
+msgstr "មិន​ធ្វើ​ការ​កែសម្រួល​វិញ"
 
 #: exe/engine/package.py:288
 msgid "Unit"
@@ -2651,9 +2650,8 @@ msgstr "P"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution 3.0 License" id="ppcc31" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution 3.0 License"
-msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution 2.5"
+msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2670,9 +2668,8 @@ msgstr "label=\"ឯកសារ\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution-ShareAlike 2.5"
+msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution Share Alike 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2692,9 +2689,8 @@ msgstr "label=\"ថ្មី\" accesskey=\"n\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution-NoDerivs 2.5"
+msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution No Derivatives 3.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2710,9 +2706,8 @@ msgstr "label=\"បើក\" accesskey=\"o\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution-NonCommercial 2.5"
+msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution Non-commercial 3.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2728,9 +2723,8 @@ msgstr "label=\"គម្រោង​ថ្មីៗ...\" accesskey=\"r\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution-NonCommercial-ShareAlike 2.5"
+msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution Non-commercial Share Alike 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2752,9 +2746,8 @@ msgstr "label=\"រក្សាទុក\" accesskey=\"s\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution-NonCommercial-NoDerivs 2.5"
+msgstr "អាជ្ញាបណ្ណ Creative Commons Attribution Non-commercial No Derivatives 3.0"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -3101,9 +3094,8 @@ msgstr "អាវែស្តង់"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"សៀវភៅ​ដៃ eXe លើ​បណ្ដាញ\" accesskey=\"m\""
+msgstr "label=\"eXe Tutorial\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3113,9 +3105,8 @@ msgstr "អាយម៉ារ៉ា​"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
 #: accesskey="m" label="eXe Manual">
-#, fuzzy
 msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"សៀវភៅ​ដៃ eXe លើ​បណ្ដាញ\" accesskey=\"m\""
+msgstr "label=\"eXe Manual\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3135,9 +3126,8 @@ msgstr "បាសគៀរ "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
-#, fuzzy
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"ជជែក​បន្តផ្ទាល់​របស់ eXe\" accesskey=\"c\""
+msgstr "label=\"eXe Web Site\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -4032,5 +4022,3 @@ msgstr "សិទ្ធិ ៖"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "តាម​ធម្មតា សិទ្ធិ​នឹងមាន​ការ​ពន្យល់​ពីការ​គ្រប់គ្រង​សិទ្ធិ​របស់​ធនធាន ឬ​យោង​ការ​ផ្ដល់​សេវា​ព័ត៌មាន ។ ព័ត៌មាន​សិទ្ធិ ភាគច្រើន​មាន​កម្មសិទ្ធិ​បញ្ញា ការ​រក្សាសិទ្ធិ និង​កម្មសិទ្ធិ​ផ្សេងទៀត ។ ប្រសិន​បើ​គ្មាន​សិទ្ធិ​ទេ ក៏​គ្មាន​ការ​សន្មត់​អំពី​ស្ថានភាព​នៃ​សិទ្ធិ​ទាំងនេះ​ និង​សិទ្ធិ​ផ្សេងទៀត​របស់​ធនធាន​ដែរ ។"
 
-#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-#~ msgstr "label=\"ដំណោះស្រាយ​ខ្លីៗ\" accesskey=\"t\""

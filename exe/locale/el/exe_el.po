@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-19 09:04+1200\n"
-"PO-Revision-Date: 2008-05-24 01:18+1200\n"
+"PO-Revision-Date: 2008-06-13 08:44+1200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1028,7 +1028,7 @@ msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
-"Το κουμπί ανατροφοδότησης δεν θα \n"
+"Το κουμπί ανατροφοδότησης δεν θα εμφανιστεί\n"
 "αν δεν εισαχθούν δεδομένα σ' αυτό το πεδίο."
 
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
@@ -3111,7 +3111,7 @@ msgstr "Avestan "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"u\""
+msgstr "label=\"Διδακτικό βοήθημα του eXe\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3122,7 +3122,7 @@ msgstr "Aymara "
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
 #: accesskey="m" label="eXe Manual">
 msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Online εγχειρίδιο του eXe\" accesskey=\"m\""
+msgstr "label=\"Εγχειρίδιο του eXe\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3143,7 +3143,7 @@ msgstr "Bashkir "
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"Ζωντανή συνομιλία eXe\" accesskey=\"w\""
+msgstr "label=\"Ιστότοπος του eXe\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
