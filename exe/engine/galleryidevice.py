@@ -556,11 +556,12 @@ these in a gallery context rather then individually.</p>"""),
 ''' % (self.title, styleDir,
         self.previewSize[0], self.previewSize[1])
             data += '''
-  var images = %s''' % [img.imageSrc for img in self.images]
+  var images = %s''' % [img.imageSrc.replace("'", r"\'")
+                            for img in self.images]
             data += '''
   var titles = ['''
             for img in self.images:
-                data += "'" + img.caption + "',"
+                data += "'" + img.caption.replace("'", r"\'") + "',"
             if len(self.images) > 0:
                 data = data[:-1]
             data += ''']
