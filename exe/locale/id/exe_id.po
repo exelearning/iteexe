@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2007-12-04 01:11+1300\n"
 "Last-Translator: Toha Mustofa <toha.mustofa@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -207,7 +207,7 @@ msgstr ""
 "satu sama lain atau pada sebuah latihan yang khusus yang ingin anda tampilkan \n"
 "pada sebuah konteks galeri daripada secara satu per satu.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -751,7 +751,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Ubah"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Entah berkas \"idevices\"/\"generic.data\" anda atau paket yang anda muat dibuat oleh versi eXe yang lebih baru. Tolong perbaharus eXe dan coba lagi."
 
@@ -1112,7 +1112,7 @@ msgstr "Sembunyika/Tampilkan Kata"
 msgid "Hint"
 msgstr "Petunjuk"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Basis"
 
@@ -1389,8 +1389,8 @@ msgstr "Situs sendiri"
 msgid "Package extracted to: %s"
 msgstr "Paket dihasilkan ke: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Paket sudah usang. Tolong perbaharui (menggunakan Berkas..Buka diikuti oleh Berkas..Simpan Sebagai) sebelum menggabungkannya pada paket yang lain!"
 
@@ -1645,7 +1645,7 @@ msgstr ""
 "PENYIMPANAN GAGAL!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1666,7 +1666,7 @@ msgstr "KIRIM JAWABAN"
 msgid "Save"
 msgstr "Simpan"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Bagian"
 
@@ -2023,7 +2023,7 @@ msgstr ""
 "Untuk mengindikasikan jawaban yang benar, \n"
 "klik tombol radio di sebelah opsi yang benar."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Topik"
 
@@ -2111,7 +2111,7 @@ msgstr "Tidak dapat mengunduh dari %s <br/>Tolong periksa ejaan dan hubungan lal
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Tidak dapat mengunduh umpan RSS dari %s <br/>Tolong periksa ejaan dan hubungan lalu coba lagi."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2119,7 +2119,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Unit"
 
@@ -2285,7 +2285,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "\"iDevice\" %s tidak memiliki paket"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor \"iDevice\""

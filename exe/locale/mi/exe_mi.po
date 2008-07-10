@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2006-09-20 11:25+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -185,7 +185,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -728,7 +728,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Whakatika"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -1076,7 +1076,7 @@ msgstr "Huna/Whakaatu Kupu"
 msgid "Hint"
 msgstr "Tohu Aki"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Kāinga"
 
@@ -1365,8 +1365,8 @@ msgstr ""
 msgid "Package extracted to: %s"
 msgstr "Mōkī i tiakina ki: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1617,7 +1617,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1637,7 +1637,7 @@ msgstr "TUKU MAI NGĀ WHAKAUTU"
 msgid "Save"
 msgstr "Tiaki"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Wāhanga"
 
@@ -1972,7 +1972,7 @@ msgstr ""
 "Mō te whakautu tika, pato i te \n"
 "pātene irirangi."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Kaupapa"
 
@@ -2059,7 +2059,7 @@ msgstr ""
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2067,7 +2067,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Wae"
 
@@ -2229,7 +2229,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Kāore te iDevice %s he mōkī"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Ētita iDevice"

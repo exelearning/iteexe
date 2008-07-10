@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-03-04 14:56+1300\n"
 "Last-Translator: Willy Vermaelen <exeleren@gmail.com>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -213,7 +213,7 @@ msgstr ""
 "betrekking hebben op dezelfde leeroefening, kunt u verzamelen in een\n"
 "\"galerij\" i.p.v. ze individueel te tonen.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -769,7 +769,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Bewerken"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Uw idevice/generic.data bestand of het pakket dat u probeert te openen was aangemaakt in een nieuwere versie van eXe.  Upgrade uw eXe-versie en probeer opnieuw."
 
@@ -1136,7 +1136,7 @@ msgstr "Toon/verberg woord"
 msgid "Hint"
 msgstr "Hint"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Start"
 
@@ -1425,8 +1425,8 @@ msgstr "Eigen website"
 msgid "Package extracted to: %s"
 msgstr "Pakket uitgepakt naar: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Pakket is verouderd. Doe een upgrade (gebruik Bestand..Open, daarna opslaan via Bestand..Opslaan als) vooraleer je het probeert in te voegen in een ander pakket!"
 
@@ -1681,7 +1681,7 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1702,7 +1702,7 @@ msgstr "VERZEND ANTWOORDEN"
 msgid "Save"
 msgstr "Opslaan"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Sectie"
 
@@ -2055,7 +2055,7 @@ msgstr ""
 "Om het antwoord aan te duiden:\n"
 "klik het keuzerondje naast het juiste alternatief aan."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Onderwerp"
 
@@ -2146,7 +2146,7 @@ msgstr "Download onmogelijk vanaf %s <br/>Controleer de spelling en het adres en
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "RSS-feed laden onmogelijk vanaf %s <br/>Controleer de spelling en het adres en probeer opnieuw."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "Samenvoegen onmogelijk: de naam van deze Java Applet bestaat reeds (bevat: \""
 
@@ -2154,7 +2154,7 @@ msgstr "Samenvoegen onmogelijk: de naam van deze Java Applet bestaat reeds (beva
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Eenheid"
 
@@ -2324,7 +2324,7 @@ msgstr "iDevice %s heeft geen inhoud"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice-editor"

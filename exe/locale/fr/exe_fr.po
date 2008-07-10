@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2007-12-12 15:23+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -172,7 +172,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr "<p> Lorsque vous disposez de plusieurs images apparentées ou qui se rapportent au même sujet d'apprentissage, vous pouvez préférer l'outil \"galerie d'images\" à celui de l'image seule.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "??????"
 
@@ -677,7 +677,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Editer"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Le dossier que vous souhaitez charger, ou les outils et fichiers qu'il incorpore ont été créés avec une version d'Exe plus récente que celle que vous utilisez. SVP, faites une mise à jour d'Exelearning et réessayez"
 
@@ -999,7 +999,7 @@ msgstr "Cacher / Montrer le mot"
 msgid "Hint"
 msgstr "Indice"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Titre de séquence"
 
@@ -1269,8 +1269,8 @@ msgstr "Site personnel"
 msgid "Package extracted to: %s"
 msgstr "Dossier extrait vers:%s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Le dossier est ancien. SVP, faites une mise à jour du dossier ( en utilisant Ouvrir le fichier .elp puis Enregistrer sous...) avant d'essayer de l'incorporer dans un nouveau dossier!"
 
@@ -1508,7 +1508,7 @@ msgstr ""
 "LA SAUVEGARDE A ECHOUE!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1529,7 +1529,7 @@ msgstr "Valider les réponses"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Section"
 
@@ -1840,7 +1840,7 @@ msgstr ""
 "Pour indiquer qu'il s'agit de la bonne réponse,\n"
 " cliquer le bouton juxtaposé à la bonne option."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Sujet"
 
@@ -1913,7 +1913,7 @@ msgstr "Impossible de télécharger depuis %s <br/>Vérifiez l'adresse et la con
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Impossible de télécharger le flux RSS depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -1921,7 +1921,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Unité"
 
@@ -2073,7 +2073,7 @@ msgstr "http://fr.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "L'outil pédagogique %s n'a pas de dossier"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editeur d'outil pédagogique"

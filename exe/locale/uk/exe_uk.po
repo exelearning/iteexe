@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -198,7 +198,7 @@ msgstr ""
 "захочете показати цю групу зображень разом в одній галереї, а не \n"
 "кожне зображення окремо.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -751,7 +751,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Редагувати"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -1097,7 +1097,7 @@ msgstr "Сховати/Показати Слово"
 msgid "Hint"
 msgstr "Натяк"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Домашня сторінка"
 
@@ -1374,8 +1374,8 @@ msgstr "Власний сайт"
 msgid "Package extracted to: %s"
 msgstr "Пакет розпаковано в: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1618,7 +1618,7 @@ msgstr ""
 "Помилка при збереженні!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1639,7 +1639,7 @@ msgstr "ПІДТВЕРДИТИ ВІДПОВІДЬ"
 msgid "Save"
 msgstr "Зберегти"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Секція"
 
@@ -1970,7 +1970,7 @@ msgstr ""
 "Для того, щоб позначити правильну відповідь потрібно \n"
 "поставити відмітку у відповідному віконці."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Тема"
 
@@ -2061,7 +2061,7 @@ msgstr "Неможливо завантажити з %s <br/>Будь ласка
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Неможливо завантажити з %s <br/>Будь ласка перевірте правельність написання, та налаштування з'єднання після чого пробуйте знов."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2069,7 +2069,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Одиниця"
 
@@ -2230,7 +2230,7 @@ msgstr "iDevice %s немає пакету"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"

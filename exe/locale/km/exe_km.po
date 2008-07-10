@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-07-09 14:15+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -210,7 +210,7 @@ msgstr ""
 "សិក្សា​ជាក់លាក់ ឬ​លំហាត់​នីមួយៗ ដែល​អ្នក​ចង់​បង្ហាញ​នៅ​ក្នុង​បរិបទ​វិចិត្រសាល \n"
 "តែ​មិនចង់​បង្ហាញ​តែ​មួយៗ​ទេ ។</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -759,7 +759,7 @@ msgstr ""
 msgid "Edit"
 msgstr "កែសម្រួល"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "ទាំង​ឯកសារ idevices/generic.data ឬ​កញ្ចប់​ដែល​អ្នក​កំពុង​ផ្ទុក គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
 
@@ -1120,7 +1120,7 @@ msgstr "លាក់​/​បង្ហាញ​ពាក្យ"
 msgid "Hint"
 msgstr "ព័ត៌មាន​ជំនួយ"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "ដើម"
 
@@ -1397,8 +1397,8 @@ msgstr "តំបន់​បណ្ដាញ​ផ្ទាល់ខ្លួន
 msgid "Package extracted to: %s"
 msgstr "បាន​ស្រង់​កញ្ចប់​ចេញ​ទៅ ៖ %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "កញ្ចប់​គឺ​ចាស់ ។ សូម​ធ្វើ​ឲ្យ​វា​ប្រសើរ​ឡើង (ដោយប្រើ ឯកសារ..បើក រួច​ហើយ ឯកសារ..រក្សាទុក​ជា) មុនពេល​បញ្ចូល​វា​ទៅ​ក្នុង​កញ្ចប់​មួយ​ផ្សេង​ទៀត !"
 
@@ -1653,7 +1653,7 @@ msgstr ""
 "ការ​រក្សាទុក​បាន​បរាជ័យ !\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1674,7 +1674,7 @@ msgstr "ដាក់ស្នើ​ចម្លើយ"
 msgid "Save"
 msgstr "រក្សាទុក"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "ផ្នែក"
 
@@ -2031,7 +2031,7 @@ msgstr ""
 "ដើម្បី​បង្ហាញ​ចម្លើយ​ត្រឹមត្រូវ \n"
 "គឺ​ត្រូវ​ចុច​លើ​ប៊ូតុង​មូល នៅ​ជាប់​នឹង​ជម្រើស​ត្រឹមត្រូវ ។"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "ប្រធាន​បទ"
 
@@ -2123,7 +2123,7 @@ msgstr "មិនអាច​ទាញយក​ពី %s បានទេ<br/>ស
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "មិនអាច​ផ្ទុក​មតិព័ត៌មាន RSS ពី %s បាន​ទេ<br/>សូម​ពិនិត្យ​មើល​អក្ខរាវិរុទ្ធ និង​ការតភ្ជាប់ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "មិនអាច​​បញ្ចូល​​គ្នា​បានទេ ៖ ស្ទួន​ឈ្មោះ​ធនធាន​អាប់ភ្លេត Java ដែលមាន (រួមមាន ៖ \""
 
@@ -2131,7 +2131,7 @@ msgstr "មិនអាច​​បញ្ចូល​​គ្នា​បាន
 msgid "Undo Edits"
 msgstr "មិន​ធ្វើ​ការ​កែសម្រួល​វិញ"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "ឯកតា"
 
@@ -2295,7 +2295,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s មិនមាន​កញ្ចប់​ទេ"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "កម្មវិធី​និពន្ធ iDevice"
@@ -4021,4 +4021,3 @@ msgstr "សិទ្ធិ ៖"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "តាម​ធម្មតា សិទ្ធិ​នឹងមាន​ការ​ពន្យល់​ពីការ​គ្រប់គ្រង​សិទ្ធិ​របស់​ធនធាន ឬ​យោង​ការ​ផ្ដល់​សេវា​ព័ត៌មាន ។ ព័ត៌មាន​សិទ្ធិ ភាគច្រើន​មាន​កម្មសិទ្ធិ​បញ្ញា ការ​រក្សាសិទ្ធិ និង​កម្មសិទ្ធិ​ផ្សេងទៀត ។ ប្រសិន​បើ​គ្មាន​សិទ្ធិ​ទេ ក៏​គ្មាន​ការ​សន្មត់​អំពី​ស្ថានភាព​នៃ​សិទ្ធិ​ទាំងនេះ​ និង​សិទ្ធិ​ផ្សេងទៀត​របស់​ធនធាន​ដែរ ។"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2007-08-08 10:27+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -155,7 +155,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr "当有一组相关的图片要展示时或对一个特定的练习,要显示几张图片."
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -660,7 +660,7 @@ msgstr ""
 msgid "Edit"
 msgstr "编辑"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是用新版本eXe创建的. 请升级你的eXe, 然后再试."
 
@@ -974,7 +974,7 @@ msgstr "隐藏/显示 文字"
 msgid "Hint"
 msgstr "提示"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "首页"
 
@@ -1254,8 +1254,8 @@ msgstr "自定义网页"
 msgid "Package extracted to: %s"
 msgstr "课件存至: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1483,7 +1483,7 @@ msgstr ""
 "保存失败!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1504,7 +1504,7 @@ msgstr "提交答案"
 msgid "Save"
 msgstr "保存"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "节"
 
@@ -1813,7 +1813,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "课题"
 
@@ -1886,7 +1886,7 @@ msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "无法从%s下载 RSS Feed 请检查拼写, 然后再连接."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -1894,7 +1894,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "单元"
 
@@ -2050,7 +2050,7 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"

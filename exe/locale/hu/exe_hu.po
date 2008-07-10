@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -204,7 +204,7 @@ msgstr ""
 "bizonyos tanulási feladatokhoz, ott használja a \"Képgalériát\"! \n"
 "A galéria képeit aztán egyenként is meg lehet tekinteni.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "Adjon címet a szintnek!"
 
@@ -770,7 +770,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -1129,7 +1129,7 @@ msgstr "Szó elrejtése/megjelenítése"
 msgid "Hint"
 msgstr "Útmutató"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Kezdőoldal"
 
@@ -1409,8 +1409,8 @@ msgstr "Saját oldal"
 msgid "Package extracted to: %s"
 msgstr "A csomag ki lett bontva a következő helyre: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1661,7 +1661,7 @@ msgstr ""
 "SIKERTELEN MENTÉS!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1682,7 +1682,7 @@ msgstr "VÁLASZ KÜLDÉSE"
 msgid "Save"
 msgstr "Mentés"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Szakasz"
 
@@ -2039,7 +2039,7 @@ msgstr ""
 "A helyes válasz megjelöléséhez kattintson \n"
 "a rádiógombon a megfelelő válasz sorában."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Téma"
 
@@ -2128,7 +2128,7 @@ msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen �
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e, vagy rendben van-e az internetkapcsolata és próbálja újra."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2136,7 +2136,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Egység"
 
@@ -2303,7 +2303,7 @@ msgstr "iDeice %s nincs csomag"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice szerkesztő"

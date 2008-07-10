@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-03-16 14:35+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <flu.project@gmail.com>\n"
@@ -203,7 +203,7 @@ msgstr ""
 "<p>Където имате много изображения, свързани помежду си или към определено \n"
 "упражнение, може да искате да ги покажете в галерия, вместо поотделно.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -757,7 +757,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Редактиране"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Или .data файлът на вашите Помощни средства или пакетът, който зареждате, са създадени с по-нова версия на еХе. Моля осъвременете еХе и опитайте отново."
 
@@ -1126,7 +1126,7 @@ msgstr "Скриване/Показване на Дума"
 msgid "Hint"
 msgstr "Подсказка"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Начало"
 
@@ -1403,8 +1403,8 @@ msgstr "Собствен сайт"
 msgid "Package extracted to: %s"
 msgstr "Пакетът е разархивиран в: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Пакетът е стар. Моля надградете го (като използвате Файл... Отваряне, след това Файл... Запазване като) преди да се опитате да го вмъкнете в друг пакет!"
 
@@ -1661,7 +1661,7 @@ msgstr ""
 "ЗАПАЗВАНЕТО СЕ ПРОВАЛИ!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1682,7 +1682,7 @@ msgstr "ИЗПРАЩАНЕ НА ОТГОВОРИТЕ"
 msgid "Save"
 msgstr "Запазване"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Секция"
 
@@ -2044,7 +2044,7 @@ msgstr ""
 "За да укажете правилният отговор, \n"
 "цъкнете радио бутона до правилният вариант."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Тема"
 
@@ -2135,7 +2135,7 @@ msgstr "Свалянето от %s е неуспешно.<br/> Моля пров
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Не може да се зареди RSS емисията от %s <br/> Моля проверете правописа и връзката, и опитайте отново."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "Сливането е невъзможно: съществува дублиращо се Java Applet ресурсно име (включително: \")"
 
@@ -2143,7 +2143,7 @@ msgstr "Сливането е невъзможно: съществува дуб�
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Единица"
 
@@ -2310,7 +2310,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Помощното средство %s няма пакет"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Редактор на Помощни средства"

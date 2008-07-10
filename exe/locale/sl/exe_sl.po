@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:22+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-05-15 11:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -214,7 +214,7 @@ msgstr ""
 "lahko namesto posamičnega prikazovanja, te prikažemo v \n"
 "diaprojekciji albuma.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -764,7 +764,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Uredi"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Vaša poučevalna enota, datoteka generic.data ali pa paket, ki ga nalagate je bil ustvarjen z novejšo različico programa eXe. Prosimo, da posodobite program in poskušate znova."
 
@@ -1125,7 +1125,7 @@ msgstr "Skrij/prikaži besedo"
 msgid "Hint"
 msgstr "Namig"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Domov"
 
@@ -1402,8 +1402,8 @@ msgstr "Lastna stran"
 msgid "Package extracted to: %s"
 msgstr "Paket je razširjen v: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Paket je star. Prosim, posodobite ga (paket odprite in ga nato shranite kot nov dokument) preden ga poskušate vstaviti v drug paket!"
 
@@ -1658,7 +1658,7 @@ msgstr ""
 "Napaka med shranjevanjem!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1679,7 +1679,7 @@ msgstr "POŠLJI ODGOVORE"
 msgid "Save"
 msgstr "Shrani"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Tema"
 
@@ -2034,7 +2034,7 @@ msgstr ""
 "Za izbiro pravilnega odgovora, pritisnite \n"
 "izbirni gumb poleg pravilne izbire."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Vsebina"
 
@@ -2126,7 +2126,7 @@ msgstr "Ni mogoče prenesti datoteke preko %s<br/>Prosim, preverite črkovanje i
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Ni mogoče naložiti RSS vira preko %s <br/>Prosimo, preverite črkovanje in povezavo ter poskusite znova."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "Ni mogoče združiti: obstajajo podvojena imena virov java apletov (vključno z: \""
 
@@ -2134,7 +2134,7 @@ msgstr "Ni mogoče združiti: obstajajo podvojena imena virov java apletov (vklj
 msgid "Undo Edits"
 msgstr "Razveljavi urejanja"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Enota"
 
@@ -2300,7 +2300,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "poučevalna enota %s nima določenega paketa"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Urejevalnik poučevalnih enot"

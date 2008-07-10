@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -192,7 +192,7 @@ msgstr ""
 "entre ellas o aun ejercicio particular que usted quiera mostrar  \n"
 "en un contexto de galería</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -728,7 +728,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Editar"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -1081,7 +1081,7 @@ msgstr "Ocultar/Mostrar Palabra"
 msgid "Hint"
 msgstr "Sugerencia"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Inicio"
 
@@ -1355,8 +1355,8 @@ msgstr "Sitio propio"
 msgid "Package extracted to: %s"
 msgstr "Paquete extraido en: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1600,7 +1600,7 @@ msgstr ""
 "FALLÓ AL GUARDAR!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1621,7 +1621,7 @@ msgstr "Respuestas propuestas"
 msgid "Save"
 msgstr "Salvar"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Sección"
 
@@ -1970,7 +1970,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr "Para señalar la respuesta correcta, haz click en el boton siguiente junto a la opción correcta."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Tópico"
 
@@ -2057,7 +2057,7 @@ msgstr "No se pudo descargar de %s <br/> Por favor revise lo escrito y la conecc
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "No se pudo descargar de %s <br/> Por favor revise lo escrito y la conección e intente de nuevo."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2065,7 +2065,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Unidad"
 
@@ -2230,7 +2230,7 @@ msgstr "http://es.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no tiene paquete"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Redactor del iDevice"

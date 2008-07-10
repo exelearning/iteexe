@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -209,7 +209,7 @@ msgstr ""
 "sa isa't-isa o sa isang partikular na pagsasanay, na mas ibig mong\n"
 "ipakita sa anyong galeriya sa halip na paisa-isa.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -771,7 +771,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Iedit"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -1141,7 +1141,7 @@ msgstr "Itago/Ilantad ang Salita"
 msgid "Hint"
 msgstr "Himaton"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Tahanan"
 
@@ -1424,8 +1424,8 @@ msgstr "Sariling site"
 msgid "Package extracted to: %s"
 msgstr "Isinilid ang pakete sa: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1681,7 +1681,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1700,7 +1700,7 @@ msgstr "IPASA ANG MGA SAGOT"
 msgid "Save"
 msgstr "Isilid"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Seksiyon"
 
@@ -2064,7 +2064,7 @@ msgstr ""
 "Upang matukoy ang wastong sagot, \n"
 "iklik ang radio button na katabi ng wastong opsiyon."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Paksa"
 
@@ -2154,7 +2154,7 @@ msgstr "Hindi makapaglusong mula sa %s <br/>Pakitsek po ang ispeling at koneksiy
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Hindi makapaglusong mula sa %s <br/>Pakitsek po ang ispeling at koneksiyon at ulitin muli."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2162,7 +2162,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Yunit"
 
@@ -2335,7 +2335,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Ang iDevice na %s ay walang pakete"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"

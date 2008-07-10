@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -208,7 +208,7 @@ msgstr ""
 "k sebe navzájom alebo k nejakej časti cvičenia, \n"
 " bude ich zobrazenie v spoločnej galérii lepšie než zobrazenie samostatne.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -753,7 +753,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Upraviť"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Buď váš idevice/generic.data súbor alebo balíček, ktorý načítavate, bol vytvorený novšou verziou eXe. Aktualizujte, prosím, vašu verziu eXe a skúste to znovu."
 
@@ -1112,7 +1112,7 @@ msgstr "Skryť / Zobraziť slovo"
 msgid "Hint"
 msgstr "Tip"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Domov"
 
@@ -1388,8 +1388,8 @@ msgstr "Vlastný web"
 msgid "Package extracted to: %s"
 msgstr "Súbory rozbalené do: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Balík je zastaralý. Pomocou položky Súbor-Otvoriť a následne Uložiť ako... ho aktualizujte. Až potom ho môžete vložiť do iného balíčku!"
 
@@ -1643,7 +1643,7 @@ msgstr ""
 "Uloženie zlyhalo!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1664,7 +1664,7 @@ msgstr "ODOSLAŤ ODPOVEDE"
 msgid "Save"
 msgstr "Uložiť"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Kapitola"
 
@@ -2019,7 +2019,7 @@ msgstr ""
 "Na označenie správnej odpovede \n"
 "kliknite na prepínač vedľa danej možnosti."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Téma"
 
@@ -2110,7 +2110,7 @@ msgstr "Nedá sa stiahnuť z %s <br/>Prekontrolujte, prosím, zadaný text a tie
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "Nedá sa načítať RSS kanál %s <br/>Prekontrolujte, prosím, zadaný text a tiež pripojenie a skúste to znovu."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "Nie je možné spojiť: duplicitné meno prostriedku typu Java applet (vrátane: \""
 
@@ -2118,7 +2118,7 @@ msgstr "Nie je možné spojiť: duplicitné meno prostriedku typu Java applet (v
 msgid "Undo Edits"
 msgstr "Zrušiť editovanie"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "jednotka"
 
@@ -2281,7 +2281,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s nemá balíček"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor prostriedkov iDevice"

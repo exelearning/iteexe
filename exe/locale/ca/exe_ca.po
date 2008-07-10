@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-01-07 16:08+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -193,7 +193,7 @@ msgstr ""
 " entre elles o un particular exercici d'aprenentatge on pots mostrar   \n"
 " aquestes imatges en la galeria  individualment.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -736,7 +736,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Editar"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Els  idevices del vostre arxiu generic.data o paquet que estau carregant han estat creats amb un versió nova de eXe. Si-us-plau actualitzeu eXe i torneu-ho a provar."
 
@@ -1097,7 +1097,7 @@ msgstr "Amaga/Mostra la paraula"
 msgid "Hint"
 msgstr "Pista"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Inici"
 
@@ -1374,8 +1374,8 @@ msgstr "Lloc propi"
 msgid "Package extracted to: %s"
 msgstr "Paquet extret al: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "El paquet és vell. Si-us-plau actualitzeu-lo ( utilitzeu Fitxer... Obrir seguit de Fitxer ... Anomena i Desa ) abans de combinar això dins d'un altre paquet !"
 
@@ -1630,7 +1630,7 @@ msgstr ""
 "Desat erroni ! \n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1651,7 +1651,7 @@ msgstr "ENVIAR RESPOSTES"
 msgid "Save"
 msgstr "Desar"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Secció"
 
@@ -2001,7 +2001,7 @@ msgstr ""
 "Per indicar la resposta correcta premeu la \n"
 " opció correcta seleccionant-la amb el botó."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Tema"
 
@@ -2089,7 +2089,7 @@ msgstr "No es pot baixar des de %s <br/> Si-us-plau comproveu que heu escrit bé
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "No es pot baixar l'alimentació RSS des de  %s <br/> Si-us-plau comproveu que heu escrit bé el nom,  comproveu la connexió i torneu-ho a provar."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "No habilitat per combinar: Existeix un recurs duplicat de l'aplicació de Java. (including:\""
 
@@ -2097,7 +2097,7 @@ msgstr "No habilitat per combinar: Existeix un recurs duplicat de l'aplicació d
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Apartat"
 
@@ -2259,7 +2259,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no té paquet"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor iDevice"

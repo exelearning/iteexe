@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -202,7 +202,7 @@ msgstr ""
 "õpiobjekti suhtes mingit seost, võid nende eraldi näitamise asemel  \n"
 "kasutada ka galerii võimalust.</p>"
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -748,7 +748,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Redigeeri"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Kas iDevice/generic.data fail või sinu laetav pakett loodi uuema eXe versioonia. Palun uuenda eXe versiooni ja proovi uuesti."
 
@@ -1098,7 +1098,7 @@ msgstr "Peida / näita sõna"
 msgid "Hint"
 msgstr "Vihje"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Kodu"
 
@@ -1374,8 +1374,8 @@ msgstr "Oma veeb"
 msgid "Package extracted to: %s"
 msgstr "Pakett lahti pakitud siia: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Pakett on vana. Palun uuenda seda (kasutades Fail...Ava ja seejärel Fail..Salvesta kui..) enne kui üritad seda mõnda teise paketti integreerida!"
 
@@ -1618,7 +1618,7 @@ msgstr ""
 "SALVESTAMINE EBAÕNNESTUS!\n"
 "%s"
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1639,7 +1639,7 @@ msgstr "SAADA VASTUSED"
 msgid "Save"
 msgstr "Salvesta"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Peatükk"
 
@@ -1988,7 +1988,7 @@ msgstr ""
 "Õige vastuse märkimiseks kliki õige \n"
 "valikvastuse kõrval raadio-nupul."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Teema"
 
@@ -2079,7 +2079,7 @@ msgstr "Allalaadimine siit ebaõnnestus: %s<br/>Palun kontrolli õigekirja ning 
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr "RSS-kanali allalaadimine ebaõnnestus: %s<br/>Palun kontrolli õigekirja ning ühendust ja proovi uuesti."
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr "Ei ole võimalik ühendada: eksisteerib duplikaat  Java Applet ressursi nimest (sis.: \""
 
@@ -2087,7 +2087,7 @@ msgstr "Ei ole võimalik ühendada: eksisteerib duplikaat  Java Applet ressursi 
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Osa"
 
@@ -2251,7 +2251,7 @@ msgstr "http://et.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice-l %s pudub pakett"
 
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevide redaktor"

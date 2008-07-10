@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-19 09:04+1200\n"
+"POT-Creation-Date: 2008-07-10 12:48+1200\n"
 "PO-Revision-Date: 2006-07-28 15:29+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team:  <sfj@fb.is>\n"
@@ -187,7 +187,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:414
+#: exe/engine/package.py:415
 msgid "?????"
 msgstr "?????"
 
@@ -732,7 +732,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Breyta"
 
-#: twisted/persisted/styles.py:518
+#: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
@@ -1082,7 +1082,7 @@ msgstr "Fela/sýna orð"
 msgid "Hint"
 msgstr "Vísbending"
 
-#: exe/engine/package.py:309
+#: exe/engine/package.py:310
 msgid "Home"
 msgstr "Heim"
 
@@ -1376,8 +1376,8 @@ msgstr ""
 msgid "Package extracted to: %s"
 msgstr "Pakki vistaður hér: %s"
 
-#: twisted/persisted/styles.py:314 twisted/persisted/styles.py:327
-#: twisted/persisted/styles.py:473 twisted/persisted/styles.py:528
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
@@ -1629,7 +1629,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:445 exe/engine/package.py:452
+#: exe/engine/package.py:446 exe/engine/package.py:453
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1649,7 +1649,7 @@ msgstr "SENDA SVÖR"
 msgid "Save"
 msgstr "Vista"
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Section"
 msgstr "Hluti"
 
@@ -1978,7 +1978,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr "Veldu rétt svar með því að haka við það."
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Topic"
 msgstr "Viðfangsefni"
 
@@ -2063,7 +2063,7 @@ msgstr ""
 msgid "Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
 
-#: twisted/persisted/styles.py:432
+#: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
 msgstr ""
 
@@ -2071,7 +2071,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:288
+#: exe/engine/package.py:289
 msgid "Unit"
 msgstr "Eining"
 
@@ -2236,7 +2236,7 @@ msgid "iDevice %s has no package"
 msgstr "%s námstækið inniheldur engan pakka"
 
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:704 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Ritill fyrir námstæki"
