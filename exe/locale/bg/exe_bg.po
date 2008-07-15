@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:48+1200\n"
+"POT-Creation-Date: 2008-07-15 19:41+1200\n"
 "PO-Revision-Date: 2008-03-16 14:35+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <flu.project@gmail.com>\n"
@@ -548,7 +548,7 @@ msgstr ""
 "То ще бъде поставено отдолу, където ще може да му поставите етикет. \n"
 "Добра практика е в него да поставите големината на файла."
 
-#: exe/engine/galleryidevice.py:663 exe/webui/truefalseelement.py:152
+#: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
 #: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
@@ -1305,7 +1305,7 @@ msgstr "Име"
 msgid "New iDevice"
 msgstr "Ново Помощно средство"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Следващ"
@@ -1497,7 +1497,7 @@ msgstr "Преглед"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Папката за преглед %s е файл, не може да се замени"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Следващ"

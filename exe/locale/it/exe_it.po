@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:48+1200\n"
+"POT-Creation-Date: 2008-07-15 19:41+1200\n"
 "PO-Revision-Date: 2008-05-17 04:03+1200\n"
 "Last-Translator: mayer giovanni <mayer.giovanni@rodari-rossano.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -566,7 +566,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Premere sul pulsante Aggiungi Immagini per selezionare un file di immagine. L'immagine apparirà sotto dove potrete identificarla.  E sempre buona pratica mettere la dimensione del file (in bytes) nell'etichetta."
 
-#: exe/engine/galleryidevice.py:663 exe/webui/truefalseelement.py:152
+#: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
 #: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
@@ -1318,7 +1318,7 @@ msgstr "Nome"
 msgid "New iDevice"
 msgstr "Nuovo iDevice"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Prossimo"
@@ -1511,7 +1511,7 @@ msgstr "Anteprima"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nome file %s è un file, non si può sostituire"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Precedente"

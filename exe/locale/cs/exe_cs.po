@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:48+1200\n"
+"POT-Creation-Date: 2008-07-15 19:41+1200\n"
 "PO-Revision-Date: 2008-05-19 06:25+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: <cs@li.org>\n"
@@ -547,7 +547,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Pro vložení obrázku klepněte na tlačítko \"Přidat obrázky\". Obrázek se objeví dole, kde jej budete moct doplnit popiskem. Bývá dobrým zvykem do popisu vepsat také velikost obrázku."
 
-#: exe/engine/galleryidevice.py:663 exe/webui/truefalseelement.py:152
+#: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
 #: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
@@ -1294,7 +1294,7 @@ msgstr "Jméno"
 msgid "New iDevice"
 msgstr "Nový iDevice"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Následující"
@@ -1483,7 +1483,7 @@ msgstr "Náhled"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Adresář s náhledy %s už existuje, nelze jej nahradit"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Předchozí"

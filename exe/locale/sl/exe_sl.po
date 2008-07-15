@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:48+1200\n"
+"POT-Creation-Date: 2008-07-15 19:41+1200\n"
 "PO-Revision-Date: 2008-05-15 11:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -556,7 +556,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr " Kliknite na gumb dodajanja slike in izberite slikovno datoteko. Slika se bo prikazala pod kazalnikom za vpis oznake. Vedno je dobro, da v oznako vnesete tudi velikost datoteke."
 
-#: exe/engine/galleryidevice.py:663 exe/webui/truefalseelement.py:152
+#: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
 #: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
@@ -1304,7 +1304,7 @@ msgstr "Ime"
 msgid "New iDevice"
 msgstr "Nova poučevalna enota"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Naprej"
@@ -1494,7 +1494,7 @@ msgstr "Predogled"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Mapa predogleda %s je datoteka, zato je ni mogoče zamenjati"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Predhodni"

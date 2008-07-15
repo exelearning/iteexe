@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:48+1200\n"
+"POT-Creation-Date: 2008-07-15 19:41+1200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -554,7 +554,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Kattintson a \"Kép hozzáadása\" gombra és válasszon egy képet. A képek alatt található egy címke, amit érdemes kitölteni. A jó gyakorlat kialakítása érdekében adja meg itt a kép eredeti méretét (pl.: 450 x 320). Célszerű, ha a képeket azonos méretűre méretezi át, s így tölti fel a galériába. A felhasználók hálásak lesznek."
 
-#: exe/engine/galleryidevice.py:663 exe/webui/truefalseelement.py:152
+#: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
 #: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
@@ -1310,7 +1310,7 @@ msgstr "Név"
 msgid "New iDevice"
 msgstr "Új iDevice modul"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Következő"
@@ -1500,7 +1500,7 @@ msgstr "Előnézet"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Előző"

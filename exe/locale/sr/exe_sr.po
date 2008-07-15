@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_en\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 12:48+1200\n"
+"POT-Creation-Date: 2008-07-15 19:41+1200\n"
 "PO-Revision-Date: 2008-07-15 08:15+0200\n"
 "Last-Translator: vedran <vvucic@eunet.rs>\n"
 "Language-Team: serbiansr <en@li.org>\n"
@@ -50,7 +50,8 @@ msgid ""
 "code field."
 msgstr ""
 "\" Pronađite .txt datoteku (u aplet datoteci) \n"
-" i otvorite je.  Iskopirajte sadržaj ove datoteke <ctrl A, ctrl C> u polje za kod \n apleta."
+" i otvorite je.  Iskopirajte sadržaj ove datoteke <ctrl A, ctrl C> u polje za kod \n"
+" apleta."
 
 #: exe/webui/block.py:246
 msgid "---Move To---"
@@ -386,8 +387,8 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"Iako se češće koristi u situacijama formalnog testiranja \n "
-"pitanja sa više izbora mogu da se koriste kao način testiranja da bi se stimulisalo mišljenje  \n"
+"Iako se češće koristi u situacijama formalnog testiranja \n"
+" pitanja sa više izbora mogu da se koriste kao način testiranja da bi se stimulisalo mišljenje  \n"
 "i duskusije na teme kada učenici mogu da se osečaju suzdržani da bi na njih odgovarali. \n"
 "\n"
 "Kada kreirate test sa pitanjima sa više izbora uzmite u obzir sledeće: \n"
@@ -548,7 +549,7 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Klikni na dugme Dodaj slike da se odabere datoteka slike.  Slika će da se pojavi ispod gde ćete vi moći da joj dodate etiketu. Uvek je dobra praksa da se upiše veličina datoteke u etiketu."
 
-#: exe/engine/galleryidevice.py:663 exe/webui/truefalseelement.py:152
+#: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
 #: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
@@ -1296,7 +1297,7 @@ msgstr "Ime"
 msgid "New iDevice"
 msgstr "Novi iUređaj"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:116
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
 msgid "Next"
 msgstr "Sledeći"
@@ -1486,7 +1487,7 @@ msgstr "Prikaz"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Prikaz fascikle %s je datoteka, nemože da se zameni"
 
-#: exe/engine/galleryidevice.py:663 exe/export/ipodpage.py:110
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:336 exe/export/websitepage.py:191
 msgid "Previous"
 msgstr "Prethodni"
@@ -2081,8 +2082,8 @@ msgstr ""
 "Upišite povratnu informaciju koju želite \n"
 "da učenik vidi kad odabire pojedinu opciju. Ako ne želite da ništa upišete u \n"
 "ovo polje, eXe će automatski ponuditi pretpostavljenu povratnu informaciju:\n"
-"\"Tačan odgovor\" kao što ukazuje odabiranje tačnog odgovora; ili \n "
-"\"Netačan odgovor\" za druge alternative."
+"\"Tačan odgovor\" kao što ukazuje odabiranje tačnog odgovora; ili \n"
+" \"Netačan odgovor\" za druge alternative."
 
 #: exe/engine/field.py:3317
 msgid ""
@@ -2104,8 +2105,7 @@ msgid ""
 msgstr ""
 "Upišite osnovno pitanje. Pitanje \n"
 "mora biti jasno i nedvosmisleno. Izbegnite negativne premise jer one mogu da budu \n"
-"dvosmislene."
-" "
+"dvosmislene. "
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -4022,4 +4022,3 @@ msgstr "Prava:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Obično elemnt za prava sadrži stav o upravljanju pravima za dati izvor, ili referencu na izvor koji nudi takve informacije.  Informacija opravim se najčešće odnosi na Prava na intelektualnu svojinu (IPR), autorska prava i različita prava vlasništva. Ako nedostaje element za prava, ne može se pretpostaviti status ovih i drugih prava u odnosu na izvor."
-
