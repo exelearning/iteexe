@@ -82,6 +82,7 @@ import os
 import sys
 import re
 import shutil
+from optparse import OptionParser
 
 # Try to work even with no python path
 try:
@@ -609,7 +610,8 @@ def catPO(applicationDirectoryPath, listOf_extraPo, applicationDomain=None, targ
 # m a k e M O ( )         -- Compile the Portable Object files into the Machine Object stored in the right location. --
 # ^^^^^^^^^^^^^^^
 # 
-def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbose=0, forceEnglish=0) :
+def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbose=0,
+        forceEnglish=0, keep_new=False) :
     """Compile the Portable Object files into the Machine Object stored in the right location.
 
     makeMO converts all translated language-specific PO files located inside 
@@ -644,6 +646,11 @@ def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbo
     for filename in targetDir.walkfiles('*_*.po'):
         langCode = exp.match(filename.basename()).group(1)
         mo_targetDir = targetDir/langCode/'LC_MESSAGES'
+        # if not keeping new languages, both mo_targetDir and its .svn subdir must exist
+        if not keep_new and (not mo_targetDir.exists()
+                             or not (mo_targetDir/'.svn').exists()):
+            print "not building %s" % filename
+            continue
         if not mo_targetDir.exists():
             mo_targetDir.makedirs()
         cmd = "msgfmt -f --statistics -c --output-file=%s.mo %s" % (
@@ -803,6 +810,13 @@ def unixpath(thePath) :
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 # 
 if __name__ == "__main__":
+    usage = "usage: %prog [options]"
+    parser = OptionParser(usage)
+    parser.add_option("-n", "--new",
+            action="store_true", dest="preserve_new", default=False,
+            help="create new .mo files for languages that are not yet in SVN")
+    (options, args) = parser.parse_args()
+
     # Move to the right dir
     curdir = Path('.').abspath()
     if curdir.basename() == 'exe':
@@ -840,7 +854,9 @@ if __name__ == "__main__":
     except IOError, e:
         printUsage(e[1] + '\n   You must write a file app.fil that contains the list of all files to parse.')
     # Compile the result
-    makeMO('.',option['moTarget'],option['domain'],option['verbose'],option['forceEnglish'])
+    makeMO('.',option['moTarget'],option['domain'],option['verbose'],
+            option['forceEnglish'], keep_new=options.preserve_new)
+
     sys.exit(1)            
             
 
