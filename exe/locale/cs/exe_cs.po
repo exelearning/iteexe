@@ -10,14 +10,24 @@ msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-15 19:41+1200\n"
-"PO-Revision-Date: 2008-05-19 06:25+1200\n"
-"Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
-"Language-Team: <cs@li.org>\n"
+"PO-Revision-Date: 2008-07-17 19:59+0200\n"
+"Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
+"Language-Team:  <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 1.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 &&"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"X-Generator: KBabel 1.11.4\n"
 "X-EXE-Language: Česky\n"
 "X-Poedit-Language: Czech\n"
 
@@ -2121,7 +2131,7 @@ msgstr "Není možné spojit: duplicitní jméno prostředku typu Java applet (v
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
-msgstr ""
+msgstr "Vrátit úpravy"
 
 #: exe/engine/package.py:289
 msgid "Unit"
@@ -2314,7 +2324,7 @@ msgstr "nový řádek"
 
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
-msgstr ""
+msgstr "Zdroj přejmenován na na iDevice Applet, ale nemělo k tomu dojít!"
 
 #: exe/webui/element.py:1484
 msgid "text"
@@ -2643,9 +2653,8 @@ msgstr "P"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution 3.0 License" id="ppcc31" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution 3.0 License"
-msgstr "Creative Commons Attribution 2.5 License"
+msgstr "Creative Commons Attribution 3.0 License"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2662,9 +2671,8 @@ msgstr "label=\"Soubor\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr "Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr "Creative Commons Attribution ShareAlike 3.0 License"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2684,9 +2692,8 @@ msgstr "label=\"Nový\" accesskey=\"n\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr "Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr "Creative Commons Attribution NoDerivates 3.0 License"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2702,9 +2709,8 @@ msgstr "label=\"Otevřít\" accesskey=\"o\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr "Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr "Creative Commons Attribution NonCommercial 3.0 License"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2720,9 +2726,8 @@ msgstr "label=\"Poslední projekty\" accesskey=\"r\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2744,9 +2749,8 @@ msgstr "label=\"Uložit\" accesskey=\"u\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr "Creative Commons Attribution Non-commercial No Derivates 3.0 License"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -3093,9 +3097,8 @@ msgstr "avestánština "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Online eXe manuál\" accesskey=\"m\""
+msgstr "label=\"eXe tutoriál\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3105,9 +3108,8 @@ msgstr "ajmarština "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
 #: accesskey="m" label="eXe Manual">
-#, fuzzy
 msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Online eXe manuál\" accesskey=\"m\""
+msgstr "label=\"eXe manuál\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3127,9 +3129,8 @@ msgstr "baškirština "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
-#, fuzzy
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"eXe chat\" accesskey=\"x\""
+msgstr "label=\"Webové stránky eXe \" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3254,7 +3255,7 @@ msgstr "čečenština "
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
-msgstr "iDevices"
+msgstr "Vložit iDevice"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
@@ -4024,5 +4025,3 @@ msgstr "Práva:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Typicky bude v položce Práva obsažena pasáž o oprávnění k daným zdrojům nebo odkaz na takové informace. Informace o oprávnění zahrnují často Intellectual Property Rights (IPR), copyright a jiná vlastnická práva. Pokud nebude položka Práva uvedena, nelze vytvářet předpoklady o stavu jakýchkoli práv vztažených k prostředkům a zdrojům."
 
-#~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-#~ msgstr "label=\"Tipy a triky\" accesskey=\"t\""
