@@ -25,6 +25,8 @@ This module is for the common HTML used in all webpages.
 import logging
 from nevow      import tags as T
 from nevow.flat import flatten
+from exe                       import globals as G
+
 
 lastId = 0
 
@@ -126,7 +128,10 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     # for ALL anchors available in the entire doc!
     # (otherwise TinyMCE will only see those anchors within this field)
     if package is not None and hasattr(package, 'anchor_fields') \
-    and package.anchor_fields is not None:
+    and package.anchor_fields is not None \
+    and G.application.config.internalAnchors!="disable_all" :
+        # only add internal anchors for 
+        # config.internalAnchors = "enable_all" or "disable_autotop"
         log.debug(u"richTextArea adding exe_tmp_anchor tags for user anchors.")
         for anchor_field in package.anchor_fields: 
             anchor_field_path = anchor_field.GetFullNodePath()
@@ -135,7 +140,10 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
                 html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
                     % (full_anchor_name, full_anchor_name)
     # and below the user-defined anchors, also show "auto_top" anchors for ALL:
-    if package is not None and package.root is not None:
+    if package is not None and package.root is not None \
+    and G.application.config.internalAnchors=="enable_all" :
+        # only add auto_top anchors for 
+        # config.internalAnchors = "enable_all"
         log.debug(u"richTextArea adding exe_tmp_anchor auto_top for ALL nodes.")
         node_anchors = True
         if node_anchors:

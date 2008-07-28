@@ -74,6 +74,9 @@ class Config:
         self.browserPath = Path("firefox")
         # locale is the language of the user
         self.locale = chooseDefaultLocale(self.localeDir)
+        # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
+        # available values = "enable_all", "disable_autotop", or "disable_all"
+        self.internalAnchors = "enable_all"
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
@@ -270,6 +273,8 @@ class Config:
 
         # Load the "user" section
         if self.configParser.has_section('user'):
+            if self.configParser.user.has_option('internalAnchors'):
+                self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return
@@ -329,6 +334,7 @@ class Config:
         log.info("dataDir     = %s" % self.dataDir)
         log.info("configDir   = %s" % self.configDir)
         log.info("locale      = %s" % self.locale)
+        log.info("internalAnchors = %s" % self.internalAnchors)
                     
 
     def loadStyles(self):

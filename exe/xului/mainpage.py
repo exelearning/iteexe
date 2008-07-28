@@ -129,6 +129,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTinyMCEmath,     'generateTinyMCEmath')
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
+        setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
 
         self.idevicePane.client = client
         # Render the js 
@@ -363,6 +364,15 @@ class MainPage(RenderableLivePage):
         G.application.config.locale = locale
         G.application.config.locales[locale].install(unicode=True)
         G.application.config.configParser.set('user', 'locale', locale)
+        client.sendScript((u'top.location = "/%s"' % \
+                          self.package.name).encode('utf8'))
+
+    def handleSetInternalAnchors(self, client, internalAnchors):
+        """
+        Set locale using Nevow instead of a POST
+        """
+        G.application.config.internalAnchors = internalAnchors
+        G.application.config.configParser.set('user', 'internalAnchors', internalAnchors)
         client.sendScript((u'top.location = "/%s"' % \
                           self.package.name).encode('utf8'))
  

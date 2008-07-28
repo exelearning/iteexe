@@ -76,8 +76,9 @@ class PreferencesPage(RenderableResource):
         html += u'@import url(/style/base.css);\n'
         html += u"@import url(/style/standardwhite/content.css);</style>\n"
         html += u'''<script language="javascript" type="text/javascript">
-            function setLocale(l) {
+            function setLocaleAndAnchors(l,anchors) {
                 opener.nevow_clientToServerEvent('setLocale', this, '', l)
+                opener.nevow_clientToServerEvent('setInternalAnchors', this, '', anchors)
                 window.close()
             }
         </script>'''
@@ -97,11 +98,21 @@ class PreferencesPage(RenderableResource):
                                  options = self.localeNames,
                                  selection = self.config.locale)
 
+        internal_anchor_options = [(_(u"Enable All Internal Linking"), "enable_all"),
+                                   (_(u"Disable Auto-Top Internal Linking"), "disable_autotop"),
+                                   (_(u"Disable All Internal Linking"), "disable_all")]
+        html += common.formField('select', this_package, _(u"Internal Linking (for Web Site Exports only)"),
+                                 'internalAnchors', 
+                                 '', # TODO: Instructions
+                                 options = internal_anchor_options,
+                                 selection = self.config.internalAnchors)
+
         html += u"<div id=\"editorButtons\"> \n"     
         html += u"<br/>" 
         html += common.button("ok", _("OK"), enabled=True,
                 _class="button",
-                onClick="setLocale(document.forms.contentForm.locale.value)")
+                onClick="setLocaleAndAnchors(document.forms.contentForm.locale.value,"
+                    "document.forms.contentForm.internalAnchors.value)")
         html += common.button("cancel", _("Cancel"), enabled=True,
                 _class="button", onClick="window.close()")
         html += u"</div>\n"
