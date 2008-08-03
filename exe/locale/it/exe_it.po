@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-15 19:41+1200\n"
+"POT-Creation-Date: 2008-08-04 09:50+1200\n"
 "PO-Revision-Date: 2008-05-17 04:03+1200\n"
 "Last-Translator: mayer giovanni <mayer.giovanni@rodari-rossano.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -34,9 +34,9 @@ msgstr ""
 "<p>es. Per applet di Geogebra, seleziona Geogebra, poi aggiungi il file con estensione .ggb che \n"
 "realizzato con il programma Geogebra.</p>"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
-#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
-#: exe/xului/mainpage.py:1045
+#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:978 exe/xului/mainpage.py:1034
+#: exe/xului/mainpage.py:1055
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -59,8 +59,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Muovi a-->"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:713
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:723
+#: exe/xului/mainpage.py:841
 msgid ". Please use ASCII names."
 msgstr ". Usare nomi in formato ASCII."
 
@@ -463,12 +463,12 @@ msgstr "Testo del Pulsante"
 msgid "Can NOT Undo Edits"
 msgstr ""
 
-#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Annulla"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:711
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:721
+#: exe/xului/mainpage.py:841
 msgid "Cannot access directory named "
 msgstr "Impossibile accedere alla directory "
 
@@ -523,7 +523,7 @@ msgstr ""
 "pixels sono circa 3 cm. Lasciare in bianco entrambi i campi se si vuole che \n"
 "l'immagine sia visualizzata con le dimensioni originali."
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:219
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -545,7 +545,7 @@ msgstr "Premere <strong>Seleziona un file</strong>, raggiungere il file che si v
 msgid "Click Here"
 msgstr "Premere Qui"
 
-#: exe/webui/common.py:328 exe/webui/common.py:332
+#: exe/webui/common.py:336 exe/webui/common.py:340
 msgid "Click for completion instructions"
 msgstr "Premere per le istruzioni di completamento"
 
@@ -567,8 +567,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Premere sul pulsante Aggiungi Immagini per selezionare un file di immagine. L'immagine apparirà sotto dove potrete identificarla.  E sempre buona pratica mettere la dimensione del file (in bytes) nell'etichetta."
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
-#: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
-#: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
+#: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
+#: exe/webui/common.py:346 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -603,7 +603,7 @@ msgstr "Corretto"
 msgid "Correct!"
 msgstr "Corretto!"
 
-#: exe/xului/mainpage.py:1096
+#: exe/xului/mainpage.py:1106
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Non potendo caricare un file, spedirlo a bugs@exelearning.org"
 
@@ -700,6 +700,14 @@ msgstr "Descrizione"
 msgid "Description:"
 msgstr "Descrizione:"
 
+#: exe/webui/preferencespage.py:103
+msgid "Disable All Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:102
+msgid "Disable Auto-Top Internal Linking"
+msgstr ""
+
 #: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
 msgid "Display as:"
 msgstr "Visualizza come:"
@@ -731,17 +739,17 @@ msgstr "ERRORE Element.renderView chiamato direttamente con %s classe"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "eERRORE: Block.renderViewContent chiamato direttamente"
 
-#: exe/xului/mainpage.py:738 exe/xului/mainpage.py:745
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:751
-#: exe/xului/mainpage.py:754 exe/xului/mainpage.py:952
+#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:755
+#: exe/xului/mainpage.py:758 exe/xului/mainpage.py:761
+#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:962
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:942 exe/xului/mainpage.py:956
-#: exe/xului/mainpage.py:969 exe/xului/mainpage.py:975
-#: exe/xului/mainpage.py:1009 exe/xului/mainpage.py:1025
-#: exe/xului/mainpage.py:1031 exe/xului/mainpage.py:1046
-#: exe/xului/mainpage.py:1052
+#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:985
+#: exe/xului/mainpage.py:1019 exe/xului/mainpage.py:1035
+#: exe/xului/mainpage.py:1041 exe/xului/mainpage.py:1056
+#: exe/xului/mainpage.py:1062
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -756,7 +764,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:840 exe/xului/mainpage.py:857
+#: exe/xului/mainpage.py:850 exe/xului/mainpage.py:867
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -776,6 +784,10 @@ msgstr ""
 #: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Enfasi"
+
+#: exe/webui/preferencespage.py:101
+msgid "Enable All Internal Linking"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:113
 msgid "English Wikipedia Article"
@@ -995,9 +1007,9 @@ msgstr "Esempio Esempio"
 msgid "Export iDevice"
 msgstr "iDevices"
 
-#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
-#: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
-#: exe/xului/mainpage.py:1054
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
+#: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
+#: exe/xului/mainpage.py:1064
 #, python-format
 msgid "Exported to %s"
 msgstr "Esportato a %s"
@@ -1020,7 +1032,7 @@ msgstr "Falso"
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
 #: exe/engine/field.py:3128 exe/webui/clozeblock.py:164
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:104
-#: exe/webui/common.py:241 exe/webui/element.py:1926
+#: exe/webui/common.py:249 exe/webui/element.py:1926
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Informazioni di ritorno"
@@ -1038,13 +1050,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Informazioni di ritorno:"
 
-#: exe/xului/mainpage.py:1092
+#: exe/xului/mainpage.py:1102
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
-#: exe/xului/mainpage.py:996
+#: exe/xului/mainpage.py:897 exe/xului/mainpage.py:939
+#: exe/xului/mainpage.py:1006
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nome file %s è un file, non si può sostituire"
@@ -1062,8 +1074,8 @@ msgstr "video Flash"
 msgid "Flash with Text"
 msgstr "Flash con testo"
 
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:903 exe/xului/mainpage.py:945
+#: exe/xului/mainpage.py:1012
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1204,13 +1216,17 @@ msgid "Instant Marking?"
 msgstr "Marcatura istantanea?"
 
 #: exe/engine/clozeidevice.py:116 exe/engine/truefalseidevice.py:165
-#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:322
+#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:330
 msgid "Instructions"
 msgstr "Istruzioni"
 
 #: exe/engine/clozeidevice.py:274
 msgid "Instructions For Learners"
 msgstr "Istruzioni per gli Studenti"
+
+#: exe/webui/preferencespage.py:104
+msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1252,7 +1268,7 @@ msgstr "Questo articolo è sotto la licenza"
 msgid "Load"
 msgstr "Carica"
 
-#: exe/xului/mainpage.py:552
+#: exe/xului/mainpage.py:562
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Nome file %s è un file, non si può sostituire"
@@ -1278,7 +1294,7 @@ msgstr "Zoom massimo"
 msgid "Medium"
 msgstr "Medio"
 
-#: exe/xului/mainpage.py:680
+#: exe/xului/mainpage.py:690
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1352,7 +1368,7 @@ msgstr "Nessuna enfasi"
 msgid "None"
 msgstr "Nessuno"
 
-#: exe/webui/preferencespage.py:102
+#: exe/webui/preferencespage.py:112
 msgid "OK"
 msgstr "OK"
 
@@ -1411,7 +1427,7 @@ msgstr "Outline"
 msgid "Own site"
 msgstr "Sito proprio"
 
-#: exe/xului/mainpage.py:859
+#: exe/xului/mainpage.py:869
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Pacchetto salvato in: %s"
@@ -1421,7 +1437,7 @@ msgstr "Pacchetto salvato in: %s"
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:317
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pacchetto salvato in: %s"
@@ -1506,7 +1522,7 @@ msgstr ""
 msgid "Preview"
 msgstr "Anteprima"
 
-#: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
+#: exe/xului/mainpage.py:542 exe/xului/mainpage.py:648
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nome file %s è un file, non si può sostituire"
@@ -1664,12 +1680,12 @@ msgstr "Riavvia"
 msgid "Right"
 msgstr "Corretto"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:310
 msgid "SAVE FAILED!"
 msgstr "SALVATAGGIO FALLITO!"
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
-#: exe/xului/mainpage.py:901
+#: exe/xului/mainpage.py:314 exe/xului/mainpage.py:620
+#: exe/xului/mainpage.py:911
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1707,7 +1723,7 @@ msgstr "Sezione"
 msgid "Select Flash Object"
 msgstr "Selezionare oggetto Flash"
 
-#: exe/webui/preferencespage.py:95
+#: exe/webui/preferencespage.py:96
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
@@ -1840,7 +1856,7 @@ msgstr "Piccolo"
 msgid "Some emphasis"
 msgstr "Una certa enfasi"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1101
+#: exe/application.py:273 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Spiacente, formato errato del file"
 
@@ -1849,7 +1865,7 @@ msgstr "Spiacente, formato errato del file"
 msgid "Sorry, wrong file format."
 msgstr "Spiacente, formato errato del file"
 
-#: exe/xului/mainpage.py:1099
+#: exe/xului/mainpage.py:1109
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2298,7 +2314,7 @@ msgstr "vuoto per dimensioni originali"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:84 exe/webui/common.py:68
+#: exe/webui/preferencespage.py:85 exe/webui/common.py:70
 #: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"

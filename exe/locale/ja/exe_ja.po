@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-15 19:41+1200\n"
+"POT-Creation-Date: 2008-08-04 09:50+1200\n"
 "PO-Revision-Date: 2007-09-03 19:22+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -32,9 +32,9 @@ msgstr ""
 "<p>例：　Geogebra アプレットを追加する場合、「geogebra」を選択し、\n"
 "あなたがGeogebraで作成した .ggb ファイルを追加してください。</p>"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
-#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
-#: exe/xului/mainpage.py:1045
+#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:978 exe/xului/mainpage.py:1034
+#: exe/xului/mainpage.py:1055
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -56,8 +56,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---移動します---"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:713
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:723
+#: exe/xului/mainpage.py:841
 msgid ". Please use ASCII names."
 msgstr ". アスキーネームを利用してください."
 
@@ -416,12 +416,12 @@ msgstr "ボタンキャプション"
 msgid "Can NOT Undo Edits"
 msgstr ""
 
-#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:711
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:721
+#: exe/xului/mainpage.py:841
 msgid "Cannot access directory named "
 msgstr "という名前のディレクトリーにアクセスできません"
 
@@ -475,7 +475,7 @@ msgstr ""
 "100ピクセルがおおよそ3cm四方の画像となります。画像をオリジナルのサイズで表示したい場合は、\n"
 "両方のフィールドを空白のままにしておいてください。"
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:219
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -496,7 +496,7 @@ msgstr "<strong>ファイルの選択</strong>をクリックし, 添付する�
 msgid "Click Here"
 msgstr "ここをクリックする"
 
-#: exe/webui/common.py:328 exe/webui/common.py:332
+#: exe/webui/common.py:336 exe/webui/common.py:340
 msgid "Click for completion instructions"
 msgstr "ガイドを表示するため、クリックしてください"
 
@@ -517,8 +517,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "「画像の追加」をクリックし、画像ファイルを選択してください。画像が下に表示され、ラベルの記入ができます。ラベルにファイルサイズを記入しておくと利用者にとって便利です。"
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
-#: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
-#: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
+#: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
+#: exe/webui/common.py:346 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -553,7 +553,7 @@ msgstr "正解"
 msgid "Correct!"
 msgstr "正解！"
 
-#: exe/xului/mainpage.py:1096
+#: exe/xului/mainpage.py:1106
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "ファイルをロードできませんでした。bugs@exelearning.orgにメールで連絡してください。"
 
@@ -641,6 +641,14 @@ msgstr "記述"
 msgid "Description:"
 msgstr "記述："
 
+#: exe/webui/preferencespage.py:103
+msgid "Disable All Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:102
+msgid "Disable Auto-Top Internal Linking"
+msgstr ""
+
 #: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
 msgid "Display as:"
 msgstr "として表示"
@@ -672,17 +680,17 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:738 exe/xului/mainpage.py:745
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:751
-#: exe/xului/mainpage.py:754 exe/xului/mainpage.py:952
+#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:755
+#: exe/xului/mainpage.py:758 exe/xului/mainpage.py:761
+#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:962
 msgid "EXPORT FAILED!"
 msgstr "エクスポートに失敗しました！"
 
-#: exe/xului/mainpage.py:942 exe/xului/mainpage.py:956
-#: exe/xului/mainpage.py:969 exe/xului/mainpage.py:975
-#: exe/xului/mainpage.py:1009 exe/xului/mainpage.py:1025
-#: exe/xului/mainpage.py:1031 exe/xului/mainpage.py:1046
-#: exe/xului/mainpage.py:1052
+#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:985
+#: exe/xului/mainpage.py:1019 exe/xului/mainpage.py:1035
+#: exe/xului/mainpage.py:1041 exe/xului/mainpage.py:1056
+#: exe/xului/mainpage.py:1062
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -701,7 +709,7 @@ msgstr ""
 "エキスポートに失敗しました！\n"
 "最後に成功したエキスポートは次のものです %s."
 
-#: exe/xului/mainpage.py:840 exe/xului/mainpage.py:857
+#: exe/xului/mainpage.py:850 exe/xului/mainpage.py:867
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -723,6 +731,10 @@ msgstr ""
 #: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "強調"
+
+#: exe/webui/preferencespage.py:101
+msgid "Enable All Internal Linking"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:113
 msgid "English Wikipedia Article"
@@ -933,9 +945,9 @@ msgstr "例"
 msgid "Export iDevice"
 msgstr "iDevicesのエキスポート"
 
-#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
-#: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
-#: exe/xului/mainpage.py:1054
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
+#: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
+#: exe/xului/mainpage.py:1064
 #, python-format
 msgid "Exported to %s"
 msgstr "エキスポートする%s"
@@ -958,7 +970,7 @@ msgstr "間違い"
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
 #: exe/engine/field.py:3128 exe/webui/clozeblock.py:164
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:104
-#: exe/webui/common.py:241 exe/webui/element.py:1926
+#: exe/webui/common.py:249 exe/webui/element.py:1926
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "フィードバック"
@@ -976,13 +988,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "フィードバック："
 
-#: exe/xului/mainpage.py:1092
+#: exe/xului/mainpage.py:1102
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "ファイル %s は存在しないか、読み込むことができません。"
 
-#: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
-#: exe/xului/mainpage.py:996
+#: exe/xului/mainpage.py:897 exe/xului/mainpage.py:939
+#: exe/xului/mainpage.py:1006
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
@@ -999,8 +1011,8 @@ msgstr "フラッシュムービー"
 msgid "Flash with Text"
 msgstr "テクスト付フラッシュ"
 
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:903 exe/xului/mainpage.py:945
+#: exe/xului/mainpage.py:1012
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "フォルダー名　%s は既に存在しています。他の名前にするか、現存するフォルダを削除し、再度試してください。"
@@ -1139,13 +1151,17 @@ msgid "Instant Marking?"
 msgstr "即時に採点しますか？"
 
 #: exe/engine/clozeidevice.py:116 exe/engine/truefalseidevice.py:165
-#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:322
+#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:330
 msgid "Instructions"
 msgstr "ガイド"
 
 #: exe/engine/clozeidevice.py:274
 msgid "Instructions For Learners"
 msgstr "学習者への指示"
+
+#: exe/webui/preferencespage.py:104
+msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1186,7 +1202,7 @@ msgstr "掲載許諾"
 msgid "Load"
 msgstr "ロード"
 
-#: exe/xului/mainpage.py:552
+#: exe/xului/mainpage.py:562
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
@@ -1212,7 +1228,7 @@ msgstr "最大ズーム"
 msgid "Medium"
 msgstr "中"
 
-#: exe/xului/mainpage.py:680
+#: exe/xului/mainpage.py:690
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1285,7 +1301,7 @@ msgstr "強調しない"
 msgid "None"
 msgstr "None"
 
-#: exe/webui/preferencespage.py:102
+#: exe/webui/preferencespage.py:112
 msgid "OK"
 msgstr "OK"
 
@@ -1339,7 +1355,7 @@ msgstr "概要"
 msgid "Own site"
 msgstr "独自のサイト"
 
-#: exe/xului/mainpage.py:859
+#: exe/xului/mainpage.py:869
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "パッケージが次の場所に解凍されました: %s"
@@ -1349,7 +1365,7 @@ msgstr "パッケージが次の場所に解凍されました: %s"
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:317
 #, python-format
 msgid "Package saved to: %s"
 msgstr "パッケージが次の場所に保存されました: %s"
@@ -1429,7 +1445,7 @@ msgstr ""
 msgid "Preview"
 msgstr "プレビュー"
 
-#: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
+#: exe/xului/mainpage.py:542 exe/xului/mainpage.py:648
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
@@ -1572,12 +1588,12 @@ msgstr "再起動"
 msgid "Right"
 msgstr "右"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:310
 msgid "SAVE FAILED!"
 msgstr "保存に失敗しました！"
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
-#: exe/xului/mainpage.py:901
+#: exe/xului/mainpage.py:314 exe/xului/mainpage.py:620
+#: exe/xului/mainpage.py:911
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1615,7 +1631,7 @@ msgstr "セクション"
 msgid "Select Flash Object"
 msgstr "フラッシュオブジェクトの選択"
 
-#: exe/webui/preferencespage.py:95
+#: exe/webui/preferencespage.py:96
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
@@ -1743,7 +1759,7 @@ msgstr "小"
 msgid "Some emphasis"
 msgstr "強調する"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1101
+#: exe/application.py:273 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "ファイルのフォーマットが違っています"
 
@@ -1752,7 +1768,7 @@ msgstr "ファイルのフォーマットが違っています"
 msgid "Sorry, wrong file format."
 msgstr "ファイルのフォーマットが違っています"
 
-#: exe/xului/mainpage.py:1099
+#: exe/xului/mainpage.py:1109
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2183,7 +2199,7 @@ msgstr "オリジナルのサイズにするため空白"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:84 exe/webui/common.py:68
+#: exe/webui/preferencespage.py:85 exe/webui/common.py:70
 #: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : ｅラーニングXHTMLエディター"

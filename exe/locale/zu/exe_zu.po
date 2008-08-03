@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-15 19:41+1200\n"
+"POT-Creation-Date: 2008-08-04 09:50+1200\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
-#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
-#: exe/xului/mainpage.py:1045
+#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:978 exe/xului/mainpage.py:1034
+#: exe/xului/mainpage.py:1055
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -47,8 +47,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Iya E---"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:713
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:723
+#: exe/xului/mainpage.py:841
 msgid ". Please use ASCII names."
 msgstr ". Ucelwa ukuba usebenzise amagama e-ASCII."
 
@@ -444,12 +444,12 @@ msgstr "Inkinobho yokulandisa ngamafuphi"
 msgid "Can NOT Undo Edits"
 msgstr ""
 
-#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Nqamula"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:711
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:721
+#: exe/xului/mainpage.py:841
 msgid "Cannot access directory named "
 msgstr "Isiqondisi esinikeziwe asifinyeleleki"
 
@@ -505,7 +505,7 @@ msgstr ""
 "ayi-100 alingana no-3cm.Shiya zombili izikhala zingenalutho uma ufuna \n"
 "isithombe siboniswe ngobungako baso bokuqala."
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:219
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -527,7 +527,7 @@ msgstr "Cindezela &lt;strong&gt;Khetha ifayela&lt;/strong&gt;,bheka ifayela ofun
 msgid "Click Here"
 msgstr "Cindezela lapha"
 
-#: exe/webui/common.py:328 exe/webui/common.py:332
+#: exe/webui/common.py:336 exe/webui/common.py:340
 msgid "Click for completion instructions"
 msgstr ""
 
@@ -549,8 +549,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr ""
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
-#: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
-#: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
+#: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
+#: exe/webui/common.py:346 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -585,7 +585,7 @@ msgstr "Kulungile"
 msgid "Correct!"
 msgstr "Kulungile!"
 
-#: exe/xului/mainpage.py:1096
+#: exe/xului/mainpage.py:1106
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
@@ -682,6 +682,14 @@ msgstr "Incazelo"
 msgid "Description:"
 msgstr "Incazelo:"
 
+#: exe/webui/preferencespage.py:103
+msgid "Disable All Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:102
+msgid "Disable Auto-Top Internal Linking"
+msgstr ""
+
 #: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
 msgid "Display as:"
 msgstr "Kubonise njenge:"
@@ -713,17 +721,17 @@ msgstr "Isici soMONAKALO.enza ukuBuka ngokushukunyiswa ngokuqondile ngesigaba se
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "KUNOMONAKALO: Thibela.enza ukuBukaOkuqukethwe ngokushukunyiswa ngokuqondile ngesigaba se %s"
 
-#: exe/xului/mainpage.py:738 exe/xului/mainpage.py:745
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:751
-#: exe/xului/mainpage.py:754 exe/xului/mainpage.py:952
+#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:755
+#: exe/xului/mainpage.py:758 exe/xului/mainpage.py:761
+#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:962
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:942 exe/xului/mainpage.py:956
-#: exe/xului/mainpage.py:969 exe/xului/mainpage.py:975
-#: exe/xului/mainpage.py:1009 exe/xului/mainpage.py:1025
-#: exe/xului/mainpage.py:1031 exe/xului/mainpage.py:1046
-#: exe/xului/mainpage.py:1052
+#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:985
+#: exe/xului/mainpage.py:1019 exe/xului/mainpage.py:1035
+#: exe/xului/mainpage.py:1041 exe/xului/mainpage.py:1056
+#: exe/xului/mainpage.py:1062
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -738,7 +746,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:840 exe/xului/mainpage.py:857
+#: exe/xului/mainpage.py:850 exe/xului/mainpage.py:867
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -758,6 +766,10 @@ msgstr ""
 #: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Ukugcizelela"
+
+#: exe/webui/preferencespage.py:101
+msgid "Enable All Internal Linking"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:113
 msgid "English Wikipedia Article"
@@ -967,9 +979,9 @@ msgstr "Isibonelo Isibonelo"
 msgid "Export iDevice"
 msgstr "iDevices"
 
-#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
-#: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
-#: exe/xului/mainpage.py:1054
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
+#: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
+#: exe/xului/mainpage.py:1064
 #, python-format
 msgid "Exported to %s"
 msgstr "Kuthunyelwe e %s"
@@ -992,7 +1004,7 @@ msgstr "Amanga"
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
 #: exe/engine/field.py:3128 exe/webui/clozeblock.py:164
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:104
-#: exe/webui/common.py:241 exe/webui/element.py:1926
+#: exe/webui/common.py:249 exe/webui/element.py:1926
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Umbono ngokwenziwe"
@@ -1010,13 +1022,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Umbono ngokwenziwe:"
 
-#: exe/xului/mainpage.py:1092
+#: exe/xului/mainpage.py:1102
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
-#: exe/xului/mainpage.py:996
+#: exe/xului/mainpage.py:897 exe/xului/mainpage.py:939
+#: exe/xului/mainpage.py:1006
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
@@ -1034,8 +1046,8 @@ msgstr "Umboniso bhanyabhanya"
 msgid "Flash with Text"
 msgstr "Umboniso wesikhashana onokubhaliwe"
 
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:903 exe/xului/mainpage.py:945
+#: exe/xului/mainpage.py:1012
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1177,13 +1189,17 @@ msgid "Instant Marking?"
 msgstr "Ukumaka ngaso leso sikhathi?"
 
 #: exe/engine/clozeidevice.py:116 exe/engine/truefalseidevice.py:165
-#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:322
+#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:330
 msgid "Instructions"
 msgstr "Izilayezo"
 
 #: exe/engine/clozeidevice.py:274
 msgid "Instructions For Learners"
 msgstr "Iziyalezo zaBafundi"
+
+#: exe/webui/preferencespage.py:104
+msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1225,7 +1241,7 @@ msgstr "Lokhu kulandisa okubhaliwe kugunyazwe ngaphansi kwe"
 msgid "Load"
 msgstr "Layisha"
 
-#: exe/xului/mainpage.py:552
+#: exe/xului/mainpage.py:562
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
@@ -1252,7 +1268,7 @@ msgstr "Ukukhulisa okuphezulu"
 msgid "Medium"
 msgstr "Maphakathi"
 
-#: exe/xului/mainpage.py:680
+#: exe/xului/mainpage.py:690
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1326,7 +1342,7 @@ msgstr "Akukho ukugcizelela"
 msgid "None"
 msgstr "Akukho"
 
-#: exe/webui/preferencespage.py:102
+#: exe/webui/preferencespage.py:112
 msgid "OK"
 msgstr "Kulungile"
 
@@ -1385,7 +1401,7 @@ msgstr "Uhlaka"
 msgid "Own site"
 msgstr ""
 
-#: exe/xului/mainpage.py:859
+#: exe/xului/mainpage.py:869
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "iPhakethe ligcinwe e: %s"
@@ -1395,7 +1411,7 @@ msgstr "iPhakethe ligcinwe e: %s"
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:317
 #, python-format
 msgid "Package saved to: %s"
 msgstr "iPhakethe ligcinwe e: %s"
@@ -1477,7 +1493,7 @@ msgstr ""
 msgid "Preview"
 msgstr "Umboniso"
 
-#: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
+#: exe/xului/mainpage.py:542 exe/xului/mainpage.py:648
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
@@ -1630,12 +1646,12 @@ msgstr "Phinduqale"
 msgid "Right"
 msgstr "Kwesokudla"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:310
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
-#: exe/xului/mainpage.py:901
+#: exe/xului/mainpage.py:314 exe/xului/mainpage.py:620
+#: exe/xului/mainpage.py:911
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1669,7 +1685,7 @@ msgstr "iSigaba"
 msgid "Select Flash Object"
 msgstr "Khetha isiThombe esiBanizayo"
 
-#: exe/webui/preferencespage.py:95
+#: exe/webui/preferencespage.py:96
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
@@ -1806,7 +1822,7 @@ msgstr "Okuncane"
 msgid "Some emphasis"
 msgstr "Ukugcizelela okuyingcosana"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1101
+#: exe/application.py:273 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Xola, isakhiwo sefayela esiyiphutha"
 
@@ -1815,7 +1831,7 @@ msgstr "Xola, isakhiwo sefayela esiyiphutha"
 msgid "Sorry, wrong file format."
 msgstr "Xola, isakhiwo sefayela esiyiphutha"
 
-#: exe/xului/mainpage.py:1099
+#: exe/xului/mainpage.py:1109
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2245,7 +2261,7 @@ msgstr "akunalutho kobungako bokuqala"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:84 exe/webui/common.py:68
+#: exe/webui/preferencespage.py:85 exe/webui/common.py:70
 #: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : umhleli we-XHTML ye-elearning"

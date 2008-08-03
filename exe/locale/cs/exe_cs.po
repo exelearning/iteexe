@@ -9,24 +9,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-15 19:41+1200\n"
+"POT-Creation-Date: 2008-08-04 09:50+1200\n"
 "PO-Revision-Date: 2008-07-17 19:59+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team:  <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 &&"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 &&n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"\n"
 "X-Generator: KBabel 1.11.4\n"
 "X-EXE-Language: Česky\n"
 "X-Poedit-Language: Czech\n"
@@ -44,9 +53,9 @@ msgstr ""
 "<p>Např. pro applety Geogebra vyberte geogebra a připojte soubor .ggb, \n"
 "který jste v programu Geogebra vytvořili. </p>"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:839
-#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:1024
-#: exe/xului/mainpage.py:1045
+#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:849
+#: exe/xului/mainpage.py:978 exe/xului/mainpage.py:1034
+#: exe/xului/mainpage.py:1055
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -69,8 +78,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Přesunout do---"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:713
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:723
+#: exe/xului/mainpage.py:841
 msgid ". Please use ASCII names."
 msgstr ". Prosím, použijte název v ASCII."
 
@@ -456,12 +465,12 @@ msgstr "Popisek tlačítka"
 msgid "Can NOT Undo Edits"
 msgstr "Nie je možné zrušiť úpravy"
 
-#: exe/webui/preferencespage.py:105 exe/webui/editorpane.py:269
+#: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: exe/xului/mainpage.py:300 exe/xului/mainpage.py:711
-#: exe/xului/mainpage.py:831
+#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:721
+#: exe/xului/mainpage.py:841
 msgid "Cannot access directory named "
 msgstr "Nemohu číst z adresáře "
 
@@ -515,7 +524,7 @@ msgstr ""
 "Pokud si přejete použít obrázek v původní velikosti,\n"
 "ponechejte políčka prázdná."
 
-#: exe/xului/mainpage.py:218
+#: exe/xului/mainpage.py:219
 msgid "Clear Recent Projects List"
 msgstr "Smazat seznam posledních projektů"
 
@@ -537,7 +546,7 @@ msgstr "Klepněte na <strong>Vybrat soubor</strong>,najděte soubor, který chce
 msgid "Click Here"
 msgstr "Klepněte sem"
 
-#: exe/webui/common.py:328 exe/webui/common.py:332
+#: exe/webui/common.py:336 exe/webui/common.py:340
 msgid "Click for completion instructions"
 msgstr "Klepněte pro doplnění instrukcí"
 
@@ -558,8 +567,8 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Pro vložení obrázku klepněte na tlačítko \"Přidat obrázky\". Obrázek se objeví dole, kde jej budete moct doplnit popiskem. Bývá dobrým zvykem do popisu vepsat také velikost obrázku."
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
-#: exe/webui/truefalseelement.py:153 exe/webui/common.py:337
-#: exe/webui/common.py:338 exe/webui/block.py:260 exe/webui/block.py:261
+#: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
+#: exe/webui/common.py:346 exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/element.py:2140 exe/webui/element.py:2141
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
@@ -593,7 +602,7 @@ msgstr "Správná volba"
 msgid "Correct!"
 msgstr "Správně!"
 
-#: exe/xului/mainpage.py:1096
+#: exe/xului/mainpage.py:1106
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Nepodařilo se načíst soubor. Budeme rádi, když nám pošlete upozornění mailem na adresu bugs@exelearning.org"
 
@@ -691,6 +700,14 @@ msgstr "Popis"
 msgid "Description:"
 msgstr "Popis:"
 
+#: exe/webui/preferencespage.py:103
+msgid "Disable All Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:102
+msgid "Disable Auto-Top Internal Linking"
+msgstr ""
+
 #: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
 msgid "Display as:"
 msgstr "Zobrazit jako:"
@@ -722,17 +739,17 @@ msgstr "CHYBA: Element.renderView volán přímo s %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "CHYBA: Block.renderViewContent volán přímo "
 
-#: exe/xului/mainpage.py:738 exe/xului/mainpage.py:745
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:751
-#: exe/xului/mainpage.py:754 exe/xului/mainpage.py:952
+#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:755
+#: exe/xului/mainpage.py:758 exe/xului/mainpage.py:761
+#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:962
 msgid "EXPORT FAILED!"
 msgstr "EXPORT SE NEZDAŘIL!"
 
-#: exe/xului/mainpage.py:942 exe/xului/mainpage.py:956
-#: exe/xului/mainpage.py:969 exe/xului/mainpage.py:975
-#: exe/xului/mainpage.py:1009 exe/xului/mainpage.py:1025
-#: exe/xului/mainpage.py:1031 exe/xului/mainpage.py:1046
-#: exe/xului/mainpage.py:1052
+#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:966
+#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:985
+#: exe/xului/mainpage.py:1019 exe/xului/mainpage.py:1035
+#: exe/xului/mainpage.py:1041 exe/xului/mainpage.py:1056
+#: exe/xului/mainpage.py:1062
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -751,7 +768,7 @@ msgstr ""
 "EXPORT SE NEZDAŘIL!\n"
 "Poslední úspěšný export je %s."
 
-#: exe/xului/mainpage.py:840 exe/xului/mainpage.py:857
+#: exe/xului/mainpage.py:850 exe/xului/mainpage.py:867
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -773,6 +790,10 @@ msgstr "Soubor generic.data, nebo iDevice, nebo balíček, který načítáte, b
 #: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
 msgid "Emphasis"
 msgstr "Zdůraznění"
+
+#: exe/webui/preferencespage.py:101
+msgid "Enable All Internal Linking"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:113
 msgid "English Wikipedia Article"
@@ -988,9 +1009,9 @@ msgstr "Příklad Příklad"
 msgid "Export iDevice"
 msgstr "Exportovat"
 
-#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:977
-#: exe/xului/mainpage.py:1011 exe/xului/mainpage.py:1033
-#: exe/xului/mainpage.py:1054
+#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
+#: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
+#: exe/xului/mainpage.py:1064
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportováno do %s"
@@ -1013,7 +1034,7 @@ msgstr "Ne"
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
 #: exe/engine/field.py:3128 exe/webui/clozeblock.py:164
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:104
-#: exe/webui/common.py:241 exe/webui/element.py:1926
+#: exe/webui/common.py:249 exe/webui/element.py:1926
 #: exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Zpětná vazba"
@@ -1031,13 +1052,13 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Zpětná vazba:"
 
-#: exe/xului/mainpage.py:1092
+#: exe/xului/mainpage.py:1102
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Soubor %s neexistuje nebo jej nelze číst."
 
-#: exe/xului/mainpage.py:887 exe/xului/mainpage.py:929
-#: exe/xului/mainpage.py:996
+#: exe/xului/mainpage.py:897 exe/xului/mainpage.py:939
+#: exe/xului/mainpage.py:1006
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Název souboru %s už je použit, nelze jej nahradit"
@@ -1054,8 +1075,8 @@ msgstr "Flash video"
 msgid "Flash with Text"
 msgstr "Flash s popisem"
 
-#: exe/xului/mainpage.py:893 exe/xului/mainpage.py:935
-#: exe/xului/mainpage.py:1002
+#: exe/xului/mainpage.py:903 exe/xului/mainpage.py:945
+#: exe/xului/mainpage.py:1012
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Adresář jménem %s už existuje. Vyberte prosím jiný nebo smažte existující a zkuste to znovu."
@@ -1192,13 +1213,17 @@ msgid "Instant Marking?"
 msgstr "Okamžité označení?"
 
 #: exe/engine/clozeidevice.py:116 exe/engine/truefalseidevice.py:165
-#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:322
+#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:330
 msgid "Instructions"
 msgstr "Pokyny"
 
 #: exe/engine/clozeidevice.py:274
 msgid "Instructions For Learners"
 msgstr "Pokyny pro studenty"
+
+#: exe/webui/preferencespage.py:104
+msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1238,7 +1263,7 @@ msgstr "Licencováno pod"
 msgid "Load"
 msgstr "Načíst"
 
-#: exe/xului/mainpage.py:552
+#: exe/xului/mainpage.py:562
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Místní soubor %s nebyl nalezen, nelze jej zobrazit"
@@ -1263,7 +1288,7 @@ msgstr "Maximální přiblížení"
 msgid "Medium"
 msgstr "Střední"
 
-#: exe/xului/mainpage.py:680
+#: exe/xului/mainpage.py:690
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1338,7 +1363,7 @@ msgstr "Bez zvýraznění"
 msgid "None"
 msgstr "Žádný"
 
-#: exe/webui/preferencespage.py:102
+#: exe/webui/preferencespage.py:112
 msgid "OK"
 msgstr "OK"
 
@@ -1396,7 +1421,7 @@ msgstr "Osnova"
 msgid "Own site"
 msgstr "Vlastní web"
 
-#: exe/xului/mainpage.py:859
+#: exe/xului/mainpage.py:869
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Soubory rozbaleny do: %s"
@@ -1406,7 +1431,7 @@ msgstr "Soubory rozbaleny do: %s"
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Balíček je zastaralý. Pomocí položky Soubor-Otevřít a následně Uložit jako... jej aktualizujte. Teprve potom jej můžete vložit do jiného balíčku!"
 
-#: exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:317
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Balíček uložen do: %s"
@@ -1488,7 +1513,7 @@ msgstr ""
 msgid "Preview"
 msgstr "Náhled"
 
-#: exe/xului/mainpage.py:532 exe/xului/mainpage.py:638
+#: exe/xului/mainpage.py:542 exe/xului/mainpage.py:648
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Adresář s náhledy %s už existuje, nelze jej nahradit"
@@ -1643,12 +1668,12 @@ msgstr "Restart"
 msgid "Right"
 msgstr "Doprava"
 
-#: exe/xului/mainpage.py:309
+#: exe/xului/mainpage.py:310
 msgid "SAVE FAILED!"
 msgstr "ULOŽENÍ SE NEZDAŘILO!"
 
-#: exe/xului/mainpage.py:313 exe/xului/mainpage.py:610
-#: exe/xului/mainpage.py:901
+#: exe/xului/mainpage.py:314 exe/xului/mainpage.py:620
+#: exe/xului/mainpage.py:911
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1686,7 +1711,7 @@ msgstr "Kapitola"
 msgid "Select Flash Object"
 msgstr "Vyberte flash objekt"
 
-#: exe/webui/preferencespage.py:95
+#: exe/webui/preferencespage.py:96
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_language" label="Select Language">
 msgid "Select Language"
@@ -1817,7 +1842,7 @@ msgstr "Malý"
 msgid "Some emphasis"
 msgstr "Částečné zvýraznění"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1101
+#: exe/application.py:273 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Je mi líto, špatný formát souboru"
 
@@ -1825,7 +1850,7 @@ msgstr "Je mi líto, špatný formát souboru"
 msgid "Sorry, wrong file format."
 msgstr "Je mi líto, špatný formát souboru."
 
-#: exe/xului/mainpage.py:1099
+#: exe/xului/mainpage.py:1109
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2274,7 +2299,7 @@ msgstr "prázdné pro původní velikost"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:84 exe/webui/common.py:68
+#: exe/webui/preferencespage.py:85 exe/webui/common.py:70
 #: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"
@@ -4024,4 +4049,3 @@ msgstr "Práva:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Typicky bude v položce Práva obsažena pasáž o oprávnění k daným zdrojům nebo odkaz na takové informace. Informace o oprávnění zahrnují často Intellectual Property Rights (IPR), copyright a jiná vlastnická práva. Pokud nebude položka Práva uvedena, nelze vytvářet předpoklady o stavu jakýchkoli práv vztažených k prostředkům a zdrojům."
-
