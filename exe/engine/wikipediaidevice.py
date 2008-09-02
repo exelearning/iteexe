@@ -112,12 +112,18 @@ within Wikipedia.""")
         content = soup.first('div', {'id': "content"})
 
         # remove the wiktionary, wikimedia commons, and categories boxes
+        #  and the protected icon and the needs citations box
         if content:
             infoboxes = content.findAll('div',
                     {'class' : 'infobox sisterproject'})
             [infobox.extract() for infobox in infoboxes]
             catboxes = content.findAll('div', {'id' : 'catlinks'})
             [catbox.extract() for catbox in catboxes]
+            amboxes = content.findAll('table',
+                    {'class' : re.compile(r'.*\bambox\b.*')})
+            [ambox.extract() for ambox in amboxes]
+            protecteds = content.findAll('div', {'id' : 'protected-icon'})
+            [protected.extract() for protected in protecteds]
         else:
             content = soup.first('body')
 
