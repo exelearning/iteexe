@@ -321,6 +321,7 @@ class QuizTestBlock(Block):
         scriptStr += """   
            
            doLMSSetValue( "cmi.core.score.raw", actualScore+"" );
+           doLMSSetValue( "cmi.core.score.max", "100" );
            
            var mode = doLMSGetValue( "cmi.core.lesson_mode" );
      
