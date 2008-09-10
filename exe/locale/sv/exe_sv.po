@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Fredrik Paulsson <frepa@frepa.org>\n"
@@ -735,7 +735,7 @@ msgstr ""
 "Skriv en ledtråd här. Lämna\n"
 " fältet blankt om Du inte vill ge någon ledtråd"
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1693,7 +1693,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Välj nivå för godkänd"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1810,7 +1810,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Skicka svar"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Skicka svar"
 
@@ -2042,7 +2042,7 @@ msgstr ""
 msgid "URL:"
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
@@ -2205,7 +2205,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "Bilaga %s har ingen föräldranod"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 

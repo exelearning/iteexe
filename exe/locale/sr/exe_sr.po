@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_en\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2008-07-15 08:15+0200\n"
 "Last-Translator: vedran <vvucic@eunet.rs>\n"
 "Language-Team: serbiansr <en@li.org>\n"
@@ -802,7 +802,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Unesite podsetnik za pitanje. Ako ne želite da ponudite podsetnik za pitanje ostavite ovo polje prazno."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1743,7 +1743,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Odaberite procenat prolaznosti: "
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1860,7 +1860,7 @@ msgstr "Tačno označavanje?"
 msgid "Submit"
 msgstr "Priloži"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Priloži odgovor"
 
@@ -2127,7 +2127,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Nemože da se preuzme datoteka sa %s <br/> Molimo proverite da li ima slovnih grešaka kao i konekciju i pokušajte ponovo."
@@ -2302,7 +2302,7 @@ msgstr "eXe Projekat"
 msgid "file %s has no parentNode"
 msgstr "datoteka %s nema roditeljsku tačku"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 

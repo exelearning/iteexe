@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2008-06-13 08:44+1200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
@@ -812,7 +812,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Δώστε μια συμβουλή εδώ. Αν δεν θέλετε, αφήστε το πεδίο κενό."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1757,7 +1757,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Επιλογή βαθμολογικής βάσης:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1874,7 +1874,7 @@ msgstr "Αυστηρή βαθμολογία;"
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Υποβολή απάντησης"
 
@@ -2141,7 +2141,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Αδυναμία μεταφόρτωσης από %s <br/>Παρακαλώ ελέγξτε την ορθογραφία και τη σύνδεση και προσπαθήστε πάλι."
@@ -2316,7 +2316,7 @@ msgstr "Έργο eXe"
 msgid "file %s has no parentNode"
 msgstr "το αρχείο %s δεν έχει πατρικό κόμβο"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://el.wikipedia.org/"
 

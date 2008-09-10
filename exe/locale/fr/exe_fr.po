@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2008-06-13 03:41+0100\n"
 "Last-Translator: Anna Vetter <anna.vetter@supportsfoad.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -722,7 +722,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Rédigez ici un indice. Si vous ne voulez pas donner d'indice, laissez ce champ en blanc."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1598,7 +1598,7 @@ msgstr "Sélectionnez autant d'options correctes que nécessaire en cliquant sur
 msgid "Select pass rate: "
 msgstr "Choisissez un taux de réussite :"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1707,7 +1707,7 @@ msgstr "Marquage strict ?"
 msgid "Submit"
 msgstr "Valider "
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Valider la réponse"
 
@@ -1919,7 +1919,7 @@ msgstr "Rédigez la question de base. Celle-ci doit être claire et sans ambigui
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Impossible de télécharger depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
@@ -2080,7 +2080,7 @@ msgstr "eXe project"
 msgid "file %s has no parentNode"
 msgstr "Le fichier %s n'a pas de lienParent ou parentNode"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://fr.wikipedia.org/"
 

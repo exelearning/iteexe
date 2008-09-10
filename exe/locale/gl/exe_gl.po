@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2008-05-28 14:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
@@ -802,7 +802,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Introduza aquí unha indicación. Se non quere engadir unha indicación, deixe este campo en branco."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1743,7 +1743,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Seleccionar a porcentaxe para aprobar: "
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1860,7 +1860,7 @@ msgstr "Marcación estrita?"
 msgid "Submit"
 msgstr "Enviar"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Enviar resposta"
 
@@ -2127,7 +2127,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Non é posible descargar de %s <br/>Verifique que está ben escrito, a conexión e ténteo de novo."
@@ -2302,7 +2302,7 @@ msgstr "Proxecto do eXe"
 msgid "file %s has no parentNode"
 msgstr "o ficheiro %s non ten un nodo pai"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://gl.wikipedia.org/"
 

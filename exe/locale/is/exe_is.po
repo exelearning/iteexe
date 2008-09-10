@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2006-07-28 15:29+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team:  <sfj@fb.is>\n"
@@ -780,7 +780,7 @@ msgstr ""
 "Sláðu inn vísbendingu. Ef þú \n"
 " vilt ekki gefa vísbendingu hafðu þá þennan reit óútfylltan."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1725,7 +1725,7 @@ msgstr "Veldu rétt svar með því að haka við það."
 msgid "Select pass rate: "
 msgstr "Hlutfall réttra svara til að standa próf:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1841,7 +1841,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Senda svar"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Senda svar"
 
@@ -2069,7 +2069,7 @@ msgstr ""
 msgid "URL:"
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
@@ -2242,7 +2242,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "Viðhengið %s hefur enga \"parentNode\""
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 

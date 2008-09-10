@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2008-01-23 16:53+1300\n"
 "Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -707,7 +707,7 @@ msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1594,7 +1594,7 @@ msgstr "點擊選項旁的點選鈕來選擇正確選項。"
 msgid "Select pass rate: "
 msgstr "選擇及格線"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1706,7 +1706,7 @@ msgstr "嚴格評分?"
 msgid "Submit"
 msgstr "提交"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "提交答案"
 
@@ -1915,7 +1915,7 @@ msgstr "輸入問題。問題的陳述應是清楚而不含糊的。"
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
@@ -2079,7 +2079,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 

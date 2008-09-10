@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2008-05-23 17:23+0100\n"
 "Last-Translator: Ralf Hilgenstock <ralf.hilgenstock@dialoge.net>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -825,7 +825,7 @@ msgstr ""
 "Wenn Sie keinen Hinweis eingeben wollen,\n"
 "lassen Sie das Feld leer."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1781,7 +1781,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Wert für \"Bestanden\":"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1900,7 +1900,7 @@ msgstr "Strenge Bewertung?"
 msgid "Submit"
 msgstr "Antwort abgeben "
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Antwort abgeben"
 
@@ -2160,7 +2160,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Kein Download möglich von %s<br />Prüfen Sie Ihre Eingabe und versuchen Sie es noch einmal."
@@ -2336,7 +2336,7 @@ msgstr "eXe Projekt"
 msgid "file %s has no parentNode"
 msgstr "Datei %s hat keinen parentNode"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://de.wikipedia.org/"
 

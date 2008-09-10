@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2007-06-23 06:41+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -771,7 +771,7 @@ msgstr "Ingrese una sugerencia aquí, deja este campo en blanco."
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Introduzca aquí una sugerencia. Si no quiere ofrecer una sugerencia deja este campo en blanco."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1693,7 +1693,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Seleccionar el coeficiente aprobado:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1810,7 +1810,7 @@ msgstr "Marca terminante?"
 msgid "Submit"
 msgstr "Enviar"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Respuesta propuesta"
 
@@ -2063,7 +2063,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "No se pudo descargar de %s <br/> Por favor revise lo escrito y la conección e intente de nuevo."
@@ -2237,7 +2237,7 @@ msgstr "Proyecto eXe"
 msgid "file %s has no parentNode"
 msgstr "Archivo %s no tiene nodo pariente"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://es.wikipedia.org/"
 

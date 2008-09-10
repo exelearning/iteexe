@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 09:50+1200\n"
+"POT-Creation-Date: 2008-09-11 09:58+1200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -813,7 +813,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Írjon egy útmutatást! Ha nem kíván útmutatást adni a megoldáshoz, hagyja üresen ezt a mezőt!"
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:329
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1754,7 +1754,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Határozza meg teszt elfogadásának szintjét:"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:327
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1872,7 +1872,7 @@ msgstr "Pontos értékelés?"
 msgid "Submit"
 msgstr "Elküld"
 
-#: exe/webui/quiztestblock.py:372
+#: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
 msgstr "Válasz elküldése"
 
@@ -2134,7 +2134,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:126
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e, vagy rendben van-e az internetkapcsolata és próbálja újra."
@@ -2308,7 +2308,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "Fájl %s nincs szülőcsomópont"
 
-#: exe/engine/wikipediaidevice.py:281
+#: exe/engine/wikipediaidevice.py:287
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
