@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -110,7 +111,7 @@ class IdeviceStore:
         """
         Load the Extended iDevices (iDevices coded in Python)
         """
-      #  self.__loadUserExtended()
+        self.__loadUserExtended()
 
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multimediaidevice     import MultimediaIdevice
