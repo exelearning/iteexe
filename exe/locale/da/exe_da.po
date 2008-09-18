@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-11 09:58+1200\n"
-"PO-Revision-Date: 2008-09-09 10:38+0100\n"
+"POT-Creation-Date: 2008-09-18 14:23+1200\n"
+"PO-Revision-Date: 2008-09-15 16:08+0100\n"
 "Last-Translator: Dino Brun Pedersen <dbp@sensus.dk>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgid ""
 "code field."
 msgstr ""
 "\"Find .txt filen (i applet filen) \n"
-"og åben den. Kopier indholdet af denne fil <ctrl A, ctrl C> ind i appletens \n"
+"og åbn den. Kopier indholdet af denne fil <ctrl A, ctrl C> ind i appletens \n"
 "kodefelt."
 
 #: exe/webui/block.py:246
@@ -62,7 +62,7 @@ msgstr ". Venligst anvend ASCII navne."
 
 #: exe/engine/clozeidevice.py:60
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Hvis dit mål er at teste forståelse af kerne koncepter eller læseevne </dt>  <dd>    <p>  skriv et sammendrag af konceptet eller læs længe nok for tilstrækkeligt at teste målets viden, men kort nok for ikke at trætte. Mindre end en skreven side er sandsynligvis tilstrækkelig, men sandsynligvis betragtelig mindre for unge studerende eller begyndere.    </p>    <p>Vælg ord i teksten, der er vigtigte for forståelsen af konceptet. Dette vil sandsynligvis være verber, navneord, og vigtige biord.Vælg alternativer med et klart svar.    </p>  </dd>  <dt>Hvis dit mål er at teste sproglig viden  </dt>  <dd><p>Skriv en tekst og anvend spørgeundersøgelser. Denne tekst skal være konsekvent og sammenhængende, og være af en passende længde. Understreg væsentlige ord i teksten. Vælg alternativ med et klart svar.</p>  </dd>  <dt>Hvis dit mål er at teste ordformationer/grammatik:  </dt>  <dd>  <p>Skriv en tekst ved at anvendespørgeundersøgelser. Denne tekst skal være konsekvent og sammenhængende, og være af en passende længde. Husk at målet ikke er at teste ordforråd, så betydningen af nøgleordene skal være velkendte for den studerende.  </p>  <p>Understreg nøgleord i teksten. Sørg for alternative med samme ordstamme, men forskellig affixer. Det er en god ide at få en kollega til at teste/udføre for at være sikker på, at der ikke er nogen overraskelser!  </p>  </dd></dl>"
+msgstr "<dl>  <dt>Hvis dit mål er at teste forståelse af kerne koncepter eller læseevne: </dt>  <dd>    <p>  Skriv et sammendrag af konceptet eller læs længe nok for tilstrækkeligt at teste målets viden, men kort nok for ikke at trætte. Mindre end en skreven side er sandsynligvis tilstrækkelig, men sandsynligvis betragtelig mindre for unge studerende eller begyndere.    </p>    <p>Vælg ord i teksten, der er vigtigte for forståelsen af konceptet. Dette vil sandsynligvis være verber, navneord, og vigtige biord.Vælg alternativer med et klart svar.    </p>  </dd>  <dt>Hvis dit mål er at teste sproglig viden:  </dt>  <dd><p>Skriv en tekst og anvend spørgeundersøgelser. Denne tekst skal være konsekvent og sammenhængende, og være af en passende længde. Understreg væsentlige ord i teksten. Vælg alternativ med et klart svar.</p>  </dd>  <dt>Hvis dit mål er at teste ordformationer/grammatik:  </dt>  <dd>  <p>Skriv en tekst ved at anvendespørgeundersøgelser. Denne tekst skal være konsekvent og sammenhængende, og være af en passende længde. Husk at målet ikke er at teste ordforråd, så betydningen af nøgleordene skal være velkendte for den studerende.  </p>  <p>Understreg nøgleord i teksten. Sørg for alternative med samme ordstamme, men forskellig affixer. Det er en god ide at få en kollega til at teste/udføre for at være sikker på, at der ikke er nogen overraskelser!  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
@@ -110,7 +110,7 @@ msgstr "<p>Tilføj en mærkat på det vedhæftede. Det er en god idé at inklude
 
 #: exe/engine/clozeidevice.py:48
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr "<p>Udfyldningsopgaver er tekster eller sætninger, hvor den studerende skal indsætte de manglende ord. De anvendes ofte til følgende formål:</p><ol><li>For at undersøge viden om nøgle kursus koncepter (dette kan være et præ-tjek, øvelser der tjekker den faglige udvikling og evne til at sammensætte ord, eller tjek af minimumskompetencer).</li><li>For at tjekke læseforståelse</li><li>For at tjekke ordforråd.</li><li>For at tjekke faglig udvikling og evne til at skabe nye ord og/eller grammatisk kompetence. </li></ol>"
+msgstr "<p>Udfyldningsopgaver er tekster eller sætninger, hvor den studerende skal indsætte de manglende ord. De anvendes ofte til følgende formål:</p><ol><li>For at undersøge viden om nøglekursuskoncepter (dette kan være et præ-tjek, øvelser der tjekker den faglige udvikling og evne til at sammensætte ord, eller tjek af minimumskompetencer).</li><li>For at tjekke læseforståelse</li><li>For at tjekke ordforråd.</li><li>For at tjekke faglig udvikling og evne til at skabe nye ord og/eller grammatisk kompetence. </li></ol>"
 
 #: exe/engine/clozeidevice.py:124
 msgid ""
@@ -122,11 +122,11 @@ msgstr ""
 "<p>Indsæt teksten for udfyldningsopgaven i udfyldningsfeltet \n"
 "ved enten at indsætte teksten fra en anden kilde eller ved at skrive teksten direkte ind i \n"
 "feltet.</p><p> For at udvælge ord, der skal skjules, dobbelklik på ordet for at vælge det og \n"
-"klik på Skjul/Vis Word knappen forneden.</p>"
+"klik på Skjul/Vis ord knappen forneden.</p>"
 
 #: exe/engine/field.py:2725
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr "<p>Hvis ikke afkrydset vil et mindre antal stavefejl og fejl i brug af store/små bogstaver blive accepteret. Hvis afkrydset vil kun et præcist match i stavning og brug af store/små bogstaver blive accepteret.</p><p><strong>For eksempel:</strong> Hvis det korrekte svar er <code>Elefant</code> så vil begge <code>elefant</code> og <code>Elifant</code> blive bedømt <em>\"tæt nok\"</em> af algoritmen, da den kun har et bogstav forkert, selv hvis \"Tjek store/små bogstaver\" er afkrydset.</p><p>Hvis store/små bogstaver ikke er afkrydset i ovenstående eksempel,vil  små bogstaver <code>e</code> ikke blive betragtet som en fejl og <code>elifant</code> vil også blive accepteret.</p><p>Hvis begge \"Præcist match\" og \"Check Store/små bogstaver\" er afkrydset, er det eneste korrekte svar  \"Elefant\". Hvis kun \"Præcist match\" er tjekket og \"Check Store/små bogstaver\" ikke er, vil \"elefant\" også blive accepteret.</p>"
+msgstr "<p>Hvis ikke afkrydset vil et mindre antal stavefejl og fejl i brug af store/små bogstaver blive accepteret. Hvis afkrydset vil kun et præcist match i stavning og brug af store/små bogstaver blive accepteret.</p><p><strong>For eksempel:</strong> Hvis det korrekte svar er <code>Elefant</code> så vil både <code>elefant</code> og <code>Elifant</code> blive bedømt <em>\"tæt nok\"</em> af algoritmen, da den kun har et bogstav forkert, selv hvis \"Tjek store/små bogstaver\" er afkrydset.</p><p>Hvis store/små bogstaver ikke er afkrydset i ovenstående eksempel,vil  små bogstaver <code>e</code> ikke blive betragtet som en fejl og <code>elifant</code> vil også blive accepteret.</p><p>Hvis både \"Præcist match\" og \"Check Store/små bogstaver\" er afkrydset, er det eneste korrekte svar  \"Elefant\". Hvis kun \"Præcist match\" er tjekket og \"Check Store/små bogstaver\" ikke er, vil \"elefant\" også blive accepteret.</p>"
 
 #: exe/engine/field.py:2746
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
@@ -146,11 +146,11 @@ msgstr ""
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Vælg symboler fra tekst editoren nedenfor eller indtast LATEX manuelt for at oprette matematiske formler. For at forhåndsvise din LATEX som den vil vises anvend &lt;Vis&gt; knappen nedenfor.</p>"
 
-#: exe/engine/idevicestore.py:278
+#: exe/engine/idevicestore.py:279
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "<p>Undervisere skal være opmærksomme på følgende, når iDevice anvendes: </p><ol><li>Tænk over antallet af forskellige typer af aktiviteter planlagt som vil blive vist visuelt  i indholdet. Undgå at bruge for mange forskellige typer eller klassifikationer af aktiviteter, ellers vil den studerende blive forvirret. Sædvanligvis er tre eller fire forskellige typer mere end tilstrækkelig for en undervisningsresurse</li><li>Fra et visuelt design perspektiv, undgå at have to iDevices umiddelbart efter hinanden uden nogen tekst imellem. Hvis det er nødvendigt, sammenlæg to spørgsmål eller begivenheder i en iDevice. </li><li>Overvej aktiviteter, hvor man opfatter fordelen ved at udføre aktiviteten  opvejer tiden og indsatsen, som det tager at fuldføre aktiviteten. </li></ol>"
 
-#: exe/engine/idevicestore.py:273
+#: exe/engine/idevicestore.py:274
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -182,7 +182,7 @@ msgstr ""
 "vil ændringer udført i eXe ikke blive opdateret i Wikipedia. </p> <p>Wikipedia indhold \n"
 "er dækket af den fri GNU dokumentation license.</p>"
 
-#: exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:382
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -203,7 +203,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 "<p>Når du har et antal billeder, som relaterer sig \n"
-"til hinanden, eller til en specifik øvelse er det muligt at vise \n"
+"til hinanden, eller til en specifik øvelse, er det muligt at vise \n"
 "disse i et gallerisammenhæng.</p>"
 
 #: exe/engine/package.py:415
@@ -228,9 +228,9 @@ msgid ""
 msgstr ""
 "Et casestudie bibringer den studerende \n"
 "en simulation, der har en uddannelsesmæssig basis. Den beskriver en situation \n"
-"baseret på virkeligheden, og beder den studerende om at  demonstrere eller beskrive, hvilken handling de  \n"
+"baseret på virkeligheden, og beder de studerende om at  demonstrere eller beskrive, hvilken handling de  \n"
 "vil udføre for at færdiggøre en opgave eller løse en situation. Casen giver den studerende \n"
-"mulighed for at anvende egen viden og erfaring  for at udføre opgaven \n"
+"mulighed for at anvende egen viden og erfaring til at udføre opgaven \n"
 ". Når et casetudie udarbejdes bør man overveje følgende:<ul> \n"
 "<li>\tHvilke undervisningsmæssige pointer er medtaget</li>\n"
 "<li>\tHvilken forberedelse skal den studerende udføre før arbejdet med \n"
@@ -252,9 +252,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Handlinger"
 
-#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
-#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
-#: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
+#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:357
+#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:463 exe/engine/idevicestore.py:471
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Aktivitet"
@@ -400,7 +400,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:466
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -546,7 +546,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:424
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr "Klik på tilføj billede knappen for at vælge en billedfil. Billedet vil vise sige nedenfor, hvor du vil være i stand til at give det en mærkat. Det er altid en god ide at påføre filens størrelse."
+msgstr "Klik på tilføj billede knappen for at vælge en billedfil. Billedet vil vise sig nedenfor, hvor du vil være i stand til at give det en mærkat. Det er altid en god ide at påføre filens størrelse."
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
@@ -651,7 +651,7 @@ msgstr ""
 "instruktioner til en aktivitet, som vil føre den studerende til at løse det præsenterede \n"
 "dilemma. "
 
-#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -659,7 +659,7 @@ msgstr ""
 "Beskriv forudsætningerne som den studerende skal have for effektivt\n"
 "at fuldføre denne læring."
 
-#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -667,7 +667,7 @@ msgstr ""
 "Beskriv opgaverne relateret til den læsning som de studerende skal foretage. \n"
 "Dette hjælper med at vise relevans for de studerende."
 
-#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:472
 msgid "Describe the tasks the learners should complete."
 msgstr "Beskriv opgaverne som de studerende skal udføre."
 
@@ -865,7 +865,7 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:130
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
-msgstr "Indtast hvilket som helst feedback som du ønsker at give den studerende i feedback feltet. Dette felt kan være tomt."
+msgstr "Indtast hvilket som helst feedback som du ønsker at give den studerende i feedbackfeltet. Dette felt kan være tomt."
 
 #: exe/webui/editorpane.py:143
 msgid "Enter instructions for completion here"
@@ -899,7 +899,7 @@ msgstr ""
 "Du kan tilføje alternativer ved at klikke \"Tilføj et andet alternativ\" knappen. Slet alternativ ved \n"
 "at klikke på det røde X ved siden af alternativet."
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1011,7 +1011,7 @@ msgstr "Ekstra stor"
 msgid "False"
 msgstr "Falsk"
 
-#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 #: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
 #: exe/engine/clozeidevice.py:279 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
@@ -1350,12 +1350,12 @@ msgstr "Ingen"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:337
-#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:443
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:338
+#: exe/engine/idevicestore.py:435 exe/engine/idevicestore.py:444
 msgid "Objectives"
 msgstr "Mål"
 
-#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:437
+#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1474,12 +1474,12 @@ msgstr "Polsk Wikipedia artikel"
 msgid "Portugese Wikipedia Article"
 msgstr "Portugisisk Wikipedia Artikel"
 
-#: exe/engine/idevicestore.py:341 exe/engine/idevicestore.py:351
-#: exe/engine/idevicestore.py:447 exe/engine/idevicestore.py:457
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:352
+#: exe/engine/idevicestore.py:448 exe/engine/idevicestore.py:458
 msgid "Preknowledge"
 msgstr "Forkundskaber"
 
-#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:450
+#: exe/engine/idevicestore.py:345 exe/engine/idevicestore.py:451
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1563,7 +1563,7 @@ msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr ""
-"Angiv instruktionertil, hvordan udfyldningsopgaven skal \n"
+"Angiv instruktioner til, hvordan udfyldningsopgaven skal \n"
 "gennemføres. Standardteksten vil blive indsat, hvis der ikke er ændringer til dette felt.\n"
 
 #: exe/engine/casestudyidevice.py:229
@@ -1609,12 +1609,12 @@ msgstr "Læs afsnittet nedenfor og indsæt de manglende ord"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Læs afsnittet nedenfor og indsæt de manglende ord."
 
-#: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
+#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:271
 #: exe/engine/genericidevice.py:304
 msgid "Reading Activity"
 msgstr "Læseaktivitet"
 
-#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:302
+#: exe/engine/idevicestore.py:379 exe/engine/genericidevice.py:302
 msgid "Reading Activity 0.11"
 msgstr "Læseaktivitet 0.11"
 
@@ -1778,7 +1778,7 @@ msgid ""
 "as a percentage of the original image size"
 msgstr ""
 "Angiv maksimal zoom som en \n"
-"procentstørrelse af den oprindelige størrelse på billedet "
+"procentdel af den oprindelige størrelse på billedet "
 
 #: exe/xului/propertiespage.py:201
 msgid "Settings saved"
@@ -1867,7 +1867,7 @@ msgstr "Indsend svar"
 msgid "Swedish Wikipedia Article"
 msgstr "Svensk Wikipedia artikel"
 
-#: exe/engine/idevicestore.py:386
+#: exe/engine/idevicestore.py:387
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Underviseren skal være opmærksom på, når denne iDevice anvendes: <ol><li>Tænk på antallet af forskellige typer af aktiviteter du har planlagt, som vil blive vist visuelt. Undgå at bruge for mange forskellige typer eller klassifikationer af aktiviteter, ellers vil den studerende blive forvirret. Sædvanligvis er tre eller fire typer mere end tilstrækkeligt.</li><li>Fra et visuelt design perspektiv, undgå at have to iDevicer umiddelbart efter hinanden uden en tekst imellem. Hvis det er nødvendigt sammenlægges to spørgsmål eller begivenheder i en iDevice. </li><li>Overvej aktiviteter, hvor  det opfattede udbytte ved at udføre aktiviteten overvægter tid og anstrengelserne, som det tager at udføre aktiviteten. </li></ol>"
 
@@ -2108,7 +2108,7 @@ msgstr ""
 "Skriv det feedback som du ønsker \n"
 "at give den studerende."
 
-#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
 msgid "Type the learning objectives for this resource."
 msgstr "Skriv læringsmålene for denne resurse. "
 
@@ -2150,9 +2150,9 @@ msgstr "Enhed"
 
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:47 exe/engine/multiselectidevice.py:44
-#: exe/engine/idevicestore.py:272 exe/engine/idevicestore.py:330
-#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
-#: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
+#: exe/engine/idevicestore.py:273 exe/engine/idevicestore.py:331
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:437 exe/engine/idevicestore.py:465
 #: exe/engine/imagemagnifieridevice.py:42 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:61
 #: exe/engine/clozeidevice.py:47 exe/engine/truefalseidevice.py:145
@@ -2181,7 +2181,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Overførsel"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
+#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:431
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2213,7 +2213,7 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Anvend dette rullegardin til at vælge om denne iDevice skal have en formattering tilknyttet for at differentiere den, fx.: en grænse eller en ikon."
 
-#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid "What to read"
 msgstr "Pensum"
 
@@ -2680,7 +2680,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
 #: accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"File\" accesskey=\"f\""
+msgstr "label=\"Fil\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
@@ -2700,7 +2700,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"New\" accesskey=\"n\""
+msgstr "label=\"Ny\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
@@ -2717,7 +2717,7 @@ msgstr "Naturen eller stilen af resursens indhold."
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"Open\" accesskey=\"o\""
+msgstr "label=\"Åbn\" accesskey=\"o\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
@@ -2734,7 +2734,7 @@ msgstr "Type:"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Seneste Projekter...\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
@@ -2757,7 +2757,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"Save\" accesskey=\"s\""
+msgstr "label=\"Gem\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
@@ -2780,7 +2780,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"Save As...\" accesskey=\"a\""
+msgstr "label=\"Gem som...\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution 2.5 License" id="ppcca1" label="Creative License">
@@ -2795,7 +2795,7 @@ msgstr "Vælg et format."
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
 msgid "label=\"Print\" accesskey=\"p\""
-msgstr "label=\"Print\" accesskey=\"p\""
+msgstr "label=\"Udskriv\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
@@ -2810,7 +2810,7 @@ msgstr "Format:"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"Eksport\" accesskey=\"e\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
@@ -2925,7 +2925,7 @@ msgstr "En reference til en resurse fra hvilken den nærværende resurse er afle
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
 #: Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Enkelt side\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
@@ -2943,7 +2943,7 @@ msgstr "Kilde:"
 #: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
 #: File">
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"Tekstfil\" accesskey=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
@@ -2974,7 +2974,7 @@ msgstr "Sprog:"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
 msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"Flette\" accesskey=\"m\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2990,7 +2990,7 @@ msgstr "Abkhazisk"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"Indsæt pakke\" accesskey=\"i\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -3006,7 +3006,7 @@ msgstr "Afar"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Udtræk pakke\" accesskey=\"E\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -3022,7 +3022,7 @@ msgstr "Afrikaans "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"Afslut\" accesskey=\"q\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -3038,7 +3038,7 @@ msgstr "Albansk"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Værktøjer\" accesskey=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -3073,7 +3073,7 @@ msgstr "Arabisk"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh Display">
 msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"Opdater\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -3091,7 +3091,7 @@ msgstr "Armensk"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Stil\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
@@ -3101,7 +3101,7 @@ msgstr "Assamesisk"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Hjælp\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -3111,7 +3111,7 @@ msgstr "Avestisk"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"eXe Tutorial\" accesskey=\"u\""
+msgstr "label=\"eXe rundturl\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3132,7 +3132,7 @@ msgstr "Aserbajdjansk"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
 msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"Udgivelsesnoter\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3143,7 +3143,7 @@ msgstr "Basjkirsk"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"eXe Web Site\" accesskey=\"w\""
+msgstr "label=\"eXe hjemmeside\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3154,7 +3154,7 @@ msgstr "Baskisk"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"r\""
-msgstr "label=\"Report an Issue\" accesskey=\"r\""
+msgstr "label=\"Rapporter et problem\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
@@ -3175,7 +3175,7 @@ msgstr "Bihari"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
 msgid "label=\"About eXe\" accesskey=\"a\""
-msgstr "label=\"About eXe\" accesskey=\"a\""
+msgstr "label=\"Om eXe\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">

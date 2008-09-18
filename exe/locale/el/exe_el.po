@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-11 09:58+1200\n"
+"POT-Creation-Date: 2008-09-18 14:23+1200\n"
 "PO-Revision-Date: 2008-06-13 08:44+1200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
@@ -152,11 +152,11 @@ msgstr ""
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Επιλέξτε σύμβολα από τον επεξεργαστή κειμένου παρακάτω ή εισάγετε LATEX χειροκίνητα για να δημιουργήσετε έναν μαθηματικό τύπο. Για να κάνετε προεπισκόπηση του LATEX όπως θα εμφανίζεται, χρησιμοποιήστε &το πλήκτρο;Προεπισκόπηση&gt; παρακάτω.</p>"
 
-#: exe/engine/idevicestore.py:278
+#: exe/engine/idevicestore.py:279
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "<p>Οι εκπαιδευτικοί πρέπει να λάβουν υπόψη κατά τη χρησιμοποίηση αυτής της ηΔραστηριότητας τα εξής: </p> <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον εκπαιδευτικό πόρο σας, ο οποίος θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο μαθητής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν εκπαιδευτικό πόρο.</li><li>Για λόγους οπτικής σχεδίασης, αποφύγετε να έχετε δύο ηΔραστηριότητες μεταξύ των οποίων δεν υπάρχει κανένα κείμενο. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε μια ηΔραστηριότητα. </li><li>Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος που προκύπτει με την ολοκλήρωση της δραστηριότητας, ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
 
-#: exe/engine/idevicestore.py:273
+#: exe/engine/idevicestore.py:274
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -188,7 +188,7 @@ msgstr ""
 "άρθρου. Παρόμοια,αλλαγές που έγιναν στο eXe δεν θα ενημερώσουν τη Βικιπαίδεια. \n"
 "</p> <p>Το περιεχόμενο της  Βικιπαίδεια καλύπτεται από τη δωρεάν άδεια τεκμηρίωσης GNU.</p>"
 
-#: exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:382
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -258,9 +258,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Ενέργειες"
 
-#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
-#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
-#: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
+#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:357
+#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:463 exe/engine/idevicestore.py:471
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Ελεύθερη Δραστηριότητα"
@@ -408,7 +408,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:466
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -661,7 +661,7 @@ msgstr ""
 "οδηγιών που καθοδηγούν τον μαθητή στη λήψη αποφάσεων σχετικών με το δίλημμα \n"
 "που παρουσιάζεται στο σενάριο."
 
-#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -669,7 +669,7 @@ msgstr ""
 "Περιγράψτε τις προαπαιτούμενες γνώσεις που θα πρέπει να έχουν οι μαθητές\n"
 "για ολοκληρώσουν με επιτυχία τη δραστηριότητα."
 
-#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -678,7 +678,7 @@ msgstr ""
 "σχετίζονται με την ανάγνωση. Αυτό βοηθάει στην εξωτερίκευση \n"
 "της σχετικότητας των μαθητών."
 
-#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:472
 msgid "Describe the tasks the learners should complete."
 msgstr "Περιγράψτε τις δράσεις που θα πρέπει να ολοκληρώσουν οι μαθητές."
 
@@ -912,7 +912,7 @@ msgstr ""
 "Μπορείτε να προσθέσετε επιλογές κάνοντας κλικ στο κουμπί \"Προσθήκη άλλης επιλογής\". \n"
 "Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο κόκκινο \"x\" δεξιά από κάθε επιλογή."
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1024,7 +1024,7 @@ msgstr "Πολύ μεγάλο"
 msgid "False"
 msgstr "Λάθος"
 
-#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 #: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
 #: exe/engine/clozeidevice.py:279 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
@@ -1363,12 +1363,12 @@ msgstr "Κανένα"
 msgid "OK"
 msgstr "Εντάξει"
 
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:337
-#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:443
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:338
+#: exe/engine/idevicestore.py:435 exe/engine/idevicestore.py:444
 msgid "Objectives"
 msgstr "Στόχοι"
 
-#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:437
+#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1489,12 +1489,12 @@ msgstr "Άρθρο της πολωνικής Βικιπαίδειας"
 msgid "Portugese Wikipedia Article"
 msgstr "Άρθρο της πορτογαλλικής Βικιπαίδειας"
 
-#: exe/engine/idevicestore.py:341 exe/engine/idevicestore.py:351
-#: exe/engine/idevicestore.py:447 exe/engine/idevicestore.py:457
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:352
+#: exe/engine/idevicestore.py:448 exe/engine/idevicestore.py:458
 msgid "Preknowledge"
 msgstr "Προαπαιτούμενες γνώσεις"
 
-#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:450
+#: exe/engine/idevicestore.py:345 exe/engine/idevicestore.py:451
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1624,12 +1624,12 @@ msgstr "Διαβάστε την παράγραφο που ακολουθεί κ�
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που λείπουν."
 
-#: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
+#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:271
 #: exe/engine/genericidevice.py:304
 msgid "Reading Activity"
 msgstr "Δραστηριότητα Ανάγνωσης"
 
-#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:302
+#: exe/engine/idevicestore.py:379 exe/engine/genericidevice.py:302
 msgid "Reading Activity 0.11"
 msgstr "Δραστηριότητα Ανάγνωσης 0.11"
 
@@ -1882,7 +1882,7 @@ msgstr "Υποβολή απάντησης"
 msgid "Swedish Wikipedia Article"
 msgstr "Άρθρο της σουηδικής Βικιπαίδειας"
 
-#: exe/engine/idevicestore.py:386
+#: exe/engine/idevicestore.py:387
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Οι δάσκαλοι πρέπει να λάβουν υπόψη τα εξής κατά τη χρήση αυτής της ηΔραστηριότητας: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε και ο οποίος θα επισημανθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων, ειδάλλως ο μαθητής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για μια διδασκαλία.</li><li>Ως προϋπόθεση θετικής οπτικής σχεδίασης, αποφύγετε να έχετε δύο ηΔραστηριότητες η μία κάτω από την άλλη χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε μια ηΔραστηριότητα. </li><li>Σκεφτείτε δραστηριότητες, όπου το αντιληπτό όφελος εκπλήρωσής τους ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθούν. </li></ol>"
 
@@ -2123,7 +2123,7 @@ msgstr ""
 "Πληκτρολογήστε την ανατροφοδότηση \n"
 "που θέλετε να παρέχετε στους μαθητές σας."
 
-#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
 msgid "Type the learning objectives for this resource."
 msgstr "Πληκτρολογήστε τους μαθησιακούς σκοπούς γι' αυτόν τον εκπαιδευτικό πόρο."
 
@@ -2165,9 +2165,9 @@ msgstr "Παράγραφος"
 
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:47 exe/engine/multiselectidevice.py:44
-#: exe/engine/idevicestore.py:272 exe/engine/idevicestore.py:330
-#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
-#: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
+#: exe/engine/idevicestore.py:273 exe/engine/idevicestore.py:331
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:437 exe/engine/idevicestore.py:465
 #: exe/engine/imagemagnifieridevice.py:42 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:61
 #: exe/engine/clozeidevice.py:47 exe/engine/truefalseidevice.py:145
@@ -2196,7 +2196,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Αποφόρτωση"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
+#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:431
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2229,7 +2229,7 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Χρησιμοποιήστε αυτό το πλήκτρο για να επιλέξετε αν η ηΔραστηριότητα θα διαθέτει μορφοποίηση που θα την κάνει να ξεχωρίζει. Π.χ., ένα περίγραμμα και ένα εικονίδιο."
 
-#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid "What to read"
 msgstr "Τι να διαβάσετε"
 

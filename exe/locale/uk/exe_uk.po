@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-11 09:58+1200\n"
+"POT-Creation-Date: 2008-09-18 14:23+1200\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -145,11 +145,11 @@ msgstr ""
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Виберіть символ з спеціального поля внизу або введіть LATEX вручну для того щоб створити математичні формули. Для того щоб переглянути результат використовуйте кнопку <strong>Попередній перегляд</strong>.</p>"
 
-#: exe/engine/idevicestore.py:278
+#: exe/engine/idevicestore.py:279
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "<p>Викладач повинен пам'ятати певні положення, коли використовує цей iDevice: </p><ol><li>Пам'ятайте про кількість різних видів діяльності що планується висвітлити в змісті вашого ресурсу. Намагайтесь уникати великої кількості різних видів діяльності, так як це може заплутати студентів. Зазвичай три або чотири види діяльності цілком достатньо.</li><li>Для збереження оригінальності дизайну, старайтесь заповняти iDevice різним текстом. Якщо два різні  iDevice будуть містити одинаковий текст, студенти можуть запутатись. </li><li>Обдумуйте діяльність так, щоб корисний результат по закінченню цієї діяльності оправдовував затрачений час і зусилля. </li></ol>"
 
-#: exe/engine/idevicestore.py:273
+#: exe/engine/idevicestore.py:274
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -173,7 +173,7 @@ msgid ""
 "is covered by the GNU free documentation license.</p>"
 msgstr "<p>Wikipedia iDevice дозволяє виконувати автоматичний пошук в системі Wikipedia, і додавати результат пошуку в наш пакет.</p>"
 
-#: exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:382
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -242,9 +242,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Дії"
 
-#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
-#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
-#: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
+#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:357
+#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:463 exe/engine/idevicestore.py:471
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Діяльність"
@@ -392,7 +392,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:466
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -641,7 +641,7 @@ msgstr ""
 "або інструкції до виконання, яка може привести учня до \n"
 "вирішення представленої дилеми."
 
-#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -649,13 +649,13 @@ msgstr ""
 "Опишіть попередні знання які повинен мати студент щоб \n"
 "закінчити цей курс навчання"
 
-#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "Опишіть детально завдання. Це допомагає студентам зрозуміти тему."
 
-#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:472
 msgid "Describe the tasks the learners should complete."
 msgstr "Опишіть завдання, яке учні повинні виконати."
 
@@ -886,7 +886,7 @@ msgstr ""
 "Введіть доступний варіант відповіді(опцію). \n"
 "Ви можете добавляти варіанти відповіді клацнувши на кнопку <strong>Додати іншу опцію</strong> та видаляти зайві варіанти клацнувши на червоний \"Х\" праворуч ві відповідної опції."
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -990,7 +990,7 @@ msgstr "Дуже великий"
 msgid "False"
 msgstr "Неправильно"
 
-#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 #: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
 #: exe/engine/clozeidevice.py:279 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
@@ -1333,12 +1333,12 @@ msgstr "Немає"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:337
-#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:443
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:338
+#: exe/engine/idevicestore.py:435 exe/engine/idevicestore.py:444
 msgid "Objectives"
 msgstr "Завдання"
 
-#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:437
+#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1452,12 +1452,12 @@ msgstr "Wikipedia - Польський"
 msgid "Portugese Wikipedia Article"
 msgstr "Wikipedia - Португальський"
 
-#: exe/engine/idevicestore.py:341 exe/engine/idevicestore.py:351
-#: exe/engine/idevicestore.py:447 exe/engine/idevicestore.py:457
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:352
+#: exe/engine/idevicestore.py:448 exe/engine/idevicestore.py:458
 msgid "Preknowledge"
 msgstr "Попередні знання"
 
-#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:450
+#: exe/engine/idevicestore.py:345 exe/engine/idevicestore.py:451
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1577,12 +1577,12 @@ msgstr "Прочитайте параграф внизу і проставте �
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Прочитайте параграф внизу і проставте пропущені слова."
 
-#: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
+#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:271
 #: exe/engine/genericidevice.py:304
 msgid "Reading Activity"
 msgstr "Читання"
 
-#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:302
+#: exe/engine/idevicestore.py:379 exe/engine/genericidevice.py:302
 msgid "Reading Activity 0.11"
 msgstr "Reading Activity 0.11"
 
@@ -1836,7 +1836,7 @@ msgstr "Підтвердити Відповідь"
 msgid "Swedish Wikipedia Article"
 msgstr "Wikipedia - Шведський"
 
-#: exe/engine/idevicestore.py:386
+#: exe/engine/idevicestore.py:387
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Використовуючи цей iDevice, викладачі повинні мати на увазі: <ol><li>Памятайте про перелік типів в змісті вашого ресурсу. Уникайте великої кількості типів, адже це може запутати студентів. Зазвичай три або чотири типи цілком достатньо.</li><li>Уникайте повторень тексту в різних iDevice, так як це може запутати студентів. </li>/ol>"
 
@@ -2052,7 +2052,7 @@ msgstr ""
 "Введіть інформацію яку ви хочете \n"
 "повідомити студенту в зворотний зв'язок."
 
-#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
 msgid "Type the learning objectives for this resource."
 msgstr "Введіть повчальні завдання для цього ресурсу."
 
@@ -2091,9 +2091,9 @@ msgstr "Одиниця"
 
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:47 exe/engine/multiselectidevice.py:44
-#: exe/engine/idevicestore.py:272 exe/engine/idevicestore.py:330
-#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
-#: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
+#: exe/engine/idevicestore.py:273 exe/engine/idevicestore.py:331
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:437 exe/engine/idevicestore.py:465
 #: exe/engine/imagemagnifieridevice.py:42 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:61
 #: exe/engine/clozeidevice.py:47 exe/engine/truefalseidevice.py:145
@@ -2117,7 +2117,7 @@ msgstr "На відміну від MCQ система опитування SCORM
 msgid "Upload"
 msgstr "Завантажити"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
+#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:431
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2149,7 +2149,7 @@ msgstr "Використовуйте це поле, щоб ввести текс
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Використовуйте це випадаюче меню для вибору чи має ваш iDevice додаткове форматування. Наприклад: рамка або іконка."
 
-#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid "What to read"
 msgstr "Що читати"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-11 09:58+1200\n"
+"POT-Creation-Date: 2008-09-18 14:23+1200\n"
 "PO-Revision-Date: 2008-06-13 03:41+0100\n"
 "Last-Translator: Anna Vetter <anna.vetter@supportsfoad.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -132,11 +132,11 @@ msgstr "<p> Si cette case est cochée, chaque mot tapé sera validé au fur et �
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p> Choisissez les symboles mathématiques à partir de l'éditeur de texte ci-dessous pour créer vos formules. Chaque symbole sera visualisé dans le champ en langage mathématique LATEX, dont un aperçu peut être demandé par le bouton &lt;Aperçu&gt; situé en-dessous."
 
-#: exe/engine/idevicestore.py:278
+#: exe/engine/idevicestore.py:279
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "<p> Les formateurs utilisant cet outil pédagogique doivent garder ce qui suit à l'esprit: </p> <ol><li> Pensez au nombre d'activités de différentes sortes que vous envisagez de créer à l'aide de votre ressource et qui seront visualisables au sein du même document. Evitez d'en créer de trop nombreuses à l'aide de la même ressource, ce qui pourrait entrainer des confusions chez les apprenants. En général, 3 ou 4 différentes activités sont un maximum à partir d'une même ressource pédagogique.</li> <li> D'un point de vue esthétique, évitez d'utiliser 2 outils pédagogiques à la suite sans un texte les séparant. Si nécessaire, il vaut mieux à l'aide du même outil ajouter une question ou un évènement supplémentaire.</li> <li> Pensez aux activités où le bénéfice que peut en retirer l'apprenant prime sur le temps et l'effort qu'il mettra à les réaliser.</li> </ol>"
 
-#: exe/engine/idevicestore.py:273
+#: exe/engine/idevicestore.py:274
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -156,7 +156,7 @@ msgid ""
 "is covered by the GNU free documentation license.</p>"
 msgstr "<p> L'outil pédagogique Wikipedia vous permet de localiser un contenu existant au sein de l'encyclopédie libre Wikipedia et de le télécharger dans votre document eXe. L'outil vous permet de réaliser une copie instantanée du contenu de l'article. Les modifications de cet article dans Wikipedia ne seront pas toutefois automatiquement mises à jour dans votre document: si vous souhaitez les incorporer, il vous faudra télécharger à nouveau l'article modifié. De la même manière, les modifications que vous pourriez apporter au contenu de l'article au sein d'eXe ne seront pas mises à jour dans Wikipedia.</p> <p> Le contenu de Wikipedia est sous licence GNU.</p>"
 
-#: exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:382
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -208,9 +208,9 @@ msgstr "Un indice ou un conseil peut être donné à l'apprenant pour l'aider à
 msgid "Actions"
 msgstr "Actions"
 
-#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:356
-#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:425
-#: exe/engine/idevicestore.py:462 exe/engine/idevicestore.py:470
+#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:357
+#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:463 exe/engine/idevicestore.py:471
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Activité"
@@ -346,7 +346,7 @@ msgstr ""
 " </ul> \n"
 " "
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:466
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -574,13 +574,13 @@ msgid ""
 "presented. "
 msgstr "Décrivez les tâches pertinentes pour l'étude de cas considérée. Elles peuvent être sous forme de questions ou de consignes de réalisation mettant l'apprenant sur la voie de la résolution du problème présenté."
 
-#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "Décrivez les pré-requis dont doit disposer l'apprenant pour réaliser cet apprentissage."
 
-#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -588,7 +588,7 @@ msgstr ""
 "Décrivez les tâches afférentes à l'exercice de lecture que l'apprenant doit entreprendre.\n"
 " Ceci permet à l'apprenant d'agir avec pertinence."
 
-#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:472
 msgid "Describe the tasks the learners should complete."
 msgstr "Décrivez les tâches que l'apprenant doit réaliser."
 
@@ -799,7 +799,7 @@ msgstr ""
 "Rédigez les options possibles ici.\n"
 "Vous pouvez ajouter de nouveaux choix en cliquant sur le bouton \"Ajouter une nouvelle option\". Supprimez les options en cliquant sur l'icône \"X\" rouge qui se trouve sur le coté de l'option."
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -895,7 +895,7 @@ msgstr "Très grand"
 msgid "False"
 msgstr "Faux"
 
-#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 #: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
 #: exe/engine/clozeidevice.py:279 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
@@ -1232,12 +1232,12 @@ msgstr "néant"
 msgid "OK"
 msgstr "oui"
 
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:337
-#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:443
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:338
+#: exe/engine/idevicestore.py:435 exe/engine/idevicestore.py:444
 msgid "Objectives"
 msgstr "Objectifs"
 
-#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:437
+#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1346,12 +1346,12 @@ msgstr "Article de l'encyclopédie Wikipédia en polonais"
 msgid "Portugese Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en portugais"
 
-#: exe/engine/idevicestore.py:341 exe/engine/idevicestore.py:351
-#: exe/engine/idevicestore.py:447 exe/engine/idevicestore.py:457
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:352
+#: exe/engine/idevicestore.py:448 exe/engine/idevicestore.py:458
 msgid "Preknowledge"
 msgstr "Pré-requis"
 
-#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:450
+#: exe/engine/idevicestore.py:345 exe/engine/idevicestore.py:451
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1473,12 +1473,12 @@ msgstr "Lisez le paragraphe ci-dessous et saisissez les mots manquants"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Lisez le paragraphe ci-dessous et saisissez les mots manquants"
 
-#: exe/engine/idevicestore.py:234 exe/engine/idevicestore.py:270
+#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:271
 #: exe/engine/genericidevice.py:304
 msgid "Reading Activity"
 msgstr "Activité \"Lecture\""
 
-#: exe/engine/idevicestore.py:378 exe/engine/genericidevice.py:302
+#: exe/engine/idevicestore.py:379 exe/engine/genericidevice.py:302
 msgid "Reading Activity 0.11"
 msgstr "Activité \"Lecture\" 0.11"
 
@@ -1715,7 +1715,7 @@ msgstr "Valider la réponse"
 msgid "Swedish Wikipedia Article"
 msgstr "Article de l'encyclopédie Wikipédia en suédois"
 
-#: exe/engine/idevicestore.py:386
+#: exe/engine/idevicestore.py:387
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Les formateurs utilisant cet outil pédagogique doivent garder ce qui suit à  l'esprit: </p> <ol><li> Pensez au nombre d'activités de différentes sortes que vous envisagez de créer à  l'aide de votre ressource et qui seront visualisables au sein du même document. Evitez d'en créer de trop nombreuses à l'aide de la même ressource, ce qui pourrait entraîner des confusions chez les apprenants. En général, 3 ou 4 activités différentes sont un maximum à  partir d'une même ressource pédagogique.</li> <li> D'un point de vue esthétique, évitez d'utiliser 2 outils pédagogiques à  la suite sans un texte les séparant. Si nécessaire, il vaut mieux à  l'aide du même outil ajouter une question ou un évènement supplémentaire.</li> <li> Pensez aux activités où le bénéfice que peut en retirer l'apprenant prime sur le temps et l'effort qu'il mettra à les réaliser.</li> </ol>"
 
@@ -1904,7 +1904,7 @@ msgid ""
 "to provide the learner with."
 msgstr "Rédigez ici \"l'écho en retour\" que vous souhaitez renvoyer à l'apprenant."
 
-#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
 msgid "Type the learning objectives for this resource."
 msgstr "Rédigez les objectifs pédagogiques pour cette ressource."
 
@@ -1943,9 +1943,9 @@ msgstr "Unité"
 
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:47 exe/engine/multiselectidevice.py:44
-#: exe/engine/idevicestore.py:272 exe/engine/idevicestore.py:330
-#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:380
-#: exe/engine/idevicestore.py:436 exe/engine/idevicestore.py:464
+#: exe/engine/idevicestore.py:273 exe/engine/idevicestore.py:331
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:381
+#: exe/engine/idevicestore.py:437 exe/engine/idevicestore.py:465
 #: exe/engine/imagemagnifieridevice.py:42 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:61
 #: exe/engine/clozeidevice.py:47 exe/engine/truefalseidevice.py:145
@@ -1969,7 +1969,7 @@ msgstr "A la différence du test QCM, le quiz SCORM est utilisé pour évaluer l
 msgid "Upload"
 msgstr "Télécharger"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
+#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:431
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -1995,7 +1995,7 @@ msgstr "Utilisez ce champ pour rédiger du texte. Cet outil pédagogique ne disp
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Utilisez cette liste déroulante afin de sélectionner si oui ou non_ l'outil pédagogique comprend des éléments de présentation_ qui s'y rattachent et le caractérisent ; par exemple : une bordure ou une icône."
 
-#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid "What to read"
 msgstr "Que faut-il lire ?"
 
