@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -124,8 +125,9 @@ class SinglePageExport(object):
             videofile.copyfile(self.outputDir/'xspf_player.swf')
 
 
-        # copy a copy of the GNU Free Documentation Licence
-        (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
+        if package.license == "GNU Free Documentation License":
+            # include a copy of the GNU Free Documentation Licence
+            (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
 
 
 # ===========================================================================

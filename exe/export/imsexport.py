@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
-# Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -351,8 +351,9 @@ class IMSExport(object):
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
 
-        # Copy a copy of the GNU Free Documentation Licence
-        (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+        if package.license == "GNU Free Documentation License":
+            # include a copy of the GNU Free Documentation Licence
+            (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir

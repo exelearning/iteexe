@@ -485,9 +485,10 @@ class ScormExport(object):
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
 
-        # Copy a copy of the GNU Free Documentation Licence
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
-            (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+            if package.license == "GNU Free Documentation License":
+                # include a copy of the GNU Free Documentation Licence
+                (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
