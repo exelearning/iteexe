@@ -81,7 +81,7 @@ def launchBrowser(config, packageName, openMode):
         try:
             if (config.configDir/profile).exists():
                 (config.configDir/profile).rmtree()
-            config.configDir/profile).mkdir()
+            (config.configDir/profile).mkdir()
         except (OSError, IOError):
             log.info("Unable to use linux-profile:")
             profile = "linux-profile"
