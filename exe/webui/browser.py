@@ -77,6 +77,14 @@ def launchBrowser(config, packageName, openMode):
         # workaround Debian/Ubuntu firefox launching script that requires
         # ':/' in the pathname
         profile = "linux-profile:"
+        # attempt to detect filesystems that won't allow a colon
+        try:
+            if (config.configDir/profile).exists():
+                (config.configDir/profile).rmtree()
+            config.configDir/profile).mkdir()
+        except (OSError, IOError):
+            log.info("Unable to use linux-profile:")
+            profile = "linux-profile"
 
     if (config.configDir/profile).exists():
         (config.configDir/profile).rmtree()

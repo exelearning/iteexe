@@ -2,6 +2,7 @@
 * Fix image gallery to allow captions containing apostrophes
 * Fix field IDs so that adding to a previously saved elp is consistent
 * Fix Common Cartridge manifest when a header image is used
+* Fix OS X and Linux configDir Firefox profile on filesystem without colon
 * Only include a copy of GNU FDL if that is the license selected
 * Re-enable loading of user extended iDevices from config directory
 * Translation updates
