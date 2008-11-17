@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 10:30+1300\n"
+"POT-Creation-Date: 2008-11-18 12:50+1300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2062,7 +2062,7 @@ msgstr ""
 msgid "tooltiptext"
 msgstr ""
 
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window class="dialog" autostretch="always" title="eXeex - About" onload="sizeToContent()" orient="vertical" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window class="dialog" autostretch="always" title="eXeex - About" orient="vertical" onload="sizeToContent()" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
 msgstr ""
 
@@ -2074,7 +2074,7 @@ msgstr ""
 msgid "SCORM 1.2 Options"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="exelearning" width="640" id="mainWindow" height="480" onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:n="http://nevow.com/ns/nevow/0.1">
+#: exe/xului/templates/mainpage.xul:<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="exelearning" width="640" height="480" id="mainWindow" onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
 msgstr ""
 

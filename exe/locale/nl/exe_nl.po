@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 10:27+1300\n"
+"POT-Creation-Date: 2008-11-18 12:47+1300\n"
 "PO-Revision-Date: 2008-11-18 12:33+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -69,13 +69,7 @@ msgstr "<dl>  <dt>Om inzicht in basisbegrippen of om leesvaardigheid te toetsen:
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
-"<ol>  <li>Klik op &lt;Kies een MP3&gt; en blader naar het MP3-bestand dat u "
-"wil toevoegen</li> <li>Bepaal de positie op het scherm met het "
-"dropdownmenu.</li>  <li>Optioneel: geef een bijschrift.</li> <li>AVoeg "
-"relevante tekst toe aan het MP3-bestand.</li> <li>Kies een visuele stijl "
-"voor het iDevice bijv. 'Lichte nadruk' toont een boord en pictogram bij de "
-"inhoud van het iDevice.</li></ol>"
+msgstr "<ol>  <li>Klik op &lt;Kies een MP3&gt; en blader naar het MP3-bestand dat u wil toevoegen</li> <li>Bepaal de positie op het scherm met het dropdownmenu.</li>  <li>Optioneel: geef een bijschrift.</li> <li>AVoeg relevante tekst toe aan het MP3-bestand.</li> <li>Kies een visuele stijl voor het iDevice bijv. 'Lichte nadruk' toont een boord en pictogram bij de inhoud van het iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -367,7 +361,7 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
-"Met uitlijning bepaalt u waar\r\n"
+"Met uitlijning bepaalt u waar\n"
 "de media speler op het scherm wordt getoond."
 
 #: exe/engine/field.py:2789
@@ -1923,9 +1917,7 @@ msgstr "Tekstregel"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
-"Met het iDevice MP3 kunt u een MP3-bestand toevoegen met relevante "
-"tekstinstructies."
+msgstr "Met het iDevice MP3 kunt u een MP3-bestand toevoegen met relevante tekstinstructies."
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -2393,8 +2385,8 @@ msgid "tooltiptext"
 msgstr "tooltiptext"
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
-#: class="dialog" autostretch="always" title="eXeex - About"
-#: onload="sizeToContent()" orient="vertical"
+#: class="dialog" autostretch="always" title="eXeex - About" orient="vertical"
+#: onload="sizeToContent()"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
 msgstr "eXeex - Over"
@@ -2411,7 +2403,7 @@ msgstr "Opties SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<window
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-#: title="exelearning" width="640" id="mainWindow" height="480"
+#: title="exelearning" width="640" height="480" id="mainWindow"
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
@@ -2583,10 +2575,7 @@ msgid ""
 "                Recommended best practice is to select a value from a controlled\n"
 "                vocabulary or formal classification scheme.\n"
 "             "
-msgstr ""
-"Meestal wordt Onderwerp beschreven met sleutelwoorden of -zinnen, of met "
-"classificatiecodes die de inhoud omschrijven. Aanbevolen wordt te werken met "
-"een vastgesteld kwalificatieschema."
+msgstr "\nMeestal wordt Onderwerp beschreven met sleutelwoorden of -zinnen, of met classificatiecodes die de inhoud omschrijven. Aanbevolen wordt te werken met een vastgesteld kwalificatieschema."
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key

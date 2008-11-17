@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 10:27+1300\n"
+"POT-Creation-Date: 2008-11-18 12:47+1300\n"
 "PO-Revision-Date: 2007-12-07 18:03+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -2397,8 +2397,8 @@ msgid "tooltiptext"
 msgstr ""
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
-#: class="dialog" autostretch="always" title="eXeex - About"
-#: onload="sizeToContent()" orient="vertical"
+#: class="dialog" autostretch="always" title="eXeex - About" orient="vertical"
+#: onload="sizeToContent()"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
 msgstr ""
@@ -2415,7 +2415,7 @@ msgstr "Opções SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<window
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-#: title="exelearning" width="640" id="mainWindow" height="480"
+#: title="exelearning" width="640" height="480" id="mainWindow"
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"

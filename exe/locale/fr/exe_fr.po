@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 10:27+1300\n"
+"POT-Creation-Date: 2008-11-18 12:47+1300\n"
 "PO-Revision-Date: 2008-11-18 12:39+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1931,9 +1931,7 @@ msgstr "Impossible de télécharger le flux RSS depuis %s <br/>Vérifiez l'adres
 
 #: twisted/persisted/styles.py:437
 msgid "Unable to merge: duplicate Java Applet resource names exist (including: \""
-msgstr ""
-"impossible de fusionner:des noms de ressources d'applet Java sont en double( "
-"notamment:\""
+msgstr "impossible de fusionner:des noms de ressources d'applet Java sont en double( notamment:\""
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
@@ -2133,8 +2131,8 @@ msgid "tooltiptext"
 msgstr ""
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
-#: class="dialog" autostretch="always" title="eXeex - About"
-#: onload="sizeToContent()" orient="vertical"
+#: class="dialog" autostretch="always" title="eXeex - About" orient="vertical"
+#: onload="sizeToContent()"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
 msgstr "eXeex - A propos"
@@ -2151,7 +2149,7 @@ msgstr "SCORM 1.2 Options"
 
 #: exe/xului/templates/mainpage.xul:<window
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-#: title="exelearning" width="640" id="mainWindow" height="480"
+#: title="exelearning" width="640" height="480" id="mainWindow"
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
@@ -2624,9 +2622,7 @@ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
 #: label="Creative License">
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
-"Creative Commons Paternité-Pas d'Utilisation Commerciale-Partage des "
-"Conditions Initiales à l'Identique 2.5 License"
+msgstr "Creative Commons Paternité-Pas d'Utilisation Commerciale-Partage des Conditions Initiales à l'Identique 2.5 License"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
@@ -3817,13 +3813,7 @@ msgstr "Droits :"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
-"Un élément d'information de DROITS comprend communément un énoncé des règles "
-"de droits attachés à la ressource, ou une référence à un service procurant "
-"cette information. L'information sur les droits englobe souvent les droits "
-"de propriété intellectuelle, le Copyright et différents droits de propriété "
-"et/ou d'usage. Si l'élément d'information de DROITS est non renseigné, "
-"aucune hypothèse ne peut être faite à l'égard de ceux-ci."
+msgstr "Un élément d'information de DROITS comprend communément un énoncé des règles de droits attachés à la ressource, ou une référence à un service procurant cette information. L'information sur les droits englobe souvent les droits de propriété intellectuelle, le Copyright et différents droits de propriété et/ou d'usage. Si l'élément d'information de DROITS est non renseigné, aucune hypothèse ne peut être faite à l'égard de ceux-ci."
 
 #~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 #~ msgstr "label=\"les tips et les trucs\" accesskey=\"t\""
