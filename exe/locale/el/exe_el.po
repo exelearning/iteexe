@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-18 10:27+1300\n"
-"PO-Revision-Date: 2008-06-13 08:44+1200\n"
+"PO-Revision-Date: 2008-10-24 00:19+1300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,15 @@ msgstr "<dl>  <dt>Εάν στόχος σας είναι να εξετάσετε 
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>Κάντε &κλικ;Επιλέξτε ένα MP3&gt; και αναζητήστε το αρχείο MP3       που επιθυμείτε να εισάγετε</li> <li>Κάντε κλικ στο αναπτυσσόμενο μενού για να επιλέξετε τη θέση        στην οποία επιθυμείτε να εμφανίζεται το αρχείο στην οθόνη σας.</li>  <li>Εισάγετε προαιρετικά έναν τίτλο για το αρχείο σας.</li> <li>Συσχετίστε οποιοδήποτε σχετικό κείμενο με το αρχείο MP3.</li> <li>Επιλέξτε το στυλ με το οποίο θέλετε να εμφανίζεται η ηΔραστηριότητα       στην οθόνη σας, π.χ. το στυλ 'Λίγη έμφαση' εφαρμόζει ένα περίγραμμα και ένα εικονίδιο στο εμφανιζόμενο περιεχόμενο της ηΔραστηριότητας.</li></ol>"
+msgstr ""
+"<ol>  <li>Κάντε &κλικ;Επιλέξτε ένα MP3&gt; και αναζητήστε το αρχείο MP3 "
+"      που επιθυμείτε να εισάγετε</li> <li>Κάντε κλικ στο αναπτυσσόμενο "
+"μενού για να επιλέξετε τη θέση        στην οποία επιθυμείτε να εμφανίζεται "
+"το αρχείο στην οθόνη σας.</li>  <li>Εισάγετε προαιρετικά έναν τίτλο για το "
+"αρχείο σας.</li> <li>Συσχετίστε οποιοδήποτε σχετικό κείμενο με το αρχείο "
+"MP3.</li> <li>Επιλέξτε το στυλ με το οποίο θέλετε να εμφανίζεται η ε-Μηχανή "
+"      στην οθόνη σας, π.χ. το στυλ 'Λίγη έμφαση' εφαρμόζει ένα περίγραμμα "
+"και ένα εικονίδιο στο εμφανιζόμενο περιεχόμενο της η-Μηχανής.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -92,20 +100,26 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"Η ηΔραστηριότητα Εικόνας με Κείμενο μπορεί να χρησιμοποιηθεί με πολλούς τρόπους\n"
-"για να υποστηρίξει,τόσο τους συναισθηματικούς όσο και τους γνωστικούς στόχους\n"
+"Η ε-Μηχανή Εικόνας με Κείμενο μπορεί να χρησιμοποιηθεί με πολλούς τρόπους\n"
+"για να υποστηρίξει,τόσο τους συναισθηματικούς όσο και τους γνωστικούς "
+"στόχους\n"
 "του περιεχομένου του eXe \n"
 "</p><p>\n"
 "<b>Ενοποίηση οπτικών και λεκτικών περιλήψεων</b>\n"
 "</p><p>\n"
 "Οι γνωστικοί ψυχολόγοι επισημαίνουν ότι, παρουσιάζοντας στους μαθητές μια\n"
 "αντιπροσωπευτική εικόνα και μια αντίστοιχη περίληψη κειμένου (με ταυτόχρονη\n"
-"παρουσίαση), μπορεί να μειωθεί ο μαθησιακός φόρτος και να ενισχυθεί η συγκράτηση\n"
-"του γνωστικού περιεχομένου. Αυτή η ηΔραστηριότητα μπορεί να χρησιμοποιηθεί για\n"
-"να παρουσιαστεί μια εικόνα (φωτογραφία, διάγραμμα ή γραφικό), με μια μικρή λεκτική\n"
-"περιγραφή η οποία καλύπτει τα κύρια σημεία που σχετίζονται με την εικόνα. Π.χ. αν\n"
-"διδάσκετε τις λειτουργίες μιας τετράχρονης μηχανής, θα μπορούσατε να έχετε μια εικόνα\n"
-"για καθεμιά από τις 4 φάσεις των πιστονιών μαζί με μια περίληψη κειμένου των κυριότερων\n"
+"παρουσίαση), μπορεί να μειωθεί ο μαθησιακός φόρτος και να ενισχυθεί η "
+"συγκράτηση\n"
+"του γνωστικού περιεχομένου. Αυτή η ε-Μηχανή μπορεί να χρησιμοποιηθεί για\n"
+"να παρουσιαστεί μια εικόνα (φωτογραφία, διάγραμμα ή γραφικό), με μια μικρή "
+"λεκτική\n"
+"περιγραφή η οποία καλύπτει τα κύρια σημεία που σχετίζονται με την εικόνα. "
+"Π.χ. αν\n"
+"διδάσκετε τις λειτουργίες μιας τετράχρονης μηχανής, θα μπορούσατε να έχετε "
+"μια εικόνα\n"
+"για καθεμιά από τις 4 φάσεις των πιστονιών μαζί με μια περίληψη κειμένου των "
+"κυριότερων\n"
 "χαρακτηριστικών κάθε  εικόνας.\n"
 "</p>"
 
@@ -154,7 +168,19 @@ msgstr "<p>Επιλέξτε σύμβολα από τον επεξεργαστή 
 
 #: exe/engine/idevicestore.py:279
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "<p>Οι εκπαιδευτικοί πρέπει να λάβουν υπόψη κατά τη χρησιμοποίηση αυτής της ηΔραστηριότητας τα εξής: </p> <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον εκπαιδευτικό πόρο σας, ο οποίος θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο μαθητής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν εκπαιδευτικό πόρο.</li><li>Για λόγους οπτικής σχεδίασης, αποφύγετε να έχετε δύο ηΔραστηριότητες μεταξύ των οποίων δεν υπάρχει κανένα κείμενο. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε μια ηΔραστηριότητα. </li><li>Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος που προκύπτει με την ολοκλήρωση της δραστηριότητας, ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
+msgstr ""
+"<p>Οι εκπαιδευτικοί πρέπει να λάβουν υπόψη κατά τη χρήση αυτής της ε-Μηχανής "
+"τα εξής: </p> <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων "
+"δραστηριοτήτων που προγραμματίσετε για το παιδαγωγικό σας υλικό, ο οποίος θα "
+"αναπαρίσταται οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς "
+"τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο μαθητής μπορεί να "
+"μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι υπερβολικά "
+"επαρκείς για ένα εκπαιδευτικό υλικό.</li><li>Για λόγους οπτικής σχεδίασης, "
+"αποφύγετε να έχετε δύο ε-Μηχανές μεταξύ των οποίων δεν υπάρχει κανένα "
+"κείμενο. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε "
+"μια ε-Μηχανή. </li><li>Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος που "
+"προκύπτει με την ολοκλήρωση της δραστηριότητας, ξεπερνά το χρόνο και την "
+"προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
 
 #: exe/engine/idevicestore.py:274
 msgid ""
@@ -180,13 +206,19 @@ msgid ""
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
-"<p>Η ηΔραστηριότητα Βικιπαίδειας σας επιτρέπει να εντοπίσετε \n"
-"υφιστάμενο περιεχόμενο από την Βικιπαίδεια και να το συμπεριλάβετε στον εκπαιδευτικό \n"
-"πόρο του eXe. Η δραστηριότητα αυτή δημιουργεί ένα αντίγραφο του περιεχομένου του \n"
-"άρθρου. Το αντίγραφο του άρθρου στον εκπαιδευτικό σας πόρο δεν ενημερώνεται όταν \n"
-"υπάρχουν αλλαγές στη Βικιπαίδεια και θα πρέπει να ξαναλάβετε ένα νέο αντίγραφο του \n"
-"άρθρου. Παρόμοια,αλλαγές που έγιναν στο eXe δεν θα ενημερώσουν τη Βικιπαίδεια. \n"
-"</p> <p>Το περιεχόμενο της  Βικιπαίδεια καλύπτεται από τη δωρεάν άδεια τεκμηρίωσης GNU.</p>"
+"<p>Η ε-Μηχανή Βικιπαίδειας σας επιτρέπει να εντοπίσετε \n"
+"υφιστάμενο περιεχόμενο από την Βικιπαίδεια και να το συμπεριλάβετε στον "
+"εκπαιδευτικό \n"
+"πόρο του eXe. Η δραστηριότητα αυτή δημιουργεί ένα αντίγραφο του περιεχομένου "
+"του \n"
+"άρθρου. Το αντίγραφο του άρθρου στο παιδαγωγικό σας υλικό δεν ενημερώνεται "
+"όταν \n"
+"υπάρχουν αλλαγές στη Βικιπαίδεια και θα πρέπει να ξαναλάβετε ένα νέο "
+"αντίγραφο του \n"
+"άρθρου. Παρόμοια,αλλαγές που έγιναν στο eXe δεν θα ενημερώσουν τη "
+"Βικιπαίδεια. \n"
+"</p> <p>Το περιεχόμενο της  Βικιπαίδεια καλύπτεται από τη δωρεάν άδεια "
+"τεκμηρίωσης GNU.</p>"
 
 #: exe/engine/idevicestore.py:382
 msgid ""
@@ -279,15 +311,19 @@ msgstr "Προσθήκη εικόνας JPEG"
 
 #: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
-msgstr "Προσθήκη ενός flash βίντεο στη ηΔραστηριότητα. "
+msgstr "Προσθήκη ενός flash βίντεο στη ε-Μηχανή."
 
 #: exe/webui/editorpane.py:81
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr "Εισάγετε μια απλή γραμμή κειμένου σε μια ηΔραστηριότητα. Χρήσιμο εάν θέλετε να τοποθετήσετε μια ετικέτα μέσα στην ηΔραστηριότητα."
+msgstr ""
+"Εισάγετε μια απλή γραμμή κειμένου σε μια ε-Μηχανή. Χρήσιμο εάν θέλετε να "
+"τοποθετήσετε μια ετικέτα μέσα στη ε-Μηχανή."
 
 #: exe/webui/editorpane.py:84
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr "Εισάγετε ένα πλαίσιο κειμένου σε μια ηΔραστηριότητα. Χρησιμοποιείται για προσθήκη κειμένου μεγάλου μεγέθους."
+msgstr ""
+"Εισάγετε ένα πλαίσιο κειμένου σε μια ε-Μηχανή. Χρησιμοποιείται για προσθήκη "
+"κειμένου μεγάλου μεγέθους."
 
 #: exe/engine/appletidevice.py:62
 msgid ""
@@ -302,15 +338,15 @@ msgstr ""
 
 #: exe/webui/editorpane.py:90
 msgid "Add an attachment file to your iDevice."
-msgstr "Προσθήκη συνημμένου αρχείου στην ηΔραστηριότητα."
+msgstr "Προσθήκη συνημμένου αρχείου στη ε-Μηχανή."
 
 #: exe/webui/editorpane.py:87
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "Προσθήκη πεδίου αλληλεπιδραστικής ανατροφοδότησης στην ηΔραστηριότητα. "
+msgstr "Προσθήκη πεδίου αλληλεπιδραστικής ανατροφοδότησης στην ε-Μηχανή."
 
 #: exe/webui/editorpane.py:89
 msgid "Add an mp3 file to your iDevice."
-msgstr "Προσθή αρχείου MP3 στην ηΔραστηριότητα."
+msgstr "Προσθή αρχείου MP3 στην ε-Μηχανή."
 
 #: exe/webui/testquestionelement.py:122 exe/webui/element.py:1766
 msgid "Add another Option"
@@ -695,11 +731,12 @@ msgstr "Περιγραφή:"
 
 #: exe/webui/preferencespage.py:103
 msgid "Disable All Internal Linking"
-msgstr ""
+msgstr "Απενεργοποίηση Όλων των Εσωτερικών Συνδέσεων"
 
 #: exe/webui/preferencespage.py:102
 msgid "Disable Auto-Top Internal Linking"
 msgstr ""
+"Απενεργοποίηση Αυτόματης Μεταφοράς στην Κορυφή των  Εσωτερικών Συνδέσεων"
 
 #: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
 msgid "Display as:"
@@ -777,7 +814,10 @@ msgstr "Επεξεργασία"
 
 #: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr "Ή το αρχείο ηΔραστηριότητες/generic.data ή το πακέτο που προσπαθείτε να φορτώσετε, δημιουργήθηκαν με μια νεότερη έκδοση του eXe. Παρακαλώ αναβαθμίστε το eXe και προσπαθήστε πάλι."
+msgstr ""
+"Είτε το αρχείο ε-Μηχανών/γενικών.στοιχείων, είτε το πακέτο που προσπαθείτε "
+"να φορτώσετε, δημιουργήθηκαν με μια νεότερη έκδοση του eXe. Παρακαλώ "
+"αναβαθμίστε το eXe και προσπαθήστε πάλι."
 
 #: exe/webui/wikipediablock.py:159 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
@@ -786,7 +826,7 @@ msgstr "Έμφαση"
 
 #: exe/webui/preferencespage.py:101
 msgid "Enable All Internal Linking"
-msgstr ""
+msgstr "Ενεργοποίηση Όλων των Εσωτερικών Συνδέσεων"
 
 #: exe/webui/wikipediablock.py:113
 msgid "English Wikipedia Article"
@@ -845,15 +885,24 @@ msgid ""
 " instructions or additional learning information."
 msgstr ""
 "Εισάγετε ένα URL για τον τροφοδότη RSS \n"
-"που θέλετε να επισυνάψετε στο περιεχόμενό σας. Οι τροφοδότες συχνά αναγνωρίζονται\n"
-"από ένα μικρό εικονίδιο (όπως αυτό <img src=\"/images/feed-icon.png\" />) ή το κείμενο \"RSS\".\n"
-"Κάνοντας κλικ στο εικονίδιο ή στην ετικέτα κειμένου θα εμφανιστεί ένας τροφοδότης RSS δεξιά\n"
-"στον φυλλομετρητή σας. Μπορείτε να αντιγράψετε και να επικολλήσετε το URL σε αυτό το πεδίο.\n"
-"Εναλλακτικά, με δεξί κλικ στον υπερσύνδεσμο ή στο γραφικό θα ανοίξει ένα μενού;\n"
-"Κάντε κλικ στο Αντιγραφή Υπερσυνδέσμου Τοποθεσίας ή Αντιγραφή Συντόμευσης. Στο eXe ανοίξτε μια ηΔραστηριότητα με\n"
-"σελιδοδείκτη RSS και επικολλήστε το URL στο πεδίο RSS URL και κάντε κλικ στο πλήκτρο Φόρτωση.\n"
-"Έτσι, θα εξαχθούν οι τίτλοι από τον τροφοδότη και θα εμφανιστούν ως υπερσύνδεσμοι\n"
-"στο περιεχόμενό σας. Από εκεί μπορείτε να επεξεργαστείτε τους σελιδοδείκτες και να\n"
+"που θέλετε να επισυνάψετε στο περιεχόμενό σας. Οι τροφοδότες συχνά "
+"αναγνωρίζονται\n"
+"από ένα μικρό εικονίδιο (όπως αυτό <img src=\"/images/feed-icon.png\" />) ή το "
+"κείμενο \"RSS\".\n"
+"Κάνοντας κλικ στο εικονίδιο ή στην ετικέτα κειμένου θα εμφανιστεί ένας "
+"τροφοδότης RSS δεξιά\n"
+"στον φυλλομετρητή σας. Μπορείτε να αντιγράψετε και να επικολλήσετε το URL σε "
+"αυτό το πεδίο.\n"
+"Εναλλακτικά, με δεξί κλικ στον υπερσύνδεσμο ή στο γραφικό θα ανοίξει ένα "
+"μενού;\n"
+"Κάντε κλικ στο Αντιγραφή Υπερσυνδέσμου Τοποθεσίας ή Αντιγραφή Συντόμευσης. "
+"Στο eXe ανοίξτε μια ε-Μηχανή με\n"
+"σελιδοδείκτη RSS και επικολλήστε το URL στο πεδίο RSS URL και κάντε κλικ στο "
+"πλήκτρο Φόρτωση.\n"
+"Έτσι, θα εξαχθούν οι τίτλοι από τον τροφοδότη και θα εμφανιστούν ως "
+"υπερσύνδεσμοι\n"
+"στο περιεχόμενό σας. Από εκεί μπορείτε να επεξεργαστείτε τους σελιδοδείκτες "
+"και να\n"
 "προσθέσετε οδηγίες ή πρόσθετες πληροφορίες για τους μαθητές."
 
 #: exe/engine/quiztestidevice.py:123 exe/engine/quiztestidevice.py:186
@@ -874,7 +923,7 @@ msgid ""
 msgstr ""
 "Εισάγετε όποια ανατροφοδότηση επιθυμείτε να παρέχετε \n"
 "στον μαθητή. Το πεδίο αυτό μπορεί να μείνει κενό. Αν το πεδίο \n"
-"αφεθεί κενό, θα δοθεί προεπιλγμένη ανατροφοδότηση."
+"αφεθεί κενό, θα δοθεί προεπιλεγμένη ανατροφοδότηση."
 
 #: exe/engine/clozeidevice.py:130
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
@@ -1003,7 +1052,7 @@ msgstr "Παράδειγμα Παράδειγμα"
 
 #: exe/webui/editorpage.py:250
 msgid "Export iDevice"
-msgstr "Εξαγωγή ηΔραστηριότητας"
+msgstr "Εξαγωγή ε-Μηχανής"
 
 #: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
 #: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
@@ -1150,15 +1199,15 @@ msgstr "Αρχή"
 #: exe/webui/genericblock.py:109 exe/webui/galleryblock.py:362
 #: exe/webui/block.py:299
 msgid "IDevice Icon"
-msgstr "Εικονίδιο ηΔραστηριότητας"
+msgstr "Εικονίδιο ε-Μηχανής"
 
 #: exe/webui/multichoiceblock.py:130
 msgid "IDevice Question Icon"
-msgstr "Εικονίδιο ηΔραστηριότητας Ερώτησης"
+msgstr "Εικονίδιο Ερώτησης ε-Μηχανής"
 
 #: exe/webui/block.py:175
 msgid "IDevice broken"
-msgstr "Κατεστραμμένη ηΔραστηριότητα"
+msgstr "Κατεστραμμένη ε-Μηχανή"
 
 #: exe/webui/editorpane.py:363
 msgid "Icons"
@@ -1182,7 +1231,7 @@ msgstr "Εικόνα με Κείμενο"
 
 #: exe/webui/editorpage.py:247
 msgid "Import iDevice"
-msgstr "Εισαγωγή ηΔραστηριότητας"
+msgstr "Εισαγωγή ε-Μηχανής"
 
 #: exe/webui/element.py:1652
 msgid "Incorrect"
@@ -1219,7 +1268,7 @@ msgstr "Οδηγίες για τους Μαθητές"
 
 #: exe/webui/preferencespage.py:104
 msgid "Internal Linking (for Web Site Exports only)"
-msgstr ""
+msgstr "Εσωτερικές Συνδέσεις (για Εξαγωγή Ιστοσελίδων μόνο)"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1323,7 +1372,7 @@ msgstr "Όνομα"
 
 #: exe/webui/editorpage.py:275
 msgid "New iDevice"
-msgstr "Νέα ηΔραστηριότητα"
+msgstr "Νέα ε-Μηχανή"
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:337 exe/export/websitepage.py:197
@@ -1384,7 +1433,7 @@ msgid ""
 "this iDevice."
 msgstr ""
 "Επιλέξτε μόνο .flv (Αρχεία Βίντεο Flash) γι' \n"
-"αυτή την ηΔραστηριότητα."
+"αυτή την ε-Μηχανή."
 
 #: exe/engine/field.py:2831 exe/engine/field.py:2875
 msgid ""
@@ -1392,7 +1441,7 @@ msgid ""
 "this iDevice."
 msgstr ""
 "Επιλέξτε μόνο .swf (Αντικείμενα Flash) γι' \n"
-"αυτή την ηΔραστηριότητα."
+"αυτή την ε-Μηχανή."
 
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/engine/field.py:3076 exe/engine/field.py:3125
@@ -1445,11 +1494,11 @@ msgstr "Παιδαγωγική συμβουλή"
 
 #: exe/webui/editorpage.py:110
 msgid "Please enter an idevice name."
-msgstr "Παρακαλώ εισάγετε ένα όνομα για την ηΔραστηριότητα."
+msgstr "Παρακαλώ εισάγετε ένα όνομα για την ε-Μηχανή."
 
 #: exe/webui/editorpane.py:195
 msgid "Please enter<br />an idevice name."
-msgstr "Παρακαλώ εισάγετε<br />ένα όνομα για την ηΔραστηριότητα."
+msgstr "Παρακαλώ εισάγετε<br />ένα όνομα για την ε-Μηχανή."
 
 #: exe/webui/element.py:1359
 msgid "Please select a .flv file."
@@ -1529,7 +1578,7 @@ msgid ""
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
 "Δώστε έναν τίτλο στο\n"
-"αρχείο MP3. Αυτό θα εμφανιστεί στη μπάρα τίτλου των αναπαραγωγέων."
+"αρχείο MP3. Αυτό θα εμφανιστεί στη γραμμή τίτλου των αναπαραγωγέων."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
@@ -1784,7 +1833,7 @@ msgid ""
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
 "Ορίστε ένα αρχικό επίπεδο μεγέθυνσης \n"
-"όταν φορτώνεται η ηΔραστηριότητα, ως ποσοστό του αρχικού μεγέθους εικόνας"
+"όταν φορτώνεται η ε-Μηχανή, ως ποσοστό του αρχικού μεγέθους εικόνας"
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1884,7 +1933,19 @@ msgstr "Άρθρο της σουηδικής Βικιπαίδειας"
 
 #: exe/engine/idevicestore.py:387
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "Οι δάσκαλοι πρέπει να λάβουν υπόψη τα εξής κατά τη χρήση αυτής της ηΔραστηριότητας: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε και ο οποίος θα επισημανθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων, ειδάλλως ο μαθητής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για μια διδασκαλία.</li><li>Ως προϋπόθεση θετικής οπτικής σχεδίασης, αποφύγετε να έχετε δύο ηΔραστηριότητες η μία κάτω από την άλλη χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε μια ηΔραστηριότητα. </li><li>Σκεφτείτε δραστηριότητες, όπου το αντιληπτό όφελος εκπλήρωσής τους ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθούν. </li></ol>"
+msgstr ""
+"Οι δάσκαλοι πρέπει να λάβουν υπόψη τα εξής κατά τη χρήση αυτής της "
+"ε-Μηχανής: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων "
+"δραστηριοτήτων που προγραμματίσατε και ο οποίος θα επισημανθεί οπτικά στο "
+"περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των "
+"δραστηριοτήτων, ειδάλλως ο μαθητής μπορεί να μπερδευτεί. Συνήθως τρεις ή "
+"τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για μια "
+"διδασκαλία.</li><li>Ως προϋπόθεση θετικής οπτικής σχεδίασης, αποφύγετε να "
+"έχετε δύο ε-Μηχανές η μία κάτω από την άλλη χωρίς κείμενο ενδιάμεσα. Εάν "
+"αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε μια ε-Μηχανή. "
+"</li><li>Σκεφτείτε δραστηριότητες, όπου το αντιληπτό όφελος εκπλήρωσής τους "
+"ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθούν. "
+"</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/multimediaidevice.py:64
@@ -1901,7 +1962,9 @@ msgstr "Γραμμή κειμένου"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr "Η ηΔραστηριότητα MP3 επιτρέπει την επισύναψη ενός αρχείου MP3 στο περιεχόμενό σας, μαζί με σχετικές διδακτικές οδηγίες."
+msgstr ""
+"Η ε-Μηχανή MP3 επιτρέπει την επισύναψη ενός αρχείου MP3 στο περιεχόμενό σας, "
+"μαζί με σχετικές διδακτικές οδηγίες."
 
 #: exe/engine/rssidevice.py:42
 msgid ""
@@ -1909,14 +1972,20 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
-"Η ηΔραστηριότητα RSS χρησιμοποιείται \n"
+"Η ε-Μηχανή RSS χρησιμοποιείται \n"
 "για να δίνει νέο περιεχόμενο στο μαθησιακό αντικείμενο κάθε χρήστη.\n"
-"Χρησιμοποιώντας αυτή την ηΔραστηριότητα μπορείτε να παρέχετε υπερσυνδέσμους\n"
+"Χρησιμοποιώντας αυτή τη ε-Μηχανή μπορείτε να παρέχετε υπερσυνδέσμους\n"
 "από έναν τροφοδότη, τον οποίο επιλέξατε να βλέπουν οι μαθητές σας."
 
 #: exe/engine/attachmentidevice.py:45
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr "Η ηΔραστηριότητα επισύναψης χρησιμοποιείται για να επισυνάψει αρχεία στο περιεχόμενο του έργου σας. Π.χ., μπορεί να έχετε ένα αρχείο PDF ή ένα αρχείο παρουσίασης PPT που επιθυμείτε οι μαθητές σας να έχουν πρόσβαση σ' αυτό. Μπορείτε να τα επισυνάψετε και να βάλετε μια ετικέτα για τον τύπο και το μέγεθός τους. Οι μαθητές μπορούν να κάνουν κλικ στον υπερσύνδεσμο του επισυναπτόμενου αρχείου και να το μεταφορτώσουν."
+msgstr ""
+"Η ε-Μηχανή επισύναψης χρησιμοποιείται για να επισυνάψει αρχεία στο "
+"περιεχόμενο του έργου σας. Π.χ., μπορεί να έχετε ένα αρχείο PDF ή ένα αρχείο "
+"παρουσίασης PPT που επιθυμείτε οι μαθητές σας να έχουν πρόσβαση σ' αυτό. "
+"Μπορείτε να τα επισυνάψετε και να βάλετε μια ετικέτα για τον τύπο και το "
+"μέγεθός τους. Οι μαθητές μπορούν να κάνουν κλικ στον υπερσύνδεσμο του "
+"επισυναπτόμενου αρχείου και να το μεταφορτώσουν."
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -1926,11 +1995,16 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
-"Η ηΔραστηριότητα Εξωτερικών Διαδικτυακών Τόπων φορτώνει έναν εξωτερικό διαδικτυακό τόπο \n"
-"σε ένα ενσωματωμένο πλαίσιο του περιεχομένου του eXe, χωρίς να χρειάζεται το άνοιγμα ενός \n"
-"αναδυόμενου παραθύρου. Αυτό σημαίνει ότι οι μαθητές δεν θα είναι αναγκασμένοι \n"
-"να ασχολούνται με περιττά παράθυρα. Αυτή η ηΔραστηριότητα πρέπει να χρησιμοποιείται \n"
-"μόνον εάν το περιεχόμενο θα είναι online προσβάσιμο στους μαθητές."
+"Η ε-Μηχανή Εξωτερικών Διαδικτυακών Τόπων φορτώνει έναν εξωτερικό διαδικτυακό "
+"τόπο \n"
+"σε ένα ενσωματωμένο πλαίσιο του περιεχομένου του eXe, χωρίς να χρειάζεται το "
+"άνοιγμα ενός \n"
+"αναδυόμενου παραθύρου. Αυτό σημαίνει ότι οι μαθητές δεν θα είναι "
+"αναγκασμένοι \n"
+"να ασχολούνται με περιττά παράθυρα. Αυτή η ε-Μηχανή πρέπει να "
+"χρησιμοποιείται \n"
+"μόνον εάν το περιεχόμενο θα είναι σε απευθείας σύνδεση προσβάσιμο στους "
+"μαθητές."
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1939,7 +2013,7 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
-"Η ηΔραστηριότητα Ταινία Flash με Κείμενο σας επιτρέπει να \n"
+"Η ε-ΜηχανήΤαινίας Flash με Κείμενο σας επιτρέπει να \n"
 "συσχετίσετε επιπλέον κειμενική πληροφορία με ένα αρχείο flash. \n"
 "Αυτό μπορεί να είναι χρήσιμο όταν θέλετε να δώσετε οδηγίες \n"
 "σχετικά με την ταινία flash που θα δουν οι μαθητές."
@@ -1961,9 +2035,11 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
-"Η πλειονότητα των εκπαιδευτικών πόρων\n"
-"δημιουργεί περιεχόμενο, παρέχει οδηγίες και γενικές πληροφορίες.\n"
-"Παρέχει ένα πλαίσιο μέσα στο οποίο οικοδομούνται και διαμοιράζονται \n"
+"Το  παιδαγωγικό υλικό στην πλειοψηφία του\n"
+"οριοθετεί  ένα εισαγωγικό κομμάτι, όπου παρέχονται οδηγίες και γενικές "
+"πληροφορίες.\n"
+"Μέσα απ' αυτή τη διαδικασία παράγεται ένα πλαίσιο όπου οικοδομούνται και "
+"διαμοιράζονται \n"
 "οι μαθησιακές δραστηριότητες."
 
 #: exe/engine/mathidevice.py:43
@@ -1978,16 +2054,21 @@ msgid ""
 "                        this graphic."
 msgstr ""
 "Η μαθηματική γλώσσα LATEX έχει χρησιμοποιηθεί \n"
-"                        για να ενεργοποιηθεί η δυνατότητα εισαγωγής μαθηματικών τύπων \n"
+"                        για να ενεργοποιηθεί η δυνατότητα εισαγωγής "
+"μαθηματικών τύπων \n"
 "                        στο περιεχόμενό σας. Αυτό γίνεται με τη μετάφραση \n"
 "                        του LATEX σε μια εικόνα που κατόπιν εμφανίζεται\n"
-"                        στο εσωτερικό του περιεχομένου του eXe. Σας προτείνουμε \n"
-"                        να χρησιμοποιήσετε την ηΔραστηριότητα Ελεύθερο Κείμενο για να παρέχετε \n"
+"                        στο εσωτερικό του περιεχομένου του eXe. Σας "
+"προτείνουμε \n"
+"                        να χρησιμοποιήσετε τη ε-Μηχανή Ελεύθερου Κειμένου "
+"για να παρέχετε \n"
 "                        επεξηγήσεις και οδηγίες σχετικά με αυτό το γραφικό."
 
 #: exe/webui/editorpane.py:69
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
-msgstr "Επιδίωξη του διαλόγου είναι να περιγράψετε τον επιδιωκόμενο στόχο της ηΔραστηριότητας σε άλλους πιθανούς χρήστες."
+msgstr ""
+"Επιδίωξη του διαλόγου είναι να περιγράψετε τον επιδιωκόμενο στόχο της "
+"ε-Μηχανής σε άλλους πιθανούς χρήστες."
 
 #: exe/webui/wikipediablock.py:229
 msgid "This article is licensed under the "
@@ -2009,11 +2090,15 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
-"Αυτή η ηΔραστηριότητα υποστηρίζει μόνο μορφή ταινίας flash (.flv) και δεν \n"
-"δέχεται άλλες μορφές αρχείων βίντεο. Μπορείτε παρόλ' αυτά να μετατρέψετε άλλες μορφές \n"
-"αρχείων βίντεο (π.χ. mov, wmf κλπ.) στη μορφή .flv χρησιμοποιώντας μετατροπείς άλλων \n"
-"κατασκευαστών, οι οποίοι όμως δεν παρέχονται από το eXe. Οι χρήστες πρέπει επίσης να \n"
-"μεταφορτώσουν το πρόγραμμα αναπαραγωγής Flash 8 από το http://www.macromedia.com/ \n"
+"Αυτή η ε-Μηχανή υποστηρίζει μόνο μορφή ταινίας flash (.flv) και δεν \n"
+"δέχεται άλλες μορφές αρχείων βίντεο. Μπορείτε παρόλ' αυτά να μετατρέψετε "
+"άλλες μορφές \n"
+"αρχείων βίντεο (π.χ. mov, wmf κλπ.) στη μορφή .flv χρησιμοποιώντας "
+"μετατροπείς άλλων \n"
+"κατασκευαστών, οι οποίοι όμως δεν παρέχονται από το eXe. Οι χρήστες πρέπει "
+"επίσης να \n"
+"μεταφορτώσουν το πρόγραμμα αναπαραγωγής Flash 8 από το "
+"http://www.macromedia.com/ \n"
 "για να αναπαράγουν την ταινία."
 
 #: exe/engine/freetextidevice.py:121
@@ -2029,7 +2114,7 @@ msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
-"Αυτό είναι ένα παράδειγμα plugin ηΔραστηριότητας\n"
+"Αυτό είναι ένα παράδειγμα πρόσθετου ε-Μηχανή\n"
 "που δημιουργήθηκε από έναν χρήστη."
 
 #: exe/webui/editorpane.py:68
@@ -2041,8 +2126,8 @@ msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
-"Η ηΔραστηριότητα θα διαγραφεί.\n"
-"Είστε σίγουροι ότι θέλετε να προχωρήσετε;"
+"Η ε-Μηχανή θα διαγραφεί.\n"
+"Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
 
 #: exe/webui/block.py:270
 msgid "Tip:"
@@ -2125,7 +2210,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
 msgid "Type the learning objectives for this resource."
-msgstr "Πληκτρολογήστε τους μαθησιακούς σκοπούς γι' αυτόν τον εκπαιδευτικό πόρο."
+msgstr "Πληκτρολογήστε τους μαθησιακούς σκοπούς γι' αυτό το παιδαγωγικό υλικό."
 
 #: exe/engine/truefalseidevice.py:154
 msgid ""
@@ -2208,11 +2293,15 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:414
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "Χρησιμοποιήστε αυτή την ηΔραστηριότητα αν έχετε να δείξετε πολλές εικόνες."
+msgstr "Χρησιμοποιήστε αυτή την ε-Μηχανή αν έχετε να δείξετε πολλές εικόνες."
 
 #: exe/webui/editorpane.py:76
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
-msgstr "Χρησιμοποιήστε αυτό το πεδίο για να περιγράψετε την επιδιωκόμενη χρήση και τις παιδαγωγικές αρχές στις οποίες βασίζεται η ανάπτυξη της ηΔραστηριότητας. Αυτό θα είναι πολύ χρήσιμο εάν η ηΔραστηριότητα εξαχθεί για να χρησιμοποιηθεί από άλλους."
+msgstr ""
+"Χρησιμοποιήστε αυτό το πεδίο για να περιγράψετε την επιδιωκόμενη χρήση και "
+"τις παιδαγωγικές αρχές στις οποίες βασίζεται η ανάπτυξη της ε-Μηχανής. Αυτό "
+"θα είναι πολύ χρήσιμο εάν η ε-Μηχανή σας εξαχθεί για να χρησιμοποιηθεί και "
+"από άλλους."
 
 #: exe/engine/freetextidevice.py:46
 msgid ""
@@ -2221,13 +2310,17 @@ msgid ""
 "text through the text editing buttons associated with the field."
 msgstr ""
 "Χρησιμοποιήστε αυτό το πεδίο για να εισάγετε κείμενο, αν και αυτή \n"
-"η ηΔραστηριότητα δεν εστιάζει σε κάτι συγκεκριμένο. Μπορείτε, ωστόσο, να εφαρμόσετε \n"
-"περιορισμένη μορφοποίηση στο κείμενο μέσω των πλήκτρων επεξεργασίας κειμένου \n"
+"η ε-Μηχανή δεν εστιάζει σε κάτι συγκεκριμένο. Μπορείτε, ωστόσο, να "
+"εφαρμόσετε \n"
+"περιορισμένη μορφοποίηση στο κείμενο μέσω των πλήκτρων επεξεργασίας κειμένου "
 "που σχετίζονται με αυτό το πεδίο."
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr "Χρησιμοποιήστε αυτό το πλήκτρο για να επιλέξετε αν η ηΔραστηριότητα θα διαθέτει μορφοποίηση που θα την κάνει να ξεχωρίζει. Π.χ., ένα περίγραμμα και ένα εικονίδιο."
+msgstr ""
+"Χρησιμοποιήστε αυτό το πλήκτρο για να επιλέξετε αν η ε-Μηχανή θα διαθέτει "
+"μορφοποίηση που θα την κάνει να ξεχωρίζει. Π.χ., ένα περίγραμμα και ένα "
+"εικονίδιο."
 
 #: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
 msgid "What to read"
@@ -2288,7 +2381,11 @@ msgstr "Μπορείτε να χρησιμοποιήσετε τη γραμμή �
 
 #: exe/webui/editorpane.py:64
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
-msgstr "Η νέα ηΔραστηριότητα θα εμφανιστεί με αυτόν τον τίτλο στο παράθυρο των ηΔραστηριοτήτων. Αυτό είναι ένα υποχρεωτικό πεδίο, στο οποίο θα παρακινηθείτε να εισάγετε έναν τίτλο, σε περίπτωση που επιχειρήσετε να υποβάλλετε την ηΔραστηριότητα χωρίς αυτόν."
+msgstr ""
+"Η νέα ε-Μηχανή θα εμφανιστεί με αυτόν τον τίτλο στην πινακίδα των ε-Μηχανών. "
+"Αυτό είναι ένα υποχρεωτικό πεδίο, στο οποίο θα παρακινηθείτε να εισάγετε "
+"έναν τίτλο, σε περίπτωση που επιχειρήσετε να υποβάλλετε τη ε-Μηχανή χωρίς "
+"αυτόν."
 
 #: exe/webui/wikipediablock.py:244
 msgid "article "
@@ -2323,16 +2420,16 @@ msgstr "http://el.wikipedia.org/"
 #: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:130
 #, python-format
 msgid "iDevice %s has no package"
-msgstr "Η ηΔραστηριότητα %s δεν έχει πακέτο"
+msgstr "Η ε-Μηχανή %s δεν έχει πακέτο"
 
 #: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
-msgstr "Επεξεργαστής ηΔραστηριότητας"
+msgstr "Επεξεργαστής ε-Μηχανής"
 
 #: exe/webui/block.py:320
 msgid "iDevice icon"
-msgstr "Εικονίδιο ηΔραστηριότητας"
+msgstr "Εικονίδιο ε-Μηχανής"
 
 #: exe/webui/renderable.py:253
 msgid "key"
@@ -2352,7 +2449,9 @@ msgstr "νέα γραμμή"
 
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
-msgstr "μετονομάστε έναν εκπαιδευτικό πόρο για μια μικροεφαρμογή ηΔραστηριότητας και δεν θα χρειαστεί να το ξανακάνετε!"
+msgstr ""
+"μετονομάστε το Υλικό μιας μικροεφαρμογής ε-Μηχανής και δεν θα χρειαστεί να "
+"το ξανακάνετε!"
 
 #: exe/webui/element.py:1484
 msgid "text"
@@ -2413,7 +2512,7 @@ msgstr "Ιδιότητες έργου"
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
 msgid "The name given to the resource."
-msgstr "Όνομα που δόθηκε στον εκπαιδευτικό πόρο."
+msgstr "Όνομα που δόθηκε στο παιδαγωγικό υλικό."
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'red';" id="pp_scolinks" label="Add
@@ -2468,7 +2567,9 @@ msgstr "Μεταδεδομένα"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr "Πρόσωπο υπεύθυνο για τη δημιουργία περιεχομένου του εκπαιδευτικού πόρου."
+msgstr ""
+"Το πρόσωπο που είναι υπεύθυνο για τη δημιουργία περιεχομένου του "
+"εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2505,7 +2606,7 @@ msgstr "Φόντο κεφαλίδας:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr "Θέμα περιεχομένου του εκπαιδευτικού πόρου."
+msgstr "Το θέμα του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2544,9 +2645,12 @@ msgid ""
 "             "
 msgstr ""
 "\n"
-"                Τυπικά, το θέμα θα εκφράζεται με λέξεις κλειδιά, φράσεις κλειδιά ή\n"
-"                κωδικούς ταξινόμησης που περιγράφουν ένα θέμα του εκπαιδευτικού\n"
-"                πόρου. Ως καλύτερη πρακτική συνίσταται η επιλογή μιας τιμής για ένα\n"
+"                Τυπικά, το θέμα θα εκφράζεται με λέξεις κλειδιά, φράσεις "
+"κλειδιά ή\n"
+"                κωδικούς ταξινόμησης που περιγράφουν ένα θέμα του "
+"εκπαιδευτικού\n"
+"                υλικού. Ως καλύτερη πρακτική συνίσταται η επιλογή μιας τιμής "
+"για ένα\n"
 "                ελεγχόμενο λεξιλόγιο ή τυπικό σχήμα ταξινόμησης.\n"
 "             "
 
@@ -2565,7 +2669,9 @@ msgstr "Καθαρισμός εικόνας"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "An entity responsible for making the resource available."
-msgstr "Πρόσωπο υπεύθυνο για τη διαθεσιμότητα του εκπαιδευτικού πόρου."
+msgstr ""
+"Το πρόσωπο που είναι υπεύθυνο για τη διανομή σε απευθείας σύνδεση του "
+"εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
@@ -2599,7 +2705,9 @@ msgstr "Αρχικός δημιουργός του εκπαιδευτικού έ
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "An entity responsible for making contributions to the content of the resource."
-msgstr "Πρόσωπο υπεύθυνο για τον εμπλουτισμό του περιεχομένου του εκπαιδευτικού πόρου μέσω συνεργατών."
+msgstr ""
+"Το πρόσωπο που είναι υπεύθυνο για τον εμπλουτισμό του περιεχομένου του "
+"εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
@@ -2670,7 +2778,7 @@ msgid ""
 msgstr ""
 "\n"
 "                 Τυπικά η ημερομηνία θα συσχετιστεί με τη δημιουργία ή\n"
-"                 τη διαθεσιμότητα του εκπαιδευτικού πόρου. Συνιστώμενη ως\n"
+"                 τη διαθεσιμότητα του εκπαιδευτικού υλικού. Συνιστώμενη ως\n"
 "                 η καλύτερη πρακτική για την κωδικοποίηση της τιμής της\n"
 "                 ημερομηνίας για να οριστεί και να κληθεί από ένα προφίλ.\n"
 "                 "
@@ -2728,7 +2836,9 @@ msgstr "Άδεια Creative Commons Attribution No Derivatives 3.0"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "The nature or genre of the content of the resource."
-msgstr "Φύση κειμενικών ειδών που χρησιμοποιούνται στο περιεχόμενο του εκπαιδευτικού πόρου."
+msgstr ""
+"Φύση κειμενικών ειδών που χρησιμοποιούνται στο περιεχόμενο του εκπαιδευτικού "
+"υλικού."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
@@ -2789,8 +2899,9 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"              Για να περιγράψετε τη φυσική ή την ψηφιακή εκδοχή του εκπαιδευτικού\n"
-"              πόρου, χρησιμοποιήστε το στοιχείο FORMAT.\n"
+"              Για να περιγράψετε τη φυσική ή την ψηφιακή εκδοχή του "
+"εκπαιδευτικού\n"
+"              υλικού, χρησιμοποιήστε το στοιχείο FORMAT.\n"
 "            "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
@@ -2903,7 +3014,7 @@ msgstr "Developing Nations 2.0"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "An unambiguous reference to the resource within a given context."
-msgstr "Σαφής αναφορά σε έναν εκπαιδευτικό πόρο με δεδομένο περιεχόμενο."
+msgstr "Σαφής αναφορά σε ένα εκπαιδευτικό υλικό με προκαθρισμένο περιεχόμενο."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
@@ -2935,7 +3046,8 @@ msgstr "Υποσέλιδο:"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr "Παραπομπή στην πηγή από την οποία προέρχεται ο παρών εκπαιδευτικός πόρος."
+msgstr ""
+"Παραπομπή στην πηγή από την οποία προέρχεται το παρών παιδαγωγικό υλικό."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
@@ -2947,7 +3059,7 @@ msgstr "label=\"Απλή σελίδα\" accesskey=\"ρ\""
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "An account of the content of the resource."
-msgstr "Περιγραφή του περιεχομένου του εκπαιδευτικού πόρου."
+msgstr "Περιγραφή του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -3231,7 +3343,7 @@ msgstr "Λευκορωσικά"
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
-msgstr "Περίγραμμα πλαισίου"
+msgstr "ΠινακίδαΠεριγράμματος"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -3284,7 +3396,7 @@ msgstr "Τσετσένικα"
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
-msgstr "ηΔραστηριότητες"
+msgstr "ε-Μηχανές"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
@@ -3294,7 +3406,7 @@ msgstr "Κινέζικα"
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
 msgid "iDevicePane"
-msgstr "Πλαίσιο ηΔραστηριοτήτων"
+msgstr "Πινακίδα ε-Μηχανών"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
@@ -3499,12 +3611,12 @@ msgstr "Inuktitut "
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
 msgid "Japanese "
-msgstr "Ιαπωνικά"
+msgstr "Ιαπωνικά "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
 #: label="Javanese ">
 msgid "Javanese "
-msgstr "Ιαβανικά"
+msgstr "Ιαβανικά "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
 #: label="Kikuyu ">
@@ -4019,7 +4131,7 @@ msgstr "Ζουλού"
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "A reference to a related resource."
-msgstr "Παραπομπή σε σχετικό εκπαιδευτικό πόρο."
+msgstr "Παραπομπή σε σχετικό παιδαγωγικό υλικό."
 
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
@@ -4030,7 +4142,7 @@ msgstr "Σχέση:"
 #: style="width:8em" tooltiptext="The extent or scope of the content
 #: resource.">
 msgid "The extent or scope of the content of the resource."
-msgstr "Η ευρύτητα ή το πλαίσιο του περιεχομένου του εκπαιδευτικού πόρου."
+msgstr "Η ευρύτητα ή το πλαίσιο του περιεχομένου του εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
@@ -4042,7 +4154,7 @@ msgstr "Κάλυψη:"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Information about rights held in and over the resource."
-msgstr "Πληροφορίες για τα δικαιώματα του εκπαιδευτικού πόρου."
+msgstr "Πληροφορίες για τα δικαιώματα του εκπαιδευτικού υλικού."
 
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
 #: style="width:8em" tooltiptext="Information about rights held in and over
@@ -4052,7 +4164,14 @@ msgstr "Δικαιώματα:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr "Τυπικά, στα Δικαιώματα περιλαμβάνεται μια δήλωση διαχείρισης δικαιωμάτων για τον εκπαιδευτικό πόρο, ή αναφορά σε μια υπηρεσία που παρέχει τέτοιες πληροφορίες. Οι πληροφορίες Δικαιωμάτων συχνά περιλαμβάνουν Προστασία Πνευματικών Δικαιωμάτων, Πνευματική Ιδιοκτησία και διάφορα δικαιώματα ιδιοκτησίας. Αν η αναφορά στα Δικαιώματα απουσιάζει, δεν μπορεί να γίνει καμία υπόθεση για την κατάσταση των δικαιωμάτων που αφορούν αυτόν τον εκπαιδευτικό πόρο."
+msgstr ""
+"Τυπικά, στα Δικαιώματα περιλαμβάνεται μια δήλωση διαχείρισης δικαιωμάτων για "
+"το εκπαιδευτικό υλικό, ή αναφορά σε μια υπηρεσία που παρέχει τέτοιες "
+"πληροφορίες. Οι πληροφορίες Δικαιωμάτων συχνά περιλαμβάνουν Προστασία "
+"Πνευματικών Δικαιωμάτων, Πνευματική Ιδιοκτησία και διάφορα δικαιώματα "
+"ιδιοκτησίας. Αν η αναφορά στα Δικαιώματα απουσιάζει, δεν μπορεί να γίνει "
+"καμία υπόθεση για την κατάσταση των δικαιωμάτων που αφορούν αυτό το "
+"παιδαγωγικό υλικό."
 
 #~ msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 #~ msgstr "label=\"Υποδείξεις και Τεχνάσματα\" accesskey=\"τ\""

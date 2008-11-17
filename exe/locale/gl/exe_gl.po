@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-18 10:27+1300\n"
-"PO-Revision-Date: 2008-05-28 14:43+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-11-18 12:09+1300\n"
+"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0\n"
 "X-EXE-Language: Galego\n"
-"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
 msgid ""
@@ -2724,7 +2724,7 @@ msgstr "label=\"Abrir\" accesskey=\"a\""
 #: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr "Licenza Creative Commons Attribution-NonCommercial 3.0"
+msgstr "Licenza Creative Commons Attribution Non-commercial 3.0"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -3112,7 +3112,7 @@ msgstr "Avestan "
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Titorial do eXe\" accesskey=\"i\""
+msgstr "label=\"Titorial do eXe\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
