@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-18 14:23+1200\n"
+"POT-Creation-Date: 2008-11-18 10:27+1300\n"
 "PO-Revision-Date: 2008-06-13 03:41+0100\n"
 "Last-Translator: Anna Vetter <anna.vetter@supportsfoad.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -661,7 +661,7 @@ msgstr ""
 "L'EXPORT A ECHOUE!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
+#: exe/export/imsexport.py:358 exe/export/scormexport.py:493
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-18 14:23+1200\n"
+"POT-Creation-Date: 2008-11-18 10:27+1300\n"
 "PO-Revision-Date: 2008-05-15 11:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
@@ -748,7 +748,7 @@ msgstr ""
 "Napaka med izvozom!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
+#: exe/export/imsexport.py:358 exe/export/scormexport.py:493
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""

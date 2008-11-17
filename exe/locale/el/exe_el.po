@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-18 14:23+1200\n"
+"POT-Creation-Date: 2008-11-18 10:27+1300\n"
 "PO-Revision-Date: 2008-06-13 08:44+1200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
@@ -751,7 +751,7 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/export/imsexport.py:357 exe/export/scormexport.py:492
+#: exe/export/imsexport.py:358 exe/export/scormexport.py:493
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
