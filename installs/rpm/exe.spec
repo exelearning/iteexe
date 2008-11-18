@@ -49,6 +49,7 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 cp exe.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages/
+rm -f $RPM_BUILD_ROOT%{_libdir}/python%{pyver}/site-packages/exe-*.egg-info
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,6 +69,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/update-mime-database /usr/share/mime &> /dev/null
 
 %changelog
+* Tue Nov 18 2008 Jim Tittsler <jim@exelearning.org>
+- update spec file to work with Fedora 9
+
 * Mon Jul 09 2007 Jim Tittsler <jim@exelearning.org>
 - update spec file to work with Fedora 7
 - use files list instead of recording INSTALLED_FILES in setup.py to catch .pyo files
