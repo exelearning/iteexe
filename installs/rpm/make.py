@@ -4,6 +4,7 @@
 
 import sys
 import os
+import glob
 import subprocess
 
 # TOPDIR root of RPM build tree typically /usr/src/redhat or /home/xxx/.rpm
@@ -29,19 +30,15 @@ except OSError:
 sys.path.insert(0, os.path.join(SRCDIR, 'exe'))
 from exe.engine import version
 
-# get the distribution
-pipe = subprocess.Popen('uname -r', shell = True, stdout = subprocess.PIPE).stdout
-dist = pipe.read().strip()
-dist = dist[dist.rfind('.')+1:]
-
 # find the first release that doesn't exist
-relno = 1
+clrelease = 1
 while 1:
-    clrelease = "%d.%s" % (relno, dist)
-    if not os.path.isfile(os.path.join(TOPDIR, 'RPMS/i386',
-                                       'exe-%s-%s.i386.rpm' % (version.version, clrelease))):
+    files = glob.glob(os.path.join(TOPDIR, 'RPMS/i386',
+        'exe-%s-%d.*.i386.rpm' % (version.version, clrelease)))
+    if len(files) == 0:
         break
-    relno = relno + 1
+    clrelease += 1
+
 print "Making version: %s release: %s" % (version.version, clrelease)
 
 # create the source tarball
