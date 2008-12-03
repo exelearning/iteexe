@@ -102,7 +102,10 @@ class Application:
             inStartFH=open(eXeStart, "r")
             lastRunTimeS = 0
             for line in inStartFH:
-                lastRunTimeS = int(line)
+                try:
+                    lastRunTimeS = int(line)
+                except ValueError:
+                    lastRunTimeS = 0
             inStartFH.close()
             log.debug('lastRunTimeS: ' + `lastRunTimeS`)
 
