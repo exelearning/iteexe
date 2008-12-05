@@ -26,6 +26,7 @@ import types, copy, cStringIO, struct
 import time
 import re
 import os
+import getpass
 import logging
 log = logging.getLogger(__name__)
 
@@ -138,9 +139,13 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
         percentDoneLast = 0
         updateTimeLast = 0
 
+        try:
+            username = getpass.getuser()
+        except ImportError:
+            username = ''
         eXeStart = globals.application.tempWebDir
         eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
-        eXeStart = eXeStart + '/tmpExeStartupTime'
+        eXeStart = eXeStart + '/tmpExeStartupTime.' + username
         chmodOnceOnly=1
 
         ##### XXXX xxxx

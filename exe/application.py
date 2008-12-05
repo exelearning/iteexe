@@ -28,6 +28,7 @@ import sys
 import shutil
 import time
 import re
+import getpass
 
 from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
@@ -94,9 +95,13 @@ class Application:
         self.processArgs()
 
         self.loadConfiguration()
+        try:
+            username = getpass.getuser()
+        except ImportError:
+            username = ''
         eXeStart = globals.application.tempWebDir
         eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
-        eXeStart = eXeStart + '/tmpExeStartupTime'
+        eXeStart = eXeStart + '/tmpExeStartupTime.' + username
 
         if os.path.exists(eXeStart):
             inStartFH=open(eXeStart, "r")

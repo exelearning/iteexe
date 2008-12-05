@@ -1,4 +1,5 @@
 * Add max score reporting to LMS for SCORM Quiz
+* Add username to startup lock file to permit multiple users on same machine
 * Fix image gallery to allow captions containing apostrophes
 * Fix field IDs so that adding to a previously saved elp is consistent
 * Fix Common Cartridge manifest when a header image is used
