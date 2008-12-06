@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-18 12:47+1300\n"
-"PO-Revision-Date: 2008-11-18 12:00+1300\n"
-"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
+"PO-Revision-Date: 2008-11-24 21:02+1300\n"
+"Last-Translator: Gürkan Gür <seqizz@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-EXE-Language: Turkish\n"
 "X-Generator: Pootle 1.1.0\n"
+"X-EXE-Language: Turkish\n"
 
 #: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
 msgid ""
@@ -1947,6 +1947,12 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Buraya, öğrenci bu soruyu seçtiğinde görmesini \n"
+"istediğiniz geribildirimi girin. Eğer bu alanı boş bırakırsanız, eXe "
+"otomatik olarak \n"
+"şu şekilde öntanımlı çıktılar gösterecektir: Doğru seçim için \"Doğru\" \n"
+"; ya da diğer seçeneklerden birisi seçilmesi halinde \n"
+"\"Yanlış\"."
 
 #: exe/engine/field.py:3317
 msgid ""
@@ -2134,7 +2140,7 @@ msgstr "http://tr.wikipedia.org/"
 #: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:130
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "%s iDevice'ı bir pakede sahip değil"
 
 #: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
@@ -3467,7 +3473,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
 #: label="Dutch ">
 msgid "Dutch "
-msgstr ""
+msgstr "Hollandaca"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
 #: label="Norwegian Nynorsk ">
