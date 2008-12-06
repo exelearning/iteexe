@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-03-16 14:35+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <flu.project@gmail.com>\n"
@@ -1473,7 +1473,7 @@ msgstr ""
 "   Файл... Изход\n"
 "за да затворите eXe."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Моля изчакайте докато зареждането завърши"
 
@@ -1837,7 +1837,7 @@ msgstr "Малък"
 msgid "Some emphasis"
 msgstr "Леко наблягане"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Грешен файлов формат"
 

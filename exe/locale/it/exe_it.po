@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-05-17 04:03+1200\n"
 "Last-Translator: mayer giovanni <mayer.giovanni@rodari-rossano.org>\n"
 "Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
@@ -1487,7 +1487,7 @@ msgstr ""
 " File... il comando Quit \n"
 " per chiudere il programma."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Per favore attendi la fine del caricamento"
 
@@ -1856,7 +1856,7 @@ msgstr "Piccolo"
 msgid "Some emphasis"
 msgstr "Una certa enfasi"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Spiacente, formato errato del file"
 

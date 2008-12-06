@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-01-07 16:08+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: catalan <ca@li.org>\n"
@@ -1442,7 +1442,7 @@ msgstr ""
 "Fitxer ... Eixir \n"
 "per tancar eXe."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Si-us-plau espereu mentre la carrega acaba."
 
@@ -1806,7 +1806,7 @@ msgstr "Menut"
 msgid "Some emphasis"
 msgstr "Alguna èmfasi"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Disculpeu, format d'arxiu dolent"
 

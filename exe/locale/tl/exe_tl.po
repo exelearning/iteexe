@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1492,7 +1492,7 @@ msgid ""
 "menu to close eXe."
 msgstr ""
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr ""
 
@@ -1857,7 +1857,7 @@ msgstr "Maliit"
 msgid "Some emphasis"
 msgstr "Kaunting diin"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Paumanhin, mali ang anyo ng sako"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-11-18 12:33+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -1493,7 +1493,7 @@ msgstr ""
 "   Bestand... Afsluiten\n"
 "om eXe af te sluiten."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Wachten tot het laadproces voltooid is aub"
 
@@ -1857,7 +1857,7 @@ msgstr "Klein"
 msgid "Some emphasis"
 msgstr "Lichte nadruk"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
@@ -2575,7 +2575,9 @@ msgid ""
 "                Recommended best practice is to select a value from a controlled\n"
 "                vocabulary or formal classification scheme.\n"
 "             "
-msgstr "\nMeestal wordt Onderwerp beschreven met sleutelwoorden of -zinnen, of met classificatiecodes die de inhoud omschrijven. Aanbevolen wordt te werken met een vastgesteld kwalificatieschema."
+msgstr ""
+"\n"
+"Meestal wordt Onderwerp beschreven met sleutelwoorden of -zinnen, of met classificatiecodes die de inhoud omschrijven. Aanbevolen wordt te werken met een vastgesteld kwalificatieschema."
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key

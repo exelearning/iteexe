@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -1441,7 +1441,7 @@ msgstr ""
 "Palun kasuta eXe sulgemiseks \n"
 "menüüst Fail.. Sulge programm."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Palun oota kuni laadimine on lõpetatud"
 
@@ -1793,7 +1793,7 @@ msgstr "Väike"
 msgid "Some emphasis"
 msgstr "Mõningane rõhuasetus"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Vabandust, vale failiformaat"
 

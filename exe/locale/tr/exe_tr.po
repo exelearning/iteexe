@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-11-24 21:02+1300\n"
 "Last-Translator: Gürkan Gür <seqizz@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1348,7 +1348,7 @@ msgstr ""
 "eXe'nin Dosya... Çıkış \n"
 "menüsünü kullanın."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Lütfen yükleme bitene kadar bekleyin"
 
@@ -1704,7 +1704,7 @@ msgstr "Küçük"
 msgid "Some emphasis"
 msgstr "Biraz vurgulu"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Üzgünüm, yanlış dosya formatı"
 
@@ -1948,8 +1948,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
 "Buraya, öğrenci bu soruyu seçtiğinde görmesini \n"
-"istediğiniz geribildirimi girin. Eğer bu alanı boş bırakırsanız, eXe "
-"otomatik olarak \n"
+"istediğiniz geribildirimi girin. Eğer bu alanı boş bırakırsanız, eXe otomatik olarak \n"
 "şu şekilde öntanımlı çıktılar gösterecektir: Doğru seçim için \"Doğru\" \n"
 "; ya da diğer seçeneklerden birisi seçilmesi halinde \n"
 "\"Yanlış\"."

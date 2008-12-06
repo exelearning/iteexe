@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-09-15 16:08+0100\n"
 "Last-Translator: Dino Brun Pedersen <dbp@sensus.dk>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1462,7 +1462,7 @@ msgstr ""
 "   fil... afslut\n"
 "menu for at lukke eXe."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Vent indtil indlæsningen afsluttes"
 
@@ -1826,7 +1826,7 @@ msgstr "Lille"
 msgid "Some emphasis"
 msgstr "Nogen vægt"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Forkert filformat"
 

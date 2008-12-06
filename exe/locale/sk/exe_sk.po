@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-18 12:47+1300\n"
+"POT-Creation-Date: 2008-12-06 17:28+1300\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -1455,7 +1455,7 @@ msgstr ""
 "Na ukončenie programu použite menu\n"
 "   Súbor... Koniec."
 
-#: exe/application.py:244
+#: exe/application.py:252
 msgid "Please wait until loading finishes"
 msgstr "Počkajte prosím, pokiaľ načítanie neskončí"
 
@@ -1819,7 +1819,7 @@ msgstr "Malý"
 msgid "Some emphasis"
 msgstr "Čiastočné zvýraznenie"
 
-#: exe/application.py:273 exe/xului/mainpage.py:1111
+#: exe/application.py:281 exe/xului/mainpage.py:1111
 msgid "Sorry, wrong file format"
 msgstr "Prepáčte, nesprávny formát súboru "
 
