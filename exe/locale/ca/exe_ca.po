@@ -4,21 +4,22 @@
 # This file is distributed under the same license as the eXe package.
 #
 # eXe Project <exe@exelearning.org>, 2007.
-# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2007.
+# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-06 17:28+1300\n"
-"PO-Revision-Date: 2008-01-07 16:08+0100\n"
+"PO-Revision-Date: 2008-12-07 16:57+0000\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
-"Language-Team: catalan <ca@li.org>\n"
+"Language-Team: Catalan <kde-i18n-doc@lists.kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Catalan\n"
 "X-EXE-Language: Català\n"
-"X-Generator: Pootle 0.10.1\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
 msgid ""
@@ -93,7 +94,7 @@ msgstr ""
 "<p>\n"
 " La imatge amb text IDevice pot ser emprada en un nombre de llocs per suportar conjuntament la tasca emocional ( afectiva ) i tasques d'aprenentatge (cognitives) al continguts de eXe . \n"
 "</p><p>\n"
-" Integracions visuals amb resums verbals</b>\n"
+" Integracions visuals amb resums verbals</b>\n </p><p>\n"
 "Coneixements psicològics  indiquen que els aprenents presents amb una\n"
 "imatge representativa i un resum verbal ( que es presentat simultaneament )  poden reduir la carrega cognitiva i augmentar el nivell de retenció.\n"
 "Aquest iDevice pot ser emprat per presentar una imatge (fotografia , diagrama, o gràfic ) amb un breu resum que cobrisca els principals punts relatius a la imatge. Per exemple, si esteu ensenyant les funcions del motor de combustió interna  , /n podríeu  tindre una representació visual de les quatre posicions del pistó amb un breu resum dels aspectes de cada representació visual. \n"
@@ -115,11 +116,11 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
 "<p>Entreu el text per l'activitat de buits al camp de buits\n"
-" pegant el text des d'un altra font o teclejant el text directament al camp.</p><p> Per seleccionar paraules per amagar, feu doble clic sobre la paraula per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p>"
+" pegant el text des d'un altra font o teclejant el text directament al camp.\n </p><p> Per seleccionar paraules per amagar, feu doble clic sobre la paraula \n  per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p>"
 
 #: exe/engine/field.py:2725
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr "<p>Si ho deixeu no seleccionat un nombre petit d'errors seran acceptats. Si ho deixeu seleccionat sols s'acceptarà una comparació exacta.. </p><p><strong>Per exemple:</strong> Si la paraula correcta és <code>Elefant</code> i poseu <code>elefant</code> serà jutjat com<em>\"close enough\" incorrecta</em> pel algoritme sols si té una lletra incorrecta, sempre que \"Comprovar errades\" estiga seleccionat.</p><p>Si la casella \"Comprovar errades\" no està  seleccionada al exemple d'abans , la lletra<code>e</code> no serà considerada un error i <code>elefant</code> serà acceptada.</p><p> Si seleccioneu \"Marcatge estricte\" i \"Comprovar errades\" al mateix temps , la única paraula correcta serà \"Elefant\". Si sols seleccioneu \"marcatge estricte\" i \"Comprovar errades\" no ho està, \"elefant\" també serà acceptada.</p>"
+msgstr "<p>Si ho deixeu no seleccionat un nombre petit d'errors seran acceptats. Si ho deixeu seleccionat sols s'acceptarà una comparació exacta.. </p><p><strong>Per exemple:</strong> Si la paraula correcta és <code>Elefant</code>llavors les dues <code>elefant</code> i <code>Elifant</code> seran jutjades com<em>\"close enough\" incorrecta</em> pel algoritme sols si té una lletra incorrecta, sempre que \"Comprovar errades\" estiga seleccionat.</p><p>Si la casella \"Comprovar errades\" no està  seleccionada al exemple d'abans , la lletra<code>e</code> no serà considerada un error i <code>elefant</code> serà acceptada.</p><p> Si seleccioneu \"Marcatge estricte\" i \"Comprovar errades\" al mateix temps , la única paraula correcta serà \"Elefant\". Si sols seleccioneu \"marcatge estricte\" i \"Comprovar errades\" no ho està, \"elefant\" també serà acceptada.</p>"
 
 #: exe/engine/field.py:2746
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
@@ -165,7 +166,7 @@ msgid ""
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
 "<p> El iDevice Viquipèdia us permet localitzar un article que estiga a la Viquipèdia i \n"
-" baixar-lo al recurs eXe. El iDevice Viquipèdia pren una copia de del contingut de l'article. \n"
+" baixar-lo al recurs eXe. El iDevice Viquipèdia pren una copia  del contingut de l'article. \n"
 " Els canvis en la Viquipèdia no són actualitzats automàticament en la còpia que heu pres, us caldrà tornar a prendre la còpia de l'article si voleu la seva \n"
 " actualització. Així mateix , els canvis fets a l'article en eXe no seran actualitzats a la Viquipèdia. \n"
 " </p><p> El contingut de la Viquipèdia està cobert per la llicència de documentació lliure GNU FDL.</p> "
@@ -330,7 +331,7 @@ msgstr "Alinear:"
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr "L'alineament et permet escollir on serà col·locada la imatge en la pantalla."
+msgstr "L'alineament et permet escollir \n on serà col·locada la imatge en la pantalla."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
@@ -346,7 +347,7 @@ msgid ""
 "                                       user filling the gaps."
 msgstr ""
 "Permet autocompletar quan \n"
-"                    l'usuari omple els buits."
+"                                  l'usuari omple els buits."
 
 #: exe/engine/clozeidevice.py:288
 msgid "Allow auto completion when user filling the gaps."
@@ -377,7 +378,7 @@ msgstr ""
 "<li>Quines habilitats intel·lectuals seran provades</li>\n"
 "<li>Les habilitats lingüístiques de l'audiència.</li>\n"
 "<li>Genere i nivell cultural</li>\n"
-"<li>Evitar expressions i estructures que puguen proporcionar pistes</li>\n"
+"<li>Evitar expressions i estructures gramaticals que puguen proporcionar pistes</li>\n"
 "</ul>\n"
 " "
 
@@ -418,7 +419,7 @@ msgstr "Adjunció %s no té node pare."
 
 #: exe/engine/rssidevice.py:41 exe/engine/multimediaidevice.py:41
 msgid "Auckland University of Technology"
-msgstr "Universitat de Tecnologia de Auckland"
+msgstr "Universitat de Tecnologia d'Auckland"
 
 #: exe/webui/editorelement.py:149
 msgid "Button Caption"
@@ -426,7 +427,7 @@ msgstr "Títol del botó"
 
 #: exe/webui/block.py:222
 msgid "Can NOT Undo Edits"
-msgstr ""
+msgstr "No es poden desfer les Edicions"
 
 #: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
 msgid "Cancel"
@@ -664,11 +665,11 @@ msgstr "Descripció:"
 
 #: exe/webui/preferencespage.py:103
 msgid "Disable All Internal Linking"
-msgstr ""
+msgstr "Desactiva tots els enllaços interns"
 
 #: exe/webui/preferencespage.py:102
 msgid "Disable Auto-Top Internal Linking"
-msgstr ""
+msgstr "Desactiva Auto-Top d'enllaçat intern"
 
 #: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
 msgid "Display as:"
@@ -755,7 +756,7 @@ msgstr "Èmfasis"
 
 #: exe/webui/preferencespage.py:101
 msgid "Enable All Internal Linking"
-msgstr ""
+msgstr "Activa tots els enllaços interns"
 
 #: exe/webui/wikipediablock.py:113
 msgid "English Wikipedia Article"
@@ -1060,7 +1061,7 @@ msgstr "Article francès de la viquipèdia"
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
-msgstr "Llicència de Documentació Lliure de GNU"
+msgstr "Llicència de Documentació Lliure de GNU "
 
 #: exe/webui/appletblock.py:101
 msgid "Geogebra"
@@ -1186,7 +1187,7 @@ msgstr "Instruccions pels alumnes"
 
 #: exe/webui/preferencespage.py:104
 msgid "Internal Linking (for Web Site Exports only)"
-msgstr ""
+msgstr "Enllaç intern (sols per exportar a llocs web)"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1324,7 +1325,7 @@ msgstr "Cap èmfasi"
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
-msgstr "Ningun"
+msgstr "Cap"
 
 #: exe/webui/preferencespage.py:112
 msgid "OK"
@@ -2015,7 +2016,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr ""
 "Per indicar la resposta correcta premeu la \n"
-" opció correcta seleccionant-la amb el botó."
+" opció correcta seleccionant-la amb el botó radio."
 
 #: exe/engine/package.py:289
 msgid "Topic"
@@ -2038,7 +2039,7 @@ msgid ""
 msgstr ""
 "Les preguntes veritat/fals presenten una declaració \n"
 " que els alumnes han de decidir si és certa o falsa. \n"
-" Aquest tipus de qüestions funcionen bé amb preguntes breus segons siga la resposta."
+" Aquest tipus de qüestions funcionen bé amb informació contextual \n que han de entendre per decidir  la resposta."
 
 #: exe/engine/field.py:2971
 msgid "Type a discussion topic here."
@@ -2076,7 +2077,7 @@ msgid ""
 "to provide the learner with."
 msgstr ""
 "Escriu la realimentació que vols \n"
-"proporcionar a l'estudiant quan s'equivoque."
+"proporcionar a l'estudiant."
 
 #: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
 msgid "Type the learning objectives for this resource."
@@ -2089,7 +2090,7 @@ msgid ""
 "be ambiguous."
 msgstr ""
 "Escriu la pregunta principal. Aquesta pregunta \n"
-" no pot ser ambigua. Utilitzar premisses negatives sol confondre els alumnes."
+" no pot ser ambigua. Utilitzar premisses negatives sol ser ambigu."
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -2111,7 +2112,7 @@ msgstr "No habilitat per combinar: Existeix un recurs duplicat de l'aplicació d
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
-msgstr ""
+msgstr "Desfes editar"
 
 #: exe/engine/package.py:289
 msgid "Unit"
@@ -2162,7 +2163,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:414
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "Utilitzeu aquest iDevice si heu carregat moltes imatges per mostrar."
+msgstr "Utilitzeu aquest iDevice si teniu moltes imatges per mostrar."
 
 #: exe/webui/editorpane.py:76
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
@@ -2175,7 +2176,7 @@ msgid ""
 "text through the text editing buttons associated with the field."
 msgstr ""
 "Utilitzeu aquest camp per escriure text. \n"
-" Sigueu breus el text no pot sobresurtir de l'interior dels botons."
+"Aquest iDevice té cap èmfasi aplicada tot i que el formatatge limitat pot ser aplicat \n al text a través dels botons que editen el text associats amb el camp."
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
@@ -2201,7 +2202,7 @@ msgid ""
 msgstr ""
 "Quan construïu un MCQ us cal considerar el següent: <ul>\n"
 "<li>Utilitzeu frases col·loquials   que els alumnes troben familiars.</li>\n"
-"<li>Voleu respostes concises.</li>\n"
+"<li>Poseu respostes concises.</li>\n"
 "<li>Hauria d'haver consistència entre la pregunta i les respostes</li>\n"
 "<li>Proporcioneu bastants opcions per desafiar als alumnes a pensar en la resposta.</li>\n"
 "<li>Procureu que la resposta correcta no estiga més detallada que les respostes incorrectes.</li>\n"
@@ -2214,7 +2215,7 @@ msgstr "Article viqui"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Wikibooks Article"
-msgstr "Article viquillibre"
+msgstr "Article de viquillibre"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Wikieducator Content"
@@ -2255,7 +2256,7 @@ msgstr "eXe"
 #: exe/webui/preferencespage.py:85 exe/webui/common.py:70
 #: exe/webui/editorpage.py:220
 msgid "eXe : elearning XHTML editor"
-msgstr "eXe: elearning editor XHTML"
+msgstr "eXe: elearning XHTML editor "
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
@@ -2314,14 +2315,14 @@ msgstr "títol"
 
 #: exe/webui/renderable.py:260
 msgid "tooltiptext"
-msgstr ""
+msgstr "eina per posar text"
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: class="dialog" autostretch="always" title="eXeex - About" orient="vertical"
 #: onload="sizeToContent()"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 msgid "eXeex - About"
-msgstr ""
+msgstr "eXeex - Sobre"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
@@ -2339,7 +2340,7 @@ msgstr "Opcions SCORM 1.2 "
 #: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
-msgstr ""
+msgstr "exelearning"
 
 #: exe/xului/templates/metadata.xul:<window
 #: xmlns:html="http://www.w3.org/1999/xhtml"
@@ -2357,15 +2358,13 @@ msgstr "Propietats del projecte"
 #: translate(document.documentElement, 0);"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 #: xmlns:n="http://nevow.com/ns/nevow/0.1" title="Package Properties">
-#, fuzzy
 msgid "Package Properties"
-msgstr "Propietats del projecte"
+msgstr "Propietats del paquet"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
-#, fuzzy
 msgid "The name given to the resource."
-msgstr "Escriu els objectius d'aprenentatge per a aquest recurs."
+msgstr "El nom donat al recurs"
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'red';" id="pp_scolinks" label="Add
@@ -2386,9 +2385,8 @@ msgstr "IEEE LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
-#, fuzzy
 msgid "The project's title."
-msgstr "Títol del projecte:"
+msgstr "El títol del projecte."
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
@@ -2415,13 +2413,13 @@ msgstr "Títol del projecte:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
-msgstr "Metadada:"
+msgstr "Metadada"
 
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr ""
+msgstr "Una entitat principalment responsable de fer el contingut del recurs."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2432,7 +2430,7 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
+msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
@@ -2458,7 +2456,7 @@ msgstr "Fons de la capçalera:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "The topic of the content of the resource."
-msgstr ""
+msgstr "El resum del contingut del recurs."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2518,7 +2516,7 @@ msgstr "Esborrar imatge"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "An entity responsible for making the resource available."
-msgstr ""
+msgstr "Una entitat responsable de fer el recurs disponible."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
@@ -2529,7 +2527,7 @@ msgstr "U"
 #: oncommand="this.style.color = 'red';" id="pp_backgroundImgTile" label="Tile
 #: background image?" checked="false">
 msgid "Tile background image?"
-msgstr "Poses mosaics d'imatge de fons?"
+msgstr "Poseu una imatge de de fons ?"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -2546,13 +2544,13 @@ msgstr "D"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Autor principal del recurs."
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "An entity responsible for making contributions to the content of the resource."
-msgstr ""
+msgstr "Una entitat responsable de fer contribucions al contingut del recurs."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
@@ -2578,15 +2576,14 @@ msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<label value="License:"
 #: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
-#, fuzzy
 msgid "Select a license."
-msgstr "Escull la llicència"
+msgstr "Escull la llicència."
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "A date of an event in the lifecycle of the resource."
-msgstr ""
+msgstr "Una data d'un event en el cicle de vida del recurs."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
@@ -2635,9 +2632,8 @@ msgstr "P"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution 3.0 License" id="ppcc31" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution 3.0 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement."
+msgstr "Llicència Creative Commons 3.0 Reconeixement."
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2654,9 +2650,8 @@ msgstr "label=\"Fitxer\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Share Alike 3.0 License" id="ppcc32" label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-Compartir igual."
+msgstr "Llicència Creative Commons 3.0 Reconeixement-Compartir igual."
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2676,15 +2671,14 @@ msgstr "label=\"Nou\" accesskey=\"n\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution No Derivatives 3.0 License" id="ppcc33" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-Sense Obres Derivades."
+msgstr "Llicència Creative Commons 3.0 Reconeixement-Sense Obres Derivades."
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "The nature or genre of the content of the resource."
-msgstr ""
+msgstr "El tipus o el genere del contingut del recurs."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
@@ -2694,9 +2688,8 @@ msgstr "label=\"Obrir\" accesskey=\"o\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial 3.0 License" id="ppcc34" label="Creative
 #: License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial."
+msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial."
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2712,9 +2705,8 @@ msgstr "label=\"Projectes Recents...\" accesskey=\"r\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial Share Alike 3.0 License" id="ppcc35"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igual."
+msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial-Compartir Igual."
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2736,9 +2728,8 @@ msgstr "label=\"Desa\" accesskey=\"s\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution Non-commercial No Derivatives 3.0 License" id="ppcc36"
 #: label="Creative License">
-#, fuzzy
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement- No comercial-Sense obres derivades."
+msgstr "Llicència Creative Commons 3.0 Reconeixement- No comercial-Sense obres derivades."
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2764,9 +2755,8 @@ msgstr "Llicència Creative Commons 2.5 Reconeixement."
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
-#, fuzzy
 msgid "Select a Format."
-msgstr "Selecciona el format"
+msgstr "Selecciona el format."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
@@ -2776,7 +2766,7 @@ msgstr "label=\"Imprimeix\" accesskey=\"p\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-Compartir igual."
+msgstr "Llicència Creative Commons 2.5 Reconeixement-Compartir igual"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
@@ -2791,7 +2781,7 @@ msgstr "label=\"Exporta\" accesskey=\"e\""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-Sense Obres Derivades."
+msgstr "Llicència Creative Commons 2.5 Reconeixement-Sense Obres Derivades"
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'red'" id="dc_format" label="Select Format">
@@ -2801,15 +2791,14 @@ msgstr "Selecciona el format"
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
 #: label="Common Cartridge">
-#, fuzzy
 msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"Pàgina simple\" accesskey=\"p\""
+msgstr "label=\"Common Cartridge\" accesskey=\"c\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
 #: License">
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial."
+msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2825,7 +2814,7 @@ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
 #: label="Creative License">
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igual."
+msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igual"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
@@ -2842,7 +2831,7 @@ msgstr "label=\"Fitxer de contingut IMS\" accesskey=\"i\""
 #: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
 #: License">
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-msgstr "Llicència Creative Commons 2.5 Reconeixement- No comercial-Sense obres derivades."
+msgstr "Llicència Creative Commons 2.5 Reconeixement- No comercial-Sense obres derivades"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
@@ -2864,7 +2853,7 @@ msgstr "Desenvolupant Nacions 2.0"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "An unambiguous reference to the resource within a given context."
-msgstr ""
+msgstr "Una no ambigua referència al recurs en el seu context donat. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
@@ -2874,7 +2863,7 @@ msgstr "Carpeta autodesplegable"
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Web pages footer."
-msgstr ""
+msgstr "Peu de pàgina web."
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2896,7 +2885,7 @@ msgstr "Peu de pàgina:"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr ""
+msgstr "Una referència al recurs del qual l'actual recurs és derivat."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
@@ -2908,7 +2897,7 @@ msgstr "label=\"Pàgina simple\" accesskey=\"p\""
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "An account of the content of the resource."
-msgstr ""
+msgstr "Un compte del contingut del recurs."
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2929,9 +2918,8 @@ msgstr "Taxonomia"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
-#, fuzzy
 msgid "Select a language."
-msgstr "Seleccionar la Llengua"
+msgstr "Seleccioneu la llengua."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
@@ -2942,7 +2930,7 @@ msgstr "label=\"Notes iPod\" accesskey=\"n\""
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Nom per defecte per al nodes del nivell 1"
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2974,7 +2962,7 @@ msgstr "label=\"Inserir Fitxer\" accesskey=\"i\""
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Nom per defecte per als nodes del nivell 2"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
@@ -3006,7 +2994,7 @@ msgstr "label=\"Eixir\" accesskey=\"q\""
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Nom per defecte per als nodes del nivell 3"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
@@ -3088,9 +3076,8 @@ msgstr "Avestan"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
 msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Manual eXe en línia\" accesskey=\"m\""
+msgstr "label=\"Tutorial d'eXe\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -3100,9 +3087,8 @@ msgstr "Aymara"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
 #: accesskey="m" label="eXe Manual">
-#, fuzzy
 msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Manual eXe en línia\" accesskey=\"m\""
+msgstr "label=\"Manual d'eXe \" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
@@ -3122,9 +3108,8 @@ msgstr "Bashkir"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
 #: Web Site">
-#, fuzzy
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
-msgstr "label=\"Xat en línia eXe\" accesskey=\"c\""
+msgstr "label=\"Lloc web d'eXe\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -3207,7 +3192,7 @@ msgstr "Bulgarian"
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
 #: tooltiptext="Promote node up in hierarchy">
 msgid "Promote node up in hierarchy"
-msgstr ""
+msgstr "Pujar node en la jerarquia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
@@ -3218,7 +3203,7 @@ msgstr "Burmese"
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
 #: tooltiptext="Demote node down in hierarchy">
 msgid "Demote node down in hierarchy"
-msgstr ""
+msgstr "Baixar node en la jerarquia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
@@ -3227,9 +3212,8 @@ msgstr "Català; Valencià"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
-#, fuzzy
 msgid "Move node up"
-msgstr "Moure cap amunt"
+msgstr "Moure node amunt"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
@@ -3239,9 +3223,8 @@ msgstr "Chamorro"
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
 #: tooltiptext="Move node down">
-#, fuzzy
 msgid "Move node down"
-msgstr "Moure cap avall"
+msgstr "Moure  node  avall"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
@@ -3271,7 +3254,7 @@ msgstr "Church Slavic"
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
-msgstr "Creació personalitzada"
+msgstr "Autoria"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
@@ -3376,7 +3359,7 @@ msgstr "German"
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek ">
 msgid "Greek "
-msgstr ""
+msgstr "Greek "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
@@ -3676,7 +3659,7 @@ msgstr "Chichewa; Nyanja"
 #: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
 #: label="Occitan; Provençal ">
 msgid "Occitan; Provençal "
-msgstr "Occitan; Provençal"
+msgstr "Occità; Provençal"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
 #: label="(Afan) Oromo ">
@@ -3986,7 +3969,7 @@ msgstr "Zulu"
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "A reference to a related resource."
-msgstr ""
+msgstr "Una referència per al recurs esmentat"
 
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
@@ -3997,7 +3980,7 @@ msgstr "Relació:"
 #: style="width:8em" tooltiptext="The extent or scope of the content
 #: resource.">
 msgid "The extent or scope of the content of the resource."
-msgstr ""
+msgstr "La extensió o abast del contingut del recurs."
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
@@ -4009,7 +3992,7 @@ msgstr "Cobertura:"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Information about rights held in and over the resource."
-msgstr ""
+msgstr "Informació sobre el drets involucrats al recurs."
 
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
 #: style="width:8em" tooltiptext="Information about rights held in and over
@@ -4068,3 +4051,4 @@ msgstr "Típicament, els Drets contindran una declaració d'administració dels 
 
 #~ msgid "Group mode:"
 #~ msgstr "Mode de grup:"
+
