@@ -60,4 +60,29 @@
     <NS1:type NC:parseType="Integer">4</NS1:type>
     <NS1:targetApplication RDF:resource="rdf:#$mJ7af3"/>
   </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:item:{1d5287d1-8a92-0001-1f31-1cec198018d8}"
+                   NS1:installLocation="winreg-app-global"
+                   NS1:version="2.0.20080718"
+                   NS1:name="AVG Security Toolbar"
+                   NS1:description="AVG Security Toolbar for Firefox"
+                   NS1:creator="AVG, Inc."
+                   NS1:homepageURL="http://www.avg.com/"
+                   NS1:iconURL="chrome://avg/skin/avg_logo.ico"
+                   NS1:userDisabled="true">
+    <NS1:type NC:parseType="Integer">2</NS1:type>
+    <NS1:targetApplication RDF:resource="rdf:#$QJcSG2"/>
+    <NS1:targetApplication RDF:resource="rdf:#$RJcSG2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:item:{3f963a5b-e555-4543-90e2-c3908898db71}"
+                   NS1:installLocation="winreg-app-global"
+                   NS1:version="8.0"
+                   NS1:name="AVG Safe Search"
+                   NS1:description="Guard against clicking malicious links."
+                   NS1:creator="AVG, Inc."
+                   NS1:homepageURL="http://www.avg.com"
+                   NS1:iconURL="chrome://searchshield/skin/avg_logo.ico"
+                   NS1:userDisabled="true">
+    <NS1:type NC:parseType="Integer">2</NS1:type>
+    <NS1:targetApplication RDF:resource="rdf:#$3KcSG2"/>
+  </RDF:Description>
 </RDF:RDF>

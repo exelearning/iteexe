@@ -522,6 +522,8 @@ function fileQuit() {
 function doQuit() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     nevow_clientToServerEvent('quit', this, '');
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + 500);
     klass = Components.classes["@mozilla.org/toolkit/app-startup;1"]
     interfac = Components.interfaces.nsIAppStartup
     instance = klass.getService(interfac)

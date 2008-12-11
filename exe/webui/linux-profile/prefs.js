@@ -9,6 +9,7 @@
  * For more information, see http://www.mozilla.org/unix/customizing.html#prefs
  */
 
+user_pref("avg.toolbar.first_installation", false);
 user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1165800059);
 user_pref("app.update.lastUpdateTime.background-update-timer", 1165800058);
 user_pref("app.update.lastUpdateTime.blocklist-background-update-timer", 1165800059);
