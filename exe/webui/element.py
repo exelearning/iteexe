@@ -1591,7 +1591,7 @@ class SelectOptionElement(Element):
         code is pretty much straight from the Multi-Option aka QuizOption
         """
         html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
-        html += common.elementInstruc(self.field.question._optionInstruc)
+        html += common.elementInstruc(self.field.question.optionInstruc)
 
         header = ""
         if self.index == 0:
@@ -1600,7 +1600,7 @@ class SelectOptionElement(Element):
         html += u"</td><td align=\"right\"><b>%s</b>\n" % header
         html += u"</td><td>\n"
         if self.index == 0: 
-             html += common.elementInstruc(self.field.question._correctAnswerInstruc)
+             html += common.elementInstruc(self.field.question.correctAnswerInstruc)
         html += "</td></tr><tr><td colspan=2>\n" 
 
         # rather than using answerElement.renderEdit(),
