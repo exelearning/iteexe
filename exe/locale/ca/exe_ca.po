@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-06 17:28+1300\n"
+"POT-Creation-Date: 2009-01-18 14:01+1300\n"
 "PO-Revision-Date: 2008-12-07 16:57+0000\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-doc@lists.kde.org>\n"
@@ -94,7 +94,8 @@ msgstr ""
 "<p>\n"
 " La imatge amb text IDevice pot ser emprada en un nombre de llocs per suportar conjuntament la tasca emocional ( afectiva ) i tasques d'aprenentatge (cognitives) al continguts de eXe . \n"
 "</p><p>\n"
-" Integracions visuals amb resums verbals</b>\n </p><p>\n"
+" Integracions visuals amb resums verbals</b>\n"
+" </p><p>\n"
 "Coneixements psicològics  indiquen que els aprenents presents amb una\n"
 "imatge representativa i un resum verbal ( que es presentat simultaneament )  poden reduir la carrega cognitiva i augmentar el nivell de retenció.\n"
 "Aquest iDevice pot ser emprat per presentar una imatge (fotografia , diagrama, o gràfic ) amb un breu resum que cobrisca els principals punts relatius a la imatge. Per exemple, si esteu ensenyant les funcions del motor de combustió interna  , /n podríeu  tindre una representació visual de les quatre posicions del pistó amb un breu resum dels aspectes de cada representació visual. \n"
@@ -116,7 +117,9 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
 "<p>Entreu el text per l'activitat de buits al camp de buits\n"
-" pegant el text des d'un altra font o teclejant el text directament al camp.\n </p><p> Per seleccionar paraules per amagar, feu doble clic sobre la paraula \n  per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p>"
+" pegant el text des d'un altra font o teclejant el text directament al camp.\n"
+" </p><p> Per seleccionar paraules per amagar, feu doble clic sobre la paraula \n"
+"  per seleccionar-la i premeu al botó ocultar/mostrar paraules de sota.</p>"
 
 #: exe/engine/field.py:2725
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
@@ -331,7 +334,9 @@ msgstr "Alinear:"
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr "L'alineament et permet escollir \n on serà col·locada la imatge en la pantalla."
+msgstr ""
+"L'alineament et permet escollir \n"
+" on serà col·locada la imatge en la pantalla."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
@@ -557,7 +562,7 @@ msgstr "Text amb buits"
 msgid "Correct"
 msgstr "Correcte"
 
-#: exe/webui/testoptionelement.py:110 exe/webui/element.py:1598
+#: exe/webui/testoptionelement.py:111 exe/webui/element.py:1598
 #: exe/webui/element.py:1895
 msgid "Correct Option"
 msgstr "Opció correcta"
@@ -600,7 +605,7 @@ msgstr "Esborrar Arxiu"
 msgid "Delete Image"
 msgstr "Esborrar Imatge"
 
-#: exe/webui/testoptionelement.py:138 exe/webui/element.py:1626
+#: exe/webui/testoptionelement.py:139 exe/webui/element.py:1626
 #: exe/webui/element.py:1923
 msgid "Delete option"
 msgstr "Esborrar opció"
@@ -1364,7 +1369,7 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/engine/field.py:3076 exe/engine/field.py:3125
-#: exe/webui/testoptionelement.py:105 exe/webui/element.py:1593
+#: exe/webui/testoptionelement.py:106 exe/webui/element.py:1593
 #: exe/webui/element.py:1890
 msgid "Option"
 msgstr "Opció"
@@ -2039,7 +2044,8 @@ msgid ""
 msgstr ""
 "Les preguntes veritat/fals presenten una declaració \n"
 " que els alumnes han de decidir si és certa o falsa. \n"
-" Aquest tipus de qüestions funcionen bé amb informació contextual \n que han de entendre per decidir  la resposta."
+" Aquest tipus de qüestions funcionen bé amb informació contextual \n"
+" que han de entendre per decidir  la resposta."
 
 #: exe/engine/field.py:2971
 msgid "Type a discussion topic here."
@@ -2176,7 +2182,8 @@ msgid ""
 "text through the text editing buttons associated with the field."
 msgstr ""
 "Utilitzeu aquest camp per escriure text. \n"
-"Aquest iDevice té cap èmfasi aplicada tot i que el formatatge limitat pot ser aplicat \n al text a través dels botons que editen el text associats amb el camp."
+"Aquest iDevice té cap èmfasi aplicada tot i que el formatatge limitat pot ser aplicat \n"
+" al text a través dels botons que editen el text associats amb el camp."
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
@@ -4051,4 +4058,3 @@ msgstr "Típicament, els Drets contindran una declaració d'administració dels 
 
 #~ msgid "Group mode:"
 #~ msgstr "Mode de grup:"
-

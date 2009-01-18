@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-06 17:28+1300\n"
+"POT-Creation-Date: 2009-01-18 14:01+1300\n"
 "PO-Revision-Date: 2006-07-28 15:36+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Matthew <msherborne@gmail.com>\n"
@@ -475,7 +475,7 @@ msgstr ""
 msgid "Correct"
 msgstr ""
 
-#: exe/webui/testoptionelement.py:110 exe/webui/element.py:1598
+#: exe/webui/testoptionelement.py:111 exe/webui/element.py:1598
 #: exe/webui/element.py:1895
 msgid "Correct Option"
 msgstr ""
@@ -514,7 +514,7 @@ msgstr ""
 msgid "Delete Image"
 msgstr ""
 
-#: exe/webui/testoptionelement.py:138 exe/webui/element.py:1626
+#: exe/webui/testoptionelement.py:139 exe/webui/element.py:1626
 #: exe/webui/element.py:1923
 msgid "Delete option"
 msgstr ""
@@ -1202,7 +1202,7 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/engine/field.py:3076 exe/engine/field.py:3125
-#: exe/webui/testoptionelement.py:105 exe/webui/element.py:1593
+#: exe/webui/testoptionelement.py:106 exe/webui/element.py:1593
 #: exe/webui/element.py:1890
 msgid "Option"
 msgstr ""

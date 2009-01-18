@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-06 17:28+1300\n"
+"POT-Creation-Date: 2009-01-18 14:01+1300\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -566,7 +566,7 @@ msgstr "Täida lüngad"
 msgid "Correct"
 msgstr "Õige"
 
-#: exe/webui/testoptionelement.py:110 exe/webui/element.py:1598
+#: exe/webui/testoptionelement.py:111 exe/webui/element.py:1598
 #: exe/webui/element.py:1895
 msgid "Correct Option"
 msgstr "Õige valik"
@@ -611,7 +611,7 @@ msgstr "Kustuta fail"
 msgid "Delete Image"
 msgstr "Kustuta pilt"
 
-#: exe/webui/testoptionelement.py:138 exe/webui/element.py:1626
+#: exe/webui/testoptionelement.py:139 exe/webui/element.py:1626
 #: exe/webui/element.py:1923
 msgid "Delete option"
 msgstr "Kustuta valik"
@@ -1363,7 +1363,7 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/engine/field.py:3076 exe/engine/field.py:3125
-#: exe/webui/testoptionelement.py:105 exe/webui/element.py:1593
+#: exe/webui/testoptionelement.py:106 exe/webui/element.py:1593
 #: exe/webui/element.py:1890
 msgid "Option"
 msgstr "Valik"
