@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2004-2009 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -556,29 +556,12 @@ class FieldWithResources(Field):
         and that TITLE==NAME
         """
         anchor_names = []
-        starting_tag_bits = '<a title="'
-        next_anchor_pos = content.find(starting_tag_bits)
-        middle_tag_bits = '" name="'
-        closing_tag_bits = '"></a>'
-        while next_anchor_pos >= 0:
-            # and the title and name should exist before the closing:
-            title_start_pos = next_anchor_pos + len(starting_tag_bits)
-            title_end_pos = content.find(middle_tag_bits, next_anchor_pos)
-            this_anchor_title = content[title_start_pos : title_end_pos ]
-
-            name_start_pos = title_end_pos + len(middle_tag_bits)
-            name_end_pos = content.find(closing_tag_bits, next_anchor_pos)
-            this_anchor_name = content[name_start_pos : name_end_pos ]
-
-            # could compare the positions here to ensure they are in order,
-            # as well as compare the title AND the name, which should match.
-            # warn if they are not matching, but for now just go with the name.
-            if this_anchor_name: 
-                anchor_names.append(this_anchor_name)
-
-            next_end_pos = name_end_pos + len(closing_tag_bits)
-            next_anchor_pos = content.find(starting_tag_bits, next_end_pos)
-
+        # match fairly strictly anchors created in TinyMCE style
+        matches = re.findall(r'''<a\stitle="(?P<title>[^">]+)"\s
+          name="(?P<name>[^">]+)"></a>''',content, re.VERBOSE)
+        for (title, name) in matches:
+            if title == name:
+                anchor_names.append(title)
         return anchor_names
 
     def ListActiveInternalLinks(self, content):
