@@ -14,6 +14,8 @@ import tempfile
 
 SRCDIR = os.path.abspath('../../..')
 WDIR = os.getcwd()
+#exepkg = 'python-exe'
+exepkg = 'exe'
 changelog = 'debian/changelog'
 
 # this is done in a way consistent with the other builds...
@@ -49,7 +51,8 @@ while True:
             sys.exit(1)
         versionstring = tl.group('version') + '.0.' + tl.group('revision')
         timestamp = time.strptime(tl.group('date'), '%Y-%m-%d')
-        cl.write("python-exe (%s-ubuntu1) unstable; urgency=low\n" % versionstring)
+        cl.write("%s (%s-ubuntu1) unstable; urgency=low\n" % 
+                (exepkg, versionstring))
     elif nl.strip() == "":
         cl.write("\n")
         cl.write(" -- eXe Project <exe@exelearning.org>  %s\n" %
@@ -58,7 +61,8 @@ while True:
     else:
         if need_version:
             need_version = False
-            cl.write("python-exe (%s-ubuntu1) unstable; urgency=low\n" % version.version)
+            cl.write("%s (%s-ubuntu1) unstable; urgency=low\n" % 
+                 (exepkg, version.version))
         cl.write('    ' + nl)
 news.close()
 
