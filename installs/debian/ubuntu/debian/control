@@ -3,8 +3,8 @@ Maintainer: Jim Tittsler <jim@eXeLearning.org>
 Section: python
 Priority: optional
 Standards-Version: 3.6.1
-Build-Depends-Indep: debhelper (>= 5.0.38), python-support (>0.5.3), python-all-dev (>= 2.4)
-XS-Python-Version: all, >=2.4
+Build-Depends: debhelper (>= 5.0.38), python-support (>=0.5.3), python-all-dev (>= 2.4)
+XS-Python-Version: current, >=2.4
 
 Package: exe
 Architecture: i386
@@ -13,7 +13,7 @@ Conflicts: python2.3-exe, python2.4-exe, python2.5-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe
 Provides: ${python:Provides}
 XB-Python-Version: ${python:Versions}
-Description: eLearning XHTML editor [dummy package]
+Description: eLearning XHTML editor
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.
  Content generated using eXe can be used by any Learning Management System.
