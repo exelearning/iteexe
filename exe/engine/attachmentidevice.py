@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2006-2009 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -100,10 +100,10 @@ class AttachmentIdevice(Idevice):
         log.debug(u"setAttachment "+unicode(attachmentPath))
         resourceFile = Path(attachmentPath)
 
-        assert(self.parentNode,
-               _('Attachment %s has no parentNode') % self.id)
-        assert(self.parentNode.package,
-               _('iDevice %s has no package') % self.parentNode.id)
+        assert self.parentNode, \
+               _('Attachment %s has no parentNode') % self.id
+        assert self.parentNode.package, \
+               _('iDevice %s has no package') % self.parentNode.id
 
         if resourceFile.isfile():
             if self.userResources:

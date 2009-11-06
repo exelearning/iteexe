@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2005, University of Auckland
-# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2006-2009 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -305,7 +305,7 @@ class MainPage(RenderableLivePage):
         # Then use the last filename that the package was loaded from/saved to
         if not filename:
             filename = self.package.filename
-            assert (filename, 'Somehow save was called without a filename on a package that has no default filename.')
+            assert filename, 'Somehow save was called without a filename on a package that has no default filename.'
         # Add the extension if its not already there and give message if not saved
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
         try:

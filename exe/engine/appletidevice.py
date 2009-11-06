@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
-# Copyright 2004-2008 eXe Project, http://eXeLearning.org/
+# Copyright 2004-2009 eXe Project, http://eXeLearning.org/
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -126,8 +126,9 @@ you created in Geogebra.</p>""")
         """ 
         log.debug(u"uploadFile "+unicode(filePath))
         resourceFile = Path(filePath)
-        assert(self.parentNode, _('file %s has no parentNode') % self.id)
-        assert(self.parentNode.package, _('iDevice %s has no package') % self.parentNode.id)
+        assert self.parentNode, _('file %s has no parentNode') % self.id
+        assert self.parentNode.package, \
+                _('iDevice %s has no package') % self.parentNode.id
         
         if resourceFile.isfile():
             self.message = ""

@@ -2380,10 +2380,10 @@ class ImageField(Field):
         log.debug(u"setImage "+unicode(imagePath))
         resourceFile = Path(imagePath)
 
-        assert(self.idevice.parentNode,
-               'Image '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
+        assert self.idevice.parentNode, \
+               'Image '+self.idevice.id+' has no parentNode'
+        assert self.idevice.parentNode.package, \
+               'iDevice '+self.idevice.parentNode.id+' has no package'
 
         if resourceFile.isfile():
             if self.imageResource:
@@ -2462,10 +2462,10 @@ class MagnifierField(Field):
         log.debug(u"setImage "+unicode(imagePath))
         resourceFile = Path(imagePath)
 
-        assert(self.idevice.parentNode,
-               'Image '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
+        assert self.idevice.parentNode, \
+               'Image '+self.idevice.id+' has no parentNode'
+        assert self.idevice.parentNode.package, \
+               'iDevice '+self.idevice.parentNode.id+' has no package'
 
         if resourceFile.isfile():
             if self.imageResource:
@@ -2527,10 +2527,10 @@ MP3 file. This will appear in the players title bar as well.""")
         
         resourceFile = Path(mediaPath)
 
-        assert(self.idevice.parentNode,
-               'Media '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
+        assert self.idevice.parentNode, \
+               'Media '+self.idevice.id+' has no parentNode'
+        assert self.idevice.parentNode.package, \
+               'iDevice '+self.idevice.parentNode.id+' has no package'
 
         if resourceFile.isfile():
             if self.mediaResource:
@@ -2825,10 +2825,10 @@ this iDevice.""")
         log.debug(u"setFlash "+unicode(flashPath))
         resourceFile = Path(flashPath)
 
-        assert(self.idevice.parentNode,
-               'Flash '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
+        assert self.idevice.parentNode, \
+               'Flash '+self.idevice.id+' has no parentNode'
+        assert self.idevice.parentNode.package, \
+               'iDevice '+self.idevice.parentNode.id+' has no package'
 
         if resourceFile.isfile():
             if self.flashResource:
@@ -2890,10 +2890,10 @@ this iDevice.""")
         log.debug(u"setFlash "+unicode(flashPath))
         resourceFile = Path(flashPath)
 
-        assert(self.idevice.parentNode,
-               'Flash '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
+        assert self.idevice.parentNode, \
+               'Flash '+self.idevice.id+' has no parentNode'
+        assert self.idevice.parentNode.package, \
+               'iDevice '+self.idevice.parentNode.id+' has no package'
 
         if resourceFile.isfile():
             if self.flashResource:
@@ -3396,10 +3396,10 @@ class AttachmentField(Field):
         log.debug(u"setAttachment "+unicode(attachPath))
         resourceFile = Path(attachPath)
 
-        assert(self.idevice.parentNode,
-               'Attach '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
+        assert self.idevice.parentNode, \
+               'Attach '+self.idevice.id+' has no parentNode'
+        assert self.idevice.parentNode.package, \
+               'iDevice '+self.idevice.parentNode.id+' has no package'
 
         if resourceFile.isfile():
             if self.attachResource:
