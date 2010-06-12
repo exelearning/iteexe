@@ -32,7 +32,11 @@ Date:    7 Mar 2004
 
 from __future__ import generators
 
-import sys, os, fnmatch, glob, shutil, codecs, md5
+import sys, os, fnmatch, glob, shutil, codecs
+try:
+        from hashlib import md5
+except ImportError:
+        from md5 import md5
 from tempfile import mkdtemp
 import logging
 log = logging.getLogger(__name__)
