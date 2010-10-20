@@ -18,18 +18,6 @@ WDIR = os.getcwd()
 exepkg = 'exe'
 changelog = 'debian/changelog'
 
-# this is done in a way consistent with the other builds...
-#   even though we have the info without doing the import
-REVISION_FILE = os.path.join(SRCDIR, 'exe/engine/version_svn.py')
-os.chdir(SRCDIR)
-try:
-    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
-    psvn.wait()
-    revision = psvn.stdout.read().strip()
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-except OSError:
-    print "*** Warning: 'svnversion' tool not available to update revision number"
-
 # get the version/revision
 sys.path.insert(0, SRCDIR)
 from exe.engine import version

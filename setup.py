@@ -10,24 +10,6 @@ from setuptools                 import setup
 from exe.engine                import version
 from exe.engine.path           import Path
 
-# update the svn revision number
-REVISION_FILE = 'exe/engine/version_svn.py'
-
-try:
-    os.unlink(REVISION_FILE)
-except OSError:
-    pass
-
-try:
-    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
-    psvn.wait()
-    revision = psvn.stdout.read().strip()
-except OSError:
-    revision = None
-
-if revision:
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-
 # Before we install, make sure all the mimetex binaries are executable
 Path('exe/webui/templates/mimetex.cgi').chmod(0755)
 Path('exe/webui/templates/mimetex.64.cgi').chmod(0755)
