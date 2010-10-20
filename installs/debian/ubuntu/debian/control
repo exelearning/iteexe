@@ -3,13 +3,14 @@ Section: python
 Priority: optional
 Maintainer: Jim Tittsler <jim@eXeLearning.org>
 Homepage: http://eXeLearning.org/
-Vcs-Browser: http://exe.svn.sourceforge.net/viewvc/exe/
+Vcs-Browser: http://exe.git.sourceforge.net/git/gitweb-index.cgi
 Standards-Version: 3.6.1
-Build-Depends: debhelper (>= 5.0.38), python-support (>=0.5.3), python-all-dev (>= 2.4)
+Build-Depends: debhelper (>= 5.0.38), python-support (>=0.5.3), python (>= 2.4)
+XS-Python-Version: >= 2.4
 
 Package: exe
 Architecture: i386
-Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging
+Depends: ${misc:Depends}, ${python:Depends}, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe
 Description: eLearning XHTML editor
