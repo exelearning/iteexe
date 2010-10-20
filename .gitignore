@@ -12,4 +12,5 @@ exe.egg-info
 .DS_Store
 # duelling version control systems
 .svn
-
+# eXe manual
+exe/webui/docs/manual
