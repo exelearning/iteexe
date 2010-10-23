@@ -34,9 +34,9 @@ from __future__ import generators
 
 import sys, os, fnmatch, glob, shutil, codecs
 try:
-        from hashlib import md5
+        import hashlib
 except ImportError:
-        from md5 import md5
+        import md5 as hashlib
 from tempfile import mkdtemp
 import logging
 log = logging.getLogger(__name__)
@@ -1043,7 +1043,7 @@ class Path(unicode):
             file_ = file(self, 'rb')
         except:
             raise Exception("Could not open %s" % self)
-        hasher = md5.new()
+        hasher = hashlib.md5()
         while True:
             block = file_.read(8096)
             if not block:
