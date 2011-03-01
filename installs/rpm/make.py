@@ -34,7 +34,7 @@ print "Making version: %s release: %s" % (version.version, clrelease)
 os.chdir(SRCDIR)
 tarball = os.path.join(TOPDIR, 'SOURCES', 'exe-' + version.version + '-source.tgz')
 try:
-    ret = subprocess.call('tar -czf %s --wildcards-match-slash --exclude="*.svn*" --exclude "*.pyc" --exclude="*.tmp" --exclude="*~" --exclude="dist/*" --exclude="build/*" --exclude="pyxpcom/*" exe' %
+    ret = subprocess.call('tar -czf %s --wildcards-match-slash --exclude=.git --exclude="*.svn*" --exclude "*.pyc" --exclude="*.tmp" --exclude="*~" --exclude="dist/*" --exclude="build/*" --exclude="pyxpcom/*" exe' %
                               tarball, shell = True)
     if ret < 0:
 	print >>sys.stderr, "Unable to make tarball signal", -ret
