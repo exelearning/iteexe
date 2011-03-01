@@ -15,18 +15,7 @@ TOPDIR = os.path.join(os.environ['HOME'], '.rpm')
 #SRCDIR = '/usr/local/src'
 SRCDIR = os.path.abspath('../../..')
 
-# this is done in a way consistent with the other builds...
-#   even though we have the info without doing the import
-REVISION_FILE = os.path.join(SRCDIR, 'exe/exe/engine/version_svn.py')
-os.chdir(os.path.join(SRCDIR, 'exe'))
-try:
-    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
-    psvn.wait()
-    revision = psvn.stdout.read().strip()
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-except OSError:
-    print "*** Warning: 'svnversion' tool not available to update revision number"
-
+# get the version/revision
 sys.path.insert(0, os.path.join(SRCDIR, 'exe'))
 from exe.engine import version
 
