@@ -55,3 +55,4 @@ user_pref("capability.policy.allowclipboard.sites", "http://127.0.0.1:8081 http:
 user_pref("capability.policy.allowclipboard.Clipboard.cutcopy", "allAccess");
 user_pref("capability.policy.allowclipboard.Clipboard.paste", "allAccess");
 user_pref("plugin.default_plugin_disabled", true);
+user_pref("browser.rights.3.shown", true);

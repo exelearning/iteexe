@@ -12,10 +12,14 @@
   <RDF:Description RDF:about="chrome://browser/content/browser.xul">
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#main-window"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#PersonalToolbar"/>
+    <NC:persist RDF:resource="chrome://browser/content/browser.xul#toolbar-menubar"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#nav-bar"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-box"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-title"/>
   </RDF:Description>
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#toolbar-menubar"
+                   mode="icons"
+                   autohide="true" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#PersonalToolbar"
                    collapsed="true" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-title"
