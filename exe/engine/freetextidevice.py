@@ -34,7 +34,7 @@ class FreeTextIdevice(Idevice):
     """
     persistenceVersion = 7
 
-    def __init__(self, content=""):
+    def __init__(self, content="", type=None, parent=None):
         Idevice.__init__(self, x_(u"Free Text"), 
                          x_(u"University of Auckland"), 
                          x_(u"""The majority of a learning resource will be 
@@ -50,8 +50,17 @@ text through the text editing buttons associated with the field."""),
         self.content.idevice = self
         if content:
             self.edit = False
+        self.type = type
+        self.parent = parent
+        self.childs = []
+        if parent:
+            self.parent.childs.append(self)
 
-   
+    def setContent(self, content_w_resourcePaths="", content_wo_resourcePaths=""):
+        self.content.content = content_w_resourcePaths
+        self.content.content_w_resourcePaths = content_w_resourcePaths
+        self.content.content_wo_resourcePaths = content_wo_resourcePaths
+
     def getResourcesField(self, this_resource):
         """
         implement the specific resource finding mechanism for this iDevice:

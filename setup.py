@@ -2,7 +2,6 @@
 
 # setup.py
 import os
-import subprocess
 from setuptools                 import setup
 #from distutils.core            import setup
 
@@ -19,9 +18,9 @@ except OSError:
     pass
 
 try:
-    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
-    psvn.wait()
-    revision = psvn.stdout.read().strip()
+    line = open('debian/changelog').readline()
+    build = line.split('(')[1].split(')')[0]
+    revision = build.split(version.release + ".")[1]
 except OSError:
     revision = None
 
@@ -79,7 +78,7 @@ opts = {
 }
 
 setup(name         = version.project,
-      version      = version.release,
+      version      = build,
       description  = "eLearning XHTML editor",
       long_description = """\
 The eXe project is an authoring environment to enable teachers

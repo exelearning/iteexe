@@ -37,6 +37,7 @@ PREFERENCES = "Preferences";
 METADATA_EDITOR = "metadata editor";
 ABOUT = "About";
 SELECT_THE_PARENT_FOLDER_FOR_EXPORT_ = "Select the parent folder for export.";
+SELECT_THE_PARENT_FOLDER_FOR_IMPORT_ = "Select the parent folder for import.";
 EXPORT_TEXT_PACKAGE_AS = "Export text package as";
 TEXT_FILE = "Text File";
 EXPORT_COMMONCARTRIDGE_AS = "Export Common Cartridge as";
@@ -54,6 +55,8 @@ var haveLoaded = false
 
 // Set to false to stop selects doing page reloads
 var clickon = true 
+
+var importProgressWindow = null
 
 // Takes a server tree node id eg. '1' and returns a xul treeitem elemtent
 // reference
@@ -589,6 +592,81 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
     list.appendChild(newListItem)
 }
 
+function importPackage(importType){
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    if (importType == 'html') {
+        fp.init(window, SELECT_THE_PARENT_FOLDER_FOR_IMPORT_, nsIFilePicker.modeGetFolder);
+        var res = fp.show();
+        if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+            nevow_clientToServerEvent('importPackage', this, '', importType, fp.file.path);
+        }
+    }
+}
+
+function openCenteredWindow(url) {
+    var width = 600;
+    var height = 100;
+    var left = parseInt(screenX + (outerWidth/2) - (width/2));
+    var top = parseInt(screenY + (outerHeight/2) - (height/2));
+    var windowFeatures = "width=" + width + ",height=" + height + ",status=0,resizable=1,left=" + left + ",top=" + top + "screenX=" + left + ",screenY=" + top;
+    return window.open(url, "subWind", windowFeatures);
+}
+function XHinitImportProgressWindow(msg)
+{
+	if ( ! importProgressWindow ) { 
+		importProgressWindow = openCenteredWindow('about:blank')
+		importProgressWindow.document.open();
+		base = '<?xml version="1.0" encoding="UTF-8"?>'+
+			'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+
+			'<html xmlns="http://www.w3.org/1999/xhtml">'+
+			'<head>'+
+			'<title>Importando HTML...</title>'+
+			'<style type="text/css">'+
+				'@import url(/css/exe.css);'+
+				'@import url(/style/base.css);'+
+				'@import url(/style/default/content.css);'+
+			'</style>'+
+			'</head>'+
+			'<body>'+
+			'<div id="divmsg">'+
+			'<p id="msg">' + msg + '</p>'+
+			'</div>'+
+			'<div id=diverror style="display: none">'+ 
+			'<pre id="error"></pre>'+
+			'</div>'+
+			'</body>'
+		importProgressWindow.document.write(base);
+		importProgressWindow.document.close();
+	}
+}
+
+function XHerrorImportProgressWindow(error)
+{
+	if ( importProgressWindow ) {
+		importProgressWindow.document.getElementById('divmsg').style.display = "none";
+		importProgressWindow.document.getElementById('error').innerHTML = error;
+		importProgressWindow.document.getElementById('diverror').style.display = "";
+		importProgressWindow.resizeTo(800,200);
+		importProgressWindow.moveTo(importProgressWindow.screenX-100,importProgressWindow.screenY-50);		
+	}
+}
+
+function XHupdateImportProgressWindow(msg)
+{
+	if ( importProgressWindow ) {
+		importProgressWindow.document.getElementById('msg').innerHTML = msg;
+	}
+}
+
+function XHcloseImportProgressWindow()
+{
+	if ( importProgressWindow ) { 
+		importProgressWindow.close();
+	}
+}
 
 // This function takes care of all
 // exports. At the moment, this means web page export

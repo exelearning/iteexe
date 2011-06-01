@@ -15,6 +15,7 @@ user_pref("app.update.lastUpdateTime.background-update-timer", 1165800058);
 user_pref("app.update.lastUpdateTime.blocklist-background-update-timer", 1165800059);
 user_pref("app.update.lastUpdateTime.search-engine-update-timer", 1165800064);
 user_pref("browser.shell.checkDefaultBrowser", false);
+user_pref("browser.tabs.autoHide", true);
 user_pref("capability.principal.codebase.p0.granted", "UniversalXPConnect");
 user_pref("capability.principal.codebase.p0.id", "http://127.0.0.1:8081");
 user_pref("capability.principal.codebase.p0.subjectName", "");
