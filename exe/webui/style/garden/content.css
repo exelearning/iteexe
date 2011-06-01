@@ -1,0 +1,86 @@
+/*  ===========================================================================
+    eXe
+    Copyright 2004-2005, University of Auckland
+
+    garden theme display styles.
+    =========================================================================== */
+
+body {
+    background: #F2FFBF;
+}
+
+a { color: #FF6600;
+    text-decoration: none;
+    border: 0;
+}
+
+a:hover {
+    color: #B34700;
+}
+
+p#nodeTitle { 
+    color: #A1B386;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+div#nodeDecoration {
+    padding: 2px;
+    border-bottom: 2px solid #ACBF60;
+}
+
+
+/* --- iDevice Styles -- */
+
+.emphasis0 {
+padding-top: 10px;
+
+}
+
+.emphasis1 {
+    background-color: #FAFFE6;
+    padding-left: 10px;
+    border: 1px solid #ACBF60;
+    margin: 10px;
+}
+
+.iDevice p, .iDevice div.block {
+    padding-left: 24px;
+    line-height: 115%
+    text-align: left;
+}
+
+.iDevice li {
+	list-style-position: outside;
+}
+
+.iDeviceTitle {
+    color: #A1B386;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}    
+
+.iDevice_icon {
+    padding-top: 10px;
+}
+
+input.feedbackbutton {
+    background: #AACCB5;
+    color: #F2FFBF;
+}
+
+
+
+/* styles for image with text iDevice */
+
+p.reading_feedback {
+    border: 1px dashed #ADADAD;
+    background-color: #FFF;
+}
+
+.image_text { 
+    border: 1px solid #CCC; 
+    background: #F9F9F9;
+    padding: 4px;
+    margin: 0px 20px 4px 4px;
+}

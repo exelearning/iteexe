@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+  <vbox id="dublinCore" style="overflow: auto;" flex="1">
+    <groupbox flex="0">
+      <caption id="dcCaptionMetadata" label="Dublin Core Metadata"/>
+      <vbox flex="0">
+        <hbox align="center">
+          <label id="dcTitle" style="width:8em" value="Title:" tooltiptext="The name given to the resource."/>
+          <textbox id="dc_title" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcCreator" style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
+          <textbox id="dc_creator" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcSubject" style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
+          <textbox id="dc_subject" size="40" onchange="this.style.color = 'blue'" />
+          <image src="/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+             <description id="dcDescSubject">
+                Typically, Subject will be expressed as keywords, key phrases or
+                classification codes that describe a topic of the resource.
+                Recommended best practice is to select a value from a controlled
+                vocabulary or formal classification scheme.
+             </description>
+          </groupbox>
+        </hbox>
+        <hbox align="center">
+          <label id="dcDescription" style="width:8em" value="Description:" tooltiptext="An account of the content of the resource."/>
+          <textbox id="dc_description" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcPublisher" style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
+          <textbox id="dc_publisher" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcContributors" style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource."/>
+          <textbox id="dc_contributors" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcDate" style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource."/>
+          <textbox id="dc_date" size="40" onchange="this.style.color = 'blue'" />
+          <image src="/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description id="dcDescDate">
+                 Typically, Date will be associated with the creation or
+                 availability of the resource. Recommended best practice for
+                 encoding the date value is defined in a profile called
+                 <html:em>ISO 8601</html:em> 
+                 <html:a href="/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a>
+                 and includes (among others) dates of the form YYYY-MM-DD.
+            </description>
+          </groupbox>
+        </hbox>
+        <hbox align="center">
+          <label id="dcType" style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
+          <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'blue'" />
+          <image src="/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description id="dcDescType">
+              Type includes terms describing general categories, functions, or
+              genres, for content. Recommended best practice is to select a value
+              from a controlled vocabulary or controlled classification scheme.<html:br/>
+              To describe the physical or digital manifestation of the resource,
+              use the FORMAT element.
+            </description>
+          </groupbox>
+        </hbox>
+        <hbox align="center">
+          <label id="dcFormat" style="width:8em" value="Format:" tooltiptext="Select a Format."/>
+          <menulist id="dc_format" label="Select Format" onchange="this.style.color = 'blue'" >
+            <menupopup>
+              <menuitem id="dcmiXHTML"   label="XHTML" value="XHTML"/>
+              <menuitem id="dcmiSCORM"   label="SCORM 1.2" value="SCORM 1.2"/>
+              <menuitem id="dcmiIMS"     label="IMS Content Package 1.1.3" value="IMS-CP"/>
+              <menuitem id="dcmiWebSite" label="Web Site" value="Web Site"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <hbox align="center">
+          <label id="dcIdentifier" style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
+          <textbox id="dc_identifier" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcSource" style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived."/>
+          <textbox id="dc_source" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcLanguage" style="width:8em" value="Language:" tooltiptext="Select a language."/>
+          <menulist id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
+            <menupopup>
+                <!-- The unique ids for these menu items only exist for
+                     translation. The name dcmixx comes from:
+                     dc = Dublin Core
+                     mi = Menu Item
+                     xx = Language Code -->
+                <menuitem id="dcmiaa" value="aa" label="Afar "/>
+                <menuitem id="dcmiab" value="ab" label="Abkhazian "/>
+                <menuitem id="dcmiae" value="ae" label="Avestan "/>
+                <menuitem id="dcmiaf" value="af" label="Afrikaans "/>
+                <menuitem id="dcmiam" value="am" label="Amharic "/>
+                <menuitem id="dcmiar" value="ar" label="Arabic "/>
+                <menuitem id="dcmias" value="as" label="Assamese "/>
+                <menuitem id="dcmiay" value="ay" label="Aymara "/>
+                <menuitem id="dcmiaz" value="az" label="Azerbaijani "/>
+                <menuitem id="dcmiba" value="ba" label="Bashkir "/>
+                <menuitem id="dcmibe" value="be" label="Byelorussian; Belarusian "/>
+                <menuitem id="dcmibg" value="bg" label="Bulgarian "/>
+                <menuitem id="dcmibh" value="bh" label="Bihari "/>
+                <menuitem id="dcmibi" value="bi" label="Bislama "/>
+                <menuitem id="dcmibn" value="bn" label="Bengali; Bangla "/>
+                <menuitem id="dcmibo" value="bo" label="Tibetan "/>
+                <menuitem id="dcmibr" value="br" label="Breton "/>
+                <menuitem id="dcmibs" value="bs" label="Bosnian "/>
+                <menuitem id="dcmica" value="ca" label="Catalan "/>
+                <menuitem id="dcmice" value="ce" label="Chechen "/>
+                <menuitem id="dcmich" value="ch" label="Chamorro "/>
+                <menuitem id="dcmico" value="co" label="Corsican "/>
+                <menuitem id="dcmics" value="cs" label="Czech "/>
+                <menuitem id="dcmicu" value="cu" label="Church Slavic "/>
+                <menuitem id="dcmicv" value="cv" label="Chuvash "/>
+                <menuitem id="dcmicy" value="cy" label="Welsh "/>
+                <menuitem id="dcmida" value="da" label="Danish "/>
+                <menuitem id="dcmide" value="de" label="German "/>
+                <menuitem id="dcmidz" value="dz" label="Dzongkha; Bhutani "/>
+                <menuitem id="dcmiel" value="el" label="Greek "/>
+                <menuitem id="dcmien" value="en" label="English "/>
+                <menuitem id="dcmieo" value="eo" label="Esperanto "/>
+                <menuitem id="dcmies" value="es" label="Spanish "/>
+                <menuitem id="dcmiet" value="et" label="Estonian "/>
+                <menuitem id="dcmieu" value="eu" label="Basque "/>
+                <menuitem id="dcmifa" value="fa" label="Persian "/>
+                <menuitem id="dcmifi" value="fi" label="Finnish "/>
+                <menuitem id="dcmifj" value="fj" label="Fijian; Fiji "/>
+                <menuitem id="dcmifo" value="fo" label="Faroese "/>
+                <menuitem id="dcmifr" value="fr" label="French "/>
+                <menuitem id="dcmify" value="fy" label="Frisian "/>
+                <menuitem id="dcmiga" value="ga" label="Irish "/>
+                <menuitem id="dcmigd" value="gd" label="Scots; Gaelic "/>
+                <menuitem id="dcmigl" value="gl" label="Gallegan; Galician "/>
+                <menuitem id="dcmign" value="gn" label="Guarani "/>
+                <menuitem id="dcmigu" value="gu" label="Gujarati "/>
+                <menuitem id="dcmigv" value="gv" label="Manx "/>
+                <menuitem id="dcmiha" value="ha" label="Hausa (?) "/>
+                <menuitem id="dcmihe" value="he" label="Hebrew (formerly iw) "/>
+                <menuitem id="dcmihi" value="hi" label="Hindi "/>
+                <menuitem id="dcmiho" value="ho" label="Hiri Motu "/>
+                <menuitem id="dcmihr" value="hr" label="Croatian "/>
+                <menuitem id="dcmihu" value="hu" label="Hungarian "/>
+                <menuitem id="dcmihy" value="hy" label="Armenian "/>
+                <menuitem id="dcmihz" value="hz" label="Herero "/>
+                <menuitem id="dcmiia" value="ia" label="Interlingua "/>
+                <menuitem id="dcmiid" value="id" label="Indonesian (formerly in) "/>
+                <menuitem id="dcmiie" value="ie" label="Interlingue "/>
+                <menuitem id="dcmiik" value="ik" label="Inupiak "/>
+                <menuitem id="dcmiio" value="io" label="Ido "/>
+                <menuitem id="dcmiis" value="is" label="Icelandic "/>
+                <menuitem id="dcmiit" value="it" label="Italian "/>
+                <menuitem id="dcmiiu" value="iu" label="Inuktitut "/>
+                <menuitem id="dcmija" value="ja" label="Japanese "/>
+                <menuitem id="dcmijv" value="jv" label="Javanese "/>
+                <menuitem id="dcmika" value="ka" label="Georgian "/>
+                <menuitem id="dcmiki" value="ki" label="Kikuyu "/>
+                <menuitem id="dcmikj" value="kj" label="Kuanyama "/>
+                <menuitem id="dcmikk" value="kk" label="Kazakh "/>
+                <menuitem id="dcmikl" value="kl" label="Kalaallisut; Greenlandic "/>
+                <menuitem id="dcmikm" value="km" label="Khmer; Cambodian "/>
+                <menuitem id="dcmikn" value="kn" label="Kannada "/>
+                <menuitem id="dcmiko" value="ko" label="Korean "/>
+                <menuitem id="dcmiks" value="ks" label="Kashmiri "/>
+                <menuitem id="dcmiku" value="ku" label="Kurdish "/>
+                <menuitem id="dcmikv" value="kv" label="Komi "/>
+                <menuitem id="dcmikw" value="kw" label="Cornish "/>
+                <menuitem id="dcmiky" value="ky" label="Kirghiz "/>
+                <menuitem id="dcmila" value="la" label="Latin "/>
+                <menuitem id="dcmilb" value="lb" label="Letzeburgesch "/>
+                <menuitem id="dcmiln" value="ln" label="Lingala "/>
+                <menuitem id="dcmilo" value="lo" label="Lao; Laotian "/>
+                <menuitem id="dcmilt" value="lt" label="Lithuanian "/>
+                <menuitem id="dcmilv" value="lv" label="Latvian; Lettish "/>
+                <menuitem id="dcmimg" value="mg" label="Malagasy "/>
+                <menuitem id="dcmimh" value="mh" label="Marshall "/>
+                <menuitem id="dcmimi" value="mi" label="Maori "/>
+                <menuitem id="dcmimk" value="mk" label="Macedonian "/>
+                <menuitem id="dcmiml" value="ml" label="Malayalam "/>
+                <menuitem id="dcmimn" value="mn" label="Mongolian "/>
+                <menuitem id="dcmimo" value="mo" label="Moldavian "/>
+                <menuitem id="dcmimr" value="mr" label="Marathi "/>
+                <menuitem id="dcmims" value="ms" label="Malay "/>
+                <menuitem id="dcmimt" value="mt" label="Maltese "/>
+                <menuitem id="dcmimy" value="my" label="Burmese "/>
+                <menuitem id="dcmina" value="na" label="Nauru "/>
+                <menuitem id="dcminb" value="nb" label="Norwegian Bokmål "/>
+                <menuitem id="dcmind" value="nd" label="Ndebele, North "/>
+                <menuitem id="dcmine" value="ne" label="Nepali "/>
+                <menuitem id="dcming" value="ng" label="Ndonga "/>
+                <menuitem id="dcminl" value="nl" label="Dutch "/>
+                <menuitem id="dcminn" value="nn" label="Norwegian Nynorsk "/>
+                <menuitem id="dcmino" value="no" label="Norwegian "/>
+                <menuitem id="dcminr" value="nr" label="Ndebele, South "/>
+                <menuitem id="dcminv" value="nv" label="Navajo "/>
+                <menuitem id="dcminy" value="ny" label="Chichewa; Nyanja "/>
+                <menuitem id="dcmioc" value="oc" label="Occitan; Provençal "/>
+                <menuitem id="dcmiom" value="om" label="(Afan) Oromo "/>
+                <menuitem id="dcmior" value="or" label="Oriya "/>
+                <menuitem id="dcmios" value="os" label="Ossetian; Ossetic "/>
+                <menuitem id="dcmipa" value="pa" label="Panjabi; Punjabi "/>
+                <menuitem id="dcmipi" value="pi" label="Pali "/>
+                <menuitem id="dcmipl" value="pl" label="Polish "/>
+                <menuitem id="dcmips" value="ps" label="Pashto, Pushto "/>
+                <menuitem id="dcmipt" value="pt" label="Portuguese "/>
+                <menuitem id="dcmiqu" value="qu" label="Quechua "/>
+                <menuitem id="dcmirm" value="rm" label="Rhaeto-Romance "/>
+                <menuitem id="dcmirn" value="rn" label="Rundi; Kirundi "/>
+                <menuitem id="dcmiro" value="ro" label="Romanian "/>
+                <menuitem id="dcmiru" value="ru" label="Russian "/>
+                <menuitem id="dcmirw" value="rw" label="Kinyarwanda "/>
+                <menuitem id="dcmisa" value="sa" label="Sanskrit "/>
+                <menuitem id="dcmisc" value="sc" label="Sardinian "/>
+                <menuitem id="dcmisd" value="sd" label="Sindhi "/>
+                <menuitem id="dcmise" value="se" label="Northern Sami "/>
+                <menuitem id="dcmisg" value="sg" label="Sango; Sangro "/>
+                <menuitem id="dcmisi" value="si" label="Sinhalese "/>
+                <menuitem id="dcmisk" value="sk" label="Slovak "/>
+                <menuitem id="dcmisl" value="sl" label="Slovenian "/>
+                <menuitem id="dcmism" value="sm" label="Samoan "/>
+                <menuitem id="dcmisn" value="sn" label="Shona "/>
+                <menuitem id="dcmiso" value="so" label="Somali "/>
+                <menuitem id="dcmisq" value="sq" label="Albanian "/>
+                <menuitem id="dcmisr" value="sr" label="Serbian "/>
+                <menuitem id="dcmiss" value="ss" label="Swati; Siswati "/>
+                <menuitem id="dcmist" value="st" label="Sesotho; Sotho, Southern "/>
+                <menuitem id="dcmisu" value="su" label="Sundanese "/>
+                <menuitem id="dcmisv" value="sv" label="Swedish "/>
+                <menuitem id="dcmisw" value="sw" label="Swahili "/>
+                <menuitem id="dcmita" value="ta" label="Tamil "/>
+                <menuitem id="dcmite" value="te" label="Telugu "/>
+                <menuitem id="dcmitg" value="tg" label="Tajik "/>
+                <menuitem id="dcmith" value="th" label="Thai "/>
+                <menuitem id="dcmiti" value="ti" label="Tigrinya "/>
+                <menuitem id="dcmitk" value="tk" label="Turkmen "/>
+                <menuitem id="dcmitl" value="tl" label="Tagalog "/>
+                <menuitem id="dcmitn" value="tn" label="Tswana; Setswana "/>
+                <menuitem id="dcmito" value="to" label="Tonga (?) "/>
+                <menuitem id="dcmitr" value="tr" label="Turkish "/>
+                <menuitem id="dcmits" value="ts" label="Tsonga "/>
+                <menuitem id="dcmitt" value="tt" label="Tatar "/>
+                <menuitem id="dcmitw" value="tw" label="Twi "/>
+                <menuitem id="dcmity" value="ty" label="Tahitian "/>
+                <menuitem id="dcmiug" value="ug" label="Uighur "/>
+                <menuitem id="dcmiuk" value="uk" label="Ukrainian "/>
+                <menuitem id="dcmiur" value="ur" label="Urdu "/>
+                <menuitem id="dcmiuz" value="uz" label="Uzbek "/>
+                <menuitem id="dcmivi" value="vi" label="Vietnamese "/>
+                <menuitem id="dcmivo" value="vo" label="Volapük; Volapuk "/>
+                <menuitem id="dcmiwa" value="wa" label="Walloon "/>
+                <menuitem id="dcmiwo" value="wo" label="Wolof "/>
+                <menuitem id="dcmixh" value="xh" label="Xhosa "/>
+                <menuitem id="dcmiyi" value="yi" label="Yiddish (formerly ji) "/>
+                <menuitem id="dcmiyo" value="yo" label="Yoruba "/>
+                <menuitem id="dcmiza" value="za" label="Zhuang "/>
+                <menuitem id="dcmizh" value="zh" label="Chinese "/>
+                <menuitem id="dcmizu" value="zu" label="Zulu."/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <hbox align="center">
+          <label id="dcRelation" style="width:8em" value="Relation:" tooltiptext="A reference to a related resource."/>
+          <textbox id="dc_relation" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcCoverage" style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource."/>
+          <textbox id="dc_coverage" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label id="dcRights" style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource."/>
+          <textbox id="dc_rights" size="40" onchange="this.style.color = 'blue'" />
+          <image src="/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description id="dcDescRights">Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
+          </groupbox>
+        </hbox>
+      </vbox>
+    </groupbox>
+    <hbox align="left">
+      <button id="dcBtnDone" label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
+    </hbox>
+  </vbox>
+</overlay>

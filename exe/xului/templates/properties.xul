@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<!--
+All XUL fields work by AJAX magic.
+All the property page xul templates are handled by AJAX code in xului/propertiespage.py
+
+This code has 3 purposes:
+1. Translates labels and descriptions as they are shown
+2. Fills in form fields from attributes of engine properties
+3. Receives the data when the user submits
+
+===============================
+Quick HowTo add a normal string field:
+===============================
+1. Make a normal label and a textbox like this:
+<label id="ppmyattrib" value="My Label"/>
+<textbox id="pp_myAttrib" onchange="this.style.color='blue';" />
+
+Rules:
+1. Label must have a unique id. It must be unique overall the properties pages
+   as they are all imported into the same XUL document. This is so the system
+   can translate the label.
+2. Any field with 1 underscore in the name will be considered a data field.
+3. The bit before the underscore is a 2 character id for the engine object:
+
+    # pp means Project Properties (package)
+    # dc means Dublin Core (package.dublinCore)
+    # eo means Export Options (package.exportOptions)
+
+4. The bit after the underscore is the name of the attribute
+
+eg. pp_title => package.title
+
+5. ATM only string and boolean attributes are supported
+6. The 'onchange' handler is just a visual indicator to the user that his change
+   is yet to be sent to the server. After the server recieves the changes it
+   changes the color back to black automatically.
+
+===============================
+Form Howto:
+===============================
+
+Fields are automatically loaded with data from the server when shown.
+There is a java script function called 'submitForm' which will submit all the
+fields inside a given element to the server.
+
+Usually its called with "this.parentNode.parentNode" as the parameter because 'this' is
+the submit button, and parentNode.parentNode is the container of all the form elements
+that we want to submit.
+
+You could call this function in the onchange handler of a single element passing
+this.parentNode to do auto updates of just this field (and any siblings) if you want.
+-->
+
+<?xul-overlay href="/xultemplates/packageproperties.xul"?>
+<?xul-overlay href="/xultemplates/dublincore.xul"?>
+<?xul-overlay href="/xultemplates/exportproperties.xul"?>
+
+<window title="Package Properties"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:n="http://nevow.com/ns/nevow/0.1"
+        onload="fillInForms(); translate(document.documentElement, 0);">
+
+<n:invisible n:render="liveid"/>
+<n:invisible n:render="liveglue"/>
+
+  <script>
+  <![CDATA[
+  regEx = /[a-z][a-z]_\w+/
+
+  // Translates all the nodes in the document
+  function translate(start, part) {
+    if (start.nodeName == '#text') {
+	nevow_clientToServerEvent('translate', this, '', start.parentNode.id, '!contents!'+part, start.data)
+    } else if (start.hasAttribute('label')) {
+      nevow_clientToServerEvent('translate', this, '', start.id, 'label', start.label)
+    } else if (start.nodeName == 'label') {
+      nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value);
+      if (start.hasAttribute('tooltiptext')) {
+        nevow_clientToServerEvent('translate', this, '', start.id, 'tooltiptext', start.getAttribute('tooltiptext'))
+      }
+    } else if (start.nodeName == 'key') {
+        if (start.hasAttribute('key')) {
+            nevow_clientToServerEvent('translate', this, '', start.id, 'key', start.value)
+        } else {
+            nevow_clientToServerEvent('translate', this, '', start.id, 'keycode', start.value)
+        }
+    } else if (start.nodeName == 'window') {
+      nevow_clientToServerEvent('translate', this, '', start.id, 'title', start.value)
+    }
+    // Drill down
+    for (var i=0; i < start.childNodes.length; i++) {
+        var node = start.childNodes[i];
+        translate(node, i);
+    }
+  }
+
+  function setText(textID) {
+      var help = document.getElementById(textID).hidden;
+      if (help == false) {
+          document.getElementById(textID).hidden=true; 
+      } else {
+          document.getElementById(textID).hidden=false;
+      }
+  }
+
+
+  // Called by the user to provide an image file name to add to the package
+  function addImage(elementId, node) {
+      netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+      var nsIFilePicker = Components.interfaces.nsIFilePicker;
+      var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+      fp.init(window, "Select an image", nsIFilePicker.modeOpen);
+      fp.appendFilter("Image Files", "*.jpg; *.jpeg; *.png; *.gif");
+      fp.appendFilters(nsIFilePicker.filterAll);
+      var res = fp.show();
+      if (res == nsIFilePicker.returnOK) {
+          var image = document.getElementById(elementId);
+          image.src  = 'file://'+fp.file.path;
+          image.removeAttribute('width');
+          image.removeAttribute('height');
+		  submitForm(node)
+      }
+	  
+  }
+ 
+  // Called by the user to clear an image from the package
+  function clearImage(elementId, node) {
+      var image = document.getElementById(elementId);
+      image.src    = '';
+    //  image.width  = '400';
+    //  image.height = '100';
+	  submitForm(node)
+  }
+  
+  function collectIds(ids, start) {
+    if (start.id && start.id.match(regEx)) {
+        ids.push(start.id);
+    }
+    for (var i in start.childNodes) {
+        var node = start.childNodes[i];
+        collectIds(ids, node); // Recurse
+    }
+  }
+
+  // On document load, we get all the form values from the server
+  function fillInForms() {
+    var fieldIds = new Array()
+    collectIds(fieldIds, document.documentElement);
+    for (var i in fieldIds) {
+        nevow_clientToServerEvent('fillInField', this, '', fieldIds[i])
+    }
+  }
+
+  // Post data for a form to the server
+  // Submits the value for all the fields inside 'container'
+  // onDone is java script that will be evaluated after all the fields are done
+  function submitForm(container, onDone) {
+    var fieldIds = new Array();
+    collectIds(fieldIds, container);
+    for (var i in fieldIds) {
+        var ele = document.getElementById(fieldIds[i]);
+        if (ele.nodeName == 'checkbox') {
+            // Moz 1.8 and ff >= 1.5 don't need this. They work with straight value but
+            // < ff 1.5 needs this check.
+            var value = "" + ele.checked; // Convert to string
+        } else if (ele.nodeName == 'image') {
+            var value = ele.src;
+        } else {
+            var value = ele.value;
+        }
+		
+        if (onDone) {
+            nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), fieldIds.length, onDone);
+        } else {
+            nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), fieldIds.length);
+        }
+    }
+  }
+  ]]>
+  </script>
+
+  <tabbox flex="1" selectedTab="Package">
+    <tabs align="end" pack="end">
+        <tab id="tabPackage" label="Package"/>
+        <tab id="tabMetadata" label="Metadata"/>
+        <tab id="tabExport" label="Export"/>
+    </tabs>
+    <tabpanels flex="1">
+        <tabpanel>
+            <vbox id="projectProperties" />
+        </tabpanel>
+        <tabpanel id="metadata">
+            <vbox id="dublinCore" />
+        </tabpanel>
+        <tabpanel id="export">
+            <vbox id="exportProperties" />
+        </tabpanel>
+    </tabpanels>
+  </tabbox>
+
+</window>

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<lom
+  xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+
+  <general>
+    <title>
+      <langstring>%(title)s</langstring>
+    </title>
+    <catalogentry>
+      <catalog>eXe Authored Course ID</catalog>
+      <entry>
+        <langstring>%(identifier)s</langstring>
+      </entry>
+    </catalogentry>
+    <language>%(language)s</language>
+    <description>
+      <langstring>%(description)s</langstring>
+    </description>
+    <aggregationlevel>
+      <vocabulary>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">3</langstring>
+        </value>
+      </vocabulary>
+    </aggregationlevel>
+  </general>
+
+  <lifecycle>
+    <contribute>
+      <role>
+        <source>
+	  <langstring xml:lang="x-none">LOMv1.0</langstring>
+	</source>
+	<value>
+	  <langstring xml:lang="x-none">Author</langstring>
+	</value>
+      </role>
+      <centity>
+        <vcard>BEGIN:vCard %(creator)s END:vCard</vcard>
+      </centity>
+      <date>
+        <datetime>%(date)s</datetime>
+      </date>
+    </contribute>
+    <contribute>
+      <role>
+        <source>
+	  <langstring xml:lang="x-none">LOMv1.0</langstring>
+	</source>
+	<value>
+	  <langstring xml:lang="x-none">Publisher</langstring>
+	</value>
+      </role>
+      <centity>
+        <vcard>BEGIN:vCard %(publisher)s END:vCard</vcard>
+      </centity>
+      <date>
+        <datetime>%(date)s</datetime>
+      </date>
+    </contribute>
+    <contribute>
+      <role>
+        <source>
+	  <langstring xml:lang="x-none">LOMv1.0</langstring>
+	</source>
+	<value>
+	  <langstring xml:lang="x-none">Unknown</langstring>
+	</value>
+      </role>
+      <centity>
+        <vcard>BEGIN:vCard %(contributors)s END:vCard</vcard>
+      </centity>
+      <date>
+        <datetime>%(date)s</datetime>
+      </date>
+    </contribute>
+  </lifecycle>
+
+  <metadata>
+    <metadatascheme>ADL SCORM 1.2</metadatascheme>
+  </metadata>
+
+  <technical>
+    <format>%(format)s</format>
+  </technical>
+
+  <relation>
+    <resource>
+      <description>
+        <langstring>%(relation)s</langstring>
+      </description>
+    </resource>
+  </relation>
+
+  <rights>
+    <copyrightandotherrestrictions>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">no</langstring>
+      </value>
+    </copyrightandotherrestrictions>
+    <description>
+      <langstring>%(rights)s</langstring>
+    </description>
+  </rights>
+</lom>

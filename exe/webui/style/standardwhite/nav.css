@@ -1,0 +1,109 @@
+/*  ------------------------------------------------------
+    Copyright University of Auckland 2004
+    Created by Brent Simpson, brent.simpson@auckland.ac.nz
+    Centre for Flexible and Distance Learning
+    ------------------------------------------------------ */
+
+
+
+/* HEADER */
+
+#header {
+    text-align: left;  
+    color: #000;
+    background-color: transparent;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+/* LEFT-HAND NAVIGATION */
+
+#navcontainer {
+	background-color: #FAFAFA;
+	width: 169px;
+	float: left;
+	margin-top: 10px;
+	}
+				
+#navcontainer ul {
+	margin-left: 0px;
+	padding-left: 0;
+	margin-top: 0;
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+#navcontainer a {
+	display: block;
+	padding: 3px 0 3px 6px;
+	background-color: #FAFAFA;
+	border-bottom: 1px solid #CCC;
+	width: 163px;
+	}
+
+#navcontainer a:link, #navlist a:visited {
+	color: #7D7D7D;
+	text-decoration: none;
+	}
+
+#navcontainer a:hover {
+	color: #7D7D7D;
+	font-weight: bold;
+	background-color: #F4F4F4;
+	}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+ 
+* html #navcontainer {
+  margin-right: 10px;
+  }
+ 
+* html p {
+  height: 1%;
+  margin-left: 0;
+  }
+ 
+/* End hide from IE5/mac */
+
+div #active {
+	padding: 3px 0 3px 6px;
+	width: 163px;
+	background-image: url(nodeTitle_bg.jpg);
+	background-color: #F6F6F6;
+	font-weight: bold;
+	color: #4E4E4E;
+	border-bottom: 1px solid #CCC;
+	}
+
+div #subnav {
+	border-bottom: 1px solid #CCC;
+	}
+	
+#subnav a {
+	display: block;
+	border: 0 !important;
+	width: 157px;
+	padding: 3px 0 3px 12px;
+	font-size: x-small;
+	}
+
+#subnav a:hover {
+	background-color: #F4F4F4;
+	color: #7D7D7D;
+	}	
+	
+#subnav #active {
+	background-color: #ACBFC2;
+	width: 157px;
+	color: #4E4E4E;
+	padding: 3px 0 3px 12px;
+	font-size: x-small;
+	}	
+	
+#main {
+	margin: 10px 10px 10px 180px;
+	line-height: 140%;
+	}
+	

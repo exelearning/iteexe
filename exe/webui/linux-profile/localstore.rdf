@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="chrome://browser/content/openLocation.xul#openLocation"
+                   screenX="24"
+                   screenY="24" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#nav-bar"
+                   collapsed="true" />
+  <RDF:Description RDF:about="chrome://browser/content/openLocation.xul">
+    <NC:persist RDF:resource="chrome://browser/content/openLocation.xul#openLocation"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul">
+    <NC:persist RDF:resource="chrome://browser/content/browser.xul#main-window"/>
+    <NC:persist RDF:resource="chrome://browser/content/browser.xul#PersonalToolbar"/>
+    <NC:persist RDF:resource="chrome://browser/content/browser.xul#nav-bar"/>
+    <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-box"/>
+    <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-title"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#PersonalToolbar"
+                   collapsed="true" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-title"
+                   value="" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#main-window"
+                   width="994"
+                   height="712"
+                   screenX="50"
+                   screenY="25"
+                   sizemode="normal" />
+</RDF:RDF>

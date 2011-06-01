@@ -1,0 +1,82 @@
+/*  =================================================
+     eXe
+     Copyright 2004-2005, University of Auckland
+
+     style for standardwhite.
+   ================================================== */
+
+
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    font-family: arial, verdana, helvetica, sans-serif;
+    font-size: 13px;
+    background: #FAFAFA;
+}
+
+a { color: #003366;
+    text-decoration: none;
+}
+
+a:hover { background-color: #F4F4F4;
+	  text-decoration: none; }
+
+div#nodeDecoration {
+	border-top: 1px solid #B3B3B3;
+	border-bottom: 1px solid #B3B3B3;
+	background-image: url(nodeTitle_bg.jpg);
+	padding: 2px;
+}
+
+
+p#nodeTitle { 
+    color: #4D4D4D;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    display: inline;
+}
+
+
+/* --- iDevice Styles --- */
+
+.iDevice {
+    background-color: #FFF;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    border-top: 1px solid #DDD;
+    margin: 10px;
+}
+
+.iDevice_inner {
+	margin-left: 55px;
+	margin-right: 12px;
+	border-bottom: 1px solid #DDD;
+}
+
+.iDeviceTitle {
+    color: #000;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    position: relative;
+    top: -18px;   /* aligns title up with middle of icon */
+
+}    
+
+.iDevice_icon {
+	padding-top: 10px;
+}
+
+p.reading_reference {
+    font-style: italic;        
+}
+
+p.reading_feedback {
+    margin: 20px;
+    padding: 8px;
+    font-style: italic;
+}
+
+

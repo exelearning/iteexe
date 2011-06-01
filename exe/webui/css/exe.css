@@ -1,0 +1,72 @@
+/*  ===========================================================================
+     eXe
+     Copyright 2004-2005, University of Auckland
+     Copyright 2004-2007 eXe Project, http://eXeLearning.org/
+
+     These style elements are only used in the editing pane of eXe. They do not 
+     apply when content is exported. Brent.  
+   =========================================================================== */
+  
+html {
+  padding: 10px;
+}
+ 
+textarea { font-family: arial, verdana, helvetica, sans-serif;
+	   font-size: 13px;
+       background: transparent;
+}
+
+
+/* styles for iDevice Editor */
+
+#editorWorkspace {
+	margin-left: 240px;
+}
+
+#editorButtons {
+	 float: left;
+         position: fixed;
+}
+
+#editorButtons input.button
+{
+border: 3px double #999999;
+border-top-color: #CCCCCC;
+border-left-color: #CCCCCC;
+width: 100px;
+padding: 0.25em;
+margin: 4px;
+background-color: #FFFFFF;
+background-image: url(../style/standardwhite/nodeTitle_bg.jpg);
+background-repeat: repeat-x;
+color: #333333;
+font-size: 75%;
+font-weight: bold;
+font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.flash {
+ border: 1px dashed #6699cc;
+ background-image: url(../images/flash_placeholder.gif); 
+ background-position: 50% 50%;
+ background-repeat: no-repeat;
+}
+
+p.editModeHeading {
+ font-weight: bold;
+ color: red;
+ border: 1px solid red;
+}
+
+.maths {
+border: 1px solid #CCC;
+padding: 2px;
+color: #000000;
+}
+
+.maths a { color: #000000; }
+ 
+/* adds tiny bit of padding to edit.png when in preview mode */
+img.submit {
+    padding: 0 0 2px 2px;
+}

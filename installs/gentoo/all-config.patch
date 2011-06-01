@@ -1,0 +1,13 @@
+Index: exe/engine/linuxconfig.py
+===================================================================
+--- exe/engine/linuxconfig.py	(revision 1585)
++++ exe/engine/linuxconfig.py	(working copy)
+@@ -43,7 +43,7 @@
+         self.localeDir   = Path("/usr/share/exe/locale")
+         self.dataDir     = Path(os.environ['HOME'])
+         self.configDir   = Path(self.dataDir)/'.exe'
+-        browserPath      = self.webDir/'firefox'/'firefox'
++        browserPath = Path('/usr/lib/mozilla-firefox/firefox')
+         if browserPath.isfile():
+             self.browserPath = browserPath
+ 

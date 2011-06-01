@@ -1,0 +1,129 @@
+/* ==========================================
+Copyright University of Auckland 2004
+Copyright 2004-2007 eXe Project, New Zealand Tertiary Education Commission
+Created by Brent Simpson, brent@exelearning.org
+============================================= */
+
+body {
+   margin: 0px;
+}
+
+#header {
+    text-align: left;
+    color: #4D4D4D;
+    background-color: #E0DFD8;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+/* LEFT-HAND NAVIGATION */
+
+#navcontainer {
+   z-index:1000;
+   width: 250px;
+   height: 100%; /* the holly hack for IE! */
+   float: left;
+   margin-top: 0px;
+   padding-top: 60px;
+   text-align:left;
+   position:absolute;
+   background-color:transparent;
+}
+
+
+#navcontainer ul {
+margin-left: 10px;
+padding-left: 0;
+margin-top: 0;
+list-style-type: none;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#navcontainer a {  /* sections not active */
+display: block;
+padding: 4px 0 4px 18px;
+background-color: #FFF;
+border-bottom: 1px solid #ffffff;
+width: 195px;
+border-top: 1px solid #ffffff;
+}
+
+#navcontainer a:link,
+#navlist a:visited {
+color: #4d4d4d;
+background-color: #E0DFD8;
+text-decoration: none;
+}
+
+#navcontainer a:hover {
+color: #4d4d4d;
+background-color:#c7c5b9;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #navcontainer {
+margin-right: 10px;
+}
+
+* html p {
+height: 1%;
+margin-left: 0;
+}
+/* End hide from IE5/mac */
+
+div #active {
+padding: 0px 0px 3px 18px;
+width: 195px !important; /* the Housley Hack for Firefox... */
+width: 209px; /* for IE */
+background-color: #706F61;
+color: #ffffff;
+border-bottom: 1px solid #fff;
+border-top: 6px solid #706f61;
+background-image:url(active_bg.gif);
+background-position: -2px 2px;
+background-repeat:no-repeat;
+}
+
+#subnav a { /* subnav when parent is selected */
+display: block;
+border: 0 !important;
+width: 187px;
+margin-left: 10px;
+padding: 4px 0 4px 16px;
+}
+
+#subnav a:hover {
+color: #4d4d4d;
+background-color: #C7C5B9;
+}	
+
+#subnav #active { /* subnav selected */
+display: block;
+margin-left: 10px;
+width: 187px !important; /* the Housley Hack for Firefox... */
+width: 201px; /* for IE */
+padding: 4px 0 4px 16px;
+color: #ffffff;
+font-size:11px;
+background-color: #706F61;
+background-image:url(active_bg.gif);
+background-position:-2px 2px;
+background-repeat:no-repeat;
+border-top: 2px solid #706f61;
+}	
+
+/* MAIN CONTENT STYLES */
+
+#container {
+border-top: 0px solid #CCC;
+}
+
+#main {
+margin-left: 260px;
+margin-top: 0px;
+width: 68%;
+position: absolute;
+text-align:left;
+}
