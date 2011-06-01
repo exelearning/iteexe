@@ -1,6 +1,6 @@
 # ===========================================================================
 # eXe 
-# Copyright 2010-2011, Pedro Peña Pérez
+# Copyright 2010-2011, Pedro Pena Perez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from chardet import universaldetector
 from chardet import latin1prober
 import re
 import sys
-from engine.beautifulsoup import BeautifulSoup
+from engine.beautifulsoup import BeautifulSoup, UnicodeDammit
 from urllib import quote, unquote
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.resource import Resource
@@ -105,7 +105,10 @@ class Link:
         self.relative = relative
         self.match = match
     def __repr__(self):
-        return "<%s %s=%s>" % (self.tag.name,self.key,str(self.url))
+        if self.tag and self.tag.name:
+            return "<%s %s=%s>" % (self.tag.name,self.key,str(self.url))
+        else:
+            return "<%s>" % (str(self.url))
 
 class Url:
     def __init__(self, path, start='.'):
@@ -158,6 +161,11 @@ class Url:
         self.rlinks.add(link)
 
 class Resources:
+    cancel = False
+    @classmethod
+    def cancelImport(cls):
+        cls.cancel = True
+        #TODO Deshacer todo lo que se lleve hecho
     def __init__(self, baseurl, node, client=None):
         self.baseurl = baseurl.decode(sys.getfilesystemencoding())
         self.node = node
@@ -171,22 +179,28 @@ class Resources:
         url.createNode(node, 'Contenidos por directorio')
         resources['urls'][url.relpath] = url
         try:
-            for root, dirs, files in os.walk(self.baseurl):
+            for root, dirs, files in self._safewalk(self.baseurl):
+                if self.cancel:
+                    return
                 self.numdirs += 1
-        except UnicodeDecodeError as e:
+        except UnicodeDecodeError:
             raise
         i = 1
-        for root, dirs, files in os.walk(self.baseurl):
+        for root, dirs, files in self._safewalk(self.baseurl):
             html = u""
             idevice = None
             if self.client:
                 self.client.call('XHupdateImportProgressWindow','Analizando directorio %d de %d: %s' % (i, self.numdirs,root.encode(sys.getfilesystemencoding())))
             for dir in dirs:
+                if self.cancel:
+                    return
                 path = root + os.path.sep + dir
                 url = Url(path, self.baseurl)
                 url.createNode(resources['urls'][url.parentpath].node)
                 resources['urls'][url.relpath] = url
             for file in files:
+                if self.cancel:
+                    return
                 path = root + os.path.sep + file
                 url = Url(path, self.baseurl)
                 parent = resources['urls'][url.parentpath]
@@ -209,16 +223,41 @@ class Resources:
                 idevice.setContent(html)
             i += 1
         self.resources = resources
+    def _safewalk(self, top):
+        try:
+            names = os.listdir(top)
+        except error, err:
+            return
+    
+        dirs, nondirs = [], []
+        for name in names:
+            try:
+                name.encode(sys.getfilesystemencoding())
+            except:
+                return
+            if os.path.isdir(os.path.join(top, name)):
+                dirs.append(name)
+            else:
+                nondirs.append(name)
+    
+        yield top, dirs, nondirs
+        for name in dirs:
+            path = os.path.join(top, name)
+            if not os.path.islink(path):
+                for x in self._safewalk(path):
+                    yield x
     def _computeRelpaths(self):
         i = 1
         for url in self.resources['urls'].values():
             if url.type == 'dir':
                 if self.client:
-                    self.client.call('XHupdateImportProgressWindow','Calculando rutas relativas para directorio %d de %d: %s' % (i, self.numdirs, str(url)))
+                    self.client.call('XHupdateImportProgressWindow','Calculando rutas relativas para directorio %d de %d: %s' % (i, self.numdirs, url.relpath.encode(sys.getfilesystemencoding())))
                 url.relpaths = []
-                absd = self.baseurl + os.path.sep + str(url)
+                absd = ''.join([self.baseurl, os.path.sep, url.relpath])
                 for link in self.resources['urls'].values():
-                    if str(link) == '.':
+                    if self.cancel:
+                        return
+                    if link.relpath.encode(sys.getfilesystemencoding()) == '.':
                         continue
                     rl = relpath(link.absl,absd)
                     url.relpaths.append((link.l,rl))
@@ -229,24 +268,45 @@ class Resources:
         total = len(htmls)
         i = 1
         for url in htmls:
+            if self.cancel:
+               return
             if self.client:
                 self.client.call('XHupdateImportProgressWindow','Analizando etiquetas de fichero HTML %d de %d: %s' % (i, total, str(url)))
             content = open(url.path).read()
             encoding = detect(content)['encoding']
-            content = unicode(content,encoding)
-            url.setContent(content,encoding)
-            soup = BeautifulSoup(content,fromEncoding=encoding)
+            ucontent = unicode(content,encoding)
+            soup = BeautifulSoup(ucontent,fromEncoding=encoding)
+            declaredHTMLEncoding = getattr(soup, 'declaredHTMLEncoding')
+            if declaredHTMLEncoding:
+                ucontent = UnicodeDammit(content,[declaredHTMLEncoding]).unicode
+                encoding = declaredHTMLEncoding
+            else:
+                pass
+            url.setContent(ucontent,encoding)
             url.setSoup(soup)
+            if str(url) == 'introduccion4.htm':
+                pass
             for tag in soup.findAll():
+                if self.cancel:
+                    return
                 if not tag.attrs:
                     continue
                 matches = []
                 for key, value in tag.attrs:
                     if value == "":
                         continue
+                    unq_value = unquote(value)
+                    unq_low_value = unquote(value.lower())
                     for l, rl in self.resources['urls'][url.parentpath].relpaths:
-                        if rl in value:
-                            L = Link(self.resources['urls'][l],rl,url,tag,key)
+                        low_rl = rl.lower()
+                        if rl in unq_value:
+                            L = Link(self.resources['urls'][l],rl,url,tag,key,rl)
+                            matches.append(L)
+                        elif low_rl in unq_value:
+                            L = Link(self.resources['urls'][l],rl,url,tag,key,low_rl)
+                            matches.append(L)
+                        elif l in unq_value:
+                            L = Link(self.resources['urls'][l],rl,url,tag,key,l)
                             matches.append(L)
                 matches_final = []
                 for l1 in matches:
@@ -267,6 +327,8 @@ class Resources:
         total = len(csss_and_htmls)
         i = 1
         for url in csss_and_htmls:
+            if self.cancel:
+                return
             if url.mime == 'text/css':
                 tipo = 'CSS'
             else:
@@ -281,9 +343,13 @@ class Resources:
                 self.client.call('XHupdateImportProgressWindow','Analizando exhaustivamente fichero %s %d de %d: %s' % (tipo, i, total, str(url)))
             matches = []
             for l, rl in self.resources['urls'][url.parentpath].relpaths:
+                low_rl = rl.lower()
                 if rl in content:
-                    L = Link(self.resources['urls'][l],rl,url)
+                    L = Link(self.resources['urls'][l],rl,url,match=rl)
                     matches.append(L)
+                elif low_rl in content:
+                    L = Link(self.resources['urls'][l],rl,url,match=low_rl)
+                    matches.append(L)                    
             matches_final = []
             for l1 in matches:
                 matches_ = [ m for m in matches if m != l1 ]
@@ -304,6 +370,8 @@ class Resources:
         q = deque()
         q.append(([url],0))
         while q:
+            if self.cancel:
+                return
             links, depth = q.pop()
             for link in links:
                 if link in self.depths.keys():
@@ -314,17 +382,23 @@ class Resources:
                     continue
                 q.appendleft((self.resources['urls'][link].rlinks,depth + 1))
     def insertNode(self,urls=['index.html','index.htm']):
+        if self.cancel:
+            return
         for url in urls:
             if url not in self.resources['urls'].keys():
                 continue
             else:
                 self.depths = {}
                 self._computeLinks()
+                if self.cancel:
+                    return
                 if self.client:
                     self.client.call('XHupdateImportProgressWindow','Calculando profundidad de enlaces')
                 self._computeDepths(url)
+                if self.cancel:
+                    return
                 self._insertNode(None,url)
-    def guessName(self,url):
+    def _guessName(self,url):
         return str(url)
         soup = url.getSoup()
         if soup.title:
@@ -344,6 +418,8 @@ class Resources:
                 max = names[name]
         return unquote(max_name_ocurr)
     def _insertNode(self, node, url, depth=0, idevice=None):
+        if self.cancel:
+            return
         if isinstance(url,str):
             link = None
             url = self.resources['urls'][url]
@@ -356,14 +432,14 @@ class Resources:
                 self.client.call('XHupdateImportProgressWindow','Insertando %s' % (str(url)))
             
             type = link.tag.name if link and link.tag else 'a'
-            if type not in ['frame','iframe', 'area'] and node:
+            if type not in ['frame','iframe'] and node:
                 node = node.createChild()
-                node.setTitle(self.guessName(url))
+                node.setTitle(self._guessName(url))
                 if depth == 1:
                     node.up()
             if not node:
                 node = self.node
-            parent = idevice if type in ['frame','iframe', 'area'] else None
+            parent = idevice if type in ['frame','iframe'] else None
             idevice = FreeTextIdevice(type=type,parent=parent)
             idevice.edit = False
             node.addIdevice(idevice)
@@ -372,14 +448,20 @@ class Resources:
             p = Path(self.baseurl + os.path.sep + str(url))
             p.setSalt(str(url))
             r = Resource(idevice,p)
+            url.storageName = quote(r.storageName)
             if link and link.relative not in link.referrer.contentUpdated:
-                link.referrer.content = link.referrer.content.replace(link.relative,'###resources###/%s' % (quote(r.storageName)))
+                if link.match:
+                    link.referrer.content = link.referrer.content.replace(link.match,'###resources###/%s' % (url.storageName))                    
+                else:
+                    link.referrer.content = link.referrer.content.replace(link.relative,'###resources###/%s' % (url.storageName))
                 link.referrer.contentUpdated.append(link.relative)
 
         if self.depths[str(url)] < depth:
             return        
 
         for l in url.links:
+            if self.cancel:
+                return
             self._insertNode(node, l, depth+1, idevice)
         
         content = url.getContent()

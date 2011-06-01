@@ -10,7 +10,7 @@ XS-Python-Version: all, >=2.6
 
 Package: python-exe
 Architecture: all
-Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, firefox
+Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, firefox | iceweasel
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe
 Description: eLearning XHTML editor

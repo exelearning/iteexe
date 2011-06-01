@@ -80,34 +80,33 @@ class TestConfig(utils.SuperTestCase):
             self.assertEqual(line[24:].strip(), results[i])
             i += 1
                 
-    def testUpgradeAppDir(self):
-        """
-        Tests that config files with
-        'appDataDir' are upgraded to 'configDir'
-        """
-        # Write the old style config file
-        configPath = Path(u'test.exe.conf')
-        if configPath.exists():
-            configPath.remove()
-        oldParser = ConfigParser()
-        system = oldParser.addSection('system')
-        system.appDataDir = 'my old app data dir'
-        oldParser.write(configPath)
-        del system
-        del oldParser
-        # Make the config instance load it
-        Config._getConfigPathOptions = lambda self: ['test.exe.conf']
-        myconfig = Config()
-        myconfig.loadSettings()
-        # Check if it reads the old value into the new variable
-        assert not hasattr(myconfig, 'appDataDir')
-        self.assertEquals(myconfig.configPath, 'test.exe.conf')
-        self.assertEquals(myconfig.configDir, 'my old app data dir')
-        # Check if it has upgraded the file and added in some nice default values
-        newParser = ConfigParser()
-        newParser.read(configPath)
-        self.assertEquals(newParser.system.configDir, 'my old app data dir')
-
+#    def testUpgradeAppDir(self):
+#        """
+#        Tests that config files with
+#        'appDataDir' are upgraded to 'configDir'
+#        """
+#        # Write the old style config file
+#        configPath = Path(u'test.exe.conf')
+#        if configPath.exists():
+#            configPath.remove()
+#        oldParser = ConfigParser()
+#        system = oldParser.addSection('system')
+#        system.appDataDir = 'my old app data dir'
+#        oldParser.write(configPath)
+#        del system
+#        del oldParser
+#        # Make the config instance load it
+#        Config._getConfigPathOptions = lambda self: ['test.exe.conf']
+#        myconfig = Config()
+#        myconfig.loadSettings()
+#        # Check if it reads the old value into the new variable
+#        assert not hasattr(myconfig, 'appDataDir')
+#        self.assertEquals(myconfig.configPath, 'test.exe.conf')
+#        self.assertEquals(myconfig.configDir, 'my old app data dir')
+#        # Check if it has upgraded the file and added in some nice default values
+#        newParser = ConfigParser()
+#        newParser.read(configPath)
+#        self.assertEquals(newParser.system.configDir, 'my old app data dir')
 
 
 if __name__ == "__main__":
