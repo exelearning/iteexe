@@ -251,7 +251,7 @@ def feedbackButton(name, value=None, enabled=True, **kwparams):
     return button(name, value, enabled, **kwparams)
 
 
-def submitImage(action, object_, imageFile, title=u"", isChanged=1):
+def submitImage(action, object_, imageFile, title=u"", isChanged=1, relative=False):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
@@ -260,8 +260,11 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     titleText = u''
     if title:
         titleText = u'title="%s" ' % title
+    relativeText = u''
+    if relative:
+        relativeText = u'style="position:relative;z-index:100000"'
     html  = u'<a %s' % titleText
-    html += u' href="#" onclick="%s">' % onclick
+    html += u' href="#" onclick="%s" %s>' % (onclick, relativeText)
     html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
     html += u'</a>\n' 
     return html

@@ -16,7 +16,7 @@ Prefix: %{_prefix}
 ExclusiveArch: i386
 BuildRequires: python-devel
 BuildRequires: python >= 2.4
-Requires: python-imaging, python-zope-interface
+Requires: python-imaging, python-zope-interface, python-chardet
 Requires: firefox
 Obsoletes: exe-twisted
 

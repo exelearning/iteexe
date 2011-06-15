@@ -341,7 +341,7 @@ class Block(Renderable):
         """
         html  = common.submitImage(u"edit", self.id, 
                                    u"/images/stock-edit.png", 
-                                   _(u"Edit"), self.package.isChanged)
+                                   _(u"Edit"), self.package.isChanged, True)
         return html
 
 # ===========================================================================

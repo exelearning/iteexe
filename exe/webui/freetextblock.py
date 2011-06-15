@@ -76,7 +76,7 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = u"<div style=\"position: relative\">\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
         html += u"</div>\n"
@@ -87,8 +87,11 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
+        if hasattr(self.idevice, 'parent') and self.idevice.parent and not self.idevice.parent.edit:
+            return u""
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html += u"style=\"position: relative\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderPreview()
         html += self.renderViewButtons()

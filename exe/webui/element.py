@@ -27,6 +27,7 @@ import urllib
 from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
+from urllib import quote
 
 log = logging.getLogger(__name__)
 
@@ -198,16 +199,22 @@ class TextAreaElement(ElementWithResources):
             return
 
         if self.id in request.args:
+            if not hasattr(self.field_idevice,'type') or \
+                ( hasattr(self.field_idevice,'type') and self.field_idevice.type != 'frameset'):
             # process any new images and other resources courtesy of tinyMCE:
 
-            self.field.content_w_resourcePaths \
-                = self.field.ProcessPreviewed(request.args[self.id][0])
-            # likewise determining the paths for exports, etc.:
-            self.field.content_wo_resourcePaths \
-                    = self.field.MassageContentForRenderView( \
-                                         self.field.content_w_resourcePaths)
-            # and begin by choosing the content for preview mode, WITH paths:
-            self.field.content = self.field.content_w_resourcePaths
+                self.field.content_w_resourcePaths \
+                    = self.field.ProcessPreviewed(request.args[self.id][0])
+                # likewise determining the paths for exports, etc.:
+                self.field.content_wo_resourcePaths \
+                        = self.field.MassageContentForRenderView( \
+                                             self.field.content_w_resourcePaths)
+                # and begin by choosing the content for preview mode, WITH paths:
+                self.field.content = self.field.content_w_resourcePaths
+            if hasattr(self.field_idevice,'type') and self.field_idevice.type:
+                r = open(self.field_idevice.userResources[0].path,'w')
+                r.write(self.field.content_wo_resourcePaths.encode('utf-8'))
+                r.close()
 
 
     def renderEdit(self):
@@ -237,7 +244,20 @@ class TextAreaElement(ElementWithResources):
         # to render, choose the content with the preview-able resource paths:
         self.field.content = self.field.content_w_resourcePaths
 
-        content = re.sub(r'(?i)<\s*a[^>]+>',
+        if hasattr(self.field_idevice,'type') and self.field_idevice.type == 'frameset':
+            content  ='<script language="JavaScript">\n' 
+            content +='<!--\n'
+            content +='function resize_iframe()\n'
+            content +='{\n'
+            content +='var height=window.innerHeight;\n'
+            content +='document.getElementById("glu").style.height=parseInt(height-document.getElementById("glu").offsetTop-120)+"px";\n'
+            content +='}\n'
+            content +='window.onresize=resize_iframe;\n'
+            content +='//-->\n'
+            content +='</script>\n'
+            content +='<iframe src="resources/%s" id="glu" marginwidth="0" marginheight="0" onload="resize_iframe()" frameborder="0" scrolling="no" width="100%%"></iframe>\n' % (quote(self.field_idevice.userResources[0].storageName))
+        else:
+            content = re.sub(r'(?i)<\s*a[^>]+>',
                 lambda mo: replaceLinks(mo, self.field.idevice.parentNode.package.name),
                 self.field.content)
         return self.renderView(content=content, visible=visible, \
@@ -249,7 +269,7 @@ class TextAreaElement(ElementWithResources):
         Returns an XHTML string for viewing or previewing this element
         """
         if visible:
-            visible = 'style="display:block"'
+            visible = 'style="display:block;position:relative"'
         else:
             visible = 'style="display:none"'
         if content is None:

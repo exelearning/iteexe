@@ -3,7 +3,6 @@
 # setup.py
 import glob
 import os
-import subprocess
 from distutils.core import setup
 import py2exe
 
@@ -15,15 +14,15 @@ try:
 except OSError:
     pass
 
+from exe.engine import version
+
 try:
-    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
-    psvn.wait()
-    revision = psvn.stdout.read().strip()
+    line = open('debian/changelog').readline()
+    build = line.split('(')[1].split(')')[0]
+    revision = build.split(version.release + ".")[1]
     open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 except OSError:
     print "*** Warning: 'svnversion' tool not available to update revision number"
-
-from exe.engine import version
 
 g_files = { '.': ["README", 
                   "COPYING", 
@@ -32,7 +31,8 @@ g_files = { '.': ["README",
                   "eXe_icon.ico",
                   "exe/webui/mr_x.gif",
                   "exe/msvcr71.dll",
-                  "installs/windows/exeLicense.txt",]}
+                  "installs/windows/exeLicense.txt",
+                  ]}
 g_oldBase = "exe/webui"
 g_newBase = "."
 def dataFiles(dirs, excludes=[]):
@@ -72,7 +72,7 @@ dataFiles(["exe/xului/templates",
 
 opts = {
  "py2exe": {
-   "packages": ["encodings", "nevow", "nevow.flat"],
+   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser"],
    "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
                 "IcoImagePlugin", "BmpImagePlugin"],
 
@@ -80,7 +80,7 @@ opts = {
 }
 
 setup(windows=["exe/exe"],
-      version=version.build,
+      version=build,
       packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.xului"],
       description  = "eLearning XHTML editor",
       url          = "http://exelearning.org",

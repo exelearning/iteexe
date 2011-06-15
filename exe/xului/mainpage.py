@@ -28,7 +28,7 @@ import logging
 import traceback
 import shutil
 from xml.sax.saxutils            import escape
-from twisted.internet            import reactor
+from twisted.internet            import threads, reactor
 from twisted.web                 import static
 from twisted.internet.defer      import Deferred
 from nevow                       import loaders, inevow, stan
@@ -50,7 +50,7 @@ from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
-
+from exe.scanresources           import Resources
 
 log = logging.getLogger(__name__)
 
@@ -115,6 +115,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleLoadRecent,      'loadRecent')
         setUpHandler(self.handleLoadTutorial,    'loadTutorial')
         setUpHandler(self.handleClearRecent,     'clearRecent')
+        setUpHandler(self.handleImport,          'importPackage')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleBrowseURL,       'browseURL')
@@ -703,7 +704,41 @@ class MainPage(RenderableLivePage):
             # Delete the temp file made by compile 
             Path(tempFileName).remove()
         return
+    
+    def getResources(self,dirname,client):
+        resources = Resources(dirname,self.authoringPage.package.currentNode,client)
+#        import cProfile
+#        import lsprofcalltree
+#        p = cProfile.Profile()
+#        p.runctx( "resources.insertNode()",globals(),locals())
+#        k = lsprofcalltree.KCacheGrind(p)
+#        data = open('exeprof.kgrind', 'w+')
+#        k.output(data)
+#        data.close()
+        resources.insertNode()
+        return resources
+        
+    def handleImport(self, client, importType, dirname):
+        if importType == 'html':
+            d = threads.deferToThread(self.getResources,dirname,client)
+            d.addCallback(self.handleImportCallback,client)
+            d.addErrback(self.handleImportErrback,client)
+            client.call('XHinitImportProgressWindow','Importando HTML...')
+    
+    def handleImportErrback(self, failure, client):
+        client.call('XHerrorImportProgressWindow','Error importando HTML:\n' + failure.getBriefTraceback())
+        client.sendScript((u'top.location = "/%s"' % \
+                      self.package.name).encode('utf8'))
 
+    def handleImportCallback(self,resources,client):
+        client.call('XHcloseImportProgressWindow')
+        client.sendScript((u'top.location = "/%s"' % \
+                      self.package.name).encode('utf8'))
+#            course = static_no_cache.FileNoCache(dirname)
+#            course.putChild(MapPage.name, MapPage(self))
+#            self.webServer.root.putChild(base64.urlsafe_b64encode(dirname),course)
+#            self.webServer.root.children['import'].setParentDir(dirname)
+#            client.call("XHinitImportWizard")
 
     def handleExport(self, client, exportType, filename, print_callback=''):
         """

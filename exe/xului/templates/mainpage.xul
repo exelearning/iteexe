@@ -56,6 +56,12 @@
                     <menuseparator/>
 		    <menuitem n:render="translate" label="Print" key="file-print-key" accesskey="p" oncommand="filePrint()"/>
                     <menuseparator/>
+                <menu n:render="translate" id="import-menu" label="Importar" accesskey="i">
+                  <menupopup id="import-popup">
+                    <menuitem label="Curso HTML" accesskey="h" oncommand="importPackage('html')"/>
+                      </menupopup>
+                    </menu>
+                <menuseparator/>
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
                     <menuitem label="Common Cartridge" accesskey="c" oncommand="exportPackage('commoncartridge','','')"/>

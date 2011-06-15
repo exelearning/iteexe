@@ -1033,6 +1033,9 @@ class Path(unicode):
         for fn in self.files():
             fn.copy(destination)
 
+    def setSalt(self, salt):
+        self.salt = salt
+        
     def getMd5(self):
         """Returns an md5 hash for an object with read() method."""
         try:
@@ -1040,6 +1043,8 @@ class Path(unicode):
         except:
             raise Exception("Could not open %s" % self)
         hasher = md5.new()
+        if hasattr(self, 'salt'):
+            hasher.update(self.salt)
         while True:
             block = file_.read(8096)
             if not block:
