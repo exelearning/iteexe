@@ -35,7 +35,7 @@ from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 # Constants
-GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_properties.jar"])
+GEOGEBRA_FILE_NAMES = set(["geogebra_main.jar","geogebra.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_properties.jar"])
 
 # ===========================================================================
 

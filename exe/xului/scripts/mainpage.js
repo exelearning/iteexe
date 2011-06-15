@@ -38,6 +38,9 @@ METADATA_EDITOR = "metadata editor";
 ABOUT = "About";
 SELECT_THE_PARENT_FOLDER_FOR_EXPORT_ = "Select the parent folder for export.";
 SELECT_THE_PARENT_FOLDER_FOR_IMPORT_ = "Select the parent folder for import.";
+SELECT_ENTRY_CONTENT_FOR_IMPORT_ = "Select the entry point for import.";
+CANCEL_IMPORT_TITLE = "¿Cancelar Importación?";
+CANCEL_IMPORT_TEXT = "Hay una importación en curso. ¿Desea cancelarla?";
 EXPORT_TEXT_PACKAGE_AS = "Export text package as";
 TEXT_FILE = "Text File";
 EXPORT_COMMONCARTRIDGE_AS = "Export Common Cartridge as";
@@ -57,6 +60,8 @@ var haveLoaded = false
 var clickon = true 
 
 var importProgressWindow = null
+var importProgressWindowClose = false
+var importProgressWindowLastMessage = null
 
 // Takes a server tree node id eg. '1' and returns a xul treeitem elemtent
 // reference
@@ -601,7 +606,14 @@ function importPackage(importType){
         fp.init(window, SELECT_THE_PARENT_FOLDER_FOR_IMPORT_, nsIFilePicker.modeGetFolder);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-            nevow_clientToServerEvent('importPackage', this, '', importType, fp.file.path);
+        	var fp2 = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+            fp2.init(window, SELECT_ENTRY_CONTENT_FOR_IMPORT_, nsIFilePicker.modeOpen);
+            fp2.displayDirectory = fp.file;
+        	fp2.appendFilters(nsIFilePicker.filterHTML);
+        	res = fp2.show();
+        	if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+        		nevow_clientToServerEvent('importPackage', this, '', importType, fp.file.path, fp2.file.path);
+        	}
         }
     }
 }
@@ -614,10 +626,31 @@ function openCenteredWindow(url) {
     var windowFeatures = "width=" + width + ",height=" + height + ",status=0,resizable=1,left=" + left + ",top=" + top + "screenX=" + left + ",screenY=" + top;
     return window.open(url, "subWind", windowFeatures);
 }
+
+function XHonunloadImportProgressWindow() {
+	if (!importProgressWindowClose) {
+    	importProgressWindow = null;
+	    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+	    var promptClass = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
+	    var promptService = promptClass.getService(Components.interfaces.nsIPromptService)
+	    var flags = promptService.BUTTON_TITLE_SAVE * promptService.BUTTON_POS_0 +
+	                promptService.BUTTON_TITLE_CANCEL * promptService.BUTTON_POS_1
+	    var res = promptService.confirm(window,CANCEL_IMPORT_TITLE, CANCEL_IMPORT_TEXT);
+    	if (!importProgressWindowClose) {
+		    if (res) {
+		    	nevow_clientToServerEvent('cancelImportPackage', this, '');
+		    } else {
+	    		XHinitImportProgressWindow(importProgressWindowLastMessage);
+		    }
+    	}
+	}
+}
+
 function XHinitImportProgressWindow(msg)
 {
 	if ( ! importProgressWindow ) { 
 		importProgressWindow = openCenteredWindow('about:blank')
+		importProgressWindow.onunload = XHonunloadImportProgressWindow;
 		importProgressWindow.document.open();
 		base = '<?xml version="1.0" encoding="UTF-8"?>'+
 			'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+
@@ -645,7 +678,8 @@ function XHinitImportProgressWindow(msg)
 
 function XHerrorImportProgressWindow(error)
 {
-	if ( importProgressWindow ) {
+	importProgressWindowLastMessage = error;
+	if ( importProgressWindow && importProgressWindow.document ) {
 		importProgressWindow.document.getElementById('divmsg').style.display = "none";
 		importProgressWindow.document.getElementById('error').innerHTML = error;
 		importProgressWindow.document.getElementById('diverror').style.display = "";
@@ -656,13 +690,15 @@ function XHerrorImportProgressWindow(error)
 
 function XHupdateImportProgressWindow(msg)
 {
-	if ( importProgressWindow ) {
+	importProgressWindowLastMessage = msg;
+	if ( importProgressWindow && importProgressWindow.document ) {
 		importProgressWindow.document.getElementById('msg').innerHTML = msg;
 	}
 }
 
 function XHcloseImportProgressWindow()
 {
+	importProgressWindowClose = true;
 	if ( importProgressWindow ) { 
 		importProgressWindow.close();
 	}

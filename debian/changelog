@@ -1,8 +1,32 @@
+python-exe (1.04.1.3598op10) jaunty; urgency=low
+
+  * Actualización de los créditos.
+  * Actualización de Geogebra, gracias a Diego Hernández.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 30 Sep 2010 11:41:13 +0200
+
+python-exe (1.04.1.3598op9) jaunty; urgency=low
+
+  * Implementada la cancelación de la importación. Al cerrar la ventana información sobre
+    la importación pide confirmación de la cancelación.
+  * Mejora en la detección del encoding del contenido HTML. Prevalece el valor que se 
+    haya especificado en el propio documento mediante 'charset'.
+  * Añadida dependencia de firefox o iceweasel.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 08 Jul 2010 12:28:15 +0200
+
+python-exe (1.04.1.3598op8) jaunty; urgency=low
+
+  * Añadida selección del punto de entrada del curso HTML
+  * El análisis de directorio inicial informa de fallos de encoding en nombres de fichero
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 14 Jun 2010 10:32:55 +0200
+
 python-exe (1.04.1.3598op7) jaunty; urgency=low
 
-    * Primera versión funcional del importador de HTML
+  * Primera versión funcional del importador de HTML
 
- -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 23 Apr 2010 12:22:02
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 23 Apr 2010 12:22:02 +0200
 
 python-exe (1.04.1.3598-ubuntu1) unstable; urgency=low
     * Add max score reporting to LMS for SCORM Quiz

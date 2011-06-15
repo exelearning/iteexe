@@ -116,6 +116,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleLoadTutorial,    'loadTutorial')
         setUpHandler(self.handleClearRecent,     'clearRecent')
         setUpHandler(self.handleImport,          'importPackage')
+        setUpHandler(self.handleCancelImport,    'cancelImportPackage')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleBrowseURL,       'browseURL')
@@ -705,8 +706,9 @@ class MainPage(RenderableLivePage):
             Path(tempFileName).remove()
         return
     
-    def getResources(self,dirname,client):
-        resources = Resources(dirname,self.authoringPage.package.currentNode,client)
+    def getResources(self,dirname,html,client):
+        Resources.cancel = False
+        self.importresources = Resources(dirname,self.authoringPage.package.currentNode,client)
 #        import cProfile
 #        import lsprofcalltree
 #        p = cProfile.Profile()
@@ -715,12 +717,11 @@ class MainPage(RenderableLivePage):
 #        data = open('exeprof.kgrind', 'w+')
 #        k.output(data)
 #        data.close()
-        resources.insertNode()
-        return resources
+        self.importresources.insertNode([html.partition(dirname + os.sep)[2]])
         
-    def handleImport(self, client, importType, dirname):
+    def handleImport(self, client, importType, dirname, html):
         if importType == 'html':
-            d = threads.deferToThread(self.getResources,dirname,client)
+            d = threads.deferToThread(self.getResources, dirname, html, client)
             d.addCallback(self.handleImportCallback,client)
             d.addErrback(self.handleImportErrback,client)
             client.call('XHinitImportProgressWindow','Importando HTML...')
@@ -734,12 +735,11 @@ class MainPage(RenderableLivePage):
         client.call('XHcloseImportProgressWindow')
         client.sendScript((u'top.location = "/%s"' % \
                       self.package.name).encode('utf8'))
-#            course = static_no_cache.FileNoCache(dirname)
-#            course.putChild(MapPage.name, MapPage(self))
-#            self.webServer.root.putChild(base64.urlsafe_b64encode(dirname),course)
-#            self.webServer.root.children['import'].setParentDir(dirname)
-#            client.call("XHinitImportWizard")
 
+    def handleCancelImport(self, client):
+        log.info('Cancelando importacion')
+        Resources.cancelImport()
+        
     def handleExport(self, client, exportType, filename, print_callback=''):
         """
         Called by js. 
