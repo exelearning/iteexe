@@ -67,7 +67,7 @@ class WebsitePage(Page):
         html += u"@import url(content.css);\n"
         html += u"@import url(nav.css);</style>\n"
         html += u"<title> " 
-        html += escape(self.node.titleLong)
+        html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
         html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
@@ -102,9 +102,9 @@ class WebsitePage(Page):
 
         style = self.node.package.style
         html += '<div id=\"nodeDecoration\">'
-        html += '<p id=\"nodeTitle\">'
+        html += '<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
-        html += '</p></div>\n'
+        html += '</h1></div>\n'
 
         for idevice in self.node.idevices:
             html += u'<div class="%s" id="id%s">\n' %  (idevice.klass,
