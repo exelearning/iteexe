@@ -54,7 +54,7 @@ class SinglePage(Page):
 	"""
         Returns an XHTML string rendering this page.
         """
-	html  = self.renderHeader(package.name, for_print)
+	html  = self.renderHeader(package.title, for_print)
         if for_print:
             # include extra onload bit:
             html += u'<body onload="print_page()">\n'
@@ -62,7 +62,7 @@ class SinglePage(Page):
             html += u"<body>\n"
         html += u"<div id=\"content\">\n"
         html += u"<div id=\"header\">\n"
-        html += escape(package.title)
+        html += "<h1>"+escape(package.title)+"</h1>"
         html += u"</div>\n"
         html += u"<div id=\"main\">\n"
         html += self.renderNode(package.root)
@@ -113,9 +113,9 @@ class SinglePage(Page):
         html = ""
         html += '<div class="node">\n'
         html += '  <div id=\"nodeDecoration\">'
-        html += '<p id=\"nodeTitle\">'
+        html += '<h2 id=\"nodeTitle\">'
         html += escape(node.titleLong)
-        html += '</p></div>\n'
+        html += '</h2></div>\n'
         
         style = self.node.package.style
 
