@@ -33,6 +33,9 @@ from exe.webui.renderable    import RenderableResource
 from exe.engine.path         import Path
 from exe                     import globals as G
 
+from exe.webui                  import preferencespage
+from exe.engine.idevice         import Idevice
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -119,9 +122,9 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u"isChanged", u"0")
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
-        html += u'<p id="nodeTitle">\n'
+        html += u'<h1 id="nodeTitle">\n'
         html += escape(topNode.titleLong)
-        html += u'</p>\n'
+        html += u'</h1>\n'
         html += u'</div>\n'
 
         for block in self.blocks:
@@ -137,79 +140,30 @@ class AuthoringPage(RenderableResource):
 
 
     def __renderHeader(self):
+		#TinyMCE lang (user preference)
+        myPreferencesPage = preferencespage.PreferencesPage(self)
+        
         """Generates the header for AuthoringPage"""
         html  = common.docType()
-        html += u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
+        #################################################################################
+        #################################################################################
+        
+        html += u'<html xmlns="http://www.w3.org/1999/xhtml" lang="'+myPreferencesPage.getSelectedLanguage()+'">\n'
         html += u'<head>\n'
         html += u'<style type="text/css">\n'
         html += u'@import url(/css/exe.css);\n'
         html += u'@import url(/style/base.css);\n'
         html += u'@import url(/style/%s/content.css);\n' % self.package.style
         html += u'</style>\n'
+        if G.application.config.assumeMediaPlugins: 
+            html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"			
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" '
         html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
         html += u'</script>\n'
-        html += u'<script type="text/javascript">\n'
-        html += u'<!--\n'
-        html += u"tinyMCE.init({   " 
-        html += u"content_css : \"/css/extra.css\", \n"
-        html += u"valid_elements : \"*[*]\",\n"
-        html += u"verify_html : false, \n"
-        html += u"apply_source_formatting : true, \n"
-        ###########
-        # testing TinyMCE's escaping/quoting of HTML:
-        html += u"cleanup_on_startup : false, \n"
-        #html += u"cleanup : false, \n"
-        html += u"entity_encoding : \"raw\", \n"
-        #############
-        html += u"gecko_spellcheck : true, \n"
-        html += u" mode : \"textareas\",\n"
-        html += u" editor_selector : \"mceEditor\",\n"
-        html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,media,"
-        html += u" contextmenu,paste,directionality,exemath\",\n"
-        html += u" theme : \"advanced\",\n"
-        html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
-        html += u"theme_advanced_toolbar_location : \"top\",\n"  
-        html += u" theme_advanced_buttons1 : \"newdocument,separator,"
-        html += u"bold,italic,underline,formatselect,fontsizeselect,fontselect,forecolor,"
-        html += u"backcolor,separator,sub,sup,separator,"
-        html += u"justifyleft,justifycenter,justifyright,justifyfull,"
-        html += u"separator,bullist,numlist,outdent,indent,separator,help\",\n"
-        html += u" theme_advanced_buttons2 : \"cut,copy,paste,pastetext,pasteword,separator,image,media,exemath,advhr,"
-        html += u"tablecontrols,separator,anchor,link,unlink,separator,"
-        html += u" undo,redo,separator,charmap,code,removeformat,cleanup\",\n"
-        
-        html += u" theme_advanced_buttons3 : \"\",\n"
-       
-        # the image-handling callback function for tinyMCE's image button:
-        html += u"advimage_image_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-        # and manually entered filenames as well, via image2insert w/o file browser:
-        html += u"advimage_image2insert_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-        # the media-handling callback function for tinyMCE's media button:
-        html += u"media_media_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-        # and manually entered filenames as well, via media2insert w/o file browser:
-        html += u"media_media2insert_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-
-        # the link-handling callback function for tinyMCE's media button:
-        html += u"advlink_file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-        # and manually entered filenames as well, via media2insert w/o file browser:
-        html += u"advlink_file2insert_browser_callback : \"chooseImage_viaTinyMCE\",\n"
-
-        # and the callback to generate exemath's LaTeX images via mimetex:
-        html += u"exemath_image_browser_callback : \"makeMathImage_viaTinyMCE\",\n"
-
-        # to override any browser plugin checks, and allow media to be added:
-        if G.application.config.assumeMediaPlugins: 
-            html += u"exe_assume_media_plugins : true,\n"
-
-        html += u"theme_advanced_statusbar_location : \"bottom\",\n"
-        html += u"    theme_advanced_resize_horizontal : false,\n"
-        html += u"    theme_advanced_resizing : true\n"
-        html += u" });\n"
-        html += u"//-->\n"
-        html += u"</script>\n"
+        html += u'<script type="text/javascript" src="/scripts/tiny_mce_settings.js">'
+        html += u'</script>\n'
         html += u'<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += u'</script>\n'
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'

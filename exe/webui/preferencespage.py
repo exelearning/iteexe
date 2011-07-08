@@ -137,3 +137,10 @@ class PreferencesPage(RenderableResource):
         html += u"self.close();\"></body>\n"
         html += u"</html>\n"
         return html.encode('utf8')
+
+    def getSelectedLanguage(self):
+        """
+        It would be the TinyMCE lang
+        """
+        return self.config.locale
+		
