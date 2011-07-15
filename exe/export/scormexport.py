@@ -311,9 +311,9 @@ class ScormPage(Page):
         html += u"<div id=\"outer\">\n"
         html += u"<div id=\"main\">\n"
         html += u"<div id=\"nodeDecoration\">\n"
-        html += u"<p id=\"nodeTitle\">\n"
+        html += u"<h1 id=\"nodeTitle\">\n"
         html += escape(self.node.titleLong)
-        html += u'</p></div>\n'
+        html += u'</h1></div>\n'
 
         for idevice in self.node.idevices:
             html += u'<div class="%s" id="id%s">\n' % (idevice.klass,
