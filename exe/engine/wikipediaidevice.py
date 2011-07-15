@@ -226,7 +226,7 @@ within Wikipedia.""")
         """
         # Wiki Article Idevice:
         # option title for Wikipedia, with mode emphasis:
-        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         if title is not None: 
             self.title = title.renderContents().decode('utf-8')
             self.emphasis=Idevice.SomeEmphasis

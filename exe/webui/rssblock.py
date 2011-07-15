@@ -141,9 +141,9 @@ class RssBlock(Block):
                 html += u'<img alt="idevice icon" class="iDevice_icon" '
                 html += u" src=\"/style/"+style
                 html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\">"
+            html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title
-            html += u"</span>\n"
+            html += u"</h2>\n"
             html += u"<div class=\"iDevice_inner\">\n"
         html += self.rssElement.renderPreview()
         html += self.renderViewButtons()
@@ -171,9 +171,9 @@ class RssBlock(Block):
             if self.idevice.icon:
                 html += u'<img alt="iDevice icon" class="iDevice_icon" '
                 html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\">"
+            html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title
-            html += u"</span>\n"
+            html += u"</h2>\n"
             html += u"<div class=\"iDevice_inner\">\n"
         html += content
        

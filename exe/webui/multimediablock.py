@@ -124,9 +124,9 @@ class MultimediaBlock(Block):
                 html += u'<img alt="idevice icon" class="iDevice_icon" '
                 html += u" src=\"/style/"+style
                 html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\">"
+            html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title
-            html += u"</span>\n"
+            html += u"</h2>\n"
         html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderPreview()+ "</div>\n"
@@ -152,9 +152,9 @@ class MultimediaBlock(Block):
             if self.idevice.icon:
                 html += u'<img alt="idevice icon" class="iDevice_icon" '
                 html += u' src="icon_'+self.idevice.icon+'.gif"/>\n'
-            html += u"<span class=\"iDeviceTitle\">"
+            html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title
-            html += u"</span>\n"
+            html += u"</h2>\n"
         html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n" + "</div>"
         html += self.mediaElement.renderView()

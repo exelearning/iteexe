@@ -160,7 +160,7 @@ class GenericIdevice(Idevice):
         import this idevice from a CommonCartridge export
         """
         # Generic Idevice, with content in fields[]:
-        title = i.find(name='span', 
+        title = i.find(name='h2', 
                 attrs={'class' : 'iDeviceTitle' }) 
         self.title = title.renderContents().decode('utf-8') 
 

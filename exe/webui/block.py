@@ -299,9 +299,9 @@ class Block(Renderable):
                 html += u'<img alt="%s" class="iDevice_icon" ' % _('IDevice Icon')
                 html += u" src=\"/style/"+style
                 html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\">"
+            html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title
-            html += u"</span>\n"
+            html += u"</h2>\n"
         html += self.renderViewContent()
         html += self.renderViewButtons()
         html += u"</div>\n"
@@ -319,9 +319,9 @@ class Block(Renderable):
             if self.idevice.icon:
                 html += u'<img alt="%s" class="iDevice_icon" ' % _('iDevice icon')
                 html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\">"
+            html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title
-            html += u"</span>\n"
+            html += u"</h2>\n"
         html += self.renderViewContent()
         html += u"</div>\n"
         return html

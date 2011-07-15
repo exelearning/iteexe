@@ -362,9 +362,9 @@ class GalleryBlock(Block):
                      u'<img alt="%s" ' % _(u'IDevice Icon'),
                      u'     class="iDevice_icon" ',
                      u'src="icon_'+self.idevice.icon+'.gif" />'
-                     u'<span class="iDeviceTitle">',      
+                     u'<h2 class="iDeviceTitle">',      
                      self.idevice.title,
-                     '</span><br/>']
+                     '</h2>']
             popup = ""
             if self.idevice._htmlResource is not None:
                 popup = self.idevice.htmlSrc

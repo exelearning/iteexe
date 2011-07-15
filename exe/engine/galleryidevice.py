@@ -463,7 +463,7 @@ these in a gallery context rather then individually.</p>"""),
         resourceDir = self.parentNode.package.resourceDir
 
         # GalleryImage Idevice:
-        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         self.title = title.renderContents().decode('utf-8')
 
         images = i.findAll(name='div', attrs={'class' : 'gallery_image' })

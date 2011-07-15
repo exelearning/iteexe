@@ -190,7 +190,7 @@ click on the Hide/Show Word button below.</p>"""))
         import this idevice from a CommonCartridge export
         """
         # Cloze Idevice:
-        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         self.title = title.renderContents().decode('utf-8')
 
         inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })

@@ -130,8 +130,8 @@ class MultichoiceBlock(Block):
         html += u'<img alt="%s" ' % _(u'IDevice Question Icon')
         html += u'     class="iDevice_icon" '
         html += "src=\"icon_question.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span><br/>\n"
+        html += "<h2 class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</h2>\n"
         html += "<div class=\"iDevice_inner\">\n"
         
         for element in self.questionElements:
@@ -154,8 +154,8 @@ class MultichoiceBlock(Block):
         html += u'<img alt="%s" ' % _(u'IDevice Icon')
         html += u'     class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span><br/>\n"
+        html += u"<h2 class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</h2>\n"
         html += "<div class=\"iDevice_inner\">\n"
 
         for element in self.questionElements:

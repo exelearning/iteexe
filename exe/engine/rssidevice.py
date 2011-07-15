@@ -125,7 +125,7 @@ display them as links in your content. From here you can edit the bookmarks and 
         """
         # RSS Idevice:
         # option title for RSS, with mode emphasis:
-        title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
+        title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         if title is not None: 
             self.title = title.renderContents().decode('utf-8')
             self.emphasis=Idevice.SomeEmphasis
