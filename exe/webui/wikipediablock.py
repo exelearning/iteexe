@@ -177,7 +177,7 @@ class WikipediaBlock(Block):
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
-                html += u'<img alt="idevice icon" class="iDevice_icon" '
+                html += u'<img alt="" class="iDevice_icon" '
                 html += u" src=\"/style/"+style
                 html += "/icon_"+self.idevice.icon+".gif\"/>\n"
             html += u"<h2 class=\"iDeviceTitle\">"
@@ -218,7 +218,7 @@ class WikipediaBlock(Block):
 
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
-                html += u'<img alt="iDevice icon" class="iDevice_icon" '
+                html += u'<img alt="" class="iDevice_icon" '
                 html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
             html += u"<h2 class=\"iDeviceTitle\">"
             html += self.idevice.title

@@ -359,7 +359,7 @@ class GalleryBlock(Block):
             html  = [u'<div class="iDevice emphasis%s" ' %
                      unicode(self.idevice.emphasis),
                      u'>',
-                     u'<img alt="%s" ' % _(u'IDevice Icon'),
+                     u'<img alt="" ' % _(u'IDevice Icon'),
                      u'     class="iDevice_icon" ',
                      u'src="icon_'+self.idevice.icon+'.gif" />'
                      u'<h2 class="iDeviceTitle">',      
