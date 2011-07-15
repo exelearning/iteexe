@@ -23,7 +23,7 @@ a {
     background-color: #CAC3B5;
 }
 
-p#nodeTitle { 
+#nodeTitle { 
     color: #514E4C;       /* styles for the title of the page/node */
     font-size: 1.6em;
     display: inline;
@@ -66,6 +66,7 @@ input.feedbackbutton {
     color: #990000;
     font-size: 1.2em;
     font-weight: normal;
+	display: inline;
 }    
 
 .iDevice_icon {

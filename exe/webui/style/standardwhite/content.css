@@ -21,7 +21,7 @@ a:hover {
     text-decoration: none; 
 }
 
-p#nodeTitle { 
+#nodeTitle { 
     color: #4D4D4D;
     font-size: 18px;
     font-weight: bold;
@@ -71,6 +71,7 @@ input.feedbackbutton {
     color: #000;
     font-size: 17px;
     font-weight: normal;
+	display: inline;
 }    
 
 .iDevice_icon {

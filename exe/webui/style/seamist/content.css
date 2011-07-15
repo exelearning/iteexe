@@ -51,7 +51,7 @@ li {list-style-position: inside;}
 }
 /* -- style the node title on each page -- */
 
-p#nodeTitle { 
+#nodeTitle { 
     color: #3C5866;
     font-size: 18px;
 }
@@ -87,6 +87,7 @@ div#nodeDecoration {
     color: #3C5866;
     font-size: 17px;
     font-weight: normal;
+	display: inline;
 }  
 
 .iDevice li {

@@ -34,7 +34,7 @@ li {
     list-style-position: outside;
 }
 
-p#nodeTitle { 
+#nodeTitle { 
     font-weight: bold;
     display: inline;
 }
@@ -67,6 +67,7 @@ div#nodeDecoration {
     font-weight:bold;
     position: relative;
     top: -18px;   /* aligns title up with middle of icon */
+	display: inline;
 }
 
 input.feedbackbutton {

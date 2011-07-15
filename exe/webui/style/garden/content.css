@@ -18,7 +18,7 @@ a:hover {
     color: #B34700;
 }
 
-p#nodeTitle { 
+#nodeTitle { 
     color: #A1B386;
     font-size: 20px;
     font-weight: bolder;
@@ -58,6 +58,7 @@ padding-top: 10px;
     color: #A1B386;
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
+	display: inline;
 }    
 
 .iDevice_icon {

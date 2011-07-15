@@ -26,7 +26,7 @@ a:hover {
 
 /* --- Styles for the node/page titles --- */
 
-p#nodeTitle { 
+#nodeTitle { 
    color: #4d4d4d;
    font-size: 32px;
    text-align:left;
@@ -83,6 +83,7 @@ div#nodeDecoration {
    background-position:top right;
    background-repeat:no-repeat;
    top: 0;
+   display: inline;
 } 
 
 .emphasis0 .iDeviceTitle {

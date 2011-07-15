@@ -28,7 +28,7 @@ a:hover {
 }
 
 
-p#nodeTitle { 
+#nodeTitle { 
     color: #006699;
     font-size: 20px;
     text-align: left;
@@ -88,7 +88,7 @@ div#nodeDecoration {
     color: #003399;
     font-size: 18px;
     background: transparent; 
-
+	display:inline;
 } 
 
 .iDevice_icon {
