@@ -127,3 +127,80 @@ width: 68%;
 position: absolute;
 text-align:left;
 }
+
+/* ITE elements */
+#siteNav {
+	z-index:1000;
+	width: 250px;
+	height: 100%; /* the holly hack for IE! */
+	float: left;
+	margin-top: 0px;
+	margin-left:10px;
+	padding-top: 60px;
+	text-align:left;
+	position:absolute;
+	background-color:transparent;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {  /* sections not active */
+	display: block;
+	padding: 4px 0 4px 18px;
+	background-color: #FFF;
+	border-bottom: 1px solid #ffffff;
+	width: 195px;
+	border-top: 1px solid #ffffff;
+}
+
+#siteNav #active {
+	padding: 0;
+	border: 0;
+	background:none;
+}
+
+#siteNav #active .active {
+	padding: 0px 0px 3px 18px;
+	width: 195px !important; /* the Housley Hack for Firefox... */
+	width: 209px; /* for IE */
+	background-color: #706F61;
+	color: #ffffff;
+	border-bottom: 1px solid #fff;
+	border-top: 6px solid #706f61;
+	background-image:url(active_bg.gif);
+	background-position: -2px -2px;
+	background-repeat:no-repeat;
+}
+
+#siteNav a {
+	color: #4d4d4d;
+	background-color: #E0DFD8;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #4d4d4d;
+	background-color:#c7c5b9;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #siteNav {
+	margin-right: 10px;
+}
+
+#siteNav ul ul ul a{
+	display: block;
+	border: 0 !important;
+	width: 187px;
+	margin-left: 10px;
+	padding: 4px 0 4px 16px;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
