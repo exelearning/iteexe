@@ -91,8 +91,8 @@ class Page(object):
         """
         html = ""
         if self.node.package.footer <> "":
-            html += '<p align="center">'
-            html += self.node.package.footer + "</p>"
+            html += '<div id="siteFooter">'
+            html += self.node.package.footer + "</div>"
             
         return html
 
