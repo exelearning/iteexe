@@ -14,7 +14,7 @@ body{
 
 #navcontainer a{
 	color:#000000; /* Enlaces del menú */
-	border-color:#0460B3; /* Borde que separa a los enlaces del menú */
+	border-color:#0460B3; /* Borde que separa a los enlaces  */
 }
 
 #navcontainer a:hover,#subnav div:first-child a:hover{
@@ -31,6 +31,49 @@ body{
 	border-color:#0460B3;  /* Borde del enlace activo en el menú principal */
 }
 
+.noprt{
+	color:#fff; /* Color de texto del bloque Anterior/Siguiente: igual que el color de fondo de la página */
+	border-color:#999; /* Color de borde del bloque: borde superior */
+}
+
+.noprt a{
+	background-color:#e6e9ed; /* Color de fondo de los enlaces Anterior/Siguiente */
+	color:#A7512B; /* Color de texto de estos enlaces */
+}
+
+.noprt a:hover{
+	background-color:#cfd9ea; /* Color de fondo de los enlaces Anterior/Siguiente al pasar sobre ellos */
+	color:#263264; /* Color de texto de estos enlaces al pasar sobre ellos */
+}
+
+/* ************************************************************************** */
+/* **** TABLA DE COLORES para usarios del eXe del ITE ********************** */
+/* ************************************************************************ */
+
+#siteNav a{
+	color:#000000; /* Enlaces del menú */
+	border-color:#0460B3; /* Borde que separa a los enlaces */
+}
+
+#siteNav a:hover{
+	color:#4D4D4D; /* Enlaces al pasar sobre ellos */
+	background:#eee; /* Fondo de los enlaces al pasar sobre ellos */
+}
+
+#siteNav ul ul ul a{
+	color:#555; /* Menú: enlaces de segundo nivel */
+}
+
+#siteNav .active{
+	color:#0460B3; /* Enlace activo en el menú principal */
+	font-weight:bold; /* Peso fuente */
+	border-color:#0460B3;  /* Borde del enlace activo */
+}
+
+#siteNav .other-section{
+	display:none; /* Eliminar si se quiere que se muestren todos los niveles */
+}
+
 /* ********************************************* */
 /* **** OTRAS DEFINICIONES ******************** */
 /* ******************************************* */
@@ -38,12 +81,13 @@ body{
 /* ITE nav */
 #main{padding:10px 20px 0 250px}
 #header{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
+* html #header{height:110px} /* IE6 */
 #nodeTitle{position:absolute;top:55px;left:250px;margni-left:0}
 #nodeTitle{font-size:1.6em;margin:20px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0 10px;border:none}
 
-body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:left}
-#content{font-size:.75em;width:985px;margin:0 auto;position:relative;border-style:solid;border-width:1px;border-top:0}
+body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:center}
+#content{font-size:.75em;width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
 
 #navcontainer {width: 230px;float: left;padding-right:20px}
 #navcontainer ul,#navcontainer li{margin:0;padding:0}
@@ -57,31 +101,28 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 #navcontainer #active{font-weight:bold;padding:4px 0 4px 10px;border-style:dotted;border-width:0 0 1px 0}
 #subnav a,#subnav #active{padding:4px 0 4px 25px}
 
-/* ********************************************* */
-/* **** DEFINICIONES para el eXe del ITE ****** */
-/* ******************************************* */ 
+/* ********************************************************* */
+/* **** DEFINICIONES específicas para el eXe del ITE ****** */
+/* ******************************************************* */ 
 
-#siteNav li:first-child{font-weight:bold;font-variant:small-caps;letter-spacing:1px}
-#siteNav li:first-child a:hover{background:none;text-decoration:underline}
-#siteNav li li:first-child{font-weight:normal;font-variant:normal;letter-spacing:0}
-#siteNav {width: 230px;float: left;padding-right:20px}
+#siteNav{width:230px;float: left;padding-right:20px}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
-#siteNav ul ul{font-size:11px}
-#siteNav ul ul a{padding-left:25px}
-#siteNav ul ul{border-top:1px dotted #0460B3}
-#siteNav ul ul ul a{padding-left:50px}
-#siteNav li{border-bottom:1px dotted #0460B3}
-#siteNav li:last-child{border-bottom:none}
-#siteNav a{padding:4px 0 4px 10px;color:#000;display:block}
-#siteNav .active{color:#0460B3;font-weight:bold}
-#siteNav li li:first-child a:hover,#siteNav a:hover{color:#4D4D4D;background:#eee;text-decoration:none}
+#siteNav a{display:block;padding:4px 0 4px 10px;border-width:0 0 1px 0;border-style:dotted}
+* html #siteNav a{display:inline-block;width:100%} /* IE6 */
+#siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
+#siteNav a.main-node:hover{text-decoration:underline;background:none}
+#siteNav ul ul ul a{padding-left:25px;font-size:.95em}
+#siteNav ul ul ul ul a{font-size:1em;padding-left:50px;}
+
 /* Pagination */
-.noprt{color:#fff;border-top:1px dotted #999;padding-top:10px}
-.noprt a{background:#e6e9ed;padding:3px;color:#A7512B}
-.noprt a:hover{padding:3px;background:#cfd9ea;text-decoration:none;color:#263264}
+.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px}
+.noprt a{padding:3px;}
+.noprt a:hover{text-decoration:none;}
+
 /* Footer and iDevices */
 #ite-footer{padding:20px 0;text-align:center;margin-left:-250px}
 .iDeviceTitle{vertical-align:top}
+
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
