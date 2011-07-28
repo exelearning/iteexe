@@ -32,7 +32,11 @@ Date:    7 Mar 2004
 
 from __future__ import generators
 
-import sys, os, fnmatch, glob, shutil, codecs, md5
+import sys, os, fnmatch, glob, shutil, codecs
+try:
+        import hashlib
+except ImportError:
+        import md5 as hashlib
 from tempfile import mkdtemp
 import logging
 log = logging.getLogger(__name__)
@@ -1042,7 +1046,7 @@ class Path(unicode):
             file_ = file(self, 'rb')
         except:
             raise Exception("Could not open %s" % self)
-        hasher = md5.new()
+        hasher = hashlib.md5()
         if hasattr(self, 'salt'):
             hasher.update(self.salt)
         while True:

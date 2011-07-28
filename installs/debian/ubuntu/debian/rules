@@ -43,7 +43,7 @@ install: build
 	dh_installdirs
 	for python in $(PYVERS); do \
 		python=$$(echo $$python | sed "s/$(PYDEF)/python/"); \
-		$$python setup.py install --root=debian/$(EXEPKG); \
+		$$python setup.py install --prefix=/usr --root=debian/$(EXEPKG); \
 	done
 
 binary-indep: build install
