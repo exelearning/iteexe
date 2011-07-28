@@ -93,6 +93,8 @@ class WebsitePage(Page):
             html += u">\n"
             html += escape(self.node.package.title)
             html += u"</div>\n"
+        else:
+            html += "<div id=\"emptyHeader\"></div>"
         
         # add left navigation html
         html += u"<div id=\"siteNav\">\n"
