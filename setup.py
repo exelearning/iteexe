@@ -9,24 +9,6 @@ from setuptools                 import setup
 from exe.engine                import version
 from exe.engine.path           import Path
 
-# update the svn revision number
-REVISION_FILE = 'exe/engine/version_svn.py'
-
-try:
-    os.unlink(REVISION_FILE)
-except OSError:
-    pass
-
-try:
-    line = open('debian/changelog').readline()
-    build = line.split('(')[1].split(')')[0]
-    revision = build.split(version.release + ".")[1]
-except OSError:
-    revision = None
-
-if revision:
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-
 # Before we install, make sure all the mimetex binaries are executable
 Path('exe/webui/templates/mimetex.cgi').chmod(0755)
 Path('exe/webui/templates/mimetex.64.cgi').chmod(0755)
@@ -78,7 +60,7 @@ opts = {
 }
 
 setup(name         = version.project,
-      version      = build,
+      version      = version.release,
       description  = "eLearning XHTML editor",
       long_description = """\
 The eXe project is an authoring environment to enable teachers
