@@ -95,7 +95,7 @@ class WebsitePage(Page):
             html += u"</div>\n"
         
         # add left navigation html
-        html += u"<div id=\"navcontainer\">\n"
+        html += u"<div id=\"siteNav\">\n"
         html += self.leftNavigationBar(pages)
         html += u"</div>\n"
         html += u"<div id=\"main\">\n"
@@ -131,52 +131,78 @@ class WebsitePage(Page):
         return html
 
         
-    def leftNavigationBar(self, pages):
+    def leftNavigationBar(self, pages, inSameLevelTitle = False, excludeTitle = False):
         """
         Generate the left navigation string for this page
         """
-        depth    = 1
+        if inSameLevelTitle:
+            depth = 1
+        else:
+            depth = 0
         nodePath = [None] + list(self.node.ancestors()) + [self.node]
 
-        html = "<ul id=\"navlist\">\n"
-
+        html = "<ul>\n"
+        
         for page in pages:
-            if page.node.parent in nodePath:
-                while depth < page.depth:
-                    html += "<div id=\"subnav\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">\n"
-                    depth += 1
-                while depth > page.depth:
-                    html += "</div>\n"
-                    depth -= 1
+            if page.node.parent == None and not inSameLevelTitle:
+                page.depth = 0
+            if page.node.parent == None and excludeTitle:
+                depth = 1
+                continue
+            while depth < page.depth:
+                html += "<ul"
 
-                if page.node == self.node:
-                    html += "<div id=\"active\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">"
-                    html += escape(page.node.titleShort)
-                    html += "</div>\n"
+                if page.node.parent not in nodePath:
+                    html += " class=\"other-section\""
+                html += ">\n"
+                depth += 1
+
+            while depth > page.depth:
+                html += "</ul>\n</li>\n"
+                depth -= 1
+            
+            if page.node == self.node:
+                html += "<li id=\"active\"><a href=\""+quote(page.name)+".html\" "
+				
+                if page.node.children:
+                    html += "class=\"active daddy"
                 else:
-                    html += "<div><a href=\""+quote(page.name)+".html\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">"
-                    html += escape(page.node.titleShort)
-                    html += "</a></div>\n"
+                    html += "class=\"active no-ch"
+					
+                if page.node.id=="0":
+                    html += " main-node"
+                	
+                html += "\">"
+                html += escape(page.node.titleShort)+"</a>"
+				
+                if inSameLevelTitle and page.node.id=="0":
+                    html += "</li>"				
 
-        while depth > 1:
-            html += "</div>\n"
-            depth -= 1
-        html += "</ul>\n"
+            else:
+                html += "<li><a href=\""+quote(page.name)+".html\" class=\""
+                if page.node.children:
+                    html += "daddy"
+                else:
+                    html += "no-ch"
+					
+                if page.node.id=="0":
+                    html += " main-node"					
+					
+                html += "\">"
+                html += escape(page.node.titleShort)
+                html += "</a>"
+				
+                if inSameLevelTitle and page.node.id=="0":
+                    html += "</li>"					
+			
+            if not page.node.children:
+                html += "</li>\n"
+
+        if excludeTitle or inSameLevelTitle:
+            html += "</ul>\n"
+        else:
+            html += "</ul></li></ul>\n"
+        
         return html
         
         
