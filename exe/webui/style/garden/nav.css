@@ -106,5 +106,63 @@ div #subnav {
 	margin: 0px 10px 10px 180px;
 	line-height: 140%;
 	}
-	
 
+/* ITE elements */
+#siteNav {
+	width: 169px;
+	float: left;
+	margin-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+
+	list-style:none;
+}
+
+#siteNav a {
+	display: block;
+	padding: 3px 0 3px 6px;
+	background-color: #FFF;
+	border-bottom: 1px solid #CCC;
+	width: 163px;
+	color: #96852C;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #51778A;
+	background-color: #FFEDBF;
+}	
+	
+#siteNav #active {
+	padding: 0;
+	border: 0;
+	width:auto;
+	background:none;
+}
+
+#siteNav #active .active {
+	background-color: #A1B386;
+	color: #EDEFF0;
+	border-bottom: 1px solid #FFF;
+}
+
+#siteNav ul ul ul{
+	border-bottom:1px solid #ccc
+}
+
+#siteNav ul ul ul a{
+	display: block;
+	border: 0 !important;
+	width: 143px;
+	margin-left: 10px;
+	padding: 4px 0 4px 16px;
+	font-size:x-small;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
