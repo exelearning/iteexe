@@ -2,11 +2,15 @@
 Copyright University of Auckland 2004
 Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
+
+	Modificado: Aníbal de la Torre /Juan Diego Pérez
+	
+	
 ============================================= */
 
 #header {
     color: #006699;
-    background-color: transparent;
+    background-color: #FFFFFF;
     height: 100px;
     padding-left: 20px;
     font-size: 2.2em;
@@ -17,11 +21,11 @@ Centre for Flexible and Distance Learning
    z-index:1000;
    width: 220px;
    float: left;
-   margin-top: 50px;
    text-align:left;
-   background-image: url(main_bg.gif);
    font: .9em;
+   padding-right: 5px;
    border: 1px solid #FFF;
+   border-right: 1px dashed #365475;
 }
 
 #navcontainer ul {
@@ -29,25 +33,28 @@ Centre for Flexible and Distance Learning
    padding-left: 0px;
    margin-top: 0px;
    list-style-type: none;
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: Verdana,Arial, Helvetica, sans-serif;
 }
 
 #navcontainer a {
    display: block;
    padding: 4px 0px 4px 18px;
-   border-bottom: 1px solid #F2F2EF;
+   border-bottom: 0px;
 }
 
 #navcontainer a:link, #navlist a:visited {
-   color: #000000;
-   background-color: transparent;
+   color: #598AC3;
+   font-weight: bold;
+   background-color: #FFFFF;
    text-decoration: none;
    width: 202px;
 }
 
 #navcontainer a:hover {
-   color: #4d4d4d;
-   background-color:#EEEEEE;
+   color: #365475;
+   font-weight:bold;
+   background-color:#F5F5F5;
+   border: 1px dashed #CCCCCC;
 }
 
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
@@ -63,23 +70,25 @@ margin-left: 0;
 
 /* nodes with children get expandable icon */
 .withChild {
- background-image: url(expand.gif);
+ background-image: url(collapse2.gif);
  background-repeat: no-repeat;
  background-position: 2px 9px;
 }
 
 #active.withChild {
 padding: 4px 0px 4px 18px;
-background-color: #CDD4DC;
+background-color: #fdfaf9;
 background-image: url(collapse.gif) !important;
 background-repeat: no-repeat;
-color: #ffffff;
+color: #BD4949;
+font-weight: bold;
 }
 
 #active.withoutChild {
 padding: 4px 0px 4px 18px;
-background-color: #CDD4DC;
-color: #ffffff;
+background-color: #FDFAF9;
+color: #BD4949;
+font-weight: bold;
 }
 
 /* subnav is for displaying sections and units */
@@ -91,21 +100,22 @@ padding: 4px 0px 4px 30px;
 }
 
 #subnav a:hover {
-color: #4d4d4d;
-background-color: #EEEEEE;
+color: #365475;
+background-color: #F5F5F5;
+font-weight: bold;
 padding: 4px 0 4px 30px;
-width: 190px;
+border: 1px dashed #CCCCCC !important;
 }	
 
 #subnav #active {
-background-color: #CDD4DC;
-color: #ffffff;
-width: 190px;
+background-color: #FDFAF9;
+color: #BD4949;
+font-weight: bold;
 padding: 4px 0 4px 30px;
 }	
 
 div > #subnav .withChild {
-background-image: url(expand.gif) !important;
+background-image: url(collapse.gif) !important;
 background-repeat: no-repeat !important;
 background-position: 14px 9px !important;
 }
@@ -114,6 +124,11 @@ background-position: 14px 9px !important;
 background-image: url(collapse.gif) !important;
 background-repeat: no-repeat !important;
 background-position: 14px 9px !important;
+}
+
+.withoutChild
+{
+	font-size: 10px;
 }
 
 #subnav .withoutChild  div {
@@ -141,84 +156,84 @@ position:absolute;
 
 #main {
 	padding: 18px;
+	padding-top: 0px;
 	margin: 0px 10px 10px 180px;
 	margin-left: 220px;
-	margin-top: 30px;
+	margin-top: 10px;
 	text-align:left;
 	width: 72%;
-	
-	
 }
 
 /* ITE elements */
-#siteNav {
+
+#siteNav{
 	z-index:1000;
 	width: 220px;
-	height: 100%; /* the holly hack for IE! */
 	float: left;
-	margin-top: 50px;
-	margin-left:10px;
 	text-align:left;
-	position:absolute;
-	left:10px;
-	font-family: Arial, Helvetica, sans-serif;
-	background-image: url(main_bg.gif);
-	font-size: .9em;
+	padding-right: 5px;
 	border: 1px solid #FFF;
+	border-right: 1px dashed #365475;
+	font-family: Verdana,Arial, Helvetica, sans-serif;
 }
 
 #siteNav ul,#siteNav li{
 	margin:0;
 	padding:0;
 	list-style:none;
+	list-style-image:none;
 }
 
-#siteNav a {  /* sections not active */
+#siteNav a{
 	display: block;
-	padding: 4px 0 4px 18px;
-	border-bottom: 1px solid #F2F2EF;
-	width: auto;
-	color:#000;
+	padding: 4px 0px 4px 18px;
+	color: #598AC3;
+	font-weight: bold;
+	background-color: #FFFFF;
 	text-decoration: none;
+	width: 198px;
 }
 
-#siteNav a:hover {
-	color: #4d4d4d;
-	background-color:#eee;
+#siteNav a:hover{
+	color: #365475;
+	font-weight:bold;
+	background-color:#F5F5F5;
+	border: 1px dashed #CCCCCC;
 }
 
-* html #siteNav ul,#siteNav li{ /* IE6 */
-	width:auto;
-}
-
-* html #siteNav a{ /* IE6 */
-	width:100%;
-	margin-left:-15px;
-}
-
-#siteNav li .active {
-	border-bottom: 1px solid #fff;
-	background-color: #CDD4DC;
-	color: #ffffff;
-}
-
-#siteNav .daddy {
-	background-image: url(collapse.gif);
+#siteNav .daddy{
+	background-image: url(collapse2.gif);
 	background-repeat: no-repeat;
-	background-position: 2px 50%;
+	background-position: 2px 6px;
 }
 
-#siteNav .daddy.active {
-	background-image: url(expand.gif);
+#siteNav .active{
+	background-color: #FDFAF9;
 	background-repeat: no-repeat;
-	background-position:3px 50%;
+	color: #BD4949;
+	font-weight: bold;
+}
+
+#siteNav .daddy.active{
+	background-image: url(collapse.gif) !important;
+}
+
+#siteNav ul ul .active{
+	background-image:none !important;
+}
+
+#siteNav#siteNav .no-ch{
+	font-size:.82em;
 }
 
 #siteNav ul ul ul a{
-	display: block;
-	border: 0 !important;
-	padding: 4px 0 4px 26px;
-	background-image:none !important;
+	padding-left:28px;
+	width: 188px;
+	font-size:.82em;
+}
+
+#siteNav ul ul ul ul a,#siteNav#siteNav ul ul ul ul .no-ch{
+	font-size:1em;
 }
 
 #siteNav .other-section{

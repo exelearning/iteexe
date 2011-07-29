@@ -65,7 +65,7 @@
  
 /* End hide from IE5/mac */
 
-div #active {
+#navcontainer #active {
 	padding: 3px 0 3px 6px;
 	width: 194px;
 	background-color: #8B8B89;
@@ -101,3 +101,64 @@ div #subnav {
         background-color: #FFF;
 	}
 	
+/* ITE elements */
+
+#siteNav {
+	background-color: #696967;
+	border-top: 4px solid #8A0A0A;
+	width: 200px;
+	float: left;
+	padding:12px 0;
+	margin-top: 22px;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {
+	display: block;
+	padding: 3px 3px 3px 6px;
+	color: #EAE0D1;
+	text-decoration: none;
+	width:191px;
+}
+
+#siteNav a:hover {
+	background-color: #848484;
+}
+
+#siteNav .active {
+	background-color: #8B8B89;
+	font-weight: bold;
+	color: #EAE0D1;
+	border-bottom: 1px solid #FFF;
+	border-top: 1px solid #FFF;
+}
+
+
+#siteNav ul ul ul{
+	border-bottom:1px solid #ccc;
+	font-size:11px;
+}
+
+#siteNav ul ul ul a{
+	width: 181px;
+	padding-left:16px;
+}
+
+#siteNav ul ul ul .active{
+	background-color: #8B8B89;
+	color: #DBD3C6;
+	font-weight:normal;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+* html #siteNav a,* html #siteNav ul ul ul a{ /* IE6 */
+	width:200px;
+}

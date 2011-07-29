@@ -67,7 +67,7 @@ height: 1%;
 margin-left: 0;
 }
 /* End hide from IE5/mac */
-div #active {
+#navcontainer #active {
 padding: 3px 0 3px 6px;
 width: 149px;
 background-color: #706F61;
@@ -121,4 +121,83 @@ margin-top: 30px;
 position:absolute;
 text-align:left;
 width: 60%;
+}
+
+/* ITE elements */
+#siteNav {
+	z-index:1000;
+	width: 165px;
+	float: left;
+	margin:0 20px 0 30px;
+	padding-top: 120px;
+	text-align:left;
+	position:absolute;
+	background-color:transparent;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {
+	display: block;
+	padding: 4px 0 4px 6px;
+	border-bottom: 1px solid #ffffff;
+	width: 155px;
+	border-top: 1px solid #ffffff;
+	color: #4d4d4d;
+	background-color: #E0DFD8;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #4d4d4d;
+	background-color:#c7c5b9;
+}
+
+#siteNav a.active {
+	padding-left:18px;
+	width:143px;
+	background-color: #706F61;
+	color: #ffffff;
+	border-bottom: 1px solid #fff;
+	background-image:url(active_bg.gif);
+	background-position: -2px 1px;
+	background-repeat:no-repeat;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #siteNav {
+	margin-right: 10px;
+}
+
+#siteNav ul ul ul{
+	font-size:11px;
+}
+
+#siteNav ul ul ul a,#siteNav ul ul ul .active{
+	display: block;
+	border: 0 !important;
+	width: 135px;
+	margin-left: 10px;
+	padding: 4px 0 4px 16px;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+* html #siteNav { /* IE6 */
+	padding-top: 110px;
+}
+
+* html #siteNav .active{
+	width:155px !important;
+}
+
+* html #siteNav ul ul ul a,* html #siteNav ul ul ul .active { /* IE6 */
+	width:145px !important;
 }

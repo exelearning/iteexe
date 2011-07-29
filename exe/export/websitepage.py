@@ -71,7 +71,6 @@ class WebsitePage(Page):
         html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u"<body>\n"
         html += u"<div id=\"content\">\n"
@@ -93,6 +92,8 @@ class WebsitePage(Page):
             html += u">\n"
             html += escape(self.node.package.title)
             html += u"</div>\n"
+        else:
+            html += "<div id=\"emptyHeader\"></div>"
         
         # add left navigation html
         html += u"<div id=\"siteNav\">\n"

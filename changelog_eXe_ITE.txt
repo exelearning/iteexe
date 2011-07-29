@@ -1,10 +1,10 @@
-Version 1.04.3 (2011-07-31)
+Version 1.04.3 (2011-07-29)
     Mejoras de accesibilidad:
         El título de la página es ahora un título de primer nivel (h1).
         Los títulos de los iDevices pasan a ser h2.
         Los cambios se aplican a sitios web, IMS y Scorm.
         Al exportar como página única los títulos también son coherentes (h1, h2).
-        El menú principal (navegación) es ahora un listado XHTML válido.
+        El menú principal (navegación) es ahora un listado XHTML válido semánticamente correcto (niveles anidados).
     TinyMCE:
         Permitimos la inclusión de títulos (h1, h2, etc.) desde TinyMCE.
         Cambiamos el orden de los iconos de TinyMCE para mejora la usabilidad de la aplicación.
@@ -13,5 +13,5 @@ Version 1.04.3 (2011-07-31)
         Traducción completa del TinyMCE de eXe y sus plugins al castellano (es).
     Apariencia:   
         Incorporación de la primera versión del theme para eXe del ITE.
-        Se hacen compatibles las diferentes plantillas con las mejoras de accesibilidad descritas más arriba.
-        Se crea una nueva plantilla partiendo de la apariencia del ITE, que constituye la apariencia por defecto de esta distribución de eXe.
+        Incorporación de las plantillas del CEDEC.
+	Se hacen compatibles las diferentes plantillas con las mejoras descritas más arriba.
