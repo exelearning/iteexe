@@ -43,7 +43,7 @@ li {
     list-style-position: inside;
 }
 
-p#nodeTitle { 
+#nodeTitle { 
     font-weight: bold;
     display: inline;
 }
@@ -75,6 +75,7 @@ div#nodeDecoration {
 .iDeviceTitle {
     font-weight:bold;
     position: relative;
+	display:inline;
     top: -18px;   /* aligns title up with middle of icon */
 }
 
