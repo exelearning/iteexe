@@ -73,7 +73,7 @@ margin-left: 0;
 }
 /* End hide from IE5/mac */
 
-div #active {
+#navcontainer #active {
 padding: 0px 0px 3px 18px;
 width: 195px !important; /* the Housley Hack for Firefox... */
 width: 209px; /* for IE */
@@ -132,7 +132,6 @@ text-align:left;
 #siteNav {
 	z-index:1000;
 	width: 250px;
-	height: 100%; /* the holly hack for IE! */
 	float: left;
 	margin-top: 0px;
 	margin-left:10px;
@@ -149,35 +148,12 @@ text-align:left;
 	list-style:none;
 }
 
-#siteNav a {  /* sections not active */
+#siteNav a {
 	display: block;
 	padding: 4px 0 4px 18px;
-	background-color: #FFF;
 	border-bottom: 1px solid #ffffff;
 	width: 195px;
 	border-top: 1px solid #ffffff;
-}
-
-#siteNav #active {
-	padding: 0;
-	border: 0;
-	background:none;
-}
-
-#siteNav #active .active {
-	padding: 0px 0px 3px 18px;
-	width: 195px !important; /* the Housley Hack for Firefox... */
-	width: 209px; /* for IE */
-	background-color: #706F61;
-	color: #ffffff;
-	border-bottom: 1px solid #fff;
-	border-top: 6px solid #706f61;
-	background-image:url(active_bg.gif);
-	background-position: -2px -2px;
-	background-repeat:no-repeat;
-}
-
-#siteNav a {
 	color: #4d4d4d;
 	background-color: #E0DFD8;
 	text-decoration: none;
@@ -186,6 +162,15 @@ text-align:left;
 #siteNav a:hover {
 	color: #4d4d4d;
 	background-color:#c7c5b9;
+}
+
+#siteNav #active .active {
+	background-color: #706F61;
+	color: #ffffff;
+	border-bottom: 1px solid #fff;
+	background-image:url(active_bg.gif);
+	background-position: -2px 1px;
+	background-repeat:no-repeat;
 }
 
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */

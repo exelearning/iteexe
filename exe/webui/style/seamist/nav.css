@@ -91,7 +91,7 @@ a:hover {
  
 /* End hide from IE5/mac */
 
-div #active {
+#navcontainer #active {
 	padding: 3px 0 3px 6px;
 	width: 163px;
 	background-color: #51778A;
@@ -130,9 +130,9 @@ div #subnav {
 	}	
 	
 /* ITE elements */
+
 #siteNav {
 	width: 169px;
-	height: 100%; /* the holly hack for IE! */
 	float: left;
 	margin:20px 10px 0 0;
 	background-color:#fff;
@@ -147,7 +147,7 @@ div #subnav {
 
 #siteNav a {  /* sections not active */
 	display: block;
-	padding: 4px 0 4px 12px;
+	padding: 4px 4px 4px 12px;
 	background-color: #FFF;
 	border-bottom: 1px solid #ccc;
 	color: #96852C;
@@ -159,22 +159,10 @@ div #subnav {
 	background-color:#EDEFF0;
 }
 
-
-#siteNav #active {
-	padding: 0;
-	width:auto;
-	border: 0;
-	/*color: #EDEFF0;*/
-	background:none;
-}
-
 #siteNav #active .active {
 	background-color: #51778A;
 	color: #ffffff;
 	border-bottom: 1px solid #fff;
-	background-image:url(active_bg.gif);
-	background-position: -2px -2px;
-	background-repeat:no-repeat;
 }
 
 #siteNav ul ul ul a{
