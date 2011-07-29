@@ -149,3 +149,82 @@ position:absolute;
 	
 	
 }
+
+/* ITE elements */
+#siteNav {
+	z-index:1000;
+	width: 220px;
+	height: 100%; /* the holly hack for IE! */
+	float: left;
+	margin-top: 50px;
+	margin-left:10px;
+	text-align:left;
+	position:absolute;
+	left:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url(main_bg.gif);
+	font-size: .9em;
+	border: 1px solid #FFF;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {  /* sections not active */
+	display: block;
+	padding: 4px 0 4px 18px;
+	border-bottom: 1px solid #F2F2EF;
+	width: auto;
+	color:#000;
+}
+
+* html #siteNav ul,#siteNav li{ /* IE6 */
+	width:auto;
+}
+
+* html #siteNav a{ /* IE6 */
+	width:100%;
+	margin-left:-15px;
+}
+
+#siteNav li .active {
+	border-bottom: 1px solid #fff;
+	background-color: #CDD4DC;
+	color: #ffffff;
+}
+
+#siteNav .daddy {
+	background-image: url(collapse.gif);
+	background-repeat: no-repeat;
+	background-position: 2px 50%;
+}
+
+#siteNav .daddy.active {
+	background-image: url(expand.gif);
+	background-repeat: no-repeat;
+	background-position:3px 50%;
+}
+
+#siteNav a {
+	color: #000;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #4d4d4d;
+	background-color:#eee;
+}
+
+#siteNav ul ul ul a{
+	display: block;
+	border: 0 !important;
+	padding: 4px 0 4px 26px;
+	background-image:none;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
