@@ -1,0 +1,39 @@
+Programadores CSS
+
+Mercedes Cotelo Lois
+Antonio Monje Fernández - antonio.monje@ite.educacion.es
+http://cedec.ite.educacion.es
+
+Diseño gráfico
+Francisco Javier Pulido Cuadrado
+
+Trabajo derivado de:
+
+﻿Juan Diego Pérez - 2009
+http://www.twitter.com/pekechis
+
+
+Anibal de la Torre
+http://www.adelat.org
+
+
+Este estilo para eXelearning ha sido desarrollado bajo Licencia Reconocimiento-No comercial 3.0 España License de Creative Commons.
+
+http://creativecommons.org/licenses/by-nc/3.0/es/
+
+Usted es libre de:
+
+     1.- Copiar, distribuir y comunicar públicamente la obra
+     2.- hacer obras derivadas
+
+Bajo las condiciones siguientes:
+
+     1.- Reconocimiento. Debe reconocer los créditos de la obra de la manera especificada por el autor o el licenciador (pero no de una manera que sugiera que tiene su apoyo o apoyan el uso que hace de su obra).
+     2.- No comercial. No puede utilizar esta obra para fines comerciales.
+
+
+Los iconos usados se han adaptado de un trabajo de 
+      Bruno Maia, IconTexto
+      http://www.icontexto.com
+
+Bajo el mismo tipo de licencia
