@@ -129,3 +129,71 @@ div #subnav {
 	/*border-bottom: 1px solid #FFF;*/
 	}	
 	
+/* ITE elements */
+#siteNav {
+	width: 169px;
+	height: 100%; /* the holly hack for IE! */
+	float: left;
+	margin:20px 10px 0 0;
+	background-color:#fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {  /* sections not active */
+	display: block;
+	padding: 4px 0 4px 12px;
+	background-color: #FFF;
+	border-bottom: 1px solid #ccc;
+	color: #96852C;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #51778A;
+	background-color:#EDEFF0;
+}
+
+
+#siteNav #active {
+	padding: 0;
+	width:auto;
+	border: 0;
+	/*color: #EDEFF0;*/
+	background:none;
+}
+
+#siteNav #active .active {
+	background-color: #51778A;
+	color: #ffffff;
+	border-bottom: 1px solid #fff;
+	background-image:url(active_bg.gif);
+	background-position: -2px -2px;
+	background-repeat:no-repeat;
+}
+
+#siteNav ul ul ul a{
+	font-size:11px;
+	display: block;
+	border: 0 !important;
+	width: auto;
+	margin-left: 10px;
+	padding: 4px 0 4px 16px;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+* html #siteNav{ /* IE6 */
+	font-size:12px;
+}
+
+* html #siteNav a,* html #siteNav ul ul ul a{ /* IE6 */
+	width:100%;
+}
