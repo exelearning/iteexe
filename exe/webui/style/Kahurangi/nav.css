@@ -179,6 +179,12 @@ position:absolute;
 	border-bottom: 1px solid #F2F2EF;
 	width: auto;
 	color:#000;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #4d4d4d;
+	background-color:#eee;
 }
 
 * html #siteNav ul,#siteNav li{ /* IE6 */
@@ -208,21 +214,11 @@ position:absolute;
 	background-position:3px 50%;
 }
 
-#siteNav a {
-	color: #000;
-	text-decoration: none;
-}
-
-#siteNav a:hover {
-	color: #4d4d4d;
-	background-color:#eee;
-}
-
 #siteNav ul ul ul a{
 	display: block;
 	border: 0 !important;
 	padding: 4px 0 4px 26px;
-	background-image:none;
+	background-image:none !important;
 }
 
 #siteNav .other-section{

@@ -127,7 +127,6 @@ width: 60%;
 #siteNav {
 	z-index:1000;
 	width: 165px;
-	height: 100%; /* the holly hack for IE! */
 	float: left;
 	margin:0 20px 0 30px;
 	padding-top: 120px;
@@ -159,7 +158,7 @@ width: 60%;
 	background-color:#c7c5b9;
 }
 
-#siteNav #active .active {
+#siteNav a.active {
 	padding-left:18px;
 	width:143px;
 	background-color: #706F61;
@@ -179,10 +178,10 @@ width: 60%;
 	font-size:11px;
 }
 
-#siteNav ul ul ul a{
+#siteNav ul ul ul a,#siteNav ul ul ul .active{
 	display: block;
 	border: 0 !important;
-	width: 135px !important;
+	width: 135px;
 	margin-left: 10px;
 	padding: 4px 0 4px 16px;
 }
@@ -191,6 +190,14 @@ width: 60%;
 	display:none; /* Remove if you want all levels to be displayed */
 }
 
-* html #siteNav #active .active { /* IE6 */
-	width:153px;
+* html #siteNav { /* IE6 */
+	padding-top: 110px;
+}
+
+* html #siteNav .active{
+	width:155px !important;
+}
+
+* html #siteNav ul ul ul a,* html #siteNav ul ul ul .active { /* IE6 */
+	width:145px !important;
 }
