@@ -14,8 +14,8 @@ searchreplace_direction : 'Direcci\u00F3n',
 searchreplace_up : 'Arriba',
 searchreplace_down : 'Abajo',
 searchreplace_case : 'Coincidir may\u00FAsculas/min\u00FAsculas',
-searchreplace_findnext : 'Buscar&nbsp;siguiente',
+searchreplace_findnext : 'Siguiente',
 searchreplace_replace : 'Reemplazar',
-searchreplace_replaceall : 'Reemplazar&nbsp;todos',
+searchreplace_replaceall : 'Reemp.&nbsp;todos',
 searchreplace_cancel : 'Cancelar'
 });
