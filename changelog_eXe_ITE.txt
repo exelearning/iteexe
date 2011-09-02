@@ -1,4 +1,12 @@
-Version 1.04.3 (2011-07-29)
+Version 1.04.1.3605ite2 (2011-09-02)
+    TinyMCE:
+        Añadido Buscar/Reemplazar.
+	Codificación de caracteres JS.
+	Cambio en la redacción de algunas cadenas en la traducción al español.
+    Apariencia:
+        Resubidas las plantillas del CEDEC.
+	Añadido icono de atención.
+Version 1.04.1.3605ite1 (2011-07-29)
     Mejoras de accesibilidad:
         El título de la página es ahora un título de primer nivel (h1).
         Los títulos de los iDevices pasan a ser h2.
