@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
-  <mime-type type="application/x-exe">
+  <mime-type type="application/x-exe-learning">
     <comment>eXe eLearning XHTML editor package</comment>
+    <comment xml:lang="es">Paquete XHTML de eXe eLearning</comment>
+    <generic-icon name="package-x-generic"/>
     <glob pattern="*.elp"/>
   </mime-type>
 </mime-info>
