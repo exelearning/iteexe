@@ -146,7 +146,7 @@ class Application:
         shutil.rmtree(self.tempWebDir, True)
         try:
             os.remove(eXeStart)
-        except IOError:
+        except OSError:
             pass
 
     def processArgs(self):
@@ -252,7 +252,11 @@ class Application:
             pleaseWaitLoad = _(u'Please wait until loading finishes')
             for line in inSplashFH:
                 line = line.replace("LOADING_FILE_NAME", packagePath)
-                line = line.replace("PLEASE_WAIT_LOAD", pleaseWaitLoad)
+                try:
+                    # this can fail in non UTF-8 uris
+                    line = line.replace("PLEASE_WAIT_LOAD", pleaseWaitLoad)
+                except:
+                    pass
                 outSplashFH.write(line)
             inSplashFH.close()
             outSplashFH.close()
