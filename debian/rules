@@ -47,11 +47,18 @@ install: build
 		$$python setup.py install --prefix=/usr --root=debian/$(EXEPKG); \
 	done
 
+	mkdir -p $(CURDIR)/debian/python-exe/usr/share/mime/packages/
+	install -m 644 exe.xml $(CURDIR)/debian/python-exe/usr/share/mime/packages/
+
 binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_pysupport
+	dh_python
+	dh_installchangelogs
+	dh_installmime
+	dh_link
 	dh_installdeb
 	dh_gencontrol
 	dh_md5sums
