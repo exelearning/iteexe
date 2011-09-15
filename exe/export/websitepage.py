@@ -71,6 +71,7 @@ class WebsitePage(Page):
         html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
+        html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u"<body>\n"
         html += u"<div id=\"content\">\n"
