@@ -1,3 +1,21 @@
+python-exe (1.04.1.3605ite3) lucid; urgency=low
+  
+  [Mario Izquierdo]
+  * exe.desktop exe.xml debian/rules: Rename MIME to application/x-exe-learning
+    and install exe.xml in /usr/share/mime/packages  
+  * exe/application.py: Fix exception IOError=>OSError, and catch posible UTF-8
+    filename errors in splash
+
+  [Ignacio Gros]
+  * BUG: no se estaba incluyendo common.js al exportar como sitio web
+  * Imagen de fondo para los títulos de cada página en IMS y Página sola
+
+  [Pedro Peña]
+  * Corregido error por el cual se cerraba el navegador en lugar de mostrar mensaje
+    indicando que hay que hacerlo mediante el menu Archivo
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 23 Sep 2011 14:27:05 +0200
+
 python-exe (1.04.1.3605ite2) jaunty; urgency=low
 
   * TinyMCE:
