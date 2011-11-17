@@ -31,7 +31,7 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class MultichoiceBlock(Block):
+class EleccionmultiplefpdBlock(Block):
     """
     MultichoiceBlock can render and process MultichoiceIdevices as XHTML
     """
@@ -103,11 +103,18 @@ class MultichoiceBlock(Block):
         html  = "<div class=\"iDevice\"><br/>\n"
         if self.idevice.message<>"":
             html += common.editModeHeading(self.idevice.message)
-        html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
+
+        # JR
+	# Quitamos el prefijo "FPD -"
+	if self.idevice.title.find("FPD - ") == 0:
+		self.idevice.title = x_(u"Autoevaluacion")
+
+#        html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
+        html += common.textInput("title"+self.id, self.idevice.title)
             
         for element in self.questionElements:
             html += element.renderEdit() 
-            html += "<br/>"
+#            html += "<br/>"
             
         html += "<br/>"
         value = _("Add another question")    
@@ -129,14 +136,17 @@ class MultichoiceBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u'<img alt="%s" ' % _(u'IDevice Question Icon')
         html += u'     class="iDevice_icon" '
-        html += "src=\"icon_question.gif\" />\n"
+        html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
         html += "<span class=\"iDeviceTitle\"><strong>"       
         html += self.idevice.title+"</strong></span>\n"
         html += "<div class=\"iDevice_inner\">\n"
-        
+	aux = self.questionElements[len(self.questionElements) - 1]
         for element in self.questionElements:
-            html += element.renderView("panel-amusements.png","stock-stop.png")  
-            html += "<br/>"
+		if element == aux:
+			html += element.renderView("panel-amusements.png","stock-stop.png") 
+		else:
+			html += element.renderView("panel-amusements.png","stock-stop.png")  + "<br/>"        
+
             
         html += "</div>\n"
         html += "</div>\n"
@@ -157,11 +167,13 @@ class MultichoiceBlock(Block):
         html += u"<span class=\"iDeviceTitle\"><strong>"       
         html += self.idevice.title+"</strong></span>\n"
         html += "<div class=\"iDevice_inner\">\n"
-
+	aux = self.questionElements[len(self.questionElements) - 1]
         for element in self.questionElements:
-            html += element.renderPreview("/images/panel-amusements.png", 
-                                          "/images/stock-stop.png") 
-            html += "<br/>"
+		if element == aux:
+			html += element.renderPreview("/images/panel-amusements.png", "/images/stock-stop.png") 
+		else:
+			html += element.renderPreview("/images/panel-amusements.png", "/images/stock-stop.png")  + "<br/>"
+
             
         html += "</div>\n"    
         html += self.renderViewButtons()
@@ -171,8 +183,8 @@ class MultichoiceBlock(Block):
 
 
 
-from exe.engine.multichoiceidevice import MultichoiceIdevice
+from exe.engine.eleccionmultiplefpdidevice import EleccionmultiplefpdIdevice
 from exe.webui.blockfactory        import g_blockFactory
-g_blockFactory.registerBlockType(MultichoiceBlock, MultichoiceIdevice)    
+g_blockFactory.registerBlockType(EleccionmultiplefpdBlock, EleccionmultiplefpdIdevice)    
 
 # ===========================================================================

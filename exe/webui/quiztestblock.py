@@ -138,8 +138,8 @@ class QuizTestBlock(Block):
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
         html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
-        html += u'<span class="iDeviceTitle">'
-        html += self.idevice.title+'</span>\n'
+        html += u'<span class="iDeviceTitle"><strong>'
+        html += self.idevice.title+'</strong></span>\n'
         html += u'<div class="iDevice_inner">\n'
         html += u'<div class="passrate" value="%s"></div>\n' % self.idevice.passRate
         for element in self.questionElements:
@@ -361,8 +361,8 @@ class QuizTestBlock(Block):
         html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon
         html += ".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
+        html += u"<span class=\"iDeviceTitle\"><strong>"       
+        html += self.idevice.title+"</strong></span>\n"
         html += u'<div class="iDevice_inner">\n'
 
         for element in self.questionElements:

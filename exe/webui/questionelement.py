@@ -146,9 +146,17 @@ class QuestionElement(object):
             else: 
                 html  += self.question_feedback.renderView()
 
-            html += "</div><br/>\n"
+            html += "</div>\n"
+# JR: Generamos el contenido que ira dentro de la etiqueta noscript
+	    html += '<noscript><div class="feedback">\n'
+	    html += "<p><strong>" + _("Solucion") + ": </strong></p>\n"
+            if preview: 
+            	html  += self.question_feedback.field.content_w_resourcePaths
+            else: 
+            	html  += self.question_feedback.field.content_wo_resourcePaths
+	    html += "</div></noscript>\n"
         else:
-            html += "<br/>\n"
+            html += "\n"
         
         return html
 

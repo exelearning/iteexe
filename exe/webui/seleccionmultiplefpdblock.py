@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -30,7 +32,7 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class MultiSelectBlock(Block):
+class SeleccionmultiplefpdBlock(Block):
     """
     MultiSelectBlock can render and process MultiSelectIdevices as XHTML
     """
@@ -81,6 +83,12 @@ class MultiSelectBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div class=\"iDevice\">\n"
+
+        # JR
+	# Quitamos el prefijo "FPD -"
+	if self.idevice.title.find("FPD - ") == 0:
+		self.idevice.title = x_(u"Autoevaluación")
+
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         
@@ -113,8 +121,12 @@ class MultiSelectBlock(Block):
         html += self.idevice.title+"</strong></span>\n"
         html += u'<div class="iDevice_inner">\n'
 
+	aux = self.questionElements[len(self.questionElements) - 1]
         for element in self.questionElements:
-            html += element.renderPreview() + "<br/>"
+		if element == aux:
+			html += element.renderPreview()
+		else:
+			html += element.renderPreview() + "<br/>"
         
         html += u"</div>\n"
         html += self.renderViewButtons()
@@ -133,8 +145,12 @@ class MultiSelectBlock(Block):
         html += u'<span class="iDeviceTitle"><strong>'
         html += self.idevice.title+'</strong></span>\n'
         html += u'<div class="iDevice_inner">\n'
+	aux = self.questionElements[len(self.questionElements) - 1]
         for element in self.questionElements:
-            html += element.renderView() + "<br/>"  
+		if element == aux:
+			html += element.renderView()
+		else:
+			html += element.renderView() + "<br/>"  
 
         html += "</div></div>\n"
 
@@ -142,9 +158,9 @@ class MultiSelectBlock(Block):
     
 
 
-from exe.engine.multiselectidevice import MultiSelectIdevice
+from exe.engine.seleccionmultiplefpdidevice import SeleccionmultiplefpdIdevice
 from exe.webui.blockfactory        import g_blockFactory
-g_blockFactory.registerBlockType(MultiSelectBlock, MultiSelectIdevice)  
+g_blockFactory.registerBlockType(SeleccionmultiplefpdBlock, SeleccionmultiplefpdIdevice)  
 
 
 # ===========================================================================
