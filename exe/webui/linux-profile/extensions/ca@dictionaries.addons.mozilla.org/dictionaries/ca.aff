@@ -1,0 +1,1213 @@
+# =======================================================================================
+#                              Corrector ortogràfic català
+#                          Fitxer d'afixos i llista de paraules
+# =======================================================================================
+# Copyright (C) 2002-2008 Joan Moratinos <jmo@softcatala.org>
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+# =======================================================================================
+# Fonts: Diccionari de l'Institut d'Estudis Catalans, primera edició (1996)
+#        Diccionari de l'Institut d'Estudis Catalans, segona edició (2007)
+#        Diccionari Català/Castellà - Castellà/Català, de Francesc de B. Moll
+#        Diccionari d'Ispell, d'Ignasi Labastida
+#        Recull de gentilicis, de M.M. Ramon i C. Rigo
+# Amb aportacions de: Miquel Font, Francesc Xavier Moratinos, Jordi Mas, Jordi Mallach,
+#                     Joan Montané
+# =======================================================================================
+
+# Regles:
+#     1 Part de la regla A (Primera conjugació regular)
+#     2 Part de la regla M (Verbs en -ir, formes comunes als grups III, IV i V)
+#     3 Part de la regla M (Verbs en -ir, formes comunes als grups III, IV i V)
+#     A Primera conjugació regular
+#     B Quatre formes amb canvi t > d, u > v, c > g, s > ss
+#     C Pronoms personals enclítics darrere consonant
+#     D Pronoms personals enclítics darrere vocal
+#     E Plurals afegint una s (sense canvis de so) i plurals de [sx][ct]$ i [aeou]ig
+#     F Quatre formes afegint a/s/es (sense o, però també foscos)
+#     G Plurals afegint ns
+#     H Quatre formes afegint ns
+#     I Plurals afegint o (eventualment amb canvi d'accent)
+#     J Quatre formes afegint a/os/es
+#     K Quatre formes amb canvi d'accent (accent greu)
+#     L Quatre formes amb canvi d'accent (accent agut)
+#     M Verbs en -ir, formes comunes als grups III, IV i V
+#     N Verbs en -ir, formes incoatives
+#     O Imperfet d'indicatiu de la segona conjugació
+#     P Formes de la segona conjugació semblants a SIM1 sense -c/-gu (perdés)
+#     Q Formes de la segona conjugació semblants a SIM1 amb -c/-gu (conegués)
+#     R Formes de la segona conjugació semblants al gerundi
+#     S Formes de la segona conjugació semblants a "plaus", "absols", etc.
+#     T Futurs i condicionals a partir de FUT1
+#     U Formes pures dels verbs en -ir, a partir d'IPR3 (p.e. sent)
+#     V Article prefixat no combinable
+#     W Article personal
+#     Y Preposició "de" apostrofada
+#     Z Pronoms personals prefixats
+
+SET ISO8859-1
+
+TRY easirtocnlumdpgvfbqjwxyzhàèéíïòóúüç·-'
+
+REP 48
+REP a à
+REP e é
+REP e è
+REP é è
+REP i í
+REP i ï
+REP í ï
+REP o ó
+REP o ò
+REP ó ò
+REP u ú
+REP u ü
+REP ú ü
+REP l l·l
+REP e E
+REP a A
+REP s S
+REP i I
+REP r R
+REP t T
+REP o O
+REP c C
+REP n N
+REP l L
+REP u U
+REP m M
+REP d D
+REP p P
+REP g G
+REP v V
+REP f F
+REP b B
+REP q Q
+REP j J
+REP w W
+REP x X
+REP y Y
+REP z Z
+REP h H
+REP à À
+REP è È
+REP é É
+REP í Í
+REP ï Ï
+REP ò Ò
+REP ó Ó
+REP ú Ú
+REP ü Ü
+
+SFX 1 Y 3
+SFX 1 at ats at
+SFX 1 at ada at
+SFX 1 at ades at
+
+SFX 2 Y 4
+SFX 2 it it [^aeiou]it
+SFX 2 it it [gq]uit
+SFX 2 ït ït [^gq]uït
+SFX 2 ït ït [aeio]ït
+
+SFX 3 Y 12
+SFX 3 it its [^aeiou]it
+SFX 3 it its [gq]uit
+SFX 3 ït ïts [^gq]uït
+SFX 3 ït ïts [aeio]ït
+SFX 3 it ida [^aeiou]it
+SFX 3 it ida [gq]uit
+SFX 3 ït ïda [^gq]uït
+SFX 3 ït ïda [aeio]ït
+SFX 3 it ides [^aeiou]it
+SFX 3 it ides [gq]uit
+SFX 3 ït ïdes [^gq]uït
+SFX 3 ït ïdes [aeio]ït
+
+SFX A Y 291
+SFX A ava o ava
+SFX A ava e [^cçgju]ava
+SFX A ava e [^gq]uava
+SFX A guava güe guava
+SFX A quava qüe quava
+SFX A cava que cava
+SFX A çava ce çava
+SFX A gava gue gava
+SFX A java ge java
+SFX A l·lava l l·lava
+SFX A nnava n nnava
+SFX A ava i eava
+SFX A ava i [^aeo]iava
+SFX A iava i [aeo]iava
+SFX A iava i [^gq]uiava
+SFX A ava u oava
+SFX A ava u [^aeioqg]uava
+SFX A uava u [aeo]uava
+SFX A java ig [^tnri]java
+SFX A java g ijava
+SFX A java j [tnr]java
+SFX A bava b bava
+SFX A cava c cava
+SFX A çava ç çava
+SFX A dava d dava
+SFX A fava f fava
+SFX A gava g gava
+SFX A lava l [^·]lava
+SFX A mava m mava
+SFX A nava n [^ein]nava
+SFX A pava p pava
+SFX A rava r rava
+SFX A sava s [^aeious]sava
+SFX A ssava s ssava
+SFX A tava t tava
+SFX A vava v vava
+SFX A xava x xava
+SFX A zava z zava
+SFX A ava es [^cçgju]ava
+SFX A ava es [^gq]uava
+SFX A guava gües guava
+SFX A quava qües quava
+SFX A cava ques cava
+SFX A çava ces çava
+SFX A gava gues gava
+SFX A java ges java
+SFX A ava a ava
+SFX A ava em [^cçgju]ava
+SFX A ava em [^gq]uava
+SFX A guava güem guava
+SFX A quava qüem quava
+SFX A cava quem cava
+SFX A çava cem çava
+SFX A gava guem gava
+SFX A java gem java
+SFX A ava am ava
+SFX A ava eu [^cçgju]ava
+SFX A ava eu [^gq]uava
+SFX A guava güeu guava
+SFX A quava qüeu quava
+SFX A cava queu cava
+SFX A çava ceu çava
+SFX A gava gueu gava
+SFX A java geu java
+SFX A ava au ava
+SFX A ava en [^cçgju]ava
+SFX A ava en [^gq]uava
+SFX A guava güen guava
+SFX A quava qüen quava
+SFX A cava quen cava
+SFX A çava cen çava
+SFX A gava guen gava
+SFX A java gen java
+SFX A ava ava ava
+SFX A ava aves ava
+SFX A ava ava ava
+SFX A ava àvem ava
+SFX A ava àveu ava
+SFX A ava aven ava
+SFX A ava í [^cçgij]ava
+SFX A cava quí cava
+SFX A çava cí çava
+SFX A gava guí gava
+SFX A java gí java
+SFX A iava í [aeo]iava
+SFX A iava í [^gq]uiava
+SFX A ava í [gq]uiava
+SFX A ava í [^aeou]iava
+SFX A ava ares ava
+SFX A ava à ava
+SFX A ava àrem ava
+SFX A ava àreu ava
+SFX A ava aren ava
+SFX A ava aré ava
+SFX A ava aràs ava
+SFX A ava arà ava
+SFX A ava arem ava
+SFX A ava areu ava
+SFX A ava aran ava
+SFX A ava aria ava
+SFX A ava aries ava
+SFX A ava aria ava
+SFX A ava aríem ava
+SFX A ava aríeu ava
+SFX A ava arien ava
+SFX A ava i [^cçgjieou]ava
+SFX A ava ï [^aeiou][eio]ava
+SFX A iava ï [aeiou]iava
+SFX A ava ï [gq]uiava
+SFX A iava ï [^gq]uiava
+SFX A guava güi guava
+SFX A quava qüi quava
+SFX A uava uï [^gq]uava
+SFX A cava qui cava
+SFX A çava ci çava
+SFX A gava gui gava
+SFX A java gi java
+SFX A ava e [^cçgju]ava
+SFX A ava e [^gq]uava
+SFX A guava güe guava
+SFX A quava qüe quava
+SFX A cava que cava
+SFX A çava ce çava
+SFX A gava gue gava
+SFX A java ge java
+SFX A ava is [^cçgjieou]ava
+SFX A ava ïs [^aeiou][eio]ava
+SFX A iava ïs [aeiou]iava
+SFX A ava ïs [gq]uiava
+SFX A iava ïs [^gq]uiava
+SFX A guava güis guava
+SFX A quava qüis quava
+SFX A uava uïs [^gq]uava
+SFX A cava quis cava
+SFX A çava cis çava
+SFX A gava guis gava
+SFX A java gis java
+SFX A ava es [^cçgju]ava
+SFX A ava es [^gq]uava
+SFX A guava gües guava
+SFX A quava qües quava
+SFX A cava ques cava
+SFX A çava ces çava
+SFX A gava gues gava
+SFX A java ges java
+SFX A ava i [^cçgjieou]ava
+SFX A ava ï [^aeiou][eio]ava
+SFX A iava ï [aeiou]iava
+SFX A guava güi guava
+SFX A quava qüi quava
+SFX A uava uï [^gq]uava
+SFX A cava qui cava
+SFX A çava ci çava
+SFX A gava gui gava
+SFX A java gi java
+SFX A ava e [^cçgju]ava
+SFX A ava e [^gq]uava
+SFX A guava güe guava
+SFX A quava qüe quava
+SFX A cava que cava
+SFX A çava ce çava
+SFX A gava gue gava
+SFX A java ge java
+SFX A ava em [^cçgju]ava
+SFX A ava em [^gq]uava
+SFX A guava güem guava
+SFX A quava qüem quava
+SFX A cava quem cava
+SFX A çava cem çava
+SFX A gava guem gava
+SFX A java gem java
+SFX A ava eu [^cçgju]ava
+SFX A ava eu [^gq]uava
+SFX A guava güeu guava
+SFX A quava qüeu quava
+SFX A cava queu cava
+SFX A çava ceu çava
+SFX A gava gueu gava
+SFX A java geu java
+SFX A ava in [^cçgjieou]ava
+SFX A ava ïn [^aeiou][eio]ava
+SFX A iava ïn [aeiou]iava
+SFX A ava ïn [gq]uiava
+SFX A iava ïn [^gq]uiava
+SFX A guava güin guava
+SFX A quava qüin quava
+SFX A uava uïn [^gq]uava
+SFX A cava quin cava
+SFX A çava cin çava
+SFX A gava guin gava
+SFX A java gin java
+SFX A ava en [^cçgju]ava
+SFX A ava en [^gq]uava
+SFX A guava güen guava
+SFX A quava qüen quava
+SFX A cava quen cava
+SFX A çava cen çava
+SFX A gava guen gava
+SFX A java gen java
+SFX A ava és [^cçgju]ava
+SFX A ava és [^gq]uava
+SFX A guava güés guava
+SFX A quava qüés quava
+SFX A cava qués cava
+SFX A çava cés çava
+SFX A gava gués gava
+SFX A java gés java
+SFX A ava às ava
+SFX A ava ara ava
+SFX A ava essis [^cçgju]ava
+SFX A ava esses [^cçgju]ava
+SFX A ava assis ava
+SFX A ava ares ava
+SFX A ava essis [^gq]uava
+SFX A ava esses [^gq]uava
+SFX A guava güessis guava
+SFX A quava qüessis quava
+SFX A guava güesses guava
+SFX A quava qüesses quava
+SFX A cava quessis cava
+SFX A cava quesses cava
+SFX A çava cessis çava
+SFX A çava cesses çava
+SFX A gava guessis gava
+SFX A gava guesses gava
+SFX A java gessis java
+SFX A java gesses java
+SFX A ava és [^cçgju]ava
+SFX A ava és [^gq]uava
+SFX A guava güés guava
+SFX A quava qüés quava
+SFX A cava qués cava
+SFX A çava cés çava
+SFX A gava gués gava
+SFX A java gés java
+SFX A ava às ava
+SFX A ava ara ava
+SFX A ava éssim [^cçgju]ava
+SFX A ava éssem [^cçgju]ava
+SFX A ava àssim ava
+SFX A ava àrem ava
+SFX A ava éssim [^gq]uava
+SFX A ava éssem [^gq]uava
+SFX A guava güéssim guava
+SFX A quava qüéssim quava
+SFX A guava güéssem guava
+SFX A quava qüéssem quava
+SFX A cava quéssim cava
+SFX A cava quéssem cava
+SFX A çava céssim çava
+SFX A çava céssem çava
+SFX A gava guéssim gava
+SFX A gava guéssem gava
+SFX A java géssim java
+SFX A java géssem java
+SFX A ava éssiu [^cçgju]ava
+SFX A ava ésseu [^cçgju]ava
+SFX A ava àssiu ava
+SFX A ava àreu ava
+SFX A ava éssiu [^gq]uava
+SFX A ava ésseu [^gq]uava
+SFX A guava güéssiu guava
+SFX A quava qüéssiu quava
+SFX A guava güésseu guava
+SFX A quava qüésseu quava
+SFX A cava quéssiu cava
+SFX A cava quésseu cava
+SFX A çava céssiu çava
+SFX A çava césseu çava
+SFX A gava guéssiu gava
+SFX A gava guésseu gava
+SFX A java géssiu java
+SFX A java gésseu java
+SFX A ava essin [^cçgju]ava
+SFX A ava essen [^cçgju]ava
+SFX A ava assin ava
+SFX A ava aren ava
+SFX A ava essin [^gq]uava
+SFX A ava essen [^gq]uava
+SFX A guava güessin guava
+SFX A quava qüessin quava
+SFX A guava güessen guava
+SFX A quava qüessen quava
+SFX A cava quessin cava
+SFX A cava quessen cava
+SFX A çava cessin çava
+SFX A çava cessen çava
+SFX A gava guessin gava
+SFX A gava guessen gava
+SFX A java gessin java
+SFX A java gessen java
+
+SFX B Y 45
+SFX B t da t
+SFX B u va u
+SFX B c ga c
+SFX B 0 sa [^àèéíòóú]s
+SFX B às assa às
+SFX B ès essa ès
+SFX B és essa és
+SFX B ís issa [^aeou]ís
+SFX B ís ïssa [aeo]ís
+SFX B ís issa [gq]uís
+SFX B ís ïssa [^gq]uís
+SFX B òs ossa òs
+SFX B ós ossa ós
+SFX B ús ussa [^aeoi]ús
+SFX B ús üssa [aeoi]ús
+SFX B 0 s t
+SFX B 0 s u
+SFX B 0 s c
+SFX B 0 sos [^àèéíòóú]s
+SFX B às assos às
+SFX B ès essos ès
+SFX B és essos és
+SFX B ís issos [^aeou]ís
+SFX B ís ïssos [aeo]ís
+SFX B ís issos [gq]uís
+SFX B ís ïssos [^gq]uís
+SFX B òs ossos òs
+SFX B ós ossos ós
+SFX B ús ussos [^aeoi]ús
+SFX B ús üssos [aeoi]ús
+SFX B t des t
+SFX B u ves u
+SFX B c gues c
+SFX B 0 ses [^àèéíòóú]s
+SFX B às asses às
+SFX B ès esses ès
+SFX B és esses és
+SFX B ís isses [^aeou]ís
+SFX B ís ïsses [aeo]ís
+SFX B ís isses [gq]uís
+SFX B ís ïsses [^gq]uís
+SFX B òs osses òs
+SFX B ós osses ós
+SFX B ús usses [^aeoi]ús
+SFX B ús üsses [aeoi]ús
+
+SFX C Y 81
+SFX C 0 -ne .
+SFX C 0 -me .
+SFX C 0 -nos .
+SFX C 0 -te .
+SFX C 0 -vos .
+SFX C 0 -se .
+SFX C 0 -lo .
+SFX C 0 -la .
+SFX C 0 -li .
+SFX C 0 -los .
+SFX C 0 -les .
+SFX C 0 -ho .
+SFX C 0 -hi .
+SFX C 0 -se't .
+SFX C 0 -se-us .
+SFX C 0 -se'm .
+SFX C 0 -te'm .
+SFX C 0 -vos-em .
+SFX C 0 -se'ns .
+SFX C 0 -te'ns .
+SFX C 0 -vos-ens .
+SFX C 0 -se'l .
+SFX C 0 -te'l .
+SFX C 0 -vos-el .
+SFX C 0 -me'l .
+SFX C 0 -nos-el .
+SFX C 0 -los-el .
+SFX C 0 -l'hi .
+SFX C 0 -se'ls .
+SFX C 0 -te'ls .
+SFX C 0 -vos-els .
+SFX C 0 -me'ls .
+SFX C 0 -nos-els .
+SFX C 0 -los-els .
+SFX C 0 -los-hi .
+SFX C 0 -se-la .
+SFX C 0 -te-la .
+SFX C 0 -vos-la .
+SFX C 0 -me-la .
+SFX C 0 -nos-la .
+SFX C 0 -los-la .
+SFX C 0 -la-hi .
+SFX C 0 -se-les .
+SFX C 0 -te-les .
+SFX C 0 -vos-les .
+SFX C 0 -me-les .
+SFX C 0 -nos-les .
+SFX C 0 -los-les .
+SFX C 0 -les-hi .
+SFX C 0 -se-li .
+SFX C 0 -te-li .
+SFX C 0 -vos-li .
+SFX C 0 -me-li .
+SFX C 0 -nos-li .
+SFX C 0 -s'ho .
+SFX C 0 -t'ho .
+SFX C 0 -vos-ho .
+SFX C 0 -m'ho .
+SFX C 0 -nos-ho .
+SFX C 0 -los-ho .
+SFX C 0 -li-ho .
+SFX C 0 -se'n .
+SFX C 0 -te'n .
+SFX C 0 -vos-en .
+SFX C 0 -me'n .
+SFX C 0 -nos-en .
+SFX C 0 -l'en .
+SFX C 0 -los-en .
+SFX C 0 -la'n .
+SFX C 0 -les-en .
+SFX C 0 -li'n .
+SFX C 0 -s'hi .
+SFX C 0 -t'hi .
+SFX C 0 -vos-hi .
+SFX C 0 -m'hi .
+SFX C 0 -nos-hi .
+SFX C 0 -l'hi .
+SFX C 0 -los-hi .
+SFX C 0 -la-hi .
+SFX C 0 -les-hi .
+SFX C 0 -n'hi .
+
+SFX D Y 81
+SFX D 0 'n .
+SFX D 0 'm .
+SFX D 0 'ns .
+SFX D 0 't .
+SFX D 0 -us .
+SFX D 0 's .
+SFX D 0 'l .
+SFX D 0 -la .
+SFX D 0 -li .
+SFX D 0 'ls .
+SFX D 0 -les .
+SFX D 0 -ho .
+SFX D 0 -hi .
+SFX D 0 -se't .
+SFX D 0 -se-us .
+SFX D 0 -se'm .
+SFX D 0 -te'm .
+SFX D 0 -us-em .
+SFX D 0 -se'ns .
+SFX D 0 -te'ns .
+SFX D 0 -us-ens .
+SFX D 0 -se'l .
+SFX D 0 -te'l .
+SFX D 0 -us-el .
+SFX D 0 -me'l .
+SFX D 0 'ns-el .
+SFX D 0 'ls-el .
+SFX D 0 -l'hi .
+SFX D 0 -se'ls .
+SFX D 0 -te'ls .
+SFX D 0 -us-els .
+SFX D 0 -me'ls .
+SFX D 0 'ns-els .
+SFX D 0 'ls-els .
+SFX D 0 'ls-hi .
+SFX D 0 -se-la .
+SFX D 0 -te-la .
+SFX D 0 -us-la .
+SFX D 0 -me-la .
+SFX D 0 'ns-la .
+SFX D 0 'ls-la .
+SFX D 0 -la-hi .
+SFX D 0 -se-les .
+SFX D 0 -te-les .
+SFX D 0 -us-les .
+SFX D 0 -me-les .
+SFX D 0 'ns-les .
+SFX D 0 'ls-les .
+SFX D 0 -les-hi .
+SFX D 0 -se-li .
+SFX D 0 -te-li .
+SFX D 0 -us-li .
+SFX D 0 -me-li .
+SFX D 0 'ns-li .
+SFX D 0 -s'ho .
+SFX D 0 -t'ho .
+SFX D 0 -us-ho .
+SFX D 0 -m'ho .
+SFX D 0 'ns-ho .
+SFX D 0 'ls-ho .
+SFX D 0 -li-ho .
+SFX D 0 -se'n .
+SFX D 0 -te'n .
+SFX D 0 -us-en .
+SFX D 0 -me'n .
+SFX D 0 'ns-en .
+SFX D 0 -l'en .
+SFX D 0 'ls-en .
+SFX D 0 -la'n .
+SFX D 0 -les-en .
+SFX D 0 -li'n .
+SFX D 0 -s'hi .
+SFX D 0 -t'hi .
+SFX D 0 -us-hi .
+SFX D 0 -m'hi .
+SFX D 0 'ns-hi .
+SFX D 0 -l'hi .
+SFX D 0 'ls-hi .
+SFX D 0 -la-hi .
+SFX D 0 -les-hi .
+SFX D 0 -n'hi .
+
+SFX E Y 14
+SFX E 0 s [^ans]
+SFX E 0 s [^íéè]n
+SFX E ín ins ín
+SFX E èn ens èn
+SFX E én ens én
+SFX E 0 os [sx][ct]
+SFX E ig jos [aeo]ig
+SFX E a es [^cçgju]a
+SFX E a es [^gq]ua
+SFX E ua ües [gq]ua
+SFX E ca ques ca
+SFX E ça ces ça
+SFX E ga gues ga
+SFX E ja ges ja
+
+SFX F Y 18
+SFX F 0 a [^eosxç]
+SFX F e a e
+SFX F o a o
+SFX F 0 s [^asçx]
+SFX F a es a
+SFX F 0 os [sx][ct]
+SFX F 0 es [^aeocçgsux]
+SFX F a es a
+SFX F 0 s e
+SFX F o es [^jgc]o
+SFX F jo ges jo
+SFX F go gues go
+SFX F co ques co
+SFX F c ques c
+SFX F ç ces ç
+SFX F g gues g
+SFX F 0 es [^gq]u
+SFX F u ües [gq]u
+
+SFX G Y 15
+SFX G 0 ns a
+SFX G 0 ns e
+SFX G 0 ns i
+SFX G 0 ns o
+SFX G 0 ns u
+SFX G à ans à
+SFX G è ens è
+SFX G é ens é
+SFX G í ins [^aeou]í
+SFX G í ins [gqaeoi]uí
+SFX G í ïns [^gqaeoi]uí
+SFX G í ïns [aeo]í
+SFX G ò ons ò
+SFX G ó ons ó
+SFX G ú uns ú
+
+SFX H Y 33
+SFX H 0 na [aeiou]
+SFX H à ana à
+SFX H è ena è
+SFX H é ena é
+SFX H í ina [^aeou]í
+SFX H í ina [gq]uí
+SFX H í ïna [^gq]uí
+SFX H í ïna [aeo]í
+SFX H ò ona ò
+SFX H ó ona ó
+SFX H ú una ú
+SFX H 0 ns [aeiou]
+SFX H à ans à
+SFX H è ens è
+SFX H é ens é
+SFX H í ins [^aeou]í
+SFX H í ins [gq]uí
+SFX H í ïns [^gq]uí
+SFX H í ïns [aeo]í
+SFX H ò ons ò
+SFX H ó ons ó
+SFX H ú uns ú
+SFX H 0 nes [aeiou]
+SFX H à anes à
+SFX H è enes è
+SFX H é enes é
+SFX H í ines [^aeou]í
+SFX H í ines [gq]uí
+SFX H í ïnes [^gq]uí
+SFX H í ïnes [aeo]í
+SFX H ò ones ò
+SFX H ó ones ó
+SFX H ú unes ú
+
+SFX I Y 13
+SFX I 0 os [^s]
+SFX I 0 os [^àèéíòóú]s
+SFX I às asos às
+SFX I ès esos ès
+SFX I és esos és
+SFX I ís isos [^aeou]ís
+SFX I ís ïsos [aeo]ís
+SFX I ís isos [gq]uís
+SFX I ís ïsos [^gq]uís
+SFX I òs osos òs
+SFX I ós osos ós
+SFX I ús usos [^aeoi]ús
+SFX I ús üsos [aeoi]ús
+
+SFX J Y 28
+SFX J 0 a [^s]
+SFX J 0 a [^àèéíòóú]s
+SFX J às asa às
+SFX J ès esa ès
+SFX J és esa és
+SFX J ís isa ís
+SFX J òs osa òs
+SFX J ós osa ós
+SFX J ús usa ús
+SFX J 0 os [^s]
+SFX J 0 os [^àèéíòóú]s
+SFX J às asos às
+SFX J ès esos ès
+SFX J és esos és
+SFX J ís isos ís
+SFX J òs osos òs
+SFX J ós osos ós
+SFX J ús usos ús
+SFX J 0 es [^sç]
+SFX J ç ces ç
+SFX J 0 es [^àèéíòóú]s
+SFX J às ases às
+SFX J ès eses ès
+SFX J és eses és
+SFX J ís ises ís
+SFX J òs oses òs
+SFX J ós oses ós
+SFX J ús uses ús
+
+SFX K Y 19
+SFX K ari ària ari
+SFX K aci àcia aci
+SFX K adi àdia adi
+SFX K ori òria ori
+SFX K emi èmia emi
+SFX K oli òlia oli
+SFX K ogen ògena ogen
+SFX K ogin ògina ogin
+SFX K 0 s [aeiou]
+SFX K ogen ògens ogen
+SFX K ogin ògins ogin
+SFX K ari àries ari
+SFX K adi àdies adi
+SFX K aci àcies aci
+SFX K ori òries ori
+SFX K emi èmies emi
+SFX K oli òlies oli
+SFX K ogen ògenes ogen
+SFX K ogin ògines ogin
+
+SFX L Y 17
+SFX L ini ínia ini
+SFX L igi ígia igi
+SFX L igin ígina igin
+SFX L igen ígena igen
+SFX L agen àgena agen
+SFX L umen úmena umen
+SFX L 0 s i
+SFX L igin ígins igin
+SFX L igen ígens igen
+SFX L agen àgens agen
+SFX L umen úmens umen
+SFX L ini ínies ini
+SFX L igi ígies igi
+SFX L igin ígines igin
+SFX L igen ígenes igen
+SFX L agen àgenes agen
+SFX L umen úmenes umen
+
+SFX M Y 98
+SFX M iré im [^aeiou]iré
+SFX M iré im [gq]uiré
+SFX M iré ïm [^gq]uiré
+SFX M iré ïm [aeio]iré
+SFX M iré iu [^aeiou]iré
+SFX M iré iu [gq]uiré
+SFX M iré ïu [^gq]uiré
+SFX M iré ïu [aeio]iré
+SFX M iré ia [^aeiou]iré
+SFX M iré ia [gq]uiré
+SFX M iré ïa [^gq]uiré
+SFX M iré ïa [aeio]iré
+SFX M iré ies [^aeiou]iré
+SFX M iré ies [gq]uiré
+SFX M iré ïes [^gq]uiré
+SFX M iré ïes [aeio]iré
+SFX M iré ia [^aeiou]iré
+SFX M iré ia [gq]uiré
+SFX M iré ïa [^gq]uiré
+SFX M iré ïa [aeio]iré
+SFX M iré íem iré
+SFX M iré íeu iré
+SFX M iré ien [^aeiou]iré
+SFX M iré ien [gq]uiré
+SFX M iré ïen [^gq]uiré
+SFX M iré ïen [aeio]iré
+SFX M iré í iré
+SFX M iré ires [^aeiou]iré
+SFX M iré ires [gq]uiré
+SFX M iré ïres [^gq]uiré
+SFX M iré ïres [aeio]iré
+SFX M iré í iré
+SFX M iré írem iré
+SFX M iré íreu iré
+SFX M iré iren [^aeiou]iré
+SFX M iré iren [gq]uiré
+SFX M iré ïren [^gq]uiré
+SFX M iré ïren [aeio]iré
+SFX M iré iré iré
+SFX M iré iràs iré
+SFX M iré irà iré
+SFX M iré irem iré
+SFX M iré ireu iré
+SFX M iré iran iré
+SFX M iré iria iré
+SFX M iré iries iré
+SFX M iré iria iré
+SFX M iré iríem iré
+SFX M iré iríeu iré
+SFX M iré irien iré
+SFX M iré im [^aeiou]iré
+SFX M iré im [gq]uiré
+SFX M iré ïm [^gq]uiré
+SFX M iré ïm [aeio]iré
+SFX M iré iu [^aeiou]iré
+SFX M iré iu [gq]uiré
+SFX M iré ïu [^gq]uiré
+SFX M iré ïu [aeio]iré
+SFX M iré ís iré
+SFX M iré ira [^aeiou]iré
+SFX M iré ira [gq]uiré
+SFX M iré ïra [^gq]uiré
+SFX M iré ïra [aeio]iré
+SFX M iré issis [^aeiou]iré
+SFX M iré issis [gq]uiré
+SFX M iré ïssis [^gq]uiré
+SFX M iré ïssis [aeio]iré
+SFX M iré isses [^aeiou]iré
+SFX M iré isses [gq]uiré
+SFX M iré ïsses [^gq]uiré
+SFX M iré ïsses [aeio]iré
+SFX M iré ires [^aeiou]iré
+SFX M iré ires [gq]uiré
+SFX M iré ïres [^gq]uiré
+SFX M iré ïres [aeio]iré
+SFX M iré ís iré
+SFX M iré ira [^aeiou]iré
+SFX M iré ira [gq]uiré
+SFX M iré ïra [^gq]uiré
+SFX M iré ïra [aeio]iré
+SFX M iré íssim iré
+SFX M iré íssem iré
+SFX M iré írem iré
+SFX M iré íssiu iré
+SFX M iré ísseu iré
+SFX M iré íreu iré
+SFX M iré issin [^aeiou]iré
+SFX M iré issin [gq]uiré
+SFX M iré ïssin [^gq]uiré
+SFX M iré ïssin [aeio]iré
+SFX M iré issen [^aeiou]iré
+SFX M iré issen [gq]uiré
+SFX M iré ïssen [^gq]uiré
+SFX M iré ïssen [aeio]iré
+SFX M iré iren [^aeiou]iré
+SFX M iré iren [gq]uiré
+SFX M iré ïren [^gq]uiré
+SFX M iré ïren [aeio]iré
+
+SFX N Y 45
+SFX N iré eixo iré
+SFX N iré esc iré
+SFX N iré isc [^aeiou]iré
+SFX N iré isc [gq]uiré
+SFX N iré ïsc [^gq]uiré
+SFX N iré ïsc [aeio]iré
+SFX N iré eixes iré
+SFX N iré ixes [^aeiou]iré
+SFX N iré ixes [gq]uiré
+SFX N iré ïxes [^gq]uiré
+SFX N iré ïxes [aeio]iré
+SFX N iré eix iré
+SFX N iré ix [^aeiou]iré
+SFX N iré ix [gq]uiré
+SFX N iré ïx [^gq]uiré
+SFX N iré ïx [aeio]iré
+SFX N iré eixen iré
+SFX N iré ixen [^aeiou]iré
+SFX N iré ixen [gq]uiré
+SFX N iré ïxen [^gq]uiré
+SFX N iré ïxen [aeio]iré
+SFX N iré eixi iré
+SFX N iré esqui iré
+SFX N iré isca [^aeiou]iré
+SFX N iré isca [gq]uiré
+SFX N iré ïsca [^gq]uiré
+SFX N iré ïsca [aeio]iré
+SFX N iré eixis iré
+SFX N iré esquis iré
+SFX N iré isques [^aeiou]iré
+SFX N iré isques [gq]uiré
+SFX N iré ïsques [^gq]uiré
+SFX N iré ïsques [aeio]iré
+SFX N iré eixi iré
+SFX N iré esqui iré
+SFX N iré isca [^aeiou]iré
+SFX N iré isca [gq]uiré
+SFX N iré ïsca [^gq]uiré
+SFX N iré ïsca [aeio]iré
+SFX N iré eixin iré
+SFX N iré esquin iré
+SFX N iré isquen [^aeiou]iré
+SFX N iré isquen [gq]uiré
+SFX N iré ïsquen [^gq]uiré
+SFX N iré ïsquen [aeio]iré
+
+SFX O Y 12
+SFX O a a a
+SFX O a es a
+SFX O a a a
+SFX O ia íem [^eu]ia
+SFX O ïa íem ïa
+SFX O eia èiem eia
+SFX O uia úiem uia
+SFX O ia íeu [^eu]ia
+SFX O ïa íeu ïa
+SFX O eia èieu eia
+SFX O uia úieu uia
+SFX O a en a
+
+SFX P Y 38
+SFX P és o [^c]és
+SFX P cés ço cés
+SFX P és í és
+SFX P és eres és
+SFX P és é és
+SFX P és érem és
+SFX P és éreu és
+SFX P és eren és
+SFX P és i és
+SFX P és a [^cgu]és
+SFX P cés ça cés
+SFX P gés ja gés
+SFX P és is és
+SFX P és es és
+SFX P és i és
+SFX P és a [^cgu]és
+SFX P cés ça cés
+SFX P gés ja gés
+SFX P és em és
+SFX P és eu és
+SFX P és in és
+SFX P és en és
+SFX P és és és
+SFX P és era és
+SFX P és essis és
+SFX P és eres és
+SFX P és esses és
+SFX P és és és
+SFX P és era és
+SFX P és éssim és
+SFX P és éssem és
+SFX P és érem és
+SFX P és éssiu és
+SFX P és ésseu és
+SFX P és éreu és
+SFX P és essin és
+SFX P és essen és
+SFX P és eren és
+
+SFX Q Y 36
+SFX Q gués c gués
+SFX Q qués c qués
+SFX Q és í és
+SFX Q és eres és
+SFX Q és é és
+SFX Q és érem és
+SFX Q és éreu és
+SFX Q és eren és
+SFX Q és i és
+SFX Q gués ga gués
+SFX Q qués ca qués
+SFX Q és is és
+SFX Q és es és
+SFX Q és i és
+SFX Q gués ga gués
+SFX Q qués ca qués
+SFX Q és em és
+SFX Q és eu és
+SFX Q és in és
+SFX Q és en és
+SFX Q és és és
+SFX Q és era és
+SFX Q és essis és
+SFX Q és esses és
+SFX Q és eres és
+SFX Q és és és
+SFX Q és era és
+SFX Q és éssim és
+SFX Q és éssem és
+SFX Q és érem és
+SFX Q és éssiu és
+SFX Q és ésseu és
+SFX Q és éreu és
+SFX Q és essin és
+SFX Q és essen és
+SFX Q és eren és
+
+SFX R Y 4
+SFX R m m em
+SFX R m m im
+SFX R m u em
+SFX R m u im
+
+SFX S Y 11
+SFX S 0 s [^nçx]
+SFX S ç ces ç
+SFX S 0 es x
+SFX S 0 s [^èé]n
+SFX S èn ens èn
+SFX S én ens én
+SFX S 0 en [^nç]
+SFX S ç cen ç
+SFX S 0 en [^èé]n
+SFX S èn enen èn
+SFX S én enen én
+
+SFX T Y 12
+SFX T é é é
+SFX T é às é
+SFX T é à é
+SFX T é em é
+SFX T é eu é
+SFX T é an é
+SFX T é ia é
+SFX T é ies é
+SFX T é ia é
+SFX T é íem é
+SFX T é íeu é
+SFX T é ien é
+
+SFX U Y 20
+SFX U 0 o [^gl]
+SFX U g g g
+SFX U l lo ll
+SFX U l l ll
+SFX U s s s
+SFX U t t t
+SFX U y y y
+SFX U 0 s [^gsx]
+SFX U 0 es [gsx]
+SFX U 0 en .
+SFX U 0 i .
+SFX U 0 a [^g]
+SFX U g ja g
+SFX U 0 is .
+SFX U 0 es .
+SFX U 0 i .
+SFX U 0 a [^g]
+SFX U g ja g
+SFX U 0 in .
+SFX U 0 en .
+
+PFX V N 60
+PFX V 0 l' [aàeèéiíoòóhuú]
+PFX V 0 L' [aàeèéiíoòóhuú]
+PFX V 0 l' [AÀEÈÉIÍOÒÓHUÚ]
+PFX V 0 L' [AÀEÈÉIÍOÒÓHUÚ]
+PFX V 0 s' [aàeèéiíoòóhuú]
+PFX V 0 S' [aàeèéiíoòóhuú]
+PFX V 0 s' [AÀEÈÉIÍOÒÓHUÚ]
+PFX V 0 S' [AÀEÈÉIÍOÒÓHUÚ]
+PFX V a l'A a
+PFX V a L'A a
+PFX V a s'A a
+PFX V a S'A a
+PFX V à l'À à
+PFX V à L'À à
+PFX V à s'À à
+PFX V à S'À à
+PFX V e l'E e
+PFX V e L'E e
+PFX V e s'E e
+PFX V e S'E e
+PFX V è l'È è
+PFX V è L'È è
+PFX V è s'È è
+PFX V è S'È è
+PFX V é l'É é
+PFX V é L'É é
+PFX V é s'É é
+PFX V é S'É é
+PFX V i l'I i
+PFX V i L'I i
+PFX V i s'I i
+PFX V i S'I i
+PFX V í l'Í í
+PFX V í L'Í í
+PFX V í s'Í í
+PFX V í S'Í í
+PFX V o l'O o
+PFX V o L'O o
+PFX V o s'O o
+PFX V o S'O o
+PFX V ò l'Ò ò
+PFX V ò L'Ò ò
+PFX V ò s'Ò ò
+PFX V ò S'Ò ò
+PFX V ó l'Ó ó
+PFX V ó L'Ó ó
+PFX V ó s'Ó ó
+PFX V ó S'Ó ó
+PFX V u l'U u
+PFX V u L'U u
+PFX V u s'U u
+PFX V u S'U u
+PFX V ú l'Ú ú
+PFX V ú L'Ú ú
+PFX V ú s'Ú ú
+PFX V ú S'Ú ú
+PFX V h l'H h
+PFX V h L'H h
+PFX V h s'H h
+PFX V h S'H h
+
+PFX W N 4
+PFX W 0 n' [AÀEÈÉIÍOÒÓHUÚ]
+PFX W 0 l' [AÀEÈÉIÍOÒÓHUÚ]
+PFX W 0 N' [AÀEÈÉIÍOÒÓHUÚ]
+PFX W 0 L' [AÀEÈÉIÍOÒÓHUÚ]
+
+PFX Y Y 28
+PFX Y 0 d' [aàeèéiíoòóhuúAÀEÈÉIÍOÒÓHUÚ]
+PFX Y 0 D' [aàeèéiíoòóhuúAÀEÈÉIÍOÒÓHUÚ]
+PFX Y a d'A a
+PFX Y a D'A a
+PFX Y à d'À à
+PFX Y à D'À à
+PFX Y e d'E e
+PFX Y e D'E e
+PFX Y è d'È è
+PFX Y è D'È è
+PFX Y é d'É é
+PFX Y é D'É é
+PFX Y i d'I i
+PFX Y i D'I i
+PFX Y í d'Í í
+PFX Y í D'Í í
+PFX Y o d'O o
+PFX Y o D'O o
+PFX Y ò d'Ò ò
+PFX Y ò D'Ò ò
+PFX Y ó d'Ó ó
+PFX Y ó D'Ó ó
+PFX Y u d'U u
+PFX Y u D'U u
+PFX Y ú d'Ú ú
+PFX Y ú D'Ú ú
+PFX Y h d'H h
+PFX Y h D'H h
+
+PFX Z Y 5
+PFX Z 0 n' [aàeèéiíoòóhuú]
+PFX Z 0 m' [aàeèéiíoòóhuú]
+PFX Z 0 t' [aàeèéiíoòóhuú]
+PFX Z 0 s' [aàeèéiíoòóhuú]
+PFX Z 0 l' [aàeèéiíoòóhuú]

@@ -40,7 +40,7 @@ user_pref("intl.charsetmenu.browser.cache", "UTF-8");
 user_pref("network.cookie.prefsMigrated", true);
 user_pref("security.warn_submit_insecure", false);
 user_pref("signed.applets.codebase_principal_support", true);
-user_pref("spellchecker.dictionary", "en-US");
+user_pref("spellchecker.dictionary", "es-ES");
 user_pref("urlclassifier.keyupdatetime.https://sb-ssl.google.com/safebrowsing/getkey?client=navclient-auto-ffox2.0&", 1165886465);
 user_pref("urlclassifier.tableversion.goog-black-enchash", "1.14444");
 user_pref("urlclassifier.tableversion.goog-black-url", "1.7417");
