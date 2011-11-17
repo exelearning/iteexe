@@ -124,6 +124,7 @@ class IdeviceStore:
         from exe.engine.titleidevice          import TitleIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
+        #from exe.engine.clozelangidevice          import ClozelangIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
@@ -135,6 +136,27 @@ class IdeviceStore:
         from exe.engine.appletidevice         import AppletIdevice
         from exe.engine.flashmovieidevice     import FlashMovieIdevice
         from exe.engine.quiztestidevice       import QuizTestIdevice
+
+	# JR	
+	# Necesarios para la FPD
+        from exe.engine.reflectionfpdidevice		import ReflectionfpdIdevice
+        from exe.engine.reflectionfpdmodifidevice	import ReflectionfpdmodifIdevice
+        from exe.engine.clozefpdidevice			import ClozefpdIdevice
+	from exe.engine.clozelangfpdidevice		import ClozelangfpdIdevice
+        from exe.engine.parasabermasfpdidevice		import ParasabermasfpdIdevice
+        from exe.engine.debesconocerfpdidevice		import DebesconocerfpdIdevice
+        from exe.engine.citasparapensarfpdidevice	import CitasparapensarfpdIdevice
+        from exe.engine.recomendacionfpdidevice		import RecomendacionfpdIdevice
+        from exe.engine.verdaderofalsofpdidevice	import VerdaderofalsofpdIdevice
+        from exe.engine.seleccionmultiplefpdidevice	import SeleccionmultiplefpdIdevice
+        from exe.engine.eleccionmultiplefpdidevice	import EleccionmultiplefpdIdevice
+        from exe.engine.casopracticofpdidevice		import CasopracticofpdIdevice
+        from exe.engine.ejercicioresueltofpdidevice	import EjercicioresueltofpdIdevice
+        from exe.engine.destacadofpdidevice		import DestacadofpdIdevice
+        #from exe.engine.correccionfpdidevice		import CorreccionfpdIdevice
+        from exe.engine.orientacionesalumnadofpdidevice	import OrientacionesalumnadofpdIdevice
+        from exe.engine.orientacionestutoriafpdidevice	import OrientacionestutoriafpdIdevice
+        from exe.engine.freetextfpdidevice		import FreeTextfpdIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -159,6 +181,7 @@ class IdeviceStore:
         self.extended.append(AttachmentIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
+        #self.extended.append(ClozelangIdevice())
         self.extended.append(FlashWithTextIdevice())
         self.extended.append(ExternalUrlIdevice())
         # converting Maths Idevice -> FreeTextIdevice:
@@ -169,6 +192,28 @@ class IdeviceStore:
         self.extended.append(AppletIdevice())
         self.extended.append(FlashMovieIdevice())
         self.extended.append(QuizTestIdevice())
+
+	# JR
+	# iDevices para la FPD
+	self.extended.append(ReflectionfpdIdevice())
+	self.extended.append(ReflectionfpdmodifIdevice())
+        self.extended.append(ClozefpdIdevice())
+	self.extended.append(ClozelangfpdIdevice())
+	self.extended.append(ParasabermasfpdIdevice())
+	self.extended.append(DebesconocerfpdIdevice())
+	self.extended.append(CitasparapensarfpdIdevice())
+	self.extended.append(RecomendacionfpdIdevice())
+	self.extended.append(VerdaderofalsofpdIdevice())
+	self.extended.append(SeleccionmultiplefpdIdevice())
+	self.extended.append(EleccionmultiplefpdIdevice())
+	self.extended.append(CasopracticofpdIdevice())
+	self.extended.append(EjercicioresueltofpdIdevice())
+	self.extended.append(DestacadofpdIdevice())
+	#self.extended.append(CorreccionfpdIdevice())
+	self.extended.append(OrientacionesalumnadofpdIdevice())
+	self.extended.append(OrientacionestutoriafpdIdevice())
+	self.extended.append(FreeTextfpdIdevice())
+
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:
