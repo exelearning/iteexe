@@ -31,12 +31,13 @@
 									<select id="media_type" name="media_type" onchange="changedType(this.value);generatePreview();">
 										<option value="none">None</option>
 										<option value="flash" disabled="disabled">ShockWave Flash (SWF)</option>
+										<option value="mp3" disabled="disabled">MP3 (with embedded XSPF Player)</option>
+										<option value="flp" disabled="disabled">FLV (with embedded Flow Player)</option> 
 										<option value="qt" disabled="disabled">Quicktime</option>
 										<!-- <option value="shockwave">ShockWave Director</option> -->
 										<option value="wmp" disabled="disabled">Windows Media</option>
 										<option value="rmp" disabled="disabled">Real Media (audio)</option>
-										<option value="mp3" disabled="disabled">MP3 (with embedded XSPF Player)</option>
-										<option value="flp" disabled="disabled">FLV (with embedded Flow Player)</option> 
+										
 									</select>
 								</td>
 							</tr>
@@ -68,10 +69,10 @@
 							</tr>
 					</table>
 				</fieldset>
-
-				<fieldset>
+				
+ 				<fieldset>
 					<legend>{$lang_media_preview}</legend>
-					<div id="prev"></div>
+					<div id="prev"></div> 
 				</fieldset>
 			</div>
 

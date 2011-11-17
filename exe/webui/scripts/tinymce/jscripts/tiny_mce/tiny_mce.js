@@ -5827,6 +5827,10 @@ tinyMCE.add(TinyMCE_Engine, {
 	convertRelativeToAbsoluteURL : function(base_url, relative_url) {
 		var baseURL = this.parseURL(base_url), baseURLParts, relURLParts, newRelURLParts, numBack, relURL = this.parseURL(relative_url), i;
 		var len, absPath, start, end, newBaseURLParts;
+		
+		//JR
+		if (relative_url.indexOf('../../../../../mod/glossary/showentry.php') > -1)
+			return relative_url;
 
 		if (relative_url == '' || relative_url.indexOf('://') != -1 || /^(mailto:|javascript:|#|\/)/.test(relative_url))
 			return relative_url;

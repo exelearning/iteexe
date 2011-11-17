@@ -7,7 +7,41 @@
 
 function initCommonAttributes(elm) {
 	var formObj = document.forms[0];
-
+	if (elm.className == 'glosario' && elm.nodeName == 'A') {
+		var onclick = tinyMCE.getAttrib(elm, 'onclick');
+		var aux = onclick.split("open('")[1].split("',''")[0];
+		var aux1 = aux.substring(aux.indexOf('concept=')+8);
+		var aux2 = aux1.split('(');
+		var pos = aux1.indexOf(aux2[aux2.length - 1]);
+		var ciclo = aux1.substring(pos, aux1.length - 1);
+		var termino = aux1.substring(0, pos - 4);
+		setFormValue('termino', termino.replace(/%20/g, ' '));
+		setFormValue('ciclo', ciclo); 
+	}
+	var padre = elm.parentNode;
+	if (elm.className == 'texto_izquierda' && elm.nodeName == 'DIV' && padre.className.indexOf('codigo') > -1 && padre.nodeName == 'DIV') {
+		var contenido = elm.getElementsByTagName('code');
+		var codigo = "";
+		for (var i = 0; i < contenido.length; i++) {
+			codigo += contenido[i].innerHTML;
+			if (i < contenido.length - 1) codigo += '\n';
+		}
+		codigo = codigo.replace(/&lt;/g, '<');
+		codigo = codigo.replace(/&gt;/g, '>');
+		codigo = codigo.replace(/&amp;/g, '&');
+		setFormValue('codigo', codigo); 
+	}
+	if (elm.nodeName == 'CODE') {
+		//var codigo = elm.getElementsByTagName('code').innerHTML;
+		var codigo = elm.innerText;
+		codigo = codigo.replace(/&lt;/g, '<');
+		codigo = codigo.replace(/&gt;/g, '>');
+		codigo = codigo.replace(/&amp;/g, '&');
+		setFormValue('codigo', codigo);
+	}
+	if (elm == null) {
+		setFormValue('codigo', SXE.inst.selection.getSelectedText());
+	}
 	// Setup form data for common element attributes
 	setFormValue('title', tinyMCE.getAttrib(elm, 'title'));
 	setFormValue('id', tinyMCE.getAttrib(elm, 'id'));
@@ -122,12 +156,36 @@ function setAttrib(elm, attrib, value) {
 }
 
 function setAllCommonAttribs(elm) {
-	setAttrib(elm, 'title');
-	setAttrib(elm, 'id');
-	setAttrib(elm, 'class');
-	setAttrib(elm, 'style');
-	setAttrib(elm, 'dir');
-	setAttrib(elm, 'lang');
+	if (elm.className == 'glosario' && elm.nodeName == 'A') {
+		var formObj = document.forms[0];
+		var termino = formObj.elements['termino'].value;
+		termino = termino.replace(/\s/g, '%20').replace(/'/g, '%27');
+		var ciclo = formObj.elements['ciclo'].value;
+		
+		elm.setAttribute('href', "../../../../../mod/glossary/showentry.php?displayformat=dictionary&concept=" + termino + "%20(" + ciclo + ")");
+		elm.setAttribute('onclick', "window.open('../../../../../mod/glossary/showentry.php?displayformat=dictionary&amp;concept=" + termino + "%20(" + ciclo + ")','','scrollbars=yes,width=600,height=250');return false;");
+		elm.setAttribute('title', "Ver la definici\u00f3n de \"" + termino.replace(/%20/g, ' ') + "\" (Se abre en una nueva ventana)"); 
+		setAttrib(elm, 'lang');
+	}
+	else if (elm.className == 'codigo' && elm.nodeName == 'DIV') {
+		/*var formObj = document.forms[0];
+		var codigo = formObj.elements['codigo'].value;
+		var pre = document.createElement('pre');
+		if (typeof pre.textContent != 'undefined') {
+		        pre.textContent = codigo;
+		} else {
+		        pre.innerText = codigo;
+		}
+		elm.appendChild(pre);*/
+	}
+	else {
+		setAttrib(elm, 'title');
+		setAttrib(elm, 'id');
+		setAttrib(elm, 'class');
+		setAttrib(elm, 'style');
+		setAttrib(elm, 'dir');
+		setAttrib(elm, 'lang');
+	}
 	/*setAttrib(elm, 'onfocus');
 	setAttrib(elm, 'onblur');
 	setAttrib(elm, 'onclick');
@@ -151,14 +209,45 @@ SXE = {
 SXE.focusElement = SXE.inst.getFocusElement();
 
 SXE.initElementDialog = function(element_name) {
-	addClassesToList('class', 'xhtmlxtras_styles');
-	TinyMCE_EditableSelects.init();
-
 	element_name = element_name.toLowerCase();
+	
 	var elm = tinyMCE.getParentElement(SXE.focusElement, element_name);
-	if (elm != null && elm.nodeName == element_name.toUpperCase()) {
-		SXE.currentAction = "update";
+	
+	if (element_name == 'glosario') {
+		elm = tinyMCE.getParentElement(SXE.focusElement, 'a');
 	}
+	else if (element_name == 'idioma') {
+		elm = tinyMCE.getParentElement(SXE.focusElement, 'span');
+	}
+	else if (element_name == 'codigo') {
+		var s = SXE.inst.selection.getSelectedText();
+		if(s.length > 0) {
+			if (SXE.inst.selection.getSelectedHTML().indexOf('<code>') > -1) {
+				/*var elms = SXE.focusElement.getElementsByTagName('CODE');
+				for (var i=0; i<elms.length; i++) {
+				alert(elms[i].innerHTML)
+					if (elms[i].innerHTML.indexOf(s) > -1)
+						elm = elms[i];
+				}*/
+				elm = document.createElement('code');
+				elm.innerText = s;
+			}
+			else {
+				elm = null;
+				setFormValue('codigo', s);
+			}
+		}
+		else {
+			elm = tinyMCE.getParentElement(SXE.focusElement, 'div');
+		}
+	}
+	else {
+		addClassesToList('class', 'xhtmlxtras_styles');
+		TinyMCE_EditableSelects.init();
+	}
+	if ((elm != null && elm.nodeName == element_name.toUpperCase()) || (elm != null && elm.nodeName == 'A' && element_name == 'glosario') || (elm!=null && elm.nodeName == 'DIV' && element_name == 'codigo') || (elm != null && elm.nodeName == 'CODE' && element_name == 'codigo') || (elm != null && elm.nodeName == 'SPAN' && element_name == 'idioma')) {
+		SXE.currentAction = "update";
+	}	
 
 	if (SXE.currentAction == "update") {
 		initCommonAttributes(elm);
@@ -169,23 +258,71 @@ SXE.initElementDialog = function(element_name) {
 }
 
 SXE.insertElement = function(element_name) {
-	var elm = tinyMCE.getParentElement(SXE.focusElement, element_name), h, tagName;
+	var s = SXE.inst.selection.getSelectedText(), h, tagName;
+	if (element_name == 'glosario') {
+		var elm = tinyMCE.getParentElement(SXE.focusElement, 'a');
+	}
+	else if (element_name == 'idioma') {
+		var elm = tinyMCE.getParentElement(SXE.focusElement, 'span');
+	}
+	else if (element_name == 'codigo') {
+		if (s.length > 0) {
+			if (SXE.inst.selection.getSelectedHTML().indexOf('<code>') > -1) {
+				var elms = SXE.focusElement.getElementsByTagName('CODE');
+				for (var i=0; i<elms.length; i++) {
+					if (elms[i].innerText.indexOf(s) > -1)
+						elm = elms[i];
+				}
+			}
+		}
+		else {
+			var elm = tinyMCE.getParentElement(SXE.focusElement, 'div');
+		}
+	}
+	else {
+		var elm = tinyMCE.getParentElement(SXE.focusElement, element_name);
+	}
 
 	tinyMCEPopup.execCommand('mceBeginUndoLevel');
 	if (elm == null) {
-		var s = SXE.inst.selection.getSelectedHTML();
 		if(s.length > 0) {
 			tagName = element_name;
 
 			if (tinyMCE.isIE && !tinyMCE.isOpera && element_name.indexOf('html:') == 0)
 				element_name = element_name.substring(5).toLowerCase();
-
-			h = '<' + tagName + ' id="#sxe_temp_' + element_name + '#">' + s + '</' + tagName + '>';
+			if (tagName == 'glosario') {
+				h = '<a class="glosario" id="#sxe_temp_' + element_name + '#">' + s + '</a>';
+			}
+			else if (tagName == 'codigo') {
+				var formObj = document.forms[0];
+				var codigo = formObj.elements['codigo'].value;
+				codigo = codigo.replace(/&/g, '&amp;');
+				codigo = codigo.replace(/</g, '&lt;');
+				h = '<code id="#sxe_temp_' + element_name + '#">' + codigo + '</code>';
+			}
+			else if (tagName == 'idioma') {
+				h = '<span id="#sxe_temp_' + element_name + '#">' + s + '</span>';
+			}
+			else {
+				h = '<' + tagName + ' id="#sxe_temp_' + element_name + '#">' + s + '</' + tagName + '>';
+			}
 
 			tinyMCEPopup.execCommand('mceInsertContent', false, h);
 
-			var elementArray = tinyMCE.getElementsByAttributeValue(SXE.inst.getBody(), element_name, 'id', '#sxe_temp_' + element_name + '#');
+			if (tagName == 'glosario') {
+				var elementArray = tinyMCE.getElementsByAttributeValue(SXE.inst.getBody(), 'a', 'id', '#sxe_temp_' + element_name + '#');
+			}
+			else if (tagName == 'codigo') {
+				var elementArray = tinyMCE.getElementsByAttributeValue(SXE.inst.getBody(), 'code', 'id', '#sxe_temp_' + element_name + '#');
+			}
+			else if (tagName == 'idioma') {
+				var elementArray = tinyMCE.getElementsByAttributeValue(SXE.inst.getBody(), 'span', 'id', '#sxe_temp_' + element_name + '#');
+			}
+			else {
+				var elementArray = tinyMCE.getElementsByAttributeValue(SXE.inst.getBody(), element_name, 'id', '#sxe_temp_' + element_name + '#');
+			}
 			for (var i=0; i<elementArray.length; i++) {
+
 				var elm = elementArray[i];
 
 				elm.id = '';
@@ -195,19 +332,111 @@ SXE.insertElement = function(element_name) {
 				setAllCommonAttribs(elm);
 			}
 		}
+		else if (element_name == 'codigo') {
+			var formObj = document.forms[0];
+			var codigo = formObj.elements['codigo'].value;
+			if (codigo != "") {
+				codigo = codigo.replace(/&/g, '&amp;');
+				codigo = codigo.replace(/</g, '&lt;');
+				codigo = codigo.replace(/\t/g, '     ');
+
+				var lineas = codigo.split('\n');
+				var max = 0;
+				var h = "";
+				for (var i=0; i < lineas.length; i++) {
+					if (lineas[i].length > max) max = lineas[i].length;
+					h += '<pre><code>' + lineas[i] + '</code></pre>';
+				}
+				h = '<div class="codigo elemento_centrado" style="width:' + (max*0.55+6) + 'em;"><div class="texto_izquierda">' + h + '</div></div>';
+				tinyMCE.execCommand('mceInsertContent', false, h);
+			}
+		}
+	} else if (element_name == 'codigo') {
+		if(s.length > 0) {
+			var formObj = document.forms[0];
+			var codigo = formObj.elements['codigo'].value;
+			codigo = codigo.replace(/&/g, '&amp;');
+			codigo = codigo.replace(/</g, '&lt;');
+			SXE.removeNode(elm);
+			elm = document.createElement('code');
+			elm.innerText = codigo;
+			tinyMCE.execCommand('mceInsertContent', false, elm);
+			//setAllCommonAttribs(elm);
+		}
+		else {
+			var raiz = tinyMCE.getParentNode(elm, function(n) { return n.className.indexOf('codigo') > -1; }, null);
+			SXE.removeNode(raiz);
+			var formObj = document.forms[0];
+			var codigo = formObj.elements['codigo'].value;
+			if (codigo != "") {
+				codigo = codigo.replace(/&/g, '&amp;');
+				codigo = codigo.replace(/</g, '&lt;');
+				codigo = codigo.replace(/\t/g, '     ');
+
+				var lineas = codigo.split('\n');
+				var max = 0;
+				var h = "";
+				for (var i=0; i < lineas.length; i++) {
+					if (lineas[i].length > max) max = lineas[i].length;
+					h += '<pre><code>' + lineas[i] + '</code></pre>';
+				}
+				h = '<div class="codigo elemento_centrado" style="width:' + (max*0.55+6) + 'em;"><div class="texto_izquierda">' + h + '</div></div>';
+				tinyMCE.execCommand('mceInsertContent', false, h);
+			}
+		}
 	} else {
 		setAllCommonAttribs(elm);
-	}
+	}	
+ 
 	tinyMCE.triggerNodeChange();
 	tinyMCEPopup.execCommand('mceEndUndoLevel');
 }
 
+SXE.removeNode = function(elm){
+	/*if (elm) {
+		var hijos = elm.childNodes;
+		if (hijos) {
+			for (var i=0; i<hijos.length; i++) {
+				SXE.removeNode(hijos[i]);
+				tinyMCE.execCommand('mceRemoveNode', false, hijos[i]);
+			}
+		}
+		tinyMCE.execCommand('mceRemoveNode', false, elm);
+	}*/
+	var rng = elm.ownerDocument.createRange();
+	rng.setStartBefore(elm);
+	rng.setEndAfter(elm);
+	rng.deleteContents();
+}
+
 SXE.removeElement = function(element_name){
 	element_name = element_name.toLowerCase();
-	elm = tinyMCE.getParentElement(SXE.focusElement, element_name);
-	if(elm && elm.nodeName == element_name.toUpperCase()){
+	if (element_name == 'glosario') element_name = 'a';
+	if (element_name == 'idioma') element_name = 'span';
+	var s = SXE.inst.selection.getSelectedText();
+	if (element_name == 'codigo') {
+		if (s.length > 0) {
+			var elm = null;
+			if (SXE.inst.selection.getSelectedHTML().indexOf('<code>') > -1) {
+				elm = tinyMCE.getParentElement(SXE.focusElement, 'code');
+			}
+		}
+		else {
+			var elm = tinyMCE.getParentNode(SXE.focusElement, function(n) { return n.className.indexOf('codigo') > -1; }, null);
+		}
+	}
+	else {
+		var elm = tinyMCE.getParentElement(SXE.focusElement, element_name);
+	}
+//	if(elm && elm.nodeName == element_name.toUpperCase()){
+	if (elm){
 		tinyMCEPopup.execCommand('mceBeginUndoLevel');
-		tinyMCE.execCommand('mceRemoveNode', false, elm);
+		if (elm.nodeName == 'DIV' && element_name == 'codigo') {
+			SXE.removeNode(elm);
+		}
+		else {
+			tinyMCE.execCommand('mceRemoveNode', false, elm);
+		}
 		tinyMCE.triggerNodeChange();
 		tinyMCEPopup.execCommand('mceEndUndoLevel');
 	}

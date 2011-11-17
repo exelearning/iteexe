@@ -41,6 +41,16 @@ h1 {
 	height: 160px;
 }
 
+.panel_wrapper div.glosario {
+
+	height: 90px;
+}
+
+.panel_wrapper div.codigo {
+
+	height: 200px;
+}
+
 #xhtmlxtrasdel .panel_wrapper div.current, #xhtmlxtrasins .panel_wrapper div.current {
 	height: 220px;
 }

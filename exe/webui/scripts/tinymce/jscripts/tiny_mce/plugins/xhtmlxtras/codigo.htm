@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{$lang_xhtmlxtras_title_codigo_element}</title>
+	<script language="javascript" type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script language="javascript" type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script language="javascript" type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script language="javascript" type="text/javascript" src="../../utils/editable_selects.js"></script>
+	<script language="javascript" type="text/javascript" src="jscripts/element_common.js"></script>
+	<script language="javascript" type="text/javascript" src="jscripts/codigo.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/popup.css" />
+	<base target="_self" />
+</head>
+<body onload="tinyMCEPopup.executeOnLoad('init();');" style="display: none">
+<form onsubmit="insertCodigo();return false;" action="#">
+	<div class="tabs">
+		<ul>
+			<li id="general_tab" class="current"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{$lang_xhtmlxtras_general_tab}</a></span></li>
+			<!-- <li id="events_tab"><span><a href="javascript:mcTabs.displayTab('events_tab','events_panel');" onmousedown="return false;">{$lang_xhtmlxtras_events_tab}</a></span></li> -->
+		</ul>
+	</div>
+
+	<div class="panel_wrapper">
+		<div id="general_panel" class="panel current">
+			<fieldset >
+				<legend>{$lang_xhtmlxtras_fieldset_codigo_tab}</legend>
+
+				<label id="titlelabel" for="title">{$lang_xhtmlxtras_codigo_label_title}</label>:
+				<textarea id="codigo" style="width:100%; height:12em;"></textarea>
+			</fieldset>
+		</div>
+	</div>
+	<div class="mceActionPanel">
+		<div style="float: left">
+			<input type="button" id="insert" name="insert" value="{$lang_update}" onclick="insertCodigo();" />
+		</div>
+		<div style="float: left">
+			<input type="button" id="remove" name="remove" value="{$lang_xhtmlxtras_remove}" onclick="removeCodigo();" style="display: none;" />
+		</div>
+		<div style="float: right">
+			<input type="button" id="cancel" name="cancel" value="{$lang_cancel}" onclick="tinyMCEPopup.close();" />
+		</div>
+	</div>
+</form>
+</body>
+</html>
