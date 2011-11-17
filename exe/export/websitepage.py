@@ -30,6 +30,7 @@ from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.pages         import Page, uniquifyNames
 from exe.webui                import common 
+from exe                      import globals as G
 log = logging.getLogger(__name__)
 
 
@@ -59,7 +60,9 @@ class WebsitePage(Page):
         html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
         html += u'Transitional//EN" '
         html += u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        lenguaje = G.application.config.locale
+        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
@@ -101,10 +104,10 @@ class WebsitePage(Page):
         html += u"<div id=\"main\">\n"
 
         style = self.node.package.style
-        html += '<div id=\"nodeDecoration\">'
-        html += '<p id=\"nodeTitle\">'
+        html += '<div class=\"nodeDecoration\">'
+        html += '<h1 class=\"nodeTitle\">'
         html += escape(self.node.titleLong)
-        html += '</p></div>\n'
+        html += '</h1></div>\n'
 
         for idevice in self.node.idevices:
             html += u'<div class="%s" id="id%s">\n' %  (idevice.klass,
@@ -128,6 +131,15 @@ class WebsitePage(Page):
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')
+        # JR: Eliminamos los atributos de las ecuaciones
+        aux = re.compile("exe_math_latex=\"[^\"]*\"")
+	html = aux.sub("", html)
+	aux = re.compile("exe_math_size=\"[^\"]*\"")
+	html = aux.sub("", html)
+	#JR: Cambio el & en los enlaces del glosario
+	html = html.replace("&concept", "&amp;concept")
+        #JR: Cambiamos las anclas por enlaces a archivos
+        html = html.replace('href="#', 'href="')
         return html
 
         
