@@ -2,7 +2,6 @@
 
 # setup.py
 import os
-import subprocess
 from setuptools                 import setup
 #from distutils.core            import setup
 
@@ -75,7 +74,7 @@ any Learning Management System.
       license      = "GPL",
       scripts      = ["exe/exe", "exe/run-exe.sh"],
       packages     = ["exe", "exe.webui", "exe.xului", 
-                      "exe.engine", "exe.export"],
+                      "exe.engine", "exe.export", "exe.importers"],
       data_files   = files.items(),
       doc_files    = ["NEWS", "Changelog", "COPYING", "README"],
       options      = opts
