@@ -59,11 +59,8 @@ class XliffImport(object):
             else:
                 # It's a field
                 field.content_w_resourcePaths = u' '.join([unicode(u) for u in tar.contents])
+                field.TwistedRePersist()
                 log.debug('Content set for: %s' % item_id)
-
-            
-                
-            field.TwistedRePersist()
 
             ## Just in case we need XML parser...
             ##
