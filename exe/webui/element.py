@@ -1183,7 +1183,7 @@ class ClozeElement(ElementWithResources):
                 inputHtml = [
                     ' <input type="text" value="" ',
                     '        id="clozeBlank%s.%s"' % (self.id, i),
-                    '    autocomplete="off"',
+#                    '    autocomplete="off"',
                     '    style="width:%sem"/>\n' % len(missingWord)]
                 if self.field.instantMarking:
                     inputHtml.insert(2, '  onKeyUp="onClozeChange(this)"')
@@ -1236,7 +1236,275 @@ class ClozeElement(ElementWithResources):
                     style=style,
                     onclick=onclick),
         ]
-        html += ['<p id="clozeScore%s"></p>' % self.id]
+        html += ['<div id="clozeScore%s"></div>' % self.id]
+        html += ['</div>\n']
+        return '\n'.join(html) + '</div>'
+    
+    def renderText(self):
+        """
+        Shows the text with gaps for text file export
+        """
+        html = ""
+        for text, missingWord in self.field.parts:
+            if text:
+                html += text
+            if missingWord:
+                for x in missingWord:
+                    html += "_"
+                    
+        return html
+    
+    def renderAnswers(self):        
+        """
+        Shows the answers for text file export
+        """
+        html = ""
+
+        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        answers = ""
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if missingWord:
+                answers += str(i+1) + '.' + missingWord + ' '
+        if answers <> "":        
+            html += answers +'</p>'
+        else:
+            html = ""
+                
+        return html
+
+#============================================================================
+class ClozelangElement(ElementWithResources):
+    """
+    Allows the user to enter a passage of text and declare that some words
+    should be added later by the student
+    """
+
+    # Properties
+
+    @property
+    def editorId(self):
+        """
+        Returns the id string for our midas editor
+        """
+        return 'editorArea%s' % self.id
+
+    @property
+    def editorJs(self):
+        """
+        Returns the js that gets the editor document
+        """
+        return "document.getElementById('%s').contentWindow.document" % \
+            self.editorId
+
+    @property
+    def hiddenFieldJs(self):
+        """
+        Returns the js that gets the hiddenField document
+        """
+        return "document.getElementById('clozelang%s')" % self.id
+
+    # Public Methods
+
+    def process(self, request):
+        """
+        Sets the encodedContent of our field
+        """
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+                self.field.idevice.edit = True
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.idevice.edit = True
+            return
+
+        if self.editorId in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+
+            self.field.content_w_resourcePaths = \
+                self.field.ProcessPreviewed(request.args[self.editorId][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                  self.field.MassageContentForRenderView(\
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+
+            self.field.strictMarking = \
+                'strictMarking%s' % self.id in request.args
+            self.field.checkCaps = \
+                'checkCaps%s' % self.id in request.args
+            self.field.instantMarking = \
+                'instantMarking%s' % self.id in request.args
+	    self.field.showScore = \
+                'showScore%s' % self.id in request.args
+
+    def renderEdit(self):
+        """
+        Enables the user to set up their passage of text
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.encodedContent = self.field.content_w_resourcePaths
+
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+
+        html = [
+            # Render the iframe box
+            common.formField('richTextArea', this_package, _('Cloze Text'),'',
+                             self.editorId, self.field.instruc,
+                             self.field.encodedContent),
+            # Render our toolbar
+            u'<table style="width: 100%;">',
+            u'<tbody>',
+            u'<tr>',
+            u'<td>',
+            u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
+            ur"""onclick="tinyMCE.execInstanceCommand('mce_editor_1','Underline', false);"/>"""
+            u'</td><td>',
+            common.checkbox('strictMarking%s' % self.id,
+                            self.field.strictMarking,
+                            title=_(u'Strict Marking?'),
+                            instruction=self.field.strictMarkingInstruc),
+            u'</td><td>',
+            common.checkbox('checkCaps%s' % self.id,
+                            self.field.checkCaps,
+                            title=_(u'Check Caps?'),
+                            instruction=self.field.checkCapsInstruc),
+            u'</td><td>',
+            common.checkbox('instantMarking%s' % self.id,
+                            self.field.instantMarking,
+                            title=_(u'Instant Marking?'),
+                            instruction=self.field.instantMarkingInstruc),
+	    u'</td><td>',
+            common.checkbox('showScore%s' % self.id,
+                            self.field.showScore,
+                            title=_(u'Mostrar Puntuaci&oacute;n?'),
+                            instruction=self.field.showScoreInstruc),
+            u'</td>',
+            u'</tr>',
+            u'</tbody>',
+            u'</table>',
+            ]
+        return '\n    '.join(html)
+
+    def renderPreview(self, feedbackId=None, preview=True):
+        """
+        Just a front-end wrapper around renderView..
+        """
+        # set up the content for preview mode:
+        preview = True
+        return self.renderView(feedbackId, preview)
+
+    def renderView(self, feedbackId=None, preview=False):
+        """
+        Shows the text with inputs for the missing parts
+        """
+
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.encodedContent = self.field.content_wo_resourcePaths
+
+        html = ['<div id="clozelang%s">' % self.id]
+        # Store our args in some hidden fields
+        def storeValue(name):
+            value = str(bool(getattr(self.field, name))).lower()
+            return common.hiddenField('clozelangFlag%s.%s' % (self.id, name), value)
+        html.append(storeValue('strictMarking'))
+        html.append(storeValue('checkCaps'))
+        html.append(storeValue('instantMarking'))
+	html.append(storeValue('showScore'))
+        if feedbackId:
+            html.append(common.hiddenField('clozelangVar%s.feedbackId' % self.id,
+                                           'ta'+feedbackId))
+        # Mix the parts together
+        words = ""
+        def encrypt(word):
+            """
+            Simple XOR encryptions
+            """
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            return output.encode('base64')
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if text:
+                html.append(text)
+            if missingWord:
+                words += "'" + missingWord + "',"
+                # The edit box for the user to type into
+                inputHtml = [
+                    ' <input type="text" value="" ',
+                    '        id="clozelangBlank%s.%s"' % (self.id, i),
+#                    '    autocomplete="off"',
+                    '    style="width:%sem"/>\n' % len(missingWord)]
+                if self.field.instantMarking:
+                    inputHtml.insert(2, '  onKeyUp="onClozelangChange(this)"')
+                html += inputHtml
+                # Hidden span with correct answer
+                html += [
+                    '<span style="display: none;" ',
+                    'id="clozelangAnswer%s.%s">%s</span>' % (
+                        self.id, i, encrypt(missingWord))]
+
+        # Score string
+        html += ['<div class="block">\n']
+        if self.field.instantMarking:
+            html += ['<input type="button" ',
+                     'value="%s"' % _(u"Get score"),
+                     'id="getScore%s"' % self.id,
+                     'onclick="showClozelangScore(\'%s\')"/>\n' % (self.id)]
+
+            if feedbackId is not None:
+                html += [common.feedbackButton('feedback'+self.id, 
+                             _(u"Show/Hide Feedback"),
+                             style="margin: 0;",
+                             onclick="toggleClozelangFeedback('%s')" % self.id)]
+            # Set the show/hide answers button attributes
+            style = 'display: inline;'
+            value = _(u"Show/Clear Answers")
+            onclick = "toggleClozelangAnswers('%s')" % self.id
+        else:
+            html += [common.button('submit%s' % self.id,
+                        _(u"Submit"),
+                        id='submit%s' % self.id,
+                        onclick="clozelangSubmit('%s')" % self.id),
+                     common.button(
+                        'restart%s' % self.id,
+                        _(u"Restart"),
+                        id='restart%s' % self.id,
+            style="display: none;",
+                        onclick="clozelangRestart('%s')" % self.id),
+                     ]
+            # Set the show/hide answers button attributes
+            style = 'display: none;'
+            value = _(u"Show Answers")
+            onclick = "fillClozelangInputs('%s')" % self.id
+        # Show/hide answers button
+        html += ['&nbsp;&nbsp;',
+                 common.button(
+                    '%sshowAnswersButton' % self.id,
+                    value,
+                    id='showAnswersButton%s' % self.id,
+                    style=style,
+                    onclick=onclick),
+        ]
+        html += ['<p id="clozelangScore%s"></p>' % self.id]
         html += ['</div>\n']
         return '\n'.join(html) + '</div>'
     
@@ -1655,23 +1923,43 @@ class SelectOptionElement(Element):
         """
         log.debug("renderView called with preview = " + str(preview))
         ident = self.field.question.id + str(self.index)
-        html  = '<tr><td>'      
-        html += u'<input type="checkbox" id="%s"' % ident
+# JR Maquetamos con div en vez de con tabla
+#        html  = '<tr><td>'  
+	html = '<div style="display: table-row; clear: both;">\n'
+	html += '<div style="float: left; display: table-cell; margin-left: 0.2em;">\n'
+#JR Anado op al identificador para no empiece por un numero    
+        html += u'<input type="checkbox" id="op%s"' % ident
         html += u' value="%s" />\n' %str(self.field.isCorrect)
                 
         ansIdent = "ans" + self.field.question.id + str(self.index)
-        html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
+#        html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
+	html += '</div>\n'
+	html += '<div style="float: left; display: table-cell; margin-left: 0.5em; width: 93%;">\n'
+	html += '<div id="%s">\n' % ansIdent
         if preview: 
             html += self.answerElement.renderPreview()
         else:
             html += self.answerElement.renderView()
-        html += "</div></td></tr><tr><td></td><td>\n"
-        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '_1')
-        html += _("Correct") + "</div>"
-        html += '<div id ="%s" style="display:none;color:rgb(0,51,204)">\n' %(ident + '_0')
-        html += _("Incorrect") + "</div>"
-        html += "</td></tr>"
+#        html += "</div></td></tr><tr><td></td><td>\n"
+	html += "</div></div>\n</div>\n"
+	html += '<div style="display: table-row; clear: both;">'
+	html += '<div style="float: left; display: table-cell; margin-left: 2em;">\n'
+        html += '<div id ="op%s" style="display:none;">\n' %(ident + '_1')
+        html += "<strong>" + _("Correct") + "</strong></div>"
+        html += '<div id ="op%s" style="display:none;">\n' %(ident + '_0')
+        html +=  _("Incorrect") + "</div>"
+#        html += "</td></tr>"
+	html += "</div>\n</div>\n"
         return html
+
+# JR: Devuelve la cadena xhtml para la etiqueta noscrip
+    def renderNoscript(self, preview):
+	if self.field.isCorrect == True:
+		html = '<li><em>' + _("Correct") + "</em></li>"
+	else:
+		html = '<li><em>' + _("Incorrect") + "</em></li>"
+
+	return html
     
     
 # ===========================================================================
@@ -1776,12 +2064,14 @@ class SelectquestionElement(Element):
         html += u"</tr>"
         html += u"</thead>"
         html += u"<tbody>"
+
         
         for element in self.options:
             html += element.renderEdit() 
             
         html += u"</tbody>"
         html += u"</table>\n"
+
 
         value = _(u"Add another Option")    
         html += common.submitButton("addOption"+self.id, value)
@@ -1797,7 +2087,9 @@ class SelectquestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        html = "<div class=\"question\">\n" 
+#JR
+#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
+	html = '<div class=\"question\">\n' 
         html += self.doRender(img, preview=False)
         html += "</div>\n" 
         return html
@@ -1806,7 +2098,12 @@ class SelectquestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        return self.doRender(img, preview=True)
+#JR
+#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
+	html = '<div class=\"question\">\n' 
+        html += self.doRender(img, preview=True)
+	html += "</div>"
+	return html
     
 
     def doRender(self, img, preview=False):
@@ -1818,23 +2115,49 @@ class SelectquestionElement(Element):
             html  = self.questionElement.renderPreview()
         else: 
             html  = self.questionElement.renderView()
-
-        html += "<table>"
+# JR Maquetamos con div en vez de con una tabla
+#        html += "<table>"
+	html += '<div style="display: table; overflow: auto; width:100%;">'
         for element in self.options:
             html += element.renderView(preview)      
-        html += "</table>"   
+#        html += "</table>"   
+	html += "</div>"
         html += '<input type="button" name="submitSelect"' 
         html += ' value="%s" ' % _("Show Feedback")
         html += 'onclick="showFeedback(%d,\'%s\')"/> ' %(len(self.field.options),self.field.id) 
         html += "<br/>\n"
         html += '<div id="%s" style="display:none">' % ("f"+self.field.id)
-
+#JR
         if preview: 
-            html  += self.feedbackElement.renderPreview()
+            aux  = self.feedbackElement.renderPreview(True, class_="feedback")
         else: 
-            html  += self.feedbackElement.renderView()
+            aux  = self.feedbackElement.renderView(True, class_="feedback")
+	if self.feedbackElement.field.content.strip():
+		html += aux
+	else:
+		html += ""
 
-        html += '</div><br/>'
+#        if preview: 
+#            html  += self.feedbackElement.renderPreview(True, "feedback")
+#        else: 
+#            html  += self.feedbackElement.renderView(True, "feedback")
+
+
+        html += '</div>'
+
+# JR: Generamos el contenido que ira dentro de la etiqueta noscript
+	html += '<noscript><br/><div class="feedback">\n'
+	html += "<p><strong>" + _("Solucion") + ": </strong></p><ol>\n"
+	for element in self.options:
+		html += element.renderNoscript(preview)
+	html += "</ol>"
+	if self.feedbackElement.field.content.strip():
+		html += "<p><strong>" + _("Retroalimentacion") + ": </strong></p>\n"
+        	if preview: 
+            		html  += self.feedbackElement.field.content_w_resourcePaths
+        	else: 
+            		html  += self.feedbackElement.field.content_wo_resourcePaths
+	html += "</div></noscript>"	
 
         return html
 
@@ -1972,18 +2295,24 @@ class QuizOptionElement(Element):
         log.debug("renderView called with preview = " + str(preview))
   
         length = len(self.field.question.options)
-        html  = '<tr><td>'
+# JR Maquetamos con div en vez de con una tabla
+#        html  = '<tr><td>'
+	html = '<div style="display: table-row; clear: both;">\n'
+	html += '<div style="float: left; display: table-cell; margin-left: 0.2em;">\n'
         html += '<input type="radio" name="option%s" ' \
                             % self.field.question.id
         html += 'id="i%s" ' % self.id
         html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' \
                             % (self.index, length, self.field.question.id)
-        html += '</td><td>\n'
+#        html += '</td><td>\n'
+	html += '</div>\n'
+	html += '<div style="float: left; display: table-cell; margin-left: 0.5em; width: 93%;">\n'
         if preview:
             html += self.answerElement.renderPreview()
         else:
             html += self.answerElement.renderView()
-        html += "</td></tr>\n"
+#        html += "</td></tr>\n"
+	html += "</div>\n</div>"
        
         return html
     
@@ -1995,16 +2324,20 @@ class QuizOptionElement(Element):
         feedbackStr = ""
         if hasattr(self.feedbackElement.field, 'content')\
         and self.feedbackElement.field.content.strip() != "": 
+# JR
             if preview: 
-                feedbackStr = self.feedbackElement.renderPreview() 
+                feedbackStr = self.feedbackElement.renderPreview(True, "") 
             else: 
-                feedbackStr = self.feedbackElement.renderView()
+                feedbackStr = self.feedbackElement.renderView(True, "")
+
         else:
             if self.field.isCorrect:
-                feedbackStr = _("Correct")
+# JR:                feedbackStr = _("Correct")
+                feedbackStr = _("Correct Option")
             else:
                 feedbackStr = _("Wrong")
-        html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' \
+#        html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' \
+	html  = '<div id="sa%sb%s" class="feedback" ' \
                       % (str(self.index), self.field.question.id)
         # try putting in the correct answer as an even number.
         # start off with a sorta random looking number:
@@ -2015,13 +2348,26 @@ class QuizOptionElement(Element):
         # if it is a false answer, then add another to make it odd:
         if not self.field.isCorrect:
             to_even += 1
-        html += 'display: none;" even_steven="%s">' % (str(to_even))
+# JR
+#        html += 'display: none;" even_steven="%s">' % (str(to_even))
+	html += 'style="display: none;">'
 
         html += feedbackStr 
         html += '</div>\n'
         
         return html
 
+# JR: Devuelve la cadena xhtml para la etiqueta noscrip
+    def renderNoscript(self, preview):
+	if self.field.isCorrect == True:
+		html = '<li><strong>' + _("Correct Option") + "</strong> "
+	else:
+		html = '<li><strong>' + _("Wrong") + "</strong> "
+        if preview: 
+            html += self.feedbackElement.field.content_w_resourcePaths + "</li>"
+        else:
+            html += self.feedbackElement.field.content_wo_resourcePaths + "</li>"
+	return html
 
 # ===========================================================================
 
@@ -2123,7 +2469,9 @@ class QuizQuestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        html = "<div class=\"question\">\n" 
+# JR
+#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
+	html = '<div class=\"question\">\n'
         html += self.doRender(img1, img2, preview=False)
         html += "</div>\n" 
         return html
@@ -2133,7 +2481,12 @@ class QuizQuestionElement(Element):
         """ 
         Returns an XHTML string for viewing this question element 
         """ 
-        return self.doRender(img1, img2, preview=True)
+# JR
+#        html = '<div class=\"question\"  style="margin-bottom: 1em;">\n'
+	html = '<div class=\"question\">\n'
+        html += self.doRender(img1, img2, preview=True)
+        html += "</div>\n" 
+	return html
     
     def doRender(self, img1, img2, preview=False):
         """
@@ -2143,7 +2496,8 @@ class QuizQuestionElement(Element):
             html  = self.questionElement.renderPreview()
         else:
             html  = self.questionElement.renderView()
-        html += " &nbsp;&nbsp;\n"
+# JR
+#        html += " &nbsp;&nbsp;\n"
 
         if self.hintElement.field.content.strip():
             html += '<span '
@@ -2170,16 +2524,28 @@ class QuizQuestionElement(Element):
                 html  += self.hintElement.renderView()
 
             html += "</div>\n"
-        html += "<table>\n"
-        html += "<tbody>\n"
+# JR Maquetamos con div en vez de con tablas
+#        html += "<table>\n"
+#        html += "<tbody>\n"
+	html += '<div style="display: table; overflow: auto; width: 100%;">\n'
 
         for element in self.options:
             html += element.renderAnswerView(preview)
             
-        html += "</tbody>\n"
-        html += "</table>\n"
+#        html += "</tbody>\n"
+#        html += "</table>\n"
+	html += "</div>\n"
             
         for element in self.options:
             html += element.renderFeedbackView(preview)
+
+# JR: Generamos el contenido que ira dentro de la etiqueta noscrip
+	html += '<noscript><br/><div class="feedback">\n'
+	html += "<p><strong>" + _("Solucion") + ": </strong></p>\n"
+	html += "<ol>"
+	for element in self.options:
+		html += element.renderNoscript(preview)
+	html += "</ol>\n"
+	html += "</div></noscript>"
 
         return html
