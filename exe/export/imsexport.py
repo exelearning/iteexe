@@ -31,6 +31,7 @@ from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
+from exe                      	   import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -200,7 +201,9 @@ class IMSPage(Page):
         Returns an XHTML string rendering this page.
         """
         html  = common.docType()
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        lenguaje = G.application.config.locale
+        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<meta http-equiv=\"Content-type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
@@ -240,6 +243,15 @@ class IMSPage(Page):
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')
+        # JR: Eliminamos los atributos de las ecuaciones
+        aux = re.compile("exe_math_latex=\"[^\"]*\"")
+	html = aux.sub("", html)
+	aux = re.compile("exe_math_size=\"[^\"]*\"")
+	html = aux.sub("", html)
+	#JR: Cambio el & en los enlaces del glosario
+	html = html.replace("&concept", "&amp;concept")
+        #JR: Cambiamos las anclas por enlaces a archivos
+        html = html.replace('href="#', 'href="')
         return html
 
 
@@ -344,6 +356,9 @@ class IMSExport(object):
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
+# JR: anadimos los controles
+	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+	    controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')
