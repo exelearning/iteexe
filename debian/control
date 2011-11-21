@@ -9,7 +9,7 @@ Build-Depends-Indep: debhelper (>= 5.0.38), python-support (>=0.5.3), python-all
 XS-Python-Version: all, >=2.6
 
 Package: python-exe
-Architecture: all
+Architecture: any
 Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6) | python-zope.interface, python-imaging, python-chardet, firefox | iceweasel
 Conflicts: python2.3-exe, python2.4-exe, python2.5-exe
 Replaces: python2.3-exe, python2.4-exe, python2.5-exe
