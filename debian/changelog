@@ -1,3 +1,15 @@
+python-exe (1.04.1.3605ite4) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Actualización versión *.jar Geogebra (3.2.46.0). / Geogebra *.jar version update (3.2.46.0)
+
+  [Pedro Peña]
+  * Cambiada la arquitectura del paquete DEB a any para que no se muestren los
+    mensajes de paquete de mala calidad al instalar con Centro de Software de
+    Ubuntu
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Sat, 15 Oct 2011 13:29:47 +0200
+
 python-exe (1.04.1.3605ite3) lucid; urgency=low
   
   [Mario Izquierdo]
