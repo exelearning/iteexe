@@ -180,6 +180,9 @@ class WebsiteExport(object):
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
+# JR: anadimos los controles
+	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+	    controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')

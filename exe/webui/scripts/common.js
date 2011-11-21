@@ -54,7 +54,8 @@ REALMEDIA_AUDIO    = "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
 
 
 SELECT_A_PACKAGE   = "Select a package";
-YOUR_SCORE_IS      = "Your score is ";
+//YOUR_SCORE_IS      = "Your score is ";
+YOUR_SCORE_IS      = "Tu puntuación es ";
 
 
 // Calls function in an array where each 'row' of the array is in the format:
@@ -859,7 +860,7 @@ function markClozeWord(ele, mark) {
             break;
         case 2: 
             // Correct
-            ele.style.backgroundColor = "lime";
+            ele.style.backgroundColor = "forestgreen";
             break;
     }
     return mark
@@ -870,7 +871,7 @@ function getClozeMark(ele) {
     // Return last mark applied
     switch (ele.style.backgroundColor) {
         case 'red':   return 1; // Wrong
-        case 'lime':  return 2; // Correct
+        case 'forestgreen':  return 2; // Correct
         default:      return 0; // Not attempted
     }
 }
@@ -1168,9 +1169,10 @@ function calcScore(num, ident){
 // used to show question's feedback for multi-select idevice 
 function showFeedback(num, ident){
     for(i=0; i<num; i++){
-        var ele = document.getElementById(ident+i.toString())
-        var ele0 = document.getElementById(ident+i.toString()+"_0")
-        var ele1 = document.getElementById(ident+i.toString()+"_1")
+// JR añado 'op' a la hora de buscar por Id
+        var ele = document.getElementById("op"+ident+i.toString())
+        var ele0 = document.getElementById("op"+ident+i.toString()+"_0")
+        var ele1 = document.getElementById("op"+ident+i.toString()+"_1")
         var ansele = document.getElementById("ans"+ident+i.toString())
         chk = "False"
         if (ele.checked==1)
@@ -1178,11 +1180,11 @@ function showFeedback(num, ident){
         if (chk == ele.value){
             ele1.style.display = "block"
 			ele0.style.display = "none"
-            ansele.style.color = "black"
+//            ansele.style.color = "black"
         }else{            
             ele0.style.display = "block"
 			ele1.style.display = "none"
-            ansele.style.color = "red"
+//            ansele.style.color = "red"
         }
     }
     var fele = document.getElementById("f"+ident)
@@ -1251,3 +1253,379 @@ function detectPlugin() {
     return pluginFound;
 } // detectPlugin
 ///////////////////////////////////////////////
+
+// JR
+// Cloze Lang Field Stuff /////////////////////////////////////////////////
+
+// Constants 
+NOT_ATTEMPTED = 0
+WRONG = 1
+CORRECT = 2
+
+// Functions 
+
+// Called when a learner types something into a cloze word space
+function onClozelangChange(ele) {
+    var ident = getClozelangIds(ele)[0];
+    var instant = eval(document.getElementById(
+        'clozelangFlag'+ident+'.instantMarking').value);
+    if (instant) {
+        checkAndMarkClozelangWord(ele);
+        // Hide the score paragraph if visible
+        var scorePara = document.getElementById('clozelangScore' + ident);
+        scorePara.innerHTML = "";
+    }
+}
+
+// Recieves and marks answers from student
+function clozelangSubmit(ident) {
+    // Mark all of the words
+    showClozelangScore(ident, 1);
+    // Hide Submit
+    toggleElementVisible('submit'+ident);
+    // Show Restart
+    //toggleElementVisible('restart'+ident);
+    // Show Show Answers Button
+    //toggleElementVisible('showAnswersButton'+ident);
+    // Show feedback
+    toggleClozelangFeedback(ident);
+}
+
+// Makes cloze idevice like new :)
+function clozelangRestart(ident) {
+    // Hide Feedback
+    toggleClozelangFeedback(ident);
+    // Clear the answers (Also hides score)
+    toggleClozelangAnswers(ident, true);
+    // Hide Restart
+    toggleElementVisible('restart'+ident);
+    // Hide Show Answers Button
+    toggleElementVisible('showAnswersButton'+ident);
+    // Show Submit
+    toggleElementVisible('submit'+ident);
+}
+
+// Show/Hide all answers in the cloze idevice
+// 'clear' is an optional argument, that forces all the answers to be cleared
+// whether they are all finished and correct or not
+function toggleClozelangAnswers(ident, clear){
+    // See if any have not been answered yet
+    var allCorrect = true;
+    var inputs = getCloseInputsCloze(ident)
+    if (!clear) {
+        for (var i=0; i<inputs.length; i++) {
+            var input = inputs[i];
+            if (getClozelangMark(input) != 2) {
+                allCorrect = false;
+                break;
+            }
+        }
+    }
+    if (allCorrect) {
+        // Clear all answers
+        clearClozelangInputs(ident, inputs);
+    } else {
+        // Write all answers
+        fillClozelangInputs(ident, inputs);
+    }
+    // Hide the score paragraph, irrelevant now
+    var scorePara = document.getElementById('clozelangScore' + ident);
+    scorePara.innerHTML = "";
+    // If the get score button is visible and we just filled in all the right
+    // answers, disable it until they clear the scores again.
+    var getScoreButton = document.getElementById('getScore' + ident);
+    if (getScoreButton) {
+        getScoreButton.disabled = !allCorrect;
+    }
+}
+
+// Shows all answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function fillClozelangInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputsCloze(ident)
+    }
+    for (var i=0; i<inputs.length; i++) {
+        input = inputs[i];
+        input.value = getClozelangAnswer(input);
+        markClozeWord(input, CORRECT);
+        // Toggle the readonlyness of the answers also
+        input.setAttribute('readonly', 'readonly');
+    }
+}
+
+// Blanks all the answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function clearClozelangInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputsCloze(ident)
+    }
+    for (var i=0; i<inputs.length; i++) {
+        input = inputs[i];
+        input.value="";
+        markClozeWord(input, NOT_ATTEMPTED);
+        // Toggle the readonlyness of the answers also
+        input.removeAttribute('readonly');
+    }
+}
+
+// Marks a cloze word in view mode.
+// Returns NOT_ATTEMPTED, CORRECT, or WRONG
+function checkAndMarkClozelangWord(ele) {
+    var result = checkClozelangWord(ele);
+    if (result != '') {
+        markClozelangWord(ele, CORRECT);
+        ele.value = result;
+        return CORRECT;
+    } else if (!ele.value) {
+        markClozelangWord(ele, NOT_ATTEMPTED);
+        return NOT_ATTEMPTED;
+    } else {
+        markClozelangWord(ele, WRONG);
+        return WRONG;
+    }
+}
+
+// Marks a cloze question (at the moment just changes the color)
+// 'mark' should be 0=Not Answered, 1=Wrong, 2=Right
+function markClozelangWord(ele, mark) {
+    switch (mark) {
+        case 0:
+            // Not attempted
+            ele.style.backgroundColor = "";
+            break;
+        case 1:
+            // Wrong
+            ele.style.backgroundColor = "red";
+            break;
+        case 2: 
+            // Correct
+            ele.style.backgroundColor = "forestgreen";
+            break;
+    }
+    return mark
+}
+
+// Return the last mark applied to a word
+function getClozelangMark(ele) {
+    // Return last mark applied
+    switch (ele.style.backgroundColor) {
+        case 'red':   return 1; // Wrong
+        case 'forestgreen':  return 2; // Correct
+        default:      return 0; // Not attempted
+    }
+}
+
+// Decrypts and returns the answer for a certain cloze field word
+function getClozelangAnswer(ele) {
+    var idents = getClozelangIds(ele)
+    var ident = idents[0]
+    var inputId = idents[1]
+    var answerSpan = document.getElementById('clozelangAnswer'+ident+'.'+inputId);
+    var code = answerSpan.innerHTML;
+    code = decode64(code)
+    code = unescape(code)
+    // XOR "Decrypt"
+    result = '';
+    var key = 'X'.charCodeAt(0);
+    for (var i=0; i<code.length; i++) {
+        var letter = code.charCodeAt(i);
+        key ^= letter
+        result += String.fromCharCode(key);
+    }
+    return result
+}
+
+// Base64 Decode
+// Base64 code from Tyler Akins -- http://rumkin.com
+//function decode64(input) {
+//   var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+//   var output = "";
+//   var chr1, chr2, chr3;
+//   var enc1, enc2, enc3, enc4;
+//   var i = 0;
+//   // Remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+//   input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+//   do {
+//      enc1 = keyStr.indexOf(input.charAt(i++));
+//      enc2 = keyStr.indexOf(input.charAt(i++));
+//      enc3 = keyStr.indexOf(input.charAt(i++));
+//      enc4 = keyStr.indexOf(input.charAt(i++));
+//
+//      chr1 = (enc1 << 2) | (enc2 >> 4);
+//      chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+//      chr3 = ((enc3 & 3) << 6) | enc4;
+//
+//      output = output + String.fromCharCode(chr1);
+//
+//      if (enc3 != 64) {
+//         output = output + String.fromCharCode(chr2);
+//      }
+//      if (enc4 != 64) {
+//         output = output + String.fromCharCode(chr3);
+//      }
+//   } while (i < input.length);
+//   return output;
+//}
+
+// Returns the corrected word or an empty string
+function checkClozelangWord(ele) {
+    var guess = ele.value;
+    // Extract the idevice id and the input number out of the element's id
+    var original = getClozelangAnswer(ele);
+    var answer = original;
+    var guess = ele.value
+    var ident = getClozelangIds(ele)[0]
+    // Read the flags for checking answers
+    var strictMarking = eval(document.getElementById(
+        'clozelangFlag'+ident+'.strictMarking').value);
+    var checkCaps = eval(document.getElementById(
+        'clozelangFlag'+ident+'.checkCaps').value);
+    if (!checkCaps) {
+        guess = guess.toLowerCase();
+        answer = original.toLowerCase();
+    }
+    if (guess == answer)
+        // You are right!
+        return original
+    else if (strictMarking || answer.length <= 4)
+        // You are wrong!
+        return "";
+    else {
+        // Now use the similarity check algorythm
+        var i = 0;
+        var j = 0;
+        var orders = [[answer, guess], [guess, answer]];
+        var maxMisses = Math.floor(answer.length / 6) + 1;
+        var misses = 0;
+        if (guess.length <= maxMisses) {
+            misses = Math.abs(guess.length - answer.length);
+            for (i = 0; i < guess.length; i++ ) {
+                if (answer.search(guess[i]) == -1) {
+                    misses += 1;
+                }
+            }
+            if (misses <= maxMisses) {
+                return answer;
+            } else {
+                return "";
+            }
+        }
+        // Iterate through the different orders of checking
+        for (i = 0; i < 2; i++) {
+            var string1 = orders[i][0];
+            var string2 = orders[i][1];
+            while (string1) {
+                misses = Math.floor(
+                            (Math.abs(string1.length - string2.length) +
+                             Math.abs(guess.length - answer.length)) / 2)
+                var max = Math.min(string1.length, string2.length)
+                for (j = 0; j < max; j++) {
+                    var a = string2.charAt(j);
+                    var b = string1.charAt(j);
+                    if (a != b)
+                        misses += 1;
+                    if (misses > maxMisses)
+                        break;
+                }
+                if (misses <= maxMisses)
+                    // You are right
+                    return answer;
+                string1 = string1.substr(1);
+            }
+        }
+        // You are wrong!
+        return "";
+    }
+}
+
+// Extracts the idevice id and input id from a javascript element
+function getClozelangIds(ele) {
+    // Extract the idevice id and the input number out of the element's id
+    // id is "clozelangBlank%s.%s" % (idevice.id, input number)
+    var id = ele.id.slice(14); 
+    var dotindex = id.indexOf('.')
+    var ident = id.slice(0, dotindex)
+    var inputId = id.slice(id.indexOf('.')+1)
+    return [ident, inputId]
+}
+
+// Calculate the score for cloze idevice
+function showClozelangScore(ident, mark) {
+    var showScore = eval(document.getElementById(
+        'clozelangFlag'+ident+'.showScore').value);
+    if (showScore) {
+	    var score = 0
+	    var div = document.getElementById('clozelang' + ident)
+	    var inputs = getCloseInputsCloze(ident)
+	    for (var i=0; i<inputs.length; i++) {
+		var input = inputs[i];
+		if (mark) {
+		    var result = checkAndMarkClozelangWord(input);
+		} else {
+		    var result = getClozelangMark(input);
+		}
+		if (result == 2) {
+		    score++;
+		}
+	    }
+	    // Show it in a nice paragraph
+	    var scorePara = document.getElementById('clozelangScore' + ident);
+	    scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + ".";
+     }
+}
+
+// Returns an array of input elements that are associated with a certain idevice
+function getCloseInputsCloze(ident) {
+    var result = new Array;
+    var clozeDiv = document.getElementById('clozelang'+ident)
+    recurseFindClozelangInputs(clozeDiv, ident, result)
+    return result
+}
+
+// Adds any cloze inputs found to result, recurses down
+function recurseFindClozelangInputs(dad, ident, result) {
+    for (var i=0; i<dad.childNodes.length; i++) {
+        var ele = dad.childNodes[i];
+        // See if it is a blank
+        if (ele.id) {
+            if (ele.id.search('clozelangBlank'+ident) == 0) {
+                result.push(ele);
+                continue;
+            }
+        }
+        // See if it contains blanks
+        if (ele.hasChildNodes()) {
+            recurseFindClozelangInputs(ele, ident, result);
+        }
+    }
+}
+    
+
+// Pass the cloze element's id, and the visible property of the feedback element
+// associated with it will be toggled. If there is no feedback field, does
+// nothing
+function toggleClozelangFeedback(ident) {
+    var feedbackIdEle = document.getElementById(
+        'clozelangVar'+ident+'.feedbackId');
+    if (feedbackIdEle) {
+        var feedbackId = feedbackIdEle.value;
+        toggleElementVisible(feedbackId);
+    }
+}
+
+// Toggle the visiblity of an element from it's id
+//function toggleElementVisible(ident) {
+//    // Toggle the visibility of an element
+//    var element = document.getElementById(ident);
+//    if (element) {
+//        if (element.style.display != "none") {
+//            element.style.display = "none";
+//        } else {
+//            element.style.display = "";
+//        }
+//    }
+//}
+
