@@ -19,7 +19,8 @@ function preinit() {
 }
 
 function convertURL(url, node, on_save) {
-	return eval("tinyMCEPopup.windowOpener." + tinyMCE.settings['urlconverter_callback'] + "(url, node, on_save);");
+	//return eval("tinyMCEPopup.windowOpener." + tinyMCE.settings['urlconverter_callback'] + "(url, node, on_save);");
+	return url;
 }
 
 function getImageSrc(str) {
@@ -108,6 +109,13 @@ function init() {
 	formObj.insert.value = tinyMCE.getLang('lang_' + action, 'Insert', true); 
 
 	if (action == "update") {
+		document.getElementById("classlabel").style.display = 'none';
+		document.getElementById("classlist").style.display = 'none';
+		document.getElementById("labeltitulo").style.display = 'none';
+		document.getElementById("titulo_sup").style.display = 'none';
+		document.getElementById("labelcred").style.display = 'none';
+		document.getElementById("credenciales").style.display = 'none';
+		
 		var src = tinyMCE.getAttrib(elm, 'src');
 		var onmouseoversrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseover')));
 		var onmouseoutsrc = getImageSrc(tinyMCE.cleanupEventStr(tinyMCE.getAttrib(elm, 'onmouseout')));
@@ -159,7 +167,7 @@ function init() {
 		else
 			selectByValue(formObj, 'align', getStyle(elm, 'align', 'cssFloat'));
 
-		addClassesToList('classlist', 'advimage_styles');
+		//JR addClassesToList('classlist', 'advimage_styles');
 
 		selectByValue(formObj, 'classlist', tinyMCE.getAttrib(elm, 'class'));
 		selectByValue(formObj, 'imagelistsrc', src);
@@ -171,8 +179,8 @@ function init() {
 		changeAppearance();
 
 		window.focus();
-	} else
-		addClassesToList('classlist', 'advimage_styles');
+	} // JR else
+		//JR addClassesToList('classlist', 'advimage_styles');
 
 	// If option enabled default contrain proportions to checked
 	if (tinyMCE.getParam("advimage_constrain_proportions", true))
@@ -278,6 +286,18 @@ function insertAction() {
 	var onmouseoversrc = formObj.onmouseoversrc.value;
 	var onmouseoutsrc = formObj.onmouseoutsrc.value;
 
+	// JR Titulo y descripcion obligatorios
+        if(document.forms[0].title.value=='')
+        { 
+                alert('Falta el título.');
+                return false;
+        }
+        else if(document.forms[0].alt.value=='')
+        {
+                alert('Falta la descripción.');
+                return false;
+        } // JR
+        
 	if (!AutoValidator.validate(formObj)) {
 		alert(tinyMCE.getLang('lang_invalid_data'));
 		return false;
@@ -331,7 +351,33 @@ function insertAction() {
 		if (tinyMCE.isMSIE5)
 			elm.outerHTML = elm.outerHTML;
 	} else {
-		var html = "<img";
+		var html;
+		//JR
+                html='';
+                
+                div_class = getSelectValue(formObj, 'classlist');
+                pos_img_amp = div_class.indexOf('imagen_ampliable');
+                var titulo = formObj.titulo_sup.value;
+                var credenciales = formObj.credenciales.value;
+                if(titulo != '' || credenciales != '' || pos_img_amp != -1) {
+                	if (pos_img_amp != -1) {
+                        	html += '<div class="'+div_class.substring(16)+'">';
+                        } else  {
+                        	html += '<div class="'+div_class+'">';
+                        }
+                }
+                if(titulo != '') 
+                {
+                        html += '<div class="elemento_centrado titulo">'+titulo+'</div>';
+                }
+                if(titulo != '' || credenciales != '' || pos_img_amp != -1) 
+                {
+                	html += '<div class="elemento_centrado">';
+                }
+                // JR
+                
+                html += "<img";
+
 
 		html += makeAttrib('src', convertURL(src, tinyMCE.imgElement));
 		html += makeAttrib('mce_src', src);
@@ -350,9 +396,33 @@ function insertAction() {
 		html += makeAttrib('longdesc');
 		html += makeAttrib('usemap');
 		html += makeAttrib('style');
-		html += makeAttrib('class', getSelectValue(formObj, 'classlist'));
+		// JR
+		if(titulo != '' || credenciales != '' || pos_img_amp != -1) 
+                {
+                        if (pos_img_amp != -1) {
+                        	html += makeAttrib('class', 'imagen_ampliable');
+                        }
+                } else
+                {
+                	html += makeAttrib('class', getSelectValue(formObj, 'classlist'));
+                }//JR
+		//html += makeAttrib('class', getSelectValue(formObj, 'classlist'));
 		html += makeAttrib('align', getSelectValue(formObj, 'align'));
 		html += " />";
+		
+		// JR
+		if(titulo != '' || credenciales != '' || pos_img_amp != -1) 
+                {
+                        html += '</div>';
+                }
+                if(credenciales != '') 
+                {
+                        html += '<div class="elemento_centrado credenciales">'+credenciales+'</div>';
+                }
+                if(titulo != '' || credenciales != '' || pos_img_amp != -1) 
+                {
+                        html += '</div>';
+                }// JR
 
 		tinyMCEPopup.execCommand("mceInsertContent", false, html);
 	}

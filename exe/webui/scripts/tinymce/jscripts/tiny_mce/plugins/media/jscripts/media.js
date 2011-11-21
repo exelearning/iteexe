@@ -40,7 +40,7 @@ function init() {
 	   var flash_pos = 1;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  flash_pos, "flash");
 	}
-        if (assume_plugins || tinyMCEPopup.windowOpener.detectQuickTime()) {
+/*JR        if (assume_plugins || tinyMCEPopup.windowOpener.detectQuickTime()) {
 	   var qt_pos = 2;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  qt_pos, "qt");
 	}
@@ -52,12 +52,13 @@ function init() {
 	   var real_pos = 4;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  real_pos, "rmp");
 	}
+*/
 	// always allow the eXe MP3 because player is embedded (no detection mechanism, either):
-	var mp3_pos = 5;  // shortcut to expected hardcoded select position
+	var mp3_pos = 2;  // shortcut to expected hardcoded select position
         enable_media_type(f, max_plugin,  mp3_pos, "mp3");
 
 	// always allow the eXe MP3 because player is embedded (no detection mechanism, either):
-	 var flv_pos = 6;  // shortcut to expected hardcoded select position
+	 var flv_pos = 3;  // shortcut to expected hardcoded select position
          enable_media_type(f, max_plugin,  flv_pos, "flp");
 
 
@@ -116,6 +117,8 @@ function init() {
 		document.getElementById("linklistrow").style.display = 'none';
 	else
 		document.getElementById("linklistcontainer").innerHTML = html;
+
+
 
 	// Resize some elements
 	if (isVisible('filebrowsercontainer'))
@@ -311,7 +314,9 @@ function insertMedia() {
 		fe.style.height = f.height.value + (f.height.value.indexOf('%') == -1 ? 'px' : '');
 		fe.align = f.align.options[f.align.selectedIndex].value;
 	} else {
-		h = '<img src="' + tinyMCE.getParam("theme_href") + '/images/spacer.gif"' ;
+		//JR la embebemos para anadir el resumen textual
+		h = '<div class="elemento_centrado">\n<div class="elemento_centrado">';
+		h += '<img src="' + tinyMCE.getParam("theme_href") + '/images/spacer.gif"' ;
 
 		switch (f.media_type.options[f.media_type.selectedIndex].value) {
 			case "flash":
@@ -349,6 +354,8 @@ function insertMedia() {
 		h += ' align="' + f.align.options[f.align.selectedIndex].value + '"';
 
 		h += ' />';
+		//JR
+		h += '\n</div>\n<div class="credenciales elemento_centrado"><a href="resumen.html" title="Resumen textual alternativo para &quot;XXX&quot;">Resumen textual alternativo</a></div>\n</div>';
 
 		tinyMCE.selectedInstance.execCommand('mceInsertContent', false, h);
 	}

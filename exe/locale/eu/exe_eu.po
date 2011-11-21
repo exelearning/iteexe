@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-18 14:01+1300\n"
-"PO-Revision-Date: 2008-12-16 13:44+0100\n"
-"Last-Translator: Malen <mjareno@asmoz.org>\n"
+"PO-Revision-Date: 2011-05-02 23:57+0100\n"
+"Last-Translator: \n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -565,16 +565,16 @@ msgstr "Hutsuneak betetzeko testua"
 
 #: exe/webui/element.py:1650 exe/webui/element.py:1984
 msgid "Correct"
-msgstr "Zuzendu"
+msgstr "Aukera zuzena."
 
 #: exe/webui/testoptionelement.py:111 exe/webui/element.py:1598
 #: exe/webui/element.py:1895
 msgid "Correct Option"
-msgstr "Aukera zuzena"
+msgstr "Zuzena."
 
 #: exe/webui/truefalseelement.py:216
 msgid "Correct!"
-msgstr "Ondo!"
+msgstr "Zuzena."
 
 #: exe/xului/mainpage.py:1106
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
@@ -1002,7 +1002,7 @@ msgstr "Estra handia"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:191
 msgid "False"
-msgstr "Gezurra"
+msgstr "Gezurra."
 
 #: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
 #: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
@@ -1166,11 +1166,11 @@ msgstr "Inportatu iDevice-a"
 
 #: exe/webui/element.py:1652
 msgid "Incorrect"
-msgstr "Okerra"
+msgstr "Aukera ez zuzena."
 
 #: exe/webui/truefalseelement.py:217
 msgid "Incorrect!"
-msgstr "Okerra!"
+msgstr "Okerra."
 
 #: exe/webui/editorpane.py:377
 msgid "Info"
@@ -2034,7 +2034,7 @@ msgstr "Gaia"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:189
 msgid "True"
-msgstr "Egia"
+msgstr "Egia."
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
@@ -2245,7 +2245,7 @@ msgstr "Wikiztegia"
 
 #: exe/webui/element.py:1986
 msgid "Wrong"
-msgstr "Gaizki"
+msgstr "Okerra."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -4363,3 +4363,109 @@ msgstr "Eskubideetako elementu batek, normalean, baliabidearen eskubideen inguru
 
 #~ msgid "<strong>url:</strong> "
 #~ msgstr "<strong>url:</strong> "
+
+# JR
+# Texto necesarios para la FPaD
+msgid "Solucion"
+msgstr "Ebazpena"
+
+msgid "Retroalimentacion"
+msgstr "Feedbacka"
+
+# Texto Libre
+msgid "FPD - Texto Libre"
+msgstr "FPD - Testu Librea"
+
+# Destacado
+msgid "FPD - Destacado"
+msgstr "FPD - Nabarmendua"
+
+#: Caso practico
+msgid "FPD - Caso Practico"
+msgstr "FPD - Kasu Praktikoa"
+
+msgid "Caso práctico"
+msgstr "Kasu praktikoa"
+
+#: Citas para pensar
+msgid "FPD - Citas Para Pensar"
+msgstr "FPD - Hausnarketarako Aipua"
+
+msgid "Citas para pensar"
+msgstr "Hausnarketarako aipua"
+
+#: Debes conocer
+msgid "FPD - Debes Conocer"
+msgstr "FPD - Jakin  Behar Duzu"
+
+msgid "Debes conocer"
+msgstr "Jakin  behar duzu"
+
+#: Ejercicio Resuelto
+msgid "FPD - Ejercicio Resuelto"
+msgstr "FPD - Ebatzitako Ariketa"
+
+msgid "Ejercicio resuelto"
+msgstr "Ebatzitako ariketa"
+
+#: Orientaciones Alumnado
+msgid "FPD - Orientaciones Alumnado"
+msgstr "FPD - Ikasle-Orientabideak"
+
+msgid "Orientaciones para el alumnado"
+msgstr "Ikasleentzako orientabideak"
+
+#: Orientaciones Tutoria
+msgid "FPD - Orientaciones Tutoria"
+msgstr "FPD - Tutoretza-Orientabideak"
+
+msgid "Orientaciones para la tutoría"
+msgstr "Tutoretzarako orientabideak"
+
+#: Para saber mas
+msgid "FPD - Para Saber Mas"
+msgstr "FPD - Gehiago Jakiteko"
+
+msgid "Para saber más"
+msgstr "Gehiago jakiteko"
+
+#: Recomendacion
+msgid "FPD - Recomendacion"
+msgstr "FPD - Gomendioa"
+
+msgid "Recomendación"
+msgstr "Gomendioa"
+
+#: Reflexionas
+msgid "FPD - Reflexiona (con Retroalimentacion)"
+msgstr "FPD - Hausnartu (Feedbackarekin)"
+
+msgid "FPD - Reflexiona (sin Retroalimentacion)"
+msgstr "FPD - Hausnartu (Feedbackik gabe)"
+
+msgid "Reflexiona"
+msgstr "Hausnartu"
+
+#: Autoevaluaciones
+#: Espacios en blanco
+msgid "FPD - Actividad de Espacios en Blanco"
+msgstr "FPD - Hutsuneak Betetzeko Jarduera"
+
+#: Espacios en blanco
+msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
+msgstr "FPD - Hutsuneak Betetzeko Jarduera (Eraldatua)"
+
+#: Eleccion multiple
+msgid "FPD - Actividad de Eleccion Multiple"
+msgstr "FPD - Aukera Askotako Jarduera"
+
+#: Seleccion multiple
+msgid "FPD - Actividad de Seleccion Multiple"
+msgstr "FPD - Hautaketa Askotako Jarduera"
+
+#: Verdadero / Falso
+msgid "FPD - Actividad de Verdadero/Falso"
+msgstr "FPD - Egia/Gezurra Moduko Jarduera "
+
+msgid "Autoevaluación"
+msgstr "Autoebaluazioa"
