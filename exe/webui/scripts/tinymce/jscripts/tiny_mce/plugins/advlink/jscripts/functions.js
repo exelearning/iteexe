@@ -63,9 +63,18 @@ function init() {
 	setPopupControlsDisabled(true);
 
 	if (action == "update") {
+		document.getElementById("divlabel").style.display = 'none';
+		document.getElementById("divlist").style.display = 'none';
+		document.getElementById("tamanolabel").style.display = 'none';
+		document.getElementById("tamano").style.display = 'none';
+		document.getElementById("resumenlabel").style.display = 'none';
+		document.getElementById("resumen").style.display = 'none';
+		document.getElementById("campos").style.display = 'none';
+		
+		
 		var href = tinyMCE.getAttrib(elm, 'href');
 
-		href = convertURL(href, elm, true);
+		//href = convertURL(href, elm, true);
 
 		// Use mce_href if found
 		var mceRealHref = tinyMCE.getAttrib(elm, 'mce_href');
@@ -122,12 +131,12 @@ function init() {
 		if (href.charAt(0) == '#')
 			selectByValue(formObj, 'anchorlist', href);
 
-		addClassesToList('classlist', 'advlink_styles');
+		//JR addClassesToList('classlist', 'advlink_styles');
 
 		selectByValue(formObj, 'classlist', tinyMCE.getAttrib(elm, 'class'), true);
 		selectByValue(formObj, 'targetlist', tinyMCE.getAttrib(elm, 'target'), true);
-	} else
-		addClassesToList('classlist', 'advlink_styles');
+	} //JR else
+		//JR addClassesToList('classlist', 'advlink_styles');
 
 	window.focus();
 }
@@ -145,7 +154,8 @@ function setFormValue(name, value) {
 }
 
 function convertURL(url, node, on_save) {
-	return eval("tinyMCEPopup.windowOpener." + tinyMCE.settings['urlconverter_callback'] + "(url, node, on_save);");
+	//return eval("tinyMCEPopup.windowOpener." + tinyMCE.settings['urlconverter_callback'] + "(url, node, on_save);");
+	return url;
 }
 
 function parseWindowOpen(onclick) {
@@ -448,6 +458,24 @@ function insertAction() {
 			tinyMCEPopup.execCommand("mceInsertContent", false, '<a href="#mce_temp_url#">' + inst.selection.getSelectedHTML() + '</a>');
 		else
 			tinyMCEPopup.execCommand("createlink", false, "#mce_temp_url#");
+		//JR
+		var formObj = document.forms[0];
+		if(formObj.tamano.value=='') {
+			span='';
+		} else {
+			span=' <span class="tamano">('+formObj.tamano.value+')</span>';
+		}
+		if(formObj.resumen.checked) {
+			resumen=' <a class="credenciales" title="Acceder al resumen textual de la infomaci&oacute;n mostrada en &quot;XXX&quot;" href="resumen.html">(Resumen textual alternativo)</a>';
+		} else {
+			resumen='';
+		}
+
+		if(getSelectValue(formObj, 'divlist')!='') {
+			tinyMCEPopup.execCommand("mceInsertContent", false, '<div class="'+getSelectValue(formObj, 'divlist')+'"><a href="#mce_temp_url#">'+ inst.selection.getSelectedHTML() +'</a>'+span+resumen+'</div>');
+		} else {
+			tinyMCEPopup.execCommand("mceInsertContent", false, '<a href="#mce_temp_url#">'+ inst.selection.getSelectedHTML() +'</a>'+span+resumen+'');
+		}//JR
 
 		var elementArray = tinyMCE.getElementsByAttributeValue(inst.getBody(), "a", "href", "#mce_temp_url#");
 		for (var i=0; i<elementArray.length; i++) {
@@ -490,7 +518,12 @@ function insertAction() {
 
 	tinyMCE._setEventsEnabled(inst.getBody(), false);
 	tinyMCEPopup.execCommand("mceEndUndoLevel");
-	tinyMCEPopup.close();
+	// Título obligatorio
+	if(document.forms[0].title.value=='') { // JR
+		alert('Falta el título.'); // JR
+	} else { // JR
+		tinyMCEPopup.close();
+	} // JR
 }
 
 function setAllAttribs(elm) {
