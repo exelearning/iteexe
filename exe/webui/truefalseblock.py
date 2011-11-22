@@ -123,8 +123,8 @@ class TrueFalseBlock(Block):
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<h2 class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</h2>\n"     
+        html += u"<span class=\"iDeviceTitle\"><strong>"       
+        html += self.idevice.title+"</strong></span>\n"     
         html += u"<div class=\"iDevice_inner\">\n"
         html += self.instructionElement.renderPreview()
         
@@ -149,8 +149,8 @@ class TrueFalseBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<h2 class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</h2>\n"
+        html += u"<span class=\"iDeviceTitle\"><strong>"       
+        html += self.idevice.title+"</strong></span>\n"
         html += u"<div class=\"iDevice_inner\">\n"
         html += self.instructionElement.renderView()
         
