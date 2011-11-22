@@ -1,6 +1,6 @@
 # ===========================================================================
 # __init__.py
-# Copyright 2011, Mikel Larreategi, CodeSyntax
+# Copyright 2011, Mikel Larreategi, CodeSyntax Tknika
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -55,6 +55,10 @@ class XliffImport(object):
             if item_id.endswith('title'):
                 # It's a idevice, set the title
                 field.set_title(u' '.join([unicode(u) for u in tar.contents]))
+                log.debug('Title set for: %s' % item_id)
+            elif item_id.endswith('nodename'):
+                # It's a node, set the title
+                field.setTitle(u' '.join([unicode(u) for u in tar.contents]))
                 log.debug('Title set for: %s' % item_id)
             else:
                 # It's a field

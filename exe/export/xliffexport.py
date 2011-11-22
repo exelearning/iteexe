@@ -1,6 +1,6 @@
 # ===========================================================================
 # __init__.py
-# Copyright 2011, Mikel Larreategi, CodeSyntax
+# Copyright 2011, Mikel Larreategi, CodeSyntax Tknika
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -81,6 +81,12 @@ class XliffExport(object):
 
     def getContentForNode(self, node, id):
         content = u''
+        content += '<group>'
+        content += TRANS_UNIT % {'content': safe_unicode(node.getTitle()),
+                                 'id': '%s-nodename' % id,
+                                 }
+        content += '</group>'
+
         for idevice in node.idevices:
             content += '<group>'
             
