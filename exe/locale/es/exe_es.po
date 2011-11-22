@@ -3189,7 +3189,7 @@ msgid ""
 msgstr ""
 "\n"
 "              Para describir la forma física o digital del recurso, \n"
-"              use el elemento \"Formato\".\n"
+"              use el elemento FORMAT.\n"
 "            "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
