@@ -4,7 +4,10 @@
 !define APPNAME "exe"
 
 !ifndef EXE_VERSION
-  !define EXE_VERSION "0.24"
+  !define EXE_VERSION "fpd.1.04"
+!endif
+!ifndef EXE_REVISION
+  !define EXE_REVISION "0.3532"
 !endif
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 

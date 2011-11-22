@@ -6,9 +6,9 @@ Priority: optional
 Standards-Version: 3.6.1
 Build-Depends-Indep: debhelper (>= 4.1.67), python-all-dev
 
-Package: python-exe
-Architecture: i386
-Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6), python-imaging
+Package: python-exe-fpd
+Architecture: all
+Depends: ${python:Depends}, python-zope.interface (>=3.0), python-imaging
 Description: eLearning XHTML editor [dummy package]
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.
@@ -17,17 +17,9 @@ Description: eLearning XHTML editor [dummy package]
  This package is an empty dummy package that always depends on a package
  built for Debian's default Python version.
 
-Package: python2.4-exe
-Architecture: i386
-Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6), python-imaging
-Description: eLearning XHTML editor
- The eXe project is an authoring environment to enable teachers to publish
- web content without the need to become proficient in HTML or XML markup.
- Content generated using eXe can be used by any Learning Management System.
-
-Package: python2.5-exe
-Architecture: i386
-Depends: ${python:Depends}, python-zopeinterface (>=3.0.0-6), python-imaging
+Package: python2.6-exe-fpd
+Architecture: all
+Depends: ${python:Depends}, python-zope.interface (>=3.0), python-imaging
 Description: eLearning XHTML editor
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.

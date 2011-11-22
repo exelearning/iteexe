@@ -9,17 +9,18 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-PYTHON_VERSIONS	= 2.4 2.5
+PYTHON_VERSIONS	= 2.6
+PYTHON_VERSION	= 2.6
 IS_PURE		= yes
 HAVE_DH_PYTHON	= yes
-DUMMY_PACKAGE	= python-exe
+DUMMY_PACKAGE	= python-exe-fpd
 CHANGELOG	= ChangeLog
 ARCHITECTURE	= all      # architecture for binary packages
 
 PYTHON		= /usr/bin/python${PYTHON_VERSION}
 SETUP_PY	= setup.py
 SETUP		= ${PYTHON} ${SETUP_PY}
-DEBPACKAGE	= python${PYTHON_VERSION}-exe
+DEBPACKAGE	= python${PYTHON_VERSION}-exe-fpd
 DESTDIR		= ${CURDIR}/debian/${DEBPACKAGE}
 
 CFLAGS	= -Wall -g

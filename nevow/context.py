@@ -34,7 +34,7 @@ class WebContext(object):
     isAttrib = property(lambda self: False)
     inURL = property(lambda self: False)
     precompile = property(lambda self: False)
-    def with(self, tag):
+    def xwith(self, tag):
         warnings.warn("use WovenContext(parent, tag) instead", DeprecationWarning, stacklevel=2)
         return WovenContext(self, tag)
 
