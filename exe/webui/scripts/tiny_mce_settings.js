@@ -79,6 +79,7 @@ tinyMCE.init({
         element_format : "xhtml",
         fix_list_elements : false,
         force_p_newlines : true,
+	apply_source_formatting : true,
         theme_advanced_blockformats : "p,blockquote,div,h1,h2,h3,h4,h5,h6",
 	
 	theme_advanced_statusbar_location : "bottom",
