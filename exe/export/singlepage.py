@@ -47,7 +47,7 @@ class SinglePage(Page):
         'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
-        outfile = open(filename, "w")
+        outfile = open(filename, "wb")
         outfile.write(self.render(self.node.package,for_print).encode('utf8'))
         outfile.close()
         

@@ -275,7 +275,7 @@ class ScormPage(Page):
         the filename will be the 'self.node.id'.html or 'index.html' if
         self.node is the root node. 'outputDir' must be a 'Path' instance
         """
-        out = open(outputDir/self.name+".html", "w")
+        out = open(outputDir/self.name+".html", "wb")
         out.write(self.render())
         out.close()
 
