@@ -14,3 +14,7 @@ exe.egg-info
 .svn
 # eXe manual
 exe/webui/docs/manual
+# Eclipse
+.project
+.pydevproject
+.settings/

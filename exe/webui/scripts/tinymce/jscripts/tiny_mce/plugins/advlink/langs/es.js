@@ -4,7 +4,7 @@ tinyMCE.addToLang('advlink',{
 general_tab : 'General',
 popup_tab : 'Popup',
 events_tab : 'Eventos',
-advanced_tab : 'Advanzado',
+advanced_tab : 'Avanzado',
 general_props : 'Propiedades generales',
 popup_props : 'Propiedades del popup',
 event_props : 'Eventos',

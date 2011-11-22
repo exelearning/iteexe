@@ -343,13 +343,18 @@ class FieldWithResources(Field):
         resources_in_use =  []
         search_strings = ["src=\"resources/", "exe_math_latex=\"resources/", \
                 "href=\"resources/", \
-                "src=\"../templates/xspf_player.swf?song_url=resources/"]
+# JR: Anadimos que busque en los recursos activos los apuntados por flv_src y los que estan en el data de los SWF
+		"flv_src\" value=\"resources/", \
+		"application/x-shockwave-flash\" data=\"resources/", \
+#Cambio src por data
+                "data=\"../templates/xspf_player.swf?song_url=resources/"]
 
         for search_num in range(len(search_strings)): 
             search_str = search_strings[search_num] 
             embedded_mp3 = False
-            if search_str == \
-                "src=\"../templates/xspf_player.swf?song_url=resources/":
+#JR            if search_str == \
+#                "src=\"../templates/xspf_player.swf?song_url=resources/":
+            if search_str == "data=\"../templates/xspf_player.swf?song_url=resources/":
                 embedded_mp3 = True
             found_pos = content.find(search_str) 
             while found_pos >= 0: 
@@ -1135,6 +1140,11 @@ class FieldWithResources(Field):
                    exe_flv_parmline = "<param name=\"exe_flv\" " \
                            + "value=\"/previews/" \
                            + pre_input_file_name_str
+#JR: Si contiene flowplayer lo embebemos
+		   if new_content.find("flowPlayer") >= 0:
+                       embed_flv_player = True
+                       log.debug('ProcessPreviewedMedia: this is an eXe flv.')
+		       
                    if new_content.find(exe_flv_parmline) >= 0:
                        embed_flv_player = True
                        log.debug('ProcessPreviewedMedia: this is an eXe flv.')
@@ -1229,6 +1239,7 @@ class FieldWithResources(Field):
                        # do NOT embed the flv player as a resource,
                        # merely copy it out upon export, as indicated by:
                        self.idevice.systemResources += ['flowPlayer.swf']
+                       self.idevice.systemResources += ['flowplayer.controls.swf']
 
 
                    # and finally, go ahead and replace the filename for:
@@ -1269,6 +1280,20 @@ class FieldWithResources(Field):
                                                      embed_replace_str)
 
                    ######
+                   # JR: Reemplazamos para los SWF
+
+                   ######
+                   embed_search_str = "application/x-shockwave-flash\" data=\"/previews/"\
+                           + pre_input_file_name_str
+                   embed_replace_str = "application/x-shockwave-flash\" data=\"" + resource_url
+                   new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+                   embed_search_str = "name=\"movie\" value=\"/previews/"\
+                           + pre_input_file_name_str
+                   embed_replace_str = "name=\"movie\" value=\"" + resource_url
+                   new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+		   ######
                    # and one more place that it needs to change, in the 
                    # case of the Windows Media Player, which has been
                    # hacked in tinyMCE to now include a data source
@@ -1308,11 +1333,14 @@ class FieldWithResources(Field):
                                                      embed_replace_str)
                        # as well as its flashvars param, 
                        # which contains a playlist url:
-                       embed_search_str = "playList: [ { url: '/previews/" \
-                           + pre_input_file_name_str
-                       embed_replace_str = "playList: [ { url: '" + resource_url
-                       new_content = new_content.replace(embed_search_str,
-                                                     embed_replace_str)
+# JR                       embed_search_str = "playList: [ { url: '/previews/" \
+#                           + pre_input_file_name_str
+#                       embed_replace_str = "playList: [ { url: '" + resource_url
+#                       new_content = new_content.replace(embed_search_str,
+#                                                     embed_replace_str)
+                       embed_search_str = "config={'playlist': [ { 'url': '/previews/" + pre_input_file_name_str
+                       embed_replace_str = "config={'playlist': [ { 'url': '" + resource_url
+                       new_content = new_content.replace(embed_search_str, embed_replace_str)
 
                else:
                    log.warn("file '"+file_name_str+"' does not exist; " \
@@ -1336,9 +1364,13 @@ class FieldWithResources(Field):
                         + "to NOT have a terminating quote.")
     
             # Find the next source image in the content, continuing the loop:
-            found_pos = new_content.find(search_str, found_pos+1) 
-        
-        return new_content
+            found_pos = new_content.find(search_str, found_pos+1)
+	# JR - Quitamos lo que va entre <embed>...</embed>
+	#aux = re.compile("<embed.*id=\"flowplayer\".*></embed>")
+	#new_content = aux.sub("", new_content)
+	#log.debug(new_content)
+
+	return new_content
         # end ProcessPreviewedMedia()
 
 
@@ -1357,7 +1389,9 @@ class FieldWithResources(Field):
         # BUT SAVE preview_math_file for later string replacement....
         quoteless_math_src  = preview_math_src.replace("\"","")
         preview_math_file = quoteless_math_src.replace("src=","")
-        math_file = preview_math_file.replace("../previews/","")
+#JR
+#        math_file = preview_math_file.replace("../previews/","")
+        math_file = preview_math_file.replace("/previews/","")
 
         #log.debug('   looking for preview exe_math_latex file: ' + math_file);
         # 2. check for the file existing in the previews dir
@@ -1435,11 +1469,14 @@ class FieldWithResources(Field):
 
             # 5. do a global string replace of the old attribute with the new,
             #rebuilding the full attribute to: "href=\"/ <path w/ resources> \""
-            from_str = "exe_math_latex=\""+preview_math_file+"\""
+#JR            from_str = "exe_math_latex=\""+preview_math_file+"\""
+            from_str = "exe_math_latex=\".."+preview_math_file+"\""
             to_str =   "exe_math_latex=\""+mathsrc_resource_url+"\""
-            #log.debug('replacing exe_math_latex from: ' + from_str \
-            #        + ', to: ' + to_str + '.')
+            log.debug('replacing exe_math_latex from: ' + from_str \
+                    + ', to: ' + to_str + '.')
+
             new_content = new_content.replace(from_str, to_str)
+
 
             return new_content
 
@@ -1497,7 +1534,8 @@ class FieldWithResources(Field):
         # what is being found as 'href="../previews/.."' is really within
         # an A tag, etc.
         # For now, though, this easy parsing is working well:
-        search_str = "href=\"../previews/" 
+# JR        search_str = "href=\"../previews/" 
+        search_str = "href=\"/previews/" 
 
         found_pos = new_content.find(search_str) 
         while found_pos >= 0: 
@@ -1723,7 +1761,8 @@ class FieldWithResources(Field):
         # what is being found as 'src="../previews/.."' is really within
         # an IMG tag, etc.
         # For now, though, this easy parsing is working well:
-        search_str = "src=\"../previews/" 
+#JR        search_str = "src=\"../previews/" 
+	search_str = "src=\"/previews/"
         # BEWARE OF THE ABOVE in regards to ProcessPreviewedMedia(),
         # which takes advantage of the fact that the embedded media
         # actually gets stored as src="previews/".
@@ -1966,6 +2005,16 @@ class FieldWithResources(Field):
         exported_src = "src=\""
         export_content = content.replace(resources_url_src,exported_src)
 
+#JR: Se lo quitamos tambien a los flv
+	export_content = export_content.replace("'playlist': [ { 'url': 'resources/", "'playlist': [ { 'url': '")
+#JR: Y a los SWF 
+	export_content = export_content.replace("name=\"movie\" value=\"resources/", "name=\"movie\" value=\"")
+	export_content = export_content.replace("application/x-shockwave-flash\" data=\"resources/", "application/x-shockwave-flash\" data=\"")
+#JR: Y a los MP3
+	export_content = export_content.replace("application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=resources/", "application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=")
+#JR: Quito los & en las llamadas a xspf_player
+	export_content = export_content.replace("&song_title=", "&amp;song_title=")
+
         # for embedded media, that takes care of the <embed> tag part,
         # but there's another media occurrence that contains the src param:
         #     "<param name=\"src\" value=\""+resource_url
@@ -2016,6 +2065,11 @@ class FieldWithResources(Field):
         #     "../templates/xspf_player.swf?song_url=resources/"
         # regardless of the context, but it seemed a bit safer to ensure
         # that they were be replaced in expected locations only.
+#JR
+        resources_url_src = \
+                "data=\"../templates/xspf_player.swf"
+        exported_src =  "data=\"xspf_player.swf"
+        export_content = export_content.replace(resources_url_src,exported_src)
         
         ###########################
         # for flv using the embedded flowplayer (which will be exported and
@@ -2763,6 +2817,244 @@ exercise.</p>""")
     strictMarkingInstruc  = lateTranslate('strictMarkingInstruc')
     checkCapsInstruc      = lateTranslate('checkCapsInstruc')
     instantMarkingInstruc = lateTranslate('instantMarkingInstruc')
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to exe v0.11
+        """
+        self.autoCompletion = True
+        self.autoCompletionInstruc = _(u"""Allow auto completion when 
+                                       user filling the gaps.""")
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades to exe v0.12
+        """
+        Field.upgradeToVersion2(self)
+        strictMarking = not self.autoCompletion
+        del self.autoCompletion
+        del self.autoCompletionInstruc
+        self._setVersion2Attributes()
+        self.strictMarking = strictMarking
+
+    def upgradeToVersion3(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect that ClozeField now inherits from FieldWithResources,
+        and will need its corresponding fields populated from content.
+        """ 
+        self.content = self.encodedContent
+        self.content_w_resourcePaths = self.encodedContent
+        self.content_wo_resourcePaths = self.encodedContent
+        # NOTE: we don't need to actually process any of those contents for 
+        # image paths, either, since this is an upgrade from pre-images!
+
+# ===========================================================================
+# JR
+# No se consideran los espacios en blanco
+class ClozelangHTMLParser(HTMLParser):
+    """
+    Separates out gaps from our raw cloze data
+    """
+
+    # Default attribute values
+    result = None
+    inGap = False
+    lastGap = ''
+    lastText = ''
+    #whiteSpaceRe = re.compile(r'\s+')
+    whiteSpaceRe = re.compile(r'')
+    paragraphRe = re.compile(r'(\r\n\r\n)([^\r]*)(\1)')
+
+    def reset(self):
+        """
+        Make our data ready
+        """
+        HTMLParser.reset(self)
+        self.result = []
+        self.inGap = False
+        self.lastGap = ''
+        self.lastText = ''
+
+    def handle_starttag(self, tag, attrs):
+        """
+        Turn on inGap if necessary
+        """
+        if not self.inGap:
+            if tag.lower() == 'u':
+                self.inGap = True
+            elif tag.lower() == 'span':
+                style = dict(attrs).get('style', '')
+                if 'underline' in style:
+                    self.inGap = True
+                else:
+                    self.writeTag(tag, attrs)
+            elif tag.lower() == 'br':
+                self.lastText += '<br/>' 
+            else:
+                self.writeTag(tag, attrs)
+
+    def writeTag(self, tag, attrs=None):
+        """
+        Outputs a tag "as is"
+        """
+        if attrs is None:
+            self.lastText += '</%s>' % tag
+        else:
+            attrs = ['%s="%s"' % (name, val) for name, val in attrs]
+            if attrs:
+                self.lastText += '<%s %s>' % (tag, ' '.join(attrs))
+            else:
+                self.lastText += '<%s>' % tag
+
+    def handle_endtag(self, tag):
+        """
+        Turns off inGap
+        """
+        if self.inGap:
+            if tag.lower() == 'u':
+                self.inGap = False
+                self._endGap()
+            elif tag.lower() == 'span':
+                self.inGap = False
+                self._endGap()
+        elif tag.lower() != 'br':
+            self.writeTag(tag)
+
+    def _endGap(self):
+        """
+        Handles finding the end of gap
+        """
+        # Tidy up and possibly split the gap
+        gapString = self.lastGap.strip()
+        gapWords = self.whiteSpaceRe.split(gapString)
+        gapSpacers = self.whiteSpaceRe.findall(gapString)
+        if len(gapWords) > len(gapSpacers):
+            gapSpacers.append(None)
+        gaps = zip(gapWords, gapSpacers)
+        lastText = self.lastText
+        # Split gaps up on whitespace
+        for gap, text in gaps:
+            if gap == '<br/>':
+                self.result.append((lastText, None))
+            else:
+                self.result.append((lastText, gap))
+            lastText = text
+        self.lastGap = ''
+        self.lastText = ''
+
+    def handle_data(self, data):
+        """
+        Adds the data to either lastGap or lastText
+        """
+        if self.inGap:
+            self.lastGap += data
+        else:
+            self.lastText += data
+
+    def close(self):
+        """
+        Fills in the last bit of result
+        """
+        if self.lastText:
+            self._endGap()
+            #self.result.append((self.lastText, self.lastGap))
+        HTMLParser.close(self)
+
+
+# ===========================================================================
+# JR
+# Utilizado en el iDevice clozelangfpd
+class ClozelangField(FieldWithResources):
+    """
+    This field handles a passage with words that the student must fill in
+    And can now support multiple images (and any other resources) via tinyMCE
+    """
+
+    regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
+    persistenceVersion = 3
+
+    # these will be recreated in FieldWithResources' TwistedRePersist:
+    nonpersistant      = ['content', 'content_wo_resourcePaths']
+
+    def __init__(self, name, instruc):
+        """
+        Initialise
+        """
+        FieldWithResources.__init__(self, name, instruc)
+        self.parts = []
+        self._encodedContent = ''
+        self.rawContent = ''
+        self._setVersion2Attributes()
+
+    def _setVersion2Attributes(self):
+        """
+        Sets the attributes that were added in persistenceVersion 2
+        """
+        self.strictMarking = False
+        self._strictMarkingInstruc = \
+            x_(u"<p>If left unchecked a small number of spelling and "
+                "capitalization errors will be accepted. If checked only "
+                "an exact match in spelling and capitalization will be accepted."
+                "</p>"
+                "<p><strong>For example:</strong> If the correct answer is "
+                "<code>Elephant</code> then both <code>elephant</code> and "
+                "<code>Eliphant</code> will be judged "
+                "<em>\"close enough\"</em> by the algorithm as it only has "
+                "one letter wrong, even if \"Check Capitilization\" is on."
+                "</p>"
+                "<p>If capitalization checking is off in the above example, "
+                "the lowercase <code>e</code> will not be considered a "
+                "mistake and <code>eliphant</code> will also be accepted."
+                "</p>"
+                "<p>If both \"Strict Marking\" and \"Check Capitalization\" "
+                "are set, the only correct answer is \"Elephant\". If only "
+                "\"Strict Marking\" is checked and \"Check Capitalization\" "
+                "is not, \"elephant\" will also be accepted."
+                "</p>")
+        self.checkCaps = False
+        self._checkCapsInstruc = \
+            x_(u"<p>If this option is checked, submitted answers with "
+                "different capitalization will be marked as incorrect."
+                "</p>")
+        self.instantMarking = False
+        self._instantMarkingInstruc = \
+            x_(u"""<p>If this option is set, each word will be marked as the 
+learner types it rather than all the words being marked the end of the 
+exercise.</p>""")
+	self.showScore = False
+        self._showScoreInstruc = \
+            x_(u"""<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.</p>""")
+
+    # Property handlers
+    def set_encodedContent(self, value):
+        """
+        Cleans out the encoded content as it is passed in. Makes clean XHTML.
+        """
+        for key, val in name2codepoint.items():
+            value = value.replace('&%s;' % key, unichr(val))
+        # workaround for Microsoft Word which incorrectly quotes font names
+        value = re.sub(r'font-family:\s*"([^"]+)"', r'font-family: \1', value)
+        parser = ClozelangHTMLParser()
+        parser.feed(value)
+        parser.close()
+        self.parts = parser.result
+        encodedContent = ''
+        for shown, hidden in parser.result:
+            encodedContent += shown
+            if hidden:
+                encodedContent += ' <u>'
+                encodedContent += hidden
+                encodedContent += '</u> ' 
+        self._encodedContent = encodedContent
+    
+    # Properties
+    encodedContent        = property(lambda self: self._encodedContent, 
+                                     set_encodedContent)
+    strictMarkingInstruc  = lateTranslate('strictMarkingInstruc')
+    checkCapsInstruc      = lateTranslate('checkCapsInstruc')
+    instantMarkingInstruc = lateTranslate('instantMarkingInstruc')
+    showScoreInstruc      = lateTranslate('showScoreInstruc')
 
     def upgradeToVersion1(self):
         """

@@ -32,6 +32,7 @@ from exe.webui.wikipediablock         import WikipediaBlock
 from exe.webui.attachmentblock        import AttachmentBlock
 from exe.webui.galleryblock           import GalleryBlock
 from exe.webui.clozeblock             import ClozeBlock
+#from exe.webui.clozelangblock             import ClozelangBlock
 from exe.webui.flashwithtextblock     import FlashWithTextBlock
 from exe.webui.externalurlblock       import ExternalUrlBlock
 from exe.webui.imagemagnifierblock    import ImageMagnifierBlock
@@ -42,6 +43,27 @@ from exe.webui.multiselectblock       import MultiSelectBlock
 from exe.webui.appletblock            import AppletBlock
 from exe.webui.flashmovieblock        import FlashMovieBlock
 from exe.webui.quiztestblock          import QuizTestBlock
+
+# JR
+# Necesarios para la FPD
+from exe.webui.clozefpdblock		import ClozefpdBlock
+from exe.webui.clozelangfpdblock	import ClozelangfpdBlock
+from exe.webui.reflectionfpdblock	import ReflectionfpdBlock
+from exe.webui.reflectionfpdmodifblock	import ReflectionfpdmodifBlock
+from exe.webui.parasabermasfpdblock	import ParasabermasfpdBlock
+from exe.webui.debesconocerfpdblock	import DebesconocerfpdBlock
+from exe.webui.citasparapensarfpdblock	import CitasparapensarfpdBlock
+from exe.webui.recomendacionfpdblock	import RecomendacionfpdBlock
+from exe.webui.verdaderofalsofpdblock	import VerdaderofalsofpdBlock
+from exe.webui.seleccionmultiplefpdblock	import SeleccionmultiplefpdBlock
+from exe.webui.eleccionmultiplefpdblock	import EleccionmultiplefpdBlock
+from exe.webui.casopracticofpdblock	import CasopracticofpdBlock
+from exe.webui.ejercicioresueltofpdblock	import EjercicioresueltofpdBlock
+from exe.webui.destacadofpdblock	import DestacadofpdBlock
+#from exe.webui.correccionfpdblock	import CorreccionfpdBlock
+from exe.webui.orientacionesalumnadofpdblock	import OrientacionesalumnadofpdBlock
+from exe.webui.orientacionestutoriafpdblock	import OrientacionestutoriafpdBlock
+from exe.webui.freetextfpdblock	import FreeTextfpdBlock
 
 # ===========================================================================
 

@@ -1,7 +1,7 @@
 /*******************************************/	
 /********** Available languages **********/
 /***************************************/
-var tinyMCE_languages=["es"];
+var tinyMCE_languages=["es","eu"];
 //Example: var tinyMCE_languages=["es","fr","de"];
 
 /*******************************************/	
@@ -33,18 +33,18 @@ tinyMCE.init({
 	apply_source_formatting : true, 
 	//testing TinyMCE's escaping/quoting of HTML:
 	cleanup_on_startup : false, 
-	//cleanup : false, 
+	cleanup : false, 
 	entity_encoding : "raw", 
 	gecko_spellcheck : true, 
 	mode : "textareas",
 	editor_selector : "mceEditor",
-	plugins : "table,save,advhr,advimage,advlink,emotions,media,contextmenu,paste,directionality,exemath,searchreplace",
+        plugins : "style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,pastecode,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,exemath",
 	theme : "advanced",
 	theme_advanced_layout_manager : "SimpleLayout",
 	theme_advanced_toolbar_location : "top",  
-	theme_advanced_buttons1 : "newdocument,separator,bold,italic,underline,formatselect,fontsizeselect,fontselect,forecolor,backcolor,separator,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,bullist,numlist,outdent,indent,separator,help",
-	theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,separator,search,replace,separator,image,media,exemath,advhr,tablecontrols,separator,anchor,link,unlink,separator,undo,redo,separator,charmap,code,removeformat,cleanup",
-	theme_advanced_buttons3 : "",
+        theme_advanced_buttons1 : "newdocument,separator,bold,italic,underline,fontsizeselect,forecolor,backcolor,separator,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,bullist,numlist,outdent,indent,separator,anchor,separator,charmap,code,removeformat",
+        theme_advanced_buttons2 : "image,media,exemath,advhr,fontselect,tablecontrols,separator,link,unlink,separator,undo,redo",
+        theme_advanced_buttons3 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,formatselect,codigo,glosario,idioma,cite,abbr,acronym,attribs,|,visualchars,nonbreaking,template,separator,cut,copy,paste,pastetext,pasteword,separator,pastehtml,pastecode,separator,help",
 	//the image-handling callback function for tinyMCE's image button:
 	advimage_image_browser_callback : "chooseImage_viaTinyMCE",
 	//and manually entered filenames as well, via image2insert w/o file browser:
@@ -68,6 +68,19 @@ tinyMCE.init({
 		if (exe_assume_media_plugins) a=true;//if G.application.config.assumeMediaPlugins in authoringpage.py 
 		return a;		
 	},
+
+        // JR: Ajustes necesarios para FPaD^M
+        inline_styles : true,
+        verify_html : true,
+        convert_urls : false,
+        accessibility_warnings : true,
+        convert_fonts_to_spans : true,
+        convert_newlines_to_brs : false,
+        element_format : "xhtml",
+        fix_list_elements : false,
+        force_p_newlines : true,
+	apply_source_formatting : true,
+        theme_advanced_blockformats : "p,blockquote,div,h1,h2,h3,h4,h5,h6",
 	
 	theme_advanced_statusbar_location : "bottom",
 	theme_advanced_resize_horizontal : false,

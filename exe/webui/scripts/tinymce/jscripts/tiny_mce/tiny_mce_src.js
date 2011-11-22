@@ -4476,7 +4476,8 @@ function TinyMCE_Cleanup() {
 
 	// Default config
 	this.settings = {
-		indent_elements : 'head,table,tbody,thead,tfoot,form,tr,ul,ol,blockquote,object',
+		indent_elements : '',
+		//indent_elements : 'head,table,tbody,thead,tfoot,form,tr,ul,ol,blockquote,object',
 		newline_before_elements : 'h1,h2,h3,h4,h5,h6,pre,address,div,ul,ol,li,meta,option,area,title,link,base,script,td',
 		newline_after_elements : 'br,hr,p,pre,address,div,ul,ol,meta,option,area,link,base,script',
 		newline_before_after_elements : 'html,head,body,table,thead,tbody,tfoot,tr,form,ul,ol,blockquote,p,object,param,hr,div',
