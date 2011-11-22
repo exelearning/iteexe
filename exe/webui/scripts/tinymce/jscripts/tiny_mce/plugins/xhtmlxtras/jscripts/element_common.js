@@ -151,6 +151,7 @@ function setAttrib(elm, attrib, value) {
 		}
 
 		elm.setAttribute(attrib.toLowerCase(), value);
+		
 	} else
 		elm.removeAttribute(attrib);
 }
@@ -161,11 +162,23 @@ function setAllCommonAttribs(elm) {
 		var termino = formObj.elements['termino'].value;
 		termino = termino.replace(/\s/g, '%20').replace(/'/g, '%27');
 		var ciclo = formObj.elements['ciclo'].value;
-		
+		var lang = formObj.elements['lang'].value;
+		var s = SXE.inst.selection.getSelectedText();
+		//SXE.removeNode(elm);
+		//elm = document.createElement('a');
+		//elm.innerText = s;
+		var h = '<a class="glosario" href="../../../../../mod/glossary/showentry.php?displayformat=dictionary&concept='; 
+		h = h + termino + "%20(" + ciclo + ')" onclick="';
+		h = h + "window.open('../../../../../mod/glossary/showentry.php?displayformat=dictionary&amp;concept="
+		h = h + termino + "%20(" + ciclo + ')" ';
+		if (lang != "")
+			h = h + 'lang="' + lang + '" ';
+		h = h + '>' + s + "</a>";
 		elm.setAttribute('href', "../../../../../mod/glossary/showentry.php?displayformat=dictionary&concept=" + termino + "%20(" + ciclo + ")");
 		elm.setAttribute('onclick', "window.open('../../../../../mod/glossary/showentry.php?displayformat=dictionary&amp;concept=" + termino + "%20(" + ciclo + ")','','scrollbars=yes,width=600,height=250');return false;");
 		elm.setAttribute('title', "Ver la definici\u00f3n de \"" + termino.replace(/%20/g, ' ') + "\" (Se abre en una nueva ventana)"); 
 		setAttrib(elm, 'lang');
+		tinyMCE.execCommand('mceInsertContent', false, h);
 	}
 	else if (elm.className == 'codigo' && elm.nodeName == 'DIV') {
 		/*var formObj = document.forms[0];
@@ -372,7 +385,7 @@ SXE.insertElement = function(element_name) {
 				codigo = codigo.replace(/&/g, '&amp;');
 				codigo = codigo.replace(/</g, '&lt;');
 				codigo = codigo.replace(/\t/g, '     ');
-
+	
 				var lineas = codigo.split('\n');
 				var max = 0;
 				var h = "";

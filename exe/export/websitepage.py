@@ -46,7 +46,7 @@ class WebsitePage(Page):
         file.  'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
-        outfile = open(outputDir / self.name+".html", "w")
+        outfile = open(outputDir / self.name+".html", "wb")
         outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()
         
