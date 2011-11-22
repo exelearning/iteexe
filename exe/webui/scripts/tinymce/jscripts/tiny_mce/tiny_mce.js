@@ -1158,6 +1158,7 @@ TinyMCE_Engine.prototype = {
 						ife.style.width = ife.clientWidth;
 					}*/
 
+
 					if (ife.style.height.indexOf('%') != -1) {
 						ife._oldHeight = ife.style.height;
 						ife.style.height = ife.clientHeight;
@@ -5023,9 +5024,14 @@ TinyMCE_Cleanup.prototype = {
 			if ((l = h.substring(li + 1, i)).length != 0) {
 				if (this.ouRe.test(l) && p.length >= s.indent_levels)
 					p = p.substring(s.indent_levels);
-
-				o += p + l + '\n';
-	
+				if (l.indexOf('<pre>') == 0)
+					o += l + '\n';
+				else if (l.indexOf('<code>') == 0)
+					o += l + '\n';
+				else if (l.indexOf('</pre>') == 0)
+					o += l + '\n';
+				else
+					o += p + l + '\n';
 				if (this.inRe.test(l))
 					p += this.inStr;
 			}
