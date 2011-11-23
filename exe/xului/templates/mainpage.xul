@@ -58,7 +58,8 @@
                     <menuseparator/>
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem label="XLIFF" accesskey="x" oncommand="exportPackage('xliff','','')"/>
+                    <menuitem n:render="translate" label="XLIFF" accesskey="x" oncommand="exportXliffPackage('0', '', '')"/>
+                    <menuitem n:render="translate" label="XLIFF (source also in target)" accesskey="t" oncommand="exportXliffPackage('1', '', '')"/>
                     <menuitem label="Common Cartridge" accesskey="c" oncommand="exportPackage('commoncartridge','','')"/>
                     <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm','','')"/>
 		    <!--<menuitem label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004','','')"/>-->

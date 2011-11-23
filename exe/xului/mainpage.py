@@ -118,6 +118,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleLoadTutorial,    'loadTutorial')
         setUpHandler(self.handleClearRecent,     'clearRecent')
         setUpHandler(self.handleExport,          'exportPackage')
+        setUpHandler(self.handleXliffExport,     'exportXliffPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleBrowseURL,       'browseURL')
         setUpHandler(self.handleMergeXliffPackage,   'mergeXliffPackage')
@@ -763,8 +764,6 @@ class MainPage(RenderableLivePage):
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
-        elif exportType == "xliff":
-            self.exportXliff(client, filename)
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
@@ -1041,15 +1040,14 @@ class MainPage(RenderableLivePage):
             raise
         client.alert(_(u'Exported to %s') % filename)
 
-
-    def exportXliff(self, client, filename):
+    def handleXliffExport(self, client, exportType, filename, print_callback=''):
         """
         Exports this package to a XLIFF file
         """
         try:
             filename = Path(filename)
             log.debug(u"exportXliff, filename=%s" % filename)
-            xliffExport = XliffExport(self.config, filename)
+            xliffExport = XliffExport(self.config, filename, bool(int(exportType)))
             xliffExport.export(self.package)
         except Exception,e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
