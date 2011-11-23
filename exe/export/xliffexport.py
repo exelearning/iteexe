@@ -32,7 +32,9 @@ TRANS_UNIT = u'''<trans-unit id="%(id)s">
        <source xml:lang="es">
        %(content)s
        </source>
-       <target></target>
+       <target>
+       %(target)s
+       </target>
 </trans-unit>
 '''
 
@@ -68,9 +70,10 @@ class XliffExport(object):
     XliffExport will export a package as an XLIFF file
     """
 
-    def __init__(self, config, filename):
+    def __init__(self, config, filename, source_copied_in_target):
         self.config = config
         self.filename = filename
+        self.source_copied_in_target = source_copied_in_target
         
     def export(self, package):
         content = self.getContentForNode(package.root, 'noderoot')
@@ -84,6 +87,7 @@ class XliffExport(object):
         content += '<group>'
         content += TRANS_UNIT % {'content': safe_unicode(node.getTitle()),
                                  'id': '%s-nodename' % id,
+                                 'target': self.source_copied_in_target and safe_unicode(node.getTitle()) or u'',
                                  }
         content += '</group>'
 
@@ -92,12 +96,14 @@ class XliffExport(object):
             
             content += TRANS_UNIT % {'content': safe_unicode(idevice.title),
                                      'id': '%s-idev%s-title' % (id, idevice.id),
+                                     'target': self.source_copied_in_target and safe_unicode(idevice.title) or u'',
                                      }
 
             
             for field in idevice.getRichTextFields():
                 content += TRANS_UNIT % {'content': safe_unicode(field.content),
                                          'id': '%s-idev%s-field%s' % (id, idevice.id, field.id),
+                                         'target': self.source_copied_in_target and safe_unicode(field.content) or u'',
                                          }
 
             content += '</group>'
