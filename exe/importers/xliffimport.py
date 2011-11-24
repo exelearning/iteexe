@@ -122,13 +122,13 @@ class XliffImport(object):
             if what is None:
                 return None
             else:
-                if id_item.startswith('node'):
+                if id_item.startswith('node') and not id_item.startswith('nodename'):
                     what = self.getNodeFrom(what, id_item)
                 elif id_item.startswith('idev'):
                     what = self.getIdeviceFromNode(what, id_item)
                 elif id_item.startswith('field'):
                     what = self.getField(what, id_item)
-                elif id_item == 'title':
+                elif id_item in ('title', 'nodename'):
                     # This is the item's title (the last one),
                     # so return the previous item: the IDevice
                     return what
