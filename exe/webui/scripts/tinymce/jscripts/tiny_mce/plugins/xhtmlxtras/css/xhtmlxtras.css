@@ -22,13 +22,3 @@ abbr, html\:abbr {
 	border-bottom: 1px dashed #CCC;
 	cursor: help;
 }
-
-glosario {
-	border-bottom: 1px dotted #CCC;
-	cursor: help;
-}
-
-codigo {
-	border-bottom: 1px dotted #CCC;
-	cursor: help;
-}

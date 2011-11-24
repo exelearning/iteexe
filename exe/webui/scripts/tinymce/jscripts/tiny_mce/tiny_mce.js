@@ -1158,7 +1158,6 @@ TinyMCE_Engine.prototype = {
 						ife.style.width = ife.clientWidth;
 					}*/
 
-
 					if (ife.style.height.indexOf('%') != -1) {
 						ife._oldHeight = ife.style.height;
 						ife.style.height = ife.clientHeight;
@@ -5024,14 +5023,9 @@ TinyMCE_Cleanup.prototype = {
 			if ((l = h.substring(li + 1, i)).length != 0) {
 				if (this.ouRe.test(l) && p.length >= s.indent_levels)
 					p = p.substring(s.indent_levels);
-				if (l.indexOf('<pre>') == 0)
-					o += l + '\n';
-				else if (l.indexOf('<code>') == 0)
-					o += l + '\n';
-				else if (l.indexOf('</pre>') == 0)
-					o += l + '\n';
-				else
-					o += p + l + '\n';
+
+				o += p + l + '\n';
+	
 				if (this.inRe.test(l))
 					p += this.inStr;
 			}
@@ -5833,10 +5827,6 @@ tinyMCE.add(TinyMCE_Engine, {
 	convertRelativeToAbsoluteURL : function(base_url, relative_url) {
 		var baseURL = this.parseURL(base_url), baseURLParts, relURLParts, newRelURLParts, numBack, relURL = this.parseURL(relative_url), i;
 		var len, absPath, start, end, newBaseURLParts;
-		
-		//JR
-		if (relative_url.indexOf('../../../../../mod/glossary/showentry.php') > -1)
-			return relative_url;
 
 		if (relative_url == '' || relative_url.indexOf('://') != -1 || /^(mailto:|javascript:|#|\/)/.test(relative_url))
 			return relative_url;
