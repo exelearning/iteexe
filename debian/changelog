@@ -1,3 +1,28 @@
+python-exe (1.04.1.3605ite5) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Nuevas plantillas Todo FP
+  * Revisión de la plantilla ITE
+  * Plugin para TinyMCE que permite pegar fragmentos de código
+
+  [Mikel Larreategi]
+  * Importador/exportador de XLIFF
+ 
+  [Jose Miguel Andonegui]
+  * Traducción al euskera de TinyMCE
+
+  [Juan Rafael Fernández]
+  * Mejoras en la traducción al español
+
+  [Pedro Peña]
+  * Actualización de Geogebra a versión 4.0.10
+  * Integrados cambios de Todo FP versión 1.04.0.3532p4 salvo los que afectan a TinyMCE
+  * Se establece por defecto la plantilla ITE
+
+  * Traducción al español de TinyMCE
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 24 Nov 2011 18:37:02 +0100
+
 python-exe (1.04.1.3605ite4) lucid; urgency=low
 
   [Ignacio Gros]
