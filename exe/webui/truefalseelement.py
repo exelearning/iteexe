@@ -167,8 +167,6 @@ class TrueFalseElement(object):
         """
         is_preview = 1
         html  = self.renderQuestion(is_preview)
-        html += " &nbsp;&nbsp;\n"
-
         html += common.elementInstruc(self.question_hint.field.content, 
                                       "panel-amusements.png", "Hint")
         return html
@@ -178,13 +176,19 @@ class TrueFalseElement(object):
         Returns an XHTML string for viewing and previewing this question element
         """
         log.debug("renderPreview called in the form of renderQuestion")
-    
-        html  = u"<br/><br/>"
 
+# JR
+#        html  = u"<br/><br/>"
+#
+#        if is_preview:
+#            html += self.question_question.renderPreview() + "<br/>" 
+#        else: 
+#            html += self.question_question.renderView() + "<br/>"
+    
         if is_preview:
-            html += self.question_question.renderPreview() + "<br/>" 
+            html = self.question_question.renderPreview()
         else: 
-            html += self.question_question.renderView() + "<br/>"
+            html = self.question_question.renderView()
 
         html += _("True") + " " 
         html += self.__option(0, 2, "true") + " \n"
@@ -234,21 +238,44 @@ class TrueFalseElement(object):
 
         feedbackId1 = "0" + "b" + self.id
         feedbackId2 = "1" + "b" + self.id
-        html  = u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId1
-        html += u'display: none;" even_steven="%s">' % (str(to_even1))
-        html += feedbackStr1 + '</div>\n'
-        html += u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId2
-        html += u'display: none;" even_steven="%s">' % (str(to_even2))
-        html += feedbackStr2 + '</div>\n'
-        html += u'<div id="sfbk%s" style="color: rgb(0, 51, 204);' % self.id
-        html += u'display: none;">' 
-        if is_preview:
-            html += self.question_feedback.renderPreview()
-        else:
-            html += self.question_feedback.renderView()
-        html += u'</div>\n'
+        html  = u'<div id="s%s" class="feedback"' % feedbackId1
+# JR
+	if is_preview:
+		aux = self.question_feedback.field.content_w_resourcePaths
+	else:
+		aux = self.question_feedback.field.content_wo_resourcePaths
+#        html += u'display: none;" even_steven="%s">' % (str(to_even1))
+	html += u'style="display: none;"><strong>'
+        html += feedbackStr1 + '</strong> ' + aux + '</div>\n'
+        html += u'<div id="s%s" class="feedback"' % feedbackId2
+#        html += u'display: none;" even_steven="%s">' % (str(to_even2))
+	html += u'style="display: none;"><strong>'
+        html += feedbackStr2 + '</strong> ' + aux + '</div>\n'
+
+#        html += u'<div id="sfbk%s" class="feedback"' % self.id
+#        html += u'style="display: none;">' 
+#        if is_preview:
+#            html += self.question_feedback.renderPreview()
+#        else:
+#            html += self.question_feedback.renderView()
+#        html += u'</div>\n'
         
         return html
         
     
+# JR: Anadimos la etiqueta noscript
+    def renderNoscript(self, is_preview=False):
+        html  = u'<noscript><div class="feedback">'
+
+	if is_preview:
+		aux = self.question_feedback.field.content_w_resourcePaths
+	else:
+		aux = self.question_feedback.field.content_wo_resourcePaths
+	if self.question.isCorrect:
+		isCorrect = _("True")
+	else:
+		isCorrect = _("False")
+        html += '<strong>' + isCorrect + '</strong> ' + aux + '</div></noscript>\n'
+        
+        return html
 # ===========================================================================

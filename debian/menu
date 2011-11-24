@@ -1,0 +1,5 @@
+?package(exe):needs="X11"\
+  section="Apps/Editors"\
+  icon="/usr/share/icons/hicolor/48x48/apps/exe.png"\
+  command="/usr/bin/exe"
+

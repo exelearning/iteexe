@@ -1,7 +1,7 @@
 /*******************************************/	
 /********** Available languages **********/
 /***************************************/
-var tinyMCE_languages=["es"];
+var tinyMCE_languages=["es","eu"];
 //Example: var tinyMCE_languages=["es","fr","de"];
 
 /*******************************************/	
@@ -33,17 +33,17 @@ tinyMCE.init({
 	apply_source_formatting : true, 
 	//testing TinyMCE's escaping/quoting of HTML:
 	cleanup_on_startup : false, 
-	//cleanup : false, 
+	cleanup : false, 
 	entity_encoding : "raw", 
 	gecko_spellcheck : true, 
 	mode : "textareas",
 	editor_selector : "mceEditor",
-	plugins : "table,save,advhr,advimage,advlink,emotions,media,contextmenu,paste,directionality,exemath",
+	plugins : "table,save,advhr,advimage,advlink,emotions,media,contextmenu,paste,directionality,exemath,searchreplace,pastecode",
 	theme : "advanced",
 	theme_advanced_layout_manager : "SimpleLayout",
 	theme_advanced_toolbar_location : "top",  
 	theme_advanced_buttons1 : "newdocument,separator,bold,italic,underline,formatselect,fontsizeselect,fontselect,forecolor,backcolor,separator,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,bullist,numlist,outdent,indent,separator,help",
-	theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,separator,image,media,exemath,advhr,tablecontrols,separator,anchor,link,unlink,separator,undo,redo,separator,charmap,code,removeformat,cleanup",
+	theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,separator,pastehtml,pastecode,separator,search,replace,separator,image,media,exemath,advhr,tablecontrols,separator,anchor,link,unlink,separator,undo,redo,separator,charmap,code,removeformat,cleanup",
 	theme_advanced_buttons3 : "",
 	//the image-handling callback function for tinyMCE's image button:
 	advimage_image_browser_callback : "chooseImage_viaTinyMCE",

@@ -4,7 +4,7 @@
 
 /* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
 /* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
-/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS */
+/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
 /* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
 
 /* ********************************************* */
@@ -62,8 +62,8 @@ input.feedbackbutton{
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
-#nodeTitle{font-size:1.5em;font-weight:bold;margin:0}
-#main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position: right 0;border-width:1px;border-style:solid}
+#nodeTitle{font-size:1.5em;font-weight:bold;margin:0;text-align:left}
+#main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg)}
 #header{height:35px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding:59px 0 0 0;font-size:1.1em;font-weight:bold}
 #header h1{margin:0;font-size:1em}
 #main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}

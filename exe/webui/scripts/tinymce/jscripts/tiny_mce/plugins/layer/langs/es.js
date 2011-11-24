@@ -3,7 +3,7 @@
 tinyMCE.addToLang('layer',{
 insertlayer_desc : 'Insertar nueva capa',
 forward_desc : 'Mover hacia delante',
-backward_desc : 'Mover hacia atr&aacute;s',
-absolute_desc : 'Posici&oacute;n absoluta',
+backward_desc : 'Mover hacia atr\u00E1s',
+absolute_desc : 'Posici\u00F3n absoluta',
 content : 'Nueva capa...'
 });

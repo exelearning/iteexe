@@ -309,7 +309,8 @@ class Package(Persistable):
 
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
-        self.style         = u"default"
+#        self.style         = u"default"
+        self.style         = u"ITE"
         self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()

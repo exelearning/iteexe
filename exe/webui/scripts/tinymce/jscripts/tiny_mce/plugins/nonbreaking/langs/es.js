@@ -1,5 +1,5 @@
 // ES lang variables
 
 tinyMCE.addToLang('nonbreaking',{
-desc : 'A&ntilde;adir espacio en l&iacute;nea (&amp;nbsp;)'
+desc : 'A\u00F1adir espacio en l\u00EDnea (&amp;nbsp;)'
 });

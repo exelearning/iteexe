@@ -96,12 +96,25 @@ class SinglePageExport(object):
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
 	
-	# copy players for media idevices.                
+        #JR Metemos los reproductores necesarios
+        self.compruebaReproductores(self.page.node)
+
+
+        if package.license == "GNU Free Documentation License":
+            # include a copy of the GNU Free Documentation Licence
+            (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
+
+    def compruebaReproductores(self, node):
+        """
+        Comprobamos si hay que meter algun reproductor
+        """
+        
+    	# copy players for media idevices.                
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
 
-	for idevice in self.page.node.idevices:
+	for idevice in node.idevices:
 	    if (hasFlowplayer and hasMagnifier and hasXspfplayer):
 		break
 	    if not hasFlowplayer:
@@ -117,17 +130,18 @@ class SinglePageExport(object):
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(self.outputDir/'flowPlayer.swf')
+# JR: anadimos los controles
+	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+	    controlsfile.copyfile(self.outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(self.outputDir/'magnifier.swf')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(self.outputDir/'xspf_player.swf')
-
-
-        if package.license == "GNU Free Documentation License":
-            # include a copy of the GNU Free Documentation Licence
-            (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
+        
+        for child in node.children:
+            self.compruebaReproductores(child)
 
 
 # ===========================================================================
