@@ -55,6 +55,12 @@ input.feedbackbutton{
 	background-color: #DBE992; /* Color de fondo del botón de feedback */
 }
 
+.pre-code{
+	background:#112C4A; /* Color de fondo del código de ordenador intertado desde TinyMCE */
+	color:#E7ECF1; /* Color del texto */
+	font-family:Monaco,Courier,monospace; /* Fuente */
+}
+
 /* ********************************************* */
 /* **** OTRAS DEFINICIONES ******************** */
 /* ******************************************* */
@@ -77,6 +83,7 @@ a:hover{text-decoration:underline}
 .iDevice_inner{padding: 10px 20px 20px 20px;border-width:1px 0 1px 0;border-style:dotted}
 #pageFooter{font-size:.9em}
 #pageFooter p{margin:3px 0}
+.pre-code{border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
 /*.image_text {border:1px solid #9D9D9D;background:transparent;padding: 4px;margin:0px 20px 4px 4px}*/
 
 /* ********************************************************* */
