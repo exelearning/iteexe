@@ -45,6 +45,8 @@ from exe.export.singlepageexport import SinglePageExport
 from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
 from exe.export.ipodexport       import IpodExport
+from exe.export.xliffexport      import XliffExport
+from exe.importers.xliffimport      import XliffImport
 from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 from exe                         import globals as G
@@ -118,8 +120,10 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleImport,          'importPackage')
         setUpHandler(self.handleCancelImport,    'cancelImportPackage')
         setUpHandler(self.handleExport,          'exportPackage')
+        setUpHandler(self.handleXliffExport,     'exportXliffPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleBrowseURL,       'browseURL')
+        setUpHandler(self.handleMergeXliffPackage,   'mergeXliffPackage')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
@@ -849,6 +853,22 @@ class MainPage(RenderableLivePage):
         else:
             os.system("firefox " + url + "&")
 
+    def handleMergeXliffPackage(self, client, filename, from_source):
+        """
+        Parse the XLIFF file and import the contents based on
+        translation-unit id-s
+        """
+        try:
+            importer = XliffImport(self.package, filename)
+            importer.parseAndImport(bool(int(from_source)))
+            client.alert(_(u'Correct XLIFF import'))
+        except Exception,e:
+            client.alert(_(u'Error importing XLIFF: %s') % e)
+            
+        client.sendScript((u'top.location = "/%s"' % \
+                           self.package.name).encode('utf8'))
+
+
     def handleInsertPackage(self, client, filename):
         """
         Load the package and insert in current node
@@ -1054,6 +1074,21 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
+
+    def handleXliffExport(self, client, exportType, filename, print_callback=''):
+        """
+        Exports this package to a XLIFF file
+        """
+        try:
+            filename = Path(filename)
+            log.debug(u"exportXliff, filename=%s" % filename)
+            xliffExport = XliffExport(self.config, filename, bool(int(exportType)))
+            xliffExport.export(self.package)
+        except Exception,e:
+            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            raise
+        client.alert(_(u'Exported to %s') % filename)
+
 
     def exportScorm(self, client, filename, stylesDir, scormType):
         """
