@@ -1,3 +1,26 @@
+Version 1.04.1.3605ite5 (2011-11-24)
+
+  [Ignacio Gros]
+  * Nuevas plantillas Todo FP
+  * Revisión de la plantilla ITE
+  * Plugin para TinyMCE que permite pegar fragmentos de código
+
+  [Mikel Larreategi]
+  * Importador/exportador de XLIFF
+ 
+  [Jose Miguel Andonegui]
+  * Traducción al euskera de TinyMCE
+
+  [Juan Rafael Fernández]
+  * Mejoras en la traducción al español
+
+  [Pedro Peña]
+  * Actualización de Geogebra a versión 4.0.10
+  * Integrados cambios de Todo FP versión 1.04.0.3532p4 salvo los que afectan a TinyMCE
+  * Se establece por defecto la plantilla ITE
+
+  * Traducción al español de TinyMCE
+
 Version 1.04.1.3605ite4 (2011-10-15)
 
   [Ignacio Gros]
