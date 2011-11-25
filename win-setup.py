@@ -81,7 +81,7 @@ opts = {
 
 setup(windows=["exe/exe"],
       version=build,
-      packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.xului"],
+      packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.xului"],
       description  = "eLearning XHTML editor",
       url          = "http://exelearning.org",
       author       = "eXe Project",

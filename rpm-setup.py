@@ -70,7 +70,7 @@ Content generated using eXe can be used by any Learning Management System.
       license      = "GPL",
       scripts      = ["exe/exe"],
       packages     = ["exe", "exe.webui", "exe.xului", 
-                      "exe.engine", "exe.export"],
+                      "exe.engine", "exe.export", "exe.importers"],
       data_files   = g_files.items(),
       options      = opts
      )
