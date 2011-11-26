@@ -114,7 +114,7 @@ var TinyMCE_PasteCodePlugin = {
 
 	_insertCode : function(content) { 
 		if (content && content.length > 0) {
-			tinyMCE.execCommand("mceInsertRawHTML", false, "<pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre>"); 
+			tinyMCE.execCommand("mceInsertRawHTML", false, "<div class='pre-code'><pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre></div>"); 
 		}
 	},
 
