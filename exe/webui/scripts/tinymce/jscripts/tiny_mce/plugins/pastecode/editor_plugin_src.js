@@ -16,12 +16,7 @@ var TinyMCE_PasteCodePlugin = {
 			tinyMCE.addEvent(inst.getBody(), "pastecode", TinyMCE_PasteCodePlugin._handlePasteEvent);
 	},
 
-	handleEvent : function(e) {
-		// Force paste dialog if non IE browser
-		if (!tinyMCE.isRealIE && e.ctrlKey && e.keyCode == 86 && e.type == "keydown") {
-			window.setTimeout('tinyMCE.selectedInstance.execCommand("mcePasteCode",true)', 1);
-			return tinyMCE.cancelEvent(e);
-		}
+	handleEvent : function() {
 		return true;
 	},
 
@@ -114,7 +109,7 @@ var TinyMCE_PasteCodePlugin = {
 
 	_insertCode : function(content) { 
 		if (content && content.length > 0) {
-			tinyMCE.execCommand("mceInsertRawHTML", false, "<pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre>"); 
+			tinyMCE.execCommand("mceInsertRawHTML", false, "<div class='pre-code'><pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre></div>"); 
 		}
 	},
 
