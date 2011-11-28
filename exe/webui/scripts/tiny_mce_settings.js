@@ -33,7 +33,7 @@ tinyMCE.init({
 	apply_source_formatting : true, 
 	//testing TinyMCE's escaping/quoting of HTML:
 	cleanup_on_startup : false, 
-	cleanup : false, 
+	//cleanup : false, 
 	entity_encoding : "raw", 
 	gecko_spellcheck : true, 
 	mode : "textareas",
