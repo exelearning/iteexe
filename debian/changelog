@@ -1,3 +1,19 @@
+python-exe (1.04.1.3605ite5.1) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Control de la apariencia del código en plugin pastecode de TinyMCE
+  * Bug: no se debía abrir el diálogo con CTRL+V en plugin pastecode de TinyMCE
+  * Añadidos iconos para los iDevices de Todo FP
+
+  [Pedro Peña]
+  * Corregido error al insertar elementos multimedia con plugin media de TinyMCE
+  * Se vuelven a aplicar los cambios de TodoFP a common.js para que funcione el
+    botón de feedback de algunos IDevices
+  * Fijado valid_elements de TinyMCE para que valide lo especificado
+    estrictamente en el estándar XHTML 
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 30 Nov 2011 09:36:33 +0100
+
 python-exe (1.04.1.3605ite5) lucid; urgency=low
 
   [Ignacio Gros]
