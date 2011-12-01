@@ -5,7 +5,8 @@ function saveContent() {
 	}
 
 	tinyMCEPopup.execCommand('mcePasteCode', false, {
-		html : document.forms[0].htmlSource.value
+		html : document.forms[0].htmlSource.value,
+		wrapper : document.forms[0].wrapper.checked
 	});
 
 	tinyMCEPopup.close();

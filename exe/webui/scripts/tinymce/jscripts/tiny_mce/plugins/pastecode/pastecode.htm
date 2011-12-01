@@ -10,6 +10,10 @@
 <form name="source" onsubmit="saveContent();">
 	<div style="float: left" class="title">{$lang_paste_code_desc}</div>
 
+	<div style="float: right">
+		<input type="checkbox" name="wrapper" id="wrapper" class="includeWrapperCode" checked="checked" /><label for="linebreaks">{$lang_paste_include_wrapper}</label>
+	</div>
+
 	<br style="clear: both" />
 
 	<div>{$lang_paste_code_title}</div>
