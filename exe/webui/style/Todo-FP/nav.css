@@ -87,7 +87,7 @@ body{
 	background:#fff; /* Fondo de los enlaces al pasar sobre ellos */
 }
 
-#siteNav ul ul ul a{
+#siteNav ul ul a{
 	color:#38565F; /* Menú: enlaces de segundo nivel */
 }
 
@@ -140,8 +140,8 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 * html #siteNav a{display:inline-block;width:100%} /* IE6 */
 #siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
 #siteNav a.main-node:hover{text-decoration:underline;background:none}
-#siteNav ul ul ul a{padding-left:25px;font-size:.95em}
-#siteNav ul ul ul ul a{font-size:1em;padding-left:50px;}
+#siteNav ul ul a{padding-left:25px;font-size:.95em}
+#siteNav ul ul ul a{font-size:1em;padding-left:50px}
 
 /* Pagination */
 .pagination,.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
