@@ -1629,3 +1629,46 @@ function toggleClozelangFeedback(ident) {
 //    }
 //}
 
+sfHover = function() {
+	var nav = document.getElementById("siteNav");
+	if (nav) {
+		var sfEls = nav.getElementsByTagName("LI");
+		for (var i=0; i<sfEls.length; i++) {
+			sfEls[i].onmouseover=function() {
+				this.className="sfhover";
+			}
+			sfEls[i].onmouseout=function() {
+				this.className="sfout";
+			}
+		}
+		//Enable Keyboard:
+		var mcEls = nav.getElementsByTagName("A");
+		for (var i=0; i<mcEls.length; i++) {
+			mcEls[i].onfocus=function() {
+				this.className+=(this.className.length>0? " ": "") + "sffocus"; //a:focus
+				this.parentNode.className+=(this.parentNode.className.length>0? " ": "") + "sfhover"; //li < a:focus
+				if(this.parentNode.parentNode.parentNode.nodeName == "LI") {
+					this.parentNode.parentNode.parentNode.className+=(this.parentNode.parentNode.parentNode.className.length>0? " ": "") + "sfhover"; //li < ul < li < a:focus
+					if(this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
+						this.parentNode.parentNode.parentNode.parentNode.parentNode.className+=(this.parentNode.parentNode.parentNode.parentNode.parentNode.className.length>0? " ": "") + "sfhover"; //li < ul < li < ul < li < a:focus
+					}
+				}
+			}
+			mcEls[i].onblur=function() {
+				this.className=this.className.replace(new RegExp("( ?|^)sffocus\\b"), "");
+				this.parentNode.className=this.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+				if(this.parentNode.parentNode.parentNode.nodeName == "LI") {
+					this.parentNode.parentNode.parentNode.className=this.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+					if(this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
+						this.parentNode.parentNode.parentNode.parentNode.parentNode.className=this.parentNode.parentNode.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+					}
+				}
+			}
+		}
+	}
+}
+if (document.addEventListener){
+	window.addEventListener('load',sfHover,false);
+} else {
+	window.attachEvent('onload',sfHover);
+}
