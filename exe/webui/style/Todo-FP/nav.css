@@ -51,6 +51,14 @@ body{
 	color:#000; /* Color de texto de estos enlaces al pasar sobre ellos */
 }
 
+#topPagination .pagination, #topPagination a{ /* En esta plantilla esta paginación se encuentra oculta por defecto (busca "Invisible content" en este mismo archivo) */
+	color:#DADADA; /* Color de texto de la paginación de la cabecera */
+}
+
+#topPagination a:hover{
+	color:#FFF; /* Color de texto de estos enlaces al pasar sobre ellos */
+}
+
 #main #nodeDecoration{
 	text-shadow:none; /* Sombra del texto del título de la página */
 }
@@ -136,9 +144,13 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 #siteNav ul ul ul ul a{font-size:1em;padding-left:50px;}
 
 /* Pagination */
-.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px}
-.noprt a{padding:3px 5px;border-radius:5px}
-.noprt a:hover{text-decoration:none;}
+.pagination,.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
+.pagination a,.noprt a{padding:3px 5px;border-radius:5px}
+.pagination a:hover,.noprt a:hover{text-decoration:none}
+#topPagination{position:absolute;top:72px;right:10px}
+#topPagination .pagination{border:none}
+#topPagination a{padding:0 5px;background:none}
+#topPagination a:hover{text-decoration:underline}
 
 /* Footer and iDevices */
 #pageFooter{text-align:center;margin-left:-250px}
@@ -149,3 +161,11 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 #content{display:inline-block}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
+
+/* Invisible content (visible for screen reader users) */
+#topPagination{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}

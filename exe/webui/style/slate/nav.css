@@ -162,3 +162,15 @@ div #subnav {
 * html #siteNav a,* html #siteNav ul ul ul a{ /* IE6 */
 	width:200px;
 }
+
+.pagination{
+	text-align:right;
+}
+
+/* Invisible content (visible for screen reader users) */
+#topPagination{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}

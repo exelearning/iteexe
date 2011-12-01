@@ -116,9 +116,11 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 #siteNav ul ul ul ul a{font-size:1em;padding-left:50px;}
 
 /* Pagination */
-.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px}
-.noprt a{padding:3px;}
-.noprt a:hover{text-decoration:none;}
+.pagination,.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
+.pagination a,.noprt a{padding:3px;}
+.pagination a:hover,.noprt a:hover{text-decoration:none;}
+#topPagination{position:absolute;top:0;right:20px}
+#topPagination .pagination{border:none}
 
 /* Footer and iDevices */
 #pageFooter{text-align:center;margin-left:-250px}

@@ -103,6 +103,9 @@ class WebsitePage(Page):
         html += u"<div id=\"siteNav\">\n"
         html += self.leftNavigationBar(pages)
         html += u"</div>\n"
+        html += "<div id='topPagination'>"
+        html += self.getNavigationLink(prevPage, nextPage)
+        html += "</div>"
         html += u"<div id=\"main\">\n"
 
         style = self.node.package.style
@@ -125,7 +128,9 @@ class WebsitePage(Page):
                         block.renderView(style))
             html += u'</div>\n'     # iDevice div
         
+        html += "<div id='bottomPagination'>"
         html += self.getNavigationLink(prevPage, nextPage)
+        html += "</div>"
         # writes the footer for each page 
         html += self.renderLicense()
         html += self.renderFooter()
@@ -224,17 +229,17 @@ class WebsitePage(Page):
         """
         return the next link url of this page
         """
-        html = "<div class=\"noprt\" align=\"right\">"
+        html = "<div class=\"pagination noprt\">"
 
         if prevPage:
-            html += "<a href=\""+quote(prevPage.name)+".html\">"
-            html += "&laquo; %s</a>" % _('Previous')
+            html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
+            html += "<span>&laquo; </span>%s</a>" % _('Previous')
 
         if nextPage:
             if prevPage:
                 html += " | "
-            html += "<a href=\""+quote(nextPage.name)+".html\">"
-            html += " %s &raquo;</a>" % _('Next')
+            html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
+            html += " %s<span> &raquo;</span></a>" % _('Next')
             
         html += "</div>\n"
         return html
