@@ -174,11 +174,11 @@ width: 60%;
 	margin-right: 10px;
 }
 
-#siteNav ul ul ul{
+#siteNav ul ul{
 	font-size:11px;
 }
 
-#siteNav ul ul ul a,#siteNav ul ul ul .active{
+#siteNav ul ul a,#siteNav ul ul .active{
 	display: block;
 	border: 0 !important;
 	width: 135px;
@@ -198,7 +198,7 @@ width: 60%;
 	width:155px !important;
 }
 
-* html #siteNav ul ul ul a,* html #siteNav ul ul ul .active { /* IE6 */
+* html #siteNav ul ul a,* html #siteNav ul ul .active { /* IE6 */
 	width:145px !important;
 }
 

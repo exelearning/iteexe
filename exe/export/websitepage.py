@@ -150,7 +150,7 @@ class WebsitePage(Page):
         return html
 
         
-    def leftNavigationBar(self, pages, inSameLevelTitle = False, excludeTitle = False):
+    def leftNavigationBar(self, pages, inSameLevelTitle = True, excludeTitle = False):
         """
         Generate the left navigation string for this page
         """

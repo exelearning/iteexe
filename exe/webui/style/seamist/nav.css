@@ -165,7 +165,7 @@ div #subnav {
 	border-bottom: 1px solid #fff;
 }
 
-#siteNav ul ul ul a{
+#siteNav ul ul a{
 	font-size:11px;
 	display: block;
 	border: 0 !important;
@@ -182,7 +182,7 @@ div #subnav {
 	font-size:12px;
 }
 
-* html #siteNav a,* html #siteNav ul ul ul a{ /* IE6 */
+* html #siteNav a,* html #siteNav ul ul a{ /* IE6 */
 	width:100%;
 }
 

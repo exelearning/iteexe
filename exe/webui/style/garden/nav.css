@@ -143,11 +143,11 @@ div #subnav {
 	border-bottom: 1px solid #FFF;
 }
 
-#siteNav ul ul ul{
+#siteNav ul ul{
 	border-bottom:1px solid #ccc;
 }
 
-#siteNav ul ul ul a{
+#siteNav ul ul a{
 	display: block;
 	border: 0 !important;
 	width: 137px;
@@ -160,11 +160,11 @@ div #subnav {
 	display:none; /* Remove if you want all levels to be displayed */
 }
 
-* html #siteNav ul ul ul a{ /* IE6 */
+* html #siteNav ul ul a{ /* IE6 */
 	width:152px;
 }
 
-* html #siteNav ul ul ul{ /* IE6 */
+* html #siteNav ul ul{ /* IE6 */
 	border-bottom:none;
 }
 

@@ -146,18 +146,18 @@ div #subnav {
 	border-bottom: 1px solid #CCC;
 }
 
-#siteNav ul ul ul{
+#siteNav ul ul{
 	border-bottom:1px solid #ccc;
 	font-size:11px;
 }
 
-#siteNav ul ul ul a{
+#siteNav ul ul a{
 	width: 150px;
 	padding-left:16px;
 	border-bottom:none;
 }
 
-#siteNav ul ul ul .active{
+#siteNav ul ul .active{
 	background-color: #ACBFC2;
 	color: #4E4E4E;
 }
@@ -166,7 +166,7 @@ div #subnav {
 	display:none; /* Remove if you want all levels to be displayed */
 }
 
-* html #siteNav a,* html #siteNav ul ul ul a{ /* IE6 */
+* html #siteNav a,* html #siteNav ul ul a{ /* IE6 */
 	width:169px;
 }
 
