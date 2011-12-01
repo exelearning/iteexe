@@ -38,7 +38,7 @@ form > #main {
     background-color: #EDEFF0;
     line-height: 140%;
 
-    } // makes style apply to authoring in eXe environment by removing left indent
+    } /* makes style apply to authoring in eXe environment by removing left indent */
 
 li {list-style-position: inside;}
 
@@ -111,4 +111,15 @@ input.feedbackbutton {
 
 p.reading_feedback {
     font-style: italic;
+}
+
+.pre-code{
+	background:#112C4A;
+	color:#E7ECF1;
+	font-family:Monaco,Courier,monospace;
+	font-size:12px;
+	margin:2em 1em;
+	overflow:auto;
+	padding:20px;
+	border-radius:9px;
 }

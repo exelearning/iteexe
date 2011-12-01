@@ -45,7 +45,7 @@ var TinyMCE_PasteCodePlugin = {
 						tinyMCE.openWindow(template, {editor_id : editor_id, plain_text: plain_text, resizable : "yes", scrollbars : "no", inline : "yes", mceDo : 'insert'}); 
 					}
 				} else
-					TinyMCE_PasteCodePlugin._insertCode(value['html']);
+					TinyMCE_PasteCodePlugin._insertCode(value['html'],value['wrapper']);
 
 				return true;
 
@@ -107,9 +107,11 @@ var TinyMCE_PasteCodePlugin = {
 		return true;
 	},
 
-	_insertCode : function(content) { 
+	_insertCode : function(content,wrapper) { 
 		if (content && content.length > 0) {
-			tinyMCE.execCommand("mceInsertRawHTML", false, "<div class='pre-code'><pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre></div>"); 
+			var c = "<pre><code>"+content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+"</code></pre>";
+			if (wrapper) c = "<div class='pre-code'>"+c+"</div>";
+			tinyMCE.execCommand("mceInsertRawHTML", false, c); 
 		}
 	},
 

@@ -85,3 +85,14 @@ p.reading_feedback {
     padding: 4px;
     margin: 0px 20px 4px 4px;
 }
+
+.pre-code{
+	background:#112C4A;
+	color:#FFFFFF;
+	font-family:Monaco,Courier,monospace;
+	font-size:12px;
+	margin:2em 1em;
+	overflow:auto;
+	padding:20px;
+	border-radius:9px;
+}
