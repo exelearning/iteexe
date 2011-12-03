@@ -28,7 +28,7 @@ Array.prototype.inArray = function (value) {
 tinyMCE.init({
 	content_css : "/css/extra.css", 
 	language : getTinyMCELang(document.getElementsByTagName("HTML")[0].lang),
-	verify_html : false, 
+	verify_html : true, 
 	apply_source_formatting : true, 
 	//testing TinyMCE's escaping/quoting of HTML:
 	cleanup_on_startup : false, 
@@ -67,6 +67,17 @@ tinyMCE.init({
 		if (exe_assume_media_plugins) a=true;//if G.application.config.assumeMediaPlugins in authoringpage.py 
 		return a;		
 	},	
+        inline_styles : true,
+        convert_urls : false,
+        accessibility_warnings : true,
+        convert_fonts_to_spans : true,
+        convert_newlines_to_brs : false,
+        element_format : "xhtml",
+        fix_list_elements : false,
+        force_p_newlines : true,
+        apply_source_formatting : true,
+        theme_advanced_blockformats : "p,blockquote,div,h1,h2,h3,h4,h5,h6",
+
 	theme_advanced_statusbar_location : "bottom",
 	theme_advanced_resize_horizontal : false,
 	theme_advanced_resizing : true,
