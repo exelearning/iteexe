@@ -101,9 +101,9 @@ class XliffExport(object):
 
             
             for field in idevice.getRichTextFields():
-                content += TRANS_UNIT % {'content': safe_unicode(field.content),
+                content += TRANS_UNIT % {'content': safe_unicode(field.content.replace('&', '&amp;')),
                                          'id': '%s-idev%s-field%s' % (id, idevice.id, field.id),
-                                         'target': self.source_copied_in_target and safe_unicode(field.content) or u'',
+                                         'target': self.source_copied_in_target and safe_unicode(field.content.replace('&', '&amp')) or u'',
                                          }
 
             content += '</group>'

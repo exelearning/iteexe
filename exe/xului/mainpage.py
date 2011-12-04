@@ -1082,6 +1082,8 @@ class MainPage(RenderableLivePage):
         try:
             filename = Path(filename)
             log.debug(u"exportXliff, filename=%s" % filename)
+            if not filename.lower().endswith('.xlf'):
+                filename += '.xlf'
             xliffExport = XliffExport(self.config, filename, bool(int(exportType)))
             xliffExport.export(self.package)
         except Exception,e:
