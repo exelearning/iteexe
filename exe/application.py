@@ -324,9 +324,10 @@ class Application:
         launches the webbrowser
         """
 
-        package = None
         if self.packagePath:
-            package = self._loadPackage(self.packagePath)
+            package = self.packageStore.loadPackage(self.packagePath)
+            self.webServer.root.bindNewPackage(package)
+            launchBrowser(self.config, package.name, "")
         else:
             launchBrowser(self.config, "", "")
 
