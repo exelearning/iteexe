@@ -1,3 +1,29 @@
+python-exe (1.04.1.3605ite6beta1) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Integradas plantillas originales de Todo FP (FPD-MEDU)
+  * Mejoras y compatibilidad de las plantillas en plugin pastecode de TinyMCE
+  * Paginación en parte superior de la página + Compatibilidad
+    plantillas
+  * Página de inicio al mismo nivel que las demás al exportar como sitio web
+  * Primeras plantillas con navegación horizontal y menús desplegables
+  * Corrección i18n EN + Traducción al euskera
+
+  [Mikel Larreategui]
+  * Reemplazo de todas las ocurrencias de & por &amp; al exportar a XLIFF
+  * Se fuerza la extensión .xlf en los ficheros generados al exportar a XLIFF
+
+  [Pedro Peña]
+  * Añadida parcialmente configuración de TinyMCE de TodoFP para que vuelva a
+    funcionar el plugin advimage (inclusión de imágenes)
+  * Deshabilitado splash al iniciar eXe cuando se pulsa sobre un paquete elp
+  * Deshabilitada por versión la comprobación de compatibilidad y seguridad de
+    extensiones al iniciar Firefox
+  * Deshabilitada la búsqueda de nuevas versiones de buscadores al iniciar
+    Firefox
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 05 Dec 2011 08:20:52 +0100
+
 python-exe (1.04.1.3605ite5.1) lucid; urgency=low
 
   [Ignacio Gros]
