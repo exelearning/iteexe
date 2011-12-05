@@ -26,6 +26,8 @@ user_pref("browser.places.smartBookmarksVersion", 2);
 user_pref("browser.rights.3.shown", true);
 user_pref("browser.search.update", false);
 user_pref("browser.shell.checkDefaultBrowser", false);
+user_pref("browser.search.update", false);
+user_pref("browser.shell.checkDefaultBrowser", false);
 user_pref("browser.tabs.autoHide", true);
 user_pref("capability.policy.allowclipboard.Clipboard.cutcopy", "allAccess");
 user_pref("capability.policy.allowclipboard.Clipboard.paste", "allAccess");
