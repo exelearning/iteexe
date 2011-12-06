@@ -46,13 +46,13 @@ from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
 from exe.export.ipodexport       import IpodExport
 from exe.export.xliffexport      import XliffExport
-from exe.importers.xliffimport      import XliffImport
+from exe.importers.xliffimport   import XliffImport
+from exe.importers.scanresources import Resources
 from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
-from exe.scanresources           import Resources
 
 log = logging.getLogger(__name__)
 
