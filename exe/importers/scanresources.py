@@ -23,7 +23,7 @@ from chardet import universaldetector
 from chardet import latin1prober
 import re
 import sys
-from engine.beautifulsoup import BeautifulSoup, UnicodeDammit
+from exe.engine.beautifulsoup import BeautifulSoup, UnicodeDammit
 from urllib import quote, unquote
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.resource import Resource
