@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-18 14:01+1300\n"
+"POT-Creation-Date: 2011-12-06 07:56+0100\n"
 "PO-Revision-Date: 2008-01-23 16:53+1300\n"
 "Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 0.10.1\n"
 
-#: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
+#: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:190
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -30,9 +30,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:849
-#: exe/xului/mainpage.py:978 exe/xului/mainpage.py:1034
-#: exe/xului/mainpage.py:1055
+#: exe/xului/mainpage.py:289 exe/xului/mainpage.py:904
+#: exe/xului/mainpage.py:1033 exe/xului/mainpage.py:1106
+#: exe/xului/mainpage.py:1127
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -50,12 +50,13 @@ msgstr "找到.txt文件並開啟它,複製所有內容,然後貼上至applet co
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:723
-#: exe/xului/mainpage.py:841
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:762
+#: exe/xului/mainpage.py:896
 msgid ". Please use ASCII names."
 msgstr "。請使用ASCII碼，如英文、拼音等來命名路徑，包括其中所有的檔案夾。"
 
-#: exe/engine/clozeidevice.py:60
+#: exe/engine/clozelangfpdidevice.py:60 exe/engine/clozeidevice.py:60
+#: exe/engine/clozefpdidevice.py:60
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
 msgstr ""
 
@@ -87,11 +88,13 @@ msgstr "圖像及文字解釋能為學習提供感性和知性的輔助。"
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p> 給附屬應用程式一個標籤，最好加上檔案類別和大小.</p><p>例如: <code>Sales Forecast.doc (500kb)</code></p>"
 
-#: exe/engine/clozeidevice.py:48
+#: exe/engine/clozelangfpdidevice.py:48 exe/engine/clozeidevice.py:48
+#: exe/engine/clozefpdidevice.py:48
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
 msgstr "填空練習是一段文章中，有些字或詞被刪除。學生需填上這些空格。"
 
-#: exe/engine/clozeidevice.py:124
+#: exe/engine/clozelangfpdidevice.py:123 exe/engine/clozeidevice.py:124
+#: exe/engine/clozefpdidevice.py:123
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly into the \n"
@@ -99,30 +102,34 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "輸入填空練習的內容。按兩下所要隱藏的字，然後點擊<i>隱藏/顯示 文字</i> 按鈕使之變為空格。"
 
-#: exe/engine/field.py:2725
+#: exe/engine/field.py:2762 exe/engine/field.py:2996
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2746
+#: exe/engine/field.py:2783 exe/engine/field.py:3017
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr ""
 
-#: exe/engine/field.py:2751
+#: exe/engine/field.py:2788 exe/engine/field.py:3022
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3000
+#: exe/engine/field.py:3275
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
-#: exe/engine/idevicestore.py:279
+#: exe/engine/field.py:3027
+msgid "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.</p>"
+msgstr ""
+
+#: exe/engine/idevicestore.py:324
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
 
-#: exe/engine/idevicestore.py:274
+#: exe/engine/idevicestore.py:319
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -142,7 +149,7 @@ msgid ""
 "is covered by the GNU free documentation license.</p>"
 msgstr "<p>可用這個 iDevice將維基百科全書的內容下載至您的教材中.</p>  <p>維基百科全書的內容受GNU 通用公共授權的保護.</p>"
 
-#: exe/engine/idevicestore.py:382
+#: exe/engine/idevicestore.py:427
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -158,11 +165,12 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr "當有一組相關的圖片要展示時或對一個特定的練習,要顯示幾張圖片。"
 
-#: exe/engine/package.py:415
+#: exe/engine/package.py:416
 msgid "?????"
 msgstr "?????"
 
 #: exe/engine/casestudyidevice.py:199
+#: exe/engine/ejercicioresueltofpdidevice.py:199
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -188,6 +196,7 @@ msgstr ""
 "</ul>"
 
 #: exe/engine/truefalseidevice.py:151
+#: exe/engine/verdaderofalsofpdidevice.py:152
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -197,9 +206,9 @@ msgstr "可提供提示來輔助學生回答問題。"
 msgid "Actions"
 msgstr "動作"
 
-#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:357
-#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:426
-#: exe/engine/idevicestore.py:463 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:402
+#: exe/engine/idevicestore.py:410 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:508 exe/engine/idevicestore.py:516
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "學習活動"
@@ -209,14 +218,14 @@ msgstr "學習活動"
 msgid "Add Field"
 msgstr "加入文件"
 
-#: exe/webui/element.py:475
+#: exe/webui/element.py:495
 msgid "Add Image"
 msgstr "加入圖片"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/element.py:893
+#: exe/webui/element.py:913
 msgid "Add JPEG Image"
 msgstr "加入JPEG圖片"
 
@@ -253,23 +262,25 @@ msgstr "加入互動式評語"
 msgid "Add an mp3 file to your iDevice."
 msgstr "加入MP3檔案"
 
-#: exe/webui/testquestionelement.py:122 exe/webui/element.py:1766
+#: exe/webui/element.py:2076 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "加入選項"
 
-#: exe/webui/quiztestblock.py:112 exe/webui/multiselectblock.py:91
+#: exe/webui/quiztestblock.py:112 exe/webui/seleccionmultiplefpdblock.py:99
+#: exe/webui/multiselectblock.py:91
 msgid "Add another Question"
 msgstr "加入問題"
 
-#: exe/webui/casestudyblock.py:113
+#: exe/webui/ejercicioresueltofpdblock.py:118 exe/webui/casestudyblock.py:113
 msgid "Add another activity"
 msgstr "加入活動"
 
-#: exe/webui/element.py:2097
+#: exe/webui/element.py:2463
 msgid "Add another option"
 msgstr "加入選項"
 
-#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseblock.py:109
+#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
+#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "加入問題"
 
@@ -281,9 +292,9 @@ msgstr "加入文件"
 msgid "Add images"
 msgstr "加入圖片"
 
-#: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:134
-#: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
+#: exe/webui/imagemagnifierblock.py:134 exe/webui/editorelement.py:228
+#: exe/webui/flashmovieblock.py:87 exe/webui/multimediablock.py:92
+#: exe/webui/flashwithtextblock.py:88 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "對齊:"
 
@@ -301,17 +312,21 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "對齊可用於選擇圖像顯示的位置。"
 
-#: exe/engine/field.py:2789
+#: exe/engine/field.py:2826 exe/engine/field.py:3064
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr "當學生填空時，允許自動完成。"
 
-#: exe/engine/clozeidevice.py:288
+#: exe/engine/clozelangfpdidevice.py:292 exe/engine/clozeidevice.py:288
+#: exe/engine/clozefpdidevice.py:287
 msgid "Allow auto completion when user filling the gaps."
 msgstr "當學生填空時，允許自動完成。"
 
-#: exe/engine/multiselectidevice.py:45 exe/engine/multichoiceidevice.py:62
+#: exe/engine/multichoiceidevice.py:62
+#: exe/engine/seleccionmultiplefpdidevice.py:45
+#: exe/engine/eleccionmultiplefpdidevice.py:62
+#: exe/engine/multiselectidevice.py:45
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -329,14 +344,14 @@ msgid ""
 " "
 msgstr ""
 
-#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:466
+#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:511
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr "學習作用中可被定義為學生必須完成的一個或一組任務。提供清晰的任務陳述以及考慮任何條件會輔助或阻礙學生完成任務。"
 
-#: exe/webui/element.py:1243
+#: exe/webui/element.py:1263 exe/webui/element.py:1531
 #, fuzzy
 msgid "Answsers"
 msgstr "顯示 答案"
@@ -367,6 +382,16 @@ msgstr "Attachment %s has no parentNode"
 msgid "Auckland University of Technology"
 msgstr ""
 
+#: exe/webui/clozelangfpdblock.py:105
+#: exe/webui/eleccionmultiplefpdblock.py:110 exe/webui/clozefpdblock.py:104
+msgid "Autoevaluacion"
+msgstr ""
+
+#: exe/webui/seleccionmultiplefpdblock.py:90
+#: exe/webui/verdaderofalsofpdblock.py:109
+msgid "Autoevaluación"
+msgstr ""
+
 #: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "按鈕標籤:"
@@ -375,24 +400,32 @@ msgstr "按鈕標籤:"
 msgid "Can NOT Undo Edits"
 msgstr ""
 
-#: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
+#: exe/webui/editorpane.py:269 exe/webui/preferencespage.py:116
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:721
-#: exe/xului/mainpage.py:841
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:760
+#: exe/xului/mainpage.py:896
 msgid "Cannot access directory named "
 msgstr "不能識別路徑名稱"
 
-#: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
-#: exe/webui/imagemagnifierblock.py:114 exe/webui/flashmovieblock.py:92
-#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:591
+#: exe/webui/element.py:611 exe/webui/imagemagnifierblock.py:114
+#: exe/webui/editorelement.py:311 exe/webui/flashmovieblock.py:92
+#: exe/webui/flashwithtextblock.py:93 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
 msgstr "標題:"
 
 #: exe/engine/casestudyidevice.py:197
 msgid "Case Study"
 msgstr "案例分析"
+
+#: exe/engine/casopracticofpdidevice.py:31
+msgid "Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
+msgstr ""
+
+#: exe/webui/casopracticofpdblock.py:64
+msgid "Caso práctico"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:114
 #, fuzzy
@@ -403,7 +436,7 @@ msgstr "義大利文Wikipedia 文章"
 msgid "Change Image"
 msgstr "改換圖片"
 
-#: exe/webui/element.py:1096
+#: exe/webui/element.py:1116 exe/webui/element.py:1378
 msgid "Check Caps?"
 msgstr "檢查大小寫?"
 
@@ -421,6 +454,7 @@ msgid "Choose an MP3 file"
 msgstr "選擇學習管理系統"
 
 #: exe/engine/casestudyidevice.py:64
+#: exe/engine/ejercicioresueltofpdidevice.py:64
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr ""
 
@@ -432,7 +466,15 @@ msgid ""
 "image to display at its original size."
 msgstr "選擇圖片顯示的尺寸，單位為像素。100像素像約為3公分。如要顯示圖片原尺寸，則讓此二欄空白。"
 
-#: exe/xului/mainpage.py:219
+#: exe/webui/citasparapensarfpdblock.py:64
+msgid "Citas para pensar"
+msgstr ""
+
+#: exe/engine/citasparapensarfpdidevice.py:31
+msgid "Citas para pensar es un iDevice que permite al alumnado reflexionar sobre algunas citas propuestas."
+msgstr ""
+
+#: exe/xului/mainpage.py:225
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -447,19 +489,19 @@ msgstr "點擊圖片或\"加入圖片\"按鈕來選擇所要放大的圖片文�
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "點擊<strong>選擇文件</strong>，選擇您要上傳的檔案。注意:檔案名稱不可含有中文字，否則該軟體無法識別。"
 
-#: exe/engine/field.py:2338
+#: exe/engine/field.py:2375
 msgid "Click Here"
 msgstr "點擊"
 
-#: exe/webui/common.py:336 exe/webui/common.py:340
+#: exe/webui/common.py:342 exe/webui/common.py:346
 msgid "Click for completion instructions"
 msgstr "點擊看完成說明。"
 
-#: exe/webui/reflectionblock.py:117
+#: exe/webui/reflectionfpdblock.py:125 exe/webui/reflectionblock.py:117
 msgid "Click here"
 msgstr "點擊這裡"
 
-#: exe/engine/field.py:3008
+#: exe/engine/field.py:3283
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -471,17 +513,17 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "點擊\"加入圖片\"按鈕來選擇圖片文件.所選圖片將顯示在下面,您可為其加上標籤。最好在標籤上加上文件大小。"
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
-#: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
-#: exe/webui/common.py:346 exe/webui/block.py:260 exe/webui/block.py:261
-#: exe/webui/element.py:2140 exe/webui/element.py:2141
+#: exe/webui/truefalseelement.py:153 exe/webui/element.py:2514
+#: exe/webui/element.py:2515 exe/webui/common.py:351 exe/webui/common.py:352
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
+#: exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
 msgstr "關閉"
 
-#: exe/engine/clozeidevice.py:123
+#: exe/engine/clozeidevice.py:123 exe/engine/clozefpdidevice.py:122
 msgid "Cloze"
 msgstr "填空題"
 
@@ -489,35 +531,58 @@ msgstr "填空題"
 msgid "Cloze Activity"
 msgstr "填空練習"
 
-#: exe/webui/element.py:1078
+#: exe/webui/element.py:1098 exe/webui/element.py:1360
 msgid "Cloze Text"
 msgstr "填空題"
 
-#: exe/webui/element.py:1650 exe/webui/element.py:1984
+#: exe/engine/clozelangfpdidevice.py:122
+#, fuzzy
+msgid "Clozelang"
+msgstr "填空題"
+
+#: exe/engine/correccionfpdidevice.py:31
+msgid "Correccion es un iDevice que permite resaltar texto para hacer correcciones a los autores."
+msgstr ""
+
+#: exe/webui/element.py:1948 exe/webui/element.py:1958
 msgid "Correct"
 msgstr "正確"
 
-#: exe/webui/testoptionelement.py:111 exe/webui/element.py:1598
-#: exe/webui/element.py:1895
+#: exe/webui/element.py:1886 exe/webui/element.py:2238
+#: exe/webui/element.py:2336 exe/webui/element.py:2363
+#: exe/webui/testoptionelement.py:111
 #, fuzzy
 msgid "Correct Option"
 msgstr "正確"
 
-#: exe/webui/truefalseelement.py:216
+#: exe/xului/mainpage.py:864
+msgid "Correct XLIFF import"
+msgstr ""
+
+#: exe/webui/truefalseelement.py:220
 msgid "Correct!"
 msgstr "正確!"
 
-#: exe/xului/mainpage.py:1106
+#: exe/xului/mainpage.py:1178
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
 #: exe/engine/casestudyidevice.py:216
+#: exe/engine/ejercicioresueltofpdidevice.py:217
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr "擬寫案例故事。一個好的案例描述有爭議性的，或不同人物和環境的場景，並能採取某些行動來解決問題。"
+
+#: exe/webui/debesconocerfpdblock.py:64
+msgid "Debes conocer"
+msgstr ""
+
+#: exe/engine/debesconocerfpdidevice.py:31
+msgid "Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje."
+msgstr ""
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
@@ -527,8 +592,8 @@ msgstr "擬寫案例故事。一個好的案例描述有爭議性的，或不同
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
 #: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:286
-#: exe/webui/block.py:230 exe/webui/editorpage.py:236
-#: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/editorpage.py:236 exe/webui/editorpage.py:239
+#: exe/webui/block.py:230 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "刪除"
@@ -545,18 +610,18 @@ msgstr "刪除文件"
 msgid "Delete Image"
 msgstr "刪除圖片"
 
-#: exe/webui/testoptionelement.py:139 exe/webui/element.py:1626
-#: exe/webui/element.py:1923
+#: exe/webui/element.py:1914 exe/webui/element.py:2266
+#: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "刪除選項"
 
-#: exe/webui/testquestionelement.py:104 exe/webui/questionelement.py:111
-#: exe/webui/truefalseelement.py:130 exe/webui/element.py:1735
-#: exe/webui/element.py:2082
+#: exe/webui/truefalseelement.py:130 exe/webui/element.py:2043
+#: exe/webui/element.py:2448 exe/webui/questionelement.py:111
+#: exe/webui/testquestionelement.py:104
 msgid "Delete question"
 msgstr "刪除問題"
 
-#: exe/engine/reflectionidevice.py:57
+#: exe/engine/reflectionfpdidevice.py:58 exe/engine/reflectionidevice.py:57
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
@@ -564,6 +629,7 @@ msgid ""
 msgstr "描述學生應怎樣評估和完成練習。"
 
 #: exe/engine/casestudyidevice.py:225
+#: exe/engine/ejercicioresueltofpdidevice.py:226
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -571,19 +637,19 @@ msgid ""
 "presented. "
 msgstr "描述學生應完成的檢視任務。"
 
-#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
+#: exe/engine/idevicestore.py:398 exe/engine/idevicestore.py:504
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "用於描述學生為完成此課所應具備的知識。"
 
-#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
+#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:472
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "描述學生應完成的檢視任務。"
 
-#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:472
+#: exe/engine/idevicestore.py:411 exe/engine/idevicestore.py:517
 msgid "Describe the tasks the learners should complete."
 msgstr "描述學生需要完成的學習任務。"
 
@@ -598,6 +664,10 @@ msgstr "描述"
 msgid "Description:"
 msgstr "描述:"
 
+#: exe/engine/destacadofpdidevice.py:31
+msgid "Destacado es un iDevice que permite resaltar texto para llamar la atención del alumnado."
+msgstr ""
+
 #: exe/webui/preferencespage.py:103
 msgid "Disable All Internal Linking"
 msgstr ""
@@ -606,7 +676,7 @@ msgstr ""
 msgid "Disable Auto-Top Internal Linking"
 msgstr ""
 
-#: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
+#: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1585
 msgid "Display as:"
 msgstr "顯示為:"
 
@@ -618,17 +688,17 @@ msgstr "完成"
 msgid "Dutch Wikipedia Article"
 msgstr "荷蘭文Wikipedia 文章"
 
-#: exe/webui/element.py:70
+#: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROR Element.process called directly with %s class"
 
-#: exe/webui/element.py:79
+#: exe/webui/element.py:80
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROR Element.renderEdit called directly with %s class"
 
-#: exe/webui/element.py:96
+#: exe/webui/element.py:97
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR Element.renderView called directly with %s class"
@@ -637,24 +707,24 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:755
-#: exe/xului/mainpage.py:758 exe/xului/mainpage.py:761
-#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:962
+#: exe/xului/mainpage.py:787 exe/xului/mainpage.py:794
+#: exe/xului/mainpage.py:797 exe/xului/mainpage.py:800
+#: exe/xului/mainpage.py:803 exe/xului/mainpage.py:1017
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:966
-#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:985
-#: exe/xului/mainpage.py:1019 exe/xului/mainpage.py:1035
-#: exe/xului/mainpage.py:1041 exe/xului/mainpage.py:1056
-#: exe/xului/mainpage.py:1062
+#: exe/xului/mainpage.py:1007 exe/xului/mainpage.py:1021
+#: exe/xului/mainpage.py:1034 exe/xului/mainpage.py:1040
+#: exe/xului/mainpage.py:1074 exe/xului/mainpage.py:1090
+#: exe/xului/mainpage.py:1107 exe/xului/mainpage.py:1113
+#: exe/xului/mainpage.py:1128 exe/xului/mainpage.py:1134
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:358 exe/export/scormexport.py:493
+#: exe/export/scormexport.py:510 exe/export/imsexport.py:373
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -662,15 +732,15 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:850 exe/xului/mainpage.py:867
+#: exe/xului/mainpage.py:905 exe/xului/mainpage.py:922
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/webui/block.py:344 exe/webui/editorpane.py:266
-#: exe/webui/editorpage.py:270
+#: exe/webui/editorpage.py:270 exe/webui/editorpane.py:266
+#: exe/webui/block.py:344
 msgid "Edit"
 msgstr "編輯"
 
@@ -678,8 +748,12 @@ msgstr "編輯"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:159 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
+#: exe/webui/ejercicioresueltofpdblock.py:110
+msgid "Ejercicio resuelto"
+msgstr ""
+
+#: exe/webui/rssblock.py:120 exe/webui/multimediablock.py:103
+#: exe/webui/editorpane.py:332 exe/webui/wikipediablock.py:159
 msgid "Emphasis"
 msgstr "強調"
 
@@ -698,12 +772,14 @@ msgid ""
 msgstr "輸入有關文件的描述。"
 
 #: exe/engine/multichoiceidevice.py:99
+#: exe/engine/eleccionmultiplefpdidevice.py:100
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
 #: exe/engine/multichoiceidevice.py:286
+#: exe/engine/eleccionmultiplefpdidevice.py:287
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
@@ -713,7 +789,8 @@ msgid ""
 "within Wikipedia."
 msgstr "輸入關鍵詞。"
 
-#: exe/engine/reflectionidevice.py:55
+#: exe/engine/reflectionfpdmodifidevice.py:56
+#: exe/engine/reflectionfpdidevice.py:56 exe/engine/reflectionidevice.py:55
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
@@ -744,13 +821,15 @@ msgid ""
 msgstr "輸入回答選項。提供幾個錯誤選項(一般3-4)和一個正確選項。點擊&lt;加入選項&gt;來加增選項。"
 
 #: exe/engine/truefalseidevice.py:158
+#: exe/engine/verdaderofalsofpdidevice.py:159
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
 msgstr "用評語欄輸入評語提供給學生。此欄可空白。"
 
-#: exe/engine/clozeidevice.py:130
+#: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozeidevice.py:130
+#: exe/engine/clozefpdidevice.py:129
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "用評語欄輸入評語提供給學生。此欄可空白。"
 
@@ -765,13 +844,14 @@ msgid ""
 msgstr "輸入所要顯示網頁的網址並選擇顯示的大小尺寸。"
 
 #: exe/engine/multichoiceidevice.py:106
+#: exe/engine/eleccionmultiplefpdidevice.py:107
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr "輸入各個選項以讓學生從其間選擇最合適的一項。點擊\"新增選項\" 按鈕來增加選項。點擊選項旁邊的\"x\" 可刪除這個選項。"
 
-#: exe/engine/field.py:3310
+#: exe/engine/field.py:3585
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -779,7 +859,7 @@ msgid ""
 "clicking the red X next to the option."
 msgstr "輸入各個選項以讓學生從其間選擇最合適的一項。點擊\"新增選項\" 按鈕來增加選項。點擊選項旁邊的\"x\" 可刪除這個選項。"
 
-#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:468
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -805,15 +885,16 @@ msgstr "在此輸入完成說明"
 msgid "Enter the label here"
 msgstr "在此輸入標題"
 
-#: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
-#: exe/engine/quiztestidevice.py:194
+#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/eleccionmultiplefpdidevice.py:102
+#: exe/engine/quiztestidevice.py:120 exe/engine/quiztestidevice.py:194
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr "輸入問題。問題的陳述要清晰而不含糊。"
 
-#: exe/engine/field.py:3302
+#: exe/engine/field.py:3577
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -843,6 +924,11 @@ msgstr "輸入有關文件的描述。"
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr "輸入有關文件的描述。"
 
+#: exe/xului/mainpage.py:866
+#, python-format
+msgid "Error importing XLIFF: %s"
+msgstr ""
+
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
 msgstr "例子"
@@ -856,9 +942,9 @@ msgstr "例子 例子"
 msgid "Export iDevice"
 msgstr "iDevice"
 
-#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
-#: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1023 exe/xului/mainpage.py:1042
+#: exe/xului/mainpage.py:1076 exe/xului/mainpage.py:1092
+#: exe/xului/mainpage.py:1115 exe/xului/mainpage.py:1136
 #, python-format
 msgid "Exported to %s"
 msgstr "匯出至 %s"
@@ -871,18 +957,97 @@ msgstr "外部網頁"
 msgid "Extra large"
 msgstr "特大"
 
-#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:191
+#: exe/engine/eleccionmultiplefpdidevice.py:60
+msgid "FPD - Actividad de Eleccion Multiple"
+msgstr ""
+
+#: exe/engine/clozefpdidevice.py:46
+msgid "FPD - Actividad de Espacios en Blanco"
+msgstr ""
+
+#: exe/engine/clozelangfpdidevice.py:46
+msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
+msgstr ""
+
+#: exe/engine/seleccionmultiplefpdidevice.py:43
+msgid "FPD - Actividad de Seleccion Multiple"
+msgstr ""
+
+#: exe/engine/verdaderofalsofpdidevice.py:144
+msgid "FPD - Actividad de Verdadero/Falso"
+msgstr ""
+
+#: exe/engine/casopracticofpdidevice.py:29
+msgid "FPD - Caso Practico"
+msgstr ""
+
+#: exe/engine/citasparapensarfpdidevice.py:29
+msgid "FPD - Citas Para Pensar"
+msgstr ""
+
+#: exe/engine/correccionfpdidevice.py:29
+#, fuzzy
+msgid "FPD - Correccion"
+msgstr "正確"
+
+#: exe/engine/debesconocerfpdidevice.py:29
+msgid "FPD - Debes Conocer"
+msgstr ""
+
+#: exe/engine/destacadofpdidevice.py:29
+msgid "FPD - Destacado"
+msgstr ""
+
+#: exe/engine/ejercicioresueltofpdidevice.py:197
+msgid "FPD - Ejercicio Resuelto"
+msgstr ""
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:29
+msgid "FPD - Orientaciones Alumnado"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:29
+msgid "FPD - Orientaciones Tutoria"
+msgstr ""
+
+#: exe/engine/parasabermasfpdidevice.py:29
+msgid "FPD - Para Saber Mas"
+msgstr ""
+
+#: exe/engine/recomendacionfpdidevice.py:29
+msgid "FPD - Recomendacion"
+msgstr ""
+
+#: exe/engine/reflectionfpdidevice.py:46
+msgid "FPD - Reflexiona (con Retroalimentacion)"
+msgstr ""
+
+#: exe/engine/reflectionfpdmodifidevice.py:46
+msgid "FPD - Reflexiona (sin Retroalimentacion)"
+msgstr ""
+
+#: exe/engine/freetextfpdidevice.py:38
+#, fuzzy
+msgid "FPD - Texto Libre"
+msgstr "單列文字"
+
+#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:195
+#: exe/webui/truefalseelement.py:277
 msgid "False"
 msgstr "錯"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
-#: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
-#: exe/engine/clozeidevice.py:279 exe/engine/truefalseidevice.py:50
-#: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
-#: exe/engine/field.py:3128 exe/webui/clozeblock.py:164
+#: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
+#: exe/engine/field.py:3355 exe/engine/field.py:3403
+#: exe/engine/truefalseidevice.py:50 exe/engine/truefalseidevice.py:125
+#: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
+#: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:367
+#: exe/engine/idevicestore.py:475 exe/engine/verdaderofalsofpdidevice.py:50
+#: exe/engine/verdaderofalsofpdidevice.py:125
+#: exe/webui/clozelangfpdblock.py:194 exe/webui/element.py:2269
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:104
-#: exe/webui/common.py:249 exe/webui/element.py:1926
-#: exe/webui/editorpane.py:251
+#: exe/webui/clozefpdblock.py:193 exe/webui/clozeblock.py:164
+#: exe/webui/common.py:252 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "評語"
 
@@ -892,18 +1057,20 @@ msgid ""
 "data is entered into this field."
 msgstr "如果此欄空白，評語按鈕將不顯示。"
 
-#: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
-#: exe/engine/field.py:3319 exe/engine/field.py:3389
+#: exe/engine/field.py:3594 exe/engine/field.py:3664
+#: exe/engine/reflectionfpdidevice.py:67
+#: exe/engine/reflectionfpdidevice.py:202 exe/engine/reflectionidevice.py:66
+#: exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
 msgstr "評語:"
 
-#: exe/xului/mainpage.py:1102
+#: exe/xului/mainpage.py:1174
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:897 exe/xului/mainpage.py:939
-#: exe/xului/mainpage.py:1006
+#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:994
+#: exe/xului/mainpage.py:1061
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
@@ -912,7 +1079,7 @@ msgstr "檔案名稱%s是個文件，無法覆寫它"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:787
+#: exe/webui/element.py:807 exe/webui/attachmentblock.py:87
 #, fuzzy
 msgid "Filename:"
 msgstr "檔案名稱"
@@ -925,8 +1092,8 @@ msgstr "Flash 電影"
 msgid "Flash with Text"
 msgstr "文字及Flash"
 
-#: exe/xului/mainpage.py:903 exe/xului/mainpage.py:945
-#: exe/xului/mainpage.py:1012
+#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:1000
+#: exe/xului/mainpage.py:1067
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -936,6 +1103,7 @@ msgid "Frame Height:"
 msgstr "頁框高:"
 
 #: exe/engine/freetextidevice.py:38 exe/engine/freetextidevice.py:45
+#: exe/engine/freetextfpdidevice.py:45
 msgid "Free Text"
 msgstr "自由文字"
 
@@ -957,7 +1125,7 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "德文Wikipedia 文章"
 
-#: exe/webui/element.py:1181
+#: exe/webui/element.py:1201 exe/webui/element.py:1469
 msgid "Get score"
 msgstr "得分"
 
@@ -978,7 +1146,7 @@ msgstr "Go Forward (Not Available)"
 msgid "Greek Wikipedia Article"
 msgstr "法文Wikipedia 文章"
 
-#: exe/webui/reflectionblock.py:121
+#: exe/webui/reflectionfpdblock.py:129 exe/webui/reflectionblock.py:121
 msgid "Hide"
 msgstr "隱藏"
 
@@ -987,14 +1155,16 @@ msgstr "隱藏"
 msgid "Hide Feedback"
 msgstr "顯示/隱藏 評語"
 
-#: exe/webui/element.py:1086
+#: exe/webui/element.py:1106 exe/webui/element.py:1368
 msgid "Hide/Show Word"
 msgstr "隱藏/顯示 文字"
 
+#: exe/engine/field.py:3429 exe/engine/field.py:3495
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
-#: exe/engine/field.py:3154 exe/engine/field.py:3220
+#: exe/engine/verdaderofalsofpdidevice.py:53
+#: exe/engine/verdaderofalsofpdidevice.py:128
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
-#: exe/webui/element.py:2144
+#: exe/webui/element.py:2518
 msgid "Hint"
 msgstr "提示"
 
@@ -1005,13 +1175,13 @@ msgstr "首頁"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/multichoiceblock.py:154 exe/webui/genericblock.py:83
-#: exe/webui/genericblock.py:109 exe/webui/galleryblock.py:362
-#: exe/webui/block.py:299
+#: exe/webui/genericblock.py:83 exe/webui/genericblock.py:109
+#: exe/webui/galleryblock.py:362 exe/webui/eleccionmultiplefpdblock.py:164
+#: exe/webui/multichoiceblock.py:154 exe/webui/block.py:299
 msgid "IDevice Icon"
 msgstr "iDevice 圖示"
 
-#: exe/webui/multichoiceblock.py:130
+#: exe/webui/eleccionmultiplefpdblock.py:137 exe/webui/multichoiceblock.py:130
 msgid "IDevice Question Icon"
 msgstr "IDevice問題圖示"
 
@@ -1027,7 +1197,8 @@ msgstr "iDevice 圖示"
 msgid "Icons"
 msgstr "圖示"
 
-#: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:63
+#: exe/engine/casestudyidevice.py:63 exe/engine/imagewithtextidevice.py:62
+#: exe/engine/ejercicioresueltofpdidevice.py:63
 msgid "Image"
 msgstr "圖像"
 
@@ -1048,12 +1219,12 @@ msgstr "文字及插圖"
 msgid "Import iDevice"
 msgstr "iDevice"
 
-#: exe/webui/element.py:1652
+#: exe/webui/element.py:1950 exe/webui/element.py:1960
 #, fuzzy
 msgid "Incorrect"
 msgstr "不正確!"
 
-#: exe/webui/truefalseelement.py:217
+#: exe/webui/truefalseelement.py:221
 msgid "Incorrect!"
 msgstr "不正確!"
 
@@ -1072,21 +1243,37 @@ msgstr "資訊"
 msgid "Initial Zoom"
 msgstr "初始放大倍數"
 
-#: exe/webui/element.py:1101
+#: exe/webui/element.py:1121 exe/webui/element.py:1383
 msgid "Instant Marking?"
 msgstr "快速評分?"
 
-#: exe/engine/clozeidevice.py:116 exe/engine/truefalseidevice.py:165
-#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:330
+#: exe/engine/clozelangfpdidevice.py:116 exe/engine/truefalseidevice.py:165
+#: exe/engine/truefalseidevice.py:392 exe/engine/clozeidevice.py:116
+#: exe/engine/clozefpdidevice.py:116
+#: exe/engine/verdaderofalsofpdidevice.py:166
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
 msgid "Instructions"
 msgstr "說明"
 
-#: exe/engine/clozeidevice.py:274
+#: exe/engine/clozelangfpdidevice.py:278 exe/engine/clozeidevice.py:274
+#: exe/engine/clozefpdidevice.py:274
 msgid "Instructions For Learners"
 msgstr "練習說明"
 
 #: exe/webui/preferencespage.py:104
 msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:34
+#: exe/engine/citasparapensarfpdidevice.py:34
+#: exe/engine/correccionfpdidevice.py:33
+#: exe/engine/recomendacionfpdidevice.py:34
+#: exe/engine/orientacionesalumnadofpdidevice.py:34
+#: exe/engine/casopracticofpdidevice.py:34
+#: exe/engine/parasabermasfpdidevice.py:34
+#: exe/engine/destacadofpdidevice.py:33
+#: exe/engine/debesconocerfpdidevice.py:34
+msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:233
@@ -1105,6 +1292,18 @@ msgstr "日文Wikipedia 文章"
 msgid "Java Applet"
 msgstr "Java Applet"
 
+#: exe/engine/orientacionestutoriafpdidevice.py:30
+#: exe/engine/citasparapensarfpdidevice.py:30
+#: exe/engine/correccionfpdidevice.py:30
+#: exe/engine/recomendacionfpdidevice.py:30
+#: exe/engine/orientacionesalumnadofpdidevice.py:30
+#: exe/engine/casopracticofpdidevice.py:30
+#: exe/engine/parasabermasfpdidevice.py:30
+#: exe/engine/destacadofpdidevice.py:30
+#: exe/engine/debesconocerfpdidevice.py:30
+msgid "Jose Ramon Jimenez Reyes"
+msgstr ""
+
 #: exe/webui/attachmentblock.py:108
 #, fuzzy
 msgid "Label:"
@@ -1114,9 +1313,9 @@ msgstr "標籤"
 msgid "Large"
 msgstr "大"
 
-#: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:107
-#: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
+#: exe/webui/imagemagnifierblock.py:107 exe/webui/editorelement.py:223
+#: exe/webui/flashmovieblock.py:81 exe/webui/multimediablock.py:85
+#: exe/webui/flashwithtextblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "左"
 
@@ -1125,11 +1324,11 @@ msgstr "左"
 msgid "Licensed under the"
 msgstr "This article is licensed under the "
 
-#: exe/webui/wikipediablock.py:152 exe/webui/rssblock.py:110
+#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:152
 msgid "Load"
 msgstr "載入"
 
-#: exe/xului/mainpage.py:562
+#: exe/xului/mainpage.py:568
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
@@ -1156,11 +1355,15 @@ msgstr "最大放大倍數"
 msgid "Medium"
 msgstr "中"
 
-#: exe/xului/mainpage.py:690
+#: exe/xului/mainpage.py:696
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
 "%s"
+msgstr ""
+
+#: exe/webui/element.py:1388
+msgid "Mostrar Puntuaci&oacute;n?"
 msgstr ""
 
 #: exe/webui/block.py:244
@@ -1196,8 +1399,8 @@ msgstr "名稱"
 msgid "New iDevice"
 msgstr "新的 iDevice"
 
-#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
+#: exe/engine/galleryidevice.py:664 exe/export/scormexport.py:342
+#: exe/export/websitepage.py:242 exe/export/ipodpage.py:116
 msgid "Next"
 msgstr "下一頁"
 
@@ -1217,14 +1420,14 @@ msgstr "No Thumbnail Available。Could not shrink image。"
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "No Thumbnail Available。Could not shrink image。"
 
-#: exe/webui/wikipediablock.py:156 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:114 exe/webui/editorpane.py:335
+#: exe/webui/rssblock.py:114 exe/webui/multimediablock.py:100
+#: exe/webui/editorpane.py:335 exe/webui/wikipediablock.py:156
 msgid "No emphasis"
 msgstr "不強調"
 
-#: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:109
-#: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
+#: exe/webui/imagemagnifierblock.py:109 exe/webui/editorelement.py:225
+#: exe/webui/flashmovieblock.py:83 exe/webui/multimediablock.py:87
+#: exe/webui/flashwithtextblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
@@ -1234,43 +1437,59 @@ msgstr "無"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:338
-#: exe/engine/idevicestore.py:435 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:374 exe/engine/idevicestore.py:383
+#: exe/engine/idevicestore.py:480 exe/engine/idevicestore.py:489
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
+#: exe/engine/idevicestore.py:377 exe/engine/idevicestore.py:483
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr "用於描述學習此課的目的及將要達到的結果。"
 
-#: exe/engine/field.py:2895 exe/engine/field.py:2959
+#: exe/engine/field.py:3170 exe/engine/field.py:3234
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "只能選用.flv (Flash Video Files)。"
 
-#: exe/engine/field.py:2831 exe/engine/field.py:2875
+#: exe/engine/field.py:3106 exe/engine/field.py:3150
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "只能選用.swf (Flash Object)。"
 
+#: exe/engine/field.py:3351 exe/engine/field.py:3400
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/engine/field.py:3076 exe/engine/field.py:3125
-#: exe/webui/testoptionelement.py:106 exe/webui/element.py:1593
-#: exe/webui/element.py:1890
+#: exe/webui/element.py:1881 exe/webui/element.py:2233
+#: exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "選項"
 
-#: exe/engine/field.py:3242 exe/engine/field.py:3279
-#: exe/webui/testquestionelement.py:110 exe/webui/element.py:1753
+#: exe/engine/field.py:3517 exe/engine/field.py:3554 exe/webui/element.py:2061
+#: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "選項"
 
-#: exe/webui/wikipediablock.py:132 exe/webui/appletblock.py:102
+#: exe/engine/orientacionestutoriafpdidevice.py:31
+msgid "Orientaciones alumnado es un iDevice que permite al profesorado conocer los objetivos del aprendizje del alumnado."
+msgstr ""
+
+#: exe/webui/orientacionesalumnadofpdblock.py:64
+msgid "Orientaciones para el alumnado"
+msgstr ""
+
+#: exe/webui/orientacionestutoriafpdblock.py:64
+msgid "Orientaciones para la tutoría"
+msgstr ""
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:31
+msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
+msgstr ""
+
+#: exe/webui/appletblock.py:102 exe/webui/wikipediablock.py:132
 msgid "Other"
 msgstr "其他"
 
@@ -1282,7 +1501,7 @@ msgstr "目錄"
 msgid "Own site"
 msgstr ""
 
-#: exe/xului/mainpage.py:869
+#: exe/xului/mainpage.py:924
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "教材存至: %s"
@@ -1292,12 +1511,24 @@ msgstr "教材存至: %s"
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr ""
 
-#: exe/xului/mainpage.py:317
+#: exe/xului/mainpage.py:323
 #, python-format
 msgid "Package saved to: %s"
 msgstr "教材存至: %s"
 
-#: exe/webui/block.py:251 exe/webui/editorpane.py:373
+#: exe/engine/parasabermasfpdidevice.py:31
+msgid "Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje."
+msgstr ""
+
+#: exe/engine/recomendacionfpdidevice.py:31
+msgid "Para saber m&aacute;s es un iDevice que permite al profesarado recomendar libros, películas, ... útiles para su formación."
+msgstr ""
+
+#: exe/webui/parasabermasfpdblock.py:64
+msgid "Para saber más"
+msgstr ""
+
+#: exe/webui/editorpane.py:373 exe/webui/block.py:251
 msgid "Pedagogical Help"
 msgstr "教學輔助"
 
@@ -1314,17 +1545,18 @@ msgstr "請填入iDevice名稱。"
 msgid "Please enter<br />an idevice name."
 msgstr "請填入iDevice名稱。"
 
-#: exe/webui/element.py:1359
+#: exe/webui/element.py:1647
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "請選擇論壇."
 
-#: exe/webui/element.py:858
+#: exe/webui/element.py:878
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "請選擇論壇."
 
-#: exe/webui/multichoiceblock.py:95 exe/webui/quiztestblock.py:104
+#: exe/webui/quiztestblock.py:104 exe/webui/eleccionmultiplefpdblock.py:95
+#: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "請為每個問題選擇一個正確的答案。"
 
@@ -1332,7 +1564,7 @@ msgstr "請為每個問題選擇一個正確的答案。"
 msgid "Please upload a .ggb file."
 msgstr ""
 
-#: exe/xului/mainpage.py:88
+#: exe/xului/mainpage.py:90
 msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
@@ -1351,12 +1583,12 @@ msgstr "波蘭文Wikipedia 文章"
 msgid "Portugese Wikipedia Article"
 msgstr "葡萄牙文Wikipedia 文章"
 
-#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:352
-#: exe/engine/idevicestore.py:448 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:387 exe/engine/idevicestore.py:397
+#: exe/engine/idevicestore.py:493 exe/engine/idevicestore.py:503
 msgid "Preknowledge"
 msgstr "預備知識"
 
-#: exe/engine/idevicestore.py:345 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:390 exe/engine/idevicestore.py:496
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1365,22 +1597,22 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr "預備知識是指學生為完成此課所應具備的知識.\n"
 
-#: exe/webui/element.py:1502 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1790 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "預覽"
 
-#: exe/xului/mainpage.py:542 exe/xului/mainpage.py:648
+#: exe/xului/mainpage.py:548 exe/xului/mainpage.py:654
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
 
-#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
+#: exe/engine/galleryidevice.py:664 exe/export/scormexport.py:341
+#: exe/export/websitepage.py:236 exe/export/ipodpage.py:110
 msgid "Previous"
 msgstr "前一頁"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2533
-#: exe/engine/field.py:2580
+#: exe/engine/field.py:2570 exe/engine/field.py:2617
+#: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1413,18 +1645,22 @@ msgid ""
 msgstr "為插圖提供標題。"
 
 #: exe/engine/truefalseidevice.py:166 exe/engine/truefalseidevice.py:393
+#: exe/engine/verdaderofalsofpdidevice.py:167
+#: exe/engine/verdaderofalsofpdidevice.py:395
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr "提供怎樣完成是非題的說明。"
 
-#: exe/engine/clozeidevice.py:117
+#: exe/engine/clozelangfpdidevice.py:117 exe/engine/clozeidevice.py:117
+#: exe/engine/clozefpdidevice.py:117
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr "提供怎樣完成填空題的說明.\n"
 
 #: exe/engine/casestudyidevice.py:229
+#: exe/engine/ejercicioresueltofpdidevice.py:230
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1434,19 +1670,25 @@ msgstr "提供相關評語。"
 msgid "Purpose"
 msgstr "用途"
 
-#: exe/engine/clozeidevice.py:275
+#: exe/engine/clozelangfpdidevice.py:279 exe/engine/clozeidevice.py:275
+#: exe/engine/clozefpdidevice.py:275
 msgid "Put instructions for learners here"
 msgstr "在此輸入完成說明"
 
-#: exe/engine/multiselectidevice.py:80 exe/engine/multichoiceidevice.py:132
-#: exe/engine/field.py:3151 exe/engine/field.py:3216
+#: exe/engine/multichoiceidevice.py:132
+#: exe/engine/seleccionmultiplefpdidevice.py:81
+#: exe/engine/eleccionmultiplefpdidevice.py:133
+#: exe/engine/multiselectidevice.py:80 exe/engine/field.py:3426
+#: exe/engine/field.py:3491
 #, fuzzy
 msgid "Question"
 msgstr "問題:"
 
+#: exe/engine/field.py:3580 exe/engine/field.py:3661
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
-#: exe/engine/field.py:3305 exe/engine/field.py:3386 exe/webui/element.py:1730
+#: exe/engine/verdaderofalsofpdidevice.py:46
+#: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2038
 msgid "Question:"
 msgstr "問題:"
 
@@ -1459,28 +1701,35 @@ msgstr "提交"
 msgid "RSS"
 msgstr ""
 
-#: exe/engine/clozeidevice.py:276
+#: exe/engine/clozelangfpdidevice.py:280 exe/engine/clozeidevice.py:276
+#: exe/engine/clozefpdidevice.py:276
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "檢視以下段落並填空"
 
-#: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
+#: exe/engine/truefalseidevice.py:395 exe/engine/clozeidevice.py:120
+#: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "檢視以下段落並填空。"
 
-#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:271
-#: exe/engine/genericidevice.py:304
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:280
+#: exe/engine/idevicestore.py:316
 msgid "Reading Activity"
 msgstr "檢視作用中"
 
-#: exe/engine/idevicestore.py:379 exe/engine/genericidevice.py:302
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:424
 msgid "Reading Activity 0.11"
 msgstr "檢視作用中 0.11"
+
+#: exe/webui/recomendacionfpdblock.py:64
+msgid "Recomendación"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
 msgstr "問題與回答"
 
-#: exe/engine/reflectionidevice.py:48
+#: exe/engine/reflectionfpdmodifidevice.py:48
+#: exe/engine/reflectionfpdidevice.py:48 exe/engine/reflectionidevice.py:48
 msgid ""
 "Reflection is a teaching method often used to \n"
 "connect theory to practice. Reflection tasks often provide learners with an \n"
@@ -1490,33 +1739,47 @@ msgid ""
 "effective feedback tools."
 msgstr "立時回應是一種常用於洽詢理論和實踐的教學方式。立時回應常給學生在提交一份學術工作前提供一個觀察及對所觀察的事物回應的機會。"
 
-#: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
+#: exe/engine/reflectionfpdmodifidevice.py:63
+#: exe/engine/reflectionfpdmodifidevice.py:199
+#: exe/engine/reflectionfpdidevice.py:63
+#: exe/engine/reflectionfpdidevice.py:199 exe/engine/reflectionidevice.py:62
+#: exe/engine/reflectionidevice.py:197
 msgid "Reflective question:"
 msgstr "問題:"
 
-#: exe/webui/element.py:1201
+#: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
+#, fuzzy
+msgid "Reflexiona"
+msgstr "問題與回答"
+
+#: exe/webui/element.py:1221 exe/webui/element.py:1489
 msgid "Restart"
 msgstr "重新開始"
 
-#: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:108
-#: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
+#: exe/webui/clozelangfpdblock.py:176 exe/webui/element.py:2155
+#: exe/webui/reflectionfpdblock.py:143 exe/webui/clozefpdblock.py:175
+msgid "Retroalimentacion"
+msgstr ""
+
+#: exe/webui/imagemagnifierblock.py:108 exe/webui/editorelement.py:224
+#: exe/webui/flashmovieblock.py:82 exe/webui/multimediablock.py:86
+#: exe/webui/flashwithtextblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "右"
 
-#: exe/xului/mainpage.py:310
+#: exe/xului/mainpage.py:316
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:314 exe/xului/mainpage.py:620
-#: exe/xului/mainpage.py:911
+#: exe/xului/mainpage.py:320 exe/xului/mainpage.py:626
+#: exe/xului/mainpage.py:966
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:446 exe/engine/package.py:453
+#: exe/engine/package.py:447 exe/engine/package.py:454
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1539,7 +1802,7 @@ msgstr "儲存"
 msgid "Section"
 msgstr "區段"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1293
+#: exe/webui/element.py:1581 exe/webui/editorelement.py:268
 msgid "Select Flash Object"
 msgstr "選擇flash文件"
 
@@ -1556,34 +1819,34 @@ msgstr "選擇語言"
 msgid "Select MP3 file"
 msgstr "選擇文件"
 
-#: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:797
+#: exe/webui/element.py:817 exe/webui/editorelement.py:351
+#: exe/webui/attachmentblock.py:104
 msgid "Select a file"
 msgstr "選擇文件"
 
-#: exe/webui/element.py:1375
+#: exe/webui/element.py:1663
 msgid "Select a flash video"
 msgstr "選擇flash電影文件"
 
-#: exe/webui/element.py:1488
+#: exe/webui/element.py:1776
 #, fuzzy
 msgid "Select a font size: "
 msgstr "選擇文件"
 
-#: exe/webui/element.py:585
+#: exe/webui/element.py:605
 #, fuzzy
 msgid "Select an MP3"
 msgstr "選擇文件"
 
-#: exe/webui/element.py:498
+#: exe/webui/element.py:518
 msgid "Select an image"
 msgstr "選擇圖片"
 
-#: exe/webui/element.py:909
+#: exe/webui/element.py:929
 msgid "Select an image (JPG file)"
 msgstr "選擇圖片 (JPG 文件)"
 
-#: exe/engine/field.py:3314
+#: exe/engine/field.py:3589
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1601,6 +1864,7 @@ msgid ""
 msgstr "選擇適當的維基語言版本來搜尋，並輸入關鍵詞。"
 
 #: exe/engine/multichoiceidevice.py:104
+#: exe/engine/eleccionmultiplefpdidevice.py:105
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -1634,20 +1898,20 @@ msgstr "設定已儲存"
 msgid "Show %s Image"
 msgstr "顯示 %s 圖像"
 
-#: exe/webui/element.py:1208
+#: exe/webui/element.py:1228 exe/webui/element.py:1496
 msgid "Show Answers"
 msgstr "顯示 答案"
 
-#: exe/webui/questionelement.py:130 exe/webui/element.py:1807
+#: exe/webui/element.py:2126 exe/webui/questionelement.py:130
 #, fuzzy
 msgid "Show Feedback"
 msgstr "顯示/隱藏 評語"
 
-#: exe/webui/element.py:1192
+#: exe/webui/element.py:1212 exe/webui/element.py:1480
 msgid "Show/Clear Answers"
 msgstr "顯示/清除 答案"
 
-#: exe/webui/element.py:1187
+#: exe/webui/element.py:1207 exe/webui/element.py:1475
 msgid "Show/Hide Feedback"
 msgstr "顯示/隱藏 評語"
 
@@ -1667,12 +1931,19 @@ msgstr "斯洛法尼亞文Wikipedia 文章"
 msgid "Small"
 msgstr "小"
 
-#: exe/webui/wikipediablock.py:157 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:115 exe/webui/editorpane.py:336
+#: exe/webui/clozelangfpdblock.py:173 exe/webui/element.py:2150
+#: exe/webui/element.py:2544 exe/webui/questionelement.py:152
+#: exe/webui/clozefpdblock.py:172
+#, fuzzy
+msgid "Solucion"
+msgstr "區段"
+
+#: exe/webui/rssblock.py:115 exe/webui/multimediablock.py:101
+#: exe/webui/editorpane.py:336 exe/webui/wikipediablock.py:157
 msgid "Some emphasis"
 msgstr "一般強調"
 
-#: exe/application.py:281 exe/xului/mainpage.py:1111
+#: exe/application.py:285 exe/xului/mainpage.py:1183
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 
@@ -1681,7 +1952,7 @@ msgstr "對不起，檔案格式錯誤"
 msgid "Sorry, wrong file format."
 msgstr "對不起，檔案格式錯誤"
 
-#: exe/xului/mainpage.py:1109
+#: exe/xului/mainpage.py:1181
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1695,14 +1966,17 @@ msgid "Spanish Wikipedia Article"
 msgstr "西班牙文Wikipedia 文章"
 
 #: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
+#: exe/engine/ejercicioresueltofpdidevice.py:221
+#: exe/engine/ejercicioresueltofpdidevice.py:408
 msgid "Story:"
 msgstr "事件:"
 
-#: exe/webui/element.py:1091
+#: exe/webui/element.py:1111 exe/webui/element.py:1373
 msgid "Strict Marking?"
 msgstr "嚴格評分?"
 
-#: exe/webui/element.py:1196 exe/webui/editorpane.py:424
+#: exe/webui/element.py:1216 exe/webui/element.py:1484
+#: exe/webui/editorpane.py:424
 msgid "Submit"
 msgstr "提交"
 
@@ -1714,7 +1988,7 @@ msgstr "提交答案"
 msgid "Swedish Wikipedia Article"
 msgstr "瑞典文Wikipedia 文章"
 
-#: exe/engine/idevicestore.py:387
+#: exe/engine/idevicestore.py:432
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
 
@@ -1730,6 +2004,62 @@ msgstr "多列文字"
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "單列文字"
+
+#: exe/engine/casopracticofpdidevice.py:37
+#: exe/engine/casopracticofpdidevice.py:135
+msgid "Texto Caso pr&aacute;ctico:"
+msgstr ""
+
+#: exe/engine/citasparapensarfpdidevice.py:37
+msgid "Texto Citas para pensar:"
+msgstr ""
+
+#: exe/engine/correccionfpdidevice.py:36
+msgid "Texto Correci&oacute;n:"
+msgstr ""
+
+#: exe/engine/debesconocerfpdidevice.py:37
+#: exe/engine/debesconocerfpdidevice.py:136
+msgid "Texto Debes conocer:"
+msgstr ""
+
+#: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
+#: exe/engine/destacadofpdidevice.py:134
+msgid "Texto Destacado:"
+msgstr ""
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:37
+msgid "Texto Orientaciones alumnado"
+msgstr ""
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:135
+msgid "Texto Orientaciones alumnado:"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:37
+msgid "Texto Orientaciones tutor&iacute;a"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:136
+msgid "Texto Orientaciones tutor&iacute;a:"
+msgstr ""
+
+#: exe/engine/parasabermasfpdidevice.py:136
+msgid "Texto Para sabe m&aacute;s"
+msgstr ""
+
+#: exe/engine/parasabermasfpdidevice.py:37
+msgid "Texto Para saber m&aacute;s"
+msgstr ""
+
+#: exe/engine/recomendacionfpdidevice.py:37
+#: exe/engine/recomendacionfpdidevice.py:136
+msgid "Texto de la recomendaci&oacute;n:"
+msgstr ""
+
+#: exe/engine/citasparapensarfpdidevice.py:136
+msgid "Texto para pensar:"
+msgstr ""
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
@@ -1770,7 +2100,7 @@ msgid ""
 "magnifying glass over the image allows larger detail to be studied."
 msgstr "圖像放大鏡是放大圖像的工具，移動放大鏡使用者可放大圖像，研究細節。"
 
-#: exe/engine/freetextidevice.py:40
+#: exe/engine/freetextidevice.py:40 exe/engine/freetextfpdidevice.py:40
 msgid ""
 "The majority of a learning resource will be \n"
 "establishing context, delivering instructions and providing general information.\n"
@@ -1814,7 +2144,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr "這個 iDevice只支援Flash Video文件(.FLV)格式，而非其他視訊文件格式。"
 
-#: exe/engine/freetextidevice.py:121
+#: exe/engine/freetextidevice.py:130 exe/engine/freetextfpdidevice.py:121
 msgid "This is a free text field general learning content can be entered."
 msgstr "這是一個自由文字欄欄位，可輸入一般的課程內容。"
 
@@ -1856,7 +2186,8 @@ msgstr "要指明正確答案，點擊正確選項旁的點選按鈕。"
 msgid "Topic"
 msgstr "課題"
 
-#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:189
+#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
+#: exe/webui/truefalseelement.py:275
 msgid "True"
 msgstr "對"
 
@@ -1865,6 +2196,7 @@ msgid "True-False Question"
 msgstr "是非題"
 
 #: exe/engine/truefalseidevice.py:146
+#: exe/engine/verdaderofalsofpdidevice.py:146
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -1872,11 +2204,12 @@ msgid ""
 "responses."
 msgstr "是非題提供一個陳述句，讓學生判斷其陳述是否正確。"
 
-#: exe/engine/field.py:2971
+#: exe/engine/field.py:3246
 msgid "Type a discussion topic here."
 msgstr "輸入討論主題:"
 
 #: exe/engine/multichoiceidevice.py:109
+#: exe/engine/eleccionmultiplefpdidevice.py:110
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -1886,6 +2219,7 @@ msgid ""
 msgstr "輸入評語，可讓學生在點選次項時看見。如果您不輸入，eXe將會自動提供以下評語:\"回答正確 \"給正確選項; \"回答錯誤 \"給其他選項。"
 
 #: exe/engine/truefalseidevice.py:373
+#: exe/engine/verdaderofalsofpdidevice.py:375
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -1894,17 +2228,18 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "輸入評語，可讓學生在點選次項時看見。如果您不輸入，eXe將會自動提供以下評語:\"回答正確 \"給正確選項; \"回答錯誤 \"給其他選項。"
 
-#: exe/engine/field.py:3317
+#: exe/engine/field.py:3592
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
 
-#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
+#: exe/engine/idevicestore.py:384 exe/engine/idevicestore.py:490
 msgid "Type the learning objectives for this resource."
 msgstr "學習此課的目的"
 
 #: exe/engine/truefalseidevice.py:154
+#: exe/engine/verdaderofalsofpdidevice.py:155
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -1937,18 +2272,27 @@ msgstr ""
 msgid "Unit"
 msgstr "單元"
 
-#: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
-#: exe/engine/reflectionidevice.py:47 exe/engine/multiselectidevice.py:44
-#: exe/engine/idevicestore.py:273 exe/engine/idevicestore.py:331
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:381
-#: exe/engine/idevicestore.py:437 exe/engine/idevicestore.py:465
-#: exe/engine/imagemagnifieridevice.py:42 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:61
-#: exe/engine/clozeidevice.py:47 exe/engine/truefalseidevice.py:145
-#: exe/engine/appletidevice.py:54 exe/engine/wikipediaidevice.py:53
-#: exe/engine/externalurlidevice.py:39 exe/engine/freetextidevice.py:39
-#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:245
-#: exe/engine/casestudyidevice.py:198 exe/idevices/exampleidevice.py:40
+#: exe/engine/casestudyidevice.py:198 exe/engine/multichoiceidevice.py:61
+#: exe/engine/freetextidevice.py:39
+#: exe/engine/seleccionmultiplefpdidevice.py:44
+#: exe/engine/clozelangfpdidevice.py:47
+#: exe/engine/eleccionmultiplefpdidevice.py:61
+#: exe/engine/imagewithtextidevice.py:44 exe/engine/multiselectidevice.py:44
+#: exe/engine/externalurlidevice.py:39
+#: exe/engine/ejercicioresueltofpdidevice.py:198
+#: exe/engine/truefalseidevice.py:145 exe/engine/clozeidevice.py:47
+#: exe/engine/clozefpdidevice.py:47 exe/engine/reflectionfpdmodifidevice.py:47
+#: exe/engine/wikipediaidevice.py:53 exe/engine/freetextfpdidevice.py:39
+#: exe/engine/flashwithtextidevice.py:44 exe/engine/reflectionfpdidevice.py:47
+#: exe/engine/attachmentidevice.py:44 exe/engine/idevicestore.py:318
+#: exe/engine/idevicestore.py:376 exe/engine/idevicestore.py:404
+#: exe/engine/idevicestore.py:426 exe/engine/idevicestore.py:482
+#: exe/engine/idevicestore.py:510 exe/engine/mathidevice.py:42
+#: exe/engine/quiztestidevice.py:245 exe/engine/flashmovieidevice.py:40
+#: exe/engine/appletidevice.py:54 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/reflectionidevice.py:47
+#: exe/engine/verdaderofalsofpdidevice.py:145
+#: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "奧克蘭大學"
 
@@ -1965,7 +2309,7 @@ msgstr ""
 msgid "Upload"
 msgstr "上傳"
 
-#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:431
+#: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -1981,7 +2325,7 @@ msgstr "用此可展示許多圖片。"
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
 msgstr "描述這個iDevice的教學用途。"
 
-#: exe/engine/freetextidevice.py:46
+#: exe/engine/freetextidevice.py:46 exe/engine/freetextfpdidevice.py:46
 msgid ""
 "Use this field to enter text. This \n"
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
@@ -1992,11 +2336,14 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:467
 msgid "What to read"
 msgstr "檢視資料"
 
-#: exe/engine/multiselectidevice.py:58 exe/engine/multichoiceidevice.py:75
+#: exe/engine/multichoiceidevice.py:75
+#: exe/engine/seleccionmultiplefpdidevice.py:58
+#: exe/engine/eleccionmultiplefpdidevice.py:75
+#: exe/engine/multiselectidevice.py:58
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -2040,7 +2387,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1986
+#: exe/webui/element.py:2338 exe/webui/element.py:2365
 msgid "Wrong"
 msgstr "錯誤"
 
@@ -2057,16 +2404,16 @@ msgstr "您新的iDevice將以此名稱列在iDevice欄中。這是一個必須�
 msgid "article "
 msgstr "文章"
 
-#: exe/webui/element.py:515 exe/webui/element.py:931
+#: exe/webui/element.py:535 exe/webui/element.py:951
 msgid "blank for original size"
 msgstr "空白為原來的大小尺寸"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
+#: exe/export/scormexport.py:295 exe/export/imsexport.py:210
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:85 exe/webui/common.py:70
-#: exe/webui/editorpage.py:220
+#: exe/webui/editorpage.py:220 exe/webui/common.py:70
+#: exe/webui/preferencespage.py:85
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 編輯器"
 
@@ -2083,7 +2430,7 @@ msgstr "file %s has no parentNode"
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:130
+#: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:131
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s has no package"
@@ -2092,7 +2439,7 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 編輯器"
@@ -2116,7 +2463,7 @@ msgstr "keycode"
 msgid "label"
 msgstr "標籤"
 
-#: exe/webui/element.py:1485
+#: exe/webui/element.py:1773
 #, fuzzy
 msgid "newline"
 msgstr "國際語"
@@ -2125,7 +2472,7 @@ msgstr "國際語"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 
-#: exe/webui/element.py:1484
+#: exe/webui/element.py:1772
 #, fuzzy
 msgid "text"
 msgstr "下一頁"
@@ -2139,9 +2486,9 @@ msgid "tooltiptext"
 msgstr ""
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
-#: class="dialog" autostretch="always" title="eXeex - About" orient="vertical"
-#: onload="sizeToContent()"
-#: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+#: onload="sizeToContent()" orient="vertical"
+#: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+#: title="eXeex - About" autostretch="always" class="dialog">
 msgid "eXeex - About"
 msgstr ""
 
@@ -2157,11 +2504,10 @@ msgstr "Dublin Core 後設資料"
 msgid "SCORM 1.2 Options"
 msgstr "SCORM 1.2 選項"
 
-#: exe/xului/templates/mainpage.xul:<window
+#: exe/xului/templates/mainpage.xul:<window onload="initWindow()" height="480"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-#: title="exelearning" width="640" height="480" id="mainWindow"
-#: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
-#: xmlns:n="http://nevow.com/ns/nevow/0.1">
+#: title="exelearning" width="640" xmlns:html="http://www.w3.org/1999/xhtml"
+#: id="mainWindow" xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
 msgstr ""
 
@@ -2262,6 +2608,14 @@ msgstr "後設資料"
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
+
+#: exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: label="Apply"> exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+msgid "Apply"
+msgstr "套用"
 
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
@@ -2704,8 +3058,9 @@ msgstr "格式:"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="export-menu" accesskey="e" label="Export">
-msgid "label=\"Export\" accesskey=\"e\""
+#: id="import-menu" accesskey="i" label="Import">
+#, fuzzy
+msgid "label=\"Import\" accesskey=\"i\""
 msgstr "label=\"匯出\" accesskey=\"e\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
@@ -2720,15 +3075,15 @@ msgstr ""
 msgid "Select Format"
 msgstr "選擇格式"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
-#: label="Common Cartridge">
-msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"通用匣\" accesskey=\"p\""
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="importPackage('html')" accesskey="h" label="HTML Course">
+#, fuzzy
+msgid "label=\"HTML Course\" accesskey=\"h\""
+msgstr "label=\"輔助\" accesskey=\"h\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
@@ -2742,14 +3097,15 @@ msgstr ""
 msgid "XHTML"
 msgstr "XHTML"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="mergeXliffPackage(0)" accesskey="x" label="XLIFF file">
+#, fuzzy
+msgid "label=\"XLIFF file\" accesskey=\"x\""
+msgstr "label=\"檔案\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
@@ -2762,15 +3118,16 @@ msgstr ""
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
-#: Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS 內容包裹\" accesskey=\"i\""
+#: oncommand="mergeXliffPackage(1)" accesskey="f" label="XLIFF file (from
+#: source)">
+#, fuzzy
+msgid "label=\"XLIFF file (from source)\" accesskey=\"f\""
+msgstr "label=\"檔案\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
@@ -2787,11 +3144,14 @@ msgstr ""
 msgid "IMS Content Package 1.1.3"
 msgstr "IMS Content Package 1.1.3"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
-msgid "Web Site"
-msgstr "網頁"
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="export-menu" accesskey="e" label="Export">
+msgid "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"匯出\" accesskey=\"e\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
@@ -2804,10 +3164,15 @@ msgstr ""
 msgid "An unambiguous reference to the resource within a given context."
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
-msgid "Self-contained Folder"
-msgstr "資料夾"
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
+#: label="Common Cartridge">
+msgid "label=\"Common Cartridge\" accesskey=\"c\""
+msgstr "label=\"通用匣\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2820,10 +3185,14 @@ msgstr ""
 msgid "Identifier:"
 msgstr "識別碼:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip File">
-msgid "Zip File"
-msgstr "Zip檔案"
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2841,10 +3210,10 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
-#: Page">
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"單一網頁\" accesskey=\"p\""
+#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
+#: Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS 內容包裹\" accesskey=\"i\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
@@ -2858,15 +3227,11 @@ msgstr ""
 msgid "Source:"
 msgstr "來源:"
 
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
-#: File">
-msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"文字檔案\" accesskey=\"f\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: Site" id="dcmiWebSite"
+msgid "Web Site"
+msgstr "網頁"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
@@ -2881,14 +3246,10 @@ msgstr "分類法"
 msgid "Select a language."
 msgstr "選擇語言"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
-msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"iPod 註記\" accesskey=\"n\""
+#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
+msgid "Self-contained Folder"
+msgstr "資料夾"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2903,15 +3264,10 @@ msgstr ""
 msgid "Language:"
 msgstr "語言:"
 
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
-#, fuzzy
-msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"合併\" accesskey=\"e\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile','','')" label="Zip File">
+msgid "Zip File"
+msgstr "Zip檔案"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2929,9 +3285,10 @@ msgstr "阿布哈西亞語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"插入教材\" accesskey=\"i\""
+#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
+#: Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"單一網頁\" accesskey=\"p\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -2944,14 +3301,15 @@ msgstr ""
 msgid "Afar "
 msgstr "阿法爾語"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"解壓教材\" accesskey=\"i\""
+#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
+#: File">
+msgid "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"文字檔案\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -2969,9 +3327,9 @@ msgstr "南非荷蘭語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"離開\" accesskey=\"a\""
+#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
+msgid "label=\"iPod Notes\" accesskey=\"n\""
+msgstr "label=\"iPod 註記\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -2989,10 +3347,11 @@ msgstr "阿爾巴尼亞語"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"工具\" accesskey=\"t\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportXliffPackage('0', '', '')" accesskey="x" label="XLIFF">
+#, fuzzy
+msgid "label=\"XLIFF\" accesskey=\"x\""
+msgstr "label=\"檔案\" accesskey=\"f\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -3010,9 +3369,11 @@ msgstr "阿比西尼亞語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "使用偏好"
+#: oncommand="exportXliffPackage('1', '', '')" accesskey="t" label="XLIFF
+#: (source also in target)">
+#, fuzzy
+msgid "label=\"XLIFF (source also in target)\" accesskey=\"t\""
+msgstr "label=\"插入教材\" accesskey=\"i\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -3027,23 +3388,15 @@ msgstr "更新樹狀目錄"
 msgid "Arabic "
 msgstr "阿拉伯語"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh Display">
-msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"更新顯示\" accesskey=\"r\""
-
-#: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-msgid "Apply"
-msgstr "套用"
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
+#, fuzzy
+msgid "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"合併\" accesskey=\"e\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
@@ -3051,28 +3404,28 @@ msgstr "套用"
 msgid "Armenian "
 msgstr "亞美尼亞語"
 
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"頁面風格\" accesskey=\"s\""
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"插入教材\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
 msgid "Assamese "
 msgstr "阿薩姆語"
 
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"輔助\" accesskey=\"h\""
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"解壓教材\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -3084,26 +3437,23 @@ msgstr "阿維斯陀語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
-msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"線上手冊\" accesskey=\"o\""
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"離開\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
 msgid "Aymara "
 msgstr "艾馬拉語"
 
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
-#: accesskey="m" label="eXe Manual">
-#, fuzzy
-msgid "label=\"eXe Manual\" accesskey=\"m\""
-msgstr "label=\"線上手冊\" accesskey=\"o\""
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"工具\" accesskey=\"t\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
@@ -3116,14 +3466,102 @@ msgstr "亞塞拜然語"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
-msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"版本說明\" accesskey=\"n\""
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "使用偏好"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
 msgid "Bashkir "
 msgstr "巴什基爾語"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh Display">
+msgid "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"更新顯示\" accesskey=\"r\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
+#: label="Basque ">
+msgid "Basque "
+msgstr "巴斯克語"
+
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"頁面風格\" accesskey=\"s\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: label="Bengali; Bangla ">
+msgid "Bengali; Bangla "
+msgstr "孟加拉語"
+
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: accesskey="h" label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"輔助\" accesskey=\"h\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "Bihari "
+msgstr "比哈里語"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
+#, fuzzy
+msgid "label=\"eXe Tutorial\" accesskey=\"u\""
+msgstr "label=\"線上手冊\" accesskey=\"o\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "Bislama "
+msgstr "比斯拉馬語"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
+#: accesskey="m" label="eXe Manual">
+#, fuzzy
+msgid "label=\"eXe Manual\" accesskey=\"m\""
+msgstr "label=\"線上手冊\" accesskey=\"o\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: label="Bosnian ">
+msgid "Bosnian "
+msgstr "波西尼亞語"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
+msgid "label=\"Release Notes\" accesskey=\"n\""
+msgstr "label=\"版本說明\" accesskey=\"n\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr "不列塔尼語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -3136,10 +3574,10 @@ msgstr "巴什基爾語"
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
 msgstr "label=\"eXe 聊天室\" accesskey=\"w\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
-msgid "Basque "
-msgstr "巴斯克語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "白俄語"
 
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
@@ -3152,10 +3590,11 @@ msgstr "巴斯克語"
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"報告問題\" accesskey=\"R\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
-msgid "Bengali; Bangla "
-msgstr "孟加拉語"
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "保加利亞語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -3167,10 +3606,10 @@ msgstr "孟加拉語"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"eXe 聊天室\" accesskey=\"w\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
-msgid "Bihari "
-msgstr "比哈里語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "緬甸語"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -3181,10 +3620,11 @@ msgstr "比哈里語"
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"關於 eXe\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
-msgid "Bislama "
-msgstr "比斯拉馬語"
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "加泰羅尼亞語"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
@@ -3195,10 +3635,10 @@ msgstr "比斯拉馬語"
 msgid "debugInfo"
 msgstr "debugInfo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
-msgid "Bosnian "
-msgstr "波西尼亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr "查莫羅語"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
@@ -3209,10 +3649,10 @@ msgstr "波西尼亞語"
 msgid "Add Page"
 msgstr "增加頁面"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
-msgstr "不列塔尼語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "車臣語"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
@@ -3223,10 +3663,10 @@ msgstr "不列塔尼語"
 msgid "Rename"
 msgstr "重新命名"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "白俄語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: label="Chinese ">
+msgid "Chinese "
+msgstr "中文"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
@@ -3237,11 +3677,10 @@ msgstr "白俄語"
 msgid "outlinePane"
 msgstr "目錄欄"
 
-# exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "保加利亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr "教會斯拉夫語"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="promote"
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
@@ -3249,10 +3688,10 @@ msgstr "保加利亞語"
 msgid "Promote node up in hierarchy"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "緬甸語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
+msgstr "楚瓦什語"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="demote"
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
@@ -3260,11 +3699,10 @@ msgstr "緬甸語"
 msgid "Demote node down in hierarchy"
 msgstr ""
 
-# exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "加泰羅尼亞語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
+msgstr "科尼什語"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
@@ -3272,10 +3710,10 @@ msgstr "加泰羅尼亞語"
 msgid "Move node up"
 msgstr "上移"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr "查莫羅語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: label="Corsican ">
+msgid "Corsican "
+msgstr "科西嘉語"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
@@ -3284,20 +3722,20 @@ msgstr "查莫羅語"
 msgid "Move node down"
 msgstr "下移"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "車臣語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: label="Croatian ">
+msgid "Croatian "
+msgstr "克羅埃西亞語"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
 msgstr "iDevice"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
-msgid "Chinese "
-msgstr "中文"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
+#: label="Czech ">
+msgid "Czech "
+msgstr "捷克語"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
@@ -3308,10 +3746,11 @@ msgstr "中文"
 msgid "iDevicePane"
 msgstr "iDevice欄"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
-msgstr "教會斯拉夫語"
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
+#: label="Danish ">
+msgid "Danish "
+msgstr "丹麥語"
 
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
@@ -3322,10 +3761,10 @@ msgstr "教會斯拉夫語"
 msgid "Authoring"
 msgstr "製作"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
-msgstr "楚瓦什語"
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
+#: label="Dzongkha; Bhutani ">
+msgid "Dzongkha; Bhutani "
+msgstr "宗卡語"
 
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
@@ -3335,37 +3774,6 @@ msgstr "楚瓦什語"
 #: label="Properties">
 msgid "Properties"
 msgstr "屬性"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr "科尼什語"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
-msgid "Corsican "
-msgstr "科西嘉語"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
-msgid "Croatian "
-msgstr "克羅埃西亞語"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
-#: label="Czech ">
-msgid "Czech "
-msgstr "捷克語"
-
-# exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
-#: label="Danish ">
-msgid "Danish "
-msgstr "丹麥語"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
-#: label="Dzongkha; Bhutani ">
-msgid "Dzongkha; Bhutani "
-msgstr "宗卡語"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
