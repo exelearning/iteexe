@@ -56,16 +56,16 @@
                     <menuseparator/>
 		    <menuitem n:render="translate" label="Print" key="file-print-key" accesskey="p" oncommand="filePrint()"/>
                     <menuseparator/>
-                <menu n:render="translate" id="import-menu" label="Importar" accesskey="i">
+                <menu n:render="translate" id="import-menu" label="Import" accesskey="i">
                   <menupopup id="import-popup">
-                    <menuitem label="Curso HTML" accesskey="h" oncommand="importPackage('html')"/>
-                      </menupopup>
-                    </menu>
+                    <menuitem n:render="translate" label="HTML Course" accesskey="h" oncommand="importPackage('html')"/>
+                    <menuitem n:render="translate" label="XLIFF file" accesskey="x" oncommand="mergeXliffPackage(0)"/>
+                    <menuitem n:render="translate" label="XLIFF file (from source)" accesskey="f" oncommand="mergeXliffPackage(1)"/>
+                  </menupopup>
+                </menu>
                 <menuseparator/>
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem n:render="translate" label="XLIFF" accesskey="x" oncommand="exportXliffPackage('0', '', '')"/>
-                    <menuitem n:render="translate" label="XLIFF (source also in target)" accesskey="t" oncommand="exportXliffPackage('1', '', '')"/>
                     <menuitem label="Common Cartridge" accesskey="c" oncommand="exportPackage('commoncartridge','','')"/>
                     <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm','','')"/>
 		    <!--<menuitem label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004','','')"/>-->
@@ -79,14 +79,14 @@
                      <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage','','')"/>
                      <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile','','')"/>
 		     <menuitem n:render="translate" label="iPod Notes" accesskey="n" oncommand="exportPackage('ipod', '', '')"/>
+                    <menuitem n:render="translate" label="XLIFF" accesskey="x" oncommand="exportXliffPackage('0', '', '')"/>
+                    <menuitem n:render="translate" label="XLIFF (source also in target)" accesskey="t" oncommand="exportXliffPackage('1', '', '')"/>
                   </menupopup>
                 </menu>
                 <menu n:render="translate" id="merging-menu" label="Merging" accesskey="m">
                   <menupopup id="merging-popup">
                     <menuitem n:render="translate" label="Insert Package" accesskey="i" oncommand="insertPackage()"/>
                     <menuitem n:render="translate" label="Extract Package" accesskey="E" oncommand="extractPackage()"/>
-                    <menuitem n:render="translate" label="Merge XLIFF file" accesskey="x" oncommand="mergeXliffPackage(0)"/>
-                    <menuitem n:render="translate" label="Merge XLIFF file (from source)" accesskey="f" oncommand="mergeXliffPackage(1)"/>
                   </menupopup>
                 </menu>
                 <menuseparator/>
