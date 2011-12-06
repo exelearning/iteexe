@@ -7,7 +7,10 @@ Versión 1.04.1.3605ite6beta1 (2011-12-05)
     plantillas
   * Página de inicio al mismo nivel que las demás al exportar como sitio web
   * Primeras plantillas con navegación horizontal y menús desplegables
-  * Corrección i18n EN + Traducción al euskera
+  * Corrección i18n EN de plugin pastecode de TinyMCE
+
+  [José Miguel Andonegui]
+  * Corrección i18n euskera de plugin pastecode de TinyMCE
 
   [Mikel Larreategui]
   * Reemplazo de todas las ocurrencias de & por &amp; al exportar a XLIFF
