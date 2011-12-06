@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-18 14:01+1300\n"
+"POT-Creation-Date: 2011-12-06 07:56+0100\n"
 "PO-Revision-Date: 2011-10-10 16:33+0100\n"
 "Last-Translator: José Ramón Jiménez Reyes <jrjimenezr@gmail.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 0.10.1\n"
 "X-EXE-Language: Basque\n"
 "X-Poedit-Language: Basque\n"
 "X-Poedit-Bookmarks: -1,-1,24,-1,-1,-1,-1,-1,-1,-1\n"
 
-#: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:189
+#: exe/engine/appletidevice.py:68 exe/engine/appletidevice.py:190
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -33,9 +33,9 @@ msgstr ""
 "<p>Adib. Geogebra appleten kasuan, aukeratu geogebra eta ondoren gehitu Geogebran\n"
 "sortu duzun .ggb artxiboa.</p>"
 
-#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:849
-#: exe/xului/mainpage.py:978 exe/xului/mainpage.py:1034
-#: exe/xului/mainpage.py:1055
+#: exe/xului/mainpage.py:289 exe/xului/mainpage.py:904
+#: exe/xului/mainpage.py:1033 exe/xului/mainpage.py:1106
+#: exe/xului/mainpage.py:1127
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -58,12 +58,13 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Ondokora mugitu---"
 
-#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:723
-#: exe/xului/mainpage.py:841
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:762
+#: exe/xului/mainpage.py:896
 msgid ". Please use ASCII names."
 msgstr ". Mesedez, ASCII izenak erabili."
 
-#: exe/engine/clozeidevice.py:60
+#: exe/engine/clozelangfpdidevice.py:60 exe/engine/clozeidevice.py:60
+#: exe/engine/clozefpdidevice.py:60
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
 msgstr "<dl>  <dt>Zure asmoa oinarrizko kontzeptuak edo irakurgaia zenbateraino ulertu dituzten frogatzea bada </dt>  <dd>    <p>  Idatzi kontzeptuaren edo irakurgaiaren laburpena, ondo ulertu ote den frogatzeko beste besteko luzeraz, baina luzeegia izan gabe, ez dadin nekagarria izan. Aski da orrialde bat baino gutxiago idaztea. Ikasle gazteentzat edo hasiberrientzat, gainera, hobe are laburragoa izatea.    </p>    <p>Testuan, nabarmendu kontzeptuak ulertzeko funtsezkoak diren hitzak; bereziki, aditzak, izenak eta aditzondoak. Hautatu erantzun argi bakarra duten alternatibak.    </p>  </dd>  <dt>Zure asmoa hiztegia zenbateraino ulertu duten frogatzea bada  </dt>  <dd><p>Idatzi hiztegiko terminoak jasotzen dituen testu bat. Zaindu testuaren koherentzia, kohesioa eta luzera. Nabarmendu testuko funtsezko hitzak. Hautatu erantzun argi bakarra duten alternatibak.</p>  </dd>  <dt>Zure asmoa hitzen konposaketa/gramatika frogatzea bada:  </dt>  <dd>  <p>Idatzi funtsezko konposaketak dituen testu bat. Zaindu testuaren koherentzia, kohesioa eta luzera. Gogoan izan helburua ez dela hiztegia ezagutzea; beraz, ikasleentzat aski ezaguna beharko du izan hitzen esanahiak.  </p>  <p>Nabarmendu testuko funtsezko hitzak. Proposatu erro bera baina esanahi ezberdina duten alternatibak. Egokia litzateke testua/ariketa lankide bati irakurtzeko ematea, sorpresarik egon ez dadin!  </p>"
 
@@ -108,11 +109,13 @@ msgstr ""
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Esleitu etiketa bat atxikitako artxiboari. Lagungarria da zer artxibo mota den adierazteko (pdf, ppt, etab.)</p><p>Komenigarria da neurria zehaztea ere, webgune batera esportatzean ikasleek deskargatzeko zenbat denbora beharko duten jakin dezaten.</p><p>Adibidez:</p><code>Salmenten Forecast.doc (500kb)</code></p>"
 
-#: exe/engine/clozeidevice.py:48
+#: exe/engine/clozelangfpdidevice.py:48 exe/engine/clozeidevice.py:48
+#: exe/engine/clozefpdidevice.py:48
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
 msgstr "<p>Hutsuneak betetzeko ariketetan, ikasleek testuan falta diren hitzak edo esaldiak idatzi beharko dituzte. Ariketa horiek hainbat helburu izaten dituzte:</p><ol><li>Ikastaroko oinarrizko kontzeptuak ezagutzen ote diren egiaztatzea (aurrekontrol, trebakuntza ariketa edo froga gehigarri gisa).</li><li>Irakurgaia zenbateraino ulertu den frogatzea.</li><li>Hiztegia zenbateraino ezagutzen den egiaztatzeko.</li><li>Hitz osaketa/gramatika ziurtatzeko. </li></ol>"
 
-#: exe/engine/clozeidevice.py:124
+#: exe/engine/clozelangfpdidevice.py:123 exe/engine/clozeidevice.py:124
+#: exe/engine/clozefpdidevice.py:123
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly into the \n"
@@ -124,15 +127,15 @@ msgstr ""
 "beharreko hitzak aukeratzeko, klikatu bi aldiz hitzaren gainean\n"
 "eta klikatu beheko Ezkutatu/Erakutsi hitza botoian.</p>"
 
-#: exe/engine/field.py:2725
+#: exe/engine/field.py:2762 exe/engine/field.py:2996
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Egiaztatu gabe utziz gero, idazketa errore gutxi batzuk onartuko dira. Egiaztatuta badago, idazketako edo maiuskula errore bakar bat onartuko da.</p><p><strong>Adibidez:</strong> Erantzun zuzena <code>Elefantea</code> bada, <code>elefantea</code> edo <code>Elifantea</code> <em>\"oso antzekoak\"</em> izango dira algoritmoarentzat, letra oker bakarra baitute, nahiz eta \"Maiuskulak egiaztatu\" gaituta egon.</p><p>Itzalita badago, goiko adibideko <code>e</code> minuskula ez da erroretzat joko eta <code>elifantea</code> ere onartu egingo da.</p><p>\"Zorroztasunez zuzendu\" eta \"Maiuskulak egiaztatu\" gaituta badaude, erantzun zuzen bakarra \"Elefantea\" izango da. \"Zorroztasunez zuzendu\" soilik badago gaituta, \"elefantea\" ere onartuko da.</p>\""
 
-#: exe/engine/field.py:2746
+#: exe/engine/field.py:2783 exe/engine/field.py:3017
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Aukera hau gaituta badago, maiuskulak eta minuskulak gaizki jarrita dituzten erantzunak okerrak izango dira.</p>"
 
-#: exe/engine/field.py:2751
+#: exe/engine/field.py:2788 exe/engine/field.py:3022
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -141,16 +144,20 @@ msgstr ""
 "<p>Aukera hau gaituta badago, hitzak ikasleak idazten dituen bitartean\n"
 "markatuko dira, eta ez ariketaren amaieran.</p>"
 
-#: exe/engine/field.py:3000
+#: exe/engine/field.py:3275
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Formula matematikoa sortzeko, aukeratu sinboloak beheko testu editoretik edota sartu LATEXa eskuz. LATEXa nola agertuko den aurreikusteko, erabili beheko &lt;Aurrebista&gt; botoia.</p>"
 
+#: exe/engine/field.py:3027
+msgid "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.</p>"
+msgstr ""
+
 # This is a comment
-#: exe/engine/idevicestore.py:279
+#: exe/engine/idevicestore.py:324
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Irakasleek ohar hauek gogoan izan beharko lituzkete iDevice hau erabiltzean: <ol><li>Pentsatu zenbat ekintza mota erabili nahi dituzuen bisualki edukian. Ez erabili jarduera mota edo sailkapen gehiegi, ikasleentzat nahasgarria izan baitaiteke. Askotan, nahikoa dira hiruzpalau mota.</li><li>Diseinu bisualaren ikuspuntutik, saiatu bi iDevice elkarren ondoan ez jartzen, tartean testurik ez dutela. Beharrezkoa izanez gero, iDevice bakarrean sartu bi galdera edo ekintza.</li><li>Prestatzen dituzun jarduerei esker ikasleek lortutako onurak handiagoa izan behar du ekintza gauzatzeko emandako denborak eta ahaleginak baino. </li></ol>"
 
-#: exe/engine/idevicestore.py:274
+#: exe/engine/idevicestore.py:319
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -180,7 +187,7 @@ msgstr ""
 "eXe-n egindako aldaketak ez dira Wikipedian eguneratuko. </p> <p>Wikipediaren edukia\n"
 "GNUren dokumentazio librearen lizentziak babestuta dago.</p>"
 
-#: exe/engine/idevicestore.py:382
+#: exe/engine/idevicestore.py:427
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -203,11 +210,12 @@ msgstr ""
 "irudi batzuk egotea, eta banaka beharrean galerian erakustea \n"
 "nahiago izatea.</p>"
 
-#: exe/engine/package.py:415
+#: exe/engine/package.py:416
 msgid "?????"
 msgstr "?????"
 
 #: exe/engine/casestudyidevice.py:199
+#: exe/engine/ejercicioresueltofpdidevice.py:199
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -237,6 +245,7 @@ msgstr ""
 "hala, eztabaidagai gehiago agertuko dira.</li></ul>"
 
 #: exe/engine/truefalseidevice.py:151
+#: exe/engine/verdaderofalsofpdidevice.py:152
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -248,9 +257,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:357
-#: exe/engine/idevicestore.py:365 exe/engine/idevicestore.py:426
-#: exe/engine/idevicestore.py:463 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:402
+#: exe/engine/idevicestore.py:410 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:508 exe/engine/idevicestore.py:516
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Jarduera"
@@ -259,11 +268,11 @@ msgstr "Jarduera"
 msgid "Add Field"
 msgstr "Gehitu eremua"
 
-#: exe/webui/element.py:475
+#: exe/webui/element.py:495
 msgid "Add Image"
 msgstr "Gehitu irudia"
 
-#: exe/webui/element.py:893
+#: exe/webui/element.py:913
 msgid "Add JPEG Image"
 msgstr "Gehitu JPEG irudia"
 
@@ -301,23 +310,25 @@ msgstr "Gehitu feedback interaktibo bat zure iDevice-ri."
 msgid "Add an mp3 file to your iDevice."
 msgstr "Gehitu MP3 artxiboa iDevice-an."
 
-#: exe/webui/testquestionelement.py:122 exe/webui/element.py:1766
+#: exe/webui/element.py:2076 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Gehitu beste aukera bat"
 
-#: exe/webui/quiztestblock.py:112 exe/webui/multiselectblock.py:91
+#: exe/webui/quiztestblock.py:112 exe/webui/seleccionmultiplefpdblock.py:99
+#: exe/webui/multiselectblock.py:91
 msgid "Add another Question"
 msgstr "Gehitu beste galdera bat"
 
-#: exe/webui/casestudyblock.py:113
+#: exe/webui/ejercicioresueltofpdblock.py:118 exe/webui/casestudyblock.py:113
 msgid "Add another activity"
 msgstr "Gehitu beste jarduera bat"
 
-#: exe/webui/element.py:2097
+#: exe/webui/element.py:2463
 msgid "Add another option"
 msgstr "Gehitu beste aukera bat"
 
-#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseblock.py:109
+#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
+#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "Gehitu beste galdera bat"
 
@@ -329,9 +340,9 @@ msgstr "Gehitu artxiboak"
 msgid "Add images"
 msgstr "Gehitu irudiak"
 
-#: exe/webui/flashwithtextblock.py:88 exe/webui/multimediablock.py:92
-#: exe/webui/editorelement.py:228 exe/webui/imagemagnifierblock.py:134
-#: exe/webui/flashmovieblock.py:87 exe/webui/imagewithtextblock.py:88
+#: exe/webui/imagemagnifierblock.py:134 exe/webui/editorelement.py:228
+#: exe/webui/flashmovieblock.py:87 exe/webui/multimediablock.py:92
+#: exe/webui/flashwithtextblock.py:88 exe/webui/imagewithtextblock.py:88
 msgid "Align:"
 msgstr "Lerrokatu:"
 
@@ -352,7 +363,7 @@ msgstr ""
 "Lerrokatzean, media player \n"
 "pantailan non kokatu nahi duzun aukeratuko duzu. "
 
-#: exe/engine/field.py:2789
+#: exe/engine/field.py:2826 exe/engine/field.py:3064
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -360,11 +371,15 @@ msgstr ""
 "Erabiltzailea hutsuneak betetzen ari denean, \n"
 "automatikoki betetzeko baimena."
 
-#: exe/engine/clozeidevice.py:288
+#: exe/engine/clozelangfpdidevice.py:292 exe/engine/clozeidevice.py:288
+#: exe/engine/clozefpdidevice.py:287
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Erabiltzailea hutsuneak betetzen ari denean, automatokiki osatzeko baimena."
 
-#: exe/engine/multiselectidevice.py:45 exe/engine/multichoiceidevice.py:62
+#: exe/engine/multichoiceidevice.py:62
+#: exe/engine/seleccionmultiplefpdidevice.py:45
+#: exe/engine/eleccionmultiplefpdidevice.py:62
+#: exe/engine/multiselectidevice.py:45
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -393,7 +408,7 @@ msgstr ""
 "<li>Galderaren gramatika eta egitura zaintzea, arrastorik ez emateko </li>\n"
 "</ul>"
 
-#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:466
+#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:511
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -403,7 +418,7 @@ msgstr ""
 "atazen multzo batez osatuta egon daiteke. Atazaren azalpen garbia eman,\n"
 "eta ikasleak ataza gauzatzeko edo ez betetzeko baldintzak kontuan izan."
 
-#: exe/webui/element.py:1243
+#: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Erantzunak"
 
@@ -432,6 +447,16 @@ msgstr "%s atxikitako artxiboak ez du ahaide nodorik"
 msgid "Auckland University of Technology"
 msgstr "Auckland University of Technology"
 
+#: exe/webui/clozelangfpdblock.py:105
+#: exe/webui/eleccionmultiplefpdblock.py:110 exe/webui/clozefpdblock.py:104
+msgid "Autoevaluacion"
+msgstr "Autoebaluazioa"
+
+#: exe/webui/seleccionmultiplefpdblock.py:90
+#: exe/webui/verdaderofalsofpdblock.py:109
+msgid "Autoevaluación"
+msgstr "Autoebaluazioa"
+
 #: exe/webui/editorelement.py:149
 msgid "Button Caption"
 msgstr "Epigrafe botoia"
@@ -440,24 +465,32 @@ msgstr "Epigrafe botoia"
 msgid "Can NOT Undo Edits"
 msgstr ""
 
-#: exe/webui/preferencespage.py:116 exe/webui/editorpane.py:269
+#: exe/webui/editorpane.py:269 exe/webui/preferencespage.py:116
 msgid "Cancel"
 msgstr "Ezeztatu"
 
-#: exe/xului/mainpage.py:301 exe/xului/mainpage.py:721
-#: exe/xului/mainpage.py:841
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:760
+#: exe/xului/mainpage.py:896
 msgid "Cannot access directory named "
 msgstr "Ezin da izendatutako direktoriora sartu"
 
-#: exe/webui/flashwithtextblock.py:93 exe/webui/editorelement.py:311
-#: exe/webui/imagemagnifierblock.py:114 exe/webui/flashmovieblock.py:92
-#: exe/webui/imagewithtextblock.py:93 exe/webui/element.py:591
+#: exe/webui/element.py:611 exe/webui/imagemagnifierblock.py:114
+#: exe/webui/editorelement.py:311 exe/webui/flashmovieblock.py:92
+#: exe/webui/flashwithtextblock.py:93 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
 msgstr "Epigrafea:"
 
 #: exe/engine/casestudyidevice.py:197
 msgid "Case Study"
 msgstr "Kasu azterketa"
+
+#: exe/engine/casopracticofpdidevice.py:31
+msgid "Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
+msgstr ""
+
+#: exe/webui/casopracticofpdblock.py:64
+msgid "Caso práctico"
+msgstr "Kasu praktikoa"
 
 #: exe/webui/wikipediablock.py:114
 msgid "Catalan Wikipedia Article"
@@ -467,7 +500,7 @@ msgstr "Wikipediako artikulua katalanez"
 msgid "Change Image"
 msgstr "Aldatu irudia"
 
-#: exe/webui/element.py:1096
+#: exe/webui/element.py:1116 exe/webui/element.py:1378
 msgid "Check Caps?"
 msgstr "Maiuskulak egiaztatu?"
 
@@ -484,6 +517,7 @@ msgid "Choose an MP3 file"
 msgstr "Aukeratu MP3 artxibo bat"
 
 #: exe/engine/casestudyidevice.py:64
+#: exe/engine/ejercicioresueltofpdidevice.py:64
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr "Aukeratu aukerazko irudi bat, ikasleari galdera hau osatzen duenean erakusteko"
 
@@ -499,7 +533,15 @@ msgstr ""
 "pixelek 3 cm inguru dituzte. Irudia jatorrizko neurrian \n"
 "erakutsi nahi baduzu, utzi eremuak bete gabe."
 
-#: exe/xului/mainpage.py:219
+#: exe/webui/citasparapensarfpdblock.py:64
+msgid "Citas para pensar"
+msgstr "Hausnarketarako aipua"
+
+#: exe/engine/citasparapensarfpdidevice.py:31
+msgid "Citas para pensar es un iDevice que permite al alumnado reflexionar sobre algunas citas propuestas."
+msgstr ""
+
+#: exe/xului/mainpage.py:225
 msgid "Clear Recent Projects List"
 msgstr "Garbitu azken proiektuen zerrenda"
 
@@ -516,19 +558,19 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klikatu <strong>Aukeratu artxibo bat</strong>, bilatu atxiki nahi duzun artxiboa, eta aukeratu."
 
-#: exe/engine/field.py:2338
+#: exe/engine/field.py:2375
 msgid "Click Here"
 msgstr "Klikatu hemen"
 
-#: exe/webui/common.py:336 exe/webui/common.py:340
+#: exe/webui/common.py:342 exe/webui/common.py:346
 msgid "Click for completion instructions"
 msgstr "Klikatu argibideak osatzeko"
 
-#: exe/webui/reflectionblock.py:117
+#: exe/webui/reflectionfpdblock.py:125 exe/webui/reflectionblock.py:117
 msgid "Click here"
 msgstr "Klikatu hemen"
 
-#: exe/engine/field.py:3008
+#: exe/engine/field.py:3283
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -541,17 +583,17 @@ msgid "Click on the Add images button to select an image file. The image will ap
 msgstr "Klikatu irudiak gehitzeko botoian irudi artxibo bat aukeratzeko. Irudia beheko aldean agertuko da eta etiketak jarri ahalko dizkiozu. Lagungarria da etiketan artxiboaren neurria adieraztea."
 
 #: exe/engine/galleryidevice.py:664 exe/webui/truefalseelement.py:152
-#: exe/webui/truefalseelement.py:153 exe/webui/common.py:345
-#: exe/webui/common.py:346 exe/webui/block.py:260 exe/webui/block.py:261
-#: exe/webui/element.py:2140 exe/webui/element.py:2141
+#: exe/webui/truefalseelement.py:153 exe/webui/element.py:2514
+#: exe/webui/element.py:2515 exe/webui/common.py:351 exe/webui/common.py:352
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
+#: exe/webui/block.py:260 exe/webui/block.py:261
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 msgid "Close"
 msgstr "Itxi"
 
-#: exe/engine/clozeidevice.py:123
+#: exe/engine/clozeidevice.py:123 exe/engine/clozefpdidevice.py:122
 msgid "Cloze"
 msgstr "Bete hutsuneak"
 
@@ -559,28 +601,43 @@ msgstr "Bete hutsuneak"
 msgid "Cloze Activity"
 msgstr "Hutsuneak betetzeko jarduera"
 
-#: exe/webui/element.py:1078
+#: exe/webui/element.py:1098 exe/webui/element.py:1360
 msgid "Cloze Text"
 msgstr "Hutsuneak betetzeko testua"
 
-#: exe/webui/element.py:1650 exe/webui/element.py:1984
+#: exe/engine/clozelangfpdidevice.py:122
+#, fuzzy
+msgid "Clozelang"
+msgstr "Bete hutsuneak"
+
+#: exe/engine/correccionfpdidevice.py:31
+msgid "Correccion es un iDevice que permite resaltar texto para hacer correcciones a los autores."
+msgstr ""
+
+#: exe/webui/element.py:1948 exe/webui/element.py:1958
 msgid "Correct"
 msgstr "Aukera zuzena."
 
-#: exe/webui/testoptionelement.py:111 exe/webui/element.py:1598
-#: exe/webui/element.py:1895
+#: exe/webui/element.py:1886 exe/webui/element.py:2238
+#: exe/webui/element.py:2336 exe/webui/element.py:2363
+#: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Zuzena."
 
-#: exe/webui/truefalseelement.py:216
+#: exe/xului/mainpage.py:864
+msgid "Correct XLIFF import"
+msgstr ""
+
+#: exe/webui/truefalseelement.py:220
 msgid "Correct!"
 msgstr "Zuzena."
 
-#: exe/xului/mainpage.py:1106
+#: exe/xului/mainpage.py:1178
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Ezin da artxiboa kargatu. Mesedez, bidali artxiboa bugs@exelearning.org helbidera"
 
 #: exe/engine/casestudyidevice.py:216
+#: exe/engine/ejercicioresueltofpdidevice.py:217
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -592,12 +649,20 @@ msgstr ""
 "Gainera, gatazka konpondu ahal izateko \n"
 "hainbat ekintza gauzatzeko aukera eman beharko luke."
 
+#: exe/webui/debesconocerfpdblock.py:64
+msgid "Debes conocer"
+msgstr "Jakin  behar duzu"
+
+#: exe/engine/debesconocerfpdidevice.py:31
+msgid "Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje."
+msgstr ""
+
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
 #: exe/webui/editorelement.py:332 exe/webui/galleryblock.py:286
-#: exe/webui/block.py:230 exe/webui/editorpage.py:236
-#: exe/webui/editorpage.py:239 exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/editorpage.py:236 exe/webui/editorpage.py:239
+#: exe/webui/block.py:230 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "Ezabatu"
@@ -610,18 +675,18 @@ msgstr "Ezabatu artxiboa"
 msgid "Delete Image"
 msgstr "Ezabatu irudia"
 
-#: exe/webui/testoptionelement.py:139 exe/webui/element.py:1626
-#: exe/webui/element.py:1923
+#: exe/webui/element.py:1914 exe/webui/element.py:2266
+#: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Ezabatu aukera"
 
-#: exe/webui/testquestionelement.py:104 exe/webui/questionelement.py:111
-#: exe/webui/truefalseelement.py:130 exe/webui/element.py:1735
-#: exe/webui/element.py:2082
+#: exe/webui/truefalseelement.py:130 exe/webui/element.py:2043
+#: exe/webui/element.py:2448 exe/webui/questionelement.py:111
+#: exe/webui/testquestionelement.py:104
 msgid "Delete question"
 msgstr "Ezabatu galdera"
 
-#: exe/engine/reflectionidevice.py:57
+#: exe/engine/reflectionfpdidevice.py:58 exe/engine/reflectionidevice.py:57
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
@@ -632,6 +697,7 @@ msgstr ""
 "hausnarketaren feedbacka emateko.)"
 
 #: exe/engine/casestudyidevice.py:225
+#: exe/engine/ejercicioresueltofpdidevice.py:226
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -643,7 +709,7 @@ msgstr ""
 "jarduera bat egiteko instrukzioak izan daitezke, \n"
 "ikasleak gatazka konpon dezan. "
 
-#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
+#: exe/engine/idevicestore.py:398 exe/engine/idevicestore.py:504
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -651,7 +717,7 @@ msgstr ""
 "Deskribatu ikasleek atazak behar bezala egiteko\n"
 "aurrez jakin beharko luketena."
 
-#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
+#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:472
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -659,7 +725,7 @@ msgstr ""
 "Deskribatu ikasleek irakurri beharko luketen testuarekin lotura duten atazak. \n"
 "Lagungarriak izango dira garrantzia ikusarazteko."
 
-#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:472
+#: exe/engine/idevicestore.py:411 exe/engine/idevicestore.py:517
 msgid "Describe the tasks the learners should complete."
 msgstr "Deskribatu ikasleek bete beharko lituzketen atazak."
 
@@ -674,6 +740,10 @@ msgstr "Deskripzioa"
 msgid "Description:"
 msgstr "Deskripzioa:"
 
+#: exe/engine/destacadofpdidevice.py:31
+msgid "Destacado es un iDevice que permite resaltar texto para llamar la atención del alumnado."
+msgstr ""
+
 #: exe/webui/preferencespage.py:103
 msgid "Disable All Internal Linking"
 msgstr ""
@@ -682,7 +752,7 @@ msgstr ""
 msgid "Disable Auto-Top Internal Linking"
 msgstr ""
 
-#: exe/webui/element.py:501 exe/webui/element.py:915 exe/webui/element.py:1297
+#: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1585
 msgid "Display as:"
 msgstr "Erakutsi honela:"
 
@@ -694,17 +764,17 @@ msgstr "Egina"
 msgid "Dutch Wikipedia Article"
 msgstr "Wikipediako artikulua nederlanderaz"
 
-#: exe/webui/element.py:70
+#: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROREA Element.process %s klasearekin deitu dute zuzenean"
 
-#: exe/webui/element.py:79
+#: exe/webui/element.py:80
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROREA Element.renderEdit %s klasearekin deitu dute zuzenean"
 
-#: exe/webui/element.py:96
+#: exe/webui/element.py:97
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROREA Element.renderView %s klasearekin deitu dute zuzenean"
@@ -713,17 +783,17 @@ msgstr "ERROREA Element.renderView %s klasearekin deitu dute zuzenean"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROREA: Block.renderViewContent zuzenean deitu dute"
 
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:755
-#: exe/xului/mainpage.py:758 exe/xului/mainpage.py:761
-#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:962
+#: exe/xului/mainpage.py:787 exe/xului/mainpage.py:794
+#: exe/xului/mainpage.py:797 exe/xului/mainpage.py:800
+#: exe/xului/mainpage.py:803 exe/xului/mainpage.py:1017
 msgid "EXPORT FAILED!"
 msgstr "EZ DA ESPORTATU!"
 
-#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:966
-#: exe/xului/mainpage.py:979 exe/xului/mainpage.py:985
-#: exe/xului/mainpage.py:1019 exe/xului/mainpage.py:1035
-#: exe/xului/mainpage.py:1041 exe/xului/mainpage.py:1056
-#: exe/xului/mainpage.py:1062
+#: exe/xului/mainpage.py:1007 exe/xului/mainpage.py:1021
+#: exe/xului/mainpage.py:1034 exe/xului/mainpage.py:1040
+#: exe/xului/mainpage.py:1074 exe/xului/mainpage.py:1090
+#: exe/xului/mainpage.py:1107 exe/xului/mainpage.py:1113
+#: exe/xului/mainpage.py:1128 exe/xului/mainpage.py:1134
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -732,7 +802,7 @@ msgstr ""
 "EZ DA ESPORTATU!\n"
 "%s"
 
-#: exe/export/imsexport.py:358 exe/export/scormexport.py:493
+#: exe/export/scormexport.py:510 exe/export/imsexport.py:373
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -742,7 +812,7 @@ msgstr ""
 "EZ DA ESPORTATU!\n"
 "%s da ondo esportatutako azken elementua."
 
-#: exe/xului/mainpage.py:850 exe/xului/mainpage.py:867
+#: exe/xului/mainpage.py:905 exe/xului/mainpage.py:922
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -751,8 +821,8 @@ msgstr ""
 "EZ DA ATERA!\n"
 "%s"
 
-#: exe/webui/block.py:344 exe/webui/editorpane.py:266
-#: exe/webui/editorpage.py:270
+#: exe/webui/editorpage.py:270 exe/webui/editorpane.py:266
+#: exe/webui/block.py:344
 msgid "Edit"
 msgstr "Editatu"
 
@@ -760,8 +830,12 @@ msgstr "Editatu"
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Kargatzen ari zaren idevices/generic.data artxiboa edo paketea eXe-ren bertsio berriago batekin sortuta dago. Mesedez, eguneratu zure eXe-a eta berriz saiatu."
 
-#: exe/webui/wikipediablock.py:159 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:120 exe/webui/editorpane.py:332
+#: exe/webui/ejercicioresueltofpdblock.py:110
+msgid "Ejercicio resuelto"
+msgstr "Ebatzitako ariketa"
+
+#: exe/webui/rssblock.py:120 exe/webui/multimediablock.py:103
+#: exe/webui/editorpane.py:332 exe/webui/wikipediablock.py:159
 msgid "Emphasis"
 msgstr "Enfasia"
 
@@ -782,6 +856,7 @@ msgstr ""
 "artxiboarekin lotu nahi duzun testua."
 
 #: exe/engine/multichoiceidevice.py:99
+#: exe/engine/eleccionmultiplefpdidevice.py:100
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -790,6 +865,7 @@ msgstr ""
 "arrastorik eman nahi, hutsik utzi."
 
 #: exe/engine/multichoiceidevice.py:286
+#: exe/engine/eleccionmultiplefpdidevice.py:287
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Idatzi arrasto bat. Ez baduzu arrastorik eman nahi, hutsik utzi."
 
@@ -801,7 +877,8 @@ msgstr ""
 "Idatzi Wikipedian bilatu nahi duzun \n"
 "esaldia edo terminoa."
 
-#: exe/engine/reflectionidevice.py:55
+#: exe/engine/reflectionfpdmodifidevice.py:56
+#: exe/engine/reflectionfpdidevice.py:56 exe/engine/reflectionidevice.py:55
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
@@ -847,6 +924,7 @@ msgstr ""
 "Klikatu \"Gehitu beste aukera bat\" beste erantzun bat gehitzeko."
 
 #: exe/engine/truefalseidevice.py:158
+#: exe/engine/verdaderofalsofpdidevice.py:159
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
@@ -856,7 +934,8 @@ msgstr ""
 "feedback. Eremua hutsik utz dezakezu. Hori eginez gero, \n"
 "lehenetsitakoa emango da."
 
-#: exe/engine/clozeidevice.py:130
+#: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozeidevice.py:130
+#: exe/engine/clozefpdidevice.py:129
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "Adierazi feedback eremuan ikasleei eman nahi diezun feedbacka. Eremua hutsik utz dezakezu."
 
@@ -873,6 +952,7 @@ msgstr ""
 "eta aukeratu erakutsi beharreko eremuaren tamaina."
 
 #: exe/engine/multichoiceidevice.py:106
+#: exe/engine/eleccionmultiplefpdidevice.py:107
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -882,7 +962,7 @@ msgstr ""
 "Aukerak gehitzeko, klikatu \"Gehitu beste aukera bat\" botoian. \n"
 "Aukerak ezabatzeko, klikatu aukera bakoitzaren ondoan dagoen \"X\" botoi gorrian."
 
-#: exe/engine/field.py:3310
+#: exe/engine/field.py:3585
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -892,7 +972,7 @@ msgstr ""
 "Aukerak gehitzeko, klikatu \"Gehitu beste aukera bat\" botoian. \n"
 "Aukerak ezabatzeko, klikatu aukera bakoitzaren ondoan dagoen \"X\" botoi gorrian."
 
-#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:468
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -924,8 +1004,9 @@ msgstr "Adierazi hemen argibideak"
 msgid "Enter the label here"
 msgstr "Sartu hemen etiketa"
 
-#: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
-#: exe/engine/quiztestidevice.py:194
+#: exe/engine/multichoiceidevice.py:101
+#: exe/engine/eleccionmultiplefpdidevice.py:102
+#: exe/engine/quiztestidevice.py:120 exe/engine/quiztestidevice.py:194
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -935,7 +1016,7 @@ msgstr ""
 "Argia eta zalantza gabekoa izan behar da. Saihestu premisa negatiboak \n"
 "anbiguoak izan ohi baitira."
 
-#: exe/engine/field.py:3302
+#: exe/engine/field.py:3577
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -973,6 +1054,11 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr "Adierazi deskargatutako artxiboarekin lotu nahi duzun testua. Artxiboa deskargatu ondoren ikasleak zer egin behar duen edo materiala nola erabili behar duen azaldu dezake."
 
+#: exe/xului/mainpage.py:866
+#, python-format
+msgid "Error importing XLIFF: %s"
+msgstr ""
+
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
 msgstr "Adibidea"
@@ -985,9 +1071,9 @@ msgstr "Adibidea Adibidea"
 msgid "Export iDevice"
 msgstr "Esportatu iDevice-a"
 
-#: exe/xului/mainpage.py:968 exe/xului/mainpage.py:987
-#: exe/xului/mainpage.py:1021 exe/xului/mainpage.py:1043
-#: exe/xului/mainpage.py:1064
+#: exe/xului/mainpage.py:1023 exe/xului/mainpage.py:1042
+#: exe/xului/mainpage.py:1076 exe/xului/mainpage.py:1092
+#: exe/xului/mainpage.py:1115 exe/xului/mainpage.py:1136
 #, python-format
 msgid "Exported to %s"
 msgstr "%s-era esportatua"
@@ -1000,18 +1086,98 @@ msgstr "Kanpoko webgunea"
 msgid "Extra large"
 msgstr "Estra handia"
 
-#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:191
+#: exe/engine/eleccionmultiplefpdidevice.py:60
+msgid "FPD - Actividad de Eleccion Multiple"
+msgstr "FPD - Aukera Askotako Jarduera"
+
+#: exe/engine/clozefpdidevice.py:46
+msgid "FPD - Actividad de Espacios en Blanco"
+msgstr "FPD - Hutsuneak Betetzeko Jarduera"
+
+#: exe/engine/clozelangfpdidevice.py:46
+msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
+msgstr "FPD - Hutsuneak Betetzeko Jarduera (Eraldatua)"
+
+#: exe/engine/seleccionmultiplefpdidevice.py:43
+msgid "FPD - Actividad de Seleccion Multiple"
+msgstr "FPD - Hautaketa Askotako Jarduera"
+
+#: exe/engine/verdaderofalsofpdidevice.py:144
+msgid "FPD - Actividad de Verdadero/Falso"
+msgstr "FPD - Egia/Gezurra Moduko Jarduera "
+
+#: exe/engine/casopracticofpdidevice.py:29
+msgid "FPD - Caso Practico"
+msgstr "FPD - Kasu Praktikoa"
+
+#: exe/engine/citasparapensarfpdidevice.py:29
+msgid "FPD - Citas Para Pensar"
+msgstr "FPD - Hausnarketarako Aipua"
+
+#: exe/engine/correccionfpdidevice.py:29
+#, fuzzy
+msgid "FPD - Correccion"
+msgstr "FPD - Kasu Praktikoa"
+
+#: exe/engine/debesconocerfpdidevice.py:29
+msgid "FPD - Debes Conocer"
+msgstr "FPD - Jakin  Behar Duzu"
+
+# Destacado
+#: exe/engine/destacadofpdidevice.py:29
+msgid "FPD - Destacado"
+msgstr "FPD - Nabarmendua"
+
+#: exe/engine/ejercicioresueltofpdidevice.py:197
+msgid "FPD - Ejercicio Resuelto"
+msgstr "FPD - Ebatzitako Ariketa"
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:29
+msgid "FPD - Orientaciones Alumnado"
+msgstr "FPD - Ikasle-Orientabideak"
+
+#: exe/engine/orientacionestutoriafpdidevice.py:29
+msgid "FPD - Orientaciones Tutoria"
+msgstr "FPD - Tutoretza-Orientabideak"
+
+#: exe/engine/parasabermasfpdidevice.py:29
+msgid "FPD - Para Saber Mas"
+msgstr "FPD - Gehiago Jakiteko"
+
+#: exe/engine/recomendacionfpdidevice.py:29
+msgid "FPD - Recomendacion"
+msgstr "FPD - Gomendioa"
+
+#: exe/engine/reflectionfpdidevice.py:46
+msgid "FPD - Reflexiona (con Retroalimentacion)"
+msgstr "FPD - Hausnartu (Feedbackarekin)"
+
+#: exe/engine/reflectionfpdmodifidevice.py:46
+msgid "FPD - Reflexiona (sin Retroalimentacion)"
+msgstr "FPD - Hausnartu (Feedbackik gabe)"
+
+# Texto Libre
+#: exe/engine/freetextfpdidevice.py:38
+msgid "FPD - Texto Libre"
+msgstr "FPD - Testu Librea"
+
+#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:195
+#: exe/webui/truefalseelement.py:277
 msgid "False"
 msgstr "Gezurra."
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:430
-#: exe/engine/genericidevice.py:294 exe/engine/clozeidevice.py:129
-#: exe/engine/clozeidevice.py:279 exe/engine/truefalseidevice.py:50
-#: exe/engine/truefalseidevice.py:125 exe/engine/field.py:3080
-#: exe/engine/field.py:3128 exe/webui/clozeblock.py:164
+#: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
+#: exe/engine/field.py:3355 exe/engine/field.py:3403
+#: exe/engine/truefalseidevice.py:50 exe/engine/truefalseidevice.py:125
+#: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
+#: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:367
+#: exe/engine/idevicestore.py:475 exe/engine/verdaderofalsofpdidevice.py:50
+#: exe/engine/verdaderofalsofpdidevice.py:125
+#: exe/webui/clozelangfpdblock.py:194 exe/webui/element.py:2269
 #: exe/webui/editorelement.py:148 exe/webui/questionelement.py:104
-#: exe/webui/common.py:249 exe/webui/element.py:1926
-#: exe/webui/editorpane.py:251
+#: exe/webui/clozefpdblock.py:193 exe/webui/clozeblock.py:164
+#: exe/webui/common.py:252 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Feedbacka"
 
@@ -1023,23 +1189,25 @@ msgstr ""
 "Eremu honetan daturik sartzen ez bada, \n"
 "ez da feedbackaren botoia agertuko."
 
-#: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
-#: exe/engine/field.py:3319 exe/engine/field.py:3389
+#: exe/engine/field.py:3594 exe/engine/field.py:3664
+#: exe/engine/reflectionfpdidevice.py:67
+#: exe/engine/reflectionfpdidevice.py:202 exe/engine/reflectionidevice.py:66
+#: exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
 msgstr "Feedbacka:"
 
-#: exe/xului/mainpage.py:1102
+#: exe/xului/mainpage.py:1174
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "%s artxiboa ez dago edo ezin da irakurri."
 
-#: exe/xului/mainpage.py:897 exe/xului/mainpage.py:939
-#: exe/xului/mainpage.py:1006
+#: exe/xului/mainpage.py:952 exe/xului/mainpage.py:994
+#: exe/xului/mainpage.py:1061
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "%s izeneko beste artxibo bat dago, eta ezin da ordeztu"
 
-#: exe/webui/attachmentblock.py:87 exe/webui/element.py:787
+#: exe/webui/element.py:807 exe/webui/attachmentblock.py:87
 msgid "Filename:"
 msgstr "Artxiboaren izena:"
 
@@ -1051,8 +1219,8 @@ msgstr "Flash bideoa"
 msgid "Flash with Text"
 msgstr "Testudun flasha"
 
-#: exe/xului/mainpage.py:903 exe/xului/mainpage.py:945
-#: exe/xului/mainpage.py:1012
+#: exe/xului/mainpage.py:958 exe/xului/mainpage.py:1000
+#: exe/xului/mainpage.py:1067
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "Dagoeneko badago %s izeneko karpeta bat. Mesedez, beste izen bat aukeratu edo dagoena ezabatu, eta berriz saiatu."
@@ -1062,6 +1230,7 @@ msgid "Frame Height:"
 msgstr "Markoaren altuera:"
 
 #: exe/engine/freetextidevice.py:38 exe/engine/freetextidevice.py:45
+#: exe/engine/freetextfpdidevice.py:45
 msgid "Free Text"
 msgstr "Testu librea"
 
@@ -1083,7 +1252,7 @@ msgstr "Geogebra"
 msgid "German Wikipedia Article"
 msgstr "Wikipediako artikulua alemanez"
 
-#: exe/webui/element.py:1181
+#: exe/webui/element.py:1201 exe/webui/element.py:1469
 msgid "Get score"
 msgstr "Lortu puntuak"
 
@@ -1103,7 +1272,7 @@ msgstr "Aurrera (ez dago eskuragarri)"
 msgid "Greek Wikipedia Article"
 msgstr "Wikipediako artikulua grezieraz"
 
-#: exe/webui/reflectionblock.py:121
+#: exe/webui/reflectionfpdblock.py:129 exe/webui/reflectionblock.py:121
 msgid "Hide"
 msgstr "Ezkutatu"
 
@@ -1111,14 +1280,16 @@ msgstr "Ezkutatu"
 msgid "Hide Feedback"
 msgstr "Ezkutatu feedbacka"
 
-#: exe/webui/element.py:1086
+#: exe/webui/element.py:1106 exe/webui/element.py:1368
 msgid "Hide/Show Word"
 msgstr "Ezkutatu/Erakutsi hitza"
 
+#: exe/engine/field.py:3429 exe/engine/field.py:3495
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
-#: exe/engine/field.py:3154 exe/engine/field.py:3220
+#: exe/engine/verdaderofalsofpdidevice.py:53
+#: exe/engine/verdaderofalsofpdidevice.py:128
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
-#: exe/webui/element.py:2144
+#: exe/webui/element.py:2518
 msgid "Hint"
 msgstr "Arrastoa"
 
@@ -1126,13 +1297,13 @@ msgstr "Arrastoa"
 msgid "Home"
 msgstr "Hasiera"
 
-#: exe/webui/multichoiceblock.py:154 exe/webui/genericblock.py:83
-#: exe/webui/genericblock.py:109 exe/webui/galleryblock.py:362
-#: exe/webui/block.py:299
+#: exe/webui/genericblock.py:83 exe/webui/genericblock.py:109
+#: exe/webui/galleryblock.py:362 exe/webui/eleccionmultiplefpdblock.py:164
+#: exe/webui/multichoiceblock.py:154 exe/webui/block.py:299
 msgid "IDevice Icon"
 msgstr "IDevice ikonoa"
 
-#: exe/webui/multichoiceblock.py:130
+#: exe/webui/eleccionmultiplefpdblock.py:137 exe/webui/multichoiceblock.py:130
 msgid "IDevice Question Icon"
 msgstr "IDevice galderaren ikonoa"
 
@@ -1144,7 +1315,8 @@ msgstr "IDevice kaltetua"
 msgid "Icons"
 msgstr "Ikonoak"
 
-#: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:63
+#: exe/engine/casestudyidevice.py:63 exe/engine/imagewithtextidevice.py:62
+#: exe/engine/ejercicioresueltofpdidevice.py:63
 msgid "Image"
 msgstr "Irudia"
 
@@ -1164,11 +1336,11 @@ msgstr "Testua duen irudia"
 msgid "Import iDevice"
 msgstr "Inportatu iDevice-a"
 
-#: exe/webui/element.py:1652
+#: exe/webui/element.py:1950 exe/webui/element.py:1960
 msgid "Incorrect"
 msgstr "Aukera ez zuzena."
 
-#: exe/webui/truefalseelement.py:217
+#: exe/webui/truefalseelement.py:221
 msgid "Incorrect!"
 msgstr "Okerra."
 
@@ -1184,21 +1356,37 @@ msgstr "Informazioa"
 msgid "Initial Zoom"
 msgstr "Hasierako zooma"
 
-#: exe/webui/element.py:1101
+#: exe/webui/element.py:1121 exe/webui/element.py:1383
 msgid "Instant Marking?"
 msgstr "Oraintxe zuzendu nahi?"
 
-#: exe/engine/clozeidevice.py:116 exe/engine/truefalseidevice.py:165
-#: exe/engine/truefalseidevice.py:392 exe/webui/common.py:330
+#: exe/engine/clozelangfpdidevice.py:116 exe/engine/truefalseidevice.py:165
+#: exe/engine/truefalseidevice.py:392 exe/engine/clozeidevice.py:116
+#: exe/engine/clozefpdidevice.py:116
+#: exe/engine/verdaderofalsofpdidevice.py:166
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
 msgid "Instructions"
 msgstr "Argibideak"
 
-#: exe/engine/clozeidevice.py:274
+#: exe/engine/clozelangfpdidevice.py:278 exe/engine/clozeidevice.py:274
+#: exe/engine/clozefpdidevice.py:274
 msgid "Instructions For Learners"
 msgstr "Ikasleentzako argibideak"
 
 #: exe/webui/preferencespage.py:104
 msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:34
+#: exe/engine/citasparapensarfpdidevice.py:34
+#: exe/engine/correccionfpdidevice.py:33
+#: exe/engine/recomendacionfpdidevice.py:34
+#: exe/engine/orientacionesalumnadofpdidevice.py:34
+#: exe/engine/casopracticofpdidevice.py:34
+#: exe/engine/parasabermasfpdidevice.py:34
+#: exe/engine/destacadofpdidevice.py:33
+#: exe/engine/debesconocerfpdidevice.py:34
+msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:233
@@ -1217,6 +1405,18 @@ msgstr "Wikipediako artikulua japonieraz"
 msgid "Java Applet"
 msgstr "Java appleta "
 
+#: exe/engine/orientacionestutoriafpdidevice.py:30
+#: exe/engine/citasparapensarfpdidevice.py:30
+#: exe/engine/correccionfpdidevice.py:30
+#: exe/engine/recomendacionfpdidevice.py:30
+#: exe/engine/orientacionesalumnadofpdidevice.py:30
+#: exe/engine/casopracticofpdidevice.py:30
+#: exe/engine/parasabermasfpdidevice.py:30
+#: exe/engine/destacadofpdidevice.py:30
+#: exe/engine/debesconocerfpdidevice.py:30
+msgid "Jose Ramon Jimenez Reyes"
+msgstr ""
+
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
 msgstr "Etiketa:"
@@ -1225,9 +1425,9 @@ msgstr "Etiketa:"
 msgid "Large"
 msgstr "Handia"
 
-#: exe/webui/flashwithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:107
-#: exe/webui/flashmovieblock.py:81 exe/webui/imagewithtextblock.py:81
+#: exe/webui/imagemagnifierblock.py:107 exe/webui/editorelement.py:223
+#: exe/webui/flashmovieblock.py:81 exe/webui/multimediablock.py:85
+#: exe/webui/flashwithtextblock.py:81 exe/webui/imagewithtextblock.py:81
 msgid "Left"
 msgstr "Ezkerra"
 
@@ -1235,11 +1435,11 @@ msgstr "Ezkerra"
 msgid "Licensed under the"
 msgstr "Ondoko lizentziak babestua:"
 
-#: exe/webui/wikipediablock.py:152 exe/webui/rssblock.py:110
+#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:152
 msgid "Load"
 msgstr "Kargatu"
 
-#: exe/xului/mainpage.py:562
+#: exe/xului/mainpage.py:568
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "%s artxibo lokala ez da aurkitu eta ezin da aurreikusi"
@@ -1264,7 +1464,7 @@ msgstr "Ahalik eta gehien handitu"
 msgid "Medium"
 msgstr "Ertaina"
 
-#: exe/xului/mainpage.py:690
+#: exe/xului/mainpage.py:696
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1272,6 +1472,10 @@ msgid ""
 msgstr ""
 "Ezin izan da MimeTeX bildu!\n"
 "%s"
+
+#: exe/webui/element.py:1388
+msgid "Mostrar Puntuaci&oacute;n?"
+msgstr ""
 
 #: exe/webui/block.py:244
 msgid "Move Down"
@@ -1305,8 +1509,8 @@ msgstr "Izena"
 msgid "New iDevice"
 msgstr "iDevice berria"
 
-#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:337 exe/export/websitepage.py:197
+#: exe/engine/galleryidevice.py:664 exe/export/scormexport.py:342
+#: exe/export/websitepage.py:242 exe/export/ipodpage.py:116
 msgid "Next"
 msgstr "Hurrengoa"
 
@@ -1326,14 +1530,14 @@ msgstr "Ez dago Thumbnail erabilgarririk. Ezin da irudia txikitu."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Ez dago Thumbnail erabilgarririk. Ezin da jatorrizko irudia txikitu."
 
-#: exe/webui/wikipediablock.py:156 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:114 exe/webui/editorpane.py:335
+#: exe/webui/rssblock.py:114 exe/webui/multimediablock.py:100
+#: exe/webui/editorpane.py:335 exe/webui/wikipediablock.py:156
 msgid "No emphasis"
 msgstr "Enfasirik ez"
 
-#: exe/webui/flashwithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/editorelement.py:225 exe/webui/imagemagnifierblock.py:109
-#: exe/webui/flashmovieblock.py:83 exe/webui/imagewithtextblock.py:83
+#: exe/webui/imagemagnifierblock.py:109 exe/webui/editorelement.py:225
+#: exe/webui/flashmovieblock.py:83 exe/webui/multimediablock.py:87
+#: exe/webui/flashwithtextblock.py:83 exe/webui/imagewithtextblock.py:83
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
@@ -1343,12 +1547,12 @@ msgstr "Bat ere ez"
 msgid "OK"
 msgstr "Ados"
 
-#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:338
-#: exe/engine/idevicestore.py:435 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:374 exe/engine/idevicestore.py:383
+#: exe/engine/idevicestore.py:480 exe/engine/idevicestore.py:489
 msgid "Objectives"
 msgstr "Helburuak"
 
-#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
+#: exe/engine/idevicestore.py:377 exe/engine/idevicestore.py:483
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1357,7 +1561,7 @@ msgstr ""
 "Helburuek ikasketaren bidez lortu nahi diren xedeak deskribatzen dituzte, eta\n"
 "ikasleek amaieran zertarako gai izan beharko luketen adierazi beharko lukete."
 
-#: exe/engine/field.py:2895 exe/engine/field.py:2959
+#: exe/engine/field.py:3170 exe/engine/field.py:3234
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1365,7 +1569,7 @@ msgstr ""
 ".flv (Flash Video Files) luzapena duten artxiboak bakarrik aukeratu \n"
 "iDevice honetarako."
 
-#: exe/engine/field.py:2831 exe/engine/field.py:2875
+#: exe/engine/field.py:3106 exe/engine/field.py:3150
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1373,19 +1577,35 @@ msgstr ""
 ".swf (Flash Objects) luzapena duten artxiboak bakarrik aukeratu \n"
 "iDevice honetarako."
 
+#: exe/engine/field.py:3351 exe/engine/field.py:3400
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/engine/field.py:3076 exe/engine/field.py:3125
-#: exe/webui/testoptionelement.py:106 exe/webui/element.py:1593
-#: exe/webui/element.py:1890
+#: exe/webui/element.py:1881 exe/webui/element.py:2233
+#: exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Aukera"
 
-#: exe/engine/field.py:3242 exe/engine/field.py:3279
-#: exe/webui/testquestionelement.py:110 exe/webui/element.py:1753
+#: exe/engine/field.py:3517 exe/engine/field.py:3554 exe/webui/element.py:2061
+#: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "Aukerak"
 
-#: exe/webui/wikipediablock.py:132 exe/webui/appletblock.py:102
+#: exe/engine/orientacionestutoriafpdidevice.py:31
+msgid "Orientaciones alumnado es un iDevice que permite al profesorado conocer los objetivos del aprendizje del alumnado."
+msgstr ""
+
+#: exe/webui/orientacionesalumnadofpdblock.py:64
+msgid "Orientaciones para el alumnado"
+msgstr "Ikasleentzako orientabideak"
+
+#: exe/webui/orientacionestutoriafpdblock.py:64
+msgid "Orientaciones para la tutoría"
+msgstr "Tutoretzarako orientabideak"
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:31
+msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
+msgstr ""
+
+#: exe/webui/appletblock.py:102 exe/webui/wikipediablock.py:132
 msgid "Other"
 msgstr "Beste bat"
 
@@ -1397,7 +1617,7 @@ msgstr "Ingurua"
 msgid "Own site"
 msgstr "Nire gunea"
 
-#: exe/xului/mainpage.py:869
+#: exe/xului/mainpage.py:924
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Hurrengora ateratako paketea: %s"
@@ -1407,12 +1627,24 @@ msgstr "Hurrengora ateratako paketea: %s"
 msgid "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"
 msgstr "Paketea zaharra da. Beste pakete batean sartzen saiatu aurretik, eguneratu mesedez (Artxiboa..Ireki...Honela gorde)!"
 
-#: exe/xului/mainpage.py:317
+#: exe/xului/mainpage.py:323
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Hurrengoan gordetako paketea: %s"
 
-#: exe/webui/block.py:251 exe/webui/editorpane.py:373
+#: exe/engine/parasabermasfpdidevice.py:31
+msgid "Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje."
+msgstr ""
+
+#: exe/engine/recomendacionfpdidevice.py:31
+msgid "Para saber m&aacute;s es un iDevice que permite al profesarado recomendar libros, películas, ... útiles para su formación."
+msgstr ""
+
+#: exe/webui/parasabermasfpdblock.py:64
+msgid "Para saber más"
+msgstr "Gehiago jakiteko"
+
+#: exe/webui/editorpane.py:373 exe/webui/block.py:251
 msgid "Pedagogical Help"
 msgstr "Laguntza pedagogikoa"
 
@@ -1428,15 +1660,16 @@ msgstr "Mesedez, idatzi idevice izena."
 msgid "Please enter<br />an idevice name."
 msgstr "Mesedez, idatzi <br />idevice izena."
 
-#: exe/webui/element.py:1359
+#: exe/webui/element.py:1647
 msgid "Please select a .flv file."
 msgstr "Mesedez, aukeratu .flv artxibo bat."
 
-#: exe/webui/element.py:858
+#: exe/webui/element.py:878
 msgid "Please select a .jpg file."
 msgstr "Mesedez, aukeratu .jpg artxibo bat."
 
-#: exe/webui/multichoiceblock.py:95 exe/webui/quiztestblock.py:104
+#: exe/webui/quiztestblock.py:104 exe/webui/eleccionmultiplefpdblock.py:95
+#: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Mesedez, aukeratu galdera bakoitzaren erantzun zuzena."
 
@@ -1444,7 +1677,7 @@ msgstr "Mesedez, aukeratu galdera bakoitzaren erantzun zuzena."
 msgid "Please upload a .ggb file."
 msgstr "Mesedez, kargatu .ggb artxibo bat."
 
-#: exe/xului/mainpage.py:88
+#: exe/xului/mainpage.py:90
 msgid ""
 "Please use eXe's\n"
 "   File... Quit\n"
@@ -1466,12 +1699,12 @@ msgstr "Wikipediako artikulua polonieraz"
 msgid "Portugese Wikipedia Article"
 msgstr "Wikipediako artikulua portugesez"
 
-#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:352
-#: exe/engine/idevicestore.py:448 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:387 exe/engine/idevicestore.py:397
+#: exe/engine/idevicestore.py:493 exe/engine/idevicestore.py:503
 msgid "Preknowledge"
 msgstr "Aurreko ezagutzak"
 
-#: exe/engine/idevicestore.py:345 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:390 exe/engine/idevicestore.py:496
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1484,22 +1717,22 @@ msgstr ""
 "<li>        Ikasleek ingeleseko 4. maila gaindituta izan behar dute </li>\n"
 "<li>        Ikasleak oinarrizko tresnak muntatzeko gai izan behar dira </li></ul>\n"
 
-#: exe/webui/element.py:1502 exe/webui/editorpane.py:264
+#: exe/webui/element.py:1790 exe/webui/editorpane.py:264
 msgid "Preview"
 msgstr "Aurrebista"
 
-#: exe/xului/mainpage.py:542 exe/xului/mainpage.py:648
+#: exe/xului/mainpage.py:548 exe/xului/mainpage.py:654
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "%s direktorioaren aurrebista artxibo bat da, eta ezin da ordeztu"
 
-#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:336 exe/export/websitepage.py:191
+#: exe/engine/galleryidevice.py:664 exe/export/scormexport.py:341
+#: exe/export/websitepage.py:236 exe/export/ipodpage.py:110
 msgid "Previous"
 msgstr "Aurrekoa"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:2533
-#: exe/engine/field.py:2580
+#: exe/engine/field.py:2570 exe/engine/field.py:2617
+#: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1542,12 +1775,15 @@ msgstr ""
 "irudiari."
 
 #: exe/engine/truefalseidevice.py:166 exe/engine/truefalseidevice.py:393
+#: exe/engine/verdaderofalsofpdidevice.py:167
+#: exe/engine/verdaderofalsofpdidevice.py:395
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr "Eman Egia/Gezurra galderak erantzuteko argibideak."
 
-#: exe/engine/clozeidevice.py:117
+#: exe/engine/clozelangfpdidevice.py:117 exe/engine/clozeidevice.py:117
+#: exe/engine/clozefpdidevice.py:117
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
@@ -1556,6 +1792,7 @@ msgstr ""
 "Eremuan aldaketarik egiten ez bada, lehenetsitako testua txertatuko da.\n"
 
 #: exe/engine/casestudyidevice.py:229
+#: exe/engine/ejercicioresueltofpdidevice.py:230
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1567,18 +1804,24 @@ msgstr ""
 msgid "Purpose"
 msgstr "Asmoa"
 
-#: exe/engine/clozeidevice.py:275
+#: exe/engine/clozelangfpdidevice.py:279 exe/engine/clozeidevice.py:275
+#: exe/engine/clozefpdidevice.py:275
 msgid "Put instructions for learners here"
 msgstr "Sartu hemen ikasleentzako argibideak"
 
-#: exe/engine/multiselectidevice.py:80 exe/engine/multichoiceidevice.py:132
-#: exe/engine/field.py:3151 exe/engine/field.py:3216
+#: exe/engine/multichoiceidevice.py:132
+#: exe/engine/seleccionmultiplefpdidevice.py:81
+#: exe/engine/eleccionmultiplefpdidevice.py:133
+#: exe/engine/multiselectidevice.py:80 exe/engine/field.py:3426
+#: exe/engine/field.py:3491
 msgid "Question"
 msgstr "Galdera"
 
+#: exe/engine/field.py:3580 exe/engine/field.py:3661
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
-#: exe/engine/field.py:3305 exe/engine/field.py:3386 exe/webui/element.py:1730
+#: exe/engine/verdaderofalsofpdidevice.py:46
+#: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2038
 msgid "Question:"
 msgstr "Galdera:"
 
@@ -1590,28 +1833,35 @@ msgstr "Irten"
 msgid "RSS"
 msgstr "RSS"
 
-#: exe/engine/clozeidevice.py:276
+#: exe/engine/clozelangfpdidevice.py:280 exe/engine/clozeidevice.py:276
+#: exe/engine/clozefpdidevice.py:276
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Irakurri beheko paragrafoa eta bete hutsuneak"
 
-#: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
+#: exe/engine/truefalseidevice.py:395 exe/engine/clozeidevice.py:120
+#: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Irakurri beheko paragrafoa eta bete hutsuneak."
 
-#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:271
-#: exe/engine/genericidevice.py:304
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:280
+#: exe/engine/idevicestore.py:316
 msgid "Reading Activity"
 msgstr "Irakurtzeko jarduera"
 
-#: exe/engine/idevicestore.py:379 exe/engine/genericidevice.py:302
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:424
 msgid "Reading Activity 0.11"
 msgstr "Irakurtzeko 0.11 jarduera"
+
+#: exe/webui/recomendacionfpdblock.py:64
+msgid "Recomendación"
+msgstr "Gomendioa"
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
 msgstr "Hausnarketa"
 
-#: exe/engine/reflectionidevice.py:48
+#: exe/engine/reflectionfpdmodifidevice.py:48
+#: exe/engine/reflectionfpdidevice.py:48 exe/engine/reflectionidevice.py:48
 msgid ""
 "Reflection is a teaching method often used to \n"
 "connect theory to practice. Reflection tasks often provide learners with an \n"
@@ -1627,26 +1877,39 @@ msgstr ""
 "behaketa datuak biltzeko. Epigrafeak eta gidak feedback tresna \n"
 "eraginkorrak izan daitezke."
 
-#: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
+#: exe/engine/reflectionfpdmodifidevice.py:63
+#: exe/engine/reflectionfpdmodifidevice.py:199
+#: exe/engine/reflectionfpdidevice.py:63
+#: exe/engine/reflectionfpdidevice.py:199 exe/engine/reflectionidevice.py:62
+#: exe/engine/reflectionidevice.py:197
 msgid "Reflective question:"
 msgstr "Hausnartzeko galdera:"
 
-#: exe/webui/element.py:1201
+#: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
+msgid "Reflexiona"
+msgstr "Hausnartu"
+
+#: exe/webui/element.py:1221 exe/webui/element.py:1489
 msgid "Restart"
 msgstr "Berriz hasi"
 
-#: exe/webui/flashwithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/editorelement.py:224 exe/webui/imagemagnifierblock.py:108
-#: exe/webui/flashmovieblock.py:82 exe/webui/imagewithtextblock.py:82
+#: exe/webui/clozelangfpdblock.py:176 exe/webui/element.py:2155
+#: exe/webui/reflectionfpdblock.py:143 exe/webui/clozefpdblock.py:175
+msgid "Retroalimentacion"
+msgstr "Feedbacka"
+
+#: exe/webui/imagemagnifierblock.py:108 exe/webui/editorelement.py:224
+#: exe/webui/flashmovieblock.py:82 exe/webui/multimediablock.py:86
+#: exe/webui/flashwithtextblock.py:82 exe/webui/imagewithtextblock.py:82
 msgid "Right"
 msgstr "Eskuina"
 
-#: exe/xului/mainpage.py:310
+#: exe/xului/mainpage.py:316
 msgid "SAVE FAILED!"
 msgstr "EZ DA GORDE!"
 
-#: exe/xului/mainpage.py:314 exe/xului/mainpage.py:620
-#: exe/xului/mainpage.py:911
+#: exe/xului/mainpage.py:320 exe/xului/mainpage.py:626
+#: exe/xului/mainpage.py:966
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1655,7 +1918,7 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s"
 
-#: exe/engine/package.py:446 exe/engine/package.py:453
+#: exe/engine/package.py:447 exe/engine/package.py:454
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1680,7 +1943,7 @@ msgstr "Gorde"
 msgid "Section"
 msgstr "Atala"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1293
+#: exe/webui/element.py:1581 exe/webui/editorelement.py:268
 msgid "Select Flash Object"
 msgstr "Aukeratu flash objektua"
 
@@ -1694,32 +1957,32 @@ msgstr "Aukeratu hizkuntza"
 msgid "Select MP3 file"
 msgstr "Aukeratu MP3 artxiboa"
 
-#: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
-#: exe/webui/element.py:797
+#: exe/webui/element.py:817 exe/webui/editorelement.py:351
+#: exe/webui/attachmentblock.py:104
 msgid "Select a file"
 msgstr "Aukeratu artxibo bat"
 
-#: exe/webui/element.py:1375
+#: exe/webui/element.py:1663
 msgid "Select a flash video"
 msgstr "Aukeratu flash bideo bat"
 
-#: exe/webui/element.py:1488
+#: exe/webui/element.py:1776
 msgid "Select a font size: "
 msgstr "Auekratu letra neurria:"
 
-#: exe/webui/element.py:585
+#: exe/webui/element.py:605
 msgid "Select an MP3"
 msgstr "Aukeratu MP3 bat"
 
-#: exe/webui/element.py:498
+#: exe/webui/element.py:518
 msgid "Select an image"
 msgstr "Aukeratu irudi bat"
 
-#: exe/webui/element.py:909
+#: exe/webui/element.py:929
 msgid "Select an image (JPG file)"
 msgstr "Aukeratu irudi bat (JPG artxiboa)"
 
-#: exe/engine/field.py:3314
+#: exe/engine/field.py:3589
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1740,6 +2003,7 @@ msgstr ""
 "eta sartu bilatu beharreko terminoa."
 
 #: exe/engine/multichoiceidevice.py:104
+#: exe/engine/eleccionmultiplefpdidevice.py:105
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -1778,19 +2042,19 @@ msgstr "Ezarpenak gordeta"
 msgid "Show %s Image"
 msgstr "Erakutsi %s irudia"
 
-#: exe/webui/element.py:1208
+#: exe/webui/element.py:1228 exe/webui/element.py:1496
 msgid "Show Answers"
 msgstr "Erakutsi erantzunak"
 
-#: exe/webui/questionelement.py:130 exe/webui/element.py:1807
+#: exe/webui/element.py:2126 exe/webui/questionelement.py:130
 msgid "Show Feedback"
 msgstr "Erakutsi feedbacka"
 
-#: exe/webui/element.py:1192
+#: exe/webui/element.py:1212 exe/webui/element.py:1480
 msgid "Show/Clear Answers"
 msgstr "Erakutsi/Ezkutatu erantzunak"
 
-#: exe/webui/element.py:1187
+#: exe/webui/element.py:1207 exe/webui/element.py:1475
 msgid "Show/Hide Feedback"
 msgstr "Erakutsi/Ezkutatu feedbacka"
 
@@ -1810,12 +2074,20 @@ msgstr "Wikipediako artikulua eslovenieraz"
 msgid "Small"
 msgstr "Txikia"
 
-#: exe/webui/wikipediablock.py:157 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:115 exe/webui/editorpane.py:336
+# JR
+# Texto necesarios para la FPaD
+#: exe/webui/clozelangfpdblock.py:173 exe/webui/element.py:2150
+#: exe/webui/element.py:2544 exe/webui/questionelement.py:152
+#: exe/webui/clozefpdblock.py:172
+msgid "Solucion"
+msgstr "Ebazpena"
+
+#: exe/webui/rssblock.py:115 exe/webui/multimediablock.py:101
+#: exe/webui/editorpane.py:336 exe/webui/wikipediablock.py:157
 msgid "Some emphasis"
 msgstr "Enfasi pixka bat"
 
-#: exe/application.py:281 exe/xului/mainpage.py:1111
+#: exe/application.py:285 exe/xului/mainpage.py:1183
 msgid "Sorry, wrong file format"
 msgstr "Artxiboaren formatua okerra da"
 
@@ -1823,7 +2095,7 @@ msgstr "Artxiboaren formatua okerra da"
 msgid "Sorry, wrong file format."
 msgstr "Artxiboaren formatua okerra da."
 
-#: exe/xului/mainpage.py:1109
+#: exe/xului/mainpage.py:1181
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1837,14 +2109,17 @@ msgid "Spanish Wikipedia Article"
 msgstr "Wikipediako artikulua espainieraz"
 
 #: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
+#: exe/engine/ejercicioresueltofpdidevice.py:221
+#: exe/engine/ejercicioresueltofpdidevice.py:408
 msgid "Story:"
 msgstr "Istorioa:"
 
-#: exe/webui/element.py:1091
+#: exe/webui/element.py:1111 exe/webui/element.py:1373
 msgid "Strict Marking?"
 msgstr "Zorroztasunez zuzendu?"
 
-#: exe/webui/element.py:1196 exe/webui/editorpane.py:424
+#: exe/webui/element.py:1216 exe/webui/element.py:1484
+#: exe/webui/editorpane.py:424
 msgid "Submit"
 msgstr "Bidali"
 
@@ -1856,7 +2131,7 @@ msgstr "Bidali erantzuna"
 msgid "Swedish Wikipedia Article"
 msgstr "Wikipediako artikulua suedieraz"
 
-#: exe/engine/idevicestore.py:387
+#: exe/engine/idevicestore.py:432
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Irakasleek ohar hauek gogoan izan beharko lituzkete iDevice hau erabiltzean: <ol><li>Pentsatu zenbat ekintza mota erabili nahi dituzuen bisualki edukian. Ez erabili jarduera mota edo sailkapen gehiegi, ikasleentzat nahasgarria izan baitaiteke. Askotan, nahikoa dira hiruzpalau mota.</li><li>Diseinu bisualaren ikuspuntutik, saiatu bi iDevice elkarren ondoan ez jartzen, tartean testurik ez dutela. Beharrezkoa izanez gero, iDevice bakarrean sartu bi galdera edo ekintza.</li><li>Prestatzen dituzun jarduerei esker ikasleek lortutako onurak handiagoa izan behar du ekintza gauzatzeko emandako denborak eta ahaleginak baino. </li></ol>"
 
@@ -1872,6 +2147,74 @@ msgstr "Testuaren kaxa"
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "Testuaren lerroa"
+
+#: exe/engine/casopracticofpdidevice.py:37
+#: exe/engine/casopracticofpdidevice.py:135
+#, fuzzy
+msgid "Texto Caso pr&aacute;ctico:"
+msgstr "Kasu praktikoa"
+
+#: exe/engine/citasparapensarfpdidevice.py:37
+#, fuzzy
+msgid "Texto Citas para pensar:"
+msgstr "Hausnarketarako aipua"
+
+#: exe/engine/correccionfpdidevice.py:36
+msgid "Texto Correci&oacute;n:"
+msgstr ""
+
+#: exe/engine/debesconocerfpdidevice.py:37
+#: exe/engine/debesconocerfpdidevice.py:136
+#, fuzzy
+msgid "Texto Debes conocer:"
+msgstr "Jakin  behar duzu"
+
+# Destacado
+#: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
+#: exe/engine/destacadofpdidevice.py:134
+#, fuzzy
+msgid "Texto Destacado:"
+msgstr "FPD - Nabarmendua"
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:37
+#, fuzzy
+msgid "Texto Orientaciones alumnado"
+msgstr "FPD - Ikasle-Orientabideak"
+
+#: exe/engine/orientacionesalumnadofpdidevice.py:135
+#, fuzzy
+msgid "Texto Orientaciones alumnado:"
+msgstr "FPD - Ikasle-Orientabideak"
+
+#: exe/engine/orientacionestutoriafpdidevice.py:37
+#, fuzzy
+msgid "Texto Orientaciones tutor&iacute;a"
+msgstr "FPD - Tutoretza-Orientabideak"
+
+#: exe/engine/orientacionestutoriafpdidevice.py:136
+#, fuzzy
+msgid "Texto Orientaciones tutor&iacute;a:"
+msgstr "FPD - Tutoretza-Orientabideak"
+
+#: exe/engine/parasabermasfpdidevice.py:136
+#, fuzzy
+msgid "Texto Para sabe m&aacute;s"
+msgstr "Gehiago jakiteko"
+
+#: exe/engine/parasabermasfpdidevice.py:37
+#, fuzzy
+msgid "Texto Para saber m&aacute;s"
+msgstr "Gehiago jakiteko"
+
+#: exe/engine/recomendacionfpdidevice.py:37
+#: exe/engine/recomendacionfpdidevice.py:136
+msgid "Texto de la recomendaci&oacute;n:"
+msgstr ""
+
+#: exe/engine/citasparapensarfpdidevice.py:136
+#, fuzzy
+msgid "Texto para pensar:"
+msgstr "Hausnarketarako aipua"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
@@ -1925,7 +2268,7 @@ msgstr ""
 "Lupa irudiak handitzeko tresna da, ikasleek emandako irudiak\n"
 "handi ditzaten. Lupa irudien gainean mugitzean, irudiak zehaztasunez azter daitezke."
 
-#: exe/engine/freetextidevice.py:40
+#: exe/engine/freetextidevice.py:40 exe/engine/freetextfpdidevice.py:40
 msgid ""
 "The majority of a learning resource will be \n"
 "establishing context, delivering instructions and providing general information.\n"
@@ -1984,7 +2327,7 @@ msgstr ""
 "bideoak ikusteko 8 player deskargatu beharko dute erabiltzaileek,\n"
 "hemen: http://www.macromedia.com/."
 
-#: exe/engine/freetextidevice.py:121
+#: exe/engine/freetextidevice.py:130 exe/engine/freetextfpdidevice.py:121
 msgid "This is a free text field general learning content can be entered."
 msgstr "Testu eremu librea da hau. Ikasgai orokorra idatz daiteke."
 
@@ -2032,7 +2375,8 @@ msgstr ""
 msgid "Topic"
 msgstr "Gaia"
 
-#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:189
+#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
+#: exe/webui/truefalseelement.py:275
 msgid "True"
 msgstr "Egia."
 
@@ -2041,6 +2385,7 @@ msgid "True-False Question"
 msgstr "Egia/gezurra galderak "
 
 #: exe/engine/truefalseidevice.py:146
+#: exe/engine/verdaderofalsofpdidevice.py:146
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -2051,11 +2396,12 @@ msgstr ""
 "eta ikasleak egia edo gezurra den erabaki beharko du. Galdera mota hori \n"
 "egokia da gertaeren informazioa emateko eta biak/edo motako erantzunetarako."
 
-#: exe/engine/field.py:2971
+#: exe/engine/field.py:3246
 msgid "Type a discussion topic here."
 msgstr "Idatzi hemen eztabaidarako gaia."
 
 #: exe/engine/multichoiceidevice.py:109
+#: exe/engine/eleccionmultiplefpdidevice.py:110
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2070,6 +2416,7 @@ msgstr ""
 ",beste erantzunetan."
 
 #: exe/engine/truefalseidevice.py:373
+#: exe/engine/verdaderofalsofpdidevice.py:375
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -2082,7 +2429,7 @@ msgstr ""
 " eXe-k automatikoki feedback hau jarriko du: \"Erantzun zuzena\"\n"
 "erantzuna zuzena bada; edo \"Erantzun okerra\" beste aukeretan."
 
-#: exe/engine/field.py:3317
+#: exe/engine/field.py:3592
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2090,11 +2437,12 @@ msgstr ""
 "Idatzi ikasleari eman nahi diozun \n"
 "feedbacka."
 
-#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:445
+#: exe/engine/idevicestore.py:384 exe/engine/idevicestore.py:490
 msgid "Type the learning objectives for this resource."
 msgstr "Idatzi baliabide honen helburu pedagokikoak."
 
 #: exe/engine/truefalseidevice.py:154
+#: exe/engine/verdaderofalsofpdidevice.py:155
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -2130,18 +2478,27 @@ msgstr ""
 msgid "Unit"
 msgstr "Unitatea"
 
-#: exe/engine/flashwithtextidevice.py:44 exe/engine/imagewithtextidevice.py:44
-#: exe/engine/reflectionidevice.py:47 exe/engine/multiselectidevice.py:44
-#: exe/engine/idevicestore.py:273 exe/engine/idevicestore.py:331
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:381
-#: exe/engine/idevicestore.py:437 exe/engine/idevicestore.py:465
-#: exe/engine/imagemagnifieridevice.py:42 exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:44 exe/engine/multichoiceidevice.py:61
-#: exe/engine/clozeidevice.py:47 exe/engine/truefalseidevice.py:145
-#: exe/engine/appletidevice.py:54 exe/engine/wikipediaidevice.py:53
-#: exe/engine/externalurlidevice.py:39 exe/engine/freetextidevice.py:39
-#: exe/engine/mathidevice.py:42 exe/engine/quiztestidevice.py:245
-#: exe/engine/casestudyidevice.py:198 exe/idevices/exampleidevice.py:40
+#: exe/engine/casestudyidevice.py:198 exe/engine/multichoiceidevice.py:61
+#: exe/engine/freetextidevice.py:39
+#: exe/engine/seleccionmultiplefpdidevice.py:44
+#: exe/engine/clozelangfpdidevice.py:47
+#: exe/engine/eleccionmultiplefpdidevice.py:61
+#: exe/engine/imagewithtextidevice.py:44 exe/engine/multiselectidevice.py:44
+#: exe/engine/externalurlidevice.py:39
+#: exe/engine/ejercicioresueltofpdidevice.py:198
+#: exe/engine/truefalseidevice.py:145 exe/engine/clozeidevice.py:47
+#: exe/engine/clozefpdidevice.py:47 exe/engine/reflectionfpdmodifidevice.py:47
+#: exe/engine/wikipediaidevice.py:53 exe/engine/freetextfpdidevice.py:39
+#: exe/engine/flashwithtextidevice.py:44 exe/engine/reflectionfpdidevice.py:47
+#: exe/engine/attachmentidevice.py:44 exe/engine/idevicestore.py:318
+#: exe/engine/idevicestore.py:376 exe/engine/idevicestore.py:404
+#: exe/engine/idevicestore.py:426 exe/engine/idevicestore.py:482
+#: exe/engine/idevicestore.py:510 exe/engine/mathidevice.py:42
+#: exe/engine/quiztestidevice.py:245 exe/engine/flashmovieidevice.py:40
+#: exe/engine/appletidevice.py:54 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/reflectionidevice.py:47
+#: exe/engine/verdaderofalsofpdidevice.py:145
+#: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Aucklandeko Unibertsitatea"
 
@@ -2162,7 +2519,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Kargatu"
 
-#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:431
+#: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2180,7 +2537,7 @@ msgstr "Erakusteko irudi asko badituzu erabili iDevice hau."
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
 msgstr "Zure asmoak eta baliabidearen helburu pedagogikoak azaltzeko erabili eremu hau. Erabilgarria izan daiteke zure iDevice-a beste batzuei esportatu behar izanez gero."
 
-#: exe/engine/freetextidevice.py:46
+#: exe/engine/freetextidevice.py:46 exe/engine/freetextfpdidevice.py:46
 msgid ""
 "Use this field to enter text. This \n"
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
@@ -2194,11 +2551,14 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "iDevice-ak formatua izan behar duen edo ez aukeratzeko erabili zerrenda hau; adibidez, ertza edo ikonoa."
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:467
 msgid "What to read"
 msgstr "Zer irakurri"
 
-#: exe/engine/multiselectidevice.py:58 exe/engine/multichoiceidevice.py:75
+#: exe/engine/multichoiceidevice.py:75
+#: exe/engine/seleccionmultiplefpdidevice.py:58
+#: exe/engine/eleccionmultiplefpdidevice.py:75
+#: exe/engine/multiselectidevice.py:58
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -2243,7 +2603,7 @@ msgstr "Wikibertsitatea"
 msgid "Wiktionary"
 msgstr "Wikiztegia"
 
-#: exe/webui/element.py:1986
+#: exe/webui/element.py:2338 exe/webui/element.py:2365
 msgid "Wrong"
 msgstr "Okerra."
 
@@ -2259,16 +2619,16 @@ msgstr "Zure iDevice berriak izenburu hori izango du iDevice panelean. Eremu hau
 msgid "article "
 msgstr "artikulua"
 
-#: exe/webui/element.py:515 exe/webui/element.py:931
+#: exe/webui/element.py:535 exe/webui/element.py:951
 msgid "blank for original size"
 msgstr "hutsik jatorrizko neurrirako"
 
-#: exe/export/imsexport.py:207 exe/export/scormexport.py:292
+#: exe/export/scormexport.py:295 exe/export/imsexport.py:210
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:85 exe/webui/common.py:70
-#: exe/webui/editorpage.py:220
+#: exe/webui/editorpage.py:220 exe/webui/common.py:70
+#: exe/webui/preferencespage.py:85
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: XHTML editorea urruneko hezkuntzarako"
 
@@ -2285,12 +2645,12 @@ msgstr "%s artxiboak ez du ahaide nodorik"
 msgid "http://en.wikipedia.org/"
 msgstr "http://eu.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:130
+#: exe/engine/attachmentidevice.py:106 exe/engine/appletidevice.py:131
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "%s iDevice-k ez du paketerik"
 
-#: exe/engine/package.py:714 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice editorea"
@@ -2311,7 +2671,7 @@ msgstr "tekla kodea"
 msgid "label"
 msgstr "etiketa"
 
-#: exe/webui/element.py:1485
+#: exe/webui/element.py:1773
 msgid "newline"
 msgstr "lerro berria"
 
@@ -2319,7 +2679,7 @@ msgstr "lerro berria"
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr ""
 
-#: exe/webui/element.py:1484
+#: exe/webui/element.py:1772
 msgid "text"
 msgstr "testua"
 
@@ -2332,9 +2692,9 @@ msgid "tooltiptext"
 msgstr ""
 
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
-#: class="dialog" autostretch="always" title="eXeex - About" orient="vertical"
-#: onload="sizeToContent()"
-#: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+#: onload="sizeToContent()" orient="vertical"
+#: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+#: title="eXeex - About" autostretch="always" class="dialog">
 msgid "eXeex - About"
 msgstr ""
 
@@ -2348,11 +2708,10 @@ msgstr "Dublín Core metadatuak"
 msgid "SCORM 1.2 Options"
 msgstr "SCORM 1.2-ren aukerak"
 
-#: exe/xului/templates/mainpage.xul:<window
+#: exe/xului/templates/mainpage.xul:<window onload="initWindow()" height="480"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-#: title="exelearning" width="640" height="480" id="mainWindow"
-#: onload="initWindow()" xmlns:html="http://www.w3.org/1999/xhtml"
-#: xmlns:n="http://nevow.com/ns/nevow/0.1">
+#: title="exelearning" width="640" xmlns:html="http://www.w3.org/1999/xhtml"
+#: id="mainWindow" xmlns:n="http://nevow.com/ns/nevow/0.1">
 msgid "exelearning"
 msgstr ""
 
@@ -2437,6 +2796,14 @@ msgstr "Metadatuak"
 #: the content of resource.">
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
+
+#: exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: label="Apply"> exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+msgid "Apply"
+msgstr "Aplikatu"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2798,8 +3165,9 @@ msgid "Format:"
 msgstr "Formatua:"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="export-menu" accesskey="e" label="Export">
-msgid "label=\"Export\" accesskey=\"e\""
+#: id="import-menu" accesskey="i" label="Import">
+#, fuzzy
+msgid "label=\"Import\" accesskey=\"i\""
 msgstr "label=\"Esportatu\" tekla=\"e\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
@@ -2812,12 +3180,11 @@ msgstr "Creative Commons Attribution-NoDerivs 2.5 lizentzia"
 msgid "Select Format"
 msgstr "Aukeratu formatua"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
-#: label="Common Cartridge">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="importPackage('html')" accesskey="h" label="HTML Course">
 #, fuzzy
-msgid "label=\"Common Cartridge\" accesskey=\"c\""
-msgstr "label=\"Orri bakarra\" tekla=\"b\""
+msgid "label=\"HTML Course\" accesskey=\"h\""
+msgstr "label=\"Laguntza\" tekla=\"l\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
@@ -2830,10 +3197,11 @@ msgstr "Creative Commons Attribution-NonCommercial 2.5 lizentzia"
 msgid "XHTML"
 msgstr "XHTML"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" tekla=\"s\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="mergeXliffPackage(0)" accesskey="x" label="XLIFF file">
+#, fuzzy
+msgid "label=\"XLIFF file\" accesskey=\"x\""
+msgstr "label=\"Artxiboa\" tekla=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
@@ -2847,10 +3215,11 @@ msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
-#: Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS edukia duen paketea\" tekla=\"i\""
+#: oncommand="mergeXliffPackage(1)" accesskey="f" label="XLIFF file (from
+#: source)">
+#, fuzzy
+msgid "label=\"XLIFF file (from source)\" accesskey=\"f\""
+msgstr "label=\"Artxiboa\" tekla=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
@@ -2863,11 +3232,10 @@ msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 lizentzia"
 msgid "IMS Content Package 1.1.3"
 msgstr "IMS 1.1.3 edukia duen paketea"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
-msgid "Web Site"
-msgstr "Webgunea"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="export-menu" accesskey="e" label="Export">
+msgid "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"Esportatu\" tekla=\"e\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
@@ -2880,10 +3248,12 @@ msgstr "Developing Nations 2.0"
 msgid "An unambiguous reference to the resource within a given context."
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
-msgid "Self-contained Folder"
-msgstr "Auto-edukitako karpeta"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('commoncartridge','','')" accesskey="c"
+#: label="Common Cartridge">
+#, fuzzy
+msgid "label=\"Common Cartridge\" accesskey=\"c\""
+msgstr "label=\"Orri bakarra\" tekla=\"b\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2896,10 +3266,10 @@ msgstr ""
 msgid "Identifier:"
 msgstr "Identifikatzailea:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip File">
-msgid "Zip File"
-msgstr "Artxibo konprimitua"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm','','')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" tekla=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2913,10 +3283,10 @@ msgid "A Reference to a resource from which the present resource is derived."
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
-#: Page">
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Orri bakarra\" tekla=\"b\""
+#: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
+#: Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS edukia duen paketea\" tekla=\"i\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
@@ -2930,11 +3300,11 @@ msgstr ""
 msgid "Source:"
 msgstr "Iturria:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
-#: File">
-msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Testu artxiboa\" tekla=\"t\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: Site" id="dcmiWebSite"
+msgid "Web Site"
+msgstr "Webgunea"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
@@ -2948,9 +3318,9 @@ msgid "Select a language."
 msgstr "Seleccionar Lenguaje"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
-msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"iPod oharrak\" tekla=\"o\""
+#: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
+msgid "Self-contained Folder"
+msgstr "Auto-edukitako karpeta"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2963,10 +3333,10 @@ msgstr ""
 msgid "Language:"
 msgstr "Hizkuntza:"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
-msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Konbinatu\" tekla=\"k\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile','','')" label="Zip File">
+msgid "Zip File"
+msgstr "Artxibo konprimitua"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2980,9 +3350,10 @@ msgid "Abkhazian "
 msgstr "Abjasiera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Txertatu paketea\" tekla=\"t\""
+#: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
+#: Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Orri bakarra\" tekla=\"b\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -2996,9 +3367,10 @@ msgid "Afar "
 msgstr "Urrun"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Atera paketea\" tekla=\"A\""
+#: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
+#: File">
+msgid "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"Testu artxiboa\" tekla=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -3012,9 +3384,9 @@ msgid "Afrikaans "
 msgstr "Afrikaansa"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Irten\" tekla=\"i\""
+#: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
+msgid "label=\"iPod Notes\" accesskey=\"n\""
+msgstr "label=\"iPod oharrak\" tekla=\"o\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -3027,10 +3399,11 @@ msgstr ""
 msgid "Albanian "
 msgstr "Albaniera"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Tresnak\" tekla=\"t\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportXliffPackage('0', '', '')" accesskey="x" label="XLIFF">
+#, fuzzy
+msgid "label=\"XLIFF\" accesskey=\"x\""
+msgstr "label=\"Artxiboa\" tekla=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -3044,9 +3417,11 @@ msgid "Amharic "
 msgstr "Amharera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "Lehentasunak"
+#: oncommand="exportXliffPackage('1', '', '')" accesskey="t" label="XLIFF
+#: (source also in target)">
+#, fuzzy
+msgid "label=\"XLIFF (source also in target)\" accesskey=\"t\""
+msgstr "label=\"Txertatu paketea\" tekla=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -3061,39 +3436,30 @@ msgstr "Eguneratu zuhaitza"
 msgid "Arabic "
 msgstr "Arabiera"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh Display">
-msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Eguneratu bista\" tekla=\"e\""
-
-#: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Apply"> exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-msgid "Apply"
-msgstr "Aplikatu"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
+msgid "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"Konbinatu\" tekla=\"k\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
 msgid "Armenian "
 msgstr "Armeniera"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Estiloak\" tekla=\"e\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"Txertatu paketea\" tekla=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
 msgid "Assamese "
 msgstr "Assamera"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Laguntza\" tekla=\"l\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Atera paketea\" tekla=\"A\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -3101,15 +3467,76 @@ msgid "Avestan "
 msgstr "Avestera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
-#, fuzzy
-msgid "label=\"eXe Tutorial\" accesskey=\"u\""
-msgstr "label=\"Tresnak\" tekla=\"t\""
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"Irten\" tekla=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
 msgid "Aymara "
 msgstr "Aimara"
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Tresnak\" tekla=\"t\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
+#: label="Azerbaijani ">
+msgid "Azerbaijani "
+msgstr "Azerbaijanera"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Lehentasunak"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: label="Bashkir ">
+msgid "Bashkir "
+msgstr "Bashkirrera"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh Display">
+msgid "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"Eguneratu bista\" tekla=\"e\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
+#: label="Basque ">
+msgid "Basque "
+msgstr "Euskara"
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Estiloak\" tekla=\"e\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: label="Bengali; Bangla ">
+msgid "Bengali; Bangla "
+msgstr "Bengalera"
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: accesskey="h" label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Laguntza\" tekla=\"l\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "Bihari "
+msgstr "Bihariera"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileOpenTutorial()" accesskey="u" label="eXe Tutorial">
+#, fuzzy
+msgid "label=\"eXe Tutorial\" accesskey=\"u\""
+msgstr "label=\"Tresnak\" tekla=\"t\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "Bislama "
+msgstr "Bislama"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%s/docs/manual/Online_manual.html')"
@@ -3118,20 +3545,20 @@ msgstr "Aimara"
 msgid "label=\"eXe Manual\" accesskey=\"m\""
 msgstr "label=\"eXe eskuliburua linean\" tekla=\"e\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
-#: label="Azerbaijani ">
-msgid "Azerbaijani "
-msgstr "Azerbaijanera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: label="Bosnian ">
+msgid "Bosnian "
+msgstr "Bosniera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('file://%t')" accesskey="n" label="Release Notes">
 msgid "label=\"Release Notes\" accesskey=\"n\""
 msgstr "label=\"Bertsioaren oharrak\" tekla=\"o\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
-msgid "Bashkir "
-msgstr "Bashkirrera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr "Bretoiera "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/')" accesskey="w" label="eXe
@@ -3140,10 +3567,10 @@ msgstr "Bashkirrera"
 msgid "label=\"eXe Web Site\" accesskey=\"w\""
 msgstr "label=\"eXe txata\" tekla=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
-msgid "Basque "
-msgstr "Euskara"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "Bielorrusiera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
@@ -3151,10 +3578,10 @@ msgstr "Euskara"
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"Argitaratu gai bat\" tekla=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
-msgid "Bengali; Bangla "
-msgstr "Bengalera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "Bulgariera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
@@ -3162,60 +3589,60 @@ msgstr "Bengalera"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"eXe txata\" tekla=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
-msgid "Bihari "
-msgstr "Bihariera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "Birmaniera"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"eXe-ri buruz\" tekla=\"b\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
-msgid "Bislama "
-msgstr "Bislama"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "Katalana"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo">
 msgid "debugInfo"
 msgstr "debugInfo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
-msgid "Bosnian "
-msgstr "Bosniera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
+msgstr "Txamorroa"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
 msgstr "Gehitu orria"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
-msgstr "Bretoiera "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "Txetxeniera"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
 msgstr "Berrizendatu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "Bielorrusiera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: label="Chinese ">
+msgid "Chinese "
+msgstr "Txinera"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
 msgstr "Inguruko beira"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "Bulgariera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr "Eslaviar eliza"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="promote"
 #: key="promoteKey" id="btnPromote" image="/images/stock-goto-first.png"
@@ -3223,10 +3650,10 @@ msgstr "Bulgariera"
 msgid "Promote node up in hierarchy"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "Birmaniera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
+msgstr "Txubaxiera"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="demote"
 #: key="demoteKey" id="btnDemote" image="/images/stock-goto-last.png"
@@ -3234,10 +3661,10 @@ msgstr "Birmaniera"
 msgid "Demote node down in hierarchy"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "Katalana"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
+msgstr "Kornubiera"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="up" key="upKey"
 #: id="btnUp" image="/images/stock-go-up.png" tooltiptext="Move node up">
@@ -3245,10 +3672,10 @@ msgstr "Katalana"
 msgid "Move node up"
 msgstr "Gorantz mugitu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr "Txamorroa"
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: label="Corsican ">
+msgid "Corsican "
+msgstr "Korsikera"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="down"
 #: key="downKey" id="btnDown" image="/images/stock-go-down.png"
@@ -3257,75 +3684,45 @@ msgstr "Txamorroa"
 msgid "Move node down"
 msgstr "Beherantz mugitu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "Txetxeniera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: label="Croatian ">
+msgid "Croatian "
+msgstr "Kroaziera "
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 msgid "iDevices"
 msgstr "IDevice-ak"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
-msgid "Chinese "
-msgstr "Txinera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
+#: label="Czech ">
+msgid "Czech "
+msgstr "Txekiera"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
 msgid "iDevicePane"
 msgstr "IDevice-aren beira"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
-msgstr "Eslaviar eliza"
+#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
+#: label="Danish ">
+msgid "Danish "
+msgstr "Daniera"
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
 msgstr "Edizioa"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
-msgstr "Txubaxiera"
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
+#: label="Dzongkha; Bhutani ">
+msgid "Dzongkha; Bhutani "
+msgstr "Dzongkha; Bhutanera"
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties">
 msgid "Properties"
 msgstr "Ezaugarriak"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr "Kornubiera"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
-msgid "Corsican "
-msgstr "Korsikera"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
-msgid "Croatian "
-msgstr "Kroaziera "
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
-#: label="Czech ">
-msgid "Czech "
-msgstr "Txekiera"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
-#: label="Danish ">
-msgid "Danish "
-msgstr "Daniera"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
-#: label="Dzongkha; Bhutani ">
-msgid "Dzongkha; Bhutani "
-msgstr "Dzongkha; Bhutanera"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
 #: label="English ">
@@ -4364,129 +4761,14 @@ msgstr "Eskubideetako elementu batek, normalean, baliabidearen eskubideen inguru
 #~ msgid "<strong>url:</strong> "
 #~ msgstr "<strong>url:</strong> "
 
-# JR
-# Texto necesarios para la FPaD
-msgid "Solucion"
-msgstr "Ebazpena"
+#~ msgid "Solución"
+#~ msgstr "Ebazpena"
 
-msgid "Solución"
-msgstr "Ebazpena"
+#~ msgid "Retroalimentación"
+#~ msgstr "Feedbacka"
 
-msgid "Retroalimentacion"
-msgstr "Feedbacka"
+#~ msgid "Orientaciones para la tutoria"
+#~ msgstr "Tutoretzarako orientabideak"
 
-msgid "Retroalimentación"
-msgstr "Feedbacka"
-
-# Texto Libre
-msgid "FPD - Texto Libre"
-msgstr "FPD - Testu Librea"
-
-# Destacado
-msgid "FPD - Destacado"
-msgstr "FPD - Nabarmendua"
-
-#: Caso practico
-msgid "FPD - Caso Practico"
-msgstr "FPD - Kasu Praktikoa"
-
-msgid "Caso práctico"
-msgstr "Kasu praktikoa"
-
-msgid "Caso practico"
-msgstr "Kasu praktikoa"
-
-#: Citas para pensar
-msgid "FPD - Citas Para Pensar"
-msgstr "FPD - Hausnarketarako Aipua"
-
-msgid "Citas para pensar"
-msgstr "Hausnarketarako aipua"
-
-#: Debes conocer
-msgid "FPD - Debes Conocer"
-msgstr "FPD - Jakin  Behar Duzu"
-
-msgid "Debes conocer"
-msgstr "Jakin  behar duzu"
-
-#: Ejercicio Resuelto
-msgid "FPD - Ejercicio Resuelto"
-msgstr "FPD - Ebatzitako Ariketa"
-
-msgid "Ejercicio resuelto"
-msgstr "Ebatzitako ariketa"
-
-#: Orientaciones Alumnado
-msgid "FPD - Orientaciones Alumnado"
-msgstr "FPD - Ikasle-Orientabideak"
-
-msgid "Orientaciones para el alumnado"
-msgstr "Ikasleentzako orientabideak"
-
-#: Orientaciones Tutoria
-msgid "FPD - Orientaciones Tutoria"
-msgstr "FPD - Tutoretza-Orientabideak"
-
-msgid "Orientaciones para la tutoría"
-msgstr "Tutoretzarako orientabideak"
-
-msgid "Orientaciones para la tutoria"
-msgstr "Tutoretzarako orientabideak"
-
-#: Para saber mas
-msgid "FPD - Para Saber Mas"
-msgstr "FPD - Gehiago Jakiteko"
-
-msgid "Para saber más"
-msgstr "Gehiago jakiteko"
-
-msgid "Para saber mas"
-msgstr "Gehiago jakiteko"
-
-#: Recomendacion
-msgid "FPD - Recomendacion"
-msgstr "FPD - Gomendioa"
-
-msgid "Recomendación"
-msgstr "Gomendioa"
-
-msgid "Recomendacion"
-msgstr "Gomendioa"
-
-#: Reflexionas
-msgid "FPD - Reflexiona (con Retroalimentacion)"
-msgstr "FPD - Hausnartu (Feedbackarekin)"
-
-msgid "FPD - Reflexiona (sin Retroalimentacion)"
-msgstr "FPD - Hausnartu (Feedbackik gabe)"
-
-msgid "Reflexiona"
-msgstr "Hausnartu"
-
-#: Autoevaluaciones
-#: Espacios en blanco
-msgid "FPD - Actividad de Espacios en Blanco"
-msgstr "FPD - Hutsuneak Betetzeko Jarduera"
-
-#: Espacios en blanco
-msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
-msgstr "FPD - Hutsuneak Betetzeko Jarduera (Eraldatua)"
-
-#: Eleccion multiple
-msgid "FPD - Actividad de Eleccion Multiple"
-msgstr "FPD - Aukera Askotako Jarduera"
-
-#: Seleccion multiple
-msgid "FPD - Actividad de Seleccion Multiple"
-msgstr "FPD - Hautaketa Askotako Jarduera"
-
-#: Verdadero / Falso
-msgid "FPD - Actividad de Verdadero/Falso"
-msgstr "FPD - Egia/Gezurra Moduko Jarduera "
-
-msgid "Autoevaluación"
-msgstr "Autoebaluazioa"
-
-msgid "Autoevaluacion"
-msgstr "Autoebaluazioa"
+#~ msgid "Recomendacion"
+#~ msgstr "Gomendioa"
