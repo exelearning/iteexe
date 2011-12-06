@@ -294,6 +294,7 @@ def generateAppFil():
         (exe,          '*.py'),
         (exe/'engine', '*.py'),
         (exe/'export', '*.py'),
+        (exe/'importers', '*.py'),
         (exe/'webui',  '*.py'),
         (exe/'idevices', '*.py'),
         (exe/'xului',  '*.py'),
@@ -647,8 +648,7 @@ def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbo
         langCode = exp.match(filename.basename()).group(1)
         mo_targetDir = targetDir/langCode/'LC_MESSAGES'
         # if not keeping new languages, both mo_targetDir and its .svn subdir must exist
-        if not keep_new and (not mo_targetDir.exists()
-                             or not (mo_targetDir/'.svn').exists()):
+        if not keep_new and (not mo_targetDir.exists()):
             print "not building %s" % filename
             continue
         if not mo_targetDir.exists():
