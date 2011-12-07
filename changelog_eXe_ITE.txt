@@ -1,3 +1,17 @@
+Versión 1.04.1.3605ite6beta2 (2011-12-07)
+
+  [José Miguel Andonegui]
+  * Traducciones al euskera y al español de menus de importador/exportador
+    XLIFF
+
+  [Pedro Peña]
+  * Actualización de cadenas de todas las traducciones para incluir cadenas que
+    faltaban por los nuevos desarrollos
+  * Reubicaión de las entradas de menú del importador/exportador de XLIFF
+  * Adaptado prefs.js de Firefox para que no compruebe extensiones ni pregunte
+    en ningún caso al usuario al iniciar eXe
+  * Corregido error por el cual no aparecía el icono del plugin media de TinyMCE
+
 Versión 1.04.1.3605ite6beta1 (2011-12-05)
 
   [Ignacio Gros]
