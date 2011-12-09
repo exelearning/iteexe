@@ -1,0 +1,90 @@
+#!/usr/bin/env python
+# -- coding: utf-8 --
+# ===========================================================================
+# eXe
+# Copyright 2011-2012, Pedro Peña Pérez
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#t
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+
+import os
+import sys
+from getopt import getopt, GetoptError
+
+# Try to work even with no python path
+try:
+    from exe.engine.persistxml import exportToXML, importFromXML
+except ImportError, error:
+    if str(error) == "No module named exe.engine.persistxml":
+        exePath = os.path.abspath(sys.argv[0])
+        exeDir  = os.path.dirname(exePath)
+        pythonPath = os.path.split(exeDir)[0]
+        sys.path.insert(0, pythonPath)
+        from exe.engine.persistxml import exportToXML, importFromXML
+    else:
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+
+def usage():
+    print _(u"""Usage: %s [-xi] package_elp ...
+  -x --extract-xml  Extract an xml file equivalent to content.data
+  -i --include-xml  Include a xml file in elp package, rebuilding content.data 
+""") % (os.path.basename(sys.argv[0]))
+
+if __name__ == "__main__":
+    stdout = sys.stdout
+    stderr = sys.stderr
+
+    from exe.application import Application
+    application = Application()
+    application.loadConfiguration()
+
+    sys.stdout = stdout
+    sys.stderr = stderr
+
+    try:
+        options, packages = getopt(sys.argv[1:], "xi", ["--extract-xml","--include-xml"])
+    except GetoptError:
+        usage()
+        sys.exit(2)
+
+    if not packages:
+        usage()
+        sys.exit(3)
+        
+    for option in options:
+        if option[0] in ("-x", "--extract-xml"):
+            for package in packages:
+                try:
+                    exportToXML(package)
+                    print _(u"Successfully extracted file '%s'.") % (package + ".xml")
+                except:
+                    print _(u"Unable to extract from '%s'.\nThe error was:") % (package)
+                    import traceback
+                    traceback.print_exc()
+            sys.exit()
+        elif option[0] in ("-i", "--include-xml"):
+            for package in packages:
+                try:
+                    importFromXML(package)
+                    print _(u"File '%s' successfully added to '%s'.") % (package + ".xml", package)
+                except:
+                    print _(u"Unable to add the file '%s' to '%s'.\nThe error was:") % (package + ".xml", package)
+                    import traceback
+                    traceback.print_exc()
+            sys.exit()
+    usage()
+    sys.exit(1)
