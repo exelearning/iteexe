@@ -182,20 +182,17 @@ class WebsitePage(Page):
             
             if page.node == self.node:
                 html += "<li id=\"active\"><a href=\""+quote(page.name)+".html\" "
-				
+
                 if page.node.children:
                     html += "class=\"active daddy"
                 else:
                     html += "class=\"active no-ch"
-					
-                if page.node.id=="0":
-                    html += " main-node"
-                	
-                html += "\">"
-                html += escape(page.node.titleShort)+"</a>"
-				
-                if inSameLevelTitle and page.node.id=="0":
-                    html += "</li>"				
+
+            elif page.node in nodePath and page.node.parent != None:
+                html += "<li id=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
+
+                if page.node.children:
+                    html += "class=\"current-page-parent daddy"
 
             else:
                 html += "<li><a href=\""+quote(page.name)+".html\" class=\""
@@ -203,17 +200,17 @@ class WebsitePage(Page):
                     html += "daddy"
                 else:
                     html += "no-ch"
-					
-                if page.node.id=="0":
-                    html += " main-node"					
-					
-                html += "\">"
-                html += escape(page.node.titleShort)
-                html += "</a>"
-				
-                if inSameLevelTitle and page.node.id=="0":
-                    html += "</li>"					
-			
+
+            if page.node.id=="0":
+                html += " main-node"
+
+            html += "\">"
+            html += escape(page.node.titleShort)
+            html += "</a>"
+
+            if inSameLevelTitle and page.node.id=="0":
+                html += "</li>"
+
             if not page.node.children:
                 html += "</li>\n"
 
