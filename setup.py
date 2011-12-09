@@ -72,7 +72,7 @@ any Learning Management System.
       author       = "eXe Project",
       author_email = "exe@exelearning.org",
       license      = "GPL",
-      scripts      = ["exe/exe", "exe/run-exe.sh"],
+      scripts      = ["exe/exe", "exe/exe_do"],
       packages     = ["exe", "exe.webui", "exe.xului", 
                       "exe.engine", "exe.export", "exe.importers"],
       data_files   = files.items(),

@@ -14,7 +14,6 @@ TEMPLATE = os.path.join(WDIR, 'installs/osx', 'exe.dmg')
 VOL = '/Volumes/exe'
 OUTPUT = os.path.join(WDIR, 'installs/osx')
 
-do_make_image = False
 do_upload = False
 try:
     opts, args = getopt.getopt(sys.argv[1:], "p", ["package"])
@@ -38,7 +37,7 @@ if not do_make_image:
 
 sys.path.insert(0, WDIR)
 from exe.engine import version
-outpathn = os.path.join(OUTPUT, 'exe-%s.dmg' %
+outpathn = os.path.join(OUTPUT, 'iteexe-%s.dmg' %
         version.version.replace(':', '.'))
 
 # attach the disk image template
@@ -55,6 +54,8 @@ shutil.rmtree('README.txt', True)
 shutil.copy(os.path.join(WDIR, 'README'), 'README.txt')
 shutil.rmtree('NEWS.txt', True)
 shutil.copy(os.path.join(WDIR, 'NEWS'), 'NEWS.txt')
+shutil.rmtree('changelog_eXe_ITE.txt', True)
+shutil.copy(os.path.join(WDIR, 'changelog_eXe_ITE.txt'), 'changelog_eXe_ITE.txt')
 os.chdir(WDIR)
 
 # detatch the disk image template

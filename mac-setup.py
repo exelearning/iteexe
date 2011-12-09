@@ -18,11 +18,13 @@ try:
 except OSError:
     pass
 
+from exe.engine import version
 revision = None
 try:
-    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
-    psvn.wait()
-    revision = psvn.stdout.read().strip()
+    line = open('debian/changelog').readline()
+    build = line.split('(')[1].split(')')[0]
+    revision = build.split(version.release + ".")[1]
+    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 except OSError:
     print "*** Warning: 'svnversion' tool not available to update revision number"
 finally:
