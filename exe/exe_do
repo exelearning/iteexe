@@ -23,6 +23,10 @@ import os
 import sys
 from getopt import getopt, GetoptError
 
+# Make it so we can import our own nevow and twisted etc.
+if os.name == 'posix':
+    sys.path.insert(0, '/usr/share/exe')
+
 # Try to work even with no python path
 try:
     from exe.engine.persistxml import exportToXML, importFromXML
