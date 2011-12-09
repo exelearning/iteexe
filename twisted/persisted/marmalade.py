@@ -13,8 +13,8 @@ identical.
 
 """
 
-import warnings
-warnings.warn("twisted.persisted.marmalade is deprecated", DeprecationWarning, stacklevel=2)
+#import warnings
+#warnings.warn("twisted.persisted.marmalade is deprecated", DeprecationWarning, stacklevel=2)
 
 import new
 

@@ -38,6 +38,7 @@ from twisted.persisted.styles  import Versioned, doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
 from exe.engine.beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field
+from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 
 log = logging.getLogger(__name__)
 
@@ -489,6 +490,13 @@ class Package(Persistable):
                     date_time=time.localtime()[0:6])
             zinfo.external_attr = 0100644<<16L
             zippedFile.writestr(zinfo, encodeObject(self))
+
+            zinfo2 = zipfile.ZipInfo(filename='content.xml',
+                    date_time=time.localtime()[0:6])
+            zinfo2.external_attr = 0100644<<16L
+            zippedFile.writestr(zinfo2, encodeObjectToXML(self))
+
+            zippedFile.write(G.application.config.xulDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:
             zippedFile.close()
 
@@ -507,7 +515,7 @@ class Package(Persistable):
         return newPackage
 
     @staticmethod
-    def load(filename, newLoad=True, destinationPackage=None):
+    def load(filename, newLoad=True, destinationPackage=None, xml=None):
         """
         Load package from disk, returns a package.
         """
@@ -515,32 +523,42 @@ class Package(Persistable):
             return None
 
         zippedFile = zipfile.ZipFile(filename, "r")
-        
-        try:
-            # Get the jellied package data
-            toDecode   = zippedFile.read(u"content.data")
-        except KeyError:
-            log.info("no content.data, trying Common Cartridge/Content Package")
-            newPackage = loadCC(zippedFile, filename)
-            newPackage.tempFile = False
-            newPackage.isChanged = False
-            newPackage.filename = Path(filename)
 
-            return newPackage
+        if not xml:
+            try:
+                xml = zippedFile.read(u"content.xml")
+            except:
+                pass
+        
+        if not xml:
+            try:
+                # Get the jellied package data
+                toDecode   = zippedFile.read(u"content.data")
+            except KeyError:
+                log.info("no content.data, trying Common Cartridge/Content Package")
+                newPackage = loadCC(zippedFile, filename)
+                newPackage.tempFile = False
+                newPackage.isChanged = False
+                newPackage.filename = Path(filename)
+    
+                return newPackage
             
         # Need to add a TempDirPath because it is a nonpersistant member
         resourceDir = TempDirPath()
 
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') != u"content.data":
+            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"content.xsd" ]:
                 outFile = open(resourceDir/fn, "wb")
                 outFile.write(zippedFile.read(fn))
                 outFile.flush()
                 outFile.close()
 
         try:
-            newPackage = decodeObjectRaw(toDecode)
+            if xml:
+                newPackage = decodeObjectFromXML(xml)
+            else:
+                newPackage = decodeObjectRaw(toDecode)
             G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
