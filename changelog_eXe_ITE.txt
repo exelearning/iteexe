@@ -15,6 +15,7 @@ Versión 1.04.1.3605ite6rc1 (2011-12-09)
     faltaban por los nuevos desarrollos
   * Se establece nueva clase en el menú de navegación para mejorar la
     presentación al exportar como página web
+  * Corregido error en Idevice Galería de Imágenes en versión para Mac OS X
 
 Versión 1.04.1.3605ite6beta2 (2011-12-07)
 

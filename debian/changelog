@@ -15,8 +15,9 @@ python-exe (1.04.1.3605ite6rc1) lucid; urgency=low
     faltaban por los nuevos desarrollos
   * Se establece nueva clase en el menú de navegación para mejorar la
     presentación al exportar como página web
+  * Corregido error en Idevice Galería de Imágenes en versión para Mac OS X
 
- -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 09 Dec 2011 18:04:09 +0100
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 09 Dec 2011 18:16:46 +0100
 
 python-exe (1.04.1.3605ite6beta2) lucid; urgency=low
 
