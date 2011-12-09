@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Fredrik Paulsson <frepa@frepa.org>\n"
@@ -164,7 +164,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1226,7 +1226,7 @@ msgstr "Dölj/visa ord"
 msgid "Hint"
 msgstr "Ledtråd"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Hem"
 
@@ -1332,6 +1332,12 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1874,7 +1880,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1894,7 +1900,7 @@ msgstr "SKICKA SVAR"
 msgid "Save"
 msgstr "Spara"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Sektion"
 
@@ -2297,7 +2303,7 @@ msgstr ""
 "För att ange rätt svar, klicka på \n"
 " radioknappen intill det rätta svaret"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Ämne"
 
@@ -2395,7 +2401,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Enhet"
 
@@ -2562,7 +2568,7 @@ msgid "iDevice %s has no package"
 msgstr "iDevice %s har inget paket"
 
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"

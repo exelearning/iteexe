@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -216,7 +216,7 @@ msgstr ""
 "sa isa't-isa o sa isang partikular na pagsasanay, na mas ibig mong\n"
 "ipakita sa anyong galeriya sa halip na paisa-isa.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1323,7 +1323,7 @@ msgstr "Itago/Ilantad ang Salita"
 msgid "Hint"
 msgstr "Himaton"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Tahanan"
 
@@ -1421,6 +1421,11 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Isingit ang Pakete"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1960,7 +1965,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1979,7 +1984,7 @@ msgstr "IPASA ANG MGA SAGOT"
 msgid "Save"
 msgstr "Isilid"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Seksiyon"
 
@@ -2410,7 +2415,7 @@ msgstr ""
 "Upang matukoy ang wastong sagot, \n"
 "iklik ang radio button na katabi ng wastong opsiyon."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Paksa"
 
@@ -2513,7 +2518,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Yunit"
 
@@ -2698,7 +2703,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Ang iDevice na %s ay walang pakete"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"

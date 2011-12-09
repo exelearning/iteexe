@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2009-01-31 06:24+1300\n"
 "Last-Translator: shannon <christoph@mussenbrock.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -224,7 +224,7 @@ msgstr ""
 "<p>Sie können hier mehrere Bilder im Zusammenhang\n"
 "zeigen. </p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "????? "
 
@@ -1333,7 +1333,7 @@ msgstr "Wort verbergen/anzeigen "
 msgid "Hint"
 msgstr "Hinweis"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Home"
 
@@ -1435,6 +1435,13 @@ msgstr "Interne Verlinkung (nur für Webseiten-Export)"
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "In Paket einfügen"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1969,7 +1976,7 @@ msgstr ""
 "Speichern gescheitert\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1990,7 +1997,7 @@ msgstr "Antwort abgeben"
 msgid "Save"
 msgstr "Speichern"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Abschnitt"
 
@@ -2411,7 +2418,7 @@ msgstr ""
 "Klicken Sie auf den Button neben der richtigen Option \n"
 "um die korrekte Antwort zu kennzeichnen."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Thema"
 
@@ -2514,7 +2521,7 @@ msgstr "Einbindung ist nicht möglich. Kopie des JavaApplet Namen existiert (\""
 msgid "Undo Edits"
 msgstr "Rückgängig"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Einheit"
 
@@ -2695,7 +2702,7 @@ msgstr "iDevice %s hat kein Paket"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"

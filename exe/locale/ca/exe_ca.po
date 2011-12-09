@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2011-10-10 16:34+0100\n"
 "Last-Translator: José Ramón Jiménez Reyes <jrjimenezr@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-doc@lists.kde.org>\n"
@@ -204,7 +204,7 @@ msgstr ""
 " entre elles o un particular exercici d'aprenentatge on pots mostrar   \n"
 " aquestes imatges en la galeria  individualment.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1284,7 +1284,7 @@ msgstr "Amaga/Mostra la paraula"
 msgid "Hint"
 msgstr "Pista"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Inici"
 
@@ -1379,6 +1379,11 @@ msgstr "Enllaç intern (sols per exportar a llocs web)"
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Inserir Paquet"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1913,7 +1918,7 @@ msgstr ""
 "Desat erroni ! \n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1934,7 +1939,7 @@ msgstr "ENVIAR RESPOSTES"
 msgid "Save"
 msgstr "Desar"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Secció"
 
@@ -2361,7 +2366,7 @@ msgstr ""
 "Per indicar la resposta correcta premeu la \n"
 " opció correcta seleccionant-la amb el botó radio."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Tema"
 
@@ -2463,7 +2468,7 @@ msgstr "No habilitat per combinar: Existeix un recurs duplicat de l'aplicació d
 msgid "Undo Edits"
 msgstr "Desfes editar"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Apartat"
 
@@ -2638,7 +2643,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no té paquet"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor iDevice"

@@ -17,6 +17,7 @@ exe/engine/standaloneconfig.py
 exe/engine/version_svn.py
 exe/engine/uniqueidgenerator.py
 exe/engine/eleccionmultiplefpdidevice.py
+exe/engine/persistxml.py
 exe/engine/imagewithtextidevice.py
 exe/engine/multiselectidevice.py
 exe/engine/node.py

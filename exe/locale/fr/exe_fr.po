@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2011-10-10 16:32+0100\n"
 "Last-Translator: José Ramón Jiménez Reyes <jrjimenezr@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -179,7 +179,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr "<p> Lorsque vous disposez de plusieurs images apparentées ou qui se rapportent au même sujet d'apprentissage, vous pouvez préférer l'outil \"galerie d'images\" à celui de l'image seule.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "??????"
 
@@ -1180,7 +1180,7 @@ msgstr "Cacher/Montrer le mot"
 msgid "Hint"
 msgstr "Indice"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Titre de séquence"
 
@@ -1275,6 +1275,11 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Insérer le dossier"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1785,7 +1790,7 @@ msgstr ""
 "LA SAUVEGARDE A ECHOUE !\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1806,7 +1811,7 @@ msgstr "Valider les réponses"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Section"
 
@@ -2194,7 +2199,7 @@ msgstr ""
 "Pour indiquer qu'il s'agit de la bonne réponse, \n"
 "cochez le bouton radio à côté de la bonne option."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Sujet"
 
@@ -2280,7 +2285,7 @@ msgstr "impossible de fusionner:des noms de ressources d'applet Java sont en dou
 msgid "Undo Edits"
 msgstr "supprimer l'édition"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Unité"
 
@@ -2444,7 +2449,7 @@ msgstr "http://fr.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "L'outil pédagogique %s n'a pas de dossier"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editeur d'outil pédagogique"

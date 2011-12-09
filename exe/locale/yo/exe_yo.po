@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2007-02-19 10:50+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -162,7 +162,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1123,7 +1123,7 @@ msgstr ""
 msgid "Hint"
 msgstr ""
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr ""
 
@@ -1217,6 +1217,10 @@ msgstr ""
 #: exe/engine/destacadofpdidevice.py:33
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
+msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+msgid "Invalid package"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:233
@@ -1711,7 +1715,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1730,7 +1734,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr ""
 
@@ -2101,7 +2105,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr ""
 
@@ -2187,7 +2191,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr ""
 
@@ -2343,7 +2347,7 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""

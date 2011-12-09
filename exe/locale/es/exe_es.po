@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 12:08+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2011-12-06 12:00+0100\n"
 "Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -217,7 +217,7 @@ msgstr ""
 "entre ellas o con un ejercicio particular que usted quiera mostrar  \n"
 "en un contexto de galería y no individualmente</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1300,7 +1300,7 @@ msgstr "Ocultar/Mostrar Palabra"
 msgid "Hint"
 msgstr "Sugerencia"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Inicio"
 
@@ -1395,6 +1395,11 @@ msgstr "Enlaces Internos (únicamente para exportar a sitio web)"
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Insertar paquete"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1929,7 +1934,7 @@ msgstr ""
 "ERROR AL GUARDAR\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1950,7 +1955,7 @@ msgstr "ENVIAR RESPUESTAS"
 msgid "Save"
 msgstr "Guardar"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Sección"
 
@@ -2373,7 +2378,7 @@ msgstr ""
 "Para señalar la respuesta correcta,\n"
 "haga click en el botón de radio que se encuentra junto a la opción correcta."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Tema"
 
@@ -2478,7 +2483,7 @@ msgstr "No fue posible realizar la unión: nombres duplicados de recursos applet
 msgid "Undo Edits"
 msgstr "Revertir los cambios"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Unidad"
 
@@ -2656,7 +2661,7 @@ msgstr "http://es.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "El iDevice %s no tiene ningún paquete"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"

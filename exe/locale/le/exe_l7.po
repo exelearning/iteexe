@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2006-03-31 11:54+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: l33t <l33t@exelearning.org>\n"
@@ -179,7 +179,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr ""
 
@@ -1189,7 +1189,7 @@ msgstr ""
 msgid "Hint"
 msgstr ""
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr ""
 
@@ -1289,6 +1289,11 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "1ms K0N73N7 p4CK493 1.1.3"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1795,7 +1800,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1815,7 +1820,7 @@ msgstr ""
 msgid "Save"
 msgstr "5AV3"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 #, fuzzy
 msgid "Section"
 msgstr "4c710N5"
@@ -2205,7 +2210,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr ""
 
@@ -2292,7 +2297,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr ""
 
@@ -2449,7 +2454,7 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr "4774chm3n7 %s h4Z n0 p4R3n7 n0D3"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""

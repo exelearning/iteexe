@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_en\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2008-07-15 08:15+0200\n"
 "Last-Translator: vedran <vvucic@eunet.rs>\n"
 "Language-Team: serbiansr <en@li.org>\n"
@@ -215,7 +215,7 @@ msgstr ""
 "odnosu ili u odnosu prema određenoj spoznajnoj vežbi, moža je bolje da ih prikažete \n"
 "kao galeriju umesto da ih prikazujete pojedinačno.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1301,7 +1301,7 @@ msgstr "Sakrij/Pokaži reč"
 msgid "Hint"
 msgstr "Podsetnik"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Kuća"
 
@@ -1396,6 +1396,11 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Umetni paket"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1931,7 +1936,7 @@ msgstr ""
 "ČUVANJE NEUSPEŠNO!\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1952,7 +1957,7 @@ msgstr "PRILOŽI ODGOVORE"
 msgid "Save"
 msgstr "Sačuvaj"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Sekcija"
 
@@ -2376,7 +2381,7 @@ msgstr ""
 "Da bi ukazali na tačan odgovor, \n"
 "kliknite na radio dugme pored tačne opcije."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Tema"
 
@@ -2481,7 +2486,7 @@ msgstr "Nemože da se spoji: dupli Java aplet izvor imena postoje (uključujući
 msgid "Undo Edits"
 msgstr "Opozovi uređivanja"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Jedinica"
 
@@ -2659,7 +2664,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iUređaj %s nema paket"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iUređaj editor"
