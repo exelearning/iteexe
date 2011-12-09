@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2008-02-25 11:27+1300\n"
 "Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -171,7 +171,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1151,7 +1151,7 @@ msgstr "Skjul/Vis ord"
 msgid "Hint"
 msgstr "Hint"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Hjem"
 
@@ -1245,6 +1245,10 @@ msgstr ""
 #: exe/engine/destacadofpdidevice.py:33
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
+msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+msgid "Invalid package"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:233
@@ -1774,7 +1778,7 @@ msgstr ""
 "LAGRING MISLYKTES!\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1795,7 +1799,7 @@ msgstr "SEND INN SVAR"
 msgid "Save"
 msgstr "Lagre"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Bolk"
 
@@ -2201,7 +2205,7 @@ msgstr ""
 "For å markere riktig svar, \n"
 "klikk radioknappen ved siden av det riktige alternativet."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Emne"
 
@@ -2291,7 +2295,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr ""
 
@@ -2447,7 +2451,7 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""

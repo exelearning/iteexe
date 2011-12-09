@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -211,7 +211,7 @@ msgstr ""
 "bizonyos tanulási feladatokhoz, ott használja a \"Képgalériát\"! \n"
 "A galéria képeit aztán egyenként is meg lehet tekinteni.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "Adjon címet a szintnek!"
 
@@ -1311,7 +1311,7 @@ msgstr "Szó elrejtése/megjelenítése"
 msgid "Hint"
 msgstr "Útmutató"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Kezdőoldal"
 
@@ -1408,6 +1408,13 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Csomag beszúrása"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1940,7 +1947,7 @@ msgstr ""
 "SIKERTELEN MENTÉS!\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1961,7 +1968,7 @@ msgstr "VÁLASZ KÜLDÉSE"
 msgid "Save"
 msgstr "Mentés"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Szakasz"
 
@@ -2385,7 +2392,7 @@ msgstr ""
 "A helyes válasz megjelöléséhez kattintson \n"
 "a rádiógombon a megfelelő válasz sorában."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Téma"
 
@@ -2487,7 +2494,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Egység"
 
@@ -2666,7 +2673,7 @@ msgstr "iDeice %s nincs csomag"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice szerkesztő"

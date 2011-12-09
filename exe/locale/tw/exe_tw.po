@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2006-08-12 05:37+1200\n"
 "Last-Translator: \n"
 "Language-Team: Samuel Sarpong and J.P.Antwi-Danso <srnsam@yahoo.com, portnass2003@yahoo.com>\n"
@@ -170,7 +170,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr "Mfonin a ɛdi dwuma korɔ no, fa no nyinaa hyɛ akuo baako ase."
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1168,7 +1168,7 @@ msgstr ""
 msgid "Hint"
 msgstr "Ntiho"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Efie"
 
@@ -1267,6 +1267,10 @@ msgstr ""
 #: exe/engine/destacadofpdidevice.py:33
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
+msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+msgid "Invalid package"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:233
@@ -1784,7 +1788,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1803,7 +1807,7 @@ msgstr "Fa mmuae kɛ"
 msgid "Save"
 msgstr "Fa sie"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Ɔfa"
 
@@ -2190,7 +2194,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Atifi Asɛm"
 
@@ -2276,7 +2280,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Ɔfa"
 
@@ -2435,7 +2439,7 @@ msgstr "http://en.wikipedia.org/ "
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""

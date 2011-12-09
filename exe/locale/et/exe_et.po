@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -209,7 +209,7 @@ msgstr ""
 "õpiobjekti suhtes mingit seost, võid nende eraldi näitamise asemel  \n"
 "kasutada ka galerii võimalust.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1281,7 +1281,7 @@ msgstr "Peida / näita sõna"
 msgid "Hint"
 msgstr "Vihje"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Kodu"
 
@@ -1376,6 +1376,11 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Sisesta pakett"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1898,7 +1903,7 @@ msgstr ""
 "SALVESTAMINE EBAÕNNESTUS!\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1919,7 +1924,7 @@ msgstr "SAADA VASTUSED"
 msgid "Save"
 msgstr "Salvesta"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Peatükk"
 
@@ -2335,7 +2340,7 @@ msgstr ""
 "Õige vastuse märkimiseks kliki õige \n"
 "valikvastuse kõrval raadio-nupul."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Teema"
 
@@ -2439,7 +2444,7 @@ msgstr "Ei ole võimalik ühendada: eksisteerib duplikaat  Java Applet ressursi 
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Osa"
 
@@ -2615,7 +2620,7 @@ msgstr "http://et.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice-l %s pudub pakett"
 
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevide redaktor"

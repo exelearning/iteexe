@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2007-08-08 10:27+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -162,7 +162,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr "当有一组相关的图片要展示时或对一个特定的练习,要显示几张图片."
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1156,7 +1156,7 @@ msgstr "隐藏/显示 文字"
 msgid "Hint"
 msgstr "提示"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "首页"
 
@@ -1260,6 +1260,15 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "插入课件"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1762,7 +1771,7 @@ msgstr ""
 "保存失败!\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1783,7 +1792,7 @@ msgstr "提交答案"
 msgid "Save"
 msgstr "保存"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "节"
 
@@ -2159,7 +2168,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "课题"
 
@@ -2245,7 +2254,7 @@ msgstr ""
 msgid "Undo Edits"
 msgstr ""
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "单元"
 
@@ -2413,7 +2422,7 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"

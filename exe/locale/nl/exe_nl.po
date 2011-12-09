@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-06 07:56+0100\n"
+"POT-Creation-Date: 2011-12-09 16:05+0100\n"
 "PO-Revision-Date: 2008-11-18 12:33+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -220,7 +220,7 @@ msgstr ""
 "betrekking hebben op dezelfde leeroefening, kunt u verzamelen in een\n"
 "\"galerij\" i.p.v. ze individueel te tonen.</p>"
 
-#: exe/engine/package.py:416
+#: exe/engine/package.py:417
 msgid "?????"
 msgstr "?????"
 
@@ -1319,7 +1319,7 @@ msgstr "Toon/verberg woord"
 msgid "Hint"
 msgstr "Hint"
 
-#: exe/engine/package.py:310
+#: exe/engine/package.py:311
 msgid "Home"
 msgstr "Start"
 
@@ -1426,6 +1426,12 @@ msgstr "Interne hyperlinks (alleen voor exporteren naar website)"
 #: exe/engine/debesconocerfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
+
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
+#, fuzzy
+msgid "Invalid package"
+msgstr "Pakket invoegen"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -1961,7 +1967,7 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/engine/package.py:447 exe/engine/package.py:454
+#: exe/engine/package.py:448 exe/engine/package.py:455
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1982,7 +1988,7 @@ msgstr "VERZEND ANTWOORDEN"
 msgid "Save"
 msgstr "Opslaan"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Section"
 msgstr "Sectie"
 
@@ -2402,7 +2408,7 @@ msgstr ""
 "Om het antwoord aan te duiden:\n"
 "klik het keuzerondje naast het juiste alternatief aan."
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Topic"
 msgstr "Onderwerp"
 
@@ -2506,7 +2512,7 @@ msgstr "Samenvoegen onmogelijk: de naam van deze Java Applet bestaat reeds (beva
 msgid "Undo Edits"
 msgstr "Bewerking ongedaan maken"
 
-#: exe/engine/package.py:289
+#: exe/engine/package.py:290
 msgid "Unit"
 msgstr "Eenheid"
 
@@ -2688,7 +2694,7 @@ msgstr "iDevice %s heeft geen inhoud"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:715 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:733 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice-editor"
