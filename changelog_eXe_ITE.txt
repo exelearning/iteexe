@@ -1,3 +1,21 @@
+Versión 1.04.1.3605ite6rc1 (2011-12-09)
+
+  [José Miguel Andonegui]
+  * Revisión de la traducción al euskera de eXe
+
+  [Pedro Peña]
+  * Al guardar un elp se incluye en éste un fichero xml "content.xml", 
+    junto con su esquema, equivalente al "content.data".
+  * El "content.xml", en caso de que exista, prevalece sobre el "content.data"
+    al abrir un elp.
+  * Añadido comando exe_do para extraer/incluir un fichero xml equivalente al
+    "content.data" de un elp. Se mantiene sincronizado el "content.data" al
+    incluir el xml.
+  * Actualización de cadenas de todas las traducciones para incluir cadenas que
+    faltaban por los nuevos desarrollos
+  * Se establece nueva clase en el menú de navegación para mejorar la
+    presentación al exportar como página web
+
 Versión 1.04.1.3605ite6beta2 (2011-12-07)
 
   [José Miguel Andonegui]
