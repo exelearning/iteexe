@@ -58,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %attr(755,root,root) %{_datadir}/exe/templates/mimetex.cgi
 %{_bindir}/exe
+%{_bindir}/exe_do
 %{_libdir}/python%{pyver}/site-packages/exe
 %{_datadir}/exe
 %{_datadir}/icons/hicolor/48x48/apps/exe.png
