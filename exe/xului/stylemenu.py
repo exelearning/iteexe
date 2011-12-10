@@ -57,7 +57,7 @@ class StyleMenu(Renderable):
 
         # Render each style individually
         printableStyles = [(x.capitalize(), x) for x in self.config.styles]
-        for printableStyle, style in printableStyles:
+        for printableStyle, style in sorted(printableStyles, key=lambda x: x[0]):
             xul += u"  <menuitem label=\""+printableStyle+"\" "
             xul += u"oncommand=\"submitLink('ChangeStyle', '"+style+"', 1);\"/>\n"
 
