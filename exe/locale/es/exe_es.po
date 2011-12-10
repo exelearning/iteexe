@@ -1397,9 +1397,8 @@ msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
 
 #: exe/engine/persistxml.py:177 exe/engine/persistxml.py:185
-#, fuzzy
 msgid "Invalid package"
-msgstr "Insertar paquete"
+msgstr "Paquete incorrecto"
 
 #: exe/webui/wikipediablock.py:233
 msgid "It uses material from the "
@@ -3414,7 +3413,7 @@ msgstr "Amhárico "
 #: oncommand="exportXliffPackage('1', '', '')" accesskey="t" label="XLIFF
 #: (source also in target)">
 msgid "label=\"XLIFF (source also in target)\" accesskey=\"t\""
-msgstr "label=\"XLIFF (copiando texto origen en texto detino)\" accesskey=\"t\""
+msgstr "label=\"XLIFF (copiando texto origen en texto destino)\" accesskey=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
