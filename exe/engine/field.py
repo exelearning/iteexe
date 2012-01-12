@@ -1043,6 +1043,10 @@ class FieldWithResources(Field):
         """
         new_content = content
 
+        if new_content.find("flowPlayer") >= 0:
+            self.idevice.systemResources += ['flowPlayer.swf']
+            self.idevice.systemResources += ['flowplayer.controls.swf']
+
         # By this point, tinyMCE's javascript file browser handler:
         #         common.js's: chooseImage_viaTinyMCE() 
         # has already copied the file into the web-server's relative 
