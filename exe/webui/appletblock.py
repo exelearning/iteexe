@@ -81,6 +81,10 @@ class AppletBlock(Block):
                 if filePath:
                     if self.idevice.type == "geogebra" and not filePath.endswith(".ggb"):
                         self.idevice.message = _("Please upload a .ggb file.")
+                    elif self.idevice.type == "jclic" and not filePath.endswith(".jclic.zip"):
+                        self.idevice.message = _("Please upload a .jclic.zip file.")
+                    elif self.idevice.type == "scratch" and not filePath.endswith(".sb"):
+                        self.idevice.message = _("Please upload a .sb file.")
                     else:
                         self.idevice.uploadFile(filePath)
                         self.idevice.message = ""                   
@@ -99,6 +103,8 @@ class AppletBlock(Block):
         html += u"<br/><br/>\n"
        
         types = [(_(u"Geogebra"), "geogebra"),
+                 (_(u"JClic"), "jclic"),
+                 (_(u"Scratch"), "scratch"),
                  (_(u"Other"), "other")]
         html += u"<b>%s</b>" % _("Applet Type")
         
