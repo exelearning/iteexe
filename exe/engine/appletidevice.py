@@ -206,14 +206,14 @@ you created in Geogebra.</p>""")
         
         return html
 
-    def getAppletcodeDescartes(self, url):
+    def getAppletcodeDescartes(self, filename):
         """
         xhtml string for DescartesApplet
         """
         from exe.engine.beautifulsoup import BeautifulSoup   
         import urllib2
         import codecs
-        URL = "'"+url+"'"
+        URL = "'"+"%s"+"'"
         sock = urllib2.urlopen(URL)  
         soup = BeautifulSoup(sock.read())
         num = 2
@@ -224,7 +224,7 @@ you created in Geogebra.</p>""")
                 break
             i = i+1
         html = """
-            applet """ % project
+            applet """ % filename
         
         return html
          
