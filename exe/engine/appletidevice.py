@@ -145,7 +145,7 @@ you created in Geogebra.</p>""")
                 self.appletCode = self.getAppletcodeJClic(resourceFile.basename())
             if self.type == "scratch":
                 self.appletCode = self.getAppletcodeScratch(resourceFile.basename())
-            if self.type == "html":
+            if self.type == "descartes":
                 self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
 >>>>>>> c83aac4... 
 
