@@ -133,7 +133,7 @@ you created in Geogebra.</p>""")
             global SCENE_NUM
             if filePath.find(",") == -1:
                 SCENE_NUM = 1
-            if filePath.find(",") != -1:
+            else:
                 SCENE_NUM = int(filePath[:filePath.find(",")])
         if (filePath.endswith(".htm") or filePath.endswith(".html")):
             self.appletCode = self.getAppletcodeDescartes(filePath)
@@ -227,10 +227,10 @@ you created in Geogebra.</p>""")
                     appletslist.append(ap)
                 for x in appletslist:
                     if i == SCENE_NUM -1:
-                        SCENE_NUM
+                        u = unicode(x)
                         break
-                    i = i+1
-                html = str(x)
+                    i = i+1   
+                html = u
         return html 
           
     def copyFiles(self):
