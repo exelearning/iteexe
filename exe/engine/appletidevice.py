@@ -131,8 +131,10 @@ you created in Geogebra.</p>""")
         """ 
         if self.type == "descartes" and not filePath.endswith(".jar"):
             global SCENE_NUM
-            if filePath.find(",") != 0:
-                SCENE_NUM = int(filePath[:filePath.find(",")])                
+            if filePath.find(",") == -1:
+                SCENE_NUM = 1
+            if filePath.find(",") != -1:
+                SCENE_NUM = int(filePath[:filePath.find(",")])
         if (filePath.endswith(".htm") or filePath.endswith(".html")):
             self.appletCode = self.getAppletcodeDescartes(filePath)
         else:
@@ -213,7 +215,10 @@ you created in Geogebra.</p>""")
             if filename.endswith(".html") or filename.endswith(".htm"):
                 from exe.engine.beautifulsoup import BeautifulSoup   
                 import urllib2
-                sock = urllib2.urlopen(filename[2:])  
+                if SCENE_NUM == 1:
+                    sock = urllib2.urlopen(filename)
+                if SCENE_NUM != 1:
+                    sock = urllib2.urlopen(filename[2:])
                 soup = BeautifulSoup(sock.read())
                 i = 0
                 appletslist = []
@@ -222,7 +227,7 @@ you created in Geogebra.</p>""")
                     appletslist.append(ap)
                 for x in appletslist:
                     if i == SCENE_NUM -1:
-                        print SCENE_NUM
+                        SCENE_NUM
                         break
                     i = i+1
                 html = str(x)
