@@ -18,10 +18,10 @@
 # ===========================================================================
 
 
-
-from types import UnicodeType, StringType
 import codecs
+from types import UnicodeType, StringType
 
+from exe.engine.beautifulsoup import BeautifulSoup
 
 # Just in case: sometimes it's needed to
 # escape the content of the source tag
@@ -29,20 +29,19 @@ import codecs
 # <![CDATA[ %(content)s ]]>
 
 TRANS_UNIT = u'''<trans-unit id="%(id)s">
-       <source xml:lang="es">
+       <source xml:lang="es-es">
        %(content)s
        </source>
-       <target>
-       %(target)s
-       </target>
+       <target xml:lang="eu-es">%(target)s</target>
 </trans-unit>
 '''
 
-XLF_TEMPLATE = u'''<xliff version="1.2"
+XLF_TEMPLATE = u'''<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
        xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file original="file.elp"
         datatype="html"
-        source-language="es" target-language="en">
+        source-language="es-es" target-language="eu-es">
     <body>
       %(transunits)s
     </body>
@@ -64,6 +63,16 @@ def safe_unicode(text):
         except:
             return u'ERROR'
 
+
+class ContentEscaper(BeautifulSoup):
+    def handle_data(self, data):
+        data_end = data.replace('&', '&amp;')
+        data_end = data_end.replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
+        self.currentData.append(data_end)
+
+def escape_content(content):
+    html = ContentEscaper(content, convertEntities='xhtml')      
+    return html.__unicode__()
 
 class XliffExport(object):
     """
@@ -87,7 +96,7 @@ class XliffExport(object):
         content += '<group>'
         content += TRANS_UNIT % {'content': safe_unicode(node.getTitle()),
                                  'id': '%s-nodename' % id,
-                                 'target': self.source_copied_in_target and safe_unicode(node.getTitle()) or u'',
+                                 'target': self.source_copied_in_target and safe_unicode(node.getTitle()) or escape_content(u''),
                                  }
         content += '</group>'
 
@@ -96,14 +105,14 @@ class XliffExport(object):
             
             content += TRANS_UNIT % {'content': safe_unicode(idevice.title),
                                      'id': '%s-idev%s-title' % (id, idevice.id),
-                                     'target': self.source_copied_in_target and safe_unicode(idevice.title) or u'',
+                                     'target': self.source_copied_in_target and safe_unicode(idevice.title) or escape_content(u''),
                                      }
 
             
             for field in idevice.getRichTextFields():
-                content += TRANS_UNIT % {'content': safe_unicode(field.content.replace('&', '&amp;')),
+                content += TRANS_UNIT % {'content': safe_unicode(escape_content(field.content)),
                                          'id': '%s-idev%s-field%s' % (id, idevice.id, field.id),
-                                         'target': self.source_copied_in_target and safe_unicode(field.content.replace('&', '&amp;')) or u'',
+                                         'target': self.source_copied_in_target and safe_unicode(escape_content(field.content)) or escape_content(u''),
                                          }
 
             content += '</group>'
