@@ -229,7 +229,7 @@ you created in Geogebra.</p>""")
                     appletslist.append(ap_new)
                 for x in appletslist:
                     if i == SCENE_NUM -1:
-                        u = unicode(x)
+                        u = str(x)
                         break
                     i = i+1
                 html = u.replace('\xC2\x82','&#130')
