@@ -212,13 +212,18 @@ you created in Geogebra.</p>""")
         html = ""
         if not filename.endswith(".jar"):
             if filename.endswith(".html") or filename.endswith(".htm"):
-                from exe.engine.beautifulsoup import BeautifulSoup   
+                from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup   
                 import urllib2
+                import sys
+                import re
                 if SCENE_NUM == 1:
-                    sock = urllib2.urlopen(filename)
-                if SCENE_NUM != 1:
-                    sock = urllib2.urlopen(filename[2:])
-                soup = BeautifulSoup(sock.read())
+                    htmlbytes = urllib2.urlopen(filename)
+                else:
+                    htmlbytes = urllib2.urlopen(filename[2:])
+                content = htmlbytes.read()
+                # htmlbytes = htmlbytes.replace('&#130;',',')  # funciona
+                encoding = htmlbytes.headers['content-type'].split('charset=')[-1]
+                soup = BeautifulSoup(content)
                 i = 0
                 appletslist = []
                 for ap_old in soup.findAll("applet",{"code":"Descartes.class"}):
@@ -232,7 +237,8 @@ you created in Geogebra.</p>""")
                         u = str(x)
                         break
                     i = i+1
-                html = u.replace('\xC2\x82','&#130')
+                # html = u.replace('\xC2\x82','&#130')
+                html = u
         return html
           
     def copyFiles(self):
