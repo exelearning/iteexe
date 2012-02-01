@@ -1,0 +1,6 @@
+content branding jar:browser.jar!/content/branding/ xpcnativewrappers=yes
+content browser jar:browser.jar!/content/browser/ xpcnativewrappers=yes
+overlay chrome://global/content/viewSource.xul chrome://browser/content/viewSourceOverlay.xul
+overlay chrome://global/content/viewPartialSource.xul chrome://browser/content/viewSourceOverlay.xul
+overlay chrome://browser/content/pageInfo.xul chrome://pippki/content/PageInfoOverlay.xul
+overlay chrome://browser/content/browser.xul         chrome://browser/content/safebrowsing/report-phishing-overlay.xul

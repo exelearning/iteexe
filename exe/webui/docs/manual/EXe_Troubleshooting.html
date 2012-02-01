@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>eXe</title>
+<style type="text/css">
+@import url(eXe_manual.css);
+</style>
+</head>
+<body>
+<div id="content">
+<a name="top" id="top"></a>
+ <h1 class="firstHeading">EXe Troubleshooting</h1>
+<div id="bodyContent">
+
+
+ <!-- start content -->
+<p><br />
+</p>
+<table style="border: 1px solid #CCC; width: 100%; margin-top: -25px; margin-bottom: 15px;">
+<tr><td><div class="floatleft"><span><span class="removed_img_link"><img alt="" src="120px-Exe_RGB_72dpi.jpg" width="120" height="79" border="0" /></span></span></div></td>
+<td align="center"><h1 style="font-size: 145%; border: none;">
+<b>eXe Authoring project</b></h1>
+<p>An Open Source development co-ordinated by<br />
+<a href="http://core-ed.net/" class="external text" title="http://core-ed.net/" rel="nofollow" target="_blank">CORE Education</a>.<br /><br /><a href="http://eXeLearning.org" class="external free" title="http://eXeLearning.org" rel="nofollow" target="_blank">http://eXeLearning.org</a>
+</p>
+</td>
+<td>
+<ul><li> <a href="Elearning_XHTML_Editor.html" title="Elearning XHTML Editor">Overview</a>
+</li><li> <a href="Online_manual.html" title="Online manual">Online Manual</a>
+</li><li> <a href="Exe_freq_asked_questions.html" title="Exe freq asked questions">FAQ</a>
+</li><li> <a href="Training_resource_development_for_eXe.html" title="Training resource development for eXe">Training Resources</a>
+</li><li> <strong class="selflink">Troubleshooting</strong>
+</li></ul>
+</td></tr></table>
+<a name="Troubleshooting"></a><h2> <span class="mw-headline"> Troubleshooting </span></h2>
+<p><b>Known Bug/Limitation:</b> Currently you cannot have more than one SCORM Quiz per node or page. You can however make a SCORM Quiz in each node, there is no limit to how many quizzes you have throughout your resource. We will continue to try to fix this problem but it has been set as a low priority. <a href="http://exelearning.org/projects/exe1/ticket/265" class="external text" title="http://exelearning.org/projects/exe1/ticket/265" rel="nofollow" target="_blank">Ticket #265</a>
+</p><p><br />
+</p>
+<hr />
+<p><b>Can't find log file</b>
+</p><p>eXe is crashing and I can't find any log file (i.e., any file created today in the c:\Program Files\exe folder) that might help to diagnose the problem.
+</p><p><b>Solution</b>
+</p><p>Try looking at c:\Documents and Settings\dorn\Application Data\eXe\exe.log or,
+</p>
+<ol><li> Start, Run, cmd, OK
+</li><li> cd "C:\Program Files\exe"
+</li><li> exe
+</li></ol>
+<p>Note for OS X and Linux, the log files and the exe.conf configuration file are in your home directory's .exe directory.
+</p>
+<hr />
+<p><b>Error Message:</b> <i>Error loading stylesheet: An XSLT stylesheet does not have an XML mimetype:<a href="http://127.0.0.1:8081/FrameworkLog.xsl" class="external free" title="http://127.0.0.1:8081/FrameworkLog.xsl" rel="nofollow" target="_blank">http://127.0.0.1:8081/FrameworkLog.xsl</a></i>
+</p><p>This is a problem with running McAfee Antivirus checker and eXe at the same time. These two applications may try to share the same port and this causes a conflict. (eXe tries to work around this problem, so normally no user action is required.)
+</p><p><b>Solution</b>
+</p><p>There is a fix for this issue. 
+</p><p>You will need to edit a configuration file that comes with eXe. This file can be located at: 
+</p><p>C:\Documents and Settings\&lt;yourusername&gt;\Application Data\exe on Windows.
+</p><p>In this folder there is a file called exe.conf. Open this file in a simple text editor like Wordpad, or Notepad, and change the line that says <b>port = 8081</b> to <b>port = 8088</b>. Save this file, and restart eXe.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 607/2097152 bytes
+Template argument size: 0/2097152 bytes
+#ifexist count: 0/100
+-->
+<!-- Saved in parser cache with key wikiedu-mw_:pcache:idhash:2646-0!1!0!!en!2!edit=0 and timestamp 20080508094134 -->
+
+ <!-- end content -->
+<div class="visualClear"></div>
+</div>
+</div></body></html>

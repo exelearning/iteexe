@@ -1,0 +1,289 @@
+Mozilla Firefox Installation Started: 2007-08-01 14:45:43
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Installation Details
+-------------------------------------------------------------------------------
+  Install Dir: C:\Program Files\Mozilla Firefox
+  Locale     : en-US
+  App Version: 2.0.0.6
+  GRE Version: 1.8.1.6
+
+-------------------------------------------------------------------------------
+Removing Obsolete Files and Directories
+-------------------------------------------------------------------------------
+  Removed Directory: C:\Program Files\Mozilla Firefox\searchplugins
+
+-------------------------------------------------------------------------------
+Installing Main Files
+-------------------------------------------------------------------------------
+  Installed File: C:\Program Files\Mozilla Firefox\LICENSE
+  Installed File: C:\Program Files\Mozilla Firefox\freebl3.chk
+  Installed File: C:\Program Files\Mozilla Firefox\softokn3.chk
+  Installed File: C:\Program Files\Mozilla Firefox\AccessibleMarshal.dll
+  Installed File: C:\Program Files\Mozilla Firefox\freebl3.dll
+  Installed File: C:\Program Files\Mozilla Firefox\js3250.dll
+  Installed File: C:\Program Files\Mozilla Firefox\nspr4.dll
+  Installed File: C:\Program Files\Mozilla Firefox\nss3.dll
+  Installed File: C:\Program Files\Mozilla Firefox\nssckbi.dll
+  Installed File: C:\Program Files\Mozilla Firefox\plc4.dll
+  Installed File: C:\Program Files\Mozilla Firefox\plds4.dll
+  Installed File: C:\Program Files\Mozilla Firefox\smime3.dll
+  Installed File: C:\Program Files\Mozilla Firefox\softokn3.dll
+  Installed File: C:\Program Files\Mozilla Firefox\ssl3.dll
+  Installed File: C:\Program Files\Mozilla Firefox\xpcom.dll
+  Installed File: C:\Program Files\Mozilla Firefox\xpcom_compat.dll
+  Installed File: C:\Program Files\Mozilla Firefox\xpcom_core.dll
+  Installed File: C:\Program Files\Mozilla Firefox\xpistub.dll
+  Installed File: C:\Program Files\Mozilla Firefox\firefox.exe
+  Installed File: C:\Program Files\Mozilla Firefox\updater.exe
+  Installed File: C:\Program Files\Mozilla Firefox\xpicleanup.exe
+  Installed File: C:\Program Files\Mozilla Firefox\README.txt
+  Installed File: C:\Program Files\Mozilla Firefox\res\EditorOverride.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\forms.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\html.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\mathml.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\quirk.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\svg.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\ua.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\viewsource.css
+  Installed File: C:\Program Files\Mozilla Firefox\res\arrow.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\arrowd.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\broken-image.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\grabber.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\loading-image.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-column-after-active.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-column-after-hover.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-column-after.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-column-before-active.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-column-before-hover.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-column-before.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-row-after-active.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-row-after-hover.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-row-after.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-row-before-active.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-row-before-hover.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-add-row-before.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-remove-column-active.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-remove-column-hover.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-remove-column.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-remove-row-active.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-remove-row-hover.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\table-remove-row.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\hiddenWindow.html
+  Installed File: C:\Program Files\Mozilla Firefox\res\charsetalias.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\charsetData.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\langGroups.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\language.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\wincharset.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\cmessage.txt
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-audio.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-binary.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-find.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-image.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-menu.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-movie.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-sound.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-telnet.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-text.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\html\gopher-unknown.gif
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\fontEncoding.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\fontNameMap.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfont.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontCMEX10.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontCMSY10.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontMath1.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontMath2.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontMath4.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontMTExtra.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontPUA.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\fonts\mathfontSymbol.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\entityTables\html40Latin1.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\entityTables\html40Special.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\entityTables\html40Symbols.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\entityTables\htmlEntityVersions.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\entityTables\mathml20.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\entityTables\transliterate.properties
+  Installed File: C:\Program Files\Mozilla Firefox\res\dtd\mathml.dtd
+  Installed File: C:\Program Files\Mozilla Firefox\res\dtd\xhtml11.dtd
+  Installed File: C:\Program Files\Mozilla Firefox\plugins\npnul32.dll
+  Installed File: C:\Program Files\Mozilla Firefox\greprefs\all.js
+  Installed File: C:\Program Files\Mozilla Firefox\greprefs\security-prefs.js
+  Installed File: C:\Program Files\Mozilla Firefox\greprefs\xpinstall.js
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\{972ce4c6-7e08-4474-a285-3208198ce6fd}\install.rdf
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\pref\channel-prefs.js
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\pref\firefox-branding.js
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\pref\firefox.js
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\pref\reporter.js
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\autoconfig\platform.js
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\autoconfig\prefcalls.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\jar50.dll
+  Installed File: C:\Program Files\Mozilla Firefox\components\jsd3250.dll
+  Installed File: C:\Program Files\Mozilla Firefox\components\myspell.dll
+  Installed File: C:\Program Files\Mozilla Firefox\components\spellchk.dll
+  Installed File: C:\Program Files\Mozilla Firefox\components\xpinstal.dll
+  Installed File: C:\Program Files\Mozilla Firefox\components\FeedConverter.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\FeedProcessor.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\FeedWriter.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\jsconsole-clhandler.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsBookmarkTransactionManager.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsBrowserContentHandler.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsBrowserGlue.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsCloseAllWindows.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsDefaultCLH.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsDictionary.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsExtensionManager.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsHelperAppDlg.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsMicrosummaryService.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsPostUpdateWin.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsProxyAutoConfig.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSafebrowsingApplication.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSearchService.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSearchSuggestions.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSessionStartup.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSessionStore.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSetDefaultBrowser.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsSidebar.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsUpdateService.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsUrlClassifierLib.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsUrlClassifierListManager.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsUrlClassifierTable.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsURLFormatter.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\nsXmlRpcClient.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\WebContentConverter.js
+  Installed File: C:\Program Files\Mozilla Firefox\components\browser.xpt
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\browser.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\classic.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\comm.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\pippki.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\reporter.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\toolkit.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\browser.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\classic.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\comm.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\pippki.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\reporter.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\toolkit.manifest
+
+-------------------------------------------------------------------------------
+DLL Registration
+-------------------------------------------------------------------------------
+  ** ERROR Registering: C:\Program Files\Mozilla Firefox\AccessibleMarshal.dll **
+
+-------------------------------------------------------------------------------
+Installing Localized Files
+-------------------------------------------------------------------------------
+  Created Directory: C:\Program Files\Mozilla Firefox\searchplugins
+  Installed File: C:\Program Files\Mozilla Firefox\updater.ini
+  Installed File: C:\Program Files\Mozilla Firefox\browserconfig.properties
+  Installed File: C:\Program Files\Mozilla Firefox\old-homepage-default.properties
+  Installed File: C:\Program Files\Mozilla Firefox\uninstall\helper.exe
+  Installed File: C:\Program Files\Mozilla Firefox\searchplugins\amazondotcom.xml
+  Installed File: C:\Program Files\Mozilla Firefox\searchplugins\answers.xml
+  Installed File: C:\Program Files\Mozilla Firefox\searchplugins\creativecommons.xml
+  Installed File: C:\Program Files\Mozilla Firefox\searchplugins\eBay.xml
+  Installed File: C:\Program Files\Mozilla Firefox\searchplugins\google.xml
+  Installed File: C:\Program Files\Mozilla Firefox\searchplugins\yahoo.xml
+  Installed File: C:\Program Files\Mozilla Firefox\dictionaries\en-US.aff
+  Installed File: C:\Program Files\Mozilla Firefox\dictionaries\en-US.dic
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\bookmarks.html
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\prefs.js
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\localstore.rdf
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\mimeTypes.rdf
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\search.rdf
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\chrome\userChrome-example.css
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\profile\chrome\userContent-example.css
+  Installed File: C:\Program Files\Mozilla Firefox\defaults\pref\firefox-l10n.js
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\en-US.jar
+  Installed File: C:\Program Files\Mozilla Firefox\chrome\en-US.manifest
+
+-------------------------------------------------------------------------------
+Installing Quality Feedback Agent
+-------------------------------------------------------------------------------
+  Created Directory: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\chrome.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\install.rdf
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\InstallDisabled
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback.cnt
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\BrandRes.dll
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\fullsoft.dll
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\qfaservices.dll
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback.exe
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback.hlp
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\master.ini
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback-l10n.ini
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\qfaservices.xpt
+
+-------------------------------------------------------------------------------
+Adding Additional Files
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Adding Registry Entries
+-------------------------------------------------------------------------------
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Main | Install Directory | C:\Program Files\Mozilla Firefox
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Main | PathToExe | C:\Program Files\Mozilla Firefox\firefox.exe
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Main | Program Folder Path | C:\Documents and Settings\All Users\Start Menu\Programs\
+  Added Registry DWord: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Main | Create Desktop Shortcut | 1
+  Added Registry DWord: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Main | Create Quick Launch Shortcut | 1
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Uninstall | Uninstall Log Folder | C:\Program Files\Mozilla Firefox\uninstall
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Uninstall | Description | Mozilla Firefox (2.0.0.6)
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US) |  | 2.0.0.6 (en-US)
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox 2.0.0.6\bin | PathToExe | C:\Program Files\Mozilla Firefox\firefox.exe
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox 2.0.0.6\extensions | Components | C:\Program Files\Mozilla Firefox\components
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox 2.0.0.6\extensions | Plugins | C:\Program Files\Mozilla Firefox\plugins
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox 2.0.0.6 | GeckoVer | 1.8.1.6
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox |  | 1.8.1.6
+  Added Registry String: HKLM | Software\Mozilla\Mozilla Firefox | CurrentVersion | 2.0.0.6 (en-US)
+  Added Registry DWord: HKLM | Software\Mozilla\Mozilla Firefox\2.0.0.6 (en-US)\Uninstall | Create Start Menu Shortcut | 1
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | Comments | Mozilla Firefox **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | DisplayIcon | C:\Program Files\Mozilla Firefox\firefox.exe,0 **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | DisplayName | Mozilla Firefox (2.0.0.6) **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | DisplayVersion | 2.0.0.6 (en-US) **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | InstallLocation | C:\Program Files\Mozilla Firefox **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | Publisher | Mozilla **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | UninstallString | C:\Program Files\Mozilla Firefox\uninstall\helper.exe **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | URLInfoAbout | http://en-US.www.mozilla.com/en-US/ **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | URLUpdateInfo | http://en-US.www.mozilla.com/en-US/firefox/ **
+  ** ERROR Adding Registry DWord: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | NoModify | 1 **
+  ** ERROR Adding Registry DWord: HKLM | Software\Microsoft\Windows\CurrentVersion\Uninstall\Mozilla Firefox (2.0.0.6) | NoRepair | 1 **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe |  | C:\Program Files\Mozilla Firefox\firefox.exe **
+  ** ERROR Adding Registry String: HKLM | Software\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe | Path | C:\Program Files\Mozilla Firefox **
+  ** ERROR Adding Registry Key: HKLM | Software\Microsoft\MediaPlayer\ShimInclusionList\FIREFOX.EXE **
+
+-------------------------------------------------------------------------------
+Adding Shortcuts
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Updating Quick Launch Shortcuts
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Installing Quality Feedback Agent
+-------------------------------------------------------------------------------
+  Created Directory: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\chrome.manifest
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\install.rdf
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\InstallDisabled
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback.cnt
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\BrandRes.dll
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\fullsoft.dll
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\qfaservices.dll
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback.exe
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback.hlp
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\master.ini
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\talkback-l10n.ini
+  Installed File: C:\Program Files\Mozilla Firefox\extensions\talkback@mozilla.org\components\qfaservices.xpt
+
+-------------------------------------------------------------------------------
+Updating Uninstall Log With Previous Uninstall Log
+-------------------------------------------------------------------------------
+  Added To Uninstall Log: File: \uninstall\uninst.exe
+  Added To Uninstall Log: File: C:\Documents and Settings\jimt\Start Menu\Programs\Mozilla Firefox\Mozilla Firefox.lnk
+  Added To Uninstall Log: File: C:\Documents and Settings\jimt\Start Menu\Programs\Mozilla Firefox\Mozilla Firefox (Safe Mode).lnk
+  Added To Uninstall Log: File: C:\Documents and Settings\jimt\Desktop\Mozilla Firefox.lnk
+  Added To Uninstall Log: File: \removed-files
+
+-------------------------------------------------------------------------------
+Mozilla Firefox Installation Finished: 2007-08-01 14:45:47

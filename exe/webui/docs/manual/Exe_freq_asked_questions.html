@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>eXe</title>
+<style type="text/css">
+@import url(eXe_manual.css);
+</style>
+</head>
+<body>
+<div id="content">
+<a name="top" id="top"></a>
+ <h1 class="firstHeading">Exe freq asked questions</h1>
+<div id="bodyContent">
+
+
+ <!-- start content -->
+<p><br />
+</p>
+<table style="border: 1px solid #CCC; width: 100%; margin-top: -25px; margin-bottom: 15px;">
+<tr><td><div class="floatleft"><span><span class="removed_img_link"><img alt="" src="120px-Exe_RGB_72dpi.jpg" width="120" height="79" border="0" /></span></span></div></td>
+<td align="center"><h1 style="font-size: 145%; border: none;">
+<b>eXe Authoring project</b></h1>
+<p>An Open Source development co-ordinated by<br />
+<a href="http://core-ed.net/" class="external text" title="http://core-ed.net/" rel="nofollow" target="_blank">CORE Education</a>.<br /><br /><a href="http://eXeLearning.org" class="external free" title="http://eXeLearning.org" rel="nofollow" target="_blank">http://eXeLearning.org</a>
+</p>
+</td>
+<td>
+<ul><li> <a href="Elearning_XHTML_Editor.html" title="Elearning XHTML Editor">Overview</a>
+</li><li> <a href="Online_manual.html" title="Online manual">Online Manual</a>
+</li><li> <strong class="selflink">FAQ</strong>
+</li><li> <a href="Training_resource_development_for_eXe.html" title="Training resource development for eXe">Training Resources</a>
+</li><li> <a href="EXe_Troubleshooting.html" title="EXe Troubleshooting">Troubleshooting</a>
+</li></ul>
+</td></tr></table>
+<ul><li><b>Where is the Attachment iDevice?</b>
+</li></ul>
+<p>It is no longer necessary because you can use the TinyMCE <b>text link</b> button to <a href="http://exelearning.blogspot.com/2007/08/one-more-thing.html" class="external text" title="http://exelearning.blogspot.com/2007/08/one-more-thing.html" rel="nofollow" target="_blank"><i>embed</i> file resources into ANY iDevice</a>. (<a href="http://exelearning.org/files/screencasts/eXe_Attachment.m4v" class="external text" title="http://exelearning.org/files/screencasts/eXe_Attachment.m4v" rel="nofollow" target="_blank">Screencast</a>)
+</p>
+<ul><li><b>How do I embed a pdf within an iframe in eXe?</b>
+</li></ul>
+<p>Yes, you can upload your pdf to www.scribd.com then you have embed code from scribd that you can use in the free text editor's
+HTML For an example, see <a href="http://home.scarlet.be/wilveradsl/exeleren/pdfbestand/voorbeeld.html" class="external free" title="http://home.scarlet.be/wilveradsl/exeleren/pdfbestand/voorbeeld.html" rel="nofollow" target="_blank">http://home.scarlet.be/wilveradsl/exeleren/pdfbestand/voorbeeld.html</a>
+</p>
+<ul><li><b>How can I make physlets work?</b>
+</li></ul>
+<p>To make physlets work  with eXe, you should upload all required .jar files, copy the applet source code into Applet code field and then delete something like codebase="classes/" from the applet code. Since all .jar files are inside classes directory on their webside, but will be in the current directory with eXe.
+</p>
+<ul><li><b>Where is my eXe configuration directory?</b>
+</li></ul>
+<p>The eXe configuration directory contains the exe.conf file that configures eXe for your machine.  It also contains an idevices directory that includes custom iDevices created on that machine.  The directory also contains log files that can be helpful to software developers in identifying problems.
+</p>
+<pre>* Windows XP: C:\Documents and Settings\xxxx\Application Data\exe (where xxxx is the user name)
+* Windows Vista: C:\Users\xxxx\AppData\Roaming\exe
+* Mac OS X: /Users/xxxx/.exe
+* Linux: ~/.exe
+</pre>
+<ul><li><b>How do I completely uninstall eXe?</b>
+</li></ul>
+<p>You need to remove the configuration directory (e.g. on Windows XP: C:\Documents and Settings\xxxx\Application Data\exe directory, where xxxx is the user name). That directory is not normally removed when you uninstall because local customizations (like iDevices created with the iDevice editor) are created there.
+</p>
+<ul><li><b>How to quit or close eXe?</b>
+</li></ul>
+<p>Please use the File-Quit menu. Yes, <i>it is</i> the correct way.
+</p>
+<ul><li> <b>I can't open the eXe application although I have had it running previously. Why won't it open?</b>
+</li></ul>
+<p>This is a common problem among Windows users who are use to closing applications using the red close button at the top right hand corner of the screen. to quit eXe properly use the Quit option under the File menu. Look at the tip for closing eXe[<a href="http://wikieducator.org/Online_manual/Tips#Closing_eXe|Closing_eXe." class="external autonumber" title="http://wikieducator.org/Online_manual/Tips#Closing_eXe|Closing_eXe." rel="nofollow" target="_blank">[1]</a>] 
+</p>
+<ul><li> <b>When I delete an iDevice using the iDevice editor I can still see the idevice on the authoring screen. Is this a bug?</b>
+</li></ul>
+<p>eXe needs to be quit and reopened before the delete idevice instruction will take effect. Although not the most elegant functionality this is how it currently is. We will look to refine this as the development goes on however, it will not be before release version 1.0. Check our [<a href="http://exelearning.org/projects/exe1/report/1|" class="external text" title="http://exelearning.org/projects/exe1/report/1|" rel="nofollow" target="_blank">Trac</a>] system for upadates to the development roadmap.
+</p>
+<ul><li> <b>Can I put more then one SCORM quiz into a single page of my content?</b>
+</li></ul>
+<p>Currently you cannot have more than one SCORM Quiz per node or page. You can however make a SCORM Quizz in each node, there is no limit to how many quizzes you have throughout your resource. We will continue to try to fix this problem but it has been set as a low priority. <i>Ticket No.265</i>
+</p>
+<ul><li> <b>What is the Refresh button for?</b>
+</li></ul>
+<p>Sometimes you may find eXe will stop responding.  Pushing Refresh will re-establish the internal communications and "wake eXe up".  This is a hack, we hope to fix this problem soon.
+</p>
+<ul><li> <b>Will you be releasing iDevices with more functionality?</b>
+</li></ul>
+<p>Yes. Development of new iDevices is an ongoing part of this project and as the technology becomes more robust we will endeavour to add iDevices with greater functionality.
+</p>
+<ul><li> <b>What is an iDevice?</b>
+</li></ul>
+<p>An iDevice (instructional device) is a reusable learning device such as a case study, reading activity, or multiple choice quiz question. A collection of idevices will generally make up a lesson or unit of learning. The definition of an iDevice at this point in the development is still fairly broad as those designing learning use tools in different ways. If you have an idea for a reusable iDevice please let us know.
+</p>
+<ul><li> <b>I have an idea for a new iDevice how do send this to the development team?</b>
+</li></ul>
+<p>We are always keen to look at new iDevice ideas so please complete the iDevice submission and tell us all about it.
+</p>
+<ul><li> <b> Will there be language translations for the eXe interface?</b>
+</li></ul>
+<p>We currently have 13 language translations. We have just begun using pootle an online translation management system to assist with the task of translating some 600 odd strings. This process still needs native language speakers so if your language is not currently listed. Check out the wiki for more details.
+</p>
+<ul><li> <b>Will there be a built-in quiz engine?</b>
+</li></ul>
+<p>No. The quiz engine is a function of a LMS. It may be possible that eXe will be able to author question types that some LMS's will understand. There is already limited formative question/feedback capability available within the current release of eXe.
+</p>
+<ul><li> <b>Can eXe support quiz questions my LMS will be able to understand?</b>
+</li></ul>
+<p>Some quiz functionality may be possible using the SCORM API.
+</p>
+<ul><li> <b>Can I upload files?</b>
+</li></ul>
+<p>Yes. This can be done using the Attachments iDevice. Image files and flv video format files can know also be added with image and flash iDevices.
+</p>
+<ul><li> <b>Can I import content from my LMS?</b>
+</li></ul>
+<p>This is something that is not in the immediate schedule for development but we will be looking at .
+</p>
+<ul><li> <b> Will I be able to import questions from other applications?</b>
+</li></ul>
+<p>This functionality is not currently part of or development roadmap.
+</p>
+<ul><li> <b>Can I make my own iDevice?</b>
+</li></ul>
+<p>Yes. The iDevice editor allows you to create your own iDevice templates.
+</p>
+<ul><li> <b>Can I load a package with a Chinese file name?</b>
+</li></ul>
+<p>Yes.
+</p>
+<ul><li> <b>Why use eXe over a proprietary web publishing product?</b>
+</li></ul>
+<p>Applications like Frontpage and Dreamweaver can offer users a fairly sophisticated tool when it comes to web design however, the learning curve to become proficient in these applications can often be steep and time consuming. With the eXe we have tried to identify many of the elements which make up learning resources and present these in forms that are technically simple and easy to use; in the eXe environment, these forms are known as iDevices. By building a learning sequence that includes a content structure and a number of iDevices users can begin to develop their own templates for content creation and reuse. The eXe also provides assistance for authors in the form of 'Pedagogical Tips' around the inclusion of iDevices; these tips can help authors make informed decisions around when and how to use iDevices for teaching. Tips are also provided near each iDevice's form fields to assist authors in generating appropriate content.
+</p>
+<ul><li> <b>When I export my website do my images go into a sub directory?</b>
+</li></ul>
+<p>No, they are packaged in the same directory as the webpages.
+</p>
+<ul><li> <b>Can I implement my own institutions style?</b>
+</li></ul>
+<p>Yes. See <a href="http://exelearning.org/Creating_a_new_Style" class="external free" title="http://exelearning.org/Creating_a_new_Style" rel="nofollow" target="_blank">http://exelearning.org/Creating_a_new_Style</a>
+</p>
+<ul><li> <b>Which LMS's have tracking working?</b>
+</li></ul>
+<p>See - SCORM Matrix: <a href="http://exelearning.org/ContentPackaging/ScormMatrix" class="external free" title="http://exelearning.org/ContentPackaging/ScormMatrix" rel="nofollow" target="_blank">http://exelearning.org/ContentPackaging/ScormMatrix</a>
+</p>
+<ul><li> <b>eXe crashed!  Have I lost all my work?</b>
+</li></ul>
+<p>eXe is currently undergoing rapid development, and while we are working to make
+it more stable, sometimes the worst happens.  You should keep frequent backups
+of your .elp packages as you develop your courses.  Starting with version 0.20,
+we also maintain a copy of the previous state.  If something goes wrong, we try
+to restore the original version and name the new work with a .crashed extension.
+</p>
+<ul><li> <b>eXe License</b>
+</li></ul>
+<p>The code developed by the eXe Project is released under the Gnu Public License V2.0.  A copy of the license is included with each copy of eXe.  eXe builds on a large number of Open Source projects, many of which have their own license conditions.  Please see the README file included with eXe for more details.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 12/1000000
+Post-expand include size: 607/2097152 bytes
+Template argument size: 0/2097152 bytes
+#ifexist count: 0/100
+-->
+<!-- Saved in parser cache with key wikiedu-mw_:pcache:idhash:2615-0!1!0!!en!2!edit=0 and timestamp 20080508191659 -->
+
+ <!-- end content -->
+<div class="visualClear"></div>
+</div>
+</div></body></html>
