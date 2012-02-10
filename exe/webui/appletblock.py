@@ -129,10 +129,17 @@ class AppletBlock(Block):
             html += '<p style="color:red"><b>' + self.idevice.message + '</b></p>'
         
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-        html += u'value="%s" />\n' % _(u"Add files")
-        html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
+        # html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+        
+        if self.idevice.type != "descartes":
+            html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+            html += u'value="%s" />\n' % _(u"Add files")
+            html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
                                                                 _(u"Upload"))
+        else:
+            html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
+                                                                _(u"Upload"))   
+        
         html += common.elementInstruc(self.idevice.fileInstruc)
         html += u'<br/>\n'
 

@@ -42,6 +42,10 @@ DESCARTES_FILE_NAMES = set(["Descartes3.jar", "Descartes.jar", "descinst.jar", "
 
 # Descartes requires scene_num 
 SCENE_NUM = 1
+# and could use an installed plugin
+DESC_PLUGIN = 0
+# or one specific JAR file:
+# jar = str
 # ===========================================================================
 
 class AppletIdevice(Idevice):
@@ -82,6 +86,13 @@ you created in Geogebra.</p>""")
     codeInstruc = lateTranslate('codeInstruc')
     typeInstruc = lateTranslate('typeInstruc')
 
+    # Descartes requires scene_num
+    # global SCENE_NUM 
+    # SCENE_NUM = 1
+    # and could use an installed plugin
+    global DESC_PLUGIN
+    DESC_PLUGIN = 0
+
     def getResourcesField(self, this_resource):
         """
         implement the specific resource finding mechanism for this iDevice:
@@ -114,12 +125,9 @@ you created in Geogebra.</p>""")
         #title = i.find(name='span', attrs={'class' : 'iDeviceTitle' })
         #idevice.title = title.renderContents().decode('utf-8')
         # no title for this idevice.
-
         # =====> WARNING: not yet loading any of the files!
-        #
         # BEWARE also of the appletCode line breaks loading as <br/>,
         # may want change this back to \n or \r\n?
-
         # AND: also need to load the applet type: Geogebra or Other.
         inner = i.find(name='div', attrs={'class' : 'iDevice emphasis0' })
         self.appletCode= inner.renderContents().decode('utf-8')
@@ -130,9 +138,10 @@ you created in Geogebra.</p>""")
         Needs to be in a package to work.
         """ 
         if self.type == "descartes" and not filePath.endswith(".jar"):
-            global SCENE_NUM
             if filePath.find(",") == -1:
+                global SCENE_NUM
                 SCENE_NUM = 1
+            # if filePath.find(",") != -1:
             else:
                 SCENE_NUM = int(filePath[:filePath.find(",")])
         if (filePath.endswith(".htm") or filePath.endswith(".html")):
@@ -214,20 +223,30 @@ you created in Geogebra.</p>""")
             if filename.endswith(".html") or filename.endswith(".htm"):
                 from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup   
                 import urllib2
-                if SCENE_NUM == 1:
+                if filename.find(",") == -1:    
                     htmlbytes = urllib2.urlopen(filename)
                 else:
                     htmlbytes = urllib2.urlopen(filename[2:])
+                
                 content = htmlbytes.read()
                 content = content.replace('&#130;','&#130')
-                encoding = htmlbytes.headers['content-type'].split('charset=')[-1]
+                # encoding = htmlbytes.headers['content-type'].split('charset=')[-1]
                 soup = BeautifulSoup(content)
                 i = 0
                 appletslist = []
                 for ap_old in soup.findAll("applet",{"code":"Descartes.class"}):
+                    # global jar
+                    # jar = BeautifulSoup(ap_old).find("applet",id="archive")
+                    # JAR = soup.find("applet",{"archive"}).contents
+                    # print jar
+                    global DESC_PLUGIN
+                    DESC_PLUGIN = 0
                     ap_old["codebase"] = "./"
                     appletslist.append(ap_old)
                 for ap_new in soup.findAll("applet",{"code":"descinst.Descartes.class"}):
+                    DESC_PLUGIN = 1
+                    for resource in reversed(self.userResources):
+                        resource.delete()
                     ap_new["codebase"] = "./"
                     appletslist.append(ap_new)
                 for x in appletslist:
@@ -257,6 +276,8 @@ you created in Geogebra.</p>""")
                 filename = ideviceDir/file
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeGeogebra("")
+            self.message       = ""
+            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .ggb file and clic on Upload button after.""")
         if self.type == "jclic":
             #from exe.application import application
             from exe import globals
@@ -265,6 +286,8 @@ you created in Geogebra.</p>""")
                 filename = ideviceDir/file
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeJClic("")
+            self.message       = ""
+            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .jclic.zip file and clic on Upload button after.<p>The activity will be visible when the HTML file will be generated from eXe.""")
         if self.type == "scratch":
             #from exe.application import application
             from exe import globals
@@ -273,27 +296,31 @@ you created in Geogebra.</p>""")
                 filename = ideviceDir/file
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeScratch("")
+            self.message       = ""
+            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .sb or .scratch file and clic on Upload button after.""")
         if self.type == "descartes":
             #from exe.application import application
             from exe import globals
-            # self.message = _("Please write: scene number,URL that include it, eg: 3,http://example.com")
             ideviceDir = globals.application.config.webDir/'templates'            
+            global DESC_PLUGIN
+            # global jar
             for file in DESCARTES_FILE_NAMES:
                 filename = ideviceDir/file
+                # if filename == jar:
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeDescartes("")
+            self.message       = ""
+            self._typeInstruc  = x_(u"""Please write: scene number,URL (no spaces) that include it, eg: 3,http://example.com; clic on Upload button after.""")
 
     def upgradeToVersion1(self):
         """
         Called to upgrade to 0.23 release
         """
         self.message       = ""
-        self.type          = u"other"
+        self.type == u"other"
         self._typeInstruc  = x_(u""" <p>If the applet you're adding was generated 
 by one of the programs in this drop down, please select it, 
-then add the data/applet file generated by your program. </p>
-<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that 
-you created in Geogebra.""")
+then add the data/applet file generated by your program.""")
           
 # ===========================================================================
 #def register(ideviceStore):
