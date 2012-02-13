@@ -38,14 +38,12 @@ log = logging.getLogger(__name__)
 GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_algos.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_javascript.jar", "geogebra_main.jar", "geogebra_properties.jar", "jlatexmath.jar", "jlm_cyrillic.jar", "jlm_greek.jar"])
 JCLIC_FILE_NAMES = set(["jclic.jar"])
 SCRATCH_FILE_NAMES = set(["ScratchApplet.jar", "soundbank.gm"])
-DESCARTES_FILE_NAMES = set(["Descartes3.jar", "Descartes.jar", "descinst.jar", "DescartesWeb2.0.jar"])
+DESCARTES_FILE_NAMES = set(["Descartes.jar", "Descartes3.jar", "Descartes4.jar", "Descartes4Runtime.jar", "DescartesA.jar", "Descartes_A.jar", "DescartesCalc.jar", "Descartes_R.jar", "Descartes_S.jar", "descinst.jar"])
 
 # Descartes requires scene_num 
 SCENE_NUM = 1
 # and could use an installed plugin
 DESC_PLUGIN = 0
-# or one specific JAR file:
-# jar = str
 # ===========================================================================
 
 class AppletIdevice(Idevice):
@@ -86,10 +84,6 @@ you created in Geogebra.</p>""")
     codeInstruc = lateTranslate('codeInstruc')
     typeInstruc = lateTranslate('typeInstruc')
 
-    # Descartes requires scene_num
-    # global SCENE_NUM 
-    # SCENE_NUM = 1
-    # and could use an installed plugin
     global DESC_PLUGIN
     DESC_PLUGIN = 0
 
@@ -141,7 +135,6 @@ you created in Geogebra.</p>""")
             if filePath.find(",") == -1:
                 global SCENE_NUM
                 SCENE_NUM = 1
-            # if filePath.find(",") != -1:
             else:
                 SCENE_NUM = int(filePath[:filePath.find(",")])
         if (filePath.endswith(".htm") or filePath.endswith(".html")):
@@ -227,7 +220,6 @@ you created in Geogebra.</p>""")
                     htmlbytes = urllib2.urlopen(filename)
                 else:
                     htmlbytes = urllib2.urlopen(filename[2:])
-                
                 content = htmlbytes.read()
                 content = content.replace('&#130;','&#130')
                 # encoding = htmlbytes.headers['content-type'].split('charset=')[-1]
@@ -235,18 +227,18 @@ you created in Geogebra.</p>""")
                 i = 0
                 appletslist = []
                 for ap_old in soup.findAll("applet",{"code":"Descartes.class"}):
-                    # global jar
-                    # jar = BeautifulSoup(ap_old).find("applet",id="archive")
-                    # JAR = soup.find("applet",{"archive"}).contents
-                    # print jar
+                    for resource in reversed(self.userResources):
+                        if resource._storageName != ap_old["archive"]:
+                            resource.delete()
                     global DESC_PLUGIN
                     DESC_PLUGIN = 0
                     ap_old["codebase"] = "./"
-                    appletslist.append(ap_old)
+                    appletslist.append(ap_old)   
                 for ap_new in soup.findAll("applet",{"code":"descinst.Descartes.class"}):
                     DESC_PLUGIN = 1
                     for resource in reversed(self.userResources):
-                        resource.delete()
+                        if resource._storageName != 'descinst.jar':
+                            resource.delete()
                     ap_new["codebase"] = "./"
                     appletslist.append(ap_new)
                 for x in appletslist:
@@ -303,10 +295,8 @@ you created in Geogebra.</p>""")
             from exe import globals
             ideviceDir = globals.application.config.webDir/'templates'            
             global DESC_PLUGIN
-            # global jar
             for file in DESCARTES_FILE_NAMES:
                 filename = ideviceDir/file
-                # if filename == jar:
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeDescartes("")
             self.message       = ""

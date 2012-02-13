@@ -86,7 +86,7 @@ class AppletBlock(Block):
                     elif self.idevice.type == "scratch" and not filePath.endswith(".sb") or filePath.endswith(".scratch"):
                         self.idevice.message = _("Please upload a .sb or .scratch file.")
                     elif self.idevice.type == "descartes" and not (filePath.endswith(".htm") or filePath.endswith(".html")):
-                        self.idevice.message = _("Please upload a HTML file.")
+                        self.idevice.message = _("Please type or paste a valid URL.")
                     else:
                         if self.idevice.type == "descartes" and filePath.find(","):
                             self.idevice.uploadFile(filePath)
@@ -131,6 +131,7 @@ class AppletBlock(Block):
         html += common.textInput("path"+self.id, "", 50)
         # html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         
+        # Descartes do not requires AddFile button:
         if self.idevice.type != "descartes":
             html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
             html += u'value="%s" />\n' % _(u"Add files")
