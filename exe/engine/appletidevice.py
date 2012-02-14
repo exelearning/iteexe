@@ -42,7 +42,7 @@ DESCARTES_FILE_NAMES = set(["Descartes.jar", "Descartes3.jar", "Descartes4.jar",
 
 # Descartes requires scene_num 
 SCENE_NUM = 1
-# and could use an installed plugin
+# and could need an installed plugin
 DESC_PLUGIN = 0
 # ===========================================================================
 
@@ -230,6 +230,9 @@ you created in Geogebra.</p>""")
                     for resource in reversed(self.userResources):
                         if resource._storageName != ap_old["archive"]:
                             resource.delete()
+                    # vamoa a crear la lista de archivos posibles?
+                    print ap_old["archivo"]
+                    print img 
                     global DESC_PLUGIN
                     DESC_PLUGIN = 0
                     ap_old["codebase"] = "./"
@@ -241,6 +244,13 @@ you created in Geogebra.</p>""")
                             resource.delete()
                     ap_new["codebase"] = "./"
                     appletslist.append(ap_new)
+                for ap_supernew in soup.findAll("applet",{"code":"descinst.DescartesWeb2_0.class"}):
+                    DESC_PLUGIN = 1
+                    for resource in reversed(self.userResources):
+                        if resource._storageName != 'descinst.jar':
+                            resource.delete()
+                    ap_supernew["codebase"] = "./"
+                    appletslist.append(ap_supernew)
                 for x in appletslist:
                     u = ''
                     if i == SCENE_NUM -1:
