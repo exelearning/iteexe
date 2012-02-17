@@ -861,7 +861,7 @@ class MainPage(RenderableLivePage):
         """
         from_source = True if from_source == "true" else False
         try:
-            importer = XliffImport(self.package, filename)
+            importer = XliffImport(self.package, unquote(filename))
             importer.parseAndImport(from_source)
             client.alert(_(u'Correct XLIFF import'))
         except Exception,e:
