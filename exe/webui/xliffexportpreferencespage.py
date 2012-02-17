@@ -80,6 +80,8 @@ class XliffExportPreferencesPage(RenderableResource):
         html += u"@import url(/css/exe.css);\n"
         html += u'@import url(/style/base.css);\n'
         html += u"@import url(/style/standardwhite/content.css);</style>\n"
+        html += u'<script type="text/javascript" src="/scripts/common.js">'
+        html += u'</script>\n'
         html += u'''<script language="javascript" type="text/javascript">
             function exportXliff(source, target, copy, cdata) {
                 opener.nevow_clientToServerEvent('exportXliffPackage', this, '', '%s', source, target, copy, cdata);
@@ -107,17 +109,27 @@ class XliffExportPreferencesPage(RenderableResource):
                                  options = self.localeNames,
                                  selection = 'eu')
 
-        html += common.formField('checkbox', this_package, "",
+        html += common.formField('checkbox', this_package, _(u"Copy source also in target"),
                                  'copy',
                                  name = 'copy',
                                  checked = True,
-                                 title = _(u"Copy source also in target"))
+                                 title = None,
+                                 instruction = _(u"If you don't choose this \
+option, target field will be empty. Some Computer Aided Translation tools \
+(i.g. OmegaT ) just translate the content of the target field. If you are \
+using this kind of tools, you will need to pre-fill target field with a copy \
+of the source field."))
 
-        html += common.formField('checkbox', this_package, "",
+        html += common.formField('checkbox', this_package, _(u"Wrap fields in CDATA"),
                                  'cdata',
                                  name = 'cdata',
                                  checked = False,
-                                 title = _(u"Wrap fields in CDATA"))
+                                 title = None,
+                                 instruction = _(u"This option will wrap all \
+the exported fields in CDATA sections. This kind of sections are not \
+recommended by XLIFF standard but it could be a good option if you want to \
+use a pre-process tool (i.g.: Rainbow) before using the Computer Aided \
+Translation software."))
 
         html += u"<div id=\"editorButtons\"> \n"
         html += u"<br/>" 

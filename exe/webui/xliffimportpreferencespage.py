@@ -55,6 +55,8 @@ class XliffImportPreferencesPage(RenderableResource):
         html += u"@import url(/css/exe.css);\n"
         html += u'@import url(/style/base.css);\n'
         html += u"@import url(/style/standardwhite/content.css);</style>\n"
+        html += u'<script type="text/javascript" src="/scripts/common.js">'
+        html += u'</script>\n'
         html += u'''<script language="javascript" type="text/javascript">
             function importXliff(from_source) {
                 opener.nevow_clientToServerEvent('mergeXliffPackage', this, '', '%s', from_source);
@@ -66,17 +68,21 @@ class XliffImportPreferencesPage(RenderableResource):
         html += u" charset=UTF-8\"></meta>\n";
         html += u"</head>\n"
         html += u"<body>\n"
-        html += u"<div id=\"main\"> \n"     
+        html += u"<div id=\"main\"> \n"
+        html += u"<p>&nbsp;</p>\n"
         html += u"<form method=\"post\" action=\"\" "
-        html += u"id=\"contentForm\" >"  
+        html += u"id=\"contentForm\" >"
 
         # package not needed for the preferences, only for rich-text fields:
         this_package = None
-        html += common.formField('checkbox', this_package, "",
+        html += common.formField('checkbox', this_package, _(u"Import from source language"),
                                  'from_source',
                                  name = 'from_source',
                                  checked = False,
-                                 title = _(u"Import from source language"))
+                                 title = None,
+                                 instruction = _(u"If you choose this option, \
+the import process will take the texts from source language instead of target \
+language."))
 
         html += u"<div id=\"editorButtons\"> \n"
         html += u"<br/>" 
