@@ -1,11 +1,11 @@
 /*  =================================================
 
      Fichero: content.css
-     Proyecto: CeDeC- Nueva plantilla para exeLearning
+     Proyecto: cedec- Nueva plantilla para exeLearning
      Autores: Mercedes Cotelo Lois / Antonio Monje Fernández / Francisco Javier Pulido Cuadrado
      Fecha: Mayo 2011
      Descripcion: Hoja de estilos principal
-     Company:   CeDeC - Centro Nacional de desarrollo Curricular en Sistemas No propietarios.
+     Company:   cedec - Centro Nacional de desarrollo Curricular en Sistemas No propietarios.
      Referencias: Obra derivada de (ver license.txt)
      
    ================================================== */
@@ -14,7 +14,7 @@
 
 * {
 	padding: 0;
-   margin: 5; 
+    margin: 5; 
 	font-family: Verdana,Arial, Helvetica, sans-serif !important;
 }
 
@@ -24,8 +24,6 @@ body, html
   	background-color: #ffffff;
 	color: #646464;
 	font-family: Verdana,Arial, Helvetica, sans-serif !important;
-	font-size: small;
-
 	line-height: 120%;
 }
 
@@ -141,7 +139,7 @@ div#nodeDecoration
 #nodeTitle
 {
 	
-	background-image: url(logo.png);
+	
 	background-position: right center;
 	background-repeat: no-repeat;
 	color: #598AC3;
@@ -158,14 +156,7 @@ div#nodeDecoration
 }
 
 /* Cabecera para cuando exportemos a web sola para imprimir */
-#header 
-{
-   text-align: left;
-   height: 5px;
-   padding-left: 20px;
-   font-size: 2.2em;
-   font-weight: bold;
-}
+#header{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
 /*=====================================================
 			ESTILOS COMUNES PARA TODOS LOS iDEVICES
 ========================================================*/
@@ -999,7 +990,7 @@ Idevice Galería de imágenes --> Galería de imágenes. En la capa contenedora 
 .GalleryIdevice {
 	position: relative;
 	margin: 20px auto;
-	width: 95%;
+	width: 110%;
    background: #ffffff url('inf_der_gallery.gif') no-repeat bottom right;
    border: none;
 	overflow: visible;
@@ -1139,15 +1130,4 @@ iframe
 img
 {
 	page-break-inside:avoid;
-}
-
-.pre-code{
-	background:#112C4A;
-	color:#E7ECF1;
-	font-family:Monaco,Courier,monospace;
-	font-size:12px;
-	margin:2em 1em;
-	overflow:auto;
-	padding:20px;
-	border-radius:9px;
 }

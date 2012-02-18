@@ -16,14 +16,14 @@ body {
     margin: 0px;
     padding: 0px 10px 10px 10px;
     font-family: arial, verdana, helvetica, sans-serif;
-    font-size: .8em;
+    font-size: 0.9em;
 }
 
 #header {
     text-align: left;
     height: 50px;
     padding-left: 20px;
-    font-size: 2.2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
