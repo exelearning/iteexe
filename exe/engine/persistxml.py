@@ -166,6 +166,6 @@ def encodeObjectToXML(toEncode):
     return document.toprettyxml()
 
 def decodeObjectFromXML(toDecode):
-    document = parseString(toDecode)
+    document = parseString(toDecode, escapeAttributes=0)
     du = UTF8DOMUnjellier()
     return du.unjelly(document)
