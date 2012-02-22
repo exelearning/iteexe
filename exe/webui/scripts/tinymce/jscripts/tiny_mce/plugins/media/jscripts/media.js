@@ -618,6 +618,10 @@ function jsEncode(s) {
 function generatePreview(c) {
 	var f = document.forms[0], p = document.getElementById('prev'), h = '', cls, pl, n, type, codebase, wp, hp, nw, nh;
 
+	//Pedro Peña: Try to fix "La ventana de inserción de vídeo queda en segundo plano tras seleccionar el vídeo"
+	//https://forja.cenatic.es/tracker/index.php?func=detail&aid=1389&group_id=197&atid=883
+	this.focus();
+
 	var type =  f.media_type.options[f.media_type.selectedIndex].value;
         if (type == "none") {
            return;
