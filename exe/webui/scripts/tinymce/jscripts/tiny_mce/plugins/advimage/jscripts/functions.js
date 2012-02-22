@@ -473,6 +473,10 @@ function onSelectMainImage(target_form_element, name, value) {
 function showPreviewImage(src, start) {
 	var formObj = document.forms[0]; 
 
+	//Pedro Peña: Try to fix "La ventana de inserción de imagen queda en segundo plano tras seleccionar la imagen"
+	//https://forja.cenatic.es/tracker/index.php?func=detail&aid=1383&group_id=197&atid=883
+	this.focus();
+
 	selectByValue(document.forms[0], 'imagelistsrc', src);
 
 	var elm = document.getElementById('prev');
