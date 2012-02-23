@@ -36,6 +36,9 @@ log = logging.getLogger(__name__)
 
 # Constants
 GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_algos.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_javascript.jar", "geogebra_main.jar", "geogebra_properties.jar", "jlatexmath.jar", "jlm_cyrillic.jar", "jlm_greek.jar"])
+JCLIC_FILE_NAMES = set(["jclic.jar"])
+SCRATCH_FILE_NAMES = set(["ScratchApplet.jar", "soundbank.gm"])
+DESCARTES_FILE_NAMES = set(["DescartesLib.jar"])
 
 # ===========================================================================
 
@@ -134,7 +137,18 @@ you created in Geogebra.</p>""")
             self.message = ""
             Resource(self, resourceFile)
             if self.type == "geogebra":
+<<<<<<< HEAD
                 self.appletCode = self.getAppletcode(resourceFile.basename())
+=======
+                self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename())
+            if self.type == "jclic":
+                self.appletCode = self.getAppletcodeJClic(resourceFile.basename())
+            if self.type == "scratch":
+                self.appletCode = self.getAppletcodeScratch(resourceFile.basename())
+            if self.type == "html":
+                self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
+>>>>>>> c83aac4... 
+
         else:
             log.error('File %s is not a file' % resourceFile)
     
@@ -161,10 +175,65 @@ you created in Geogebra.</p>""")
         </applet> """ % filename
         
         return html
+<<<<<<< HEAD
     
     def copyFiles(self):
         """
         if geogebra, then copy all jar files, otherwise delete all jar files.
+=======
+
+    def getAppletcodeJClic(self, filename):
+        """
+        xhtml string for JClicApplet
+        """  
+        html = """
+        <object classid="java:JClicApplet" type="application/x-java-applet" height="600" width="800"> 
+            <param name="archive" value="jclic.jar"/> 
+            <param name="activitypack" value="%s"/> 
+        </object> """ % filename
+        
+        return html
+
+    def getAppletcodeScratch(self, project):
+        """
+        xhtml string for ScratchApplet
+        """
+        html = """
+            <applet id="ProjectApplet" style="display:block" code="ScratchApplet" archive="ScratchApplet.jar" width="482" height="387">
+            <param name="project" value="%s">
+            Please <a href="http://java.sun.com/getjava"> install Java 1.4</a> (or later) to use this page.
+        </applet> """ % project
+        
+        return html
+
+    def getAppletcodeDescartes(self, url):
+        """
+        xhtml string for DescartesApplet
+        """
+        from exe.engine.beautifulsoup import BeautifulSoup   
+        import urllib2
+        import codecs
+        URL = "'"+url+"'"
+        sock = urllib2.urlopen(URL)  
+        soup = BeautifulSoup(sock.read())
+        num = 2
+        i = 1
+        for t in soup.findAll("applet",{"code":"Descartes.class"}):
+            if i == num:
+                applet = t.encode('utf-8')
+                break
+            i = i+1
+        html = """
+            applet """ % project
+        
+        return html
+         
+          
+    def copyFiles(self):
+        """
+        if descartes, geogebra, jclic or scratch then copy all jar files, otherwise delete all jar files.
+>>>>>>> c83aac4... 
+
         """
         
         for resource in reversed(self.userResources):
@@ -179,8 +248,38 @@ you created in Geogebra.</p>""")
             for file in GEOGEBRA_FILE_NAMES:
                 filename = ideviceDir/file
                 self.uploadFile(filename)
+<<<<<<< HEAD
             self.appletCode = self.getAppletcode("")
             
+=======
+            self.appletCode = self.getAppletcodeGeogebra("")
+        if self.type == "jclic":
+            #from exe.application import application
+            from exe import globals
+            ideviceDir = globals.application.config.webDir/'templates'            
+            for file in JCLIC_FILE_NAMES:
+                filename = ideviceDir/file
+                self.uploadFile(filename)
+            self.appletCode = self.getAppletcodeJClic("")
+        if self.type == "scratch":
+            #from exe.application import application
+            from exe import globals
+            ideviceDir = globals.application.config.webDir/'templates'            
+            for file in SCRATCH_FILE_NAMES:
+                filename = ideviceDir/file
+                self.uploadFile(filename)
+            self.appletCode = self.getAppletcodeScratch("")
+        if self.type == "descartes":
+            #from exe.application import application
+            from exe import globals
+            ideviceDir = globals.application.config.webDir/'templates'            
+            for file in DESCARTES_FILE_NAMES:
+                filename = ideviceDir/file
+                self.uploadFile(filename)
+            self.appletCode = self.getAppletcodeDescartes("")
+
+>>>>>>> c83aac4... 
+
     def upgradeToVersion1(self):
         """
         Called to upgrade to 0.23 release

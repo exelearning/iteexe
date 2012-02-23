@@ -85,6 +85,8 @@ class AppletBlock(Block):
                         self.idevice.message = _("Please upload a .jclic.zip file.")
                     elif self.idevice.type == "scratch" and not filePath.endswith(".sb"):
                         self.idevice.message = _("Please upload a .sb file.")
+                    elif self.idevice.type == "descartes" and not (filePath.endswith(".htm") or filePath.endswith(".html")):
+                        self.idevice.message = _("Please upload a HTML file.")
                     else:
                         self.idevice.uploadFile(filePath)
                         self.idevice.message = ""                   
@@ -102,7 +104,8 @@ class AppletBlock(Block):
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
        
-        types = [(_(u"Geogebra"), "geogebra"),
+        types = [(_(u"Descartes"), "descartes"),
+                 (_(u"Geogebra"), "geogebra"),
                  (_(u"JClic"), "jclic"),
                  (_(u"Scratch"), "scratch"),
                  (_(u"Other"), "other")]
