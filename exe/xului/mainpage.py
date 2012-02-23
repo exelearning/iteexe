@@ -858,13 +858,14 @@ class MainPage(RenderableLivePage):
         Parse the XLIFF file and import the contents based on
         translation-unit id-s
         """
+        from_source = True if from_source == "true" else False
         try:
             importer = XliffImport(self.package, filename)
-            importer.parseAndImport(bool(int(from_source)))
+            importer.parseAndImport(from_source)
             client.alert(_(u'Correct XLIFF import'))
         except Exception,e:
             client.alert(_(u'Error importing XLIFF: %s') % e)
-            
+
         client.sendScript((u'top.location = "/%s"' % \
                            self.package.name).encode('utf8'))
 
@@ -1075,16 +1076,18 @@ class MainPage(RenderableLivePage):
             raise
         client.alert(_(u'Exported to %s') % filename)
 
-    def handleXliffExport(self, client, exportType, filename, print_callback=''):
+    def handleXliffExport(self, client, filename, source, target, copy, cdata):
         """
         Exports this package to a XLIFF file
         """
+        copy = True if copy == "true" else False
+        cdata = True if cdata == "true" else False
         try:
             filename = Path(filename)
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
-            xliffExport = XliffExport(self.config, filename, bool(int(exportType)))
+            xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
         except Exception,e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))

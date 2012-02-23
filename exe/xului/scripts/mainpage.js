@@ -761,7 +761,7 @@ function exportPackage(exportType, exportDir, printCallback) {
     }
 } // exportPackage()
 
-function exportXliffPackage(exportType, exportDir, printCallback) {
+function exportXliffPackage() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
@@ -772,12 +772,15 @@ function exportXliffPackage(exportType, exportDir, printCallback) {
     fp.appendFilter(XLIFF_FILE, "*.xlf");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
-    if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace)
-        nevow_clientToServerEvent('exportXliffPackage', this, '', exportType, fp.file.path)
+    if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+	    var features  = "width=300,height=280,status=no,resizeable=yes,"+
+                    "scrollbars=yes";
+	    var editorWin = window.open("/xliffexport?path=" + fp.file.path, PREFERENCES, features);
+    }
 } // exportXliffPackage()
 
 // This function takes care of mergeing XLIFF files into this package
-function mergeXliffPackage(from_source) {
+function mergeXliffPackage() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
@@ -786,7 +789,9 @@ function mergeXliffPackage(from_source) {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-        nevow_clientToServerEvent('mergeXliffPackage', this, '', fp.file.path, from_source);
+	    var features  = "width=300,height=200,status=no,resizeable=yes,"+
+                    "scrollbars=yes";
+	    var editorWin = window.open("/xliffimport?path=" + fp.file.path, PREFERENCES, features);
     }
 }
 

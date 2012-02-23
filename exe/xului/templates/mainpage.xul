@@ -59,8 +59,7 @@
                 <menu n:render="translate" id="import-menu" label="Import" accesskey="i">
                   <menupopup id="import-popup">
                     <menuitem n:render="translate" label="HTML Course" accesskey="h" oncommand="importPackage('html')"/>
-                    <menuitem n:render="translate" label="XLIFF file" accesskey="x" oncommand="mergeXliffPackage(0)"/>
-                    <menuitem n:render="translate" label="XLIFF file (from source)" accesskey="f" oncommand="mergeXliffPackage(1)"/>
+                    <menuitem n:render="translate" label="XLIFF file" accesskey="x" oncommand="mergeXliffPackage()"/>
                   </menupopup>
                 </menu>
                 <menuseparator/>
@@ -79,8 +78,7 @@
                      <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage','','')"/>
                      <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile','','')"/>
 		     <menuitem n:render="translate" label="iPod Notes" accesskey="n" oncommand="exportPackage('ipod', '', '')"/>
-                    <menuitem n:render="translate" label="XLIFF" accesskey="x" oncommand="exportXliffPackage('0', '', '')"/>
-                    <menuitem n:render="translate" label="XLIFF (source also in target)" accesskey="t" oncommand="exportXliffPackage('1', '', '')"/>
+                    <menuitem n:render="translate" label="XLIFF" accesskey="x" oncommand="exportXliffPackage()"/>
                   </menupopup>
                 </menu>
                 <menu n:render="translate" id="merging-menu" label="Merging" accesskey="m">
