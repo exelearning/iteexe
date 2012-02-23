@@ -1,6 +1,7 @@
 exe/application.py
 exe/globals.py
 exe/__init__.py
+exe/exe_do
 exe/engine/casestudyidevice.py
 exe/engine/multichoiceidevice.py
 exe/engine/rssidevice.py
@@ -76,6 +77,7 @@ exe/export/singlepageexport.py
 exe/export/ipodexport.py
 exe/export/imsexport.py
 exe/export/__init__.py
+exe/export/cmdlineexporter.py
 exe/export/xliffexport.py
 exe/export/textexport.py
 exe/export/websitepage.py
@@ -83,6 +85,7 @@ exe/export/ipodpage.py
 exe/export/websiteexport.py
 exe/importers/scanresources.py
 exe/importers/__init__.py
+exe/importers/cmdlineimporter.py
 exe/importers/xliffimport.py
 exe/webui/aboutpage.py
 exe/webui/clozelangfpdblock.py
@@ -117,6 +120,7 @@ exe/webui/debesconocerfpdblock.py
 exe/webui/questionelement.py
 exe/webui/orientacionesalumnadofpdblock.py
 exe/webui/appletblock.py
+exe/webui/xliffimportpreferencespage.py
 exe/webui/clozefpdblock.py
 exe/webui/freetextfpdblock.py
 exe/webui/elementfactory.py
@@ -136,6 +140,7 @@ exe/webui/imagewithtextblock.py
 exe/webui/testquestionelement.py
 exe/webui/truefalseblock.py
 exe/webui/common.py
+exe/webui/xliffexportpreferencespage.py
 exe/webui/reflectionblock.py
 exe/webui/editorpane.py
 exe/webui/seleccionmultiplefpdblock.py
