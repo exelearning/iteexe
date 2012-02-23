@@ -1,0 +1,776 @@
+/*  =================================================
+
+     Fichero: content.css
+     Proyecto: INTERBAC- Nueva plantilla para exeLearning
+     Autor: Juan Diego P�rez Jim�nez / Anibal de la Torre
+     Fecha: Febrero 2009
+     Descripcion: Hoja de estilos principal
+     Company:   Servicio de Educaci�n Permanente.
+                Consejer�a de Educaci�n
+                Junta de Andaluc�a
+     
+   ================================================== */
+   
+/*Reseteo gen�rico de estilos */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+	font-family: Verdana,Arial, Helvetica, sans-serif !important;
+}
+
+/* Estilo general del cuerpo de los contenidos */
+body, html 
+{
+  	background-color: #ffffff;
+	color: #000000;
+	font-family: Verdana,Arial, Helvetica, sans-serif !important;
+	font-size: small;
+	text-align: justify;
+	line-height: 120%;
+	height: 100%;
+}
+
+body
+{
+	font-family: Verdana,Arial, Helvetica, sans-serif !important;
+    height: 100%;
+}
+
+/* Separación entre párrafos*/
+p
+{
+	margin: 0.7em;
+}
+
+/* Para la sangría/tabulación/indentación */
+blockquote
+{
+	margin: 12px 40px 12px 40px;
+}
+
+/* Estilo para los enlaces */
+a:link,
+a:active,
+a:visited
+{
+	color: #2d4784;
+	text-decoration: none;
+}
+
+/*Estilo para los enlaces cuando tenemos el cursos sobre ellos*/
+a:hover
+{
+	color: #2d47854;
+	text-decoration:underline;
+}
+
+/* Im�genes*/
+img
+{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 0px;
+	margin-bottom: -3px;
+	border: 0px;
+	padding: 0px;
+}
+
+a img
+{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*Tablas*/
+table
+{
+	margin: 10px;
+	border: 1px solid;
+	border-color: inherit;
+	border-collapse: collapse;
+	padding: 3px;
+}
+
+table[align="center"]
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+td
+{
+	border: 1px solid;
+	border-color: inherit;
+	border-collapse: collapse;
+	padding: 3px;
+}
+
+/* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
+.question table
+{
+	border: 0;
+}
+
+.question td
+{
+	border: 0;
+}
+
+/* Formato para las listas */
+/* Para que haya indexación en las listas anidadas */
+ol,ul
+{
+	margin-left: 2em;	
+}
+/* Cambio el icono para las listas si numerar */
+ul li
+{
+	list-style-image: url(bullet.gif);
+}
+
+/* Estilo para el t�tulo del NODO, que es cada una de las entradas
+de la jerarqu�a de contenidos que crearemos con eXe */
+div#nodeDecoration
+{
+	text-align: left;
+}
+
+h1#nodeTitle
+{
+	background-image: url(gaviotas3.gif);
+	background-position: right center;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	background-color: #627796;
+    font-weight: bold;
+    display: block;
+	font-size: 20px;
+	line-height: 25px;
+	border-top: 3px double #CCCCCC;
+	border-bottom: 3px double #CCCCCC;
+	padding-top: 1px;
+	padding-bottom: 3px;
+	padding-right: 70px;
+	margin-top: 0px;
+}
+
+h1.nodeTitle, h2.nodeTitle, h3.nodeTitle, h4.nodeTitle, h5.nodeTitle, h6.nodeTitle, h7.nodeTitle
+{
+	background-image: url(gaviotas3.gif);
+	background-position: right center;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	background-color: #627796;
+    font-weight: bold;
+    display: block;
+	font-size: 20px;
+	line-height: 25px;
+	border-top: 3px double #CCCCCC;
+	border-bottom: 3px double #CCCCCC;
+	padding-top: 1px;
+	padding-bottom: 3px;
+	padding-right: 70px;
+	margin-top: 0px;
+}
+
+/* Cabecera para cuando exportemos a web sola para imprimir */
+#header 
+{
+    text-align: left;
+    height: 5px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+/*=====================================================
+			ESTILOS COMUNES PARA TODOS LOS iDEVICES
+========================================================*/
+
+
+/* No me va a interesar mostrar el t�tulo */
+/* Se ha optado por otra forma de presentaci�n */
+.iDevice
+{
+	/* Simplemente lo separo un poquito del resto de iDevices
+	y separo los contenidos del borde */
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.iDevice_icon
+{
+	border: 0px;
+	margin-bottom: -50px;
+	margin-left: 10px;
+	position: relative;
+	z-index:99;
+}
+
+.iDeviceTitle
+{
+	display: none;
+}
+
+.emphasis1
+{
+	margin:0px;
+}
+
+.iDevice_inner
+{
+	margin:0px;
+	padding-left: 35px;
+	padding-right: 10px;
+	padding-top: 50px;
+	padding-bottom: 5px;
+	height: auto !important;
+	*height: auto !important;
+	*height: 0px;
+	margin-bottom: 5px;
+	overflow-y: auto;
+}
+
+
+.emphasis0
+{
+	width: auto;
+	height: auto !important;
+	*height: auto !important;
+	*height: 0px;
+	margin-bottom: 5px;
+	overflow-y: auto;
+}
+
+
+/* IDEVICE OBJETIVO -> PARA SABER M�S */
+
+/* �APA PARA EL INTERNET EXPLORER 6*/
+.objectivesIDevice .iDevice_inner
+{
+	color:#B96A00;
+	background-image:url(fondoev_objectives.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FFF5E8 ;
+	border: 1px solid #FF9900;
+}
+
+/* En preview */
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_objectives.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#B96A00;
+	background-image:url(fondoev_objectives.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FFF5E8 ;
+	border: 1px solid #FF9900;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_objectives.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#B96A00;
+	background-image:url(fondoev_objectives.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FFF5E8 ;
+	border: 1px solid #FF9900;
+}
+
+/* IDEVICE ACTIVIDAD  -> DESTACADO, IMPORTANTE*/
+
+/* �APA PARA EL INTERNET EXPLORER 6*/
+.activityIdevice .iDevice_inner
+{
+	color:#00007D;
+	background-image:url(fondoev_activity.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #ECECFF;
+	border: 1px solid #9797FF;
+}
+
+.activityIdevice a
+{
+	font-weight: bold;
+}
+
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_activity.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#00007D;
+	background-image:url(fondoev_activity.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #ECECFF;
+	border: 1px solid #9797FF;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_activity.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#00007D;
+	background-image:url(fondoev_activity.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #ECECFF;
+	border: 1px solid #9797FF;
+}
+
+/* IDEVICE ACTIVIDAD DE LECTURA */
+
+/* �APA PARA EL INTERNET EXPLORER */
+.readingIdevice .iDevice_inner
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_reading.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_reading.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+
+/* IDEVICE CASO DE ESTUDIO  -> EJERCICIO RESUELTO*/
+
+/* �APA PARA EL INTERNET EXPLORER 6*/
+.CasestudyIdevice .iDevice_inner
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_casestudy.gif"] + span.iDeviceTitle + div.iDevice_inner
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_casestudy.gif"] + span.iDeviceTitle + div.iDevice_inner
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+
+/* IDEVICE CUSTOM */
+/* De momento lo dejo con el estilo del texto libre y únicamente le quito el icono y el título*/
+.customIdevice .iDevice_inner
+{
+	border: 1px solid #000000;
+}
+.customIdevice .iDevice_icon
+{
+	display: none;
+}
+
+/* En preview */
+.emphasis1 img.iDevice_icon[src="/style/Extremadura_V06/icon_preknowledge.gif"] 
+{
+	display: none;
+}
+
+/* IDEVICE PRE-CONOCIMIENTO  -> CURIOSIDAD */
+
+/* �APA PARA EL INTERNET EXPLORER 6 */
+.preknowledgeIdevice .iDevice_inner
+{
+	color:#008E34;
+	background-image:url(fondoev_preknowledge.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #EEFFE7;
+	border: 1px solid #00532F;
+}
+
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_preknowledge.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#008E34;
+	background-image:url(fondoev_preknowledge.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #EEFFE7;
+	border: 1px solid #00532F;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_preknowledge.gif"] + h2.iDeviceTitle + div.iDevice_inner
+{
+	color:#008E34;
+	background-image:url(fondoev_preknowledge.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #EEFFE7;
+	border: 1px solid #00532F;
+}
+
+
+
+
+/* IDEVICE REFLEXION */
+
+/* �APA PARA EL INTERNE EXPLORER */
+.ReflectionIdevice .iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_reflection.gif"] + span.iDeviceTitle + script+ div.iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_reflection.gif"] + span.iDeviceTitle + script + div.iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+
+/* IDEVICES DE ACTIVIDAD DE ESPACIOS EN BLANCO,ELECCI�N M�LTIPLE Y V o F/
+
+/* �APA PARA EL IE6 */
+.MultichoiceIdevice .iDevice_inner, .ClozeIdevice .iDevice_inner, .TrueFalseIdevice .iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+
+/* Para cambiar el estilo de los enlaces para que no se confundan con el fondo */
+.MultichoiceIdevice  .iDevice_inner  a, .ClozeIdevice  .iDevice_inner a, .TrueFalseIdevice .iDevice_inner  a
+{
+	font-weight: bold;
+	
+}
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_question.gif"] + span.iDeviceTitle + * + div.iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_question.gif"] + span.iDeviceTitle + div.iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+
+
+
+/* IDEVICES DE SELECCI�N M�LTIPLE Y EXAMEN SCORM*/
+
+/* �APA PARA EL INTERNET EXPLORER 6*/
+.MultiselectiDevice .iDevice_inner, .QuizTestIdevice .iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;
+	border: 1px solid #ABCCEE;
+}
+
+/* DESTACO LOS ENLACES PARA QUE SE MUESTREN DENTRO DEL IDEVICE PESE AL COLOR*/
+.MultiselectiDevice .iDevice_inner a
+{
+	font-weight: bold;
+}
+
+/*En preview*/
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_question.gif"] + span.iDeviceTitle + div.iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;
+	border: 1px solid #ABCCEE;
+}
+/*Al exportar*/
+.emphasis1 img.iDevice_icon[src="icon_question.gif"] + span.iDeviceTitle + div.iDevice_inner
+{
+	color:#000080;
+	background-image:url(fondoev.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #F4FAFF;
+	padding-bottom: 10px;	
+	border: 1px solid #ABCCEE;
+}
+
+/* Estilo para las retroalimentaciones */
+.feedback
+{
+	border: 1px dashed #4E4E4E;
+	color: #4E4E4E;
+	background-color: #FFFFFF;
+	padding: 5px;
+	margin: 5px;
+	font-family: Verdana,Arial, Helvetica, sans-serif !important;
+	font-size:1em;	
+	height: auto !important;
+	*height: auto !important;
+	*height: 0px;
+	margin-bottom: 5px;
+	overflow-y: auto;
+}
+
+/* Estilo para los formularios y botones*/
+input
+{
+	font-weight: bold;
+	color: inherit;
+	border-color: inherit;
+	border-style: solid;
+	border-width: 1px;
+}
+
+select
+{
+	font-weight: bold;
+	color: inherit;
+	border-color: inherit;
+	border-style: solid;
+	border-width: 1px;
+}
+
+/* Estilo para las sugerencias y ayudas pedag�gicas */
+.popupDiv
+{
+	background-color: #FFFFFF;
+	border: 2px solid #607489;
+	padding: 4px;
+	margin-left: 15px;
+	text-align: left;
+}
+
+.popupDivLabel
+{
+	text-align: center;
+	font: message-box;
+	font-weight: bold;
+	color: #fff;
+	margin: 4px;
+	background-color: #FF0000;
+}
+
+/* IDEVICE GALER�A IM�GENES */
+/* �APA PARA EL INTERNET EXPLORER 6*/
+.GalleryIdevice  table
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+	margin-top: 25px;
+	padding-top: 10px !important;
+	*padding-top: 50px;
+	padding-left: 35px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+/*En preview*/
+img.iDevice_icon[src="/style/kyoiku/icon_gallery.gif"]
+{
+	margin-bottom: -50px;	
+	padding-left: 10px;
+}
+
+.emphasis1 img.iDevice_icon[src="/style/kyoiku/icon_gallery.gif"]+ span.iDeviceTitle+table
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+/*Al exportar*/
+.GalleryIdevice .iDevice_icon
+{
+	margin-bottom: -50px;
+	padding-left: 10px;
+}
+
+.emphasis1 img.iDevice_icon[src="icon_gallery.gif"]+span.iDeviceTitle+div.gallery_popup+br+table
+{
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+	margin-top: 25px;
+	padding-left: 35px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+/* Caracter�sticas para cada una de las fotos de la galer�a */
+img.gallery
+{
+	margin-left: 30px;
+	border: 1px solid #000000;
+	padding: 10px;
+	margin-top: 50px !important;
+	*margin-top: 60px !important; 
+	*margin-top: 60px;
+	margin-right:15px;
+}
+
+/* Caracter�sticas del t�tulo de las fotos de la galer�a */
+.caption
+{
+	font-weight: bold;
+	margin-left: 30px !important;
+	*margin-left: 30px !important;
+	*margin-left: 50px;
+	padding: 10px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/* IDEVICE IMAGEN AMPLIADA */
+.image_text
+{
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	color:#4E4E4E;
+	background-image:url(fondoev_bn.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+	background-color: #FCFCFC;
+	border: 1px solid #000000;
+}
+
+.image_text .image
+{
+	background-image:url(icon_zoom.gif);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.image object
+{
+	margin: 0px;
+	padding: 0px;
+	margin-top: 55px;	
+}
+.image_text + .block
+{
+	float:left;
+	margin: 5px;
+	margin-right: -15px;
+	color: #4E4E4E;
+}
+
+/* IDEVICE SITIO EXTERNO SITIO WEB */
+iframe
+{
+	border: 1px solid #000000;
+	padding: 2px;
+}
+/* CAMBIOS DE TIPO DE LETRAS EN SITIOS DETERMINADOS
+ * SOBRECARGANDO EL BASE.CSS DE LA APLICACIÓN
+ */
+.reading_reference
+{
+	font-family: Verdana,Arial, Helvetica, sans-serif !important;	
+}
+
+
+
+
+
+/* ESTILOS PARA IMPRIMIR */
+
+img
+{
+	page-break-inside:avoid;
+}
+
+.pre-code {
+ 	background:#112C4C;
+	color: #E7ECF1;
+	font-family:Monaco, Courier, monospace;
+	font-size: 12px;
+	overflow: auto;
+	padding: 20px;
+	border-radius: 9px;
+}
