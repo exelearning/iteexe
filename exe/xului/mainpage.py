@@ -53,6 +53,7 @@ from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
+from urllib                      import unquote
 
 log = logging.getLogger(__name__)
 
@@ -1083,7 +1084,7 @@ class MainPage(RenderableLivePage):
         copy = True if copy == "true" else False
         cdata = True if cdata == "true" else False
         try:
-            filename = Path(filename)
+            filename = Path(unquote(filename))
             log.debug(u"exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'

@@ -47,7 +47,7 @@ from exe                     import globals
 from exe.engine.path         import TempDirPath
 import logging
 import re
- 
+
 log = logging.getLogger(__name__)
 
 class Windows_Log(object):
@@ -58,7 +58,7 @@ class Windows_Log(object):
         self.level = level
     def write(self, text):
         log.log(self.level, text)
-if sys.platform[:3] == "win":
+if sys.platform[:3] == "win" and sys.argv[0].endswith("exe"):
     # put stderr and stdout into the log file
     sys.stdout = Windows_Log(logging.INFO)
     sys.stderr = Windows_Log(logging.ERROR)
