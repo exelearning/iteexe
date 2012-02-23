@@ -157,7 +157,6 @@ you created in Geogebra.</p>""")
             else:
                 log.error('File %s is not a file' % resourceFile)
     
-    
     def deleteFile(self, fileName):
         """
         Delete a selected file
