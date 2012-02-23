@@ -171,7 +171,7 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&nbsp;', '')
-        appletcode = appletcode.replace('\xC2\x82','&#130')
+        # appletcode = appletcode.replace('\xC2\x82','&#130')
         appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
         appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"')       
         
@@ -200,7 +200,7 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&nbsp;', '')
-        appletcode = appletcode.replace('\xC2\x82','&#130')
+        # appletcode = appletcode.replace('\xC2\x82','&#130')
         html += appletcode
         html += u"<br/>"
         html += u"</div>\n"

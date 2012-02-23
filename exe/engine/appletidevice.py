@@ -214,14 +214,12 @@ you created in Geogebra.</p>""")
             if filename.endswith(".html") or filename.endswith(".htm"):
                 from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup   
                 import urllib2
-                import sys
-                import re
                 if SCENE_NUM == 1:
                     htmlbytes = urllib2.urlopen(filename)
                 else:
                     htmlbytes = urllib2.urlopen(filename[2:])
                 content = htmlbytes.read()
-                # htmlbytes = htmlbytes.replace('&#130;',',')  # funciona
+                content = content.replace('&#130;','&#130')
                 encoding = htmlbytes.headers['content-type'].split('charset=')[-1]
                 soup = BeautifulSoup(content)
                 i = 0
@@ -233,11 +231,11 @@ you created in Geogebra.</p>""")
                     ap_new["codebase"] = "./"
                     appletslist.append(ap_new)
                 for x in appletslist:
+                    u = ''
                     if i == SCENE_NUM -1:
-                        u = str(x)
+                        u = unicode(x)
                         break
                     i = i+1
-                # html = u.replace('\xC2\x82','&#130')
                 html = u
         return html
           
