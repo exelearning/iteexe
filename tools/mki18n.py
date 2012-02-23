@@ -292,6 +292,7 @@ def generateAppFil():
     exe = Path('exe')
     toSearch = [
         (exe,          '*.py'),
+        (exe,          'exe_do'),
         (exe/'engine', '*.py'),
         (exe/'export', '*.py'),
         (exe/'importers', '*.py'),
@@ -352,7 +353,7 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     #   -s                          : sort output by string content (easier to use when we need to merge several .po files)
     #   --files-from=app.fil        : The list of files is taken from the file: app.fil
     #   --output=                   : specifies the name of the output file (using a .pot extension)
-    cmd = 'xgettext -kx_ -s -j --no-wrap --output=exe/locale/messages.pot --from-code=utf8 %s'
+    cmd = 'xgettext -kx_ -L Python -s -j --no-wrap --output=exe/locale/messages.pot --from-code=utf8 %s'
     if verbose: print cmd
     for fn in open('app.fil'):
         print 'Extracting from', fn,
@@ -363,7 +364,7 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     # Merge new pot with .po files
     localeDirs = Path('exe/locale')
     for filename in localeDirs.walkfiles('*_*.po'):
-        cmd = "msgmerge -U --no-wrap %s exe/locale/messages.pot" % filename
+        cmd = "msgmerge -U --no-wrap -N %s exe/locale/messages.pot" % filename
         if verbose: print cmd
         os.system(cmd)
 
