@@ -169,18 +169,3 @@ def decodeObjectFromXML(toDecode):
     document = parseString(toDecode)
     du = UTF8DOMUnjellier()
     return du.unjelly(document)
-    
-def exportToXML(elp):
-    from exe.engine.package import Package
-    pkg = Package.load(elp)
-    if not pkg:
-        raise Exception(_("Invalid package"))
-    open(elp + ".xml", "w").write(encodeObjectToXML(pkg))
-
-def importFromXML(elp):
-    from exe.engine.package import Package
-    xml = open(elp + ".xml").read()
-    pkg = Package.load(elp, xml=xml)
-    if not pkg:
-        raise Exception(_("Invalid package"))
-    pkg.save()

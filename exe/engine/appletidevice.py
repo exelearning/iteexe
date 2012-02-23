@@ -206,6 +206,35 @@ you created in Geogebra.</p>""")
         
         return html
 
+
+    def downloadImgs(self, stringapplet):
+        """
+        xhtml imgs for DescartesApplet
+        """
+        from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup
+        import re
+        # import string
+        soup = BeautifulSoup(stringapplet)
+        IMAGE_ATTRIBUTES = ['archivo', 'imagem_de_fundo', 'imagem', 'imagen', 'file', 'fitxer',
+                             'artxibo', 'image', 'bg_image', 'imatge', 'immagine', 'irudia',
+                             'irundia', 'fichier', 'imaxe', 'arquivo', 'immagine_fondo']
+        imageslist = []
+        patron = re.compile(r"archivo='([\w\./]+)'")
+        for tag in soup.findAll('param'):
+            if patron.search(tag['value']):
+                imageslist.append(patron.search(tag['value']).group(1))
+        for pathimg in imageslist:
+            try:
+                print pathimg
+                print htmlbytes
+                f = file(pathimg,'wb')
+                f.write(htmlbytes.read())
+                f.close()
+            except:
+               print 'Unable to download file'        
+        return
+        
+    
     def getAppletcodeDescartes(self, filename):
         """
         xhtml string for DescartesApplet
@@ -222,7 +251,6 @@ you created in Geogebra.</p>""")
                     htmlbytes = urllib2.urlopen(filename[2:])
                 content = htmlbytes.read()
                 content = content.replace('&#130;','&#130')
-                # encoding = htmlbytes.headers['content-type'].split('charset=')[-1]
                 soup = BeautifulSoup(content)
                 i = 0
                 appletslist = []
@@ -230,9 +258,6 @@ you created in Geogebra.</p>""")
                     for resource in reversed(self.userResources):
                         if resource._storageName != ap_old["archive"]:
                             resource.delete()
-                    # vamoa a crear la lista de archivos posibles?
-                    print ap_old["archivo"]
-                    print img 
                     global DESC_PLUGIN
                     DESC_PLUGIN = 0
                     ap_old["codebase"] = "./"
@@ -255,8 +280,10 @@ you created in Geogebra.</p>""")
                     u = ''
                     if i == SCENE_NUM -1:
                         u = unicode(x)
+                        self.downloadImgs(u)
                         break
                     i = i+1
+                htmlbytes.close()
                 html = u
         return html
           
