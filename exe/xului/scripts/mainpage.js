@@ -773,7 +773,7 @@ function exportXliffPackage() {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-	    var features  = "width=300,height=280,status=no,resizeable=yes,"+
+	    var features  = "width=650,height=280,status=no,resizeable=yes,"+
                     "scrollbars=yes";
 	    var editorWin = window.open("/xliffexport?path=" + fp.file.path, PREFERENCES, features);
     }
@@ -789,7 +789,7 @@ function mergeXliffPackage() {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-	    var features  = "width=300,height=200,status=no,resizeable=yes,"+
+	    var features  = "width=650,height=200,status=no,resizeable=yes,"+
                     "scrollbars=yes";
 	    var editorWin = window.open("/xliffimport?path=" + fp.file.path, PREFERENCES, features);
     }
