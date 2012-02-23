@@ -21,7 +21,7 @@
 
 import os
 import sys
-from optparse import OptionParser
+from optparse import OptionParser, IndentedHelpFormatter
 
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -45,10 +45,20 @@ from exe.export.cmdlineexporter import CmdlineExporter
 from exe.importers.cmdlineimporter import CmdlineImporter
 
 
+class CustomHelpFormatter(IndentedHelpFormatter):
+    def format_usage(self, usage):
+        return usage
+
+
+class CustomOptionParser(OptionParser):
+    def set_usage(self, usage):
+        self.usage = usage
+
+
 def prepareParser():
     usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \
 help:\n%prog -h").encode('utf-8')
-    parser = OptionParser(usage=usage)
+    parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm', 'ims', 'website', 'webzip',
@@ -76,12 +86,13 @@ if __name__ == "__main__":
 
     if options.x and options.i:
         parser.error(_(u'Options --export and --import are mutually \
-exclusive.'))
+exclusive.').encode('utf-8'))
     if not options.x and not options.i:
-        parser.error(_(u'No --export or --import option supplied.'))
+        parser.error(_(u'No --export or --import option supplied.')\
+.encode('utf-8'))
 
     if not args:
-        parser.error(_(u'No file input supplied.'))
+        parser.error(_(u'No file input supplied.').encode('utf-8'))
 
     inputf = args[0]
     try:
@@ -90,7 +101,7 @@ exclusive.'))
         outputf = None
 
     if len(args) > 2:
-        parser.error(_(u'Bad number of arguments supplied'))
+        parser.error(_(u'Bad number of arguments supplied').encode('utf-8'))
 
     if options.x:
         x = CmdlineExporter(application.config)
