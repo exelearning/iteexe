@@ -38,8 +38,10 @@ log = logging.getLogger(__name__)
 GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_algos.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_javascript.jar", "geogebra_main.jar", "geogebra_properties.jar", "jlatexmath.jar", "jlm_cyrillic.jar", "jlm_greek.jar"])
 JCLIC_FILE_NAMES = set(["jclic.jar"])
 SCRATCH_FILE_NAMES = set(["ScratchApplet.jar", "soundbank.gm"])
-DESCARTES_FILE_NAMES = set(["DescartesLib.jar"])
+DESCARTES_FILE_NAMES = set(["DescartesLib.jar", "Descartes.jar"])
 
+# Descartes requires scene_num 
+SCENE_NUM = 1
 # ===========================================================================
 
 class AppletIdevice(Idevice):
@@ -127,30 +129,31 @@ you created in Geogebra.</p>""")
         Store the upload files in the package
         Needs to be in a package to work.
         """ 
-        log.debug(u"uploadFile "+unicode(filePath))
-        resourceFile = Path(filePath)
-        assert self.parentNode, _('file %s has no parentNode') % self.id
-        assert self.parentNode.package, \
-                _('iDevice %s has no package') % self.parentNode.id
-        
-        if resourceFile.isfile():
-            self.message = ""
-            Resource(self, resourceFile)
-            if self.type == "geogebra":
-<<<<<<< HEAD
-                self.appletCode = self.getAppletcode(resourceFile.basename())
-=======
-                self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename())
-            if self.type == "jclic":
-                self.appletCode = self.getAppletcodeJClic(resourceFile.basename())
-            if self.type == "scratch":
-                self.appletCode = self.getAppletcodeScratch(resourceFile.basename())
-            if self.type == "descartes":
-                self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
->>>>>>> c83aac4... 
-
+        if self.type == "descartes" and not filePath.endswith(".jar"):
+            global SCENE_NUM
+            if filePath.find(",") != 0:
+                SCENE_NUM = int(filePath[:filePath.find(",")])                
+        if (filePath.endswith(".htm") or filePath.endswith(".html")):
+            self.appletCode = self.getAppletcodeDescartes(filePath)
         else:
-            log.error('File %s is not a file' % resourceFile)
+            log.debug(u"uploadFile "+unicode(filePath))
+            resourceFile = Path(filePath)
+            assert self.parentNode, _('file %s has no parentNode') % self.id
+            assert self.parentNode.package, \
+                    _('iDevice %s has no package') % self.parentNode.id
+            if resourceFile.isfile():
+                self.message = ""
+                Resource(self, resourceFile)
+                if self.type == "geogebra":
+                    self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename())
+                if self.type == "jclic":
+                    self.appletCode = self.getAppletcodeJClic(resourceFile.basename())
+                if self.type == "scratch":
+                    self.appletCode = self.getAppletcodeScratch(resourceFile.basename())
+                if self.type == "descartes":
+                    self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
+            else:
+                log.error('File %s is not a file' % resourceFile)
     
     
     def deleteFile(self, fileName):
@@ -162,7 +165,7 @@ you created in Geogebra.</p>""")
                 resource.delete()
                 break
             
-    def getAppletcode(self, filename):
+    def getAppletcodeGeogebra(self, filename):
         """
         xhtml string for GeoGebraApplet
         """
@@ -175,12 +178,6 @@ you created in Geogebra.</p>""")
         </applet> """ % filename
         
         return html
-<<<<<<< HEAD
-    
-    def copyFiles(self):
-        """
-        if geogebra, then copy all jar files, otherwise delete all jar files.
-=======
 
     def getAppletcodeJClic(self, filename):
         """
@@ -210,30 +207,30 @@ you created in Geogebra.</p>""")
         """
         xhtml string for DescartesApplet
         """
-        from exe.engine.beautifulsoup import BeautifulSoup   
-        import urllib2
-        import codecs
-        URL = "'"+"%s"+"'"
-        sock = urllib2.urlopen(URL)  
-        soup = BeautifulSoup(sock.read())
-        num = 2
-        i = 1
-        for t in soup.findAll("applet",{"code":"Descartes.class"}):
-            if i == num:
-                applet = t.encode('utf-8')
-                break
-            i = i+1
-        html = """
-            applet """ % filename
-        
-        return html
-         
+        global SCENE_NUM
+        html = ""
+        if not filename.endswith(".jar"):
+            if filename.endswith(".html") or filename.endswith(".htm"):
+                from exe.engine.beautifulsoup import BeautifulSoup   
+                import urllib2
+                sock = urllib2.urlopen(filename[2:])  
+                soup = BeautifulSoup(sock.read())
+                i = 0
+                appletslist = []
+                for ap in soup.findAll("applet",{"code":"Descartes.class"} or "applet",{"code":"descinst.Descartes.class"}):
+                    ap["codebase"] = "./"
+                    appletslist.append(ap)
+                for x in appletslist:
+                    if i == SCENE_NUM -1:
+                        print SCENE_NUM
+                        break
+                    i = i+1
+                html = str(x)
+        return html 
           
     def copyFiles(self):
         """
         if descartes, geogebra, jclic or scratch then copy all jar files, otherwise delete all jar files.
->>>>>>> c83aac4... 
-
         """
         
         for resource in reversed(self.userResources):
@@ -248,10 +245,6 @@ you created in Geogebra.</p>""")
             for file in GEOGEBRA_FILE_NAMES:
                 filename = ideviceDir/file
                 self.uploadFile(filename)
-<<<<<<< HEAD
-            self.appletCode = self.getAppletcode("")
-            
-=======
             self.appletCode = self.getAppletcodeGeogebra("")
         if self.type == "jclic":
             #from exe.application import application
@@ -272,13 +265,12 @@ you created in Geogebra.</p>""")
         if self.type == "descartes":
             #from exe.application import application
             from exe import globals
+            # self.message = _("Please write: scene number,URL that include it, eg: 3,http://example.com")
             ideviceDir = globals.application.config.webDir/'templates'            
             for file in DESCARTES_FILE_NAMES:
                 filename = ideviceDir/file
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeDescartes("")
-
->>>>>>> c83aac4... 
 
     def upgradeToVersion1(self):
         """
@@ -290,7 +282,7 @@ you created in Geogebra.</p>""")
 by one of the programs in this drop down, please select it, 
 then add the data/applet file generated by your program. </p>
 <p>eg. For Geogebra applets, select geogebra, then add the .ggb file that 
-you created in Geogebra.</p>""")
+you created in Geogebra.""")
           
 # ===========================================================================
 #def register(ideviceStore):

@@ -88,8 +88,11 @@ class AppletBlock(Block):
                     elif self.idevice.type == "descartes" and not (filePath.endswith(".htm") or filePath.endswith(".html")):
                         self.idevice.message = _("Please upload a HTML file.")
                     else:
-                        self.idevice.uploadFile(filePath)
-                        self.idevice.message = ""                   
+                        if self.idevice.type == "descartes" and filePath.find(","):
+                            self.idevice.uploadFile(filePath)
+                        else:                     
+                            self.idevice.uploadFile(filePath)       
+                            self.idevice.message = ""                   
             self.idevice.edit = True    
             self.idevice.undo = False
 
