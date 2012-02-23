@@ -12,9 +12,8 @@ Centre for Flexible and Distance Learning
     color: #598AC3;
     background-color: #FFFFFF;
     height: 60px;
-    padding: 20px 20px 0;
-   
-    font-weight: bold;
+    padding: 65px 20px 0; 
+    font-weight: normal;
 }
 
 #navcontainer {
@@ -56,6 +55,12 @@ Centre for Flexible and Distance Learning
    background-color:#F5F5F5;
    border: 1px dashed #CCCCCC;
 }
+/* Pagination */
+.pagination,.noprt{padding-top:10px;text-align:right}
+.pagination a,.noprt a{padding:3px;}
+.pagination a:hover,.noprt a:hover{text-decoration:none}
+#topPagination{position:absolute;top:55px;right:20px}
+#topPagination .pagination{border:none}
 
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
 * html #navcontainer {
@@ -70,60 +75,60 @@ margin-left: 0;
 
 /* nodes with children get expandable icon */
 .withChild {
- background-image: url(collapse2.gif);
- background-repeat: no-repeat;
- background-position: 2px 9px;
+	background-image: url(collapse2.gif);
+	background-repeat: no-repeat;
+	background-position: 2px 9px;
 }
 
 #active.withChild {
-padding: 4px 0px 4px 18px;
-background-color: #fdfaf9;
-background-image: url(collapse.gif) !important;
-background-repeat: no-repeat;
-color: #BD4949;
-font-weight: bold;
+	padding: 4px 0px 4px 18px;
+	background-color: #fdfaf9;
+	background-image: url(collapse.gif) !important;
+	background-repeat: no-repeat;
+	color: #BD4949;
+	font-weight: bold;
 }
 
 #active.withoutChild {
-padding: 4px 0px 4px 18px;
-background-color: #FDFAF9;
-color: #BD4949;
-font-weight: bold;
+	padding: 4px 0px 4px 18px;
+	background-color: #FDFAF9;
+	color: #BD4949;
+	font-weight: bold;
 }
 
 /* subnav is for displaying sections and units */
 
 #subnav a {
-width: 190px;
-border: 0 !important;
-padding: 4px 0px 4px 30px;
+	width: 190px;
+	border: 0 !important;
+	padding: 4px 0px 4px 30px;
 }
 
 #subnav a:hover {
-color: #365475;
-background-color: #F5F5F5;
-font-weight: bold;
-padding: 4px 0 4px 30px;
-border: 1px dashed #CCCCCC !important;
+	color: #365475;
+	background-color: #F5F5F5;
+	font-weight: bold;
+	padding: 4px 0 4px 30px;
+	border: 1px dashed #CCCCCC !important;
 }	
 
 #subnav #active {
-background-color: #FDFAF9;
-color: #BD4949;
-font-weight: bold;
-padding: 4px 0 4px 30px;
+	background-color: #FDFAF9;
+	color: #BD4949;
+	font-weight: bold;
+	padding: 4px 0 4px 30px;
 }	
 
 div > #subnav .withChild {
-background-image: url(collapse.gif) !important;
-background-repeat: no-repeat !important;
-background-position: 14px 9px !important;
+	background-image: url(collapse.gif) !important;
+	background-repeat: no-repeat !important;
+	background-position: 14px 9px !important;
 }
 
 #subnav  div.withChild {
-background-image: url(collapse.gif) !important;
-background-repeat: no-repeat !important;
-background-position: 14px 9px !important;
+	background-image: url(collapse.gif) !important;
+	background-repeat: no-repeat !important;
+	background-position: 14px 9px !important;
 }
 
 .withoutChild
@@ -132,26 +137,26 @@ background-position: 14px 9px !important;
 }
 
 #subnav .withoutChild  div {
-padding-left: 12px;
-width:190px;
+	padding-left: 12px;
+	width:190px;
 }
 
 #subnav .withoutChild #active {
-width:180px;
-margin-left: 0px;
-padding-left: 40px;
+	width:180px;
+	margin-left: 0px;
+	padding-left: 40px;
 }
 
 #subnav .withoutChild div a:hover {
-width:178px;
-margin-left: -12px;
-padding-left: 42px;
+	width:178px;
+	margin-left: -12px;
+	padding-left: 42px;
 }
 	
 /* MAIN CONTENT STYLES */
 #container {
-border-top: 0px solid #CCC;
-position:absolute;
+	border-top: 0px solid #CCC;
+	position:absolute;
 }
 
 #main {
@@ -161,9 +166,9 @@ position:absolute;
 	margin-left: 220px;
 	margin-top: 10px;
 	text-align:left;
-	width: 72%;
+	width: 76%;
 }
-
+#content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0}
 /* ITE elements */
 
 #siteNav{
@@ -218,7 +223,7 @@ position:absolute;
 	background-image: url(collapse.gif) !important;
 }
 
-#siteNav ul .active{
+#siteNav ul ul .active{
 	background-image:none !important;
 }
 
@@ -226,13 +231,13 @@ position:absolute;
 	font-size:.82em;
 }
 
-#siteNav ul ul a{
+#siteNav ul ul ul a{
 	padding-left:28px;
 	width: 188px;
 	font-size:.82em;
 }
 
-#siteNav ul ul ul a,#siteNav#siteNav ul ul ul .no-ch{
+#siteNav ul ul ul ul a,#siteNav#siteNav ul ul ul ul .no-ch{
 	font-size:1em;
 }
 
@@ -240,14 +245,3 @@ position:absolute;
 	display:none; /* Remove if you want all levels to be displayed */
 }
 
-.pagination{
-	text-align:right;
-}
-
-/* Invisible content (visible for screen reader users) */
-#topPagination{
-	position:absolute;
-	overflow:hidden;
-	clip:rect(0,0,0,0);
-	height:0;
-}
