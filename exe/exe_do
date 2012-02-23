@@ -62,7 +62,7 @@ class CustomOptionParser(OptionParser):
 
 def prepareParser():
     usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \
-help:\n%prog -h").encode('utf-8')
+help:\n%prog -h").encode(sys.stdout.encoding)
     parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
@@ -70,16 +70,16 @@ help:\n%prog -h").encode('utf-8')
 'singlepage'],
                   help=_(u"Export <input_file> elp package to optional \
 <output_file> on one of the given formats: xml, scorm, ims, website, webzip \
-or singlepage.").encode('utf-8'))
+or singlepage.").encode(sys.stdout.encoding))
     parser.add_option("-i", "--import",
                   action="store", dest="i", metavar="format",
                   choices=['xml'],
                   help=_(u"Import to <output_file> elp package, <input_file> \
 in one of the given formats: xml.")\
-.encode('utf-8'))
+.encode(sys.stdout.encoding))
     parser.add_option("-f", "--force",
                   action="store_true", dest="f",
-                  help=_(u"Force overwrite of <output_file>").encode('utf-8'))
+                  help=_(u"Force overwrite of <output_file>").encode(sys.stdout.encoding))
     return parser
 
 if __name__ == "__main__":
@@ -91,13 +91,13 @@ if __name__ == "__main__":
 
     if options.x and options.i:
         parser.error(_(u'Options --export and --import are mutually \
-exclusive.').encode('utf-8'))
+exclusive.').encode(sys.stdout.encoding))
     if not options.x and not options.i:
         parser.error(_(u'No --export or --import option supplied.')\
-.encode('utf-8'))
+.encode(sys.stdout.encoding))
 
     if not args:
-        parser.error(_(u'No file input supplied.').encode('utf-8'))
+        parser.error(_(u'No file input supplied.').encode(sys.stdout.encoding))
 
     inputf = args[0]
     try:
@@ -106,7 +106,7 @@ exclusive.').encode('utf-8'))
         outputf = None
 
     if len(args) > 2:
-        parser.error(_(u'Bad number of arguments supplied').encode('utf-8'))
+        parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
 
     if options.x:
         x = CmdlineExporter(application.config)
