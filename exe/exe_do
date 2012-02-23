@@ -21,7 +21,7 @@
 
 import os
 import sys
-from getopt import getopt, GetoptError
+from optparse import OptionParser
 
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -29,66 +29,92 @@ if os.name == 'posix':
 
 # Try to work even with no python path
 try:
-    from exe.engine.persistxml import exportToXML, importFromXML
+    from exe.application import Application
 except ImportError, error:
-    if str(error) == "No module named exe.engine.persistxml":
+    if str(error) == "No module named exe.application":
         exePath = os.path.abspath(sys.argv[0])
-        exeDir  = os.path.dirname(exePath)
+        exeDir = os.path.dirname(exePath)
         pythonPath = os.path.split(exeDir)[0]
         sys.path.insert(0, pythonPath)
-        from exe.engine.persistxml import exportToXML, importFromXML
+        from exe.application import Application
     else:
         import traceback
         traceback.print_exc()
         sys.exit(1)
+from exe.export.cmdlineexporter import CmdlineExporter
+from exe.importers.cmdlineimporter import CmdlineImporter
 
-def usage():
-    print _(u"""Usage: %s [-xi] package_elp ...
-  -x --extract-xml  Extract an xml file equivalent to content.data
-  -i --include-xml  Include a xml file in elp package, rebuilding content.data 
-""") % (os.path.basename(sys.argv[0]))
+
+def prepareParser():
+    usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \
+help:\n%prog -h").encode('utf-8')
+    parser = OptionParser(usage=usage)
+    parser.add_option("-x", "--export",
+                  action="store", dest="x", metavar="format",
+                  choices=['xml', 'scorm', 'ims', 'website', 'webzip',
+'singlepage'],
+                  help=_(u"Export <input_file> elp package to optional \
+<output_file> on one of the given formats: xml, scorm, ims, website, webzip \
+or singlepage.").encode('utf-8'))
+    parser.add_option("-i", "--import",
+                  action="store", dest="i", metavar="format",
+                  choices=['xml'],
+                  help=_(u"Import to <output_file> elp package, <input_file> \
+in one of the given formats: xml.")\
+.encode('utf-8'))
+    parser.add_option("-f", "--force",
+                  action="store_true", dest="f",
+                  help=_(u"Force overwrite of <output_file>").encode('utf-8'))
+    return parser
 
 if __name__ == "__main__":
     stdout = sys.stdout
     stderr = sys.stderr
 
-    from exe.application import Application
     application = Application()
     application.loadConfiguration()
 
     sys.stdout = stdout
     sys.stderr = stderr
 
-    try:
-        options, packages = getopt(sys.argv[1:], "xi", ["--extract-xml","--include-xml"])
-    except GetoptError:
-        usage()
-        sys.exit(2)
+    parser = prepareParser()
+    options, args = parser.parse_args()
 
-    if not packages:
-        usage()
-        sys.exit(3)
-        
-    for option in options:
-        if option[0] in ("-x", "--extract-xml"):
-            for package in packages:
-                try:
-                    exportToXML(package)
-                    print _(u"Successfully extracted file '%s'.") % (package + ".xml")
-                except:
-                    print _(u"Unable to extract from '%s'.\nThe error was:") % (package)
-                    import traceback
-                    traceback.print_exc()
-            sys.exit()
-        elif option[0] in ("-i", "--include-xml"):
-            for package in packages:
-                try:
-                    importFromXML(package)
-                    print _(u"File '%s' successfully added to '%s'.") % (package + ".xml", package)
-                except:
-                    print _(u"Unable to add the file '%s' to '%s'.\nThe error was:") % (package + ".xml", package)
-                    import traceback
-                    traceback.print_exc()
-            sys.exit()
-    usage()
-    sys.exit(1)
+    if options.x and options.i:
+        parser.error(_(u'Options --export and --import are mutually \
+exclusive.'))
+    if not options.x and not options.i:
+        parser.error(_(u'No --export or --import option supplied.'))
+
+    if not args:
+        parser.error(_(u'No file input supplied.'))
+
+    inputf = args[0]
+    try:
+        outputf = args[1]
+    except IndexError:
+        outputf = None
+
+    if len(args) > 2:
+        parser.error(_(u'Bad number of arguments supplied'))
+
+    if options.x:
+        x = CmdlineExporter(application.config)
+        try:
+            outputf = x.do_export(options.x, inputf, outputf, options.f)
+            print _(u"Successfully exported '%s' from '%s'.") % (outputf, \
+inputf)
+        except:
+            print _(u"exe_do: error: Unable to export from '%s'.\nThe \
+error was:") % (inputf)
+            print sys.exc_value
+    if options.i == 'xml':
+        i = CmdlineImporter(application.config)
+        try:
+            outputf = i.do_import(options.i, inputf, outputf)
+            print _(u"File '%s' successfully imported to '%s'.") % (inputf, \
+outputf)
+        except:
+            print _(u"exe_do: error: Unable to import '%s'.\nThe \
+error was:") % (inputf)
+            print sys.exc_value
