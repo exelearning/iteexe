@@ -42,6 +42,8 @@ class WinConfig(Config):
     def _overrideDefaultVals(self):
         """Sets the default values
         for windows"""
+        if not self.exePath.exists():
+            self.exePath = Path(self.exePath + ".exe")
         exeDir = self.exePath.dirname()
         self.browserPath = exeDir/'Mozilla Firefox'/'firefox.exe'
         if not self.browserPath.isfile():

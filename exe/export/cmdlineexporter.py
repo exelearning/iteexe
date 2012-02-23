@@ -21,6 +21,8 @@
 @author: Pedro Peña Pérez
 '''
 
+import sys
+import logging
 from exe.engine.persistxml import encodeObjectToXML
 from exe.engine.path import Path
 from exe.engine.package import Package
@@ -28,6 +30,8 @@ from exe.export.scormexport import ScormExport
 from exe.export.imsexport import IMSExport
 from exe.export.websiteexport import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
+
+LOG = logging.getLogger(__name__)
 
 
 class CmdlineExporter(object):
@@ -42,11 +46,14 @@ class CmdlineExporter(object):
     def __init__(self, config):
         self.config = config
         self.web_dir = Path(self.config.webDir)
+        self.styles_dir = None
 
     def do_export(self, ftype, inputf, outputf, overwrite=False):
         if hasattr(self, 'export_' + ftype):
+            LOG.debug("Exporting to type %s, in: %s, out: %s, overwrite: %s" \
+            % (ftype, inputf, outputf, str(overwrite)))
             if not outputf:
-                if ftype in ('website','singlepage'):
+                if ftype in ('website', 'singlepage'):
                     outputf = inputf.rsplit(".elp")[0]
                 else:
                     outputf = inputf + self.extensions[ftype]
@@ -54,25 +61,27 @@ class CmdlineExporter(object):
             if outputfp.exists() and not overwrite:
                 error = _(u'"%s" already exists.\nPlease try again \
 with a different filename') % outputf
-                raise Exception(error.encode('utf-8'))
+                raise Exception(error.encode(sys.stdout.encoding))
             else:
                 if outputfp.exists() and overwrite:
                     if outputfp.isdir():
-                        for f in outputfp.walkfiles():
-                            f.remove()
+                        for filen in outputfp.walkfiles():
+                            filen.remove()
                         outputfp.rmdir()
                     else:
                         outputfp.remove()
                 pkg = Package.load(inputf)
+                LOG.debug("Package %s loaded" % (inputf))
                 if not pkg:
                     error = _(u"Invalid input package")
-                    raise Exception(error.encode('utf-8'))
+                    raise Exception(error.encode(sys.stdout.encoding))
                 self.styles_dir = self.web_dir.joinpath('style', pkg.style)
+                LOG.debug("Styles dir: %s" % (self.styles_dir))
                 getattr(self, 'export_' + ftype)(pkg, outputf)
                 return outputf
         else:
             raise Exception(_(u"Export format not implemented")\
-.encode('utf-8'))
+.encode(sys.stdout.encoding))
 
     def export_xml(self, pkg, outputf):
         open(outputf, "w").write(encodeObjectToXML(pkg))

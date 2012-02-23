@@ -58,7 +58,8 @@ class Windows_Log(object):
         self.level = level
     def write(self, text):
         log.log(self.level, text)
-if sys.platform[:3] == "win" and sys.argv[0].endswith("exe"):
+if sys.platform[:3] == "win" and not (sys.argv[0].endswith("exe_do") or \
+                                      sys.argv[0].endswith("exe_do.exe")):
     # put stderr and stdout into the log file
     sys.stdout = Windows_Log(logging.INFO)
     sys.stderr = Windows_Log(logging.ERROR)
