@@ -344,7 +344,7 @@ class Element(Node):
     def __init__(self, tagName, attributes=None, parentNode=None,
                         filename=None, markpos=None,
                         caseInsensitive=1, preserveCase=0,
-                 namespace=''):
+                 namespace='', escapeAttributes=1):
         Node.__init__(self, parentNode)
         self.preserveCase = preserveCase or not caseInsensitive
         self.caseInsensitive = caseInsensitive
@@ -354,8 +354,9 @@ class Element(Node):
             self.attributes = {}
         else:
             self.attributes = attributes
-            for k, v in self.attributes.items():
-                self.attributes[k] = unescape(v)
+            if escapeAttributes:
+                for k, v in self.attributes.items():
+                    self.attributes[k] = unescape(v)
 
         if caseInsensitive:
             self.attributes = InsensitiveDict(self.attributes, 
@@ -579,7 +580,7 @@ class MicroDOMParser(XMLParser):
                     }
 
 
-    def __init__(self, beExtremelyLenient=0, caseInsensitive=1, preserveCase=0, soonClosers=soonClosers, laterClosers=laterClosers):
+    def __init__(self, beExtremelyLenient=0, caseInsensitive=1, preserveCase=0, soonClosers=soonClosers, laterClosers=laterClosers, escapeAttributes=1):
         self.elementstack = []
         d = {'xmlns': 'xmlns', '':''}
         dr = _reverseDict(d)
@@ -589,6 +590,7 @@ class MicroDOMParser(XMLParser):
         self.beExtremelyLenient = beExtremelyLenient
         self.caseInsensitive = caseInsensitive
         self.preserveCase = preserveCase or not caseInsensitive
+        self.escapeAttributes = escapeAttributes
         self.soonClosers = soonClosers
         self.laterClosers = laterClosers
         # self.indentlevel = 0
@@ -678,7 +680,8 @@ class MicroDOMParser(XMLParser):
                      self.filename, self.saveMark(),
                      caseInsensitive=self.caseInsensitive,
                      preserveCase=self.preserveCase,
-                     namespace=namespaces.get(''))
+                     namespace=namespaces.get(''),
+                     escapeAttributes=self.escapeAttributes)
         revspaces = _reverseDict(newspaces)
         el.addPrefixes(revspaces)
         
