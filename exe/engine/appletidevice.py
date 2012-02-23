@@ -38,7 +38,7 @@ log = logging.getLogger(__name__)
 GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_algos.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_javascript.jar", "geogebra_main.jar", "geogebra_properties.jar", "jlatexmath.jar", "jlm_cyrillic.jar", "jlm_greek.jar"])
 JCLIC_FILE_NAMES = set(["jclic.jar"])
 SCRATCH_FILE_NAMES = set(["ScratchApplet.jar", "soundbank.gm"])
-DESCARTES_FILE_NAMES = set(["DescartesLib.jar", "Descartes.jar"])
+DESCARTES_FILE_NAMES = set(["Descartes3.jar", "Descartes.jar", "descinst.jar"])
 
 # Descartes requires scene_num 
 SCENE_NUM = 1
