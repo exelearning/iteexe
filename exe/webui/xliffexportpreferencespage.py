@@ -27,6 +27,7 @@ from exe.webui                 import common
 from exe.webui.renderable      import RenderableResource
 from exe.engine.beautifulsoup import BeautifulSoup
 from exe.engine.path import Path
+from urllib import quote
 
 log = logging.getLogger(__name__)
 
@@ -87,7 +88,7 @@ class XliffExportPreferencesPage(RenderableResource):
                 opener.nevow_clientToServerEvent('exportXliffPackage', this, '', '%s', source, target, copy, cdata);
                 window.close();
             }
-        </script>''' % request.args['path'][0]
+        </script>''' % quote(request.args['path'][0])
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=UTF-8\"></meta>\n";

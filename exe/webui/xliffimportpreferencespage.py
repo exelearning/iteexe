@@ -26,6 +26,7 @@ import logging
 from twisted.web.resource      import Resource
 from exe.webui                 import common
 from exe.webui.renderable      import RenderableResource
+from urllib                    import quote
 
 log = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ class XliffImportPreferencesPage(RenderableResource):
                 opener.nevow_clientToServerEvent('mergeXliffPackage', this, '', '%s', from_source);
                 window.close();
             }
-        </script>''' % request.args['path'][0]
+        </script>''' % quote(request.args['path'][0])
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=UTF-8\"></meta>\n";

@@ -68,14 +68,8 @@ in one of the given formats: xml.")\
     return parser
 
 if __name__ == "__main__":
-    stdout = sys.stdout
-    stderr = sys.stderr
-
     application = Application()
     application.loadConfiguration()
-
-    sys.stdout = stdout
-    sys.stderr = stderr
 
     parser = prepareParser()
     options, args = parser.parse_args()
