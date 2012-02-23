@@ -54,6 +54,11 @@ class CustomOptionParser(OptionParser):
     def set_usage(self, usage):
         self.usage = usage
 
+    def print_help(self, file=None):
+        if file is None:
+            file = sys.stdout
+        file.write(self.format_help())
+
 
 def prepareParser():
     usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \

@@ -79,7 +79,8 @@ opts = {
  }
 }
 
-setup(windows=["exe/exe","exe/exe_do"],
+setup(windows=["exe/exe"],
+      console=["exe/exe_do"],
       version=build,
       packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.xului"],
       description  = "eLearning XHTML editor",
