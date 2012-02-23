@@ -2,7 +2,7 @@
  * $Id: editor_plugin_src.js 201 2007-02-12 15:56:56Z spocke $
  *
  * @author Moxiecode
- * @copyright Copyright © 2004-2007, Moxiecode Systems AB, All rights reserved.
+ * @copyright Copyright ï¿½ 2004-2007, Moxiecode Systems AB, All rights reserved.
  */
 
 /* Import plugin specific language pack */
@@ -341,11 +341,6 @@ var TinyMCE_MediaPlugin = {
 					// Insert embed/object chunk
 					chunkBefore = content.substring(0, startPos);
 					chunkAfter = content.substring(endPos);
-					//JR
-					if (incluirDiv) {
-						embedHTML = '<div class="elemento_centrado">\n<div class="elemento_centrado">' + embedHTML;
-						embedHTML = embedHTML + '\n</div>\n<div class="credenciales elemento_centrado"><a href="resumen.html">Resumen textual alternativo</a></div>\n</div>';
-					}
 					content = chunkBefore + embedHTML + chunkAfter;
 				}
 				break;
