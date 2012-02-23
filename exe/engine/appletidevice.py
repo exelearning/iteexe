@@ -221,16 +221,19 @@ you created in Geogebra.</p>""")
                 soup = BeautifulSoup(sock.read())
                 i = 0
                 appletslist = []
-                for ap in soup.findAll("applet",{"code":"Descartes.class"} or "applet",{"code":"descinst.Descartes.class"}):
-                    ap["codebase"] = "./"
-                    appletslist.append(ap)
+                for ap_old in soup.findAll("applet",{"code":"Descartes.class"}):
+                    ap_old["codebase"] = "./"
+                    appletslist.append(ap_old)
+                for ap_new in soup.findAll("applet",{"code":"descinst.Descartes.class"}):
+                    ap_new["codebase"] = "./"
+                    appletslist.append(ap_new)
                 for x in appletslist:
                     if i == SCENE_NUM -1:
                         u = unicode(x)
                         break
-                    i = i+1   
+                    i = i+1
                 html = u
-        return html 
+        return html
           
     def copyFiles(self):
         """
