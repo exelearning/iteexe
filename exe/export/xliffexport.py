@@ -23,16 +23,14 @@ from types import UnicodeType, StringType
 
 from exe.engine.beautifulsoup import BeautifulSoup
 
-# Just in case: sometimes it's needed to
-# escape the content of the source tag
-# we can use CDATA sections for that:
-# <![CDATA[ %(content)s ]]>
+CDATA_BEGIN = u"<![CDATA["
+CDATA_END = u"]]>"
 
 TRANS_UNIT = u'''<trans-unit id="%(id)s">
-       <source xml:lang="es-es">
-       %(content)s
+       <source xml:lang="%(source_lang)s">
+       %(cdata_begin)s%(content)s%(cdata_end)s
        </source>
-       <target xml:lang="eu-es">%(target)s</target>
+       <target xml:lang="%(target_lang)s">%(cdata_begin)s%(target)s%(cdata_end)s</target>
 </trans-unit>
 '''
 
@@ -41,12 +39,12 @@ XLF_TEMPLATE = u'''<?xml version="1.0" encoding="UTF-8"?>
        xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file original="file.elp"
         datatype="html"
-        source-language="es-es" target-language="eu-es">
+        source-language="%(source_lang)s" target-language="%(target_lang)s">
     <body>
       %(transunits)s
     </body>
   </file>
-</xliff> 
+</xliff>
 '''
 
 def safe_unicode(text):
@@ -79,14 +77,20 @@ class XliffExport(object):
     XliffExport will export a package as an XLIFF file
     """
 
-    def __init__(self, config, filename, source_copied_in_target):
+    def __init__(self, config, filename, source_lang, target_lang, source_copied_in_target, wrap_cdata):
         self.config = config
         self.filename = filename
         self.source_copied_in_target = source_copied_in_target
+        self.source_lang = source_lang
+        self.target_lang = target_lang
+        self.wrap_cdata = wrap_cdata
         
     def export(self, package):
         content = self.getContentForNode(package.root, 'noderoot')
-        data = XLF_TEMPLATE % {'transunits': content}
+        data = XLF_TEMPLATE % {'transunits': content,
+                               'source_lang': self.source_lang,
+                               'target_lang': self.target_lang
+                               }
         outfile = codecs.open(self.filename, mode='w', encoding='utf-8')
         outfile.write(data)
         outfile.close()
@@ -97,6 +101,10 @@ class XliffExport(object):
         content += TRANS_UNIT % {'content': safe_unicode(node.getTitle()),
                                  'id': '%s-nodename' % id,
                                  'target': self.source_copied_in_target and safe_unicode(node.getTitle()) or escape_content(u''),
+                                 'cdata_begin': escape_content(u''),
+                                 'cdata_end': escape_content(u''),
+                                 'source_lang': self.source_lang,
+                                 'target_lang': self.target_lang
                                  }
         content += '</group>'
 
@@ -106,6 +114,10 @@ class XliffExport(object):
             content += TRANS_UNIT % {'content': safe_unicode(idevice.title),
                                      'id': '%s-idev%s-title' % (id, idevice.id),
                                      'target': self.source_copied_in_target and safe_unicode(idevice.title) or escape_content(u''),
+                                     'cdata_begin': escape_content(u''),
+                                     'cdata_end': escape_content(u''),
+                                     'source_lang': self.source_lang,
+                                     'target_lang': self.target_lang
                                      }
 
             
@@ -113,6 +125,10 @@ class XliffExport(object):
                 content += TRANS_UNIT % {'content': safe_unicode(escape_content(field.content)),
                                          'id': '%s-idev%s-field%s' % (id, idevice.id, field.id),
                                          'target': self.source_copied_in_target and safe_unicode(escape_content(field.content)) or escape_content(u''),
+                                         'cdata_begin': self.wrap_cdata and CDATA_BEGIN or escape_content(u''),
+                                         'cdata_end': self.wrap_cdata and CDATA_END or escape_content(u''),
+                                         'source_lang': self.source_lang,
+                                         'target_lang': self.target_lang
                                          }
 
             content += '</group>'

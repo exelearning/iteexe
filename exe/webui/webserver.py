@@ -45,6 +45,8 @@ finally:
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
+from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
+from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.aboutpage           import AboutPage
 
 import logging
@@ -65,6 +67,8 @@ class WebServer:
         self.root        = PackageRedirectPage(self)   
         self.editor      = EditorPage(self.root)
         self.preferences = PreferencesPage(self.root)
+        self.xliffexportpreferences = XliffExportPreferencesPage(self.root)
+        self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.about       = AboutPage(self.root)
 
 
@@ -200,6 +204,8 @@ class WebServer:
         # sub applications
         self.root.putChild("editor",      self.editor)
         self.root.putChild("preferences", self.preferences)
+        self.root.putChild("xliffexport", self.xliffexportpreferences)
+        self.root.putChild("xliffimport", self.xliffimportpreferences)
         self.root.putChild("about",       self.about)
 
         # A port for this server was looked for earlier by find_port.  

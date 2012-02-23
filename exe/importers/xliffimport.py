@@ -23,6 +23,9 @@ import logging
 log = logging.getLogger(__name__)
 
 NS = 'urn:oasis:names:tc:xliff:document:1.2'
+CDATA_BEGIN = u"<![CDATA["
+CDATA_END = u"]]>"
+
 
 class XliffImport(object):
     def __init__(self, package, filename):
@@ -62,7 +65,8 @@ class XliffImport(object):
                 log.debug('Title set for: %s' % item_id)
             else:
                 # It's a field
-                field.content_w_resourcePaths = u' '.join([unicode(u) for u in tar.contents])
+                field.content_w_resourcePaths = u' '.join([unicode(u) for u in tar.contents])\
+.replace(CDATA_BEGIN, "").replace(CDATA_END, "")
                 field.TwistedRePersist()
                 log.debug('Content set for: %s' % item_id)
 
