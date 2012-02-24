@@ -1,3 +1,30 @@
+Versión 1.04.1.3605intef6rc2 (2012-02-24)
+
+  [Mikel Larreategui]
+  * Corregido bug #1382 (Error al abrir con OmegaT archivos con algunas
+    entidades).
+
+  [Antonio Moreno]
+  * Mejoras en el Idevice Applet de java
+  * Añadido estilo Kyoku
+  * Actualización de estilo Cedec
+
+  [José Miguel Andonegui]
+  * Traducción al español y euskera de cadenas de los últimos desarrollos de ULHI
+
+  [Pedro Peña]
+  * Corregidos bugs #1383 y #1389 (Ventanas de TinyMCE que se quedan detrás de la
+    principal después de seleccionar un fichero).
+  * Corregido bug #1365 (Los estilos no están ordenados por orden alfabético)
+  * Corregido bug #1387 (Eliminar inserción automática de enlace debajo de
+    contenido audiovisual)
+  * Se incluye la versión de Firefox 10.0.2 en los instaladores de Windows y
+    Mac OS.
+  * Asistente para la exportación e importación de XLIFF. Añadidos nuevos
+    parámetros de configuración. (ULHI)
+  * Mejoras en el comando exe_do: ahora es posible exportar/importar elp's a
+    diferentes formatos desde consola. (ULHI)
+
 Versión 1.04.1.3605ite6rc1 (2011-12-09)
 
   [José Miguel Andonegui]
