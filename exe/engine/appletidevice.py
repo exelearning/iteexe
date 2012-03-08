@@ -253,6 +253,7 @@ you created in Geogebra.</p>""")
                     htmlbytes = urllib2.urlopen(filename[2:])
                 content = htmlbytes.read()
                 content = content.replace('&#130;','&#130')
+                content = content.replace('""','"')
                 soup = BeautifulSoup(content)
                 i = 0
                 appletslist = []
