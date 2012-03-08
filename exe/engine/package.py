@@ -556,7 +556,13 @@ class Package(Persistable):
 
         try:
             if xml:
-                newPackage = decodeObjectFromXML(xml)
+                xmlinfo = zippedFile.getinfo(u"content.xml")
+                datainfo = zippedFile.getinfo(u"content.data")
+                if xmlinfo.date_time >= datainfo.date_time:
+                    newPackage = decodeObjectFromXML(xml)
+                else:
+                    toDecode   = zippedFile.read(u"content.data")
+                    newPackage = decodeObjectRaw(toDecode)
             else:
                 newPackage = decodeObjectRaw(toDecode)
             G.application.afterUpgradeHandlers = []
