@@ -139,7 +139,7 @@ class AppletBlock(Block):
                                                                 _(u"Upload"))
         else:
             html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
-                                                                _(u"Upload"))   
+                                                                _(u"Accept URL"))   
         
         html += common.elementInstruc(self.idevice.fileInstruc)
         html += u'<br/>\n'
@@ -173,7 +173,6 @@ class AppletBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        
         appletcode = self.idevice.appletCode
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')
@@ -181,8 +180,9 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&nbsp;', '')
         # appletcode = appletcode.replace('\xC2\x82','&#130')
         appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
-        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"')       
-        
+        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"') 
+        appletcode = appletcode.replace('activitypack\" value=\"', 'activitypack\" value=\"\"')
+        html  = u"<!-- applet iDevice -->\n"
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
@@ -199,16 +199,16 @@ class AppletBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<!-- applet iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-
         appletcode = self.idevice.appletCode
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&nbsp;', '')
         # appletcode = appletcode.replace('\xC2\x82','&#130')
+        
+        html  = u"<!-- applet iDevice -->\n"
+        html += u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += appletcode
         html += u"<br/>"
         html += u"</div>\n"

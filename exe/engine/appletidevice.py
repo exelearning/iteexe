@@ -187,10 +187,12 @@ you created in Geogebra.</p>""")
         xhtml string for JClicApplet
         """  
         html = """
-        <object classid="java:JClicApplet" type="application/x-java-applet" height="600" width="800"> 
-            <param name="archive" value="jclic.jar"/> 
-            <param name="activitypack" value="%s"/> 
-        </object> """ % filename
+        <applet code="JClicApplet" archive="jclic.jar" width="800" height="600">
+            <param name="name" value="JClicApplet">
+            <param name="activitypack" value="%s">
+            <param name="framePossible" value="false">
+            Please <a href="http://java.sun.com/getjava"> install Java 1.4</a> (or later) to use this page.
+        </applet> """ % filename
         
         return html
 
