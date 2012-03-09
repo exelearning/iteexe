@@ -22,7 +22,7 @@ from exe.engine import version
 revision = None
 try:
     line = open('debian/changelog').readline()
-    build = line.split('(')[1].split(')')[0]
+    build = line.split(':')[1].split(')')[0]
     revision = build.split(version.release + ".")[1]
     open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 except OSError:
