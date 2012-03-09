@@ -1,3 +1,21 @@
+python-exe (1:1.04.1.3605intef6) lucid; urgency=low
+
+  [Antonio Moreno]
+  * Corregido bug #1399 (Applets de Descartes con nombres entrecomillados)
+  * Corregido problema al abrir ciertos applets JClic en editor eXe
+  * Recolocado lanzador de eXe en menú Educación en sistemas Debian/Ubuntu
+
+  [Andoni Tolosa]
+  [José Miguel Andonegui]
+  * Mejoras en la traducción al euskera
+
+  [Pedro Peña]
+  * Corregido bug #1404 (Cambiar el orden de prioridad entre content.data y
+    content.xml al abrir un archivo)
+  * Añadido "epoch" a la versión en sistemas Debian/Ubuntu
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 09 Mar 2012 08:22:45 +0100
+
 python-exe (1.04.1.3605intef6rc2) lucid; urgency=low
 
   [Mikel Larreategui]
