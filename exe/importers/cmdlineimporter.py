@@ -45,7 +45,7 @@ class CmdlineImporter(object):
         if not outputf:
             outputf = inputf.rsplit(".xml")[0]
         xml = open(inputf).read()
-        pkg = Package.load(outputf, xml=xml)
+        pkg = Package.load(outputf, fromxml=xml)
         if not pkg:
             raise Exception(_("Invalid output package"))
         pkg.save()

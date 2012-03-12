@@ -515,7 +515,7 @@ class Package(Persistable):
         return newPackage
 
     @staticmethod
-    def load(filename, newLoad=True, destinationPackage=None, xml=None):
+    def load(filename, newLoad=True, destinationPackage=None, fromxml=None):
         """
         Load package from disk, returns a package.
         """
@@ -524,6 +524,8 @@ class Package(Persistable):
 
         zippedFile = zipfile.ZipFile(filename, "r")
 
+        xml = None
+        
         if not xml:
             try:
                 xml = zippedFile.read(u"content.xml")
@@ -555,7 +557,9 @@ class Package(Persistable):
                 outFile.close()
 
         try:
-            if xml:
+            if fromxml:
+                newPackage = decodeObjectFromXML(fromxml)
+            elif xml:
                 xmlinfo = zippedFile.getinfo(u"content.xml")
                 datainfo = zippedFile.getinfo(u"content.data")
                 if xmlinfo.date_time >= datainfo.date_time:
