@@ -145,6 +145,7 @@ class WebsiteExport(object):
         styleFiles += self.stylesDir.files("*.png")
         styleFiles += self.stylesDir.files("*.js")
         styleFiles += self.stylesDir.files("*.html")
+        styleFiles += self.stylesDir.files("*.ico")		
         self.stylesDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files

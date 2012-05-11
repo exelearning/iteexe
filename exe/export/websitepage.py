@@ -72,6 +72,7 @@ class WebsitePage(Page):
         html += u"<title> " 
         html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
         html += u" </title>\n" 
+        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
         html += u'<script type="text/javascript" src="common.js"></script>\n'
@@ -189,7 +190,7 @@ class WebsitePage(Page):
                     html += "class=\"active no-ch"
 
             elif page.node in nodePath and page.node.parent != None:
-                html += "<li id=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
+                html += "<li class=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
 
                 if page.node.children:
                     html += "class=\"current-page-parent daddy"
