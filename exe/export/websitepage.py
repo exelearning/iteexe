@@ -212,7 +212,7 @@ class WebsitePage(Page):
             if inSameLevelTitle and page.node.id=="0":
                 html += "</li>"
 
-            if not page.node.children:
+            if not page.node.children and page.node.id!="0":
                 html += "</li>\n"
 
         if excludeTitle or inSameLevelTitle:
