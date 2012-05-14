@@ -557,21 +557,23 @@ class Package(Persistable):
                 outFile.close()
 
         try:
+            validxml = False
             if fromxml:
-                newPackage = decodeObjectFromXML(fromxml)
+                newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
                 xmlinfo = zippedFile.getinfo(u"content.xml")
                 datainfo = zippedFile.getinfo(u"content.data")
                 if xmlinfo.date_time >= datainfo.date_time:
-                    newPackage = decodeObjectFromXML(xml)
-                else:
-                    toDecode   = zippedFile.read(u"content.data")
-                    newPackage = decodeObjectRaw(toDecode)
-            else:
+                    newPackage, validxml = decodeObjectFromXML(xml)
+            if not validxml:
+                toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)
             G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
+            if not validxml and (xml or fromxml):
+                for res in newPackage.resources.values():
+                    res[0].testForAndDeleteZombieResources()
 
             if newLoad: 
                 # provide newPackage to doUpgrade's versionUpgrade() to

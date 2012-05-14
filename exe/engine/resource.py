@@ -748,5 +748,18 @@ class Resource(_Resource):
                     # after cycling through all other resources 1 time:
                     G.application.afterUpgradeHandlers.append(
                         self.testForAndDeleteZombieResources)
-
+        elif self._package is not None and self._idevice is not None\
+        and self != self._package._backgroundImg:
+            if self._idevice.getResourcesField(self) is None:
+                if deleteZombie: 
+                    log.warn("Removing zombie Resource \"" + str(self) 
+                            + "\"; no corresponding iDevice found.") 
+                    G.application.afterUpgradeZombies2Delete.append(self)
+                else: 
+                    log.warn("1st pass: not yet removing zombie Resource \""
+                        + str(self) + "\"; no corresponding iDevice found.")
+                    # but add the second-pass call, 
+                    # after cycling through all other resources 1 time:
+                    G.application.afterUpgradeHandlers.append(
+                        self.testForAndDeleteZombieResources)
 # ===========================================================================

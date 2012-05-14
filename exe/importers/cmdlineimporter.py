@@ -21,6 +21,7 @@
 @author: Pedro Peña Pérez
 '''
 from exe.engine.package import Package
+from twisted.web.microdom import parseString
 
 
 class CmdlineImporter(object):
@@ -45,6 +46,9 @@ class CmdlineImporter(object):
         if not outputf:
             outputf = inputf.rsplit(".xml")[0]
         xml = open(inputf).read()
+        document = parseString(xml, escapeAttributes=0)
+        if document.firstChild().getAttribute('version') == '0.1':
+            print _(u"WARNING: content.xml version 0.1. Importing from content.data. Try to import from a content.xml version 0.2.")
         pkg = Package.load(outputf, fromxml=xml)
         if not pkg:
             raise Exception(_("Invalid output package"))

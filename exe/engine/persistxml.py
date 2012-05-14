@@ -87,7 +87,7 @@ class UTF8DOMUnjellier(DOMUnjellier):
             return DOMUnjellier.unjellyNode(self, node)
 
 class ContentXMLElement(Element):
-    version = "0.1"
+    version = "0.2"
     def writexml(self, stream, indent='', addindent='', newl='', strip=0, nsprefixes={}, namespace='', first=False):
         # this should never be necessary unless people start
         # changing .tagName on the fly(?)
@@ -167,5 +167,7 @@ def encodeObjectToXML(toEncode):
 
 def decodeObjectFromXML(toDecode):
     document = parseString(toDecode, escapeAttributes=0)
+    if document.firstChild().getAttribute('version') == '0.1':
+        return None, False
     du = UTF8DOMUnjellier()
-    return du.unjelly(document)
+    return du.unjelly(document), True
