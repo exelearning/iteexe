@@ -314,7 +314,9 @@ function insertMedia() {
 		fe.style.height = f.height.value + (f.height.value.indexOf('%') == -1 ? 'px' : '');
 		fe.align = f.align.options[f.align.selectedIndex].value;
 	} else {
-		h = '<img src="' + tinyMCE.getParam("theme_href") + '/images/spacer.gif"' ;
+		//JR la embebemos para anadir el resumen textual
+		h = '<div class="elemento_centrado">\n<div class="elemento_centrado">';
+		h += '<img src="' + tinyMCE.getParam("theme_href") + '/images/spacer.gif"' ;
 
 		switch (f.media_type.options[f.media_type.selectedIndex].value) {
 			case "flash":
@@ -352,6 +354,8 @@ function insertMedia() {
 		h += ' align="' + f.align.options[f.align.selectedIndex].value + '"';
 
 		h += ' />';
+		//JR
+		h += '\n</div>\n<div class="credenciales elemento_centrado"><a href="resumen.html" title="Resumen textual alternativo para &quot;XXX&quot;">Resumen textual alternativo</a></div>\n</div>';
 
 		tinyMCE.selectedInstance.execCommand('mceInsertContent', false, h);
 	}
