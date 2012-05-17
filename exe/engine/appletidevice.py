@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
@@ -25,6 +26,7 @@ Java Applet Idevice. Enables you to embed java applet in the browser
 import Image, ImageDraw
 from twisted.persisted.styles import requireUpgrade
 import logging
+import sys
 
 from exe.engine.idevice   import Idevice
 from exe.engine.path      import Path, toUnicode
@@ -44,6 +46,10 @@ DESCARTES_FILE_NAMES = set(["Descartes.jar", "Descartes3.jar", "Descartes4.jar",
 SCENE_NUM = 1
 # and could need an installed plugin
 DESC_PLUGIN = 0
+# For Descartes and so:
+url = ''
+reload(sys)
+sys.setdefaultencoding("UTF-8")
 # ===========================================================================
 
 class AppletIdevice(Idevice):
@@ -126,6 +132,36 @@ you created in Geogebra.</p>""")
         inner = i.find(name='div', attrs={'class' : 'iDevice emphasis0' })
         self.appletCode= inner.renderContents().decode('utf-8')
 
+
+    def verifyConn(self, site):
+        """
+        verify if the URL indicated by the user is reachable
+        """    
+        import httplib
+        import socket
+        import re
+        timeout = 30
+        socket.setdefaulttimeout(timeout)
+        try:
+            patron = '(?:http.*://)?(?P<host>[^:/ ]+).?(?P<port>[0-9]*).*'
+            portandhost = re.search(patron, site)
+            port = portandhost.group('port')
+            host = portandhost.group('host')
+            if not portandhost.group('port'):
+                port = '80'
+            conn = httplib.HTTPConnection(host, port)
+            # now the real connection test:
+            conn.connect()
+        except (httplib.HTTPResponse, socket.error):
+            return False
+        try:
+            # nothing more needed:
+            conn.close()
+        except:
+            pass    
+        return True
+
+
     def uploadFile(self, filePath):
         """
         Store the upload files in the package
@@ -138,7 +174,12 @@ you created in Geogebra.</p>""")
             else:
                 SCENE_NUM = int(filePath[:filePath.find(",")])
         if (filePath.endswith(".htm") or filePath.endswith(".html")):
+            global url
+            url = filePath
             self.appletCode = self.getAppletcodeDescartes(filePath)
+            # none scene was found:
+            if self.appletCode == '':
+                return None
         else:
             log.debug(u"uploadFile "+unicode(filePath))
             resourceFile = Path(filePath)
@@ -176,7 +217,7 @@ you created in Geogebra.</p>""")
         html = """
         <applet code="geogebra.GeoGebraApplet.class" archive="geogebra.jar" width="750" height="450">
             <param name="filename" value="%s">
-            <param name="framePossible" value="false">
+            <param name="framePossible" value="true">
             Please <a href="http://java.sun.com/getjava"> install Java 1.4</a> (or later) to use this page.
         </applet> """ % filename
         
@@ -187,7 +228,7 @@ you created in Geogebra.</p>""")
         xhtml string for JClicApplet
         """  
         html = """
-        <applet code="JClicApplet" archive="jclic.jar" width="800" height="600">
+            <applet code="JClicApplet" archive="jclic.jar" width="800" height="600">
             <param name="name" value="JClicApplet">
             <param name="activitypack" value="%s">
             <param name="framePossible" value="false">
@@ -209,32 +250,155 @@ you created in Geogebra.</p>""")
         return html
 
 
-    def downloadImgs(self, stringapplet):
+    def downloadFiles(self, stringapplet):
         """
-        xhtml imgs for DescartesApplet
+        only for DescartesApplet initially; three jobs:
+        1 look for image and macros files in the URL indicated by the user,
+        2 modify applet code for a correct exe detection of them after this,
+        3 download and store them into the exe project (absolutes urls are required).
+        Return the code modified.
         """
         from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup
         import re
-        # import string
+        import urllib
+        import urllib2
+        import string
+        import os
+        # import urllib.request
+        stringappletmod = stringapplet
         soup = BeautifulSoup(stringapplet)
-        IMAGE_ATTRIBUTES = ['archivo', 'imagem_de_fundo', 'imagem', 'imagen', 'file', 'fitxer',
-                             'artxibo', 'image', 'bg_image', 'imatge', 'immagine', 'irudia',
-                             'irundia', 'fichier', 'imaxe', 'arquivo', 'immagine_fondo']
+        
+        # ONE: image files:
+        key_image = ['archivo=', 'imagem_de_fundo=', 'imagem=', 'imagen=', 'file=', 'fitxer=',
+                             'artxibo=', 'image=', 'bg_image=', 'imatge=', 'immagine=', 'irudia=',
+                             'irundia=', 'fichier=', 'imaxe=', 'arquivo=', 'immagine_fondo=']
+        # paths to the images indicated in the applet code:
         imageslist = []
-        patron = re.compile(r"archivo='([\w\./]+)'")
-        for tag in soup.findAll('param'):
-            if patron.search(tag['value']):
-                imageslist.append(patron.search(tag['value']).group(1))
-        for pathimg in imageslist:
+        for x in key_image:
+            if string.find(stringapplet, x) != -1:
+                expression = r"%s'([\w\./]+)'" % x
+                patron = re.compile(expression)
+                for tag in soup.findAll('param'):
+                    result = patron.search(tag['value'])
+                    if result:
+                        if result.group(1) not in imageslist:
+                            imageslist.append(result.group(1))
+        # modify applet code:
+        urlimageslist = []
+        for im in imageslist: 
+            # put as locals the images' path inside exe editor...
+            stringappletmod = stringappletmod.replace(im,im[im.rfind("/")+1:]) 
+            # from imageslist, it's neccesary to create the list of absolute paths to the image
+            # files because we want to download this images and load them in the project:
+            # first quit scene number
+            urlnoesc = url[url.find(",")+1:]
+            # cut the right side of the last /:
+            urlcut = urlnoesc[: urlnoesc.rfind("/")]
+            # and extend with the image from the applet code:
+            urlimageslist.append(urlcut+"/"+im)
+        # repeated no thanks:
+        urlimageslist = list(set(urlimageslist))
+        # do not forget that it could be image_down and image_over versions
+        # of the file in the same place, so... a new extended list:
+        urlimgslistextended = []
+        for pathimg in urlimageslist:     
+            # we trick to urlimageslist adding files that haven't been detected really 
+            if pathimg not in urlimgslistextended:
+                urlimgslistextended.append(pathimg)
+                if string.find(pathimg, '.png') != -1:
+                    urlimgslistextended.append(pathimg.replace('.png', '_down.png'))
+                    urlimgslistextended.append(pathimg.replace('.png', '_over.png'))
+                if string.find(pathimg, '.jpg') != -1:
+                    urlimgslistextended.append(pathimg.replace('.jpg', '_down.jpg'))
+                    urlimgslistextended.append(pathimg.replace('.jpg', '_over.jpg'))
+                if string.find(pathimg, '.gif') != -1:
+                    urlimgslistextended.append(pathimg.replace('.gif', '_down.gif')) 
+                    urlimgslistextended.append(pathimg.replace('.gif', '_over.gif'))                
+        urlimgslistextended = list(set(urlimgslistextended))
+        # now we can: download all you can find:
+        for pathimgext in urlimgslistextended:
+            # the clean name of the image file
+            img = pathimgext[pathimgext.rfind("/")+1:]                
+            # firstly to test the existence of the file:
             try:
-                print pathimg
-                print htmlbytes
-                f = file(pathimg,'wb')
-                f.write(htmlbytes.read())
-                f.close()
+                resp = urllib2.urlopen(pathimgext)
+            except urllib2.URLError, e:
+                if not hasattr(e, "code"):
+                    raise
+                resp = e            
+            try:
+            # download whith its original name:                
+                img_down = urllib.urlretrieve(pathimgext, img)
             except:
-               print 'Unable to download file'        
-        return
+                print 'Unable to download file'
+            # be sure the file was found:
+            if img_down[1].maintype == 'image':
+                self.uploadFile(img_down[0])
+            os.remove(img_down[0])
+        # change the path in the soup, now the file will be local:           
+        for x in imageslist:
+            if x in soup:
+                x = x[x.rfind("/")+1:]     
+        
+        # TWO: local macros (sometimes a macro that is called may reside inside the jar file)
+        # paths to the macros indicated in the applet code:  
+        macroslist = []
+        key_typo = ['tipo=', 'tipus=', 'type=', 'mota=']
+        for x in key_typo:
+            if string.find(stringapplet, x) != -1:
+                expression = r"%s'ma[ck]ro'" % x
+                patron = re.compile(expression)
+                for tag in soup.findAll('param'):
+                    result = patron.search(tag['value'])
+                    if result:
+                    # tipo = macro or makro finded, now we need expresion parameter inside value tag                               
+                        key_macro = ['expresión=', 'expresion=', 'adierazpen=', 'espressione=', 'expresi&oacute;n=',
+                                               'expresi&oacute;=', 'expresi&amp;oacute;n=', 'express&atilde;o=']
+                        for y in key_macro:
+                            if string.find(tag, y) != -1:
+                                # consider sometimes macro file has txt format but sometimes has not format...
+                                # and sometimes they are locals and sometimes they are inside the jar file
+                                wexpression = ur"%s'(?P<bla>[\w./]+)'" % y # notice unicode conversion
+                                wpatron = re.compile(wexpression)
+                                # convert tag to unicode string also:
+                                utag = unicode(tag)
+                                wresult = wpatron.search(utag)
+                                if wresult:
+                                    macroslist.append(wresult.group('bla'))
+        # repeated no thanks:
+        macroslist = list(set(macroslist))             
+        # from macroslist, it's neccesary to create the list of absolute
+        # paths to the macros because we want to download them:
+        urlmacroslist=[]
+        for mac in macroslist:           
+            urlnoesc = url[url.find(",")+1:]
+            urlcut = urlnoesc[: urlnoesc.rfind("/")]
+            urlmacroslist.append(urlcut+"/"+mac)
+            urlmacroslist = list(set(urlmacroslist))
+        # we try to download them but really we do not know if they will be
+        # physically, as locals -out of the jar file- so our code must look for them, 
+        # and if they seem not to be we we will asume they are in the jar file   
+        for pathmacro in urlmacroslist:
+            macro = pathmacro[pathmacro.rfind("/")+1:]
+            try:
+                resp = urllib2.urlopen(pathmacro)
+            except urllib2.URLError, e:
+                if not hasattr(e, "code"):
+                    raise
+                resp = e              
+            if resp.code == 200:
+                macro_down = urllib.urlretrieve(pathmacro,macro)         
+                self.uploadFile(macro_down[0])
+                os.remove(macro_down[0])
+
+                # and modify the applet code inside eXe, now the file will be local:           
+                for x in macroslist:
+                    if x.endswith('.txt'):
+                        if string.find(x,macro) != -1:
+                            stringappletmod = stringappletmod.replace(x,macro)
+   
+        # return soap with images and macros path modified:            
+        return stringappletmod
         
     
     def getAppletcodeDescartes(self, filename):
@@ -248,12 +412,19 @@ you created in Geogebra.</p>""")
                 from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup   
                 import urllib2
                 if filename.find(",") == -1:    
+                    # firstly verify the URL is reachable, or come back:
+                    if self.verifyConn(filename) == False:
+                        assert self.parentNode.package, _('Sorry, this URL is unreachable') 
+                        return
+                    # filename is reachable, go on:                    
                     htmlbytes = urllib2.urlopen(filename)
                 else:
+                    if self.verifyConn(filename[2:]) == False:
+                        return html == ''                   
                     htmlbytes = urllib2.urlopen(filename[2:])
                 content = htmlbytes.read()
                 content = content.replace('&#130;','&#130')
-                content = content.replace('""','"')
+                # content = content.replace('""','"') Galo swears it won't be necessary
                 soup = BeautifulSoup(content)
                 i = 0
                 appletslist = []
@@ -279,15 +450,36 @@ you created in Geogebra.</p>""")
                             resource.delete()
                     ap_supernew["codebase"] = "./"
                     appletslist.append(ap_supernew)
+
+                # TO_DO sometimes applets are included in frame labels (no applets found in the url): 
+                # it could begin...:
+                # if appletslist == []: # because none <applet> was founded
+                #    for ap_frame in soup.findAll("frame src"): # could be problems with that whitespace
+                #        DESC_PLUGIN = 1
+                #        for resource in reversed(self.userResources):
+                #            if resource._storageName != 'descinst.jar':
+                #                resource.delete()
+                #        if ap_frame["codebase"]:
+                #            ap_frame["codebase"] = "./"
+                #        appletslist.append(ap_frame)                      
+                
+                # if none applet was found:
+                if appletslist == []:
+                    html == ''
+                    
+                    return html
+                
+                # finally:                  
                 for x in appletslist:
                     u = ''
                     if i == SCENE_NUM -1:
                         u = unicode(x)
-                        self.downloadImgs(u)
+                        umod = self.downloadFiles(u)
                         break
                     i = i+1
                 htmlbytes.close()
-                html = u
+                html = umod
+        # now html has the code of the applet for eXe:
         return html
           
     def copyFiles(self):
@@ -355,4 +547,4 @@ then add the data/applet file generated by your program.""")
 # ===========================================================================
 #def register(ideviceStore):
     #"""Register with the ideviceStore"""
-    #ideviceStore.extended.append(AppletIdevice())    
+    #ideviceStore.extended.append(AppletIdevice())

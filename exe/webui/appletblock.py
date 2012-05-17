@@ -90,13 +90,31 @@ class AppletBlock(Block):
                     else:
                         if self.idevice.type == "descartes" and filePath.find(","):
                             self.idevice.uploadFile(filePath)
+                            if self.idevice.uploadFile(filePath) == None:
+                                if self.idevice.appletCode == '':
+                                    self.idevice.message = _("eXe can not access any scene inside the indicated website. "
+                                                            "Anyway you can access the desired scene in your regular browser, "
+                                                            "click with right mouse button on it and in config > codigo is its "
+                                                            "associated code. Copy and paste it directly into an Applet "
+                                                            "iDevice such as Other.")
+                                    self.idevice.edit = True    
+                                    self.idevice.undo = False
+                                    return
                         else:                     
                             self.idevice.uploadFile(filePath)       
-                            self.idevice.message = ""                   
+                            
+        # Descartes applet requires two functionalities: read html files (like above
+        # and upload user indicated files, this is the second one:
+        if "uploadother" + self.id in request.args:
+            if "path" + self.id in request.args:
+                filePath = request.args["path"+self.id][0]
+                if filePath:
+                    if self.idevice.type == "descartes" and not (filePath.endswith(".htm") or filePath.endswith(".html")):
+                        self.idevice.uploadFile(filePath)       
             self.idevice.edit = True    
             self.idevice.undo = False
-
-
+                         
+                    
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form elements for editing this block
@@ -129,18 +147,23 @@ class AppletBlock(Block):
             html += '<p style="color:red"><b>' + self.idevice.message + '</b></p>'
         
         html += common.textInput("path"+self.id, "", 50)
-        # html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-        
-        # Descartes do not requires AddFile button:
+               
+        # Descartes requires an specific button more near the textInput:
         if self.idevice.type != "descartes":
             html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
             html += u'value="%s" />\n' % _(u"Add files")
-            html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
+            html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id, 
                                                                 _(u"Upload"))
         else:
+            # Read URL user indicated:
             html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
                                                                 _(u"Accept URL"))   
-        
+            html += u'<br/>\n'
+            # Upload some kind of file, like the rest of applets: 
+            html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+            html += u'value="%s" />\n' % _(u"Add files")
+            html += u'<input type="submit" name="%s" value="%s"' % ("uploadother"+self.id,
+                                                               _(u"Upload"))
         html += common.elementInstruc(self.idevice.fileInstruc)
         html += u'<br/>\n'
 
@@ -177,7 +200,7 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
-        appletcode = appletcode.replace('&nbsp;', '')
+        appletcode = appletcode.replace('&quot;', '"')
         # appletcode = appletcode.replace('\xC2\x82','&#130')
         appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
         appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"') 
