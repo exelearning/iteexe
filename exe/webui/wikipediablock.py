@@ -27,6 +27,7 @@ from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement
 from exe.engine.idevice   import Idevice
+from exe.engine.resource  import Resource
 
 log = logging.getLogger(__name__)
 
@@ -111,6 +112,7 @@ class WikipediaBlock(Block):
         html += common.textInput("title" + self.id, self.idevice.title) + "<br/><br/>"
 
         sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/wiki/"),
+                 (_(u"Euskara Wikipedia Article"), "http://eu.wikipedia.org/wiki/"),
                  (_(u"Catalan Wikipedia Article"), "http://ca.wikipedia.org/wiki/"),
                  (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/wiki/"),
                  (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/wiki/"),
@@ -205,10 +207,12 @@ class WikipediaBlock(Block):
         """        
         log.debug("renderView")
         content = self.articleElement.renderView()
-        content = re.sub(r'src="resources/', 'src="', content)
+        # content = re.sub(r'src="resources/', 'src="', content)
+        content = re.sub(r'src="http://127.0.0.1:51235/newPackage/resources/', 'src="', content)
+        content = re.sub(r'src="/newPackage/resources/', 'src="', content)
+        content = re.sub(r'src=\'/newPackage/resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-
         html += u"<div class=\"wiki_site\" value=\"" + self.idevice.site \
                 + "\"></div>"
         html += u"<div class=\"article_name\" value=\"" + self.idevice.articleName \
@@ -239,7 +243,8 @@ class WikipediaBlock(Block):
         if self.idevice.site == u"http://wikieducator.org/":
             html += u"<a href=\""+self.idevice.site
         else:
-            html += u"<a href=\""+self.idevice.site+u"wiki/"
+            # html += u"<a href=\""+self.idevice.site+u"wiki/"
+            html += u"<a href=\""
         html += self.idevice.articleName+u"\">"
         html += _(u"article ") 
         html += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"

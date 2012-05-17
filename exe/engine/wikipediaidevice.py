@@ -72,7 +72,6 @@ of Wikipedia to search and enter search term.""")
         self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
         self.ownUrl               = ""
-
         
     # Properties
     langInstruc      = lateTranslate('langInstruc')
@@ -103,7 +102,6 @@ within Wikipedia.""")
         page = unicode(page, "utf8")
         # FIXME avoid problems with numeric entities in attributes
         page = page.replace(u'&#160;', u'&nbsp;')
-
         # avoidParserProblems is set to False because BeautifulSoup's
         # cleanup was causing a "concatenating Null+Str" error,
         # and Wikipedia's HTML doesn't need cleaning up.
@@ -148,11 +146,20 @@ within Wikipedia.""")
         for imageTag in content.fetch('img'):
             imageSrc  = unicode(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
+            imageName = imageName.replace('&gt;', '>')
+            imageName = imageName.replace('&lt;', '<')
+            imageName = imageName.replace('&quot;', '"')
+            imageName = imageName.replace('&nbsp;', '')
+            imageName = imageName.replace('%2C', ',')
+            imageName = imageName.replace('%22', '"')
+            imageName = imageName.replace('%28', '(')
+            imageName = imageName.replace('%29', ')')
             # Search if we've already got this image
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
                     if imageSrc.startswith("/"):
-                        imageSrc = netloc + imageSrc
+                        # imageSrc = netloc + imageSrc
+                        imageSrc = bits[0] + imageSrc
                     else:
                         imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
@@ -165,6 +172,7 @@ within Wikipedia.""")
             # We have to use absolute URLs if we want the images to
             # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
+            # imageTag['src'] = (u"/" + self.parentNode.package.name + u"/" + imageName)
         self.article.content = self.reformatArticle(netloc, unicode(content))
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
@@ -173,6 +181,14 @@ within Wikipedia.""")
         #  such that these extra set's are not necessary, but for now, here:)
         self.article.content_w_resourcePaths = self.article.content
         self.article.content_wo_resourcePaths = self.article.content
+        
+        # Include wikipedia's license document as resourceFile in self.userResources: 
+        from exe import globals
+        licenseFile = globals.application.config.webDir/'templates/fdl.html'
+        license = Resource(self, licenseFile)
+        self.userResources = []
+        self.userResources.append(license)
+
 
     def reformatArticle(self, netloc, content):
         """
@@ -203,7 +219,7 @@ within Wikipedia.""")
         for this_image in self.userResources: 
             if this_resource == this_image: 
                 return self.article
-
+        
         return None
 
     def getRichTextFields(self):
@@ -224,7 +240,7 @@ within Wikipedia.""")
         takes a BeautifulSoup fragment (i) and bursts its contents to 
         import this idevice from a CommonCartridge export
         """
-        # Wiki Article Idevice:
+      # Wiki Article Idevice:
         # option title for Wikipedia, with mode emphasis:
         title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         if title is not None: 
@@ -255,6 +271,7 @@ within Wikipedia.""")
         if own_url is not None: 
             self.own_url = own_url.attrMap['value'].decode('utf-8')
 
+        
     def __getstate__(self):
         """
         Re-write the img URLs just in case the class name has changed
@@ -264,10 +281,14 @@ within Wikipedia.""")
         # need to check parentNode because __getstate__ is also called by 
         # deepcopy as well as Jelly.
         if self.parentNode:
-            self.article.content = re.sub(r'/[^/]*?/resources/', 
-                                          u"/" + self.parentNode.package.name + 
-                                          u"/resources/", 
+            self.article.content = re.sub(r'/[^/]*?/', 
+                                          u"/" + self.parentNode.package.name +
+                                          u"/",
                                           self.article.content)
+            #self.article.content = re.sub(r'/[^/]*?/resources/', 
+            #                              u"/" + self.parentNode.package.name + 
+            #                              u"/resources/", 
+            #                              self.article.content)
 
         return Idevice.__getstate__(self)
 
