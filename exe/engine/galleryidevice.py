@@ -82,9 +82,9 @@ class GalleryImage(_ShowsResources):
     size          = thumbnailSize
     bgColour      = 0x808080
 
-
     def __init__(self, parent, caption, originalImagePath, mkThumbnail=True):
         """
+        An instance is created each time an image is included inside the Gallery.
         'parent' is a GalleryIdevice instance
         'caption' is some text that will be displayed with the image
         'originalImagePath' is the local path to the image
@@ -96,7 +96,9 @@ class GalleryImage(_ShowsResources):
         self._imageResource     = None
         self._thumbnailResource = None
         self.makeThumbnail = mkThumbnail
+        
         self._saveFiles(originalImagePath)
+        
 
     def _saveFiles(self, originalImagePath=None):
         """
@@ -104,9 +106,9 @@ class GalleryImage(_ShowsResources):
         'originalImagePath' is a Path instance
         setting 'originalImagePath' to None, will just recreate the
         thumbnail resources from the existing image resource.
-        """
+        """       
         package = self.parent.parentNode.package
-
+        
         # protect against corrupt elps with images/resources which have 
         # somehow gone missing (appears to have been due to faulty Extracts)
         if originalImagePath is not None:
@@ -257,9 +259,7 @@ class GalleryImage(_ShowsResources):
         """
         Represents 'GalleryImage' as a string for the programmer
         """
-        return '<GalleryImage for "' + self.get_imageFilename() + '">' 
-
-
+        return '<GalleryImage for "' + self.get_imageFilename() + '">'
 
     # Properties
 
@@ -331,6 +331,11 @@ class GalleryImages(Persistable, list):
         """
         list.__init__(self)
         self.idevice = idevice
+
+        # iconFile = G.application.config.webDir/'images/stock-insert-image.png'
+        # icon = Resource(self.idevice, iconFile)
+
+
 
     def __getstate__(self):
         """
@@ -419,6 +424,7 @@ these in a gallery context rather then individually.</p>"""),
         self.nextImageId       = 0
         self.images            = GalleryImages(self)
         self.currentImageIndex = 0
+        self.userResources     = []
         self.systemResources  += ["stock-insert-image.png"]
         self._titleInstruc     = x_(u'Enter a title for the gallery')
         self._addImageInstr    = x_(u"Click on the Add images button to select "
@@ -432,6 +438,7 @@ these in a gallery context rather then individually.</p>"""),
     titleInstruc = lateTranslate('titleInstruc')
     htmlSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._htmlResource.storageName))
 
+
     def getResourcesField(self, this_resource):
         """
         implement the specific resource finding mechanism for this iDevice:
@@ -442,7 +449,6 @@ these in a gallery context rather then individually.</p>"""),
                 if hasattr(this_image, '_imageResource') \
                 and this_resource == this_image._imageResource:
                     return self.images
-
         return None
        
     def getRichTextFields(self):
@@ -459,9 +465,8 @@ these in a gallery context rather then individually.</p>"""),
         takes a BeautifulSoup fragment (i) and bursts its contents to 
         import this idevice from a CommonCartridge export
         """
-
         resourceDir = self.parentNode.package.resourceDir
-
+        
         # GalleryImage Idevice:
         title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         self.title = title.renderContents().decode('utf-8')
@@ -482,10 +487,24 @@ these in a gallery context rather then individually.</p>"""),
         #self._htmlResource = Resource(self, resourceDir/popup_file)
         # the above seems to behave wacky, only showing the last image,
         # so for now, try to just re-generate the popup:
+        
+        tmpDir = TempDirPath()
+        htmlPath = Path(tmpDir/'galleryPopup.html')
+        log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
+        try:
+            htmlFile = codecs.open(htmlPath, encoding='utf-8', mode='wb')
+            htmlFile.write(data)
+            htmlFile.close()
+            if not self._htmlResource is None:
+                self._htmlResource.delete()
+            self._htmlResource = Resource(self, htmlPath)
+        finally:
+            htmlPath.remove()
+
         if len(images) > 0:
             self._createHTMLPopupFile()
             # WARNING!!!!! the above still doesn't quite work for the popup!
-            # Dunno, but even once freshly generated, it only shows the last one
+            # Dunno, but even once freshly generated, it only shows the last one 
 
     def genImageId(self):
         """Generate a unique id for an image.
@@ -511,6 +530,11 @@ these in a gallery context rather then individually.</p>"""),
             self._createHTMLPopupFile()
         for image in self.images:
             image._saveFiles()
+        # and a neccesary icon:
+        thatIcon = G.application.config.webDir/'images/stock-insert-image.png'
+        # include the file in userResources:
+        Resource(self, thatIcon)
+
 
     def _killBadImages(self):
         """
