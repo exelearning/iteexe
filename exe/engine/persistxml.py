@@ -20,6 +20,9 @@
 import types
 from twisted.persisted.marmalade import DOMJellier, DOMUnjellier
 from twisted.web.microdom import Document, Element, escape, genprefix, parseString
+import logging
+
+log = logging.getLogger(__name__)
 
 class PriorizedDOMJellier(DOMJellier):
     def __init__(self):
@@ -167,7 +170,14 @@ def encodeObjectToXML(toEncode):
 
 def decodeObjectFromXML(toDecode):
     document = parseString(toDecode, escapeAttributes=0)
-    if document.firstChild().getAttribute('version') == '0.1':
+    xmlversion = document.firstChild().getAttribute('version')
+    if xmlversion == '0.1':
+        log.warn("Invalid content.xml version: 0.1")
         return None, False
+    if float(xmlversion) > float(ContentXMLElement.version):
+        log.warn("Version of content.xml is greater than the maximum supported: %s > %s" 
+                 % (xmlversion, ContentXMLElement.version))
+        return None, False
+    log.debug("decodeObjectFromXML starting decode")
     du = UTF8DOMUnjellier()
     return du.unjelly(document), True
