@@ -491,7 +491,7 @@ class Package(Persistable):
             zinfo.external_attr = 0100644<<16L
             zippedFile.writestr(zinfo, encodeObject(self))
 
-            zinfo2 = zipfile.ZipInfo(filename='content.xml',
+            zinfo2 = zipfile.ZipInfo(filename='contentv2.xml',
                     date_time=time.localtime()[0:6])
             zinfo2.external_attr = 0100644<<16L
             zippedFile.writestr(zinfo2, encodeObjectToXML(self))
@@ -526,11 +526,10 @@ class Package(Persistable):
 
         xml = None
         
-        if not xml:
-            try:
-                xml = zippedFile.read(u"content.xml")
-            except:
-                pass
+        try:
+            xml = zippedFile.read(u"contentv2.xml")
+        except:
+            pass
         
         if not xml:
             try:
@@ -550,7 +549,7 @@ class Package(Persistable):
 
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"content.xsd" ]:
+            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"content.xsd" ]:
                 outFile = open(resourceDir/fn, "wb")
                 outFile.write(zippedFile.read(fn))
                 outFile.flush()
@@ -561,7 +560,7 @@ class Package(Persistable):
             if fromxml:
                 newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
-                xmlinfo = zippedFile.getinfo(u"content.xml")
+                xmlinfo = zippedFile.getinfo(u"contentv2.xml")
                 datainfo = zippedFile.getinfo(u"content.data")
                 if xmlinfo.date_time >= datainfo.date_time:
                     newPackage, validxml = decodeObjectFromXML(xml)
@@ -571,7 +570,7 @@ class Package(Persistable):
             G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
-            if not validxml and (xml or fromxml):
+            if not validxml and (xml or fromxml or "content.xml" in zippedFile.namelist()):
                 for res in newPackage.resources.values():
                     res[0].testForAndDeleteZombieResources()
 
