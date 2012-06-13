@@ -1,3 +1,29 @@
+python-exe (1:1.04.1.3605intef6.1) lucid; urgency=low
+
+  [Antonio Moreno]
+  * La importación de artículos de la Wikipedia ahora captura las imágenes.
+  * Corregido problema que impedía la catalogación con idevices Wikipedia.
+  * Añadido euskera en las opciones de búsqueda de los artículos de la
+    Wikipedia.
+  * Goegebra puede ahora abrir su editor en los HTMLs generados por eXe.
+  * Los applets de Descartes incorporan ahora imágenes y macros que puedan
+    incluir.
+  * Corregido problema que impedía la catalogación con idevices ImageGallery.
+
+  [Ignacio Gros]
+  * Corregido bug #1342 "XHTML no valida cuando sólo hay una página (sitio
+    web)"
+  * Corregido bug #1422 (ID duplicado en el menú de navegación)
+  * Corregido bug #1423 (Incluir un favicon al exportar como sitio web)
+
+  [Pedro Peña]
+  * Corregido bug #1408 (Error en el comando de importación de xml)
+  * Corregido bug #1419 (eXe no elimina contenidos desenlazados/eliminados de
+    sus proyectos)
+  * Corregido bug #1427 (Compatibilidad entre la futura versión y posteriores)
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 13 Jun 2012 13:43:22 +0200
+
 python-exe (1:1.04.1.3605intef6) lucid; urgency=low
 
   [Antonio Moreno]
