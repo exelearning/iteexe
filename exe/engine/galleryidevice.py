@@ -82,9 +82,10 @@ class GalleryImage(_ShowsResources):
     size          = thumbnailSize
     bgColour      = 0x808080
 
+
     def __init__(self, parent, caption, originalImagePath, mkThumbnail=True):
         """
-        An instance is created each time an image is included inside the Gallery.
+        An instance is created each time an image is included inside the Gallery
         'parent' is a GalleryIdevice instance
         'caption' is some text that will be displayed with the image
         'originalImagePath' is the local path to the image
@@ -95,11 +96,9 @@ class GalleryImage(_ShowsResources):
         self._caption            = TextField(caption)
         self._imageResource     = None
         self._thumbnailResource = None
-        self.makeThumbnail = mkThumbnail
-        
+        self.makeThumbnail = mkThumbnail      
         self._saveFiles(originalImagePath)
         
-
     def _saveFiles(self, originalImagePath=None):
         """
         Copies the image file and saves the thumbnail file
@@ -224,7 +223,6 @@ class GalleryImage(_ShowsResources):
                 self._id = parent.genImageId()
             self._parent = parent
 
-
     def get_imageFilename(self):
         """
         Returns the full path to the image
@@ -260,6 +258,8 @@ class GalleryImage(_ShowsResources):
         Represents 'GalleryImage' as a string for the programmer
         """
         return '<GalleryImage for "' + self.get_imageFilename() + '">'
+
+
 
     # Properties
 
@@ -331,11 +331,6 @@ class GalleryImages(Persistable, list):
         """
         list.__init__(self)
         self.idevice = idevice
-
-        # iconFile = G.application.config.webDir/'images/stock-insert-image.png'
-        # icon = Resource(self.idevice, iconFile)
-
-
 
     def __getstate__(self):
         """
@@ -487,20 +482,6 @@ these in a gallery context rather then individually.</p>"""),
         #self._htmlResource = Resource(self, resourceDir/popup_file)
         # the above seems to behave wacky, only showing the last image,
         # so for now, try to just re-generate the popup:
-        
-        tmpDir = TempDirPath()
-        htmlPath = Path(tmpDir/'galleryPopup.html')
-        log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
-        try:
-            htmlFile = codecs.open(htmlPath, encoding='utf-8', mode='wb')
-            htmlFile.write(data)
-            htmlFile.close()
-            if not self._htmlResource is None:
-                self._htmlResource.delete()
-            self._htmlResource = Resource(self, htmlPath)
-        finally:
-            htmlPath.remove()
-
         if len(images) > 0:
             self._createHTMLPopupFile()
             # WARNING!!!!! the above still doesn't quite work for the popup!
@@ -530,11 +511,6 @@ these in a gallery context rather then individually.</p>"""),
             self._createHTMLPopupFile()
         for image in self.images:
             image._saveFiles()
-        # and a neccesary icon:
-        thatIcon = G.application.config.webDir/'images/stock-insert-image.png'
-        # include the file in userResources:
-        Resource(self, thatIcon)
-
 
     def _killBadImages(self):
         """

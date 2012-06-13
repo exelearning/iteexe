@@ -81,6 +81,7 @@ within Wikipedia.""")
         """
         Load the article from Wikipedia
         """
+        self.userResources = []
         self.articleName = name
         url = ""
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
@@ -161,18 +162,23 @@ within Wikipedia.""")
                         # imageSrc = netloc + imageSrc
                         imageSrc = bits[0] + imageSrc
                     else:
-                        imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)
-                urllib.urlretrieve(imageSrc, tmpDir/imageName)
-                new_resource = Resource(self, tmpDir/imageName)
+                        imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)               
+                try:
+                # download whith its original name:                
+                    urllib.urlretrieve(imageSrc, tmpDir/imageName)
+                    new_resource = Resource(self, tmpDir/imageName)
+                except:
+                    print 'Unable to download file'                                         
                 if new_resource._storageName != imageName:
                     # looks like it was changed due to a possible conflict,
                     # so reset the imageName accordingly for the content:
                     imageName = new_resource._storageName
                 self.images[imageName] = True
+                self.userResources.append(new_resource)
             # We have to use absolute URLs if we want the images to
             # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
-            # imageTag['src'] = (u"/" + self.parentNode.package.name + u"/" + imageName)
+            # imageTag['src'] = (imageName) # problems in editor mode
         self.article.content = self.reformatArticle(netloc, unicode(content))
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
@@ -183,10 +189,9 @@ within Wikipedia.""")
         self.article.content_wo_resourcePaths = self.article.content
         
         # Include wikipedia's license document as resourceFile in self.userResources: 
-        from exe import globals
-        licenseFile = globals.application.config.webDir/'templates/fdl.html'
+        from exe import globals as G
+        licenseFile = G.application.config.webDir/'templates/fdl.html'
         license = Resource(self, licenseFile)
-        self.userResources = []
         self.userResources.append(license)
 
 
@@ -282,14 +287,13 @@ within Wikipedia.""")
         # deepcopy as well as Jelly.
         if self.parentNode:
             self.article.content = re.sub(r'/[^/]*?/', 
-                                          u"/" + self.parentNode.package.name +
-                                          u"/",
+                                          u"/" + self.parentNode.package.name + 
+                                          u"/", 
                                           self.article.content)
-            #self.article.content = re.sub(r'/[^/]*?/resources/', 
-            #                              u"/" + self.parentNode.package.name + 
-            #                              u"/resources/", 
-            #                              self.article.content)
-
+            #self.article.content = re.sub(r'/[^/]*?/resources/',     
+             #                              u"/" + self.parentNode.package.name +     
+             #                              u"/resources/",     
+             #                              self.article.content)
         return Idevice.__getstate__(self)
 
 

@@ -201,7 +201,7 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&quot;', '"')
-        # appletcode = appletcode.replace('\xC2\x82','&#130')
+        appletcode = appletcode.replace('\xC2\x82','&#130')
         appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
         appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"') 
         appletcode = appletcode.replace('activitypack\" value=\"', 'activitypack\" value=\"\"')
@@ -227,7 +227,7 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&nbsp;', '')
-        # appletcode = appletcode.replace('\xC2\x82','&#130')
+        appletcode = appletcode.replace('\xC2\x82','&#130')
         
         html  = u"<!-- applet iDevice -->\n"
         html += u"<div class=\"iDevice "

@@ -330,7 +330,7 @@ you created in Geogebra.</p>""")
             # download whith its original name:                
                 img_down = urllib.urlretrieve(pathimgext, img)
             except:
-                print 'Unable to download file'
+                print 'Unable to download file'           
             # be sure the file was found:
             if img_down[1].maintype == 'image':
                 self.uploadFile(img_down[0])
@@ -423,7 +423,6 @@ you created in Geogebra.</p>""")
                         return html == ''                   
                     htmlbytes = urllib2.urlopen(filename[2:])
                 content = htmlbytes.read()
-                content = content.replace('&#130;','&#130')
                 # content = content.replace('""','"') Galo swears it won't be necessary
                 soup = BeautifulSoup(content)
                 i = 0
@@ -450,7 +449,6 @@ you created in Geogebra.</p>""")
                             resource.delete()
                     ap_supernew["codebase"] = "./"
                     appletslist.append(ap_supernew)
-
                 # TO_DO sometimes applets are included in frame labels (no applets found in the url): 
                 # it could begin...:
                 # if appletslist == []: # because none <applet> was founded

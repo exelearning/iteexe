@@ -174,6 +174,12 @@ class WikipediaBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
+        
+        content = self.articleElement.renderView()
+        ## content = re.sub(r'src="resources/', 'src="', content)
+        #content = re.sub(r'src="http://127.0.0.1:51235/newPackage/resources/', 'src="', content)
+        #content = re.sub(r'src=\"/newPackage/resources/', 'src="', content)
+        ## content = re.sub(r'src=\'/newPackage/resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
@@ -187,6 +193,8 @@ class WikipediaBlock(Block):
             html += u"</h2>\n"
             html += u"<div class=\"iDevice_inner\">\n"
         html += self.articleElement.renderPreview()
+        html += content
+        
         html += u"<br/>\n"
         html += u"This article is licensed under the "
         html += u'<span style="text-decoration: underline;">'
@@ -210,7 +218,9 @@ class WikipediaBlock(Block):
         # content = re.sub(r'src="resources/', 'src="', content)
         content = re.sub(r'src="http://127.0.0.1:51235/newPackage/resources/', 'src="', content)
         content = re.sub(r'src="/newPackage/resources/', 'src="', content)
-        content = re.sub(r'src=\'/newPackage/resources/', 'src="', content)
+        content = re.sub(r'src=\'/newPackage/resources/', 'src="', content) 
+        # nueva:    
+        content = re.sub(r'src=\"/newPackage/resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<div class=\"wiki_site\" value=\"" + self.idevice.site \
