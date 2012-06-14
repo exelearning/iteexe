@@ -579,7 +579,7 @@ function metadataEditor() {
 
 // load the About page
 function aboutPage() {
-    var features = "width=299,height=515,status=0,resizable=0,left=260,top=150";
+    var features = "width=360,height=615,status=0,resizable=0,left=260,top=150";
     aboutWin = window.open ("/about", ABOUT, features);
 }
 
