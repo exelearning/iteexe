@@ -46,45 +46,53 @@ body{
 	color:#263264; /* Color de texto de estos enlaces al pasar sobre ellos */
 }
 
+#header{
+	color:#555; /* Color del texto */
+	text-shadow:1px 1px 1px #fff; /* Sombra del texto */
+}
+
 /* **************************************************************************** */
 /* **** TABLA DE COLORES para usarios del eXe del INTEF ********************** */
 /* ************************************************************************** */
 
-#siteNav a{
-	color:#000000; /* Enlaces del menú */
-	border-color:#0460B3; /* Borde que separa a los enlaces */
+/* Site navigation menu */
+#siteNav, #siteNav ul {
+	border-color:#eee; /* Color de los bordes */	
+	background:#fff; /* Color de fondo */	
 }
 
-#siteNav a:hover{
-	color:#4D4D4D; /* Enlaces al pasar sobre ellos */
-	background:#eee; /* Fondo de los enlaces al pasar sobre ellos */
+#siteNav a {
+	color:#4D4D4D; /* Color de los enlaces del menú */
 }
 
-#siteNav ul ul a{
-	color:#555; /* Menú: enlaces de segundo nivel */
+#siteNav a:hover {
+	color:#0460B3; /* Color de los enlaces del menú al pasar sobre ellos */
 }
 
 #siteNav .active{
 	color:#0460B3; /* Enlace activo en el menú principal */
-	font-weight:bold; /* Peso fuente */
-	border-color:#0460B3;  /* Borde del enlace activo */
 }
 
-#siteNav .other-section{
-	display:none; /* Eliminar si se quiere que se muestren todos los niveles */
+#siteNav li:hover, #siteNav li.sfhover {
+	background:#eee; /* Color de fondo de los elementos del menú al pasar sobre ellos o sus hijos */
 }
+
+#siteNav ul ul .daddy {
+	background-image:url(my_nav_arrow.gif); /* Imagen de los elementos de segundo nivel con hijos (flecha) */
+}
+
 
 /* ********************************************* */
 /* **** OTRAS DEFINICIONES ******************** */
 /* ******************************************* */
 
 /* INTEF nav */
-#main{padding:10px 20px 11px 250px}
-#header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
-* html #header,* html #emptyHeader{height:110px} /* IE6 */
-#nodeTitle{position:absolute;top:55px;left:250px;margni-left:0}
-#nodeTitle{font-size:1.6em;margin:20px 10px 0 0}
-#main #nodeDecoration{background:none;padding:0 10px;border:none}
+#main{padding:10px 20px 11px 20px}
+#header,#emptyHeader{height:39px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 0 0 10px;font-size:1.5em}
+* html #header,* html #emptyHeader{height:100px} /* IE6 */
+/*#nodeTitle{position:absolute;top:58px;left:10px}*/
+#nodeTitle{font-size:1.5em/*;margin:20px 10px 0 0*/}
+#main #nodeDecoration{background:none;padding:0;border:none}
 
 body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:center}
 #content{font-size:.75em;width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
@@ -106,14 +114,21 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 /* ********************************************************* */ 
 
 /* #emptyHeader  (ver #header) */
-#siteNav{width:230px;float: left;padding-right:20px}
-#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
-#siteNav a{display:block;padding:4px 0 4px 10px;border-width:0 0 1px 0;border-style:dotted}
-* html #siteNav a{display:inline-block;width:100%} /* IE6 */
-#siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
-#siteNav a.main-node:hover{text-decoration:underline;background:none}
-#siteNav ul ul a{padding-left:25px;font-size:.95em}
-#siteNav ul ul ul a{font-size:1em;padding-left:50px}
+/* Navegación (menú desplegable) */
+#siteNav,#siteNav ul{float:left;width:100%;list-style:none;line-height:1;padding:0;border-style:solid;border-width:1px 0;margin:0}
+#siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
+#siteNav a{display:block;text-decoration:none;padding:.4em 10px}
+#siteNav a:hover{color:#0460B3}
+#siteNav ul ul .daddy{background-repeat:no-repeat;background-position:center right}
+#siteNav li{float:left;padding:0}
+#siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em;margin:0;font-weight:normal}
+* html #siteNav li ul{width:13em}
+#siteNav li li{padding-right:1em;width:13em}
+#siteNav li ul a{font-size:.9em;padding:.45em 10px}
+#siteNav li ul ul{margin:-1.75em 0 0 14em}
+* html #siteNav li ul ul{margin-left:13em}
+#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
 
 /* Pagination */
 .pagination,.noprt{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
