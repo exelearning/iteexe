@@ -1,0 +1,181 @@
+/*  Copyright University of Auckland 2004
+	Created by Brent Simpson, brent.simpson@auckland.ac.nz
+	Centre for Flexible and Distance Learning
+*/
+
+#header {
+    color: #A1B386;
+    background-color: transparent;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+
+#navcontainer {
+	width: 169px;
+	float: left;
+	margin-top: 10px;
+	}
+				
+#navcontainer ul {
+	margin-left: 0px;
+	padding-left: 0;
+	margin-top: 0;
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+#navcontainer a {
+	display: block;
+	padding: 3px 0 3px 6px;
+	background-color: #FFF;
+	border-bottom: 1px solid #CCC;
+	width: 163px;
+	}
+
+#navcontainer a:link, #navlist a:visited {
+	color: #96852C;
+	text-decoration: none;
+	}
+
+#navcontainer a:hover {
+	color: #51778A;
+	background-color: #FFEDBF;
+	}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+ 
+* html #navcontainer {
+  margin-right: 10px;
+  }
+ 
+* html p {
+  height: 1%;
+  margin-left: 0;
+  }
+ 
+/* End hide from IE5/mac */
+
+#navcontainer #active {
+	padding: 3px 0 3px 6px;
+	width: 163px;
+	background-color: #A1B386;
+	color: #EDEFF0;
+	border-bottom: 1px solid #CCC;
+	}
+
+div #subnav {
+	border-bottom: 1px solid #CCC;
+	}
+	
+#subnav a {
+	display: block;
+	border: 0 !important;
+	width: 153px;
+	margin-left: 10px;
+	padding: 3px 0 3px 6px;
+	font-size: x-small;
+	border-bottom: 1px solid #FFF;
+	}
+
+#subnav a:hover {
+	color: #51778A;
+	background-color: #FFEDBF;
+	}	
+	
+#subnav #active {
+	margin-left: 10px;
+	background-color: #A1B386;
+	width: 153px;
+	color: #EDEFF0;
+	font-size: x-small;
+	border-bottom: 1px solid #FFF;
+	}	
+	
+	
+/* MAIN CONTENT STYLES */
+
+#container {
+	border-top: 1px solid #CCC;
+	}
+
+#main {
+	padding: 18px;
+	margin: 0px 10px 10px 180px;
+	line-height: 140%;
+	}
+
+/* ITE elements */
+
+#siteNav {
+	width: 169px;
+	float: left;
+	margin-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {
+	display: block;
+	padding: 3px 0 3px 6px;
+	background-color: #FFF;
+	border-bottom: 1px solid #CCC;
+	width: 163px;
+	color: #96852C;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #51778A;
+	background-color: #FFEDBF;
+}	
+
+#siteNav #active .active {
+	background-color: #A1B386;
+	color: #EDEFF0;
+	border-bottom: 1px solid #FFF;
+}
+
+#siteNav ul ul{
+	border-bottom:1px solid #ccc;
+}
+
+#siteNav ul ul a{
+	display: block;
+	border: 0 !important;
+	width: 137px;
+	margin-left: 10px;
+	padding: 4px 5px 4px 16px;
+	font-size:x-small;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+* html #siteNav ul ul a{ /* IE6 */
+	width:152px;
+}
+
+* html #siteNav ul ul{ /* IE6 */
+	border-bottom:none;
+}
+
+.pagination{
+	text-align:right;
+}
+
+/* Invisible content (visible for screen reader users) */
+#topPagination{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}

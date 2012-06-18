@@ -1,0 +1,401 @@
+=========================================
+    eXe: The eLearning XHML editor
+=========================================
+$Revision$
+$Date$
+
+===========================================================================
+Copyright 2004-2005, University of Auckland
+Copyright 2004-2008 eXe Project, http://exelearning.org/
+All rights reserved, see COPYING for details.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+===========================================================================
+
+SUPPORT
+=======
+If you have any problems or have any feedback please report them at
+https://eduforge.org/forum/forum.php?forum_id=298 or email
+exe@exelearning.org
+
+
+KNOWN BUGS
+==========
+See http://exelearning.org/projects/exe1 for the eXe issue list.
+
+
+WINDOWS
+=======
+
+INSTALLATION
+------------
+- Download eXe-install-X.YY.exe, double click it to launch the installer,
+  and then follow the instructions. 
+- You will be asked what directory to install eXe in.  The default will
+  normally be fine.  (You should always use the same directory when
+  installing a new version of eXe.)
+- The installer will create an eXe icon on the desktop and a menu-item under
+  "All Programs".
+
+RUNNING
+-------
+Double click on the shortcut on the desktop to launch eXe.
+
+To close eXe you must use the File... Quit menu item.  Do not simply try
+to close the eXe display window with the window close button.  Remember to
+save your content before exiting.
+
+The first time you run you may get asked if you want to allow eXe
+to access the Internet.  eXe does NOT require access to the Internet.
+With the XP firewall you can just select the option to block its access.
+With the McAfee firewall you will need to allow access.
+
+
+MAC OSX
+=======
+
+To install eXe, simply drag the app to your Applications folder.
+
+
+FEDORA LINUX 
+=============
+
+The eXe Fedora Linux install consists of a single RPM.  There are separate
+RPMs for Fedora Core 6 (Python 2.4) and Fedora 7 and 8 (Python 2.5).  Each of
+these RPMs requires python-zope-interface (version 3.0.1 or newer) and
+python imaging (version 1.1.5 or newer).
+
+There are HowTos on http://eXeLearning.org/ explaining how you can use
+these RPMs on some other RPM-based Linux distributions.
+
+From the command line type exe to start.  If you are using a standard
+window manager, you should find an eXe entry in your Accessories menu.
+
+
+UBUNTU LINUX 
+============
+
+There are separate DPKGs for Dapper/Edgy (6.06 and 6.10 using Python 2.4)
+and Feisty/Gutsy/Hardy (7.04, 7.10, and 8.04 using Python 2.5).
+
+From the command line type exe to start.
+
+
+BUILDING FROM SOURCE
+====================
+
+Please see http://eXeLearning.org/BuildingFromSource for information
+on obtaining and building eXe and its dependencies.
+
+
+CREDITS
+=======
+
+ * Secret Labs AB and Fredrik Lundh for The Python Imaging Library (PIL) 
+
+The Python Imaging Library (PIL) is
+
+    Copyright 1997-2005 by Secret Labs AB
+    Copyright 1995-2005 by Fredrik Lundh
+
+By obtaining, using, and/or copying this software and/or its associated
+documentation, you agree that you have read, understood, and will comply
+with the following terms and conditions:
+
+Permission to use, copy, modify, and distribute this software and its
+associated documentation for any purpose and without fee is hereby
+granted, provided that the above copyright notice appears in all copies,
+and that both that copyright notice and this permission notice appear in
+supporting documentation, and that the name of Secret Labs AB or the
+author not be used in advertising or publicity pertaining to
+distribution of the software without specific, written prior permission.
+
+SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO
+THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS. IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
+ * CTC for APIWrapper.js and SCOFunctions.js
+
+Concurrent Technologies Corporation (CTC) grants you ("Licensee") a non-
+exclusive, royalty free, license to use, modify and redistribute this
+software in source and binary code form, provided that i) this copyright
+notice and license appear on all copies of the software; and ii) Licensee does
+not utilize the software in a manner which is disparaging to CTC.
+
+This software is provided "AS IS," without a warranty of any kind.  ALL
+EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY
+IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-
+INFRINGEMENT, ARE HEREBY EXCLUDED.  CTC AND ITS LICENSORS SHALL NOT BE LIABLE
+FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
+DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES.  IN NO EVENT WILL CTC  OR ITS
+LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT,
+INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER
+CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF
+OR INABILITY TO USE SOFTWARE, EVEN IF CTC  HAS BEEN ADVISED OF THE POSSIBILITY
+OF SUCH DAMAGES.
+
+ * Mozilla for XUL and the XPFE
+
+Version: NPL 1.1/GPL 2.0/LGPL 2.1
+
+The contents of this file are subject to the Netscape Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://www.mozilla.org/NPL/
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code is mozilla.org code.
+
+The Initial Developer of the Original Code is 
+Netscape Communications Corporation.
+Portions created by the Initial Developer are Copyright (C) 1998
+the Initial Developer. All Rights Reserved.
+
+ * Fabricio Zuardi for XSPF Web Music Player mp3 player
+
+Music Player is Open Source Software, licensed under the BSD and can be used 
+and modified by anyone, including for commercial purposes.
+
+XSPF Web Music Player is a flash-based web application that uses xspf playlist
+format to play mp3 songs. XSPF is the XML Shareable Playlist Format. The 
+software is written in Actionscript 2.
+
+For more information on XSPF, see: http://musicplayer.sourceforge.net/
+
+ * Anssi Piirainen for FlowPlayer FLV video player
+
+FlowPlayer is a free Flash video player. 
+License: Apache License V2.0 
+
+For more information on FlowPlayer, see: http://flowplayer.org/
+
+ * John Forkosh Associates, Inc. for mimeTeX 
+
+mimeTeX is distributed under the terms of the GNU General Public License.
+http://www.gnu.org/licenses/gpl.html
+
+The complete source code is available from http://www.forkosh.com/mimetex.zip
+
+Contributor(s):
+
+Alternatively, the contents of this file may be used under the terms of
+either the GNU General Public License Version 2 or later (the "GPL"), or 
+the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+in which case the provisions of the GPL or the LGPL are applicable instead
+of those above. If you wish to allow use of your version of this file only
+under the terms of either the GPL or the LGPL, and not to allow others to
+use your version of this file under the terms of the NPL, indicate your
+decision by deleting the provisions above and replace them with the notice
+and other provisions required by the GPL or the LGPL. If you do not delete
+the provisions above, a recipient may use your version of this file under
+the terms of any one of the NPL, the GPL or the LGPL.
+
+ * Mark Pilgrim for Universal Feed Parser
+
+Copyright (c) 2002-2006, Mark Pilgrim, All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+ * Beautiful Soup is Copyright (c) 2004-2007, Leonard Richardson
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above
+    copyright notice, this list of conditions and the following
+    disclaimer in the documentation and/or other materials provided
+    with the distribution.
+
+  * Neither the name of the the Beautiful Soup Consortium and All
+    Night Kosher Bakery nor the names of its contributors may be
+    used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE, DAMMIT.
+
+ * XSPF Web Music Player 0.2.3 is Copyright (c) 2005, Fabricio Zuardi
+
+Copyright (c) 2005, Fabricio Zuardi
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+  * Neither the name of the author nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ * GeoGebra is Copyright 2001-2008 Geogebra Inc.
+
+GeoGebra is a free and multi-platform dynamic mathematics software for
+schools that joins geometry, algebra, and calculus.  The application
+used is licensed under the GNU General Public License.  (See the COPYING
+file.)
+
+More information about GeoGebra and the source code are available from
+http://www.geogebra.org/
+
+ * Twisted Python 2.2.0 is Copyright (c) 2001-2005
+Allen Short
+Andrew Bennetts
+Apple Computer, Inc.
+Benjamin Bruheim
+Bob Ippolito
+Canonical Limited
+Christopher Armstrong
+Donovan Preston
+Eric Mangold
+Itamar Shtull-Trauring
+James Knight
+Jason A. Mobarak
+Jonathan Lange
+Jonathan D. Simms
+Jp Calderone
+J######Hermann
+Kevin Turner
+Mary Gardiner
+Matthew Lefkowitz
+Massachusetts Institute of Technology
+Moshe Zadka
+Paul Swartz
+Pavel Pergamenshchik
+Sean Riley
+Travis B. Hartwell
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ * Nevow 0.4.1 is Copyright (c) 2004
+Donovan Preston
+Matt Goodall
+James Y. Knight
+Glyph Lefkowitz
+JP Calderone
+Allen Short
+Alex Levy
+Justin Johnson
+Christopher Armstrong
+Jonathan Simms
+Phil Frost
+Tommi Virtanen
+Michal Pasternak
+Valentino Volonghi
+
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ * Magnifier was developed for eXe by Bruce Webster
+An archive containing the associated files can be download from
+http://zebo.org/magnify/
+
+ * iPod is a trademark of Apple Inc.
+
+ * Wingware generously donated licenses for the Wing Python IDE to developers working on eXe.
+

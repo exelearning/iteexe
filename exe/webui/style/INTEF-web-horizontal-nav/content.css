@@ -1,0 +1,93 @@
+/* ********************************************* */
+/* **** IMÁGENES UTILIZADAS ******************* */
+/* ******************************************* */
+
+/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
+/* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
+/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
+/* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
+
+/* ********************************************* */
+/* **** TABLA DE COLORES ********************** */
+/* ******************************************* */
+
+body{
+	color:#333333; /* Cuerpo de texto */
+	background:#ffffff; /* Color de fondo */
+}
+
+a{
+	color:#263264; /* Enlaces */
+}
+
+#header{
+	color:#666666; /* Título del proyecto */
+}
+
+#nodeTitle{
+	color:#004f96; /* Título de cada página */
+}
+
+#main #nodeDecoration{
+	border-color:#E7EBEE; /* Borde del título de cada página */
+	background-color:#DEE5EB; /* Color de fondo */
+}
+
+.iDeviceTitle{
+	color: #0066AB; /* Títulos de los iDevices */
+}
+
+.iDevice_inner{
+	background-color:#F6FCFE; /* Fondo del cuerpo del iDevice */
+	color:#4d4d4d; /* Texto de los iDevices */
+	border-color:#cccccc; /* Borde del cuerpo de los iDevices */
+}
+
+#pageFooter{
+	color:#666666; /* Texto del pie de página */
+}
+
+#pageFooter a{
+	color:#A7512B; /* Enlaces del pie de página */
+}
+
+input.feedbackbutton{
+	background-color: #DBE992; /* Color de fondo del botón de feedback */
+}
+
+.pre-code{
+	background:#112C4A; /* Color de fondo del código de ordenador intertado desde TinyMCE */
+	color:#E7ECF1; /* Color del texto */
+	font-family:Monaco,Courier,monospace; /* Fuente */
+}
+
+/* ********************************************* */
+/* **** OTRAS DEFINICIONES ******************** */
+/* ******************************************* */
+
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+#nodeTitle{font-size:1.5em;font-weight:bold;margin:0;text-align:left}
+#main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg)}
+#header{height:35px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding:59px 0 0 0;font-size:1.1em;font-weight:bold}
+#header h1{margin:0;font-size:1em}
+#main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#main h2{font-size:1.4em}
+#main h3{font-size:1.3em}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:10px 0 20px 0}
+.iDeviceTitle{font-size:1.2em;font-weight:bold;vertical-align:bottom} 
+.iDevice_icon{width:30px;height:auto;margin-right:5px}
+.iDevice_inner{padding: 10px 20px 20px 20px;border-width:1px 0 1px 0;border-style:dotted}
+#pageFooter{font-size:.9em}
+#pageFooter p{margin:3px 0}
+.pre-code{border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
+/*.image_text {border:1px solid #9D9D9D;background:transparent;padding: 4px;margin:0px 20px 4px 4px}*/
+
+/* *********************************************************** */
+/* **** DEFINICIONES específicas para el eXe del INTEF ****** */
+/* ********************************************************* */ 
+
+#main h2.iDeviceTitle{display:inline;font-size:1.2em}

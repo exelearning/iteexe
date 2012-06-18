@@ -1,0 +1,102 @@
+/*  =================================================
+     eXe
+     Copyright 2004-2005, eXelearning. 
+
+     style for  xxxxx
+   ================================================== */
+
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #CAC3B5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a { 
+    color: #003366;
+    border: 0;
+}
+
+#content {
+    background-color: #CAC3B5;
+}
+
+#nodeTitle { 
+    color: #514E4C;       /* styles for the title of the page/node */
+    font-size: 1.6em;
+    display: inline;
+}
+
+div#nodeDecoration {      /* style for any decoration around title of page/node */
+    background: #CAC3B5; 
+    border-bottom: 4px solid #8A0A0A;
+    padding: 2px;
+    margin-bottom: 7px;
+}
+
+/* --- iDevice Styles --- */
+
+.emphasis1 {
+    background-color: #FFF;
+    padding-left: 10px;
+    padding-bottom: 16px;
+    margin: 10px;
+}
+
+
+input.feedbackbutton {
+	background: #FFFDB1;
+}
+
+.iDevice_inner {
+    margin-left: 55px;
+    margin-right: 12px;
+    border-bottom: 1px solid #DDD;
+}
+
+.iDevice p, .iDevice div.block {
+    padding-left: 24px;
+    line-height: 115%
+    text-align: left;
+}
+
+.iDeviceTitle {
+    color: #990000;
+    font-size: 1.2em;
+    font-weight: normal;
+	display: inline;
+}    
+
+.iDevice_icon {
+    padding-top: 10px;
+}
+
+.iDevice li {
+	list-style-position: outside;
+}
+
+/* styles for image with text iDevice */
+
+.image_text { 
+	border: 1px solid #CCC;
+	background: #F9F9F9;
+	padding: 4px;
+	margin: 0px 20px 4px 4px;
+}
+
+p.reading_feedback {
+    font-style: italic;
+}
+
+.pre-code{
+	background:#112C4A;
+	color:#E7ECF1;
+	font-family:Monaco,Courier,monospace;
+	font-size:12px;
+	margin:2em 1em;
+	overflow:auto;
+	padding:20px;
+	border-radius:9px;
+}

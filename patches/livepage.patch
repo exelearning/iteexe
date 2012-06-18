@@ -1,0 +1,5 @@
+523c523,524
+<         return tags.script(src=url.here.child('nevow_glue.js'))
+---
+>         ##return tags.script(src=url.here.child('nevow_glue.js'))
+>         return tags.script(src='/scripts/nevow_glue.js')

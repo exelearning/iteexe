@@ -1,0 +1,63 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+DEB_PYTHON_SYSTEM=pysupport
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PYDEF=$(shell pyversions -d)
+PYVERS=$(shell pyversions -r)
+EXEPKG=exe
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	set -e; \
+	for python in $(PYVERS); do \
+		python=$$(echo $$python | sed "s/$(PYDEF)/python/"); \
+		$$python setup.py build; \
+	done
+	touch build-stamp
+
+debian/PKG-INFO: ${SETUP_PY}
+	@echo generating $@; \
+	python -c 'import sys; from distutils.core import run_setup; \
+		run_setup(sys.argv[1]).metadata.write_pkg_info("debian")' $<
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f debian/PKG-INFO
+	for python in $(PYVERS); do \
+		python=$$(echo $$python | sed "s/$(PYDEF)/python/"); \
+		$$python setup.py clean; \
+	done
+	rm -rf build build-stamp *.pyc dist
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+	for python in $(PYVERS); do \
+		python=$$(echo $$python | sed "s/$(PYDEF)/python/"); \
+		$$python setup.py install --prefix=/usr --root=debian/$(EXEPKG); \
+	done
+
+binary-indep: build install
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_pysupport
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure
+.PHONY: dummy-package real-packages
+
+

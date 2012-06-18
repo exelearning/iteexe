@@ -1,0 +1,25 @@
+Because of the super innovative state of our code, we need to use twisted 
+stuff that isn't even in twisted yet!
+
+This code lets us store new style python classes (that allow properties and 
+stuff) in package files.
+
+In order to have your exe code load packages you need to apply this patch to
+$PYTHON_LIB_DIR/site-packages/twisted/spread/jelly.py
+
+with these commands:
+on linux:
+su
+cd /usr/lib/python2.3/site-packages/twisted/spread/
+patch jelly.py jelly.patch
+python /usr/lib/python2.3/compileall.py .
+
+on win32:
+download and extract patch.exe from 
+http://unxutils.sourceforge.net/UnxUtils.zip into c:\windows\system32
+cd c:\python23\lib\site-packages\twisted\spread
+patch jelly.py jelly.patch
+python c:\python23\lib\compileall.py .
+
+
+This patch will be standard in the next release of twisted.core

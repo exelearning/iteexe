@@ -1,0 +1,130 @@
+#!/usr/bin/env python
+# -- coding: utf-8 --
+# ===========================================================================
+# eXe
+# Copyright 2011-2012, Pedro Peña Pérez
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#t
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+
+import os
+import sys
+from optparse import OptionParser, IndentedHelpFormatter
+
+# Make it so we can import our own nevow and twisted etc.
+if os.name == 'posix':
+    sys.path.insert(0, '/usr/share/exe')
+
+# Try to work even with no python path
+try:
+    from exe.application import Application
+except ImportError, error:
+    if str(error) == "No module named exe.application":
+        exePath = os.path.abspath(sys.argv[0])
+        exeDir = os.path.dirname(exePath)
+        pythonPath = os.path.split(exeDir)[0]
+        sys.path.insert(0, pythonPath)
+        from exe.application import Application
+    else:
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+from exe.export.cmdlineexporter import CmdlineExporter
+from exe.importers.cmdlineimporter import CmdlineImporter
+
+
+class CustomHelpFormatter(IndentedHelpFormatter):
+    def format_usage(self, usage):
+        return usage
+
+
+class CustomOptionParser(OptionParser):
+    def set_usage(self, usage):
+        self.usage = usage
+
+    def print_help(self, file=None):
+        if file is None:
+            file = sys.stdout
+        file.write(self.format_help())
+
+
+def prepareParser():
+    usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \
+help:\n%prog -h").encode(sys.stdout.encoding)
+    parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
+    parser.add_option("-x", "--export",
+                  action="store", dest="x", metavar="format",
+                  choices=['xml', 'scorm', 'ims', 'website', 'webzip',
+'singlepage'],
+                  help=_(u"Export <input_file> elp package to optional \
+<output_file> on one of the given formats: xml, scorm, ims, website, webzip \
+or singlepage.").encode(sys.stdout.encoding))
+    parser.add_option("-i", "--import",
+                  action="store", dest="i", metavar="format",
+                  choices=['xml'],
+                  help=_(u"Import to <output_file> elp package, <input_file> \
+in one of the given formats: xml.")\
+.encode(sys.stdout.encoding))
+    parser.add_option("-f", "--force",
+                  action="store_true", dest="f",
+                  help=_(u"Force overwrite of <output_file>").encode(sys.stdout.encoding))
+    return parser
+
+if __name__ == "__main__":
+    application = Application()
+    application.loadConfiguration()
+
+    parser = prepareParser()
+    options, args = parser.parse_args()
+
+    if options.x and options.i:
+        parser.error(_(u'Options --export and --import are mutually \
+exclusive.').encode(sys.stdout.encoding))
+    if not options.x and not options.i:
+        parser.error(_(u'No --export or --import option supplied.')\
+.encode(sys.stdout.encoding))
+
+    if not args:
+        parser.error(_(u'No file input supplied.').encode(sys.stdout.encoding))
+
+    inputf = args[0]
+    try:
+        outputf = args[1]
+    except IndexError:
+        outputf = None
+
+    if len(args) > 2:
+        parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+
+    if options.x:
+        x = CmdlineExporter(application.config)
+        try:
+            outputf = x.do_export(options.x, inputf, outputf, options.f)
+            print _(u"Successfully exported '%s' from '%s'.") % (outputf, \
+inputf)
+        except:
+            print _(u"exe_do: error: Unable to export from '%s'.\nThe \
+error was:") % (inputf)
+            print sys.exc_value
+    if options.i == 'xml':
+        i = CmdlineImporter(application.config)
+        try:
+            outputf = i.do_import(options.i, inputf, outputf)
+            print _(u"File '%s' successfully imported to '%s'.") % (inputf, \
+outputf)
+        except:
+            print _(u"exe_do: error: Unable to import '%s'.\nThe \
+error was:") % (inputf)
+            print sys.exc_value

@@ -1,0 +1,806 @@
+python-exe (1:1.04.1.3605intef6.1) lucid; urgency=low
+
+  [Antonio Moreno]
+  * La importación de artículos de la Wikipedia ahora captura las imágenes.
+  * Corregido problema que impedía la catalogación con idevices Wikipedia.
+  * Añadido euskera en las opciones de búsqueda de los artículos de la
+    Wikipedia.
+  * Goegebra puede ahora abrir su editor en los HTMLs generados por eXe.
+  * Los applets de Descartes incorporan ahora imágenes y macros que puedan
+    incluir.
+  * Corregido problema que impedía la catalogación con idevices ImageGallery.
+
+  [Ignacio Gros]
+  * Corregido bug #1342 "XHTML no valida cuando sólo hay una página (sitio
+    web)"
+  * Corregido bug #1422 (ID duplicado en el menú de navegación)
+  * Corregido bug #1423 (Incluir un favicon al exportar como sitio web)
+
+  [Pedro Peña]
+  * Corregido bug #1408 (Error en el comando de importación de xml)
+  * Corregido bug #1419 (eXe no elimina contenidos desenlazados/eliminados de
+    sus proyectos)
+  * Corregido bug #1427 (Compatibilidad entre la futura versión y posteriores)
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 13 Jun 2012 13:43:22 +0200
+
+python-exe (1:1.04.1.3605intef6) lucid; urgency=low
+
+  [Antonio Moreno]
+  * Corregido bug #1399 (Applets de Descartes con nombres entrecomillados)
+  * Corregido problema al abrir ciertos applets JClic en editor eXe
+  * Recolocado lanzador de eXe en menú Educación en sistemas Debian/Ubuntu
+
+  [Andoni Tolosa]
+  [José Miguel Andonegui]
+  * Mejoras en la traducción al euskera
+
+  [Pedro Peña]
+  * Corregido bug #1404 (Cambiar el orden de prioridad entre content.data y
+    content.xml al abrir un archivo)
+  * Añadido "epoch" a la versión en sistemas Debian/Ubuntu
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 09 Mar 2012 08:22:45 +0100
+
+python-exe (1.04.1.3605intef6rc2) lucid; urgency=low
+
+  [Mikel Larreategui]
+  * Corregido bug #1382 (Error al abrir con OmegaT archivos con algunas
+    entidades).
+
+  [Antonio Moreno]
+  * Mejoras en el Idevice Applet de java
+  * Añadido estilo Kyoku
+  * Actualización de estilo Cedec
+
+  [José Miguel Andonegui]
+  * Traducción al español y euskera de cadenas de los últimos desarrollos de ULHI
+
+  [Pedro Peña]
+  * Corregidos bugs #1383 y #1389 (Ventanas de TinyMCE que se quedan detrás de la
+    principal después de seleccionar un fichero).
+  * Corregido bug #1365 (Los estilos no están ordenados por orden alfabético)
+  * Corregido bug #1387 (Eliminar inserción automática de enlace debajo de
+    contenido audiovisual)
+  * Se incluye la versión de Firefox 10.0.2 en los instaladores de Windows y
+    Mac OS.
+  * Asistente para la exportación e importación de XLIFF. Añadidos nuevos
+    parámetros de configuración. (ULHI)
+  * Mejoras en el comando exe_do: ahora es posible exportar/importar elp's a
+    diferentes formatos desde consola. (ULHI)
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 24 Feb 2012 11:24:21 +0100
+
+python-exe (1.04.1.3605ite6rc1) lucid; urgency=low
+
+  [José Miguel Andonegui]
+  * Revisión de la traducción al euskera de eXe
+
+  [Pedro Peña]
+  * Al guardar un elp se incluye en éste un fichero xml "content.xml", 
+    junto con su esquema, equivalente al "content.data".
+  * El "content.xml", en caso de que exista, prevalece sobre el "content.data"
+    al abrir un elp.
+  * Añadido comando exe_do para extraer/incluir un fichero xml equivalente al
+    "content.data" de un elp. Se mantiene sincronizado el "content.data" al
+    incluir el xml.
+  * Actualización de cadenas de todas las traducciones para incluir cadenas que
+    faltaban por los nuevos desarrollos
+  * Se establece nueva clase en el menú de navegación para mejorar la
+    presentación al exportar como página web
+  * Corregido error en Idevice Galería de Imágenes en versión para Mac OS X
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 09 Dec 2011 18:16:46 +0100
+
+python-exe (1.04.1.3605ite6beta2) lucid; urgency=low
+
+  [José Miguel Andonegui]
+  * Traducciones al euskera y al español de menus de importador/exportador
+    XLIFF
+
+  [Pedro Peña]
+  * Actualización de cadenas de todas las traducciones para incluir cadenas que
+    faltaban por los nuevos desarrollos
+  * Reubicaión de las entradas de menú del importador/exportador de XLIFF
+  * Adaptado prefs.js de Firefox para que no compruebe extensiones ni pregunte
+    en ningún caso al usuario al iniciar eXe
+  * Corregido error por el cual no aparecía el icono del plugin media de TinyMCE
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 07 Dec 2011 08:45:52 +0100
+
+python-exe (1.04.1.3605ite6beta1) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Integradas plantillas originales de Todo FP (FPD-MEDU)
+  * Mejoras y compatibilidad de las plantillas en plugin pastecode de TinyMCE
+  * Paginación en parte superior de la página + Compatibilidad
+    plantillas
+  * Página de inicio al mismo nivel que las demás al exportar como sitio web
+  * Primeras plantillas con navegación horizontal y menús desplegables
+  * Corrección i18n EN de plugin pastecode de TinyMCE
+
+  [José Miguel Andonegui]
+  * Corrección i18n euskera de plugin pastecode de TinyMCE
+
+  [Mikel Larreategui]
+  * Reemplazo de todas las ocurrencias de & por &amp; al exportar a XLIFF
+  * Se fuerza la extensión .xlf en los ficheros generados al exportar a XLIFF
+
+  [Pedro Peña]
+  * Añadida parcialmente configuración de TinyMCE de TodoFP para que vuelva a
+    funcionar el plugin advimage (inclusión de imágenes)
+  * Deshabilitado splash al iniciar eXe cuando se pulsa sobre un paquete elp
+  * Deshabilitada por versión la comprobación de compatibilidad y seguridad de
+    extensiones al iniciar Firefox
+  * Deshabilitada la búsqueda de nuevas versiones de buscadores al iniciar
+    Firefox
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 05 Dec 2011 08:20:52 +0100
+
+python-exe (1.04.1.3605ite5.1) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Control de la apariencia del código en plugin pastecode de TinyMCE
+  * Bug: no se debía abrir el diálogo con CTRL+V en plugin pastecode de TinyMCE
+  * Añadidos iconos para los iDevices de Todo FP
+
+  [Pedro Peña]
+  * Corregido error al insertar elementos multimedia con plugin media de TinyMCE
+  * Se vuelven a aplicar los cambios de TodoFP a common.js para que funcione el
+    botón de feedback de algunos IDevices
+  * Fijado valid_elements de TinyMCE para que valide lo especificado
+    estrictamente en el estándar XHTML 
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 30 Nov 2011 09:36:33 +0100
+
+python-exe (1.04.1.3605ite5) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Nuevas plantillas Todo FP
+  * Revisión de la plantilla ITE
+  * Plugin para TinyMCE que permite pegar fragmentos de código
+
+  [Mikel Larreategi]
+  * Importador/exportador de XLIFF
+ 
+  [Jose Miguel Andonegui]
+  * Traducción al euskera de TinyMCE
+
+  [Juan Rafael Fernández]
+  * Mejoras en la traducción al español
+
+  [Pedro Peña]
+  * Actualización de Geogebra a versión 4.0.10
+  * Integrados cambios de Todo FP versión 1.04.0.3532p4 salvo los que afectan a TinyMCE
+  * Se establece por defecto la plantilla ITE
+
+  * Traducción al español de TinyMCE
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 24 Nov 2011 18:37:02 +0100
+
+python-exe (1.04.1.3605ite4) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Actualización versión *.jar Geogebra (3.2.46.0). / Geogebra *.jar version update (3.2.46.0)
+
+  [Pedro Peña]
+  * Cambiada la arquitectura del paquete DEB a any para que no se muestren los
+    mensajes de paquete de mala calidad al instalar con Centro de Software de
+    Ubuntu
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Sat, 15 Oct 2011 13:29:47 +0200
+
+python-exe (1.04.1.3605ite3) lucid; urgency=low
+  
+  [Mario Izquierdo]
+  * exe.desktop exe.xml debian/rules: Rename MIME to application/x-exe-learning
+    and install exe.xml in /usr/share/mime/packages  
+  * exe/application.py: Fix exception IOError=>OSError, and catch posible UTF-8
+    filename errors in splash
+
+  [Ignacio Gros]
+  * BUG: no se estaba incluyendo common.js al exportar como sitio web
+  * Imagen de fondo para los títulos de cada página en IMS y Página sola
+
+  [Pedro Peña]
+  * Corregido error por el cual se cerraba el navegador en lugar de mostrar mensaje
+    indicando que hay que hacerlo mediante el menu Archivo
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 23 Sep 2011 14:27:05 +0200
+
+python-exe (1.04.1.3605ite2) jaunty; urgency=low
+
+  * TinyMCE:
+        Añadido Buscar/Reemplazar.
+        Codificación de caracteres JS.
+        Cambio en la redacción de algunas cadenas en la traducción al español.
+  * Apariencia:
+        Resubidas las plantillas del CEDEC.
+        Añadido icono de atención.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 02 Sep 2011 10:43:29 +0200
+
+python-exe (1.04.1.3605ite1) jaunty; urgency=low
+
+  * Mejoras de accesibilidad:
+        El título de la página es ahora un título de primer nivel (h1).
+        Los títulos de los iDevices pasan a ser h2.
+        Los cambios se aplican a sitios web, IMS y Scorm.
+        Al exportar como página única los títulos también son coherentes (h1, h2).
+        El menú principal (navegación) es ahora un listado XHTML válido semánticamente correcto (niveles anidados).
+  * TinyMCE:
+        Permitimos la inclusión de títulos (h1, h2, etc.) desde TinyMCE.
+        Cambiamos el orden de los iconos de TinyMCE para mejora la usabilidad de la aplicación.
+        La configuración de TinyMCE se pasa a un fichero externo (JavaScript), de manear que su personalización es mucho más sencilla.
+        TinyMCE es ahora internacionalizable (se muestra en un idioma u otro según las preferencias de usuario y siempre que el idioma seleccionado esté en la lista de idiomas del fichero de configuración de TinyMCE).
+        Traducción completa del TinyMCE de eXe y sus plugins al castellano (es).
+  * Apariencia:
+        Incorporación de la primera versión del theme para eXe del ITE.
+        Incorporación de las plantillas del CEDEC.
+        Se hacen compatibles las diferentes plantillas con las mejoras descritas más arriba.
+  * Incluidos cambios de upstream versión 3605.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 29 Jul 2011 13:24:39 +0200
+
+python-exe (1.04.1.3598op10) jaunty; urgency=low
+
+  * Actualización de los créditos.
+  * Actualización de Geogebra, gracias a Diego Hernández.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 30 Sep 2010 11:41:13 +0200
+
+python-exe (1.04.1.3598op9) jaunty; urgency=low
+
+  * Implementada la cancelación de la importación. Al cerrar la ventana información sobre
+    la importación pide confirmación de la cancelación.
+  * Mejora en la detección del encoding del contenido HTML. Prevalece el valor que se 
+    haya especificado en el propio documento mediante 'charset'.
+  * Añadida dependencia de firefox o iceweasel.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 08 Jul 2010 12:28:15 +0200
+
+python-exe (1.04.1.3598op8.1) jaunty; urgency=low
+
+  * Construcción en Jaunty.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 17 Jun 2010 11:51:07 +0200
+
+python-exe (1.04.1.3598op8) lucid; urgency=low
+
+  * Añadida selección del punto de entrada del curso HTML
+  * El análisis de directorio inicial informa de fallos de encoding en nombres de fichero
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 14 Jun 2010 10:32:55 +0200
+
+python-exe (1.04.1.3598op7) karmic; urgency=low
+
+  * Arreglo de fallos menores
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 23 Apr 2010 12:22:02 +0200
+
+python-exe (1.04.1.3598op6) karmic; urgency=low
+
+  * Implementada solución a la problemática con frames
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 16 Apr 2010 16:58:59 +0200
+
+python-exe (1.04.1.3598op5) jaunty; urgency=low
+
+  * Implementada información de progreso durante la importación de HTML
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Thu, 25 Mar 2010 18:04:17 +0100
+
+python-exe (1.04.1.3598op4) jaunty; urgency=low
+
+  * Versión inicial que importa cursos HTML al formato nativo de eXe Learning
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 24 Mar 2010 07:39:09 +0100
+
+python-exe (1.04.1.3598op3) jaunty; urgency=low
+
+  * Cambios para el empaquetado en windows
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 08 Feb 2010 15:55:22 +0100
+
+python-exe (1.04.1.3598op2) unstable; urgency=low
+
+  * Corregido error por el cual no se importaba bien la libreria scrapy
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 03 Feb 2010 19:22:40 +0100
+
+python-exe (1.04.1.3598op1) unstable; urgency=low
+
+  * Versión preliminar con captura de la estructura del curso HTML en el asistente de importación
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 02 Feb 2010 09:39:59 +0100
+
+python-exe (1.04.1.3598-ubuntu1) unstable; urgency=low
+    * Add max score reporting to LMS for SCORM Quiz
+    * Add username to startup lock file to permit multiple users on same machine
+    * Fix image gallery to allow captions containing apostrophes
+    * Fix field IDs so that adding to a previously saved elp is consistent
+    * Fix Common Cartridge manifest when a header image is used
+    * Fix OS X and Linux configDir Firefox profile on filesystem without colon
+    * Fix display of translated help for Multi-Select iDevice editing
+    * Workaround AVG anti-virus adding itself to eXe Firefox on Windows
+    * Make startup lock file parsing more robust
+    * Only include a copy of GNU FDL if that is the license selected
+    * Re-enable loading of user extended iDevices from config directory
+    * Translation updates
+
+ -- eXe Project <exe@exelearning.org>  Fri, 18 Dec 2009 09:28:51 +1200
+
+python-exe (1.04.0.3532-ubuntu1) unstable; urgency=low
+    * Add offline snapshot of manual, release notes, and tutorial to Help menu
+    * Add undo button to discard changes after editing
+    * Add automatic auto_top anchors to facilitate internal linking to each node
+    * Add ability to translate tooltips
+    * Fix handling of multi-select questions with 10 or more options
+    * Fix tip display at right edge of windows
+    * Fix Common Cartridge resource references
+    * Fix package property display with Firefox 3.0 (no properties translations)
+    * Improve Common Cartridge metadata formation
+    * Improve Wiki Article iDevice handling of pages without content div
+    * Improve Firefox version detection for 3.0b series (Linux)
+    * Remove CSS letter-spacing to improve rendering with some fonts (Khmer)
+    * Prototype ability to load eXe-authored Common Cartridges
+    * Automate building Debian changelog and versioning
+    * Update to BeautifulSoup 3.0.6 (character coding detection issues)
+    * Translation updates and additions
+
+ -- eXe Project <exe@exelearning.org>  Fri, 09 May 2008 00:00:00 +1200
+
+python-exe (1.03.0.3373-ubuntu1) unstable; urgency=low
+    * Add linking across pages within a package (only for web export)
+    * Add note that SCORM export previous/next requires non-standard extension
+    * Add prototype IMS Common Cartridge export (no quizzing)
+    * Add Rel-License microformat to license urls in exported content
+    * Make importing old packages more robust (and remove unused resources)
+    * Fix merging packages that contain resources with same name as main package
+    * Fix upgrading of multichoice questions
+    * Fix escaping of ampersands in rich text fields, allowing HTML embedding
+    * Fix embedding of images and media with '#' in name
+    * Fix SCORM Quiz pass rate to signal pass for scores of exactly the rate
+    * Update to BeautifulSoup 3.0.5
+    * Translation updates
+
+ -- eXe Project <exe@exelearning.org>  Mon, 21 Jan 2008 00:00:00 +1200
+
+python-exe (1.02.0.3303-ubuntu1) unstable; urgency=low
+    * Add ability to type resource name into url box (without browse button)
+    * Add CSS divs around nodes in single page and print exports for pagination
+    * Add detailed uninstall name, links, icon for Windows
+    * Make reading very old eXe packages more robust if corruption encountered
+    * Fix XHTML for div wrapper of Java Applet iDevice export
+    * Add ID, TH translations
+
+ -- eXe Project <exe@exelearning.org>  Mon, 01 Oct 2007 00:00:00 +1200
+
+python-exe (1.01.0.3265-ubuntu1) unstable; urgency=low
+    * Add embedded MP3 player as a rich text editor media type
+    * Add FLV player as rich text editor media type
+    * Add DIV around each iDevice on web/ims/scorm export
+    * Add disabling SUBMIT ANSWERS button in SCORM Quiz after first submission
+    * Fix web folder export to convert filenames to safe ASCII characters
+    * Fix iPod Notes export to write UTF-8 index (non-ASCII node names)
+    * Fix XHTML generated for SCORM Quiz
+    * Fix XHTML generated for True-False question feedback
+    * Fix reading of exe.conf files that have UTF-8 "byte order mark"
+    * Fix insertion of non-ASCII package names in Recent Projects list
+    * Change license footer text so translators can ignore trailing space
+    * Change RPM spec file to work better with openSUSE
+    * Remove deprecated dublincore.xml metadata file from SCORM 1.2 packages
+    * Updated DE,FR,IT,PL translations
+
+ -- eXe Project <exe@exelearning.org>  Wed, 05 Sep 2007 00:00:00 +1200
+
+python-exe (1.00.0.3219-ubuntu1) unstable; urgency=low
+    * Fix styles to use relative line height rather than absolute
+    * Fix splash progress bar to indicate 100%
+    * Fix iDevice deletion issues including read-only resources
+    * Fix display of embedded image borders
+    * Fix header text display in single page export and printing
+    * Make merging packages more robust
+    * Make default IMS/SCORM Metadata title description from package values
+    * Change export to folder to not change UTF-8 filenames
+    * Update About box
+
+ -- eXe Project <exe@exelearning.org>  Fri, 17 Aug 2007 00:00:00 +1200
+
+python-exe (0.99.0.3186-ubuntu1) unstable; urgency=low
+    * Add splash screen for when launching eXe by double-clicking .elp
+    * Add warning screen for trying to launch multiple copies of eXe
+    * Add warning for trying to run an older version of eXe with newer data
+    * Add Catalan Wikipedia
+    * Add file browser to rich text editor link popup for including files
+    * Fix re-enable Flash autoplay attribute
+    * Fix multi-select option feedback
+    * Fix SCORM Quiz to allow deleting individual questions
+    * Change text export to decode HTML entities into UTF-8 string
+    * Remove media plugin detection allowing authoring without media plugin
+    * Allow specifying VCARD type in metadata fields for SCORM export
+    * Allow non-ASCII characters in embedded media filenames
+    * Slightly reduce eXe package size by not storing multiple copies of text
+    * Updated German, Japanese, and Chinese translations
+
+ -- eXe Project <exe@exelearning.org>  Fri, 10 Aug 2007 00:00:00 +1200
+
+python-exe (0.98.0.3136-ubuntu1) unstable; urgency=low
+    * Add ability to insert MimeTeX math images in any field with TinyMCE
+    * Add message to RSS iDevice for when feed fails
+    * Add labels to items added in the iDevice editor edit display
+    * Add feedback display for each option of multi-select iDevice (not score)
+    * Add font family, background colors, advanced horizontal rule to TinyMCE
+    * Fix Image Gallery popup to start at images beyond first row
+    * Fix Image Gallery to handle unicode captions and previous/next
+    * Fix SCORM Quiz scoring to send normalized 0..100 score to LMS
+    * Fix SCORM 1.2 export that was missing ims_xml schema
+    * Fix display of package header image by adding a Show Image button
+    * Change embedded media to default to auto-fit and not autoplay
+    * Attempt to decode HTML character entities on text export
+    * Start using IMS LRM metadata for SCORM 1.2 exports
+    * Upgrade Maths iDevice into math image in a Free Text iDevice
+    * Deprecate media iDevices (can be re-enabled in exe.conf)
+    * Many translation updates
+    * Update Firefox to 2.0.0.6
+
+ -- eXe Project <exe@exelearning.org>  Fri, 03 Aug 2007 00:00:00 +1200
+
+python-exe (0.97.0.3024-ubuntu1) unstable; urgency=low
+    * Add ability to embed media in text areas using TinyMCE toolbar
+    * Fix display of header image in Properties... Package
+    * Fix web export when package references a missing header image
+    * Fix rapid clicking of outline pane buttons
+    * Fix HTML emitted for gallerypopup
+    * Fix printing on WINE
+    * Fix gallery iDevice's deletion of thumbnail when removing image
+    * Improve loading time of large packages
+    * Translation updates
+    * Upgrade TinyMCE to 2.1.1.1
+
+ -- eXe Project <exe@exelearning.org>  Thu, 19 Jul 2007 00:00:00 +1200
+
+python-exe (0.96.0.2976-ubuntu1) unstable; urgency=low
+    * Add ability to edit (delete) broken iDevices in a package
+    * Allow preferences to change locale without triggering POSTDATA message
+    * Greatly improve the ability to load packages created with older versions
+    * Fix ability to delete iDevices with missing resources
+    * Fix unicode parsing of Wikipedia pages
+    * Fix rendering of attachment elements of custom iDevices
+    * Fix display True/False hint icon only if there is a hint
+    * Fix IMS CP export if metadata contains non-ASCII characters
+    * Fix deletion of file resources when deleting applet iDevice
+    * Fix deletion of resources when no longer referencing them in textareas
+    * Change to just use shorter basename for filename of images in textareas
+    * Change custom iDevices to open attachments in preferred browser
+    * Change spec file so RPM can be built on F7 in addition to FC6
+
+ -- eXe Project <exe@exelearning.org>  Tue, 10 Jul 2007 00:00:00 +1200
+
+python-exe (0.95.0.2931-ubuntu1) unstable; urgency=low
+    * Add ability to embed images in text areas with TinyMCE
+    * Remove Image With Text iDevice, migrates to Free Text iDevice
+    * Remove image field from iDevice editor
+    * Java applet, SCORM Quiz, and Flash Movie now regular iDevices not plugins
+    * Display warning when user tries to close main eXe window
+    * Opening attachments in preview mode now uses preferred browser
+    * Add FTP to possible external web sites
+    * Fix position of iDevice edit button for SCORM Quiz
+    * Fix include content package schemas in RPM/DPKG packages
+    * Fix gallery slideshow to include caption for last image
+    * Fix gallery iDevice so it doesn't require clicking done check to register
+    * Fix iDevice editor display in French
+    * Fix packaging of CP and SCORM schemas in RPM and DPKG
+    * Change how Maths iDevice temporary file is created
+    * Workaround French Wikipedia parsing of &#160; in attributes
+    * Translation updates, including addition of Catalan
+    * Update to BeautifulSoup 3.0.4
+
+ -- eXe Project <exe@exelearning.org>  Sun, 24 Jun 2007 00:00:00 +1200
+
+python-exe (0.24.0.2857-ubuntu1) unstable; urgency=low
+    * Rewrite anchor tags in textareas in preview mode to use local browser
+    * Restrict Image Magnifier selection to jpg images
+    * Fix position of iDevice edit button in preview mode
+    * Fix Multi-Select iDevice icon
+    * Fix Reading Activity display after changing language preference
+    * Fix alignment of attachment iDevice in edit mode
+    * Fix Case Study image size
+    * Fix SCORM Quiz icon export
+    * Fix Win32: starting application by double-clicking long document name
+    * Fix Win32: print URLs
+    * Fix bullet point text wrap
+    * Fix unique resource names (bug most often seen in Image Gallery hanging)
+    * Add attachment button/field to iDevice editor
+    * Add image and media filenames when re-editing iDevices
+    * Add Hungarian Wikipedia
+    * Add Quit button to iDevice editor
+    * Add [idevices] section to exe.conf to prevent some from showing in list
+    * Add exe.desktop and icon files to the Linux builds
+    * Change Image Gallery popup Javascript to start at image other than first
+    * Move temp_print_dirs to a temporary directory
+    * Improve version check for ready2run deletion/extraction
+    * Improve check for a copy of eXe server already running on launch
+    * Improve Gallery slideshow feature
+    * Updated translations and added Hungarian and Ukranian
+    * Update RPM and Debian build processes
+    * Update to Python 2.5.1
+    * Update to BeautifulSoup 2.1.1 for wiki parsing
+
+ -- eXe Project <exe@exelearning.org>  Thu, 31 May 2007 00:00:00 +1200
+
+python-exe (0.23.0-ubuntu1) unstable; urgency=low
+    * Change FLV player to FlowPlayer
+    * Move Refresh menu button to a Tools menu item
+    * Add links to online manual, tips and tricks, and release notes to Help menu
+    * Add iPod Notes format export
+    * Add Wikiversity
+    * Add "Clear Recent Projects" menu item
+    * Add check for existing eXe server when starting new one
+    * Allow translations for some Javascript message strings
+    * Fix Styles menu to display capitalized, alphabetized list
+    * Fix Styles menu to accept normal click-select-release
+    * Disable Nevow timeout exceptions that could be triggered by Firefox dialogs
+    * Update to TinyMCE 2.1.0
+
+ -- Jim Tittsler <jim@exelearning.org>  Mon, 02 Apr 2007 15:38:52 +1200
+
+python-exe (0.22.0-ubuntu1) unstable; urgency=low
+    * Add File... Print to print an entire course (same as export singlepage)
+    * Add attachment icon in preview mode
+    * Add Slate style
+    * Add help tips for multi-select iDevice
+    * Don't add unneeded large files to SCORM exports
+    * Fix maintaining language preference across starts
+    * Fix Merge Import and Extract
+    * Fix maths iDevice input file descriptor on Windows
+    * Fix uploads of non-ASCII filenames
+    * Fix line endings in text exports
+    * Fix file copying in applet iDevice
+    * Fix &raquo; in web export
+    * Changing to another node does not mark package as needing saving
+    * Updated translations
+    * Updated build scripts for Windows and OS X
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:59:52 +1300
+
+python-exe (0.21.0-ubuntu1) unstable; urgency=low
+    * Enabled rich text editor context menu cut/copy/paste
+    * Add import/export features for iDevice editor
+    * Update parsing of Wikipedia articles
+    * Improve text export
+    * Optimize internal resource handling
+    * Windows: removed console window
+    * Updated translations
+    * Include SCORM Quiz iDevice in Windows ready2run version
+    * fix FLV player dimensions
+    * fix web export CSS for MSIE
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:58:52 +1300
+
+python-exe (0.20.2-0ubuntu1) unstable; urgency=low
+    * Improved Japanese translation
+    * Add Live Chat to Help menu to open link that connects to IRC CGI
+    * Fix to allow use of iDevices created in 0.19
+    * OS X: Add SCORM 1.2 export schema
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:57:53 +1300
+
+python-exe (0.20.1-0.1ubuntu1) unstable; urgency=low
+    * Improved ability to upgrade projects made with version 0.19 and earlier
+    * Updated Japanese and Chinese translations
+    * Removed access to SCORM2004 export
+    * Fix translation ability of math field
+    * Disable Firefox update check
+    * Improved IDevice Editor
+    * Geogebra iDevice
+    * Add SCORM2004 export
+    * Improve loading speed of some complex eXe packages
+    * Add the ability to have an optional footer on all pages of project
+    * Keep hidden backup .elp
+    * Update copyright
+    * Add release and revision to ready2run splash screen
+    * Add work around for broken Microsoft Word span tags
+    * Many, many bug fixes (see http://exelearning.org/projects/exe1/milestone/0.20%20Arachnidian%20Avondale)
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Fri, 02 Feb 2007 18:57:52 +1300
+
+python-exe (0.19.1-0.1ubuntu1) unstable; urgency=low
+    * Went back to old firefox
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 17 Nov 2006 17:46:23 +1300
+
+python-exe (0.19-0.1ubuntu1) unstable; urgency=low
+    * MP3 iDevice
+    * Make Scorm Quiz work in IE in moodle
+    * Turn Multichoice Question IDevice into Multichoice Quiz
+    * New firefox
+    * Other bug fixes (see http://exelearning.org/projects/exe1/milestone/0.19%20Tidy%20Tui)
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 27 Oct 2006 11:56:57 +1300
+
+python-exe (0.18-0.1ubuntu1) unstable; urgency=low
+
+    * Maths IDevice
+    * Ability to include image in Case Study feedback field.
+    * Added Multimedia IDevice (play mp3 and wmv video).
+    * Added Czech, Tagalog, Twi and Ewe languages.
+    * Have previous/next be translated in export to website.
+    * Various bug fixes.
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 12 Sep 2006 13:32:15 +1300
+
+python-exe (0.17-0.1ubuntu1) unstable; urgency=low
+
+    * Text export for mobile devices
+    * Various bug fixes
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 01 Aug 2006 14:07:12 +1300
+
+python-exe (0.16-0.1ubuntu1) unstable; urgency=low
+
+    * Added slovenian and french languages
+    * Fixed bug in True/False IDevice not storing instructions
+    * Fixed bug with gallery images with umlautes in filenames
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
+
+python-exe (0.15-0.1ubuntu1) unstable; urgency=low
+
+    * Add a background image to the package properties
+    * Added Slovenian wiki url to wiki iDevice
+    * Added Zulu translation
+    * Numberous bug fixes including
+    * Discussion Activity" for non English
+    * Outline location and content page opened match
+    * Flash with text in IE
+    * Attachment with Chinese filename
+    * Upgraded Cloze iDevice
+    * Copyright notice updated for 2006
+    * Level names update
+    * Magnifier iDevice interface cleanup
+    * Right strings in dublin core properties
+    * Correct url for Italian Wikipedia
+    * Chinese Wikipedia article search
+    * Wikipedia storing emphasis
+    * Wikipedia iDevice "saves" title edits
+    * Images in Wikieducator iDevice
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
+
+python-exe (0.14-0.1ubuntu1) unstable; urgency=low
+
+  * New properties pages with dublin core properties for export
+  * Better International Support
+  * Better XHTML Compliance
+  * Styling and CSS improvements
+  * Next/Previous buttons on SCORM export
+  * New editor for Cloze IDevice
+  * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.13-0.1ubuntu1) unstable; urgency=low
+
+    * Cleverer ready to run version 
+    * Better International Support
+    * Image magnifier IDevice
+    * New Gallery Interface
+    * Better XHTML Compliance
+    * Stabalisation of SCORM Quiz
+    * Styling and CSS improvements
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.12-0.1ubuntu1) unstable; urgency=low
+
+    * Merging: insert and extract packages
+    * Discussion iDevice plug-in
+    * Enhanced Cloze iDevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.11-0.1ubuntu1) unstable; urgency=low
+
+    * New Flash movie iDevice
+    * Feedback field in iDevice Editor
+    * Mac release
+    * Dutch, Icelandic and Swedish languages
+    * Online registration with exelearning.org
+    * Improved Wikipedia Idevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.10-0.1ubuntu1) unstable; urgency=low
+
+    * Browser interface with much better usability
+    * Using TinyMCE rich text editor
+    * Preferences dialog for changing language
+    * German, Greek, Spanish and Chinese languages
+    * New Style: Kahurangi
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.9-0.1ubuntu1) unstable; urgency=low
+
+    * More work on GtkMozEmbed interface
+    * Drag and drop tree
+    * New Cloze and External Website iDevices
+    * Bug Fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.8-0.1ubuntu1) unstable; urgency=low
+
+    * Return to web interface
+    * iDevice plug-in interface
+    * Flash iDevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.7-0.1ubuntu1) unstable; urgency=low
+
+    * Experimental GtkMozEmbed interface
+    * Gallery iDevice
+    * Improved iDevice editor
+    * New default style
+    * Single page export
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.6-0.1ubuntu1) unstable; urgency=low
+
+    * New Attachment and Wikipedia iDevices
+    * ImageWithText iDevice can now have image left or right aligned
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.5-0.1ubuntu1) unstable; urgency=low
+
+    * True-False Question iDevice
+    * Image and Text iDevice
+    * ongoing code development
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.4-0.1ubuntu1) unstable; urgency=low
+
+    * basic iDevice editor
+    * XUL interface development
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.3-0.1ubuntu1) unstable; urgency=low
+
+    * modified Case Study iDevice
+    * new Web Site export
+    * Firefox bundled with eXe as one install
+    * Improved file format (not sure it will be final)
+    * A new installer which will launch the User Guide when finished
+      and will remove old versions of eXe
+    * Fixes for bugs # 7, 13, 14, 10, 9, 22, 24, 25, 4, 37, 15, 18, 34, 35
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.2-0.1ubuntu1) unstable; urgency=low
+
+    * significant improvements in the user interface
+    * the addition of more iDevices
+    * the ability to change Styles
+    * the addition of pedagogical help and tips to iDevices.
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.1-0.1ubuntu1) unstable; urgency=low
+
+    * initial release
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+

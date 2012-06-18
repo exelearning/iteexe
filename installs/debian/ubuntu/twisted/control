@@ -1,0 +1,98 @@
+Source: twisted
+Section: python
+Priority: optional
+Maintainer: Matthias Klose <doko@debian.org>
+Build-Depends: debhelper (>= 4.2), python2.4-dev, python2.4-zopeinterface, fortune-mod, python, patch
+Standards-Version: 3.6.1
+
+Package: python-twisted
+Architecture: all
+Depends: ${python:Depends}, python-zopeinterface
+Suggests: python-tk, python-gtk2, python-glade-1.2, python-glade2, python-qt3, python-wxgtk2.4 | python-wxgtk2.6, python-profiler
+Recommends: python-pyopenssl, python-pam, python-serial
+Conflicts: python2.3-twisted (<< 2.0), python2.4-twisted (<< 2.0), toursst (<= 0.0.3ubuntu1), pymusique (<= 0.5-0.3), python-textile (<= 2.0.10-3), python-ldaptor (<= 0.0.41), londonlaw (<= 0.2.0-2), libunderware (<= 0.2.12-1), ardour-session-exchange (<= 0.9beta29-1), apt-proxy (<= 1.9.30), python2.4-twistedweb
+Replaces: python2.3-twisted (<< 2.0), python2.4-twisted (<< 2.0), python2.4-twistedweb
+Provides: python2.4-twistedweb
+Description: Event-based framework for internet applications (dummy package)
+ This is a dummy package that depends on the twisted library for the
+ default version of Python.
+ .
+ It replaces the "twisted" package, which was non-policy compliant.
+
+Package: python2.4-twisted
+Architecture: all
+Depends: ${python:Depends}, python2.4-twisted-bin, python2.4-zopeinterface
+Suggests: python2.4-tk, python2.4-gtk2, python2.4-glade2, python2.4-qt3, twisted-doc, python2.4-twisted-conch, python2.4-profiler
+Recommends: python2.4-pyopenssl, python2.4-pam
+Conflicts: python2.3-twisted (<< 2.0), python2.4-twisted (<< 2.0), toursst (<= 0.0.3ubuntu1), pymusique (<= 0.5-0.3), python-textile (<= 2.0.10-3), python-ldaptor (<= 0.0.41), londonlaw (<= 0.2.0-2), libunderware (<= 0.2.12-1), ardour-session-exchange (<= 0.9beta29-1), apt-proxy (<= 1.9.30), python2.4-twistedweb
+Replaces: python2.1-twisted, python2.3-twisted (<< 2.0), python2.4-twisted (<< 2.0.1-999), python2.4-twistedweb
+Provides: python2.4-twistedweb
+Description: Event-based framework for internet applications
+ It includes a web server, a telnet server, a multiplayer RPG engine, a 
+ generic client and server for remote object access, and APIs for creating 
+ new protocols.
+ . 
+ This version is usable with python2.4
+
+Package: python2.4-twisted-bin
+Architecture: any
+Depends: ${python:Depends}, ${shlibs:Depends}
+Description: Event-based framework for internet applications
+ It includes a web server, a telnet server, a multiplayer RPG engine, a 
+ generic client and server for remote object access, and APIs for creating 
+ new protocols.
+ . 
+ This package contains the architectures specific files for python2.4-twisted
+
+Package: twisted-doc
+Section: doc
+Architecture: all
+Suggests: twisted
+Recommends: www-browser | postscript-viewer | pdf-viewer, twisted-doc-api
+Description: The official documentation of Twisted
+ This contains various HOWTOs and overviews in various formats
+ .
+ Twisted is an event-based framework for internet applications.
+ It includes a web server, a telnet server, a multiplayer RPG engine, a 
+ generic client and server for remote object access, and APIs for creating 
+ new protocols.
+
+Package: twisted-doc-api
+Section: doc
+Architecture: all
+Depends: twisted-doc
+Description: The auto-generated API docs of Twisted
+ Epydoc-generated HTML API docs of Twisted classes, modules and functions.
+ .
+ Twisted is an event-based framework for internet applications
+ It includes a web server, a telnet server, a multiplayer RPG engine, a 
+ generic client and server for remote object access, and APIs for creating 
+ new protocols.
+
+Package: twisted-quotes
+Section: net
+Architecture: all
+Suggests: twisted
+Depends: fortune-mod
+Description: Quotes from the Twisted development team
+ Quotes about programming, politics and anything else. Gathered by the
+ Twisted development team from IRC and e-mail.
+
+Package: python-twisted-conch
+Architecture: all
+Depends: ${python:Depends}, python-crypto
+Provides: conch
+Conflicts: python2.3-twisted-conch (<< 2.0), python2.4-twisted-conch (<< 2.0)
+Replaces: python2.3-twisted-conch (<< 2.0), python2.4-twisted-conch (<< 2.0)
+Description: The Twisted SSH Implementation (default python version)
+ A client/server implementation of the SSH protocol, using the
+ twisted framework
+
+Package: python2.4-twisted-conch
+Architecture: all
+Depends: ${python:Depends}, python2.4-twisted, python2.4-crypto
+Description: The Twisted SSH Implementation (for Python 2.4)
+ A client/server implementation of the SSH protocol, using the
+ twisted framework
+ . 
+ This version is usable with python2.4

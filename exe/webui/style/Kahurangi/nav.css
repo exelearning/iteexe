@@ -1,0 +1,238 @@
+/* ==========================================
+Copyright University of Auckland 2004
+Created by Brent Simpson, brent.simpson@auckland.ac.nz
+Centre for Flexible and Distance Learning
+============================================= */
+
+#header {
+    color: #006699;
+    background-color: transparent;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+#navcontainer {
+   z-index:1000;
+   width: 220px;
+   float: left;
+   margin-top: 50px;
+   text-align:left;
+   background-image: url(main_bg.gif);
+   font: .9em;
+   border: 1px solid #FFF;
+}
+
+#navcontainer ul {
+   margin-left: 0px;
+   padding-left: 0px;
+   margin-top: 0px;
+   list-style-type: none;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#navcontainer a {
+   display: block;
+   padding: 4px 0px 4px 18px;
+   border-bottom: 1px solid #F2F2EF;
+}
+
+#navcontainer a:link, #navlist a:visited {
+   color: #000000;
+   background-color: transparent;
+   text-decoration: none;
+   width: 202px;
+}
+
+#navcontainer a:hover {
+   color: #4d4d4d;
+   background-color:#EEEEEE;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #navcontainer {
+margin-right: 10px;
+}
+* html p {
+height: 1%;
+margin-left: 0;
+}
+/* End hide from IE5/mac */
+
+
+/* nodes with children get expandable icon */
+.withChild {
+ background-image: url(expand.gif);
+ background-repeat: no-repeat;
+ background-position: 2px 9px;
+}
+
+#active.withChild {
+padding: 4px 0px 4px 18px;
+background-color: #CDD4DC;
+background-image: url(collapse.gif) !important;
+background-repeat: no-repeat;
+color: #ffffff;
+}
+
+#active.withoutChild {
+padding: 4px 0px 4px 18px;
+background-color: #CDD4DC;
+color: #ffffff;
+}
+
+/* subnav is for displaying sections and units */
+
+#subnav a {
+width: 190px;
+border: 0 !important;
+padding: 4px 0px 4px 30px;
+}
+
+#subnav a:hover {
+color: #4d4d4d;
+background-color: #EEEEEE;
+padding: 4px 0 4px 30px;
+width: 190px;
+}	
+
+#subnav #active {
+background-color: #CDD4DC;
+color: #ffffff;
+width: 190px;
+padding: 4px 0 4px 30px;
+}	
+
+div > #subnav .withChild {
+background-image: url(expand.gif) !important;
+background-repeat: no-repeat !important;
+background-position: 14px 9px !important;
+}
+
+#subnav  div.withChild {
+background-image: url(collapse.gif) !important;
+background-repeat: no-repeat !important;
+background-position: 14px 9px !important;
+}
+
+#subnav .withoutChild  div {
+padding-left: 12px;
+width:190px;
+}
+
+#subnav .withoutChild #active {
+width:180px;
+margin-left: 0px;
+padding-left: 40px;
+}
+
+#subnav .withoutChild div a:hover {
+width:178px;
+margin-left: -12px;
+padding-left: 42px;
+}
+	
+/* MAIN CONTENT STYLES */
+#container {
+border-top: 0px solid #CCC;
+position:absolute;
+}
+
+#main {
+	padding: 18px;
+	margin: 0px 10px 10px 180px;
+	margin-left: 220px;
+	margin-top: 30px;
+	text-align:left;
+	width: 72%;
+	
+	
+}
+
+/* ITE elements */
+#siteNav {
+	z-index:1000;
+	width: 220px;
+	height: 100%; /* the holly hack for IE! */
+	float: left;
+	margin-top: 50px;
+	margin-left:10px;
+	text-align:left;
+	position:absolute;
+	left:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url(main_bg.gif);
+	font-size: .9em;
+	border: 1px solid #FFF;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {  /* sections not active */
+	display: block;
+	padding: 4px 0 4px 18px;
+	border-bottom: 1px solid #F2F2EF;
+	width: auto;
+	color:#000;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #4d4d4d;
+	background-color:#eee;
+}
+
+* html #siteNav ul,#siteNav li{ /* IE6 */
+	width:auto;
+}
+
+* html #siteNav a{ /* IE6 */
+	width:100%;
+	margin-left:-15px;
+}
+
+#siteNav li .active {
+	border-bottom: 1px solid #fff;
+	background-color: #CDD4DC;
+	color: #ffffff;
+}
+
+#siteNav .daddy {
+	background-image: url(collapse.gif);
+	background-repeat: no-repeat;
+	background-position: 2px 50%;
+}
+
+#siteNav .daddy.active {
+	background-image: url(expand.gif);
+	background-repeat: no-repeat;
+	background-position:3px 50%;
+}
+
+#siteNav ul ul a{
+	display: block;
+	border: 0 !important;
+	padding: 4px 0 4px 26px;
+	background-image:none !important;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+.pagination{
+	text-align:right;
+}
+
+/* Invisible content (visible for screen reader users) */
+#topPagination{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}

@@ -1,0 +1,5 @@
+#! /bin/sh
+svn diff $1 > $1.patch
+echo :vert diffpatch $1.patch > $1.script
+vim -f -c "e $1" -c "vert diffpatch $1.patch"
+rm $1.patch

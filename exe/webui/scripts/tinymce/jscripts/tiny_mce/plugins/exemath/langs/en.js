@@ -1,0 +1,28 @@
+// UK lang variables
+
+tinyMCE.addToLang('exemath',{
+desc : 'LaTeX to Math for eXe',
+contextmenu_update : 'LaTeX Math Image properties',
+generate_title : 'eXe LaTeX Math Image',
+verbose_font_size : 'Select a font size:', 
+font_size : 'Font size:', 
+compile_tooltip : 'Preview Math Image',
+compile_label:  'Preview',
+latex_source : 'Input LaTeX source:',
+image_src : 'generated Math Image',
+image_alt : 'Math Image description<br>(optional ALT tag):',
+tab_general : 'eXe Math: Generate',
+tab_appearance : 'eXe Math: Image Appearance',
+insert_text: 'verbatim text',
+insert_newline: 'new line',
+verbose_insert_symbols: 'Click below to insert LaTeX for any of the following symbols:',
+insert_symbols: ' ',
+verbose_insert_latex: 'And, add your own LaTeX directly into the following:',
+insert_latex: ' ',
+general : 'BOGUS: General',
+title : 'Title',
+preview : 'Preview of Math Image',
+constrain_proportions : 'Constrain proportions',
+style : 'Style',
+example_img : 'Appearance&nbsp;preview&nbsp;image',
+});

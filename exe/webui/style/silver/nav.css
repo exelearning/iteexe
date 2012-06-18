@@ -1,0 +1,215 @@
+/* ==========================================
+Copyright University of Auckland 2004
+Created by Brent Simpson, brent.simpson@auckland.ac.nz
+Centre for Flexible and Distance Learning
+============================================= */
+
+#header {
+    text-align: left;  
+    color: #FFF;
+    background-color: transparent;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+#navcontainer {
+   z-index:1000;
+   width: 250px;
+   float: left;
+   margin-top: 0px;
+   padding-top: 120px;
+   text-align:left;
+   position:absolute;
+   background-color:transparent;
+}
+
+#navlist {
+   margin-left: 30px;
+   position:absolute;
+}
+
+#navcontainer ul {
+   margin-left: 30px;
+   padding-left: 0;
+   margin-top: 0;
+   list-style-type: none;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#navcontainer a {
+   display: block;
+   padding: 4px 0 4px 6px;
+   background-color: #FFF;
+   border-bottom: 1px solid #ffffff;
+   width: 163px;
+   border-top: 1px solid #ffffff;
+}
+
+#navcontainer a:link, #navlist a:visited {
+   color: #4d4d4d;
+   background-color: #E0DFD8;
+   text-decoration: none;
+}
+
+#navcontainer a:hover {
+   color: #4d4d4d;
+   background-color:#c7c5b9;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #navcontainer {
+margin-right: 10px;
+}
+* html p {
+height: 1%;
+margin-left: 0;
+}
+/* End hide from IE5/mac */
+#navcontainer #active {
+padding: 3px 0 3px 6px;
+width: 149px;
+background-color: #706F61;
+color: #ffffff;
+border-bottom: 1px solid #fff;
+height: 20px;
+border-top: 6px solid #706f61;
+background-image:url(active_bg.gif);
+background-position:left middle;
+background-repeat:no-repeat;
+padding-left: 20px;
+}
+div #subnav {
+}
+#subnav a {
+display: block;
+border: 0 !important;
+width: 153px;
+margin-left: 10px;
+padding: 4px 0 4px 6px;
+font-size: 12px;
+font-size:11px;
+}
+#subnav a:hover {
+color: #4d4d4d;
+background-color: #C7C5B9;
+font-size:11px;
+}	
+#subnav #active {
+margin-left: 10px;
+background-color: #706F61;
+width: 139px;
+color: #ffffff;
+font-size:11px;
+background-image:url(active_bg.gif);
+background-position:left middle;
+background-repeat:no-repeat;
+height: 15px;
+border-top: 2px solid #706f61;
+}	
+/* MAIN CONTENT STYLES */
+#container {
+border-top: 0px solid #CCC;
+position:absolute;
+}
+#main {
+padding: 18px;
+margin: 0px 10px 10px 180px;
+margin-left: 210px;
+margin-top: 30px;
+position:absolute;
+text-align:left;
+width: 60%;
+}
+
+/* ITE elements */
+#siteNav {
+	z-index:1000;
+	width: 165px;
+	float: left;
+	margin:0 20px 0 30px;
+	padding-top: 120px;
+	text-align:left;
+	position:absolute;
+	background-color:transparent;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {
+	display: block;
+	padding: 4px 0 4px 6px;
+	border-bottom: 1px solid #ffffff;
+	width: 155px;
+	border-top: 1px solid #ffffff;
+	color: #4d4d4d;
+	background-color: #E0DFD8;
+	text-decoration: none;
+}
+
+#siteNav a:hover {
+	color: #4d4d4d;
+	background-color:#c7c5b9;
+}
+
+#siteNav a.active {
+	padding-left:18px;
+	width:143px;
+	background-color: #706F61;
+	color: #ffffff;
+	border-bottom: 1px solid #fff;
+	background-image:url(active_bg.gif);
+	background-position: -2px 1px;
+	background-repeat:no-repeat;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #siteNav {
+	margin-right: 10px;
+}
+
+#siteNav ul ul{
+	font-size:11px;
+}
+
+#siteNav ul ul a,#siteNav ul ul .active{
+	display: block;
+	border: 0 !important;
+	width: 135px;
+	margin-left: 10px;
+	padding: 4px 0 4px 16px;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+* html #siteNav { /* IE6 */
+	padding-top: 110px;
+}
+
+* html #siteNav .active{
+	width:155px !important;
+}
+
+* html #siteNav ul ul a,* html #siteNav ul ul .active { /* IE6 */
+	width:145px !important;
+}
+
+.pagination{
+	text-align:right;
+}
+
+/* Invisible content (visible for screen reader users) */
+#topPagination{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}

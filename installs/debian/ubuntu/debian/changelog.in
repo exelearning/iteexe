@@ -1,0 +1,275 @@
+python-exe (0.23.0-ubuntu1) unstable; urgency=low
+    * Change FLV player to FlowPlayer
+    * Move Refresh menu button to a Tools menu item
+    * Add links to online manual, tips and tricks, and release notes to Help menu
+    * Add iPod Notes format export
+    * Add Wikiversity
+    * Add "Clear Recent Projects" menu item
+    * Add check for existing eXe server when starting new one
+    * Allow translations for some Javascript message strings
+    * Fix Styles menu to display capitalized, alphabetized list
+    * Fix Styles menu to accept normal click-select-release
+    * Disable Nevow timeout exceptions that could be triggered by Firefox dialogs
+    * Update to TinyMCE 2.1.0
+
+ -- Jim Tittsler <jim@exelearning.org>  Mon, 02 Apr 2007 15:38:52 +1200
+
+python-exe (0.22.0-ubuntu1) unstable; urgency=low
+    * Add File... Print to print an entire course (same as export singlepage)
+    * Add attachment icon in preview mode
+    * Add Slate style
+    * Add help tips for multi-select iDevice
+    * Don't add unneeded large files to SCORM exports
+    * Fix maintaining language preference across starts
+    * Fix Merge Import and Extract
+    * Fix maths iDevice input file descriptor on Windows
+    * Fix uploads of non-ASCII filenames
+    * Fix line endings in text exports
+    * Fix file copying in applet iDevice
+    * Fix &raquo; in web export
+    * Changing to another node does not mark package as needing saving
+    * Updated translations
+    * Updated build scripts for Windows and OS X
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:59:52 +1300
+
+python-exe (0.21.0-ubuntu1) unstable; urgency=low
+    * Enabled rich text editor context menu cut/copy/paste
+    * Add import/export features for iDevice editor
+    * Update parsing of Wikipedia articles
+    * Improve text export
+    * Optimize internal resource handling
+    * Windows: removed console window
+    * Updated translations
+    * Include SCORM Quiz iDevice in Windows ready2run version
+    * fix FLV player dimensions
+    * fix web export CSS for MSIE
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:58:52 +1300
+
+python-exe (0.20.2-0ubuntu1) unstable; urgency=low
+    * Improved Japanese translation
+    * Add Live Chat to Help menu to open link that connects to IRC CGI
+    * Fix to allow use of iDevices created in 0.19
+    * OS X: Add SCORM 1.2 export schema
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:57:53 +1300
+
+python-exe (0.20.1-0.1ubuntu1) unstable; urgency=low
+    * Improved ability to upgrade projects made with version 0.19 and earlier
+    * Updated Japanese and Chinese translations
+    * Removed access to SCORM2004 export
+    * Fix translation ability of math field
+    * Disable Firefox update check
+    * Improved IDevice Editor
+    * Geogebra iDevice
+    * Add SCORM2004 export
+    * Improve loading speed of some complex eXe packages
+    * Add the ability to have an optional footer on all pages of project
+    * Keep hidden backup .elp
+    * Update copyright
+    * Add release and revision to ready2run splash screen
+    * Add work around for broken Microsoft Word span tags
+    * Many, many bug fixes (see http://exelearning.org/projects/exe1/milestone/0.20%20Arachnidian%20Avondale)
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Fri, 02 Feb 2007 18:57:52 +1300
+
+python-exe (0.19.1-0.1ubuntu1) unstable; urgency=low
+    * Went back to old firefox
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 17 Nov 2006 17:46:23 +1300
+
+python-exe (0.19-0.1ubuntu1) unstable; urgency=low
+    * MP3 iDevice
+    * Make Scorm Quiz work in IE in moodle
+    * Turn Multichoice Question IDevice into Multichoice Quiz
+    * New firefox
+    * Other bug fixes (see http://exelearning.org/projects/exe1/milestone/0.19%20Tidy%20Tui)
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 27 Oct 2006 11:56:57 +1300
+
+python-exe (0.18-0.1ubuntu1) unstable; urgency=low
+
+    * Maths IDevice
+    * Ability to include image in Case Study feedback field.
+    * Added Multimedia IDevice (play mp3 and wmv video).
+    * Added Czech, Tagalog, Twi and Ewe languages.
+    * Have previous/next be translated in export to website.
+    * Various bug fixes.
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 12 Sep 2006 13:32:15 +1300
+
+python-exe (0.17-0.1ubuntu1) unstable; urgency=low
+
+    * Text export for mobile devices
+    * Various bug fixes
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 01 Aug 2006 14:07:12 +1300
+
+python-exe (0.16-0.1ubuntu1) unstable; urgency=low
+
+    * Added slovenian and french languages
+    * Fixed bug in True/False IDevice not storing instructions
+    * Fixed bug with gallery images with umlautes in filenames
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
+
+python-exe (0.15-0.1ubuntu1) unstable; urgency=low
+
+    * Add a background image to the package properties
+    * Added Slovenian wiki url to wiki iDevice
+    * Added Zulu translation
+    * Numberous bug fixes including
+    * Discussion Activity" for non English
+    * Outline location and content page opened match
+    * Flash with text in IE
+    * Attachment with Chinese filename
+    * Upgraded Cloze iDevice
+    * Copyright notice updated for 2006
+    * Level names update
+    * Magnifier iDevice interface cleanup
+    * Right strings in dublin core properties
+    * Correct url for Italian Wikipedia
+    * Chinese Wikipedia article search
+    * Wikipedia storing emphasis
+    * Wikipedia iDevice "saves" title edits
+    * Images in Wikieducator iDevice
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
+
+python-exe (0.14-0.1ubuntu1) unstable; urgency=low
+
+  * New properties pages with dublin core properties for export
+  * Better International Support
+  * Better XHTML Compliance
+  * Styling and CSS improvements
+  * Next/Previous buttons on SCORM export
+  * New editor for Cloze IDevice
+  * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.13-0.1ubuntu1) unstable; urgency=low
+
+    * Cleverer ready to run version 
+    * Better International Support
+    * Image magnifier IDevice
+    * New Gallery Interface
+    * Better XHTML Compliance
+    * Stabalisation of SCORM Quiz
+    * Styling and CSS improvements
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.12-0.1ubuntu1) unstable; urgency=low
+
+    * Merging: insert and extract packages
+    * Discussion iDevice plug-in
+    * Enhanced Cloze iDevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.11-0.1ubuntu1) unstable; urgency=low
+
+    * New Flash movie iDevice
+    * Feedback field in iDevice Editor
+    * Mac release
+    * Dutch, Icelandic and Swedish languages
+    * Online registration with exelearning.org
+    * Improved Wikipedia Idevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.10-0.1ubuntu1) unstable; urgency=low
+
+    * Browser interface with much better usability
+    * Using TinyMCE rich text editor
+    * Preferences dialog for changing language
+    * German, Greek, Spanish and Chinese languages
+    * New Style: Kahurangi
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.9-0.1ubuntu1) unstable; urgency=low
+
+    * More work on GtkMozEmbed interface
+    * Drag and drop tree
+    * New Cloze and External Website iDevices
+    * Bug Fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.8-0.1ubuntu1) unstable; urgency=low
+
+    * Return to web interface
+    * iDevice plug-in interface
+    * Flash iDevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.7-0.1ubuntu1) unstable; urgency=low
+
+    * Experimental GtkMozEmbed interface
+    * Gallery iDevice
+    * Improved iDevice editor
+    * New default style
+    * Single page export
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.6-0.1ubuntu1) unstable; urgency=low
+
+    * New Attachment and Wikipedia iDevices
+    * ImageWithText iDevice can now have image left or right aligned
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.5-0.1ubuntu1) unstable; urgency=low
+
+    * True-False Question iDevice
+    * Image and Text iDevice
+    * ongoing code development
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.4-0.1ubuntu1) unstable; urgency=low
+
+    * basic iDevice editor
+    * XUL interface development
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.3-0.1ubuntu1) unstable; urgency=low
+
+    * modified Case Study iDevice
+    * new Web Site export
+    * Firefox bundled with eXe as one install
+    * Improved file format (not sure it will be final)
+    * A new installer which will launch the User Guide when finished
+      and will remove old versions of eXe
+    * Fixes for bugs # 7, 13, 14, 10, 9, 22, 24, 25, 4, 37, 15, 18, 34, 35
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.2-0.1ubuntu1) unstable; urgency=low
+
+    * significant improvements in the user interface
+    * the addition of more iDevices
+    * the ability to change Styles
+    * the addition of pedagogical help and tips to iDevices.
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.1-0.1ubuntu1) unstable; urgency=low
+
+    * initial release
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+

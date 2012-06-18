@@ -1,0 +1,20 @@
+# compiled python
+*.py[co]
+build
+build-stamp
+exe.egg-info
+# editor debris
+*~
+.#*
+._*
+.*.sw?
+# OS debris
+.DS_Store
+# duelling version control systems
+.svn
+# eXe manual
+exe/webui/docs/manual
+# Eclipse
+.project
+.pydevproject
+.settings/
