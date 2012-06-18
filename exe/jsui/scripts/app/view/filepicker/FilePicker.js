@@ -17,13 +17,13 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.ui.FilePicker', {
+Ext.define('eXe.view.filepicker.FilePicker', {
 	extend: 'Ext.Window',
 	id: 'filepicker',
 	
 	requires: [
-		'eXe.view.ui.FileList',
-		'eXe.view.ui.DirectoryTree'
+		'eXe.view.filepicker.FileList',
+		'eXe.view.filepicker.DirectoryTree'
 	],
 	
 	statics: {
@@ -63,10 +63,10 @@ Ext.define('eXe.view.ui.FilePicker', {
     	];
 
         switch (me.type) {
-        	case eXe.view.ui.FilePicker.modeSave:
-        		buttons[2] = { xtype: 'button', text: 'Save', itemId: 'filepicker_save' }
+        	case eXe.view.filepicker.FilePicker.modeSave:
+        		buttons[2] = { xtype: 'button', text: 'Save', itemId: 'filepicker_save' };
         		break;
-        	case eXe.view.ui.FilePicker.modeGetFolder:
+        	case eXe.view.filepicker.FilePicker.modeGetFolder:
         		filter = [];
         		break;
         }

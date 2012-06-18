@@ -17,31 +17,29 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.ui.DirectoryTree', {
-    extend: 'Ext.tree.Panel',
-	alias: "widget.dirtree",
-	id: 'dirTree',
-	stateId: 'dirTreeCache',
-    stores: ['File', 'DirectoryTree'],
-    initComponent: function() {
-    	var me = this;
-    	
-        Ext.applyIf(me, {
-			layout: { margin: 0 },
-			selModel: { ignoreRightMouseSelection: false },
-			useArrows: true,
-			store: "DirectoryTree",
-			title: 'Tree', 
-			closable: false,
-			width: 230,
-			titlebar: true,
-			autoScroll:true,
-			animate:true, 
-			containerScroll: true,
-    		rootVisible: true,
-    		resizable: true
-    	});
-    	
-    	me.callParent(arguments);
+Ext.define('eXe.store.filepicker.DirectoryTree', {
+    extend: 'Ext.data.TreeStore',
+    model: 'eXe.model.filepicker.Directory',
+    sorters: [
+    	{
+    		sorterFn: function(o1, o2){
+    			var o1name = o1.get("text"), o2name = o2.get("text");
+    				
+	            return o1name.localeCompare(o2name);
+        	}
+    	}
+    ],
+    proxy: {
+		type: "ajax",
+        url: "dirtree",
+        extraParams:{ action:"getdircontents", sendWhat: "dirs" },
+		reader: {
+			type: "json",
+			root: "items",
+			totalProperty: "totalCount"
+		}
+    },
+   	root: {
+        text: ' &#8260; '
     }
 });

@@ -78,7 +78,8 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Print'
+                                text: 'Print',
+                                itemId: 'file_print'
                             },
                             {
                                 xtype: 'menuseparator'
@@ -111,15 +112,18 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     items: [
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Common Cartridge'
+                                            text: 'Common Cartridge',
+                                            itemId: 'file_export_cc'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'SCORM 1.2'
+                                            text: 'SCORM 1.2',
+                                            itemId: 'file_export_scorm'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'IMS Content Package'
+                                            text: 'IMS Content Package',
+                                            itemId: 'file_export_ims'
                                         },
                                         {
                                             xtype: 'menuitem',
@@ -129,30 +133,36 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                 items: [
                                                     {
                                                         xtype: 'menuitem',
-                                                        text: 'Self-contained Folder'
+                                                        text: 'Self-contained Folder',
+                                                        itemId: 'file_export_website'
                                                     },
                                                     {
                                                         xtype: 'menuitem',
-                                                        text: 'Zip File'
+                                                        text: 'Zip File',
+                                                        itemId: 'file_export_zip'
                                                     }
                                                 ]
                                             }
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Single Page'
+                                            text: 'Single Page',
+                                            itemId: 'file_export_singlepage'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Text File'
+                                            text: 'Text File',
+                                            itemId: 'file_export_text'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'iPod Notes'
+                                            text: 'iPod Notes',
+                                            itemId: 'file_export_ipod'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'XLIFF'
+                                            text: 'XLIFF',
+                                            itemId: 'file_export_xliff'
                                         }
                                     ]
                                 }

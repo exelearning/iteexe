@@ -17,7 +17,7 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.model.File', {
+Ext.define('eXe.model.filepicker.File', {
     extend: 'Ext.data.Model',
     fields: [
         {name: "name"},

@@ -18,7 +18,7 @@
 //===========================================================================
 
 Ext.define('eXe.model.Directory', {
-    extend: 'eXe.model.File',
+    extend: 'eXe.model.filepicker.File',
     fields: [
         {name: "text"},
         {name: "cls"},

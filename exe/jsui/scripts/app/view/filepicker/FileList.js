@@ -22,7 +22,7 @@ var ICON_MAP = {
 };
 var DEFAULT_ICON = "../jsui/extjs/resources/themes/images/gray/tree/leaf.gif";
 
-Ext.define('eXe.view.ui.FileList', {
+Ext.define('eXe.view.filepicker.FileList', {
     extend: 'Ext.grid.Panel',
 	alias: "widget.filelist",
 	id: "filelist",
@@ -30,20 +30,12 @@ Ext.define('eXe.view.ui.FileList', {
 	autoScroll:true,
 	collapsible: false,
 	closeOnTab: true,
-	viewConfig: {
-        plugins: {
-            ddGroup: 'FileGrid',
-            ptype: 'gridviewdragdrop',
-            enableDrop: false
-        }
-    },
-    enableDragDrop   : true,
-	stores: ['File', 'DirectoryTree'],
+	stores: ['filepicker.File', 'filepicker.DirectoryTree'],
     initComponent: function() {
     	var me = this;
     	
         Ext.applyIf(me, {
-        	store: 'File',
+        	store: 'filepicker.File',
         	selModel: {
         		mode: "MULTI"
         	},

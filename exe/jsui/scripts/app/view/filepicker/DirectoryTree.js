@@ -17,11 +17,31 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.eXeViewport', {
-    extend: 'eXe.view.ui.eXeViewport',
-
+Ext.define('eXe.view.filepicker.DirectoryTree', {
+    extend: 'Ext.tree.Panel',
+	alias: "widget.dirtree",
+	id: 'dirTree',
+	stateId: 'dirTreeCache',
+    stores: ['File', 'DirectoryTree'],
     initComponent: function() {
-        var me = this;
-        me.callParent(arguments);
+    	var me = this;
+    	
+        Ext.applyIf(me, {
+			layout: { margin: 0 },
+			selModel: { ignoreRightMouseSelection: false },
+			useArrows: true,
+			store: "filepicker.DirectoryTree",
+			title: 'Tree', 
+			closable: false,
+			width: 230,
+			titlebar: true,
+			autoScroll:true,
+			animate:true, 
+			containerScroll: true,
+    		rootVisible: true,
+    		resizable: true
+    	});
+    	
+    	me.callParent(arguments);
     }
 });

@@ -45,9 +45,9 @@ var sorterFNS = function(o1, o2){
 		return o1name - o2name;
 };
 
-Ext.define('eXe.store.File', {
+Ext.define('eXe.store.filepicker.File', {
     extend: 'Ext.data.Store',
-    model: 'eXe.model.File',
+    model: 'eXe.model.filepicker.File',
 	pageSize: 100,
     remoteSort: false,
     currentDir: "",

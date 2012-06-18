@@ -27,21 +27,21 @@ Ext.application({
     stores: [
         'OutlineXmlTreeStore',
         'IdeviceXmlStore',
-        'DirectoryTree',
-        'File'
+        'filepicker.DirectoryTree',
+        'filepicker.File'
     ],
 
     models: [
-    	'Directory',
-    	'File'
+    	'filepicker.Directory',
+    	'filepicker.File'
     ],
     
     controllers: [
     	'Idevice',
     	'Outline',
     	'Toolbar',
-    	'Directory',
-    	'File'
+    	'filepicker.Directory',
+    	'filepicker.File'
     ],
     
     launch: function() {
@@ -50,7 +50,7 @@ Ext.application({
         Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
 
         eXe.app = this;
-        var cmp1 = Ext.create('eXe.view.eXeViewport', {
+        var cmp1 = Ext.create('eXe.view.ui.eXeViewport', {
             renderTo: Ext.getBody()
         });
         cmp1.show();

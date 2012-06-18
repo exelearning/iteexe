@@ -17,14 +17,14 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.controller.File', {
+Ext.define('eXe.controller.filepicker.File', {
     extend: 'Ext.app.Controller',
-	stores: ['File'],
-	views: ['ui.FileList', 'ui.DirectoryTree', 'ui.FilePicker'],
+	stores: ['filepicker.File'],
+	views: ['filepicker.FileList', 'filepicker.DirectoryTree', 'filepicker.FilePicker'],
 	requires: [
-		'eXe.view.ui.FileList',
-		'eXe.view.ui.DirectoryTree',
-		'eXe.view.ui.FilePicker'
+		'eXe.view.filepicker.FileList',
+		'eXe.view.filepicker.DirectoryTree',
+		'eXe.view.filepicker.FilePicker'
 	],
 	refs: [{
         ref: 'filesList',
@@ -84,7 +84,7 @@ Ext.define('eXe.controller.File', {
 		directory = this.getFullClearPath( directory );
 		if (directory[0] != '/')
 			directory = '/';
-		var fileStore = this.getFileStore();
+		var fileStore = this.getFilepickerFileStore();
 		fileStore.load({
 			callback: function() {
 				var combo = this.getFiletypeCombo();
@@ -106,7 +106,7 @@ Ext.define('eXe.controller.File', {
 		fileStore.currentDir = directory;
 	},
 	getFullClearPath: function(path) {
-		return path.replace( /_RRR_/g, '/' ).replace(/Ext\.data\.Store\.ImplicitModel-DirectoryTree-/, '')
+		return path.replace( /_RRR_/g, '/' ).replace(/Ext\.data\.Store\.ImplicitModel-filepicker.DirectoryTree-/, '')
 		.replace(/\/\//, '/' );
 	},
 	onHandleRowClick: function ( grid, record, el, rowIndex, e ) {
@@ -118,21 +118,21 @@ Ext.define('eXe.controller.File', {
 			this.application.fireEvent( "dirchange" , this.currentDir + '/' + record.get('name') );
 		else {
 			var fp = this.getFilePicker();
-			fp.status = eXe.view.ui.FilePicker.returnOk;
+			fp.status = eXe.view.filepicker.FilePicker.returnOk;
 			fp.file = { 'path': this.currentDir + '/' + record.get('name') };
 			fp.destroy();
 		}
 	},
 	onCancel: function() {
 		var fp = this.getFilePicker();
-		fp.status = eXe.view.ui.FilePicker.returnCancel;
+		fp.status = eXe.view.filepicker.FilePicker.returnCancel;
 		fp.file = {};
 		fp.destroy();
 	},
 	onOpen: function() {
 		var fp = this.getFilePicker(),
 			place = this.getPlaceField();
-		fp.status = eXe.view.ui.FilePicker.returnOk;
+		fp.status = eXe.view.filepicker.FilePicker.returnOk;
 		if (place.value) {
 			fp.file = { 'path': this.currentDir + '/' + place.value };
 			fp.destroy();
@@ -147,18 +147,18 @@ Ext.define('eXe.controller.File', {
 	onSave: function() {
 		var fp = this.getFilePicker(),
 			place = this.getPlaceField(),
-			store = this.getFileStore(),
+			store = this.getFilepickerFileStore(),
 			onReplaceOk = function(status) {
 				fp.status = status;
 				fp.file = { 'path': this.currentDir + '/' + place.value };
 				fp.destroy();
 			};
-		fp.status = eXe.view.ui.FilePicker.returnOk;
+		fp.status = eXe.view.filepicker.FilePicker.returnOk;
 		if (place.value) {
 			if (store.findExact("name", place.value) >= 0)
 				this.confirmReplace( onReplaceOk );
 			else 
-				onReplaceOk( eXe.view.ui.FilePicker.returnOk );
+				onReplaceOk( eXe.view.filepicker.FilePicker.returnOk );
 		}
 		else {
 			var filelist = this.getFilesList();
@@ -177,7 +177,7 @@ Ext.define('eXe.controller.File', {
 			buttons: Ext.Msg.YESNO,
 			fn: function(button) {
 				if (button == "yes")
-					onReplaceOk(eXe.view.ui.FilePicker.returnReplace);
+					onReplaceOk(eXe.view.filepicker.FilePicker.returnReplace);
 			}
 		});
 	},
@@ -190,7 +190,7 @@ Ext.define('eXe.controller.File', {
 		this.application.fireEvent( "dirchange", this.currentDir );
 	},
 	onFilterChange: function(field, newValue, oldValue, eOpts) {
-		var store = this.getFileStore();
+		var store = this.getFilepickerFileStore();
 		
 		store.filterBy( function(record, id) {
 			if (record.get("type") == "directory")

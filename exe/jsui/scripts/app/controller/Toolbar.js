@@ -52,9 +52,109 @@ Ext.define('eXe.controller.Toolbar', {
         	},
         	'#file_save_as': {
         		click: this.fileSaveAs
-        	}
+        	},
+            '#file_print': {
+                click: this.filePrint
+            },
+            '#file_export_cc': {
+                click: { fn: this.processExportEvent, exportType: "commoncartridge" }
+            },
+            '#file_export_scorm': {
+                click: { fn: this.processExportEvent, exportType: "scorm" }
+            },
+            '#file_export_ims': {
+                click: { fn: this.processExportEvent, exportType: "ims" }
+            },
+            '#file_export_website': {
+                click: { fn: this.processExportEvent, exportType: "webSite" }
+            },
+            '#file_export_zip': {
+                click: { fn: this.processExportEvent, exportType: "zipFile" }
+            },
+            '#file_export_singlepage': {
+                click: { fn: this.processExportEvent, exportType: "singlePage" }
+            },
+            '#file_export_text': {
+                click: { fn: this.processExportEvent, exportType: "textFile" }
+            },
+            '#file_export_ipod': {
+                click: { fn: this.processExportEvent, exportType: "ipod" }
+            }
         });
     },
+    
+    processExportEvent: function(menu, item, e, eOpts) {
+        this.exportPackage(e.exportType, "")
+    },
+    
+	exportPackage: function(exportType, exportDir, printCallback) {
+	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' ) {
+	        if (exportDir == '') {
+                var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+		            type: eXe.view.filepicker.FilePicker.modeGetFolder,
+		            title: "Select the parent folder for export.",
+		            modal: true,
+		            scope: this,
+		            callback: function(fp) {
+		                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+		                    nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path, '')
+		            }
+		        });
+	            fp.show();
+	        }
+	        else {
+	            // use the supplied exportDir, rather than asking.
+	            // NOTE: currently only the printing mechanism will provide an exportDir, hence the printCallback function.
+	            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, printCallback)
+	        }
+	    } else if(exportType == "textFile"){
+                var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+                    type: eXe.view.filepicker.FilePicker.modeSave,
+                    title: "Export text package as",
+                    modal: true,
+                    scope: this,
+                    callback: function(fp) {
+                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path, '')
+                    }
+                });
+		        fp.appendFilters([
+		            { "typename": "Text File", "extension": "*.txt", "regex": /.*\.txt$/ },
+		            { "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+		            ]
+		        );
+                fp.show();            
+	    } else {
+            var title;
+	        if (exportType == "scorm")
+	            title = "Export SCORM package as";
+	        else if (exportType == "ims")
+	            title = "Export IMS package as";
+	        else if (exportType == "zipFile")
+	            title = "Export Website package as";
+	        else if (exportType == "commoncartridge")
+	            title = "Export Common Cartridge as";
+	        else
+	            title = "INVALID VALUE PASSED TO exportPackage";
+
+            var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+	            type: eXe.view.filepicker.FilePicker.modeSave,
+	            title: title,
+	            modal: true,
+	            scope: this,
+	            callback: function(fp) {
+	                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+	                    nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path, '')
+	            }
+	        });
+	        fp.appendFilters([
+	            { "typename": "SCORM/IMS/ZipFile", "extension": "*.txt", "regex": /.*\.zip$/ },
+	            { "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+	            ]
+	        );
+	        fp.show();            
+	    }
+	},// exportPackage()
     
     filePrint: function() {
 	   // filePrint step#1: create a temporary print directory, 
@@ -86,8 +186,7 @@ Ext.define('eXe.controller.Toolbar', {
 	    var features = "width=680,height=440,status=1,resizable=1,left=260,top=200";
 	    print_url = webPrintDir+"/index.html"
 	
-	    printWin = window.open (print_url, 
-	                  APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN, features);
+	    printWin = window.open(print_url, "", features);
 	
 	
 	    // and that's all she wrote!
@@ -173,13 +272,13 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
     fileOpen2: function() {
-		var f = Ext.create("eXe.view.ui.FilePicker", {
-			type: eXe.view.ui.FilePicker.modeOpen,
+		var f = Ext.create("eXe.view.filepicker.FilePicker", {
+			type: eXe.view.filepicker.FilePicker.modeOpen,
 			title: "Open File",
 			modal: true,
 			scope: this,
 			callback: function(fp) {
-		    	if (fp.status == eXe.view.ui.FilePicker.returnOk)
+		    	if (fp.status == eXe.view.filepicker.FilePicker.returnOk)
 		    		nevow_clientToServerEvent('loadPackage', this, '', fp.file.path);
 		    }
 		});
@@ -235,13 +334,13 @@ Ext.define('eXe.controller.Toolbar', {
 	},
 	// Called by the user when they want to save their package
 	fileSaveAs: function(onDone) {
-		var f = Ext.create("eXe.view.ui.FilePicker", {
-			type: eXe.view.ui.FilePicker.modeSave,
+		var f = Ext.create("eXe.view.filepicker.FilePicker", {
+			type: eXe.view.filepicker.FilePicker.modeSave,
 			title: "Select a File", 
 			modal: true,
 			scope: this,
 			callback: function(fp) {
-			    if (fp.status == eXe.view.ui.FilePicker.returnOk || fp.status == eXe.view.ui.FilePicker.returnReplace) {
+			    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
 			        this.saveWorkInProgress();
 			        if (onDone && typeof(onDone) == "string") {
 			            nevow_clientToServerEvent('savePackage', this, '', f.file.path, onDone)
