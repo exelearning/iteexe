@@ -159,12 +159,6 @@ Ext.define('eXe.controller.Outline', {
 
     reload: function() {
     	var store = this.getOutlineXmlTreeStoreStore();
-    	
-//Fix for bug in ExtJS 4.0.7: 
-//http://www.sencha.com/forum/showthread.php?151211-Reloading-TreeStore-adds-all-records-to-store-getRemovedRecords
-//Prior to store.load is necesary removeAll
-		store.getRootNode().removeAll();
-//End Fix
     	store.load();
     }
 });

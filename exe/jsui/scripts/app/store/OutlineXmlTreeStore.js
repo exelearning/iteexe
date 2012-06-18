@@ -25,11 +25,6 @@ Ext.define('eXe.store.OutlineXmlTreeStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'OutlineXmlTreeStore',
-//Fix for bug in ExtJS 4.0.7: 
-//http://www.sencha.com/forum/showthread.php?151211-Reloading-TreeStore-adds-all-records-to-store-getRemovedRecords
-//Prior to store.load is necesary removeAll
-            clearOnLoad: false, 
-//End Fix
             root: {
             	loaded: true
             },
