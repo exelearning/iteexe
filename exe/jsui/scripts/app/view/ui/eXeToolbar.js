@@ -110,6 +110,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
+                                text: _('New Window'),
+                                accesskey: 'w',
+                                tooltip: 'Ctrl+Shift+N',
+                                itemId: 'file_new_window'
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
                                 text: _('Open'),
                                 accesskey: 'o',
                                 tooltip: 'Ctrl+O',

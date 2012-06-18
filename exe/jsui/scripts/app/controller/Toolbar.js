@@ -32,6 +32,9 @@ Ext.define('eXe.controller.Toolbar', {
         	'#file_new': {
         		click: this.fileNew
         	},
+            '#file_new_window': {
+                click: this.fileNewWindow
+            },
         	'#file_open': {
         		click: this.fileOpen
         	},
@@ -142,6 +145,15 @@ Ext.define('eXe.controller.Toolbar', {
 				defaultEventAction: "stopEvent"
 			},
 			{
+				key: Ext.EventObject.T,
+				ctrl: true,
+				handler: function() {
+				 this.fileNewWindow();
+				},
+				scope: this,
+				defaultEventAction: "stopEvent"
+			},
+			{
 			     key: Ext.EventObject.O,
 			     ctrl: true,
 			     handler: function() {
@@ -186,6 +198,10 @@ Ext.define('eXe.controller.Toolbar', {
 	            defaultEventAction: "stopEvent"
             }
         ]);
+    },
+
+    fileNewWindow: function() {
+        window.open(location.href);
     },
 
 	aboutPage: function() {
