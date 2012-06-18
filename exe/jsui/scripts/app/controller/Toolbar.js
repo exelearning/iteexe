@@ -417,7 +417,9 @@ Ext.define('eXe.controller.Toolbar', {
     },
 	
     stylesClick: function(item) {
-    	top["authoringIFrame1"].submitLink("ChangeStyle", item.itemId, 1);
+        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        if (authoring)
+            authoring.submitLink("ChangeStyle", item.itemId, 1);
     },
     
 	fileOpenRecent2: function(number) {
@@ -524,13 +526,12 @@ Ext.define('eXe.controller.Toolbar', {
 	// Submit any open iDevices
 	saveWorkInProgress: function() {
 	    // Do a submit so any editing is saved to the server
-	    var theForm = top["authoringIFrame1"].document.getElementById('contentForm');
-	    if (!theForm) {
-	        // try and find the form for the authoring page
-	        theForm = document.getElementById('contentForm');
-	    }
-	    if (theForm)
-	        theForm.submit();
+        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        if (authoring && authoring.getContentForm) {
+		    var theForm = authoring.getContentForm();
+		    if (theForm)
+		        theForm.submit();
+        }
 	},
 	
     askDirty: function(nextStep) {

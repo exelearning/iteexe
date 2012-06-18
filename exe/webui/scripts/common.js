@@ -147,10 +147,7 @@ function addImage(elementId) {
         var path  = document.getElementById('path'+elementId);
         path.value = imagePath;
         image.src  = 'file://'+imagePath;
-        var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-        if (!theForm) {
-            theForm = document.getElementById('contentForm')
-        }
+        var theForm = getContentForm();
         theForm.action.value = "addImage"
         theForm.object.value = elementId 
         theForm.submit()
@@ -167,10 +164,7 @@ function addFeedbackImage(elementId) {
         var path  = document.getElementById('path'+elementId);
         path.value = imagePath;
         image.src  = 'file://'+imagePath;
-        var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-        if (!theForm) {
-            theForm = document.getElementById('contentForm')
-        }
+        var theForm = getContentForm();
         theForm.action.value = "addImage"
         theForm.object.value = elementId 
         var width = document.getElementById('width'+elementId);
@@ -194,9 +188,7 @@ function addJpgImage(elementId) {
         var path  = document.getElementById('path'+elementId);
         path.value = imagePath;
         image.src  = 'file://'+imagePath;
-        var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-        if (!theForm) 
-            theForm = document.getElementById('contentForm')
+        var theForm = getContentForm();
         theForm.action.value = "addJpgImage"
         theForm.object.value = elementId 
         theForm.submit()
@@ -610,11 +602,7 @@ function uploadFile(blockId) {
         var path  = document.getElementById('path'+blockId);
         path.value = fp.file.path;
     }
-    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!theForm) {
-        // try and find the form for the authoring page
-        theForm = document.getElementById('contentForm')
-    }
+    var theForm = getContentForm();
     theForm.submit();
 }
 
@@ -658,34 +646,48 @@ function updateCoords(e) {
 }
 
 
-// Called upon loading the page this function clears the hidden
-// action and object fields so they can be used by submitLink
-function clearHidden()
-{
-    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+function getContentForm() {
+    var theForm;
+
+    if (top["authoringIFrame1"] && top["authoringIFrame1"].document)
+        theForm = top["authoringIFrame1"].document.getElementById('contentForm')
     if (!theForm) {
         // try and find the form for the authoring page
         theForm = document.getElementById('contentForm')
     }
-    theForm.action.value = "";
-    theForm.object.value = "";
+    if (!theForm) {
+        if (document.getElementById('authoringIFrame') && document.getElementById('authoringIFrame').contentDocument)
+            theForm = document.getElementById('authoringIFrame').contentDocument.getElementById('contentForm')
+    }
+    
+    return theForm;
+}
+// Called upon loading the page this function clears the hidden
+// action and object fields so they can be used by submitLink
+function clearHidden()
+{
+    var theForm = getContentForm();
+
+    if (theForm) {
+	    theForm.action.value = "";
+	    theForm.object.value = "";
+    }
 }
 
 // Sets the hidden action and object fields, then submits the 
 // contentForm to the server
 function submitLink(action, object, changed) 
 {
-    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!theForm) {
-        // try and find the form for the authoring page
-        theForm = document.getElementById('contentForm')
-    }
-    theForm.action.value    = action;
-    theForm.object.value    = object;
-    theForm.isChanged.value = changed;
-    runFuncArray(beforeSubmitHandlers)
+    var theForm = getContentForm();
 
-    theForm.submit();
+    if (theForm) {
+	    theForm.action.value    = action;
+	    theForm.object.value    = object;
+	    theForm.isChanged.value = changed;
+	    runFuncArray(beforeSubmitHandlers)
+	
+	    theForm.submit();
+    }
 }
 
 

@@ -29,6 +29,8 @@ Ext.define('eXe.controller.Idevice', {
     },
     
     onIdeviceClick: function(view, record, item, index, e, eOpts) {
-    	top["authoringIFrame1"].submitLink("AddIdevice", record.data.id, 1);
+        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        if (authoring && authoring.submitLink)
+        	authoring.submitLink("AddIdevice", record.data.id, 1);
     }
 });

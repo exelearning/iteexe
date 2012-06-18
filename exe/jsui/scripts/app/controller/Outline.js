@@ -64,6 +64,7 @@ Ext.define('eXe.controller.Outline', {
     
     onNodeClick: function(view, record, item, index, e, eOpts) {
     	this.loadNodeOnAuthoringPage(record.data.id);
+        document.title = "eXe : " + record.data.text;
     },
     
     onNodeAdd: function(button, e, eOpts) {
@@ -128,10 +129,12 @@ Ext.define('eXe.controller.Outline', {
     },
 
     loadNodeOnAuthoringPage: function(node) {
-    	if ("submitLink" in top["authoringIFrame1"] && top["authoringIFrame1"].document && top["authoringIFrame1"].document.getElementById('contentForm'))
-    		top["authoringIFrame1"].submitLink('changeNode', node, 0);
+        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        if (authoring && authoring.submitLink)
+    		authoring.submitLink('changeNode', node, 0);
     },
     
+    //called from exe.jsui.outlinepane.OutlinePane.handleSetTreeSelection
     select: function(nodeid) {
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selmodel = outlineTreePanel.getSelectionModel(),
@@ -141,6 +144,7 @@ Ext.define('eXe.controller.Outline', {
     	if (node) {
     		selmodel.select(node);
     		this.loadNodeOnAuthoringPage(node.data.id);
+            document.title = "eXe : " + node.data.text;
     	}
     	this.enableButtons();
     },
