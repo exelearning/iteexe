@@ -210,6 +210,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'tools_preferences',
                                 text: _('Preferences')
                             },
                             {
@@ -217,6 +218,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'tools_refresh',
                                 text: _('Refresh Display')
                             }
                         ]

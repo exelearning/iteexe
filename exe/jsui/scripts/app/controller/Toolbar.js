@@ -94,11 +94,34 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#tools_idevice': {
                 click: this.toolsIdeviceEditor
+            },
+            '#tools_preferences': {
+                click: this.toolsPreferences
+            },
+            '#tools_refresh': {
+                click: this.toolsRefresh
             }
         });
     },
 
-	// Launch the iDevice Editor Window
+    toolsRefresh: function() {
+        eXe.app.quitWarningEnabled = false;
+        window.location = window.location;
+    },
+
+    toolsPreferences: function() {
+        var preferences = new Ext.Window ({
+          height: 200, 
+          width: 500, 
+          modal: true,
+          id: 'preferenceswin',
+          title: _("Preferences"), 
+          html: '<iframe height="100%" width="100%" src="/preferences"></iframe>'
+        });
+        preferences.show();        
+	},
+    
+    // Launch the iDevice Editor Window
 	toolsIdeviceEditor: function() {
         var editor = new Ext.Window ({
           height: 700, 

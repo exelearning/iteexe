@@ -76,7 +76,7 @@ def setLocaleFromRequest(request):
 
 class eXeResourceAdapter(appserver.OldResourceAdapter):
     def renderLocalized(self, request):
-        setLocaleFromRequest(request)
+#        setLocaleFromRequest(request)
         return self.original.render(request)
         
     def renderHTTP(self, ctx):
@@ -98,7 +98,7 @@ class eXeRequest(appserver.NevowRequest):
 
     def gotPageContext(self, pageContext):
         request = inevow.IRequest(pageContext)
-        self.locale = setLocaleFromRequest(request)
+#        self.locale = setLocaleFromRequest(request)
         appserver.NevowRequest.gotPageContext(self, pageContext)
 
 class eXeSession(server.Session):

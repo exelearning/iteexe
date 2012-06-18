@@ -77,9 +77,9 @@ class PreferencesPage(RenderableResource):
         html += u"@import url(/style/standardwhite/content.css);</style>\n"
         html += u'''<script language="javascript" type="text/javascript">
             function setLocaleAndAnchors(l,anchors) {
-                opener.nevow_clientToServerEvent('setLocale', this, '', l)
-                opener.nevow_clientToServerEvent('setInternalAnchors', this, '', anchors)
-                window.close()
+                parent.nevow_clientToServerEvent('setLocale', this, '', l)
+                parent.nevow_clientToServerEvent('setInternalAnchors', this, '', anchors)
+                parent.Ext.getCmp('preferenceswin').close()
             }
         </script>'''
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
@@ -114,7 +114,7 @@ class PreferencesPage(RenderableResource):
                 onClick="setLocaleAndAnchors(document.forms.contentForm.locale.value,"
                     "document.forms.contentForm.internalAnchors.value)")
         html += common.button("cancel", _("Cancel"), enabled=True,
-                _class="button", onClick="window.close()")
+                _class="button", onClick="parent.Ext.getCmp('preferenceswin').close()")
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"<br/></form>\n"
