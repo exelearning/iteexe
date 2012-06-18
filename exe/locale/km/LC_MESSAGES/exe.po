@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-07 13:43+0200\n"
+"POT-Creation-Date: 2012-06-12 12:45+0200\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1700,7 +1700,7 @@ msgstr ""
 "ការ​រក្សាទុក​បាន​បរាជ័យ !\n"
 "ការ​រក្សាទុក​បាន​ជោគជ័យ​ចុងក្រោយ​គឺ %s ។"
 
-#: exe/engine/package.py:745 exe/jsui/scripts/app/controller/Toolbar.js:303
+#: exe/engine/package.py:744 exe/jsui/scripts/app/controller/Toolbar.js:303
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "iDevice Editor"
 msgstr "កម្មវិធី​និពន្ធ iDevice"
@@ -2411,15 +2411,15 @@ msgid "Image Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:154
-#: exe/jsui/scripts/app/controller/Toolbar.js:334
-#: exe/jsui/scripts/app/controller/Toolbar.js:353
-#: exe/jsui/scripts/app/controller/Toolbar.js:388
-#: exe/jsui/scripts/app/controller/Toolbar.js:453
-#: exe/jsui/scripts/app/controller/Toolbar.js:480
-#: exe/jsui/scripts/app/controller/Toolbar.js:522
-#: exe/jsui/scripts/app/controller/Toolbar.js:551
-#: exe/jsui/scripts/app/controller/Toolbar.js:688
-#: exe/jsui/scripts/app/controller/Toolbar.js:758
+#: exe/jsui/scripts/app/controller/Toolbar.js:336
+#: exe/jsui/scripts/app/controller/Toolbar.js:357
+#: exe/jsui/scripts/app/controller/Toolbar.js:392
+#: exe/jsui/scripts/app/controller/Toolbar.js:457
+#: exe/jsui/scripts/app/controller/Toolbar.js:484
+#: exe/jsui/scripts/app/controller/Toolbar.js:526
+#: exe/jsui/scripts/app/controller/Toolbar.js:555
+#: exe/jsui/scripts/app/controller/Toolbar.js:695
+#: exe/jsui/scripts/app/controller/Toolbar.js:769
 msgid "All Files"
 msgstr ""
 
@@ -2467,115 +2467,139 @@ msgstr "ចំណូល​​ចិត្ត"
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:333
-#: exe/jsui/scripts/app/controller/Toolbar.js:352
-#: exe/jsui/scripts/app/controller/Toolbar.js:687
-#: exe/jsui/scripts/app/controller/Toolbar.js:757
+#: exe/jsui/scripts/app/controller/Toolbar.js:329
+msgid "Inserting package: {filename}"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:335
+#: exe/jsui/scripts/app/controller/Toolbar.js:356
+#: exe/jsui/scripts/app/controller/Toolbar.js:694
+#: exe/jsui/scripts/app/controller/Toolbar.js:768
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:343
+#: exe/jsui/scripts/app/controller/Toolbar.js:345
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:362
+#: exe/jsui/scripts/app/controller/Toolbar.js:350
+msgid "Extracting package: {filename}"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:366
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:377
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:387
+#: exe/jsui/scripts/app/controller/Toolbar.js:391
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:402
+#: exe/jsui/scripts/app/controller/Toolbar.js:406
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:410
+#: exe/jsui/scripts/app/controller/Toolbar.js:414
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:411
+#: exe/jsui/scripts/app/controller/Toolbar.js:415
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:434
+#: exe/jsui/scripts/app/controller/Toolbar.js:438
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:444
+#: exe/jsui/scripts/app/controller/Toolbar.js:448
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:452
-#: exe/jsui/scripts/app/controller/Toolbar.js:479
+#: exe/jsui/scripts/app/controller/Toolbar.js:456
+#: exe/jsui/scripts/app/controller/Toolbar.js:483
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:461
+#: exe/jsui/scripts/app/controller/Toolbar.js:465
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:471
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:494
+#: exe/jsui/scripts/app/controller/Toolbar.js:498
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:512
+#: exe/jsui/scripts/app/controller/Toolbar.js:516
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:521
+#: exe/jsui/scripts/app/controller/Toolbar.js:525
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:529
+#: exe/jsui/scripts/app/controller/Toolbar.js:533
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:531
+#: exe/jsui/scripts/app/controller/Toolbar.js:535
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:533
+#: exe/jsui/scripts/app/controller/Toolbar.js:537
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:535
+#: exe/jsui/scripts/app/controller/Toolbar.js:539
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:537
+#: exe/jsui/scripts/app/controller/Toolbar.js:541
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:550
+#: exe/jsui/scripts/app/controller/Toolbar.js:554
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:667
+msgid "Loading package..."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:683
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:700
+#: exe/jsui/scripts/app/controller/Toolbar.js:688
+msgid "Loading package: {filename}"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:707
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:701
+#: exe/jsui/scripts/app/controller/Toolbar.js:708
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
-"to save it before loading the new package?"
+"to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:740
+#: exe/jsui/scripts/app/controller/Toolbar.js:732
+msgid "Saving package to: {filename}"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:748
 msgid "Select a File"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:754
+msgid "Saving package..."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:34
@@ -2600,12 +2624,12 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:68
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "រក្សាទុក"
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:84
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:94
 msgid "Place"
 msgstr ""
 
@@ -3588,10 +3612,55 @@ msgid "LOM"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:108
+msgid "General"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
+msgid "Ciclo de vida"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
+msgid "MetaMetadatos"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:120
+msgid "Técnica"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:82
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:124
+msgid "Uso educativo"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:86
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:128
+msgid "Derechos"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:90
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:132
+msgid "Relación"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:94
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:136
+msgid "Anotación"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:98
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:140
+msgid "Clasificación"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:73
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Export"
 msgstr "នាំចេញ"
@@ -3761,7 +3830,7 @@ msgstr ""
 msgid "About eXe"
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:99
+#: exe/jsui/scripts/exe.js:98
 msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
@@ -3941,7 +4010,7 @@ msgid "Retroalimentacion"
 msgstr ""
 
 #: exe/webui/common.py:70 exe/webui/editorpage.py:220
-#: exe/webui/preferencespage.py:85 exe/webui/xliffexportpreferencespage.py:91
+#: exe/webui/preferencespage.py:131 exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe ៖ កម្មវិធី​និពន្ធ XHTML ការ​សិក្សា​អេឡិចត្រូនិក"
@@ -4138,7 +4207,7 @@ msgstr "អំពើ"
 msgid "Preview"
 msgstr "មើល​ជាមុន"
 
-#: exe/webui/editorpane.py:269 exe/webui/preferencespage.py:116
+#: exe/webui/editorpane.py:269 exe/webui/preferencespage.py:162
 #: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
@@ -4440,27 +4509,27 @@ msgstr ""
 msgid "Para saber más"
 msgstr ""
 
-#: exe/webui/preferencespage.py:96
+#: exe/webui/preferencespage.py:142
 msgid "Select Language"
 msgstr "ជ្រើស​ភាសា"
 
-#: exe/webui/preferencespage.py:101
+#: exe/webui/preferencespage.py:147
 msgid "Enable All Internal Linking"
 msgstr "បើក​ការ​តភ្ជាប់​ខាង​ក្នុង​ទាំង​អស់"
 
-#: exe/webui/preferencespage.py:102
+#: exe/webui/preferencespage.py:148
 msgid "Disable Auto-Top Internal Linking"
 msgstr "បិទ​ការ​តភ្ជាប់​ខាង​ក្នុង​​កំពូល​ដោយ​ស្វ័យ​ប្រវត្តិ"
 
-#: exe/webui/preferencespage.py:103
+#: exe/webui/preferencespage.py:149
 msgid "Disable All Internal Linking"
 msgstr "បិទ​ការ​តភ្ជាប់​ខាងក្នុង​ទាំង​អស់"
 
-#: exe/webui/preferencespage.py:104
+#: exe/webui/preferencespage.py:150
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr "ការ​តភ្ជាប់​ខាង​ក្នុង (សម្រាប់​​តែ​ការ​នាំចេញ​តំបន់​បណ្ដាញ​ប៉ុណ្ណោះ)"
 
-#: exe/webui/preferencespage.py:112 exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/preferencespage.py:158 exe/webui/xliffexportpreferencespage.py:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "យល់ព្រម"
