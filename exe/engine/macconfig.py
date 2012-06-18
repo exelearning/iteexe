@@ -40,6 +40,7 @@ class MacConfig(LinuxConfig):
         # Override the default settings
         self.webDir      = Path("../Resources/exe")
         self.xulDir      = Path("../Resources/exe")
+        self.jsDir      = Path("../Resources/exe")
         self.localeDir   = Path("../Resources/exe/locale")
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'

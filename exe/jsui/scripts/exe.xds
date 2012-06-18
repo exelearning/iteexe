@@ -1,0 +1,1273 @@
+{
+    "name": "exe.xds",
+    "settings": {
+        "urlPrefix": "http://localhost:51235/",
+        "directAPI": "",
+        "spacesToIndent": "4",
+        "codeGenFormat": "Class",
+        "exportPath": ".",
+        "extPath": "extjs/",
+        "lineEnding": "LF",
+        "instantiateStore": true,
+        "exportXDSFiles": true,
+        "genTimestamps": false,
+        "appName": "eXe"
+    },
+    "xdsVersion": "1.2.2",
+    "components": [
+        {
+            "id": "ExtBox1-ext-gen9508",
+            "type": "viewport",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "border",
+                "designer|userClassName": "eXeViewport"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4078",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "north",
+                        "designer|userClassName": "eXeToolbar"
+                    },
+                    "iconCls": "icon-linkedinstance",
+                    "masterInstanceId": "ExtBox1-ext-gen9609"
+                },
+                {
+                    "id": "ExtBox1-ext-gen12856",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "designer|userClassName": "MainTabPanel",
+                        "designer|userAlias": "maintabpanel"
+                    },
+                    "iconCls": "icon-linkedinstance",
+                    "masterInstanceId": "ExtBox1-ext-gen13996"
+                },
+                {
+                    "id": "ExtBox1-ext-gen15055",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "west",
+                        "layout|split": true,
+                        "border": null,
+                        "tpl": "",
+                        "width": 250,
+                        "designer|userClassName": "LeftPanel",
+                        "designer|userAlias": "leftpanel"
+                    },
+                    "iconCls": "icon-linkedinstance",
+                    "masterInstanceId": "ExtBox1-ext-gen18576"
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen9609",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "designer|userClassName": "eXeToolbar",
+                "designer|userAlias": "exetoolbar"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen9669",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "text": "File",
+                        "designer|userClassName": "ButtonFile",
+                        "layout|flex": null
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen11483",
+                            "type": "menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "designer|userClassName": "MyMenu"
+                            },
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen11490",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "New",
+                                        "designer|userClassName": "MyMenuItem"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen11499",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Open",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen11508",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Recent Projects...",
+                                        "designer|userClassName": "MyMenuItem2"
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "ExtBox1-ext-gen31452",
+                                            "type": "menu",
+                                            "reference": {
+                                                "name": "menu",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "width": null,
+                                                "designer|userClassName": "MyMenu4"
+                                            },
+                                            "cn": [
+                                                {
+                                                    "id": "ExtBox1-ext-gen33197",
+                                                    "type": "menuseparator",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MySeparator"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen31468",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Clear Recent Projects List",
+                                                        "designer|userClassName": "MyMenuItem13"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen34739",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen35239",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Save",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen35998",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Save As...",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen36260",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen37743",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Print",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen38263",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen38689",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Import",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "ExtBox1-ext-gen39170",
+                                            "type": "menu",
+                                            "reference": {
+                                                "name": "menu",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "width": null,
+                                                "designer|userClassName": "MyMenu5"
+                                            },
+                                            "cn": [
+                                                {
+                                                    "id": "ExtBox1-ext-gen39177",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "HTML Course",
+                                                        "designer|userClassName": "MyMenuItem8"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen39186",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "XLIFF File",
+                                                        "designer|userClassName": "MyMenuItem16"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen39947",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen40435",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Export",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "ExtBox1-ext-gen40440",
+                                            "type": "menu",
+                                            "reference": {
+                                                "name": "menu",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "width": null,
+                                                "designer|userClassName": "MyMenu5"
+                                            },
+                                            "cn": [
+                                                {
+                                                    "id": "ExtBox1-ext-gen40443",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Common Cartridge",
+                                                        "designer|userClassName": "MyMenuItem8"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen40448",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "SCORM 1.2",
+                                                        "designer|userClassName": "MyMenuItem16"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen40453",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "IMS Content Package",
+                                                        "designer|userClassName": "MyMenuItem17"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen43873",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Web Site",
+                                                        "designer|userClassName": "MyMenuItem12"
+                                                    },
+                                                    "cn": [
+                                                        {
+                                                            "id": "ExtBox1-ext-gen44543",
+                                                            "type": "menu",
+                                                            "reference": {
+                                                                "name": "menu",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "width": null,
+                                                                "designer|userClassName": "MyMenu8"
+                                                            },
+                                                            "cn": [
+                                                                {
+                                                                    "id": "ExtBox1-ext-gen44550",
+                                                                    "type": "menuitem",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "text": "Self-contained Folder",
+                                                                        "designer|userClassName": "MyMenuItem17"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "id": "ExtBox1-ext-gen44559",
+                                                                    "type": "menuitem",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "text": "Zip File",
+                                                                        "designer|userClassName": "MyMenuItem27"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen47087",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Single Page",
+                                                        "designer|userClassName": "MyMenuItem28"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen47414",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Text File",
+                                                        "designer|userClassName": "MyMenuItem28"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen47672",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "iPod Notes",
+                                                        "designer|userClassName": "MyMenuItem28"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen47941",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "XLIFF",
+                                                        "designer|userClassName": "MyMenuItem28"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen40938",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Merging",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    },
+                                    "cn": [
+                                        {
+                                            "id": "ExtBox1-ext-gen40943",
+                                            "type": "menu",
+                                            "reference": {
+                                                "name": "menu",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "width": null,
+                                                "designer|userClassName": "MyMenu5"
+                                            },
+                                            "cn": [
+                                                {
+                                                    "id": "ExtBox1-ext-gen40946",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Insert Package",
+                                                        "designer|userClassName": "MyMenuItem8"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "ExtBox1-ext-gen40951",
+                                                    "type": "menuitem",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "text": "Extract Package",
+                                                        "designer|userClassName": "MyMenuItem16"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen41497",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen42218",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Quit",
+                                        "designer|userClassName": "MyMenuItem26"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen30139",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Tools",
+                        "designer|userClassName": "MyButton",
+                        "layout|flex": null
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen30144",
+                            "type": "menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "designer|userClassName": "MyMenu"
+                            },
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen30147",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "iDevice Editor",
+                                        "designer|userClassName": "MyMenuItem"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen30152",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Preferences",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen50670",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator6"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen30157",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Refresh Display",
+                                        "designer|userClassName": "MyMenuItem2"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen30336",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Styles",
+                        "designer|userClassName": "MyButton",
+                        "layout|flex": null
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen30341",
+                            "type": "menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120,
+                                "designer|userClassName": "MyMenu"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen30550",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Help",
+                        "designer|userClassName": "MyButton",
+                        "layout|flex": null
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen30555",
+                            "type": "menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "designer|userClassName": "MyMenu"
+                            },
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen30558",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "eXe Tutorial",
+                                        "designer|userClassName": "MyMenuItem"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen30563",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "eXe Manual",
+                                        "designer|userClassName": "MyMenuItem1"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen30568",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Release Notes",
+                                        "designer|userClassName": "MyMenuItem2"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen54561",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator7"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen54714",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "eXe Web Site",
+                                        "designer|userClassName": "MyMenuItem25"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen55239",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Report an Issue",
+                                        "designer|userClassName": "MyMenuItem25"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen55632",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "eXe Live Chat",
+                                        "designer|userClassName": "MyMenuItem25"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen55929",
+                                    "type": "menuseparator",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MySeparator7"
+                                    }
+                                },
+                                {
+                                    "id": "ExtBox1-ext-gen56413",
+                                    "type": "menuitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "About eXe",
+                                        "designer|userClassName": "MyMenuItem25"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen13996",
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": null,
+                "activeTab": 0,
+                "designer|userClassName": "MainTabPanel",
+                "designer|userAlias": "maintabpanel"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen14005",
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Authoring",
+                        "designer|userClassName": "MyPanel"
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen27068",
+                    "type": "tabpanel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Properties",
+                        "activeTab": 2,
+                        "designer|userClassName": "MyTabPanel1"
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen27080",
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Package",
+                                "designer|userClassName": "MyPanel2"
+                            }
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen27089",
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Metadata",
+                                "designer|userClassName": "MyPanel3"
+                            }
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen27098",
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Export",
+                                "designer|userClassName": "MyPanel4"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen18576",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": null,
+                "layout": "border",
+                "designer|userClassName": "LeftPanel",
+                "designer|userAlias": "leftpanel"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen43669",
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "border",
+                        "designer|userClassName": "MyContainer2",
+                        "layout|flex": null,
+                        "layout|region": "center"
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen6636",
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|region": "north",
+                                "designer|userClassName": "OutlineToolbar1",
+                                "designer|userAlias": "outlinetoolbar1"
+                            },
+                            "iconCls": "icon-linkedinstance",
+                            "masterInstanceId": "ExtBox1-ext-gen20447"
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen13811",
+                            "type": "treepanel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoScroll": true,
+                                "title": "Outline",
+                                "designer|userClassName": "MyTreePanel",
+                                "layout|flex": null,
+                                "layout|region": "center"
+                            },
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen13819",
+                                    "type": "treeview",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyTreeView"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen8872",
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "layout|region": "south",
+                                "border": null,
+                                "width": null,
+                                "designer|userClassName": "OutlineToolbar2",
+                                "designer|userAlias": "outlinetoolbar2"
+                            },
+                            "iconCls": "icon-linkedinstance",
+                            "masterInstanceId": "ExtBox1-ext-gen20789"
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen17015",
+                    "type": "gridpanel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 150,
+                        "autoScroll": true,
+                        "title": "iDevices",
+                        "designer|userClassName": "MyGridPanel",
+                        "layout|flex": 1,
+                        "layout|region": "south",
+                        "layout|split": true
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen17030",
+                            "type": "gridcolumn",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hideMode": null,
+                                "width": null,
+                                "sortable": false,
+                                "dataIndex": "string",
+                                "fixed": true,
+                                "flex": 1,
+                                "hideable": false,
+                                "menuDisabled": true,
+                                "text": null,
+                                "designer|userClassName": "MyColumn"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen20789",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "designer|userClassName": "OutlineToolbar2",
+                "designer|userAlias": "outlinetoolbar2"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen24828",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": null,
+                        "designer|userClassName": "MyButton4",
+                        "layout|flex": null
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen25004",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": null,
+                        "designer|userClassName": "MyButton5",
+                        "layout|flex": null
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen25181",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": null,
+                        "designer|userClassName": "MyButton6",
+                        "layout|flex": null
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen25359",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": null,
+                        "designer|userClassName": "MyButton7",
+                        "layout|flex": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen20447",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "OutlineToolbar1",
+                "designer|userAlias": "outlinetoolbar1"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen24184",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Add Page",
+                        "designer|userClassName": "MyButton1",
+                        "layout|flex": null
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen24442",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Delete",
+                        "designer|userClassName": "MyButton2",
+                        "layout|flex": null
+                    }
+                },
+                {
+                    "id": "ExtBox1-ext-gen24619",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Rename",
+                        "designer|userClassName": "MyButton3",
+                        "layout|flex": null
+                    }
+                }
+            ]
+        }
+    ],
+    "stores": [
+        {
+            "id": "ExtBox1-ext-gen8809",
+            "type": "xmltreestore",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "storeId": "OutlineXmlTreeStore",
+                "designer|userClassName": "OutlineXmlTreeStore"
+            },
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen8813",
+                    "type": "ajaxproxy",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "http://localhost:51235/scripts/jsui/data/test.xml",
+                        "designer|userClassName": "Ajax Proxy"
+                    },
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen8819",
+                            "type": "xmlreader",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "root": "nodes",
+                                "record": "node",
+                                "designer|userClassName": "Xml Reader"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "framework": "ext40"
+}

@@ -24,7 +24,8 @@ anything it just redirects the user to a new package.
 
 import logging
 from exe.webui.renderable     import RenderableResource
-from exe.xului.mainpage       import MainPage
+#from exe.xului.mainpage import MainPage
+from exe.jsui.mainpage import MainPage
 
 log = logging.getLogger(__name__)
 

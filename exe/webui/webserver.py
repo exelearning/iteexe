@@ -101,7 +101,7 @@ class WebServer:
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
                                   appserver.NevowSite(self.root),
-                                  interface="127.0.0.1")
+                                  interface="0.0.0.0")
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)
                 found_port = 1
@@ -208,6 +208,10 @@ class WebServer:
         self.root.putChild("xliffimport", self.xliffimportpreferences)
         self.root.putChild("about",       self.about)
 
+        # new ExtJS 4.0 Interface
+        jsDir = self.config.jsDir
+        self.root.putChild("jsui", static.File(jsDir + "/scripts"))
+        
         # A port for this server was looked for earlier by find_port.  
         # Ensure that it is valid (>= 0):
         if self.config.port >= 0:

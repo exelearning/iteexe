@@ -41,7 +41,7 @@ class Config:
 
     # Class attributes
     optionNames = {
-        'system': ('webDir', 'xulDir', 'port', 'dataDir', 
+        'system': ('webDir', 'xulDir', 'jsDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browserPath'),
         'user': ('locale',),
     }
@@ -59,6 +59,7 @@ class Config:
         self.webDir      = self.exePath.dirname()
         # xulDir is the parent directory for styles,scripts and templates
         self.xulDir      = self.exePath.dirname()
+        self.jsDir       = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on 
@@ -105,6 +106,10 @@ class Config:
         if not (self.xulDir/'scripts').isdir() \
            and (self.xulDir/'xului').isdir():
             self.xulDir /= 'xului'
+        self.jsDir = Path(self.jsDir)
+        if not (self.jsDir/'scripts').isdir() \
+           and (self.jsDir/'jsui').isdir():
+            self.jsDir /= 'jsui'
         # Find where the config file will be saved
         self.__setConfigPath()
         # Fill in any undefined config options with our defaults
@@ -217,6 +222,7 @@ class Config:
             system = self.configParser.system
             self.webDir         = Path(system.webDir)
             self.xulDir         = Path(system.xulDir)
+            self.jsDir          = Path(system.jsDir)
             self.localeDir      = Path(system.localeDir)
             self.port           = int(system.port)
             self.browserPath    = Path(system.browserPath)
@@ -329,6 +335,7 @@ class Config:
         log.info("browserPath = %s" % self.browserPath)
         log.info("webDir      = %s" % self.webDir)
         log.info("xulDir      = %s" % self.xulDir)
+        log.info("jsDir      = %s" % self.jsDir)
         log.info("localeDir   = %s" % self.localeDir)
         log.info("port        = %d" % self.port)
         log.info("dataDir     = %s" % self.dataDir)

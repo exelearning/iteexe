@@ -67,7 +67,8 @@ function runFuncArray(handlers) {
         var row = handlers[i] 
         if (typeof row=="function")
             row()
-        else {
+        else
+            if (row) {
             // row[0] is a function, row[1] are its args
             row[0].apply(this, row[1]);
         }
