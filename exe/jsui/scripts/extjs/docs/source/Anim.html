@@ -55,7 +55,7 @@
  *         },
  *         to: {
  *             width: 300, //end width 300
- *             height: 300 // end width 300
+ *             height: 300 // end height 300
  *         }
  *     });
  */
@@ -71,6 +71,10 @@ Ext.define('Ext.fx.Anim', {
 
     /* End Definitions */
 
+<span id='Ext-fx-Anim-property-isAnimation'>    /**
+</span>     * @property {Boolean} isAnimation
+     * `true` in this class to identify an object as an instantiated Anim, or subclass thereof.
+     */
     isAnimation: true,
 
 <span id='Ext-fx-Anim-cfg-callback'>    /**
@@ -255,6 +259,9 @@ from : {
  }
  &lt;/code&gt;&lt;/pre&gt;
      */
+    
+    // private
+    frameCount: 0,
 
     // @private
     constructor: function(config) {
@@ -264,9 +271,9 @@ from : {
         config = config || {};
         // If keyframes are passed, they really want an Animator instead.
         if (config.keyframes) {
-            return Ext.create('Ext.fx.Animator', config);
+            return new Ext.fx.Animator(config);
         }
-        config = Ext.apply(me, config);
+        Ext.apply(me, config);
         if (me.from === undefined) {
             me.from = {};
         }
@@ -285,7 +292,6 @@ from : {
             }
         }
         me.id = Ext.id(null, 'ext-anim-');
-        Ext.fx.Manager.addAnim(me);
         me.addEvents(
 <span id='Ext-fx-Anim-event-beforeanimate'>            /**
 </span>             * @event beforeanimate
@@ -308,11 +314,8 @@ from : {
               */
             'lastframe'
         );
-        me.mixins.observable.constructor.call(me, config);
-        if (config.callback) {
-            me.on('afteranimate', config.callback, config.scope);
-        }
-        return me;
+        me.mixins.observable.constructor.call(me);
+        Ext.fx.Manager.addAnim(me);
     },
 
 <span id='Ext-fx-Anim-method-setAttr'>    /**
@@ -366,6 +369,7 @@ from : {
             delay = me.delay,
             delayStart = me.delayStart,
             delayDelta;
+        
         if (delay) {
             if (!delayStart) {
                 me.delayStart = startTime;
@@ -388,6 +392,7 @@ from : {
                 me.initAttrs();
             }
             me.running = true;
+            me.frameCount = 0;
         }
     },
 
@@ -420,6 +425,8 @@ from : {
                 ret[attr] = propHandlers[attr].set(values, easing);
             }
         }
+        me.frameCount++;
+            
         return ret;
     },
 
@@ -450,18 +457,32 @@ from : {
         }
     },
 
+    endWasCalled: 0,
+
 <span id='Ext-fx-Anim-method-end'>    /**
 </span>     * Fire afteranimate event and end the animation. Usually called automatically when the
      * animation reaches its final frame, but can also be called manually to pre-emptively
      * stop and destroy the running animation.
      */
     end: function() {
+        if (this.endWasCalled++) {
+            return;
+        }
         var me = this;
         me.startTime = 0;
         me.paused = false;
         me.running = false;
         Ext.fx.Manager.removeAnim(me);
         me.fireEvent('afteranimate', me, me.startTime);
+        Ext.callback(me.callback, me.scope, [me, me.startTime]);
+    },
+    
+    isReady: function() {
+        return this.paused === false &amp;&amp; this.running === false &amp;&amp; this.iterations &gt; 0;
+    },
+    
+    isRunning: function() {
+        return this.paused === false &amp;&amp; this.running === true &amp;&amp; this.isAnimator !== true;
     }
 });
 // Set flag to indicate that Fx is available. Class might not be available immediately.

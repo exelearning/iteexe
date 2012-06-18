@@ -8,6 +8,7 @@
 
 $form-field-height: 22px !default;
 $form-toolbar-field-height: 20px !default;
+$form-error-icon-width: 18px !default;
 
 //padding
 $form-field-padding: 1px 3px !default;
@@ -102,7 +103,8 @@ $form-trigger-icon-background-position: 7px 6px !default;
 $fieldset-header-font-size: ceil($font-size * .9) !default;
 $fieldset-header-font-weight: bold !default;
 $fieldset-header-font-family: $font-family !default;
-$fieldset-header-font: $fieldset-header-font-size $fieldset-header-font-weight $fieldset-header-font-family !default;
+$fieldset-header-line-height: 14px !default;
+$fieldset-header-font: #{$fieldset-header-font-size}/#{$fieldset-header-line-height} $fieldset-header-font-weight $fieldset-header-font-family !default;
 $fieldset-header-color: adjust-color($base-color, $hue: 3.785deg, $saturation: 18.194%, $lightness: -52.745%) !default;
 
 $fieldset-border-width: 1px !default;
@@ -111,4 +113,13 @@ $fieldset-border-color: $form-field-border-color !default;
 $fieldset-border: $fieldset-border-width $fieldset-border-style $fieldset-border-color !default;
 
 $fieldset-padding: 10px !default;
-$fieldset-header-padding: 0 3px !default;
+$fieldset-header-padding: 0 3px 1px !default;
+
+/**
+ * Sliders
+ */
+$horizontal-slider-thumb-width: 14px !default;
+$horizontal-slider-thumb-height: 15px !default;
+
+$vertical-slider-thumb-width: 15px !default;
+$vertical-slider-thumb-height: 14px !default;

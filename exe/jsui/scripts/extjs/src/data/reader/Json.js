@@ -1,21 +1,6 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @author Ed Spencer
  * @class Ext.data.reader.Json
- * @extends Ext.data.reader.Reader
  *
  * <p>The JSON Reader is used by a Proxy to read a server response that is sent back in JSON format. This usually
  * happens as a result of loading a Store - for example we might create something like this:</p>
@@ -134,42 +119,95 @@ reader: {
 }
 </code></pre>
  *
- * <p><u>Response metadata</u></p>
+ * <p><u>Response MetaData</u></p>
  *
- * <p>The server can return additional data in its response, such as the {@link #totalProperty total number of records}
- * and the {@link #successProperty success status of the response}. These are typically included in the JSON response
- * like this:</p>
- *
-<pre><code>
-{
-    "total": 100,
-    "success": true,
-    "users": [
-        {
-            "id": 1,
+ * The server can return metadata in its response, in addition to the record data, that describe attributes
+ * of the data set itself or are used to reconfigure the Reader. To pass metadata in the response you simply
+ * add a `metaData` attribute to the root of the response data. The metaData attribute can contain anything,
+ * but supports a specific set of properties that are handled by the Reader if they are present:
+ * 
+ * - {@link #root}: the property name of the root response node containing the record data
+ * - {@link #idProperty}: property name for the primary key field of the data
+ * - {@link #totalProperty}: property name for the total number of records in the data
+ * - {@link #successProperty}: property name for the success status of the response
+ * - {@link #messageProperty}: property name for an optional response message
+ * - {@link Ext.data.Model#cfg-fields fields}: Config used to reconfigure the Model's fields before converting the
+ * response data into records
+ * 
+ * An initial Reader configuration containing all of these properties might look like this ("fields" would be
+ * included in the Model definition, not shown):
+
+    reader: {
+        type : 'json',
+        root : 'root',
+        idProperty     : 'id',
+        totalProperty  : 'total',
+        successProperty: 'success',
+        messageProperty: 'message'
+    }
+
+If you were to pass a response object containing attributes different from those initially defined above, you could
+use the `metaData` attribute to reconifgure the Reader on the fly. For example:
+
+    {
+        "count": 1,
+        "ok": true,
+        "msg": "Users found",
+        "users": [{
+            "userId": 123,
             "name": "Ed Spencer",
             "email": "ed@sencha.com"
+        }],
+        "metaData": {
+            "root": "users",
+            "idProperty": 'userId',
+            "totalProperty": 'count',
+            "successProperty": 'ok',
+            "messageProperty": 'msg'
         }
-    ]
-}
-</code></pre>
- *
- * <p>If these properties are present in the JSON response they can be parsed out by the JsonReader and used by the
- * Store that loaded it. We can set up the names of these properties by specifying a final pair of configuration
- * options:</p>
- *
-<pre><code>
-reader: {
-    type : 'json',
-    root : 'users',
-    totalProperty  : 'total',
-    successProperty: 'success'
-}
-</code></pre>
- *
- * <p>These final options are not necessary to make the Reader work, but can be useful when the server needs to report
- * an error or if it needs to indicate that there is a lot of data available of which only a subset is currently being
- * returned.</p>
+    }
+
+ * You can also place any other arbitrary data you need into the `metaData` attribute which will be ignored by the Reader,
+ * but will be accessible via the Reader's {@link #metaData} property (which is also passed to listeners via the Proxy's
+ * {@link Ext.data.proxy.Proxy#metachange metachange} event (also relayed by the {@link Ext.data.AbstractStore#metachange
+ * store}). Application code can then process the passed metadata in any way it chooses.
+ * 
+ * A simple example for how this can be used would be customizing the fields for a Model that is bound to a grid. By passing
+ * the `fields` property the Model will be automatically updated by the Reader internally, but that change will not be
+ * reflected automatically in the grid unless you also update the column configuration. You could do this manually, or you
+ * could simply pass a standard grid {@link Ext.panel.Table#columns column} config object as part of the `metaData` attribute
+ * and then pass that along to the grid. Here's a very simple example for how that could be accomplished:
+
+    // response format:
+    {
+        ...
+        "metaData": {
+            "fields": [
+                { "name": "userId", "type": "int" },
+                { "name": "name", "type": "string" },
+                { "name": "birthday", "type": "date", "dateFormat": "Y-j-m" },
+            ],
+            "columns": [
+                { "text": "User ID", "dataIndex": "userId", "width": 40 },
+                { "text": "User Name", "dataIndex": "name", "flex": 1 },
+                { "text": "Birthday", "dataIndex": "birthday", "flex": 1, "format": 'Y-j-m', "xtype": "datecolumn" }
+            ]
+        }
+    }
+
+The Reader will automatically read the meta fields config and rebuild the Model based on the new fields, but to handle
+the new column configuration you would need to handle the metadata within the application code. This is done simply enough
+by handling the metachange event on either the store or the proxy, e.g.:
+
+        var store = Ext.create('Ext.data.Store', {
+            ...
+            listeners: {
+                'metachange': function(store, meta) {
+                    myGrid.reconfigure(store, meta.columns);
+                }
+            }
+        });
+
  */
 Ext.define('Ext.data.reader.Json', {
     extend: 'Ext.data.reader.Reader',
@@ -214,25 +252,26 @@ Ext.define('Ext.data.reader.Json', {
 
     //inherit docs
     getResponseData: function(response) {
-        var data;
+        var data, error;
+ 
         try {
             data = Ext.decode(response.responseText);
-        }
-        catch (ex) {
-            Ext.Error.raise({
-                response: response,
-                json: response.responseText,
-                parseError: ex,
-                msg: 'Unable to parse the JSON returned by the server: ' + ex.toString()
+            return this.readRecords(data);
+        } catch (ex) {
+            error = new Ext.data.ResultSet({
+                total  : 0,
+                count  : 0,
+                records: [],
+                success: false,
+                message: ex.message
             });
-        }
-        //<debug>
-        if (!data) {
-            Ext.Error.raise('JSON object not found');
-        }
-        //</debug>
 
-        return data;
+            this.fireEvent('exception', this, response, error);
+
+            Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+            return error;
+        }
     },
 
     //inherit docs
@@ -287,7 +326,7 @@ Ext.define('Ext.data.reader.Json', {
      * 'some["property"]'
      * This is used by buildExtractors to create optimized extractor functions when casting raw data into model instances.
      */
-    createAccessor: function() {
+    createAccessor: (function() {
         var re = /[\[\.]/;
 
         return function(expr) {
@@ -307,5 +346,38 @@ Ext.define('Ext.data.reader.Json', {
                 return obj[expr];
             };
         };
-    }()
+    }()),
+
+    /**
+     * @private
+     * Returns an accessor expression for the passed Field. Gives support for properties such as the following:
+     * 'someProperty'
+     * 'some.property'
+     * 'some["property"]'
+     * This is used by buildExtractors to create optimized on extractor function which converts raw data into model instances.
+     */
+    createFieldAccessExpression: (function() {
+        var re = /[\[\.]/;
+
+        return function(field, fieldVarName, dataName) {
+            var me     = this,
+                hasMap = (field.mapping !== null),
+                map    = hasMap ? field.mapping : field.name,
+                result,
+                operatorSearch;
+
+            if (typeof map === 'function') {
+                result = fieldVarName + '.mapping(' + dataName + ', this)';
+            } else if (this.useSimpleAccessors === true || ((operatorSearch = String(map).search(re)) < 0)) {
+                if (!hasMap || isNaN(map)) {
+                    // If we don't provide a mapping, we may have a field name that is numeric
+                    map = '"' + map + '"';
+                }
+                result = dataName + "[" + map + "]";
+            } else {
+                result = dataName + (operatorSearch > 0 ? '.' : '') + map;
+            }
+            return result;
+        };
+    }())
 });

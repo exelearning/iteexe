@@ -6,7 +6,7 @@
         <script type="text/javascript">
              Ext.require('*');
              Ext.onReady(function() {
-                ExtBootstrap.loadSpecs(function(){
+                TestBootstrap.loadSpecs(function(){
                      if (parent && parent.Test) {
                         jasmine.getEnv().addReporter(parent.Test.SandBox.reporter);
                      }

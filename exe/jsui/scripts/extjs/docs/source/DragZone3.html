@@ -16,9 +16,7 @@
 </head>
 <body onload="prettyPrint(); highlight();">
   <pre class="prettyprint lang-js"><span id='Ext-view-DragZone'>/**
-</span> * @class Ext.view.DragZone
- * @extends Ext.dd.DragZone
- * @private
+</span> * @private
  */
 Ext.define('Ext.view.DragZone', {
     extend: 'Ext.dd.DragZone',
@@ -78,20 +76,16 @@ Ext.define('Ext.view.DragZone', {
 
     getDragData: function(e) {
         var view = this.view,
-            item = e.getTarget(view.getItemSelector()),
-            record, selectionModel, records;
+            item = e.getTarget(view.getItemSelector());
 
         if (item) {
-            record = view.getRecord(item);
-            selectionModel = view.getSelectionModel();
-            records = selectionModel.getSelection();
             return {
-                copy: this.view.copy || (this.view.allowCopy &amp;&amp; e.ctrlKey),
+                copy: view.copy || (view.allowCopy &amp;&amp; e.ctrlKey),
                 event: new Ext.EventObjectImpl(e),
                 view: view,
                 ddel: this.ddel,
                 item: item,
-                records: records,
+                records: view.getSelectionModel().getSelection(),
                 fromPosition: Ext.fly(item).getXY()
             };
         }

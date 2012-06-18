@@ -47,7 +47,7 @@ For a live demo please see the [Simple Store](guides/data/examples/simple_store/
 
 ### Inline data
 
-Stores can also load data inline. Internally, Store converts each of the objects we pass in as {@link Ext.data.Store#data data} into {@link Ext.data.Model Model} instances:
+Stores can also load data inline. Internally, Store converts each of the objects we pass in as {@link Ext.data.Store#cfg-data data} into {@link Ext.data.Model Model} instances:
 
     Ext.create('Ext.data.Store', {
         model: 'User',

@@ -1,21 +1,7 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-describe("Ext.Element", function() {
+describe("Ext.dom.Element", function() {
     var domEl,
         element;
-        
+
     afterEach(function() {
         if (element) {
             element.remove();
@@ -25,17 +11,17 @@ describe("Ext.Element", function() {
             document.body.removeChild(domEl);
         }
     });
-    
+
     describe("instantiation", function() {
         beforeEach(function() {
             domEl = document.createElement("div");
             Ext.getBody().appendChild(domEl);
         });
-        
 
-        
+
+
         it("should set dom element id if it hasn't already one", function() {
-            element = new Ext.Element(domEl);
+            element = new Ext.dom.Element(domEl);
 
             expect(domEl.id).toBeDefined();
         });
@@ -44,13 +30,13 @@ describe("Ext.Element", function() {
             var id = Ext.id();
 
             domEl.id = id;
-            element = new Ext.Element(domEl);
+            element = new Ext.dom.Element(domEl);
 
             expect(domEl.id).toEqual(id);
         });
 
         it("should set dom property to dom element", function() {
-            element = new Ext.Element(domEl);
+            element = new Ext.dom.Element(domEl);
 
             expect(element.dom).toBe(domEl);
         });
@@ -59,13 +45,13 @@ describe("Ext.Element", function() {
             var id = Ext.id();
 
             domEl.id = id;
-            element = new Ext.Element(domEl);
+            element = new Ext.dom.Element(domEl);
 
             expect(element.id).toEqual(id);
         });
 
         it("should not set dom or id property if first argument is undefined", function() {
-            element = new Ext.Element();
+            element = new Ext.dom.Element();
 
             expect(element.id).toBeUndefined();
             expect(element.dom).toBeUndefined();
@@ -76,27 +62,22 @@ describe("Ext.Element", function() {
 
             domEl.id = id;
 
-            element = new Ext.Element(id);
+            element = new Ext.dom.Element(id);
 
             expect(element.dom).toBe(domEl);
         });
     });
 
-    describe("methods", function() {
-        beforeEach(function() {
-            element = Ext.getBody().createChild({tag: "div"});
-            domEl = element.dom;
-        });
-
+    function describeMethods(){
         describe("set", function() {
-            it("should call Ext.DomHelper.applyStyles if object passed as first argument has style property", function() {
+            it("should call Ext.core.DomHelper.applyStyles if object passed as first argument has style property", function() {
                 var style = {width:'100px'};
 
-                spyOn(Ext.DomHelper, "applyStyles");
+                spyOn(Ext.core.DomHelper, "applyStyles");
 
                 element.set({style: style});
 
-                expect(Ext.DomHelper.applyStyles).toHaveBeenCalledWith(element.dom, style);
+                expect(Ext.core.DomHelper.applyStyles).toHaveBeenCalledWith(element.dom, style);
             });
 
             it("should set dom element className if object passed as first argument has cls property", function() {
@@ -211,7 +192,7 @@ describe("Ext.Element", function() {
 
                     element.addListener("click", Ext.emptyFn, fakeScope, options);
 
-                    expect(Ext.EventManager.on).toHaveBeenCalledWith(element.dom, "click", Ext.emptyFn, fakeScope, options);
+                    expect(Ext.EventManager.on).toHaveBeenCalledWith(element, "click", Ext.emptyFn, fakeScope, options);
                 });
             });
 
@@ -221,7 +202,7 @@ describe("Ext.Element", function() {
 
                     element.removeListener("click", Ext.emptyFn, fakeScope);
 
-                    expect(Ext.EventManager.un).toHaveBeenCalledWith(element.dom, "click", Ext.emptyFn, fakeScope);
+                    expect(Ext.EventManager.un).toHaveBeenCalledWith(element, "click", Ext.emptyFn, fakeScope);
                 });
             });
 
@@ -245,7 +226,7 @@ describe("Ext.Element", function() {
                 });
             });
         });
-        
+
         describe("addUnits", function() {
             it("should return an empty string if size passed is an empty string", function() {
                 expect(element.addUnits("")).toEqual("");
@@ -327,7 +308,7 @@ describe("Ext.Element", function() {
         });
 
         describe("contains", function() {
-            /*
+            /**
              * TODO: Removed tests for now, need to reinstate once the refactoring is done.
              */
         });
@@ -346,14 +327,14 @@ describe("Ext.Element", function() {
             var element2, element3;
             beforeEach(function() {
                 element2 = Ext.getBody().createChild({tag: "div"});
-                
+
 
                 if (element.dom.setAttribute) {
                     element.dom.setAttribute("qtip", "bar");
                     element2.dom.setAttribute("ext:qtip", "foo");
                 } else {
                     element.dom["qtip"] = "bar";
-                    element2.dom["ext:qtip"] = "foo";               
+                    element2.dom["ext:qtip"] = "foo";
                 }
 
                 if (element.dom.setAttributeNS) {
@@ -361,17 +342,17 @@ describe("Ext.Element", function() {
                     element3.dom.setAttributeNS("ext", "qtip", "foobar");
                 }
             });
-            
+
             afterEach(function() {
                 if (element2) {
                     element2.remove();
                 }
-                
+
                 if (element3) {
                     element3.remove();
                 }
             });
-            
+
             describe("without namespace", function() {
                 it("should return the attribute value if it exists", function() {
                     expect(element.getAttribute("qtip")).toEqual("bar");
@@ -396,7 +377,7 @@ describe("Ext.Element", function() {
                         expect(element3.getAttribute("qtip", "ext")).toEqual("foobar");
                     }
                 });
-                
+
                 it("should handle xml namespace", function() {
                     expect(element2.getAttribute("qtip", "ext")).toEqual("foo");
                 });
@@ -421,17 +402,104 @@ describe("Ext.Element", function() {
 
         describe("prototype aliases", function() {
             it("should aliases addListener with on", function() {
-                expect(element.on).toBe(element.addListener);
+                expect(typeof(element.on)).toEqual('function');
             });
 
             it("should aliases removeListener with un", function() {
-                expect(element.un).toBe(element.removeListener);
+                expect(typeof(element.un)).toEqual('function');
             });
 
             it("should aliases removeAllListeners with clearListeners", function() {
-                expect(element.clearListeners).toBe(element.removeAllListeners);
+                expect(typeof(element.clearListeners)).toEqual('function');
             });
         });
+
+        describe("visibilityMode", function(){
+            it('must be able to setVisibilityMode and getVisibilityMode', function(){
+                element.setVisibilityMode(Ext.dom.Element.DISPLAY);
+                expect(element.getVisibilityMode()).toBe(Ext.dom.Element.DISPLAY);
+                
+                element.setVisibilityMode(Ext.dom.Element.VISIBILITY);
+                expect(element.getVisibilityMode()).toBe(Ext.dom.Element.VISIBILITY);
+            });
+            
+            it("should retain visibilityMode on flyweights", function(){
+                Ext.fly(element.dom).setVisibilityMode(Ext.dom.Element.DISPLAY);
+                expect(Ext.fly(element.dom).getVisibilityMode()).toBe(Ext.dom.Element.DISPLAY);    
+            });
+        });
+
+        describe("visibility", function(){
+            var child, grandChild,
+                modes = [Ext.dom.Element.DISPLAY, Ext.dom.Element.VISIBILITY];
+
+            beforeEach(function() {
+                child = element.createChild({tag: "div"});
+                if (child) {
+                    child.setVisible(true);
+                    grandChild = child.createChild({tag: "div"});
+                    if (grandChild) {
+                        grandChild.setVisible(true);
+                    }
+                }
+            });
+
+            afterEach(function() {
+                if (grandChild) {
+                    grandChild.remove();
+                }
+                if (child) {
+                    child.remove();
+                }
+            });
+
+            it("should toggle the visibility of the element itself", function(){
+                for (var i in modes) {
+                    element.setVisibilityMode(modes[i]);
+
+                    element.setVisible(false);
+                    expect(element.isVisible(false)).toBe(false);
+
+                    element.setVisible(true);
+                    expect(element.isVisible(false)).toBe(true);                    
+                }
+            });
+
+            it("should toggle the 'deep' visibility of the grand-child", function(){
+                for (var i in modes) {
+                    element.setVisibilityMode(modes[i]);
+
+                    element.setVisible(false);
+                    expect(grandChild.isVisible(true)).toBe(false);
+
+                    element.setVisible(true);
+                    expect(grandChild.isVisible(true)).toBe(true);
+                }
+            });
+        });
+
+    }
+
+    describe('methods', function(){
+        beforeEach(function() {
+            domEl = document.createElement('div');
+            document.body.appendChild(domEl);
+        });
+
+        describe("new Ext.dom.Element", function(){
+            beforeEach(function() {
+                element = new Ext.dom.Element(domEl);
+            });
+            describeMethods();
+        });
+
+        describe("Ext.fly", function(){
+            beforeEach(function(){
+                element = Ext.fly(domEl);
+            });
+            describeMethods();
+        });
+
     });
 
     describe("class methods", function() {
@@ -446,7 +514,7 @@ describe("Ext.Element", function() {
             domEl2.id = id;
             document.body.appendChild(domEl2);
 
-            spyOn(Ext.Element, "addToCache").andCallThrough();
+            spyOn(Ext.dom.Element, "addToCache").andCallThrough();
         });
 
         afterEach(function() {
@@ -457,23 +525,25 @@ describe("Ext.Element", function() {
                 document.body.removeChild(domEl2);
             }
         });
-        
+
         describe("get", function() {
             describe("alias", function() {
-                it("should alias Ext.Element.get with Ext.get", function() {
-                    expect(Ext.get).toBe(Ext.Element.get);
+                it("should alias Ext.dom.Element.get with Ext.get", function() {
+                    spyOn(Ext.dom.Element, 'get');
+                    Ext.get();
+                    expect(Ext.dom.Element.get).toHaveBeenCalled();
                 });
             });
 
             describe("passing string id as first argument", function() {
                 describe("with a dom element which is not already encapsulated", function() {
-                    it("should return a new Ext.Element", function() {
+                    it("should return a new Ext.dom.Element", function() {
                         element2 = Ext.get(id);
 
-                        expect(element2 instanceof Ext.Element).toBe(true);
+                        expect(element2 instanceof Ext.dom.Element).toBe(true);
                     });
 
-                    it("should encapsulate the dom element in the Ext.Element", function() {
+                    it("should encapsulate the dom element in the Ext.dom.Element", function() {
                         element2 = Ext.get(id);
 
                         expect(element2.dom).toBe(domEl2);
@@ -481,33 +551,33 @@ describe("Ext.Element", function() {
 
                     it("should add element to Ext.cache", function() {
                         element2 = Ext.get(id);
-         
-                        expect(Ext.Element.addToCache).toHaveBeenCalledWith(element2);
+
+                        expect(Ext.dom.Element.addToCache).toHaveBeenCalledWith(element2);
                     });
                 });
 
                 describe("with a dom element which is already encapsulated", function() {
-                    it("should return the corresponding Ext.element", function() {
+                    it("should return the corresponding Ext.Element", function() {
                         expect(Ext.get(domEl)).toBe(element);
                     });
 
                     it("should not add element to Ext.cache if it is already in", function() {
                         Ext.get(domEl);
 
-                        expect(Ext.Element.addToCache).not.toHaveBeenCalled();
+                        expect(Ext.dom.Element.addToCache).not.toHaveBeenCalled();
                     });
                 });
             });
 
             describe("passing dom element as first argument", function() {
                 describe("with a dom element which is not already encapsulated", function() {
-                    it("should return a new Ext.Element", function() {
+                    it("should return a new Ext.dom.Element", function() {
                         element2 = Ext.get(domEl2);
 
-                        expect(element2 instanceof Ext.Element).toBe(true);
+                        expect(element2 instanceof Ext.dom.Element).toBe(true);
                     });
 
-                    it("should encapsulate the dom element in the Ext.Element", function() {
+                    it("should encapsulate the dom element in the Ext.dom.Element", function() {
                         element2 = Ext.get(domEl2);
 
                         expect(element2.dom).toBe(domEl2);
@@ -516,25 +586,25 @@ describe("Ext.Element", function() {
                     it("should add element to Ext.cache", function() {
                         element2 = Ext.get(domEl2);
 
-                        expect(Ext.Element.addToCache).toHaveBeenCalledWith(element2);
+                        expect(Ext.dom.Element.addToCache).toHaveBeenCalledWith(element2);
                     });
                 });
 
                 describe("with a dom element which is already encapsulated", function() {
-                    it("should return the corresponding Ext.element", function() {
+                    it("should return the corresponding Ext.Element", function() {
                         expect(Ext.get(domEl.id)).toBe(element);
                     });
 
                     it("should not add element to Ext.cache if it is already in", function() {
                         Ext.get(domEl.id);
 
-                        expect(Ext.Element.addToCache).not.toHaveBeenCalled();
+                        expect(Ext.dom.Element.addToCache).not.toHaveBeenCalled();
                     });
                 });
             });
 
-            describe("passing an Ext.Element as first argument", function() {
-                it("should return Ext.Element", function() {
+            describe("passing an Ext.dom.Element as first argument", function() {
+                it("should return Ext.dom.Element", function() {
                     expect(Ext.get(element)).toBe(element);
                 });
             });
@@ -546,32 +616,32 @@ describe("Ext.Element", function() {
                     compositeElement = Ext.select("div");
                 });
 
-                it("should return Ext.Element", function() {
+                it("should return Ext.dom.Element", function() {
                     expect(Ext.get(compositeElement)).toBe(compositeElement);
                 });
             });
 
             describe("passing an array as first argument", function() {
-                it("should call Ext.Element.select", function() {
+                it("should call Ext.dom.Element.select", function() {
                     var arr = [domEl, domEl2];
-                    spyOn(Ext.Element, "select");
+                    spyOn(Ext.dom.Element, "select");
 
                     Ext.get(arr);
 
-                    expect(Ext.Element.select).toHaveBeenCalledWith(arr);
+                    expect(Ext.dom.Element.select).toHaveBeenCalledWith(arr);
                 });
             });
 
             describe("passing document as first argument", function() {
-                it("should return an Ext.Element", function() {
-                    expect(Ext.get(document) instanceof Ext.Element).toBe(true);
+                it("should return an Ext.dom.Element", function() {
+                    expect(Ext.get(document) instanceof Ext.dom.Element).toBe(true);
                 });
 
-                it("should return a bogus Ext.Element", function() {
+                xit("should return a bogus Ext.dom.Element", function() {
                     expect(Ext.get(document).id).not.toBeDefined();
                 });
 
-                it("should return an Ext.Element that encapsulate document", function() {
+                it("should return an Ext.dom.Element that encapsulate document", function() {
                     expect(Ext.get(document).dom).toBe(document);
                 });
             });
@@ -594,8 +664,8 @@ describe("Ext.Element", function() {
                     flyWeight = Ext.fly(domEl2);
                 });
 
-                it("should return an Ext.Element.Flyweight", function() {
-                    expect(flyWeight instanceof Ext.Element.Flyweight).toBe(true);
+                it("should return an Ext.dom.Element.Fly", function() {
+                    expect(flyWeight instanceof Ext.dom.AbstractElement.Fly).toBe(true);
                 });
 
                 it("should not cache a dom element", function() {
@@ -607,7 +677,7 @@ describe("Ext.Element", function() {
                 });
 
                 it("should create a one time reference", function() {
-                    expect(Ext.Element._flyweights._global).toEqual(flyWeight);
+                    expect(Ext.dom.AbstractElement._flyweights._global).toEqual(flyWeight);
                 });
             });
 
@@ -616,8 +686,8 @@ describe("Ext.Element", function() {
                     flyWeight = Ext.fly(domEl2, "myflyweight");
                 });
 
-                it("should return an Ext.Element.Flyweight", function() {
-                    expect(flyWeight instanceof Ext.Element.Flyweight).toBe(true);
+                it("should return an Ext.dom.Element.Flyweight", function() {
+                    expect(flyWeight instanceof Ext.dom.AbstractElement.Fly).toBe(true);
                 });
 
                 it("should not cache a dom element", function() {
@@ -629,20 +699,33 @@ describe("Ext.Element", function() {
                 });
 
                 it("should create a one time reference", function() {
-                    expect(Ext.Element._flyweights.myflyweight).toEqual(flyWeight);
+                    expect(Ext.dom.AbstractElement._flyweights.myflyweight).toEqual(flyWeight);
                 });
             });
         });
 
         describe("aliases", function() {
-            it("should aliases Ext.Element.get with Ext.get", function() {
-                expect(Ext.get).toBe(Ext.Element.get);
+            it("should aliases Ext.dom.Element.get with Ext.get", function() {
+                spyOn(Ext.dom.Element, 'get');
+                Ext.get();
+                expect(Ext.dom.Element.get).toHaveBeenCalled();
             });
 
-            it("should aliases Ext.element.fly with Ext.fly", function() {
-                expect(Ext.fly).toBe(Ext.Element.fly);
+            it("should aliases Ext.Element fly with Ext.fly", function() {
+                spyOn(Ext.dom.AbstractElement, 'fly');
+                Ext.fly();
+                expect(Ext.dom.AbstractElement.fly).toHaveBeenCalled();
             });
         });
     });
+    
+    describe("getXY", function(){
+        var unAttached;
+        beforeEach(function(){
+            unAttached = document.createElement('div');
+        });
+        it("should not throw when reading unattached element", function(){
+            Ext.fly(unAttached).getXY();
+        });
+    });
 }, "/src/dom/Element.js");
-

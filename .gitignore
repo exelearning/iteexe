@@ -1,6 +1,5 @@
 # compiled python
 *.py[co]
-build
 build-stamp
 exe.egg-info
 # editor debris

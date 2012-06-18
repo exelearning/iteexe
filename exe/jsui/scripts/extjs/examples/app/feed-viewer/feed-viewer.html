@@ -4,8 +4,11 @@
     <title id="page-title">MVC Feed Viewer</title>
 
     <link rel="stylesheet" type="text/css" href="../../../resources/css/ext-all.css">
-    <script type="text/javascript" src="../../../builds/ext-core.js"></script>
-    <script type="text/javascript" src="classes.js"></script>
+
+    <!-- GC -->
+
+    <script type="text/javascript" src="../../../ext.js"></script>
+    <script type="text/javascript" src="all-classes.js"></script>
     <script type="text/javascript" src="app.js"></script>
 
     <style type="text/css" media="screen">
@@ -104,7 +107,7 @@
             color: #333;
         }
 
-        .author: {
+        .author {
             color: #333
         }
 
@@ -120,6 +123,9 @@
         }
 
         /* Preview classes */
+        .articlepreview .x-toolbar {
+            border-top-width: 1px !important;
+        }
 
         .preview .x-panel-body {
             background:#fff;

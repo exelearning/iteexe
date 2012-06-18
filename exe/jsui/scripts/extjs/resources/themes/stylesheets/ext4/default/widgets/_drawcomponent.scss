@@ -1,6 +1,7 @@
 @mixin extjs-drawcomponent {
     .#{$prefix}surface {
         @include inline-block;
+        overflow: hidden;
     }
 
     .rvml {
@@ -50,6 +51,10 @@
         left: 0;
         overflow: hidden;
         display: inline-block;
+    }
+    
+    svg, vml {
+        overflow: hidden;
     }
 }
 

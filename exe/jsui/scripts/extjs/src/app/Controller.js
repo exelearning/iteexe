@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @class Ext.app.Controller
  *
@@ -209,36 +195,62 @@ Ext.define('Ext.app.Controller', {
      * 
      */
 
-    onClassExtended: function(cls, data) {
+    /**
+     * @cfg {Object[]} refs
+     * Array of configs to build up references to views on page. For example:
+     * 
+     *     Ext.define("MyApp.controller.Foo", {
+     *         extend: "Ext.app.Controller",
+     *         refs: [
+     *             {
+     *                 ref: 'list',
+     *                 selector: 'grid'
+     *             }
+     *         ],
+     *     });
+     * 
+     * This will add method `getList` to the controller which will internally use
+     * Ext.ComponentQuery to reference the grid component on page.
+     */
+
+    onClassExtended: function(cls, data, hooks) {
         var className = Ext.getClassName(cls),
-            match = className.match(/^(.*)\.controller\./);
-
+            match = className.match(/^(.*)\.controller\./),
+            namespace,
+            onBeforeClassCreated,
+            requires,
+            modules,
+            namespaceAndModule;
+        
         if (match !== null) {
-            var namespace = Ext.Loader.getPrefix(className) || match[1],
-                onBeforeClassCreated = data.onBeforeClassCreated,
-                requires = [],
-                modules = ['model', 'view', 'store'],
-                prefix;
+            namespace = Ext.Loader.getPrefix(className) || match[1];
+            onBeforeClassCreated = hooks.onBeforeCreated;
+            requires = [];
+            modules = ['model', 'view', 'store'];
 
-            data.onBeforeClassCreated = function(cls, data) {
+            hooks.onBeforeCreated = function(cls, data) {
                 var i, ln, module,
                     items, j, subLn, item;
 
                 for (i = 0,ln = modules.length; i < ln; i++) {
                     module = modules[i];
+                    namespaceAndModule = namespace + '.' + module + '.';
 
                     items = Ext.Array.from(data[module + 's']);
 
                     for (j = 0,subLn = items.length; j < subLn; j++) {
                         item = items[j];
-
-                        prefix = Ext.Loader.getPrefix(item);
-
-                        if (prefix === '' || prefix === item) {
-                            requires.push(namespace + '.' + module + '.' + item);
-                        }
-                        else {
+                        // Deciding if a class name must be qualified:
+                        // 1 - if the name doesn't contains at least one dot, we must definitely qualify it
+                        // 2 - the name may be a qualified name of a known class, but:
+                        // 2.1 - in runtime, the loader may not know the class - specially in production - so we must check the class manager
+                        // 2.2 - in build time, the class manager may not know the class, but the loader does, so we check the second one
+                        //       (the loader check assures it's really a class, and not a namespace, so we can have 'Books.controller.Books',
+                        //       and requesting a controller called Books will not be underqualified)
+                        if (item.indexOf('.') !== -1 && (Ext.ClassManager.isCreated(item) || Ext.Loader.isAClassNameWithAKnownPrefix(item))) {
                             requires.push(item);
+                        } else {
+                            requires.push(namespaceAndModule + item);
                         }
                     }
                 }
@@ -256,7 +268,6 @@ Ext.define('Ext.app.Controller', {
         this.mixins.observable.constructor.call(this, config);
 
         Ext.apply(this, config || {});
-
         this.createGetters('model', this.models);
         this.createGetters('store', this.stores);
         this.createGetters('view', this.views);
@@ -270,7 +281,7 @@ Ext.define('Ext.app.Controller', {
      * A template method that is called when your application boots. It is called before the
      * {@link Ext.app.Application Application}'s launch function is executed so gives a hook point to run any code before
      * your Viewport is created.
-     * 
+     *
      * @param {Ext.app.Application} application
      * @template
      */
@@ -279,7 +290,7 @@ Ext.define('Ext.app.Controller', {
     /**
      * A template method like {@link #init}, but called after the viewport is created.
      * This is called after the {@link Ext.app.Application#launch launch} method of Application is executed.
-     * 
+     *
      * @param {Ext.app.Application} application
      * @template
      */
@@ -287,14 +298,22 @@ Ext.define('Ext.app.Controller', {
 
     createGetters: function(type, refs) {
         type = Ext.String.capitalize(type);
-        Ext.Array.each(refs, function(ref) {
-            var fn = 'get',
-                parts = ref.split('.');
+
+        var i      = 0,
+            length = (refs) ? refs.length : 0,
+            fn, ref, parts, x, numParts;
+
+        for (; i < length; i++) {
+            fn    = 'get';
+            ref   = refs[i];
+            parts = ref.split('.');
+            numParts = parts.length;
 
             // Handle namespaced class names. E.g. feed.Add becomes getFeedAddView etc.
-            Ext.Array.each(parts, function(part) {
-                fn += Ext.String.capitalize(part);
-            });
+            for (x = 0 ; x < numParts; x++) {
+                fn += Ext.String.capitalize(parts[x]);
+            }
+
             fn += type;
 
             if (!this[fn]) {
@@ -302,20 +321,32 @@ Ext.define('Ext.app.Controller', {
             }
             // Execute it right away
             this[fn](ref);
-        },
-        this);
+        }
     },
 
     ref: function(refs) {
-        var me = this;
         refs = Ext.Array.from(refs);
-        Ext.Array.each(refs, function(info) {
-            var ref = info.ref,
-                fn = 'get' + Ext.String.capitalize(ref);
+        
+        var me = this,
+            i = 0,
+            length = refs.length,
+            info, ref, fn;
+
+        for (; i < length; i++) {
+            info = refs[i];
+            ref  = info.ref;
+            fn   = 'get' + Ext.String.capitalize(ref);
+
             if (!me[fn]) {
                 me[fn] = Ext.Function.pass(me.getRef, [ref, info], me);
             }
-        });
+            me.references = me.references || [];
+            me.references.push(ref.toLowerCase());
+        }
+    },
+
+    addRef: function(ref) {
+        return this.ref([ref]);
     },
 
     getRef: function(ref, info, config) {
@@ -330,7 +361,6 @@ Ext.define('Ext.app.Controller', {
         }
 
         var me = this,
-            selector = info.selector,
             cached = me.refCache[ref];
 
         if (!cached) {
@@ -346,6 +376,10 @@ Ext.define('Ext.app.Controller', {
         }
 
         return cached;
+    },
+
+    hasRef: function(ref) {
+        return this.references && this.references.indexOf(ref.toLowerCase()) !== -1;
     },
 
     /**
@@ -412,9 +446,9 @@ Ext.define('Ext.app.Controller', {
     /**
      * Returns a View class with the given name.  To create an instance of the view,
      * you can use it like it's used by Application to create the Viewport:
-     * 
+     *
      *     this.getView('Viewport').create();
-     * 
+     *
      * @param {String} name
      * @return {Ext.Base} a view class.
      */
@@ -422,4 +456,3 @@ Ext.define('Ext.app.Controller', {
         return this.application.getView(view);
     }
 });
-

@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * Provides useful information about the current browser.
  * Should not be manually instantiated unless for unit-testing; access the global instance
@@ -99,39 +85,44 @@ Ext.define('Ext.env.Browser', {
 
     /**
      * @property {String} name
-     * Read-only - the full name of the current browser
-     * Possible values are: IE, Firefox, Safari, Chrome, Opera and Other
+     * The full name of the current browser
+     * Possible values are: IE, Firefox, Safari, Chrome, Opera and Other.
+     * @readonly
      */
     name: null,
 
     /**
      * @property {Ext.Version} version
-     * Read-only, refer to {@link Ext.Version}
+     * Refer to {@link Ext.Version}.
+     * @readonly
      */
     version: null,
 
     /**
      * @property {String} engineName
-     * Read-only - the full name of the current browser's engine
-     * Possible values are: WebKit, Gecko, Presto, Trident and Other
+     * The full name of the current browser's engine.
+     * Possible values are: WebKit, Gecko, Presto, Trident and Other.
+     * @readonly
      */
     engineName: null,
 
     /**
      * @property {String} engineVersion
-     * Read-only, refer to {@link Ext.Version}
+     * Refer to {@link Ext.Version}.
+     * @readonly
      */
     engineVersion: null,
 
     constructor: function() {
-        var userAgent = this.userAgent = Ext.global.navigator.userAgent,
-            selfClass = this.statics(),
-            browserMatch = userAgent.match(new RegExp('((?:' + Ext.Object.getValues(selfClass.browserPrefixes).join(')|(?:') + '))([\\d\\._]+)')),
-            engineMatch = userAgent.match(new RegExp('((?:' + Ext.Object.getValues(selfClass.enginePrefixes).join(')|(?:') + '))([\\d\\._]+)')),
-            browserName = selfClass.browserNames.other,
+        var userAgent      = this.userAgent = Ext.global.navigator.userAgent,
+            selfClass      = this.statics(),
+            browserMatch   = userAgent.match(new RegExp('((?:' + Ext.Object.getValues(selfClass.browserPrefixes).join(')|(?:') + '))([\\d\\._]+)')),
+            engineMatch    = userAgent.match(new RegExp('((?:' + Ext.Object.getValues(selfClass.enginePrefixes).join(')|(?:') + '))([\\d\\._]+)')),
+            browserName    = selfClass.browserNames.other,
             browserVersion = '',
-            engineName = selfClass.engineNames.other,
-            engineVersion = '';
+            engineName     = selfClass.engineNames.other,
+            engineVersion  = '',
+            key, value;
 
         this.is = function(name) {
             return this.is[name] === true;
@@ -157,17 +148,24 @@ Ext.define('Ext.env.Browser', {
         this.is[this.name] = true;
         this.is[this.name + (this.version.getMajor() || '')] = true;
         this.is[this.name + this.version.getShortVersion()] = true;
-        Ext.Object.each(selfClass.browserNames, function(key, name) {
-            this.is[name] = (this.name === name);
-        }, this);
+
+        for (key in selfClass.browserNames) {
+            if (selfClass.browserNames.hasOwnProperty(key)) {
+                value = selfClass.browserNames[key];
+                this.is[value] = (this.name === value);
+            }
+        }
 
         this.is[this.name] = true;
         this.is[this.engineName + (this.engineVersion.getMajor() || '')] = true;
         this.is[this.engineName + this.engineVersion.getShortVersion()] = true;
-        Ext.Object.each(selfClass.engineNames, function(key, name) {
-            this.is[name] = (this.engineName === name);
-        }, this);
 
+        for (key in selfClass.engineNames) {
+            if (selfClass.engineNames.hasOwnProperty(key)) {
+                value = selfClass.engineNames[key];
+                this.is[value] = (this.engineNames === value);
+            }
+        }
 
         this.isSecure = /^https/i.test(Ext.global.location.protocol);
 
@@ -186,4 +184,3 @@ Ext.define('Ext.env.Browser', {
     Ext.browser = new Ext.env.Browser();
 
 });
-

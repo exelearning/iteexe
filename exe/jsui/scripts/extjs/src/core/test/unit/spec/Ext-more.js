@@ -1,20 +1,6 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 describe("Ext-more", function() {
     beforeEach(function() {
-        addGlobal("ExtBox1"); 
+        addGlobal("ExtBox1");
     });
     describe("Ext.id", function(){
         var el;
@@ -59,7 +45,7 @@ describe("Ext-more", function() {
 
     describe("Ext.getBody", function() {
         it("should return current document body as an Ext.Element", function() {
-            expect(Ext.getBody()).toEqual(Ext.get(document.body)); 
+            expect(Ext.getBody()).toEqual(Ext.get(document.body));
         });
     });
 
@@ -103,7 +89,7 @@ describe("Ext-more", function() {
         });
 
         afterEach(function() {
-            cfn = undefined; 
+            cfn = undefined;
         });
 
         it("should execute the passed function in the specified scope", function() {
@@ -113,7 +99,7 @@ describe("Ext-more", function() {
 
         it("should pass arguments to the callback function", function() {
             Ext.callback(cfn, fakeScope, [1, 2, 3, 4, 6]);
-            expect(cfn).toHaveBeenCalledWith(1, 2, 3, 4,6); 
+            expect(cfn).toHaveBeenCalledWith(1, 2, 3, 4,6);
         });
 
         it("should be able to defer function call", function() {
@@ -148,7 +134,7 @@ describe("Ext-more", function() {
             expect(o1.destroy).toHaveBeenCalled();
         });
 
-        it("should no destroy an object without a destroy method", function() {
+        it("should not destroy an object without a destroy method", function() {
             Ext.destroy(o3);
 
             expect(o3.dest).not.toHaveBeenCalled();
@@ -180,60 +166,18 @@ describe("Ext-more", function() {
     });
 
     describe("Ext.htmlEncode", function() {
-        var htmlEncode = Ext.String.htmlEncode,
-        str;
-
-        it("should replace ampersands", function() {
-            str = "Fish & Chips";
-
-            expect(htmlEncode(str)).toEqual("Fish &amp; Chips");
-        });
-
-        it("should replace less than", function() {
-            str = "Fish > Chips";
-
-            expect(htmlEncode(str)).toEqual("Fish &gt; Chips");
-        });
-
-        it("should replace greater than", function() {
-            str = "Fish < Chips";
-
-            expect(htmlEncode(str)).toEqual("Fish &lt; Chips");
-        });
-
-        it("should replace double quote", function() {
-            str = 'Fish " Chips';
-
-            expect(htmlEncode(str)).toEqual("Fish &quot; Chips");
+        it("should delegate to Ext.String.htmlEncode", function() {
+            spyOn(Ext.String, 'htmlEncode').andCallFake(function() { return "output"; });
+            expect(Ext.htmlEncode("input")).toBe("output");
+            expect(Ext.String.htmlEncode).toHaveBeenCalledWith("input");
         });
     });
 
-    describe("Ext.htmlEncode", function() {
-        var htmlDecode = Ext.String.htmlDecode,
-        str;
-
-        it("should replace ampersands", function() {
-            str = "Fish &amp; Chips";
-
-            expect(htmlDecode(str)).toEqual("Fish & Chips");
-        });
-
-        it("should replace less than", function() {
-            str = "Fish &gt; Chips";
-
-            expect(htmlDecode(str)).toEqual("Fish > Chips");
-        });
-
-        it("should replace greater than", function() {
-            str = "Fish &lt; Chips";
-
-            expect(htmlDecode(str)).toEqual("Fish < Chips");
-        });
-
-        it("should replace double quote", function() {
-            str = 'Fish &quot; Chips';
-
-            expect(htmlDecode(str)).toEqual('Fish " Chips');
+    describe("Ext.htmlDecode", function() {
+        it("should delegate to Ext.String.htmlDecode", function() {
+            spyOn(Ext.String, 'htmlDecode').andCallFake(function() { return "output"; });
+            expect(Ext.htmlDecode("input")).toBe("output");
+            expect(Ext.String.htmlDecode).toHaveBeenCalledWith("input");
         });
     });
 
@@ -273,7 +217,7 @@ describe("Ext-more", function() {
         });
     });
 
-    describe("Ext.removeNode", function(){
+    describe("Ext.removeNode", function() {
         describe("if passed element isn't body", function() {
             var el, id;
             beforeEach(function() {
@@ -284,20 +228,17 @@ describe("Ext-more", function() {
                 id = el.id;
             });
 
-            it("should remove a dom element from document", function(){
+            it("should remove a dom element from document", function() {
                 Ext.removeNode(el.dom);
-               if (!Ext.isIE) {
-                    expect(el.dom.parentNode).toBe(null);
-               } else {
-                   expect(el.dom.parentNode.innerHTML).toBe(undefined);
-               }
+                expect(!el.dom.parentNode).toBe(true);
             });
 
             it("should delete the cache reference", function() {
+                expect(Ext.cache[id]).toBeDefined();
                 Ext.removeNode(el.dom);
                 expect(Ext.cache[id]).toBeUndefined();
             });
-            if (!Ext.isIE6 && !Ext.isIE7) {
+            if (!Ext.isIE6 && !Ext.isIE7 && !Ext.isIE8) {
                 it("should remove all listeners from the dom element", function() {
                         var listener = jasmine.createSpy();
                         el.on('mouseup', listener);
@@ -324,44 +265,41 @@ describe("Ext-more", function() {
                 Ext.getBody().un('mouseup', listener);
             });
         });
-        
-        if (!Ext.isIE6 && !Ext.isIE7) {
+
+        if (!Ext.isIE6 && !Ext.isIE7 && !Ext.isIE8) {
             describe("if enableNestedListenerRemoval is true", function() {
                 var el, child;
 
-                beforeEach(function(){
+                beforeEach(function() {
                     Ext.enableNestedListenerRemoval = true;
                     el = Ext.getBody().createChild();
                     child = el.createChild();
                 });
 
-                afterEach(function(){
+                afterEach(function() {
                     Ext.enableNestedListenerRemoval = false;
                 });
 
-                    it("should remove listener on children", function() {
-                        var listener = jasmine.createSpy();
-                        child.on('mouseup', listener); 
-                        Ext.removeNode(el.dom);
-                        jasmine.fireMouseEvent(child.dom, 'mouseup');
-                        expect(listener).not.toHaveBeenCalled();
-                    });
-
-
+                it("should remove listener on children", function() {
+                    var listener = jasmine.createSpy();
+                    child.on('mouseup', listener);
+                    Ext.removeNode(el.dom);
+                    jasmine.fireMouseEvent(child.dom, 'mouseup');
+                    expect(listener).not.toHaveBeenCalled();
+                });
             });
-        }
-        if (!Ext.isIE6 && !Ext.isIE7) {
+
             describe("if enableNestedListenerRemoval is false (default)", function() {
                 var el, child;
 
-                beforeEach(function(){
+                beforeEach(function() {
                     el = Ext.getBody().createChild();
                     child = el.createChild();
                 });
 
                 it("should not remove listener on children", function() {
                     var listener = jasmine.createSpy();
-                    child.on('mouseup', listener); 
+                    child.on('mouseup', listener);
                     Ext.removeNode(el.dom);
                     jasmine.fireMouseEvent(child.dom, 'mouseup');
                     expect(listener).toHaveBeenCalled();
@@ -376,7 +314,7 @@ describe("Ext-more", function() {
 
         beforeEach(function() {
             span1 = Ext.getBody().createChild({
-                tag: 'span' 
+                tag: 'span'
             });
 
             span2 = Ext.getBody().createChild({
@@ -406,7 +344,6 @@ describe("Ext-more", function() {
             jasmine.fireMouseEvent(div1.dom, 'mouseup');
 
             expect(listener.calls.length).toEqual(2);
-
         });
 
         it("should manage multiple selectors", function() {
@@ -419,18 +356,17 @@ describe("Ext-more", function() {
             jasmine.fireMouseEvent(div1.dom, 'mouseup');
 
             expect(listener.calls.length).toEqual(3);
-
         });
     });
 
-    describe("Ext.getScrollBarWidth", function() {
+    xdescribe("Ext.getScrollBarWidth", function() {
         it("should return a number between 10 and 40 (we assume that document is loaded)", function() {
             expect(Ext.getScrollBarWidth() > 10).toBe(true);
             expect(Ext.getScrollBarWidth() < 40).toBe(true);
-        }); 
+        });
     });
 
-    describe("Ext.copyTo", function(){
+    describe("Ext.copyTo", function() {
         var src, dest;
 
         beforeEach(function() {
@@ -444,7 +380,7 @@ describe("Ext-more", function() {
             dest = {};
         });
 
-        afterEach(function(){
+        afterEach(function() {
             src = null;
             dest = null;
         });
@@ -455,7 +391,7 @@ describe("Ext-more", function() {
 
                 expect(dest).toEqual({
                     a: 1,
-                    b: 2 
+                    b: 2
                 });
             });
         });
@@ -465,7 +401,7 @@ describe("Ext-more", function() {
                 Ext.copyTo(dest, src, 'c,b,e');
                 expect(dest).toEqual({
                     b: 2,
-                    c: 3 
+                    c: 3
                 });
             });
         });
@@ -505,32 +441,32 @@ describe("Ext-more", function() {
 
     describe("Ext.partition", function() {
         describe("with an array of boolean", function() {
-            it("should partition the set into two sets: a true and a false set", function() {
+            it("should partition the array into two arrays: a true and a false array", function() {
                 expect(Ext.partition([true, true, false, false, true])).toEqual([[true,true,true], [false,false]]);
             });
         });
-        
+
         describe("with an array to partition and a function to determine truth", function() {
-            it("should partition the set into two sets: a true and a false set", function() {
+            it("should partition the array into two arrays: an true and a false array", function() {
                 var array = [
                     'a',
                     'b',
                     'c',
                     'a'
                 ];
-                 expect(Ext.partition(array, function(item){
+                expect(Ext.partition(array, function(item){
                         return item == "a";
                 })).toEqual([
-                    ['a', 'a'], 
+                    ['a', 'a'],
                     ['b', 'c']
                 ]);
             });
         });
-        
+
         describe("with a NodeList to partition and a function to determine truth", function() {
-            it("should partition the set into two sets: a true and a false set", function() {
+            it("should partition the array into two arrays: a true and a false array", function() {
                 var p = [];
-                
+
                 p[0] = Ext.getBody().createChild({
                     tag: "p",
                     cls: "class1"
@@ -554,20 +490,31 @@ describe("Ext-more", function() {
                 p[5] = Ext.getBody().createChild({
                     tag: "p",
                     cls: "class1"
-                });                    
-                
+                });
+
                 expect(Ext.partition(Ext.query("p"), function(val){
                         return val.className == "class1";
                 })).toEqual([
-                    [p[0].dom, p[2].dom, p[5].dom], 
+                    [p[0].dom, p[2].dom, p[5].dom],
                     [p[1].dom, p[3].dom, p[4].dom]
                 ]);
-                
+
                 Ext.Array.each(p, function(el) {
                     el.remove();
                 });
             });
         });
     });
-});
 
+    describe('Ext.escapeId', function(){
+        it("should escape element id sequences with special characters", function(){
+            expect(Ext.escapeId('abcdef')).toBe('abcdef');
+            expect(Ext.escapeId('.abcdef')).toBe('\\.abcdef');
+            expect(Ext.escapeId('0a...')).toBe('\\0030 a\\.\\.\\.');
+            expect(Ext.escapeId('12345')).toBe('\\0031 2345');
+            expect(Ext.escapeId('.abc-def')).toBe('\\.abc\\-def');
+            expect(Ext.escapeId('<12345/>')).toBe('\\<12345\\/\\>');
+            expect(Ext.escapeId('1<>234.567')).toBe('\\0031 \\<\\>234\\.567');
+        });
+    });
+});

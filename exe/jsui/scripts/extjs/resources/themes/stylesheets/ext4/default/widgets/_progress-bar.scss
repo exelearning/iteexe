@@ -1,5 +1,6 @@
 @mixin extjs-progress {
     .#{$prefix}progress {
+        position: relative;
         border-width: $progress-border-width;
         border-style: solid;
         @include border-radius($progress-border-radius);
@@ -42,7 +43,7 @@
     }
     
     @if $include-ie or $compile-all {
-        .#{$prefix}strict .#{$prefix}progress  {
+        .#{$prefix}strict .#{$prefix}ie7m .#{$prefix}progress  {
             height: $progress-height - ($progress-border-width * 2);
         }
     }

@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @author Aaron Conran
  * @docauthor Ed Spencer
@@ -237,14 +223,14 @@ If you are unsure which license is appropriate for your use, please contact the 
  *     @example
  *     var store = Ext.create('Ext.data.Store', {
  *         storeId:'employeeStore',
- *         fields:['name', 'senority', 'department'],
+ *         fields:['name', 'seniority', 'department'],
  *         groupField: 'department',
  *         data: {'employees':[
- *             { "name": "Michael Scott",  "senority": 7, "department": "Manangement" },
- *             { "name": "Dwight Schrute", "senority": 2, "department": "Sales" },
- *             { "name": "Jim Halpert",    "senority": 3, "department": "Sales" },
- *             { "name": "Kevin Malone",   "senority": 4, "department": "Accounting" },
- *             { "name": "Angela Martin",  "senority": 5, "department": "Accounting" }
+ *             { "name": "Michael Scott",  "seniority": 7, "department": "Management" },
+ *             { "name": "Dwight Schrute", "seniority": 2, "department": "Sales" },
+ *             { "name": "Jim Halpert",    "seniority": 3, "department": "Sales" },
+ *             { "name": "Kevin Malone",   "seniority": 4, "department": "Accounting" },
+ *             { "name": "Angela Martin",  "seniority": 5, "department": "Accounting" }
  *         ]},
  *         proxy: {
  *             type: 'memory',
@@ -260,7 +246,7 @@ If you are unsure which license is appropriate for your use, please contact the 
  *         store: Ext.data.StoreManager.lookup('employeeStore'),
  *         columns: [
  *             { header: 'Name',     dataIndex: 'name' },
- *             { header: 'Senority', dataIndex: 'senority' }
+ *             { header: 'Seniority', dataIndex: 'seniority' }
  *         ],
  *         features: [{ftype:'grouping'}],
  *         width: 200,
@@ -272,15 +258,28 @@ If you are unsure which license is appropriate for your use, please contact the 
  *
  * Grid supports infinite scrolling as an alternative to using a paging toolbar. Your users can scroll through thousands
  * of records without the performance penalties of renderering all the records on screen at once. The grid should be bound
- * to a store with a pageSize specified.
+ * to a *buffered* store with a pageSize specified.
+ *
+ * The number of rows rendered outside the visible area, and the buffering of pages of data from the remote server for
+ * immediate rendering upon scroll can be controlled by configuring the {@link Ext.grid.PagingScroller #verticalScroller}.
+ *
+ * You can tell it to create a larger table to provide more scrolling before a refresh is needed, and also to keep more pages
+ * of records in memory for faster refreshing when scrolling.
+ *
+ *     var myStore = Ext.create('Ext.data.Store', {
+ *         // ...
+ *         buffered: true,
+ *         pageSize: 100,
+ *         // ...
+ *     });
  *
  *     var grid = Ext.create('Ext.grid.Panel', {
- *         // Use a PagingGridScroller (this is interchangeable with a PagingToolbar)
- *         verticalScrollerType: 'paginggridscroller',
- *         // do not reset the scrollbar when the view refreshs
- *         invalidateScrollerOnRefresh: false,
- *         // infinite scrolling does not support selection
- *         disableSelection: true,
+ *         // ...
+ *         autoLoad: true,
+ *         verticalScroller: {
+ *             trailingBufferZone: 200,  // Keep 200 records buffered in memory behind scroll
+ *             leadingBufferZone: 5000   // Keep 5000 records buffered in memory ahead of scroll
+ *         },
  *         // ...
  *     });
  *
@@ -308,13 +307,8 @@ If you are unsure which license is appropriate for your use, please contact the 
  *         }
  *     });
  *
- *     // specify segment of data you want to load using params
- *     store.load({
- *         params:{
- *             start:0,
- *             limit: itemsPerPage
- *         }
- *     });
+ *     // specify the page you want to load
+ *     store.loadPage(1);
  *
  *     Ext.create('Ext.grid.Panel', {
  *         title: 'Simpsons',
@@ -334,6 +328,14 @@ If you are unsure which license is appropriate for your use, please contact the 
  *         }],
  *         renderTo: Ext.getBody()
  *     });
+ *     
+ * ## State saving
+ * 
+ * When configured {@link #stateful}, grids save their column state (order and width) encapsulated within the default
+ * Panel state of changed width and height and collapsed/expanded state.
+ *
+ * Each {@link @columns column} of the grid may be configured with a {@link Ext.grid.column.Column#stateId stateId} which
+ * identifies that column locally within the grid.
  */
 Ext.define('Ext.grid.Panel', {
     extend: 'Ext.panel.Table',
@@ -346,28 +348,46 @@ Ext.define('Ext.grid.Panel', {
 
     // Required for the Lockable Mixin. These are the configurations which will be copied to the
     // normal and locked sub tablepanels
-    normalCfgCopy: ['invalidateScrollerOnRefresh', 'verticalScroller', 'verticalScrollDock', 'verticalScrollerType', 'scroll'],
-    lockedCfgCopy: ['invalidateScrollerOnRefresh'],
+    bothCfgCopy: [
+        'invalidateScrollerOnRefresh',
+        'hideHeaders',
+        'enableColumnHide',
+        'enableColumnMove',
+        'enableColumnResize',
+        'sortableColumns'
+    ],
+    normalCfgCopy: [ 
+        'verticalScroller', 
+        'verticalScrollDock', 
+        'verticalScrollerType', 
+        'scroll'
+    ],
+    lockedCfgCopy: [],
 
     /**
-     * @cfg {Boolean} [columnLines=false] Adds column line styling
+     * @cfg {Boolean} rowLines False to remove row line styling
+     */
+    rowLines: true
+
+    // Columns config is required in Grid
+    /**
+     * @cfg {Ext.grid.column.Column[]/Object} columns (required)
+     * @inheritdoc
      */
 
-    initComponent: function() {
-        var me = this;
+    /**
+     * @event reconfigure
+     * Fires after a reconfigure.
+     * @param {Ext.grid.Panel} this
+     * @param {Ext.data.Store} store The store that was passed to the {@link #method-reconfigure} method
+     * @param {Object[]} columns The column configs that were passed to the {@link #method-reconfigure} method
+     */
 
-        if (me.columnLines) {
-            me.setColumnLines(me.columnLines);
-        }
-
-        me.callParent();
-    },
-
-    setColumnLines: function(show) {
-        var me = this,
-            method = (show) ? 'addClsWithUI' : 'removeClsWithUI';
-
-        me[method]('with-col-lines');
-    }
+    /**
+     * @method reconfigure
+     * Reconfigures the grid with a new store/columns. Either the store or the columns can be omitted if you don't wish
+     * to change them.
+     * @param {Ext.data.Store} store (Optional) The new store.
+     * @param {Object[]} columns (Optional) An array of column configs
+     */
 });
-

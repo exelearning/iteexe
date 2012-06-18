@@ -1,222 +1,201 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
- * @class Ext.grid.ColumnLayout
- * @extends Ext.layout.container.HBox
  * @private
  *
- * <p>This class is used only by the grid's HeaderContainer docked child.</p>
+ * This class is used only by the grid's HeaderContainer docked child.
  *
- * <p>It adds the ability to shrink the vertical size of the inner container element back if a grouped
- * column header has all its child columns dragged out, and the whole HeaderContainer needs to shrink back down.</p>
+ * It adds the ability to shrink the vertical size of the inner container element back if a grouped
+ * column header has all its child columns dragged out, and the whole HeaderContainer needs to shrink back down.
  *
- * <p>Also, after every layout, after all headers have attained their 'stretchmax' height, it goes through and calls
- * <code>setPadding</code> on the columns so that they lay out correctly.</p>
+ * Also, after every layout, after all headers have attained their 'stretchmax' height, it goes through and calls
+ * `setPadding` on the columns so that they lay out correctly.
  */
 Ext.define('Ext.grid.ColumnLayout', {
     extend: 'Ext.layout.container.HBox',
     alias: 'layout.gridcolumn',
-    type : 'column',
+    type : 'gridcolumn',
 
     reserveOffset: false,
 
-    shrinkToFit: false,
+    firstHeaderCls: Ext.baseCSSPrefix + 'column-header-first',
+    lastHeaderCls: Ext.baseCSSPrefix + 'column-header-last',
 
-    // Height-stretched innerCt must be able to revert back to unstretched height
-    clearInnerCtOnLayout: true,
-
-    beforeLayout: function() {
+    // Collect the height of the table of data upon layout begin
+    beginLayout: function (ownerContext) {
         var me = this,
+            owner = me.owner,
+            grid = owner.up('[scrollerOwner]'),
+            view = grid.view,
             i = 0,
-            items = me.getLayoutItems(),
+            items = me.getVisibleItems(),
             len = items.length,
-            item, returnValue,
-            s;
+            item;
 
-        // Scrollbar offset defined by width of any vertical scroller in the owning grid
-        if (!Ext.isDefined(me.availableSpaceOffset)) {
-            s = me.owner.up('tablepanel').verticalScroller;
-            me.availableSpaceOffset = s ? s.width-1 : 0;
+        // If we are one side of a locking grid, then if we are on the "normal" side, we have to grab the normal view
+        // for use in determining whether to subtract scrollbar width from available width.
+        // The locked side does not have scrollbars, so it should not look at the view.
+        if (grid.lockable) {
+            if (me.owner.up('tablepanel') === view.normalGrid) {
+                view = view.normalGrid.getView();
+            } else {
+                view = null;
+            }
         }
 
-        returnValue = me.callParent(arguments);
-
-        // Size to a sane minimum height before possibly being stretched to accommodate grouped headers
-        me.innerCt.setHeight(23);
+        me.callParent(arguments);
 
         // Unstretch child items before the layout which stretches them.
         for (; i < len; i++) {
             item = items[i];
+            item.removeCls([me.firstHeaderCls, me.lastHeaderCls]);
             item.el.setStyle({
                 height: 'auto'
             });
-            item.titleContainer.setStyle({
+            item.titleEl.setStyle({
                 height: 'auto',
-                paddingTop: '0'
+                paddingTop: ''  // reset back to default padding of the style
             });
-            if (item.componentLayout && item.componentLayout.lastComponentSize) {
-                item.componentLayout.lastComponentSize.height = item.el.dom.offsetHeight;
-            }
         }
-        return returnValue;
+
+        // Add special first/last classes
+        if (len > 0) {
+            items[0].addCls(me.firstHeaderCls);
+            items[len - 1].addCls(me.lastHeaderCls);
+        }
+
+        // If the owner is the grid's HeaderContainer, and the UI displays old fashioned scrollbars and there is a rendered View with data in it,
+        // collect the View context to interrogate it for overflow, and possibly invalidate it if there is overflow
+        if (!me.owner.isHeader && Ext.getScrollbarSize().width && !grid.collapsed && view &&
+                view.rendered && (ownerContext.viewTable = view.el.child('table', true))) {
+            ownerContext.viewContext = ownerContext.context.getCmp(view);
+        }
     },
 
-    // Override to enforce the forceFit config.
-    calculateChildBoxes: function(visibleItems, targetSize) {
+    roundFlex: function(width) {
+        return Math.floor(width);
+    },
+    
+    /**
+     * @private
+     * Local getContainerSize implementation accounts for vertical scrollbar in the view.
+     */
+    getContainerSize: function(ownerContext) {
         var me = this,
-            calculations = me.callParent(arguments),
-            boxes = calculations.boxes,
-            metaData = calculations.meta,
-            len = boxes.length, i = 0, box, item;
+            result = me.callParent(arguments),
+            viewContext = ownerContext.viewContext,
+            viewHeight;
 
-        if (targetSize.width && !me.isHeader) {
-            // If configured forceFit then all columns will be flexed
-            if (me.owner.forceFit) {
-
-                for (; i < len; i++) {
-                    box = boxes[i];
-                    item = box.component;
-
-                    // Set a sane minWidth for the Box layout to be able to squeeze flexed Headers down to.
-                    item.minWidth = Ext.grid.plugin.HeaderResizer.prototype.minColWidth;
-
-                    // For forceFit, just use allocated width as the flex value, and the proportions
-                    // will end up the same whatever HeaderContainer width they are being forced into.
-                    item.flex = box.width;
-                }
-
-                // Recalculate based upon all columns now being flexed instead of sized.
-                calculations = me.callParent(arguments);
-            }
-            else if (metaData.tooNarrow) {
-                targetSize.width = metaData.desiredSize;
+        // If we've collected a viewContext, we will also have the table height
+        // If there's overflow, the View must be narrower to accomodate the scrollbar
+        if (viewContext && !viewContext.heightModel.shrinkWrap &&
+                viewContext.target.componentLayout.ownerContext) { // if (its layout is running)
+            viewHeight = viewContext.getProp('height');
+            if (isNaN(viewHeight)) {
+                me.done = false;
+            } else if (ownerContext.state.tableHeight > viewHeight) {
+                result.width -= Ext.getScrollbarSize().width;
+                ownerContext.state.parallelDone = false;
+                viewContext.invalidate();
             }
         }
 
-        return calculations;
+// TODO - flip the initial assumption to "we have a vscroll" to avoid the invalidate in most
+// cases (and the expensive ones to boot)
+
+        return result;
     },
 
-    afterLayout: function() {
+    calculate: function(ownerContext) {
+        var me = this,
+            viewContext = ownerContext.viewContext;
+
+        // Collect the height of the data table if we need it to determine overflow
+        if (viewContext && !ownerContext.state.tableHeight) {
+            ownerContext.state.tableHeight = ownerContext.viewTable.offsetHeight;
+        }
+        me.callParent(arguments);
+    },
+ 
+    completeLayout: function(ownerContext) {
         var me = this,
             owner = me.owner,
-            topGrid,
-            bothHeaderCts,
-            otherHeaderCt,
-            thisHeight,
-            otherHeight,
-            modifiedGrid,
-            i = 0,
-            items,
-            len,
-            headerHeight;
+            state = ownerContext.state,
+            needsInvalidate = false,
+            calculated = me.sizeModels.calculated,
+            childItems, len, i, childContext, item;
 
         me.callParent(arguments);
 
+        // If we have not been through this already, and the owning Container is configured
+        // forceFit, is not a group column and and there is a valid width, then convert
+        // widths to flexes, and loop back.
+        if (!state.flexesCalculated && owner.forceFit && !owner.isHeader) {
+            childItems = ownerContext.childItems;
+            len = childItems.length;
+
+            for (i = 0; i < len; i++) {
+                childContext = childItems[i];
+                item = childContext.target;
+
+                // For forceFit, just use allocated width as the flex value, and the proportions
+                // will end up the same whatever HeaderContainer width they are being forced into.
+                if (item.width) {
+                    item.flex = ownerContext.childItems[i].flex = item.width;
+                    delete item.width;
+                    childContext.widthModel = calculated;
+                    needsInvalidate = true;
+                }
+            }
+
+            // Recalculate based upon all columns now being flexed instead of sized.
+            // Set flag, so that we do not do this infinitely
+            if (needsInvalidate) {
+                me.cacheFlexes(ownerContext);
+                ownerContext.invalidate({
+                    state: {
+                        flexesCalculated: true
+                    }
+                });
+            }
+        }
+    },
+
+    finalizeLayout: function() {
+        var me = this,
+            i = 0,
+            items,
+            len,
+            itemsHeight,
+            owner = me.owner,
+            titleEl = owner.titleEl;
+
         // Set up padding in items
-        if (!me.owner.hideHeaders) {
-
-            // If this is one HeaderContainer of a pair in a side-by-side locking view, then find the height
-            // of the highest one, and sync the other one to that height.
-            if (owner.lockableInjected) {
-                topGrid = owner.up('tablepanel').up('tablepanel');
-                bothHeaderCts = topGrid.query('headercontainer:not([isHeader])');
-                otherHeaderCt = (bothHeaderCts[0] === owner) ? bothHeaderCts[1] : bothHeaderCts[0];
-
-                // Both sides must be rendered for this syncing operation to work.
-                if (!otherHeaderCt.rendered) {
-                    return;
-                }
-
-                // Get the height of the highest of both HeaderContainers
-                otherHeight = otherHeaderCt.layout.getRenderTarget().getViewSize().height;
-                if (!otherHeight) {
-                    return;
-                }
-                thisHeight = this.getRenderTarget().getViewSize().height;
-                if (!thisHeight) {
-                    return;
-                }
-
-                // Prevent recursion back into here when the "other" grid, after adjusting to the new hight of its headerCt, attempts to inform its ownerCt
-                // Block the upward notification by flagging the top grid's component layout as busy.
-                topGrid.componentLayout.layoutBusy = true;
-
-                // Assume that the correct header height is the height of this HeaderContainer
-                headerHeight = thisHeight;
-
-                // Synch the height of the smaller HeaderContainer to the height of the highest one.
-                if (thisHeight > otherHeight) {
-                    otherHeaderCt.layout.align = 'stretch';
-                    otherHeaderCt.setCalculatedSize(otherHeaderCt.getWidth(), owner.getHeight(), otherHeaderCt.ownerCt);
-                    delete otherHeaderCt.layout.align;
-                    modifiedGrid = otherHeaderCt.up('tablepanel');
-                } else if (otherHeight > thisHeight) {
-                    headerHeight = otherHeight;
-                    this.align = 'stretch';
-                    owner.setCalculatedSize(owner.getWidth(), otherHeaderCt.getHeight(), owner.ownerCt);
-                    delete this.align;
-                    modifiedGrid = owner.up('tablepanel');
-                }
-                topGrid.componentLayout.layoutBusy = false;
-
-                // Gather all Header items across both Grids.
-                items = bothHeaderCts[0].layout.getLayoutItems().concat(bothHeaderCts[1].layout.getLayoutItems());
-            } else {
-                headerHeight = this.getRenderTarget().getViewSize().height;
-                items = me.getLayoutItems();
-            }
-
-            len = items.length;
-            for (; i < len; i++) {
-                items[i].setPadding(headerHeight);
-            }
-
-            // Size the View within the grid which has had its HeaderContainer entallened (That's a perfectly cromulent word BTW)
-            if (modifiedGrid) {
-                setTimeout(function() {
-                    modifiedGrid.doLayout();
-                }, 1);
-            }
+        items = me.getVisibleItems();
+        len = items.length;
+        // header container's items take up the whole height
+        itemsHeight = owner.el.getViewSize().height;
+        if (titleEl) {
+            // if owner is a grouped column with children, we need to subtract the titleEl's height
+            // to determine the remaining available height for the child items
+            itemsHeight -= titleEl.getHeight();
+        }
+        for (; i < len; i++) {
+            items[i].setPadding(itemsHeight);
         }
     },
 
     // FIX: when flexing we actually don't have enough space as we would
     // typically because of the scrollOffset on the GridView, must reserve this
-    updateInnerCtSize: function(tSize, calcs) {
+    publishInnerCtSize: function(ownerContext) {
         var me = this,
-            extra;
+            plan = ownerContext.state.boxPlan,
+            size = plan.targetSize,
+            cw = ownerContext.peek('contentWidth');
 
-        // Columns must not account for scroll offset
-        if (!me.isHeader) {
-            me.tooNarrow = calcs.meta.tooNarrow;
-            extra = (me.reserveOffset ? me.availableSpaceOffset : 0);
-
-            if (calcs.meta.tooNarrow) {
-                tSize.width = calcs.meta.desiredSize + extra;
-            } else {
-                tSize.width += extra;
-            }
+        // InnerCt MUST stretch to accommodate all columns so that left/right scrolling is enabled in the header container.
+        if ((cw != null) && !me.owner.isHeader) {
+            size.width = cw + Ext.getScrollbarSize().width;
         }
 
         return me.callParent(arguments);
-    },
-
-    doOwnerCtLayouts: function() {
-        var ownerCt = this.owner.ownerCt;
-        if (!ownerCt.componentLayout.layoutBusy) {
-            ownerCt.doComponentLayout();
-        }
     }
 });

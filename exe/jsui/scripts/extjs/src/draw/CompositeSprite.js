@@ -1,20 +1,5 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @class Ext.draw.CompositeSprite
- * @extends Ext.util.MixedCollection
  *
  * A composite Sprite handles a group of sprites with common methods to a sprite
  * such as `hide`, `show`, `setAttributes`. These methods are applied to the set of sprites
@@ -50,7 +35,8 @@ Ext.define('Ext.draw.CompositeSprite', {
     mixins: {
         animate: 'Ext.util.Animate'
     },
-
+    autoDestroy: false,
+    
     /* End Definitions */
     isCompositeSprite: true,
     constructor: function(config) {
@@ -154,7 +140,7 @@ Ext.define('Ext.draw.CompositeSprite', {
         
         for (; i < len; i++) {
             sprite = items[i];
-            if (sprite.el) {
+            if (sprite.el && ! sprite.bboxExcluded) {
                 bb = sprite.getBBox();
                 minX = Math.min(minX, bb.x);
                 minY = Math.min(minY, bb.y);
@@ -298,16 +284,16 @@ Ext.define('Ext.draw.CompositeSprite', {
     destroy: function(){
         var me = this,
             surface = me.getSurface(),
+            destroySprites = me.autoDestroy,
             item;
             
         if (surface) {
             while (me.getCount() > 0) {
                 item = me.first();
                 me.remove(item);
-                surface.remove(item);
+                surface.remove(item, destroySprites);
             }
         }
         me.clearListeners();
     }
 });
-

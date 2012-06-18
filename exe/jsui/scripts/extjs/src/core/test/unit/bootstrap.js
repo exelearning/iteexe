@@ -1,22 +1,8 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 (function() {
     var rootPath =  '../../../../extjs/', 
         bootstrap;
 
-    bootstrap = this.ExtBootstrap = {
+    bootstrap = this.TestBootstrap = {
         rootPath: rootPath,
 
         disableCaching: window.location.search.match('(\\?|&)disableCacheBuster=true') === null,
@@ -30,27 +16,24 @@ If you are unsure which license is appropriate for your use, please contact the 
         },
                 
         loadSpecs: function(callback) {
-            ExtBootstrap.afterAllSpecsAreLoaded = callback;
-            ExtBootstrap.pendingSpecs = 0;
-            ExtBootstrap.loadedSpecs = 0;
+            bootstrap.afterAllSpecsAreLoaded = callback;
+            bootstrap.pendingSpecs = 0;
+            bootstrap.loadedSpecs = 0;
             Ext.Array.each(ExtSpecs, function(spec) {
-                ExtBootstrap.pendingSpecs++;
-                Ext.Loader.injectScriptElement(spec + ExtBootstrap.cacheBuster(), ExtBootstrap.afterSpecLoad, ExtBootstrap.afterSpecLoad, ExtBootstrap);
+                bootstrap.pendingSpecs++;
+                Ext.Loader.injectScriptElement(spec + bootstrap.cacheBuster(), bootstrap.afterSpecLoad, bootstrap.afterSpecLoad, bootstrap);
             });
         },
         
         afterSpecLoad: function() {
-            ExtBootstrap.loadedSpecs++;
-            if (ExtBootstrap.loadedSpecs == ExtBootstrap.pendingSpecs) {
-                ExtBootstrap.afterAllSpecsAreLoaded();
+            bootstrap.loadedSpecs++;
+            if (bootstrap.loadedSpecs == bootstrap.pendingSpecs) {
+                bootstrap.afterAllSpecsAreLoaded();
             }
         }
     };
     
     bootstrap.loadScript('../testreporter/deploy/testreporter/jasmine.js');
     bootstrap.loadScript('../platform/core/test/unit/data.js');
-    bootstrap.loadScript('bootstrap/data.js');
-    bootstrap.loadScript('bootstrap/core.js');
+    bootstrap.loadScript('ext.js');
 })();
-
-

@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * This plugin provides drag and/or drop functionality for a GridView.
  *
@@ -174,8 +160,9 @@ Ext.define('Ext.grid.plugin.DragDrop', {
      * @param {String} dropPosition `"before"` or `"after"` depending on whether the mouse is above or below the midline
      * of the node.
      */
-
+    //<locale>
     dragText : '{0} selected row{1}',
+    //</locale>
 
     /**
      * @cfg {String} ddGroup
@@ -250,7 +237,7 @@ Ext.define('Ext.grid.plugin.DragDrop', {
         var me = this;
 
         if (me.enableDrag) {
-            me.dragZone = Ext.create('Ext.view.DragZone', {
+            me.dragZone = new Ext.view.DragZone({
                 view: view,
                 ddGroup: me.dragGroup || me.ddGroup,
                 dragText: me.dragText
@@ -258,7 +245,7 @@ Ext.define('Ext.grid.plugin.DragDrop', {
         }
 
         if (me.enableDrop) {
-            me.dropZone = Ext.create('Ext.grid.ViewDropZone', {
+            me.dropZone = new Ext.grid.ViewDropZone({
                 view: view,
                 ddGroup: me.dropGroup || me.ddGroup
             });

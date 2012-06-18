@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @author Ed Spencer
  *
@@ -48,10 +34,10 @@ Ext.define('Ext.data.Operation', {
     sorters: undefined,
 
     /**
-     * @cfg {Ext.util.Grouper} group
+     * @cfg {Ext.util.Grouper[]} groupers
      * Optional grouping configuration. Only applies to 'read' actions where grouping is desired.
      */
-    group: undefined,
+    groupers: undefined,
 
     /**
      * @cfg {Number} start
@@ -73,11 +59,10 @@ Ext.define('Ext.data.Operation', {
 
     /**
      * @cfg {Function} callback
-     * Function to execute when operation completed.  Will be called with the following parameters:
-     *
-     * - records : Array of Ext.data.Model objects.
-     * - operation : The Ext.data.Operation itself.
-     * - success : True when operation completed successfully.
+     * Function to execute when operation completed.
+     * @cfg {Ext.data.Model[]} callback.records Array of records.
+     * @cfg {Ext.data.Operation} callback.operation The Operation itself.
+     * @cfg {Boolean} callback.success True when operation completed successfully.
      */
     callback: undefined,
 
@@ -89,37 +74,42 @@ Ext.define('Ext.data.Operation', {
 
     /**
      * @property {Boolean} started
-     * Read-only property tracking the start status of this Operation. Use {@link #isStarted}.
+     * The start status of this Operation. Use {@link #isStarted}.
+     * @readonly
      * @private
      */
     started: false,
 
     /**
      * @property {Boolean} running
-     * Read-only property tracking the run status of this Operation. Use {@link #isRunning}.
+     * The run status of this Operation. Use {@link #isRunning}.
+     * @readonly
      * @private
      */
     running: false,
 
     /**
      * @property {Boolean} complete
-     * Read-only property tracking the completion status of this Operation. Use {@link #isComplete}.
+     * The completion status of this Operation. Use {@link #isComplete}.
+     * @readonly
      * @private
      */
     complete: false,
 
     /**
      * @property {Boolean} success
-     * Read-only property tracking whether the Operation was successful or not. This starts as undefined and is set to true
+     * Whether the Operation was successful or not. This starts as undefined and is set to true
      * or false by the Proxy that is executing the Operation. It is also set to false by {@link #setException}. Use
      * {@link #wasSuccessful} to query success status.
+     * @readonly
      * @private
      */
     success: undefined,
 
     /**
      * @property {Boolean} exception
-     * Read-only property tracking the exception status of this Operation. Use {@link #hasException} and see {@link #getError}.
+     * The exception status of this Operation. Use {@link #hasException} and see {@link #getError}.
+     * @readonly
      * @private
      */
     exception: false,
@@ -172,17 +162,26 @@ Ext.define('Ext.data.Operation', {
             clientRecords = me.records;
 
             if (clientRecords && clientRecords.length) {
-                mc = Ext.create('Ext.util.MixedCollection', true, function(r) {return r.getId();});
-                mc.addAll(clientRecords);
+                if (clientRecords.length > 1) {
+                    // if this operation has multiple records, client records need to be matched up with server records
+                    // so that any data returned from the server can be updated in the client records.
+                    mc = new Ext.util.MixedCollection();
+                    mc.addAll(serverRecords);
 
-                for (index = serverRecords ? serverRecords.length : 0; index--; ) {
-                    serverRec = serverRecords[index];
-                    clientRec = mc.get(serverRec.getId());
+                    for (index = clientRecords.length; index--; ) {
+                        clientRec = clientRecords[index];
+                        serverRec = mc.findBy(me.matchClientRec, clientRec);
 
-                    if (clientRec) {
-                        clientRec.beginEdit();
-                        clientRec.set(serverRec.data);
-                        clientRec.endEdit(true);
+                        // Replace client record data with server record data
+                        clientRec.copyFrom(serverRec);
+                    }
+                } else {
+                    // operation only has one record, so just match the first client record up with the first server record
+                    clientRec = clientRecords[0];
+                    serverRec = serverRecords[0];
+                    // if the client record is not a phantom, make sure the ids match before replacing the client data with server data.
+                    if(serverRec && (clientRec.phantom || clientRec.getId() === serverRec.getId())) {
+                        clientRec.copyFrom(serverRec);
                     }
                 }
 
@@ -193,6 +192,22 @@ Ext.define('Ext.data.Operation', {
                 }
             }
         }
+    },
+
+    // Private.
+    // Record matching function used by commitRecords
+    // IMPORTANT: This is called in the scope of the clientRec being matched
+    matchClientRec: function(record) {
+        var clientRec = this,
+            clientRecordId = clientRec.getId();
+
+        if(clientRecordId && record.getId() === clientRecordId) {
+            return true;
+        }
+        // if the server record cannot be found by id, find by internalId.
+        // this allows client records that did not previously exist on the server
+        // to be updated with the correct server id and data.
+        return record.internalId === clientRec.internalId;
     },
 
     /**
@@ -246,13 +261,13 @@ Ext.define('Ext.data.Operation', {
     },
 
     /**
-     * Returns an array of Ext.data.Model instances as set by the Proxy.
-     * @return {Ext.data.Model[]} Any loaded Records
+     * Returns the {@link Ext.data.Model record}s associated with this operation.  For read operations the records as set by the {@link Ext.data.proxy.Proxy Proxy} will be returned (returns `null` if the proxy has not yet set the records).
+     * For create, update, and destroy operations the operation's initially configured records will be returned, although the proxy may modify these records' data at some point after the operation is initialized.
+     * @return {Ext.data.Model[]}
      */
     getRecords: function() {
         var resultSet = this.getResultSet();
-
-        return (resultSet === undefined ? this.records : resultSet.records);
+        return this.records || (resultSet ? resultSet.records : null);
     },
 
     /**

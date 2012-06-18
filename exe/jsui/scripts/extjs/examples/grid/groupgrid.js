@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 Ext.require(['Ext.data.*', 'Ext.grid.*']);
 Ext.onReady(function() {
     // wrapped in closure to prevent global vars.
@@ -23,8 +9,8 @@ Ext.onReady(function() {
     var Restaurants = Ext.create('Ext.data.Store', {
         storeId: 'restaraunts',
         model: 'Restaurant',
-        sorters: ['cuisine','name'],
         groupField: 'cuisine',
+        sorters: ['cuisine','name'],
         data: [{
             name: 'Cheesecake Factory',
             cuisine: 'American'
@@ -230,7 +216,8 @@ Ext.onReady(function() {
     });
     
     var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{
-        groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})'
+        groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
+        hideGroupedHeader: true
     });
 
     var grid = Ext.create('Ext.grid.Panel', {
@@ -242,6 +229,7 @@ Ext.onReady(function() {
         width: 600,
         height: 400,
         title: 'Restaurants',
+        resizable: true,
         features: [groupingFeature],
         columns: [{
             text: 'Name',
@@ -261,4 +249,3 @@ Ext.onReady(function() {
         }]
     });
 });
-

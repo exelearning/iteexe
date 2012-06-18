@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * Provides useful information about the current browser features.
  * Don't instantiate directly, but use the {@link Ext#features} property instead.
@@ -45,7 +31,7 @@ Ext.define('Ext.env.FeatureDetector', {
                 var element = this.getTestElement(),
                     ret = false;
 
-                element.innerHTML = "<!--[if vml]><br><br><![endif]-->";
+                element.innerHTML = "<!--[if vml]><br/><br/><![endif]-->";
                 ret = (element.childNodes.length === 2);
                 element.innerHTML = "";
 
@@ -199,9 +185,13 @@ Ext.define('Ext.env.FeatureDetector', {
     },
 
     registerTests: function(tests, isDefault) {
-        Ext.Object.each(tests, function(name, fn) {
-            this.registerTest(name, fn, isDefault);
-        }, this);
+        var key;
+
+        for (key in tests) {
+            if (tests.hasOwnProperty(key)) {
+                this.registerTest(key, tests[key], isDefault);
+            }
+        }
 
         return this;
     },
@@ -282,4 +272,3 @@ Ext.define('Ext.env.FeatureDetector', {
     Ext.features = new Ext.env.FeatureDetector();
 
 });
-

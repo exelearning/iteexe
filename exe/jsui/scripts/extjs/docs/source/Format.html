@@ -86,28 +86,36 @@ XTemplates can also directly use Ext.util.Format functions:
          * &lt;p&gt;The character that the {@link #number} function uses as a thousand separator.&lt;/p&gt;
          * &lt;p&gt;This may be overridden in a locale file.&lt;/p&gt;
          */
+        //&lt;locale&gt;
         thousandSeparator: ',',
+        //&lt;/locale&gt;
 
 <span id='Ext-util-Format-property-decimalSeparator'>        /**
 </span>         * @property {String} decimalSeparator
          * &lt;p&gt;The character that the {@link #number} function uses as a decimal point.&lt;/p&gt;
          * &lt;p&gt;This may be overridden in a locale file.&lt;/p&gt;
          */
+        //&lt;locale&gt;
         decimalSeparator: '.',
+        //&lt;/locale&gt;
 
 <span id='Ext-util-Format-property-currencyPrecision'>        /**
 </span>         * @property {Number} currencyPrecision
          * &lt;p&gt;The number of decimal places that the {@link #currency} function displays.&lt;/p&gt;
          * &lt;p&gt;This may be overridden in a locale file.&lt;/p&gt;
          */
+        //&lt;locale&gt;
         currencyPrecision: 2,
+        //&lt;/locale&gt;
 
 <span id='Ext-util-Format-property-currencySign'>        /**
 </span>         * @property {String} currencySign
          * &lt;p&gt;The currency sign that the {@link #currency} function displays.&lt;/p&gt;
          * &lt;p&gt;This may be overridden in a locale file.&lt;/p&gt;
          */
+         //&lt;locale&gt;
         currencySign: '$',
+        //&lt;/locale&gt;
 
 <span id='Ext-util-Format-property-currencyAtEnd'>        /**
 </span>         * @property {Boolean} currencyAtEnd
@@ -115,7 +123,9 @@ XTemplates can also directly use Ext.util.Format functions:
          * append the currency sign to the formatted value.&lt;/p&gt;
          * &lt;p&gt;This may be overridden in a locale file.&lt;/p&gt;
          */
+        //&lt;locale&gt;
         currencyAtEnd: false,
+        //&lt;/locale&gt;
 
 <span id='Ext-util-Format-method-undef'>        /**
 </span>         * Checks a reference and converts it to empty string if it is undefined
@@ -143,7 +153,14 @@ XTemplates can also directly use Ext.util.Format functions:
          * @param {Number} length The length of the substring
          * @return {String} The substring
          */
-        substr : function(value, start, length) {
+        substr : 'ab'.substr(-1) != 'b'
+        ? function (value, start, length) {
+            var str = String(value);
+            return (start &lt; 0)
+                ? str.substr(Math.max(str.length + start, 0), length)
+                : str.substr(start, length);
+        }
+        : function(value, start, length) {
             return String(value).substr(start, length);
         },
 
@@ -191,7 +208,7 @@ XTemplates can also directly use Ext.util.Format functions:
                 v = -v;
                 negativeSign = '-';
             }
-            decimals = decimals || UtilFormat.currencyPrecision;
+            decimals = Ext.isDefined(decimals) ? decimals : UtilFormat.currencyPrecision;
             format += format + (decimals &gt; 0 ? '.' : '');
             for (; i &lt; decimals; i++) {
                 format += '0';
@@ -272,7 +289,7 @@ XTemplates can also directly use Ext.util.Format functions:
          * @return {Function} A function that operates on the passed value.
          * @method
          */
-        math : function(){
+        math : (function(){
             var fns = {};
 
             return function(v, a){
@@ -281,7 +298,7 @@ XTemplates can also directly use Ext.util.Format functions:
                 }
                 return fns[a](v);
             };
-        }(),
+        }()),
 
 <span id='Ext-util-Format-method-round'>        /**
 </span>         * Rounds the passed number to the required decimal precision.
@@ -327,7 +344,7 @@ XTemplates can also directly use Ext.util.Format functions:
          * @param {String} format The way you would like to format this text.
          * @return {String} The formatted number.
          */
-        number: function(v, formatString) {
+        number : function(v, formatString) {
             if (!formatString) {
                 return v;
             }
@@ -340,7 +357,14 @@ XTemplates can also directly use Ext.util.Format functions:
                 i18n  = false,
                 neg   = v &lt; 0,
                 hasComma,
-                psplit;
+                psplit,
+                fnum,
+                cnum,
+                parr,
+                j,
+                m,
+                n,
+                i;
 
             v = Math.abs(v);
 
@@ -361,9 +385,7 @@ XTemplates can also directly use Ext.util.Format functions:
                 psplit = formatString.replace(formatCleanRe, '').split('.');
             }
 
-            if (1 &lt; psplit.length) {
-                v = v.toFixed(psplit[1].length);
-            } else if(2 &lt; psplit.length) {
+            if (psplit.length &gt; 2) {
                 //&lt;debug&gt;
                 Ext.Error.raise({
                     sourceClass: &quot;Ext.util.Format&quot;,
@@ -373,21 +395,22 @@ XTemplates can also directly use Ext.util.Format functions:
                     msg: &quot;Invalid number format, should have no more than 1 decimal&quot;
                 });
                 //&lt;/debug&gt;
+            } else if (psplit.length &gt; 1) {
+                v = Ext.Number.toFixed(v, psplit[1].length);
             } else {
-                v = v.toFixed(0);
+                v = Ext.Number.toFixed(v, 0);
             }
 
-            var fnum = v.toString();
+            fnum = v.toString();
 
             psplit = fnum.split('.');
 
             if (hasComma) {
-                var cnum = psplit[0],
-                    parr = [],
-                    j    = cnum.length,
-                    m    = Math.floor(j / 3),
-                    n    = cnum.length % 3 || 3,
-                    i;
+                cnum = psplit[0];
+                parr = [];
+                j = cnum.length;
+                m = Math.floor(j / 3);
+                n = cnum.length % 3 || 3;
 
                 for (i = 0; i &lt; j; i += n) {
                     if (i !== 0) {
@@ -454,49 +477,49 @@ XTemplates can also directly use Ext.util.Format functions:
 <span id='Ext-util-Format-method-capitalize'>        /**
 </span>         * Alias for {@link Ext.String#capitalize}.
          * @method
-         * @alias Ext.String#capitalize
+         * @inheritdoc Ext.String#capitalize
          */
         capitalize: Ext.String.capitalize,
 
 <span id='Ext-util-Format-method-ellipsis'>        /**
 </span>         * Alias for {@link Ext.String#ellipsis}.
          * @method
-         * @alias Ext.String#ellipsis
+         * @inheritdoc Ext.String#ellipsis
          */
         ellipsis: Ext.String.ellipsis,
 
 <span id='Ext-util-Format-method-format'>        /**
 </span>         * Alias for {@link Ext.String#format}.
          * @method
-         * @alias Ext.String#format
+         * @inheritdoc Ext.String#format
          */
         format: Ext.String.format,
 
 <span id='Ext-util-Format-method-htmlDecode'>        /**
 </span>         * Alias for {@link Ext.String#htmlDecode}.
          * @method
-         * @alias Ext.String#htmlDecode
+         * @inheritdoc Ext.String#htmlDecode
          */
         htmlDecode: Ext.String.htmlDecode,
 
 <span id='Ext-util-Format-method-htmlEncode'>        /**
 </span>         * Alias for {@link Ext.String#htmlEncode}.
          * @method
-         * @alias Ext.String#htmlEncode
+         * @inheritdoc Ext.String#htmlEncode
          */
         htmlEncode: Ext.String.htmlEncode,
 
 <span id='Ext-util-Format-method-leftPad'>        /**
 </span>         * Alias for {@link Ext.String#leftPad}.
          * @method
-         * @alias Ext.String#leftPad
+         * @inheritdoc Ext.String#leftPad
          */
         leftPad: Ext.String.leftPad,
 
 <span id='Ext-util-Format-method-trim'>        /**
 </span>         * Alias for {@link Ext.String#trim}.
          * @method
-         * @alias Ext.String#trim
+         * @inheritdoc Ext.String#trim
          */
         trim : Ext.String.trim,
 
@@ -507,6 +530,7 @@ XTemplates can also directly use Ext.util.Format functions:
          * @return {Object} An object with margin sizes for top, right, bottom and left
          */
         parseBox : function(box) {
+          box = Ext.isEmpty(box) ? '' : box;
             if (Ext.isNumber(box)) {
                 box = box.toString();
             }
@@ -541,7 +565,7 @@ XTemplates can also directly use Ext.util.Format functions:
             return s.replace(/([\-.*+?\^${}()|\[\]\/\\])/g, &quot;\\$1&quot;);
         }
     });
-})();
+}());
 </pre>
 </body>
 </html>

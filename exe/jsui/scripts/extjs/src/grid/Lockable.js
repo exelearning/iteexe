@@ -1,19 +1,4 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
- * @class Ext.grid.Lockable
  * @private
  *
  * Lockable is a private mixin which injects lockable behavior into any
@@ -37,7 +22,10 @@ If you are unsure which license is appropriate for your use, please contact the 
  */
 Ext.define('Ext.grid.Lockable', {
 
-    requires: ['Ext.grid.LockingView'],
+    requires: [
+        'Ext.grid.LockingView',
+        'Ext.view.Table'
+    ],
 
     /**
      * @cfg {Boolean} syncRowHeight Synchronize rowHeight between the normal and
@@ -66,26 +54,44 @@ Ext.define('Ext.grid.Lockable', {
      * and viewConfig will be overwritten by the normalViewConfig.
      */
 
-    // private variable to track whether or not the spacer is hidden/visible
-    spacerHidden: true,
-
     headerCounter: 0,
 
+    /**
+     * @cfg {Number} scrollDelta
+     * Number of pixels to scroll when scrolling the locked section with mousewheel.
+     */
+    scrollDelta: 40,
+    
+    /**
+     * @cfg {Object} lockedGridConfig
+     * Any special configuration options for the locked part of the grid
+     */
+    
+    /**
+     * @cfg {Object} normalGridConfig
+     * Any special configuration options for the normal part of the grid
+     */
+
     // i8n text
+    //<locale>
     unlockText: 'Unlock',
+    //</locale>
+    //<locale>
     lockText: 'Lock',
+    //</locale>
 
     determineXTypeToCreate: function() {
         var me = this,
-            typeToCreate;
+            typeToCreate,
+            xtypes, xtypesLn, xtype, superxtype;
 
         if (me.subGridXType) {
             typeToCreate = me.subGridXType;
         } else {
-            var xtypes     = this.getXTypes().split('/'),
-                xtypesLn   = xtypes.length,
-                xtype      = xtypes[xtypesLn - 1],
-                superxtype = xtypes[xtypesLn - 2];
+            xtypes     = this.getXTypes().split('/');
+            xtypesLn   = xtypes.length;
+            xtype      = xtypes[xtypesLn - 1];
+            superxtype = xtypes[xtypesLn - 2];
 
             if (superxtype !== 'tablepanel') {
                 typeToCreate = superxtype;
@@ -107,42 +113,72 @@ Ext.define('Ext.grid.Lockable', {
         this.hasView = true;
 
         var me = this,
+            // If the OS does not show a space-taking scrollbar, the locked view can be overflow:auto
+            scrollLocked = Ext.getScrollbarSize().width === 0,
+            store = me.store = Ext.StoreManager.lookup(me.store),
             // xtype of this class, 'treepanel' or 'gridpanel'
             // (Note: this makes it a requirement that any subclass that wants to use lockable functionality needs to register an
             // alias.)
             xtype = me.determineXTypeToCreate(),
             // share the selection model
             selModel = me.getSelectionModel(),
-            lockedGrid = {
-                xtype: xtype,
-                // Lockable does NOT support animations for Tree
-                enableAnimations: false,
-                scroll: false,
-                scrollerOwner: false,
-                selModel: selModel,
-                border: false,
-                cls: Ext.baseCSSPrefix + 'grid-inner-locked'
-            },
-            normalGrid = {
-                xtype: xtype,
-                enableAnimations: false,
-                scrollerOwner: false,
-                selModel: selModel,
-                border: false
-            },
-            i = 0,
+            lockedFeatures = me.prepareFeatures(),
+            normalFeatures = me.prepareFeatures(),
+            lockedGrid,
+            normalGrid,
+            i = 0, len,
             columns,
             lockedHeaderCt,
-            normalHeaderCt;
+            normalHeaderCt,
+            lockedView,
+            normalView,
+            listeners;
+
+        // Each Feature must have a reference to its counterpart on the opposite side of the locking view
+        for (i = 0, len = (lockedFeatures ? lockedFeatures.length : 0); i < len; i++) {
+            lockedFeatures[i].lockingPartner = normalFeatures[i];
+            normalFeatures[i].lockingPartner = lockedFeatures[i];
+        }
+
+        lockedGrid = Ext.apply({
+            xtype: xtype,
+            store: store,
+            scrollerOwner: false,
+            // Lockable does NOT support animations for Tree
+            enableAnimations: false,
+            scroll: scrollLocked ? 'vertical' : false,
+            selModel: selModel,
+            border: false,
+            cls: Ext.baseCSSPrefix + 'grid-inner-locked',
+            isLayoutRoot: function() {
+                return false;
+            },
+            features: lockedFeatures
+        }, me.lockedGridConfig);
+
+        normalGrid = Ext.apply({
+            xtype: xtype,
+            store: store,
+            scrollerOwner: false,
+            enableAnimations: false,
+            selModel: selModel,
+            border: false,
+            isLayoutRoot: function() {
+                return false;
+            },
+            features: normalFeatures
+        }, me.normalGridConfig);
 
         me.addCls(Ext.baseCSSPrefix + 'grid-locked');
 
         // copy appropriate configurations to the respective
         // aggregated tablepanel instances and then delete them
         // from the master tablepanel.
+        Ext.copyTo(normalGrid, me, me.bothCfgCopy);
+        Ext.copyTo(lockedGrid, me, me.bothCfgCopy);
         Ext.copyTo(normalGrid, me, me.normalCfgCopy);
         Ext.copyTo(lockedGrid, me, me.lockedCfgCopy);
-        for (; i < me.normalCfgCopy.length; i++) {
+        for (i = 0; i < me.normalCfgCopy.length; i++) {
             delete me[me.normalCfgCopy[i]];
         }
         for (i = 0; i < me.lockedCfgCopy.length; i++) {
@@ -178,10 +214,6 @@ Ext.define('Ext.grid.Lockable', {
         lockedGrid.columns = columns.locked;
         normalGrid.columns = columns.normal;
 
-        me.store = Ext.StoreManager.lookup(me.store);
-        lockedGrid.store = me.store;
-        normalGrid.store = me.store;
-
         // normal grid should flex the rest of the width
         normalGrid.flex = 1;
         lockedGrid.viewConfig = me.lockedViewConfig || {};
@@ -194,25 +226,55 @@ Ext.define('Ext.grid.Lockable', {
         me.normalGrid = Ext.ComponentManager.create(normalGrid);
         me.lockedGrid = Ext.ComponentManager.create(lockedGrid);
 
-        me.view = Ext.create('Ext.grid.LockingView', {
+        me.view = new Ext.grid.LockingView({
             locked: me.lockedGrid,
             normal: me.normalGrid,
             panel: me
         });
 
-        if (me.syncRowHeight) {
-            me.lockedGrid.getView().on({
-                refresh: me.onLockedGridAfterRefresh,
-                itemupdate: me.onLockedGridAfterUpdate,
-                scope: me
-            });
+        lockedView = me.lockedGrid.getView();
+        normalView = me.normalGrid.getView();
 
-            me.normalGrid.getView().on({
-                refresh: me.onNormalGridAfterRefresh,
-                itemupdate: me.onNormalGridAfterUpdate,
-                scope: me
-            });
+        // Set up listeners for the locked view
+        // If the OS does not show a space-taking scrollbar, the locked view can be overflow:auto
+        // And therefore we can listen for the DOM scroll event on its element
+        if (scrollLocked) {
+            listeners = {
+                scroll: {
+                    fn: me.onLockedViewScroll,
+                    element: 'el',
+                    scope: me
+                }
+            };
         }
+        // If there are scrollbars, we have to monitor the mousewheel and fake a scroll
+        else {
+            listeners = {
+                mousewheel: {
+                    fn: me.onLockedViewMouseWheel,
+                    element: 'el',
+                    scope: me
+                }
+            };
+        }
+        if (me.syncRowHeight) {
+            listeners.refresh = me.onLockedViewRefresh;
+            listeners.itemupdate = me.onLockedViewItemUpdate;
+            listeners.scope = me;
+        }
+        lockedView.on(listeners);
+
+        // Set up listeners for the normal view
+        listeners = {
+            scroll: {
+                fn: me.onNormalViewScroll,
+                element: 'el',
+                scope: me
+            },
+            refresh: me.syncRowHeight ? me.onNormalViewRefresh : me.updateSpacer,
+            scope: me
+        };
+        normalView.on(listeners);
 
         lockedHeaderCt = me.lockedGrid.headerCt;
         normalHeaderCt = me.normalGrid.headerCt;
@@ -236,14 +298,6 @@ Ext.define('Ext.grid.Lockable', {
             scope: me
         });
 
-        me.normalGrid.on({
-            scrollershow: me.onScrollerShow,
-            scrollerhide: me.onScrollerHide,
-            scope: me
-        });
-
-        me.lockedGrid.on('afterlayout', me.onLockedGridAfterLayout, me, {single: true});
-
         me.modifyHeaderCt();
         me.items = [me.lockedGrid, me.normalGrid];
 
@@ -260,13 +314,19 @@ Ext.define('Ext.grid.Lockable', {
         // split apart normal and lockedWidths
         var i = 0,
             len = columns.length,
-            lockedWidth = 1,
+            lockedWidth = 0,
             lockedHeaders = [],
             normalHeaders = [],
             column;
 
         for (; i < len; ++i) {
             column = columns[i];
+            // MUST clone the column config because we mutate it, and we must not mutate passed in config objects in case they are re-used
+            // eg, in an extend-to-configure scenario.
+            if (!column.isComponent) {
+                column = Ext.apply({}, columns[i]);
+            }
+
             // mark the column as processed so that the locked attribute does not
             // trigger trying to aggregate the columns again.
             column.processed = true;
@@ -289,116 +349,204 @@ Ext.define('Ext.grid.Lockable', {
         }
         return {
             lockedWidth: lockedWidth,
-            locked: lockedHeaders,
-            normal: normalHeaders
+            locked: {
+                items: lockedHeaders,
+                itemId: 'lockedHeaderCt',
+                stretchMaxPartner: '^^>>#normalHeaderCt'
+            },
+            normal: {
+                items: normalHeaders,
+                itemId: 'normalHeaderCt',
+                stretchMaxPartner: '^^>>#lockedHeaderCt'
+            }
         };
     },
 
-    // create a new spacer after the table is refreshed
-    onLockedGridAfterLayout: function() {
-        var me         = this,
-            lockedView = me.lockedGrid.getView();
-        lockedView.on({
-            beforerefresh: me.destroySpacer,
-            scope: me
-        });
+    /**
+     * @private
+     * Listen for mousewheel events on the locked section which does not scroll.
+     * Scroll it in response, and the other section will automatically sync.
+     */
+    onLockedViewMouseWheel: function(e) {
+        var me = this,
+            scrollDelta = -me.scrollDelta,
+            deltaY = scrollDelta * e.getWheelDeltas().y,
+            vertScrollerEl = me.lockedGrid.getView().el.dom,
+            verticalCanScrollDown, verticalCanScrollUp;
+
+        if (vertScrollerEl) {
+            verticalCanScrollDown = vertScrollerEl.scrollTop !== vertScrollerEl.scrollHeight - vertScrollerEl.clientHeight;
+            verticalCanScrollUp   = vertScrollerEl.scrollTop !== 0;
+        }
+
+        if ((deltaY < 0 && verticalCanScrollUp) || (deltaY > 0 && verticalCanScrollDown)) {
+            e.stopEvent();
+
+            // Inhibit processing of any scroll events we *may* cause here.
+            // Some OSs do not fire a scroll event when we set the scrollTop of an overflow:hidden element,
+            // so we invoke the scroll handler programatically below.
+            me.scrolling = true;
+            vertScrollerEl.scrollTop += deltaY;
+            me.normalGrid.getView().el.dom.scrollTop = vertScrollerEl.scrollTop;
+            me.scrolling = false;
+
+            // Invoke the scroll event handler programatically to sync everything.
+            me.onNormalViewScroll();
+        }
+    },
+
+    onLockedViewScroll: function() {
+        var me = this,
+            lockedView = me.lockedGrid.getView(),
+            normalView = me.normalGrid.getView(),
+            normalTable,
+            lockedTable;
+
+        // Set a flag so that the scroll even doesn't bounce back when we set the normal view's scroll position
+        if (!me.scrolling) {
+            me.scrolling = true;
+            normalView.el.dom.scrollTop = lockedView.el.dom.scrollTop;
+    
+            // For buffered views, the absolute position is important as well as scrollTop
+            if (me.store.buffered) {
+                lockedTable = lockedView.el.child('table', true);
+                normalTable = normalView.el.child('table', true);
+                lockedTable.style.position = 'absolute';
+            }
+            me.scrolling = false;
+        }
+    },
+    
+    onNormalViewScroll: function() {
+        var me = this,
+            lockedView = me.lockedGrid.getView(),
+            normalView = me.normalGrid.getView(),
+            normalTable,
+            lockedTable;
+
+        // Set a flag so that the scroll even doesn't bounce back when we set the locked view's scroll position
+        if (!me.scrolling) {
+            me.scrolling = true;
+            lockedView.el.dom.scrollTop = normalView.el.dom.scrollTop;
+    
+            // For buffered views, the absolute position is important as well as scrollTop
+            if (me.store.buffered) {
+                lockedTable = lockedView.el.child('table', true);
+                normalTable = normalView.el.child('table', true);
+                lockedTable.style.position = 'absolute';
+                lockedTable.style.top = normalTable.style.top;
+            }
+            me.scrolling = false;
+        }
     },
 
     // trigger a pseudo refresh on the normal side
     onLockedHeaderMove: function() {
         if (this.syncRowHeight) {
-            this.onNormalGridAfterRefresh();
+            this.onNormalViewRefresh();
         }
     },
 
     // trigger a pseudo refresh on the locked side
     onNormalHeaderMove: function() {
         if (this.syncRowHeight) {
-            this.onLockedGridAfterRefresh();
+            this.onLockedViewRefresh();
         }
     },
-
-    // create a spacer in lockedsection and store a reference
+    
+    // Create a spacer in lockedsection and store a reference.
+    // This is to allow the locked section to scroll past the bottom to
+    // take the mormal section's horizontal scrollbar into account
     // TODO: Should destroy before refreshing content
-    getSpacerEl: function() {
+    updateSpacer: function() {
         var me   = this,
-            w,
-            view,
-            el;
-
-        if (!me.spacerEl) {
             // This affects scrolling all the way to the bottom of a locked grid
             // additional test, sort a column and make sure it synchronizes
-            w    = Ext.getScrollBarWidth() + (Ext.isIE ? 2 : 0);
-            view = me.lockedGrid.getView();
-            el   = view.el;
+            lockedViewEl   = me.lockedGrid.getView().el,
+            normalViewEl = me.normalGrid.getView().el.dom,
+            spacerId = lockedViewEl.dom.id + '-spacer',
+            spacerHeight = (normalViewEl.offsetHeight - normalViewEl.clientHeight) + 'px';
 
-            me.spacerEl = Ext.DomHelper.append(el, {
-                cls: me.spacerHidden ? (Ext.baseCSSPrefix + 'hidden') : '',
-                style: 'height: ' + w + 'px;'
-            }, true);
-        }
-        return me.spacerEl;
-    },
-
-    destroySpacer: function() {
-        var me = this;
+        me.spacerEl = Ext.getDom(spacerId);
         if (me.spacerEl) {
-            me.spacerEl.destroy();
-            delete me.spacerEl;
+            me.spacerEl.style.height = spacerHeight;
+        } else {
+            Ext.core.DomHelper.append(lockedViewEl, {
+                id: spacerId,
+                style: 'height: ' + spacerHeight
+            });
         }
     },
 
     // cache the heights of all locked rows and sync rowheights
-    onLockedGridAfterRefresh: function() {
-        var me     = this,
-            view   = me.lockedGrid.getView(),
-            el     = view.el,
-            rowEls = el.query(view.getItemSelector()),
-            ln     = rowEls.length,
-            i = 0;
+    onLockedViewRefresh: function() {
 
-        // reset heights each time.
-        me.lockedHeights = [];
+        // Only bother if there are some columns in the normal grid to sync
+        if (this.normalGrid.headerCt.getGridColumns().length) {
+            var me     = this,
+                view   = me.lockedGrid.getView(),
+                el     = view.el,
+                rowEls = el.query(view.getItemSelector()),
+                ln     = rowEls.length,
+                i = 0;
+    
+            // reset heights each time.
+            me.lockedHeights = [];
 
-        for (; i < ln; i++) {
-            me.lockedHeights[i] = rowEls[i].clientHeight;
+            for (; i < ln; i++) {
+                me.lockedHeights[i] = rowEls[i].clientHeight;
+            }
+            me.syncRowHeights();
         }
-        me.syncRowHeights();
     },
 
     // cache the heights of all normal rows and sync rowheights
-    onNormalGridAfterRefresh: function() {
-        var me     = this,
-            view   = me.normalGrid.getView(),
-            el     = view.el,
-            rowEls = el.query(view.getItemSelector()),
-            ln     = rowEls.length,
-            i = 0;
+    onNormalViewRefresh: function() {
 
-        // reset heights each time.
-        me.normalHeights = [];
-
-        for (; i < ln; i++) {
-            me.normalHeights[i] = rowEls[i].clientHeight;
+        // Only bother if there are some columns in the locked grid to sync
+        if (this.lockedGrid.headerCt.getGridColumns().length) {
+            var me     = this,
+                view   = me.normalGrid.getView(),
+                el     = view.el,
+                rowEls = el.query(view.getItemSelector()),
+                ln     = rowEls.length,
+                i = 0;
+    
+            // reset heights each time.
+            me.normalHeights = [];
+    
+            for (; i < ln; i++) {
+                me.normalHeights[i] = rowEls[i].clientHeight;
+            }
+            me.syncRowHeights();
+            me.updateSpacer();
         }
-        me.syncRowHeights();
     },
 
     // rows can get bigger/smaller
-    onLockedGridAfterUpdate: function(record, index, node) {
-        this.lockedHeights[index] = node.clientHeight;
-        this.syncRowHeights();
+    onLockedViewItemUpdate: function(record, index, node) {
+
+        // Only bother if there are some columns in the normal grid to sync
+        if (this.normalGrid.headerCt.getGridColumns().length) {
+            this.lockedHeights[index] = node.clientHeight;
+            this.syncRowHeights();
+        }
     },
 
     // rows can get bigger/smaller
-    onNormalGridAfterUpdate: function(record, index, node) {
-        this.normalHeights[index] = node.clientHeight;
-        this.syncRowHeights();
+    onNormalViewItemUpdate: function(record, index, node) {
+    
+        // Only bother if there are some columns in the locked grid to sync
+        if (this.lockedGrid.headerCt.getGridColumns().length) {
+            this.normalHeights[index] = node.clientHeight;
+            this.syncRowHeights();
+        }
     },
 
-    // match the rowheights to the biggest rowheight on either
-    // side
+    /**
+     * Synchronizes the row heights between the locked and non locked portion of the grid for each
+     * row. If one row is smaller than the other, the height will be increased to match the larger one.
+     */
     syncRowHeights: function() {
         var me = this,
             lockedHeights = me.lockedHeights,
@@ -408,7 +556,6 @@ Ext.define('Ext.grid.Lockable', {
             i  = 0,
             lockedView, normalView,
             lockedRowEls, normalRowEls,
-            vertScroller = me.getVerticalScroller(),
             scrollTop;
 
         // ensure there are an equal num of locked and normal
@@ -431,46 +578,19 @@ Ext.define('Ext.grid.Lockable', {
                 }
             }
 
-            // invalidate the scroller and sync the scrollers
-            me.normalGrid.invalidateScroller();
-
-            // synchronize the view with the scroller, if we have a virtualScrollTop
-            // then the user is using a PagingScroller
-            if (vertScroller && vertScroller.setViewScrollTop) {
-                vertScroller.setViewScrollTop(me.virtualScrollTop);
-            } else {
-                // We don't use setScrollTop here because if the scrollTop is
-                // set to the exact same value some browsers won't fire the scroll
-                // event. Instead, we directly set the scrollTop.
-                scrollTop = normalView.el.dom.scrollTop;
-                normalView.el.dom.scrollTop = scrollTop;
-                lockedView.el.dom.scrollTop = scrollTop;
-            }
-
+            // Synchronize the scrollTop positions of the two views
+            // We don't use setScrollTop here because if the scrollTop is
+            // set to the exact same value some browsers won't fire the scroll
+            // event. Instead, we directly set the scrollTop.
+            scrollTop = normalView.el.dom.scrollTop;
+            normalView.el.dom.scrollTop = scrollTop;
+            lockedView.el.dom.scrollTop = scrollTop;
+            
             // reset the heights
             me.lockedHeights = [];
             me.normalHeights = [];
         }
     },
-
-    // track when scroller is shown
-    onScrollerShow: function(scroller, direction) {
-        if (direction === 'horizontal') {
-            this.spacerHidden = false;
-            this.getSpacerEl().removeCls(Ext.baseCSSPrefix + 'hidden');
-        }
-    },
-
-    // track when scroller is hidden
-    onScrollerHide: function(scroller, direction) {
-        if (direction === 'horizontal') {
-            this.spacerHidden = true;
-            if (this.spacerEl) {
-                this.spacerEl.addCls(Ext.baseCSSPrefix + 'hidden');
-            }
-        }
-    },
-
 
     // inject Lock and Unlock text
     modifyHeaderCt: function() {
@@ -519,8 +639,10 @@ Ext.define('Ext.grid.Lockable', {
     /**
      * Locks the activeHeader as determined by which menu is open OR a header
      * as specified.
-     * @param {Ext.grid.column.Column} header (Optional) Header to unlock from the locked section. Defaults to the header which has the menu open currently.
-     * @param {Number} toIdx (Optional) The index to move the unlocked header to. Defaults to appending as the last item.
+     * @param {Ext.grid.column.Column} [header] Header to unlock from the locked section.
+     * Defaults to the header which has the menu open currently.
+     * @param {Number} [toIdx] The index to move the unlocked header to.
+     * Defaults to appending as the last item.
      * @private
      */
     lock: function(activeHd, toIdx) {
@@ -539,16 +661,17 @@ Ext.define('Ext.grid.Lockable', {
             delete activeHd.flex;
         }
 
+        Ext.suspendLayouts();
         normalHCt.remove(activeHd, false);
-        lockedHCt.suspendLayout = true;
         activeHd.locked = true;
         if (Ext.isDefined(toIdx)) {
             lockedHCt.insert(toIdx, activeHd);
         } else {
             lockedHCt.add(activeHd);
         }
-        lockedHCt.suspendLayout = false;
         me.syncLockedSection();
+        Ext.resumeLayouts(true);
+        me.updateSpacer();
 
         me.fireEvent('lockcolumn', me, activeHd);
     },
@@ -564,9 +687,19 @@ Ext.define('Ext.grid.Lockable', {
     // headerCt
     syncLockedWidth: function() {
         var me = this,
-            width = me.lockedGrid.headerCt.getFullWidth(true);
-        me.lockedGrid.setWidth(width+1); // +1 for border pixel
-        me.doComponentLayout();
+            locked = me.lockedGrid,
+            width = locked.headerCt.getFullWidth(true);
+            
+        Ext.suspendLayouts();
+        if (width > 0) {
+            locked.setWidth(width);
+            locked.show();
+        } else {
+            locked.hide();
+        }
+        Ext.resumeLayouts(true);
+        
+        return width > 0;
     },
 
     onLockedHeaderResize: function() {
@@ -601,8 +734,9 @@ Ext.define('Ext.grid.Lockable', {
     /**
      * Unlocks the activeHeader as determined by which menu is open OR a header
      * as specified.
-     * @param {Ext.grid.column.Column} header (Optional) Header to unlock from the locked section. Defaults to the header which has the menu open currently.
-     * @param {Number} toIdx (Optional) The index to move the unlocked header to. Defaults to 0.
+     * @param {Ext.grid.column.Column} [header] Header to unlock from the locked section.
+     * Defaults to the header which has the menu open currently.
+     * @param {Number} [toIdx=0] The index to move the unlocked header to.
      * @private
      */
     unlock: function(activeHd, toIdx) {
@@ -610,67 +744,74 @@ Ext.define('Ext.grid.Lockable', {
             normalGrid = me.normalGrid,
             lockedGrid = me.lockedGrid,
             normalHCt  = normalGrid.headerCt,
-            lockedHCt  = lockedGrid.headerCt;
+            lockedHCt  = lockedGrid.headerCt,
+            refreshLocked = false;
 
         if (!Ext.isDefined(toIdx)) {
             toIdx = 0;
         }
         activeHd = activeHd || lockedHCt.getMenu().activeHeader;
 
+        Ext.suspendLayouts();
         lockedHCt.remove(activeHd, false);
-        me.syncLockedWidth();
-        me.lockedGrid.getView().refresh();
+        if (me.syncLockedWidth()) {
+            refreshLocked = true;
+        }
         activeHd.locked = false;
+
+        // Refresh the locked section first in case it was empty
         normalHCt.insert(toIdx, activeHd);
         me.normalGrid.getView().refresh();
+
+        if (refreshLocked) {
+            me.lockedGrid.getView().refresh();
+        }
+        Ext.resumeLayouts(true);
 
         me.fireEvent('unlockcolumn', me, activeHd);
     },
 
     applyColumnsState: function (columns) {
-        var me = this,
-            lockedGrid = me.lockedGrid,
+        var me             = this,
+            lockedGrid     = me.lockedGrid,
             lockedHeaderCt = lockedGrid.headerCt,
             normalHeaderCt = me.normalGrid.headerCt,
-            lockedCols = lockedHeaderCt.items,
-            normalCols = normalHeaderCt.items,
-            existing,
-            locked = [],
-            normal = [],
+            lockedCols     = Ext.Array.toMap(lockedHeaderCt.items, 'headerId'),
+            normalCols     = Ext.Array.toMap(normalHeaderCt.items, 'headerId'),
+            locked         = [],
+            normal         = [],
+            lockedWidth    = 1,
+            length         = columns.length,
+            i, existing,
             lockedDefault,
-            lockedWidth = 1;
+            col;
 
-        Ext.each(columns, function (col) {
-            function matches (item) {
-                return item.headerId == col.id;
-            }
+        for (i = 0; i < length; i++) {
+            col = columns[i];
 
-            lockedDefault = true;
-            if (!(existing = lockedCols.findBy(matches))) {
-                existing = normalCols.findBy(matches);
-                lockedDefault = false;
-            }
+            lockedDefault = lockedCols[col.id];
+            existing = lockedDefault || normalCols[col.id];
 
             if (existing) {
                 if (existing.applyColumnState) {
                     existing.applyColumnState(col);
                 }
-                if (!Ext.isDefined(existing.locked)) {
-                    existing.locked = lockedDefault;
+                if (existing.locked === undefined) {
+                    existing.locked = !!lockedDefault;
                 }
                 if (existing.locked) {
                     locked.push(existing);
-                    if (!existing.hidden && Ext.isNumber(existing.width)) {
+                    if (!existing.hidden && typeof existing.width == 'number') {
                         lockedWidth += existing.width;
                     }
                 } else {
                     normal.push(existing);
                 }
             }
-        });
+        }
 
         // state and config must have the same columns (compare counts for now):
-        if (locked.length + normal.length == lockedCols.getCount() + normalCols.getCount()) {
+        if (locked.length + normal.length == lockedHeaderCt.items.getCount() + normalHeaderCt.items.getCount()) {
             lockedHeaderCt.removeAll(false);
             normalHeaderCt.removeAll(false);
 
@@ -696,15 +837,15 @@ Ext.define('Ext.grid.Lockable', {
             normalGrid = me.normalGrid;
 
         if (columns) {
-            lockedGrid.headerCt.suspendLayout = true;
-            normalGrid.headerCt.suspendLayout = true;
+            Ext.suspendLayouts();
             lockedGrid.headerCt.removeAll();
             normalGrid.headerCt.removeAll();
 
             columns = me.processColumns(columns);
             lockedGrid.setWidth(columns.lockedWidth);
-            lockedGrid.headerCt.add(columns.locked);
-            normalGrid.headerCt.add(columns.normal);
+            lockedGrid.headerCt.add(columns.locked.items);
+            normalGrid.headerCt.add(columns.normal.items);
+            Ext.resumeLayouts(true);
         }
 
         if (store) {
@@ -716,13 +857,7 @@ Ext.define('Ext.grid.Lockable', {
             lockedGrid.getView().refresh();
             normalGrid.getView().refresh();
         }
-
-        if (columns) {
-            lockedGrid.headerCt.suspendLayout = false;
-            normalGrid.headerCt.suspendLayout = false;
-            lockedGrid.headerCt.forceComponentLayout();
-            normalGrid.headerCt.forceComponentLayout();
-        }
     }
+}, function() {
+    this.borrow(Ext.view.Table, ['prepareFeatures']);
 });
-

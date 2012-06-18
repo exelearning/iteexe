@@ -77,7 +77,8 @@ Ext.define('Ext.data.validations', {
      * @return {Boolean} True if validation passed
      */
     presence: function(config, value) {
-        if (value === undefined) {
+        // No configs read, so allow just value to be passed
+        if (arguments.length === 1) {
             value = config;
         }
         

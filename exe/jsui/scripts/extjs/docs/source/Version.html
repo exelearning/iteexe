@@ -46,7 +46,7 @@
 (function() {
 
 // Current core version
-var version = '4.0.7', Version;
+var version = '4.1.0', Version;
     Ext.Version = Version = Ext.extend(Object, {
 
 <span id='Ext-Version-method-constructor'>        /**
@@ -149,6 +149,15 @@ var version = '4.0.7', Version;
             return Version.compare(this.version, target) === 1;
         },
 
+<span id='Ext-Version-method-isGreaterThanOrEqual'>        /**
+</span>         * Returns whether this version if greater than or equal to the supplied argument
+         * @param {String/Number} target The version to compare with
+         * @return {Boolean} True if this version if greater than or equal to the target, false otherwise
+         */
+        isGreaterThanOrEqual: function(target) {
+            return Version.compare(this.version, target) &gt;= 0;
+        },
+
 <span id='Ext-Version-method-isLessThan'>        /**
 </span>         * Returns whether this version if smaller than the supplied argument
          * @param {String/Number} target The version to compare with
@@ -156,6 +165,15 @@ var version = '4.0.7', Version;
          */
         isLessThan: function(target) {
             return Version.compare(this.version, target) === -1;
+        },
+
+<span id='Ext-Version-method-isLessThanOrEqual'>        /**
+</span>         * Returns whether this version if less than or equal to the supplied argument
+         * @param {String/Number} target The version to compare with
+         * @return {Boolean} True if this version if less than or equal to the target, false otherwise
+         */
+        isLessThanOrEqual: function(target) {
+            return Version.compare(this.version, target) &lt;= 0;
         },
 
 <span id='Ext-Version-method-equals'>        /**
@@ -198,6 +216,42 @@ var version = '4.0.7', Version;
          */
         getShortVersion: function() {
             return this.shortVersion;
+        },
+
+<span id='Ext-Version-method-gt'>        /**
+</span>         * Convenient alias to {@link Ext.Version#isGreaterThan isGreaterThan}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        gt: function() {
+            return this.isGreaterThan.apply(this, arguments);
+        },
+
+<span id='Ext-Version-method-lt'>        /**
+</span>         * Convenient alias to {@link Ext.Version#isLessThan isLessThan}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        lt: function() {
+            return this.isLessThan.apply(this, arguments);
+        },
+
+<span id='Ext-Version-method-gtEq'>        /**
+</span>         * Convenient alias to {@link Ext.Version#isGreaterThanOrEqual isGreaterThanOrEqual}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        gtEq: function() {
+            return this.isGreaterThanOrEqual.apply(this, arguments);
+        },
+
+<span id='Ext-Version-method-ltEq'>        /**
+</span>         * Convenient alias to {@link Ext.Version#isLessThanOrEqual isLessThanOrEqual}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        ltEq: function() {
+            return this.isLessThanOrEqual.apply(this, arguments);
         }
     });
 
@@ -324,7 +378,7 @@ var version = '4.0.7', Version;
 
     Ext.setVersion('core', version);
 
-})();
+}());
 </pre>
 </body>
 </html>

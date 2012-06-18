@@ -116,7 +116,7 @@
         }
     }
 
-    .x-html-editor-wrap textarea {
+    .#{$prefix}html-editor-wrap textarea {
         border: 0;
         padding: 3px 2px;
         overflow: auto;

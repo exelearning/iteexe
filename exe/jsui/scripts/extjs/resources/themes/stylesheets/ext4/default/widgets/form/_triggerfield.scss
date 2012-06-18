@@ -1,6 +1,6 @@
 @mixin extjs-form-triggerfield {
-	.#{$prefix}form-trigger-wrap {
-        float: left;
+    .#{$prefix}form-trigger-wrap {
+        vertical-align: top;
     }
     
     .#{$prefix}form-trigger {
@@ -9,12 +9,12 @@
 		
 		width: $form-trigger-width;
 		height: $form-trigger-height - $form-trigger-border-bottom-width;
-		float: left;
 
 		border-bottom: $form-trigger-border-bottom;
 
         cursor: pointer;
         cursor: hand;
+        overflow: hidden;
     }
 
     .#{$prefix}border-box .#{$prefix}form-trigger {
@@ -151,6 +151,12 @@
         cursor: pointer;
         cursor: hand;
     }
+    
+    .#{$prefix}item-disabled {
+        .#{$prefix}trigger-noedit, .#{$prefix}form-trigger {
+          cursor: auto;
+        }
+    }
 
 
     .#{$prefix}form-clear-trigger {
@@ -158,5 +164,18 @@
     }
     .#{$prefix}form-search-trigger {
         background-image: theme-background-image($theme-name, 'form/search-trigger.gif');
+    }
+
+    @if $include-ie {
+        // in IE6 quirks, the table cell enclosing the trigger field's input element does not shrink to fit,
+        // so it is necessary to set the height of the table cell.
+        .#{$prefix}quirks .#{prefix}ie6 {
+            .#{$prefix}form-trigger-input-cell { 
+                height: $form-field-height;
+            }
+            .#{$prefix}field-default-toolbar .#{$prefix}form-trigger-input-cell { 
+                height: $form-toolbar-field-height;
+            }
+        }
     }
 }

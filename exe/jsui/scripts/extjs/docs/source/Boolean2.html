@@ -68,35 +68,33 @@ Ext.define('Ext.grid.column.Boolean', {
 </span>     * @cfg {String} trueText
      * The string returned by the renderer when the column value is not falsey.
      */
+    //&lt;locale&gt;
     trueText: 'true',
+    //&lt;/locale&gt;
 
 <span id='Ext-grid-column-Boolean-cfg-falseText'>    /**
 </span>     * @cfg {String} falseText
      * The string returned by the renderer when the column value is falsey (but not undefined).
      */
+    //&lt;locale&gt;
     falseText: 'false',
+    //&lt;/locale&gt;
 
 <span id='Ext-grid-column-Boolean-cfg-undefinedText'>    /**
 </span>     * @cfg {String} undefinedText
      * The string returned by the renderer when the column value is undefined.
      */
     undefinedText: '&amp;#160;',
-
-    constructor: function(cfg){
-        this.callParent(arguments);
-        var trueText      = this.trueText,
-            falseText     = this.falseText,
-            undefinedText = this.undefinedText;
-
-        this.renderer = function(value){
-            if(value === undefined){
-                return undefinedText;
-            }
-            if(!value || value === 'false'){
-                return falseText;
-            }
-            return trueText;
-        };
+    
+    defaultRenderer: function(value){
+        if (value === undefined) {
+            return this.undefinedText;
+        }
+        
+        if (!value || value === 'false') {
+            return this.falseText;
+        }
+        return this.trueText;
     }
 });</pre>
 </body>

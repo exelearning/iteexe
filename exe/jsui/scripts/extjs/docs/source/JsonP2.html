@@ -297,7 +297,7 @@ Ext.define('Ext.data.proxy.JsonP', {
     //inherit docs
     destroy: function() {
         this.abort();
-        this.callParent();
+        this.callParent(arguments);
     },
 
 <span id='Ext-data-proxy-JsonP-method-abort'>    /**
@@ -322,7 +322,7 @@ Ext.define('Ext.data.proxy.JsonP', {
             len = records.length;
 
         for (; i &lt; len; i++) {
-            encoded += Ext.Object.toQueryString(records[i].data);
+            encoded += Ext.Object.toQueryString(records[i].getData());
         }
 
         return encoded;

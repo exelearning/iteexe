@@ -25,7 +25,6 @@
         border-left: solid 1px $menu-separator-border-color;
         background-color: $menu-separator-background-color;
         width: 2px;
-        height: 100%!important;
         overflow: hidden;
     }
 
@@ -156,7 +155,7 @@
                 }
             }
             
-            .#{$prefix}strict & {
+            .#{$prefix}strict .#{$prefix}ie7m & {
                 .#{$prefix}menu-icon-separator {
                     width: 1px;
                 }

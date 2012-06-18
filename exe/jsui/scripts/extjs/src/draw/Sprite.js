@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * A Sprite is an object rendered in a Drawing surface.
  *
@@ -156,11 +142,11 @@ Ext.define('Ext.draw.Sprite', {
      */
 
     /**
-     * @cfg {Array} path Used in path sprites, the path of the sprite written in SVG-like path syntax
+     * @cfg {String} path Used in path sprites, the path of the sprite written in SVG-like path syntax.
      */
 
     /**
-     * @cfg {Number} opacity The opacity of the sprite
+     * @cfg {Number} opacity The opacity of the sprite. A number between 0 and 1.
      */
 
     /**
@@ -198,6 +184,11 @@ Ext.define('Ext.draw.Sprite', {
     dirtyPath: true,
     dirtyFont: true,
     zIndexDirty: true,
+
+    /**
+     * @property {Boolean} isSprite
+     * `true` in this class to identify an object as an instantiated Sprite, or subclass thereof.
+     */
     isSprite: true,
     zIndex: 0,
     fontProperties: [
@@ -225,7 +216,7 @@ Ext.define('Ext.draw.Sprite', {
     ],
     constructor: function(config) {
         var me = this;
-        config = config || {};
+        config = Ext.merge({}, config || {});
         me.id = Ext.id(null, 'ext-sprite-');
         me.transformations = [];
         Ext.copyTo(this, config, 'surface,group,type,draggable');
@@ -256,14 +247,53 @@ Ext.define('Ext.draw.Sprite', {
         delete config.draggable;
         me.setAttributes(config);
         me.addEvents(
+            /**
+             * @event
+             * Fires before the sprite is destroyed. Return false from an event handler to stop the destroy.
+             * @param {Ext.draw.Sprite} this
+             */
             'beforedestroy',
+            /**
+             * @event
+             * Fires after the sprite is destroyed.
+             * @param {Ext.draw.Sprite} this
+             */
             'destroy',
+            /**
+             * @event
+             * Fires after the sprite markup is rendered.
+             * @param {Ext.draw.Sprite} this
+             */
             'render',
+            /**
+             * @event
+             * @inheritdoc Ext.dom.Element#mousedown
+             */
             'mousedown',
+            /**
+             * @event
+             * @inheritdoc Ext.dom.Element#mouseup
+             */
             'mouseup',
+            /**
+             * @event
+             * @inheritdoc Ext.dom.Element#mouseover
+             */
             'mouseover',
+            /**
+             * @event
+             * @inheritdoc Ext.dom.Element#mouseout
+             */
             'mouseout',
+            /**
+             * @event
+             * @inheritdoc Ext.dom.Element#mousemove
+             */
             'mousemove',
+            /**
+             * @event
+             * @inheritdoc Ext.dom.Element#click
+             */
             'click'
         );
         me.mixins.observable.constructor.apply(this, arguments);
@@ -285,7 +315,7 @@ Ext.define('Ext.draw.Sprite', {
         if (!me.el) {
             me.surface.createSpriteElement(me);
         }
-        me.dd = Ext.create('Ext.draw.SpriteDD', me, Ext.isBoolean(me.draggable) ? null : me.draggable);
+        me.dd = new Ext.draw.SpriteDD(me, Ext.isBoolean(me.draggable) ? null : me.draggable);
         me.on('beforedestroy', me.dd.destroy, me.dd);
     },
 
@@ -304,7 +334,8 @@ Ext.define('Ext.draw.Sprite', {
             hasSurface = !!me.surface,
             custom = hasSurface && me.surface.customAttributes || {},
             spriteAttrs = me.attr,
-            attr, i, translate, translation, rotate, rotation, scale, scaling;
+            dirtyBBox = false,
+            attr, i, newTranslation, translation, newRotate, rotation, newScaling, scaling;
 
         attrs = Ext.apply({}, attrs);
         for (attr in custom) {
@@ -323,6 +354,7 @@ Ext.define('Ext.draw.Sprite', {
             attr = pathProps[i];
             if (attr in attrs && attrs[attr] !== spriteAttrs[attr]) {
                 me.dirtyPath = true;
+                dirtyBBox = true;
                 break;
             }
         }
@@ -333,50 +365,75 @@ Ext.define('Ext.draw.Sprite', {
         }
 
         // Flag font/text change
+        if ('text' in attrs) {
+            me.dirtyFont = true;
+            dirtyBBox = true;
+        }
+
         for (i = 0; i < fontPropsLength; i++) {
             attr = fontProps[i];
             if (attr in attrs && attrs[attr] !== spriteAttrs[attr]) {
                 me.dirtyFont = true;
+                dirtyBBox = true;
                 break;
             }
         }
 
-        translate = attrs.translate;
+        newTranslation = attrs.translation || attrs.translate;
+        delete attrs.translate;
+        delete attrs.translation;
         translation = spriteAttrs.translation;
-        if (translate) {
-            if ((translate.x && translate.x !== translation.x) ||
-                (translate.y && translate.y !== translation.y)) {
-                Ext.apply(translation, translate);
+        if (newTranslation) {
+            if (('x' in newTranslation && newTranslation.x !== translation.x) ||
+                ('y' in newTranslation && newTranslation.y !== translation.y)) {
                 me.dirtyTransform = true;
+                translation.x = newTranslation.x;
+                translation.y = newTranslation.y;
             }
-            delete attrs.translate;
         }
 
-        rotate = attrs.rotate;
+        newRotate = attrs.rotation || attrs.rotate;
         rotation = spriteAttrs.rotation;
-        if (rotate) {
-            if ((rotate.x && rotate.x !== rotation.x) ||
-                (rotate.y && rotate.y !== rotation.y) ||
-                (rotate.degrees && rotate.degrees !== rotation.degrees)) {
-                Ext.apply(rotation, rotate);
+        delete attrs.rotate;
+        delete attrs.rotation;
+        if (newRotate) {
+            if (('x' in newRotate && newRotate.x !== rotation.x) ||
+                ('y' in newRotate && newRotate.y !== rotation.y) ||
+                ('degrees' in newRotate && newRotate.degrees !== rotation.degrees)) {
                 me.dirtyTransform = true;
+                rotation.x = newRotate.x;
+                rotation.y = newRotate.y;
+                rotation.degrees = newRotate.degrees;
             }
-            delete attrs.rotate;
         }
 
-        scale = attrs.scale;
+        newScaling = attrs.scaling || attrs.scale;
         scaling = spriteAttrs.scaling;
-        if (scale) {
-            if ((scale.x && scale.x !== scaling.x) ||
-                (scale.y && scale.y !== scaling.y) ||
-                (scale.cx && scale.cx !== scaling.cx) ||
-                (scale.cy && scale.cy !== scaling.cy)) {
-                Ext.apply(scaling, scale);
+        delete attrs.scale;
+        delete attrs.scaling;
+        if (newScaling) {
+            if (('x' in newScaling && newScaling.x !== scaling.x) ||
+                ('y' in newScaling && newScaling.y !== scaling.y) ||
+                ('cx' in newScaling && newScaling.cx !== scaling.cx) ||
+                ('cy' in newScaling && newScaling.cy !== scaling.cy)) {
                 me.dirtyTransform = true;
+                scaling.x = newScaling.x;
+                scaling.y = newScaling.y;
+                scaling.cx = newScaling.cx;
+                scaling.cy = newScaling.cy;
             }
-            delete attrs.scale;
         }
 
+        // If the bbox is changed, then the bbox based transforms should be invalidated.
+        if (!me.dirtyTransform && dirtyBBox) {
+            if (spriteAttrs.scaling.x === null ||
+                spriteAttrs.scaling.y === null ||
+                spriteAttrs.rotation.y === null ||
+                spriteAttrs.rotation.y === null) {
+                me.dirtyTransform = true;
+            }
+        }
+        
         Ext.apply(spriteAttrs, attrs);
         me.dirty = true;
 
@@ -425,6 +482,8 @@ Ext.define('Ext.draw.Sprite', {
 
     /**
      * Removes the sprite.
+     * @return {Boolean} True if sprite was successfully removed.
+     * False when there was no surface to remove it from.
      */
     remove: function() {
         if (this.surface) {
@@ -493,4 +552,3 @@ Ext.define('Ext.draw.Sprite', {
         return this;
     }
 });
-

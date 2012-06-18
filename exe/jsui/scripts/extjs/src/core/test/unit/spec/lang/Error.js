@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 describe("Ext.Error", function() { 
     var global;
 
@@ -24,6 +10,9 @@ describe("Ext.Error", function() {
                 dir: function(s) {
                     return s;
                 },
+                log: function(s) {
+                    return s;
+                },                
                 error: function(s) {
                     return s;
                 },
@@ -43,12 +32,14 @@ describe("Ext.Error", function() {
         describe("passing a string", function() {
     
             it("should throw an error with a msg property", function() {
+                var error;
                 try {
                     Ext.Error.raise('foo');
                 }
                 catch (err) {
-                    expect(err.msg).toEqual('foo');
+                    error = err;
                 }
+                expect(error.msg).toEqual('foo');
             });
         
             it("should log an error to the console", function() {
@@ -106,12 +97,14 @@ describe("Ext.Error", function() {
         describe("passing an object with a msg property", function() {
     
             it("should throw an error with a msg property", function() {
+                var error;
                 try {
                     Ext.Error.raise({msg: 'foo'});
                 }
                 catch (err) {
-                    expect(err.msg).toEqual('foo');
+                    error = err;
                 }
+                expect(error.msg).toEqual('foo');
             });
         
             it("should log an error to the console", function() {
@@ -169,6 +162,7 @@ describe("Ext.Error", function() {
         describe("passing an object with custom metadata", function() {
     
             it("should throw an error with matching metadata", function() {
+                var error;
                 try {
                     Ext.Error.raise({
                         msg: 'Custom error',
@@ -178,10 +172,11 @@ describe("Ext.Error", function() {
                     });
                 }
                 catch (err) {
-                    expect(err.msg).toEqual('Custom error');
-                    expect(err.data).not.toBe(null);
-                    expect(err.data.foo).toEqual('bar');
+                    error = err;
                 }
+                expect(error.msg).toEqual('Custom error');
+                expect(error.data).not.toBe(null);
+                expect(error.data.foo).toEqual('bar');
             });
         
             it("should log the complete metadata to the console", function() {
@@ -216,16 +211,19 @@ describe("Ext.Error", function() {
             var customObj = Ext.create('CustomClass');
         
             it("should throw an error containing the source class and method", function() {
+                var error;
                 try {
                     customObj.doSomething({
                         extraData: 'extra'
                     });
                 }
                 catch (err) {
-                    expect(err.msg).toEqual('Custom error');
-                    expect(err.sourceClass).toEqual('CustomClass');
-                    expect(err.sourceMethod).toEqual('doSomething');
+                    error = err;
                 }
+                expect(error.msg).toEqual('Custom error');
+                expect(error.sourceClass).toEqual('CustomClass');
+                expect(error.sourceMethod).toEqual('doSomething');
+                expect(error.toString()).toBe('CustomClass.doSomething(): Custom error');
             });
         
             it("should log the complete metadata to the console", function() {
@@ -243,9 +241,37 @@ describe("Ext.Error", function() {
                         extraData: 'extra'
                     });
                 } 
-                catch (err) {}
+                catch (err) {
+                }
             });
         });
     });
+    
+    describe("Throwing an an Ext.Error directly intantiated", function() {
+        describe("Passing an string as constructor argument", function() {
+           it("should contain a msg property with the given string as value", function() {
+              expect(function() {
+                  throw new Ext.Error("expected message");
+              }).toRaiseExtError("expected message");
+           });
+        });
+     });
+    
+    xdescribe("Ext.deprecated", function() {
+       // failing only on CI
+       it("should return a function that raises an error with the given suggestion", function() {
+          Ext.ClassManager.enableNamespaceParseCache = false;
+          Ext.define("Test.ThisClassContainsADeprecatedMethod", {
+             deprecatedMethod : Ext.deprecated("use another function")
+          });
+          expect(function() {
+              new Test.ThisClassContainsADeprecatedMethod().deprecatedMethod();
+          }).toThrow('The method "Test.ThisClassContainsADeprecatedMethod.deprecatedMethod" has been removed. use another function');
+          
+          try {
+              delete Test;
+          } catch(e) { }
+          Ext.ClassManager.enableNamespaceParseCache = true;
+       });
+    });
 });
-

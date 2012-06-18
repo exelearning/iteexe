@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 Ext.Loader.setConfig({
     enabled: true
 });
@@ -28,7 +14,8 @@ Ext.require([
 ]);
 
 Ext.onReady(function(){
-
+    Ext.QuickTips.init();
+ 
     function formatDate(value){
         return value ? Ext.Date.dateFormat(value, 'M d, Y') : '';
     }
@@ -91,8 +78,7 @@ Ext.onReady(function(){
             header: 'Light',
             dataIndex: 'light',
             width: 130,
-            editor: {
-                xtype: 'combobox',
+            editor: new Ext.form.field.ComboBox({
                 typeAhead: true,
                 triggerAction: 'all',
                 selectOnTab: true,
@@ -105,7 +91,7 @@ Ext.onReady(function(){
                 ],
                 lazyRender: true,
                 listClass: 'x-combo-list-small'
-            }
+            })
         }, {
             header: 'Price',
             dataIndex: 'price',
@@ -134,7 +120,19 @@ Ext.onReady(function(){
             xtype: 'checkcolumn',
             header: 'Indoor?',
             dataIndex: 'indoor',
-            width: 55
+            width: 55,
+            stopSelection: false
+        }, {
+            xtype: 'actioncolumn',
+            width:30,
+            sortable: false,
+            items: [{
+                icon: '../shared/icons/fam/delete.gif',
+                tooltip: 'Delete Plant',
+                handler: function(grid, rowIndex, colIndex) {
+                    store.removeAt(rowIndex); 
+                }
+            }]
         }],
         selModel: {
             selType: 'cellmodel'
@@ -176,4 +174,3 @@ Ext.onReady(function(){
         }
     });
 });
-

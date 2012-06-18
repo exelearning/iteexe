@@ -1,13 +1,13 @@
 @mixin extjs-layout {
-    .#{$prefix}docked {
-        position: absolute;
-        z-index: 1;
-    }
-    
     /**
       * Dock Layouts
       * @todo move this somewhere else?
       */
+    .#{$prefix}docked {
+        position: absolute !important;
+        z-index: 1;
+    }
+    
     .#{$prefix}docked-top {
         border-bottom-width: 0 !important;
     }
@@ -56,10 +56,20 @@
         top:0;
     }
 
+    .#{$prefix}rtl .#{$prefix}box-item {
+        right: 0;
+        left: auto;
+    }
+
     .#{$prefix}box-layout-ct,
     .#{$prefix}border-layout-ct {
         overflow: hidden;
         zoom: 1;
+    }
+
+    .#{$prefix}border-layout-ct {
+        background-color: $border-layout-ct-background;
+        position: relative;
     }
 
     .#{$prefix}overflow-hidden {
@@ -70,16 +80,16 @@
         display: inline-block !important;
     }
 
+    .#{$prefix}abs-layout-ct {
+        position: relative;
+    }
+
     .#{$prefix}abs-layout-item {
-        position: absolute;
+        position: absolute !important;
     }
 
     .#{$prefix}fit-item {
         position: relative;
-    }
-
-    .#{$prefix}border-layout-ct {
-        background-color: $border-layout-ct-background;
     }
 
     .#{$prefix}border-region-slide-in {
@@ -304,6 +314,10 @@
     @if $include-ie {
         .#{$prefix}ie6 .#{$prefix}column {
             display: inline; /*prevent IE6 double-margin bug*/
+        }
+        
+        .#{$prefix}quirks .#{$prefix}ie .#{$prefix}form-layout-table, .#{$prefix}quirks .#{$prefix}ie .#{$prefix}form-layout-table tbody tr.#{$prefix}form-item {
+            position: relative;
         }
     }
 }

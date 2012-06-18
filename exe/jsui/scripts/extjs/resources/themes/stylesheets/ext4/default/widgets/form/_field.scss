@@ -1,8 +1,6 @@
 @mixin extjs-form-field {
     .#{$prefix}form-field,
     .#{$prefix}form-display-field {
-        float: left;
-        
         margin: 0 0 0 0;
         
         font: $form-field-font;
@@ -29,12 +27,10 @@
     .#{$prefix}form-text {
         height: $form-field-content-height;
         line-height: $form-field-content-height;
-        vertical-align: middle;
+        vertical-align: top;
     }
     
-    .#{$prefix}ie6,
-    .#{$prefix}ie7,
-    .#{$prefix}ie8 {
+    .#{$prefix}ie8m {
         .#{$prefix}form-text {
             line-height: $form-field-content-height - 3px;
         }
@@ -69,7 +65,7 @@
 
     .#{$prefix}form-focus,
     textarea.#{$prefix}form-focus {
-  	  	border-color: $form-field-focus-border-color;
+        border-color: $form-field-focus-border-color;
     }
     
     .#{$prefix}form-invalid-field,
@@ -102,6 +98,22 @@
     }
 
     @if $include-ie {
+        /*
+        In oldIE, text inputs get a mysterious extra pixel of spacing above and below.
+        This is targeted at IE6-IE7 (all modes) and IE9+ Quirks mode.
+
+        IE8 quirks on Windows 7 requires this fix, but on
+        IE8 quirks on Windows XP, this is breaks the layout.
+        TODO: Check field input heights in IE8 quirks on Windows Vista.
+
+        Since we can't specifically target a specific version of Windows via CSS, we default to fixing it the XP way, for now.
+        */
+        .#{$prefix}quirks .#{$prefix}ie9p .#{$prefix}form-text,
+        .#{$prefix}ie7m .#{$prefix}form-text {
+            margin-top: -1px;
+            margin-bottom: -1px;
+        }
+
         .#{$prefix}ie .#{$prefix}form-file {
             height: $form-field-height + 1;
 

@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @author Ed Spencer
  *
@@ -141,16 +127,13 @@ Ext.define('Ext.data.proxy.Server', {
         var me = this;
 
         config = config || {};
-        this.addEvents(
-            /**
-             * @event exception
-             * Fires when the server returns an exception
-             * @param {Ext.data.proxy.Proxy} this
-             * @param {Object} response The response from the AJAX request
-             * @param {Ext.data.Operation} operation The operation that triggered request
-             */
-            'exception'
-        );
+        /**
+         * @event exception
+         * Fires when the server returns an exception
+         * @param {Ext.data.proxy.Proxy} this
+         * @param {Object} response The response from the AJAX request
+         * @param {Ext.data.Operation} operation The operation that triggered request
+         */
         me.callParent([config]);
 
         /**
@@ -160,7 +143,8 @@ Ext.define('Ext.data.proxy.Server', {
          */
         me.extraParams = config.extraParams || {};
 
-        me.api = config.api || {};
+        me.api = Ext.apply({}, config.api || me.api);
+        
 
         //backwards compatibility, will be deprecated in 5.0
         me.nocache = me.noCache;
@@ -184,31 +168,45 @@ Ext.define('Ext.data.proxy.Server', {
     },
 
     /**
+     * Sets a value in the underlying {@link #extraParams}.
+     * @param {String} name The key for the new value
+     * @param {Object} value The value
+     */
+    setExtraParam: function(name, value) {
+        this.extraParams[name] = value;
+    },
+
+    /**
      * Creates and returns an Ext.data.Request object based on the options passed by the {@link Ext.data.Store Store}
      * that this Proxy is attached to.
      * @param {Ext.data.Operation} operation The {@link Ext.data.Operation Operation} object to execute
      * @return {Ext.data.Request} The request object
      */
     buildRequest: function(operation) {
-        var params = Ext.applyIf(operation.params || {}, this.extraParams || {}),
+        var me = this,
+            params = Ext.applyIf(operation.params || {}, me.extraParams || {}),
             request;
 
         //copy any sorters, filters etc into the params so they can be sent over the wire
-        params = Ext.applyIf(params, this.getParams(operation));
+        params = Ext.applyIf(params, me.getParams(operation));
 
         if (operation.id && !params.id) {
             params.id = operation.id;
         }
 
-        request = Ext.create('Ext.data.Request', {
+        request = new Ext.data.Request({
             params   : params,
             action   : operation.action,
             records  : operation.records,
             operation: operation,
-            url      : operation.url
+            url      : operation.url,
+
+            // this is needed by JsonSimlet in order to properly construct responses for
+            // requests from this proxy
+            proxy: me
         });
 
-        request.url = this.buildUrl(request);
+        request.url = me.buildUrl(request);
 
         /*
          * Save the request on the Operation. Operations don't usually care about Request and Response data, but in the
@@ -220,13 +218,19 @@ Ext.define('Ext.data.proxy.Server', {
     },
 
     // Should this be documented as protected method?
-    processResponse: function(success, operation, request, response, callback, scope){
+    processResponse: function(success, operation, request, response, callback, scope) {
         var me = this,
             reader,
             result;
 
         if (success === true) {
             reader = me.getReader();
+
+            // Apply defaults to incoming data only for read operations.
+            // For create and update, there will already be a client-side record
+            // to match with which will contain any defaulted in values.
+            reader.applyDefaults = operation.action === 'read';
+
             result = reader.read(me.extractResponseData(response));
 
             if (result.success !== false) {
@@ -262,7 +266,7 @@ Ext.define('Ext.data.proxy.Server', {
      * @param {Ext.data.Operation} operation The operation
      * @param {Object} response The response
      */
-    setException: function(operation, response){
+    setException: function(operation, response) {
         operation.setException({
             status: response.status,
             statusText: response.statusText
@@ -276,7 +280,7 @@ Ext.define('Ext.data.proxy.Server', {
      * @param {Object} response The server response
      * @return {Object} The response data to be used by the reader
      */
-    extractResponseData: function(response){
+    extractResponseData: function(response) {
         return response;
     },
 
@@ -286,7 +290,7 @@ Ext.define('Ext.data.proxy.Server', {
      * @param {Array} An array of sorters/filters.
      * @return {Object} The encoded value
      */
-    applyEncoding: function(value){
+    applyEncoding: function(value) {
         return Ext.encode(value);
     },
 
@@ -336,24 +340,24 @@ Ext.define('Ext.data.proxy.Server', {
      * Copy any sorters, filters etc into the params so they can be sent over the wire
      */
     getParams: function(operation) {
-        var me             = this,
-            params         = {},
-            isDef          = Ext.isDefined,
-            groupers       = operation.groupers,
-            sorters        = operation.sorters,
-            filters        = operation.filters,
-            page           = operation.page,
-            start          = operation.start,
-            limit          = operation.limit,
+        var me = this,
+            params = {},
+            isDef = Ext.isDefined,
+            groupers = operation.groupers,
+            sorters = operation.sorters,
+            filters = operation.filters,
+            page = operation.page,
+            start = operation.start,
+            limit = operation.limit,
 
             simpleSortMode = me.simpleSortMode,
 
-            pageParam      = me.pageParam,
-            startParam     = me.startParam,
-            limitParam     = me.limitParam,
-            groupParam     = me.groupParam,
-            sortParam      = me.sortParam,
-            filterParam    = me.filterParam,
+            pageParam = me.pageParam,
+            startParam = me.startParam,
+            limitParam = me.limitParam,
+            groupParam = me.groupParam,
+            sortParam = me.sortParam,
+            filterParam = me.filterParam,
             directionParam = me.directionParam;
 
         if (pageParam && isDef(page)) {
@@ -422,7 +426,7 @@ Ext.define('Ext.data.proxy.Server', {
      * @param {Ext.data.Request} request The request
      * @return {String} The url
      */
-    getUrl: function(request){
+    getUrl: function(request) {
         return request.url || this.api[request.action] || this.url;
     },
 
@@ -454,4 +458,3 @@ Ext.define('Ext.data.proxy.Server', {
         Ext.destroy(this.reader, this.writer);
     }
 });
-

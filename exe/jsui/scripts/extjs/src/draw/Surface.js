@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * A Surface is an interface to render methods inside a draw {@link Ext.draw.Component}.
  * A Surface contains methods to render sprites, get bounding boxes of sprites, add
@@ -46,6 +32,7 @@ If you are unsure which license is appropriate for your use, please contact the 
  * - mouseenter
  * - mouseleave
  * - click
+ * - dblclick
  *
  * For example:
  *
@@ -143,7 +130,7 @@ Ext.define('Ext.draw.Surface', {
     },
 
     requires: ['Ext.draw.CompositeSprite'],
-    uses: ['Ext.draw.engine.Svg', 'Ext.draw.engine.Vml'],
+    uses: ['Ext.draw.engine.Svg', 'Ext.draw.engine.Vml', 'Ext.draw.engine.SvgExporter', 'Ext.draw.engine.ImageExporter'],
 
     separatorRe: /[, ]+/,
 
@@ -164,11 +151,28 @@ Ext.define('Ext.draw.Surface', {
                 surfaceClass;
 
             for (; i < len; i++) {
-                if (Ext.supports[enginePriority[i]]) {
+                if (Ext.supports[enginePriority[i]] !== false) {
                     return Ext.create('Ext.draw.engine.' + enginePriority[i], config);
                 }
             }
             return false;
+        },
+        
+        save: function(config, surface){
+            var exportTypes = {
+                    /* 
+                    example adds
+                    'image/png': 'Image',
+                    'image/jpeg': 'Image',
+                    */
+                    'image/png': 'Image',
+                    'image/jpeg': 'Image',
+                    'image/svg+xml': 'Svg'
+                },
+                prefix = exportTypes[config.type] || 'Svg';           
+
+            return (Ext.draw.engine[prefix + 'Exporter']).self.generate(config, surface);
+            
         }
     },
 
@@ -200,7 +204,7 @@ Ext.define('Ext.draw.Surface', {
         ry: 0,
         scale: "1 1",
         src: "",
-        stroke: "#000",
+        stroke: "none",
         "stroke-dasharray": "",
         "stroke-linecap": "butt",
         "stroke-linejoin": "butt",
@@ -260,7 +264,8 @@ Ext.define('Ext.draw.Surface', {
             'mousemove',
             'mouseenter',
             'mouseleave',
-            'click'
+            'click',
+            'dblclick'
         );
 
         me.mixins.observable.constructor.call(me);
@@ -337,17 +342,28 @@ Ext.define('Ext.draw.Surface', {
 
     // @private
     initGradients: function() {
-        var gradients = this.gradients;
-        if (gradients) {
-            Ext.each(gradients, this.addGradient, this);
+        if (this.hasOwnProperty('gradients')) {
+            var gradients = this.gradients,
+                gLen      = gradients.length,
+                fn        = this.addGradient,
+                g;
+
+            if (gradients) {
+                for (g = 0; g < gLen; g++) {
+                    if (fn.call(this, gradients[g], g, gLen) === false) {
+                        break;
+                    }
+                }
+            }
         }
     },
 
     // @private
     initItems: function() {
         var items = this.items;
-        this.items = Ext.create('Ext.draw.CompositeSprite');
-        this.groups = Ext.create('Ext.draw.CompositeSprite');
+        this.items = new Ext.draw.CompositeSprite();
+        this.items.autoDestroy = true;
+        this.groups = new Ext.draw.CompositeSprite();
         if (items) {
             this.add(items);
         }
@@ -359,6 +375,11 @@ Ext.define('Ext.draw.Surface', {
             width = me.width,
             height = me.height,
             gradientId, gradient, backgroundSprite;
+        if (Ext.isString(config)) {
+            config = {
+                fill : config
+            };
+        }
         if (config) {
             if (config.gradient) {
                 gradient = config.gradient;
@@ -370,7 +391,8 @@ Ext.define('Ext.draw.Surface', {
                     y: 0,
                     width: width,
                     height: height,
-                    fill: 'url(#' + gradientId + ')'
+                    fill: 'url(#' + gradientId + ')',
+                    zIndex: -1
                 });
             } else if (config.fill) {
                 me.background = me.add({
@@ -379,7 +401,8 @@ Ext.define('Ext.draw.Surface', {
                     y: 0,
                     width: width,
                     height: height,
-                    fill: config.fill
+                    fill: config.fill,
+                    zIndex: -1
                 });
             } else if (config.image) {
                 me.background = me.add({
@@ -388,9 +411,12 @@ Ext.define('Ext.draw.Surface', {
                     y: 0,
                     width: width,
                     height: height,
-                    src: config.image
+                    src: config.image,
+                    zIndex: -1
                 });
             }
+            // prevent me.background to jeopardize me.items.getBBox
+            me.background.bboxExcluded = true;
         }
     },
 
@@ -407,13 +433,6 @@ Ext.define('Ext.draw.Surface', {
      * @param {Number} h The new height of the canvas.
      */
     setSize: function(w, h) {
-        if (this.background) {
-            this.background.setAttributes({
-                width: w,
-                height: h,
-                hidden: false
-            }, true);
-        }
         this.applyViewBox();
     },
 
@@ -441,6 +460,11 @@ Ext.define('Ext.draw.Surface', {
     // @private
     onClick: function(e) {
         this.processEvent('click', e);
+    },
+    
+    // @private
+    onDblClick: function(e) {
+        this.processEvent('dblclick', e);
     },
 
     // @private
@@ -503,6 +527,7 @@ Ext.define('Ext.draw.Surface', {
      *        }
      *    });
      *
+     * @param {Object} gradient A gradient config.
      * @method
      */
     addGradient: Ext.emptyFn,
@@ -521,17 +546,23 @@ Ext.define('Ext.draw.Surface', {
      *         y: 100
      *     });
      *
+     * @param {Ext.draw.Sprite[]/Ext.draw.Sprite...} args One or more Sprite objects of configs.
+     * @return {Ext.draw.Sprite[]/Ext.draw.Sprite} The sprites added.
      */
     add: function() {
         var args = Array.prototype.slice.call(arguments),
             sprite,
-            index;
-
-        var hasMultipleArgs = args.length > 1;
+            index,
+            hasMultipleArgs = args.length > 1,
+            items,
+            results,
+            i,
+            ln,
+            item;
+            
         if (hasMultipleArgs || Ext.isArray(args[0])) {
-            var items = hasMultipleArgs ? args : args[0],
-                results = [],
-                i, ln, item;
+            items = hasMultipleArgs ? args : args[0];
+            results = [];
 
             for (i = 0, ln = items.length; i < ln; i++) {
                 item = items[i];
@@ -622,14 +653,19 @@ Ext.define('Ext.draw.Surface', {
      *
      * @param {Ext.draw.Sprite} sprite
      * @param {Boolean} destroySprite
-     * @return {Number} the sprite's new index in the list
      */
     remove: function(sprite, destroySprite) {
         if (sprite) {
             this.items.remove(sprite);
-            this.groups.each(function(item) {
-                item.remove(sprite);
-            });
+
+            var groups = [].concat(this.groups.items),
+                gLen   = groups.length,
+                g;
+
+            for (g = 0; g < gLen; g++) {
+                groups[g].remove(sprite);
+            }
+
             sprite.onRemove();
             if (destroySprite === true) {
                 sprite.destroy();
@@ -645,7 +681,6 @@ Ext.define('Ext.draw.Surface', {
      *     drawComponent.surface.removeAll();
      *
      * @param {Boolean} destroySprites Whether to destroy all sprites when removing them.
-     * @return {Number} The sprite's new index in the list.
      */
     removeAll: function(destroySprites) {
         var items = this.items.items,
@@ -667,8 +702,8 @@ Ext.define('Ext.draw.Surface', {
     applyViewBox: function() {
         var me = this,
             viewBox = me.viewBox,
-            width = me.width,
-            height = me.height,
+            width = me.width || 1, // Avoid problems in division
+            height = me.height || 1,
             viewBoxX, viewBoxY, viewBoxWidth, viewBoxHeight,
             relativeHeight, relativeWidth, size;
 
@@ -679,59 +714,86 @@ Ext.define('Ext.draw.Surface', {
             viewBoxHeight = viewBox.height;
             relativeHeight = height / viewBoxHeight;
             relativeWidth = width / viewBoxWidth;
+            size = Math.min(relativeWidth, relativeHeight);
 
-            if (viewBoxWidth * relativeHeight < width) {
-                viewBoxX -= (width - viewBoxWidth * relativeHeight) / 2 / relativeHeight;
+            if (viewBoxWidth * size < width) {
+                viewBoxX -= (width - viewBoxWidth * size) / 2 / size;
             }
-            if (viewBoxHeight * relativeWidth < height) {
-                viewBoxY -= (height - viewBoxHeight * relativeWidth) / 2 / relativeWidth;
+            if (viewBoxHeight * size < height) {
+                viewBoxY -= (height - viewBoxHeight * size) / 2 / size;
             }
-
-            size = 1 / Math.min(viewBoxWidth, relativeHeight);
 
             me.viewBoxShift = {
                 dx: -viewBoxX,
                 dy: -viewBoxY,
                 scale: size
             };
+            
+            if (me.background) {
+                me.background.setAttributes(Ext.apply({}, {
+                    x: viewBoxX,
+                    y: viewBoxY,
+                    width: width / size,
+                    height: height / size
+                }, { hidden: false }), true);
+            }
+        } else {
+            if (me.background && width && height) {
+                me.background.setAttributes(Ext.apply({x: 0, y: 0, width: width, height: height}, { hidden: false }), true);
+            }
         }
     },
 
+
+    getBBox: function (sprite, isWithoutTransform) {
+        var realPath = this["getPath" + sprite.type](sprite);
+        if (isWithoutTransform) {
+            sprite.bbox.plain = sprite.bbox.plain || Ext.draw.Draw.pathDimensions(realPath);
+            return sprite.bbox.plain;
+        }
+        if (sprite.dirtyTransform) {
+            this.applyTransformations(sprite, true);
+        }
+        sprite.bbox.transform = sprite.bbox.transform || Ext.draw.Draw.pathDimensions(Ext.draw.Draw.mapPath(realPath, sprite.matrix));
+        return sprite.bbox.transform;
+    },
+    
     transformToViewBox: function (x, y) {
         if (this.viewBoxShift) {
             var me = this, shift = me.viewBoxShift;
-            return [x * shift.scale - shift.dx, y * shift.scale - shift.dy];
+            return [x / shift.scale - shift.dx, y / shift.scale - shift.dy];
         } else {
             return [x, y];
         }
     },
 
     // @private
-    applyTransformations: function(sprite) {
+    applyTransformations: function(sprite, onlyMatrix) {
+        if (sprite.type == 'text') {
+            // TODO: getTextBBox function always take matrix into account no matter whether `isWithoutTransform` is true. Fix that.
             sprite.bbox.transform = 0;
-            this.transform(sprite);
+            this.transform(sprite, false);
+        }
 
+
+        sprite.dirtyTransform = false;
+        
         var me = this,
-            dirty = false,
             attr = sprite.attr;
 
         if (attr.translation.x != null || attr.translation.y != null) {
             me.translate(sprite);
-            dirty = true;
         }
         if (attr.scaling.x != null || attr.scaling.y != null) {
             me.scale(sprite);
-            dirty = true;
         }
         if (attr.rotation.degrees != null) {
             me.rotate(sprite);
-            dirty = true;
         }
-        if (dirty) {
-            sprite.bbox.transform = 0;
-            this.transform(sprite);
-            sprite.transformations = [];
-        }
+        
+        sprite.bbox.transform = 0;
+        this.transform(sprite, onlyMatrix);
+        sprite.transformations = [];
     },
 
     // @private
@@ -741,7 +803,7 @@ Ext.define('Ext.draw.Surface', {
             centerX = sprite.attr.rotation.x,
             centerY = sprite.attr.rotation.y;
         if (!Ext.isNumber(centerX) || !Ext.isNumber(centerY)) {
-            bbox = this.getBBox(sprite);
+            bbox = this.getBBox(sprite, true);
             centerX = !Ext.isNumber(centerX) ? bbox.x + bbox.width / 2 : centerX;
             centerY = !Ext.isNumber(centerY) ? bbox.y + bbox.height / 2 : centerY;
         }
@@ -773,7 +835,7 @@ Ext.define('Ext.draw.Surface', {
             centerY = sprite.attr.scaling.centerY;
 
         if (!Ext.isNumber(centerX) || !Ext.isNumber(centerY)) {
-            bbox = this.getBBox(sprite);
+            bbox = this.getBBox(sprite, true);
             centerX = !Ext.isNumber(centerX) ? bbox.x + bbox.width / 2 : centerX;
             centerY = !Ext.isNumber(centerY) ? bbox.y + bbox.height / 2 : centerY;
         }
@@ -824,7 +886,7 @@ Ext.define('Ext.draw.Surface', {
     // @private
     getPathrect: function (el) {
         var a = el.attr;
-        return this.rectPath(a.x, a.y, a.width, a.height, a.r);
+        return this.rectPath(a.x || 0, a.y || 0, a.width || 0, a.height || 0, a.r || 0);
     },
 
     // @private
@@ -842,7 +904,7 @@ Ext.define('Ext.draw.Surface', {
     createGroup: function(id) {
         var group = this.groups.get(id);
         if (!group) {
-            group = Ext.create('Ext.draw.CompositeSprite', {
+            group = new Ext.draw.CompositeSprite({
                 surface: this
             });
             group.id = id || Ext.id(null, 'ext-surface-group-');
@@ -863,8 +925,9 @@ Ext.define('Ext.draw.Surface', {
      * @return {Object} The {@link Ext.draw.CompositeSprite}.
      */
     getGroup: function(id) {
+        var group;
         if (typeof id == "string") {
-            var group = this.groups.get(id);
+            group = this.groups.get(id);
             if (!group) {
                 group = this.createGroup(id);
             }
@@ -906,8 +969,8 @@ Ext.define('Ext.draw.Surface', {
      */
     setText: Ext.emptyFn,
 
-    //@private Creates an item and appends it to the surface. Called
-    //as an internal method when calling `add`.
+    // @private Creates an item and appends it to the surface. Called
+    // as an internal method when calling `add`.
     createItem: Ext.emptyFn,
 
     /**
@@ -927,7 +990,12 @@ Ext.define('Ext.draw.Surface', {
      *      drawComponent.surface.destroy();
      */
     destroy: function() {
-        delete this.domRef;
-        this.removeAll();
+        var me = this;
+        delete me.domRef;
+        if (me.background) {
+            me.background.destroy();
+        }
+        me.removeAll(true);
+        Ext.destroy(me.groups.items);
     }
 });

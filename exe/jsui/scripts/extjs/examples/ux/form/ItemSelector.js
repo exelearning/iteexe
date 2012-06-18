@@ -1,42 +1,24 @@
 /*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
-/*
  * Note that this control will most likely remain as an example, and not as a core Ext form
  * control.  However, the API will be changing in a future release and so should not yet be
  * treated as a final, stable API at this time.
  */
 
 /**
- * @class Ext.ux.form.ItemSelector
- * @extends Ext.form.field.Base
  * A control that allows selection of between two Ext.ux.form.MultiSelect controls.
- *
- *  @history
- *    2008-06-19 bpm Original code contributed by Toby Stuart (with contributions from Robert Williams)
- *
- * @constructor
- * Create a new ItemSelector
- * @param {Object} config Configuration options
- * @xtype itemselector 
  */
 Ext.define('Ext.ux.form.ItemSelector', {
     extend: 'Ext.ux.form.MultiSelect',
     alias: ['widget.itemselectorfield', 'widget.itemselector'],
     alternateClassName: ['Ext.ux.ItemSelector'],
-    requires: ['Ext.ux.layout.component.form.ItemSelector', 'Ext.button.Button'],
-    
+    requires: [
+        'Ext.button.Button',
+        'Ext.ux.form.MultiSelect'
+    ],
+
+    /**
+     * @cfg {Boolean} [hideNavIcons=false] True to hide the navigation icons
+     */
     hideNavIcons:false,
 
     /**
@@ -47,6 +29,10 @@ Ext.define('Ext.ux.form.ItemSelector', {
      */
     buttons: ['top', 'up', 'add', 'remove', 'down', 'bottom'],
 
+    /**
+     * @cfg {Object} buttonsText The tooltips for the {@link #buttons}.
+     * Labels for buttons.
+     */
     buttonsText: {
         top: "Move to Top",
         up: "Move Up",
@@ -56,84 +42,72 @@ Ext.define('Ext.ux.form.ItemSelector', {
         bottom: "Move to Bottom"
     },
 
-    /**
-     * @cfg {Array} multiselects An optional array of {@link Ext.ux.form.MultiSelect} config objects, containing
-     * additional configuration to be applied to the internal MultiSelect fields.
-     */
-    multiselects: [],
+    initComponent: function() {
+        var me = this;
 
-    componentLayout: 'itemselectorfield',
+        me.ddGroup = me.id + '-dd';
+        me.callParent();
 
-    fieldBodyCls: Ext.baseCSSPrefix + 'form-itemselector-body',
-
-
-    bindStore: function(store, initial) {
-        var me = this,
-            toField = me.toField,
-            fromField = me.fromField,
-            models;
-
-        me.callParent(arguments);
-
-        if (toField) {
-            // Clear both field stores
-            toField.store.removeAll();
-            fromField.store.removeAll();
-
-            // Clone the contents of the main store into the fromField
-            models = [];
-            me.store.each(function(model) {
-                models.push(model.copy(model.getId()));
-            });
-            fromField.store.add(models);
-        }
+        // bindStore must be called after the fromField has been created because
+        // it copies records from our configured Store into the fromField's Store
+        me.bindStore(me.store);
     },
 
-    onRender: function(ct, position) {
-        var me = this,
-            baseCSSPrefix = Ext.baseCSSPrefix,
-            ddGroup = 'ItemSelectorDD-' + Ext.id(),
-            commonConfig = {
-                displayField: me.displayField,
-                valueField: me.valueField,
-                dragGroup: ddGroup,
-                dropGroup: ddGroup,
-                flex: 1,
-                hideLabel: true,
-                disabled: me.disabled
+    createList: function(){
+        var me = this;
+
+        return Ext.create('Ext.ux.form.MultiSelect', {
+            submitValue: false,
+            flex: 1,
+            dragGroup: me.ddGroup,
+            dropGroup: me.ddGroup,
+            store: {
+                model: me.store.model,
+                data: []
             },
-            fromConfig = Ext.apply({
-                listTitle: 'Available',
-                store: Ext.create('Ext.data.Store', {model: me.store.model}), //blank store to begin
-                listeners: {
-                    boundList: {
-                        itemdblclick: me.onItemDblClick,
-                        scope: me
-                    }
+            displayField: me.displayField,
+            disabled: me.disabled,
+            listeners: {
+                boundList: {
+                    scope: me,
+                    itemdblclick: me.onItemDblClick,
+                    drop: me.syncValue
                 }
-            }, me.multiselects[0], commonConfig),
-            toConfig = Ext.apply({
-                listTitle: 'Selected',
-                store: Ext.create('Ext.data.Store', {model: me.store.model}), //blank store to begin
-                listeners: {
-                    boundList: {
-                        itemdblclick: me.onItemDblClick,
-                        scope: me
+            }
+        });
+    },
+
+    setupItems: function() {
+        var me = this;
+
+        me.fromField = me.createList();
+        me.toField = me.createList();
+
+        return {
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
+            items: [
+                me.fromField,
+                {
+                    xtype: 'container',
+                    margins: '0 4',
+                    width: 22,
+                    layout: {
+                        type: 'vbox',
+                        pack: 'center'
                     },
-                    change: me.onToFieldChange,
-                    scope: me
-                }
-            }, me.multiselects[1], commonConfig),
-            fromField = Ext.widget('multiselect', fromConfig),
-            toField = Ext.widget('multiselect', toConfig),
-            innerCt,
+                    items: me.createButtons()
+                },
+                me.toField
+            ]
+        };
+    },
+
+    createButtons: function(){
+        var me = this,
             buttons = [];
-
-        // Skip MultiSelect's onRender as we don't want its content
-        Ext.ux.form.MultiSelect.superclass.onRender.call(me, ct, position);
-
-        me.fromField = fromField;
-        me.toField = toField;
 
         if (!me.hideNavIcons) {
             Ext.Array.forEach(me.buttons, function(name) {
@@ -141,56 +115,25 @@ Ext.define('Ext.ux.form.ItemSelector', {
                     xtype: 'button',
                     tooltip: me.buttonsText[name],
                     handler: me['on' + Ext.String.capitalize(name) + 'BtnClick'],
-                    cls: baseCSSPrefix + 'form-itemselector-btn',
-                    iconCls: baseCSSPrefix + 'form-itemselector-' + name,
-                    scope: me
+                    cls: Ext.baseCSSPrefix + 'form-itemselector-btn',
+                    iconCls: Ext.baseCSSPrefix + 'form-itemselector-' + name,
+                    navBtn: true,
+                    scope: me,
+                    margin: '4 0 0 0'
                 });
-                //div separator to force vertical stacking
-                buttons.push({xtype: 'component', height: 3, width: 1, style: 'font-size:0;line-height:0'});
             });
         }
-
-        innerCt = me.innerCt = Ext.widget('container', {
-            renderTo: me.bodyEl,
-            layout: {
-                type: 'hbox',
-                align: 'middle'
-            },
-            items: [
-                me.fromField,
-                {
-                    xtype: 'container',
-                    margins: '0 4',
-                    items: buttons
-                },
-                me.toField
-            ]
-        });
-
-        // Must set upward link after first render
-        innerCt.ownerCt = me;
-
-        // Rebind the store so it gets cloned to the fromField
-        me.bindStore(me.store);
-
-        // Set the initial value
-        me.setRawValue(me.rawValue);
+        return buttons;
     },
-    
-    onToFieldChange: function() {
-        this.checkChange();
-    },
-    
+
     getSelections: function(list){
         var store = list.getStore(),
-            selections = list.getSelectionModel().getSelection(),
-            i = 0,
-            len = selections.length;
-            
+            selections = list.getSelectionModel().getSelection();
+
         return Ext.Array.sort(selections, function(a, b){
             a = store.indexOf(a);
             b = store.indexOf(b);
-            
+
             if (a < b) {
                 return -1;
             } else if (a > b) {
@@ -203,37 +146,29 @@ Ext.define('Ext.ux.form.ItemSelector', {
     onTopBtnClick : function() {
         var list = this.toField.boundList,
             store = list.getStore(),
-            selected = this.getSelections(list),
-            i = selected.length - 1,
-            selection;
-        
-        
+            selected = this.getSelections(list);
+
         store.suspendEvents();
-        for (; i > -1; --i) {
-            selection = selected[i];
-            store.remove(selected);
-            store.insert(0, selected);
-        }
+        store.remove(selected, true);
+        store.insert(0, selected);
         store.resumeEvents();
-        list.refresh();    
+        list.refresh();
+        this.syncValue(); 
+        list.getSelectionModel().select(selected);
     },
 
     onBottomBtnClick : function() {
         var list = this.toField.boundList,
             store = list.getStore(),
-            selected = this.getSelections(list),
-            i = 0,
-            len = selected.length,
-            selection;
-            
+            selected = this.getSelections(list);
+
         store.suspendEvents();
-        for (; i < len; ++i) {
-            selection = selected[i];
-            store.remove(selection);
-            store.add(selection);
-        }
+        store.remove(selected, true);
+        store.add(selected);
         store.resumeEvents();
         list.refresh();
+        this.syncValue();
+        list.getSelectionModel().select(selected);
     },
 
     onUpBtnClick : function() {
@@ -242,18 +177,22 @@ Ext.define('Ext.ux.form.ItemSelector', {
             selected = this.getSelections(list),
             i = 0,
             len = selected.length,
-            selection,
-            index;
-            
-        store.suspendEvents();
+            index = store.getCount();
+
+        // Find index of first selection
         for (; i < len; ++i) {
-            selection = selected[i];
-            index = Math.max(0, store.indexOf(selection) - 1);
-            store.remove(selection);
-            store.insert(index, selection);
+            index = Math.min(index, store.indexOf(selected[i]));
         }
-        store.resumeEvents();
-        list.refresh();
+        // If first selection is not at the top, move the whole lot up
+        if (index > 0) {
+            store.suspendEvents();
+            store.remove(selected, true);
+            store.insert(index - 1, selected);
+            store.resumeEvents();
+            list.refresh();
+            this.syncValue();
+            list.getSelectionModel().select(selected);
+        }
     },
 
     onDownBtnClick : function() {
@@ -262,138 +201,154 @@ Ext.define('Ext.ux.form.ItemSelector', {
             selected = this.getSelections(list),
             i = 0,
             len = selected.length,
-            max = store.getCount(),
-            selection,
-            index;
-            
-        store.suspendEvents();
+            index = 0;
+
+        // Find index of last selection
         for (; i < len; ++i) {
-            selection = selected[i];
-            index = Math.min(max, store.indexOf(selection) + 1);
-            store.remove(selection);
-            store.insert(index, selection);
+            index = Math.max(index, store.indexOf(selected[i]));
         }
-        store.resumeEvents();
-        list.refresh();
+        // If last selection is not at the bottom, move the whole lot down
+        if (index < store.getCount() - 1) {
+            store.suspendEvents();
+            store.remove(selected, true);
+            store.insert(index + 2 - len, selected);
+            store.resumeEvents();
+            list.refresh();
+            this.syncValue();
+            list.getSelectionModel().select(selected);
+        }
     },
 
     onAddBtnClick : function() {
         var me = this,
             fromList = me.fromField.boundList,
             selected = this.getSelections(fromList);
-            
+
         fromList.getStore().remove(selected);
         this.toField.boundList.getStore().add(selected);
+        this.syncValue();
     },
 
     onRemoveBtnClick : function() {
         var me = this,
             toList = me.toField.boundList,
             selected = this.getSelections(toList);
-            
+
         toList.getStore().remove(selected);
         this.fromField.boundList.getStore().add(selected);
+        this.syncValue();
     },
 
-    onItemDblClick : function(view) {
+    syncValue: function() {
+        this.setValue(this.toField.store.getRange()); 
+    },
+
+    onItemDblClick: function(view, rec){
+        var me = this,
+            from = me.fromField.store,
+            to = me.toField.store,
+            current,
+            destination;
+
+        if (view === me.fromField.boundList) {
+            current = from;
+            destination = to;
+        } else {
+            current = to;
+            destination = from;
+        }
+        current.remove(rec);
+        destination.add(rec);
+        me.syncValue();
+    },
+
+    setValue: function(value){
+        var me = this,
+            fromStore = me.fromField.store,
+            toStore = me.toField.store,
+            selected;
+
+        // Wait for from store to be loaded
+        if (!me.fromField.store.getCount()) {
+            me.fromField.store.on({
+                load: Ext.Function.bind(me.setValue, me, [value]),
+                single: true
+            });
+            return;
+        }
+
+        value = me.setupValue(value);
+        me.mixins.field.setValue.call(me, value);
+
+        selected = me.getRecordsForValue(value);
+
+        Ext.Array.forEach(toStore.getRange(), function(rec){
+            if (!Ext.Array.contains(selected, rec)) {
+                // not in the selected group, remove it from the toStore
+                toStore.remove(rec);
+                fromStore.add(rec);
+            }
+        });
+        toStore.removeAll();
+
+        Ext.Array.forEach(selected, function(rec){
+            // In the from store, move it over
+            if (fromStore.indexOf(rec) > -1) {
+                fromStore.remove(rec);     
+            }
+            toStore.add(rec);
+        });
+    },
+
+    onBindStore: function(store, initial) {
         var me = this;
-        if (view == me.toField.boundList){
-            me.onRemoveBtnClick();
-        }
-        else if (view == me.fromField.boundList) {
-            me.onAddBtnClick();
-        }
-    },
 
-    setRawValue: function(value) {
-        var me = this,
-            Array = Ext.Array,
-            toStore, fromStore, models;
+        if (me.fromField) {
+            me.fromField.store.removeAll()
+            me.toField.store.removeAll();
 
-        value = Array.from(value);
-        me.rawValue = value;
-
-        if (me.toField) {
-            toStore = me.toField.boundList.getStore();
-            fromStore = me.fromField.boundList.getStore();
-
-            // Move any selected values back to the fromField
-            fromStore.add(toStore.getRange());
-            toStore.removeAll();
-
-            // Move the new values over to the toField
-            models = [];
-            Ext.Array.forEach(value, function(val) {
-                var undef,
-                    model = fromStore.findRecord(me.valueField, val, undef, undef, true, true);
-                if (model) {
-                    models.push(model);
-                }
-            });
-            fromStore.remove(models);
-            toStore.add(models);
-        }
-
-        return value;
-    },
-
-    getRawValue: function() {
-        var me = this,
-            toField = me.toField,
-            rawValue = me.rawValue;
-
-        if (toField) {
-            rawValue = Ext.Array.map(toField.boundList.getStore().getRange(), function(model) {
-                return model.get(me.valueField);
-            });
-        }
-
-        me.rawValue = rawValue;
-        return rawValue;
-    },
-
-    /**
-     * @private Cascade readOnly/disabled state to the sub-fields and buttons
-     */
-    updateReadOnly: function() {
-        var me = this,
-            readOnly = me.readOnly || me.disabled;
-
-        if (me.rendered) {
-            me.toField.setReadOnly(readOnly);
-            me.fromField.setReadOnly(readOnly);
-            Ext.Array.forEach(me.innerCt.query('button'), function(button) {
-                button.setDisabled(readOnly);
-            });
+            // Add everything to the from field as soon as the Store is loaded
+            if (store.getCount()) {
+                me.populateFromStore(store);
+            } else {
+                me.store.on('load', me.populateFromStore, me);
+            }
         }
     },
-    
-    onDisable: function(){
-        this.callParent();
-        var fromField = this.fromField;
+
+    populateFromStore: function(store) {
+        this.fromField.store.add(store.getRange());
         
-        // if we have one, we have both, they get created at the same time    
-        if (fromField) {
-            fromField.disable();
-            this.toField.disable();
-        }
+        // setValue wait for the from Store to be loaded
+        this.fromField.store.fireEvent('load', this.fromField.store);
     },
-    
+
     onEnable: function(){
-        this.callParent();
-        var fromField = this.fromField;
-        
-        // if we have one, we have both, they get created at the same time    
-        if (fromField) {
-            fromField.enable();
-            this.toField.enable();
-        }
+        var me = this;
+
+        me.callParent();
+        me.fromField.enable();
+        me.toField.enable();
+
+        Ext.Array.forEach(me.query('[navBtn]'), function(btn){
+            btn.enable();
+        });
     },
 
-    onDestroy: function() {
-        Ext.destroyMembers(this, 'innerCt');
+    onDisable: function(){
+        var me = this;
+
+        me.callParent();
+        me.fromField.disable();
+        me.toField.disable();
+
+        Ext.Array.forEach(me.query('[navBtn]'), function(btn){
+            btn.disable();
+        });
+    },
+
+    onDestroy: function(){
+        this.bindStore(null);
         this.callParent();
     }
-
 });
-

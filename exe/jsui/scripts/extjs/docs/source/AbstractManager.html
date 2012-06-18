@@ -35,7 +35,7 @@ Ext.define('Ext.AbstractManager', {
 </span>         * @property {Ext.util.HashMap} all
          * Contains all of the items currently managed
          */
-        this.all = Ext.create('Ext.util.HashMap');
+        this.all = new Ext.util.HashMap();
 
         this.types = {};
     },

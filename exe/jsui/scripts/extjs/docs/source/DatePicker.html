@@ -74,22 +74,12 @@
 
 <span id='Ext-menu-DatePicker-cfg-maxHeight'>    /**
 </span>     * @cfg {Number} maxHeight
-     * @hide
+     * @private
      */
 
 <span id='Ext-menu-DatePicker-property-picker'>    /**
 </span>     * @property {Ext.picker.Date} picker
      * The {@link Ext.picker.Date} instance for this DateMenu
-     */
-
-<span id='Ext-menu-DatePicker-event-click'>    /**
-</span>     * @event click
-     * @hide
-     */
-
-<span id='Ext-menu-DatePicker-event-itemclick'>    /**
-</span>     * @event itemclick
-     * @hide
      */
 
     initComponent : function(){
@@ -112,7 +102,7 @@
         me.picker = me.down('datepicker');
 <span id='Ext-menu-DatePicker-event-select'>        /**
 </span>         * @event select
-         * @alias Ext.picker.Date#select
+         * @inheritdoc Ext.picker.Date#select
          */
         me.relayEvents(me.picker, ['select']);
 

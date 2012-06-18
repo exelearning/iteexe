@@ -46,6 +46,7 @@ Every Ext JS 4 application starts with an instance of [Application](#/api/Ext.ap
 Let's create a simple Account Manager app that will help us manage User accounts. First we need to pick a global namespace for this application. All Ext JS 4 applications should only use a single global variable, with all of the application's classes nested inside it. Usually we want a short global variable so in this case we're going to use "AM":
 
     Ext.application({
+        requires: 'Ext.container.Viewport',
         name: 'AM',
 
         appFolder: 'app',
@@ -484,4 +485,3 @@ Please refer to the [Getting Started guide](#/guide/getting_started) for detaile
 
 We've created a very simple application that manages User data and sends any updates back to the server. We started out simple and gradually refactored our code to make it cleaner and more organized. At this point it's easy to add more functionality to our application without creating spaghetti code. The full source code for this application can be found in the Ext JS 4 SDK download, inside the examples/app/simple folder.
 
-In the next guide, we'll look at advanced Controller usage and patterns that can make your application code smaller and easier to maintain.

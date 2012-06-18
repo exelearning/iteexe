@@ -1,17 +1,3 @@
-/*
-
-This file is part of Ext JS 4
-
-Copyright (c) 2011 Sencha Inc
-
-Contact:  http://www.sencha.com/contact
-
-GNU General Public License Usage
-This file may be used under the terms of the GNU General Public License version 3.0 as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this file.  Please review the following information to ensure the GNU General Public License version 3.0 requirements will be met: http://www.gnu.org/copyleft/gpl.html.
-
-If you are unsure which license is appropriate for your use, please contact the sales department at http://www.sencha.com/contact.
-
-*/
 /**
  * @author Jacky Nguyen <jacky@sencha.com>
  * @docauthor Jacky Nguyen <jacky@sencha.com>
@@ -43,7 +29,7 @@ If you are unsure which license is appropriate for your use, please contact the 
 (function() {
 
 // Current core version
-var version = '4.0.7', Version;
+var version = '4.1.0', Version;
     Ext.Version = Version = Ext.extend(Object, {
 
         /**
@@ -147,12 +133,30 @@ var version = '4.0.7', Version;
         },
 
         /**
+         * Returns whether this version if greater than or equal to the supplied argument
+         * @param {String/Number} target The version to compare with
+         * @return {Boolean} True if this version if greater than or equal to the target, false otherwise
+         */
+        isGreaterThanOrEqual: function(target) {
+            return Version.compare(this.version, target) >= 0;
+        },
+
+        /**
          * Returns whether this version if smaller than the supplied argument
          * @param {String/Number} target The version to compare with
          * @return {Boolean} True if this version if smaller than the target, false otherwise
          */
         isLessThan: function(target) {
             return Version.compare(this.version, target) === -1;
+        },
+
+        /**
+         * Returns whether this version if less than or equal to the supplied argument
+         * @param {String/Number} target The version to compare with
+         * @return {Boolean} True if this version if less than or equal to the target, false otherwise
+         */
+        isLessThanOrEqual: function(target) {
+            return Version.compare(this.version, target) <= 0;
         },
 
         /**
@@ -195,6 +199,42 @@ var version = '4.0.7', Version;
          */
         getShortVersion: function() {
             return this.shortVersion;
+        },
+
+        /**
+         * Convenient alias to {@link Ext.Version#isGreaterThan isGreaterThan}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        gt: function() {
+            return this.isGreaterThan.apply(this, arguments);
+        },
+
+        /**
+         * Convenient alias to {@link Ext.Version#isLessThan isLessThan}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        lt: function() {
+            return this.isLessThan.apply(this, arguments);
+        },
+
+        /**
+         * Convenient alias to {@link Ext.Version#isGreaterThanOrEqual isGreaterThanOrEqual}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        gtEq: function() {
+            return this.isGreaterThanOrEqual.apply(this, arguments);
+        },
+
+        /**
+         * Convenient alias to {@link Ext.Version#isLessThanOrEqual isLessThanOrEqual}
+         * @param {String/Number} target
+         * @return {Boolean}
+         */
+        ltEq: function() {
+            return this.isLessThanOrEqual.apply(this, arguments);
         }
     });
 
@@ -321,5 +361,4 @@ var version = '4.0.7', Version;
 
     Ext.setVersion('core', version);
 
-})();
-
+}());
