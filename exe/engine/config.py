@@ -41,7 +41,7 @@ class Config:
 
     # Class attributes
     optionNames = {
-        'system': ('webDir', 'xulDir', 'jsDir', 'port', 'dataDir', 
+        'system': ('webDir', 'jsDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browser'),
         'user': ('locale',),
     }
@@ -57,8 +57,6 @@ class Config:
         self.exePath     = Path(sys.argv[0]).abspath()
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
-        # xulDir is the parent directory for styles,scripts and templates
-        self.xulDir      = self.exePath.dirname()
         self.jsDir       = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
@@ -102,11 +100,6 @@ class Config:
         if not (self.webDir/'scripts').isdir() \
            and (self.webDir/'webui').isdir():
             self.webDir /= 'webui'
-        # Under devel trees, xului is the default xuldir
-        self.xulDir = Path(self.xulDir)
-        if not (self.xulDir/'scripts').isdir() \
-           and (self.xulDir/'xului').isdir():
-            self.xulDir /= 'xului'
         self.jsDir = Path(self.jsDir)
         if not (self.jsDir/'scripts').isdir() \
            and (self.jsDir/'jsui').isdir():
@@ -222,7 +215,6 @@ class Config:
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir         = Path(system.webDir)
-            self.xulDir         = Path(system.xulDir)
             self.jsDir          = Path(system.jsDir)
             self.localeDir      = Path(system.localeDir)
             self.port           = int(system.port)
@@ -335,7 +327,6 @@ class Config:
         log.info("exePath     = %s" % self.exePath)
         log.info("browser     = %s" % self.browser)
         log.info("webDir      = %s" % self.webDir)
-        log.info("xulDir      = %s" % self.xulDir)
         log.info("jsDir      = %s" % self.jsDir)
         log.info("localeDir   = %s" % self.localeDir)
         log.info("port        = %d" % self.port)

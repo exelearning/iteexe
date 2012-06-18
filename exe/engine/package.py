@@ -496,7 +496,7 @@ class Package(Persistable):
             zinfo2.external_attr = 0100644<<16L
             zippedFile.writestr(zinfo2, encodeObjectToXML(self))
 
-            zippedFile.write(G.application.config.xulDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
+            zippedFile.write(G.application.config.webDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:
             zippedFile.close()
 

@@ -261,11 +261,6 @@ class WebServer:
                               static.File(self.tempWebDir+"/temp_print_dirs"))
         self.root.putChild("previews",    
                               static.File(self.tempWebDir+"/previews"))
-
-        # xul resources
-        xulDir = self.config.xulDir
-        self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
-        self.root.putChild("xultemplates",  static.File(xulDir+"/templates"))
         self.root.putChild("templates",   static.File(webDir+"/templates"))
 
         # new ExtJS 4.0 Interface

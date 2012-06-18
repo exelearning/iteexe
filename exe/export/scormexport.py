@@ -95,7 +95,7 @@ class Manifest(object):
             out.write(self.createXML().encode('utf8'))
         out.close()
         if self.scormType == "scorm1.2":
-            templateFilename = self.config.xulDir/'templates'/'imslrm.xml'
+            templateFilename = self.config.webDir/'templates'/'imslrm.xml'
             template = open(templateFilename, 'rb').read()
             xml = self.createMetaData(template)
             out = open(self.outputDir/'imslrm.xml', 'wb')
@@ -154,7 +154,7 @@ class Manifest(object):
  xmlns="http://www.imsglobal.org/xsd/imscc/imscp_v1p1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd">\n''' % manifestId
-            templateFilename = self.config.xulDir/'templates'/'cc.xml'
+            templateFilename = self.config.webDir/'templates'/'cc.xml'
             template = open(templateFilename, 'rb').read()
             xmlStr += self.createMetaData(template)
 

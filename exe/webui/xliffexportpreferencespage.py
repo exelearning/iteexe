@@ -26,7 +26,6 @@ from twisted.web.resource      import Resource
 from exe.webui                 import common
 from exe.webui.renderable      import RenderableResource
 from exe.engine.beautifulsoup import BeautifulSoup
-from exe.engine.path import Path
 from urllib import quote
 
 log = logging.getLogger(__name__)
@@ -42,7 +41,7 @@ class XliffExportPreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
 
         #Extract source and target langs from dublincore.xul
-        xul = Path(self.config.xulDir).joinpath('templates', 'dublincore.xul')
+        xul = self.config.webDir/'templates'/'dublincore.xul'
         bs = BeautifulSoup(xul.text())
         self.langs = bs.find(id="dc_language")
         self.updateLocaleNames()

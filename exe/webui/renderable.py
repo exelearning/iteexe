@@ -352,4 +352,4 @@ class RenderableLivePage(_RenderablePage, LivePage):
         return rend.Page.renderHTTP(self, ctx)
     
     def render_liveglue(self, ctx, data):
-        return tags.script(src='/xulscripts/nevow_glue.js')
+        return tags.script(src='/jsui/nevow_glue.js')
