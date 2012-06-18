@@ -333,6 +333,7 @@ class RenderableLivePage(_RenderablePage, LivePage):
         """
         LivePage.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+        self.clientHandleFactory = nevow.livepage.clientHandleFactory
 
     def renderHTTP(self, ctx):
         "Disable cache of live pages"

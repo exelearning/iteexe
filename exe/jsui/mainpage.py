@@ -715,7 +715,10 @@ class MainPage(RenderableLivePage):
         (parent_temp_print_dir, dir_warnings) = \
                 self.ClearParentTempPrintDirs(client, log_dir_warnings)
 
-        reactor.stop()
+        client.close()
+
+        if len(self.clientHandleFactory.clientHandles) <= 1:
+            reactor.stop()
 
     def handleBrowseURL(self, client, url):
         """visit the specified URL using the system browser
