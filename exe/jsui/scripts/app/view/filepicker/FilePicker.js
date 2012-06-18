@@ -40,16 +40,14 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	file: {},
 	
     initComponent: function() {
-        var me = this;
-		
-        var ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] });
-
-		buttons = [
-    		{ xtype: 'component', flex: 1 },
-			{ xtype: 'button', text: 'Cancel', itemId: 'filepicker_cancel' },
-			{ xtype: 'button', text: 'Open', itemId: 'filepicker_open' }
-    	];
-	    filter = [
+        var me = this,
+            ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] }),
+    		buttons = [
+	    		{ xtype: 'component', flex: 1 },
+				{ xtype: 'button', text: 'Cancel', itemId: 'filepicker_cancel' },
+				{ xtype: 'button', text: 'Open', itemId: 'filepicker_open' }
+	    	],
+            filter = [
 	    		{ xtype: 'component', flex: 1 },
 	    		{
 	    			xtype: 'combo',
@@ -60,8 +58,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	            	valueField: 'regex',
 	            	forceSelection: true,
                     allowBlank: false
-	    		}
-    	];
+	           }
+            ];
 
         switch (me.type) {
         	case eXe.view.filepicker.FilePicker.modeSave:
@@ -79,11 +77,20 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 			filetypes: ft,
 			dockedItems: [
 				{
-	        		xtype: 'textfield',
+	        		xtype: 'combo',
 	        		name: 'name',
+                    hideTrigger:true,
+                    store: Ext.create('eXe.store.filepicker.File'),
+                    displayField: "name",
+                    valueField: "realname",
+                    typeAhead: true,
+                    typeAheadDelay: 100,
+                    minChars: 1,
+                    queryMode: 'remote',
+                    queryDelay: 100,
 	        		fieldLabel: _('Place'),
 	        		dock: 'top',
-	        		id: 'file_place_field',
+	        		itemId: 'file_place_field',
                     padding: '5px 0px 5px 0px'
 				},{
 	            	xtype: 'container',

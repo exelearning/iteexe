@@ -40,6 +40,14 @@ Ext.define('eXe.store.filepicker.DirectoryTree', {
 		}
     },
    	root: {
-        text: ' &#8260; '
+        text: '/'
+    },
+    listeners: {
+        beforeload: {
+            fn: function(store, operation) {
+                if (operation.params.node == "root")
+                    operation.params.node = "/";
+            }
+        }
     }
 });

@@ -45,21 +45,22 @@ Ext.define('eXe.controller.filepicker.Directory', {
 		});
 	},
 	loadDirectory: function(selection) {
-		this.getPlaceField().setValue("");
-		
-		if(  selection && selection.getPath ) {
-			this.getDirTree().expandPath( selection.getPath() ); 
-		} else {
-			if( selection == 'root') {
-				selection = '';
-			}
-			this.getDirTree().selectPath( '/ &#8260; ' + selection, 'text' ) ;
-		}
-		
-	    
+        var dirtree = this.getDirTree(),
+            sep = '_RRR_', path;
+
+        this.getPlaceField().setValue("");
+        path = '_RRR_/' + selection.replace(/\//g, sep);
+        if (selection == "/")
+            dirtree.getSelectionModel().select(dirtree.getRootNode());
+        else {
+            dirtree.selectPath(path, "text", sep);
+        }
+		dirtree.expandPath(path, "text", sep);
 	},
 	
 	onDirSelect: function( selModel, selection ) {
-		this.application.fireEvent('dirchange', selection[0]);
+        var dir = selection[0].data.id == "root"? "/": selection[0].data.id;
+
+		this.application.fireEvent('dirchange', dir);
     }
 });

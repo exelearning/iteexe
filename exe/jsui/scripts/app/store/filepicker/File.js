@@ -48,7 +48,6 @@ var sorterFNS = function(o1, o2){
 Ext.define('eXe.store.filepicker.File', {
     extend: 'Ext.data.Store',
     model: 'eXe.model.filepicker.File',
-	pageSize: 100,
     remoteSort: false,
     currentDir: "",
     proxy: {
@@ -72,15 +71,26 @@ Ext.define('eXe.store.filepicker.File', {
     	}
     ],
     listeners: {
+        load: {
+            fn: function(store, records, successful) {
+		        if (successful) {
+                    var combo = eXe.app.getController('filepicker.File').getFiletypeCombo();
+					store.filterBy( function(record, id) {
+					    if (record.get("type") == "directory" || !combo)
+					        return true;
+					    return record.get("name").match(combo.value);
+					});
+		        }
+		    }
+        },
     	beforeload: {
     		fn: function( store, operation, opts ) {
     			if( operation.params && operation.params.dir ) {
     			 	this.currentDir = operation.params.dir
-    			} else {
-    				operation.params = {
-    					dir: this.currentDir
-    				}
-    			}
+        		}
+                else {
+    				operation.params["dir"] = this.currentDir
+        		}
     		},
     		scope: this
     	}

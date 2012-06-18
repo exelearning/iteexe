@@ -21,6 +21,7 @@ Ext.define('eXe.model.filepicker.File', {
     extend: 'Ext.data.Model',
     fields: [
         {name: "name"},
+        {name: "realname"},
         {name: "size"},
         {name: "type"},
         {name: "modified", type: "date", dateFormat: "U"},
