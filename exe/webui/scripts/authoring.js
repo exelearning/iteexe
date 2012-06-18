@@ -57,35 +57,26 @@ function runFuncArray(handlers) {
 // Asks the user for an image, returns the path or an empty string
 function askUserForImage(multiple, fn, filter) {
     var fp, mode;
-    if (multiple) {
-        console.log("Not implemented");
-        return "";
-    }
+    if (multiple)
+        mode = parent.eXe.view.filepicker.FilePicker.modeOpenMultiple;
     else
         mode = parent.eXe.view.filepicker.FilePicker.modeOpen;
     fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
         type: mode,
-        title: parent._("Select an image"),
+        title: multiple? parent._("Select one or more images") : parent._("Select an image"),
         modal: true,
         scope: this,
         callback: function(fp) {
             if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
                 if (multiple) {
-//		            var result = new String("");
-//		            var lastFile = null;
-//		            var file     = null;
-//		            while (fp.files.hasMoreElements()) {
-//		                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
-//		                if (file == lastFile) {
-//		                    break;
-//		                }
-//		                lastFile = file;
-//		                if (result != "") {
-//		                    result += "&";
-//		                }
-//		                result += escape(file.path);
-//		            }
-//		            return result;
+		            var result = new String("");
+                    for (f in fp.files) {
+		                if (result != "") {
+		                    result += "&";
+		                }
+		                result += escape(fp.files[f].path);
+		            }
+		            fn(result);
 		        } else {
                     fn(fp.file.path);
                 }

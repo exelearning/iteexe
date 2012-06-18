@@ -32,13 +32,16 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 		returnReplace: 2,
 		modeOpen: 0,
 		modeSave: 1,
-		modeGetFolder: 2
+		modeGetFolder: 2,
+        modeOpenMultiple: 3
 	},
 	
 	status: null,
 
 	file: {},
 	
+    files: [],
+
     initComponent: function() {
         var me = this,
             ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] }),
@@ -127,6 +130,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	       			},
 					items: [{
 						xtype: "filelist",
+                        multiSelect: me.type == eXe.view.filepicker.FilePicker.modeOpenMultiple? true : false,
 						region: "center"
 					}]
 				}

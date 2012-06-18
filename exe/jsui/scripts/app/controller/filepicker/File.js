@@ -164,6 +164,20 @@ Ext.define('eXe.controller.filepicker.File', {
                 }
             }
         }
+        else if (fp.type == eXe.view.filepicker.FilePicker.modeOpenMultiple) {
+                var filelist = this.getFilesList();
+                var selected = filelist.getSelectionModel().getSelection(), record;
+                if (selected.length) {
+                    fp.files = []
+                    for (record in selected) {
+                        if (selected[record].get('type') != "directory") {
+		                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
+		                    fp.files.push({ 'path': selected[record].get('realname') });
+		                }
+                    }
+                    fp.destroy();
+                }
+        }
         else {
 			if (place.rawValue) {
                 record = store.findRecord("name", place.rawValue);
