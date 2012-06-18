@@ -27,22 +27,50 @@ from nevow import inevow, tags
 
 log = logging.getLogger(__name__)
 
+def allClients(client1, client2):
+    return True
+
+def otherClients(client1, client2):
+    return client1.handleId != client2.handleId
+
+def allSessionClients(client1, client2):
+    return client1.handleId[:32] == client2.handleId[:32]
+
+def otherSessionClients(client1, client2):
+    return otherClients(client1, client2) and allSessionClients(client1, client2)
+
+def allSessionPackageClients(client1, client2):
+    return client1.packageName == client2.packageName and allSessionClients(client1, client2)
+
+def otherSessionPackageClients(client1, client2):
+    return otherClients(client1, client2) and allSessionPackageClients(client1, client2)
+
 
 class eXeClientHandle(ClientHandle):
     __implements__ = IClientHandle
 
-    def __init__(self, handleId, refreshInterval, targetTimeoutCount):
-        ClientHandle.__init__(self, handleId, refreshInterval, targetTimeoutCount)
+    def sendScript(self, script, filter_func=None):
+        if filter_func:
+            for client in nevow.livepage.clientHandleFactory.clientHandles.values():
+                if filter_func(client, self):
+                    ClientHandle.sendScript(client, script)
+        else:
+            ClientHandle.sendScript(self, script)
 
-    def alert(self, what, onDone=None):
+    def alert(self, what, onDone=None, filter_func=False):
         """Show the user an alert 'what'
         """
         if not isinstance(what, _js):
             what = "'%s'" % (self.flt(what), )
         if onDone:
-            self.sendScript("Ext.Msg.alert('',%s, function() { %s });" % (what, onDone))
+            script = "Ext.Msg.alert('',%s, function() { %s });" % (what, onDone)
         else:
-            self.sendScript("Ext.Msg.alert('',%s);" % (what, ))
+            script = "Ext.Msg.alert('',%s);" % (what, )
+        if filter_func and onDone:
+            for client in nevow.livepage.clientHandleFactory.clientHandles.values():
+                if filter_func(client, self):
+                    client.sendScript(onDone)
+        self.sendScript(script)
 
 
 class eXeClientHandleFactory(DefaultClientHandleFactory):
@@ -51,6 +79,7 @@ class eXeClientHandleFactory(DefaultClientHandleFactory):
     def newClientHandle(self, ctx, refreshInterval, targetTimeoutCount):
         handle = DefaultClientHandleFactory.newClientHandle(self, ctx, refreshInterval, targetTimeoutCount)
         handle.currentNodeId = ctx.tag.package.currentNode.id
+        handle.packageName = ctx.tag.package.name
         log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
         return handle
 

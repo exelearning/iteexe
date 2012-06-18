@@ -42,17 +42,20 @@ Ext.define('eXe.controller.MainTab', {
         this.control({
             '#package_properties': {
                 render: this.onRender,
+                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete,
                 scope: this
             },
             '#metadata_properties': {
                 render: this.onRender,
+                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
             '#export_properties': {
                 render: this.onRender,
+                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
@@ -217,11 +220,11 @@ Ext.define('eXe.controller.MainTab', {
     },
 
     updateAuthoring: function(action, object, isChanged, currentNode, destNode) {
-        if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext")) {
+        if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext" || action == "ChangeStyle")) {
 		    var outlineTreePanel = this.getOutlineTreePanel(),
 	            selmodel = outlineTreePanel.getSelectionModel();
                 selectednode = selmodel.getSelection()[0].get('id');
-            if (currentNode == selectednode || (action == "move" && selectednode == destNode)) {
+            if (currentNode == selectednode || (action == "move" && selectednode == destNode) || action == "ChangeStyle") {
 		        var authoring = Ext.get('authoringIFrame').dom;
 		        authoring.src = location.pathname + '/authoring?clientHandleId=' + nevow_clientHandleId + "&currentNode=" + selectednode;
             }

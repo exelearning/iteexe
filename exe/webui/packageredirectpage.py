@@ -77,11 +77,7 @@ class PackageRedirectPage(RenderableResource):
         """
         session_mainpages = self.mainpages.get(session.uid)
         if session_mainpages:
-            mainpage = session_mainpages.get(package.name)
-            if mainpage:
-                raise Exception('There is already a mainpage and session')
-            else:
-                session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
+            session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
         else:
             self.mainpages[session.uid] = {package.name: MainPage(None, package, session, self.webServer)}
 

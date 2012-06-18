@@ -29,7 +29,8 @@ import traceback
 import shutil
 from twisted.internet            import threads, reactor
 from twisted.web                 import static
-from exe.webui.livepage          import RenderableLivePage
+from exe.webui.livepage          import RenderableLivePage,\
+    otherSessionPackageClients, allSessionClients, allSessionPackageClients
 from nevow                       import loaders, inevow
 from nevow.livepage              import handler, IClientHandle
 from exe.jsui.idevicepane        import IdevicePane
@@ -238,20 +239,19 @@ class MainPage(RenderableLivePage):
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.alert(_(u'Package saved to: %s' % filename), 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'))
+            client.alert(_(u'Package saved to: %s' % filename), 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
+                         filter_func=otherSessionPackageClients)
         else:
-            client.alert(_(u'Package saved to: %s' % filename))
+            client.alert(_(u'Package saved to: %s' % filename), filter_func=otherSessionPackageClients)
 
 
-    def handleLoadPackage(self, client, filename):
+    def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
         package = self._loadPackage(client, filename, newLoad=True)
         self.session.packageStore.addPackage(package)
-        authoringpage = self.authoringPages.pop(client.handleId)
-        del authoringpage
-        self.root.bindNewPackage(package, self.session)
+        self.webServer.root.bindNewPackage(package, self.session)
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          package.name).encode('utf8'))
+                          package.name).encode('utf8'), filter_func=filter_func)
  
     def handleLoadTutorial(self, client):
         """
@@ -268,8 +268,7 @@ class MainPage(RenderableLivePage):
         G.application.config.locale = locale
         G.application.config.locales[locale].install(unicode=True)
         G.application.config.configParser.set('user', 'locale', locale)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          self.package.name).encode('utf8'))
+        client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
 
     def handleSetInternalAnchors(self, client, internalAnchors):
         """
@@ -277,8 +276,7 @@ class MainPage(RenderableLivePage):
         """
         G.application.config.internalAnchors = internalAnchors
         G.application.config.configParser.set('user', 'internalAnchors', internalAnchors)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          self.package.name).encode('utf8'))
+        client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
  
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """
@@ -610,7 +608,7 @@ class MainPage(RenderableLivePage):
     
     def getResources(self,dirname,html,client):
         Resources.cancel = False
-        self.importresources = Resources(dirname,self.authoringPage.package.currentNode,client)
+        self.importresources = Resources(dirname,self.package.findNode(client.currentNodeId),client)
 #        import cProfile
 #        import lsprofcalltree
 #        p = cProfile.Profile()
@@ -632,13 +630,13 @@ class MainPage(RenderableLivePage):
                 client.call('eXe.app.getController("Toolbar").initImportProgressWindow',_(u'Importing HTML...'))
     
     def handleImportErrback(self, failure, client):
-        client.call('eXe.app.getController("Toolbar").errorImportProgressWindow',_(u'Error importing HTML:\n'), 
-                    unicode(failure.getBriefTraceback()), (u'/%s' % self.package.name).encode('utf8'))
+        client.alert(_(u'Error importing HTML:\n') + unicode(failure.getBriefTraceback()), \
+                     (u'eXe.app.gotoUrl("/%s")' % self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
 
     def handleImportCallback(self,resources,client):
         client.call('eXe.app.getController("Toolbar").closeImportProgressWindow')
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                      self.package.name).encode('utf8'))
+                      self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     def handleCancelImport(self, client):
         log.info('Cancel import')
@@ -767,10 +765,10 @@ class MainPage(RenderableLivePage):
             importer = XliffImport(self.package, unquote(filename))
             importer.parseAndImport(from_source)
             client.alert(_(u'Correct XLIFF import'), (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'))
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
         except Exception,e:
             client.alert(_(u'Error importing XLIFF: %s') % e, (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'))
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
 
 
     def handleInsertPackage(self, client, filename):
@@ -786,7 +784,7 @@ class MainPage(RenderableLivePage):
         newNode.RenamedNodePath(isMerge=True)
 
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                          self.package.name).encode('utf8'))
+                          self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
 
 
     def handleExtractPackage(self, client, filename, existOk):

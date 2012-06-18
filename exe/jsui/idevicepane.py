@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.webui.livepage import allSessionClients
 """
 IdevicePane is responsible for creating the XHTML for iDevice links
 """
@@ -74,7 +75,7 @@ class IdevicePane(Renderable, Resource):
         """
         log.debug("addIdevice id="+idevice.id+", title="+idevice.title)
         self.prototypes[idevice.id] = idevice
-        self.client.call('eXe.app.getController("Idevice").reload')
+        self.client.sendScript('eXe.app.getController("Idevice").reload()', filter_func=allSessionClients)
 
         
     def delIdevice(self, idevice):
@@ -83,7 +84,7 @@ class IdevicePane(Renderable, Resource):
         """
         log.debug("delIdevice id="+idevice.id+", title="+idevice.title)
         self.prototypes.pop(idevice.id)
-        self.client.call('eXe.app.getController("Idevice").reload')
+        self.client.sendScript('eXe.app.getController("Idevice").reload()', filter_func=allSessionClients)
 
         
     def render(self, request=None):

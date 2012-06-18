@@ -138,7 +138,7 @@ Ext.define('eXe.controller.Outline', {
     onNodeContextMenu: function(view, record, item, index, e, eOpts) {
         e.preventDefault();
         this.onNodeClick(view, record, item, index, e, eOpts);
-        contextMenu = new Ext.menu.Menu({
+        var contextMenu = new Ext.menu.Menu({
 		  items: [
             {
 			    text: _('Insert Package'),
@@ -149,8 +149,8 @@ Ext.define('eXe.controller.Outline', {
             }
           ]
 		});
-        x = e.browserEvent.clientX;
-        y = e.browserEvent.clientY;
+        var x = e.browserEvent.clientX;
+        var y = e.browserEvent.clientY;
         contextMenu.showAt([x, y]);
     },
 

@@ -103,6 +103,7 @@ class AuthoringPage(RenderableResource):
                 request.args[key] = [unicode(value[0], 'utf8')]
             topNode = self._process(request)
 
+        #Update other authoring pages that observes the current package
         if "action" in request.args:
             for client in self.parent.clientHandleFactory.clientHandles.values():
                 if request.args['clientHandleId'][0] != client.handleId \

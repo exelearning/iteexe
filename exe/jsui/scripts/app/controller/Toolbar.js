@@ -424,18 +424,6 @@ Ext.define('eXe.controller.Toolbar', {
         });        
     },
     
-    errorImportProgressWindow: function(title, msg, url) {
-        Ext.Msg.show( {
-            title: title,
-            msg: msg,
-            modal: true,
-            buttons: Ext.Msg.OK,
-            fn: function(button) {
-                eXe.app.gotoUrl(url);
-            }
-        });        
-    },
-
     closeImportProgressWindow: function() {
         this.importProgress.destroy();
     },

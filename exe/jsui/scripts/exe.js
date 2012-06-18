@@ -75,6 +75,8 @@ Ext.application({
 
     gotoUrl: function(location) {
         eXe.app.quitWarningEnabled = false;
+        if (location == undefined)
+            location = window.top.location.pathname;
         nevow_closeLive('window.top.location = "' + location + '";');
     },
     
