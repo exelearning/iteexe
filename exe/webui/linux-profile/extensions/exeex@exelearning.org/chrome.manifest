@@ -1,7 +1,0 @@
-content exeex chrome/content/
-overlay chrome://browser/content/browser.xul chrome://exeex/content/exeex.xul appversion<4.0
-overlay chrome://browser/content/browser.xul chrome://exeex/content/exeex40.xul appversion>=4.0
-
-skin exeex classic/1.0 chrome/skin/
-
-
