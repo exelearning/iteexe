@@ -17,40 +17,23 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.ui.eXeViewport', {
-    extend: 'Ext.container.Viewport',
-    requires: [
-        'eXe.view.eXeToolbar',
-        'eXe.view.MainTabPanel',
-        'eXe.view.LeftPanel'
-    ],
-
-    layout: {
-        type: 'border'
-    },
-
-    initComponent: function() {
-        var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'exetoolbar',
-                    region: 'north'
-                },
-                {
-                    xtype: 'maintabpanel',
-                    region: 'center'
-                },
-                {
-                    xtype: 'leftpanel',
-                    region: 'west',
-                    split: true,
-                    width: 250
-                }
-            ]
-        });
-
-        me.callParent(arguments);
-    }
+Ext.define('eXe.model.File', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: "name"},
+        {name: "size"},
+        {name: "type"},
+        {name: "modified", type: "date", dateFormat: "U"},
+        {name: "perms"},
+        {name: "icon"},
+        {name: "owner"},
+        {name: "is_deletable"},
+        {name: "is_file"},
+        {name: "is_archive"},
+        {name: "is_writable"},
+        {name: "is_chmodable"},
+        {name: "is_readable"},
+        {name: "is_deletable"},
+        {name: "is_editable"}
+    ]
 });

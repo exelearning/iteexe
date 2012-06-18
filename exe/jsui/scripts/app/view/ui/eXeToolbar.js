@@ -38,7 +38,8 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Open'
+                                text: 'Open',
+                                itemId: 'file_open'
                             },
                             {
                                 xtype: 'menuitem',

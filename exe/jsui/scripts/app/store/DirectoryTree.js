@@ -17,40 +17,29 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.ui.eXeViewport', {
-    extend: 'Ext.container.Viewport',
-    requires: [
-        'eXe.view.eXeToolbar',
-        'eXe.view.MainTabPanel',
-        'eXe.view.LeftPanel'
+Ext.define('eXe.store.DirectoryTree', {
+    extend: 'Ext.data.TreeStore',
+    model: 'eXe.model.Directory',
+    sorters: [
+    	{
+    		sorterFn: function(o1, o2){
+    			var o1name = o1.get("text"), o2name = o2.get("text");
+    				
+	            return o1name.localeCompare(o2name);
+        	}
+    	}
     ],
-
-    layout: {
-        type: 'border'
+    proxy: {
+		type: "ajax",
+        url: "dirtree",
+        extraParams:{ action:"getdircontents", sendWhat: "dirs" },
+		reader: {
+			type: "json",
+			root: "items",
+			totalProperty: "totalCount"
+		}
     },
-
-    initComponent: function() {
-        var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'exetoolbar',
-                    region: 'north'
-                },
-                {
-                    xtype: 'maintabpanel',
-                    region: 'center'
-                },
-                {
-                    xtype: 'leftpanel',
-                    region: 'west',
-                    split: true,
-                    width: 250
-                }
-            ]
-        });
-
-        me.callParent(arguments);
+   	root: {
+        text: ' &#8260; '
     }
 });

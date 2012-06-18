@@ -17,40 +17,49 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.ui.eXeViewport', {
-    extend: 'Ext.container.Viewport',
-    requires: [
-        'eXe.view.eXeToolbar',
-        'eXe.view.MainTabPanel',
-        'eXe.view.LeftPanel'
+Ext.define('eXe.controller.Directory', {
+	stores: ['DirectoryTree'],
+    extend: 'Ext.app.Controller',
+    refs: [{
+        ref: 'filesList',
+        selector: 'filelist'
+    },{
+        ref: 'dirTree',
+        selector: 'dirtree'
+    },{
+    	ref: 'placeField',
+    	selector: '#file_place_field'
+    }
     ],
-
-    layout: {
-        type: 'border'
-    },
-
-    initComponent: function() {
-        var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'exetoolbar',
-                    region: 'north'
-                },
-                {
-                    xtype: 'maintabpanel',
-                    region: 'center'
-                },
-                {
-                    xtype: 'leftpanel',
-                    region: 'west',
-                    split: true,
-                    width: 250
-                }
-            ]
-        });
-
-        me.callParent(arguments);
+    
+    init: function() {
+		this.control({
+			'dirtree': {
+				selectionchange: this.onDirSelect
+			}
+		});
+		
+		this.application.on({
+			dirchange: this.loadDirectory,
+			scope: this
+		});
+	},
+	loadDirectory: function(selection) {
+		this.getPlaceField().setValue("");
+		
+		if(  selection && selection.getPath ) {
+			this.getDirTree().expandPath( selection.getPath() ); 
+		} else {
+			if( selection == 'root') {
+				selection = '';
+			}
+			this.getDirTree().selectPath( '/ &#8260; ' + selection, 'text' ) ;
+		}
+		
+	    
+	},
+	
+	onDirSelect: function( selModel, selection ) {
+		this.application.fireEvent('dirchange', selection[0]);
     }
 });

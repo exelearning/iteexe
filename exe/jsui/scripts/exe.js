@@ -26,12 +26,22 @@ Ext.application({
 
     stores: [
         'OutlineXmlTreeStore',
-        'IdeviceXmlStore'
+        'IdeviceXmlStore',
+        'DirectoryTree',
+        'File'
     ],
 
+    models: [
+    	'Directory',
+    	'File'
+    ],
+    
     controllers: [
     	'Idevice',
-    	'Outline'
+    	'Outline',
+    	'Toolbar',
+    	'Directory',
+    	'File'
     ],
     
     launch: function() {

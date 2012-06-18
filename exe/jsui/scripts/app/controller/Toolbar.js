@@ -17,40 +17,27 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.ui.eXeViewport', {
-    extend: 'Ext.container.Viewport',
-    requires: [
-        'eXe.view.eXeToolbar',
-        'eXe.view.MainTabPanel',
-        'eXe.view.LeftPanel'
-    ],
-
-    layout: {
-        type: 'border'
-    },
-
-    initComponent: function() {
-        var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'exetoolbar',
-                    region: 'north'
-                },
-                {
-                    xtype: 'maintabpanel',
-                    region: 'center'
-                },
-                {
-                    xtype: 'leftpanel',
-                    region: 'west',
-                    split: true,
-                    width: 250
-                }
-            ]
+Ext.define('eXe.controller.Toolbar', {
+    extend: 'Ext.app.Controller',
+    
+    init: function() {
+        this.control({
+        	'#file_open': {
+        		click: this.onFileOpen
+        	}
         });
-
-        me.callParent(arguments);
+    },
+    
+    onFileOpen: function() {
+		var f = Ext.create("eXe.view.ui.FilePicker", { title: "Open File", modal: true, callback: this.onFileOpenSelected });
+		f.show();
+    },
+    
+    onFileOpenSelected: function(fp, eOpts) {
+    	switch (fp.status) {
+    		case eXe.view.ui.FilePicker.returnOk:
+    			nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
+    			break;
+    	}
     }
 });

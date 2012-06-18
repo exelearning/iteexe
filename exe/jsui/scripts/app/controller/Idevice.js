@@ -22,7 +22,7 @@ Ext.define('eXe.controller.Idevice', {
 
     init: function() {
         this.control({
-        	'gridpanel': {
+        	'#idevice_panel': {
         		itemclick:	this.onIdeviceClick
         	}
         });

@@ -21,15 +21,6 @@ Ext.define('eXe.controller.MainTab', {
     extend: 'Ext.app.Controller',
 
     init: function() {
-        this.control({
-        	'#authoring_panel': {
-        		beforerender: this.onAuthoringPanelLoad
-        	}
-        });
-    },
-    
-    onAuthoringPanelLoad: function(panel, eOpts) {
-    	var iframe = Ext.DomHelper.append(panel.id, {tag: "iframe", width: "100%", height: "100%", id: "authoringIFrame", src: "newPackage/authoring"} );
-    	return true;
+
     }
 });

@@ -20,6 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.webui.dirtree import DirTreePage
 
 """
 WebServer module
@@ -47,6 +48,7 @@ from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
+from exe.webui.dirtree import DirTreePage
 from exe.webui.aboutpage           import AboutPage
 
 import logging
@@ -69,6 +71,7 @@ class WebServer:
         self.preferences = PreferencesPage(self.root)
         self.xliffexportpreferences = XliffExportPreferencesPage(self.root)
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
+        self.dirtree     = DirTreePage(self.root)
         self.about       = AboutPage(self.root)
 
 
