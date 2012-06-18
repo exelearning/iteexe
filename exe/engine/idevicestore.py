@@ -280,7 +280,7 @@ class IdeviceStore:
             if idevice.class_ == 'reading':
                 if readingActivitiesFound == 0:
                     # Rename the first one we find
-                    idevice.title = _(u"Reading Activity")
+                    idevice.title = x_(u"Reading Activity")
                     # and also upgrade its feedback field from using a simple
                     # string, to a subclass of TextAreaField.
                     # While this will have been initially handled by the
@@ -319,12 +319,12 @@ class IdeviceStore:
         readingAct = GenericIdevice(_(u"Reading Activity"), 
                                     u"reading",
                                     _(u"University of Auckland"), 
-                                    _(u"""<p>The Reading Activity will primarily 
+                                    x_(u"""<p>The Reading Activity will primarily 
 be used to check a learner's comprehension of a given text. This can be done 
 by asking the learner to reflect on the reading and respond to questions about 
 the reading, or by having them complete some other possibly more physical task 
 based on the reading.</p>"""),
-                                    _(u"<p>Teachers should keep the following "
+                                    x_(u"<p>Teachers should keep the following "
                                         "in mind when using this iDevice: </p>"
                                         "<ol>"
                                         "<li>"
@@ -427,12 +427,12 @@ _(u"""Describe the tasks the learners should complete.""")))
         readingAct = GenericIdevice(_(u"Reading Activity 0.11"), 
                                     u"reading",
                                     _(u"University of Auckland"), 
-                                    _(u"""<p>The reading activity, as the name 
+                                    x_(u"""<p>The reading activity, as the name 
 suggests, should ask the learner to perform some form of activity. This activity 
 should be directly related to the text the learner has been asked to read. 
 Feedback to the activity where appropriate, can provide the learner with some 
 reflective guidance.</p>"""),
-                                    _(u"Teachers should keep the following "
+                                    x_(u"Teachers should keep the following "
                                         "in mind when using this iDevice: "
                                         "<ol>"
                                         "<li>"

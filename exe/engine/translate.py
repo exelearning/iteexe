@@ -22,7 +22,7 @@ Functions that help with translation
 
 # Install x_ as the fake/late translate mechanism before doing any serious
 # importing
-__builtins__['_'] = lambda x:x
+__builtins__['x_'] = lambda x:x
 
 def lateTranslate(propName):
     """

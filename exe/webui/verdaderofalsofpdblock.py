@@ -106,7 +106,7 @@ class VerdaderofalsofpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = _(u"Autoevaluación")
+		self.idevice.title = x_(u"Autoevaluación")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"

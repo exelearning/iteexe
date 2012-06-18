@@ -43,9 +43,9 @@ class ReflectionfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         _(u"FPD - Reflexiona (con Retroalimentacion)"),
-                         _(u"University of Auckland"), 
-                         _(u"""Reflection is a teaching method often used to 
+                         x_(u"FPD - Reflexiona (con Retroalimentacion)"),
+                         x_(u"University of Auckland"), 
+                         x_(u"""Reflection is a teaching method often used to 
 connect theory to practice. Reflection tasks often provide learners with an 
 opportunity to observe and reflect on their observations before presenting 
 these as a piece of academic work. Journals, diaries, profiles and portfolios 
@@ -53,18 +53,18 @@ are useful tools for collecting observation data. Rubrics and guides can be
 effective feedback tools."""), u"", u"reflexionfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_reflexionfpd"
-        self._activityInstruc = _(u"""Enter a question for learners 
+        self._activityInstruc = x_(u"""Enter a question for learners 
 to reflect upon.""")
-        self._answerInstruc   = _(u"""Describe how learners will assess how 
+        self._answerInstruc   = x_(u"""Describe how learners will assess how 
 they have done in the exercise. (Rubrics are useful devices for providing 
 reflective feedback.)""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(_(u'Reflective question:'), 
+        self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
-        self.answerTextArea = TextAreaField(_(u'Feedback:'), 
+        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
                                    self._answerInstruc, answer)
         self.answerTextArea.idevice = self
 
@@ -196,10 +196,10 @@ reflective feedback.)""")
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(_(u'Reflective question:'), 
+        self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
-        self.answerTextArea = TextAreaField(_(u'Feedback:'), 
+        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
                                   self._answerInstruc, self.answer)
         self.answerTextArea.idevice = self
 

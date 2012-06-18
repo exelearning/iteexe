@@ -38,38 +38,38 @@ class ImageMagnifierIdevice(Idevice):
     
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
-                         _(u"Image Magnifier"), 
-                         _(u"University of Auckland"), 
-                         _(u"""The image magnifier is a magnifying tool enabling
+                         x_(u"Image Magnifier"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"""The image magnifier is a magnifying tool enabling
  learners to magnify the view of the image they have been given. Moving the 
 magnifying glass over the image allows larger detail to be studied."""), 
                          u"", u"")
         self.emphasis                    = Idevice.NoEmphasis
         self.imageMagnifier              = MagnifierField(
-                                           _(u"Choose an Image"), _(u"""Click 
+                                           x_(u"Choose an Image"), x_(u"""Click 
 on the picture below or the "Add Image" button to select an image file to be 
 magnified."""))
         self.imageMagnifier.idevice      = self
         self.imageMagnifier.defaultImage = defaultImage
-        self.text                        = TextAreaField(_(u"Text"),
-                                           _("""Enter the text you wish to 
+        self.text                        = TextAreaField(x_(u"Text"),
+                                           x_("""Enter the text you wish to 
 associate with the file."""))
         self.text.idevice                = self
         self.float                       = u"left"
         self.caption                     = u""
-        self._captionInstruc             = _(u"""Provide a caption for the 
+        self._captionInstruc             = x_(u"""Provide a caption for the 
 image to be magnified.""")
-        self._dimensionInstruc           = _(u"""Choose the size you want 
+        self._dimensionInstruc           = x_(u"""Choose the size you want 
 your image to display at. The measurements are in pixels. Generally, 100 
 pixels equals approximately 3cm. Leave both fields blank if you want the 
 image to display at its original size.""")
-        self._alignInstruc               = _(u"""Alignment allows you to 
+        self._alignInstruc               = x_(u"""Alignment allows you to 
 choose where on the screen the image will be positioned.""")
-        self._initialZoomInstruc         = _(u"""Set the initial level of zoom 
+        self._initialZoomInstruc         = x_(u"""Set the initial level of zoom 
 when the IDevice loads, as a percentage of the original image size""")
-        self._maxZoomInstruc             = _(u"""Set the maximum level of zoom, 
+        self._maxZoomInstruc             = x_(u"""Set the maximum level of zoom, 
 as a percentage of the original image size""")
-        self._glassSizeInstruc           = _(u"""Select the size of the magnifying glass""")
+        self._glassSizeInstruc           = x_(u"""Select the size of the magnifying glass""")
         self.systemResources            += ['magnifier.swf']
 
     # Properties
@@ -139,13 +139,13 @@ as a percentage of the original image size""")
         """
         Upgrades to v0.14
         """
-        self._alignInstruc               = _(u"""Alignment allows you to 
+        self._alignInstruc               = x_(u"""Alignment allows you to 
 choose where on the screen the image will be positioned.""")
-        self._initialZoomInstruc         = _(u"""Set the initial level of zoom 
+        self._initialZoomInstruc         = x_(u"""Set the initial level of zoom 
 when the IDevice loads, as a percentage of the original image size""")
-        self._maxZoomInstruc             = _(u"""Set the maximum level of zoom, 
+        self._maxZoomInstruc             = x_(u"""Set the maximum level of zoom, 
 as a percentage of the original image size""")
-        self._glassSizeInstruc           = _(u"""This chooses the initial size 
+        self._glassSizeInstruc           = x_(u"""This chooses the initial size 
 of the magnifying glass""")
         
     def upgradeToVersion2(self):

@@ -36,9 +36,9 @@ class FlashMovieIdevice(Idevice):
     persistenceVersion = 4
 
     def __init__(self):
-        Idevice.__init__(self, _(u"Flash Movie"), 
-                         _(u"University of Auckland"), 
-                         _(u"""\
+        Idevice.__init__(self, x_(u"Flash Movie"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"""\
 This iDevice only supports the Flash Video File (.FLV) format, and will not
 accept other video formats. You can however convert other movie formats
 (e.g. mov, wmf etc) into the .FLV format using third party encoders. These
@@ -47,14 +47,14 @@ player from http://www.macromedia.com/ to play the video."""),
                          u"",
                          u"")
         self.emphasis         = Idevice.NoEmphasis
-        self.flash            = FlashMovieField(_(u"Flash Movie")) 
+        self.flash            = FlashMovieField(x_(u"Flash Movie")) 
         self.flash.idevice    = self
-        self.text             = TextAreaField(_(u"Description"), _("""Enter 
+        self.text             = TextAreaField(x_(u"Description"), x_("""Enter 
 the text you wish to associate with the file."""))
         self.text.idevice     = self
         self.float            = u"left"
         self.caption          = ""
-        self._captionInstruc  = _(u"""Provide a caption for the flash movie 
+        self._captionInstruc  = x_(u"""Provide a caption for the flash movie 
 you have just inserted.""")
         self.systemResources += ['flowPlayer.swf']
     
@@ -106,7 +106,7 @@ you have just inserted.""")
         """
         Upgrades to v0.14
         """
-        self._captionInstruc  = _(u"""Provide a caption for the flash movie 
+        self._captionInstruc  = x_(u"""Provide a caption for the flash movie 
 you have just inserted.""")
         self.flash._upgradeFieldToVersion3()
         

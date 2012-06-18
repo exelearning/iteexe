@@ -287,7 +287,7 @@ class Package(Persistable):
     _description       = ''
     _backgroundImg     = ''
     # This is like a constant
-    defaultLevelNames  = [_(u"Topic"), _(u"Section"), _(u"Unit")]
+    defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
 
     def __init__(self, name):
         """

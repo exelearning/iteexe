@@ -43,9 +43,9 @@ class ClozeIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, _(u"Cloze Activity"),
-                         _(u"University of Auckland"), 
-                         _(u"<p>Cloze exercises are texts or "
+        Idevice.__init__(self, x_(u"Cloze Activity"),
+                         x_(u"University of Auckland"), 
+                         x_(u"<p>Cloze exercises are texts or "
                              "sentences where students must fill in "
                              "missing words. They are often used for the "
                              "following purposes:</p>"
@@ -57,7 +57,7 @@ class ClozeIdevice(Idevice):
                              "<li>To check vocabulary knowledge.</li>"
                              "<li>To check word formation and/or grammatical "
                              "competence. </li></ol>"),
-                         _(u"<dl>"
+                         x_(u"<dl>"
                              "  <dt>If your goal is to test understanding "
                              "of core concepts or reading comprehension"
                              "  </dt>"
@@ -113,21 +113,21 @@ class ClozeIdevice(Idevice):
                             u"question",
                              parentNode)
         self.instructionsForLearners = TextAreaField(
-            _(u'Instructions'),
-            _(u"""Provide instruction on how the cloze activity should be 
+            x_(u'Instructions'),
+            x_(u"""Provide instruction on how the cloze activity should be 
 completed. Default text will be entered if there are no changes to this field.
 """),
-            _(u'Read the paragraph below and '
+            x_(u'Read the paragraph below and '
                 'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
-        self._content = ClozeField(_(u'Cloze'), 
-            _(u"""<p>Enter the text for the cloze activity in to the cloze field 
+        self._content = ClozeField(x_(u'Cloze'), 
+            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to hide, double click on the word to select it and 
 click on the Hide/Show Word button below.</p>"""))
         self._content.idevice = self
-        self.feedback = TextAreaField(_(u'Feedback'),
-            _(u'Enter any feedback you wish to provide the learner '
+        self.feedback = TextAreaField(x_(u'Feedback'),
+            x_(u'Enter any feedback you wish to provide the learner '
                 'with-in the feedback field. This field can be left blank.'))
         self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
@@ -271,12 +271,12 @@ click on the Hide/Show Word button below.</p>"""))
         """
         self._upgradeIdeviceToVersion1()
         self.instructionsForLearners = TextAreaField(
-            _(u'Instructions For Learners'),
-            _(u'Put instructions for learners here'),
-            _(u'Read the paragraph below and '
+            x_(u'Instructions For Learners'),
+            x_(u'Put instructions for learners here'),
+            x_(u'Read the paragraph below and '
                 'fill in the missing words'))
         self.instructionsForLearners.idevice = self
-        self.feedback = TextAreaField(_(u'Feedback'))
+        self.feedback = TextAreaField(x_(u'Feedback'))
         self.feedback.idevice = self
 
 

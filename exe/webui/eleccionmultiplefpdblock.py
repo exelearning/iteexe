@@ -92,7 +92,7 @@ class EleccionmultiplefpdBlock(Block):
                 if not isAnswered: 
                     self.idevice.edit = True
                     self.idevice.message = \
-                        _("Please select a correct answer for each question.")
+                        x_("Please select a correct answer for each question.")
                     break
  
         
@@ -107,7 +107,7 @@ class EleccionmultiplefpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = _(u"Autoevaluacion")
+		self.idevice.title = x_(u"Autoevaluacion")
 
 #        html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
         html += common.textInput("title"+self.id, self.idevice.title)

@@ -26,15 +26,15 @@ class CasopracticofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         _(u"FPD - Caso Practico"),
-                         _(u"Jose Ramon Jimenez Reyes"), 
-                         _(u"""Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."""), u"", u"casopracticofpd")
+                         x_(u"FPD - Caso Practico"),
+                         x_(u"Jose Ramon Jimenez Reyes"), 
+                         x_(u"""Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."""), u"", u"casopracticofpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_casopracticofpd"
-        self._activityInstruc = _(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(_(u'Texto Caso pr&aacute;ctico:'), 
+        self.activityTextArea = TextAreaField(x_(u'Texto Caso pr&aacute;ctico:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -132,7 +132,7 @@ class CasopracticofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(_(u'Texto Caso pr&aacute;ctico:'), 
+        self.activityTextArea = TextAreaField(x_(u'Texto Caso pr&aacute;ctico:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

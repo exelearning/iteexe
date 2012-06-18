@@ -92,7 +92,7 @@ class MultichoiceBlock(Block):
                 if not isAnswered: 
                     self.idevice.edit = True
                     self.idevice.message = \
-                        _("Please select a correct answer for each question.")
+                        x_("Please select a correct answer for each question.")
                     break
  
         

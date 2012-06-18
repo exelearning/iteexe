@@ -38,9 +38,9 @@ class MathIdevice(Idevice):
     
 
     def __init__(self, instruc="", latex=""):
-        Idevice.__init__(self, _(u"Maths"), 
-                         _(u"University of Auckland"), 
-                         _("""The mathematical language LATEX has been 
+        Idevice.__init__(self, x_(u"Maths"), 
+                         x_(u"University of Auckland"), 
+                         x_("""The mathematical language LATEX has been 
                         used to enable your to insert mathematical formula 
                         into your content. It does this by translating 
                         LATEX into an image which is then displayed
@@ -51,8 +51,8 @@ class MathIdevice(Idevice):
                         "", 
                         "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = MathField(_(u"Maths"), 
-                                      _(u"""You can use the toolbar or enter latex manually into the textarea. """))
+        self.content  = MathField(x_(u"Maths"), 
+                                      x_(u"""You can use the toolbar or enter latex manually into the textarea. """))
         self.content.idevice = self
 
     def getResourcesField(self, this_resource):

@@ -61,33 +61,33 @@ class EditorPane(object):
         self.tip              = ""
         self.message          = ""
         self._nameInstruc     = \
-           _(u"Your new iDevice will appear in the iDevice "
+           x_(u"Your new iDevice will appear in the iDevice "
               u"pane with this title. This is a compulsory field "
               u"and you will be prompted to enter a label if you try "
               u"to submit your iDevice without one.")
-        self._authorInstruc   = _(u"This is an optional field.")
-        self._purposeInstruc  = _(u"The purpose dialogue allows you to describe"
+        self._authorInstruc   = x_(u"This is an optional field.")
+        self._purposeInstruc  = x_(u"The purpose dialogue allows you to describe"
                                  u" your intended purpose of the iDevice to other"
                                  u" potential users.")
-        self._emphasisInstruc = _(u"Use this pulldown to select whether or not "
+        self._emphasisInstruc = x_(u"Use this pulldown to select whether or not "
                                  u" the iDevice should have any formatting "
                                  u" applied to it to distinguish "
                                  u"it; ie. a border and an icon.")
-        self._tipInstruc      = _(u"Use this field to describe "
+        self._tipInstruc      = x_(u"Use this field to describe "
                                  u"your intended use and the pedagogy behind "
                                  u"the device's development. This can be useful "
                                  u"if your iDevice is to be exported for others "
                                  u"to use.")
-        self._lineInstruc     = _(u"Add a single text line to an iDevice. "
+        self._lineInstruc     = x_(u"Add a single text line to an iDevice. "
                                  u"Useful if you want the ability to place a "
                                  u"label within the iDevice.")
-        self._textBoxInstruc  = _(u"Add a text entry box to an iDevice. "
+        self._textBoxInstruc  = x_(u"Add a text entry box to an iDevice. "
                                  u"Used for entering larger amounts of textual "
                                  u"content.")
-        self._feedbackInstruc = _(u"Add an interactive feedback field to your iDevice.")
-        self._flashInstruc    = _(u"Add a flash video to your iDevice.")
-        self._mp3Instruc      = _(u"Add an mp3 file to your iDevice.")
-        self._attachInstruc   = _(u"Add an attachment file to your iDevice.")
+        self._feedbackInstruc = x_(u"Add an interactive feedback field to your iDevice.")
+        self._flashInstruc    = x_(u"Add a flash video to your iDevice.")
+        self._mp3Instruc      = x_(u"Add an mp3 file to your iDevice.")
+        self._attachInstruc   = x_(u"Add an attachment file to your iDevice.")
 
         self.style            = "default"
    

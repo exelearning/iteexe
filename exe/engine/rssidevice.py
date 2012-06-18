@@ -37,18 +37,18 @@ class RssIdevice(Idevice):
     """
     def __init__(self):
         Idevice.__init__(self,
-                         _(u"RSS"), 
-                         _(u"Auckland University of Technology"), 
-                         _(u"""The RSS iDevice is used 
+                         x_(u"RSS"), 
+                         x_(u"Auckland University of Technology"), 
+                         x_(u"""The RSS iDevice is used 
 to provide new content to an individual users machine. Using this
 iDevice you can provide links from a feed you select for learners to view."""), 
                          u"",
                          u"")
         self.emphasis         = Idevice.NoEmphasis
-        self.rss              = TextAreaField(_(u"RSS"))
+        self.rss              = TextAreaField(x_(u"RSS"))
         self.rss.idevice      = self
         self.icon             = u"inter"
-        self._urlInstruc      = _(u"""Enter an RSS URL for the RSS feed you 
+        self._urlInstruc      = x_(u"""Enter an RSS URL for the RSS feed you 
 want to attach to your content. Feeds are often identified by a small graphic
  icon (often like this <img src="/images/feed-icon.png" />) or the text "RSS". Clicking on the 
  icon or text label will display an RSS feed right in your browser. You can copy and paste the
