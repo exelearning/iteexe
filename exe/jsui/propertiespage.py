@@ -38,6 +38,8 @@ class PropertiesPage(Renderable, Resource):
 
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile')
     
+    imgFieldNames     = ('pp_backgroundImg')
+
     def __init__(self, parent):
         """ 
         Initialize
@@ -74,7 +76,11 @@ class PropertiesPage(Renderable, Resource):
             for key in request.args.keys():
                 if key != "_dc":
                     obj, name = self.fieldId2obj(key)
-                    data[key] = getattr(obj, name)
+                    if key in self.imgFieldNames:
+                        if getattr(obj, name):
+                            data[key] = getattr(obj, name).basename()
+                    else:
+                        data[key] = getattr(obj, name)
         except:
             return json.dumps({'success': False, 'errorMessage': _("Failed to get properties")})
         return json.dumps({'success': True, 'data': data})
@@ -82,6 +88,7 @@ class PropertiesPage(Renderable, Resource):
     def render_POST(self, request=None):
         log.debug("render_POST")
         
+        data = {}
         try:
             for key, value in request.args.items():
                 obj, name = self.fieldId2obj(key)
@@ -89,8 +96,10 @@ class PropertiesPage(Renderable, Resource):
                     setattr(obj, name, value[0] == 'true')
                 else:
                     setattr(obj, name, toUnicode(value[0]))
+                    if key in self.imgFieldNames and value[0]:
+                        data[key] = getattr(obj, name).basename()
         except:
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
-        return json.dumps({'success': True})
+        return json.dumps({'success': True, 'data': data})
     
 # ===========================================================================

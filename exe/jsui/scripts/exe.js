@@ -45,6 +45,7 @@ var conf = {
 Ext.override(Ext.form.field.Text, conf);
 Ext.override(Ext.form.field.TextArea, conf);
 Ext.override(Ext.form.field.Checkbox, conf);
+Ext.override(Ext.form.field.Hidden, conf);
 
 Ext.application({
     name: 'eXe',
@@ -63,6 +64,7 @@ Ext.application({
     
     controllers: [
     	'Idevice',
+        'MainTab',
     	'Outline',
     	'Toolbar',
     	'filepicker.Directory',

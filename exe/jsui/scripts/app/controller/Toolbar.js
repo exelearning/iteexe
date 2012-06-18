@@ -268,7 +268,7 @@ Ext.define('eXe.controller.Toolbar', {
             }
         });
         fp.appendFilters([
-            { "typename": _("HTML Files"), "extension": "*.html", "regex": /.*\.htm[l]*$/ },
+            { "typename": _("HTML Files"), "extension": "*.html", "regex": /.*\.htm[l]*$/i },
             { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
         ]);
         fp.show();

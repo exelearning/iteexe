@@ -27,6 +27,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
         var me = this;
 
         Ext.applyIf(me, {
+            autoScroll: true,
             items: [
                 {
                     xtype: 'fieldset',
@@ -52,32 +53,9 @@ Ext.define('eXe.view.forms.ExportPanel', {
                     xtype: 'button',
                     text: _('Apply'),
                     margin: 10,
-                    handler: function() {
-                        var form = this.up('form').getForm();
-                        if (form.isValid()) {
-                            form.submit({ 
-		                        failure: function(form, action) {
-		                            Ext.Msg.alert(_('Error'), action.result.errorMessage);
-		                        }
-		                    });
-                        }
-                    }                            
+                    itemId: 'apply'
                 }
-            ],
-            listeners: {
-                'beforeaction': function(form, action, eOpts) {
-                    form.url = location.pathname + "/properties"
-                },
-                'render': function() {
-                    this.load({ 
-                        method: "GET", 
-                        params: this.getForm().getFieldValues(),
-                        failure: function(form, action) {
-                            Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                        }
-                    });
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);

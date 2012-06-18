@@ -698,6 +698,7 @@ Ext.define('eXe.view.forms.MetadataPanel', {
         var me = this;
 
         Ext.applyIf(me, {
+            autoScroll: true,
             items: [
                 {
                     xtype: 'fieldset',
@@ -749,6 +750,7 @@ Ext.define('eXe.view.forms.MetadataPanel', {
                             inputId: 'dc_contributors',
                             fieldLabel: _('Contributors'),
                             tooltip: _('An entity responsible for making contributions to the content of the resource.'),
+                            height: 80,
                             anchor: '100%'
                         },
                         {
@@ -843,32 +845,9 @@ Ext.define('eXe.view.forms.MetadataPanel', {
                     xtype: 'button',
                     text: _('Apply'),
                     margin: 10,
-                    handler: function() {
-                        var form = this.up('form').getForm();
-                        if (form.isValid()) {
-                            form.submit({ 
-		                        failure: function(form, action) {
-		                            Ext.Msg.alert(_('Error'), action.result.errorMessage);
-		                        }
-		                    });
-                        }
-                    }                            
+                    itemId: 'apply'
                 }
-            ],
-            listeners: {
-                'beforeaction': function(form, action, eOpts) {
-                    form.url = location.pathname + "/properties"
-                },
-                'render': function() {
-                    this.load({ 
-                        method: "GET", 
-                        params: this.getForm().getFieldValues(),
-                        failure: function(form, action) {
-                            Ext.Msg.alert(_('Error'), action.result.errorMessage);
-                        }
-                    });
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
