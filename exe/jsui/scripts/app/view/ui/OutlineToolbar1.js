@@ -19,6 +19,7 @@
 
 Ext.define('eXe.view.ui.OutlineToolbar1', {
     extend: 'Ext.toolbar.Toolbar',
+    alias: 'widget.outlinetoolbar1',
 
     initComponent: function() {
         var me = this;
@@ -27,19 +28,19 @@ Ext.define('eXe.view.ui.OutlineToolbar1', {
             items: [
                 {
                     xtype: 'button',
-                    text: 'Add Page',
+                    text: _('Add Page'),
                     itemId: 'outline_add_node',
                     disabled: true
                 },
                 {
                     xtype: 'button',
-                    text: 'Delete',
+                    text: _('Delete'),
                     itemId: 'outline_del_node',
                     disabled: true
                 },
                 {
                     xtype: 'button',
-                    text: 'Rename',
+                    text: _('Rename'),
                     itemId: 'outline_ren_node',
                     disabled: true
                 }
@@ -48,12 +49,4 @@ Ext.define('eXe.view.ui.OutlineToolbar1', {
 
         me.callParent(arguments);
     },
-
-    titleNodeDelMsgBox: 'Confirm',
-   
-    textNodeDelMsgBox: 'Delete "{node}" node and all its children?',
-
-    titleNodeRenameMsgBox: 'Rename "{node}" node',
-   
-    textNodeRenameMsgBox: 'Enter the new name:'
 });

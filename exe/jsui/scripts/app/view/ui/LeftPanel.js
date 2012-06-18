@@ -19,9 +19,10 @@
 
 Ext.define('eXe.view.ui.LeftPanel', {
     extend: 'Ext.panel.Panel',
+    alias: 'widget.leftpanel',
     requires: [
-        'eXe.view.OutlineToolbar1',
-        'eXe.view.OutlineToolbar2'
+        'eXe.view.ui.OutlineToolbar1',
+        'eXe.view.ui.OutlineToolbar2'
     ],
 
     layout: {
@@ -48,7 +49,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             xtype: 'treepanel',
                             itemId: 'outline_treepanel',
                             autoScroll: true,
-                            title: 'Outline',
+                            title: _('Outline'),
                             store: 'OutlineXmlTreeStore',
                             rootVisible: false,
                             region: 'center',
@@ -67,7 +68,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                     itemId: 'idevice_panel',
                     height: 150,
                     autoScroll: true,
-                    title: 'iDevices',
+                    title: _('iDevices'),
                     store: 'IdeviceXmlStore',
                     flex: 1,
                     region: 'south',
@@ -81,7 +82,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             flex: 1,
                             hideable: false,
                             menuDisabled: true,
-                            text: 'Name'
+                            text: _('Name')
                         }
                     ]
                 }

@@ -64,7 +64,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 
         switch (me.type) {
         	case eXe.view.filepicker.FilePicker.modeSave:
-        		buttons[2] = { xtype: 'button', text: 'Save', itemId: 'filepicker_save' };
+        		buttons[2] = { xtype: 'button', text: _('Save'), itemId: 'filepicker_save' };
         		break;
         	case eXe.view.filepicker.FilePicker.modeGetFolder:
         		filter = [];
@@ -80,7 +80,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 				{
 	        		xtype: 'textfield',
 	        		name: 'name',
-	        		fieldLabel: 'Place',
+	        		fieldLabel: _('Place'),
 	        		dock: 'top',
 	        		id: 'file_place_field'
 				},{

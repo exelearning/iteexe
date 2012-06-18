@@ -171,7 +171,7 @@ Ext.define('eXe.controller.filepicker.File', {
 	confirmReplace: function(onReplaceOk) {
 		Ext.Msg.show({
 			title: "Confirm?",
-			msg: "El fichero ya existe. Desea reemplazarlo?",
+			msg: "The file already exists. Do you want to replace it?",
 			scope: this,
 			modal: true,
 			buttons: Ext.Msg.YESNO,

@@ -20,9 +20,9 @@
 Ext.define('eXe.view.ui.eXeViewport', {
     extend: 'Ext.container.Viewport',
     requires: [
-        'eXe.view.eXeToolbar',
-        'eXe.view.MainTabPanel',
-        'eXe.view.LeftPanel'
+        'eXe.view.ui.eXeToolbar',
+        'eXe.view.ui.MainTabPanel',
+        'eXe.view.ui.LeftPanel'
     ],
 
     layout: {

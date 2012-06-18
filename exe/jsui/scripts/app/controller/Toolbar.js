@@ -92,7 +92,7 @@ Ext.define('eXe.controller.Toolbar', {
 	        if (exportDir == '') {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 		            type: eXe.view.filepicker.FilePicker.modeGetFolder,
-		            title: "Select the parent folder for export.",
+		            title: _("Select the parent folder for export."),
 		            modal: true,
 		            scope: this,
 		            callback: function(fp) {
@@ -110,7 +110,7 @@ Ext.define('eXe.controller.Toolbar', {
 	    } else if(exportType == "textFile"){
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                     type: eXe.view.filepicker.FilePicker.modeSave,
-                    title: "Export text package as",
+                    title: _("Export text package as"),
                     modal: true,
                     scope: this,
                     callback: function(fp) {
@@ -119,23 +119,23 @@ Ext.define('eXe.controller.Toolbar', {
                     }
                 });
 		        fp.appendFilters([
-		            { "typename": "Text File", "extension": "*.txt", "regex": /.*\.txt$/ },
-		            { "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+		            { "typename": _("Text File"), "extension": "*.txt", "regex": /.*\.txt$/ },
+		            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 		            ]
 		        );
                 fp.show();            
 	    } else {
             var title;
 	        if (exportType == "scorm")
-	            title = "Export SCORM package as";
+	            title = _("Export SCORM package as");
 	        else if (exportType == "ims")
-	            title = "Export IMS package as";
+	            title = _("Export IMS package as");
 	        else if (exportType == "zipFile")
-	            title = "Export Website package as";
+	            title = _("Export Website package as");
 	        else if (exportType == "commoncartridge")
-	            title = "Export Common Cartridge as";
+	            title = _("Export Common Cartridge as");
 	        else
-	            title = "INVALID VALUE PASSED TO exportPackage";
+	            title = _("INVALID VALUE PASSED TO exportPackage");
 
             var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 	            type: eXe.view.filepicker.FilePicker.modeSave,
@@ -148,8 +148,8 @@ Ext.define('eXe.controller.Toolbar', {
 	            }
 	        });
 	        fp.appendFilters([
-	            { "typename": "SCORM/IMS/ZipFile", "extension": "*.txt", "regex": /.*\.zip$/ },
-	            { "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+	            { "typename": _("SCORM/IMS/ZipFile"), "extension": "*.txt", "regex": /.*\.zip$/ },
+	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 	            ]
 	        );
 	        fp.show();            
@@ -274,7 +274,7 @@ Ext.define('eXe.controller.Toolbar', {
     fileOpen2: function() {
 		var f = Ext.create("eXe.view.filepicker.FilePicker", {
 			type: eXe.view.filepicker.FilePicker.modeOpen,
-			title: "Open File",
+			title: _("Open File"),
 			modal: true,
 			scope: this,
 			callback: function(fp) {
@@ -283,8 +283,8 @@ Ext.define('eXe.controller.Toolbar', {
 		    }
 		});
 		f.appendFilters([
-			{ "typename": "eXe Package Files", "extension": "*.elp", "regex": /.*\.elp$/ },
-			{ "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+			{ "typename": _("eXe Package Files"), "extension": "*.elp", "regex": /.*\.elp$/ },
+			{ "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 			]
 		);
 		f.show();
@@ -296,8 +296,8 @@ Ext.define('eXe.controller.Toolbar', {
 	
 	askSave: function(onProceed) {
 		Ext.Msg.show({
-			title: "Save Package first?",
-			msg: "The current package has been modified and not yet saved. " + "Would you like to save it before loading the new package?",
+			title: _("Save Package first?"),
+			msg: _("The current package has been modified and not yet saved. Would you like to save it before loading the new package?"),
 			scope: this,
 			modal: true,
 			buttons: Ext.Msg.YESNOCANCEL,
@@ -336,7 +336,7 @@ Ext.define('eXe.controller.Toolbar', {
 	fileSaveAs: function(onDone) {
 		var f = Ext.create("eXe.view.filepicker.FilePicker", {
 			type: eXe.view.filepicker.FilePicker.modeSave,
-			title: "Select a File", 
+			title: _("Select a File"), 
 			modal: true,
 			scope: this,
 			callback: function(fp) {
@@ -353,8 +353,8 @@ Ext.define('eXe.controller.Toolbar', {
 			}
 		});
 		f.appendFilters([
-			{ "typename": "eXe Package Files", "extension": "*.elp", "regex": /.*\.elp$/ },
-			{ "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+			{ "typename": _("eXe Package Files"), "extension": "*.elp", "regex": /.*\.elp$/ },
+			{ "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 			]
 		);
 		f.show();

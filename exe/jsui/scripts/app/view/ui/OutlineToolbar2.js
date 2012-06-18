@@ -19,6 +19,7 @@
 
 Ext.define('eXe.view.ui.OutlineToolbar2', {
     extend: 'Ext.toolbar.Toolbar',
+    alias: 'widget.outlinetoolbar2',
 
 
     initComponent: function() {
@@ -29,25 +30,25 @@ Ext.define('eXe.view.ui.OutlineToolbar2', {
                 {
                     xtype: 'button',
                     icon: '/images/stock-goto-first.png',
-                    tooltip: 'Promote node up in hierarchy',
+                    tooltip: _('Promote node up in hierarchy'),
                     itemId: 'outline_promote_node'
                 },
                 {
                     xtype: 'button',
                     icon: '/images/stock-goto-last.png',
-                    tooltip: 'Demote node down in hierarchy',
+                    tooltip: _('Demote node down in hierarchy'),
                     itemId: 'outline_demote_node'
                 },
                 {
                     xtype: 'button',
                     icon: '/images/stock-go-up.png',
-                    tooltip: 'Move node up',
+                    tooltip: _('Move node up'),
                     itemId: 'outline_up_node'
                 },
                 {
                     xtype: 'button',
                     icon: '/images/stock-go-down.png',
-                    tooltip: 'Move node down',
+                    tooltip: _('Move node down'),
                     itemId: 'outline_down_node'
                 }
             ]

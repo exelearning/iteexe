@@ -17,9 +17,33 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
+if (!window.translations)
+    translations = {};
+
+function _(msg) {
+    return translations[msg] || msg;
+}
+
 Ext.Loader.setConfig({
     enabled: true
 });
+
+var conf = {
+    onRender: function() {
+        var me = this;
+        
+        me.callParent(arguments);
+        if (me.tooltip) {
+            Ext.tip.QuickTipManager.register(Ext.apply({
+                target: me.el,
+                text: me.tooltip
+            }));
+        }
+    }
+};
+
+Ext.override(Ext.form.field.Text, conf);
+Ext.override(Ext.form.field.TextArea, conf);
 
 Ext.application({
     name: 'eXe',
@@ -47,8 +71,14 @@ Ext.application({
     launch: function() {
         Ext.QuickTips.init();
 
-        Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
-
+        try {
+            Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
+        }
+        catch (err) {
+            console.log('Local Storage not supported');
+            Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
+        }
+        
         eXe.app = this;
         var cmp1 = Ext.create('eXe.view.ui.eXeViewport', {
             renderTo: Ext.getBody()

@@ -19,7 +19,7 @@
 
 Ext.define('eXe.view.ui.eXeToolbar', {
     extend: 'Ext.toolbar.Toolbar',
-
+    alias: 'widget.exetoolbar',
 
     initComponent: function() {
         var me = this;
@@ -28,23 +28,23 @@ Ext.define('eXe.view.ui.eXeToolbar', {
             items: [
                 {
                     xtype: 'button',
-                    text: 'File',
+                    text: _('File'),
                     menu: {
                         xtype: 'menu',
                         items: [
                             {
                                 xtype: 'menuitem',
-                                text: 'New',
+                                text: _('New'),
                                 itemId: 'file_new'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Open',
+                                text: _('Open'),
                                 itemId: 'file_open'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Recent Projects...',
+                                text: _('Recent Projects...'),
                                 menu: {
                                     xtype: 'menu',
 	                                itemId: 'file_recent_menu',
@@ -55,7 +55,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         {
                                             xtype: 'menuitem',
                                             itemId: 'file_clear_recent',
-                                            text: 'Clear Recent Projects List'
+                                            text: _('Clear Recent Projects List')
                                         }
                                     ]
                                 }
@@ -65,12 +65,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Save',
+                                text: _('Save'),
                                 itemId: 'file_save'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Save As...',
+                                text: _('Save As...'),
                                 itemId: 'file_save_as'
                             },
                             {
@@ -78,7 +78,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Print',
+                                text: _('Print'),
                                 itemId: 'file_print'
                             },
                             {
@@ -86,17 +86,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Import',
+                                text: _('Import'),
                                 menu: {
                                     xtype: 'menu',
                                     items: [
                                         {
                                             xtype: 'menuitem',
-                                            text: 'HTML Course'
+                                            text: _('HTML Course')
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'XLIFF File'
+                                            text: _('XLIFF File')
                                         }
                                     ]
                                 }
@@ -106,39 +106,39 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Export',
+                                text: _('Export'),
                                 menu: {
                                     xtype: 'menu',
                                     items: [
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Common Cartridge',
+                                            text: _('Common Cartridge'),
                                             itemId: 'file_export_cc'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'SCORM 1.2',
+                                            text: _('SCORM 1.2'),
                                             itemId: 'file_export_scorm'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'IMS Content Package',
+                                            text: _('IMS Content Package'),
                                             itemId: 'file_export_ims'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Web Site',
+                                            text: _('Web Site'),
                                             menu: {
                                                 xtype: 'menu',
                                                 items: [
                                                     {
                                                         xtype: 'menuitem',
-                                                        text: 'Self-contained Folder',
+                                                        text: _('Self-contained Folder'),
                                                         itemId: 'file_export_website'
                                                     },
                                                     {
                                                         xtype: 'menuitem',
-                                                        text: 'Zip File',
+                                                        text: _('Zip File'),
                                                         itemId: 'file_export_zip'
                                                     }
                                                 ]
@@ -146,22 +146,22 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Single Page',
+                                            text: _('Single Page'),
                                             itemId: 'file_export_singlepage'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Text File',
+                                            text: _('Text File'),
                                             itemId: 'file_export_text'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'iPod Notes',
+                                            text: _('iPod Notes'),
                                             itemId: 'file_export_ipod'
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'XLIFF',
+                                            text: _('XLIFF'),
                                             itemId: 'file_export_xliff'
                                         }
                                     ]
@@ -169,17 +169,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Merging',
+                                text: _('Merging'),
                                 menu: {
                                     xtype: 'menu',
                                     items: [
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Insert Package'
+                                            text: _('Insert Package')
                                         },
                                         {
                                             xtype: 'menuitem',
-                                            text: 'Extract Package'
+                                            text: _('Extract Package')
                                         }
                                     ]
                                 }
@@ -189,38 +189,38 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Quit'
+                                text: _('Quit')
                             }
                         ]
                     }
                 },
                 {
                     xtype: 'button',
-                    text: 'Tools',
+                    text: _('Tools'),
                     menu: {
                         xtype: 'menu',
                         items: [
                             {
                                 xtype: 'menuitem',
-                                text: 'iDevice Editor'
+                                text: _('iDevice Editor')
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Preferences'
+                                text: _('Preferences')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Refresh Display'
+                                text: _('Refresh Display')
                             }
                         ]
                     }
                 },
                 {
                     xtype: 'button',
-                    text: 'Styles',
+                    text: _('Styles'),
                     itemId: 'styles_button',
                     menu: {
                         xtype: 'menu',
@@ -229,43 +229,43 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                 },
                 {
                     xtype: 'button',
-                    text: 'Help',
+                    text: _('Help'),
                     menu: {
                         xtype: 'menu',
                         items: [
                             {
                                 xtype: 'menuitem',
-                                text: 'eXe Tutorial'
+                                text: _('eXe Tutorial')
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'eXe Manual'
+                                text: _('eXe Manual')
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Release Notes'
+                                text: _('Release Notes')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'eXe Web Site'
+                                text: _('eXe Web Site')
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Report an Issue'
+                                text: _('Report an Issue')
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'eXe Live Chat'
+                                text: _('eXe Live Chat')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'About eXe'
+                                text: _('About eXe')
                             }
                         ]
                     }

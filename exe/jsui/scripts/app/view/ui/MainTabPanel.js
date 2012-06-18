@@ -19,7 +19,10 @@
 
 Ext.define('eXe.view.ui.MainTabPanel', {
     extend: 'Ext.tab.Panel',
-
+    alias: 'widget.maintabpanel',
+    requires: [
+        'eXe.view.forms.MetadataPanel'
+    ],
     activeTab: 0,
 
     initComponent: function() {
@@ -31,24 +34,24 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                     xtype: 'panel',
                     itemId: 'authoring_panel',
                     contentEl: 'authoringIFrame',
-                    title: 'Authoring'
+                    title: _('Authoring')
                 },
                 {
                     xtype: 'tabpanel',
-                    title: 'Properties',
-                    activeTab: 2,
+                    title: _('Properties'),
+                    activeTab: 0,
                     items: [
                         {
                             xtype: 'panel',
-                            title: 'Package'
+                            title: _('Package')
+                        },
+                        {
+                            xtype: 'metadata',
+                            title: _('Metadata')
                         },
                         {
                             xtype: 'panel',
-                            title: 'Metadata'
-                        },
-                        {
-                            xtype: 'panel',
-                            title: 'Export'
+                            title: _('Export')
                         }
                     ]
                 }

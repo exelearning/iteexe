@@ -43,7 +43,7 @@ Ext.define('eXe.view.filepicker.FileList', {
 				sortable: true
 			},
 			columns: [{
-	           header: "Name",
+	           header: _("Name"),
 	           dataIndex: 'name',
 	           width: 250,
 			   sortable: true,
@@ -65,7 +65,7 @@ Ext.define('eXe.view.filepicker.FileList', {
 			        });
 			    }
 	        },{
-	           header: "Size",
+	           header: _("Size"),
 	           dataIndex: 'size',
 	           flex: 1,
 	           maxWidth: 80,
@@ -88,12 +88,12 @@ Ext.define('eXe.view.filepicker.FileList', {
 			        });
 			    }
 	        },{
-	           header: "Type",
+	           header: _("Type"),
 	           dataIndex: 'type',
 	           hidden: true,
 	           hideable: false
 	        },{
-	           header: "Modified",
+	           header: _("Modified"),
 	           dataIndex: 'modified',
 	           flex: 1,
 	           maxWidth: 200,

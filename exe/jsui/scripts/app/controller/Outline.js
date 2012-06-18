@@ -80,15 +80,14 @@ Ext.define('eXe.controller.Outline', {
     onNodeDel: function(button, e, eOpts) {
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
-    		outlineToolBar1 = this.getOutlineToolBar1(),
     		nodeid = '0';
     	
     	if (selected != 0)
     		nodeid = selected[0].data.id;
     	if (nodeid != '0') { 
-    		msg = new Ext.Template(outlineToolBar1.textNodeDelMsgBox).apply({node: selected[0].data.text});
+    		msg = new Ext.Template(_('Delete "{node}" node and all its children?')).apply({node: selected[0].data.text});
     		Ext.Msg.show( {
-    			title: outlineToolBar1.titleNodeDelMsgBox,
+    			title: _('Confirm'),
     			msg: msg,
     			scope: this,
     			modal: true,
@@ -106,16 +105,15 @@ Ext.define('eXe.controller.Outline', {
     onNodeRename: function() {
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
-    		outlineToolBar1 = this.getOutlineToolBar1(),
     		nodeid = '0';
     	
     	if (selected != 0)
     		nodeid = selected[0].data.id;
-		title = new Ext.Template(outlineToolBar1.titleNodeRenameMsgBox).apply({node: selected[0].data.text});
+		title = new Ext.Template(_('Rename "{node}" node')).apply({node: selected[0].data.text});
 		Ext.Msg.show({
 			prompt: true,
 			title: title,
-			msg: outlineToolBar1.textNodeRenameMsgBox,
+			msg: _('Enter the new name:'),
 			buttons: Ext.Msg.OKCANCEL,
 			multiline: false,
 			value: selected[0].data.text,
