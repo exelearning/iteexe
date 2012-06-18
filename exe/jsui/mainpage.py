@@ -616,25 +616,27 @@ class MainPage(RenderableLivePage):
 #        data.close()
         self.importresources.insertNode([html.partition(dirname + os.sep)[2]])
         
-    def handleImport(self, client, importType, dirname, html):
+    def handleImport(self, client, importType, dirname, html=None):
         if importType == 'html':
-            d = threads.deferToThread(self.getResources, dirname, html, client)
-            d.addCallback(self.handleImportCallback,client)
-            d.addErrback(self.handleImportErrback,client)
-            client.call('XHinitImportProgressWindow','Importando HTML...')
+            if (not html):
+                client.call('eXe.app.getController("Toolbar").importHtml2', dirname)
+            else:
+                d = threads.deferToThread(self.getResources, dirname, html, client)
+                d.addCallback(self.handleImportCallback,client)
+                d.addErrback(self.handleImportErrback,client)
+                client.call('eXe.app.getController("Toolbar").initImportProgressWindow',_(u'Importing HTML...'))
     
     def handleImportErrback(self, failure, client):
-        client.call('XHerrorImportProgressWindow','Error importando HTML:\n' + failure.getBriefTraceback())
-        client.sendScript((u'top.location = "/%s"' % \
-                      self.package.name).encode('utf8'))
+        client.call('eXe.app.getController("Toolbar").errorImportProgressWindow',_(u'Error importing HTML:\n'), 
+                    unicode(failure.getBriefTraceback()), (u'/%s' % self.package.name).encode('utf8'))
 
     def handleImportCallback(self,resources,client):
-        client.call('XHcloseImportProgressWindow')
+        client.call('eXe.app.getController("Toolbar").closeImportProgressWindow')
         client.sendScript((u'top.location = "/%s"' % \
                       self.package.name).encode('utf8'))
 
     def handleCancelImport(self, client):
-        log.info('Cancelando importacion')
+        log.info('Cancel import')
         Resources.cancelImport()
         
     def handleExport(self, client, exportType, filename, print_callback=''):
@@ -740,11 +742,10 @@ class MainPage(RenderableLivePage):
         log.debug(u'browseURL: ' + url)
         if hasattr(os, 'startfile'):
             os.startfile(url)
-        elif sys.platform[:6] == "darwin":
-            import webbrowser
-            webbrowser.open(url, new=True)
         else:
-            os.system("firefox " + url + "&")
+            import webbrowser
+            browser = webbrowser.get(G.application.config.browser)
+            browser.open(url, new=True)
 
     def handleMergeXliffPackage(self, client, filename, from_source):
         """
@@ -1041,14 +1042,11 @@ class MainPage(RenderableLivePage):
                 os.startfile(filename)
             except UnicodeEncodeError:
                 os.startfile(filename.encode(Path.fileSystemEncoding))
-        elif sys.platform[:6] == "darwin":
-            import webbrowser
-            filename /= 'index.html'
-            webbrowser.open('file://'+filename)
         else:
+            import webbrowser
+            browser = webbrowser.get(G.application.config.browser)
             filename /= 'index.html'
-            log.debug(u"firefox file://"+filename+"&")
-            os.system("firefox file://"+filename+"&")
+            browser.open('file://'+filename)
 
     def _loadPackage(self, client, filename, newLoad=True,
                      destinationPackage=None):

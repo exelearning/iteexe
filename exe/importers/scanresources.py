@@ -1,6 +1,7 @@
+# -- coding: utf-8 --
 # ===========================================================================
 # eXe 
-# Copyright 2010-2011, Pedro Pena Perez
+# Copyright 2010-2011, Pedro Peña Pérez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -176,7 +177,7 @@ class Resources:
         resources['urls'] = {}
         
         url = Url(self.baseurl, self.baseurl)
-        url.createNode(node, 'Contenidos por directorio')
+        url.createNode(node, _('Contents of directory'))
         resources['urls'][url.relpath] = url
         try:
             for root, dirs, files in self._safewalk(self.baseurl):
@@ -190,7 +191,7 @@ class Resources:
             html = u""
             idevice = None
             if self.client:
-                self.client.call('XHupdateImportProgressWindow','Analizando directorio %d de %d: %s' % (i, self.numdirs,root.encode(sys.getfilesystemencoding())))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Analizing directory %d of %d: %s') % (i, self.numdirs,root.encode(sys.getfilesystemencoding())))
             for dir in dirs:
                 if self.cancel:
                     return
@@ -251,7 +252,7 @@ class Resources:
         for url in self.resources['urls'].values():
             if url.type == 'dir':
                 if self.client:
-                    self.client.call('XHupdateImportProgressWindow','Calculando rutas relativas para directorio %d de %d: %s' % (i, self.numdirs, url.relpath.encode(sys.getfilesystemencoding())))
+                    self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Calculating relative paths to directory %d of %d: %s') % (i, self.numdirs, url.relpath.encode(sys.getfilesystemencoding())))
                 url.relpaths = []
                 absd = ''.join([self.baseurl, os.path.sep, url.relpath])
                 for link in self.resources['urls'].values():
@@ -271,7 +272,7 @@ class Resources:
             if self.cancel:
                return
             if self.client:
-                self.client.call('XHupdateImportProgressWindow','Analizando etiquetas de fichero HTML %d de %d: %s' % (i, total, str(url)))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Analyzing HTML file labels %d of %d: %s') % (i, total, str(url)))
             content = open(url.path).read()
             encoding = detect(content)['encoding']
             ucontent = unicode(content,encoding)
@@ -284,8 +285,6 @@ class Resources:
                 pass
             url.setContent(ucontent,encoding)
             url.setSoup(soup)
-            if str(url) == 'introduccion4.htm':
-                pass
             for tag in soup.findAll():
                 if self.cancel:
                     return
@@ -340,7 +339,7 @@ class Resources:
                 content = unicode(content,encoding)
                 url.setContent(content,encoding)                
             if self.client:
-                self.client.call('XHupdateImportProgressWindow','Analizando exhaustivamente fichero %s %d de %d: %s' % (tipo, i, total, str(url)))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Exhaustively analyzed file %s %d of %d: %s') % (tipo, i, total, str(url)))
             matches = []
             for l, rl in self.resources['urls'][url.parentpath].relpaths:
                 low_rl = rl.lower()
@@ -393,7 +392,7 @@ class Resources:
                 if self.cancel:
                     return
                 if self.client:
-                    self.client.call('XHupdateImportProgressWindow','Calculando profundidad de enlaces')
+                    self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Calculating depth of links'))
                 self._computeDepths(url)
                 if self.cancel:
                     return
@@ -429,7 +428,7 @@ class Resources:
 
         if url.mime == 'text/html' and self.depths[str(url)] >= depth:
             if self.client:
-                self.client.call('XHupdateImportProgressWindow','Insertando %s' % (str(url)))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Inserting %s') % (str(url)))
             
             type = link.tag.name if link and link.tag else 'a'
             if type not in ['frame','iframe'] and node:

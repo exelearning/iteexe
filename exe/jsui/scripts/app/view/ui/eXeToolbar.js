@@ -92,6 +92,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     items: [
                                         {
                                             xtype: 'menuitem',
+                                            itemId: 'file_import_html',
                                             text: _('HTML Course')
                                         },
                                         {

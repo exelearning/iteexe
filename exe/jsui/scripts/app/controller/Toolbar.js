@@ -85,10 +85,101 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#file_import_xliff': {
                 click: this.importXliff
+            },
+            '#file_import_html': {
+                click: this.importHtml
             }
+        });
+        this.on({
+           importHtml2: this.importHtml2,
+           scope: this
         });
     },
 
+    importHtml: function(){
+        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeGetFolder,
+            title: _("Select the parent folder for import."),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                    nevow_clientToServerEvent('importPackage', this, '', 'html', fp.file.path);
+                }
+            }
+        });
+        fp.show();
+	},
+
+    importHtml2: function(path) {
+        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeOpen,
+            title: _("Select the entry point for import."),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
+                    nevow_clientToServerEvent('importPackage', this, '', 'html', path, fp.file.path);
+                }
+            }
+        });
+        fp.appendFilters([
+            { "typename": _("HTML Files"), "extension": "*.html", "regex": /.*\.htm[l]*$/ },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+        ]);
+        fp.show();
+    },
+    
+    updateImportProgressWindow: function(msg) {
+        if (!this.importProgressDisabled)
+            this.importProgress.updateText(msg);
+    },
+    
+    initImportProgressWindow: function(title) {
+        this.importProgressDisabled = false;
+        this.importProgress = Ext.Msg.show( {
+            title: title,
+            msg: _("Waiting progress..."),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.CANCEL,
+            fn: function(button) {
+                if (button == "cancel")    {
+                    this.importProgressDisabled = true;
+                    Ext.Msg.show( {
+                        title: _("Cancel Import?"),
+                        msg: _("There is an ongoing import. Do you want to cancel?"),
+                        scope: this,
+                        modal: true,
+                        buttons: Ext.Msg.YESNO,
+                        fn: function(button2) {
+	                        if (button2 == "yes")
+	                            nevow_clientToServerEvent('cancelImportPackage', this, '');
+	                        else
+	                            this.initImportProgressWindow(title);
+                        }
+                    });
+                }
+            }
+        });        
+    },
+    
+    errorImportProgressWindow: function(title, msg, url) {
+        Ext.Msg.show( {
+            title: title,
+            msg: msg,
+            modal: true,
+            buttons: Ext.Msg.OK,
+            fn: function(button) {
+                top.location = url;
+            }
+        });        
+    },
+
+    closeImportProgressWindow: function() {
+        this.importProgress.destroy();
+    },
+    
 	importXliff: function() {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,

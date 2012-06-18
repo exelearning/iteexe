@@ -82,16 +82,14 @@ Ext.define('eXe.controller.filepicker.File', {
 			directory = directory.id;
 		}
 		directory = this.getFullClearPath( directory );
-//		if (directory[0] != '/')
-//			directory = '/';
 		var fileStore = this.getFilepickerFileStore();
 		fileStore.load({
 			callback: function() {
 				var combo = this.getFiletypeCombo();
 				fileStore.filterBy( function(record, id) {
-					if (record.get("type") == "directory")
+					if (record.get("type") == "directory" || !combo)
 						return true;
-					return record.get("name").match(combo.value);
+   				    return record.get("name").match(combo.value);
 				});
 				this.getPlaceField().focus();
 			},
@@ -110,18 +108,31 @@ Ext.define('eXe.controller.filepicker.File', {
 		.replace(/\/\//, '/' );
 	},
 	onHandleRowClick: function ( grid, record, el, rowIndex, e ) {
-		if( record.get('type') != "directory" )
-			this.getPlaceField().setValue(record.get('name'));
+        var fp = this.getFilePicker();
+        if (fp.type == eXe.view.filepicker.FilePicker.modeGetFolder) {
+            if( record.get('type') == "directory" )
+                this.getPlaceField().setValue(record.get('name'));
+        }
+        else {
+			if( record.get('type') != "directory" )
+				this.getPlaceField().setValue(record.get('name'));
+        }
     },
     onHandleRowDblClick: function( grid, record, el, rowIndex, e ) { 
-		if( record.get('type') == "directory" )
-			this.application.fireEvent( "dirchange" , this.currentDir + '/' + record.get('name') );
-		else {
-			var fp = this.getFilePicker();
-			fp.status = eXe.view.filepicker.FilePicker.returnOk;
-			fp.file = { 'path': this.currentDir + '/' + record.get('name') };
-			fp.destroy();
-		}
+		var fp = this.getFilePicker();
+        if (fp.type == eXe.view.filepicker.FilePicker.modeGetFolder) {
+            if( record.get('type') == "directory" )
+                this.application.fireEvent( "dirchange" , this.currentDir + '/' + record.get('name') );
+        }
+        else {
+			if( record.get('type') == "directory" )
+				this.application.fireEvent( "dirchange" , this.currentDir + '/' + record.get('name') );
+			else {
+				fp.status = eXe.view.filepicker.FilePicker.returnOk;
+				fp.file = { 'path': this.currentDir + '/' + record.get('name') };
+				fp.destroy();
+		    }
+        }
 	},
 	onCancel: function() {
 		var fp = this.getFilePicker();
@@ -132,17 +143,35 @@ Ext.define('eXe.controller.filepicker.File', {
 	onOpen: function() {
 		var fp = this.getFilePicker(),
 			place = this.getPlaceField();
-		fp.status = eXe.view.filepicker.FilePicker.returnOk;
-		if (place.value) {
-			fp.file = { 'path': this.currentDir + '/' + place.value };
-			fp.destroy();
-		}
-		else {
-			var filelist = this.getFilesList();
-			var	selected = filelist.getSelectionModel().getSelection();
-			if (selected.length)
-				this.application.fireEvent( "dirchange" , this.currentDir + '/' + selected[0].get('name') );
-		}
+        if (fp.type == eXe.view.filepicker.FilePicker.modeGetFolder) {
+            if (place.value) {
+                fp.status = eXe.view.filepicker.FilePicker.returnOk;
+                fp.file = { 'path': this.currentDir + '/' + place.value };
+                fp.destroy();
+            }
+            else {
+                var filelist = this.getFilesList();
+                var selected = filelist.getSelectionModel().getSelection();
+                if (!selected.length || (selected.length && selected[0].get('type') != "directory")) {
+	                fp.status = eXe.view.filepicker.FilePicker.returnOk;
+	                fp.file = { 'path': this.currentDir };
+	                fp.destroy();
+                }
+            }
+        }
+        else {
+			if (place.value) {
+                fp.status = eXe.view.filepicker.FilePicker.returnOk;
+				fp.file = { 'path': this.currentDir + '/' + place.value };
+				fp.destroy();
+			}
+			else {
+				var filelist = this.getFilesList();
+				var	selected = filelist.getSelectionModel().getSelection();
+				if (selected.length && selected[0].get('type') == "directory")
+					this.application.fireEvent( "dirchange" , this.currentDir + '/' + selected[0].get('name') );
+			}
+        }
 	},
 	onSave: function() {
 		var fp = this.getFilePicker(),
@@ -182,10 +211,11 @@ Ext.define('eXe.controller.filepicker.File', {
 		});
 	},
 	onFilePickerShow: function() {
-		var fp = this.getFilePicker(),
+		var fp = this.getFilePicker();
 			combo = this.getFiletypeCombo();
 
-		combo.setValue(fp.filetypes.getAt(0).get('regex'));
+        if (combo)
+		  combo.setValue(fp.filetypes.getAt(0).get('regex'));
 		this.currentDir = Ext.state.Manager.get('filepicker-currentDir', '/');
 		this.application.fireEvent( "dirchange", this.currentDir );
 	},
