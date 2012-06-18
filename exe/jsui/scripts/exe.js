@@ -84,6 +84,10 @@ Ext.application({
             renderTo: Ext.getBody()
         });
         cmp1.show();
+        setTimeout(function(){
+		    Ext.get('loading').remove();
+		    Ext.get('loading-mask').fadeOut({remove:true});
+		  }, 250);
     },
 
     appFolder: "jsui/app"
