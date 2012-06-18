@@ -1,3 +1,7 @@
+_ = parent._
+Ext = parent.Ext
+eXe = parent.eXe
+
 function ideviceExists(ideviceName) {
     var ele = document.getElementById('ideviceSelect');
     var ideviceNameLower = ideviceName.toLowerCase()
@@ -20,53 +24,79 @@ function saveIdevice(title){
     var theForm = document.getElementById('contentForm')
     
     if (ideviceExists(title1)){
-        if (confirm('Do you want to overwrite the existing idevice ' + title1 + '?')){
-            theForm.action.value = "save"
-        }else
-            return
-    }else 
+        msg = new Ext.Template(_('Do you want to overwrite the existing idevice {idevice}?')).apply({idevice: title1});
+        Ext.Msg.show( {
+            title: _('Confirm'),
+            msg: msg,
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.YESNO,
+            fn: function(button) {
+                if (button == "yes")    {
+                    theForm.action.value = "save";
+                    theForm.submit();
+                }
+                else
+                    return;
+            }
+        });
+    }
+    else {
         theForm.action.value = "new";
-    theForm.submit()
+        theForm.submit()
+    }
     
 }
 
 // Called by the user to provide a file name to add to the package
 function importPackage(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("eXe idevices", "*.idp");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.type  = 'eXe';
-        path.value = fp.file.path;
-        var theForm = document.getElementById('contentForm')
-        theForm.action.value = "import";
-        theForm.submit()
-    }
+    var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+        type: eXe.view.filepicker.FilePicker.modeOpen,
+        title: _("Select a file"),
+        modal: true,
+        scope: this,
+        callback: function(fp) {
+            if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                var path  = document.getElementById('path'+blockId);
+                path.type  = 'eXe';
+                path.value = fp.file.path;
+                var theForm = document.getElementById('contentForm')
+            theForm.action.value = "import";
+                theForm.submit()
+            }
+        }
+    });
+    fp.appendFilters([
+        { "typename": _("eXe Idevices"), "extension": "*.idp", "regex": /.*\.idp$/ },
+        { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+    ]);
+    fp.show();    
 }
 
 function exportPackage(blockId, isNew) {
     if (isNew == 1)
-        alert("Please save the idevice first, then try to export it.")
+        Ext.Msg.alert("",_("Please save the idevice first, then try to export it."));
     else{
-        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-        var nsIFilePicker = Components.interfaces.nsIFilePicker;
-        var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-        fp.init(window, "Select a file", nsIFilePicker.modeSave);
-        fp.appendFilter("eXe idevices", "*.idp");
-        fp.appendFilters(nsIFilePicker.filterAll);
-        var res = fp.show();
-        if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-            var path  = document.getElementById('path'+blockId);
-            path.type  = 'eXe';
-            path.value = fp.file.path;
-            var theForm = document.getElementById('contentForm')
-            theForm.action.value = "export";
-            theForm.submit()
-        }
+	    var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+	        type: eXe.view.filepicker.FilePicker.modeSave,
+	        title: _("Select a file"),
+	        modal: true,
+	        scope: this,
+	        callback: function(fp) {
+	            if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+		            var path  = document.getElementById('path'+blockId);
+		            path.type  = 'eXe';
+		            path.value = fp.file.path;
+		            var theForm = document.getElementById('contentForm')
+		            theForm.action.value = "export";
+		            theForm.submit()
+	            }
+	        }
+	    });
+	    fp.appendFilters([
+	        { "typename": _("eXe Idevices"), "extension": "*.idp", "regex": /.*\.idp$/ },
+	        { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+	    ]);
+	    fp.show();            
     }
 }

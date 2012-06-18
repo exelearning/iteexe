@@ -71,7 +71,10 @@ class IdeviceStore:
         """
         Delete a generic idevice from idevicestore.
         """
+        log.debug("IdeviceStore.delGenericIdevice")
         self.generic.remove(idevice)
+        for listener in self.listeners:
+            listener.delIdevice(idevice)
 
 
     def register(self, listener):

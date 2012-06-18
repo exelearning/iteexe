@@ -73,7 +73,16 @@ class IdevicePane(Renderable, Resource):
         """
         log.debug("addIdevice id="+idevice.id+", title="+idevice.title)
         self.prototypes[idevice.id] = idevice
-        self.client.call('XHAddIdeviceListItem', idevice.id, idevice.title)
+        self.client.call('eXe.app.getController("Idevice").reload')
+
+        
+    def delIdevice(self, idevice):
+        """
+        Delete an iDevice from the pane
+        """
+        log.debug("delIdevice id="+idevice.id+", title="+idevice.title)
+        self.prototypes.pop(idevice.id)
+        self.client.call('eXe.app.getController("Idevice").reload')
 
         
     def render(self, request=None):

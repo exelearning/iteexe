@@ -205,6 +205,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         items: [
                             {
                                 xtype: 'menuitem',
+                                itemId: 'tools_idevice',
                                 text: _('iDevice Editor')
                             },
                             {

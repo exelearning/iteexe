@@ -20,6 +20,8 @@
 Ext.define('eXe.controller.Idevice', {
     extend: 'Ext.app.Controller',
 
+    stores: ['IdeviceXmlStore'],
+    
     init: function() {
         this.control({
         	'#idevice_panel': {
@@ -32,5 +34,10 @@ Ext.define('eXe.controller.Idevice', {
         var authoring = Ext.get('authoringIFrame').dom.contentWindow;
         if (authoring && authoring.submitLink)
         	authoring.submitLink("AddIdevice", record.data.id, 1);
+    },
+    
+    reload: function() {
+        var store = this.getIdeviceXmlStoreStore();
+        store.load();
     }
 });

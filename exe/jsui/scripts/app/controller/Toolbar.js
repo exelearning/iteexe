@@ -91,9 +91,25 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#file_quit': {
                 click: this.fileQuit
+            },
+            '#tools_idevice': {
+                click: this.toolsIdeviceEditor
             }
         });
     },
+
+	// Launch the iDevice Editor Window
+	toolsIdeviceEditor: function() {
+        var editor = new Ext.Window ({
+          height: 700, 
+          width: 800, 
+          modal: true,
+          id: 'ideviceeditorwin',
+          title: _("iDevice Editor"), 
+          html: '<iframe height="100%" width="100%" src="/editor"></iframe>'
+        });
+        editor.show();        
+	},
 
     fileQuit: function() {
 	    this.saveWorkInProgress();
@@ -205,7 +221,7 @@ Ext.define('eXe.controller.Toolbar', {
                       modal: true,
                       id: 'xliffimportwin',
                       title: _("XLIFF Import Preferences"), 
-                      html: '<iframe height="100%" width="100%" src="/xliffimport?path=' + fp.file.path +'"></iframe>'
+                      html: '<iframe height="100%" width="100%" src="/xliffimportpreferences?path=' + fp.file.path +'"></iframe>'
                     });
                     preferences.show();
                 }
@@ -232,7 +248,7 @@ Ext.define('eXe.controller.Toolbar', {
                       modal: true,
                       id: 'xliffexportwin',
 					  title: _("XLIFF Export Preferences"), 
-					  html: '<iframe height="100%" width="100%" src="/xliffexport?path=' + fp.file.path +'"></iframe>'
+					  html: '<iframe height="100%" width="100%" src="/xliffexportpreferences?path=' + fp.file.path +'"></iframe>'
 					});
                     preferences.show();
                 }
@@ -345,7 +361,7 @@ Ext.define('eXe.controller.Toolbar', {
 	    // is typically a subdirectory of tempDir, named as the package name.
 	
 	    // Still needs to be (a) opened, printed, and closed:
-	    var features = "width=680,height=440,status=1,resizable=1,left=260,top=200";
+	    var features = "width=680,height=440,status=1,resizable=1,left=260,top=200", print_url, printWin;
 	    print_url = webPrintDir+"/index.html"
 	
 	    printWin = window.open(print_url, "", features);
@@ -368,7 +384,7 @@ Ext.define('eXe.controller.Toolbar', {
     		scope: this,
     		success: function(response) {
 				var rm = eval(response.responseText),
-					menu = this.getRecentMenu();
+					menu = this.getRecentMenu(), text, item, previtem;
     			for (i in rm) {
     				text = rm[i].num + ". " + rm[i].path
     				previtem = menu.items.getAt(rm[i].num - 1);
@@ -391,7 +407,7 @@ Ext.define('eXe.controller.Toolbar', {
     		scope: this,
     		success: function(response) {
 				var styles = eval(response.responseText),
-					menu = this.getStylesMenu();
+					menu = this.getStylesMenu(), i, item;
     			for (i = styles.length-1; i >= 0; i--) {
     				item = Ext.create('Ext.menu.Item', { text: styles[i].label, itemId: styles[i].style });
     				menu.insert(0, item);

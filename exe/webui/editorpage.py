@@ -249,7 +249,7 @@ class EditorPage(RenderableResource):
         html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
         html += u' value="%s" />'  % _("Export iDevice")
         html += u'<br/><input class="button" type="button" name="quit" '
-        html += u'onclick=JavaScript:window.close()'         
+        html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'         
         html += u' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"

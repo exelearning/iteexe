@@ -81,7 +81,7 @@ Ext.define('eXe.controller.Outline', {
     onNodeDel: function(button, e, eOpts) {
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
-    		nodeid = '0';
+    		nodeid = '0', msg;
     	
     	if (selected != 0)
     		nodeid = selected[0].data.id;
@@ -106,7 +106,7 @@ Ext.define('eXe.controller.Outline', {
     onNodeRename: function() {
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
-    		nodeid = '0';
+    		nodeid = '0', title;
     	
     	if (selected != 0)
     		nodeid = selected[0].data.id;
@@ -138,7 +138,7 @@ Ext.define('eXe.controller.Outline', {
     select: function(nodeid) {
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selmodel = outlineTreePanel.getSelectionModel(),
-    		store = this.getOutlineXmlTreeStoreStore();
+    		store = this.getOutlineXmlTreeStoreStore(), node;
     		
     	node = store.getNodeById(nodeid);
     	if (node) {
