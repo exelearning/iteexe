@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-15 18:07+0200\n"
+"POT-Creation-Date: 2012-06-07 13:43+0200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -24,10 +24,10 @@ msgstr "Java applet"
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:39
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:318
-#: exe/engine/idevicestore.py:376 exe/engine/idevicestore.py:404
-#: exe/engine/idevicestore.py:426 exe/engine/idevicestore.py:482
-#: exe/engine/idevicestore.py:510 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:321
+#: exe/engine/idevicestore.py:379 exe/engine/idevicestore.py:407
+#: exe/engine/idevicestore.py:429 exe/engine/idevicestore.py:485
+#: exe/engine/idevicestore.py:513 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:47
@@ -460,8 +460,8 @@ msgstr ""
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
 #: exe/engine/field.py:3359 exe/engine/field.py:3407
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:367
-#: exe/engine/idevicestore.py:475 exe/engine/truefalseidevice.py:50
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:370
+#: exe/engine/idevicestore.py:478 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
 #: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:164
 #: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
@@ -962,7 +962,8 @@ msgid ""
 msgstr "Írja be azt a szöveget, amely kapcsolódik az állományhoz."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:735
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:736
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:143
 msgid "Description"
 msgstr "Leírás"
 
@@ -1132,16 +1133,16 @@ msgstr "Következő"
 msgid "Close"
 msgstr "Bezárás"
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:424
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:427
 msgid "Reading Activity 0.11"
 msgstr "Olvasnivaló 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:280
-#: exe/engine/idevicestore.py:316
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:283
+#: exe/engine/idevicestore.py:319
 msgid "Reading Activity"
 msgstr "Olvasnivaló"
 
-#: exe/engine/idevicestore.py:319
+#: exe/engine/idevicestore.py:322
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1161,7 +1162,7 @@ msgstr ""
 "esetleg néhány \n"
 " másik feladatot kell befejezni az olvasottak alapján.</p>"
 
-#: exe/engine/idevicestore.py:324
+#: exe/engine/idevicestore.py:327
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1188,11 +1189,11 @@ msgstr ""
 "melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik "
 "nyújt többet. </li></ol>"
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:467
+#: exe/engine/idevicestore.py:362 exe/engine/idevicestore.py:470
 msgid "What to read"
 msgstr "Amit olvasnia kell"
 
-#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:468
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:471
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1202,14 +1203,14 @@ msgstr ""
 "A hivatkozások formája függ az Ön tanszékén, karán előnyben \n"
 "részesített formától."
 
-#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:402
-#: exe/engine/idevicestore.py:410 exe/engine/idevicestore.py:471
-#: exe/engine/idevicestore.py:508 exe/engine/idevicestore.py:516
+#: exe/engine/idevicestore.py:366 exe/engine/idevicestore.py:405
+#: exe/engine/idevicestore.py:413 exe/engine/idevicestore.py:474
+#: exe/engine/idevicestore.py:511 exe/engine/idevicestore.py:519
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Tevékenység"
 
-#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:472
+#: exe/engine/idevicestore.py:367 exe/engine/idevicestore.py:475
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -1217,7 +1218,7 @@ msgstr ""
 "Írja le a tanuló által vállalt ovasmányokhoz kapcsolódó feladatokat. \n"
 "Ez hasznos segítség a tanuló számára."
 
-#: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
+#: exe/engine/idevicestore.py:371 exe/engine/idevicestore.py:479
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1232,12 +1233,12 @@ msgstr ""
 "fogalmazunk meg a \n"
 "vita elindításához."
 
-#: exe/engine/idevicestore.py:374 exe/engine/idevicestore.py:383
-#: exe/engine/idevicestore.py:480 exe/engine/idevicestore.py:489
+#: exe/engine/idevicestore.py:377 exe/engine/idevicestore.py:386
+#: exe/engine/idevicestore.py:483 exe/engine/idevicestore.py:492
 msgid "Objectives"
 msgstr "Célok"
 
-#: exe/engine/idevicestore.py:377 exe/engine/idevicestore.py:483
+#: exe/engine/idevicestore.py:380 exe/engine/idevicestore.py:486
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1249,16 +1250,16 @@ msgstr ""
 "készségeket fejleszt \n"
 "a tananyag"
 
-#: exe/engine/idevicestore.py:384 exe/engine/idevicestore.py:490
+#: exe/engine/idevicestore.py:387 exe/engine/idevicestore.py:493
 msgid "Type the learning objectives for this resource."
 msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
-#: exe/engine/idevicestore.py:387 exe/engine/idevicestore.py:397
-#: exe/engine/idevicestore.py:493 exe/engine/idevicestore.py:503
+#: exe/engine/idevicestore.py:390 exe/engine/idevicestore.py:400
+#: exe/engine/idevicestore.py:496 exe/engine/idevicestore.py:506
 msgid "Preknowledge"
 msgstr "Előismeret"
 
-#: exe/engine/idevicestore.py:390 exe/engine/idevicestore.py:496
+#: exe/engine/idevicestore.py:393 exe/engine/idevicestore.py:499
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1276,7 +1277,7 @@ msgstr ""
 "<li>        Ismerjék a klasszikus logika alapfogalmait. </li>\n"
 "<li>        A tantárgy nincs elismerethez kötve. </li></ul>\n"
 
-#: exe/engine/idevicestore.py:398 exe/engine/idevicestore.py:504
+#: exe/engine/idevicestore.py:401 exe/engine/idevicestore.py:507
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1284,7 +1285,7 @@ msgstr ""
 "Írja le azokat a tanuló számára szükséges előismereteket, amelyek a \n"
 "soron következő tananyag hatékony elsajátításához szükségesek."
 
-#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:511
+#: exe/engine/idevicestore.py:408 exe/engine/idevicestore.py:514
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1298,11 +1299,11 @@ msgstr ""
 "akadályozhatják\n"
 "a feladat teljesítésében."
 
-#: exe/engine/idevicestore.py:411 exe/engine/idevicestore.py:517
+#: exe/engine/idevicestore.py:414 exe/engine/idevicestore.py:520
 msgid "Describe the tasks the learners should complete."
 msgstr "Írja le azokat a feladatokat, amelyeket a tanulónak teljesíteni kell!"
 
-#: exe/engine/idevicestore.py:427
+#: exe/engine/idevicestore.py:430
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1322,7 +1323,7 @@ msgstr ""
 "néhány \n"
 "elgondolkodtató tanácsot ad.</p>"
 
-#: exe/engine/idevicestore.py:432
+#: exe/engine/idevicestore.py:435
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -1678,7 +1679,8 @@ msgstr ""
 "SIKERTELEN MENTÉS!\n"
 "Az utolsó sikeres mentés: %s."
 
-#: exe/engine/package.py:745 exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
+#: exe/engine/package.py:745 exe/jsui/scripts/app/controller/Toolbar.js:303
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "iDevice Editor"
 msgstr "iDevice szerkesztő"
 
@@ -2114,9 +2116,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:62 exe/jsui/mainpage.py:199
-#: exe/jsui/mainpage.py:798 exe/jsui/mainpage.py:927 exe/jsui/mainpage.py:1002
-#: exe/jsui/mainpage.py:1023
+#: exe/export/cmdlineexporter.py:62 exe/jsui/mainpage.py:202
+#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:935 exe/jsui/mainpage.py:1010
+#: exe/jsui/mainpage.py:1031
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2186,19 +2188,52 @@ msgstr ""
 msgid "Invalid output package"
 msgstr ""
 
-#: exe/jsui/mainpage.py:217 exe/jsui/mainpage.py:653 exe/jsui/mainpage.py:790
+#: exe/importers/scanresources.py:180
+msgid "Contents of directory"
+msgstr ""
+
+#: exe/importers/scanresources.py:194
+#, python-format
+msgid "Analizing directory %d of %d: %s"
+msgstr ""
+
+#: exe/importers/scanresources.py:255
+#, python-format
+msgid "Calculating relative paths to directory %d of %d: %s"
+msgstr ""
+
+#: exe/importers/scanresources.py:275
+#, python-format
+msgid "Analyzing HTML file labels %d of %d: %s"
+msgstr ""
+
+#: exe/importers/scanresources.py:342
+#, python-format
+msgid "Exhaustively analyzed file %s %d of %d: %s"
+msgstr ""
+
+#: exe/importers/scanresources.py:395
+msgid "Calculating depth of links"
+msgstr ""
+
+#: exe/importers/scanresources.py:431
+#, python-format
+msgid "Inserting %s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:220 exe/jsui/mainpage.py:658 exe/jsui/mainpage.py:798
 msgid "Cannot access directory named "
 msgstr "Nem nevezheti át a könyvtárat"
 
-#: exe/jsui/mainpage.py:217 exe/jsui/mainpage.py:655 exe/jsui/mainpage.py:790
+#: exe/jsui/mainpage.py:220 exe/jsui/mainpage.py:660 exe/jsui/mainpage.py:798
 msgid ". Please use ASCII names."
 msgstr ". Kérem használjon ASCII nevet."
 
-#: exe/jsui/mainpage.py:226
+#: exe/jsui/mainpage.py:229
 msgid "SAVE FAILED!"
 msgstr "SIKERTELEN MENTÉS!"
 
-#: exe/jsui/mainpage.py:230 exe/jsui/mainpage.py:519 exe/jsui/mainpage.py:860
+#: exe/jsui/mainpage.py:233 exe/jsui/mainpage.py:522 exe/jsui/mainpage.py:868
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2207,43 +2242,51 @@ msgstr ""
 "SIKERTELEN MENTÉS!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:233
+#: exe/jsui/mainpage.py:237 exe/jsui/mainpage.py:242 exe/jsui/mainpage.py:245
 #, python-format
 msgid "Package saved to: %s"
 msgstr "A csomag el lett mentve a következő helyre: %s"
 
-#: exe/jsui/mainpage.py:441 exe/jsui/mainpage.py:547
+#: exe/jsui/mainpage.py:444 exe/jsui/mainpage.py:550
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/jsui/mainpage.py:461
+#: exe/jsui/mainpage.py:464
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/jsui/mainpage.py:589
+#: exe/jsui/mainpage.py:592
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:680 exe/jsui/mainpage.py:687 exe/jsui/mainpage.py:690
-#: exe/jsui/mainpage.py:693 exe/jsui/mainpage.py:696 exe/jsui/mainpage.py:911
+#: exe/jsui/mainpage.py:630
+msgid "Importing HTML..."
+msgstr ""
+
+#: exe/jsui/mainpage.py:633
+msgid "Error importing HTML:\n"
+msgstr ""
+
+#: exe/jsui/mainpage.py:685 exe/jsui/mainpage.py:692 exe/jsui/mainpage.py:695
+#: exe/jsui/mainpage.py:698 exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:919
 msgid "EXPORT FAILED!"
 msgstr "SIKERTELEN EXPORTÁLÁS!"
 
-#: exe/jsui/mainpage.py:758
+#: exe/jsui/mainpage.py:767
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:760
+#: exe/jsui/mainpage.py:770
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:816
+#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:824
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2252,17 +2295,17 @@ msgstr ""
 "SIKERTELEN KICSOMAGOLÁS!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:818
+#: exe/jsui/mainpage.py:826
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "A csomag ki lett bontva a következő helyre: %s"
 
-#: exe/jsui/mainpage.py:846 exe/jsui/mainpage.py:888 exe/jsui/mainpage.py:955
+#: exe/jsui/mainpage.py:854 exe/jsui/mainpage.py:896 exe/jsui/mainpage.py:963
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/jsui/mainpage.py:852 exe/jsui/mainpage.py:894 exe/jsui/mainpage.py:961
+#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:902 exe/jsui/mainpage.py:969
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2271,10 +2314,10 @@ msgstr ""
 "A %s könyvtárnév már létezik. Kérem, válasszon más nevet, vagy törölje a "
 "létező könyvtárat, s próbálja újra!"
 
-#: exe/jsui/mainpage.py:901 exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:928
-#: exe/jsui/mainpage.py:934 exe/jsui/mainpage.py:968 exe/jsui/mainpage.py:986
-#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage.py:1009
-#: exe/jsui/mainpage.py:1024 exe/jsui/mainpage.py:1030
+#: exe/jsui/mainpage.py:909 exe/jsui/mainpage.py:923 exe/jsui/mainpage.py:936
+#: exe/jsui/mainpage.py:942 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:994
+#: exe/jsui/mainpage.py:1011 exe/jsui/mainpage.py:1017
+#: exe/jsui/mainpage.py:1032 exe/jsui/mainpage.py:1038
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2283,24 +2326,24 @@ msgstr ""
 "SIKERTELEN EXPORTÁLÁS!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:936 exe/jsui/mainpage.py:970
-#: exe/jsui/mainpage.py:988 exe/jsui/mainpage.py:1011 exe/jsui/mainpage.py:1032
+#: exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:978
+#: exe/jsui/mainpage.py:996 exe/jsui/mainpage.py:1019 exe/jsui/mainpage.py:1040
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportálva %s"
 
-#: exe/jsui/mainpage.py:1070
+#: exe/jsui/mainpage.py:1075
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "A(z) %s állomány nem létezik vagy nem olvasható."
 
-#: exe/jsui/mainpage.py:1074
+#: exe/jsui/mainpage.py:1079
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Az állományt nem lehet betölteni. Kérem, küldje el e-mail-ben az "
 "állományt a bugs@exelearning.org címre!"
 
-#: exe/jsui/mainpage.py:1077
+#: exe/jsui/mainpage.py:1082
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2309,98 +2352,207 @@ msgstr ""
 "Sajnálom, rossz fájlformátum:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1079
+#: exe/jsui/mainpage.py:1084
 msgid "Sorry, wrong file format"
 msgstr "Sajnálom, rossz fájlformátum"
 
-#: exe/jsui/propertiespage.py:77
+#: exe/jsui/propertiespage.py:85
 msgid "Failed to get properties"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:88
+#: exe/jsui/propertiespage.py:102
 msgid "Failed to save properties"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:88
-msgid "Delete \"{node}\" node and all its children?"
+#: exe/jsui/scripts/app/controller/MainTab.js:90
+msgid "Settings Saved"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:90
-msgid "Confirm"
+#: exe/jsui/scripts/app/controller/MainTab.js:117
+#: exe/jsui/scripts/app/controller/MainTab.js:174
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
+msgid "Show Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:112
-msgid "Rename \"{node}\" node"
+#: exe/jsui/scripts/app/controller/MainTab.js:127 exe/webui/element.py:518
+msgid "Select an image"
+msgstr "Válasszon egy képet"
+
+#: exe/jsui/scripts/app/controller/MainTab.js:144
+#: exe/jsui/scripts/app/controller/MainTab.js:178
+#: exe/jsui/scripts/app/controller/MainTab.js:206
+msgid "Hide Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:116
-msgid "Enter the new name:"
+#: exe/jsui/scripts/app/controller/MainTab.js:153
+msgid "Image Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:95
-msgid "Select the parent folder for export."
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:113
-msgid "Export text package as"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:122
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:154
-msgid "Text File"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:123
-#: exe/jsui/scripts/app/controller/Toolbar.js:152
-#: exe/jsui/scripts/app/controller/Toolbar.js:287
-#: exe/jsui/scripts/app/controller/Toolbar.js:357
+#: exe/jsui/scripts/app/controller/MainTab.js:154
+#: exe/jsui/scripts/app/controller/Toolbar.js:334
+#: exe/jsui/scripts/app/controller/Toolbar.js:353
+#: exe/jsui/scripts/app/controller/Toolbar.js:388
+#: exe/jsui/scripts/app/controller/Toolbar.js:453
+#: exe/jsui/scripts/app/controller/Toolbar.js:480
+#: exe/jsui/scripts/app/controller/Toolbar.js:522
+#: exe/jsui/scripts/app/controller/Toolbar.js:551
+#: exe/jsui/scripts/app/controller/Toolbar.js:688
+#: exe/jsui/scripts/app/controller/Toolbar.js:758
 msgid "All Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:130
-msgid "Export SCORM package as"
+#: exe/jsui/scripts/app/controller/MainTab.js:188
+#: exe/jsui/scripts/app/controller/MainTab.js:213
+msgid "Error"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:132
-msgid "Export IMS package as"
+#: exe/jsui/scripts/app/controller/Outline.js:144
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
+msgid "Insert Package"
+msgstr "Csomag beszúrása"
+
+#: exe/jsui/scripts/app/controller/Outline.js:147
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
+msgid "Extract Package"
+msgstr "Kicsomagolás"
+
+#: exe/jsui/scripts/app/controller/Outline.js:200
+msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:134
-msgid "Export Website package as"
+#: exe/jsui/scripts/app/controller/Outline.js:202
+msgid "Confirm"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:136
-msgid "Export Common Cartridge as"
+#: exe/jsui/scripts/app/controller/Outline.js:224
+msgid "Rename \"{node}\" node"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:138
-msgid "INVALID VALUE PASSED TO exportPackage"
+#: exe/jsui/scripts/app/controller/Outline.js:228
+msgid "Enter the new name:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:151
-msgid "SCORM/IMS/ZipFile"
+#: exe/jsui/scripts/app/controller/Toolbar.js:257
+msgid "About"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:277
-msgid "Open File"
+#: exe/jsui/scripts/app/controller/Toolbar.js:290
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:324
+msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:286
-#: exe/jsui/scripts/app/controller/Toolbar.js:356
+#: exe/jsui/scripts/app/controller/Toolbar.js:333
+#: exe/jsui/scripts/app/controller/Toolbar.js:352
+#: exe/jsui/scripts/app/controller/Toolbar.js:687
+#: exe/jsui/scripts/app/controller/Toolbar.js:757
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:299
+#: exe/jsui/scripts/app/controller/Toolbar.js:343
+msgid "Save extracted package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:362
+msgid "Select the parent folder for import."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:377
+msgid "Select the entry point for import."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:387
+msgid "HTML Files"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:402
+msgid "Waiting progress..."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:410
+msgid "Cancel Import?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
+msgid "There is an ongoing import. Do you want to cancel?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:434
+msgid "Select Xliff file to import"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:444
+msgid "XLIFF Import Preferences"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:452
+#: exe/jsui/scripts/app/controller/Toolbar.js:479
+msgid "XLIFF Files"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:461
+msgid "Export to Xliff as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:471
+msgid "XLIFF Export Preferences"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:494
+msgid "Select the parent folder for export."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:512
+msgid "Export text package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:521
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
+msgid "Text File"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:529
+msgid "Export SCORM package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:531
+msgid "Export IMS package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:533
+msgid "Export Website package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:535
+msgid "Export Common Cartridge as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:537
+msgid "INVALID VALUE PASSED TO exportPackage"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:550
+msgid "SCORM/IMS/ZipFile"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:678
+msgid "Open File"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:700
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:300
+#: exe/jsui/scripts/app/controller/Toolbar.js:701
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it before loading the new package?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:339
+#: exe/jsui/scripts/app/controller/Toolbar.js:740
 msgid "Select a File"
 msgstr ""
 
@@ -2418,7 +2570,7 @@ msgid "Size"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:91
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:774
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:776
 msgid "Type"
 msgstr ""
 
@@ -2426,14 +2578,42 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:67
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:68 exe/webui/editorpage.py:245
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:68
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Mentés"
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:83
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:84
 msgid "Place"
 msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:34
+msgid "SCORM 1.2 Options"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:42
+msgid "Add Previous/Next links within SCOs?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
+msgid ""
+"Checking this box will cause eXe to add Previous and Next links to "
+"individual pages within your SCO. The LMS will also still add this kind "
+"of functionality."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
+msgid ""
+"Checking this box will cause eXe to add Previous and Next links to "
+"individual pages within your SCO.  This requires a non-standard extension"
+" to SCORM 1.2 and is only known to work with some versions of Moodle."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:846
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
+msgid "Apply"
+msgstr "Mentés"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:23
 msgid "Afar "
@@ -3107,37 +3287,37 @@ msgstr "Kínai"
 msgid "Zulu "
 msgstr "Zulu"
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:704
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:705
 msgid "Dublin Core Metadata"
 msgstr "Dublin Core metaadat"
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:710
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:711
 #: exe/webui/galleryblock.py:204
 msgid "Title"
 msgstr "Cím"
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:711
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:712
 #, fuzzy
 msgid "The name given to the resource."
 msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:717
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:718
 msgid "Creator"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:718
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:719
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:726
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:727
 msgid "Subject"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:727
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:728
 msgid "The topic of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:730
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:731
 msgid ""
 "Typically, Subject will be expressed as keywords, key phrases or "
 "classification codes that describe a topic of the resource. Recommended "
@@ -3145,37 +3325,38 @@ msgid ""
 " classification scheme."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:736
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:737
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "An account of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:743
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:744
 msgid "Publisher"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:744
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:745
 msgid "An entity responsible for making the resource available."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:750
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:751
 msgid "Contributors"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:751
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:752
 msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:763
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:765
 msgid "Date"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:764
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:766
 msgid "A date of an event in the lifecycle of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:767
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:769
 msgid ""
 "Typically, Date will be associated with the creation or availability of "
 "the resource. Recommended best practice for encoding the date value is "
@@ -3184,11 +3365,11 @@ msgid ""
 "includes (among others) dates of the form YYYY-MM-DD."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:775
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:777
 msgid "The nature or genre of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:778
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:780
 msgid ""
 "Type includes terms describing general categories, functions, or genres, "
 "for content. Recommended best practice is to select a value from a "
@@ -3197,65 +3378,65 @@ msgid ""
 "element."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:783
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:785
 msgid "Format"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:790
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:792
 #, fuzzy
 msgid "Select a Format."
 msgstr "Válasszo formátumot"
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:796
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:798
 msgid "Identifier"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:797
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:799
 msgid "An unambiguous reference to the resource within a given context."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:803
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:805
 msgid "Source"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:804
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:806
 msgid "A Reference to a resource from which the present resource is derived."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:810
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:812
 msgid "Language"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:812
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:814
 #, fuzzy
 msgid "Select a language."
 msgstr "Válasszon nyelvet"
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:818
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:820
 msgid "Relation"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:819
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:821
 msgid "A reference to a related resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:825
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:827
 msgid "Coverage"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:826
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:828
 msgid "The extent or scope of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:834
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:836
 msgid "Rights"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:835
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:837
 msgid "Information about rights held in and over the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:838
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:840
 msgid ""
 "Typically, a Rights element will contain a rights management statement "
 "for the resource, or reference a service providing such information. "
@@ -3270,13 +3451,92 @@ msgstr ""
 "tulajdonjogokat. Ha a \"Jogok\" elem hiányzik, nincs feltétel, amely "
 "alapján megállapítható lenne a forrás jogállása és egyéb jogok."
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:844
-msgid "Apply"
-msgstr "Mentés"
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
+msgid "Project Properties"
+msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:851
-#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:867
-msgid "Error"
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
+msgid "Project Title"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
+msgid "The project's title."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
+msgid "Header Background"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
+msgid "Background image for a header (an image 100px high is recommended)."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
+msgid "Load Image"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:84
+msgid "Clear Image"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
+msgid "Tile background image?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
+msgid "Author"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
+msgid "Primary author of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
+msgid "License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
+msgid "Select a license."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+msgid "Footer"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
+msgid "Web pages footer."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:152
+msgid "Taxonomy"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
+msgid "Level 1"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
+msgid "Default name for level 1 nodes"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
+msgid "Level 2"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
+msgid "Default name for level 2 nodes"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
+msgid "Level 3"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+msgid "Default name for level 3 nodes"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:178
+msgid "Update Tree"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
@@ -3287,24 +3547,36 @@ msgstr "Tervező nézet"
 msgid "iDevices"
 msgstr "iDevice modulok"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:37
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:39
 msgid "Authoring"
 msgstr "Szerzői nézet"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:41
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:46
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:49
 msgid "Package"
 msgstr "Csomag"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:50
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:53
 msgid "Metadata"
 msgstr "Metaadat"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:109
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
+msgid "Dublin Core"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:62
+msgid "LOM"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
+msgid "LOM.es"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:73
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Export"
 msgstr "Exportálás"
 
@@ -3312,7 +3584,7 @@ msgstr "Exportálás"
 msgid "Add Page"
 msgstr "Új lap"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:37 exe/webui/block.py:230
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:230
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
@@ -3321,7 +3593,7 @@ msgstr "Új lap"
 msgid "Delete"
 msgstr "Törlés"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:43
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
 msgstr "Átnevezés"
 
@@ -3343,145 +3615,143 @@ msgstr "Fel"
 msgid "Move node down"
 msgstr "Le"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:31
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:37
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:42
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
+msgid "New Window"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Open"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:47
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
 msgid "Recent Projects..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:58
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:73
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:81
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
 msgid "Print"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:89
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
 msgid "Import"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:95
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:176
 msgid "HTML Course"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:99
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
 msgid "XLIFF File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:115
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
 msgid "Common Cartridge"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:120
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:125
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
 msgid "IMS Content Package"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:130
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
 msgstr "Weboldal"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:136
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
 msgid "Self-contained Folder"
 msgstr "Könyvtárba rendezve"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "Zip File"
 msgstr "Zip állomány"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:149
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:159
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "iPod Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:164
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:172
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:178
-msgid "Insert Package"
-msgstr "Csomag beszúrása"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
-msgid "Extract Package"
-msgstr "Kicsomagolás"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192 exe/webui/editorpage.py:253
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:253
 #, fuzzy
 msgid "Quit"
 msgstr "Elküld"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:209
-msgid "Preferences"
-msgstr "Beállítások"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:216
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:238
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:242
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "eXe Manual"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:253
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:261
-msgid "eXe Live Chat"
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
+msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:395
 msgid "About eXe"
+msgstr ""
+
+#: exe/jsui/scripts/exe.js:99
+msgid ""
+"If you leave this page eXe application continues to run. Please use the "
+"menu File->Quit if you really want to exit the application."
 msgstr ""
 
 #: exe/webui/appletblock.py:83
@@ -3658,7 +3928,7 @@ msgid "Retroalimentacion"
 msgstr ""
 
 #: exe/webui/common.py:70 exe/webui/editorpage.py:220
-#: exe/webui/preferencespage.py:85 exe/webui/xliffexportpreferencespage.py:92
+#: exe/webui/preferencespage.py:85 exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: eLearning XHTML szerkesztő"
@@ -3857,7 +4127,7 @@ msgid "Preview"
 msgstr "Előnézet"
 
 #: exe/webui/editorpane.py:269 exe/webui/preferencespage.py:116
-#: exe/webui/xliffexportpreferencespage.py:144
+#: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
 msgstr "Mégse"
@@ -3930,10 +4200,6 @@ msgstr "HIBA Az Element.renderView közvetlenül hívta a %s osztályt"
 #: exe/webui/element.py:495
 msgid "Add Image"
 msgstr "Kép hozzáadása"
-
-#: exe/webui/element.py:518
-msgid "Select an image"
-msgstr "Válasszon egy képet"
 
 #: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1585
 msgid "Display as:"
@@ -4185,7 +4451,7 @@ msgstr ""
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr ""
 
-#: exe/webui/preferencespage.py:112 exe/webui/xliffexportpreferencespage.py:137
+#: exe/webui/preferencespage.py:112 exe/webui/xliffexportpreferencespage.py:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "OK"
@@ -4223,23 +4489,23 @@ msgstr "Elrejtés"
 msgid "Reflexiona"
 msgstr "Reflexió"
 
-#: exe/webui/renderable.py:242 exe/webui/xliffexportpreferencespage.py:55
+#: exe/webui/renderable.py:243 exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
 msgstr "címke"
 
-#: exe/webui/renderable.py:252
+#: exe/webui/renderable.py:253
 msgid "key"
 msgstr "kulcs"
 
-#: exe/webui/renderable.py:254
+#: exe/webui/renderable.py:255
 msgid "keycode"
 msgstr "kulcskód"
 
-#: exe/webui/renderable.py:257
+#: exe/webui/renderable.py:258
 msgid "title"
 msgstr "cím"
 
-#: exe/webui/renderable.py:259
+#: exe/webui/renderable.py:260
 msgid "tooltiptext"
 msgstr ""
 
@@ -4372,19 +4638,19 @@ msgstr "Használja ezt az anyagot"
 msgid "article "
 msgstr "cikk"
 
-#: exe/webui/xliffexportpreferencespage.py:103
+#: exe/webui/xliffexportpreferencespage.py:102
 msgid "Select source language"
 msgstr ""
 
-#: exe/webui/xliffexportpreferencespage.py:108
+#: exe/webui/xliffexportpreferencespage.py:107
 msgid "Select target language"
 msgstr ""
 
-#: exe/webui/xliffexportpreferencespage.py:113
+#: exe/webui/xliffexportpreferencespage.py:112
 msgid "Copy source also in target"
 msgstr ""
 
-#: exe/webui/xliffexportpreferencespage.py:118
+#: exe/webui/xliffexportpreferencespage.py:117
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (i.g. OmegaT ) just translate the "
@@ -4392,11 +4658,11 @@ msgid ""
 "will need to pre-fill target field with a copy of the source field."
 msgstr ""
 
-#: exe/webui/xliffexportpreferencespage.py:124
+#: exe/webui/xliffexportpreferencespage.py:123
 msgid "Wrap fields in CDATA"
 msgstr ""
 
-#: exe/webui/xliffexportpreferencespage.py:129
+#: exe/webui/xliffexportpreferencespage.py:128
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
