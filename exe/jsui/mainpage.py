@@ -230,19 +230,19 @@ class MainPage(RenderableLivePage):
         try:
             self.package.save(filename) # This can change the package name
         except Exception, e:
-            client.alert(_('SAVE FAILED!\n%s' % str(e)))
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
         # Tell the user and continue
         if onDone:
-            client.alert(_(u'Package saved to: %s' % filename), onDone)
+            client.alert(_(u'Package saved to: %s') % filename, onDone)
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.alert(_(u'Package saved to: %s' % filename), 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
+            client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
                          filter_func=otherSessionPackageClients)
         else:
-            client.alert(_(u'Package saved to: %s' % filename), filter_func=otherSessionPackageClients)
+            client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
 
 
     def handleLoadPackage(self, client, filename, filter_func=None):
@@ -519,7 +519,7 @@ class MainPage(RenderableLivePage):
             descrip_file.close()
 
         except Exception, e:
-            client.alert(_('SAVE FAILED!\n%s' % str(e)))
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
             log.error("handleTinyMCEimageChoice unable to copy local image "\
                     +"file to server prevew, error = " + str(e))
             raise
@@ -589,7 +589,7 @@ class MainPage(RenderableLivePage):
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
                         latex_is_file=True)
             except Exception, e:
-                client.alert(_('MimeTeX compile failed!\n%s' % str(e)))
+                client.alert(_('MimeTeX compile failed!\n%s') % str(e))
                 log.error("handleTinyMCEmath unable to compile LaTeX using "\
                     +"mimetex, error = " + str(e))
                 raise
@@ -804,7 +804,7 @@ class MainPage(RenderableLivePage):
 
         if Path(filename).exists() and existOk != 'true':
             msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-            client.alert(_(u'EXTRACT FAILED!\n%s' % msg))
+            client.alert(_(u'EXTRACT FAILED!\n%s') % msg)
             return
 
         try:
@@ -821,9 +821,9 @@ class MainPage(RenderableLivePage):
             # Save the new package
             newPackage.save(filename)
         except Exception, e:
-            client.alert(_('EXTRACT FAILED!\n%s' % str(e)))
+            client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Package extracted to: %s' % filename))
+        client.alert(_(u'Package extracted to: %s') % filename)
 
     # Public Methods
 
@@ -865,7 +865,7 @@ class MainPage(RenderableLivePage):
                                          imagesDir, scriptsDir, templatesDir)
             singlePageExport.export(self.package, printFlag)
         except Exception, e:
-            client.alert(_('SAVE FAILED!\n%s' % str(e)))
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
         # Show the newly exported web site in a new window
         if not printFlag:
@@ -920,7 +920,7 @@ class MainPage(RenderableLivePage):
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.exportZip(self.package)
         except Exception, e:
-            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
         
@@ -933,13 +933,13 @@ class MainPage(RenderableLivePage):
                 filename += '.txt'
                 if Path(filename).exists():
                     msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s' % msg))
+                    client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
             textExport = TextExport(filename)
             textExport.export(self.package)
         except Exception, e:
-            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
         
@@ -991,7 +991,7 @@ class MainPage(RenderableLivePage):
             xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
         except Exception,e:
-            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
 
@@ -1008,13 +1008,13 @@ class MainPage(RenderableLivePage):
                 filename += '.zip'
                 if Path(filename).exists():
                     msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s' % msg))
+                    client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
             scormExport = ScormExport(self.config, stylesDir, filename, scormType)
             scormExport.export(self.package)
         except Exception, e:
-            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Exported to %s') % filename)
 
@@ -1029,15 +1029,15 @@ class MainPage(RenderableLivePage):
                 filename += '.zip'
                 if Path(filename).exists():
                     msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s' % msg))
+                    client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
             imsExport = IMSExport(self.config, stylesDir, filename)
             imsExport.export(self.package)
         except Exception, e:
-            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s' % filename))
+        client.alert(_(u'Exported to %s') % filename)
 
     # Utility methods
     def _startFile(self, filename):
