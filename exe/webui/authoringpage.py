@@ -156,7 +156,9 @@ class AuthoringPage(RenderableResource):
         html += u'@import url(/style/%s/content.css);\n' % self.package.style
         html += u'</style>\n'
         if G.application.config.assumeMediaPlugins: 
-            html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"			
+            html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
+        html += u'<script type="text/javascript" src="/scripts/authoring.js">'
+        html += u'</script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" '
