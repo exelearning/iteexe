@@ -42,7 +42,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
 # Add all the webui dirs
 dataFiles('exe/webui', '/usr/share/exe', 
           ['style', 'css', 'docs', 'images', 'schemas', 'scripts',
-           'linux-profile', 'templates'])
+           'templates'])
 
 # Add in the locale directory
 dataFiles('exe', '/usr/share/exe', ['locale'])
@@ -50,8 +50,8 @@ dataFiles('exe', '/usr/share/exe', ['locale'])
 # Add our 3rd party library copies
 dataFiles('.', '/usr/share/exe', ['twisted', 'nevow', 'formless'])
 
-# Add in the xului directory
-dataFiles('exe/xului', '/usr/share/exe', ['scripts', 'templates'])
+# Add in the jsui directory
+dataFiles('exe/jsui', '/usr/share/exe', ['scripts', 'templates'])
 
 opts = {
  "bdist_rpm": {
@@ -73,7 +73,7 @@ any Learning Management System.
       author_email = "exe@exelearning.org",
       license      = "GPL",
       scripts      = ["exe/exe", "exe/exe_do"],
-      packages     = ["exe", "exe.webui", "exe.xului", 
+      packages     = ["exe", "exe.webui", "exe.jsui",
                       "exe.engine", "exe.export", "exe.importers"],
       data_files   = files.items(),
       doc_files    = ["NEWS", "Changelog", "COPYING", "README"],
