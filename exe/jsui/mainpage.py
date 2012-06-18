@@ -156,7 +156,7 @@ class MainPage(RenderableLivePage):
         return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'] + '?clientHandleId=' + IClientHandle(ctx).handleId)
 
     def render_lang(self, ctx, data):
-        return ctx.tag(src="../jsui/i18n/" + G.application.config.locale + ".js")
+        return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
 
     def handleTestPrintMsg(self, client, message): 
         """ 
