@@ -103,6 +103,9 @@ class PackageRedirectPage(RenderableResource):
         if result is None:
             self.children[path] = [child]
         else:
+            for mainpage in result:
+                if mainpage.session.uid == child.session.uid:
+                    result.remove(mainpage)
             result.append(child)
         child.server = self.server
         

@@ -54,7 +54,6 @@ from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
-from exe.webui.aboutpage           import AboutPage
 from exe                           import globals as G
 from exe.engine.packagestore import PackageStore
 
@@ -138,7 +137,6 @@ class WebServer:
         self.xliffexportpreferences = XliffExportPreferencesPage(self.root)
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree     = DirTreePage(self.root)
-        self.about       = AboutPage(self.root)
 
 
     def find_port(self):
@@ -269,13 +267,6 @@ class WebServer:
         self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
         self.root.putChild("xultemplates",  static.File(xulDir+"/templates"))
         self.root.putChild("templates",   static.File(webDir+"/templates"))
-
-        # sub applications
-#        self.root.putChild("editor",      self.editor)
-#        self.root.putChild("preferences", self.preferences)
-#        self.root.putChild("xliffexport", self.xliffexportpreferences)
-#        self.root.putChild("xliffimport", self.xliffimportpreferences)
-#        self.root.putChild("about",       self.about)
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir
