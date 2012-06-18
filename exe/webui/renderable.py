@@ -304,12 +304,16 @@ class RenderableResource(_RenderablePage, Resource):
 class eXeClientHandle(ClientHandle):
     __implements__ = IClientHandle
     
-    def alert(self, what):
+    def alert(self, what, onDone=None):
         """Show the user an alert 'what'
         """
         if not isinstance(what, _js):
             what = "'%s'" % (self.flt(what), )
-        self.sendScript("Ext.Msg.alert('',%s);" % (what, ))
+        if onDone:
+            self.sendScript("Ext.Msg.alert('',%s, function() { %s });" % (what, onDone))
+        else:
+            self.sendScript("Ext.Msg.alert('',%s);" % (what, ))
+            
 
 
 class eXeClientHandleFactory(DefaultClientHandleFactory):

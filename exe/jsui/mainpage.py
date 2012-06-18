@@ -234,14 +234,15 @@ class MainPage(RenderableLivePage):
             client.alert(_('SAVE FAILED!\n%s' % str(e)))
             raise
         # Tell the user and continue
-        client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
-            client.sendScript(onDone)
+            client.alert(_(u'Package saved to: %s' % filename), onDone)
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.sendScript('eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'))
+            client.alert(_(u'Package saved to: %s' % filename), 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'))
+        else:
+            client.alert(_(u'Package saved to: %s' % filename))
 
 
     def handleLoadPackage(self, client, filename):
@@ -760,11 +761,10 @@ class MainPage(RenderableLivePage):
         try:
             importer = XliffImport(self.package, unquote(filename))
             importer.parseAndImport(from_source)
-            client.alert(_(u'Correct XLIFF import'))
+            client.alert(_(u'Correct XLIFF import'), (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'))
         except Exception,e:
-            client.alert(_(u'Error importing XLIFF: %s') % e)
-
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+            client.alert(_(u'Error importing XLIFF: %s') % e, (u'eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'))
 
 
