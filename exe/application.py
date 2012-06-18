@@ -229,9 +229,9 @@ class Application:
         if self.packagePath:
             package = self.packageStore.loadPackage(self.packagePath)
             self.webServer.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name, "")
+            launchBrowser(self.config, package.name)
         else:
-            launchBrowser(self.config, "", "")
+            launchBrowser(self.config, "")
 
     def usage(self):
         """

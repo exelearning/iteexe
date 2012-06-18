@@ -42,7 +42,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'xulDir', 'jsDir', 'port', 'dataDir', 
-                   'configDir', 'localeDir', 'browserPath'),
+                   'configDir', 'localeDir', 'browser'),
         'user': ('locale',),
     }
 
@@ -71,8 +71,9 @@ class Config:
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
         self.configDir   = Path(".")
-        # browserPath is the entire pathname to firefox
-        self.browserPath = Path("firefox")
+        # browser is the name of a predefined browser specified at http://docs.python.org/library/webbrowser.html.
+        # None for system default
+        self.browser = None
         # locale is the language of the user
         self.locale = chooseDefaultLocale(self.localeDir)
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
@@ -225,7 +226,7 @@ class Config:
             self.jsDir          = Path(system.jsDir)
             self.localeDir      = Path(system.localeDir)
             self.port           = int(system.port)
-            self.browserPath    = Path(system.browserPath)
+            self.browser        = None if system.browser == u"None" else system.browser
             self.dataDir        = Path(system.dataDir)
             self.configDir      = Path(system.configDir)
             
@@ -332,7 +333,7 @@ class Config:
         log.info("************** eXe logging started **************")
         log.info("configPath  = %s" % self.configPath)
         log.info("exePath     = %s" % self.exePath)
-        log.info("browserPath = %s" % self.browserPath)
+        log.info("browser     = %s" % self.browser)
         log.info("webDir      = %s" % self.webDir)
         log.info("xulDir      = %s" % self.xulDir)
         log.info("jsDir      = %s" % self.jsDir)

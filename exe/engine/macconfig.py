@@ -44,6 +44,5 @@ class MacConfig(LinuxConfig):
         self.localeDir   = Path("../Resources/exe/locale")
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
-        self.browserPath = self.webDir/'firefox/Firefox.app/Contents/MacOS/firefox'
 
 # ===========================================================================

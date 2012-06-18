@@ -44,9 +44,6 @@ class LinuxConfig(Config):
         self.localeDir   = Path("/usr/share/exe/locale")
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
-        browserPath      = self.webDir/'firefox'/'firefox'
-        if browserPath.isfile():
-            self.browserPath = browserPath
 
     def _getConfigPathOptions(self):
         """

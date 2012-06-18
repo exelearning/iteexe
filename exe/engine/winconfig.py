@@ -45,10 +45,6 @@ class WinConfig(Config):
         if not self.exePath.exists():
             self.exePath = Path(self.exePath + ".exe")
         exeDir = self.exePath.dirname()
-        self.browserPath = exeDir/'Mozilla Firefox'/'firefox.exe'
-        if not self.browserPath.isfile():
-            programFiles = Path(self.__getWinFolder(PROGRAMFILES))
-            self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
         self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
 
