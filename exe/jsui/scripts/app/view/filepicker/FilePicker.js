@@ -42,7 +42,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
     initComponent: function() {
         var me = this;
 		
-        var ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension'] });
+        var ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] });
 
 		buttons = [
     		{ xtype: 'component', flex: 1 },
@@ -58,7 +58,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	            	store: ft,
 	            	displayField: 'typename',
 	            	valueField: 'regex',
-	            	forceSelection: true
+	            	forceSelection: true,
+                    allowBlank: false
 	    		}
     	];
 
@@ -82,7 +83,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	        		name: 'name',
 	        		fieldLabel: _('Place'),
 	        		dock: 'top',
-	        		id: 'file_place_field'
+	        		id: 'file_place_field',
+                    padding: '5px 0px 5px 0px'
 				},{
 	            	xtype: 'container',
 	            	layout: 'hbox',
@@ -94,7 +96,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	            	layout: 'hbox',
 	            	dock: 'bottom',
 	            	ui: 'footer',
-	            	items: filter
+	            	items: filter,
+                    padding: '0px 0px 5px 0px'
 	            }
 	            
 			],

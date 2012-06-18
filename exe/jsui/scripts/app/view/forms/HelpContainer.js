@@ -57,13 +57,13 @@ Ext.define('eXe.view.forms.HelpContainer', {
 		                            flex: 1,
                                     listeners: {
                                         afterrender: function(c) {
-                                            c.el.on('click', function() {
-                                                var help = this.parent().parent().parent().next();
+                                            c.el.on('click', function(a) {
+                                                var help = this.items.getByKey(this.item.inputId + "_help");
                                                 if (help.isVisible())
                                                     help.hide();
                                                 else
                                                     help.show();
-                                            });
+                                            }, me);
                                         }
                                     }
 		                        }
@@ -72,6 +72,7 @@ Ext.define('eXe.view.forms.HelpContainer', {
 		            ] 
                 },{
                     xtype: 'component',
+                    itemId: this.item.inputId + "_help",
                     html: this.help,
                     margin: '0 0 20 120',
                     hidden: true,
