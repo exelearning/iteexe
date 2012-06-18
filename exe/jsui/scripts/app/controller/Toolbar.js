@@ -129,6 +129,62 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.aboutPage
             }
         });
+        
+        var keymap = new Ext.util.KeyMap(Ext.getBody(), [
+			{
+				key: Ext.EventObject.N,
+				ctrl: true,
+				handler: function() {
+				 this.fileNew();
+				},
+				scope: this,
+				defaultEventAction: "stopEvent"
+			},
+			{
+				key: Ext.EventObject.S,
+				ctrl: true,
+				handler: function() {
+				 this.fileSave();
+				},
+				scope: this,
+				defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.O,
+			     ctrl: true,
+			     handler: function() {
+			          this.fileOpen();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.Q,
+			     ctrl: true,
+			     handler: function() {
+			          this.fileQuit();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.P,
+			     ctrl: true,
+			     handler: function() {
+			          this.filePrint();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+            {
+	            key: Ext.EventObject.F5,
+	            handler: function() {
+	                 this.toolsRefresh();
+	            },
+	            scope: this,
+	            defaultEventAction: "stopEvent"
+            }
+        ]);
     },
 
 	aboutPage: function() {
@@ -464,7 +520,7 @@ Ext.define('eXe.controller.Toolbar', {
 	
 	filePrint2: function(tempPrintDir, printDir_warnings) {
 	   if (printDir_warnings.length > 0) {
-	      alert(printDir_warnings)
+	      Ext.Msg.alert(_('Message'), printDir_warnings)
 	   }
 	   this.exportPackage('printSinglePage', tempPrintDir, "eXe.app.getController('Toolbar').filePrint3_openPrintWin");
 	},

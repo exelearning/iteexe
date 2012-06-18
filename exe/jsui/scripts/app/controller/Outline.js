@@ -69,6 +69,70 @@ Ext.define('eXe.controller.Outline', {
                 click: { fn: this.processNodeEvent, action: 'DownNode' }
             }
         });
+        
+        var keymap = new Ext.util.KeyMap(Ext.getBody(), [
+	        {
+               	 key: Ext.EventObject.INSERT,
+		    	 handler: function() {
+		    		 this.onNodeAdd();
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     },
+		     {
+		    	 key: Ext.EventObject.DELETE,
+		    	 handler: function() {
+		    		 this.onNodeDel();
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     },
+		     {
+		    	 key: Ext.EventObject.R,
+                 ctrl: true,
+		    	 handler: function() {
+		    		 this.onNodeRename();
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     },
+		     {
+		    	 key: Ext.EventObject.UP,
+                 ctrl: true,
+		    	 handler: function() {
+		    		 this.nodeAction('PromoteNode');
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     },
+		     {
+		    	 key: Ext.EventObject.DOWN,
+                 ctrl: true,
+		    	 handler: function() {
+		    		 this.nodeAction('DemoteNode');
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     },
+		     {
+		    	 key: Ext.EventObject.U,
+                 ctrl: true,
+		    	 handler: function() {
+		    		 this.nodeAction('UpNode');
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     },
+		     {
+		    	 key: Ext.EventObject.D,
+                 ctrl: true,
+		    	 handler: function() {
+		    		 this.nodeAction('DownNode');
+		    	 },
+		    	 scope: this,
+		    	 defaultEventAction: "stopEvent"
+		     }
+        ]);        
     },
 
     onNodeContextMenu: function(view, record, item, index, e, eOpts) {
