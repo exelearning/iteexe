@@ -309,7 +309,7 @@ class eXeClientHandle(ClientHandle):
         """
         if not isinstance(what, _js):
             what = "'%s'" % (self.flt(what), )
-        self.sendScript("Ext.Msg.alert(_('Message'),%s);" % (what, ))
+        self.sendScript("Ext.Msg.alert('',%s);" % (what, ))
 
 
 class eXeClientHandleFactory(DefaultClientHandleFactory):

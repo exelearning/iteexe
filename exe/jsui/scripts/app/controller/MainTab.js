@@ -80,7 +80,7 @@ Ext.define('eXe.controller.MainTab', {
     
     actionComplete: function(form, action) {
         if (action.method != "GET")
-            Ext.MessageBox.alert(_('Message'), _('Settings Saved'));
+            Ext.MessageBox.alert("", _('Settings Saved'));
     },
 
     updateTree: function() {

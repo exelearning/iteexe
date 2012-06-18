@@ -37,27 +37,6 @@ curr_edits_math_num = 1
 // for unique mimetex images from exemath. will reset to #1 w/ each new edit, 
 // but will create  unique math# within each edit session to the previews dir.
 
-// Strings to be translated
-SELECT_AN_IMAGE    = "Select an image";
-IMAGE_FILES        = "Image Files (.jpg, .jpeg, .png, .gif)";
-JPEG_FILES         = "JPEG Files (.jpg, .jpeg)";
-SELECT_A_FILE      = "Select a file";
-FLASH_MOVIE        = "Flash Movie (.flv)";
-FLASH_OBJECT       = "Flash Object (.swf)";
-SELECT_AN_MP3_FILE = "Select an mp3 file";
-MP3_AUDIO          = "MP3 Audio (.mp3)";
-SHOCKWAVE_FILES    = "Shockwave Director Files (.dcr)"
-QUICKTIME_FILES    = "Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"
-WINDOWSMEDIA_FILES = "Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"
-REALMEDIA_AUDIO    = "RealMedia Audio Files (.rm, .ra, .ram, .mp3)"
-
-
-
-SELECT_A_PACKAGE   = "Select a package";
-//YOUR_SCORE_IS      = "Your score is ";
-YOUR_SCORE_IS      = "Tu puntuación es ";
-
-
 // Calls function in an array where each 'row' of the array is in the format:
 // func
 // or
@@ -76,197 +55,236 @@ function runFuncArray(handlers) {
 }
 
 // Asks the user for an image, returns the path or an empty string
-function askUserForImage(multiple) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+function askUserForImage(multiple, fn, filter) {
+    var fp, mode;
     if (multiple) {
-        var mode = nsIFilePicker.modeOpenMultiple;
-    } else {
-        var mode = nsIFilePicker.modeOpen;
+        console.log("Not implemented");
+        return "";
     }
-    fp.init(window, SELECT_AN_IMAGE, mode);
-    fp.appendFilter(IMAGE_FILES, "*.jpg; *.jpeg; *.png; *.gif");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        if (multiple) {
-            var result = new String("");
-            var lastFile = null;
-            var file     = null;
-            while (fp.files.hasMoreElements()) {
-                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
-                if (file == lastFile) {
-                    break;
+    else
+        mode = parent.eXe.view.filepicker.FilePicker.modeOpen;
+    fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
+        type: mode,
+        title: parent._("Select an image"),
+        modal: true,
+        scope: this,
+        callback: function(fp) {
+            if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
+                if (multiple) {
+//		            var result = new String("");
+//		            var lastFile = null;
+//		            var file     = null;
+//		            while (fp.files.hasMoreElements()) {
+//		                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
+//		                if (file == lastFile) {
+//		                    break;
+//		                }
+//		                lastFile = file;
+//		                if (result != "") {
+//		                    result += "&";
+//		                }
+//		                result += escape(file.path);
+//		            }
+//		            return result;
+		        } else {
+                    fn(fp.file.path);
                 }
-                lastFile = file;
-                if (result != "") {
-                    result += "&";
-                }
-                result += escape(file.path);
             }
-            return result;
-        } else {
-            return fp.file.path;
+            else
+                fn("");
         }
-    } else {
-        return ""
-    }
+    });
+    fp.appendFilters([
+        filter? filter : { "typename": parent._("Image Files (.jpg, .jpeg, .png, .gif)"), "extension": "*.png", "regex": /.*\.(jpg|jpeg|png|gif)$/i },
+        { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }
+    ]);
+    parent.window.focus();
+    fp.show();
 }
 
 // Asks the user for a media file, returns the path or an empty string
-function askUserForMedia() {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    var mode = nsIFilePicker.modeOpen;
-    fp.init(window, SELECT_A_FILE, mode);
-    // default filter to ALL:
-    fp.appendFilters(nsIFilePicker.filterAll);
-    // but also add filters for each media type supported by tinyMCE's media plugin:
-    fp.appendFilter(FLASH_OBJECT, "*.swf");
-    fp.appendFilter(QUICKTIME_FILES, "*.mov; *.qt; *.mpg; *.mp3; *.mp4; *.mpeg");
-    //fp.appendFilter(SHOCKWAVE_FILES, "*.dcr");
-    fp.appendFilter(WINDOWSMEDIA_FILES, "*.avi; *.wmv; *.wm; *.asf; *.asx; *.wmx; *.wvx");
-    fp.appendFilter(REALMEDIA_AUDIO, "*.rm; *.ra; *.ram; *.mp3");
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        return fp.file.path;
-    } else {
-        return ""
-    }
+function askUserForMedia(fn) {
+    var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
+        type: parent.eXe.view.filepicker.FilePicker.modeOpen,
+        title: parent._("Select a file"),
+        modal: true,
+        scope: this,
+        callback: function(fp) {
+            if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk)
+                fn(fp.file.path);
+            else
+                fn("");
+        }
+    });
+    fp.appendFilters([
+        { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ },
+        { "typename": parent._("Flash Movie (.flv)"), "extension": "*.png", "regex": /.*\.flv$/i },
+        { "typename": parent._("Flash Object (.swf)"), "extension": "*.png", "regex": /.*\.swf$/i },
+        { "typename": parent._("Quicktime Files (.mov, .qt, .mpg, .mp3, .mp4, .mpeg)"), "extension": "*.png", "regex": /.*\.(mov|qt|mpg|mp3|mp4|mpeg)$/i },
+        { "typename": parent._("Windows Media Player Files (.avi, .wmv, .wm, .asf, .asx, .wmx, .wvx)"), "extension": "*.png", "regex": /.*\.(avi|wmv|wm|asf|asx|wmx|wvx)$/i },
+        { "typename": parent._("RealMedia Audio Files (.rm, .ra, .ram, .mp3)"), "extension": "*.png", "regex": /.*\.(rm|ra|ram|mp3)$/i }
+    ]);
+    parent.window.focus();
+    fp.show();
 }
 
 // Called by the user to provide an image or flash file name to add to the package
-function addImage(elementId) {
-    var imagePath = askUserForImage()
-    if (imagePath != "") {
-        var image = document.getElementById('img'+elementId);
-        image.removeAttribute('width');
-        image.removeAttribute('height');
-        var path  = document.getElementById('path'+elementId);
-        path.value = imagePath;
-        image.src  = 'file://'+imagePath;
-        var theForm = getContentForm();
-        theForm.action.value = "addImage"
-        theForm.object.value = elementId 
-        theForm.submit()
+function addImage(elementId, filter) {
+    var fn = function(imagePath) {
+	    if (imagePath != "") {
+	        var image = document.getElementById('img'+elementId);
+	        image.removeAttribute('width');
+	        image.removeAttribute('height');
+	        var path  = document.getElementById('path'+elementId);
+	        path.value = imagePath;
+	        image.src  = 'file://'+imagePath;
+	        var theForm = getContentForm();
+	        theForm.action.value = "addImage";
+	        theForm.object.value = elementId;
+	        theForm.submit();
+	    }
     }
+    askUserForImage(false, fn, filter);
 }
 
 // Called by the user to provide an image feedback to add to a case study idevice question
 function addFeedbackImage(elementId) {
-    var imagePath = askUserForImage()
-    if (imagePath != "") {
-        var image = document.getElementById('img'+elementId);
-        image.removeAttribute('width');
-        image.removeAttribute('height');
-        var path  = document.getElementById('path'+elementId);
-        path.value = imagePath;
-        image.src  = 'file://'+imagePath;
-        var theForm = getContentForm();
-        theForm.action.value = "addImage"
-        theForm.object.value = elementId 
-        var width = document.getElementById('width'+elementId);
-        var height = document.getElementById('height'+elementId);
-        width.value = "100"
-        height.value = ""
-        theForm.submit()
-        changeImageWidth(elementId)
-        theForm.submit()
-        
+    var fn = function(imagePath) {
+	    if (imagePath != "") {
+	        var image = document.getElementById('img'+elementId);
+	        image.removeAttribute('width');
+	        image.removeAttribute('height');
+	        var path  = document.getElementById('path'+elementId);
+	        path.value = imagePath;
+	        image.src  = 'file://'+imagePath;
+	        var theForm = getContentForm();
+	        theForm.action.value = "addImage"
+	        theForm.object.value = elementId 
+	        var width = document.getElementById('width'+elementId);
+	        var height = document.getElementById('height'+elementId);
+	        width.value = "100";
+	        height.value = "";
+	        theForm.submit();
+	        changeImageWidth(elementId);
+	        theForm.submit();
+	    }
     }
+    askUserForImage(false, fn);
 }
 
 // Called by the user to provide an image or flash file name to add to the package
 function addJpgImage(elementId) {
-    var imagePath = askUserForJpgImage()
-    if (imagePath != "") {
-        var image = document.getElementById('img'+elementId);
-        image.removeAttribute('width');
-        image.removeAttribute('height');
-        var path  = document.getElementById('path'+elementId);
-        path.value = imagePath;
-        image.src  = 'file://'+imagePath;
-        var theForm = getContentForm();
-        theForm.action.value = "addJpgImage"
-        theForm.object.value = elementId 
-        theForm.submit()
-    }
+    var filter = { "typename": parent._("JPEG Files (.jpg, .jpeg)"), "extension": "*.png", "regex": /.*\.(jpg|jpeg)$/i };
+    addImage(elementId, filter);
 }
 
-// Asks the user for a jpg image, returns the path or an empty string
-function askUserForJpgImage(multiple) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    if (multiple) {
-        var mode = nsIFilePicker.modeOpenMultiple;
-    } else {
-        var mode = nsIFilePicker.modeOpen;
-    }
-    fp.init(window, SELECT_AN_IMAGE, mode);
-    fp.appendFilter(JPEG_FILES, "*.jpg; *.jpeg");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        if (multiple) {
-            var result = new String("");
-            var lastFile = null;
-            var file     = null;
-            while (fp.files.hasMoreElements()) {
-                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
-                if (file == lastFile) {
-                    break;
-                }
-                lastFile = file;
-                if (result != "") {
-                    result += "&";
-                }
-                result += escape(file.path);
-            }
-            return result;
-        } else {
-            return fp.file.path;
-        }
-    } else {
-        return ""
-    }
-}
 // Called by the user to provide one or more image files name to add to the package
 function addGalleryImage(galleryId) {
-    var imagePath = askUserForImage(true);
-    if (imagePath != "") {
-        // Save the change
-        submitLink("gallery.addImage."+imagePath, galleryId, true);
+    var fn = function(imagePath) {
+	    if (imagePath != "") {
+	        // Save the change
+	        submitLink("gallery.addImage."+imagePath, galleryId, true);
+	    }
     }
+    askUserForImage(true, fn);
 }
 
 // Called by the user to change an existing gallery image
 function changeGalleryImage(galleryId, imageId) {
-    var imagePath = askUserForImage(false)
-    if (imagePath != "") {
-        // Save the change
-        submitLink("gallery.changeImage."+imageId+"."+imagePath, galleryId, true);
+    var fn = function(imagePath) {
+	    if (imagePath != "") {
+	        // Save the change
+	        submitLink("gallery.changeImage."+imageId+"."+imagePath, galleryId, true);
+	    }
     }
+    askUserForImage(false, fn);
 }
 
 // Called by the tinyMCE (as per the user's request) to provide an 
 // image file name to add to the package's field and idevice
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
-
-    var local_imagePath = ""
+    var fn = function(local_imagePath) {
+        win.focus();
+    
+        // if the user hits CANCEL, then bail "immediately",
+        // i.e., after bringing the tinyMCE image dialog back into focus, above.
+        if (local_imagePath == "") {
+           return;
+        }
+    
+        // UNescape, to remove the %20's for spaces, etc.:
+        var unescaped_local_imagePath = unescape(local_imagePath);
+        var oldImageStr = new String(unescaped_local_imagePath);
+    
+        // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
+        // with '_':
+        var RegExp1 = /[\ \\\/\:\%\&]/g;
+        var ReplaceStr1 = new String("_");
+        var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+    
+        // For simplicity across various file encoding schemes, etc.,
+        // just ensure that the TinyMCE media window also gets a URI safe link, 
+        // for doing its showPreview():
+        var early_preview_imageName = encodeURIComponent(newImageStr);
+        // and one more escaping of the '%'s to '_'s, to flatten for simplicity:
+        var preview_imageName  = early_preview_imageName.replace(RegExp1, ReplaceStr1);
+        var full_previewImage_url = "/previews/"+preview_imageName;
+    
+        // pass the file information on to the server,
+        // to copy it into the server's "previews" directory:
+        window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, 
+                      '', win, win.name, field_name, unescaped_local_imagePath, 
+                      preview_imageName)
+    
+        // first, clear out any old value in the tinyMCE image filename field:
+        win.document.forms[0].elements[field_name].value = ""; 
+    
+        // PreviewImage is only available for images:
+        if (type == "image") {
+           win.showPreviewImage(" ");
+        }
+        else if (type == "media") {
+           win.generatePreview(" ");
+        }
+    
+    
+        // set the tinyMCE image filename field:
+        win.document.forms[0].elements[field_name].value = full_previewImage_url;
+        // then force its onchange event:
+    
+        // PreviewImage is only available for images:
+        if (type == "image") {
+           win.showPreviewImage(full_previewImage_url);
+        }
+        else if (type == "media") {
+           win.generatePreview(full_previewImage_url);
+        }
+    
+        // this onchange works, but it's dirty because it is hardcoding the 
+        // onChange=".." event of that field, and if that were to ever change 
+        // in tinyMCE, then this would be out of sync.
+    
+        // and finally, be sure to update the tinyMCE window's image data:
+        if (win.getImageData) {
+            win.getImageData();
+        }
+        else {
+            if (window.tinyMCE.getImageData) {
+               window.tinyMCE.getImageData();
+            }
+        }
+    }
     // ask user for image or media, depending on type requested:
     if (type == "image") {
-       local_imagePath = askUserForImage(false);
+       askUserForImage(false, fn);
     }
     else if (type == "media") {
-       local_imagePath = askUserForMedia();
+       askUserForMedia(fn);
     }
     else if (type == "file") {
        // new for advlink plugin, to link ANY resource into text:
        // re-use the Media browser, which defaults to All file types (*.*)
-       local_imagePath = askUserForMedia();
+       askUserForMedia(fn);
     }
     else if (type == "image2insert" || type == "media2insert" || type == "file2insert") {
         if (type == "file2insert" && url.indexOf('#') >= 0) {
@@ -280,79 +298,8 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
         }
         // new direct insert capabilities, no file browser needed.
         // just copy the passed-in URL directly, no browser necessary:
-        local_imagePath = url;
+        fn(url);
     }
-
-    win.focus();
-
-    // if the user hits CANCEL, then bail "immediately",
-    // i.e., after bringing the tinyMCE image dialog back into focus, above.
-    if (local_imagePath == "") {
-       return;
-    }
-
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    // UNescape, to remove the %20's for spaces, etc.:
-    var unescaped_local_imagePath = unescape(local_imagePath);
-    var oldImageStr = new String(unescaped_local_imagePath);
-
-    // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
-    // with '_':
-    var RegExp1 = /[\ \\\/\:\%\&]/g;
-    var ReplaceStr1 = new String("_");
-    var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
-
-    // For simplicity across various file encoding schemes, etc.,
-    // just ensure that the TinyMCE media window also gets a URI safe link, 
-    // for doing its showPreview():
-    early_preview_imageName = encodeURIComponent(newImageStr);
-    // and one more escaping of the '%'s to '_'s, to flatten for simplicity:
-    preview_imageName  = early_preview_imageName.replace(RegExp1, ReplaceStr1);
-    full_previewImage_url = "/previews/"+preview_imageName;
-
-    // pass the file information on to the server,
-    // to copy it into the server's "previews" directory:
-    window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, 
-                  '', win, win.name, field_name, unescaped_local_imagePath, 
-                  preview_imageName)
-
-    // first, clear out any old value in the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = ""; 
-
-    // PreviewImage is only available for images:
-    if (type == "image") {
-       win.showPreviewImage(" ");
-    }
-    else if (type == "media") {
-       win.generatePreview(" ");
-    }
-
-
-    // set the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = full_previewImage_url;
-    // then force its onchange event:
-
-    // PreviewImage is only available for images:
-    if (type == "image") {
-       win.showPreviewImage(full_previewImage_url);
-    }
-    else if (type == "media") {
-       win.generatePreview(full_previewImage_url);
-    }
-
-    // this onchange works, but it's dirty because it is hardcoding the 
-    // onChange=".." event of that field, and if that were to ever change 
-    // in tinyMCE, then this would be out of sync.
-
-    // and finally, be sure to update the tinyMCE window's image data:
-    if (win.getImageData) {
-        win.getImageData();
-    }
-    else {
-        if (window.tinyMCE.getImageData) {
-           window.tinyMCE.getImageData();
-        }
-    }    
 }
 
 // Called by the tinyMCE (as per the user's request) to generate an 
@@ -375,7 +322,6 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
    
     curr_edits_math_num += 1
 
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     // pass the file information on to the server,
     // to generate the image into the server's "previews" directory:
     window.parent.nevow_clientToServerEvent('generateTinyMCEmath', this, 
@@ -410,80 +356,49 @@ function makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
 
 // Called by the user to provide a flash movie file name to add to the package
 function addFlashMovie(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
-    fp.appendFilter(FLASH_MOVIE, "*.flv");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.type  = 'text';
-        path.value = fp.file.path;
-    }
+    var filter = [
+        { "typename": parent._("Flash Movie (.flv)"), "extension": "*.*", "regex": /.*\.flv$/i },
+        { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }
+    ];
+    addFile(blockId, parent._("Select a file"), filter);
 }
 
 // Called by the user to provide a flash file name to add to the package
 function addFlash(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
-    fp.appendFilter(FLASH_OBJECT, "*.swf");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.type  = 'text';
-        path.value = fp.file.path;
-    }
+    var filter = [
+        { "typename": parent._("Flash Object (.swf)"), "extension": "*.*", "regex": /.*\.swf$/i },
+        { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }
+    ];
+    addFile(blockId, parent._("Select a file"), filter);
 }
 
 function addMp3(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_AN_MP3_FILE, nsIFilePicker.modeOpen);
-    fp.appendFilter(MP3_AUDIO, "*.mp3");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.type  = 'text';
-        path.value = fp.file.path;
-    }
+    var filter = [
+        { "typename": parent._("MP3 Audio (.mp3)"), "extension": "*.*", "regex": /.*\.mp3$/i },
+        { "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }
+    ];
+    addFile(blockId, parent._("Select an mp3 file"), filter);
 }
-
 
 // Called by the user to provide a package name in order to get the user created idevices
 // used by idevice editor
-function addFile(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_A_PACKAGE, nsIFilePicker.modeOpen);
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.value = fp.file.path;
-    }
-}
-
-function uploadFile(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.value = fp.file.path;
-    }
-    var theForm = getContentForm();
-    theForm.submit();
+function addFile(blockId, title, filter) {
+    var fp = parent.Ext.create("eXe.view.filepicker.FilePicker", {
+        type: parent.eXe.view.filepicker.FilePicker.modeOpen,
+        title: title? title : parent._("Select a package"),
+        modal: true,
+        scope: this,
+        callback: function(fp) {
+            if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
+		        var path  = document.getElementById('path'+blockId);
+                path.type  = 'text';
+		        path.value = fp.file.path;
+            }
+        }
+    });
+    fp.appendFilters( filter? filter : [{ "typename": parent._("All Files"), "extension": "*.*", "regex": /.*$/ }]);
+    parent.window.focus();
+    fp.show();
 }
 
 
@@ -535,7 +450,8 @@ function submitLink(action, object, changed)
 // Check the user really really wants to do this before submitting
 function confirmThenSubmitLink(message, action, object, changed) 
 {
-    if (confirm(message)) {
-        submitLink(action, object, changed);
-    }
+    parent.Ext.Msg.confirm("", message, function(button) {
+        if (button == "yes")
+	        submitLink(action, object, changed);
+    });
 }

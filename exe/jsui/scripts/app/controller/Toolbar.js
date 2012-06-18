@@ -520,7 +520,7 @@ Ext.define('eXe.controller.Toolbar', {
 	
 	filePrint2: function(tempPrintDir, printDir_warnings) {
 	   if (printDir_warnings.length > 0) {
-	      Ext.Msg.alert(_('Message'), printDir_warnings)
+	      Ext.Msg.alert("", printDir_warnings)
 	   }
 	   this.exportPackage('printSinglePage', tempPrintDir, "eXe.app.getController('Toolbar').filePrint3_openPrintWin");
 	},

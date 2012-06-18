@@ -22,6 +22,30 @@ Array.prototype.inArray = function (value) {
 };
 
 /*******************************************/	
+/************* Overrides *****************/
+/****************************************/
+
+//Pedro Peña: fix bug in WebKit by which the body is hidden
+TinyMCE_Control.prototype.repaint = function() {
+    var s, b, ex;
+
+    if (tinyMCE.isRealIE)
+        return;
+
+    try {
+        s = this.selection;
+        b = s.getBookmark(true);
+        this.getBody().style.display = 'none';
+        this.getDoc().execCommand('selectall', false, null);
+        this.getSel().collapseToStart();
+        this.getBody().style.display = 'block';
+        s.moveToBookmark(b);
+    } catch (ex) {
+        this.getBody().style.display = 'block';
+    }
+};
+
+/*******************************************/	
 /*****************************************/
 /****************************************/
 
