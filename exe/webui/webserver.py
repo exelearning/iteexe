@@ -271,11 +271,11 @@ class WebServer:
         self.root.putChild("templates",   static.File(webDir+"/templates"))
 
         # sub applications
-#        self.root.putChild("editor",      self.editor)
-#        self.root.putChild("preferences", self.preferences)
-#        self.root.putChild("xliffexport", self.xliffexportpreferences)
-#        self.root.putChild("xliffimport", self.xliffimportpreferences)
-#        self.root.putChild("about",       self.about)
+        self.root.putChild("editor",      self.editor)
+        self.root.putChild("preferences", self.preferences)
+        self.root.putChild("xliffexport", self.xliffexportpreferences)
+        self.root.putChild("xliffimport", self.xliffimportpreferences)
+        self.root.putChild("about",       self.about)
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir

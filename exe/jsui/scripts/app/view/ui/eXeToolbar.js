@@ -96,6 +96,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'menuitem',
+                                            itemId: 'file_import_xliff',
                                             text: _('XLIFF File')
                                         }
                                     ]

@@ -79,10 +79,70 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#file_export_ipod': {
                 click: { fn: this.processExportEvent, exportType: "ipod" }
+            },
+            '#file_export_xliff': {
+                click: this.exportXliff
+            },
+            '#file_import_xliff': {
+                click: this.importXliff
             }
         });
     },
-    
+
+	importXliff: function() {
+        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeOpen,
+            title: _("Select Xliff file to import"),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
+                    var preferences = new Ext.Window ({
+                      height: 220, 
+                      width: 650, 
+                      modal: true,
+                      id: 'xliffimportwin',
+                      title: _("XLIFF Import Preferences"), 
+                      html: '<iframe height="100%" width="100%" src="/xliffimport?path=' + fp.file.path +'"></iframe>'
+                    });
+                    preferences.show();
+                }
+            }
+        });
+        fp.appendFilters([
+            { "typename": _("XLIFF Files"), "extension": "*.xlf", "regex": /.*\.xlf$/ },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+        ]);
+        fp.show();
+	},
+
+    exportXliff: function() {
+        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeSave,
+            title: _("Export to Xliff as"),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                    var preferences = new Ext.Window ({
+					  height: 300, 
+					  width: 650, 
+                      modal: true,
+                      id: 'xliffexportwin',
+					  title: _("XLIFF Export Preferences"), 
+					  html: '<iframe height="100%" width="100%" src="/xliffexport?path=' + fp.file.path +'"></iframe>'
+					});
+                    preferences.show();
+                }
+            }
+        });
+        fp.appendFilters([
+            { "typename": _("XLIFF Files"), "extension": "*.xlf", "regex": /.*\.xlf$/ },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+        ]);
+        fp.show();            
+    },
+
     processExportEvent: function(menu, item, e, eOpts) {
         this.exportPackage(e.exportType, "")
     },
