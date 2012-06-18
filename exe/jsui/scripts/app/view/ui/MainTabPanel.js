@@ -58,12 +58,88 @@ Ext.define('eXe.view.ui.MainTabPanel', {
 	                                title: _('Dublin Core')
 	                            },
                                 {
-                                    xtype: 'panel',
-                                    title: _('LOM')
+                                    xtype: 'tabpanel',
+                                    title: _('LOM'),
+                                    items: [
+	                                    {
+	                                        xtype: 'panel',
+	                                        title: _('General')
+	                                    },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Ciclo de vida')
+                                        },
+	                                    {
+	                                        xtype: 'panel',
+	                                        title: _('MetaMetadatos')
+	                                    },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Técnica')
+                                        },
+	                                    {
+	                                        xtype: 'panel',
+	                                        title: _('Uso educativo')
+	                                    },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Derechos')
+                                        },
+	                                    {
+	                                        xtype: 'panel',
+	                                        title: _('Relación')
+	                                    },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Anotación')
+                                        },
+	                                    {
+	                                        xtype: 'panel',
+	                                        title: _('Clasificación')
+	                                    }
+                                    ]
                                 },
                                 {
-                                    xtype: 'panel',
-                                    title: _('LOM.es')
+                                    xtype: 'tabpanel',
+                                    title: _('LOM.es'),
+                                    items: [
+                                        {
+                                            xtype: 'panel',
+                                            title: _('General')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Ciclo de vida')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('MetaMetadatos')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Técnica')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Uso educativo')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Derechos')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Relación')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Anotación')
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            title: _('Clasificación')
+                                        }
+                                    ]
                                 }
                             ]
                         },
