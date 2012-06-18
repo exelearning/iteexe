@@ -29,6 +29,54 @@ from exe.webui.renderable      import RenderableResource
 
 log = logging.getLogger(__name__)
 
+langNames = {
+    'fi': 'Finnish',
+    'hr': 'Croatian',
+    'ig': "Nunivak Cup'ig",
+    'lo': 'Lao; Laotian',
+    'pt_br': 'Brazillian Portuguese',
+    'ru': 'Russian',
+    'tg': 'Tajik',
+    'yo': 'Yoruba',
+    'el': '\xce\x95\xce\xbb\xce\xbb\xce\xb7\xce\xbd\xce\xb9\xce\xba\xce\xac',
+    'en': 'English',
+    'zh': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
+    'ee': 'Ewe',
+    'vi': 'Vietnamese',
+    'is': '\xc3\x8dslenska',
+    'it': 'Italian',
+    'eu': 'Basque',
+    'zu': 'isiZulu',
+    'cs': '\xc4\x8cesky',
+    'et': 'Eesti',
+    'gl': 'Galego',
+    'id': 'Indonesian',
+    'es': 'Espa\xc3\xb1ol',
+    'nl': 'Nederlands',
+    'pt': 'Portugu\xc3\xaas',
+    'tw': 'Twi',
+    'nb': 'Bokm\xc3\xa5l',
+    'tr': 'Turkish',
+    'tl': 'Tagalog',
+    'th': '\xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2',
+    'ca': 'Catal\xc3\xa0',
+    'pl': 'J\xc4\x99zyk Polski, polszczyzna',
+    'fr': 'Fran\xc3\xa7ais',
+    'bg': 'Bulgarian',
+    'zh_tw': '\xe7\xae\x80\xe4\xbd\x93\xe4\xb8\xad\xe6\x96\x87',
+    'da': 'Dansk',
+    'br': 'Breton',
+    'hu': 'Magyar',
+    'ja': '\xe6\x97\xa5\xe6\x9c\xac\xe8\xaa\x9e',
+    'sr': 'Srpski',
+    'mi': 'M\xc4\x81ori',
+    'sv': 'Svenska',
+    'km': 'Khmer',
+    'sk': 'Sloven\xc4\x8dina, Slovensk\xc3\xbd Jazyk',
+    'de': 'Deutsch',
+    'uk': 'Ukrainian',
+    'sl': 'Sloven\xc5\xa1\xc4\x8dina'
+}
 
 class PreferencesPage(RenderableResource):
     """
@@ -43,11 +91,9 @@ class PreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.localeNames  = []
         
-        for locale, translation in self.config.locales.items():
+        for locale in self.config.locales.keys():
             localeName  = locale + ": " 
-            langName = translation.info().get('x-exe-language', None)
-            if langName == None:
-                langName = translation.info().get('x-poedit-language', 'English')
+            langName = langNames.get(locale)
             localeName += langName
             self.localeNames.append((localeName, locale))
         self.localeNames.sort()
