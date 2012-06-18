@@ -177,10 +177,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     items: [
                                         {
                                             xtype: 'menuitem',
+                                            itemId: 'file_insert',
                                             text: _('Insert Package')
                                         },
                                         {
                                             xtype: 'menuitem',
+                                            itemId: 'file_extract',
                                             text: _('Extract Package')
                                         }
                                     ]
@@ -241,14 +243,17 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         items: [
                             {
                                 xtype: 'menuitem',
+                                itemId: 'help_tutorial',
                                 text: _('eXe Tutorial')
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'help_manual',
                                 text: _('eXe Manual')
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'help_notes',
                                 text: _('Release Notes')
                             },
                             {
@@ -256,21 +261,25 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'help_website',
                                 text: _('eXe Web Site')
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'help_issue',
                                 text: _('Report an Issue')
                             },
                             {
                                 xtype: 'menuitem',
-                                text: _('eXe Live Chat')
+                                itemId: 'help_forums',
+                                text: _('eXe Forums')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'help_about',
                                 text: _('About eXe')
                             }
                         ]

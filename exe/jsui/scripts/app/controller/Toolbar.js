@@ -89,6 +89,12 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_import_html': {
                 click: this.importHtml
             },
+            '#file_insert': {
+                click: this.insertPackage
+            },
+            '#file_extract': {
+                click: this.extractPackage
+            },
             '#file_quit': {
                 click: this.fileQuit
             },
@@ -100,10 +106,60 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#tools_refresh': {
                 click: this.toolsRefresh
+            },
+            '#help_tutorial': {
+                click: this.fileOpenTutorial
+            },
+            '#help_manual': {
+                click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
+            },
+            '#help_notes': {
+                click: { fn: this.processBrowseEvent, url: 'file://%t' }
+            },
+            '#help_website': {
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/' }
+            },
+            '#help_issue': {
+                click: { fn: this.processBrowseEvent, url: 'https://forja.cenatic.es/tracker/?group_id=197' }
+            },
+            '#help_forums': {
+                click: { fn: this.processBrowseEvent, url: 'http://exelearning.net/forums/' }
+            },
+            '#help_about': {
+                click: this.aboutPage
             }
         });
     },
 
+	aboutPage: function() {
+        var about = new Ext.Window ({
+          height: 405, 
+          width: 300, 
+          modal: true,
+          resizable: false,
+          id: 'aboutwin',
+          title: _("About"), 
+          html: '<iframe height="100%" width="100%" src="/docs/credits.xhtml"></iframe>'
+        });
+        about.show();
+	},
+    
+    browseURL: function(url) {
+        nevow_clientToServerEvent('browseURL', this, '', url);
+    },
+    
+    processBrowseEvent: function(menu, item, e, eOpts) {
+        this.browseURL(e.url)
+    },
+    
+    fileOpenTutorial: function() {
+        this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
+    },
+    
+    fileOpenTutorial2: function() {
+        nevow_clientToServerEvent('loadTutorial', this, '');
+    },
+    
     toolsRefresh: function() {
         eXe.app.quitWarningEnabled = false;
         window.location = window.location;
@@ -145,6 +201,44 @@ Ext.define('eXe.controller.Toolbar', {
         Ext.get('loading-mask').fadeIn();
         Ext.get('loading').show();
     },
+
+    insertPackage: function() {
+        var f = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeOpen,
+            title: _("Select package to insert"),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk)
+                    nevow_clientToServerEvent('insertPackage', this, '', fp.file.path);
+            }
+        });
+        f.appendFilters([
+            { "typename": _("eXe Package Files"), "extension": "*.elp", "regex": /.*\.elp$/ },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+            ]
+        );
+        f.show();        
+	},
+
+	extractPackage: function() {
+        var f = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeSave,
+            title: _("Save extracted package as"),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                    nevow_clientToServerEvent('extractPackage', this, '', fp.file.path, fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+            }
+        });
+        f.appendFilters([
+            { "typename": _("eXe Package Files"), "extension": "*.elp", "regex": /.*\.elp$/ },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+            ]
+        );
+        f.show();        
+	},
 
     importHtml: function(){
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
