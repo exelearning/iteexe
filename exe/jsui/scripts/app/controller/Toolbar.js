@@ -325,8 +325,10 @@ Ext.define('eXe.controller.Toolbar', {
             modal: true,
             scope: this,
             callback: function(fp) {
-                if (fp.status == eXe.view.filepicker.FilePicker.returnOk)
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
+                    Ext.Msg.wait(new Ext.Template(_('Inserting package: {filename}')).apply({filename: fp.file.path}));
                     nevow_clientToServerEvent('insertPackage', this, '', fp.file.path);
+                }
             }
         });
         f.appendFilters([
@@ -344,8 +346,10 @@ Ext.define('eXe.controller.Toolbar', {
             modal: true,
             scope: this,
             callback: function(fp) {
-                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                    Ext.Msg.wait(new Ext.Template(_('Extracting package: {filename}')).apply({filename: fp.file.path}));
                     nevow_clientToServerEvent('extractPackage', this, '', fp.file.path, fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                }
             }
         });
         f.appendFilters([
@@ -660,6 +664,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
 	fileOpenRecent2: function(number) {
+        Ext.Msg.wait(_('Loading package...'));
 	    nevow_clientToServerEvent('loadRecent', this, '', number)
 	},
 	
@@ -679,8 +684,10 @@ Ext.define('eXe.controller.Toolbar', {
 			modal: true,
 			scope: this,
 			callback: function(fp) {
-		    	if (fp.status == eXe.view.filepicker.FilePicker.returnOk)
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
+                    Ext.Msg.wait(new Ext.Template(_('Loading package: {filename}')).apply({filename: fp.file.path}));
 		    		nevow_clientToServerEvent('loadPackage', this, '', fp.file.path);
+                }
 		    }
 		});
 		f.appendFilters([
@@ -722,6 +729,7 @@ Ext.define('eXe.controller.Toolbar', {
 	        this.saveWorkInProgress();
 	        // If the package has been previously saved/loaded
 	        // Just save it over the old file
+            Ext.Msg.wait(new Ext.Template(_('Saving package to: {filename}')).apply({filename: filename}));
 	        if (onDone) {
 	            nevow_clientToServerEvent('savePackage', this, '', '', onDone);
 	        } else {
@@ -743,6 +751,7 @@ Ext.define('eXe.controller.Toolbar', {
 			callback: function(fp) {
 			    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
 			        this.saveWorkInProgress();
+                    Ext.Msg.wait(_('Saving package...'));
 			        if (onDone && typeof(onDone) == "string") {
 			            nevow_clientToServerEvent('savePackage', this, '', f.file.path, onDone)
 			        } else {
