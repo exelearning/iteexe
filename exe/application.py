@@ -39,6 +39,7 @@ from exe.webui.webserver     import WebServer
 from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.translate    import installSafeTranslate
+from exe.engine.package      import Package
 from exe.engine              import version
 from exe                     import globals
 import logging
@@ -202,7 +203,7 @@ class Application:
         self.ideviceStore.load()
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
-        self.webServer = WebServer(self)
+        self.webServer = WebServer(self, self.packagePath)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
 
@@ -222,9 +223,13 @@ class Application:
         """
 
         if self.packagePath:
-            package = self.packageStore.loadPackage(self.packagePath)
-            self.webServer.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
+            try:
+                package = Package.load(self.packagePath)
+                self.webServer.root.package = package
+                launchBrowser(self.config, package.name)
+            except:
+                self.webServer.root.packagePath = None
+                launchBrowser(self.config, "")
         else:
             launchBrowser(self.config, "")
 

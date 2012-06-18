@@ -38,12 +38,13 @@ class PackageRedirectPage(RenderableResource):
     
     name = '/'
 
-    def __init__(self, webServer):
+    def __init__(self, webServer, packagePath=None):
         """
         Initialize
         """
         RenderableResource.__init__(self, None, None, webServer)
         self.webServer = webServer
+        self.packagePath = packagePath
         # See if all out main pages are not showing
         # This is a twisted timer
         self.stopping = None
@@ -63,6 +64,10 @@ class PackageRedirectPage(RenderableResource):
                 return result
             else:
                 session = request.getSession()
+                if self.packagePath:
+                    session.packageStore.addPackage(self.package)
+                    self.bindNewPackage(self.package, session)
+                    self.packagePath = None
                 if session.uid in self.mainpages.keys():
                     if name in self.mainpages[session.uid].keys():
                         return self.mainpages[session.uid][name]

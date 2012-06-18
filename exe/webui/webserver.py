@@ -58,14 +58,14 @@ class WebServer:
     Encapsulates some twisted components to serve
     all webpages, scripts and nevow functionality
     """
-    def __init__(self, application):
+    def __init__(self, application, packagePath=None):
         """
         Initialize
         """
         self.application = application
         self.config      = application.config
         self.tempWebDir  = application.tempWebDir
-        self.root        = PackageRedirectPage(self)   
+        self.root        = PackageRedirectPage(self, packagePath)   
         self.editor      = EditorPage(self.root)
         self.preferences = PreferencesPage(self.root)
         self.xliffexportpreferences = XliffExportPreferencesPage(self.root)

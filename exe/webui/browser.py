@@ -25,12 +25,8 @@
 Browser module
 """
 
-import os
-import sys
-import re
 import logging
 from urllib import quote
-from twisted.internet import reactor
 import webbrowser
 
 log = logging.getLogger(__name__)
