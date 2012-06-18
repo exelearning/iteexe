@@ -859,7 +859,7 @@ Ext.define('eXe.view.forms.MetadataPanel', {
                 'beforeaction': function(form, action, eOpts) {
                     form.url = location.pathname + "/properties"
                 },
-                'show': function() {
+                'render': function() {
                     this.load({ 
                         method: "GET", 
                         params: this.getForm().getFieldValues(),

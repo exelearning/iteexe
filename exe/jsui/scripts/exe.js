@@ -44,6 +44,7 @@ var conf = {
 
 Ext.override(Ext.form.field.Text, conf);
 Ext.override(Ext.form.field.TextArea, conf);
+Ext.override(Ext.form.field.Checkbox, conf);
 
 Ext.application({
     name: 'eXe',
@@ -90,7 +91,7 @@ Ext.application({
 
         window.onbeforeunload = function() {
             if (eXe.app.quitWarningEnabled)
-                return _("If you leave this page eXe application continues to run.." +
+                return _("If you leave this page eXe application continues to run." +
                         " Please use the menu File->Quit if you really want to exit the application.");
         };
 

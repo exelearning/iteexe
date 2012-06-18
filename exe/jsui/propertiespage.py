@@ -36,6 +36,8 @@ class PropertiesPage(Renderable, Resource):
     """
     name = 'properties'
 
+    booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile')
+    
     def __init__(self, parent):
         """ 
         Initialize
@@ -83,7 +85,10 @@ class PropertiesPage(Renderable, Resource):
         try:
             for key, value in request.args.items():
                 obj, name = self.fieldId2obj(key)
-                setattr(obj, name, toUnicode(value[0]))
+                if key in self.booleanFieldNames:
+                    setattr(obj, name, value[0] == 'true')
+                else:
+                    setattr(obj, name, toUnicode(value[0]))
         except:
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
         return json.dumps({'success': True})

@@ -30,16 +30,13 @@ Ext.define('eXe.view.forms.HelpContainer', {
             items: [
                 {
 		            xtype: 'container',
-		            layout: {
-		                align: 'middle',
-		                type: 'hbox'
-		            },
+		            layout: 'hbox',
                     anchor: '100%',
 		            items: [
 		                {
 		                    xtype: 'container',
 		                    layout: 'anchor',
-		                    flex: 1,
+		                    flex: this.flex != undefined? this.flex : 1,
 		                    items: this.item
 		                },
 		                {
@@ -50,11 +47,10 @@ Ext.define('eXe.view.forms.HelpContainer', {
 		                        {
 		                            xtype: 'image',
 		                            src: '/images/info.png',
-		                            margin: 5,
+		                            margin: '3 0 0 4',
 		                            height: 16,
 		                            width: 16,
 		                            anchor: '100%',
-		                            flex: 1,
                                     listeners: {
                                         afterrender: function(c) {
                                             c.el.on('click', function(a) {

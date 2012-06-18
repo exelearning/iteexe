@@ -21,7 +21,8 @@ Ext.define('eXe.view.ui.MainTabPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.maintabpanel',
     requires: [
-        'eXe.view.forms.MetadataPanel'
+        'eXe.view.forms.MetadataPanel',
+        'eXe.view.forms.ExportPanel'
     ],
     activeTab: 0,
 
@@ -46,11 +47,25 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                             title: _('Package')
                         },
                         {
-                            xtype: 'metadata',
-                            title: _('Metadata')
+                            xtype: 'tabpanel',
+                            title: _('Metadata'),
+                            items: [
+	                            {
+		                            xtype: 'metadata',
+	                                title: _('Dublin Core')
+	                            },
+                                {
+                                    xtype: 'panel',
+                                    title: _('LOM')
+                                },
+                                {
+                                    xtype: 'panel',
+                                    title: _('LOM.es')
+                                }
+                            ]
                         },
                         {
-                            xtype: 'panel',
+                            xtype: 'export',
                             title: _('Export')
                         }
                     ]
