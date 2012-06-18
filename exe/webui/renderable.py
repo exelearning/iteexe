@@ -30,7 +30,7 @@ but you don't have to use that functionality. It means you can use a rendering
 template to do your rendering, even if you're part of a bigger block.
 """
 
-from nevow import loaders
+from nevow import loaders, inevow
 from nevow.livepage import LivePage
 from twisted.web.resource import Resource
 from nevow import tags
@@ -310,6 +310,14 @@ class RenderableLivePage(_RenderablePage, LivePage):
         """
         LivePage.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+
+    def renderHTTP(self, ctx):
+        "Disable cache of live pages"
+        request = inevow.IRequest(ctx)
+        request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
+        request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
+        request.setHeader("Pragma", "no-cache")
+        return LivePage.renderHTTP(self, ctx)
 
     def render_liveglue(self, ctx, data):
         return tags.script(src='/xulscripts/nevow_glue.js')

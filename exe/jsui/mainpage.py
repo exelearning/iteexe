@@ -237,7 +237,7 @@ class MainPage(RenderableLivePage):
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.sendScript('top.location = "/%s"' % self.package.name.encode('utf8'))
+            client.sendScript('eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'))
 
 
     def handleLoadPackage(self, client, filename):
@@ -245,7 +245,7 @@ class MainPage(RenderableLivePage):
         package = self._loadPackage(client, filename, newLoad=True)
         self.session.packageStore.addPackage(package)
         self.root.bindNewPackage(package, self.session)
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           package.name).encode('utf8'))
  
     def handleLoadTutorial(self, client):
@@ -263,7 +263,7 @@ class MainPage(RenderableLivePage):
         G.application.config.locale = locale
         G.application.config.locales[locale].install(unicode=True)
         G.application.config.configParser.set('user', 'locale', locale)
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           self.package.name).encode('utf8'))
 
     def handleSetInternalAnchors(self, client, internalAnchors):
@@ -272,7 +272,7 @@ class MainPage(RenderableLivePage):
         """
         G.application.config.internalAnchors = internalAnchors
         G.application.config.configParser.set('user', 'internalAnchors', internalAnchors)
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           self.package.name).encode('utf8'))
  
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
@@ -632,7 +632,7 @@ class MainPage(RenderableLivePage):
 
     def handleImportCallback(self,resources,client):
         client.call('eXe.app.getController("Toolbar").closeImportProgressWindow')
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                       self.package.name).encode('utf8'))
 
     def handleCancelImport(self, client):
@@ -760,7 +760,7 @@ class MainPage(RenderableLivePage):
         except Exception,e:
             client.alert(_(u'Error importing XLIFF: %s') % e)
 
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'))
 
 
@@ -776,7 +776,7 @@ class MainPage(RenderableLivePage):
         # and to add any such anchors into the dest package via isMerge:
         newNode.RenamedNodePath(isMerge=True)
 
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           self.package.name).encode('utf8'))
 
 

@@ -88,12 +88,23 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#file_import_html': {
                 click: this.importHtml
+            },
+            '#file_quit': {
+                click: this.fileQuit
             }
         });
-        this.on({
-           importHtml2: this.importHtml2,
-           scope: this
-        });
+    },
+
+    fileQuit: function() {
+	    this.saveWorkInProgress();
+	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");
+	},
+
+    doQuit: function() {
+        eXe.app.quitWarningEnabled = false;
+        nevow_clientToServerEvent('quit', this, '');
+        Ext.get('loading-mask').fadeIn();
+        Ext.get('loading').show();
     },
 
     importHtml: function(){
@@ -171,7 +182,7 @@ Ext.define('eXe.controller.Toolbar', {
             modal: true,
             buttons: Ext.Msg.OK,
             fn: function(button) {
-                top.location = url;
+                eXe.app.gotoUrl(url);
             }
         });        
     },
@@ -415,7 +426,7 @@ Ext.define('eXe.controller.Toolbar', {
 	
     fileNew: function() {
     	// Ask the server if the current package is dirty
-    	this.askDirty("window.top.location = '/'");
+    	this.askDirty("eXe.app.gotoUrl('/')");
 	},
 	
     fileOpen: function() {

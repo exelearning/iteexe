@@ -68,6 +68,13 @@ Ext.application({
     	'filepicker.File'
     ],
     
+    quitWarningEnabled: true,
+
+    gotoUrl: function(location) {
+        eXe.app.quitWarningEnabled = false;
+        window.top.location = location;    
+    },
+    
     launch: function() {
         Ext.QuickTips.init();
 
@@ -80,13 +87,20 @@ Ext.application({
         }
         
         eXe.app = this;
+
+        window.onbeforeunload = function() {
+            if (eXe.app.quitWarningEnabled)
+                return _("If you leave this page eXe application continues to run.." +
+                        " Please use the menu File->Quit if you really want to exit the application.");
+        };
+
         var cmp1 = Ext.create('eXe.view.ui.eXeViewport', {
             renderTo: Ext.getBody()
         });
         cmp1.show();
         setTimeout(function(){
-		    Ext.get('loading').remove();
-		    Ext.get('loading-mask').fadeOut({remove:true});
+		    Ext.get('loading').hide();
+		    Ext.get('loading-mask').fadeOut();
 		  }, 250);
     },
 

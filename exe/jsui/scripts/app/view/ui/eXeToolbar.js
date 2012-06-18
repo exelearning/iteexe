@@ -191,6 +191,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
+                                itemId: 'file_quit',
                                 text: _('Quit')
                             }
                         ]
