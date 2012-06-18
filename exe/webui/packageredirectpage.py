@@ -60,12 +60,53 @@ class PackageRedirectPage(RenderableResource):
         else:
             result = self.children.get(unicode(name, 'utf8'))
             if result is not None:
-                return result
-            else:
-                # This will just raise an error
-                return RenderableResource.getChild(self, name, request)
+                if len(result) == 1:
+                    return result[0]
+                else:
+                    for mainpage in result:
+                        if mainpage.packageStore == request.getSession().packageStore:
+                            return mainpage
+            # This will just raise an error
+            return RenderableResource.getChild(self, name, request)
 
-    def bindNewPackage(self, package):
+    def getChildWithDefault(self, path, request):
+        """Retrieve a static or dynamically generated child resource from me.
+
+        First checks if a resource was added manually by putChild, and then
+        call getChild to check for dynamic resources. Only override if you want
+        to affect behaviour of all child lookups, rather than just dynamic
+        ones.
+
+        This will check to see if I have a pre-registered child resource of the
+        given name, and call getChild if I do not.
+        """
+        
+        if path == '':
+            return self
+        result = self.children.get(unicode(path, 'utf8'))
+        if result is not None:
+            if len(result) == 1:
+                if isinstance(result[0], MainPage):
+                    if result[0].session.uid == request.getSession().uid:
+                        return result[0]
+                else:
+                    return result[0]
+            else:
+                for mainpage in result:
+                    if mainpage.session.uid == request.getSession().uid:
+                        return mainpage
+
+        return RenderableResource.getChild(self, path, request)
+    
+    def putChild(self, path, child):
+        result = self.children.get(path)
+        if result is None:
+            self.children[path] = [child]
+        else:
+            result.append(child)
+        child.server = self.server
+        
+    def bindNewPackage(self, package, session):
         """
         Binds 'package' to the appropriate url
         and creates a MainPage instance for it
@@ -75,7 +116,7 @@ class PackageRedirectPage(RenderableResource):
         redirect people to MainPage. Copy from
 	    svn revision 1311 to re-enable gtk.
         """
-        MainPage(self, package)
+        MainPage(self, package, session)
 
 
     def render_GET(self, request):
@@ -84,8 +125,9 @@ class PackageRedirectPage(RenderableResource):
         """
         log.debug("render_GET" + repr(request.args))
         # Create new package
-        package = self.packageStore.createPackage()
-        self.bindNewPackage(package)
+        session = request.getSession()
+        package = session.packageStore.createPackage()
+        self.bindNewPackage(package, session)
         log.info("Created a new package name="+ package.name)
         # Tell the web browser to show it
         request.redirect(package.name.encode('utf8'))

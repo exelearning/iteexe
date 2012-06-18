@@ -39,7 +39,7 @@ from exe.jsui.outlinepane        import OutlinePane
 from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.webui.renderable        import RenderableLivePage
-from exe.xului.propertiespage    import PropertiesPage
+from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
@@ -68,12 +68,13 @@ class MainPage(RenderableLivePage):
     _templateFileName = 'mainpage.html'
     name = 'to_be_defined'
 
-    def __init__(self, parent, package):
+    def __init__(self, parent, package, session):
         """
         Initialize a new Javascript page
         'package' is the package that we look after
         """
         self.name = package.name
+        self.session = session
         RenderableLivePage.__init__(self, parent, package)
         self.putChild("resources", static.File(package.resourceDir))
 
@@ -89,9 +90,6 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
-
-        # translate the "don't close the window" message
-        red_x = _("Please use eXe's\n   File... Quit\nmenu to close eXe.")
 
     def getChild(self, name, request):
         """
@@ -245,9 +243,8 @@ class MainPage(RenderableLivePage):
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         package = self._loadPackage(client, filename, newLoad=True)
-        packageStore = self.webServer.application.packageStore
-        packageStore.addPackage(package)
-        self.root.bindNewPackage(package)
+        self.session.packageStore.addPackage(package)
+        self.root.bindNewPackage(package, self.session)
         client.sendScript((u'top.location = "/%s"' % \
                           package.name).encode('utf8'))
  

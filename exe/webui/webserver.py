@@ -34,8 +34,14 @@ sys.stderr, oldStdErr = StringIO(), sys.stderr
 sys.stdout, oldStdOut = StringIO(), sys.stdout
 try:
     from twisted.internet              import reactor
+    from twisted.web                   import server
     from twisted.internet.error        import CannotListenError
+    from twisted.web                   import resource
+    from twisted.internet              import defer
+    from nevow                         import compy
     from nevow                         import appserver
+    from nevow                         import inevow
+    from nevow.i18n                    import languagesFactory
     from twisted.web                   import static
 finally:
     print sys.stderr
@@ -49,9 +55,70 @@ from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.aboutpage           import AboutPage
+from exe                           import globals as G
+from exe.engine.packagestore import PackageStore
+
 
 import logging
 log = logging.getLogger(__name__)
+
+def setLocaleFromRequest(request):
+    acceptedLocales = languagesFactory(request)
+    for locale in acceptedLocales:
+        try:
+            G.application.config.locales[locale].install(unicode=True)
+            break
+        except KeyError:
+            pass
+    
+    G.application.config.locale = locale
+    return locale
+
+class eXeResourceAdapter(appserver.OldResourceAdapter):
+    def renderLocalized(self, request):
+        setLocaleFromRequest(request)
+        return self.original.render(request)
+        
+    def renderHTTP(self, ctx):
+        request = inevow.IRequest(ctx)
+        if self.real_prepath_len is not None:
+            path = request.postpath = request.prepath[self.real_prepath_len:]
+            del request.prepath[self.real_prepath_len:]
+        result = defer.maybeDeferred(self.renderLocalized, request).addCallback(
+            self._handle_NOT_DONE_YET, request)
+        return result
+
+compy.registerAdapter(eXeResourceAdapter, resource.IResource, inevow.IResource)
+
+
+class eXeRequest(appserver.NevowRequest):
+    def __init__(self, *args, **kw):
+        appserver.NevowRequest.__init__(self, *args, **kw)
+        self.locale = None
+
+    def gotPageContext(self, pageContext):
+        request = inevow.IRequest(pageContext)
+        self.locale = setLocaleFromRequest(request)
+        appserver.NevowRequest.gotPageContext(self, pageContext)
+
+class eXeSession(server.Session):
+    def __init__(self, *args, **kwargs):
+        server.Session.__init__(self, *args, **kwargs)
+        self.packageStore = PackageStore()
+
+
+class eXeSite(appserver.NevowSite):
+    requestFactory = eXeRequest
+
+    def makeSession(self):
+        """Generate a new Session instance, and store it for future reference.
+        """
+        uid = self._mkuid()
+        s = eXeSession(self, uid)
+        session = self.sessions[uid] = s
+        reactor.callLater(1800, s.checkExpired)
+        return session
+    
 
 class WebServer:
     """
@@ -102,7 +169,7 @@ class WebServer:
                 log.debug("find_port(): trying to listenTCP on port# %d", 
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
-                                  appserver.NevowSite(self.root),
+                                  eXeSite(self.root),
                                   interface="0.0.0.0")
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)
@@ -204,11 +271,11 @@ class WebServer:
         self.root.putChild("templates",   static.File(webDir+"/templates"))
 
         # sub applications
-        self.root.putChild("editor",      self.editor)
-        self.root.putChild("preferences", self.preferences)
-        self.root.putChild("xliffexport", self.xliffexportpreferences)
-        self.root.putChild("xliffimport", self.xliffimportpreferences)
-        self.root.putChild("about",       self.about)
+#        self.root.putChild("editor",      self.editor)
+#        self.root.putChild("preferences", self.preferences)
+#        self.root.putChild("xliffexport", self.xliffexportpreferences)
+#        self.root.putChild("xliffimport", self.xliffimportpreferences)
+#        self.root.putChild("about",       self.about)
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir

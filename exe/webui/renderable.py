@@ -85,7 +85,6 @@ class Renderable(object):
         # self.application
         self.config = Unset
         self.ideviceStore = Unset
-        self.packageStore = Unset
 
         # Overwrite old instances with same name
         if parent:

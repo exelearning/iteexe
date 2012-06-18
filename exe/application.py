@@ -78,7 +78,6 @@ class Application:
         Initialize
         """
         self.config       = None
-        self.packageStore = None
         self.ideviceStore = None
         self.packagePath  = None
         self.webServer    = None
@@ -204,7 +203,6 @@ class Application:
         Needed for unit tests
         """
         log.debug("preLaunch")
-        self.packageStore = PackageStore()
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
         # Make it so jelly can load objects from ~/.exe/idevices
@@ -222,103 +220,6 @@ class Application:
         print "Welcome to eXe: the eLearning XHTML editor"
         log.info("eXe running...")
         self.webServer.run()
-
-    def _loadPackage(self, packagePath):
-        #"""
-        #Convenience function for loading the first package that we'll browse to
-        #"""
-        try:
-            #XXXX xxxx
-            log.info("webDir: " + self.config.webDir)
-            log.info("tempWebDir: " + self.tempWebDir)
-            inSplashFile =  self.config.webDir + "/docs/splash.xulTemplate"
-
-            outSplashFile = self.config.webDir + "/docs/splash.xul"
-            outSplashData = self.config.webDir + "/docs/splash.dat"
-
-            outSplashFile = self.tempWebDir + "/splash.xul"
-            outSplashData = self.tempWebDir + "/splash.dat"
-
-            log.info("inSplashFile: " + inSplashFile)
-            log.info("outSplashFile: " + outSplashFile)
-            log.info("outSplashData: " + outSplashData)
-
-            #resets any splash page data
-            outSplashFH = open(outSplashData, "w")
-            outSplashFH.write("")
-            outSplashFH.close()
-
-            inSplashFH = open(inSplashFile, "r")
-            outSplashFH = open(outSplashFile, "w")
-            pleaseWaitLoad = _(u'Please wait until loading finishes')
-            for line in inSplashFH:
-                line = line.replace("LOADING_FILE_NAME", packagePath)
-                try:
-                    # this can fail in non UTF-8 uris
-                    line = line.replace("PLEASE_WAIT_LOAD", pleaseWaitLoad)
-                except:
-                    pass
-                outSplashFH.write(line)
-            inSplashFH.close()
-            outSplashFH.close()
-   
-            log.info("packagePath: " + packagePath)
-
-            launchBrowser(self.config, outSplashFile, "splash")
-            shutil.copyfile(self.config.webDir + '/images/exe_logo.png', 
-                                      self.tempWebDir + '/exe_logo.png')
-
-            package = self.packageStore.loadPackage(packagePath)
-            port = self.config.port
-            editorUrl = u'http://127.0.0.1:%d/%s' % (port, package.name)
-            log.info("package.name: "+package.name)
-            log.info("editorUrl: " + editorUrl)
-            log.info("TempDirPath: " + editorUrl)
-            outSplashFH = open(outSplashData, "w")
-            outSplashFH.write("1000;" + editorUrl)
-            outSplashFH.close()
-
-            self.webServer.root.bindNewPackage(package)
-            return package
-
-        except Exception, e:
-            log.error('Error loading first Package (%s): %s' % (packagePath, e))
-            message = _(u'Sorry, wrong file format')
-
-            outSplashFH=open(globals.application.tempWebDir + \
-                               '/splash.dat',"w")
-            message = re.sub(";",":",message)
-            port = self.config.port
-            outSplashFH.write("1000;http://127.0.0.1:" + `port` + "/;" + \
-                               message)
-            outSplashFH.close()
-
-            return None
-
-
-
-    def xulMessage(self, msg):
-        """
-        launches the web browser and displays a message 
-        without the need of a running/responding webserver
-        """
-        inXulMsgFile =  self.config.webDir + "/docs/xulMsg.xulTemplate"
-        outXulMsgFile = self.tempWebDir + "/xulMsg.xul"
-        log.info("outXulMsgFile: " + outXulMsgFile)
-        log.info("xulMessage: " + msg)
-
-        inXulMsgFH = open(inXulMsgFile, "r")
-        outXulMsgFH = open(outXulMsgFile, "w")
-        for line in inXulMsgFH:
-            line = re.sub("XUL_MESSAGE", msg, line)
-            outXulMsgFH.write(line)
-        inXulMsgFH.close()
-        outXulMsgFH.close()
-        launchBrowser(self.config, outXulMsgFile, "xulMsg")
-        shutil.copyfile(self.config.webDir + '/images/exe_logo.png', self.tempWebDir + '/exe_logo.png')
-        #allow sufficient time for the file to be read before exiting 
-        #which automatically deletes the tempWebDir and all files
-        time.sleep(3)
 
     def launch(self):
         """
