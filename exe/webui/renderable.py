@@ -30,8 +30,10 @@ but you don't have to use that functionality. It means you can use a rendering
 template to do your rendering, even if you're part of a bigger block.
 """
 
-from nevow import loaders, inevow
-from nevow.livepage import LivePage
+import nevow
+from nevow import loaders, inevow, rend
+from nevow.livepage import LivePage, DefaultClientHandleFactory, _js,\
+    ClientHandle, IClientHandle, clientHandleFactory
 from twisted.web.resource import Resource
 from nevow import tags
 import re
@@ -299,6 +301,23 @@ class RenderableResource(_RenderablePage, Resource):
         _RenderablePage.__init__(self, parent, package, config)
 
 
+class eXeClientHandle(ClientHandle):
+    __implements__ = IClientHandle
+    
+    def alert(self, what):
+        """Show the user an alert 'what'
+        """
+        if not isinstance(what, _js):
+            what = "'%s'" % (self.flt(what), )
+        self.sendScript("Ext.Msg.alert(_('Message'),%s);" % (what, ))
+
+
+class eXeClientHandleFactory(DefaultClientHandleFactory):
+    clientHandleClass = eXeClientHandle
+    
+nevow.livepage.clientHandleFactory = eXeClientHandleFactory()
+
+
 class RenderableLivePage(_RenderablePage, LivePage):
     """
     This class is both a renderable and a LivePage/Resource
@@ -318,6 +337,14 @@ class RenderableLivePage(_RenderablePage, LivePage):
         request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
         request.setHeader("Pragma", "no-cache")
         return LivePage.renderHTTP(self, ctx)
-
+        # each time the page is rendered, it gets a new ClientHandle
+        handle = clientHandleFactory.newClientHandle(
+            ctx,
+            self.refreshInterval,
+            self.targetTimeoutCount)
+        ctx.remember(handle, IClientHandle)
+        self.goingLive(ctx, handle)
+        return rend.Page.renderHTTP(self, ctx)
+    
     def render_liveglue(self, ctx, data):
         return tags.script(src='/xulscripts/nevow_glue.js')
