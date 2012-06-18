@@ -26,14 +26,14 @@ class CorreccionfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Correccion"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Correccion es un iDevice que permite resaltar texto para hacer correcciones a los autores."""), u"", u"correccionfpd")
+                         _(u"FPD - Correccion"),
+                         _(u"Jose Ramon Jimenez Reyes"), 
+                         _(u"""Correccion es un iDevice que permite resaltar texto para hacer correcciones a los autores."""), u"", u"correccionfpd")
         self.emphasis         = Idevice.NoEmphasis
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = _(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Correci&oacute;n:'), 
+        self.activityTextArea = TextAreaField(_(u'Texto Correci&oacute;n:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -131,7 +131,7 @@ class CorreccionfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Destacado:'), 
+        self.activityTextArea = TextAreaField(_(u'Texto Destacado:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

@@ -40,9 +40,9 @@ class SeleccionmultiplefpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Actividad de Seleccion Multiple"),
-                         x_(u"University of Auckland"),
-                         x_(u"""Although more often used in formal testing 
+                         _(u"FPD - Actividad de Seleccion Multiple"),
+                         _(u"University of Auckland"),
+                         _(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  
 discussion on topics students may feel a little reticent in responding to. 
 
@@ -55,7 +55,7 @@ When designing a MCQ test consider the following:
 <li> Avoid grammar language and question structures that might provide 
      clues</li>
 </ul>
- """), x_(u"""When building an MCQ consider the following: <ul>
+ """), _(u"""When building an MCQ consider the following: <ul>
 <li> Use phrases that learners are familiar with and have 
 encountered in their study </li>
 <li> Keep responses concise </li>
@@ -78,7 +78,7 @@ distractors </li>
         """
         Add a new question to this iDevice. 
         """
-        question = SelectQuestionField(self, x_(u'Question'))
+        question = SelectQuestionField(self, _(u'Question'))
         question.addOption()
         self.questions.append(question)
 

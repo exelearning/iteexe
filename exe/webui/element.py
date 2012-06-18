@@ -68,7 +68,7 @@ class Element(object):
         """
         Process arguments from the web server.
         """
-        msg = x_(u"ERROR Element.process called directly with %s class")
+        msg = _(u"ERROR Element.process called directly with %s class")
         log.error(msg % self.__class__.__name__)
         return _(msg) % self.__class__.__name__
 
@@ -94,7 +94,7 @@ class Element(object):
         """
         Returns an XHTML string for viewing this element
         """
-        msg = x_(u"ERROR Element.renderView called directly with %s class")
+        msg = _(u"ERROR Element.renderView called directly with %s class")
         log.error(msg % self.__class__.__name__)
         return _(msg) % self.__class__.__name__
 

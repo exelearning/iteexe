@@ -26,15 +26,15 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Orientaciones Alumnado"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."""), u"", u"orientacionesfpd")
+                         _(u"FPD - Orientaciones Alumnado"),
+                         _(u"Jose Ramon Jimenez Reyes"), 
+                         _(u"""Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."""), u"", u"orientacionesfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_orientacionesfpd"
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = _(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Orientaciones alumnado'), 
+        self.activityTextArea = TextAreaField(_(u'Texto Orientaciones alumnado'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -132,7 +132,7 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Orientaciones alumnado:'), 
+        self.activityTextArea = TextAreaField(_(u'Texto Orientaciones alumnado:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

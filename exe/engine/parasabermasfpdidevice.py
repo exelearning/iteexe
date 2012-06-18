@@ -26,15 +26,15 @@ class ParasabermasfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Para Saber Mas"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje."""), u"", u"parasabermasfpd")
+                         _(u"FPD - Para Saber Mas"),
+                         _(u"Jose Ramon Jimenez Reyes"), 
+                         _(u"""Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje."""), u"", u"parasabermasfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_parasabermasfpd"
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = _(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Para saber m&aacute;s'), 
+        self.activityTextArea = TextAreaField(_(u'Texto Para saber m&aacute;s'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -133,7 +133,7 @@ class ParasabermasfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Para sabe m&aacute;s'), 
+        self.activityTextArea = TextAreaField(_(u'Texto Para sabe m&aacute;s'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

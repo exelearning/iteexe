@@ -35,15 +35,15 @@ class FreeTextfpdIdevice(Idevice):
     persistenceVersion = 7
 
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"FPD - Texto Libre"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""The majority of a learning resource will be 
+        Idevice.__init__(self, _(u"FPD - Texto Libre"), 
+                         _(u"University of Auckland"), 
+                         _(u"""The majority of a learning resource will be 
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = TextAreaField(x_(u"Free Text"), 
-                                      x_(u"""Use this field to enter text. This 
+        self.content  = TextAreaField(_(u"Free Text"), 
+                                      _(u"""Use this field to enter text. This 
 iDevice has no emphasis applied although limited formatting can be applied to 
 text through the text editing buttons associated with the field."""),
                                       content)
@@ -118,7 +118,7 @@ text through the text editing buttons associated with the field."""),
         Use new Field classes
         """
         self.content = TextAreaField("content", 
-x_(u"This is a free text field general learning content can be entered."),
+_(u"This is a free text field general learning content can be entered."),
                                      self.content)
 
 

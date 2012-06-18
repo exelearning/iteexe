@@ -37,17 +37,17 @@ class MultimediaIdevice(Idevice):
     
     def __init__(self, defaultMedia = None):
         Idevice.__init__(self, 
-                         x_(u"MP3"), 
-                         x_(u"Auckland University of Technology"), 
-                         x_(u"The MP3 iDevice allows you to attach an MP3 " 
+                         _(u"MP3"), 
+                         _(u"Auckland University of Technology"), 
+                         _(u"The MP3 iDevice allows you to attach an MP3 " 
                             "media file to your content along with relevant textual"
                             "learning instructions."),
                          u"", 
                          u"")
         self.emphasis                    = Idevice.NoEmphasis
         self.media                       = MultimediaField(
-                                           x_(u"Choose an MP3 file"),
-                                           x_(u""
+                                           _(u"Choose an MP3 file"),
+                                           _(u""
             "<ol>"
             "  <li>Click &lt;Select an MP3&gt; and browse to the MP3 "
             "      file you wish to insert</li>"
@@ -61,17 +61,17 @@ class MultimediaIdevice(Idevice):
             "</ol>"
             ))
         self.media.idevice               = self
-        self.text                        = TextAreaField(x_(u"Text"),
-                                           x_("""Enter the text you wish to 
+        self.text                        = TextAreaField(_(u"Text"),
+                                           _("""Enter the text you wish to 
 associate with the file."""))
         self.text.idevice                = self
         self.float                       = u"left"
         self.caption                     = u""
         self.icon                        = u"multimedia"
-        self._captionInstruc             = x_(u"""Provide a caption for the 
+        self._captionInstruc             = _(u"""Provide a caption for the 
 MP3 file. This will appear in the players title bar as well.""")
        
-        self._alignInstruc               = x_(u"""Alignment allows you to 
+        self._alignInstruc               = _(u"""Alignment allows you to 
 choose where on the screen the media player will be positioned.""")
         self.systemResources += ['xspf_player.swf']
        

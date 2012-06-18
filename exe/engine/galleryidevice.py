@@ -406,12 +406,12 @@ class GalleryIdevice(_ShowsResources, Idevice):
         Sets up the idevice title and instructions etc
         """
         Idevice.__init__(self, 
-                         x_(u"Image Gallery"), 
-                         x_(u"eXe Project"), 
-                         x_(u"""<p>Where you have a number of images that relate 
+                         _(u"Image Gallery"), 
+                         _(u"eXe Project"), 
+                         _(u"""<p>Where you have a number of images that relate 
 to each other or to a particular learning exercise you may wish to display 
 these in a gallery context rather then individually.</p>"""),
-                         x_(u"Use this Idevice if you have a lot of images to "
+                         _(u"Use this Idevice if you have a lot of images to "
                              "show."),
                              "gallery",
                              parentNode)
@@ -421,8 +421,8 @@ these in a gallery context rather then individually.</p>"""),
         self.currentImageIndex = 0
         self.userResources     = []
         self.systemResources  += ["stock-insert-image.png"]
-        self._titleInstruc     = x_(u'Enter a title for the gallery')
-        self._addImageInstr    = x_(u"Click on the Add images button to select "
+        self._titleInstruc     = _(u'Enter a title for the gallery')
+        self._addImageInstr    = _(u"Click on the Add images button to select "
                                     u"an image file. The image will appear "
                                     u"below where you will be able to label "
                                     u"it. It's always good practice to put "

@@ -301,7 +301,7 @@ class GenericIdevice(Idevice):
             # Upgrade the title
             if self.title == _(u'Reading Activity 0.11'):
                 # If created in non-english, upgrade in non-english
-                self.title = x_(u'Reading Activity')
+                self.title = _(u'Reading Activity')
             if self.title == u'Reading Activity 0.11':
                 # If created in english, upgrade in english
                 self.title = u'Reading Activity'

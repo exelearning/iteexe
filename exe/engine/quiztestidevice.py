@@ -45,7 +45,7 @@ class AnswerOption(Persistable):
         self.question = question
         self.idevice = idevice
 
-        self.answerTextArea  = TextAreaField(x_(u'Option'),
+        self.answerTextArea  = TextAreaField(_(u'Option'),
                                    self.question._optionInstruc,
                                    answer)
         self.answerTextArea.idevice = idevice
@@ -95,7 +95,7 @@ class AnswerOption(Persistable):
         """
         self.idevice = idevice
         self.question = question
-        self.answerTextArea    = TextAreaField(x_(u'Option'), 
+        self.answerTextArea    = TextAreaField(_(u'Option'), 
                                      self.question._optionInstruc, 
                                      self.answer)
         self.answerTextArea.idevice = self.idevice
@@ -117,16 +117,16 @@ class TestQuestion(Persistable):
         self.options              = []
         self.correctAns           = -2
         self.userAns              = -1
-        self._questionInstruc      = x_(u"""Enter the question stem. 
+        self._questionInstruc      = _(u"""Enter the question stem. 
 The quest should be clear and unambiguous. Avoid negative premises 
 as these can tend to be ambiguous.""")
-        self._optionInstruc        = x_(u"""Enter an answer option. Provide 
+        self._optionInstruc        = _(u"""Enter an answer option. Provide 
 a range of plausible distractors (usually 3-4) as well as the correct answer. 
 Click on the &lt;Add another option&gt; button to add another answer.""")
-        self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
+        self._correctAnswerInstruc = _(u"""To indicate the correct answer, 
 click the radio button next to the correct option.""")
     
-        self.questionTextArea      = TextAreaField(x_(u'Question:'),
+        self.questionTextArea      = TextAreaField(_(u'Question:'),
                                          self._questionInstruc, u'')
         self.questionTextArea.idevice = self.idevice
 
@@ -183,7 +183,7 @@ click the radio button next to the correct option.""")
         """
         Upgrades to v 0.13
         """
-        self._optionInstruc = x_(u"""Enter an answer option. Provide 
+        self._optionInstruc = _(u"""Enter an answer option. Provide 
 a range of plausible distractors (usually 3-4) as well as the correct answer. 
 Click on the &lt;Add another option&gt; button to add another answer.""")
         
@@ -191,7 +191,7 @@ Click on the &lt;Add another option&gt; button to add another answer.""")
         """
         Upgrades to v 0.13
         """
-        self._questionInstruc= x_(u"""Enter the question stem. 
+        self._questionInstruc= _(u"""Enter the question stem. 
 The quest should be clear and unambiguous. Avoid negative premises 
 as these can tend to be ambiguous.""")
 
@@ -199,7 +199,7 @@ as these can tend to be ambiguous.""")
         """
         Upgrades to v 0.13
         """
-        self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
+        self._correctAnswerInstruc = _(u"""To indicate the correct answer, 
 click the radio button next to the correct option.""")
 
     def upgrade_setIdevice(self, idevice):
@@ -218,7 +218,7 @@ click the radio button next to the correct option.""")
         and converting them into a image-enabled TextAreaFields:
         """
         self.idevice = idevice
-        self.questionTextArea    = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea    = TextAreaField(_(u'Question:'), 
                                      self._questionInstruc, 
                                      self.question)
         self.questionTextArea.idevice = self.idevice
@@ -241,9 +241,9 @@ class QuizTestIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"SCORM Quiz"),
-                         x_(u"University of Auckland"),
-                         x_(u"""Unlike the MCQ the SCORM quiz is used to test 
+                         _(u"SCORM Quiz"),
+                         _(u"University of Auckland"),
+                         _(u"""Unlike the MCQ the SCORM quiz is used to test 
 the learners knowledge on a topic without providing the learner with feedback 
 to the correct answer. The quiz will often be given once the learner has had 
 time to learn and practice using the information or skill.

@@ -49,9 +49,9 @@ class WikipediaIdevice(Idevice):
     persistenceVersion = 8
 
     def __init__(self, defaultSite):
-        Idevice.__init__(self, x_(u"Wiki Article"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""<p>The Wikipedia iDevice allows you to locate 
+        Idevice.__init__(self, _(u"Wiki Article"), 
+                         _(u"University of Auckland"), 
+                         _(u"""<p>The Wikipedia iDevice allows you to locate 
 existing content from within Wikipedia and download this content into your eXe 
 resource. The Wikipedia Article iDevice takes a snapshot copy of the article 
 content. Changes in Wikipedia will not automatically update individual snapshot 
@@ -61,15 +61,15 @@ is covered by the GNU free documentation license.</p>"""),
                          u"", u"")
         self.emphasis         = Idevice.NoEmphasis
         self.articleName      = u""
-        self.article          = TextAreaField(x_(u"Article"))
+        self.article          = TextAreaField(_(u"Article"))
         self.article.idevice  = self
         self.images           = {}
         self.site             = defaultSite
         self.icon             = u"inter"
         self.systemResources += ["fdl.html"]
-        self._langInstruc      = x_(u"""Select the appropriate language version 
+        self._langInstruc      = _(u"""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
-        self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
+        self._searchInstruc    = _("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
         self.ownUrl               = ""
         
@@ -355,9 +355,9 @@ within Wikipedia.""")
         """
         Upgrades to v0.12
         """
-        self._langInstruc   = x_(u"""Select the appropriate language version 
+        self._langInstruc   = _(u"""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
-        self._searchInstruc = x_("""Enter a phrase or term you wish to search 
+        self._searchInstruc = _("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
         
     def upgradeToVersion8(self):

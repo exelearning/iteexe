@@ -40,9 +40,9 @@ class ImageWithTextIdevice(Idevice):
 
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
-                         x_(u"Image with Text"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""<p>
+                         _(u"Image with Text"), 
+                         _(u"University of Auckland"), 
+                         _(u"""<p>
 The image with text iDevice can be used in a number of ways to support both
 the emotional (affective) and learning task (cognitive) dimensions of eXe
 content. 
@@ -59,16 +59,16 @@ combustion engine, you could have a visual for each of the four positions of
 the piston with a brief textual summary of the key aspects of each visual.
 </p>"""), u"", u"")
         self.emphasis           = Idevice.NoEmphasis
-        self.image              = ImageField(x_(u"Image"), u"")
+        self.image              = ImageField(_(u"Image"), u"")
         self.image.idevice      = self
         self.image.defaultImage = defaultImage
-        self.text               = TextAreaField(x_(u"Text"),
-                                                x_("""Enter the text you wish to 
+        self.text               = TextAreaField(_(u"Text"),
+                                                _("""Enter the text you wish to 
                                                 associate with the image."""))
         self.text.idevice       = self
         self.float              = u"left"
         self.caption            = u""
-        self._captionInstruc    = x_(u"""Provide a caption for the image 
+        self._captionInstruc    = _(u"""Provide a caption for the image 
 you have just inserted.""")
 
     # Properties
@@ -115,7 +115,7 @@ you have just inserted.""")
         """
         Called to upgrade from 0.13 release
         """
-        self._captionInstruc  = x_(u"""Provide a caption for the image 
+        self._captionInstruc  = _(u"""Provide a caption for the image 
 you have just inserted.""")
 
     def upgradeToVersion7(self):

@@ -2376,7 +2376,7 @@ class FeedbackField(FieldWithResources):
         """
         FieldWithResources.__init__(self, name, instruc)
 
-        self._buttonCaption = x_(u"Click Here")
+        self._buttonCaption = _(u"Click Here")
 
         self.feedback      = ""
         # Note: now that FeedbackField extends from FieldWithResources,
@@ -2571,7 +2571,7 @@ class MultimediaField(Field):
         self.height        = "100"
         self.mediaResource = None
         self.caption       = ""
-        self._captionInstruc = x_(u"""Provide a caption for the 
+        self._captionInstruc = _(u"""Provide a caption for the 
 MP3 file. This will appear in the players title bar as well.""")
     # Properties
     captionInstruc    = lateTranslate('captionInstruc')
@@ -2618,7 +2618,7 @@ MP3 file. This will appear in the players title bar as well.""")
         else:
             self.caption   = ""
 
-        self._captionInstruc = x_(u"""Provide a caption for the 
+        self._captionInstruc = _(u"""Provide a caption for the 
 MP3 file. This will appear in the players title bar as well.""")
             
             
@@ -2763,7 +2763,7 @@ class ClozeField(FieldWithResources):
         """
         self.strictMarking = False
         self._strictMarkingInstruc = \
-            x_(u"<p>If left unchecked a small number of spelling and "
+            _(u"<p>If left unchecked a small number of spelling and "
                 "capitalization errors will be accepted. If checked only "
                 "an exact match in spelling and capitalization will be accepted."
                 "</p>"
@@ -2784,12 +2784,12 @@ class ClozeField(FieldWithResources):
                 "</p>")
         self.checkCaps = False
         self._checkCapsInstruc = \
-            x_(u"<p>If this option is checked, submitted answers with "
+            _(u"<p>If this option is checked, submitted answers with "
                 "different capitalization will be marked as incorrect."
                 "</p>")
         self.instantMarking = False
         self._instantMarkingInstruc = \
-            x_(u"""<p>If this option is set, each word will be marked as the 
+            _(u"""<p>If this option is set, each word will be marked as the 
 learner types it rather than all the words being marked the end of the 
 exercise.</p>""")
 
@@ -2997,7 +2997,7 @@ class ClozelangField(FieldWithResources):
         """
         self.strictMarking = False
         self._strictMarkingInstruc = \
-            x_(u"<p>If left unchecked a small number of spelling and "
+            _(u"<p>If left unchecked a small number of spelling and "
                 "capitalization errors will be accepted. If checked only "
                 "an exact match in spelling and capitalization will be accepted."
                 "</p>"
@@ -3018,17 +3018,17 @@ class ClozelangField(FieldWithResources):
                 "</p>")
         self.checkCaps = False
         self._checkCapsInstruc = \
-            x_(u"<p>If this option is checked, submitted answers with "
+            _(u"<p>If this option is checked, submitted answers with "
                 "different capitalization will be marked as incorrect."
                 "</p>")
         self.instantMarking = False
         self._instantMarkingInstruc = \
-            x_(u"""<p>If this option is set, each word will be marked as the 
+            _(u"""<p>If this option is set, each word will be marked as the 
 learner types it rather than all the words being marked the end of the 
 exercise.</p>""")
 	self.showScore = False
         self._showScoreInstruc = \
-            x_(u"""<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.</p>""")
+            _(u"""<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.</p>""")
 
     # Property handlers
     def set_encodedContent(self, value):
@@ -3107,7 +3107,7 @@ class FlashField(Field):
         self.width         = 300
         self.height        = 250
         self.flashResource = None
-        self._fileInstruc   = x_("""Only select .swf (Flash Objects) for 
+        self._fileInstruc   = _("""Only select .swf (Flash Objects) for 
 this iDevice.""")
 
     #properties
@@ -3151,7 +3151,7 @@ this iDevice.""")
         """
         Upgrades to exe v0.13
         """
-        self._fileInstruc   = x_("""Only select .swf (Flash Objects) for 
+        self._fileInstruc   = _("""Only select .swf (Flash Objects) for 
 this iDevice.""")
 
 # ===========================================================================
@@ -3171,7 +3171,7 @@ class FlashMovieField(Field):
         self.height        = 240
         self.flashResource = None
         self.message       = ""
-        self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
+        self._fileInstruc   = _("""Only select .flv (Flash Video Files) for 
 this iDevice.""")
 
     #properties
@@ -3235,7 +3235,7 @@ this iDevice.""")
         """
         Upgrades to exe v0.14
         """
-        self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
+        self._fileInstruc   = _("""Only select .flv (Flash Video Files) for 
 this iDevice.""")
 
     def _upgradeFieldToVersion4(self):
@@ -3247,7 +3247,7 @@ this iDevice.""")
 
 
 class DiscussionField(Field):
-    def __init__(self, name, instruc=x_("Type a discussion topic here."), content="" ):
+    def __init__(self, name, instruc=_("Type a discussion topic here."), content="" ):
         """
         Initialize 
         """
@@ -3276,7 +3276,7 @@ class MathField(Field):
         self._latex      = latex # The latex entered by the user
         self.gifResource = None
         self.fontsize    = 4
-        self._instruc    = x_(u""
+        self._instruc    = _(u""
             "<p>" 
             "Select symbols from the text editor below or enter LATEX manually"
             " to create mathematical formula."
@@ -3284,7 +3284,7 @@ class MathField(Field):
             " button below."
             "</p>"
             )
-        self._previewInstruc = x_("""Click on Preview button to convert 
+        self._previewInstruc = _("""Click on Preview button to convert 
                                   the latex into an image.""")
 
        
@@ -3352,11 +3352,11 @@ class QuizOptionField(Field):
         self.question  = question
         self.idevice = idevice
 
-        self.answerTextArea = TextAreaField(x_(u'Option'), 
+        self.answerTextArea = TextAreaField(_(u'Option'), 
                                   idevice._answerInstruc, u'')
         self.answerTextArea.idevice = idevice
 
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(_(u'Feedback'), 
                                     idevice._feedbackInstruc, u'')
         self.feedbackTextArea.idevice = idevice
 
@@ -3401,10 +3401,10 @@ class QuizOptionField(Field):
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.answerTextArea = TextAreaField(x_(u'Option'), 
+        self.answerTextArea = TextAreaField(_(u'Option'), 
                                   self.idevice._answerInstruc, self.answer)
         self.answerTextArea.idevice = self.idevice
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(_(u'Feedback'), 
                                     self.idevice._feedbackInstruc, 
                                     self.feedback)
         self.feedbackTextArea.idevice = self.idevice
@@ -3427,10 +3427,10 @@ class QuizQuestionField(Field):
 
         self.options              = []
         self.idevice              = idevice
-        self.questionTextArea     = TextAreaField(x_(u'Question'), 
+        self.questionTextArea     = TextAreaField(_(u'Question'), 
                                         idevice._questionInstruc, u'')
         self.questionTextArea.idevice     = idevice
-        self.hintTextArea         = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea         = TextAreaField(_(u'Hint'), 
                                         idevice._hintInstruc, u'')
         self.hintTextArea.idevice         = idevice
 
@@ -3492,11 +3492,11 @@ class QuizQuestionField(Field):
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.questionTextArea     = TextAreaField(x_(u'Question'), 
+        self.questionTextArea     = TextAreaField(_(u'Question'), 
                                         self.idevice._questionInstruc, 
                                         self.question)
         self.questionTextArea.idevice = self.idevice
-        self.hintTextArea         = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea         = TextAreaField(_(u'Hint'), 
                                         self.idevice._hintInstruc, self.hint)
         self.hintTextArea.idevice  = self.idevice
 
@@ -3518,7 +3518,7 @@ class SelectOptionField(Field):
         self.question  = question
         self.idevice = idevice
 
-        self.answerTextArea    = TextAreaField(x_(u'Options'), 
+        self.answerTextArea    = TextAreaField(_(u'Options'), 
                                      question._optionInstruc, u'')
         self.answerTextArea.idevice = idevice
 
@@ -3555,7 +3555,7 @@ class SelectOptionField(Field):
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.answerTextArea    = TextAreaField(x_(u'Options'), 
+        self.answerTextArea    = TextAreaField(_(u'Options'), 
                                      self.question._optionInstruc, 
                                      self.answer)
         self.answerTextArea.idevice = self.idevice
@@ -3578,24 +3578,24 @@ class SelectQuestionField(Field):
 
         self.idevice              = idevice
 
-        self._questionInstruc      = x_(u"""Enter the question stem. 
+        self._questionInstruc      = _(u"""Enter the question stem. 
 The question should be clear and unambiguous. Avoid negative premises as these 
 can tend to confuse learners.""")
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(_(u'Question:'), 
                                     self.questionInstruc, u'')
         self.questionTextArea.idevice = idevice
 
         self.options              = []
-        self._optionInstruc        = x_(u"""Enter the available choices here. 
+        self._optionInstruc        = _(u"""Enter the available choices here. 
 You can add options by clicking the "Add another option" button. Delete options by 
 clicking the red X next to the option.""")
 
-        self._correctAnswerInstruc = x_(u"""Select as many correct answer 
+        self._correctAnswerInstruc = _(u"""Select as many correct answer 
 options as required by clicking the check box beside the option.""")
 
-        self.feedbackInstruc       = x_(u"""Type in the feedback you want 
+        self.feedbackInstruc       = _(u"""Type in the feedback you want 
 to provide the learner with.""")
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
+        self.feedbackTextArea = TextAreaField(_(u'Feedback:'), 
                                     self.feedbackInstruc, u'')
         self.feedbackTextArea.idevice = idevice
     
@@ -3662,10 +3662,10 @@ to provide the learner with.""")
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(_(u'Question:'), 
                                     self.questionInstruc, self.question)
         self.questionTextArea.idevice = self.idevice
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
+        self.feedbackTextArea = TextAreaField(_(u'Feedback:'), 
                                     self.feedbackInstruc, self.feedback)
         self.feedbackTextArea.idevice = self.idevice
 

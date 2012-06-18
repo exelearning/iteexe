@@ -60,8 +60,8 @@ class Question(Persistable):
         images are now embedded straight into the feedbackTextArea,
         but this routine is kept around for upgrade paths from old elps.
         """
-        self.image = ImageField(x_(u"Image"),
-                                x_(u"Choose an optional image to be shown to the student "
+        self.image = ImageField(_(u"Image"),
+                                _(u"Choose an optional image to be shown to the student "
                                     "on completion of this question")) 
         self.image.idevice = idevice
         self.image.defaultImage = idevice.defaultImage
@@ -194,9 +194,9 @@ class EjercicioresueltofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Ejercicio Resuelto"),
-                         x_(u"University of Auckland"), 
-                         x_(u"""A case study is a device that provides learners 
+                         _(u"FPD - Ejercicio Resuelto"),
+                         _(u"University of Auckland"), 
+                         _(u"""A case study is a device that provides learners 
 with a simulation that has an educational basis. It takes a situation, generally 
 based in reality, and asks learners to demonstrate or describe what action they 
 would take to complete a task or resolve a situation. The case study allows 
@@ -214,20 +214,20 @@ of the case and if so how are ideas feed back to the class</li></ul>"""),
 #        self.emphasis     = Idevice.SomeEmphasis
         self.emphasis     = "_ejercicioresueltofpd"
         
-        self._storyInstruc = x_(u"""Create the case story. A good case is one 
+        self._storyInstruc = _(u"""Create the case story. A good case is one 
 that describes a controversy or sets the scene by describing the characters 
 involved and the situation. It should also allow for some action to be taken 
 in order to gain resolution of the situation.""")
-        self.storyTextArea = TextAreaField(x_(u'Story:'), self._storyInstruc, story)
+        self.storyTextArea = TextAreaField(_(u'Story:'), self._storyInstruc, story)
         self.storyTextArea.idevice = self
 
 
         self.questions    = []
-        self._questionInstruc = x_(u"""Describe the activity tasks relevant 
+        self._questionInstruc = _(u"""Describe the activity tasks relevant 
 to the case story provided. These could be in the form of questions or 
 instructions for activity which may lead the learner to resolving a dilemma 
 presented. """)
-        self._feedbackInstruc = x_(u"""Provide relevant feedback on the 
+        self._feedbackInstruc = _(u"""Provide relevant feedback on the 
 situation.""")
         if defaultImage is None:
             defaultImage = G.application.config.webDir/'images'/DEFAULT_IMAGE
@@ -405,7 +405,7 @@ situation.""")
         Taking the old unicode string fields, 
         and converting them into a image-enabled TextAreaFields:
         """
-        self.storyTextArea = TextAreaField(x_(u'Story:'), 
+        self.storyTextArea = TextAreaField(_(u'Story:'), 
                                  self._storyInstruc, self.story)
         self.storyTextArea.idevice = self
         for question in self.questions:

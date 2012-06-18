@@ -43,14 +43,14 @@ class TrueFalseQuestion(Persistable):
         """
 
         self.idevice = idevice
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(_(u'Question:'), 
                                     self.idevice.questionInstruc, question)
         self.questionTextArea.idevice = idevice
         self.isCorrect = isCorrect
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(_(u'Feedback'), 
                                     self.idevice.feedbackInstruc, feedback)
         self.feedbackTextArea.idevice = idevice
-        self.hintTextArea = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea = TextAreaField(_(u'Hint'), 
                                 self.idevice.hintInstruc, hint)
         self.hintTextArea.idevice = idevice
 
@@ -119,13 +119,13 @@ class TrueFalseQuestion(Persistable):
         """
 
         self.idevice = idevice
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(_(u'Question:'), 
                                     self.idevice.questionInstruc, self.question)
         self.questionTextArea.idevice = self.idevice
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(_(u'Feedback'), 
                                     self.idevice.feedbackInstruc, self.feedback)
         self.feedbackTextArea.idevice = self.idevice
-        self.hintTextArea = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea = TextAreaField(_(u'Hint'), 
                                 self.idevice.hintInstruc, self.hint)
         self.hintTextArea.idevice = self.idevice
 
@@ -141,30 +141,30 @@ class VerdaderofalsofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Actividad de Verdadero/Falso"),
-                         x_(u"University of Auckland"),
-                         x_(u"""True/false questions present a statement where 
+                         _(u"FPD - Actividad de Verdadero/Falso"),
+                         _(u"University of Auckland"),
+                         _(u"""True/false questions present a statement where 
 the learner must decide if the statement is true. This type of question works 
 well for factual information and information that lends itself to either/or 
 responses."""), u"", u"autoevaluacionfpd")
 #        self.emphasis   = Idevice.SomeEmphasis
         self.emphasis   = "_autoevaluacionfpd"
-        self._hintInstruc     = x_(u"""A hint may be provided to assist the 
+        self._hintInstruc     = _(u"""A hint may be provided to assist the 
 learner in answering the question.""")
         self.questions        = []
-        self._questionInstruc = x_(u"""Type the question stem. The question 
+        self._questionInstruc = _(u"""Type the question stem. The question 
 should be clear and unambiguous. Avoid negative premises as these can tend to 
 be ambiguous.""")
         self._keyInstruc      = ""
-        self._feedbackInstruc = x_(u"""Enter any feedback you wish to provide 
+        self._feedbackInstruc = _(u"""Enter any feedback you wish to provide 
 to the learner. This field may be left blank. if this field is left blank 
 default feedback will be provided.""")
         self.questions.append(TrueFalseQuestion(self))
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the True/False Question should be 
+            _(u'Instructions'),
+            _(u"""Provide instruction on how the True/False Question should be 
 completed."""),
             u'')
                 
@@ -372,7 +372,7 @@ completed."""),
         """
         Upgrades exe to v0.11
         """
-        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
+        self._feedbackInstruc = _(u"""Type in the feedback that you want the 
 student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
@@ -391,10 +391,10 @@ this box, eXe will automatically provide default feedback as follows:
         Upgrades to v0.15
         """
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the True/False Question should be 
+            _(u'Instructions'),
+            _(u"""Provide instruction on how the True/False Question should be 
 completed."""),
-            x_(u'Read the paragraph below and '
+            _(u'Read the paragraph below and '
                 'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
    

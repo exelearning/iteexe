@@ -43,9 +43,9 @@ class ClozelangfpdIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, x_(u"FPD - Actividad de Espacios en Blanco (Modificada)"),
-                         x_(u"University of Auckland"), 
-                         x_(u"<p>Cloze exercises are texts or "
+        Idevice.__init__(self, _(u"FPD - Actividad de Espacios en Blanco (Modificada)"),
+                         _(u"University of Auckland"), 
+                         _(u"<p>Cloze exercises are texts or "
                              "sentences where students must fill in "
                              "missing words. They are often used for the "
                              "following purposes:</p>"
@@ -57,7 +57,7 @@ class ClozelangfpdIdevice(Idevice):
                              "<li>To check vocabulary knowledge.</li>"
                              "<li>To check word formation and/or grammatical "
                              "competence. </li></ol>"),
-                         x_(u"<dl>"
+                         _(u"<dl>"
                              "  <dt>If your goal is to test understanding "
                              "of core concepts or reading comprehension"
                              "  </dt>"
@@ -113,20 +113,20 @@ class ClozelangfpdIdevice(Idevice):
                             u"autoevaluacionfpd",
                              parentNode)
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the cloze activity should be 
+            _(u'Instructions'),
+            _(u"""Provide instruction on how the cloze activity should be 
 completed. Default text will be entered if there are no changes to this field.
 """), "")
-#            x_(u'Read the paragraph below and fill in the missing words.'))
+#            _(u'Read the paragraph below and fill in the missing words.'))
         self.instructionsForLearners.idevice = self
-        self._content = ClozelangField(x_(u'Clozelang'), 
-            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+        self._content = ClozelangField(_(u'Clozelang'), 
+            _(u"""<p>Enter the text for the cloze activity in to the cloze field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to hide, double click on the word to select it and 
 click on the Hide/Show Word button below.</p>"""))
         self._content.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'),
-            x_(u'Enter any feedback you wish to provide the learner '
+        self.feedback = TextAreaField(_(u'Feedback'),
+            _(u'Enter any feedback you wish to provide the learner '
                 'with-in the feedback field. This field can be left blank.'))
         self.feedback.idevice = self
 #        self.emphasis   = Idevice.SomeEmphasis
@@ -275,12 +275,12 @@ click on the Hide/Show Word button below.</p>"""))
         """
         self._upgradeIdeviceToVersion1()
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions For Learners'),
-            x_(u'Put instructions for learners here'),
-            x_(u'Read the paragraph below and '
+            _(u'Instructions For Learners'),
+            _(u'Put instructions for learners here'),
+            _(u'Read the paragraph below and '
                 'fill in the missing words'))
         self.instructionsForLearners.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'))
+        self.feedback = TextAreaField(_(u'Feedback'))
         self.feedback.idevice = self
 
 
