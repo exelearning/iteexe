@@ -17,6 +17,74 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
+Ext.define('eXe.view.ui.button', {
+    extend: 'Ext.button.Button',
+    alias: 'widget.accesskey_button',
+
+    accesskey: null,
+
+    beforeRender: function() {
+        var me = this, pat, rep, key, keymap;
+
+        if (me.accesskey) {
+            pat = new RegExp(me.accesskey,'i');
+            key = pat.exec(me.text);
+            if (key) {
+                rep = "<u>" + key + "</u>";
+                me.text = me.text.replace(pat, rep);
+            }
+	        keymap = new Ext.util.KeyMap({
+	            target: Ext.getBody(),
+	            binding: {
+	                key: me.accesskey,
+	                alt: true,
+	                fn: function() { me.showMenu(); },
+	                defaultEventAction: 'stopEvent'
+	            }
+	        });
+        }
+
+        me.callParent();
+    }
+});
+
+Ext.define('eXe.view.ui.menuitem', {
+    extend: 'Ext.menu.Item',
+    alias: 'widget.accesskey_menuitem',
+
+    accesskey: null,
+
+    beforeRender: function() {
+        var me = this, pat, rep, key, keymap;
+
+        if (me.accesskey) {
+            pat = new RegExp(me.accesskey,'i');
+            key = pat.exec(me.text);
+            if (key) {
+	            rep = "<u>" + key + "</u>";
+	            me.text = me.text.replace(pat, rep);
+            }
+	        keymap = new Ext.util.KeyMap({
+	            target: me.up().el,
+	            binding: {
+	                key: me.accesskey,
+	                fn: function() {
+                        if (me.menu) {
+                            me.activate();
+                            me.expandMenu(0);
+                            me.up().on({'beforeshow': function () { me.deactivate(); } });
+                        }
+                        else
+                            me.onClick(Ext.EventObject);
+                    },
+	                defaultEventAction: 'stopEvent'
+	            }
+	        });
+        }
+        me.callParent();
+    }
+});
+
 Ext.define('eXe.view.ui.eXeToolbar', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.exetoolbar',
@@ -27,26 +95,30 @@ Ext.define('eXe.view.ui.eXeToolbar', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'button',
+                    xtype: 'accesskey_button',
                     text: _('File'),
+                    accesskey: 'f',
                     menu: {
                         xtype: 'menu',
                         items: [
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('New'),
+                                accesskey: 'n',
                                 tooltip: 'Ctrl+Alt+N',
                                 itemId: 'file_new'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Open'),
+                                accesskey: 'o',
                                 tooltip: 'Ctrl+O',
                                 itemId: 'file_open'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Recent Projects...'),
+                                accesskey: 'r',
                                 menu: {
                                     xtype: 'menu',
 	                                itemId: 'file_recent_menu',
@@ -55,7 +127,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             xtype: 'menuseparator'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             itemId: 'file_clear_recent',
                                             text: _('Clear Recent Projects List')
                                         }
@@ -66,22 +138,25 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Save'),
+                                accesskey: 's',
                                 tooltip: 'Ctrl+S',
                                 itemId: 'file_save'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Save As...'),
+                                accesskey: 'a',
                                 itemId: 'file_save_as'
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Print'),
+                                accesskey: 'p',
                                 tooltip: 'Ctrl+P',
                                 itemId: 'file_print'
                             },
@@ -89,19 +164,22 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Import'),
+                                accesskey: 'i',
                                 menu: {
                                     xtype: 'menu',
                                     items: [
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             itemId: 'file_import_html',
+                                            accesskey: 'h',
                                             text: _('HTML Course')
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             itemId: 'file_import_xliff',
+                                            accesskey: 'x',
                                             text: _('XLIFF File')
                                         }
                                     ]
@@ -111,82 +189,96 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Export'),
+                                accesskey: 'e',
                                 menu: {
                                     xtype: 'menu',
                                     items: [
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('Common Cartridge'),
+                                            accesskey: 'c',
                                             itemId: 'file_export_cc'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('SCORM 1.2'),
+                                            accesskey: 's',
                                             itemId: 'file_export_scorm'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('IMS Content Package'),
+                                            accesskey: 'i',
                                             itemId: 'file_export_ims'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('Web Site'),
+                                            accesskey: 'w',
                                             menu: {
                                                 xtype: 'menu',
                                                 items: [
                                                     {
-                                                        xtype: 'menuitem',
+                                                        xtype: 'accesskey_menuitem',
                                                         text: _('Self-contained Folder'),
+                                                        accesskey: 'f',
                                                         itemId: 'file_export_website'
                                                     },
                                                     {
-                                                        xtype: 'menuitem',
+                                                        xtype: 'accesskey_menuitem',
                                                         text: _('Zip File'),
+                                                        accesskey: 'z',
                                                         itemId: 'file_export_zip'
                                                     }
                                                 ]
                                             }
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('Single Page'),
+                                            accesskey: 'p',
                                             itemId: 'file_export_singlepage'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('Text File'),
+                                            accesskey: 't',
                                             itemId: 'file_export_text'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('iPod Notes'),
+                                            accesskey: 'n',
                                             itemId: 'file_export_ipod'
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             text: _('XLIFF'),
+                                            accesskey: 'x',
                                             itemId: 'file_export_xliff'
                                         }
                                     ]
                                 }
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 text: _('Merging'),
+                                accesskey: 'm',
                                 menu: {
                                     xtype: 'menu',
                                     items: [
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             itemId: 'file_insert',
+                                            accesskey: 'i',
                                             text: _('Insert Package')
                                         },
                                         {
-                                            xtype: 'menuitem',
+                                            xtype: 'accesskey_menuitem',
                                             itemId: 'file_extract',
+                                            accesskey: 'e',
                                             text: _('Extract Package')
                                         }
                                     ]
@@ -196,8 +288,9 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'file_quit',
+                                accesskey: 'q',
                                 tooltip: 'Ctrl+Q',
                                 text: _('Quit')
                             }
@@ -205,35 +298,40 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     }
                 },
                 {
-                    xtype: 'button',
+                    xtype: 'accesskey_button',
                     text: _('Tools'),
+                    accesskey: 't',
                     menu: {
                         xtype: 'menu',
                         items: [
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'tools_idevice',
+                                accesskey: 'i',
                                 text: _('iDevice Editor')
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'tools_preferences',
+                                accesskey: 'p',
                                 text: _('Preferences')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'tools_refresh',
+                                accesskey: 'r',
                                 text: _('Refresh Display')
                             }
                         ]
                     }
                 },
                 {
-                    xtype: 'button',
+                    xtype: 'accesskey_button',
                     text: _('Styles'),
+                    accesskey: 's',
                     itemId: 'styles_button',
                     menu: {
                         xtype: 'menu',
@@ -241,50 +339,58 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                     }
                 },
                 {
-                    xtype: 'button',
+                    xtype: 'accesskey_button',
                     text: _('Help'),
+                    accesskey: 'h',
                     menu: {
                         xtype: 'menu',
                         items: [
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_tutorial',
+                                accesskey: 't',
                                 text: _('eXe Tutorial')
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_manual',
+                                accesskey: 'm',
                                 text: _('eXe Manual')
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_notes',
+                                accesskey: 'n',
                                 text: _('Release Notes')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_website',
+                                accesskey: 'w',
                                 text: _('eXe Web Site')
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_issue',
+                                accesskey: 'r',
                                 text: _('Report an Issue')
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_forums',
+                                accesskey: 'f',
                                 text: _('eXe Forums')
                             },
                             {
                                 xtype: 'menuseparator'
                             },
                             {
-                                xtype: 'menuitem',
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'help_about',
+                                accesskey: 'a',
                                 text: _('About eXe')
                             }
                         ]
