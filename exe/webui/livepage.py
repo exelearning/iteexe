@@ -20,13 +20,10 @@
 
 import logging
 from exe.webui.renderable import _RenderablePage
-from exe.webui.authoringpage import AuthoringPage
 import nevow
 from nevow.livepage import LivePage, DefaultClientHandleFactory, _js,\
     ClientHandle, IClientHandle
 from nevow import inevow, rend, tags
-import traceback
-from twisted.internet import defer, reactor
 
 log = logging.getLogger(__name__)
 
@@ -53,51 +50,7 @@ class eXeClientHandleFactory(DefaultClientHandleFactory):
         log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
         return handle
 
-clientHandleFactory = eXeClientHandleFactory()
-
-
-class Output(object):
-    __implements__ = inevow.IResource,
-
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        ## Make sure twisted.protocols.http doesn't leave crappy
-        ## DelayedCalls around, because we manage timeouts of
-        ## the output object
-        try:
-            request.channel._savedTimeOut = None
-            request.setHeader("Cache-Control", "no-cache")
-            request.setHeader("Pragma", "no-cache")
-            request.setHeader("Connection", "close")
-            request.write('')
-
-            handleId = ctx.arg('client-handle-id')
-
-            d = defer.Deferred()
-            clientHandle = clientHandleFactory.getHandleForId(handleId)
-            request.notifyFinish().addErrback(clientHandle.outputGone, d)
-            clientHandle.setOutput(d)
-        except Exception, e:
-            traceback.print_stack()
-            return "alert('Exception on server: %s')" % e.replace("'", '"')
-        return d
-
-
-class Input(object):
-    __implements__ = inevow.IResource,
-
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        request.setHeader("Cache-Control", "no-cache")
-        request.setHeader("Pragma", "no-cache")
-        handleId = ctx.arg('client-handle-id')
-        # get the clientHandle
-        clientHandle = clientHandleFactory.getHandleForId(handleId)
-        reactor.callLater(0.00000001, clientHandle.handleInput,
-                          request.args['target'][0],
-                          *request.args.get('arguments',()))
-        return '<html><body>Input event.</body></html>'
-
+nevow.livepage.clientHandleFactory = eXeClientHandleFactory()
 
 class RenderableLivePage(_RenderablePage, LivePage):
     """
@@ -110,7 +63,7 @@ class RenderableLivePage(_RenderablePage, LivePage):
         """
         LivePage.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
-        self.clientHandleFactory = clientHandleFactory
+        self.clientHandleFactory = nevow.livepage.clientHandleFactory
 
     def renderHTTP(self, ctx):
         "Disable cache of live pages"
@@ -118,18 +71,7 @@ class RenderableLivePage(_RenderablePage, LivePage):
         request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
         request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
         request.setHeader("Pragma", "no-cache")
-        # each time the page is rendered, it gets a new ClientHandle
-        handle = clientHandleFactory.newClientHandle(
-            ctx,
-            self.refreshInterval,
-            self.targetTimeoutCount)
-#        handle.authoringPage = AuthoringPage(self)
-        ctx.remember(handle, IClientHandle)
-        self.goingLive(ctx, handle)
-        return rend.Page.renderHTTP(self, ctx)
-
-    child_nevow_liveOutput = Output()
-    child_nevow_liveInput = Input()
+        return LivePage.renderHTTP(self, ctx)
 
     def render_liveglue(self, ctx, data):
         return tags.script(src='/jsui/nevow_glue.js')
