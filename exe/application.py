@@ -36,17 +36,12 @@ if os.name == 'posix':
     sys.path.insert(0, '/usr/share/exe')
 from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
-# Must import reactor AFTER WebServer. It's yucky, but that's life
-from twisted.internet import reactor
 from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
-from exe.engine.packagestore import PackageStore
 from exe.engine.translate    import installSafeTranslate
 from exe.engine              import version
 from exe                     import globals
-from exe.engine.path         import TempDirPath
 import logging
-import re
 
 log = logging.getLogger(__name__)
 

@@ -133,7 +133,7 @@ Ext.define('eXe.controller.Toolbar', {
             }
         });
         
-        var keymap = new Ext.util.KeyMap(Ext.getBody(), [
+        var keymap_config = [
 			{
 				key: Ext.EventObject.N,
 				ctrl: true,
@@ -145,8 +145,9 @@ Ext.define('eXe.controller.Toolbar', {
 				defaultEventAction: "stopEvent"
 			},
 			{
-				key: Ext.EventObject.T,
+				key: Ext.EventObject.W,
 				ctrl: true,
+                alt: true,
 				handler: function() {
 				 this.fileNewWindow();
 				},
@@ -189,6 +190,42 @@ Ext.define('eXe.controller.Toolbar', {
 			     scope: this,
 			     defaultEventAction: "stopEvent"
 			},
+			{
+			     key: Ext.EventObject.F,
+			     alt: true,
+			     handler: function() {
+			          Ext.ComponentQuery.query('#file')[0].showMenu();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.T,
+			     alt: true,
+			     handler: function() {
+			          Ext.ComponentQuery.query('#tools')[0].showMenu();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.S,
+			     alt: true,
+			     handler: function() {
+			          Ext.ComponentQuery.query('#styles_button')[0].showMenu();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.H,
+			     alt: true,
+			     handler: function() {
+			          Ext.ComponentQuery.query('#help')[0].showMenu();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
             {
 	            key: Ext.EventObject.F5,
 	            handler: function() {
@@ -197,7 +234,13 @@ Ext.define('eXe.controller.Toolbar', {
 	            scope: this,
 	            defaultEventAction: "stopEvent"
             }
-        ]);
+        ];
+        var authoring = Ext.get(Ext.get('authoringIFrame').dom);
+        authoring.on("load", function(evt, el, o) {
+           var body = Ext.get(authoring.dom.contentDocument.body);
+           var keymap = new Ext.util.KeyMap(body, keymap_config);
+        }, this);
+        var keymap = new Ext.util.KeyMap(Ext.getBody(), keymap_config);
     },
 
     fileNewWindow: function() {

@@ -24,7 +24,7 @@ Ext.define('eXe.view.ui.button', {
     accesskey: null,
 
     beforeRender: function() {
-        var me = this, pat, rep, key, keymap;
+        var me = this, pat, rep, key;
 
         if (me.accesskey) {
             pat = new RegExp(me.accesskey,'i');
@@ -33,15 +33,6 @@ Ext.define('eXe.view.ui.button', {
                 rep = "<u>" + key + "</u>";
                 me.text = me.text.replace(pat, rep);
             }
-	        keymap = new Ext.util.KeyMap({
-	            target: Ext.getBody(),
-	            binding: {
-	                key: me.accesskey,
-	                alt: true,
-	                fn: function() { me.showMenu(); },
-	                defaultEventAction: 'stopEvent'
-	            }
-	        });
         }
 
         me.callParent();
@@ -97,6 +88,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                 {
                     xtype: 'accesskey_button',
                     text: _('File'),
+                    itemId: 'file',
                     accesskey: 'f',
                     menu: {
                         xtype: 'menu',
@@ -112,7 +104,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 xtype: 'accesskey_menuitem',
                                 text: _('New Window'),
                                 accesskey: 'w',
-                                tooltip: 'Ctrl+Shift+N',
+                                tooltip: 'Ctrl+Alt+W',
                                 itemId: 'file_new_window'
                             },
                             {
@@ -307,6 +299,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                 {
                     xtype: 'accesskey_button',
                     text: _('Tools'),
+                    itemId: 'tools',
                     accesskey: 't',
                     menu: {
                         xtype: 'menu',
@@ -348,6 +341,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                 {
                     xtype: 'accesskey_button',
                     text: _('Help'),
+                    itemId: 'help',
                     accesskey: 'h',
                     menu: {
                         xtype: 'menu',
