@@ -39,15 +39,18 @@ Ext.define('eXe.controller.MainTab', {
             '#package_properties': {
                 render: this.onRender,
                 beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete,
                 scope: this
             },
             '#metadata_properties': {
                 render: this.onRender,
-                beforeaction: this.beforeAction
+                beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete
             },
             '#export_properties': {
                 render: this.onRender,
-                beforeaction: this.beforeAction
+                beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete
             },
             '#apply': {
                 click: this.onClickApply
@@ -75,6 +78,11 @@ Ext.define('eXe.controller.MainTab', {
         });
     },
     
+    actionComplete: function(form, action) {
+        if (action.method != "GET")
+            Ext.MessageBox.alert(_('Message'), _('Settings Saved'));
+    },
+
     updateTree: function() {
         var formpanel = this.getPackagePropertiesPanel(),
             form;

@@ -44,7 +44,8 @@ Ext.define('eXe.controller.Outline', {
         this.control({
         	'#outline_treepanel': {
         		itemclick:	this.onNodeClick,
-        		itemdblclick: this.onNodeRename
+                itemdblclick: this.onNodeRename,
+                itemcontextmenu: this.onNodeContextMenu
         	},
         	'#outline_add_node': {
         		click: this.onNodeAdd
@@ -68,6 +69,25 @@ Ext.define('eXe.controller.Outline', {
                 click: { fn: this.processNodeEvent, action: 'DownNode' }
             }
         });
+    },
+
+    onNodeContextMenu: function(view, record, item, index, e, eOpts) {
+        e.preventDefault();
+        this.onNodeClick(view, record, item, index, e, eOpts);
+        contextMenu = new Ext.menu.Menu({
+		  items: [
+            {
+			    text: _('Insert Package'),
+			    handler: this.getController('Toolbar').insertPackage
+		    },{
+			    text: _('Extract Package'),
+			    handler: this.getController('Toolbar').extractPackage
+            }
+          ]
+		});
+        x = e.browserEvent.clientX;
+        y = e.browserEvent.clientY;
+        contextMenu.showAt([x, y]);
     },
 
     processNodeEvent: function(menu, item, e, eOpts) {
