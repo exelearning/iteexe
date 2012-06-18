@@ -30,25 +30,25 @@ Ext.define('eXe.view.ui.OutlineToolbar2', {
                 {
                     xtype: 'button',
                     icon: '/images/stock-goto-first.png',
-                    tooltip: _('Promote node up in hierarchy'),
+                    tooltip: _('Promote node up in hierarchy') + '. Ctrl+↑',
                     itemId: 'outline_promote_node'
                 },
                 {
                     xtype: 'button',
                     icon: '/images/stock-goto-last.png',
-                    tooltip: _('Demote node down in hierarchy'),
+                    tooltip: _('Demote node down in hierarchy') + '. Ctrl+↓',
                     itemId: 'outline_demote_node'
                 },
                 {
                     xtype: 'button',
                     icon: '/images/stock-go-up.png',
-                    tooltip: _('Move node up'),
+                    tooltip: _('Move node up') + '. Ctrl+U',
                     itemId: 'outline_up_node'
                 },
                 {
                     xtype: 'button',
                     icon: '/images/stock-go-down.png',
-                    tooltip: _('Move node down'),
+                    tooltip: _('Move node down') + '. Ctrl+D',
                     itemId: 'outline_down_node'
                 }
             ]

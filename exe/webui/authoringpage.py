@@ -162,7 +162,10 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" '
-        html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
+        if log.getEffectiveLevel() == logging.DEBUG:
+            html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce_src.js">'
+        else:
+            html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" src="/scripts/tiny_mce_settings.js">'
         html += u'</script>\n'

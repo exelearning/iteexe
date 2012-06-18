@@ -35,11 +35,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'menuitem',
                                 text: _('New'),
+                                tooltip: 'Ctrl+Alt+N',
                                 itemId: 'file_new'
                             },
                             {
                                 xtype: 'menuitem',
                                 text: _('Open'),
+                                tooltip: 'Ctrl+O',
                                 itemId: 'file_open'
                             },
                             {
@@ -66,6 +68,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'menuitem',
                                 text: _('Save'),
+                                tooltip: 'Ctrl+S',
                                 itemId: 'file_save'
                             },
                             {
@@ -79,6 +82,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'menuitem',
                                 text: _('Print'),
+                                tooltip: 'Ctrl+P',
                                 itemId: 'file_print'
                             },
                             {
@@ -194,6 +198,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'menuitem',
                                 itemId: 'file_quit',
+                                tooltip: 'Ctrl+Q',
                                 text: _('Quit')
                             }
                         ]

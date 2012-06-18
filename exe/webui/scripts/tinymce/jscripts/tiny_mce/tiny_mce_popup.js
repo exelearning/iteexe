@@ -125,7 +125,10 @@ TinyMCE_Popup.prototype = {
 	resizeToInnerSize : function() {
 		var i, doc, body, oldMargin, wrapper, iframe, nodes, dx, dy;
 
-		// Netscape 7.1 workaround
+        if (this.isWindow && navigator.userAgent.indexOf('Chrome') != -1)
+            return
+
+        // Netscape 7.1 workaround
 		if (this.isWindow && tinyMCE.isNS71) {
 			window.resizeBy(0, 10);
 			return;

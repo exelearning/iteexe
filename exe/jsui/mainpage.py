@@ -719,6 +719,8 @@ class MainPage(RenderableLivePage):
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
             reactor.stop()
+        else:
+            log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
 
     def handleBrowseURL(self, client, url):
         """visit the specified URL using the system browser

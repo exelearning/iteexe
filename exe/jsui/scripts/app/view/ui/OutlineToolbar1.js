@@ -30,18 +30,21 @@ Ext.define('eXe.view.ui.OutlineToolbar1', {
                     xtype: 'button',
                     text: _('Add Page'),
                     itemId: 'outline_add_node',
+                    tooltip: 'Insert',
                     disabled: true
                 },
                 {
                     xtype: 'button',
                     text: _('Delete'),
                     itemId: 'outline_del_node',
+                    tooltip: 'Supr',
                     disabled: true
                 },
                 {
                     xtype: 'button',
                     text: _('Rename'),
                     itemId: 'outline_ren_node',
+                    tooltip: 'Ctrl+R',
                     disabled: true
                 }
             ]

@@ -134,17 +134,9 @@ Ext.define('eXe.controller.Toolbar', {
 			{
 				key: Ext.EventObject.N,
 				ctrl: true,
+                alt: true,
 				handler: function() {
 				 this.fileNew();
-				},
-				scope: this,
-				defaultEventAction: "stopEvent"
-			},
-			{
-				key: Ext.EventObject.S,
-				ctrl: true,
-				handler: function() {
-				 this.fileSave();
 				},
 				scope: this,
 				defaultEventAction: "stopEvent"
@@ -159,19 +151,28 @@ Ext.define('eXe.controller.Toolbar', {
 			     defaultEventAction: "stopEvent"
 			},
 			{
-			     key: Ext.EventObject.Q,
-			     ctrl: true,
-			     handler: function() {
-			          this.fileQuit();
-			     },
-			     scope: this,
-			     defaultEventAction: "stopEvent"
+				key: Ext.EventObject.S,
+				ctrl: true,
+				handler: function() {
+				 this.fileSave();
+				},
+				scope: this,
+				defaultEventAction: "stopEvent"
 			},
 			{
 			     key: Ext.EventObject.P,
 			     ctrl: true,
 			     handler: function() {
 			          this.filePrint();
+			     },
+			     scope: this,
+			     defaultEventAction: "stopEvent"
+			},
+			{
+			     key: Ext.EventObject.Q,
+			     ctrl: true,
+			     handler: function() {
+			          this.fileQuit();
 			     },
 			     scope: this,
 			     defaultEventAction: "stopEvent"

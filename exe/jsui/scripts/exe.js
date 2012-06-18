@@ -80,6 +80,7 @@ Ext.application({
     
     launch: function() {
         Ext.QuickTips.init();
+        Ext.FocusManager.enable(true);
 
         try {
             Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());

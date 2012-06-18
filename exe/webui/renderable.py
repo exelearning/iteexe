@@ -38,6 +38,9 @@ from twisted.web.resource import Resource
 from nevow import tags
 import re
 
+import logging
+log = logging.getLogger(__name__)
+
 # Constants
 # This constant is used as a special variable like None but this means that an
 # attribute is Unset it tells __getattribute__ that it needs to really return
@@ -319,6 +322,11 @@ class eXeClientHandle(ClientHandle):
 class eXeClientHandleFactory(DefaultClientHandleFactory):
     clientHandleClass = eXeClientHandle
     
+    def newClientHandle(self, ctx, refreshInterval, targetTimeoutCount):
+        handle = DefaultClientHandleFactory.newClientHandle(self, ctx, refreshInterval, targetTimeoutCount)
+        log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
+        return handle
+
 nevow.livepage.clientHandleFactory = eXeClientHandleFactory()
 
 
