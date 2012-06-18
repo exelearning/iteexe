@@ -86,16 +86,20 @@ Ext.define('eXe.controller.Outline', {
     	if (selected != 0)
     		nodeid = selected[0].data.id;
     	if (nodeid != '0') { 
-    		this.nodeid = nodeid;
     		msg = new Ext.Template(outlineToolBar1.textNodeDelMsgBox).apply({node: selected[0].data.text});
-    		Ext.MessageBox.confirm(outlineToolBar1.titleNodeDelMsgBox, msg, this.deleteNode, this);
-    	}
-    },
-
-    deleteNode: function(button) {
-		if (button == "yes")	{
-			this.disableButtons();
-			nevow_clientToServerEvent('DelNode', this, '', this.nodeid);
+    		Ext.Msg.show( {
+    			title: outlineToolBar1.titleNodeDelMsgBox,
+    			msg: msg,
+    			scope: this,
+    			modal: true,
+    			buttons: Ext.Msg.YESNO,
+    			fn: function(button) {
+					if (button == "yes")	{
+						this.disableButtons();
+						nevow_clientToServerEvent('DelNode', this, '', nodeid);
+			    	}
+    			}
+    		});
     	}
 	},
 
@@ -107,20 +111,26 @@ Ext.define('eXe.controller.Outline', {
     	
     	if (selected != 0)
     		nodeid = selected[0].data.id;
-		this.nodeid = nodeid;
 		title = new Ext.Template(outlineToolBar1.titleNodeRenameMsgBox).apply({node: selected[0].data.text});
-		Ext.MessageBox.prompt(title, outlineToolBar1.textNodeRenameMsgBox, this.renameNode, this, false, selected[0].data.text);
+		Ext.Msg.show({
+			prompt: true,
+			title: title,
+			msg: outlineToolBar1.textNodeRenameMsgBox,
+			buttons: Ext.Msg.OKCANCEL,
+			multiline: false,
+			value: selected[0].data.text,
+			scope: this,
+			fn: function(button, text) {
+				if (button == "ok")	{
+					this.disableButtons();
+					nevow_clientToServerEvent('RenNode', this, '', nodeid, text);
+		    	}
+			}
+		});
     },
 
-    renameNode: function(button, text) {
-		if (button == "ok")	{
-			this.disableButtons();
-			nevow_clientToServerEvent('RenNode', this, '', this.nodeid, text);
-    	}
-	},
-
     loadNodeOnAuthoringPage: function(node) {
-    	if ("submitLink" in top["authoringIFrame1"] && top["authoringIFrame1"].document.getElementById('contentForm'))
+    	if ("submitLink" in top["authoringIFrame1"] && top["authoringIFrame1"].document && top["authoringIFrame1"].document.getElementById('contentForm'))
     		top["authoringIFrame1"].submitLink('changeNode', node, 0);
     },
     

@@ -35,10 +35,16 @@ Ext.define('eXe.controller.File', {
     },{
     	ref: 'placeField',
     	selector: '#file_place_field'
+    },{
+    	ref: 'filetypeCombo',
+    	selector: '#file_type_combo'
+    },{
+    	ref: 'filePicker',
+    	selector: '#filepicker'
     }
     ],
 	sendWhat: 'both',
-    currentDir: '/',
+    currentDir: "",
     init: function() {
 		this.control({
 			'filelist': {
@@ -53,6 +59,12 @@ Ext.define('eXe.controller.File', {
 			},
 			'#filepicker_open': {
 				click: { fn: this.onOpen }
+			},
+			'#filepicker_save': {
+				click: { fn: this.onSave }
+			},
+			'#file_type_combo': {
+				change: { fn: this.onFilterChange }
 			}
 		});
 
@@ -74,7 +86,15 @@ Ext.define('eXe.controller.File', {
 			directory = '/';
 		var fileStore = this.getFileStore();
 		fileStore.load({
-			//callback: this.onLoadFileList,
+			callback: function() {
+				var combo = this.getFiletypeCombo();
+				fileStore.filterBy( function(record, id) {
+					if (record.get("type") == "directory")
+						return true;
+					return record.get("name").match(combo.value);
+				});
+				this.getPlaceField().focus();
+			},
 			params: {
 				sendWhat: this.sendWhat,
 				dir: directory
@@ -82,6 +102,7 @@ Ext.define('eXe.controller.File', {
 			scope: this
 		});
 		this.currentDir = directory;
+		Ext.state.Manager.set("filepicker-currentDir", directory);
 		fileStore.currentDir = directory;
 	},
 	getFullClearPath: function(path) {
@@ -96,24 +117,24 @@ Ext.define('eXe.controller.File', {
 		if( record.get('type') == "directory" )
 			this.application.fireEvent( "dirchange" , this.currentDir + '/' + record.get('name') );
 		else {
-			var fp = Ext.getCmp('filepicker');
+			var fp = this.getFilePicker();
 			fp.status = eXe.view.ui.FilePicker.returnOk;
 			fp.file = { 'path': this.currentDir + '/' + record.get('name') };
 			fp.destroy();
 		}
 	},
 	onCancel: function() {
-		var fp = Ext.getCmp('filepicker');
+		var fp = this.getFilePicker();
 		fp.status = eXe.view.ui.FilePicker.returnCancel;
 		fp.file = {};
 		fp.destroy();
 	},
 	onOpen: function() {
-		var fp = Ext.getCmp('filepicker'),
+		var fp = this.getFilePicker(),
 			place = this.getPlaceField();
 		fp.status = eXe.view.ui.FilePicker.returnOk;
 		if (place.value) {
-			fp.file = { 'path': this.currentDir + '/' + this.getPlaceField().value };
+			fp.file = { 'path': this.currentDir + '/' + place.value };
 			fp.destroy();
 		}
 		else {
@@ -123,7 +144,58 @@ Ext.define('eXe.controller.File', {
 				this.application.fireEvent( "dirchange" , this.currentDir + '/' + selected[0].get('name') );
 		}
 	},
+	onSave: function() {
+		var fp = this.getFilePicker(),
+			place = this.getPlaceField(),
+			store = this.getFileStore(),
+			onReplaceOk = function(status) {
+				fp.status = status;
+				fp.file = { 'path': this.currentDir + '/' + place.value };
+				fp.destroy();
+			};
+		fp.status = eXe.view.ui.FilePicker.returnOk;
+		if (place.value) {
+			if (store.findExact("name", place.value) >= 0)
+				this.confirmReplace( onReplaceOk );
+			else 
+				onReplaceOk( eXe.view.ui.FilePicker.returnOk );
+		}
+		else {
+			var filelist = this.getFilesList();
+			var	selected = filelist.getSelectionModel().getSelection();
+			if (selected.length)
+				if ( selected[0].get('type') != "directory" )
+					this.confirmReplace( onReplaceOk );
+		}
+	},
+	confirmReplace: function(onReplaceOk) {
+		Ext.Msg.show({
+			title: "Confirm?",
+			msg: "El fichero ya existe. Desea reemplazarlo?",
+			scope: this,
+			modal: true,
+			buttons: Ext.Msg.YESNO,
+			fn: function(button) {
+				if (button == "yes")
+					onReplaceOk(eXe.view.ui.FilePicker.returnReplace);
+			}
+		});
+	},
 	onFilePickerShow: function() {
+		var fp = this.getFilePicker(),
+			combo = this.getFiletypeCombo();
+
+		combo.setValue(fp.filetypes.getAt(0).get('regex'));
+		this.currentDir = Ext.state.Manager.get('filepicker-currentDir', '/');
 		this.application.fireEvent( "dirchange", this.currentDir );
+	},
+	onFilterChange: function(field, newValue, oldValue, eOpts) {
+		var store = this.getFileStore();
+		
+		store.filterBy( function(record, id) {
+			if (record.get("type") == "directory")
+				return true;
+			return record.get("name").match(newValue);
+		});
 	}
 });

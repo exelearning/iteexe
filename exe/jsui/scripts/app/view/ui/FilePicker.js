@@ -27,28 +27,55 @@ Ext.define('eXe.view.ui.FilePicker', {
 	],
 	
 	statics: {
-		returnOK: 0,
+		returnOk: 0,
 		returnCancel: 1,
-		returnReplace: 2
+		returnReplace: 2,
+		modeOpen: 0,
+		modeSave: 1,
+		modeGetFolder: 2
 	},
 	
 	status: null,
 
 	file: {},
+	
     initComponent: function() {
         var me = this;
+		
+        var ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension'] });
 
-        var filetypes = Ext.create('Ext.data.Store', {
-        	fields: ['typename', 'extension'],
-        	data: [
-	        	{ "typename": "All files", "extension": "*.*" }
-        	]
-        });
+		buttons = [
+    		{ xtype: 'component', flex: 1 },
+			{ xtype: 'button', text: 'Cancel', itemId: 'filepicker_cancel' },
+			{ xtype: 'button', text: 'Open', itemId: 'filepicker_open' }
+    	];
+	    filter = [
+	    		{ xtype: 'component', flex: 1 },
+	    		{
+	    			xtype: 'combo',
+	    			itemId: 'file_type_combo',
+	    			queryMode: 'local',
+	            	store: ft,
+	            	displayField: 'typename',
+	            	valueField: 'regex',
+	            	forceSelection: true
+	    		}
+    	];
+
+        switch (me.type) {
+        	case eXe.view.ui.FilePicker.modeSave:
+        		buttons[2] = { xtype: 'button', text: 'Save', itemId: 'filepicker_save' }
+        		break;
+        	case eXe.view.ui.FilePicker.modeGetFolder:
+        		filter = [];
+        		break;
+        }
         
         Ext.applyIf(me, {
         	width: 800,
         	height: 600,
             layout:'border',
+			filetypes: ft,
 			dockedItems: [
 				{
 	        		xtype: 'textfield',
@@ -61,29 +88,13 @@ Ext.define('eXe.view.ui.FilePicker', {
 	            	layout: 'hbox',
 	            	dock: 'bottom',
 	            	ui: 'footer',
-	            	items: [
-	            		{ xtype: 'component', flex: 1 },
-						{ xtype: 'button', text: 'Cancel', itemId: 'filepicker_cancel' },
-						{ xtype: 'button', text: 'Open', itemId: 'filepicker_open' }
-	            	]
+	            	items: buttons
 	            },{
 	            	xtype: 'container',
 	            	layout: 'hbox',
 	            	dock: 'bottom',
 	            	ui: 'footer',
-	            	items: [
-	            		{ xtype: 'component', flex: 1 },
-	            		{
-	            			xtype: 'combo',
-	            			itemId: 'file_type_combo',
-	            			queryMode: 'local',
-			            	store: filetypes,
-			            	displayField: 'typename',
-			            	valueField: 'extension',
-			            	forceSelection: true,
-			            	value: "*.*"
-	            		}
-	            	]
+	            	items: filter
 	            }
 	            
 			],
@@ -111,10 +122,15 @@ Ext.define('eXe.view.ui.FilePicker', {
 				}
 			],
 			listeners: {
-				destroy: this.callback
+				destroy: me.callback,
+				scope: me.scope
 			}
         });
         
         me.callParent(arguments);
-    }    
+    },
+    
+    appendFilters: function(filters) {
+    	this.filetypes.add(filters);
+    }
 });

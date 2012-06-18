@@ -19,25 +19,260 @@
 
 Ext.define('eXe.controller.Toolbar', {
     extend: 'Ext.app.Controller',
-    
+	refs: [{
+        ref: 'recentMenu',
+        selector: '#file_recent_menu'
+    },{
+    	ref: 'stylesMenu',
+    	selector: '#styles_menu'
+    }
+    ],    
     init: function() {
         this.control({
+        	'#file_new': {
+        		click: this.fileNew
+        	},
         	'#file_open': {
-        		click: this.onFileOpen
+        		click: this.fileOpen
+        	},
+        	'#file_recent_menu': {
+        		beforerender: this.recentRender
+        	},
+        	'#styles_button': {
+        		beforerender: this.stylesRender
+        	},
+        	'#file_recent_menu > menuitem': {
+        		click: this.recentClick
+        	},
+        	'#styles_menu > menuitem': {
+        		click: this.stylesClick
+        	},
+        	'#file_save': {
+        		click: this.fileSave
+        	},
+        	'#file_save_as': {
+        		click: this.fileSaveAs
         	}
         });
     },
     
-    onFileOpen: function() {
-		var f = Ext.create("eXe.view.ui.FilePicker", { title: "Open File", modal: true, callback: this.onFileOpenSelected });
+    filePrint: function() {
+	   // filePrint step#1: create a temporary print directory, 
+	   // and return that to filePrint2, which will then call exportPackage():
+	   var tmpdir_suffix = ""
+	   var tmpdir_prefix = "eXeTempPrintDir_"
+	   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, 
+	                              tmpdir_prefix, "eXe.app.getController('Toolbar').filePrint2")
+	   // note: as discussed below, at the end of filePrint3_openPrintWin(), 
+	   // the above makeTempPrintDir also removes any previous print jobs
+	},
+	
+	filePrint2: function(tempPrintDir, printDir_warnings) {
+	   if (printDir_warnings.length > 0) {
+	      alert(printDir_warnings)
+	   }
+	   this.exportPackage('printSinglePage', tempPrintDir, "eXe.app.getController('Toolbar').filePrint3_openPrintWin");
+	},
+	
+	filePrint3_openPrintWin: function(tempPrintDir, tempExportedDir, webPrintDir) {
+	    // okay, at this point, exportPackage() has already been called and the 
+	    // exported file created, complete with its printing Javascript
+	    // into the tempPrintDir was created (and everything below it, and 
+	    // including it, will need to be removed), the actual files for printing 
+	    // were exported into tempExportedDir/index.html, where tempExportedDir 
+	    // is typically a subdirectory of tempDir, named as the package name.
+	
+	    // Still needs to be (a) opened, printed, and closed:
+	    var features = "width=680,height=440,status=1,resizable=1,left=260,top=200";
+	    print_url = webPrintDir+"/index.html"
+	
+	    printWin = window.open (print_url, 
+	                  APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN, features);
+	
+	
+	    // and that's all she wrote!
+	
+	    // note that due to difficulty with timing issues, the files are not 
+	    // (yet!) immediately removed upon completion of the print job 
+	    // the hope is for this to be resolved someday, somehow, 
+	    // but for now the nevow_clientToServerEvent('makeTempPrintDir',...) 
+	    // call in filePrint() also clears out any previous print jobs,
+	    // and this is called upon Quit of eXe as well, leaving *at most* 
+	    // one temporary print job sitting around.
+	},
+	
+    recentRender: function() {
+    	Ext.Ajax.request({
+    		url: location.pathname + '/recentMenu',
+    		scope: this,
+    		success: function(response) {
+				var rm = eval(response.responseText),
+					menu = this.getRecentMenu();
+    			for (i in rm) {
+    				text = rm[i].num + ". " + rm[i].path
+    				previtem = menu.items.getAt(rm[i].num - 1);
+    				if (previtem && previtem.text[1] == ".") {
+    					previtem.text = text
+    				}
+    				else {
+	    				item = Ext.create('Ext.menu.Item', { text: text });
+	    				menu.insert(rm[i].num - 1, item);
+    				}
+    			}
+    		}
+    	})
+    	return true;
+    },
+    
+    stylesRender: function() {
+    	Ext.Ajax.request({
+    		url: location.pathname + '/styleMenu',
+    		scope: this,
+    		success: function(response) {
+				var styles = eval(response.responseText),
+					menu = this.getStylesMenu();
+    			for (i = styles.length-1; i >= 0; i--) {
+    				item = Ext.create('Ext.menu.Item', { text: styles[i].label, itemId: styles[i].style });
+    				menu.insert(0, item);
+    			}
+    		}
+    	})
+    	return true;
+    },
+
+    recentClick: function(item) {
+    	if (item.itemId == "file_clear_recent") {
+    		nevow_clientToServerEvent('clearRecent', this, '');
+    		var menu = this.getRecentMenu(),
+    			items = menu.items.items.slice(),
+    			i = 0,
+    			len = items.length;
+    		for (; i < len; i++) 
+    			if (items[i].text[1] == ".")
+    				menu.remove(items[i], true);
+    	}
+    	else
+    		this.askDirty("eXe.app.getController('Toolbar').fileOpenRecent2('" + item.text[0] + "');")
+    },
+	
+    stylesClick: function(item) {
+    	top["authoringIFrame1"].submitLink("ChangeStyle", item.itemId, 1);
+    },
+    
+	fileOpenRecent2: function(number) {
+	    nevow_clientToServerEvent('loadRecent', this, '', number)
+	},
+	
+    fileNew: function() {
+    	// Ask the server if the current package is dirty
+    	this.askDirty("window.top.location = '/'");
+	},
+	
+    fileOpen: function() {
+    	this.askDirty("eXe.app.getController('Toolbar').fileOpen2()");
+    },
+    
+    fileOpen2: function() {
+		var f = Ext.create("eXe.view.ui.FilePicker", {
+			type: eXe.view.ui.FilePicker.modeOpen,
+			title: "Open File",
+			modal: true,
+			scope: this,
+			callback: function(fp) {
+		    	if (fp.status == eXe.view.ui.FilePicker.returnOk)
+		    		nevow_clientToServerEvent('loadPackage', this, '', fp.file.path);
+		    }
+		});
+		f.appendFilters([
+			{ "typename": "eXe Package Files", "extension": "*.elp", "regex": /.*\.elp$/ },
+			{ "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+			]
+		);
 		f.show();
     },
     
-    onFileOpenSelected: function(fp, eOpts) {
-    	switch (fp.status) {
-    		case eXe.view.ui.FilePicker.returnOk:
-    			nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
-    			break;
-    	}
+    checkDirty: function(ifClean, ifDirty) {
+    	nevow_clientToServerEvent('isPackageDirty', this, '', ifClean, ifDirty)
+	},
+	
+	askSave: function(onProceed) {
+		Ext.Msg.show({
+			title: "Save Package first?",
+			msg: "The current package has been modified and not yet saved. " + "Would you like to save it before loading the new package?",
+			scope: this,
+			modal: true,
+			buttons: Ext.Msg.YESNOCANCEL,
+			fn: function(button, text, opt) {
+				if (button == "yes")
+					this.fileSave(onProceed);
+				else if (button == "no")
+					eval(onProceed);
+			}
+		});
+	},
+	
+	fileSave: function(onProceed) {
+	    if (!onProceed || (onProceed && typeof(onProceed) != "string"))
+	        var onProceed = '';
+	    nevow_clientToServerEvent('getPackageFileName', this, '', 'eXe.app.getController("Toolbar").fileSave2', onProceed);
+	},
+	
+	fileSave2: function(filename, onDone) {
+	    if (filename) {
+	        this.saveWorkInProgress();
+	        // If the package has been previously saved/loaded
+	        // Just save it over the old file
+	        if (onDone) {
+	            nevow_clientToServerEvent('savePackage', this, '', '', onDone);
+	        } else {
+	            nevow_clientToServerEvent('savePackage', this, '');
+	        }
+	    } else {
+	        // If the package is new (never saved/loaded) show a
+	        // fileSaveAs dialog
+	        this.fileSaveAs(onDone)
+	    }
+	},
+	// Called by the user when they want to save their package
+	fileSaveAs: function(onDone) {
+		var f = Ext.create("eXe.view.ui.FilePicker", {
+			type: eXe.view.ui.FilePicker.modeSave,
+			title: "Select a File", 
+			modal: true,
+			scope: this,
+			callback: function(fp) {
+			    if (fp.status == eXe.view.ui.FilePicker.returnOk || fp.status == eXe.view.ui.FilePicker.returnReplace) {
+			        this.saveWorkInProgress();
+			        if (onDone && typeof(onDone) == "string") {
+			            nevow_clientToServerEvent('savePackage', this, '', f.file.path, onDone)
+			        } else {
+			            nevow_clientToServerEvent('savePackage', this, '', f.file.path)
+			        }
+			    } else {
+			        eval(onDone)
+			    }
+			}
+		});
+		f.appendFilters([
+			{ "typename": "eXe Package Files", "extension": "*.elp", "regex": /.*\.elp$/ },
+			{ "typename": "All Files", "extension": "*.*", "regex": /.*$/ }
+			]
+		);
+		f.show();
+	},	
+	// Submit any open iDevices
+	saveWorkInProgress: function() {
+	    // Do a submit so any editing is saved to the server
+	    var theForm = top["authoringIFrame1"].document.getElementById('contentForm');
+	    if (!theForm) {
+	        // try and find the form for the authoring page
+	        theForm = document.getElementById('contentForm');
+	    }
+	    if (theForm)
+	        theForm.submit();
+	},
+	
+    askDirty: function(nextStep) {
+    	this.checkDirty(nextStep, 'eXe.app.getController("Toolbar").askSave("'+nextStep+'")');
     }
 });

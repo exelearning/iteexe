@@ -229,7 +229,7 @@ class OutlinePane(Renderable, Resource):
             client.call('enableButtons')
 
 
-    def render_GET(self, request=None):
+    def render(self, request=None):
         """
         Returns an xml string for viewing this pane.
         """

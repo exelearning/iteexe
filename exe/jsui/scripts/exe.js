@@ -47,6 +47,8 @@ Ext.application({
     launch: function() {
         Ext.QuickTips.init();
 
+        Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
+
         eXe.app = this;
         var cmp1 = Ext.create('eXe.view.eXeViewport', {
             renderTo: Ext.getBody()

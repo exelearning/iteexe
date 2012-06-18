@@ -76,9 +76,9 @@ class IdevicePane(Renderable, Resource):
         self.client.call('XHAddIdeviceListItem', idevice.id, idevice.title)
 
         
-    def render_GET(self, request=None):
+    def render(self, request=None):
         """
-        Returns an html string for viewing this pane
+        Returns an xml string for load the client Idevices store
         """
         # Create a scecial server side func that the 
         # Idevice editor js can call

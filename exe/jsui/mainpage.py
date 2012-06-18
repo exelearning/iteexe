@@ -30,12 +30,14 @@ import shutil
 from xml.sax.saxutils            import escape
 from twisted.internet            import threads, reactor
 from twisted.web                 import static
+from twisted.web.resource        import Resource
 from twisted.internet.defer      import Deferred
 from nevow                       import loaders, inevow, stan
 from nevow.livepage              import handler, js
 from exe.jsui.idevicepane        import IdevicePane
 from exe.jsui.outlinepane        import OutlinePane
-from exe.xului.stylemenu         import StyleMenu
+from exe.jsui.recentmenu         import RecentMenu
+from exe.jsui.stylemenu          import StyleMenu
 from exe.webui.renderable        import RenderableLivePage
 from exe.xului.propertiespage    import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
@@ -82,6 +84,7 @@ class MainPage(RenderableLivePage):
         self.outlinePane = OutlinePane(self)
         self.idevicePane = IdevicePane(self)
         self.styleMenu   = StyleMenu(self)
+        self.recentMenu  = RecentMenu(self)
 
         # And in the main section
         self.authoringPage  = AuthoringPage(self)
@@ -115,9 +118,9 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage,     'savePackage')
         setUpHandler(self.handleLoadPackage,     'loadPackage')
-        setUpHandler(self.handleLoadRecent,      'loadRecent')
+        setUpHandler(self.recentMenu.handleLoadRecent,      'loadRecent')
         setUpHandler(self.handleLoadTutorial,    'loadTutorial')
-        setUpHandler(self.handleClearRecent,     'clearRecent')
+        setUpHandler(self.recentMenu.handleClearRecent,     'clearRecent')
         setUpHandler(self.handleImport,          'importPackage')
         setUpHandler(self.handleCancelImport,    'cancelImportPackage')
         setUpHandler(self.handleExport,          'exportPackage')
@@ -147,87 +150,11 @@ class MainPage(RenderableLivePage):
         # Render the js 
         handleId = "'", client.handleId, "'" 
 
-
-    def render_mainMenu(self, ctx, data):
-        """Mac menubars are not shown
-        so make it a toolbar"""
-        if sys.platform[:6] == "darwin":
-            ctx.tag.tagName = 'toolbar'
-        return ctx.tag
-
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
         request = inevow.IRequest(ctx)
         return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'])
 
-
-    # The node moving buttons
-    def _passHandle(self, ctx, name):
-        """Ties up a handler for the promote, demote,
-        up and down buttons. (Called by below funcs)"""
-        attr = getattr(self.outlinePane, 'handle%s' % name)
-        return ctx.tag(oncommand=handler(attr, js('currentOutlineId()')))
-
-
-    def render_promote(self, ctx, data):
-        """Fills in the oncommand handler for the 
-        Promote button and shortcut key"""
-        return self._passHandle(ctx, 'Promote')
-
-
-    def render_demote(self, ctx, data):
-        """Fills in the oncommand handler for the 
-        Demote button and shortcut key"""
-        return self._passHandle(ctx, 'Demote')
-
-
-    def render_up(self, ctx, data):
-        """Fills in the oncommand handler for the 
-        Up button and shortcut key"""
-        return self._passHandle(ctx, 'Up')
-
-
-    def render_down(self, ctx, data):
-        """Fills in the oncommand handler for the 
-        Down button and shortcut key"""
-        return self._passHandle(ctx, 'Down')
-
-    def render_recentProjects(self, ctx, data):
-        """
-        Fills in the list of recent projects menu
-        """
-        result = ['<menupopup id="recent-projects-popup">\n']
-        for num, path in enumerate(self.config.recentProjects):
-            result.append('  <menuitem label="%(num)s. %(path)s"'
-                          ' accesskey="%(num)s"'
-                          ' oncommand="fileOpenRecent(\'%(num)s\')"/>' %
-                          {'num': num + 1, 'path': escape(path)})
-        result.append('  <menuseparator/>')
-        result.append('  <menuitem label="%s"'
-                      ' oncommand="fileRecentClear()"/>' %
-                      _('Clear Recent Projects List'))
-        result.append('</menupopup>')
-        return stan.xml('\n'.join(result))
-
-    def render_debugInfo(self, ctx, data):
-        """Renders debug info to the to
-        of the screen if logging is set to debug level
-        """
-        if log.getEffectiveLevel() == logging.DEBUG:
-            # TODO: Needs to be updated by xmlhttp or xmlrpc
-            request = inevow.IRequest(ctx)
-            return stan.xml(('<hbox id="header">\n'
-                             '    <label>%s</label>\n'
-                             '    <label>%s</label>\n'
-                             '</hbox>\n' %
-                             ([escape(x) for x in request.prepath],
-                              escape(self.package.name))))
-        else:
-            return ''
-
-    # Handle Methods
-
-    # purely a quick test method for printing from the client->server:
     def handleTestPrintMsg(self, client, message): 
         """ 
         Prints a test message, and yup, that's all! 
@@ -322,13 +249,6 @@ class MainPage(RenderableLivePage):
         client.sendScript((u'top.location = "/%s"' % \
                           package.name).encode('utf8'))
  
-    def handleLoadRecent(self, client, number):
-        """
-        Loads a file from our recent files list
-        """
-        filename = self.config.recentProjects[int(number) - 1]
-        self.handleLoadPackage(client, filename)
-
     def handleLoadTutorial(self, client):
         """
         Loads the tutorial file, from the Help menu
@@ -336,15 +256,6 @@ class MainPage(RenderableLivePage):
         filename = self.config.webDir.joinpath("docs")\
                 .joinpath("eXe-tutorial.elp")
         self.handleLoadPackage(client, filename)
-
-    def handleClearRecent(self, client):
-        """
-        Clear the recent project list
-        """
-        G.application.config.recentProjects = []
-        G.application.config.configParser.write()
-        # rerender the menus
-        client.sendScript('top.location = "/%s"' % self.package.name.encode('utf8'))
 
     def handleSetLocale(self, client, locale):
         """

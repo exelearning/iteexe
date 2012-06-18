@@ -34,7 +34,8 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                         items: [
                             {
                                 xtype: 'menuitem',
-                                text: 'New'
+                                text: 'New',
+                                itemId: 'file_new'
                             },
                             {
                                 xtype: 'menuitem',
@@ -46,12 +47,14 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: 'Recent Projects...',
                                 menu: {
                                     xtype: 'menu',
+	                                itemId: 'file_recent_menu',
                                     items: [
                                         {
                                             xtype: 'menuseparator'
                                         },
                                         {
                                             xtype: 'menuitem',
+                                            itemId: 'file_clear_recent',
                                             text: 'Clear Recent Projects List'
                                         }
                                     ]
@@ -62,11 +65,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Save'
+                                text: 'Save',
+                                itemId: 'file_save'
                             },
                             {
                                 xtype: 'menuitem',
-                                text: 'Save As...'
+                                text: 'Save As...',
+                                itemId: 'file_save_as'
                             },
                             {
                                 xtype: 'menuseparator'
@@ -206,9 +211,10 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                 {
                     xtype: 'button',
                     text: 'Styles',
+                    itemId: 'styles_button',
                     menu: {
                         xtype: 'menu',
-                        width: 120
+	                    itemId: 'styles_menu'
                     }
                 },
                 {
