@@ -62,23 +62,6 @@ class OutlinePane(Renderable, Resource):
                 else:
                     log.error("changeNode cannot locate "+nodeId)
 
-            elif request.args["action"][0] == "addChildNode":
-                node = package.findNode(nodeId)
-                if node is not None:
-                    package.currentNode = node.createChild()
-                else:
-                    log.error("addChildNode cannot locate "+nodeId)
-
-            elif (nodeId != package.root.id and 
-                  request.args["action"][0] == "deleteNode"):
-                node = package.findNode(nodeId)
-                if node is not None and node is not self.package.root:
-                    node.delete()
-                    if node.isAncestorOf(package.currentNode):
-                        package.currentNode = node.parent
-                else:
-                    log.error("deleteNode cannot locate "+nodeId)
-
     def handleAddChild(self, client, parentNodeId):
         """Called from client via xmlhttp. When the addChild button is called.
         Hooked up by authoringPage.py

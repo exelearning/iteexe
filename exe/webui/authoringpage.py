@@ -34,7 +34,6 @@ from exe.engine.path         import Path
 from exe                     import globals as G
 
 from exe.webui                  import preferencespage
-from exe.engine.idevice         import Idevice
 
 log = logging.getLogger(__name__)
 
@@ -47,10 +46,6 @@ class AuthoringPage(RenderableResource):
     name = u'authoring'
 
     def __init__(self, parent):
-        """
-        Initialize
-        'parent' is our MainPage instance that created us
-        """
         RenderableResource.__init__(self, parent)
         self.blocks  = []
 
@@ -72,11 +67,6 @@ class AuthoringPage(RenderableResource):
         # because the idevice pane needs to know that new idevices have been
         # added/edited..
         self.parent.process(request)
-        if ("action" in request.args and 
-            request.args["action"][0] == u"saveChange"):
-            log.debug(u"process savachange:::::")
-            self.package.save()
-            log.debug(u"package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
         # now that each block and corresponding elements have been processed,
@@ -89,6 +79,14 @@ class AuthoringPage(RenderableResource):
             for name in files: 
                 os.remove(os.path.join(root, name))
 
+        topNode = self.package.currentNode
+        if "action" in request.args:
+            if request.args["action"][0] == u"changeNode":
+                topNode = self.package.findNode(request.args["object"][0])
+            elif "currentNode" in request.args:
+                topNode = self.package.findNode(request.args["currentNode"][0])
+
+        return topNode
         log.debug(u"After authoringPage process" + repr(request.args))
 
     def render_GET(self, request=None):
@@ -98,13 +96,13 @@ class AuthoringPage(RenderableResource):
         """
         log.debug(u"render_GET "+repr(request))
 
+        topNode = self.package.root
         if request is not None:
             # Process args
             for key, value in request.args.items():
                 request.args[key] = [unicode(value[0], 'utf8')]
-            self._process(request)
+            topNode = self._process(request)
 
-        topNode     = self.package.currentNode
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
@@ -120,6 +118,8 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u"action")
         html += common.hiddenField(u"object")
         html += common.hiddenField(u"isChanged", u"0")
+        html += common.hiddenField(u"currentNode", unicode(topNode.id))
+        html += common.hiddenField(u'clientHandleId')
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<h1 id="nodeTitle">\n'
@@ -141,7 +141,7 @@ class AuthoringPage(RenderableResource):
 
     def __renderHeader(self):
 		#TinyMCE lang (user preference)
-        myPreferencesPage = preferencespage.PreferencesPage(self)
+        myPreferencesPage = self.webServer.preferences
         
         """Generates the header for AuthoringPage"""
         html  = common.docType()

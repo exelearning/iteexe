@@ -24,7 +24,6 @@ anything it just redirects the user to a new package.
 
 import logging
 from exe.webui.renderable     import RenderableResource
-#from exe.xului.mainpage import MainPage
 from exe.jsui.mainpage import MainPage
 
 log = logging.getLogger(__name__)
@@ -48,6 +47,7 @@ class PackageRedirectPage(RenderableResource):
         # See if all out main pages are not showing
         # This is a twisted timer
         self.stopping = None
+        self.mainpages = {}
 
     def getChild(self, name, request):
         """
@@ -60,67 +60,30 @@ class PackageRedirectPage(RenderableResource):
         else:
             result = self.children.get(unicode(name, 'utf8'))
             if result is not None:
-                if len(result) == 1:
-                    return result[0]
-                else:
-                    for mainpage in result:
-                        if mainpage.packageStore == request.getSession().packageStore:
-                            return mainpage
-            # This will just raise an error
-            return RenderableResource.getChild(self, name, request)
-
-    def getChildWithDefault(self, path, request):
-        """Retrieve a static or dynamically generated child resource from me.
-
-        First checks if a resource was added manually by putChild, and then
-        call getChild to check for dynamic resources. Only override if you want
-        to affect behaviour of all child lookups, rather than just dynamic
-        ones.
-
-        This will check to see if I have a pre-registered child resource of the
-        given name, and call getChild if I do not.
-        """
-        
-        if path == '':
-            return self
-        result = self.children.get(unicode(path, 'utf8'))
-        if result is not None:
-            if len(result) == 1:
-                if isinstance(result[0], MainPage):
-                    if result[0].session.uid == request.getSession().uid:
-                        return result[0]
-                else:
-                    return result[0]
+                return result
             else:
-                for mainpage in result:
-                    if mainpage.session.uid == request.getSession().uid:
-                        return mainpage
+                session = request.getSession()
+                if session.uid in self.mainpages.keys():
+                    if name in self.mainpages[session.uid].keys():
+                        return self.mainpages[session.uid][name]
+                # This will just raise an error
+                return RenderableResource.getChild(self, name, request)
 
-        return RenderableResource.getChild(self, path, request)
-    
-    def putChild(self, path, child):
-        result = self.children.get(path)
-        if result is None:
-            self.children[path] = [child]
-        else:
-            for mainpage in result:
-                if mainpage.session.uid == child.session.uid:
-                    result.remove(mainpage)
-            result.append(child)
-        child.server = self.server
-        
     def bindNewPackage(self, package, session):
         """
         Binds 'package' to the appropriate url
         and creates a MainPage instance for it
         and a directory for the resource files
-
-	    In the GTK version, this should actually
-        redirect people to MainPage. Copy from
-	    svn revision 1311 to re-enable gtk.
         """
-        MainPage(self, package, session)
-
+        session_mainpages = self.mainpages.get(session.uid)
+        if session_mainpages:
+            mainpage = session_mainpages.get(package.name)
+            if mainpage:
+                raise Exception('There is already a mainpage and session')
+            else:
+                session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
+        else:
+            self.mainpages[session.uid] = {package.name: MainPage(None, package, session, self.webServer)}
 
     def render_GET(self, request):
         """

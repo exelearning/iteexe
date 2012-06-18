@@ -29,13 +29,13 @@ import traceback
 import shutil
 from twisted.internet            import threads, reactor
 from twisted.web                 import static
-from nevow                       import loaders
-from nevow.livepage              import handler
+from exe.webui.livepage          import RenderableLivePage
+from nevow                       import loaders, inevow
+from nevow.livepage              import handler, IClientHandle
 from exe.jsui.idevicepane        import IdevicePane
 from exe.jsui.outlinepane        import OutlinePane
 from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
-from exe.webui.renderable        import RenderableLivePage
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
 from exe.export.websiteexport    import WebsiteExport
@@ -65,14 +65,14 @@ class MainPage(RenderableLivePage):
     _templateFileName = 'mainpage.html'
     name = 'to_be_defined'
 
-    def __init__(self, parent, package, session):
+    def __init__(self, parent, package, session, config):
         """
         Initialize a new Javascript page
         'package' is the package that we look after
         """
         self.name = package.name
         self.session = session
-        RenderableLivePage.__init__(self, parent, package)
+        RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", static.File(package.resourceDir))
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
@@ -85,17 +85,20 @@ class MainPage(RenderableLivePage):
         self.recentMenu  = RecentMenu(self)
 
         # And in the main section
-        self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
+        self.authoringPage = None
+        self.authoringPages = {}
 
-    def getChild(self, name, request):
-        """
-        Try and find the child for the name given
-        """
-        if name == '':
-            return self
+    def child_authoring(self, ctx):
+        request = inevow.IRequest(ctx)
+        if 'clientHandleId' in request.args:
+            clientid = request.args['clientHandleId'][0]
+            if clientid not in self.authoringPages:
+                self.authoringPages[clientid] = AuthoringPage(self)
+                self.children.pop('authoring')
+            return self.authoringPages[clientid]
         else:
-            return super(self, self.__class__).getChild(self, name, request)
+            raise Exception('No clientHandleId in request')
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
@@ -146,12 +149,10 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleDown, 'DownNode')
         
         self.idevicePane.client = client
-        # Render the js 
-        handleId = "'", client.handleId, "'" 
 
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
-        return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'])
+        return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'] + '?clientHandleId=' + IClientHandle(ctx).handleId)
 
     def render_lang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + G.application.config.locale + ".js")

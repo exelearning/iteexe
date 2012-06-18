@@ -32,8 +32,11 @@ Ext.define('eXe.controller.Idevice', {
     
     onIdeviceClick: function(view, record, item, index, e, eOpts) {
         var authoring = Ext.get('authoringIFrame').dom.contentWindow;
-        if (authoring && authoring.submitLink)
-        	authoring.submitLink("AddIdevice", record.data.id, 1);
+        if (authoring && authoring.submitLink) {
+            var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
+                selected = outlineTreePanel.getSelectionModel().getSelection();
+            authoring.submitLink("AddIdevice", record.data.id, 1, selected != 0? selected[0].data.id : '0');
+        }
     },
     
     reload: function() {

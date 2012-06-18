@@ -30,12 +30,8 @@ but you don't have to use that functionality. It means you can use a rendering
 template to do your rendering, even if you're part of a bigger block.
 """
 
-import nevow
-from nevow import loaders, inevow, rend
-from nevow.livepage import LivePage, DefaultClientHandleFactory, _js,\
-    ClientHandle, IClientHandle, clientHandleFactory
 from twisted.web.resource import Resource
-from nevow import tags
+from nevow import loaders
 import re
 
 import logging
@@ -302,62 +298,3 @@ class RenderableResource(_RenderablePage, Resource):
         """
         Resource.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
-
-
-class eXeClientHandle(ClientHandle):
-    __implements__ = IClientHandle
-    
-    def alert(self, what, onDone=None):
-        """Show the user an alert 'what'
-        """
-        if not isinstance(what, _js):
-            what = "'%s'" % (self.flt(what), )
-        if onDone:
-            self.sendScript("Ext.Msg.alert('',%s, function() { %s });" % (what, onDone))
-        else:
-            self.sendScript("Ext.Msg.alert('',%s);" % (what, ))
-            
-
-
-class eXeClientHandleFactory(DefaultClientHandleFactory):
-    clientHandleClass = eXeClientHandle
-    
-    def newClientHandle(self, ctx, refreshInterval, targetTimeoutCount):
-        handle = DefaultClientHandleFactory.newClientHandle(self, ctx, refreshInterval, targetTimeoutCount)
-        log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
-        return handle
-
-nevow.livepage.clientHandleFactory = eXeClientHandleFactory()
-
-
-class RenderableLivePage(_RenderablePage, LivePage):
-    """
-    This class is both a renderable and a LivePage/Resource
-    """
-
-    def __init__(self, parent, package=None, config=None):
-        """
-        Same as Renderable.__init__ but
-        """
-        LivePage.__init__(self)
-        _RenderablePage.__init__(self, parent, package, config)
-        self.clientHandleFactory = nevow.livepage.clientHandleFactory
-
-    def renderHTTP(self, ctx):
-        "Disable cache of live pages"
-        request = inevow.IRequest(ctx)
-        request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
-        request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
-        request.setHeader("Pragma", "no-cache")
-        return LivePage.renderHTTP(self, ctx)
-        # each time the page is rendered, it gets a new ClientHandle
-        handle = clientHandleFactory.newClientHandle(
-            ctx,
-            self.refreshInterval,
-            self.targetTimeoutCount)
-        ctx.remember(handle, IClientHandle)
-        self.goingLive(ctx, handle)
-        return rend.Page.renderHTTP(self, ctx)
-    
-    def render_liveglue(self, ctx, data):
-        return tags.script(src='/jsui/nevow_glue.js')

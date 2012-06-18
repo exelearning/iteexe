@@ -432,7 +432,7 @@ function clearHidden()
 
 // Sets the hidden action and object fields, then submits the 
 // contentForm to the server
-function submitLink(action, object, changed) 
+function submitLink(action, object, changed, currentNode) 
 {
     var theForm = getContentForm();
 
@@ -440,6 +440,9 @@ function submitLink(action, object, changed)
 	    theForm.action.value    = action;
 	    theForm.object.value    = object;
 	    theForm.isChanged.value = changed;
+        if (currentNode)
+            theForm.currentNode.value = currentNode;
+        theForm.clientHandleId.value = top.nevow_clientHandleId;
 	    runFuncArray(beforeSubmitHandlers)
 	
 	    theForm.submit();
@@ -448,7 +451,7 @@ function submitLink(action, object, changed)
 
 
 // Check the user really really wants to do this before submitting
-function confirmThenSubmitLink(message, action, object, changed) 
+function confirmThenSubmitLink(message, action, object, changed)
 {
     parent.Ext.Msg.confirm("", message, function(button) {
         if (button == "yes")
