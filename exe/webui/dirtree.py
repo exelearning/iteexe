@@ -73,7 +73,7 @@ class DirTreePage(RenderableResource):
                                 l.append({ "text": d.name, "id": d.abspath().replace(os.path.sep, SEP ) })
                     else:
                         for d in dir.dirs():
-                            if d.name.startswith('.'):
+                            if not d.name.startswith('.'):
                                 l.append({ "text": d.name, "id": d.abspath().replace(os.path.sep, SEP ) })
                 except:
                     pass
