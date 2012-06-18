@@ -27,13 +27,10 @@ import sys
 import logging
 import traceback
 import shutil
-from xml.sax.saxutils            import escape
 from twisted.internet            import threads, reactor
 from twisted.web                 import static
-from twisted.web.resource        import Resource
-from twisted.internet.defer      import Deferred
-from nevow                       import loaders, inevow, stan
-from nevow.livepage              import handler, js
+from nevow                       import loaders
+from nevow.livepage              import handler
 from exe.jsui.idevicepane        import IdevicePane
 from exe.jsui.outlinepane        import OutlinePane
 from exe.jsui.recentmenu         import RecentMenu

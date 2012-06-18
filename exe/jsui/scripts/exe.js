@@ -75,12 +75,12 @@ Ext.application({
 
     gotoUrl: function(location) {
         eXe.app.quitWarningEnabled = false;
-        window.top.location = location;    
+        nevow_closeLive('window.top.location = "' + location + '";');
     },
     
     launch: function() {
         Ext.QuickTips.init();
-        Ext.FocusManager.enable(true);
+        Ext.FocusManager.enable();
 
         try {
             Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
