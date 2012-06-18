@@ -59,8 +59,17 @@ class OutlinePane(Renderable, Resource):
                 node = package.findNode(nodeId)
                 if node is not None:
                     package.currentNode = node
+                    self.parent.clientHandleFactory.clientHandles[request.args['clientHandleId'][0]].currentNodeId = node.id
                 else:
                     log.error("changeNode cannot locate "+nodeId)
+
+
+    def updateClients(self, aclient):
+        for client in self.parent.clientHandleFactory.clientHandles.values():
+            if client.handleId in self.parent.authoringPages:
+                client.call('eXe.app.getController("Outline").reload')
+            if client.handleId == aclient.handleId:
+                client.call('eXe.app.getController("Outline").loadNodeOnAuthoringPage', client.currentNodeId)
 
     def handleAddChild(self, client, parentNodeId):
         """Called from client via xmlhttp. When the addChild button is called.
@@ -70,8 +79,9 @@ class OutlinePane(Renderable, Resource):
         log.debug("handleAddChild parent=" + parentNodeId)
         if node is not None:
             self.package.currentNode = node.createChild()
-            log.debug('eXe.app.getController("Outline").reload')
-            client.call('eXe.app.getController("Outline").reload')
+            client.currentNodeId = self.package.currentNode.id
+            log.debug('Updating clients Outlines')
+            self.updateClients(client)
 
     def handleDelNode(self, client, nodeId):
         """Called from xmlhttp. 
@@ -83,8 +93,9 @@ class OutlinePane(Renderable, Resource):
             if (node.isAncestorOf(self.package.currentNode) or 
                 node is self.package.currentNode):
                 self.package.currentNode = node.parent
+                client.currentNodeId = self.package.currentNode.id
             node.delete()
-            client.call('eXe.app.getController("Outline").reload')
+            self.updateClients(client)
         else:
             log.error("deleteNode cannot locate " + nodeId)
 
@@ -100,39 +111,41 @@ class OutlinePane(Renderable, Resource):
         # and those of ALL of its children nodes, as well:
         node.RenamedNodePath()
 
-        client.call('eXe.app.getController("Outline").reload')
+        self.updateClients(client)
 
     def handleSetTreeSelection(self, client):
         """
         Called when the client want's to update the tree with the correct
         selection
         """
-        client.call('eXe.app.getController("Outline").select', self.package.currentNode.id)
-        
+        if client.currentNodeId:
+            client.call('eXe.app.getController("Outline").select', client.currentNodeId)
+        else:
+            raise Exception('No current node in client')
             
     def handlePromote(self, client, sourceNodeId):
         """Promotes a node"""
         node = self.package.findNode(sourceNodeId)
         node.promote()
-        client.call('eXe.app.getController("Outline").reload')
+        self.updateClients(client)
 
     def handleDemote(self, client, sourceNodeId):
         """Demotes a node"""
         node = self.package.findNode(sourceNodeId)
         node.demote()
-        client.call('eXe.app.getController("Outline").reload')
+        self.updateClients(client)
 
     def handleUp(self, client, sourceNodeId):
         """Moves a node up its list of siblings"""
         node = self.package.findNode(sourceNodeId)
         node.up()
-        client.call('eXe.app.getController("Outline").reload')
+        self.updateClients(client)
 
     def handleDown(self, client, sourceNodeId):
         """Moves a node down its list of siblings"""
         node = self.package.findNode(sourceNodeId)
         node.down()
-        client.call('eXe.app.getController("Outline").reload')
+        self.updateClients(client)
 
     def render(self, request=None):
         """

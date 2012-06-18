@@ -31,6 +31,10 @@ Ext.define('eXe.controller.MainTab', {
         {
             selector: '#header_background_show',
             ref: 'headerBackgroundShowButton'
+        },
+        {
+            selector: '#outline_treepanel',
+            ref: 'outlineTreePanel'
         }
     ],
 
@@ -210,5 +214,17 @@ Ext.define('eXe.controller.MainTab', {
     
     beforeAction: function(form, action, eOpts) {
         form.url = location.pathname + "/properties";
+    },
+
+    updateAuthoring: function(action, object, isChanged, currentNode, destNode) {
+        if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext")) {
+		    var outlineTreePanel = this.getOutlineTreePanel(),
+	            selmodel = outlineTreePanel.getSelectionModel();
+                selectednode = selmodel.getSelection()[0].get('id');
+            if (currentNode == selectednode || (action == "move" && selectednode == destNode)) {
+		        var authoring = Ext.get('authoringIFrame').dom;
+		        authoring.src = location.pathname + '/authoring?clientHandleId=' + nevow_clientHandleId + "&currentNode=" + selectednode;
+            }
+        }
     }
 });

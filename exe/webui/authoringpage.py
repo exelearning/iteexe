@@ -33,8 +33,6 @@ from exe.webui.renderable    import RenderableResource
 from exe.engine.path         import Path
 from exe                     import globals as G
 
-from exe.webui                  import preferencespage
-
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -85,9 +83,11 @@ class AuthoringPage(RenderableResource):
                 topNode = self.package.findNode(request.args["object"][0])
             elif "currentNode" in request.args:
                 topNode = self.package.findNode(request.args["currentNode"][0])
+        elif "currentNode" in request.args:
+            topNode = self.package.findNode(request.args["currentNode"][0])
 
-        return topNode
         log.debug(u"After authoringPage process" + repr(request.args))
+        return topNode
 
     def render_GET(self, request=None):
         """
@@ -102,6 +102,16 @@ class AuthoringPage(RenderableResource):
             for key, value in request.args.items():
                 request.args[key] = [unicode(value[0], 'utf8')]
             topNode = self._process(request)
+
+        if "action" in request.args:
+            for client in self.parent.clientHandleFactory.clientHandles.values():
+                if request.args['clientHandleId'][0] != client.handleId \
+                    and client.handleId in self.parent.authoringPages:
+                    destNode = None
+                    if request.args["action"][0] == "move":
+                        destNode = request.args["move" + request.args["object"][0]][0]
+                    client.call('eXe.app.getController("MainTab").updateAuthoring', request.args["action"][0], \
+                        request.args["object"][0], request.args["isChanged"][0], request.args["currentNode"][0], destNode)
 
         self.blocks = []
         self.__addBlocks(topNode)

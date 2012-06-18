@@ -247,6 +247,8 @@ class MainPage(RenderableLivePage):
         """Load the package named 'filename'"""
         package = self._loadPackage(client, filename, newLoad=True)
         self.session.packageStore.addPackage(package)
+        authoringpage = self.authoringPages.pop(client.handleId)
+        del authoringpage
         self.root.bindNewPackage(package, self.session)
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           package.name).encode('utf8'))

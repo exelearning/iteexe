@@ -23,13 +23,16 @@ from exe.webui.renderable import _RenderablePage
 import nevow
 from nevow.livepage import LivePage, DefaultClientHandleFactory, _js,\
     ClientHandle, IClientHandle
-from nevow import inevow, rend, tags
+from nevow import inevow, tags
 
 log = logging.getLogger(__name__)
 
 
 class eXeClientHandle(ClientHandle):
     __implements__ = IClientHandle
+
+    def __init__(self, handleId, refreshInterval, targetTimeoutCount):
+        ClientHandle.__init__(self, handleId, refreshInterval, targetTimeoutCount)
 
     def alert(self, what, onDone=None):
         """Show the user an alert 'what'
@@ -47,6 +50,7 @@ class eXeClientHandleFactory(DefaultClientHandleFactory):
 
     def newClientHandle(self, ctx, refreshInterval, targetTimeoutCount):
         handle = DefaultClientHandleFactory.newClientHandle(self, ctx, refreshInterval, targetTimeoutCount)
+        handle.currentNodeId = ctx.tag.package.currentNode.id
         log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
         return handle
 

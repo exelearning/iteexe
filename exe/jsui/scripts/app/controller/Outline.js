@@ -251,10 +251,10 @@ Ext.define('eXe.controller.Outline', {
     		selmodel = outlineTreePanel.getSelectionModel(),
     		store = this.getOutlineXmlTreeStoreStore(), node;
     		
+        outlineTreePanel.expandAll();
     	node = store.getNodeById(nodeid);
     	if (node) {
     		selmodel.select(node);
-    		this.loadNodeOnAuthoringPage(node.data.id);
             document.title = "eXe : " + node.data.text;
     	}
     	this.enableButtons();
