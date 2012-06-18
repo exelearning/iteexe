@@ -604,7 +604,7 @@ Ext.define('eXe.controller.Toolbar', {
     		url: location.pathname + '/recentMenu',
     		scope: this,
     		success: function(response) {
-				var rm = eval(response.responseText),
+				var rm = Ext.JSON.decode(response.responseText),
 					menu = this.getRecentMenu(), text, item, previtem;
     			for (i in rm) {
     				text = rm[i].num + ". " + rm[i].path
@@ -627,7 +627,7 @@ Ext.define('eXe.controller.Toolbar', {
     		url: location.pathname + '/styleMenu',
     		scope: this,
     		success: function(response) {
-				var styles = eval(response.responseText),
+				var styles = Ext.JSON.decode(response.responseText),
 					menu = this.getStylesMenu(), i, item;
     			for (i = styles.length-1; i >= 0; i--) {
     				item = Ext.create('Ext.menu.Item', { text: styles[i].label, itemId: styles[i].style });
@@ -698,7 +698,7 @@ Ext.define('eXe.controller.Toolbar', {
 	askSave: function(onProceed) {
 		Ext.Msg.show({
 			title: _("Save Package first?"),
-			msg: _("The current package has been modified and not yet saved. Would you like to save it before loading the new package?"),
+			msg: _("The current package has been modified and not yet saved. Would you like to save it?"),
 			scope: this,
 			modal: true,
 			buttons: Ext.Msg.YESNOCANCEL,
@@ -706,7 +706,7 @@ Ext.define('eXe.controller.Toolbar', {
 				if (button == "yes")
 					this.fileSave(onProceed);
 				else if (button == "no")
-					eval(onProceed);
+                    eval(onProceed);
 			}
 		});
 	},
@@ -749,7 +749,9 @@ Ext.define('eXe.controller.Toolbar', {
 			            nevow_clientToServerEvent('savePackage', this, '', f.file.path)
 			        }
 			    } else {
-			        eval(onDone)
+                    Ext.defer(function() {
+				        eval(onDone);
+                    }, 500);
 			    }
 			}
 		});
