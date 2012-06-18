@@ -143,7 +143,11 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
         setUpHandler(self.outlinePane.handleDelNode, 'DelNode')
         setUpHandler(self.outlinePane.handleRenNode, 'RenNode')
-
+        setUpHandler(self.outlinePane.handlePromote, 'PromoteNode')
+        setUpHandler(self.outlinePane.handleDemote, 'DemoteNode')
+        setUpHandler(self.outlinePane.handleUp, 'UpNode')
+        setUpHandler(self.outlinePane.handleDown, 'DownNode')
+        
         self.idevicePane.client = client
         # Render the js 
         handleId = "'", client.handleId, "'" 

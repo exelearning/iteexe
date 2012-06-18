@@ -54,8 +54,35 @@ Ext.define('eXe.controller.Outline', {
         	},
         	'#outline_ren_node': {
         		click: this.onNodeRename
-        	}
+        	},
+            '#outline_promote_node': {
+                click: { fn: this.processNodeEvent, action: 'PromoteNode' }
+            },
+            '#outline_demote_node': {
+                click: { fn: this.processNodeEvent, action: 'DemoteNode' }
+            },
+            '#outline_up_node': {
+                click: { fn: this.processNodeEvent, action: 'UpNode' }
+            },
+            '#outline_down_node': {
+                click: { fn: this.processNodeEvent, action: 'DownNode' }
+            }
         });
+    },
+
+    processNodeEvent: function(menu, item, e, eOpts) {
+        this.nodeAction(e.action)
+    },
+    
+    nodeAction: function(action) {
+        var outlineTreePanel = this.getOutlineTreePanel(),
+            selected = outlineTreePanel.getSelectionModel().getSelection(),
+            nodeid = '0';
+        
+        if (selected != 0)
+            nodeid = selected[0].data.id;
+        this.disableButtons();
+        nevow_clientToServerEvent(action, this, '', nodeid);
     },
     
     onLaunch: function() {

@@ -127,107 +127,29 @@ class OutlinePane(Renderable, Resource):
         client.call('eXe.app.getController("Outline").select', self.package.currentNode.id)
         
             
-    def _doJsRename(self, client, node):
-        """
-        Recursively renames all children to their default names on
-        the client if the node's default name has not been overriden
-        """
-        log.debug("_doJsRename")
-        if not node._title:
-            params = [s.replace('"', '\\"') for s in 
-                      [node.titleShort, node.titleLong, node.title]]
-            params.append(node.id)
-            command = 'XHRenNode("%s", "%s", "%s", "%s")' % tuple(params)
-            log.debug(command)
-            client.sendScript(command)
-        for child in node.children: 
-            self._doJsRename(client, child)
-
-
-    def handleDrop(self, client, sourceNodeId, parentNodeId, nextSiblingNodeId):
-        """Handles the end of a drag drop operation..."""
-        source = self.package.findNode(sourceNodeId)
-        parent = self.package.findNode(parentNodeId)
-        nextSibling = self.package.findNode(nextSiblingNodeId)
-        if source and parent:
-            # If the node has a default title and is changing levels
-            # Make the client rename the node after we've moved it
-            doRename = (not source.title and 
-                        parent is not source.parent)
-            # Do the move
-            if nextSibling:
-                assert nextSibling.parent is parent, \
-                       '"sibling" has different parent: [%s/%s] [%s/%s]' % \
-                        (parent.id, parent.title, nextSibling.id, 
-                         nextSibling.title)
-                source.move(parent, nextSibling)
-                log.info("Dragging %s under %s before %s" % 
-                         (source.title, parent.title, nextSibling.title))
-            else:
-                source.move(parent)
-                log.info("Dragging %s under %s at start" % 
-                         (source.title, parent.title))
-            # Rename on client if it will have changed
-            if doRename:
-                # Recursively rename all nodes on the client
-                self._doJsRename(client, source)
-        else:
-            log.error("Can't drag and drop tree items")
-
-
-    def _doJsMove(self, client, node):
-        """Makes the javascipt move a node,
-        the 'node' param should already have been moved 
-        to the new position. This makes the client catch up
-        to the server"""
-        sibling = node.nextSibling() 
-        if sibling:
-            siblingId = sibling.id
-        else:
-            siblingId = 'null'
-
-        if node.parent:
-            client.call('XHMoveNode', node.id, node.parent.id, siblingId)
-
-
     def handlePromote(self, client, sourceNodeId):
         """Promotes a node"""
         node = self.package.findNode(sourceNodeId)
-        if node.promote():
-            self._doJsMove(client, node)
-            self._doJsRename(client, node)
-        else:
-            client.call('enableButtons')
+        node.promote()
+        client.call('eXe.app.getController("Outline").reload')
 
     def handleDemote(self, client, sourceNodeId):
         """Demotes a node"""
         node = self.package.findNode(sourceNodeId)
-        if node.demote():
-            self._doJsMove(client, node)
-            self._doJsRename(client, node)
-        else:
-            client.call('enableButtons')
-
+        node.demote()
+        client.call('eXe.app.getController("Outline").reload')
 
     def handleUp(self, client, sourceNodeId):
         """Moves a node up its list of siblings"""
         node = self.package.findNode(sourceNodeId)
-        if node.up():
-            self._doJsMove(client, node)
-            self._doJsRename(client, node)
-        else:
-            client.call('enableButtons')
-
+        node.up()
+        client.call('eXe.app.getController("Outline").reload')
 
     def handleDown(self, client, sourceNodeId):
         """Moves a node down its list of siblings"""
         node = self.package.findNode(sourceNodeId)
-        if node.down():
-            self._doJsMove(client, node)
-            self._doJsRename(client, node)
-        else:
-            client.call('enableButtons')
-
+        node.down()
+        client.call('eXe.app.getController("Outline").reload')
 
     def render(self, request=None):
         """
