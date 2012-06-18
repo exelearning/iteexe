@@ -34,6 +34,19 @@ FILE_TPL = '{"name": "%(name)s"},'
 SEP = '_RRR_'
 log = logging.getLogger(__name__)
 
+def get_drives():
+    import string
+    from ctypes import windll
+
+    drives = []
+    bitmask = windll.kernel32.GetLogicalDrives()
+    for letter in string.uppercase:
+        if bitmask & 1:
+            drives.append(letter + ":")
+        bitmask >>= 1
+
+    return drives
+
 class DirTreePage(RenderableResource):
     name = "dirtree"
     
@@ -51,28 +64,56 @@ class DirTreePage(RenderableResource):
                     dir = Path(request.args['node'][0].replace(SEP, os.path.sep))
                 l = []
                 try:
-                    for d in dir.dirs():
-                        if sys.platform[:3] != "win" and not d.name.startswith('.'):
-                            l.append({ "text": d.name, "id": d.abspath().replace(os.path.sep, SEP ) })
+                    if sys.platform[:3] == "win":
+                        if dir == '/':
+                            for d in get_drives():
+                                l.append({ "text": d, "id": d + SEP})
+                        else:
+                            for d in dir.dirs():
+                                l.append({ "text": d.name, "id": d.abspath().replace(os.path.sep, SEP ) })
+                    else:
+                        for d in dir.dirs():
+                            if d.name.startswith('.'):
+                                l.append({ "text": d.name, "id": d.abspath().replace(os.path.sep, SEP ) })
                 except:
                     pass
             elif request.args['sendWhat'][0] == 'both':
                 dir = Path(unquote(request.args['dir'][0]))
                 items = []
-                try:
-                    for d in dir.listdir():
-                        if d.isdir():
-                            type = "directory"
-                        elif d.isfile():
-                            type = repr(mimetypes.guess_type(d.name, False)[0])
-                        elif d.islink():
-                            type = "link"
-                        else:
-                            type = "None"
-                        if sys.platform[:3] != "win" and not d.name.startswith('.'):
-                            items.append({ "name": d.name, "size": d.size, "type": type, "modified": int(d.mtime), "perms": d.lstat().st_mode })
-                except:
-                    pass
+                if sys.platform[:3] == "win":
+                    if dir == '/':
+                        for d in get_drives():
+                            items.append({ "name": d, "size": 0, "type": 'directory', "modified": 0})
+                    else:
+                        try:
+                            for d in dir.listdir():
+                                if d.isdir():
+                                    type = "directory"
+                                elif d.isfile():
+                                    type = repr(mimetypes.guess_type(d.name, False)[0])
+                                elif d.islink():
+                                    type = "link"
+                                else:
+                                    type = "None"
+                                if not d.name.startswith('.'):
+                                    items.append({ "name": d.name, "size": d.size, "type": type, "modified": int(d.mtime), "perms": d.lstat().st_mode })
+                        except:
+                            pass
+                else:
+                    try:
+                        for d in dir.listdir():
+                            if d.isdir():
+                                type = "directory"
+                            elif d.isfile():
+                                type = repr(mimetypes.guess_type(d.name, False)[0])
+                            elif d.islink():
+                                type = "link"
+                            else:
+                                type = "None"
+                            if not d.name.startswith('.'):
+                                items.append({ "name": d.name, "size": d.size, "type": type, "modified": int(d.mtime), "perms": d.lstat().st_mode })
+                    except:
+                        pass
                 l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         return ""

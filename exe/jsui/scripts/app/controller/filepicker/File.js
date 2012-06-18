@@ -82,8 +82,8 @@ Ext.define('eXe.controller.filepicker.File', {
 			directory = directory.id;
 		}
 		directory = this.getFullClearPath( directory );
-		if (directory[0] != '/')
-			directory = '/';
+//		if (directory[0] != '/')
+//			directory = '/';
 		var fileStore = this.getFilepickerFileStore();
 		fileStore.load({
 			callback: function() {
