@@ -152,8 +152,10 @@ class MainPage(RenderableLivePage):
 
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
-        request = inevow.IRequest(ctx)
         return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'])
+
+    def render_lang(self, ctx, data):
+        return ctx.tag(src="../jsui/i18n/" + G.application.config.locale + ".js")
 
     def handleTestPrintMsg(self, client, message): 
         """ 

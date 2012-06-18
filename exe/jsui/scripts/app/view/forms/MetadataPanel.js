@@ -20,671 +20,671 @@
 langs = [
     [
         "aa", 
-        "_(Afar )"
+        _("Afar ")
     ], 
     [
         "ab", 
-        "_(Abkhazian )"
+        _("Abkhazian ")
     ], 
     [
         "ae", 
-        "_(Avestan )"
+        _("Avestan ")
     ], 
     [
         "af", 
-        "_(Afrikaans )"
+        _("Afrikaans ")
     ], 
     [
         "am", 
-        "_(Amharic )"
+        _("Amharic ")
     ], 
     [
         "ar", 
-        "_(Arabic )"
+        _("Arabic ")
     ], 
     [
         "as", 
-        "_(Assamese )"
+        _("Assamese ")
     ], 
     [
         "ay", 
-        "_(Aymara )"
+        _("Aymara ")
     ], 
     [
         "az", 
-        "_(Azerbaijani )"
+        _("Azerbaijani ")
     ], 
     [
         "ba", 
-        "_(Bashkir )"
+        _("Bashkir ")
     ], 
     [
         "be", 
-        "_(Byelorussian; Belarusian )"
+        _("Byelorussian; Belarusian ")
     ], 
     [
         "bg", 
-        "_(Bulgarian )"
+        _("Bulgarian ")
     ], 
     [
         "bh", 
-        "_(Bihari )"
+        _("Bihari ")
     ], 
     [
         "bi", 
-        "_(Bislama )"
+        _("Bislama ")
     ], 
     [
         "bn", 
-        "_(Bengali; Bangla )"
+        _("Bengali; Bangla ")
     ], 
     [
         "bo", 
-        "_(Tibetan )"
+        _("Tibetan ")
     ], 
     [
         "br", 
-        "_(Breton )"
+        _("Breton ")
     ], 
     [
         "bs", 
-        "_(Bosnian )"
+        _("Bosnian ")
     ], 
     [
         "ca", 
-        "_(Catalan )"
+        _("Catalan ")
     ], 
     [
         "ce", 
-        "_(Chechen )"
+        _("Chechen ")
     ], 
     [
         "ch", 
-        "_(Chamorro )"
+        _("Chamorro ")
     ], 
     [
         "co", 
-        "_(Corsican )"
+        _("Corsican ")
     ], 
     [
         "cs", 
-        "_(Czech )"
+        _("Czech ")
     ], 
     [
         "cu", 
-        "_(Church Slavic )"
+        _("Church Slavic ")
     ], 
     [
         "cv", 
-        "_(Chuvash )"
+        _("Chuvash ")
     ], 
     [
         "cy", 
-        "_(Welsh )"
+        _("Welsh ")
     ], 
     [
         "da", 
-        "_(Danish )"
+        _("Danish ")
     ], 
     [
         "de", 
-        "_(German )"
+        _("German ")
     ], 
     [
         "dz", 
-        "_(Dzongkha; Bhutani )"
+        _("Dzongkha; Bhutani ")
     ], 
     [
         "el", 
-        "_(Greek )"
+        _("Greek ")
     ], 
     [
         "en", 
-        "_(English )"
+        _("English ")
     ], 
     [
         "eo", 
-        "_(Esperanto )"
+        _("Esperanto ")
     ], 
     [
         "es", 
-        "_(Spanish )"
+        _("Spanish ")
     ], 
     [
         "et", 
-        "_(Estonian )"
+        _("Estonian ")
     ], 
     [
         "eu", 
-        "_(Basque )"
+        _("Basque ")
     ], 
     [
         "fa", 
-        "_(Persian )"
+        _("Persian ")
     ], 
     [
         "fi", 
-        "_(Finnish )"
+        _("Finnish ")
     ], 
     [
         "fj", 
-        "_(Fijian; Fiji )"
+        _("Fijian; Fiji ")
     ], 
     [
         "fo", 
-        "_(Faroese )"
+        _("Faroese ")
     ], 
     [
         "fr", 
-        "_(French )"
+        _("French ")
     ], 
     [
         "fy", 
-        "_(Frisian )"
+        _("Frisian ")
     ], 
     [
         "ga", 
-        "_(Irish )"
+        _("Irish ")
     ], 
     [
         "gd", 
-        "_(Scots; Gaelic )"
+        _("Scots; Gaelic ")
     ], 
     [
         "gl", 
-        "_(Gallegan; Galician )"
+        _("Gallegan; Galician ")
     ], 
     [
         "gn", 
-        "_(Guarani )"
+        _("Guarani ")
     ], 
     [
         "gu", 
-        "_(Gujarati )"
+        _("Gujarati ")
     ], 
     [
         "gv", 
-        "_(Manx )"
+        _("Manx ")
     ], 
     [
         "ha", 
-        "_(Hausa (?) )"
+        _("Hausa (?) ")
     ], 
     [
         "he", 
-        "_(Hebrew (formerly iw) )"
+        _("Hebrew (formerly iw) ")
     ], 
     [
         "hi", 
-        "_(Hindi )"
+        _("Hindi ")
     ], 
     [
         "ho", 
-        "_(Hiri Motu )"
+        _("Hiri Motu ")
     ], 
     [
         "hr", 
-        "_(Croatian )"
+        _("Croatian ")
     ], 
     [
         "hu", 
-        "_(Hungarian )"
+        _("Hungarian ")
     ], 
     [
         "hy", 
-        "_(Armenian )"
+        _("Armenian ")
     ], 
     [
         "hz", 
-        "_(Herero )"
+        _("Herero ")
     ], 
     [
         "ia", 
-        "_(Interlingua )"
+        _("Interlingua ")
     ], 
     [
         "id", 
-        "_(Indonesian (formerly in) )"
+        _("Indonesian (formerly in) ")
     ], 
     [
         "ie", 
-        "_(Interlingue )"
+        _("Interlingue ")
     ], 
     [
         "ik", 
-        "_(Inupiak )"
+        _("Inupiak ")
     ], 
     [
         "io", 
-        "_(Ido )"
+        _("Ido ")
     ], 
     [
         "is", 
-        "_(Icelandic )"
+        _("Icelandic ")
     ], 
     [
         "it", 
-        "_(Italian )"
+        _("Italian ")
     ], 
     [
         "iu", 
-        "_(Inuktitut )"
+        _("Inuktitut ")
     ], 
     [
         "ja", 
-        "_(Japanese )"
+        _("Japanese ")
     ], 
     [
         "jv", 
-        "_(Javanese )"
+        _("Javanese ")
     ], 
     [
         "ka", 
-        "_(Georgian )"
+        _("Georgian ")
     ], 
     [
         "ki", 
-        "_(Kikuyu )"
+        _("Kikuyu ")
     ], 
     [
         "kj", 
-        "_(Kuanyama )"
+        _("Kuanyama ")
     ], 
     [
         "kk", 
-        "_(Kazakh )"
+        _("Kazakh ")
     ], 
     [
         "kl", 
-        "_(Kalaallisut; Greenlandic )"
+        _("Kalaallisut; Greenlandic ")
     ], 
     [
         "km", 
-        "_(Khmer; Cambodian )"
+        _("Khmer; Cambodian ")
     ], 
     [
         "kn", 
-        "_(Kannada )"
+        _("Kannada ")
     ], 
     [
         "ko", 
-        "_(Korean )"
+        _("Korean ")
     ], 
     [
         "ks", 
-        "_(Kashmiri )"
+        _("Kashmiri ")
     ], 
     [
         "ku", 
-        "_(Kurdish )"
+        _("Kurdish ")
     ], 
     [
         "kv", 
-        "_(Komi )"
+        _("Komi ")
     ], 
     [
         "kw", 
-        "_(Cornish )"
+        _("Cornish ")
     ], 
     [
         "ky", 
-        "_(Kirghiz )"
+        _("Kirghiz ")
     ], 
     [
         "la", 
-        "_(Latin )"
+        _("Latin ")
     ], 
     [
         "lb", 
-        "_(Letzeburgesch )"
+        _("Letzeburgesch ")
     ], 
     [
         "ln", 
-        "_(Lingala )"
+        _("Lingala ")
     ], 
     [
         "lo", 
-        "_(Lao; Laotian )"
+        _("Lao; Laotian ")
     ], 
     [
         "lt", 
-        "_(Lithuanian )"
+        _("Lithuanian ")
     ], 
     [
         "lv", 
-        "_(Latvian; Lettish )"
+        _("Latvian; Lettish ")
     ], 
     [
         "mg", 
-        "_(Malagasy )"
+        _("Malagasy ")
     ], 
     [
         "mh", 
-        "_(Marshall )"
+        _("Marshall ")
     ], 
     [
         "mi", 
-        "_(Maori )"
+        _("Maori ")
     ], 
     [
         "mk", 
-        "_(Macedonian )"
+        _("Macedonian ")
     ], 
     [
         "ml", 
-        "_(Malayalam )"
+        _("Malayalam ")
     ], 
     [
         "mn", 
-        "_(Mongolian )"
+        _("Mongolian ")
     ], 
     [
         "mo", 
-        "_(Moldavian )"
+        _("Moldavian ")
     ], 
     [
         "mr", 
-        "_(Marathi )"
+        _("Marathi ")
     ], 
     [
         "ms", 
-        "_(Malay )"
+        _("Malay ")
     ], 
     [
         "mt", 
-        "_(Maltese )"
+        _("Maltese ")
     ], 
     [
         "my", 
-        "_(Burmese )"
+        _("Burmese ")
     ], 
     [
         "na", 
-        "_(Nauru )"
+        _("Nauru ")
     ], 
     [
         "nb", 
-        "_(Norwegian Bokm\u00e5l )"
+        _("Norwegian Bokm\u00e5l ")
     ], 
     [
         "nd", 
-        "_(Ndebele, North )"
+        _("Ndebele, North ")
     ], 
     [
         "ne", 
-        "_(Nepali )"
+        _("Nepali ")
     ], 
     [
         "ng", 
-        "_(Ndonga )"
+        _("Ndonga ")
     ], 
     [
         "nl", 
-        "_(Dutch )"
+        _("Dutch ")
     ], 
     [
         "nn", 
-        "_(Norwegian Nynorsk )"
+        _("Norwegian Nynorsk ")
     ], 
     [
         "no", 
-        "_(Norwegian )"
+        _("Norwegian ")
     ], 
     [
         "nr", 
-        "_(Ndebele, South )"
+        _("Ndebele, South ")
     ], 
     [
         "nv", 
-        "_(Navajo )"
+        _("Navajo ")
     ], 
     [
         "ny", 
-        "_(Chichewa; Nyanja )"
+        _("Chichewa; Nyanja ")
     ], 
     [
         "oc", 
-        "_(Occitan; Proven\u00e7al )"
+        _("Occitan; Proven\u00e7al ")
     ], 
     [
         "om", 
-        "_((Afan) Oromo )"
+        _("(Afan) Oromo ")
     ], 
     [
         "or", 
-        "_(Oriya )"
+        _("Oriya ")
     ], 
     [
         "os", 
-        "_(Ossetian; Ossetic )"
+        _("Ossetian; Ossetic ")
     ], 
     [
         "pa", 
-        "_(Panjabi; Punjabi )"
+        _("Panjabi; Punjabi ")
     ], 
     [
         "pi", 
-        "_(Pali )"
+        _("Pali ")
     ], 
     [
         "pl", 
-        "_(Polish )"
+        _("Polish ")
     ], 
     [
         "ps", 
-        "_(Pashto, Pushto )"
+        _("Pashto, Pushto ")
     ], 
     [
         "pt", 
-        "_(Portuguese )"
+        _("Portuguese ")
     ], 
     [
         "qu", 
-        "_(Quechua )"
+        _("Quechua ")
     ], 
     [
         "rm", 
-        "_(Rhaeto-Romance )"
+        _("Rhaeto-Romance ")
     ], 
     [
         "rn", 
-        "_(Rundi; Kirundi )"
+        _("Rundi; Kirundi ")
     ], 
     [
         "ro", 
-        "_(Romanian )"
+        _("Romanian ")
     ], 
     [
         "ru", 
-        "_(Russian )"
+        _("Russian ")
     ], 
     [
         "rw", 
-        "_(Kinyarwanda )"
+        _("Kinyarwanda ")
     ], 
     [
         "sa", 
-        "_(Sanskrit )"
+        _("Sanskrit ")
     ], 
     [
         "sc", 
-        "_(Sardinian )"
+        _("Sardinian ")
     ], 
     [
         "sd", 
-        "_(Sindhi )"
+        _("Sindhi ")
     ], 
     [
         "se", 
-        "_(Northern Sami )"
+        _("Northern Sami ")
     ], 
     [
         "sg", 
-        "_(Sango; Sangro )"
+        _("Sango; Sangro ")
     ], 
     [
         "si", 
-        "_(Sinhalese )"
+        _("Sinhalese ")
     ], 
     [
         "sk", 
-        "_(Slovak )"
+        _("Slovak ")
     ], 
     [
         "sl", 
-        "_(Slovenian )"
+        _("Slovenian ")
     ], 
     [
         "sm", 
-        "_(Samoan )"
+        _("Samoan ")
     ], 
     [
         "sn", 
-        "_(Shona )"
+        _("Shona ")
     ], 
     [
         "so", 
-        "_(Somali )"
+        _("Somali ")
     ], 
     [
         "sq", 
-        "_(Albanian )"
+        _("Albanian ")
     ], 
     [
         "sr", 
-        "_(Serbian )"
+        _("Serbian ")
     ], 
     [
         "ss", 
-        "_(Swati; Siswati )"
+        _("Swati; Siswati ")
     ], 
     [
         "st", 
-        "_(Sesotho; Sotho, Southern )"
+        _("Sesotho; Sotho, Southern ")
     ], 
     [
         "su", 
-        "_(Sundanese )"
+        _("Sundanese ")
     ], 
     [
         "sv", 
-        "_(Swedish )"
+        _("Swedish ")
     ], 
     [
         "sw", 
-        "_(Swahili )"
+        _("Swahili ")
     ], 
     [
         "ta", 
-        "_(Tamil )"
+        _("Tamil ")
     ], 
     [
         "te", 
-        "_(Telugu )"
+        _("Telugu ")
     ], 
     [
         "tg", 
-        "_(Tajik )"
+        _("Tajik ")
     ], 
     [
         "th", 
-        "_(Thai )"
+        _("Thai ")
     ], 
     [
         "ti", 
-        "_(Tigrinya )"
+        _("Tigrinya ")
     ], 
     [
         "tk", 
-        "_(Turkmen )"
+        _("Turkmen ")
     ], 
     [
         "tl", 
-        "_(Tagalog )"
+        _("Tagalog ")
     ], 
     [
         "tn", 
-        "_(Tswana; Setswana )"
+        _("Tswana; Setswana ")
     ], 
     [
         "to", 
-        "_(Tongan  )"
+        _("Tongan  ")
     ], 
     [
         "tr", 
-        "_(Turkish )"
+        _("Turkish ")
     ], 
     [
         "ts", 
-        "_(Tsonga )"
+        _("Tsonga ")
     ], 
     [
         "tt", 
-        "_(Tatar )"
+        _("Tatar ")
     ], 
     [
         "tw", 
-        "_(Twi )"
+        _("Twi ")
     ], 
     [
         "ty", 
-        "_(Tahitian )"
+        _("Tahitian ")
     ], 
     [
         "ug", 
-        "_(Uighur )"
+        _("Uighur ")
     ], 
     [
         "uk", 
-        "_(Ukrainian )"
+        _("Ukrainian ")
     ], 
     [
         "ur", 
-        "_(Urdu )"
+        _("Urdu ")
     ], 
     [
         "uz", 
-        "_(Uzbek )"
+        _("Uzbek ")
     ], 
     [
         "vi", 
-        "_(Vietnamese )"
+        _("Vietnamese ")
     ], 
     [
         "vo", 
-        "_(Volap\u00fck; Volapuk )"
+        _("Volap\u00fck; Volapuk ")
     ], 
     [
         "wa", 
-        "_(Walloon )"
+        _("Walloon ")
     ], 
     [
         "wo", 
-        "_(Wolof )"
+        _("Wolof ")
     ], 
     [
         "xh", 
-        "_(Xhosa )"
+        _("Xhosa ")
     ], 
     [
         "yi", 
-        "_(Yiddish (formerly ji) )"
+        _("Yiddish (formerly ji) ")
     ], 
     [
         "yo", 
-        "_(Yoruba )"
+        _("Yoruba ")
     ], 
     [
         "za", 
-        "_(Zhuang )"
+        _("Zhuang ")
     ], 
     [
         "zh", 
-        "_(Chinese )"
+        _("Chinese ")
     ], 
     [
         "zu", 
-        "_(Zulu )"
+        _("Zulu ")
     ]
 ];
 

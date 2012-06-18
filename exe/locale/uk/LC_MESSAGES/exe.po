@@ -1,0 +1,2543 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: eXe Learning Ukraine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-11 12:36+0200\n"
+"PO-Revision-Date: 2007-04-18 12:29+1200\n"
+"Last-Translator: \n"
+"Language-Team: IP-Team <solomon@ip-team.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: exe/application.py:253
+msgid "Please wait until loading finishes"
+msgstr ""
+
+#: exe/application.py:286 exe/jsui/mainpage.py:1080
+msgid "Sorry, wrong file format"
+msgstr "Вибечта, невірний формат файлу"
+
+#: exe/engine/appletidevice.py:145
+#, fuzzy, python-format
+msgid "file %s has no parentNode"
+msgstr "file %s has no parentNode"
+
+#: exe/engine/appletidevice.py:147 exe/engine/attachmentidevice.py:106
+#, python-format
+msgid "iDevice %s has no package"
+msgstr "iDevice %s немає пакету"
+
+#: exe/engine/attachmentidevice.py:104
+#, fuzzy, python-format
+msgid "Attachment %s has no parentNode"
+msgstr "Attachment %s has no parentNode"
+
+#: exe/engine/clozefpdidevice.py:287 exe/engine/clozeidevice.py:288
+#: exe/engine/clozelangfpdidevice.py:292
+msgid "Allow auto completion when user filling the gaps."
+msgstr "Дозволяє автозавершення коли користувач заповняє прогалини."
+
+#: exe/engine/field.py:2830 exe/engine/field.py:3068
+msgid ""
+"Allow auto completion when \n"
+"                                       user filling the gaps."
+msgstr ""
+"Дозволяє автозавершення коли \n"
+"користувач заповняє прогалини."
+
+#: exe/engine/galleryidevice.py:137
+msgid "No Thumbnail Available. Could not load original image."
+msgstr "Немає доступних Thumbnail. Неможливо завантажити оригінальне зображення."
+
+#: exe/engine/galleryidevice.py:145
+msgid "No Thumbnail Available. Could not shrink original image."
+msgstr "Немає доступних Thumbnail. Неможливо змінити оригінальне зображення."
+
+#: exe/engine/galleryidevice.py:171
+msgid "No Thumbnail Available. Could not shrink image."
+msgstr "Немає доступних Thumbnail. Неможливо скоротити зображення."
+
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
+#: exe/export/scormexport.py:341 exe/export/websitepage.py:233
+msgid "Previous"
+msgstr "Назад"
+
+#: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
+#: exe/export/scormexport.py:342 exe/export/websitepage.py:239
+msgid "Next"
+msgstr "Далі"
+
+#: exe/engine/galleryidevice.py:664 exe/webui/block.py:260
+#: exe/webui/block.py:261 exe/webui/common.py:351 exe/webui/common.py:352
+#: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
+#: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
+#: exe/webui/element.py:2514 exe/webui/element.py:2515
+#: exe/webui/truefalseelement.py:152 exe/webui/truefalseelement.py:153
+msgid "Close"
+msgstr "Закрити"
+
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:367
+#: exe/engine/idevicestore.py:475 exe/webui/clozeblock.py:164
+#: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
+#: exe/webui/common.py:252 exe/webui/editorelement.py:148
+#: exe/webui/editorpane.py:251 exe/webui/element.py:2269
+#: exe/webui/questionelement.py:104
+msgid "Feedback"
+msgstr "Зворотний зв'язок"
+
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:424
+msgid "Reading Activity 0.11"
+msgstr "Reading Activity 0.11"
+
+#: exe/engine/idevicestore.py:316
+msgid "Reading Activity"
+msgstr "Читання"
+
+#: exe/engine/idevicestore.py:318 exe/engine/idevicestore.py:376
+#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:482 exe/engine/idevicestore.py:510
+#: exe/idevices/exampleidevice.py:40
+msgid "University of Auckland"
+msgstr "University of Auckland"
+
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:467
+msgid "What to read"
+msgstr "Що читати"
+
+#: exe/engine/idevicestore.py:360 exe/engine/idevicestore.py:468
+msgid ""
+"Enter the details of the reading including reference details. The \n"
+"referencing style used will depend on the preference of your faculty or \n"
+"department."
+msgstr "Введіть деталі читання, зокрема довідкові деталі. "
+
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:402
+#: exe/engine/idevicestore.py:410 exe/engine/idevicestore.py:471
+#: exe/engine/idevicestore.py:508 exe/engine/idevicestore.py:516
+#: exe/webui/questionelement.py:100
+msgid "Activity"
+msgstr "Діяльність"
+
+#: exe/engine/idevicestore.py:364 exe/engine/idevicestore.py:472
+msgid ""
+"Describe the tasks related to the reading learners should undertake. \n"
+"This helps demonstrate relevance for learners."
+msgstr "Опишіть детально завдання. Це допомагає студентам зрозуміти тему."
+
+#: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
+msgid ""
+"Use feedback to provide a summary of the points covered in the reading, \n"
+"or as a starting point for further analysis of the reading by posing a "
+"question \n"
+"or providing a statement to begin a debate."
+msgstr ""
+"Використовуйте зворотний зв'язок, щоб забезпечити короткий \n"
+"звіт пунктів, що були описані в читанні, або як початковий пункт \n"
+"для подальшого аналізу читання, висловлюючи питання або \n"
+"висвітлюючи твердження, щоб почати дебати."
+
+#: exe/engine/idevicestore.py:374 exe/engine/idevicestore.py:383
+#: exe/engine/idevicestore.py:480 exe/engine/idevicestore.py:489
+msgid "Objectives"
+msgstr "Завдання"
+
+#: exe/engine/idevicestore.py:377 exe/engine/idevicestore.py:483
+msgid ""
+"Objectives describe the expected outcomes of the learning and should\n"
+"define what the learners will be able to do when they have completed the\n"
+"learning tasks."
+msgstr ""
+"Завдання описує очікувані результати вивчення і повинне визначити, що "
+"учні зможуть зробити, коли вони закінчать цей навчальний курс."
+
+#: exe/engine/idevicestore.py:384 exe/engine/idevicestore.py:490
+msgid "Type the learning objectives for this resource."
+msgstr "Введіть повчальні завдання для цього ресурсу."
+
+#: exe/engine/idevicestore.py:387 exe/engine/idevicestore.py:397
+#: exe/engine/idevicestore.py:493 exe/engine/idevicestore.py:503
+msgid "Preknowledge"
+msgstr "Попередні знання"
+
+#: exe/engine/idevicestore.py:390 exe/engine/idevicestore.py:496
+msgid ""
+"Prerequisite knowledge refers to the knowledge learners should already\n"
+"have in order to be able to effectively complete the learning. Examples "
+"of\n"
+"pre-knowledge can be: <ul>\n"
+"<li>        Learners must have level 4 English </li>\n"
+"<li>        Learners must be able to assemble standard power tools "
+"</li></ul>\n"
+msgstr ""
+"Попередні знання - це знання які повинен знати студент для того \n"
+"щоб закінчити навчання. Приклади \n"
+"попереднього знання: <ul>\n"
+"<li>        Учні повинні манти 4 рівень Англійської мови </li>\n"
+"<li>        Учні повинні вміти використовувати прилади </li></ul>\n"
+
+#: exe/engine/idevicestore.py:398 exe/engine/idevicestore.py:504
+msgid ""
+"Describe the prerequisite knowledge learners should have to effectively\n"
+"complete this learning."
+msgstr ""
+"Опишіть попередні знання які повинен мати студент щоб \n"
+"закінчити цей курс навчання"
+
+#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:511
+msgid ""
+"An activity can be defined as a task or set of tasks a learner must\n"
+"complete. Provide a clear statement of the task and consider any "
+"conditions\n"
+"that may help or hinder the learner in the performance of the task."
+msgstr ""
+"Діяльність може бути визначена як завдання або набір завдань які учень "
+"повинен виконати. Опишіть завдання і всі питання які можуть виникати у "
+"студентів."
+
+#: exe/engine/idevicestore.py:411 exe/engine/idevicestore.py:517
+msgid "Describe the tasks the learners should complete."
+msgstr "Опишіть завдання, яке учні повинні виконати."
+
+#: exe/engine/package.py:311
+msgid "Home"
+msgstr "Домашня сторінка"
+
+#: exe/engine/package.py:417
+msgid "?????"
+msgstr "?????"
+
+#: exe/engine/package.py:448 exe/engine/package.py:455
+#, python-format
+msgid ""
+"SAVE FAILED!\n"
+"Last succesful save is %s."
+msgstr ""
+"Помилка при збереженні!\n"
+"Останнє вдале збереження %s."
+
+#: exe/engine/package.py:743 exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
+msgid "iDevice Editor"
+msgstr "iDevice Editor"
+
+#: exe/engine/path.py:638
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
+msgstr ""
+
+#: exe/engine/resource.py:579
+msgid ""
+"renamed a Resource for an Applet Idevice, and it should not have even "
+"made it this far!"
+msgstr ""
+
+#: exe/engine/rssidevice.py:108 exe/engine/rssidevice.py:111
+#, fuzzy, python-format
+msgid ""
+"Unable to load RSS feed from %s <br/>Please check the spelling and "
+"connection and try again."
+msgstr ""
+"Неможливо завантажити з %s <br/>Будь ласка перевірте правельність "
+"написання, та налаштування з'єднання після чого пробуйте знов."
+
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
+#, python-format
+msgid ""
+"Unable to download from %s <br/>Please check the spelling and connection "
+"and try again."
+msgstr ""
+"Неможливо завантажити з %s <br/>Будь ласка перевірте правельність "
+"написання, та налаштування з'єднання після чого пробуйте знов."
+
+#: exe/engine/wikipediaidevice.py:287
+msgid "http://en.wikipedia.org/"
+msgstr "http://en.wikipedia.org/"
+
+#: exe/exe_do:64
+msgid ""
+"Usage: %prog [options] input_file [output_file]\n"
+"\n"
+"To show help:\n"
+"%prog -h"
+msgstr ""
+
+#: exe/exe_do:71
+msgid ""
+"Export <input_file> elp package to optional <output_file> on one of the "
+"given formats: xml, scorm, ims, website, webzip or singlepage."
+msgstr ""
+
+#: exe/exe_do:77
+msgid ""
+"Import to <output_file> elp package, <input_file> in one of the given "
+"formats: xml."
+msgstr ""
+
+#: exe/exe_do:82
+msgid "Force overwrite of <output_file>"
+msgstr ""
+
+#: exe/exe_do:93
+msgid "Options --export and --import are mutually exclusive."
+msgstr ""
+
+#: exe/exe_do:96
+msgid "No --export or --import option supplied."
+msgstr ""
+
+#: exe/exe_do:100
+msgid "No file input supplied."
+msgstr ""
+
+#: exe/exe_do:109
+msgid "Bad number of arguments supplied"
+msgstr ""
+
+#: exe/exe_do:115
+#, python-format
+msgid "Successfully exported '%s' from '%s'."
+msgstr ""
+
+#: exe/exe_do:118
+#, python-format
+msgid ""
+"exe_do: error: Unable to export from '%s'.\n"
+"The error was:"
+msgstr ""
+
+#: exe/exe_do:125
+#, python-format
+msgid "File '%s' successfully imported to '%s'."
+msgstr ""
+
+#: exe/exe_do:128
+#, python-format
+msgid ""
+"exe_do: error: Unable to import '%s'.\n"
+"The error was:"
+msgstr ""
+
+#: exe/export/cmdlineexporter.py:62 exe/jsui/mainpage.py:199
+#: exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:928 exe/jsui/mainpage.py:1003
+#: exe/jsui/mainpage.py:1024
+#, python-format
+msgid ""
+"\"%s\" already exists.\n"
+"Please try again with a different filename"
+msgstr ""
+"\"%s\" вже існує.\n"
+"Будь ласка виберіть іншу назву файлу"
+
+#: exe/export/cmdlineexporter.py:76
+msgid "Invalid input package"
+msgstr ""
+
+#: exe/export/cmdlineexporter.py:83
+msgid "Export format not implemented"
+msgstr ""
+
+#: exe/export/imsexport.py:210 exe/export/scormexport.py:295
+msgid "eXe"
+msgstr "eXe"
+
+#: exe/export/imsexport.py:373 exe/export/scormexport.py:510
+#: exe/export/websiteexport.py:88
+#, python-format
+msgid ""
+"EXPORT FAILED!\n"
+"Last succesful export is %s."
+msgstr ""
+"Помилка при експортуванні!\n"
+"Останній вдалий експорт %s."
+
+#: exe/export/pages.py:83 exe/export/textexport.py:54
+#, fuzzy
+msgid "Licensed under the"
+msgstr "Ліцензія належить "
+
+#: exe/idevices/exampleidevice.py:39
+msgid "Example Example"
+msgstr "Приклад Прикладу"
+
+#: exe/idevices/exampleidevice.py:41
+msgid ""
+"This is an example of a user created\n"
+"iDevice plugin."
+msgstr ""
+"Це приклад iDevice плагіни \n"
+"створеногї корестувачем."
+
+#: exe/idevices/exampleidevice.py:44
+msgid "Example"
+msgstr "Приклад"
+
+#: exe/idevices/exampleidevice.py:45
+msgid "This is a free text field."
+msgstr "Це поле з вільним текстом."
+
+#: exe/importers/cmdlineimporter.py:42
+msgid "Import format not implemented"
+msgstr ""
+
+#: exe/importers/cmdlineimporter.py:50
+msgid "Invalid output package"
+msgstr ""
+
+#: exe/jsui/mainpage.py:94
+msgid ""
+"Please use eXe's\n"
+"   File... Quit\n"
+"menu to close eXe."
+msgstr ""
+
+#: exe/jsui/mainpage.py:217 exe/jsui/mainpage.py:654 exe/jsui/mainpage.py:791
+msgid "Cannot access directory named "
+msgstr "Неможу отримати доступ до директорії "
+
+#: exe/jsui/mainpage.py:217 exe/jsui/mainpage.py:656 exe/jsui/mainpage.py:791
+msgid ". Please use ASCII names."
+msgstr ". Будь ласка використовуйте ASCII імена."
+
+#: exe/jsui/mainpage.py:226
+msgid "SAVE FAILED!"
+msgstr "Помилка при збереженні!"
+
+#: exe/jsui/mainpage.py:230 exe/jsui/mainpage.py:520 exe/jsui/mainpage.py:861
+#, python-format
+msgid ""
+"SAVE FAILED!\n"
+"%s"
+msgstr ""
+"Помилка при збереженні!\n"
+"%s"
+
+#: exe/jsui/mainpage.py:233
+#, python-format
+msgid "Package saved to: %s"
+msgstr "Пакет збережено в: %s"
+
+#: exe/jsui/mainpage.py:442 exe/jsui/mainpage.py:548
+#, fuzzy, python-format
+msgid "Preview directory %s is a file, cannot replace it"
+msgstr "Файл з назвою %s вже існує, його неможливо замінити"
+
+#: exe/jsui/mainpage.py:462
+#, fuzzy, python-format
+msgid "Local file %s is not found, cannot preview it"
+msgstr "Файл з назвою %s вже існує, його неможливо замінити"
+
+#: exe/jsui/mainpage.py:590
+#, python-format
+msgid ""
+"MimeTeX compile failed!\n"
+"%s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:681 exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:691
+#: exe/jsui/mainpage.py:694 exe/jsui/mainpage.py:697 exe/jsui/mainpage.py:912
+msgid "EXPORT FAILED!"
+msgstr "Помилка при експортуванні!"
+
+#: exe/jsui/mainpage.py:759
+msgid "Correct XLIFF import"
+msgstr ""
+
+#: exe/jsui/mainpage.py:761
+#, python-format
+msgid "Error importing XLIFF: %s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:800 exe/jsui/mainpage.py:817
+#, python-format
+msgid ""
+"EXTRACT FAILED!\n"
+"%s"
+msgstr ""
+"Помилка!\n"
+"%s"
+
+#: exe/jsui/mainpage.py:819
+#, python-format
+msgid "Package extracted to: %s"
+msgstr "Пакет розпаковано в: %s"
+
+#: exe/jsui/mainpage.py:847 exe/jsui/mainpage.py:889 exe/jsui/mainpage.py:956
+#, python-format
+msgid "Filename %s is a file, cannot replace it"
+msgstr "Файл з назвою %s вже існує, його неможливо замінити"
+
+#: exe/jsui/mainpage.py:853 exe/jsui/mainpage.py:895 exe/jsui/mainpage.py:962
+#, python-format
+msgid ""
+"Folder name %s already exists. Please choose another one or delete "
+"existing one then try again."
+msgstr ""
+"Директорія з назвою %s вже існує. Будь ласка виберіть іншу назву або "
+"видаліть існуючу директорію і спробуйте знову."
+
+#: exe/jsui/mainpage.py:902 exe/jsui/mainpage.py:916 exe/jsui/mainpage.py:929
+#: exe/jsui/mainpage.py:935 exe/jsui/mainpage.py:969 exe/jsui/mainpage.py:987
+#: exe/jsui/mainpage.py:1004 exe/jsui/mainpage.py:1010
+#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1031
+#, python-format
+msgid ""
+"EXPORT FAILED!\n"
+"%s"
+msgstr ""
+"Помилка при експортуванні!\n"
+"%s"
+
+#: exe/jsui/mainpage.py:918 exe/jsui/mainpage.py:937 exe/jsui/mainpage.py:971
+#: exe/jsui/mainpage.py:989 exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1033
+#, python-format
+msgid "Exported to %s"
+msgstr "Експортовано до %s"
+
+#: exe/jsui/mainpage.py:1071
+#, python-format
+msgid "File %s does not exist or is not readable."
+msgstr "Файл %s не існує або його неможливо прочитати."
+
+#: exe/jsui/mainpage.py:1075
+msgid "Couldn't load file, please email file to bugs@exelearning.org"
+msgstr ""
+"Неможу завантажити файл, будь ласка відішліть файл сюди: "
+"bugs@exelearning.org"
+
+#: exe/jsui/mainpage.py:1078
+#, python-format
+msgid ""
+"Sorry, wrong file format:\n"
+"%s"
+msgstr ""
+"Вибечта, невірний формат файлу:\n"
+"%s"
+
+#: exe/jsui/propertiespage.py:77
+msgid "Failed to get properties"
+msgstr ""
+
+#: exe/jsui/propertiespage.py:88
+msgid "Failed to save properties"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Outline.js:88
+msgid "Delete \"{node}\" node and all its children?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Outline.js:90
+msgid "Confirm"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Outline.js:112
+msgid "Rename \"{node}\" node"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Outline.js:116
+msgid "Enter the new name:"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:95
+msgid "Select the parent folder for export."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:113
+msgid "Export text package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:122
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:154
+msgid "Text File"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:123
+#: exe/jsui/scripts/app/controller/Toolbar.js:152
+#: exe/jsui/scripts/app/controller/Toolbar.js:287
+#: exe/jsui/scripts/app/controller/Toolbar.js:357
+msgid "All Files"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:130
+msgid "Export SCORM package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:132
+msgid "Export IMS package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:134
+msgid "Export Website package as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:136
+msgid "Export Common Cartridge as"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:138
+msgid "INVALID VALUE PASSED TO exportPackage"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:151
+msgid "SCORM/IMS/ZipFile"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:277
+msgid "Open File"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:286
+#: exe/jsui/scripts/app/controller/Toolbar.js:356
+msgid "eXe Package Files"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:299
+msgid "Save Package first?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:300
+msgid ""
+"The current package has been modified and not yet saved. Would you like "
+"to save it before loading the new package?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:339
+msgid "Select a File"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:34
+msgid "Tree"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:46
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:85 exe/webui/editorpane.py:323
+msgid "Name"
+msgstr "Ім'я"
+
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:68
+msgid "Size"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:91
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:774
+msgid "Type"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:96
+msgid "Modified"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:67
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:68 exe/webui/editorpage.py:245
+msgid "Save"
+msgstr "Зберегти"
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:83
+msgid "Place"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:23
+msgid "Afar "
+msgstr "Afar "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:27
+msgid "Abkhazian "
+msgstr "Abkhazian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:31
+msgid "Avestan "
+msgstr "Avestan "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:35
+msgid "Afrikaans "
+msgstr "Afrikaans "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:39
+msgid "Amharic "
+msgstr "Amharic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:43
+msgid "Arabic "
+msgstr "Arabic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:47
+msgid "Assamese "
+msgstr "Assamese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:51
+msgid "Aymara "
+msgstr "Aymara "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:55
+msgid "Azerbaijani "
+msgstr "Azerbaijani "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:59
+msgid "Bashkir "
+msgstr "Bashkir "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:63
+msgid "Byelorussian; Belarusian "
+msgstr "Byelorussian; Belarusian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:67
+msgid "Bulgarian "
+msgstr "Bulgarian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:71
+msgid "Bihari "
+msgstr "Bihari "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:75
+msgid "Bislama "
+msgstr "Bislama "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:79
+msgid "Bengali; Bangla "
+msgstr "Bengali; Bangla "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:83
+msgid "Tibetan "
+msgstr "Tibetan "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:87
+msgid "Breton "
+msgstr "Breton "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:91
+msgid "Bosnian "
+msgstr "Bosnian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:95
+msgid "Catalan "
+msgstr "Catalan "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:99
+msgid "Chechen "
+msgstr "Chechen "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:103
+msgid "Chamorro "
+msgstr "Chamorro "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:107
+msgid "Corsican "
+msgstr "Corsican "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:111
+msgid "Czech "
+msgstr "Czech "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:115
+msgid "Church Slavic "
+msgstr "Church Slavic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:119
+msgid "Chuvash "
+msgstr "Chuvash "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:123
+msgid "Welsh "
+msgstr "Welsh "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:127
+msgid "Danish "
+msgstr "Danish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:131
+msgid "German "
+msgstr "German "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:135
+msgid "Dzongkha; Bhutani "
+msgstr "Dzongkha; Bhutani "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:139
+msgid "Greek "
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:143
+msgid "English "
+msgstr "English "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:147
+msgid "Esperanto "
+msgstr "Esperanto "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:151
+msgid "Spanish "
+msgstr "Spanish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:155
+msgid "Estonian "
+msgstr "Estonian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:159
+msgid "Basque "
+msgstr "Basque "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:163
+msgid "Persian "
+msgstr "Persian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:167
+msgid "Finnish "
+msgstr "Finnish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:171
+msgid "Fijian; Fiji "
+msgstr "Fijian; Fiji "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:175
+msgid "Faroese "
+msgstr "Faroese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:179
+msgid "French "
+msgstr "French "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:183
+msgid "Frisian "
+msgstr "Frisian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:187
+msgid "Irish "
+msgstr "Irish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:191
+msgid "Scots; Gaelic "
+msgstr "Scots; Gaelic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:195
+msgid "Gallegan; Galician "
+msgstr "Gallegan; Galician "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:199
+msgid "Guarani "
+msgstr "Guarani "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:203
+msgid "Gujarati "
+msgstr "Gujarati "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:207
+msgid "Manx "
+msgstr "Manx "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:211
+msgid "Hausa (?) "
+msgstr "Hausa (?) "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:215
+msgid "Hebrew (formerly iw) "
+msgstr "Hebrew (formerly iw) "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:219
+msgid "Hindi "
+msgstr "Hindi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:223
+msgid "Hiri Motu "
+msgstr "Hiri Motu "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:227
+msgid "Croatian "
+msgstr "Croatian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:231
+msgid "Hungarian "
+msgstr "Hungarian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:235
+msgid "Armenian "
+msgstr "Armenian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:239
+msgid "Herero "
+msgstr "Herero "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:243
+msgid "Interlingua "
+msgstr "Interlingua "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:247
+msgid "Indonesian (formerly in) "
+msgstr "Indonesian (formerly in) "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:251
+msgid "Interlingue "
+msgstr "Interlingue "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:255
+msgid "Inupiak "
+msgstr "Inupiak "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:259
+msgid "Ido "
+msgstr "Ido "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:263
+msgid "Icelandic "
+msgstr "Icelandic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:267
+msgid "Italian "
+msgstr "Italian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:271
+msgid "Inuktitut "
+msgstr "Inuktitut "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:275
+msgid "Japanese "
+msgstr "Japanese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:279
+msgid "Javanese "
+msgstr "Javanese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:283
+msgid "Georgian "
+msgstr "Georgian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:287
+msgid "Kikuyu "
+msgstr "Kikuyu "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:291
+msgid "Kuanyama "
+msgstr "Kuanyama "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:295
+msgid "Kazakh "
+msgstr "Kazakh "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:299
+msgid "Kalaallisut; Greenlandic "
+msgstr "Kalaallisut; Greenlandic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:303
+msgid "Khmer; Cambodian "
+msgstr "Khmer; Cambodian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:307
+msgid "Kannada "
+msgstr "Kannada "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:311
+msgid "Korean "
+msgstr "Korean "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:315
+msgid "Kashmiri "
+msgstr "Kashmiri "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:319
+msgid "Kurdish "
+msgstr "Kurdish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:323
+msgid "Komi "
+msgstr "Komi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:327
+msgid "Cornish "
+msgstr "Cornish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:331
+msgid "Kirghiz "
+msgstr "Kirghiz "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:335
+msgid "Latin "
+msgstr "Latin "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:339
+msgid "Letzeburgesch "
+msgstr "Letzeburgesch "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:343
+msgid "Lingala "
+msgstr "Lingala "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:347
+msgid "Lao; Laotian "
+msgstr "Lao; Laotian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:351
+msgid "Lithuanian "
+msgstr "Lithuanian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:355
+msgid "Latvian; Lettish "
+msgstr "Latvian; Lettish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:359
+msgid "Malagasy "
+msgstr "Malagasy "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:363
+msgid "Marshall "
+msgstr "Marshall "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:367
+msgid "Maori "
+msgstr "Maori "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:371
+msgid "Macedonian "
+msgstr "Macedonian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:375
+msgid "Malayalam "
+msgstr "Malayalam "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:379
+msgid "Mongolian "
+msgstr "Mongolian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:383
+msgid "Moldavian "
+msgstr "Moldavian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:387
+msgid "Marathi "
+msgstr "Marathi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:391
+msgid "Malay "
+msgstr "Malay "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:395
+msgid "Maltese "
+msgstr "Maltese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:399
+msgid "Burmese "
+msgstr "Burmese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:403
+msgid "Nauru "
+msgstr "Nauru "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:407
+#, fuzzy
+msgid "Norwegian Bokmål "
+msgstr "Norwegian BokmÃ¥l "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:411
+msgid "Ndebele, North "
+msgstr "Ndebele, North "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:415
+msgid "Nepali "
+msgstr "Nepali "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:419
+msgid "Ndonga "
+msgstr "Ndonga "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:423
+msgid "Dutch "
+msgstr "Dutch "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:427
+msgid "Norwegian Nynorsk "
+msgstr "Norwegian Nynorsk "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:431
+msgid "Norwegian "
+msgstr "Norwegian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:435
+msgid "Ndebele, South "
+msgstr "Ndebele, South "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:439
+msgid "Navajo "
+msgstr "Navajo "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:443
+msgid "Chichewa; Nyanja "
+msgstr "Chichewa; Nyanja "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:447
+#, fuzzy
+msgid "Occitan; Provençal "
+msgstr "Occitan; ProvenÃ§al "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:451
+msgid "(Afan) Oromo "
+msgstr "(Afan) Oromo "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:455
+msgid "Oriya "
+msgstr "Oriya "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:459
+msgid "Ossetian; Ossetic "
+msgstr "Ossetian; Ossetic "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:463
+msgid "Panjabi; Punjabi "
+msgstr "Panjabi; Punjabi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:467
+msgid "Pali "
+msgstr "Pali "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:471
+msgid "Polish "
+msgstr "Polish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:475
+msgid "Pashto, Pushto "
+msgstr "Pashto, Pushto "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:479
+msgid "Portuguese "
+msgstr "Portuguese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:483
+msgid "Quechua "
+msgstr "Quechua "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:487
+msgid "Rhaeto-Romance "
+msgstr "Rhaeto-Romance "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:491
+msgid "Rundi; Kirundi "
+msgstr "Rundi; Kirundi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:495
+msgid "Romanian "
+msgstr "Romanian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:499
+msgid "Russian "
+msgstr "Russian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:503
+msgid "Kinyarwanda "
+msgstr "Kinyarwanda "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:507
+msgid "Sanskrit "
+msgstr "Sanskrit "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:511
+msgid "Sardinian "
+msgstr "Sardinian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:515
+msgid "Sindhi "
+msgstr "Sindhi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:519
+msgid "Northern Sami "
+msgstr "Northern Sami "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:523
+msgid "Sango; Sangro "
+msgstr "Sango; Sangro "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:527
+msgid "Sinhalese "
+msgstr "Sinhalese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:531
+msgid "Slovak "
+msgstr "Slovak "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:535
+msgid "Slovenian "
+msgstr "Slovenian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:539
+msgid "Samoan "
+msgstr "Samoan "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:543
+msgid "Shona "
+msgstr "Shona "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:547
+msgid "Somali "
+msgstr "Somali "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:551
+msgid "Albanian "
+msgstr "Albanian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:555
+msgid "Serbian "
+msgstr "Serbian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:559
+msgid "Swati; Siswati "
+msgstr "Swati; Siswati "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:563
+msgid "Sesotho; Sotho, Southern "
+msgstr "Sesotho; Sotho, Southern "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:567
+msgid "Sundanese "
+msgstr "Sundanese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:571
+msgid "Swedish "
+msgstr "Swedish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:575
+msgid "Swahili "
+msgstr "Swahili "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:579
+msgid "Tamil "
+msgstr "Tamil "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:583
+msgid "Telugu "
+msgstr "Telugu "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:587
+msgid "Tajik "
+msgstr "Tajik "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:591
+msgid "Thai "
+msgstr "Thai "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:595
+msgid "Tigrinya "
+msgstr "Tigrinya "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:599
+msgid "Turkmen "
+msgstr "Turkmen "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:603
+msgid "Tagalog "
+msgstr "Tagalog "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:607
+msgid "Tswana; Setswana "
+msgstr "Tswana; Setswana "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:611
+msgid "Tongan  "
+msgstr "Tongan  "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:615
+msgid "Turkish "
+msgstr "Turkish "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:619
+msgid "Tsonga "
+msgstr "Tsonga "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:623
+msgid "Tatar "
+msgstr "Tatar "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:627
+msgid "Twi "
+msgstr "Twi "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:631
+msgid "Tahitian "
+msgstr "Tahitian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:635
+msgid "Uighur "
+msgstr "Uighur "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:639
+msgid "Ukrainian "
+msgstr "Ukrainian "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:643
+msgid "Urdu "
+msgstr "Urdu "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:647
+msgid "Uzbek "
+msgstr "Uzbek "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:651
+msgid "Vietnamese "
+msgstr "Vietnamese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:655
+#, fuzzy
+msgid "Volapük; Volapuk "
+msgstr "VolapÃ¼k; Volapuk "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:659
+msgid "Walloon "
+msgstr "Walloon "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:663
+msgid "Wolof "
+msgstr "Wolof "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:667
+msgid "Xhosa "
+msgstr "Xhosa "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:671
+msgid "Yiddish (formerly ji) "
+msgstr "Yiddish (formerly ji) "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:675
+msgid "Yoruba "
+msgstr "Yoruba "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:679
+msgid "Zhuang "
+msgstr "Zhuang "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:683
+msgid "Chinese "
+msgstr "Chinese "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:687
+#, fuzzy
+msgid "Zulu "
+msgstr "Zulu."
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:704
+msgid "Dublin Core Metadata"
+msgstr "Dublin Core Метадані"
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:710
+#: exe/webui/galleryblock.py:204
+msgid "Title"
+msgstr "Заголовок"
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:711
+#, fuzzy
+msgid "The name given to the resource."
+msgstr "Введіть повчальні завдання для цього ресурсу."
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:717
+msgid "Creator"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:718
+msgid "An entity primarily responsible for making the content of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:726
+msgid "Subject"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:727
+msgid "The topic of the content of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:730
+msgid ""
+"Typically, Subject will be expressed as keywords, key phrases or "
+"classification codes that describe a topic of the resource. Recommended "
+"best practice is to select a value from a controlled vocabulary or formal"
+" classification scheme."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:735
+msgid "Description"
+msgstr "Опис"
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:736
+msgid "An account of the content of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:743
+msgid "Publisher"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:744
+msgid "An entity responsible for making the resource available."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:750
+msgid "Contributors"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:751
+msgid ""
+"An entity responsible for making contributions to the content of the "
+"resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:763
+msgid "Date"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:764
+msgid "A date of an event in the lifecycle of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:767
+msgid ""
+"Typically, Date will be associated with the creation or availability of "
+"the resource. Recommended best practice for encoding the date value is "
+"defined in a profile called <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-"
+"datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> and "
+"includes (among others) dates of the form YYYY-MM-DD."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:775
+msgid "The nature or genre of the content of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:778
+msgid ""
+"Type includes terms describing general categories, functions, or genres, "
+"for content. Recommended best practice is to select a value from a "
+"controlled vocabulary or controlled classification scheme. To describe "
+"the physical or digital manifestation of the resource, use the FORMAT "
+"element."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:783
+msgid "Format"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:790
+#, fuzzy
+msgid "Select a Format."
+msgstr "Вибрати Формат"
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:796
+msgid "Identifier"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:797
+msgid "An unambiguous reference to the resource within a given context."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:803
+msgid "Source"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:804
+msgid "A Reference to a resource from which the present resource is derived."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:810
+msgid "Language"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:812
+#, fuzzy
+msgid "Select a language."
+msgstr "Вибрати мову"
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:818
+msgid "Relation"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:819
+msgid "A reference to a related resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:825
+msgid "Coverage"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:826
+msgid "The extent or scope of the content of the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:834
+msgid "Rights"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:835
+msgid "Information about rights held in and over the resource."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:838
+msgid ""
+"Typically, a Rights element will contain a rights management statement "
+"for the resource, or reference a service providing such information. "
+"Rights information often encompasses Intellectual Property Rights (IPR), "
+"Copyright, and various Property Rights. If the Rights element is absent, "
+"no assumptions can be made about the status of these and other rights "
+"with respect to the resource."
+msgstr ""
+"Зазвичай елемент Права містить систему керування правами для ресурсів, "
+"або посилання на сервіс що забезпечує такі можливості. Інформація про "
+"права часто містить в собі Права Інтелектуальної Власності (IPR), "
+"авторське право (Copyright), та інші права власності. Якщо елемент Права "
+"відсутній, немлжливо буде дізнатись про права що стосуються даного "
+"ресурсу."
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:844
+#, fuzzy
+msgid "Apply"
+msgstr "Тип Аплету "
+
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:851
+#: exe/jsui/scripts/app/view/forms/MetadataPanel.js:867
+msgid "Error"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
+msgid "Outline"
+msgstr "Структура"
+
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:71
+msgid "iDevices"
+msgstr "Список - iDevice (ів)"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:37
+msgid "Authoring"
+msgstr "Розробка"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:41
+msgid "Properties"
+msgstr "Властивості"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:46
+msgid "Package"
+msgstr "Пакет"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:50
+msgid "Metadata"
+msgstr "Метадані"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:109
+msgid "Export"
+msgstr "Експорт"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
+msgid "Add Page"
+msgstr "Додати Сторінку"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:37 exe/webui/block.py:230
+#: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
+#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
+#: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
+#: exe/webui/editorelement.py:332 exe/webui/editorpage.py:236
+#: exe/webui/editorpage.py:239 exe/webui/galleryblock.py:286
+msgid "Delete"
+msgstr "Видалити"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:43
+msgid "Rename"
+msgstr "Перейменувати"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
+msgid "Promote node up in hierarchy"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
+msgid "Demote node down in hierarchy"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
+#, fuzzy
+msgid "Move node up"
+msgstr "Посунути Вверх"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
+#, fuzzy
+msgid "Move node down"
+msgstr "Посунути Вниз"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:31
+msgid "File"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:37
+msgid "New"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:42
+msgid "Open"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:47
+msgid "Recent Projects..."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:58
+msgid "Clear Recent Projects List"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:73
+msgid "Save As..."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:81
+msgid "Print"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:89
+msgid "Import"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:95
+msgid "HTML Course"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:99
+msgid "XLIFF File"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:115
+msgid "Common Cartridge"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:120
+msgid "SCORM 1.2"
+msgstr "SCORM 1.2"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:125
+msgid "IMS Content Package"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:130
+msgid "Web Site"
+msgstr "Web Site"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:136
+msgid "Self-contained Folder"
+msgstr "Директорія з вмістом"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141
+msgid "Zip File"
+msgstr "Zip Архів"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:149
+msgid "Single Page"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:159
+msgid "iPod Notes"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:164
+msgid "XLIFF"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:172
+msgid "Merging"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:178
+msgid "Insert Package"
+msgstr "Вставити Пакет"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
+msgid "Extract Package"
+msgstr "Розпакувати Пакет"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192 exe/webui/editorpage.py:253
+#, fuzzy
+msgid "Quit"
+msgstr "Підтвердити"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
+msgid "Tools"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:209
+#, fuzzy
+msgid "Preferences"
+msgstr "Переваги"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:216
+msgid "Refresh Display"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
+msgid "Styles"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
+msgid "Help"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:238
+msgid "eXe Tutorial"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:242
+msgid "eXe Manual"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
+msgid "Release Notes"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:253
+msgid "eXe Web Site"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
+msgid "Report an Issue"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:261
+msgid "eXe Live Chat"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
+msgid "About eXe"
+msgstr ""
+
+#: exe/webui/appletblock.py:83
+msgid "Please upload a .ggb file."
+msgstr "Будь ласка завантажте .ggb файл."
+
+#: exe/webui/appletblock.py:85
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:87
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
+
+#: exe/webui/appletblock.py:89
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:110
+msgid "Descartes"
+msgstr ""
+
+#: exe/webui/appletblock.py:111
+msgid "Geogebra"
+msgstr "Geogebra"
+
+#: exe/webui/appletblock.py:112
+msgid "JClic"
+msgstr ""
+
+#: exe/webui/appletblock.py:113
+msgid "Scratch"
+msgstr ""
+
+#: exe/webui/appletblock.py:114 exe/webui/wikipediablock.py:132
+msgid "Other"
+msgstr "Інший"
+
+#: exe/webui/appletblock.py:115
+msgid "Applet Type"
+msgstr "Тип Аплету "
+
+#: exe/webui/appletblock.py:137
+msgid "Add files"
+msgstr "Додати файли"
+
+#: exe/webui/appletblock.py:139
+msgid "Upload"
+msgstr "Завантажити"
+
+#: exe/webui/appletblock.py:142
+msgid "Accept URL"
+msgstr ""
+
+#: exe/webui/appletblock.py:147
+msgid "Applet Code:"
+msgstr "Код Аплету:"
+
+#: exe/webui/appletblock.py:160
+msgid "Delete File"
+msgstr "Видалити Файл"
+
+#: exe/webui/attachmentblock.py:87 exe/webui/element.py:807
+msgid "Filename:"
+msgstr "Назва файлу:"
+
+#: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
+#: exe/webui/element.py:817
+msgid "Select a file"
+msgstr "Вибрати файл"
+
+#: exe/webui/attachmentblock.py:108
+msgid "Label:"
+msgstr "Назва:"
+
+#: exe/webui/block.py:175
+msgid "IDevice broken"
+msgstr "IDevice пошкоджено"
+
+#: exe/webui/block.py:213
+msgid "Done"
+msgstr "Готово"
+
+#: exe/webui/block.py:218
+msgid "Undo Edits"
+msgstr ""
+
+#: exe/webui/block.py:222
+msgid "Can NOT Undo Edits"
+msgstr ""
+
+#: exe/webui/block.py:225
+msgid ""
+"This will delete this iDevice.\n"
+"Do you really want to do this?"
+msgstr ""
+"Ви намагаєтесь видалити iDevice.\n"
+"Ви впевнені що хочете цього?"
+
+#: exe/webui/block.py:237
+msgid "Move Up"
+msgstr "Посунути Вверх"
+
+#: exe/webui/block.py:244
+msgid "Move Down"
+msgstr "Посунути Вниз"
+
+#: exe/webui/block.py:246
+msgid "---Move To---"
+msgstr "---Перемістити---"
+
+#: exe/webui/block.py:251 exe/webui/editorpane.py:373
+msgid "Pedagogical Help"
+msgstr "Педагогічна Допомога"
+
+#: exe/webui/block.py:256
+msgid "Information"
+msgstr "Інформація"
+
+#: exe/webui/block.py:266
+msgid "Purpose"
+msgstr "Інформація"
+
+#: exe/webui/block.py:270
+msgid "Tip:"
+msgstr "Порада:"
+
+#: exe/webui/block.py:299 exe/webui/eleccionmultiplefpdblock.py:164
+#: exe/webui/galleryblock.py:362 exe/webui/genericblock.py:83
+#: exe/webui/genericblock.py:109 exe/webui/multichoiceblock.py:154
+msgid "IDevice Icon"
+msgstr "IDevice іконка"
+
+#: exe/webui/block.py:320
+msgid "iDevice icon"
+msgstr "iDevice іконка"
+
+#: exe/webui/block.py:335
+#, fuzzy
+msgid "ERROR: Block.renderViewContent called directly"
+msgstr "ERROR: Block.renderViewContent called directly"
+
+#: exe/webui/block.py:344 exe/webui/editorpage.py:270
+#: exe/webui/editorpane.py:266
+msgid "Edit"
+msgstr "Редагувати"
+
+#: exe/webui/casestudyblock.py:113 exe/webui/ejercicioresueltofpdblock.py:118
+msgid "Add another activity"
+msgstr "Додати іншу діяльність"
+
+#: exe/webui/clozefpdblock.py:172 exe/webui/clozelangfpdblock.py:173
+#: exe/webui/element.py:2150 exe/webui/element.py:2544
+#: exe/webui/questionelement.py:152
+#, fuzzy
+msgid "Solucion"
+msgstr "Секція"
+
+#: exe/webui/clozefpdblock.py:175 exe/webui/clozelangfpdblock.py:176
+#: exe/webui/element.py:2155 exe/webui/reflectionfpdblock.py:143
+msgid "Retroalimentacion"
+msgstr ""
+
+#: exe/webui/common.py:70 exe/webui/editorpage.py:220
+#: exe/webui/preferencespage.py:85 exe/webui/xliffexportpreferencespage.py:92
+#: exe/webui/xliffimportpreferencespage.py:67
+msgid "eXe : elearning XHTML editor"
+msgstr "eXe : elearning XHTML editor"
+
+#: exe/webui/common.py:336
+msgid "Instructions"
+msgstr "Інструкції"
+
+#: exe/webui/common.py:342 exe/webui/common.py:346
+msgid "Click for completion instructions"
+msgstr "Клацніть для інструкцій що до завершення"
+
+#: exe/webui/editorelement.py:74 exe/webui/editorpane.py:247
+msgid "Text Line"
+msgstr "Текстова Лінія"
+
+#: exe/webui/editorelement.py:111 exe/webui/editorpane.py:249
+msgid "Text Box"
+msgstr "Текстова Коробка"
+
+#: exe/webui/editorelement.py:149
+msgid "Button Caption"
+msgstr "Заголовок Кнопки"
+
+#: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
+#: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
+#: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
+msgid "Left"
+msgstr "Ліворуч"
+
+#: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
+#: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
+#: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
+msgid "Right"
+msgstr "Праворуч"
+
+#: exe/webui/editorelement.py:225 exe/webui/flashmovieblock.py:83
+#: exe/webui/flashwithtextblock.py:83 exe/webui/imagemagnifierblock.py:109
+#: exe/webui/imagewithtextblock.py:83 exe/webui/multimediablock.py:87
+msgid "None"
+msgstr "Немає"
+
+#: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
+#: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
+#: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
+msgid "Align:"
+msgstr "Вирівнювання:"
+
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1581
+msgid "Select Flash Object"
+msgstr "Вибрати флеш Об'єкт"
+
+#: exe/webui/editorelement.py:285
+msgid "MP3"
+msgstr "MP3"
+
+#: exe/webui/editorelement.py:308
+msgid "Select MP3 file"
+msgstr "Вибрати MP3 файл"
+
+#: exe/webui/editorelement.py:311 exe/webui/element.py:611
+#: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
+#: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
+msgid "Caption:"
+msgstr "Заголовок:"
+
+#: exe/webui/editorelement.py:328
+msgid "Attachment"
+msgstr "Прикріплення"
+
+#: exe/webui/editorpage.py:110
+msgid "Please enter an idevice name."
+msgstr "Будь ласка введіть назву для iDevice."
+
+#: exe/webui/editorpage.py:172 exe/webui/editorpage.py:184
+#, fuzzy
+msgid "Sorry, wrong file format."
+msgstr "Вибечта, невірний формат файлу"
+
+#: exe/webui/editorpage.py:247
+#, fuzzy
+msgid "Import iDevice"
+msgstr "Імпортувати iDevices"
+
+#: exe/webui/editorpage.py:250
+#, fuzzy
+msgid "Export iDevice"
+msgstr "Експортувати iDevice"
+
+#: exe/webui/editorpage.py:275
+msgid "New iDevice"
+msgstr "Новий iDevice"
+
+#: exe/webui/editorpane.py:142 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:157 exe/webui/editorpane.py:173
+#: exe/webui/editorpane.py:183
+msgid "Enter the label here"
+msgstr "Введіть назву тут"
+
+#: exe/webui/editorpane.py:143
+msgid "Enter instructions for completion here"
+msgstr "Введіть інструкції що до завершення тут"
+
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
+#: exe/webui/editorpane.py:184
+msgid "Enter the instructions for completion here"
+msgstr "Введіть інструкції що до завершення тут"
+
+#: exe/webui/editorpane.py:158
+msgid ""
+"Feedback button will not appear if no \n"
+"data is entered into this field."
+msgstr ""
+"Клавіша зворотний зв'язок не з'явиться якщо \n"
+"це поле не буде заповнено."
+
+#: exe/webui/editorpane.py:195
+msgid "Please enter<br />an idevice name."
+msgstr "Будь ласка введіть <br />назву для iDevice."
+
+#: exe/webui/editorpane.py:246
+msgid "Add Field"
+msgstr "Додати Поле"
+
+#: exe/webui/editorpane.py:261
+msgid "Actions"
+msgstr "Дії"
+
+#: exe/webui/editorpane.py:264 exe/webui/element.py:1790
+msgid "Preview"
+msgstr "Попередній перегляд"
+
+#: exe/webui/editorpane.py:269 exe/webui/preferencespage.py:116
+#: exe/webui/xliffexportpreferencespage.py:144
+#: exe/webui/xliffimportpreferencespage.py:94
+msgid "Cancel"
+msgstr "Відміна"
+
+#: exe/webui/editorpane.py:329
+msgid "Pedagogical Tip"
+msgstr "Педагогічна Порада"
+
+#: exe/webui/editorpane.py:332 exe/webui/multimediablock.py:103
+#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:159
+msgid "Emphasis"
+msgstr "Акцент"
+
+#: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:100
+#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:156
+msgid "No emphasis"
+msgstr "Нема акценту"
+
+#: exe/webui/editorpane.py:336 exe/webui/multimediablock.py:101
+#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:157
+msgid "Some emphasis"
+msgstr "Певний акцент"
+
+#: exe/webui/editorpane.py:363
+msgid "Icons"
+msgstr "Іконки"
+
+#: exe/webui/editorpane.py:377
+msgid "Info"
+msgstr "Інфо"
+
+#: exe/webui/editorpane.py:424 exe/webui/element.py:1216
+#: exe/webui/element.py:1484
+msgid "Submit"
+msgstr "Підтвердити"
+
+#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
+#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
+msgid "Add another question"
+msgstr "Додати інше питання"
+
+#: exe/webui/eleccionmultiplefpdblock.py:137 exe/webui/multichoiceblock.py:130
+msgid "IDevice Question Icon"
+msgstr "IDevice іконка питання"
+
+#: exe/webui/element.py:80
+#, fuzzy, python-format
+msgid "ERROR Element.renderEdit called directly with %s class"
+msgstr "ERROR Element.renderEdit called directly with %s class"
+
+#: exe/webui/element.py:495
+msgid "Add Image"
+msgstr "Додати Зображення"
+
+#: exe/webui/element.py:518
+msgid "Select an image"
+msgstr "Вибрати зображення"
+
+#: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1585
+msgid "Display as:"
+msgstr "Показати як:"
+
+#: exe/webui/element.py:535 exe/webui/element.py:951
+msgid "blank for original size"
+msgstr "залишити пустими для оригінального розміру"
+
+#: exe/webui/element.py:605
+msgid "Select an MP3"
+msgstr "Вибрати MP3 файл"
+
+#: exe/webui/element.py:878
+#, fuzzy
+msgid "Please select a .jpg file."
+msgstr "Будь ласка виберіть .flv файл."
+
+#: exe/webui/element.py:913
+msgid "Add JPEG Image"
+msgstr "Додати JPEG Зображення"
+
+#: exe/webui/element.py:929
+msgid "Select an image (JPG file)"
+msgstr "Вибрати зображення (JPG файл)"
+
+#: exe/webui/element.py:1098 exe/webui/element.py:1360
+msgid "Cloze Text"
+msgstr "Текст Завдання"
+
+#: exe/webui/element.py:1106 exe/webui/element.py:1368
+msgid "Hide/Show Word"
+msgstr "Сховати/Показати Слово"
+
+#: exe/webui/element.py:1111 exe/webui/element.py:1373
+msgid "Strict Marking?"
+msgstr "Перевірити Читабельність?"
+
+#: exe/webui/element.py:1116 exe/webui/element.py:1378
+msgid "Check Caps?"
+msgstr "Перевірити Регістр?"
+
+#: exe/webui/element.py:1121 exe/webui/element.py:1383
+msgid "Instant Marking?"
+msgstr "Миттєве позначення?"
+
+#: exe/webui/element.py:1201 exe/webui/element.py:1469
+msgid "Get score"
+msgstr "Отримати відмітку"
+
+#: exe/webui/element.py:1207 exe/webui/element.py:1475
+msgid "Show/Hide Feedback"
+msgstr "Показати/Сховати Зворотний зв'язок"
+
+#: exe/webui/element.py:1212 exe/webui/element.py:1480
+msgid "Show/Clear Answers"
+msgstr "Показати/Очистити Відповіді"
+
+#: exe/webui/element.py:1221 exe/webui/element.py:1489
+msgid "Restart"
+msgstr "Перезавантажити"
+
+#: exe/webui/element.py:1228 exe/webui/element.py:1496
+msgid "Show Answers"
+msgstr "Показати Відповідь"
+
+#: exe/webui/element.py:1263 exe/webui/element.py:1531
+msgid "Answsers"
+msgstr "Відповіді"
+
+#: exe/webui/element.py:1388
+msgid "Mostrar Puntuaci&oacute;n?"
+msgstr ""
+
+#: exe/webui/element.py:1647
+msgid "Please select a .flv file."
+msgstr "Будь ласка виберіть .flv файл."
+
+#: exe/webui/element.py:1663
+msgid "Select a flash video"
+msgstr "Вибрати флеш ролик"
+
+#: exe/webui/element.py:1772
+msgid "text"
+msgstr "текст"
+
+#: exe/webui/element.py:1773
+msgid "newline"
+msgstr "нова лінія"
+
+#: exe/webui/element.py:1776
+msgid "Select a font size: "
+msgstr "Розмір шрифта:"
+
+#: exe/webui/element.py:1881 exe/webui/element.py:2233
+#: exe/webui/testoptionelement.py:106
+msgid "Option"
+msgstr "Опція"
+
+#: exe/webui/element.py:1886 exe/webui/element.py:2238
+#: exe/webui/element.py:2336 exe/webui/element.py:2363
+#: exe/webui/testoptionelement.py:111
+#, fuzzy
+msgid "Correct Option"
+msgstr "Правильна"
+
+#: exe/webui/element.py:1914 exe/webui/element.py:2266
+#: exe/webui/testoptionelement.py:139
+msgid "Delete option"
+msgstr "Видалити опцію"
+
+#: exe/webui/element.py:1948 exe/webui/element.py:1958
+msgid "Correct"
+msgstr "Правильна"
+
+#: exe/webui/element.py:1950 exe/webui/element.py:1960
+#, fuzzy
+msgid "Incorrect"
+msgstr "Неправильно!"
+
+#: exe/webui/element.py:2038
+msgid "Question:"
+msgstr "Запитання:"
+
+#: exe/webui/element.py:2043 exe/webui/element.py:2448
+#: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
+#: exe/webui/truefalseelement.py:130
+msgid "Delete question"
+msgstr "Видалити питання"
+
+#: exe/webui/element.py:2061 exe/webui/testquestionelement.py:110
+msgid "Options"
+msgstr "Опції"
+
+#: exe/webui/element.py:2076 exe/webui/testquestionelement.py:122
+msgid "Add another Option"
+msgstr "Додати іншу Опцію"
+
+#: exe/webui/element.py:2126 exe/webui/questionelement.py:130
+msgid "Show Feedback"
+msgstr "Показати Зворотний Зв'язок"
+
+#: exe/webui/element.py:2338 exe/webui/element.py:2365
+msgid "Wrong"
+msgstr "Неправильно"
+
+#: exe/webui/element.py:2463
+msgid "Add another option"
+msgstr "Додати іншу опцію"
+
+#: exe/webui/element.py:2518 exe/webui/truefalseelement.py:146
+#: exe/webui/truefalseelement.py:156
+msgid "Hint"
+msgstr "Натяк"
+
+#: exe/webui/externalurlblock.py:67
+msgid "URL:"
+msgstr "Адреса (URL):"
+
+#: exe/webui/externalurlblock.py:81
+msgid "Frame Height:"
+msgstr "Розмір Фрейму:"
+
+#: exe/webui/galleryblock.py:211
+msgid "Add images"
+msgstr "Додати зображення"
+
+#: exe/webui/galleryblock.py:218 exe/webui/galleryblock.py:312
+msgid "No Images Loaded"
+msgstr "Немає завантажених зображень"
+
+#: exe/webui/galleryblock.py:229 exe/webui/galleryblock.py:247
+msgid "Change Image"
+msgstr "Змінити Зображення"
+
+#: exe/webui/galleryblock.py:254
+msgid "Move Image Left"
+msgstr "Посунути зображення ліворуч"
+
+#: exe/webui/galleryblock.py:256
+msgid "Go Back"
+msgstr "Назад"
+
+#: exe/webui/galleryblock.py:268
+msgid "Move Image Right"
+msgstr "Посунути зображення праворуч"
+
+#: exe/webui/galleryblock.py:270
+msgid "Go Forward"
+msgstr "Вперед"
+
+#: exe/webui/galleryblock.py:278
+msgid "Go Forward (Not Available)"
+msgstr "Вперед (Недоступно)"
+
+#: exe/webui/galleryblock.py:283
+msgid "Delete Image"
+msgstr "Видалити Зображення"
+
+#: exe/webui/galleryblock.py:320
+#, python-format
+msgid "Show %s Image"
+msgstr "Показати %s Зображення"
+
+#: exe/webui/imagemagnifierblock.py:146
+msgid "Initial Zoom"
+msgstr "Первинний розмір:"
+
+#: exe/webui/imagemagnifierblock.py:153
+msgid "Maximum zoom"
+msgstr "Максимальне збільшення"
+
+#: exe/webui/imagemagnifierblock.py:159
+msgid "Small"
+msgstr "Малий"
+
+#: exe/webui/imagemagnifierblock.py:160
+msgid "Medium"
+msgstr "Середній"
+
+#: exe/webui/imagemagnifierblock.py:161
+msgid "Large"
+msgstr "Великий"
+
+#: exe/webui/imagemagnifierblock.py:162
+msgid "Extra large"
+msgstr "Дуже великий"
+
+#: exe/webui/imagemagnifierblock.py:164
+msgid "Size of magnifying glass: "
+msgstr "Розмір магічного скельця:"
+
+#: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
+#: exe/webui/seleccionmultiplefpdblock.py:99
+msgid "Add another Question"
+msgstr "Додати інше Питання"
+
+#: exe/webui/preferencespage.py:96
+msgid "Select Language"
+msgstr "Вибрати мову"
+
+#: exe/webui/preferencespage.py:101
+msgid "Enable All Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:102
+msgid "Disable Auto-Top Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:103
+msgid "Disable All Internal Linking"
+msgstr ""
+
+#: exe/webui/preferencespage.py:104
+msgid "Internal Linking (for Web Site Exports only)"
+msgstr ""
+
+#: exe/webui/preferencespage.py:112 exe/webui/xliffexportpreferencespage.py:137
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "OK"
+
+#: exe/webui/questionelement.py:135
+msgid "Hide Feedback"
+msgstr "Сховати Зворотний Зв'язок"
+
+#: exe/webui/quiztestblock.py:104
+msgid "Please select a correct answer for each question."
+msgstr "Будь ласка виберіть правильну відповідь для кожного запитання."
+
+#: exe/webui/quiztestblock.py:115
+msgid "Select pass rate: "
+msgstr "Вибрати прохідний бал:"
+
+#: exe/webui/quiztestblock.py:152
+msgid "SUBMIT ANSWERS"
+msgstr "ПІДТВЕРДИТИ ВІДПОВІДЬ"
+
+#: exe/webui/quiztestblock.py:373
+msgid "Submit Answer"
+msgstr "Підтвердити Відповідь"
+
+#: exe/webui/reflectionblock.py:117 exe/webui/reflectionfpdblock.py:125
+msgid "Click here"
+msgstr "Клацніть тут"
+
+#: exe/webui/reflectionblock.py:121 exe/webui/reflectionfpdblock.py:129
+msgid "Hide"
+msgstr "Сховати"
+
+#: exe/webui/renderable.py:243 exe/webui/xliffexportpreferencespage.py:55
+msgid "label"
+msgstr "надпис"
+
+#: exe/webui/renderable.py:253
+msgid "key"
+msgstr "ключ"
+
+#: exe/webui/renderable.py:255
+msgid "keycode"
+msgstr "ключ-код"
+
+#: exe/webui/renderable.py:258
+msgid "title"
+msgstr "заголовок"
+
+#: exe/webui/renderable.py:260
+msgid "tooltiptext"
+msgstr ""
+
+#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:152
+msgid "Load"
+msgstr "Завантажити"
+
+#: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
+#: exe/webui/truefalseelement.py:275
+msgid "True"
+msgstr "Правильно"
+
+#: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:195
+#: exe/webui/truefalseelement.py:277
+msgid "False"
+msgstr "Неправильно"
+
+#: exe/webui/truefalseelement.py:220
+msgid "Correct!"
+msgstr "Правильно!"
+
+#: exe/webui/truefalseelement.py:221
+msgid "Incorrect!"
+msgstr "Неправильно!"
+
+#: exe/webui/wikipediablock.py:113
+msgid "English Wikipedia Article"
+msgstr "Wikipedia - Англійський"
+
+#: exe/webui/wikipediablock.py:114
+#, fuzzy
+msgid "Catalan Wikipedia Article"
+msgstr "Wikipedia - Італійський"
+
+#: exe/webui/wikipediablock.py:115
+msgid "Chinese Wikipedia Article"
+msgstr "Wikipedia - Японський"
+
+#: exe/webui/wikipediablock.py:116
+msgid "Dutch Wikipedia Article"
+msgstr "Wikipedia - Датський"
+
+#: exe/webui/wikipediablock.py:117
+msgid "French Wikipedia Article"
+msgstr "Wikipedia - Французький"
+
+#: exe/webui/wikipediablock.py:118
+msgid "German Wikipedia Article"
+msgstr "Wikipedia - Німецький"
+
+#: exe/webui/wikipediablock.py:119
+msgid "Greek Wikipedia Article"
+msgstr "Wikipedia - Грецький"
+
+#: exe/webui/wikipediablock.py:120
+msgid "Italian Wikipedia Article"
+msgstr "Wikipedia - Італійський"
+
+#: exe/webui/wikipediablock.py:121
+msgid "Japanese Wikipedia Article"
+msgstr "Wikipedia - Японський"
+
+#: exe/webui/wikipediablock.py:122
+#, fuzzy
+msgid "Magyar Wikipedia Article"
+msgstr "Wikipedia - Італійський"
+
+#: exe/webui/wikipediablock.py:123
+msgid "Polish Wikipedia Article"
+msgstr "Wikipedia - Польський"
+
+#: exe/webui/wikipediablock.py:124
+msgid "Portugese Wikipedia Article"
+msgstr "Wikipedia - Португальський"
+
+#: exe/webui/wikipediablock.py:125
+msgid "Slovenian Wikipedia Article"
+msgstr "Wikipedia - Словенський"
+
+#: exe/webui/wikipediablock.py:126
+msgid "Spanish Wikipedia Article"
+msgstr "Wikipedia - Іспанський"
+
+#: exe/webui/wikipediablock.py:127
+msgid "Swedish Wikipedia Article"
+msgstr "Wikipedia - Шведський"
+
+#: exe/webui/wikipediablock.py:128
+msgid "Wikibooks Article"
+msgstr "Wikibooks Стаття"
+
+#: exe/webui/wikipediablock.py:129
+msgid "Wikiversity"
+msgstr "Wikiversity"
+
+#: exe/webui/wikipediablock.py:130
+msgid "Wiktionary"
+msgstr "Wiktionary"
+
+#: exe/webui/wikipediablock.py:131
+msgid "Wikieducator Content"
+msgstr "Wikieducator Вміст"
+
+#: exe/webui/wikipediablock.py:137
+msgid "Site"
+msgstr "Сайт"
+
+#: exe/webui/wikipediablock.py:147
+msgid "Own site"
+msgstr "Власний сайт"
+
+#: exe/webui/wikipediablock.py:229
+msgid "This article is licensed under the "
+msgstr "Ліцензія на цю статтю належать "
+
+#: exe/webui/wikipediablock.py:232
+msgid "GNU Free Documentation License"
+msgstr "GNU Free Documentation License"
+
+#: exe/webui/wikipediablock.py:233
+msgid "It uses material from the "
+msgstr "Матеріали взято з "
+
+#: exe/webui/wikipediablock.py:244
+msgid "article "
+msgstr "стаття"
+
+#: exe/webui/xliffexportpreferencespage.py:103
+msgid "Select source language"
+msgstr ""
+
+#: exe/webui/xliffexportpreferencespage.py:108
+msgid "Select target language"
+msgstr ""
+
+#: exe/webui/xliffexportpreferencespage.py:113
+msgid "Copy source also in target"
+msgstr ""
+
+#: exe/webui/xliffexportpreferencespage.py:118
+msgid ""
+"If you don't choose this option, target field will be empty. Some "
+"Computer Aided Translation tools (i.g. OmegaT ) just translate the "
+"content of the target field. If you are using this kind of tools, you "
+"will need to pre-fill target field with a copy of the source field."
+msgstr ""
+
+#: exe/webui/xliffexportpreferencespage.py:124
+msgid "Wrap fields in CDATA"
+msgstr ""
+
+#: exe/webui/xliffexportpreferencespage.py:129
+msgid ""
+"This option will wrap all the exported fields in CDATA sections. This "
+"kind of sections are not recommended by XLIFF standard but it could be a "
+"good option if you want to use a pre-process tool (i.g.: Rainbow) before "
+"using the Computer Aided Translation software."
+msgstr ""
+
+#: exe/webui/xliffimportpreferencespage.py:79
+msgid "Import from source language"
+msgstr ""
+
+#: exe/webui/xliffimportpreferencespage.py:84
+msgid ""
+"If you choose this option, the import process will take the texts from "
+"source language instead of target language."
+msgstr ""
+
+#: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
+#: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
+msgid ""
+"Package is old. Please upgrade it (using File..Open followed by "
+"File..Save As) before attempting to insert it into another package!"
+msgstr ""
+
+#: twisted/persisted/styles.py:437
+msgid ""
+"Unable to merge: duplicate Java Applet resource names exist (including: "
+"\"\"). Please see the log file for the names of ALL such problem "
+"resources."
+msgstr ""
+
