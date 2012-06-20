@@ -144,7 +144,8 @@ class WebsitePage(Page):
 	html = aux.sub("", html)
 	aux = re.compile("exe_math_size=\"[^\"]*\"")
 	html = aux.sub("", html)
-	#JR: Cambio el & en los enlaces del glosario
+	# este replace de JR mas abajo quizas rompe las anclas
+    #JR: Cambio el & en los enlaces del glosario
 	html = html.replace("&concept", "&amp;concept")
         #JR: Cambiamos las anclas por enlaces a archivos
         html = html.replace('href="#', 'href="')

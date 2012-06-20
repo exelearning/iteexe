@@ -269,8 +269,58 @@ class DublinCore(Jellyable, Unjellyable):
 
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
-  
 
+
+class LomES(Jellyable, Unjellyable):
+    """
+    Holds LOM-ES info
+    """
+
+    def __init__(self):
+        self.identifier = ''
+        self.title = ''
+        self.description = ''
+        self.keyword = ''
+        self.coverage = ''
+        self.structure = ''
+        self.aggregationlevel = ''
+        self.version = ''
+        self.status = ''
+        self.role = ''
+        self.entity = ''
+        self.dateTime = ''
+        self.metadataSchema = ''
+        self.language = ''
+        self.format = ''
+        self.size = ''
+        self.location = ''
+        self.type = ''
+        self.name = ''
+        self.installationremarks = ''
+        self.otherplatformrequirements = ''
+        self.duration = ''
+        self.interactivitytype = ''
+        self.learningresourcetype = ''
+        self.interactivitylevel = ''
+        self.semanticdensity = ''
+        self.intendedenduserrole = ''
+        self.context = ''
+        self.typicalagerange = ''
+        self.difficulty = ''
+        self.cognitiveprocess = ''
+        self.cost = ''
+        self.copyrightandotherrestrictions = ''
+        self.access = ''
+        self.kind = ''
+        self.purpose = ''
+        self.taxonpath = ''
+        self.id = ''
+        self.taxon = ''
+
+    def __setattr__(self, name, value):
+        self.__dict__[name] = toUnicode(value)  
+        
+        
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
@@ -315,6 +365,7 @@ class Package(Persistable):
         self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()
+        self.lomEs         = LomES()
         self.scolinks      = False
         self.license       = "None"
         self.footer        = ""

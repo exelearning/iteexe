@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<metadata
+  xmlns="http://www.aenor.es/xsd/lomes_v1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xsi:schemaLocation="http://www.aenor.es/xsd/lomes_v1.0.xsd">
+<lomes:lom><lomes:general><lomes:identifier>%(identifier)s</lomes:identifier></lomes:general></lomes:lom>
+<lomes:lom><lomes:general><lomes:title>%(title)s</lomes:title></lomes:general></lomes:lom>
+<lomes:lom><lomes:general><lomes:description>%(description)s</lomes:description></lomes:general></lomes:lom>
+<lomes:lom><lomes:general><lomes:keyword>%(keyword)s</lomes:keyword></lomes:general></lomes:lom>
+<lomes:lom><lomes:general><lomes:coverage>%(coverage)s</lomes:coverage></lomes:general></lomes:lom>
+<lomes:lom><lomes:general><lomes:structure>%(structure)s</lomes:structure></lomes:general></lomes:lom>
+<lomes:lom><lomes:general><lomes:aggregationLevel>%(aggregationlevel)s</lomes:aggregationLevel></lomes:general></lomes:lom>
+<lomes:lom><lomes:lifeCycle><lomes:version>%(version)s</lomes:version></lomes:lifeCycle></lomes:lom>
+<lomes:lom><lomes:lifeCycle><lomes:status>%(status)s</lomes:status></lomes:lifeCycle></lomes:lom>
+<lomes:lom><lomes:lifeCycle><lomes:contribute><lomes:role>%(role)s</lomes:role></lomes:contribute></lomes:lifeCycle></lomes:lom>
+<lomes:lom><lomes:lifeCycle><lomes:contribute><lomes:entity>%(entity)s</lomes:entity></lomes:contribute></lomes:lifeCycle></lomes:lom>
+<lomes:lom><lomes:lifeCycle><lomes:contribute><lomes:date><lomes:dateTime>%(dateTime)s</lomes:dateTime></lomes:date></lomes:contribute></lomes:lifeCycle></lomes:lom>
+<lomes:lom><lomes:lifeCycle><lomes:contribute><lomes:date><lomes:description>%(description)s</lomes:description></lomes:date></lomes:contribute></lomes:lifeCycle></lomes:lom>
+<lomes:lom><lomes:metaMetadata><lomes:identifier>%(identifier)s</lomes:identifier></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:metaMetadata><lomes:contribute><lomes:role>%(role)s</lomes:role></lomes:contribute></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:metaMetadata><lomes:contribute><lomes:entity>%(entity)s</lomes:entity></lomes:contribute></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:metaMetadata><lomes:contribute><lomes:date><lomes:dateTime>%(dateTime)s</lomes:dateTime></lomes:date></lomes:contribute></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:metaMetadata><lomes:contribute><lomes:date><lomes:description>%(description)s</lomes:date></lomes:description></lomes:contribute></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:metaMetadata></lomes:metadataSchema>%(metadataSchema)s</lomes:metadataSchema></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:metaMetadata><lomes:language>%(language)s</lomes:language></lomes:metaMetadata></lomes:lom>
+<lomes:lom><lomes:technical><lomes:format>%(format)s</lomes:format></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:size>%(size)s</lomes:size></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:location>%(location)s</lomes:location></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:requirement><lomes:orComposite><lomes:type>%(type)s<lomes:type></lomes:orComposite></lomes:requirement></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:requirement><lomes:orComposite><lomes:name>%(name)s<lomes:name></lomes:orComposite></lomes:requirement></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:installationRemarks>%(installationremarks)s</lomes:installationRemarks></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:otherPlatformRequirements>%(otherplatformrequirements)s</lomes:otherPlatformRequirements></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:duration><lomes:duration>%(duration)s</lomes:duration></lomes:duration></lomes:technical></lomes:lom>
+<lomes:lom><lomes:technical><lomes:duration><lomes:description>%(description)s</lomes:description></lomes:duration></lomes:technical></lomes:lom>
+<lomes:lom><lomes:educational><lomes:interactivityType>%(interactivitytype)s</lomes:interactivityType></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:learningResourceType>%(learningresourcetype)s</lomes:learningResourceType></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:interactivityLevel>%(interactivitylevel)s</lomes:interactivityLevel></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:semanticDensity>%(semanticdensity)s</lomes:semanticDensity></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:intendedEndUserRole>%(intendedenduserrole)s</lomes:intendedEndUserRole></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:context>%(context)s</lomes:context></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:typicalAgeRange>%(typicalagerange>)s<lomes:typicalAgeRange></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:difficulty>%(difficulty)s</lomes:difficulty></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:typicalLearningTime><lomes:duration>%(duration)s<lomes:duration></lomes:typicalLearningTime></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:typicalLearningTime><lomes:description>%(description)s<lomes:description></lomes:typicalLearningTime></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:description>%(description)s</lomes:description></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:language>%(language)s</lomes:language></lomes:educational></lomes:lom>
+<lomes:lom><lomes:educational><lomes:cognitivePprocess>%(cognitiveprocess)s</lomes:cognitiveProcess></lomes:educational></lomes:lom>
+<lomes:lom><lomes:rights><lomes:cost>%(cost)s</lomes:cost></lomes:rights></lomes:lom>
+<lomes:lom><lomes:rights><lomes:copyrightAndOtherRestrictions>%(copyrightandotherrestrictions)s</lomes:copyrightAndOtherRestrictions></lomes:rights></lomes:lom>
+<lomes:lom><lomes:rights><lomes:description>%(description)s</lomes:description></lomes:rights></lomes:lom>
+<lomes:lom><lomes:rights><lomes:access><lomes:accessType>%(access)s</lomes:accessType></lomes:access></lomes:rights></lomes:lom>
+<lomes:lom><lomes:rights><lomes:access><lomes:description>%(description)s</lomes:description></lomes:access></lomes:rights></lomes:lom>
+<lomes:lom><lomes:relation><lomes:kind>%(kind)s<lomes:kind></lomes:relation></lomes:lom>
+<lomes:lom><lomes:relation><lomes:resource><lomes:identifier>%(identifier)s</lomes:identifier></lomes:resource></lomes:relation></lomes:lom>
+<lomes:lom><lomes:relation><lomes:resource><lomes:description>%(description)s</lomes:description></lomes:resource></lomes:relation></lomes:lom>
+<lomes:lom><lomes:annotation><lomes:entity>%(entity)s</lomes:entity></lomes:annotation></lomes:lom>
+<lomes:lom><lomes:annotation><lomes:date><lomes:dateTime>%(date)s</lomes:dateTime></lomes:date></lomes:annotation></lomes:lom>
+<lomes:lom><lomes:annotation><lomes:date><lomes:description>%(description)s</lomes:description></lomes:date></lomes:annotation></lomes:lom>
+<lomes:lom><lomes:annotation><lomes:description>%(description)s</lomes:description></lomes:annotation></lomes:lom>
+<lomes:lom><lomes:classification><lomes:purpose>%(purpose)s</lomes:purpose></lomes:classification></lomes:lom>
+<lomes:lom><lomes:classification><lomes:taxonpath><lomes:source>%(taxonpath)s</lomes:source></lomes:taxonpath></lomes:classification></lomes:lom>
+<lomes:lom><lomes:classification><lomes:taxonpath><lomes:taxon><lomes:id>%(id)s</lomes:id></lomes:taxon></lomes:taxonpath></lomes:classification></lomes:lom>
+<lomes:lom><lomes:classification><lomes:taxonpath><lomes:taxon><lomes:entry>%(taxon)s</lomes:entry></lomes:taxon></lomes:taxonpath></lomes:classification></lomes:lom>
+<lomes:lom><lomes:classification><lomes:description>%(description)s</lomes:description></lomes:classification></lomes:lom>
+<lomes:lom><lomes:classification><lomes:keyword>%(keyword)s</lomes:keyword></lomes:classification></lomes:lom>
+</metadata>

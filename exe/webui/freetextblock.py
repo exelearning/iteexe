@@ -21,6 +21,7 @@ FreeTextBlock can render and process FreeTextIdevices as XHTML
 """
 
 import logging
+import re
 from exe.webui.block            import Block
 from exe.webui.element          import TextAreaElement
 from exe.webui                     import common
@@ -107,6 +108,20 @@ class FreeTextBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
         html += u"</div>\n"
+        # anchors must not point to tmp places (why they do it still?):
+        from exe.engine.beautifulsoup import BeautifulSoup
+        soupView = BeautifulSoup(html)
+        for a in soupView.findAll('a',href=True):
+            if a['href'].find('51235') != -1:
+                old = a['href']
+                new = a['href']
+                cut = new[: new.rfind(":")]
+                new = new.replace(cut, '')
+                new = new.replace('#', '.html#').lower()
+                # new = new.replace(':', './')
+                new = new.replace(':', '')
+                html = html.replace(old, new)
+          
         return html
     
 from exe.engine.freetextidevice import FreeTextIdevice

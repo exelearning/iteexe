@@ -202,6 +202,7 @@ class WebsiteExport(object):
         for retrieving later
         """           
         for child in node.children:
+            # assure lower pagename, without whitespaces or alphanumeric characters:
             pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
             if not pageName:
