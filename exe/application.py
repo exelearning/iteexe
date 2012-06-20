@@ -26,9 +26,6 @@ Main application class, pulls together everything and runs it.
 import os
 import sys
 import shutil
-import time
-import re
-import getpass
 
 from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
@@ -91,36 +88,6 @@ class Application:
         self.processArgs()
 
         self.loadConfiguration()
-        try:
-            username = getpass.getuser()
-        except ImportError:
-            username = ''
-        eXeStart = globals.application.tempWebDir
-        eXeStart = re.sub("[\/|\\\\][^\/|\\\\]*$","",eXeStart)
-        eXeStart = eXeStart + '/tmpExeStartupTime.' + username
-
-        if os.path.exists(eXeStart):
-            inStartFH=open(eXeStart, "r")
-            lastRunTimeS = 0
-            for line in inStartFH:
-                try:
-                    lastRunTimeS = int(line)
-                except ValueError:
-                    lastRunTimeS = 0
-            inStartFH.close()
-            log.debug('lastRunTimeS: ' + `lastRunTimeS`)
-
-            currentTime = int (time.time())
-            currentTime2 = int (time.time())
-            log.info('currentTime: ' + `currentTime`)
-            if(currentTime <= lastRunTimeS + 3 and currentTime >= lastRunTimeS):
-                #self.xulMessage(_('eXe appears to already be running'))
-                #log.info('eXe appears to already be running: <html:br/>lastRunTimes: ' + `lastRunTimeS` + '<html:br/> currentTime: ' + `currentTime` + '<html:br/>currentTime2: ' + `currentTime2`)
-                return None
-
-        else:
-            log.info('eXeStart: ' + eXeStart)
-            log.info('tempWebDir: ' + globals.application.tempWebDir)
 
         # if a document was double clicked to launch on Win32,
         #   make sure we have the long pathname
@@ -140,10 +107,6 @@ class Application:
             log.error('eXe appears to already be running')
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
         shutil.rmtree(self.tempWebDir, True)
-        try:
-            os.remove(eXeStart)
-        except OSError:
-            pass
 
     def processArgs(self):
         """

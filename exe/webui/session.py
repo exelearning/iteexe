@@ -69,6 +69,9 @@ class eXeRequest(appserver.NevowRequest):
 #        self.locale = setLocaleFromRequest(request)
         appserver.NevowRequest.gotPageContext(self, pageContext)
 
+    def getSession(self, sessionInterface = None):
+        self.sitepath = [str(self.host.port)]
+        return appserver.NevowRequest.getSession(self, sessionInterface)
 
 class eXeSession(server.Session):
     def __init__(self, *args, **kwargs):
