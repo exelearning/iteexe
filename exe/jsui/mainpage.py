@@ -642,7 +642,7 @@ class MainPage(RenderableLivePage):
         log.info('Cancel import')
         Resources.cancelImport()
         
-    def handleExport(self, client, exportType, filename, print_callback=''):
+    def handleExport(self, client, exportType, metadataType, filename, print_callback=''):
         """
         Called by js. 
         Exports the current package to one of the above formats
@@ -688,12 +688,22 @@ class MainPage(RenderableLivePage):
             self.exportText(client, filename)
         elif exportType == 'ipod':
             self.exportIpod(client, filename)
-        elif exportType == "scorm":
+        elif exportType == "scorm1.2":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "scorm1.2")
+            if metadataType == 'DC':
+                self.exportScorm(client, filename, stylesDir, "scorm1.2", "DC")
+            if metadataType == 'LOMES':
+                self.exportScorm(client, filename, stylesDir, "scorm1.2", "LOMES")
+            if metadataType == 'LOM':
+                self.exportScorm(client, filename, stylesDir, "scorm1.2", "LOM")
         elif exportType == "scorm2004":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "scorm2004")
+            if metadataType == 'DC':
+                self.exportScorm(client, filename, stylesDir, "scorm2004", "DC")
+            if metadataType == 'LOMES':
+                self.exportScorm(client, filename, stylesDir, "scorm2004", "LOMES")
+            if metadataType == 'LOM':
+                self.exportScorm(client, filename, stylesDir, "scorm2004", "LOM")       
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
@@ -996,7 +1006,7 @@ class MainPage(RenderableLivePage):
         client.alert(_(u'Exported to %s') % filename)
 
 
-    def exportScorm(self, client, filename, stylesDir, scormType):
+    def exportScorm(self, client, filename, stylesDir, scormType, metadataType):
         """
         Exports this package to a scorm package file
         """
@@ -1011,7 +1021,7 @@ class MainPage(RenderableLivePage):
                     client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
-            scormExport = ScormExport(self.config, stylesDir, filename, scormType)
+            scormExport = ScormExport(self.config, stylesDir, filename, scormType, metadataType)
             scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
