@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vdex orderSignificant="true" profileType="hierarchicalTokenTerms" language="eu" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdexv1p0 imsvdex_v1p0.xsd" xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<vocabName>
+		<langstring>Competencia LOM-ESv1.0</langstring>
+	</vocabName>
+	<vocabIdentifier>COMLOMES001</vocabIdentifier>
+	<term>
+		<termIdentifier>1</termIdentifier>
+		<caption>
+			<langstring>Gaitasun Orokorrak eta pertsonalak</langstring>
+		</caption>
+		<term>
+			<termIdentifier>1.1</termIdentifier>
+			<caption>
+				<langstring>Aldaketarako jarrera positiboa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.2</termIdentifier>
+			<caption>
+				<langstring>Afektibitatea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.3</termIdentifier>
+			<caption>
+				<langstring>Nork bere kasa ikastea bizitza osoan zehar</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.4</termIdentifier>
+			<caption>
+				<langstring>Autoestimua</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.5</termIdentifier>
+			<caption>
+				<langstring>Norberari buruz hausnartzea eta autoebaluazioa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.6</termIdentifier>
+			<caption>
+				<langstring>Lana bilatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.7</termIdentifier>
+			<caption>
+				<langstring>Informazio garrantzitsua bilatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.8</termIdentifier>
+			<caption>
+				<langstring>Ama-hizkuntzan komunikatzea (entzutea, mintzatzea, irakurtzea eta idaztea).</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.9</termIdentifier>
+			<caption>
+				<langstring>Naturaren oinarrizko printzipioak ezagutzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.10</termIdentifier>
+			<caption>
+				<langstring>Autonomia erkidegoetako kultura eta hizkuntza ezagutzea eta balioestea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.11</termIdentifier>
+			<caption>
+				<langstring>Kirola ezagutzea eta egitea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.12</termIdentifier>
+			<caption>
+				<langstring>Enpresa-espiritua</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.13</termIdentifier>
+			<caption>
+				<langstring>Oinarrizko adierazpena eta ulermena atzerriko hizkuntzan </langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.14</termIdentifier>
+			<caption>
+				<langstring>Galdera egokiak formulatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.15</termIdentifier>
+			<caption>
+				<langstring>Zintzotasuna eta etika pertsonala</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.16</termIdentifier>
+			<caption>
+				<langstring>Ekimen pertsonala</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.17</termIdentifier>
+			<caption>
+				<langstring>Kultura-adierazpenaren aldeko interesa (literatura, musika, arte eszenikoak eta arte plastikoak)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.18</termIdentifier>
+			<caption>
+				<langstring>Asmaketa eta sorkuntza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.19</termIdentifier>
+			<caption>
+				<langstring>Berezko motibazioa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.20</termIdentifier>
+			<caption>
+				<langstring>Pentsamendu kritikoa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.21</termIdentifier>
+			<caption>
+				<langstring>Pertseberantzia</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.22</termIdentifier>
+			<caption>
+				<langstring>Norberaren baliabideak (denbora, dirua…) planifikatzea eta kudeatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.23</termIdentifier>
+			<caption>
+				<langstring>Informazioan oinarritutako iritziak ematea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.24</termIdentifier>
+			<caption>
+				<langstring>Pertsonen desberdintasunak onartzea eta errespetatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.25</termIdentifier>
+			<caption>
+				<langstring>Anbiguetatea saihestea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.26</termIdentifier>
+			<caption>
+				<langstring>Porrotaren kontrako erresistentzia</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.27</termIdentifier>
+			<caption>
+				<langstring>Erantzukizuna</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.28</termIdentifier>
+			<caption>
+				<langstring>Arazoak konpontzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.29</termIdentifier>
+			<caption>
+				<langstring>Informazioa modu eraginkorrean erabiltzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.30</termIdentifier>
+			<caption>
+				<langstring>Informazio- eta komunikazio-teknologien oinarrizko erabilera</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>2</termIdentifier>
+		<caption>
+			<langstring>Gaitasun akademikoak</langstring>
+		</caption>
+		<term>
+			<termIdentifier>2.1</termIdentifier>
+			<caption>
+				<langstring>Ezagutza hainbat diziplinen bidez (artea, gizarte-zientziak, filosofia, natur zientziak…) eskuratzea eta aplikatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.2</termIdentifier>
+			<caption>
+				<langstring>Datuen analisia</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.3</termIdentifier>
+			<caption>
+				<langstring>Ikasten ikastea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.4</termIdentifier>
+			<caption>
+				<langstring>Diziplina bakoitzeko hizkuntza modu egokian ulertzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.5</termIdentifier>
+			<caption>
+				<langstring>Metodo zientifikoen ezagutza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.6</termIdentifier>
+			<caption>
+				<langstring>Produktu eta prozesu teknologikoen ezagutza.</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.7</termIdentifier>
+			<caption>
+				<langstring>Entzutea, ulertzeko eta ikasteko tresna gisa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.8</termIdentifier>
+			<caption>
+				<langstring>Egoerak balioztatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.9</termIdentifier>
+			<caption>
+				<langstring>Diziplina bakoitzeko hizkuntza modu egokian erabiltzea (ahozko eta idatzizko adierazpena)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.10</termIdentifier>
+			<caption>
+				<langstring>Idatzizko hainbat material interpetatzea eta erabiltzea (grafikoak, eskemak, koadroak ...)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.11</termIdentifier>
+			<caption>
+				<langstring>Irakurketari eta idazketari lotutako oinarrizko operazioak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.12</termIdentifier>
+			<caption>
+				<langstring>Logikari eta matematikei lotutako oinarrizko operazioak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.13</termIdentifier>
+			<caption>
+				<langstring>Modu kritikoan pentsatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.14</termIdentifier>
+			<caption>
+				<langstring>Idatzizko lanak eta ondorioak modu eraginkorrean aurkeztea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.15</termIdentifier>
+			<caption>
+				<langstring>Ahozko lanak eta ondorioak modu eraginkorrean aurkeztea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.16</termIdentifier>
+			<caption>
+				<langstring>Behaketa zehatzak eta ikerketak egitea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.17</termIdentifier>
+			<caption>
+				<langstring>Arazo konplexuak (itxiak eta irekiak) ebaztea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.18</termIdentifier>
+			<caption>
+				<langstring>Zentzu artistikoa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.19</termIdentifier>
+			<caption>
+				<langstring>Erabakiak hartzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.20</termIdentifier>
+			<caption>
+				<langstring>Informazio- eta komunikazio-teknologiak modu seguruan eta kritikoan erabiltzea</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>3</termIdentifier>
+		<caption>
+			<langstring>Gizarte-gaitasunak eta lan-taldeari lotutakoak</langstring>
+		</caption>
+		<term>
+			<termIdentifier>3.1</termIdentifier>
+			<caption>
+				<langstring>Taldea bultzatzea, emaitzarik onenak lortzeko</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.2</termIdentifier>
+			<caption>
+				<langstring>Taldearen helburuen antolaketa ulertzea eta hari buruzko ekarpenak egitea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.3</termIdentifier>
+			<caption>
+				<langstring>Taldearen kultura ulertzea eta haren barruan lan egitea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.4</termIdentifier>
+			<caption>
+				<langstring>Talde-eztabaidak zuzentzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.5</termIdentifier>
+			<caption>
+				<langstring>Taldeko kideen arteko laguntza bultzatzea, emaitzak lortzeko tresna gisa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.6</termIdentifier>
+			<caption>
+				<langstring>Konbentzitzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.7</termIdentifier>
+			<caption>
+				<langstring>Taldeko kideen iritziak eta pentsamoldeak errespetatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.8</termIdentifier>
+			<caption>
+				<langstring>Taldean erabakiak hartzea eta planifikatzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.9</termIdentifier>
+			<caption>
+				<langstring>Besteekin lan egitea eta ikastea</langstring>
+			</caption>
+		</term>
+	</term>
+</vdex>
