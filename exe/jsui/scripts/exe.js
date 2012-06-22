@@ -42,6 +42,32 @@ var conf = {
     }
 };
 
+//Call authoring page when zindex is modified and consider problematic plugins with no zindex support
+Ext.override(Ext.WindowManager, {
+    lastCompId: null,
+    bringToFront: function(comp) {
+        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
+
+        me.callParent(arguments);
+        if (!this.lastCompId && authoringPanel[0].isVisible()) {
+            this.lastCompId = comp.id;
+	        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+	        if (authoring && authoring.hideObjectTags)
+	            authoring.hideObjectTags();
+        }
+    },
+    onComponentHide: function(comp) {
+        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
+
+        me.callParent(arguments);
+        if (this.lastCompId == comp.id) {
+            this.lastCompId = null;
+	        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+	        if (authoring && authoring.showObjectTags)
+	            authoring.showObjectTags();
+        }
+    }
+});
 Ext.override(Ext.form.field.Text, conf);
 Ext.override(Ext.form.field.TextArea, conf);
 Ext.override(Ext.form.field.Checkbox, conf);

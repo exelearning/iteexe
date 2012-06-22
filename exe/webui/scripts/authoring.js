@@ -25,7 +25,7 @@
 var objBrowse = navigator.appName;
 
 // An array of js strings to evaluate on document load
-var onLoadHandlers = [clearHidden, window.parent.enableButtons];
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -448,4 +448,33 @@ function confirmThenSubmitLink(message, action, object, changed)
         if (button == "yes")
 	        submitLink(action, object, changed);
     });
+}
+
+//List to track problematic browser plugins with no zindex support on authoring page
+authoringPluginObjects = [];
+
+//Activate zindex support on flash plugin objects on authoring page
+//http://helpx.adobe.com/flash/kb/flash-object-embed-tag-attributes.html#main_Browser_support_for_Window_Mode__wmode__values/fplayer10.1_hardware_acceleration_04.html
+function setWmodeToFlash() {
+    var flashobjects = parent.Ext.DomQuery.select('object[type=application/x-shockwave-flash]', document);
+    for (i in flashobjects) {
+        parent.Ext.DomHelper.append(flashobjects[i], { tag: "param",  name: "wmode", value: "opaque" });
+    }
+}
+
+//Load the list of problematic browser plugins tags
+//Java applets not suports zindex: http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4858528
+function loadAuthoringPluginObjects() {
+    authoringPluginObjects = authoringPluginObjects.concat(parent.Ext.DomQuery.select('object[type!=application/x-shockwave-flash]', document));
+    authoringPluginObjects = authoringPluginObjects.concat(parent.Ext.DomQuery.select('applet', document));
+}
+
+function hideObjectTags() {
+    for (var i=0; i < authoringPluginObjects.length; i++)
+        authoringPluginObjects[i].style.visibility = "hidden";
+}
+
+function showObjectTags() {
+    for (var i=0; i < authoringPluginObjects.length; i++)
+        authoringPluginObjects[i].style.visibility = "visible";
 }
