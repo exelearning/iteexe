@@ -440,6 +440,22 @@ function submitLink(action, object, changed, currentNode)
     }
 }
 
+//change applet type on appletblock
+function submitChange(action, selectId) 
+{
+    var theForm = getContentForm();
+
+    if (theForm) {
+        theForm.action.value    = action;
+        var select = document.getElementById(selectId) 
+        theForm.object.value    = select.value;
+        theForm.isChanged.value = 1;
+        theForm.clientHandleId.value = top.nevow_clientHandleId;
+        runFuncArray(beforeSubmitHandlers)
+
+        theForm.submit();
+    }
+}
 
 // Check the user really really wants to do this before submitting
 function confirmThenSubmitLink(message, action, object, changed)

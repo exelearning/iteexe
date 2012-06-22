@@ -33,7 +33,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'panel',
+                    xtype: 'component',
                     itemId: 'authoring_panel',
                     contentEl: 'authoringIFrame',
                     title: _('Authoring')

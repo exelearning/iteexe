@@ -105,14 +105,21 @@ class AuthoringPage(RenderableResource):
 
         #Update other authoring pages that observes the current package
         if "action" in request.args:
+            if request.args['clientHandleId'][0] == "":
+                raise(Exception("Not clientHandleId defined"))
             for client in self.parent.clientHandleFactory.clientHandles.values():
-                if request.args['clientHandleId'][0] != client.handleId \
-                    and client.handleId in self.parent.authoringPages:
-                    destNode = None
-                    if request.args["action"][0] == "move":
-                        destNode = request.args["move" + request.args["object"][0]][0]
-                    client.call('eXe.app.getController("MainTab").updateAuthoring', request.args["action"][0], \
-                        request.args["object"][0], request.args["isChanged"][0], request.args["currentNode"][0], destNode)
+                if request.args['clientHandleId'][0] != client.handleId:
+                    if client.handleId in self.parent.authoringPages:
+                        destNode = None
+                        if request.args["action"][0] == "move":
+                            destNode = request.args["move" + request.args["object"][0]][0]
+                        client.call('eXe.app.getController("MainTab").updateAuthoring', request.args["action"][0], \
+                            request.args["object"][0], request.args["isChanged"][0], request.args["currentNode"][0], destNode)
+                else:
+                    activeClient = client
+
+            if request.args["action"][0] == "done":
+                return "<body onload='location.replace(\"" + request.path + "?clientHandleId=" + activeClient.handleId + "\")'/>"
 
         self.blocks = []
         self.__addBlocks(topNode)

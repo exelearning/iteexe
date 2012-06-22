@@ -586,18 +586,6 @@ function showAnswer(id,isShow) {
     }
 }
 
-//change forum or discussion topic or lms for discussion idevice.
-function submitChange(action, selectId) 
-{
-    var form = document.getElementById("contentForm")      
-    form.action.value = action
-    var select = document.getElementById(selectId) 
-    form.object.value = select.value;
-    form.isChanged.value = 1;
-    form.submit();
-}
-
-
 // show or hide the feedback for cloze idevice
 function toggleFeedback(id) {
     var ele = document.getElementById('fb'+id);
