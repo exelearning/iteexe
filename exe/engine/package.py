@@ -622,8 +622,11 @@ class Package(Persistable):
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
             if not validxml and (xml or fromxml or "content.xml" in zippedFile.namelist()):
-                for res in newPackage.resources.values():
-                    res[0].testForAndDeleteZombieResources()
+                for key, res in newPackage.resources.items():
+                    if len(res) < 1:
+                        newPackage.resources.pop(key)
+                    else:
+                        res[0].testForAndDeleteZombieResources()
 
             if newLoad: 
                 # provide newPackage to doUpgrade's versionUpgrade() to
