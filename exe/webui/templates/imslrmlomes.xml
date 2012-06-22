@@ -213,7 +213,7 @@
             </lomes:taxon>
         </lomes:taxonPath>
         <lomes:description>
-            <lomes:string language="es">%(descriptionUnbounded)s</lomes:string>
+            <lomes:string language="es">%(description)s</lomes:string>
         </lomes:description>
         <lomes:keyword>
             <lomes:string language="es">%(keyword)s</lomes:string>
