@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen SCHSchema="http://lom-fr.fr/sch/lomfrv1.0/lomfr.sch"?>
-<lom:lom xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+<lom:lom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:lom="http://ltsc.ieee.org/xsd/LOM" 
+  xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM>
     <lom:general>
         <lom:identifier>
             <lom:catalog>%(catalog)s</lom:catalog>
