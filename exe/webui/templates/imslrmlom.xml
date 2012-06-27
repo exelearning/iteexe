@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lom:lom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns:lom="http://ltsc.ieee.org/xsd/LOM" 
-  xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM>
+  xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM"
     <lom:general>
         <lom:identifier>
             <lom:catalog>%(catalog)s</lom:catalog>
@@ -130,12 +130,6 @@
         <lom:otherPlatformRequirements>
             <lom:string>Produced with eXe Learning.</lom:string>
         </lom:otherPlatformRequirements>
-        <lom:duration>
-            <lom:duration>PT5H</lom:duration>
-            <lom:description>
-                <lom:string>%(description)s</lom:string>
-            </lom:description>
-        </lom:duration> 
     </lom:technical>
     <lom:educational>
         <lom:interactivityType>
@@ -226,7 +220,7 @@
             </lom:value>
         </lom:copyrightAndOtherRestrictions>             
         <lom:description>
-            <lom:string>Legal Terms and Conditions of the resource: license etc.</lom:string>
+            <lom:string xml:lang="en">license etc.</lom:string>
         </lom:description>
     </lom:rights>
     <lom:relation>
@@ -235,13 +229,13 @@
                 <lom:string>LOMv1.0</lom:string>
             </lom:source>
             <lom:value>
-                <lom:string xml:lang="en">%(kind)s</lom:string>
+                <lom:string>%(kind)s</lom:string>
             </lom:value>
         </lom:kind>
         <lom:resource>
             <lom:identifier>%(identifier)s</lom:identifier>
             <lom:description>
-                <lom:string>%(description)s</lom:string>
+                <lom:string xml:lang="en">%(description)s</lom:string>
             </lom:description>
         </lom:resource>
     </lom:relation>
@@ -261,7 +255,7 @@
             </lom:description>
         </lom:date>
         <lom:description>
-            <lom:string>%(description)s</lom:string>
+            <lom:string xml:lang="en">%(description)s</lom:string>
         </lom:description>
     </lom:annotation>         
     <lom:classification>

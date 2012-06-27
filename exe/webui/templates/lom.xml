@@ -31,8 +31,6 @@
 <lom:lom><lom:technical><lom:requirement><lom:orComposite><lom:name><lom:value><lom:string>%(name)s</lom:string></lom:value><lom:name></lom:orComposite></lom:requirement></lom:technical></lom:lom>
 <lom:lom><lom:technical><lom:installationRemarks><lom:string>%(installationremarks)s</lom:string></lom:installationRemarks></lom:technical></lom:lom>
 <lom:lom><lom:technical><lom:otherPlatformRequirements><lom:string>%(otherplatformrequirements)s</lom:string></lom:otherPlatformRequirements></lom:technical></lom:lom>
-<lom:lom><lom:technical><lom:duration><lom:duration>%(duration)s</lom:duration></lom:duration></lom:technical></lom:lom>
-<lom:lom><lom:technical><lom:duration><lom:description><lom:string>%(description)s</lom:string></lom:description></lom:duration></lom:technical></lom:lom>
 <lom:lom><lom:educational><lom:interactivityType><lom:value><lom:string>%(interactivitytype)s</lom:string></lom:value></lom:interactivityType></lom:educational></lom:lom>
 <lom:lom><lom:educational><lom:learningResourceType><lom:value><lom:string>%(learningresourcetype)s</lom:string></lom:value></lom:learningResourceType></lom:educational></lom:lom>
 <lom:lom><lom:educational><lom:interactivityLevel><lom:value><lom:string>%(interactivitylevel)s</lom:string></lom:value></lom:interactivityLevel></lom:educational></lom:lom>

@@ -51,7 +51,7 @@
     </lomes:lifeCycle>         
     <lomes:metaMetadata uniqueElementName="metaMetadata">
         <lomes:identifier>
-            <lomes:catalog uniqueElementName="identifier">Plataforma Agrega</lomes:catalog>
+            <lomes:catalog uniqueElementName="identifier">Nombre del catálogo</lomes:catalog>
             <lomes:entry uniqueElementName="entry">%(identifier)s</lomes:entry>
         </lomes:identifier>              
         <lomes:contribute>
