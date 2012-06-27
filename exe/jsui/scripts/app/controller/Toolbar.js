@@ -490,7 +490,7 @@ Ext.define('eXe.controller.Toolbar', {
         this.exportPackage(e.exportType, "")
     },
     
-	exportPackage: function(exportType, exportDir, printCallback) {
+	exportPackage: function(exportType, exportDir) {
 	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' ) {
 	        if (exportDir == '') {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
@@ -507,8 +507,7 @@ Ext.define('eXe.controller.Toolbar', {
 	        }
 	        else {
 	            // use the supplied exportDir, rather than asking.
-	            // NOTE: currently only the printing mechanism will provide an exportDir, hence the printCallback function.
-	            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, printCallback)
+	            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir)
 	        }
 	    } else if(exportType == "textFile"){
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
@@ -574,33 +573,7 @@ Ext.define('eXe.controller.Toolbar', {
 	   if (printDir_warnings.length > 0) {
 	      Ext.Msg.alert("", printDir_warnings)
 	   }
-	   this.exportPackage('printSinglePage', tempPrintDir, "eXe.app.getController('Toolbar').filePrint3_openPrintWin");
-	},
-	
-	filePrint3_openPrintWin: function(tempPrintDir, tempExportedDir, webPrintDir) {
-	    // okay, at this point, exportPackage() has already been called and the 
-	    // exported file created, complete with its printing Javascript
-	    // into the tempPrintDir was created (and everything below it, and 
-	    // including it, will need to be removed), the actual files for printing 
-	    // were exported into tempExportedDir/index.html, where tempExportedDir 
-	    // is typically a subdirectory of tempDir, named as the package name.
-	
-	    // Still needs to be (a) opened, printed, and closed:
-	    var features = "width=680,height=440,status=1,resizable=1,left=260,top=200", print_url, printWin;
-	    print_url = webPrintDir+"/index.html"
-	
-	    printWin = window.open(print_url, "", features);
-	
-	
-	    // and that's all she wrote!
-	
-	    // note that due to difficulty with timing issues, the files are not 
-	    // (yet!) immediately removed upon completion of the print job 
-	    // the hope is for this to be resolved someday, somehow, 
-	    // but for now the nevow_clientToServerEvent('makeTempPrintDir',...) 
-	    // call in filePrint() also clears out any previous print jobs,
-	    // and this is called upon Quit of eXe as well, leaving *at most* 
-	    // one temporary print job sitting around.
+	   this.exportPackage('printSinglePage', tempPrintDir);
 	},
 	
     recentRender: function() {

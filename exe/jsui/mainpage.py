@@ -643,7 +643,7 @@ class MainPage(RenderableLivePage):
         log.info('Cancel import')
         Resources.cancelImport()
         
-    def handleExport(self, client, exportType, filename, print_callback=''):
+    def handleExport(self, client, exportType, filename):
         """
         Called by js. 
         Exports the current package to one of the above formats
