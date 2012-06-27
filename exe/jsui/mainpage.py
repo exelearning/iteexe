@@ -91,6 +91,7 @@ class MainPage(RenderableLivePage):
         self.authoringPages = {}
 
     def child_authoring(self, ctx):
+        """Returns the authoring page that corresponds to the url http://127.0.0.1:port/package_name/authoring"""
         request = inevow.IRequest(ctx)
         if 'clientHandleId' in request.args:
             clientid = request.args['clientHandleId'][0]
@@ -669,14 +670,9 @@ class MainPage(RenderableLivePage):
                 printit = 1
             exported_dir = self.exportSinglePage(client, filename, webDir, \
                                                  stylesDir, printit)
-            # the above will return None if the desired exported directory
-            # already exists (printing always goes to a new temp dir, though):
             if printit == 1 and not exported_dir is None:
                 web_printdir = self.get_printdir_relative2web(exported_dir)
-                # now that this has ben exported, go ahead and trigger 
-                # the requested printing callback:
-                client.call(print_callback, filename, exported_dir, \
-                            web_printdir)
+                G.application.config.browser.open(web_printdir)
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
@@ -751,9 +747,7 @@ class MainPage(RenderableLivePage):
         if hasattr(os, 'startfile'):
             os.startfile(url)
         else:
-            import webbrowser
-            browser = webbrowser.get(G.application.config.browser)
-            browser.open(url, new=True)
+            G.application.config.browser.open(url, new=True)
 
     def handleMergeXliffPackage(self, client, filename, from_source):
         """
@@ -1050,10 +1044,8 @@ class MainPage(RenderableLivePage):
             except UnicodeEncodeError:
                 os.startfile(filename.encode(Path.fileSystemEncoding))
         else:
-            import webbrowser
-            browser = webbrowser.get(G.application.config.browser)
             filename /= 'index.html'
-            browser.open('file://'+filename)
+            G.application.config.browser.open('file://'+filename)
 
     def _loadPackage(self, client, filename, newLoad=True,
                      destinationPackage=None):

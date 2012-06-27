@@ -37,12 +37,12 @@ def launchBrowser(config, packageName):
     Launch the configured webbrowser for this platform
     """
     if config.browser == None and sys.platform[:6] == "darwin":
-        browser = webbrowser.get("safari")
+        config.browser = webbrowser.get("safari")
     else:
-        browser = webbrowser.get(config.browser)
-    if hasattr(browser, "basename"):
-        log.info(u"Defined Browser: " + browser.basename)
+        config.browser = webbrowser.get(config.browser)
+    if hasattr(config.browser, "basename"):
+        log.info(u"Defined Browser: " + config.browser.basename)
     url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url "+url)
 
-    browser.open(url)
+    config.browser.open(url)
