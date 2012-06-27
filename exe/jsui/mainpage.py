@@ -28,7 +28,6 @@ import logging
 import traceback
 import shutil
 from twisted.internet            import threads, reactor
-from twisted.web                 import static
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
 from nevow                       import loaders, inevow
@@ -39,6 +38,7 @@ from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
+from exe.webui.renderable        import File
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
 from exe.export.singlepageexport import SinglePageExport
@@ -74,7 +74,7 @@ class MainPage(RenderableLivePage):
         self.name = package.name
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
-        self.putChild("resources", static.File(package.resourceDir))
+        self.putChild("resources", File(package.resourceDir))
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
         self.docFactory  = loaders.htmlfile(mainjs)

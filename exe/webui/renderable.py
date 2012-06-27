@@ -32,7 +32,7 @@ template to do your rendering, even if you're part of a bigger block.
 
 from twisted.web.resource import Resource
 from nevow import loaders
-import re
+from twisted.web import static
 
 import logging
 log = logging.getLogger(__name__)
@@ -45,11 +45,6 @@ log = logging.getLogger(__name__)
 Unset = object()
 # This is a constant that means, we don't have an attribute of this name
 DontHave = object()
-# Global Variables
-# These re's are used to get the values out of translation strings
-labelRe = re.compile(r'(label\s*=\s*")([^"]*)(")', re.I)
-accesskeyRe = re.compile(r'(accesskey\s*=\s*")([^"]*)(")', re.I)
-
 
 class Renderable(object):
     """
@@ -171,103 +166,10 @@ class Renderable(object):
                 rc.process(request)
 
 
-class _RenderablePageMetaClass(type):
-    """
-    This is the metaclass which creates all descendants of renderable.
-    FWe use this to make sure that all xul elements that pass though a render
-    function and have a label attribute get translated
-    """
-
-    def __new__(meta, className, ancestors, dct):
-        """Used to wrap the renderable methods in the translating renderable
-        methods"""
-        def wrapFunc(oldFunc):
-            """
-            Takes a render_x func and returns a wrapped version that will also
-            translate label tags in the appropriate xul element.
-            """
-            def newFunc(self, ctx, data=None):
-                """
-                Wraps any render function and if the associated XUL attribute
-                has a label tag, translates the label and then calls the
-                original render func.
-                """
-                _RenderablePageMetaClass.translateCtx(ctx)
-                return oldFunc(self, ctx, data)
-            return newFunc
-        for name, func in dct.items():
-            if name.startswith('render_') and callable(func) and \
-               name not in ('render_GET', 'render_POST'):
-                dct[name] = wrapFunc(func)
-        return type.__new__(meta, className, ancestors, dct)
-
-    @staticmethod
-    def translateCtx(ctx):
-        """
-        Translates a ctx according to the rules in exe/tools/mki18n.py
-        # IF YOU CHANGE THE BELOW RULES, CHANGE THEIR COPY IN:
-        # exe/tools/mki18n.py
-        # Here we have some rules:
-        # 1. If a tag has a 'label' and an 'accesskey' attribute the 
-        # whole string is taken for translation like this:
-        #    'label="english" accesskey="e"'
-        # 2. If a tag has only a label attribute only that is taken
-        # for translation: 'english'
-        # 3. If a tag is a label tag, only its value is taken for
-        # translation: <label value="hello"> becomes 'hello'
-        # 4. If a tag is a key tag, translate just the key or keycode parts.
-        # We can do this because the whole tag is stuck in the comment
-        # part so the translator can use that.
-        # 5. For 'window' tags, the 'title' attribute is translated
-        """
-        attributes = ctx.tag.attributes
-        if 'label' in attributes:
-            if 'accesskey' in attributes:
-                toTranslate = 'label="%s" accesskey="%s"' % (
-                    attributes.get('label'),
-                    attributes.get('accesskey'))
-                translated = _(toTranslate)
-                labelMatch = labelRe.search(translated)
-                if labelMatch:
-                    label = labelMatch.group(2)
-                else:
-                    label = ''
-                accesskeyMatch = accesskeyRe.search(translated)
-                if accesskeyMatch:
-                    accesskey = accesskeyMatch.group(2)
-                else:
-                    accesskey = ''
-                ctx.tag.attributes['label'] = label
-                ctx.tag.attributes['accesskey'] = accesskey
-            else:
-                ctx.tag.attributes['label'] = _(attributes['label'])
-        elif ctx.tag.tagName == 'label':
-            value = attributes.get('value')
-            if value is not None:
-                ctx.tag.attributes['value'] = _(value)
-            tooltiptext = attributes.get('tooltiptext')
-            if tooltiptext is not None:
-                ctx.tag.attributes['tooltiptext'] = _(tooltiptext)
-        elif ctx.tag.tagName == 'key':
-            if 'key' in attributes:
-                ctx.tag.attributes['key'] = _(attributes['key'])
-            elif 'keycode' in attributes:
-                ctx.tag.attributes['keycode'] = _(attributes['keycode'])
-        elif ctx.tag.tagName == 'window':
-            if 'title' in attributes:
-                ctx.tag.attributes['title'] = _(attributes['title'])
-        elif 'tooltiptext' in attributes:
-            ctx.tag.attributes['tooltiptext'] = _(attributes['tooltiptext'])
-        return ctx.tag
-
-
 class _RenderablePage(Renderable):
     """
     For internal use only
     """
-    # Class Attributes
-    __metaclass__ = _RenderablePageMetaClass
-
     def __init__(self, parent, package=None, config=None):
         """
         Same as Renderable.__init__ but uses putChild to put ourselves
@@ -276,15 +178,6 @@ class _RenderablePage(Renderable):
         Renderable.__init__(self, parent, package, config)
         if parent:
             self.parent.putChild(self.name, self)
-
-    def render_translate(self, ctx, data):
-        """
-        Called for XUL elements that have no other rendering functions.
-        Translates the label tag of the element
-        This is automatically wrapped by translateCtx so we don't need to do
-        anything.
-        """
-        return ctx
 
 
 class RenderableResource(_RenderablePage, Resource):
@@ -298,3 +191,18 @@ class RenderableResource(_RenderablePage, Resource):
         """
         Resource.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+
+    def render(self, request):
+        "Disable cache of renderable resources"
+        request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
+        request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
+        request.setHeader("Pragma", "no-cache")
+        return Resource.render(self, request)
+
+class File(static.File):
+    def render(self, request):
+        "Disable cache of static files"
+        request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
+        request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
+        request.setHeader("Pragma", "no-cache")
+        return static.File.render(self, request)

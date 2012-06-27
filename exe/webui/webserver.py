@@ -33,7 +33,6 @@ sys.stdout, oldStdOut = StringIO(), sys.stdout
 try:
     from twisted.internet              import reactor
     from twisted.internet.error        import CannotListenError
-    from twisted.web                   import static
     from nevow                         import compy
 finally:
     print sys.stderr
@@ -43,6 +42,7 @@ finally:
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
+from exe.webui.renderable          import File
 from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
@@ -138,20 +138,20 @@ class WebServer:
         
         # web resources
         webDir = self.config.webDir
-        self.root.putChild("images",      static.File(webDir+"/images"))
-        self.root.putChild("css",         static.File(webDir+"/css"))   
-        self.root.putChild("scripts",     static.File(webDir+"/scripts"))
-        self.root.putChild("style",       static.File(webDir+"/style"))
-        self.root.putChild("docs",        static.File(webDir+"/docs"))
+        self.root.putChild("images",      File(webDir+"/images"))
+        self.root.putChild("css",         File(webDir+"/css"))
+        self.root.putChild("scripts",     File(webDir+"/scripts"))
+        self.root.putChild("style",       File(webDir+"/style"))
+        self.root.putChild("docs",        File(webDir+"/docs"))
         self.root.putChild("temp_print_dirs",
-                              static.File(self.tempWebDir+"/temp_print_dirs"))
+                              File(self.tempWebDir+"/temp_print_dirs"))
         self.root.putChild("previews",    
-                              static.File(self.tempWebDir+"/previews"))
-        self.root.putChild("templates",   static.File(webDir+"/templates"))
+                              File(self.tempWebDir+"/previews"))
+        self.root.putChild("templates",   File(webDir+"/templates"))
 
         # new ExtJS 4.0 Interface
         jsDir = self.config.jsDir
-        self.root.putChild("jsui", static.File(jsDir + "/scripts"))
+        self.root.putChild("jsui", File(jsDir + "/scripts"))
         
         # A port for this server was looked for earlier by find_port.  
         # Ensure that it is valid (>= 0):
