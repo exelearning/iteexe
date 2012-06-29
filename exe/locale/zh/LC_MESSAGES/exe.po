@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-12 12:45+0200\n"
+"POT-Creation-Date: 2012-06-29 08:10+0200\n"
 "PO-Revision-Date: 2007-08-08 10:27+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: exe/engine/appletidevice.py:60
+#: exe/engine/appletidevice.py:66
 msgid "Java Applet"
 msgstr "Java Applet"
 
-#: exe/engine/appletidevice.py:61 exe/engine/attachmentidevice.py:44
+#: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
 #: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:47
 #: exe/engine/clozeidevice.py:47 exe/engine/clozelangfpdidevice.py:47
 #: exe/engine/ejercicioresueltofpdidevice.py:198
@@ -44,7 +44,7 @@ msgstr "Java Applet"
 msgid "University of Auckland"
 msgstr "奥克兰大学"
 
-#: exe/engine/appletidevice.py:69
+#: exe/engine/appletidevice.py:75
 msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload "
@@ -54,7 +54,7 @@ msgstr ""
 "加载除.txt文档外所有的applet文档. 使用\"添加文档\"和\"上载\"按钮,一次加载一个文档. 已上载的文档将显示在Applet "
 "code栏域下面."
 
-#: exe/engine/appletidevice.py:72
+#: exe/engine/appletidevice.py:78
 msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the "
@@ -62,7 +62,7 @@ msgid ""
 "code field."
 msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet code栏域."
 
-#: exe/engine/appletidevice.py:75
+#: exe/engine/appletidevice.py:81
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -72,42 +72,46 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr " "
 
-#: exe/engine/appletidevice.py:145
+#: exe/engine/appletidevice.py:186
 #, python-format
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/appletidevice.py:147 exe/engine/attachmentidevice.py:106
+#: exe/engine/appletidevice.py:188 exe/engine/attachmentidevice.py:106
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s has no package"
 
-#: exe/engine/appletidevice.py:312
+#: exe/engine/appletidevice.py:417
+msgid "Sorry, this URL is unreachable"
+msgstr ""
+
+#: exe/engine/appletidevice.py:502
 msgid ""
 "Clic on AddFiles button for select the .ggb file and clic on Upload "
 "button after."
 msgstr ""
 
-#: exe/engine/appletidevice.py:322
+#: exe/engine/appletidevice.py:512
 msgid ""
 "Clic on AddFiles button for select the .jclic.zip file and clic on Upload"
 " button after.<p>The activity will be visible when the HTML file will be "
 "generated from eXe."
 msgstr ""
 
-#: exe/engine/appletidevice.py:332
+#: exe/engine/appletidevice.py:522
 msgid ""
 "Clic on AddFiles button for select the .sb or .scratch file and clic on "
 "Upload button after."
 msgstr ""
 
-#: exe/engine/appletidevice.py:343
+#: exe/engine/appletidevice.py:533
 msgid ""
 "Please write: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; clic on Upload button after."
 msgstr ""
 
-#: exe/engine/appletidevice.py:351
+#: exe/engine/appletidevice.py:541
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -375,7 +379,7 @@ msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>�
 #: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
-#: exe/engine/field.py:3359 exe/engine/field.py:3407
+#: exe/engine/field.py:3376 exe/engine/field.py:3424
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:370
 #: exe/engine/idevicestore.py:478 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
@@ -579,8 +583,8 @@ msgid ""
 "for the other options."
 msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3430
-#: exe/engine/field.py:3495 exe/engine/multichoiceidevice.py:132
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3447
+#: exe/engine/field.py:3512 exe/engine/multichoiceidevice.py:132
 #: exe/engine/multiselectidevice.py:80
 #: exe/engine/seleccionmultiplefpdidevice.py:81
 msgid "Question"
@@ -613,18 +617,18 @@ msgid ""
 "and select the size of the area to display it in."
 msgstr "输入所要显示网页的网址并选择显示的大小尺寸."
 
-#: exe/engine/field.py:2379
+#: exe/engine/field.py:2396
 msgid "Click Here"
 msgstr "点击"
 
-#: exe/engine/field.py:2574 exe/engine/field.py:2621
+#: exe/engine/field.py:2591 exe/engine/field.py:2638
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr " "
 
-#: exe/engine/field.py:2766 exe/engine/field.py:3000
+#: exe/engine/field.py:2783 exe/engine/field.py:3017
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -641,68 +645,68 @@ msgid ""
 "will also be accepted.</p>"
 msgstr " "
 
-#: exe/engine/field.py:2787 exe/engine/field.py:3021
+#: exe/engine/field.py:2804 exe/engine/field.py:3038
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr " "
 
-#: exe/engine/field.py:2792 exe/engine/field.py:3026
+#: exe/engine/field.py:2809 exe/engine/field.py:3043
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr " "
 
-#: exe/engine/field.py:2830 exe/engine/field.py:3068
+#: exe/engine/field.py:2847 exe/engine/field.py:3085
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr "当学生填空时, 允许自动完成."
 
-#: exe/engine/field.py:3031
+#: exe/engine/field.py:3048
 msgid ""
 "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n "
 "obtenida.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3110 exe/engine/field.py:3154
+#: exe/engine/field.py:3127 exe/engine/field.py:3171
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "只能选用.swf (Flash Object)."
 
-#: exe/engine/field.py:3174 exe/engine/field.py:3238
+#: exe/engine/field.py:3191 exe/engine/field.py:3255
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "只能选用.flv (Flash Video Files)."
 
-#: exe/engine/field.py:3250
+#: exe/engine/field.py:3267
 msgid "Type a discussion topic here."
 msgstr "输入讨论主题:"
 
-#: exe/engine/field.py:3279
+#: exe/engine/field.py:3296
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr "  "
 
-#: exe/engine/field.py:3287
+#: exe/engine/field.py:3304
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr "点击预览按钮显示数学符号."
 
-#: exe/engine/field.py:3355 exe/engine/field.py:3404
+#: exe/engine/field.py:3372 exe/engine/field.py:3421
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:1881 exe/webui/element.py:2233
 #: exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "选项"
 
-#: exe/engine/field.py:3433 exe/engine/field.py:3499
+#: exe/engine/field.py:3450 exe/engine/field.py:3516
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:53
 #: exe/engine/verdaderofalsofpdidevice.py:128 exe/webui/element.py:2518
@@ -710,12 +714,12 @@ msgstr "选项"
 msgid "Hint"
 msgstr "提示"
 
-#: exe/engine/field.py:3521 exe/engine/field.py:3558 exe/webui/element.py:2061
+#: exe/engine/field.py:3538 exe/engine/field.py:3575 exe/webui/element.py:2061
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "选项"
 
-#: exe/engine/field.py:3581
+#: exe/engine/field.py:3598
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -723,7 +727,7 @@ msgid ""
 "can tend to confuse learners."
 msgstr "输入问题. 问题的陈述要清晰而不含糊."
 
-#: exe/engine/field.py:3584 exe/engine/field.py:3665
+#: exe/engine/field.py:3601 exe/engine/field.py:3682
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:46
@@ -731,7 +735,7 @@ msgstr "输入问题. 问题的陈述要清晰而不含糊."
 msgid "Question:"
 msgstr "问题:"
 
-#: exe/engine/field.py:3589
+#: exe/engine/field.py:3606
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -739,19 +743,19 @@ msgid ""
 "clicking the red X next to the option."
 msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
 
-#: exe/engine/field.py:3593
+#: exe/engine/field.py:3610
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr "选择所有正确选项."
 
-#: exe/engine/field.py:3596
+#: exe/engine/field.py:3613
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr "输入给学生的评语。"
 
-#: exe/engine/field.py:3598 exe/engine/field.py:3668
+#: exe/engine/field.py:3615 exe/engine/field.py:3685
 #: exe/engine/reflectionfpdidevice.py:67 exe/engine/reflectionfpdidevice.py:202
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
@@ -856,15 +860,15 @@ msgstr " "
 msgid "This is a free text field general learning content can be entered."
 msgstr "这是一个自由文字栏域, 可输入一般的课程内容."
 
-#: exe/engine/galleryidevice.py:137
+#: exe/engine/galleryidevice.py:138
 msgid "No Thumbnail Available. Could not load original image."
 msgstr "No Thumbnail Available. Could not load original image."
 
-#: exe/engine/galleryidevice.py:145
+#: exe/engine/galleryidevice.py:146
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "No Thumbnail Available. Could not shrink image."
 
-#: exe/engine/galleryidevice.py:171
+#: exe/engine/galleryidevice.py:172
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "No Thumbnail Available. Could not shrink image."
 
@@ -888,11 +892,11 @@ msgstr "当有一组相关的图片要展示时或对一个特定的练习,要�
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "用此可展示许多图片."
 
-#: exe/engine/galleryidevice.py:423
+#: exe/engine/galleryidevice.py:424
 msgid "Enter a title for the gallery"
 msgstr "输入标题为图象画廊."
 
-#: exe/engine/galleryidevice.py:424
+#: exe/engine/galleryidevice.py:425
 msgid ""
 "Click on the Add images button to select an image file. The image will "
 "appear below where you will be able to label it. It's always good "
@@ -900,12 +904,12 @@ msgid ""
 msgstr "点击\"添加图片\"按钮来选择图片文档.所选图片将显示在下面,你可为其加上标签. 最好在标签上加上文档大小."
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:341 exe/export/websitepage.py:234
+#: exe/export/scormexport.py:382 exe/export/websitepage.py:235
 msgid "Previous"
 msgstr "前一页"
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:342 exe/export/websitepage.py:240
+#: exe/export/scormexport.py:383 exe/export/websitepage.py:241
 msgid "Next"
 msgstr "下一页"
 
@@ -1290,27 +1294,27 @@ msgstr ""
 msgid "Texto Orientaciones tutor&iacute;a:"
 msgstr ""
 
-#: exe/engine/package.py:290
+#: exe/engine/package.py:390
 msgid "Topic"
 msgstr "课题"
 
-#: exe/engine/package.py:290
+#: exe/engine/package.py:390
 msgid "Section"
 msgstr "节"
 
-#: exe/engine/package.py:290
+#: exe/engine/package.py:390
 msgid "Unit"
 msgstr "单元"
 
-#: exe/engine/package.py:311
+#: exe/engine/package.py:411
 msgid "Home"
 msgstr "首页"
 
-#: exe/engine/package.py:417
+#: exe/engine/package.py:518
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:448 exe/engine/package.py:455
+#: exe/engine/package.py:549 exe/engine/package.py:556
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1319,7 +1323,7 @@ msgstr ""
 "保存失败!\n"
 "最后一次成功的存档是%s."
 
-#: exe/engine/package.py:744 exe/jsui/scripts/app/controller/Toolbar.js:303
+#: exe/engine/package.py:848 exe/jsui/scripts/app/controller/Toolbar.js:303
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"
@@ -1580,26 +1584,26 @@ msgstr "<p>可用这个 iDevice将维基百科全书的内容下载至你的课�
 msgid "Article"
 msgstr "文章"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:333
+#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:358
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr "选择适当的维基语言版本来搜寻, 并输入关键词."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:335
+#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:360
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr " 输入关键词."
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:132
+#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:131
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
 
-#: exe/engine/wikipediaidevice.py:287
+#: exe/engine/wikipediaidevice.py:312
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -1667,9 +1671,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:62 exe/jsui/mainpage.py:202
-#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:935 exe/jsui/mainpage.py:1010
-#: exe/jsui/mainpage.py:1031
+#: exe/export/cmdlineexporter.py:62 exe/jsui/mainpage.py:203
+#: exe/jsui/mainpage.py:800 exe/jsui/mainpage.py:929 exe/jsui/mainpage.py:1004
+#: exe/jsui/mainpage.py:1025
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -1684,11 +1688,11 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/imsexport.py:210 exe/export/scormexport.py:295
+#: exe/export/imsexport.py:210 exe/export/scormexport.py:336
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/export/imsexport.py:373 exe/export/scormexport.py:510
+#: exe/export/imsexport.py:373 exe/export/scormexport.py:581
 #: exe/export/websiteexport.py:88
 #, python-format
 msgid ""
@@ -1768,19 +1772,19 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:220 exe/jsui/mainpage.py:658 exe/jsui/mainpage.py:798
+#: exe/jsui/mainpage.py:221 exe/jsui/mainpage.py:659 exe/jsui/mainpage.py:792
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
-#: exe/jsui/mainpage.py:220 exe/jsui/mainpage.py:660 exe/jsui/mainpage.py:798
+#: exe/jsui/mainpage.py:221 exe/jsui/mainpage.py:661 exe/jsui/mainpage.py:792
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
 
-#: exe/jsui/mainpage.py:229
+#: exe/jsui/mainpage.py:230
 msgid "SAVE FAILED!"
 msgstr "保存失败!"
 
-#: exe/jsui/mainpage.py:233 exe/jsui/mainpage.py:522 exe/jsui/mainpage.py:868
+#: exe/jsui/mainpage.py:234 exe/jsui/mainpage.py:523 exe/jsui/mainpage.py:862
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1789,22 +1793,22 @@ msgstr ""
 "保存失败!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:237 exe/jsui/mainpage.py:242 exe/jsui/mainpage.py:245
+#: exe/jsui/mainpage.py:238 exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:246
 #, python-format
 msgid "Package saved to: %s"
 msgstr "课件存至: %s"
 
-#: exe/jsui/mainpage.py:444 exe/jsui/mainpage.py:550
+#: exe/jsui/mainpage.py:445 exe/jsui/mainpage.py:551
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "予览文件夹%s是个文档, 无法取代它"
 
-#: exe/jsui/mainpage.py:464
+#: exe/jsui/mainpage.py:465
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "无法找到图象文件 %s, 不能予览"
 
-#: exe/jsui/mainpage.py:592
+#: exe/jsui/mainpage.py:593
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -1813,29 +1817,29 @@ msgstr ""
 "MimeTeX compile failed!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:630
+#: exe/jsui/mainpage.py:631
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:633
+#: exe/jsui/mainpage.py:634
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:685 exe/jsui/mainpage.py:692 exe/jsui/mainpage.py:695
-#: exe/jsui/mainpage.py:698 exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:919
+#: exe/jsui/mainpage.py:681 exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:691
+#: exe/jsui/mainpage.py:694 exe/jsui/mainpage.py:697 exe/jsui/mainpage.py:913
 msgid "EXPORT FAILED!"
 msgstr "导出失败!"
 
-#: exe/jsui/mainpage.py:767
+#: exe/jsui/mainpage.py:761
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:770
+#: exe/jsui/mainpage.py:764
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:824
+#: exe/jsui/mainpage.py:801 exe/jsui/mainpage.py:818
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -1844,27 +1848,27 @@ msgstr ""
 "引出失败!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:826
+#: exe/jsui/mainpage.py:820
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "课件存至: %s"
 
-#: exe/jsui/mainpage.py:854 exe/jsui/mainpage.py:896 exe/jsui/mainpage.py:963
+#: exe/jsui/mainpage.py:848 exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:957
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "文件名%s是个文档, 无法覆盖它"
 
-#: exe/jsui/mainpage.py:860 exe/jsui/mainpage.py:902 exe/jsui/mainpage.py:969
+#: exe/jsui/mainpage.py:854 exe/jsui/mainpage.py:896 exe/jsui/mainpage.py:963
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr "文件夹%s 已存在,请选择另一个或删除已有的,然后再试."
 
-#: exe/jsui/mainpage.py:909 exe/jsui/mainpage.py:923 exe/jsui/mainpage.py:936
-#: exe/jsui/mainpage.py:942 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:994
-#: exe/jsui/mainpage.py:1011 exe/jsui/mainpage.py:1017
-#: exe/jsui/mainpage.py:1032 exe/jsui/mainpage.py:1038
+#: exe/jsui/mainpage.py:903 exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:930
+#: exe/jsui/mainpage.py:936 exe/jsui/mainpage.py:970 exe/jsui/mainpage.py:988
+#: exe/jsui/mainpage.py:1005 exe/jsui/mainpage.py:1011
+#: exe/jsui/mainpage.py:1026 exe/jsui/mainpage.py:1032
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -1873,22 +1877,22 @@ msgstr ""
 "导出失败!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:978
-#: exe/jsui/mainpage.py:996 exe/jsui/mainpage.py:1019 exe/jsui/mainpage.py:1040
+#: exe/jsui/mainpage.py:919 exe/jsui/mainpage.py:938 exe/jsui/mainpage.py:972
+#: exe/jsui/mainpage.py:990 exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1034
 #, python-format
 msgid "Exported to %s"
 msgstr "导出至 %s"
 
-#: exe/jsui/mainpage.py:1075
+#: exe/jsui/mainpage.py:1067
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "文档%s不存在或不可读."
 
-#: exe/jsui/mainpage.py:1079
+#: exe/jsui/mainpage.py:1071
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr " "
 
-#: exe/jsui/mainpage.py:1082
+#: exe/jsui/mainpage.py:1074
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1897,7 +1901,7 @@ msgstr ""
 "对不起, 文件格式错误:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1084
+#: exe/jsui/mainpage.py:1076
 msgid "Sorry, wrong file format"
 msgstr "对不起, 文件格式错误"
 
@@ -1939,10 +1943,10 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:392
 #: exe/jsui/scripts/app/controller/Toolbar.js:457
 #: exe/jsui/scripts/app/controller/Toolbar.js:484
-#: exe/jsui/scripts/app/controller/Toolbar.js:526
-#: exe/jsui/scripts/app/controller/Toolbar.js:555
-#: exe/jsui/scripts/app/controller/Toolbar.js:695
-#: exe/jsui/scripts/app/controller/Toolbar.js:769
+#: exe/jsui/scripts/app/controller/Toolbar.js:525
+#: exe/jsui/scripts/app/controller/Toolbar.js:554
+#: exe/jsui/scripts/app/controller/Toolbar.js:668
+#: exe/jsui/scripts/app/controller/Toolbar.js:742
 msgid "All Files"
 msgstr ""
 
@@ -1996,8 +2000,8 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:335
 #: exe/jsui/scripts/app/controller/Toolbar.js:356
-#: exe/jsui/scripts/app/controller/Toolbar.js:694
-#: exe/jsui/scripts/app/controller/Toolbar.js:768
+#: exe/jsui/scripts/app/controller/Toolbar.js:667
+#: exe/jsui/scripts/app/controller/Toolbar.js:741
 msgid "eXe Package Files"
 msgstr ""
 
@@ -2058,70 +2062,70 @@ msgstr ""
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:516
+#: exe/jsui/scripts/app/controller/Toolbar.js:515
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:525
+#: exe/jsui/scripts/app/controller/Toolbar.js:524
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:533
+#: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:535
+#: exe/jsui/scripts/app/controller/Toolbar.js:534
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:537
+#: exe/jsui/scripts/app/controller/Toolbar.js:536
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:539
+#: exe/jsui/scripts/app/controller/Toolbar.js:538
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:541
+#: exe/jsui/scripts/app/controller/Toolbar.js:540
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:554
+#: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:667
+#: exe/jsui/scripts/app/controller/Toolbar.js:640
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:683
+#: exe/jsui/scripts/app/controller/Toolbar.js:656
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:688
+#: exe/jsui/scripts/app/controller/Toolbar.js:661
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:707
+#: exe/jsui/scripts/app/controller/Toolbar.js:680
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:708
+#: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:732
+#: exe/jsui/scripts/app/controller/Toolbar.js:705
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:748
+#: exe/jsui/scripts/app/controller/Toolbar.js:721
 msgid "Select a File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:754
+#: exe/jsui/scripts/app/controller/Toolbar.js:727
 msgid "Saving package..."
 msgstr ""
 
@@ -3352,7 +3356,7 @@ msgstr ""
 msgid "About eXe"
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:98
+#: exe/jsui/scripts/exe.js:124
 msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
@@ -3374,47 +3378,55 @@ msgstr ""
 msgid "Please type or paste a valid URL."
 msgstr ""
 
-#: exe/webui/appletblock.py:110
+#: exe/webui/appletblock.py:95
+msgid ""
+"eXe can not access any scene inside the indicated website. Anyway you can"
+" access the desired scene in your regular browser, click with right mouse"
+" button on it and in config > codigo is its associated code. Copy and "
+"paste it directly into an Applet iDevice such as Other."
+msgstr ""
+
+#: exe/webui/appletblock.py:128
 msgid "Descartes"
 msgstr ""
 
-#: exe/webui/appletblock.py:111
+#: exe/webui/appletblock.py:129
 msgid "Geogebra"
 msgstr "Geogebra"
 
-#: exe/webui/appletblock.py:112
+#: exe/webui/appletblock.py:130
 msgid "JClic"
 msgstr ""
 
-#: exe/webui/appletblock.py:113
+#: exe/webui/appletblock.py:131
 msgid "Scratch"
 msgstr ""
 
-#: exe/webui/appletblock.py:114 exe/webui/wikipediablock.py:132
+#: exe/webui/appletblock.py:132 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "其它"
 
-#: exe/webui/appletblock.py:115
+#: exe/webui/appletblock.py:133
 msgid "Applet Type"
 msgstr "Applet 类别"
 
-#: exe/webui/appletblock.py:137
+#: exe/webui/appletblock.py:154 exe/webui/appletblock.py:164
 msgid "Add files"
 msgstr "添加文档"
 
-#: exe/webui/appletblock.py:139
+#: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Upload"
 msgstr "上载"
 
-#: exe/webui/appletblock.py:142
+#: exe/webui/appletblock.py:160
 msgid "Accept URL"
 msgstr ""
 
-#: exe/webui/appletblock.py:147
+#: exe/webui/appletblock.py:170
 msgid "Applet Code:"
 msgstr "Applet Code:"
 
-#: exe/webui/appletblock.py:160
+#: exe/webui/appletblock.py:183
 msgid "Delete File"
 msgstr "删除文档"
 
@@ -3719,17 +3731,17 @@ msgid "Pedagogical Tip"
 msgstr "教学提示"
 
 #: exe/webui/editorpane.py:332 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:159
+#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:161
 msgid "Emphasis"
 msgstr "强调"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:156
+#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:158
 msgid "No emphasis"
 msgstr "不强调"
 
 #: exe/webui/editorpane.py:336 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:157
+#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:159
 msgid "Some emphasis"
 msgstr "一般强调"
 
@@ -4069,27 +4081,7 @@ msgstr "隐藏"
 msgid "Reflexiona"
 msgstr "问题与回答"
 
-#: exe/webui/renderable.py:243 exe/webui/xliffexportpreferencespage.py:54
-msgid "label"
-msgstr "标签"
-
-#: exe/webui/renderable.py:253
-msgid "key"
-msgstr "key"
-
-#: exe/webui/renderable.py:255
-msgid "keycode"
-msgstr "keycode"
-
-#: exe/webui/renderable.py:258
-msgid "title"
-msgstr "标题"
-
-#: exe/webui/renderable.py:260
-msgid "tooltiptext"
-msgstr ""
-
-#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:152
+#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:154
 msgid "Load"
 msgstr "载入"
 
@@ -4116,105 +4108,113 @@ msgstr "正确!"
 msgid "Incorrect!"
 msgstr "不正确!"
 
-#: exe/webui/wikipediablock.py:113
+#: exe/webui/wikipediablock.py:114
 msgid "English Wikipedia Article"
 msgstr "英文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:114
+#: exe/webui/wikipediablock.py:115
+msgid "Euskara Wikipedia Article"
+msgstr ""
+
+#: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
 msgstr "加泰隆尼亚文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:115
+#: exe/webui/wikipediablock.py:117
 msgid "Chinese Wikipedia Article"
 msgstr "中文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:116
+#: exe/webui/wikipediablock.py:118
 msgid "Dutch Wikipedia Article"
 msgstr "荷兰文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:117
+#: exe/webui/wikipediablock.py:119
 msgid "French Wikipedia Article"
 msgstr "法文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:118
+#: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "德文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:119
+#: exe/webui/wikipediablock.py:121
 msgid "Greek Wikipedia Article"
 msgstr "希腊文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:120
+#: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "意大利文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:121
+#: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
 msgstr "日文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:122
+#: exe/webui/wikipediablock.py:124
 msgid "Magyar Wikipedia Article"
 msgstr "马札儿语Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:123
+#: exe/webui/wikipediablock.py:125
 msgid "Polish Wikipedia Article"
 msgstr "波兰文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:124
+#: exe/webui/wikipediablock.py:126
 msgid "Portugese Wikipedia Article"
 msgstr "葡萄牙文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:125
+#: exe/webui/wikipediablock.py:127
 msgid "Slovenian Wikipedia Article"
 msgstr "斯洛法尼亚文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:126
+#: exe/webui/wikipediablock.py:128
 msgid "Spanish Wikipedia Article"
 msgstr "西班牙文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:127
+#: exe/webui/wikipediablock.py:129
 msgid "Swedish Wikipedia Article"
 msgstr "瑞典文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:128
+#: exe/webui/wikipediablock.py:130
 msgid "Wikibooks Article"
 msgstr "Wikibooks 文章"
 
-#: exe/webui/wikipediablock.py:129
+#: exe/webui/wikipediablock.py:131
 msgid "Wikiversity"
 msgstr "Wikiversity"
 
-#: exe/webui/wikipediablock.py:130
+#: exe/webui/wikipediablock.py:132
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: exe/webui/wikipediablock.py:131
+#: exe/webui/wikipediablock.py:133
 msgid "Wikieducator Content"
 msgstr "Wikieducato 文章"
 
-#: exe/webui/wikipediablock.py:137
+#: exe/webui/wikipediablock.py:139
 msgid "Site"
 msgstr "Site"
 
-#: exe/webui/wikipediablock.py:147
+#: exe/webui/wikipediablock.py:149
 msgid "Own site"
 msgstr "自定义网页"
 
-#: exe/webui/wikipediablock.py:229
+#: exe/webui/wikipediablock.py:234
 msgid "This article is licensed under the "
 msgstr "This article is licensed under the "
 
-#: exe/webui/wikipediablock.py:232
+#: exe/webui/wikipediablock.py:237
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/wikipediablock.py:233
+#: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
 msgstr "所用资料来源于"
 
-#: exe/webui/wikipediablock.py:244
+#: exe/webui/wikipediablock.py:250
 msgid "article "
 msgstr "文章"
+
+#: exe/webui/xliffexportpreferencespage.py:54
+msgid "label"
+msgstr "标签"
 
 #: exe/webui/xliffexportpreferencespage.py:102
 msgid "Select source language"
@@ -4277,4 +4277,16 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是用新版本eXe创建的. 请升级你的eXe, 然后再试."
+
+#~ msgid "key"
+#~ msgstr "key"
+
+#~ msgid "keycode"
+#~ msgstr "keycode"
+
+#~ msgid "title"
+#~ msgstr "标题"
+
+#~ msgid "tooltiptext"
+#~ msgstr ""
 

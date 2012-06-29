@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2012-06-12 12:45+0200\nPO-Revision-Date: 2011-10-10 16:32+0100\nLast-Translator: Jos\u00e9 Ram\u00f3n Jim\u00e9nez Reyes <jrjimenezr@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2012-06-29 08:10+0200\nPO-Revision-Date: 2011-10-10 16:32+0100\nLast-Translator: Jos\u00e9 Ram\u00f3n Jim\u00e9nez Reyes <jrjimenezr@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "FPD - Texto Libre": "FPD - Free Text", 
  "Para saber m\u00e1s": "A step ahead", 
  "Orientaciones para la tutor\u00eda": "Guidelines for the teacher", 
