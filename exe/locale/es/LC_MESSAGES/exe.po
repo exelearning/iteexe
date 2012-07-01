@@ -9,15 +9,13 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-29 08:10+0200\n"
-"PO-Revision-Date: 2012-06-26 17:25+0200\n"
-"Last-Translator: Juan Rafael Fernández "
-"<juanrafael.fernandez@hispalinux.es>\n"
+"PO-Revision-Date: 2012-07-01 17:49+0200\n"
+"Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -99,7 +97,7 @@ msgstr "El iDevice %s no tiene ningún paquete"
 
 #: exe/engine/appletidevice.py:417
 msgid "Sorry, this URL is unreachable"
-msgstr ""
+msgstr "Error al intentar abrir esta URL"
 
 #: exe/engine/appletidevice.py:502
 msgid ""
@@ -133,7 +131,7 @@ msgid ""
 "3,http://example.com; clic on Upload button after."
 msgstr ""
 "Por favor escriba: número de escena,URL (sin espacios) que la incluya, "
-"ej.: 3,http://ejemplo.es; pulse en el botón Subir después."
+"ej.: 3,http://ejemplo.es; pulse en el botón Cargar después."
 
 #: exe/engine/appletidevice.py:541
 msgid ""
@@ -263,11 +261,10 @@ msgstr ""
 "<li>\tQué preparación necesitarán hacer los estudiantes antes de trabajar"
 " en el caso práctico</li>\n"
 "<li>\tDónde encaja el caso práctico dentro del resto del curso</li>\n"
-"<li>\tCómo actuarán recíprocamente los estudiantes con los materiales y \n"
+"<li>\tCómo actuarán recíprocamente los estudiantes con los materiales y "
 "entre ellos\n"
-" ej.: caso de realizarse en el aula, si pueden organizarse equipos para "
-"que \n"
-"trabajen en diferentes aspectos del caso y, de ser asi, \n"
+" ej.: caso de realizarse en el aula, si pueden organizarse equipos para \n"
+"que trabajen en diferentes aspectos del caso y, de ser así, \n"
 "cómo se hacen llegar las ideas al resto de la clase</li></ul>"
 
 #: exe/engine/casestudyidevice.py:216
@@ -317,10 +314,12 @@ msgstr ""
 "Proporciona información de retroalimentación relevante para la  \n"
 "situación."
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/casopracticofpdidevice.py:29
 msgid "FPD - Caso Practico"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/casopracticofpdidevice.py:30
 #: exe/engine/citasparapensarfpdidevice.py:30
 #: exe/engine/correccionfpdidevice.py:30
@@ -332,12 +331,14 @@ msgstr ""
 msgid "Jose Ramon Jimenez Reyes"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/casopracticofpdidevice.py:31
 msgid ""
 "Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse "
 "en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/casopracticofpdidevice.py:34
 #: exe/engine/citasparapensarfpdidevice.py:34
 #: exe/engine/correccionfpdidevice.py:33
@@ -349,29 +350,35 @@ msgstr ""
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/casopracticofpdidevice.py:37
 #: exe/engine/casopracticofpdidevice.py:135
 msgid "Texto Caso pr&aacute;ctico:"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/citasparapensarfpdidevice.py:29
 msgid "FPD - Citas Para Pensar"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/citasparapensarfpdidevice.py:31
 msgid ""
 "Citas para pensar es un iDevice que permite al alumnado reflexionar sobre"
 " algunas citas propuestas."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/citasparapensarfpdidevice.py:37
 msgid "Texto Citas para pensar:"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/citasparapensarfpdidevice.py:136
 msgid "Texto para pensar:"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/clozefpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco"
 msgstr ""
@@ -539,62 +546,75 @@ msgstr "Actividad de rellenar huecos"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Lea el párrafo que aparece abajo y complete las palabras que faltan."
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/clozelangfpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/clozelangfpdidevice.py:122
 msgid "Clozelang"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/correccionfpdidevice.py:29
 msgid "FPD - Correccion"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/correccionfpdidevice.py:31
 msgid ""
 "Correccion es un iDevice que permite resaltar texto para hacer "
 "correcciones a los autores."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/correccionfpdidevice.py:36
 msgid "Texto Correci&oacute;n:"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
 #: exe/engine/destacadofpdidevice.py:134
 msgid "Texto Destacado:"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - Debes Conocer"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/debesconocerfpdidevice.py:31
 msgid ""
 "Debes conocer es un iDevice que permite al alumnado ampliar "
 "conocimientos, siendo estos obligatorios para su aprendizaje."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
 msgid "Texto Debes conocer:"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/destacadofpdidevice.py:29
 msgid "FPD - Destacado"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/destacadofpdidevice.py:31
 msgid ""
 "Destacado es un iDevice que permite resaltar texto para llamar la "
 "atención del alumnado."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/ejercicioresueltofpdidevice.py:197
 msgid "FPD - Ejercicio Resuelto"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/eleccionmultiplefpdidevice.py:60
 msgid "FPD - Actividad de Eleccion Multiple"
 msgstr ""
@@ -620,13 +640,13 @@ msgid ""
 " "
 msgstr ""
 "Aunque es usado más a menudo en situaciones de pruebas formales, los "
-"controles \n"
-"de selección múltiple pueden ser usados como una herramienta de "
+"ejercicios \n"
+"de elección múltiple pueden ser usados como una herramienta de "
 "evaluación que estimula el pensamiento \n"
 "y la discusión sobre temas donde los estudiantes pueden sentirse un poco "
 "reticentes a responder. \n"
 "\n"
-"Cuando diseñe un control de elección múltiple considere lo siguiente:\n"
+"Cuando diseñe un ejercicio de elección múltiple considere lo siguiente:\n"
 "<ul>\n"
 "<li>Qué resultados del aprendizaje evalúan las preguntas</li>\n"
 "<li>Qué habilidades intelectuales estén siendo evaluadas</li>\n"
@@ -657,7 +677,7 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"Cuando construya un MCQ considera lo siguiente: <ul>\n"
+"Cuando construya un ejercicio de elección múltiple considera lo siguiente: <ul>\n"
 "<li>Use frases que a los estudiantes le sean conocidas  \n"
 "o que hayan encontrado en su estudio </li>\n"
 "<li> Mantenga concisas las respuestas </li>\n"
@@ -853,6 +873,7 @@ msgstr ""
 "                                       el usuario está rellenando los "
 "espacios en blanco."
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/field.py:3048
 msgid ""
 "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n "
@@ -872,8 +893,7 @@ msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
-"Solamente seleccione archivos con extensión .FLV (Flash Video Files) para"
-" \n"
+"Solamente seleccione archivos con extensión .FLV (Flash Video Files) para \n"
 "este iDevice."
 
 #: exe/engine/field.py:3267
@@ -988,15 +1008,14 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
-"Este iDevice solamente suporte el formato de Flash Video File (.FLV), y "
+"Este iDevice solamente admite el formato Flash Video File (.FLV), y "
 "no\n"
 "aceptará otros formatos de video. Se pueden convertir otros formatos de "
 "video\n"
-"(por ejemplo mov, wmf, etc) al formato .FLV usando otras aplicaciones de "
+"(por ejemplo mov, wmf, etc.) al formato .FLV usando aplicaciones de "
 "terceras partes.\n"
-"Estas aplicaciones no vienen con eXeLearning. Se necesitará el Flash 8 "
-"player\n"
-"de http://www.macromedia.com/ para mostrar el video."
+"Estas aplicaciones no vienen con eXeLearning. Los usuarios deberá haber descargado el reproductor\n"
+"de Flash 8 de http://www.macromedia.com/ para mostrar el video."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -1067,6 +1086,7 @@ msgstr ""
 " (en píxeles) y determine su alineación en la pantalla. \n"
 "El largo y ancho se alterarán proporcionalmente."
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/freetextfpdidevice.py:38
 msgid "FPD - Texto Libre"
 msgstr ""
@@ -1205,7 +1225,7 @@ msgstr ""
 "Esto puede ser hecho \n"
 "pidiéndole al estudiante que reflexione sobre el texto y responda a "
 "preguntas \n"
-" sobre lo leído, o haciendoles completar otra actividad, quizás de "
+" sobre lo leído, o haciéndoles completar otra actividad, quizás de "
 "carácter más físico, \n"
 "basada en la lectura.</p>"
 
@@ -1228,10 +1248,10 @@ msgstr ""
 "actividades planificados como recurso los cuales serán señalados "
 "visualmente como contenido. Trate de no usar muchos diferentes tipos de "
 "clasificaciones de actividades, para que el estudiante no se confunda. "
-"Normalmente tres o cuatro diferentes tipos son más que suficiente por un "
-"recurso de enseñanza.</li><li>Desde una perspectiva de diseño visual, "
+"Normalmente tres o cuatro diferentes tipos son más que suficiente para un "
+"recurso pedagógico.</li><li>Desde una perspectiva de diseño visual, "
 "trata de no poner dos iDevices juntos sin texto entre medias. Si se "
-"encuentra que es necesario, una dos preguntas y eventos en un "
+"encuentra que es necesario, una dos preguntas o eventos en un "
 "iDevice.</li><li>Plantéese actividades en las que el beneficio de "
 "completar la actividad supere al costo en tiempo y esfuerzo de "
 "completarla.</li></ol>"
@@ -1455,8 +1475,8 @@ msgid ""
 "image to display at its original size."
 msgstr ""
 "Escoja el tamaño para \n"
-"mostrar la imagen. Los medidas son en pixels. Generalmente, 100 \n"
-"pixels equivalen aproximadamente a 3 cm. Deje los campos en blanco si "
+"mostrar la imagen. Los medidas son en píxeles. Generalmente, 100 \n"
+"píxeles equivalen aproximadamente a 3 cm. Deje los campos en blanco si "
 "desea\n"
 "mostrar la imagen con su tamaño original."
 
@@ -1531,7 +1551,7 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"El iDevice &lt;Imagen con texto&gt; puede  utilizarse de varias maneras "
+"El iDevice &lt;Imagen con texto&gt; puede utilizarse de varias maneras "
 "para\n"
 "apoyar las dos dimensiones de contenido eXe: la emocional (afectiva) y la"
 " de\n"
@@ -1658,38 +1678,49 @@ msgstr ""
 msgid "Multi-select"
 msgstr "Pregunta de Selección Múltiple"
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionesalumnadofpdidevice.py:29
 msgid "FPD - Orientaciones Alumnado"
 msgstr ""
 
+# Typo en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionesalumnadofpdidevice.py:31
 msgid ""
 "Orientciones alumnado es un iDevice que permite al alumnado conocer los "
 "objetivos de su aprendizaje."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionesalumnadofpdidevice.py:37
 msgid "Texto Orientaciones alumnado"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionesalumnadofpdidevice.py:135
 msgid "Texto Orientaciones alumnado:"
 msgstr ""
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionestutoriafpdidevice.py:29
 msgid "FPD - Orientaciones Tutoria"
 msgstr ""
 
+# Typo en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionestutoriafpdidevice.py:31
 msgid ""
 "Orientaciones alumnado es un iDevice que permite al profesorado conocer "
 "los objetivos del aprendizje del alumnado."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionestutoriafpdidevice.py:37
 msgid "Texto Orientaciones tutor&iacute;a"
 msgstr ""
 
+# <No traducir mientras msgid esté en castellano
 #: exe/engine/orientacionestutoriafpdidevice.py:136
 msgid "Texto Orientaciones tutor&iacute;a:"
 msgstr ""
@@ -1728,20 +1759,25 @@ msgstr ""
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/parasabermasfpdidevice.py:29
 msgid "FPD - Para Saber Mas"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/parasabermasfpdidevice.py:31
 msgid ""
 "Para saber m&aacute;s es un iDevice que permite al alumnado ampliar "
 "conocimientos, siendo estos voluntarios para su aprendizaje."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/parasabermasfpdidevice.py:37
 msgid "Texto Para saber m&aacute;s"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/parasabermasfpdidevice.py:136
 msgid "Texto Para sabe m&aacute;s"
 msgstr ""
@@ -1752,6 +1788,8 @@ msgid ""
 "%s\n"
 "%s unchanged"
 msgstr ""
+"%s\n"
+"%s sin cambios"
 
 #: exe/engine/quiztestidevice.py:123 exe/engine/quiztestidevice.py:186
 msgid ""
@@ -1787,7 +1825,7 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
-"A diferencia de la Pregunta de Elección Múltiple, el cuestionario SCORM "
+"A diferencia del ejercicio de elección múltiple, el cuestionario SCORM "
 "se utiliza para probar \n"
 "el conocimiento de los estudiantes sobre un tema sin ofrecer como "
 "retroalimentación \n"
@@ -1796,21 +1834,27 @@ msgstr ""
 "tiempo de aprender y practicar.\n"
 " "
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/recomendacionfpdidevice.py:29
 msgid "FPD - Recomendacion"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/recomendacionfpdidevice.py:31
 msgid ""
 "Para saber m&aacute;s es un iDevice que permite al profesarado recomendar"
 " libros, películas, ... útiles para su formación."
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/recomendacionfpdidevice.py:37
 #: exe/engine/recomendacionfpdidevice.py:136
 msgid "Texto de la recomendaci&oacute;n:"
 msgstr ""
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/reflectionfpdidevice.py:46
 msgid "FPD - Reflexiona (con Retroalimentacion)"
 msgstr ""
@@ -1870,6 +1914,8 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Pregunta reflexiva:"
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Reflexiona (sin Retroalimentacion)"
 msgstr ""
@@ -1930,7 +1976,7 @@ msgstr ""
 "puede hacer clic derecho en el vínculo o gráfico y se abrirá un menú; \n"
 "pulse en Copiar dirección del enlace o Copiar acceso directo. Regrese a "
 "eXe y pegue el vínculo en el \n"
-"campo URL del iDevice RSS y pulse en el botón Subir. Este extraerá los "
+"campo URL del iDevice RSS y pulse en el botón Cargar. Este extraerá los "
 "títulos de su canal RSS y\n"
 "los mostrará como vínculos en el contenido. Desde aquí puedes editar los "
 "favoritos y agregar \n"
@@ -1945,6 +1991,8 @@ msgstr ""
 "No se pudo cargar la subscripción RSS de %s <br/> Por favor revise si la "
 "ha tecleado correctamente, y la conexión, e inténtelo de nuevo."
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/engine/seleccionmultiplefpdidevice.py:43
 msgid "FPD - Actividad de Seleccion Multiple"
 msgstr ""
@@ -2036,6 +2084,7 @@ msgstr ""
 "correcta; o \n"
 "\"Respuesta equivocada\" para las otras alternativas."
 
+# No traducir mientras msgid esté en castellano
 #: exe/engine/verdaderofalsofpdidevice.py:144
 msgid "FPD - Actividad de Verdadero/Falso"
 msgstr ""
@@ -2059,15 +2108,15 @@ msgid ""
 "content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
-"<p>El iDevice Wikipedia permite que usted encuentre \n"
-"contenido existente en Wikipedia y descargue este contenido a Exe. \n"
-"El iDevice artículo de la wikipedia toma una copia del contenido del \n"
-" artículo. Cambios generados en Wikipedia no son automáticamente "
-"actualizados cuando se copia \n"
-" el artículo en eXe, una nueva copia de ese artículo debe ser tomada. "
+"<p>El iDevice wikipedia permite que usted encuentre \n"
+"contenido existente en Wikipedia y descargue este contenido a eXe. \n"
+"El iDevice Artículo de la wikipedia hace una copia del contenido del \n"
+" artículo. Los cambios posteriores generados en la wikipedia no son automáticamente "
+"actualizados en la copia \n"
+"del artículo en eXe, sera necesario realizar una nueva copia. "
 "Asimismo, \n"
-"cambios realizados en eXe no producirán efectos en los artículos de "
-"Wikipedia. </p> <p>El Contenido de Wikipedia \n"
+"los cambios realizados en eXe no producirán efectos en los artículos de "
+"Wikipedia. </p> <p>El Contenido de la wikipedia \n"
 "esta protegido por la licencia de documentación libre de GNU.</p>"
 
 #: exe/engine/wikipediaidevice.py:64
@@ -2120,20 +2169,20 @@ msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm, ims, website, webzip or singlepage."
 msgstr ""
-"Exportar paquete elp <input_file> a <output_file> en alguno de estos "
-"formatos: xml, scorm, ims, Sitio web, Sitio web en zip o Una sola página."
+"Exportar paquete ELP <fichero_de_entrada> a (opcional) <fichero_de_salida> en alguno de "
+"los formatos dados: xml, scorm, ims cp, sitio web, carpeta autocontenida o página única."
 
 #: exe/exe_do:77
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml."
 msgstr ""
-"Importar el archivo <input_file> al paquete elp <output_file> en alguno "
-"de los siguientes archivos: xml."
+"Importar al paquete ELP <fichero_de_salida> el <fichero_de_entrada>, en alguno "
+"de los siguientes formatps: xml."
 
 #: exe/exe_do:82
 msgid "Force overwrite of <output_file>"
-msgstr "Forzar sobreescritura de  <output_file>"
+msgstr "Forzar sobreescritura de <fichero_de_salida>"
 
 #: exe/exe_do:93
 msgid "Options --export and --import are mutually exclusive."
@@ -2245,6 +2294,8 @@ msgid ""
 "WARNING: content.xml version 0.1. Importing from content.data. Try to "
 "import from a content.xml version 0.2."
 msgstr ""
+"AVISO: fichero content.xml en versión 0.1. Importando desde content.data. Intente "
+"hacer la importación desde un fichero content.xml versión 0.2."
 
 #: exe/importers/cmdlineimporter.py:54
 msgid "Invalid output package"
@@ -2252,36 +2303,36 @@ msgstr "El archivo de salida no es válido"
 
 #: exe/importers/scanresources.py:180
 msgid "Contents of directory"
-msgstr ""
+msgstr "Contenido del directorio"
 
 #: exe/importers/scanresources.py:194
 #, python-format
 msgid "Analizing directory %d of %d: %s"
-msgstr ""
+msgstr "Analizando el directorio %d de %d: %s"
 
 #: exe/importers/scanresources.py:255
 #, python-format
 msgid "Calculating relative paths to directory %d of %d: %s"
-msgstr ""
+msgstr "Calculando las rutas relativas al directorio %d de %d: %s"
 
 #: exe/importers/scanresources.py:275
 #, python-format
 msgid "Analyzing HTML file labels %d of %d: %s"
-msgstr ""
+msgstr "Analizando las etiquetas de fichero HTML %d de %d: %s"
 
 #: exe/importers/scanresources.py:342
 #, python-format
 msgid "Exhaustively analyzed file %s %d of %d: %s"
-msgstr ""
+msgstr "Se ha analizado exhaustivamente el fichero %s %d de %d: %s"
 
 #: exe/importers/scanresources.py:395
 msgid "Calculating depth of links"
-msgstr ""
+msgstr "Calculando la profundidad de los enlaces"
 
 #: exe/importers/scanresources.py:431
 #, python-format
 msgid "Inserting %s"
-msgstr ""
+msgstr "Insertando %s"
 
 #: exe/jsui/mainpage.py:221 exe/jsui/mainpage.py:659 exe/jsui/mainpage.py:792
 msgid "Cannot access directory named "
@@ -2330,11 +2381,11 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:631
 msgid "Importing HTML..."
-msgstr ""
+msgstr "Importando HTML..."
 
 #: exe/jsui/mainpage.py:634
 msgid "Error importing HTML:\n"
-msgstr ""
+msgstr "Error importando HTML:\n"
 
 #: exe/jsui/mainpage.py:681 exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:691
 #: exe/jsui/mainpage.py:694 exe/jsui/mainpage.py:697 exe/jsui/mainpage.py:913
@@ -2401,6 +2452,7 @@ msgstr "Exportado a %s"
 msgid "File %s does not exist or is not readable."
 msgstr "El archivo %s no existe o no es accesible."
 
+# ¿Tiene sentido mantener esta traducción? ¿Damos nuevo correo?
 #: exe/jsui/mainpage.py:1071
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
@@ -2422,15 +2474,15 @@ msgstr "Formato de archivo incorrecto"
 
 #: exe/jsui/propertiespage.py:85
 msgid "Failed to get properties"
-msgstr ""
+msgstr "Problema en la lectura de las propiedades"
 
 #: exe/jsui/propertiespage.py:102
 msgid "Failed to save properties"
-msgstr ""
+msgstr "Problema al guardar las propiedades"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:90
 msgid "Settings Saved"
-msgstr ""
+msgstr "Guardada la configuración"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:117
 #: exe/jsui/scripts/app/controller/MainTab.js:174
@@ -2446,11 +2498,11 @@ msgstr "Seleccionar una imagen"
 #: exe/jsui/scripts/app/controller/MainTab.js:178
 #: exe/jsui/scripts/app/controller/MainTab.js:206
 msgid "Hide Image"
-msgstr ""
+msgstr "Ocultar imagen"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:153
 msgid "Image Files"
-msgstr ""
+msgstr "Ficheros de imágenes"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:154
 #: exe/jsui/scripts/app/controller/Toolbar.js:336
@@ -2463,12 +2515,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:668
 #: exe/jsui/scripts/app/controller/Toolbar.js:742
 msgid "All Files"
-msgstr ""
+msgstr "Todos los ficheros"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:188
 #: exe/jsui/scripts/app/controller/MainTab.js:213
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: exe/jsui/scripts/app/controller/Outline.js:144
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
@@ -2482,23 +2534,23 @@ msgstr "Extraer paquete"
 
 #: exe/jsui/scripts/app/controller/Outline.js:200
 msgid "Delete \"{node}\" node and all its children?"
-msgstr ""
+msgstr "¿Borrar el nodo \"{node}\" y todos sus hijos?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: exe/jsui/scripts/app/controller/Outline.js:224
 msgid "Rename \"{node}\" node"
-msgstr ""
+msgstr "Renombrar el nodo \"{node}\""
 
 #: exe/jsui/scripts/app/controller/Outline.js:228
 msgid "Enter the new name:"
-msgstr ""
+msgstr "Introduzca nuevo nombre:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:257
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:290
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
@@ -2507,146 +2559,148 @@ msgstr "Preferencias"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:324
 msgid "Select package to insert"
-msgstr ""
+msgstr "Seleccione el paquete que va a insertar"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:329
 msgid "Inserting package: {filename}"
-msgstr ""
+msgstr "Insertando el paquete: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:335
 #: exe/jsui/scripts/app/controller/Toolbar.js:356
 #: exe/jsui/scripts/app/controller/Toolbar.js:667
 #: exe/jsui/scripts/app/controller/Toolbar.js:741
 msgid "eXe Package Files"
-msgstr ""
+msgstr "Ficheros de paquete eXe"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
 msgid "Save extracted package as"
-msgstr ""
+msgstr "Guardar el paquete extraído como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:350
 msgid "Extracting package: {filename}"
-msgstr ""
+msgstr "Extrayendo paquete: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:366
 msgid "Select the parent folder for import."
-msgstr ""
+msgstr "Seleccione la carpeta padre para la importación."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Select the entry point for import."
-msgstr ""
+msgstr "Seleccione el punto de entrada para la importación."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:391
 msgid "HTML Files"
-msgstr ""
+msgstr "Ficheros HTML"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:406
 msgid "Waiting progress..."
-msgstr ""
+msgstr "Progreso de la espera..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:414
 msgid "Cancel Import?"
-msgstr ""
+msgstr "¿Cancelar la importación?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:415
 msgid "There is an ongoing import. Do you want to cancel?"
-msgstr ""
+msgstr "Se está realizando una importación. ¿Desea cancelarla?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:438
 msgid "Select Xliff file to import"
-msgstr ""
+msgstr "Seleccione el fichero Xliff que desea importar"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:448
 msgid "XLIFF Import Preferences"
-msgstr ""
+msgstr "Preferencias de importación de XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:456
 #: exe/jsui/scripts/app/controller/Toolbar.js:483
 msgid "XLIFF Files"
-msgstr ""
+msgstr "Ficheros XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:465
 msgid "Export to Xliff as"
-msgstr ""
+msgstr "Exportar a Xliff como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
 msgid "XLIFF Export Preferences"
-msgstr ""
+msgstr "Preferencias de exportación de XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:498
 msgid "Select the parent folder for export."
-msgstr ""
+msgstr "Seleccione la carpeta padre para la exportación."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:515
 msgid "Export text package as"
-msgstr ""
+msgstr "Exportar paquete de texto como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:524
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Text File"
-msgstr ""
+msgstr "Fichero de texto"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "Export SCORM package as"
-msgstr ""
+msgstr "Exportar paquete SCORM como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:534
 msgid "Export IMS package as"
-msgstr ""
+msgstr "Exportar paquete IMS como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:536
 msgid "Export Website package as"
-msgstr ""
+msgstr "Exportar paquete de sitio web como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:538
 msgid "Export Common Cartridge as"
-msgstr ""
+msgstr "Exportar paquete Common Cartridge como"
 
+# jrfg: Duda: ¿exportPackage debo traducirlo?
 #: exe/jsui/scripts/app/controller/Toolbar.js:540
 msgid "INVALID VALUE PASSED TO exportPackage"
-msgstr ""
+msgstr "VALOR INVÁLIDO PASADO A exportPackage"
 
+# jrfg: dudo de esta traducción
 #: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "SCORM/IMS/ZipFile"
-msgstr ""
+msgstr "SCORM/IMS/ZipFile"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:640
 msgid "Loading package..."
-msgstr ""
+msgstr "Cargando paquete..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:656
 msgid "Open File"
-msgstr ""
+msgstr "Abrir fichero"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:661
 msgid "Loading package: {filename}"
-msgstr ""
+msgstr "Cargando paquete: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:680
 msgid "Save Package first?"
-msgstr ""
+msgstr "¿Guardar el paquete primero?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
-msgstr ""
+msgstr "El paquete actual ha sido modificado y aún no se ha guardado. ¿Desea guardarlo?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:705
 msgid "Saving package to: {filename}"
-msgstr ""
+msgstr "Guardando el paquete como: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:721
 msgid "Select a File"
-msgstr ""
+msgstr "Seleccione un fichero"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:727
 msgid "Saving package..."
-msgstr ""
+msgstr "Guardando el paquete..."
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:34
 msgid "Tree"
-msgstr ""
+msgstr "Árbol"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:46
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85 exe/webui/editorpane.py:323
@@ -2655,25 +2709,26 @@ msgstr "Nombre"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:68
 msgid "Size"
-msgstr ""
+msgstr "Tamaño"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:91
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:776
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:96
 msgid "Modified"
-msgstr ""
+msgstr "Modificado"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Guardar"
 
+# jrfg: Mirar contexto, ¿es verbo: situar, o sustantivo: lugar?
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:94
 msgid "Place"
-msgstr ""
+msgstr "Lugar"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:34
 msgid "SCORM 1.2 Options"
@@ -2688,7 +2743,7 @@ msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
-msgstr ""
+msgstr "Marcar este recuadro hará que eXe añada los enlaces Previo y Siguiente a las páginas individuales de su SCO. La plataforma de gestión de contenidos educativos también añadirá esta clase de funcionalidad."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid ""
@@ -3390,15 +3445,16 @@ msgstr "Nombre dado al recurso."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:718
 msgid "Creator"
-msgstr ""
+msgstr "Creador"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:719
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr "Entidad responsable de elaborar el contenido del recurso."
 
+# jrfg: ¿tema, materia o asignatura? Parece que se opone a Topic
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:727
 msgid "Subject"
-msgstr ""
+msgstr "Tema"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:728
 msgid "The topic of the content of the resource."
@@ -3410,7 +3466,7 @@ msgid ""
 "classification codes that describe a topic of the resource. Recommended "
 "best practice is to select a value from a controlled vocabulary or formal"
 " classification scheme."
-msgstr ""
+msgstr "Típicamente, el TEMA se expresa como palabras clave, expresiones clave o códigos de clasificación que describen un tema del recurso. Es una buena práctica recomendada seleccionar un valor de vocabulario controlado o un esquema formal de clasificación."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:737
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
@@ -3419,7 +3475,7 @@ msgstr "Resumen del contenido del recurso."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:744
 msgid "Publisher"
-msgstr ""
+msgstr "Editor"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:745
 msgid "An entity responsible for making the resource available."
@@ -3427,7 +3483,7 @@ msgstr "Entidad responsable de hacer disponible el recurso."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:751
 msgid "Contributors"
-msgstr ""
+msgstr "Colaboradores"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:752
 msgid ""
@@ -3437,7 +3493,7 @@ msgstr "Entidad responsable de hacer aportaciones al contenido del recurso."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:765
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:766
 msgid "A date of an event in the lifecycle of the resource."
@@ -3450,7 +3506,7 @@ msgid ""
 "defined in a profile called <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-"
 "datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> and "
 "includes (among others) dates of the form YYYY-MM-DD."
-msgstr ""
+msgstr "Típicamente, el elemento FECHA estará asociado a la creación o disponibilidad del recurso. Las buenas prácticas recomendadas de codificación de la fecha están definidas en un perfil llamado <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">W3C Date and Time Formats</a>, que incluye (entre otras) fechas de la forma AAAA-MM-DD."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:777
 msgid "The nature or genre of the content of the resource."
@@ -3463,11 +3519,11 @@ msgid ""
 "controlled vocabulary or controlled classification scheme. To describe "
 "the physical or digital manifestation of the resource, use the FORMAT "
 "element."
-msgstr ""
+msgstr "El elemento TIPO incluye términos que describen categorías, funciones o géneros generales del contenido. Se recomienda seleccionar un valor de un vocabulario controlado o un esquema controlado de clasificación. Para describir la manifestación física o digital del recurso, use el elemento FORMATO."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:785
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:792
 msgid "Select a Format."
@@ -3475,7 +3531,7 @@ msgstr "Seleccione formato."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:798
 msgid "Identifier"
-msgstr ""
+msgstr "Identificador"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:799
 msgid "An unambiguous reference to the resource within a given context."
@@ -3483,7 +3539,7 @@ msgstr "Referencia no ambigua a un recurso en un contexto dado."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:805
 msgid "Source"
-msgstr ""
+msgstr "Fuente"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:806
 msgid "A Reference to a resource from which the present resource is derived."
@@ -3491,7 +3547,7 @@ msgstr "Referencia a un recurso del que deriva el recurso actual."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:812
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:814
 msgid "Select a language."
@@ -3499,15 +3555,16 @@ msgstr "Seleccionar idioma."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:820
 msgid "Relation"
-msgstr ""
+msgstr "Relación"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:821
 msgid "A reference to a related resource."
 msgstr "Referencia a un recurso relacionado."
 
+# jrfg: no lo tengo claro, he usado http://en.es.open-tran.eu/suggest/coverage
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:827
 msgid "Coverage"
-msgstr ""
+msgstr "Cobertura"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:828
 msgid "The extent or scope of the content of the resource."
@@ -3515,7 +3572,7 @@ msgstr "La extensión o ámbito del contenido del recurso."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:836
 msgid "Rights"
-msgstr ""
+msgstr "Derechos"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:837
 msgid "Information about rights held in and over the resource."
@@ -3544,7 +3601,7 @@ msgstr "Propiedades del proyecto"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
 msgid "Project Title"
-msgstr ""
+msgstr "Título del proyecto"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "The project's title."
@@ -3552,7 +3609,7 @@ msgstr "Titulo del proyecto."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
 msgid "Header Background"
-msgstr ""
+msgstr "Fondo de la cabecera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
 msgid "Background image for a header (an image 100px high is recommended)."
@@ -3572,7 +3629,7 @@ msgstr "¿Ajustar imagen de fondo?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Primary author of the resource."
@@ -3580,7 +3637,7 @@ msgstr "Autor principal del recurso."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 msgid "License"
-msgstr ""
+msgstr "Licencia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
@@ -3588,7 +3645,7 @@ msgstr "Seleccionar Licencia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
 msgid "Footer"
-msgstr ""
+msgstr "Pie"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
 msgid "Web pages footer."
@@ -3600,7 +3657,7 @@ msgstr "Taxonomía"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
 msgid "Level 1"
-msgstr ""
+msgstr "Nivel 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
 msgid "Default name for level 1 nodes"
@@ -3608,7 +3665,7 @@ msgstr "Nombre por defecto para los nodos de nivel 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
 msgid "Level 2"
-msgstr ""
+msgstr "Nivel 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
 msgid "Default name for level 2 nodes"
@@ -3616,7 +3673,7 @@ msgstr "Nombre por defecto para los nodos de nivel 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
 msgid "Level 3"
-msgstr ""
+msgstr "Nivel 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
 msgid "Default name for level 3 nodes"
@@ -3624,7 +3681,7 @@ msgstr "Nombre por defecto para los nodos de nivel 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:178
 msgid "Update Tree"
-msgstr "Actualizar Árbol"
+msgstr "Actualizar árbol"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
 msgid "Outline"
@@ -3656,23 +3713,26 @@ msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:62
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:108
 msgid "General"
-msgstr ""
+msgstr "General"
 
+# No traducir mientras msgid esté en castellano
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
 msgid "Ciclo de vida"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
 msgid "MetaMetadatos"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:120
 msgid "Técnica"
@@ -3705,7 +3765,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
-msgstr ""
+msgstr "LOM.es"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
@@ -3747,23 +3807,23 @@ msgstr "Mover nodo hacia abajo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
-msgstr ""
+msgstr "Fichero"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
 msgid "New Window"
-msgstr ""
+msgstr "Ventana nueva"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
 msgid "Recent Projects..."
-msgstr ""
+msgstr "Proyectos recientes..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
@@ -3771,27 +3831,27 @@ msgstr "Eliminar la lista de proyectos recientes"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
-msgstr ""
+msgstr "Guardar como..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
 msgid "Print"
-msgstr ""
+msgstr "Imprimir"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
 msgid "Import"
-msgstr ""
+msgstr "Importar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:176
 msgid "HTML Course"
-msgstr ""
+msgstr "Curso HTML"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
 msgid "XLIFF File"
-msgstr ""
+msgstr "Archivo XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
 msgid "Common Cartridge"
-msgstr ""
+msgstr "Paquete Common Cartridge"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
 msgid "SCORM 1.2"
@@ -3799,7 +3859,7 @@ msgstr "SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
 msgid "IMS Content Package"
-msgstr ""
+msgstr "Paquete de Contenido IMS (IMS CP)"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
@@ -3815,19 +3875,19 @@ msgstr "Archivo comprimido Zip"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Single Page"
-msgstr ""
+msgstr "Página única"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "iPod Notes"
-msgstr ""
+msgstr "Notes para iPod"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "XLIFF"
-msgstr ""
+msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
-msgstr ""
+msgstr "Unificando"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:253
 msgid "Quit"
@@ -3835,77 +3895,78 @@ msgstr "Salir"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
-msgstr ""
+msgstr "Utilidades"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "Refresh Display"
-msgstr ""
+msgstr "Actualizar pantalla"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
 msgid "Styles"
-msgstr ""
+msgstr "Estilos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Help"
-msgstr ""
+msgstr "Ayuda"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
 msgid "eXe Tutorial"
-msgstr ""
+msgstr "Tutorial de eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "eXe Manual"
-msgstr ""
+msgstr "Manual de eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "Release Notes"
-msgstr ""
+msgstr "Notas de la versión"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
 msgid "eXe Web Site"
-msgstr ""
+msgstr "Sitio web de eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "Report an Issue"
-msgstr ""
+msgstr "Informar de un problema"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
 msgid "eXe Forums"
-msgstr ""
+msgstr "Foros de eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:395
 msgid "About eXe"
-msgstr ""
+msgstr "Acerca de eXe"
 
 #: exe/jsui/scripts/exe.js:124
 msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
-msgstr ""
+msgstr "Si sale de esta página la aplicación eXe seguirá ejecutándose. Por favor use el menú, Archivos->Salir si de verdad desea cerrar la aplicación."
 
 #: exe/webui/appletblock.py:83
 msgid "Please upload a .ggb file."
-msgstr "Por favor suba un archivo .ggb."
+msgstr "Por favor cargue un archivo .ggb."
 
 #: exe/webui/appletblock.py:85
 msgid "Please upload a .jclic.zip file."
-msgstr "Por favor suba un archivo .jclic.zip."
+msgstr "Por favor cargue un archivo .jclic.zip."
 
 #: exe/webui/appletblock.py:87
 msgid "Please upload a .sb or .scratch file."
-msgstr "Por favor suba un fichero .sb o .scratch"
+msgstr "Por favor cargue un fichero .sb o .scratch."
 
 #: exe/webui/appletblock.py:89
 msgid "Please type or paste a valid URL."
 msgstr "Por favor teclee o pegue una URL válida."
 
+# Español en msgid ("codigo")
 #: exe/webui/appletblock.py:95
 msgid ""
 "eXe can not access any scene inside the indicated website. Anyway you can"
 " access the desired scene in your regular browser, click with right mouse"
 " button on it and in config > codigo is its associated code. Copy and "
 "paste it directly into an Applet iDevice such as Other."
-msgstr ""
+msgstr "eXe no puede acceder a ninguna escena en el sitio web indicado. De todos modos usted podrá acceder a la escena deseada desde su navegador habitual, pulse con el botón derecho del ratón sobre ella y, en Config -> Código está su código asociado. Cópielo y péguelo directamente en un iDevice Applets de java como Otros."
 
 #: exe/webui/appletblock.py:128
 msgid "Descartes"
@@ -4039,25 +4100,33 @@ msgstr "Editar"
 msgid "Add another activity"
 msgstr "Agregar otra actividad"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/casopracticofpdblock.py:64
 msgid "Caso práctico"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/citasparapensarfpdblock.py:64
 msgid "Citas para pensar"
 msgstr ""
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/webui/clozefpdblock.py:104 exe/webui/clozelangfpdblock.py:105
 #: exe/webui/eleccionmultiplefpdblock.py:110
 msgid "Autoevaluacion"
 msgstr ""
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/webui/clozefpdblock.py:172 exe/webui/clozelangfpdblock.py:173
 #: exe/webui/element.py:2150 exe/webui/element.py:2544
 #: exe/webui/questionelement.py:152
 msgid "Solucion"
 msgstr ""
 
+# Falta de ortografía en msgid
+# No traducir mientras msgid esté en castellano
 #: exe/webui/clozefpdblock.py:175 exe/webui/clozelangfpdblock.py:176
 #: exe/webui/element.py:2155 exe/webui/reflectionfpdblock.py:143
 msgid "Retroalimentacion"
@@ -4073,6 +4142,7 @@ msgstr "eXe: editor XHTML para eLearning"
 msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/debesconocerfpdblock.py:64
 msgid "Debes conocer"
 msgstr ""
@@ -4210,7 +4280,7 @@ msgstr "Añadir campo de retroalimentación interactiva a su iDevice."
 
 #: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
-msgstr "Añadir un video FLV a su iDevice."
+msgstr "Añadir un video .FLV a su iDevice."
 
 #: exe/webui/editorpane.py:89
 msgid "Add an mp3 file to your iDevice."
@@ -4297,6 +4367,7 @@ msgstr "Información"
 msgid "Submit"
 msgstr "Enviar"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/ejercicioresueltofpdblock.py:110
 msgid "Ejercicio resuelto"
 msgstr ""
@@ -4356,7 +4427,7 @@ msgstr "Agregar imagen JPEG"
 
 #: exe/webui/element.py:929
 msgid "Select an image (JPG file)"
-msgstr "Seleccionar una imagen (archivo JPG)"
+msgstr "Seleccione una imagen (archivo JPG)"
 
 #: exe/webui/element.py:1098 exe/webui/element.py:1360
 msgid "Cloze Text"
@@ -4398,6 +4469,7 @@ msgstr "Reiniciar"
 msgid "Show Answers"
 msgstr "Mostrar las respuestas"
 
+# Typo en msgid
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Respuestas"
@@ -4549,14 +4621,17 @@ msgstr "Tamaño de la lupa: "
 msgid "Add another Question"
 msgstr "Agregar otra pregunta"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/orientacionesalumnadofpdblock.py:64
 msgid "Orientaciones para el alumnado"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/orientacionestutoriafpdblock.py:64
 msgid "Orientaciones para la tutoría"
 msgstr ""
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/parasabermasfpdblock.py:64
 msgid "Para saber más"
 msgstr ""
@@ -4602,6 +4677,7 @@ msgstr "ENVIAR RESPUESTAS"
 msgid "Submit Answer"
 msgstr "Enviar respuesta"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/recomendacionfpdblock.py:64
 msgid "Recomendación"
 msgstr ""
@@ -4614,6 +4690,7 @@ msgstr "Pulse aquí"
 msgid "Hide"
 msgstr "Ocultar"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
 msgid "Reflexiona"
 msgstr ""
@@ -4622,6 +4699,7 @@ msgstr ""
 msgid "Load"
 msgstr "Cargar"
 
+# No traducir mientras msgid esté en castellano
 #: exe/webui/seleccionmultiplefpdblock.py:90
 #: exe/webui/verdaderofalsofpdblock.py:109
 msgid "Autoevaluación"
@@ -4651,7 +4729,7 @@ msgstr "Artículo de la wikipedia en inglés"
 
 #: exe/webui/wikipediablock.py:115
 msgid "Euskara Wikipedia Article"
-msgstr ""
+msgstr "Artículo de la wikipedia en euskera"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
@@ -4693,9 +4771,10 @@ msgstr "Artículo de la wikipedia húngara"
 msgid "Polish Wikipedia Article"
 msgstr "Artículo de Wikipedia en Polaco"
 
+# Falta de ortografía en msgid
 #: exe/webui/wikipediablock.py:126
 msgid "Portugese Wikipedia Article"
-msgstr "Artículo de Wikipedia en Portugués"
+msgstr "Artículo de wikipedia en portugués"
 
 #: exe/webui/wikipediablock.py:127
 msgid "Slovenian Wikipedia Article"
@@ -4812,15 +4891,15 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
-"Paquete antiguo. Actualícelo por favor (Archivo..Abrir seguido de "
-"Archivo..Guardar como) antes de intentar insertarlo en otro paquete"
+"Paquete antiguo. Actualícelo por favor (Archivo->Abrir seguido de "
+"Archivo->Guardar como) antes de intentar insertarlo en otro paquete"
 
 #: twisted/persisted/styles.py:437
 msgid ""
 "Unable to merge: duplicate Java Applet resource names exist (including: "
 "\"\"). Please see the log file for the names of ALL such problem "
 "resources."
-msgstr ""
+msgstr "Error en la fusión de paquetes: se han encontrado nombres de recursos Applet de java duplicados (incluido: \"\"). Por favor consulte en el fichero de registro los nombres de TODOS estos recursos problemáticos."
 
 #: twisted/persisted/styles.py:541
 msgid ""
@@ -4842,4 +4921,3 @@ msgstr ""
 
 #~ msgid "tooltiptext"
 #~ msgstr "texto de ayuda"
-
