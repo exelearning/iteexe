@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 08:10+0200\n"
+"POT-Creation-Date: 2012-07-02 18:48+0200\n"
 "PO-Revision-Date: 2008-07-17 19:59+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team: <cs@li.org>\n"
@@ -3387,6 +3387,8 @@ msgid "Select a language."
 msgstr "Vyberte jazyk."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:820
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:90
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:132
 msgid "Relation"
 msgstr ""
 
@@ -3403,6 +3405,8 @@ msgid "The extent or scope of the content of the resource."
 msgstr "Obsahové rozmezí prostředku."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:836
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:86
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:128
 msgid "Rights"
 msgstr ""
 
@@ -3551,47 +3555,40 @@ msgid "General"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
-msgid "Ciclo de vida"
+msgid "Life Cycle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
-msgid "MetaMetadatos"
+msgid "Meta Metadata"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:120
-msgid "Técnica"
+msgid "Technical"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:82
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:124
-msgid "Uso educativo"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:86
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:128
-msgid "Derechos"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:90
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:132
-msgid "Relación"
+msgid "Educational"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:94
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:136
-msgid "Anotación"
+msgid "Annotation"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:98
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:140
-msgid "Clasificación"
+msgid "Classification"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
+msgid "Life Cicle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
@@ -4710,15 +4707,27 @@ msgstr ""
 "vytvořen novější verzí eXe. Aktualizujte, prosím, svou verzi eXe a zkuste"
 " to znovu."
 
-#~ msgid "key"
-#~ msgstr "klíč"
+#~ msgid "Ciclo de vida"
+#~ msgstr ""
 
-#~ msgid "keycode"
-#~ msgstr "kód klávesy"
+#~ msgid "MetaMetadatos"
+#~ msgstr ""
 
-#~ msgid "title"
-#~ msgstr "nadpis"
+#~ msgid "Técnica"
+#~ msgstr ""
 
-#~ msgid "tooltiptext"
-#~ msgstr "text plovoucích tipů"
+#~ msgid "Uso educativo"
+#~ msgstr ""
+
+#~ msgid "Derechos"
+#~ msgstr ""
+
+#~ msgid "Relación"
+#~ msgstr ""
+
+#~ msgid "Anotación"
+#~ msgstr ""
+
+#~ msgid "Clasificación"
+#~ msgstr ""
 

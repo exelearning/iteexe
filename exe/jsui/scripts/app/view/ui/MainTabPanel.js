@@ -67,35 +67,35 @@ Ext.define('eXe.view.ui.MainTabPanel', {
 	                                    },
                                         {
                                             xtype: 'panel',
-                                            title: _('Ciclo de vida')
+                                            title: _('Life Cycle')
                                         },
 	                                    {
 	                                        xtype: 'panel',
-	                                        title: _('MetaMetadatos')
+	                                        title: _('Meta Metadata')
 	                                    },
                                         {
                                             xtype: 'panel',
-                                            title: _('Técnica')
+                                            title: _('Technical')
                                         },
 	                                    {
 	                                        xtype: 'panel',
-	                                        title: _('Uso educativo')
+	                                        title: _('Educational')
 	                                    },
                                         {
                                             xtype: 'panel',
-                                            title: _('Derechos')
+                                            title: _('Rights')
                                         },
 	                                    {
 	                                        xtype: 'panel',
-	                                        title: _('Relación')
+	                                        title: _('Relation')
 	                                    },
                                         {
                                             xtype: 'panel',
-                                            title: _('Anotación')
+                                            title: _('Annotation')
                                         },
 	                                    {
 	                                        xtype: 'panel',
-	                                        title: _('Clasificación')
+	                                        title: _('Classification')
 	                                    }
                                     ]
                                 },
@@ -109,35 +109,35 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Ciclo de vida')
+                                            title: _('Life Cicle')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('MetaMetadatos')
+                                            title: _('Meta Metadata')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Técnica')
+                                            title: _('Technical')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Uso educativo')
+                                            title: _('Educational')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Derechos')
+                                            title: _('Rights')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Relación')
+                                            title: _('Relation')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Anotación')
+                                            title: _('Annotation')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Clasificación')
+                                            title: _('Classification')
                                         }
                                     ]
                                 }
