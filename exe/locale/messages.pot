@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 1.04.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-07-02 18:48+0200\n"
+"POT-Creation-Date: 2012-07-02 19:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3105,12 +3105,13 @@ msgid "General"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
 msgid "Life Cycle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
-msgid "Meta Metadata"
+msgid "Meta-Metadata"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
@@ -3135,10 +3136,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
-msgid "Life Cicle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
@@ -4063,7 +4060,7 @@ msgid "English Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:115
-msgid "Euskara Wikipedia Article"
+msgid "Basque Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:116

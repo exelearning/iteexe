@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 18:48+0200\n"
+"POT-Creation-Date: 2012-07-02 19:48+0200\n"
 "PO-Revision-Date: 2008-02-25 11:27+1300\n"
 "Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -3235,12 +3235,13 @@ msgid "General"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
 msgid "Life Cycle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
-msgid "Meta Metadata"
+msgid "Meta-Metadata"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
@@ -3265,10 +3266,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
-msgid "Life Cicle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
@@ -4201,7 +4198,7 @@ msgid "English Wikipedia Article"
 msgstr "Engelsk Wikipedia-artikkel"
 
 #: exe/webui/wikipediablock.py:115
-msgid "Euskara Wikipedia Article"
+msgid "Basque Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:116
@@ -4370,27 +4367,12 @@ msgstr ""
 "idevices/generic.data filen eller pakken du prøver å åpne er laget med en"
 " nyere versjon av eXe.  Vennligst oppgrader eXe og prøv igjen."
 
-#~ msgid "Ciclo de vida"
+#~ msgid "Meta Metadata"
 #~ msgstr ""
 
-#~ msgid "MetaMetadatos"
+#~ msgid "Life Cicle"
 #~ msgstr ""
 
-#~ msgid "Técnica"
-#~ msgstr ""
-
-#~ msgid "Uso educativo"
-#~ msgstr ""
-
-#~ msgid "Derechos"
-#~ msgstr ""
-
-#~ msgid "Relación"
-#~ msgstr ""
-
-#~ msgid "Anotación"
-#~ msgstr ""
-
-#~ msgid "Clasificación"
+#~ msgid "Euskara Wikipedia Article"
 #~ msgstr ""
 

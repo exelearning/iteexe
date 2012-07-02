@@ -71,7 +71,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                                         },
 	                                    {
 	                                        xtype: 'panel',
-	                                        title: _('Meta Metadata')
+	                                        title: _('Meta-Metadata')
 	                                    },
                                         {
                                             xtype: 'panel',
@@ -109,11 +109,11 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Life Cicle')
+                                            title: _('Life Cycle')
                                         },
                                         {
                                             xtype: 'panel',
-                                            title: _('Meta Metadata')
+                                            title: _('Meta-Metadata')
                                         },
                                         {
                                             xtype: 'panel',

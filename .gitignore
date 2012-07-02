@@ -17,3 +17,4 @@ exe/webui/docs/manual
 .project
 .pydevproject
 .settings/
+exe/config

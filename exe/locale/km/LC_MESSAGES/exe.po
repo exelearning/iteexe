@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 18:48+0200\n"
+"POT-Creation-Date: 2012-07-02 19:48+0200\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3625,12 +3625,13 @@ msgid "General"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
 msgid "Life Cycle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
-msgid "Meta Metadata"
+msgid "Meta-Metadata"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
@@ -3655,10 +3656,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
-msgid "Life Cicle"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
@@ -4608,7 +4605,7 @@ msgid "English Wikipedia Article"
 msgstr "អត្ថបទ​វីគីភីឌៀ​​អង់គ្លេស"
 
 #: exe/webui/wikipediablock.py:115
-msgid "Euskara Wikipedia Article"
+msgid "Basque Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:116
@@ -4778,27 +4775,12 @@ msgstr ""
 "គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ "
 "ហើយ​ព្យាយាម​ម្ដងទៀត ។"
 
-#~ msgid "Ciclo de vida"
+#~ msgid "Meta Metadata"
 #~ msgstr ""
 
-#~ msgid "MetaMetadatos"
+#~ msgid "Life Cicle"
 #~ msgstr ""
 
-#~ msgid "Técnica"
-#~ msgstr ""
-
-#~ msgid "Uso educativo"
-#~ msgstr ""
-
-#~ msgid "Derechos"
-#~ msgstr ""
-
-#~ msgid "Relación"
-#~ msgstr ""
-
-#~ msgid "Anotación"
-#~ msgstr ""
-
-#~ msgid "Clasificación"
+#~ msgid "Euskara Wikipedia Article"
 #~ msgstr ""
 

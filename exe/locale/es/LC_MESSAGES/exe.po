@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 18:48+0200\n"
+"POT-Creation-Date: 2012-07-02 19:48+0200\n"
 "PO-Revision-Date: 2012-07-02 19:31+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
@@ -3691,13 +3691,14 @@ msgid "General"
 msgstr "General"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
 msgid "Life Cycle"
 msgstr "Ciclo de vida"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
-msgid "Meta Metadata"
-msgstr "Meta metadatos"
+msgid "Meta-Metadata"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:120
@@ -3722,11 +3723,6 @@ msgstr "Clasificación"
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
 msgstr "LOM.es"
-
-# Error ortográfico - es cycle, no cicle
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
-msgid "Life Cicle"
-msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
@@ -4678,8 +4674,8 @@ msgid "English Wikipedia Article"
 msgstr "Artículo de la wikipedia en inglés"
 
 #: exe/webui/wikipediablock.py:115
-msgid "Euskara Wikipedia Article"
-msgstr "Artículo de la wikipedia en euskera"
+msgid "Basque Wikipedia Article"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
@@ -4862,30 +4858,13 @@ msgstr ""
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
 
-# No traducir mientras msgid esté en castellano
-#~ msgid "Ciclo de vida"
+#~ msgid "Meta Metadata"
+#~ msgstr "Meta metadatos"
+
+# Error ortográfico - es cycle, no cicle
+#~ msgid "Life Cicle"
 #~ msgstr ""
 
-# No traducir mientras msgid esté en castellano
-#~ msgid "MetaMetadatos"
-#~ msgstr ""
-
-# No traducir mientras msgid esté en castellano
-#~ msgid "Técnica"
-#~ msgstr ""
-
-#~ msgid "Uso educativo"
-#~ msgstr ""
-
-#~ msgid "Derechos"
-#~ msgstr ""
-
-#~ msgid "Relación"
-#~ msgstr ""
-
-#~ msgid "Anotación"
-#~ msgstr ""
-
-#~ msgid "Clasificación"
-#~ msgstr ""
+#~ msgid "Euskara Wikipedia Article"
+#~ msgstr "Artículo de la wikipedia en euskera"
 
