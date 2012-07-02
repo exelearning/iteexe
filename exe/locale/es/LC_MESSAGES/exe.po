@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-02 18:48+0200\n"
-"PO-Revision-Date: 2012-07-01 17:49+0200\n"
+"PO-Revision-Date: 2012-07-02 19:31+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -3692,37 +3692,38 @@ msgstr "General"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 msgid "Life Cycle"
-msgstr ""
+msgstr "Ciclo de vida"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
 msgid "Meta Metadata"
-msgstr ""
+msgstr "Meta metadatos"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:120
 msgid "Technical"
-msgstr ""
+msgstr "Técnica"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:82
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:124
 msgid "Educational"
-msgstr ""
+msgstr "Uso educativo"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:94
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:136
 msgid "Annotation"
-msgstr ""
+msgstr "Anotación"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:98
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:140
 msgid "Classification"
-msgstr ""
+msgstr "Clasificación"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:104
 msgid "LOM.es"
 msgstr "LOM.es"
 
+# Error ortográfico - es cycle, no cicle
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:112
 msgid "Life Cicle"
 msgstr ""
