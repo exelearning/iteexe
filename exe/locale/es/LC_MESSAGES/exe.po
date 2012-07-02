@@ -2619,7 +2619,7 @@ msgstr "Cargando paquete..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:656
 msgid "Open File"
-msgstr "Abrir fichero"
+msgstr "Abrir archivo"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:661
 msgid "Loading package: {filename}"
@@ -3764,7 +3764,7 @@ msgstr "Mover nodo hacia abajo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
-msgstr "Fichero"
+msgstr "Archivo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
