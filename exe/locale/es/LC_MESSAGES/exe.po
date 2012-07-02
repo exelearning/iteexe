@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-02 19:48+0200\n"
-"PO-Revision-Date: 2012-07-02 19:31+0200\n"
+"PO-Revision-Date: 2012-07-02 20:02+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -3698,7 +3698,7 @@ msgstr "Ciclo de vida"
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:74
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:116
 msgid "Meta-Metadata"
-msgstr ""
+msgstr "MetaMetadatos"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:120
@@ -4675,7 +4675,7 @@ msgstr "Artículo de la wikipedia en inglés"
 
 #: exe/webui/wikipediablock.py:115
 msgid "Basque Wikipedia Article"
-msgstr ""
+msgstr "Artículo de la enciclopedia en euskera"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
