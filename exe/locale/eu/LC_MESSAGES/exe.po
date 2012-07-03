@@ -1,16 +1,19 @@
-# EXELearning Spanish PO file
-# Copyright (C) 2004-2006 EXELearning.org
+# Basque EXELearning PO file
+# Copyright (C) 2004-2012 EXELearning.org
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
-#
+# Asmoz fundazioa, 2009
+# http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
+# Malen <mjareno@asmoz.org>\n
+# ULHI, 2012 Joxemi Andonegi <jmandonegi@ulhi.net>\n
 msgid ""
 msgstr ""
-"Project-Id-Version: eXe trunk (pre-0.8)\n"
+"Project-Id-Version: eXe trunk (1.04.1)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-03 07:43+0200\n"
-"PO-Revision-Date: 2012-03-08 18:51+0100\n"
-"Last-Translator: José Ramón Jiménez Reyes <jrjimenezr@gmail.com>\n"
-"Language-Team: eXe <info@exelearning.org>\n"
+"POT-Creation-Date: 2012-07-03 11:14+0200\n"
+"PO-Revision-Date: 2012-07-03 10:22+0200\n"
+"Last-Translator: José Miguel Andonegi <jmandonegi@ulhi.net>\n"
+"Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -94,8 +97,9 @@ msgid "iDevice %s has no package"
 msgstr "%s iDevice-k ez du paketerik"
 
 #: exe/engine/appletidevice.py:417
+#, fuzzy
 msgid "Sorry, this URL is unreachable"
-msgstr ""
+msgstr "URL-a ez da irisgarria"
 
 #: exe/engine/appletidevice.py:502
 msgid ""
@@ -310,7 +314,7 @@ msgstr ""
 
 #: exe/engine/casopracticofpdidevice.py:29
 msgid "FPD - Caso Practico"
-msgstr ""
+msgstr "FPD - Kasu Praktikoa"
 
 #: exe/engine/casopracticofpdidevice.py:30
 #: exe/engine/citasparapensarfpdidevice.py:30
@@ -329,7 +333,7 @@ msgid ""
 "en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
 msgstr ""
 "Kasu praktikoa iDevicearen bidez, ikaslea bere ikasketa prozesuaren zehar"
-" gidatzeko balio duen istorio bat kontatu dezakezu"
+" gidatzeko balio duen istorio bat kontatu dezakezu."
 
 #: exe/engine/casopracticofpdidevice.py:34
 #: exe/engine/citasparapensarfpdidevice.py:34
@@ -340,16 +344,16 @@ msgstr ""
 #: exe/engine/parasabermasfpdidevice.py:34
 #: exe/engine/recomendacionfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
-msgstr "iDevice honetan agertuko den testua sartu."
+msgstr "iDevice honetan agertuko den testua sartu"
 
 #: exe/engine/casopracticofpdidevice.py:37
 #: exe/engine/casopracticofpdidevice.py:135
 msgid "Texto Caso pr&aacute;ctico:"
-msgstr "Kasu praktikoaren testua"
+msgstr "Kasu praktikoaren testua:"
 
 #: exe/engine/citasparapensarfpdidevice.py:29
 msgid "FPD - Citas Para Pensar"
-msgstr ""
+msgstr "FPD - Hausnarketarako Aipua"
 
 #: exe/engine/citasparapensarfpdidevice.py:31
 msgid ""
@@ -361,15 +365,15 @@ msgstr ""
 
 #: exe/engine/citasparapensarfpdidevice.py:37
 msgid "Texto Citas para pensar:"
-msgstr "Hausnarketarako aipuaren testua"
+msgstr "Hausnarketarako aipuaren testua:"
 
 #: exe/engine/citasparapensarfpdidevice.py:136
 msgid "Texto para pensar:"
-msgstr "Hausnarketarako aipuaren testua"
+msgstr "Hausnarketarako aipuaren testua:"
 
 #: exe/engine/clozefpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco"
-msgstr ""
+msgstr "FPD - Hutsuneak Betetzeko Jarduera"
 
 #: exe/engine/clozefpdidevice.py:48 exe/engine/clozeidevice.py:48
 #: exe/engine/clozelangfpdidevice.py:48
@@ -529,7 +533,7 @@ msgstr "Irakurri beheko paragrafoa eta bete hutsuneak."
 
 #: exe/engine/clozelangfpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
-msgstr ""
+msgstr "FPD - Hutsuneak Betetzeko Jarduera (Eraldatua)"
 
 #: exe/engine/clozelangfpdidevice.py:122
 #, fuzzy
@@ -550,16 +554,16 @@ msgstr ""
 
 #: exe/engine/correccionfpdidevice.py:36
 msgid "Texto Correci&oacute;n:"
-msgstr "Zuzenkata testua"
+msgstr "Zuzenkata testua:"
 
 #: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
 #: exe/engine/destacadofpdidevice.py:134
 msgid "Texto Destacado:"
-msgstr "Nabarmendutako testua"
+msgstr "Nabarmendutako testua:"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - Debes Conocer"
-msgstr ""
+msgstr "FPD - Jakin  Behar Duzu"
 
 #: exe/engine/debesconocerfpdidevice.py:31
 msgid ""
@@ -572,11 +576,11 @@ msgstr ""
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
 msgid "Texto Debes conocer:"
-msgstr "Jakin behar duzunaren testua"
+msgstr "Jakin behar duzunaren testua:"
 
 #: exe/engine/destacadofpdidevice.py:29
 msgid "FPD - Destacado"
-msgstr ""
+msgstr "FPD - Nabarmendua"
 
 #: exe/engine/destacadofpdidevice.py:31
 msgid ""
@@ -588,7 +592,7 @@ msgstr ""
 
 #: exe/engine/ejercicioresueltofpdidevice.py:197
 msgid "FPD - Ejercicio Resuelto"
-msgstr ""
+msgstr "FPD - Ebatzitako Ariketa"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:60
 msgid "FPD - Actividad de Eleccion Multiple"
@@ -1409,7 +1413,7 @@ msgid ""
 "choose where on the screen the image will be positioned."
 msgstr ""
 "Lerrokatzean, irudia \n"
-"pantailan non kokatu nahi duzun zehaztuko duzu. "
+"pantailan non kokatu nahi duzun zehaztuko duzu."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1580,7 +1584,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr ""
 "Lerrokatzean, media player \n"
-"pantailan non kokatu nahi duzun aukeratuko duzu. "
+"pantailan non kokatu nahi duzun aukeratuko duzu."
 
 #: exe/engine/multiselectidevice.py:43
 msgid "Multi-select"
@@ -1604,7 +1608,7 @@ msgstr "Ikasle-Orientabidearen testua"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:135
 msgid "Texto Orientaciones alumnado:"
-msgstr "Ikasle-orientabideen testua"
+msgstr "Ikasle-orientabideen testua:"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:29
 msgid "FPD - Orientaciones Tutoria"
@@ -1624,7 +1628,7 @@ msgstr "Tutoretza-Orientabideen testuak"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:136
 msgid "Texto Orientaciones tutor&iacute;a:"
-msgstr "Tutoretza-orientabideen testua"
+msgstr "Tutoretza-orientabideen testua:"
 
 #: exe/engine/package.py:390
 msgid "Topic"
@@ -1740,7 +1744,7 @@ msgstr ""
 #: exe/engine/recomendacionfpdidevice.py:37
 #: exe/engine/recomendacionfpdidevice.py:136
 msgid "Texto de la recomendaci&oacute;n:"
-msgstr "Gomendioaren testua"
+msgstr "Gomendioaren testua:"
 
 #: exe/engine/reflectionfpdidevice.py:46
 msgid "FPD - Reflexiona (con Retroalimentacion)"
@@ -1825,7 +1829,7 @@ msgid ""
 msgstr ""
 "iDevice RSS banako bati edukia\n"
 "emateko erabiltzen da. iDevice honen bidez,\n"
-"feed batetik estekak aukera ditzakezu, ikasleek ikus ditzaten. "
+"feed batetik estekak aukera ditzakezu, ikasleek ikus ditzaten."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2084,7 +2088,7 @@ msgstr ""
 #: exe/exe_do:125
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
-msgstr "'%s' fitxategia ondo inportatu da '%s'-ra"
+msgstr "'%s' fitxategia ondo inportatu da '%s'-ra."
 
 #: exe/exe_do:128
 #, python-format
@@ -2157,10 +2161,13 @@ msgid "Import format not implemented"
 msgstr "Inportazio formatua ez dago inplementatua"
 
 #: exe/importers/cmdlineimporter.py:51
+#, fuzzy
 msgid ""
 "WARNING: content.xml version 0.1. Importing from content.data. Try to "
 "import from a content.xml version 0.2."
 msgstr ""
+"KONTUZ: content.xml-aren bertsioa 0.1. da. content.data-tik inportatzen "
+"Saitu 0.2. bertsioan dagoen content.xml batetik inportatzen"
 
 #: exe/importers/cmdlineimporter.py:54
 msgid "Invalid output package"
@@ -2352,7 +2359,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:174
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
 msgid "Show Image"
-msgstr ""
+msgstr "Erakutsi irudia"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:127 exe/webui/element.py:518
 msgid "Select an image"
@@ -2593,11 +2600,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:34
 msgid "SCORM 1.2 Options"
-msgstr ""
+msgstr "SCORM 1.2-ren aukerak"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:42
 msgid "Add Previous/Next links within SCOs?"
-msgstr ""
+msgstr "Aurreko/Hurrengo estekak SCOs-en gehitu?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
 msgid ""
@@ -2612,6 +2619,9 @@ msgid ""
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
+"Koadrotxo hau klikatuz gero, eXek Hurrengoa eta Aurrekoa estekak gehituko"
+" ditu zure SCOaren orri bakoitzean. Honek, SCORMaren luzapen ez-estandar "
+"bat eskatzen du eta bakarrik funtzuinatuko du Moodle-en bertsio batzutan."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:846
@@ -3298,7 +3308,7 @@ msgstr "Izenburua"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:712
 msgid "The name given to the resource."
-msgstr "Baliabideari emandako izena"
+msgstr "Baliabideari emandako izena."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:718
 msgid "Creator"
@@ -3309,12 +3319,13 @@ msgid "An entity primarily responsible for making the content of the resource."
 msgstr "Baliabidearen edukia sorzteko ardura duen entitatea."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:727
+#, fuzzy
 msgid "Subject"
-msgstr ""
+msgstr "Tema:"
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:728
 msgid "The topic of the content of the resource."
-msgstr "Baliabidearen edukiaren gaia"
+msgstr "Baliabidearen edukiaren gaia."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:731
 msgid ""
@@ -3327,7 +3338,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:737
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "An account of the content of the resource."
-msgstr "Baliabidearen edukiaren azalpena"
+msgstr "Baliabidearen edukiaren azalpena."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:744
 msgid "Publisher"
@@ -3353,7 +3364,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:766
 msgid "A date of an event in the lifecycle of the resource."
-msgstr "Baliabidearen bizitza zikloaren gartaera baten data"
+msgstr "Baliabidearen bizitza zikloaren gartaera baten data."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:769
 msgid ""
@@ -3366,7 +3377,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:777
 msgid "The nature or genre of the content of the resource."
-msgstr "Baliabidearen edukiaren izaera edo generoa"
+msgstr "Baliabidearen edukiaren izaera edo generoa."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:780
 msgid ""
@@ -3383,7 +3394,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:792
 msgid "Select a Format."
-msgstr "Aukeratu formatua"
+msgstr "Aukeratu formatua."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:798
 msgid "Identifier"
@@ -3391,7 +3402,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:799
 msgid "An unambiguous reference to the resource within a given context."
-msgstr "Testuinguru jakin baten barnean anbiguoa ez den baliabide erreferentzia "
+msgstr "Testuinguru jakin baten barnean anbiguoa ez den baliabide erreferentzia."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:805
 msgid "Source"
@@ -3399,7 +3410,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:806
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr "Baliabide honen jatorria den baliabidearen aipamena"
+msgstr "Baliabide honen jatorria den baliabidearen aipamena."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:812
 msgid "Language"
@@ -3425,7 +3436,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:828
 msgid "The extent or scope of the content of the resource."
-msgstr "Baliabidearen edukiaren hedadura edo irekitasuna"
+msgstr "Baliabidearen edukiaren hedadura edo irekitasuna."
 
 #: exe/jsui/scripts/app/view/forms/MetadataPanel.js:836
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:86
@@ -3455,7 +3466,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
 msgid "Project Properties"
-msgstr ""
+msgstr "Proiektuaren ezaugarriak"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
 msgid "Project Title"
@@ -3463,7 +3474,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "The project's title."
-msgstr ""
+msgstr "Proiektuaren titulua."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
 msgid "Header Background"
@@ -3472,26 +3483,28 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
 msgid "Background image for a header (an image 100px high is recommended)."
 msgstr ""
+"Goiburuaren atzeko irudia (gomendatzen da 100px-etako altuera duen "
+"irudia)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
 msgid "Load Image"
-msgstr ""
+msgstr "Kargatu irudia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:84
 msgid "Clear Image"
-msgstr ""
+msgstr "Ezabatu irudia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Tile background image?"
-msgstr ""
+msgstr "Atzekaldeko irudia zehaztu?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Baliabidearen egile nagusia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 msgid "License"
@@ -3504,59 +3517,59 @@ msgstr "GNUren dokumentazio librearen lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
 msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution 3.0 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution-Share Alike 3.0 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution-Derivatives 3.0 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial 3-0 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial Share Alike 3.0 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution Non-commercial No Derivatives 3.0 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution 2.5 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-ShareAlike 2.5 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NoDerivs 2.5 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial 2.5 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 msgid "Developing Nations 2.0"
-msgstr ""
+msgstr "Developing Nations 2.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
-msgstr ""
+msgstr "Aukeratu lizentzia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
 msgid "Footer"
@@ -3564,11 +3577,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
 msgid "Web pages footer."
-msgstr ""
+msgstr "Web orrien oina."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:152
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taxonomia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
 msgid "Level 1"
@@ -3576,7 +3589,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "1. mailako nodoen izen lehenetsia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
 msgid "Level 2"
@@ -3584,7 +3597,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "2. mailako nodoen izen lehenetsia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
 msgid "Level 3"
@@ -3592,11 +3605,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "3. mailako nodoen izen lehenetsia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:178
 msgid "Update Tree"
-msgstr ""
+msgstr "Eguneratu zuhaitza"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
 msgid "Outline"
@@ -3624,7 +3637,7 @@ msgstr "Metadatuak"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:58
 msgid "Dublin Core"
-msgstr ""
+msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:62
 msgid "LOM"
@@ -4385,7 +4398,7 @@ msgstr "lerro berria"
 
 #: exe/webui/element.py:1776
 msgid "Select a font size: "
-msgstr "Auekratu letra neurria:"
+msgstr "Aukeratu letra neurria: "
 
 #: exe/webui/element.py:1886 exe/webui/element.py:2238
 #: exe/webui/element.py:2336 exe/webui/element.py:2363
@@ -4503,7 +4516,7 @@ msgstr "Oso handia"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr "Luparen neurria:"
+msgstr "Luparen neurria: "
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
@@ -4553,7 +4566,7 @@ msgstr "Ezkutatu feedbacka"
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr "Aukeratu gainditze-koefizientea:"
+msgstr "Aukeratu gainditze-koefizientea: "
 
 #: exe/webui/quiztestblock.py:152
 msgid "SUBMIT ANSWERS"
@@ -4732,7 +4745,7 @@ msgstr ""
 "Aukera hau ez baduzu klikatzen, helburu testua hutsik sortuko da. "
 "Itzulpen tresna batzuk (adib.: OmegaT) xede hizkuntzako testuekin lan "
 "egiten dute soilik eta jatorrizko eremuaren testuarekin aurre-beteta "
-"egotea behar dute "
+"egotea behar dute."
 
 #: exe/webui/xliffexportpreferencespage.py:123
 msgid "Wrap fields in CDATA"
