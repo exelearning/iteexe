@@ -9,19 +9,17 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-03 07:43+0200\n"
-"PO-Revision-Date: 2012-07-02 20:02+0200\n"
-"Last-Translator: Juan Rafael Fernández "
-"<juanrafael.fernandez@hispalinux.es>\n"
+"PO-Revision-Date: 2012-07-03 10:09+0200\n"
+"Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
-msgstr "Applet de Java"
+msgstr "Applet de java"
 
 #: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
 #: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:47
@@ -3616,55 +3614,55 @@ msgstr "Licencia GNU de Documentación Libre"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
 msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Compartir igual 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento Sin obra derivada 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No-comercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No-comercial Compartir igual 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento No-comercial Sin obra derivada 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento-Compartir igual 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento-Sin obra derivada 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento-No comercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento-No comercial-Compartir igual 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Licencia Creative Commons Reconocimiento-No comercial-Sin obra derivada 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 msgid "Developing Nations 2.0"
-msgstr ""
+msgstr "Naciones en desarrollo 2.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
