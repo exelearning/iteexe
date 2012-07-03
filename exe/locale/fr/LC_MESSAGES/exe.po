@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 19:48+0200\n"
+"POT-Creation-Date: 2012-07-03 07:43+0200\n"
 "PO-Revision-Date: 2011-10-10 16:32+0100\n"
 "Last-Translator: José Ramón Jiménez Reyes <jrjimenezr@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -3495,6 +3495,63 @@ msgstr ""
 msgid "License"
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
+#: exe/webui/wikipediablock.py:237
+msgid "GNU Free Documentation License"
+msgstr "Licence de documentation libre GNU"
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
+msgid "Creative Commons Attribution Share Alike 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
+msgid "Creative Commons Attribution No Derivatives 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
+msgid "Creative Commons Attribution Non-commercial 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
+msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
+msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+msgid "Creative Commons Attribution 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
+msgid "Developing Nations 2.0"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
 msgstr ""
@@ -4642,10 +4699,6 @@ msgstr "Site personnel"
 msgid "This article is licensed under the "
 msgstr "Cet article est régi pour les droits associés par la licence"
 
-#: exe/webui/wikipediablock.py:237
-msgid "GNU Free Documentation License"
-msgstr "Licence de documentation libre GNU"
-
 #: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
 msgstr "Utilise du matériel provenant de"
@@ -4725,13 +4778,4 @@ msgstr ""
 "Le dossier que vous souhaitez charger, ou les outils et fichiers qu'il "
 "incorpore ont été créés avec une version d'Exe plus récente que celle que"
 " vous utilisez. SVP, faites une mise à jour d'Exelearning et réessayez."
-
-#~ msgid "Meta Metadata"
-#~ msgstr ""
-
-#~ msgid "Life Cicle"
-#~ msgstr ""
-
-#~ msgid "Euskara Wikipedia Article"
-#~ msgstr ""
 

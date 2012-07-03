@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 19:48+0200\n"
+"POT-Creation-Date: 2012-07-03 07:43+0200\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3543,6 +3543,63 @@ msgstr ""
 msgid "License"
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
+#: exe/webui/wikipediablock.py:237
+msgid "GNU Free Documentation License"
+msgstr "​លក្ខខណ្ឌ​អាជ្ញាបណ្ណ​ឯកសារ​ឥតគិត​ថ្លៃ​របស់ GNU"
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
+msgid "Creative Commons Attribution Share Alike 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
+msgid "Creative Commons Attribution No Derivatives 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
+msgid "Creative Commons Attribution Non-commercial 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
+msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
+msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+msgid "Creative Commons Attribution 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
+msgid "Developing Nations 2.0"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
 msgstr ""
@@ -4692,10 +4749,6 @@ msgstr "តំបន់​បណ្ដាញ​ផ្ទាល់ខ្លួន
 msgid "This article is licensed under the "
 msgstr "អត្ថបទ​នេះ​ស្ថិតក្រោម​អាជ្ញាបណ្ណ "
 
-#: exe/webui/wikipediablock.py:237
-msgid "GNU Free Documentation License"
-msgstr "​លក្ខខណ្ឌ​អាជ្ញាបណ្ណ​ឯកសារ​ឥតគិត​ថ្លៃ​របស់ GNU"
-
 #: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
 msgstr "វា​ប្រើ​សម្ភារៈ​ពី "
@@ -4774,13 +4827,4 @@ msgstr ""
 "ទាំង​ឯកសារ idevices/generic.data ឬ​កញ្ចប់​ដែល​អ្នក​កំពុង​ផ្ទុក "
 "គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ "
 "ហើយ​ព្យាយាម​ម្ដងទៀត ។"
-
-#~ msgid "Meta Metadata"
-#~ msgstr ""
-
-#~ msgid "Life Cicle"
-#~ msgstr ""
-
-#~ msgid "Euskara Wikipedia Article"
-#~ msgstr ""
 

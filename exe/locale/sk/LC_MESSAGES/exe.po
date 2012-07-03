@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 19:48+0200\n"
+"POT-Creation-Date: 2012-07-03 07:43+0200\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -3477,6 +3477,63 @@ msgstr ""
 msgid "License"
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
+#: exe/webui/wikipediablock.py:237
+msgid "GNU Free Documentation License"
+msgstr "GNU Free Documentation License"
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
+msgid "Creative Commons Attribution Share Alike 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
+msgid "Creative Commons Attribution No Derivatives 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
+msgid "Creative Commons Attribution Non-commercial 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
+msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
+msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+msgid "Creative Commons Attribution 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
+msgid "Developing Nations 2.0"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
 msgstr ""
@@ -4624,10 +4681,6 @@ msgstr "Vlastný web"
 msgid "This article is licensed under the "
 msgstr "Tento článok spadá pod licenciu "
 
-#: exe/webui/wikipediablock.py:237
-msgid "GNU Free Documentation License"
-msgstr "GNU Free Documentation License"
-
 #: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
 msgstr "Používa materiál(y) z: "
@@ -4706,13 +4759,4 @@ msgstr ""
 "Buď váš idevice/generic.data súbor alebo balíček, ktorý načítavate, bol "
 "vytvorený novšou verziou eXe. Aktualizujte, prosím, vašu verziu eXe a "
 "skúste to znovu."
-
-#~ msgid "Meta Metadata"
-#~ msgstr ""
-
-#~ msgid "Life Cicle"
-#~ msgstr ""
-
-#~ msgid "Euskara Wikipedia Article"
-#~ msgstr ""
 
