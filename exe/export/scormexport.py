@@ -352,8 +352,6 @@ class ScormPage(Page):
 	html = aux.sub("", html)
 	#JR: Cambio el & en los enlaces del glosario
 	html = html.replace("&concept", "&amp;concept")
-        #JR: Cambiamos las anclas por enlaces a archivos
-        html = html.replace('href="#', 'href="')
         return html
 
 
