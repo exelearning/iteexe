@@ -187,8 +187,12 @@ function dechex(n) {
 function computeColor(e) {
 	var x, y, partWidth, partDetail, imHeight, r, g, b, coef, i, finalCoef, finalR, finalG, finalB;
 
-	x = e.offsetX ? e.offsetX : (e.target ? e.clientX - e.target.x : 0);
-	y = e.offsetY ? e.offsetY : (e.target ? e.clientY - e.target.y : 0);
+	//x = e.offsetX ? e.offsetX : (e.target ? e.clientX - e.target.x : 0);
+	//y = e.offsetY ? e.offsetY : (e.target ? e.clientY - e.target.y : 0);
+	if (!isNaN(parseInt(e.clientX))) x = e.clientX;
+	else x = 0;
+	if (!isNaN(parseInt(e.clientY))) y = e.clientY;
+	else y = 0;
 
 	partWidth = document.getElementById('colorpicker').width / 6;
 	partDetail = detail / 2;
