@@ -40,10 +40,11 @@ function init() {
 	   var flash_pos = 1;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  flash_pos, "flash");
 	}
-/*JR        if (assume_plugins || tinyMCEPopup.windowOpener.detectQuickTime()) {
-	   var qt_pos = 2;  // shortcut to expected hardcoded select position
+	if (assume_plugins || tinyMCEPopup.windowOpener.detectQuickTime()) {
+	   var qt_pos = 4;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  qt_pos, "qt");
 	}
+/*JR        
 	if (assume_plugins || tinyMCEPopup.windowOpener.detectWindowsMedia()) {
 	   var wmp_pos = 3;  // shortcut to expected hardcoded select position
            enable_media_type(f, max_plugin,  wmp_pos, "wmp");

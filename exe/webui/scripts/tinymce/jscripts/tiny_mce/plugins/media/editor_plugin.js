@@ -473,7 +473,11 @@ var TinyMCE_MediaPlugin = {
 //		    h += ' codebase="' + cb + '"'; 
 		    h += ' type="' + mt + '"';
 //JR
-		    h += ' data="' + p.src + '"';
+		    if (mt!='video/quicktime') h += ' data="' + p.src + '"';
+			else {
+				h += ' classid="clsid:' + cls + '"'
+				h += ' codebase="' + cb + '"'; 
+			}
 		}
 
 //JR		h += typeof(p.id) != "undefined" ? ' id="' + p.id + '"' : '';
@@ -545,32 +549,35 @@ var TinyMCE_MediaPlugin = {
                                 h += '<param name="exe_flv" value="' + p.src + '" />';
                         } 
                 }
-//JR
-/*		h += '<embed type="' + mt + '"';
-
-		for (n in p) {
-			if (typeof(p[n]) == "function")
-				continue;
-
-			// FLV hack: 
-			if ((n == 'src' || n == 'flv_src') 
-			    && mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
-			    if ((flv_skip_src && n == 'flv_src') || (!flv_skip_src && n == 'src')) {
-			        // will include it below
-			    }
-			    else {
-			        // else: skip the other :-)
-				continue;
-			    }
-			}
-
-			// Skip url parameter for embed tag on WMP
-			// with WMP hack for eXe:
-			if (!(n == 'url' && mt == 'video/x-ms-wmv'))
-				h += ' ' + n + '="' + p[n] + '"';
+		
+			else if (mt=='video/quicktime') {
+				h += '<embed type="' + mt + '"';
+		
+				for (n in p) {
+					if (typeof(p[n]) == "function")
+						continue;
+		
+					// FLV hack: 
+					if ((n == 'src' || n == 'flv_src') 
+						&& mt == 'application/x-shockwave-flash' && p.id == 'flowplayer') {
+						if ((flv_skip_src && n == 'flv_src') || (!flv_skip_src && n == 'src')) {
+							// will include it below
+						}
+						else {
+							// else: skip the other :-)
+						continue;
+						}
+					}
+		
+					// Skip url parameter for embed tag on WMP
+					// with WMP hack for eXe:
+					if (!(n == 'url' && mt == 'video/x-ms-wmv'))
+						h += ' ' + n + '="' + p[n] + '"';
+				}
+		
+				h += '></embed>';
 		}
 
-		h += '></embed></object>';*/
 		h += '</object>';
 		return h;
 	},
