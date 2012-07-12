@@ -1,6 +1,11 @@
 body, td, pre {
 	font-size: 0.8em;
 }
-
-
-
+/* tiny_mce's convertSpansToFonts function empties fontSize (when editing it always uses fonts internaly) */
+span[size='1']{font-size:xx-small}
+span[size='2']{font-size:x-small}
+span[size='3']{font-size:small}
+span[size='4']{font-size:medium}
+span[size='5']{font-size:large}
+span[size='6']{font-size:x-large}
+span[size='7']{font-size:xx-large}
