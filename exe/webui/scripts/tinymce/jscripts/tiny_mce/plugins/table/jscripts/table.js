@@ -78,7 +78,7 @@ function insertTable() {
 		}
 
 		// Not inline styles
-		if (!tinyMCE.getParam("inline_styles"))
+		//if (!tinyMCE.getParam("inline_styles"))
 			tinyMCE.setAttrib(elm, 'width', width, true);
 
 		// Remove these since they are not valid XHTML
