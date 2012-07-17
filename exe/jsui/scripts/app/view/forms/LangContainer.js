@@ -17,10 +17,18 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //===========================================================================
 
-Ext.define('eXe.view.forms.HelpContainer', {
+Ext.define('eXe.view.forms.LangContainer', {
     extend: 'Ext.container.Container',
-    alias: 'widget.helpcontainer',
+    alias: 'widget.langcontainer',
     
+    getLangInputId: function() {
+        var item = this;
+
+        while (!item.inputId)
+            item = item.item;
+        return item.inputId + "_lang";
+    },
+
     initComponent: function() {
         var me = this;
         
@@ -45,39 +53,18 @@ Ext.define('eXe.view.forms.HelpContainer', {
                             flex: 0,
                             items: [
                                 {
-                                    xtype: 'image',
-                                    src: '/images/info.png',
-                                    margin: '2 0 0 2',
-                                    height: 20,
-                                    width: 20,
-                                    anchor: '100%',
-                                    listeners: {
-                                        afterrender: function(c) {
-                                            c.el.on('click', function(a) {
-                                                var help = this.items.items[1],
-                                                    formpanel;
-                                                formpanel = this.up();
-                                                while (! formpanel.form)
-                                                    formpanel = formpanel.up();
-                                                var restoreScroll = formpanel.el.cacheScrollValues();
-                                                if (help.isVisible())
-                                                    help.hide();
-                                                else
-                                                    help.show();
-                                                restoreScroll();
-                                            }, me);
-                                        }
-                                    }
+                                    xtype: 'combobox',
+                                    inputId: this.getLangInputId(),
+                                    fieldLabel: _('Language'),
+                                    labelWidth: 60,
+                                    tooltip: _('Language of the field'),
+                                    store: langsStore,
+                                    margin: '0 0 0 4',
+                                    anchor: '100%'
                                 }
                             ]
                         }
                     ]
-                },{
-                    xtype: 'component',
-                    html: this.help,
-                    margin: this.helpmargin !== undefined? this.helpmargin : '0 0 20 120',
-                    hidden: true,
-                    anchor: '100%'
                 }
             ]
         });
