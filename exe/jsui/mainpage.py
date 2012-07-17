@@ -156,8 +156,11 @@ class MainPage(RenderableLivePage):
         """Fills in the package name to certain urls in the xul"""
         return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'] + '?clientHandleId=' + IClientHandle(ctx).handleId)
 
-    def render_lang(self, ctx, data):
+    def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
+
+    def render_extjslang(self, ctx, data):
+        return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + unicode(G.application.config.locale) + ".js")
 
     def handleTestPrintMsg(self, client, message): 
         """ 
