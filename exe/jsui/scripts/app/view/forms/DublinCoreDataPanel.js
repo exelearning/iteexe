@@ -688,9 +688,9 @@ langs = [
     ]
 ];
 
-Ext.define('eXe.view.forms.MetadataPanel', {
+Ext.define('eXe.view.forms.DublinCoreDataPanel', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.metadata',
+    alias: 'widget.dublincoredata',
 
     requires: ['eXe.view.forms.HelpContainer'],
     

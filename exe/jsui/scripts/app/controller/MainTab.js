@@ -47,7 +47,7 @@ Ext.define('eXe.controller.MainTab', {
                 actioncomplete: this.actionComplete,
                 scope: this
             },
-            '#metadata_properties': {
+            '#dublincoredata_properties': {
                 render: this.onRender,
                 show: this.onRender,
                 beforeaction: this.beforeAction,
