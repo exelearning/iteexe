@@ -1,6 +1,6 @@
 # -- coding: utf-8 --
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
 #
 # This program is free software; you can redistribute it and/or modify
@@ -62,8 +62,7 @@ class OutlinePane(Renderable, Resource):
                     package.currentNode = node
                     self.parent.clientHandleFactory.clientHandles[request.args['clientHandleId'][0]].currentNodeId = node.id
                 else:
-                    log.error("changeNode cannot locate "+nodeId)
-
+                    log.error("changeNode cannot locate " + nodeId)
 
     def handleAddChild(self, client, parentNodeId):
         """Called from client via xmlhttp. When the addChild button is called.
@@ -79,13 +78,13 @@ class OutlinePane(Renderable, Resource):
             client.call('eXe.app.getController("Outline").loadNodeOnAuthoringPage', client.currentNodeId)
 
     def handleDelNode(self, client, nodeId):
-        """Called from xmlhttp. 
+        """Called from xmlhttp.
         """
         log.debug("handleDelNode nodeId=" + nodeId)
         node = self.package.findNode(nodeId)
         if node is not None and node is not self.package.root:
             # Update our server version of the package
-            if (node.isAncestorOf(self.package.currentNode) or 
+            if (node.isAncestorOf(self.package.currentNode) or
                 node is self.package.currentNode):
                 self.package.currentNode = node.parent
                 client.currentNodeId = self.package.currentNode.id
@@ -98,7 +97,7 @@ class OutlinePane(Renderable, Resource):
     def handleRenNode(self, client, nodeId, newName):
         """Called from xmlhttp"""
         log.debug("handleRenNode nodeId=%s newName=%s" % (nodeId, newName))
-        if newName in ('', 'null'): 
+        if newName in ('', 'null'):
             return
         node = self.package.findNode(nodeId)
 
@@ -116,10 +115,11 @@ class OutlinePane(Renderable, Resource):
         selection
         """
         if client.currentNodeId:
-            client.call('eXe.app.getController("Outline").select', client.currentNodeId)
+            client.sendScript('var outline = eXe.app.getController("Outline");\
+                if (outline) outline.select(%s)' % client.currentNodeId)
         else:
             raise Exception('No current node in client')
-            
+
     def handlePromote(self, client, sourceNodeId):
         """Promotes a node"""
         node = self.package.findNode(sourceNodeId)
