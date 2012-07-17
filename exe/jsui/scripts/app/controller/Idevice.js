@@ -24,9 +24,9 @@ Ext.define('eXe.controller.Idevice', {
     
     init: function() {
         this.control({
-        	'#idevice_panel': {
-        		itemclick:	this.onIdeviceClick
-        	}
+            '#idevice_panel': {
+                itemclick:	this.onIdeviceClick
+            }
         });
     },
     
@@ -35,7 +35,7 @@ Ext.define('eXe.controller.Idevice', {
         if (authoring && authoring.submitLink) {
             var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
                 selected = outlineTreePanel.getSelectionModel().getSelection();
-            authoring.submitLink("AddIdevice", record.data.id, 1, selected != 0? selected[0].data.id : '0');
+            authoring.submitLink("AddIdevice", record.data.id, 1, selected !== 0? selected[0].data.id : '0');
         }
     },
     
