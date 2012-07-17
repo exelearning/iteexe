@@ -22,6 +22,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
     alias: 'widget.maintabpanel',
     requires: [
         'eXe.view.forms.DublinCoreDataPanel',
+        'eXe.view.forms.LomDataPanel',
         'eXe.view.forms.ExportPanel',
         'eXe.view.forms.PackagePanel'
     ],
@@ -58,88 +59,14 @@ Ext.define('eXe.view.ui.MainTabPanel', {
 	                                title: _('Dublin Core')
 	                            },
                                 {
-                                    xtype: 'tabpanel',
-                                    title: _('LOM'),
-                                    items: [
-	                                    {
-	                                        xtype: 'panel',
-	                                        title: _('General')
-	                                    },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Life Cycle')
-                                        },
-	                                    {
-	                                        xtype: 'panel',
-	                                        title: _('Meta-Metadata')
-	                                    },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Technical')
-                                        },
-	                                    {
-	                                        xtype: 'panel',
-	                                        title: _('Educational')
-	                                    },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Rights')
-                                        },
-	                                    {
-	                                        xtype: 'panel',
-	                                        title: _('Relation')
-	                                    },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Annotation')
-                                        },
-	                                    {
-	                                        xtype: 'panel',
-	                                        title: _('Classification')
-	                                    }
-                                    ]
+                                    xtype: 'lomdata',
+                                    itemId: 'lomdata_properties',
+                                    title: _('LOM')
                                 },
                                 {
-                                    xtype: 'tabpanel',
-                                    title: _('LOM.es'),
-                                    items: [
-                                        {
-                                            xtype: 'panel',
-                                            title: _('General')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Life Cycle')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Meta-Metadata')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Technical')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Educational')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Rights')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Relation')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Annotation')
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            title: _('Classification')
-                                        }
-                                    ]
+                                    xtype: 'lomdata',
+                                    itemId: 'lomesdata_properties',
+                                    title: _('LOM.es')
                                 }
                             ]
                         },
