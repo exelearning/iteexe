@@ -22,6 +22,13 @@
 
 // Called upon loading the page this function clears the hidden
 // action and object fields so they can be used by submitLink
+
+// Common settings
+var eXeLearning_settings = {
+	wysiwyg_path : "/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js",
+	wysiwyg_settings_path : "/scripts/tiny_mce_settings.js"
+}
+
 var objBrowse = navigator.appName;
 
 // An array of js strings to evaluate on document load
