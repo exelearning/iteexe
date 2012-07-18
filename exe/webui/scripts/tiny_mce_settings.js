@@ -200,7 +200,7 @@ tinyMCE.init({
 +"img[align<bottom?left?middle?right?top|alt|border|class|dir<ltr?rtl|height"
   +"|hspace|id|ismap<ismap|lang|longdesc|name|onclick|ondblclick|onkeydown"
   +"|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout|onmouseover"
-  +"|onmouseup|src|style|title|usemap|vspace|width],"
+  +"|onmouseup|src|style|title|usemap|vspace|width|exe_math_latex],"
 +"input[accept|accesskey|align<bottom?left?middle?right?top|alt"
   +"|checked<checked|class|dir<ltr?rtl|disabled<disabled|id|ismap<ismap|lang"
   +"|maxlength|name|onblur|onclick|ondblclick|onfocus|onkeydown|onkeypress"
