@@ -17,7 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.export.websiteexport import WebsiteExport
 """
 Exports an eXe package as a SCORM package
 """
@@ -34,6 +33,9 @@ from exe.engine.path               import Path, TempDirPath
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe.export.singlepage         import SinglePage
+from exe.export.websiteexport      import WebsiteExport
+from exe.engine.persist            import encodeObject
+from exe.engine.persistxml         import encodeObjectToXML
 from exe                      	   import globals as G
 
 log = logging.getLogger(__name__)
@@ -397,6 +399,20 @@ class ScormExport(object):
         # First do the export to a temporary directory
         outputDir = TempDirPath()
 
+        # copy the package's resource files
+        package.resourceDir.copyfiles(outputDir)
+
+        # copy the package's resource files, only non existant in outputDir
+#        outputDirFiles = outputDir.files()
+#        for rfile in package.resourceDir.files():
+#            if rfile not in outputDirFiles:
+#                rfile.copy(outputDir)
+
+        # copy the package's resource files, only indexed in package.resources
+#        for md5 in package.resources.values():
+#            for resource in md5:
+#                resource.path.copy(outputDir)
+
         # Export the package content
         self.pages = [ ScormPage("index", 1, package.root,
             scormType=self.scormType) ]
@@ -438,9 +454,6 @@ class ScormExport(object):
                 if sf.basename() not in manifest.dependencies:
                     styleFiles.remove(sf)
         self.styleDir.copylist(styleFiles, outputDir)
-
-        # copy the package's resource files
-        package.resourceDir.copyfiles(outputDir)
 
         # Copy the scripts
         if self.scormType == "commoncartridge":
@@ -507,13 +520,18 @@ class ScormExport(object):
                 # include a copy of the GNU Free Documentation Licence
                 (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
         
-        if package.scowsinglepage:
+        if hasattr(package, 'scowsinglepage') and package.scowsinglepage:
             page = SinglePage("singlepage_index", 1, package.root)
             page.save(outputDir/"singlepage_index.html")
-        if package.scowwebsite:
+        if hasattr(package, 'scowwebsite') and package.scowwebsite:
             website = WebsiteExport(self.config, self.styleDir, outputDir, "website_")
             website.export(package)
             (self.styleDir/'nav.css').copyfile(outputDir/'nav.css')
+        if hasattr(package, 'scowsource') and package.scowsource:
+            (G.application.config.xulDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
+            (outputDir/'content.data').write_bytes(encodeObject(package))
+            (outputDir/'content.xml').write_bytes(encodeObjectToXML(package))
+
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir

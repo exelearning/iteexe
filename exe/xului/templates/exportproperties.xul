@@ -100,6 +100,21 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
           </groupbox>
         </hbox>
       </vbox>
+      <vbox flex="0">
+        <hbox align="center">
+          <checkbox id="pp_scowsource"
+                    checked="false"
+                    label="Create editable SCORM file?"
+                    tooltiptext='Checking this option, the exported SCORM file will be editable with eXeLearning.'
+                    oncommand="this.style.color = 'red';"/>
+          <image src="/images/info.png" onclick="setText('pp-scowsource');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="pp-scowsource" hidden="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+             <description id="ppscowsource">Checking this option, the exported SCORM file will be editable with eXeLearning.</description>
+          </groupbox>
+        </hbox>
+      </vbox>
     </groupbox>
     <hbox align="left">
       <button id="exportPropsDone" label="Apply" oncommand="submitForm(this.parentNode.parentNode)"/>
