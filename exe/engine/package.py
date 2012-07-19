@@ -277,7 +277,7 @@ class Package(Persistable):
     i.e. the "package".
     """
     persistenceVersion = 9
-    nonpersistant      = ['resourceDir', 'filename', 'scowsinglepage', 'scowwebsite', 'scowsource']
+    nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
     tempFile           = False # This is set when the package is saved as a temp copy file

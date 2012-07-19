@@ -56,7 +56,6 @@ class PropertiesPage(RenderableLivePage):
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource')
     # List of field names that contain image values
     imgFieldNames     = ('pp_backgroundImg',)
-    nonPersistedFieldNames = ('pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource')
     # Used for url encoding with unicode support
     reUni = re.compile('(%u)([0-9,A-F,a-f]{4})')
     reChr = re.compile('(%)([0-9,A-F,a-f]{2})')
@@ -121,9 +120,6 @@ class PropertiesPage(RenderableLivePage):
             if part == 'eo':
                 obj = self.package.exportOptions
             if hasattr(obj, name):
-                return obj, name
-            if fieldId in self.nonPersistedFieldNames and fieldId in self.booleanFieldNames:
-                setattr(obj, name, False)
                 return obj, name
         raise ValueError("field id '%s' doesn't refer "
                          "to a valid object attribute" % fieldId)
