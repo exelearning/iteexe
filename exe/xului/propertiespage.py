@@ -53,7 +53,7 @@ class PropertiesPage(RenderableLivePage):
     _templateFileName = 'properties.xul'
     name = 'properties'
     # List of field names that contain boolean values
-    booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile')
+    booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite')
     # List of field names that contain image values
     imgFieldNames     = ('pp_backgroundImg',)
     # Used for url encoding with unicode support

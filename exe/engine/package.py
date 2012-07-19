@@ -276,7 +276,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -316,6 +316,8 @@ class Package(Persistable):
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self.scolinks      = False
+        self.scowsinglepage= False
+        self.scowwebsite   = False
         self.license       = "None"
         self.footer        = ""
 
@@ -863,5 +865,11 @@ class Package(Persistable):
             # first and they also set this attribute on the package
             self.resources = {}
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
+        
+    def upgradeToVersion10(self):
+        if not hasattr(self, 'scowsinglepage'):
+            self.scowsinglepage = False
+        if not hasattr(self, 'scowwebsite'):
+            self.scowwebsite = False
 
 # ===========================================================================

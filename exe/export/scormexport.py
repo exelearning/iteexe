@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.export.websiteexport import WebsiteExport
 """
 Exports an eXe package as a SCORM package
 """
@@ -32,6 +33,7 @@ from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
+from exe.export.singlepage         import SinglePage
 from exe                      	   import globals as G
 
 log = logging.getLogger(__name__)
@@ -504,6 +506,14 @@ class ScormExport(object):
             if package.license == "GNU Free Documentation License":
                 # include a copy of the GNU Free Documentation Licence
                 (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+        
+        if package.scowsinglepage:
+            page = SinglePage("singlepage_index", 1, package.root)
+            page.save(outputDir/"singlepage_index.html")
+        if package.scowwebsite:
+            website = WebsiteExport(self.config, self.styleDir, outputDir, "website_")
+            website.export(package)
+            (self.styleDir/'nav.css').copyfile(outputDir/'nav.css')
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir

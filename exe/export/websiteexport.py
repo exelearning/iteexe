@@ -39,7 +39,7 @@ class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
     """
-    def __init__(self, config, styleDir, filename):
+    def __init__(self, config, styleDir, filename, prefix=""):
         """
         'stylesDir' is the directory where we can copy the stylesheets from
         'outputDir' is the directory that will be [over]written
@@ -52,6 +52,7 @@ class WebsiteExport(object):
         self.stylesDir    = Path(styleDir)
         self.filename     = Path(filename)
         self.pages        = []
+        self.prefix       = prefix
 
     def exportZip(self, package):
         """ 
@@ -115,7 +116,7 @@ class WebsiteExport(object):
                                      self.stylesDir/"websitepage.py")
             WebsitePage = module.WebsitePage
 
-        self.pages = [ WebsitePage("index", 1, package.root) ]
+        self.pages = [ WebsitePage(self.prefix + "index", 1, package.root) ]
         self.generatePages(package.root, 1)
         uniquifyNames(self.pages)
 
@@ -129,7 +130,8 @@ class WebsiteExport(object):
 
         thisPage.save(outputDir, prevPage, None, self.pages)
         
-        self.copyFiles(package, outputDir)
+        if self.prefix == "":
+            self.copyFiles(package, outputDir)
 
 
     def copyFiles(self, package, outputDir):
@@ -182,8 +184,8 @@ class WebsiteExport(object):
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
 # JR: anadimos los controles
-	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
-	    controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
+        controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+        controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')
@@ -207,6 +209,6 @@ class WebsiteExport(object):
             if not pageName:
                 pageName = "__"
 
-            self.pages.append(WebsitePage(pageName, depth, child))
+            self.pages.append(WebsitePage(self.prefix + pageName, depth, child))
             self.generatePages(child, depth + 1)
 
