@@ -121,6 +121,10 @@ class PropertiesPage(RenderableLivePage):
                 obj = self.package.exportOptions
             if hasattr(obj, name):
                 return obj, name
+            else:
+                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource']:
+                    setattr(obj,name, False)
+                    return obj, name
         raise ValueError("field id '%s' doesn't refer "
                          "to a valid object attribute" % fieldId)
 
