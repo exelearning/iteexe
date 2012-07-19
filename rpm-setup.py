@@ -1,19 +1,17 @@
 #!/usr/bin/python
 
 # setup.py
-import glob
-import os.path
-from distutils.command.install import install
 from distutils.core            import setup
 from exe.engine import version
 
-g_files = { '/usr/share/exe': ["README", 
-                               "COPYING", 
-                               "NEWS", 
+g_files = {'/usr/share/exe': ["README",
+                               "COPYING",
+                               "NEWS",
                                "ChangeLog",
                                "exe/webui/mr_x.gif"]}
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
+
 
 def dataFiles(dirs, excludes=[]):
     """Recursively get all the files in these directories"""
@@ -23,14 +21,14 @@ def dataFiles(dirs, excludes=[]):
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
             if os.path.isfile(file) and file not in excludes:
-                path = file[len(g_oldBase)+1:]
-                dir  = g_newBase + "/" + os.path.dirname(path)
+                path = file[len(g_oldBase) + 1:]
+                dir = g_newBase + "/" + os.path.dirname(path)
                 if dir in g_files:
                     g_files[dir].append(file)
                 else:
                     g_files[dir] = [file]
-            elif os.path.isdir(file):
-                dataFiles(glob.glob(file+"/*"))
+            elif os.path.isdir(file) and file not in excludes:
+                dataFiles(glob.glob(file + "/*"))
 
 dataFiles(["exe/webui/style",
            "exe/webui/css",
@@ -41,7 +39,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/templates",
            "exe/webui/linux-profile",
            "exe/webui/firefox"],
-	  excludes = ["mimetex.64.cgi", "mimetex-darwin.cgi", "mimetex.exe"])
+    excludes=["mimetex.64.cgi", "mimetex-darwin.cgi", "mimetex.exe", 'tinymce_3.5.4.1'])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
@@ -52,25 +50,25 @@ g_newBase = "/usr/share/exe"
 dataFiles(["exe/xului/scripts",
            "exe/xului/templates"])
 opts = {
- "bdist_rpm": {
-   "requires": ["python-imaging",]
+  "bdist_rpm": {
+  "requires": ["python-imaging"]
  }
 }
-setup(name         = version.project,
-      version      = version.release,
-      description  = "eLearning XHTML editor",
-      long_description = """\
-The eXe project is an authoring environment to enable teachers to publish 
+setup(name=version.project,
+      version=version.release,
+      description="eLearning XHTML editor",
+      long_description="""\
+The eXe project is an authoring environment to enable teachers to publish
 web content without the need to become proficient in HTML or XML markup.
-Content generated using eXe can be used by any Learning Management System.  
+Content generated using eXe can be used by any Learning Management System.
 """,
-      url          = "http://exelearning.org",
-      author       = "eXe Project",
-      author_email = "exe@exelearning.org",
-      license      = "GPL",
-      scripts      = ["exe/exe","exe/exe_do"],
-      packages     = ["exe", "exe.webui", "exe.xului", 
+      url="http://exelearning.org",
+      author="eXe Project",
+      author_email="exe@exelearning.org",
+      license="GPL",
+      scripts=["exe/exe", "exe/exe_do"],
+      packages=["exe", "exe.webui", "exe.xului",
                       "exe.engine", "exe.export", "exe.importers"],
-      data_files   = g_files.items(),
-      options      = opts
+      data_files=g_files.items(),
+      options=opts
      )
