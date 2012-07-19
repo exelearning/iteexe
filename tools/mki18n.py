@@ -305,6 +305,10 @@ def generateAppFil():
         for fn in Path(pth).glob(glb):
             output.write(fn + '\n')
     output.write('twisted/persisted/styles.py\n')
+    import optparse
+    fn = optparse.__file__
+    fn = fn[:-1]
+    output.write(fn + "\n")
     output.close()
 
 def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :

@@ -94,6 +94,7 @@ with a different filename') % outputf
 'scorm1.2')
         pkg.scowsinglepage = self.options['single-page']
         pkg.scowwebsite = self.options['website']
+        pkg.scowsource = self.options['editable']
         scormExport.export(pkg)
 
     def export_ims(self, pkg, outputf):
