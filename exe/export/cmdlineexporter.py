@@ -30,6 +30,7 @@ from exe.export.scormexport import ScormExport
 from exe.export.imsexport import IMSExport
 from exe.export.websiteexport import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
+from exe.export.xliffexport import XliffExport
 
 LOG = logging.getLogger(__name__)
 
@@ -40,30 +41,32 @@ class CmdlineExporter(object):
                   'ims': '.zip',
                   'website': '',
                   'webzip': '.zip',
-                  'singlepage': ''
+                  'singlepage': '',
+                  'xliff': '.xlf'
                   }
 
-    def __init__(self, config):
+    def __init__(self, config, options):
         self.config = config
+        self.options = options
         self.web_dir = Path(self.config.webDir)
         self.styles_dir = None
 
-    def do_export(self, ftype, inputf, outputf, overwrite=False):
-        if hasattr(self, 'export_' + ftype):
+    def do_export(self, inputf, outputf):
+        if hasattr(self, 'export_' + self.options["export"]):
             LOG.debug("Exporting to type %s, in: %s, out: %s, overwrite: %s" \
-            % (ftype, inputf, outputf, str(overwrite)))
+            % (self.options["export"], inputf, outputf, str(self.options["overwrite"])))
             if not outputf:
-                if ftype in ('website', 'singlepage'):
+                if self.options["export"] in ('website', 'singlepage'):
                     outputf = inputf.rsplit(".elp")[0]
                 else:
-                    outputf = inputf + self.extensions[ftype]
+                    outputf = inputf + self.extensions[self.options["export"]]
             outputfp = Path(outputf)
-            if outputfp.exists() and not overwrite:
+            if outputfp.exists() and not self.options["overwrite"]:
                 error = _(u'"%s" already exists.\nPlease try again \
 with a different filename') % outputf
                 raise Exception(error.encode(sys.stdout.encoding))
             else:
-                if outputfp.exists() and overwrite:
+                if outputfp.exists() and self.options["overwrite"]:
                     if outputfp.isdir():
                         for filen in outputfp.walkfiles():
                             filen.remove()
@@ -77,7 +80,7 @@ with a different filename') % outputf
                     raise Exception(error.encode(sys.stdout.encoding))
                 self.styles_dir = self.web_dir.joinpath('style', pkg.style)
                 LOG.debug("Styles dir: %s" % (self.styles_dir))
-                getattr(self, 'export_' + ftype)(pkg, outputf)
+                getattr(self, 'export_' + self.options["export"])(pkg, outputf)
                 return outputf
         else:
             raise Exception(_(u"Export format not implemented")\
@@ -89,6 +92,8 @@ with a different filename') % outputf
     def export_scorm(self, pkg, outputf):
         scormExport = ScormExport(self.config, self.styles_dir, outputf,
 'scorm1.2')
+        pkg.scowsinglepage = self.options['single-page']
+        pkg.scowwebsite = self.options['website']
         scormExport.export(pkg)
 
     def export_ims(self, pkg, outputf):
@@ -112,3 +117,9 @@ with a different filename') % outputf
         singlePageExport = SinglePageExport(self.styles_dir, outputf, \
                              images_dir, scripts_dir, templates_dir)
         singlePageExport.export(pkg, print_flag)
+
+    def export_xliff(self, pkg, outputf):
+        xliff = XliffExport(self.config, outputf, \
+                            source_copied_in_target=self.options["copy-source"], \
+                            wrap_cdata=self.options["wrap-cdata"])
+        xliff.export(pkg)

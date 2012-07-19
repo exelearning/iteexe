@@ -21,7 +21,7 @@
 
 import os
 import sys
-from optparse import OptionParser, IndentedHelpFormatter
+from optparse import OptionParser, IndentedHelpFormatter, OptionGroup
 
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -67,19 +67,63 @@ help:\n%prog -h").encode(sys.stdout.encoding)
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm', 'ims', 'website', 'webzip',
-'singlepage'],
+'singlepage', 'xliff'],
                   help=_(u"Export <input_file> elp package to optional \
 <output_file> on one of the given formats: xml, scorm, ims, website, webzip \
-or singlepage.").encode(sys.stdout.encoding))
+, singlepage or xliff.").encode(sys.stdout.encoding))
     parser.add_option("-i", "--import",
                   action="store", dest="i", metavar="format",
-                  choices=['xml'],
+                  choices=['xml','xliff'],
                   help=_(u"Import to <output_file> elp package, <input_file> \
-in one of the given formats: xml.")\
+in one of the given formats: xml or xliff.")\
 .encode(sys.stdout.encoding))
     parser.add_option("-f", "--force",
                   action="store_true", dest="f",
                   help=_(u"Force overwrite of <output_file>").encode(sys.stdout.encoding))
+    
+    group = OptionGroup(parser, 
+                        _(u"XLIFF export options").encode(sys.stdout.encoding), 
+                        _(u"Once you have chosen XLIFF export option using '-x xliff' or \
+'--export xliff', it's possible to configure the following export options:").encode(sys.stdout.encoding))
+    group.add_option("--no-copy-source", 
+                     action="store_false",
+                     dest="copy",
+                     help=_(u"Don't copy source in target").encode(sys.stdout.encoding),
+                     default=True)
+    group.add_option("--wrap-cdata",
+                     action="store_true",
+                     dest="wrap",
+                     help=_(u"Wrap fields in CDATA").encode(sys.stdout.encoding),
+                     default=False)
+    parser.add_option_group(group)
+    
+    group = OptionGroup(parser,
+                        _(u"XLIFF import options").encode(sys.stdout.encoding),
+                        _(u"Once you have chosen XLIFF import option using  '-i xliff' \
+or '--import xliff', it's possible to configure the following import options:").encode(sys.stdout.encoding))
+    group.add_option("--from-source",
+                     action="store_true",
+                     dest="from_source",
+                     help=_(u"Import from source language").encode(sys.stdout.encoding),
+                     default=False)
+    parser.add_option_group(group)
+    
+    group = OptionGroup(parser,
+                        _(u"SCORM export options").encode(sys.stdout.encoding),
+                        _(u"Once you have chosen SCORM export option using '-x scorm' or \
+'--export scorm', it's possible to configure the following export options:").encode(sys.stdout.encoding))
+    group.add_option("--single-page",
+                     action="store_true",
+                     dest="single",
+                     help=_(u"Include Single Page export file").encode(sys.stdout.encoding),
+                     default=False)
+    group.add_option("--website",
+                     action="store_true",
+                     dest="website",
+                     help=_(u"Include Web Site export files").encode(sys.stdout.encoding),
+                     default=False)
+    parser.add_option_group(group)
+
     return parser
 
 if __name__ == "__main__":
@@ -109,22 +153,28 @@ exclusive.').encode(sys.stdout.encoding))
         parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
 
     if options.x:
-        x = CmdlineExporter(application.config)
+        x = CmdlineExporter(application.config, {"export": options.x, 
+                                                 "overwrite": options.f,
+                                                 "copy-source": options.copy,
+                                                 "wrap-cdata": options.wrap,
+                                                 "single-page": options.single,
+                                                 "website": options.website})
         try:
-            outputf = x.do_export(options.x, inputf, outputf, options.f)
+            outputf = x.do_export(inputf, outputf)
             print _(u"Successfully exported '%s' from '%s'.") % (outputf, \
 inputf)
         except:
             print _(u"exe_do: error: Unable to export from '%s'.\nThe \
 error was:") % (inputf)
             print sys.exc_value
-    if options.i == 'xml':
-        i = CmdlineImporter(application.config)
+    if options.i:
+        i = CmdlineImporter(application.config, {"import": options.i,
+                                                 "from-source": options.from_source})
         try:
-            outputf = i.do_import(options.i, inputf, outputf)
+            outputf = i.do_import(inputf, outputf)
             print _(u"File '%s' successfully imported to '%s'.") % (inputf, \
 outputf)
         except:
             print _(u"exe_do: error: Unable to import '%s'.\nThe \
 error was:") % (inputf)
-            print sys.exc_value
+            print unicode(sys.exc_value)

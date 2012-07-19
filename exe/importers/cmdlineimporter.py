@@ -21,24 +21,25 @@
 @author: Pedro Peña Pérez
 '''
 from exe.engine.package import Package
-from twisted.web.microdom import parseString
+from exe.importers.xliffimport import XliffImport
 
 
 class CmdlineImporter(object):
     '''
     classdocs
     '''
-    def __init__(self, config):
+    def __init__(self, config, options):
         '''
         Constructor
         '''
         self.config = config
+        self.options = options
 
-    def do_import(self, ftype, inputf, outputf):
+    def do_import(self, inputf, outputf):
         '''
         '''
-        if hasattr(self, 'import_' + ftype):
-            return getattr(self, 'import_' + ftype)(inputf, outputf)
+        if hasattr(self, 'import_' + self.options['import']):
+            return getattr(self, 'import_' + self.options['import'])(inputf, outputf)
         else:
             print _(u"Import format not implemented")
 
@@ -46,11 +47,19 @@ class CmdlineImporter(object):
         if not outputf:
             outputf = inputf.rsplit(".xml")[0]
         xml = open(inputf).read()
-        document = parseString(xml, escapeAttributes=0)
-        if document.firstChild().getAttribute('version') == '0.1':
-            print _(u"WARNING: content.xml version 0.1. Importing from content.data. Try to import from a content.xml version 0.2.")
         pkg = Package.load(outputf, fromxml=xml)
         if not pkg:
-            raise Exception(_("Invalid output package"))
+            raise Exception(_(u"Invalid output package '%s'") % outputf)
+        pkg.save()
+        return outputf
+
+    def import_xliff(self, inputf, outputf):
+        if not outputf:
+            outputf = inputf.rsplit(".xlf")[0]
+        pkg = Package.load(outputf)
+        if not pkg:
+            raise Exception(_(u"Invalid output package '%s'") % outputf)
+        importer = XliffImport(pkg, inputf)
+        importer.parseAndImport(self.options["from-source"])
         pkg.save()
         return outputf
