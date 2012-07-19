@@ -1,0 +1,274 @@
+/* ********************************************* */
+/* **** IMÁGENES UTILIZADAS ******************* */
+/* ******************************************* */
+
+/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
+/* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
+/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
+/* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
+
+/* ********************************************* */
+/* **** TABLA DE COLORES ********************** */
+/* ******************************************* */
+
+body{
+	color:#333333; /* Cuerpo de texto */
+	background:#ffffff; /* Color de fondo */
+}
+
+a{
+	color:#c6d644; /* Enlaces */
+}
+
+#header{
+	/* Título del proyecto */
+	font-size: 1.7em;
+	padding-top: 15px;
+	text-align: left;
+	font-weight: normal;
+	text-decoration: underline;
+	vertical-align: baseline;
+	word-spacing: 1em;
+	color: #000;
+	text-indent: -9999px;
+}
+
+#nodeTitle{
+	color:#000000; /* Título de cada página */
+}
+
+#main #nodeDecoration{
+	border-color:#000000; /* Borde del título de cada página */
+	background-color:#C6D644; /* Color de fondo */
+}
+
+.iDeviceTitle{
+	color: #000000; /* Títulos de los iDevices */
+}
+
+.iDevice_inner{
+	background-color:#d6e178; /* Fondo del cuerpo del iDevice */
+	color:#4d4d4d;
+}
+.iDevice_inner a{
+	color: #FFF;
+	font-weight: bold;
+	font-style: italic;
+	}
+
+#pageFooter{
+	color:#666666; /* Texto del pie de página */
+}
+
+#pageFooter a{
+	color:#c6d644; /* Enlaces del pie de página */
+}
+
+input.feedbackbutton{
+	background-color: #E6E6E6; /* Color de fondo del botón de feedback */
+}
+
+.pre-code{
+	background:#112C4A; /* Color de fondo del código de ordenador intertado desde TinyMCE */
+	color:#EBF5D3; /* Color del texto */
+	font-family:Monaco,Courier,monospace; /* Fuente */
+}
+
+/* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
+.question table
+{
+	border: 0;
+}
+
+.question td
+{
+	border: 0;
+}
+
+/* ********************************************* */
+/* **** OTRAS DEFINICIONES ******************** */
+/* ******************************************* */
+
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+#nodeTitle{
+	font-size:1.8em;
+	font-weight:bold;
+	margin:0;
+	text-align:left;
+	line-height: 1.4em;
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-left-color: #c6d644;
+	padding-left: 10px;
+}
+#main #nodeDecoration{
+	padding:20px 15px 5px 15px;
+	margin-bottom:15px;
+	background-repeat:no-repeat;
+	background-position:right 0;
+	background-image:url(my_ims_header.jpg);
+	border-top-width: 8px;
+	border-right-width: 8px;
+	border-bottom-width: 8px;
+	border-left-width: 8px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#header{
+	height:35px;
+	background-repeat:no-repeat;
+	background-position:0 0;
+	background-image:url(my_logo.jpg);
+	font-size:1.2em;
+	font-weight:bold;
+	color: #000;
+	padding-top: 59px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	text-transform: capitalize;
+}
+#header h1{
+	margin:0;
+	font-size:1em;
+	color: #000;
+	line-height: 1em;
+}
+#main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#main h2{
+	font-size:1.4em;
+}
+#main h3{font-size:1.3em}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{
+	margin-top: 10px;
+	margin-right: 0;
+	margin-bottom: 20px;
+	margin-left: 0;
+	padding-top: 10px;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: dotted;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+.iDeviceTitle{
+	font-size:1.6em;
+	vertical-align:bottom;
+	color: #333;
+	height: 60px;
+	margin-left: 20px;
+} 
+.iDevice_icon{
+	width:60px;
+	height:auto;
+	margin-right:5px
+}
+.iDevice_inner{
+	margin-top: 15px;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	border-top-width: 1px;
+	border-right-width: 4px;
+	border-bottom-width: 4px;
+	border-left-width: 4px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #c6d644;
+	border-bottom-color: #c6d644;
+	border-left-color: #000000;
+	background-image: url(idevice_lateral.gif);
+	background-repeat: repeat-y;
+	background-position: 0px 0px;
+}
+#pageFooter{font-size:.9em}
+#pageFooter p{margin:3px 0}
+.pre-code{border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
+/*.image_text {border:1px solid #9D9D9D;background:transparent;padding: 4px;margin:0px 20px 4px 4px}*/
+
+
+
+#main h2.iDeviceTitle{
+	display:inline;
+	font-size:1.8em;
+	font-weight: bold;
+	vertical-align:bottom;
+}
+
+.block, .feedback
+
+{
+	display: block;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin-top: 10px;
+}
+
+.feedback
+
+{
+	font-size: 100%;
+	background-color: #FFF;
+	padding: 10px;
+	border: 2px solid #000000;
+	font-style: normal;
+}
+.feedback a
+{
+	color: #c6d644
+	}
+#popupmessage
+{
+	background-color: #FFF;
+	border: 2px solid #000;
+	}
+/* ********************************************************* */
+/* **** ESTILOS ESPECÍFICOS de cada IDevice ****** */
+/* ******************************************************* */ 
+
+/*Estilo eDevice Imagen Ampliada */
+
+.image_text
+{
+	color: #333333;
+	}
+	
+.image_text .image
+{
+	background-image:url(icon_magnifier.gif);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.image object
+{
+	margin: 0px;
+	padding: 0px;
+	margin-top: 85px;	
+}
+.image_text + .block
+{
+	float:left;
+	color: #000000;
+	margin-top: 85px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	text-align: right;
+}
+.h2{
+	color: #333;	
+	}
