@@ -140,6 +140,7 @@ class IdeviceStore:
         from exe.engine.appletidevice         import AppletIdevice
         from exe.engine.flashmovieidevice     import FlashMovieIdevice
         from exe.engine.quiztestidevice       import QuizTestIdevice
+        from exe.engine.listaidevice   import ListaIdevice
 
 	# JR	
 	# Necesarios para la FPD
@@ -196,6 +197,7 @@ class IdeviceStore:
         self.extended.append(AppletIdevice())
         self.extended.append(FlashMovieIdevice())
         self.extended.append(QuizTestIdevice())
+        self.extended.append(ListaIdevice())
 
 	# JR
 	# iDevices para la FPD
