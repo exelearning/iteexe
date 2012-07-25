@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 07:37+0200\n"
+"POT-Creation-Date: 2012-07-25 10:56+0200\n"
 "PO-Revision-Date: 2006-09-22 10:21+1200\n"
 "Last-Translator: EXE Team <exe@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -36,7 +36,7 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:62 exe/xului/mainpage.py:290
+#: exe/export/cmdlineexporter.py:65 exe/xului/mainpage.py:290
 #: exe/xului/mainpage.py:906 exe/xului/mainpage.py:1035
 #: exe/xului/mainpage.py:1110 exe/xului/mainpage.py:1131
 #, python-format
@@ -50,6 +50,25 @@ msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1278
+msgid "%prog [options]"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1509
+#, python-format
+msgid "%s option does not take a value"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1500 /usr/lib/python2.7/optparse.py:1539
+#, python-format
+msgid "%s option requires %d arguments"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1498 /usr/lib/python2.7/optparse.py:1537
+#, python-format
+msgid "%s option requires an argument"
 msgstr ""
 
 #: exe/webui/block.py:246
@@ -171,7 +190,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:417
+#: exe/engine/package.py:420
 msgid "?????"
 msgstr "?????"
 
@@ -281,6 +300,10 @@ msgstr ""
 msgid "Add images"
 msgstr ""
 
+#: exe/exe_do:128
+msgid "Add the required files to generate a SCORM package editable by eXeLearning"
+msgstr ""
+
 #: exe/webui/imagewithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/flashwithtextblock.py:88 exe/webui/flashmovieblock.py:87
 #: exe/webui/multimediablock.py:92 exe/webui/editorelement.py:228
@@ -370,7 +393,7 @@ msgstr ""
 msgid "Autoevaluación"
 msgstr ""
 
-#: exe/exe_do:109
+#: exe/exe_do:160
 msgid "Bad number of arguments supplied"
 msgstr ""
 
@@ -664,6 +687,10 @@ msgstr ""
 msgid "Display as:"
 msgstr ""
 
+#: exe/exe_do:91
+msgid "Don't copy source in target"
+msgstr ""
+
 #: exe/webui/block.py:213
 msgid "Done"
 msgstr ""
@@ -708,8 +735,8 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/websiteexport.py:88 exe/export/imsexport.py:373
-#: exe/export/scormexport.py:510
+#: exe/export/websiteexport.py:89 exe/export/imsexport.py:371
+#: exe/export/scormexport.py:536
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -925,10 +952,10 @@ msgid "Example Example"
 msgstr ""
 
 #: exe/exe_do:71
-msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip or singlepage."
+msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip , singlepage or xliff."
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:83
+#: exe/export/cmdlineexporter.py:86
 msgid "Export format not implemented"
 msgstr ""
 
@@ -1062,7 +1089,7 @@ msgstr ""
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/exe_do:125
+#: exe/exe_do:183
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
 msgstr ""
@@ -1108,7 +1135,7 @@ msgstr ""
 msgid "French Wikipedia Article"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:246
+#: exe/webui/wikipediablock.py:237
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -1205,11 +1232,11 @@ msgstr ""
 msgid "Image with Text"
 msgstr ""
 
-#: exe/importers/cmdlineimporter.py:43
+#: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
 msgstr ""
 
-#: exe/webui/xliffimportpreferencespage.py:79
+#: exe/exe_do:107 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
 msgstr ""
 
@@ -1218,7 +1245,15 @@ msgid "Import iDevice"
 msgstr ""
 
 #: exe/exe_do:77
-msgid "Import to <output_file> elp package, <input_file> in one of the given formats: xml."
+msgid "Import to <output_file> elp package, <input_file> in one of the given formats: xml or xliff."
+msgstr ""
+
+#: exe/exe_do:118
+msgid "Include Single Page export file"
+msgstr ""
+
+#: exe/exe_do:123
+msgid "Include Web Site export files"
 msgstr ""
 
 #: exe/webui/element.py:1950 exe/webui/element.py:1960
@@ -1275,15 +1310,16 @@ msgstr ""
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:76
+#: exe/export/cmdlineexporter.py:79
 msgid "Invalid input package"
 msgstr ""
 
-#: exe/importers/cmdlineimporter.py:54
-msgid "Invalid output package"
+#: exe/importers/cmdlineimporter.py:52 exe/importers/cmdlineimporter.py:61
+#, python-format
+msgid "Invalid output package '%s'"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:247
+#: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
 msgstr ""
 
@@ -1402,11 +1438,11 @@ msgid "New iDevice"
 msgstr ""
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:342 exe/export/websitepage.py:240
+#: exe/export/scormexport.py:346 exe/export/websitepage.py:238
 msgid "Next"
 msgstr ""
 
-#: exe/exe_do:96
+#: exe/exe_do:147
 msgid "No --export or --import option supplied."
 msgstr ""
 
@@ -1431,7 +1467,7 @@ msgstr ""
 msgid "No emphasis"
 msgstr ""
 
-#: exe/exe_do:100
+#: exe/exe_do:151
 msgid "No file input supplied."
 msgstr ""
 
@@ -1460,6 +1496,18 @@ msgid ""
 "learning tasks."
 msgstr ""
 
+#: exe/exe_do:113
+msgid "Once you have chosen SCORM export option using '-x scorm' or '--export scorm', it's possible to configure the following export options:"
+msgstr ""
+
+#: exe/exe_do:86
+msgid "Once you have chosen XLIFF export option using '-x xliff' or '--export xliff', it's possible to configure the following export options:"
+msgstr ""
+
+#: exe/exe_do:102
+msgid "Once you have chosen XLIFF import option using  '-i xliff' or '--import xliff', it's possible to configure the following import options:"
+msgstr ""
+
 #: exe/engine/field.py:3174 exe/engine/field.py:3238
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
@@ -1481,10 +1529,11 @@ msgstr ""
 
 #: exe/engine/field.py:3521 exe/engine/field.py:3558
 #: exe/webui/testquestionelement.py:110 exe/webui/element.py:2061
+#: /usr/lib/python2.7/optparse.py:1626
 msgid "Options"
 msgstr ""
 
-#: exe/exe_do:93
+#: exe/exe_do:144
 msgid "Options --export and --import are mutually exclusive."
 msgstr ""
 
@@ -1619,7 +1668,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:341 exe/export/websitepage.py:234
+#: exe/export/scormexport.py:345 exe/export/websitepage.py:232
 msgid "Previous"
 msgstr ""
 
@@ -1788,7 +1837,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/engine/package.py:448 exe/engine/package.py:455
+#: exe/engine/package.py:451 exe/engine/package.py:458
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1797,6 +1846,10 @@ msgstr ""
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
+msgstr ""
+
+#: exe/exe_do:112
+msgid "SCORM export options"
 msgstr ""
 
 #: exe/webui/quiztestblock.py:152
@@ -1899,7 +1952,7 @@ msgid ""
 "as a percentage of the original image size"
 msgstr ""
 
-#: exe/xului/propertiespage.py:201
+#: exe/xului/propertiespage.py:205
 msgid "Settings saved"
 msgstr ""
 
@@ -1993,7 +2046,7 @@ msgstr ""
 msgid "Submit Answer"
 msgstr ""
 
-#: exe/exe_do:115
+#: exe/exe_do:172
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
 msgstr ""
@@ -2138,7 +2191,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:243
+#: exe/webui/wikipediablock.py:234
 msgid "This article is licensed under the "
 msgstr ""
 
@@ -2321,12 +2374,21 @@ msgid ""
 " "
 msgstr ""
 
+#: /usr/lib/python2.7/optparse.py:393
+msgid "Usage"
+msgstr ""
+
 #: exe/exe_do:64
 msgid ""
 "Usage: %prog [options] input_file [output_file]\n"
 "\n"
 "To show help:\n"
 "%prog -h"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:374
+#, python-format
+msgid "Usage: %s\n"
 msgstr ""
 
 #: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
@@ -2353,10 +2415,6 @@ msgstr ""
 
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
-
-#: exe/importers/cmdlineimporter.py:51
-msgid "WARNING: content.xml version 0.1. Importing from content.data. Try to import from a content.xml version 0.2."
 msgstr ""
 
 #: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:467
@@ -2401,12 +2459,20 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/xliffexportpreferencespage.py:124
+#: exe/exe_do:96 exe/webui/xliffexportpreferencespage.py:124
 msgid "Wrap fields in CDATA"
 msgstr ""
 
 #: exe/webui/element.py:2338 exe/webui/element.py:2365
 msgid "Wrong"
+msgstr ""
+
+#: exe/exe_do:85
+msgid "XLIFF export options"
+msgstr ""
+
+#: exe/exe_do:101
+msgid "XLIFF import options"
 msgstr ""
 
 #: exe/engine/mathidevice.py:55
@@ -2417,7 +2483,12 @@ msgstr ""
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:259
+#: /usr/lib/python2.7/optparse.py:151
+#, python-format
+msgid "ambiguous option: %s (%s?)"
+msgstr ""
+
+#: exe/webui/wikipediablock.py:250
 msgid "article "
 msgstr ""
 
@@ -2425,7 +2496,11 @@ msgstr ""
 msgid "blank for original size"
 msgstr ""
 
-#: exe/export/imsexport.py:210 exe/export/scormexport.py:295
+#: /usr/lib/python2.7/optparse.py:421
+msgid "complex"
+msgstr ""
+
+#: exe/export/imsexport.py:210 exe/export/scormexport.py:299
 msgid "eXe"
 msgstr ""
 
@@ -2439,14 +2514,14 @@ msgstr ""
 msgid "eXe Project"
 msgstr ""
 
-#: exe/exe_do:118
+#: exe/exe_do:175
 #, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The error was:"
 msgstr ""
 
-#: exe/exe_do:128
+#: exe/exe_do:186
 #, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
@@ -2458,6 +2533,10 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr ""
 
+#: /usr/lib/python2.7/optparse.py:420
+msgid "floating-point"
+msgstr ""
+
 #: exe/engine/wikipediaidevice.py:312
 msgid "http://en.wikipedia.org/"
 msgstr ""
@@ -2467,7 +2546,7 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:747 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:750 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""
@@ -2476,12 +2555,43 @@ msgstr ""
 msgid "iDevice icon"
 msgstr ""
 
+#: /usr/lib/python2.7/optparse.py:418
+msgid "integer"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:419
+msgid "long integer"
+msgstr ""
+
 #: exe/webui/element.py:1773
 msgid "newline"
 msgstr ""
 
+#: /usr/lib/python2.7/optparse.py:140
+#, python-format
+msgid "no such option: %s"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:429
+#, python-format
+msgid "option %s: invalid %s value: %r"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:437
+#, python-format
+msgid "option %s: invalid choice: %r (choose from %s)"
+msgstr ""
+
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1255
+msgid "show program's version number and exit"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1250
+msgid "show this help message and exit"
 msgstr ""
 
 #: exe/webui/element.py:1772
@@ -2592,12 +2702,12 @@ msgstr ""
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
 
-#: exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: label="Apply"> exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-msgid "Apply"
+#: exe/xului/templates/exportproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_scowsinglepage" label="Include
+#: Single Page export file?" tooltiptext="Checking this option the exported
+#: SCORM file will include a named "singlepage_index.html" containing result
+#: of exporting eXe package as single page." checked="false">
+msgid "Include Single Page export file?"
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
@@ -2621,6 +2731,11 @@ msgstr ""
 msgid "Creator:"
 msgstr ""
 
+#: exe/xului/templates/exportproperties.xul:<description
+#: id="ppscowsinglepage">
+msgid "Checking this option the exported SCORM file will include a file named \"singlepage_index.html\" containing the result of exporting this eXe package as a single page."
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
@@ -2637,6 +2752,15 @@ msgstr ""
 msgid "The topic of the content of the resource."
 msgstr ""
 
+#: exe/xului/templates/exportproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_scowwebsite" label="Include
+#: Web Site export files?" tooltiptext="Checking this option the exported
+#: SCORM file will include result of exporting eXe package as Site. All html
+#: files have "website_" prefix to differentiate them from their equivalent."
+#: checked="false">
+msgid "Include Web Site export files?"
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 msgid "R"
@@ -2651,6 +2775,10 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "Subject:"
+msgstr ""
+
+#: exe/xului/templates/exportproperties.xul:<description id="ppscowwebsite">
+msgid "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
@@ -2674,6 +2802,13 @@ msgid ""
 "             "
 msgstr ""
 
+#: exe/xului/templates/exportproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_scowsource" label="Create
+#: editable SCORM file?" tooltiptext="Checking this option, the exported file
+#: will be with eXeLearning." checked="false">
+msgid "Create editable SCORM file?"
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
@@ -2691,6 +2826,10 @@ msgstr ""
 msgid "An entity responsible for making the resource available."
 msgstr ""
 
+#: exe/xului/templates/exportproperties.xul:<description id="ppscowsource">
+msgid "Checking this option, the exported SCORM file will be editable with eXeLearning."
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
 msgid "U"
@@ -2706,6 +2845,14 @@ msgstr ""
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "Publisher:"
+msgstr ""
+
+#: exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: label="Apply"> exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+msgid "Apply"
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"

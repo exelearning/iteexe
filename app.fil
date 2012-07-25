@@ -161,3 +161,4 @@ exe/xului/__init__.py
 exe/xului/propertiespage.py
 exe/xului/mainpage.py
 twisted/persisted/styles.py
+/usr/lib/python2.7/optparse.py

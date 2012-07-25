@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_en\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 07:37+0200\n"
+"POT-Creation-Date: 2012-07-25 10:56+0200\n"
 "PO-Revision-Date: 2008-07-15 08:15+0200\n"
 "Last-Translator: vedran <vvucic@eunet.rs>\n"
 "Language-Team: serbiansr <en@li.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 "<p>npr. Za Geogebra aplete, odaberite geogebra, dodajte .ggb datoteku \n"
 "koju ste kreirali u programu Geogebra.</p>"
 
-#: exe/export/cmdlineexporter.py:62 exe/xului/mainpage.py:290
+#: exe/export/cmdlineexporter.py:65 exe/xului/mainpage.py:290
 #: exe/xului/mainpage.py:906 exe/xului/mainpage.py:1035
 #: exe/xului/mainpage.py:1110 exe/xului/mainpage.py:1131
 #, python-format
@@ -60,6 +60,25 @@ msgstr ""
 "\" Pronađite .txt datoteku (u aplet datoteci) \n"
 " i otvorite je.  Iskopirajte sadržaj ove datoteke <ctrl A, ctrl C> u polje za kod \n"
 " apleta."
+
+#: /usr/lib/python2.7/optparse.py:1278
+msgid "%prog [options]"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1509
+#, python-format
+msgid "%s option does not take a value"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1500 /usr/lib/python2.7/optparse.py:1539
+#, python-format
+msgid "%s option requires %d arguments"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1498 /usr/lib/python2.7/optparse.py:1537
+#, python-format
+msgid "%s option requires an argument"
+msgstr ""
 
 #: exe/webui/block.py:246
 msgid "---Move To---"
@@ -223,7 +242,7 @@ msgstr ""
 "odnosu ili u odnosu prema određenoj spoznajnoj vežbi, moža je bolje da ih prikažete \n"
 "kao galeriju umesto da ih prikazujete pojedinačno.</p>"
 
-#: exe/engine/package.py:417
+#: exe/engine/package.py:420
 msgid "?????"
 msgstr "?????"
 
@@ -351,6 +370,10 @@ msgstr "Dodaj još jedno pitanje "
 msgid "Add images"
 msgstr "Dodaj slike"
 
+#: exe/exe_do:128
+msgid "Add the required files to generate a SCORM package editable by eXeLearning"
+msgstr ""
+
 #: exe/webui/imagewithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/flashwithtextblock.py:88 exe/webui/flashmovieblock.py:87
 #: exe/webui/multimediablock.py:92 exe/webui/editorelement.py:228
@@ -462,7 +485,7 @@ msgstr ""
 msgid "Autoevaluación"
 msgstr ""
 
-#: exe/exe_do:109
+#: exe/exe_do:160
 msgid "Bad number of arguments supplied"
 msgstr ""
 
@@ -782,6 +805,10 @@ msgstr ""
 msgid "Display as:"
 msgstr "Prikaži kao:"
 
+#: exe/exe_do:91
+msgid "Don't copy source in target"
+msgstr ""
+
 #: exe/webui/block.py:213
 msgid "Done"
 msgstr "Učinjeno"
@@ -828,8 +855,8 @@ msgstr ""
 "IZNOS NEUSPEŠAN!\n"
 "%s"
 
-#: exe/export/websiteexport.py:88 exe/export/imsexport.py:373
-#: exe/export/scormexport.py:510
+#: exe/export/websiteexport.py:89 exe/export/imsexport.py:371
+#: exe/export/scormexport.py:536
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -1098,10 +1125,10 @@ msgid "Example Example"
 msgstr "Primer Primer"
 
 #: exe/exe_do:71
-msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip or singlepage."
+msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip , singlepage or xliff."
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:83
+#: exe/export/cmdlineexporter.py:86
 msgid "Export format not implemented"
 msgstr ""
 
@@ -1239,7 +1266,7 @@ msgstr "Povratna informacija:"
 msgid "File %s does not exist or is not readable."
 msgstr "Datoteka %s ne postoji ili nije čitljiva."
 
-#: exe/exe_do:125
+#: exe/exe_do:183
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
 msgstr ""
@@ -1285,7 +1312,7 @@ msgstr "Slobodan tekst"
 msgid "French Wikipedia Article"
 msgstr "Francuski Vikipedija članak"
 
-#: exe/webui/wikipediablock.py:246
+#: exe/webui/wikipediablock.py:237
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
@@ -1382,11 +1409,11 @@ msgstr "Povećalo za slike"
 msgid "Image with Text"
 msgstr "Slika sa tekstom"
 
-#: exe/importers/cmdlineimporter.py:43
+#: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
 msgstr ""
 
-#: exe/webui/xliffimportpreferencespage.py:79
+#: exe/exe_do:107 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
 msgstr ""
 
@@ -1395,7 +1422,15 @@ msgid "Import iDevice"
 msgstr "Unesi iUređaj"
 
 #: exe/exe_do:77
-msgid "Import to <output_file> elp package, <input_file> in one of the given formats: xml."
+msgid "Import to <output_file> elp package, <input_file> in one of the given formats: xml or xliff."
+msgstr ""
+
+#: exe/exe_do:118
+msgid "Include Single Page export file"
+msgstr ""
+
+#: exe/exe_do:123
+msgid "Include Web Site export files"
 msgstr ""
 
 #: exe/webui/element.py:1950 exe/webui/element.py:1960
@@ -1452,15 +1487,16 @@ msgstr ""
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:76
+#: exe/export/cmdlineexporter.py:79
 msgid "Invalid input package"
 msgstr ""
 
-#: exe/importers/cmdlineimporter.py:54
-msgid "Invalid output package"
+#: exe/importers/cmdlineimporter.py:52 exe/importers/cmdlineimporter.py:61
+#, python-format
+msgid "Invalid output package '%s'"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:247
+#: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
 msgstr "Koristi materijal iz"
 
@@ -1581,11 +1617,11 @@ msgid "New iDevice"
 msgstr "Novi iUređaj"
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:342 exe/export/websitepage.py:240
+#: exe/export/scormexport.py:346 exe/export/websitepage.py:238
 msgid "Next"
 msgstr "Sledeći"
 
-#: exe/exe_do:96
+#: exe/exe_do:147
 msgid "No --export or --import option supplied."
 msgstr ""
 
@@ -1610,7 +1646,7 @@ msgstr "Nema malih prikaza. Ne mogu da suzim originalnu sliku."
 msgid "No emphasis"
 msgstr "Nema naglaska"
 
-#: exe/exe_do:100
+#: exe/exe_do:151
 msgid "No file input supplied."
 msgstr ""
 
@@ -1642,6 +1678,18 @@ msgstr ""
 "definišu šta će učenici moći d aučine kad izvrše\n"
 "zadate zadatke."
 
+#: exe/exe_do:113
+msgid "Once you have chosen SCORM export option using '-x scorm' or '--export scorm', it's possible to configure the following export options:"
+msgstr ""
+
+#: exe/exe_do:86
+msgid "Once you have chosen XLIFF export option using '-x xliff' or '--export xliff', it's possible to configure the following export options:"
+msgstr ""
+
+#: exe/exe_do:102
+msgid "Once you have chosen XLIFF import option using  '-i xliff' or '--import xliff', it's possible to configure the following import options:"
+msgstr ""
+
 #: exe/engine/field.py:3174 exe/engine/field.py:3238
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
@@ -1667,10 +1715,11 @@ msgstr "Opcija"
 
 #: exe/engine/field.py:3521 exe/engine/field.py:3558
 #: exe/webui/testquestionelement.py:110 exe/webui/element.py:2061
+#: /usr/lib/python2.7/optparse.py:1626
 msgid "Options"
 msgstr "Opcije"
 
-#: exe/exe_do:93
+#: exe/exe_do:144
 msgid "Options --export and --import are mutually exclusive."
 msgstr ""
 
@@ -1813,7 +1862,7 @@ msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Prikaz fascikle %s je datoteka, nemože da se zameni"
 
 #: exe/engine/galleryidevice.py:664 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:341 exe/export/websitepage.py:234
+#: exe/export/scormexport.py:345 exe/export/websitepage.py:232
 msgid "Previous"
 msgstr "Prethodni"
 
@@ -2007,7 +2056,7 @@ msgstr ""
 "ČUVANJE NEUSPEŠNO!\n"
 "%s"
 
-#: exe/engine/package.py:448 exe/engine/package.py:455
+#: exe/engine/package.py:451 exe/engine/package.py:458
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2019,6 +2068,10 @@ msgstr ""
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
 msgstr "SCORM kviz "
+
+#: exe/exe_do:112
+msgid "SCORM export options"
+msgstr ""
 
 #: exe/webui/quiztestblock.py:152
 msgid "SUBMIT ANSWERS"
@@ -2130,7 +2183,7 @@ msgstr ""
 "Postavite maksimalan nivo uvećanja \n"
 "kao procenat originalne veličine slike"
 
-#: exe/xului/propertiespage.py:201
+#: exe/xului/propertiespage.py:205
 msgid "Settings saved"
 msgstr "podešavanja sačuvana"
 
@@ -2227,7 +2280,7 @@ msgstr "Priloži"
 msgid "Submit Answer"
 msgstr "Priloži odgovor"
 
-#: exe/exe_do:115
+#: exe/exe_do:172
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
 msgstr ""
@@ -2399,7 +2452,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Namena dijalog vam omogućava da opišete vašu nameravanu namenu iUređaja potencijalnim korisnicima."
 
-#: exe/webui/wikipediablock.py:243
+#: exe/webui/wikipediablock.py:234
 msgid "This article is licensed under the "
 msgstr "Ovaj članak je licenciran po"
 
@@ -2619,12 +2672,21 @@ msgstr ""
 "da nauči i vežba upotrebu informacija ili veština.\n"
 " "
 
+#: /usr/lib/python2.7/optparse.py:393
+msgid "Usage"
+msgstr ""
+
 #: exe/exe_do:64
 msgid ""
 "Usage: %prog [options] input_file [output_file]\n"
 "\n"
 "To show help:\n"
 "%prog -h"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:374
+#, python-format
+msgid "Usage: %s\n"
 msgstr ""
 
 #: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
@@ -2658,10 +2720,6 @@ msgstr ""
 #: exe/webui/editorpane.py:72
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Koristite ovaj padajući meni da bi odabrali da li će vaš iUređaj da ima primenjeno neko oblikovanje da bi se razlikovao od drugih, npr. okvir i ikonu."
-
-#: exe/importers/cmdlineimporter.py:51
-msgid "WARNING: content.xml version 0.1. Importing from content.data. Try to import from a content.xml version 0.2."
-msgstr ""
 
 #: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:467
 msgid "What to read"
@@ -2716,13 +2774,21 @@ msgstr "Wikiverzitet"
 msgid "Wiktionary"
 msgstr "Wikirečnik"
 
-#: exe/webui/xliffexportpreferencespage.py:124
+#: exe/exe_do:96 exe/webui/xliffexportpreferencespage.py:124
 msgid "Wrap fields in CDATA"
 msgstr ""
 
 #: exe/webui/element.py:2338 exe/webui/element.py:2365
 msgid "Wrong"
 msgstr "Pogrešno"
+
+#: exe/exe_do:85
+msgid "XLIFF export options"
+msgstr ""
+
+#: exe/exe_do:101
+msgid "XLIFF import options"
+msgstr ""
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -2732,7 +2798,12 @@ msgstr "Možete da koristite traku sa alatima ili da uneste latex ručno u podru
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Vaš novi iUređaj će se pojaviti u panelu za iUređaje sa ovim naslovom. Ovo je obavezno polje i bit će od vas zatraženo da upišete etiketu ako pokušate da priložite vaš iUređaj bez etikete."
 
-#: exe/webui/wikipediablock.py:259
+#: /usr/lib/python2.7/optparse.py:151
+#, python-format
+msgid "ambiguous option: %s (%s?)"
+msgstr ""
+
+#: exe/webui/wikipediablock.py:250
 msgid "article "
 msgstr "članak"
 
@@ -2740,7 +2811,11 @@ msgstr "članak"
 msgid "blank for original size"
 msgstr "praznoza originalnu veličinu"
 
-#: exe/export/imsexport.py:210 exe/export/scormexport.py:295
+#: /usr/lib/python2.7/optparse.py:421
+msgid "complex"
+msgstr ""
+
+#: exe/export/imsexport.py:210 exe/export/scormexport.py:299
 msgid "eXe"
 msgstr "eXe"
 
@@ -2754,14 +2829,14 @@ msgstr "eXe : XHTML editor za e-učenje"
 msgid "eXe Project"
 msgstr "eXe Projekat"
 
-#: exe/exe_do:118
+#: exe/exe_do:175
 #, python-format
 msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The error was:"
 msgstr ""
 
-#: exe/exe_do:128
+#: exe/exe_do:186
 #, python-format
 msgid ""
 "exe_do: error: Unable to import '%s'.\n"
@@ -2773,6 +2848,10 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "datoteka %s nema roditeljsku tačku"
 
+#: /usr/lib/python2.7/optparse.py:420
+msgid "floating-point"
+msgstr ""
+
 #: exe/engine/wikipediaidevice.py:312
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
@@ -2782,7 +2861,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iUređaj %s nema paket"
 
-#: exe/engine/package.py:747 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:750 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iUređaj editor"
@@ -2791,13 +2870,44 @@ msgstr "iUređaj editor"
 msgid "iDevice icon"
 msgstr "iUređaj ikona"
 
+#: /usr/lib/python2.7/optparse.py:418
+msgid "integer"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:419
+msgid "long integer"
+msgstr ""
+
 #: exe/webui/element.py:1773
 msgid "newline"
 msgstr "nova linija"
 
+#: /usr/lib/python2.7/optparse.py:140
+#, python-format
+msgid "no such option: %s"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:429
+#, python-format
+msgid "option %s: invalid %s value: %r"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:437
+#, python-format
+msgid "option %s: invalid choice: %r (choose from %s)"
+msgstr ""
+
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
 msgstr "preimenovano Izvor za aplet iUređaj, i čak nebi trebalo da dođe do ovoga!"
+
+#: /usr/lib/python2.7/optparse.py:1255
+msgid "show program's version number and exit"
+msgstr ""
+
+#: /usr/lib/python2.7/optparse.py:1250
+msgid "show this help message and exit"
+msgstr ""
 
 #: exe/webui/element.py:1772
 msgid "text"
@@ -2907,13 +3017,13 @@ msgstr "Metapodaci"
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr "Entitet prvenstveno odgovoran za kreiranje sadržaja izvora."
 
-#: exe/xului/templates/exportproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: label="Apply"> exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
-msgid "Apply"
-msgstr "Primeni"
+#: exe/xului/templates/exportproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_scowsinglepage" label="Include
+#: Single Page export file?" tooltiptext="Checking this option the exported
+#: SCORM file will include a named "singlepage_index.html" containing result
+#: of exporting eXe package as single page." checked="false">
+msgid "Include Single Page export file?"
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2936,6 +3046,11 @@ msgstr "Iznos"
 msgid "Creator:"
 msgstr "Kreator:"
 
+#: exe/xului/templates/exportproperties.xul:<description
+#: id="ppscowsinglepage">
+msgid "Checking this option the exported SCORM file will include a file named \"singlepage_index.html\" containing the result of exporting this eXe package as a single page."
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
@@ -2952,6 +3067,15 @@ msgstr "Pozadina zaglavlja"
 msgid "The topic of the content of the resource."
 msgstr "Tema sadržaja izvora"
 
+#: exe/xului/templates/exportproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_scowwebsite" label="Include
+#: Web Site export files?" tooltiptext="Checking this option the exported
+#: SCORM file will include result of exporting eXe package as Site. All html
+#: files have "website_" prefix to differentiate them from their equivalent."
+#: checked="false">
+msgid "Include Web Site export files?"
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 msgid "R"
@@ -2967,6 +3091,10 @@ msgstr "Učitaj sliku"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "Subject:"
 msgstr "Tema:"
+
+#: exe/xului/templates/exportproperties.xul:<description id="ppscowwebsite">
+msgid "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent."
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
@@ -2995,6 +3123,13 @@ msgstr ""
 "                rečnika ili formalne klasifikacione šeme.\n"
 "                "
 
+#: exe/xului/templates/exportproperties.xul:<checkbox
+#: oncommand="this.style.color = 'red';" id="pp_scowsource" label="Create
+#: editable SCORM file?" tooltiptext="Checking this option, the exported file
+#: will be with eXeLearning." checked="false">
+msgid "Create editable SCORM file?"
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
@@ -3012,6 +3147,10 @@ msgstr "Ukloni sliku"
 msgid "An entity responsible for making the resource available."
 msgstr "Entitet odgovoran za dostupnost izvora."
 
+#: exe/xului/templates/exportproperties.xul:<description id="ppscowsource">
+msgid "Checking this option, the exported SCORM file will be editable with eXeLearning."
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
 msgid "U"
@@ -3028,6 +3167,14 @@ msgstr "Poredaj pozadinsku sliku?"
 #: making the resource available.">
 msgid "Publisher:"
 msgstr "Izdavač:"
+
+#: exe/xului/templates/exportproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
+#: label="Apply"> exe/xului/templates/packageproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+msgid "Apply"
+msgstr "Primeni"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
