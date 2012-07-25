@@ -367,7 +367,7 @@ msgstr "Gehitu irudiak"
 
 #: exe/exe_do:128
 msgid "Add the required files to generate a SCORM package editable by eXeLearning"
-msgstr ""
+msgstr "Sortutako SCORM paketea eXeLearningek editatu ahal izateko beharrezkoak diren fitxategiak gehitu"
 
 #: exe/webui/imagewithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/flashwithtextblock.py:88 exe/webui/flashmovieblock.py:87
@@ -797,7 +797,7 @@ msgstr "Erakutsi honela:"
 
 #: exe/exe_do:91
 msgid "Don't copy source in target"
-msgstr ""
+msgstr "Ez kopiatu jatorrizko testua xedean"
 
 #: exe/webui/block.py:213
 msgid "Done"
@@ -1118,7 +1118,7 @@ msgstr "Adibidea Adibidea"
 
 #: exe/exe_do:71
 msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip , singlepage or xliff."
-msgstr ""
+msgstr "<input_file> elp paketea esportatu hautazko <output_file>-ra hauetako formatu batean: xml, scorm, ims, website, webzip, singlepage edo xliff."
 
 #: exe/export/cmdlineexporter.py:86
 msgid "Export format not implemented"
@@ -1415,15 +1415,15 @@ msgstr "Inportatu iDevice-a"
 
 #: exe/exe_do:77
 msgid "Import to <output_file> elp package, <input_file> in one of the given formats: xml or xliff."
-msgstr ""
+msgstr "<input_file>-etik <output_file> elp paketera inportatu hauetako formatu batean: xml edo xliff."
 
 #: exe/exe_do:118
 msgid "Include Single Page export file"
-msgstr ""
+msgstr "Orri bakarreko esportazio fitxategia sartu"
 
 #: exe/exe_do:123
 msgid "Include Web Site export files"
-msgstr ""
+msgstr "Webguneko esportazio fitxategiak sartu"
 
 #: exe/webui/element.py:1950 exe/webui/element.py:1960
 msgid "Incorrect"
@@ -1486,7 +1486,7 @@ msgstr "Sarrera paketea ez da baliagarria"
 #: exe/importers/cmdlineimporter.py:52 exe/importers/cmdlineimporter.py:61
 #, python-format
 msgid "Invalid output package '%s'"
-msgstr ""
+msgstr "Irteera paketea ez da baliagarria '%s'"
 
 #: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
@@ -1671,15 +1671,15 @@ msgstr ""
 
 #: exe/exe_do:113
 msgid "Once you have chosen SCORM export option using '-x scorm' or '--export scorm', it's possible to configure the following export options:"
-msgstr ""
+msgstr "Behin aukeratu duzula SCORM formatura esportatzea '-x scorm' edo '--export scorm' bitartez, ondoko esportazio aukerak erabili ditzakezu:"
 
 #: exe/exe_do:86
 msgid "Once you have chosen XLIFF export option using '-x xliff' or '--export xliff', it's possible to configure the following export options:"
-msgstr ""
+msgstr "Behin aukeratu duzula XLIFF formatura esportatzea '-x xliff' edo '--export xliff' bitartez, ondoko esportazio aukerak erabili ditzakezu:"
 
 #: exe/exe_do:102
 msgid "Once you have chosen XLIFF import option using  '-i xliff' or '--import xliff', it's possible to configure the following import options:"
-msgstr ""
+msgstr "Behin aukeratu duzula XLIFF formatutik inportatzea '-i xliff' edo '--import xliff' bitartez, ondoko inportazio aukerak erabili ditzakezu:"
 
 #: exe/engine/field.py:3174 exe/engine/field.py:3238
 msgid ""
@@ -2058,7 +2058,7 @@ msgstr "SCORM galdera"
 
 #: exe/exe_do:112
 msgid "SCORM export options"
-msgstr ""
+msgstr "SCORM esportazioaren aukerak"
 
 #: exe/webui/quiztestblock.py:152
 msgid "SUBMIT ANSWERS"
@@ -2768,11 +2768,11 @@ msgstr "Okerra."
 
 #: exe/exe_do:85
 msgid "XLIFF export options"
-msgstr ""
+msgstr "XLIFF esportazioaren aukerak"
 
 #: exe/exe_do:101
 msgid "XLIFF import options"
-msgstr ""
+msgstr "XLIFF inportazioaren aukerak"
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -2895,7 +2895,7 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1250
 msgid "show this help message and exit"
-msgstr ""
+msgstr "erakutsi laguntza mezu hau eta atera"
 
 #: exe/webui/element.py:1772
 msgid "text"
@@ -3011,7 +3011,7 @@ msgstr "Baliabidearen edukia sorzteko ardura duen entitatea."
 #: SCORM file will include a named "singlepage_index.html" containing result
 #: of exporting eXe package as single page." checked="false">
 msgid "Include Single Page export file?"
-msgstr ""
+msgstr "Orri bakarreko esportazio fitxategia sartu?"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -3037,7 +3037,7 @@ msgstr "Sortzailea:"
 #: exe/xului/templates/exportproperties.xul:<description
 #: id="ppscowsinglepage">
 msgid "Checking this option the exported SCORM file will include a file named \"singlepage_index.html\" containing the result of exporting this eXe package as a single page."
-msgstr ""
+msgstr "Aukera hau markatzen baduzu, \"singlepage_index.html\" izeneko fitxategi bat sortuko da SCORM fitxategiaren barnean, eXe paketearen orri bakarreko esportazioarekin."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
@@ -3062,7 +3062,7 @@ msgstr "Baliabidearen edukiaren gaia."
 #: files have "website_" prefix to differentiate them from their equivalent."
 #: checked="false">
 msgid "Include Web Site export files?"
-msgstr ""
+msgstr "Webgune esportazio fitxategiak sartu?"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -3082,7 +3082,7 @@ msgstr "Gaia:"
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscowwebsite">
 msgid "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent."
-msgstr ""
+msgstr "Aukera hau markatzen baduzu, eXe paketearen webgune esportazioa sartuko da SCORM fitxategian. Fitxategi guztiei \"website_\" aurrizkia jarriko zaie SCORM-erako erabilitakoa bereizteko."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
@@ -3115,7 +3115,7 @@ msgstr ""
 #: editable SCORM file?" tooltiptext="Checking this option, the exported file
 #: will be with eXeLearning." checked="false">
 msgid "Create editable SCORM file?"
-msgstr ""
+msgstr "SCORM fitxategi editagarria sortu?"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
@@ -3136,7 +3136,7 @@ msgstr "Baliabidearen edukia eskuragarria egiteko ardura duen entitatea."
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscowsource">
 msgid "Checking this option, the exported SCORM file will be editable with eXeLearning."
-msgstr ""
+msgstr "Aukera hau markatzen baduzu, sortutako SCORM fitxategia eXeLearning-ekin editatu ahal izango duzu."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
