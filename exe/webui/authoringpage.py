@@ -156,7 +156,8 @@ class AuthoringPage(RenderableResource):
         html += u'@import url(/style/%s/content.css);\n' % self.package.style
         html += u'</style>\n'
         if G.application.config.assumeMediaPlugins: 
-            html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"			
+            html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"	
+        html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
