@@ -376,7 +376,7 @@ msgstr "Añadir imágenes"
 
 #: exe/exe_do:128
 msgid "Add the required files to generate a SCORM package editable by eXeLearning"
-msgstr ""
+msgstr "Añadir los archivos necesarios para poder editar el SCORM generado con eXeLearning"
 
 #: exe/webui/imagewithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/flashwithtextblock.py:88 exe/webui/flashmovieblock.py:87
@@ -483,7 +483,7 @@ msgstr "Universidad de Tecnología de Auckland"
 #: exe/webui/clozelangfpdblock.py:105 exe/webui/clozefpdblock.py:104
 #: exe/webui/eleccionmultiplefpdblock.py:110
 msgid "Autoevaluacion"
-msgstr ""
+msgstr "Autoevaluación"
 
 #: exe/webui/verdaderofalsofpdblock.py:109
 #: exe/webui/seleccionmultiplefpdblock.py:90
@@ -667,7 +667,7 @@ msgstr "Copiar origen en destino"
 
 #: exe/engine/correccionfpdidevice.py:31
 msgid "Correccion es un iDevice que permite resaltar texto para hacer correcciones a los autores."
-msgstr ""
+msgstr "Corrección es un iDevice que permite resaltar texto para hacer correcciones a los autores."
 
 #: exe/webui/element.py:1948 exe/webui/element.py:1958
 msgid "Correct"
@@ -810,7 +810,7 @@ msgstr "Mostrar como:"
 
 #: exe/exe_do:91
 msgid "Don't copy source in target"
-msgstr ""
+msgstr "No copiar origen en destino"
 
 #: exe/webui/block.py:213
 msgid "Done"
@@ -1129,7 +1129,7 @@ msgstr "Ejemplo Ejemplo"
 
 #: exe/exe_do:71
 msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip , singlepage or xliff."
-msgstr ""
+msgstr "Exportar paquete elp <input_file> a <output_file> en alguno de estos formatos: xml, scorm, ims, website, webzip, singlepage o xliff."
 
 #: exe/export/cmdlineexporter.py:86
 msgid "Export format not implemented"
@@ -1156,7 +1156,7 @@ msgstr "Extra grande"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:60
 msgid "FPD - Actividad de Eleccion Multiple"
-msgstr ""
+msgstr "FPD - Actividad de Elección Múltiple"
 
 #: exe/engine/clozefpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco"
@@ -1168,7 +1168,7 @@ msgstr ""
 
 #: exe/engine/seleccionmultiplefpdidevice.py:43
 msgid "FPD - Actividad de Seleccion Multiple"
-msgstr ""
+msgstr "FPD - Actividad de Selección Multiple"
 
 #: exe/engine/verdaderofalsofpdidevice.py:144
 msgid "FPD - Actividad de Verdadero/Falso"
@@ -1176,7 +1176,7 @@ msgstr ""
 
 #: exe/engine/casopracticofpdidevice.py:29
 msgid "FPD - Caso Practico"
-msgstr ""
+msgstr "FPD - Caso Práctico"
 
 #: exe/engine/citasparapensarfpdidevice.py:29
 msgid "FPD - Citas Para Pensar"
@@ -1184,7 +1184,7 @@ msgstr ""
 
 #: exe/engine/correccionfpdidevice.py:29
 msgid "FPD - Correccion"
-msgstr ""
+msgstr "FPD - Corrección"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - Debes Conocer"
@@ -1204,23 +1204,23 @@ msgstr ""
 
 #: exe/engine/orientacionestutoriafpdidevice.py:29
 msgid "FPD - Orientaciones Tutoria"
-msgstr ""
+msgstr "FPD - Orientaciones Tutoría"
 
 #: exe/engine/parasabermasfpdidevice.py:29
 msgid "FPD - Para Saber Mas"
-msgstr ""
+msgstr "FPD - Para Saber Más"
 
 #: exe/engine/recomendacionfpdidevice.py:29
 msgid "FPD - Recomendacion"
-msgstr ""
+msgstr "FPD - Recomendación"
 
 #: exe/engine/reflectionfpdidevice.py:46
 msgid "FPD - Reflexiona (con Retroalimentacion)"
-msgstr ""
+msgstr "FPD - Reflexiona (con Retroalimentación)"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Reflexiona (sin Retroalimentacion)"
-msgstr ""
+msgstr "FPD - Reflexiona (sin Retroalimentación)"
 
 #: exe/engine/freetextfpdidevice.py:38
 msgid "FPD - Texto Libre"
@@ -1424,15 +1424,15 @@ msgstr "Importar iDevices"
 
 #: exe/exe_do:77
 msgid "Import to <output_file> elp package, <input_file> in one of the given formats: xml or xliff."
-msgstr ""
+msgstr "Importar el archivo <input_file> al paquete elp <output_file> en alguno de los siguientes formatos: xml o xliff."
 
 #: exe/exe_do:118
 msgid "Include Single Page export file"
-msgstr ""
+msgstr "Incluir archivo de exportación a una sola página"
 
 #: exe/exe_do:123
 msgid "Include Web Site export files"
-msgstr ""
+msgstr "Incluir archivos de exportación como sitio web"
 
 #: exe/webui/element.py:1950 exe/webui/element.py:1960
 msgid "Incorrect"
@@ -1495,7 +1495,7 @@ msgstr "El archivo de entrada no es válido."
 #: exe/importers/cmdlineimporter.py:52 exe/importers/cmdlineimporter.py:61
 #, python-format
 msgid "Invalid output package '%s'"
-msgstr ""
+msgstr "El archivo de salida '%s' no es válido"
 
 #: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
@@ -1681,15 +1681,15 @@ msgstr ""
 
 #: exe/exe_do:113
 msgid "Once you have chosen SCORM export option using '-x scorm' or '--export scorm', it's possible to configure the following export options:"
-msgstr ""
+msgstr "Una vez seleccionada la opción de exportación a formato SCORM mediante '-x scorm' o '--export scorm', es posible configurar las siguientes opciones de exportación:"
 
 #: exe/exe_do:86
 msgid "Once you have chosen XLIFF export option using '-x xliff' or '--export xliff', it's possible to configure the following export options:"
-msgstr ""
+msgstr "Una vez seleccionada la opción de exportación a formato XLIFF mediante '-x xliff' o '--export xliff', es posible configurar las siguientes opciones de exportación:"
 
 #: exe/exe_do:102
 msgid "Once you have chosen XLIFF import option using  '-i xliff' or '--import xliff', it's possible to configure the following import options:"
-msgstr ""
+msgstr "Una vez seleccionada la opción de importación desde formato XLIFF mediante '-i xliff' o '--import xliff', es posible configurar la siguiente opción de importación:"
 
 #: exe/engine/field.py:3174 exe/engine/field.py:3238
 msgid ""
@@ -1738,7 +1738,7 @@ msgstr ""
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:31
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
-msgstr ""
+msgstr "Orientaciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 
 #: exe/webui/wikipediablock.py:134
 msgid "Other"
@@ -2034,7 +2034,7 @@ msgstr "Reiniciar"
 #: exe/webui/clozelangfpdblock.py:176 exe/webui/clozefpdblock.py:175
 #: exe/webui/element.py:2155 exe/webui/reflectionfpdblock.py:143
 msgid "Retroalimentacion"
-msgstr ""
+msgstr "Retroalimentación"
 
 #: exe/webui/imagewithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
 #: exe/webui/flashwithtextblock.py:82 exe/webui/flashmovieblock.py:82
@@ -2071,7 +2071,7 @@ msgstr "Cuestionario SCORM"
 
 #: exe/exe_do:112
 msgid "SCORM export options"
-msgstr ""
+msgstr "Opciones de exportación a SCORM"
 
 #: exe/webui/quiztestblock.py:152
 msgid "SUBMIT ANSWERS"
@@ -2228,7 +2228,7 @@ msgstr "Pequeño"
 #: exe/webui/element.py:2150 exe/webui/element.py:2544
 #: exe/webui/questionelement.py:152
 msgid "Solucion"
-msgstr ""
+msgstr "Solución"
 
 #: exe/webui/wikipediablock.py:159 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/editorpane.py:336
@@ -2787,11 +2787,11 @@ msgstr "Incorrecto"
 
 #: exe/exe_do:85
 msgid "XLIFF export options"
-msgstr ""
+msgstr "Opciones de exportación a XLIFF"
 
 #: exe/exe_do:101
 msgid "XLIFF import options"
-msgstr ""
+msgstr "Opciones de importación desde XLIFF"
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -2914,7 +2914,7 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1250
 msgid "show this help message and exit"
-msgstr ""
+msgstr "mostrar este mensaje de ayuda y salir"
 
 #: exe/webui/element.py:1772
 msgid "text"
@@ -3030,7 +3030,7 @@ msgstr "Entidad responsable de elaborar el contenido del recurso."
 #: SCORM file will include a named "singlepage_index.html" containing result
 #: of exporting eXe package as single page." checked="false">
 msgid "Include Single Page export file?"
-msgstr ""
+msgstr "¿Incluir archivo de exportación a una sola página?"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -3056,7 +3056,7 @@ msgstr "Creador:"
 #: exe/xului/templates/exportproperties.xul:<description
 #: id="ppscowsinglepage">
 msgid "Checking this option the exported SCORM file will include a file named \"singlepage_index.html\" containing the result of exporting this eXe package as a single page."
-msgstr ""
+msgstr "Al marcar esta opción se incluirá un archivo llamado \"singlepage_index.html\" en el fichero SCORM exportado que contendrá el resultado de exportar a una sola página el paquete eXe actual."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
@@ -3081,7 +3081,7 @@ msgstr "El tema del contenido del recurso."
 #: files have "website_" prefix to differentiate them from their equivalent."
 #: checked="false">
 msgid "Include Web Site export files?"
-msgstr ""
+msgstr "¿Incluir archivos de exportación como sitio web?"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -3101,7 +3101,7 @@ msgstr "Tema:"
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscowwebsite">
 msgid "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent."
-msgstr ""
+msgstr "Al marcar esta opción se incluirán en el fichero SCORM los archivos resultantes de la exportación como sitio web. A todos los archivos html se les pondrá el prefijo \"website_\" (p.e.: website_index.html) para diferenciarlos de sus equivalentes en SCORM."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
@@ -3135,7 +3135,7 @@ msgstr ""
 #: editable SCORM file?" tooltiptext="Checking this option, the exported file
 #: will be with eXeLearning." checked="false">
 msgid "Create editable SCORM file?"
-msgstr ""
+msgstr "¿Crear SCORM editable por eXeLearning?"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
@@ -3156,7 +3156,7 @@ msgstr "Entidad responsable de hacer disponible el recurso."
 
 #: exe/xului/templates/exportproperties.xul:<description id="ppscowsource">
 msgid "Checking this option, the exported SCORM file will be editable with eXeLearning."
-msgstr ""
+msgstr "Al marcar esta opción, se incluirán en el fichero SCORM los archivos necesarios para poder editarlo con eXeLearning."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
@@ -4664,6 +4664,27 @@ msgstr "Derechos:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Típicamente, un elemento DERECHOS contendrá una declaración de la gestión de derechos de propiedad intelectual para el recurso, o se referirá a un servicio que proveerá esta información. La información sobre Derechos abarca a menudo las derechos de propiedad intelectual (IPR), el Copyright y otros elementos similares. Si el elemento DERECHOS no se especifica, depende de la legislación nacional el carácter reservado o no de los derechos sobre un recurso, y no puede asumirse de antemano."
 
+msgid "Accept URL"
+msgstr "Aceptar URL"
+
+msgid "Descartes"
+msgstr "Descartes"
+
+msgid "JClic"
+msgstr "JClic"
+
+msgid "Please type or paste a valid URL."
+msgstr "Por favor teclee o pegue una URL válida."
+
+msgid "Please upload a .jclic.zip file."
+msgstr "Por favor suba un archivo .jclic.zip."
+
+msgid "Please upload a .sb or .scratch file."
+msgstr "Por favor suba un fichero .sb o .scratch"
+
+msgid "Scratch"
+msgstr "Scratch"
+
 #~ msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip or singlepage."
 #~ msgstr "Exportar paquete elp <input_file> a <output_file> en alguno de estos formatos: xml, scorm, ims, Sitio web, Sitio web en zip o Una sola página."
 
@@ -4672,9 +4693,6 @@ msgstr "Típicamente, un elemento DERECHOS contendrá una declaración de la ges
 
 #~ msgid "Invalid output package"
 #~ msgstr "El archivo de salida no es válido"
-
-#~ msgid "Accept URL"
-#~ msgstr "Aceptar URL"
 
 #~ msgid "Add files"
 #~ msgstr "Añadir archivos"
@@ -4688,29 +4706,11 @@ msgstr "Típicamente, un elemento DERECHOS contendrá una declaración de la ges
 #~ msgid "Delete File"
 #~ msgstr "Borrar el archivo"
 
-#~ msgid "Descartes"
-#~ msgstr "Descartes"
-
 #~ msgid "Geogebra"
 #~ msgstr "Geogebra"
 
-#~ msgid "JClic"
-#~ msgstr "JClic"
-
-#~ msgid "Please type or paste a valid URL."
-#~ msgstr "Por favor teclee o pegue una URL válida."
-
 #~ msgid "Please upload a .ggb file."
 #~ msgstr "Por favor suba un archivo .ggb."
-
-#~ msgid "Please upload a .jclic.zip file."
-#~ msgstr "Por favor suba un archivo .jclic.zip."
-
-#~ msgid "Please upload a .sb or .scratch file."
-#~ msgstr "Por favor suba un fichero .sb o .scratch"
-
-#~ msgid "Scratch"
-#~ msgstr "Scratch"
 
 #~ msgid "Upload"
 #~ msgstr "Cargar"
