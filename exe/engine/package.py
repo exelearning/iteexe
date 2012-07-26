@@ -492,12 +492,12 @@ class Package(Persistable):
             zinfo = zipfile.ZipInfo(filename='content.data',
                     date_time=time.localtime()[0:6])
             zinfo.external_attr = 0100644<<16L
-            zippedFile.writestr(zinfo, encodeObject(self))
+            zippedFile.writestr(zinfo, encodeObject(self), zipfile.ZIP_DEFLATED)
 
             zinfo2 = zipfile.ZipInfo(filename='contentv2.xml',
                     date_time=time.localtime()[0:6])
             zinfo2.external_attr = 0100644<<16L
-            zippedFile.writestr(zinfo2, encodeObjectToXML(self))
+            zippedFile.writestr(zinfo2, encodeObjectToXML(self), zipfile.ZIP_DEFLATED)
 
             zippedFile.write(G.application.config.xulDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:
