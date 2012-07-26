@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2008-02-25 11:27+1300\n"
 "Last-Translator: Håvard Holte Os <havard.holte.os@froya.kommune.no>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -62,6 +62,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -227,6 +234,10 @@ msgid ""
 "learner in answering the question."
 msgstr ""
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Handlinger"
@@ -304,6 +315,10 @@ msgstr "Legg til et nytt alternativ"
 msgid "Add another question"
 msgstr "Legg til et nytt spørsmål"
 
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Legg til filer"
+
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
 msgstr "Legg til bilder"
@@ -377,6 +392,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Svar"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Applettkode:"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Applettype"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -630,6 +653,10 @@ msgstr ""
 msgid "Delete"
 msgstr "Slett"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Slett fil"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Slett bilde"
@@ -644,6 +671,10 @@ msgstr "Slett valg"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Slett spørsmål"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1169,6 +1200,10 @@ msgstr "Fransk Wikipedia-artikkel"
 msgid "GNU Free Documentation License"
 msgstr "GNU fri dokumentasjonslisens"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Tysk Wikipedia-artikkel"
@@ -1354,6 +1389,10 @@ msgstr "Det bruker materiale fra"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Italiensk Wikipedia-artikkel"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1590,7 +1629,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Annet"
 
@@ -1657,6 +1696,22 @@ msgstr "Vennligst velg en .jpg-fil."
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Vennligst velg et riktig svar på hvert spørsmål."
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Vennligst last opp en .ggd-fil."
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -1924,6 +1979,10 @@ msgstr "SEND INN SVAR"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Lagre"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2478,6 +2537,10 @@ msgid ""
 " "
 msgstr ""
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr ""
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2616,6 +2679,10 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
+msgstr ""
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
 msgstr ""
 
 #: exe/exe_do:175
@@ -4425,21 +4492,3 @@ msgstr "Rettigheter:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
-
-#~ msgid "Add files"
-#~ msgstr "Legg til filer"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Applettkode:"
-
-#~ msgid "Applet Type"
-#~ msgstr "Applettype"
-
-#~ msgid "Delete File"
-#~ msgstr "Slett fil"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Vennligst last opp en .ggd-fil."

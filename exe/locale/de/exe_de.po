@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2009-01-31 06:24+1300\n"
 "Last-Translator: shannon <christoph@mussenbrock.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -63,6 +63,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -294,6 +301,10 @@ msgstr ""
 "Sie können einen Tipp eingeben,\n"
 "der die Lösung der Aufgabe vereinfacht."
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Handlungen"
@@ -379,6 +390,10 @@ msgstr "Weitere Antworten hinzufügen"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "Eine weitere Frage hinzufügen"
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Dateien hinzufügen"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -474,6 +489,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Antworten "
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Applet Code:"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Anwendungstyp"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -741,6 +764,13 @@ msgstr "Löschen"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Datei löschen"
+
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# exe/xului/templates/mainpage.xul:<toolbarbutton
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Bild löschen"
@@ -755,6 +785,10 @@ msgstr "Diese Antwortmöglichkeit löschen"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Frage löschen"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1348,6 +1382,10 @@ msgstr "Wikipedia Artikel (Französisch)"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Wikipedia Artikel (Deutsch)"
@@ -1540,6 +1578,10 @@ msgstr "Quelle:"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Wikipedia Artikel (Italienisch)"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1776,7 +1818,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Andere"
 
@@ -1843,6 +1885,22 @@ msgstr "Bitte eine jpg-Datei auswählen."
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Wählen Sie bitte zu jeder Frage die richtige Antwort aus."
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Laden Sie bitte eine .gbb-Datei hoch."
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2116,6 +2174,10 @@ msgstr "Antwort abgeben"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Speichern"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2703,6 +2765,10 @@ msgstr ""
 "Teilnehmer/in Zeit hatte, sich vorzubereiten und die Informationen\n"
 "und Fähigkeiten bereits erproben konnte."
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "Upload"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2860,6 +2926,10 @@ msgstr "eXe: elearning XHTML Editor"
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
 msgstr "eXe Projekt"
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
+msgstr ""
 
 #: exe/exe_do:175
 #, python-format
@@ -4927,30 +4997,6 @@ msgstr "Rechte"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Der Urheberrechtshinweis macht deutlich aus welchen Quellen Material stammt, das im Kurs verwendet wurde und welche urheberrechtlichen Auflagen bei der Verwendung zu beachten sind. Urheberrechtliche Fragen sind sehr komplex und von nationalem Recht abhängig. In Deutschland sind fürSchulen, Hochschulen und andere Bildungsbereiche unterschiedliche Vorgaben zu beachten. Wenn Sie selbst erstelltes Material zur Verfügung stellen, sind Sie selberUrheber und Rechteinhaber. Mit dem Urheberrechtshinweis legen sie fest, wie andere Ihre Materialien verwenden dürfen."
-
-#~ msgid "Add files"
-#~ msgstr "Dateien hinzufügen"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Applet Code:"
-
-#~ msgid "Applet Type"
-#~ msgstr "Anwendungstyp"
-
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-#~ msgid "Delete File"
-#~ msgstr "Datei löschen"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Laden Sie bitte eine .gbb-Datei hoch."
-
-#~ msgid "Upload"
-#~ msgstr "Upload"
 
 #~ msgid "key"
 #~ msgstr "Schlüssel"

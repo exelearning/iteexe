@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (1.04.1)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2012-07-03 10:22+0200\n"
 "Last-Translator: José Miguel Andonegi <jmandonegi@ulhi.net>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -65,6 +65,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -281,6 +288,10 @@ msgstr ""
 "Arrasto bat eman diezaiokezu ikasleari, \n"
 "galdera erantzuten laguntzeko."
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Ekintzak"
@@ -360,6 +371,10 @@ msgstr "Gehitu beste aukera"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "Gehitu beste galdera bat"
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Gehitu artxiboak"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -450,6 +465,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Erantzunak"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Applet kodea:"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Applet mota:"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -712,6 +735,10 @@ msgstr "Jakin behar duzu iDevicearen bidez, ikaslearentzat derrigorrezkoak diren
 msgid "Delete"
 msgstr "Ezabatu"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Ezabatu artxiboa"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Ezabatu irudia"
@@ -726,6 +753,10 @@ msgstr "Ezabatu aukera"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Ezabatu galdera"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr "Descartes"
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1311,6 +1342,10 @@ msgstr "Wikipediako artikulua frantsesez"
 msgid "GNU Free Documentation License"
 msgstr "GNUren dokumentazio librearen lizentzia"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Wikipediako artikulua alemanez"
@@ -1496,6 +1531,10 @@ msgstr "Ondokoaren materiala erabiltzen du:"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Wikipediako artikulua italieraz"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr "JClic"
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1731,7 +1770,7 @@ msgstr "Tutoretzarako orientabideak"
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr "Ikasle-orientabideak iDevicearen bidez ikasleak ezagutu ditzake bere ikasketaren helburuak."
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Beste bat"
 
@@ -1798,6 +1837,22 @@ msgstr "Mesedez, aukeratu .jpg artxibo bat."
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Mesedez, aukeratu galdera bakoitzaren erantzun zuzena."
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr "Mesedez, URL onargarri bat idatzi edo pegatu."
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Mesedez, kargatu .ggb artxibo bat."
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr "Mesedez igo jclic.zip fitxategia."
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr "Mesedez igo .sb edo .scratch fitxategia."
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2068,6 +2123,10 @@ msgstr "BIDALI ERANTZUNAK"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Gorde"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr "Scratch"
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2655,6 +2714,10 @@ msgstr ""
 "Ariketa hau ikasleek informazioa ikasteko eta\n"
 "erabiltzeko denbora izan ondoren egiten da askotan."
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "Kargatu"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2813,6 +2876,10 @@ msgstr "eXe: XHTML editorea urruneko hezkuntzarako"
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
 msgstr "eXe proiektua"
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
+msgstr ""
 
 #: exe/exe_do:175
 #, python-format
@@ -4658,45 +4725,6 @@ msgstr "Eskubideetako elementu batek, normalean, baliabidearen eskubideen inguru
 #, fuzzy
 #~ msgid "WARNING: content.xml version 0.1. Importing from content.data. Try to import from a content.xml version 0.2."
 #~ msgstr "KONTUZ: content.xml-aren bertsioa 0.1. da. content.data-tik inportatzen Saitu 0.2. bertsioan dagoen content.xml batetik inportatzen"
-
-#~ msgid "Add files"
-#~ msgstr "Gehitu artxiboak"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Applet kodea:"
-
-#~ msgid "Applet Type"
-#~ msgstr "Applet mota:"
-
-#~ msgid "Delete File"
-#~ msgstr "Ezabatu artxiboa"
-
-#~ msgid "Descartes"
-#~ msgstr "Descartes"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "JClic"
-#~ msgstr "JClic"
-
-#~ msgid "Please type or paste a valid URL."
-#~ msgstr "Mesedez, URL onargarri bat idatzi edo pegatu."
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Mesedez, kargatu .ggb artxibo bat."
-
-#~ msgid "Please upload a .jclic.zip file."
-#~ msgstr "Mesedez igo jclic.zip fitxategia."
-
-#~ msgid "Please upload a .sb or .scratch file."
-#~ msgstr "Mesedez igo .sb edo .scratch fitxategia."
-
-#~ msgid "Scratch"
-#~ msgstr "Scratch"
-
-#~ msgid "Upload"
-#~ msgstr "Kargatu"
 
 #~ msgid "key"
 #~ msgstr "tekla"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2008-01-23 16:53+1300\n"
 "Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -56,6 +56,13 @@ msgstr "找到.txt文件並開啟它,複製所有內容,然後貼上至applet co
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -229,6 +236,10 @@ msgid ""
 "learner in answering the question."
 msgstr "可提供提示來輔助學生回答問題。"
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "動作"
@@ -312,6 +323,10 @@ msgstr "加入選項"
 msgid "Add another question"
 msgstr "加入問題"
 
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "加入文件"
+
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
 msgstr "加入圖片"
@@ -383,6 +398,15 @@ msgstr "學習作用中可被定義為學生必須完成的一個或一組任務
 #, fuzzy
 msgid "Answsers"
 msgstr "顯示 答案"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Applet Code:"
+
+#: exe/webui/appletblock.py:134
+#, fuzzy
+msgid "Applet Type"
+msgstr "Applet Code:"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -641,6 +665,14 @@ msgstr ""
 msgid "Delete"
 msgstr "刪除"
 
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "刪除文件"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "刪除圖片"
@@ -655,6 +687,10 @@ msgstr "刪除選項"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "刪除問題"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1179,6 +1215,10 @@ msgstr "法文Wikipedia 文章"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "德文Wikipedia 文章"
@@ -1378,6 +1418,10 @@ msgstr "所用資料來源於"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "義大利文Wikipedia 文章"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1610,7 +1654,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "其他"
 
@@ -1680,6 +1724,22 @@ msgstr "請選擇論壇."
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "請為每個問題選擇一個正確的答案。"
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr ""
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -1922,6 +1982,10 @@ msgstr "提交答案"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "儲存"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2450,6 +2514,10 @@ msgid ""
 " "
 msgstr ""
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "上傳"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2599,6 +2667,10 @@ msgstr "eXe:  elearning XHTML 編輯器"
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
+msgstr ""
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
 msgstr ""
 
 #: exe/exe_do:175
@@ -4733,26 +4805,6 @@ msgstr "權限:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
-
-#~ msgid "Add files"
-#~ msgstr "加入文件"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Applet Code:"
-
-#, fuzzy
-#~ msgid "Applet Type"
-#~ msgstr "Applet Code:"
-
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-#~ msgid "Delete File"
-#~ msgstr "刪除文件"
-
-#~ msgid "Upload"
-#~ msgstr "上傳"
 
 #~ msgid "key"
 #~ msgstr "key"

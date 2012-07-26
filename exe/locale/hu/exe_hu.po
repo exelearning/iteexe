@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -59,6 +59,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -282,6 +289,10 @@ msgstr ""
 "Egy útmutató jó segítség lehet a tanuló \n"
 "számára a kérdés megválaszolásában."
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Tevékenységek"
@@ -362,6 +373,10 @@ msgstr "Új opció hozzáadása"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "Új kérdés hozzáadása"
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Állomány hozzáadása"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -456,6 +471,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Válaszok"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Applet kód:"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Az applet típusa"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -728,6 +751,10 @@ msgstr ""
 msgid "Delete"
 msgstr "Törlés"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Állomány törlése"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Kép törlése"
@@ -742,6 +769,10 @@ msgstr "Opció törlése"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Kérdés törlése"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1329,6 +1360,10 @@ msgstr "Francia nyelvű Wikipédia szócikk"
 msgid "GNU Free Documentation License"
 msgstr "GNU Szabad dokumentáció licenc"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "GeoGebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Német nyelvű Wikipédia szócikk"
@@ -1516,6 +1551,10 @@ msgstr "Használja ezt az anyagot"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Olasz nyelvű Wikipédia szócikk"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1753,7 +1792,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Másik"
 
@@ -1821,6 +1860,22 @@ msgstr "Kérem, válasszon egy .flv állományt!"
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Válassza ki a helyes választ mindegyik kérdésben!"
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Kérem, töltsön fel egy .ggb állományt!"
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2090,6 +2145,10 @@ msgstr "VÁLASZ KÜLDÉSE"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Mentés"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2679,6 +2738,10 @@ msgstr ""
 "a kérdések részleteit is átadja (megfelelt-e, jó vagy rossz volt-e a válasz, \n"
 "a jelölt válasz sorszáma). "
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "Feltöltés"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2833,6 +2896,10 @@ msgstr "eXe: eLearning XHTML szerkesztő"
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
+msgstr ""
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
 msgstr ""
 
 #: exe/exe_do:175
@@ -5063,27 +5130,6 @@ msgstr "Jogok:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Jellemzően a \"Jogok\" elem tartalmazza a forrás jogkezelésére vonatkozó álláspontokat, vagy hivatkozik egy ide vonatkozó szolgáltatásra. A jogok gyakran tartalmazzák a szellemi tulajdonjogot,a szerzői jogot és egyéb tulajdonjogokat. Ha a \"Jogok\" elem hiányzik, nincs feltétel, amely alapján megállapítható lenne a forrás jogállása és egyéb jogok."
-
-#~ msgid "Add files"
-#~ msgstr "Állomány hozzáadása"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Applet kód:"
-
-#~ msgid "Applet Type"
-#~ msgstr "Az applet típusa"
-
-#~ msgid "Delete File"
-#~ msgstr "Állomány törlése"
-
-#~ msgid "Geogebra"
-#~ msgstr "GeoGebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Kérem, töltsön fel egy .ggb állományt!"
-
-#~ msgid "Upload"
-#~ msgstr "Feltöltés"
 
 #~ msgid "key"
 #~ msgstr "kulcs"

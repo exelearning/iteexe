@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2008-12-12 16:43+1300\n"
 "Last-Translator: Jun IWATA <j_iwata@med.shimane-u.ac.jp>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -62,6 +62,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -255,6 +262,10 @@ msgstr ""
 "「ヒント」は、学習者が質問に解答する際、解答を\n"
 "支援する目的で提示することができます。"
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "アクション"
@@ -339,6 +350,10 @@ msgstr "別のオプションを追加"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "別の質問を追加"
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "ファイルを追加"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -425,6 +440,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "解答"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "アプレットコード："
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "アプレットタイプ："
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -687,6 +710,10 @@ msgstr ""
 msgid "Delete"
 msgstr "削除"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "ファイルの削除"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "画像の削除"
@@ -701,6 +728,10 @@ msgstr "オプションの削除"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "質問の削除"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1270,6 +1301,10 @@ msgstr "フランス語ウィキペディア記事"
 msgid "GNU Free Documentation License"
 msgstr "GNU（グニュー）フリードキュメンテーションライセンス"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "ドイツ語ウィキペディア記事"
@@ -1457,6 +1492,10 @@ msgstr "の教材を利用しています"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "イタリア語ウィキペディア記事"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1690,7 +1729,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "その他"
 
@@ -1759,6 +1798,22 @@ msgstr "フォーラムを選択してください"
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "それぞれの質問に対して正しい解答を選んでください。"
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "ggbファイルをアップロードしてください。"
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2017,6 +2072,10 @@ msgstr "解答を提出"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "保存"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2585,6 +2644,10 @@ msgstr ""
 "提供しないで、あるトピックに関する学習者の知識をテストするのに利用できます。\n"
 "このクイズは、学習者が情報や技能を用いて学習したり演習をした後、よく利用されます。"
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "アップロード"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2740,6 +2803,10 @@ msgstr "eXe : ｅラーニングXHTMLエディター"
 
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
+msgstr ""
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
 msgstr ""
 
 #: exe/exe_do:175
@@ -4585,27 +4652,6 @@ msgstr "権利："
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "一般的に「権利」部分は、リソースに関する権利の管理、あるいはその情報を提供するサービスの文献を含みます。権利に関する情報は通常、知的所有権(IPR)、著作権（Copyright）、そして多様な所有に関する権利を含みます。｢権利」部分に記入がない場合、リソースに関するこれらの権利の位置づけや他の権利ついて判断できないことになります。"
-
-#~ msgid "Add files"
-#~ msgstr "ファイルを追加"
-
-#~ msgid "Applet Code:"
-#~ msgstr "アプレットコード："
-
-#~ msgid "Applet Type"
-#~ msgstr "アプレットタイプ："
-
-#~ msgid "Delete File"
-#~ msgstr "ファイルの削除"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "ggbファイルをアップロードしてください。"
-
-#~ msgid "Upload"
-#~ msgstr "アップロード"
 
 #~ msgid "key"
 #~ msgstr "キー"

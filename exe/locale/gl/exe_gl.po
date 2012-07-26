@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2011-10-10 16:33+0100\n"
 "Last-Translator: José Ramón Jiménez Reyes <jrjimenezr@gmail.com>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
@@ -62,6 +62,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -285,6 +292,10 @@ msgstr ""
 "Pódese fornecer unha indicación para axudar \n"
 "ao alumno a responder á pregunta."
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Accións"
@@ -364,6 +375,10 @@ msgstr "Engadir outra opción"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "Engadir outra cuestión"
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Engadir ficheiros"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -457,6 +472,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Respostas"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Código da miniaplicación:"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Tipo de miniaplicación"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -720,6 +743,10 @@ msgstr ""
 msgid "Delete"
 msgstr "Eliminar"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Eliminar ficheiro"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Eliminar imaxe"
@@ -734,6 +761,10 @@ msgstr "Eliminar opción"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Eliminar pregunta"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1317,6 +1348,10 @@ msgstr "Artigo da Wikipedia en francés"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Artigo da Wikipedia en alemán"
@@ -1502,6 +1537,10 @@ msgstr "Usa materiais de "
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Artigo da Wikipedia en italiano"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1738,7 +1777,7 @@ msgstr "Orientacións para a titoría"
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Outros"
 
@@ -1805,6 +1844,22 @@ msgstr "Escolla un ficheiro .jpg."
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Seleccione unha resposta correcta para cada pregunta."
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Importe un ficheiro .ggb."
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2078,6 +2133,10 @@ msgstr "ENVIAR AS RESPOSTAS"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Gardar"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2680,6 +2739,10 @@ msgstr ""
 "tido tempo para aprender e certa práctica usando a información ou a habilidade.\n"
 " "
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "Enviar"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2836,6 +2899,10 @@ msgstr "eXe : elearning XHTML editor"
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
 msgstr "Proxecto do eXe"
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
+msgstr ""
 
 #: exe/exe_do:175
 #, python-format
@@ -4669,27 +4736,6 @@ msgstr "Dereitos:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Tipicamente, un elemento Dereitos (Rights) contén unha premisa de xestión de dereitos para o recurso, ou remiten a un servizo que proporciona esa información. A información de dereitos normalmente contempla os Dereitos de Propiedade Intelectual, os Dereitos de Autor e varios Dereitos de Propiedade. Se o elemento Dereitos está ausente non se pode facer ningunha asunción sobre o estatus destes e doutros dereitos en relación ao recurso."
-
-#~ msgid "Add files"
-#~ msgstr "Engadir ficheiros"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Código da miniaplicación:"
-
-#~ msgid "Applet Type"
-#~ msgstr "Tipo de miniaplicación"
-
-#~ msgid "Delete File"
-#~ msgstr "Eliminar ficheiro"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Importe un ficheiro .ggb."
-
-#~ msgid "Upload"
-#~ msgstr "Enviar"
 
 #~ msgid "key"
 #~ msgstr "tecla"

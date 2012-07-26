@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe_en\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2008-07-15 08:15+0200\n"
 "Last-Translator: vedran <vvucic@eunet.rs>\n"
 "Language-Team: serbiansr <en@li.org>\n"
@@ -63,6 +63,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -286,6 +293,10 @@ msgstr ""
 "Možete dati sugestiju da pomognete \n"
 "učenika u odgovaranju na pitanje."
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Akcije"
@@ -365,6 +376,10 @@ msgstr "Dodaj još jednu opciju"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "Dodaj još jedno pitanje "
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Dodaj datoteke"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -457,6 +472,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Odgovori"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Kod Apleta"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Tip Apleta"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -721,6 +744,10 @@ msgstr ""
 msgid "Delete"
 msgstr "Izbriši"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Izbriši datoteku"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Izbriši sliku"
@@ -735,6 +762,10 @@ msgstr "Izbriši opciju"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Izbriši pitanje"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1319,6 +1350,10 @@ msgstr "Francuski Vikipedija članak"
 msgid "GNU Free Documentation License"
 msgstr "GNU Slobodna licenca za dokumentaciju"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Nemački Vikipedija članak"
@@ -1504,6 +1539,10 @@ msgstr "Koristi materijal iz"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Talijanski Vikipedija članak"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1740,7 +1779,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Drugi"
 
@@ -1807,6 +1846,22 @@ msgstr "Odaberite .jpg datoteku"
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Odaberite tačan odgovor za svako pitanje."
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Nadodajte .ggb datoteku."
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2081,6 +2136,10 @@ msgstr "PRILOŽI ODGOVORE"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Sačuvaj"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2673,6 +2732,10 @@ msgstr ""
 "da nauči i vežba upotrebu informacija ili veština.\n"
 " "
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "Nadodavanje"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2829,6 +2892,10 @@ msgstr "eXe : XHTML editor za e-učenje"
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
 msgstr "eXe Projekat"
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
+msgstr ""
 
 #: exe/exe_do:175
 #, python-format
@@ -4662,27 +4729,6 @@ msgstr "Prava:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Obično elemnt za prava sadrži stav o upravljanju pravima za dati izvor, ili referencu na izvor koji nudi takve informacije.  Informacija opravim se najčešće odnosi na Prava na intelektualnu svojinu (IPR), autorska prava i različita prava vlasništva. Ako nedostaje element za prava, ne može se pretpostaviti status ovih i drugih prava u odnosu na izvor."
-
-#~ msgid "Add files"
-#~ msgstr "Dodaj datoteke"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Kod Apleta"
-
-#~ msgid "Applet Type"
-#~ msgstr "Tip Apleta"
-
-#~ msgid "Delete File"
-#~ msgstr "Izbriši datoteku"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Nadodajte .ggb datoteku."
-
-#~ msgid "Upload"
-#~ msgstr "Nadodavanje"
 
 #~ msgid "key"
 #~ msgstr "ključ"

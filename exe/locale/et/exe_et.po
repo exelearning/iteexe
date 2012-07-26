@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 08:55+0200\n"
+"POT-Creation-Date: 2012-07-26 10:49+0200\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -64,6 +64,13 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
+msgstr ""
+
+#: exe/engine/path.py:639
+#, python-format
+msgid ""
+"%s\n"
+"%s unchanged"
 msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1509
@@ -275,6 +282,10 @@ msgstr ""
 "Õpilase võib küsimusele vastamiseks \n"
 "anda vihje."
 
+#: exe/webui/appletblock.py:161
+msgid "Accept URL"
+msgstr ""
+
 #: exe/webui/editorpane.py:261
 msgid "Actions"
 msgstr "Tegevused"
@@ -354,6 +365,10 @@ msgstr "Lisa veel valikuid"
 #: exe/webui/multichoiceblock.py:113
 msgid "Add another question"
 msgstr "Lisa veel küsimusi"
+
+#: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
+msgid "Add files"
+msgstr "Lisa fail"
 
 #: exe/webui/galleryblock.py:211
 msgid "Add images"
@@ -446,6 +461,14 @@ msgstr ""
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 msgid "Answsers"
 msgstr "Vastused"
+
+#: exe/webui/appletblock.py:171
+msgid "Applet Code:"
+msgstr "Appleti kood:"
+
+#: exe/webui/appletblock.py:134
+msgid "Applet Type"
+msgstr "Appleti tüüp"
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
@@ -713,6 +736,10 @@ msgstr ""
 msgid "Delete"
 msgstr "Kustuta"
 
+#: exe/webui/appletblock.py:184
+msgid "Delete File"
+msgstr "Kustuta fail"
+
 #: exe/webui/galleryblock.py:283
 msgid "Delete Image"
 msgstr "Kustuta pilt"
@@ -727,6 +754,10 @@ msgstr "Kustuta valik"
 #: exe/webui/questionelement.py:111
 msgid "Delete question"
 msgstr "Kustuta küsimus"
+
+#: exe/webui/appletblock.py:129
+msgid "Descartes"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:57 exe/engine/reflectionfpdidevice.py:58
 msgid ""
@@ -1299,6 +1330,10 @@ msgstr "Prantsuse Wikipedia artikkel"
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
+#: exe/webui/appletblock.py:130
+msgid "Geogebra"
+msgstr "Geogebra"
+
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
 msgstr "Saksa Wikipeedia artikkel"
@@ -1484,6 +1519,10 @@ msgstr "See kasutab materjale"
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
 msgstr "Itaalia Wikipedia artikkel"
+
+#: exe/webui/appletblock.py:131
+msgid "JClic"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
@@ -1719,7 +1758,7 @@ msgstr ""
 msgid "Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje."
 msgstr ""
 
-#: exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
 msgstr "Muu"
 
@@ -1786,6 +1825,22 @@ msgstr "Palun vali .jpg fail."
 #: exe/webui/multichoiceblock.py:95
 msgid "Please select a correct answer for each question."
 msgstr "Palun vali iga küsimuse jaoks õige vastus."
+
+#: exe/webui/appletblock.py:90
+msgid "Please type or paste a valid URL."
+msgstr ""
+
+#: exe/webui/appletblock.py:84
+msgid "Please upload a .ggb file."
+msgstr "Palun lae üles .ggb fail."
+
+#: exe/webui/appletblock.py:86
+msgid "Please upload a .jclic.zip file."
+msgstr ""
+
+#: exe/webui/appletblock.py:88
+msgid "Please upload a .sb or .scratch file."
+msgstr ""
 
 #: exe/xului/mainpage.py:91
 msgid ""
@@ -2048,6 +2103,10 @@ msgstr "SAADA VASTUSED"
 #: exe/webui/editorpage.py:245
 msgid "Save"
 msgstr "Salvesta"
+
+#: exe/webui/appletblock.py:132
+msgid "Scratch"
+msgstr ""
 
 #: exe/engine/package.py:290
 msgid "Section"
@@ -2633,6 +2692,10 @@ msgstr ""
 " aega õppida ning harjutada kasutades \n"
 "õpitud informatsiooni või oskust."
 
+#: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
+msgid "Upload"
+msgstr "Üleslaadimine"
+
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
 msgstr ""
@@ -2785,6 +2848,10 @@ msgstr "eXe: e-õppe XHTML redaktor"
 #: exe/engine/galleryidevice.py:410
 msgid "eXe Project"
 msgstr "eXe Projekt"
+
+#: exe/webui/appletblock.py:96
+msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
+msgstr ""
 
 #: exe/exe_do:175
 #, python-format
@@ -4624,27 +4691,6 @@ msgstr "Õigused:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Tavaliselt sisaldab Õiguste element ressursi jaoks õiguste korraldamise avaldust või viidet teenusele, mis seda informatsiooni pakub. Õiguste informatsioon sisaldab tihti intellektuaalse omandi õigust, autorikaitset ja muid erinevaid omandiõiguseid. Kui õiguste element puudub, ei saa teha mingeid järeldusi selle ressursi õiguste staatuse kohta"
-
-#~ msgid "Add files"
-#~ msgstr "Lisa fail"
-
-#~ msgid "Applet Code:"
-#~ msgstr "Appleti kood:"
-
-#~ msgid "Applet Type"
-#~ msgstr "Appleti tüüp"
-
-#~ msgid "Delete File"
-#~ msgstr "Kustuta fail"
-
-#~ msgid "Geogebra"
-#~ msgstr "Geogebra"
-
-#~ msgid "Please upload a .ggb file."
-#~ msgstr "Palun lae üles .ggb fail."
-
-#~ msgid "Upload"
-#~ msgstr "Üleslaadimine"
 
 #~ msgid "key"
 #~ msgstr "klahv"
