@@ -75,7 +75,7 @@ class XliffExport(object):
     XliffExport will export a package as an XLIFF file
     """
 
-    def __init__(self, config, filename, source_lang, target_lang, source_copied_in_target, wrap_cdata):
+    def __init__(self, config, filename, source_lang = "es", target_lang = "eu", source_copied_in_target = True, wrap_cdata = False):
         self.config = config
         self.filename = filename
         self.source_copied_in_target = source_copied_in_target
