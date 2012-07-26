@@ -27,9 +27,7 @@ CDATA_BEGIN = u"<![CDATA["
 CDATA_END = u"]]>"
 
 TRANS_UNIT = u'''<trans-unit id="%(id)s">
-       <source xml:lang="%(source_lang)s">
-       %(cdata_begin)s%(content)s%(cdata_end)s
-       </source>
+       <source xml:lang="%(source_lang)s">%(cdata_begin)s%(content)s%(cdata_end)s</source>
        <target xml:lang="%(target_lang)s">%(cdata_begin)s%(target)s%(cdata_end)s</target>
 </trans-unit>
 '''
@@ -37,7 +35,7 @@ TRANS_UNIT = u'''<trans-unit id="%(id)s">
 XLF_TEMPLATE = u'''<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2"
        xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file original="file.elp"
+  <file original="%(original)s"
         datatype="html"
         source-language="%(source_lang)s" target-language="%(target_lang)s">
     <body>
@@ -89,7 +87,8 @@ class XliffExport(object):
         content = self.getContentForNode(package.root, 'noderoot')
         data = XLF_TEMPLATE % {'transunits': content,
                                'source_lang': self.source_lang,
-                               'target_lang': self.target_lang
+                               'target_lang': self.target_lang,
+                               'original': package.filename
                                }
         outfile = codecs.open(self.filename, mode='w', encoding='utf-8')
         outfile.write(data)
