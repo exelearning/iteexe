@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-25 10:56+0200\n"
+"POT-Creation-Date: 2012-07-26 08:55+0200\n"
 "PO-Revision-Date: 2008-12-12 16:43+1300\n"
 "Last-Translator: Jun IWATA <j_iwata@med.shimane-u.ac.jp>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -602,8 +602,9 @@ msgstr "「画像の追加」をクリックし、画像ファイルを選択し
 #: exe/webui/element.py:2514 exe/webui/element.py:2515
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: exe/config/linux-profile:/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 msgid "Close"
 msgstr "閉じる"
 
@@ -2825,10 +2826,11 @@ msgstr ""
 msgid "text"
 msgstr "テキスト"
 
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
+#: exe/config/linux-profile:/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: autostretch="always" onload="sizeToContent()" class="dialog" title="eXeex -
 #: About" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 msgid "eXeex - About"
 msgstr ""
 

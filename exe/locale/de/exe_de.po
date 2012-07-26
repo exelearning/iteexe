@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-25 10:56+0200\n"
+"POT-Creation-Date: 2012-07-26 08:55+0200\n"
 "PO-Revision-Date: 2009-01-31 06:24+1300\n"
 "Last-Translator: shannon <christoph@mussenbrock.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -649,8 +649,9 @@ msgstr "Klicken Sie auf den 'Bild hinzufügen'-Button, um ein Bild auszuwählen.
 #: exe/webui/element.py:2514 exe/webui/element.py:2515
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: exe/config/linux-profile:/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 msgid "Close"
 msgstr "Schließen"
 
@@ -2948,10 +2949,11 @@ msgstr ""
 msgid "text"
 msgstr "Text"
 
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
+#: exe/config/linux-profile:/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: autostretch="always" onload="sizeToContent()" class="dialog" title="eXeex -
 #: About" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 msgid "eXeex - About"
 msgstr "eXeex - Über"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-25 10:56+0200\n"
+"POT-Creation-Date: 2012-07-26 08:55+0200\n"
 "PO-Revision-Date: 2012-06-26 17:25+0200\n"
 "Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -640,8 +640,9 @@ msgstr "Pulse sobre el botón Agregar imágenes para seleccionar un archivo de i
 #: exe/webui/element.py:2514 exe/webui/element.py:2515
 #: exe/webui/editorpane.py:360 exe/webui/editorpane.py:361
 #: exe/webui/editorpane.py:381 exe/webui/editorpane.py:382
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: exe/config/linux-profile:/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 msgid "Close"
 msgstr "Cerrar"
 
@@ -2920,10 +2921,11 @@ msgstr "mostrar este mensaje de ayuda y salir"
 msgid "text"
 msgstr "texto"
 
-#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
+#: exe/config/linux-profile:/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 #: autostretch="always" onload="sizeToContent()" class="dialog" title="eXeex -
 #: About" orient="vertical"
 #: xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<window
 msgid "eXeex - About"
 msgstr "eXeex - Acerca de"
 
@@ -4664,26 +4666,26 @@ msgstr "Derechos:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Típicamente, un elemento DERECHOS contendrá una declaración de la gestión de derechos de propiedad intelectual para el recurso, o se referirá a un servicio que proveerá esta información. La información sobre Derechos abarca a menudo las derechos de propiedad intelectual (IPR), el Copyright y otros elementos similares. Si el elemento DERECHOS no se especifica, depende de la legislación nacional el carácter reservado o no de los derechos sobre un recurso, y no puede asumirse de antemano."
 
-msgid "Accept URL"
-msgstr "Aceptar URL"
+#~ msgid "Accept URL"
+#~ msgstr "Aceptar URL"
 
-msgid "Descartes"
-msgstr "Descartes"
+#~ msgid "Descartes"
+#~ msgstr "Descartes"
 
-msgid "JClic"
-msgstr "JClic"
+#~ msgid "JClic"
+#~ msgstr "JClic"
 
-msgid "Please type or paste a valid URL."
-msgstr "Por favor teclee o pegue una URL válida."
+#~ msgid "Please type or paste a valid URL."
+#~ msgstr "Por favor teclee o pegue una URL válida."
 
-msgid "Please upload a .jclic.zip file."
-msgstr "Por favor suba un archivo .jclic.zip."
+#~ msgid "Please upload a .jclic.zip file."
+#~ msgstr "Por favor suba un archivo .jclic.zip."
 
-msgid "Please upload a .sb or .scratch file."
-msgstr "Por favor suba un fichero .sb o .scratch"
+#~ msgid "Please upload a .sb or .scratch file."
+#~ msgstr "Por favor suba un fichero .sb o .scratch"
 
-msgid "Scratch"
-msgstr "Scratch"
+#~ msgid "Scratch"
+#~ msgstr "Scratch"
 
 #~ msgid "Export <input_file> elp package to optional <output_file> on one of the given formats: xml, scorm, ims, website, webzip or singlepage."
 #~ msgstr "Exportar paquete elp <input_file> a <output_file> en alguno de estos formatos: xml, scorm, ims, Sitio web, Sitio web en zip o Una sola página."
