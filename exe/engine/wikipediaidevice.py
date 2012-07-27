@@ -23,7 +23,7 @@ A Wikipedia Idevice is one built from a Wikipedia article.
 """
 
 import re
-from exe.engine.beautifulsoup import BeautifulSoup
+from exe.engine.beautifulsoup import BeautifulSoup, Comment
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
@@ -123,6 +123,9 @@ within Wikipedia.""")
             [ambox.extract() for ambox in amboxes]
             protecteds = content.findAll('div', {'id' : 'protected-icon'})
             [protected.extract() for protected in protecteds]
+            # Extract HTML comments
+            comments = content.findAll(text=lambda text:isinstance(text, Comment))
+            [comment.extract() for comment in comments]
         else:
             content = soup.first('body')
 
