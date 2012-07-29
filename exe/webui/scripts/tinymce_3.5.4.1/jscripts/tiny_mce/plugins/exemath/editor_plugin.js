@@ -1,1 +1,37 @@
-tinyMCE.importPluginLanguagePack('exemath');var TinyMCE_ExeMathPlugin={getInfo:function(){return{longname:'eXe math LaTeX-based plugin using mimetex',author:'eXe',authorurl:'http://exelearning.org',infourl:'http://exelearning.org',version:tinyMCE.majorVersion+"."+tinyMCE.minorVersion};},getControlHTML:function(cn){switch(cn){case"exemath":return tinyMCE.getButtonHTML(cn,'lang_exemath_desc','{$pluginurl}/images/exemath.gif','mceExeMath');}return"";},execCommand:function(editor_id,element,command,user_interface,value){switch(command){case"mceExeMath":var template=new Array();template['file']='../../plugins/exemath/exemath.htm';template['width']=580;template['height']=600;var inst=tinyMCE.getInstanceById(editor_id);var elm=inst.getFocusElement();if(elm!=null&&tinyMCE.getAttrib(elm,'class').indexOf('mceItem')!=-1)return true;tinyMCE.openWindow(template,{editor_id:editor_id,inline:"yes"});return true;}return false;},cleanup:function(type,content){switch(type){case"insert_to_editor_dom":var imgs=content.getElementsByTagName("img"),src,i;for(i=0;i<imgs.length;i++){var onmouseover=tinyMCE.cleanupEventStr(tinyMCE.getAttrib(imgs[i],'onmouseover'));var onmouseout=tinyMCE.cleanupEventStr(tinyMCE.getAttrib(imgs[i],'onmouseout'));if((src=this._getImageSrc(onmouseover))!=""){if(tinyMCE.getParam('convert_urls'))src=tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'],src);imgs[i].setAttribute('onmouseover',"this.src='"+src+"';");}if((src=this._getImageSrc(onmouseout))!=""){if(tinyMCE.getParam('convert_urls'))src=tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'],src);imgs[i].setAttribute('onmouseout',"this.src='"+src+"';");}}break;case"get_from_editor_dom":var imgs=content.getElementsByTagName("img");for(var i=0;i<imgs.length;i++){var onmouseover=tinyMCE.cleanupEventStr(tinyMCE.getAttrib(imgs[i],'onmouseover'));var onmouseout=tinyMCE.cleanupEventStr(tinyMCE.getAttrib(imgs[i],'onmouseout'));if((src=this._getImageSrc(onmouseover))!=""){if(tinyMCE.getParam('convert_urls'))src=eval(tinyMCE.settings['urlconverter_callback']+"(src, null, true);");imgs[i].setAttribute('onmouseover',"this.src='"+src+"';");}if((src=this._getImageSrc(onmouseout))!=""){if(tinyMCE.getParam('convert_urls'))src=eval(tinyMCE.settings['urlconverter_callback']+"(src, null, true);");imgs[i].setAttribute('onmouseout',"this.src='"+src+"';");}}break;}return content;},handleNodeChange:function(editor_id,node,undo_index,undo_levels,visual_aid,any_selection){if(node==null)return;do{if(node.nodeName=="IMG"&&tinyMCE.getAttrib(node,'class').indexOf('mceItem')==-1){tinyMCE.switchClass(editor_id+'_exemath','mceButtonSelected');return true;}}while((node=node.parentNode));tinyMCE.switchClass(editor_id+'_exemath','mceButtonNormal');return true;},_getImageSrc:function(s){var sr,p=-1;if(!s)return"";if((p=s.indexOf('this.src='))!=-1){sr=s.substring(p+10);sr=sr.substring(0,sr.indexOf('\''));return sr;}return"";}};tinyMCE.addPlugin("exemath",TinyMCE_ExeMathPlugin);
+(function() {
+	tinymce.PluginManager.requireLangPack('exemath');
+	tinymce.create('tinymce.plugins.eXeMathPlugin', {
+		init : function(ed, url) {
+			
+			// Register commands
+			ed.addCommand('mceExeMath', function() {
+				ed.windowManager.open({
+					file : url + '/exemath.htm',
+					width : 600,
+					height : 620,
+					inline : 1
+				}, {
+					plugin_url : url					
+				});
+			});
+
+			// Register buttons
+			ed.addButton('exemath', {title : 'exemath.desc', cmd : 'mceExeMath', image : url + '/img/exemath.gif' });
+
+		},
+
+		getInfo : function() {
+			return {
+				longname : 'eXeMath 2.0',
+				author : 'Ignacio Gros',
+				authorurl : 'http://www.gros.es/',
+				//infourl : '',
+				version : tinymce.majorVersion + "." + tinymce.minorVersion
+			};
+		},
+	
+	});
+
+	// Register plugin
+	tinymce.PluginManager.add('exemath', tinymce.plugins.eXeMathPlugin);
+})();

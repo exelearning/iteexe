@@ -1,22 +1,98 @@
+/* common.js */
+var curr_edits_math_num = 0;
+function new_makeMathImage_viaTinyMCE(field_name, src_latex, font_size, type, win) {
+
+	var local_imagePath = ""
+
+    if (src_latex == "") {
+       return;
+    }
+
+    // to help unique-ify each previewed math image:
+    var preview_basename = "eXe_LaTeX_math_"+curr_edits_math_num
+    var preview_math_imagefile = preview_basename+".gif"
+    // Simplify the subsequent file-lookup process,  by just appending 
+    // the ".tex" to the full image name, as such:
+    var preview_math_srcfile = preview_math_imagefile+".tex"
+   
+    curr_edits_math_num += 1
+
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    // pass the file information on to the server,
+    // to generate the image into the server's "previews" directory:
+	
+	var w = "";
+	if (typeof(top.nevow_clientToServerEvent)!='undefined') w = top;
+	else return;
+	
+	w.nevow_clientToServerEvent('generateTinyMCEmath', this, 
+                  '', win, win.name, field_name, 
+                  src_latex, font_size, preview_math_imagefile, 
+                  preview_math_srcfile)
+
+    // once the image has been generated, it SHOULD be sitting here:
+    var full_preview_url = "/previews/"+preview_math_imagefile;
+	
+	win.focus();
+
+    // clear out any old value in the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = ""; 
+    // PreviewImage is only available for images:
+    if (type == "image") {
+       win.showPreviewImage(" ");
+    }
+    // the above two commands are the only way to really 
+    // ensure that we can trigger the onchange event below:
+
+    // set the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = full_preview_url;
+    // then force its onchange event:
+    // PreviewImage is only available for images:
+    if (type == "image") {
+       win.showPreviewImage(full_preview_url);
+    }
+
+}
+/* Form utils */
+function openBrower3(img_id, source_form_element, source2_form_element, target_form_element, type, option) {
+	var img = document.getElementById(img_id);
+
+	if (img.className != "mceButtonDisabled")
+		openBrowser3(source_form_element, source2_form_element, target_form_element, type, option);
+}
+/* TinyMCE popup */
+var openBrowser3 = function(src_element_id, src2_element_id, dst_element_id, type, option) {
+	/*
+	var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
+	var src_val = document.getElementById(src_element_id).value;
+	var src2_val = document.getElementById(src2_element_id).value;
+
+	tinyMCE.setWindowArg("window", window);
+	tinyMCE.setWindowArg("document", document);
+
+	// Call to external callback
+	if (eval('typeof(tinyMCEPopup.windowOpener.' + cb + ')') == "undefined")
+		alert("Callback function: " + cb + " could not be found.");
+	else
+		eval("tinyMCEPopup.windowOpener." + cb + "(dst_element_id, src_val, src2_val, type, window);");
+		*/
+	var src_val = document.getElementById(src_element_id).value;
+	var src2_val = document.getElementById(src2_element_id).value;		
+	new_makeMathImage_viaTinyMCE(dst_element_id, src_val, src2_val, type, window);		
+}
+	/*
+	,
+	
+		openBrowser: function (a, c, b) {
+		tinyMCEPopup.restoreSelection();
+		this.editor.execCallback("file_browser_callback", a, document.getElementById(a).value, c, window)
+	}
+	*/
+
 /* Functions for the advimage plugin popup */
 
 var preloadImg = null;
 var orgImageWidth, orgImageHeight;
-
-function preinit() {
-	// Initialize
-	tinyMCE.setWindowArg('mce_windowresize', false);
-
-	// Import external list url javascript
-	var url = tinyMCE.getParam("external_image_list_url");
-	if (url != null) {
-		// Fix relative
-		if (url.charAt(0) != '/' && url.indexOf('://') == -1)
-			url = tinyMCE.documentBasePath + "/" + url;
-
-		document.write('<sc'+'ript language="javascript" type="text/javascript" src="' + url + '"></sc'+'ript>');
-	}
-}
 
 function convertURL(url, node, on_save) {
 	return eval("tinyMCEPopup.windowOpener." + tinyMCE.settings['urlconverter_callback'] + "(url, node, on_save);");
@@ -45,25 +121,22 @@ function getImageSrc(str) {
 
 // setup the math browser callback:
 function getMathBrowserHTML(id, source_form_element, font_size_element, target_form_element, type, prefix) {
-        var option = prefix + "_" + type + "_browser_callback";
-        var cb = tinyMCE.getParam(option, tinyMCE.getParam("file_browser_callback"));
-        if (cb == null)
-                return "";
 
-        var html = "";
+		var html = "";
 
 	html += '<CENTER>&nbsp;';
 	html += '<BUTTON type=\"button\" name=\"PREVIEW\"';
-        html += 'onclick="javascript:openBrower3(\'' + id + '\',\'' + source_form_element + '\',\'' + font_size_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + option + '\');" ';
+        html += 'onclick="javascript:openBrower3(\'' + id + '\',\'' + source_form_element + '\',\'' + font_size_element + '\',\'' + target_form_element + '\', \'' + type + '\',\'' + prefix + '\');" ';
+		//html += 'onclick="alert(\''+source_form_element+'\')" ';
 	html += '>';
 	///////
 	// add the icon image into the button:
-        html += '<img id="' + id + '" src="' + themeBaseURL + '/images/exemath.gif"';
-        html += ' width="20" height="18" border="0" title="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '"';
-        html += ' class="mceButtonNormal" alt="' + tinyMCE.getLang('lang_exemath_compile_tooltip') + '" />';
+        html += '<img id="' + id + '" src="img/exemath.gif"';
+        html += ' width="20" height="18" border="0" title="' + tinyMCEPopup.getLang('exemath.compile_tooltip') + '"';
+        html += ' class="mceButtonNormal" alt="' + tinyMCEPopup.getLang('exemath.compile_tooltip') + '" />';
 	///////
 	html += "<BR>";
-	html += tinyMCE.getLang('lang_exemath_compile_label');
+	html += tinyMCEPopup.getLang('exemath.compile_label');
 	html += '</BUTTON><BR>';
 
 	html += '</CENTER>';
@@ -272,11 +345,81 @@ function makeAttrib(attrib, value) {
 }
 
 function insertAction() {
-	var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
+	//var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
+	//var inst = tinyMCEPopup.editor;
+	// force a final math-image generate before the insert, in case any LaTeX has changed:
+	//doMathBrowser('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
+	var prev = document.getElementById("prev");
+	if (prev.innerHTML=='') {
+		alert("Genera la imagen pulsando \u0022Previsualizar\u0022 antes de guardar");
+		return;
+	} else {
+		var ed = tinyMCEPopup.editor, f = document.forms[0];
+		//Insert and close
 
-        // force a final math-image generate before the insert, in case any LaTeX has changed:
-	doMathBrowser('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
 
+		var ed = tinyMCEPopup.editor, f = document.forms[0], nl = f.elements, v, args = {}, el;
+		
+		tinyMCEPopup.restoreSelection();
+		
+		// Fixes crash in Safari
+		if (tinymce.isWebKit)
+			ed.getWin().focus();
+
+		if (!ed.settings.inline_styles) {
+			args = {
+				vspace : nl.vspace.value,
+				hspace : nl.hspace.value,
+				border : nl.border.value,
+				align : getSelectValue(f, 'align')
+			};
+		} else {
+			// Remove deprecated values
+			args = {
+				vspace : '',
+				hspace : '',
+				border : '',
+				align : ''
+			};
+		}
+
+		tinymce.extend(args, {
+			src : nl.src.value.replace(/ /g, '%20'),
+			width : nl.width.value,
+			height : nl.height.value,
+			alt : nl.alt.value,
+			'class' : getSelectValue(f, 'class_list'),
+			exe_math_latex : nl.src.value.replace(/ /g, '%20')+".tex"
+		});
+		
+		args.onmouseover = args.onmouseout = '';
+		
+		el = ed.selection.getNode();
+		
+		if (el && el.nodeName == 'IMG') {
+			ed.dom.setAttribs(el, args);
+		} else {
+			tinymce.each(args, function(value, name) {
+				if (value === "") {
+					delete args[name];
+				}
+			});
+
+			ed.execCommand('mceInsertContent', false, tinyMCEPopup.editor.dom.createHTML('img', args), {skip_undo : 1});
+			ed.undoManager.add();
+		}
+		
+		tinyMCEPopup.editor.execCommand('mceRepaint');
+		tinyMCEPopup.editor.focus();
+		tinyMCEPopup.close();
+		
+	}
+	
+	
+	/*
+	
+
+        
 
 	var elm = inst.getFocusElement();
 	var formObj = document.forms[0];
@@ -372,6 +515,8 @@ function insertAction() {
 
 	tinyMCE._setEventsEnabled(inst.getBody(), false);
 	tinyMCEPopup.close();
+	*/
+		
 }
 
 function cancelAction() {
@@ -485,25 +630,21 @@ function onSelectMainImage(target_form_element, name, value) {
 }
 
 function showPreviewImage(src, start) {
-	var formObj = document.forms[0]; 
-
-	selectByValue(document.forms[0], 'imagelistsrc', src);
 
 	var elm = document.getElementById('prev');
-	var src = src == "" ? src : tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'], src);
-
-	if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true))
-		resetImageData();
-
-	if (src == "")
+	if (src!="") {
+		var formObj = document.forms[0]; 
+		selectByValue(document.forms[0], 'imagelistsrc', src);
+		//var src = src == "" ? src : tinyMCE.convertRelativeToAbsoluteURL(tinyMCE.settings['base_href'], src);
+		//if (!start && tinyMCE.getParam("advimage_update_dimensions_onchange", true)) resetImageData();
+		elm.innerHTML = '<img id="previewImg" src="' + src + '" onload="updateImageData(' + start +', \'' + src + '\');" />'
+	} else {
 		elm.innerHTML = "";
-	else {
-		elm.innerHTML = '<img id="previewImg" src="' + src + '" border="0" onload="updateImageData(' + start +', \'' + src + '\');" onerror="resetImageData();" />'
 	}
-
 }
 
 function updateImageData(start, src) {
+
 	var formObj = document.forms[0];
 
 	preloadImg = document.getElementById('previewImg');
@@ -606,7 +747,33 @@ function insertSymbol(id, string, num){
     insertAtCursor(ele, string, num)
 }
 
+/* My plugin */
 
 
-// While loading
-preinit();
+
+
+
+
+
+
+(function() {
+	var url;
+
+	function get(id) {
+		return document.getElementById(id);
+	}
+
+	window.ExeMath = {
+		init : function() {
+			
+			var html = getMathBrowserHTML('srcbrowser', 'latex_source', 'math_font_size', 'src','image','exemath');
+			document.getElementById("srcbrowsercontainer").innerHTML = html;			
+			
+		}
+	};
+
+	tinyMCEPopup.requireLangPack();
+	tinyMCEPopup.onInit.add(function() {
+		ExeMath.init();
+	});
+})();
