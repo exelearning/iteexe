@@ -18,7 +18,6 @@ insert_newline: 'Lerro berria',
 verbose_insert_symbols: 'Sinboloen LaTeX kodea txertatu:',
 insert_symbols: ' ',
 verbose_insert_latex: 'Latex kodea erantsi:',
-insert_latex: ' ',
 constrain_proportions : 'Proportzioak mantendu',
 style : 'Estiloa',
 example_img : 'Nola ikusiko den',
@@ -65,5 +64,6 @@ general: "Orokorra",
 "tab_appearance": "Itxura",
 "tab_general": "Orokorra",
 width: "Width",
-height: "Height"
+height: "Height",
+no_source_code_found : "No se ha encontrado el c\u00f3digo fuente."
 });

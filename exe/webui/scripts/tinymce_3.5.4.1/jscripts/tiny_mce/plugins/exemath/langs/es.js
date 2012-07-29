@@ -18,8 +18,7 @@ insert_newline: 'Nueva l\u00EDnea',
 verbose_insert_symbols: 'Pinche para insertar el c\u00F3digo LaTeX de los s\u00EDmbolos:',
 insert_symbols: ' ',
 verbose_insert_latex: 'A\u00F1adir su propio c\u00F3digo LaTeX:',
-insert_latex: ' ',
-general : 'BOGUS: General',
+general : 'General',
 title : 'T\u00EDtulo',
 preview : 'Previsualizaci\u00F3n de la imagen',
 constrain_proportions : 'Restringir proporciones',
@@ -68,5 +67,6 @@ general: "General",
 "tab_appearance": "Apariencia",
 "tab_general": "General",
 width: "Ancho",
-height: "Alto"
+height: "Alto",
+no_source_code_found : "No se ha encontrado el c\u00f3digo fuente."
 });

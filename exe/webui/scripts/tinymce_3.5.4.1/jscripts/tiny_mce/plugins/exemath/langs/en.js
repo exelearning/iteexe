@@ -18,7 +18,6 @@ insert_newline: 'new line',
 verbose_insert_symbols: 'Click below to insert LaTeX for any of the following symbols:',
 insert_symbols: ' ',
 verbose_insert_latex: 'And, add your own LaTeX directly into the following:',
-insert_latex: ' ',
 constrain_proportions : 'Constrain proportions',
 style : 'Style',
 example_img : 'Appearance&nbsp;preview&nbsp;image',
@@ -65,5 +64,6 @@ general: "General",
 "tab_appearance": "Appearance",
 "tab_general": "General",
 width: "Width",
-height: "Height"
+height: "Height",
+no_source_code_found : "No source code found."
 });

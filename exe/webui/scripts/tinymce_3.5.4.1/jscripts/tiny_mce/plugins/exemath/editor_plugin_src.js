@@ -1,3 +1,9 @@
+/* 
+	exelearning's exemath plugin for TinyMCE 3.5.4.1
+	Adapted by Ignacio Gros (http://www.gros.es) 
+	eXeLearning version: intef6.2 (available at https://forja.cenatic.es/frs/?group_id=197) 
+	Last eXeLearning version download page: http://exelearning.net/descargas/
+*/
 (function() {
 	tinymce.PluginManager.requireLangPack('exemath');
 	tinymce.create('tinymce.plugins.eXeMathPlugin', {
@@ -23,8 +29,8 @@
 		getInfo : function() {
 			return {
 				longname : 'eXeMath 2.0',
-				author : 'Ignacio Gros',
-				authorurl : 'http://www.gros.es/',
+				//author : 'Moxiecode / eXeLearning.org / Gros.es',
+				author : 'See plugin code',				
 				//infourl : '',
 				version : tinymce.majorVersion + "." + tinymce.minorVersion
 			};
