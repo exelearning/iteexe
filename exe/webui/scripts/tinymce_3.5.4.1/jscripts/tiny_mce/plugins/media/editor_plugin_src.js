@@ -1,3 +1,160 @@
+/* 
+	Moxiecode's media plugin adapted to eXeLearning by Ignacio Gros (http://www.gros.es) 
+	TinyMCE version: 3.5.4.1 
+	eXeLearning version: intef6.2 (available at https://forja.cenatic.es/frs/?group_id=197) 
+	Last eXeLearning version download page: http://exelearning.net/descargas/
+*/
+function parse_media_html_attributes(c) {
+
+	/* 
+		This function reorders the HTML attributes.
+		eXeLearning expects the code in a certain order.
+
+		Example:
+			<object type="application/x-shockwave-flash" data="...
+			instead of
+			<object data="..." type="application/x-shockwave-flash"
+
+		The HTML format expected by eXeLearning is at the end of the function (swf, mp3, flv and video).
+	*/
+
+	var new_c = '';
+	
+	if (c.indexOf("<object ")!=-1) {
+		
+		var c_parts = c.split("<object ");
+		
+		for (i=0;i<c_parts.length;i++) {
+			
+			var c_parts_2 = c_parts[i].split(">");
+			
+			for (z=0;z<c_parts_2.length;z++) {
+			
+				//Replacement:
+				if (c_parts_2[z].indexOf('type="application/x-shockwave-flash"')!=-1) {
+					
+					var o_attrs = c_parts_2[z].split(" ");
+					var o_type = "";
+					var o_data = "";
+					var o_other_attrs = "";
+					var o_attrs_reordered = "";
+					for (y=0;y<o_attrs.length;y++) {
+						
+						//new_c += o_attrs[y];
+						//if (y<(o_attrs.length-1)) new_c+=" ";
+						if (o_attrs[y].indexOf('type=')!=-1) o_type = o_attrs[y]+" ";
+						else if (o_attrs[y].indexOf('data=')!=-1) {
+							var current_data = o_attrs[y];
+							//Check if is flv:
+							var current_file_extension = current_data.substring(current_data.length - 4, current_data.length-1).toLowerCase();
+							if (current_file_extension=="flv") {
+								//When it's flv, we replace data="path_to_flv.flv" by data="../templates/flowPlayer.swf"
+								o_data = 'data="../templates/flowPlayer.swf" ';							
+							} else {
+								o_data = o_attrs[y]+" ";
+							}
+							
+						}
+						else o_other_attrs += o_attrs[y]+" ";
+						
+					}
+					o_attrs_reordered = o_type+o_data+o_other_attrs;
+					//Remove the last space
+					o_attrs_reordered = o_attrs_reordered.replace(/\s+\S*$/, "")
+					new_c += o_attrs_reordered;				
+					
+				} else {
+					
+					//Check if it's flv to change the flashvars format:
+					
+					if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
+						var flashvars = c_parts_2[z].replace('<param name="flashvars" value="','').replace('"','');
+						//Input: url=path_to_file.flv&amp;poster=/.../
+						//Output: config={'playlist': [ { 'url': 'path_to_file.flv', 'autoPlay': false, 'autoBuffering': true } ] }
+						var file_url = flashvars.replace('url=','');
+						file_url = file_url.split('&')[0];
+						
+						//flv file:
+						if (file_url.split('.').pop().toLowerCase()=='flv') {
+							var new_flashvars = "config={\'playlist\': [ { \'url\': \'"+file_url+"\', \'autoPlay\': false, \'autoBuffering\': true } ] }";
+							new_c += '<param name="flashvars" value="'+new_flashvars+'" /';	
+						} else {
+							//No replacement
+							new_c += c_parts_2[z];
+							//This is done by changing line data.params.src = flashPlayer; by this one data.params.src = video_src; in editor_plugin.js
+							//new_c = new_c.replace('<param name="src" value="../templates/flowPlayer.swf" />','<param name="src" value="/previews/path.flv" />');							
+						}
+					
+					} else {
+						//No params:
+						new_c += c_parts_2[z];
+					}
+					
+				}
+				
+				if (z<(c_parts_2.length-1)) new_c+=">";
+				
+			}
+			
+			if (i<(c_parts.length-1)) new_c+="<object ";
+
+		}
+		
+		// Required for mp3:
+		// new_c = new_c.replace( "http://127.0.0.1:51235/templates/xspf_player.swf", "../templates/xspf_player.swf" ); 
+		var str1 = '"http://'+window.location.host+'/templates/xspf_player.swf';
+		var re1 = new RegExp(str1, 'g');
+		new_c= new_c.replace(re1, '"../templates/xspf_player.swf');		
+
+		// Required for al media:
+		// new_c = new_c.replace( /\http:\/\/127.0.0.1:51235/g, "" ); 
+		var str2 = "http://"+window.location.host;
+		var re2 = new RegExp(str2, "g");
+		new_c= new_c.replace(re2, "");	
+
+	} else {
+
+		//No object tags
+		new_c = c;
+
+	}
+	
+	//HTML format:
+	
+	/* 
+	
+	//SWF code:
+	var swf_code = '<object type="application/x-shockwave-flash" data="/previews/path.swf" width="100" height="75">';
+		swf_code += '<param name="src" value="/previews/path.swf" />';
+		swf_code += '</object>';
+	
+	//FLV code:
+	var flv_code = '<object type="application/x-shockwave-flash" data="../templates/flowPlayer.swf" width="100" height="100">';
+		flv_code += '<param name="src" value="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_flv.flv" />';
+		flv_code += '<param name="flashvars" value="config={\'playlist\': [ { \'url\': \'/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_flv.flv\', \'autoPlay\': false, \'autoBuffering\': true } ] }" />';
+		flv_code += '<param name="exe_flv" value="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_flv.flv" />';	
+		flv_code += '</object>';
+		
+	//MP3 code:
+	var mp3_code = '<object type="application/x-shockwave-flash" data="/previews/path.mp3" width="400" height="15">';
+		mp3_code += '<param name="src" value="/previews/path.mp3" />';
+		mp3_code += '<param name="exe_mp3" value="/previews/path.mp3" />';
+		mp3_code += '</object>';	
+		
+	var video_code = '<video src="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv" width="320" height="240" preload="none">';
+		video_code += '<a href="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv">/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv</a>';
+		video_code += '</video>';
+		
+	//HTML video code (to review):
+		//new_c = new_c.replace('<video ','<video controls ');
+		//new_c = new_c.replace('</video>','<a href="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.ogg">video.ogg</a></video>');
+	
+	*/
+	
+	return new_c;
+	
+}
+
 /**
  * editor_plugin_src.js
  *
@@ -204,6 +361,13 @@
 			ed.onNodeChange.add(function(ed, cm, node) {
 				cm.setActive('media', isMediaImg(node));
 			});
+			
+			/* The New ExeLearning */
+			ed.onSaveContent.add(function(ed, o) {
+				o.content = parse_media_html_attributes(o.content);
+			});
+			/* The New ExeLearning */			
+			
 		},
 
 		convertUrl : function(url, force_absolute) {
@@ -341,7 +505,10 @@
 				flashPlayer = editor.getParam('flash_video_player_url', self.convertUrl(self.url + '/moxieplayer.swf'));
 				if (flashPlayer) {
 					baseUri = editor.documentBaseURI;
-					data.params.src = flashPlayer;
+					// The New eXeLearning
+					//data.params.src = flashPlayer;
+					data.params.src = video_src;
+					// The New eXeLearning
 
 					// Convert the movie url to absolute urls
 					if (editor.getParam('flash_video_player_absvideourl', true)) {

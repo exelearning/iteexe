@@ -115,6 +115,23 @@
 		},
 
 		insert : function() {
+		
+			// The New eXeLearning
+			var t = get("media_type").value;
+			var src = get("src").value;
+			var file_extension = src.split(".").pop().toLowerCase();
+			if (file_extension!='') {
+				if (t=='video' || t=='audio') {
+					var msg = tinyMCEPopup.getLang("media_dlg.html5_warning")+".\n\n"+tinyMCEPopup.getLang("media_dlg.selected_file")+": "+file_extension;
+					if (file_extension=="mp3" || file_extension=="flv") msg +="\n\n"+tinyMCEPopup.getLang("media_dlg.recommended_type")+": "+tinyMCEPopup.getLang("media_dlg.flash");
+					msg += "\n\n"+tinyMCEPopup.getLang("media_dlg.confirm_question");
+					if (!confirm(msg)) {
+						return false;
+					}			
+				}
+			}
+			// The New eXeLearning
+		
 			var editor = tinyMCEPopup.editor;
 
 			this.formToData();
@@ -125,7 +142,25 @@
 		},
 
 		preview : function() {
-			get('prev').innerHTML = this.editor.plugins.media.dataToHtml(this.data, true);
+			// The New eXeLearning
+			//get('prev').innerHTML = this.editor.plugins.media.dataToHtml(this.data, true);
+			var preview_html = this.editor.plugins.media.dataToHtml(this.data, true);
+			
+			var w = "";
+			if (window.parent) w = window.parent;
+			else if (window.opener) w = window.opener;
+			if (w!='') {
+				if(typeof(w.exe_package_name)!="undefined") {
+					preview_html = preview_html.replace("{ 'url': 'resources","{ 'url': '/"+w.exe_package_name+"/resources");
+				}
+				// exe_package_name global var is missing (old eXeLearning) and it's a flv:
+				else if (preview_html.indexOf("{ 'url': 'resources")!=-1) {
+					preview_html = tinyMCEPopup.getLang("media_dlg.preview_error")+".";
+				}
+			}
+			
+			get('prev').innerHTML = preview_html;
+			// The New eXeLearning
 		},
 
 		moveStates : function(to_form, field) {
@@ -291,6 +326,18 @@
 					}
 
 					setVal('src', data.params.src);
+					// The New eXeLearning
+					/*
+					if (data.params.src.indexOf("../templates/xspf_player.swf?song_url=")==0) {
+						var new_src = data.params.src.replace("../templates/xspf_player.swf?song_url=","").split(".mp3")[0]+".mp3";
+						setVal('src', new_src);
+						this.Media.formToData();
+					} else {
+						setVal('src', data.params.src);
+					}
+					*/
+					// The New eXeLearning					
+					
 				}
 			} else {
 				src = getVal("src");
@@ -355,10 +402,30 @@
                         data.video.sources[2] = {src : src};
 				} else
 					data.params.src = src;
+					
+				// The New eXeLearning
+				var file_extension = src.split(".").pop().toLowerCase();
+				if (file_extension=='mp3') {
+					//setVal('width', 400);
+					//setVal('height', 15);
+					var new_src = src;
+					if (src.indexOf("../templates/xspf_player.swf?song_url=")==0) {
+						new_src = src.replace("../templates/xspf_player.swf?song_url=","");
+					}
+					data.width = 400;				
+					data.height = 15;
+					data.params.exe_mp3 = new_src;
+				} else if (file_extension=='flv') {
+					setVal('src', src);
+					data.params.src = src;
+					data.params.exe_flv = src;
+					//data.params.flashvars = "config={'playlist': [ { 'url': '"+src+"', 'autoPlay': false, 'autoBuffering': true } ] }";					
+				}
+				// The New eXeLearning					
 
 				// Set default size
-                setVal('width', data.width || (data.type == 'audio' ? 300 : 320));
-                setVal('height', data.height || (data.type == 'audio' ? 32 : 240));
+				setVal('width', data.width || (data.type == 'audio' ? 300 : 320));
+				setVal('height', data.height || (data.type == 'audio' ? 32 : 240));			
 			}
 		},
 
@@ -438,14 +505,14 @@
 			var html = "";
 
 			html += '<select id="media_type" name="media_type" onchange="Media.formToData(\'type\');">';
-			html += option("video");
-			html += option("audio");
+			//html += option("video");
+			//html += option("audio");
 			html += option("flash", "object");
-			html += option("quicktime", "object");
-			html += option("shockwave", "object");
-			html += option("windowsmedia", "object");
-			html += option("realmedia", "object");
-			html += option("iframe");
+			//html += option("quicktime", "object");
+			//html += option("shockwave", "object");
+			//html += option("windowsmedia", "object");
+			//html += option("realmedia", "object");
+			//html += option("iframe");
 
 			if (editor.getParam('media_embedded_audio', false)) {
 				html += option('embeddedaudio', "object");
