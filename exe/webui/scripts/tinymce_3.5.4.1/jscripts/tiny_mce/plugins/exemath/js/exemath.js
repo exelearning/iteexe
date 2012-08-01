@@ -196,16 +196,15 @@ var orgImageWidth, orgImageHeight;
 		
 		},
 		
-		updateImageData : function(start, src){
+		updateImageData : function(e){
+			var src = e.src;
 		
 			var formObj = document.forms[0];
 
-			preloadImg = document.getElementById('previewImg');
+			if (src!="") {
 			
-			if (preloadImg) {
-			
-				if (formObj.width.value == "") formObj.width.value = preloadImg.width;
-				if (formObj.height.value == "") formObj.height.value = preloadImg.height;
+				formObj.width.value = e.width;
+				formObj.height.value = e.height;
 
 			}
 		
@@ -338,7 +337,7 @@ var orgImageWidth, orgImageHeight;
 			if (src!="") {
 				var formObj = document.forms[0]; 
 				selectByValue(document.forms[0], 'imagelistsrc', src);
-				elm.innerHTML = '<img id="previewImg" src="' + src + '" onload="ExeMath.updateImageData(' + start +', \'' + src + '\');" />'
+				elm.innerHTML = '<img id="previewImg" src="' + src + '" onload="ExeMath.updateImageData(this);" />'
 			} else {
 				elm.innerHTML = "";
 			}
@@ -354,7 +353,7 @@ var orgImageWidth, orgImageHeight;
 
 			u = tinyMCEPopup.editor.documentBaseURI.toAbsolute(u);
 
-			tinyMCEPopup.dom.setHTML('prev', '<img id="previewImg" src="' + u + '" border="0" onload="ExeMath.updateImageData(this, this.src);" />');
+			tinyMCEPopup.dom.setHTML('prev', '<img id="previewImg" src="' + u + '" border="0" onload="ExeMath.updateImageData(this);" />');
 		},		
 		
 		updateStyle : function (ty) {
