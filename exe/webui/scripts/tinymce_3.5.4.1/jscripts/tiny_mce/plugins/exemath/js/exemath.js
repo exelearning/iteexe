@@ -201,10 +201,12 @@ var orgImageWidth, orgImageHeight;
 		
 			var formObj = document.forms[0];
 
-			if (src!="") {
+			preloadImg = document.getElementById('previewImg');
 			
-				formObj.width.value = e.width;
-				formObj.height.value = e.height;
+			if (preloadImg) {
+			
+				formObj.width.value = preloadImg.width;
+				formObj.height.value = preloadImg.height;
 
 			}
 		
