@@ -120,6 +120,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
         value = safe_value
         log.debug(u"richTextArea pre-processed value to: %s" % value)
     html  = u'<textarea name="%s" ' % name
+    html_js  = '<script type="text/javascript">var tinymce_%s_anchors = [];' % name
     html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
     html += u'class="mceEditor" '
     html += u'cols="52" rows="8">'
@@ -127,8 +128,6 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     # add exe_tmp_anchor tags 
     # for ALL anchors available in the entire doc!
     # (otherwise TinyMCE will only see those anchors within this field)
-    """ 
-    JR: Quitamos los molestos exe_tmp_anchor
     if package is not None and hasattr(package, 'anchor_fields') \
     and package.anchor_fields is not None \
     and G.application.config.internalAnchors!="disable_all" :
@@ -139,31 +138,32 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
             anchor_field_path = anchor_field.GetFullNodePath()
             for anchor_name in anchor_field.anchor_names:
                 full_anchor_name = anchor_field_path + "#" + anchor_name
-                html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
-                    % (full_anchor_name, full_anchor_name)
+                html_js += u'tinymce_%s_anchors' % name
+                html_js += u'.push("%s");' % anchor_node_path
     # and below the user-defined anchors, also show "auto_top" anchors for ALL:
     if package is not None and package.root is not None \
     and G.application.config.internalAnchors=="enable_all" :
         # only add auto_top anchors for 
         # config.internalAnchors = "enable_all"
-        log.debug(u"richTextArea adding exe_tmp_anchor auto_top for ALL nodes.")
+        # log.debug(u"richTextArea adding exe_tmp_anchor auto_top for ALL nodes.")
         node_anchors = True
         if node_anchors:
             root_node = package.root
             anchor_node_path = root_node.GetFullNodePath() + "#auto_top"
-            html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
-                % (anchor_node_path, anchor_node_path)
+            html_js += u'tinymce_%s_anchors' % name
+            html_js += u'.push("%s");' % anchor_node_path
             for this_node in root_node.walkDescendants():
                 anchor_node_path = this_node.GetFullNodePath() + "#auto_top"
-                html += u'<exe_tmp_anchor title="%s" name="%s"></exe_tmp_anchor>'\
-                    % (anchor_node_path, anchor_node_path)
+                html_js += u'tinymce_%s_anchors' % name
+                html_js += u'.push("%s");' % anchor_node_path
     # these exe_tmp_anchor tags will be removed when processed by
     # FieldWithResources' ProcessPreviewed()
-    """
     ########
     html += value
     html += u'</textarea><br/>'
-    return html
+    html_js  += '</script>'
+    new_html = html+html_js
+    return new_html
 
 
 def image(name, value, width="", height="", alt=None):
@@ -633,7 +633,8 @@ def renderInternalLinkNodeFilenames(package, html):
                     new_node_name = intlink_pre + found_node.tmp_export_filename
                     if link_anchor_name:
                         old_node_name = old_node_name + "#" + link_anchor_name
-                        new_node_name = new_node_name + "#" + link_anchor_name
+                        if link_anchor_name != u"auto_top":
+                            new_node_name = new_node_name + "#" + link_anchor_name
                     html = html.replace(old_node_name, new_node_name, 1)
 
             if found_node is None:

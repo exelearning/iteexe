@@ -175,18 +175,13 @@ class AuthoringPage(RenderableResource):
         html += u'</style>\n'
         if G.application.config.assumeMediaPlugins: 
             html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
+        html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
         html += u'<script type="text/javascript" src="/scripts/authoring.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
-        html += u'<script type="text/javascript" '
-        if log.getEffectiveLevel() == logging.DEBUG:
-            html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce_src.js">'
-        else:
-            html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
-        html += u'</script>\n'
-        html += u'<script type="text/javascript" src="/scripts/tiny_mce_settings.js">'
-        html += u'</script>\n'
+        html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
+        html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += u'<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += u'</script>\n'
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'

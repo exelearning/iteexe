@@ -1149,3 +1149,123 @@ if (document.addEventListener){
 } else {
 	window.attachEvent('onload',sfHover);
 }
+
+/* *********************************** */
+/* WYSIWYG Editor and common settings */
+/* ********************************* */
+
+// Common settings
+var eXeLearning_settings = {
+	wysiwyg_path : "/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js",
+	wysiwyg_settings_path : "/scripts/tiny_mce_settings.js"
+}
+
+//TinyMCE
+function getTinyMCELang(lang){
+	var defaultLang = "en";
+	for (i=0;i<tinyMCE_languages.length;i++) {
+		if (tinyMCE_languages[i]===lang) defaultLang = lang;
+	}
+	return defaultLang;
+}
+//TinyMCE file_browser_callback
+var exe_tinymce = {
+
+	chooseImage : function(field_name, url, type, win){
+	
+		/*	
+			To be used when accepting HTML5 video and audio
+			uploaded_file_1_name : "",
+			uploaded_file_2_name : "",
+			uploaded_file_3_name : "",
+		*/
+	
+		var local_imagePath = ""
+		
+		// ask user for image or media, depending on type requested:
+		if (type == "image") {
+		   local_imagePath = askUserForImage(false);
+		} else if (type == "media") {
+		   local_imagePath = askUserForMedia();
+		} else if (type == "file") {
+		   local_imagePath = askUserForMedia();
+		} else if (type == "image2insert" || type == "media2insert" || type == "file2insert") {
+			if (type == "file2insert" && url.indexOf('#') >= 0) {
+				return;            
+			}
+			local_imagePath = url;
+		}
+
+		win.focus();
+
+		// if the user hits CANCEL, then bail "immediately",
+		if (local_imagePath == "") {
+		   return;
+		}
+
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+		// UNescape, to remove the %20's for spaces, etc.:
+		var unescaped_local_imagePath = unescape(local_imagePath);
+		var oldImageStr = new String(unescaped_local_imagePath);
+		
+		/*
+		var oldImageName = "";
+		oldImageName = oldImageStr.split("\\");
+		oldImageName = oldImageName[oldImageName.length-1];
+		exe_tinymce.uploaded_file_1_name = oldImageName;
+		*/
+
+		// and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
+		// with '_':
+		var RegExp1 = /[\ \\\/\:\%\&]/g;
+		var ReplaceStr1 = new String("_");
+		var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
+
+		// For simplicity across various file encoding schemes, etc.,
+		// just ensure that the TinyMCE media window also gets a URI safe link, 
+		// for doing its showPreview():
+		early_preview_imageName = encodeURIComponent(newImageStr);
+		// and one more escaping of the '%'s to '_'s, to flatten for simplicity:
+		preview_imageName  = early_preview_imageName.replace(RegExp1, ReplaceStr1);
+		full_previewImage_url = "/previews/"+preview_imageName;
+
+		// pass the file information on to the server,
+		// to copy it into the server's "previews" directory:
+		window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, '', win, win.name, field_name, unescaped_local_imagePath, preview_imageName);
+
+		// first, clear out any old value in the tinyMCE image filename field:
+		win.document.forms[0].elements[field_name].value = ""; 
+
+		// PreviewImage is only available for images:
+		if (type == "image") {
+			win.ImageDialog.showPreviewImage("");
+		} else if (type == "media") {
+			win.window.Media.preview();		
+		}
+
+		// set the tinyMCE image filename field:
+		win.document.forms[0].elements[field_name].value = full_previewImage_url;
+		
+		// PreviewImage is only available for images:
+		if (type == "image") {
+			win.ImageDialog.showPreviewImage(full_previewImage_url);
+			win.ImageDialog.updateImageData();		
+		}
+		else if (type == "media") {
+			/*
+			var file_extension = full_previewImage_url.split('.').pop();
+			if (file_extension=="mp3" && confirm('\u00BFIncluir el reproductor de mp3 y cerrar el popup?')) {
+				var c = '<object width="400" height="15" data="'+full_previewImage_url+'" type="application/x-shockwave-flash"><param name="src" value="'+full_previewImage_url+'" /><param name="width" value="400" /><param name="height" value="15" /><param name="exe_mp3" value="'+full_previewImage_url+'" /></object>';
+				win.tinyMCEPopup.editor.execCommand('mceInsertContent', false, c);
+				win.tinyMCEPopup.close();		
+			} else {
+				win.window.Media.preview();
+			}
+			*/
+			win.window.Media.preview();
+			//win.generatePreview(full_previewImage_url);			
+		}
+	
+	}//chooseImage
+	
+}
