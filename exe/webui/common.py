@@ -128,6 +128,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
     # add exe_tmp_anchor tags 
     # for ALL anchors available in the entire doc!
     # (otherwise TinyMCE will only see those anchors within this field)
+    global anchor_node_path
     if package is not None and hasattr(package, 'anchor_fields') \
     and package.anchor_fields is not None \
     and G.application.config.internalAnchors!="disable_all" :

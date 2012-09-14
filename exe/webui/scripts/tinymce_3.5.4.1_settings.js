@@ -28,7 +28,7 @@ tinyMCE.init({
 	theme_advanced_resizing : true,	
 	
 	// Image & media
-	file_browser_callback : "exe_tinymce.chooseImage",
+	file_browser_callback : "chooseImage_viaTinyMCE_3",
 	media_types: "flash=swf,mp3,mp4,flv;qt=mov,qt,mpg,mpeg;wmp=avi,wmv,wm,asf;rmp=rm,ra,ram",		
 	flash_video_player_url: "../templates/flowPlayer.swf"	
 

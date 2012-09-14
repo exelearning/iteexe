@@ -123,7 +123,7 @@ var orgImageWidth, orgImageHeight;
 		   
 			w.curr_edits_math_num += 1
 
-			netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			// netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 			// pass the file information on to the server,
 			// to generate the image into the server's "previews" directory:
 			
