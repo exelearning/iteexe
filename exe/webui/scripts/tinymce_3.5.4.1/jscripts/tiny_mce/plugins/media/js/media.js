@@ -117,6 +117,7 @@
 		insert : function() {
 		
 			// The New eXeLearning
+			var html5_media = false;		
 			var t = get("media_type").value;
 			var src = get("src").value;
 			var file_extension = src.split(".").pop().toLowerCase();
@@ -127,7 +128,9 @@
 					msg += "\n\n"+tinyMCEPopup.getLang("media_dlg.confirm_question");
 					if (!confirm(msg)) {
 						return false;
-					}			
+					} else {
+						html5_media = true; 					
+					}		
 				}
 			}
 			// The New eXeLearning
@@ -137,6 +140,57 @@
 			this.formToData();
 			editor.execCommand('mceRepaint');
 			tinyMCEPopup.restoreSelection();
+			
+			// The New eXeLearning
+			if (html5_media) {
+				
+				var w = "";
+				if (window.parent) w = window.parent;
+				else if (window.opener) w = window.opener;
+				
+				if (w!='') {
+				
+					var uploaded_file_1_name = w.exe_tinymce.uploaded_file_1_name;
+					
+					if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") {
+						
+						setVal("src","resources/"+uploaded_file_1_name);
+						
+						get(t+"_controls").checked=true;
+						this.formToData('source');
+						
+						var old_code = get("source").value;
+						
+						var uploaded_file_1_link = '';
+						var uploaded_file_1_link_text = get('download_'+t+'_text').value;
+						if (uploaded_file_1_link_text!='') uploaded_file_1_link += uploaded_file_1_link_text+' ';
+						uploaded_file_1_link += uploaded_file_1_name;						
+						
+						if (old_code.indexOf('class="download-media-file"')==-1) {
+							// We add links to the files so than eXe includes those files in the package and the users with no HTML5 support can download the files
+							// Main file
+							var links_to_files = '<a href="'+src+'" class="download-media-file">'+uploaded_file_1_link+'</a>';
+							// Replacing </video> or </audio> by Links + </video> or </audio>
+							var new_code = old_code.replace("</"+t+">",links_to_files+"</"+t+">");
+							setVal("source",new_code);
+						} else {
+							var countAs = old_code.match(/\<a /g); 
+							var countClassName = old_code.match(/class=\"download-media-file\"/g);  
+							if (countAs.length==1 && countClassName.length==1){
+								// Relpace href="old_file" class="download-media-file" by href="new_file" class="download-media-file"
+								var new_code = old_code.replace(/href="(.*?)"/,'href="'+src+'"');
+								new_code = new_code.replace(/class="download-media-file">(.*?)</,'class="download-media-file">'+uploaded_file_1_link+'<');
+								setVal("source",new_code);							
+							}	
+						}
+						this.formToData();			
+					}
+					
+				}
+				
+			}
+			// The New eXeLearning			
+			
 			editor.selection.setNode(editor.plugins.media.dataToImg(this.data));
 			tinyMCEPopup.close();
 		},
@@ -282,6 +336,17 @@
 				get(data.type + '_options').style.display = 'block';
 
 			setVal('media_type', data.type);
+			
+			// The New eXeLearning	
+			get('exe_video_options').style.display = 'none';
+			get('exe_audio_options').style.display = 'none';
+			if (data.type=='video') {
+				get('exe_video_options').style.display = 'block';
+			}
+			else if (data.type=='audio') {
+				get('exe_audio_options').style.display = 'block';
+			}
+			// /The New eXeLearning
 
 			setOptions('flash', 'play,loop,menu,swliveconnect,quality,scale,salign,wmode,base,flashvars');
 			setOptions('quicktime', 'loop,autoplay,cache,controller,correction,enablejavascript,kioskmode,autohref,playeveryframe,targetcache,scale,starttime,endtime,target,qtsrcchokespeed,volume,qtsrc');
@@ -505,14 +570,14 @@
 			var html = "";
 
 			html += '<select id="media_type" name="media_type" onchange="Media.formToData(\'type\');">';
-			//html += option("video");
-			//html += option("audio");
+			html += option("video");
+			html += option("audio");
 			html += option("flash", "object");
 			//html += option("quicktime", "object");
 			//html += option("shockwave", "object");
 			//html += option("windowsmedia", "object");
 			//html += option("realmedia", "object");
-			//html += option("iframe");
+			html += option("iframe");
 
 			if (editor.getParam('media_embedded_audio', false)) {
 				html += option('embeddedaudio', "object");

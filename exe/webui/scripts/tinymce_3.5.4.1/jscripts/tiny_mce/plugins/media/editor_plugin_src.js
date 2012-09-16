@@ -119,6 +119,14 @@ function parse_media_html_attributes(c) {
 
 	}
 	
+	//HTML5 (video and audio)
+	if (c.indexOf("<video ")!=-1 || c.indexOf("<audio ")!=-1) {
+		// Remove http://127.0.0.1:51235/packageName/
+		var str3 = "http://"+window.location.host+"/"+exe_package_name+"/";
+		var re3 = new RegExp(str3, "g");
+		new_c= new_c.replace(re3, "");
+	}
+	
 	//HTML format:
 	
 	/* 

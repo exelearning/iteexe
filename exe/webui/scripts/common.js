@@ -1191,6 +1191,17 @@ function chooseImage_viaTinyMCE_3(field_name, url, type, win) {
         // UNescape, to remove the %20's for spaces, etc.:
         var unescaped_local_imagePath = unescape(local_imagePath);
         var oldImageStr = new String(unescaped_local_imagePath);
+		
+		/* HTML 5 */
+		exe_tinymce.uploaded_file_1_name = "";
+		
+		var last_uploaded_file_path = unescaped_local_imagePath.split("\\");
+		var last_uploaded_file_name = last_uploaded_file_path[last_uploaded_file_path.length-1];
+		/* Main file */
+		if (field_name=="src") {
+			exe_tinymce.uploaded_file_1_name = last_uploaded_file_name;
+		}		
+		/* /HTML5 */		
     
         // and replace path delimiters (':', '\', or '/') or '%', ' ', or '&' 
         // with '_':
