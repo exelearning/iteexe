@@ -1693,13 +1693,6 @@ var exe_tinymce = {
 
 	chooseImage : function(field_name, url, type, win){
 	
-		/*	
-			To be used when accepting HTML5 video and audio
-			uploaded_file_1_name : "",
-			uploaded_file_2_name : "",
-			uploaded_file_3_name : "",
-		*/
-	
 		var local_imagePath = ""
 		
 		// ask user for image or media, depending on type requested:
@@ -1727,6 +1720,17 @@ var exe_tinymce = {
 		// UNescape, to remove the %20's for spaces, etc.:
 		var unescaped_local_imagePath = unescape(local_imagePath);
 		var oldImageStr = new String(unescaped_local_imagePath);
+		
+		/* HTML 5 */
+		exe_tinymce.uploaded_file_1_name = "";
+		
+		var last_uploaded_file_path = unescaped_local_imagePath.split("\\");
+		var last_uploaded_file_name = last_uploaded_file_path[last_uploaded_file_path.length-1];
+		/* Main file */
+		if (field_name=="src") {
+			exe_tinymce.uploaded_file_1_name = last_uploaded_file_name;
+		}		
+		/* /HTML5 */		
 		
 		/*
 		var oldImageName = "";
