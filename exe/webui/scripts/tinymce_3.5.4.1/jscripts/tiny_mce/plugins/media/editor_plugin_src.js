@@ -31,7 +31,7 @@ function parse_media_html_attributes(c) {
 			for (z=0;z<c_parts_2.length;z++) {
 			
 				//Replacement:
-				if (c_parts_2[z].indexOf('type="application/x-shockwave-flash"')!=-1) {
+				if (c_parts_2[z].indexOf('type="application/x-shockwave-flash"')!=-1 || c_parts_2[z].indexOf('type="video/quicktime"')!=-1) {
 					
 					var o_attrs = c_parts_2[z].split(" ");
 					var o_type = "";
@@ -138,9 +138,9 @@ function parse_media_html_attributes(c) {
 	
 	//FLV code:
 	var flv_code = '<object type="application/x-shockwave-flash" data="../templates/flowPlayer.swf" width="100" height="100">';
-		flv_code += '<param name="src" value="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_flv.flv" />';
-		flv_code += '<param name="flashvars" value="config={\'playlist\': [ { \'url\': \'/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_flv.flv\', \'autoPlay\': false, \'autoBuffering\': true } ] }" />';
-		flv_code += '<param name="exe_flv" value="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_flv.flv" />';	
+		flv_code += '<param name="src" value="/previews/path.flv" />';
+		flv_code += '<param name="flashvars" value="config={\'playlist\': [ { \'url\': \'/previews/path.flv\', \'autoPlay\': false, \'autoBuffering\': true } ] }" />';
+		flv_code += '<param name="exe_flv" value="/previews/path.flv" />';	
 		flv_code += '</object>';
 		
 	//MP3 code:
@@ -149,13 +149,19 @@ function parse_media_html_attributes(c) {
 		mp3_code += '<param name="exe_mp3" value="/previews/path.mp3" />';
 		mp3_code += '</object>';	
 		
-	var video_code = '<video src="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv" width="320" height="240" preload="none">';
-		video_code += '<a href="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv">/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv</a>';
+	//HTML5 video code:
+	var video_code = '<video src="resources/file..." width="320" height="240" preload="none">';
+		video_code += '<a href="/previews/path...">/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.flv</a>';
 		video_code += '</video>';
 		
-	//HTML video code (to review):
-		//new_c = new_c.replace('<video ','<video controls ');
-		//new_c = new_c.replace('</video>','<a href="/previews/C__Users_Ignacio_Desktop_transfer_paraSubir_video_audio_video.ogg">video.ogg</a></video>');
+	//Quicktime code:
+	video_code = '<object type="video/quicktime" data="/previews/path..." width="320" height="240">';
+		video_code += '<param name="controller" value="true" />';
+		video_code += '<param name="autoplay" value="false" />';
+		video_code += '<a href="/previews/path...">/previews/path...</a>';
+		video_code += '</object>';
+	Important: common.js adds the classid attribute to the object tag.
+	It would have been better to do it without JS, but doing it and keep TinyMCE's update video working is really complex and doing it when exporting will change HTML defined be the user and may cause other problems.
 	
 	*/
 	

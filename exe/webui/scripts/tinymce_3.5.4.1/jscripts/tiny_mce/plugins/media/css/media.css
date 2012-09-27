@@ -16,5 +16,5 @@
 #qt_qtsrc { width: 200px }
 iframe {border: 1px solid gray}
 /* The New eXeLearning */
-#video_options, #audio_options { display:none !important }
+#video_options, #audio_options, #quicktime_options { display:none !important }
 /* /The New eXeLearning */
