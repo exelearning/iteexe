@@ -138,7 +138,7 @@
 					var QTCode = '';
 						if (mH=='') mH = 320;
 						if (mW=='') mW = 240;
-						QTCode += '<object type="video/quicktime" data="'+src+'" width="'+mH+'" height="'+mW+'">';
+						QTCode += '<object type="video/quicktime" data="'+src+'" width="'+mW+'" height="'+mH+'">';
 						QTCode += '<param name="controller" value="true" />';
 						QTCode += '<param name="autoplay" value="false" />';
 						QTCode += '<a href="'+src+'">mov.mov</a>';
