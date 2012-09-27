@@ -136,8 +136,8 @@
 					var mH = get("height").value;			
 					var mW = get("width").value;					
 					var QTCode = '';
-						if (mH=='') mH = 320;
-						if (mW=='') mW = 240;
+						if (mW=='') mW = 320;
+						if (mH=='') mH = 240;
 						QTCode += '<object type="video/quicktime" data="'+src+'" width="'+mW+'" height="'+mH+'">';
 						QTCode += '<param name="controller" value="true" />';
 						QTCode += '<param name="autoplay" value="false" />';
