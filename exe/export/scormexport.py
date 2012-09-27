@@ -393,8 +393,11 @@ class ScormPage(Page):
         html = aux.sub("", html)
         #JR: Cambio el & en los enlaces del glosario
         html = html.replace("&concept", "&amp;concept")
-        #JR: Cambiamos las anclas por enlaces a archivos
-        html = html.replace('href="#', 'href="')
+        # Remove "resources/" from data="resources/ and the url param
+        html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
+        html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
+        html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
+        html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
         return html
 
 

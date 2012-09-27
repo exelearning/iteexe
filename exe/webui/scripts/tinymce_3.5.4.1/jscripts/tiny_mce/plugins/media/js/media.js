@@ -121,6 +121,25 @@
 			var t = get("media_type").value;
 			var src = get("src").value;
 			var file_extension = src.split(".").pop().toLowerCase();
+			
+			var mH = get("height").value;			
+			var mW = get("width").value;			
+			
+			// Alternative content (a link to file itself)
+			var link_text = src;
+			var w = "";
+			if (window.parent) w = window.parent;
+			else if (window.opener) w = window.opener;
+			if (w!="") {
+				var uploaded_file_1_name = w.exe_tinymce.uploaded_file_1_name;
+				if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") {
+					// If present, remove the path to the file:						
+					var uploaded_file_1_name_parts = uploaded_file_1_name.split("/");
+					if (uploaded_file_1_name_parts.length>1) uploaded_file_1_name = uploaded_file_1_name_parts[uploaded_file_1_name_parts.length-1];
+					link_text = uploaded_file_1_name;
+				}
+			}			
+			
 			if (file_extension!='') {
 				if (t=='video' || t=='audio') {
 					var msg = tinyMCEPopup.getLang("media_dlg.html5_warning")+".\n\n"+tinyMCEPopup.getLang("media_dlg.selected_file")+": "+file_extension;
@@ -133,21 +152,46 @@
 					}		
 				}
 				else if (t=='quicktime') {
-					var mH = get("height").value;			
-					var mW = get("width").value;					
 					var QTCode = '';
 						if (mW=='') mW = 320;
 						if (mH=='') mH = 240;
 						QTCode += '<object type="video/quicktime" data="'+src+'" width="'+mW+'" height="'+mH+'">';
 						QTCode += '<param name="controller" value="true" />';
 						QTCode += '<param name="autoplay" value="false" />';
-						QTCode += '<a href="'+src+'">mov.mov</a>';
+						QTCode += '<a href="'+src+'">'+link_text+'</a>';
 						QTCode += '</object>';
 					tinyMCEPopup.editor.execCommand('mceInsertContent', false, QTCode);
 					tinyMCEPopup.close();			
 				}
+				else if (t=='windowsmedia') {
+					if (mW=='') mW = 320;
+					if (mH=='') mH = 240;				
+					var WMCode = '';
+						var file_src = src;
+						if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") file_src = "resources/"+uploaded_file_1_name;
+						WMCode += '<object type="application/x-mplayer2" data="'+file_src+'" width="'+mW+'" height="'+mH+'">';
+						// WMCode += '<param name="url" value="'+file_src+'" />'; TinyMCE already includes this.
+						WMCode += '<param name="autostart" value="false" />';
+						WMCode += '<a href="'+src+'">'+link_text+'</a>';
+						WMCode += '</object>';
+					tinyMCEPopup.editor.execCommand('mceInsertContent', false, WMCode);
+					tinyMCEPopup.close();				
+				}
+				else if (t=='realmedia') {
+					if (mW=='') mW = 320;
+					if (mH=='') mH = 240;	
+					var RMCode = '';
+						var file_src = src;
+						if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") file_src = "resources/"+uploaded_file_1_name;
+						RMCode += '<object type="audio/x-pn-realaudio-plugin" data="'+file_src+'" width="'+mW+'" height="'+mH+'">';
+						// RMCode += '<param name="src" value="'+src+'" />'; TinyMCE already includes this.
+						RMCode += '<a href="'+src+'">'+link_text+'</a>';
+						RMCode += '</object>';
+					tinyMCEPopup.editor.execCommand('mceInsertContent', false, RMCode);
+					tinyMCEPopup.close();
+				}
 			}
-			// The New eXeLearning
+			// /The New eXeLearning
 		
 			var editor = tinyMCEPopup.editor;
 
@@ -207,7 +251,7 @@
 				}
 				
 			}
-			// The New eXeLearning			
+			// /The New eXeLearning			
 			
 			editor.selection.setNode(editor.plugins.media.dataToImg(this.data));
 			tinyMCEPopup.close();
@@ -232,7 +276,7 @@
 			}
 			
 			get('prev').innerHTML = preview_html;
-			// The New eXeLearning
+			// /The New eXeLearning
 		},
 
 		moveStates : function(to_form, field) {
@@ -365,7 +409,7 @@
 			else if (data.type=='audio') {
 				get('exe_audio_options').style.display = 'block';
 			}
-			else if (data.type=='quicktime') {
+			else if (data.type=='quicktime' || data.type=='windowsmedia' || data.type=='realmedia') {
 				get('advanced_tab').style.display = 'none';
 			}
 			// /The New eXeLearning
@@ -497,7 +541,7 @@
 					data.params.exe_flv = src;
 					//data.params.flashvars = "config={'playlist': [ { 'url': '"+src+"', 'autoPlay': false, 'autoBuffering': true } ] }";					
 				}
-				// The New eXeLearning					
+				// /The New eXeLearning					
 
 				// Set default size
 				setVal('width', data.width || (data.type == 'audio' ? 300 : 320));
@@ -530,14 +574,14 @@
 			
 			// The New eXeLearning
 			if (field == 'type') {
-				if (get('media_type').value=='quicktime') {
+				if (get('media_type').value=='quicktime' || get('media_type').value=='windowsmedia' || get('media_type').value=='realmedia') {
 					get('advanced_tab').style.display='none';					
 				}
 				else {
 					get('advanced_tab').style.display='block';					
 				}
 			}
-			// The New eXeLearning
+			// /The New eXeLearning
 		},
 
 		beforeResize : function() {
@@ -597,8 +641,8 @@
 			html += option("flash", "object");
 			html += option("quicktime", "object");
 			//html += option("shockwave", "object");
-			//html += option("windowsmedia", "object");
-			//html += option("realmedia", "object");
+			html += option("windowsmedia", "object");
+			html += option("realmedia", "object");
 			html += option("iframe");
 
 			if (editor.getParam('media_embedded_audio', false)) {

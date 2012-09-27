@@ -31,7 +31,7 @@ function parse_media_html_attributes(c) {
 			for (z=0;z<c_parts_2.length;z++) {
 			
 				//Replacement:
-				if (c_parts_2[z].indexOf('type="application/x-shockwave-flash"')!=-1 || c_parts_2[z].indexOf('type="video/quicktime"')!=-1) {
+				if (c_parts_2[z].indexOf('type="application/x-shockwave-flash"')!=-1 || c_parts_2[z].indexOf('type="video/quicktime"')!=-1 || c_parts_2[z].indexOf('type="application/x-mplayer2"')!=-1 || c_parts_2[z].indexOf('type="audio/x-pn-realaudio-plugin"')!=-1) {
 					
 					var o_attrs = c_parts_2[z].split(" ");
 					var o_type = "";
