@@ -1297,6 +1297,14 @@ class FieldWithResources(Field):
                    embed_replace_str = "name=\"movie\" value=\"" + resource_url
                    new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
+                   ######
+                   # ...data="/previews/..." type="video/quicktime"
+                   embed_search_str = "video/quicktime\" data=\"/previews/"\
+                           + pre_input_file_name_str
+                   embed_replace_str = "video/quicktime\" data=\"" + resource_url
+                   new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+
 		   ######
                    # and one more place that it needs to change, in the 
                    # case of the Windows Media Player, which has been

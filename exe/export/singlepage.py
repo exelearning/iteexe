@@ -81,6 +81,8 @@ class SinglePage(Page):
 	#JR: Cambio la ruta de los enlaces del glosario y el &
 	html = html.replace("../../../../../mod/glossary", "../../../../mod/glossary")
 	html = html.replace("&concept", "&amp;concept")
+    # Remove "resources/" from data="resources/
+	html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
 	
 	return html
 

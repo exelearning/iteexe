@@ -1680,6 +1680,32 @@ if (document.addEventListener){
 	window.attachEvent('onload',sfHover);
 }
 
+/* Quicktime for IE */
+var ie_quicktime_replace = function() {
+	var objs = document.getElementsByTagName("OBJECT");
+	var i = objs.length;
+	while (i--) {
+		if(objs[i].type=="video/quicktime") {
+			if(typeof(objs.classid)=='undefined') {
+				objs[i].style.display="none";
+				var h = objs[i].height;
+				var w = objs[i].width;
+				var s = objs[i].data;
+				var e = document.createElement("DIV");
+				e.innerHTML = '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" data="'+s+'" width="'+w+'" height="'+h+'"><param name="controller" value="true" /><param name="autoplay" value="false" /></object>';
+				objs[i].parentNode.insertBefore(e,objs[i]);			
+			}
+		}
+	}
+}
+if (navigator.appName=="Microsoft Internet Explorer") {
+	if (document.addEventListener){
+		window.addEventListener('load',ie_quicktime_replace,false);
+	} else {
+		window.attachEvent('onload',ie_quicktime_replace);
+	}	
+}
+
 //TinyMCE
 function getTinyMCELang(lang){
 	var defaultLang = "en";

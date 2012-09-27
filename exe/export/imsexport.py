@@ -250,6 +250,8 @@ class IMSPage(Page):
 	html = aux.sub("", html)
 	#JR: Cambio el & en los enlaces del glosario
 	html = html.replace("&concept", "&amp;concept")
+    # Remove "resources/" from data="resources/
+	html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
         return html
 
 
