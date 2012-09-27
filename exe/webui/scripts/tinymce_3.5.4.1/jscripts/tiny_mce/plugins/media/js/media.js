@@ -597,7 +597,7 @@
 			html += option("flash", "object");
 			html += option("quicktime", "object");
 			//html += option("shockwave", "object");
-			html += option("windowsmedia", "object");
+			//html += option("windowsmedia", "object");
 			//html += option("realmedia", "object");
 			html += option("iframe");
 
