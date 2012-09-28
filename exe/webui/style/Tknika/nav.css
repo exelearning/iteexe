@@ -87,13 +87,7 @@ body{
 }
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
 * html #header,* html #emptyHeader{height:110px} /* IE6 */
-#nodeTitle{
-	position:absolute;
-	top:90px;
-	left:220px;
-	margni-left:0;
-}
-#nodeTitle{font-size:1.6em;margin:20px 10px 0 0}
+#nodeTitle{position:absolute;top:90px;left:220px;font-size:1.6em;margin:20px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0 10px;border:none}
 
 body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:center}
