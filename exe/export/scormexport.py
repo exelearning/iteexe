@@ -451,6 +451,10 @@ class ScormExport(object):
         styleFiles += self.styleDir.files("*.png")
         styleFiles += self.styleDir.files("*.js")
         styleFiles += self.styleDir.files("*.html")
+        styleFiles += self.styleDir.files("*.ttf")
+        styleFiles += self.styleDir.files("*.eot")
+        styleFiles += self.styleDir.files("*.otf")
+        styleFiles += self.styleDir.files("*.woff")
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive

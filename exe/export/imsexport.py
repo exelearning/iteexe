@@ -307,6 +307,10 @@ class IMSExport(object):
         styleFiles += self.styleDir.files("*.png")
         styleFiles += self.styleDir.files("*.js")
         styleFiles += self.styleDir.files("*.html")
+        styleFiles += self.styleDir.files("*.ttf")
+        styleFiles += self.styleDir.files("*.eot")
+        styleFiles += self.styleDir.files("*.otf")
+        styleFiles += self.styleDir.files("*.woff")
         self.styleDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
