@@ -117,16 +117,24 @@
 		insert : function() {
 		
 			// The New eXeLearning
-			var html5_media = false;		
 			var t = get("media_type").value;
 			var src = get("src").value;
 			var file_extension = src.split(".").pop().toLowerCase();
 			
 			var mH = get("height").value;			
-			var mW = get("width").value;			
-			
+			var mW = get("width").value;
+			// Default dimensions
+			if (t=='audio') {
+				if (mW=='') mW = 300;
+				if (mH=='') mH = 32;							
+			} else {
+				if (mW=='') mW = 320;
+				if (mH=='') mH = 240;					
+			}
+
 			// Alternative content (a link to file itself)
 			var link_text = src;
+			var file_src = src;
 			var w = "";
 			if (window.parent) w = window.parent;
 			else if (window.opener) w = window.opener;
@@ -137,9 +145,11 @@
 					var uploaded_file_1_name_parts = uploaded_file_1_name.split("/");
 					if (uploaded_file_1_name_parts.length>1) uploaded_file_1_name = uploaded_file_1_name_parts[uploaded_file_1_name_parts.length-1];
 					link_text = uploaded_file_1_name;
+					// Replace path by resources/file_name in audio, video, windowsmedia and realmedia
+					file_src = "resources/"+uploaded_file_1_name;			
 				}
-			}			
-			
+			}	
+
 			if (file_extension!='') {
 				if (t=='video' || t=='audio') {
 					var msg = tinyMCEPopup.getLang("media_dlg.html5_warning")+".\n\n"+tinyMCEPopup.getLang("media_dlg.selected_file")+": "+file_extension;
@@ -148,13 +158,16 @@
 					if (!confirm(msg)) {
 						return false;
 					} else {
-						html5_media = true; 					
+						var html5MediaCode= '';
+							html5MediaCode += '<'+t+' src="'+file_src+'" width="'+mW+'" height="'+mH+'" controls="controls">';
+							html5MediaCode += '<a href="'+src+'">'+link_text+'</a>';
+							html5MediaCode += '</'+t+'>';
+						tinyMCEPopup.editor.execCommand('mceInsertContent', false, html5MediaCode);
+						tinyMCEPopup.close();						
 					}		
 				}
 				else if (t=='quicktime') {
 					var QTCode = '';
-						if (mW=='') mW = 320;
-						if (mH=='') mH = 240;
 						QTCode += '<object type="video/quicktime" data="'+src+'" width="'+mW+'" height="'+mH+'">';
 						QTCode += '<param name="controller" value="true" />';
 						QTCode += '<param name="autoplay" value="false" />';
@@ -164,11 +177,7 @@
 					tinyMCEPopup.close();			
 				}
 				else if (t=='windowsmedia') {
-					if (mW=='') mW = 320;
-					if (mH=='') mH = 240;				
 					var WMCode = '';
-						var file_src = src;
-						if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") file_src = "resources/"+uploaded_file_1_name;
 						WMCode += '<object type="application/x-mplayer2" data="'+file_src+'" width="'+mW+'" height="'+mH+'">';
 						// WMCode += '<param name="url" value="'+file_src+'" />'; TinyMCE already includes this.
 						WMCode += '<param name="autostart" value="false" />';
@@ -178,11 +187,7 @@
 					tinyMCEPopup.close();				
 				}
 				else if (t=='realmedia') {
-					if (mW=='') mW = 320;
-					if (mH=='') mH = 240;	
 					var RMCode = '';
-						var file_src = src;
-						if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") file_src = "resources/"+uploaded_file_1_name;
 						RMCode += '<object type="audio/x-pn-realaudio-plugin" data="'+file_src+'" width="'+mW+'" height="'+mH+'">';
 						// RMCode += '<param name="src" value="'+src+'" />'; TinyMCE already includes this.
 						RMCode += '<a href="'+src+'">'+link_text+'</a>';
@@ -198,60 +203,6 @@
 			this.formToData();
 			editor.execCommand('mceRepaint');
 			tinyMCEPopup.restoreSelection();
-			
-			// The New eXeLearning
-			if (html5_media) {
-				
-				var w = "";
-				if (window.parent) w = window.parent;
-				else if (window.opener) w = window.opener;
-				
-				if (w!='') {
-				
-					var uploaded_file_1_name = w.exe_tinymce.uploaded_file_1_name;
-					
-					if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") {
-						
-						// If present, remove the path to the file:						
-						var uploaded_file_1_name_parts = uploaded_file_1_name.split("/");
-						if (uploaded_file_1_name_parts.length>1) uploaded_file_1_name = uploaded_file_1_name_parts[uploaded_file_1_name_parts.length-1];						
-						
-						setVal("src","resources/"+uploaded_file_1_name);
-						
-						get(t+"_controls").checked=true;
-						this.formToData('source');
-						
-						var old_code = get("source").value;
-						
-						var uploaded_file_1_link = '';
-						var uploaded_file_1_link_text = get('download_'+t+'_text').value;
-						if (uploaded_file_1_link_text!='') uploaded_file_1_link += uploaded_file_1_link_text+' ';
-						uploaded_file_1_link += uploaded_file_1_name;						
-						
-						if (old_code.indexOf('class="download-media-file"')==-1) {
-							// We add links to the files so than eXe includes those files in the package and the users with no HTML5 support can download the files
-							// Main file
-							var links_to_files = '<a href="'+src+'" class="download-media-file">'+uploaded_file_1_link+'</a>';
-							// Replacing </video> or </audio> by Links + </video> or </audio>
-							var new_code = old_code.replace("</"+t+">",links_to_files+"</"+t+">");
-							setVal("source",new_code);
-						} else {
-							var countAs = old_code.match(/\<a /g); 
-							var countClassName = old_code.match(/class=\"download-media-file\"/g);  
-							if (countAs.length==1 && countClassName.length==1){
-								// Relpace href="old_file" class="download-media-file" by href="new_file" class="download-media-file"
-								var new_code = old_code.replace(/href="(.*?)"/,'href="'+src+'"');
-								new_code = new_code.replace(/class="download-media-file">(.*?)</,'class="download-media-file">'+uploaded_file_1_link+'<');
-								setVal("source",new_code);							
-							}	
-						}
-						this.formToData();			
-					}
-					
-				}
-				
-			}
-			// /The New eXeLearning			
 			
 			editor.selection.setNode(editor.plugins.media.dataToImg(this.data));
 			tinyMCEPopup.close();
@@ -400,17 +351,10 @@
 			setVal('media_type', data.type);
 			
 			// The New eXeLearning	
-			get('exe_video_options').style.display = 'none';
-			get('exe_audio_options').style.display = 'none';
-			get('advanced_tab').style.display = 'block';
-			if (data.type=='video') {
-				get('exe_video_options').style.display = 'block';
-			}
-			else if (data.type=='audio') {
-				get('exe_audio_options').style.display = 'block';
-			}
-			else if (data.type=='quicktime' || data.type=='windowsmedia' || data.type=='realmedia') {
+			if (data.type=='quicktime' || data.type=='windowsmedia' || data.type=='realmedia' || data.type=='audio' || data.type=='video') {
 				get('advanced_tab').style.display = 'none';
+			} else {
+				get('advanced_tab').style.display = 'block';
 			}
 			// /The New eXeLearning
 
@@ -423,7 +367,7 @@
 			setOptions('audio', 'autoplay,loop,preload,controls');
 			setOptions('embeddedaudio', 'autoplay,loop,controls');
 			setOptions('global', 'id,name,vspace,hspace,bgcolor,align,width,height');
-
+			
 			if (to_form) {
 				if (data.type == 'video') {
 					if (data.video.sources[0])
@@ -574,7 +518,24 @@
 			
 			// The New eXeLearning
 			if (field == 'type') {
-				if (get('media_type').value=='quicktime' || get('media_type').value=='windowsmedia' || get('media_type').value=='realmedia') {
+				
+				if (get('media_type').value=='audio') {
+					setVal('width', 300);	
+					setVal('height', 32);
+				} else if (get('media_type').value=='flash') {
+					var f = get('src').value;
+					var file_extension = f.split(".").pop().toLowerCase();
+					if (file_extension=="mp3") {
+						setVal('width', 400);	
+						setVal('height', 15);						
+					}
+					
+				} else {
+					setVal('width', 320);	
+					setVal('height', 240);				
+				}
+				
+				if (get('media_type').value=='quicktime' || get('media_type').value=='windowsmedia' || get('media_type').value=='realmedia' || get('media_type').value=='video' || get('media_type').value=='audio') {
 					get('advanced_tab').style.display='none';					
 				}
 				else {
