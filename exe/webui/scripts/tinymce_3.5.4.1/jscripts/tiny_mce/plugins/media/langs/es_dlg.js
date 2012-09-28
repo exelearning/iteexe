@@ -6,9 +6,6 @@ recommended_type : "Tipo recomendado",
 confirm_question : "\u00BFContinuar sin hacer cambios?",
 preview_error : "No se ha podido generar una previsualizaci\u00F3n",
 video_download_file_warning : "Si el navegador del usuario no puede reproducir el v\u00EDdeo se mostrar\u00E1 un enlace al archivo.",
-audio_download_file_warning : "Si el navegador del usuario no puede reproducir el audio se mostrar\u00E1 un enlace al archivo.",
-download_file_label : "Texto del enlace",
-file_name : "Nombre del archivo",
-download : "Descargar"
+audio_download_file_warning : "Si el navegador del usuario no puede reproducir el audio se mostrar\u00E1 un enlace al archivo."
 // The New eXeLearning
 });
