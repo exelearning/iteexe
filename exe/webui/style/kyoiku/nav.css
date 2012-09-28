@@ -83,8 +83,7 @@ body{
 #main{padding:10px 20px 11px 250px}
 #header,#emptyHeader{display:none;}
 * html #header,* html #emptyHeader{display:none;} /* IE6 */
-#nodeTitle{position:absolute;top:10px;left:250px;margni-left:0}
-#nodeTitle{font-size:1.6em;margin:20px 10px 0 0}
+#nodeTitle{position:absolute;top:10px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0 10px;border:none;padding-bottom:40px;}
 h1#nodeTitle {width:620px;margin-left:10px;padding-left:5px;}
 
