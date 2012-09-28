@@ -87,6 +87,11 @@ class SinglePageExport(object):
         styleFiles += self.stylesDir.files("*.png")
         styleFiles += self.stylesDir.files("*.js")
         styleFiles += self.stylesDir.files("*.html")
+        styleFiles += self.stylesDir.files("*.ico")
+        styleFiles += self.stylesDir.files("*.ttf")
+        styleFiles += self.stylesDir.files("*.eot")
+        styleFiles += self.stylesDir.files("*.otf")
+        styleFiles += self.stylesDir.files("*.woff")
         self.stylesDir.copylist(styleFiles, self.outputDir)
 
         # copy the package's resource files
