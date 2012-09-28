@@ -108,6 +108,7 @@ class SinglePage(Page):
         html += u"<title>"
         html += name
         html += "</title>\n"
+        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
         html += u'<script type="text/javascript" src="common.js"></script>\n'
