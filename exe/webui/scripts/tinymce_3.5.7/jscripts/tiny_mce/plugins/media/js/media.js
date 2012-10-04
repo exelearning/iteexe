@@ -115,6 +115,89 @@
 		},
 
 		insert : function() {
+		
+			// The New eXeLearning
+			var t = get("media_type").value;
+			var src = get("src").value;
+			var file_extension = src.split(".").pop().toLowerCase();
+			
+			var mH = get("height").value;			
+			var mW = get("width").value;
+			// Default dimensions
+			if (t=='audio') {
+				if (mW=='') mW = 300;
+				if (mH=='') mH = 32;							
+			} else {
+				if (mW=='') mW = 320;
+				if (mH=='') mH = 240;					
+			}
+
+			// Alternative content (a link to file itself)
+			var link_text = src;
+			var file_src = src;
+			var w = "";
+			if (window.parent) w = window.parent;
+			else if (window.opener) w = window.opener;
+			if (w!="") {
+				var uploaded_file_1_name = w.exe_tinymce.uploaded_file_1_name;
+				if (typeof(uploaded_file_1_name)!='undefined' && uploaded_file_1_name!="") {
+					// If present, remove the path to the file:						
+					var uploaded_file_1_name_parts = uploaded_file_1_name.split("/");
+					if (uploaded_file_1_name_parts.length>1) uploaded_file_1_name = uploaded_file_1_name_parts[uploaded_file_1_name_parts.length-1];
+					link_text = uploaded_file_1_name;
+					// Replace path by resources/file_name in audio, video, windowsmedia and realmedia
+					file_src = "resources/"+uploaded_file_1_name;			
+				}
+			}	
+
+			if (file_extension!='') {
+				if (t=='video' || t=='audio') {
+					var msg = tinyMCEPopup.getLang("media_dlg.html5_warning")+".\n\n"+tinyMCEPopup.getLang("media_dlg.selected_file")+": "+file_extension;
+					if (file_extension=="mp3" || file_extension=="flv") msg +="\n\n"+tinyMCEPopup.getLang("media_dlg.recommended_type")+": "+tinyMCEPopup.getLang("media_dlg.flash");
+					msg += "\n\n"+tinyMCEPopup.getLang("media_dlg.confirm_question");
+					if (!confirm(msg)) {
+						return false;
+					} else {
+						var html5MediaCode= '';
+							html5MediaCode += '<'+t+' src="'+file_src+'" width="'+mW+'" height="'+mH+'" controls="controls">';
+							html5MediaCode += '<a href="'+src+'">'+link_text+'</a>';
+							html5MediaCode += '</'+t+'>';
+						tinyMCEPopup.editor.execCommand('mceInsertContent', false, html5MediaCode);
+						tinyMCEPopup.close();						
+					}		
+				}
+				else if (t=='quicktime') {
+					var QTCode = '';
+						QTCode += '<object type="video/quicktime" data="'+src+'" width="'+mW+'" height="'+mH+'">';
+						QTCode += '<param name="controller" value="true" />';
+						QTCode += '<param name="autoplay" value="false" />';
+						QTCode += '<a href="'+src+'">'+link_text+'</a>';
+						QTCode += '</object>';
+					tinyMCEPopup.editor.execCommand('mceInsertContent', false, QTCode);
+					tinyMCEPopup.close();			
+				}
+				else if (t=='windowsmedia') {
+					var WMCode = '';
+						WMCode += '<object type="application/x-mplayer2" data="'+file_src+'" width="'+mW+'" height="'+mH+'">';
+						// WMCode += '<param name="url" value="'+file_src+'" />'; TinyMCE already includes this.
+						WMCode += '<param name="autostart" value="false" />';
+						WMCode += '<a href="'+src+'">'+link_text+'</a>';
+						WMCode += '</object>';
+					tinyMCEPopup.editor.execCommand('mceInsertContent', false, WMCode);
+					tinyMCEPopup.close();				
+				}
+				else if (t=='realmedia') {
+					var RMCode = '';
+						RMCode += '<object type="audio/x-pn-realaudio-plugin" data="'+file_src+'" width="'+mW+'" height="'+mH+'">';
+						// RMCode += '<param name="src" value="'+src+'" />'; TinyMCE already includes this.
+						RMCode += '<a href="'+src+'">'+link_text+'</a>';
+						RMCode += '</object>';
+					tinyMCEPopup.editor.execCommand('mceInsertContent', false, RMCode);
+					tinyMCEPopup.close();
+				}
+			}
+			// /The New eXeLearning
+			
 			var editor = tinyMCEPopup.editor;
 
 			this.formToData();
@@ -125,7 +208,25 @@
 		},
 
 		preview : function() {
-			get('prev').innerHTML = this.editor.plugins.media.dataToHtml(this.data, true);
+			// The New eXeLearning
+			//get('prev').innerHTML = this.editor.plugins.media.dataToHtml(this.data, true);			
+			var preview_html = this.editor.plugins.media.dataToHtml(this.data, true);
+			
+			var w = "";
+			if (window.parent) w = window.parent;
+			else if (window.opener) w = window.opener;
+			if (w!='') {
+				if(typeof(w.exe_package_name)!="undefined") {
+					preview_html = preview_html.replace("{ 'url': 'resources","{ 'url': '/"+w.exe_package_name+"/resources");
+				}
+				// exe_package_name global var is missing (old eXeLearning) and it's a flv:
+				else if (preview_html.indexOf("{ 'url': 'resources")!=-1) {
+					preview_html = tinyMCEPopup.getLang("media_dlg.preview_error")+".";
+				}
+			}
+			
+			get('prev').innerHTML = preview_html;
+			// /The New eXeLearning			
 		},
 
 		moveStates : function(to_form, field) {
@@ -247,6 +348,14 @@
 				get(data.type + '_options').style.display = 'block';
 
 			setVal('media_type', data.type);
+			
+			// The New eXeLearning	
+			if (data.type=='quicktime' || data.type=='windowsmedia' || data.type=='realmedia' || data.type=='audio' || data.type=='video') {
+				get('advanced_tab').style.display = 'none';
+			} else {
+				get('advanced_tab').style.display = 'block';
+			}
+			// /The New eXeLearning			
 
 			setOptions('flash', 'play,loop,menu,swliveconnect,quality,scale,salign,wmode,base,flashvars');
 			setOptions('quicktime', 'loop,autoplay,cache,controller,correction,enablejavascript,kioskmode,autohref,playeveryframe,targetcache,scale,starttime,endtime,target,qtsrcchokespeed,volume,qtsrc');
@@ -388,6 +497,26 @@
                         data.video.sources[2] = {src : src};
 				} else
 					data.params.src = src;
+					
+				// The New eXeLearning
+				var file_extension = src.split(".").pop().toLowerCase();
+				if (file_extension=='mp3') {
+					//setVal('width', 400);
+					//setVal('height', 15);
+					var new_src = src;
+					if (src.indexOf("../templates/xspf_player.swf?song_url=")==0) {
+						new_src = src.replace("../templates/xspf_player.swf?song_url=","");
+					}
+					data.width = 400;				
+					data.height = 15;
+					data.params.exe_mp3 = new_src;
+				} else if (file_extension=='flv') {
+					setVal('src', src);
+					data.params.src = src;
+					data.params.exe_flv = src;
+					//data.params.flashvars = "config={'playlist': [ { 'url': '"+src+"', 'autoPlay': false, 'autoBuffering': true } ] }";					
+				}
+				// /The New eXeLearning
 
 				// Set default size
                 setVal('width', data.width || (data.type == 'audio' ? 300 : 320));
@@ -417,6 +546,34 @@
 				this.moveStates(false, field);
 				this.preview();
 			}
+			
+			// The New eXeLearning
+			if (field == 'type') {
+				
+				if (get('media_type').value=='audio') {
+					setVal('width', 300);	
+					setVal('height', 32);
+				} else if (get('media_type').value=='flash') {
+					var f = get('src').value;
+					var file_extension = f.split(".").pop().toLowerCase();
+					if (file_extension=="mp3") {
+						setVal('width', 400);	
+						setVal('height', 15);						
+					}
+					
+				} else {
+					setVal('width', 320);	
+					setVal('height', 240);				
+				}
+				
+				if (get('media_type').value=='quicktime' || get('media_type').value=='windowsmedia' || get('media_type').value=='realmedia' || get('media_type').value=='video' || get('media_type').value=='audio') {
+					get('advanced_tab').style.display='none';					
+				}
+				else {
+					get('advanced_tab').style.display='block';					
+				}
+			}
+			// /The New eXeLearning			
 		},
 
 		beforeResize : function() {
@@ -475,7 +632,9 @@
 			html += option("audio");
 			html += option("flash", "object");
 			html += option("quicktime", "object");
-			html += option("shockwave", "object");
+			// The New eXeLearning
+			//html += option("shockwave", "object");
+			// /The New eXeLearning
 			html += option("windowsmedia", "object");
 			html += option("realmedia", "object");
 			html += option("iframe");

@@ -116,6 +116,11 @@ function init() {
 
 		if (href.charAt(0) == '#')
 			selectByValue(formObj, 'anchorlist', href);
+			
+		// The New eXeLearning
+		else if (href.indexOf("exe-node:")==0)
+			selectByValue(formObj, 'anchorlist', href);
+		// /The New eXeLearning	
 
 		addClassesToList('classlist', 'advlink_styles');
 
@@ -382,6 +387,26 @@ function getAnchorListHTML(id, target) {
 		if ((name = nodes[i].id) != "" && !nodes[i].href)
 			html += '<option value="#' + name + '">' + name + '</option>';
 	}
+	
+	// The New eXeLearning
+	var tName = tinymce.activeEditor.editorId;
+	var arrayName = "tinymce_"+tName+"_anchors";
+	var w = window.parent;
+	if (w) {
+		if (typeof w[arrayName]=="object") {
+			var myArray = w[arrayName];
+			for (i=0;i<myArray.length;i++){
+				var lbl = tinyMCEPopup.getLang("advlink_dlg.node")+": ";
+				var n = myArray[i].replace("exe-node:",lbl);
+				var checkN = n.split("#");
+				if (checkN[1]=="auto_top") n = n.replace("#auto_top","");
+				n = decodeURIComponent(n);
+				var newOption = '<option value="' + myArray[i] + '">' + n + '</option>';
+				if (html.indexOf(newOption)==-1) html += newOption;
+			}
+		}
+	}
+	// /The New eXeLearning	
 
 	if (html == "")
 		return "";
