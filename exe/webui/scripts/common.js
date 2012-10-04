@@ -1184,8 +1184,8 @@ if (navigator.appName=="Microsoft Internet Explorer") {
 // Common settings
 if (newEditor==true) {
 	var eXeLearning_settings = {
-		wysiwyg_path : "/scripts/tinymce_3.5.4.1/jscripts/tiny_mce/tiny_mce.js",
-		wysiwyg_settings_path : "/scripts/tinymce_3.5.4.1_settings.js"
+		wysiwyg_path : "/scripts/tinymce_3.5.7/jscripts/tiny_mce/tiny_mce.js",
+		wysiwyg_settings_path : "/scripts/tinymce_3.5.7_settings.js"
 	}
 } else {
 	var eXeLearning_settings = {
