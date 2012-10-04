@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#exemath.desc}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/exemath.js"></script>
+	<script type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script type="text/javascript" src="../../utils/validate.js"></script>
+	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+	<!--<script type="text/javascript" src="../../utils/editable_selects.js"></script>-->
+	<link href="css/exemath.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="exemath" onload="tinyMCEPopup.executeOnLoad('init();');" style="display: none">
+
+    <form onsubmit="ExeMath.insertAction();return false;" action="#"> 
+
+		<div class="tabs">
+			<ul>
+				<li id="general_tab" class="current"><span><a href="#general_panel" onclick="mcTabs.displayTab('general_tab','general_panel');return false">{#exemath.tab_general}</a></span></li>
+				<li id="appearance_tab"><span><a href="#appearance_panel" onclick="mcTabs.displayTab('appearance_tab','appearance_panel');return false">{#exemath.tab_appearance}</a></span></li>				
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+			<div id="general_panel" class="panel current">
+				<fieldset>
+					<legend>{#exemath.tab_general}</legend>
+					<!-- these insertSymbols taken straight from the maths iDevice: -->
+					<div class="maths" style="margin-bottom:10px">
+						<table>
+							<tr>
+								<td>
+									<label for="math_font_size">{#exemath.font_size}</label>
+									<select name="math_font_size" id="math_font_size">
+										<option value="1">1</option> 
+										<option value="2">2</option> 
+										<option value="3">3</option> 
+										<option value="4" selected="selected">4</option> 
+										<option value="5">5</option> 
+										<option value="6">6</option> 
+										<option value="7">7</option> 
+										<option value="8">8</option> 
+										<option value="9">9</option> 
+										<option value="10">10</option> 
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>{#exemath.insert_symbols}</td> 
+							</tr>
+						</table>
+						<div style="text-align:center;padding-bottom:10px;border-bottom:1px solid #ccc">
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\alpha', 0);" title="alpha"><img alt="symbol" src="/images/maths/greek letters/alpha.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\beta', 0);" title="beta"><img alt="symbol" src="/images/maths/greek letters/beta.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\chi', 0);" title="chi"><img alt="symbol" src="/images/maths/greek letters/chi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\delta', 0);" title="delta"><img alt="symbol" src="/images/maths/greek letters/delta.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\epsilon', 0);" title="epsilon"><img alt="symbol" src="/images/maths/greek letters/epsilon.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\eta', 0);" title="eta"><img alt="symbol" src="/images/maths/greek letters/eta.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\gamma', 0);" title="gamma"><img alt="symbol" src="/images/maths/greek letters/gamma.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\kappa', 0);" title="kappa"><img alt="symbol" src="/images/maths/greek letters/kappa.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\lambda', 0);" title="lambda"><img alt="symbol" src="/images/maths/greek letters/lambda.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\mu', 0);" title="mu"><img alt="symbol" src="/images/maths/greek letters/mu.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\nu', 0);" title="nu"><img alt="symbol" src="/images/maths/greek letters/nu.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\omega', 0);" title="omega"><img alt="symbol" src="/images/maths/greek letters/omega.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\phi', 0);" title="phi"><img alt="symbol" src="/images/maths/greek letters/phi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\pi', 0);" title="pi"><img alt="symbol" src="/images/maths/greek letters/pi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\psi', 0);" title="psi"><img alt="symbol" src="/images/maths/greek letters/psi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\rho', 0);" title="rho"><img alt="symbol" src="/images/maths/greek letters/rho.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sigma', 0);" title="sigma"><img alt="symbol" src="/images/maths/greek letters/sigma.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\Sigma', 0);" title="Sigma"><img alt="symbol" src="/images/maths/greek letters/Sigma.png"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\tau', 0);" title="tau"><img alt="symbol" src="/images/maths/greek letters/tau.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\theta', 0);" title="theta"><img alt="symbol" src="/images/maths/greek letters/theta.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\upsilon', 0);" title="upsilon"><img alt="symbol" src="/images/maths/greek letters/upsilon.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\varepsilon', 0);" title="varepsilon"><img alt="symbol" src="/images/maths/greek letters/varepsilon.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\varphi', 0);" title="varphi"><img alt="symbol" src="/images/maths/greek letters/varphi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\varpi', 0);" title="varpi"><img alt="symbol" src="/images/maths/greek letters/varpi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\varrho', 0);" title="varrho"><img alt="symbol" src="/images/maths/greek letters/varrho.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\varsigma', 0);" title="varsigma"><img alt="symbol" src="/images/maths/greek letters/varsigma.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\vartheta', 0);" title="vartheta"><img alt="symbol" src="/images/maths/greek letters/vartheta.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\xi', 0);" title="xi"><img alt="symbol" src="/images/maths/greek letters/xi.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\zeta', 0);" title="zeta"><img alt="symbol" src="/images/maths/greek letters/zeta.gif"/></a>
+							<br/>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\amalg', 0);" title="amalg"><img alt="symbol" src="/images/maths/binary oprations/amalg.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\bigcirc', 0);" title="bigcirc"><img alt="symbol" src="/images/maths/binary oprations/bigcirc.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\bigtriangledown', 0);" title="bigtriangledown"><img alt="symbol" src="/images/maths/binary oprations/bigtriangledown.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\bigtriangleup', 0);" title="bigtriangleup"><img alt="symbol" src="/images/maths/binary oprations/bigtriangleup.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\bullet', 0);" title="bullet"><img alt="symbol" src="/images/maths/binary oprations/bullet.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\cap', 0);" title="cap"><img alt="symbol" src="/images/maths/binary oprations/cap.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\cdot', 0);" title="cdot"><img alt="symbol" src="/images/maths/binary oprations/cdot.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\circ', 0);" title="circ"><img alt="symbol" src="/images/maths/binary oprations/circ.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\cup', 0);" title="cup"><img alt="symbol" src="/images/maths/binary oprations/cup.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\dagger', 0);" title="dagger"><img alt="symbol" src="/images/maths/binary oprations/dagger.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\ddagger', 0);" title="ddagger"><img alt="symbol" src="/images/maths/binary oprations/ddagger.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\diamond', 0);" title="diamond"><img alt="symbol" src="/images/maths/binary oprations/diamond.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\div', 0);" title="div"><img alt="symbol" src="/images/maths/binary oprations/div.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\mp', 0);" title="mp"><img alt="symbol" src="/images/maths/binary oprations/mp.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\odot', 0);" title="odot"><img alt="symbol" src="/images/maths/binary oprations/odot.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\ominus', 0);" title="ominus"><img alt="symbol" src="/images/maths/binary oprations/ominus.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\oplus', 0);" title="oplus"><img alt="symbol" src="/images/maths/binary oprations/oplus.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\oslash', 0);" title="oslash"><img alt="symbol" src="/images/maths/binary oprations/oslash.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\otimes', 0);" title="otimes"><img alt="symbol" src="/images/maths/binary oprations/otimes.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\pm', 0);" title="pm"><img alt="symbol" src="/images/maths/binary oprations/pm.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\setminus', 0);" title="setminus"><img alt="symbol" src="/images/maths/binary oprations/setminus.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sqcap', 0);" title="sqcap"><img alt="symbol" src="/images/maths/binary oprations/sqcap.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sqcup', 0);" title="sqcup"><img alt="symbol" src="/images/maths/binary oprations/sqcup.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\times', 0);" title="times"><img alt="symbol" src="/images/maths/binary oprations/times.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\triangleleft', 0);" title="triangleleft"><img alt="symbol" src="/images/maths/binary oprations/triangleleft.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\triangleright', 0);" title="triangleright"><img alt="symbol" src="/images/maths/binary oprations/triangleright.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\uplus', 0);" title="uplus"><img alt="symbol" src="/images/maths/binary oprations/uplus.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\vee', 0);" title="vee"><img alt="symbol" src="/images/maths/binary oprations/vee.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\wedge', 0);" title="wedge"><img alt="symbol" src="/images/maths/binary oprations/wedge.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\wr', 0);" title="wr"><img alt="symbol" src="/images/maths/binary oprations/wr.gif"/></a>
+							<br/>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\approx', 0);" title="approx"><img alt="symbol" src="/images/maths/relations/approx.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\asymp', 0);" title="asymp"><img alt="symbol" src="/images/maths/relations/asymp.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\dashv', 0);" title="dashv"><img alt="symbol" src="/images/maths/relations/dashv.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\equiv', 0);" title="equiv"><img alt="symbol" src="/images/maths/relations/equiv.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\frown', 0);" title="frown"><img alt="symbol" src="/images/maths/relations/frown.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\geq', 0);" title="geq"><img alt="symbol" src="/images/maths/relations/geq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\gg', 0);" title="gg"><img alt="symbol" src="/images/maths/relations/gg.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\in', 0);" title="in"><img alt="symbol" src="/images/maths/relations/in.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\leq', 0);" title="leq"><img alt="symbol" src="/images/maths/relations/leq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\ll', 0);" title="ll"><img alt="symbol" src="/images/maths/relations/ll.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\mid', 0);" title="mid"><img alt="symbol" src="/images/maths/relations/mid.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\neq', 0);" title="neq"><img alt="symbol" src="/images/maths/relations/neq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\ni', 0);" title="ni"><img alt="symbol" src="/images/maths/relations/ni.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\parallel', 0);" title="parallel"><img alt="symbol" src="/images/maths/relations/parallel.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\perp', 0);" title="perp"><img alt="symbol" src="/images/maths/relations/perp.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\prec', 0);" title="prec"><img alt="symbol" src="/images/maths/relations/prec.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\preceq', 0);" title="preceq"><img alt="symbol" src="/images/maths/relations/preceq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\propto', 0);" title="propto"><img alt="symbol" src="/images/maths/relations/propto.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\rightleftharpoons', 0);" title="rightleftharpoons"><img alt="symbol" src="/images/maths/relations/rightleftharpoons.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sim', 0);" title="sim"><img alt="symbol" src="/images/maths/relations/sim.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\simeq', 0);" title="simeq"><img alt="symbol" src="/images/maths/relations/simeq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\smile', 0);" title="smile"><img alt="symbol" src="/images/maths/relations/smile.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sqsubseteq', 0);" title="sqsubseteq"><img alt="symbol" src="/images/maths/relations/sqsubseteq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sqsupset', 0);" title="sqsupset"><img alt="symbol" src="/images/maths/relations/sqsupset.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\sqsupseteq', 0);" title="sqsupseteq"><img alt="symbol" src="/images/maths/relations/sqsupseteq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\subset', 0);" title="subset"><img alt="symbol" src="/images/maths/relations/subset.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\subseteq', 0);" title="subseteq"><img alt="symbol" src="/images/maths/relations/subseteq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\succ', 0);" title="succ"><img alt="symbol" src="/images/maths/relations/succ.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\succeq', 0);" title="succeq"><img alt="symbol" src="/images/maths/relations/succeq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\supset', 0);" title="supset"><img alt="symbol" src="/images/maths/relations/supset.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\supseteq', 0);" title="supseteq"><img alt="symbol" src="/images/maths/relations/supseteq.gif"/></a>
+							<a onclick="ExeMath.insertSymbol('latex_source', '\\vdash', 0);" title="vdash"><img alt="symbol" src="/images/maths/relations/vdash.gif"/></a>
+							<br />
+							<a href="#" onclick="ExeMath.insertSymbol('latex_source', '\\begin{verbatim}\\end{verbatim}', 14);">{#exemath.insert_text}</a> - <a href="#" onclick="ExeMath.insertSymbol('latex_source', '\\\\\n', 0);">{#exemath.insert_newline}</a>				
+						</div>						
+					</div><!-- /.maths -->
+					<table class="properties">
+						<tr>
+							<td class="column1"><label id="latex_source_label" for="latex_source">{#exemath.latex_source}</label></td> 
+							<td colspan="2">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr> 
+										<td><textarea id="latex_source" name="latex_source" rows="8" cols="50" value="" /></textarea></td> 
+										<td id="srcbrowsercontainer"> </td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="column1"><label id="srclabel" for="src"></label></td>
+							<td colspan="2"><input name="src" type="hidden" id="src" value="" onchange="ExeMath.updateLatexImage(this.value);" /></td> 								
+						</tr>
+						<tr> 
+							<td nowrap="FALSE" class="column1"><label id="altlabel" for="alt">{#exemath.image_alt}</label></td> 
+							<td colspan="2"><input id="alt" name="alt" type="text" value="" /></td> 
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>{#exemath.preview}</legend>
+					<div id="prev"></div>
+				</fieldset>
+			</div><!-- /#general_panel -->
+			<div id="appearance_panel" class="panel">
+				<fieldset>
+					<legend>{#exemath.tab_appearance}</legend>
+					<table border="0" cellpadding="4" cellspacing="0">
+						<tr> 
+							<td class="column1"><label id="alignlabel" for="align">{#exemath.align}</label></td> 
+							<td><select id="align" name="align" onchange="ExeMath.updateStyle('align');ExeMath.changeAppearance();"> 
+									<option value="">{#not_set}</option> 
+									<option value="baseline">{#exemath.align_baseline}</option>
+									<option value="top">{#exemath.align_top}</option>
+									<option value="middle">{#exemath.align_middle}</option>
+									<option value="bottom">{#exemath.align_bottom}</option>
+									<option value="text-top">{#exemath.align_texttop}</option>
+									<option value="text-bottom">{#exemath.align_textbottom}</option>
+									<option value="left">{#exemath.align_left}</option>
+									<option value="right">{#exemath.align_right}</option>
+								</select> 
+							</td>
+							<td rowspan="6" valign="top">
+								<div class="alignPreview">
+									<img id="alignSampleImg" src="img/sample.gif" alt="{#exemath.example_img}" />
+									Lorem ipsum, Dolor sit amet, consectetuer adipiscing loreum ipsum edipiscing elit, sed diam
+									nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Loreum ipsum
+									edipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+									erat volutpat.
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="column1"><label id="widthlabel" for="width">{#exemath.dimensions}</label></td>
+							<td class="nowrap">
+								<span style="display:none" id="width_voiceLabel">{#exemath.width}</span>
+								<input name="width" type="text" id="width" value="" size="5" maxlength="5" class="size" onchange="ExeMath.changeHeight();" /> x 
+								<span style="display:none" id="height_voiceLabel">{#exemath.height}</span>
+								<input name="height" type="text" id="height" value="" size="5" maxlength="5" class="size" onchange="ExeMath.changeWidth();" /> px
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td><input id="constrain" type="checkbox" name="constrain" class="checkbox" checked="checked" /></td>
+										<td><label id="constrainlabel" for="constrain">{#exemath.constrain_proportions}</label></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="column1"><label id="vspacelabel" for="vspace">{#exemath.vspace}</label></td> 
+							<td><input name="vspace" type="text" id="vspace" value="" size="3" maxlength="3" class="number" onchange="ExeMath.updateStyle('vspace');ExeMath.changeAppearance();" onblur="ExeMath.updateStyle('vspace');ExeMath.changeAppearance();" />
+							</td>
+						</tr>
+						<tr> 
+							<td class="column1"><label id="hspacelabel" for="hspace">{#exemath.hspace}</label></td> 
+							<td><input name="hspace" type="text" id="hspace" value="" size="3" maxlength="3" class="number" onchange="ExeMath.updateStyle('hspace');ExeMath.changeAppearance();" onblur="ExeMath.updateStyle('hspace');ExeMath.changeAppearance();" /></td> 
+						</tr>
+						<tr>
+							<td class="column1"><label id="borderlabel" for="border">{#exemath.border}</label></td> 
+							<td><input id="border" name="border" type="text" value="" size="3" maxlength="3" class="number" onchange="ExeMath.updateStyle('border');ExeMath.changeAppearance();" onblur="ExeMath.updateStyle('border');ExeMath.changeAppearance();" /></td> 
+						</tr>
+						<tr>
+							<td class="column1"><label id="stylelabel" for="style">{#exemath.style}</label></td> 
+							<td colspan="2"><input id="style" name="style" type="text" value="" onchange="ExeMath.changeAppearance();" /></td> 
+						</tr>
+					</table>
+				</fieldset>
+			</div><!-- /#appearance_panel -->		
+		</div><!-- /.panel_wrapper -->
+		<div class="mceActionPanel">
+			<div style="float: left">
+				<input type="submit" id="insert" name="insert" value="{#insert}" />
+			</div>
+			<div style="float: right">
+				<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+			</div>
+		</div>
+    </form>
+</body>
+</html>
