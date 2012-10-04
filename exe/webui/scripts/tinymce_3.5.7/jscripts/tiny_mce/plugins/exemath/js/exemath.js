@@ -113,6 +113,8 @@ var orgImageWidth, orgImageHeight;
 			if (src_latex == "") {
 			   return;
 			}
+			
+			if (typeof(w.curr_edits_math_num)=='undefined') w.curr_edits_math_num = 0;
 
 			// to help unique-ify each previewed math image:
 			var preview_basename = "eXe_LaTeX_math_"+w.curr_edits_math_num
