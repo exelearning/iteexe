@@ -396,17 +396,16 @@ function addFile(blockId, title, filter) {
 function getContentForm() {
     var theForm;
 
-    if (top["authoringIFrame1"] && top["authoringIFrame1"].document)
-        theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+    theForm = document.getElementById('contentForm')
     if (!theForm) {
-        // try and find the form for the authoring page
-        theForm = document.getElementById('contentForm')
+    	if (top["authoringIFrame1"] && top["authoringIFrame1"].document)
+        	theForm = top["authoringIFrame1"].document.getElementById('contentForm')
     }
     if (!theForm) {
         if (document.getElementById('authoringIFrame') && document.getElementById('authoringIFrame').contentDocument)
             theForm = document.getElementById('authoringIFrame').contentDocument.getElementById('contentForm')
     }
-    
+
     return theForm;
 }
 // Called upon loading the page this function clears the hidden
