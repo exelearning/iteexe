@@ -154,7 +154,10 @@ class GalleryBlock(Block):
                 data = params.split('.', 2)
                 imageId = '.'.join(data[:2])
                 filename = data[2]
-                self.idevice.images[imageId].imageFilename = filename
+                #JR: Llamamos al nuevo metodo creado para reemplazar una imagen,
+                #ya que no vale con solo cambiar el nombre del fichero.
+                #self.idevice.images[imageId].imageFilename = filename
+                self.idevice.images[imageId].replace(filename)
                 # disable Undo following such an action:
                 self.idevice.undo = False
             # Move image one left
