@@ -163,6 +163,53 @@ class GalleryImage(_ShowsResources):
             self._thumbnailResource = Resource(self.parent, thumbnailPath)
         finally:
             thumbnailPath.remove()
+            
+    def replace(self, originalImagePath):
+        """
+        JR: Reemplazamos la imagen actual y su thumbnail
+        """       
+        package = self.parent.parentNode.package
+        
+        #Borramos la imagen antigua y su miniatura
+        if self._imageResource:
+            self._imageResource.delete()
+        if self.makeThumbnail and self._thumbnailResource:
+            self._thumbnailResource.delete()
+        
+        #Creamos la imagen
+        if originalImagePath is not None:
+            originalImagePath = Path(originalImagePath)
+            self._imageResource = Resource(self.parent, originalImagePath)
+        #Creamos la miniatura
+        try:
+            image = Image.open(toUnicode(self._imageResource.path))
+        except Exception, e:
+            log.error("Couldn't load image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
+            image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
+            self._msgImage(image, _(u"No Thumbnail Available. Could not load original image."))
+        self.size = image.size
+        try:
+            image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
+        except Exception, e:
+            log.error("Couldn't shrink image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
+            image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
+            self._msgImage(image, _(u"No Thumbnail Available. Could not shrink original image."))
+        image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
+        width1, height1 = image.size
+        width2, height2 = image2.size
+        left = int(round((width2 - width1) / 2.))
+        top = int(round((height2 - height1) / 2.))
+        try:
+            image2.paste(image, (left, top))
+        except IOError:
+            self._defaultThumbnail(image2)
+        tmpDir = TempDirPath()
+        thumbnailPath = Path(tmpDir/self._imageResource.path.namebase + "Thumbnail.png").unique()
+        try:
+            image2.save(thumbnailPath)
+            self._thumbnailResource = Resource(self.parent, thumbnailPath)
+        finally:
+            thumbnailPath.remove()
 
     def _defaultThumbnail(self, image):
         """
