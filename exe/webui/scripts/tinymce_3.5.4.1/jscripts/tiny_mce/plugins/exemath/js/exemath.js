@@ -114,7 +114,7 @@ var orgImageWidth, orgImageHeight;
 			   return;
 			}
 			
-			if (typeof(w.curr_edits_math_num)=='undefined') w.curr_edits_math_num = 0;
+			if (typeof(w.curr_edits_math_num)=='undefined') w.curr_edits_math_num = 0;			
 
 			// to help unique-ify each previewed math image:
 			var preview_basename = "eXe_LaTeX_math_"+w.curr_edits_math_num
@@ -125,7 +125,7 @@ var orgImageWidth, orgImageHeight;
 		   
 			w.curr_edits_math_num += 1
 
-			// netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 			// pass the file information on to the server,
 			// to generate the image into the server's "previews" directory:
 			

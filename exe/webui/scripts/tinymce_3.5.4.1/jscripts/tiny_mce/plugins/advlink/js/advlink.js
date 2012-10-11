@@ -397,7 +397,8 @@ function getAnchorListHTML(id, target) {
 				var checkN = n.split("#");
 				if (checkN[1]=="auto_top") n = n.replace("#auto_top","");
 				n = decodeURIComponent(n);
-				html += '<option value="' + myArray[i] + '">' + n + '</option>';			
+				var newOption = '<option value="' + myArray[i] + '">' + n + '</option>';
+				if (html.indexOf(newOption)==-1) html += newOption;
 			}
 		}
 	}
