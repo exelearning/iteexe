@@ -63,7 +63,7 @@ general: "Orokorra",
 "tab_advanced": "Aurreratua",
 "tab_appearance": "Itxura",
 "tab_general": "Orokorra",
-width: "Width",
-height: "Height",
-no_source_code_found : "No se ha encontrado el c\u00f3digo fuente."
+width: "Zabalera",
+height: "Altuera",
+no_source_code_found : "Ez da topatu iturburu-koderik."
 });
