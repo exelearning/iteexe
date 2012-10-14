@@ -105,13 +105,16 @@ class Manifest(object):
             out.write(self.createXML().encode('utf8'))
         out.close()
         # now depending on metadataType, <metadata> content is diferent:
+        #JR: Cambio xulDir por jsDir que es donde estaran ahora las templates.
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if self.metadataType == 'DC':
-                templateFilename = self.config.xulDir/'templates'/'imslrmdc.xml'
+                #JR: Por ahora dejo que coja la antigua plantila imslrm.xml
+                #templateFilename = self.config.jsDir/'templates'/'imslrmdc.xml'
+                templateFilename = self.config.jsDir/'templates'/'imslrm.xml'
             elif self.metadataType == 'LOMES':
-                templateFilename = self.config.xulDir/'templates'/'imslrmlomes.xml'
+                templateFilename = self.config.jsDir/'templates'/'imslrmlomes.xml'
             elif self.metadataType == 'LOM':
-                templateFilename = self.config.xulDir/'templates'/'imslrmlom.xml'    
+                templateFilename = self.config.jsDir/'templates'/'imslrmlom.xml'  
             # now the real template file:   
             template = open(templateFilename, 'rb').read()
             xml = self.createMetaData(template)
@@ -182,7 +185,8 @@ class Manifest(object):
  xmlns="http://www.imsglobal.org/xsd/imscc/imscp_v1p1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd">\n''' % manifestId
-            templateFilename = self.config.xulDir/'templates'/'cc.xml'
+            #JR: Cambio xulDir por jsDir
+            templateFilename = self.config.jsDir/'templates'/'cc.xml'
             template = open(templateFilename, 'rb').read()
             xmlStr += self.createMetaData(template)
 
@@ -416,7 +420,7 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self, config, styleDir, filename, scormType, metadataType):
+    def __init__(self, config, styleDir, filename, scormType, metadataType='DC'):
         """ 
         Initialize
         'styleDir' is the directory from which we will copy our style sheets
