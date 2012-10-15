@@ -884,11 +884,14 @@ function markClozeWord(ele, mark) {
 
 // Return the last mark applied to a word
 function getClozeMark(ele) {
-    // Return last mark applied
-    switch (ele.style.backgroundColor) {
-        case 'red':   return 1; // Wrong
-        case 'forestgreen':  return 2; // Correct
-        default:      return 0; // Not attempted
+    // JR: Esta función no funcionaba correctamente y ha sido reemplazada
+    var result = checkClozeWord(ele);
+    if (result != '') {
+        return CORRECT;
+    } else if (!ele.value) {
+        return NOT_ATTEMPTED;
+    } else {
+        return WRONG;
     }
 }
 
