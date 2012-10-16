@@ -61,7 +61,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/scripts",
            "exe/webui/schemas",
            "exe/webui/templates"],
-           excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex-darwin.cgi', 'tinymce_3.5.4.1'])
+           excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex-darwin.cgi'])
 
 g_oldBase = "exe"
 g_newBase = "."

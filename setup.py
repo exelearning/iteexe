@@ -29,7 +29,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
     for sourceDir in sourceDirs:
         sourceDir = baseSourceDir / sourceDir
         for subDir in list(sourceDir.walkdirs()) + [sourceDir]:
-            if set(('CVS', '.svn', 'tinymce_3.5.4.1')) & set(subDir.splitall()):
+            if set(('CVS', '.svn')) & set(subDir.splitall()):
                 continue
             newExtDir = baseSourceDir.relpathto(subDir)
             fileList = files.setdefault(baseDestDir / newExtDir, [])

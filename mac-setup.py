@@ -59,7 +59,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs, excludes=[]):
     for sourceDir in sourceDirs:
         sourceDir = baseSourceDir / sourceDir
         for subDir in list(sourceDir.walkdirs()) + [sourceDir]:
-            if '.svn' in subDir.splitall() or 'tinymce_3.5.4.1' in subDir.splitall():
+            if '.svn' in subDir.splitall():
                 continue
             newExtDir = baseSourceDir.relpathto(subDir)
             fileList = files.setdefault(baseDestDir / newExtDir, [])
