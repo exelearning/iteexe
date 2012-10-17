@@ -223,6 +223,12 @@ class FieldWithResources(Field):
         but before any of its subclass upgrades occur:
         """
         if hasattr(self, "content_w_resourcePaths"):
+            #pedro_pena: update params for old flowplayer
+            self.content_w_resourcePaths = self.content_w_resourcePaths.replace("autoPlay: false, loop: false, initialScale: 'scale', showLoopButton: false, showPlayListButtons: false, ", "")
+            self.content_w_resourcePaths = re.sub("playList: \[ \{ url: '(.*)' \}, \]\}\" />",
+                "'playlist': [ { 'url': '\\1', 'autoPlay': false, 'autoBuffering': true } ] }\" /><param name=\"allowfullscreen\" value=\"true\" /><param name=\"allowscriptaccess\" value=\"true\" />",
+                self.content_w_resourcePaths)
+
             # recreate the content and content_wo_resourcePaths 
             # from the persistent content_w_resourcePaths:
 
