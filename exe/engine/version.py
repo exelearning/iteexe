@@ -22,29 +22,12 @@
 """
 Version Information
 """
-import re
 
 project        = "exe"
 release        = "1.04.1"
-revision       = "$Revision$"[11:-2]
-# if it is available, get the SVN revision
-try:
-    from version_svn import revision
-except ImportError:
-    pass
+revision       = "3605intef6.3beta1"
 
-# avoid using ':' in pathnames built from revision
-revision = revision.replace(':', '-')
-
-version        = release + "." + revision
-
-# use the first numeric part of revision to make the build number
-# major.minor.local.revison
-mo = re.match('(\d+)\D+', revision)
-if mo:
-    build = release + '.' + mo.group(1)
-else:
-    build = version
+version = release + "." + revision
 
 if __name__ == '__main__':
-    print project, version, build
+    print project, version
