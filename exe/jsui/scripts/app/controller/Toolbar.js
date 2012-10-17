@@ -255,7 +255,7 @@ Ext.define('eXe.controller.Toolbar', {
           resizable: false,
           id: 'aboutwin',
           title: _("About"), 
-          html: '<iframe height="100%" width="100%" src="/docs/credits.xhtml"></iframe>'
+          html: '<iframe height="100%" width="100%" src="/about"></iframe>'
         });
         about.show();
 	},

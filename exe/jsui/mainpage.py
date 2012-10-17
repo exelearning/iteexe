@@ -27,10 +27,11 @@ import sys
 import logging
 import traceback
 import shutil
+from exe.engine.version import release, revision
 from twisted.internet            import threads, reactor
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
-from nevow                       import loaders, inevow
+from nevow                       import loaders, inevow, tags
 from nevow.livepage              import handler, IClientHandle
 from exe.jsui.idevicepane        import IdevicePane
 from exe.jsui.outlinepane        import OutlinePane
@@ -161,6 +162,9 @@ class MainPage(RenderableLivePage):
 
     def render_extjslang(self, ctx, data):
         return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + unicode(G.application.config.locale) + ".js")
+    
+    def render_version(self, ctx, data):
+        return [tags.p()["Version: %s" % release],tags.p()["Revision: %s" % revision]] 
 
     def handleTestPrintMsg(self, client, message): 
         """ 
