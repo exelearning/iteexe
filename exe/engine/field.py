@@ -263,6 +263,14 @@ class FieldWithResources(Field):
             self.intlinks_to_anchors = {}
             # { 'full_anchor_path1' -> dst_field1; etc. }
 
+        #pedro_pena: Arreglo para bug #1419
+        if hasattr(self, 'images'):
+            if type(self.images) == list:
+                images = self.images
+                from exe.engine.galleryidevice  import GalleryImages
+                self.images = GalleryImages(self)
+                while len(images) > 0:
+                    self.images.append(images.pop())
 
     # genImageId is needed for GalleryImage:    
     def genImageId(self): 
