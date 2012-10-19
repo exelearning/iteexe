@@ -120,7 +120,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
         value = safe_value
         log.debug(u"richTextArea pre-processed value to: %s" % value)
     html  = u'<textarea name="%s" ' % name
-    html_js  = '<script type="text/javascript">var tinymce_%s_anchors = [];' % name
+    html_js  = '<script type="text/javascript">if (typeof(tinymce_anchors)=="undefined") var tinymce_anchors = [];'
     html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
     html += u'class="mceEditor" '
     html += u'cols="52" rows="8">'
@@ -139,7 +139,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
             anchor_field_path = anchor_field.GetFullNodePath()
             for anchor_name in anchor_field.anchor_names:
                 full_anchor_name = anchor_field_path + "#" + anchor_name
-                html_js += u'tinymce_%s_anchors' % name
+                html_js += u'tinymce_anchors'
                 html_js += u'.push("%s");' % anchor_node_path
     # and below the user-defined anchors, also show "auto_top" anchors for ALL:
     if package is not None and package.root is not None \
@@ -151,11 +151,11 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
         if node_anchors:
             root_node = package.root
             anchor_node_path = root_node.GetFullNodePath() + "#auto_top"
-            html_js += u'tinymce_%s_anchors' % name
+            html_js += u'tinymce_anchors'
             html_js += u'.push("%s");' % anchor_node_path
             for this_node in root_node.walkDescendants():
                 anchor_node_path = this_node.GetFullNodePath() + "#auto_top"
-                html_js += u'tinymce_%s_anchors' % name
+                html_js += u'tinymce_anchors'
                 html_js += u'.push("%s");' % anchor_node_path
     # these exe_tmp_anchor tags will be removed when processed by
     # FieldWithResources' ProcessPreviewed()

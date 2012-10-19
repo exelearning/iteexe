@@ -390,7 +390,8 @@ function getAnchorListHTML(id, target) {
 	
 	// The New eXeLearning
 	var tName = tinymce.activeEditor.editorId;
-	var arrayName = "tinymce_"+tName+"_anchors";
+	//var arrayName = "tinymce_"+tName+"_anchors";
+    var arrayName = "tinymce_anchors";
 	var w = window.parent;
 	if (w) {
 		if (typeof w[arrayName]=="object") {
