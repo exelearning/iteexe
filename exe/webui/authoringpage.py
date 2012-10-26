@@ -168,16 +168,15 @@ class AuthoringPage(RenderableResource):
         
         html += u'<html xmlns="http://www.w3.org/1999/xhtml" lang="'+myPreferencesPage.getSelectedLanguage()+'">\n'
         html += u'<head>\n'
-        html += u'<style type="text/css">\n'
-        html += u'@import url(/css/exe.css);\n'
-        html += u'@import url(/style/base.css);\n'
-        html += u'@import url(/style/%s/content.css);\n' % self.package.style
-        html += u'</style>\n'
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe.css\" />"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
         if G.application.config.assumeMediaPlugins: 
             html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
         html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
         html += u'<script type="text/javascript" src="/scripts/authoring.js">'
         html += u'</script>\n'
+        html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';

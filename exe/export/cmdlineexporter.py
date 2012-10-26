@@ -108,7 +108,8 @@ with a different filename') % outputf
     def export_singlepage(self, pkg, outputf, print_flag=0):
         images_dir = self.web_dir.joinpath('images')
         scripts_dir = self.web_dir.joinpath('scripts')
+        css_dir = self.web_dir.joinpath('css')
         templates_dir = self.web_dir.joinpath('templates')
         singlePageExport = SinglePageExport(self.styles_dir, outputf, \
-                             images_dir, scripts_dir, templates_dir)
+                             images_dir, scripts_dir, css_dir, templates_dir)
         singlePageExport.export(pkg, print_flag)

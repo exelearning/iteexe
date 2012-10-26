@@ -36,7 +36,7 @@ class SinglePageExport(object):
     """
     SinglePageExport will export a package as a website of HTML pages
     """
-    def __init__(self, stylesDir, outputDir, imagesDir, scriptsDir, templatesDir):
+    def __init__(self, stylesDir, outputDir, imagesDir, scriptsDir, cssDir, templatesDir):
         """
         'stylesDir' is the directory where we can copy the stylesheets from
         'outputDir' is the directory that will be [over]written
@@ -49,6 +49,7 @@ class SinglePageExport(object):
         self.outputDir    = Path(outputDir)
         self.imagesDir    = Path(imagesDir)
         self.scriptsDir   = Path(scriptsDir)
+        self.cssDir       = Path(cssDir)
         self.templatesDir = Path(templatesDir)
 	self.page         = None
 
@@ -100,6 +101,14 @@ class SinglePageExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
+
+        # If gallery
+        imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+        imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
+        imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+        imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
+        self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), self.outputDir)
+        # /If gallery
 	
         #JR Metemos los reproductores necesarios
         self.compruebaReproductores(self.page.node)

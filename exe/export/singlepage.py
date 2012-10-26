@@ -101,10 +101,11 @@ class SinglePage(Page):
         lenguaje = G.application.config.locale
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(base.css);\n"
-        html += u"@import url(content.css);\n"
-        html += u"</style>"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+        # If gallery
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
+        # /If gallery
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u"<title>"
         html += name
         html += "</title>\n"

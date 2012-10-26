@@ -340,16 +340,17 @@ class ScormPage(Page):
         html += u"<title>"+_("eXe")+"</title>\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
-        html += u"<!-- Created using eXe: http://exelearning.org -->\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(base.css);\n"
-        html += u"@import url(content.css);\n"
-        html += u"</style>\n"
+        html += u"<!-- Created using eXe: http://exelearning.net -->\n"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+        # If gallery
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
+        # /If gallery
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         #html += u"</head>\n"
         if self.scormType == 'commoncartridge':
             html += u"</head>\n"
-            html += u"<body>"
+            html += u"<body class=\"exe-scorm\">\n"
         else:
             html += u"<script type=\"text/javascript\" "
             html += u"src=\"APIWrapper.js\"></script>\n" 
@@ -429,6 +430,7 @@ class ScormExport(object):
         self.config       = config
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
+        self.cssDir       = config.webDir/"css"
         self.templatesDir = config.webDir/"templates"
         self.schemasDir   = config.webDir/"schemas"
         self.styleDir     = Path(styleDir)
@@ -547,6 +549,14 @@ class ScormExport(object):
                 if exc.errno == errno.ENOTDIR:
                     shutil.copy(schemasDir/"lom", outputDir/"lom")
                 else: raise
+
+        # If gallery
+        imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+        imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
+        imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+        imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
+        self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+        # /If gallery
             
         # copy players for media idevices.                
         hasFlowplayer     = False

@@ -48,6 +48,7 @@ class WebsiteExport(object):
         self.config       = config
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
+        self.cssDir       = config.webDir/"css"
         self.templatesDir = config.webDir/"templates"
         self.stylesDir    = Path(styleDir)
         self.filename     = Path(filename)
@@ -158,6 +159,14 @@ class WebsiteExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                   outputDir)
+
+        # If gallery
+        imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+        imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
+        imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+        imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
+        self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+        # /If gallery
         
         # copy players for media idevices.                
         hasFlowplayer     = False
