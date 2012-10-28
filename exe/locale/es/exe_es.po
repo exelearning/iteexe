@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-26 10:49+0200\n"
-"PO-Revision-Date: 2012-06-26 17:25+0200\n"
+"PO-Revision-Date: 2012-10-28 20:20+0100\n"
 "Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Language: es\n"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: /usr/lib/python2.7/optparse.py:1278
 msgid "%prog [options]"
-msgstr ""
+msgstr "%prog [opciones]"
 
 #: exe/engine/path.py:639
 #, python-format
@@ -74,21 +74,23 @@ msgid ""
 "%s\n"
 "%s unchanged"
 msgstr ""
+"%s\n"
+"%s sin cambios"
 
 #: /usr/lib/python2.7/optparse.py:1509
 #, python-format
 msgid "%s option does not take a value"
-msgstr ""
+msgstr "la opción %s no admite valores"
 
 #: /usr/lib/python2.7/optparse.py:1500 /usr/lib/python2.7/optparse.py:1539
 #, python-format
 msgid "%s option requires %d arguments"
-msgstr ""
+msgstr "la opción %s requiere %d argumentos"
 
 #: /usr/lib/python2.7/optparse.py:1498 /usr/lib/python2.7/optparse.py:1537
 #, python-format
 msgid "%s option requires an argument"
-msgstr ""
+msgstr "la opción %s requiere un argumento"
 
 #: exe/webui/block.py:246
 msgid "---Move To---"
@@ -1149,7 +1151,7 @@ msgstr "Error al importar XLIFF: %s"
 
 #: exe/webui/wikipediablock.py:115
 msgid "Euskara Wikipedia Article"
-msgstr ""
+msgstr "Artículo de la wikipedia en euskera"
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
@@ -2297,7 +2299,7 @@ msgstr "Poco énfasis"
 
 #: exe/engine/appletidevice.py:417
 msgid "Sorry, this URL is unreachable"
-msgstr ""
+msgstr "Error, no se ha podido abrir la URL"
 
 #: exe/application.py:286 exe/xului/mainpage.py:1187
 msgid "Sorry, wrong file format"
@@ -2737,7 +2739,7 @@ msgstr "Cargar"
 
 #: /usr/lib/python2.7/optparse.py:393
 msgid "Usage"
-msgstr ""
+msgstr "Uso"
 
 #: exe/exe_do:64
 msgid ""
@@ -2754,7 +2756,7 @@ msgstr ""
 #: /usr/lib/python2.7/optparse.py:374
 #, python-format
 msgid "Usage: %s\n"
-msgstr ""
+msgstr "Uso: %s\n"
 
 #: exe/engine/idevicestore.py:368 exe/engine/idevicestore.py:476
 msgid ""
@@ -2868,7 +2870,7 @@ msgstr "Su nuevo iDevice aparecerá en el panel del iDevice con este título. Es
 #: /usr/lib/python2.7/optparse.py:151
 #, python-format
 msgid "ambiguous option: %s (%s?)"
-msgstr ""
+msgstr "opción ambigua: %s (¿%s?)"
 
 #: exe/webui/wikipediablock.py:250
 msgid "article "
@@ -2880,7 +2882,7 @@ msgstr "en blanco para el tamaño original"
 
 #: /usr/lib/python2.7/optparse.py:421
 msgid "complex"
-msgstr ""
+msgstr "complejo"
 
 #: exe/export/imsexport.py:210 exe/export/scormexport.py:299
 msgid "eXe"
@@ -2898,7 +2900,7 @@ msgstr "Proyecto eXe"
 
 #: exe/webui/appletblock.py:96
 msgid "eXe can not access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
-msgstr ""
+msgstr "eXe no puede abrir ninguna escena en el sitio web indicado. De todas formas usted puede acceder a la escena deseada desde su navegador habitual, haga click con el botón derecho del ratón sobre ella y en configuración -> código encontrará el código asociado. Copie y péguelo directamente en un iDevice applet de java del tipo Otro."
 
 #: exe/exe_do:175
 #, python-format
@@ -2925,7 +2927,7 @@ msgstr "El archivo %s no tiene nodo padre"
 
 #: /usr/lib/python2.7/optparse.py:420
 msgid "floating-point"
-msgstr ""
+msgstr "de coma flotante"
 
 #: exe/engine/wikipediaidevice.py:312
 msgid "http://en.wikipedia.org/"
@@ -2947,11 +2949,11 @@ msgstr "Icono de iDevice"
 
 #: /usr/lib/python2.7/optparse.py:418
 msgid "integer"
-msgstr ""
+msgstr "entero"
 
 #: /usr/lib/python2.7/optparse.py:419
 msgid "long integer"
-msgstr ""
+msgstr "entero largo"
 
 #: exe/webui/element.py:1773
 msgid "newline"
@@ -2960,17 +2962,17 @@ msgstr "Nueva línea"
 #: /usr/lib/python2.7/optparse.py:140
 #, python-format
 msgid "no such option: %s"
-msgstr ""
+msgstr "no existe la opción %s"
 
 #: /usr/lib/python2.7/optparse.py:429
 #, python-format
 msgid "option %s: invalid %s value: %r"
-msgstr ""
+msgstr "opción %s: valor de %s inválido: %r"
 
 #: /usr/lib/python2.7/optparse.py:437
 #, python-format
 msgid "option %s: invalid choice: %r (choose from %s)"
-msgstr ""
+msgstr "opción %s: elección inválida: %r (elegir a partir de %s)"
 
 #: exe/engine/resource.py:579
 msgid "renamed a Resource for an Applet Idevice, and it should not have even made it this far!"
@@ -2978,7 +2980,7 @@ msgstr "¡renombró un recurso de un iDevice Applet y no debería haberlo hecho 
 
 #: /usr/lib/python2.7/optparse.py:1255
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "mostrar el número de versión del programa y salir"
 
 #: /usr/lib/python2.7/optparse.py:1250
 msgid "show this help message and exit"
