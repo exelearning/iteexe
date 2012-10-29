@@ -64,25 +64,14 @@ class GalleryBlock(Block):
         and return a list of strings that will be later joined with '\n' chars.
         """
         width = self.idevice.images[0].thumbnailSize[0]
-        html = [u'<table width="100%" border="0" cellpadding="3" '
-                 'cellspacing="0" style="margin:4px; border-style:groove;">',
-                u'  <tbody>']
+        html = [u'<ul class="exeImageGallery autoclear" id="exeImageGallery%s">' % self.idevice.id]
         i = 0
         for image in self.idevice.images:
             i += 1
-            if i % self.thumbnailsPerRow == 1:
-                html += ['    <tr>']
-            html += [u'      <td width="%spx">' % (width+6)]
-            html += perCell(image, i-1)
-            html += [u'      </td>']
-            if i % self.thumbnailsPerRow == 0:
-                html += ['    </tr>']
-        if 0 < i % self.thumbnailsPerRow :
-            html += ['<td></td>'] * (self.thumbnailsPerRow -
-                    (i % self.thumbnailsPerRow))
-            html.append('</tr>')
-        html += [u'  </tbody>',
-                 u'</table>']
+            html += ['<li>']
+            html += perCell(image, i-1, self.idevice.id)
+            html += ['</li>']
+        html += [u'</ul><script type="text/javascript">exe_idevices.imageGallery.init(\'exeImageGallery%s\')</script>' % self.idevice.id]
         return html
 
     # Public Methods
@@ -154,9 +143,6 @@ class GalleryBlock(Block):
                 data = params.split('.', 2)
                 imageId = '.'.join(data[:2])
                 filename = data[2]
-                #JR: Llamamos al nuevo metodo creado para reemplazar una imagen,
-                #ya que no vale con solo cambiar el nombre del fichero.
-                #self.idevice.images[imageId].imageFilename = filename
                 self.idevice.images[imageId].replace(filename)
                 # disable Undo following such an action:
                 self.idevice.undo = False
@@ -221,7 +207,7 @@ class GalleryBlock(Block):
                      _(u'No Images Loaded'),
                      u'</div>']
         else:
-            def genCell(image, i):
+            def genCell(image, i, id):
                 """Generates a single cell of our table"""
                 def submitLink(method):
                     """Makes submitLink javascript code"""
@@ -311,37 +297,27 @@ class GalleryBlock(Block):
         """
         cls = self.idevice.__class__
         if len(self.idevice.images) == 0:
-            html = [u'   <div style="align:center center">',
+            html = [u'<p class="exeImageGallery no-images">',
                     _(u'No Images Loaded'),
-                    u'</div>']
+                    u'</p>']
         else:
-            def genCell(image, i):
+            def genCell(image, i, id):
                 """
                 Generates a single table cell
                 """
                 width, height = image.size
-                title = _(u'Show %s Image') % image.caption
-                return [u'        <a title="%s" ' % title,
-                        u'         href="#"',
-                        u'         onclick="window.open(',
-                        u"'%s?i=%d', 'galleryImage', " % (self.idevice.htmlSrc, i) +
-                        u"'menubar=no,alwaysRaised=yes,dependent=yes," +
-                        u"width=640," +
-                        u"height=480,scrollbars=yes," +
-                        u"screenX='+((screen.width/2)-(640/2))+" +
-                        u"',screenY='+((screen.height/2)-(480/2))" +
-                        u');"',
-                        u'           style="cursor: pointer; align:center top;">',
-                        u'          <img class="gallery" alt="%s"' % title,
-                        u'               src="%s"/>' % urllib.quote(image.thumbnailSrc),
-                        u'        </a>',
-                        u'         <div class="gallery_image" value="%s"></div>'\
-                                % urllib.quote(image.imageSrc),
-                        u'        <div class="caption" style="align:center;width=100%">',
-                        u'          %s' % (image.caption or '&nbsp;'),
-                        u'        </div>']
+                title = image.caption
+                return ['<a title="%s"' % title,
+                        ' href="%s"' % urllib.quote(image.imageSrc),
+                        ' rel="lightbox[exeImageGallery%s]">' % id +
+                        '<img alt="%s"' % title,
+                        ' width="128"'
+                        ' height="128"'
+                        ' src="%s" />' % urllib.quote(image.thumbnailSrc),
+						'<span class="tit">%s</span>' % title,
+                        '</a>']			
             html = self._generateTable(genCell)
-        return u'\n    '.join(html)
+        return u''.join(html)
 
     def renderPreview(self, style):
         """
@@ -368,12 +344,6 @@ class GalleryBlock(Block):
                      u'<h2 class="iDeviceTitle">',      
                      self.idevice.title,
                      '</h2>']
-            popup = ""
-            if self.idevice._htmlResource is not None:
-                popup = self.idevice.htmlSrc
-            html += [u'<div class="gallery_popup" value="%s"></div>' \
-                    % popup]
-
             html += [self.renderViewContent()]
             html += [u'</div>']
             return u'\n    '.join(html)

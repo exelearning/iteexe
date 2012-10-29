@@ -1831,3 +1831,26 @@ var exe_tinymce = {
 	}//chooseImage
 	
 }
+
+var exe_idevices = {
+    imageGallery : {
+        init : function(id) {
+            var e = document.getElementById(id);
+            var lis = e.getElementsByTagName("LI");
+            var i = lis.length;
+            while (i--) {
+                var oH = lis[i].innerHTML;
+                nH = oH.replace('rel="lightbox[','class="lytebox" data-lyte-options="group:');
+                nH = nH.replace(']','');
+                lis[i].innerHTML = nH;
+            }
+            if (typeof(imageGalleryScriptLoaded)=='undefined') {
+                var script = document.createElement("script")
+                script.type = "text/javascript";
+                script.src = "exe_lightbox.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+                imageGalleryScriptLoaded=true;
+            }
+        }
+    }
+}

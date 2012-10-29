@@ -65,11 +65,13 @@ class WebsitePage(Page):
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<head>\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(base.css);\n"
-        html += u"@import url(content.css);\n"
-        html += u"@import url(nav.css);</style>\n"
-        html += u"<title> " 
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+        # If gallery
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
+        # /If gallery
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"     
+        html += u"<title>"
         html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
         html += u" </title>\n" 
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"

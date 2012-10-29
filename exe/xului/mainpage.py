@@ -939,6 +939,7 @@ class MainPage(RenderableLivePage):
         try:
             imagesDir    = webDir.joinpath('images')
             scriptsDir   = webDir.joinpath('scripts')
+            cssDir   = webDir.joinpath('css')
             templatesDir = webDir.joinpath('templates')
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
@@ -962,7 +963,7 @@ class MainPage(RenderableLivePage):
                 return 
             # Now do the export
             singlePageExport = SinglePageExport(stylesDir, filename, \
-                                         imagesDir, scriptsDir, templatesDir)
+                                         imagesDir, scriptsDir, cssDir, templatesDir)
             singlePageExport.export(self.package, printFlag)
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s' % str(e)))

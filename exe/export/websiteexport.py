@@ -48,6 +48,7 @@ class WebsiteExport(object):
         self.config       = config
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
+        self.cssDir       = config.webDir/"css"
         self.templatesDir = config.webDir/"templates"
         self.stylesDir    = Path(styleDir)
         self.filename     = Path(filename)
@@ -160,18 +161,30 @@ class WebsiteExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                   outputDir)
+
+        # If gallery
+        # JR: comento esto y lo pongo mas abajo que es cuando comprueba los iDevices
+        #imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+        #imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
+        #imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+        #imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
+        #self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+        # /If gallery
         
         # copy players for media idevices.                
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
+        hasGallery        = False
         isBreak           = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer):
+                # If gallery
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
+                # /If gallery
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -183,6 +196,9 @@ class WebsiteExport(object):
                 if not hasXspfplayer:
                     if 'xspf_player.swf' in idevice.systemResources:
                         hasXspfplayer = True
+                if not hasGallery:
+                    if 'GalleryIdevice' == idevice.klass:
+                        hasGallery = True
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -196,6 +212,14 @@ class WebsiteExport(object):
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
+        # If gallery
+        if hasGallery:
+            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+            imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
+            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+            imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+        # /If gallery
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence
