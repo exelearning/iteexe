@@ -157,6 +157,7 @@ class AuthoringPage(RenderableResource):
             html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
         #JR: anado una variable con el estilo
         estilo = u'/style/%s/content.css' % self.package.style	
+        html += u"<script type=\"text/javascript\">var exe_style = '%s';</script>\n" % estilo
         html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
