@@ -271,6 +271,14 @@ class FieldWithResources(Field):
                 self.images = GalleryImages(self)
                 while len(images) > 0:
                     self.images.append(images.pop())
+        
+        #pedro_pena: Arreglo para bug #1456. En caso de apuntar a un nodo zombie se reestablece parentNode
+        if hasattr(self, 'parentNode'):
+            zombie_preface = u"ZOMBIE("
+            if hasattr(self.parentNode, '_title') and self.parentNode._title[0:len(zombie_preface)] == zombie_preface:
+                self.parentNode = None
+                if hasattr(self.idevice, 'parentNode'): 
+                    self.parentNode = self.idevice.parentNode
 
     # genImageId is needed for GalleryImage:    
     def genImageId(self): 
