@@ -1,114 +1,114 @@
-/*  Copyright University of Auckland 2004
-	Created by Brent Simpson, brent.simpson@auckland.ac.nz
-	Centre for Flexible and Distance Learning
-*/
-
-#header {
-    color: #A1B386;
-    background-color: transparent;
-    height: 100px;
-    padding-left: 20px;
-    font-size: 2.2em;
-    font-weight: bold;
-}
-
-
-#navcontainer {
-	width: 169px;
-	float: left;
-	margin-top: 10px;
-	}
-				
-#navcontainer ul {
-	margin-left: 0px;
-	padding-left: 0;
-	margin-top: 0;
-	list-style-type: none;
-	font-family: Arial, Helvetica, sans-serif;
-	}
-
-#navcontainer a {
-	display: block;
-	padding: 3px 0 3px 6px;
-	background-color: #FFF;
-	border-bottom: 1px solid #CCC;
-	width: 163px;
-	}
-
-#navcontainer a:link, #navlist a:visited {
-	color: #96852C;
-	text-decoration: none;
-	}
-
-#navcontainer a:hover {
-	color: #51778A;
-	background-color: #FFEDBF;
-	}
-
-/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
- 
-* html #navcontainer {
-  margin-right: 10px;
-  }
- 
-* html p {
-  height: 1%;
-  margin-left: 0;
-  }
- 
-/* End hide from IE5/mac */
-
-div #active {
-	padding: 3px 0 3px 6px;
-	width: 163px;
-	background-color: #A1B386;
-	color: #EDEFF0;
-	border-bottom: 1px solid #CCC;
-	}
-
-div #subnav {
-	border-bottom: 1px solid #CCC;
-	}
-	
-#subnav a {
-	display: block;
-	border: 0 !important;
-	width: 153px;
-	margin-left: 10px;
-	padding: 3px 0 3px 6px;
-	font-size: x-small;
-	border-bottom: 1px solid #FFF;
-	}
-
-#subnav a:hover {
-	color: #51778A;
-	background-color: #FFEDBF;
-	}	
-	
-#subnav #active {
-	margin-left: 10px;
-	background-color: #A1B386;
-	width: 153px;
-	color: #EDEFF0;
-	font-size: x-small;
-	border-bottom: 1px solid #FFF;
-	}	
-	
-	
 /* MAIN CONTENT STYLES */
 
-#container {
-	border-top: 1px solid #CCC;
-	}
+#content {
+
+}
 
 #main {
-	padding: 18px;
-	margin: 0px 10px 10px 180px;
-	line-height: 140%;
-	}
-	
+	margin-left: 260px;
+	margin-top: 0px;
+	margin-right: 20px;
+	padding-bottom: 20px;
+	position: absolute;
+	text-align:left;
+}
+
+/* ITE elements */
+#siteNav {
+	width: 250px;
+	float: left;
+	margin-top: 0px;
+	margin-left:10px;
+	padding-top: 20px;
+	text-align:left;
+	position:absolute;
+	font-family: Helvetica, sans-serif;
+}
+
+#siteNav ul,#siteNav li{
+	margin:2px 0 2px 0;
+	padding:0;
+	list-style:none;
+}
+
+#siteNav a {
+	display: block;
+	padding: 4px 0 4px 18px;
+	border-bottom: 1px solid #ffffff;
+	width: 195px;
+	border-top: 1px solid #ffffff;
+	color: #044085;
+	background-color: #DEEDFA;
+	text-decoration: none;
+	border-radius: 1em;
+    	-moz-border-radius: 1em;
+    	-webkit-border-radius: 1em;
+}
+
+#siteNav a:hover {
+	color: #044085;
+	background-color:#C3DCF7;
+	font-weight: bold;
+}
+
+#siteNav #active .active {
+	background-color: #C3DCF7;
+	color: #044085;
+	border-bottom: 1px solid #fff;
+	background-image:url(active_bg.gif);
+	background-position: -2px 1px;
+	background-repeat:no-repeat;
+	font-weight: bold;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #siteNav {
+	margin-right: 10px;
+}
+
+#siteNav ul ul a{
+	display: block;
+	border: 0 !important;
+	width: 187px;
+	margin-left: 10px;
+	padding: 4px 0 4px 16px;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
 .pagination{
 	text-align:right;
+}
+
+.pagination .prev{
+	color: #044085;
+	background-color: #DEEDFA;
+	padding: 4px 4px 4px 18px;
+	font-weight: bold;
+	border-radius: 1em 0 0 1em;
+    	-moz-border-radius: 1em 0 0 1em;
+    	-webkit-border-radius: 1em 0 0 1em;
+}
+.pagination .prev:hover{
+	color: #044085;
+	background-color:#C3DCF7;
+	text-decoration: none;
+}
+.pagination .next{
+	color: #044085;
+	background-color: #DEEDFA;
+	padding: 4px 18px 4px 4px;
+	font-weight: bold;
+	border-radius: 0 1em 1em 0;
+    	-moz-border-radius: 0 1em 1em 0;
+    	-webkit-border-radius: 0 1em 1em 0;
+}
+.pagination .next:hover{
+	color: #044085;
+	background-color:#C3DCF7;
+	text-decoration: none;
 }
 
 /* Invisible content (visible for screen reader users) */

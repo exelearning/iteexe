@@ -21,12 +21,12 @@ p {
     margin: 0em 0em 1em 0em;
 }
 
-div#header {
+#header {
     display: none;
 }
 
-div#nodeDecoration {
-    font-size: 2em;
+#nodeDecoration {
+/*    font-size: 2em;*/
     padding: 0.1em;
     border-bottom: 0.1em solid #0087FF;
     text-align: left;
@@ -36,52 +36,31 @@ div#nodeDecoration {
     clear: both;
 }
 
-h1.nodeTitle {
+h1 {
     font-size: 2em;
-    padding: 0.1em;
-    border-bottom: 0.1em solid #0087FF;
-    text-align: left;
-    margin: 0.5em 0em 0.5em 0em;
-    color: #0087FF;
-    font-weight: bolder;
-    clear: both;
 }
 
-h2.nodeTitle {
+h2 {
     font-size: 1.8em;
-    padding: 0.1em;
-    border-bottom: 0.1em solid #0087FF;
-    text-align: left;
-    margin: 0.5em 0em 0.5em 0em;
-    color: #0087FF;
-    font-weight: bolder;
-    clear: both;
 }
 
-h3.nodeTitle {
+h3 {
     font-size: 1.6em;
-    padding: 0.1em;
-    border-bottom: 0.1em solid #0087FF;
-    text-align: left;
-    margin: 0.5em 0em 0.5em 0em;
-    color: #0087FF;
-    font-weight: bolder;
-    clear: both;
 }
 
-h4.nodeTitle {
+h4 {
     font-size: 1.4em;
-    padding: 0.1em;
-    border-bottom: 0.1em solid #0087FF;
-    text-align: left;
-    margin: 0.5em 0em 0.5em 0em;
-    color: #0087FF;
-    font-weight: bolder;
-    clear: both;
 }
 
-h5.nodeTitle {
+h5 {
     font-size: 1.3em;
+}
+
+h6 {
+    font-size: 1.2em;
+}
+
+.nodeTitle {
     padding: 0.1em;
     border-bottom: 0.1em solid #0087FF;
     text-align: left;
@@ -91,8 +70,7 @@ h5.nodeTitle {
     clear: both;
 }
 
-h6.nodeTitle {
-    font-size: 1.2em;
+#nodeTitle {
     padding: 0.1em;
     border-bottom: 0.1em solid #0087FF;
     text-align: left;
@@ -560,13 +538,6 @@ div.block{
     clear:both;
 }
 
-/*Correccion*/
-.CorreccionfpdIdevice {
-    color: #FF0000;
-}
-.iDevice_correccionfpd {
-    color: #FF0000;
-}
 
 /* Estilo para las retroalimentaciones */
 .feedback
@@ -582,7 +553,7 @@ div.block{
     font-family: helvetica;
     font-size: 1em;	
 }
-
+	
 /*Listas*/
 .iDevice li {
     list-style-position: outside;
