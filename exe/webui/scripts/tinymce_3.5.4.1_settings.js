@@ -14,7 +14,11 @@ tinyMCE.init({
 	theme : "advanced",
 	convert_urls : false,
 	language : getTinyMCELang(document.getElementsByTagName("HTML")[0].lang),
-	content_css : "/css/extra.css",
+	// The New eXeLearning
+	//JR: Anadimos el estilo seleccionado en eXe
+	//content_css : "/css/extra.css", 
+	content_css : "/css/extra.css," + exe_style,
+	// The New eXeLearning
 	plugins : "autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,visualblocks,pastecode,inlinepopups",
 	extended_valid_elements : "img[*]", //Required for the exemath plugin (it uses this attribute: exe_math_latex)
 
@@ -30,6 +34,6 @@ tinyMCE.init({
 	// Image & media
 	file_browser_callback : "exe_tinymce.chooseImage",
 	media_types: "flash=swf,mp3,mp4,flv;qt=mov,qt,mpg,mpeg;wmp=avi,wmv,wm,asf;rmp=rm,ra,ram",		
-	flash_video_player_url: "../templates/flowPlayer.swf"	
+	flash_video_player_url: "../templates/flowPlayer.swf"
 
 });
