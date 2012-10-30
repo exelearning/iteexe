@@ -6226,8 +6226,19 @@ tinymce.dom.TreeWalker = function(start_node, root_node) {
 				// Ignore
 			}
 
-			if (cl.length > 0)
+			// The New eXeLearning
+			// JR: Ordenamos la lista de clases antes de devolverla
+			//Esto es lo que había
+			//if (cl.length > 0)
+			//	t.classes = cl;
+			//Y lo cambio por lo que queda descomentado.
+			//Para que funcione hay que volver a generar el fichero tiny_mce.js con la herramienta
+			//yuicompressor: java -jar yuicompressor.jar tiny_mce_src.js > tiny_mce.js
+			if (cl.length > 0){
+				cl = cl.sort( function(x,y) {return x["class"].localeCompare(y["class"]); } );
 				t.classes = cl;
+			}
+			// The New eXeLearning
 
 			return cl;
 		},
