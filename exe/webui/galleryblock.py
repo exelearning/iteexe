@@ -64,7 +64,7 @@ class GalleryBlock(Block):
         and return a list of strings that will be later joined with '\n' chars.
         """
         width = self.idevice.images[0].thumbnailSize[0]
-        html = [u'<ul class="exeImageGallery autoclear" id="exeImageGallery%s">' % self.idevice.id]
+        html = [u'<ul class="exeImageGallery" id="exeImageGallery%s">' % self.idevice.id]
         i = 0
         for image in self.idevice.images:
             i += 1

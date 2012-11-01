@@ -72,11 +72,11 @@ img.submit {
 }
 
 /* exe_lightbox.css */
-.autoclear:after {content:".";display:block;height:0;clear:both;visibility:hidden}
-.autoclear {display: block}
+.exeImageGallery:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+.exeImageGallery {display: block}
 /* Hides from IE-mac \*/
-* html .autoclear {height: 1%}
-.autoclear {display: block}
+* html .exeImageGallery {height: 1%}
+.exeImageGallery {display: block}
 /* End hide from IE-mac */
 
 .exeImageGallery{margin:1em 0 0 15px;padding:0}
@@ -84,23 +84,20 @@ img.submit {
 .exeImageGallery a img{border:none}
 .exeImageGallery .tit{display:none}
 
-#lbOverlay{position:fixed; top:0; left:0; z-index:99997; width:100%; height:100%}
-#lbOverlay.grey{background-color:#000}
+#lbOverlay{position:fixed; top:0; left:0; z-index:99997; width:100%; height:100%; background-color:#000}
+body.exe-ims #lbOverlay,body.exe-scorm #lbOverlay{background-color:#fff}
 
 #lbMain{position:absolute; left:0; width:100%; z-index:99998; text-align:center; line-height:0; display:-moz-inline-stack}
 #lbMain a img{border:1px solid #fff}
 
-#lbOuterContainer{position:relative; background-color:#fff; width:200px; height:200px; margin:0 auto}
-#lbOuterContainer.grey{border:1px solid #888}
+#lbOuterContainer{position:relative; background-color:#fff; width:200px; height:200px; margin:0 auto; border:1px solid #888}
+body.exe-ims #lbOuterContainer,body.exe-scorm #lbOuterContainer{border-color:#ccc}
 
 #lbTopContainer, #lbBottomContainer{background-color:#fff; width:100%; line-height:1.4em; font-size:0.75em; overflow:hidden; margin:0 auto; padding:0; position:relative; z-index:14; display:none}
 #lbTopContainer{overflow:hidden; margin-top:5px}
-#lbTopContainer.grey, 
-#lbBottomContainer.grey{background-color:#fff}
 
-#lbImage, #lbIframe{border:none}
-#lbImage.grey, #lbIframe.grey{border:1px solid #fff}
-#lbImageContainer, #lbIframeContainer{padding:10px; z-index:12}
+#lbImage{border:1px solid #fff}
+#lbImageContainer{padding:10px; z-index:12}
 #lbLoading{height:100%; width:100%; margin-top:-10px; background:url(../images/exeGallery_loading.gif) center no-repeat}
 
 #lbHoverNav{position:absolute; top:0; left:0; height:100%; width:100%; z-index:10}
@@ -108,15 +105,15 @@ img.submit {
 #lbHoverNav a{outline:none}
 
 #lbPrev, #lbPrevTop, #lbNext, #lbNextTop, #lbClose, #lbCloseTop, #lbPrint, #lbPrintTop{width:26px; height:28px; float:right; margin:0 0 1px 8px; border:none !important;background-image:url(../images/exeGallery_actions.png);background-repeat:no-repeat;background-position:0 0}
-#lbPrev.greyOff, #lbPrevTop.greyOff{background-position:0 -28px}
-#lbNext.grey, #lbNextTop.grey{background-position:-26px 0}
-#lbNext.greyOff, #lbNextTop.greyOff{background-position:-26px -28px}
-#lbClose.grey, #lbCloseTop.grey{background-position:-52px 0}
-#lbPrint.grey, #lbPrintTop.grey{background-position:-52px -28px}
+#lbPrev.exeOff, #lbPrevTop.exeOff{background-position:0 -28px}
+#lbNext, #lbNextTop{background-position:-26px 0}
+#lbNext.exeOff, #lbNextTop.exeOff{background-position:-26px -28px}
+#lbClose, #lbCloseTop{background-position:-52px 0}
+#lbPrint, #lbPrintTop{background-position:-52px -28px}
 
 #lbTopData, #lbBottomData{float:left; text-align:left; padding-left:10px}
 #lbBottomData{padding-bottom:0.5em}
-#lbBottomData.grey, #lbTopData.grey{color:#333}
+#lbBottomData, #lbTopData{color:#333}
 
 #lbTopNav, #lbBottomNav{float:right; text-align:right; padding-right:10px}
 #lbNumTop, #lbNumBottom{font-style:italic}
