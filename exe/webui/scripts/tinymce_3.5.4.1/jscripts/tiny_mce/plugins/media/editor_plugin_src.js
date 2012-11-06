@@ -100,6 +100,11 @@ function parse_media_html_attributes(c) {
 
 		}
 		
+		// Required for flv:
+		var str3 = '"http://'+window.location.host+'/templates/flowPlayer.swf';
+		var re3 = new RegExp(str3, 'g');
+		new_c= new_c.replace(re3, '"../templates/flowPlayer.swf');		
+		
 		// Required for mp3:
 		// new_c = new_c.replace( "http://127.0.0.1:51235/templates/xspf_player.swf", "../templates/xspf_player.swf" ); 
 		var str1 = '"http://'+window.location.host+'/templates/xspf_player.swf';
