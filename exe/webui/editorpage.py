@@ -107,7 +107,7 @@ class EditorPage(RenderableResource):
             
 
         if "delete" in request.args:
-            self.ideviceStore.delGenericIdevice(self.editorPane.idevice)
+            self.ideviceStore.__delGenericIdevice(self.editorPane.idevice)
             self.ideviceStore.save()
             self.__createNewIdevice(request) 
             
@@ -337,7 +337,7 @@ class EditorPage(RenderableResource):
                 for idevice in lista_idevices:
                     if (idevice.title == i):
                         if (idevice in generic):
-                            self.ideviceStore.delGenericIdevice(idevice)
+                            self.ideviceStore.__delGenericIdevice(idevice)
                         else:
                             self.ideviceStore.delExtendedIdevice(idevice)"""
         self.ideviceStore.save()

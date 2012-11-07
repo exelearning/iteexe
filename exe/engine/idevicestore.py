@@ -85,30 +85,36 @@ class IdeviceStore:
         return self.factoryiDevices
 
     
-    def delGenericIdevice(self, idevice):
+    def __delGenericIdevice(self, idevice):
         """
         Delete a generic idevice from idevicestore.
         """
         idevice_remove = None
+        exist = False
         for i in self.generic:
             if idevice.title == i.title:
                 idevice_remove = i
-        if not (idevice_remove is None):
+                exist = True
+                break
+        if exist:
             self.generic.remove(idevice_remove)
             #JR: Comunicamos a los listener que este iDevice ya no esta disponible
             for listener in self.listeners:
                 listener.delIdevice(idevice_remove)
 
     
-    def delExtendedIdevice(self, idevice):
+    def __delExtendedIdevice(self, idevice):
         """
         Delete an extended idevice from idevicestore.
         """
         idevice_remove = None
+        exist = False
         for i in self.extended:
             if idevice.title == i.title:
                 idevice_remove = i
-        if not (idevice_remove is None):
+                exist = True
+                break
+        if exist:
             self.extended.remove(idevice_remove)
             #JR: Comunicamos a los listener que este iDevice ya no esta disponible
             for listener in self.listeners:
@@ -118,18 +124,26 @@ class IdeviceStore:
         """
         JR: Borra un idevice
         """
-        idevice_remove = None
-        for i in self.extended:
-            if i.title == idevice.title:
-                idevice_remove = i
-        if not (idevice_remove is None):
-            self.delExtendedIdevice(idevice_remove)
-        idevice_remove = None
-        for i in self.generic:
-            if i.title == idevice.title:
-                idevice_remove = i
-        if not (idevice_remove is None):
-            self.delGenericIdevice(idevice)
+        if not self.isGeneric(idevice):
+            idevice_remove = None
+            exist = False
+            for i in self.extended:
+                if i.title == idevice.title:
+                    idevice_remove = i
+                    exist = True
+                    break
+            if exist:
+                self.__delExtendedIdevice(idevice_remove)
+        else:
+            idevice_remove = None
+            exist = False
+            for i in self.generic:
+                if i.title == idevice.title:
+                    idevice_remove = i
+                    exist = True
+                    break
+            if exist:
+                self.__delGenericIdevice(idevice_remove)
     
     def register(self, listener):
         """
@@ -177,8 +191,53 @@ class IdeviceStore:
         self.__loadGeneric()
         #JR: comunicamos a los listener los iDevices extendidos
         for listener in self.listeners:
-            for idevice in self.extended:
+            for idevice in self.getIdevices():
                 listener.addIdevice(idevice)
+    
+    def __getIdevicesFPD(self):
+        """
+        JR: Esta funcion devuelve los iDevices de FPD
+        """
+        from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
+        from exe.engine.reflectionfpdmodifidevice import ReflectionfpdmodifIdevice
+        from exe.engine.clozefpdidevice import ClozefpdIdevice
+        from exe.engine.clozelangfpdidevice import ClozelangfpdIdevice
+        from exe.engine.parasabermasfpdidevice import ParasabermasfpdIdevice
+        from exe.engine.debesconocerfpdidevice import DebesconocerfpdIdevice
+        from exe.engine.citasparapensarfpdidevice import CitasparapensarfpdIdevice
+        from exe.engine.recomendacionfpdidevice import RecomendacionfpdIdevice
+        from exe.engine.verdaderofalsofpdidevice import VerdaderofalsofpdIdevice
+        from exe.engine.seleccionmultiplefpdidevice import SeleccionmultiplefpdIdevice
+        from exe.engine.eleccionmultiplefpdidevice import EleccionmultiplefpdIdevice
+        from exe.engine.casopracticofpdidevice import CasopracticofpdIdevice
+        from exe.engine.ejercicioresueltofpdidevice import EjercicioresueltofpdIdevice
+        from exe.engine.destacadofpdidevice import DestacadofpdIdevice 
+        from exe.engine.orientacionesalumnadofpdidevice import OrientacionesalumnadofpdIdevice
+        from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
+        from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
+        
+        idevices_FPD = []
+        idevices_FPD.append(ReflectionfpdIdevice())
+        idevices_FPD.append(ReflectionfpdmodifIdevice())
+        idevices_FPD.append(ClozefpdIdevice())
+        idevices_FPD.append(ClozelangfpdIdevice())
+        idevices_FPD.append(ParasabermasfpdIdevice())
+        idevices_FPD.append(DebesconocerfpdIdevice())
+        idevices_FPD.append(CitasparapensarfpdIdevice())
+        idevices_FPD.append(RecomendacionfpdIdevice())
+        idevices_FPD.append(VerdaderofalsofpdIdevice())
+        idevices_FPD.append(SeleccionmultiplefpdIdevice())
+        idevices_FPD.append(EleccionmultiplefpdIdevice())
+        idevices_FPD.append(CasopracticofpdIdevice())
+        idevices_FPD.append(EjercicioresueltofpdIdevice())
+        idevices_FPD.append(DestacadofpdIdevice()) 
+        #idevices_FPD.append(CorreccionfpdIdevice())
+        idevices_FPD.append(OrientacionesalumnadofpdIdevice())
+        idevices_FPD.append(OrientacionestutoriafpdIdevice())
+        idevices_FPD.append(FreeTextfpdIdevice())
+        
+        return idevices_FPD
+
 
     def __getFactoryExtendediDevices(self):
         """
@@ -243,19 +302,23 @@ class IdeviceStore:
         defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         factoryExtendedIdevices.append(WikipediaIdevice(defaultSite))
-        factoryExtendedIdevices.append(AttachmentIdevice())
+        #JR: Eliminamos este iDevices de los extendidos
+        #factoryExtendedIdevices.append(AttachmentIdevice())
         factoryExtendedIdevices.append(GalleryIdevice())
         factoryExtendedIdevices.append(ClozeIdevice())
         #factoryExtendedIdevices.append(ClozelangIdevice())
-        factoryExtendedIdevices.append(FlashWithTextIdevice())
+        #JR: Eliminamos este iDevices de los extendidos
+        #factoryExtendedIdevices.append(FlashWithTextIdevice())
         factoryExtendedIdevices.append(ExternalUrlIdevice()) 
         # converting Maths Idevice -> FreeTextIdevice:
         #factoryExtendedIdevices.append(MathIdevice())
-        factoryExtendedIdevices.append(MultimediaIdevice())
+        #JR: Eliminamos este iDevices de los extendidos
+        #factoryExtendedIdevices.append(MultimediaIdevice())
         factoryExtendedIdevices.append(RssIdevice())
         factoryExtendedIdevices.append(MultiSelectIdevice())
         factoryExtendedIdevices.append(AppletIdevice())
-        factoryExtendedIdevices.append(FlashMovieIdevice())
+        #JR: Eliminamos este iDevices de los extendidos
+        #factoryExtendedIdevices.append(FlashMovieIdevice())
         factoryExtendedIdevices.append(QuizTestIdevice())
         # JR
         # iDevices para la FPD
@@ -296,7 +359,10 @@ class IdeviceStore:
         if extendedPath.exists():
             self.extended = persist.decodeObject(extendedPath.bytes())
         else:
-            self.extended = copy.deepcopy(self.factoryiDevices)
+            #self.extended = copy.deepcopy(self.factoryiDevices)
+            self.extended = self.factoryiDevices
+            for idevice in self.__getIdevicesFPD():
+                self.delIdevice(idevice)
 
 
         # generate new ids for these iDevices, to avoid any clashes
