@@ -425,4 +425,22 @@ data is entered into this field."""))
             html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % icon
             html += u'<br/>%s.gif</div>\n' % icon
         return html
+    
+    def renderShowHideiDevices(self, idevices):
+        """
+        JR: Funcion que muestra la lista de idevices para mostrarlos y ocultarlos
+        """
+        html = "<div id=\"editorWorkspace\">\n"
+        html += "<br/><br/><strong>Marca los iDevices que no quieres que se muestren:</strong>\n"
+        html += "<ul style=\"list-style:none;\">\n"
+        idevices_sort = sorted(idevices, key=lambda idevice: idevice.title)
+        for idevice in idevices_sort:
+            html += "<li>\n"
+            html += "<input type=checkbox name=%s>" % idevice.title
+            html += "%s</input>\n" % idevice.title
+            html += "</li>\n" 
+        html += "</ul>"
+        html += "</div>"
+        return html
+    
 # ===========================================================================

@@ -77,7 +77,7 @@ class EditorPage(RenderableResource):
             if request.args["action"][0] == "changeIdevice":
                 genericIdevices = self.ideviceStore.generic
                 
-                # we want to show extended idevices also:
+                #AM: we want to show extended idevices also:
                 extendedIdevices = self.ideviceStore.extended
                 listaidevices = genericIdevices + extendedIdevices
                 if not self.isNewIdevice:
@@ -89,7 +89,8 @@ class EditorPage(RenderableResource):
                     self.__saveChanges(idevice, copyIdevice)
                 
                 selected_idevice = request.args["object"][0].decode("utf-8")
-                for idevice in genericIdevices:
+                #JR: Cambio genericIdevices por listaidevices
+                for idevice in listaidevices:
                     if idevice.title == selected_idevice:
                         break
                 self.isNewIdevice = False
@@ -199,7 +200,6 @@ class EditorPage(RenderableResource):
         package.save(filename)
         
         
-        
     def render_GET(self, request):
         """Called for all requests to this object"""
         
@@ -252,13 +252,19 @@ class EditorPage(RenderableResource):
         html += u'<br/><input class="button" type="button" name="export" '
         html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
         html += u' value="%s" />'  % _("Export iDevice")
+        #JR: anado un boton que permite mostrar u ocultar iDevices
+        html += "<br/>" + common.submitButton("showHide", _("Show/Hide iDevices"))
         html += u'<br/><input class="button" type="button" name="quit" '
         html += u'onclick=JavaScript:window.close()'         
         html += u' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"
-        html += self.editorPane.renderIdevice(request)
+        if ("showHide" in request.args):  
+            html += self.editorPane.renderShowHideiDevices(self.ideviceStore.getIdevices())
+            self.message = ""
+        else:
+            html += self.editorPane.renderIdevice(request)
         html += "</div>\n"
         html += "<br/></form>\n"
         html += "</body>\n"
