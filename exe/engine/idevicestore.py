@@ -68,24 +68,51 @@ class IdeviceStore:
         upon the pedagogical template we are using
         """
         return self.extended + self.generic
+    
+    def getFactoryIdevices(self):
+        """
+        JR: Devuelve todos los iDevices de fabrica
+        """
+        return self.factoryiDevices
 
     
     def delGenericIdevice(self, idevice):
         """
         Delete a generic idevice from idevicestore.
         """
-        self.generic.remove(idevice)
+        idevice_remove = None
+        for i in self.generic:
+            if idevice.title == i.title:
+                idevice_remove = i
+        if not (idevice_remove is None):
+            self.generic.remove(idevice_remove)
+            #JR: Comunicamos a los listener que este iDevice ya no esta disponible
+            for listener in self.listeners:
+                listener.delIdevice(idevice_remove)
 
     
     def delExtendedIdevice(self, idevice):
         """
         Delete an extended idevice from idevicestore.
         """
-        self.extended.remove(idevice)
-        #JR: Comunicamos a los listener que este iDevice ya no esta disponible
-        for listener in self.listeners:
-            listener.delIdevice(idevice)
-        
+        idevice_remove = None
+        for i in self.extended:
+            if idevice.title == i.title:
+                idevice_remove = i
+        if not (idevice_remove is None):
+            self.extended.remove(idevice_remove)
+            #JR: Comunicamos a los listener que este iDevice ya no esta disponible
+            for listener in self.listeners:
+                listener.delIdevice(idevice_remove)
+            
+    def delIdevice(self, idevice):
+        """
+        JR: Borra un idevice
+        """
+        if idevice in self.generic:
+            self.delGenericIdevice(idevice)
+        else:
+            self.delExtendedIdevice(idevice)
     
     def register(self, listener):
         """
@@ -100,10 +127,24 @@ class IdeviceStore:
         """
         Register another iDevice as available
         """
-        log.debug("IdeviceStore.addIdevice")
+        extended = self.__getFactoryExtendediDevices()
+        if idevice in extended:
+            add = False
+            for i in extended:
+                if i.title == idevice.title:
+                    add = True
+            if add:
+                self.extended.append(idevice)
+        else:
+            genericFactory = self.__createGeneric()
+            add = False
+            for i in genericFactory:
+                if i.title == idevice.title:
+                    add = True
+            if add:
+                self.generic.append(idevice)
         # idevice prototypes need to be in edit mode
         idevice.edit = True
-        self.generic.append(idevice)
         for listener in self.listeners:
             listener.addIdevice(idevice)
 
@@ -123,9 +164,7 @@ class IdeviceStore:
             for idevice in self.extended:
                 listener.addIdevice(idevice)
 
-
-
-    def __loadFactoryiDevices(self):
+    def __getFactoryExtendediDevices(self):
         """
         JR: Carga los iDevices de fabrica
         """
@@ -174,52 +213,56 @@ class IdeviceStore:
         from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
         from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
         
-        self.factoryiDevices.append(FreeTextIdevice())
-        self.factoryiDevices.append(MultichoiceIdevice())
-        self.factoryiDevices.append(ReflectionIdevice())
-        self.factoryiDevices.append(CasestudyIdevice())
-        self.factoryiDevices.append(TrueFalseIdevice())
+        factoryExtendedIdevices = []
+        
+        factoryExtendedIdevices.append(FreeTextIdevice())
+        factoryExtendedIdevices.append(MultichoiceIdevice())
+        factoryExtendedIdevices.append(ReflectionIdevice())
+        factoryExtendedIdevices.append(CasestudyIdevice())
+        factoryExtendedIdevices.append(TrueFalseIdevice())
         defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
         # converting ImageWithTextIdevice -> FreeTextIdevice:
-        #self.factoryiDevices.append(ImageWithTextIdevice(defaultImage))
-        self.factoryiDevices.append(ImageMagnifierIdevice(defaultImage))
+        #factoryExtendedIdevices.append(ImageWithTextIdevice(defaultImage))
+        factoryExtendedIdevices.append(ImageMagnifierIdevice(defaultImage))
         defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
-        self.factoryiDevices.append(WikipediaIdevice(defaultSite))
-        self.factoryiDevices.append(AttachmentIdevice())
-        self.factoryiDevices.append(GalleryIdevice())
-        self.factoryiDevices.append(ClozeIdevice())
-        #self.factoryiDevices.append(ClozelangIdevice())
-        self.factoryiDevices.append(FlashWithTextIdevice())
-        self.factoryiDevices.append(ExternalUrlIdevice()) 
+        factoryExtendedIdevices.append(WikipediaIdevice(defaultSite))
+        factoryExtendedIdevices.append(AttachmentIdevice())
+        factoryExtendedIdevices.append(GalleryIdevice())
+        factoryExtendedIdevices.append(ClozeIdevice())
+        #factoryExtendedIdevices.append(ClozelangIdevice())
+        factoryExtendedIdevices.append(FlashWithTextIdevice())
+        factoryExtendedIdevices.append(ExternalUrlIdevice()) 
         # converting Maths Idevice -> FreeTextIdevice:
-        #self.factoryiDevices.append(MathIdevice())
-        self.factoryiDevices.append(MultimediaIdevice())
-        self.factoryiDevices.append(RssIdevice())
-        self.factoryiDevices.append(MultiSelectIdevice())
-        self.factoryiDevices.append(AppletIdevice())
-        self.factoryiDevices.append(FlashMovieIdevice())
-        self.factoryiDevices.append(QuizTestIdevice())
+        #factoryExtendedIdevices.append(MathIdevice())
+        factoryExtendedIdevices.append(MultimediaIdevice())
+        factoryExtendedIdevices.append(RssIdevice())
+        factoryExtendedIdevices.append(MultiSelectIdevice())
+        factoryExtendedIdevices.append(AppletIdevice())
+        factoryExtendedIdevices.append(FlashMovieIdevice())
+        factoryExtendedIdevices.append(QuizTestIdevice())
         # JR
         # iDevices para la FPD
-        self.factoryiDevices.append(ReflectionfpdIdevice())
-        self.factoryiDevices.append(ReflectionfpdmodifIdevice())
-        self.factoryiDevices.append(ClozefpdIdevice())
-        self.factoryiDevices.append(ClozelangfpdIdevice())
-        self.factoryiDevices.append(ParasabermasfpdIdevice())
-        self.factoryiDevices.append(DebesconocerfpdIdevice())
-        self.factoryiDevices.append(CitasparapensarfpdIdevice())
-        self.factoryiDevices.append(RecomendacionfpdIdevice())
-        self.factoryiDevices.append(VerdaderofalsofpdIdevice())
-        self.factoryiDevices.append(SeleccionmultiplefpdIdevice())
-        self.factoryiDevices.append(EleccionmultiplefpdIdevice())
-        self.factoryiDevices.append(CasopracticofpdIdevice())
-        self.factoryiDevices.append(EjercicioresueltofpdIdevice())
-        self.factoryiDevices.append(DestacadofpdIdevice()) 
-        #self.factoryiDevices.append(CorreccionfpdIdevice())
-        self.factoryiDevices.append(OrientacionesalumnadofpdIdevice())
-        self.factoryiDevices.append(OrientacionestutoriafpdIdevice())
-        self.factoryiDevices.append(FreeTextfpdIdevice())
+        factoryExtendedIdevices.append(ReflectionfpdIdevice())
+        factoryExtendedIdevices.append(ReflectionfpdmodifIdevice())
+        factoryExtendedIdevices.append(ClozefpdIdevice())
+        factoryExtendedIdevices.append(ClozelangfpdIdevice())
+        factoryExtendedIdevices.append(ParasabermasfpdIdevice())
+        factoryExtendedIdevices.append(DebesconocerfpdIdevice())
+        factoryExtendedIdevices.append(CitasparapensarfpdIdevice())
+        factoryExtendedIdevices.append(RecomendacionfpdIdevice())
+        factoryExtendedIdevices.append(VerdaderofalsofpdIdevice())
+        factoryExtendedIdevices.append(SeleccionmultiplefpdIdevice())
+        factoryExtendedIdevices.append(EleccionmultiplefpdIdevice())
+        factoryExtendedIdevices.append(CasopracticofpdIdevice())
+        factoryExtendedIdevices.append(EjercicioresueltofpdIdevice())
+        factoryExtendedIdevices.append(DestacadofpdIdevice()) 
+        #factoryExtendedIdevices.append(CorreccionfpdIdevice())
+        factoryExtendedIdevices.append(OrientacionesalumnadofpdIdevice())
+        factoryExtendedIdevices.append(OrientacionestutoriafpdIdevice())
+        factoryExtendedIdevices.append(FreeTextfpdIdevice())
+        
+        return factoryExtendedIdevices
         
     def __loadExtended(self):
         """
@@ -232,7 +275,7 @@ class IdeviceStore:
         extendedPath = self.config.configDir/'idevices'/'extended.data'
         log.debug("load extended iDevices from "+extendedPath)
         
-        self.__loadFactoryiDevices()
+        self.factoryiDevices = self.__getFactoryExtendediDevices()
 
         if extendedPath.exists():
             self.extended = persist.decodeObject(extendedPath.bytes())
@@ -280,7 +323,7 @@ class IdeviceStore:
         log.debug("load generic iDevices from "+genericPath)
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
-            self.__upgradeGeneric()
+            #self.__upgradeGeneric()
             self.factoryiDevices += self.__createGeneric()
         else:
             self.generic = self.__createGeneric()
@@ -442,7 +485,7 @@ u"")
 _(u"""Describe the tasks the learners should complete.""")))
         idevices.append(activity)
 
-        #JR: self.save()
+        self.save()
         return idevices
 
 

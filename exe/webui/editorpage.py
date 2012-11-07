@@ -274,7 +274,7 @@ class EditorPage(RenderableResource):
         html += "</div>\n"
         #if ("showHide" in request.args):
         if self.showHide:  
-            html += self.editorPane.renderShowHideiDevices(self.ideviceStore.getIdevices())
+            html += self.editorPane.renderShowHideiDevices(self.ideviceStore.getFactoryIdevices())
         else:
             html += self.editorPane.renderIdevice(request)
         html += "</div>\n"
@@ -317,7 +317,16 @@ class EditorPage(RenderableResource):
         """
         JR: Esta funcion procesa los iDevices que no se quieren mostrar
         """
+        idt_checked = []
         for i in request.args.keys():
+            if (request.args[i] == ['on']):
+                idt_checked.append(i)
+        for i in self.ideviceStore.getFactoryIdevices():
+            if i.title in idt_checked:
+                self.ideviceStore.delIdevice(i)
+            else:
+                self.ideviceStore.addIdevice(i)
+        """for i in request.args.keys():
             if (request.args[i] == ['on']):
                 lista_idevices = self.ideviceStore.getIdevices()
                 generic = self.ideviceStore.generic
@@ -327,8 +336,8 @@ class EditorPage(RenderableResource):
                         if (idevice in generic):
                             self.ideviceStore.delGenericIdevice(idevice)
                         else:
-                            self.ideviceStore.delExtendedIdevice(idevice)
-                        self.ideviceStore.save()
+                            self.ideviceStore.delExtendedIdevice(idevice)"""
+        self.ideviceStore.save()
         self.showHide = False
         self.__createNewIdevice(request)
 
