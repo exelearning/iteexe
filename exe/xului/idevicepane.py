@@ -73,7 +73,16 @@ class IdevicePane(Renderable):
         self.prototypes[idevice.id] = idevice
         self.client.call('XHAddIdeviceListItem', idevice.id, idevice.title)
 
-        
+
+    def delIdevice(self, idevice):
+        """
+        Delete an iDevice from pane
+        """
+        log.debug("delIdevice id="+idevice.id+", title="+idevice.title)
+        self.prototypes.pop(idevice.id, 0)
+        self.client.call('XHDelIdeviceListItem', idevice.title)
+
+
     def render(self, ctx, data):
         """
         Returns an html string for viewing this pane

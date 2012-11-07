@@ -107,7 +107,7 @@ class EditorPage(RenderableResource):
             
 
         if "delete" in request.args:
-            self.ideviceStore.__delGenericIdevice(self.editorPane.idevice)
+            self.ideviceStore.delIdevice(self.editorPane.idevice)
             self.ideviceStore.save()
             self.__createNewIdevice(request) 
             

@@ -600,6 +600,14 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
     list.appendChild(newListItem)
 }
 
+// Delete an iDevice
+// XH means that the func is actually called by the server over xmlhttp
+function XHDelIdeviceListItem(ideviceTitle) {
+    var list = document.getElementById('ideviceList');
+    var idevices = list.getElementsByAttribute("label", unescape(ideviceTitle));
+    list.removeChild(idevices[0]);
+}
+
 function importPackage(importType){
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 
