@@ -359,8 +359,8 @@ class IdeviceStore:
         if extendedPath.exists():
             self.extended = persist.decodeObject(extendedPath.bytes())
         else:
-            #self.extended = copy.deepcopy(self.factoryiDevices)
-            self.extended = self.factoryiDevices
+            self.extended = copy.deepcopy(self.factoryiDevices)
+            #self.extended = self.factoryiDevices
             for idevice in self.__getIdevicesFPD():
                 self.delIdevice(idevice)
 
