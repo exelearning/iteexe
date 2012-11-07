@@ -597,6 +597,14 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
     newListItem.setAttribute("onclick", 
                              "submitLink('AddIdevice', "+ideviceId+", 1);")
     newListItem.setAttribute("label", unescape(ideviceTitle))
+    var item;
+    for (var i = 0; i < list.getRowCount(); i++) {
+        item = list.getItemAtIndex(i);
+        if (item.label > unescape(ideviceTitle)) {
+            list.insertBefore(newListItem, item);
+            return;
+        }
+    }
     list.appendChild(newListItem)
 }
 
