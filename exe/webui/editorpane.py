@@ -46,9 +46,10 @@ class EditorPane(object):
     """
     The EditorPane is responsible for creating new idevice
     """
-    def __init__(self, webServer):
+    def __init__(self, webServer, parent):
         """
         Initialize
+        JR: anado parente para poder acceder a algunos atributos de editorpag, en concreto a showHide
         """
         self.ideviceStore     = webServer.application.ideviceStore
         self.webDir           = webServer.application.config.webDir
@@ -60,6 +61,7 @@ class EditorPane(object):
         self.purpose          = ""
         self.tip              = ""
         self.message          = ""
+        self.parent           = parent
         self._nameInstruc     = \
            x_(u"Your new iDevice will appear in the iDevice "
               u"pane with this title. This is a compulsory field "
@@ -203,6 +205,7 @@ data is entered into this field."""))
             ideviceId       = self.idevice.id
             self.idevice    = self.originalIdevice.clone()
             self.idevice.id = ideviceId 
+            self.parent.showHide = False
             
         if ("action" in request.args and 
             request.args["action"][0] == "changeStyle"):
@@ -237,18 +240,18 @@ data is entered into this field."""))
                           field.__class__.__name__)
         
             
-    def renderButtons(self, request):
+    def renderButtons(self, request, showHide):
         """
         Render the idevice being edited
         """
         html = "<font color=\"red\"><b>"+self.message+"</b></font>"
         
         html += "<fieldset><legend><b>" + _("Add Field")+ "</b></legend>"
-        html += common.submitButton("addText", _("Text Line"))
+        html += common.submitButton("addText", _("Text Line"), not showHide)
         html += common.elementInstruc(self.lineInstruc) + "<br/>"
-        html += common.submitButton("addTextArea", _("Text Box"))
+        html += common.submitButton("addTextArea", _("Text Box"), not showHide)
         html += common.elementInstruc(self.textBoxInstruc) + "<br/>"
-        html += common.submitButton("addFeedback", _("Feedback"))
+        html += common.submitButton("addFeedback", _("Feedback"), not showHide)
         html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
         #  Attachments are now embeddable:
         #html += common.submitButton("addAttachment", _("Attachment"))
@@ -261,9 +264,9 @@ data is entered into this field."""))
         html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"
 
         if self.idevice.edit:
-            html += common.submitButton("preview", _("Preview"))
+            html += common.submitButton("preview", _("Preview"), not showHide)
         else:
-            html += common.submitButton("edit", _("Edit"))
+            html += common.submitButton("edit", _("Edit"), not showHide)
 
         html += "<br/>"
         html += common.submitButton("cancel", _("Cancel"))

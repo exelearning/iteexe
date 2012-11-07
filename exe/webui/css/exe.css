@@ -45,6 +45,11 @@ font-weight: bold;
 font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
+#editorButtons input.button[disabled] {
+	background-color: #dddddd;
+	background-image: none;
+}
+
 .flash {
  border: 1px dashed #6699cc;
  background-image: url(../images/flash_placeholder.gif); 

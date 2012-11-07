@@ -49,7 +49,7 @@ class EditorPage(RenderableResource):
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.editorPane   = EditorPane(self.webServer)
+        self.editorPane   = EditorPane(self.webServer, self)
         self.url          = ""
         self.elements     = []
         self.isNewIdevice = True
@@ -78,12 +78,9 @@ class EditorPage(RenderableResource):
             if request.args["action"][0] == "changeIdevice":
                 genericIdevices = self.ideviceStore.generic
                 
-                #AM: we want to show extended idevices also:
-                extendedIdevices = self.ideviceStore.extended
-                listaidevices = genericIdevices + extendedIdevices
                 if not self.isNewIdevice:
                     ideviceId = self.editorPane.idevice.id
-                    for idevice in listaidevices:
+                    for idevice in genericIdevices:
                         if idevice.id == ideviceId:
                             break
                     copyIdevice = self.editorPane.idevice.clone()
@@ -91,8 +88,7 @@ class EditorPage(RenderableResource):
                 
                 selected_idevice = request.args["object"][0].decode("utf-8")
 
-                #JR: Cambio genericIdevices por listaidevices
-                for idevice in listaidevices:
+                for idevice in genericIdevices:
                     if idevice.title == selected_idevice:
                         break
                 self.isNewIdevice = False
@@ -159,6 +155,7 @@ class EditorPage(RenderableResource):
         self.editorPane.setIdevice(idevice)
         self.editorPane.process(request, "new")      
         self.isNewIdevice = True
+        self.showHide = False
           
     def __saveChanges(self, idevice, copyIdevice):
         """
@@ -242,7 +239,7 @@ class EditorPage(RenderableResource):
         html += "<font color=\"red\"><b>"+self.message+"</b></font>"
         html += "<div id=\"editorButtons\"> \n"     
         html += self.renderList()
-        html += self.editorPane.renderButtons(request)
+        html += self.editorPane.renderButtons(request, self.showHide)
         if self.isNewIdevice:
             html += "<br/>" + common.submitButton("delete", _("Delete"), 
                                                         False)
@@ -254,9 +251,13 @@ class EditorPage(RenderableResource):
             title = self.editorPane.idevice.title
             title = title.replace(" ", "+")
         html += 'onclick=saveIdevice("%s") value="%s"/>' % (escape(title), _("Save"))
-        html += u'<br/><input class="button" type="button" name="import" onclick="importPackage(\'package\')"' 
-        html += u' value="%s" />'  % _("Import iDevice")
+        html += u'<br/><input class="button" type="button" name="import" ' 
+        if self.showHide:
+            html += ' disabled="disabled" '
+        html += u' onclick="importPackage(\'package\')" value="%s" />'  % _("Import iDevice")
         html += u'<br/><input class="button" type="button" name="export" '
+        if self.showHide:
+            html += ' disabled="disabled" '
         html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
         html += u' value="%s" />'  % _("Export iDevice")
         #JR: anado un boton que permite mostrar u ocultar iDevices
@@ -267,7 +268,8 @@ class EditorPage(RenderableResource):
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"
-        if ("showHide" in request.args):  
+        #if ("showHide" in request.args):
+        if self.showHide:  
             html += self.editorPane.renderShowHideiDevices(self.ideviceStore.getIdevices())
         else:
             html += self.editorPane.renderIdevice(request)
@@ -284,7 +286,11 @@ class EditorPage(RenderableResource):
         Render the list of generic iDevice
         """
         html  = "<fieldset><legend><b>" + _("Edit")+ "</b></legend>"
-        html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect">\n'
+        #JR: Desabilitamos el select si estamos mostrando/ocultando iDevices
+        if self.showHide:
+            html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect" disabled="disabled">\n'
+        else:
+            html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect">\n'
         html += "<option value = \"newIdevice\" "
         if self.isNewIdevice:
             html += "selected "
@@ -297,18 +303,7 @@ class EditorPage(RenderableResource):
             if len(title) > 16:
                 title = title[:16] + "..."
             html += ">" + title + "</option>\n"
-            
-        # AM, extended must be showed also:
-        for prototype in self.ideviceStore.extended:
-            html += "<option value=\""+prototype.title+"\" "
-            if self.editorPane.idevice.id == prototype.id:
-                html += "selected "
-            title = prototype.title
-            if len(title) > 16:
-                title = title[:16] + "..."
-            html += ">" + title + "</option>\n"
-            
-        
+
         html += "</select> \n"
         html += "</fieldset>\n"
         self.message = ""
@@ -330,6 +325,6 @@ class EditorPage(RenderableResource):
                         else:
                             self.ideviceStore.delExtendedIdevice(idevice)
                         self.ideviceStore.save()
-        
+        self.showHide = False
         self.__createNewIdevice(request)
 
