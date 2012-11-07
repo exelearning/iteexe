@@ -29,6 +29,7 @@ from nevow.flat         import flatten
 import imp
 import sys
 import logging
+import copy
 
 log = logging.getLogger(__name__)
 
@@ -139,7 +140,8 @@ class IdeviceStore:
         from exe.engine.attachmentidevice import AttachmentIdevice
         from exe.engine.titleidevice import TitleIdevice
         from exe.engine.galleryidevice import GalleryIdevice
-        from exe.engine.clozeidevice import ClozeIdevice #from exe.engine.clozelangidevice          import ClozelangIdevice
+        from exe.engine.clozeidevice import ClozeIdevice 
+        #from exe.engine.clozelangidevice          import ClozelangIdevice
         from exe.engine.flashwithtextidevice import FlashWithTextIdevice
         from exe.engine.externalurlidevice import ExternalUrlIdevice
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice 
@@ -218,24 +220,24 @@ class IdeviceStore:
         self.factoryiDevices.append(OrientacionesalumnadofpdIdevice())
         self.factoryiDevices.append(OrientacionestutoriafpdIdevice())
         self.factoryiDevices.append(FreeTextfpdIdevice())
-
+        
     def __loadExtended(self):
         """
         Load the Extended iDevices (iDevices coded in Python)
-        JR: Modifico esta funcion para que tambien cargue los idevices de fabrica
+        JR: Modifico esta funcion para que tambien cargue los idevices extendidos de fabrica
         """
         self.__loadUserExtended()
         
         #JR: Si existe el archivo extended.data cargamos de ahi los iDevices extendidos
         extendedPath = self.config.configDir/'idevices'/'extended.data'
         log.debug("load extended iDevices from "+extendedPath)
+        
+        self.__loadFactoryiDevices()
+
         if extendedPath.exists():
             self.extended = persist.decodeObject(extendedPath.bytes())
-
-        self.__loadFactoryiDevices()
-        
-        if (not extendedPath.exists()):
-            self.extended = self.factoryiDevices
+        else:
+            self.extended = copy.deepcopy(self.factoryiDevices)
 
 
         # generate new ids for these iDevices, to avoid any clashes

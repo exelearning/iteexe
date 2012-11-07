@@ -54,6 +54,8 @@ class EditorPage(RenderableResource):
         self.elements     = []
         self.isNewIdevice = True
         self.showHide     = False
+        #JR: Anado esta variable para que los genericos no se puedan previsualizar
+        self.isGeneric    = False
         self.message      = ""
         
     def getChild(self, name, request):
@@ -88,8 +90,10 @@ class EditorPage(RenderableResource):
                 
                 selected_idevice = request.args["object"][0].decode("utf-8")
 
+                self.isGeneric = False
                 for idevice in genericIdevices:
                     if idevice.title == selected_idevice:
+                        self.isGeneric = True
                         break
                 self.isNewIdevice = False
                 self.editorPane.setIdevice(idevice)               
@@ -261,7 +265,7 @@ class EditorPage(RenderableResource):
         html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
         html += u' value="%s" />'  % _("Export iDevice")
         #JR: anado un boton que permite mostrar u ocultar iDevices
-        html += "<br/>" + common.submitButton("showHide", _("Show/Hide iDevices"))
+        html += "<br/>" + common.submitButton("showHide", _("Mostrar/Ocultar"))
         html += u'<br/><input class="button" type="button" name="quit" '
         html += u'onclick=JavaScript:window.close()'         
         html += u' value="%s" />\n'  % _("Quit")

@@ -264,7 +264,7 @@ data is entered into this field."""))
         html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"
 
         if self.idevice.edit:
-            html += common.submitButton("preview", _("Preview"), not showHide)
+            html += common.submitButton("preview", _("Preview"), not (showHide or self.parent.isGeneric))
         else:
             html += common.submitButton("edit", _("Edit"), not showHide)
 
