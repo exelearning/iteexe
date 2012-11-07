@@ -59,7 +59,16 @@ class IdeviceStore:
         self._nextIdeviceId += 1
         return id_
 
-
+    def isGeneric(self, idevice):
+        """
+        Devuelve true si el iDevice es de la clase GenericIdevie
+        """
+        from exe.engine.genericidevice import GenericIdevice
+        if isinstance(idevice, GenericIdevice):
+            return True
+        else:
+            return False
+        
     def getIdevices(self):
         """
         Get the idevices which are applicable for the current node of
@@ -109,10 +118,18 @@ class IdeviceStore:
         """
         JR: Borra un idevice
         """
-        if idevice in self.generic:
+        idevice_remove = None
+        for i in self.extended:
+            if i.title == idevice.title:
+                idevice_remove = i
+        if not (idevice_remove is None):
+            self.delExtendedIdevice(idevice_remove)
+        idevice_remove = None
+        for i in self.generic:
+            if i.title == idevice.title:
+                idevice_remove = i
+        if not (idevice_remove is None):
             self.delGenericIdevice(idevice)
-        else:
-            self.delExtendedIdevice(idevice)
     
     def register(self, listener):
         """
@@ -127,27 +144,26 @@ class IdeviceStore:
         """
         Register another iDevice as available
         """
-        extended = self.__getFactoryExtendediDevices()
-        if idevice in extended:
-            add = False
-            for i in extended:
+        if not self.isGeneric(idevice):
+            exist = False
+            for i in self.extended:
                 if i.title == idevice.title:
-                    add = True
-            if add:
+                    exist = True
+            if not exist:
                 self.extended.append(idevice)
+                idevice.edit = True
+                for listener in self.listeners:
+                    listener.addIdevice(idevice)
         else:
-            genericFactory = self.__createGeneric()
-            add = False
-            for i in genericFactory:
+            exist = False
+            for i in self.generic:
                 if i.title == idevice.title:
-                    add = True
-            if add:
+                    exist = True
+            if not exist:
                 self.generic.append(idevice)
-        # idevice prototypes need to be in edit mode
-        idevice.edit = True
-        for listener in self.listeners:
-            listener.addIdevice(idevice)
-
+                idevice.edit = True
+                for listener in self.listeners:
+                    listener.addIdevice(idevice)        
 
     def load(self):
         """
@@ -323,7 +339,7 @@ class IdeviceStore:
         log.debug("load generic iDevices from "+genericPath)
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
-            #self.__upgradeGeneric()
+            self.__upgradeGeneric()
             self.factoryiDevices += self.__createGeneric()
         else:
             self.generic = self.__createGeneric()
