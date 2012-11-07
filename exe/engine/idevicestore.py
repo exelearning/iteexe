@@ -46,6 +46,8 @@ class IdeviceStore:
         self.extended       = []
         self.generic        = []
         self.listeners      = []
+        #JR: Anado una lista que contendra todos los iDevices disponibles
+        self.factoryiDevices = []
 
 
     def getNewIdeviceId(self):
@@ -121,9 +123,106 @@ class IdeviceStore:
                 listener.addIdevice(idevice)
 
 
+
+    def __loadFactoryiDevices(self):
+        """
+        JR: Carga los iDevices de fabrica
+        """
+        from exe.engine.freetextidevice import FreeTextIdevice
+        from exe.engine.multimediaidevice import MultimediaIdevice
+        from exe.engine.reflectionidevice import ReflectionIdevice
+        from exe.engine.casestudyidevice import CasestudyIdevice
+        from exe.engine.truefalseidevice import TrueFalseIdevice 
+        # converting ImageWithTextIdevice -> FreeTextIdevice:
+        #from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
+        from exe.engine.wikipediaidevice import WikipediaIdevice
+        from exe.engine.attachmentidevice import AttachmentIdevice
+        from exe.engine.titleidevice import TitleIdevice
+        from exe.engine.galleryidevice import GalleryIdevice
+        from exe.engine.clozeidevice import ClozeIdevice #from exe.engine.clozelangidevice          import ClozelangIdevice
+        from exe.engine.flashwithtextidevice import FlashWithTextIdevice
+        from exe.engine.externalurlidevice import ExternalUrlIdevice
+        from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice 
+        # converting Maths Idevice -> FreeTextIdevice:
+        #from exe.engine.mathidevice           import MathIdevice
+        from exe.engine.multichoiceidevice import MultichoiceIdevice
+        from exe.engine.rssidevice import RssIdevice
+        from exe.engine.multiselectidevice import MultiSelectIdevice
+        from exe.engine.appletidevice import AppletIdevice
+        from exe.engine.flashmovieidevice import FlashMovieIdevice
+        from exe.engine.quiztestidevice import QuizTestIdevice
+        # JR
+        # Necesarios para la FPD
+        from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
+        from exe.engine.reflectionfpdmodifidevice import ReflectionfpdmodifIdevice
+        from exe.engine.clozefpdidevice import ClozefpdIdevice
+        from exe.engine.clozelangfpdidevice import ClozelangfpdIdevice
+        from exe.engine.parasabermasfpdidevice import ParasabermasfpdIdevice
+        from exe.engine.debesconocerfpdidevice import DebesconocerfpdIdevice
+        from exe.engine.citasparapensarfpdidevice import CitasparapensarfpdIdevice
+        from exe.engine.recomendacionfpdidevice import RecomendacionfpdIdevice
+        from exe.engine.verdaderofalsofpdidevice import VerdaderofalsofpdIdevice
+        from exe.engine.seleccionmultiplefpdidevice import SeleccionmultiplefpdIdevice
+        from exe.engine.eleccionmultiplefpdidevice import EleccionmultiplefpdIdevice
+        from exe.engine.casopracticofpdidevice import CasopracticofpdIdevice
+        from exe.engine.ejercicioresueltofpdidevice import EjercicioresueltofpdIdevice
+        from exe.engine.destacadofpdidevice import DestacadofpdIdevice 
+        #from exe.engine.correccionfpdidevice		import CorreccionfpdIdevice
+        from exe.engine.orientacionesalumnadofpdidevice import OrientacionesalumnadofpdIdevice
+        from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
+        from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
+        
+        self.factoryiDevices.append(FreeTextIdevice())
+        self.factoryiDevices.append(MultichoiceIdevice())
+        self.factoryiDevices.append(ReflectionIdevice())
+        self.factoryiDevices.append(CasestudyIdevice())
+        self.factoryiDevices.append(TrueFalseIdevice())
+        defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
+        # converting ImageWithTextIdevice -> FreeTextIdevice:
+        #self.factoryiDevices.append(ImageWithTextIdevice(defaultImage))
+        self.factoryiDevices.append(ImageMagnifierIdevice(defaultImage))
+        defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
+        defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
+        self.factoryiDevices.append(WikipediaIdevice(defaultSite))
+        self.factoryiDevices.append(AttachmentIdevice())
+        self.factoryiDevices.append(GalleryIdevice())
+        self.factoryiDevices.append(ClozeIdevice())
+        #self.factoryiDevices.append(ClozelangIdevice())
+        self.factoryiDevices.append(FlashWithTextIdevice())
+        self.factoryiDevices.append(ExternalUrlIdevice()) 
+        # converting Maths Idevice -> FreeTextIdevice:
+        #self.factoryiDevices.append(MathIdevice())
+        self.factoryiDevices.append(MultimediaIdevice())
+        self.factoryiDevices.append(RssIdevice())
+        self.factoryiDevices.append(MultiSelectIdevice())
+        self.factoryiDevices.append(AppletIdevice())
+        self.factoryiDevices.append(FlashMovieIdevice())
+        self.factoryiDevices.append(QuizTestIdevice())
+        # JR
+        # iDevices para la FPD
+        self.factoryiDevices.append(ReflectionfpdIdevice())
+        self.factoryiDevices.append(ReflectionfpdmodifIdevice())
+        self.factoryiDevices.append(ClozefpdIdevice())
+        self.factoryiDevices.append(ClozelangfpdIdevice())
+        self.factoryiDevices.append(ParasabermasfpdIdevice())
+        self.factoryiDevices.append(DebesconocerfpdIdevice())
+        self.factoryiDevices.append(CitasparapensarfpdIdevice())
+        self.factoryiDevices.append(RecomendacionfpdIdevice())
+        self.factoryiDevices.append(VerdaderofalsofpdIdevice())
+        self.factoryiDevices.append(SeleccionmultiplefpdIdevice())
+        self.factoryiDevices.append(EleccionmultiplefpdIdevice())
+        self.factoryiDevices.append(CasopracticofpdIdevice())
+        self.factoryiDevices.append(EjercicioresueltofpdIdevice())
+        self.factoryiDevices.append(DestacadofpdIdevice()) 
+        #self.factoryiDevices.append(CorreccionfpdIdevice())
+        self.factoryiDevices.append(OrientacionesalumnadofpdIdevice())
+        self.factoryiDevices.append(OrientacionestutoriafpdIdevice())
+        self.factoryiDevices.append(FreeTextfpdIdevice())
+
     def __loadExtended(self):
         """
         Load the Extended iDevices (iDevices coded in Python)
+        JR: Modifico esta funcion para que tambien cargue los idevices de fabrica
         """
         self.__loadUserExtended()
         
@@ -132,111 +231,11 @@ class IdeviceStore:
         log.debug("load extended iDevices from "+extendedPath)
         if extendedPath.exists():
             self.extended = persist.decodeObject(extendedPath.bytes())
-            for idevice in self.extended:
-                idevice.id = self.getNewIdeviceId()
-            return
 
-        from exe.engine.freetextidevice       import FreeTextIdevice
-        from exe.engine.multimediaidevice     import MultimediaIdevice
-        from exe.engine.reflectionidevice     import ReflectionIdevice
-        from exe.engine.casestudyidevice      import CasestudyIdevice
-        from exe.engine.truefalseidevice      import TrueFalseIdevice
-        # converting ImageWithTextIdevice -> FreeTextIdevice:
-        #from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
-        from exe.engine.wikipediaidevice      import WikipediaIdevice
-        from exe.engine.attachmentidevice     import AttachmentIdevice
-        from exe.engine.titleidevice          import TitleIdevice
-        from exe.engine.galleryidevice        import GalleryIdevice
-        from exe.engine.clozeidevice          import ClozeIdevice
-        #from exe.engine.clozelangidevice          import ClozelangIdevice
-        from exe.engine.flashwithtextidevice  import FlashWithTextIdevice        
-        from exe.engine.externalurlidevice    import ExternalUrlIdevice
-        from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
-        # converting Maths Idevice -> FreeTextIdevice:
-        #from exe.engine.mathidevice           import MathIdevice
-        from exe.engine.multichoiceidevice    import MultichoiceIdevice        
-        from exe.engine.rssidevice            import RssIdevice 
-        from exe.engine.multiselectidevice    import MultiSelectIdevice
-        from exe.engine.appletidevice         import AppletIdevice
-        from exe.engine.flashmovieidevice     import FlashMovieIdevice
-        from exe.engine.quiztestidevice       import QuizTestIdevice
-
-        # JR	
-        # Necesarios para la FPD
-        from exe.engine.reflectionfpdidevice		import ReflectionfpdIdevice
-        from exe.engine.reflectionfpdmodifidevice	import ReflectionfpdmodifIdevice
-        from exe.engine.clozefpdidevice			import ClozefpdIdevice
-        from exe.engine.clozelangfpdidevice		import ClozelangfpdIdevice
-        from exe.engine.parasabermasfpdidevice		import ParasabermasfpdIdevice
-        from exe.engine.debesconocerfpdidevice		import DebesconocerfpdIdevice
-        from exe.engine.citasparapensarfpdidevice	import CitasparapensarfpdIdevice
-        from exe.engine.recomendacionfpdidevice		import RecomendacionfpdIdevice
-        from exe.engine.verdaderofalsofpdidevice	import VerdaderofalsofpdIdevice
-        from exe.engine.seleccionmultiplefpdidevice	import SeleccionmultiplefpdIdevice
-        from exe.engine.eleccionmultiplefpdidevice	import EleccionmultiplefpdIdevice
-        from exe.engine.casopracticofpdidevice		import CasopracticofpdIdevice
-        from exe.engine.ejercicioresueltofpdidevice	import EjercicioresueltofpdIdevice
-        from exe.engine.destacadofpdidevice		import DestacadofpdIdevice
-        #from exe.engine.correccionfpdidevice		import CorreccionfpdIdevice
-        from exe.engine.orientacionesalumnadofpdidevice	import OrientacionesalumnadofpdIdevice
-        from exe.engine.orientacionestutoriafpdidevice	import OrientacionestutoriafpdIdevice
-        from exe.engine.freetextfpdidevice		import FreeTextfpdIdevice
-
-        self.extended.append(FreeTextIdevice())
+        self.__loadFactoryiDevices()
         
-
-        self.extended.append(MultichoiceIdevice())
-                
-        self.extended.append(ReflectionIdevice())
-                
-        self.extended.append(CasestudyIdevice())
-        self.extended.append(TrueFalseIdevice())
-        
-        defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
-
-        # converting ImageWithTextIdevice -> FreeTextIdevice:
-        #self.extended.append(ImageWithTextIdevice(defaultImage))
-
-        self.extended.append(ImageMagnifierIdevice(defaultImage))
-        
-        defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
-        defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
-        self.extended.append(WikipediaIdevice(defaultSite))
-        self.extended.append(AttachmentIdevice())
-        self.extended.append(GalleryIdevice())
-        self.extended.append(ClozeIdevice())
-        #self.extended.append(ClozelangIdevice())
-        self.extended.append(FlashWithTextIdevice())
-        self.extended.append(ExternalUrlIdevice())
-        # converting Maths Idevice -> FreeTextIdevice:
-        #self.extended.append(MathIdevice())
-        self.extended.append(MultimediaIdevice())
-        self.extended.append(RssIdevice())
-        self.extended.append(MultiSelectIdevice())
-        self.extended.append(AppletIdevice())
-        self.extended.append(FlashMovieIdevice())
-        self.extended.append(QuizTestIdevice())
-
-        # JR
-        # iDevices para la FPD
-        self.extended.append(ReflectionfpdIdevice())
-        self.extended.append(ReflectionfpdmodifIdevice())
-        self.extended.append(ClozefpdIdevice())
-        self.extended.append(ClozelangfpdIdevice())
-        self.extended.append(ParasabermasfpdIdevice())
-        self.extended.append(DebesconocerfpdIdevice())
-        self.extended.append(CitasparapensarfpdIdevice())
-        self.extended.append(RecomendacionfpdIdevice())
-        self.extended.append(VerdaderofalsofpdIdevice())
-        self.extended.append(SeleccionmultiplefpdIdevice())
-        self.extended.append(EleccionmultiplefpdIdevice())
-        self.extended.append(CasopracticofpdIdevice())
-        self.extended.append(EjercicioresueltofpdIdevice())
-        self.extended.append(DestacadofpdIdevice())
-        #self.extended.append(CorreccionfpdIdevice())
-        self.extended.append(OrientacionesalumnadofpdIdevice())
-        self.extended.append(OrientacionestutoriafpdIdevice())
-        self.extended.append(FreeTextfpdIdevice())
+        if (not extendedPath.exists()):
+            self.extended = self.factoryiDevices
 
 
         # generate new ids for these iDevices, to avoid any clashes
@@ -280,8 +279,10 @@ class IdeviceStore:
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
             self.__upgradeGeneric()
+            self.factoryiDevices += self.__createGeneric()
         else:
-            self.__createGeneric()
+            self.generic = self.__createGeneric()
+            self.factoryiDevices += self.generic
 
 
         # generate new ids for these iDevices, to avoid any clashes
@@ -333,7 +334,12 @@ class IdeviceStore:
         (not created using the iDevice editor, but could have been)
         Called when we can't find 'generic.data', generates an initial set of 
         free/builtin idevices and writes the new 'generic.data' file
+        JR: Modifico este metodo para que acepte otro parametro que sera la lista 
+        en la que anadimos los idevices gnericos
         """
+        
+        idevices = []
+
         from exe.engine.genericidevice import GenericIdevice
 
         readingAct = GenericIdevice(_(u"Reading Activity"), 
@@ -392,7 +398,7 @@ _(u"""Use feedback to provide a summary of the points covered in the reading,
 or as a starting point for further analysis of the reading by posing a question 
 or providing a statement to begin a debate.""")))
 
-        self.generic.append(readingAct)
+        idevices.append(readingAct)
     
         objectives = GenericIdevice(_(u"Objectives"), 
                                     u"objectives",
@@ -405,7 +411,7 @@ learning tasks."""),
 
         objectives.addField(TextAreaField(_(u"Objectives"),
 _(u"""Type the learning objectives for this resource.""")))
-        self.generic.append(objectives)
+        idevices.append(objectives)
 
         preknowledge = GenericIdevice(_(u"Preknowledge"), 
                                       u"preknowledge",
@@ -420,7 +426,7 @@ pre-knowledge can be: <ul>
         preknowledge.addField(TextAreaField(_(u"Preknowledge"), 
 _(u"""Describe the prerequisite knowledge learners should have to effectively
 complete this learning.""")))
-        self.generic.append(preknowledge)
+        idevices.append(preknowledge)
         
         activity = GenericIdevice(_(u"Activity"), 
                                   u"activity",
@@ -432,9 +438,10 @@ u"")
         activity.emphasis = Idevice.SomeEmphasis
         activity.addField(TextAreaField(_(u"Activity"),
 _(u"""Describe the tasks the learners should complete.""")))
-        self.generic.append(activity)
+        idevices.append(activity)
 
-        self.save()
+        #JR: self.save()
+        return idevices
 
 
     def __createReading011(self):
