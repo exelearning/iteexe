@@ -10,7 +10,8 @@ var tinyMCE_languages=["es","eu"];
 
 tinyMCE.init({
 	// General options
-	mode : "textareas",
+	mode : "specific_textareas",
+	editor_selector: "mceEditor",
 	theme : "advanced",
 	convert_urls : false,
 	language : getTinyMCELang(document.getElementsByTagName("HTML")[0].lang),
