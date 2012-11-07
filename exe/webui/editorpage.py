@@ -76,9 +76,13 @@ class EditorPage(RenderableResource):
         if "action" in request.args:
             if request.args["action"][0] == "changeIdevice":
                 genericIdevices = self.ideviceStore.generic
+                
+                # we want to show extended idevices also:
+                extendedIdevices = self.ideviceStore.extended
+                listaidevices = genericIdevices + extendedIdevices
                 if not self.isNewIdevice:
                     ideviceId = self.editorPane.idevice.id
-                    for idevice in genericIdevices:
+                    for idevice in listaidevices:
                         if idevice.id == ideviceId:
                             break
                     copyIdevice = self.editorPane.idevice.clone()
@@ -281,6 +285,18 @@ class EditorPage(RenderableResource):
             if len(title) > 16:
                 title = title[:16] + "..."
             html += ">" + title + "</option>\n"
+            
+        # AM, extended must be showed also:
+        for prototype in self.ideviceStore.extended:
+            html += "<option value=\""+prototype.title+"\" "
+            if self.editorPane.idevice.id == prototype.id:
+                html += "selected "
+            title = prototype.title
+            if len(title) > 16:
+                title = title[:16] + "..."
+            html += ">" + title + "</option>\n"
+            
+        
         html += "</select> \n"
         html += "</fieldset>\n"
         self.message = ""

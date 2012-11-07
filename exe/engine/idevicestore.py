@@ -73,7 +73,14 @@ class IdeviceStore:
         """
         self.generic.remove(idevice)
 
-
+    
+    def delExtendedIdevice(self, idevice):
+        """
+        Delete an extended idevice from idevicestore.
+        """
+        self.extended.remove(idevice)
+        
+    
     def register(self, listener):
         """
         Register a listener who is interested in changes to the
