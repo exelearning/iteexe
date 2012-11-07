@@ -79,6 +79,9 @@ class IdeviceStore:
         Delete an extended idevice from idevicestore.
         """
         self.extended.remove(idevice)
+        #JR: Comunicamos a los listener que este iDevice ya no esta disponible
+        for listener in self.listeners:
+            listener.delIdevice(idevice)
         
     
     def register(self, listener):
@@ -112,6 +115,10 @@ class IdeviceStore:
             idevicesDir.mkdir()
         self.__loadExtended()
         self.__loadGeneric()
+        #JR: comunicamos a los listener los iDevices extendidos
+        for listener in self.listeners:
+            for idevice in self.extended:
+                listener.addIdevice(idevice)
 
 
     def __loadExtended(self):
@@ -154,12 +161,12 @@ class IdeviceStore:
         from exe.engine.flashmovieidevice     import FlashMovieIdevice
         from exe.engine.quiztestidevice       import QuizTestIdevice
 
-	# JR	
-	# Necesarios para la FPD
+        # JR	
+        # Necesarios para la FPD
         from exe.engine.reflectionfpdidevice		import ReflectionfpdIdevice
         from exe.engine.reflectionfpdmodifidevice	import ReflectionfpdmodifIdevice
         from exe.engine.clozefpdidevice			import ClozefpdIdevice
-	from exe.engine.clozelangfpdidevice		import ClozelangfpdIdevice
+        from exe.engine.clozelangfpdidevice		import ClozelangfpdIdevice
         from exe.engine.parasabermasfpdidevice		import ParasabermasfpdIdevice
         from exe.engine.debesconocerfpdidevice		import DebesconocerfpdIdevice
         from exe.engine.citasparapensarfpdidevice	import CitasparapensarfpdIdevice
@@ -210,26 +217,26 @@ class IdeviceStore:
         self.extended.append(FlashMovieIdevice())
         self.extended.append(QuizTestIdevice())
 
-	# JR
-	# iDevices para la FPD
-	self.extended.append(ReflectionfpdIdevice())
-	self.extended.append(ReflectionfpdmodifIdevice())
+        # JR
+        # iDevices para la FPD
+        self.extended.append(ReflectionfpdIdevice())
+        self.extended.append(ReflectionfpdmodifIdevice())
         self.extended.append(ClozefpdIdevice())
-	self.extended.append(ClozelangfpdIdevice())
-	self.extended.append(ParasabermasfpdIdevice())
-	self.extended.append(DebesconocerfpdIdevice())
-	self.extended.append(CitasparapensarfpdIdevice())
-	self.extended.append(RecomendacionfpdIdevice())
-	self.extended.append(VerdaderofalsofpdIdevice())
-	self.extended.append(SeleccionmultiplefpdIdevice())
-	self.extended.append(EleccionmultiplefpdIdevice())
-	self.extended.append(CasopracticofpdIdevice())
-	self.extended.append(EjercicioresueltofpdIdevice())
-	self.extended.append(DestacadofpdIdevice())
-	#self.extended.append(CorreccionfpdIdevice())
-	self.extended.append(OrientacionesalumnadofpdIdevice())
-	self.extended.append(OrientacionestutoriafpdIdevice())
-	self.extended.append(FreeTextfpdIdevice())
+        self.extended.append(ClozelangfpdIdevice())
+        self.extended.append(ParasabermasfpdIdevice())
+        self.extended.append(DebesconocerfpdIdevice())
+        self.extended.append(CitasparapensarfpdIdevice())
+        self.extended.append(RecomendacionfpdIdevice())
+        self.extended.append(VerdaderofalsofpdIdevice())
+        self.extended.append(SeleccionmultiplefpdIdevice())
+        self.extended.append(EleccionmultiplefpdIdevice())
+        self.extended.append(CasopracticofpdIdevice())
+        self.extended.append(EjercicioresueltofpdIdevice())
+        self.extended.append(DestacadofpdIdevice())
+        #self.extended.append(CorreccionfpdIdevice())
+        self.extended.append(OrientacionesalumnadofpdIdevice())
+        self.extended.append(OrientacionestutoriafpdIdevice())
+        self.extended.append(FreeTextfpdIdevice())
 
 
         # generate new ids for these iDevices, to avoid any clashes

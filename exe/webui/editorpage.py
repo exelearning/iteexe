@@ -90,6 +90,7 @@ class EditorPage(RenderableResource):
                     self.__saveChanges(idevice, copyIdevice)
                 
                 selected_idevice = request.args["object"][0].decode("utf-8")
+
                 #JR: Cambio genericIdevices por listaidevices
                 for idevice in listaidevices:
                     if idevice.title == selected_idevice:
@@ -144,15 +145,7 @@ class EditorPage(RenderableResource):
             self.__importIdevice(filename)
         if ("action" in request.args and 
              request.args["action"][0] == "saveSH" and self.showHide == True):
-            self.showHide = True
-            for i in request.args.keys():
-                if (request.args[i] == ['on']):
-                    lista_idevices = self.ideviceStore.getIdevices()
-                    for idevice in lista_idevices:
-                        if (idevice.title == i):
-                            self.ideviceStore.delExtendedIdevice(idevice)
-                            self.ideviceStore.save()
-            self.__createNewIdevice(request)
+            self.__saveSHiDevices(request)
         if ("showHide" in request.args):
             self.showHide = True
             
@@ -320,3 +313,23 @@ class EditorPage(RenderableResource):
         html += "</fieldset>\n"
         self.message = ""
         return html
+
+    def __saveSHiDevices(self, request):
+        """
+        JR: Esta funcion procesa los iDevices que no se quieren mostrar
+        """
+        for i in request.args.keys():
+            if (request.args[i] == ['on']):
+                lista_idevices = self.ideviceStore.getIdevices()
+                generic = self.ideviceStore.generic
+                extended = self.ideviceStore.extended
+                for idevice in lista_idevices:
+                    if (idevice.title == i):
+                        if (idevice in generic):
+                            self.ideviceStore.delGenericIdevice(idevice)
+                        else:
+                            self.ideviceStore.delExtendedIdevice(idevice)
+                        self.ideviceStore.save()
+        
+        self.__createNewIdevice(request)
+
