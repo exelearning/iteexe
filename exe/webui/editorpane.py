@@ -434,7 +434,7 @@ data is entered into this field."""))
         JR: Funcion que muestra la lista de idevices para mostrarlos y ocultarlos
         """
         html = "<div id=\"editorWorkspace\">\n"
-        html += "<br/><br/><strong>Marca los iDevices que no quieres que se muestren:</strong>\n"
+        html += "<br/><br/><strong>%s</strong>\n" % _("Check iDevices do not want to display:")
         html += "<ul style=\"list-style:none;\">\n"
         idevices_sort = sorted(idevices, key=lambda idevice: idevice.title)
         for idevice in idevices_sort:

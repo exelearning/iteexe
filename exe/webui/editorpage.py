@@ -266,9 +266,9 @@ class EditorPage(RenderableResource):
         html += u' value="%s" />'  % _("Export iDevice")
         #JR: anado un boton que permite mostrar u ocultar iDevices
         if self.showHide:
-            html += "<br/>" + common.submitButton("showHide", _("Mostrar/Ocultar"), False)
+            html += "<br/>" + common.submitButton("showHide", _("Show/Hide"), False)
         else:
-            html += "<br/>" + common.submitButton("showHide", _("Mostrar/Ocultar"))
+            html += "<br/>" + common.submitButton("showHide", _("Show/Hide"))
         html += u'<br/><input class="button" type="button" name="quit" '
         html += u'onclick=JavaScript:window.close()'         
         html += u' value="%s" />\n'  % _("Quit")
