@@ -41,6 +41,7 @@ class Config:
 
     # Class attributes
     optionNames = {
+        'idevices': ('someone',),    
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browserPath'),
         'user': ('locale',),
@@ -53,6 +54,8 @@ class Config:
         self.configPath = None
         self.configParser = ConfigParser(self.onWrite)
         # Set default values
+        # idevices is the list of hidden idevices selected by the user
+        self.someone     = 0
         # exePath is the whole path and filename of the exe executable
         self.exePath     = Path(sys.argv[0]).abspath()
         # webDir is the parent directory for styles,scripts and templates
