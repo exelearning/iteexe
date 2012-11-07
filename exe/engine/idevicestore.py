@@ -119,6 +119,15 @@ class IdeviceStore:
         Load the Extended iDevices (iDevices coded in Python)
         """
         self.__loadUserExtended()
+        
+        #JR: Si existe el archivo extended.data cargamos de ahi los iDevices extendidos
+        extendedPath = self.config.configDir/'idevices'/'extended.data'
+        log.debug("load extended iDevices from "+extendedPath)
+        if extendedPath.exists():
+            self.extended = persist.decodeObject(extendedPath.bytes())
+            for idevice in self.extended:
+                idevice.id = self.getNewIdeviceId()
+            return
 
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multimediaidevice     import MultimediaIdevice
@@ -536,5 +545,8 @@ _(u"""Describe the tasks the learners should complete.""")))
             idevicesDir.mkdir()
         fileOut = open(idevicesDir/'generic.data', 'wb')
         fileOut.write(persist.encodeObject(self.generic))
+        #JR: Guardamos tambien los iDevices extendidos
+        fileOut = open(idevicesDir/'extended.data', 'wb')
+        fileOut.write(persist.encodeObject(self.extended))
 
 # ===========================================================================

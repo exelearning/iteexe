@@ -436,8 +436,7 @@ data is entered into this field."""))
         idevices_sort = sorted(idevices, key=lambda idevice: idevice.title)
         for idevice in idevices_sort:
             html += "<li>\n"
-            html += "<input type=checkbox name=%s>" % idevice.title
-            html += "%s</input>\n" % idevice.title
+            html += "<input type=checkbox name=\"%s\">%s</input>\n" % (idevice.title, idevice.title)
             html += "</li>\n" 
         html += "</ul>"
         html += "</div>"

@@ -12,21 +12,27 @@ function ideviceExists(ideviceName) {
   
 function saveIdevice(title){
     var title1
-    if (title == "none")
-        title1 = document.getElementById('title').value
-    else
-        title1 = title.replace("+", " ")
-    
+    //JR: Anadimos la comprobacion de que no sea null y ya sabemos que estamos hablando de saveSH
     var theForm = document.getElementById('contentForm')
-    
-    if (ideviceExists(title1)){
+	if (document.getElementById('title') == null) {
+		theForm.action.value="saveSH";
+		theForm.submit();
+	}
+	else {
+		if (title == "none")
+	   		title1 = document.getElementById('title').value
+	    else
+	        title1 = title.replace("+", " ")
+	    
+	    if (ideviceExists(title1)){
         if (confirm('Do you want to overwrite the existing idevice ' + title1 + '?')){
             theForm.action.value = "save"
         }else
             return
     }else 
-        theForm.action.value = "new";
+	        theForm.action.value = "new";
     theForm.submit()
+	}
     
 }
 

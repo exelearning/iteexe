@@ -53,6 +53,7 @@ class EditorPage(RenderableResource):
         self.url          = ""
         self.elements     = []
         self.isNewIdevice = True
+        self.showHide     = False
         self.message      = ""
         
     def getChild(self, name, request):
@@ -141,6 +142,19 @@ class EditorPage(RenderableResource):
              request.args["action"][0] == "import"):
             filename = request.args["pathpackage"][0]
             self.__importIdevice(filename)
+        if ("action" in request.args and 
+             request.args["action"][0] == "saveSH" and self.showHide == True):
+            self.showHide = True
+            for i in request.args.keys():
+                if (request.args[i] == ['on']):
+                    lista_idevices = self.ideviceStore.getIdevices()
+                    for idevice in lista_idevices:
+                        if (idevice.title == i):
+                            self.ideviceStore.delExtendedIdevice(idevice)
+                            self.ideviceStore.save()
+            self.__createNewIdevice(request)
+        if ("showHide" in request.args):
+            self.showHide = True
             
     def __createNewIdevice(self, request):
         """
@@ -262,7 +276,6 @@ class EditorPage(RenderableResource):
         html += "</div>\n"
         if ("showHide" in request.args):  
             html += self.editorPane.renderShowHideiDevices(self.ideviceStore.getIdevices())
-            self.message = ""
         else:
             html += self.editorPane.renderIdevice(request)
         html += "</div>\n"
