@@ -1156,8 +1156,8 @@ class MainPage(RenderableLivePage):
             webbrowser.open('file://'+filename)
         else:
             filename /= 'index.html'
-            log.debug(u"firefox file://"+filename+"&")
-            os.system("firefox file://"+filename+"&")
+            log.debug(u"firefox 'file://"+filename+"'&")
+            os.system("firefox 'file://"+filename+"'&")
 
     def _loadPackage(self, client, filename, newLoad=True,
                      destinationPackage=None):
