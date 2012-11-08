@@ -579,16 +579,16 @@ class FieldWithResources(Field):
         to build up the list of all anchors currently within this field's 
         new content to process.
         assuming TinyMCE anchor tag conventions of:
-               <a title="TITLE" name="NAME"></a>
+               <a name="NAME"></a>
         and that TITLE==NAME
         """
         anchor_names = []
         # match fairly strictly anchors created in TinyMCE style
-        matches = re.findall(r'''<a\stitle="(?P<title>[^">]+)"\s
+        # TinyMCE 3.X no has title attribute
+        matches = re.findall(r'''<a\s
           name="(?P<name>[^">]+)"></a>''',content, re.VERBOSE)
-        for (title, name) in matches:
-            if title == name:
-                anchor_names.append(title)
+        for (name) in matches:
+            anchor_names.append(name)
         return anchor_names
 
     def ListActiveInternalLinks(self, content):

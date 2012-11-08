@@ -139,7 +139,7 @@ def richTextArea(name, value="", width="100%", height=100, package=None):
             for anchor_name in anchor_field.anchor_names:
                 full_anchor_name = anchor_field_path + "#" + anchor_name
                 html_js += u'tinymce_anchors'
-                html_js += u'.push("%s");' % anchor_node_path
+                html_js += u'.push("%s");' % full_anchor_name
     # and below the user-defined anchors, also show "auto_top" anchors for ALL:
     if package is not None and package.root is not None \
     and G.application.config.internalAnchors=="enable_all" :
