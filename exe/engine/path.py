@@ -752,12 +752,15 @@ class Path(unicode):
 
     # --- Methods for querying the filesystem.
 
-    exists = os.path.exists
-    isabs = os.path.isabs
-    isdir = os.path.isdir
-    isfile = os.path.isfile
-    islink = os.path.islink
-    ismount = os.path.ismount
+    # N.B. On some platforms, the os.path functions may be implemented in C
+    # (e.g. isdir on Windows, Python 3.2.2), and compiled functions don't get
+    # bound. Playing it safe and wrapping them all in method calls.
+    def isabs(self): return os.path.isabs(self)
+    def exists(self): return os.path.exists(self)
+    def isdir(self): return os.path.isdir(self)
+    def isfile(self): return os.path.isfile(self)
+    def islink(self): return os.path.islink(self)
+    def ismount(self): return os.path.ismount(self)
 
     if hasattr(os.path, 'samefile'):
         samefile = os.path.samefile
