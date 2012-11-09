@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-09 09:36+0100\n"
-"PO-Revision-Date: 2012-10-28 20:20+0100\n"
+"PO-Revision-Date: 2012-11-09 18:23+0100\n"
 "Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Language: es\n"
@@ -570,7 +570,7 @@ msgstr "¿Las Mayúsculas están bloqueadas?"
 
 #: exe/webui/editorpane.py:437
 msgid "Check iDevices do not want to display:"
-msgstr ""
+msgstr "Marcar los iDevices que no desea que se muestren:"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Chinese Wikipedia Article"
@@ -2268,7 +2268,7 @@ msgstr "Mostrar/Ocultar las respuestas"
 
 #: exe/webui/editorpage.py:269 exe/webui/editorpage.py:271
 msgid "Show/Hide"
-msgstr ""
+msgstr "Mostrar/Ocultar"
 
 #: exe/webui/element.py:1207 exe/webui/element.py:1475
 msgid "Show/Hide Feedback"
