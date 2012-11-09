@@ -1,4 +1,4 @@
-#!C:\Python25\python
+#!C:\Python27\python
 
 # specify any options necessary when building installers
 nsis_options = ''
@@ -24,13 +24,13 @@ shutil.rmtree('dist', True)
 shutil.copytree('exe/webui/Mozilla Firefox', 'dist/Mozilla Firefox')
 
 # build the executable
-subprocess.check_call('python win-setup.py py2exe', shell = True, cwd = WDIR)
+subprocess.check_call('c:\Python27\python win-setup.py py2exe', shell = True, cwd = WDIR)
 
 # get the version
 sys.path.insert(0, WDIR)
 from exe.engine import version
-versions = "/DEXE_VERSION=%s /DEXE_REVISION=%s /DEXE_BUILD=%s /DEXE_SPLASH=%s" \
-        % (version.release, version.revision, version.build, BRANDED_JPG)
+versions = "/DEXE_VERSION=%s /DEXE_REVISION=%s /DEXE_SPLASH=%s" \
+        % (version.release, version.revision, BRANDED_JPG)
 
 # brand the splash screen
 os.chdir(os.path.join(WDIR, 'installs/windows'))
