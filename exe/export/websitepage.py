@@ -72,7 +72,16 @@ class WebsitePage(Page):
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"     
         html += u"<title>"
-        html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
+        if self.node.id=='0':
+            if self.node.package.title!='':
+                html += escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        else:
+            if self.node.package.title!='':
+                html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
         html += u" </title>\n" 
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
