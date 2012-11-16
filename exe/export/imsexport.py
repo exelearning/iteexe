@@ -207,7 +207,19 @@ class IMSPage(Page):
         html += u"<head>\n"
         html += u"<meta http-equiv=\"Content-type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
-        html += u"<title>"+_("eXe")+"</title>\n"
+        # html += u"<title>"+_("eXe")+"</title>\n"
+        html += u"<title>"
+        if self.node.id=='0':
+            if self.node.package.title!='':
+                html += escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        else:
+            if self.node.package.title!='':
+                html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        html += u" </title>\n" 
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         # If gallery
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"

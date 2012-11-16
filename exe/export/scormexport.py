@@ -296,7 +296,19 @@ class ScormPage(Page):
         lenguaje = G.application.config.locale
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
-        html += u"<title>"+_("eXe")+"</title>\n"
+        # html += u"<title>"+_("eXe")+"</title>\n"
+        html += u"<title>"
+        if self.node.id=='0':
+            if self.node.package.title!='':
+                html += escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        else:
+            if self.node.package.title!='':
+                html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
         html += u"<!-- Created using eXe: http://exelearning.net -->\n"
