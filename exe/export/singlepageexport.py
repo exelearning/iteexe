@@ -102,14 +102,6 @@ class SinglePageExport(object):
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
 
-        # If gallery
-        imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-        imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
-        imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-        imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
-        self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), self.outputDir)
-        # /If gallery
-	
         #JR Metemos los reproductores necesarios
         self.compruebaReproductores(self.page.node)
 
@@ -127,33 +119,42 @@ class SinglePageExport(object):
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
+        hasGallery        = False
 
-	for idevice in node.idevices:
-	    if (hasFlowplayer and hasMagnifier and hasXspfplayer):
-		break
-	    if not hasFlowplayer:
-		if 'flowPlayer.swf' in idevice.systemResources:
-		    hasFlowplayer = True
-	    if not hasMagnifier:
-		if 'magnifier.swf' in idevice.systemResources:
-		    hasMagnifier = True
-	    if not hasXspfplayer:
-		if 'xspf_player.swf' in idevice.systemResources:
-		    hasXspfplayer = True
-                        
+    	for idevice in node.idevices:
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
+    	    	break
+    	    if not hasFlowplayer:
+    	    	if 'flowPlayer.swf' in idevice.systemResources:
+    	    		hasFlowplayer = True
+    	    if not hasMagnifier:
+    	    	if 'magnifier.swf' in idevice.systemResources:
+    	    		hasMagnifier = True
+    	    if not hasXspfplayer:
+    		    if 'xspf_player.swf' in idevice.systemResources:
+    			    hasXspfplayer = True
+            if not hasGallery:
+    			if 'GalleryIdevice' == idevice.klass:
+    				hasGallery = True
+                            
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(self.outputDir/'flowPlayer.swf')
-# JR: anadimos los controles
-	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
-	    controlsfile.copyfile(self.outputDir/'flowplayer.controls.swf')
+            controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+            controlsfile.copyfile(self.outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(self.outputDir/'magnifier.swf')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(self.outputDir/'xspf_player.swf')
-        
+        if hasGallery:
+            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+            imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
+            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+            imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), self.outputDir)
+            
         for child in node.children:
             self.compruebaReproductores(child)
 
