@@ -162,15 +162,6 @@ class WebsiteExport(object):
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                   outputDir)
 
-        # If gallery
-        # JR: comento esto y lo pongo mas abajo que es cuando comprueba los iDevices
-        #imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-        #imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
-        #imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-        #imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-        #self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
-        # /If gallery
-        
         # copy players for media idevices.                
         hasFlowplayer     = False
         hasMagnifier      = False
@@ -182,9 +173,7 @@ class WebsiteExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                # If gallery
                 if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
-                # /If gallery
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -203,23 +192,20 @@ class WebsiteExport(object):
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
-# JR: anadimos los controles
-        controlsfile = (self.templatesDir/'flowplayer.controls.swf')
-        controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
+            controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+            controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
-        # If gallery
         if hasGallery:
             imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
             imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
-        # /If gallery
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)        
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

@@ -351,25 +351,18 @@ class IMSExport(object):
                                   'imsmd_v1p2p2.xsd',
                                   'ims_xml.xsd'), outputDir)
 
-        # If gallery
-        imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-        imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
-        imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-        imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-        self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
-        # /If gallery
-        
         # copy players for media idevices.                
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
+        hasGallery        = False
         isBreak           = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -381,19 +374,27 @@ class IMSExport(object):
                 if not hasXspfplayer:
                     if 'xspf_player.swf' in idevice.systemResources:
                         hasXspfplayer = True
+                if not hasGallery:
+                    if 'GalleryIdevice' == idevice.klass:
+                        hasGallery = True
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
-# JR: anadimos los controles
-	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
-	    controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
+            controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+            controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
+        if hasGallery:
+            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+            imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
+            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+            imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

@@ -501,31 +501,18 @@ class ScormExport(object):
                                 'adlcp_rootv1p2.xsd',
                                 'ims_xml.xsd'), outputDir)
  
-        # If gallery
-        # JR: comento esto y lo pongo mas abajo que es donde se comprueba por iDevice
-        #imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
-        #imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
-        #imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
-        #imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-        #self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
-        # /If gallery
-
         # copy players for media idevices.                
         hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
-        # If gallery
         hasGallery        = False
-        # /If gallery
         isBreak           = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                # If gallery
                 if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
-                # /If gallery
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -537,32 +524,27 @@ class ScormExport(object):
                 if not hasXspfplayer:
                     if 'xspf_player.swf' in idevice.systemResources:
                         hasXspfplayer = True
-                # If gallery
                 if not hasGallery:
                     if 'GalleryIdevice' == idevice.klass:
                         hasGallery = True
-                # /If gallery
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
-# JR: anadimos los controles
-	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
-	    controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
+            controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+            controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
-        # If gallery
         if hasGallery:
             imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
             imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
             self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
-        # /If gallery
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if package.license == "GNU Free Documentation License":
