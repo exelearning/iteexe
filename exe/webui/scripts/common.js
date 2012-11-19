@@ -1201,6 +1201,7 @@ if (newEditor==true) {
 
 //TinyMCE
 function getTinyMCELang(lang){
+    if (lang=="ca@valencia") lang = "ca";
 	var defaultLang = "en";
 	for (i=0;i<tinyMCE_languages.length;i++) {
 		if (tinyMCE_languages[i]===lang) defaultLang = lang;
