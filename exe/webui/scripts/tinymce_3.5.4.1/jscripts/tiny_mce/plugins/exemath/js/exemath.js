@@ -104,7 +104,7 @@ var orgImageWidth, orgImageHeight;
 			var w = "";
 			if (typeof(top.nevow_clientToServerEvent)!='undefined') w = top;
 			else {
-				alert("TinyMCE's \u0022inlinepopups\u0022 plugin is required.");
+				alert(tinyMCEPopup.getLang("exemath.inline_popups_plugin_is_required"));
 				return;
 			}
 			
@@ -242,7 +242,7 @@ var orgImageWidth, orgImageHeight;
 
 			var prev = document.getElementById("prev");
 			if (prev.innerHTML=='') {
-				alert("Genera la imagen pulsando \u0022Previsualizar\u0022 antes de guardar");
+				alert(tinyMCEPopup.getLang("exemath.press_preview_before_saving"));
 				return;
 			} else {
 				var ed = tinyMCEPopup.editor, f = document.forms[0];
