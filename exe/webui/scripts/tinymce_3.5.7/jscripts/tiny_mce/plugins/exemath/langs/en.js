@@ -21,6 +21,8 @@ verbose_insert_latex: 'And, add your own LaTeX directly into the following:',
 constrain_proportions : 'Constrain proportions',
 style : 'Style',
 example_img : 'Appearance&nbsp;preview&nbsp;image',
+press_preview_before_saving : 'Create the image by clicking \u0022Preview\u0022 before saving',
+inline_popups_plugin_is_required : 'The plugin \u0022inlinepopups\u0022 must be enabled',
 //advimage_dlg
 "image_list": "Image List",
 "align_right": "Right",

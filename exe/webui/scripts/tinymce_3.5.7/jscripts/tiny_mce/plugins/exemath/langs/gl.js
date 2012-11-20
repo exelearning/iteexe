@@ -24,6 +24,8 @@ preview : 'Previsualizaci\u00F3n da imaxe',
 constrain_proportions : 'Restrinxir proporci\u00F3ns',
 style : 'Estilo',
 example_img : 'Imaxe&nbsp;de&nbsp;previsualizaci\u00F3n',
+press_preview_before_saving : 'Xera a imaxe premendo en \u0022Previsualizar\u0022 antes de gardar',
+inline_popups_plugin_is_required : 'O plugin \u0022inlinepopus\u0022 debe estar activado',
 //advimage_dlg
 "image_list": "Lista de imaxe",
 "align_right": "Dereita",

@@ -24,6 +24,8 @@ preview : 'Previsualitzaci\u00F3 de la imatge',
 constrain_proportions : 'Restringeix proporcions',
 style : 'Estil',
 example_img : 'Imatge&nbsp;de&nbsp;previsualitzaci\u00F3',
+press_preview_before_saving : 'Genera la imatge prement \u0022Previsualitza\u0022 abans de desar-la',
+inline_popups_plugin_is_required : 'El connector \u0022inlinepopups\u0022 cal que estigui activat',
 //advimage_dlg
 "image_list": "Llista de la imatge",
 "align_right": "Dreta",

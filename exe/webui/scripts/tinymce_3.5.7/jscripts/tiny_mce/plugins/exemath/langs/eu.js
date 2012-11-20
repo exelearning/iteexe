@@ -21,6 +21,8 @@ verbose_insert_latex: 'Latex kodea erantsi:',
 constrain_proportions : 'Proportzioak mantendu',
 style : 'Estiloa',
 example_img : 'Nola ikusiko den',
+press_preview_before_saving : 'Genera la imagen pulsando \u0022Previsualizar\u0022 antes de guardar',
+inline_popups_plugin_is_required : 'El plugin \u0022inlinepopups\u0022 debe estar activado',
 //advimage_dlg
 "image_list": "Irudi-zerrenda",
 "align_right": "Eskuinean",
