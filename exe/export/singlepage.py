@@ -102,9 +102,8 @@ class SinglePage(Page):
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
-        # If gallery
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
-        # /If gallery
+        if common.hasGalleryIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u"<title>"
         html += name

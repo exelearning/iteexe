@@ -221,9 +221,8 @@ class IMSPage(Page):
                 html += escape(self.node.titleLong)
         html += u" </title>\n" 
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
-        # If gallery
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
-        # /If gallery
+        if common.hasGalleryIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"

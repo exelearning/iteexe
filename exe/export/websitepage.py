@@ -66,9 +66,8 @@ class WebsitePage(Page):
         html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<head>\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
-        # If gallery
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
-        # /If gallery
+        if common.hasGalleryIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"     
         html += u"<title>"

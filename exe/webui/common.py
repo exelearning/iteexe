@@ -663,3 +663,8 @@ def requestHasCancel(request):
         is_cancel = True
     return is_cancel
 
+def hasGalleryIdevice(node):
+    for idevice in node.idevices:
+        if idevice.klass == 'GalleryIdevice':
+            return True
+    return False
