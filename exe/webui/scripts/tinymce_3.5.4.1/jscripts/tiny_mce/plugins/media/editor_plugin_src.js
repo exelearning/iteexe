@@ -1,9 +1,10 @@
 /* 
 	Moxiecode's media plugin adapted to eXeLearning by Ignacio Gros (http://www.gros.es) 
 	TinyMCE version: 3.5.4.1 
-	eXeLearning version: intef6.2 (available at https://forja.cenatic.es/frs/?group_id=197) 
+	eXeLearning version: intef6.3 (available at https://forja.cenatic.es/frs/?group_id=197) 
 	Last eXeLearning version download page: http://exelearning.net/descargas/
 */
+// The New eXeLearning
 function parse_media_html_attributes(c) {
 
 	/* 
@@ -64,10 +65,22 @@ function parse_media_html_attributes(c) {
 					new_c += o_attrs_reordered;				
 					
 				} else {
+                
+                    //Check if it's flv to change the flashvars format:
+                    
+                    var is_flv_src = false;
 					
-					//Check if it's flv to change the flashvars format:
-					
-					if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
+                    if(c_parts_2[z].indexOf('<param name="flv_src" value="')==0) {
+                    
+                        is_flv_src = true;
+                        var my_video_url = c_parts[i].split("config={'playlist': [ { 'url': '");
+                        if (my_video_url.length>1) {
+                            my_video_url = my_video_url[1];
+                            my_video_url = my_video_url.split("'");
+                            new_c += '<param name="flv_src" value="'+my_video_url[0]+'" />';
+                        }
+                        
+                    } else if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
 						var flashvars = c_parts_2[z].replace('<param name="flashvars" value="','').replace('"','');
 						//Input: url=path_to_file.flv&amp;poster=/.../
 						//Output: config={'playlist': [ { 'url': 'path_to_file.flv', 'autoPlay': false, 'autoBuffering': true } ] }
@@ -92,10 +105,10 @@ function parse_media_html_attributes(c) {
 					
 				}
 				
-				if (z<(c_parts_2.length-1)) new_c+=">";
+				if (z<(c_parts_2.length-1) && !is_flv_src) new_c+=">";
 				
 			}
-			
+            
 			if (i<(c_parts.length-1)) new_c+="<object ";
 
 		}
@@ -173,6 +186,7 @@ function parse_media_html_attributes(c) {
 	return new_c;
 	
 }
+// /The New eXeLearning
 
 /**
  * editor_plugin_src.js

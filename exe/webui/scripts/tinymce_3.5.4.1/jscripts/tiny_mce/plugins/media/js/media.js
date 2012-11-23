@@ -483,7 +483,7 @@
 					setVal('src', src);
 					data.params.src = src;
 					data.params.exe_flv = src;
-					data.params.flv_src = src;
+					//data.params.flv_src = src;
 					//data.params.flashvars = "config={'playlist': [ { 'url': '"+src+"', 'autoPlay': false, 'autoBuffering': true } ] }";					
 				}
 				// /The New eXeLearning					
