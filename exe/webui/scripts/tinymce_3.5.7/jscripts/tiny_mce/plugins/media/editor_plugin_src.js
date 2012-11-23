@@ -22,6 +22,11 @@ function parse_media_html_attributes(c) {
 	var new_c = '';
 	
 	if (c.indexOf("<object ")!=-1) {
+    
+        //_p = _p.replace("config={ 'playlist'","config={'playlist'");
+        var str4 = "config={ "; //Older versions of eXe produced that code
+		var re4 = new RegExp(str4, "g");
+        c= c.replace(re4, "config={");    
 		
 		var c_parts = c.split("<object ");
 		
@@ -73,11 +78,11 @@ function parse_media_html_attributes(c) {
                     if(c_parts_2[z].indexOf('<param name="flv_src" value="')==0) {
                     
                         is_flv_src = true;
-                        var my_video_url = c_parts[i].split("config={'playlist': [ { 'url': '");
+                        var my_video_url = c_parts[i].split('<param name="exe_flv" value="');
                         if (my_video_url.length>1) {
                             my_video_url = my_video_url[1];
-                            my_video_url = my_video_url.split("'");
-                            new_c += '<param name="flv_src" value="'+my_video_url[0]+'" />';
+                            my_video_url = my_video_url.split('"');
+                            new_c += '<param name="flv_src" value="'+my_video_url[0]+'" />';                            
                         }
                         
                     } else if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
@@ -582,7 +587,7 @@ function parse_media_html_attributes(c) {
 			data = JSON.parse(data);
 			typeItem = this.getType(node.attr('class'));
 
-			style = node.attr('data-mce-style');
+			style = node.attr('data-mce-style')
 			if (!style) {
 				style = node.attr('style');
 
