@@ -1,14 +1,11 @@
-/**
- * editor_plugin_src.js
- *
- * Copyright 2009, Moxiecode Systems AB
- * Released under LGPL License.
- *
- * License: http://tinymce.moxiecode.com/license
- * Contributing: http://tinymce.moxiecode.com/contributing
- */
+/* 
+	Moxiecode's media plugin adapted to eXeLearning by Ignacio Gros (http://www.gros.es) 
+	TinyMCE version: 3.5.7
+	eXeLearning version: intef6.3 (available at https://forja.cenatic.es/frs/?group_id=197) 
+	Last eXeLearning version download page: http://exelearning.net/descargas/
+*/
 // The New eXeLearning
- function parse_media_html_attributes(c) {
+function parse_media_html_attributes(c) {
 
 	/* 
 		This function reorders the HTML attributes.
@@ -68,10 +65,22 @@
 					new_c += o_attrs_reordered;				
 					
 				} else {
+                
+                    //Check if it's flv to change the flashvars format:
+                    
+                    var is_flv_src = false;
 					
-					//Check if it's flv to change the flashvars format:
-					
-					if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
+                    if(c_parts_2[z].indexOf('<param name="flv_src" value="')==0) {
+                    
+                        is_flv_src = true;
+                        var my_video_url = c_parts[i].split("config={'playlist': [ { 'url': '");
+                        if (my_video_url.length>1) {
+                            my_video_url = my_video_url[1];
+                            my_video_url = my_video_url.split("'");
+                            new_c += '<param name="flv_src" value="'+my_video_url[0]+'" />';
+                        }
+                        
+                    } else if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
 						var flashvars = c_parts_2[z].replace('<param name="flashvars" value="','').replace('"','');
 						//Input: url=path_to_file.flv&amp;poster=/.../
 						//Output: config={'playlist': [ { 'url': 'path_to_file.flv', 'autoPlay': false, 'autoBuffering': true } ] }
@@ -96,13 +105,18 @@
 					
 				}
 				
-				if (z<(c_parts_2.length-1)) new_c+=">";
+				if (z<(c_parts_2.length-1) && !is_flv_src) new_c+=">";
 				
 			}
-			
+            
 			if (i<(c_parts.length-1)) new_c+="<object ";
 
 		}
+		
+		// Required for flv:
+		var str3 = '"http://'+window.location.host+'/templates/flowPlayer.swf';
+		var re3 = new RegExp(str3, 'g');
+		new_c= new_c.replace(re3, '"../templates/flowPlayer.swf');		
 		
 		// Required for mp3:
 		// new_c = new_c.replace( "http://127.0.0.1:51235/templates/xspf_player.swf", "../templates/xspf_player.swf" ); 
@@ -173,6 +187,16 @@
 	
 }
 // /The New eXeLearning
+
+/**
+ * editor_plugin_src.js
+ *
+ * Copyright 2009, Moxiecode Systems AB
+ * Released under LGPL License.
+ *
+ * License: http://tinymce.moxiecode.com/license
+ * Contributing: http://tinymce.moxiecode.com/contributing
+ */
 
 (function() {
 	var rootAttributes = tinymce.explode('id,name,width,height,style,align,class,hspace,vspace,bgcolor,type'), excludedAttrs = tinymce.makeMap(rootAttributes.join(',')), Node = tinymce.html.Node,
@@ -375,7 +399,7 @@
 			ed.onSaveContent.add(function(ed, o) {
 				o.content = parse_media_html_attributes(o.content);
 			});
-			/* The New ExeLearning */
+			/* The New ExeLearning */			
 			
 		},
 
@@ -517,7 +541,7 @@
 					// The New eXeLearning
 					//data.params.src = flashPlayer;
 					data.params.src = video_src;
-					// The New eXeLearning					
+					// The New eXeLearning
 
 					// Convert the movie url to absolute urls
 					if (editor.getParam('flash_video_player_absvideourl', true)) {
