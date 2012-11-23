@@ -117,8 +117,16 @@
 		insert : function() {
 		
 			// The New eXeLearning
+            
+            var src = get("src").value;
+            
+            // A video played with "../templates/flowPlayer.swf" that has not ben changed (same flv file). The src should be ../templates/flowPlayer.swf":
+            if (typeof(video_player_src)!='undefined' && src == video_file_src) {
+                setVal('src', video_player_src);
+                src = video_player_src;
+            }
+            
 			var t = get("media_type").value;
-			var src = get("src").value;
 			var file_extension = src.split(".").pop().toLowerCase();
 			
 			var mH = get("height").value;			
@@ -400,7 +408,15 @@
 						});
 					}
 
-					setVal('src', data.params.src);					
+					//setVal('src', data.params.src);					
+                    // The New eXeLearning
+                    video_file_src = data.params.src;
+                    if (data.params.flv_src && data.params.flv_src!="" && data.params.src=="../templates/flowPlayer.swf") {
+                        video_file_src = data.params.flv_src;
+                        video_player_src = data.params.src;
+                    }
+                    setVal('src', video_file_src);
+                    // /The New eXeLearning
 					
 				}
 			} else {
