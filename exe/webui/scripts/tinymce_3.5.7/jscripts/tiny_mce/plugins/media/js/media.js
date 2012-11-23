@@ -124,6 +124,11 @@
             if (typeof(video_player_src)!='undefined' && src == video_file_src) {
                 setVal('src', video_player_src);
                 src = video_player_src;
+            }
+            // Same case, when mp3:
+            else if (typeof(audio_player_src)!='undefined' && src == audio_file_src) {
+                setVal('src', audio_player_src);
+                src = audio_player_src;            
             }            
 			
             var t = get("media_type").value;
@@ -413,6 +418,17 @@
                     if (data.params.flv_src && data.params.flv_src!="" && data.params.src=="../templates/flowPlayer.swf") {
                         video_file_src = data.params.flv_src;
                         video_player_src = data.params.src;
+                    } else if (video_file_src.indexOf("../templates/xspf_player.swf?song_url=")==0) {
+                        //../templates/xspf_player.swf?song_url=resources/audio.mp3&song_title=audio.mp3
+                        audio_player_src = data.params.src;
+                        var _audio_file_src = video_file_src.replace("../templates/xspf_player.swf?song_url=","");
+                        _audio_file_src = _audio_file_src.split("&song_title=");
+                        if (_audio_file_src.length==2) {
+                            audio_file_src = _audio_file_src[0];
+                            audio_player_src = data.params.src;
+                            video_file_src = audio_file_src;
+                        }
+                        
                     }
                     setVal('src', video_file_src);
                     // /The New eXeLearning
