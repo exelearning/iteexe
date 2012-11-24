@@ -581,6 +581,31 @@
 			}
 			
 			// The New eXeLearning
+            //Remove /packageName/ from the src
+            var w = "";
+            if (window.parent) w = window.parent;
+            else if (window.opener) w = window.opener;
+            if (w!='') {
+                if(typeof(w.exe_package_name)!="undefined") {
+                    //Update src
+                    var s = getVal('src');
+                    var ch = "/"+w.exe_package_name+"/";
+                    if (s.indexOf(ch)==0) {
+                        s = s.replace(ch,"");
+                        setVal('src', s);
+                    }
+                    //Update flashvars
+                    var re1 = new RegExp("="+ch, "g");
+                    var f = getVal('flash_flashvars');
+                    f = f.replace(re1, "=");
+                    setVal('flash_flashvars', f);
+                    //Update source
+                    var s = getVal('source');
+                    s = s.replace(re1, "=");
+                    setVal('source', s);                    
+                }
+            }
+            //Set default size and hide advanced settings tab
 			if (field == 'type') {
 				
 				if (get('media_type').value=='audio') {

@@ -134,6 +134,14 @@ function parse_media_html_attributes(c) {
 		var str2 = "http://"+window.location.host;
 		var re2 = new RegExp(str2, "g");
 		new_c= new_c.replace(re2, "");	
+        
+        //Remove exe_package_name in absolute path
+		var str5 = 'value="/'+exe_package_name+'/resources/';
+		var re5 = new RegExp(str5, "g");
+		new_c= new_c.replace(re5, 'value="resources/');
+        var str6 = "\'url\': \'/"+exe_package_name+"/resources/";
+		var re6 = new RegExp(str5, "g");
+		new_c= new_c.replace(re6, "'url': 'resources/");
 
 	} else {
 
