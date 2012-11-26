@@ -998,7 +998,7 @@ class MagnifierElement(Element):
             'maxZoomSize': field.maxZSize,
             'targetColor': '#FF0000'}
         # Format the flash vars
-        flashVars = '&'.join(
+        flashVars = '&amp;'.join(
             ['%s=%s' % (name, value) for
              name, value in flashVars.items()])
         return common.flash(magnifierFile, field.width, field.height,
