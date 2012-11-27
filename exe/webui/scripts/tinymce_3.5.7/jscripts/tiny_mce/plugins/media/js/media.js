@@ -418,6 +418,7 @@
                     if (data.params.flv_src && data.params.flv_src!="" && data.params.src=="../templates/flowPlayer.swf") {
                         video_file_src = data.params.flv_src;
                         video_player_src = data.params.src;
+                        delete data.params['flv_src'];
                     } else if (video_file_src.indexOf("../templates/xspf_player.swf?song_url=")==0) {
                         //../templates/xspf_player.swf?song_url=resources/audio.mp3&song_title=audio.mp3
                         audio_player_src = data.params.src;
