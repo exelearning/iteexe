@@ -17,7 +17,7 @@ ExclusiveArch: i386
 BuildRequires: python-devel
 BuildRequires: python >= 2.4
 Requires: python-imaging, python-zope-interface, python-chardet
-Requires: firefox
+Requires: firefox < 17.0
 Obsoletes: exe-twisted
 
 %description

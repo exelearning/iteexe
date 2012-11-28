@@ -1,3 +1,52 @@
+python-exe (1:1.04.1.3605intef6.3rc1) lucid; urgency=low
+
+  [Antonio Moreno]
+  * Añadido al editor de Idevices la posibilidad de mostrar/ocultar Idevices. Aportaciones de José Ramón Jiménez y Pedro Peña
+
+  [Carles Ferrando]
+  * Revisión de traducción al catalán y catalán variante valenciana de eXe y TinyMCE. Con aportaciones de Pilar Embid.
+
+  [Ignacio Gros]
+  * Actualización de TinyMCE a versión 3.5.4.1
+  * Adaptación a nueva versión de TinyMCE de plugins exemath, media y pastecode
+  * Feature Request #1348 (Mejorar el iDevice Galería de imágenes). Con aportación de José Ramón Jiménez
+  * En los materiales exportados se insertan los estilos con link en lugar de con @import
+  * Se incluyen fuentes ttf, eot, otf, woff en las exportaciones
+  * Se muestra favicon en exportaciones a página sola (bug #1423)
+  * QuickTime & Real Media para Internet Explorer
+  * Activadas las traducciones al catalán y gallego de TinyMCE
+
+  [José Miguel Andonegui]
+  * Revisión de traducción al euskera de eXe y TinyMCE
+
+  [José Ramón Jiménez]
+  * Corrección de fallo en actualización de imágenes en Idevice Galería de imágenes (bug #1437)
+  * Corregidos comportamientos erróneos del iDevice Actividad de espacios en blanco (bug #1451)
+  * Feature Request #1372 (Incluir los estilos de la plantilla en modo edición)
+  * Feature Request #1368 (Homogeneizar el tratamiento de los títulos de página entre la versiónd de TodoFP y la del ITE)
+  * Se muestran las clases ordenadas alfabéticamente en el despleglable de clases de los diferentes popup de tinyMCE
+
+  [Juan Rafael Fernández]
+  * Revisión de traducción al español de eXe y TinyMCE
+
+  [Pablo Nimo]
+  * Revisión de traducción al gallego de eXe y TinyMCE
+
+  [Pedro Peña]
+  * Compresión de content.data y content.xml para versiones de eXe ejecutándose con python < 2.7
+  * Mejora en la correción de bug #1436 (iDevice de wiki repite el artículo al cargarlo)
+  * Se visualizan correctamente vídeos insertados con versiones anteriores a ite5 (bug #1452)
+  * Se muestra la versión de eXe en todos los sistemas operativos en "Acerca de eXe"
+  * Reabierto y solucionado bug #1419 (eXe no elimina contenidos desenlazados/eliminados de sus proyectos) para algunos casos concretos
+  * Corregido bug #1455 (Nombre incorrecto del idioma euskara en preferencias)
+  * Corretido bug #1456 (Error unificar elps)
+  * Corregido bug #1473 (Añadir variantes a las etiquetas de locales, concretamente ca@valencia)
+  * Se muestran las anclas generadas por el usuario aunque no sean del mismo nodo o idevice
+  * Se usa python 2.7 en las versiones de Windows y Mac OS X
+  * Se incluye Firefox 16.0.2 en instaladores de Windows y Mac OS X
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 28 Nov 2012 12:47:52 +0100
+
 python-exe (1:1.04.1.3605intef6.2) lucid; urgency=low
   
   [Antonio Moreno]
