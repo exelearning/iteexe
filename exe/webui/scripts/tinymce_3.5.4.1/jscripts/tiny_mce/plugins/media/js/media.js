@@ -419,7 +419,6 @@
                     if (data.params.flv_src && data.params.flv_src!="" && data.params.src=="../templates/flowPlayer.swf") {
                         video_file_src = data.params.flv_src;
                         video_player_src = data.params.src;
-                        delete data.params['flv_src'];
                     } else if (video_file_src.indexOf("../templates/xspf_player.swf?song_url=")==0) {
                         //../templates/xspf_player.swf?song_url=resources/audio.mp3&song_title=audio.mp3
                         audio_player_src = data.params.src;
@@ -516,9 +515,12 @@
 					setVal('src', src);
 					data.params.src = src;
 					data.params.exe_flv = src;
-					//data.params.flv_src = src;
-					//data.params.flashvars = "config={'playlist': [ { 'url': '"+src+"', 'autoPlay': false, 'autoBuffering': true } ] }";					
-				}
+                    if (typeof(data.params.flv_src)!='undefined') {
+                        delete data.params['flv_src']; //eXe creates it when saving
+                    }
+				} else if (src=='../templates/flowPlayer.swf') {
+                    data.params.src = data.params.exe_flv;
+                }
 				// /The New eXeLearning					
 
 				// Set default size
