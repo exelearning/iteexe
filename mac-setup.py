@@ -70,8 +70,8 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs, excludes=[]):
 # Add all the webui dirs
 dataFiles('exe/webui', '../Resources/exe',
         ['style', 'css', 'images', 'docs', 'linux-profile',
-            'scripts', 'schemas', 'templates',
-            'firefox'],
+            'scripts', 'schemas', 'templates'
+            ],
           excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex.exe'])
 
 # Add in the
