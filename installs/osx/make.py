@@ -31,6 +31,7 @@ shutil.rmtree('dist', True)
 
 # make the app
 subprocess.check_call('python mac-setup.py py2app', shell = True, cwd = WDIR)
+os.chmod('dist/exe.app/Contents/Resources/exe/firefox/Firefox.app/Contents/MacOS/firefox', 0755)
 
 if not do_make_image:
     sys.exit()
