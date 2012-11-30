@@ -225,7 +225,15 @@
 					preview_html = tinyMCEPopup.getLang("media_dlg.preview_error")+".";
 				}
 			}
-			
+            
+			//HTML5 video/audio preview
+            var s = getVal("src");
+            if (preview_html.indexOf('src=""></audio>')!=-1 && s!=""){
+                preview_html = preview_html.replace('src=""></audio>','src="'+s+'" controls="controls"></audio>');
+            } else if (preview_html.indexOf('src=""></video>')!=-1 && s!=""){
+                preview_html = preview_html.replace('src=""></video>','src="'+s+'" controls="controls"></video>');
+            }     
+            
 			get('prev').innerHTML = preview_html;
 			// /The New eXeLearning
 		},
