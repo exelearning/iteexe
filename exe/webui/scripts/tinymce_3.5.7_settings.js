@@ -18,6 +18,7 @@ tinyMCE.init({
 	//JR: Anadimos el estilo seleccionado en eXe
 	//content_css : "/css/extra.css", 
 	content_css : "/css/extra.css," + exe_style,
+    height : "450",
 	// The New eXeLearning
 	plugins : "autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups",
 	extended_valid_elements : "img[*]", //Required for the exemath plugin (it uses this attribute: exe_math_latex)
