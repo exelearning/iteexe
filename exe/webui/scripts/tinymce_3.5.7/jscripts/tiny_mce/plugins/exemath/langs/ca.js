@@ -70,5 +70,6 @@ general: "General",
 "tab_general": "General",
 width: "Ampl\u00e0ria",
 height: "Altura",
-no_source_code_found : "No s'ha trobat el codi font."
+no_source_code_found : "No s'ha trobat el codi font.",
+"missing_alt":"Esteu segur que voleu continuar sense incloure una descripci\u00f3 de la imatge? La imatge pot no ser accessible a usuaris amb discapacitats, o a aquells que utilitzin navegadors de text o que naveguin amb les imatges desactivades."
 });

@@ -67,5 +67,6 @@ general: "General",
 "tab_general": "General",
 width: "Width",
 height: "Height",
-no_source_code_found : "No source code found."
+no_source_code_found : "No source code found.",
+"missing_alt":"Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off."
 });

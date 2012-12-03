@@ -245,6 +245,13 @@ var orgImageWidth, orgImageHeight;
 				alert(tinyMCEPopup.getLang("exemath.press_preview_before_saving"));
 				return;
 			} else {
+                
+                //Alt text
+                var _alt = document.getElementById("alt");
+                if (_alt.value=="") {
+                    if (!confirm(tinyMCEPopup.getLang("exemath.missing_alt"))) return false;
+                }
+                
 				var ed = tinyMCEPopup.editor, f = document.forms[0];
 				//Insert and close
 				var ed = tinyMCEPopup.editor, f = document.forms[0], nl = f.elements, v, args = {}, el;

@@ -70,5 +70,6 @@ general: "General",
 "tab_general": "General",
 width: "Ancho",
 height: "Alto",
-no_source_code_found : "No se ha encontrado el c\u00f3digo fuente."
+no_source_code_found : "No se ha encontrado el c\u00f3digo fuente.",
+"missing_alt":"\u00bfEsta seguro de continuar sin introducir una descripci\u00f3n a la imagen? Sin ella puede no ser accesible para usuarios con discapacidades, o para aquellos que usen navegadores de modo texto, o tengan deshabilitadas las im\u00e1genes de la p\u00e1gina."
 });
