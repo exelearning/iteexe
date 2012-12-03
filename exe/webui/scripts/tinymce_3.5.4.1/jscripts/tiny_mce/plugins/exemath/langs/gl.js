@@ -70,5 +70,6 @@ general: "Xeral",
 "tab_general": "Xeral",
 width: "Ancho",
 height: "Alto",
-no_source_code_found : "Non se atopou o c\u00F3digo fonte."
+no_source_code_found : "Non se atopou o c\u00F3digo fonte.",
+"missing_alt":"\u00bfEsta seguro de continuar sen introducir unha descripci\u00f3n \u00e1 imaxe? Sen ela pode non ser accesible pra usuarios con discapacidades, ou pra aqueles que usen navegadores de modo texto, ou te\u00f1an deshabilitadas as imaxes da p\u00e1xina."
 });
