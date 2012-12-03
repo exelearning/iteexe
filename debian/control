@@ -2,7 +2,7 @@ Source: python-exe
 Section: python
 Priority: optional
 Maintainer: Jim Tittsler <jim@eXeLearning.org>
-Homepage: http://eXeLearning.org/
+Homepage: http://exeLearning.net/
 Vcs-Browser: http://exe.svn.sourceforge.net/viewvc/exe/
 Standards-Version: 3.6.1
 Build-Depends-Indep: debhelper (>= 5.0.38), python-support (>=0.5.3), python-all-dev (>= 2.6), python-setuptools
