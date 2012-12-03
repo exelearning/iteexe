@@ -368,6 +368,8 @@ class FieldWithResources(Field):
 # JR: Anadimos que busque en los recursos activos los apuntados por flv_src y los que estan en el data de los SWF
 		"flv_src\" value=\"resources/", \
 		"application/x-shockwave-flash\" data=\"resources/", \
+#JR: Anadimos que busque tambien para onmouseover y onmouseout
+        "this.src=\'resources/" , \
 #Cambio src por data
                 "data=\"../templates/xspf_player.swf?song_url=resources/"]
 
@@ -395,7 +397,10 @@ class FieldWithResources(Field):
                 # assume well-formed with matching quote: 
                 if end_pos > 0: 
                     # extract the actual resource name, after src=\"resources:
-                    resource_str = content[found_pos+len(search_str):end_pos] 
+                    resource_str = content[found_pos+len(search_str):end_pos]
+                    #JR: Quitamos "';" por si provenia de this.src
+                    if resource_str.endswith("\';"):
+                        resource_str = resource_str[:-2] 
                     # NEXT: add it to the resources_in_use, if not already!
                     resources_in_use.append(resource_str)
                 # Find the next source image in the content, continuing:
@@ -2006,6 +2011,217 @@ class FieldWithResources(Field):
             # Find the next source image in the content, continuing the loop:
             found_pos = new_content.find(search_str, found_pos+1) 
         
+        #JR: Anadimos esto para onmouseover y onmouseout
+        search_str = "this.src=\'/previews/"
+        # BEWARE OF THE ABOVE in regards to ProcessPreviewedMedia(),
+        # which takes advantage of the fact that the embedded media
+        # actually gets stored as src="previews/".
+        # If this little weirdness of Images being stored as src="../previews/"
+        # even changes to src="previews/", so more processing will be needed!
+
+        found_pos = new_content.find(search_str) 
+        while found_pos >= 0: 
+            end_pos = new_content.find('\'', found_pos+len(search_str)) 
+            if end_pos == -1: 
+                # now unlikely that this has already been quoted out, 
+                # since the search_str INCLUDES a \", but check anyway:
+                end_pos = new_content.find('&quot', found_pos+1) 
+            else: 
+                # okay, the end position \" was found, BUT beware of this 
+                # strange case, where the image file:/// URLs 
+                # were entered manually in one part of it 
+                # (and therefore escaped to &quot), AND another quote occurs 
+                # further below (perhaps even in a non-quoted file:/// via 
+                # a tinyMCE browser, but really from anything!) 
+                # So..... see if a &quot; is found in the file-name, and 
+                # if so, back the end_pos up to there.  
+                # NOTE: until actually looking at the HTML tags, and/or
+                # we might be able to do this more programmatically by 
+                # first seeing HOW the file:// is initially quoted, 
+                # whether by a \" or by &quot;, but for now, 
+                # just check this one.
+                end_pos2 = new_content.find('&quot', found_pos+1) 
+                if end_pos2 > 0 and end_pos2 < end_pos:
+                    end_pos = end_pos2
+            if end_pos >= found_pos:
+               # next, extract the actual file url, to be replaced later 
+               # by the local resource file:
+               file_url_str = new_content[found_pos:end_pos] 
+               # and to get the actual file path, 
+               # rather than the complete URL:
+
+               # first compensate for how TinyMCE HTML-escapes accents:
+               pre_input_file_name_str = file_url_str[len(search_str):]
+               log.debug("ProcessPreviewedImages: found escaped file = " \
+                           + pre_input_file_name_str)
+               converter = HtmlToText(pre_input_file_name_str)
+               input_file_name_str = converter.convertToText()
+
+               log.debug("ProcessPreviewedImages: unescaped filename = " \
+                           + input_file_name_str)
+
+               webDir     = Path(G.application.tempWebDir)
+               previewDir  = webDir.joinpath('previews')
+               server_filename = previewDir.joinpath(input_file_name_str);
+
+               # and now, extract just the filename string back out of that:
+               file_name_str = server_filename.abspath().encode('utf-8');
+
+               # Be sure to check that this file even exists before even 
+               # attempting to create a corresponding GalleryImage resource:
+               if os.path.exists(file_name_str) \
+               and os.path.isfile(file_name_str): 
+
+                   # Although full filenames (including flatted representations
+                   # of their source directory tree) were used to help keep the
+                   # filenames here in previewDir unique, this does cause
+                   # problems with the filenames being too long, if they
+                   # are kept that way.
+                   # So.... if an optional .exe_info file is coupled to
+                   # this one, go ahead and read in its original basename,
+                   # in order to rename the file back to something shorter.
+                   # After all, the resource process has its own uniqueifier.
+
+                   # test for the optional .exe_info:
+                   basename_value = ""
+                   descrip_file_path = Path(server_filename + ".exe_info")
+                   if os.path.exists(descrip_file_path) \
+                   and os.path.isfile(descrip_file_path): 
+                       descrip_file = open(descrip_file_path, 'rb')
+                       basename_info = descrip_file.read().decode('utf-8')
+                       log.debug("ProcessPreviewedImages: decoded basename = " \
+                           + basename_info)
+                       # split out the value of this "basename=file" key 
+                       basename_key_str = "basename="
+                       basename_found_pos = basename_info.find(basename_key_str) 
+                       # should be right there at the very beginning:
+                       if basename_found_pos == 0: 
+                           basename_value = \
+                                   basename_info[len(basename_key_str):] 
+                           # BEWARE: don't just change its name here in this 
+                           # dir, since it might be needed multiple times, and 
+                           # we won't want to delete it yet, but not deleting 
+                           # it might lead to name collision, so, make a 
+                           # temporary subdir bases, &: 
+
+                           # copy previewDir/longfile to
+                           #             previewDir/bases/basename
+                           # (don't worry if this overwrites a previous one)
+                           bases_dir = previewDir.joinpath('allyourbase')
+                           if not bases_dir.exists():
+                               bases_dir.makedirs()
+                           # joinpath needs its arguments to be in Unicode:
+                           base_file_name = bases_dir.joinpath( \
+                                   toUnicode(basename_value))
+                           base_file_str =  base_file_name.abspath()
+                           log.debug("ProcessPreviewedImages: copied to "
+                                  + "basefile = " + base_file_str)
+
+                           shutil.copyfile(file_name_str, base_file_str)
+                        
+                           # finally, change the name that's used in the 
+                           # resource creation in the below GalleryImage
+                           file_name_str = base_file_str
+
+                   # in passing GalleryImage into the FieldWithResources,
+                   # this field needs to be sure to have an updated
+                   # parentNode, courtesy of its idevice:
+                   self.setParentNode()
+                   
+                   # Not sure why this can't be imported up top, but it gives 
+                   # ImportError: cannot import name GalleryImages, 
+                   # so here it be:
+                   from exe.engine.galleryidevice  import GalleryImage
+
+                   # note: the middle GalleryImage field is currently
+                   # an unused caption:
+                   new_GalleryImage = GalleryImage(self, \
+                                                    '', file_name_str, \
+                                                    mkThumbnail=False)
+                   new_GalleryImageResource = new_GalleryImage._imageResource
+                   resource_path = new_GalleryImageResource._storageName
+                   # and re-concatenate from the global resources name, 
+                   # to build the webUrl to the resource:
+                   resource_url = new_GalleryImage.resourcesUrl+resource_path
+                   # and finally, go ahead and replace the filename:
+                   new_src_string = "this.src=\'"+resource_url
+
+                   ##########################################################
+                   # POSSIBLE CODE FOR JIMT & COUNTRYMIKE FOR CSS & ALIGNMENT:
+                   ###
+                   #new_src_string = "class=\"eXe_image\" " + new_src_string
+                   ###
+                   # BUT BEWARE:
+                   # while this will prepend the "class=" to the "src=" string,
+                   # these will be re-arranged with further processing of the
+                   # field's element, and WORSE:
+                   # if tinyMCE is RMB-opened on that image while editting the
+                   # element (e.g., to change its size), that class attribute
+                   # will no longer exist!
+                   # SO: this might be another please to do true tag-based
+                   # processing, and not only for new images, but existing too.
+                   # OR: is there a way for tinyMCE to recognize+keep classes?
+                   ##########################################################
+
+                   new_content = new_content.replace(file_url_str, 
+                                                     new_src_string)
+                   log.debug("ProcessPreviewedImages: built resource: " \
+                           + resource_url)
+
+                   # check to see if this was an exemath image.
+                   # If so, then go ahead and handle its counterpart
+                   # LaTeX source file as well.
+                   # Begin by seeing if this file began with the naming scheme:
+                   # WARNING: THERE MIGHT BE A DISCREPENCY:
+                   # the math source are being stored as "/previews/..."
+                   # while the actual images are still getting "../previews".
+                   # So, COULD take that into account here, OR...
+                   # just making them match up back in exemath.
+                   # (can more easily do here...)
+                   # BUT, BEWARE of any problems due to this once they
+                   # are resourcified! and further UPDATE edits are done.
+                   if resource_path.find("eXe_LaTeX_math_") >= 0:
+                   
+                       # Remember that the actual image is 
+                       #preview_math_src=file_url_str.replace("../previews",\
+                       #        "/previews") + ".tex\""
+                       # "../previews" is now set in exemath to match:
+                       preview_math_src = file_url_str + ".tex\""
+
+                       new_content = self.ProcessPairedMathSource(new_content,\
+                               preview_math_src, resource_path, resource_url)
+
+
+               else:
+                   log.warn("file '"+file_name_str+"' does not exist; " \
+                           + "unable to include it as a possible image " \
+                           + "resource for this TextAreaElement.")
+                   # IDEALLY: would like to replace the entire 
+                   #  <img src=.....> tag with text saying "[WARNING:...]",
+                   # but this requires more parsing than we have already done
+                   # and should really wait until the full-on HTML tags
+                   # are checked, in which case an ALT tag can be used.
+                   # For now, merely replacing the filename itself with some
+                   # warning text that includes the filename:
+                   filename_warning = "src=\"WARNING_FILE="+file_name_str \
+                           +"=DOES_NOT_EXIST"
+                   new_content = new_content.replace(file_url_str, 
+                                                     filename_warning)
+                   # note: while this technique IS less than ideal, 
+                   # also remember that files will typically be
+                   # selected using the Image browser, and "should" 
+                   # therefore "always" exist. :-)
+    
+                   # DESIGN NOTE: see how GalleryImage's _saveFiles() does
+                   # the "No Thumbnail Available. Could not load original..."
+            else:
+               # end_pos < found_pos (probably == -1)
+               log.warn("ProcessPreviewedImages: file URL string appears " \
+                        + "to NOT have a terminating quote.")
+    
+            # Find the next source image in the content, continuing the loop:
+            found_pos = new_content.find(search_str, found_pos+1) 
+        
         return new_content
         # end ProcessPreviewedImages()
 
@@ -2192,6 +2408,11 @@ class FieldWithResources(Field):
         # since they are exported as resources as well:
         resources_url_src = "exe_math_latex=\"resources/"
         exported_src = "exe_math_latex=\""
+        export_content = export_content.replace(resources_url_src,exported_src)
+        
+        # JR: Lo hacemos tambien para this.src
+        resources_url_src = "this.src=\'resources/"
+        exported_src = "this.src=\'"
         export_content = export_content.replace(resources_url_src,exported_src)
 
         return export_content
