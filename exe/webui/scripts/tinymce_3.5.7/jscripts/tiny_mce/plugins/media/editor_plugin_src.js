@@ -22,11 +22,6 @@ function parse_media_html_attributes(c) {
 	var new_c = '';
 	
 	if (c.indexOf("<object ")!=-1) {
-    
-        //_p = _p.replace("config={ 'playlist'","config={'playlist'");
-        var str4 = "config={ "; //Older versions of eXe produced that code
-		var re4 = new RegExp(str4, "g");
-        c= c.replace(re4, "config={");    
 		
 		var c_parts = c.split("<object ");
 		
@@ -78,11 +73,11 @@ function parse_media_html_attributes(c) {
                     if(c_parts_2[z].indexOf('<param name="flv_src" value="')==0) {
                     
                         is_flv_src = true;
-                        var my_video_url = c_parts[i].split('<param name="exe_flv" value="');
+                        var my_video_url = c_parts[i].split("config={'playlist': [ { 'url': '");
                         if (my_video_url.length>1) {
                             my_video_url = my_video_url[1];
-                            my_video_url = my_video_url.split('"');
-                            new_c += '<param name="flv_src" value="'+my_video_url[0]+'" />';                            
+                            my_video_url = my_video_url.split("'");
+                            new_c += '<param name="flv_src" value="'+my_video_url[0]+'" />';
                         }
                         
                     } else if(c_parts_2[z].indexOf('<param name="flashvars" value="')==0) {
@@ -130,32 +125,22 @@ function parse_media_html_attributes(c) {
 		new_c= new_c.replace(re1, '"../templates/xspf_player.swf');		
 
 		// Required for al media:
+        
+		// Remove http://127.0.0.1:51235/packageName/
+		var str3 = "http://"+window.location.host+"/"+exe_package_name+"/";
+		var re3 = new RegExp(str3, "g");
+		new_c= new_c.replace(re3, "");      
+        
 		// new_c = new_c.replace( /\http:\/\/127.0.0.1:51235/g, "" ); 
 		var str2 = "http://"+window.location.host;
 		var re2 = new RegExp(str2, "g");
 		new_c= new_c.replace(re2, "");	
-        
-        //Remove exe_package_name in absolute path
-		var str5 = 'value="/'+exe_package_name+'/resources/';
-		var re5 = new RegExp(str5, "g");
-		new_c= new_c.replace(re5, 'value="resources/');
-        var str6 = "\'url\': \'/"+exe_package_name+"/resources/";
-		var re6 = new RegExp(str5, "g");
-		new_c= new_c.replace(re6, "'url': 'resources/");
 
 	} else {
 
 		//No object tags
 		new_c = c;
 
-	}
-	
-	//HTML5 (video and audio)
-	if (c.indexOf("<video ")!=-1 || c.indexOf("<audio ")!=-1) {
-		// Remove http://127.0.0.1:51235/packageName/
-		var str3 = "http://"+window.location.host+"/"+exe_package_name+"/";
-		var re3 = new RegExp(str3, "g");
-		new_c= new_c.replace(re3, "");
 	}
 	
 	//HTML format:
