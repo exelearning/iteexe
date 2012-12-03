@@ -67,5 +67,6 @@ general: "Orokorra",
 "tab_general": "Orokorra",
 width: "Zabalera",
 height: "Altuera",
-no_source_code_found : "Ez da topatu iturburu-koderik."
+no_source_code_found : "Ez da topatu iturburu-koderik.",
+"missing_alt":"Irudiaren deskribapena gehitu gabe jarraitu nahi duzu? Hau horrela, ezgaitasunak dituztenentzat edo testu nabigatzaile bat darabiltenentzat ez da irisgarria izango."
 });

@@ -275,6 +275,9 @@ class GalleryBlock(Block):
                                                         % _(u'Delete'),
                           u'             src="/images/stock-delete.png"/>',
                           u'        </a>',
+                          u'<a href="javascript:addGalleryImage(%s)"' % id,
+                          u' title="%s"><img src="/images/stock-add.png"' % _(u"Add images"),
+                          u' class="submit" alt="%s" /></a>' % _(u"Add images"),
                           u'      </span>']
                 return result
             html += self._generateTable(genCell)

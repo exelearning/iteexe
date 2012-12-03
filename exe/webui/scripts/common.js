@@ -24,18 +24,9 @@
 // action and object fields so they can be used by submitLink
 
 // Common settings
-var tinyMCE3 = true;
-
-if (tinyMCE3==true) {
-	var eXeLearning_settings = {
-		wysiwyg_path : "/scripts/tinymce_3.5.4.1/jscripts/tiny_mce/tiny_mce.js",
-		wysiwyg_settings_path : "/scripts/tinymce_3.5.4.1_settings.js"
-	}
-} else {
-	var eXeLearning_settings = {
-		wysiwyg_path : "/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js",
-		wysiwyg_settings_path : "/scripts/tiny_mce_settings.js"		
-	}
+var eXeLearning_settings = {
+    wysiwyg_path : "/scripts/tinymce_3.5.4.1/jscripts/tiny_mce/tiny_mce.js",
+    wysiwyg_settings_path : "/scripts/tinymce_3.5.4.1_settings.js"
 }
 
 var objBrowse = navigator.appName;

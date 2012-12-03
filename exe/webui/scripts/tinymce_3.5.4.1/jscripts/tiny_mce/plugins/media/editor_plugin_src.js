@@ -125,6 +125,12 @@ function parse_media_html_attributes(c) {
 		new_c= new_c.replace(re1, '"../templates/xspf_player.swf');		
 
 		// Required for al media:
+        
+		// Remove http://127.0.0.1:51235/packageName/
+		var str3 = "http://"+window.location.host+"/"+exe_package_name+"/";
+		var re3 = new RegExp(str3, "g");
+		new_c= new_c.replace(re3, "");      
+        
 		// new_c = new_c.replace( /\http:\/\/127.0.0.1:51235/g, "" ); 
 		var str2 = "http://"+window.location.host;
 		var re2 = new RegExp(str2, "g");
@@ -135,14 +141,6 @@ function parse_media_html_attributes(c) {
 		//No object tags
 		new_c = c;
 
-	}
-	
-	//HTML5 (video and audio)
-	if (c.indexOf("<video ")!=-1 || c.indexOf("<audio ")!=-1) {
-		// Remove http://127.0.0.1:51235/packageName/
-		var str3 = "http://"+window.location.host+"/"+exe_package_name+"/";
-		var re3 = new RegExp(str3, "g");
-		new_c= new_c.replace(re3, "");
 	}
 	
 	//HTML format:

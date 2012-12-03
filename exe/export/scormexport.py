@@ -327,7 +327,7 @@ class ScormPage(Page):
             html += u"<script type=\"text/javascript\" "
             html += u"src=\"SCOFunctions.js\"></script>\n" 
             html += u"</head>\n"            
-            html += u'<body onload="loadPage()" '
+            html += u'<body class=\"exe-scorm\" onload="loadPage()" '
             html += u'onunload="unloadPage()">'
         html += u"<div id=\"outer\">\n"
         html += u"<div id=\"main\">\n"
