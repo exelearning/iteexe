@@ -21,6 +21,7 @@ tinyMCE.init({
     height : "450",
 	// The New eXeLearning
 	plugins : "autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups",
+    paste_text_sticky_default : true,
 	extended_valid_elements : "img[*]", //Required for the exemath plugin (it uses this attribute: exe_math_latex)
 
 	// Theme options
