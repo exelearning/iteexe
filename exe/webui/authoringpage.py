@@ -131,6 +131,7 @@ class AuthoringPage(RenderableResource):
             html += block.render(self.package.style)
 
         html += u'</div>\n'
+        html += u'<script type="text/javascript">$exeAuthoring.ready()</script>'
         html += common.footer()
 
         html = html.encode('utf8')
