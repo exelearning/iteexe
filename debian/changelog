@@ -1,3 +1,17 @@
+python-exe (1:1.04.1.3605intef6.3) lucid; urgency=low
+
+  [Ignacio Gros]
+  * Revisión y mejoras de TinyMCE y traducciones
+  * Prevención de error al pulsar sobre enlace a ancla en previsualización
+
+  [José Ramón Jiménez]
+  * Corregido bug en los eventos al insertar una imagen alternativa
+
+  [Juan Rafael Fernández]
+  * Corregidos 2 pequeños errores en traducción al catalán.
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 11 Dec 2012 11:52:51 +0100
+
 python-exe (1:1.04.1.3605intef6.3rc1) lucid; urgency=low
 
   [Antonio Moreno]
