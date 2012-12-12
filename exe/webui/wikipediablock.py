@@ -208,7 +208,7 @@ class WikipediaBlock(Block):
         log.debug("renderView")
         content = self.articleElement.renderView()
         # content = re.sub(r'src="resources/', 'src="', content)
-        content = re.sub(r'src="http://127.0.0.1:51235/newPackage.*/resources/', 'src="', content)
+        content = re.sub(r'src="http://127.0.0.1:\d+/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src="/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\'/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\"/newPackage.*/resources/', 'src="', content)
