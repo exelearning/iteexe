@@ -42,10 +42,46 @@ Ext.define('eXe.view.forms.ExportPanel', {
 	                            boxLabel: _('Add Previous/Next links within SCOs?'),
                                 inputValue: true,
                                 uncheckedValue: false,
-	                            tooltip: _('Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality.'),
+	                            tooltip: _('Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality.')
                             },
                             flex: 0,
                             help: _('Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle.')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+	                            inputId: 'pp_scowsinglepage',
+	                            boxLabel: _('Include Single Page export file?'),
+                                inputValue: true,
+                                uncheckedValue: false,
+	                            tooltip: _('Checking this option the exported SCORM file will include a file named "singlepage_index.html" containing the result of exporting this eXe package as a single page.')
+                            },
+                            flex: 0,
+                            help: _('Checking this option the exported SCORM file will include a file named "singlepage_index.html" containing the result of exporting this eXe package as a single page.')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+	                            inputId: 'pp_scowwebsite',
+	                            boxLabel: _('Include Web Site export files?'),
+                                inputValue: true,
+                                uncheckedValue: false,
+	                            tooltip: _('Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the "website_" prefix to differentiate them from their SCORM equivalent.')
+                            },
+                            flex: 0,
+                            help: _('Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the "website_" prefix to differentiate them from their SCORM equivalent.')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+	                            inputId: 'pp_scowsource',
+	                            boxLabel: _('Create editable SCORM file?'),
+                                inputValue: true,
+                                uncheckedValue: false,
+	                            tooltip: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
+                            },
+                            flex: 0,
+                            help: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
                         }
                     ]
                 },
