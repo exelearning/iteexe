@@ -1,10 +1,10 @@
-_ = parent._
-Ext = parent.Ext
-eXe = parent.eXe
+_ = parent._;
+Ext = parent.Ext;
+eXe = parent.eXe;
 
 function ideviceExists(ideviceName) {
     var ele = document.getElementById('ideviceSelect');
-    var ideviceNameLower = ideviceName.toLowerCase()
+    var ideviceNameLower = ideviceName.toLowerCase();
     
     for (var i = 0; i < ele.options.length; i++) {
         if (ele.options.item(i).value.toLowerCase() == ideviceNameLower) {
@@ -14,44 +14,42 @@ function ideviceExists(ideviceName) {
     return false;
 }
   
-function saveIdevice(title){
-    var title1
+function saveIdevice(title) {
+    var title1;
     //JR: Anadimos la comprobacion de que no sea null y ya sabemos que estamos hablando de saveSH
-    var theForm = document.getElementById('contentForm')
+    var theForm = document.getElementById('contentForm');
 	if (document.getElementById('title') == null) {
 		theForm.action.value="saveSH";
 		theForm.submit();
 	}
 	else {
 		if (title == "none")
-	   		title1 = document.getElementById('title').value
+	   		title1 = document.getElementById('title').value;
 	    else
-	        title1 = title.replace("+", " ")
-	    
-    var theForm = document.getElementById('contentForm')
-    
-    if (ideviceExists(title1)){
-        msg = new Ext.Template(_('Do you want to overwrite the existing idevice {idevice}?')).apply({idevice: title1});
-        Ext.Msg.show( {
-            title: _('Confirm'),
-            msg: msg,
-            scope: this,
-            modal: true,
-            buttons: Ext.Msg.YESNO,
-            fn: function(button) {
-                if (button == "yes")    {
-                    theForm.action.value = "save";
-                    theForm.submit();
-                }
-                else
-                    return;
-            }
-        });
-    }
-    else {
-        theForm.action.value = "new";
-        theForm.submit()
-    }
+	        title1 = title.replace("+", " ");
+	    if (ideviceExists(title1)){
+	        var msg = new Ext.Template(_('Do you want to overwrite the existing idevice {idevice}?')).apply({idevice: title1});
+	        Ext.Msg.show( {
+	            title: _('Confirm'),
+	            msg: msg,
+	            scope: this,
+	            modal: true,
+	            buttons: Ext.Msg.YESNO,
+	            fn: function(button) {
+	                if (button == "yes")    {
+	                    theForm.action.value = "save";
+	                    theForm.submit();
+	                }
+	                else
+	                    return;
+	            }
+	        });
+	    }
+	    else {
+	        theForm.action.value = "new";
+	        theForm.submit();
+	    }
+	}
     
 }
 
@@ -68,8 +66,8 @@ function importPackage(blockId) {
                 path.type  = 'eXe';
                 path.value = fp.file.path;
                 var theForm = document.getElementById('contentForm')
-            theForm.action.value = "import";
-                theForm.submit()
+                theForm.action.value = "import";
+                theForm.submit();
             }
         }
     });
@@ -96,7 +94,7 @@ function exportPackage(blockId, isNew) {
 		            path.value = fp.file.path;
 		            var theForm = document.getElementById('contentForm')
 		            theForm.action.value = "export";
-		            theForm.submit()
+		            theForm.submit();
 	            }
 	        }
 	    });
