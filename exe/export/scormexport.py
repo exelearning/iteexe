@@ -109,16 +109,16 @@ class Manifest(object):
             out.write(self.createXML().encode('utf8'))
         out.close()
         # now depending on metadataType, <metadata> content is diferent:
-        #JR: Cambio xulDir por jsDir que es donde estaran ahora las templates.
+        #JR: Cambio xulDir por webDir que es donde estaran ahora las templates.
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if self.metadataType == 'DC':
                 #JR: Por ahora dejo que coja la antigua plantila imslrm.xml
-                #templateFilename = self.config.jsDir/'templates'/'imslrmdc.xml'
-                templateFilename = self.config.jsDir/'templates'/'imslrm.xml'
+                #templateFilename = self.config.webDir/'templates'/'imslrmdc.xml'
+                templateFilename = self.config.webDir/'templates'/'imslrm.xml'
             elif self.metadataType == 'LOMES':
-                templateFilename = self.config.jsDir/'templates'/'imslrmlomes.xml'
+                templateFilename = self.config.webDir/'templates'/'imslrmlomes.xml'
             elif self.metadataType == 'LOM':
-                templateFilename = self.config.jsDir/'templates'/'imslrmlom.xml'  
+                templateFilename = self.config.webDir/'templates'/'imslrmlom.xml'  
             # now the real template file:   
             template = open(templateFilename, 'rb').read()
             xml = self.createMetaData(template)
@@ -189,8 +189,8 @@ class Manifest(object):
  xmlns="http://www.imsglobal.org/xsd/imscc/imscp_v1p1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd">\n''' % manifestId
-            #JR: Cambio xulDir por jsDir
-            templateFilename = self.config.jsDir/'templates'/'cc.xml'
+            #JR: Cambio xulDir por webDir
+            templateFilename = self.config.webDir/'templates'/'cc.xml'
             template = open(templateFilename, 'rb').read()
             xmlStr += self.createMetaData(template)
 
@@ -634,7 +634,7 @@ class ScormExport(object):
             website.export(package)
             (self.styleDir/'nav.css').copyfile(outputDir/'nav.css')
         if hasattr(package, 'scowsource') and package.scowsource:
-            (G.application.config.xulDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
+            (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
             (outputDir/'contentv2.xml').write_bytes(encodeObjectToXML(package))
 
