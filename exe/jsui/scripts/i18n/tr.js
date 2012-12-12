@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2012-07-03 11:14+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2012-12-12 11:56+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Add JPEG Image": "JPEG resmi ekle", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
@@ -150,7 +150,6 @@ translations = {
  "Please select a correct answer for each question.": "L\u00fctfen her soru i\u00e7in do\u011fru cevab\u0131 se\u00e7in.", 
  "No Thumbnail Available. Could not load original image.": "\u00d6nizleme Yok. Orijinal resim y\u00fcklenemedi.", 
  "Italian ": "\u0130talyanca", 
- "Show %s Image": "%s resmi g\u00f6ster", 
  "Package extracted to: %s": "Paket \u015furaya \u00e7\u0131kart\u0131ld\u0131: %s", 
  "No Thumbnail Available. Could not shrink image.": "\u00d6nizleme Yok. Resim boyutland\u0131r\u0131lamad\u0131.", 
  "Add a flash video to your iDevice.": "iDevice flash video y\u00fckle", 
@@ -161,7 +160,6 @@ translations = {
  "Swedish ": "\u0130sve\u00e7\u00e7e", 
  "Unit": "\u00dcnite", 
  "Information": "Bilgi", 
- "eXe": "eXe", 
  "SAVE FAILED!\n%s": "KAYIT HATALI!\n%s", 
  "\"%s\" already exists.\nPlease try again with a different filename": "\"%s\" dosyas\u0131 zaten var.\nL\u00fctfen ba\u015fka bir dosya ad\u0131 ile tekrar deneyiniz", 
  "Submit": "G\u00f6nder", 
