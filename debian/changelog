@@ -1,3 +1,71 @@
+python-exe (1:1.04.1.3605intef7beta2) lucid; urgency=low
+
+  [Pedro Peña]
+  * Actualizada la ventana de créditos
+  * Implementada cookie de session por puerto
+  * Implementado mecanismo para terminar el proceso eXe cuando no haya
+    ventanas activas
+  * En los casos en que ya exista un proceso eXe activo, se lanza uno nuevo
+    escuchando en el siguiente puerto disponible permitiendo apertura de
+    multiples ficheros usando doble click y ejecución en entornos multiseat
+  * Implementado mecanismo de ocultación de tags object y applet (sin soporte
+    de zindex) cuando se tienen que mostrar componentes con zindex superior
+  * Se activa el soporte de zindex para los tags object con flash
+  * Corregido problema en la selección de tipo de applet en idevice Applet de
+    Java
+  * Prevención de bloqueo de plugins (flash, java, etc) en navegadores Webkit
+    por falso positivo de XSS
+  * Arreglado primer agregado de opción/pregunta/actividad en Idevices Caso de
+    Estudio, Cuestionario Scorm, Verdadero Falso, Elección múltiple y
+    Selección Múltiple
+  * Se tiene en cuenta posibles slots vacíos en el listado de recursos del
+    paquete
+  * Se lanza Safari como navegador por defecto en Mac OS X
+  * Cambiado el mecanismo para imprimir el paquete actual. Ahora no se usa un
+    ventana de popup
+  * Deshabilitada cache para todos los elementos que se sirven desde el
+    servidor, incluidos los estáticos
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 27 Jun 2012 10:08:20 +0200
+
+python-exe (1:1.04.1.3605intef7beta1) lucid; urgency=low
+
+  [Pedro Peña]
+  * Desarrollo de interfaz usando framework javascript ExtJS 4.1
+  * Reimplementación de clases python del directorio exe/xului bajo exe/jsui
+    para la nueva interfaz
+  * Conexión de la nueva interfaz con las nuevas clases de exe/jsui
+  * Desarrollo de filepicker con autocompletado y atajos de teclado bajo ExtJS
+    4.1 para suplantar al filepicker XUL
+  * Implementación de atajos de teclado y navegación de menús equivalentes a
+    interfaz XUL
+  * Eliminada opción xulDir del fichero de configuración. Añadida opción jsDir
+  * Implementado PackageStore por sesión en lugar de por instancia de
+    aplicación. Diferentes sesiones del navegador no comparten paquetes
+    aunque tengan la misma url
+  * Preparado el sistema de traducción por petición del navegador (request) en
+    lugar de globalmente
+  * Preparado sistema de detección del lenguaje del navegador para establecer
+    el lenguaje de la petición
+  * Migración de toolkit de traducción a Pybabel
+  * Corregidas algunas cadenas para que se puedan traducir convenientemente
+  * Se lanza eXe con el navegador por defecto del usuario
+  * Posibilidad de abrir múltiples ventanas/pestañas sobre un mismo paquete.
+    Sincronización de dichas pestañas/ventanas cuando se realizan acciones
+  * Implementado mecanismo para prevenir el cierre accidental de la ventana o
+    pestaña del navegador
+  * Se termina el proceso eXe solamente cuando se cierra la última
+    ventana/pestaña (cliente) activa
+  * Aplicados parches para que eXe funcione en Python 2.7 en Windows y Mac
+  * Se separa de common.js los elementos y funciones que intervienen en la
+    interfaz de eXe. Se guardan en nuevo fichero: authoring.js
+  * Corregido bug en TinyMCE en navegadores Webkit (Chrome, Chromium, Safari,
+    etc)
+  * Corregido bug en navegador Chrome al redimensionar popups de TinyMCE
+  * Cambiado el sistema para coger los nombres de idioma de la página de
+    preferencias
+  * Barras de progreso al cargar, guardar, insertar o extraer paquetes
+
 python-exe (1:1.04.1.3605intef6.3) lucid; urgency=low
 
   [Ignacio Gros]

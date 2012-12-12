@@ -33,9 +33,6 @@ from exe.webui.renderable    import RenderableResource
 from exe.engine.path         import Path
 from exe                     import globals as G
 
-from exe.webui                  import preferencespage
-from exe.engine.idevice         import Idevice
-
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -47,10 +44,6 @@ class AuthoringPage(RenderableResource):
     name = u'authoring'
 
     def __init__(self, parent):
-        """
-        Initialize
-        'parent' is our MainPage instance that created us
-        """
         RenderableResource.__init__(self, parent)
         self.blocks  = []
 
@@ -72,11 +65,6 @@ class AuthoringPage(RenderableResource):
         # because the idevice pane needs to know that new idevices have been
         # added/edited..
         self.parent.process(request)
-        if ("action" in request.args and 
-            request.args["action"][0] == u"saveChange"):
-            log.debug(u"process savachange:::::")
-            self.package.save()
-            log.debug(u"package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
         # now that each block and corresponding elements have been processed,
@@ -89,7 +77,17 @@ class AuthoringPage(RenderableResource):
             for name in files: 
                 os.remove(os.path.join(root, name))
 
+        topNode = self.package.currentNode
+        if "action" in request.args:
+            if request.args["action"][0] == u"changeNode":
+                topNode = self.package.findNode(request.args["object"][0])
+            elif "currentNode" in request.args:
+                topNode = self.package.findNode(request.args["currentNode"][0])
+        elif "currentNode" in request.args:
+            topNode = self.package.findNode(request.args["currentNode"][0])
+
         log.debug(u"After authoringPage process" + repr(request.args))
+        return topNode
 
     def render_GET(self, request=None):
         """
@@ -98,13 +96,31 @@ class AuthoringPage(RenderableResource):
         """
         log.debug(u"render_GET "+repr(request))
 
+        topNode = self.package.root
         if request is not None:
             # Process args
             for key, value in request.args.items():
                 request.args[key] = [unicode(value[0], 'utf8')]
-            self._process(request)
+            topNode = self._process(request)
 
-        topNode     = self.package.currentNode
+        #Update other authoring pages that observes the current package
+        if "action" in request.args:
+            if request.args['clientHandleId'][0] == "":
+                raise(Exception("Not clientHandleId defined"))
+            for client in self.parent.clientHandleFactory.clientHandles.values():
+                if request.args['clientHandleId'][0] != client.handleId:
+                    if client.handleId in self.parent.authoringPages:
+                        destNode = None
+                        if request.args["action"][0] == "move":
+                            destNode = request.args["move" + request.args["object"][0]][0]
+                        client.call('eXe.app.getController("MainTab").updateAuthoring', request.args["action"][0], \
+                            request.args["object"][0], request.args["isChanged"][0], request.args["currentNode"][0], destNode)
+                else:
+                    activeClient = client
+
+            if request.args["action"][0] == "done":
+                return "<body onload='location.replace(\"" + request.path + "?clientHandleId=" + activeClient.handleId + "\")'/>"
+
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
@@ -120,6 +136,8 @@ class AuthoringPage(RenderableResource):
         html += common.hiddenField(u"action")
         html += common.hiddenField(u"object")
         html += common.hiddenField(u"isChanged", u"0")
+        html += common.hiddenField(u"currentNode", unicode(topNode.id))
+        html += common.hiddenField(u'clientHandleId', request.args['clientHandleId'][0])
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<h1 id="nodeTitle">\n'
@@ -131,7 +149,6 @@ class AuthoringPage(RenderableResource):
             html += block.render(self.package.style)
 
         html += u'</div>\n'
-        html += u'<script type="text/javascript">$exeAuthoring.ready()</script>'
         html += common.footer()
 
         html = html.encode('utf8')
@@ -142,7 +159,7 @@ class AuthoringPage(RenderableResource):
 
     def __renderHeader(self):
 		#TinyMCE lang (user preference)
-        myPreferencesPage = preferencespage.PreferencesPage(self)
+        myPreferencesPage = self.webServer.preferences
         
         """Generates the header for AuthoringPage"""
         html  = common.docType()
@@ -157,13 +174,14 @@ class AuthoringPage(RenderableResource):
         if G.application.config.assumeMediaPlugins: 
             html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
         #JR: anado una variable con el estilo
-        estilo = u'/style/%s/content.css' % self.package.style	
+        estilo = u'/style/%s/content.css' % self.package.style
         html += u"<script type=\"text/javascript\">var exe_style = '%s';</script>\n" % estilo
-        html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"
+        html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
+        html += u'<script type="text/javascript" src="/scripts/authoring.js">'
+        html += u'</script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
-        html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += u'<script type="text/javascript" src="/scripts/libot_drag.js">'

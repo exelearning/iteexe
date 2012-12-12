@@ -41,9 +41,8 @@ class Config:
 
     # Class attributes
     optionNames = {
-        'idevices': ('someone',),    
-        'system': ('webDir', 'xulDir', 'port', 'dataDir', 
-                   'configDir', 'localeDir', 'browserPath'),
+        'system': ('webDir', 'jsDir', 'port', 'dataDir', 
+                   'configDir', 'localeDir', 'browser'),
         'user': ('locale',),
     }
 
@@ -54,14 +53,11 @@ class Config:
         self.configPath = None
         self.configParser = ConfigParser(self.onWrite)
         # Set default values
-        # idevices is the list of hidden idevices selected by the user
-        self.someone     = 0
         # exePath is the whole path and filename of the exe executable
         self.exePath     = Path(sys.argv[0]).abspath()
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
-        # xulDir is the parent directory for styles,scripts and templates
-        self.xulDir      = self.exePath.dirname()
+        self.jsDir       = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on 
@@ -73,8 +69,9 @@ class Config:
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
         self.configDir   = Path(".")
-        # browserPath is the entire pathname to firefox
-        self.browserPath = Path("firefox")
+        # browser is the name of a predefined browser specified at http://docs.python.org/library/webbrowser.html.
+        # None for system default
+        self.browser = None
         # locale is the language of the user
         self.locale = chooseDefaultLocale(self.localeDir)
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
@@ -103,11 +100,10 @@ class Config:
         if not (self.webDir/'scripts').isdir() \
            and (self.webDir/'webui').isdir():
             self.webDir /= 'webui'
-        # Under devel trees, xului is the default xuldir
-        self.xulDir = Path(self.xulDir)
-        if not (self.xulDir/'scripts').isdir() \
-           and (self.xulDir/'xului').isdir():
-            self.xulDir /= 'xului'
+        self.jsDir = Path(self.jsDir)
+        if not (self.jsDir/'scripts').isdir() \
+           and (self.jsDir/'jsui').isdir():
+            self.jsDir /= 'jsui'
         # Find where the config file will be saved
         self.__setConfigPath()
         # Fill in any undefined config options with our defaults
@@ -219,10 +215,10 @@ class Config:
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir         = Path(system.webDir)
-            self.xulDir         = Path(system.xulDir)
+            self.jsDir          = Path(system.jsDir)
             self.localeDir      = Path(system.localeDir)
             self.port           = int(system.port)
-            self.browserPath    = Path(system.browserPath)
+            self.browser        = None if system.browser == u"None" else system.browser
             self.dataDir        = Path(system.dataDir)
             self.configDir      = Path(system.configDir)
             
@@ -329,9 +325,9 @@ class Config:
         log.info("************** eXe logging started **************")
         log.info("configPath  = %s" % self.configPath)
         log.info("exePath     = %s" % self.exePath)
-        log.info("browserPath = %s" % self.browserPath)
+        log.info("browser     = %s" % self.browser)
         log.info("webDir      = %s" % self.webDir)
-        log.info("xulDir      = %s" % self.xulDir)
+        log.info("jsDir      = %s" % self.jsDir)
         log.info("localeDir   = %s" % self.localeDir)
         log.info("port        = %d" % self.port)
         log.info("dataDir     = %s" % self.dataDir)

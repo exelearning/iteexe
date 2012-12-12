@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<lomes:lom xmlns:lomes="http://ltsc.ieee.org/xsd/LOM">
+    <lomes:general uniqueElementName="general">
+        <lomes:identifier>
+            <lomes:catalog uniqueElementName="catalog">Unified catalog mec-red.es-ccaa</lomes:catalog>
+            <lomes:entry uniqueElementName="entry">%(identifier)s</lomes:entry>
+        </lomes:identifier>
+        <lomes:title uniqueElementName="title">
+            <lomes:string language="es">%(title)s</lomes:string>
+        </lomes:title>
+        <lomes:language>%(language)s</lomes:language>
+        <lomes:description>
+            <lomes:string language="es">%(description)s</lomes:string>
+        </lomes:description> 
+        <lomes:keyword>
+            <lomes:string language="es">%(keyword)s</lomes:string>
+        </lomes:keyword>                
+        <lomes:coverage uniqueElementName="coverage">
+            <lomes:string language="es">%(coverage)s</lomes:string>
+        </lomes:coverage>                
+        <lomes:structure uniqueElementName="structure">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(structure)s</lomes:value>
+        </lomes:structure>             
+        <lomes:aggregationLevel uniqueElementName="aggregationLevel">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(aggregationlevel)s</lomes:value>
+        </lomes:aggregationLevel>
+    </lomes:general>
+    <lomes:lifeCycle uniqueElementName="lifeCycle">
+        <lomes:version uniqueElementName="version">
+            <lomes:string language="es">V1.0</lomes:string>
+        </lomes:version>
+        <lomes:status uniqueElementName="status">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(status)s</lomes:value>
+        </lomes:status>
+        <lomes:contribute uniqueElementName="contribute">
+            <lomes:role uniqueElementName="role">
+                <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                <lomes:value uniqueElementName="value">%(role)s</lomes:value>
+            </lomes:role>
+            <lomes:entity>BEGIN:VCARD VERSION:3.0 FN: EntityName EMAIL;TYPE=INTERNET: Email ORG: OrganizationName END:VCARD</lomes:entity>
+            <lomes:date uniqueElementName="date">
+                <lomes:dateTime uniqueElementName="dateTime">%(date)s</lomes:dateTime>
+                <lomes:description>
+                    <lomes:string language="es">Date of publication of digital object.</lomes:string>
+                </lomes:description>
+             </lomes:date>
+        </lomes:contribute>
+    </lomes:lifeCycle>         
+    <lomes:metaMetadata uniqueElementName="metaMetadata">
+        <lomes:identifier>
+            <lomes:catalog uniqueElementName="identifier">Name of catalog.</lomes:catalog>
+            <lomes:entry uniqueElementName="entry">%(identifier)s</lomes:entry>
+        </lomes:identifier>              
+        <lomes:contribute>
+            <lomes:role uniqueElementName="role">
+                <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                <lomes:value uniqueElementName="value">%(role)s</lomes:value>
+            </lomes:role>
+            <lomes:entity>BEGIN:VCARD VERSION:3.0 FN: EntityName EMAIL;TYPE=INTERNET: Email ORG: OrganizationName END:VCARD</lomes:entity>
+            <lomes:date uniqueElementName="date">
+                <lomes:dateTime uniqueElementName="dateTime">%(dateTime)s</lomes:dateTime>
+                <lomes:description>
+                    <lomes:string language="es">Date of creation of learning object metadata.</lomes:string>
+                </lomes:description>
+            </lomes:date>
+        </lomes:contribute>
+        <lomes:metadataSchema uniqueElementName="metadataSchema">LOM-ESv1.0</lomes:metadataSchema>
+        <lomes:language>%(language)s</lomes:language>
+    </lomes:metaMetadata>
+    <lomes:technical uniqueElementName="technical">
+        <lomes:format>text/html</lomes:format>
+        <lomes:size uniqueElementName="size">%(size)s</lomes:size>
+        <lomes:location>%(location)s</lomes:location>
+        <lomes:requirement>
+            <lomes:orComposite>
+                <lomes:type uniqueElementName="type">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">browser</lomes:value>
+                </lomes:type>
+                <lomes:name uniqueElementName="name">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">any</lomes:value>
+                </lomes:name>
+            </lomes:orComposite>
+        </lomes:requirement>
+        <lomes:installationRemarks uniqueElementName="installationRemarks">
+            <lomes:string language="es">Not required.</lomes:string>
+        </lomes:installationRemarks>
+        <lomes:otherPlatformRequirements>
+            <lomes:string language="es">Made with eXe.</lomes:string>
+        </lomes:otherPlatformRequirements>
+        <lomes:duration uniqueElementName="duration">
+            <lomes:duration uniqueElementName="duration">PT5H</lomes:duration>
+            <lomes:description>
+                <lomes:string language="es">%(description)s</lomes:string>
+            </lomes:description>
+        </lomes:duration>              
+    </lomes:technical>
+    <lomes:educational>
+        <lomes:interactivityType uniqueElementName="interactivityType">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(interactivitytype)s</lomes:value>
+        </lomes:interactivityType>              
+        <lomes:learningResourceType>
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(learningresourcetype)s</lomes:value>
+        </lomes:learningResourceType>
+        <lomes:interactivityLevel uniqueElementName="interactivityLevel">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(interactivitylevel)s</lomes:value>
+        </lomes:interactivityLevel>
+        <lomes:semanticDensity uniqueElementName="semanticDensity">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(semanticdensity)s</lomes:value>
+        </lomes:semanticDensity>
+        <lomes:intendedEndUserRole>
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(intendedenduserrole)s</lomes:value>
+        </lomes:intendedEndUserRole>
+        <lomes:context>
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(context)s</lomes:value>
+        </lomes:context>
+        <lomes:typicalAgeRange>
+           <lomes:string>%(typicalagerange)s</lomes:string>
+        </lomes:typicalAgeRange>
+        <lomes:difficulty uniqueElementName="difficulty">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(difficulty)s</lomes:value>
+        </lomes:difficulty>
+        <lomes:typicalLearningTime uniqueElementName="typicalLearningTime">
+            <lomes:duration uniqueElementName="duration">PT5H</lomes:duration>
+            <lomes:description>
+                <lomes:string>Approximate time required.</lomes:string>
+            </lomes:description>
+        </lomes:typicalLearningTime>
+        <lomes:description>
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(description)s</lomes:value>
+        </lomes:description>         
+        <lomes:language>%(language)s</lomes:language>           
+        <lomes:cognitiveProcess uniqueElementName="cognitiveProcess">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(cognitiveprocess)s</lomes:value>
+        </lomes:cognitiveProcess>
+    </lomes:educational>
+    <lomes:rights uniqueElementName="rights">
+        <lomes:cost uniqueElementName="cost">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(cost)s</lomes:value>
+        </lomes:cost>
+        <lomes:copyrightAndOtherRestrictions uniqueElementName="copyrightAndOtherRestrictions">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(copyrightandotherrestrictions)s</lomes:value>
+        </lomes:copyrightAndOtherRestrictions>
+        <lomes:description>
+            <lomes:string language="es">Something to add about rights.</lomes:string>
+        </lomes:description>
+        <lomes:access uniqueElementName="access">
+            <lomes:accessType uniqueElementName="accessType">
+                <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                <lomes:value uniqueElementName="value">%(access)s</lomes:value>
+            </lomes:accessType>
+            <lomes:description>
+                <lomes:string language="es">Description.</lomes:string>
+            </lomes:description>
+        </lomes:access>
+    </lomes:rights>         
+    <lomes:relation>
+        <lomes:kind uniqueElementName="kind">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(kind)s</lomes:value>
+        </lomes:kind>
+        <lomes:resource uniqueElementName="resource">
+            <lomes:identifier>
+                <lomes:catalog uniqueElementName="identifier">mec-red.es-ccaa</lomes:catalog>
+                <lomes:entry uniqueElementName="entry">%(identifier)s</lomes:entry>
+            </lomes:identifier>
+            <lomes:description>
+            <lomes:string language="es">%(description)s</lomes:string>
+            </lomes:description>
+        </lomes:resource>
+    </lomes:relation>        
+    <lomes:anotation>
+        <lomes:entity>BEGIN:VCARD VERSION:3.0 FN: EntityName EMAIL;TYPE=INTERNET: Email ORG: OrganizationName END:VCARD</lomes:entity>
+        <lomes:date uniqueElementName="date">
+            <lomes:dateTime uniqueElementName="dateTime">%(date)s</lomes:dateTime>
+            <lomes:description>
+                <lomes:string language="es">Date of annotation.</lomes:string>
+            </lomes:description>
+        </lomes:date>
+        <lomes:description>
+            <lomes:string language="es">%(description)s</lomes:string>
+        </lomes:description>
+    </lomes:anotation>          
+    <lomes:classification>
+        <lomes:purpose uniqueElementName="purpose">
+            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+            <lomes:value uniqueElementName="value">%(purpose)s</lomes:value>
+        </lomes:purpose>
+        <lomes:taxonPath>
+            <lomes:source uniqueElementName="source">
+                <lomes:string language="es">%(taxonpath)s</lomes:string>
+            </lomes:source>
+            <lomes:taxon>
+           	    <lomes:id uniqueElementName="id">%(id)s</lomes:id>
+                <lomes:entry>
+                    <lomes:string language="es">%(taxon)s</lomes:string>
+                </lomes:entry>
+            </lomes:taxon>
+        </lomes:taxonPath>
+        <lomes:description>
+            <lomes:string language="es">%(description)s</lomes:string>
+        </lomes:description>
+        <lomes:keyword>
+            <lomes:string language="es">%(keyword)s</lomes:string>
+        </lomes:keyword>       
+    </lomes:classification>
+</lomes:lom>

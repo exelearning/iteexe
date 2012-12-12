@@ -50,7 +50,6 @@ class StandaloneConfig(Config):
         self.localeDir     = exePath/'locale'
         self.xulrunnerPath = exePath/'xulrunner/xulrunner'
         self.styles        = []
-        self.browserPath = exePath/'firefox'/'firefox.exe'
 
     def _getConfigPathOptions(self):
         """

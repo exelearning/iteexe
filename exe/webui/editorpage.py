@@ -79,7 +79,6 @@ class EditorPage(RenderableResource):
         if "action" in request.args:
             if request.args["action"][0] == "changeIdevice":
                 genericIdevices = self.ideviceStore.generic
-                
                 if not self.isNewIdevice:
                     ideviceId = self.editorPane.idevice.id
                     for idevice in genericIdevices:
@@ -270,7 +269,7 @@ class EditorPage(RenderableResource):
         else:
             html += "<br/>" + common.submitButton("showHide", _("Show/Hide"))
         html += u'<br/><input class="button" type="button" name="quit" '
-        html += u'onclick=JavaScript:window.close()'         
+        html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'         
         html += u' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"

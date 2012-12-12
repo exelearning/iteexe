@@ -24,7 +24,7 @@ anything it just redirects the user to a new package.
 
 import logging
 from exe.webui.renderable     import RenderableResource
-from exe.xului.mainpage       import MainPage
+from exe.jsui.mainpage import MainPage
 
 log = logging.getLogger(__name__)
 
@@ -38,15 +38,17 @@ class PackageRedirectPage(RenderableResource):
     
     name = '/'
 
-    def __init__(self, webServer):
+    def __init__(self, webServer, packagePath=None):
         """
         Initialize
         """
         RenderableResource.__init__(self, None, None, webServer)
         self.webServer = webServer
+        self.packagePath = packagePath
         # See if all out main pages are not showing
         # This is a twisted timer
         self.stopping = None
+        self.mainpages = {}
 
     def getChild(self, name, request):
         """
@@ -61,21 +63,28 @@ class PackageRedirectPage(RenderableResource):
             if result is not None:
                 return result
             else:
+                session = request.getSession()
+                if self.packagePath:
+                    session.packageStore.addPackage(self.package)
+                    self.bindNewPackage(self.package, session)
+                    self.packagePath = None
+                if session.uid in self.mainpages.keys():
+                    if name in self.mainpages[session.uid].keys():
+                        return self.mainpages[session.uid][name]
                 # This will just raise an error
                 return RenderableResource.getChild(self, name, request)
 
-    def bindNewPackage(self, package):
+    def bindNewPackage(self, package, session):
         """
         Binds 'package' to the appropriate url
         and creates a MainPage instance for it
         and a directory for the resource files
-
-	    In the GTK version, this should actually
-        redirect people to MainPage. Copy from
-	    svn revision 1311 to re-enable gtk.
         """
-        MainPage(self, package)
-
+        session_mainpages = self.mainpages.get(session.uid)
+        if session_mainpages:
+            session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
+        else:
+            self.mainpages[session.uid] = {package.name: MainPage(None, package, session, self.webServer)}
 
     def render_GET(self, request):
         """
@@ -83,8 +92,9 @@ class PackageRedirectPage(RenderableResource):
         """
         log.debug("render_GET" + repr(request.args))
         # Create new package
-        package = self.packageStore.createPackage()
-        self.bindNewPackage(package)
+        session = request.getSession()
+        package = session.packageStore.createPackage()
+        self.bindNewPackage(package, session)
         log.info("Created a new package name="+ package.name)
         # Tell the web browser to show it
         request.redirect(package.name.encode('utf8'))

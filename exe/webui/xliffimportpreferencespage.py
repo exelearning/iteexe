@@ -60,8 +60,8 @@ class XliffImportPreferencesPage(RenderableResource):
         html += u'</script>\n'
         html += u'''<script language="javascript" type="text/javascript">
             function importXliff(from_source) {
-                opener.nevow_clientToServerEvent('mergeXliffPackage', this, '', '%s', from_source);
-                window.close();
+                parent.nevow_clientToServerEvent('mergeXliffPackage', this, '', '%s', from_source);
+                parent.Ext.getCmp("xliffimportwin").close();
             }
         </script>''' % quote(request.args['path'][0])
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
@@ -92,7 +92,7 @@ language."))
                 onClick="importXliff(document.forms.contentForm.from_source.checked \
                 )")
         html += common.button("cancel", _("Cancel"), enabled=True,
-                _class="button", onClick="window.close()")
+                _class="button", onClick="parent.Ext.getCmp('xliffimportwin').close()")
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"<br/></form>\n"

@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vdex orderSignificant="true" profileType="hierarchicalTokenTerms" language="en" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdexv1p0 imsvdex_v1p0.xsd" xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<vocabName>
+		<langstring>Nivel educativo LOM-ESv1.0</langstring>
+	</vocabName>
+	<vocabIdentifier>NEDLOMES001</vocabIdentifier>
+	<term>
+		<termIdentifier>1</termIdentifier>
+		<caption>
+			<langstring>Special Education</langstring>
+		</caption>
+		<term>
+			<termIdentifier>1.1</termIdentifier>
+			<caption>
+				<langstring>Preschool Education</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.2</termIdentifier>
+			<caption>
+				<langstring>Primary Education</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.3</termIdentifier>
+			<caption>
+				<langstring>Compulsory Secondary Education (ESO)</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>2</termIdentifier>
+		<caption>
+			<langstring>Preschool Education</langstring>
+		</caption>
+		<term>
+			<termIdentifier>2.1</termIdentifier>
+			<caption>
+				<langstring>First stage</langstring>
+			</caption>
+			<term>
+				<termIdentifier>2.1.1</termIdentifier>
+				<caption>
+					<langstring>0 years</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.1.2</termIdentifier>
+				<caption>
+					<langstring>1 year</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.1.3</termIdentifier>
+				<caption>
+					<langstring>2 years</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>2.2</termIdentifier>
+			<caption>
+				<langstring>Second stage</langstring>
+			</caption>
+			<term>
+				<termIdentifier>2.2.1</termIdentifier>
+				<caption>
+					<langstring>3 years</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.2.2</termIdentifier>
+				<caption>
+					<langstring>4 years</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.2.3</termIdentifier>
+				<caption>
+					<langstring>5 years</langstring>
+				</caption>
+			</term>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>3</termIdentifier>
+		<caption>
+			<langstring>Primary Education</langstring>
+		</caption>
+		<term>
+			<termIdentifier>3.1</termIdentifier>
+			<caption>
+				<langstring>First stage</langstring>
+			</caption>
+			<term>
+				<termIdentifier>3.1.1</termIdentifier>
+				<caption>
+					<langstring>First year</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>3.1.2</termIdentifier>
+				<caption>
+					<langstring>Second year</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>3.2</termIdentifier>
+			<caption>
+				<langstring>Second stage</langstring>
+			</caption>
+			<term>
+				<termIdentifier>3.2.1</termIdentifier>
+				<caption>
+					<langstring>Third year</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>3.2.2</termIdentifier>
+				<caption>
+					<langstring>Fourth year</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>3.3</termIdentifier>
+			<caption>
+				<langstring>Third stage</langstring>
+			</caption>
+			<term>
+				<termIdentifier>3.3.1</termIdentifier>
+				<caption>
+					<langstring>Fifth year</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>3.3.2</termIdentifier>
+				<caption>
+					<langstring>Sixth year</langstring>
+				</caption>
+			</term>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>4</termIdentifier>
+		<caption>
+			<langstring>Compulsory Secondary Education (ESO)</langstring>
+		</caption>
+		<term>
+			<termIdentifier>4.1</termIdentifier>
+			<caption>
+				<langstring>First year</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.2</termIdentifier>
+			<caption>
+				<langstring>Second year</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.3</termIdentifier>
+			<caption>
+				<langstring>Third year</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.4</termIdentifier>
+			<caption>
+				<langstring>Fourth year</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.5</termIdentifier>
+			<caption>
+				<langstring>Curricular diversification</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>5</termIdentifier>
+		<caption>
+			<langstring>Compensatory Education</langstring>
+		</caption>
+		<term>
+			<termIdentifier>5.1</termIdentifier>
+			<caption>
+				<langstring>Link classrooms</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>5.2</termIdentifier>
+			<caption>
+				<langstring>Fostering classrooms</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>5.3</termIdentifier>
+			<caption>
+				<langstring>Hospital classrooms</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>6</termIdentifier>
+		<caption>
+			<langstring>High Secondary Education (Bachillerato)</langstring>
+		</caption>
+	</term>
+	<term>
+		<termIdentifier>7</termIdentifier>
+		<caption>
+			<langstring>Initial Professional Qualification Programmes</langstring>
+		</caption>
+		<term>
+			<termIdentifier>7.1</termIdentifier>
+			<caption>
+				<langstring>Professional Initiation</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.2</termIdentifier>
+			<caption>
+				<langstring>Occupational training</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.3</termIdentifier>
+			<caption>
+				<langstring>Professional workshops</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.4</termIdentifier>
+			<caption>
+				<langstring>Special professional initiation</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.5</termIdentifier>
+			<caption>
+				<langstring>Training for access to intermediate level of Vocational Training</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.6</termIdentifier>
+			<caption>
+				<langstring>Training for access to high level of Vocational Training</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>8</termIdentifier>
+		<caption>
+			<langstring>Vocational Training</langstring>
+		</caption>
+		<term>
+			<termIdentifier>8.1</termIdentifier>
+			<caption>
+				<langstring>Training course intermediate level</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>8.2</termIdentifier>
+			<caption>
+				<langstring>Training course high level</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>9</termIdentifier>
+		<caption>
+			<langstring>Adults Education</langstring>
+		</caption>
+		<term>
+			<termIdentifier>9.1</termIdentifier>
+			<caption>
+				<langstring>Basic adults education</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.1.1</termIdentifier>
+				<caption>
+					<langstring>Teaching of basic literacy</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.1.2</termIdentifier>
+				<caption>
+					<langstring>Consolidation of knowledge and instrumental techniques</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.2</termIdentifier>
+			<caption>
+				<langstring>ESPA</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.2.1</termIdentifier>
+				<caption>
+					<langstring>Level 1</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.2.2</termIdentifier>
+				<caption>
+					<langstring>Level 2</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.3</termIdentifier>
+			<caption>
+				<langstring>ESPAD</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.3.1</termIdentifier>
+				<caption>
+					<langstring>Level 1</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.3.2</termIdentifier>
+				<caption>
+					<langstring>Level 2</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.4</termIdentifier>
+			<caption>
+				<langstring>External tests for Compulsory Secondary Education certificate</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.5</termIdentifier>
+			<caption>
+				<langstring>External tests for High Secondary Education</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.6</termIdentifier>
+			<caption>
+				<langstring>External tests for technician</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.7</termIdentifier>
+			<caption>
+				<langstring>External tests for high technician</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.8</termIdentifier>
+			<caption>
+				<langstring>Professional and occupational insertion or refreshment</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.9</termIdentifier>
+			<caption>
+				<langstring>Teaching of basic literacy in Spanish (Spanish for immigrants)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.10</termIdentifier>
+			<caption>
+				<langstring>Trainin for personal development</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.11</termIdentifier>
+			<caption>
+				<langstring>Adults and distant-learning Compulsory Secondary Education</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.12</termIdentifier>
+			<caption>
+				<langstring>Thast´s English. Official languages education</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.12.1</termIdentifier>
+				<caption>
+					<langstring>Module 1</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.2</termIdentifier>
+				<caption>
+					<langstring>Module 2</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.3</termIdentifier>
+				<caption>
+					<langstring>Module 3</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.4</termIdentifier>
+				<caption>
+					<langstring>Module 4</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.5</termIdentifier>
+				<caption>
+					<langstring>Module 5</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.6</termIdentifier>
+				<caption>
+					<langstring>Module 6</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.7</termIdentifier>
+				<caption>
+					<langstring>Module 7</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.8</termIdentifier>
+				<caption>
+					<langstring>Module 8</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.9</termIdentifier>
+				<caption>
+					<langstring>Module 9</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.13</termIdentifier>
+			<caption>
+				<langstring>Training course of distant-learning of intermediate level</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.13.1</termIdentifier>
+				<caption>
+					<langstring>First year</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.13.2</termIdentifier>
+				<caption>
+					<langstring>Second year</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.14</termIdentifier>
+			<caption>
+				<langstring>Training course of distant-learning of high level</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.14.1</termIdentifier>
+				<caption>
+					<langstring>First year</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.14.2</termIdentifier>
+				<caption>
+					<langstring>Second year</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.15</termIdentifier>
+			<caption>
+				<langstring>MENTOR classrooms</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>10</termIdentifier>
+		<caption>
+			<langstring>Special-Pattern Education</langstring>
+		</caption>
+		<term>
+			<termIdentifier>10.1</termIdentifier>
+			<caption>
+				<langstring>Official Languages School</langstring>
+			</caption>
+			<term>
+				<termIdentifier>10.1.1</termIdentifier>
+				<caption>
+					<langstring>Basic level</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.1.1.1</termIdentifier>
+					<caption>
+						<langstring>First year</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.1.1.2</termIdentifier>
+					<caption>
+						<langstring>Second year</langstring>
+					</caption>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.1.2</termIdentifier>
+				<caption>
+					<langstring>Intermediate level</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.1.2.1</termIdentifier>
+					<caption>
+						<langstring>Third year</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.1.2.2</termIdentifier>
+					<caption>
+						<langstring>Fourth year</langstring>
+					</caption>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.1.3</termIdentifier>
+				<caption>
+					<langstring>Advanced level</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.1.3.1</termIdentifier>
+					<caption>
+						<langstring>Fifth year</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.1.3.2</termIdentifier>
+					<caption>
+						<langstring>Sixth year</langstring>
+					</caption>
+				</term>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>10.2</termIdentifier>
+			<caption>
+				<langstring>Artistic education</langstring>
+			</caption>
+			<term>
+				<termIdentifier>10.2.1</termIdentifier>
+				<caption>
+					<langstring>Plastic arts and design education</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.1.1</termIdentifier>
+					<caption>
+						<langstring>Training course intermediate level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.1.1.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.1.1.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.1.2</termIdentifier>
+					<caption>
+						<langstring>Training course high level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.1.2.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.1.2.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.2</termIdentifier>
+				<caption>
+					<langstring>High education of plastic arts and design education</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.2.1</termIdentifier>
+					<caption>
+						<langstring>First year</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.2.2.2</termIdentifier>
+					<caption>
+						<langstring>Second year</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.2.2.3</termIdentifier>
+					<caption>
+						<langstring>Third year</langstring>
+					</caption>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.3</termIdentifier>
+				<caption>
+					<langstring>Music education</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.3.1</termIdentifier>
+					<caption>
+						<langstring>Elementary level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.3.1.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.1.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.1.3</termIdentifier>
+						<caption>
+							<langstring>Third year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.1.4</termIdentifier>
+						<caption>
+							<langstring>Forth year</langstring>
+						</caption>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.3.2</termIdentifier>
+					<caption>
+						<langstring>Intermediate level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.3.2.1</termIdentifier>
+						<caption>
+							<langstring>First stage</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.3.2.1.1</termIdentifier>
+							<caption>
+								<langstring>First year</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.3.2.1.2</termIdentifier>
+							<caption>
+								<langstring>Second year</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.2.2</termIdentifier>
+						<caption>
+							<langstring>Second stage</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.3.2.2.1</termIdentifier>
+							<caption>
+								<langstring>Third year</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.3.2.2.2</termIdentifier>
+							<caption>
+								<langstring>Fourth year</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.2.3</termIdentifier>
+						<caption>
+							<langstring>Third stage</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.3.2.3.1</termIdentifier>
+							<caption>
+								<langstring>Fifth year</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.3.2.3.2</termIdentifier>
+							<caption>
+								<langstring>Sixth year</langstring>
+							</caption>
+						</term>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.3.3</termIdentifier>
+					<caption>
+						<langstring>High level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.3.3.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.3</termIdentifier>
+						<caption>
+							<langstring>Third year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.4</termIdentifier>
+						<caption>
+							<langstring>Fourth year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.5</termIdentifier>
+						<caption>
+							<langstring>Fifth year</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.4</termIdentifier>
+				<caption>
+					<langstring>Dance education</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.4.1</termIdentifier>
+					<caption>
+						<langstring>Elementary level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.4.1.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.1.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.1.3</termIdentifier>
+						<caption>
+							<langstring>Third year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.1.4</termIdentifier>
+						<caption>
+							<langstring>Fourth year</langstring>
+						</caption>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.4.2</termIdentifier>
+					<caption>
+						<langstring>Intermediate level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.4.2.1</termIdentifier>
+						<caption>
+							<langstring>First stage</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.4.2.1.1</termIdentifier>
+							<caption>
+								<langstring>First year</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.4.2.1.2</termIdentifier>
+							<caption>
+								<langstring>Second year</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.2.2</termIdentifier>
+						<caption>
+							<langstring>Second stage</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.4.2.2.1</termIdentifier>
+							<caption>
+								<langstring>Third year</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.4.2.2.2</termIdentifier>
+							<caption>
+								<langstring>Fourth year</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.2.3</termIdentifier>
+						<caption>
+							<langstring>Third stage</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.4.2.3.1</termIdentifier>
+							<caption>
+								<langstring>Fifth year</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.4.2.3.2</termIdentifier>
+							<caption>
+								<langstring>Sixth year</langstring>
+							</caption>
+						</term>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.4.3</termIdentifier>
+					<caption>
+						<langstring>High level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.4.3.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.3.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.3.3</termIdentifier>
+						<caption>
+							<langstring>Third year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.3.4</termIdentifier>
+						<caption>
+							<langstring>Fourth year</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.5</termIdentifier>
+				<caption>
+					<langstring>Dramatic arts education</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.5.1</termIdentifier>
+					<caption>
+						<langstring>High level</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.5.1.1</termIdentifier>
+						<caption>
+							<langstring>First year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.5.1.2</termIdentifier>
+						<caption>
+							<langstring>Second year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.5.1.3</termIdentifier>
+						<caption>
+							<langstring>Third year</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.5.1.4</termIdentifier>
+						<caption>
+							<langstring>Fourth year</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>10.3</termIdentifier>
+			<caption>
+				<langstring>Sports education</langstring>
+			</caption>
+			<term>
+				<termIdentifier>10.3.1</termIdentifier>
+				<caption>
+					<langstring>Intermediate level sports technician</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>10.3.2</termIdentifier>
+				<caption>
+					<langstring>High level sports technician</langstring>
+				</caption>
+			</term>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>11</termIdentifier>
+		<caption>
+			<langstring>University education</langstring>
+		</caption>
+	</term>
+	<term>
+		<termIdentifier>12</termIdentifier>
+		<caption>
+			<langstring>Specific Education Programmes</langstring>
+		</caption>
+	</term>
+</vdex>

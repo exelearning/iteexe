@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vdex orderSignificant="true" profileType="hierarchicalTokenTerms" language="eu" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdexv1p0 imsvdex_v1p0.xsd" xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<vocabName>
+		<langstring>Nivel educativo LOM-ESv1.0</langstring>
+	</vocabName>
+	<vocabIdentifier>NEDLOMES001</vocabIdentifier>
+	<term>
+		<termIdentifier>1</termIdentifier>
+		<caption>
+			<langstring>Hezkuntza Berezia</langstring>
+		</caption>
+		<term>
+			<termIdentifier>1.1</termIdentifier>
+			<caption>
+				<langstring>Haur Hezkuntza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.2</termIdentifier>
+			<caption>
+				<langstring>Lehen Hezkuntza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.3</termIdentifier>
+			<caption>
+				<langstring>Derrigorrezko Bigarren Hezkuntza</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>2</termIdentifier>
+		<caption>
+			<langstring>Haur Hezkuntza</langstring>
+		</caption>
+		<term>
+			<termIdentifier>2.1</termIdentifier>
+			<caption>
+				<langstring>Lehen zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>2.1.1</termIdentifier>
+				<caption>
+					<langstring>0 urte</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.1.2</termIdentifier>
+				<caption>
+					<langstring>Urte 1</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.1.3</termIdentifier>
+				<caption>
+					<langstring>2 urte</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>2.2</termIdentifier>
+			<caption>
+				<langstring>Bigarren zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>2.2.1</termIdentifier>
+				<caption>
+					<langstring>3 urte</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.2.2</termIdentifier>
+				<caption>
+					<langstring>4 urte</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>2.2.3</termIdentifier>
+				<caption>
+					<langstring>5 urte</langstring>
+				</caption>
+			</term>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>3</termIdentifier>
+		<caption>
+			<langstring>Lehen Hezkuntza</langstring>
+		</caption>
+		<term>
+			<termIdentifier>3.1</termIdentifier>
+			<caption>
+				<langstring>Lehen zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>3.1.1</termIdentifier>
+				<caption>
+					<langstring>Lehen maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>3.1.2</termIdentifier>
+				<caption>
+					<langstring>Bigarren maila</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>3.2</termIdentifier>
+			<caption>
+				<langstring>Bigarren zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>3.2.1</termIdentifier>
+				<caption>
+					<langstring>Hirugarren maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>3.2.2</termIdentifier>
+				<caption>
+					<langstring>Laugarren maila</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>3.3</termIdentifier>
+			<caption>
+				<langstring>Hirugarren zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>3.3.1</termIdentifier>
+				<caption>
+					<langstring>Bosgarren maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>3.3.2</termIdentifier>
+				<caption>
+					<langstring>Seigarren maila</langstring>
+				</caption>
+			</term>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>4</termIdentifier>
+		<caption>
+			<langstring>Derrigorrezko Bigarren Hezkuntza</langstring>
+		</caption>
+		<term>
+			<termIdentifier>4.1</termIdentifier>
+			<caption>
+				<langstring>Lehen maila</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.2</termIdentifier>
+			<caption>
+				<langstring>Bigarren maila</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.3</termIdentifier>
+			<caption>
+				<langstring>Hirugarren maila</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.4</termIdentifier>
+			<caption>
+				<langstring>Laugarren maila</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>4.5</termIdentifier>
+			<caption>
+				<langstring>Curriculum aniztasuna</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>5</termIdentifier>
+		<caption>
+			<langstring>Osabidezko Hezkuntza</langstring>
+		</caption>
+		<term>
+			<termIdentifier>5.1</termIdentifier>
+			<caption>
+				<langstring>Zubi-ikasgelak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>5.2</termIdentifier>
+			<caption>
+				<langstring>Harrera-ikasgelak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>5.3</termIdentifier>
+			<caption>
+				<langstring>Ospitaleko ikasgelak</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>6</termIdentifier>
+		<caption>
+			<langstring>Batxilergoa</langstring>
+		</caption>
+	</term>
+	<term>
+		<termIdentifier>7</termIdentifier>
+		<caption>
+			<langstring>Hasierako Lanbide Gaikuntzarako programak</langstring>
+		</caption>
+		<term>
+			<termIdentifier>7.1</termIdentifier>
+			<caption>
+				<langstring>Lanbide-hastapena</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.2</termIdentifier>
+			<caption>
+				<langstring>Lan-prestakuntza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.3</termIdentifier>
+			<caption>
+				<langstring>Lantegi profesionalak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.4</termIdentifier>
+			<caption>
+				<langstring>Lanbide-hastapen berezia</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.5</termIdentifier>
+			<caption>
+				<langstring>Erdi mailako Lanbide Heziketara sartzeko prestakuntza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>7.6</termIdentifier>
+			<caption>
+				<langstring>Goi mailako Lanbide Heziketara sartzeko prestakuntza</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>8</termIdentifier>
+		<caption>
+			<langstring>Lanbide Heziketa</langstring>
+		</caption>
+		<term>
+			<termIdentifier>8.1</termIdentifier>
+			<caption>
+				<langstring>Erdi mailako prestakuntza-zikloa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>8.2</termIdentifier>
+			<caption>
+				<langstring>Goi mailako prestakuntza-zikloa</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>9</termIdentifier>
+		<caption>
+			<langstring>Pertsona Helduen Hezkuntza</langstring>
+		</caption>
+		<term>
+			<termIdentifier>9.1</termIdentifier>
+			<caption>
+				<langstring>Pertsona helduentzako oinarrizko irakaskuntza</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.1.1</termIdentifier>
+				<caption>
+					<langstring>Alfabetatzea</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.1.2</termIdentifier>
+				<caption>
+					<langstring>Ezagutzak eta teknika instrumentalak finkatzea</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.2</termIdentifier>
+			<caption>
+				<langstring>Helduentzako Bigarren Hezkuntza</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.2.1</termIdentifier>
+				<caption>
+					<langstring>1. maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.2.2</termIdentifier>
+				<caption>
+					<langstring>2. maila</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.3</termIdentifier>
+			<caption>
+				<langstring>Helduentzako Urrutiko Bigarren Hezkuntza</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.3.1</termIdentifier>
+				<caption>
+					<langstring>1. maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.3.2</termIdentifier>
+				<caption>
+					<langstring>2. maila</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.4</termIdentifier>
+			<caption>
+				<langstring>DBHko titulu orokorra eskuratzeko proba askeak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.5</termIdentifier>
+			<caption>
+				<langstring>Batxilergoko proba askeak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.6</termIdentifier>
+			<caption>
+				<langstring>Teknikarirako proba askeak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.7</termIdentifier>
+			<caption>
+				<langstring>Goi teknikarirako proba askeak</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.8</termIdentifier>
+			<caption>
+				<langstring>Enplegu- eta lanbide-sisteman txertatzea edo ezagutzak eguneratzea</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.9</termIdentifier>
+			<caption>
+				<langstring>Gaztelaniaz alfabetatzea (gaztelania etorkinentzat)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.10</termIdentifier>
+			<caption>
+				<langstring>Garapen pertsonaleko prestakuntza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.11</termIdentifier>
+			<caption>
+				<langstring>Helduentzako batxilergoa eta urrutikoa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>9.12</termIdentifier>
+			<caption>
+				<langstring>That´s English. Hizkuntzen irakaskuntza ofiziala</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.12.1</termIdentifier>
+				<caption>
+					<langstring>1. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.2</termIdentifier>
+				<caption>
+					<langstring>2. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.3</termIdentifier>
+				<caption>
+					<langstring>3. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.4</termIdentifier>
+				<caption>
+					<langstring>4. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.5</termIdentifier>
+				<caption>
+					<langstring>5. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.6</termIdentifier>
+				<caption>
+					<langstring>6. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.7</termIdentifier>
+				<caption>
+					<langstring>7. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.8</termIdentifier>
+				<caption>
+					<langstring>8. modulua</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.12.9</termIdentifier>
+				<caption>
+					<langstring>9. modulua</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.13</termIdentifier>
+			<caption>
+				<langstring>Urrutiko erdi mailako prestakuntza-zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.13.1</termIdentifier>
+				<caption>
+					<langstring>Lehen maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.13.2</termIdentifier>
+				<caption>
+					<langstring>Bigarren maila</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.14</termIdentifier>
+			<caption>
+				<langstring>Urrutiko goi mailako prestakuntza-zikloa</langstring>
+			</caption>
+			<term>
+				<termIdentifier>9.14.1</termIdentifier>
+				<caption>
+					<langstring>Lehen maila</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>9.14.2</termIdentifier>
+				<caption>
+					<langstring>Bigarren maila</langstring>
+				</caption>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>9.15</termIdentifier>
+			<caption>
+				<langstring>MENTOR ikasgelak</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>10</termIdentifier>
+		<caption>
+			<langstring>Erregimen Bereziko Irakaskuntzak</langstring>
+		</caption>
+		<term>
+			<termIdentifier>10.1</termIdentifier>
+			<caption>
+				<langstring>Hizkuntza-eskola ofiziala</langstring>
+			</caption>
+			<term>
+				<termIdentifier>10.1.1</termIdentifier>
+				<caption>
+					<langstring>Oinarrizko maila</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.1.1.1</termIdentifier>
+					<caption>
+						<langstring>Lehen maila</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.1.1.2</termIdentifier>
+					<caption>
+						<langstring>Bigarren maila</langstring>
+					</caption>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.1.2</termIdentifier>
+				<caption>
+					<langstring>Erdiko maila</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.1.2.1</termIdentifier>
+					<caption>
+						<langstring>Hirugarren maila</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.1.2.2</termIdentifier>
+					<caption>
+						<langstring>Laugarren maila</langstring>
+					</caption>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.1.3</termIdentifier>
+				<caption>
+					<langstring>Goi maila</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.1.3.1</termIdentifier>
+					<caption>
+						<langstring>Bosgarren maila</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.1.3.2</termIdentifier>
+					<caption>
+						<langstring>Seigarren maila</langstring>
+					</caption>
+				</term>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>10.2</termIdentifier>
+			<caption>
+				<langstring>Arte-irakaskuntzak</langstring>
+			</caption>
+			<term>
+				<termIdentifier>10.2.1</termIdentifier>
+				<caption>
+					<langstring>Arte plastiko eta diseinuko irakaskuntzak</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.1.1</termIdentifier>
+					<caption>
+						<langstring>Erdi mailako prestakuntza-zikloa</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.1.1.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.1.1.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.1.2</termIdentifier>
+					<caption>
+						<langstring>Goi mailako prestakuntza-zikloa</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.1.2.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.1.2.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.2</termIdentifier>
+				<caption>
+					<langstring>Arte plastiko eta diseinuko goi ikasketak</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.2.1</termIdentifier>
+					<caption>
+						<langstring>Lehen maila</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.2.2.2</termIdentifier>
+					<caption>
+						<langstring>Bigarren maila</langstring>
+					</caption>
+				</term>
+				<term>
+					<termIdentifier>10.2.2.3</termIdentifier>
+					<caption>
+						<langstring>Hirugarren maila</langstring>
+					</caption>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.3</termIdentifier>
+				<caption>
+					<langstring>Musika-irakaskuntzak</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.3.1</termIdentifier>
+					<caption>
+						<langstring>Oinarrizko maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.3.1.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.1.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.1.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.1.4</termIdentifier>
+						<caption>
+							<langstring>Laugarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.3.2</termIdentifier>
+					<caption>
+						<langstring>Erdiko maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.3.2.1</termIdentifier>
+						<caption>
+							<langstring>Lehen zikloa</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.3.2.1.1</termIdentifier>
+							<caption>
+								<langstring>Lehen maila</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.3.2.1.2</termIdentifier>
+							<caption>
+								<langstring>Bigarren maila</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.2.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren zikloa</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.3.2.2.1</termIdentifier>
+							<caption>
+								<langstring>Hirugarren maila</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.3.2.2.2</termIdentifier>
+							<caption>
+								<langstring>Laugarren maila</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.2.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren zikloa</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.3.2.3.1</termIdentifier>
+							<caption>
+								<langstring>Bosgarren maila</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.3.2.3.2</termIdentifier>
+							<caption>
+								<langstring>Seigarren maila</langstring>
+							</caption>
+						</term>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.3.3</termIdentifier>
+					<caption>
+						<langstring>Goi maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.3.3.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.4</termIdentifier>
+						<caption>
+							<langstring>Laugarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.3.3.5</termIdentifier>
+						<caption>
+							<langstring>Bosgarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.4</termIdentifier>
+				<caption>
+					<langstring>Dantza-irakaskuntzak</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.4.1</termIdentifier>
+					<caption>
+						<langstring>Oinarrizko maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.4.1.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.1.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.1.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.1.4</termIdentifier>
+						<caption>
+							<langstring>Laugarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.4.2</termIdentifier>
+					<caption>
+						<langstring>Erdiko maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.4.2.1</termIdentifier>
+						<caption>
+							<langstring>Lehen zikloa</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.4.2.1.1</termIdentifier>
+							<caption>
+								<langstring>Lehen maila</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.4.2.1.2</termIdentifier>
+							<caption>
+								<langstring>Bigarren maila</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.2.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren zikloa</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.4.2.2.1</termIdentifier>
+							<caption>
+								<langstring>Hirugarren maila</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.4.2.2.2</termIdentifier>
+							<caption>
+								<langstring>Laugarren maila</langstring>
+							</caption>
+						</term>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.2.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren zikloa</langstring>
+						</caption>
+						<term>
+							<termIdentifier>10.2.4.2.3.1</termIdentifier>
+							<caption>
+								<langstring>Bosgarren maila</langstring>
+							</caption>
+						</term>
+						<term>
+							<termIdentifier>10.2.4.2.3.2</termIdentifier>
+							<caption>
+								<langstring>Seigarren maila</langstring>
+							</caption>
+						</term>
+					</term>
+				</term>
+				<term>
+					<termIdentifier>10.2.4.3</termIdentifier>
+					<caption>
+						<langstring>Goi maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.4.3.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.3.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.3.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.4.3.4</termIdentifier>
+						<caption>
+							<langstring>Laugarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+			<term>
+				<termIdentifier>10.2.5</termIdentifier>
+				<caption>
+					<langstring>Arte dramatikoko irakaskuntzak</langstring>
+				</caption>
+				<term>
+					<termIdentifier>10.2.5.1</termIdentifier>
+					<caption>
+						<langstring>Goi maila</langstring>
+					</caption>
+					<term>
+						<termIdentifier>10.2.5.1.1</termIdentifier>
+						<caption>
+							<langstring>Lehen maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.5.1.2</termIdentifier>
+						<caption>
+							<langstring>Bigarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.5.1.3</termIdentifier>
+						<caption>
+							<langstring>Hirugarren maila</langstring>
+						</caption>
+					</term>
+					<term>
+						<termIdentifier>10.2.5.1.4</termIdentifier>
+						<caption>
+							<langstring>Laugarren maila</langstring>
+						</caption>
+					</term>
+				</term>
+			</term>
+		</term>
+		<term>
+			<termIdentifier>10.3</termIdentifier>
+			<caption>
+				<langstring>Kirol-irakaskuntzak</langstring>
+			</caption>
+			<term>
+				<termIdentifier>10.3.1</termIdentifier>
+				<caption>
+					<langstring>Erdi mailako kirol-teknikaria</langstring>
+				</caption>
+			</term>
+			<term>
+				<termIdentifier>10.3.2</termIdentifier>
+				<caption>
+					<langstring>Goi mailako kirol-teknikaria</langstring>
+				</caption>
+			</term>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>11</termIdentifier>
+		<caption>
+			<langstring>Unibertsitate-irakaskuntzak</langstring>
+		</caption>
+	</term>
+	<term>
+		<termIdentifier>12</termIdentifier>
+		<caption>
+			<langstring>Hezkuntza Programa Bereziak</langstring>
+		</caption>
+	</term>
+</vdex>

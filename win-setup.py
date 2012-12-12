@@ -28,7 +28,7 @@ g_files = {'.': ["README",
                   "COPYING",
                   "NEWS",
                   "ChangeLog",
-                  "eXe_icon.ico",
+                  "exe/webui/images/eXe_icon.ico",
                   "exe/webui/mr_x.gif",
                   "exe/msvcr71.dll",
                   "installs/windows/exeLicense.txt",
@@ -57,24 +57,23 @@ dataFiles(["exe/webui/style",
            "exe/webui/css",
            "exe/webui/images",
            "exe/webui/docs",
-           "exe/webui/linux-profile",
            "exe/webui/scripts",
            "exe/webui/schemas",
            "exe/webui/templates"],
-           excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex-darwin.cgi'])
+           excludes = ['mimetex.cgi', 'mimetex.64.cgi', 'mimetex-darwin.cgi'])
 
 g_oldBase = "exe"
 g_newBase = "."
 dataFiles(["exe/locale"])
 
-g_oldBase = "exe/xului"
+g_oldBase = "exe/jsui"
 g_newBase = "."
-dataFiles(["exe/xului/templates",
-           "exe/xului/scripts"])
+dataFiles(["exe/jsui/templates",
+           "exe/jsui/scripts"])
 
 opts = {
  "py2exe": {
-   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", 'chardet'],
+   "packages": ["encodings", "nevow", "nevow.flat", "cProfile", "functools", "csv", "libxml2", "robotparser", "chardet"],
    "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
                 "IcoImagePlugin", "BmpImagePlugin"],
 
@@ -84,7 +83,7 @@ opts = {
 setup(windows=["exe/exe"],
       console=["exe/exe_do"],
       version=build,
-      packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.xului"],
+      packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.jsui"],
       description="eLearning XHTML editor",
       url="http://exelearning.org",
       author="eXe Project",

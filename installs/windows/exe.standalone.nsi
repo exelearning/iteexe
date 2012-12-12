@@ -86,8 +86,6 @@ Section main
     File /R "..\..\dist\*.*"
     SetOutPath "$TEMP\exe\config\idevices"
     File "..\..\exe\idevices\*.*"
-    SetOutPath "$TEMP\exe\firefox"
-    File /R "..\..\exe\webui\Mozilla Firefox\*.*"
     ; Remove the splash screen
     newadvsplash::stop
     Goto Run

@@ -25,7 +25,7 @@ Version Information
 
 project        = "exe"
 release        = "1.04.1"
-revision       = "3605intef6.3"
+revision       = "3605intef7beta2"
 
 version = release + "." + revision
 

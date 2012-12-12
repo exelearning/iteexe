@@ -79,7 +79,7 @@ class Manifest(object):
         if lrm.get('creator', '') == '':
             lrm['creator'] = self.package.author
         # Metadata
-        templateFilename = self.config.xulDir/'templates'/'dublincore.xml'
+        templateFilename = self.config.webDir/'templates'/'dublincore.xml'
         template = open(templateFilename, 'rb').read()
         xml = template % lrm
         out = open(self.outputDir/'dublincore.xml', 'wb')

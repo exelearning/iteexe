@@ -26,7 +26,6 @@ from twisted.web.resource      import Resource
 from exe.webui                 import common
 from exe.webui.renderable      import RenderableResource
 from exe.engine.beautifulsoup import BeautifulSoup
-from exe.engine.path import Path
 from urllib import quote
 
 log = logging.getLogger(__name__)
@@ -42,7 +41,7 @@ class XliffExportPreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
 
         #Extract source and target langs from dublincore.xul
-        xul = Path(self.config.xulDir).joinpath('templates', 'dublincore.xul')
+        xul = self.config.webDir/'templates'/'dublincore.xul'
         bs = BeautifulSoup(xul.text())
         self.langs = bs.find(id="dc_language")
         self.updateLocaleNames()
@@ -85,8 +84,8 @@ class XliffExportPreferencesPage(RenderableResource):
         html += u'</script>\n'
         html += u'''<script language="javascript" type="text/javascript">
             function exportXliff(source, target, copy, cdata) {
-                opener.nevow_clientToServerEvent('exportXliffPackage', this, '', '%s', source, target, copy, cdata);
-                window.close();
+                parent.nevow_clientToServerEvent('exportXliffPackage', this, '', '%s', source, target, copy, cdata);
+                parent.Ext.getCmp("xliffexportwin").close();
             }
         </script>''' % quote(request.args['path'][0])
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
@@ -142,7 +141,7 @@ Translation software."))
                 document.forms.contentForm.cdata.checked \
                 )")
         html += common.button("cancel", _("Cancel"), enabled=True,
-                _class="button", onClick="window.close()")
+                _class="button", onClick="parent.Ext.getCmp('xliffexportwin').close();")
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"<br/></form>\n"

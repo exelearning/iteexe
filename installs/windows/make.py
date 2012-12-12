@@ -20,11 +20,8 @@ os.chdir('../..'); WDIR = os.getcwd()
 shutil.rmtree('build', True)
 shutil.rmtree('dist', True)
 
-# copy Firefox into the dist tree
-shutil.copytree('exe/webui/Mozilla Firefox', 'dist/Mozilla Firefox')
-
 # build the executable
-subprocess.check_call('c:\Python27\python win-setup.py py2exe', shell = True, cwd = WDIR)
+subprocess.check_call('C:\Python27\python win-setup.py py2exe', shell = True, cwd = WDIR)
 
 # get the version
 sys.path.insert(0, WDIR)
