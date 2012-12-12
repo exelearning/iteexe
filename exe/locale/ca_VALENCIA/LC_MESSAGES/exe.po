@@ -1,19 +1,18 @@
-# translation of exe_km.po to Khmer
-# eXe Project <exe@exelearning.org>, 2008.
-# Auk Piseth <piseth_dv@khmeros.info>, 2008.
-# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008.
-# EXELearning Khmer PO file.
-# Copyright (C) 2004-2008
+# eXeLearning Catalan (valencia) PO file
+# Copyright (C) 2004-2012 EXELearning.org
 # This file is distributed under the same license as the EXE package.
+# eXe Project <exe@exelearning.org>
+# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
+# Pilar Embid Giner <embid_mar@gva.es>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version:  exe_km\n"
+"Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-12 17:31+0100\n"
-"PO-Revision-Date: 2008-12-23 13:59+0700\n"
-"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
-"Language-Team: Khmer <support@khmeros.info>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"PO-Revision-Date: 2012-11-13 21:14+0100\n"
+"Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
+"Language-Team: LliureX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +20,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
-msgstr "អាប់ភ្លេត Java"
+msgstr "Aplicació de Java"
 
 #: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
 #: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:47
@@ -45,7 +44,7 @@ msgstr "អាប់ភ្លេត Java"
 #: exe/engine/verdaderofalsofpdidevice.py:145 exe/engine/wikipediaidevice.py:53
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
-msgstr "សកលវិទ្យាល័យ​អ៊័រឡែន"
+msgstr "Universitat d'Auckland"
 
 #: exe/engine/appletidevice.py:75
 msgid ""
@@ -54,10 +53,11 @@ msgid ""
 "buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
-"បន្ថែម​ឯកសារ​ដែល​បាន​ផ្ដល់​សម្រាប់​អាប់ភ្លេត ម្ដង​ទាំងអស់ លើកលែង​តែ​ឯកសារ"
-"\n"
-" .txt ដោយប្រើ​ប៊ូតុង បន្ថែម​ឯកសារ និង​ផ្ទុកឡើង ។ \n"
-"ឯកសារ​ដែល​បាន​ផ្ទុក​ឡើង នឹង​ត្រូវបាន​បង្ហាញ​នៅ​ក្រោម​វាល​កូដ​អាប់ភ្លេត ។"
+"Afig tots els fitxers proporcionats per a l'aplicació\n"
+"excepte el fitxer .txt, d'un en un, utilitzant els botons d'afig fitxers "
+"i penja. Els \n"
+"fitxers, una vegada penjats, es mostren davall del camp de codi de "
+"l'aplicació."
 
 #: exe/engine/appletidevice.py:78
 msgid ""
@@ -66,10 +66,10 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
-"\"រក​ឯកសារ .txt (ក្នុង​ឯកសារ​អាប់ភ្លេត) \n"
-"ហើយ​បើក​វា ។ ចម្លង​មាតិកា​របស់​ឯកសារ​នេះ <បញ្ជា​(ctrl) A, បញ្ជា​(ctrl) C>"
-" ទៅ​ដាក់​ក្នុង \n"
-"វាល​កូដ​អាប់ភ្លេត ។"
+"\"Busqueu el fitxer .txt (al fitxer de l'aplicació de Java) \n"
+"i obriu-lo. Copieu els continguts d'este fitxer <ctrl A, ctrl C> al camp "
+"del codi de l'aplicació \n"
+"de Java."
 
 #: exe/engine/appletidevice.py:81
 msgid ""
@@ -80,34 +80,34 @@ msgid ""
 " \n"
 "you created in Geogebra.</p>"
 msgstr ""
-" <p>ប្រសិន​បើ​អាប់ភ្លេត​ដែល​អ្នក​កំពុង​បន្ថែម​ត្រូវបាន​បង្កើត​ដោយ \n"
-"កម្មវិធី​មួយ​ក្នុង​បញ្ជី​ទម្លាក់​ចុះ​នេះ​រួច​ហើយ សូម​ជ្រើស​វា \n"
-"បន្ទាប់មក "
-"បន្ថែម​ឯកសារ​ទិន្នន័យ/​អាប់ភ្លេត​ដែល​បាន​បង្កើត​ដោយ​កម្មវិធី​របស់​អ្នក ។ "
-"</p>\n"
-"<p>ឧ. ចំពោះ​អាប់ភ្លេត Geogebra គឺ​ត្រូវ​ជ្រើស geogebra "
-"បន្ទាប់​មក​បន្ថែម​ឯកសារ .ggb ដែល \n"
-"អ្នក​បាន​បង្កើត​ក្នុង Geogebra ។</p>"
+" <p>Si l'aplicació de Java que esteu afegint ha sigut generada\n"
+" per un dels programes d'esta llista, seleccioneu-lo, \n"
+"després afegiu el fitxer de dades generat pel vostre programa.</p>\n"
+"<p>Ex. per a aplicacions en Java del Geogebra, seleccioneu Geogebra i "
+"afegiu després el fitxer .ggb \n"
+"creat amb el Geogebra.</p>"
 
 #: exe/engine/appletidevice.py:186
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "ឯកសារ %s មិនមាន parentNode"
+msgstr "el fitxer %s no té node pare"
 
 #: exe/engine/appletidevice.py:188 exe/engine/attachmentidevice.py:106
 #, python-format
 msgid "iDevice %s has no package"
-msgstr "iDevice %s មិនមាន​កញ្ចប់​ទេ"
+msgstr "L'iDevice %s no té paquet"
 
 #: exe/engine/appletidevice.py:417
 msgid "Sorry, this URL is unreachable"
-msgstr ""
+msgstr "Este URL no és accessible"
 
 #: exe/engine/appletidevice.py:502
 msgid ""
 "Clic on AddFiles button for select the .ggb file and clic on Upload "
 "button after."
 msgstr ""
+"Premeu el botó Afig fitxers per a seleccionar el fitxer .ggb i després "
+"premeu el botó Penja."
 
 #: exe/engine/appletidevice.py:512
 msgid ""
@@ -115,18 +115,25 @@ msgid ""
 " button after.<p>The activity will be visible when the HTML file will be "
 "generated from eXe."
 msgstr ""
+"Premeu el botó Afig fitxers per a seleccionar el fitxer .jclic.zip i "
+"després premeu el botó Penja.<p> L'activitat serà visible quan el fitxer "
+"HTML acabe de ser generat des de l'eXe."
 
 #: exe/engine/appletidevice.py:522
 msgid ""
 "Clic on AddFiles button for select the .sb or .scratch file and clic on "
 "Upload button after."
 msgstr ""
+"Premeu al botó Afig fitxers per a seleccionar el fitxer .sb o .scratch i "
+"després premeu el botó Penja."
 
 #: exe/engine/appletidevice.py:533
 msgid ""
 "Please write: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; clic on Upload button after."
 msgstr ""
+"Escriviu: número d'escena,URL (sense espais) que la inclou, ex.: "
+"3,http://lliurex.net; després premeu el botó Penja."
 
 #: exe/engine/appletidevice.py:541
 msgid ""
@@ -134,10 +141,13 @@ msgid ""
 "by one of the programs in this drop down, please select it, \n"
 "then add the data/applet file generated by your program."
 msgstr ""
+" <p>Si l'aplicació de Java que esteu afegint ha sigut generada\n"
+" per un dels programes de la pestanya de davall, seleccioneu-lo, \n"
+"després afegiu el fitxer de dades generat pel vostre programa."
 
 #: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
 msgid "Attachment"
-msgstr "ឯកសារ​ភ្ជាប់"
+msgstr "Fitxer adjunt"
 
 #: exe/engine/attachmentidevice.py:45
 msgid ""
@@ -148,13 +158,11 @@ msgid ""
 " Learners can click on the attachment link and can download the "
 "attachment."
 msgstr ""
-"ឯកសារ​ភ្ជាប់ iDevice "
-"គឺ​ត្រូវបាន​ប្រើ​ដើម្បី​ភ្ជាប់​ឯកសារ​ដែល​មាន​ទៅ​មាតិកា .elp របស់​អ្នក ។ "
-"ឧទាហរណ៍ អ្នក​អាច​មាន​ឯកសារ PDF ឬ​ឯកសារ​ការ​បង្ហាញ PPT "
-"​ដែល​អ្នក​ចង់​ឲ្យ​អ្នកសិក្សា​មាន​សិទ្ធិ​ចូល​ដំណើរការ​បាន វា​អាច​ភ្ជាប់ "
-"និង​ដាក់ស្លាក​ ដើម្បី​បង្ហាញ​ថា​ឯកសារ​ភ្ជាប់​ជា​អ្វី "
-"ហើយ​វា​មាន​ទំហំ​ប៉ុន្មាន ។ អ្នក​សិក្សា​អាច​ចុច​លើ​តំណ​ឯកសារ​ភ្ជាប់ "
-"និង​អាច​ទាញយក​ឯកសារ​ភ្ជាប់​បាន ។"
+"L'iDevice Adjunt s'utilitza per a adjuntar fitxers al vostre contingut "
+".elp. Per exemple, si teniu un fitxer PDF o un fitxer de presentació PPT "
+"(ODP) que voleu que l'alumnat mire, este fitxer es pot adjuntar i "
+"etiquetar per a indicar què és i la mida que té. L'alumnat pot fer clic "
+"en l'enllaç de l'adjunt i baixar-lo."
 
 #: exe/engine/attachmentidevice.py:57
 msgid ""
@@ -162,21 +170,22 @@ msgid ""
 "want to provide instructions on what you require the learner to do once "
 "the file is downloaded or how the material should be used."
 msgstr ""
-"បញ្ចូល​អត្ថបទ​ដែល​អ្នក​ចង់​ភ្ជាប់​ជាមួយ​ឯកសារ​ដែលបាន​ទាញយក ។ "
-"អ្នក​អាច​ផ្ដល់​សេចក្ដី​ណែនាំ​អំពី​អ្វីដែលអ្នក​តម្រូវ​ឲ្យ​អ្នក​សិក្សា​ធ្វើ"
-" នៅពេល​ដែល​បាន​ទាញយក​ឯកសារ​រួច ឬ​ណែនាំ​អំពី​របៀប​ប្រើប្រាស់​សម្ភារៈ ។"
+"Escriviu el text que voleu associar amb la baixada del fitxer. Podeu "
+"donar \n"
+"instruccions sobre què ha de fer l'alumnat amb el fitxer  baixat o com "
+"s'ha d'utilitzar el material."
 
 #: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:185
 msgid "Description:"
-msgstr "សេចក្ដី​ពិពណ៌នា ៖"
+msgstr "Descripció:"
 
 #: exe/engine/attachmentidevice.py:68
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
 msgstr ""
-"ចុច <strong>ជ្រើស​ឯកសារ</strong> ហើយ​រកមើល​ឯកសារ​ដែល​អ្នក​ចង់​ភ្ជាប់ "
-"ហើយ​ជ្រើស​វា ។"
+"Premeu <strong>Seleccioneu un fitxer</strong>, navegueu fins al fitxer "
+"que voleu adjuntar i seleccioneu-lo."
 
 #: exe/engine/attachmentidevice.py:71
 msgid ""
@@ -186,34 +195,35 @@ msgid ""
 "idea how long it would take to download this attachment.</p><p>For "
 "example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr ""
-"<p>ផ្ដល់​ស្លាក​ឲ្យ​ឯកសារ​ភ្ជាប់ ។ វា​មាន​ប្រយោជន៍ "
-"បើ​រួមបញ្ចូល​ប្រភេទ​ឯកសារ ។ ឧ. pdf, ppt "
-"។ល។</p><p>បើ​រួមបញ្ចូល​ទំហំ​ឯកសារ​ ក៏​ល្អ​ដែរ "
-"ដូច្នេះ​បន្ទាប់​ពី​បាន​នាំចេញ​កញ្ចប់​របស់​អ្នក​ទៅ​តំបន់បណ្ដាញ "
-"នោះ​អ្នក​ផ្សេងទៀត​នឹង​ដឹង​អំពី​រយៈពេល​ដែល​ត្រូវ​ទាញយក​ឯកសារ​ភ្ជាប់​នេះ "
-"។</p><p>ឧទាហរណ៍ ៖ <code>Sales Forecast.doc (500kb)</code></p>"
+"<p>Assigneu una etiqueta a cada fitxer adjunt. És útil incloure el tipus "
+"de fitxer. Ex.: pdf, doc (odt), ppt (odp), etc.</p> <p> També és molt "
+"recomanable incloure'n la mida per tal que quan s'exporte el fitxer a un "
+"lloc web, es tinga una idea del temps que tardarà en baixar el fitxer "
+"adjunt.</p> <p> Per exemple: <code>Vendes.odt (500 kb)</code> </p>"
 
 #: exe/engine/attachmentidevice.py:104
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "ឯកសារ​ភ្ជាប់ %s មិនមាន parentNode ទេ"
+msgstr "L'adjunt %s no té node pare."
 
 #: exe/engine/casestudyidevice.py:63
 #: exe/engine/ejercicioresueltofpdidevice.py:63
 #: exe/engine/imagewithtextidevice.py:62
 msgid "Image"
-msgstr "រូបភាព"
+msgstr "Imatge "
 
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
-msgstr "ជ្រើស​រូបភាព​បង្ហាញ​សិស្ស នៅ​ពេល​បំពេញ​សំណួរ​នេះ"
+msgstr ""
+"Escolliu una imatge opcional que es mostrarà a l'alumnat en completar "
+"esta pregunta."
 
 #: exe/engine/casestudyidevice.py:197
 msgid "Case Study"
-msgstr "ករណី​សិក្សា"
+msgstr "Cas d'estudi"
 
 #: exe/engine/casestudyidevice.py:199
 #: exe/engine/ejercicioresueltofpdidevice.py:199
@@ -239,28 +249,23 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"ករណីសិក្សា គឺ​ជា​ឧបករណ៍​ដែល​​ផ្ដល់​ឲ្យ​អ្នក​សិក្សា​នូវ \n"
-"ការ​បន្លំ​ដែល​មាន​មូលដ្ឋានលើ​ការ​​អប់រំ ។ "
-"ជាទូទៅ​វា​បង្កើត​ស្ថានភាព​ដែល​មាន​មូលដ្ឋាន​ក្នុង​ភាព​ពិត \n"
-" និង​ស្នើ​ឲ្យ​អ្នក​សិក្សា​ពន្យល់បង្ហាញ "
-"ឬ​ពិពណ៌នា​នូវ​អំពើ​ដែល​ពួកគេ​បំពេញការងារ ឬ​ដោះស្រាយ \n"
-"ស្ថានភាព ។ ករណីសិក្សា​ "
-"អនុញ្ញាត​ឲ្យ​អ្នក​សិក្សា​អនុវត្ត​ចំណេះដឹង​ផ្ទាល់ខ្លួន​របស់​គេ និង \n"
-"បទពិសោធន៍​ក្នុងការ​បំពេញ​កិច្ចការ​ដែល​បាន​ផ្ដល់ ។ "
-"នៅពេល​បង្កើត​ករណី​សិក្សា \n"
-"គឺ​ត្រូវ​គិតពិចារណា​ដូចខាងក្រោម ៖<ul> \n"
-"<li>\tអ្វី​ដែល​ជា​ចំណុច​នៃ​ការ​អប់រំ "
-"គឺត្រូវ​ឆ្លងកាត់​នៅ​ក្នុង​រឿងរ៉ាវ</li>\n"
-"<li>\t"
-"រៀបចំ​អ្វី​ដែល​អ្នក​សិក្សា​នឹង​ត្រូវ​ធ្វើ​មុន​នឹង​ធ្វើការ​នៅលើករណី​សិក្សា</li>"
-"\n"
-"<li>\tកន្លែង​ដែល​ករណីសិក្សា​សម​ទៅនឹង​វគ្គ​ទាំងអស់</li>\n"
-"<li>\tរបៀប​ដែល​អ្នក​សិក្សា​ទាក់ទង​ទៅ​នឹង​សម្ភារៈ "
-"និង​ទាក់ទង​គ្នា​ទៅវិញទៅមក \n"
-"ឧទាហរណ៍ ប្រសិន​បើ​អ្នក​ដំណើរការ​នៅ​ក្នុង​ថ្នាក់រៀន "
-"នោះស្ថានភាព​អាច​ដាក់ជា​ក្រុម នឹងត្រូវ\n"
-"បាន​រៀបចំ​ឲ្យ​ធ្វើការ​នៅលើ​ទិដ្ឋភាព​ករណី​ផ្សេងគ្នា​​ "
-"ហើយ​ប្រសិន​បើ​ដូច្នេះ ចុះ​ចំណែក​មតិព័ត៌មាន​អំពី​ថ្នាក់</li></ul>"
+"Un cas d'estudi és un iDevice que proveïx l'alumnat \n"
+"d'una simulació que s'usa com a base de l'aprenentatge. A partir de "
+"situacions, generalment, \n"
+"basades en la realitat, l'alumnat ha de demostrar o descriure les accions"
+" que faria \n"
+"per a completar la tasca o resoldre la situació. El cas d'estudi \n"
+"permet a l'alumnat aplicar els seus coneixements i la seua experiència "
+"per a completar les tasques \n"
+"assignades. Quan dissenyeu el cas d'estudi tingueu en compte:<ul> \n"
+"<li>\t Quins elements d'aprenentatge es tracten en la història</li>\n"
+"<li>\t Quina preparació prèvia li cal a l'alumnat per a resoldre el cas "
+"d'estudi. </li>\n"
+"<li>\t On s'ha de col·locar el cas d'estudi en la resta del curs.</li>\n"
+"<li>\t Com interacciona l'alumnat entre si i amb el material proposat. \n"
+"P. ex: A l'aula, com poden els equips treballar diferents aspectes del "
+"cas, \n"
+"i com es fa la posada en comú a la resta de la classe</li></ul> "
 
 #: exe/engine/casestudyidevice.py:216
 #: exe/engine/ejercicioresueltofpdidevice.py:217
@@ -272,17 +277,17 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
-"បង្កើត​ករណី​រឿងរ៉ាវ ។ ករណី​ល្អ គឺ​ជា​ករណី​ដែល \n"
-"ពិពណ៌នា​អំពី​ការ​បដិសេធ ឬ​សំណុំ​រូបភាព ដោយ​ពិពណ៌នា​អំពីលក្ខណៈ​ដែល​ទាក់ទង"
+"Crea la història del cas. Un bon cas és aquell \n"
+"que descriu una controvèrsia o mostra una escena descrivint els caràcters"
 " \n"
-" និង​ស្ថានភាព ។ វា​គួរ​តែ​អនុញ្ញាត​សម្រាប់​អំពើ​ណា​មួយដែល​ត្រូវធ្វើ \n"
-"ដើម្បី​បង្កើន​ការ​ដោះស្រាយ​របស់​ស្ថានភាព ។"
+"involucrats en la situació. També ha de permetre les accions \n"
+"encaminades a resoldre el conflicte de la situació."
 
 #: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
 #: exe/engine/ejercicioresueltofpdidevice.py:221
 #: exe/engine/ejercicioresueltofpdidevice.py:408
 msgid "Story:"
-msgstr "រឿងរ៉ាវ ៖"
+msgstr "Història:"
 
 #: exe/engine/casestudyidevice.py:225
 #: exe/engine/ejercicioresueltofpdidevice.py:226
@@ -293,11 +298,11 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
-"ពិពណ៌នាអំពី​កិច្ចការ​សកម្មភាព​ដែល​ទាក់ទង​នឹង​ \n"
-"ករណី​រឿងរ៉ាវ​ដែល​បាន​ផ្ដល់ ។ វា​អាច​ជា​ទម្រង់​សំណួរ "
-"ឬសេចក្ដី​ណែនាំ​សម្រាប់ \n"
-"សកម្មភាព​ដែល​អាច​នាំ​អ្នកសិក្សា​ទៅកាន់​ការដោះស្រាយ​បញ្ហា \n"
-"ដែល​មាន ។"
+"Descriu les tasques rellevants a la història \n"
+"del cas proporcionat. Estes poden ser en forma de preguntes o "
+"instruccions \n"
+"amb les quals l'alumnat pot resoldre el dilema \n"
+"presentat."
 
 #: exe/engine/casestudyidevice.py:229
 #: exe/engine/ejercicioresueltofpdidevice.py:230
@@ -305,12 +310,12 @@ msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
-"ផ្ដល់​មតិអ្នកប្រើ​ដែល​ទាក់ទង​នៅលើ \n"
-"ស្ថានភាព ។"
+"Introduïu una retroacció rellevant \n"
+"per a la situació."
 
 #: exe/engine/casopracticofpdidevice.py:29
 msgid "FPD - Caso Practico"
-msgstr ""
+msgstr "FPD - Cas pràctic"
 
 #: exe/engine/casopracticofpdidevice.py:30
 #: exe/engine/citasparapensarfpdidevice.py:30
@@ -321,13 +326,15 @@ msgstr ""
 #: exe/engine/parasabermasfpdidevice.py:30
 #: exe/engine/recomendacionfpdidevice.py:30
 msgid "Jose Ramon Jimenez Reyes"
-msgstr ""
+msgstr "José Ramón Jiménez Reyes"
 
 #: exe/engine/casopracticofpdidevice.py:31
 msgid ""
 "Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse "
 "en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
 msgstr ""
+"Un cas pràctic és un iDevice que permet a l'alumnat introduir-se en una "
+"història que el guiarà a través del seu aprenentatge."
 
 #: exe/engine/casopracticofpdidevice.py:34
 #: exe/engine/citasparapensarfpdidevice.py:34
@@ -338,34 +345,36 @@ msgstr ""
 #: exe/engine/parasabermasfpdidevice.py:34
 #: exe/engine/recomendacionfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
-msgstr ""
+msgstr "Introduïu el text que apareixerà en este iDevice"
 
 #: exe/engine/casopracticofpdidevice.py:37
 #: exe/engine/casopracticofpdidevice.py:135
 msgid "Texto Caso pr&aacute;ctico:"
-msgstr ""
+msgstr "Text Cas pràctic:"
 
 #: exe/engine/citasparapensarfpdidevice.py:29
 msgid "FPD - Citas Para Pensar"
-msgstr ""
+msgstr "FPD - Citacions per a pensar"
 
 #: exe/engine/citasparapensarfpdidevice.py:31
 msgid ""
 "Citas para pensar es un iDevice que permite al alumnado reflexionar sobre"
 " algunas citas propuestas."
 msgstr ""
+"Citacions per a pensar és un iDevice que permet a l'alumnat reflexionar "
+"sobre algunes citacions proposades."
 
 #: exe/engine/citasparapensarfpdidevice.py:37
 msgid "Texto Citas para pensar:"
-msgstr ""
+msgstr "Text Citacions per a pensar:"
 
 #: exe/engine/citasparapensarfpdidevice.py:136
 msgid "Texto para pensar:"
-msgstr ""
+msgstr "Text per a pensar:"
 
 #: exe/engine/clozefpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco"
-msgstr ""
+msgstr "FPD - Activitat d'omplir buits"
 
 #: exe/engine/clozefpdidevice.py:48 exe/engine/clozeidevice.py:48
 #: exe/engine/clozelangfpdidevice.py:48
@@ -378,12 +387,14 @@ msgid ""
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
 msgstr ""
-"<p>លំហាត់ Cloze គឺ​ជា​អត្ថបទ "
-"ឬ​ប្រយោគ​ដែល​តម្រូវ​ឲ្យ​សិស្ស​បំពេញ​ពាក្យ​ដែល​បាត់ ។ ជា​ទូទៅ "
-"គេ​ប្រើ​វា​ក្នុង​គោល​បំណង​ដូចខាងក្រោម ៖</p><ol><li>ដើម្បី​ពិនិត្យ​ចំណេះដឹង​អំពី​គោលគំនិត​ស្នូល"
-" (អាច​ជា​ការ​ពិនិត្យ​ជាមុន លំហាត់​បង្កើត "
-"ឬ​ការ​ពិនិត្យ​សរុប) ។</li><li>ដើម្បី​ពិនិត្យ​ការ​យល់ដឹង​ក្នុងការ​អាន ។</li><li>ដើម្បី​ពិនិត្យ​ចំណេះដឹង​ខាង​វាក្យស័ព្ទ ។</li><li>ដើម្បី​ពិនិត្យ​ចំណេះ​ដឹង​ក្នុង​ការ​បង្កើត​ពាក្យ"
-" និង/​ឬ​វេយ្យាករណ៍ ។ </li></ol>"
+"<p> Els exercicis de compleció són texts o frases en què l'alumnat ha "
+"d'omplir un text amb les paraules que hi falten. S'utilitzen sovint per "
+"als propòsits següents:</p><ol><li> Per a avaluar els coneixements dels "
+"conceptes principals (així es pot fer un preexamen, un exercici formatiu "
+"o una avaluació sumatòria).</li><li>Per a avaluar la comprensió "
+"lectora.</li><li> Per a avaluar el coneixement del vocabulari.</li><li> "
+"Per a avaluar la formació de mots i/o la competència "
+"gramatical.></li></ol>"
 
 #: exe/engine/clozefpdidevice.py:60 exe/engine/clozeidevice.py:60
 #: exe/engine/clozelangfpdidevice.py:60 exe/engine/listaidevice.py:64
@@ -409,33 +420,27 @@ msgid ""
 " idea to get a colleague to test the test/exercise to make sure there are"
 " no surprises!  </p>  </dd></dl>"
 msgstr ""
-"<dl>  "
-"<dt>ប្រសិន​បើ​អ្នក​មានគោលបំណង​ចង់​សាកល្បង​ការ​ស្វែងយល់​អំពី​គោលគំនិត​ស្នូល"
-" ឬ​ការ​យល់ដឹង​ពី​ការ​អាន  </dt>  <dd>    <p>  "
-"សរសេរ​សេចក្ដី​សង្ខេប​អំពី​គោលគំនិត "
-"ឬអាន​ឲ្យបាន​ច្រើន​ដើម្បី​សាកល្បង​ចំណេះដឹង ជា​​គោល "
-"ប៉ុន្តែ​ការ​អាន​បាន​តិច​មិនប្រាកដ​ថាមិនមាន​ប្រយោជន៍​នេះ​ទេ ។ "
-"អត្ថបទ​តិច​ជាង​មួយ​ទំព័រ គឺ​ប្រហែល​ជា​គ្រប់គ្រាន់ "
-"ប៉ុន្តែ​ប្រហែល​ជា​មិនគ្រប់គ្រាន់​​សម្រាប់​សិស្ស​ក្មេងៗ "
-"ឬ​អ្នក​ទើប​នឹង​ចាប់ផ្ដើម ។    </p>    <p>ជ្រើស​ពាក្យ​នៅ​ក្នុង​អត្ថបទ "
-"ដែល​ជា​គន្លឹះ​ក្នុង​ការ​ស្វែងយល់​អំពី​គោលគំនិត ។ វា​អាចជា​កិរិយាស័ព្ទ នាម"
-" និង​គុណកិរិយា ។ ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។    </p>  "
-"</dd>  "
-"<dt>ប្រសិន​បើ​អ្នក​មាន​គោល​បំណង​ចង់​សាកល្បង​ចំណេះ​ដឹង​ខាង​វាក្យសព្ទ  "
-"</dt>  <dd><p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយប្រើ​វាក្យសព្ទគោល ។ "
-"អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់គ្នា និង​មាន​ប្រវែង​សមរម្យ ។ "
-"បន្លិច​ពាក្យគោល​នៅ​ក្នុង​អត្ថបទ ។ "
-"ជ្រើស​ការ​ជំនួស​ដោយ​ចម្លើយ​ច្បាស់​លាស់​មួយ ។</p>  </dd>  "
-"<dt>ប្រសិន​បើ​អ្នក​មាន​គោលបំណង​ចង់​សាកល្បង​វេយ្យាករណ៍/ការ​បង្កើត​ពាក្យ ។"
-"  </dt>  <dd>  <p>គឺ​ត្រូវ​សរសេរ​អត្ថបទ​ដោយ​ប្រើ​ទម្រង់​គោល ។ "
-"អត្ថបទ​នេះ​គួរ​តែ​ទាក់ទង​គ្នា និង​នៅ​ជាប់​គ្នា ហើយ​មាន​ប្រវែង​សមរម្យ ។ "
-"ចងចាំ​ថា ​គោលបំណង​មិនមែន​ជា​ចំណេះដឹង​ខាង​វាក្យសព្ទ​ទេ "
-"ដូច្នេះ​អត្ថន័យ​ស្នូល​របស់​ពាក្យ​ដើម គឺ​គួរតែ​សិស្ស​ស្គាល់​ច្បាស់ ។  </p>"
-"  <p>បន្លិច​ពាក្យ​គោល​នៅ​ក្នុង​អត្ថបទ ។ "
-"ផ្ដល់​ការ​ជំនួស​ដោយ​ពាក្យ​ដូចគ្នា​នៅ​ខាងដើម "
-"ប៉ុន្តែ​ពាក្យ​បន្ថែម​ខាងចុង​ខុសគ្នា ។ វា​ជា​គំនិត​ល្អ "
-"ដែល​ឲ្យ​សិស្ស​មហាវិទ្យាល័យ​សាកល្បង​ធ្វើ​លំហាត់​ទាំងនេះ "
-"ដើម្បី​កុំឲ្យ​មាន​ការ​ភ្ញាក់ផ្អើល !  </p>  </dd></dl>"
+"<dl>  <dt>Si l'objectiu és avaluar la comprensió dels conceptes "
+"principals o la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del"
+" concepte o de la lectura prou llargs per a avaluar-ne adequadament el "
+"coneixement, però suficientment curt per a no avorrir. Menys d'una pàgina"
+" escrita és probablement adequat, però probablement bastant menys per a "
+"joves estudiants o principiants. </p>   <p> Seleccioneu al text paraules "
+"clau per a entendre els conceptes. Estes paraules són verbs, noms i "
+"adverbis, probablement. Escolliu alternatives amb una resposta clara.  "
+"</p>  </dd>  <dt> Si l'objectiu és avaluar el coneixement de vocabulari  "
+"</dt>  <dd><p>Escriviu un text utilitzant el vocabulari fixat com a "
+"objectiu. El text ha de ser coherent i cohesionat, i tindre una longitud "
+"apropiada. Marqueu les paraules objectiu al text. Escolliu alternatives "
+"amb una resposta clara.</p> </dd>  <dt>Si l'objectiu és avaluar la "
+"formació de mots/gramàtica:  </dt>  <dd>  <p>Escriviu un text utilitzant "
+"les formes que voleu avaluar. Este text ha de ser coherent, cohesionat, i"
+" tindre una longitud apropiada. Recordeu que l'objectiu no és el "
+"coneixement del vocabulari, per tant, el significat principal de l'arrel "
+"de les paraules ha de ser ben conegut pels estudiants.</p>  <p>Marqueu "
+"les paraules objectiu al text. Proporcioneu alternatives amb la mateixa "
+"arrel, però amb afixos diferents. És una bona idea tindre un company per "
+"a provar que ho heu fet bé i així no tindre sorpreses. </p>  </dd></dl> "
 
 #: exe/engine/clozefpdidevice.py:116 exe/engine/clozeidevice.py:116
 #: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:120
@@ -443,7 +448,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
 msgid "Instructions"
-msgstr "សេចក្ដី​ណែនាំ"
+msgstr "Instruccions "
 
 #: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:117
 #: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:121
@@ -452,14 +457,14 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
-"ផ្ដល់​សេចក្ដី​ណែនាំ​អំពី​រៀប​បំពេញ​សកម្មភាព cloze ។ \n"
-"អត្ថបទ​លំនាំដើម នឹង​ត្រូវបាន​បញ្ចូល "
-"នៅពេល​ដែល​មិនមាន​ការ​ផ្លាស់ប្ដូរ​ចំពោះ​វាលនេះ ។\n"
+"Introduïu instruccions sobre com s'ha de completar \n"
+"l'activitat de compleció. Es mostrarà el text per defecte si no hi ha "
+"canvis en este camp.\n"
 
 #: exe/engine/clozefpdidevice.py:122 exe/engine/clozeidevice.py:123
 #: exe/engine/listaidevice.py:127
 msgid "Cloze"
-msgstr "Cloze"
+msgstr "Prova de compleció"
 
 #: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:124
 #: exe/engine/clozelangfpdidevice.py:123 exe/engine/listaidevice.py:128
@@ -471,12 +476,12 @@ msgid ""
 " it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
-"<p>បញ្ចូល​អត្ថបទ​សម្រាប់​លំហាត់ cloze នៅ​ក្នុង​វាល cloze \n"
-"ដោយ​​បិទភ្ជាប់​អត្ថបទ​ពី​ប្រភព​ផ្សេង "
-"ឬដោយ​វាយ​អត្ថបទ​ចូល​វាល​នោះ​ដោយ​ផ្ទាល់ ។ \n"
-"</p><p> ដើម្បី​ជ្រើស​ពាក្យ​ដើម្បី​លាក់ "
-"គឺ​ត្រូវ​ចុច​លើ​ពាក្យ​ពីរ​ដង​ដើម្បី​ជ្រើស​វា ហើយ \n"
-"ចុច​លើ​ប៊ូតុង​លាក់​/​បង្ហាញ​ពាក្យ​នៅ​ខាងក្រោម ។</p>"
+"<p>Introduïu el text per a l'activitat de compleció al camp de buits \n"
+"apegant el text des d'una altra font o teclejant el text directament al \n"
+"camp.</p><p> Per a seleccionar paraules i amagar-les, feu doble clic en "
+"la paraula \n"
+"per a seleccionar-la i premeu \n"
+"el botó Oculta/Mostra paraules.</p>"
 
 #: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
@@ -492,7 +497,7 @@ msgstr ""
 #: exe/webui/editorpane.py:254 exe/webui/element.py:2269
 #: exe/webui/listablock.py:405 exe/webui/questionelement.py:104
 msgid "Feedback"
-msgstr "មតិ​អ្នកប្រើ"
+msgstr "Retroacció"
 
 #: exe/engine/clozefpdidevice.py:129 exe/engine/clozeidevice.py:130
 #: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:134
@@ -500,100 +505,108 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
-"បញ្ចូល​មតិ​ព័ត៌មាន​ណាមួយ​ដែល​អ្នក​ចង់​ផ្ដល់​ឲ្យ​អ្នក​សិក្សា​នៅ​ក្នុង​វាល​មតិ​អ្នកប្រើ ។"
-" វាល​នេះ​អាច​ទុក​នៅ​ទទេ​បាន ។"
+"Escriviu qualsevol retroacció que vulgueu proporcionar a l'alumnat dins "
+"del camp retroacció. Podeu deixar este camp buit."
 
 #: exe/engine/clozefpdidevice.py:274 exe/engine/clozeidevice.py:274
 #: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:268
 msgid "Instructions For Learners"
-msgstr "សេចក្ដី​ណែនាំ​សម្រាប់​អ្នក​សិក្សា"
+msgstr "Instruccions per a l'alumnat"
 
 #: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
 #: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:269
 msgid "Put instructions for learners here"
-msgstr "ដាក់​សេចក្ដី​ណែនាំ​សម្រាប់​អ្នកសិក្សា​នៅ​ទីនេះ"
+msgstr "Escriviu les instruccions per a l'alumnat ací"
 
 #: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:276
 #: exe/engine/clozelangfpdidevice.py:280 exe/engine/listaidevice.py:270
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "អាន​កថាខណ្ឌ​ខាងក្រោម និង​បំពេញ​ពាក្យ​ដែល​បាត់"
+msgstr "Llegiu el paràgraf de davall i completeu-lo amb les paraules que hi falten"
 
 #: exe/engine/clozefpdidevice.py:287 exe/engine/clozeidevice.py:288
 #: exe/engine/clozelangfpdidevice.py:292 exe/engine/listaidevice.py:282
 msgid "Allow auto completion when user filling the gaps."
-msgstr "អនុញ្ញាត​ការ​បំពេញ​ស្វ័យប្រវត្តិ នៅពេល​អ្នកប្រើ​បំពេញ​ចន្លោះ ។"
+msgstr ""
+"Permet la compleció automàtica quan \n"
+"                                  l'usuari ompli els buits."
 
 #: exe/engine/clozeidevice.py:46
 msgid "Cloze Activity"
-msgstr "សកម្មភាព Cloze"
+msgstr "Activitat de compleció"
 
 #: exe/engine/clozeidevice.py:120 exe/engine/listaidevice.py:124
 #: exe/engine/truefalseidevice.py:395
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr "អាន​កថាខណ្ឌ​ខាងក្រោម និង​បំពេញ​ពាក្យ​ដែល​បាត់ ។"
+msgstr ""
+"Llegiu el paràgraf de davall i completeu-lo amb les paraules que hi "
+"falten."
 
 #: exe/engine/clozelangfpdidevice.py:46
 msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
-msgstr ""
+msgstr "FPD - Activitat d'omplir buits (modificada)"
 
 #: exe/engine/clozelangfpdidevice.py:122
-#, fuzzy
 msgid "Clozelang"
-msgstr "Cloze"
+msgstr "Idioma dels buits"
 
 #: exe/engine/correccionfpdidevice.py:29
-#, fuzzy
 msgid "FPD - Correccion"
-msgstr "ជម្រើស​ត្រឹមត្រូវ"
+msgstr "FPD - Correcció"
 
 #: exe/engine/correccionfpdidevice.py:31
 msgid ""
 "Correccion es un iDevice que permite resaltar texto para hacer "
 "correcciones a los autores."
 msgstr ""
+"Correcció és un iDevice que permet ressaltar text per a fer correccions "
+"als autors."
 
 #: exe/engine/correccionfpdidevice.py:36
 msgid "Texto Correci&oacute;n:"
-msgstr ""
+msgstr "Text Correcció:"
 
 #: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
 #: exe/engine/destacadofpdidevice.py:134
 msgid "Texto Destacado:"
-msgstr ""
+msgstr "Text Destacat:"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - Debes Conocer"
-msgstr ""
+msgstr "FPD - Cal que conegues"
 
 #: exe/engine/debesconocerfpdidevice.py:31
 msgid ""
 "Debes conocer es un iDevice que permite al alumnado ampliar "
 "conocimientos, siendo estos obligatorios para su aprendizaje."
 msgstr ""
+"Cal que conegues és un iDevice que permet a l'alumnat ampliar "
+"coneixements, que són obligatoris per al seu aprenentatge."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
 msgid "Texto Debes conocer:"
-msgstr ""
+msgstr "Text Cal que conegues:"
 
 #: exe/engine/destacadofpdidevice.py:29
 msgid "FPD - Destacado"
-msgstr ""
+msgstr "FPD - Destacat"
 
 #: exe/engine/destacadofpdidevice.py:31
 msgid ""
 "Destacado es un iDevice que permite resaltar texto para llamar la "
 "atención del alumnado."
 msgstr ""
+"Destacat és un iDevice que permet ressaltar text per a cridar l'atenció "
+"de l'alumnat."
 
 #: exe/engine/ejercicioresueltofpdidevice.py:197
 msgid "FPD - Ejercicio Resuelto"
-msgstr ""
+msgstr "FPD - Exercici resolt"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:60
 msgid "FPD - Actividad de Eleccion Multiple"
-msgstr ""
+msgstr "FPD - Activitat d'elecció múltiple"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
@@ -615,20 +628,20 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"ទោះបី​ជា​បាន​ប្រើ​នៅ​ក្នុង​ស្ថានភាព​សាកល្បង​ជាផ្លូវការ​ញឹកញាប់​ក៏ដោយ \n"
-"ក៏​សំណួរ​ពហុជ្រើសរើស "
-"អាច​ត្រូវបាន​ប្រើ​ជា​ឧបករណ៍​សាកល្បង​ដើម្បី​បន្លំ​ការគិត  \n"
-"និង​ពិភាក្សា​លើ​ប្រធានបទ "
-"ដែលសិស្ស​អាច​មាន​អារម្មណ៍​ស្ទាក់ស្ទើរ​បន្តិចបន្តួច​ក្នុង​ការ​ឆ្លើយ ។ \n"
-"\n"
-"នៅពេល​បង្កើត​សំណួរ​ពហុជ្រើសរើស ត្រូវ​ពិចារណា​ដូចខាងក្រោម ៖\n"
+"Tot i que sovint s'empren en proves més formals, \n"
+"les situacions MCQ es poden utilitzar com a ferramenta per a estimular el"
+" pensament i \n"
+"la discussió de temes que l'alumnat és un poc reticent a respondre. \n"
+"Quan dissenyem una prova MCQ considerarem el següent: \n"
 "<ul>\n"
-"<li> អ្វី​ដែល​ជា​លទ្ធផល​នៃ​ការ​សិក្សា​គឺ​ជា​ការ​ធ្វើសំណួរ</li>\n"
-"<li>    អ្វី​ដែល​ជា​ជំនាញ​បញ្ញា​គឺ​ត្រូវ​សាកល្បង</li>\n"
-"<li> អ្វី​ដែល​ជា​ជំនាញ​ភាសា​របស់​អ្នក​ស្ដាប់</li>\n"
-"<li> បញ្ហា​ភេទ និង​វប្បធម៌</li>\n"
-"<li> ជៀសវាង​ពី​ភាសា​វេយ្យាករណ៍ និង​រចនា​សម្ព័ន្ធ​សំណួរ​ដែល​អាច​ផ្ដល់​ជា \n"
-"     គន្លឹះ</li>\n"
+"<li>Quins resultats d'aprenentatge ens donaran les preguntes de la "
+"prova</li>\n"
+"<li>Quines competències intel·lectuals s'avaluaran</li>\n"
+"<li>Quines són les competències lingüístiques de l'audiència.</li>\n"
+"<li>Els aspectes culturals i de gènere</li>\n"
+"<li>Eviteu expressions i estructures gramaticals que puguen proporcionar"
+" \n"
+"\tpistes</li>\n"
 "</ul>\n"
 " "
 
@@ -651,19 +664,16 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"នៅពេល​ដែល​បង្កើត​សំណួរ​ពហុជ្រើសរើស គឺ​ត្រូវ​គិត​ពិចារណា​ដូចខាងក្រោម ៖ "
-"<ul>\n"
-"<li> ប្រើ​ឃ្លា​ដែល​អ្នក​សិក្សា​ធ្លាប់​ជួប​នៅ​ពេល​សិក្សា </li>\n"
-"<li> ចម្លើយ​គឺ​ត្រូវ​សង្ខេប​ខ្លី </li>\n"
-"<li> គួរតែ​មាន​ស្ថេរភាព​​រវាង​ប្រធាន​សំណួរ និង​ចម្លើយ </li>\n"
-"<li> ផ្ដល់​ជម្រើស​ដល់​អ្នក​សិក្សា​ឲ្យ​បាន​គ្រប់គ្រាន់ "
-"ដើម្បី​ឲ្យពួកគេ​គិត​អំពីចម្លើយ\n"
-"</li>\n"
-"<li> "
-"ព្យាយាម​ធ្វើ​យ៉ាងណា​កុំឲ្យ​​ចម្លើយ​ដែលត្រឹមត្រូវ​លម្អិត​ជាង​ចម្លើយ​ដែល​ដែល​ដាក់​បំភាន់"
-" </li>\n"
-"<li> ចម្លើយ​ដែល​ដាក់​បំភាន់ គឺ​ត្រូវ​តែជា​ចម្លើយ​មិនត្រឹមត្រូវ "
-"ប៉ុន្តែ​វា​ទំនង​នឹង​ត្រូវ​ដែរ </li>\n"
+"Quan construïu un MCQ considereu el següent: <ul>\n"
+"<li>Utilitzeu frases que l'alumnat trobe familiars i siguen habituals en "
+"el l'ensenyament.</li>\n"
+"<li>Feu respostes concises.</li>\n"
+"<li>Ha d'haver consistència entre la pregunta i les respostes</li>\n"
+"<li>Proporcioneu bastants opcions per a desafiar l'alumnat a pensar en la"
+" resposta.</li>\n"
+"<li>Procureu que la resposta correcta no estiga més detallada que les "
+"respostes incorrectes.</li>\n"
+"<li>Les respostes incorrectes han de ser creïbles.</li>\n"
 "</ul>\n"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:100
@@ -672,8 +682,8 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
-"បញ្ចូល​ព័ត៌មាន​ជំនួយ​នៅ​ទីនេះ ។ ប្រសិន​បើ​អ្នក\n"
-"មិន​ចង់​ផ្ដល់​ព័ត៌មាន​ជំនួយ​ទេ គឺ​សូម​ទុកវា​ឲ្យ​នៅ​ទទេ ។"
+"Escriviu una pista ací. Si no voleu donar \n"
+"cap pista, deixeu en blanc este camp."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:102
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
@@ -683,10 +693,9 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
-"បញ្ចូល​ប្រធាន​សំណួរ ។ \n"
-"សំណួរ​ត្រូវ​តែ​ច្បាស់ ហើយ​មាន​ន័យ​ច្បាស់លាស់ ។ "
-"ជៀសវាង​ពី​ការ​សន្មត់​អវិជ្ជមាន \n"
-"ដោយសារ​តែ​​មាន​ភាព​មិន​ច្បាស់លាស់ ។"
+"Escriviu la pregunta principal. \n"
+"La pregunta ha de ser clara i inequívoca. Eviteu premisses negatives \n"
+"ja que tendixen a ser ambigües."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:105
 #: exe/engine/multichoiceidevice.py:104
@@ -694,8 +703,8 @@ msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
-"ជ្រើស​ជម្រើស​ត្រឹមត្រូវ ដោយ​ចុច \n"
-"លើ​ប៊ូតុង​មូល ។"
+"Seleccioneu l'opció correcta \n"
+"fent clic en el botó d'opció."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:107
 #: exe/engine/multichoiceidevice.py:106
@@ -705,10 +714,10 @@ msgid ""
 " options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
-"បញ្ចូល​ជម្រើស​ដែល​មាន ​នៅ​ទីនេះ ។ \n"
-"អ្នក​អាច​បន្ថែម​ជម្រើស ដោយ​ចុច​ប៊ូតុង \"បន្ថែម​ជម្រើស​ផ្សេងទៀត\" ។ "
-"លុប​ជម្រើស​ \n"
-"ដោយ​ចុច​សញ្ញា \"X\" ពណ៌​ក្រហម​នៅ​ជាប់​នឹង​ជម្រើស ។"
+"Introduïu les opcions disponibles ací. \n"
+"Podeu afegir opcions prement el botó «Afig una altra opció». Podeu "
+"esborrar opcions \n"
+"prement la «X» roja al costat de l'opció."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:110
 #: exe/engine/multichoiceidevice.py:109
@@ -722,21 +731,18 @@ msgid ""
 " answer\"\n"
 "for the other options."
 msgstr ""
-"វាយ​បញ្ចូល​នៅ​ក្នុង​មតិអ្នកប្រើ ដែល​អ្នក​ចង់​ឲ្យ​សិស្ស​មើលឃើញ \n"
-"នៅ​ពេល​ជ្រើស​ជម្រើស​ជាក់លាក់ ។ ប្រសិន​បើ​អ្នក​មិន​បំពេញ​ប្រអប់​នេះ​ទេ នោះ"
-" \n"
-"eXe នឹង​ផ្ដល់​មតិអ្នក​ប្រើ​លំនាំដើម​ដូចខាងក្រោម​ដោយ​ស្វ័យប្រវត្តិ ។ "
-"\"ចម្លើយ​ត្រឹមត្រូវ\" \n"
-"ដូច​ដែល​បាន​បង្ហាញ​ដោយ​ជម្រើស​សម្រាប់​ចម្លើយ​ត្រឹមត្រូវ ។ ឬ "
-"\"ចម្លើយ​មិនត្រឹមត្រូវ\"\n"
-"សម្រាប់​ជម្រើស​ផ្សេងទៀត ។"
+"Escriviu la retroacció que voleu que l'alumnat \n"
+"veja quan seleccione l'opció escollida. Si no escriviu res \n"
+"l'eXe proporcionarà automàticament la següent retroacció per defecte: \n"
+"«Resposta correcta» quan la resposta siga correcta o \n"
+"«Resposta incorrecta» quan siga incorrecta."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
 #: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:132
 #: exe/engine/multiselectidevice.py:80
 #: exe/engine/seleccionmultiplefpdidevice.py:81
 msgid "Question"
-msgstr "សំណួរ"
+msgstr "Qüestió"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287
 #: exe/engine/multichoiceidevice.py:286
@@ -744,12 +750,12 @@ msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
 msgstr ""
-"បញ្ចូល​ព័ត៌មាន​ជំនួយ​នៅ​ទីនេះ ។ "
-"ប្រសិន​បើ​អ្នក​មិន​ចង់​ផ្ដល់​ព័ត៌មាន​ជំនួយ​ទេ គឺ​សូម​ទុកវា​ឲ្យ​នៅ​ទទេ ។"
+"Escriviu una pista ací. Si no voleu donar \n"
+"cap pista, deixeu en blanc este camp."
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
-msgstr "តំបន់​បណ្ដាញ​ខាងក្រៅ"
+msgstr "Lloc web extern"
 
 #: exe/engine/externalurlidevice.py:40
 msgid ""
@@ -760,24 +766,24 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
-"តំបន់បណ្ដាញ iDevice ខាងក្រៅ ផ្ទុក​តំបន់បណ្ដាញ​ខាងក្រៅ \n"
-"ទៅ​ក្នុង​ស៊ុម​ក្នុង​តួរ​ក្នុង​មាតិកា eXe របស់​អ្នក "
-"ដោយ​មិនបើក​វា​នៅ​ក្នុង​ប្រអប់​លេចឡើង​ទេ ។ \n"
-"មានន័យថា អ្នកសិក្សា​មិនចាំបាច់​តម្រៀប​បង្អួច​ទេ ។ \n"
-"iDevice នេះ​គួរតែ​ប្រើ​នៅពេល​ដែល​មាន​អ្នក​សិក្សា​មើល \n"
-"​មាតិកា​របស់​អ្នក​តាម​បណ្ដាញ​ប៉ុណ្ណោះ ។"
+"L'iDevice Lloc web extern carrega una pàgina \n"
+"web dins d'un marc en línia amb el vostre contingut eXe en comptes "
+"d'obrir una finestra emergent. \n"
+"D'esta manera l'alumnat no tindrà massa finestres. \n"
+"Este iDevice només s'ha d'utilitzar si el contingut es visualitzarà en "
+"línia."
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
-"បញ្ចូល URL ដែល​អ្នក​ចង់​បង្ហាញ\n"
-"ហើយ​ជ្រើស​ទំហំ​ផ្ទៃ​ដែល​ត្រូវ​បង្ហាញ​វា ។"
+"Introduïu l'URL que vulgueu mostrar\n"
+"i seleccioneu la mida de l'àrea en què es mostrarà."
 
 #: exe/engine/field.py:2630
 msgid "Click Here"
-msgstr "ចុច​នៅ​ទីនេះ"
+msgstr "Premeu ací"
 
 #: exe/engine/field.py:2825 exe/engine/field.py:2872
 #: exe/engine/multimediaidevice.py:71
@@ -785,8 +791,8 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
-"ផ្ដល់​ចំណងជើង​ឲ្យ​ឯកសារ \n"
-"MP3 ។ វា​នឹង​បង្ហាញ​នៅ​ក្នុង​របារ​ចំណងជើង​របស់​កម្មវិធី​ចាក់ ។"
+"Inserix un títol per al fitxer MP3. \n"
+"També apareixerà en la barra del títol dels reproductors."
 
 #: exe/engine/field.py:3017 exe/engine/field.py:3251
 msgid ""
@@ -804,31 +810,29 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
-"<p>ប្រសិន​បើ​មិន​ធីក នោះ​កំហុស​អក្ខរាវិរុទ្ធ "
-"និង​ការ​សរសេរ​អក្សរ​ធំ​មួយ​ចំនួន​តូច គឺ​នឹង​ទទួល​យក ។ ប្រសិន​បើ​បាន​ធីក "
-"នោះ​គឺ​នឹង​ទទួល​យក​តែ​អក្ខរាវិរុទ្ធ "
-"និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ ៖</strong>"
-" ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> នោះ​ពាក្យ "
-"<code>elephant</code> និង <code>Eliphant</code> "
-"នឹង​ត្រូវកំណត់ថា<em>\"ជិត​ត្រូវ\"</em> ដោយ​ក្បួនដោះស្រាយ "
-"ព្រោះ​វា​មាន​តួអក្សរ​ដែល​ខុស​តែមួយ​ គឺ​ប្រសិន​បើ​ធីក "
-"\"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" ។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ"
-" នោះ​ការ​សរសេរ​អក្សរតូច <code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ "
-"<code>eliphant</code> "
-"ក៏​នឹង​ត្រូវ​ទទួល​យកដែរ ។</p><p>ប្រសិន​បើបាន​កំណត់​ទាំង "
-"\"សម្គាល់​យ៉ាង​តឹងរឹង\" ទាំង \"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" "
-"នោះ​គឺ​ទទួល​យក​តែ​ចម្លើយ​ដែលត្រឹមត្រូវ​ទេ​គឺ \"Elephant\" ។ ប្រសិន​ធីកតែ "
-"\"សម្គាល់យ៉ាងតឹងរឹង\" ហើយ​មិនបាន​ធីក \"ពិនិត្យ​ការ​សរសេរ​អក្សរធំ\" នោះ "
-"\"elephant\" ក៏​នឹងត្រូវបាន​ទទួល​យកដែរ ។</p>"
+"<p>Si no marqueu esta opció, s'acceptarà un nombre xicotet d'errors "
+"d'ortografia i d'ús de les majúscules. Si la marqueu només s'acceptarà "
+"una coincidència exacta en l'ortografia i en les "
+"majúscules.</p><p><strong>Per exemple,</strong> si la resposta correcta "
+"és <code>Elefant</code> llavors les dos <code>elefant</code> i "
+"<code>Elifant</code> seran considerades com a <em>«prou pròximes»</em> "
+"per l'algoritme, ja que sols tenen una lletra incorrecta, encara que "
+"\"Correcció de majúscules\" estiga seleccionada.</p><p>Si en l'exemple "
+"d'abans la casella \"Correcció de majúscules\" no està marcada, la lletra"
+" minúscula <code>e</code> no es considerarà un error i "
+"<code>elifant</code> també s'acceptarà.</p><p> Si seleccioneu \"Correcció"
+" estricta\" i \"Correcció de majúscules\" al mateix temps, l'única "
+"paraula correcta serà \"Elefant\". Si sols seleccioneu \"Correcció "
+"estricta\" i \"Correcció de majúscules\" no ho està, \"elefant\" també "
+"s'acceptarà.</p>"
 
 #: exe/engine/field.py:3038 exe/engine/field.py:3272
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr ""
-"<p>ប្រសិន​បើ​បាន​ធីក​ជម្រើស​នេះ "
-"នោះ​ចម្លើយ​ដែលបាន​ដាក់ស្នើ​ដែល​មាន​តួអក្សរ​ផ្សេងគ្នា "
-"នឹង​ត្រូវ​បាន​សម្គាល់​ថា​មិនត្រឹមត្រូវ ។</p>"
+"<p>Si marqueu esta opció, les respostes amb un ús diferent de les "
+"majúscules es consideraran incorrectes.</p>"
 
 #: exe/engine/field.py:3043 exe/engine/field.py:3277
 msgid ""
@@ -836,10 +840,10 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
-"<p>ប្រសិន​បើ​បាន​កំណត់​ជម្រើស​នេះ "
-"នោះ​ពាក្យ​នីមួយៗ​នឹង​ត្រូវ​សម្គាល់​នៅពេល \n"
-"ដែល​អ្នក​សិក្សា​វាយវា ជាជាង​ដែល​សម្គាល់​វា​នៅពេល​ដែល​ធ្វើ​លំហាត់​ចប់ ។\n"
-"</p>"
+"<p>Si marqueu esta opció, cada paraula es marcarà \n"
+"a mesura que l'alumnat l'escriu en comptes de marcar totes les paraules "
+"al final \n"
+"de l'exercici.</p>"
 
 #: exe/engine/field.py:3081 exe/engine/field.py:3319
 #: exe/engine/listaidevice.py:364
@@ -847,34 +851,34 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
-"អនុញ្ញាត​ការ​បំពេញ​ស្វ័យប្រវត្តិ នៅពេល \n"
-"                                       អ្នកប្រើ​បំពេញ​ចន្លោះ ។"
+"Permet la compleció automàtica quan \n"
+"                                  l'usuari ompli els buits."
 
 #: exe/engine/field.py:3282
 msgid ""
 "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n "
 "obtenida.</p>"
-msgstr ""
+msgstr "<p>Si esta opció està marcada; es mostra la puntuació obtinguda.</p>"
 
 #: exe/engine/field.py:3361 exe/engine/field.py:3405
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
-"ជ្រើស​តែ .swf (វត្ថុ Flash) សម្រាប់ \n"
-"iDevice នេះ ។"
+"Seleccioneu sols .swf (objectes en Flash) per a \n"
+"este iDevice."
 
 #: exe/engine/field.py:3425 exe/engine/field.py:3489
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
-"ជ្រើស​តែ .flv (ឯកសារ​វីដេអូ Flash) សម្រាប់ \n"
-"iDevice នេះ ។"
+"Seleccioneu sols .flv (fitxers de vídeo en Flash) per a \n"
+" este iDevice."
 
 #: exe/engine/field.py:3501
 msgid "Type a discussion topic here."
-msgstr "វាយ​បញ្ចូល​ប្រធានបទ​ពិភាក្សា​នៅ​ទីនេះ ។"
+msgstr "Escriviu un tema de discussió ací"
 
 #: exe/engine/field.py:3530
 msgid ""
@@ -882,25 +886,24 @@ msgid ""
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr ""
-"<p>ជ្រើស​និមិត្តសញ្ញា​ពី​កម្មវិធី​និពន្ធ​អត្ថបទ​ខាងក្រោម ឬ​បញ្ចូល LATEX "
-"ដោយ​ដៃ​ដើម្បី​បង្កើត​រូបមន្ត​គណិត​វិទ្យា ។ ដើម្បី​មើល LATEX "
-"របស់​អ្នក​ជាមុន ដូច​ដែល​វា​នឹង​បង្ហាញ គឺ​ត្រូវ​ប្រើ​ប៊ូតុង "
-"&lt;មើល​ជាមុន&gt; នៅ​ខាងក្រោម ។</p>"
+"<p>Seleccioneu símbols des de l'editor de text o introduïu LATEX "
+"manualment per a crear la fórmula matemàtica. Per a previsualitzar com es"
+" mostra el LATEX empreu el botó &lt;Previsualització&gt; de davall.</p>"
 
 #: exe/engine/field.py:3538
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
-"ចុច​លើ​ប៊ូតុង​មើល​ជាមុន ដើម្បី​បម្លែង \n"
-"                                  latex ទៅ​ជា​រូបភាព ។"
+"Premeu el botó de Previsualització per a convertir \n"
+"            el LaTeX en una imatge."
 
 #: exe/engine/field.py:3606 exe/engine/field.py:3655
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:1881 exe/webui/element.py:2233
 #: exe/webui/testoptionelement.py:106
 msgid "Option"
-msgstr "ជម្រើស"
+msgstr "Opció"
 
 #: exe/engine/field.py:3684 exe/engine/field.py:3750
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
@@ -908,12 +911,12 @@ msgstr "ជម្រើស"
 #: exe/engine/verdaderofalsofpdidevice.py:128 exe/webui/element.py:2518
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
-msgstr "ព័ត៌មាន​ជំនួយ"
+msgstr "Pista"
 
 #: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2061
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
-msgstr "ជម្រើស"
+msgstr "Opcions"
 
 #: exe/engine/field.py:3832
 msgid ""
@@ -922,10 +925,9 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
-"បញ្ចូល​ប្រធាន​សំណួរ ។ \n"
-"សំណួរ​ត្រូវ​តែ​ច្បាស់ ហើយ​មានន័យ​ច្បាស់លាស់ ។ "
-"ជៀសវាង​ពី​ការ​សន្មត​អវិជ្ជមាន \n"
-"ដោយសារ​​តែ​ការ​ធ្វើ​ឲ្យ​អ្នក​សិក្សា​មាន​ការ​ច្រឡំ ។"
+"Escriviu la pregunta principal. \n"
+"La pregunta  ha de ser clara i inequívoca. Eviteu premisses negatives \n"
+"ja que tendixen a confondre l'alumnat."
 
 #: exe/engine/field.py:3835 exe/engine/field.py:3916
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -933,7 +935,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:46
 #: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2038
 msgid "Question:"
-msgstr "សំណួរ ៖"
+msgstr "Qüestió:"
 
 #: exe/engine/field.py:3840
 msgid ""
@@ -942,36 +944,36 @@ msgid ""
 " options by \n"
 "clicking the red X next to the option."
 msgstr ""
-"បញ្ចូល​ជម្រើស​ដែល​មាន នៅ​ទីនេះ ។ \n"
-"អ្នក​អាច​បន្ថែម​ជម្រើស​បាន ដោយ​ចុច​ប៊ូតុង \"បន្ថែម​ជម្រើស​ផ្សេងទៀត\" ។ "
-"លុប​ជម្រើស ដោយ \n"
-"ចុច​សញ្ញា X ពណ៌​ក្រហម​នៅ​ជាប់​នឹង​ជម្រើស ។"
+"Introduïu les opcions disponibles ací. \n"
+"Podeu afegir opcions prement el botó «Afig una altra opció». Podeu "
+"esborrar opcions \n"
+"prement la «X» roja al costat de l'opció."
 
 #: exe/engine/field.py:3844
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
-"ជ្រើស​ជម្រើស​ចម្លើយ​ត្រឹមត្រូវ​ច្រើន \n"
-"តាម​ដែលត្រូវ​ការ ដោយ​ចុច​ប្រអប់​ធីក​នៅ​ជាប់​នឹង​ជម្រើស ។"
+"Seleccioneu tantes opcions correctes \n"
+"com calga fent clic en la casella de selecció al costat de l'opció."
 
 #: exe/engine/field.py:3847
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
-"វាយបញ្ចូល​មតិអ្នកប្រើ​ដែល​អ្នក​ចង់​ផ្ដល់ \n"
-"ឲ្យ​អ្នកអ្នក​សិក្សា ។"
+"Escriviu la retroacció que voleu \n"
+"proporcionar a l'alumnat."
 
 #: exe/engine/field.py:3849 exe/engine/field.py:3919
 #: exe/engine/reflectionfpdidevice.py:67 exe/engine/reflectionfpdidevice.py:202
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
-msgstr "មតិអ្នក​ប្រើ ៖"
+msgstr "Retroacció:"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr "ភាពយន្ត Flash"
+msgstr "Pel·lícula en Flash"
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -983,23 +985,23 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
-"iDevice នេះ គាំទ្រ​តែ​​ទ្រង់ទ្រាយ​ឯកសារ​វីដេអូ Flash (.FLV) "
-"ហើយ​នឹង​មិន​គាំទ្រ\n"
-"ទ្រង់ទ្រាយ​វីដេអូ​ផ្សេងទៀត​ទេ ។ ទោះ​យ៉ាងណា "
-"អ្នក​អាច​បម្លែង​ទ្រង់ទ្រាយ​ភាពយន្ត​ផ្សេងទៀត\n"
-"(e.g. mov, wmf etc) ទៅ​ជា​ទ្រង់ទ្រាយ .FLV បានដែរ "
-"ដោយប្រើ​កម្មវិធី​អ៊ិនកូដ​ភាគទី​បី ។ \n"
-"វា​មិនត្រូវ​បាន​ផ្ដល់​ជាមួយ eXe ទេ ។ "
-"អ្នកប្រើ​នឹង​ត្រូវទាញយក​កម្មវិធី​ចាក់ Flash 8\n"
-"ពី http://www.macromedia.com/ ដើម្បី​ចាក់​វីដេអូ ។"
+"Este iDevice sols admet vídeos en format Flash (.FLV), i no accepta\n"
+" altres formats de vídeo. No obstant això, podeu convertir altres formats"
+" de vídeo\n"
+" (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de vídeo "
+"de\n"
+" tercers (p. ex. en Linux: ffmpeg, winff). Estos codificadors no se "
+"subministren amb l'eXe.\n"
+" Els usuaris també han de baixar el reproductor de Flash 8 des "
+"d'http://www.macromedia.com/ per a reproduir el vídeo."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
-"បញ្ចូល \n"
-"អត្ថបទ​ដែល​អ្នក​ចង់​ភ្ជាប់​ជាមួយ​ឯកសារ ។"
+"Introduïu \n"
+"el text que voleu associar al fitxer."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
@@ -1008,19 +1010,19 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:142
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:143
 msgid "Description"
-msgstr "សេចក្ដី​ពិពណ៌នា"
+msgstr "Descripció"
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:109
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
-"ផ្ដល់​ចំណងជើង​ឲ្យ​ភាពយន្ដ flash \n"
-"ដែល​អ្នក​ទើបតែ​បញ្ចូល ។"
+"Escriviu un títol per a la pel·lícula en Flash \n"
+"que acabeu d'inserir."
 
 #: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
-msgstr "Flash មាន​អត្ថបទ"
+msgstr "Flash amb text"
 
 #: exe/engine/flashwithtextidevice.py:45
 msgid ""
@@ -1031,26 +1033,27 @@ msgid ""
 "file \n"
 "the learners will view."
 msgstr ""
-"flash ដែល​មាន​អត្ថបទ idevice អនុញ្ញាត​ឲ្យ​អ្នក​ភ្ជាប់ \n"
-"ព័ត៌មាន​ជា​អត្ថបទ​បន្ថែម​ទៅ​កាន់​ឯកសារ flash ។ វា​មាន​ប្រយោជន៍ \n"
-"នៅពេល​អ្នក​ចង់​ផ្ដល់​សេចក្ដី​ណែនាំពីការ​អប់រំ នៅ​នឹង​ឯកសារ flash \n"
-"ដែល​អ្នក​សិក្សា​នឹង​មើល ។"
+"L'iDevice Flash amb text vos permet \n"
+"associar informació escrita addicional a un fitxer en Flash. Això pot ser"
+" útil \n"
+"per a proporcionar instruccions a l'alumnat a l'hora de visualitzar un "
+"fitxer en Flash."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
-"បញ្ចូល​អត្ថបទ​ដែល​អ្នក​ចង់ \n"
-"                                 ភ្ជាប់​ជាមួយ​រូបភាព ។"
+"Escriviu el text que voleu \n"
+"                              associar a la imatge."
 
 #: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
-"ផ្ដល់​ចំណងជើង​ឲ្យ​ flash ដែល​អ្នក \n"
-"                                  ទើបតែ​បញ្ចូល ។"
+"Escriviu un títol per al fitxer en Flash \n"
+"       que acabeu d'inserir."
 
 #: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
@@ -1059,14 +1062,13 @@ msgid ""
 "screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
-"បញ្ចូល​វិមាត្រ​ការ​បង្ហាញ \n"
-" flash (គិត​ជា ភីកសែល) និង​កំណត់​ការ​តម្រឹម​រូបភាព​នៅ​លើ​អេក្រង់​។ \n"
-"ទទឹង និង​កម្ពស់ នឹង​ផ្លាស់ប្ដូរ​ទៅ​តាម​សមាមាត្រ ។"
+"Introduïu les dimensions de la pantalla Flash (en píxels) i \n"
+"determineu l'alineament de la imatge en la pantalla. \n"
+"L'amplària i l'alçària s'alteraran proporcionalment."
 
 #: exe/engine/freetextfpdidevice.py:38
-#, fuzzy
 msgid "FPD - Texto Libre"
-msgstr "បន្ទាត់​អត្ថបទ"
+msgstr "FPD - Text lliure"
 
 #: exe/engine/freetextfpdidevice.py:40 exe/engine/freetextidevice.py:40
 msgid ""
@@ -1077,15 +1079,16 @@ msgid ""
 "built and \n"
 "delivered."
 msgstr ""
-"ភាគច្រើន​នៃ​​ធនធាន​ការ​សិក្សា​គឺ​នឹង​បង្កើត​ជា​បរិបទ \n"
-"ការ​ផ្ដល់​សេចក្ដី​ណែនាំ និង​ផ្ដល់​ព័ត៌មាន​ទូទៅ ។\n"
-"វា​ផ្ដល់​នូវ​គ្រោងការណ៍​ ដែល​បង្កើត និង​ផ្ដល់​ \n"
-"សកម្មភាព ។"
+"L'aspecte essencial d'un recurs d'aprenentatge \n"
+"consistix en l'elaboració d'un context, la definició de les instruccions "
+"i la informació general. \n"
+"Això proporciona el marc en el qual les activitats d'aprenentatge es "
+"construïxen i es lliuren."
 
 #: exe/engine/freetextfpdidevice.py:45 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
-msgstr "អត្ថបទ​សេរី"
+msgstr "Text Lliure"
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:46
 msgid ""
@@ -1094,35 +1097,36 @@ msgid ""
 "applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
-"ប្រើ​វាលនេះ​ដើម្បី​បញ្ចូល​អត្ថបទ ។ \n"
-"iDevice នេះ​មិនមាន​ការ​បញ្ជាក់​ដែលបាន​អនុវត្ត​ទេ "
-"ទោះបី​ជា​​បាន​អនុវត្ត​ការ​ធ្វើ​ទ្រង់ទ្រាយ​ \n"
-"ដែលបាន​កំណត់​ទៅកាន់​អត្ថបទ "
-"តាម​ប៊ូតុង​កែសម្រួល​អត្ថបទ​ដែល​បាន​ភ្ជាប់​ជាមួយ​វាល​ក៏ដោយ ។"
+"Utilitzeu este camp per a escriure text. \n"
+"En este iDevice no s'ha aplicat èmfasi \n"
+"tot i que es pot aplicar al text formatació limitada \n"
+"amb els botons d'edició de text associats al camp."
 
 #: exe/engine/freetextfpdidevice.py:121 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
-msgstr "នេះ​ជា​វាល​អត្ថបទ​សេរី ដែល​អាចបញ្ចូល​មាតិកា​សិក្សា​ទូទៅ​បាន ។"
+msgstr ""
+"Este és un camp de text lliure en el qual podeu introduir contingut "
+"d'aprenentatge."
 
 #: exe/engine/galleryidevice.py:138 exe/engine/galleryidevice.py:189
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "មិនមាន​រូបភាព​តូច​ទេ ។ មិនអាច​ផ្ទុក​រូបភាព​ដើម​បាន​ឡើយ ។"
+msgstr "No s'ha trobat la miniatura. No es pot carregar la imatge original."
 
 #: exe/engine/galleryidevice.py:146 exe/engine/galleryidevice.py:196
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "មិនមាន​រូបភាព​តូចៗ​ទេ ។ មិន​អាច​បង្រួញ​រូបភាព​ដើម​បាន​ឡើយ ។"
+msgstr "No s'ha trobat la miniatura. No es pot reduir la imatge original."
 
 #: exe/engine/galleryidevice.py:219
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "មិនមាន​រូបភាព​តូចៗ​ទេ ។ មិន​អាច​បង្រួញ​រូបភាព​បាន​ឡើយ ។"
+msgstr "No s'ha trobat la miniatura. No es pot reduir la imatge."
 
 #: exe/engine/galleryidevice.py:456
 msgid "Image Gallery"
-msgstr "វិចិត្រសាល​រូបភាព"
+msgstr "Galeria d'imatges"
 
 #: exe/engine/galleryidevice.py:457
 msgid "eXe Project"
-msgstr "គម្រោង eXe"
+msgstr "Projecte eXe"
 
 #: exe/engine/galleryidevice.py:458
 msgid ""
@@ -1131,18 +1135,17 @@ msgid ""
 "display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
-"<p>កន្លែង​ដែល​អ្នក​មាន​រូបភាព​មួយចំនួន​ទាក់ទង​នឹង​លំហាត់ \n"
-"សិក្សា​ជាក់លាក់ ឬ​លំហាត់​នីមួយៗ "
-"ដែល​អ្នក​ចង់​បង្ហាញ​នៅ​ក្នុង​បរិបទ​វិចិត្រសាល \n"
-"តែ​មិនចង់​បង្ហាញ​តែ​មួយៗ​ទេ ។</p>"
+"<p>Quan teniu un nombre d'imatges que es relacionen \n"
+"entre si o amb un exercici d'aprenentatge específic podeu preferir \n"
+"mostrar-les en una galeria en comptes d'individualment.</p>"
 
 #: exe/engine/galleryidevice.py:461
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "ប្រើ Idevice នេះ ប្រសិន​បើ​អ្នក​មាន​រូបភាពច្រើន​ដែលត្រូវ​បង្ហាញ ។"
+msgstr "Utilitzeu este iDevice si teniu moltes imatges per mostrar."
 
 #: exe/engine/galleryidevice.py:471
 msgid "Enter a title for the gallery"
-msgstr "បញ្ចូល​ចំណង​ជើង​ឲ្យ​វិចិត្រសាល"
+msgstr "Escriviu el títol per a la galeria d'imatges."
 
 #: exe/engine/galleryidevice.py:472
 msgid ""
@@ -1150,19 +1153,19 @@ msgid ""
 "appear below where you will be able to label it. It's always good "
 "practice to put the file size in the label."
 msgstr ""
-"ចុច​លើ​ប៊ូតុង​ បន្ថែម​រូបភាព​ ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព ។ រូបភាព "
-"នឹង​បង្ហាញ​នៅ​ខាងក្រោម ហើយ​អ្នក​អាច​ដាក់​ស្លាក​វា​បាន ។ វា​ជា​ការ​ល្អ "
-"ប្រសិន​បើ​មាន​ដាក់​ទំហំ​ឯកសារ​នៅ​ក្នុង​ស្លាក ។"
+"Premeu el botó Afig imatges per a seleccionar un fitxer d'imatge. La "
+"imatge apareixerà davall on podreu etiquetar-la. Sempre és una bona idea "
+"posar la mida de la imatge en l'etiqueta."
 
 #: exe/engine/galleryidevice.py:711 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:402 exe/export/websitepage.py:247
 msgid "Previous"
-msgstr "មុន"
+msgstr "Anterior"
 
 #: exe/engine/galleryidevice.py:711 exe/export/ipodpage.py:116
 #: exe/export/scormexport.py:403 exe/export/websitepage.py:253
 msgid "Next"
-msgstr "បន្ទាប់"
+msgstr "Següent"
 
 #: exe/engine/galleryidevice.py:711 exe/webui/block.py:260
 #: exe/webui/block.py:261 exe/webui/common.py:351 exe/webui/common.py:352
@@ -1171,16 +1174,16 @@ msgstr "បន្ទាប់"
 #: exe/webui/element.py:2514 exe/webui/element.py:2515
 #: exe/webui/truefalseelement.py:152 exe/webui/truefalseelement.py:153
 msgid "Close"
-msgstr "បិទ"
+msgstr "Tanca"
 
 #: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:581
 msgid "Reading Activity 0.11"
-msgstr "សកម្មភាព​អាន ០.១១"
+msgstr "Activitat de lectura 0.11"
 
 #: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:431
 #: exe/engine/idevicestore.py:472
 msgid "Reading Activity"
-msgstr "សកម្មភាព​អាន"
+msgstr "Activitat de lectura"
 
 #: exe/engine/idevicestore.py:475
 msgid ""
@@ -1193,13 +1196,12 @@ msgid ""
 " task \n"
 "based on the reading.</p>"
 msgstr ""
-"<p>សកម្មភាព​អាន នឹង​ត្រូវបាន​ប្រើ​ជាចម្បង \n"
-"ដើម្បី​ពិនិត្យ​ការ​យល់ដឹង​របស់​អ្នកសិក្សា​អំពី​អត្ថបទ​ដែលបាន​ផ្ដល់ ។ "
-"អាច​ធ្វើ​ដូចនេះ​បាន​ដោយ \n"
-"សួរ​អ្នកសិក្សា​ឲ្យ​ឆ្លើយតប​លើ​ការ​អាន និង​ឆ្លើយ​សំណួរ​អំពី​ការ​អាន "
-"ឬ​ដោយឲ្យ​ពួកគេ​បំពេញ​ \n"
-"កិច្ចការ​ធម្មតា​ដែល​អាច​ធ្វើបាន \n"
-"ដែលមានមូលដ្ឋាន​លើ​ការ​អាន ។</p>"
+"<p>L'activitat de lectura s'utilitzarà \n"
+"per a comprovar la comprensió lectora del text donat. Això és pot fer \n"
+"proposant a l'alumnat reflexions sobre el text o qüestions de comprensió "
+"lectora, \n"
+"o completant altres tasques \n"
+"basades en la lectura.</p>"
 
 #: exe/engine/idevicestore.py:480
 msgid ""
@@ -1215,21 +1217,21 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
-"<p>នៅពេល​ដែល​គ្រូ​ប្រើ iDevice នេះ ពួកគាត់​គួរតែ​គិត​ដូចខាងក្រោម ៖ "
-"</p><ol><li>គិត​អំពី​ចំនួន​ប្រភេទ​សកម្មភាព​ផ្សេងគ្នា​ដែល​បាន​គ្រោង​សម្រាប់​ធនធាន​របស់​អ្នក"
-" ដែល​នឹង​ត្រូវបាន​ដាក់​ជា​សញ្ញា​នៅ​ក្នុង​មាតិកា ។ ជៀសវាង​ប្រើ​ប្រភេទ "
-"ឬ​ចំណាត់ថ្នាក់​សកម្មភាព​ខុសគ្នា​ច្រើន​ពេក ដែល​នាំឲ្យ​អ្នកសិក្សា​ច្រឡំ ។ "
-"ប្រភេទ​ខុសគ្នា​តែ ៣ ឬ ៤ "
-"គឺ​សមល្ម​ម​សម្រាប់ធនធន​បង្រៀន ។</li><li>ពី​គំនិត​រចនា​មើលឃើញ "
-"សូម​ជៀសវាង​ការ​ដាក់ iDevices ពីរ​នៅ​ជាប់គ្នា​ "
-"ដោយ​គ្មានអត្ថបទ​នៅ​ចន្លោះ​ ។ បើ​វា​តម្រូវ​ឲ្យ​ដាក់​ដូច្នេះ "
-"គឺ​សូម​វេញ​សំណួរ ព្រឹត្តិការណ៍​ពីរ​ទៅ​ក្នុង iDevice មួយ​គឺ​ប្រសើរ​ជាង ។ "
-"</li><li>គិត​អំពី​សកម្មភាព ដែល​ផលប្រយោជន៍​នៃ​ការ​ធ្វើ​សកម្មភាព​នោះ "
-"សំខាន់ជាង​ពេលវេលា និងការ​ខំប្រឹងប្រែង ដើម្បី​បញ្ចប់​សកម្មភាព ។ </li></ol>"
+"<p>És recomanable que el professorat tinga present el següent quan "
+"utilitze este iDevice:</p><ol><li>Penseu en diferents tipus d'activitats "
+"que facen el contingut visualment atractiu. Utilitzar massa tipus "
+"diferents d'activitats pot confondre l'alumnat. Normalment tres o quatre "
+"tipus diferents són suficients per a un recurs d'aprenentatge.</li><li> "
+"Des d'una perspectiva de disseny visual, eviteu tindre dos iDevices l'un "
+"a continuació de l'altre sense cap text que els separe. Si calen dos "
+"iDevices ajunteu dos qüestions dins el mateix iDevice. </li><li>Penseu en"
+" activitats que siguen percebudes com a atractives i beneficioses, de "
+"manera que pague la pena invertir temps i esforç a completar-"
+"les.</li></ol>"
 
 #: exe/engine/idevicestore.py:515 exe/engine/idevicestore.py:624
 msgid "What to read"
-msgstr "អ្វី​ដែលត្រូវ​អាន"
+msgstr "Què s'ha de llegir"
 
 #: exe/engine/idevicestore.py:516 exe/engine/idevicestore.py:625
 msgid ""
@@ -1237,26 +1239,26 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
-"បញ្ចូល​សេចក្ដី​លម្អិត​ការអាន ដោយ​រួម​បញ្ចូល​សេចក្ដី​លម្អិត​យោង​ផង ។ "
-"រចនាប័ទ្ម \n"
-"យោង​ដែល​បាន​ប្រើ នឹង​អាស្រ័យ​​លើ​មហាវិទ្យាល័យ ឬ​ផ្នែក​របស់ \n"
-"អ្នក ។"
+"Introduïu els detalls de la lectura incloent-hi detalls de referència. "
+"L'estil de referència \n"
+"que s'utilitza depén de la preferència de la vostra facultat o \n"
+"departament."
 
 #: exe/engine/idevicestore.py:519 exe/engine/idevicestore.py:558
 #: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:628
 #: exe/engine/idevicestore.py:665 exe/engine/idevicestore.py:673
 #: exe/webui/questionelement.py:100
 msgid "Activity"
-msgstr "សកម្មភាព"
+msgstr "Activitat"
 
 #: exe/engine/idevicestore.py:520 exe/engine/idevicestore.py:629
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
-"ពិពណ៌នា​អំពី​ភារកិច្ច​ដែលទាក់ទង​នឹង​ការ​អាន ដែល​អ្នក​សិក្សា​ត្រូវ​ធ្វើ ។"
-" \n"
-"ជំនួយ​នេះ បង្ហាញ​អំពី​ទំនាក់ទំនង​គ្នា​ដល់​អ្នក​សិក្សា ។"
+"Descriu les tasques, que l'alumnat ha de fer, \n"
+"relacionades amb la lectura.\n"
+"Açò ajuda a mostrar la rellevància per a l'alumnat."
 
 #: exe/engine/idevicestore.py:524 exe/engine/idevicestore.py:633
 msgid ""
@@ -1265,16 +1267,16 @@ msgid ""
 "question \n"
 "or providing a statement to begin a debate."
 msgstr ""
-"ប្រើ​​មតិអ្នក​ប្រើ "
-"ដើម្បី​ផ្ដល់​សេចក្ដី​សង្ខេប​របស់​ចំណុច​ដែល​បាន​គ្រប​នៅ​ក្នុង​ការ​អាន \n"
-"ឬ​ជា​ចំណុច​ចាប់ផ្ដើម​សម្រាប់​ការ​វិភាគ​បន្ថែម​នៃ​ការ​អាន ដោយ​ចោទ​ជា​សំណួរ"
-" \n"
-"ឬ​ផ្ដល់​ជា​ប្រធាន​បទ​ដើម្បី​ចាប់ផ្ដើម​ពិភាក្សា​វែកញែក ។"
+"Utilitzeu la retroacció per a proporcionar un resum dels punts coberts en"
+" la lectura, \n"
+"o com a punt de partida per a analitzar un poc més la lectura fent una "
+"pregunta \n"
+"o proposant un tema per a començar un debat."
 
 #: exe/engine/idevicestore.py:530 exe/engine/idevicestore.py:539
 #: exe/engine/idevicestore.py:637 exe/engine/idevicestore.py:646
 msgid "Objectives"
-msgstr "វត្ថុ​បំណង"
+msgstr "Objectius"
 
 #: exe/engine/idevicestore.py:533 exe/engine/idevicestore.py:640
 msgid ""
@@ -1282,19 +1284,18 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
-"វត្ថុបំណង ពិពណ៌នា​អំពី​លទ្ធផល​នៃការ​សិក្សា​ដែល​រំពឹង​ទុក និង\n"
-"កំណត់​អំពី​អ្វី​ដែល​អ្នក​សិក្សា​អាច​ទទួល​យក​បាន បន្ទាប់​ពី​បាន​បញ្ចប់​ការ"
-"\n"
-"សិក្សា ។"
+"Els objectius descriuen els resultats esperats de l'aprenentatge \n"
+" i han de definir allò que l'alumnat serà capaç de fer \n"
+" quan haja completat les tasques d'aprenentatge."
 
 #: exe/engine/idevicestore.py:540 exe/engine/idevicestore.py:647
 msgid "Type the learning objectives for this resource."
-msgstr "វាយ​បញ្ចូល​​បំណង​សិក្សា​សម្រាប់​ធនធាន​នេះ ។"
+msgstr "Escriviu els objectius d'aprenentatge per a este recurs."
 
 #: exe/engine/idevicestore.py:543 exe/engine/idevicestore.py:553
 #: exe/engine/idevicestore.py:650 exe/engine/idevicestore.py:660
 msgid "Preknowledge"
-msgstr "ចំណេះ​ដឹង​ជាមុន"
+msgstr "Coneixements previs"
 
 #: exe/engine/idevicestore.py:546 exe/engine/idevicestore.py:653
 msgid ""
@@ -1306,22 +1307,21 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools "
 "</li></ul>\n"
 msgstr ""
-"ចំណេះដឹង​ដែលត្រូវការ​ជាមុន គឺ​សំដៅលើ​ចំណេះដឹង​ដែល​អ្នក​សិក្សា​គួរតែ​មាន\n"
-"ដើម្បី​អាច​បំពេញ​ការ​សិក្សា​ឲ្យ​មាន​ប្រសិទ្ធិភាព ។ ឧទាហរណ៍\n"
-"អំពី​ចំណេះដឹង​ជាមុន​អាច​ជា ៖ <ul>\n"
-"<li>        អ្នក​សិក្សា​ត្រូវតែ​មាន​ចំណេះ​ដឹង​ភាសា​អង់គ្លេស​កម្រិត ៤ "
-"</li>\n"
-"<li>        "
-"អ្នក​សិក្សា​ត្រូវតែ​អាច​ដំឡើង​នូវ​ឧបករណ៍​ដ៏មាន​ថាមពល​​ជាលក្ខណៈ​ស្តង់ដារ "
-"</li></ul>\n"
+"El requisit de coneixements previs es referix \n"
+"als coneixements que l'alumnat ha de tindre per a poder completar \n"
+" l'aprenentatge de manera efectiva. Exemples de coneixements previs poden"
+" ser: <ul>\n"
+"<li>    L'alumnat ha de tindre un nivell 4 d'anglés</li>\n"
+"<li>    L'alumnat ha de saber muntar ferramentes electròniques</li></ul>\n"
 
 #: exe/engine/idevicestore.py:554 exe/engine/idevicestore.py:661
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
-"ពិពណ៌នា​អំពី​ចំណេះដឹង​ដែល​អ្នក​សិក្សា​ត្រូវ​មាន​ជាមុន​ដើម្បី\n"
-"បំពេញ​ការ​សិក្សា​នេះ​ឲ្យ​មាន​ប្រសិទ្ធិភាព ។"
+"Descriu els coneixements previs que l'alumnat ha de tindre per a "
+"completar \n"
+"este aprenentatge de manera efectiva. "
 
 #: exe/engine/idevicestore.py:561 exe/engine/idevicestore.py:668
 msgid ""
@@ -1330,14 +1330,14 @@ msgid ""
 "conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
-"សកម្មភាព​មួយ អាច​កំណត់​ជា​កិច្ចការ​មួយ ឬ​សំណុំ​កិច្ចការ ដែល​អ្នក​សិក្សា\n"
-"ត្រូវ​បំពេញ ។ ផ្ដល់​ការ​ពន្យល់​អំពី​កិច្ចការ​ឲ្យ​បាន​ច្បាស់លាស់ "
-"និង​កំណត់​លក្ខខណ្ឌ\n"
-"ដែល​អាច​ជួយ​ដល់​អ្នក​សិក្សា​ក្នុង​ការ​ធ្វើ​កិច្ចការ ។"
+"Una activitat es pot definir com una tasca o conjunt de tasques\n"
+"que l'alumnat ha de realitzar. Redacteu un enunciat clar de la tasca i \n"
+"tingueu en compte les condicions que poden ajudar o obstaculitzar la "
+"realització de la tasca."
 
 #: exe/engine/idevicestore.py:567 exe/engine/idevicestore.py:674
 msgid "Describe the tasks the learners should complete."
-msgstr "ពិពណ៌នា​អំពី​កិច្ចការ ដែល​អ្នក​សិក្សា​គួរ​បំពេញ ។"
+msgstr "Descriu les tasques que l'alumnat ha de completar."
 
 #: exe/engine/idevicestore.py:584
 msgid ""
@@ -1350,12 +1350,12 @@ msgid ""
 "some \n"
 "reflective guidance.</p>"
 msgstr ""
-"<p>សកម្មភាព​អាន ដូចឈ្មោះ​ដែល​ស្នើ \n"
-"គួរតែ​ស្នើ​ឲ្យ​អ្នកសិក្សា​ធ្វើ​សំណុំបែបបទ​ណាមួយ​នៃ​សកម្មភាព ។ "
-"សកម្មភាព​នេះ \n"
-"គួរតែ​ភ្ជាប់​ទៅ​អត្ថបទ​ដែល​បាន​ស្នើ​ឲ្យ​អ្នកសិក្សា​អាន​ដោយ​ផ្ទាល់ ។ \n"
-"ផ្ដល់​មតិអ្នកប្រើ​ចំពោះ​សកម្មភាព​ដែល​សមរម្យ ដែលអាច​ផ្ដល់​ឲ្យ​អ្នកសិក្សា \n"
-"នូវ​សេចក្ដី​ណែនាំអំពី​ការ​ឆ្លើយ ។</p>"
+"<p>L'activitat de lectura, com el seu nom \n"
+"suggerix, sol demanar a l'alumnat un esforç per a fer l'activitat. Esta "
+"activitat \n"
+"ha d'estar relacionada directament amb el contingut del text llegit. \n"
+"La retroacció de l'activitat és molt apropiada ja que proporciona una "
+"guia per a reflexionar.</p>"
 
 #: exe/engine/idevicestore.py:589
 msgid ""
@@ -1371,21 +1371,21 @@ msgid ""
 "where the perceived benefit of doing the activity outweighs the time and "
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
-"នៅពេល​ដែល​ប្រើ iDevice គ្រូ​គួរតែ​គិត​ដូចខាងក្រោម ៖ "
-"<ol><li>គិត​អំពី​ចំនួន​ប្រភេទ​សកម្មភាព​ផ្សេងគ្នា​ដែល​បាន​គ្រោង​សម្រាប់​ធនធាន​របស់​អ្នក"
-" ដែល​នឹង​ផ្ដល់​សញ្ញា​​នៅ​ក្នុង​មាតិកា ។ ជៀសវាង​​ការប្រើ​ប្រភេទ "
-"ឬ​ចំណាត់ថ្នាក់​សកម្មភាព​ខុសគ្នា​ច្រើន​ពេក "
-"ដែល​នាំឲ្យ​អ្នក​សិក្សា​មាន​ការ​ច្រឡំ ។ ជាទូទៅ ប្រភេទ​សកម្មភាព​ខុសគ្នា ៣ ឬ"
-" ៤ គឺ​សម​ល្មម​សម្រាប់​ការ​បង្រៀន​ធនធាន ។</li><li>ពី​គំនិត​រចនា​មើលឃើញ "
-"សូម​ជៀសវាង​​ការ​ដាក់ iDevices ពីរ​នៅ​ជាប់គ្នា​ "
-"ដោយ​គ្មានអត្ថបទ​នៅ​ចន្លោះ ។ បើ​វា​តម្រូវ​ឲ្យ​ដាក់​ដូច្នេះ "
-"គឺ​សូម​វេញ​សំណួរ ព្រឹត្តិការណ៍​ពីរ​ទៅ​ក្នុង iDevice មួយ​គឺ​ប្រសើរ​ជាង ។ "
-"</li><li>គិត​អំពី​សកម្មភាព ដែល​ផលប្រយោជន៍​នៃ​ការ​ធ្វើ​សកម្មភាព​នោះ "
-"សំខាន់ជាង​ពេលវេលា និងការ​ខំប្រឹងប្រែង ដើម្បី​បញ្ចប់​សកម្មភាព ។ </li></ol>"
+"És recomanable que el professorat tinga present el següent quan utilitze "
+"este iDevice: <ol><li>Penseu en diferents tipus d'activitats que facen el"
+" contingut visualment atractiu. Utilitzar massa tipus diferents "
+"d'activitats pot confondre l'alumnat. Normalment tres o quatre tipus "
+"diferents són suficients per a un recurs d'aprenentatge. </li><li> Des "
+"d'una perspectiva de disseny visual, eviteu tindre dos iDevices un a "
+"continuació de l'altre sense cap text que els separe. Si calen dos "
+"iDevices ajunteu dos qüestions dins el mateix iDevice. </li><li>Penseu en"
+" activitats que siguen percebudes com a atractives i beneficioses, de "
+"manera que pague la pena invertir temps i esforç a completar-"
+"les.</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
-msgstr "កែវ​ពង្រីក​រូបភាព"
+msgstr "Ampliador d'imatges"
 
 #: exe/engine/imagemagnifieridevice.py:43
 msgid ""
@@ -1394,13 +1394,14 @@ msgid ""
 "the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
-"កែវពង្រីក​រូបភាព គឺ​ជា​ឧបករណ៍​ពង្រីក​មួយ ដែល​អនុញ្ញាត​ឲ្យ​អ្នក​សិក្សា\n"
-"ពង្រីក​ទិដ្ឋភាព​រូបភាព ដែល​ផ្ដល់​ឲ្យ​ពួកគេ ។ ការ​ផ្លាស់ទី​កែវ​ពង្រីក \n"
-"នៅ​លើ​រូបភាព នឹង​បង្ហាញ​សេចក្ដី​លម្អិត​ដែលត្រូវ​សិក្សា ។"
+"La lupa permet a l'alumnat ampliar la mida\n"
+" de la imatge donada. Movent la lupa \n"
+"sobre la imatge es poden veure detalls \n"
+"per a estudiar-los."
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Choose an Image"
-msgstr "ជ្រើស​រូបភាព"
+msgstr "Escolliu una imatge"
 
 #: exe/engine/imagemagnifieridevice.py:49
 msgid ""
@@ -1409,30 +1410,31 @@ msgid ""
 "to be \n"
 "magnified."
 msgstr ""
-"ចុច \n"
-"លើ​រូបភាពខាងក្រោម ឬ​ប៊ូតុង \"បន្ថែម​រូបភាព\" ដើម្បី​ជ្រើស​ឯកសារ​រូបភាព \n"
-"ដែល​ត្រូវ​ពង្រីក ។"
+"Feu clic \n"
+"en la fotografia de davall o en el botó «Afig una imatge» per a "
+"seleccionar el fitxer d'imatge \n"
+"que s'ha d'ampliar."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64
 msgid "Text"
-msgstr "អត្ថបទ"
+msgstr "Text"
 
 #: exe/engine/imagemagnifieridevice.py:55 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
-"បញ្ចូល​អត្ថបទ​ដែល​អ្នក​ចង់ \n"
-"ភ្ជាប់​ជាមួយ​ឯកសារ ។"
+"Escriviu el text que voleu \n"
+"associar al fitxer."
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
-"ផ្ដល់​ចំណង​ជើង​ឲ្យ​រូបភាព \n"
-"​ដើម្បី​ពង្រីក ។"
+"Inserix un títol per a \n"
+"la imatge que s'ha d'ampliar."
 
 #: exe/engine/imagemagnifieridevice.py:62
 msgid ""
@@ -1443,12 +1445,10 @@ msgid ""
 " \n"
 "image to display at its original size."
 msgstr ""
-"ជ្រើស​ទំហំ​រូបភាព​ដែល​អ្នក​ចង់​បង្ហាញ ។ \n"
-"ខ្នាត​រូបភាព​​គិត​ជា​ភីកសែល ។ ជាទូទៅ ១០០ ភីកសែល ប្រហែល​ជា​ស្មើ​នឹង ៣ "
-"ស.ម. ។\n"
-"ប្រសិន​បើ​អ្នក​ចង់​បង្ហាញ​រូបភាព​តាម​ទំហំ​ដើម​របស់​វា "
-"គឺ​អ្នក​ត្រូវ​ទុកវាល​ទាំង​ពីរ\n"
-"​ឲ្យ​នៅ​ទទេ ។"
+"Escolliu la mida que voleu \n"
+"que tinga la imatge. Les mesures són en píxels. Generalment, 100 \n"
+"píxels equivalen a 3 cm. Deixeu els dos camps en blanc si voleu que  \n"
+"la imatge és mostre amb la mida original."
 
 #: exe/engine/imagemagnifieridevice.py:66
 #: exe/engine/imagemagnifieridevice.py:142
@@ -1456,8 +1456,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
-"ការតម្រឹម អនុញ្ញាត​ឲ្យ​អ្នក \n"
-"ជ្រើស​កន្លែង​ដែលត្រូវ​ដាក់​រូបភាព​នៅលើ​អេក្រង់ ។"
+"L'alineament vos permet escollir \n"
+"on es col·locarà la imatge en la pantalla."
 
 #: exe/engine/imagemagnifieridevice.py:68
 #: exe/engine/imagemagnifieridevice.py:144
@@ -1465,8 +1465,9 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
-"កំណត់​កម្រិត​ពង្រីក​ចាប់ផ្ដើម \n"
-"នៅ​ពេល​ផ្ទុក IDevice ជា​ភាគរយ​នៃ​ទំហំ​រូបភាព​ដើម"
+"Establiu el nivell inicial de zoom \n"
+"quan es carrega l'iDevice, com a percentatge de la mida de la imatge "
+"original."
 
 #: exe/engine/imagemagnifieridevice.py:70
 #: exe/engine/imagemagnifieridevice.py:146
@@ -1474,24 +1475,24 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
-"កំណត់​កម្រិតពង្រីក​អតិបរមា \n"
-"ជា​ភាគរយ​នៃ​ទំហំ​រូបភាព​ដើម"
+"Establiu el nivell màxim de zoom, \n"
+"com a percentatge de la mida de la imatge original."
 
 #: exe/engine/imagemagnifieridevice.py:72
 msgid "Select the size of the magnifying glass"
-msgstr "ជ្រើស​ទំហំ​កែវ​ពង្រីក"
+msgstr "Seleccioneu la mida de la lupa."
 
 #: exe/engine/imagemagnifieridevice.py:148
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
-"វា​ជ្រើស​ទំហំ​ចាប់ផ្ដើម​របស់ \n"
-"កែវ​ពង្រីក"
+"Açò tria la mida \n"
+"inicial de la lupa"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
-msgstr "រូបភាព​មាន​អត្ថបទ"
+msgstr "Imatge amb text"
 
 #: exe/engine/imagewithtextidevice.py:45
 msgid ""
@@ -1520,25 +1521,27 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"រូបភាព​ដែលមាន​អត្ថបទ iDevice "
-"អាចប្រើ​តាមវិធី​មួយ​ចំនួន​ដើម្បី​គាំទ្រ​ទាំង​ទំហំ\n"
-"សញ្ញា​អារម្មណ៍ (សម្ដែង​ចេញ​នូវ​អារម្មណ៍) និង​កិច្ចការ​សិក្សា (ដឹង) "
-"នៃ​មាតិកា​របស់\n"
-" eXe ។ \n"
+" L'iDevice imatge amb text es pot emprar de diverses maneres per a "
+"incloure\n"
+"conjuntament la tasca emocional (afectiva) i la tasca d'aprenentatge "
+"(cognitiva)\n"
+"als continguts de l'eXe.\n"
 "</p><p>\n"
-"<b>ការ​បញ្ចូល​រូបភាព​មើលឃើញ ជាមួយ​ការ​សង្ខេប​ជា​សំដី​ចូលគ្នា</b>\n"
+" <b>Integracions visuals amb resums verbals</b>\n"
 "</p><p>\n"
-"ចិត្តវិទូ​ខាង​បច្ចេកទេស​សិក្សា "
-"បង្ហាញ​ថា​ការ​បង្ហាញ​អ្នក​សិក្សា​ដោយ​រូបភាព​តំណាង\n"
-"និង​សេចក្ដី​សង្ខេប​ជា​សំដី (ដែល​បង្ហាញ​ដំណាល​គ្នា)\n"
-"គឺ​អាច​កាត់បន្ថយ​ការ​ផ្ទុក​ការ​យល់ដឹង "
-"និង​ជួយ​បន្ថែម​ការ​ចងចាំ​ក្នុង​ការ​សិក្សា ។\n"
-"iDevice នេះ​គឺ​អាចប្រើ​ដើម្បី​បង្ហាញ​រូបភាព (រូបថត ដ្យាក្រាម ឬ\n"
-"ក្រាហ្វិក) ជាមួយ​សំដី​សង្ខេប​ដែល​ក្ដោប​ចំណុច​ចម្បង ដែល​ទាក់ទង\n"
-"នឹង​រូបភាព ។ ឧទាហរណ៍ថា "
-"ប្រសិន​បើ​អ្នក​កំពុង​បង្រៀន​មុខងារ​របស់​ម៉ាស៊ីន​ចំហេះ​បួន​ខ្វាច់\n"
-"អ្នក​គួរតែ​មាន​រូបភាព​សម្រាប់​ទីតាំង​ទាំងបួន​របស់\n"
-"ប៊ីស្តុង ដោយមាន​អត្ថបទ​សង្ខេប​នៃ​ទិដ្ឋភាព​គន្លឹះ​នៃ​រូបភាព​នីមួយៗ ។\n"
+"La psicologia cognitiva indica que oferir a l'alumnat una\n"
+"imatge representativa i un resum verbal (que es presenten\n"
+"simultàniament) pot reduir la càrrega cognitiva i augmentar el nivell de "
+"retenció.\n"
+"Este iDevice es pot emprar per a presentar una imatge (fotografia, "
+"diagrama o\n"
+"gràfic) amb un breu resum verbal que cobrisca els principals punts "
+"relatius a\n"
+"la imatge. Per exemple, quan ensenyeu les funcions del motor de combustió"
+" de quatre temps,\n"
+"podeu tindre una representació visual de cadascuna de les quatre "
+"posicions del pistó\n"
+"amb un breu resum dels aspectes clau de cada representació visual.\n"
 "</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
@@ -1546,16 +1549,16 @@ msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
-"បញ្ចូល​អត្ថបទ​ដែល​អ្នក​ចង់ \n"
-"                                                ភ្ជាប់​ជាមួយ​រូបភាព"
+"Escriviu el text que voleu \n"
+"                              associar a la imatge."
 
 #: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
-"ផ្ដល់​ចំណង​ជើង​ឲ្យ​រូបភាព​ដែល \n"
-"អ្នក​ទើបតែ​បញ្ចូល ។"
+"Escriviu un títol per a la imatge \n"
+"que acabeu d'inserir."
 
 #: exe/engine/listaidevice.py:50
 msgid "DropDown Activity"
@@ -1574,7 +1577,7 @@ msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
-msgstr "គណិត​វិទ្យា"
+msgstr "Matemàtiques"
 
 #: exe/engine/mathidevice.py:43
 msgid ""
@@ -1590,26 +1593,24 @@ msgid ""
 " \n"
 "                        this graphic."
 msgstr ""
-"ភាសា​គណិតវិទ្យា LATEX ត្រូវ​បាន \n"
-"                        "
-"ប្រើ​ដើម្បី​អនុញ្ញាត​ឲ្យ​អ្នក​បញ្ចូល​រូបមន្ត​គណិតវិទ្យា​ទៅ \n"
-"                        ក្នុង​មាតិកា​របស់​អ្នក ។ វា​ធ្វើ​ដូចនេះ "
-"ដោយ​បកប្រែ \n"
-"                        LATEX ទៅ​ជា​រូបភាព ហើយ​ត្រូវបាន​បង្ហាញ\n"
-"                         នៅ​ក្នុង​មាតិកា eXe របស់​អ្នក ។ "
-"យើង​សូម​ផ្ដល់យោបល់​ថា \n"
-"                        អ្នកប្រើ iDevice អត្ថបទ​សេរី ដើម្បី​ផ្ដល់ \n"
-"                        ចំណាំ​សម្រាប់​ពន្យល់ "
-"និង​សេចក្ដី​ណែនាំ​អំពី​ការ​សិក្សា \n"
-"                        ទាក់ទង​នឹង​ក្រាហ្វិក​នេះ ។"
+"El llenguatge matemàtic LaTeX s'ha habilitat \n"
+"               per a permetre-vos inserir fórmules matemàtiques en les "
+"vostres activitats. \n"
+"               Ha calgut traduir el LaTeX a imatges que es mostren a "
+"l'interior del contingut eXe. \n"
+"               Recomanem que utilitzeu l'iDevice Text lliure per a "
+"proporcionar explicacions i \n"
+"               instruccions en este gràfic."
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr "អ្នកអាច​ប្រើ​របារ​ឧបករណ៍ ឬ​បញ្ចូល latex ទៅ​ផ្ទៃ​អត្ថបទ​ដោយ​ដៃ ។ "
+msgstr ""
+"Podeu utilitzar la barra de ferramentes o introduir manualment el LaTeX "
+"en l'àrea de text."
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr "ពហុ​ជ្រើសរើស"
+msgstr "Elecció múltiple"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
@@ -1617,19 +1618,19 @@ msgstr "MP3"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:41
 msgid "Auckland University of Technology"
-msgstr "សកលវិទ្យាល័យ​បច្ចេកវិទ្យា អ៊័រឡែនដ៍"
+msgstr "Universitat de Tecnologia d'Auckland"
 
 #: exe/engine/multimediaidevice.py:42
 msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content "
 "along with relevant textuallearning instructions."
 msgstr ""
-"iDevice MP3 អនុញ្ញាត​ឲ្យ​អ្នក​ភ្ជាប់​ឯកសារ​មេឌៀ MP3 "
-"ទៅ​មាតិកា​របស់​អ្នក​ដោយ​មាន​សេចក្ដី​ណែនាំ​​ការ​សិក្សា​តាម​អត្ថបទ ។"
+"L'iDevice MP3 vos permet adjuntar un fitxer MP3 al contingut, amb "
+"instruccions rellevants per a l'aprenentatge."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "ជ្រើស​ឯកសារ MP3 មួយ"
+msgstr "Escolliu un fitxer MP3"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -1641,78 +1642,81 @@ msgid ""
 "would like the iDevice to       display e.g. 'Some emphasis' applies a "
 "border and icon to the iDevice content displayed.</li></ol>"
 msgstr ""
-"<ol>  <li>ចុច &lt;ជ្រើស MP3&gt; ហើយ​រកមើល​ឯកសារ MP3 "
-"ដែល​អ្នក​ចង់​បញ្ចូល</li> <li>ចុច​ច​លើ​ម៉ឺនុយ​ទម្លាក់​ចុះ "
-"ដើម្បី​ជ្រើស​ទីតាំង​ដែល​អ្នក​ចង់​ដាក់​ឯកសារ​លើ​អេក្រង់ ។</li>  "
-"<li>បញ្ចូល​ចំណង​ជើង​ឲ្យ​ឯកសារ​របស់​អ្នក ។</li> "
-"<li>ភ្ជាប់​អត្ថបទ​ទៅ​នឹង​​ឯកសារ MP3 ។</li> "
-"<li>ជ្រើស​ប្រភេទ​រចនាប័ទ្ម​ដែល​អ្នក​ចង់​ឲ្យ iDevice បង្ហាញ ឧ. "
-"'ការ​សង្កត់​សំឡេង​មួយ​ចំនួន' អនុវត្ត​ស៊ុម និង​រូបតំណាង​ទៅ​មាតិកា iDevice "
-"ដែល​បាន​បង្ហាញ ។</li></ol>"
+"<ol>  <li>Premeu &lt;Escolliu un fitxer MP3&gt; i navegueu fins al fitxer"
+" MP3 que voleu inserir</li>  <li>Premeu la pestanya de davall per a "
+"seleccionar la posició en què voleu que es mostre el fitxer en la "
+"pantalla.</li>  <li>Introduïu un títol opcional per al fitxer.</li>  "
+"<li>Associeu al fitxer MP3 qualsevol text rellevant.</li><li>Escolliu el "
+"tipus d'estil que voleu mostrar en l'iDevice. P. ex. «Amb èmfasi» aplica "
+"una vora i una icona al contingut de l'iDevice mostrat. </li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
-"ការ​តម្រឹម អនុញ្ញាត​ឲ្យ​អ្នក \n"
-"ជ្រើស​កន្លែង​ដែលត្រូវដាក់​កម្មវិធី​ចាក់​មេឌៀ​នៅលើ​អេក្រង់ ។"
+"L'alineament vos permet escollir \n"
+"on es col·locarà el reproductor multimèdia en la pantalla."
 
 #: exe/engine/multiselectidevice.py:43
 msgid "Multi-select"
-msgstr "ពហុជ្រើសរើស"
+msgstr "Selecció múltiple"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:29
 msgid "FPD - Orientaciones Alumnado"
-msgstr ""
+msgstr "FPD - Orientacions per a l'alumnat"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:31
 msgid ""
 "Orientciones alumnado es un iDevice que permite al alumnado conocer los "
 "objetivos de su aprendizaje."
 msgstr ""
+"Orientacions per a l'alumnat és un iDevice que permet a l'alumnat "
+"conéixer els objectius del seu aprenentatge."
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:37
 msgid "Texto Orientaciones alumnado"
-msgstr ""
+msgstr "Text Orientacions per a l'alumnat"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:135
 msgid "Texto Orientaciones alumnado:"
-msgstr ""
+msgstr "Text Orientacions per a l'alumnat:"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:29
 msgid "FPD - Orientaciones Tutoria"
-msgstr ""
+msgstr "FPD - Orientacions per a la tutoria"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:31
 msgid ""
 "Orientaciones alumnado es un iDevice que permite al profesorado conocer "
 "los objetivos del aprendizje del alumnado."
 msgstr ""
+"Orientacions per a l'alumnat és un iDevice que permet al professorat "
+"donar a conéixer els objectius d'aprenentatge de l'alumnat."
 
 #: exe/engine/orientacionestutoriafpdidevice.py:37
 msgid "Texto Orientaciones tutor&iacute;a"
-msgstr ""
+msgstr "Text Orientacions per a la tutoria"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:136
 msgid "Texto Orientaciones tutor&iacute;a:"
-msgstr ""
+msgstr "Text Orientacions per a la tutoria:"
 
 #: exe/engine/package.py:390
 msgid "Topic"
-msgstr "ប្រធាន​បទ"
+msgstr "Tema"
 
 #: exe/engine/package.py:390
 msgid "Section"
-msgstr "ផ្នែក"
+msgstr "Secció"
 
 #: exe/engine/package.py:390
 msgid "Unit"
-msgstr "ឯកតា"
+msgstr "Apartat"
 
 #: exe/engine/package.py:411
 msgid "Home"
-msgstr "ដើម"
+msgstr "Inici"
 
 #: exe/engine/package.py:521
 msgid "?????"
@@ -1724,31 +1728,33 @@ msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
-"ការ​រក្សាទុក​បាន​បរាជ័យ !\n"
-"ការ​រក្សាទុក​បាន​ជោគជ័យ​ចុងក្រោយ​គឺ %s ។"
+"HA FALLAT L'ACCIÓ DE GUARDAR\n"
+"L'última vegada que s'ha guardat correctament és %s."
 
 #: exe/engine/package.py:853 exe/jsui/scripts/app/controller/Toolbar.js:303
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "iDevice Editor"
-msgstr "កម្មវិធី​និពន្ធ iDevice"
+msgstr "Editor d'iDevice"
 
 #: exe/engine/parasabermasfpdidevice.py:29
 msgid "FPD - Para Saber Mas"
-msgstr ""
+msgstr "FPD - Per a saber-ne més"
 
 #: exe/engine/parasabermasfpdidevice.py:31
 msgid ""
 "Para saber m&aacute;s es un iDevice que permite al alumnado ampliar "
 "conocimientos, siendo estos voluntarios para su aprendizaje."
 msgstr ""
+"«Per a saber-ne més» és un iDevice que permet a l'alumnat ampliar "
+"coneixements, i són voluntaris per al seu aprenentatge."
 
 #: exe/engine/parasabermasfpdidevice.py:37
 msgid "Texto Para saber m&aacute;s"
-msgstr ""
+msgstr "Text Per a saber-ne més"
 
 #: exe/engine/parasabermasfpdidevice.py:136
 msgid "Texto Para sabe m&aacute;s"
-msgstr ""
+msgstr "Text Per a saber-ne més"
 
 #: exe/engine/path.py:639
 #, python-format
@@ -1756,6 +1762,8 @@ msgid ""
 "%s\n"
 "%s unchanged"
 msgstr ""
+"%s\n"
+"%s sense canvis"
 
 #: exe/engine/quiztestidevice.py:123 exe/engine/quiztestidevice.py:186
 msgid ""
@@ -1764,21 +1772,23 @@ msgid ""
 "answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
-"បញ្ចូល​ជម្រើស​ចម្លើយ ។ ផ្ដល់​ជួរ \n"
-"ចំនួន​បំបែក​សមរម្យ (ជាទូទៅ ៣-៤) ព្រមទាំង​ចម្លើយ​ដែលត្រឹមត្រូវ ។ \n"
-"ចុច​លើ​ប៊ូតុង &lt;បន្ថែម​ជម្រើស​ផ្សេង​ទៀត&gt; ដើម្បី​បន្ថែម​ចម្លើយ​ផ្សេង ។"
+"Introduïu una opció de resposta. Proporcioneu \n"
+"un abast raonable de respostes falses (normalment 3-4) i la resposta "
+"correcta. \n"
+"Feu clic en el botó &lt;Afig una altra opció&gt; per a afegir una altra "
+"resposta."
 
 #: exe/engine/quiztestidevice.py:126 exe/engine/quiztestidevice.py:202
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
-"ដើម្បី​បង្ហាញ​ចម្លើយ​ត្រឹមត្រូវ \n"
-"គឺ​ត្រូវ​ចុច​លើ​ប៊ូតុង​មូល នៅ​ជាប់​នឹង​ជម្រើស​ត្រឹមត្រូវ ។"
+"Per a indicar la resposta correcta premeu \n"
+"l'opció correcta seleccionant-la amb el botó d'opció."
 
 #: exe/engine/quiztestidevice.py:244
 msgid "SCORM Quiz"
-msgstr "កម្រង​សំណួរ SCORM"
+msgstr "Qüestionari en SCORM"
 
 #: exe/engine/quiztestidevice.py:246
 msgid ""
@@ -1790,32 +1800,35 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
-"ហាក់​ដូចជា SCORM មិនប្រើ​សំណួរ​ពហុជ្រើសរើស​ដើម្បី​សាកល្បង \n"
-"ចំណេះដឹង​របស់​អ្នក​សិក្សា​លើ​ប្រធានបទ "
-"ដោយ​មិនផ្ដល់មតិអ្នកប្រើ​ដល់​អ្នក​សិក្សា ដើម្បី \n"
-"កែ​ចម្លើយ​នោះទេ ។ កម្រង​សំណួរ នឹង​ត្រូវបាន​ផ្ដល់ "
-"នៅពេល​ដែល​អ្នកសិក្សា​មាន​ពេលវេលា \n"
-"សិក្សា និង​អនុវត្ត ដោយប្រើ​ព័ត៌មាន ឬ​ជំនាញ ។\n"
+"A diferència del qüestionari d'elecció múltiple (MCQ), el qüestionari "
+"SCORM \n"
+"s'utilitza per a avaluar els coneixements de l'alumnat sobre un tema "
+"sense donar cap \n"
+"retroacció a la resposta correcta. El qüestionari SCORM \n"
+"se sol passar quan l'alumnat ja ha tingut temps d'aprendre i practicar "
+"utilitzant la informació o destresa.\n"
 " "
 
 #: exe/engine/recomendacionfpdidevice.py:29
 msgid "FPD - Recomendacion"
-msgstr ""
+msgstr "FPD - Recomanacions"
 
 #: exe/engine/recomendacionfpdidevice.py:31
 msgid ""
 "Para saber m&aacute;s es un iDevice que permite al profesarado recomendar"
 " libros, películas, ... útiles para su formación."
 msgstr ""
+"«Per a saber-ne més» és un iDevice que permet al professorat recomanar "
+"llibres, pel·lícules...  útils per la formació."
 
 #: exe/engine/recomendacionfpdidevice.py:37
 #: exe/engine/recomendacionfpdidevice.py:136
 msgid "Texto de la recomendaci&oacute;n:"
-msgstr ""
+msgstr "Text de la recomanació"
 
 #: exe/engine/reflectionfpdidevice.py:46
 msgid "FPD - Reflexiona (con Retroalimentacion)"
-msgstr ""
+msgstr "FPD - Reflexiona (amb retroacció)"
 
 #: exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:48
@@ -1832,16 +1845,16 @@ msgid ""
 "be \n"
 "effective feedback tools."
 msgstr ""
-"ការ​ឆ្លើយតប​ភ្លាមៗ គឺ​ជា​វិធីសាស្ដ្រ​បង្រៀន ដែល​ជាញឹកញាប់ \n"
-"ត្រូវបាន​ប្រើ​ដើម្បី​ភ្ជាប់​ទ្រឹស្ដី​ទៅ​នឹង​ការ​អនុវត្ត ។ "
-"កិច្ចការ​ឆ្លើយតប​ភ្លាមៗ ផ្ដល់​ឱកាស​ឲ្យ​ \n"
-"អ្នក​សិក្សា​ប្រតិបត្តិតាម "
-"និង​ឆ្លើយ​តប​ទៅ​នឹង​ការ​សង្កេ​ត​មុនពេល​បង្ហាញ​ជា \n"
-"ចំណែក​នៃ​ការ​ងារ​សិក្សា ។ ធាតុ​ទិនានុប្បវត្តិ កំណត់​ហេតុ​ប្រចាំថ្ងៃ "
-"ទម្រង់ និងអាល់ប៊ុម \n"
-"រូបភាព គឺ​ជា​ឧបករណ៍​មាន​ប្រយោជន៍​សម្រាប់​ប្រមូលផ្ដុំ​ទិន្នន័យ​សង្កេត ។ "
-"ចំណងជើង​មុខ \n"
-"និង​មគ្គុទ្ទេសក៍​អាច​​ជា​ឧបករណ៍​មតិអ្នកប្រើ​ដ៏មាន​ប្រសិទ្ធិភាព ។"
+"La reflexió és un mètode que s'utilitza sovint per a\n"
+"connectar teoria i pràctica. Les tasques de reflexió proporcionen a "
+"l'alumnat \n"
+"l'oportunitat d'observar i reflexionar sobre les observacions pròpies "
+"abans de presentar-les \n"
+"com a part del treball acadèmic. Periòdics, revistes, \n"
+"revistes, perfils i dossiers \n"
+"són recursos útils per a arreplegar dades de l'observació. Els comentaris"
+" i les orientacions \n"
+"són recursos efectius per a la retroacció."
 
 #: exe/engine/reflectionfpdidevice.py:56
 #: exe/engine/reflectionfpdmodifidevice.py:56
@@ -1850,8 +1863,8 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
-"បញ្ចូល​សំណួរ​ដើម្បី​ឲ្យ​អ្នក​សិក្សា \n"
-"ឆ្លើយ ។"
+"Escriviu una pregunta per tal \n"
+"que l'alumnat hi reflexione."
 
 #: exe/engine/reflectionfpdidevice.py:58 exe/engine/reflectionidevice.py:57
 msgid ""
@@ -1860,32 +1873,32 @@ msgid ""
 " \n"
 "reflective feedback.)"
 msgstr ""
-"ពិពណ៌នា​អំពី​របៀប​ធ្វើ​លំហាត់​ដល់​សិស្ស ។\n"
-"(Rubrics គឺ​ជា​ឧបករណ៍​ដែល​មាន​ប្រយោជន៍ ក្នុងការ​ផ្ដល់ \n"
-"មតិអ្នក​ប្រើ​មក​វិញ ។)"
+"Descriu com l'alumnat avalua com \n"
+"li ha anat l'exercici. (Els comentaris són útils per a proporcionar \n"
+"una retroacció i reflexionar.)"
 
 #: exe/engine/reflectionfpdidevice.py:63 exe/engine/reflectionfpdidevice.py:199
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
 msgid "Reflective question:"
-msgstr "សំណួរ​ដែល​ឆ្លើយតប ៖"
+msgstr "Pregunta per a reflexionar:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Reflexiona (sin Retroalimentacion)"
-msgstr ""
+msgstr "FPD - Reflexiona (sense retroacció)"
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr "ការ​ឆ្លើយតប"
+msgstr "Reflexió"
 
 #: exe/engine/resource.py:579
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
 msgstr ""
-"ប្ដូរ​ឈ្មោះ​ធនធាន​សម្រាប់ Idevice អាប់ភ្លេត "
-"ហើយមិនគួរ​ធ្វើ​ដូចនេះ​ច្រើនដង​ពេកទេ !"
+"canvieu el nom del recurs per a l'iDevice d'aplicació de Java, i no "
+"escriviu el nom massa llarg"
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
@@ -1897,11 +1910,11 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
-"ប្រើ iDevice RSS \n"
-"ដើម្បី​ផ្ដល់​មាតិកា​ថ្មី​ទៅ​ម៉ាស៊ីន​អ្នកប្រើ​នីមួយៗ ។ ដោយ​ប្រើ iDevice "
-"នេះ\n"
-"អ្នក​អាច​ផ្ដល់​តំណ​ពី​មាតិព័ត៌មាន "
-"ដែល​អ្នក​ជ្រើស​ដើម្បី​ឲ្យ​អ្នក​សិក្សា​មើល​បាន ។"
+"L'iDevice RSS s'utilitza \n"
+"per a proporcionar continguts nous a usuaris individuals. Utilitzant este"
+" iDevice \n"
+"podeu proporcionar enllaços des d'un canal que seleccioneu perquè "
+"l'alumnat el veja."
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -1922,22 +1935,22 @@ msgid ""
 "bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
-"បញ្ចូល URL របស់ RSS សម្រាប់​មតិព័ត៌មាន RSS  \n"
-"ដែល​អ្នក​ចង់​ភ្ជាប់​ទៅនឹង​មាតិកា​របស់​អ្នក ។ "
-"មតិព័ត៌មាន​​ត្រូវបាន​កំណត់​អត្តសញ្ញាណ\n"
-"ដោយ​រូបតំណាង (ជា​ទូទៅ​គឺ​ដូច <img src=\"/images/feed-icon.png\" />) "
-"ឬ​អត្ថបទ \"RSS\" ។ ការ​ចុច​លើ \n"
-"រូបតំណាង ឬ​ស្លាក​អត្ថបទ នឹង​បង្ហាញមតិព័ត៌មាន RSS "
-"នៅ​ក្នុង​កម្មវិធី​រុករក ។ អ្នក​អាច​ចម្លង ហើយ​បិទភ្ជាប់\n"
-"URL ទៅ​ក្នុង​វាល​នេះ​បាន ។ ប្ដូរ​មកវិញ ការ​ចុច​កណ្ដុរ​ខាងស្ដាំ​លើ​តំណ "
-"នឹង​បើក​ប្រអប់​ម៉ឺនុយ ។\n"
-"ចុច​លើ​ចម្លង​ទីតាំង​តំណ ឬ​ចម្លង​ផ្លូវកាត់ ។ ត្រឡប់​មក eXe វិញ បើក​ចំណាំ "
-"RSS iDevice ហើយ​បិទភ្ជាប់ URL \n"
-"ទៅ​ក្នុង​វាល URL RSS ហើយ​ចុច​លើ​ប៊ូតុង ផ្ទុក ។ "
-"វា​នឹង​ស្រង់​ចំណងជើង​ចេញ​ពី​មតិព័ត៌មាន និង​បង្ហាញ​ពួកវា\n"
-"ជា​តំណ​នៅ​ក្នុង​មាតិកា ។ ទីនេះ អ្នក​អាច​កែសម្រួល​ចំណាំ "
-"និង​បន្ថែម​សេចក្ដី​ណែនាំ ឬ​ព័ត៌មាន\n"
-" សិក្សា​បន្ថែម ។"
+"Escriviu un URL d'RSS per al canal RSS que voleu \n"
+"afegir als continguts. Sovint els canals estan identificats per icones "
+"gràfiques (molt sovint semblants a \n"
+"<img src=\"/images/feed-icon.png\" />) o pel text «RSS». Quan feu clic en"
+" la icona o el text \n"
+"es mostrarà un canal RSS al vostre navegador. Podeu copiar i apegar l'URL"
+" dins d'este camp. \n"
+"Alternativament, quan feu clic amb el botó dret del ratolí en l'enllaç o "
+"el gràfic, s'obrirà un quadre de menú;\n"
+"feu clic en COPIA L'ENLLAÇ o copieu la drecera. Torneu a l'eXe, obriu "
+"l'iDevice d'adreces d'interés d'RSS \n"
+"i apegueu l'URL dins del camp d'URL d'RSS i feu clic en el botó CARREGA. "
+"Açò extraurà els títols des del \n"
+"vostre canal i els mostrarà com a enllaços en el contingut. Des d'ací "
+"podeu editar les adreces d'interés i afegir \n"
+"instruccions o informació addicional per a l'aprenentatge."
 
 #: exe/engine/rssidevice.py:108 exe/engine/rssidevice.py:111
 #, python-format
@@ -1945,17 +1958,16 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr ""
-"មិនអាច​ផ្ទុក​មតិព័ត៌មាន RSS ពី %s "
-"បាន​ទេ<br/>សូម​ពិនិត្យ​មើល​អក្ខរាវិរុទ្ធ និង​ការតភ្ជាប់ "
-"ហើយ​ព្យាយាម​ម្ដងទៀត ។"
+"No es pot carregar el canal RSS des de %s <br/>Reviseu l'ortografia i la "
+"connexió i torneu-ho a provar."
 
 #: exe/engine/seleccionmultiplefpdidevice.py:43
 msgid "FPD - Actividad de Seleccion Multiple"
-msgstr ""
+msgstr "FPD - Activitat de selecció múltiple"
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr "សំណួរ​ខុសត្រូវ"
+msgstr "Qüestió de verdader/fals"
 
 #: exe/engine/truefalseidevice.py:146
 #: exe/engine/verdaderofalsofpdidevice.py:146
@@ -1967,11 +1979,12 @@ msgid ""
 "either/or \n"
 "responses."
 msgstr ""
-"សំណួរ ត្រូវ/ខុស គឺ​បង្ហាញ​ប្រយោគ​មួយ ដែល​តម្រូវ\n"
-"ឲ្យ​អ្នកសិក្សា​សម្រេច​​យក​ថាតើ​ប្រយោគ​នោះ​ត្រូវ ឬ​ខុស ។ សំណួរ​ប្រភេទ​នេះ "
-"គឺ​ប្រើ \n"
-"សម្រាប់​ព័ត៌មាន​ពិត​ជាក់ស្ដែង និង​ព័ត៌មាន​ដែល​ដែល​ផ្ដល់​ឲ្យ​ខ្លួន​ឯង ឬ \n"
-"ចម្លើយ ។"
+"Les qüestions de veritat/fals presenten una expressió \n"
+"que l'alumnat ha de decidir si és certa o falsa. Este tipus de qüestions"
+" \n"
+"funcionen bé per a informació objectiva que es presta a respostes del "
+"tipus \n"
+"«o este valor/o este altre»."
 
 #: exe/engine/truefalseidevice.py:151
 #: exe/engine/verdaderofalsofpdidevice.py:152
@@ -1979,8 +1992,8 @@ msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
-"ព័ត៌មាន​ជំនួយ​គឺ​អាច​ត្រូវ​ផ្ដល់ ដើម្បី​ជួយ \n"
-"ឲ្យ​អ្នក​សិក្សា​ងាយស្រួល​​ឆ្លើយ​សំណួរ ។"
+"Es pot proporcionar a l'alumnat \n"
+"una pista per a respondre la qüestió."
 
 #: exe/engine/truefalseidevice.py:154
 #: exe/engine/verdaderofalsofpdidevice.py:155
@@ -1990,9 +2003,9 @@ msgid ""
 "tend to \n"
 "be ambiguous."
 msgstr ""
-"វាយ​បញ្ចូល​ប្រធាន​សំណួរ ។ សំណួរ​ត្រូវតែ​ច្បាស់ \n"
-"និង​មាន​អត្ថន័យ​ច្បាស់លាស់ ។ ជៀសវាង​ពី​ការ​សន្មត់​អវិជ្ជមាន \n"
-"ដោយសារ​តែ​​មាន​ភាព​មិនច្បាស់លាស់ ។"
+"Escriviu la pregunta principal. Esta pregunta \n"
+" ha de ser clara i inequívoca. Eviteu les premisses negatives ja que "
+"solen ser ambigües."
 
 #: exe/engine/truefalseidevice.py:158
 #: exe/engine/verdaderofalsofpdidevice.py:159
@@ -2002,9 +2015,10 @@ msgid ""
 " \n"
 "default feedback will be provided."
 msgstr ""
-"បញ្ចូល​មតិអ្នកប្រើ​ណាមួយ​ដែល​អ្នក​ចង់​ផ្ដល់​ឲ្យ \n"
-"អ្នក​សិក្សា ។ វាល​នេះ​គឺ​អាច​ទុក​ឲ្យ​នៅ​ទទេ ។ ប្រសិន​បើ​វាល​នេះ​នៅ​ទទេ \n"
-"នោះ​មតិអ្នក​ប្រើ​នឹង​ត្រូវបាន​ផ្ដល់ ។"
+"Escriviu qualsevol retroacció que vulgueu \n"
+"proporcionar a l'alumnat. Si este camp el deixeu en blanc  no es "
+"proporcionarà \n"
+"cap retroacció quan l'alumnat done una resposta incorrecta."
 
 #: exe/engine/truefalseidevice.py:166 exe/engine/truefalseidevice.py:393
 #: exe/engine/verdaderofalsofpdidevice.py:167
@@ -2013,8 +2027,8 @@ msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
-"ណែនាំ​អំពី​របៀប​បំពេញ​សំណួរ ត្រូវ/ខុស ។ \n"
-"​"
+"Introduïu instruccions sobre com s'han de completar les \n"
+"Preguntes de veritat/fals."
 
 #: exe/engine/truefalseidevice.py:373
 #: exe/engine/verdaderofalsofpdidevice.py:375
@@ -2027,20 +2041,19 @@ msgid ""
 "or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
-"វាយ​បញ្ចូល​នៅ​ក្នុង​មតិអ្នក​ប្រើ បើ​អ្នក​ចង់​ឲ្យ​សិស្ស​មើលឃើញ \n"
-"​នៅពេល​ជ្រើស​សំណួរ​ជាក់លាក់ ។ ប្រសិន​បើ​អ្នក​មិន​បំពេញ​ប្រអប់​នេះ​ទេ នោះ\n"
-"eXe នឹង​ផ្ដល់​មតិអ្នកប្រើ​លំនាំដើម​ដូចខាងក្រោម​ដោយ​ស្វ័យប្រវត្តិ ៖ \n"
-"\"ចម្លើយ​ត្រឹមត្រូវ\" "
-"ដូចដែល​បាន​បង្ហាញ​ដោយ​ជម្រើស​សម្រាប់​ចម្លើយ​ត្រឹមត្រូវ ឬ\n"
-"\"ចម្លើយ​មិនត្រឹមត្រូវ\" សម្រាប់​ការ​សំណួរ​ផ្សេងទៀត ។"
+"Escriviu la retroacció que voleu que l'alumnat \n"
+"veja quan seleccione la pregunta escollida. Si no escriviu res \n"
+"l'eXe proporcionarà automàticament la següent retroacció per defecte: \n"
+"«Resposta correcta» quan la resposta siga correcta o \n"
+"«Resposta incorrecta» quan siga incorrecta."
 
 #: exe/engine/verdaderofalsofpdidevice.py:144
 msgid "FPD - Actividad de Verdadero/Falso"
-msgstr ""
+msgstr "FPD - Activitat de verdader/fals "
 
 #: exe/engine/wikipediaidevice.py:52
 msgid "Wiki Article"
-msgstr "អត្ថបទ​វីគី"
+msgstr "Article Wiki"
 
 #: exe/engine/wikipediaidevice.py:54
 msgid ""
@@ -2057,37 +2070,37 @@ msgid ""
 "content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
-"<p>iDevice វីគីភីឌៀ អនុញ្ញាត​ឲ្យ​អ្នក​រកឃើញ \n"
-"មាតិកា​ដែល​មាន​ពី​ក្នុងវីគីភីឌៀ ហើយ​ទាញយក​មាតិកា​នេះ​ទៅ​ក្នុង​ធនធាន eXe "
-"របស់​អ្នក ។\n"
-"iDevice អត្ថបទ​​វីគីភី​ឌៀ​ថត​ច្បាប់​ចម្លង​រូបថត​មាតិកា​អត្ថបទ ។ \n"
-"ការ​ផ្លាស់ប្ដូរ​នៅ​ក្នុងវីគីភីឌៀ Wikipedia "
-"នឹង​មិន​ធ្វើ​ឲ្យច្បាប់ចម្លង​នីមួយ​ៗនៅ​ក្នុង eXe \n"
-"ទាន់សម័យទេ នោះ​ច្បាប់ចម្លង​អត្ថបទ​ថ្មី នឹង​ត្រូវ​បាន​ជ្រើស ។ ដូចនេះ​ដែរ \n"
-"ការ​ផ្លាស់ប្ដូរ​ដែលបាន​ធ្វើ​នៅ​ក្នុង eXe "
-"នឹង​មិនត្រូវបាន​ធ្វើ​ឲ្យ​ទាន់សម័យ​នៅ​ក្នុង​វីគីភីឌៀ​​ទេ ។ \n"
-"</p> <p>មាតិកា​​វីគីភីឌៀ គឺ​ស្ថិត​នៅ​ក្រោម​អាជ្ញាបណ្ណ​ឯកសារ​សេរី​របស់ "
-"GNU ។</p>"
+"<p> L'iDevice Viquipèdia vos permet localitzar un article que estiga en "
+"la Viquipèdia i \n"
+"baixar-lo al recurs de l'eXe. L'iDevice Viquipèdia fa una còpia "
+"instantània del contingut de l'article. \n"
+"Els canvis en la Viquipèdia no s'actualitzen automàticament en la còpia "
+"que teniu a l'eXe: si la voleu actualitzar caldrà que torneu a baixar una"
+" còpia de l'article. \n"
+"Així mateix, els canvis fets a l'article en l'eXe no s'actualitzaran en "
+"la Viquipèdia. \n"
+"</p><p> El contingut de la Viquipèdia és sota la llicència de "
+"documentació lliure GNU (GFDL).</p> "
 
 #: exe/engine/wikipediaidevice.py:64
 msgid "Article"
-msgstr "អត្ថបទ"
+msgstr "Article"
 
 #: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:361
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
-"ជ្រើស​កំណែ​ភាសា​វីគីភីឌៀ​​ដែល​ត្រឹមត្រូវ \n"
-"ដើម្បី​ស្វែងរក និង​បញ្ចូល​ពាក្យ​ស្វែងរក ។"
+"Seleccioneu l'idioma apropiat de la Viquipèdia \n"
+"per a buscar i introduïu un terme de busca."
 
 #: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:363
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
-"បញ្ចូល​ឃ្លា ឬ​ពាក្យ​ដែល​អ្នក​ចង់​ស្វែងរក \n"
-"​នៅក្នុង​វីគីភីឌៀ ។"
+"Escriviu la frase o paraula que voleu buscar \n"
+"en la Viquipèdia."
 
 #: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:134
 #, python-format
@@ -2095,12 +2108,12 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
-"មិនអាច​ទាញយក​ពី %s បានទេ<br/>សូម​ពិនិត្យ​មើល​អក្ខរាវិរុទ្ធ "
-"និង​ការ​តភ្ជាប់ ហើយ​ព្យាយាម​ម្ដងទៀត ។"
+"No es pot baixar des de %s <br/>Reviseu l'ortografia i la connexió i "
+"torneu-ho a provar."
 
 #: exe/engine/wikipediaidevice.py:315
 msgid "http://en.wikipedia.org/"
-msgstr "http://en.wikipedia.org/"
+msgstr "http://ca.wikipedia.org/"
 
 #: exe/exe_do:64
 msgid ""
@@ -2109,97 +2122,117 @@ msgid ""
 "To show help:\n"
 "%prog -h"
 msgstr ""
+"Ús: %prog [opcions] fitxer_d'entrada [fitxer_d'eixida]\n"
+"\n"
+"Per a mostrar l'ajuda:\n"
+"%prog -h"
 
 #: exe/exe_do:71
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm, ims, website, webzip , singlepage or xliff."
 msgstr ""
+"Exporteu  <input_file> el paquet elp <output_file> a opcional en algun "
+"dels formats donats: xml, scorm, ims, «website», webzip, xliff o "
+"«singlepage»."
 
 #: exe/exe_do:77
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
 msgstr ""
+"Importa al  <output_file> paquet elp, <input_file> en algun dels formats "
+"donats: xml o xliff."
 
 #: exe/exe_do:82
 msgid "Force overwrite of <output_file>"
-msgstr ""
+msgstr "Imposa la sobreescriptura de <output_file>"
 
 #: exe/exe_do:85
 msgid "XLIFF export options"
-msgstr ""
+msgstr "Opcions d'exportació en XLIFF"
 
 #: exe/exe_do:86
 msgid ""
 "Once you have chosen XLIFF export option using '-x xliff' or '--export "
 "xliff', it's possible to configure the following export options:"
 msgstr ""
+"Quan heu escollit l'opció d'exportar en XLIFF utilitzant «-x xliff» o "
+"«--export xliff», és possible configurar les opcions d'exportació "
+"següents:"
 
 #: exe/exe_do:91
 msgid "Don't copy source in target"
-msgstr ""
+msgstr "No copieu l'origen en la destinació"
 
 #: exe/exe_do:96 exe/webui/xliffexportpreferencespage.py:123
 msgid "Wrap fields in CDATA"
-msgstr ""
+msgstr "Empaqueta camps en CDATA"
 
 #: exe/exe_do:101
 msgid "XLIFF import options"
-msgstr ""
+msgstr "Opcions d'importació en XLIFF"
 
 #: exe/exe_do:102
 msgid ""
 "Once you have chosen XLIFF import option using  '-i xliff' or '--import "
 "xliff', it's possible to configure the following import options:"
 msgstr ""
+"Quan heu escollit l'opció d'importar en XLIFF utilitzant «-x xliff» o "
+"«--export xliff», és possible configurar les opcions d'importació "
+"següents:"
 
 #: exe/exe_do:107 exe/webui/xliffimportpreferencespage.py:79
 msgid "Import from source language"
-msgstr ""
+msgstr "Importa des de l'idioma d'origen"
 
 #: exe/exe_do:112
 msgid "SCORM export options"
-msgstr ""
+msgstr "Opcions d'exportació en SCORM"
 
 #: exe/exe_do:113
 msgid ""
 "Once you have chosen SCORM export option using '-x scorm' or '--export "
 "scorm', it's possible to configure the following export options:"
 msgstr ""
+"Quan heu escollit l'opció d'exportar en SCORM utilitzant «-x scorm» o "
+"«--export scorm», és possible configurar les opcions d'exportació "
+"següents:"
 
 #: exe/exe_do:118
 msgid "Include Single Page export file"
-msgstr ""
+msgstr "Inclou el fitxer d'exportació «singlepage»"
 
 #: exe/exe_do:123
 msgid "Include Web Site export files"
-msgstr ""
+msgstr "Inclou el fitxer d'exportació «website»"
 
 #: exe/exe_do:128
 msgid "Add the required files to generate a SCORM package editable by eXeLearning"
 msgstr ""
+"Afegiu els fitxers necessaris per a generar un paquet SCORM que puga "
+"editar l'eXeLearning"
 
 #: exe/exe_do:144
 msgid "Options --export and --import are mutually exclusive."
-msgstr ""
+msgstr "Les opcions --import i --export són mútuament excloents."
 
 #: exe/exe_do:147
 msgid "No --export or --import option supplied."
-msgstr ""
+msgstr "No s'ha proporcionat l'opció --export o --import."
 
 #: exe/exe_do:151
 msgid "No file input supplied."
-msgstr ""
+msgstr "No s'ha proporcionat el fitxer d'entrada."
 
 #: exe/exe_do:160
 msgid "Bad number of arguments supplied"
-msgstr ""
+msgstr "El nombre d'arguments proporcionats és incorrecte."
 
 #: exe/exe_do:172
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
-msgstr ""
+msgstr "S'ha exportat correctament «%s» des de «%s»."
 
 #: exe/exe_do:175
 #, python-format
@@ -2207,11 +2240,13 @@ msgid ""
 "exe_do: error: Unable to export from '%s'.\n"
 "The error was:"
 msgstr ""
+"exe_do: error: no s'ha pogut exportar des de «%s».\n"
+"L'error ha estat:"
 
 #: exe/exe_do:183
 #, python-format
 msgid "File '%s' successfully imported to '%s'."
-msgstr ""
+msgstr "El fitxer «%s» s'ha importat correctament a «%s»."
 
 #: exe/exe_do:186
 #, python-format
@@ -2219,6 +2254,8 @@ msgid ""
 "exe_do: error: Unable to import '%s'.\n"
 "The error was:"
 msgstr ""
+"exe_do: error: no s'ha pogut importar «%s».\n"
+"L'error ha estat:"
 
 #: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:210
 #: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:937 exe/jsui/mainpage.py:1012
@@ -2228,16 +2265,16 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"មាន \"%s\" រួចហើយ ។\n"
-"សូម​ព្យាយាម​ម្ដងទៀត ដោយប្រើ​ឈ្មោះ​ឯកសារ​ផ្សេង"
+"\"%s\" ja existix.\n"
+"Intenteu-ho una altra vegada amb un nom diferent"
 
 #: exe/export/cmdlineexporter.py:79
 msgid "Invalid input package"
-msgstr ""
+msgstr "El paquet d'entrada no es vàlid."
 
 #: exe/export/cmdlineexporter.py:86
 msgid "Export format not implemented"
-msgstr ""
+msgstr "El format d'exportació no està implementat "
 
 #: exe/export/imsexport.py:402 exe/export/scormexport.py:642
 #: exe/export/websiteexport.py:90
@@ -2246,41 +2283,41 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
-"ការ​នាំចេញ​បាន​បរាជ័យ !\n"
-"ការ​នាំចេញ​ជោគជ័យ​ចុង​ក្រោយ​គឺ %s ។"
+"Exportació errònia\n"
+"L'última exportació satisfactòria és %s."
 
 #: exe/export/pages.py:83 exe/export/textexport.py:54
 msgid "Licensed under the"
-msgstr "ដាក់​អាជ្ញាបណ្ណ​ក្រោម "
+msgstr "Sota la llicència de"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr "ឧទាហរណ៍ ឧទាហរណ៍"
+msgstr "Exemple Exemple"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
-"នេះ​ជា​ឧទាហរណ៍​របស់​អ្នកប្រើ​ដែល​បាន​បង្កើត\n"
-"កម្មវិធី​ជំនួយ iDevice ។"
+"Això és un exemple de connector d'iDevice\n"
+" creat per un usuari."
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
-msgstr "ឧទាហរណ៍"
+msgstr "Exemple"
 
 #: exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "នេះ​ជា​វាល​អត្ថបទ​សេរី ។"
+msgstr "Este és un camp de text lliure."
 
 #: exe/importers/cmdlineimporter.py:44
 msgid "Import format not implemented"
-msgstr ""
+msgstr "El format d'importació no està implementat "
 
 #: exe/importers/cmdlineimporter.py:52 exe/importers/cmdlineimporter.py:61
 #, python-format
 msgid "Invalid output package '%s'"
-msgstr ""
+msgstr "El paquet d'eixida «%s» no es vàlid."
 
 #: exe/importers/scanresources.py:180
 msgid "Contents of directory"
@@ -2317,15 +2354,15 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:228 exe/jsui/mainpage.py:666 exe/jsui/mainpage.py:799
 msgid "Cannot access directory named "
-msgstr "មិន​អាច​ចូល​ដំណើរការ​ថត "
+msgstr "No es pot accedir al directori anomenat"
 
 #: exe/jsui/mainpage.py:228 exe/jsui/mainpage.py:668 exe/jsui/mainpage.py:799
 msgid ". Please use ASCII names."
-msgstr " ។ សូម​ជ្រើស​ឈ្មោះ ASCII ។"
+msgstr ". Utilitzeu noms en ASCII."
 
 #: exe/jsui/mainpage.py:237
 msgid "SAVE FAILED!"
-msgstr "ការ​រក្សាទុក​បាន​បរាជ័យ !"
+msgstr "HA FALLAT L'ACCIÓ DE GUARDAR"
 
 #: exe/jsui/mainpage.py:241 exe/jsui/mainpage.py:530 exe/jsui/mainpage.py:870
 #, python-format
@@ -2333,23 +2370,25 @@ msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
-"ការ​រក្សាទុក​បាន​បរាជ័យ !\n"
+"HA FALLAT L'ACCIÓ DE GUARDAR\n"
 "%s"
 
 #: exe/jsui/mainpage.py:245 exe/jsui/mainpage.py:250 exe/jsui/mainpage.py:253
 #, python-format
 msgid "Package saved to: %s"
-msgstr "បាន​រក្សាទុក​កញ្ចប់​ទៅ ៖ %s"
+msgstr "El paquet s'ha guardat a: %s"
 
 #: exe/jsui/mainpage.py:452 exe/jsui/mainpage.py:558
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "ថត​មើល​ជាមុន %s គឺ​ជា​ឯកសារ មិន​អាច​ជំនួស​វា​បានទេ"
+msgstr "El directori de previsualitzacions %s és un fitxer, no es pot reemplaçar"
 
 #: exe/jsui/mainpage.py:472
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr "រក​មិនឃើញ​ឯកសារ​មូលដ្ឋាន %s ទេ ! មិនអាច​មើល​វា​ជាមុន​បាន​ឡើយ"
+msgstr ""
+"El fitxer local %s no s'ha trobat, no se'n pot mostrar la "
+"previsualització "
 
 #: exe/jsui/mainpage.py:600
 #, python-format
@@ -2357,7 +2396,7 @@ msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
-"ការ​ចងក្រង MimeTeX បាន​បរាជ័យ !\n"
+"La compilació del MimeTex ha fallat.\n"
 "%s"
 
 #: exe/jsui/mainpage.py:638
@@ -2371,16 +2410,16 @@ msgstr ""
 #: exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
 #: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:921
 msgid "EXPORT FAILED!"
-msgstr "ការ​នាំចេញ​បាន​បរាជ័យ !"
+msgstr "Exportació errònia!"
 
 #: exe/jsui/mainpage.py:768
 msgid "Correct XLIFF import"
-msgstr ""
+msgstr "La importació XLIFF és correcta"
 
 #: exe/jsui/mainpage.py:771
 #, python-format
 msgid "Error importing XLIFF: %s"
-msgstr ""
+msgstr "S'ha produït un error en importar l'XLIFF: %s"
 
 #: exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:825
 #, python-format
@@ -2388,18 +2427,18 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"ការ​ស្រង់ចេញ​បាន​បរាជ័យ !\n"
+"Extracció errònia!\n"
 "%s"
 
 #: exe/jsui/mainpage.py:827
 #, python-format
 msgid "Package extracted to: %s"
-msgstr "បាន​ស្រង់​កញ្ចប់​ចេញ​ទៅ ៖ %s"
+msgstr "Paquet extret a: %s"
 
 #: exe/jsui/mainpage.py:856 exe/jsui/mainpage.py:898 exe/jsui/mainpage.py:965
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr "ឈ្មោះ​ឯកសារ %s គឺ​ជា​ឯកសារ មិន​អាច​ជំនួស​វា​បាន​ទេ"
+msgstr "El nom de fitxer %s és un fitxer, no es pot reemplaçar"
 
 #: exe/jsui/mainpage.py:862 exe/jsui/mainpage.py:904 exe/jsui/mainpage.py:971
 #, python-format
@@ -2407,8 +2446,8 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
-"មាន​ថត %s រួចហើយ ។ សូម​ជ្រើស​ឈ្មោះ​ផ្សេង ឬ​លុប​ថត​ដែល​មាន "
-"បន្ទាប់​មក​ព្យាយាម​ម្ដងទៀត ។"
+"El nom de carpeta %s ja existix. Escolliu-ne un altre o esborreu-lo i "
+"torneu-ho a provar."
 
 #: exe/jsui/mainpage.py:911 exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:938
 #: exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:996
@@ -2419,23 +2458,23 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
-"ការ​នាំចេញ​បាន​បរាជ័យ !\n"
+"EXPORTACIÓ ERRÒNIA!\n"
 "%s"
 
 #: exe/jsui/mainpage.py:927 exe/jsui/mainpage.py:946 exe/jsui/mainpage.py:980
 #: exe/jsui/mainpage.py:998 exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1042
 #, python-format
 msgid "Exported to %s"
-msgstr "បាន​នាំចេញ​ទៅ %s"
+msgstr "Exportat a %s"
 
 #: exe/jsui/mainpage.py:1075
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr "មិនមាន​ឯកសារ %s ឬ​មិនអាច​អានបាន ។"
+msgstr "El fitxer %s no existix o no és pot llegir."
 
 #: exe/jsui/mainpage.py:1079
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr "មិនអាច​ផ្ទុក​ឯកសារ​បានឡើយ សូម​ផ្ញើ​អ៊ីមែល​ឯកសារ​ទៅ bugs@exelearning.org"
+msgstr "No s'ha pogut carregar el fitxer, envieu un correu a bugs@exelearning.org"
 
 #: exe/jsui/mainpage.py:1082
 #, python-format
@@ -2443,12 +2482,12 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
-"សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ ៖\n"
+"El format de fitxer és incorrecte: \n"
 "%s"
 
 #: exe/jsui/mainpage.py:1084
 msgid "Sorry, wrong file format"
-msgstr "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ"
+msgstr "El format de fitxer és incorrecte"
 
 #: exe/jsui/propertiespage.py:90
 msgid "Failed to get properties"
@@ -2466,11 +2505,11 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:174
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
 msgid "Show Image"
-msgstr ""
+msgstr "Mostra la imatge"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:127 exe/webui/element.py:518
 msgid "Select an image"
-msgstr "ជ្រើស​រូបភាព"
+msgstr "Seleccioneu una imatge"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:144
 #: exe/jsui/scripts/app/controller/MainTab.js:178
@@ -2503,12 +2542,12 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Outline.js:144
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
 msgid "Insert Package"
-msgstr "បញ្ចូល​កញ្ចប់"
+msgstr "Inserix un paquet"
 
 #: exe/jsui/scripts/app/controller/Outline.js:147
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
 msgid "Extract Package"
-msgstr "ស្រង់​កញ្ចប់​ចេញ"
+msgstr "Extrau el paquet"
 
 #: exe/jsui/scripts/app/controller/Outline.js:200
 msgid "Delete \"{node}\" node and all its children?"
@@ -2533,7 +2572,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:290
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
 msgid "Preferences"
-msgstr "ចំណូល​​ចិត្ត"
+msgstr "Preferències"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:324
 msgid "Select package to insert"
@@ -2684,7 +2723,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:306
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:85 exe/webui/editorpane.py:326
 msgid "Name"
-msgstr "ឈ្មោះ"
+msgstr "Nom"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:68
 msgid "Size"
@@ -2702,7 +2741,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:256
 msgid "Save"
-msgstr "រក្សាទុក"
+msgstr "Guarda"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:94
 msgid "Place"
@@ -2710,7 +2749,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:34
 msgid "Dublin Core Metadata"
-msgstr "ទិន្នន័យ​មេតា​ស្នូល Dublin"
+msgstr "Dublin Core Metadada"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:40
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:94
@@ -2718,11 +2757,11 @@ msgstr "ទិន្នន័យ​មេតា​ស្នូល Dublin"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:106
 #: exe/webui/galleryblock.py:193
 msgid "Title"
-msgstr "ចំណងជើង"
+msgstr "Títol"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:41
 msgid "The name given to the resource."
-msgstr "ឈ្មោះ​ដែលបាន​ផ្ដល់​ទៅធនធាន ។"
+msgstr "El nom que s'ha donat al recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:47
 msgid "Creator"
@@ -2730,7 +2769,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:48
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr "ធាតុ​ចម្បង​ទទួល​ខុសត្រូវ​សម្រាប់​បង្កើត​មាតិកា​របស់​ធនធាន ។"
+msgstr "Entitat responsable d'elaborar els continguts del recurs"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:56
 msgid "Subject"
@@ -2738,7 +2777,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:57
 msgid "The topic of the content of the resource."
-msgstr "ប្រធាន​បទ​របស់​មាតិកា​របស់​ធនធាន ។"
+msgstr "El tema del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
 msgid ""
@@ -2751,7 +2790,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:66
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
 msgid "An account of the content of the resource."
-msgstr "គណនី​របស់​មាតិកា​របស់​ធនធាន ។"
+msgstr "Un resum del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:73
 msgid "Publisher"
@@ -2759,7 +2798,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:74
 msgid "An entity responsible for making the resource available."
-msgstr "ធាតុ​ទទួល​ខុសត្រូវ​សម្រាប់​បង្កើត​ធនធាន​ដែល​មាន ។"
+msgstr "Entitat responsable de mantindre disponible el recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:80
 msgid "Contributors"
@@ -2769,7 +2808,7 @@ msgstr ""
 msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
-msgstr "ធាតុ​ទទួល​ខុសត្រូវ​សម្រាប់​បង្កើត​កា​រចែកចាយ​ទៅ​មាតិកា​របស់​ធនធាន ។"
+msgstr "Entitat responsable de fer aportacions al contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:94
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
@@ -2780,7 +2819,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:95
 msgid "A date of an event in the lifecycle of the resource."
-msgstr "កាលបរិច្ឆេទ​របស់​ព្រឹត្តិការណ៍​នៅ​ក្នុង​ខួប​របស់​ធនធាន ។"
+msgstr "Una data d'un esdeveniment en el cicle de vida del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:98
 msgid ""
@@ -2793,7 +2832,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:106
 msgid "The nature or genre of the content of the resource."
-msgstr "ប្រភេទ ឬ​របៀប​​នៃ​មាតិកា​របស់​ធនធាន ។"
+msgstr "El tipus o el gènere del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:109
 msgid ""
@@ -2810,7 +2849,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 msgid "Select a Format."
-msgstr "ជ្រើស​ទ្រង់ទ្រាយ​ ។"
+msgstr "Seleccioneu un format"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:127
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:56
@@ -2819,7 +2858,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "An unambiguous reference to the resource within a given context."
-msgstr "សេចក្ដី​យោង​ដែល​ច្បាស់​ទៅ​ធនធាន​នៅ​ក្នុង​បរិបទ​ដែល​បានផ្ដល់ ។"
+msgstr "Una referència inequívoca al recurs en un context donat. "
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 msgid "Source"
@@ -2827,7 +2866,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "A Reference to a resource from which the present resource is derived."
-msgstr "សេចក្ដីយោង​ទៅ​ធនធាន​​ពី​ធនធាន​ដែល​មាន​ត្រូវ​បាន​បង្វែ ។"
+msgstr "Una referència al recurs del qual s'ha derivat l'actual."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:58
@@ -2839,7 +2878,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:143
 msgid "Select a language."
-msgstr "ជ្រើស​ភាសា ។"
+msgstr "Seleccioneu l'idioma."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:149
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:370
@@ -2848,7 +2887,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 msgid "A reference to a related resource."
-msgstr "សេចក្ដី​យោង​ទៅ​ធនធាន​ដែល​ទាក់ទង ។"
+msgstr "Una referència a un recurs relacionat."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:168
@@ -2859,7 +2898,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "The extent or scope of the content of the resource."
-msgstr "ពង្រីក ឬ​វិសាលភាព​របស់​មាតិកា​នៃ​ធនធាន ។"
+msgstr "L'extensió o abast del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:165
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:365
@@ -2868,7 +2907,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166
 msgid "Information about rights held in and over the resource."
-msgstr "ព័ត៌មាន​អំពី​សិទ្ធិ​ដែល​បានកើត​ឡើង​នៅ​ក្នុង និង​​នៅ​លើ​ធនធាន ។"
+msgstr "Informació quant als drets d'autor relacionats amb el recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:169
 msgid ""
@@ -2879,27 +2918,27 @@ msgid ""
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
 msgstr ""
-"តាម​ធម្មតា សិទ្ធិ​នឹងមាន​ការ​ពន្យល់​ពីការ​គ្រប់គ្រង​សិទ្ធិ​របស់​ធនធាន "
-"ឬ​យោង​ការ​ផ្ដល់​សេវា​ព័ត៌មាន ។ ព័ត៌មាន​សិទ្ធិ "
-"ភាគច្រើន​មាន​កម្មសិទ្ធិ​បញ្ញា ការ​រក្សាសិទ្ធិ និង​កម្មសិទ្ធិ​ផ្សេងទៀត ។ "
-"ប្រសិន​បើ​គ្មាន​សិទ្ធិ​ទេ "
-"ក៏​គ្មាន​ការ​សន្មត់​អំពី​ស្ថានភាព​នៃ​សិទ្ធិ​ទាំងនេះ​ "
-"និង​សិទ្ធិ​ផ្សេងទៀត​របស់​ធនធាន​ដែរ ។"
+"Normalment, l'element Drets conté una declaració de gestió de drets per "
+"al recurs o fa referència a un servici que proporciona esta informació. "
+"La informació dels drets sovint inclou Drets de Propietat Intel·lectual "
+"(DPI), Copyright i diversos Drets de Propietat. Si la declaració de Drets"
+" és absent, no es pot fer cap suposició quant als drets en relació al "
+"contingut educatiu."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:175
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:90
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
 msgid "Apply"
-msgstr "អនុវត្ត"
+msgstr "Aplica"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:34
 msgid "SCORM 1.2 Options"
-msgstr ""
+msgstr "Opcions de l'SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:42
 msgid "Add Previous/Next links within SCOs?"
-msgstr ""
+msgstr "S'ha d'afegir l'enllaç següent/anterior dins dels SCO?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
 msgid ""
@@ -2914,10 +2953,14 @@ msgid ""
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
+"Si marqueu esta casella l'eXe afegirà els enllaços anterior i següent a "
+"pàgines individuals dins dels SCO. Això requerix una extensió no "
+"estàndard a l'SCORM 1.2 i se sap que sols funciona en algunes versions "
+"del Moodle."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
 msgid "Include Single Page export file?"
-msgstr ""
+msgstr "Voleu incloure el fitxer d'exportació «singlepage»?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:57
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:60
@@ -2926,10 +2969,13 @@ msgid ""
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
+"Si marqueu esta opció, el fitxer SCORM exportat inclourà un fitxer "
+"anomenat «singlepage_index.html» amb el resultat d'exportar este paquet "
+"eXe com a una sola pàgina."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:66
 msgid "Include Web Site export files?"
-msgstr ""
+msgstr "Voleu incloure els fitxers d'exportació «website»?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:72
@@ -2938,10 +2984,13 @@ msgid ""
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
+"Si marqueu esta opció, el fitxer SCORM exportat inclourà el resultat "
+"d'exportar este paquet eXe com a lloc web. Tots els fitxers html tindran "
+"el prefix «website_» per a diferenciar-los dels equivalents SCORM."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
 msgid "Create editable SCORM file?"
-msgstr ""
+msgstr "Voleu crear el fitxer SCORM editable?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
@@ -2949,6 +2998,8 @@ msgid ""
 "Checking this option, the exported SCORM file will be editable with "
 "eXeLearning."
 msgstr ""
+"Si marqueu esta opció, el fitxer SCORM exportat es podrà editar amb "
+"l'eXeLearning."
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:60
 msgid "Language of the field"
@@ -3110,7 +3161,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
 msgid "Project Properties"
-msgstr ""
+msgstr "Propietats del projecte"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
 msgid "Project Title"
@@ -3118,7 +3169,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "The project's title."
-msgstr ""
+msgstr "El títol del projecte."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
 msgid "Header Background"
@@ -3126,19 +3177,19 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
+msgstr "Imatge de fons per a la capçalera (es recomana una imatge de 100 px)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
 msgid "Load Image"
-msgstr ""
+msgstr "Carrega una imatge"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:84
 msgid "Clear Image"
-msgstr ""
+msgstr "Suprimix la imatge "
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Tile background image?"
-msgstr ""
+msgstr "Voleu la imatge de fons en mosaic?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
 msgid "Author"
@@ -3146,7 +3197,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Primary author of the resource."
-msgstr ""
+msgstr "Autor principal del recurs."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 msgid "License"
@@ -3155,63 +3206,67 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
 #: exe/webui/wikipediablock.py:237
 msgid "GNU Free Documentation License"
-msgstr "​លក្ខខណ្ឌ​អាជ្ញាបណ្ណ​ឯកសារ​ឥតគិត​ថ្លៃ​របស់ GNU"
+msgstr "Llicència de Documentació Lliure de GNU"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
 msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
+msgstr "Llicència Creative Commons 3.0 Reconeixement"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
 msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr ""
+msgstr "Llicència Creative Commons 3.0 Reconeixement-Compartir igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr ""
+msgstr "Llicència Creative Commons 3.0 Reconeixement-Sense Obres Derivades"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr ""
+msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr ""
+msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial-Compartir Igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
 msgstr ""
+"Llicència Creative Commons 3.0 Reconeixement- No comercial-Sense obres "
+"derivades."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+msgstr "Llicència Creative Commons 2.5 Reconeixement."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Llicència Creative Commons 2.5 Reconeixement-Compartir igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Llicència Creative Commons 2.5 Reconeixement-Sense Obres Derivades."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr ""
+msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr ""
+"Llicència Creative Commons 2.5 Reconeixement-No comercial- Sense Obres "
+"Derivades"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 msgid "Developing Nations 2.0"
-msgstr ""
+msgstr "Developing Nacions 2.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Select a license."
-msgstr ""
+msgstr "Trieu una llicència."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
 msgid "Footer"
@@ -3219,11 +3274,11 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
 msgid "Web pages footer."
-msgstr ""
+msgstr "Peu de les pàgines web."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:152
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taxonomia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
 msgid "Level 1"
@@ -3231,7 +3286,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Nom per defecte per als nodes del nivell 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
 msgid "Level 2"
@@ -3239,7 +3294,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Nom per defecte per als nodes del nivell 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
 msgid "Level 3"
@@ -3247,15 +3302,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Nom per defecte per als nodes del nivell 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:178
 msgid "Update Tree"
-msgstr ""
+msgstr "Actualitza l'arbre"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
 msgid "Outline"
-msgstr "គ្រោង"
+msgstr "Resum"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:71
 msgid "iDevices"
@@ -3263,32 +3318,32 @@ msgstr "iDevices"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:40
 msgid "Authoring"
-msgstr "បង្កើត"
+msgstr "Autoria"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:44
 msgid "Properties"
-msgstr "លក្ខណៈ​សម្បត្តិ"
+msgstr "Propietats"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:50
 msgid "Package"
-msgstr "កញ្ចប់"
+msgstr "Paquet"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Metadata"
-msgstr "ទិន្នន័យ​មេតា"
+msgstr "Metadades"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:59
 msgid "Dublin Core"
-msgstr ""
+msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Export"
-msgstr "នាំចេញ"
+msgstr "Exporta"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
-msgstr "បន្ថែម​ទំព័រ"
+msgstr "Afig una pàgina"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:230
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
@@ -3297,27 +3352,27 @@ msgstr "បន្ថែម​ទំព័រ"
 #: exe/webui/editorelement.py:332 exe/webui/editorpage.py:247
 #: exe/webui/editorpage.py:250 exe/webui/galleryblock.py:275
 msgid "Delete"
-msgstr "លុប"
+msgstr "Suprimiu"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:45
 msgid "Rename"
-msgstr "ប្ដូរ​ឈ្មោះ"
+msgstr "Reanomena"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
-msgstr "បង្កើន​ថ្នាំង​ឡើង​លើ​ក្នុង​ឋានានុក្រម"
+msgstr "Puja el node en la jerarquia"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
 msgid "Demote node down in hierarchy"
-msgstr "បន្ថយ​ថ្នាំង​ចុះក្រោម​នៅ​ក្នុង​ឋានានុក្រម"
+msgstr "Baixa el node en la jerarquia"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:45
 msgid "Move node up"
-msgstr "ផ្លាស់ទី​ថ្នាំង​​ឡើងលើ"
+msgstr "Mou el node cap amunt"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:51
 msgid "Move node down"
-msgstr "ផ្លាស់ទី​ថ្នាំង​​ចុះក្រោម"
+msgstr "Mou el node cap avall"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
@@ -3341,7 +3396,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
-msgstr "ជម្រះ​បញ្ជី​គម្រោង​បច្ចុប្បន្ន"
+msgstr "Suprimiu la llista de projectes recents"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
@@ -3377,15 +3432,15 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
-msgstr "តំបន់បណ្ដាញ"
+msgstr "Lloc web"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
 msgid "Self-contained Folder"
-msgstr "ថត​ដែល​មាន​ដោយ​ខ្លួន​ឯង"
+msgstr "Carpeta autodesplegable"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "Zip File"
-msgstr "ឯកសារ Zip"
+msgstr "Fitxer Zip"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Single Page"
@@ -3405,7 +3460,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:273
 msgid "Quit"
-msgstr "ចេញ"
+msgstr "Ix"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
@@ -3459,391 +3514,391 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
-msgstr "អាហ្វារ"
+msgstr "Àfar "
 
 #: exe/jsui/scripts/langs.js:8
 msgid "Abkhazian "
-msgstr "អាប់ខាហ្ស៊ាន"
+msgstr "Abkhaz "
 
 #: exe/jsui/scripts/langs.js:12
 msgid "Avestan "
-msgstr "អាវែស្តង់"
+msgstr "Avèstic "
 
 #: exe/jsui/scripts/langs.js:16
 msgid "Afrikaans "
-msgstr "អាហ្វ្រីកាអាន "
+msgstr "Afrikaans "
 
 #: exe/jsui/scripts/langs.js:20
 msgid "Amharic "
-msgstr "អាមហារីច"
+msgstr "Amhàric "
 
 #: exe/jsui/scripts/langs.js:24
 msgid "Arabic "
-msgstr "អារ៉ាប់"
+msgstr "Àrab "
 
 #: exe/jsui/scripts/langs.js:28
 msgid "Assamese "
-msgstr "អាសាមីស"
+msgstr "Assamés "
 
 #: exe/jsui/scripts/langs.js:32
 msgid "Aymara "
-msgstr "អាយម៉ារ៉ា​"
+msgstr "Aimara "
 
 #: exe/jsui/scripts/langs.js:36
 msgid "Azerbaijani "
-msgstr "អាហ្ស៊ែរបែហ្ស៊ង់ "
+msgstr "Àzeri "
 
 #: exe/jsui/scripts/langs.js:40
 msgid "Bashkir "
-msgstr "បាសគៀរ "
+msgstr "Baixkir "
 
 #: exe/jsui/scripts/langs.js:44
 msgid "Byelorussian; Belarusian "
-msgstr "​​បេឡារុស្ស "
+msgstr "Bielorús "
 
 #: exe/jsui/scripts/langs.js:48
 msgid "Bulgarian "
-msgstr "ប៊ុលហ្គារី "
+msgstr "Búlgar"
 
 #: exe/jsui/scripts/langs.js:52
 msgid "Bihari "
-msgstr "បិហារី "
+msgstr "Bihari "
 
 #: exe/jsui/scripts/langs.js:56
 msgid "Bislama "
-msgstr "បីសឡាម៉ា"
+msgstr "Bislama "
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr "​បេន្កាលី បង់ហ្គ្លា"
+msgstr "Bengalí; Bangla "
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
-msgstr "ទីបេ"
+msgstr "Tibetà "
 
 #: exe/jsui/scripts/langs.js:68
 msgid "Breton "
-msgstr "ប្រេតុង"
+msgstr "Bretó "
 
 #: exe/jsui/scripts/langs.js:72
 msgid "Bosnian "
-msgstr "បូស្នី "
+msgstr "Bosnià "
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr "កាតាឡាន "
+msgstr "Català "
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
-msgstr "ចេចេន"
+msgstr "Txetxé "
 
 #: exe/jsui/scripts/langs.js:84
 msgid "Chamorro "
-msgstr "ចាមូរូ"
+msgstr "Chamorro "
 
 #: exe/jsui/scripts/langs.js:88
 msgid "Corsican "
-msgstr "កូសីកា "
+msgstr "Cors "
 
 #: exe/jsui/scripts/langs.js:92
 msgid "Czech "
-msgstr "ឆេក"
+msgstr "Txec "
 
 #: exe/jsui/scripts/langs.js:96
 msgid "Church Slavic "
-msgstr "ឆឺច​ស្លាវិក"
+msgstr "Eslau eclesiàstic  "
 
 #: exe/jsui/scripts/langs.js:100
 msgid "Chuvash "
-msgstr "ជូវ៉ាស"
+msgstr "Txuvaix "
 
 #: exe/jsui/scripts/langs.js:104
 msgid "Welsh "
-msgstr "​​​វែល"
+msgstr "Gal·lés "
 
 #: exe/jsui/scripts/langs.js:108
 msgid "Danish "
-msgstr "ដាណឺម៉ាក"
+msgstr "Danés "
 
 #: exe/jsui/scripts/langs.js:112
 msgid "German "
-msgstr "​​អា​ល្លឺម៉ង់ "
+msgstr "Alemany "
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr "ដុងហ្កា ប៊ូតាន "
+msgstr "Dzongkha "
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
-msgstr "ក្រិក "
+msgstr "Grec "
 
 #: exe/jsui/scripts/langs.js:124
 msgid "English "
-msgstr "អង់គ្លេស "
+msgstr "Anglés "
 
 #: exe/jsui/scripts/langs.js:128
 msgid "Esperanto "
-msgstr "អេស្ពេរ៉ាន់តូ "
+msgstr "Esperanto "
 
 #: exe/jsui/scripts/langs.js:132
 msgid "Spanish "
-msgstr "​អេស៉្បាញ"
+msgstr "Espanyol "
 
 #: exe/jsui/scripts/langs.js:136
 msgid "Estonian "
-msgstr "​អេស្តូនី "
+msgstr "Estonià "
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr "​​បាស្កេ"
+msgstr "Èuscar"
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
-msgstr "ពឺស៊ាន"
+msgstr "Persa "
 
 #: exe/jsui/scripts/langs.js:148
 msgid "Finnish "
-msgstr "​ហ្វាំង​ឡង់ "
+msgstr "Finés "
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr "ហ្វីហ្ស៊ី "
+msgstr "Fijià; Fiji "
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
-msgstr "ហ្វារ៉ូស "
+msgstr "Feroés "
 
 #: exe/jsui/scripts/langs.js:160
 msgid "French "
-msgstr "បារាំង "
+msgstr "Francés "
 
 #: exe/jsui/scripts/langs.js:164
 msgid "Frisian "
-msgstr "ហ្វ្រីស៊ាន "
+msgstr "Frisó "
 
 #: exe/jsui/scripts/langs.js:168
 msgid "Irish "
-msgstr "អៀរឡង់"
+msgstr "Gaèlic irlandés "
 
 #: exe/jsui/scripts/langs.js:172
 msgid "Scots; Gaelic "
-msgstr "ហ្គាអេលិក​ស្កុតឡែន "
+msgstr "Gaèlic (escocés) "
 
 #: exe/jsui/scripts/langs.js:176
 msgid "Gallegan; Galician "
-msgstr "ហ្កាឡេហ្កង់ "
+msgstr "Gallec "
 
 #: exe/jsui/scripts/langs.js:180
 msgid "Guarani "
-msgstr "ហ្គារ៉ានី "
+msgstr "Guaraní "
 
 #: exe/jsui/scripts/langs.js:184
 msgid "Gujarati "
-msgstr "ហ្គុយ៉ារ៉ាទី "
+msgstr "Gujarati "
 
 #: exe/jsui/scripts/langs.js:188
 msgid "Manx "
-msgstr "ម៉ង់"
+msgstr "Manx "
 
 #: exe/jsui/scripts/langs.js:192
 msgid "Hausa (?) "
-msgstr "ហូសា (?) "
+msgstr "Haussa "
 
 #: exe/jsui/scripts/langs.js:196
 msgid "Hebrew (formerly iw) "
-msgstr "ហេប្រូ (អតីត iw) "
+msgstr "Hebreu (anteriorment iw) "
 
 #: exe/jsui/scripts/langs.js:200
 msgid "Hindi "
-msgstr "ហិណ្ឌូ"
+msgstr "Hindi "
 
 #: exe/jsui/scripts/langs.js:204
 msgid "Hiri Motu "
-msgstr "ហ៊ី​រី​ម៉ូទូ"
+msgstr "Hiri Motu "
 
 #: exe/jsui/scripts/langs.js:208
 msgid "Croatian "
-msgstr "ក្រូអាត"
+msgstr "Croat "
 
 #: exe/jsui/scripts/langs.js:212
 msgid "Hungarian "
-msgstr "​​ហុងគ្រី"
+msgstr "Hongarés "
 
 #: exe/jsui/scripts/langs.js:216
 msgid "Armenian "
-msgstr "​អារមេនី"
+msgstr "Armeni "
 
 #: exe/jsui/scripts/langs.js:220
 msgid "Herero "
-msgstr "ហេរេរ៉ូ"
+msgstr "Herero "
 
 #: exe/jsui/scripts/langs.js:224
 msgid "Interlingua "
-msgstr "អ៊ិនធឺលីងហ្កា"
+msgstr "Interlingua "
 
 #: exe/jsui/scripts/langs.js:228
 msgid "Indonesian (formerly in) "
-msgstr "ឥណ្ឌូនេស៊ី (អតីត in)"
+msgstr "Indonesi (anteriorment in) "
 
 #: exe/jsui/scripts/langs.js:232
 msgid "Interlingue "
-msgstr "អ៊ីនធឺលីង"
+msgstr "Interlingue "
 
 #: exe/jsui/scripts/langs.js:236
 msgid "Inupiak "
-msgstr "អ៊ិនុផាក"
+msgstr "Inupiaq "
 
 #: exe/jsui/scripts/langs.js:240
 msgid "Ido "
-msgstr "អ៊ីឌូ"
+msgstr "Ido "
 
 #: exe/jsui/scripts/langs.js:244
 msgid "Icelandic "
-msgstr "អ៊ីស្លង់"
+msgstr "Islandés "
 
 #: exe/jsui/scripts/langs.js:248
 msgid "Italian "
-msgstr "អ៊ីតាលី"
+msgstr "Italià "
 
 #: exe/jsui/scripts/langs.js:252
 msgid "Inuktitut "
-msgstr "អ៊ីនូកទីទូត"
+msgstr "Inuktitut "
 
 #: exe/jsui/scripts/langs.js:256
 msgid "Japanese "
-msgstr "ជប៉ុន"
+msgstr "Japonés "
 
 #: exe/jsui/scripts/langs.js:260
 msgid "Javanese "
-msgstr "យ៉ាវា"
+msgstr "Javanés "
 
 #: exe/jsui/scripts/langs.js:264
 msgid "Georgian "
-msgstr "ហ្សក​ហ្ស៊ី "
+msgstr "Georgià "
 
 #: exe/jsui/scripts/langs.js:268
 msgid "Kikuyu "
-msgstr "គីគូយូ"
+msgstr "Kikuiu "
 
 #: exe/jsui/scripts/langs.js:272
 msgid "Kuanyama "
-msgstr "គ័ន​យ៉ាមា"
+msgstr "Kuanyama "
 
 #: exe/jsui/scripts/langs.js:276
 msgid "Kazakh "
-msgstr "កាហ្សាក់ស្ថាន"
+msgstr "Kazakh "
 
 #: exe/jsui/scripts/langs.js:280
 msgid "Kalaallisut; Greenlandic "
-msgstr "កាឡាអាលីសុទ ហ្គ្រីនឡែន "
+msgstr "Grenlandés "
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr "ខ្មែរ កម្ពុជា"
+msgstr "Khmer "
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
-msgstr "កាណាដា ​"
+msgstr "Kanarés "
 
 #: exe/jsui/scripts/langs.js:292
 msgid "Korean "
-msgstr "កូរ៉េ"
+msgstr "Coreà "
 
 #: exe/jsui/scripts/langs.js:296
 msgid "Kashmiri "
-msgstr "កាស្មៀរ"
+msgstr "Caixmiri "
 
 #: exe/jsui/scripts/langs.js:300
 msgid "Kurdish "
-msgstr "ឃឺដ"
+msgstr "Kurd "
 
 #: exe/jsui/scripts/langs.js:304
 msgid "Komi "
-msgstr "កូមិ "
+msgstr "Komi "
 
 #: exe/jsui/scripts/langs.js:308
 msgid "Cornish "
-msgstr "កូនីស"
+msgstr "Còrnic "
 
 #: exe/jsui/scripts/langs.js:312
 msgid "Kirghiz "
-msgstr "គៀរហ្គីស្តង់"
+msgstr "Kirguís "
 
 #: exe/jsui/scripts/langs.js:316
 msgid "Latin "
-msgstr "ឡាតាំង"
+msgstr "Llatí "
 
 #: exe/jsui/scripts/langs.js:320
 msgid "Letzeburgesch "
-msgstr "លែតហ្សេប៊ឺក "
+msgstr "Luxemburgués "
 
 #: exe/jsui/scripts/langs.js:324
 msgid "Lingala "
-msgstr "លីនហ្កា​ឡា"
+msgstr "Lingala "
 
 #: exe/jsui/scripts/langs.js:328
 msgid "Lao; Laotian "
-msgstr "ឡាវ"
+msgstr "Laosià "
 
 #: exe/jsui/scripts/langs.js:332
 msgid "Lithuanian "
-msgstr "លីទុយអានី "
+msgstr "Lituà "
 
 #: exe/jsui/scripts/langs.js:336
 msgid "Latvian; Lettish "
-msgstr "ឡាតវៀ"
+msgstr "Letó "
 
 #: exe/jsui/scripts/langs.js:340
 msgid "Malagasy "
-msgstr "ម៉ាឡាហ្គា"
+msgstr "Malgaix "
 
 #: exe/jsui/scripts/langs.js:344
 msgid "Marshall "
-msgstr "ម៉ាស្សាល"
+msgstr "Marshallés "
 
 #: exe/jsui/scripts/langs.js:348
 msgid "Maori "
-msgstr "ម៉ោរី"
+msgstr "Maori "
 
 #: exe/jsui/scripts/langs.js:352
 msgid "Macedonian "
-msgstr "​ម៉ាសេដូនី"
+msgstr "Macedònic "
 
 #: exe/jsui/scripts/langs.js:356
 msgid "Malayalam "
-msgstr "ម៉ាឡេស៊ី"
+msgstr "Malaiàlam "
 
 #: exe/jsui/scripts/langs.js:360
 msgid "Mongolian "
-msgstr "ម៉ុងហ្គោលី"
+msgstr "Mongol "
 
 #: exe/jsui/scripts/langs.js:364
 msgid "Moldavian "
-msgstr "ម៉ុល​ដាវី"
+msgstr "Moldau "
 
 #: exe/jsui/scripts/langs.js:368
 msgid "Marathi "
-msgstr "​​ម៉ារ៉ាធី"
+msgstr "Marathi "
 
 #: exe/jsui/scripts/langs.js:372
 msgid "Malay "
-msgstr "ម៉ាឡេ"
+msgstr "Malai "
 
 #: exe/jsui/scripts/langs.js:376
 msgid "Maltese "
-msgstr "ម៉ាល់តា"
+msgstr "Maltés "
 
 #: exe/jsui/scripts/langs.js:380
 msgid "Burmese "
-msgstr "ភូមា "
+msgstr "Birmà "
 
 #: exe/jsui/scripts/langs.js:384
 msgid "Nauru "
-msgstr "ណូរុ"
+msgstr "Nauruà "
 
 #: exe/jsui/scripts/langs.js:388
 msgid "Norwegian Bokmål "
-msgstr "ន័រវែស បុកម៉ាល់"
+msgstr "Noruec bokmål "
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
@@ -3851,23 +3906,23 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
-msgstr "នេប៉ាល់"
+msgstr "Nepalés "
 
 #: exe/jsui/scripts/langs.js:400
 msgid "Ndonga "
-msgstr "ដុងហ្កា"
+msgstr "Ndonga "
 
 #: exe/jsui/scripts/langs.js:404
 msgid "Dutch "
-msgstr "​ហុល្លង់ "
+msgstr "Neerlandés "
 
 #: exe/jsui/scripts/langs.js:408
 msgid "Norwegian Nynorsk "
-msgstr "ន័រវែស នីនូស"
+msgstr "Noruec nynorsk "
 
 #: exe/jsui/scripts/langs.js:412
 msgid "Norwegian "
-msgstr "ន័រវែស"
+msgstr "Noruec "
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
@@ -3875,39 +3930,39 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
-msgstr "ណាវាហ្សូ "
+msgstr "Navaho "
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr "នីយ៉ាន់ចា"
+msgstr "Nyanja "
 
 #: exe/jsui/scripts/langs.js:428
 msgid "Occitan; Provençal "
-msgstr "អុកស៊ីតង់ "
+msgstr "Occità   "
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
-msgstr "អុរុមុ"
+msgstr "Oromo (Afan) "
 
 #: exe/jsui/scripts/langs.js:436
 msgid "Oriya "
-msgstr "អូរីយ៉ា "
+msgstr "Oriya "
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr "អូសសិត្យុង"
+msgstr "Osseta "
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr "ប៉ង់ចាប៊ី"
+msgstr "Panjabi "
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
-msgstr "បាលី ​"
+msgstr "Pali "
 
 #: exe/jsui/scripts/langs.js:452
 msgid "Polish "
-msgstr "ប៉ូឡូញ"
+msgstr "Polonés "
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
@@ -3915,87 +3970,87 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
-msgstr "ព័រទុយហ្គាល់"
+msgstr "Portugués "
 
 #: exe/jsui/scripts/langs.js:464
 msgid "Quechua "
-msgstr "កេទ្ជូអា"
+msgstr "Quítxua "
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr "រ៉េតូ-រ៉ូម៉ាំង "
+msgstr "Retoromànic "
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr "រ៉ុងឌី"
+msgstr "Rundi "
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
-msgstr "រ៉ូម៉ានី"
+msgstr "Romanés "
 
 #: exe/jsui/scripts/langs.js:480
 msgid "Russian "
-msgstr "រុស្ស៊ី"
+msgstr "Rus "
 
 #: exe/jsui/scripts/langs.js:484
 msgid "Kinyarwanda "
-msgstr "គីនយ៉ាវាន់ដា"
+msgstr "Kinyarwanda "
 
 #: exe/jsui/scripts/langs.js:488
 msgid "Sanskrit "
-msgstr "​សំស្ក្រឹត"
+msgstr "Sànscrit "
 
 #: exe/jsui/scripts/langs.js:492
 msgid "Sardinian "
-msgstr "សារឌីនង់"
+msgstr "Sard "
 
 #: exe/jsui/scripts/langs.js:496
 msgid "Sindhi "
-msgstr "​​ស៊ីន្តី"
+msgstr "Sindhi "
 
 #: exe/jsui/scripts/langs.js:500
 msgid "Northern Sami "
-msgstr "សាម៉ីខាង​ជើង"
+msgstr "Sami septentrional "
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr "សង់ហ្គោ"
+msgstr "Sango "
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
-msgstr "ស៊ីនហាឡេ"
+msgstr "Singalés "
 
 #: exe/jsui/scripts/langs.js:512
 msgid "Slovak "
-msgstr "ស្លូវ៉ាគី"
+msgstr "Eslovac "
 
 #: exe/jsui/scripts/langs.js:516
 msgid "Slovenian "
-msgstr "​​​ស្លូវ៉ានី"
+msgstr "Eslové  "
 
 #: exe/jsui/scripts/langs.js:520
 msgid "Samoan "
-msgstr "សាមូអាន"
+msgstr "Samoà "
 
 #: exe/jsui/scripts/langs.js:524
 msgid "Shona "
-msgstr "សូណា"
+msgstr "Shona "
 
 #: exe/jsui/scripts/langs.js:528
 msgid "Somali "
-msgstr "សូម៉ាលី"
+msgstr "Somali "
 
 #: exe/jsui/scripts/langs.js:532
 msgid "Albanian "
-msgstr "អាល់បានី "
+msgstr "Albanés "
 
 #: exe/jsui/scripts/langs.js:536
 msgid "Serbian "
-msgstr "សែប៊ី"
+msgstr "Serbi "
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr "ស្វាទី"
+msgstr "Swati "
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
@@ -4003,143 +4058,143 @@ msgstr ""
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr "សាន់ដាណេស"
+msgstr "Sundanés "
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
-msgstr "ស៊ុយអែដ"
+msgstr "Suec "
 
 #: exe/jsui/scripts/langs.js:556
 msgid "Swahili "
-msgstr "ស្វាហ៊ីលី"
+msgstr "Suahili "
 
 #: exe/jsui/scripts/langs.js:560
 msgid "Tamil "
-msgstr "តាមីល"
+msgstr "Tàmil "
 
 #: exe/jsui/scripts/langs.js:564
 msgid "Telugu "
-msgstr "តេលូហ្គូ"
+msgstr "Telugu "
 
 #: exe/jsui/scripts/langs.js:568
 msgid "Tajik "
-msgstr "តាដហ្ស៊ីគីស្តង់"
+msgstr "Tadjik "
 
 #: exe/jsui/scripts/langs.js:572
 msgid "Thai "
-msgstr "​ថៃ"
+msgstr "Thai "
 
 #: exe/jsui/scripts/langs.js:576
 msgid "Tigrinya "
-msgstr "ទី​ក្រីនយ៉ា"
+msgstr "Tigrinya "
 
 #: exe/jsui/scripts/langs.js:580
 msgid "Turkmen "
-msgstr "ទួគមេនីស្តង់ "
+msgstr "Turcman "
 
 #: exe/jsui/scripts/langs.js:584
 msgid "Tagalog "
-msgstr "តាកាឡូក"
+msgstr "Tagàlog "
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr "វ៉ាន់ណា"
+msgstr "Tswana "
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
-msgstr "តុងហ្គោ"
+msgstr "Tongalés "
 
 #: exe/jsui/scripts/langs.js:596
 msgid "Turkish "
-msgstr "ទួរគី "
+msgstr "Turc "
 
 #: exe/jsui/scripts/langs.js:600
 msgid "Tsonga "
-msgstr "សុងហ្កា"
+msgstr "Tsonga "
 
 #: exe/jsui/scripts/langs.js:604
 msgid "Tatar "
-msgstr "​​តាតារ"
+msgstr "Tàtar "
 
 #: exe/jsui/scripts/langs.js:608
 msgid "Twi "
-msgstr "ទ្វី"
+msgstr "Twi "
 
 #: exe/jsui/scripts/langs.js:612
 msgid "Tahitian "
-msgstr "តាហិតង់"
+msgstr "Tahitià "
 
 #: exe/jsui/scripts/langs.js:616
 msgid "Uighur "
-msgstr "វីហ្គៀរ"
+msgstr "Uigur "
 
 #: exe/jsui/scripts/langs.js:620
 msgid "Ukrainian "
-msgstr "អ៊ុយ​ក្រែន"
+msgstr "Ucraïnés "
 
 #: exe/jsui/scripts/langs.js:624
 msgid "Urdu "
-msgstr "អ៊ូ​រ្ឌូ"
+msgstr "Urdú "
 
 #: exe/jsui/scripts/langs.js:628
 msgid "Uzbek "
-msgstr "អ៊ូហ្សបេគីស្តង់"
+msgstr "Uzbek "
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Vietnamese "
-msgstr "វៀតណាម"
+msgstr "Vietnamita "
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Volapük; Volapuk "
-msgstr "វ៉ូឡាពុក"
+msgstr "Volapük "
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Walloon "
-msgstr "វ៉ាឡុង"
+msgstr "Való "
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Wolof "
-msgstr "វូឡុហ្វ"
+msgstr "Wòlof "
 
 #: exe/jsui/scripts/langs.js:648
 msgid "Xhosa "
-msgstr "ឃសា"
+msgstr "Xosa "
 
 #: exe/jsui/scripts/langs.js:652
 msgid "Yiddish (formerly ji) "
-msgstr "យីឌីហ្ស (អតីត ji)"
+msgstr "Jiddish (anteriorment ji)"
 
 #: exe/jsui/scripts/langs.js:656
 msgid "Yoruba "
-msgstr "យ៉ូរ៉ូបា "
+msgstr "Ioruba "
 
 #: exe/jsui/scripts/langs.js:660
 msgid "Zhuang "
-msgstr "ចួង"
+msgstr "Zhuang "
 
 #: exe/jsui/scripts/langs.js:664
 msgid "Chinese "
-msgstr "ចិន"
+msgstr "Xinés "
 
 #: exe/jsui/scripts/langs.js:668
 msgid "Zulu "
-msgstr "ហ្ស៊ូលូ"
+msgstr "Zulu "
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
-msgstr "សូម​ផ្ទុកឡើង​ឯកសារ .ggb ។"
+msgstr "Pengeu un fitxer .ggb"
 
 #: exe/webui/appletblock.py:86
 msgid "Please upload a .jclic.zip file."
-msgstr ""
+msgstr "Pengeu un fitxer .jclic.zip"
 
 #: exe/webui/appletblock.py:88
 msgid "Please upload a .sb or .scratch file."
-msgstr ""
+msgstr "Pengeu un fitxer .sb o .scratch"
 
 #: exe/webui/appletblock.py:90
 msgid "Please type or paste a valid URL."
-msgstr ""
+msgstr "Escriviu o apegueu un URL vàlid."
 
 #: exe/webui/appletblock.py:96
 msgid ""
@@ -4148,10 +4203,15 @@ msgid ""
 " button on it and in config > codigo is its associated code. Copy and "
 "paste it directly into an Applet iDevice such as Other."
 msgstr ""
+"L'eXe no pot accedir a cap escena de dins del lloc web indicat. De tota "
+"manera podeu accedir a l'escena desitjada en el vostre navegador "
+"habitual: feu clic amb el botó dret del ratolí damunt i en configuració >"
+" codi es troba el seu codi associat; copieu-lo i apegueu-lo directament "
+"en un iDevice d'aplicació, com ara Altre."
 
 #: exe/webui/appletblock.py:129
 msgid "Descartes"
-msgstr ""
+msgstr "Descartes"
 
 #: exe/webui/appletblock.py:130
 msgid "Geogebra"
@@ -4159,241 +4219,239 @@ msgstr "Geogebra"
 
 #: exe/webui/appletblock.py:131
 msgid "JClic"
-msgstr ""
+msgstr "JClic"
 
 #: exe/webui/appletblock.py:132
 msgid "Scratch"
-msgstr ""
+msgstr "Scratch"
 
 #: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
 msgid "Other"
-msgstr "ផ្សេងទៀត"
+msgstr "Altre"
 
 #: exe/webui/appletblock.py:134
 msgid "Applet Type"
-msgstr "ប្រភេទ​អាប់ភ្លេត"
+msgstr "Tipus d'aplicació"
 
 #: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
 msgid "Add files"
-msgstr "បន្ថែម​ឯកសារ"
+msgstr "Afig fitxers"
 
 #: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
 msgid "Upload"
-msgstr "ផ្ទុក​ឡើង"
+msgstr "Penja"
 
 #: exe/webui/appletblock.py:161
 msgid "Accept URL"
-msgstr ""
+msgstr "Accepta l'URL"
 
 #: exe/webui/appletblock.py:171
 msgid "Applet Code:"
-msgstr "កូដ​អាប់ភ្លេត ៖"
+msgstr "Codi de l'aplicació:"
 
 #: exe/webui/appletblock.py:184
 msgid "Delete File"
-msgstr "លុប​ឯកសារ"
+msgstr "Suprimix el fitxer"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:807
 msgid "Filename:"
-msgstr "ឈ្មោះ​ឯកសារ ៖"
+msgstr "Nom del fitxer:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:817
 msgid "Select a file"
-msgstr "ជ្រើស​​ឯកសារ"
+msgstr "Seleccioneu un fitxer"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
-msgstr "ស្លាក ៖"
+msgstr "Etiqueta:"
 
 #: exe/webui/block.py:175
 msgid "IDevice broken"
-msgstr "IDevice ខូច"
+msgstr "L'iDevice està trencat"
 
 #: exe/webui/block.py:213
 msgid "Done"
-msgstr "ធ្វើ​រួច"
+msgstr "Fet"
 
 #: exe/webui/block.py:218
 msgid "Undo Edits"
-msgstr "មិន​ធ្វើ​ការ​កែសម្រួល​វិញ"
+msgstr "Desfeu els canvis"
 
 #: exe/webui/block.py:222
 msgid "Can NOT Undo Edits"
-msgstr "មិន​អាច​មិន​ធ្វើ​ការ​កែសម្រួល​វិញ"
+msgstr "NO es pot desfer l'edició"
 
 #: exe/webui/block.py:225
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
-"វា​នឹង​លុប iDevice នេះ ។\n"
-"តើ​អ្នក​ពិតជា​ចង់​លុប​មែន​ឬ ?"
+"Això suprimirà l'iDevice. \n"
+" Esteu segur que voleu suprimir-lo?"
 
 #: exe/webui/block.py:237
 msgid "Move Up"
-msgstr "ផ្លាស់ទី​ឡើងលើ"
+msgstr "Moveu cap amunt"
 
 #: exe/webui/block.py:244
 msgid "Move Down"
-msgstr "ផ្លាស់ទី​ចុះក្រោម"
+msgstr "Moveu cap avall"
 
 #: exe/webui/block.py:246
 msgid "---Move To---"
-msgstr "---ផ្លាស់ទី​ទៅ---"
+msgstr "---Moveu a---"
 
 #: exe/webui/block.py:251 exe/webui/editorpane.py:376
 msgid "Pedagogical Help"
-msgstr "ជំនួយ​ខាង​ផ្នែក​​គរុកោសល្យ"
+msgstr "Ajuda Pedagògica"
 
 #: exe/webui/block.py:256
 msgid "Information"
-msgstr "ព័ត៌មាន"
+msgstr "Informació"
 
 #: exe/webui/block.py:266
 msgid "Purpose"
-msgstr "គោលបំណង"
+msgstr "Propòsit"
 
 #: exe/webui/block.py:270
 msgid "Tip:"
-msgstr "ព័ត៌មាន​ជំនួយ ៖"
+msgstr "Consell:"
 
 #: exe/webui/block.py:299 exe/webui/eleccionmultiplefpdblock.py:164
 #: exe/webui/galleryblock.py:344 exe/webui/genericblock.py:83
 #: exe/webui/genericblock.py:109 exe/webui/multichoiceblock.py:154
 msgid "IDevice Icon"
-msgstr "រូបតំណាង IDevice"
+msgstr "Icona d'iDevice"
 
 #: exe/webui/block.py:320
 msgid "iDevice icon"
-msgstr "រូបតំណាង iDevice"
+msgstr "Icona d'iDevice"
 
 #: exe/webui/block.py:335
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr "កំហុស ៖ Block.renderViewContent បាន​ហៅ​ដោយ​ផ្ទាល់"
+msgstr "S'ha produït un error: s'ha cridat Block.renderViewContent directament"
 
 #: exe/webui/block.py:344 exe/webui/editorpage.py:294
 #: exe/webui/editorpane.py:269
 msgid "Edit"
-msgstr "កែសម្រួល"
+msgstr "Edita"
 
 #: exe/webui/casestudyblock.py:113 exe/webui/ejercicioresueltofpdblock.py:118
 msgid "Add another activity"
-msgstr "បន្ថែម​សកម្មភាព​ផ្សេងៗ"
+msgstr "Afig una altra activitat."
 
 #: exe/webui/casopracticofpdblock.py:64
 msgid "Caso práctico"
-msgstr ""
+msgstr "Cas pràctic"
 
 #: exe/webui/citasparapensarfpdblock.py:64
 msgid "Citas para pensar"
-msgstr ""
+msgstr "Citacions per a pensar"
 
 #: exe/webui/clozefpdblock.py:104 exe/webui/clozelangfpdblock.py:105
 #: exe/webui/eleccionmultiplefpdblock.py:110
 msgid "Autoevaluacion"
-msgstr ""
+msgstr "Autoavaluació"
 
 #: exe/webui/clozefpdblock.py:172 exe/webui/clozelangfpdblock.py:173
 #: exe/webui/element.py:2150 exe/webui/element.py:2544
 #: exe/webui/questionelement.py:152
-#, fuzzy
 msgid "Solucion"
-msgstr "ផ្នែក"
+msgstr "Solució"
 
 #: exe/webui/clozefpdblock.py:175 exe/webui/clozelangfpdblock.py:176
 #: exe/webui/element.py:2155 exe/webui/reflectionfpdblock.py:143
 msgid "Retroalimentacion"
-msgstr ""
+msgstr "Retroacció"
 
 #: exe/webui/common.py:70 exe/webui/editorpage.py:231
 #: exe/webui/preferencespage.py:131 exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
-msgstr "eXe ៖ កម្មវិធី​និពន្ធ XHTML ការ​សិក្សា​អេឡិចត្រូនិក"
+msgstr "eXe: editor XHTML per a l'aprenentatge electrònic"
 
 #: exe/webui/common.py:342 exe/webui/common.py:346
 msgid "Click for completion instructions"
-msgstr "ចុច ដើម្បី​មើល​សេចក្ដី​ណែនាំ​អំពី​ការ​បំពេញ"
+msgstr "Premeu per a mirar les instruccions de compleció"
 
 #: exe/webui/debesconocerfpdblock.py:64
-#, fuzzy
 msgid "Debes conocer"
-msgstr "បាតកថា​ទំព័រ​បណ្ដាញ ។"
+msgstr "Cal que conegues"
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:250
 msgid "Text Line"
-msgstr "បន្ទាត់​អត្ថបទ"
+msgstr "Línia de Text"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:252
 msgid "Text Box"
-msgstr "ប្រអប់​អត្ថបទ"
+msgstr "Quadre de text"
 
 #: exe/webui/editorelement.py:149
 msgid "Button Caption"
-msgstr "ចំណង​ជើង​ប៊ូតុង"
+msgstr "Títol del botó"
 
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
 #: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
 msgid "Left"
-msgstr "ឆ្វេង"
+msgstr "Esquerre"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
 #: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
 msgid "Right"
-msgstr "ត្រឹមត្រូវ"
+msgstr "Dreta"
 
 #: exe/webui/editorelement.py:225 exe/webui/flashmovieblock.py:83
 #: exe/webui/flashwithtextblock.py:83 exe/webui/imagemagnifierblock.py:109
 #: exe/webui/imagewithtextblock.py:83 exe/webui/multimediablock.py:87
 msgid "None"
-msgstr "គ្មាន"
+msgstr "Cap"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
 #: exe/webui/imagewithtextblock.py:88 exe/webui/multimediablock.py:92
 msgid "Align:"
-msgstr "តម្រឹម ៖"
+msgstr "Alinea:"
 
 #: exe/webui/editorelement.py:268 exe/webui/element.py:1581
 msgid "Select Flash Object"
-msgstr "ជ្រើស​វត្ថុ Flash"
+msgstr "Seleccioneu un objecte en Flash"
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr "ជ្រើស​ឯកសារ MP3"
+msgstr "Seleccioneu un fitxer MP3"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:611
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
 #: exe/webui/imagemagnifierblock.py:114 exe/webui/imagewithtextblock.py:93
 msgid "Caption:"
-msgstr "ចំណងជើង ៖"
+msgstr "Títol:"
 
 #: exe/webui/editorpage.py:116
 msgid "Please enter an idevice name."
-msgstr "សូម​បញ្ចូល​ឈ្មោះ idevice ។"
+msgstr "Escriviu el nom de l'iDevice."
 
 #: exe/webui/editorpage.py:184 exe/webui/editorpage.py:196
 msgid "Sorry, wrong file format."
-msgstr "សូម​អភ័យទោស គឺ​ទ្រង់ទ្រាយ​ឯកសារ​មិន​ត្រឹមត្រូវ ។"
+msgstr "El format de fitxer és incorrecte."
 
 #: exe/webui/editorpage.py:260
 msgid "Import iDevice"
-msgstr "នាំចូល iDevice"
+msgstr "Importa iDevices"
 
 #: exe/webui/editorpage.py:265
 msgid "Export iDevice"
-msgstr "នាំចេញ iDevice"
+msgstr "Exporta l'iDevice"
 
 #: exe/webui/editorpage.py:268 exe/webui/editorpage.py:270
 msgid "Show/Hide"
-msgstr ""
+msgstr "Mostra/Amaga"
 
 #: exe/webui/editorpage.py:303
 msgid "New iDevice"
-msgstr "iDevice ថ្មី"
+msgstr "Nou iDevice"
 
 #: exe/webui/editorpane.py:66
 msgid ""
@@ -4401,30 +4459,30 @@ msgid ""
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
 msgstr ""
-"iDevice ថ្មី​របស់​អ្នក​នឹង​បង្ហាញ​នៅ​ក្នុង​ស្លាបព្រិល iDevice "
-"ដោយ​មាន​ចំណងជើង​ផង ។ នេះ​ជា​វាល​ចាំបាច់ ហើយ​អ្នក​គឺ​ត្រូវ​បញ្ចូល​ស្លាក "
-"នៅពេល​ដែល​អ្នក​ដាក់ស្នើ iDevice ដោយគ្មានស្លាក ។"
+"El vostre iDevice nou apareixerà en la subfinestra d'iDevices amb este "
+"títol. Este és un camp obligatori i apareixerà una finestra per a "
+"escriure una etiqueta si proveu d'enviar l'iDevide sense emplenar-lo."
 
 #: exe/webui/editorpane.py:70
 msgid "This is an optional field."
-msgstr "នេះ​ជា​វាល​ស្រេចចិត្ត ។"
+msgstr "Este és un camp opcional."
 
 #: exe/webui/editorpane.py:71
 msgid ""
 "The purpose dialogue allows you to describe your intended purpose of the "
 "iDevice to other potential users."
 msgstr ""
-"ប្រអប់​គោលបំណង អនុញ្ញាត​ឲ្យ​អ្នក​ពិពណ៌នា​អំពី​គោលបំណង​បម្រុង​​នៃ iDevice "
-"របស់​អ្នក​ចំពោះ​អ្នកប្រើ​ដែល​មាន​សក្ដានុភាព​ផ្សេងទៀត ។"
+"El diàleg de Propòsit vos permet descriure la finalitat de l'iDevice per "
+"a altres usuaris potencials."
 
 #: exe/webui/editorpane.py:74
 msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
-"ប្រើ​ម៉ឺនុយ​ទម្លាក់​ចុះ​នេះ ដើម្បី​ជ្រើស​ថាតើ​ iDevice "
-"គួរ​តែ​អនុវត្ត​ការ​ធ្វើ​ទ្រង់ទ្រាយ​ណាមួយ​ចំពោះ​វា​ដើម្បី​ឲ្យ​ចំណាំវា​ឬក៏​អត់"
-" ។ ឧទាហរណ៍ ស៊ុម ឬ​រូបតំណាង ។"
+"Utilitzeu este menú desplegable per a seleccionar si l'iDevice ha de "
+"tindre o un format aplicat per a distingir-lo; p. ex.: una vora i una "
+"icona."
 
 #: exe/webui/editorpane.py:78
 msgid ""
@@ -4432,588 +4490,592 @@ msgid ""
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
 msgstr ""
-"ប្រើ​វាល​នេះ "
-"ដើម្បី​ពិពណ៌នា​អំពី​ការ​ប្រើប្រាស់​ដែល​បាន​បម្រុងទុក​របស់​អ្នក "
-"និង​គរុកោសល្យ​នៅ​ពីក្រោយ​ការ​អភិវឌ្ឍ​របស់​ឧបករណ៍ ។ វា​មានប្រយោជន៍ "
-"នៅពេល​ដែល​នាំចេញ iDevice ឲ្យ​អ្នកផ្សេង​ប្រើ ។"
+"Utilitzeu este camp per a descriure l'ús i la pedagogia que hi ha darrere"
+" de l'elaboració de l'iDevice. Això pot ser molt útil si penseu exportar "
+"este contingut perquè l'utilitzen altres."
 
 #: exe/webui/editorpane.py:83
 msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
-"បន្ថែម​បន្ទាត់​អត្ថបទ​ទោល​ទៅ iDevice ។ វា​មាន​ប្រយោជន៍ "
-"បើ​អ្នក​ចង់​ដាក់​ស្លាក​នៅ​ក្នុង iDevice ។"
+"Afig una línia de text a un iDevice. És útil si voleu col·locar una "
+"etiqueta dins d'un iDevice. "
 
 #: exe/webui/editorpane.py:86
 msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
-"បន្ថែម​ប្រអប់​ធាតុ​អត្ថបទ​ទៅ iDevice ។ "
-"គេ​ប្រើ​វា​ដើម្បី​បញ្ចូល​ចំនួន​មាតិកា​តាម​អត្ថបទ​​ច្រើន ។"
+"Afig un quadre d'entrada de text a un iDevice. S'utilitza per a introduir"
+" quantitats més grans de text."
 
 #: exe/webui/editorpane.py:89
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "បន្ថែម​វាល​អន្តរ​មតិព័ត៌មាន​ទៅ iDevice របស់​អ្នក ។"
+msgstr "Afig un camp de retroacció interactiva a l'iDevice."
 
 #: exe/webui/editorpane.py:90
 msgid "Add a flash video to your iDevice."
-msgstr "បន្ថែម​វីដេអូ flash ទៅ iDevice របស់​អ្នក ។"
+msgstr "Afig un vídeo en Flash a l'iDevice."
 
 #: exe/webui/editorpane.py:91
 msgid "Add an mp3 file to your iDevice."
-msgstr "បន្ថែម​ឯកសារ mp3 ទៅ iDevice របស់​អ្នក ។"
+msgstr "Afig un fitxer mp3 a l'iDevice."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an attachment file to your iDevice."
-msgstr "បន្ថែម​ឯកសារ​ភ្ជាប់​ទៅ iDevice របស់​អ្នក ។"
+msgstr "Afig un fitxer adjunt a l'iDevice."
 
 #: exe/webui/editorpane.py:144 exe/webui/editorpane.py:151
 #: exe/webui/editorpane.py:159 exe/webui/editorpane.py:175
 #: exe/webui/editorpane.py:185
 msgid "Enter the label here"
-msgstr "បញ្ចូល​ស្លាក​នៅ​ទីនេះ"
+msgstr "Escriviu l'etiqueta ací"
 
 #: exe/webui/editorpane.py:145
 msgid "Enter instructions for completion here"
-msgstr "បញ្ចូល​សេចក្ដី​ណែនាំ​អំពី​ការ​បំពេញ​នៅ​ទីនេះ"
+msgstr "Introduïu les instruccions per a completar l'exercici ací."
 
 #: exe/webui/editorpane.py:152 exe/webui/editorpane.py:176
 #: exe/webui/editorpane.py:186
 msgid "Enter the instructions for completion here"
-msgstr "បញ្ចូល​សេចក្ដី​ណែនាំ​អំពី​ការ​បំពេញ​នៅទីនេះ"
+msgstr "Introduïu les instruccions de compleció ací."
 
 #: exe/webui/editorpane.py:160
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
-"ប៊ូតុង​មតិ​អ្នកប្រើ នឹង​ត្រូវ​បង្ហាញ ប្រសិន​បើ​មិន \n"
-"បញ្ចូល​ទិន្នន័យ​ទៅ​ក្នុង​វាល​នេះ ។"
+"El botó de retroacció no apareixerà si no \n"
+"s'han introduït dades en este camp."
 
 #: exe/webui/editorpane.py:197
 msgid "Please enter<br />an idevice name."
-msgstr "សូម​បញ្ចូល<br />ឈ្មោះ idevice ។"
+msgstr "Poseu <br /> un nom a l'iDevice."
 
 #: exe/webui/editorpane.py:249
 msgid "Add Field"
-msgstr "បន្ថែម​វាល"
+msgstr "Afig un camp"
 
 #: exe/webui/editorpane.py:264
 msgid "Actions"
-msgstr "អំពើ"
+msgstr "Accions"
 
 #: exe/webui/editorpane.py:267 exe/webui/element.py:1790
 msgid "Preview"
-msgstr "មើល​ជាមុន"
+msgstr "Previsualització"
 
 #: exe/webui/editorpane.py:272 exe/webui/preferencespage.py:162
 #: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
-msgstr "បោះបង់"
+msgstr "Cancel·la"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
-msgstr "ជំនួយ​ខាង​ផ្នែក​​គរុកោសល្យ"
+msgstr "Consell pedagògic"
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
 #: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:161
 msgid "Emphasis"
-msgstr "សង្កត់​ន័យ"
+msgstr "Èmfasi"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
 #: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:158
 msgid "No emphasis"
-msgstr "គ្មាន​ការ​សង្កត់​សំឡេង"
+msgstr "Sense èmfasi"
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
 #: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:159
 msgid "Some emphasis"
-msgstr "ការ​សង្កត់​សំឡេង​មួយ​ចំនួន"
+msgstr "Amb èmfasi"
 
 #: exe/webui/editorpane.py:366
 msgid "Icons"
-msgstr "រូបតំណាង"
+msgstr "Icones"
 
 #: exe/webui/editorpane.py:380
 msgid "Info"
-msgstr "ព័ត៌មាន"
+msgstr "Informació"
 
 #: exe/webui/editorpane.py:427 exe/webui/element.py:1216
 #: exe/webui/element.py:1484 exe/webui/listablock.py:226
 #: exe/webui/listablock.py:230
 msgid "Submit"
-msgstr "ដាក់ស្នើ"
+msgstr "Envia"
 
 #: exe/webui/editorpane.py:437
 msgid "Check iDevices do not want to display:"
-msgstr ""
+msgstr "Marqueu els iDevices que no voleu que es mostren:"
 
 #: exe/webui/ejercicioresueltofpdblock.py:110
 msgid "Ejercicio resuelto"
-msgstr ""
+msgstr "Exercici resolt"
 
 #: exe/webui/eleccionmultiplefpdblock.py:95 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
-msgstr "សូម​ជ្រើស​ចម្លើយ​ត្រឹមត្រូវ សម្រាប់​សំណួរ​នីមួយៗ ។"
+msgstr "Seleccioneu una resposta correcta per a cada pregunta."
 
 #: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
-msgstr "បន្ថែម​សំណួរ​ផ្សេងៗ"
+msgstr "Afig una altra pregunta."
 
 #: exe/webui/eleccionmultiplefpdblock.py:137 exe/webui/multichoiceblock.py:130
 msgid "IDevice Question Icon"
-msgstr "រូបតំណាង​សំណួរ IDevice"
+msgstr "Icona d'iDevice de preguntes"
 
 #: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr "កំហុស Element.process បាន​ហៅ​ដោយផ្ទាល់​ជា​មួយ​ថ្នាក់ %s"
+msgstr ""
+"S'ha produït un error: s'ha cridat Element.process directament amb la "
+"classe %s"
 
 #: exe/webui/element.py:80
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr "កំហុស Element.renderEdit បាន​ហៅ​ដោយផ្ទាល់​ជា​មួយ​ថ្នាក់ %s"
+msgstr ""
+"S'ha produït un error: s'ha cridat Element.renderEdit directament amb la "
+"classe %s"
 
 #: exe/webui/element.py:97
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr "កំហុស Element.renderView បាន​ហៅ​ដោយផ្ទាល់​ជា​មួយ​ថ្នាក់ %s"
+msgstr ""
+"S'ha produït un error: s'ha cridat Element.renderView directament amb la "
+"classe %s"
 
 #: exe/webui/element.py:495
 msgid "Add Image"
-msgstr "បន្ថែម​រូបភាព"
+msgstr "Afig una imatge "
 
 #: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1585
 msgid "Display as:"
-msgstr "បង្ហាញ​ជា ៖"
+msgstr "Mostra en:"
 
 #: exe/webui/element.py:535 exe/webui/element.py:951
 msgid "blank for original size"
-msgstr "ទទេ ដើម្បី​ប្រើ​ទំហំ​ដើម"
+msgstr "en blanc per a la mida original"
 
 #: exe/webui/element.py:605
 msgid "Select an MP3"
-msgstr "ជ្រើស MP3"
+msgstr "Seleccioneu un MP3"
 
 #: exe/webui/element.py:878
 msgid "Please select a .jpg file."
-msgstr "សូម​ជ្រើស​ឯកសារ .jpg ។"
+msgstr "Seleccioneu un fitxer .jpg"
 
 #: exe/webui/element.py:913
 msgid "Add JPEG Image"
-msgstr "បន្ថែម​រូបភាព JPEG"
+msgstr "Afig una imatge JPEG"
 
 #: exe/webui/element.py:929
 msgid "Select an image (JPG file)"
-msgstr "ជ្រើស​រូបភាព (ឯកសារ JPG)"
+msgstr "Seleccioneu una imatge (fitxer JPG)"
 
 #: exe/webui/element.py:1098 exe/webui/element.py:1360
 #: exe/webui/listablock.py:116
 msgid "Cloze Text"
-msgstr "អត្ថបទ Cloze"
+msgstr "Text amb buits"
 
 #: exe/webui/element.py:1106 exe/webui/element.py:1368
 #: exe/webui/listablock.py:124
 msgid "Hide/Show Word"
-msgstr "លាក់​/​បង្ហាញ​ពាក្យ"
+msgstr "Amaga/Mostra paraules"
 
 #: exe/webui/element.py:1111 exe/webui/element.py:1373
 msgid "Strict Marking?"
-msgstr "សម្គាល់​យ៉ាង​តឹងរឹង​ឬ ?"
+msgstr "Correcció estricta?"
 
 #: exe/webui/element.py:1116 exe/webui/element.py:1378
 msgid "Check Caps?"
-msgstr "ពនិត្យ​ការ​សរសេរ​អក្សរធំ​ឬ ?"
+msgstr "Correcció de majúscules?"
 
 #: exe/webui/element.py:1121 exe/webui/element.py:1383
 msgid "Instant Marking?"
-msgstr "សម្គាល់​លឿន ?"
+msgstr "Correcció immediata?"
 
 #: exe/webui/element.py:1201 exe/webui/element.py:1469
 msgid "Get score"
-msgstr "ទទួល​ពិន្ទុ"
+msgstr "Puntuació aconseguida"
 
 #: exe/webui/element.py:1207 exe/webui/element.py:1475
 msgid "Show/Hide Feedback"
-msgstr "បង្ហាញ/​លាក់​មតិ​អ្នកប្រើ"
+msgstr "Mostra/Amaga la retroacció"
 
 #: exe/webui/element.py:1212 exe/webui/element.py:1480
 msgid "Show/Clear Answers"
-msgstr "បង្ហាញ/​ជម្រះ​ចម្លើយ"
+msgstr "Mostra/Amaga les respostes"
 
 #: exe/webui/element.py:1221 exe/webui/element.py:1489
 msgid "Restart"
-msgstr "ចាប់ផ្ដើម​ឡើងវិញ"
+msgstr "Reinicia"
 
 #: exe/webui/element.py:1228 exe/webui/element.py:1496
 msgid "Show Answers"
-msgstr "បង្ហាញ​ចម្លើយ"
+msgstr "Mostra les respostes"
 
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
 #: exe/webui/listablock.py:263
 msgid "Answsers"
-msgstr "ចម្លើយ"
+msgstr "Respostes"
 
 #: exe/webui/element.py:1388
 msgid "Mostrar Puntuaci&oacute;n?"
-msgstr ""
+msgstr "Voleu mostrar la puntuació?"
 
 #: exe/webui/element.py:1647
 msgid "Please select a .flv file."
-msgstr "សូម​ជ្រើស​ឯកសារ .flv ។"
+msgstr "Seleccioneu un fitxer .flv"
 
 #: exe/webui/element.py:1663
 msgid "Select a flash video"
-msgstr "ជ្រើស​វីដេអូ flash"
+msgstr "Seleccioneu un vídeo en Flash"
 
 #: exe/webui/element.py:1772
 msgid "text"
-msgstr "អត្ថបទ"
+msgstr "text"
 
 #: exe/webui/element.py:1773
 msgid "newline"
-msgstr "បន្ទាត់​ថ្មី"
+msgstr "línia nova"
 
 #: exe/webui/element.py:1776
 msgid "Select a font size: "
-msgstr "ជ្រើស​ទំហំ​ពុម្ពអក្សរ ៖ "
+msgstr "Seleccioneu la grandària del tipus de lletra:"
 
 #: exe/webui/element.py:1886 exe/webui/element.py:2238
 #: exe/webui/element.py:2336 exe/webui/element.py:2363
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
-msgstr "ជម្រើស​ត្រឹមត្រូវ"
+msgstr "Opció correcta"
 
 #: exe/webui/element.py:1914 exe/webui/element.py:2266
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
-msgstr "លុប​ជម្រើស"
+msgstr "Suprimix l'opció"
 
 #: exe/webui/element.py:1948 exe/webui/element.py:1958
 msgid "Correct"
-msgstr "ត្រឹមត្រូវ"
+msgstr "Correcte"
 
 #: exe/webui/element.py:1950 exe/webui/element.py:1960
 msgid "Incorrect"
-msgstr "មិន​ត្រឹមត្រូវ"
+msgstr "Incorrecte"
 
 #: exe/webui/element.py:2043 exe/webui/element.py:2448
 #: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
-msgstr "លុប​សំណួរ"
+msgstr "Suprimix la pregunta"
 
 #: exe/webui/element.py:2076 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
-msgstr "បន្ថែម​ជម្រើស​ផ្សេងៗ"
+msgstr "Afig una altra opció."
 
 #: exe/webui/element.py:2126 exe/webui/questionelement.py:130
 msgid "Show Feedback"
-msgstr "បង្ហាញ​មតិអ្នកប្រើ"
+msgstr "Mostra la retroacció"
 
 #: exe/webui/element.py:2338 exe/webui/element.py:2365
 msgid "Wrong"
-msgstr "ខុស"
+msgstr "Incorrecte"
 
 #: exe/webui/element.py:2463
 msgid "Add another option"
-msgstr "បន្ថែម​ជម្រើស​ផ្សេងៗ"
+msgstr "Afig una altra opció."
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
-msgstr "URL ៖"
+msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
-msgstr "កម្ពស់​ស៊ុម ៖"
+msgstr "Alçària del marc:"
 
 #: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:279
 #: exe/webui/galleryblock.py:280
 msgid "Add images"
-msgstr "បន្ថែម​រូបភាព"
+msgstr "Afig imatges"
 
 #: exe/webui/galleryblock.py:207 exe/webui/galleryblock.py:304
 msgid "No Images Loaded"
-msgstr "គ្មាន​រូបភាព​ដែល​ផ្ទុកទេ"
+msgstr "No hi ha imatges carregades"
 
 #: exe/webui/galleryblock.py:218 exe/webui/galleryblock.py:236
 msgid "Change Image"
-msgstr "ផ្លាស់ប្ដូរ​រូបភាព"
+msgstr "Modifica la imatge"
 
 #: exe/webui/galleryblock.py:243
 msgid "Move Image Left"
-msgstr "ផ្លាស់ទី​រូបភាព​ទៅ​ឆ្វេង"
+msgstr "Moveu la imatge a l'esquerra"
 
 #: exe/webui/galleryblock.py:245
 msgid "Go Back"
-msgstr "ថយក្រោយ"
+msgstr "Torna arrere"
 
 #: exe/webui/galleryblock.py:257
 msgid "Move Image Right"
-msgstr "ផ្លាស់ទី​រូបភាព​ទៅ​ស្ដាំ"
+msgstr "Moveu la imatge a la dreta"
 
 #: exe/webui/galleryblock.py:259
 msgid "Go Forward"
-msgstr "ទៅមុខ"
+msgstr "Vés avant"
 
 #: exe/webui/galleryblock.py:267
 msgid "Go Forward (Not Available)"
-msgstr "ទៅមុខ (មិនមាន)"
+msgstr "Vés avant (no està disponible)"
 
 #: exe/webui/galleryblock.py:272
 msgid "Delete Image"
-msgstr "លុប​រូបភាព"
+msgstr "Suprimix la imatge"
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
-msgstr "ចាប់ផ្ដើម​ពង្រីក"
+msgstr "Zoom inicial"
 
 #: exe/webui/imagemagnifierblock.py:153
 msgid "Maximum zoom"
-msgstr "ពង្រីក​អតិបរមា"
+msgstr "Zoom màxim"
 
 #: exe/webui/imagemagnifierblock.py:159
 msgid "Small"
-msgstr "តូច"
+msgstr "Menuda"
 
 #: exe/webui/imagemagnifierblock.py:160
 msgid "Medium"
-msgstr "មធ្យម"
+msgstr "Mitjà"
 
 #: exe/webui/imagemagnifierblock.py:161
 msgid "Large"
-msgstr "ធំ"
+msgstr "Gran"
 
 #: exe/webui/imagemagnifierblock.py:162
 msgid "Extra large"
-msgstr "ធំ​សម្បើម"
+msgstr "Molt gran"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr "ទំហំ​កែវពង្រីក ៖ "
+msgstr "Mida de la lupa: "
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
 msgid "Add another Question"
-msgstr "បន្ថែម​សំណួរ​ផ្សេងៗ"
+msgstr "Afig una altra pregunta."
 
 #: exe/webui/orientacionesalumnadofpdblock.py:64
 msgid "Orientaciones para el alumnado"
-msgstr ""
+msgstr "Orientacions per a l'alumnat"
 
 #: exe/webui/orientacionestutoriafpdblock.py:64
 msgid "Orientaciones para la tutoría"
-msgstr ""
+msgstr "Orientacions per a la tutoria "
 
 #: exe/webui/parasabermasfpdblock.py:64
 msgid "Para saber más"
-msgstr ""
+msgstr "Per a saber-ne més"
 
 #: exe/webui/preferencespage.py:142
 msgid "Select Language"
-msgstr "ជ្រើស​ភាសា"
+msgstr "Seleccioneu l'idioma"
 
 #: exe/webui/preferencespage.py:147
 msgid "Enable All Internal Linking"
-msgstr "បើក​ការ​តភ្ជាប់​ខាង​ក្នុង​ទាំង​អស់"
+msgstr "Habilita tots els enllaços interns"
 
 #: exe/webui/preferencespage.py:148
 msgid "Disable Auto-Top Internal Linking"
-msgstr "បិទ​ការ​តភ្ជាប់​ខាង​ក្នុង​​កំពូល​ដោយ​ស្វ័យ​ប្រវត្តិ"
+msgstr "Desactiva l'enllaç intern de l'Auto-Top"
 
 #: exe/webui/preferencespage.py:149
 msgid "Disable All Internal Linking"
-msgstr "បិទ​ការ​តភ្ជាប់​ខាងក្នុង​ទាំង​អស់"
+msgstr "Desactiva tots els enllaços interns"
 
 #: exe/webui/preferencespage.py:150
 msgid "Internal Linking (for Web Site Exports only)"
-msgstr "ការ​តភ្ជាប់​ខាង​ក្នុង (សម្រាប់​​តែ​ការ​នាំចេញ​តំបន់​បណ្ដាញ​ប៉ុណ្ណោះ)"
+msgstr "Enllaç intern (sols per a exportar a llocs web)"
 
 #: exe/webui/preferencespage.py:158 exe/webui/xliffexportpreferencespage.py:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
-msgstr "យល់ព្រម"
+msgstr "D'acord"
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
-msgstr "លាក់​មតិ​អ្នក​ប្រើ"
+msgstr "Amaga la retroacció"
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
-msgstr "ជ្រើស​អត្រា​ដែល​ជាប់ ៖ "
+msgstr "Seleccioneu el percentatge per a aprovar:"
 
 #: exe/webui/quiztestblock.py:152
 msgid "SUBMIT ANSWERS"
-msgstr "ដាក់ស្នើ​ចម្លើយ"
+msgstr "ENVIA LES RESPOSTES"
 
 #: exe/webui/quiztestblock.py:373
 msgid "Submit Answer"
-msgstr "ដាក់ស្នើ​ចម្លើយ"
+msgstr "Envia la resposta"
 
 #: exe/webui/recomendacionfpdblock.py:64
 msgid "Recomendación"
-msgstr ""
+msgstr "Recomanació"
 
 #: exe/webui/reflectionblock.py:117 exe/webui/reflectionfpdblock.py:125
 msgid "Click here"
-msgstr "ចុច​នៅ​ទីនេះ"
+msgstr "Premeu ací"
 
 #: exe/webui/reflectionblock.py:121 exe/webui/reflectionfpdblock.py:129
 msgid "Hide"
-msgstr "លាក់"
+msgstr "Amaga"
 
 #: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
-#, fuzzy
 msgid "Reflexiona"
-msgstr "ការ​ឆ្លើយតប"
+msgstr "Reflexiona "
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:154
 msgid "Load"
-msgstr "ផ្ទុក"
+msgstr "Carrega"
 
 #: exe/webui/seleccionmultiplefpdblock.py:90
 #: exe/webui/verdaderofalsofpdblock.py:109
 msgid "Autoevaluación"
-msgstr ""
+msgstr "Autoavaluació"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
 #: exe/webui/truefalseelement.py:275
 msgid "True"
-msgstr "ត្រូវ"
+msgstr "Verdader"
 
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:195
 #: exe/webui/truefalseelement.py:277
 msgid "False"
-msgstr "ខុស"
+msgstr "Fals"
 
 #: exe/webui/truefalseelement.py:220
 msgid "Correct!"
-msgstr "ត្រឹមត្រូវ !"
+msgstr "Correcte!"
 
 #: exe/webui/truefalseelement.py:221
 msgid "Incorrect!"
-msgstr "មិន​ត្រឹមត្រូវ !"
+msgstr "Incorrecte!"
 
 #: exe/webui/wikipediablock.py:114
 msgid "English Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​អង់គ្លេស"
+msgstr "Article en anglés de la Viquipèdia."
 
 #: exe/webui/wikipediablock.py:115
 msgid "Euskara Wikipedia Article"
-msgstr ""
+msgstr "Article en èuscar de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​កាតាឡាន"
+msgstr "Article en català de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Chinese Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​ចិន"
+msgstr "Article en xinés de la Viquipèdia."
 
 #: exe/webui/wikipediablock.py:118
 msgid "Dutch Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​ហុល្លង់"
+msgstr "Article en holandés de la Viquipèdia."
 
 #: exe/webui/wikipediablock.py:119
 msgid "French Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​បារាំង"
+msgstr "Article en francés de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:120
 msgid "German Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​អាល្លឺម៉ង់"
+msgstr "Article en alemany de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:121
 msgid "Greek Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​ក្រិក"
+msgstr "Article en grec de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Italian Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​អ៊ីតាលី"
+msgstr "Article en italià de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:123
 msgid "Japanese Wikipedia Article"
-msgstr "អត្ថបទ​វីឌីភីឌៀ​ជប៉ុន"
+msgstr "Article en japonés de la Viquipèdia "
 
 #: exe/webui/wikipediablock.py:124
 msgid "Magyar Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​ម៉ាយ៉ា"
+msgstr "Article en hongarés de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:125
 msgid "Polish Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​ប៉ូឡូញ"
+msgstr "Article en polonés de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:126
 msgid "Portugese Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​ព័រទុយហ្គាល់"
+msgstr "Article en portugués de la Viquipèdia."
 
 #: exe/webui/wikipediablock.py:127
 msgid "Slovenian Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​ស្លូវ៉ានី"
+msgstr "Article en eslové de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Spanish Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​អេស្ប៉ាញ"
+msgstr "Article en espanyol de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Swedish Wikipedia Article"
-msgstr "អត្ថបទ​វីគីភីឌៀ​​ស៊ុយអែត"
+msgstr "Article en suec de la Viquipèdia "
 
 #: exe/webui/wikipediablock.py:130
 msgid "Wikibooks Article"
-msgstr "អត្ថបទ Wikibooks"
+msgstr "Article de Viquillibres"
 
 #: exe/webui/wikipediablock.py:131
 msgid "Wikiversity"
-msgstr "Wikiversity"
+msgstr "Viquiversitat"
 
 #: exe/webui/wikipediablock.py:132
 msgid "Wiktionary"
-msgstr "Wiktionary"
+msgstr "Viquidiccionari"
 
 #: exe/webui/wikipediablock.py:133
 msgid "Wikieducator Content"
-msgstr "មាតិកា Wikieducator"
+msgstr "Contingut de Wikieducator"
 
 #: exe/webui/wikipediablock.py:139
 msgid "Site"
-msgstr "តំបន់​បណ្ដាញ"
+msgstr "Lloc web"
 
 #: exe/webui/wikipediablock.py:149
 msgid "Own site"
-msgstr "តំបន់​បណ្ដាញ​ផ្ទាល់ខ្លួន"
+msgstr "Lloc propi"
 
 #: exe/webui/wikipediablock.py:234
 msgid "This article is licensed under the "
-msgstr "អត្ថបទ​នេះ​ស្ថិតក្រោម​អាជ្ញាបណ្ណ "
+msgstr "Este article s'ha publicat sota la llicència de "
 
 #: exe/webui/wikipediablock.py:238
 msgid "It uses material from the "
-msgstr "វា​ប្រើ​សម្ភារៈ​ពី "
+msgstr "Utilitza material procedent de"
 
 #: exe/webui/wikipediablock.py:250
 msgid "article "
-msgstr "អត្ថបទ "
+msgstr "article "
 
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
-msgstr "ស្លាក"
+msgstr ""
 
 #: exe/webui/xliffexportpreferencespage.py:102
 msgid "Select source language"
-msgstr ""
+msgstr "Seleccioneu l'idioma d'origen"
 
 #: exe/webui/xliffexportpreferencespage.py:107
 msgid "Select target language"
-msgstr ""
+msgstr "Seleccioneu l'idioma de destinació"
 
 #: exe/webui/xliffexportpreferencespage.py:112
 msgid "Copy source also in target"
-msgstr ""
+msgstr "Copieu l'origen també en la destinació"
 
 #: exe/webui/xliffexportpreferencespage.py:117
 msgid ""
@@ -5022,6 +5084,10 @@ msgid ""
 "content of the target field. If you are using this kind of tools, you "
 "will need to pre-fill target field with a copy of the source field."
 msgstr ""
+"Si no escolliu esta opció, el camp destinació estarà buit. Algunes "
+"ferramentes de traducció assistida (p.e. l'OmegaT) només traduïxen el "
+"contingut del camp destinació. Si utilitzeu este tipus de ferramentes vos"
+" caldrà omplir el camp destinació amb una còpia del camp origen."
 
 #: exe/webui/xliffexportpreferencespage.py:128
 msgid ""
@@ -5030,12 +5096,19 @@ msgid ""
 "good option if you want to use a pre-process tool (i.g.: Rainbow) before "
 "using the Computer Aided Translation software."
 msgstr ""
+"Esta opció embolcallarà tots els camps exportats en seccions  CDATA. Este"
+" tipus de seccions no estan recomanades per l'estàndard  XLIFF però poden"
+" ser una bona opció si voleu utilitzar una ferramenta de preprocessament "
+"de camps (p.e.: Rainbow) abans d'utilitzar el programari de traducció "
+"assistida."
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
 "source language instead of target language."
 msgstr ""
+"Si escolliu esta opció, el procés d'importació prendrà els texts de "
+"l'idioma d'origen en lloc de l'idioma de destinació."
 
 #: twisted/persisted/styles.py:319 twisted/persisted/styles.py:332
 #: twisted/persisted/styles.py:478 twisted/persisted/styles.py:551
@@ -5043,8 +5116,8 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
-"កញ្ចប់​គឺ​ចាស់ ។ សូម​ធ្វើ​ឲ្យ​វា​ប្រសើរ​ឡើង (ដោយប្រើ ឯកសារ..បើក រួច​ហើយ "
-"ឯកសារ..រក្សាទុក​ជា) មុនពេល​បញ្ចូល​វា​ទៅ​ក្នុង​កញ្ចប់​មួយ​ផ្សេង​ទៀត !"
+"El paquet és antic. Actualitzeu-lo (utilitzeu Fitxer...Obri seguit de "
+"Fitxer...Anomena i guarda) abans d'inserir-lo en un altre paquet."
 
 #: twisted/persisted/styles.py:437
 msgid ""
@@ -5058,7 +5131,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-"ទាំង​ឯកសារ idevices/generic.data ឬ​កញ្ចប់​ដែល​អ្នក​កំពុង​ផ្ទុក "
-"គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ "
-"ហើយ​ព្យាយាម​ម្ដងទៀត ។"
+"El fitxer d'iDevices/generic.data o el paquet que esteu carregant s'ha "
+"creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
+"provar."
 

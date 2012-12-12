@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-12 11:56+0100\n"
+"POT-Creation-Date: 2012-12-12 17:31+0100\n"
 "PO-Revision-Date: 2008-01-28 00:15+1300\n"
 "Last-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -1777,8 +1777,8 @@ msgid ""
 msgstr ""
 
 #: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:210
-#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:936 exe/jsui/mainpage.py:1011
-#: exe/jsui/mainpage.py:1032
+#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:937 exe/jsui/mainpage.py:1012
+#: exe/jsui/mainpage.py:1033
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -1881,7 +1881,7 @@ msgstr ". Käytä vain ASCII-merkkejä nimessä."
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/jsui/mainpage.py:241 exe/jsui/mainpage.py:530 exe/jsui/mainpage.py:869
+#: exe/jsui/mainpage.py:241 exe/jsui/mainpage.py:530 exe/jsui/mainpage.py:870
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1919,7 +1919,7 @@ msgid "Error importing HTML:\n"
 msgstr ""
 
 #: exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
-#: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:920
+#: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:921
 msgid "EXPORT FAILED!"
 msgstr "VIENTI EPÄONNISTUI!"
 
@@ -1946,22 +1946,22 @@ msgstr ""
 msgid "Package extracted to: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:855 exe/jsui/mainpage.py:897 exe/jsui/mainpage.py:964
+#: exe/jsui/mainpage.py:856 exe/jsui/mainpage.py:898 exe/jsui/mainpage.py:965
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/jsui/mainpage.py:861 exe/jsui/mainpage.py:903 exe/jsui/mainpage.py:970
+#: exe/jsui/mainpage.py:862 exe/jsui/mainpage.py:904 exe/jsui/mainpage.py:971
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
 
-#: exe/jsui/mainpage.py:910 exe/jsui/mainpage.py:924 exe/jsui/mainpage.py:937
-#: exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:977 exe/jsui/mainpage.py:995
-#: exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1018
-#: exe/jsui/mainpage.py:1033 exe/jsui/mainpage.py:1039
+#: exe/jsui/mainpage.py:911 exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:938
+#: exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:996
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1019
+#: exe/jsui/mainpage.py:1034 exe/jsui/mainpage.py:1040
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -1970,39 +1970,39 @@ msgstr ""
 "VIENTI EPÄONNISTUI!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:926 exe/jsui/mainpage.py:945 exe/jsui/mainpage.py:979
-#: exe/jsui/mainpage.py:997 exe/jsui/mainpage.py:1020 exe/jsui/mainpage.py:1041
+#: exe/jsui/mainpage.py:927 exe/jsui/mainpage.py:946 exe/jsui/mainpage.py:980
+#: exe/jsui/mainpage.py:998 exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1042
 #, python-format
 msgid "Exported to %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1074
+#: exe/jsui/mainpage.py:1075
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/jsui/mainpage.py:1078
+#: exe/jsui/mainpage.py:1079
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Tiedostoa ei voitu ladata, voit lähettää sen tutkittavaksi osoitteella "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1081
+#: exe/jsui/mainpage.py:1082
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1083
+#: exe/jsui/mainpage.py:1084
 msgid "Sorry, wrong file format"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:85
+#: exe/jsui/propertiespage.py:90
 msgid "Failed to get properties"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:102
+#: exe/jsui/propertiespage.py:107
 msgid "Failed to save properties"
 msgstr ""
 
@@ -2429,7 +2429,7 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:175
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:90
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
 msgid "Apply"
@@ -2455,6 +2455,41 @@ msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
+msgid "Include Single Page export file?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:57
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:60
+msgid ""
+"Checking this option the exported SCORM file will include a file named "
+"\"singlepage_index.html\" containing the result of exporting this eXe "
+"package as a single page."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:66
+msgid "Include Web Site export files?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:72
+msgid ""
+"Checking this option the exported SCORM file will include the result of "
+"exporting this eXe package as Web Site. All the html files will have the "
+"\"website_\" prefix to differentiate them from their SCORM equivalent."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
+msgid "Create editable SCORM file?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
+msgid ""
+"Checking this option, the exported SCORM file will be editable with "
+"eXeLearning."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:60
@@ -2788,15 +2823,7 @@ msgstr ""
 msgid "Dublin Core"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:64
-msgid "LOM"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:69
-msgid "LOM.es"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:76
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Export"
 msgstr ""
@@ -4550,47 +4577,4 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
-#~ msgid ""
-#~ "Export <input_file> elp package to "
-#~ "optional <output_file> on one of the "
-#~ "given formats: xml, scorm, ims, website,"
-#~ " webzip or singlepage."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Import to <output_file> elp package, "
-#~ "<input_file> in one of the given "
-#~ "formats: xml."
-#~ msgstr ""
-
-#~ msgid "eXe"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "WARNING: content.xml version 0.1. Importing"
-#~ " from content.data. Try to import "
-#~ "from a content.xml version 0.2."
-#~ msgstr ""
-
-#~ msgid "Invalid output package"
-#~ msgstr ""
-
-#~ msgid "Ndebele, North "
-#~ msgstr ""
-
-#~ msgid "Ndebele, South "
-#~ msgstr ""
-
-#~ msgid "Pashto, Pushto "
-#~ msgstr ""
-
-#~ msgid "Sesotho; Sotho, Southern "
-#~ msgstr ""
-
-#~ msgid "Show %s Image"
-#~ msgstr ""
-
-#~ msgid "Basque Wikipedia Article"
-#~ msgstr ""
 

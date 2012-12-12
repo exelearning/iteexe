@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2012-12-12 11:56+0100\nPO-Revision-Date: 2012-07-03 10:09+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2012-12-12 17:31+0100\nPO-Revision-Date: 2012-07-03 10:09+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Web pages footer.": "Pie de las p\u00e1ginas web.", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Los profesores deben recordar lo siguiente cuando est\u00e9n usando este iDevice:<\/p><ol><li>Piense en la cantidad de diferentes tipos de actividades planificados como recurso los cuales ser\u00e1n se\u00f1alados visualmente como contenido. Trate de no usar muchos diferentes tipos de clasificaciones de actividades, para que el estudiante no se confunda. Normalmente tres o cuatro diferentes tipos son m\u00e1s que suficiente para un recurso pedag\u00f3gico.<\/li><li>Desde una perspectiva de dise\u00f1o visual, trata de no poner dos iDevices juntos sin texto entre medias. Si se encuentra que es necesario, una dos preguntas o eventos en un iDevice.<\/li><li>Plant\u00e9ese actividades en las que el beneficio de completar la actividad supere al costo en tiempo y esfuerzo de completarla.<\/li><\/ol>", 
  "Title": "T\u00edtulo", 
@@ -113,7 +113,6 @@ translations = {
  "<p>Enter the text for the cloze activity in to the cloze field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to hide, double click on the word to select it and \nclick on the Hide\/Show Word button below.<\/p>": "<p>Escriba el texto para la actividad de rellenar huecos dentro del campo hueco \nbien pegando texto de otra fuente o tecleando el texto directamente en el campo.<\/p><p>\nPara seleccionar las palabras a esconder, haga doble clic en la palabra para seleccionarla,\ny pulse en el bot\u00f3n Esconder\/Mostrar palabra de abajo.<\/p>", 
  "Restart": "Reiniciar", 
  "Add Image": "Agregar imagen", 
- "LOM.es": "LOM.es", 
  "Reflection": "Reflexi\u00f3n", 
  "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank.": "Introduzca la retroalimentaci\u00f3n que quiera que vean los estudiantes despu\u00e9s de haber intentado completar la actividad. Este campo, se puede dejar vac\u00edo.", 
  "Enter the details of the reading including reference details. The \nreferencing style used will depend on the preference of your faculty or \ndepartment.": "Introduzca los detalles de la lectura incluyendo las referencias. El \nestilo de referencia usada depender\u00e1 de las preferencias que tenga su facultad \no departamento.", 
@@ -532,7 +531,6 @@ translations = {
  "Insert Package": "Insertar paquete", 
  "Saving package to: {filename}": "Guardando el paquete como: {filename}", 
  "Hausa (?) ": "Hausa (?) ", 
- "LOM": "LOM", 
  "Norwegian Nynorsk ": "Noruego Nynorsk ", 
  "XLIFF": "XLIFF", 
  "Burmese ": "Birmano ", 
