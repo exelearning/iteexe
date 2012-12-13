@@ -121,8 +121,8 @@ class ListaElement(ElementWithResources):
             u'<tbody>',
             u'<tr>',
             u'<td>',
-            u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
-            ur"""onclick="tinyMCE.execInstanceCommand('mce_editor_1','Underline', false);"/>""",
+            u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
+            u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
             u'</td><td>',
                                 
             u'</td>',
