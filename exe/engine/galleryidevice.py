@@ -467,7 +467,6 @@ these in a gallery context rather then individually.</p>"""),
         self.images            = GalleryImages(self)
         self.currentImageIndex = 0
         self.userResources     = []
-        self.systemResources  += ["stock-insert-image.png"]
         self._titleInstruc     = x_(u'Enter a title for the gallery')
         self._addImageInstr    = x_(u"Click on the Add images button to select "
                                     u"an image file. The image will appear "
