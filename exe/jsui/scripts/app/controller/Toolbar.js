@@ -604,7 +604,7 @@ Ext.define('eXe.controller.Toolbar', {
 				var styles = Ext.JSON.decode(response.responseText),
 					menu = this.getStylesMenu(), i, item;
     			for (i = styles.length-1; i >= 0; i--) {
-    				item = Ext.create('Ext.menu.Item', { text: styles[i].label, itemId: styles[i].style });
+                    item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
     				menu.insert(0, item);
     			}
     		}
@@ -628,6 +628,10 @@ Ext.define('eXe.controller.Toolbar', {
     },
 	
     stylesClick: function(item) {
+		for (i = item.parentMenu.items.length-1; i >= 0; i--) {
+			if (item.parentMenu.items.getAt(i) != item)
+				item.parentMenu.items.getAt(i).setChecked(false);
+		}
         var authoring = Ext.get('authoringIFrame').dom.contentWindow;
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);

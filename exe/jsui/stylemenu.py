@@ -62,7 +62,7 @@ class StyleMenu(Renderable, Resource):
         l = []
         printableStyles = [(x.capitalize(), x) for x in self.config.styles]
         for printableStyle, style in sorted(printableStyles, key=lambda x: x[0]):
-            l.append({ "label": printableStyle, "style": style})
+            l.append({ "label": printableStyle, "style": style, "selected": True if style == self.package.style else False})
         return json.dumps(l).encode('utf-8')
         
     
