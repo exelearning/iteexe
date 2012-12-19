@@ -53,6 +53,7 @@ class ClozeBlock(Block):
 
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
+        self.instructionElement.field.content_w_resourcePaths = _(self.instructionElement.field.content_w_resourcePaths)
         self.clozeElement = ClozeElement(idevice.content)
         self.feedbackElement = \
             TextAreaElement(idevice.feedback)
