@@ -248,12 +248,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            text: _('iPod Notes'),
-                                            accesskey: 'n',
-                                            itemId: 'file_export_ipod'
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
                                             text: _('XLIFF'),
                                             accesskey: 'x',
                                             itemId: 'file_export_xliff'

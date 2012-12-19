@@ -80,9 +80,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_text': {
                 click: { fn: this.processExportEvent, exportType: "textFile" }
             },
-            '#file_export_ipod': {
-                click: { fn: this.processExportEvent, exportType: "ipod" }
-            },
             '#file_export_xliff': {
                 click: this.exportXliff
             },
