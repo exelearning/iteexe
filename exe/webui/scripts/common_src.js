@@ -18,6 +18,8 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // ===========================================================================
 
+var objBrowse = navigator.appName;
+
 //YOUR_SCORE_IS      = "Your score is ";
 YOUR_SCORE_IS      = "Tu puntuación es ";
 

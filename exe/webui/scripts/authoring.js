@@ -22,7 +22,6 @@
 
 // Called upon loading the page this function clears the hidden
 // action and object fields so they can be used by submitLink
-var objBrowse = navigator.appName;
 
 // An array of js strings to evaluate on document load
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects];

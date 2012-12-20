@@ -26,7 +26,7 @@ import logging
 import json
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
-from exe.engine.path import toUnicode
+from exe.engine.path import toUnicode, Path
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -86,7 +86,8 @@ class PropertiesPage(Renderable, Resource):
                             data[key] = getattr(obj, name).basename()
                     else:
                         data[key] = getattr(obj, name)
-        except:
+        except Exception as e:
+            log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get properties")})
         return json.dumps({'success': True, 'data': data})
 
@@ -100,10 +101,15 @@ class PropertiesPage(Renderable, Resource):
                 if key in self.booleanFieldNames:
                     setattr(obj, name, value[0] == 'true')
                 else:
-                    setattr(obj, name, toUnicode(value[0]))
-                    if key in self.imgFieldNames and value[0]:
-                        data[key] = getattr(obj, name).basename()
-        except:
+                    if key in self.imgFieldNames:
+                        path = Path(value[0])
+                        if path.isfile():
+                            setattr(obj, name, toUnicode(value[0]))
+                            data[key] = getattr(obj, name).basename()
+                    else:
+                        setattr(obj, name, toUnicode(value[0]))
+        except Exception as e:
+            log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
         return json.dumps({'success': True, 'data': data})
     

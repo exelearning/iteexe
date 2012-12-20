@@ -66,6 +66,8 @@ python-exe (1:1.04.1.3605intef7beta1) lucid; urgency=low
     preferencias
   * Barras de progreso al cargar, guardar, insertar o extraer paquetes
 
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Wed, 12 Jun 2012 09:32:00 +0200
+
 python-exe (1:1.04.1.3605intef6.3) lucid; urgency=low
 
   [Ignacio Gros]
