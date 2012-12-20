@@ -278,7 +278,7 @@ class Manifest(object):
             self.dependencies["popup_bg.gif"] = True
         
         elif self.scormType == "scorm2004":
-            self.resStr += "adlcp:scormType=\"sco\" "
+            self.resStr += "adlcp:scormtype=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
             self.resStr += """\
     <file href="%s"/>
@@ -289,7 +289,7 @@ class Manifest(object):
     <file href="SCORM_API_wrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         else:
-            self.resStr += "adlcp:scormType=\"sco\" "
+            self.resStr += "adlcp:scormtype=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
             self.resStr += """\
     <file href="%s"/>
