@@ -415,7 +415,8 @@ class Package(Persistable):
         self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()
-        self.lomEs         = LomES()
+        #Disabled until Lom devel end
+#        self.lomEs         = LomES()
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
