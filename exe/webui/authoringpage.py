@@ -148,7 +148,7 @@ class AuthoringPage(RenderableResource):
         for block in self.blocks:
             html += block.render(self.package.style)
 
-        html += u'</div>\n'
+        html += u'</div><script type="text/javascript">$exeAuthoring.ready()</script>\n'
         html += common.footer()
 
         html = html.encode('utf8')
@@ -177,8 +177,8 @@ class AuthoringPage(RenderableResource):
         estilo = u'/style/%s/content.css' % self.package.style
         html += u"<script type=\"text/javascript\">var exe_style = '%s';</script>\n" % estilo
         html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
-        html += u'<script type="text/javascript" src="/scripts/authoring.js">'
-        html += u'</script>\n'
+        html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
+        html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'/scripts/langs/" + $exeAuthoring.getLang(\''+myPreferencesPage.getSelectedLanguage()+'\') + ".js\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';        
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'

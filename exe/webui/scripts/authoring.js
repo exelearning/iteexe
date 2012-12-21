@@ -640,3 +640,25 @@ var exe_tinymce = {
 	}//chooseImage
 	
 }
+
+var $exe_i18n = {}
+
+var $exeAuthoring = {
+    langs : ["es","eu","ca","gl"],
+    getLang : function(lang){    
+        if (lang=="ca@valencia") lang = "ca";
+        var defaultLang = "en";
+        for (i=0;i<$exeAuthoring.langs.length;i++) {
+            if ($exeAuthoring.langs[i]===lang) defaultLang = lang;
+        }
+        $exeAuthoring.lang = defaultLang;
+        return defaultLang;        
+    },
+    text : function(t) {
+        return $exe_i18n[$exeAuthoring.lang][t];
+    },
+    ready : function(){
+    }
+}
+
+$eXeText = $exeAuthoring.text;
