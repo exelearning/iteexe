@@ -214,6 +214,11 @@ class GalleryBlock(Block):
                     method = 'gallery.%s.%s' % (method, image.id)
                     params = "'%s', %s, true" % (method, self.id)
                     return "javascript:submitLink(%s)" % params
+
+                def confirmThenSubmitLink(msg, method):
+                    method = 'gallery.%s.%s' % (method, image.id)
+                    params = "'%s', '%s', %s, true" % (msg, method, self.id)
+                    return "javascript:confirmThenSubmitLink(%s)" % params
                 changeGalleryImage = '\n'.join([
                         u'           <a title="%s"' % _(u'Change Image'),
                         u'              href="#" ',
@@ -241,7 +246,7 @@ class GalleryBlock(Block):
                 if image.index > 0:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Left'),
-                          u'           href="javascript:%s">' % submitLink('moveLeft'),
+                          u'           href="%s">' % submitLink('moveLeft'),
                           u'        <img alt="%s"' % _(u'Go Back'),
                           u'         class="submit"'
                           u'         src="/images/stock-go-back.png"/>'
@@ -255,7 +260,7 @@ class GalleryBlock(Block):
                 if image.index < len(image.parent.images)-1:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Right'),
-                          u'           href="javascript:%s">' % submitLink('moveRight'),
+                          u'           href="%s">' % submitLink('moveRight'),
                           u'        <img alt="%s"' % _(u'Go Forward'),
                           u'         class="submit"'
                           u'         src="/images/stock-go-forward.png"/>',
@@ -270,7 +275,7 @@ class GalleryBlock(Block):
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
-                          u'           href="#" onclick="if(confirm(_(\'Delete this image?\'))){%s}">' % submitLink('delete'),
+                          u'           href="%s">' % (confirmThenSubmitLink(_('Delete this image?'), 'delete')),
                           u'        <img class="submit" alt="%s" ' \
                                                         % _(u'Delete'),
                           u'             src="/images/stock-delete.png"/>',
