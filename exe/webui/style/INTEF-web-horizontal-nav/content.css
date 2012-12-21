@@ -70,7 +70,7 @@ a{text-decoration:none}
 a:hover{text-decoration:underline}
 #nodeTitle{font-size:1.5em;font-weight:bold;margin:0;text-align:left}
 #main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg)}
-#header{height:35px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding:59px 0 0 0;font-size:1.1em;font-weight:bold}
+#header{height:54px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding-bottom:10px;font-size:1.1em;font-weight:bold}
 #header h1{margin:0;font-size:1em}
 #main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
 #main h2{font-size:1.4em}
