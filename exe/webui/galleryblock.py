@@ -270,7 +270,7 @@ class GalleryBlock(Block):
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
-                          u'           href="#" onclick="if(confirm($eXeText(\'confirmDeleteImage\'))){%s}">' % submitLink('delete'),
+                          u'           href="#" onclick="if(confirm(_(\'Delete this image?\'))){%s}">' % submitLink('delete'),
                           u'        <img class="submit" alt="%s" ' \
                                                         % _(u'Delete'),
                           u'             src="/images/stock-delete.png"/>',
