@@ -657,10 +657,18 @@ class Package(Persistable):
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
             if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"content.xsd" ]:
-                outFile = open(resourceDir/fn, "wb")
-                outFile.write(zippedFile.read(fn))
-                outFile.flush()
-                outFile.close()
+                #JR: Hacemos las comprobaciones necesarias por si hay directorios
+                if ("/" in fn):
+                    dir = fn[:fn.index("/")]
+                    Dir = Path(resourceDir/dir)
+                    if not Dir.exists():
+                        Dir.mkdir()
+                Fn = Path(resourceDir/fn)
+                if not Fn.isdir():
+                    outFile = open(resourceDir/fn, "wb")
+                    outFile.write(zippedFile.read(fn))
+                    outFile.flush()
+                    outFile.close()
 
         try:
             validxml = False
