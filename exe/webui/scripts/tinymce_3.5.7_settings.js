@@ -22,6 +22,7 @@ tinyMCE.init({
     height : "450",
 	// The New eXeLearning
 	plugins : "autolink,lists,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,exemath,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,visualblocks,pastecode,inlinepopups,spellchecker",
+    paste_text_sticky : true,    
     paste_text_sticky_default : true,
 	extended_valid_elements : "img[*]", //Required for the exemath plugin (it uses this attribute: exe_math_latex)
 
@@ -34,7 +35,11 @@ tinyMCE.init({
 	theme_advanced_statusbar_location : "bottom",
 	theme_advanced_resizing : true,	
 	
-	// Image & media
+    // Spell check
+    init_instance_callback : function() {
+        tinymce.execCommand('mceSpellCheck', true);
+    },   
+    // Image & media
 	file_browser_callback : "exe_tinymce.chooseImage",
 	media_types: "flash=swf,mp3,mp4,flv;qt=mov,qt,mpg,mpeg;wmp=avi,wmv,wm,asf;rmp=rm,ra,ram",		
 	flash_video_player_url: "../templates/flowPlayer.swf"	
