@@ -56,29 +56,31 @@ class DirTreePage(RenderableResource):
                 pathdir = Path(request.args['node'][0])
                 l = []
                 try:
-                    if sys.platform[:3] == "win":
-                        if pathdir == '/':
-                            for d in get_drives():
-                                l.append({ "text": d, "id": d})
-                        else:
-                            for d in pathdir.dirs():
-                                l.append({ "text": d.name, "id": d.abspath() })
+                    if pathdir == '/' and sys.platform[:3] == "win":
+                        for d in get_drives():
+                            l.append({ "text": d, "id": d + '\\'})
                     else:
                         for d in pathdir.dirs():
-                            if not d.name.startswith('.'):
+                            if not d.name.startswith('.') or sys.platform[:3] == "win":
                                 l.append({ "text": d.name, "id": d.abspath() })
                 except:
                     pass
             elif request.args['sendWhat'][0] == 'both':
                 pathdir = Path(unquote(request.args['dir'][0]))
                 items = []
-                if sys.platform[:3] == "win":
-                    if pathdir == '/':
-                        for d in get_drives():
-                            items.append({ "name": d, "size": 0, "type": 'directory', "modified": 0})
+                if pathdir == '/' and sys.platform[:3] == "win":
+                    for d in get_drives():
+                        items.append({ "name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
+                else:
+                    parent = pathdir.parent
+                    if (parent == pathdir):
+                        realname = '/'
                     else:
-                        try:
-                            for d in pathdir.listdir():
+                        realname = parent.abspath()
+                    items.append({ "name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode })
+                    try:
+                        for d in pathdir.listdir():
+                            if not d.name.startswith('.') or sys.platform[:3] == "win":
                                 if d.isdir():
                                     pathtype = "directory"
                                 elif d.isfile():
@@ -87,24 +89,6 @@ class DirTreePage(RenderableResource):
                                     pathtype = "link"
                                 else:
                                     pathtype = "None"
-                                if not d.name.startswith('.'):
-                                    items.append({ "name": d.name, "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
-                        except:
-                            pass
-                else:
-                    parent = pathdir.parent
-                    items.append({ "name": '..', "realname": parent.abspath(), "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode })
-                    try:
-                        for d in pathdir.listdir():
-                            if d.isdir():
-                                pathtype = "directory"
-                            elif d.isfile():
-                                pathtype = repr(mimetypes.guess_type(d.name, False)[0])
-                            elif d.islink():
-                                pathtype = "link"
-                            else:
-                                pathtype = "None"
-                            if not d.name.startswith('.'):
                                 items.append({ "name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
                     except:
                         pass
@@ -114,19 +98,27 @@ class DirTreePage(RenderableResource):
             query = request.args['query'][0]
             pathdir = Path(unquote(request.args['dir'][0]))
             items = []
-            parent = pathdir.parent
-            items.append({ "name": '..', "realname": parent.abspath(), "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode })
-            for d in pathdir.listdir():
-                if d.isdir():
-                    pathtype = "directory"
-                elif d.isfile():
-                    pathtype = repr(mimetypes.guess_type(d.name, False)[0])
-                elif d.islink():
-                    pathtype = "link"
+            if pathdir == '/' and sys.platform[:3] == "win":
+                for d in get_drives():
+                    items.append({ "name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
+            else:
+                parent = pathdir.parent
+                if (parent == pathdir):
+                    realname = '/'
                 else:
-                    pathtype = "None"
-                if d.name.startswith(query):
-                    items.append({ "name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
+                    realname = parent.abspath()
+                items.append({ "name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode })
+                for d in pathdir.listdir():
+                    if d.isdir():
+                        pathtype = "directory"
+                    elif d.isfile():
+                        pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                    elif d.islink():
+                        pathtype = "link"
+                    else:
+                        pathtype = "None"
+                    if d.name.startswith(query):
+                        items.append({ "name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
             l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         return ""

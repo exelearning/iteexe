@@ -49,7 +49,12 @@ Ext.define('eXe.controller.filepicker.Directory', {
             sep = '_RRR_', path;
 
         this.getPlaceField().setValue("");
-        path = '_RRR_/' + selection.replace(/\//g, sep);
+        if (selection[0] == "/")
+	        path = sep + '/' + selection.replace(/\//g, sep);
+	    else {
+        	path = sep + '/' + sep + selection.replace(/\\/g, sep);
+			path = path.replace(/_RRR_$/, '');	    	
+	    }
         if (selection == "/")
             dirtree.getSelectionModel().select(dirtree.getRootNode());
         else {
