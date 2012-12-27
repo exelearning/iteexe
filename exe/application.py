@@ -40,6 +40,7 @@ from exe.engine.package      import Package
 from exe.engine              import version
 from exe                     import globals
 import logging
+from twisted.internet import reactor
 
 log = logging.getLogger(__name__)
 
@@ -98,7 +99,7 @@ class Application:
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
-            self.launch()
+            reactor.callWhenRunning(self.launch)
             log.info('serving')
             self.serve()
             log.info('done serving')
