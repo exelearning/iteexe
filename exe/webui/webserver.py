@@ -43,6 +43,7 @@ from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.aboutpage           import AboutPage 
+from exe.webui.quitpage            import QuitPage
 from exe.webui.renderable          import File
 from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
@@ -72,6 +73,7 @@ class WebServer:
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree     = DirTreePage(self.root)
         self.about       = AboutPage(self.root)
+        self.quit        = QuitPage(self.root)
 
 
     def find_port(self):

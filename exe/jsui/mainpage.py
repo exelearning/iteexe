@@ -713,10 +713,10 @@ class MainPage(RenderableLivePage):
         (parent_temp_print_dir, dir_warnings) = \
                 self.ClearParentTempPrintDirs(client, log_dir_warnings)
 
-        client.close()
+        client.close("window.location = \"quit\";")
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
-            reactor.stop()
+            reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
 
