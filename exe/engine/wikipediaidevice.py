@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -109,6 +110,9 @@ within Wikipedia.""")
         # BeautifulSoup is faster this way too.
         soup = BeautifulSoup(page, False)
         content = soup.first('div', {'id': "content"})
+        #Fix bug #1359: El estilo ITE no respeta ancho de página al exportar
+        #a páginas web si se usa iDevice wikipedia
+        content['id'] = "wikipedia-content"
 
         # remove the wiktionary, wikimedia commons, and categories boxes
         #  and the protected icon and the needs citations box
