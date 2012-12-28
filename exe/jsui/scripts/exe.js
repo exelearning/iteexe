@@ -125,7 +125,7 @@ Ext.application({
                         " Please use the menu File->Quit if you really want to exit the application.");
         };
 
-        if (Ext.isGecko)
+        if (Ext.isGecko || Ext.isSafari)
         	window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
         
         var cmp1 = Ext.create('eXe.view.ui.eXeViewport', {

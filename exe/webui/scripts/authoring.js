@@ -24,7 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor];
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -519,6 +519,11 @@ function gotoAnchor() {
 		location.hash = outline.hash;
 		outline.hash = null;
 	}
+}
+
+function preventEscKey() {
+        if (parent.Ext.isGecko || parent.Ext.isSafari)
+            window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
 }
 
 /* *********************************** */
