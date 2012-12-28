@@ -434,17 +434,17 @@ data is entered into this field."""))
         JR: Funcion que muestra la lista de idevices para mostrarlos y ocultarlos
         """
         html = "<div id=\"editorWorkspace\">\n"
-        html += "<br/><br/><strong>%s</strong>\n" % _("Check iDevices do not want to display:")
+        html += "<br/><br/><strong>%s</strong>\n" % _("Check iDevices you want to display:")
         html += "<ul style=\"list-style:none;\">\n"
         idevices_sort = sorted(idevices, key=lambda idevice: idevice.title)
         for idevice in idevices_sort:
             html += "<li>\n"
             html += "<input type=checkbox name=\"%s\"" % idevice.title
             idevices_show = self.ideviceStore.generic + self.ideviceStore.extended
-            checked = True
+            checked = False
             for i in idevices_show:
                 if (i.title == idevice.title):
-                    checked = False
+                    checked = True
             if checked:
                 html += " checked=\"checked\" "
             html += ">%s</input>\n" % idevice.title

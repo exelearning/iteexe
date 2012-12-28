@@ -317,7 +317,7 @@ class EditorPage(RenderableResource):
 
     def __saveSHiDevices(self, request):
         """
-        JR: Esta funcion procesa los iDevices que no se quieren mostrar
+        JR: Esta funcion procesa los iDevices que se quieren mostrar
         """
         idt_checked = []
         for i in request.args.keys():
@@ -325,9 +325,9 @@ class EditorPage(RenderableResource):
                 idt_checked.append(i)
         for i in self.ideviceStore.getFactoryIdevices():
             if i.title in idt_checked:
-                self.ideviceStore.delIdevice(i)
-            else:
                 self.ideviceStore.addIdevice(i)
+            else:
+                self.ideviceStore.delIdevice(i)
         """for i in request.args.keys():
             if (request.args[i] == ['on']):
                 lista_idevices = self.ideviceStore.getIdevices()
