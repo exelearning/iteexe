@@ -267,6 +267,7 @@ class IdeviceStore:
         from exe.engine.appletidevice import AppletIdevice
         from exe.engine.flashmovieidevice import FlashMovieIdevice
         from exe.engine.quiztestidevice import QuizTestIdevice
+        from exe.engine.listaidevice import ListaIdevice
         # JR
         # Necesarios para la FPD
         from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
@@ -320,6 +321,7 @@ class IdeviceStore:
         #JR: Eliminamos este iDevices de los extendidos
         #factoryExtendedIdevices.append(FlashMovieIdevice())
         factoryExtendedIdevices.append(QuizTestIdevice())
+        factoryExtendedIdevices.append(ListaIdevice())
         # JR
         # iDevices para la FPD
         factoryExtendedIdevices.append(ReflectionfpdIdevice())
