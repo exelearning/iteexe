@@ -1195,13 +1195,6 @@ var exe_idevices = {
                 nH = nH.replace(']','');
                 lis[i].innerHTML = nH;
             }
-            if (typeof(imageGalleryScriptLoaded)=='undefined') {
-                var script = document.createElement("script")
-                script.type = "text/javascript";
-                script.src = "exe_lightbox.js";
-                document.getElementsByTagName("head")[0].appendChild(script);
-                imageGalleryScriptLoaded=true;
-            }
         }
     }
 }
