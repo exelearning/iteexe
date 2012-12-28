@@ -24,7 +24,7 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects];
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -493,23 +493,32 @@ function showObjectTags() {
         authoringPluginObjects[i].style.visibility = "visible";
 }
 
-var disableAnchorsIneXe = function() {
-    var as = document.getElementsByTagName("A");
-    var i = as.length;
-    while (i--) {
-        if (as[i].href) {
-            if (as[i].href.indexOf("exe-node:")==0) {
-                as[i].onclick = function(){
-                    return false;
-                }
-            }
-        }
-    }
+function enableAnchors() {
+	var exenodes = parent.Ext.DomQuery.select('a[href^=exe-node]', document);
+
+	for (var i=0; i < exenodes.length; i++)
+        exenodes[i].onclick = function(event) {
+            var outline = parent.eXe.app.getController('Outline'),
+                outline_tree = outline.getOutlineTreePanel(),
+                node_anchor = event.target.href.split("#"),
+                path = node_anchor[0].replace(/exe-node/, ':Root'),
+                selected;
+            outline_tree.selectPath(unescape(path), 'text', ':');
+            selected = outline_tree.getSelectionModel().getSelection()[0];
+            outline.onNodeClick(null, selected);
+            if (node_anchor[1] != "auto_top")
+                outline.hash = node_anchor[1];
+            return false;
+        };
 }
-if (document.addEventListener){
-	window.addEventListener('load',disableAnchorsIneXe,false);
-} else {
-	window.attachEvent('onload',disableAnchorsIneXe);
+
+function gotoAnchor() {
+	var outline = parent.eXe.app.getController('Outline');
+
+	if (outline.hash) {
+		location.hash = outline.hash;
+		outline.hash = null;
+	}
 }
 
 /* *********************************** */
