@@ -364,11 +364,11 @@ class IdeviceStore:
             for idevice in self.__getIdevicesFPD():
                 self.delIdevice(idevice)
 
-
-        # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:
-            idevice.id = self.getNewIdeviceId()
-  
+            for factoryiDevice in self.factoryiDevices:
+                if factoryiDevice.title == idevice.title:
+                    idevice.id = factoryiDevice.id
+                    break
 
     def __loadUserExtended(self):
         """
@@ -411,10 +411,11 @@ class IdeviceStore:
             self.generic = self.__createGeneric()
             self.factoryiDevices += self.generic
 
-
-        # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.generic:
-            idevice.id = self.getNewIdeviceId()
+            for factoryiDevice in self.factoryiDevices:
+                if factoryiDevice.title == idevice.title:
+                    idevice.id = factoryiDevice.id
+                    break
 
     def __upgradeGeneric(self):
         """

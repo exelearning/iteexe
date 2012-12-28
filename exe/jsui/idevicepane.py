@@ -49,7 +49,9 @@ class IdevicePane(Renderable, Resource):
         self.prototypes = {}
         self.ideviceStore.register(self)
         for prototype in self.ideviceStore.getIdevices():
-            log.debug("add "+prototype.title)
+            log.debug("add " + prototype.title)
+            if prototype.id in self.prototypes:
+                raise Exception("duplicated device id %s" % prototype.id)
             self.prototypes[prototype.id] = prototype
 
 
@@ -74,6 +76,8 @@ class IdevicePane(Renderable, Resource):
         Adds an iDevice to the pane
         """
         log.debug("addIdevice id="+idevice.id+", title="+idevice.title)
+        if idevice.id in self.prototypes:
+                raise Exception("duplicated device id %s" % idevice.id)
         self.prototypes[idevice.id] = idevice
         self.client.sendScript('eXe.app.getController("Idevice").reload()', filter_func=allSessionClients)
 
