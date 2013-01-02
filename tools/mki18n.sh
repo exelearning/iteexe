@@ -23,6 +23,7 @@
 
 echo -e " *** Extracting messages from python exe files and jsui javascript files ***\n"
 pybabel extract --keyword=x_ --project "eXe Learning" --version "1.04.1" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ -N
 echo -e "\n\n\n *** Compiling *.mo files ***\n"

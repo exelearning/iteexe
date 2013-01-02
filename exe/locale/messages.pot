@@ -4,7 +4,6 @@
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning 1.04.1\n"
