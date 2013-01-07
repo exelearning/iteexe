@@ -688,12 +688,14 @@ class MainPage(RenderableLivePage):
             self.exportWebZip(client, filename, stylesDir)
         elif exportType == 'textFile':
             self.exportText(client, filename)
-        elif exportType == "scorm":
+        elif exportType == 'ipod':
+            self.exportIpod(client, filename)
+        elif exportType == "scorm1.2":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "scorm1.2")
+            self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
         elif exportType == "scorm2004":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "scorm2004")
+            self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
@@ -961,7 +963,7 @@ class MainPage(RenderableLivePage):
         client.alert(_(u'Exported to %s') % filename)
 
 
-    def exportScorm(self, client, filename, stylesDir, scormType):
+    def exportScorm(self, client, filename, stylesDir, scormType, metadataType):
         """
         Exports this package to a scorm package file
         """
@@ -976,7 +978,7 @@ class MainPage(RenderableLivePage):
                     client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
-            scormExport = ScormExport(self.config, stylesDir, filename, scormType)
+            scormExport = ScormExport(self.config, stylesDir, filename, scormType, metadataType='DC')
             scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
