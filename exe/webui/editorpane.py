@@ -437,10 +437,10 @@ data is entered into this field."""))
         html += "<br/><br/><strong>%s</strong>\n" % _("Check iDevices you want to display:")
         html += "<ul style=\"list-style:none;\">\n"
         idevices_sort = sorted(idevices, key=lambda idevice: idevice.title)
+        idevices_show = self.ideviceStore.generic + self.ideviceStore.extended
         for idevice in idevices_sort:
             html += "<li>\n"
             html += "<input type=checkbox name=\"%s\"" % idevice.title
-            idevices_show = self.ideviceStore.generic + self.ideviceStore.extended
             checked = False
             for i in idevices_show:
                 if (i.title == idevice.title):
