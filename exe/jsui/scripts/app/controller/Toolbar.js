@@ -29,6 +29,18 @@ Ext.define('eXe.controller.Toolbar', {
     ],    
     init: function() {
         this.control({
+            '#file': {
+                click: this.showMenu
+            },
+            '#tools': {
+                click: this.showMenu
+            },
+            '#styles_button': {
+                click: this.showMenu
+            },
+            '#help': {
+                click: this.showMenu
+            },
         	'#file_new': {
         		click: this.fileNew
         	},
@@ -191,7 +203,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     key: Ext.EventObject.F,
 			     alt: true,
 			     handler: function() {
-			          Ext.ComponentQuery.query('#file')[0].showMenu();
+			          this.showMenu(Ext.ComponentQuery.query('#file')[0]);
 			     },
 			     scope: this,
 			     defaultEventAction: "stopEvent"
@@ -200,7 +212,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     key: Ext.EventObject.T,
 			     alt: true,
 			     handler: function() {
-			          Ext.ComponentQuery.query('#tools')[0].showMenu();
+			          this.showMenu(Ext.ComponentQuery.query('#tools')[0]);
 			     },
 			     scope: this,
 			     defaultEventAction: "stopEvent"
@@ -209,7 +221,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     key: Ext.EventObject.S,
 			     alt: true,
 			     handler: function() {
-			          Ext.ComponentQuery.query('#styles_button')[0].showMenu();
+			          this.showMenu(Ext.ComponentQuery.query('#styles_button')[0]);
 			     },
 			     scope: this,
 			     defaultEventAction: "stopEvent"
@@ -218,7 +230,7 @@ Ext.define('eXe.controller.Toolbar', {
 			     key: Ext.EventObject.H,
 			     alt: true,
 			     handler: function() {
-			          Ext.ComponentQuery.query('#help')[0].showMenu();
+			          this.showMenu(Ext.ComponentQuery.query('#help')[0]);
 			     },
 			     scope: this,
 			     defaultEventAction: "stopEvent"
@@ -238,6 +250,11 @@ Ext.define('eXe.controller.Toolbar', {
            var keymap = new Ext.util.KeyMap(body, keymap_config);
         }, this);
         var keymap = new Ext.util.KeyMap(Ext.getBody(), keymap_config);
+    },
+
+    showMenu: function(button) {
+		button.showMenu();
+        button.menu.focus();
     },
 
     fileNewWindow: function() {
@@ -645,7 +662,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
 	
     stylesClick: function(item) {
-		for (i = item.parentMenu.items.length-1; i >= 0; i--) {
+		for (var i = item.parentMenu.items.length-1; i >= 0; i--) {
 			if (item.parentMenu.items.getAt(i) != item)
 				item.parentMenu.items.getAt(i).setChecked(false);
 		}
