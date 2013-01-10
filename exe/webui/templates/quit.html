@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:nevow="http://nevow.com/ns/nevow/0.1">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>eXe Closed</title>
+<title nevow:render="title">eXe Closed</title>
 <link rel="shortcut icon" href="images/eXe_icon.ico" type="image/x-icon" />
 <style type="text/css">
 html{height:100%}
@@ -18,9 +18,9 @@ p{margin:0}
 <body>
 	<div id="exe">
 	  <div id="closed">
-        <h1>eXe Closed</h1>
-        <p class="a">eXe has finished running in this window.</p>
-        <p class="b">You can close it safely.</p>		
+        <h1 nevow:render="title">eXe Closed</h1>
+        <p class="a" nevow:render="msg1">eXe has finished running in this window.</p>
+        <p class="b" nevow:render="msg2">You can close it safely.</p>		
 	  </div>
 	</div>    
 </body>
