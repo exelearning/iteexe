@@ -111,6 +111,8 @@ class SinglePage(Page):
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
+        if common.hasGalleryIdevice(self.node):
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         if for_print:
             # include extra print-script for onload bit 

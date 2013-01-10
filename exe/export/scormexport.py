@@ -361,6 +361,8 @@ class ScormPage(Page):
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
+        if common.hasGalleryIdevice(self.node):
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         #html += u"</head>\n"
         if self.scormType == 'commoncartridge':
