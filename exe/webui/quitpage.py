@@ -39,4 +39,15 @@ class QuitPage(Renderable, rend.Page):
         Renderable.__init__(self, parent)
         rend.Page.__init__(self)
 
+    def render_title(self, ctx, data):
+        ctx.tag.clear()
+        return ctx.tag()[_("eXe Closed")]
+
+    def render_msg1(self, ctx, data):
+        ctx.tag.clear()
+        return ctx.tag()[_("eXe has finished running in this window.")]
+
+    def render_msg2(self, ctx, data):
+        ctx.tag.clear()
+        return ctx.tag()[_("You can close it safely.")]
 # ===========================================================================
