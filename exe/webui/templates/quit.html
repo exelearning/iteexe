@@ -1,10 +1,27 @@
-
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:nevow="http://nevow.com/ns/nevow/0.1">
-  <head>
-    <title>eXe Closed</title>	<link rel="shortcut icon" type="image/" href="images/eXe_icon.ico" />
-  </head>
-  <body>
-	<h1>eXe has finished running in this window. You can close it safely</h1>
-  </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>eXe Closed</title>
+<link rel="shortcut icon" href="images/eXe_icon.ico" type="image/x-icon" />
+<style type="text/css">
+html{height:100%}
+body{font:12px/1.5 Tahoma,Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;color:#555;background:#fff;text-align:center;height:100%;font-weight:bold}
+h1{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+p{margin:0}
+#exe{width:720px;height:420px;margin:10px auto;position:absolute;margin:-210px 0 0 -360px;left:50%;top:50%}
+#closed{width:720px;height: 320px;position:absolute;top:10px;left:10px;padding:10px 0 10px 0;overflow:auto;background:url(../images/exit.png) no-repeat 50% 200px}
+.a{background:url(../images/exe_logo.png) no-repeat 50% 0;padding-top:100px}
+.b{position:absolute;bottom:50px;display:block;width:100%}
+</style>
+</head>
+<body>
+	<div id="exe">
+	  <div id="closed">
+        <h1>eXe Closed</h1>
+        <p class="a">eXe has finished running in this window.</p>
+        <p class="b">You can close it safely.</p>		
+	  </div>
+	</div>    
+</body>
 </html>
-
