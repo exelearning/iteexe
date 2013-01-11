@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (1.04.1)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-12 11:56+0100\n"
-"PO-Revision-Date: 2012-11-09 22:39+0100\n"
+"PO-Revision-Date: 2013-01-11 16:47+0100\n"
 "Last-Translator: José Miguel Andonegi <jmandonegi@ulhi.net>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
 "Language: eu\n"
@@ -55,10 +55,10 @@ msgid ""
 "The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
-"Appleterako emandako artxibo guztiak \n"
-"( .txt artxiboa izan ezik) aldi berean gehitzeko, erabili gehitzeko eta "
+"Appleterako emandako fitxategia guztiak \n"
+"( .txt fitxategia izan ezik) aldi berean gehitzeko, erabili gehitzeko eta "
 "kargatzeko botoiak.\n"
-"Artxiboak kargatuta daudenean, azpiprogramaren kode eremuaren azpian "
+"Fitxategiak kargatuta daudenean, azpiprogramaren kode eremuaren azpian "
 "agertuko dira."
 
 #: exe/engine/appletidevice.py:78
@@ -68,8 +68,8 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
-"\"Bilatu .txt artxiboa (applet artxiboan) \n"
-"eta ireki. Kopiatu artxiboaren edukia <ctrl A, ctrl C> appletaren kode \n"
+"\"Bilatu .txt fitxategia (applet fitxategia) \n"
+"eta ireki. Kopiatu fitxategia edukia <ctrl A, ctrl C> appletaren kode \n"
 "eremuan."
 
 #: exe/engine/appletidevice.py:81
@@ -82,14 +82,15 @@ msgid ""
 msgstr ""
 "<p>Gehitzen ari zaren appleta zerrenda honetako programa \n"
 "batekin sortuta badago, mesedez, aukeratu, eta ondoren gehitu \n"
-"zure programak sortutako datua/applet artxiboa. </p>\n"
+"zure programak sortutako datua/applet fitxategia. </p>\n"
 "<p>Adib. Geogebra applet-en kasuan, aukeratu geogebra eta ondoren \n"
-"gehitu Geogebran sortu duzun .ggb artxiboa.</p>"
+"gehitu Geogebran sortu duzun .ggb fitxategia.</p>"
 
+# parent node: guraso nodoa?
 #: exe/engine/appletidevice.py:186
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "%s artxiboak ez du ahaide nodorik"
+msgstr "%s fitxategiak ez du guraso nodorik"
 
 #: exe/engine/appletidevice.py:188 exe/engine/attachmentidevice.py:106
 #, python-format
@@ -143,11 +144,11 @@ msgid ""
 msgstr ""
 "<p>Gehitzen ari zaren appleta zerrenda honetako programa \n"
 "batekin sortuta badago, mesedez, aukeratu, eta ondoren gehitu \n"
-"zure programak sortutako datua/applet artxiboa."
+"zure programak sortutako datua/applet fitxategia."
 
 #: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
 msgid "Attachment"
-msgstr "Atxikitako artxiboa"
+msgstr "Atxikitako fitxategia"
 
 #: exe/engine/attachmentidevice.py:45
 msgid ""
@@ -157,12 +158,12 @@ msgid ""
 "labeled to indicate what the attachment is and how large the file is. "
 "Learners can click on the attachment link and can download the attachment."
 msgstr ""
-"Atxikipenen iDevice hau zure .elp edukian aurretik dauden artxiboak "
+"Atxikipenen iDevice hau zure .elp edukian aurretik dauden fitxategiak "
 "atxikitzeko erabiltzen da. Adibidez, posible da ikasleei erakutsi nahi "
-"diezun PDF artxibo bat edo PPT aurkezpen bat izatea. Horiek atxiki egin "
+"diezun PDF fitxategi bat edo PPT aurkezpen bat izatea. Horiek atxiki egin "
 "daitezke, eta etiketak jar dakizkieke, zer diren eta zer tamaina duten "
 "adierazteko. Ikasleek atxikipenaren esteka klikatuz deskargatu ahal izango "
-"dute artxiboa."
+"dute fitxategia."
 
 #: exe/engine/attachmentidevice.py:57
 msgid ""
@@ -170,7 +171,7 @@ msgid ""
 "want to provide instructions on what you require the learner to do once the "
 "file is downloaded or how the material should be used."
 msgstr ""
-"Adierazi deskargatutako artxiboarekin lotu nahi duzun testua. Artxiboa "
+"Adierazi deskargatutako fitxategiarekin lotu nahi duzun testua. Fitxategia "
 "deskargatu ondoren ikasleak zer egin behar duen edo materiala nola erabili "
 "behar duen azaldu dezake."
 
@@ -183,8 +184,8 @@ msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to attach "
 "and select it."
 msgstr ""
-"Klikatu <strong>Aukeratu artxibo bat</strong>, bilatu atxiki nahi duzun "
-"artxiboa, eta aukeratu."
+"Klikatu <strong>Aukeratu fitxategi bat</strong>, bilatu atxiki nahi duzun "
+"fitxategia, eta aukeratu."
 
 #: exe/engine/attachmentidevice.py:71
 msgid ""
@@ -194,7 +195,7 @@ msgid ""
 "how long it would take to download this attachment.</p><p>For example: "
 "<code>Sales Forecast.doc (500kb)</code></p>"
 msgstr ""
-"<p>Esleitu etiketa bat atxikitako artxiboari. Lagungarria da zer artxibo "
+"<p>Esleitu etiketa bat atxikitako fitxategiari. Lagungarria da zer fitxategi "
 "mota den adierazteko (pdf, ppt, etab.)</p><p>Komenigarria da neurria "
 "zehaztea ere, webgune batera esportatzean ikasleek deskargatzeko zenbat "
 "denbora beharko duten jakin dezaten.</p><p>Adibidez:</p><code>Salmenten "
@@ -203,7 +204,7 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:104
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "%s atxikitako artxiboak ez du ahaide nodorik"
+msgstr "%s atxikitako fitxategiak ez du guraso nodorik"
 
 #: exe/engine/casestudyidevice.py:63
 #: exe/engine/ejercicioresueltofpdidevice.py:63
@@ -770,7 +771,7 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
-"Eman izen bat MP3 artxiboari. \n"
+"Eman izen bat MP3 fitxategiari. \n"
 "Izen hori irakurgailuaren izenburuan ere agertuko da."
 
 #: exe/engine/field.py:3017 exe/engine/field.py:3251
@@ -838,7 +839,7 @@ msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
-".swf (Flash Objects) luzapena duten artxiboak bakarrik aukeratu \n"
+".swf (Flash Objects) luzapena duten fitxategiak bakarrik aukeratu \n"
 "iDevice honetarako."
 
 #: exe/engine/field.py:3425 exe/engine/field.py:3489
@@ -846,7 +847,7 @@ msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
-".flv (Flash Video Files) luzapena duten artxiboak bakarrik aukeratu \n"
+".flv (Flash Video Files) luzapena duten fitxategiak bakarrik aukeratu \n"
 "iDevice honetarako."
 
 #: exe/engine/field.py:3501
@@ -971,7 +972,7 @@ msgid ""
 "the text you wish to associate with the file."
 msgstr ""
 "Idatzi \n"
-"artxiboarekin lotu nahi duzun testua."
+"fitxategiarekin lotu nahi duzun testua."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
@@ -1002,16 +1003,16 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
-"Testudun flash iDevice-ak ahalbidetzen dizu flash artxibo bati \n"
+"Testudun flash iDevice-ak ahalbidetzen dizu flash fitxategi bati \n"
 "informazio osagarria gehitzen- Erabilgarria izan daiteke \n"
-"ikasleei artxiboaren inguruko informazio osagarria emateko."
+"ikasleei fitxategiaren inguruko informazio osagarria emateko."
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
-"Adierazi flash artxiboarekin lotu nahi duzun\n"
+"Adierazi flash fitxategiarekin lotu nahi duzun\n"
 "                                     testua."
 
 #: exe/engine/flashwithtextidevice.py:58
@@ -1021,7 +1022,7 @@ msgid ""
 "                                  have just inserted."
 msgstr ""
 "Eman izen bat gehitu berri duzun\n"
-"flash artxiboari."
+"flash fitxategiari."
 
 #: exe/engine/flashwithtextidevice.py:60
 #: exe/engine/flashwithtextidevice.py:120
@@ -1030,7 +1031,7 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
-"Adierazi flash artxiboaren neurria (pixeletan) \n"
+"Adierazi flash fitxategiaren neurria (pixeletan) \n"
 "eta lerrokatzea zehaztu. \n"
 "Luzera eta zabalera proportzionalki aldatuko dira."
 
@@ -1116,9 +1117,9 @@ msgid ""
 "appear below where you will be able to label it. It's always good practice "
 "to put the file size in the label."
 msgstr ""
-"Klikatu irudiak gehitzeko botoia irudi artxibo bat aukeratzeko. Irudia "
+"Klikatu irudiak gehitzeko botoia irudi fitxategi bat aukeratzeko. Irudia "
 "beheko aldean agertuko da eta etiketak jarri ahalko dizkiozu. Lagungarria da "
-"etiketan artxiboaren neurria adieraztea."
+"etiketan fitxategiaren neurria adieraztea."
 
 #: exe/engine/galleryidevice.py:711 exe/export/ipodpage.py:110
 #: exe/export/scormexport.py:402 exe/export/websitepage.py:247
@@ -1372,7 +1373,7 @@ msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
-"Adierazi artxiboarekin lotu nahi duzun  \n"
+"Adierazi fitxategiarekin lotu nahi duzun  \n"
 "testua."
 
 #: exe/engine/imagemagnifieridevice.py:60
@@ -1491,12 +1492,10 @@ msgstr ""
 "irudiari."
 
 #: exe/engine/listaidevice.py:50
-#, fuzzy
 msgid "DropDown Activity"
-msgstr "Actividad de discusión:"
+msgstr "Jarduera zabalgarria"
 
 #: exe/engine/listaidevice.py:52
-#, fuzzy
 msgid ""
 "<p>DropDown exercises are texts or sentences where students must select the "
 "correct word. They are often used for the following purposes:</p><ol><li>To "
@@ -1505,10 +1504,10 @@ msgid ""
 "comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word "
 "formation and/or grammatical competence. </li></ol>"
 msgstr ""
-"<p>Hutsuneak betetzeko ariketetan, ikasleek testuan falta diren hitzak edo "
-"esaldiak idatzi beharko dituzte. Ariketa horiek hainbat helburu izaten "
-"dituzte:</p><ol><li>Ikastaroko oinarrizko kontzeptuak ezagutzen ote diren "
-"egiaztatzea (aurrekontrol, trebakuntza ariketa edo froga gehigarri gisa).</"
+"<p>Ariketa zabalgarrietan, ikasleek hitz egokia aukeratu behar dute testu "
+"edo esaldi batean. Ariketa horiek hainbat helburu izaten dituzte:</"
+"p><ol><li>Ikastaroko oinarrizko kontzeptuak ezagutzen ote diren egiaztatzea "
+"(aurrekontrol, trebakuntza ariketa edo froga gehigarri gisa).</"
 "li><li>Irakurgaia zenbateraino ulertu den frogatzea.</li><li>Hiztegia "
 "zenbateraino ezagutzen den egiaztatzeko.</li><li>Hitz osaketa/gramatika "
 "ziurtatzeko. </li></ol>"
@@ -1557,12 +1556,12 @@ msgid ""
 "The MP3 iDevice allows you to attach an MP3 media file to your content along "
 "with relevant textuallearning instructions."
 msgstr ""
-"MP3 iDevice-ak edukiari MP3 artxibo bat gehitzeko aukera ematen dizu, "
+"MP3 iDevice-ak edukiari MP3 fitxategi bat gehitzeko aukera ematen dizu, "
 "ikasgai garrantzitsuekin."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "Aukeratu MP3 artxibo bat"
+msgstr "Aukeratu MP3 fitxategi bat"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -1575,11 +1574,11 @@ msgid ""
 "iDevice content displayed.</li></ol>"
 msgstr ""
 "<ol>  <li>Klikatu &lt;Aukeratu MP3 bat&gt; eta bilatu gehitu nahi duzun "
-"artxiboa </li> <li>Klikatu zerrendan eta aukeratu artxiboa non erakutsi nahi "
-"duzun.</li> <li>Nahi izanez gero, idatzi artxiboaren izenburua.</li> "
-"<li>Lotu testu bat MP3 artxiboari.</li> <li>Aukeratu iDevice-a zer estilotan "
-"agertuko den. 'Enfasi pixka bat' aukerak, adibidez, ertza eta ikonoa jartzen "
-"dizkio edukiari.</li></ol>"
+"fitxategia </li> <li>Klikatu zerrendan eta aukeratu fitxategia non erakutsi "
+"nahi duzun.</li> <li>Nahi izanez gero, idatzi fitxategiaren izenburua.</li> "
+"<li>Lotu testu bat MP3 fitxategiari.</li> <li>Aukeratu iDevice-a zer "
+"estilotan agertuko den. 'Enfasi pixka bat' aukerak, adibidez, ertza eta "
+"ikonoa jartzen dizkio edukiari.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
@@ -2227,36 +2226,36 @@ msgstr "Irteera paketea ez da baliagarria '%s'"
 
 #: exe/importers/scanresources.py:180
 msgid "Contents of directory"
-msgstr ""
+msgstr "Direktorioaren edukiak"
 
 #: exe/importers/scanresources.py:194
 #, python-format
 msgid "Analizing directory %d of %d: %s"
-msgstr ""
+msgstr "Direktorioak arakatzen (%d / %d): %s"
 
 #: exe/importers/scanresources.py:255
 #, python-format
 msgid "Calculating relative paths to directory %d of %d: %s"
-msgstr ""
+msgstr "Direktorioaren bide-izen erlatiboak kalkulatzen (%d / %d): %s "
 
 #: exe/importers/scanresources.py:275
 #, python-format
 msgid "Analyzing HTML file labels %d of %d: %s"
-msgstr ""
+msgstr "HTML fitxategien etiketak arakatzen (%d / %d): %s"
 
 #: exe/importers/scanresources.py:342
 #, python-format
 msgid "Exhaustively analyzed file %s %d of %d: %s"
-msgstr ""
+msgstr "%s fitxategia sakonki aztertua (%d / %d): %s"
 
 #: exe/importers/scanresources.py:395
 msgid "Calculating depth of links"
-msgstr ""
+msgstr "Esteken sakontasuna kalkulatzen"
 
 #: exe/importers/scanresources.py:431
 #, python-format
 msgid "Inserting %s"
-msgstr ""
+msgstr "%s sartzen"
 
 #: exe/jsui/mainpage.py:228 exe/jsui/mainpage.py:666 exe/jsui/mainpage.py:799
 msgid "Cannot access directory named "
@@ -2287,12 +2286,12 @@ msgstr "Hurrengoan gordetako paketea: %s"
 #: exe/jsui/mainpage.py:452 exe/jsui/mainpage.py:558
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "%s direktorioaren aurrebista artxibo bat da, eta ezin da ordeztu"
+msgstr "%s direktorioaren aurrebista fitxategi bat da, eta ezin da ordeztu"
 
 #: exe/jsui/mainpage.py:472
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
-msgstr "%s artxibo lokala ez da aurkitu eta ezin da aurreikusi"
+msgstr "%s fitxategi lokala ez da aurkitu eta ezin da aurreikusi"
 
 #: exe/jsui/mainpage.py:600
 #, python-format
@@ -2305,12 +2304,11 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:638
 msgid "Importing HTML..."
-msgstr ""
+msgstr "HTMLa inportatzen"
 
 #: exe/jsui/mainpage.py:641
-#, fuzzy
 msgid "Error importing HTML:\n"
-msgstr "Errorea XLIFF inportatzen: %s"
+msgstr "Errorea HTMLa  inportatzen:\n"
 
 #: exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
 #: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:920
@@ -2343,7 +2341,7 @@ msgstr "Hurrengora ateratako paketea: %s"
 #: exe/jsui/mainpage.py:855 exe/jsui/mainpage.py:897 exe/jsui/mainpage.py:964
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr "%s izeneko beste artxibo bat dago, eta ezin da ordeztu"
+msgstr "%s izeneko beste fitxategi bat dago, eta ezin da ordeztu"
 
 #: exe/jsui/mainpage.py:861 exe/jsui/mainpage.py:903 exe/jsui/mainpage.py:970
 #, python-format
@@ -2376,12 +2374,12 @@ msgstr "%s-era esportatua"
 #: exe/jsui/mainpage.py:1074
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr "%s artxiboa ez dago edo ezin da irakurri."
+msgstr "%s fitxategia ez dago edo ezin da irakurri."
 
 #: exe/jsui/mainpage.py:1078
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
-"Ezin da artxiboa kargatu. Mesedez, bidali artxiboa bugs@exelearning.org "
+"Ezin da fitxategia kargatu. Mesedez, bidali fitxategia bugs@exelearning.org "
 "helbidera"
 
 #: exe/jsui/mainpage.py:1081
@@ -2390,25 +2388,22 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
-"Artxiboaren formatua okerra da:\n"
+"Fitxategiaren formatua okerra da:\n"
 "%s"
 
 #: exe/jsui/mainpage.py:1083
 msgid "Sorry, wrong file format"
-msgstr "Artxiboaren formatua okerra da"
+msgstr "Fitxategiaren formatua okerra da"
 
 #: exe/jsui/propertiespage.py:85
-#, fuzzy
 msgid "Failed to get properties"
-msgstr "Proiektuaren ezaugarriak"
+msgstr "Ez dira ezaugarriak jaso"
 
 #: exe/jsui/propertiespage.py:102
-#, fuzzy
 msgid "Failed to save properties"
-msgstr "Proiektuaren ezaugarriak"
+msgstr "Ez dira ezaugarriak gorde"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:90
-#, fuzzy
 msgid "Settings Saved"
 msgstr "Ezarpenak gordeta"
 
@@ -2425,14 +2420,12 @@ msgstr "Aukeratu irudia"
 #: exe/jsui/scripts/app/controller/MainTab.js:144
 #: exe/jsui/scripts/app/controller/MainTab.js:178
 #: exe/jsui/scripts/app/controller/MainTab.js:206
-#, fuzzy
 msgid "Hide Image"
-msgstr "Gehitu irudia"
+msgstr "Irudia ezkutatu"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:153
-#, fuzzy
 msgid "Image Files"
-msgstr "Irudien bilduma"
+msgstr "Irudiak"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:154
 #: exe/jsui/scripts/app/controller/Toolbar.js:336
@@ -2444,14 +2437,13 @@ msgstr "Irudien bilduma"
 #: exe/jsui/scripts/app/controller/Toolbar.js:554
 #: exe/jsui/scripts/app/controller/Toolbar.js:668
 #: exe/jsui/scripts/app/controller/Toolbar.js:742
-#, fuzzy
 msgid "All Files"
-msgstr "Gehitu artxiboak"
+msgstr "Fitxategi guztiak"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:188
 #: exe/jsui/scripts/app/controller/MainTab.js:213
 msgid "Error"
-msgstr ""
+msgstr "Errorea"
 
 #: exe/jsui/scripts/app/controller/Outline.js:144
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
@@ -2465,24 +2457,23 @@ msgstr "Atera paketea"
 
 #: exe/jsui/scripts/app/controller/Outline.js:200
 msgid "Delete \"{node}\" node and all its children?"
-msgstr ""
+msgstr "Borratu \"{node}\" nodoa eta bere menpeko guztiak?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Confirm"
-msgstr ""
+msgstr "Baieztatu"
 
 #: exe/jsui/scripts/app/controller/Outline.js:224
 msgid "Rename \"{node}\" node"
-msgstr ""
+msgstr "\"{node}\" nodoa berrizendatu"
 
 #: exe/jsui/scripts/app/controller/Outline.js:228
-#, fuzzy
 msgid "Enter the new name:"
-msgstr "Sartu hemen etiketa"
+msgstr "Sartu izen berria:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:257
 msgid "About"
-msgstr ""
+msgstr "Honi buruz"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:290
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
@@ -2490,163 +2481,147 @@ msgid "Preferences"
 msgstr "Lehentasunak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:324
-#, fuzzy
 msgid "Select package to insert"
-msgstr "Aukeratu lizentzia."
+msgstr "Aukeratu txertatuko den paketea"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:329
-#, fuzzy
 msgid "Inserting package: {filename}"
-msgstr "Sartu paketea"
+msgstr "Paketea txertatzen: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:335
 #: exe/jsui/scripts/app/controller/Toolbar.js:356
 #: exe/jsui/scripts/app/controller/Toolbar.js:667
 #: exe/jsui/scripts/app/controller/Toolbar.js:741
-#, fuzzy
 msgid "eXe Package Files"
-msgstr "Proiektuaren ezaugarriak"
+msgstr "eXe fitxategiak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
-#, fuzzy
 msgid "Save extracted package as"
-msgstr "Atera paketea"
+msgstr "Ateratako paketea honela gorde"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:350
-#, fuzzy
 msgid "Extracting package: {filename}"
-msgstr "Atera paketea"
+msgstr "Atera paketea: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:366
 msgid "Select the parent folder for import."
-msgstr ""
+msgstr "Aukeratu karpeta nagusia inportaziorako."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Select the entry point for import."
-msgstr ""
+msgstr "Inportazioaren sarbidea aukeratu."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:391
 msgid "HTML Files"
-msgstr ""
+msgstr "HTML fitxategiak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:406
 msgid "Waiting progress..."
-msgstr ""
+msgstr "Itxarotearen aurreratzea... (aurrerapenaren egoera?)"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:414
-#, fuzzy
 msgid "Cancel Import?"
-msgstr "Ezeztatu"
+msgstr "Inportazioa bertan behera utzi?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:415
 msgid "There is an ongoing import. Do you want to cancel?"
-msgstr ""
+msgstr "Inportazio bat martxan dago. Deuseztatu nahi duzu?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:438
-#, fuzzy
 msgid "Select Xliff file to import"
-msgstr "Aukeratu artxibo bat"
+msgstr "Aukeratu XLIFF fitxategia inportatzeko"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:448
-#, fuzzy
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF inportazioaren aukerak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:456
 #: exe/jsui/scripts/app/controller/Toolbar.js:483
 msgid "XLIFF Files"
-msgstr ""
+msgstr "XLIFF fitxategiak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:465
-#, fuzzy
 msgid "Export to Xliff as"
-msgstr "%s-era esportatua"
+msgstr "XLIFF-era honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
-#, fuzzy
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF esportazioaren aukerak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:498
 msgid "Select the parent folder for export."
-msgstr ""
+msgstr "Esportazioaren karpeta "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:515
 msgid "Export text package as"
-msgstr ""
+msgstr "Testu paketea honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:524
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
-#, fuzzy
 msgid "Text File"
-msgstr "Testuaren lerroa"
+msgstr "Testu fitxategia"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "Export SCORM package as"
-msgstr ""
+msgstr "SCORM paketea honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:534
-#, fuzzy
 msgid "Export IMS package as"
-msgstr "Atera paketea"
+msgstr "IMS paketea honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:536
 msgid "Export Website package as"
-msgstr ""
+msgstr "Webgune paketea honela esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:538
 msgid "Export Common Cartridge as"
-msgstr ""
+msgstr "Common Cartridge-a honela esportatu (Common Cartridge-a)"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:540
 msgid "INVALID VALUE PASSED TO exportPackage"
-msgstr ""
+msgstr "exportPackage-ari BALIO OKERRA EMAN ZAIO"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "SCORM/IMS/ZipFile"
-msgstr ""
+msgstr "SCORM/IMS/Zip fitxategia"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:640
-#, fuzzy
 msgid "Loading package..."
-msgstr "Sarrera paketea ez da baliagarria"
+msgstr "Paketea kargatzen..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:656
-#, fuzzy
 msgid "Open File"
-msgstr "Artxibo konprimitua"
+msgstr "Fitxategia ireki"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:661
 msgid "Loading package: {filename}"
-msgstr ""
+msgstr "Paketea kargatzen: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:680
 msgid "Save Package first?"
-msgstr ""
+msgstr "Paketea gorde?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid ""
 "The current package has been modified and not yet saved. Would you like to "
 "save it?"
-msgstr ""
+msgstr "Paketea aldatu da eta oraindik ez da gorde. Gorde nahi duzu?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:705
 msgid "Saving package to: {filename}"
-msgstr ""
+msgstr "Paketea hemen gordetzen: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:721
-#, fuzzy
 msgid "Select a File"
-msgstr "Aukeratu artxibo bat"
+msgstr "Aukeratu fitxategi bat"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:727
-#, fuzzy
 msgid "Saving package..."
-msgstr "Sartu paketea"
+msgstr "Paketea gordetzen..."
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:34
 msgid "Tree"
-msgstr ""
+msgstr "Zuhaitza"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:46
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:301
@@ -2658,17 +2633,16 @@ msgstr "Izena"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:68
 msgid "Size"
-msgstr ""
+msgstr "Tamaina"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:91
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:105
-#, fuzzy
 msgid "Type"
-msgstr "Mota:"
+msgstr "Mota"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:96
 msgid "Modified"
-msgstr ""
+msgstr "Aldatua"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:256
@@ -2677,7 +2651,7 @@ msgstr "Gorde"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:94
 msgid "Place"
-msgstr ""
+msgstr "Lekua"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:34
 msgid "Dublin Core Metadata"
@@ -2696,38 +2670,31 @@ msgid "The name given to the resource."
 msgstr "Baliabideari emandako izena."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:47
-#, fuzzy
 msgid "Creator"
-msgstr "Sortzailea:"
+msgstr "Sortzailea"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:48
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr "Baliabidearen edukia sorzteko ardura duen entitatea."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:56
-#, fuzzy
 msgid "Subject"
-msgstr "Tema:"
+msgstr "Tema"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:57
 msgid "The topic of the content of the resource."
 msgstr "Baliabidearen edukiaren gaia."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
-#, fuzzy
 msgid ""
 "Typically, Subject will be expressed as keywords, key phrases or "
 "classification codes that describe a topic of the resource. Recommended best "
 "practice is to select a value from a controlled vocabulary or formal "
 "classification scheme."
 msgstr ""
-"\n"
-"                Gaia, normalean, gakoen, esaldien edo sailkapen kodeen "
-"bidez \n"
-"                azalduko da. Egokiena, kontrolatutako hiztegi edo sailkapen "
-"eskema formal \n"
-"                batetik balioak aukeratzea da.\n"
-"             "
+"Gaia, normalean, gakoen, esaldien edo sailkapen kodeen bidez azalduko da. "
+"Egokiena, balioak kontrolatutako hiztegi edo sailkapen eskema formal batetik "
+"aukeratzea da."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:66
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
@@ -2735,18 +2702,16 @@ msgid "An account of the content of the resource."
 msgstr "Baliabidearen edukiaren azalpena."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:73
-#, fuzzy
 msgid "Publisher"
-msgstr "Argitaratzailea:"
+msgstr "Argitaratzailea"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:74
 msgid "An entity responsible for making the resource available."
 msgstr "Baliabidearen edukia eskuragarria egiteko ardura duen entitatea."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:80
-#, fuzzy
 msgid "Contributors"
-msgstr "Kolaboratzaileak:"
+msgstr "Kolaboratzaileak"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:81
 msgid ""
@@ -2758,16 +2723,14 @@ msgstr "Baliabidearen edukiari ekarpenak egiteko ardura duen entitatea."
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:340
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:344
-#, fuzzy
 msgid "Date"
-msgstr "Data:"
+msgstr "Data"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:95
 msgid "A date of an event in the lifecycle of the resource."
 msgstr "Baliabidearen bizitza zikloaren gartaera baten data."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:98
-#, fuzzy
 msgid ""
 "Typically, Date will be associated with the creation or availability of the "
 "resource. Recommended best practice for encoding the date value is defined "
@@ -2775,36 +2738,32 @@ msgid ""
 "\" target=\"_blank\">W3C Date and Time Formats</a> and includes (among "
 "others) dates of the form YYYY-MM-DD."
 msgstr ""
-"\n"
-"                 Data, normalean, baliabidearen sorrerarekin edo\n"
-"                 erabilgarritasunarekin lotuta egoten da. Data kodetzeko\n"
-"                 modurik egokiena, ondoko izena duen profilean zehaztuta "
-"dago\n"
-"                 "
+"Data, normalean, baliabidearen sorrerarekin edo erabilgarritasunarekin "
+"lotuta egoten da. Data kodetzeko modurik egokiena, <em>ISO 8601</em> izena "
+"duen profilean zehaztuta dago <a href=\"/docs/W3C-NOTE-datetime.html\" "
+"target=\"_blank\">W3C Date and Time Formats</a> eta, beste batzuen artean, "
+"YYYY-MM-DD formakoak barne ditu."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:106
 msgid "The nature or genre of the content of the resource."
 msgstr "Baliabidearen edukiaren izaera edo generoa."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:109
-#, fuzzy
 msgid ""
 "Type includes terms describing general categories, functions, or genres, for "
 "content. Recommended best practice is to select a value from a controlled "
 "vocabulary or controlled classification scheme. To describe the physical or "
 "digital manifestation of the resource, use the FORMAT element."
 msgstr ""
-"\n"
-"              Motaren barruan, eduki bakoitzeko kategoria orokorrak, "
-"funtzioak eta/edo generoak\n"
-"              deskribatzen dituzten terminoak datoz. Egokiena hiztegi "
-"kontrolatu batetik edo sailkapen\n"
-"              eskema kontrolatu batetik balio bat aukeratzea da."
+"Motak, eduki bakoitzeko kategoria orokorrak, funtzioak eta/edo generoak "
+"deskribatzen dituzten terminoak dakartza. Egokiena hiztegi kontrolatu "
+"batetik edo sailkapen eskema kontrolatu batetik balio bat aukeratzea da "
+"(egokiena). Baliabidearen agerpen fisiko edo digitala adierazteko, FORMAT "
+"elementua erabili."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:114
-#, fuzzy
 msgid "Format"
-msgstr "Formatua:"
+msgstr "Formatua"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 msgid "Select a Format."
@@ -2812,9 +2771,8 @@ msgstr "Aukeratu formatua."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:127
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:56
-#, fuzzy
 msgid "Identifier"
-msgstr "Identifikatzailea:"
+msgstr "Identifikatzailea"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "An unambiguous reference to the resource within a given context."
@@ -2822,9 +2780,8 @@ msgstr ""
 "Testuinguru jakin baten barnean anbiguoa ez den baliabide erreferentzia."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
-#, fuzzy
 msgid "Source"
-msgstr "Iturria:"
+msgstr "Iturria"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "A Reference to a resource from which the present resource is derived."
@@ -2835,9 +2792,8 @@ msgstr "Baliabide honen jatorria den baliabidearen aipamena."
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:113
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:120
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:123
-#, fuzzy
 msgid "Language"
-msgstr "Hizkuntza:"
+msgstr "Hizkuntza"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:143
 msgid "Select a language."
@@ -2845,9 +2801,8 @@ msgstr "Aukeratu hizkuntza."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:149
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:370
-#, fuzzy
 msgid "Relation"
-msgstr "Harremana:"
+msgstr "Harremana"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 msgid "A reference to a related resource."
@@ -2857,9 +2812,8 @@ msgstr "Antzeko baliabide baten aipamena."
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:168
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:177
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:180
-#, fuzzy
 msgid "Coverage"
-msgstr "Estaldura:"
+msgstr "Estaldura"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "The extent or scope of the content of the resource."
@@ -2867,9 +2821,8 @@ msgstr "Baliabidearen edukiaren hedadura edo irekitasuna."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:165
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:365
-#, fuzzy
 msgid "Rights"
-msgstr "Eskubideak:"
+msgstr "Eskubideak"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166
 msgid "Information about rights held in and over the resource."
@@ -2907,15 +2860,14 @@ msgid "Add Previous/Next links within SCOs?"
 msgstr "Aurreko/Hurrengo estekak SCOs-en gehitu?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
-#, fuzzy
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind of "
 "functionality."
 msgstr ""
 "Koadrotxo hau klikatuz gero, eXek Hurrengoa eta Aurrekoa estekak gehituko "
-"ditu zure SCOaren orri bakoitzean. Honek, SCORMaren luzapen ez-estandar bat "
-"eskatzen du eta bakarrik funtzuinatuko du Moodle-en bertsio batzutan."
+"ditu zure SCOaren orri bakoitzean. LMS-ak ere funtzionalitate mota hau "
+"emango du."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid ""
@@ -2929,189 +2881,200 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:60
 msgid "Language of the field"
-msgstr ""
+msgstr "Eremuaren hizkuntza"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:31
 msgid "Required"
-msgstr ""
+msgstr "Derrigorrezkoa"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:34
-#, fuzzy
 msgid "Optional"
-msgstr "Aukera"
+msgstr "Aukerakoa"
 
+# LOM 1
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:48
 msgid "General"
-msgstr ""
+msgstr "Orokorra"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:67
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:69
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:72
-#, fuzzy
 msgid "Catalog"
-msgstr "Katalana"
+msgstr "Katalogoa"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:81
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:83
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:86
 msgid "Entry"
-msgstr ""
+msgstr "Sarrera"
 
+# LOM 1.5
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:149
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:158
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:161
 msgid "Keyword"
-msgstr ""
+msgstr "Gako-hitza"
 
+# LOM 1.7
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:187
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:194
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:204
 msgid "Structure"
-msgstr ""
+msgstr "Egitura"
 
+# LOM 1.7
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:197
 msgid "atomic"
-msgstr ""
+msgstr "atomikoa"
 
+# LOM 1.7.2.
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:198
-#, fuzzy
 msgid "collection"
-msgstr "Atala"
+msgstr "bilduma"
 
+# LOM 1.7.3
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:199
 msgid "networked"
-msgstr ""
+msgstr "sarean"
 
+# LOM 1.7
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:200
 msgid "hierarchical"
-msgstr ""
+msgstr "ierarkikoa"
 
+# LOM 1.7.5
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:201
-#, fuzzy
 msgid "linear"
-msgstr "Ingurua"
+msgstr "lineala"
 
+# LOM 1.8
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:210
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:226
 msgid "Agregation Level"
-msgstr ""
+msgstr "Eransketa-maila"
 
+# LOM ???
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
 msgid "smallest level of aggregation"
-msgstr ""
+msgstr "agregazio mailarik txikiena"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:221
 msgid ""
 "collection of atoms, e.g. an HTML document with some embedded pictures or a "
 "lesson"
 msgstr ""
+"atomo bilduma, adibidez, HTML dokumentu bat irudi txertatuekin edo eskola bat"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
 msgid "collection of level 1 resources"
-msgstr ""
+msgstr "1. mailako baliabide bilduma"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
 msgid "largest level of granularity, e.g. a course"
-msgstr ""
+msgstr "granularitate mailarik handiena, adib.: ikastaro bat"
 
+# LOM 2
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:235
 msgid "Life Cycle"
-msgstr ""
+msgstr "Bizi-zikloa"
 
+# LOM 2.1
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:243
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:253
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:256
-#, fuzzy
 msgid "Version"
-msgstr "Persiera"
+msgstr "Bertsioa"
 
+# LOM 2.2.?
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:270
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:279
 msgid "Status"
-msgstr ""
+msgstr "Egoera"
 
+# LOM 2.2.1.
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
 msgid "draft"
-msgstr ""
+msgstr "zirriborroa"
 
+# LOM 2.2
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:274
 msgid "final"
-msgstr ""
+msgstr "amaiera"
 
+# LOM 2.2.4
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:275
 msgid "unavailable"
-msgstr ""
+msgstr "ez eskuragarri"
 
+# LOM 2.2.3.
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:276
-#, fuzzy
 msgid "revised"
-msgstr "Aurrebista"
+msgstr "berrikusia"
 
+# LOM 2.5
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:284
-#, fuzzy
 msgid "Contribution"
-msgstr "Kolaboratzaileak:"
+msgstr "Ekarpena"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:290
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:292
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:295
 msgid "Role"
-msgstr ""
+msgstr "Rola"
 
+# LOM 2.3.2
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:312
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:314
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:317
 msgid "Organization"
-msgstr ""
+msgstr "Antolaketa"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:323
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:325
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:328
 msgid "Email"
-msgstr ""
+msgstr "Posta elektronikoa"
 
+# LOM 3
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:352
-#, fuzzy
 msgid "Meta-Metadata"
-msgstr "Metadatuak"
+msgstr "Meta - Metadatuak"
 
+# LOM 4.
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:357
 msgid "Technical"
-msgstr ""
+msgstr "Teknikoa"
 
+# Zaila da esatea nola itzuli behar den. Lom barruan, badago atal bat "Hezkuntzako erabilera" izenarekin
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:361
-#, fuzzy
 msgid "Educational"
-msgstr "Introducción"
+msgstr "Hezkuntzarako"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:375
-#, fuzzy
 msgid "Annotation"
-msgstr "Informazioa"
+msgstr "Oharra"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:380
 msgid "Classification"
-msgstr ""
+msgstr "Sailkapena"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
 msgid "Project Properties"
 msgstr "Proiektuaren ezaugarriak"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
-#, fuzzy
 msgid "Project Title"
-msgstr "Proiektuaren izenburua:"
+msgstr "Proiektuaren izenburua"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "The project's title."
 msgstr "Proiektuaren titulua."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
-#, fuzzy
 msgid "Header Background"
-msgstr "Izenburuaren atzealdea:"
+msgstr "Izenburuaren atzealdea"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
 msgid "Background image for a header (an image 100px high is recommended)."
@@ -3139,9 +3102,8 @@ msgid "Primary author of the resource."
 msgstr "Baliabidearen egile nagusia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
-#, fuzzy
 msgid "License"
-msgstr "Lizentzia:"
+msgstr "Lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
 #: exe/webui/wikipediablock.py:237
@@ -3206,9 +3168,8 @@ msgid "Select a license."
 msgstr "Aukeratu lizentzia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
-#, fuzzy
 msgid "Footer"
-msgstr "Orri-oina:"
+msgstr "Orri-oina"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
 msgid "Web pages footer."
@@ -3219,27 +3180,24 @@ msgid "Taxonomy"
 msgstr "Taxonomia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
-#, fuzzy
 msgid "Level 1"
-msgstr "1. maila:"
+msgstr "1. maila"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
 msgid "Default name for level 1 nodes"
 msgstr "1. mailako nodoen izen lehenetsia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
-#, fuzzy
 msgid "Level 2"
-msgstr "2. maila:"
+msgstr "2. maila"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
 msgid "Default name for level 2 nodes"
 msgstr "2. mailako nodoen izen lehenetsia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
-#, fuzzy
 msgid "Level 3"
-msgstr "3. maila:"
+msgstr "3. maila"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
 msgid "Default name for level 3 nodes"
@@ -3279,11 +3237,11 @@ msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:64
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:69
 msgid "LOM.es"
-msgstr ""
+msgstr "LOM.es"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:76
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
@@ -3324,65 +3282,60 @@ msgid "Move node down"
 msgstr "Nodoa beherantz mugitu"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
-#, fuzzy
 msgid "File"
-msgstr "Artxibo konprimitua"
+msgstr "Fitxategia"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
-msgstr ""
+msgstr "Berria"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
 msgid "New Window"
-msgstr ""
+msgstr "Leiho berria"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Open"
-msgstr ""
+msgstr "Ireki"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
-#, fuzzy
 msgid "Recent Projects..."
-msgstr "eXe proiektua"
+msgstr "Azken proiektuak..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
 msgstr "Garbitu azken proiektuen zerrenda"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
-#, fuzzy
 msgid "Save As..."
-msgstr "Salvar como"
+msgstr "Gorde honela..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
 msgid "Print"
-msgstr ""
+msgstr "Inprimatu"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
-#, fuzzy
 msgid "Import"
-msgstr "Esportatu"
+msgstr "Inportatu"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:176
 msgid "HTML Course"
-msgstr ""
+msgstr "HTML ikastaroa"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
 msgid "XLIFF File"
-msgstr ""
+msgstr "XLIFF fitxategia"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
 msgid "Common Cartridge"
-msgstr ""
+msgstr "Common Cartridge"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
-#, fuzzy
 msgid "IMS Content Package"
-msgstr "IMS 1.1.3 edukia duen paketea"
+msgstr "IMS eduki paketea"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
@@ -3394,23 +3347,23 @@ msgstr "Auto-edukitako karpeta"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "Zip File"
-msgstr "Artxibo konprimitua"
+msgstr "Fitxategi konprimitua"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Single Page"
-msgstr ""
+msgstr "Orri bakarra"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "iPod Notes"
-msgstr ""
+msgstr "iPod oharrak"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "XLIFF"
-msgstr ""
+msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
-msgstr ""
+msgstr "Konbinatu"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:273
 msgid "Quit"
@@ -3418,55 +3371,55 @@ msgstr "Irten"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
-msgstr ""
+msgstr "Tresnak"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "Refresh Display"
-msgstr ""
+msgstr "Eguneratu bista"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
 msgid "Styles"
-msgstr ""
+msgstr "Estiloak"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Help"
-msgstr ""
+msgstr "Laguntza"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
 msgid "eXe Tutorial"
-msgstr ""
+msgstr "eXe-ren tutoriala"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "eXe Manual"
-msgstr ""
+msgstr "eXe-ren eskuliburua"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "Release Notes"
-msgstr ""
+msgstr "Bertsioaren oharrak"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
-#, fuzzy
 msgid "eXe Web Site"
-msgstr "Webgunea"
+msgstr "eXe-ren webgunea"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "Report an Issue"
-msgstr ""
+msgstr "Argitaratu gaia"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
-#, fuzzy
 msgid "eXe Forums"
-msgstr "Nuevo Foro"
+msgstr "eXe-ren foroak"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:395
 msgid "About eXe"
-msgstr ""
+msgstr "eXe-ri buruz"
 
 #: exe/jsui/scripts/exe.js:124
 msgid ""
 "If you leave this page eXe application continues to run. Please use the menu "
 "File->Quit if you really want to exit the application."
 msgstr ""
+"Orri hau uzten baduzu, eXe aplikazioak martxan jarraituko du. Aplikazioa "
+"itxi nahi baduzu, Fitxategia->Irten menua erabili."
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -3857,7 +3810,6 @@ msgid "Norwegian Bokmål "
 msgstr "Norvegiera, Bokmi"
 
 #: exe/jsui/scripts/langs.js:392
-#, fuzzy
 msgid "Ndebele,North "
 msgstr "Ndebelera, Iparra"
 
@@ -3882,7 +3834,6 @@ msgid "Norwegian "
 msgstr "Norvegiera"
 
 #: exe/jsui/scripts/langs.js:416
-#, fuzzy
 msgid "Ndebele,South "
 msgstr "Ndebelera, Hegoa"
 
@@ -3923,7 +3874,6 @@ msgid "Polish "
 msgstr "Poloniera"
 
 #: exe/jsui/scripts/langs.js:456
-#, fuzzy
 msgid "Pashto,Pushto "
 msgstr "Paxtuera"
 
@@ -4012,7 +3962,6 @@ msgid "Swati; Siswati "
 msgstr "Swaziera; Siswatiera"
 
 #: exe/jsui/scripts/langs.js:544
-#, fuzzy
 msgid "Sesotho; Sotho,Southern "
 msgstr "Sothoera, Hegoa"
 
@@ -4142,7 +4091,7 @@ msgstr "Zuluera"
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
-msgstr "Mesedez, kargatu .ggb artxibo bat."
+msgstr "Mesedez, kargatu .ggb fitxategi bat."
 
 #: exe/webui/appletblock.py:86
 msgid "Please upload a .jclic.zip file."
@@ -4195,7 +4144,7 @@ msgstr "Applet mota:"
 
 #: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
 msgid "Add files"
-msgstr "Gehitu artxiboak"
+msgstr "Gehitu fitxategiak"
 
 #: exe/webui/appletblock.py:157 exe/webui/appletblock.py:167
 msgid "Upload"
@@ -4211,16 +4160,16 @@ msgstr "Applet kodea:"
 
 #: exe/webui/appletblock.py:184
 msgid "Delete File"
-msgstr "Ezabatu artxiboa"
+msgstr "Ezabatu fitxategia"
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:807
 msgid "Filename:"
-msgstr "Artxiboaren izena:"
+msgstr "Fitxategiaren izena:"
 
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:817
 msgid "Select a file"
-msgstr "Aukeratu artxibo bat"
+msgstr "Aukeratu fitxategi bat"
 
 #: exe/webui/attachmentblock.py:108
 msgid "Label:"
@@ -4383,7 +4332,7 @@ msgstr "Aukeratu flash objektua"
 
 #: exe/webui/editorelement.py:308
 msgid "Select MP3 file"
-msgstr "Aukeratu MP3 artxiboa"
+msgstr "Aukeratu MP3 fitxategia"
 
 #: exe/webui/editorelement.py:311 exe/webui/element.py:611
 #: exe/webui/flashmovieblock.py:92 exe/webui/flashwithtextblock.py:93
@@ -4397,7 +4346,7 @@ msgstr "Mesedez, idatzi idevice izena."
 
 #: exe/webui/editorpage.py:184 exe/webui/editorpage.py:196
 msgid "Sorry, wrong file format."
-msgstr "Artxiboaren formatua okerra da."
+msgstr "Fitxategiaren formatua okerra da."
 
 #: exe/webui/editorpage.py:260
 msgid "Import iDevice"
@@ -4480,7 +4429,7 @@ msgstr "Gehitu flash bideo bat zure iDevice-ri."
 
 #: exe/webui/editorpane.py:91
 msgid "Add an mp3 file to your iDevice."
-msgstr "Gehitu MP3 artxiboa iDevice-an."
+msgstr "Gehitu MP3 fitxategia iDevice-an."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an attachment file to your iDevice."
@@ -4619,7 +4568,7 @@ msgstr "Aukeratu MP3 bat"
 
 #: exe/webui/element.py:878
 msgid "Please select a .jpg file."
-msgstr "Mesedez, aukeratu .jpg artxibo bat."
+msgstr "Mesedez, aukeratu .jpg fitxategi bat."
 
 #: exe/webui/element.py:913
 msgid "Add JPEG Image"
@@ -4627,7 +4576,7 @@ msgstr "Gehitu JPEG irudia"
 
 #: exe/webui/element.py:929
 msgid "Select an image (JPG file)"
-msgstr "Aukeratu irudia (JPG artxiboa)"
+msgstr "Aukeratu irudia (JPG fitxategia)"
 
 #: exe/webui/element.py:1098 exe/webui/element.py:1360
 #: exe/webui/listablock.py:116
@@ -4682,7 +4631,7 @@ msgstr "Puntu-kopurua erakutsi?"
 
 #: exe/webui/element.py:1647
 msgid "Please select a .flv file."
-msgstr "Mesedez, aukeratu .flv artxibo bat."
+msgstr "Mesedez, aukeratu .flv fitxategi bat."
 
 #: exe/webui/element.py:1663
 msgid "Select a flash video"
@@ -5070,22 +5019,23 @@ msgid ""
 "As) before attempting to insert it into another package!"
 msgstr ""
 "Paketea zaharra da. Beste pakete batean sartzen saiatu aurretik, eguneratu "
-"mesedez (Artxiboa..Ireki...Honela gorde)!"
+"mesedez (Fitxategia...Ireki...Honela gorde)!"
 
 #: twisted/persisted/styles.py:437
-#, fuzzy
 msgid ""
 "Unable to merge: duplicate Java Applet resource names exist (including: "
 "\"\"). Please see the log file for the names of ALL such problem resources."
 msgstr ""
-"Ezin da konbinatu: Java Applet baliabide izena bikoiztua dago (barnean \""
+"Ezin da konbinatu: Java Applet baliabide izena bikoiztua dago (barnean: "
+"\"\"). Mesedez, log fitxategian bilatu arazoak sortzen duten baliabide "
+"GUZTIEN izenak."
 
 #: twisted/persisted/styles.py:541
 msgid ""
 "Either your idevices/generic.data file or the package you are loading was "
 "created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-"Kargatzen ari zaren idevices/generic.data artxiboa edo paketea eXe-ren "
+"Kargatzen ari zaren idevices/generic.data fitxategia edo paketea eXe-ren "
 "bertsio berriago batekin sortuta dago. Mesedez, eguneratu zure eXe-a eta "
 "berriz saiatu."
 

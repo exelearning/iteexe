@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-12 11:56+0100\n"
-"PO-Revision-Date: 2013-01-04 12:59+0100\n"
+"PO-Revision-Date: 2013-01-05 14:19+0100\n"
 "Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Language: es\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
-msgstr "Applet de Java"
+msgstr "Applet de java"
 
 #: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
 #: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:47
@@ -203,7 +203,7 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:104
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "EL Fichero adjunto %s no tiene nodo padre"
+msgstr "EL fichero adjunto %s no tiene nodo padre"
 
 #: exe/engine/casestudyidevice.py:63
 #: exe/engine/ejercicioresueltofpdidevice.py:63
@@ -528,7 +528,7 @@ msgstr "Permitir auto-completar cuando el usuario está rellenando los huecos."
 
 #: exe/engine/clozeidevice.py:46
 msgid "Cloze Activity"
-msgstr "Actividad de rellenar huecos"
+msgstr "Rellenar huecos"
 
 #: exe/engine/clozeidevice.py:120 exe/engine/listaidevice.py:124
 #: exe/engine/truefalseidevice.py:395
@@ -1650,8 +1650,6 @@ msgid ""
 "Orientciones alumnado es un iDevice que permite al alumnado conocer los "
 "objetivos de su aprendizaje."
 msgstr ""
-"Orientaciones alumnado es un iDevice que permite al alumnado conocer los "
-"objetivos de su aprendizaje."
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:37
 msgid "Texto Orientaciones alumnado"
@@ -2554,7 +2552,7 @@ msgstr "Seleccione qué paquete insertar"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:329
 msgid "Inserting package: {filename}"
-msgstr "Insertando paquete: {nombre_del_fichero}"
+msgstr "Insertando paquete: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:335
 #: exe/jsui/scripts/app/controller/Toolbar.js:356
@@ -2569,7 +2567,7 @@ msgstr "Guardar el paquete extraído como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:350
 msgid "Extracting package: {filename}"
-msgstr "Extrayendo el paquete: {nombre_del_fichero}"
+msgstr "Extrayendo el paquete: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:366
 msgid "Select the parent folder for import."
@@ -2627,7 +2625,7 @@ msgstr "Exportar paquete de texto como"
 #: exe/jsui/scripts/app/controller/Toolbar.js:524
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Text File"
-msgstr "Fichero de texto"
+msgstr "Fichero de texto plano"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "Export SCORM package as"
@@ -2651,7 +2649,7 @@ msgstr "VALOR INVÁLIDO PASADO A exportPackage"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "SCORM/IMS/ZipFile"
-msgstr "SCORM/IMS/ZipFile"
+msgstr "Fichero Zip SCORM/IMS"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:640
 msgid "Loading package..."
@@ -3386,7 +3384,7 @@ msgstr "SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
 msgid "IMS Content Package"
-msgstr "Paquete de Contenido IMS"
+msgstr "Paquete de Contenido IMS (IMS CP)"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
@@ -3414,7 +3412,7 @@ msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
-msgstr "Unificar ELPs"
+msgstr "Fusionar ELPs"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:273
 msgid "Quit"
@@ -3530,7 +3528,7 @@ msgstr "Bislama "
 
 #: exe/jsui/scripts/langs.js:60
 msgid "Bengali; Bangla "
-msgstr "Bengalí; Bangla "
+msgstr "Bengalí "
 
 #: exe/jsui/scripts/langs.js:64
 msgid "Tibetan "
@@ -3586,7 +3584,7 @@ msgstr "Alemán "
 
 #: exe/jsui/scripts/langs.js:116
 msgid "Dzongkha; Bhutani "
-msgstr "Dzongkha; Bhutaní "
+msgstr "Dzongkha; bhutaní "
 
 #: exe/jsui/scripts/langs.js:120
 msgid "Greek "
@@ -3610,7 +3608,7 @@ msgstr "Estonio "
 
 #: exe/jsui/scripts/langs.js:140
 msgid "Basque "
-msgstr "Vasco "
+msgstr "Vasco, euskera "
 
 #: exe/jsui/scripts/langs.js:144
 msgid "Persian "
@@ -3622,7 +3620,7 @@ msgstr "Finlandés "
 
 #: exe/jsui/scripts/langs.js:152
 msgid "Fijian; Fiji "
-msgstr "Fijiano; Fiji "
+msgstr "Fijiano "
 
 #: exe/jsui/scripts/langs.js:156
 msgid "Faroese "
@@ -3754,7 +3752,7 @@ msgstr "Groenlandés "
 
 #: exe/jsui/scripts/langs.js:284
 msgid "Khmer; Cambodian "
-msgstr "Khmer; Camboyano "
+msgstr "Khmer; camboyano "
 
 #: exe/jsui/scripts/langs.js:288
 msgid "Kannada "
@@ -3862,7 +3860,7 @@ msgstr "Noruego Bokmål "
 
 #: exe/jsui/scripts/langs.js:392
 msgid "Ndebele,North "
-msgstr "Ndebele, Norte "
+msgstr "Ndebele, del norte "
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
@@ -3886,7 +3884,7 @@ msgstr "Noruego "
 
 #: exe/jsui/scripts/langs.js:416
 msgid "Ndebele,South "
-msgstr "Ndebele, Sur "
+msgstr "Ndebele, del sur "
 
 #: exe/jsui/scripts/langs.js:420
 msgid "Navajo "
@@ -3894,11 +3892,11 @@ msgstr "Navajo "
 
 #: exe/jsui/scripts/langs.js:424
 msgid "Chichewa; Nyanja "
-msgstr "Chichewa; Nyanja "
+msgstr "Chichewa; nyanja "
 
 #: exe/jsui/scripts/langs.js:428
 msgid "Occitan; Provençal "
-msgstr "Occitano; Provenzal "
+msgstr "Occitano; provenzal "
 
 #: exe/jsui/scripts/langs.js:432
 msgid "(Afan) Oromo "
@@ -3910,11 +3908,11 @@ msgstr "Oriya "
 
 #: exe/jsui/scripts/langs.js:440
 msgid "Ossetian; Ossetic "
-msgstr "Ossetio; Ossético "
+msgstr "Osetio; osético "
 
 #: exe/jsui/scripts/langs.js:444
 msgid "Panjabi; Punjabi "
-msgstr "Panjabi; Punjabi "
+msgstr "Panjabi; punjabi "
 
 #: exe/jsui/scripts/langs.js:448
 msgid "Pali "
@@ -3926,7 +3924,7 @@ msgstr "Polaco "
 
 #: exe/jsui/scripts/langs.js:456
 msgid "Pashto,Pushto "
-msgstr "Pashto, Pushto "
+msgstr "Pashto, pushto "
 
 #: exe/jsui/scripts/langs.js:460
 msgid "Portuguese "
@@ -3938,11 +3936,11 @@ msgstr "Quechua "
 
 #: exe/jsui/scripts/langs.js:468
 msgid "Rhaeto-Romance "
-msgstr "Reto-Romanche "
+msgstr "Reto-romanche "
 
 #: exe/jsui/scripts/langs.js:472
 msgid "Rundi; Kirundi "
-msgstr "Rundi; Kirundi "
+msgstr "Rundi; kirundi "
 
 #: exe/jsui/scripts/langs.js:476
 msgid "Romanian "
@@ -3974,7 +3972,7 @@ msgstr "Sami del Norte "
 
 #: exe/jsui/scripts/langs.js:504
 msgid "Sango; Sangro "
-msgstr "Sango; Sangro "
+msgstr "Sango; sangro "
 
 #: exe/jsui/scripts/langs.js:508
 msgid "Sinhalese "
@@ -4010,15 +4008,15 @@ msgstr "Serbio "
 
 #: exe/jsui/scripts/langs.js:540
 msgid "Swati; Siswati "
-msgstr "Swati; Siswati "
+msgstr "Swati; siswati "
 
 #: exe/jsui/scripts/langs.js:544
 msgid "Sesotho; Sotho,Southern "
-msgstr "Sesotho; Sotho, Del Sur "
+msgstr "Sesotho; sotho del sur "
 
 #: exe/jsui/scripts/langs.js:548
 msgid "Sundanese "
-msgstr "Sundanese "
+msgstr "Sundanés "
 
 #: exe/jsui/scripts/langs.js:552
 msgid "Swedish "
@@ -4058,7 +4056,7 @@ msgstr "Tagalo "
 
 #: exe/jsui/scripts/langs.js:588
 msgid "Tswana; Setswana "
-msgstr "Etswana; Esetswana "
+msgstr "Etswana; esetswana "
 
 #: exe/jsui/scripts/langs.js:592
 msgid "Tongan  "
@@ -4106,7 +4104,7 @@ msgstr "Vietnamita "
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Volapük; Volapuk "
-msgstr "Volapk; Volapuk "
+msgstr "Volapük; volapuk "
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Walloon "
@@ -5017,7 +5015,7 @@ msgstr "artículo "
 
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
-msgstr "Etiqueta"
+msgstr "etiqueta"
 
 #: exe/webui/xliffexportpreferencespage.py:102
 msgid "Select source language"
