@@ -149,6 +149,7 @@ class SinglePage(Page):
             if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForWeb()
             html += self.processInternalLinks(block.renderView(style))
+            html = html.replace('href="#auto_top"', 'href="#"')
             html += u'  </div>\n'     # iDevice div
 
         html += '</div>\n'          # node div
