@@ -158,6 +158,15 @@ class IdeviceStore:
         """
         Register another iDevice as available
         """
+        #JR: Comprobamos si el iDevice ya existe y en su caso igualamos el id, de lo contrario lo anadimos a los de fabrica
+        exist = False
+        for i in self.getFactoryIdevices():
+            if (i.title == idevice.title):
+                exist = True
+                idevice.id = i.id
+                break
+        if not exist:
+            self.factoryiDevices.append(idevice)  
         if not self.isGeneric(idevice):
             exist = False
             for i in self.extended:
@@ -177,7 +186,8 @@ class IdeviceStore:
                 self.generic.append(idevice)
                 idevice.edit = True
                 for listener in self.listeners:
-                    listener.addIdevice(idevice)        
+                    listener.addIdevice(idevice)    
+          
 
     def load(self):
         """
@@ -189,6 +199,13 @@ class IdeviceStore:
             idevicesDir.mkdir()
         self.__loadExtended()
         self.__loadGeneric()
+        self.factoryiDevices = self.__getFactoryExtendediDevices() + self.generic
+        #JR: Vemos cual sera el proximo id
+        nextId = 0
+        for idevice in self.getFactoryIdevices():
+            if int(idevice.id) > nextId:
+                nextId = int(idevice.id)
+        self._nextIdeviceId = nextId
         #JR: comunicamos a los listener los iDevices extendidos
         for listener in self.listeners:
             for idevice in self.getIdevices():
@@ -687,8 +704,13 @@ _(u"""Describe the tasks the learners should complete.""")))
         idevicesDir = self.config.configDir/'idevices'
         if not idevicesDir.exists():
             idevicesDir.mkdir()
+        #JR: Buscamos los genericos dentro de los de fabrica, ya que generic solo contiene aquellos genericos que se muestran
+        genericSave = []
+        for idevice in self.getFactoryIdevices():
+            if self.isGeneric(idevice):
+                genericSave.append(idevice)
         fileOut = open(idevicesDir/'generic.data', 'wb')
-        fileOut.write(persist.encodeObject(self.generic))
+        fileOut.write(persist.encodeObject(genericSave))
         #JR: Guardamos tambien los iDevices extendidos
         fileOut = open(idevicesDir/'extended.data', 'wb')
         fileOut.write(persist.encodeObject(self.extended))
