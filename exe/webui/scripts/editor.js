@@ -14,6 +14,24 @@ function ideviceExists(ideviceName) {
     return false;
 }
   
+function quitDialog() {
+	var theForm = document.getElementById('contentForm')
+        Ext.Msg.show( {
+            title: _('Confirm'),
+            msg: _('Do you really want to exit without saving?'),
+            scope: this,
+            modal: true,
+            buttons: Ext.Msg.YESNO,
+            fn: function(button) {
+                if (button == "yes")    {
+                	Ext.getCmp("ideviceeditorwin").close();    	
+                }
+                else
+		    return;
+            }
+        });
+}
+
 function saveIdevice(title) {
     var title1;
     //JR: Anadimos la comprobacion de que no sea null y ya sabemos que estamos hablando de saveSH

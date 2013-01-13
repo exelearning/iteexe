@@ -147,6 +147,7 @@ class EditorPage(RenderableResource):
             self.__saveSHiDevices(request)
         if ("showHide" in request.args):
             self.showHide = True
+
             
     def __createNewIdevice(self, request):
         """
@@ -269,7 +270,8 @@ class EditorPage(RenderableResource):
         else:
             html += "<br/>" + common.submitButton("showHide", _("Show/Hide"))
         html += u'<br/><input class="button" type="button" name="quit" '
-        html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'         
+        #html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'        
+        html += u'onclick=quitDialog()'  
         html += u' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
