@@ -2,20 +2,21 @@
 # Copyright (C) 2004-2012 EXELearning.org
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
-# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
+# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-12 11:56+0100\n"
-"PO-Revision-Date: 2012-12-03 17:47+0100\n"
+"PO-Revision-Date: 2013-01-14 21:02+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
-"Language-Team: Catalan <info@softcatala.org>\n"
+"Language-Team: català-valencià <info@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-EXE-Language: Català\n"
 
 #: exe/engine/appletidevice.py:66
@@ -339,7 +340,7 @@ msgstr ""
 #: exe/engine/parasabermasfpdidevice.py:34
 #: exe/engine/recomendacionfpdidevice.py:34
 msgid "Introduce el texto que aparecer&aacute; en este iDevice"
-msgstr "Introdueix el text que apareix&aacute; en aquest iDevice"
+msgstr "Introdueix el text que apareix en aquest iDevice"
 
 #: exe/engine/casopracticofpdidevice.py:37
 #: exe/engine/casopracticofpdidevice.py:135
@@ -970,8 +971,8 @@ msgstr ""
 " altres formats de vídeo. Podeu nogensmenys convertir aquests altres "
 "formats \n"
 " ( Ex: mov , wmf , etc.) al .FLV utilitzant codificadors de vídeo fets \n"
-" per qualsevol tercera part (Ex: en Linux: VLC, ffmpeg , winff ). Aquests "
-"codificadors no són subministrats per eXe. \n"
+" per qualsevol tercera part (Ex: en Linux: VLC, ffmpeg , winff ; en Windows: "
+"VLC). Aquests codificadors no són subministrats per eXe. \n"
 " Els usuaris també hauran de baixar-se Flash 8 des de http://www.macromedia."
 "com/ per executar el vídeo."
 
@@ -1513,12 +1514,10 @@ msgstr ""
 "que acabes d'inserir."
 
 #: exe/engine/listaidevice.py:50
-#, fuzzy
 msgid "DropDown Activity"
-msgstr "Activitat d'omplir buits "
+msgstr "Activitat desplegable"
 
 #: exe/engine/listaidevice.py:52
-#, fuzzy
 msgid ""
 "<p>DropDown exercises are texts or sentences where students must select the "
 "correct word. They are often used for the following purposes:</p><ol><li>To "
@@ -1527,8 +1526,8 @@ msgid ""
 "comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word "
 "formation and/or grammatical competence. </li></ol>"
 msgstr ""
-"<p> El exercicis de buits són texts o frases on els estudiants han "
-"d'emplenar les paraules que faltin. S'utilitzen sovint pels propòsits "
+"<p> El exercicis desplegables són texts o frases on els estudiants han de "
+"seleccionar les paraules correctes. S'utilitzen sovint pels propòsits "
 "següents: :</p><ol><li> Per comprovar els coneixements dels conceptes de "
 "base  ( així poden fer un preexamen , un exercici formatiu , o una avaluació "
 "sumativa).</li><li>Per comprovar la comprensió lectora.</li><li> Per "
@@ -2135,7 +2134,7 @@ msgstr "Importa des d'idioma origen"
 
 #: exe/exe_do:112
 msgid "SCORM export options"
-msgstr "Opcions d'exportació SCORM 1.2 "
+msgstr "Opcions d'exportació SCORM"
 
 #: exe/exe_do:113
 msgid ""
@@ -2268,36 +2267,36 @@ msgstr "El paquet de sortida '%s' no es vàlid."
 
 #: exe/importers/scanresources.py:180
 msgid "Contents of directory"
-msgstr ""
+msgstr "Contingut de la carpeta"
 
 #: exe/importers/scanresources.py:194
 #, python-format
 msgid "Analizing directory %d of %d: %s"
-msgstr ""
+msgstr "S'està analitzant la carpeta %d de %d: %s"
 
 #: exe/importers/scanresources.py:255
 #, python-format
 msgid "Calculating relative paths to directory %d of %d: %s"
-msgstr ""
+msgstr "S'estan calculant els camins relatius a la carpeta %d de %d: %s"
 
 #: exe/importers/scanresources.py:275
 #, python-format
 msgid "Analyzing HTML file labels %d of %d: %s"
-msgstr ""
+msgstr "S'estan analitzant les etiquetes HTML del fitxer %d de %d: %s"
 
 #: exe/importers/scanresources.py:342
 #, python-format
 msgid "Exhaustively analyzed file %s %d of %d: %s"
-msgstr ""
+msgstr "S'ha analitzat exhaustivament el fitxer %s %d de %d: %s"
 
 #: exe/importers/scanresources.py:395
 msgid "Calculating depth of links"
-msgstr ""
+msgstr "S'està calculant la profunditat dels enllaços"
 
 #: exe/importers/scanresources.py:431
 #, python-format
 msgid "Inserting %s"
-msgstr ""
+msgstr "S'està inserint %s"
 
 #: exe/jsui/mainpage.py:228 exe/jsui/mainpage.py:666 exe/jsui/mainpage.py:799
 msgid "Cannot access directory named "
@@ -2346,12 +2345,11 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:638
 msgid "Importing HTML..."
-msgstr ""
+msgstr "S'està important HTML..."
 
 #: exe/jsui/mainpage.py:641
-#, fuzzy
 msgid "Error importing HTML:\n"
-msgstr "Error al importar XLIFF: %s"
+msgstr "Error al importar HTML:\n"
 
 #: exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
 #: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:920
@@ -2392,7 +2390,7 @@ msgid ""
 "Folder name %s already exists. Please choose another one or delete existing "
 "one then try again."
 msgstr ""
-"La carpeta nomenada %s realment existeix. Si-us-plau escolliu-ne una altra  "
+"La carpeta nomenada %s realment existeix. Si us plau escolliu-ne una altra  "
 "primer o esborreu-la primer si continueu endavant."
 
 #: exe/jsui/mainpage.py:910 exe/jsui/mainpage.py:924 exe/jsui/mainpage.py:937
@@ -2439,19 +2437,16 @@ msgid "Sorry, wrong file format"
 msgstr "Disculpeu, format de fitxer roin "
 
 #: exe/jsui/propertiespage.py:85
-#, fuzzy
 msgid "Failed to get properties"
-msgstr "Propietats del projecte"
+msgstr "Error al donar les propietats"
 
 #: exe/jsui/propertiespage.py:102
-#, fuzzy
 msgid "Failed to save properties"
-msgstr "Propietats del paquet"
+msgstr "Error al desar les propietats"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:90
-#, fuzzy
 msgid "Settings Saved"
-msgstr "Paràmetres desats"
+msgstr "Paràmetres desats "
 
 #: exe/jsui/scripts/app/controller/MainTab.js:117
 #: exe/jsui/scripts/app/controller/MainTab.js:174
@@ -2466,14 +2461,12 @@ msgstr "Selecciona una imatge"
 #: exe/jsui/scripts/app/controller/MainTab.js:144
 #: exe/jsui/scripts/app/controller/MainTab.js:178
 #: exe/jsui/scripts/app/controller/MainTab.js:206
-#, fuzzy
 msgid "Hide Image"
-msgstr "Afegeix imatge "
+msgstr "Amaga imatge "
 
 #: exe/jsui/scripts/app/controller/MainTab.js:153
-#, fuzzy
 msgid "Image Files"
-msgstr "Galeria d'imatges"
+msgstr "Fitxers d'imatge"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:154
 #: exe/jsui/scripts/app/controller/Toolbar.js:336
@@ -2485,14 +2478,13 @@ msgstr "Galeria d'imatges"
 #: exe/jsui/scripts/app/controller/Toolbar.js:554
 #: exe/jsui/scripts/app/controller/Toolbar.js:668
 #: exe/jsui/scripts/app/controller/Toolbar.js:742
-#, fuzzy
 msgid "All Files"
-msgstr "Afegeix fitxers"
+msgstr "Tots els fitxers"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:188
 #: exe/jsui/scripts/app/controller/MainTab.js:213
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: exe/jsui/scripts/app/controller/Outline.js:144
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
@@ -2506,24 +2498,23 @@ msgstr "Extreu paquet"
 
 #: exe/jsui/scripts/app/controller/Outline.js:200
 msgid "Delete \"{node}\" node and all its children?"
-msgstr ""
+msgstr "Suprimiu el node \"{node}\" i tots els fills ?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Confirm"
-msgstr ""
+msgstr "Confirma"
 
 #: exe/jsui/scripts/app/controller/Outline.js:224
 msgid "Rename \"{node}\" node"
-msgstr ""
+msgstr "Canvia el nom al node \"{node}\""
 
 #: exe/jsui/scripts/app/controller/Outline.js:228
-#, fuzzy
 msgid "Enter the new name:"
-msgstr "Escriviu l'etiqueta aquí"
+msgstr "Escriviu el nom nou:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:257
 msgid "About"
-msgstr ""
+msgstr "Quant a"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:290
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
@@ -2531,163 +2522,148 @@ msgid "Preferences"
 msgstr "Preferències"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:324
-#, fuzzy
 msgid "Select package to insert"
-msgstr "Escull la llicència."
+msgstr "Selecciona el paquet a inserir"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:329
-#, fuzzy
 msgid "Inserting package: {filename}"
-msgstr "Insereix paquet"
+msgstr "S'està inserint el paquet  {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:335
 #: exe/jsui/scripts/app/controller/Toolbar.js:356
 #: exe/jsui/scripts/app/controller/Toolbar.js:667
 #: exe/jsui/scripts/app/controller/Toolbar.js:741
-#, fuzzy
 msgid "eXe Package Files"
-msgstr "Propietats del paquet"
+msgstr "Fitxers de paquet d'eXe"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:345
-#, fuzzy
 msgid "Save extracted package as"
-msgstr "Extreu paquet"
+msgstr "Anomena i desa el paquet extret"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:350
-#, fuzzy
 msgid "Extracting package: {filename}"
-msgstr "Extreu paquet"
+msgstr "S'està extraguent el paquet: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:366
 msgid "Select the parent folder for import."
-msgstr ""
+msgstr "Selecciona  la carpeta pare per importar."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Select the entry point for import."
-msgstr ""
+msgstr "Selecciona el punt d'entrada per importar."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:391
 msgid "HTML Files"
-msgstr ""
+msgstr "Fitxers HTML"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:406
 msgid "Waiting progress..."
-msgstr ""
+msgstr "S'està espererant el progrés..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:414
-#, fuzzy
 msgid "Cancel Import?"
-msgstr "Cancel·la"
+msgstr "Cancel·leu la importació ?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:415
 msgid "There is an ongoing import. Do you want to cancel?"
-msgstr ""
+msgstr "Hi ha una importació en curs. De veritat la voleu cancel·lar ?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:438
-#, fuzzy
 msgid "Select Xliff file to import"
-msgstr "Selecciona un fitxer"
+msgstr "Selecciona un fitxer Xliff per importar"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:448
-#, fuzzy
 msgid "XLIFF Import Preferences"
-msgstr "Opcions d'importació XLIFF"
+msgstr "Preferències d'importació XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:456
 #: exe/jsui/scripts/app/controller/Toolbar.js:483
 msgid "XLIFF Files"
-msgstr ""
+msgstr "Fitxers XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:465
-#, fuzzy
 msgid "Export to Xliff as"
-msgstr "Exportat a %s"
+msgstr "Anomena i exporta com Xliff"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:475
-#, fuzzy
 msgid "XLIFF Export Preferences"
-msgstr "Opcions d'exportació XLIFF"
+msgstr "Preferències d'exportació XLIFF"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:498
 msgid "Select the parent folder for export."
-msgstr ""
+msgstr "Selecciona la carpeta pare per exportar"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:515
 msgid "Export text package as"
-msgstr ""
+msgstr "Anomena i exporta el paquet de text"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:524
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
-#, fuzzy
 msgid "Text File"
-msgstr "Línia de Text"
+msgstr "Fitxer de text"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "Export SCORM package as"
-msgstr ""
+msgstr "Anomena i exporta com paquet SCORM"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:534
-#, fuzzy
 msgid "Export IMS package as"
-msgstr "Extreu paquet"
+msgstr "Anomena i exporta com paquet IMS"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:536
 msgid "Export Website package as"
-msgstr ""
+msgstr "Anomena i exporta com paquet HTMLZIP"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:538
 msgid "Export Common Cartridge as"
-msgstr ""
+msgstr "Anomena i exporta com Common Cartridge"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:540
 msgid "INVALID VALUE PASSED TO exportPackage"
-msgstr ""
+msgstr "S'ha PASSAT UN VALOR INVÀLID al paquet exportat"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "SCORM/IMS/ZipFile"
-msgstr ""
+msgstr "SCORM/IMS/HTMLZIP"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:640
-#, fuzzy
 msgid "Loading package..."
-msgstr "El paquet d'entrada no es vàlid. "
+msgstr "S'està carregant el paquet..."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:656
-#, fuzzy
 msgid "Open File"
-msgstr "Fitxer Zip"
+msgstr "Obre el fitxer"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:661
 msgid "Loading package: {filename}"
-msgstr ""
+msgstr "S'està carregant el paquet:  {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:680
 msgid "Save Package first?"
-msgstr ""
+msgstr "Deseu el paquet primer ?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid ""
 "The current package has been modified and not yet saved. Would you like to "
 "save it?"
 msgstr ""
+"El paquet actual ha estat modificat i encara no s'ha desat. Voleu desar-lo ?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:705
 msgid "Saving package to: {filename}"
-msgstr ""
+msgstr "S'està desant el paquet: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:721
-#, fuzzy
 msgid "Select a File"
 msgstr "Selecciona un fitxer"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:727
-#, fuzzy
 msgid "Saving package..."
-msgstr "Paquete incorrecto"
+msgstr "S'està desant el paquet..."
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:34
 msgid "Tree"
-msgstr ""
+msgstr "Arbre"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:46
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:301
@@ -2699,17 +2675,16 @@ msgstr "Nom"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:68
 msgid "Size"
-msgstr ""
+msgstr "Mida"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:91
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:105
-#, fuzzy
 msgid "Type"
-msgstr "Tipus:"
+msgstr "Tipus"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:96
 msgid "Modified"
-msgstr ""
+msgstr "Modificat"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:256
@@ -2718,7 +2693,7 @@ msgstr "Desa"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:94
 msgid "Place"
-msgstr ""
+msgstr "Lloc"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:34
 msgid "Dublin Core Metadata"
@@ -2737,39 +2712,31 @@ msgid "The name given to the resource."
 msgstr "El nom donat al recurs"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:47
-#, fuzzy
 msgid "Creator"
-msgstr "Creador:"
+msgstr "Creador"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:48
 msgid "An entity primarily responsible for making the content of the resource."
-msgstr "Entitat responsable de elaborar els continguts"
+msgstr "Entitat responsable de l'elaboració del recurs"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:56
-#, fuzzy
 msgid "Subject"
-msgstr "Tema:"
+msgstr "Tema"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:57
 msgid "The topic of the content of the resource."
 msgstr "El tema del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
-#, fuzzy
 msgid ""
 "Typically, Subject will be expressed as keywords, key phrases or "
 "classification codes that describe a topic of the resource. Recommended best "
 "practice is to select a value from a controlled vocabulary or formal "
 "classification scheme."
 msgstr ""
-"\n"
-"                 Típicament ,el tema serà resumit amb paraules clau, \n"
-"                frases clau, o codis de classificació que descriuen el "
-"tema \n"
-"                 o recurs. És recomana com millor pràctica seleccionar una "
-"paraula \n"
-"                d'un vocabulari o esquema formal. \n"
-"               "
+"Típicament ,el tema serà resumit amb paraules clau,frases clau, o codis de "
+"classificació que descriuen el tema o recurs. És recomana com millor "
+"pràctica seleccionar una paraula d'un vocabulari o esquema formal."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:66
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
@@ -2777,18 +2744,16 @@ msgid "An account of the content of the resource."
 msgstr "Un resum del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:73
-#, fuzzy
 msgid "Publisher"
-msgstr "Editor:"
+msgstr "Editor"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:74
 msgid "An entity responsible for making the resource available."
 msgstr "Entitat responsable de mantindre disponible el recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:80
-#, fuzzy
 msgid "Contributors"
-msgstr "Col·laboradors:"
+msgstr "Col·laboradors"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:81
 msgid ""
@@ -2800,16 +2765,14 @@ msgstr "Entitat responsable de fer aportacions al contingut del recurs."
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:340
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:344
-#, fuzzy
 msgid "Date"
-msgstr "Data:"
+msgstr "Data"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:95
 msgid "A date of an event in the lifecycle of the resource."
-msgstr "Una data d'un event en el cicle de vida del recurs."
+msgstr "Una data d'un esdeveniment en el cicle de vida del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:98
-#, fuzzy
 msgid ""
 "Typically, Date will be associated with the creation or availability of the "
 "resource. Recommended best practice for encoding the date value is defined "
@@ -2817,37 +2780,31 @@ msgid ""
 "\" target=\"_blank\">W3C Date and Time Formats</a> and includes (among "
 "others) dates of the form YYYY-MM-DD."
 msgstr ""
-"\n"
-"                  Típicament , la data està associada amb la creació o \n"
-"                  disponibilitat del recurs. La millor pràctica recomanada "
-"per  \n"
-"                  codificar el valor de la data és desar-la en un perfil "
-"anomenat\n"
-"                   "
+"Típicament , la data està associada amb la creació o disponibilitat del "
+"recurs. La millor pràctica recomanada per codificar el valor de la data és "
+"desar-la en un perfil anomenat <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-"
+"datetime.html\" target=\"_blank\">Dates W3C i formats de dates</a> que "
+"inclou entre altres la forma DD-MM-AAAA."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:106
 msgid "The nature or genre of the content of the resource."
 msgstr "El tipus o el genere del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:109
-#, fuzzy
 msgid ""
 "Type includes terms describing general categories, functions, or genres, for "
 "content. Recommended best practice is to select a value from a controlled "
 "vocabulary or controlled classification scheme. To describe the physical or "
 "digital manifestation of the resource, use the FORMAT element."
 msgstr ""
-"\n"
-"              El Tipus inclou  els termes que descriuen les categories "
-"generals, \n"
-"             funcions, o generes, del contingut. La pràctica més recomanada "
-"és seleccionar\n"
-"              un valor de un vocabulari o esquema."
+"El tipus inclou  els termes que descriuen les categories generals, funcions, "
+"o generes, del contingut. La pràctica més recomanada és seleccionar un valor "
+"de un vocabulari o esquema. Per descriure la manifestació digital del "
+"recurs, utilitza l'element FORMAT."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:114
-#, fuzzy
 msgid "Format"
-msgstr "Format:"
+msgstr "Format"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 msgid "Select a Format."
@@ -2855,18 +2812,16 @@ msgstr "Selecciona el format."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:127
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:56
-#, fuzzy
 msgid "Identifier"
-msgstr "Identificador:"
+msgstr "Identificador"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "An unambiguous reference to the resource within a given context."
 msgstr "Una no ambigua referència al recurs en el seu context donat. "
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
-#, fuzzy
 msgid "Source"
-msgstr "Font:"
+msgstr "Font"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "A Reference to a resource from which the present resource is derived."
@@ -2877,9 +2832,8 @@ msgstr "Una referència al recurs del qual l'actual és derivat."
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:113
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:120
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:123
-#, fuzzy
 msgid "Language"
-msgstr "Idioma:"
+msgstr "Idioma"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:143
 msgid "Select a language."
@@ -2887,9 +2841,8 @@ msgstr "Selecciona l'idioma."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:149
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:370
-#, fuzzy
 msgid "Relation"
-msgstr "Relació:"
+msgstr "Relació"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 msgid "A reference to a related resource."
@@ -2899,9 +2852,8 @@ msgstr "Referència per al recurs esmentat"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:168
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:177
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:180
-#, fuzzy
 msgid "Coverage"
-msgstr "Cobertura:"
+msgstr "Cobertura"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "The extent or scope of the content of the resource."
@@ -2909,9 +2861,8 @@ msgstr "La extensió o abast del contingut del recurs."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:165
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:365
-#, fuzzy
 msgid "Rights"
-msgstr "Drets:"
+msgstr "Drets"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166
 msgid "Information about rights held in and over the resource."
@@ -2949,16 +2900,14 @@ msgid "Add Previous/Next links within SCOs?"
 msgstr "Afegeix el enllaços següents/previs dins dels SCOs ?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
-#, fuzzy
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind of "
 "functionality."
 msgstr ""
 "Activant aquesta opció provocarà que eXe afegeixi els enllaços previs/"
-"següents cap a pàgines individuals dins dels SCO. Això requereix una "
-"extensió no estàndard SCORM 1.2 i es conegut que sols funcionarà en algunes "
-"versions de Moodle. "
+"següents cap a pàgines individuals dins dels SCO. Els LMS pot afegir  aquest "
+"tipus de funcionalitat."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid ""
@@ -2973,188 +2922,179 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:60
 msgid "Language of the field"
-msgstr ""
+msgstr "Idioma del camp"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:31
 msgid "Required"
-msgstr ""
+msgstr "Requerit"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:34
-#, fuzzy
 msgid "Optional"
-msgstr "Opció"
+msgstr "Opcional "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:48
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:67
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:69
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:72
-#, fuzzy
 msgid "Catalog"
-msgstr "Català"
+msgstr "Catàleg "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:81
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:83
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:86
 msgid "Entry"
-msgstr ""
+msgstr "Entrada"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:149
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:158
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:161
 msgid "Keyword"
-msgstr ""
+msgstr "Paraula clau"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:187
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:194
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:204
 msgid "Structure"
-msgstr ""
+msgstr "Estructura"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:197
 msgid "atomic"
-msgstr ""
+msgstr "atòmic "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:198
-#, fuzzy
 msgid "collection"
-msgstr "Secció"
+msgstr "col·lecció "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:199
 msgid "networked"
-msgstr ""
+msgstr "en xarxa"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:200
 msgid "hierarchical"
-msgstr ""
+msgstr "jeràrquic"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:201
-#, fuzzy
 msgid "linear"
-msgstr "Índex"
+msgstr "lineal "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:210
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:226
 msgid "Agregation Level"
-msgstr ""
+msgstr "Nivell d'agregació"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
 msgid "smallest level of aggregation"
-msgstr ""
+msgstr "el nivell més baix d'agregació"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:221
 msgid ""
 "collection of atoms, e.g. an HTML document with some embedded pictures or a "
 "lesson"
 msgstr ""
+"col·leció d'àtoms, ex, un document HTML amb algunes imatges incrustades o "
+"una lliçó"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
 msgid "collection of level 1 resources"
-msgstr ""
+msgstr "col·lecció de nivell 1 de recursos"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
 msgid "largest level of granularity, e.g. a course"
-msgstr ""
+msgstr "nivell més gran de granularitat, ex. un curs"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:235
 msgid "Life Cycle"
-msgstr ""
+msgstr "Cicle de vida"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:243
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:253
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:256
-#, fuzzy
 msgid "Version"
-msgstr "Persa "
+msgstr "Versió"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:270
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:279
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
 msgid "draft"
-msgstr ""
+msgstr "Esborrany "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:274
 msgid "final"
-msgstr ""
+msgstr "final"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:275
 msgid "unavailable"
-msgstr ""
+msgstr "no disponible"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:276
-#, fuzzy
 msgid "revised"
-msgstr "Previsualització"
+msgstr "revisat"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:284
-#, fuzzy
 msgid "Contribution"
-msgstr "Col·laboradors:"
+msgstr "Contribució "
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:290
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:292
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:295
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:312
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:314
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:317
 msgid "Organization"
-msgstr ""
+msgstr "Organització"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:323
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:325
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:328
 msgid "Email"
-msgstr ""
+msgstr "Correu electrònic"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:352
-#, fuzzy
 msgid "Meta-Metadata"
-msgstr "Metadades"
+msgstr "Meta-Metadades"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:357
 msgid "Technical"
-msgstr ""
+msgstr "Tècnica"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:361
 msgid "Educational"
-msgstr ""
+msgstr "Educatiu"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:375
-#, fuzzy
 msgid "Annotation"
-msgstr "Informació"
+msgstr "Anotació"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:380
 msgid "Classification"
-msgstr ""
+msgstr "Classificació "
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
 msgid "Project Properties"
 msgstr "Propietats del projecte"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
-#, fuzzy
 msgid "Project Title"
-msgstr "Títol del projecte:"
+msgstr "Títol del projecte"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
 msgid "The project's title."
 msgstr "El títol del projecte."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
-#, fuzzy
 msgid "Header Background"
-msgstr "Fons de la capçalera:"
+msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
 msgid "Background image for a header (an image 100px high is recommended)."
@@ -3174,18 +3114,16 @@ msgid "Tile background image?"
 msgstr "Ajusteu imatge de fons?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
-#, fuzzy
 msgid "Author"
-msgstr "Autor:"
+msgstr "Autor"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Primary author of the resource."
 msgstr "Autor principal del recurs."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
-#, fuzzy
 msgid "License"
-msgstr "Llicència:"
+msgstr "Llicència"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
 #: exe/webui/wikipediablock.py:237
@@ -3255,9 +3193,8 @@ msgid "Select a license."
 msgstr "Escull la llicència."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
-#, fuzzy
 msgid "Footer"
-msgstr "Peu de pàgina:"
+msgstr "Peu de pàgina"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
 msgid "Web pages footer."
@@ -3268,27 +3205,24 @@ msgid "Taxonomy"
 msgstr "Taxonomia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
-#, fuzzy
 msgid "Level 1"
-msgstr "Nivell 1:"
+msgstr "Nivell 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
 msgid "Default name for level 1 nodes"
 msgstr "Nom per defecte per al nodes del nivell 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
-#, fuzzy
 msgid "Level 2"
-msgstr "Nivell 2:"
+msgstr "Nivell 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
 msgid "Default name for level 2 nodes"
 msgstr "Nom per defecte per als nodes del nivell 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
-#, fuzzy
 msgid "Level 3"
-msgstr "Nivell 3 :"
+msgstr "Nivell 3 "
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
 msgid "Default name for level 3 nodes"
@@ -3328,11 +3262,11 @@ msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:64
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:69
 msgid "LOM.es"
-msgstr ""
+msgstr "LOM.es"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:76
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
@@ -3373,26 +3307,24 @@ msgid "Move node down"
 msgstr "Mou  node  avall"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
-#, fuzzy
 msgid "File"
-msgstr "Fitxer Zip"
+msgstr "Fitxer"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
 msgid "New Window"
-msgstr ""
+msgstr "Finestra nova"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Open"
-msgstr ""
+msgstr "Obre"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
-#, fuzzy
 msgid "Recent Projects..."
-msgstr "Projecte eXe"
+msgstr "Projectes recents..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
@@ -3400,37 +3332,35 @@ msgstr "Suprimiu la llista de projectes recents"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
-msgstr ""
+msgstr "Anomena i desa..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
 msgid "Print"
-msgstr ""
+msgstr "Imprimeix"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
-#, fuzzy
 msgid "Import"
-msgstr "Exporta"
+msgstr "Importa"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:176
 msgid "HTML Course"
-msgstr ""
+msgstr "Curs HTML"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
 msgid "XLIFF File"
-msgstr ""
+msgstr "Fitxer XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
 msgid "Common Cartridge"
-msgstr ""
+msgstr "Common Cartridge"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
-#, fuzzy
 msgid "IMS Content Package"
-msgstr "Paquet de contingut IMS 1.1.3"
+msgstr "Paquet de contingut IMS"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
@@ -3446,19 +3376,19 @@ msgstr "Fitxer Zip"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Single Page"
-msgstr ""
+msgstr "Pàgina única"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "iPod Notes"
-msgstr ""
+msgstr "Notes iPod"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "XLIFF"
-msgstr ""
+msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
-msgstr ""
+msgstr "Combina"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:273
 msgid "Quit"
@@ -3466,55 +3396,55 @@ msgstr "Surt"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
-msgstr ""
+msgstr "Eines"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
 msgid "Refresh Display"
-msgstr ""
+msgstr "Refresca la visualització"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
 msgid "Styles"
-msgstr ""
+msgstr "Estils "
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
 msgid "eXe Tutorial"
-msgstr ""
+msgstr "Tutorial d'eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "eXe Manual"
-msgstr ""
+msgstr "Manual d'eXe en línia "
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "Release Notes"
-msgstr ""
+msgstr "Notes de la versió"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
-#, fuzzy
 msgid "eXe Web Site"
-msgstr "Lloc web"
+msgstr "Lloc web d'eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "Report an Issue"
-msgstr ""
+msgstr "Informa d'un problema"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
-#, fuzzy
 msgid "eXe Forums"
-msgstr "Nuevo foro"
+msgstr "Fòrums d'eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:395
 msgid "About eXe"
-msgstr ""
+msgstr "Quant a eXe"
 
 #: exe/jsui/scripts/exe.js:124
 msgid ""
 "If you leave this page eXe application continues to run. Please use the menu "
 "File->Quit if you really want to exit the application."
 msgstr ""
+"Quan tanqueu aquesta pàgina de l'aplicació, eXe seguirà funcionant. "
+"Utilitzeu el menú Fitxer-> Surt si realment voleu sortir de l'aplicació."
 
 #: exe/jsui/scripts/langs.js:4
 msgid "Afar "
@@ -3590,7 +3520,7 @@ msgstr "Bosnià"
 
 #: exe/jsui/scripts/langs.js:76
 msgid "Catalan "
-msgstr "Català"
+msgstr "Català-Valencià"
 
 #: exe/jsui/scripts/langs.js:80
 msgid "Chechen "
@@ -3905,9 +3835,8 @@ msgid "Norwegian Bokmål "
 msgstr "Noruec Bokmål "
 
 #: exe/jsui/scripts/langs.js:392
-#, fuzzy
 msgid "Ndebele,North "
-msgstr "Ndebele, Nort"
+msgstr "Ndebele, Nord "
 
 #: exe/jsui/scripts/langs.js:396
 msgid "Nepali "
@@ -3930,7 +3859,6 @@ msgid "Norwegian "
 msgstr "Noruec "
 
 #: exe/jsui/scripts/langs.js:416
-#, fuzzy
 msgid "Ndebele,South "
 msgstr "Ndebele, Sud"
 
@@ -3971,7 +3899,6 @@ msgid "Polish "
 msgstr "Polonès "
 
 #: exe/jsui/scripts/langs.js:456
-#, fuzzy
 msgid "Pashto,Pushto "
 msgstr "Pashto, Pushto "
 
@@ -4060,7 +3987,6 @@ msgid "Swati; Siswati "
 msgstr "Swati; Siswati "
 
 #: exe/jsui/scripts/langs.js:544
-#, fuzzy
 msgid "Sesotho; Sotho,Southern "
 msgstr "Sesotho; Sotho; del sud "
 
@@ -4238,7 +4164,7 @@ msgstr "Altre"
 
 #: exe/webui/appletblock.py:134
 msgid "Applet Type"
-msgstr "Tipus d'aplicació"
+msgstr "Tipus d'aplicació de java"
 
 #: exe/webui/appletblock.py:155 exe/webui/appletblock.py:165
 msgid "Add files"
@@ -4687,7 +4613,7 @@ msgstr "Amaga/Mostra paraula"
 
 #: exe/webui/element.py:1111 exe/webui/element.py:1373
 msgid "Strict Marking?"
-msgstr "Correcció estricta ?"
+msgstr "Marcat estricte ?"
 
 #: exe/webui/element.py:1116 exe/webui/element.py:1378
 msgid "Check Caps?"
@@ -4724,7 +4650,7 @@ msgstr "Respostes"
 
 #: exe/webui/element.py:1388
 msgid "Mostrar Puntuaci&oacute;n?"
-msgstr "Mostreu la puntuaci&oacute; ?"
+msgstr "Mostreu la puntuació ?"
 
 #: exe/webui/element.py:1647
 msgid "Please select a .flv file."
@@ -4858,7 +4784,7 @@ msgstr "Molt gran"
 
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
-msgstr "Mida de la lupa.: "
+msgstr "Mida de la lupa: "
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
@@ -4968,7 +4894,7 @@ msgstr "Article anglès de la Viquipèdia."
 
 #: exe/webui/wikipediablock.py:115
 msgid "Euskara Wikipedia Article"
-msgstr "Article Eusquera de la Viquipèdia "
+msgstr "Article eusquera de la Viquipèdia "
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
@@ -5020,7 +4946,7 @@ msgstr "Article eslovè de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Spanish Wikipedia Article"
-msgstr "Article espanyol de la Viquipèdia"
+msgstr "Article castellà de la Viquipèdia"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Swedish Wikipedia Article"
@@ -5121,13 +5047,13 @@ msgstr ""
 "altre paquet !"
 
 #: twisted/persisted/styles.py:437
-#, fuzzy
 msgid ""
 "Unable to merge: duplicate Java Applet resource names exist (including: "
 "\"\"). Please see the log file for the names of ALL such problem resources."
 msgstr ""
-"No és possible combinar: Existeix un recurs duplicat de l'aplicació de Java. "
-"(including:\""
+"No és possible combinar: Existeix un recurs duplicat de l'aplicació de Java."
+"(including: \"\") Si us plau, consulteu el fitxer de registre dels noms de "
+"tots els recursos tal problema."
 
 #: twisted/persisted/styles.py:541
 msgid ""
@@ -5142,30 +5068,31 @@ msgid ""
 "WARNING: content.xml version 0.1. Importing from content.data. Try to import "
 "from a content.xml version 0.2."
 msgstr ""
+"AVÍS:  S'està important des de les dades de contingut content.xml version "
+"0.1. Proveu a importar des de content.xml version 0.2."
 
-#, fuzzy
+
 #~ msgid ""
 #~ "Export <input_file> elp package to optional <output_file> on one of the "
 #~ "given formats: xml, scorm, ims, website, webzip or singlepage."
 #~ msgstr ""
-#~ "Exporteu  <input_file>el paquet elp de forma opcional <output_file> a "
+#~ "Exporta el paquet elp <input_file> a la forma opcional <output_file> en "
 #~ "algun d'aquests formats: xml, scorm, ims, lloc web, webzip o a pàgina "
 #~ "única."
 
-#, fuzzy
 #~ msgid ""
 #~ "Import to <output_file> elp package, <input_file> in one of the given "
 #~ "formats: xml."
 #~ msgstr ""
-#~ "Importa el  <output_file>  paquet elp, <input_file> en algun dels "
+#~ "Importa al format elp <output_file>, el <input_file> en algun dels "
 #~ "següents formats: xml."
 
 #~ msgid "eXe"
 #~ msgstr "eXe"
 
-#, fuzzy
+
 #~ msgid "Invalid output package"
-#~ msgstr "El paquet de sortida '%s' no es vàlid."
+#~ msgstr "Paquet de sortida no vàlid."
 
 #~ msgid "Ndebele, North "
 #~ msgstr "Ndebele, Nort"
@@ -5182,9 +5109,9 @@ msgstr ""
 #~ msgid "Show %s Image"
 #~ msgstr "Mostra imatge  %s"
 
-#, fuzzy
+
 #~ msgid "Basque Wikipedia Article"
-#~ msgstr "Article japonès de la Viquipèdia "
+#~ msgstr "Article eusquera de la Viquipèdia "
 
 #~ msgid "%prog [options]"
 #~ msgstr "%prog [opcions]"
