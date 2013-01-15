@@ -107,6 +107,16 @@ class EditorPage(RenderableResource):
 
         if "delete" in request.args:
             self.ideviceStore.delIdevice(self.editorPane.idevice)
+            #Lo borramos tambien de la lista factoryiDevices
+            idevice = self.editorPane.idevice
+            exist = False
+            for i in self.ideviceStore.getFactoryIdevices():
+                if i.title == idevice.title:
+                    idevice.id = i.id
+                    exist = True
+                    break
+            if exist:
+                self.ideviceStore.factoryiDevices.remove(idevice)
             self.ideviceStore.save()
             self.__createNewIdevice(request) 
             
