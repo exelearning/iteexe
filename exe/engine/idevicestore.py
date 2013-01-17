@@ -473,7 +473,7 @@ class IdeviceStore:
                 readingActivitiesFound += 1
                 if readingActivitiesFound == 2:
                     break
-        self.save()
+        #self.save()
 
     def __createGeneric(self):
         """
@@ -587,7 +587,7 @@ u"")
 _(u"""Describe the tasks the learners should complete.""")))
         idevices.append(activity)
 
-        self.save()
+        #self.save()
         return idevices
 
 
@@ -694,7 +694,7 @@ u"")
 _(u"""Describe the tasks the learners should complete.""")))
         self.generic.append(activity)
 
-        self.save()
+        #self.save()
 
 
     def save(self):
