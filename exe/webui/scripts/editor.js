@@ -15,21 +15,7 @@ function ideviceExists(ideviceName) {
 }
   
 function quitDialog() {
-	var theForm = document.getElementById('contentForm')
-        Ext.Msg.show( {
-            title: _('Confirm'),
-            msg: _('Do you really want to exit without saving?'),
-            scope: this,
-            modal: true,
-            buttons: Ext.Msg.YESNO,
-            fn: function(button) {
-                if (button == "yes")    {
-                	Ext.getCmp("ideviceeditorwin").close();    	
-                }
-                else
-		    return;
-            }
-        });
+    Ext.getCmp("ideviceeditorwin").close();
 }
 
 function saveIdevice(title) {

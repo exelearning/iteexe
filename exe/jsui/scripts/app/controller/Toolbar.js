@@ -301,7 +301,24 @@ Ext.define('eXe.controller.Toolbar', {
           modal: true,
           id: 'ideviceeditorwin',
           title: _("iDevice Editor"), 
-          html: '<iframe height="100%" width="100%" src="/editor"></iframe>'
+          html: '<iframe height="100%" width="100%" src="/editor"></iframe>',
+          listeners: {
+            'beforeclose': function(win) {
+                Ext.Msg.show( {
+                    title: _('Confirm'),
+                    msg: _('Be sure to save before quitting. Quit?'),
+                    //scope: this,
+                    //modal: true,
+                    buttons: Ext.Msg.YESNO,
+                    fn: function(button) {
+                        if (button === 'yes') {
+                            editor.doClose();
+                        }
+                    }
+                });
+                return false;                
+            }
+          }
         });
         editor.show();        
 	},

@@ -281,7 +281,7 @@ class EditorPage(RenderableResource):
             html += "<br/>" + common.submitButton("showHide", _("Show/Hide"))
         html += u'<br/><input class="button" type="button" name="quit" '
         #html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'        
-        html += u'onclick=quitDialog()'  
+        html += u'onclick="quitDialog()"'  
         html += u' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
