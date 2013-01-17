@@ -306,7 +306,7 @@ Ext.define('eXe.controller.Toolbar', {
             'beforeclose': function(win) {
                 Ext.Msg.show( {
                     title: _('Confirm'),
-                    msg: _('Be sure to save before quitting. Quit?'),
+                    msg: _('If you have made changes and have not saved, they will be lost. Do you really want to quit?'),
                     //scope: this,
                     //modal: true,
                     buttons: Ext.Msg.YESNO,
