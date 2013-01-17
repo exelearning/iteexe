@@ -513,12 +513,14 @@ function enableAnchors() {
 }
 
 function gotoAnchor() {
-	var outline = parent.eXe.app.getController('Outline');
+    if (typeof(parent.eXe.app)!='undefined') {
+        var outline = parent.eXe.app.getController('Outline');
 
-	if (outline.hash) {
-		location.hash = outline.hash;
-		outline.hash = null;
-	}
+        if (outline.hash) {
+            location.hash = outline.hash;
+            outline.hash = null;
+        }
+    }
 }
 
 function preventEscKey() {
