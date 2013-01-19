@@ -69,6 +69,8 @@ def safeTranslate(message, encoding='utf-8'):
     # of an idevice from Spanish to Spanish. Unicode couldn't
     # decode the accents, because it was assuming that it was
     # in ASCII codec
+    if message == "":
+        return message
     try:
         return __old_translate__(message)
     except UnicodeDecodeError, e:
