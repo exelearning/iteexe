@@ -269,7 +269,7 @@ click on the 'Select' button below.</p>"""))
         Upgrades exe to v0.11
         """
         self.content.autoCompletion = True
-        self.content.autoCompletionInstruc =  _(u"")
+        self.content.autoCompletionInstruc = u""
 
     def upgradeToVersion3(self):
         """
