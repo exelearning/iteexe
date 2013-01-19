@@ -199,7 +199,6 @@ class IdeviceStore:
             idevicesDir.mkdir()
         self.__loadExtended()
         self.__loadGeneric()
-        self.factoryiDevices = self.__getFactoryExtendediDevices() + self.generic
         #JR: Vemos cual sera el proximo id
         nextId = 0
         for idevice in self.getFactoryIdevices():
@@ -420,18 +419,23 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
-        genericPath = self.config.configDir/'idevices'/'generic.data'
-        log.debug("load generic iDevices from "+genericPath)
-        if genericPath.exists():
-            self.generic = persist.decodeObject(genericPath.bytes())
+        #JR: Modificamos la lectura para contemplar los genericos que se muestran y todos los genericos
+        showgenericPath = self.config.configDir/'idevices'/'showgeneric.data'
+        log.debug("load generic iDevices from "+showgenericPath)
+        if showgenericPath.exists():
+            self.generic = persist.decodeObject(showgenericPath.bytes())
             self.__upgradeGeneric()
-            self.factoryiDevices += self.__createGeneric()
+            allgenericPath = self.config.configDir/'idevices'/'allgeneric.data'
+            if allgenericPath.exists():
+                self.factoryiDevices = self.factoryiDevices + persist.decodeObject(allgenericPath.bytes())
+            else:
+                self.factoryiDevices = self.factoryiDevices + self.generic
         else:
             self.generic = self.__createGeneric()
-            self.factoryiDevices += self.generic
+            self.factoryiDevices = self.factoryiDevices + self.generic
 
-        for idevice in self.generic:
-            for factoryiDevice in self.factoryiDevices:
+        for factoryiDevice in self.factoryiDevices:
+            for idevice in self.generic:
                 if factoryiDevice.title == idevice.title:
                     idevice.id = factoryiDevice.id
                     break
@@ -705,12 +709,14 @@ _(u"""Describe the tasks the learners should complete.""")))
         if not idevicesDir.exists():
             idevicesDir.mkdir()
         #JR: Buscamos los genericos dentro de los de fabrica, ya que generic solo contiene aquellos genericos que se muestran
-        genericSave = []
+        allgeneric = []
         for idevice in self.getFactoryIdevices():
             if self.isGeneric(idevice):
-                genericSave.append(idevice)
-        fileOut = open(idevicesDir/'generic.data', 'wb')
-        fileOut.write(persist.encodeObject(genericSave))
+                allgeneric.append(idevice)
+        fileOut = open(idevicesDir/'allgeneric.data', 'wb')
+        fileOut.write(persist.encodeObject(allgeneric))
+        fileOut = open(idevicesDir/'showgeneric.data', 'wb')
+        fileOut.write(persist.encodeObject(self.generic))
         #JR: Guardamos tambien los iDevices extendidos
         fileOut = open(idevicesDir/'extended.data', 'wb')
         fileOut.write(persist.encodeObject(self.extended))
