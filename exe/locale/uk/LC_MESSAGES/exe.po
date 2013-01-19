@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-12 17:31+0100\n"
+"POT-Creation-Date: 2013-01-19 10:12+0100\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -25,19 +25,18 @@ msgstr "JAVA Аплет"
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:39
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:474
-#: exe/engine/idevicestore.py:532 exe/engine/idevicestore.py:560
-#: exe/engine/idevicestore.py:583 exe/engine/idevicestore.py:639
-#: exe/engine/idevicestore.py:667 exe/engine/imagemagnifieridevice.py:42
-#: exe/engine/imagewithtextidevice.py:44 exe/engine/listaidevice.py:51
-#: exe/engine/mathidevice.py:42 exe/engine/multichoiceidevice.py:61
-#: exe/engine/multiselectidevice.py:44 exe/engine/quiztestidevice.py:245
-#: exe/engine/reflectionfpdidevice.py:47
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:494
+#: exe/engine/idevicestore.py:552 exe/engine/idevicestore.py:580
+#: exe/engine/idevicestore.py:603 exe/engine/idevicestore.py:659
+#: exe/engine/idevicestore.py:687 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
+#: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
+#: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:47
 #: exe/engine/reflectionfpdmodifidevice.py:47
 #: exe/engine/reflectionidevice.py:47
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 #: exe/engine/truefalseidevice.py:145
-#: exe/engine/verdaderofalsofpdidevice.py:145 exe/engine/wikipediaidevice.py:53
+#: exe/engine/verdaderofalsofpdidevice.py:145 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "University of Auckland"
@@ -361,7 +360,7 @@ msgstr ""
 "перевірки правильності формування слів і граматики. </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:60 exe/engine/clozeidevice.py:60
-#: exe/engine/clozelangfpdidevice.py:60 exe/engine/listaidevice.py:64
+#: exe/engine/clozelangfpdidevice.py:60
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -404,7 +403,7 @@ msgstr ""
 "сюрпризів!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:116 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:120
+#: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:113
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
@@ -412,7 +411,7 @@ msgid "Instructions"
 msgstr "Інструкції"
 
 #: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:117
-#: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:121
+#: exe/engine/clozelangfpdidevice.py:117
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -423,12 +422,11 @@ msgstr ""
 "це поле без змін.\n"
 
 #: exe/engine/clozefpdidevice.py:122 exe/engine/clozeidevice.py:123
-#: exe/engine/listaidevice.py:127
 msgid "Cloze"
 msgstr "Пропущені слова"
 
 #: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:124
-#: exe/engine/clozelangfpdidevice.py:123 exe/engine/listaidevice.py:128
+#: exe/engine/clozelangfpdidevice.py:123
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -448,20 +446,20 @@ msgstr ""
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
 #: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:523
-#: exe/engine/idevicestore.py:632 exe/engine/listaidevice.py:133
-#: exe/engine/listaidevice.py:273 exe/engine/truefalseidevice.py:50
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:543
+#: exe/engine/idevicestore.py:652 exe/engine/listaidevice.py:123
+#: exe/engine/listaidevice.py:263 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
-#: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:164
+#: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:165
 #: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
 #: exe/webui/common.py:252 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:254 exe/webui/element.py:2269
-#: exe/webui/listablock.py:405 exe/webui/questionelement.py:104
+#: exe/webui/listablock.py:391 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "Зворотний зв'язок"
 
 #: exe/engine/clozefpdidevice.py:129 exe/engine/clozeidevice.py:130
-#: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:134
+#: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:124
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -470,22 +468,22 @@ msgstr ""
 "можна залишити порожнім."
 
 #: exe/engine/clozefpdidevice.py:274 exe/engine/clozeidevice.py:274
-#: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:268
+#: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:258
 msgid "Instructions For Learners"
 msgstr "Інструкції для Студентів"
 
 #: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
-#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:269
+#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:259
 msgid "Put instructions for learners here"
 msgstr "Вписуйте інструкції для студентів тут"
 
 #: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:276
-#: exe/engine/clozelangfpdidevice.py:280 exe/engine/listaidevice.py:270
+#: exe/engine/clozelangfpdidevice.py:280
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Прочитайте параграф внизу і проставте пропущені слова"
 
 #: exe/engine/clozefpdidevice.py:287 exe/engine/clozeidevice.py:288
-#: exe/engine/clozelangfpdidevice.py:292 exe/engine/listaidevice.py:282
+#: exe/engine/clozelangfpdidevice.py:292
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Дозволяє автозавершення коли користувач заповняє прогалини."
 
@@ -493,8 +491,7 @@ msgstr "Дозволяє автозавершення коли користув�
 msgid "Cloze Activity"
 msgstr "Вправа \"Пропущені Слова\""
 
-#: exe/engine/clozeidevice.py:120 exe/engine/listaidevice.py:124
-#: exe/engine/truefalseidevice.py:395
+#: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Прочитайте параграф внизу і проставте пропущені слова."
@@ -796,7 +793,7 @@ msgstr ""
 "exercise.</p>"
 
 #: exe/engine/field.py:3081 exe/engine/field.py:3319
-#: exe/engine/listaidevice.py:364
+#: exe/engine/listaidevice.py:353
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -1080,11 +1077,11 @@ msgstr ""
 "Використовуйте цей iDevice якщо вам потрібно показати \n"
 "велику кількість зображень."
 
-#: exe/engine/galleryidevice.py:471
+#: exe/engine/galleryidevice.py:470
 msgid "Enter a title for the gallery"
 msgstr "Введіть заголовок галереї"
 
-#: exe/engine/galleryidevice.py:472
+#: exe/engine/galleryidevice.py:471
 msgid ""
 "Click on the Add images button to select an image file. The image will "
 "appear below where you will be able to label it. It's always good "
@@ -1094,17 +1091,17 @@ msgstr ""
 " що містить зображення. Зображення з'явиться внизу, де ви зможете "
 "підписати його. Корисно додавати розмір файлу в підпис."
 
-#: exe/engine/galleryidevice.py:711 exe/export/ipodpage.py:110
-#: exe/export/scormexport.py:402 exe/export/websitepage.py:247
+#: exe/engine/galleryidevice.py:710 exe/export/scormexport.py:404
+#: exe/export/websitepage.py:249
 msgid "Previous"
 msgstr "Назад"
 
-#: exe/engine/galleryidevice.py:711 exe/export/ipodpage.py:116
-#: exe/export/scormexport.py:403 exe/export/websitepage.py:253
+#: exe/engine/galleryidevice.py:710 exe/export/scormexport.py:405
+#: exe/export/websitepage.py:255
 msgid "Next"
 msgstr "Далі"
 
-#: exe/engine/galleryidevice.py:711 exe/webui/block.py:260
+#: exe/engine/galleryidevice.py:710 exe/webui/block.py:260
 #: exe/webui/block.py:261 exe/webui/common.py:351 exe/webui/common.py:352
 #: exe/webui/editorpane.py:363 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:384 exe/webui/editorpane.py:385
@@ -1113,16 +1110,16 @@ msgstr "Далі"
 msgid "Close"
 msgstr "Закрити"
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:581
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:601
 msgid "Reading Activity 0.11"
 msgstr "Reading Activity 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:431
-#: exe/engine/idevicestore.py:472
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:492
 msgid "Reading Activity"
 msgstr "Читання"
 
-#: exe/engine/idevicestore.py:475
+#: exe/engine/idevicestore.py:495
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1138,7 +1135,7 @@ msgstr ""
 "можна виконувати просячи студентів відповісти на додаткові \n"
 "питання.</p>"
 
-#: exe/engine/idevicestore.py:480
+#: exe/engine/idevicestore.py:500
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1163,31 +1160,31 @@ msgstr ""
 "діяльність так, щоб корисний результат по закінченню цієї діяльності "
 "оправдовував затрачений час і зусилля. </li></ol>"
 
-#: exe/engine/idevicestore.py:515 exe/engine/idevicestore.py:624
+#: exe/engine/idevicestore.py:535 exe/engine/idevicestore.py:644
 msgid "What to read"
 msgstr "Що читати"
 
-#: exe/engine/idevicestore.py:516 exe/engine/idevicestore.py:625
+#: exe/engine/idevicestore.py:536 exe/engine/idevicestore.py:645
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr "Введіть деталі читання, зокрема довідкові деталі. "
 
-#: exe/engine/idevicestore.py:519 exe/engine/idevicestore.py:558
-#: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:628
-#: exe/engine/idevicestore.py:665 exe/engine/idevicestore.py:673
+#: exe/engine/idevicestore.py:539 exe/engine/idevicestore.py:578
+#: exe/engine/idevicestore.py:586 exe/engine/idevicestore.py:648
+#: exe/engine/idevicestore.py:685 exe/engine/idevicestore.py:693
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Діяльність"
 
-#: exe/engine/idevicestore.py:520 exe/engine/idevicestore.py:629
+#: exe/engine/idevicestore.py:540 exe/engine/idevicestore.py:649
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "Опишіть детально завдання. Це допомагає студентам зрозуміти тему."
 
-#: exe/engine/idevicestore.py:524 exe/engine/idevicestore.py:633
+#: exe/engine/idevicestore.py:544 exe/engine/idevicestore.py:653
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1199,12 +1196,12 @@ msgstr ""
 "для подальшого аналізу читання, висловлюючи питання або \n"
 "висвітлюючи твердження, щоб почати дебати."
 
-#: exe/engine/idevicestore.py:530 exe/engine/idevicestore.py:539
-#: exe/engine/idevicestore.py:637 exe/engine/idevicestore.py:646
+#: exe/engine/idevicestore.py:550 exe/engine/idevicestore.py:559
+#: exe/engine/idevicestore.py:657 exe/engine/idevicestore.py:666
 msgid "Objectives"
 msgstr "Завдання"
 
-#: exe/engine/idevicestore.py:533 exe/engine/idevicestore.py:640
+#: exe/engine/idevicestore.py:553 exe/engine/idevicestore.py:660
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1213,16 +1210,16 @@ msgstr ""
 "Завдання описує очікувані результати вивчення і повинне визначити, що "
 "учні зможуть зробити, коли вони закінчать цей навчальний курс."
 
-#: exe/engine/idevicestore.py:540 exe/engine/idevicestore.py:647
+#: exe/engine/idevicestore.py:560 exe/engine/idevicestore.py:667
 msgid "Type the learning objectives for this resource."
 msgstr "Введіть повчальні завдання для цього ресурсу."
 
-#: exe/engine/idevicestore.py:543 exe/engine/idevicestore.py:553
-#: exe/engine/idevicestore.py:650 exe/engine/idevicestore.py:660
+#: exe/engine/idevicestore.py:563 exe/engine/idevicestore.py:573
+#: exe/engine/idevicestore.py:670 exe/engine/idevicestore.py:680
 msgid "Preknowledge"
 msgstr "Попередні знання"
 
-#: exe/engine/idevicestore.py:546 exe/engine/idevicestore.py:653
+#: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:673
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1238,7 +1235,7 @@ msgstr ""
 "<li>        Учні повинні манти 4 рівень Англійської мови </li>\n"
 "<li>        Учні повинні вміти використовувати прилади </li></ul>\n"
 
-#: exe/engine/idevicestore.py:554 exe/engine/idevicestore.py:661
+#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:681
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1246,7 +1243,7 @@ msgstr ""
 "Опишіть попередні знання які повинен мати студент щоб \n"
 "закінчити цей курс навчання"
 
-#: exe/engine/idevicestore.py:561 exe/engine/idevicestore.py:668
+#: exe/engine/idevicestore.py:581 exe/engine/idevicestore.py:688
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1257,11 +1254,11 @@ msgstr ""
 "повинен виконати. Опишіть завдання і всі питання які можуть виникати у "
 "студентів."
 
-#: exe/engine/idevicestore.py:567 exe/engine/idevicestore.py:674
+#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:694
 msgid "Describe the tasks the learners should complete."
 msgstr "Опишіть завдання, яке учні повинні виконати."
 
-#: exe/engine/idevicestore.py:584
+#: exe/engine/idevicestore.py:604
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1278,7 +1275,7 @@ msgstr ""
 "Зворотний зв'язок використовується для того щоб повідомити \n"
 "студенту деякі додаткові інструкції.</p>"
 
-#: exe/engine/idevicestore.py:589
+#: exe/engine/idevicestore.py:609
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -1330,7 +1327,7 @@ msgstr ""
 "проводитись \"магічні\" дії."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
-#: exe/engine/multimediaidevice.py:64
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:115
 msgid "Text"
 msgstr "Текст"
 
@@ -1464,15 +1461,66 @@ msgstr "Введіть заголовок зображення."
 msgid "DropDown Activity"
 msgstr ""
 
+#: exe/engine/listaidevice.py:51
+msgid "INTEF"
+msgstr ""
+
 #: exe/engine/listaidevice.py:52
 msgid ""
 "<p>DropDown exercises are texts or sentences where students must select "
-"the correct word. They are often used for the following "
+"the correct words. They are often used for the following "
 "purposes:</p><ol><li>To check knowledge of core course concepts (this "
 "could be a pre-check, formative exercise, or summative check).</li><li>To"
 " check reading comprehension.</li><li>To check vocabulary "
 "knowledge.</li><li>To check word formation and/or grammatical competence."
 " </li></ol>"
+msgstr ""
+
+#: exe/engine/listaidevice.py:64
+msgid ""
+"<dl>  <dt>If your goal is to test understanding of core concepts or "
+"reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
+" or reading long  enough to adequately test the target's knowledge, but "
+"short enough not to induce fatigue. Less than one typed page is probably "
+"adequate, but probably considerably less for young students or beginners."
+"    </p>    <p>Choose words in the text thatare key to understanding the "
+"concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose "
+"alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is "
+"to test vocabulary knowledge  </dt>  <dt>If your goal is to test word "
+"formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. "
+"This text should be coherent and cohesive, and be of an appropriate "
+"length. Remember that the goal is not vocabulary knowledge, so the core "
+"meanings of the stem words should be well known to the students.  </p>  "
+"<p>Highlight the target words in the text. Provide alternatives with the "
+"same word stem, but different affixes. It is a good idea to get a "
+"colleague to test the test/exercise to make sure there are no surprises!"
+"  </p>  </dd></dl>"
+msgstr ""
+
+#: exe/engine/listaidevice.py:114
+msgid "Provide instruction on how the dropdown activity should be completed."
+msgstr ""
+
+#: exe/engine/listaidevice.py:115
+msgid " "
+msgstr ""
+
+#: exe/engine/listaidevice.py:117
+msgid "Dropdown"
+msgstr ""
+
+#: exe/engine/listaidevice.py:118
+msgid ""
+"<p>Enter the text for the dropdown activity in to the dropdown field \n"
+"by either pasting text from another source or by typing text directly "
+"into the \n"
+"field.</p><p> To select words to choose, double click on the word to "
+"select it and \n"
+"click on the 'Select' button below.</p>"
+msgstr ""
+
+#: exe/engine/listaidevice.py:260
+msgid "Read the paragraph below and choose the correct words"
 msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
@@ -1611,11 +1659,11 @@ msgstr "Одиниця"
 msgid "Home"
 msgstr "Домашня сторінка"
 
-#: exe/engine/package.py:521
+#: exe/engine/package.py:522
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:552 exe/engine/package.py:559
+#: exe/engine/package.py:553 exe/engine/package.py:560
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1624,8 +1672,8 @@ msgstr ""
 "Помилка при збереженні!\n"
 "Останнє вдале збереження %s."
 
-#: exe/engine/package.py:853 exe/jsui/scripts/app/controller/Toolbar.js:303
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
+#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:303
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
@@ -1908,11 +1956,11 @@ msgstr ""
 msgid "FPD - Actividad de Verdadero/Falso"
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:52
+#: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
 msgstr "Wiki - Стаття"
 
-#: exe/engine/wikipediaidevice.py:54
+#: exe/engine/wikipediaidevice.py:55
 msgid ""
 "<p>The Wikipedia iDevice allows you to locate \n"
 "existing content from within Wikipedia and download this content into "
@@ -1930,11 +1978,11 @@ msgstr ""
 "<p>Wikipedia iDevice дозволяє виконувати автоматичний пошук в системі "
 "Wikipedia, і додавати результат пошуку в наш пакет.</p>"
 
-#: exe/engine/wikipediaidevice.py:64
+#: exe/engine/wikipediaidevice.py:65
 msgid "Article"
 msgstr "Стаття"
 
-#: exe/engine/wikipediaidevice.py:70 exe/engine/wikipediaidevice.py:361
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:365
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1942,13 +1990,13 @@ msgstr ""
 "Виберіть правильну мову сайту Wikipedia \n"
 "для пошуку та виводу питання."
 
-#: exe/engine/wikipediaidevice.py:72 exe/engine/wikipediaidevice.py:363
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:367
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr "Введіть фразу або питання для пошуку у Wikipedia."
 
-#: exe/engine/wikipediaidevice.py:98 exe/engine/wikipediaidevice.py:134
+#: exe/engine/wikipediaidevice.py:99 exe/engine/wikipediaidevice.py:138
 #, python-format
 msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
@@ -1957,7 +2005,7 @@ msgstr ""
 "Неможливо завантажити з %s <br/>Будь ласка перевірте правельність "
 "написання, та налаштування з'єднання після чого пробуйте знов."
 
-#: exe/engine/wikipediaidevice.py:315
+#: exe/engine/wikipediaidevice.py:319
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -2079,9 +2127,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:210
-#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:937 exe/jsui/mainpage.py:1012
-#: exe/jsui/mainpage.py:1033
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:209
+#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:936 exe/jsui/mainpage.py:977
+#: exe/jsui/mainpage.py:998
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2098,7 +2146,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/imsexport.py:402 exe/export/scormexport.py:642
+#: exe/export/imsexport.py:404 exe/export/scormexport.py:644
 #: exe/export/websiteexport.py:90
 #, python-format
 msgid ""
@@ -2175,19 +2223,19 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:228 exe/jsui/mainpage.py:666 exe/jsui/mainpage.py:799
+#: exe/jsui/mainpage.py:227 exe/jsui/mainpage.py:665 exe/jsui/mainpage.py:798
 msgid "Cannot access directory named "
 msgstr "Неможу отримати доступ до директорії "
 
-#: exe/jsui/mainpage.py:228 exe/jsui/mainpage.py:668 exe/jsui/mainpage.py:799
+#: exe/jsui/mainpage.py:227 exe/jsui/mainpage.py:667 exe/jsui/mainpage.py:798
 msgid ". Please use ASCII names."
 msgstr ". Будь ласка використовуйте ASCII імена."
 
-#: exe/jsui/mainpage.py:237
+#: exe/jsui/mainpage.py:236
 msgid "SAVE FAILED!"
 msgstr "Помилка при збереженні!"
 
-#: exe/jsui/mainpage.py:241 exe/jsui/mainpage.py:530 exe/jsui/mainpage.py:870
+#: exe/jsui/mainpage.py:240 exe/jsui/mainpage.py:529 exe/jsui/mainpage.py:869
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2196,51 +2244,51 @@ msgstr ""
 "Помилка при збереженні!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:245 exe/jsui/mainpage.py:250 exe/jsui/mainpage.py:253
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:249 exe/jsui/mainpage.py:252
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Пакет збережено в: %s"
 
-#: exe/jsui/mainpage.py:452 exe/jsui/mainpage.py:558
+#: exe/jsui/mainpage.py:451 exe/jsui/mainpage.py:557
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/jsui/mainpage.py:472
+#: exe/jsui/mainpage.py:471
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/jsui/mainpage.py:600
+#: exe/jsui/mainpage.py:599
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:638
+#: exe/jsui/mainpage.py:637
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:641
+#: exe/jsui/mainpage.py:640
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:688 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
-#: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:921
+#: exe/jsui/mainpage.py:687 exe/jsui/mainpage.py:694 exe/jsui/mainpage.py:697
+#: exe/jsui/mainpage.py:700 exe/jsui/mainpage.py:703 exe/jsui/mainpage.py:920
 msgid "EXPORT FAILED!"
 msgstr "Помилка при експортуванні!"
 
-#: exe/jsui/mainpage.py:768
+#: exe/jsui/mainpage.py:767
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:771
+#: exe/jsui/mainpage.py:770
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:825
+#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:824
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2249,17 +2297,17 @@ msgstr ""
 "Помилка!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:827
+#: exe/jsui/mainpage.py:826
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Пакет розпаковано в: %s"
 
-#: exe/jsui/mainpage.py:856 exe/jsui/mainpage.py:898 exe/jsui/mainpage.py:965
+#: exe/jsui/mainpage.py:855 exe/jsui/mainpage.py:897
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/jsui/mainpage.py:862 exe/jsui/mainpage.py:904 exe/jsui/mainpage.py:971
+#: exe/jsui/mainpage.py:861 exe/jsui/mainpage.py:903
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2268,10 +2316,9 @@ msgstr ""
 "Директорія з назвою %s вже існує. Будь ласка виберіть іншу назву або "
 "видаліть існуючу директорію і спробуйте знову."
 
-#: exe/jsui/mainpage.py:911 exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:938
-#: exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:996
-#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1019
-#: exe/jsui/mainpage.py:1034 exe/jsui/mainpage.py:1040
+#: exe/jsui/mainpage.py:910 exe/jsui/mainpage.py:924 exe/jsui/mainpage.py:937
+#: exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:961 exe/jsui/mainpage.py:978
+#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:999 exe/jsui/mainpage.py:1005
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2280,24 +2327,24 @@ msgstr ""
 "Помилка при експортуванні!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:927 exe/jsui/mainpage.py:946 exe/jsui/mainpage.py:980
-#: exe/jsui/mainpage.py:998 exe/jsui/mainpage.py:1021 exe/jsui/mainpage.py:1042
+#: exe/jsui/mainpage.py:926 exe/jsui/mainpage.py:945 exe/jsui/mainpage.py:963
+#: exe/jsui/mainpage.py:986 exe/jsui/mainpage.py:1007
 #, python-format
 msgid "Exported to %s"
 msgstr "Експортовано до %s"
 
-#: exe/jsui/mainpage.py:1075
+#: exe/jsui/mainpage.py:1040
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Файл %s не існує або його неможливо прочитати."
 
-#: exe/jsui/mainpage.py:1079
+#: exe/jsui/mainpage.py:1044
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Неможу завантажити файл, будь ласка відішліть файл сюди: "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1082
+#: exe/jsui/mainpage.py:1047
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2306,15 +2353,15 @@ msgstr ""
 "Вибечта, невірний формат файлу:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1084
+#: exe/jsui/mainpage.py:1049
 msgid "Sorry, wrong file format"
 msgstr "Вибечта, невірний формат файлу"
 
-#: exe/jsui/propertiespage.py:90
+#: exe/jsui/propertiespage.py:91
 msgid "Failed to get properties"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:107
+#: exe/jsui/propertiespage.py:113
 msgid "Failed to save properties"
 msgstr ""
 
@@ -2343,15 +2390,15 @@ msgid "Image Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:154
-#: exe/jsui/scripts/app/controller/Toolbar.js:336
-#: exe/jsui/scripts/app/controller/Toolbar.js:357
-#: exe/jsui/scripts/app/controller/Toolbar.js:392
-#: exe/jsui/scripts/app/controller/Toolbar.js:457
-#: exe/jsui/scripts/app/controller/Toolbar.js:484
-#: exe/jsui/scripts/app/controller/Toolbar.js:525
-#: exe/jsui/scripts/app/controller/Toolbar.js:554
-#: exe/jsui/scripts/app/controller/Toolbar.js:668
-#: exe/jsui/scripts/app/controller/Toolbar.js:742
+#: exe/jsui/scripts/app/controller/Toolbar.js:353
+#: exe/jsui/scripts/app/controller/Toolbar.js:374
+#: exe/jsui/scripts/app/controller/Toolbar.js:409
+#: exe/jsui/scripts/app/controller/Toolbar.js:474
+#: exe/jsui/scripts/app/controller/Toolbar.js:501
+#: exe/jsui/scripts/app/controller/Toolbar.js:542
+#: exe/jsui/scripts/app/controller/Toolbar.js:571
+#: exe/jsui/scripts/app/controller/Toolbar.js:689
+#: exe/jsui/scripts/app/controller/Toolbar.js:763
 msgid "All Files"
 msgstr ""
 
@@ -2361,12 +2408,12 @@ msgid "Error"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:144
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:277
 msgid "Insert Package"
 msgstr "Вставити Пакет"
 
 #: exe/jsui/scripts/app/controller/Outline.js:147
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
 msgid "Extract Package"
 msgstr "Розпакувати Пакет"
 
@@ -2375,6 +2422,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
+#: exe/jsui/scripts/app/controller/Toolbar.js:308
 msgid "Confirm"
 msgstr ""
 
@@ -2391,147 +2439,153 @@ msgid "About"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:290
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 #, fuzzy
 msgid "Preferences"
 msgstr "Переваги"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:324
+#: exe/jsui/scripts/app/controller/Toolbar.js:309
+msgid ""
+"If you have made changes and have not saved, they will be lost. Do you "
+"really want to quit?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:341
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:329
+#: exe/jsui/scripts/app/controller/Toolbar.js:346
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:335
-#: exe/jsui/scripts/app/controller/Toolbar.js:356
-#: exe/jsui/scripts/app/controller/Toolbar.js:667
-#: exe/jsui/scripts/app/controller/Toolbar.js:741
+#: exe/jsui/scripts/app/controller/Toolbar.js:352
+#: exe/jsui/scripts/app/controller/Toolbar.js:373
+#: exe/jsui/scripts/app/controller/Toolbar.js:688
+#: exe/jsui/scripts/app/controller/Toolbar.js:762
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:345
+#: exe/jsui/scripts/app/controller/Toolbar.js:362
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:350
+#: exe/jsui/scripts/app/controller/Toolbar.js:367
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:366
+#: exe/jsui/scripts/app/controller/Toolbar.js:383
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:381
+#: exe/jsui/scripts/app/controller/Toolbar.js:398
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:391
+#: exe/jsui/scripts/app/controller/Toolbar.js:408
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:406
+#: exe/jsui/scripts/app/controller/Toolbar.js:423
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:414
+#: exe/jsui/scripts/app/controller/Toolbar.js:431
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:415
+#: exe/jsui/scripts/app/controller/Toolbar.js:432
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:438
+#: exe/jsui/scripts/app/controller/Toolbar.js:455
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:448
+#: exe/jsui/scripts/app/controller/Toolbar.js:465
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:456
-#: exe/jsui/scripts/app/controller/Toolbar.js:483
+#: exe/jsui/scripts/app/controller/Toolbar.js:473
+#: exe/jsui/scripts/app/controller/Toolbar.js:500
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:465
+#: exe/jsui/scripts/app/controller/Toolbar.js:482
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:475
+#: exe/jsui/scripts/app/controller/Toolbar.js:492
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:498
+#: exe/jsui/scripts/app/controller/Toolbar.js:515
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:515
+#: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:524
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
+#: exe/jsui/scripts/app/controller/Toolbar.js:541
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:253
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:532
+#: exe/jsui/scripts/app/controller/Toolbar.js:549
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:534
+#: exe/jsui/scripts/app/controller/Toolbar.js:551
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:536
+#: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:538
+#: exe/jsui/scripts/app/controller/Toolbar.js:555
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:540
+#: exe/jsui/scripts/app/controller/Toolbar.js:557
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:553
+#: exe/jsui/scripts/app/controller/Toolbar.js:570
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:640
+#: exe/jsui/scripts/app/controller/Toolbar.js:661
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:656
+#: exe/jsui/scripts/app/controller/Toolbar.js:677
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:661
+#: exe/jsui/scripts/app/controller/Toolbar.js:682
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:680
+#: exe/jsui/scripts/app/controller/Toolbar.js:701
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:681
+#: exe/jsui/scripts/app/controller/Toolbar.js:702
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:705
+#: exe/jsui/scripts/app/controller/Toolbar.js:726
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:721
+#: exe/jsui/scripts/app/controller/Toolbar.js:742
 msgid "Select a File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
+#: exe/jsui/scripts/app/controller/Toolbar.js:748
 msgid "Saving package..."
 msgstr ""
 
@@ -2561,7 +2615,7 @@ msgid "Modified"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:256
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:267
 msgid "Save"
 msgstr "Зберегти"
 
@@ -3159,8 +3213,8 @@ msgstr "Додати Сторінку"
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
-#: exe/webui/editorelement.py:332 exe/webui/editorpage.py:247
-#: exe/webui/editorpage.py:250 exe/webui/galleryblock.py:275
+#: exe/webui/editorelement.py:332 exe/webui/editorpage.py:258
+#: exe/webui/editorpage.py:261 exe/webui/galleryblock.py:280
 msgid "Delete"
 msgstr "Видалити"
 
@@ -3238,84 +3292,84 @@ msgstr ""
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:212
+msgid "SCORM2004"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:219
 msgid "IMS Content Package"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:225
 msgid "Web Site"
 msgstr "Web Site"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
 msgid "Self-contained Folder"
 msgstr "Директорія з вмістом"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:238
 msgid "Zip File"
 msgstr "Zip Архів"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:247
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
-msgid "iPod Notes"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:259
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:273
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:296 exe/webui/editorpage.py:285
 #, fuzzy
 msgid "Quit"
 msgstr "Підтвердити"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:303
 msgid "Tools"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:328
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:335
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "eXe Manual"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:376
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:382
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
 msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:395
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "About eXe"
 msgstr ""
 
@@ -4131,7 +4185,7 @@ msgid "Tip:"
 msgstr "Порада:"
 
 #: exe/webui/block.py:299 exe/webui/eleccionmultiplefpdblock.py:164
-#: exe/webui/galleryblock.py:344 exe/webui/genericblock.py:83
+#: exe/webui/galleryblock.py:349 exe/webui/genericblock.py:83
 #: exe/webui/genericblock.py:109 exe/webui/multichoiceblock.py:154
 msgid "IDevice Icon"
 msgstr "IDevice іконка"
@@ -4145,7 +4199,7 @@ msgstr "iDevice іконка"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/webui/block.py:344 exe/webui/editorpage.py:294
+#: exe/webui/block.py:344 exe/webui/editorpage.py:306
 #: exe/webui/editorpane.py:269
 msgid "Edit"
 msgstr "Редагувати"
@@ -4179,7 +4233,7 @@ msgstr "Секція"
 msgid "Retroalimentacion"
 msgstr ""
 
-#: exe/webui/common.py:70 exe/webui/editorpage.py:231
+#: exe/webui/common.py:70 exe/webui/editorpage.py:242
 #: exe/webui/preferencespage.py:131 exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
@@ -4243,30 +4297,30 @@ msgstr "Вибрати MP3 файл"
 msgid "Caption:"
 msgstr "Заголовок:"
 
-#: exe/webui/editorpage.py:116
+#: exe/webui/editorpage.py:126
 msgid "Please enter an idevice name."
 msgstr "Будь ласка введіть назву для iDevice."
 
-#: exe/webui/editorpage.py:184 exe/webui/editorpage.py:196
+#: exe/webui/editorpage.py:195 exe/webui/editorpage.py:207
 #, fuzzy
 msgid "Sorry, wrong file format."
 msgstr "Вибечта, невірний формат файлу"
 
-#: exe/webui/editorpage.py:260
+#: exe/webui/editorpage.py:271
 #, fuzzy
 msgid "Import iDevice"
 msgstr "Імпортувати iDevices"
 
-#: exe/webui/editorpage.py:265
+#: exe/webui/editorpage.py:276
 #, fuzzy
 msgid "Export iDevice"
 msgstr "Експортувати iDevice"
 
-#: exe/webui/editorpage.py:268 exe/webui/editorpage.py:270
+#: exe/webui/editorpage.py:279 exe/webui/editorpage.py:281
 msgid "Show/Hide"
 msgstr ""
 
-#: exe/webui/editorpage.py:303
+#: exe/webui/editorpage.py:315
 msgid "New iDevice"
 msgstr "Новий iDevice"
 
@@ -4414,13 +4468,13 @@ msgid "Info"
 msgstr "Інфо"
 
 #: exe/webui/editorpane.py:427 exe/webui/element.py:1216
-#: exe/webui/element.py:1484 exe/webui/listablock.py:226
-#: exe/webui/listablock.py:230
+#: exe/webui/element.py:1484 exe/webui/listablock.py:213
+#: exe/webui/listablock.py:217
 msgid "Submit"
 msgstr "Підтвердити"
 
 #: exe/webui/editorpane.py:437
-msgid "Check iDevices do not want to display:"
+msgid "Check iDevices you want to display:"
 msgstr ""
 
 #: exe/webui/ejercicioresueltofpdblock.py:110
@@ -4486,12 +4540,11 @@ msgid "Select an image (JPG file)"
 msgstr "Вибрати зображення (JPG файл)"
 
 #: exe/webui/element.py:1098 exe/webui/element.py:1360
-#: exe/webui/listablock.py:116
 msgid "Cloze Text"
 msgstr "Текст Завдання"
 
 #: exe/webui/element.py:1106 exe/webui/element.py:1368
-#: exe/webui/listablock.py:124
+#: exe/webui/listablock.py:120
 msgid "Hide/Show Word"
 msgstr "Сховати/Показати Слово"
 
@@ -4528,7 +4581,7 @@ msgid "Show Answers"
 msgstr "Показати Відповідь"
 
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
-#: exe/webui/listablock.py:263
+#: exe/webui/listablock.py:250
 msgid "Answsers"
 msgstr "Відповіді"
 
@@ -4607,42 +4660,46 @@ msgstr "Адреса (URL):"
 msgid "Frame Height:"
 msgstr "Розмір Фрейму:"
 
-#: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:279
-#: exe/webui/galleryblock.py:280
+#: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:284
+#: exe/webui/galleryblock.py:285
 msgid "Add images"
 msgstr "Додати зображення"
 
-#: exe/webui/galleryblock.py:207 exe/webui/galleryblock.py:304
+#: exe/webui/galleryblock.py:207 exe/webui/galleryblock.py:309
 msgid "No Images Loaded"
 msgstr "Немає завантажених зображень"
 
-#: exe/webui/galleryblock.py:218 exe/webui/galleryblock.py:236
+#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:241
 msgid "Change Image"
 msgstr "Змінити Зображення"
 
-#: exe/webui/galleryblock.py:243
+#: exe/webui/galleryblock.py:248
 msgid "Move Image Left"
 msgstr "Посунути зображення ліворуч"
 
-#: exe/webui/galleryblock.py:245
+#: exe/webui/galleryblock.py:250
 msgid "Go Back"
 msgstr "Назад"
 
-#: exe/webui/galleryblock.py:257
+#: exe/webui/galleryblock.py:262
 msgid "Move Image Right"
 msgstr "Посунути зображення праворуч"
 
-#: exe/webui/galleryblock.py:259
+#: exe/webui/galleryblock.py:264
 msgid "Go Forward"
 msgstr "Вперед"
 
-#: exe/webui/galleryblock.py:267
+#: exe/webui/galleryblock.py:272
 msgid "Go Forward (Not Available)"
 msgstr "Вперед (Недоступно)"
 
-#: exe/webui/galleryblock.py:272
+#: exe/webui/galleryblock.py:277
 msgid "Delete Image"
 msgstr "Видалити Зображення"
+
+#: exe/webui/galleryblock.py:278
+msgid "Delete this image?"
+msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
@@ -4933,4 +4990,24 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+
+#~ msgid ""
+#~ "<p>DropDown exercises are texts or "
+#~ "sentences where students must select the"
+#~ " correct word. They are often used"
+#~ " for the following purposes:</p><ol><li>To "
+#~ "check knowledge of core course concepts"
+#~ " (this could be a pre-check, "
+#~ "formative exercise, or summative "
+#~ "check).</li><li>To check reading "
+#~ "comprehension.</li><li>To check vocabulary "
+#~ "knowledge.</li><li>To check word formation "
+#~ "and/or grammatical competence. </li></ol>"
+#~ msgstr ""
+
+#~ msgid "iPod Notes"
+#~ msgstr ""
+
+#~ msgid "Check iDevices do not want to display:"
+#~ msgstr ""
 
