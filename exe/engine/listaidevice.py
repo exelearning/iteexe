@@ -19,7 +19,7 @@
 # ===========================================================================
 
 """
-Cloze Idevice. Shows a paragraph where the student must fill in the blanks
+
 """
 
 import logging
@@ -48,10 +48,10 @@ class ListaIdevice(Idevice):
         """
         
         Idevice.__init__(self, x_(u"DropDown Activity"),
-                         x_(u"University of Auckland"), 
+                         x_(u"INTEF"), 
                          x_(u"<p>DropDown exercises are texts or "
                              "sentences where students must select the "
-                             "correct word. They are often used for the "
+                             "correct words. They are often used for the "
                              "following purposes:</p>"
                              "<ol>"
                              "<li>To check knowledge of core course "
@@ -76,7 +76,7 @@ class ListaIdevice(Idevice):
                              "beginners."
                              "    </p>"
                              "    <p>"
-                             "Select words in the text that"
+                             "Choose words in the text that"
                              "are key to understanding the concepts. These"
                              "will probably be verbs, nouns, and key adverbs."
                              "Choose alternatives with one clear answer."
@@ -85,13 +85,6 @@ class ListaIdevice(Idevice):
                              "  <dt>"
                              "If your goal is to test vocabulary knowledge"
                              "  </dt>"
-                             "  <dd>"
-                             "<p>Write a text using the target vocabulary. This "
-                             "text should be coherent and cohesive, and be of "
-                             "an appropriate length. Highlight the target "
-                             "words in the text. Choose alternatives with one "
-                             "clear answer.</p>"
-                             "  </dd>"
                              "  <dt>"
                              "If your goal is to test word "
                              "formation/grammar:"
@@ -118,17 +111,14 @@ class ListaIdevice(Idevice):
                              parentNode)
         self.instructionsForLearners = TextAreaField(
             x_(u'Instructions'),
-            x_(u"""Provide instruction on how the cloze activity should be 
-completed. Default text will be entered if there are no changes to this field.
-"""),
-            x_(u'Read the paragraph below and '
-                'fill in the missing words.'))
+            x_(u"""Provide instruction on how the dropdown activity should be completed."""),
+            x_(u' '))
         self.instructionsForLearners.idevice = self
-        self._content = ListaField(x_(u'Cloze'), 
-            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+        self._content = ListaField(x_(u'Dropdown'), 
+            x_(u"""<p>Enter the text for the dropdown activity in to the dropdown field 
 by either pasting text from another source or by typing text directly into the 
-field.</p><p> To select words to hide, double click on the word to select it and 
-click on the Hide/Show Word button below.</p>"""))
+field.</p><p> To select words to choose, double click on the word to select it and 
+click on the 'Select' button below.</p>"""))
         self._content.idevice = self
         self.feedback = TextAreaField(x_(u'Feedback'),
             x_(u'Enter any feedback you wish to provide the learner '
@@ -194,7 +184,7 @@ click on the Hide/Show Word button below.</p>"""))
         takes a BeautifulSoup fragment (i) and bursts its contents to 
         import this idevice from a CommonCartridge export
         """
-        # Cloze Idevice:
+        # lista Idevice:
         title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         self.title = title.renderContents().decode('utf-8')
 
@@ -219,7 +209,7 @@ click on the Hide/Show Word button below.</p>"""))
                     # Now, decode the answer
                     # with code reverse-engineered from:
                     # a) Cloze's getClozeAnswer() in common.js
-                    # b) ClozeElement's renderView() + encrypt()
+                    # b) listaElement's renderView() + encrypt()
                     answer = ""
                     code_key = 'X'
                     code = this_content.renderContents()
@@ -268,7 +258,7 @@ click on the Hide/Show Word button below.</p>"""))
             x_(u'Instructions For Learners'),
             x_(u'Put instructions for learners here'),
             x_(u'Read the paragraph below and '
-                'fill in the missing words'))
+                'choose the correct words'))
         self.instructionsForLearners.idevice = self
         self.feedback = TextAreaField(x_(u'Feedback'))
         self.feedback.idevice = self
@@ -279,8 +269,7 @@ click on the Hide/Show Word button below.</p>"""))
         Upgrades exe to v0.11
         """
         self.content.autoCompletion = True
-        self.content.autoCompletionInstruc =  _(u"Allow auto completion when "
-                                                u"user filling the gaps.")
+        self.content.autoCompletionInstruc =  _(u"")
 
     def upgradeToVersion3(self):
         """
@@ -298,7 +287,7 @@ click on the Hide/Show Word button below.</p>"""))
 #================================================================
 class ListaField(FieldWithResources):
     """
-    This field handles a passage with words that the student must fill in
+    This field handles a passage with words that the student must choose in
     And can now support multiple images (and any other resources) via tinyMCE
     """
 

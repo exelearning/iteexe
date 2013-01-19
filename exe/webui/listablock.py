@@ -18,8 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-Renders a paragraph where the content creator can choose which words the student
-must fill in.
+
 """
 
 import logging
@@ -35,7 +34,7 @@ log = logging.getLogger(__name__)
 class ListaElement(ElementWithResources):
 
     """
-    iDevice para crear listas desplegables, basado en clozeidevice. Fran Macias junio 2012
+    iDevice para crear listas desplegables, basado en clozeidevice. 
     """
 
     # Properties
@@ -113,29 +112,17 @@ class ListaElement(ElementWithResources):
 
         html = [
             # Render the iframe box
-            common.formField('richTextArea', this_package, _('Cloze Text'),'',
+            common.formField('richTextArea', this_package, _('Text'),'',
                              self.editorId, self.field.instruc,
                              self.field.encodedContent),
             # Render our toolbar
-            u'<table style="width: 100%;">',
-            u'<tbody>',
-            u'<tr>',
-            u'<td>',
+         
             u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
             u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
-            u'</td><td>',
-                                
-            u'</td>',
-            u'</tr>',
-            u'</tbody>',
-            u'</table>',
+            u'</br></br>'
+            
             ]
-        """
-        common.checkbox('showScore%s' % self.id,
-                            self.field.showScore,
-                            title=_(u'Mostrar Puntuaci&oacute;n?'),
-                            instruction=self.field.showScoreInstruc),
-        """ 
+        
         return '\n    '.join(html)
 
     def renderPreview(self, feedbackId=None, preview=True):
@@ -161,7 +148,7 @@ class ListaElement(ElementWithResources):
             self.field.encodedContent = self.field.content_wo_resourcePaths
 
         html = ['<div id="cloze%s">' % self.id]
-         # Store our args in some hidden fields
+        # Store our args in some hidden fields
         def storeValue(name):
             value = str(bool(getattr(self.field, name))).lower()
             return common.hiddenField('clozeFlag%s.%s' % (self.id, name), value)
@@ -275,8 +262,7 @@ class ListaElement(ElementWithResources):
 
 class ListaBlock(Block):
     """
-    Renders a paragraph where the content creator can choose which words the
-    student must fill in.
+
     """
     def __init__(self, parent, idevice):
         """
@@ -293,10 +279,9 @@ class ListaBlock(Block):
         if idevice.feedback.idevice is None: 
             idevice.feedback.idevice = idevice
 
-        self.instructionElement = \
-            TextAreaElement(idevice.instructionsForLearners)
+        self.instructionElement = TextAreaElement(idevice.instructionsForLearners)
         self.instructionElement.field.content_w_resourcePaths = _(self.instructionElement.field.content_w_resourcePaths)
-        self.clozeElement = ListaElement(idevice.content)
+        self.listaElement = ListaElement(idevice.content)
         self.feedbackElement = \
             TextAreaElement(idevice.feedback)
         self.previewing        = False # In view or preview render
@@ -315,7 +300,7 @@ class ListaBlock(Block):
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]
         self.instructionElement.process(request)
-        self.clozeElement.process(request)
+        self.listaElement.process(request)
         self.feedbackElement.process(request)
         Block.process(self, request)
 
@@ -330,7 +315,7 @@ class ListaBlock(Block):
             common.textInput("title"+self.id, self.idevice.title),
             u'</div>',
             self.instructionElement.renderEdit(),
-            self.clozeElement.renderEdit(),
+            self.listaElement.renderEdit(),
             self.feedbackElement.renderEdit(),
             self.renderEditButtons(),
             u'</div>'
@@ -359,17 +344,17 @@ class ListaBlock(Block):
         """
         # Only show feedback button if feedback is present
         if self.feedbackElement.field.content.strip():
-            # Cloze Idevice needs id of div for feedback content
+            # Lista Idevice needs id of div for feedback content
             feedbackID = self.feedbackElement.id
             if self.previewing: 
-                clozeContent = self.clozeElement.renderPreview(feedbackID)
+                clozeContent = self.listaElement.renderPreview(feedbackID)
             else: 
-                clozeContent = self.clozeElement.renderView(feedbackID)
+                clozeContent = self.listaeElement.renderView(feedbackID)
         else:
             if self.previewing: 
-                clozeContent = self.clozeElement.renderPreview()
+                clozeContent = self.listaElement.renderPreview()
             else:
-                clozeContent = self.clozeElement.renderView()
+                clozeContent = self.listaElement.renderView()
         instruction_html = ""
         if self.previewing: 
             instruction_html = self.instructionElement.renderPreview()
@@ -401,7 +386,7 @@ class ListaBlock(Block):
             html = '<p>' +  self.instructionElement.renderPreview() +'</p>'
         else:
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
-        html += '<p>' + self.clozeElement.renderText() + '</p>'
+        html += '<p>' + self.listaElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
             html += '<p>%s:</P>' % _(u"Feedback") 
             if self.previewing: 
@@ -412,7 +397,7 @@ class ListaBlock(Block):
                 html += '<p>' +self.feedbackElement.renderView(False, 
                                                         class_="feedback") 
                 html += '</p>'
-        html += self.clozeElement.renderAnswers()
+        html += self.listaElement.renderAnswers()
         return html
    
 from exe.engine.listaidevice import ListaIdevice
