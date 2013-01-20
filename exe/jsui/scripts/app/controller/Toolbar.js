@@ -62,11 +62,8 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_cc': {
                 click: { fn: this.processExportEvent, exportType: "commoncartridge" }
             },
-            '#file_export_scorm12': {
-                click: { fn: this.processExportEvent, exportType: "scorm1.2" }
-            },
-            '#file_export_scorm2004': {
-                click: { fn: this.processExportEvent, exportType: "scorm2004" }
+            '#file_export_scorm': {
+                click: { fn: this.processExportEvent, exportType: "scorm" }
             },
             '#file_export_ims': {
                 click: { fn: this.processExportEvent, exportType: "ims" }
@@ -545,7 +542,7 @@ Ext.define('eXe.controller.Toolbar', {
                 fp.show();            
 	    } else {
             var title;
-	        if (exportType == "scorm1.2" || exportType == 'scorm2004')
+	        if (exportType == "scorm")
 	            title = _("Export SCORM package as");
 	        else if (exportType == "ims")
 	            title = _("Export IMS package as");
