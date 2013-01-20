@@ -204,16 +204,8 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             xtype: 'accesskey_menuitem',
                                             text: _('SCORM 1.2'),
                                             accesskey: 's',
-                                            itemId: 'file_export_scorm12'
+                                            itemId: 'file_export_scorm'
                                         },
-                                        
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('SCORM2004'),
-                                            accesskey: 't',
-                                            itemId: 'file_export_scorm2004'
-                                        },
-                                        
                                         {
                                             xtype: 'accesskey_menuitem',
                                             text: _('IMS Content Package'),
