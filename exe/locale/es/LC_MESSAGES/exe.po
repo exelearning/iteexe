@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-01-21 10:39+0100\n"
-"PO-Revision-Date: 2013-01-21 18:19+0100\n"
+"PO-Revision-Date: 2013-01-21 23:38+0100\n"
 "Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Language: es\n"
@@ -381,14 +381,7 @@ msgid ""
 "formative exercise, or summative check).</li><li>To check reading "
 "comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word "
 "formation and/or grammatical competence. </li></ol>"
-msgstr ""
-"<p>Los ejercicios de rellenar huecos son textos u oraciones donde los "
-"estudiantes deben completar las palabras que faltan. Este tipo de ejercicios "
-"se usa para diversos propósitos:</p><ol><li>para comprobar los conocimientos "
-"de los conceptos clave de un curso (esto podría ser un pre-control, una "
-"prueba formativa o una prueba sumativa).</li><li>Para comprobar la "
-"comprensión lectora.</li><li>Para comprobar el conocimiento en vocabulario.</"
-"li><li>Para comprobar la competencia morfológica o gramatical. </li></ol>"
+msgstr "<p>Los ejercicios de rellenar huecos consisten en textos u oraciones donde los estudiantes deben completar las palabras que faltan. Este tipo de ejercicios se usa para diversos fines:</p><ol><li>Para comprobar los conocimientos de los conceptos clave de un curso (podría tratarse de un control previo, una prueba formativa o una prueba sumativa).</li><li>Para comprobar la comprensión lectora.</li><li>Para comprobar el conocimiento de vocabulario.</li><li>Para comprobar la competencia morfológica o gramatical.</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:60 exe/engine/clozeidevice.py:60
 #: exe/engine/clozelangfpdidevice.py:60
@@ -412,28 +405,7 @@ msgid ""
 "Provide alternatives with the same word stem, but different affixes. It is a "
 "good idea to get a colleague to test the test/exercise to make sure there "
 "are no surprises!  </p>  </dd></dl>"
-msgstr ""
-"<dl>  <dt>Si su objetivo es evaluar la comprensión de los conceptos de base "
-"o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del "
-"concepto o lectura suficientemente extenso que sea adecuada para el objetivo "
-"de conocimiento, pero que sea corto para no inducir fatiga. Menos de una "
-"página es probablemente adecuado, pero debe considerar menos para "
-"estudiantes jóvenes o principiantes.    </p>    <p>Seleccione palabras en el "
-"texto que sean claves para entender los conceptos. Estas serán probablemente "
-"verbos, sustantivos y adverbios clave. Elija alternativas con una respuesta "
-"clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en "
-"vocabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el "
-"vocabulario. Este texto debería ser coherente y coherente, y ser de una "
-"longitud apropiada. Resalte las palabras importantes en el texto. Escoja "
-"alternativas inequívocas.</p>  </dd>  <dt>Si su objetivo es evaluar la "
-"morfología o la gramática:  </dt>  <dd>  <p>Escriba un texto considerando "
-"estos objetivos. Este texto debería ser coherente y cohesivo y tener una "
-"longitud apropiada. Recuerde que el objetivo no es el conocimiento del "
-"vocabulario, sino el significado mas profundo de las palabras que deben "
-"conocer los estudiantes.  </p>  <p>Resalte las palabras importantes en el "
-"texto. Proporcione alternativas con la misma palabra raíz, pero con "
-"diferentes significados. ¡Es una buena idea conseguir que un colega pruebe "
-"los ejercicios para asegurarse de que no haya sorpresas!  </p> </dd></dl>"
+msgstr "<dl>  <dt>Si su objetivo es evaluar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura suficientemente extenso para que su longitud sea adecuada para evaluar el conocimiento que se quiere comprobar, pero suficientemente corto para no inducir fatiga. Menos de una página es probablemente adecuado, pero debe considerar menos para estudiantes jóvenes o principiantes.    </p>    <p>Seleccione palabras en el texto que sean claves para entender los conceptos. Estas serán probablemente verbos, sustantivos y adverbios clave. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento de vocabulario  </dt>  <dd><p>Escriba un texto en el que use el vocabulario cuyo dominio que quiere evaluar. Este texto debería ser coherente y tener una unidad, y de una longitud apropiada. Resalte las palabras importantes en el texto. Escoja alternativas que no induzcan a confusiones.</p>  </dd>  <dt>Si su objetivo es evaluar la morfología o la gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto debería ser coherente y tener una unidad y una longitud apropiada. Recuerde que el objetivo no es el conocimiento del vocabulario, y por lo tanto los estudiantes deben conocer ya el significado esencial de las raíces de los términos usados.  </p>  <p>Resalte las palabras que quiera evaluar del texto. Proporcione alternativas con la misma raíz, pero con diferentes afijos. ¡Es una buena idea conseguir que un colega pruebe los ejercicios para asegurarse de que no haya sorpresas!  </p> </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:116 exe/engine/clozeidevice.py:116
 #: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:113
@@ -450,10 +422,8 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this "
 "field.\n"
 msgstr ""
-"Proporciona instrucciones de como la actividad de rellenar huecos debería "
-"ser \n"
-"terminada. Se insertará el texto por defecto si no hay cambios en este "
-"campo.\n"
+"Le permite proporcionar instrucciones sobre cómo deberá completarse la actividad de rellenar huecos.\n"
+"Se insertará un texto por defecto si no hay cambios en este campo.\n"
 
 #: exe/engine/clozefpdidevice.py:122 exe/engine/clozeidevice.py:123
 msgid "Cloze"
@@ -469,13 +439,10 @@ msgid ""
 "and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
-"<p>Escriba el texto para la actividad de rellenar huecos dentro del campo "
-"hueco \n"
-"bien pegando texto de otra fuente o tecleando el texto directamente en el "
-"campo.</p><p>\n"
-"Para seleccionar las palabras a esconder, haga doble clic en la palabra para "
-"seleccionarla,\n"
-"y pulse en el botón Esconder/Mostrar palabra de abajo.</p>"
+"<p>Escriba el texto para la actividad de rellenar huecos dentro del campo hueco \n"
+"bien pegando texto de otra fuente o tecleando el texto directamente en el campo.</p>\n"
+"<p>Para seleccionar las palabras a esconder, haga doble clic en la palabra para seleccionarla,\n"
+"y pulse en el botón Esconder/Mostrar Palabra de abajo.</p>"
 
 #: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
@@ -506,7 +473,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:274 exe/engine/clozeidevice.py:274
 #: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:258
 msgid "Instructions For Learners"
-msgstr "Instrucciones para Estudiantes"
+msgstr "Instrucciones para estudiantes"
 
 #: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
 #: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:259
@@ -4949,11 +4916,11 @@ msgstr "Cerrado eXe"
 
 #: exe/webui/quitpage.py:48
 msgid "eXe has finished running in this window."
-msgstr "eXe ha dejado de correr en esta ventana."
+msgstr "eXe ha dejado de ejecutarse en esta ventana."
 
 #: exe/webui/quitpage.py:52
 msgid "You can close it safely."
-msgstr "Puede cerrar la ventana."
+msgstr "Puede cerrarla sin peligro de perder datos."
 
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
