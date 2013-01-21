@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-19 10:12+0100\n"
+"POT-Creation-Date: 2013-01-21 10:39+0100\n"
 "PO-Revision-Date: 2013-01-05 14:19+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
@@ -1796,7 +1796,7 @@ msgstr ""
 "ERROR AL GUARDAR\n"
 "La última salva correcta fue %s."
 
-#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:303
+#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:317
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
@@ -2583,15 +2583,15 @@ msgid "Image Files"
 msgstr "Archivos de imagen"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:154
-#: exe/jsui/scripts/app/controller/Toolbar.js:353
-#: exe/jsui/scripts/app/controller/Toolbar.js:374
-#: exe/jsui/scripts/app/controller/Toolbar.js:409
-#: exe/jsui/scripts/app/controller/Toolbar.js:474
-#: exe/jsui/scripts/app/controller/Toolbar.js:501
-#: exe/jsui/scripts/app/controller/Toolbar.js:542
-#: exe/jsui/scripts/app/controller/Toolbar.js:571
-#: exe/jsui/scripts/app/controller/Toolbar.js:689
-#: exe/jsui/scripts/app/controller/Toolbar.js:763
+#: exe/jsui/scripts/app/controller/Toolbar.js:367
+#: exe/jsui/scripts/app/controller/Toolbar.js:388
+#: exe/jsui/scripts/app/controller/Toolbar.js:423
+#: exe/jsui/scripts/app/controller/Toolbar.js:488
+#: exe/jsui/scripts/app/controller/Toolbar.js:515
+#: exe/jsui/scripts/app/controller/Toolbar.js:556
+#: exe/jsui/scripts/app/controller/Toolbar.js:585
+#: exe/jsui/scripts/app/controller/Toolbar.js:703
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid "All Files"
 msgstr "Todos los ficheros"
 
@@ -2615,7 +2615,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr "¿Borrar el nodo \"{node}\" y todos sus hijos?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:202
-#: exe/jsui/scripts/app/controller/Toolbar.js:308
+#: exe/jsui/scripts/app/controller/Toolbar.js:322
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -2627,143 +2627,143 @@ msgstr "Renombrar el nodo \"{node}\""
 msgid "Enter the new name:"
 msgstr "Introduzca el nuevo nombre:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:257
+#: exe/jsui/scripts/app/controller/Toolbar.js:271
 msgid "About"
 msgstr "Acerca de"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:290
+#: exe/jsui/scripts/app/controller/Toolbar.js:304
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:309
+#: exe/jsui/scripts/app/controller/Toolbar.js:323
 msgid ""
 "If you have made changes and have not saved, they will be lost. Do you "
 "really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:341
+#: exe/jsui/scripts/app/controller/Toolbar.js:355
 msgid "Select package to insert"
 msgstr "Seleccione qué paquete insertar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:346
+#: exe/jsui/scripts/app/controller/Toolbar.js:360
 msgid "Inserting package: {filename}"
 msgstr "Insertando paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:352
-#: exe/jsui/scripts/app/controller/Toolbar.js:373
-#: exe/jsui/scripts/app/controller/Toolbar.js:688
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
+#: exe/jsui/scripts/app/controller/Toolbar.js:366
+#: exe/jsui/scripts/app/controller/Toolbar.js:387
+#: exe/jsui/scripts/app/controller/Toolbar.js:702
+#: exe/jsui/scripts/app/controller/Toolbar.js:776
 msgid "eXe Package Files"
 msgstr "Ficheros de paquete eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:362
+#: exe/jsui/scripts/app/controller/Toolbar.js:376
 msgid "Save extracted package as"
 msgstr "Guardar el paquete extraído como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:367
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Extracting package: {filename}"
 msgstr "Extrayendo el paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:383
+#: exe/jsui/scripts/app/controller/Toolbar.js:397
 msgid "Select the parent folder for import."
 msgstr "Seleccione la carpeta padre para la importación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:398
+#: exe/jsui/scripts/app/controller/Toolbar.js:412
 msgid "Select the entry point for import."
 msgstr "Seleccione el punto de entrada para la importación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:408
+#: exe/jsui/scripts/app/controller/Toolbar.js:422
 msgid "HTML Files"
 msgstr "Ficheros HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:423
+#: exe/jsui/scripts/app/controller/Toolbar.js:437
 msgid "Waiting progress..."
 msgstr "Progreso de la espera..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:431
+#: exe/jsui/scripts/app/controller/Toolbar.js:445
 msgid "Cancel Import?"
 msgstr "¿Cancelar la importación?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:432
+#: exe/jsui/scripts/app/controller/Toolbar.js:446
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Se está realizando una importación. ¿Desea cancelarla?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:455
+#: exe/jsui/scripts/app/controller/Toolbar.js:469
 msgid "Select Xliff file to import"
 msgstr "Seleccionar el archivo XLIFF que importar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:465
+#: exe/jsui/scripts/app/controller/Toolbar.js:479
 msgid "XLIFF Import Preferences"
 msgstr "Preferencias de importación de XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:473
-#: exe/jsui/scripts/app/controller/Toolbar.js:500
+#: exe/jsui/scripts/app/controller/Toolbar.js:487
+#: exe/jsui/scripts/app/controller/Toolbar.js:514
 msgid "XLIFF Files"
 msgstr "Ficheros XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:482
+#: exe/jsui/scripts/app/controller/Toolbar.js:496
 msgid "Export to Xliff as"
 msgstr "Exportado a XLIFF como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:492
+#: exe/jsui/scripts/app/controller/Toolbar.js:506
 msgid "XLIFF Export Preferences"
 msgstr "Preferencias de exportación a XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:515
+#: exe/jsui/scripts/app/controller/Toolbar.js:529
 msgid "Select the parent folder for export."
 msgstr "Seleccione la carpeta padre para la exportación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:532
+#: exe/jsui/scripts/app/controller/Toolbar.js:546
 msgid "Export text package as"
 msgstr "Exportar paquete de texto como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:541
+#: exe/jsui/scripts/app/controller/Toolbar.js:555
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:253
 msgid "Text File"
 msgstr "Fichero de texto plano"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:549
+#: exe/jsui/scripts/app/controller/Toolbar.js:563
 msgid "Export SCORM package as"
 msgstr "Exportar paquete SCORM como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:551
+#: exe/jsui/scripts/app/controller/Toolbar.js:565
 msgid "Export IMS package as"
 msgstr "Exportar el paquete IMS como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:553
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid "Export Website package as"
 msgstr "Exportar paquete de sitio web como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:555
+#: exe/jsui/scripts/app/controller/Toolbar.js:569
 msgid "Export Common Cartridge as"
 msgstr "Exportar paquete Common Cartridge como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:557
+#: exe/jsui/scripts/app/controller/Toolbar.js:571
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "VALOR INVÁLIDO PASADO A exportPackage"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:584
 msgid "SCORM/IMS/ZipFile"
 msgstr "Fichero Zip SCORM/IMS"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:661
+#: exe/jsui/scripts/app/controller/Toolbar.js:675
 msgid "Loading package..."
 msgstr "Cargando el paquete..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:677
+#: exe/jsui/scripts/app/controller/Toolbar.js:691
 msgid "Open File"
 msgstr "Abrir un archivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:682
+#: exe/jsui/scripts/app/controller/Toolbar.js:696
 msgid "Loading package: {filename}"
 msgstr "Cargando paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:701
+#: exe/jsui/scripts/app/controller/Toolbar.js:715
 msgid "Save Package first?"
 msgstr "¿Guardar el paquete primero?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:702
+#: exe/jsui/scripts/app/controller/Toolbar.js:716
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -2771,15 +2771,15 @@ msgstr ""
 "El paquete actual ha sido modificado y aún no se ha guardado. ¿Desea "
 "guardarlo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:726
+#: exe/jsui/scripts/app/controller/Toolbar.js:740
 msgid "Saving package to: {filename}"
 msgstr "Guardando el paquete como: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:742
+#: exe/jsui/scripts/app/controller/Toolbar.js:756
 msgid "Select a File"
 msgstr "Seleccionar un archivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:748
+#: exe/jsui/scripts/app/controller/Toolbar.js:762
 msgid "Saving package..."
 msgstr "Guardando el paquete..."
 
@@ -2809,7 +2809,7 @@ msgid "Modified"
 msgstr "Modificado"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:267
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:149 exe/webui/editorpage.py:267
 msgid "Save"
 msgstr "Guardar"
 
@@ -3422,7 +3422,7 @@ msgid "Dublin Core"
 msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:200
 msgid "Export"
 msgstr "Exportar"
 
@@ -3459,61 +3459,57 @@ msgstr "Mover nodo hacia arriba"
 msgid "Move node down"
 msgstr "Mover nodo hacia abajo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "File"
 msgstr "Archivo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:106
 msgid "New"
 msgstr "Nuevo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:113
 msgid "New Window"
 msgstr "Ventana nueva"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:120
 msgid "Open"
 msgstr "Abrir"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:127
 msgid "Recent Projects..."
 msgstr "Proyectos recientes..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:139
 msgid "Clear Recent Projects List"
 msgstr "Eliminar la lista de proyectos recientes"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:156
 msgid "Save As..."
 msgstr "Guardar como..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:165
 msgid "Print"
 msgstr "Imprimir"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:175
 msgid "Import"
 msgstr "Importar"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:176
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:184
 msgid "HTML Course"
 msgstr "Curso HTML"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:190
 msgid "XLIFF File"
 msgstr "Archivo XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:207
 msgid "Common Cartridge"
 msgstr "Paquete Common Cartridge"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:213
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:212
-msgid "SCORM2004"
-msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:219
 msgid "IMS Content Package"
@@ -4990,6 +4986,18 @@ msgstr "OK"
 msgid "Hide Feedback"
 msgstr "Ocultar retroalimentación"
 
+#: exe/webui/quitpage.py:44
+msgid "eXe Closed"
+msgstr ""
+
+#: exe/webui/quitpage.py:48
+msgid "eXe has finished running in this window."
+msgstr ""
+
+#: exe/webui/quitpage.py:52
+msgid "You can close it safely."
+msgstr ""
+
 #: exe/webui/quiztestblock.py:115
 msgid "Select pass rate: "
 msgstr "Seleccionar el coeficiente de aprobado: "
@@ -5222,53 +5230,6 @@ msgstr ""
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
 
-#~ msgid ""
-#~ "<p>DropDown exercises are texts or "
-#~ "sentences where students must select the"
-#~ " correct word. They are often used"
-#~ " for the following purposes:</p><ol><li>To "
-#~ "check knowledge of core course concepts"
-#~ " (this could be a pre-check, "
-#~ "formative exercise, or summative "
-#~ "check).</li><li>To check reading "
-#~ "comprehension.</li><li>To check vocabulary "
-#~ "knowledge.</li><li>To check word formation "
-#~ "and/or grammatical competence. </li></ol>"
+#~ msgid "SCORM2004"
 #~ msgstr ""
-#~ "<p>Los ejercicios en los que se "
-#~ "usa la actividad Desplegable son textos"
-#~ " u oraciones donde los estudiantes "
-#~ "deben elegir la palabra correcta. Es "
-#~ "frecuente que se utilicen para los "
-#~ "siguientes propósitos:</p><ol><li>Para comprobar los"
-#~ " conocimientos de los conceptos clave "
-#~ "de un curso (podrían usarse en un"
-#~ " control previo, una prueba formativa "
-#~ "o una prueba sumativa).</li><li>Para comprobar"
-#~ " la comprensión lectora.</li><li>Para comprobar"
-#~ " el conocimiento en vocabulario.</li><li>Para "
-#~ "comprobar la competencia morfológica o "
-#~ "gramatical. </li></ol>"
-
-#~ msgid "LOM"
-#~ msgstr "LOM"
-
-#~ msgid "LOM.es"
-#~ msgstr "LOM.es"
-
-#~ msgid "iPod Notes"
-#~ msgstr "Notes para iPod"
-
-#~ msgid "Check iDevices do not want to display:"
-#~ msgstr "Marcar los iDevices que no desea que se muestren:"
-
-#~ msgid ""
-#~ "WARNING: content.xml version 0.1. Importing"
-#~ " from content.data. Try to import "
-#~ "from a content.xml version 0.2."
-#~ msgstr ""
-#~ "AVISO: fichero content.xml en versión "
-#~ "0.1. Importando desde content.data. Intente"
-#~ " hacer la importación desde un "
-#~ "fichero content.xml versión 0.2."
 

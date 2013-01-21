@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-01-19 10:12+0100\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-01-21 10:39+0100\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Put instructions for learners here": "\u0e43\u0e2a\u0e48 \u0e04\u0e33\u0e2a\u0e31\u0e48\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e40\u0e23\u0e35\u0e22\u0e19 \u0e17\u0e35\u0e48\u0e19\u0e35\u0e48", 
  "Hide": "\u0e0b\u0e48\u0e2d\u0e19", 
  "Title": "\u0e0a\u0e37\u0e48\u0e2d\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07", 
