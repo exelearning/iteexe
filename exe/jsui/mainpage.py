@@ -688,9 +688,7 @@ class MainPage(RenderableLivePage):
             self.exportWebZip(client, filename, stylesDir)
         elif exportType == 'textFile':
             self.exportText(client, filename)
-        elif exportType == 'ipod':
-            self.exportIpod(client, filename)
-        elif exportType == "scorm1.2":
+        elif exportType == 'scorm':
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
         elif exportType == "scorm2004":
