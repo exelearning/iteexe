@@ -46,6 +46,7 @@ class ListaIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
+       
         
         Idevice.__init__(self, x_(u"DropDown Activity"),
                          x_(u"INTEF"), 
@@ -112,13 +113,13 @@ class ListaIdevice(Idevice):
         self.instructionsForLearners = TextAreaField(
             x_(u'Instructions'),
             x_(u"""Provide instruction on how the dropdown activity should be completed."""),
-            x_(u' '))
+            x_(u'Read and complete'))
         self.instructionsForLearners.idevice = self
         self._content = ListaField(x_(u'Dropdown'), 
             x_(u"""<p>Enter the text for the dropdown activity in to the dropdown field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to choose, double click on the word to select it and 
-click on the 'Select' button below.</p>"""))
+click on the 'Hide/Show' button below.</p>"""))
         self._content.idevice = self
         self.feedback = TextAreaField(x_(u'Feedback'),
             x_(u'Enter any feedback you wish to provide the learner '
@@ -127,7 +128,8 @@ click on the 'Select' button below.</p>"""))
         self.emphasis = Idevice.SomeEmphasis
         #self.systemResources += ["common.js"]
         self.isCloze = True
-       
+
+
 
 
     # Properties
@@ -264,24 +266,26 @@ click on the 'Select' button below.</p>"""))
         self.feedback.idevice = self
 
 
+
     def upgradeToVersion2(self):
         """
         Upgrades exe to v0.11
         """
         self.content.autoCompletion = True
-        self.content.autoCompletionInstruc = u""
+        self.content.autoCompletionInstruc =  u""
 
     def upgradeToVersion3(self):
         """
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()
-        self.systemResources += ["common.js"]
+        #self.systemResources += ["common.js"]
         
     def upgradeToVersion4(self):
         """
         Upgrades to v0.20.3
         """
+        
         self.isCloze = True
 
 #================================================================
@@ -306,7 +310,9 @@ class ListaField(FieldWithResources):
         self._encodedContent = ''
         self.rawContent = ''
         self._setVersion2Attributes()
-        
+        self.otras = ''
+        self.otrasInstruc = \
+            x_(u"<p>Optional: Write other words to complete the dropdown activity.</br>Use | (vertical bar ) to separate words.</br>This field can be left blank. </p>")
      
 
     def _setVersion2Attributes(self):
@@ -344,7 +350,8 @@ class ListaField(FieldWithResources):
     # Properties
     encodedContent        = property(lambda self: self._encodedContent,set_encodedContent)
     #showScoreInstruc      = lateTranslate('showScoreInstruc')
-
+    otrasInstruc  = lateTranslate('otrasInstruc')
+    
     def upgradeToVersion1(self):
         """
         Upgrades to exe v0.11
@@ -353,16 +360,19 @@ class ListaField(FieldWithResources):
         self.autoCompletionInstruc = _(u"""Allow auto completion when 
                                        user filling the gaps.""")
 
+
     def upgradeToVersion2(self):
         """
         Upgrades to exe v0.12
         """
         Field.upgradeToVersion2(self)
         strictMarking = not self.autoCompletion
+        otras=''
         del self.autoCompletion
         del self.autoCompletionInstruc
         self._setVersion2Attributes()
         self.strictMarking = strictMarking
+        self.otras=otras
 
     def upgradeToVersion3(self):
         """
