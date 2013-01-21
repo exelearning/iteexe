@@ -89,7 +89,7 @@ with a different filename') % outputf
     def export_xml(self, pkg, outputf):
         open(outputf, "w").write(encodeObjectToXML(pkg))
 
-    def export_scorm12(self, pkg, outputf):
+    def export_scorm(self, pkg, outputf):
         scormExport = ScormExport(self.config, self.styles_dir, outputf,
 'scorm1.2')
         pkg.scowsinglepage = self.options['single-page']
