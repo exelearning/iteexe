@@ -223,7 +223,7 @@ class Block(Renderable):
 
         html += common.confirmThenSubmitImage(
             _(u"This will delete this iDevice."
-              u"\\n"
+              u"\n"
               u"Do you really want to do this?"),
             u"delete",
             self.id, u"/images/stock-cancel.png", 
