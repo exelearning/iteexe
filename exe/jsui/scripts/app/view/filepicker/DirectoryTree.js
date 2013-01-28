@@ -23,6 +23,7 @@ Ext.define('eXe.view.filepicker.DirectoryTree', {
 	id: 'dirTree',
 	stateId: 'dirTreeCache',
     stores: ['File', 'DirectoryTree'],
+    animate: false,
     initComponent: function() {
     	var me = this;
     	

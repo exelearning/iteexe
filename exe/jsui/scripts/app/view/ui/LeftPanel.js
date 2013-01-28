@@ -53,6 +53,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             store: 'OutlineXmlTreeStore',
                             rootVisible: false,
                             region: 'center',
+                            animate: false,
                             viewConfig: {
 
                             }
