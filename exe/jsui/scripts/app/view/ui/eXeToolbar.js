@@ -33,10 +33,6 @@ Ext.define('eXe.view.ui.button', {
                 rep = "<u>" + key + "</u>";
                 me.text = me.text.replace(pat, rep);
             }
-            else {
-                rep = "<u>" + me.accesskey + "</u>";
-                me.text = me.text + " (" + rep + ")";
-            }
         }
 
         me.callParent();
@@ -58,10 +54,6 @@ Ext.define('eXe.view.ui.menuitem', {
             if (key) {
 	            rep = "<u>" + key + "</u>";
 	            me.text = me.text.replace(pat, rep);
-            }
-            else {
-                rep = "<u>" + me.accesskey + "</u>";
-                me.text = me.text + " (" + rep + ")";
             }
 	        keymap = new Ext.util.KeyMap({
 	            target: me.up().el,
