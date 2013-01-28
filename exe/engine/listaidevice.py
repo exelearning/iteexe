@@ -24,15 +24,30 @@
 
 import logging
 from exe.engine.idevice import Idevice
-from exe.engine.path    import Path
-from exe.engine.field   import *
+from exe.engine.path    import Path, toUnicode
+from exe.engine.field   import Field,FieldWithResources,FeedbackField,TextAreaField
+from exe.engine.resource  import Resource
 from exe.engine.persist import Persistable
 from exe.engine.translate import lateTranslate
+from exe                  import globals as G
+from exe.engine.node      import Node
+import os
+import urllib
+import shutil
+from exe.engine.translate import lateTranslate
+from exe.engine.mimetex   import compile
+from HTMLParser           import HTMLParser
+from htmlentitydefs       import name2codepoint
+from exe.engine.htmlToText import HtmlToText
+from twisted.persisted.styles import Versioned
+from exe.webui                import common
 
 import re
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
+
 
 class ListaIdevice(Idevice):
     """
@@ -121,6 +136,7 @@ by either pasting text from another source or by typing text directly into the
 field.</p><p> To select words to choose, double click on the word to select it and 
 click on the 'Hide/Show' button below.</p>"""))
         self._content.idevice = self
+        self._content.otras=''
         self.feedback = TextAreaField(x_(u'Feedback'),
             x_(u'Enter any feedback you wish to provide the learner '
                 'with-in the feedback field. This field can be left blank.'))
@@ -247,8 +263,22 @@ click on the 'Hide/Show' button below.</p>"""))
                 self.feedback.MassageResourceDirsIntoContent( \
                     self.feedback.content_wo_resourcePaths)
         self.feedback.content = self.feedback.content_w_resourcePaths
-
-        
+        # and each cloze flag field (strict, case, instant):
+        flag_strict = inner.find(name='input', 
+                attrs={'id' : re.compile('^clozeFlag.*strictMarking$') })
+        if flag_strict.attrMap['value']=="true":
+            self._content.strictMarking = True
+        flag_caps = inner.find(name='input', 
+                attrs={'id' : re.compile('^clozeFlag.*checkCaps$') })
+        if flag_caps.attrMap['value']=="true":
+            self._content.checkCaps = True
+        flag_instant = inner.find(name='input', 
+                attrs={'id' : re.compile('^clozeFlag.*instantMarking$') })
+        if flag_instant.attrMap['value']=="true":
+            self._content.instantMarking = True
+            
+        cotras= inner.find(name='input', attrs={'id' : re.compile('^clOtras') })    
+        self._content.otras=cotras
     
 
     def upgradeToVersion1(self):
@@ -351,6 +381,8 @@ class ListaField(FieldWithResources):
     encodedContent        = property(lambda self: self._encodedContent,set_encodedContent)
     #showScoreInstruc      = lateTranslate('showScoreInstruc')
     otrasInstruc  = lateTranslate('otrasInstruc')
+
+
     
     def upgradeToVersion1(self):
         """
@@ -367,12 +399,11 @@ class ListaField(FieldWithResources):
         """
         Field.upgradeToVersion2(self)
         strictMarking = not self.autoCompletion
-        otras=''
         del self.autoCompletion
         del self.autoCompletionInstruc
         self._setVersion2Attributes()
         self.strictMarking = strictMarking
-        self.otras=otras
+
 
     def upgradeToVersion3(self):
         """

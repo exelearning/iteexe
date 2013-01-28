@@ -26,6 +26,12 @@ import logging
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement,ElementWithResources
+from exe.engine.path import Path
+import os 
+import re
+import urllib
+from exe             import globals as G
+from urllib import quote
 
 import random
 
@@ -66,7 +72,47 @@ class ListaElement(ElementWithResources):
 
     # Public Methods
    
+    def dcrypt(self,word):
+            #             Simple XOR encryptions
+          
+            answer = u""
+            code_key = 'X'            
+            codeu=str(word)
+            codeu=codeu.replace("\r", "")
+            codeu=codeu.replace("\n", "")
+            code = codeu.decode('base64')
+            char_pos = 0
             
+            while char_pos < len(code):
+                        # first 2 chars = %u, replace with 0x to get int
+                        # next 4 = the encoded unichr
+                        this_code_char = "0x" + code[char_pos+2 : char_pos+6]
+                        this_code_ord = int(this_code_char, 16)
+                        letter = unichr(ord(code_key)^this_code_ord)
+                        answer += letter
+                        # key SHOULD be ^'d by letter, but seems to be:
+                        code_key = letter
+                        char_pos += 6
+           
+            #answer=codeu
+            return answer 
+        
+    def ecrypt(self,word):
+            #             Simple XOR encryptions
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            output=output.replace("\n", "")
+            noutput=output.encode('base64')
+           
+            #noutput=word
+            return  noutput      
         
     def process(self, request):
         """
@@ -86,13 +132,8 @@ class ListaElement(ElementWithResources):
                 self.field.content_wo_resourcePaths = ""
                 self.field.idevice.edit = True
             return
+       
         
-        if "otras"+self.id in request.args \
-        and not is_cancel:
-            self.field.otras = \
-            self.field.ProcessPreviewed(request.args["otras"+self.id][0])
-
-
         if self.editorId in request.args:
             # process any new images and other resources courtesy of tinyMCE:
 
@@ -104,6 +145,15 @@ class ListaElement(ElementWithResources):
                          self.field.content_w_resourcePaths)
             # and begin by choosing the content for preview mode, WITH paths:
             self.field.encodedContent = self.field.content_w_resourcePaths
+            
+            if "clOtras"+self.id in request.args :
+                totras=request.args["clOtras"+self.id][0]
+                self.field.otras = totras
+        else:
+            if "clozeOtras"+self.id in request.args :
+                totras=request.args["clozeOtras"+self.id][0]
+                self.field.otras = self.dcrypt(totras)
+            
             """
             self.field.showScore = \
                 'showScore%s' % self.id in request.args
@@ -115,42 +165,12 @@ class ListaElement(ElementWithResources):
         """
         Enables the user to set up their passage of text
         """
-        def decrypt(word):
-            #             Simple XOR encryptions
-            answer = u""
-            code_key = 'X'
-            
-            codeu=word
-            codeu=codeu.replace("\r", "")
-            codeu=codeu.replace("\n", "")
-
-            code = codeu.decode('base64')
-            char_pos = 0
-            
-            while char_pos < len(code):
-                        # first 2 chars = %u, replace with 0x to get int
-                        # next 4 = the encoded unichr
-                        this_code_char = "0x" + code[char_pos+2 : char_pos+6]
-                        this_code_ord = int(this_code_char, 16)
-                        letter = unichr(ord(code_key)^this_code_ord)
-                        answer += letter
-                        # key SHOULD be ^'d by letter, but seems to be:
-                        code_key = letter
-                        char_pos += 6
-           
-            
-
-            return answer
-        
-
         # to render, choose the content with the preview-able resource paths:
         self.field.encodedContent = self.field.content_w_resourcePaths
         this_package = None
         if self.field_idevice is not None \
         and self.field_idevice.parentNode is not None:
             this_package = self.field_idevice.parentNode.package
-        if self.field.otras:
-            self.field.otras=decrypt(self.field.otras)
             
         html = [
             # Render the iframe box
@@ -162,13 +182,16 @@ class ListaElement(ElementWithResources):
             u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
             u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
             u'</br></br>',
+          
             common.formField('textInput',
                             this_package,
                             _('Other words'),
-                            'otras'+self.id, '',
+                            'clOtras'+self.id, '',
                             self.field.otrasInstruc,
                             self.field.otras,
-                            size=80),          
+                            size=80),
+           
+   
             u'</br></br>',
             ]
         
@@ -213,19 +236,7 @@ class ListaElement(ElementWithResources):
         listaotras=[]
         listaotras2=[]
         wordsarraylimpo=[] 
-        def encrypt(word):
-            #             Simple XOR encryptions
-            
-            result = ''
-            key = 'X'
-            for letter in word:
-                result += unichr(ord(key) ^ ord(letter))
-                key = letter
-            # Encode for javascript
-            output = ''
-            for char in result:
-                output += '%%u%04x' % ord(char[0])
-            return output.encode('base64')
+        
         # 
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
@@ -257,7 +268,7 @@ class ListaElement(ElementWithResources):
                 html += [
                     '<span style="display: none;" ',
                     'id="clozeAnswer%s.%s">%s</span>' % (
-                    self.id, i, encrypt(missingWord))]
+                    self.id, i, self.ecrypt(missingWord))]
 
         # Score string
         html += ['<div class="block">\n']
@@ -272,8 +283,10 @@ class ListaElement(ElementWithResources):
                     id='restart%s' % self.id,                   
                     style="display: none;",
                     onclick="clozeSubmit('%s')" % self.id),
-                ]       
-        html += ['<input type="hidden" name="otras%s" id="otras%s" value="%s"/>' % (self.id,self.id,encrypt(self.field.otras))]
+                ]
+        
+        codotras=self.ecrypt(self.field.otras)
+        html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   
         html += ['<input type="hidden" name="clozeFlag%s.strictMarking" id="clozeFlag%s.strictMarking" value="false"/>' % (self.id,self.id)]
         html += ['<input type="hidden" name="clozeFlag%s.checkCaps" id="clozeFlag%s.checkCaps" value="false"/>' % (self.id,self.id)]
         html += ['<input type="hidden" name="clozeFlag%s.instantMarking" id="clozeFlag%s.instantMarking" value="false"/>' % (self.id,self.id)]
@@ -313,7 +326,9 @@ class ListaElement(ElementWithResources):
                 
         return html
    
-
+    
+    #==========================================================
+    
 class ListaBlock(Block):
     """
 
@@ -454,6 +469,9 @@ class ListaBlock(Block):
                 html += '</p>'
         html += self.listaElement.renderAnswers()
         return html
+    
+#=======================================================
+
    
 from exe.engine.listaidevice import ListaIdevice
 from exe.webui.blockfactory  import g_blockFactory
