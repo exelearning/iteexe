@@ -130,6 +130,16 @@ Ext.define('eXe.controller.filepicker.File', {
 			else {
 				fp.status = eXe.view.filepicker.FilePicker.returnOk;
 				fp.file = { 'path': record.get('realname') };
+				var filelist = this.getFilesList();
+				var selected = filelist.getSelectionModel().getSelection(), record;
+                if (selected.length) {
+                    fp.files = []
+                    for (record in selected) {
+                        if (selected[record].get('type') != "directory") {
+		                    fp.files.push({ 'path': selected[record].get('realname') });
+		                }
+                    }
+                }
 				fp.destroy();
 		    }
         }
