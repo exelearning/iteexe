@@ -24,13 +24,12 @@ a{
 	/* Título del proyecto */
 	font-size: 1.7em;
 	padding-top: 15px;
-	text-align: left;
+	text-align: center;
 	font-weight: normal;
 	text-decoration: underline;
 	vertical-align: baseline;
 	word-spacing: 1em;
 	color: #000;
-	text-indent: -9999px;
 }
 
 #nodeTitle{
@@ -47,14 +46,9 @@ a{
 }
 
 .iDevice_inner{
-	background-color:#d6e178; /* Fondo del cuerpo del iDevice */
-	color:#4d4d4d;
+	background-color: #d6e178; /* Fondo del cuerpo del iDevice */
+	color: #4d4d4d;
 }
-.iDevice_inner a{
-	color: #FFF;
-	font-weight: bold;
-	font-style: italic;
-	}
 
 #pageFooter{
 	color:#666666; /* Texto del pie de página */
@@ -139,9 +133,7 @@ a:hover{text-decoration:underline}
 	line-height: 1em;
 }
 #main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
-#main h2{
-	font-size:1.4em;
-}
+#main h2{font-size:1.4em}
 #main h3{font-size:1.3em}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}
@@ -212,10 +204,8 @@ a:hover{text-decoration:underline}
 .block, .feedback
 
 {
-	display: block;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
-	margin-top: 10px;
+    display: block;
+    padding: 1em;
 }
 
 .feedback
@@ -226,11 +216,8 @@ a:hover{text-decoration:underline}
 	padding: 10px;
 	border: 2px solid #000000;
 	font-style: normal;
+	margin-top: 15px;
 }
-.feedback a
-{
-	color: #c6d644
-	}
 #popupmessage
 {
 	background-color: #FFF;
@@ -269,6 +256,7 @@ a:hover{text-decoration:underline}
 	margin-left: 10px;
 	text-align: right;
 }
-.h2{
-	color: #333;	
-	}
+.iDevice_inner div div div div input[type="radio"] {
+margin: 25px 5px 7px 20px;}
+.iDevice_inner div div div div input[type="checkbox"] {
+margin: 25px 5px 7px 20px;}
