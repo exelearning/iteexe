@@ -14,6 +14,10 @@
         width: 47px;
         height: 32px;
     }
+    
+    .#{$prefix}message-box .#{$prefix}form-item .#{$prefix}form-display-field {
+        @include color-by-background($window-base-color);
+    }
 
     .#{$prefix}message-box-info,
     .#{$prefix}message-box-warning,

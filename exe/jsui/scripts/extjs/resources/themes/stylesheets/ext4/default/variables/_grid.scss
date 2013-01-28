@@ -76,15 +76,15 @@ $grid-cell-with-col-lines-border-color: adjust-color($base-color, $hue: 0deg, $s
 // ===============================
 // ======== GROUPED GRID =========
 // ===============================
-$grid-grouped-header-background-color: #fff;
-$grid-grouped-header-border-width: 0 0 2px 0;
-$grid-grouped-header-border-style: solid;
-$grid-grouped-header-border-color: adjust-color($base-color, $hue: 0.844deg, $saturation: 7.644%, $lightness: -8.627%);
-$grid-grouped-header-padding: 6px 0 0 0;
+$grid-grouped-header-background-color: #fff !default;
+$grid-grouped-header-border-width: 0 0 2px 0 !default;
+$grid-grouped-header-border-style: solid !default;
+$grid-grouped-header-border-color: adjust-color($base-color, $hue: 0.844deg, $saturation: 7.644%, $lightness: -8.627%) !default;
+$grid-grouped-header-padding: 6px 0 0 0 !default;
 
-$grid-grouped-title-color: adjust-color($base-color, $hue: 0.952deg, $saturation: -6.718%, $lightness: -41.961%);
-$grid-grouped-title-font: bold ceil($font-size * .9) $font-family;
-$grid-grouped-title-padding: 4px 4px 4px 17px;
+$grid-grouped-title-color: adjust-color($base-color, $hue: 0.952deg, $saturation: -6.718%, $lightness: -41.961%) !default;
+$grid-grouped-title-font: bold ceil($font-size * .9) $font-family !default;
+$grid-grouped-title-padding: 4px 4px 4px 17px !default;
 
 // ===============================
 // ========= EDITOR ==========
@@ -98,7 +98,7 @@ $grid-editor-font: normal #{$grid-row-cell-font-size}/#{$grid-editor-line-height
 $grid-row-editor-background-color: adjust-color($base-color, $hue: 1deg, $saturation: 11%, $lightness: 11%) !default;
 $grid-row-editor-border-color: $panel-border-color !default;
 $grid-row-editor-border-width: 1px !default;
-$grid-row-editor-border: $grid-row-editor-border-width solid $grid-row-editor-border-color !important;
+$grid-row-editor-border: $grid-row-editor-border-width solid $grid-row-editor-border-color !important !default;
 $grid-row-editor-field-padding-horizontal: 2px !default;
 $grid-row-editor-cb-wrap-padding-top: 0 !default;
 $grid-row-editor-checkbox-margin-left: -4px !default;

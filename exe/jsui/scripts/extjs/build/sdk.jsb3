@@ -1,6 +1,6 @@
 {
     "projectName": "Ext JS 4.1 SDK",
-    "licenseText": "This file is part of Ext JS 4.1\n\nCopyright (c) 2011-2012 Sencha Inc\n\nContact:  http://www.sencha.com/contact\n\nPre-release code in the Ext repository is intended for development purposes only and will\nnot always be stable. \n\nUse of pre-release code is permitted with your application at your own risk under standard\nExt license terms. Public redistribution is prohibited.\n\nFor early licensing, please contact us at licensing@sencha.com\n\nBuild date: 2012-04-20 14:10:47 (19f55ab932145a3443b228045fa80950dfeaf9cc)",
+    "licenseText": "This file is part of Ext JS 4.1\n\nCopyright (c) 2011-2012 Sencha Inc\n\nContact:  http://www.sencha.com/contact\n\nPre-release code in the Ext repository is intended for development purposes only and will\nnot always be stable. \n\nUse of pre-release code is permitted with your application at your own risk under standard\nExt license terms. Public redistribution is prohibited.\n\nFor early licensing, please contact us at licensing@sencha.com\n\nBuild date: 2012-07-04 21:11:01 (65ff594cd80b9bad45df640c22cc0adb52c95a7b)",
     "packages": [
         {
             "name": "Foundation",
@@ -1747,6 +1747,10 @@
                 {
                     "path": "src/grid/plugin/",
                     "name": "RowEditing.js"
+                },
+                {
+                    "path": "src/view/",
+                    "name": "TableLayout.js"
                 }
             ]
         },

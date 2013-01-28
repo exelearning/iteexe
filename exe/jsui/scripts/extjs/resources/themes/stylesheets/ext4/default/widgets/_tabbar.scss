@@ -1,3 +1,4 @@
+
 @mixin tab-bar-top($toolbarCls, $bodyCls, $stripCls, $body-padding, $body-border-width, $strip-border-width, $strip-height) {
     .#{$prefix}#{$toolbarCls} {
         .#{$prefix}#{$bodyCls} {
@@ -65,8 +66,9 @@
 }
 
 /**
-  * @class Ext.tab.Bar
-  */
+ * Creates a visual theme for TabBar
+ * @member Ext.tab.Bar
+ */
 @mixin extjs-tabbar {
     .#{$prefix}tab-bar {
         position: relative;

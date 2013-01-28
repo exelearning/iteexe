@@ -23,10 +23,10 @@ $tab-font-size-over: $tab-font-size !default;
 $tab-font-size-active: $tab-font-size !default;
 $tab-font-size-disabled: $tab-font-size !default;
 
-$tab-font-family: $font-family;
-$tab-font-family-over: $tab-font-family;
-$tab-font-family-active: $tab-font-family;
-$tab-font-family-disabled: $tab-font-family;
+$tab-font-family: $font-family !default;
+$tab-font-family-over: $tab-font-family !default;
+$tab-font-family-active: $tab-font-family !default;
+$tab-font-family-disabled: $tab-font-family !default;
 
 $tab-font-weight: bold !default;
 $tab-font-weight-over: $tab-font-weight !default;

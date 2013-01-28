@@ -1,6 +1,7 @@
 /**
-  * @class Ext.Tab
-  */
+ * Creates the base structure of a Tab.
+ * @member Ext.tab.Tab
+ */
 @mixin extjs-tab {
     @include x-frame(
         $cls: 'tab',

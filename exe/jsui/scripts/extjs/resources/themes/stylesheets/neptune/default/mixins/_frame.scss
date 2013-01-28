@@ -1,7 +1,7 @@
 @function pad($radius) {
     $radius: boxmax($radius);
     $radius: parseint($radius);
-    @if $radius > 10 {
+    @if $radius >= 10 {
         @return $radius;
     }
     @else {

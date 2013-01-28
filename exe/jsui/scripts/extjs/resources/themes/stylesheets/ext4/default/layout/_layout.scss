@@ -1,5 +1,5 @@
 @mixin extjs-layout {
-    /**
+     /*
       * Dock Layouts
       * @todo move this somewhere else?
       */
@@ -7,7 +7,7 @@
         position: absolute !important;
         z-index: 1;
     }
-    
+
     .#{$prefix}docked-top {
         border-bottom-width: 0 !important;
     }
@@ -23,7 +23,7 @@
     .#{$prefix}docked-right {
         border-left-width: 0 !important;
     }
-    
+
     .#{$prefix}docked-noborder-top {
         border-top-width: 0 !important;
     }
@@ -31,15 +31,15 @@
     .#{$prefix}docked-noborder-right {
         border-right-width: 0 !important;
     }
-    
+
     .#{$prefix}docked-noborder-bottom {
         border-bottom-width: 0 !important;
     }
-    
+
     .#{$prefix}docked-noborder-left {
         border-left-width: 0 !important;
     }
-    
+
     .#{$prefix}box-inner {
         overflow:hidden;
 
@@ -147,11 +147,11 @@
         padding: 4px 5px 5px 5px;
         border-top-color: $panel-header-inner-border-color !important;
     }
-    
+
     .#{$prefix}accordion-body {
         border-width: 0 !important;
     }
-    
+
     .#{$prefix}accordion-hd-sibling-expanded {
         border-top-color: $panel-border-color !important;
         @include single-box-shadow($panel-header-inner-border-color, 0, 1px, 0, 0, true);
@@ -207,7 +207,7 @@
         .#{$prefix}tabbar-scroll-left-disabled {
             background-position: -18px 0;
             @include opacity(.5);
-            
+
             cursor:default;
         }
 
@@ -255,7 +255,7 @@
         .#{$prefix}tabbar-scroll-right-disabled {
             background-position: 0 0;
             @include opacity(.5);
-            
+
             cursor:default;
         }
 
@@ -315,7 +315,7 @@
         .#{$prefix}ie6 .#{$prefix}column {
             display: inline; /*prevent IE6 double-margin bug*/
         }
-        
+
         .#{$prefix}quirks .#{$prefix}ie .#{$prefix}form-layout-table, .#{$prefix}quirks .#{$prefix}ie .#{$prefix}form-layout-table tbody tr.#{$prefix}form-item {
             position: relative;
         }

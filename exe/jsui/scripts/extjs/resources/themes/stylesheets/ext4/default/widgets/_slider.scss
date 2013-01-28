@@ -1,3 +1,7 @@
+/**
+ * Creates the base structure of slider.
+ * @member Ext.slider.Multi
+ */
 @mixin extjs-slider {
     .#{$prefix}slider {
         zoom:1;
@@ -23,7 +27,7 @@
         outline:0 none;
         @include no-select;
         display:block;
-        overflow:hidden;  
+        overflow:hidden;
     }
 
     /* Horizontal styles */
@@ -97,7 +101,7 @@
     .#{$prefix}slider-vert .#{$prefix}slider-thumb-drag {
         background-position: -30px -28px;
     }
-    
+
     .#{$prefix}slider-horz,
     .#{$prefix}slider-horz .#{$prefix}slider-end,
     .#{$prefix}slider-horz .#{$prefix}slider-inner {
@@ -117,7 +121,7 @@
     .#{$prefix}slider-vert .#{$prefix}slider-thumb {
         background-image: theme-background-image($theme-name, 'slider/slider-v-thumb.png');
     }
-    
+
     @if $include-ie {
         .#{$prefix}ie6 {
             .#{$prefix}slider-horz,

@@ -21,6 +21,8 @@
             @if $include-missing-images {
                 @return theme-image($theme-name, $path, $without-url, $relative);
             }
+
+            @return none;
         }
     }
     @else {

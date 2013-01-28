@@ -96,7 +96,8 @@ Ext.onReady(function() {
         longDayFormat: 'Y\u5e74m\u6708d\u65e5',
         monthYearFormat: 'Y\u5e74m\u6708',
         getDayInitial: function (value) {
-            return value.substr(-1, 1);
+            // Grab the last character
+            return value.substr(value.length - 1);
         }
     });
 

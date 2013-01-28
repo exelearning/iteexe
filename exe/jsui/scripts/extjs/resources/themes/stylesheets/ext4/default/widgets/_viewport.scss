@@ -1,3 +1,7 @@
+/**
+ * Creates the base structure of Viewport.
+ * @member Ext.container.Viewport
+ */
 @mixin extjs-viewport {
     .#{$prefix}viewport, .#{$prefix}viewport body {
         margin: 0;

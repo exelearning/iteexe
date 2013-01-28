@@ -1,3 +1,7 @@
+/**
+ * Creates the base structure of Ext.form.Panel.
+ * @member Ext.form.Panel
+ */
 @mixin extjs-form {
     /*misc*/
     .#{$prefix}webkit {
@@ -7,7 +11,7 @@
             }
         }
     }
-    
+
     // form items
     .#{$prefix}form-item {
         vertical-align: top;
@@ -59,12 +63,12 @@
             height: 5px;
         }
     }
-    
+
     // No padding when inside an Editor
     .#{$prefix}editor .#{$prefix}form-item-body {
         padding-bottom: 0;
     }
-    
+
     .#{$prefix}form-item-label {
         display: block;
         padding: 3px 0 0;
@@ -73,7 +77,9 @@
     }
 
     .#{$prefix}form-item-label-top {
-        padding: 0;
+        display: block;
+        zoom: 1;
+        padding: 0 0 5px 0;
     }
 
     .#{$prefix}form-item-label-right {
@@ -91,21 +97,10 @@
         background-image: theme-background-image($theme-name, $form-exclamation-icon);
     }
 
-    .#{$prefix}external-error-icon {
-        position: absolute;
-        right: 10px;
-        height: $form-field-height;
-    }
-
-    @if $include-ie {
-        .#{$prefix}quirks .#{$prefix}ie .#{$prefix}external-error-icon {
-            right: 0;
-        }
-    }
-
     .#{$prefix}form-invalid-icon {
         width: $form-error-icon-width;
-        background: no-repeat 2px 3px;
+        height: 14px;
+        background: no-repeat center center;
         background-image: theme-background-image($theme-name, $form-exclamation-icon);
         overflow: hidden;
         ul {
@@ -116,5 +111,10 @@
                 display: none;
             }
         }
+    }
+
+    // When the label is on top, the right icon cell is taller, so the icon image needs bumping down
+    .#{$prefix}lbl-top-err-icon {
+        margin-bottom: 4px;
     }
 }

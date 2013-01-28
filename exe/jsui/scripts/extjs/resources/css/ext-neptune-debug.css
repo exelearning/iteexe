@@ -16,7 +16,7 @@ requirements will be met: http://www.gnu.org/copyleft/gpl.html.
 If you are unsure which license is appropriate for your use, please contact the sales department
 at http://www.sencha.com/contact.
 
-Build date: 2012-04-20 14:10:47 (19f55ab932145a3443b228045fa80950dfeaf9cc)
+Build date: 2012-07-04 21:11:01 (65ff594cd80b9bad45df640c22cc0adb52c95a7b)
 */
 /**
  * @var {string} $prefix
@@ -9139,23 +9139,23 @@ textarea.x-form-field {
           }*/
   border-color: #BEC0C0 #E0E1E2 #E0E1E2 #E0E1E2; }
 
-/* line 31, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 32, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-form-text {
   height: 19px;
-  line-height: 19px;
+  line-height: 16px;
   vertical-align: middle; }
 
-/* line 40, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 41, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-ie6 .x-form-text,
 .x-ie7 .x-form-text,
 .x-ie8 .x-form-text {
   line-height: 16px; }
 
-/* line 45, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 46, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-border-box .x-form-text {
   height: 23px; }
 
-/* line 49, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 50, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 textarea.x-form-field {
   color: #22262a;
   overflow: auto;
@@ -9168,21 +9168,21 @@ textarea.x-form-field {
           }*/
   resize: none; }
 
-/* line 64, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 65, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-border-box textarea.x-form-field {
   height: auto; }
 
-/* line 69, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 70, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-safari.x-mac textarea.x-form-field {
   margin-bottom: -2px; }
 
-/* line 75, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 76, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-form-focus,
 textarea.x-form-focus {
   border-color: #C0BCA7 #E7E3C8 #E7E3C8 #E7E3C8;
   background: #FFFBE6; }
 
-/* line 81, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 82, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-form-invalid-field,
 textarea.x-form-invalid-field {
   background-color: #ffede9;
@@ -9192,38 +9192,38 @@ textarea.x-form-invalid-field {
   border-color: #DFCCC5;
   border-top-color: #BEAAA3; }
 
-/* line 92, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 93, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-form-item {
   font: normal 12px "Helvetica Neue", Arial, Verdana, sans-serif;
   text-shadow: white 0 1px 0; }
 
-/* line 98, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 99, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-form-empty-field, textarea.x-form-empty-field {
   color: #b8bfc6; }
 
-/* line 103, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 104, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-webkit .x-form-empty-field {
-  line-height: 15px; }
+  line-height: 16px; }
 
-/* line 108, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 109, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-form-display-field {
   padding-top: 3px; }
 
-/* line 113, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 114, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-ie .x-form-file {
   height: 24px;
   line-height: 18px;
   vertical-align: middle; }
 
-/* line 122, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 123, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-field-default-toolbar .x-form-text {
   height: 18px; }
 
-/* line 126, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 127, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-border-box .x-field-default-toolbar .x-form-text {
   height: 22px; }
 
-/* line 130, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
+/* line 131, ../themes/stylesheets/neptune/default/widgets/form/_field.scss */
 .x-field-default-toolbar .x-form-item-label-left {
   padding-left: 4px; }
 
@@ -10730,30 +10730,35 @@ textarea.x-form-invalid-field {
   width: 47px;
   height: 32px; }
 
-/* line 21, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+/* line 18, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+.x-message-box .x-form-item .x-form-display-field {
+  color: white;
+  text-shadow: #0e4b8e 0 -1px 0; }
+
+/* line 25, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
 .x-message-box-info,
 .x-message-box-warning,
 .x-message-box-question,
 .x-message-box-error {
   background: transparent no-repeat top left; }
 
-/* line 25, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+/* line 29, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
 .x-message-box .x-msg-box-wait {
   background-image: url('../../resources/themes/images/neptune/shared/blue-loading.gif'); }
 
-/* line 29, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+/* line 33, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
 .x-message-box-info {
   background-image: url('../../resources/themes/images/neptune/shared/icon-info.gif'); }
 
-/* line 33, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+/* line 37, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
 .x-message-box-warning {
   background-image: url('../../resources/themes/images/neptune/shared/icon-warning.gif'); }
 
-/* line 37, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+/* line 41, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
 .x-message-box-question {
   background-image: url('../../resources/themes/images/neptune/shared/icon-question.gif'); }
 
-/* line 41, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
+/* line 45, ../themes/stylesheets/neptune/default/util/_messagebox.scss */
 .x-message-box-error {
   background-image: url('../../resources/themes/images/neptune/shared/icon-error.gif'); }
 

@@ -17,221 +17,360 @@
             and then edit the queries below to adjust for the next release.
             -->
             <div class="release">
-                <h1>Release Notes for Ext JS 4.1.0</h1>
+                <h1>Release Notes for Ext JS 4.1.1</h1>
                 <p class="notes">
-                    Release Date: April 20, 2012<br>
-                    Version Number: 4.1.0
+                    Release Date: July 4, 2012<br>
+                    Version Number: 4.1.1
                 </p>
                 <h2>Bugs Fixed</h2>
 <ul>
-    <li class="component">Charts (2)
+    <li class="component">Charts (6)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5657</span>&#160;<span class="ticket-notes">Charts : Grouped Bar :Displaying Js error upon clicking on &quot;Legends&quot; in the &quot;grouped bar&quot; chart on IE9</span>
+                <span class="ticket-number">EXTJSIV-6275</span>&#160;<span class="ticket-notes">Line chart messed up after disabling and enabling lines though legend</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5954</span>&#160;<span class="ticket-notes">Simple Area Chart Not Working in 4.1RCx</span>
+                <span class="ticket-number">EXTJSIV-6323</span>&#160;<span class="ticket-notes">Charts don't render with either constrain, or both maximum and minimum</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6324</span>&#160;<span class="ticket-notes">Problem using minimum, maximum and majorTicksSteps together</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6359</span>&#160;<span class="ticket-notes">Chart should display integers on axis</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6583</span>&#160;<span class="ticket-notes">Chart redraw on store update fails in inactive card</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6585</span>&#160;<span class="ticket-notes">Rapid clicks on pie chart causes slices to shrink or disappear</span>
             </li>
         </ul>
     </li>
-    <li class="component">Core (4)
+    <li class="component">Core (10)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5811</span>&#160;<span class="ticket-notes">Elements can't fadeIn() after fadeOut()</span>
+                <span class="ticket-number">EXTJSIV-3932</span>&#160;<span class="ticket-notes">dom.style.setExpression not implemented in IE8</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5846</span>&#160;<span class="ticket-notes">Component id's starting with non-word characters cause JS errors</span>
+                <span class="ticket-number">EXTJSIV-5956</span>&#160;<span class="ticket-notes">Ext.extend does not handle constructor properly using 3-argument form</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5902</span>&#160;<span class="ticket-notes">Draggable and resizable images leave resize handlers at start point when moved</span>
+                <span class="ticket-number">EXTJSIV-6087</span>&#160;<span class="ticket-notes">Ext.data.TreeStore CRUD regression</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5958</span>&#160;<span class="ticket-notes">Ext.Error toString not including the method name</span>
+                <span class="ticket-number">EXTJSIV-6452</span>&#160;<span class="ticket-notes">Container's private floatingItems collection should be floatingDescendants</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6453</span>&#160;<span class="ticket-notes">Container-owned floating items appear at wrong level in the ComponentQuery hierarchy</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6456</span>&#160;<span class="ticket-notes">ComponentQuery :last selector fails with a single item</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6484</span>&#160;<span class="ticket-notes">Ext.AbstractManager.onAvailable listener isn't removed properly</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6499</span>&#160;<span class="ticket-notes">Reusing id's for elements recently removed from the DOM would incorrectly reference old element</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6570</span>&#160;<span class="ticket-notes">Ext.Element getStyle can throw in IE6/7 reading font styles</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6612</span>&#160;<span class="ticket-notes">Observable.resumeEvents should tolerate being called when suspendCount is zero</span>
             </li>
         </ul>
     </li>
-    <li class="component">Data (5)
+    <li class="component">Data (6)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-4957</span>&#160;<span class="ticket-notes">Inconsistent signature for the Store &#39;datachanged&#39; event</span>
+                <span class="ticket-number">EXTJSIV-5253</span>&#160;<span class="ticket-notes">Ext.data.writer.Json no longer respects dateFormat</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5809</span>&#160;<span class="ticket-notes">Model fields are set to undefined or defaultValue when they should not be updated</span>
+                <span class="ticket-number">EXTJSIV-5995</span>&#160;<span class="ticket-notes">Model field disappear when using idProperty</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5862</span>&#160;<span class="ticket-notes">Dependency on Writer from Proxy causes JS error</span>
+                <span class="ticket-number">EXTJSIV-6480</span>&#160;<span class="ticket-notes">loadData reading an Array uses the wrong field order to read the data items.</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5877</span>&#160;<span class="ticket-notes">Store modifies the value of inline data config option</span>
+                <span class="ticket-number">EXTJSIV-6523</span>&#160;<span class="ticket-notes">data.Reader will not read data where a model is included</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5945</span>&#160;<span class="ticket-notes">Ext.data.Model getFields returns undefined</span>
+                <span class="ticket-number">EXTJSIV-6545</span>&#160;<span class="ticket-notes">Can't reload buffered store after filtering</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6627</span>&#160;<span class="ticket-notes">Model.copy passes its data into the new constructor as raw which gets converted.</span>
             </li>
         </ul>
     </li>
     <li class="component">DataView (1)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5831</span>&#160;<span class="ticket-notes">Floatable TreePanel in West Border of Viewport has two left hand borders</span>
+                <span class="ticket-number">EXTJSIV-6524</span>&#160;<span class="ticket-notes">AbstractView should not cancel SPACE key event if target is an input element.</span>
             </li>
         </ul>
     </li>
-    <li class="component">Draw (1)
+    <li class="component">Documentation (3)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5904</span>&#160;<span class="ticket-notes">Surface.removeAll - fails to remove items from groups</span>
+                <span class="ticket-number">EXTJSIV-5148</span>&#160;<span class="ticket-notes">Ext.selection.Model documentation bug</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6187</span>&#160;<span class="ticket-notes">Grouping and locking features do not work together</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6573</span>&#160;<span class="ticket-notes">AbstractComponent.render missing in the API docs</span>
             </li>
         </ul>
     </li>
-    <li class="component">Events (3)
+    <li class="component">Examples (4)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5193</span>&#160;<span class="ticket-notes">&nbsp;Resize event is not fired for custom form field</span>
+                <span class="ticket-number">EXTJSIV-6449</span>&#160;<span class="ticket-notes">Simple Tasks reminder window does not lay out when resized.</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5815</span>&#160;<span class="ticket-notes">Error using a mixin that itself has Ext.util.Observable as a mixin</span>
+                <span class="ticket-number">EXTJSIV-6450</span>&#160;<span class="ticket-notes">Themes example's layout expands vertical slider's element to 100% width</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5844</span>&#160;<span class="ticket-notes">Events: option.target has been removed from 4.x</span>
+                <span class="ticket-number">EXTJSIV-6462</span>&#160;<span class="ticket-notes">Chart rendering is broken by moving its ancestors in the DOM in IE</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6717</span>&#160;<span class="ticket-notes">Combination Examples - Feed Viewer:  Getting error upon clicking on any feed in the preview panel when "Hide" option is selected in the preview drop down menu.</span>
             </li>
         </ul>
     </li>
-    <li class="component">Examples (2)
+    <li class="component">Forms (15)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5948</span>&#160;<span class="ticket-notes">Ext.ux.form.ItemSelector does not work with asynchronous loading (proxy) in ItemSelector example </span>
+                <span class="ticket-number">EXTJSIV-6071</span>&#160;<span class="ticket-notes">The title of the MultiSelect is not displayed</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5949</span>&#160;<span class="ticket-notes">RC3: Ext.ux.form.ItemSelector.bindStore() method non-functioning</span>
+                <span class="ticket-number">EXTJSIV-6085</span>&#160;<span class="ticket-notes">"Custom Layout " Alert message borderline is missing under "Radio Groups " in IE6 </span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6086</span>&#160;<span class="ticket-notes">labelWidth is ignored with labelAlign top</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6127</span>&#160;<span class="ticket-notes">TextField emptyText cannot be entered as the value</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6160</span>&#160;<span class="ticket-notes">Ext.form.field.Time does not initialize value correctly</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6227</span>&#160;<span class="ticket-notes">Adding a new field to a form layout fails on IE</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6311</span>&#160;<span class="ticket-notes">Time field clears value on blur.</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6371</span>&#160;<span class="ticket-notes">Fields with labelAlign top need to not make label its own row - causes too many problems</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6402</span>&#160;<span class="ticket-notes">DisplayField doesn't update size after a value change</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6416</span>&#160;<span class="ticket-notes">Calling setText on unrendered TextField does not work</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6445</span>&#160;<span class="ticket-notes">standardSubmit: true is broken for forms with params</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6478</span>&#160;<span class="ticket-notes">Ext.form.BasicForm fails to correctly read the response of a file upload</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6568</span>&#160;<span class="ticket-notes">HtmlEditor leaks memory on window unload in IE6/7</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6579</span>&#160;<span class="ticket-notes">HtmlEditor contents are cleared by initial Ext.example.msg</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6594</span>&#160;<span class="ticket-notes">enforceMaxLength with no maxLength in textfield allows only one char</span>
             </li>
         </ul>
     </li>
-    <li class="component">Forms (8)
+    <li class="component">Grid (18)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-4978</span>&#160;<span class="ticket-notes">Forms - Dynamic Forms : Unable to access Form 1, Form 2 & Form 5 when clicked on expand/collapse  button and and pressed the tab key</span>
+                <span class="ticket-number">EXTJSIV-5343</span>&#160;<span class="ticket-notes">Lockable views do not handle drag between two sides well or dragging of or between group headers.</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5242</span>&#160;<span class="ticket-notes">DisplayField does not respect fieldStyle</span>
+                <span class="ticket-number">EXTJSIV-6075</span>&#160;<span class="ticket-notes">Checkbox selection model's header checkbox not in sync if records are added/removed</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5826</span>&#160;<span class="ticket-notes">Validation of timefield is not correct in Chinese.</span>
+                <span class="ticket-number">EXTJSIV-6242</span>&#160;<span class="ticket-notes">Grid row editor does not close when record being edited is removed</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5827</span>&#160;<span class="ticket-notes">Work day is corrupt in Spanish date input</span>
+                <span class="ticket-number">EXTJSIV-6264</span>&#160;<span class="ticket-notes">Grid filter range menu iconCls conflicts with Panel iconCls - rename to itemIconCls</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5832</span>&#160;<span class="ticket-notes">Recreating an HtmlEditor makes it unable to be focused until ENTER is pressed</span>
+                <span class="ticket-number">EXTJSIV-6419</span>&#160;<span class="ticket-notes">Grid Filters JS error when click on any column header after filtering Date and swap columns </span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5906</span>&#160;<span class="ticket-notes">Can't create trigger field outside of onReady</span>
+                <span class="ticket-number">EXTJSIV-6420</span>&#160;<span class="ticket-notes">Grid row heights aren't synced in locked grid on IE9 standards.</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5937</span>&#160;<span class="ticket-notes">CheckboxGroup has incorrect column loop</span>
+                <span class="ticket-number">EXTJSIV-6421</span>&#160;<span class="ticket-notes">Locking grid headers misplaced after column hide</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5955</span>&#160;<span class="ticket-notes">Ext.form.Labelable uses a CSS class without baseCSSPrefix</span>
+                <span class="ticket-number">EXTJSIV-6440</span>&#160;<span class="ticket-notes">BorderLayout: collapsed GridPanel on south looks inconsistent after expand</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6463</span>&#160;<span class="ticket-notes">Infinite grid alignment is skewed by presence of group headers</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6477</span>&#160;<span class="ticket-notes">Arrow keys become unresponsive when arrowing through records in a buffered grid</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6481</span>&#160;<span class="ticket-notes">Firefox 13 new default smooth scrolling leads to very slow grid scrolling</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6482</span>&#160;<span class="ticket-notes">Grid RowExpander is not reinserted after reconfigure</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6509</span>&#160;<span class="ticket-notes">Using getEditor on a grid column creates an orphaned component resulting in a memory leak</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6531</span>&#160;<span class="ticket-notes">Grid reconfigure fails with hideHeaders</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6546</span>&#160;<span class="ticket-notes">PagingScroller onCacheClear assumes view is rendered</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6584</span>&#160;<span class="ticket-notes">Cell editing in locked grid causes JS error</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6644</span>&#160;<span class="ticket-notes">CellSelectionModel selects the wrong cell in a locked grid</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6718</span>&#160;<span class="ticket-notes">Tab key causes error when cell editing with row selection model</span>
             </li>
         </ul>
     </li>
-    <li class="component">Grid (4)
+    <li class="component">Layouts (5)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5457</span>&#160;<span class="ticket-notes">Grid infinite scroll: no last elements, no return to first elements</span>
+                <span class="ticket-number">EXTJSIV-5131</span>&#160;<span class="ticket-notes">ShrinkWrap layouts can fail with constrained widths / heights</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5847</span>&#160;<span class="ticket-notes">Ext.ux.grid.FiltersFeature removes dynamically added filters</span>
+                <span class="ticket-number">EXTJSIV-6041</span>&#160;<span class="ticket-notes">In IE8/9 "strict" mode, Box layout's perpendicular overflow does not work</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5894</span>&#160;<span class="ticket-notes">GroupingSummary returns '\u00a0' when sum is equal 0</span>
+                <span class="ticket-number">EXTJSIV-6049</span>&#160;<span class="ticket-notes">Auto-width grid in vbox stretches to 10,000px</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5953</span>&#160;<span class="ticket-notes">TemplateColumn not updated dynamically</span>
-            </li>
-        </ul>
-    </li>
-    <li class="component">Layouts (2)
-        <ul class="tickets">
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5562</span>&#160;<span class="ticket-notes">Horizontal scrollbar not visible when set to overflow in hbox layout</span>
+                <span class="ticket-number">EXTJSIV-6369</span>&#160;<span class="ticket-notes">Closing floated/collapsed panel in border layout causes JS error</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5941</span>&#160;<span class="ticket-notes">Resizable Components in Absolute layouts get misplaced.</span>
-            </li>
-        </ul>
-    </li>
-    <li class="component">MVC (1)
-        <ul class="tickets">
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-4202</span>&#160;<span class="ticket-notes">Problem with building when MVC app has a custom directory structure</span>
+                <span class="ticket-number">EXTJSIV-6528</span>&#160;<span class="ticket-notes">Ext.layout.container.BoxOverflow.Menu.destroy throws Exception</span>
             </li>
         </ul>
     </li>
     <li class="component">Menu (1)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5804</span>&#160;<span class="ticket-notes">Menu onClick does not fire in all cases</span>
+                <span class="ticket-number">EXTJSIV-6386</span>&#160;<span class="ticket-notes">Picking a date doesn't work when Date field inside Menu</span>
             </li>
         </ul>
     </li>
-    <li class="component">Misc (4)
+    <li class="component">Misc (2)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5134</span>&#160;<span class="ticket-notes">Miscellaneous - Panels : "Masked Panel with a really long title" panel's UI is disturbed when clicked more than twice on expand/ collapse button</span>
+                <span class="ticket-number">EXTJSIV-6348</span>&#160;<span class="ticket-notes">Drag-drop on invalid dropzone leaves no focus</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5501</span>&#160;<span class="ticket-notes">Ext.Date.format breaks on wrong input</span>
-            </li>
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5899</span>&#160;<span class="ticket-notes">Combination Examples:Ext JS Calendar:Displaying js error while creating the new event  with empty date field.</span>
-            </li>
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5967</span>&#160;<span class="ticket-notes">ElementLoader - inconsistent API (?)</span>
+                <span class="ticket-number">EXTJSIV-6510</span>&#160;<span class="ticket-notes">IE 6 nonsecure items warning when using Ext.History</span>
             </li>
         </ul>
     </li>
-    <li class="component">Panel (1)
+    <li class="component">Panel (4)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5959</span>&#160;<span class="ticket-notes">Panel with collapseFirst: false and closable does not display collapse tool button</span>
+                <span class="ticket-number">EXTJSIV-5149</span>&#160;<span class="ticket-notes">"mini" collapseMode in border layout doesn't seem to work</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6372</span>&#160;<span class="ticket-notes">Multiple issues with Panel.setBodyStyle</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6373</span>&#160;<span class="ticket-notes">Specifying Panel header config and closable: true causes error</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6448</span>&#160;<span class="ticket-notes">Left and right aligned headers in panel drag are not layed out properly</span>
             </li>
         </ul>
     </li>
-    <li class="component">Tabs (2)
+    <li class="component">Theme (2)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5099</span>&#160;<span class="ticket-notes">Tabs - Advanced Tabs : Tabs are added without close button when clicked on "Add Closable Tab" button</span>
+                <span class="ticket-number">EXTJSIV-6163</span>&#160;<span class="ticket-notes">SplitButton with arrowAlign bottom and Gray theme - CSS issue on mouse over</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5857</span>&#160;<span class="ticket-notes">TabPanel children don't fire the close event</span>
+                <span class="ticket-number">EXTJSIV-6425</span>&#160;<span class="ticket-notes">Sass function theme-background-image throws exception without a return value and css doesn't compile</span>
             </li>
         </ul>
     </li>
-    <li class="component">Theme (1)
+    <li class="component">Toolbars (2)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-3712</span>&#160;<span class="ticket-notes">TabBar background is blue in the gray theme</span>
+                <span class="ticket-number">EXTJSIV-6251</span>&#160;<span class="ticket-notes">Toolbar defaults override single item settings</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6451</span>&#160;<span class="ticket-notes">Form fields clone in overflow menu of toolbar do not sync the original field value</span>
             </li>
         </ul>
     </li>
-    <li class="component">Tree (2)
+    <li class="component">Tree (9)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5908</span>&#160;<span class="ticket-notes">Fast clicks in Tree can lead to duplication of entries</span>
+                <span class="ticket-number">EXTJSIV-5248</span>&#160;<span class="ticket-notes">Ext.data.TreeStore setting the root property in the proxy doesn't work</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5952</span>&#160;<span class="ticket-notes">Allow NodeInterface.decorate to expect a record instance for backward compatibility</span>
+                <span class="ticket-number">EXTJSIV-6005</span>&#160;<span class="ticket-notes">Ext.data.TreeStore with Ext.data.proxy.Rest does not pass ids correctly</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6302</span>&#160;<span class="ticket-notes">NodeInterface qtip and qtitle not updated</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6417</span>&#160;<span class="ticket-notes">tree.selectPath(tree.getRootNode().getPath()) doesn't select</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6418</span>&#160;<span class="ticket-notes">Folder keeps displaying collapse button after all leaves are dragged away</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6443</span>&#160;<span class="ticket-notes">expandable: false has no effect in tree grid</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6473</span>&#160;<span class="ticket-notes">Spacebar not toggling checkbox state in TreePanel</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6554</span>&#160;<span class="ticket-notes">Tree view refresh event is fired before the render event</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6580</span>&#160;<span class="ticket-notes">Tree node parentId doesn&#39;t respect useNull</span>
             </li>
         </ul>
     </li>
-    <li class="component">Window (1)
+    <li class="component">Window (6)
         <ul class="tickets">
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5897</span>&#160;<span class="ticket-notes">Window's title will not  display in IE6/7/8 when it was dragging</span>
+                <span class="ticket-number">EXTJSIV-5889</span>&#160;<span class="ticket-notes">Dragging a header-constrained window below Viewport bottom scrolls the Viewport</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6033</span>&#160;<span class="ticket-notes">Ext.window.Window fire incorrect events when maximized/restored</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6234</span>&#160;<span class="ticket-notes">Constrained window in a border layout is displaying at wrong location.</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6297</span>&#160;<span class="ticket-notes">Constraining a window to a panel using the "constrain" config does not work when "autoShow" is true</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6397</span>&#160;<span class="ticket-notes">Form submit with waitMsg:'string' called from Window focuses the Window which hides any MessageBox</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6547</span>&#160;<span class="ticket-notes">Window is not closed on Esc</span>
             </li>
         </ul>
     </li>
-Total: 45</ul>
+Total: 94</ul>
                 <h2>Known Issues</h2>
 <ul>
     <li class="component">Animation (1)
@@ -241,21 +380,15 @@ Total: 45</ul>
             </li>
         </ul>
     </li>
-    <li class="component">Charts (2)
+    <li class="component">Charts (1)
         <ul class="tickets">
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-5108</span>&#160;<span class="ticket-notes">can't create label for  type area series</span>
             </li>
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5981</span>&#160;<span class="ticket-notes">Bound of Area Series incorrectly calculated</span>
-            </li>
         </ul>
     </li>
-    <li class="component">Core (2)
+    <li class="component">Core (1)
         <ul class="tickets">
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-3932</span>&#160;<span class="ticket-notes">dom.style.setExpression not implemented in IE8</span>
-            </li>
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-4942</span>&#160;<span class="ticket-notes">Element#tgetWidth() returns an incorrect result for naturally widthed absolutely positioned elements in some cases.</span>
             </li>
@@ -277,13 +410,10 @@ Total: 45</ul>
             </li>
         </ul>
     </li>
-    <li class="component">Documentation (3)
+    <li class="component">Documentation (2)
         <ul class="tickets">
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-4296</span>&#160;<span class="ticket-notes">Ext JS 4 and Sencha Touch Docs examples fail on Chromebook, can't use Example viewer, ReferenceError: Ext is not defined</span>
-            </li>
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5148</span>&#160;<span class="ticket-notes">Ext.selection.Model documentation bug</span>
             </li>
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-5156</span>&#160;<span class="ticket-notes">Update documentation that fields (id,text,leaf) are expected</span>
@@ -297,7 +427,7 @@ Total: 45</ul>
             </li>
         </ul>
     </li>
-    <li class="component">Forms (4)
+    <li class="component">Forms (3)
         <ul class="tickets">
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-2081</span>&#160;<span class="ticket-notes">Issue with &quot;Bullet list&quot; in the form widget editor</span>
@@ -306,14 +436,11 @@ Total: 45</ul>
                 <span class="ticket-number">EXTJSIV-2425</span>&#160;<span class="ticket-notes">HTMLEditor corrupted when changing background color of selection</span>
             </li>
             <li class="ticket">
-                <span class="ticket-number">EXTJSIV-4873</span>&#160;<span class="ticket-notes">Errors calling add method in a checkboxgroup</span>
-            </li>
-            <li class="ticket">
                 <span class="ticket-number">EXTJSIV-5484</span>&#160;<span class="ticket-notes">Ext.form.field.File buttons don&#39;t get the mouse over effect that buttons do</span>
             </li>
         </ul>
     </li>
-    <li class="component">Grid (5)
+    <li class="component">Grid (6)
         <ul class="tickets">
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-4091</span>&#160;<span class="ticket-notes">Grid filters: initial value can be set, but it is not applied</span>
@@ -330,6 +457,9 @@ Total: 45</ul>
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-5607</span>&#160;<span class="ticket-notes">Grid: getEditorParent is ignored - nested cell editing is not possible</span>
             </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-5922</span>&#160;<span class="ticket-notes">Infinite grid and grouping feature do not work together</span>
+            </li>
         </ul>
     </li>
     <li class="component">Layouts (3)
@@ -345,7 +475,7 @@ Total: 45</ul>
             </li>
         </ul>
     </li>
-    <li class="component">Misc (4)
+    <li class="component">Misc (5)
         <ul class="tickets">
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-4545</span>&#160;<span class="ticket-notes">Kitchen Sink - Basic Tabs :  By default  tab headers are not displaying in Basic tabs.</span>
@@ -358,6 +488,9 @@ Total: 45</ul>
             </li>
             <li class="ticket">
                 <span class="ticket-number">EXTJSIV-5254</span>&#160;<span class="ticket-notes">&nbsp;HTMLEditor.insertAtCursor issues in &quot;Source Edit&quot;; mode</span>
+            </li>
+            <li class="ticket">
+                <span class="ticket-number">EXTJSIV-6106</span>&#160;<span class="ticket-notes">[4.1.0] Localizing issues</span>
             </li>
         </ul>
     </li>
@@ -384,13 +517,6 @@ Total: 45</ul>
             </li>
         </ul>
     </li>
-    <li class="component">Theme (1)
-        <ul class="tickets">
-            <li class="ticket">
-                <span class="ticket-number">EXTJSIV-5764</span>&#160;<span class="ticket-notes">Theme slicer requires new build of SDK Tools</span>
-            </li>
-        </ul>
-    </li>
     <li class="component">Tree (2)
         <ul class="tickets">
             <li class="ticket">
@@ -401,11 +527,883 @@ Total: 45</ul>
             </li>
         </ul>
     </li>
-Total: 37</ul>
+Total: 34</ul>
             </div>
 
 <!-- Paste release notes after a release below here... -->
 <!-- ************************************************************************** -->
+            <div class="release">
+                <h1>Release Notes for Ext JS 4.1.1 RC 2</h1>
+                <p class="notes">
+                    Release Date: June 13, 2012<br>
+                    Version Number: 4.1.1 RC 2
+                </p>
+                <h2>Bugs Fixed</h2>
+                <ul>
+                    <li class="component">Button (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6139</span>&#160;<span class="ticket-notes">Button retains the focused state after disabling and enabling</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6329</span>&#160;<span class="ticket-notes">Config html of Button not working</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Charts (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6077</span>&#160;<span class="ticket-notes">Layouts cause Charts to (re)animate</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6224</span>&#160;<span class="ticket-notes">Chart export hard codes sencha.io</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Core (11)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5767</span>&#160;<span class="ticket-notes">return false from beforerender throws exception</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5944</span>&#160;<span class="ticket-notes">Ext.onReady with delay option hangs up a browser</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6055</span>&#160;<span class="ticket-notes">onReady does not work in an iframe in IE8 when parent is a different domain</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6056</span>&#160;<span class="ticket-notes">Problems with Component previousNode</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6124</span>&#160;<span class="ticket-notes">Loader calls Ext globalEval with code that breaks when IE cc_on</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6137</span>&#160;<span class="ticket-notes">Element slideIn tr anchor doesn't work as expected.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6185</span>&#160;<span class="ticket-notes">getPosition on floating Components with parent Container always returns container-relative position</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6196</span>&#160;<span class="ticket-notes">calling showAt on a component does not fire the 'show' event.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6199</span>&#160;<span class="ticket-notes">DomQuery fails with dots in the element id</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6273</span>&#160;<span class="ticket-notes">EventManager does not return listener response</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6319</span>&#160;<span class="ticket-notes">Ext.onReady sometimes fails in an iframe in IE when parent is in a different domain</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Data (3)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6298</span>&#160;<span class="ticket-notes">Ext.data.Tree.flatten duplicates Ext.Object.getValues</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6305</span>&#160;<span class="ticket-notes">Model instance shared if proxy subclass specifies a reader config object</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6306</span>&#160;<span class="ticket-notes">Model's Id field not defined after sync in TreeStore</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">DataView (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6019</span>&#160;<span class="ticket-notes">When deferInitialRefresh is false, the arrival of the data still causes a second layout run</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Documentation (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5558</span>&#160;<span class="ticket-notes">refs config not in API documentation</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6179</span>&#160;<span class="ticket-notes">pruneRemoved on Ext.selection.Model should not be private</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Events (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6320</span>&#160;<span class="ticket-notes">Listener tracking is broken when removing non-existent listener</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Examples (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6413</span>&#160;<span class="ticket-notes">Tabs : Basic Tabs: Clicking on ñEvent Tabî for first time, displaying the tab's content with border line</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Forms (17)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5298</span>&#160;<span class="ticket-notes">Ext.form.Panel does not respect inherited properties when creating the BasicForm</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5962</span>&#160;<span class="ticket-notes">Dragging mouse off the right over a form scrolls content out of view in WebKit</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6121</span>&#160;<span class="ticket-notes">TimeField submit format not using 24 hour format</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6142</span>&#160;<span class="ticket-notes">Form field with incorrect width on validation, if msgTarget: 'side'</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6143</span>&#160;<span class="ticket-notes">Ext.form.field.Number: Spinner field sometimes fires 2 spin events</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6173</span>&#160;<span class="ticket-notes">Field not destroyed after form is closed</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6176</span>&#160;<span class="ticket-notes">Forms : File uploads : "File upload" window is not opening upon clicking on "photo" text field.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6184</span>&#160;<span class="ticket-notes">Labelable: getFieldLabel should implement same logic as the setter as regards label separator</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6198</span>&#160;<span class="ticket-notes">Fields within Field Container don't resize properly</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6255</span>&#160;<span class="ticket-notes">TextAarea ignores "cols" attribute</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6258</span>&#160;<span class="ticket-notes">Combobox forceSelection clears the value if there is no match</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6277</span>&#160;<span class="ticket-notes">MsgBox header components are not placed properly in IE</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6278</span>&#160;<span class="ticket-notes">Trigger button does not look disabled on a disabled ComboBox</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6281</span>&#160;<span class="ticket-notes">Store filter from combobox remains after combo is destroyed and store is reused</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6303</span>&#160;<span class="ticket-notes">HtmlEditor destroy generates errors</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6340</span>&#160;<span class="ticket-notes">Measurement of triggerWidth does not work correctly with scopedResetCSS</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6361</span>&#160;<span class="ticket-notes">File upload field browse button does not properly re-enable after the field has been disabled in Internet Explorer</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Grid (29)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5934</span>&#160;<span class="ticket-notes">Infinite Grid does not clear page cache when grouping changes</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6001</span>&#160;<span class="ticket-notes">Error in Ext.grid.plugin.Editing if no cell is active</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6025</span>&#160;<span class="ticket-notes">CellEditing plugin does not refocus edited cell when completing an edit</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6037</span>&#160;<span class="ticket-notes">When groups are rendered initially collapsed using startCollapsed, they cannot be expanded.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6050</span>&#160;<span class="ticket-notes">Grid Group's groupHeaderTpl does not have parent param</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6070</span>&#160;<span class="ticket-notes">Row positions issue on vertical scroll and sorting</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6107</span>&#160;<span class="ticket-notes">Grid Column Sort Indicator Problem</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6115</span>&#160;<span class="ticket-notes">RowEditing uses wrong record if startEdit is called while already editing a record</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6117</span>&#160;<span class="ticket-notes">Locked column in infinite grid causes rows to disappear on page refresh</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6122</span>&#160;<span class="ticket-notes">Editing a Grid and then reloading its Data causes error</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6123</span>&#160;<span class="ticket-notes">Wrong grid panel height on layout change</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6135</span>&#160;<span class="ticket-notes">Scrolling and Rendering Bug in Grid Grouping with Summary example</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6157</span>&#160;<span class="ticket-notes">Grid Row Editor's Update button is not always enabled/disabled properly</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6164</span>&#160;<span class="ticket-notes">ProgressBar Pager fails when clicking on left edge of the progress bar.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6171</span>&#160;<span class="ticket-notes">RowEditor in tab panel does not show editors properly when tab is hidden</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6186</span>&#160;<span class="ticket-notes">ActionColumn icon not updating in Grid or TreeGrid</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6194</span>&#160;<span class="ticket-notes">removeAll on buffered grid causes error in cancelAllPrefetches</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6197</span>&#160;<span class="ticket-notes">ActionColumn appearance does not change when disabled</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6228</span>&#160;<span class="ticket-notes">Column Group uses wrong config "restrictColumnReorder" - should be "sealedColumns"</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6232</span>&#160;<span class="ticket-notes">Grid column resizers are not aligned correctly</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6259</span>&#160;<span class="ticket-notes">Infinite Grid with Grouping. Groups should not be collapsible.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6313</span>&#160;<span class="ticket-notes">Large jumps in infinite grid sometimes prune a required page from the buffered store</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6337</span>&#160;<span class="ticket-notes">Gridview fails to render properly if initial refresh occurs before view is rendered</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6347</span>&#160;<span class="ticket-notes">Grid Column Tooltip not supported as it was in v3</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6364</span>&#160;<span class="ticket-notes">Cell editing with RowSelection model causes JS error on endEdit</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6414</span>&#160;<span class="ticket-notes">Grid / Infinite Scrolling with remote filtering / Load masking is displaying and not able to search for the second time </span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6422</span>&#160;<span class="ticket-notes">Row Editor throws an error when the grid has a checkbox selection model</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6436</span>&#160;<span class="ticket-notes">RowEditor does not sync when grid columns dragged to reorder.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6461</span>&#160;<span class="ticket-notes">Sort is broken on Remote Summary Grid</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Layouts (9)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5167</span>&#160;<span class="ticket-notes">Box layout (toolbar) overflow button does not work twice</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5562</span>&#160;<span class="ticket-notes">Horizontal scrollbar not visible when set to overflow in hbox layout</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5806</span>&#160;<span class="ticket-notes">Box layout fails to respect width and height percentages</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5935</span>&#160;<span class="ticket-notes">Error removing item afterRender: ownerContext.target.ownerLayout not defined</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5939</span>&#160;<span class="ticket-notes">Adding a new Checkbox to a CheckboxGroup fails on IE</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5990</span>&#160;<span class="ticket-notes">Layout failure with fieldset in vbox</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6129</span>&#160;<span class="ticket-notes">Collapsed fieldset does not resize parent when opened</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6158</span>&#160;<span class="ticket-notes">Percentage size does not work for floating components like Window</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6428</span>&#160;<span class="ticket-notes">Accordion with single item throws JS error in onComponentCollapse</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">MVC (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6162</span>&#160;<span class="ticket-notes">Ext.application.init() is never invoked</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Menu (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6254</span>&#160;<span class="ticket-notes">Can't edit textfields properly when placed in a Menu</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6321</span>&#160;<span class="ticket-notes">Menu subclass doesn't inherit scrolling functionality</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Misc (11)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6100</span>&#160;<span class="ticket-notes">.sass-cache included in extjs pachage</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6170</span>&#160;<span class="ticket-notes">Ext.DomHelper's 'confRe' matches substrings while it shouldn't</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6193</span>&#160;<span class="ticket-notes">DragDropManager.fireEvents - wrong parameters calling onInvalidDrop</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6208</span>&#160;<span class="ticket-notes">Traditional Chinese localization does not display properly for days of the week in IE</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6226</span>&#160;<span class="ticket-notes">Draw component does not auto-size correctly with no content</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6253</span>&#160;<span class="ticket-notes">Scoped css doesn't work well for filtering and date picker</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6287</span>&#160;<span class="ticket-notes">Flash Component disregards WMODE transparent</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6304</span>&#160;<span class="ticket-notes">Ext.menu.DatePicker select triggered twice</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6335</span>&#160;<span class="ticket-notes">DatePicker's native tip occludes "Today" button's QuickTip</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6407</span>&#160;<span class="ticket-notes">AbstractContainer overrides enable/disable without returning this</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6412</span>&#160;<span class="ticket-notes">Grids :Grouping Grid:The ñNameî column check box is not displaying </span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Panel (6)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-4144</span>&#160;<span class="ticket-notes">Collapsible FormPanel collapsible direction [right] issue</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-4268</span>&#160;<span class="ticket-notes">Panel does not respect animCollapse: false in placeholder collapseMode (border layout)</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5351</span>&#160;<span class="ticket-notes">Inconsistency on closing tabpanel items</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5456</span>&#160;<span class="ticket-notes">Layout changes inside a collapsed panel in a border layout creates extra panel header</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6148</span>&#160;<span class="ticket-notes">Calling removeDocked on a panel with no border throws exception</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6178</span>&#160;<span class="ticket-notes">Expanding a panel restores wrong size if size changed while collapsed</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Tabs (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6237</span>&#160;<span class="ticket-notes">When labelAlign='top' and errorAlign='side', invalidation causes incorrect field width</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6272</span>&#160;<span class="ticket-notes">Tab text centering stops working in IE8 after dynamically adding tab</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Theme (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6188</span>&#160;<span class="ticket-notes">Toolbar margin variables don't have !default flags</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6282</span>&#160;<span class="ticket-notes">Sass bug in _frame.scss when $radius === 10</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">ToolTips (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6221</span>&#160;<span class="ticket-notes">Canceling tooltip in beforeshow causes subsequent problems</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Toolbars (4)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5933</span>&#160;<span class="ticket-notes">Toolbar reorderer stops during drag on IE</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6251</span>&#160;<span class="ticket-notes">Toolbar defaults override single item settings</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6271</span>&#160;<span class="ticket-notes">Programmatically set label in bbar is not visible until browser is resized</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6279</span>&#160;<span class="ticket-notes">tbseparator incorrectly inherits border from toolbar</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Tree (9)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-3571</span>&#160;<span class="ticket-notes">Two TreePanel behave wrongly when sharing a store</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-4918</span>&#160;<span class="ticket-notes">Tree expand all / collapse all buggy behavior</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5992</span>&#160;<span class="ticket-notes">Tree expandAll/collapseAll does not always descend fully</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6136</span>&#160;<span class="ticket-notes">TreePanel loadMask cannot be rebound to a different mask</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6286</span>&#160;<span class="ticket-notes">Ext.ux.CheckColum does not work with a Tree</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6302</span>&#160;<span class="ticket-notes">NodeInterface qtip and qtitle not updated</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6330</span>&#160;<span class="ticket-notes">TreeStore root node does not always have an id</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6344</span>&#160;<span class="ticket-notes">Uncaught TypeError: Cannot read property 'dom' of null</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6357</span>&#160;<span class="ticket-notes">TreeStore listeners are not cleaned up</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Window (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-3779</span>&#160;<span class="ticket-notes">Message Box Dialog - Page is grayed out and not allowed to update the page when quickly double-clicking on Icon Show button. </span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5905</span>&#160;<span class="ticket-notes">JS error when creating LoadMask bound to a Window</span>
+                            </li>
+                        </ul>
+                    </li>
+                Total: 118</ul>
+            </div>
+            <div class="release">
+                <h1>Release Notes for Ext JS 4.1.1 RC 1</h1>
+                <p class="notes">
+                    Release Date: May 15, 2012<br>
+                    Version Number: 4.1.1 RC 1
+                </p>
+                <h2>Bugs Fixed</h2>
+                <ul>
+                    <li class="component">Button (3)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5964</span>&#160;<span class="ticket-notes">Buttons do not show 'pressing' animation when clickEvent is 'mousedown'</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5989</span>&#160;<span class="ticket-notes">Changing text in some buttons does not layout properly in Chrome 16+</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6109</span>&#160;<span class="ticket-notes">Button contents are cut off when using scoped CSS</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Charts (3)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5981</span>&#160;<span class="ticket-notes">Bound of Area Series incorrectly calculated.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6074</span>&#160;<span class="ticket-notes">Column chart with all zero data renders poorly and throws css warnings</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6088</span>&#160;<span class="ticket-notes">Pie chart is broken after resize</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Core (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6052</span>&#160;<span class="ticket-notes">DragZone determines wrong target el causing subsequent JS error</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Data (4)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5988</span>&#160;<span class="ticket-notes">Falsy Ext.data.Operation id property lost during Ext.data.Request creation.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5993</span>&#160;<span class="ticket-notes">Ext 4.1 RC3  HasOne Assocation Bug</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6024</span>&#160;<span class="ticket-notes">Problem in extending from a model with associations</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6063</span>&#160;<span class="ticket-notes">Ext.data.Store.add() behave inconsistently when groupField is used</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">DataView (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6082</span>&#160;<span class="ticket-notes">Hidden data view breaks when updating</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6110</span>&#160;<span class="ticket-notes">Ext.view.AbstractView indexOf throws error if argument is invalid or null</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Documentation (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6112</span>&#160;<span class="ticket-notes">Errors and omissions in the MVC Application Architecture guide</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Events (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5983</span>&#160;<span class="ticket-notes">beforerender event not fired for Viewport (or component with configured 'el')</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Examples (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6045</span>&#160;<span class="ticket-notes">GroupTabPanel ux bug - Missing lower rounded corner</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Forms (10)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5389</span>&#160;<span class="ticket-notes">TextArea marks form as dirty</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5458</span>&#160;<span class="ticket-notes">Delete key does not work for textfield (email vtype) in Opera 11</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5965</span>&#160;<span class="ticket-notes">TextField placeholder text shifts up by 1 pixel on focus</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5994</span>&#160;<span class="ticket-notes">FieldSet label component is not available before render</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6016</span>&#160;<span class="ticket-notes">MultiSelect / ItemSelector : "Clear" and "Reset" Buttons are not working when all items are dragged to right panel in Item Selector Table.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6054</span>&#160;<span class="ticket-notes">Spinner setReadOnly does not hide triggers</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6065</span>&#160;<span class="ticket-notes">TextArea special keys stop working at maxLength with enfornceMaxLength on</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6081</span>&#160;<span class="ticket-notes">A HiddenField occupies visible space in the form</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6104</span>&#160;<span class="ticket-notes">Slider readOnly has no effect</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6134</span>&#160;<span class="ticket-notes">Labelable insertion templates do not have access to component id</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Grid (5)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5984</span>&#160;<span class="ticket-notes">[4.1 RC3] Grouping expand() not working</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6057</span>&#160;<span class="ticket-notes">Calling Ext.grid.Panel.reconfigure before rendering causes error</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6066</span>&#160;<span class="ticket-notes">Grid does not always show its loadmask properly</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6083</span>&#160;<span class="ticket-notes">scope has no effect on actioncolumn</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6092</span>&#160;<span class="ticket-notes">Grid header Container getVisibleHeaderClosestToIndex does not check previous only next</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Layouts (5)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5797</span>&#160;<span class="ticket-notes">Autosized tooltips are not layed out correctly</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5806</span>&#160;<span class="ticket-notes">Box layout fails to respect width and height percentages</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5861</span>&#160;<span class="ticket-notes">Fit layout does not adjust sizes based on autoScroll triggered by minHeight</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6026</span>&#160;<span class="ticket-notes">Splitters in HBox layouts have no height</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6042</span>&#160;<span class="ticket-notes">getPosition method doesn't return page coordinate</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Menu (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6035</span>&#160;<span class="ticket-notes">Menu destroy method can cause JS error on keyNav</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Misc (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5982</span>&#160;<span class="ticket-notes">Stacked bar/column chart leave a ghost shadow when all items are hidden</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Panel (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5716</span>&#160;<span class="ticket-notes">Panels with min/max constraints misbehave in a box layout with stretchmax</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5916</span>&#160;<span class="ticket-notes">Problem with Panel.setTitle without header</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Tree (3)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6051</span>&#160;<span class="ticket-notes">4.1 Grid to Tree DnD not working any more</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6076</span>&#160;<span class="ticket-notes">Changing TreeStore's defaultRootProperty breaks the tree</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6113</span>&#160;<span class="ticket-notes">TreeGrid is not repainted after the vertical scroll bar disappears</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Window (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-6048</span>&#160;<span class="ticket-notes">Frame: true should not cause a window to display badly</span>
+                            </li>
+                        </ul>
+                    </li>
+                Total: 44</ul>
+            </div>
+
+            <div class="release">
+                <h1>Release Notes for Ext JS 4.1.0</h1>
+                <p class="notes">
+                    Release Date: April 20, 2012<br>
+                    Version Number: 4.1.0
+                </p>
+                <h2>Bugs Fixed</h2>
+                <ul>
+                    <li class="component">Charts (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5657</span>&#160;<span class="ticket-notes">Charts : Grouped Bar :Displaying Js error upon clicking on &quot;Legends&quot; in the &quot;grouped bar&quot; chart on IE9</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5954</span>&#160;<span class="ticket-notes">Simple Area Chart Not Working in 4.1RCx</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Core (4)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5811</span>&#160;<span class="ticket-notes">Elements can't fadeIn() after fadeOut()</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5846</span>&#160;<span class="ticket-notes">Component id's starting with non-word characters cause JS errors</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5902</span>&#160;<span class="ticket-notes">Draggable and resizable images leave resize handlers at start point when moved</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5958</span>&#160;<span class="ticket-notes">Ext.Error toString not including the method name</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Data (5)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-4957</span>&#160;<span class="ticket-notes">Inconsistent signature for the Store &#39;datachanged&#39; event</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5809</span>&#160;<span class="ticket-notes">Model fields are set to undefined or defaultValue when they should not be updated</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5862</span>&#160;<span class="ticket-notes">Dependency on Writer from Proxy causes JS error</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5877</span>&#160;<span class="ticket-notes">Store modifies the value of inline data config option</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5945</span>&#160;<span class="ticket-notes">Ext.data.Model getFields returns undefined</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">DataView (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5831</span>&#160;<span class="ticket-notes">Floatable TreePanel in West Border of Viewport has two left hand borders</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Draw (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5904</span>&#160;<span class="ticket-notes">Surface.removeAll - fails to remove items from groups</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Events (3)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5193</span>&#160;<span class="ticket-notes">&nbsp;Resize event is not fired for custom form field</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5815</span>&#160;<span class="ticket-notes">Error using a mixin that itself has Ext.util.Observable as a mixin</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5844</span>&#160;<span class="ticket-notes">Events: option.target has been removed from 4.x</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Examples (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5948</span>&#160;<span class="ticket-notes">Ext.ux.form.ItemSelector does not work with asynchronous loading (proxy) in ItemSelector example </span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5949</span>&#160;<span class="ticket-notes">RC3: Ext.ux.form.ItemSelector.bindStore() method non-functioning</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Forms (8)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-4978</span>&#160;<span class="ticket-notes">Forms - Dynamic Forms : Unable to access Form 1, Form 2 & Form 5 when clicked on expand/collapse  button and and pressed the tab key</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5242</span>&#160;<span class="ticket-notes">DisplayField does not respect fieldStyle</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5826</span>&#160;<span class="ticket-notes">Validation of timefield is not correct in Chinese.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5827</span>&#160;<span class="ticket-notes">Work day is corrupt in Spanish date input</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5832</span>&#160;<span class="ticket-notes">Recreating an HtmlEditor makes it unable to be focused until ENTER is pressed</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5906</span>&#160;<span class="ticket-notes">Can't create trigger field outside of onReady</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5937</span>&#160;<span class="ticket-notes">CheckboxGroup has incorrect column loop</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5955</span>&#160;<span class="ticket-notes">Ext.form.Labelable uses a CSS class without baseCSSPrefix</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Grid (4)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5457</span>&#160;<span class="ticket-notes">Grid infinite scroll: no last elements, no return to first elements</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5847</span>&#160;<span class="ticket-notes">Ext.ux.grid.FiltersFeature removes dynamically added filters</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5894</span>&#160;<span class="ticket-notes">GroupingSummary returns '\u00a0' when sum is equal 0</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5953</span>&#160;<span class="ticket-notes">TemplateColumn not updated dynamically</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Layouts (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5562</span>&#160;<span class="ticket-notes">Horizontal scrollbar not visible when set to overflow in hbox layout</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5941</span>&#160;<span class="ticket-notes">Resizable Components in Absolute layouts get misplaced.</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">MVC (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-4202</span>&#160;<span class="ticket-notes">Problem with building when MVC app has a custom directory structure</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Menu (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5804</span>&#160;<span class="ticket-notes">Menu onClick does not fire in all cases</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Misc (4)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5134</span>&#160;<span class="ticket-notes">Miscellaneous - Panels : "Masked Panel with a really long title" panel's UI is disturbed when clicked more than twice on expand/ collapse button</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5501</span>&#160;<span class="ticket-notes">Ext.Date.format breaks on wrong input</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5899</span>&#160;<span class="ticket-notes">Combination Examples:Ext JS Calendar:Displaying js error while creating the new event  with empty date field.</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5967</span>&#160;<span class="ticket-notes">ElementLoader - inconsistent API (?)</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Panel (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5959</span>&#160;<span class="ticket-notes">Panel with collapseFirst: false and closable does not display collapse tool button</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Tabs (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5099</span>&#160;<span class="ticket-notes">Tabs - Advanced Tabs : Tabs are added without close button when clicked on "Add Closable Tab" button</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5857</span>&#160;<span class="ticket-notes">TabPanel children don't fire the close event</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Theme (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-3712</span>&#160;<span class="ticket-notes">TabBar background is blue in the gray theme</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Tree (2)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5908</span>&#160;<span class="ticket-notes">Fast clicks in Tree can lead to duplication of entries</span>
+                            </li>
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5952</span>&#160;<span class="ticket-notes">Allow NodeInterface.decorate to expect a record instance for backward compatibility</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="component">Window (1)
+                        <ul class="tickets">
+                            <li class="ticket">
+                                <span class="ticket-number">EXTJSIV-5897</span>&#160;<span class="ticket-notes">Window's title will not  display in IE6/7/8 when it was dragging</span>
+                            </li>
+                        </ul>
+                    </li>
+                Total: 45</ul>
+            </div>
             <div class="release">
                 <h1>Release Notes for Ext JS 4.1.0 RC 3</h1>
                 <p class="notes">

@@ -27,10 +27,11 @@
     }
 
     $form-field-content-height: $form-field-height - top($form-field-padding) - top($form-field-border-width) - bottom($form-field-padding) - bottom($form-field-border-width);
+    $form-field-line-height: $form-field-content-height - 3px;
 
     .#{$prefix}form-text {
         height: $form-field-content-height;
-        line-height: $form-field-content-height;
+        line-height: $form-field-line-height;
         vertical-align: middle;
     }
 
@@ -38,7 +39,7 @@
     .#{$prefix}ie7,
     .#{$prefix}ie8 {
         .#{$prefix}form-text {
-            line-height: $form-field-content-height - 3px;
+            line-height: $form-field-line-height;
         }
     }
 
@@ -101,7 +102,7 @@
 
     .#{$prefix}webkit {
         .#{$prefix}form-empty-field {
-            line-height: 15px;
+            line-height: $form-field-line-height;
         }
     }
 
