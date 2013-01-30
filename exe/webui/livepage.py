@@ -98,5 +98,12 @@ class RenderableLivePage(_RenderablePage, LivePage):
         _RenderablePage.__init__(self, parent, package, config)
         self.clientHandleFactory = nevow.livepage.clientHandleFactory
 
+    def renderHTTP(self, ctx):
+        request = inevow.IRequest(ctx)
+        request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
+        request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
+        request.setHeader("Pragma", "no-cache")
+        return LivePage.renderHTTP(self, ctx)
+
     def render_liveglue(self, ctx, data):
         return tags.script(src='/jsui/nevow_glue.js')
