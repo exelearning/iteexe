@@ -59,7 +59,8 @@ class PackageRedirectPage(RenderableResource):
         if name == '':
             return self
         else:
-            result = self.children.get(unicode(name, 'utf8'))
+            name = unicode(name, 'utf8')
+            result = self.children.get(name)
             if result is not None:
                 return result
             else:
