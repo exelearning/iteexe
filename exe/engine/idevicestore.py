@@ -433,6 +433,8 @@ class IdeviceStore:
         else:
             self.generic = self.__createGeneric()
             self.factoryiDevices = self.factoryiDevices + self.generic
+            from exe.engine.listaidevice import ListaIdevice
+            self.addIdevice(ListaIdevice())
 
         for factoryiDevice in self.factoryiDevices:
             for idevice in self.generic:
