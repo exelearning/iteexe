@@ -25,6 +25,7 @@ anything it just redirects the user to a new package.
 import logging
 from exe.webui.renderable     import RenderableResource
 from exe.jsui.mainpage import MainPage
+from twisted.web import error
 
 log = logging.getLogger(__name__)
 
@@ -75,7 +76,9 @@ class PackageRedirectPage(RenderableResource):
                 # This will just raise an error
                 log.error("child %s not found. uri: %s" % (name, request.uri))
                 log.error("Session uid: %s, Mainpages: %s" % (session.uid, self.mainpages))
-                return RenderableResource.getChild(self, name, request)
+                return error.NoResource("No such child resource %(resource)s. Try again clicking %(link)s" % {
+                                        "resource": name.encode('utf-8'),
+                                        "link": "<a href='%s'>%s</a>" % (request.uri, request.uri)})
 
     def bindNewPackage(self, package, session):
         """

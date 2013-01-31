@@ -152,6 +152,9 @@ class MainPage(RenderableLivePage):
         
         self.idevicePane.client = client
 
+        if not self.webServer.monitoring:
+            self.webServer.monitor()
+
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
         return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'] + '?clientHandleId=' + IClientHandle(ctx).handleId)

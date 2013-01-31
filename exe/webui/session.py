@@ -25,7 +25,6 @@ from nevow.i18n import languagesFactory
 from exe.engine.packagestore import PackageStore
 from exe import globals as G
 import logging
-import string
 
 log = logging.getLogger(__name__)
 

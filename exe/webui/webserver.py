@@ -74,6 +74,7 @@ class WebServer:
         self.dirtree     = DirTreePage(self.root)
         self.about       = AboutPage(self.root)
         self.quit        = QuitPage(self.root)
+        self.monitoring  = False
 
 
     def find_port(self):
@@ -161,16 +162,16 @@ class WebServer:
         # Ensure that it is valid (>= 0):
         if self.config.port >= 0:
             log.info("run() using eXe port# %d", self.config.port)
-            reactor.callLater(10, self.stop)
             reactor.run()
         else:
             log.error("ERROR: webserver's run() called, but a valid port " \
                     + "was not available.")
 
-    def stop(self):
+    def monitor(self):
+        self.monitoring = True
         for mainpage in self.root.mainpages.values():
             for mainpage in mainpage.values():
                 if mainpage.clientHandleFactory.clientHandles:
-                    reactor.callLater(10, self.stop)
+                    reactor.callLater(10, self.monitor)
                     return
         reactor.stop()
