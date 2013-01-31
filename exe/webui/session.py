@@ -25,6 +25,7 @@ from nevow.i18n import languagesFactory
 from exe.engine.packagestore import PackageStore
 from exe import globals as G
 import logging
+import string
 
 log = logging.getLogger(__name__)
 
@@ -71,7 +72,10 @@ class eXeRequest(appserver.NevowRequest):
 
     def getSession(self, sessionInterface = None):
         self.sitepath = [str(self.host.port)]
-        return appserver.NevowRequest.getSession(self, sessionInterface)
+        log.debug("In Cookie's: %s" % self.received_cookies)
+        session = appserver.NevowRequest.getSession(self, sessionInterface)
+        log.debug("Out Cookie's: %s" % self.cookies)
+        return session
 
 class eXeSession(server.Session):
     def __init__(self, *args, **kwargs):

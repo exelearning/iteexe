@@ -73,6 +73,8 @@ class PackageRedirectPage(RenderableResource):
                     if name in self.mainpages[session.uid].keys():
                         return self.mainpages[session.uid][name]
                 # This will just raise an error
+                log.error("child %s not found. uri: %s" % (name, request.uri))
+                log.error("Session uid: %s, Mainpages: %s" % (session.uid, self.mainpages))
                 return RenderableResource.getChild(self, name, request)
 
     def bindNewPackage(self, package, session):
@@ -81,11 +83,13 @@ class PackageRedirectPage(RenderableResource):
         and creates a MainPage instance for it
         and a directory for the resource files
         """
+        log.debug("Mainpages: %s" % self.mainpages)
         session_mainpages = self.mainpages.get(session.uid)
         if session_mainpages:
             session_mainpages[package.name] = MainPage(None, package, session, self.webServer)
         else:
             self.mainpages[session.uid] = {package.name: MainPage(None, package, session, self.webServer)}
+        log.debug("Mainpages: %s" % self.mainpages)
 
     def render_GET(self, request):
         """
