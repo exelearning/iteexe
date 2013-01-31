@@ -10,8 +10,10 @@ var orgImageWidth, orgImageHeight;
 
 	window.ExeMath = {
 	
-		getMathBrowserHTML : function(id, source_form_element, font_size_element, target_form_element, type, prefix) {
-			var html = '<p style="margin:0 10px;text-align:center"><a id="'+id+'" href="#" onclick="ExeMath.openBrowser(\''+id+'\',\''+source_form_element+'\',\''+font_size_element+'\',\''+target_form_element+'\',\''+type+'\',\''+prefix+'\');return false;">'+tinyMCEPopup.getLang('exemath.compile_label')+'</a></p>';
+		hasChanged : false,
+        
+        getMathBrowserHTML : function(id, source_form_element, font_size_element, target_form_element, type, prefix) {
+			var html = '<p style="margin:0 10px;text-align:center"><a id="'+id+'" href="#" onclick="ExeMath.hasChanged=false;ExeMath.openBrowser(\''+id+'\',\''+source_form_element+'\',\''+font_size_element+'\',\''+target_form_element+'\',\''+type+'\',\''+prefix+'\');return false;">'+tinyMCEPopup.getLang('exemath.compile_label')+'</a></p>';
 			return html;
 		},
 	
@@ -241,7 +243,7 @@ var orgImageWidth, orgImageHeight;
 		insertAction : function() {
 
 			var prev = document.getElementById("prev");
-			if (prev.innerHTML=='') {
+			if (prev.innerHTML=='' || ExeMath.hasChanged==true) {
 				alert(tinyMCEPopup.getLang("exemath.press_preview_before_saving"));
 				return;
 			} else {
@@ -337,7 +339,8 @@ var orgImageWidth, orgImageHeight;
 		
 		insertSymbol : function(id, string, num){
 		
-			var ele = document.getElementById(id);
+			ExeMath.hasChanged=true;
+            var ele = document.getElementById(id);
 			this.insertAtCursor(ele, string, num)
 			
 		},
