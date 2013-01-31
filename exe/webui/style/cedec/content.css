@@ -12,11 +12,11 @@
    
 /*Reseteo generico de estilos */
 
-* {
+/** {
 	padding: 0;
     margin: 0; 
 	font-family: Verdana,Arial, Helvetica, sans-serif !important;
-}
+}*/
 
 /* Estilo general del cuerpo de los contenidos */
 body, html 
@@ -720,6 +720,71 @@ El título se utiliza para el efecto superior derecho
 
 
 .ClozeIdevice .iDevice_inner,
+.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
+{
+	background: transparent;
+	margin: 0 auto;
+	width: 90%;
+	position: relative;
+	top: -55px;
+}
+/*
+Idevice Desplegable. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
+*/
+.ListaIdevice {
+	position: relative;
+	margin: 20px auto;
+	width: 95%;
+   background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
+   border: none;
+	overflow: visible;
+}
+
+/*
+La capa interior, se utiliza para el efecto inferior izquierdo
+*/
+.ListaIdevice .emphasis1
+{
+   background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
+	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
+   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
+	overflow-y: auto;
+	overflow: visible;
+}
+
+/*
+El icono se utiliza para el efecto superior izquierdo
+*/
+.ListaIdevice .iDevice_icon,
+.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
+{
+	border: 0px;
+	position: relative;
+   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
+	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
+	z-index: 6;   /* z-index superior al del título, para que lo tape */
+}
+
+
+/*
+El título se utiliza para el efecto superior derecho
+*/
+.ListaIdevice .iDeviceTitle,
+.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
+{
+	display: block;
+   background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
+   color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
+   height: 40px;       /* Tiene que tener el alto del icono */
+   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
+	top: -67px;         /* para que quede alineado con este */
+   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
+   padding: 25px 0 0 90px;
+   font-size: 14pt
+}
+
+
+.ListaIdevice .iDevice_inner,
 .emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
 {
 	background: transparent;
