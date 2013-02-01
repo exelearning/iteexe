@@ -2297,7 +2297,7 @@ class QuizOptionElement(Element):
         length = len(self.field.question.options)
 # JR Maquetamos con div en vez de con una tabla
 #        html  = '<tr><td>'
-	html = '<div style="display: table-row; clear: both;">\n'
+	html = '<div style="display: table-row; clear: both;" class="answer">\n'
 	html += '<div style="float: left; display: table-cell; margin-left: 0.2em;">\n'
         html += '<input type="radio" name="option%s" ' \
                             % self.field.question.id

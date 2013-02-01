@@ -276,3 +276,5 @@ div.tleft {
 div.node { page-break-after: always; }
 }
 
+/* To review */
+.question .answer p{margin:0}
