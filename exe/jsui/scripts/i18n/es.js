@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-01-21 10:39+0100\nPO-Revision-Date: 2013-01-22 18:30+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-01-22 18:30+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Marcando esta opci\u00f3n, el archivo SCORM exportado ser\u00e1 editable con eXeLearning.", 
  "Web pages footer.": "Pie de las p\u00e1ginas web.", 
  "DropDown Activity": "Actividad desplegable", 
@@ -14,7 +14,6 @@ translations = {
  "Please enter<br \/>an idevice name.": "Por favor introduzca<br \/>un nombre de iDevice.", 
  "An entity responsible for making contributions to the content of the resource.": "Entidad responsable de hacer aportaciones al contenido del \"\n\"recurso.", 
  "Internal Linking (for Web Site Exports only)": "Enlaces Internos (\u00fanicamente para exportar a sitio web)", 
- " ": " ", 
  "Hide\/Show Word": "Ocultar\/Mostrar Palabra", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel  \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "This is a free text field.": "Este es un campo de texto libre.", 
@@ -239,7 +238,6 @@ translations = {
  "Promote node up in hierarchy": "Hacer subir al nodo en la jerarqu\u00eda", 
  "Interlingua ": "Interlingua ", 
  "Select a file": "Seleccionar un archivo", 
- "<p>Enter the text for the dropdown activity in to the dropdown field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to choose, double click on the word to select it and \nclick on the 'Select' button below.<\/p>": "<p>Introduzca el texto de la Actividad desplegable en el campo desplegable, \nbien copiando texto de otro origen o bien tecle\u00e1ndolo directamente en el\ncampo.<\/p><p>Para seleccionar las palabras, haga doble clic en la palabra para elegirla y\npulse en el bot\u00f3n 'Elegir' de abajo.<\/p>", 
  "IDevice Question Icon": "Icono de iDevice de pregunta", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Fije el nivel inicial de zoom \ncuando se carga el iDevice, como porcentaje del tama\u00f1o original de la imagen", 
  "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use.": "Use este campo para describir su uso previsto y la pedagog\u00eda detr\u00e1s del desarrollo del iDevice. Esto puede ser \u00fatil si va a exportar el iDevice para que sea utilizado por otros.", 

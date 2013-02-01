@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-21 10:39+0100\n"
+"POT-Creation-Date: 2013-02-01 17:19+0100\n"
 "PO-Revision-Date: 2008-11-18 12:33+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -28,10 +28,10 @@ msgstr "Java Applet"
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:39
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:494
-#: exe/engine/idevicestore.py:552 exe/engine/idevicestore.py:580
-#: exe/engine/idevicestore.py:603 exe/engine/idevicestore.py:659
-#: exe/engine/idevicestore.py:687 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:500
+#: exe/engine/idevicestore.py:558 exe/engine/idevicestore.py:586
+#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:665
+#: exe/engine/idevicestore.py:693 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:47
@@ -417,7 +417,7 @@ msgstr ""
 "om een collega de toets/oefening te laten uitproberen!  </p>"
 
 #: exe/engine/clozefpdidevice.py:116 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:113
+#: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:129
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
@@ -457,20 +457,20 @@ msgstr ""
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
 #: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:543
-#: exe/engine/idevicestore.py:652 exe/engine/listaidevice.py:123
-#: exe/engine/listaidevice.py:263 exe/engine/truefalseidevice.py:50
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:549
+#: exe/engine/idevicestore.py:658 exe/engine/listaidevice.py:140
+#: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
 #: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:165
 #: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
 #: exe/webui/common.py:252 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:254 exe/webui/element.py:2269
-#: exe/webui/listablock.py:391 exe/webui/questionelement.py:104
+#: exe/webui/listablock.py:461 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "Feedback"
 
 #: exe/engine/clozefpdidevice.py:129 exe/engine/clozeidevice.py:130
-#: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:124
+#: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -479,12 +479,12 @@ msgstr ""
 "blijven."
 
 #: exe/engine/clozefpdidevice.py:274 exe/engine/clozeidevice.py:274
-#: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:258
+#: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
 msgstr "Aanwijzingen voor studenten"
 
 #: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
-#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:259
+#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
 msgstr "Geef aanwijzingen voor de studenten"
 
@@ -804,7 +804,7 @@ msgstr ""
 "</p>"
 
 #: exe/engine/field.py:3081 exe/engine/field.py:3319
-#: exe/engine/listaidevice.py:353
+#: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -1131,16 +1131,16 @@ msgstr "Volgende"
 msgid "Close"
 msgstr "Sluiten"
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:601
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:607
 msgid "Reading Activity 0.11"
 msgstr "Leesactiviteit 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:451
-#: exe/engine/idevicestore.py:492
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:457
+#: exe/engine/idevicestore.py:498
 msgid "Reading Activity"
 msgstr "Leesactiviteit"
 
-#: exe/engine/idevicestore.py:495
+#: exe/engine/idevicestore.py:501
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1159,7 +1159,7 @@ msgstr ""
 "een andere opdracht te laten uitvoeren die gebaseerd is op de inhoud van "
 "de tekst."
 
-#: exe/engine/idevicestore.py:500
+#: exe/engine/idevicestore.py:506
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1183,11 +1183,11 @@ msgstr ""
 "activiteiten waarvan het nut opweegt tegen de tijd en moeite die het kost"
 " om ze tot een goed einde te brengen. </li></ol>"
 
-#: exe/engine/idevicestore.py:535 exe/engine/idevicestore.py:644
+#: exe/engine/idevicestore.py:541 exe/engine/idevicestore.py:650
 msgid "What to read"
 msgstr "Wat gelezen moet worden"
 
-#: exe/engine/idevicestore.py:536 exe/engine/idevicestore.py:645
+#: exe/engine/idevicestore.py:542 exe/engine/idevicestore.py:651
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1197,14 +1197,14 @@ msgstr ""
 "De precieze opmaak van de bronvermelding hangt af van de afspraken\n"
 "binnen uw afdeling, departement of faculteit."
 
-#: exe/engine/idevicestore.py:539 exe/engine/idevicestore.py:578
-#: exe/engine/idevicestore.py:586 exe/engine/idevicestore.py:648
-#: exe/engine/idevicestore.py:685 exe/engine/idevicestore.py:693
+#: exe/engine/idevicestore.py:545 exe/engine/idevicestore.py:584
+#: exe/engine/idevicestore.py:592 exe/engine/idevicestore.py:654
+#: exe/engine/idevicestore.py:691 exe/engine/idevicestore.py:699
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Activiteit"
 
-#: exe/engine/idevicestore.py:540 exe/engine/idevicestore.py:649
+#: exe/engine/idevicestore.py:546 exe/engine/idevicestore.py:655
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -1213,7 +1213,7 @@ msgstr ""
 "tot de leesopdracht. Dit helpt de reden van de leesactiviteit "
 "verduidelijken."
 
-#: exe/engine/idevicestore.py:544 exe/engine/idevicestore.py:653
+#: exe/engine/idevicestore.py:550 exe/engine/idevicestore.py:659
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1226,12 +1226,12 @@ msgstr ""
 "discussie\n"
 "op gang te helpen."
 
-#: exe/engine/idevicestore.py:550 exe/engine/idevicestore.py:559
-#: exe/engine/idevicestore.py:657 exe/engine/idevicestore.py:666
+#: exe/engine/idevicestore.py:556 exe/engine/idevicestore.py:565
+#: exe/engine/idevicestore.py:663 exe/engine/idevicestore.py:672
 msgid "Objectives"
 msgstr "Doelstellingen"
 
-#: exe/engine/idevicestore.py:553 exe/engine/idevicestore.py:660
+#: exe/engine/idevicestore.py:559 exe/engine/idevicestore.py:666
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1242,16 +1242,16 @@ msgstr ""
 "Deze geven aan wat de student heeft bijgeleerd na het voltooien van de\n"
 "leeropdrachten."
 
-#: exe/engine/idevicestore.py:560 exe/engine/idevicestore.py:667
+#: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:673
 msgid "Type the learning objectives for this resource."
 msgstr "Geef de leerdoelstellingen voor deze bron."
 
-#: exe/engine/idevicestore.py:563 exe/engine/idevicestore.py:573
-#: exe/engine/idevicestore.py:670 exe/engine/idevicestore.py:680
+#: exe/engine/idevicestore.py:569 exe/engine/idevicestore.py:579
+#: exe/engine/idevicestore.py:676 exe/engine/idevicestore.py:686
 msgid "Preknowledge"
 msgstr "Voorkennis"
 
-#: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:673
+#: exe/engine/idevicestore.py:572 exe/engine/idevicestore.py:679
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1269,7 +1269,7 @@ msgstr ""
 "<li>        De student moet een elektrisch schema kunnen tekenen en lezen"
 " </li></ul>\n"
 
-#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:681
+#: exe/engine/idevicestore.py:580 exe/engine/idevicestore.py:687
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1277,7 +1277,7 @@ msgstr ""
 "Beschrijf de voorkennis die nodig is om de leeropdacht tot een goed\n"
 "einde te kunnen brengen."
 
-#: exe/engine/idevicestore.py:581 exe/engine/idevicestore.py:688
+#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:694
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1289,11 +1289,11 @@ msgstr ""
 "let op elementen die de student kunnen helpen of hinderen bij het "
 "uitvoeren."
 
-#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:593 exe/engine/idevicestore.py:700
 msgid "Describe the tasks the learners should complete."
 msgstr "Beschrijf de opdracht die moet worden uitgevoerd."
 
-#: exe/engine/idevicestore.py:604
+#: exe/engine/idevicestore.py:610
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1309,7 +1309,7 @@ msgstr ""
 "moet lezen. Gepaste feedback kan de leerling helpen reflecteren over de "
 "tekst.</p>"
 
-#: exe/engine/idevicestore.py:609
+#: exe/engine/idevicestore.py:615
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -1363,7 +1363,7 @@ msgstr ""
 "afbeelding te vergroten."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
-#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:115
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:177
 msgid "Text"
 msgstr "Tekst"
 
@@ -1518,15 +1518,15 @@ msgstr ""
 "Geef een naam voor de\n"
 "zojuist toegevoegde afbeelding."
 
-#: exe/engine/listaidevice.py:50
+#: exe/engine/listaidevice.py:66
 msgid "DropDown Activity"
 msgstr ""
 
-#: exe/engine/listaidevice.py:51
+#: exe/engine/listaidevice.py:67
 msgid "INTEF"
 msgstr ""
 
-#: exe/engine/listaidevice.py:52
+#: exe/engine/listaidevice.py:68
 msgid ""
 "<p>DropDown exercises are texts or sentences where students must select "
 "the correct words. They are often used for the following "
@@ -1537,7 +1537,7 @@ msgid ""
 " </li></ol>"
 msgstr ""
 
-#: exe/engine/listaidevice.py:64
+#: exe/engine/listaidevice.py:80
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -1558,30 +1558,37 @@ msgid ""
 "  </p>  </dd></dl>"
 msgstr ""
 
-#: exe/engine/listaidevice.py:114
+#: exe/engine/listaidevice.py:130
 msgid "Provide instruction on how the dropdown activity should be completed."
 msgstr ""
 
-#: exe/engine/listaidevice.py:115
-msgid " "
+#: exe/engine/listaidevice.py:131
+msgid "Read and complete"
 msgstr ""
 
-#: exe/engine/listaidevice.py:117
+#: exe/engine/listaidevice.py:133
 msgid "Dropdown"
 msgstr ""
 
-#: exe/engine/listaidevice.py:118
+#: exe/engine/listaidevice.py:134
 msgid ""
 "<p>Enter the text for the dropdown activity in to the dropdown field \n"
 "by either pasting text from another source or by typing text directly "
 "into the \n"
 "field.</p><p> To select words to choose, double click on the word to "
 "select it and \n"
-"click on the 'Select' button below.</p>"
+"click on the 'Hide/Show' button below.</p>"
 msgstr ""
 
-#: exe/engine/listaidevice.py:260
+#: exe/engine/listaidevice.py:292
 msgid "Read the paragraph below and choose the correct words"
+msgstr ""
+
+#: exe/engine/listaidevice.py:345
+msgid ""
+"<p>Optional: Write other words to complete the dropdown activity.</br>Use"
+" | (vertical bar ) to separate words.</br>This field can be left blank. "
+"</p>"
 msgstr ""
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
@@ -1735,7 +1742,7 @@ msgstr ""
 "Laatst succesvol opgeslagen is %s."
 
 #: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:317
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:305
 msgid "iDevice Editor"
 msgstr "iDevice-editor"
 
@@ -2215,9 +2222,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:209
-#: exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:936 exe/jsui/mainpage.py:977
-#: exe/jsui/mainpage.py:998
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:212
+#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:937 exe/jsui/mainpage.py:978
+#: exe/jsui/mainpage.py:999
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2310,19 +2317,19 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:227 exe/jsui/mainpage.py:665 exe/jsui/mainpage.py:798
+#: exe/jsui/mainpage.py:230 exe/jsui/mainpage.py:668 exe/jsui/mainpage.py:799
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/jsui/mainpage.py:227 exe/jsui/mainpage.py:667 exe/jsui/mainpage.py:798
+#: exe/jsui/mainpage.py:230 exe/jsui/mainpage.py:670 exe/jsui/mainpage.py:799
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
-#: exe/jsui/mainpage.py:236
+#: exe/jsui/mainpage.py:239
 msgid "SAVE FAILED!"
 msgstr "OPSLAAN MISLUKT!"
 
-#: exe/jsui/mainpage.py:240 exe/jsui/mainpage.py:529 exe/jsui/mainpage.py:869
+#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:532 exe/jsui/mainpage.py:870
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2331,22 +2338,22 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:249 exe/jsui/mainpage.py:252
+#: exe/jsui/mainpage.py:247 exe/jsui/mainpage.py:252 exe/jsui/mainpage.py:255
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakket opgeslagen naar: %s"
 
-#: exe/jsui/mainpage.py:451 exe/jsui/mainpage.py:557
+#: exe/jsui/mainpage.py:454 exe/jsui/mainpage.py:560
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:471
+#: exe/jsui/mainpage.py:474
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Bestandsnaam %s niet gevonden, kan niet voorvertonen"
 
-#: exe/jsui/mainpage.py:599
+#: exe/jsui/mainpage.py:602
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -2355,29 +2362,29 @@ msgstr ""
 "Compileren MimeTeX mislukt!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:637
+#: exe/jsui/mainpage.py:640
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:640
+#: exe/jsui/mainpage.py:643
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:687 exe/jsui/mainpage.py:694 exe/jsui/mainpage.py:697
-#: exe/jsui/mainpage.py:700 exe/jsui/mainpage.py:703 exe/jsui/mainpage.py:920
+#: exe/jsui/mainpage.py:690 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
+#: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:921
 msgid "EXPORT FAILED!"
 msgstr "UITVOER MISLUKT!"
 
-#: exe/jsui/mainpage.py:767
+#: exe/jsui/mainpage.py:768
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:770
+#: exe/jsui/mainpage.py:771
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:824
+#: exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:825
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2386,17 +2393,17 @@ msgstr ""
 "UITPAKKEN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:826
+#: exe/jsui/mainpage.py:827
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pakket uitgepakt naar: %s"
 
-#: exe/jsui/mainpage.py:855 exe/jsui/mainpage.py:897
+#: exe/jsui/mainpage.py:856 exe/jsui/mainpage.py:898
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:861 exe/jsui/mainpage.py:903
+#: exe/jsui/mainpage.py:862 exe/jsui/mainpage.py:904
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2405,9 +2412,9 @@ msgstr ""
 "De map %s bestaat al. Kies een andere naam of verwijder de bestaande map "
 "en probeer opnieuw."
 
-#: exe/jsui/mainpage.py:910 exe/jsui/mainpage.py:924 exe/jsui/mainpage.py:937
-#: exe/jsui/mainpage.py:943 exe/jsui/mainpage.py:961 exe/jsui/mainpage.py:978
-#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:999 exe/jsui/mainpage.py:1005
+#: exe/jsui/mainpage.py:911 exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:938
+#: exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:962 exe/jsui/mainpage.py:979
+#: exe/jsui/mainpage.py:985 exe/jsui/mainpage.py:1000 exe/jsui/mainpage.py:1006
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2416,22 +2423,22 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:926 exe/jsui/mainpage.py:945 exe/jsui/mainpage.py:963
-#: exe/jsui/mainpage.py:986 exe/jsui/mainpage.py:1007
+#: exe/jsui/mainpage.py:927 exe/jsui/mainpage.py:946 exe/jsui/mainpage.py:964
+#: exe/jsui/mainpage.py:987 exe/jsui/mainpage.py:1008
 #, python-format
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
 
-#: exe/jsui/mainpage.py:1040
+#: exe/jsui/mainpage.py:1041
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Bestand %s bestaat niet of is niet leesbaar."
 
-#: exe/jsui/mainpage.py:1044
+#: exe/jsui/mainpage.py:1045
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Kan het bestand niet laden, email bestand naar bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1047
+#: exe/jsui/mainpage.py:1048
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2440,7 +2447,7 @@ msgstr ""
 "Sorry, fout bestandsformaat:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1049
+#: exe/jsui/mainpage.py:1050
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
@@ -2495,12 +2502,12 @@ msgid "Error"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:144
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:277
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
 msgid "Insert Package"
 msgstr "Pakket invoegen"
 
 #: exe/jsui/scripts/app/controller/Outline.js:147
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:283
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
 msgid "Extract Package"
 msgstr "Pakket uitpakken"
 
@@ -2526,7 +2533,7 @@ msgid "About"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:304
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -2613,7 +2620,7 @@ msgid "Export text package as"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:555
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:253
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Text File"
 msgstr ""
 
@@ -2675,7 +2682,7 @@ msgstr ""
 msgid "Saving package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:34
+#: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
 msgid "Tree"
 msgstr ""
 
@@ -2683,7 +2690,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:301
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:303
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:306
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:85 exe/webui/editorpane.py:326
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:86 exe/webui/editorpane.py:326
 msgid "Name"
 msgstr "Naam"
 
@@ -2701,7 +2708,7 @@ msgid "Modified"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:149 exe/webui/editorpage.py:267
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:267
 msgid "Save"
 msgstr "Opslaan"
 
@@ -3257,7 +3264,7 @@ msgstr ""
 msgid "Outline"
 msgstr "Schema"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:71
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:72
 msgid "iDevices"
 msgstr "iDevices"
 
@@ -3282,7 +3289,7 @@ msgid "Dublin Core"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:200
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Export"
 msgstr "Exporteren"
 
@@ -3319,131 +3326,131 @@ msgstr "Verplaats naar omhoog"
 msgid "Move node down"
 msgstr "Verplaats naar beneden"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
 msgid "File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:106
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:113
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
 msgid "New Window"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:120
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Open"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:127
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
 msgid "Recent Projects..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:139
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:131
 msgid "Clear Recent Projects List"
 msgstr "Wis de onlangs geopende projecten"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:156
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:148
 msgid "Save As..."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:165
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
 msgid "Print"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:175
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
 msgid "Import"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:184
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:176
 msgid "HTML Course"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:190
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:182
 msgid "XLIFF File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:207
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
 msgid "Common Cartridge"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:213
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:219
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
 msgid "IMS Content Package"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:225
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Web Site"
 msgstr "Website"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:232
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
 msgid "Self-contained Folder"
 msgstr "Map met webinhoud"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:238
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "Zip File"
 msgstr "Zip-bestand"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:247
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:259
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:260
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:296 exe/webui/editorpage.py:285
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:288 exe/webui/editorpage.py:285
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:303
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "Tools"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:328
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:320
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:335
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:327
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:347
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
 msgid "eXe Manual"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:376
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:368
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:382
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:388
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:389
 msgid "About eXe"
 msgstr ""
 
@@ -4535,8 +4542,7 @@ msgid "Info"
 msgstr "Info"
 
 #: exe/webui/editorpane.py:427 exe/webui/element.py:1216
-#: exe/webui/element.py:1484 exe/webui/listablock.py:213
-#: exe/webui/listablock.py:217
+#: exe/webui/element.py:1484
 msgid "Submit"
 msgstr "Verzenden"
 
@@ -4610,7 +4616,7 @@ msgid "Cloze Text"
 msgstr "Invultekst"
 
 #: exe/webui/element.py:1106 exe/webui/element.py:1368
-#: exe/webui/listablock.py:120
+#: exe/webui/listablock.py:182
 msgid "Hide/Show Word"
 msgstr "Toon/verberg woord"
 
@@ -4647,7 +4653,7 @@ msgid "Show Answers"
 msgstr "Toon antwoorden"
 
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
-#: exe/webui/listablock.py:250
+#: exe/webui/listablock.py:317
 msgid "Answsers"
 msgstr "Toon antwoorden"
 
@@ -4792,6 +4798,14 @@ msgstr "Extra groot"
 #: exe/webui/imagemagnifierblock.py:164
 msgid "Size of magnifying glass: "
 msgstr "Grootte van vergrootglas:"
+
+#: exe/webui/listablock.py:188
+msgid "Other words"
+msgstr ""
+
+#: exe/webui/listablock.py:278 exe/webui/listablock.py:282
+msgid "Check"
+msgstr ""
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
@@ -5071,6 +5085,17 @@ msgstr ""
 "was aangemaakt in een nieuwere versie van eXe.  Upgrade uw eXe-versie en "
 "probeer opnieuw."
 
-#~ msgid "SCORM2004"
+#~ msgid " "
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Enter the text for the dropdown activity in to the dropdown field \n"
+#~ "by either pasting text from another "
+#~ "source or by typing text directly "
+#~ "into the \n"
+#~ "field.</p><p> To select words to choose,"
+#~ " double click on the word to "
+#~ "select it and \n"
+#~ "click on the 'Select' button below.</p>"
 #~ msgstr ""
 

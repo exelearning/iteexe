@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-01-21 10:39+0100\nPO-Revision-Date: 2013-01-28 19:58+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-01-28 19:58+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si vous activez cette option, le fichier SCORM export\u00e9 sera \u00e9ditable avec eXeLearning", 
  "Web pages footer.": "Pied de la page Web.", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
@@ -252,7 +252,6 @@ translations = {
  "Promote node up in hierarchy": "Hausser un noeud dans la hi\u00e9rarchie", 
  "Interlingua ": "Interlingua", 
  "Select a file": "S\u00e9lectionnez un fichier", 
- "<p>Enter the text for the dropdown activity in to the dropdown field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to choose, double click on the word to select it and \nclick on the 'Select' button below.<\/p>": "<p>\u00e9crivez le texte pour l'activit\u00e9 de s\u00e9lection par choix dans le champ \nen copiant le texte d'une autre source ou en \u00e9crivant directement dans le champ \n<\/p><p> Pour s\u00e9lectionner les mots choisis, cliquer deux fois sur le mot pour le s\u00e9lectionner et cliquez \n foissur le bouton 'S\u00e9lectionner' en dessous. <\/p>", 
  "IDevice Question Icon": "Ic\u00f4ne de l'outil p\u00e9dagogique Question", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Lors du chargement de l'outil p\u00e9dagogique, indiquez le niveau initial d'agrandissement (zoom) comme un pourcentage de la taille de l'image d'origine.", 
  "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use.": "Utilisez ce champ pour d\u00e9crire et mieux expliciter la p\u00e9dagogie et le sens que vous donnez \u00e0 l'utilisation de l'outil que vous d\u00e9veloppez. Ceci peut \u00eatre utile si votre outil doit \u00eatre export\u00e9 pour une utilisation par d'autres personnes.", 
