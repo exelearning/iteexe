@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-02-01 17:19+0100\n"
-"PO-Revision-Date: 2013-01-22 18:30+0100\n"
+"PO-Revision-Date: 2013-02-01 18:50+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -1652,7 +1652,7 @@ msgstr ""
 
 #: exe/engine/listaidevice.py:131
 msgid "Read and complete"
-msgstr ""
+msgstr "Lea y complete"
 
 #: exe/engine/listaidevice.py:133
 msgid "Dropdown"
@@ -1667,6 +1667,10 @@ msgid ""
 "select it and \n"
 "click on the 'Hide/Show' button below.</p>"
 msgstr ""
+"<p>Introduzca el texto para la actividad desplegable en el campo desplegable\n"
+"bien pegando el texto desde otra fuente o bien tecleándolo directamente en el\n"
+"campo.</p><p>Para seleccionar qué palabras da a elegir, haga doble clic sobre una palabra para\n"
+"seleccionarla y pulse en el botón 'Mostrar/Ocultar' de abajo.</p>"
 
 #: exe/engine/listaidevice.py:292
 msgid "Read the paragraph below and choose the correct words"
@@ -1677,7 +1681,7 @@ msgid ""
 "<p>Optional: Write other words to complete the dropdown activity.</br>Use"
 " | (vertical bar ) to separate words.</br>This field can be left blank. "
 "</p>"
-msgstr ""
+msgstr "<p>Opcional: escriba otras palabras para completar la actividad desplegable.<br/>Use la barra vertical | para separar las palabras.<br/>Este campo puede dejarse en blanco.</p>"
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
@@ -4988,11 +4992,11 @@ msgstr "Tamaño de la lupa: "
 
 #: exe/webui/listablock.py:188
 msgid "Other words"
-msgstr ""
+msgstr "Otras palabras"
 
 #: exe/webui/listablock.py:278 exe/webui/listablock.py:282
 msgid "Check"
-msgstr ""
+msgstr "Comprobar respuesta"
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
