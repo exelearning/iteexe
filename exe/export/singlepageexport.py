@@ -153,7 +153,7 @@ class SinglePageExport(object):
             imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif', 'stock-insert-image.png'), self.outputDir)
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), self.outputDir)
             
         for child in node.children:
             self.compruebaReproductores(child)

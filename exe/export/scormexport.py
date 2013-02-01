@@ -621,7 +621,7 @@ class ScormExport(object):
             imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif', 'stock-insert-image.png'), outputDir)
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if package.license == "GNU Free Documentation License":
