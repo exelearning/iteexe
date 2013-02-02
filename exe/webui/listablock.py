@@ -25,14 +25,7 @@
 import logging
 from exe.webui.block   import Block
 from exe.webui         import common
-from exe.webui.element import TextAreaElement,ElementWithResources
-from exe.engine.path import Path
-import os 
-import re
-import urllib
-from exe             import globals as G
-from urllib import quote
-
+from exe.webui.element import TextAreaElement, ElementWithResources
 import random
 
 
@@ -94,7 +87,6 @@ class ListaElement(ElementWithResources):
                         code_key = letter
                         char_pos += 6
            
-            #answer=codeu
             return answer 
         
     def ecrypt(self,word):
@@ -111,7 +103,6 @@ class ListaElement(ElementWithResources):
             output=output.replace("\n", "")
             noutput=output.encode('base64')
            
-            #noutput=word
             return  noutput      
         
     def process(self, request):
@@ -184,7 +175,7 @@ class ListaElement(ElementWithResources):
             u'</br></br>',
           
             common.formField('textInput',
-                            this_package,
+                            '',
                             _('Other words'),
                             'clOtras'+self.id, '',
                             self.field.otrasInstruc,
@@ -419,7 +410,7 @@ class ListaBlock(Block):
             if self.previewing: 
                 clozeContent = self.listaElement.renderPreview(feedbackID)
             else: 
-                clozeContent = self.listaeElement.renderView(feedbackID)
+                clozeContent = self.listaElement.renderView(feedbackID)
         else:
             if self.previewing: 
                 clozeContent = self.listaElement.renderPreview()
