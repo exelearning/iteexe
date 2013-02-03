@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-02-01 17:07+0100\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-02-01 17:07+0100\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Marcando esta opci\u00f3n, o arquivo SCORM exportado ser\u00e1 editable con eXeLearning.", 
  "Web pages footer.": "P\u00e9 de p\u00e1xinas web.", 
  "DropDown Activity": "Actividade de encher espazos", 
@@ -180,7 +180,6 @@ translations = {
  "Lithuanian ": "Lituano ", 
  "FPD - Destacado": "FPD - Destacado", 
  "Provide relevant feedback on the \nsituation.": "Proporcione a informaci\u00f3n de retroacci\u00f3n relevante na \nsituaci\u00f3n.", 
- "Mostrar Puntuaci&oacute;n?": "Amosar puntuaci\u00f3n?", 
  "Instant Marking?": "Marcaci\u00f3n instant\u00e1nea?", 
  "Alignment allows you to \nchoose where on the screen the image will be positioned.": "O ali\u00f1amento perm\u00edtelle escoller \no lugar da pantalla en que ser\u00e1 posicionada unha imaxe.", 
  "Sinhalese ": "Sinhalese ", 
@@ -600,7 +599,6 @@ translations = {
  "Classification": "Clasificaci\u00f3n", 
  "Correct!": "Correcto.", 
  "Bashkir ": "Bashkir ", 
- "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.<\/p>": "<p>Se esta opci\u00f3n est\u00e1 marcada am\u00f3sase a puntuaci\u00f3n obtida.<\/p>", 
  "Debes conocer": "Debes co\u00f1ecer", 
  "This is an optional field.": "Este \u00e9 un campo opcional.", 
  "General": "Xeral", 

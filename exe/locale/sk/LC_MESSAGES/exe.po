@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 17:19+0100\n"
+"POT-Creation-Date: 2013-02-03 20:43+0100\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -468,7 +468,7 @@ msgstr ""
 #: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
 #: exe/webui/common.py:252 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:254 exe/webui/element.py:2269
-#: exe/webui/listablock.py:461 exe/webui/questionelement.py:104
+#: exe/webui/listablock.py:452 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "Spätná väzba"
 
@@ -818,9 +818,7 @@ msgstr ""
 "                                       vypĺňania medzier používateľom."
 
 #: exe/engine/field.py:3282
-msgid ""
-"<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n "
-"obtenida.</p>"
+msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
 
 #: exe/engine/field.py:3361 exe/engine/field.py:3405
@@ -1373,7 +1371,7 @@ msgstr ""
 "zväčšený."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
-#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:177
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:168
 msgid "Text"
 msgstr "Text"
 
@@ -4605,7 +4603,7 @@ msgid "Cloze Text"
 msgstr "Doplňovací text"
 
 #: exe/webui/element.py:1106 exe/webui/element.py:1368
-#: exe/webui/listablock.py:182
+#: exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Skryť / Zobraziť slovo"
 
@@ -4642,12 +4640,12 @@ msgid "Show Answers"
 msgstr "Zobraziť odpovede"
 
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
-#: exe/webui/listablock.py:317
+#: exe/webui/listablock.py:308
 msgid "Answsers"
 msgstr "Odpovede"
 
 #: exe/webui/element.py:1388
-msgid "Mostrar Puntuaci&oacute;n?"
+msgid "Show Score?"
 msgstr ""
 
 #: exe/webui/element.py:1647
@@ -4788,11 +4786,11 @@ msgstr "Extra veľké"
 msgid "Size of magnifying glass: "
 msgstr "Veľkosť zväčšovacieho skla:"
 
-#: exe/webui/listablock.py:188
+#: exe/webui/listablock.py:179
 msgid "Other words"
 msgstr ""
 
-#: exe/webui/listablock.py:278 exe/webui/listablock.py:282
+#: exe/webui/listablock.py:269 exe/webui/listablock.py:273
 msgid "Check"
 msgstr ""
 
@@ -5073,17 +5071,11 @@ msgstr ""
 "vytvorený novšou verziou eXe. Aktualizujte, prosím, vašu verziu eXe a "
 "skúste to znovu."
 
-#~ msgid " "
+#~ msgid ""
+#~ "<p>Si esta opci&oacute;n esta marcada se"
+#~ " muestra la puntuaci&oacute;n obtenida.</p>"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "<p>Enter the text for the dropdown activity in to the dropdown field \n"
-#~ "by either pasting text from another "
-#~ "source or by typing text directly "
-#~ "into the \n"
-#~ "field.</p><p> To select words to choose,"
-#~ " double click on the word to "
-#~ "select it and \n"
-#~ "click on the 'Select' button below.</p>"
+#~ msgid "Mostrar Puntuaci&oacute;n?"
 #~ msgstr ""
 

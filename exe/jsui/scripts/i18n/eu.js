@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-01-30 19:13+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-01-30 19:13+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Aukera hau markatzen baduzu, sortutako SCORM fitxategia eXeLearning-ekin editatu ahal izango duzu.", 
  "Web pages footer.": "Web orrien oina.", 
  "DropDown Activity": "Jarduera zabalgarria", 
@@ -180,7 +180,6 @@ translations = {
  "Lithuanian ": "Lituaniera", 
  "FPD - Destacado": "FPD - Nabarmendua", 
  "Provide relevant feedback on the \nsituation.": "Eman egoerari buruzko feedback \nnabarmena.", 
- "Mostrar Puntuaci&oacute;n?": "Puntu-kopurua erakutsi?", 
  "Instant Marking?": "Oraintxe zuzendu nahi?", 
  "Alignment allows you to \nchoose where on the screen the image will be positioned.": "Lerrokatzean, irudia \npantailan non kokatu nahi duzun zehaztuko duzu.", 
  "Sinhalese ": "Sinhala", 
@@ -600,7 +599,6 @@ translations = {
  "Classification": "Sailkapena", 
  "Correct!": "Zuzena.", 
  "Bashkir ": "Bashkirrera", 
- "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.<\/p>": "<p>Aukera hau markatuta badago, lortutako puntu-kopurua erakutsiko da.<\/p>", 
  "Debes conocer": "Jakin  behar duzu", 
  "This is an optional field.": "Eremu hau aukerazkoa da.", 
  "General": "Orokorra", 

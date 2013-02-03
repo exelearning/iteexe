@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-02-01 17:19+0100\n"
-"PO-Revision-Date: 2013-02-01 18:50+0100\n"
+"POT-Creation-Date: 2013-02-03 20:43+0100\n"
+"PO-Revision-Date: 2013-02-03 20:47+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -498,7 +498,7 @@ msgstr ""
 #: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
 #: exe/webui/common.py:252 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:254 exe/webui/element.py:2269
-#: exe/webui/listablock.py:461 exe/webui/questionelement.py:104
+#: exe/webui/listablock.py:452 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "Retroalimentación"
 
@@ -833,9 +833,7 @@ msgstr ""
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
-msgstr ""
-"<p>Si esta opción esta marcada, las respuestas enviadas con una diferente"
-" capitalización serán marcadas como incorrectas.</p>"
+msgstr "<p>Si está marcada esta opción, las respuestas enviadas con una diferente capitalización serán marcadas como incorrectas.</p>"
 
 #: exe/engine/field.py:3043 exe/engine/field.py:3277
 msgid ""
@@ -859,10 +857,8 @@ msgstr ""
 "espacios en blanco."
 
 #: exe/engine/field.py:3282
-msgid ""
-"<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n "
-"obtenida.</p>"
-msgstr ""
+msgid "<p>If this option is set, the score will be shown.</p>"
+msgstr "<p>Si está marcada esta opción, se mostrará la puntuación</p>"
 
 #: exe/engine/field.py:3361 exe/engine/field.py:3405
 msgid ""
@@ -1433,7 +1429,7 @@ msgstr ""
 "zoom sobre él."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
-#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:177
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:168
 msgid "Text"
 msgstr "Texto"
 
@@ -1667,9 +1663,12 @@ msgid ""
 "select it and \n"
 "click on the 'Hide/Show' button below.</p>"
 msgstr ""
-"<p>Introduzca el texto para la actividad desplegable en el campo desplegable\n"
-"bien pegando el texto desde otra fuente o bien tecleándolo directamente en el\n"
-"campo.</p><p>Para seleccionar qué palabras da a elegir, haga doble clic sobre una palabra para\n"
+"<p>Introduzca el texto para la actividad desplegable en el campo "
+"desplegable\n"
+"bien pegando el texto desde otra fuente o bien tecleándolo directamente "
+"en el\n"
+"campo.</p><p>Para seleccionar qué palabras da a elegir, haga doble clic "
+"sobre una palabra para\n"
 "seleccionarla y pulse en el botón 'Mostrar/Ocultar' de abajo.</p>"
 
 #: exe/engine/listaidevice.py:292
@@ -1681,7 +1680,10 @@ msgid ""
 "<p>Optional: Write other words to complete the dropdown activity.</br>Use"
 " | (vertical bar ) to separate words.</br>This field can be left blank. "
 "</p>"
-msgstr "<p>Opcional: escriba otras palabras para completar la actividad desplegable.<br/>Use la barra vertical | para separar las palabras.<br/>Este campo puede dejarse en blanco.</p>"
+msgstr ""
+"<p>Opcional: escriba otras palabras para completar la actividad "
+"desplegable.<br/>Use la barra vertical | para separar las "
+"palabras.<br/>Este campo puede dejarse en blanco.</p>"
 
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
@@ -4807,7 +4809,7 @@ msgid "Cloze Text"
 msgstr "Texto con huecos que rellenar"
 
 #: exe/webui/element.py:1106 exe/webui/element.py:1368
-#: exe/webui/listablock.py:182
+#: exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Ocultar/Mostrar Palabra"
 
@@ -4844,13 +4846,13 @@ msgid "Show Answers"
 msgstr "Mostrar las respuestas"
 
 #: exe/webui/element.py:1263 exe/webui/element.py:1531
-#: exe/webui/listablock.py:317
+#: exe/webui/listablock.py:308
 msgid "Answsers"
 msgstr "Respuestas"
 
 #: exe/webui/element.py:1388
-msgid "Mostrar Puntuaci&oacute;n?"
-msgstr ""
+msgid "Show Score?"
+msgstr "¿Mostrar la puntuación?"
 
 #: exe/webui/element.py:1647
 msgid "Please select a .flv file."
@@ -4990,11 +4992,11 @@ msgstr "Extra grande"
 msgid "Size of magnifying glass: "
 msgstr "Tamaño de la lupa: "
 
-#: exe/webui/listablock.py:188
+#: exe/webui/listablock.py:179
 msgid "Other words"
 msgstr "Otras palabras"
 
-#: exe/webui/listablock.py:278 exe/webui/listablock.py:282
+#: exe/webui/listablock.py:269 exe/webui/listablock.py:273
 msgid "Check"
 msgstr "Comprobar respuesta"
 
@@ -5288,27 +5290,11 @@ msgstr ""
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
 
-#~ msgid " "
-#~ msgstr " "
-
 #~ msgid ""
-#~ "<p>Enter the text for the dropdown activity in to the dropdown field \n"
-#~ "by either pasting text from another "
-#~ "source or by typing text directly "
-#~ "into the \n"
-#~ "field.</p><p> To select words to choose,"
-#~ " double click on the word to "
-#~ "select it and \n"
-#~ "click on the 'Select' button below.</p>"
+#~ "<p>Si esta opci&oacute;n esta marcada se"
+#~ " muestra la puntuaci&oacute;n obtenida.</p>"
 #~ msgstr ""
-#~ "<p>Introduzca el texto de la Actividad"
-#~ " desplegable en el campo desplegable, \n"
-#~ ""
-#~ "bien copiando texto de otro origen "
-#~ "o bien tecleándolo directamente en el"
-#~ "\n"
-#~ "campo.</p><p>Para seleccionar las palabras, "
-#~ "haga doble clic en la palabra para"
-#~ " elegirla y\n"
-#~ "pulse en el botón 'Elegir' de abajo.</p>"
+
+#~ msgid "Mostrar Puntuaci&oacute;n?"
+#~ msgstr ""
 

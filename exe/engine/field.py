@@ -3279,7 +3279,7 @@ learner types it rather than all the words being marked the end of the
 exercise.</p>""")
 	self.showScore = False
         self._showScoreInstruc = \
-            x_(u"""<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.</p>""")
+            x_(u"""<p>If this option is set, the score will be shown.</p>""")
 
     # Property handlers
     def set_encodedContent(self, value):

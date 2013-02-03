@@ -1385,7 +1385,7 @@ class ClozelangElement(ElementWithResources):
 	    u'</td><td>',
             common.checkbox('showScore%s' % self.id,
                             self.field.showScore,
-                            title=_(u'Mostrar Puntuaci&oacute;n?'),
+                            title=_(u'Show Score?'),
                             instruction=self.field.showScoreInstruc),
             u'</td>',
             u'</tr>',

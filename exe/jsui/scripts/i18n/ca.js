@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-01-21 20:03+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-01-21 20:03+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si habiliteu aquesta opci\u00f3, el fitxer SCORM exportat ser\u00e0 editable amb eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat desplegable", 
@@ -180,7 +180,6 @@ translations = {
  "Lithuanian ": "Litu\u00e0 ", 
  "FPD - Destacado": "FPD - Destacat", 
  "Provide relevant feedback on the \nsituation.": "Introdueix una realimentaci\u00f3 rellevant \n per la situaci\u00f3.", 
- "Mostrar Puntuaci&oacute;n?": "Mostreu la puntuaci\u00f3 ?", 
  "Instant Marking?": "Marca a l'instant ?", 
  "Alignment allows you to \nchoose where on the screen the image will be positioned.": "L'alineament et permet escollir \non ser\u00e0 col\u00b7locada la imatge en la pantalla.", 
  "Sinhalese ": "Singal\u00e8s", 
@@ -600,7 +599,6 @@ translations = {
  "Classification": "Classificaci\u00f3 ", 
  "Correct!": "Correcte!", 
  "Bashkir ": "Baixkir", 
- "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.<\/p>": "<p>Si est\u00e0 aquesta opci\u00f3 marcada; es mostra la puntuaci\u00f3 obtinguda.<\/p>", 
  "Debes conocer": "Cal que coneguis ", 
  "This is an optional field.": "Aquest \u00e9s un camp opcional.", 
  "General": "General", 

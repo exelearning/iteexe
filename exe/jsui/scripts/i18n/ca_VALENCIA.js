@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-01-25 19:17+0100\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-01-25 19:17+0100\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si marqueu esta opci\u00f3, el fitxer SCORM exportat es podr\u00e0 editar amb l'eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
@@ -180,7 +180,6 @@ translations = {
  "Lithuanian ": "Litu\u00e0 ", 
  "FPD - Destacado": "FPD - Destacat", 
  "Provide relevant feedback on the \nsituation.": "Introdu\u00efu una retroacci\u00f3 rellevant \nper a la situaci\u00f3.", 
- "Mostrar Puntuaci&oacute;n?": "Voleu mostrar la puntuaci\u00f3?", 
  "Instant Marking?": "Correcci\u00f3 immediata?", 
  "Alignment allows you to \nchoose where on the screen the image will be positioned.": "L'alineament vos permet escollir \non es col\u00b7locar\u00e0 la imatge en la pantalla.", 
  "Sinhalese ": "Singal\u00e9s ", 
@@ -600,7 +599,6 @@ translations = {
  "Classification": "Classificaci\u00f3", 
  "Correct!": "Correcte!", 
  "Bashkir ": "Baixkir ", 
- "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.<\/p>": "<p>Si esta opci\u00f3 est\u00e0 marcada; es mostra la puntuaci\u00f3 obtinguda.<\/p>", 
  "Debes conocer": "Cal que conegues", 
  "This is an optional field.": "Este \u00e9s un camp opcional.", 
  "General": "General", 

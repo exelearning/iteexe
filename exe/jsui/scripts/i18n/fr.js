@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-01 17:19+0100\nPO-Revision-Date: 2013-01-28 19:58+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-01-28 19:58+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si vous activez cette option, le fichier SCORM export\u00e9 sera \u00e9ditable avec eXeLearning", 
  "Web pages footer.": "Pied de la page Web.", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
@@ -180,7 +180,6 @@ translations = {
  "Lithuanian ": "Lituanien", 
  "FPD - Destacado": "FPD - Important", 
  "Provide relevant feedback on the \nsituation.": "Donnez un \"\u00e9cho en retour\" appropri\u00e9 \u00e0 la situation.", 
- "Mostrar Puntuaci&oacute;n?": "Montrer Ponctuation?", 
  "Instant Marking?": "Ecriture instantan\u00e9e ?", 
  "Alignment allows you to \nchoose where on the screen the image will be positioned.": "La mise en page vous permet de choisir le positionnement de votre image \u00e0 l'\u00e9cran.", 
  "Sinhalese ": "Sinhalese", 
@@ -600,7 +599,6 @@ translations = {
  "Classification": "Classification", 
  "Correct!": "Correcte.", 
  "Bashkir ": "Bashkir", 
- "<p>Si esta opci&oacute;n esta marcada se muestra la puntuaci&oacute;n obtenida.<\/p>": "<p> Si cette option est marqu\u00e9e, le score obtenu est affich\u00e9. <p>", 
  "Debes conocer": "Tu dois conna\u00eetre", 
  "This is an optional field.": "Ceci est un champ optionnel.", 
  "General": "G\u00e9n\u00e9ral", 
