@@ -376,6 +376,7 @@ class IdeviceStore:
 
         if extendedPath.exists():
             self.extended = persist.decodeObject(extendedPath.bytes())
+            self.__upgradeExtended()
         else:
             self.extended = copy.deepcopy(self.factoryiDevices)
             #self.extended = self.factoryiDevices
@@ -386,6 +387,15 @@ class IdeviceStore:
             for factoryiDevice in self.factoryiDevices:
                 if factoryiDevice.title == idevice.title:
                     idevice.id = factoryiDevice.id
+                    break
+
+    def __upgradeExtended(self):
+        from exe.engine.galleryidevice import GalleryIdevice
+
+        for idevice in self.extended:
+            if type(idevice) == GalleryIdevice:
+                if hasattr(idevice, 'systemResources'):
+                    del idevice.systemResources
                     break
 
     def __loadUserExtended(self):
