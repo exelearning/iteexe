@@ -30,16 +30,16 @@ Ext.define('eXe.controller.Toolbar', {
     init: function() {
         this.control({
             '#file': {
-                click: this.showMenu
+                click: this.focusMenu
             },
             '#tools': {
-                click: this.showMenu
+                click: this.focusMenu
             },
             '#styles_button': {
-                click: this.showMenu
+                click: this.focusMenu
             },
             '#help': {
-                click: this.showMenu
+                click: this.focusMenu
             },
         	'#file_new': {
         		click: this.fileNew
@@ -250,6 +250,10 @@ Ext.define('eXe.controller.Toolbar', {
            var keymap = new Ext.util.KeyMap(body, keymap_config);
         }, this);
         var keymap = new Ext.util.KeyMap(Ext.getBody(), keymap_config);
+    },
+
+    focusMenu: function(button) {
+        button.menu.focus();
     },
 
     showMenu: function(button) {
