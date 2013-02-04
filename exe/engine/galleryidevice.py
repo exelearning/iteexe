@@ -479,6 +479,9 @@ these in a gallery context rather then individually.</p>"""),
     titleInstruc = lateTranslate('titleInstruc')
     htmlSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._htmlResource.storageName))
 
+    def TwistedRePersist(self):
+        if hasattr(self, 'systemResources'):
+            self.systemResources = []
 
     def getResourcesField(self, this_resource):
         """

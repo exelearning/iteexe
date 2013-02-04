@@ -395,7 +395,7 @@ class IdeviceStore:
         for idevice in self.extended:
             if type(idevice) == GalleryIdevice:
                 if hasattr(idevice, 'systemResources'):
-                    del idevice.systemResources
+                    idevice.systemResources = []
                     break
 
     def __loadUserExtended(self):
