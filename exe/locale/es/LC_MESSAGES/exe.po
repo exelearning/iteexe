@@ -2685,7 +2685,7 @@ msgid ""
 "really want to quit?"
 msgstr ""
 "Si ha hecho cambios y no los ha guardado, se perderán. ¿Confirma que "
-"quiere cerrar el programa?"
+"quiere cerrar la ventana?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:355
 msgid "Select package to insert"
