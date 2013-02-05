@@ -13,7 +13,7 @@ from exe.engine.path           import Path
 Path('exe/webui/templates/mimetex.cgi').chmod(0755)
 Path('exe/webui/templates/mimetex.64.cgi').chmod(0755)
 
-files = {'/usr/share/exe': ["README",
+g_files = {'/usr/share/exe': ["README",
                              "COPYING",
                              "NEWS",
                              "ChangeLog",
@@ -22,43 +22,51 @@ files = {'/usr/share/exe': ["README",
           '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
         }
 
+g_oldBase = "exe/webui"
+g_newBase = "/usr/share/exe"
 
-def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
+
+def dataFiles(dirs, excludes=[]):
     """Recursively get all the files in these directories"""
-    global files
-    from exe.engine.path import Path
-    baseSourceDir = Path(baseSourceDir)
-    baseDestDir = Path(baseDestDir)
-    sourceDirs = map(Path, sourceDirs)
-    for sourceDir in sourceDirs:
-        sourceDir = baseSourceDir / sourceDir
-        for subDir in list(sourceDir.walkdirs()) + [sourceDir]:
-            if set(('CVS', '.svn')) & set(subDir.splitall()):
-                continue
-            newExtDir = baseSourceDir.relpathto(subDir)
-            fileList = files.setdefault(baseDestDir / newExtDir, [])
-            fileList += subDir.files()
+    import os.path
+    import glob
+    global dataFiles, g_oldBase, g_newBase, g_files
+    for file in dirs:
+        if not os.path.basename(file[0]).startswith("."):
+            if os.path.isfile(file) and file not in excludes:
+		if len(g_oldBase) >= 1:
+	                path = file[len(g_oldBase) + 1:]
+		else:
+			path = file
+                dir = g_newBase + "/" + os.path.dirname(path)
+                if dir in g_files:
+                    g_files[dir].append(file)
+                else:
+                    g_files[dir] = [file]
+            elif os.path.isdir(file) and file not in excludes:
+                dataFiles(glob.glob(file + "/*"), excludes)
 
+dataFiles(["exe/webui/style",
+           "exe/webui/css",
+           "exe/webui/docs",
+           "exe/webui/images",
+           "exe/webui/schemas",
+           "exe/webui/scripts",
+           "exe/webui/templates"],
+    excludes=["exe/webui/templates/mimetex-darwin.cgi", "exe/webui/templates/mimetex.exe"])
 
-# Add all the webui dirs
-dataFiles('exe/webui', '/usr/share/exe',
-          ['style', 'css', 'docs', 'images', 'schemas', 'scripts',
-           'templates'])
+g_oldBase = "exe"
+g_newBase = "/usr/share/exe"
+dataFiles(["exe/locale"])
 
-# Add in the locale directory
-dataFiles('exe', '/usr/share/exe', ['locale'])
+g_oldBase = ""
+g_newBase = "/usr/share/exe"
+dataFiles(["twisted", "nevow", "formless"])
 
-# Add our 3rd party library copies
-dataFiles('.', '/usr/share/exe', ['twisted', 'nevow', 'formless'])
-
-# Add in the jsui directory
-dataFiles('exe/jsui', '/usr/share/exe', ['scripts', 'templates'])
-
-opts = {
-  "bdist_rpm": {
-  "requires": ["python-imaging"]
- }
-}
+g_oldBase = "exe/jsui"
+g_newBase = "/usr/share/exe"
+dataFiles(["exe/jsui/scripts",
+           "exe/jsui/templates"])
 
 setup(name=version.project,
       version=version.release,
@@ -76,7 +84,6 @@ any Learning Management System.
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
                       "exe.engine", "exe.export", "exe.importers"],
-      data_files=files.items(),
-      doc_files=["NEWS", "Changelog", "COPYING", "README"],
-      options=opts
+      data_files=g_files.items(),
+      doc_files=["NEWS", "Changelog", "COPYING", "README"]
      )

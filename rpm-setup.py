@@ -37,7 +37,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/schemas",
            "exe/webui/scripts",
            "exe/webui/templates"],
-    excludes=["mimetex.64.cgi", "mimetex-darwin.cgi", "mimetex.exe"])
+    excludes=["exe/webui/templates/mimetex-darwin.cgi", "exe/webui/templates/mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
