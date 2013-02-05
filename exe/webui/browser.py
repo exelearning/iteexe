@@ -28,21 +28,18 @@ Browser module
 import logging
 from urllib import quote
 import webbrowser
-import sys
 
 log = logging.getLogger(__name__)
+
 
 def launchBrowser(config, packageName):
     """
     Launch the configured webbrowser for this platform
     """
-    if config.browser == None and sys.platform[:6] == "darwin":
-        config.browser = webbrowser.get("safari")
-    else:
-        config.browser = webbrowser.get(config.browser)
+    config.browser = webbrowser.get(config.browser)
     if hasattr(config.browser, "basename"):
         log.info(u"Defined Browser: " + config.browser.basename)
     url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
-    log.info(u"url "+url)
+    log.info(u"url " + url)
 
     config.browser.open(url)
