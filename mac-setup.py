@@ -69,7 +69,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs, excludes=[]):
 
 # Add all the webui dirs
 dataFiles('exe/webui', '../Resources/exe',
-        ['style', 'css', 'images', 'docs', 'linux-profile',
+        ['style', 'css', 'images', 'docs',
             'scripts', 'schemas', 'templates'
             ],
           excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex.exe'])
@@ -77,7 +77,7 @@ dataFiles('exe/webui', '../Resources/exe',
 # Add in the
 dataFiles('exe', '../Resources/exe', ['locale'])
 
-dataFiles('exe/xului', '../Resources/exe', ['scripts', 'templates'])
+dataFiles('exe/jsui', '../Resources/exe', ['scripts', 'templates'])
 
 import sys
 print sys.path
@@ -116,7 +116,7 @@ Content generated using eXe can be used by any Learning Management System.
       author="eXe Project",
       author_email="exe@exelearning.org",
       license="GPL",
-      packages=["exe", "exe.webui", "exe.xului",
+      packages=["exe", "exe.webui", "exe.jsui",
                       "exe.engine", "exe.export", "exe.importers"],
       data_files=files.items(),
       app=["exe/main.py"],

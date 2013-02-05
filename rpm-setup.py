@@ -36,19 +36,17 @@ dataFiles(["exe/webui/style",
            "exe/webui/images",
            "exe/webui/schemas",
            "exe/webui/scripts",
-           "exe/webui/templates",
-           "exe/webui/linux-profile",
-           "exe/webui/firefox"],
+           "exe/webui/templates"],
     excludes=["mimetex.64.cgi", "mimetex-darwin.cgi", "mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
 dataFiles(["exe/locale"])
 
-g_oldBase = "exe/xului"
+g_oldBase = "exe/jsui"
 g_newBase = "/usr/share/exe"
-dataFiles(["exe/xului/scripts",
-           "exe/xului/templates"])
+dataFiles(["exe/jsui/scripts",
+           "exe/jsui/templates"])
 opts = {
   "bdist_rpm": {
   "requires": ["python-imaging"]
@@ -67,7 +65,7 @@ Content generated using eXe can be used by any Learning Management System.
       author_email="exe@exelearning.org",
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
-      packages=["exe", "exe.webui", "exe.xului",
+      packages=["exe", "exe.webui", "exe.jsui",
                       "exe.engine", "exe.export", "exe.importers"],
       data_files=g_files.items(),
       options=opts
