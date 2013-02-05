@@ -1,3 +1,10 @@
+python-exe (1:1.04.1.3605intef7rc1) lucid; urgency=low
+
+  [Pedro Peña]
+  * Actualizado número de versión
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 05 Feb 2013 11:46:03 +0100
+
 python-exe (1:1.04.1.3605intef7beta2) lucid; urgency=low
 
   [Pedro Peña]
