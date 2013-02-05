@@ -153,6 +153,7 @@ class MainPage(RenderableLivePage):
         self.idevicePane.client = client
 
         if not self.webServer.monitoring:
+            self.webServer.monitoring = True
             self.webServer.monitor()
 
     def render_prePath(self, ctx, data):
@@ -719,6 +720,7 @@ class MainPage(RenderableLivePage):
         client.close("window.location = \"quit\";")
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
+            self.webServer.monitoring = False
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))

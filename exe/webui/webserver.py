@@ -168,10 +168,10 @@ class WebServer:
                     + "was not available.")
 
     def monitor(self):
-        self.monitoring = True
-        for mainpage in self.root.mainpages.values():
-            for mainpage in mainpage.values():
-                if mainpage.clientHandleFactory.clientHandles:
-                    reactor.callLater(10, self.monitor)
-                    return
-        reactor.stop()
+        if self.monitoring:
+            for mainpage in self.root.mainpages.values():
+                for mainpage in mainpage.values():
+                    if mainpage.clientHandleFactory.clientHandles:
+                        reactor.callLater(10, self.monitor)
+                        return
+            reactor.stop()
