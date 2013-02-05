@@ -121,7 +121,7 @@ translations = {
  "Import": "Importar", 
  "Polish ": "Polaco ", 
  "Provide a caption for the image \nyou have just inserted.": "Proporcione un t\u00edtulo para la imagen  \nque acaba de insertar.", 
- "If you have made changes and have not saved, they will be lost. Do you really want to quit?": "Si ha hecho cambios y no los ha guardado, se perder\u00e1n. \u00bfConfirma que quiere cerrar el programa?", 
+ "If you have made changes and have not saved, they will be lost. Do you really want to quit?": "Si ha hecho cambios y no los ha guardado, se perder\u00e1n. \u00bfConfirma que quiere cerrar la ventana?", 
  "Status": "Estatus", 
  "Delete File": "Borrar el archivo", 
  "IDevice broken": "iDevice da\u00f1ado", 
