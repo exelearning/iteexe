@@ -513,7 +513,7 @@ function enableAnchors() {
 }
 
 function gotoAnchor() {
-    if (typeof(parent.eXe.app)!='undefined') {
+    if (typeof(parent.eXe)!='undefined' && typeof(parent.eXe.app)!='undefined') {
         var outline = parent.eXe.app.getController('Outline');
 
         if (outline.hash) {
