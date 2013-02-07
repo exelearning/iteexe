@@ -7,17 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-02-03 20:43+0100\n"
-"PO-Revision-Date: 2013-02-03 20:47+0100\n"
-"Last-Translator: Juan Rafael Fernández "
-"<juanrafael.fernandez@hispalinux.es>\n"
+"PO-Revision-Date: 2013-02-06 23:34+0100\n"
+"Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 0.9.6"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -254,20 +253,21 @@ msgstr ""
 "generalmente \n"
 "basada en la realidad, y pide a los estudiantes que demuestren o "
 "describan qué acción \n"
-"llevarían a cabo para completar la tarea o resolver la situación. El caso"
-" práctico permite \n"
+"llevarían a cabo para completar la tarea o resolver la situación. El caso "
+"práctico permite \n"
 "a los estudiantes aplicar sus conocimientos y experiencia propios para "
-"completas las tareas \n"
+"completar las tareas \n"
 "asignadas. Cuando diseñe un caso práctico considere lo siguiente:<ul> \n"
 "<li>\tQué puntos educativos estarán presentes en la historia</li>\n"
-"<li>\tQué preparación necesitarán hacer los estudiantes antes de trabajar"
-" en el caso práctico</li>\n"
+"<li>\tQué preparación necesitarán hacer los estudiantes antes de trabajar "
+"en \n"
+"el caso práctico</li>\n"
 "<li>\tDónde encaja el caso práctico dentro del resto del curso</li>\n"
-"<li>\tCómo actuarán recíprocamente los estudiantes con los materiales y \n"
+"<li>\tCómo actuarán recíprocamente los estudiantes con los materiales y "
 "entre ellos\n"
 " ej.: caso de realizarse en el aula, si pueden organizarse equipos para "
 "que \n"
-"trabajen en diferentes aspectos del caso y, de ser asi, \n"
+"trabajen en diferentes aspectos del caso y, de ser así, "
 "cómo se hacen llegar las ideas al resto de la clase</li></ul>"
 
 #: exe/engine/casestudyidevice.py:216
@@ -280,7 +280,7 @@ msgid ""
 "taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
-"Cree el caso práctico. Un buen caso es aquel  \n"
+"Cree el caso práctico. Un buen caso es aquel \n"
 "que describe una controversia o propone una escena describiendo los "
 "personajes \n"
 "involucrados y la situación. También debe permitir que se realicen "
@@ -302,7 +302,7 @@ msgid ""
 "dilemma \n"
 "presented. "
 msgstr ""
-"Describa las tareas de actividad relevantes  \n"
+"Describa las tareas de actividad relevantes \n"
 "para el caso práctico presentado. Estas podrían tener forma de preguntas "
 "o \n"
 "de instrucciones que puedan conducir al estudiante a resolver un dilema \n"
@@ -314,7 +314,7 @@ msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
-"Proporciona información de retroalimentación relevante para la  \n"
+"Proporciona información de retroalimentación relevante para la \n"
 "situación."
 
 #: exe/engine/casopracticofpdidevice.py:29
@@ -519,7 +519,7 @@ msgstr "Instrucciones para los estudiantes"
 #: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
 #: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr "Introduzca aquí las instrucciones para los estudiantes."
+msgstr "Introduzca aquí las instrucciones para los estudiantes"
 
 #: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:276
 #: exe/engine/clozelangfpdidevice.py:280
@@ -662,7 +662,7 @@ msgid ""
 msgstr ""
 "Cuando construya una pregunta de selección múltiple considere lo "
 "siguiente: <ul>\n"
-"<li>Use frases que a los estudiantes les sean conocidas  \n"
+"<li>Use frases que a los estudiantes les sean conocidas \n"
 "o que hayan encontrado en su estudio </li>\n"
 "<li> Mantenga concisas las respuestas </li>\n"
 "<li> Debe haber una cierta relación entre la pregunta y las respuestas "
@@ -928,7 +928,7 @@ msgid ""
 "these \n"
 "can tend to confuse learners."
 msgstr ""
-"Introduzca la pregunta\n"
+"Introduzca la pregunta. \n"
 "La pregunta debe ser clara y no ambigua. Evite las premisas negativas \n"
 "ya que estas tienden a confundir a los estudiantes."
 
@@ -1489,7 +1489,7 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
-"Fije el nivel máximo del zoom, \n"
+"Fije el nivel máximo del zoom. \n"
 "Debe especificarlo como porcentaje del tamaño original de la imagen"
 
 #: exe/engine/imagemagnifieridevice.py:72
@@ -1502,7 +1502,7 @@ msgid ""
 "of the magnifying glass"
 msgstr ""
 "Selecciona el \n"
-" tamaño inicial de la lupa."
+" tamaño inicial de la lupa"
 
 #: exe/engine/imagewithtextidevice.py:43
 msgid "Image with Text"
@@ -2214,7 +2214,7 @@ msgid ""
 "Unable to download from %s <br/>Please check the spelling and connection "
 "and try again."
 msgstr ""
-"No se pudo descargar de %s <br/> Por favor revise si lo ha tecleado "
+"No se pudo descargar de %s <br/>Por favor revise si lo ha tecleado "
 "correctamente, y la conexión, e inténtelo de nuevo."
 
 #: exe/engine/wikipediaidevice.py:319
@@ -2375,7 +2375,7 @@ msgstr ""
 
 #: exe/export/cmdlineexporter.py:79
 msgid "Invalid input package"
-msgstr "El archivo de entrada no es válido."
+msgstr "Archivo de entrada no válido"
 
 #: exe/export/cmdlineexporter.py:86
 msgid "Export format not implemented"
@@ -2928,8 +2928,8 @@ msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
 msgstr ""
-"Entidad responsable de hacer aportaciones al contenido del \"\n"
-"\"recurso."
+"Entidad responsable de hacer aportaciones al contenido del "
+"recurso."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:94
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
@@ -2952,10 +2952,9 @@ msgid ""
 msgstr ""
 "Típicamente, la FECHA estará asociada con la creación o disponibilidad "
 "del recurso. La práctica recomendada para codificar el valor de la fecha "
-"está definida en un perfil llamado <a href=\"/docs/W3C-NOTE-"
+"está definida en un perfil llamado <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-"
 "datetime.html\" target=\"_blank\">Formatos de fecha y hora del W3C</a> "
-"<em>ISO 8601</em>e incluye (entre otras) las fechas de la forma AAA-MM-"
-"DD."
+"e incluye (entre otras) las fechas de la forma AAAA-MM-DD."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:106
 msgid "The nature or genre of the content of the resource."
@@ -4596,12 +4595,12 @@ msgid ""
 "to submit your iDevice without one."
 msgstr ""
 "Su nuevo iDevice aparecerá en el panel del iDevice con este título. Este "
-"es un campo obligatorio y si no escribe nada se le solicitará si intenta "
-"enviar su iDevice sin un nombre."
+"es un campo obligatorio y se le pedirá que escriba un nombre si intenta "
+"enviar su iDevice sin uno."
 
 #: exe/webui/editorpane.py:70
 msgid "This is an optional field."
-msgstr "Este es un campo opcional."
+msgstr "Este campo es opcional."
 
 #: exe/webui/editorpane.py:71
 msgid ""
@@ -4616,8 +4615,8 @@ msgid ""
 "Use this pulldown to select whether or not  the iDevice should have any "
 "formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
-"Use esta lista para seleccionar si el iDevice deberá tener un formato "
-"aplicado para distinguirlo; ej. un borde o icono."
+"Use esta lista desplegable para seleccionar si se deberá aplicar al iDevice algún "
+"elemento de formato para distinguirlo, por ejemplo un borde o icono."
 
 #: exe/webui/editorpane.py:78
 msgid ""
@@ -4634,7 +4633,7 @@ msgid ""
 "Add a single text line to an iDevice. Useful if you want the ability to "
 "place a label within the iDevice."
 msgstr ""
-"Agregar una simple linea de texto a un iDevice. Eso es útil si usted "
+"Añade una única línea de texto a un iDevice. Eso es útil si "
 "desea disponer de la posibilidad de colocar una etiqueta dentro del "
 "iDevice."
 
@@ -4643,24 +4642,24 @@ msgid ""
 "Add a text entry box to an iDevice. Used for entering larger amounts of "
 "textual content."
 msgstr ""
-"Agregar un recuadro de texto a un iDevice. Esto es usado para ingresar "
+"Agrega un recuadro de texto a un iDevice. Útil para introducir "
 "gran cantidad de contenido de texto."
 
 #: exe/webui/editorpane.py:89
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "Añadir campo de retroalimentación interactiva a su iDevice."
+msgstr "Añade campo de retroalimentación interactiva a su iDevice."
 
 #: exe/webui/editorpane.py:90
 msgid "Add a flash video to your iDevice."
-msgstr "Añadir un video FLV a su iDevice."
+msgstr "Añade un video FLV a su iDevice."
 
 #: exe/webui/editorpane.py:91
 msgid "Add an mp3 file to your iDevice."
-msgstr "Añadir un archivo MP3 a su iDevice."
+msgstr "Añade un archivo MP3 a su iDevice."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an attachment file to your iDevice."
-msgstr "Agregar un archivo adjunto a su iDevice."
+msgstr "Agrega un archivo adjunto a su iDevice."
 
 #: exe/webui/editorpane.py:144 exe/webui/editorpane.py:151
 #: exe/webui/editorpane.py:159 exe/webui/editorpane.py:175
@@ -5268,8 +5267,8 @@ msgid ""
 "Package is old. Please upgrade it (using File..Open followed by "
 "File..Save As) before attempting to insert it into another package!"
 msgstr ""
-"Paquete antiguo. Actualícelo por favor (Archivo..Abrir seguido de "
-"Archivo..Guardar como) antes de intentar insertarlo en otro paquete"
+"Paquete antiguo. Actualícelo por favor (Archivo...Abrir seguido de "
+"Archivo...Guardar como) antes de intentar insertarlo en otro paquete"
 
 #: twisted/persisted/styles.py:437
 msgid ""
@@ -5297,4 +5296,3 @@ msgstr ""
 
 #~ msgid "Mostrar Puntuaci&oacute;n?"
 #~ msgstr ""
-
