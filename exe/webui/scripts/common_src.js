@@ -1191,8 +1191,14 @@ var exe_idevices = {
             var i = lis.length;
             while (i--) {
                 var oH = lis[i].innerHTML;
-                nH = oH.replace('rel="lightbox[','class="lytebox" data-lyte-options="group:');
-                nH = nH.replace(']','');
+                var ie8_rel = 'rel=lightbox['+id+']';
+                if (oH.indexOf(ie8_rel)!=-1) { // Browsers that use no quotes for the attribute value (rel=lightbox)
+                    nH = oH.replace('rel=lightbox[','class="lytebox" data-lyte-options="group:');
+                    nH = nH.replace(']','"');
+                } else {
+                    nH = oH.replace('rel="lightbox[','class="lytebox" data-lyte-options="group:');
+                    nH = nH.replace(']','');
+                }
                 lis[i].innerHTML = nH;
             }
         }
