@@ -658,6 +658,26 @@ var exe_tinymce = {
 }
 
 var $exeAuthoring = {
+    changeFlowPlayerPathInIE : function(){
+        if (navigator.appName == "Microsoft Internet Explorer") {
+            var objs = document.getElementsByTagName("OBJECT");
+            var i = objs.length;
+            while (i--) {
+                if(objs[i].type=="application/x-shockwave-flash" && objs[i].data.indexOf("/flowPlayer.swf")!=-1) {
+                    objs[i].style.display="none";
+                    var h = objs[i].height;
+                    var w = objs[i].width;
+                    var s = objs[i].data;
+                    var e = document.createElement("DIV");
+                    var o = objs[i].innerHTML;
+                    o = o.replace("'playlist': [ { 'url': 'resources/","'playlist': [ {'url':'http://"+window.location.host+"/"+exe_package_name+"/resources/");
+                    e.innerHTML = '<object data="'+s+'" width="'+w+'"height="'+h+'">'+o+'</object>';
+                    objs[i].parentNode.insertBefore(e,objs[i]);                                
+                }
+            }
+        }
+    },
     ready : function(){
+        $exeAuthoring.changeFlowPlayerPathInIE();
     }
 }
