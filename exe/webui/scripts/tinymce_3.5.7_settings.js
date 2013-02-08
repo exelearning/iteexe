@@ -36,7 +36,7 @@ tinyMCE.init({
 	
     // Spell check
     init_instance_callback : function() {
-        tinymce.execCommand('mceSpellCheck', true);
+        if (tinyMCE.activeEditor.execCommands.mceSpellCheck) tinymce.execCommand('mceSpellCheck', true);
     },   
     // Image & media
 	file_browser_callback : "exe_tinymce.chooseImage",
