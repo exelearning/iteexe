@@ -175,15 +175,14 @@ function hideMe() {
 }
 
 function updateCoords(e) {
-    if (objBrowse == "Microsoft Internet Explorer") {
-        xpos = e.offsetX;
-        ypos = e.offsetY;
-    } else {
-        xpos = e.pageX;
-        ypos = e.pageY;
+    if (e.pageX == null && e.clientX != null ) { //IE<9
+        var b = document.body;
+        e.pageX = e.clientX + (e && e.scrollLeft || b.scrollLeft || 0);
+        e.pageY = e.clientY + (e && e.scrollTop || b.scrollTop || 0);
     }
+    xpos = e.pageX;
+    ypos = e.pageY;      
 }
-
 
 function getFeedback(optionId, optionsNum, ideviceId, mode) {
     var i, id;
