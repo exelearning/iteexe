@@ -497,10 +497,10 @@ function enableAnchors() {
 	var exenodes = parent.Ext.DomQuery.select('a[href^=exe-node]', document);
 
 	for (var i=0; i < exenodes.length; i++)
-        exenodes[i].onclick = function(event) {
+        exenodes[i].onclick = function() {
             var outline = parent.eXe.app.getController('Outline'),
                 outline_tree = outline.getOutlineTreePanel(),
-                node_anchor = event.target.href.split("#"),
+                node_anchor = this.href.split("#"),
                 path = node_anchor[0].replace(/exe-node/, ':Root'),
                 selected;
             outline_tree.selectPath(unescape(path), 'text', ':');
