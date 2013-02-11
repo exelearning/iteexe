@@ -60,6 +60,7 @@ langNames = {
     'tl': 'Tagalog',
     'th': '\xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2',
     'ca': 'Catal\xc3\xa0',
+    'ca_VALENCIA': 'Valenci\xc3\xa0', 
     'pl': 'J\xc4\x99zyk Polski, polszczyzna',
     'fr': 'Fran\xc3\xa7ais',
     'bg': 'Bulgarian',
