@@ -222,9 +222,7 @@ class Block(Renderable):
                                    _(u"Can NOT Undo Edits"),1)
 
         html += common.confirmThenSubmitImage(
-            _(u"This will delete this iDevice."
-              u"\\n"
-              u"Do you really want to do this?"),
+            _(u"This will delete this iDevice. Do you really want to do this?"),
             u"delete",
             self.id, u"/images/stock-cancel.png", 
             _(u"Delete"), 1)

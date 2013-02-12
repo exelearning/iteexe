@@ -26,7 +26,7 @@ Ext.define('eXe.view.filepicker.FileList', {
     extend: 'Ext.grid.Panel',
 	alias: "widget.filelist",
 	id: "filelist",
-	title: 'Directory',
+	title: _('Directory'),
 	autoScroll:true,
 	collapsible: false,
 	closeOnTab: true,

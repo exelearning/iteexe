@@ -47,8 +47,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
             ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] }),
     		buttons = [
 	    		{ xtype: 'component', flex: 1 },
-				{ xtype: 'button', text: 'Cancel', itemId: 'filepicker_cancel' },
-				{ xtype: 'button', text: 'Open', itemId: 'filepicker_open' }
+				{ xtype: 'button', text: _('Cancel'), itemId: 'filepicker_cancel' },
+				{ xtype: 'button', text: _('Open'), itemId: 'filepicker_open' }
 	    	],
             filter = [
 	    		{ xtype: 'component', flex: 1 },

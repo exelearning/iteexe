@@ -69,10 +69,10 @@ class ExternalUrlBlock(Block):
         html += u"</div>\n"
         html += u'<div class="block">\n'
         html += common.textInput("url"+self.id, self.idevice.url) 
-        heightArr = [['small',      '200'],
-                     ['medium',     '300'],
-                     ['large',      '500'],
-                     ['super-size', '800']]
+        heightArr = [[_('small'),      '200'],
+                     [_('medium'),     '300'],
+                     [_('large'),      '500'],
+                     [_('super-size'), '800']]
         html += u"</div>\n"
         html += u'<div class="block">\n'
         this_package = None
