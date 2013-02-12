@@ -32,6 +32,7 @@ import sys
 import os
 import gettext
 import tempfile
+import twisted
 
 # ===========================================================================
 class Config:
@@ -325,6 +326,7 @@ class Config:
         log.info("************** eXe logging started **************")
         log.info("configPath  = %s" % self.configPath)
         log.info("exePath     = %s" % self.exePath)
+        log.info("libPath     = %s" % Path(twisted.__path__[0]).splitpath()[0])
         log.info("browser     = %s" % self.browser)
         log.info("webDir      = %s" % self.webDir)
         log.info("jsDir      = %s" % self.jsDir)
