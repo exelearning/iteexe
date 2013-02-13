@@ -20,10 +20,6 @@
 
 var objBrowse = navigator.appName;
 
-//YOUR_SCORE_IS      = "Your score is ";
-YOUR_SCORE_IS      = "Tu puntuación es ";
-
-
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');
     var elementId = id.substring(3, id.length);
