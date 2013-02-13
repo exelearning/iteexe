@@ -371,7 +371,8 @@ class FieldWithResources(Field):
 #JR: Anadimos que busque tambien para onmouseover y onmouseout
         "this.src=\'resources/" , \
 #Cambio src por data
-                "data=\"../templates/xspf_player.swf?song_url=resources/"]
+                "data=\"../templates/xspf_player.swf?song_url=resources/",
+                "exe_flv\" value=\"resources/"]
 
         for search_num in range(len(search_strings)): 
             search_str = search_strings[search_num] 
