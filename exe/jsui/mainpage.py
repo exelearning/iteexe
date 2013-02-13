@@ -700,7 +700,7 @@ class MainPage(RenderableLivePage):
             self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "commoncartridge")
+            self.exportScorm(client, filename, stylesDir, "commoncartridge", metadataType='DC')
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
