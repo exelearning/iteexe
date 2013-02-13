@@ -301,7 +301,7 @@ Ext.define('eXe.controller.Toolbar', {
 
     toolsPreferences: function() {
         var preferences = new Ext.Window ({
-          height: 200, 
+          height: 220, 
           width: 500, 
           modal: true,
           id: 'preferenceswin',
