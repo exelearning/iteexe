@@ -477,11 +477,16 @@ these in a gallery context rather then individually.</p>"""),
     # Properties
     addImageInstr = lateTranslate('addImageInstr')
     titleInstruc = lateTranslate('titleInstruc')
-    htmlSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._htmlResource.storageName))
 
     def TwistedRePersist(self):
         if hasattr(self, 'systemResources'):
             self.systemResources = []
+        if hasattr(self, 'htmlSrc'):
+            del self.htmlSrc
+        if hasattr(self, '_htmlResource'):
+            if hasattr(self._htmlResource, 'delete'):
+                self._htmlResource.delete()
+            self._htmlResource = None
 
     def getResourcesField(self, this_resource):
         """
@@ -526,16 +531,6 @@ these in a gallery context rather then individually.</p>"""),
             gallery_image = self.addImage(resourceDir/image)
             gallery_image._caption.content = caption
 
-        # ====> NOW Also Add the HTML file!!!!!!!
-        #popup_file = popup.attrMap['value'].decode('utf-8')
-        #self._htmlResource = Resource(self, resourceDir/popup_file)
-        # the above seems to behave wacky, only showing the last image,
-        # so for now, try to just re-generate the popup:
-        if len(images) > 0:
-            self._createHTMLPopupFile()
-            # WARNING!!!!! the above still doesn't quite work for the popup!
-            # Dunno, but even once freshly generated, it only shows the last one 
-
     def genImageId(self):
         """Generate a unique id for an image.
         Called by 'GalleryImage'"""
@@ -556,8 +551,6 @@ these in a gallery context rather then individually.</p>"""),
         resources.
         """
         log.debug(u'recreateResources for %d images' % (len(self.images)))
-        if len(self.images) > 0:
-            self._createHTMLPopupFile()
         for image in self.images:
             image._saveFiles()
 
@@ -571,163 +564,6 @@ these in a gallery context rather then individually.</p>"""),
             if hasattr(image, '_htmlResource'): 
                 if image._imageResource is None or image._htmlResource is None:
                     del self.images[i]
-
-    def _createHTMLPopupFile(self):
-        """
-        Renders an HTML page that show's the image
-        (Only realy needed for stupid IE)
-        """
-        _ShowsResources.export()
-        try:
-            # Choose our style dir
-            if self.parentNode:
-                styleDir = self.parentNode.package.style 
-            else:
-                # Should really never get here, but just in case...
-                styleDir = 'default'
-            # Render!
-            img = self.images[0]
-            data = docType() + u'''<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>%s</title>
-    <!-- preview mode -->
-    <style type="text/css">@import url(/style/base.css);</style>
-    <style type="text/css">@import url(/style/%s/content.css);</style>
-    <!-- export mode -->
-    <style type="text/css">@import url(base.css);</style>
-    <style type="text/css">@import url(content.css);</style>
-    <script type="text/javascript">
-//<![CDATA[
-  var maxWidth = %s;
-  var maxHeight = %s;
-  var thWidth = maxWidth; var thHeight = maxHeight;
-''' % (self.title, styleDir,
-        self.previewSize[0], self.previewSize[1])
-            data += '''
-  var images = %s''' % [img.imageSrc.replace("'", r"\'")
-                            for img in self.images]
-            data += '''
-  var titles = ['''
-            for img in self.images:
-                data += "'" + img.caption.replace("'", r"\'") + "',"
-            if len(self.images) > 0:
-                data = data[:-1]
-            data += ''']
-  var imageIdx = 0;
-  var p = window.location.href.search(/=(\d+)$/);
-  if (p >= 0) {
-    imageIdx = parseInt(window.location.href.substr(p+1));
-    if ((imageIdx < 0) || (imageIdx > (images.length - 1))) { imageIdx = 0; }
-  }
-  var imageExpanded = false;
-  var imgObj = new Image();
-  imgObj.onload = function () { getShrinkMod(); toggleZoom(); }
-  imgObj.src = images[imageIdx];
-
-function getShrinkMod() {
-  thWidth = imgObj.width;
-  thHeight = imgObj.height;
-  if (imgObj.width > maxWidth) {
-    thHeight = imgObj.height * maxWidth / imgObj.width;
-    thWidth = maxWidth;
-  }
-  if (thHeight > maxHeight) {
-    thWidth = thWidth * maxHeight / thHeight;
-    thHeight = maxHeight;
-  }
-}
-function toggleZoom() {
-  var imgEle = document.getElementById("the_image");
-  if (imageExpanded) {
-    imgEle.width = thWidth; imgEle.height = thHeight;
-  } else {
-    imgEle.width = imgObj.width; imgEle.height = imgObj.height;
-  }
-  imageExpanded = !imageExpanded;
-}
-
-// Goes one image forward (if possible), then updates the screen
-function next() {
-    if (imageIdx < images.length - 1) {
-        imageIdx++;
-        imageExpanded = true;
-        updateWindow();
-    }
-}
-
-// Goes one image back (if possible), then updates the screen
-function prev() {
-    if (imageIdx > 0) {
-        imageIdx--;
-        imageExpanded = true;
-        updateWindow();
-    }
-}
-
-// Updates the screen
-function updateWindow() {
-    // Show/hide previous button
-    var btnPrev = document.getElementById("btnPrev");
-    if (imageIdx > 0) {
-        btnPrev.style.display = "block";
-    } else {
-        btnPrev.style.display = "none";
-    }
-    // Show/hide next button
-    var btnNext = document.getElementById("btnNext");
-    if (imageIdx < images.length - 1) {
-        btnNext.style.display = "block";
-    } else {
-        btnNext.style.display = "none";
-    }
-    // Update image
-    var imgEle = document.getElementById("the_image");
-    imgObj.src = images[imageIdx];
-    imgEle.src = images[imageIdx];
-    // Update title
-    var title = document.getElementById("nodeTitle");
-    if (titles[imageIdx] == "") {
-        title.innerHTML = "&nbsp;"
-    } else {
-        title.innerHTML = titles[imageIdx];
-    }
-}
-//]]>
-</script></head>
-<body onLoad="updateWindow()">
-  <h1 id="nodeTitle">%s</h1>
-  <p align="center">
-    <table width="100%%">
-      <tr>
-         <td width="33%%" align="right"><a href="javascript:prev()" id="btnPrev">%s</a></td>
-         <td width="33%%" align="center"><a href="javascript:window.close()">%s</a></td>
-         <td width="33%%" align="left"><a href="javascript:next()" id="btnNext">%s</a></td>
-      </tr>
-      <tr>
-        <td colspan="3" align="center" width="100%%"><a href="javascript:toggleZoom()"><img class="gallery" width="%s" height="%s" id="the_image" src="%s" /></a></td>
-      </tr>
-    </table>
-  </p>
-</body></html>
-''' % (img.caption, _('Previous'), _('Close'), _('Next'),
-        self.previewSize[0], self.previewSize[1], unicode(img.imageSrc))
-
-        finally:
-            _ShowsResources.preview()
-        # Create the HTML popup window
-        tmpDir = TempDirPath()
-        htmlPath = Path(tmpDir/'galleryPopup.html')
-        log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
-        try:
-            htmlFile = codecs.open(htmlPath, encoding='utf-8', mode='wb')
-            htmlFile.write(data)
-            htmlFile.close()
-            if not self._htmlResource is None:
-                self._htmlResource.delete()
-            self._htmlResource = Resource(self, htmlPath)
-        finally:
-            htmlPath.remove()
 
     # Upgrade Methods
 
