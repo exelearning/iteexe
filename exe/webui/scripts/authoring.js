@@ -677,7 +677,21 @@ var $exeAuthoring = {
             }
         }
     },
+    checkBodyClassName : function(){
+        if (typeof($exeAuthoring.applets)=='undefined') {
+            $exeAuthoring.applets = document.getElementsByTagName("APPLET");
+        }
+        if ($exeAuthoring.applets.length!=0) {
+            var a = $exeAuthoring.applets;
+            var i = a.length;
+            var k = "visible"
+            var c = parent.document.body.className;
+            if (c.indexOf(" x-body-masked")!=-1) k = "hidden";
+            while (i--) a[i].style.visibility=k;
+        }
+    },
     ready : function(){
         $exeAuthoring.changeFlowPlayerPathInIE();
+        if (navigator.userAgent.toLowerCase().indexOf('chrome')!=-1) setInterval($exeAuthoring.checkBodyClassName, 500);
     }
 }
