@@ -680,18 +680,26 @@ var $exeAuthoring = {
     checkBodyClassName : function(){
         if (typeof($exeAuthoring.applets)=='undefined') {
             $exeAuthoring.applets = document.getElementsByTagName("APPLET");
+            $exeAuthoring.objects = document.getElementsByTagName("OBJECT");
         }
+        var k = "visible"
+        var c = parent.document.body.className;            
+        if (c.indexOf(" x-body-masked")!=-1) k = "hidden";
         if ($exeAuthoring.applets.length!=0) {
             var a = $exeAuthoring.applets;
             var i = a.length;
-            var k = "visible"
-            var c = parent.document.body.className;
-            if (c.indexOf(" x-body-masked")!=-1) k = "hidden";
             while (i--) a[i].style.visibility=k;
+        }
+        if (navigator.appName == "Microsoft Internet Explorer" && $exeAuthoring.objects.length!=0) {
+            var o = $exeAuthoring.objects;
+            var z = o.length;
+            while (z--) o[z].style.visibility=k;
         }
     },
     ready : function(){
         $exeAuthoring.changeFlowPlayerPathInIE();
-        if (navigator.userAgent.toLowerCase().indexOf('chrome')!=-1) setInterval($exeAuthoring.checkBodyClassName, 500);
+        var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome')!=-1;
+        var is_IE = navigator.appName == "Microsoft Internet Explorer";
+        if (is_chrome || is_IE) setInterval($exeAuthoring.checkBodyClassName, 500);
     }
 }
