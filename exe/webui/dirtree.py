@@ -107,7 +107,6 @@ class DirTreePage(RenderableResource):
                     realname = '/'
                 else:
                     realname = parent.abspath()
-                items.append({ "name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode })
                 for d in pathdir.listdir():
                     if d.isdir():
                         pathtype = "directory"
