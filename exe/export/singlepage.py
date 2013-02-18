@@ -94,6 +94,15 @@ class SinglePage(Page):
         """
         Returns an XHTML string for the header of this page.
         """
+        def hasGalleryIdevice(node):
+            hasGallery = common.hasGalleryIdevice(node)
+            if not hasGallery:
+                for child in node.children:
+                    if hasGalleryIdevice(child):
+                        return True
+            return hasGallery
+        
+        hasGallery = hasGalleryIdevice(self.node)
         html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
         html += u'Transitional//EN" '
@@ -102,7 +111,7 @@ class SinglePage(Page):
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
-        if common.hasGalleryIdevice(self.node):
+        if hasGallery:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         html += u"<title>"
@@ -111,7 +120,7 @@ class SinglePage(Page):
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
-        if common.hasGalleryIdevice(self.node):
+        if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         if for_print:
