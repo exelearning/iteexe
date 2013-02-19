@@ -80,12 +80,18 @@ Ext.define('eXe.controller.filepicker.File', {
         if (e.getKey() == e.ENTER) {
             if (this.getFilePicker().type == eXe.view.filepicker.FilePicker.modeSave)
                 this.onSave();
-            else if (this.getFilePicker().type == eXe.view.filepicker.FilePicker.modeGetFolder || field.value) {
-               this.onOpen();
+            else if (this.getFilePicker().type == eXe.view.filepicker.FilePicker.modeGetFolder || field.rawValue) {
+	        	if (!field.isExpanded || field.getPicker().getNodes().length == 0) {
+               		this.onOpen();
+	        	}
             }
         }
-        else if (e.getKey() == e.ESC)
-            this.onCancel();
+        else if (e.getKey() == e.ESC) {
+        	if (field.rawValue || field.isExpanded)
+        		field.clearValue();
+        	else
+	            this.onCancel();
+        }
     },
 	onLoadFileList: function(directory) {
 		if ( !directory ) {
@@ -94,6 +100,7 @@ Ext.define('eXe.controller.filepicker.File', {
 		var fileStore = this.getFilepickerFileStore();
 		fileStore.load({
 			callback: function() {
+				this.getPlaceField().clearValue();
 				this.getPlaceField().focus();
 			},
 			params: {
@@ -157,11 +164,9 @@ Ext.define('eXe.controller.filepicker.File', {
             record;
         if (fp.type == eXe.view.filepicker.FilePicker.modeGetFolder) {
             if (place.rawValue) {
-                record = store.findRecord("name", place.rawValue);
+                record = store.findRecord("name", place.rawValue, 0, false, true, true);
                 if (record && record.get('type') == "directory") {
-	                fp.status = eXe.view.filepicker.FilePicker.returnOk;
-	                fp.file = { 'path': record.get('realname') };
-	                fp.destroy();
+	                this.application.fireEvent( "dirchange" , record.get('realname') );
                 }
             }
             else {
@@ -176,21 +181,35 @@ Ext.define('eXe.controller.filepicker.File', {
         }
         else if (fp.type == eXe.view.filepicker.FilePicker.modeOpenMultiple) {
                 var filelist = this.getFilesList();
-                var selected = filelist.getSelectionModel().getSelection(), record;
-                if (selected.length) {
-                    fp.files = []
-                    for (record in selected) {
-                        if (selected[record].get('type') != "directory") {
-		                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
-		                    fp.files.push({ 'path': selected[record].get('realname') });
+				if (place.rawValue) {
+	                record = store.findRecord("name", place.rawValue, 0, false, true, true);
+	                if (record)
+		                if (record.get('type') == "directory") {
+		                    this.application.fireEvent( "dirchange" , record.get('realname') );
 		                }
-                    }
-                    fp.destroy();
-                }
+		                else {
+			                fp.status = eXe.view.filepicker.FilePicker.returnOk;
+							fp.files.push({ 'path': record.get('realname') });
+							fp.destroy();
+		                }
+				}
+				else {
+	                var selected = filelist.getSelectionModel().getSelection(), record;
+	                if (selected.length) {
+	                    fp.files = []
+	                    for (record in selected) {
+	                        if (selected[record].get('type') != "directory") {
+			                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
+			                    fp.files.push({ 'path': selected[record].get('realname') });
+			                }
+	                    }
+	                    fp.destroy();
+	                }
+				}
         }
         else {
 			if (place.rawValue) {
-                record = store.findRecord("name", place.rawValue);
+                record = store.findRecord("name", place.rawValue, 0, false, true, true);
                 if (record)
 	                if (record.get('type') == "directory") {
 	                    this.application.fireEvent( "dirchange" , record.get('realname') );
@@ -221,7 +240,7 @@ Ext.define('eXe.controller.filepicker.File', {
 			};
 		fp.status = eXe.view.filepicker.FilePicker.returnOk;
 		if (place.rawValue) {
-            record = store.findRecord("name", place.rawValue);
+            record = store.findRecord("name", place.rawValue, 0, false, true, true);
             if (record) {
                 if (record.get('type') != "directory")
     				this.confirmReplace( onReplaceOk );
