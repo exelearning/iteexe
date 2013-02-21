@@ -61,26 +61,30 @@ input.feedbackbutton{
 	font-family:Monaco,Courier,monospace; /* Fuente */
 }
 
+/* base.css */
+.block,.feedback{padding:0}
+input.feedbackbutton{margin:0}
+li{list-style-position:outside}
+
 /* ********************************************* */
 /* **** OTRAS DEFINICIONES ******************** */
 /* ******************************************* */
 
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
-a{text-decoration:none}
-a:hover{text-decoration:underline}
-#nodeTitle{font-size:1.5em;font-weight:bold;margin:0;text-align:left}
-#main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg)}
-#header{height:54px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding-bottom:10px;font-size:1.1em;font-weight:bold}
+#nodeTitle{font-size:1.5em;margin:0;text-align:left;display:block}
+#main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg);text-align:left}
+#header{height:54px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding-left:10px;padding-bottom:10px;font-size:1.1em;font-weight:bold}
 #header h1{margin:0;font-size:1em}
 #main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 #main h2{font-size:1.4em}
 #main h3{font-size:1.3em}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}
 .iDevice{margin:10px 0 20px 0}
-.iDeviceTitle{font-size:1.2em;font-weight:bold;vertical-align:bottom} 
+.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
 .iDevice_icon{width:30px;height:auto;margin-right:5px}
-.iDevice_inner{padding: 10px 20px 20px 20px;border-width:1px 0 1px 0;border-style:dotted}
+.iDevice_inner{padding: 10px 20px;border-width:1px 0 1px 0;border-style:dotted}
 #pageFooter{font-size:.9em}
 #pageFooter p{margin:3px 0}
 .pre-code{border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
@@ -91,6 +95,3 @@ a:hover{text-decoration:underline}
 /* ********************************************************* */ 
 
 #main h2.iDeviceTitle{display:inline;font-size:1.2em}
-
-/* To review */
-.question .answer p{margin:0}

@@ -5,7 +5,6 @@
      style for  xxxxx
    ================================================== */
 
-
 body {
 	margin: 0;
 	padding: 0;
@@ -17,6 +16,17 @@ body {
 a { 
     color: #003366;
     border: 0;
+}
+
+#header {
+    height: auto;
+    padding-left: 0;
+    font-size: medium;
+    font-weight: normal;
+}
+
+li {
+    list-style-position:outside
 }
 
 #content {

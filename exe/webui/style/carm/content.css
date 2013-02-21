@@ -10,13 +10,18 @@
      
    ================================================== */
    
+/* base.css */
+.iDeviceTitle {
+    display:inline
+}
+   
 /*Reseteo generico de estilos */
 
-* {
+/** {
 	padding: 0;
     margin: 5; 
 	font-family: Verdana,Arial, Helvetica, sans-serif !important;
-}
+}*/
 
 /* Estilo general del cuerpo de los contenidos */
 body, html 
@@ -29,6 +34,7 @@ body, html
 
 body
 {
+    font-size:0.9em;
 	font-family: Verdana,Arial, Helvetica, sans-serif !important;
 }
 
@@ -156,7 +162,7 @@ div#nodeDecoration
 }
 
 /* Cabecera para cuando exportemos a web sola para imprimir */
-#header{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
+#header{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px;font-size:1.5em}
 /*=====================================================
 			ESTILOS COMUNES PARA TODOS LOS iDEVICES
 ========================================================*/
