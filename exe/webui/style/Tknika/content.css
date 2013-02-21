@@ -63,9 +63,7 @@ input.feedbackbutton{
 }
 
 .pre-code{
-	background:#112C4A; /* Color de fondo del código de ordenador intertado desde TinyMCE */
 	color:#EBF5D3; /* Color del texto */
-	font-family:Monaco,Courier,monospace; /* Fuente */
 }
 
 /* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
@@ -84,8 +82,6 @@ input.feedbackbutton{
 /* ******************************************* */
 
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
-a{text-decoration:none}
-a:hover{text-decoration:underline}
 #nodeTitle{
 	font-size:1.8em;
 	font-weight:bold;
@@ -96,6 +92,7 @@ a:hover{text-decoration:underline}
 	border-left-style: solid;
 	border-left-color: #c6d644;
 	padding-left: 10px;
+    display:block;
 }
 #main #nodeDecoration{
 	padding:20px 15px 5px 15px;
@@ -111,6 +108,7 @@ a:hover{text-decoration:underline}
 	border-right-style: none;
 	border-bottom-style: none;
 	border-left-style: none;
+    text-align:left;
 }
 #header{
 	height:35px;
@@ -133,6 +131,7 @@ a:hover{text-decoration:underline}
 	line-height: 1em;
 }
 #main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 #main h2{font-size:1.4em}
 #main h3{font-size:1.3em}
 #main h4{font-size:1.2em}
@@ -159,6 +158,7 @@ a:hover{text-decoration:underline}
 	color: #333;
 	height: 60px;
 	margin-left: 20px;
+    top:auto;
 } 
 .iDevice_icon{
 	width:60px;
@@ -189,10 +189,8 @@ a:hover{text-decoration:underline}
 }
 #pageFooter{font-size:.9em}
 #pageFooter p{margin:3px 0}
-.pre-code{border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
-/*.image_text {border:1px solid #9D9D9D;background:transparent;padding: 4px;margin:0px 20px 4px 4px}*/
-
-
+li{list-style-position:outside}
+input.feedbackbutton{margin:0}
 
 #main h2.iDeviceTitle{
 	display:inline;
