@@ -145,7 +145,8 @@ h1#nodeTitle
 	color: #FFFFFF;
 	background-color: #627796;
     font-weight: bold;
-    font-size: 20px;
+    display: block;
+	font-size: 20px;
 	line-height: 25px;
 	border-top: 3px double #CCCCCC;
 	border-bottom: 3px double #CCCCCC;
@@ -767,4 +768,9 @@ img
 .pre-code {
  	background:#112C4C;
 	color: #E7ECF1;
+	font-family:Monaco, Courier, monospace;
+	font-size: 12px;
+	overflow: auto;
+	padding: 20px;
+	border-radius: 9px;
 }
