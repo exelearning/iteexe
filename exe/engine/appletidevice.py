@@ -173,7 +173,7 @@ you created in Geogebra.</p>""")
                 SCENE_NUM = 1
             else:
                 SCENE_NUM = int(filePath[:filePath.find(",")])
-        if (filePath.endswith(".htm") or filePath.endswith(".html")):
+        if self.type == "descartes" and (filePath.endswith(".htm") or filePath.endswith(".html")):
             global url
             url = filePath
             self.appletCode = self.getAppletcodeDescartes(filePath)
