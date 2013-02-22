@@ -14,16 +14,13 @@ a{text-decoration:none}
 a:hover,a:focus{text-decoration:underline}
 img.submit,img.help,img.info,img.gallery{border:0}
 li{list-style-position:inside}
-#nodeTitle{font-weight:bold}
 div#nodeDecoration{padding:0.1em;border-bottom:0em;text-align:right}
 .block,.feedback{display:block;padding-top:0.25em;padding-bottom:0.25em}
-/* New .feedback{font-family:times,serif;font-size:120%} */
+.feedback{font-family:times,serif;font-size:120%}
 /* --- iDevice -- */
 .emphasis0{padding-left:0;margin:0}
 .iDeviceTitle{font-weight:bold;position:relative;top:-18px;/* aligns title up with middle of icon */}
 input.feedbackbutton{margin-top:10px;margin-bottom:10px}
-/* New p.reading_reference{font-style:italic} */
-/* New p.reading_feedback{margin:20px;padding:8px} */
 /* 'tips for completion' and 'pedagogical help' */
 .popupDiv{background-color:#EDEFF0;border:2px solid #607489;padding:0 4px 4px 4px;margin-left:15px;text-align:left;z-index:99;border-radius:3px}
 .popupDivLabel{text-align:center;font:message-box;font-weight:bold;color:#fff;cursor:move;margin:0 -4px;background-image:url(popup_bg.gif)}
@@ -55,7 +52,13 @@ div.tleft{float:left;margin-right:.5em;border-width:.5em 1.4em .8em 0}
 #toc ul,.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding-left:0;text-align:left}
 #toc ul ul,.toc ul ul{margin:0 0 0 2em}
 #toc .toctoggle,.toc .toctoggle{font-size:94%}
-
+@media print{
+    .feedback{display:block}
+    .feedbackbutton{display:none}
+    #navcontainer{display:none}
+    #main{margin-left:10px}
+    div.node{page-break-after:always}
+}
 /*
 ====================
 The New eXeLearning
@@ -65,11 +68,3 @@ The New eXeLearning
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
 /* To review */
 .question .answer p{margin:0}
-
-@media print{
-    .feedback{display:block}
-    .feedbackbutton{display:none}
-    #navcontainer{display:none}
-    #main{margin-left:10px}
-    div.node{page-break-after:always}
-}

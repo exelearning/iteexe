@@ -190,6 +190,7 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 #pageFooter p{margin:3px 0}
 li{list-style-position:outside}
 input.feedbackbutton{margin:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 
 #main h2.iDeviceTitle{
 	display:inline;

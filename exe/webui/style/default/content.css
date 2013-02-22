@@ -32,6 +32,7 @@ a:hover {
     text-align:left;
     padding-right: 30px;
     display:inline;
+    font-weight:bold;
 }
 
 div#nodeDecoration {
