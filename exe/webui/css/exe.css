@@ -126,3 +126,6 @@ body.exe-ims #lbOuterContainer,body.exe-scorm #lbOuterContainer{border-color:#cc
 #lbTitleTop, #lbTopNav{margin-top:0.3em}
 #lbTitleTop, #lbTitleBottom{display:block; font-weight:bold}
 #lbClose, #lbPrint, #lbPlay, #lbPause{margin:0 0 6px 8px}
+
+/* Authoring page */
+.authoring-page-masked applet,.ie.authoring-page-masked object{visibility:hidden}

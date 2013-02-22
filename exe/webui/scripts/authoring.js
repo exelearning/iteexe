@@ -659,47 +659,43 @@ var exe_tinymce = {
 
 var $exeAuthoring = {
     changeFlowPlayerPathInIE : function(){
-        if (navigator.appName == "Microsoft Internet Explorer") {
-            var objs = document.getElementsByTagName("OBJECT");
-            var i = objs.length;
-            while (i--) {
-                if(objs[i].type=="application/x-shockwave-flash" && objs[i].data.indexOf("/flowPlayer.swf")!=-1) {
-                    objs[i].style.display="none";
-                    var h = objs[i].height;
-                    var w = objs[i].width;
-                    var s = objs[i].data;
-                    var e = document.createElement("DIV");
-                    var o = objs[i].innerHTML;
-                    o = o.replace("'playlist': [ { 'url': 'resources/","'playlist': [ {'url':'http://"+window.location.host+"/"+exe_package_name+"/resources/");
-                    e.innerHTML = '<object data="'+s+'" width="'+w+'"height="'+h+'">'+o+'</object>';
-                    objs[i].parentNode.insertBefore(e,objs[i]);                                
-                }
+        var objs = document.getElementsByTagName("OBJECT");
+        var i = objs.length;
+        while (i--) {
+            if(objs[i].type=="application/x-shockwave-flash" && objs[i].data.indexOf("/flowPlayer.swf")!=-1) {
+                objs[i].style.display="none";
+                var h = objs[i].height;
+                var w = objs[i].width;
+                var s = objs[i].data;
+                var e = document.createElement("DIV");
+                var o = objs[i].innerHTML;
+                o = o.replace("'playlist': [ { 'url': 'resources/","'playlist': [ {'url':'http://"+window.location.host+"/"+exe_package_name+"/resources/");
+                e.innerHTML = '<object data="'+s+'" width="'+w+'"height="'+h+'">'+o+'</object>';
+                objs[i].parentNode.insertBefore(e,objs[i]);                                
             }
-        }
+        }        
     },
     checkBodyClassName : function(){
-        if (typeof($exeAuthoring.applets)=='undefined') {
-            $exeAuthoring.applets = document.getElementsByTagName("APPLET");
-            $exeAuthoring.objects = document.getElementsByTagName("OBJECT");
-        }
-        var k = "visible"
-        var c = parent.document.body.className;            
-        if (c.indexOf(" x-body-masked")!=-1) k = "hidden";
-        if ($exeAuthoring.applets.length!=0) {
-            var a = $exeAuthoring.applets;
-            var i = a.length;
-            while (i--) a[i].style.visibility=k;
-        }
-        if (navigator.appName == "Microsoft Internet Explorer" && $exeAuthoring.objects.length!=0) {
-            var o = $exeAuthoring.objects;
-            var z = o.length;
-            while (z--) o[z].style.visibility=k;
-        }
+        var c = parent.document.body.className;
+        var _c = document.body.className;
+        if (c.indexOf(" x-body-masked")!=-1) _c=$exeAuthoring.bodyClassName+" authoring-page-masked";
+        else _c=$exeAuthoring.bodyClassName;
+        document.body.className=_c;
     },
     ready : function(){
-        $exeAuthoring.changeFlowPlayerPathInIE();
-        var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome')!=-1;
-        var is_IE = navigator.appName == "Microsoft Internet Explorer";
-        if (is_chrome || is_IE) setInterval($exeAuthoring.checkBodyClassName, 500);
+        if (top.Ext) {
+            if (top.Ext.isIE || top.Ext.isChrome) {
+                var c = document.body.className;
+                if (top.Ext.isIE) {
+                    c+=" ie";
+                    $exeAuthoring.changeFlowPlayerPathInIE();
+                } else if (top.Ext.isChrome) {
+                    c+=" chrome";
+                }
+                document.body.className = c;
+                $exeAuthoring.bodyClassName = c;
+                setInterval($exeAuthoring.checkBodyClassName, 500);
+            }
+        }
     }
 }

@@ -55,6 +55,13 @@ div.tleft{float:left;margin-right:.5em;border-width:.5em 1.4em .8em 0}
 #toc ul,.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding-left:0;text-align:left}
 #toc ul ul,.toc ul ul{margin:0 0 0 2em}
 #toc .toctoggle,.toc .toctoggle{font-size:94%}
+
+/*
+====================
+The New eXeLearning
+====================
+*/
+/* Include these styles in the old themes */
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
 /* To review */
 .question .answer p{margin:0}
