@@ -44,14 +44,12 @@ var conf = {
 
 //Call authoring page when zindex is modified and consider problematic plugins with no zindex support
 Ext.override(Ext.WindowManager, {
-    lastCompId: null,
     bringToFront: function(comp) {
         var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
 
         me.callParent(arguments);
-        if (!this.lastCompId && authoringPanel[0].isVisible()) {
-            this.lastCompId = comp.id;
-	        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        if (authoringPanel[0].isVisible()) {
+            var authoring = Ext.get('authoringIFrame').dom.contentWindow;
 	        if (authoring && authoring.hideObjectTags)
 	            authoring.hideObjectTags();
         }
@@ -60,11 +58,24 @@ Ext.override(Ext.WindowManager, {
         var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
 
         me.callParent(arguments);
-        if (this.lastCompId == comp.id) {
-            this.lastCompId = null;
-	        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
-	        if (authoring && authoring.showObjectTags)
-	            authoring.showObjectTags();
+        if (authoringPanel[0].isVisible()) {
+            if (!this.getActive()) {
+		        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+		        if (authoring && authoring.showObjectTags)
+		            authoring.showObjectTags();
+            }
+        }
+    },
+    _hideModalMask: function() {
+        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
+
+        me.callParent(arguments);
+		if (authoringPanel[0].isVisible()) {
+            if (!this.getActive()) {
+		        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+		        if (authoring && authoring.showObjectTags)
+		            authoring.showObjectTags();
+            }
         }
     }
 });
