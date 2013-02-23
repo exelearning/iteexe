@@ -675,27 +675,10 @@ var $exeAuthoring = {
             }
         }        
     },
-    checkBodyClassName : function(){
-        var c = parent.document.body.className;
-        var _c = document.body.className;
-        if (c.indexOf(" x-body-masked")!=-1) _c=$exeAuthoring.bodyClassName+" authoring-page-masked";
-        else _c=$exeAuthoring.bodyClassName;
-        document.body.className=_c;
-    },
     ready : function(){
         if (top.Ext) {
-            if (top.Ext.isIE || top.Ext.isChrome) {
-                var c = document.body.className;
-                if (top.Ext.isIE) {
-                    c+=" ie";
-                    $exeAuthoring.changeFlowPlayerPathInIE();
-                } else if (top.Ext.isChrome) {
-                    c+=" chrome";
-                }
-                document.body.className = c;
-                $exeAuthoring.bodyClassName = c;
-                setInterval($exeAuthoring.checkBodyClassName, 500);
-            }
+            if (top.Ext.isIE)
+                $exeAuthoring.changeFlowPlayerPathInIE();
         }
     }
 }
