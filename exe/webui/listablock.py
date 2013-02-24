@@ -285,7 +285,7 @@ class ListaElement(ElementWithResources):
         html += ['<input type="hidden" name="clozeFlag%s.strictMarking" id="clozeFlag%s.strictMarking" value="false"/>' % (self.id,self.id)]
         html += ['<input type="hidden" name="clozeFlag%s.checkCaps" id="clozeFlag%s.checkCaps" value="false"/>' % (self.id,self.id)]
         html += ['<input type="hidden" name="clozeFlag%s.instantMarking" id="clozeFlag%s.instantMarking" value="false"/>' % (self.id,self.id)]
-        html += ['<script>var YOUR_SCORE_IS = "Your score is ";</script>']
+        html += ['<script>var YOUR_SCORE_IS = "%s";</script>' % _('Your score is ')]
         html += ['<div class="score" id="clozeScore%s"></div>' % self.id]
         html += ['</div>\n']
         return '\n'.join(html) + '</div>'
