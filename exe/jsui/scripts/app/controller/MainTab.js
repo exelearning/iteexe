@@ -225,8 +225,8 @@ Ext.define('eXe.controller.MainTab', {
 	            selmodel = outlineTreePanel.getSelectionModel();
                 selectednode = selmodel.getSelection()[0].get('id');
             if (currentNode == selectednode || (action == "move" && selectednode == destNode) || action == "ChangeStyle") {
-		        var authoring = Ext.get('authoringIFrame').dom;
-		        authoring.src = location.pathname + '/authoring?clientHandleId=' + nevow_clientHandleId + "&currentNode=" + selectednode;
+		        var authoring = Ext.ComponentQuery.query('#authoring')[0];
+		        authoring.load(location.pathname + '/authoring?clientHandleId=' + nevow_clientHandleId + "&currentNode=" + selectednode);
             }
         }
     }

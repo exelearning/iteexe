@@ -142,7 +142,7 @@ Ext.define('eXe.controller.Toolbar', {
             }
         });
         
-        var keymap_config = [
+        this.keymap_config = [
 			{
 				key: Ext.EventObject.N,
 				ctrl: true,
@@ -244,12 +244,7 @@ Ext.define('eXe.controller.Toolbar', {
 	            defaultEventAction: "stopEvent"
             }
         ];
-        var authoring = Ext.get(Ext.get('authoringIFrame').dom);
-        authoring.on("load", function(evt, el, o) {
-           var body = Ext.get(authoring.dom.contentDocument.body);
-           var keymap = new Ext.util.KeyMap(body, keymap_config);
-        }, this);
-        var keymap = new Ext.util.KeyMap(Ext.getBody(), keymap_config);
+        var keymap = new Ext.util.KeyMap(Ext.getBody(), this.keymap_config);
     },
 
     focusMenu: function(button) {
@@ -670,7 +665,7 @@ Ext.define('eXe.controller.Toolbar', {
 			if (item.parentMenu.items.getAt(i) != item)
 				item.parentMenu.items.getAt(i).setChecked(false);
 		}
-        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);
     },
@@ -786,7 +781,7 @@ Ext.define('eXe.controller.Toolbar', {
 	// Submit any open iDevices
 	saveWorkInProgress: function() {
 	    // Do a submit so any editing is saved to the server
-        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring && authoring.getContentForm) {
 		    var theForm = authoring.getContentForm();
 		    if (theForm)

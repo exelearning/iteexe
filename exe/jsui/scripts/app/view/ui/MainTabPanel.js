@@ -24,7 +24,8 @@ Ext.define('eXe.view.ui.MainTabPanel', {
         'eXe.view.forms.DublinCoreDataPanel',
         'eXe.view.forms.LomDataPanel',
         'eXe.view.forms.ExportPanel',
-        'eXe.view.forms.PackagePanel'
+        'eXe.view.forms.PackagePanel',
+        'Ext.ux.IFrame'
     ],
     activeTab: 0,
 
@@ -34,9 +35,10 @@ Ext.define('eXe.view.ui.MainTabPanel', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'component',
-                    itemId: 'authoring_panel',
-                    contentEl: 'authoringIFrame',
+                    xtype: 'uxiframe',
+                    itemId: 'authoring',
+                    src: authoringIFrameSrc,
+                    id: 'authoringIFrame1',
                     title: _('Authoring')
                 },
                 {

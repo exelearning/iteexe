@@ -240,7 +240,7 @@ Ext.define('eXe.controller.Outline', {
     },
 
     loadNodeOnAuthoringPage: function(node) {
-        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring && authoring.submitLink)
     		authoring.submitLink('changeNode', node, 0);
     },

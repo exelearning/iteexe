@@ -24,7 +24,9 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey];
+var Ext = parent.Ext;
+var eXe = parent.eXe;
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey, loadKeymap];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -395,14 +397,14 @@ function addFile(blockId, title, filter) {
 function getContentForm() {
     var theForm;
 
-    theForm = document.getElementById('contentForm')
+    theForm = document.getElementById('contentForm');
     if (!theForm) {
-    	if (top["authoringIFrame1"] && top["authoringIFrame1"].document)
-        	theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+        if (top["authoringIFrame1-frame"] && top["authoringIFrame1-frame"].document)
+            theForm = top["authoringIFrame1-frame"].document.getElementById('contentForm');
     }
     if (!theForm) {
-        if (document.getElementById('authoringIFrame') && document.getElementById('authoringIFrame').contentDocument)
-            theForm = document.getElementById('authoringIFrame').contentDocument.getElementById('contentForm')
+        if (document.getElementsByName('authoringIFrame1-frame') && document.getElementsByName('authoringIFrame1-frame')[0].contentDocument)
+            theForm = document.getElementsByName('authoringIFrame')[0].contentDocument.getElementById('contentForm');
     }
 
     return theForm;
@@ -528,6 +530,11 @@ function preventEscKey() {
             window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
 }
 
+function loadKeymap() {
+	var toolbar = eXe.app.getController('Toolbar'),
+	    authoring = Ext.ComponentQuery.query('#authoring')[0],
+	    keymap = new Ext.util.KeyMap(authoring.getBody(), toolbar.keymap_config);
+}
 /* *********************************** */
 /* WYSIWYG Editor and common settings */
 /* ********************************* */
@@ -542,7 +549,7 @@ var eXeLearning_settings = {
 function getTinyMCELang(lang){
     if (lang=="ca@valencia") lang = "ca";
 	var defaultLang = "en";
-	for (i=0;i<tinyMCE_languages.length;i++) {
+	for (var i=0;i<tinyMCE_languages.length;i++) {
 		if (tinyMCE_languages[i]===lang) defaultLang = lang;
 	}
 	return defaultLang;
