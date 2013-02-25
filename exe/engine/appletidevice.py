@@ -197,15 +197,6 @@ you created in Geogebra.</p>""")
                     self.appletCode = self.getAppletcodeScratch(resourceFile.basename())
                 if self.type == "descartes":
                     self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
-                ## next code should be used to load in the editor the HTML code of the html file:
-                # if self.type == "other":
-                #     if filePath.endswith(".html") or filePath.endswith(".htm"):
-                #         content = open(filePath, 'r')
-                #         str = content.read()
-                #         self.appletCode = str
-                #         content.close()
-                #    else:
-                #        log.error('File %s is not a HTML file' % resourceFile)
             else:
                 log.error('File %s is not a file' % resourceFile)
     
@@ -227,18 +218,6 @@ you created in Geogebra.</p>""")
         <applet code="geogebra.GeoGebraApplet.class" archive="geogebra.jar" width="750" height="450">
             <param name="filename" value="%s">
             <param name="framePossible" value="true">
-            <param name="java_arguments" value="-Xmx1024m"/>
-            <param name="showResetIcon" value="true"/>
-            <param name="showAnimationButton" value="true"/>
-            <param name="errorDialogsActive" value="true"/>
-            <param name="enableRightClick" value="true"/>
-            <param name="enableLabelDrags" value="false"/>
-            <param name="showMenuBar" value="false"/>
-            <param name="showToolBar" value="true"/>
-            <param name="showToolBarHelp" value="true"/>
-            <param name="enableShiftDragZoom" value="true"/><param name="showAlgebraInput" value="false"/>
-            <param name="useBrowserForJS" value="false" />
-            <param name="cache_archive" value="geogebra.jar,geogebra_main.jar, geogebra_gui.jar, geogebra_cas.jar,geogebra_algos.jar, geogebra_export.jar, geogebra_javascript.jar,jlatexmath.jar, jlm_greek.jar, jlm_cyrillic.jar,geogebra_properties.jar" />
             Please <a href="http://java.sun.com/getjava"> install Java 1.4</a> (or later) to use this page.
         </applet> """ % filename
         
@@ -265,7 +244,6 @@ you created in Geogebra.</p>""")
         html = """
             <applet id="ProjectApplet" style="display:block" code="ScratchApplet" archive="ScratchApplet.jar" width="482" height="387">
             <param name="project" value="%s">
-            <param name="useBrowserForJS" value="false" />
             Please <a href="http://java.sun.com/getjava"> install Java 1.4</a> (or later) to use this page.
         </applet> """ % project
         
@@ -553,11 +531,6 @@ you created in Geogebra.</p>""")
             self.appletCode = self.getAppletcodeDescartes("")
             self.message       = ""
             self._typeInstruc  = x_(u"""Please write: scene number,URL (no spaces) that include it, eg: 3,http://example.com; clic on Upload button after.""")
-        if self.type == "other":
-            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .html or .htm file and clic on Upload button after for getting its content.""")
-
-
-
 
     def upgradeToVersion1(self):
         """
