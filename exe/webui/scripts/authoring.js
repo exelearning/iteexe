@@ -26,7 +26,8 @@
 // An array of js strings to evaluate on document load
 var Ext = parent.Ext;
 var eXe = parent.eXe;
-var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey, loadKeymap];
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
+	enableAnchors, gotoAnchor, preventEscKey, loadKeymap, hideObjectTags];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -486,8 +487,10 @@ function loadAuthoringPluginObjects() {
 }
 
 function hideObjectTags() {
-    for (var i=0; i < authoringPluginObjects.length; i++)
-        authoringPluginObjects[i].style.visibility = "hidden";
+	if (Ext.WindowManager.getActive()) {
+	    for (var i=0; i < authoringPluginObjects.length; i++)
+	        authoringPluginObjects[i].style.visibility = "hidden";
+	}
 }
 
 function showObjectTags() {
