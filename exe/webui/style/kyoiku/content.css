@@ -768,4 +768,9 @@ img
 .pre-code {
  	background:#112C4C;
 	color: #E7ECF1;
+	font-family:Monaco, Courier, monospace;
+	font-size: 12px;
+	overflow: auto;
+	padding: 20px;
+	border-radius: 9px;
 }

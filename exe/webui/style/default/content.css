@@ -27,10 +27,11 @@ a:hover {
 /* --- Styles for the node/page titles --- */
 
 #nodeTitle { 
-   color: #4d4d4d;
-   font-size: 32px;
-   text-align:left;
-   padding-right: 30px;
+    color: #4d4d4d;
+    font-size: 32px;
+    text-align:left;
+    padding-right: 30px;
+    font-weight:bold;
 }
 
 div#nodeDecoration {

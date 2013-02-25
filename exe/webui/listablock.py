@@ -264,25 +264,29 @@ class ListaElement(ElementWithResources):
         # Score string
         html += ['<div class="block">\n']
         
-       
+        """
         html += [common.button('submit%s' % self.id,
                     _(u"Check"),
                     id='submit%s' % self.id,
-                    onclick="clozeSubmit('%s')" % self.id),
-                  common.button('submit%s' % self.id,
-                    _(u"Check"),
-                    id='restart%s' % self.id,                   
-                    style="display: none;",
-                    onclick="clozeSubmit('%s')" % self.id),
+                    onclick="clozeSubmit('%s')" % self.id)
                 ]
-        
+        """
+        html += [common.button('getScore%s' % self.id,
+                    _(u"Check"),
+                    id='getScore%s' % self.id,
+                    onclick="showClozeScore('%s',1)" % self.id)]
+        if feedbackId:
+            html += [common.feedbackButton('feedback%s' % self.id,
+                        _(u"Show Feedback"),
+                        onclick = "toggleClozeFeedback('%s')" % self.id)]
+         
         codotras=self.ecrypt(self.field.otras)
         html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   
         html += ['<input type="hidden" name="clozeFlag%s.strictMarking" id="clozeFlag%s.strictMarking" value="false"/>' % (self.id,self.id)]
         html += ['<input type="hidden" name="clozeFlag%s.checkCaps" id="clozeFlag%s.checkCaps" value="false"/>' % (self.id,self.id)]
         html += ['<input type="hidden" name="clozeFlag%s.instantMarking" id="clozeFlag%s.instantMarking" value="false"/>' % (self.id,self.id)]
-       
-        html += ['<div id="clozeScore%s"></div>' % self.id]
+        html += ['<script>var YOUR_SCORE_IS = "%s";</script>' % _('Your score is ')]
+        html += ['<div class="score" id="clozeScore%s"></div>' % self.id]
         html += ['</div>\n']
         return '\n'.join(html) + '</div>'
     

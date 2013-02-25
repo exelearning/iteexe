@@ -25,7 +25,8 @@ function _(msg) {
 }
 
 Ext.Loader.setConfig({
-    enabled: true
+    enabled: true,
+    paths: { 'Ext.ux': 'jsui/extjs/examples/ux' }
 });
 
 var conf = {
@@ -44,27 +45,38 @@ var conf = {
 
 //Call authoring page when zindex is modified and consider problematic plugins with no zindex support
 Ext.override(Ext.WindowManager, {
-    lastCompId: null,
     bringToFront: function(comp) {
-        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
+        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring')[0];
 
         me.callParent(arguments);
-        if (!this.lastCompId && authoringPanel[0].isVisible()) {
-            this.lastCompId = comp.id;
-	        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        if (authoringPanel.isVisible()) {
+            var authoring = authoringPanel.getWin();
 	        if (authoring && authoring.hideObjectTags)
 	            authoring.hideObjectTags();
         }
     },
     onComponentHide: function(comp) {
-        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring_panel');
+        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring')[0];
 
         me.callParent(arguments);
-        if (this.lastCompId == comp.id) {
-            this.lastCompId = null;
-	        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
-	        if (authoring && authoring.showObjectTags)
-	            authoring.showObjectTags();
+        if (authoringPanel.isVisible()) {
+            if (!this.getActive()) {
+		        var authoring = authoringPanel.getWin();
+		        if (authoring && authoring.showObjectTags)
+		            authoring.showObjectTags();
+            }
+        }
+    },
+    _hideModalMask: function() {
+        var me = this, authoringPanel = Ext.ComponentQuery.query('#authoring')[0];
+
+        me.callParent(arguments);
+		if (authoringPanel.isVisible()) {
+            if (!this.getActive()) {
+		        var authoring = authoringPanel.getWin();
+		        if (authoring && authoring.showObjectTags)
+		            authoring.showObjectTags();
+            }
         }
     }
 });
@@ -127,11 +139,12 @@ Ext.application({
 
         if (Ext.isGecko || Ext.isSafari)
         	window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
-        
+
         var cmp1 = Ext.create('eXe.view.ui.eXeViewport', {
             renderTo: Ext.getBody()
         });
         cmp1.show();
+
         setTimeout(function(){
 		    Ext.get('loading').hide();
 		    Ext.get('loading-mask').fadeOut();

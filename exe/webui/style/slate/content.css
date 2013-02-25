@@ -37,6 +37,7 @@ li {
     color: #514E4C;       /* styles for the title of the page/node */
     font-size: 1.6em;
     display: inline;
+    font-weight:bold;
 }
 
 div#nodeDecoration {      /* style for any decoration around title of page/node */

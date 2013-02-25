@@ -156,9 +156,9 @@ class MainPage(RenderableLivePage):
             self.webServer.monitoring = True
             self.webServer.monitor()
 
-    def render_prePath(self, ctx, data):
-        """Fills in the package name to certain urls in the xul"""
-        return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'] + '?clientHandleId=' + IClientHandle(ctx).handleId)
+    def render_authoring_src(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var authoringIFrameSrc = '%s/authoring?clientHandleId=%s';" % ( self.package.name, IClientHandle(ctx).handleId) ]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")

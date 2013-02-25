@@ -24,7 +24,9 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey];
+var Ext = parent.Ext;
+var eXe = parent.eXe;
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey, loadKeymap];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -395,14 +397,14 @@ function addFile(blockId, title, filter) {
 function getContentForm() {
     var theForm;
 
-    theForm = document.getElementById('contentForm')
+    theForm = document.getElementById('contentForm');
     if (!theForm) {
-    	if (top["authoringIFrame1"] && top["authoringIFrame1"].document)
-        	theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+        if (top["authoringIFrame1-frame"] && top["authoringIFrame1-frame"].document)
+            theForm = top["authoringIFrame1-frame"].document.getElementById('contentForm');
     }
     if (!theForm) {
-        if (document.getElementById('authoringIFrame') && document.getElementById('authoringIFrame').contentDocument)
-            theForm = document.getElementById('authoringIFrame').contentDocument.getElementById('contentForm')
+        if (document.getElementsByName('authoringIFrame1-frame') && document.getElementsByName('authoringIFrame1-frame')[0].contentDocument)
+            theForm = document.getElementsByName('authoringIFrame')[0].contentDocument.getElementById('contentForm');
     }
 
     return theForm;
@@ -528,6 +530,11 @@ function preventEscKey() {
             window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
 }
 
+function loadKeymap() {
+	var toolbar = eXe.app.getController('Toolbar'),
+	    authoring = Ext.ComponentQuery.query('#authoring')[0],
+	    keymap = new Ext.util.KeyMap(authoring.getBody(), toolbar.keymap_config);
+}
 /* *********************************** */
 /* WYSIWYG Editor and common settings */
 /* ********************************* */
@@ -542,7 +549,7 @@ var eXeLearning_settings = {
 function getTinyMCELang(lang){
     if (lang=="ca@valencia") lang = "ca";
 	var defaultLang = "en";
-	for (i=0;i<tinyMCE_languages.length;i++) {
+	for (var i=0;i<tinyMCE_languages.length;i++) {
 		if (tinyMCE_languages[i]===lang) defaultLang = lang;
 	}
 	return defaultLang;
@@ -659,47 +666,26 @@ var exe_tinymce = {
 
 var $exeAuthoring = {
     changeFlowPlayerPathInIE : function(){
-        if (navigator.appName == "Microsoft Internet Explorer") {
-            var objs = document.getElementsByTagName("OBJECT");
-            var i = objs.length;
-            while (i--) {
-                if(objs[i].type=="application/x-shockwave-flash" && objs[i].data.indexOf("/flowPlayer.swf")!=-1) {
-                    objs[i].style.display="none";
-                    var h = objs[i].height;
-                    var w = objs[i].width;
-                    var s = objs[i].data;
-                    var e = document.createElement("DIV");
-                    var o = objs[i].innerHTML;
-                    o = o.replace("'playlist': [ { 'url': 'resources/","'playlist': [ {'url':'http://"+window.location.host+"/"+exe_package_name+"/resources/");
-                    e.innerHTML = '<object data="'+s+'" width="'+w+'"height="'+h+'">'+o+'</object>';
-                    objs[i].parentNode.insertBefore(e,objs[i]);                                
-                }
+        var objs = document.getElementsByTagName("OBJECT");
+        var i = objs.length;
+        while (i--) {
+            if(objs[i].type=="application/x-shockwave-flash" && objs[i].data.indexOf("/flowPlayer.swf")!=-1) {
+                objs[i].style.display="none";
+                var h = objs[i].height;
+                var w = objs[i].width;
+                var s = objs[i].data;
+                var e = document.createElement("DIV");
+                var o = objs[i].innerHTML;
+                o = o.replace("'playlist': [ { 'url': 'resources/","'playlist': [ {'url':'http://"+window.location.host+"/"+exe_package_name+"/resources/");
+                e.innerHTML = '<object data="'+s+'" width="'+w+'"height="'+h+'">'+o+'</object>';
+                objs[i].parentNode.insertBefore(e,objs[i]);                                
             }
-        }
-    },
-    checkBodyClassName : function(){
-        if (typeof($exeAuthoring.applets)=='undefined') {
-            $exeAuthoring.applets = document.getElementsByTagName("APPLET");
-            $exeAuthoring.objects = document.getElementsByTagName("OBJECT");
-        }
-        var k = "visible"
-        var c = parent.document.body.className;            
-        if (c.indexOf(" x-body-masked")!=-1) k = "hidden";
-        if ($exeAuthoring.applets.length!=0) {
-            var a = $exeAuthoring.applets;
-            var i = a.length;
-            while (i--) a[i].style.visibility=k;
-        }
-        if (navigator.appName == "Microsoft Internet Explorer" && $exeAuthoring.objects.length!=0) {
-            var o = $exeAuthoring.objects;
-            var z = o.length;
-            while (z--) o[z].style.visibility=k;
-        }
+        }        
     },
     ready : function(){
-        $exeAuthoring.changeFlowPlayerPathInIE();
-        var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome')!=-1;
-        var is_IE = navigator.appName == "Microsoft Internet Explorer";
-        if (is_chrome || is_IE) setInterval($exeAuthoring.checkBodyClassName, 500);
+        if (top.Ext) {
+            if (top.Ext.isIE)
+                $exeAuthoring.changeFlowPlayerPathInIE();
+        }
     }
 }

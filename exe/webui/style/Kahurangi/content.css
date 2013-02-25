@@ -32,6 +32,8 @@ a:hover {
     color: #006699;
     font-size: 20px;
     text-align: left;
+    display:inline;
+    font-weight:bold;
 }
 
 div#nodeDecoration {

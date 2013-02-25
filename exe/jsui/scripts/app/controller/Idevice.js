@@ -31,7 +31,7 @@ Ext.define('eXe.controller.Idevice', {
     },
     
     onIdeviceClick: function(view, record, item, index, e, eOpts) {
-        var authoring = Ext.get('authoringIFrame').dom.contentWindow;
+        var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring && authoring.submitLink) {
             var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
                 selected = outlineTreePanel.getSelectionModel().getSelection();

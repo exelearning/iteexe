@@ -54,6 +54,7 @@ li {list-style-position: inside;}
 #nodeTitle { 
     color: #3C5866;
     font-size: 18px;
+    font-weight:bold;
 }
 
 div#nodeDecoration {
