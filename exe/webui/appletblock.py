@@ -153,17 +153,17 @@ class AppletBlock(Block):
         if self.idevice.type != "descartes":
             html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
             html += u'value="%s" />\n' % _(u"Add files")
-            html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id, 
+            html += u'<input type="submit" name="%s" value="%s" />\n' % ("upload"+self.id, 
                                                                 _(u"Upload"))
         else:
             # Read URL user indicated:
-            html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
+            html += u'<input type="submit" name="%s" value="%s" />\n' % ("upload"+self.id,
                                                                 _(u"Accept URL"))   
             html += u'<br/>\n'
             # Upload some kind of file, like the rest of applets: 
             html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
             html += u'value="%s" />\n' % _(u"Add files")
-            html += u'<input type="submit" name="%s" value="%s"' % ("uploadother"+self.id,
+            html += u'<input type="submit" name="%s" value="%s" />\n' % ("uploadother"+self.id,
                                                                _(u"Upload"))
         html += common.elementInstruc(self.idevice.fileInstruc)
         html += u'<br/>\n'
