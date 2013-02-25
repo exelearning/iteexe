@@ -76,6 +76,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 handler: function() {
 		    		 this.onNodeAdd();
 		    	 },
+		         ctrl: true,
 		    	 scope: this,
 		    	 defaultEventAction: "stopEvent"
 		     },
@@ -84,6 +85,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 handler: function() {
 		    		 this.onNodeDel();
 		    	 },
+		         ctrl: true,
 		    	 scope: this,
 		    	 defaultEventAction: "stopEvent"
 		     },
