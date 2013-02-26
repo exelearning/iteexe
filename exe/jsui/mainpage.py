@@ -23,6 +23,7 @@ This is the main Javascript page.
 """
 
 import os
+import json
 import sys
 import logging
 import traceback
@@ -833,8 +834,11 @@ class MainPage(RenderableLivePage):
         try:
             d = Path(currentDir) / newDir
             d.makedirs()
-            client.sendScript("eXe.app.getStore('filepicker.DirectoryTree').load()");
-            client.sendScript(u'eXe.app.fireEvent( "dirchange" , "%s" );' % d);
+            client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({ 
+                callback: function() {
+                    eXe.app.fireEvent( "dirchange", %s );
+                }
+            })""" % json.dumps(d))
         except OSError:
             client.alert(_(u"Directory exists"))
         except:
