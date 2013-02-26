@@ -490,6 +490,7 @@ Ext.define('eXe.controller.Toolbar', {
 	},
 
     exportXliff: function() {
+        this.saveWorkInProgress();
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeSave,
             title: _("Export to Xliff as"),
@@ -517,7 +518,8 @@ Ext.define('eXe.controller.Toolbar', {
     },
 
     processExportEvent: function(menu, item, e, eOpts) {
-        this.exportPackage(e.exportType, "")
+        this.saveWorkInProgress();
+        this.exportPackage(e.exportType, "");
     },
     
 	exportPackage: function(exportType, exportDir) {
