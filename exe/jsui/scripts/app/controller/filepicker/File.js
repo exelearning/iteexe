@@ -63,6 +63,9 @@ Ext.define('eXe.controller.filepicker.File', {
 			'#filepicker_save': {
 				click: { fn: this.onSave }
 			},
+			'#filepicker_createdir': {
+				click: { fn: this.onCreateDir }
+			},
 			'#file_type_combo': {
 				change: { fn: this.onFilterChange }
 			},
@@ -250,6 +253,23 @@ Ext.define('eXe.controller.filepicker.File', {
 			else 
 				onReplaceOk( eXe.view.filepicker.FilePicker.returnOk );
 		}
+	},
+	onCreateDir: function() {
+		Ext.Msg.show({
+			prompt: true,
+			title: _('Create Directory'),
+			msg: _('Enter the new directory name:'),
+			buttons: Ext.Msg.OKCANCEL,
+			multiline: false,
+			scope: this,
+			fn: function(button, text) {
+				if (button == "ok")	{
+					if (text) {
+						nevow_clientToServerEvent('CreateDir', this, '', this.currentDir, text);
+					}
+		        }
+		    }
+		});
 	},
 	confirmReplace: function(onReplaceOk) {
 		Ext.Msg.show({

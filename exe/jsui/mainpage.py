@@ -149,7 +149,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleDemote, 'DemoteNode')
         setUpHandler(self.outlinePane.handleUp, 'UpNode')
         setUpHandler(self.outlinePane.handleDown, 'DownNode')
-        
+        setUpHandler(self.handleCreateDir, 'CreateDir')
+
         self.idevicePane.client = client
 
         if not self.webServer.monitoring:
@@ -827,6 +828,17 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Package extracted to: %s') % filename)
+
+    def handleCreateDir(self, client, currentDir, newDir):
+        try:
+            d = Path(currentDir) / newDir
+            d.makedirs()
+            client.sendScript("eXe.app.getStore('filepicker.DirectoryTree').load()");
+            client.sendScript(u'eXe.app.fireEvent( "dirchange" , "%s" );' % d);
+        except OSError:
+            client.alert(_(u"Directory exists"))
+        except:
+            log.exception("")
 
     # Public Methods
 
