@@ -162,6 +162,10 @@ class MainPage(RenderableLivePage):
         return tags.script(type="text/javascript")[
            "var authoringIFrameSrc = '%s/authoring?clientHandleId=%s';" % ( self.package.name, IClientHandle(ctx).handleId) ]
 
+    def render_lastdir(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var lastDir = '%s';" % G.application.config.lastDir ]
+
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
 
@@ -723,6 +727,7 @@ class MainPage(RenderableLivePage):
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
             self.webServer.monitoring = False
+            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))

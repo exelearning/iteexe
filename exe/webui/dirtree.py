@@ -23,6 +23,7 @@ import logging
 from exe.webui.renderable import RenderableResource
 from twisted.web.resource import Resource
 from exe.engine.path import Path
+from exe import globals as G
 from urllib import unquote
 import json
 import mimetypes
@@ -92,6 +93,7 @@ class DirTreePage(RenderableResource):
                                 items.append({ "name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
                     except:
                         pass
+                    G.application.config.lastDir = pathdir
                 l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         elif "query" in request.args:

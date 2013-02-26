@@ -135,6 +135,8 @@ Ext.application({
             Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
         }
         
+        Ext.state.Manager.set('filepicker-currentDir', lastDir);
+
         eXe.app = this;
 
         window.onbeforeunload = function() {

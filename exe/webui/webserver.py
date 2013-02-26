@@ -49,6 +49,7 @@ from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
+from exe import globals as G
 
 
 import logging
@@ -174,4 +175,5 @@ class WebServer:
                     if mainpage.clientHandleFactory.clientHandles:
                         reactor.callLater(10, self.monitor)
                         return
+            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.stop()
