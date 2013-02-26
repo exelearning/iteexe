@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-03 20:43+0100\n"
-"PO-Revision-Date: 2013-02-25 10:03+0100\n"
+"PO-Revision-Date: 2013-02-26 18:00+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -529,7 +529,7 @@ msgstr "Permitir auto-completar no preenchimento de espaços "
 
 #: exe/engine/clozeidevice.py:46
 msgid "Cloze Activity"
-msgstr "Actividade Preencher Espaços"
+msgstr "Atividade Preencher Espaços"
 
 #: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
 #: exe/engine/verdaderofalsofpdidevice.py:397
@@ -1073,7 +1073,7 @@ msgstr ""
 "A maior parte de um recurso de aprendizagem consiste em \n"
 "estabelecer o contexto, fornecer instruções e apresentar informações "
 "gerais.\n"
-"Este iDevice fornece o contexto em que as actividades de aprendizagem são "
+"Este iDevice fornece o contexto em que as atividades de aprendizagem são "
 "criadas \n"
 "e distribuídas."
 
