@@ -262,7 +262,7 @@ Ext.define('eXe.controller.Toolbar', {
 
 	aboutPage: function() {
         var about = new Ext.Window ({
-          height: 670,
+          height: eXe.app.getMaxHeight(670),
           width: 360,
           modal: true,
           resizable: false,
@@ -309,7 +309,7 @@ Ext.define('eXe.controller.Toolbar', {
     // Launch the iDevice Editor Window
 	toolsIdeviceEditor: function() {
         var editor = new Ext.Window ({
-          height: 700, 
+          height: eXe.app.getMaxHeight(700), 
           width: 800, 
           modal: true,
           id: 'ideviceeditorwin',

@@ -48,7 +48,9 @@ Ext.define('eXe.view.ui.eXeViewport', {
                     split: true,
                     width: 250
                 }
-            ]
+            ],
+            itemId: 'eXeViewport',
+            autoScroll: true
         });
 
         me.callParent(arguments);

@@ -75,7 +75,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         
         Ext.applyIf(me, {
         	width: 800,
-        	height: 600,
+            height: eXe.app.getMaxHeight(600),
             layout:'border',
 			filetypes: ft,
 			dockedItems: [

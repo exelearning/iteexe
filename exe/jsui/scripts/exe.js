@@ -109,6 +109,12 @@ Ext.application({
     	'filepicker.File'
     ],
     
+    getMaxHeight: function(height) {
+        var vheight = Ext.ComponentQuery.query('#eXeViewport')[0].getHeight();
+
+        return height >= vheight? vheight : height;
+    },
+
     quitWarningEnabled: true,
 
     gotoUrl: function(location) {
