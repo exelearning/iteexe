@@ -43,9 +43,22 @@ def get_drives():
 
     return drives
 
+
+def computeButtons():
+    return [{'name': _('Desktop'), 'realname': None},
+            {'name': _('Documents'), 'realname': None},
+            {'name': _('My Documents'), 'realname': None},
+            {'name': _('Home Folder'), 'realname': None}]
+
+
 class DirTreePage(RenderableResource):
     name = "dirtree"
-    
+
+    def __init__(self, parent, package=None, config=None):
+        RenderableResource.__init__(self, parent, package, config)
+
+        self.buttons = computeButtons()
+
     def getChild(self, path, request):
         if path == "":
             return self
@@ -94,7 +107,7 @@ class DirTreePage(RenderableResource):
                     except:
                         pass
                     G.application.config.lastDir = pathdir
-                l = {"totalCount": len(items), 'results': len(items), 'items': items}
+                l = {"totalCount": len(items), 'results': len(items), 'items': items, 'buttons': self.buttons}
             return json.dumps(l).encode('utf-8')
         elif "query" in request.args:
             query = request.args['query'][0]
