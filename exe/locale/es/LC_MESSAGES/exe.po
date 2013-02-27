@@ -722,9 +722,9 @@ msgid ""
 "by clicking the red \"X\" next to the Option."
 msgstr ""
 "Introduzca aquí las opciones disponibles. \n"
-"Puede añadir opciones haciendo clic en el botón \"Agregar otra opción\"."
+"Puede añadir opciones pulsando en el botón \"Añadir otra opción\"."
 " \n"
-"Elimine opciones haciendo clic en la \"X\" roja que se encuentra al lado "
+"Elimine opciones haciendo clic en la \"X\" que se encuentra a la derecha "
 "de cada opción."
 
 #: exe/engine/eleccionmultiplefpdidevice.py:110
@@ -761,7 +761,7 @@ msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
 " blank."
 msgstr ""
-"Introduzca aquí una pista. Si no quiere ofrecer una sugerencia deja este "
+"Introduzca aquí una pista. Si no quiere ofrecer una sugerencia deje este "
 "campo en blanco."
 
 #: exe/engine/externalurlidevice.py:38
@@ -958,7 +958,7 @@ msgid ""
 msgstr ""
 "Introduzca aquí las opciones disponibles. \n"
 "Puede añadir opciones pulsando en el botón \"Agregar otra opción\". \n"
-"Elimine opciones haciendo clic en la X en rojo que se encuentra al lado "
+"Elimine opciones haciendo clic en la X que se encuentra a la derecha "
 "de cada opción."
 
 #: exe/engine/field.py:3845
