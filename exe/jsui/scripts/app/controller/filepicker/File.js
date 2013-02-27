@@ -66,6 +66,9 @@ Ext.define('eXe.controller.filepicker.File', {
 			'#filepicker_createdir': {
 				click: { fn: this.onCreateDir }
 			},
+			'button[location]': {
+				click: { fn: this.onLocationClick }
+			},
 			'#file_type_combo': {
 				change: { fn: this.onFilterChange }
 			},
@@ -301,5 +304,8 @@ Ext.define('eXe.controller.filepicker.File', {
 				return true;
 			return record.get("name").match(newValue);
 		});
+	},
+	onLocationClick: function(button) {
+		this.application.fireEvent("dirchange", button.location);
 	}
 });

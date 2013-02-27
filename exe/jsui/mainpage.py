@@ -166,6 +166,11 @@ class MainPage(RenderableLivePage):
         return tags.script(type="text/javascript")[
            "var lastDir = %s;" % json.dumps(G.application.config.lastDir) ]
 
+    def render_location_buttons(self, ctx, data):
+        from exe.engine.locationbuttons import LOCATION_BUTTONS
+        return tags.script(type="text/javascript")[
+           "var locationButtons = %s;" % json.dumps(LOCATION_BUTTONS)]
+
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
 
