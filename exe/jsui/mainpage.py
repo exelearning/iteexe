@@ -164,7 +164,7 @@ class MainPage(RenderableLivePage):
 
     def render_lastdir(self, ctx, data):
         return tags.script(type="text/javascript")[
-           "var lastDir = '%s';" % G.application.config.lastDir ]
+           "var lastDir = %s;" % json.dumps(G.application.config.lastDir) ]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")

@@ -78,7 +78,7 @@ class Config:
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
-        self.lastDir = Path(os.environ['HOME'])
+        self.lastDir = None
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
