@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-02-10 01:18+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-27 07:53+0100\nPO-Revision-Date: 2013-02-10 01:18+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Aukera hau markatzen baduzu, sortutako SCORM fitxategia eXeLearning-ekin editatu ahal izango duzu.", 
  "Web pages footer.": "Web orrien oina.", 
  "DropDown Activity": "Jarduera zabalgarria", 
@@ -606,7 +606,6 @@ translations = {
  "Debes conocer": "Jakin  behar duzu", 
  "This is an optional field.": "Eremu hau aukerazkoa da.", 
  "General": "Orokorra", 
- "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Idatzi ikasleek aukera bat hautatzean ikusiko duten \nfeedbacka. Ez baduzu kutxa bete nahi, eXe-k lehenetsitako \nondoko feedbacka emango du: \"Erantzun zuzena\" \n,aukeratutakoa ondo badago, edo \"Erantzun okerra\" \n,beste erantzunetan.", 
  "Type in the feedback you want \nto provide the learner with.": "Idatzi ikasleari eman nahi diozun \nfeedbacka.", 
  "Done": "Egina", 
  "eXe Closed": "eXe itxita", 
@@ -663,7 +662,7 @@ translations = {
  "Javanese ": "Javanera", 
  "Texto Citas para pensar:": "Hausnarketarako aipuaren testua:", 
  "Quechua ": "Kitxua", 
- "This will delete this iDevice.\nDo you really want to do this?": "Honek IDevice-a ezabatuko du.\nHori egin nahi al duzu?", 
+ "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Idatzi ikasleek aukera bat hautatzean ikusiko duten \nfeedbacka. Ez baduzu kutxa bete nahi, eXe-k lehenetsitako \nondoko feedbacka emango du: \"Erantzun zuzena\" \n,aukeratutakoa ondo badago, edo \"Erantzun okerra\" \n,beste erantzunetan.", 
  "Tools": "Tresnak", 
  "Turkmen ": "Turkmenera", 
  "If you leave this page eXe application continues to run. Please use the menu File->Quit if you really want to exit the application.": "Orri hau uzten baduzu, eXe aplikazioak martxan jarraituko du. Aplikazioa itxi nahi baduzu, Fitxategia->Irten menua erabili.", 

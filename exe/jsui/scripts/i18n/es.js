@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-02-06 23:34+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-02-27 07:53+0100\nPO-Revision-Date: 2013-02-06 23:34+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Marcando esta opci\u00f3n, el archivo SCORM exportado ser\u00e1 editable con eXeLearning.", 
  "Web pages footer.": "Pie de las p\u00e1ginas web.", 
  "DropDown Activity": "Actividad desplegable", 
@@ -630,7 +630,6 @@ translations = {
  "Pedagogical Help": "Ayuda pedag\u00f3gica", 
  "Javanese ": "Javan\u00e9s ", 
  "Quechua ": "Quechua ", 
- "This will delete this iDevice.\nDo you really want to do this?": "Esto eliminar\u00e1 el iDevice.\n\u00bfRealmente quiere hacer esto?", 
  "Tools": "Utilidades", 
  "Turkmen ": "Turquimano ", 
  "If you leave this page eXe application continues to run. Please use the menu File->Quit if you really want to exit the application.": "Si sale de esta p\u00e1gina la aplicaci\u00f3n eXe seguir\u00e1 ejecut\u00e1ndose. Por favor use el men\u00fa, Archivos->Salir si de verdad desea cerrar la aplicaci\u00f3n.", 

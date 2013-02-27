@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-02-26 18:00+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: eXe Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-27 07:53+0100\nPO-Revision-Date: 2013-02-26 18:00+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: eXe Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Se marcar esta op\u00e7\u00e3o, o arquivo SCORM exportado ser\u00e1 edit\u00e1vel com eXeLearning.", 
  "Web pages footer.": "Rodap\u00e9 das p\u00e1ginas web", 
  "DropDown Activity": "Atividade drop-down", 
@@ -606,7 +606,6 @@ translations = {
  "Debes conocer": "Deves saber", 
  "This is an optional field.": "Este campo \u00e9 opcional.", 
  "General": "Geral", 
- "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Escreva o \"feedback\" que quiser que o aluno \nveja quando selecionar uma op\u00e7\u00e3o em particular. Se n\u00e3o preencher esta caixa de texto \no eXe proporcionar\u00e1 autom\u00e1ticamente a resposta por defeito: \"Resposta correta\" \nna sele\u00e7\u00e3o da resposta correta; ou \"Resposta errada\"\npara as outras op\u00e7\u00f5es.", 
  "Type in the feedback you want \nto provide the learner with.": "Insira o feedback que pretende \nfornecer ao aluno.", 
  "Done": "Conclu\u00eddo", 
  "eXe Closed": "Fechou-se o eXe", 
@@ -663,7 +662,7 @@ translations = {
  "Javanese ": "Javanese ", 
  "Texto Citas para pensar:": "Texto Cita\u00e7\u00f5es para pensar:", 
  "Quechua ": "Quechua ", 
- "This will delete this iDevice.\nDo you really want to do this?": "Vai eliminar este iDevice. \nTem a certeza de querer fazer isso?", 
+ "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Escreva o \"feedback\" que quiser que o aluno \nveja quando selecionar uma op\u00e7\u00e3o em particular. Se n\u00e3o preencher esta caixa de texto \no eXe proporcionar\u00e1 autom\u00e1ticamente a resposta por defeito: \"Resposta correta\" \nna sele\u00e7\u00e3o da resposta correta; ou \"Resposta errada\"\npara as outras op\u00e7\u00f5es.", 
  "Tools": "Ferramentas", 
  "Turkmen ": "Turkmen", 
  "If you leave this page eXe application continues to run. Please use the menu File->Quit if you really want to exit the application.": "Se sair desta p\u00e1gina, a aplica\u00e7\u00e3o eXe ir\u00e1 continuar aberta. Por favor, utilize o menu Ficheiro->Sair se desejar mesmo fechar a aplica\u00e7\u00e3o.", 

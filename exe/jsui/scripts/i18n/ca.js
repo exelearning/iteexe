@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2013-02-17 19:34+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-27 07:53+0100\nPO-Revision-Date: 2013-02-17 19:34+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si habiliteu aquesta opci\u00f3, el fitxer SCORM exportat ser\u00e0 editable amb eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat desplegable", 
@@ -606,7 +606,6 @@ translations = {
  "Debes conocer": "Cal que coneguis ", 
  "This is an optional field.": "Aquest \u00e9s un camp opcional.", 
  "General": "General", 
- "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Escriu en la realimentaci\u00f3 que voleu que l'estudiant \nvegi quan seleccione la opci\u00f3 escollida. Si no escriviu res \neXe proporcionar\u00e0 la resposta autom\u00e0tica: \n\"Resposta correcta\" quan la resposta sigui correcta o \n Resposta incorrecta\" quan sigui incorrecta.", 
  "Type in the feedback you want \nto provide the learner with.": "Escriviu la realimentaci\u00f3 que voleu \nproporcionar a l'estudiant.", 
  "Done": "Fet", 
  "eXe Closed": "eXe tancat", 
@@ -663,7 +662,7 @@ translations = {
  "Javanese ": "Javan\u00e8s ", 
  "Texto Citas para pensar:": "Text cites per pensar:", 
  "Quechua ": "Qu\u00edtxua", 
- "This will delete this iDevice.\nDo you really want to do this?": "Aix\u00f2 suprimir\u00e0 aquest iDevice. \n Voleu realment esborrar-lo ?", 
+ "Type in the feedback that you want the \nstudent to see when selecting the particular option. If you don't complete this \nbox, eXe will automatically provide default feedback as follows: \"Correct \nanswer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\nfor the other options.": "Escriu en la realimentaci\u00f3 que voleu que l'estudiant \nvegi quan seleccione la opci\u00f3 escollida. Si no escriviu res \neXe proporcionar\u00e0 la resposta autom\u00e0tica: \n\"Resposta correcta\" quan la resposta sigui correcta o \n Resposta incorrecta\" quan sigui incorrecta.", 
  "Tools": "Eines", 
  "Turkmen ": "Turcman", 
  "If you leave this page eXe application continues to run. Please use the menu File->Quit if you really want to exit the application.": "Quan tanqueu aquesta p\u00e0gina de l'aplicaci\u00f3, eXe seguir\u00e0 funcionant. Utilitzeu el men\u00fa Fitxer-> Surt si realment voleu sortir de l'aplicaci\u00f3.", 
