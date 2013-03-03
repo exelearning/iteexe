@@ -2484,7 +2484,7 @@ msgstr "Paquete guardado en: %s"
 #: exe/jsui/mainpage.py:461 exe/jsui/mainpage.py:567
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
-msgstr "El directorio %s de vistas previas es un archivo, no se puede remplazar"
+msgstr "El directorio %s de vistas previas es un archivo, no se puede reemplazar"
 
 #: exe/jsui/mainpage.py:481
 #, python-format
@@ -2835,11 +2835,11 @@ msgstr "Guardando el paquete..."
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:73
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 msgid "Create Directory"
-msgstr "Crear directorio"
+msgstr "Crear carpeta"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:261
 msgid "Enter the new directory name:"
-msgstr "Introduzca el nombre del nuevo directorio:"
+msgstr "Introduzca el nombre de la nueva carpeta:"
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
 msgid "Tree"
@@ -2847,7 +2847,7 @@ msgstr "Árbol"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:29
 msgid "Directory"
-msgstr "Directorio"
+msgstr "Carpeta"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:46
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:301
@@ -4556,7 +4556,7 @@ msgstr "Mis documentos"
 
 #: exe/webui/dirtree.py:51
 msgid "Home Folder"
-msgstr "Carpeta del usuario (home)"
+msgstr "Carpeta personal"
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:250
 msgid "Text Line"
