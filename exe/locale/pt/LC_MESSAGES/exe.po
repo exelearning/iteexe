@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-27 07:53+0100\n"
-"PO-Revision-Date: 2013-03-01 16:26+0100\n"
+"PO-Revision-Date: 2013-03-05 18:01+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -2381,17 +2381,17 @@ msgstr "Pacote de saída inválido '%s'"
 
 #: exe/importers/scanresources.py:180
 msgid "Contents of directory"
-msgstr "Conteúdo do diretório"
+msgstr "Conteúdo da pasta"
 
 #: exe/importers/scanresources.py:194
 #, python-format
 msgid "Analizing directory %d of %d: %s"
-msgstr "A analizar o diretório %d de %d: %s"
+msgstr "A analizar a pasta %d de %d: %s"
 
 #: exe/importers/scanresources.py:255
 #, python-format
 msgid "Calculating relative paths to directory %d of %d: %s"
-msgstr "A calcular o caminho relativo para o diretório %d de %d: %s"
+msgstr "A calcular o caminho relativo para a pasta %d de %d: %s"
 
 #: exe/importers/scanresources.py:275
 #, python-format
@@ -2414,7 +2414,7 @@ msgstr "A inserir %s"
 
 #: exe/jsui/mainpage.py:237 exe/jsui/mainpage.py:675 exe/jsui/mainpage.py:808
 msgid "Cannot access directory named "
-msgstr "Não é possível aceder ao diretório indicado"
+msgstr "Não é possível aceder à pasta indicada"
 
 #: exe/jsui/mainpage.py:237 exe/jsui/mainpage.py:677 exe/jsui/mainpage.py:808
 msgid ". Please use ASCII names."
@@ -3476,7 +3476,7 @@ msgstr "Alterar o nome"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:33
 msgid "Promote node up in hierarchy"
-msgstr "Mover o página para um nível acima na hierarquia"
+msgstr "Mover a página para um nível acima na hierarquia"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
 msgid "Demote node down in hierarchy"
