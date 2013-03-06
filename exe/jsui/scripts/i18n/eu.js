@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-27 07:53+0100\nPO-Revision-Date: 2013-02-28 12:09+0100\nLast-Translator: Gaizka Bilbao Navarro <gbilbao@tknika.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-06 12:20+0100\nPO-Revision-Date: 2013-02-28 12:09+0100\nLast-Translator: Gaizka Bilbao Navarro <gbilbao@tknika.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Aukera hau markatzen baduzu, sortutako SCORM fitxategia eXeLearning-ekin editatu ahal izango duzu.", 
  "Web pages footer.": "Web orrien oina.", 
  "DropDown Activity": "Jarduera zabalgarria", 

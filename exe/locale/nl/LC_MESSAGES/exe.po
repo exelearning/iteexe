@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-27 07:53+0100\n"
+"POT-Creation-Date: 2013-03-06 12:20+0100\n"
 "PO-Revision-Date: 2008-11-18 12:33+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -1576,6 +1576,25 @@ msgid ""
 "</p>"
 msgstr ""
 
+#: exe/engine/locationbuttons.py:81 exe/engine/locationbuttons.py:85
+#: exe/engine/locationbuttons.py:89 exe/webui/dirtree.py:48
+msgid "Desktop"
+msgstr ""
+
+#: exe/engine/locationbuttons.py:82 exe/webui/dirtree.py:50
+msgid "My Documents"
+msgstr ""
+
+#: exe/engine/locationbuttons.py:83 exe/engine/locationbuttons.py:87
+#: exe/engine/locationbuttons.py:91 exe/webui/dirtree.py:51
+msgid "Home Folder"
+msgstr ""
+
+#: exe/engine/locationbuttons.py:86 exe/engine/locationbuttons.py:90
+#: exe/webui/dirtree.py:49
+msgid "Documents"
+msgstr ""
+
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
 msgstr "Wiskunde "
@@ -2207,9 +2226,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:219
-#: exe/jsui/mainpage.py:816 exe/jsui/mainpage.py:960 exe/jsui/mainpage.py:1001
-#: exe/jsui/mainpage.py:1022
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:224
+#: exe/jsui/mainpage.py:821 exe/jsui/mainpage.py:965 exe/jsui/mainpage.py:1006
+#: exe/jsui/mainpage.py:1027
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2310,19 +2329,19 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:237 exe/jsui/mainpage.py:675 exe/jsui/mainpage.py:808
+#: exe/jsui/mainpage.py:242 exe/jsui/mainpage.py:680 exe/jsui/mainpage.py:813
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/jsui/mainpage.py:237 exe/jsui/mainpage.py:677 exe/jsui/mainpage.py:808
+#: exe/jsui/mainpage.py:242 exe/jsui/mainpage.py:682 exe/jsui/mainpage.py:813
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
-#: exe/jsui/mainpage.py:246
+#: exe/jsui/mainpage.py:251
 msgid "SAVE FAILED!"
 msgstr "OPSLAAN MISLUKT!"
 
-#: exe/jsui/mainpage.py:250 exe/jsui/mainpage.py:539 exe/jsui/mainpage.py:893
+#: exe/jsui/mainpage.py:255 exe/jsui/mainpage.py:544 exe/jsui/mainpage.py:898
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2331,22 +2350,22 @@ msgstr ""
 "OPSLAAN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:254 exe/jsui/mainpage.py:259 exe/jsui/mainpage.py:262
+#: exe/jsui/mainpage.py:259 exe/jsui/mainpage.py:264 exe/jsui/mainpage.py:267
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakket opgeslagen naar: %s"
 
-#: exe/jsui/mainpage.py:461 exe/jsui/mainpage.py:567
+#: exe/jsui/mainpage.py:466 exe/jsui/mainpage.py:572
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Bestand directory %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:481
+#: exe/jsui/mainpage.py:486
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Bestandsnaam %s niet gevonden, kan niet voorvertonen"
 
-#: exe/jsui/mainpage.py:609
+#: exe/jsui/mainpage.py:614
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -2355,29 +2374,29 @@ msgstr ""
 "Compileren MimeTeX mislukt!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:647
+#: exe/jsui/mainpage.py:652
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:650
+#: exe/jsui/mainpage.py:655
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:697 exe/jsui/mainpage.py:702 exe/jsui/mainpage.py:705
-#: exe/jsui/mainpage.py:708 exe/jsui/mainpage.py:711 exe/jsui/mainpage.py:944
+#: exe/jsui/mainpage.py:702 exe/jsui/mainpage.py:707 exe/jsui/mainpage.py:710
+#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:716 exe/jsui/mainpage.py:949
 msgid "EXPORT FAILED!"
 msgstr "UITVOER MISLUKT!"
 
-#: exe/jsui/mainpage.py:777
+#: exe/jsui/mainpage.py:782
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:780
+#: exe/jsui/mainpage.py:785
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:817 exe/jsui/mainpage.py:834
+#: exe/jsui/mainpage.py:822 exe/jsui/mainpage.py:839
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2386,21 +2405,21 @@ msgstr ""
 "UITPAKKEN MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:836
+#: exe/jsui/mainpage.py:841
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Pakket uitgepakt naar: %s"
 
-#: exe/jsui/mainpage.py:848
+#: exe/jsui/mainpage.py:853
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:879 exe/jsui/mainpage.py:921
+#: exe/jsui/mainpage.py:884 exe/jsui/mainpage.py:926
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
-#: exe/jsui/mainpage.py:885 exe/jsui/mainpage.py:927
+#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:932
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2409,10 +2428,10 @@ msgstr ""
 "De map %s bestaat al. Kies een andere naam of verwijder de bestaande map "
 "en probeer opnieuw."
 
-#: exe/jsui/mainpage.py:934 exe/jsui/mainpage.py:948 exe/jsui/mainpage.py:961
-#: exe/jsui/mainpage.py:967 exe/jsui/mainpage.py:985 exe/jsui/mainpage.py:1002
-#: exe/jsui/mainpage.py:1008 exe/jsui/mainpage.py:1023
-#: exe/jsui/mainpage.py:1029
+#: exe/jsui/mainpage.py:939 exe/jsui/mainpage.py:953 exe/jsui/mainpage.py:966
+#: exe/jsui/mainpage.py:972 exe/jsui/mainpage.py:990 exe/jsui/mainpage.py:1007
+#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1028
+#: exe/jsui/mainpage.py:1034
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2421,22 +2440,22 @@ msgstr ""
 "UITVOER MISLUKT!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:950 exe/jsui/mainpage.py:969 exe/jsui/mainpage.py:987
-#: exe/jsui/mainpage.py:1010 exe/jsui/mainpage.py:1031
+#: exe/jsui/mainpage.py:955 exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:992
+#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1036
 #, python-format
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
 
-#: exe/jsui/mainpage.py:1064
+#: exe/jsui/mainpage.py:1069
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Bestand %s bestaat niet of is niet leesbaar."
 
-#: exe/jsui/mainpage.py:1068
+#: exe/jsui/mainpage.py:1073
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Kan het bestand niet laden, email bestand naar bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:1076
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2445,7 +2464,7 @@ msgstr ""
 "Sorry, fout bestandsformaat:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1073
+#: exe/jsui/mainpage.py:1078
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
@@ -2680,14 +2699,22 @@ msgstr ""
 msgid "Saving package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:260
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:73
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
+#: exe/jsui/scripts/app/controller/filepicker/File.js:263
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:74
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
 msgid "Create Directory"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:261
+#: exe/jsui/scripts/app/controller/filepicker/File.js:264
 msgid "Enter the new directory name:"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:279
+msgid "Confirm?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:280
+msgid "The file already exists. Do you want to replace it?"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
@@ -2731,12 +2758,12 @@ msgstr "Annuleren"
 msgid "Open"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:72
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:73
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:267
 msgid "Save"
 msgstr "Opslaan"
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:99
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:100
 msgid "Place"
 msgstr ""
 
@@ -4349,22 +4376,6 @@ msgstr "Klik voor aanwijzingen"
 msgid "Debes conocer"
 msgstr "Webpagina voettekst."
 
-#: exe/webui/dirtree.py:48
-msgid "Desktop"
-msgstr ""
-
-#: exe/webui/dirtree.py:49
-msgid "Documents"
-msgstr ""
-
-#: exe/webui/dirtree.py:50
-msgid "My Documents"
-msgstr ""
-
-#: exe/webui/dirtree.py:51
-msgid "Home Folder"
-msgstr ""
-
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:250
 msgid "Text Line"
 msgstr "Tekstregel"
@@ -5141,11 +5152,4 @@ msgstr ""
 "Uw idevice/generic.data bestand of het pakket dat u probeert te openen "
 "was aangemaakt in een nieuwere versie van eXe.  Upgrade uw eXe-versie en "
 "probeer opnieuw."
-
-#~ msgid ""
-#~ "This will delete this iDevice.\n"
-#~ "Do you really want to do this?"
-#~ msgstr ""
-#~ "iDevice wordt verwijderd.\n"
-#~ "Weet u dit zeker?"
 
