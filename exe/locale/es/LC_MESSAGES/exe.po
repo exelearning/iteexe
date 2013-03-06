@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-03-06 12:20+0100\n"
-"PO-Revision-Date: 2013-02-27 09:30+0100\n"
+"PO-Revision-Date: 2013-03-06 13:18+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -2863,11 +2863,11 @@ msgstr "Introduzca el nombre de la nueva carpeta:"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:279
 msgid "Confirm?"
-msgstr ""
+msgstr "¿Lo confirma?"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:280
 msgid "The file already exists. Do you want to replace it?"
-msgstr ""
+msgstr "El fichero ya existe. ¿Desea reemplazarlo?"
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
 msgid "Tree"
@@ -5360,4 +5360,3 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
-
