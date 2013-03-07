@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.engine.locationbuttons import LocationButtons
 
 """
 This is the main Javascript page.
@@ -90,6 +91,7 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
         self.authoringPages = {}
+        self.location_buttons = LocationButtons()
 
     def child_authoring(self, ctx):
         """Returns the authoring page that corresponds to the url http://127.0.0.1:port/package_name/authoring"""
@@ -167,9 +169,8 @@ class MainPage(RenderableLivePage):
            "var lastDir = %s;" % json.dumps(G.application.config.lastDir) ]
 
     def render_location_buttons(self, ctx, data):
-        from exe.engine.locationbuttons import LOCATION_BUTTONS
         return tags.script(type="text/javascript")[
-           "var locationButtons = %s;" % json.dumps(LOCATION_BUTTONS)]
+           "var locationButtons = %s;" % json.dumps(self.location_buttons.buttons)]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
@@ -290,6 +291,7 @@ class MainPage(RenderableLivePage):
         G.application.config.locale = locale
         G.application.config.locales[locale].install(unicode=True)
         G.application.config.configParser.set('user', 'locale', locale)
+        self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
 
     def handleSetInternalAnchors(self, client, internalAnchors):

@@ -30,6 +30,7 @@ import mimetypes
 
 log = logging.getLogger(__name__)
 
+
 def get_drives():
     import string
     from ctypes import windll
@@ -44,26 +45,17 @@ def get_drives():
     return drives
 
 
-def computeButtons():
-    return [{'name': _('Desktop'), 'realname': None},
-            {'name': _('Documents'), 'realname': None},
-            {'name': _('My Documents'), 'realname': None},
-            {'name': _('Home Folder'), 'realname': None}]
-
-
 class DirTreePage(RenderableResource):
     name = "dirtree"
 
     def __init__(self, parent, package=None, config=None):
         RenderableResource.__init__(self, parent, package, config)
 
-        self.buttons = computeButtons()
-
     def getChild(self, path, request):
         if path == "":
             return self
         return Resource.getChild(self, path, request)
-    
+
     def render(self, request):
         if "sendWhat" in request.args:
             if request.args['sendWhat'][0] == 'dirs':
@@ -72,11 +64,11 @@ class DirTreePage(RenderableResource):
                 try:
                     if pathdir == '/' and sys.platform[:3] == "win":
                         for d in get_drives():
-                            l.append({ "text": d, "id": d + '\\'})
+                            l.append({"text": d, "id": d + '\\'})
                     else:
                         for d in pathdir.dirs():
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
-                                l.append({ "text": d.name, "id": d.abspath() })
+                                l.append({"text": d.name, "id": d.abspath()})
                 except:
                     pass
             elif request.args['sendWhat'][0] == 'both':
@@ -84,14 +76,14 @@ class DirTreePage(RenderableResource):
                 items = []
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():
-                        items.append({ "name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
+                        items.append({"name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
                 else:
                     parent = pathdir.parent
                     if (parent == pathdir):
                         realname = '/'
                     else:
                         realname = parent.abspath()
-                    items.append({ "name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode })
+                    items.append({"name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode})
                     try:
                         for d in pathdir.listdir():
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
@@ -103,11 +95,11 @@ class DirTreePage(RenderableResource):
                                     pathtype = "link"
                                 else:
                                     pathtype = "None"
-                                items.append({ "name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
+                                items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode})
                     except:
                         pass
                     G.application.config.lastDir = pathdir
-                l = {"totalCount": len(items), 'results': len(items), 'items': items, 'buttons': self.buttons}
+                l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         elif "query" in request.args:
             query = request.args['query'][0]
@@ -115,7 +107,7 @@ class DirTreePage(RenderableResource):
             items = []
             if pathdir == '/' and sys.platform[:3] == "win":
                 for d in get_drives():
-                    items.append({ "name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
+                    items.append({"name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
             else:
                 parent = pathdir.parent
                 if (parent == pathdir):
@@ -132,7 +124,7 @@ class DirTreePage(RenderableResource):
                     else:
                         pathtype = "None"
                     if d.name.startswith(query):
-                        items.append({ "name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode })
+                        items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode})
             l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         return ""
