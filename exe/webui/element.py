@@ -40,7 +40,7 @@ def replaceLinks(matchobj, package_name):
     and do.group(1).find('http://') >=0 \
     and not do.group(1).find('http://127.0.0.1') >= 0:
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="window.open(this.href); return false"''',
+                r'''href="\1" onclick="window.parent.browseURL('\1'); return false"''',
                 anchor)
     elif do \
     and do.group(1).startswith('resources/'):
