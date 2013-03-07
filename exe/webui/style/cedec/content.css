@@ -124,7 +124,7 @@ td
 /* Para que haya indexación en las listas anidadas */
 ol,ul
 {
-	margin-left: 2em;	
+
 }
 /* Cambio el icono para las listas si numerar */
 ul li
@@ -1181,7 +1181,6 @@ img.gallery
 /* IDEVICE SITIO EXTERNO SITIO WEB */
 iframe
 {
-	border: 1px solid #000000;
 	padding: 2px;
 }
 /* CAMBIOS DE TIPO DE LETRAS EN SITIOS DETERMINADOS
