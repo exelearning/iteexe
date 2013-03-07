@@ -106,6 +106,8 @@ class PropertiesPage(Renderable, Resource):
                         if path.isfile():
                             setattr(obj, name, toUnicode(value[0]))
                             data[key] = getattr(obj, name).basename()
+                        else:
+                            setattr(obj, name, None)
                     else:
                         setattr(obj, name, toUnicode(value[0]))
         except Exception as e:

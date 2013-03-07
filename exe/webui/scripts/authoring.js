@@ -404,7 +404,7 @@ function getContentForm() {
             theForm = top["authoringIFrame1-frame"].document.getElementById('contentForm');
     }
     if (!theForm) {
-        if (document.getElementsByName('authoringIFrame1-frame') && document.getElementsByName('authoringIFrame1-frame')[0].contentDocument)
+        if (document.getElementsByName('authoringIFrame1-frame')[0] && document.getElementsByName('authoringIFrame1-frame')[0].contentDocument)
             theForm = document.getElementsByName('authoringIFrame')[0].contentDocument.getElementById('contentForm');
     }
 

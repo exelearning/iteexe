@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-06 12:20+0100\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Tittel", 
  "Add JPEG Image": "Legg til JPEG bilde", 
  "Text Line": "Tekstlinje", 
@@ -320,7 +320,6 @@ translations = {
  "Pedagogical Help": "Pedagogisk hjelp", 
  "Javanese ": "Javanesisk", 
  "Quechua ": "Quechua", 
- "This will delete this iDevice.\nDo you really want to do this?": "Dette vil slette denne iDevicen.\n\u00d8nsker du virkelig \u00e5 gj\u00f8re dette?", 
  "Turkmen ": "Turkmensk", 
  "Norwegian ": "Norsk", 
  "Walloon ": "Vallonsk", 

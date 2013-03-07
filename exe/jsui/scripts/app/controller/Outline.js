@@ -234,8 +234,10 @@ Ext.define('eXe.controller.Outline', {
 			scope: this,
 			fn: function(button, text) {
 				if (button == "ok")	{
-					this.disableButtons();
-					nevow_clientToServerEvent('RenNode', this, '', nodeid, text);
+					if (text) {
+						this.disableButtons();
+						nevow_clientToServerEvent('RenNode', this, '', nodeid, text);
+					}
 		    	}
 			}
 		});

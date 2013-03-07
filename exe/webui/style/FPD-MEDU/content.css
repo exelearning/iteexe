@@ -707,6 +707,7 @@ div.block{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5em 1em;
     margin: 1em;
+    overflow: hidden;
     clear:both;
 }
 

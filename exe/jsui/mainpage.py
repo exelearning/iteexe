@@ -23,6 +23,7 @@ This is the main Javascript page.
 """
 
 import os
+import json
 import sys
 import logging
 import traceback
@@ -149,7 +150,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleDemote, 'DemoteNode')
         setUpHandler(self.outlinePane.handleUp, 'UpNode')
         setUpHandler(self.outlinePane.handleDown, 'DownNode')
-        
+        setUpHandler(self.handleCreateDir, 'CreateDir')
+
         self.idevicePane.client = client
 
         if not self.webServer.monitoring:
@@ -159,6 +161,15 @@ class MainPage(RenderableLivePage):
     def render_authoring_src(self, ctx, data):
         return tags.script(type="text/javascript")[
            "var authoringIFrameSrc = '%s/authoring?clientHandleId=%s';" % ( self.package.name, IClientHandle(ctx).handleId) ]
+
+    def render_lastdir(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var lastDir = %s;" % json.dumps(G.application.config.lastDir) ]
+
+    def render_location_buttons(self, ctx, data):
+        from exe.engine.locationbuttons import LOCATION_BUTTONS
+        return tags.script(type="text/javascript")[
+           "var locationButtons = %s;" % json.dumps(LOCATION_BUTTONS)]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
@@ -721,6 +732,7 @@ class MainPage(RenderableLivePage):
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
             self.webServer.monitoring = False
+            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
@@ -827,6 +839,20 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Package extracted to: %s') % filename)
+
+    def handleCreateDir(self, client, currentDir, newDir):
+        try:
+            d = Path(currentDir) / newDir
+            d.makedirs()
+            client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({ 
+                callback: function() {
+                    eXe.app.fireEvent( "dirchange", %s );
+                }
+            })""" % json.dumps(d))
+        except OSError:
+            client.alert(_(u"Directory exists"))
+        except:
+            log.exception("")
 
     # Public Methods
 

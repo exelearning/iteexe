@@ -44,7 +44,7 @@ class Config:
     optionNames = {
         'system': ('webDir', 'jsDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browser'),
-        'user': ('locale',),
+        'user': ('locale', 'lastDir'),
     }
 
     def __init__(self):
@@ -78,6 +78,7 @@ class Config:
         # internalAnchors indicate which exe_tmp_anchor tags to generate for each tinyMCE field
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
+        self.lastDir = None
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
@@ -275,6 +276,8 @@ class Config:
         if self.configParser.has_section('user'):
             if self.configParser.user.has_option('internalAnchors'):
                 self.internalAnchors = self.configParser.user.internalAnchors
+            if self.configParser.user.has_option('lastDir'):
+                self.lastDir = self.configParser.user.lastDir
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return

@@ -63,6 +63,12 @@ Ext.define('eXe.controller.filepicker.File', {
 			'#filepicker_save': {
 				click: { fn: this.onSave }
 			},
+			'#filepicker_createdir': {
+				click: { fn: this.onCreateDir }
+			},
+			'button[location]': {
+				click: { fn: this.onLocationClick }
+			},
 			'#file_type_combo': {
 				change: { fn: this.onFilterChange }
 			},
@@ -251,10 +257,27 @@ Ext.define('eXe.controller.filepicker.File', {
 				onReplaceOk( eXe.view.filepicker.FilePicker.returnOk );
 		}
 	},
+	onCreateDir: function() {
+		Ext.Msg.show({
+			prompt: true,
+			title: _('Create Directory'),
+			msg: _('Enter the new directory name:'),
+			buttons: Ext.Msg.OKCANCEL,
+			multiline: false,
+			scope: this,
+			fn: function(button, text) {
+				if (button == "ok")	{
+					if (text) {
+						nevow_clientToServerEvent('CreateDir', this, '', this.currentDir, text);
+					}
+		        }
+		    }
+		});
+	},
 	confirmReplace: function(onReplaceOk) {
 		Ext.Msg.show({
-			title: "Confirm?",
-			msg: "The file already exists. Do you want to replace it?",
+			title: _("Confirm?"),
+			msg: _("The file already exists. Do you want to replace it?"),
 			scope: this,
 			modal: true,
 			buttons: Ext.Msg.YESNO,
@@ -281,5 +304,8 @@ Ext.define('eXe.controller.filepicker.File', {
 				return true;
 			return record.get("name").match(newValue);
 		});
+	},
+	onLocationClick: function(button) {
+		this.application.fireEvent("dirchange", button.location);
 	}
 });

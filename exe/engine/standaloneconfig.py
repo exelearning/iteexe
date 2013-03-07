@@ -50,6 +50,7 @@ class StandaloneConfig(Config):
         self.localeDir     = exePath/'locale'
         self.xulrunnerPath = exePath/'xulrunner/xulrunner'
         self.styles        = []
+        self.lastDir       = exePath
 
     def _getConfigPathOptions(self):
         """
