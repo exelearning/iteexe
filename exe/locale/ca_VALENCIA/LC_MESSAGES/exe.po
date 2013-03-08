@@ -2851,11 +2851,11 @@ msgstr "Escriviu el nom del directori nou"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:279
 msgid "Confirm?"
-msgstr ""
+msgstr "Confirmeu"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:280
 msgid "The file already exists. Do you want to replace it?"
-msgstr ""
+msgstr "El fitxer ja existix. Voleu reemplaçar-lo?"
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
 msgid "Tree"
