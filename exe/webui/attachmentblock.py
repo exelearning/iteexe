@@ -129,7 +129,7 @@ class AttachmentBlock(Block):
 
         if self.idevice.userResources:
             html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
-            html += u" onclick=\"window.parent.browseURL('"
+            html += u" onclick=\"browseURL('"
             html += u"http://127.0.0.1:%d/" % (G.application.config.port)
             html += self.package.name
             html += u"/resources/"

@@ -161,8 +161,3 @@ Ext.application({
 
     appFolder: "jsui/app"
 });
-
-// browse the specified URL in system browser
-function browseURL(url) {
-    nevow_clientToServerEvent('browseURL', this, '', url);
-}

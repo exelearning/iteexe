@@ -40,13 +40,13 @@ def replaceLinks(matchobj, package_name):
     and do.group(1).find('http://') >=0 \
     and not do.group(1).find('http://127.0.0.1') >= 0:
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="window.parent.browseURL('\1'); return false"''',
+                r'''href="\1" onclick="browseURL('\1'); return false"''',
                 anchor)
     elif do \
     and do.group(1).startswith('resources/'):
         clean_url = urllib.quote(package_name.encode('utf-8'))
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
-                r'''href="\1" onclick="window.parent.browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, clean_url),
+                r'''href="\1" onclick="browseURL('http://127.0.0.1:%d/%s/\1'); return false"''' % (G.application.config.port, clean_url),
                 anchor)
     else:
         return anchor
@@ -825,7 +825,7 @@ class AttachmentElement(Element):
         html = ""    
         if self.field.attachResource:
             html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
-            html += u" onclick=\"window.parent.browseURL('"
+            html += u" onclick=\"browseURL('"
             html += u"http://127.0.0.1:%d/" % (G.application.config.port)
             html += self.field.idevice.parentNode.package.name 
             html += u"/resources/"

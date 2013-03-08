@@ -548,6 +548,11 @@ var eXeLearning_settings = {
     wysiwyg_settings_path : "/scripts/tinymce_3.5.7_settings.js"
 }
 
+// browse the specified URL in system browser
+function browseURL(url) {
+    window.parent.nevow_clientToServerEvent('browseURL', this, '', url);
+}
+
 //TinyMCE
 function getTinyMCELang(lang){
     if (lang=="ca@valencia") lang = "ca";
