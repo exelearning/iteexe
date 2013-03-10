@@ -191,8 +191,8 @@ Ext.define('eXe.view.forms.PackagePanel', {
                 },
                 {
                     xtype: 'button',
-                    text: _('Apply'),
-                    itemId: 'apply',
+                    text: _('Save'),
+                    itemId: 'save_properties',
                     margin: 10
                 }
             ]

@@ -59,8 +59,8 @@ Ext.define('eXe.controller.MainTab', {
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
-            '#apply': {
-                click: this.onClickApply
+            '#save_properties': {
+                click: this.onClickSave
             },
             '#header_background_show': {
                 click: this.showHeaderBackground,
@@ -182,7 +182,7 @@ Ext.define('eXe.controller.MainTab', {
         }
     },
     
-    onClickApply: function(button) {
+    onClickSave: function(button) {
 	    var form = button.up('form').getForm();
 	    if (form.isValid()) {
 	        form.submit({ 

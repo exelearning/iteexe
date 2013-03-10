@@ -92,9 +92,9 @@ Ext.define('eXe.view.forms.ExportPanel', {
                 },
                 {
                     xtype: 'button',
-                    text: _('Apply'),
+                    text: _('Save'),
                     margin: 10,
-                    itemId: 'apply'
+                    itemId: 'save_properties'
                 }
             ]
         });
