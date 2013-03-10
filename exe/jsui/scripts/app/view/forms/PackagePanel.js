@@ -26,11 +26,15 @@ Ext.define('eXe.view.forms.PackagePanel', {
 
         Ext.applyIf(me, {
             autoScroll: true,
+            trackResetOnLoad: true,
             items: [
                 {
                     xtype: 'fieldset',
                     title: _('Project Properties'),
                     margin: 10,
+                    defaults: {
+                        dirtyCls: 'property-form-dirty'
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -46,11 +50,12 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             items: [
                                 {
                                     xtype: 'hiddenfield',
-		                            inputId: 'pp_backgroundImg',
-		                            fieldLabel: _('Header Background'),
+                                    inputId: 'pp_backgroundImg',
+                                    fieldLabel: _('Header Background'),
                                     hideLabel: false,
                                     labelWidth: 150,
-		                            tooltip: _('Background image for a header (an image 100px high is recommended).')
+                                    dirtyCls: 'property-form-dirty',
+                                    tooltip: _('Background image for a header (an image 100px high is recommended).')
                                 },
                                 {
                                     xtype: 'container',
@@ -89,8 +94,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                                     xtype: 'checkbox',
                                                     inputId: 'pp_backgroundImgTile',
                                                     boxLabel: _('Tile background image?'),
-					                                inputValue: true,
-					                                uncheckedValue: false
+                                                    inputValue: true,
+                                                    dirtyCls: 'property-form-dirty',
+                                                    uncheckedValue: false
                                                 }
                                             ]
                                         }
@@ -111,20 +117,20 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             fieldLabel: _('License'),
                             store: [
                                   ["None", "None"],
-					              ["GNU Free Documentation License", _("GNU Free Documentation License")],
-					              ["Creative Commons Attribution 3.0 License", _("Creative Commons Attribution 3.0 License")],
-					              ["Creative Commons Attribution Share Alike 3.0 License", _("Creative Commons Attribution Share Alike 3.0 License")],
-					              ["Creative Commons Attribution No Derivatives 3.0 License", _("Creative Commons Attribution No Derivatives 3.0 License")],
-					              ["Creative Commons Attribution Non-commercial 3.0 License", _("Creative Commons Attribution Non-commercial 3.0 License")],
-					              ["Creative Commons Attribution Non-commercial Share Alike 3.0 License", _("Creative Commons Attribution Non-commercial Share Alike 3.0 License")],
-					              ["Creative Commons Attribution Non-commercial No Derivatives 3.0 License", _("Creative Commons Attribution Non-commercial No Derivatives 3.0 License")],
-					              ["Creative Commons Attribution 2.5 License", _("Creative Commons Attribution 2.5 License")],
-					              ["Creative Commons Attribution-ShareAlike 2.5 License", _("Creative Commons Attribution-ShareAlike 2.5 License")],
-					              ["Creative Commons Attribution-NoDerivs 2.5 License", _("Creative Commons Attribution-NoDerivs 2.5 License")],
-					              ["Creative Commons Attribution-NonCommercial 2.5 License", _("Creative Commons Attribution-NonCommercial 2.5 License")],
-					              ["Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License", _("Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License")],
-					              ["Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License", _("Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License")],
-					              ["Developing Nations 2.0", _("Developing Nations 2.0")]
+                                  ["GNU Free Documentation License", _("GNU Free Documentation License")],
+                                  ["Creative Commons Attribution 3.0 License", _("Creative Commons Attribution 3.0 License")],
+                                  ["Creative Commons Attribution Share Alike 3.0 License", _("Creative Commons Attribution Share Alike 3.0 License")],
+                                  ["Creative Commons Attribution No Derivatives 3.0 License", _("Creative Commons Attribution No Derivatives 3.0 License")],
+                                  ["Creative Commons Attribution Non-commercial 3.0 License", _("Creative Commons Attribution Non-commercial 3.0 License")],
+                                  ["Creative Commons Attribution Non-commercial Share Alike 3.0 License", _("Creative Commons Attribution Non-commercial Share Alike 3.0 License")],
+                                  ["Creative Commons Attribution Non-commercial No Derivatives 3.0 License", _("Creative Commons Attribution Non-commercial No Derivatives 3.0 License")],
+                                  ["Creative Commons Attribution 2.5 License", _("Creative Commons Attribution 2.5 License")],
+                                  ["Creative Commons Attribution-ShareAlike 2.5 License", _("Creative Commons Attribution-ShareAlike 2.5 License")],
+                                  ["Creative Commons Attribution-NoDerivs 2.5 License", _("Creative Commons Attribution-NoDerivs 2.5 License")],
+                                  ["Creative Commons Attribution-NonCommercial 2.5 License", _("Creative Commons Attribution-NonCommercial 2.5 License")],
+                                  ["Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License", _("Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License")],
+                                  ["Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License", _("Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License")],
+                                  ["Developing Nations 2.0", _("Developing Nations 2.0")]
                             ],
                             tooltip: _('Select a license.'),
                             anchor: '100%'
@@ -151,6 +157,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     xtype: 'fieldset',
                     title: _('Taxonomy'),
                     margin: 10,
+                    defaults: {
+                        dirtyCls: 'property-form-dirty'
+                    },
                     items: [
                         {
                             xtype: 'textfield',

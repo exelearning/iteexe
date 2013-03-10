@@ -28,11 +28,15 @@ Ext.define('eXe.view.forms.DublinCoreDataPanel', {
 
         Ext.applyIf(me, {
             autoScroll: true,
+            trackResetOnLoad: true,            
             items: [
                 {
                     xtype: 'fieldset',
                     title: _('Dublin Core Metadata'),
                     margin: 10,
+                    defaults: {
+                        dirtyCls: 'property-form-dirty'
+                    },
                     items: [
                         {
                             xtype: 'textfield',
@@ -54,6 +58,7 @@ Ext.define('eXe.view.forms.DublinCoreDataPanel', {
                                 xtype: 'textfield',
                                 inputId: 'dc_subject',
                                 fieldLabel: _('Subject'),
+                                dirtyCls: 'property-form-dirty',
                                 tooltip: _('The topic of the content of the resource.'),
                                 anchor: '100%'
                             },
@@ -91,6 +96,7 @@ Ext.define('eXe.view.forms.DublinCoreDataPanel', {
                                 validateOnChange: false,
                                 pickerAlign: 'tr-br',
                                 inputId: 'dc_date',
+                                dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('Date'),
                                 tooltip: _('A date of an event in the lifecycle of the resource.'),
                                 anchor: '100%'
@@ -103,6 +109,7 @@ Ext.define('eXe.view.forms.DublinCoreDataPanel', {
                                 xtype: 'textfield',
                                 inputId: 'dc_type',
                                 fieldLabel: _('Type'),
+                                dirtyCls: 'property-form-dirty',
                                 tooltip: _('The nature or genre of the content of the resource.'),
                                 anchor: '100%'
                             },
@@ -164,6 +171,7 @@ Ext.define('eXe.view.forms.DublinCoreDataPanel', {
                                 inputId: 'dc_rights',
                                 fieldLabel: _('Rights'),
                                 tooltip: _('Information about rights held in and over the resource.'),
+                                dirtyCls: 'property-form-dirty',
                                 anchor: '100%'
                             },
                             help: _('Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.')

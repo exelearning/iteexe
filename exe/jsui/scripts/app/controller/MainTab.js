@@ -86,8 +86,10 @@ Ext.define('eXe.controller.MainTab', {
     },
     
     actionComplete: function(form, action) {
-        if (action.method != "GET")
+        if (action.method != "GET") {
+        	form.setValues(form.getFieldValues(true));
             Ext.MessageBox.alert("", _('Settings Saved'));
+        }
     },
 
     updateTree: function() {
