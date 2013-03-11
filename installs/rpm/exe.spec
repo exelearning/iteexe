@@ -6,6 +6,7 @@ Summary: eXe eLearning XHTML editor
 Name: exe
 Version: %{?clversion}%{!?clversion:%{ver}}
 Release: %{?clrelease}%{?dist:%{dist}}%{!?clrelease:1%{?dist:%{dist}}}
+Epoch: 1
 Source0: exe-%{version}-source.tgz
 License: GPL
 Group: Applications/Editors

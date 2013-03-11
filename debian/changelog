@@ -1,3 +1,10 @@
+python-exe (2:1.04.1.3605intef7) lucid; urgency=low
+
+  [Pedro Peña]
+  * Subido epoch para corregir fallo al generar versión rc2
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 11 Mar 2013 16:19:20 +0100
+
 python-exe (1:1.04.1.3605intef7) lucid; urgency=low
 
   [Andrea Primiani]
