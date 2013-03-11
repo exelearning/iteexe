@@ -1,16 +1,72 @@
-python-exe (1:1.04.1.3605intef7rc2) lucid; urgency=low
+python-exe (1:1.04.1.3605intef7) lucid; urgency=low
 
-  [Pedro Peña]
-  * Actualizado número de versión 
+  [ Pedro Peña Pérez ]
+  [Andrea Primiani]
+  * Revisión de traducción al italizano de eXe
 
- -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 05 Mar 2013 07:20:07 +0100
+  [Antonio Moreno]
+  * Mejoras en el Idevice Applet de Java
+  * Corregido bug en Idevice Wikipedia
 
-python-exe (1:1.04.1.3605intef7rc1) lucid; urgency=low
+  [Ángel Berlanas]
+  * Revisión de traducción al catalán variante valenciana de eXe y TinyMCE
+
+  [Carles Ferrando]
+  * Revisión de traducción al catalán de eXe y TinyMCE
+
+  [Dionisio Martínez]
+  * Revisión de traducción al portugués de eXe y TinyMCE
+
+  [Francisco Macías]
+  * Nuevo Idevice Actividad Desplegable
+
+  [Ignacio Gros]
+  * Incorporación de las traducciones al francés, italiano y portugués de TinyMCE
+  * Activación del corrector ortográfico en TinyMCE (habilitado por defecto)
+  * Pegar como texto plano habilitado por defecto en TinyMCE
+  * Plugin eXeMath para TinyMCE: se pide confirmación antes de salir sin guardar cambios
+  * BUG - El botón de la actividad de rellenar huecos no subrayaba
+  * BUG - Galería de imágenes: se incluye el js necesario en el HTML, no mediante JavaScript.
+    La galería no funcionaba si había un vídeo HTML5
+  * Confirmar antes de eliminar una imagen de la galería
+  * Confirmar antes de cerrar el diálogo de edición de iDevices
+  * Mejora de la presentación del iDevice respuestas múltiples (solución provisional)
+  * Corregido problema de aplicación de técnica "clearfix" en las plantillas del INTEF
+  * BUG - Se añaden los iconos que faltaban en la plantilla FPD-MEDU
+  * Se eliminan los logos institucionales de las plantillas del INTEF
+  * BUG - Sustituimos los enlaces a #auto_top por enlaces a # al exportar como página sola (el ancla no existía)
+  * BUG - Fallo JS: eXe intentaba ejecutar una función al arrancar que todavía no estaba presente
+  * RTF - Revisión del código de la página "Acerca de eXe"
+  * Diseño de la página de cierre de la aplicación
+  * Common.js minimizado
+
+  [José Miguel Andonegui]
+  * Revisión de traducción al euskera de eXe y TinyMCE
+
+  [José Ramón Jiménez]
+  * Feature Request #1531: Se modifica el estilo FPD-MEDU para que se
+    visualice bien con todos los iDevices y no sólo con los de FPD
+  * Modificaciones menores en el estilo FPD-MEDU
+  * Corrección de bugs en la funcionalidad de mostrar/ocultar Idevices (bug #1528 y otros)
+  * Feature Request #1522: Se pide confirmación antes de salir del editor
+    de idevices
+
+  [Juan Rafael Fernández]
+  * Revisión de traducción al español de eXe y TinyMCE
+
+  [Jesús Miguel Domínguez]
+  * Revisión de traducción al francés de eXe
+
+  [Pablo Nimo]
+  * Revisión de traducción al gallego de eXe y TinyMCE
+
+  [Pilar Embid]
+  * Revisión de traducción al catalán variante valenciana de eXe y TinyMCE
 
   [Pedro Peña]
   * Actualizado número de versión
 
- -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 05 Feb 2013 11:46:03 +0100
+ --  <pedro.pena@open-phoenix.com>  Mon, 11 Mar 2013 13:25:22 +0100
 
 python-exe (1:1.04.1.3605intef7beta2) lucid; urgency=low
 
