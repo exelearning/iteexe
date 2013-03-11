@@ -1,8 +1,7 @@
 python-exe (1:1.04.1.3605intef7) lucid; urgency=low
 
-  [ Pedro Peña Pérez ]
   [Andrea Primiani]
-  * Revisión de traducción al italizano de eXe
+  * Revisión de traducción al italiano de eXe
 
   [Antonio Moreno]
   * Mejoras en el Idevice Applet de Java
@@ -66,7 +65,7 @@ python-exe (1:1.04.1.3605intef7) lucid; urgency=low
   [Pedro Peña]
   * Actualizado número de versión
 
- --  <pedro.pena@open-phoenix.com>  Mon, 11 Mar 2013 13:25:22 +0100
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 11 Mar 2013 13:25:22 +0100
 
 python-exe (1:1.04.1.3605intef7beta2) lucid; urgency=low
 
