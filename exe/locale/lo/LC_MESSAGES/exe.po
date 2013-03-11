@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-06 12:20+0100\n"
+"POT-Creation-Date: 2013-03-11 17:19+0100\n"
 "PO-Revision-Date: 2007-03-02 10:24+1200\n"
 "Last-Translator: \n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -767,11 +767,11 @@ msgid ""
 msgstr ""
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:129
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:139
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:142
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:143
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:149
 msgid "Description"
 msgstr ""
 
@@ -1232,22 +1232,21 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: exe/engine/locationbuttons.py:81 exe/engine/locationbuttons.py:85
-#: exe/engine/locationbuttons.py:89 exe/webui/dirtree.py:48
+#: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
+#: exe/engine/locationbuttons.py:37
 msgid "Desktop"
 msgstr ""
 
-#: exe/engine/locationbuttons.py:82 exe/webui/dirtree.py:50
+#: exe/engine/locationbuttons.py:30
 msgid "My Documents"
 msgstr ""
 
-#: exe/engine/locationbuttons.py:83 exe/engine/locationbuttons.py:87
-#: exe/engine/locationbuttons.py:91 exe/webui/dirtree.py:51
+#: exe/engine/locationbuttons.py:31 exe/engine/locationbuttons.py:35
+#: exe/engine/locationbuttons.py:39
 msgid "Home Folder"
 msgstr ""
 
-#: exe/engine/locationbuttons.py:86 exe/engine/locationbuttons.py:90
-#: exe/webui/dirtree.py:49
+#: exe/engine/locationbuttons.py:34 exe/engine/locationbuttons.py:38
 msgid "Documents"
 msgstr ""
 
@@ -1641,13 +1640,13 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:365
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:368
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:367
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:370
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -1660,7 +1659,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:319
+#: exe/engine/wikipediaidevice.py:322
 msgid "http://en.wikipedia.org/"
 msgstr ""
 
@@ -1782,9 +1781,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:224
-#: exe/jsui/mainpage.py:821 exe/jsui/mainpage.py:965 exe/jsui/mainpage.py:1006
-#: exe/jsui/mainpage.py:1027
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:225
+#: exe/jsui/mainpage.py:823 exe/jsui/mainpage.py:967 exe/jsui/mainpage.py:1008
+#: exe/jsui/mainpage.py:1029
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -1879,166 +1878,166 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:242 exe/jsui/mainpage.py:680 exe/jsui/mainpage.py:813
+#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:682 exe/jsui/mainpage.py:815
 msgid "Cannot access directory named "
 msgstr ""
 
-#: exe/jsui/mainpage.py:242 exe/jsui/mainpage.py:682 exe/jsui/mainpage.py:813
+#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:684 exe/jsui/mainpage.py:815
 msgid ". Please use ASCII names."
 msgstr ""
 
-#: exe/jsui/mainpage.py:251
+#: exe/jsui/mainpage.py:252
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/jsui/mainpage.py:255 exe/jsui/mainpage.py:544 exe/jsui/mainpage.py:898
+#: exe/jsui/mainpage.py:256 exe/jsui/mainpage.py:546 exe/jsui/mainpage.py:900
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:259 exe/jsui/mainpage.py:264 exe/jsui/mainpage.py:267
+#: exe/jsui/mainpage.py:260 exe/jsui/mainpage.py:265 exe/jsui/mainpage.py:268
 #, python-format
 msgid "Package saved to: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:466 exe/jsui/mainpage.py:572
+#: exe/jsui/mainpage.py:468 exe/jsui/mainpage.py:574
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/jsui/mainpage.py:486
+#: exe/jsui/mainpage.py:488
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr ""
 
-#: exe/jsui/mainpage.py:614
+#: exe/jsui/mainpage.py:616
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:652
+#: exe/jsui/mainpage.py:654
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:655
+#: exe/jsui/mainpage.py:657
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:702 exe/jsui/mainpage.py:707 exe/jsui/mainpage.py:710
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:716 exe/jsui/mainpage.py:949
+#: exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:709 exe/jsui/mainpage.py:712
+#: exe/jsui/mainpage.py:715 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:951
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/jsui/mainpage.py:782
+#: exe/jsui/mainpage.py:784
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:785
+#: exe/jsui/mainpage.py:787
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:822 exe/jsui/mainpage.py:839
+#: exe/jsui/mainpage.py:824 exe/jsui/mainpage.py:841
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:841
+#: exe/jsui/mainpage.py:843
 #, python-format
 msgid "Package extracted to: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:853
+#: exe/jsui/mainpage.py:855
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:884 exe/jsui/mainpage.py:926
+#: exe/jsui/mainpage.py:886 exe/jsui/mainpage.py:928
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/jsui/mainpage.py:890 exe/jsui/mainpage.py:932
+#: exe/jsui/mainpage.py:892 exe/jsui/mainpage.py:934
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
 
-#: exe/jsui/mainpage.py:939 exe/jsui/mainpage.py:953 exe/jsui/mainpage.py:966
-#: exe/jsui/mainpage.py:972 exe/jsui/mainpage.py:990 exe/jsui/mainpage.py:1007
-#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1028
-#: exe/jsui/mainpage.py:1034
+#: exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:955 exe/jsui/mainpage.py:968
+#: exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:992 exe/jsui/mainpage.py:1009
+#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1030
+#: exe/jsui/mainpage.py:1036
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:955 exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:992
-#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1036
+#: exe/jsui/mainpage.py:957 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:994
+#: exe/jsui/mainpage.py:1017 exe/jsui/mainpage.py:1038
 #, python-format
 msgid "Exported to %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1069
+#: exe/jsui/mainpage.py:1071
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/jsui/mainpage.py:1073
+#: exe/jsui/mainpage.py:1075
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1076
+#: exe/jsui/mainpage.py:1078
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1078
+#: exe/jsui/mainpage.py:1080
 msgid "Sorry, wrong file format"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:91
+#: exe/jsui/propertiespage.py:92
 msgid "Failed to get properties"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:115
+#: exe/jsui/propertiespage.py:118
 msgid "Failed to save properties"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:90
+#: exe/jsui/scripts/app/controller/MainTab.js:91
 msgid "Settings Saved"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:117
-#: exe/jsui/scripts/app/controller/MainTab.js:174
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
+#: exe/jsui/scripts/app/controller/MainTab.js:119
+#: exe/jsui/scripts/app/controller/MainTab.js:176
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
 msgid "Show Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:127 exe/webui/element.py:518
+#: exe/jsui/scripts/app/controller/MainTab.js:129 exe/webui/element.py:518
 msgid "Select an image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:144
-#: exe/jsui/scripts/app/controller/MainTab.js:178
-#: exe/jsui/scripts/app/controller/MainTab.js:206
+#: exe/jsui/scripts/app/controller/MainTab.js:146
+#: exe/jsui/scripts/app/controller/MainTab.js:180
+#: exe/jsui/scripts/app/controller/MainTab.js:208
 msgid "Hide Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:153
+#: exe/jsui/scripts/app/controller/MainTab.js:155
 msgid "Image Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:154
+#: exe/jsui/scripts/app/controller/MainTab.js:156
 #: exe/jsui/scripts/app/controller/Toolbar.js:366
 #: exe/jsui/scripts/app/controller/Toolbar.js:387
 #: exe/jsui/scripts/app/controller/Toolbar.js:422
@@ -2051,8 +2050,8 @@ msgstr ""
 msgid "All Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:188
-#: exe/jsui/scripts/app/controller/MainTab.js:213
+#: exe/jsui/scripts/app/controller/MainTab.js:190
+#: exe/jsui/scripts/app/controller/MainTab.js:215
 msgid "Error"
 msgstr ""
 
@@ -2276,7 +2275,7 @@ msgid "Size"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:91
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:105
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 msgid "Type"
 msgstr ""
 
@@ -2297,6 +2296,9 @@ msgid "Open"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:73
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:194
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:267
 msgid "Save"
 msgstr ""
@@ -2305,11 +2307,11 @@ msgstr ""
 msgid "Place"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:34
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:40
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:94
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:103
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:106
@@ -2317,27 +2319,27 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:41
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 msgid "The name given to the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:47
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:48
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:52
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:56
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
 msgid "Subject"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:57
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:62
 msgid "The topic of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
 msgid ""
 "Typically, Subject will be expressed as keywords, key phrases or "
 "classification codes that describe a topic of the resource. Recommended "
@@ -2345,41 +2347,41 @@ msgid ""
 " classification scheme."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:66
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:71
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
 msgid "An account of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:73
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
 msgid "Publisher"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:74
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:79
 msgid "An entity responsible for making the resource available."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:80
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:85
 msgid "Contributors"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:81
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:86
 msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:94
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:100
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:340
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:344
 msgid "Date"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:95
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:101
 msgid "A date of an event in the lifecycle of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:98
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:104
 msgid ""
 "Typically, Date will be associated with the creation or availability of "
 "the resource. Recommended best practice for encoding the date value is "
@@ -2388,11 +2390,11 @@ msgid ""
 "includes (among others) dates of the form YYYY-MM-DD."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:106
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:109
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:116
 msgid ""
 "Type includes terms describing general categories, functions, or genres, "
 "for content. Recommended best practice is to select a value from a "
@@ -2401,32 +2403,32 @@ msgid ""
 "element."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:114
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 msgid "Format"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "Select a Format."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:127
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:56
 msgid "Identifier"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "An unambiguous reference to the resource within a given context."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
 msgid "Source"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:142
 msgid "A Reference to a resource from which the present resource is derived."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:148
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:58
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:113
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:120
@@ -2434,40 +2436,40 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:143
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 msgid "Select a language."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:149
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:370
 msgid "Relation"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "A reference to a related resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:163
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:168
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:177
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:180
 msgid "Coverage"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:164
 msgid "The extent or scope of the content of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:165
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:365
 msgid "Rights"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:173
 msgid "Information about rights held in and over the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:169
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:177
 msgid ""
 "Typically, a Rights element will contain a rights management statement "
 "for the resource, or reference a service providing such information. "
@@ -2477,65 +2479,58 @@ msgid ""
 "with respect to the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:175
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:90
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
-msgid "Apply"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:34
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "SCORM 1.2 Options"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:42
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:43
 msgid "Add Previous/Next links within SCOs?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:50
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:56
 msgid "Include Single Page export file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:57
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:60
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:63
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:66
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
 msgid "Include Web Site export files?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:72
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:73
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Create editable SCORM file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
 msgid ""
 "Checking this option, the exported SCORM file will be editable with "
 "eXeLearning."
@@ -2699,148 +2694,152 @@ msgstr ""
 msgid "Classification"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
+msgid "Apply"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
 msgid "Project Properties"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:42
 msgid "Project Title"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "The project's title."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:54
 msgid "Header Background"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:58
 msgid "Background image for a header (an image 100px high is recommended)."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:76
 msgid "Load Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:84
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:89
 msgid "Clear Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
 msgid "Tile background image?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
 msgid "Author"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 msgid "Primary author of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
 msgid "License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
 #: exe/webui/wikipediablock.py:237
 msgid "GNU Free Documentation License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 msgid "Creative Commons Attribution 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
 msgid "Creative Commons Attribution Share Alike 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 msgid "Creative Commons Attribution 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:128
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:130
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:132
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:133
 msgid "Developing Nations 2.0"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
 msgid "Select a license."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:141
 msgid "Footer"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:142
 msgid "Web pages footer."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:152
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
 msgid "Taxonomy"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 msgid "Level 1"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 msgid "Default name for level 1 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:174
 msgid "Level 2"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:175
 msgid "Default name for level 2 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
 msgid "Level 3"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 msgid "Default name for level 3 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:178
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:187
 msgid "Update Tree"
 msgstr ""
 

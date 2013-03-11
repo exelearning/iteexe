@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-06 12:20+0100\nPO-Revision-Date: 2013-03-08 10:00+0100\nLast-Translator: Caliban <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2013-03-08 10:00+0100\nLast-Translator: Caliban <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si vous activez cette option, le fichier SCORM export\u00e9 sera \u00e9ditable avec eXeLearning", 
  "Web pages footer.": "Pied de la page Web.", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 

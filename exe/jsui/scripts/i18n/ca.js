@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-06 12:20+0100\nPO-Revision-Date: 2013-03-07 20:03+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2013-03-07 20:03+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si habiliteu aquesta opci\u00f3, el fitxer SCORM exportat ser\u00e0 editable amb eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat desplegable", 

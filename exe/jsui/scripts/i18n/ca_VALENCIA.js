@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-06 12:20+0100\nPO-Revision-Date: 2013-02-07 12:36+0100\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2013-02-07 12:36+0100\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si marqueu esta opci\u00f3, el fitxer SCORM exportat es podr\u00e0 editar amb l'eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
