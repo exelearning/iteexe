@@ -143,6 +143,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
         setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
+        setUpHandler(self.handleSetBrowser,  'setBrowser')
 
         #For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -301,6 +302,14 @@ class MainPage(RenderableLivePage):
         G.application.config.internalAnchors = internalAnchors
         G.application.config.configParser.set('user', 'internalAnchors', internalAnchors)
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
+    
+    def handleSetBrowser(self, client, browser):
+        """
+        JR: Set Browser using Nevow instead of a POST
+        """
+        G.application.config.browser = browser
+        G.application.config.configParser.set('system', 'browser', browser)
+        client.sendScript('alert("%s");' % _(u"Changes take effect when you restart eXe"))
  
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """

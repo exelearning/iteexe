@@ -27,7 +27,7 @@ Browser module
 
 import logging
 from urllib import quote
-import webbrowser
+import mywebbrowser
 
 log = logging.getLogger(__name__)
 
@@ -36,10 +36,14 @@ def launchBrowser(config, packageName):
     """
     Launch the configured webbrowser for this platform
     """
-    config.browser = webbrowser.get(config.browser)
+    config.browser = mywebbrowser.get(config.browser)
     if hasattr(config.browser, "basename"):
         log.info(u"Defined Browser: " + config.browser.basename)
     url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url " + url)
 
     config.browser.open(url)
+    
+
+
+
