@@ -42,7 +42,7 @@ class SelectBrowserPage(RenderableResource):
         """
         RenderableResource.__init__(self, parent)
         self.browserNames = []
-        print(mywebbrowser._tryorder)
+        #print(mywebbrowser._tryorder)
         for browser in mywebbrowser._tryorder:
             if (browser not in ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient')):
                 self.browserNames.append((browser, browser))
