@@ -309,7 +309,9 @@ class Opera(UnixBrowser):
     "Launcher class for Opera browser."
 
     raise_opts = ["-noraise", ""]
-    remote_args = ['-remote', 'openURL(%s%action)']
+    #JR: Se corrige error cuando el opera no estaba abierto
+    #remote_args = ['-remote', 'openURL(%s%action)']
+    remote_args = ['%action', '%s']
     remote_action = ""
     remote_action_newwin = ",new-window"
     remote_action_newtab = ",new-page"
