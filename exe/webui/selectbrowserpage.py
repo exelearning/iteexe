@@ -1,25 +1,5 @@
-# ===========================================================================
-# eXe
-# Copyright 2004-2006, University of Auckland
-# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-# ===========================================================================
-
 """
-The PreferencesPage is responsible for managing eXe preferences
+JR: SelectBrowserPage selecciona el navegador en el que se ejecutara eXe
 """
 
 import logging
@@ -32,22 +12,51 @@ log = logging.getLogger(__name__)
 
 class SelectBrowserPage(RenderableResource):
     """
-    The PreferencesPage is responsible for managing eXe preferences
+    SelectBrowserPage selecciona el navegador en el que se ejecutara eXe
     """
     name = 'selectbrowser'
+    browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links', 
+                     'elinks', 'lynx', 'w3m', 'windows-default', 'macosx')
+    browserNames = {
+                    mywebbrowser.get_iexplorer(): "Internet Explorer",
+                    "safari": "Safari",
+                    "opera": "Opera",
+                    "chrome": "Google Chrome",
+                    "google-chrome": "Google Chrome",
+                    "chromium": "Chromim",
+                    "chromium-browser": "Chromim",
+                    "grail": "Grail",
+                    "skipstone": "Skipstone",
+                    "galeon": "Galeon",
+                    "epiphany": "Epiphany",
+                    "mosaic": "Mosaic",
+                    "kfm": "Kfm",
+                    "konqueror": "Konqueror",
+                    "firefox": "Mozilla Firefox",
+                    "mozilla-firefox": "Mozilla Firefox",
+                    "firebird": "Mozilla Firebird",
+                    "mozilla-firebird": "Mozilla Firebird",
+                    "iceweasel": "Iceweasel",
+                    "iceape": "Iceape",
+                    "seamonkey": "Seamonkey",
+                    "mozilla": "Mozilla",
+                    "netscape": "Netscape",
+                    "None": "default"
+                    }
+    browsersAvalaibles = []
 
     def __init__(self, parent):
         """
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.browserNames = []
+        
         #print(mywebbrowser._tryorder)
         for browser in mywebbrowser._tryorder:
-            if (browser not in ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient')):
-                self.browserNames.append((browser, browser))
-        self.browserNames.append((_(u"Default browser in your system"), "None"))
-        self.browserNames.sort()
+            if (browser not in self.browsersHidden):
+                self.browsersAvalaibles.append((self.browserNames[browser], browser))
+        self.browsersAvalaibles.sort()
+        self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
 
         
     def getChild(self, name, request):
@@ -61,7 +70,7 @@ class SelectBrowserPage(RenderableResource):
 
 
     def render_GET(self, request):
-        """Render the preferences"""
+        """Render the select brownse"""
         log.debug("render_GET")
         
         # Rendering
@@ -87,13 +96,15 @@ class SelectBrowserPage(RenderableResource):
         html += u"<form method=\"post\" action=\"\" "
         html += u"id=\"contentForm\" >"  
 
-        # package not needed for the preferences, only for rich-text fields:
         this_package = None
+        if (self.config.browser.name in self.browserNames):
+            browserSelected = self.config.browser.name
+        else:
+            browserSelected = "None"
         html += common.formField('select', this_package, _(u"Browsers installed in your system"),
                                  'browser',
-                                 options = self.browserNames,
-                                 selection = self.config.browser)
-
+                                 options = self.browsersAvalaibles,
+                                 selection = browserSelected)
         html += u"<div id=\"editorButtons\"> \n"     
         html += u"<br/>" 
         html += common.button("ok", _("OK"), enabled=True,

@@ -311,8 +311,8 @@ Ext.define('eXe.controller.Toolbar', {
     //JR: Lanzamos el selector de navegador
     toolsBrowser: function() {
         var selectbrowser = new Ext.Window ({
-          height: 150, 
-          width: 270, 
+          height: 170, 
+          width: 330, 
           modal: true,
           id: 'browserwin',
           title: _("Select Browser"), 

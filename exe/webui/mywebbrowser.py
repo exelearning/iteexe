@@ -442,7 +442,13 @@ class Grail(BaseBrowser):
             ok = self._remote("LOAD " + url)
         return ok
 
-
+def get_iexplorer():
+    if sys.platform[:3] == "win":
+        iexplore = os.path.join(os.environ.get("PROGRAMFILES", "C:\\Program Files"),
+                            "Internet Explorer\\IEXPLORE.EXE")
+    else:
+        iexplore = ""
+    return iexplore
 #
 # Platform support for Unix
 #
@@ -556,8 +562,9 @@ if sys.platform[:3] == "win":
     # Detect some common Windows browsers, fallback to IE
     iexplore = os.path.join(os.environ.get("PROGRAMFILES", "C:\\Program Files"),
                             "Internet Explorer\\IEXPLORE.EXE")
-    for browser in ("firefox", "firebird", "seamonkey", "mozilla",
-                    "netscape", "opera", iexplore):
+    # JR: Anado algunas comprobaciones mas
+    for browser in ("firefox", "firebird", "seamonkey", "mozilla", "safari", 
+                    "google-chrome", "chrome", "chromium", "chromium-browser", "netscape", "opera", iexplore):
         if _iscommand(browser):
             register(browser, None, BackgroundBrowser(browser))
 
