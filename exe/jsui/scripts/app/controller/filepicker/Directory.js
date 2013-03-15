@@ -55,12 +55,13 @@ Ext.define('eXe.controller.filepicker.Directory', {
         	path = sep + '/' + sep + selection.replace(/\\/g, sep);
 			path = path.replace(/_RRR_$/, '');	    	
 	    }
-        if (selection == "/")
-            dirtree.getSelectionModel().select(dirtree.getRootNode());
-        else {
-            dirtree.selectPath(path, "text", sep);
-        }
-		dirtree.expandPath(path, "text", sep);
+        dirtree.expandPath(path, "text", sep, function() {
+            if (selection == "/")
+                dirtree.getSelectionModel().select(dirtree.getRootNode());
+            else {
+                dirtree.selectPath(path, "text", sep);
+            }
+        }, this);
 	},
 	
 	onDirSelect: function( selModel, selection ) {

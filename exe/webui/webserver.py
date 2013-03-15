@@ -42,6 +42,7 @@ finally:
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
+from exe.webui.selectbrowserpage   import SelectBrowserPage
 from exe.webui.aboutpage           import AboutPage 
 from exe.webui.quitpage            import QuitPage
 from exe.webui.renderable          import File
@@ -49,6 +50,7 @@ from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
+from exe import globals as G
 
 
 import logging
@@ -69,6 +71,7 @@ class WebServer:
         self.root        = PackageRedirectPage(self, packagePath)   
         self.editor      = EditorPage(self.root)
         self.preferences = PreferencesPage(self.root)
+        self.selectbrowser = SelectBrowserPage(self.root)
         self.xliffexportpreferences = XliffExportPreferencesPage(self.root)
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree     = DirTreePage(self.root)
@@ -174,4 +177,5 @@ class WebServer:
                     if mainpage.clientHandleFactory.clientHandles:
                         reactor.callLater(10, self.monitor)
                         return
+            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.stop()

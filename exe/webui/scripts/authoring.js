@@ -26,7 +26,8 @@
 // An array of js strings to evaluate on document load
 var Ext = parent.Ext;
 var eXe = parent.eXe;
-var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, enableAnchors, gotoAnchor, preventEscKey, loadKeymap];
+var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
+	enableAnchors, gotoAnchor, preventEscKey, loadKeymap, hideObjectTags];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -403,7 +404,7 @@ function getContentForm() {
             theForm = top["authoringIFrame1-frame"].document.getElementById('contentForm');
     }
     if (!theForm) {
-        if (document.getElementsByName('authoringIFrame1-frame') && document.getElementsByName('authoringIFrame1-frame')[0].contentDocument)
+        if (document.getElementsByName('authoringIFrame1-frame')[0] && document.getElementsByName('authoringIFrame1-frame')[0].contentDocument)
             theForm = document.getElementsByName('authoringIFrame')[0].contentDocument.getElementById('contentForm');
     }
 
@@ -486,8 +487,10 @@ function loadAuthoringPluginObjects() {
 }
 
 function hideObjectTags() {
-    for (var i=0; i < authoringPluginObjects.length; i++)
-        authoringPluginObjects[i].style.visibility = "hidden";
+	if (Ext.WindowManager.getActive()) {
+	    for (var i=0; i < authoringPluginObjects.length; i++)
+	        authoringPluginObjects[i].style.visibility = "hidden";
+	}
 }
 
 function showObjectTags() {
@@ -543,6 +546,11 @@ function loadKeymap() {
 var eXeLearning_settings = {
     wysiwyg_path : "/scripts/tinymce_3.5.7/jscripts/tiny_mce/tiny_mce.js",
     wysiwyg_settings_path : "/scripts/tinymce_3.5.7_settings.js"
+}
+
+// browse the specified URL in system browser
+function browseURL(url) {
+    window.parent.nevow_clientToServerEvent('browseURL', this, '', url);
 }
 
 //TinyMCE

@@ -46,6 +46,7 @@ class WinConfig(Config):
             self.exePath = Path(self.exePath + ".exe")
         exeDir = self.exePath.dirname()
         self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
+        self.lastDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
 
     def _getConfigPathOptions(self):

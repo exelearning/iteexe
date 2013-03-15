@@ -109,6 +109,12 @@ Ext.application({
     	'filepicker.File'
     ],
     
+    getMaxHeight: function(height) {
+        var vheight = Ext.ComponentQuery.query('#eXeViewport')[0].getHeight();
+
+        return height >= vheight? vheight : height;
+    },
+
     quitWarningEnabled: true,
 
     gotoUrl: function(location) {
@@ -129,6 +135,8 @@ Ext.application({
             Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
         }
         
+        Ext.state.Manager.set('filepicker-currentDir', lastDir);
+
         eXe.app = this;
 
         window.onbeforeunload = function() {

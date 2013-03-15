@@ -12,12 +12,12 @@
 /* ******************************************* */
 
 body{
-	color:#333333; /* Cuerpo de texto */
+	color:#000000; /* Cuerpo de texto */
 	background:#ffffff; /* Color de fondo */
 }
 
 a{
-	color:#c6d644; /* Enlaces */
+	color: #919D22; /* Enlaces */
 }
 
 #header{
@@ -49,6 +49,9 @@ a{
 	background-color: #d6e178; /* Fondo del cuerpo del iDevice */
 	color: #4d4d4d;
 }
+.iDevice_inner a{
+	color: #828200;
+	}
 
 #pageFooter{
 	color:#666666; /* Texto del pie de página */
@@ -69,7 +72,7 @@ input.feedbackbutton{
 }
 
 /* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
-.question table
+/*.question table
 {
 	border: 0;
 }
@@ -77,7 +80,7 @@ input.feedbackbutton{
 .question td
 {
 	border: 0;
-}
+}*/
 
 /* ********************************************* */
 /* **** OTRAS DEFINICIONES ******************** */
@@ -102,7 +105,7 @@ a:hover{text-decoration:underline}
 	margin-bottom:15px;
 	background-repeat:no-repeat;
 	background-position:right 0;
-	background-image:url(my_ims_header.jpg);
+	background-image:url(file:///C|/Users/Ikuspe/Desktop/my_ims_header.jpg);
 	border-top-width: 8px;
 	border-right-width: 8px;
 	border-bottom-width: 8px;
@@ -116,7 +119,7 @@ a:hover{text-decoration:underline}
 	height:35px;
 	background-repeat:no-repeat;
 	background-position:0 0;
-	background-image:url(my_logo.jpg);
+	background-image:url(file:///C|/Users/Ikuspe/Desktop/my_logo.jpg);
 	font-size:1.2em;
 	font-weight:bold;
 	color: #000;
@@ -132,7 +135,7 @@ a:hover{text-decoration:underline}
 	color: #000;
 	line-height: 1em;
 }
-#main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#main ul li{width:auto;list-style-image:url(file:///C|/Users/Ikuspe/Desktop/my_list.gif);margin-bottom:0.2em}
 #main h2{font-size:1.4em}
 #main h3{font-size:1.3em}
 #main h4{font-size:1.2em}
@@ -183,7 +186,7 @@ a:hover{text-decoration:underline}
 	border-right-color: #c6d644;
 	border-bottom-color: #c6d644;
 	border-left-color: #000000;
-	background-image: url(idevice_lateral.gif);
+	background-image: url(file:///C|/Users/Ikuspe/Desktop/idevice_lateral.gif);
 	background-repeat: repeat-y;
 	background-position: 0px 0px;
 }
@@ -236,7 +239,7 @@ a:hover{text-decoration:underline}
 	
 .image_text .image
 {
-	background-image:url(icon_magnifier.gif);
+	background-image:url(file:///C|/Users/Ikuspe/Desktop/icon_magnifier.gif);
 	background-position: left top;
 	background-repeat: no-repeat;
 }
@@ -257,6 +260,74 @@ a:hover{text-decoration:underline}
 	text-align: right;
 }
 .iDevice_inner div div div div input[type="radio"] {
-margin: 25px 5px 7px 20px;}
+margin: 15px 5px 7px 20px;}
 .iDevice_inner div div div div input[type="checkbox"] {
 margin: 25px 5px 7px 20px;}
+.iDevice_inner table{
+	width: 680px;
+	border-spacing: 0px;
+	}
+	.iDevice_inner td {
+	border: 1px solid #fff;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+}
+.iDevice_inner th{
+	border: thin solid #fff;
+	background-color: #919D22;
+	color: #fff;
+	text-align: center;
+	text-transform: capitalize;
+	}
+.iDevice_inner caption {
+	padding: 0.3em;
+	color: #000;
+	text-align: center;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	text-transform: capitalize;
+	border: 1px solid #fff;
+}
+tr:nth-child(2n+1) {
+	background-color: #999;
+	color: #fff
+}
+tr:nth-child(2n) {
+	background-color: #666;
+	color: #fff
+}
+
+
+ table{
+	border-spacing: 0px;
+	}
+	 td {
+	border: 1px solid #fff;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+}
+ th{
+	border: thin solid #fff;
+	background-color: #919D22;
+	color: #fff;
+	text-align: center;
+	text-transform: capitalize;	
+	}
+ caption {
+	padding: 0.3em;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background-color: #000;
+	text-transform: capitalize;
+	border: 1px solid #fff;
+}
+
+.WikipediaIdevice td{
+	background-color: #fff;
+	color: #000;	
+	}

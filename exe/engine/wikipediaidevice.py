@@ -162,6 +162,7 @@ within Wikipedia.""")
             imageName = imageName.replace('%22', '"')
             imageName = imageName.replace('%28', '(')
             imageName = imageName.replace('%29', ')')
+            imageName = imageName.replace('%C3%A5', 'å')
             # Search if we've already got this image
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
@@ -171,7 +172,9 @@ within Wikipedia.""")
                     else:
                         imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)               
                 try:
-                # download whith its original name:                
+                # download whith its original name... in ASCII:
+                ## er... just because some repositories do not undestand no ascii names of files:
+                    imageName = imageName.encode('ascii', 'ignore')
                     urllib.urlretrieve(imageSrc, tmpDir/imageName)
                     new_resource = Resource(self, tmpDir/imageName)
                 except:

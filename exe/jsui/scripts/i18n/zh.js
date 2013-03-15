@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-02-03 20:43+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Add JPEG Image": "\u6dfb\u52a0JPEG\u56fe\u7247", 
@@ -333,7 +333,6 @@ translations = {
  "Cloze Activity": "\u586b\u7a7a\u7ec3\u4e60", 
  "Zip File": "Zip\u6587\u6863", 
  "Kurdish ": "\u5e93\u5c14\u5fb7\u8bed", 
- "This will delete this iDevice.\nDo you really want to do this?": "\u5c06\u8981\u5220\u9664\u8fd9\u4e2aiDevice. \u4f60\u771f\u7684\u8981\u5220\u9664\u5b83\u5417?", 
  "Uzbek ": "\u4e4c\u5179\u522b\u514b\u8bed", 
  "Enter the label here": "\u5728\u6b64\u8f93\u5165\u6807\u9898", 
  "Please enter an idevice name.": "\u8bf7\u586b\u5165iDevice\u540d\u79f0.", 

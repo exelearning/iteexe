@@ -43,6 +43,7 @@ class LinuxConfig(Config):
         self.localeDir   = Path("/usr/share/exe/locale")
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
+        self.lastDir     = Path(os.environ['HOME'])
 
     def _getConfigPathOptions(self):
         """

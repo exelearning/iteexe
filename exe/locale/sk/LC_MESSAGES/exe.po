@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-03 20:43+0100\n"
+"POT-Creation-Date: 2013-03-11 17:19+0100\n"
 "PO-Revision-Date: 2008-05-19 06:31+1200\n"
 "Last-Translator: Martin Struhar <modjo@atlas.sk>\n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -29,10 +29,10 @@ msgstr "Java Applet"
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:39
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:500
-#: exe/engine/idevicestore.py:558 exe/engine/idevicestore.py:586
-#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:665
-#: exe/engine/idevicestore.py:693 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:510
+#: exe/engine/idevicestore.py:568 exe/engine/idevicestore.py:596
+#: exe/engine/idevicestore.py:619 exe/engine/idevicestore.py:675
+#: exe/engine/idevicestore.py:703 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:47
@@ -94,36 +94,42 @@ msgstr "súbor %s nemá „parentNode“ (rodičovský uzol)"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s nemá balíček"
 
-#: exe/engine/appletidevice.py:417
+#: exe/engine/appletidevice.py:439
 msgid "Sorry, this URL is unreachable"
 msgstr ""
 
-#: exe/engine/appletidevice.py:502
+#: exe/engine/appletidevice.py:524
 msgid ""
 "Clic on AddFiles button for select the .ggb file and clic on Upload "
 "button after."
 msgstr ""
 
-#: exe/engine/appletidevice.py:512
+#: exe/engine/appletidevice.py:534
 msgid ""
 "Clic on AddFiles button for select the .jclic.zip file and clic on Upload"
 " button after.<p>The activity will be visible when the HTML file will be "
 "generated from eXe."
 msgstr ""
 
-#: exe/engine/appletidevice.py:522
+#: exe/engine/appletidevice.py:544
 msgid ""
 "Clic on AddFiles button for select the .sb or .scratch file and clic on "
 "Upload button after."
 msgstr ""
 
-#: exe/engine/appletidevice.py:533
+#: exe/engine/appletidevice.py:555
 msgid ""
 "Please write: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; clic on Upload button after."
 msgstr ""
 
-#: exe/engine/appletidevice.py:541
+#: exe/engine/appletidevice.py:557
+msgid ""
+"Clic on AddFiles button for select the .html or .htm file and clic on "
+"Upload button after for getting its content."
+msgstr ""
+
+#: exe/engine/appletidevice.py:568
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -459,16 +465,16 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
-#: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:549
-#: exe/engine/idevicestore.py:658 exe/engine/listaidevice.py:140
+#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:559
+#: exe/engine/idevicestore.py:668 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
 #: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:165
 #: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
 #: exe/webui/common.py:252 exe/webui/editorelement.py:148
-#: exe/webui/editorpane.py:254 exe/webui/element.py:2269
-#: exe/webui/listablock.py:452 exe/webui/questionelement.py:104
+#: exe/webui/editorpane.py:254 exe/webui/element.py:2271
+#: exe/webui/listablock.py:456 exe/webui/questionelement.py:104
 msgid "Feedback"
 msgstr "Spätná väzba"
 
@@ -703,8 +709,8 @@ msgstr ""
 "\"Správna odpoveď\" pri výbere správnej odpovede, \n"
 "alebo \"Zlá odpoveď\" pre ostatné možnosti."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
-#: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:132
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
+#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:132
 #: exe/engine/multiselectidevice.py:80
 #: exe/engine/seleccionmultiplefpdidevice.py:81
 msgid "Question"
@@ -745,11 +751,11 @@ msgstr ""
 "Vložte URL, ktoré si želáte zobraziť \n"
 "a vyberte veľkosť oblasti, v ktorej má byť zobrazené."
 
-#: exe/engine/field.py:2630
+#: exe/engine/field.py:2631
 msgid "Click Here"
 msgstr "Prosím, kliknite"
 
-#: exe/engine/field.py:2825 exe/engine/field.py:2872
+#: exe/engine/field.py:2826 exe/engine/field.py:2873
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -758,7 +764,7 @@ msgstr ""
 "Napíšte popis k MP3 súboru. \n"
 "Bude sa zobrazovať tiež pri prehrávaní v prehrávači."
 
-#: exe/engine/field.py:3017 exe/engine/field.py:3251
+#: exe/engine/field.py:3018 exe/engine/field.py:3252
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -788,7 +794,7 @@ msgstr ""
 "\"Kontrola veľkých písmen\" nie je zapnutá, tak bude prijaté aj "
 "\"slon\".</p>"
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3272
+#: exe/engine/field.py:3039 exe/engine/field.py:3273
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -797,7 +803,7 @@ msgstr ""
 "odpovede odoslané s odlišnou veľkosťou písmen, budú vyhodnotené ako "
 "nesprávne.</p>"
 
-#: exe/engine/field.py:3043 exe/engine/field.py:3277
+#: exe/engine/field.py:3044 exe/engine/field.py:3278
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -808,7 +814,7 @@ msgstr ""
 "Je to lepšie, ako by mali byť všetky slová označené na konci cvičenia.\n"
 "</p>"
 
-#: exe/engine/field.py:3081 exe/engine/field.py:3319
+#: exe/engine/field.py:3082 exe/engine/field.py:3320
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
@@ -817,11 +823,11 @@ msgstr ""
 "Povoliť automatické dokončovanie počas \n"
 "                                       vypĺňania medzier používateľom."
 
-#: exe/engine/field.py:3282
+#: exe/engine/field.py:3283
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3361 exe/engine/field.py:3405
+#: exe/engine/field.py:3362 exe/engine/field.py:3406
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -829,7 +835,7 @@ msgstr ""
 "Pre tento prostriedok iDevice, vyberajte výhradne \n"
 "súbory .swf (objekty Flash)."
 
-#: exe/engine/field.py:3425 exe/engine/field.py:3489
+#: exe/engine/field.py:3426 exe/engine/field.py:3490
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -837,11 +843,11 @@ msgstr ""
 "Pre tento prostriedok iDevice, vyberajte výhradne\n"
 "súbory .flv (videosúbory Flash)."
 
-#: exe/engine/field.py:3501
+#: exe/engine/field.py:3502
 msgid "Type a discussion topic here."
 msgstr "Sem vložte tému diskusie."
 
-#: exe/engine/field.py:3530
+#: exe/engine/field.py:3531
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -852,7 +858,7 @@ msgstr ""
 "náhľade pomocou jazyka LATEX, náhľad zobrazíte pomocí tlačítka "
 "&lt;Náhľad&gt;  nižšie.</p>"
 
-#: exe/engine/field.py:3538
+#: exe/engine/field.py:3539
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -860,27 +866,27 @@ msgstr ""
 "Kliknutím na tlačítko Náhľad pevediete \n"
 "                                  zápis v latexe na obrázok."
 
-#: exe/engine/field.py:3606 exe/engine/field.py:3655
+#: exe/engine/field.py:3607 exe/engine/field.py:3656
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:1881 exe/webui/element.py:2233
+#: exe/webui/element.py:1883 exe/webui/element.py:2235
 #: exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Možnosť «opt_01»"
 
-#: exe/engine/field.py:3684 exe/engine/field.py:3750
+#: exe/engine/field.py:3685 exe/engine/field.py:3751
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:53
-#: exe/engine/verdaderofalsofpdidevice.py:128 exe/webui/element.py:2518
+#: exe/engine/verdaderofalsofpdidevice.py:128 exe/webui/element.py:2520
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
 msgstr "Tip"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2061
+#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2063
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "Možnosti «opt_02»"
 
-#: exe/engine/field.py:3832
+#: exe/engine/field.py:3833
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -892,15 +898,15 @@ msgstr ""
 "formulácií, \n"
 "pretože môžu študentov miasť."
 
-#: exe/engine/field.py:3835 exe/engine/field.py:3916
+#: exe/engine/field.py:3836 exe/engine/field.py:3917
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:46
-#: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2038
+#: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2040
 msgid "Question:"
 msgstr "Otázka:"
 
-#: exe/engine/field.py:3840
+#: exe/engine/field.py:3841
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -912,7 +918,7 @@ msgstr ""
 "Zmazať položku môžete kliknutím na červené \"X\" vedľa odpovede, ktorú si"
 " želáte odstrániť."
 
-#: exe/engine/field.py:3844
+#: exe/engine/field.py:3845
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -920,7 +926,7 @@ msgstr ""
 "Vyberte požadovaný počet správnych odpovedí kliknutím \n"
 "na zaškrtávacie tlačítko vedľa odpovede."
 
-#: exe/engine/field.py:3847
+#: exe/engine/field.py:3848
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -928,7 +934,7 @@ msgstr ""
 "Vložte spätnú väzbu, ktorú \n"
 "chcete študentovi poskytnúť."
 
-#: exe/engine/field.py:3849 exe/engine/field.py:3919
+#: exe/engine/field.py:3850 exe/engine/field.py:3920
 #: exe/engine/reflectionfpdidevice.py:67 exe/engine/reflectionfpdidevice.py:202
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
@@ -965,11 +971,11 @@ msgstr ""
 "text, ktorý si želáte pridružiť k súboru."
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:129
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:139
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:142
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:143
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:149
 msgid "Description"
 msgstr "Opis"
 
@@ -1119,35 +1125,16 @@ msgstr ""
 "objaví dole, kde ho budete môcť doplniť popisom. Býva dobrým zvykom do "
 "popisu vpísať tiež veľkosť obrázku."
 
-#: exe/engine/galleryidevice.py:710 exe/export/scormexport.py:404
-#: exe/export/websitepage.py:249
-msgid "Previous"
-msgstr "Predošlý"
-
-#: exe/engine/galleryidevice.py:710 exe/export/scormexport.py:405
-#: exe/export/websitepage.py:255
-msgid "Next"
-msgstr "Ďalej"
-
-#: exe/engine/galleryidevice.py:710 exe/webui/block.py:260
-#: exe/webui/block.py:261 exe/webui/common.py:351 exe/webui/common.py:352
-#: exe/webui/editorpane.py:363 exe/webui/editorpane.py:364
-#: exe/webui/editorpane.py:384 exe/webui/editorpane.py:385
-#: exe/webui/element.py:2514 exe/webui/element.py:2515
-#: exe/webui/truefalseelement.py:152 exe/webui/truefalseelement.py:153
-msgid "Close"
-msgstr "Zavrieť"
-
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:607
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:617
 msgid "Reading Activity 0.11"
 msgstr "Aktivita „Čítanie“ 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:457
-#: exe/engine/idevicestore.py:498
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:467
+#: exe/engine/idevicestore.py:508
 msgid "Reading Activity"
 msgstr "Aktivita „Čítanie“"
 
-#: exe/engine/idevicestore.py:501
+#: exe/engine/idevicestore.py:511
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1165,7 +1152,7 @@ msgstr ""
 "alebo zadaním náročnej úlohy, \n"
 "která je založená na prečítanom texte.</p>"
 
-#: exe/engine/idevicestore.py:506
+#: exe/engine/idevicestore.py:516
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1190,11 +1177,11 @@ msgstr ""
 " nad aktivitami, u ktorých očakávaný prínos preváži nad časom a úsilím "
 "nutným pre dokončenie týchto aktivít.</li></ol>"
 
-#: exe/engine/idevicestore.py:541 exe/engine/idevicestore.py:650
+#: exe/engine/idevicestore.py:551 exe/engine/idevicestore.py:660
 msgid "What to read"
 msgstr "Čo treba čítať"
 
-#: exe/engine/idevicestore.py:542 exe/engine/idevicestore.py:651
+#: exe/engine/idevicestore.py:552 exe/engine/idevicestore.py:661
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1204,14 +1191,14 @@ msgstr ""
 "Štýl odkazov závisí na zvyklostiach vašej fakulty či \n"
 " oddelenia."
 
-#: exe/engine/idevicestore.py:545 exe/engine/idevicestore.py:584
-#: exe/engine/idevicestore.py:592 exe/engine/idevicestore.py:654
-#: exe/engine/idevicestore.py:691 exe/engine/idevicestore.py:699
+#: exe/engine/idevicestore.py:555 exe/engine/idevicestore.py:594
+#: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:664
+#: exe/engine/idevicestore.py:701 exe/engine/idevicestore.py:709
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Aktivity"
 
-#: exe/engine/idevicestore.py:546 exe/engine/idevicestore.py:655
+#: exe/engine/idevicestore.py:556 exe/engine/idevicestore.py:665
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -1219,7 +1206,7 @@ msgstr ""
 "Opíšte, aké úlohy budú musieť študenti (žiaci) podstúpiť. \n"
 "Má pomôcť preukázať dôležitosť pre študentov (žiakov)."
 
-#: exe/engine/idevicestore.py:550 exe/engine/idevicestore.py:659
+#: exe/engine/idevicestore.py:560 exe/engine/idevicestore.py:669
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1230,12 +1217,12 @@ msgstr ""
 "alebo ako počiatočný bod pre následnú analýzu výkladu položením otázky \n"
 "alebo ako tvrdenie pre zahájenie debaty."
 
-#: exe/engine/idevicestore.py:556 exe/engine/idevicestore.py:565
-#: exe/engine/idevicestore.py:663 exe/engine/idevicestore.py:672
+#: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:575
+#: exe/engine/idevicestore.py:673 exe/engine/idevicestore.py:682
 msgid "Objectives"
 msgstr "Ciele"
 
-#: exe/engine/idevicestore.py:559 exe/engine/idevicestore.py:666
+#: exe/engine/idevicestore.py:569 exe/engine/idevicestore.py:676
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1244,16 +1231,16 @@ msgstr ""
 "Ciele popisujú očakávané výstupy výuky a mali by \n"
 "určovať, čo by mali študenti zvládnuť po dokončení úloh."
 
-#: exe/engine/idevicestore.py:566 exe/engine/idevicestore.py:673
+#: exe/engine/idevicestore.py:576 exe/engine/idevicestore.py:683
 msgid "Type the learning objectives for this resource."
 msgstr "Zadajte vzdelávacie ciele pre tento zdroj."
 
-#: exe/engine/idevicestore.py:569 exe/engine/idevicestore.py:579
-#: exe/engine/idevicestore.py:676 exe/engine/idevicestore.py:686
+#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:589
+#: exe/engine/idevicestore.py:686 exe/engine/idevicestore.py:696
 msgid "Preknowledge"
 msgstr "Vstupné poznatky"
 
-#: exe/engine/idevicestore.py:572 exe/engine/idevicestore.py:679
+#: exe/engine/idevicestore.py:582 exe/engine/idevicestore.py:689
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1271,7 +1258,7 @@ msgstr ""
 "<li> Študenti musia byť schopní zostaviť bežné elektrické "
 "náradie.</li></ul>\n"
 
-#: exe/engine/idevicestore.py:580 exe/engine/idevicestore.py:687
+#: exe/engine/idevicestore.py:590 exe/engine/idevicestore.py:697
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1280,7 +1267,7 @@ msgstr ""
 "efektívne\n"
 "dokončiť výučbu."
 
-#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:597 exe/engine/idevicestore.py:704
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1292,11 +1279,11 @@ msgstr ""
 "všetky\n"
 "vplyvy, ktoré môžu pomáhať alebo brániť študentom (žiakom) vo vypracovaní."
 
-#: exe/engine/idevicestore.py:593 exe/engine/idevicestore.py:700
+#: exe/engine/idevicestore.py:603 exe/engine/idevicestore.py:710
 msgid "Describe the tasks the learners should complete."
 msgstr "Charakterizujte úlohy, ktoré má študent (žiak) vyplniť."
 
-#: exe/engine/idevicestore.py:610
+#: exe/engine/idevicestore.py:620
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1314,7 +1301,7 @@ msgstr ""
 "Spätná väzba by mala tam, kde je to vhodné,\n"
 "študentovi poskytnúť určitý návod.</p>"
 
-#: exe/engine/idevicestore.py:615
+#: exe/engine/idevicestore.py:625
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -1585,6 +1572,24 @@ msgid ""
 "</p>"
 msgstr ""
 
+#: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
+#: exe/engine/locationbuttons.py:37
+msgid "Desktop"
+msgstr ""
+
+#: exe/engine/locationbuttons.py:30
+msgid "My Documents"
+msgstr ""
+
+#: exe/engine/locationbuttons.py:31 exe/engine/locationbuttons.py:35
+#: exe/engine/locationbuttons.py:39
+msgid "Home Folder"
+msgstr ""
+
+#: exe/engine/locationbuttons.py:34 exe/engine/locationbuttons.py:38
+msgid "Documents"
+msgstr ""
+
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 msgid "Maths"
 msgstr "Matematika"
@@ -1733,7 +1738,7 @@ msgstr ""
 "Uloženie zlyhalo!\n"
 "Posledné úspešné uloženie je %s."
 
-#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:317
+#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:316
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:305
 msgid "iDevice Editor"
 msgstr "Editor prostriedkov iDevice"
@@ -2059,7 +2064,7 @@ msgstr ""
 msgid "Article"
 msgstr "Článok"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:365
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:368
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -2067,7 +2072,7 @@ msgstr ""
 "Vyberte odpovedajúcu jazykovú verziu Wikipedie \n"
 "a vložte pojem, ktorý sa má vyhľadať."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:367
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:370
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -2084,7 +2089,7 @@ msgstr ""
 "Nedá sa stiahnuť z %s <br/>Prekontrolujte, prosím, zadaný text a tiež "
 "pripojenie a skúste to znovu."
 
-#: exe/engine/wikipediaidevice.py:319
+#: exe/engine/wikipediaidevice.py:322
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -2206,9 +2211,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:212
-#: exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:937 exe/jsui/mainpage.py:978
-#: exe/jsui/mainpage.py:999
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:225
+#: exe/jsui/mainpage.py:823 exe/jsui/mainpage.py:967 exe/jsui/mainpage.py:1008
+#: exe/jsui/mainpage.py:1029
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2238,6 +2243,14 @@ msgstr ""
 #: exe/export/pages.py:83 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "Licencované pod"
+
+#: exe/export/scormexport.py:404 exe/export/websitepage.py:249
+msgid "Previous"
+msgstr "Predošlý"
+
+#: exe/export/scormexport.py:405 exe/export/websitepage.py:255
+msgid "Next"
+msgstr "Ďalej"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -2301,19 +2314,19 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:230 exe/jsui/mainpage.py:668 exe/jsui/mainpage.py:799
+#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:682 exe/jsui/mainpage.py:815
 msgid "Cannot access directory named "
 msgstr "Nemôžem pristúpiť k priečinku s názvom "
 
-#: exe/jsui/mainpage.py:230 exe/jsui/mainpage.py:670 exe/jsui/mainpage.py:799
+#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:684 exe/jsui/mainpage.py:815
 msgid ". Please use ASCII names."
 msgstr ". Prosím, použite ASCII názvy."
 
-#: exe/jsui/mainpage.py:239
+#: exe/jsui/mainpage.py:252
 msgid "SAVE FAILED!"
 msgstr "Uloženie zlyhalo!"
 
-#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:532 exe/jsui/mainpage.py:870
+#: exe/jsui/mainpage.py:256 exe/jsui/mainpage.py:546 exe/jsui/mainpage.py:900
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2322,22 +2335,22 @@ msgstr ""
 "Uloženie zlyhalo!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:247 exe/jsui/mainpage.py:252 exe/jsui/mainpage.py:255
+#: exe/jsui/mainpage.py:260 exe/jsui/mainpage.py:265 exe/jsui/mainpage.py:268
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Balík uložený do: %s"
 
-#: exe/jsui/mainpage.py:454 exe/jsui/mainpage.py:560
+#: exe/jsui/mainpage.py:468 exe/jsui/mainpage.py:574
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Adresár s ukážkami %s už existuje, nedá sa nahradiť"
 
-#: exe/jsui/mainpage.py:474
+#: exe/jsui/mainpage.py:488
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Lokálny súbor %s nebol nájdený, nedá sa zobraziť"
 
-#: exe/jsui/mainpage.py:602
+#: exe/jsui/mainpage.py:616
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -2346,29 +2359,29 @@ msgstr ""
 "Kompilácia pomocou mimeTeX zlyhala!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:640
+#: exe/jsui/mainpage.py:654
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:643
+#: exe/jsui/mainpage.py:657
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:690 exe/jsui/mainpage.py:695 exe/jsui/mainpage.py:698
-#: exe/jsui/mainpage.py:701 exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:921
+#: exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:709 exe/jsui/mainpage.py:712
+#: exe/jsui/mainpage.py:715 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:951
 msgid "EXPORT FAILED!"
 msgstr "EXPORT ZLYHAL!"
 
-#: exe/jsui/mainpage.py:768
+#: exe/jsui/mainpage.py:784
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:771
+#: exe/jsui/mainpage.py:787
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:808 exe/jsui/mainpage.py:825
+#: exe/jsui/mainpage.py:824 exe/jsui/mainpage.py:841
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2377,17 +2390,21 @@ msgstr ""
 "EXTRAKT ZLYHAL!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:827
+#: exe/jsui/mainpage.py:843
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Súbory rozbalené do: %s"
 
-#: exe/jsui/mainpage.py:856 exe/jsui/mainpage.py:898
+#: exe/jsui/mainpage.py:855
+msgid "Directory exists"
+msgstr ""
+
+#: exe/jsui/mainpage.py:886 exe/jsui/mainpage.py:928
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Názov súboru %s je už použitý, nedá sa nahradiť"
 
-#: exe/jsui/mainpage.py:862 exe/jsui/mainpage.py:904
+#: exe/jsui/mainpage.py:892 exe/jsui/mainpage.py:934
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2396,9 +2413,10 @@ msgstr ""
 "Adresár s názvom %s už existuje. Vyberte prosím iný alebo zmažte "
 "existujúci a skúste to znovu."
 
-#: exe/jsui/mainpage.py:911 exe/jsui/mainpage.py:925 exe/jsui/mainpage.py:938
-#: exe/jsui/mainpage.py:944 exe/jsui/mainpage.py:962 exe/jsui/mainpage.py:979
-#: exe/jsui/mainpage.py:985 exe/jsui/mainpage.py:1000 exe/jsui/mainpage.py:1006
+#: exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:955 exe/jsui/mainpage.py:968
+#: exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:992 exe/jsui/mainpage.py:1009
+#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1030
+#: exe/jsui/mainpage.py:1036
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2407,24 +2425,24 @@ msgstr ""
 "EXPORT ZLYHAL!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:927 exe/jsui/mainpage.py:946 exe/jsui/mainpage.py:964
-#: exe/jsui/mainpage.py:987 exe/jsui/mainpage.py:1008
+#: exe/jsui/mainpage.py:957 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:994
+#: exe/jsui/mainpage.py:1017 exe/jsui/mainpage.py:1038
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportované do %s"
 
-#: exe/jsui/mainpage.py:1041
+#: exe/jsui/mainpage.py:1071
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Súbor %s neexistuje alebo sa nedá čítať."
 
-#: exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:1075
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Nepodarilo sa načítať súbor. Prosím pošlite upozornenie mailom na adresu "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1048
+#: exe/jsui/mainpage.py:1078
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2433,158 +2451,158 @@ msgstr ""
 "Prepáčte, nesprávny formát súboru:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1050
+#: exe/jsui/mainpage.py:1080
 msgid "Sorry, wrong file format"
 msgstr "Prepáčte, nesprávny formát súboru "
 
-#: exe/jsui/propertiespage.py:91
+#: exe/jsui/propertiespage.py:92
 msgid "Failed to get properties"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:113
+#: exe/jsui/propertiespage.py:118
 msgid "Failed to save properties"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:90
+#: exe/jsui/scripts/app/controller/MainTab.js:91
 msgid "Settings Saved"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:117
-#: exe/jsui/scripts/app/controller/MainTab.js:174
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
+#: exe/jsui/scripts/app/controller/MainTab.js:119
+#: exe/jsui/scripts/app/controller/MainTab.js:176
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
 msgid "Show Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:127 exe/webui/element.py:518
+#: exe/jsui/scripts/app/controller/MainTab.js:129 exe/webui/element.py:518
 msgid "Select an image"
 msgstr "Vyberte obrázok"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:144
-#: exe/jsui/scripts/app/controller/MainTab.js:178
-#: exe/jsui/scripts/app/controller/MainTab.js:206
+#: exe/jsui/scripts/app/controller/MainTab.js:146
+#: exe/jsui/scripts/app/controller/MainTab.js:180
+#: exe/jsui/scripts/app/controller/MainTab.js:208
 msgid "Hide Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:153
+#: exe/jsui/scripts/app/controller/MainTab.js:155
 msgid "Image Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:154
-#: exe/jsui/scripts/app/controller/Toolbar.js:367
-#: exe/jsui/scripts/app/controller/Toolbar.js:388
-#: exe/jsui/scripts/app/controller/Toolbar.js:423
-#: exe/jsui/scripts/app/controller/Toolbar.js:488
+#: exe/jsui/scripts/app/controller/MainTab.js:156
+#: exe/jsui/scripts/app/controller/Toolbar.js:366
+#: exe/jsui/scripts/app/controller/Toolbar.js:387
+#: exe/jsui/scripts/app/controller/Toolbar.js:422
+#: exe/jsui/scripts/app/controller/Toolbar.js:487
 #: exe/jsui/scripts/app/controller/Toolbar.js:515
-#: exe/jsui/scripts/app/controller/Toolbar.js:556
-#: exe/jsui/scripts/app/controller/Toolbar.js:585
-#: exe/jsui/scripts/app/controller/Toolbar.js:703
-#: exe/jsui/scripts/app/controller/Toolbar.js:777
+#: exe/jsui/scripts/app/controller/Toolbar.js:557
+#: exe/jsui/scripts/app/controller/Toolbar.js:586
+#: exe/jsui/scripts/app/controller/Toolbar.js:706
+#: exe/jsui/scripts/app/controller/Toolbar.js:780
 msgid "All Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:188
-#: exe/jsui/scripts/app/controller/MainTab.js:213
+#: exe/jsui/scripts/app/controller/MainTab.js:190
+#: exe/jsui/scripts/app/controller/MainTab.js:215
 msgid "Error"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:144
+#: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
 msgid "Insert Package"
 msgstr "Vložiť „balíček“"
 
-#: exe/jsui/scripts/app/controller/Outline.js:147
+#: exe/jsui/scripts/app/controller/Outline.js:149
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
 msgid "Extract Package"
 msgstr "Rozbaliť balík"
 
-#: exe/jsui/scripts/app/controller/Outline.js:200
+#: exe/jsui/scripts/app/controller/Outline.js:202
 msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:202
-#: exe/jsui/scripts/app/controller/Toolbar.js:322
+#: exe/jsui/scripts/app/controller/Outline.js:204
+#: exe/jsui/scripts/app/controller/Toolbar.js:321
 msgid "Confirm"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:224
+#: exe/jsui/scripts/app/controller/Outline.js:226
 msgid "Rename \"{node}\" node"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Outline.js:228
+#: exe/jsui/scripts/app/controller/Outline.js:230
 msgid "Enter the new name:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:271
+#: exe/jsui/scripts/app/controller/Toolbar.js:270
 msgid "About"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:304
+#: exe/jsui/scripts/app/controller/Toolbar.js:303
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "Preferences"
 msgstr "Predvolby"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:323
+#: exe/jsui/scripts/app/controller/Toolbar.js:322
 msgid ""
 "If you have made changes and have not saved, they will be lost. Do you "
 "really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:355
+#: exe/jsui/scripts/app/controller/Toolbar.js:354
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:360
+#: exe/jsui/scripts/app/controller/Toolbar.js:359
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:366
-#: exe/jsui/scripts/app/controller/Toolbar.js:387
-#: exe/jsui/scripts/app/controller/Toolbar.js:702
-#: exe/jsui/scripts/app/controller/Toolbar.js:776
+#: exe/jsui/scripts/app/controller/Toolbar.js:365
+#: exe/jsui/scripts/app/controller/Toolbar.js:386
+#: exe/jsui/scripts/app/controller/Toolbar.js:705
+#: exe/jsui/scripts/app/controller/Toolbar.js:779
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:376
+#: exe/jsui/scripts/app/controller/Toolbar.js:375
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:381
+#: exe/jsui/scripts/app/controller/Toolbar.js:380
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:397
+#: exe/jsui/scripts/app/controller/Toolbar.js:396
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:412
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:422
+#: exe/jsui/scripts/app/controller/Toolbar.js:421
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:437
+#: exe/jsui/scripts/app/controller/Toolbar.js:436
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:445
+#: exe/jsui/scripts/app/controller/Toolbar.js:444
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:446
+#: exe/jsui/scripts/app/controller/Toolbar.js:445
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:469
+#: exe/jsui/scripts/app/controller/Toolbar.js:468
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:479
+#: exe/jsui/scripts/app/controller/Toolbar.js:478
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:487
+#: exe/jsui/scripts/app/controller/Toolbar.js:486
 #: exe/jsui/scripts/app/controller/Toolbar.js:514
 msgid "XLIFF Files"
 msgstr ""
@@ -2597,79 +2615,101 @@ msgstr ""
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:529
+#: exe/jsui/scripts/app/controller/Toolbar.js:530
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:546
+#: exe/jsui/scripts/app/controller/Toolbar.js:547
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:555
+#: exe/jsui/scripts/app/controller/Toolbar.js:556
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:563
+#: exe/jsui/scripts/app/controller/Toolbar.js:564
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:565
+#: exe/jsui/scripts/app/controller/Toolbar.js:566
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:568
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:569
+#: exe/jsui/scripts/app/controller/Toolbar.js:570
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:571
+#: exe/jsui/scripts/app/controller/Toolbar.js:572
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:584
+#: exe/jsui/scripts/app/controller/Toolbar.js:585
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:675
+#: exe/jsui/scripts/app/controller/Toolbar.js:678
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:691
+#: exe/jsui/scripts/app/controller/Toolbar.js:694
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:696
+#: exe/jsui/scripts/app/controller/Toolbar.js:699
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:715
+#: exe/jsui/scripts/app/controller/Toolbar.js:718
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:716
+#: exe/jsui/scripts/app/controller/Toolbar.js:719
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:740
+#: exe/jsui/scripts/app/controller/Toolbar.js:743
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:756
+#: exe/jsui/scripts/app/controller/Toolbar.js:759
 msgid "Select a File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
 msgid "Saving package..."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:263
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:74
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
+msgid "Create Directory"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:264
+msgid "Enter the new directory name:"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:279
+msgid "Confirm?"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:280
+msgid "The file already exists. Do you want to replace it?"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
 msgid "Tree"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:29
+msgid "Directory"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:46
@@ -2685,7 +2725,7 @@ msgid "Size"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:91
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:105
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 msgid "Type"
 msgstr ""
 
@@ -2693,20 +2733,35 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:53
+#: exe/webui/editorpane.py:272 exe/webui/preferencespage.py:163
+#: exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/xliffimportpreferencespage.py:94
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:54
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
+msgid "Open"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:73
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:194
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:267
 msgid "Save"
 msgstr "Uložiť"
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:94
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:100
 msgid "Place"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:34
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
 msgstr "Metaúdaje Dublin Core"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:40
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:94
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:103
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:106
@@ -2714,27 +2769,27 @@ msgstr "Metaúdaje Dublin Core"
 msgid "Title"
 msgstr "Názov"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:41
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
 msgid "The name given to the resource."
 msgstr "Názov zdroja"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:47
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:51
 msgid "Creator"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:48
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:52
 msgid "An entity primarily responsible for making the content of the resource."
 msgstr "Entita primárne zodpovedná za obsah prostriedku."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:56
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
 msgid "Subject"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:57
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:62
 msgid "The topic of the content of the resource."
 msgstr "Téma obsahu zdroja."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:60
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:65
 msgid ""
 "Typically, Subject will be expressed as keywords, key phrases or "
 "classification codes that describe a topic of the resource. Recommended "
@@ -2742,41 +2797,41 @@ msgid ""
 " classification scheme."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:66
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:144
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:71
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
 msgid "An account of the content of the resource."
 msgstr "Popis obsahu zdroja."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:73
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
 msgid "Publisher"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:74
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:79
 msgid "An entity responsible for making the resource available."
 msgstr "Entita zodpovedná za dostupnosť prostriedku."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:80
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:85
 msgid "Contributors"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:81
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:86
 msgid ""
 "An entity responsible for making contributions to the content of the "
 "resource."
 msgstr "Entita zodpovedná za vytváranie príspevkov do obsahu zdroja."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:94
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:100
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:340
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:344
 msgid "Date"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:95
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:101
 msgid "A date of an event in the lifecycle of the resource."
 msgstr "Dátum udalosti v životnosti zdroja."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:98
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:104
 msgid ""
 "Typically, Date will be associated with the creation or availability of "
 "the resource. Recommended best practice for encoding the date value is "
@@ -2785,11 +2840,11 @@ msgid ""
 "includes (among others) dates of the form YYYY-MM-DD."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:106
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
 msgstr "Povaha alebo žáner obsahu zdroja."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:109
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:116
 msgid ""
 "Type includes terms describing general categories, functions, or genres, "
 "for content. Recommended best practice is to select a value from a "
@@ -2798,32 +2853,32 @@ msgid ""
 "element."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:114
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 msgid "Format"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "Select a Format."
 msgstr "Vyberte formát."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:127
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:56
 msgid "Identifier"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
 msgid "An unambiguous reference to the resource within a given context."
 msgstr "Jednoznačný odkaz na zdroj v zadanom kontexte."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
 msgid "Source"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:135
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:142
 msgid "A Reference to a resource from which the present resource is derived."
 msgstr "Odkaz na zdroj, z ktorého je súčasný zdroj odvodený."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:148
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:58
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:113
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:120
@@ -2831,40 +2886,40 @@ msgstr "Odkaz na zdroj, z ktorého je súčasný zdroj odvodený."
 msgid "Language"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:143
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
 msgid "Select a language."
 msgstr "Zvoľte jazyk."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:149
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:370
 msgid "Relation"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
 msgid "A reference to a related resource."
 msgstr "Odkaz na spriaznený zdroj."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:163
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:168
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:177
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:180
 msgid "Coverage"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:157
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:164
 msgid "The extent or scope of the content of the resource."
 msgstr "Obsahové rozmedzie zdroja."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:165
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:365
 msgid "Rights"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:173
 msgid "Information about rights held in and over the resource."
 msgstr "Informácie o právach týkajúcich sa zdroja a jeho obsahu."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:169
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:177
 msgid ""
 "Typically, a Rights element will contain a rights management statement "
 "for the resource, or reference a service providing such information. "
@@ -2879,65 +2934,58 @@ msgstr ""
 "Pokiaľ nebude položka Práva uvedená, nemožno vytvárať predpoklady o stave"
 " akýchkoľvek práv vzťahujúcich sa k prostriedkom a zdrojom."
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:175
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:90
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
-msgid "Apply"
-msgstr "Použiť"
-
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:34
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "SCORM 1.2 Options"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:42
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:43
 msgid "Add Previous/Next links within SCOs?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:50
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:56
 msgid "Include Single Page export file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:57
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:60
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:63
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:66
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
 msgid "Include Web Site export files?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:72
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:73
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Create editable SCORM file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:84
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
 msgid ""
 "Checking this option, the exported SCORM file will be editable with "
 "eXeLearning."
@@ -3101,148 +3149,152 @@ msgstr ""
 msgid "Classification"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:32
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
+msgid "Apply"
+msgstr "Použiť"
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
 msgid "Project Properties"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:38
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:42
 msgid "Project Title"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:39
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
 msgid "The project's title."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:54
 msgid "Header Background"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:53
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:58
 msgid "Background image for a header (an image 100px high is recommended)."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:76
 msgid "Load Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:84
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:89
 msgid "Clear Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
 msgid "Tile background image?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:104
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
 msgid "Author"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 msgid "Primary author of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
 msgid "License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:114
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
 #: exe/webui/wikipediablock.py:237
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 msgid "Creative Commons Attribution 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:116
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
 msgid "Creative Commons Attribution Share Alike 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 msgid "Creative Commons Attribution No Derivatives 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:118
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
 msgid "Creative Commons Attribution Non-commercial 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
 msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 msgid "Creative Commons Attribution 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:128
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:130
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:132
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:133
 msgid "Developing Nations 2.0"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
 msgid "Select a license."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:141
 msgid "Footer"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:142
 msgid "Web pages footer."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:152
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
 msgid "Taxonomy"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 msgid "Level 1"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:159
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 msgid "Default name for level 1 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:165
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:174
 msgid "Level 2"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:166
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:175
 msgid "Default name for level 2 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
 msgid "Level 3"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
 msgid "Default name for level 3 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:178
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:187
 msgid "Update Tree"
 msgstr ""
 
@@ -3254,27 +3306,27 @@ msgstr "Náčrt"
 msgid "iDevices"
 msgstr "Prostriedky iDevice"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:40
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:42
 msgid "Authoring"
 msgstr "Tvorba obsahu"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:44
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:46
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:50
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:52
 msgid "Package"
 msgstr "Balíček"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:56
 msgid "Metadata"
 msgstr "Metadata"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:59
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:61
 msgid "Dublin Core"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:68
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
 msgid "Export"
 msgstr "Export"
@@ -3283,7 +3335,7 @@ msgstr "Export"
 msgid "Add Page"
 msgstr "Pridať stránku"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:230
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:228
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
 #: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
 #: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
@@ -3322,10 +3374,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:105
 msgid "New Window"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
-msgid "Open"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
@@ -3440,7 +3488,7 @@ msgstr ""
 msgid "About eXe"
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:124
+#: exe/jsui/scripts/exe.js:144
 msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
@@ -4212,56 +4260,61 @@ msgid "Can NOT Undo Edits"
 msgstr "Nie je možné zrušiť úpravy"
 
 #: exe/webui/block.py:225
-msgid ""
-"This will delete this iDevice.\n"
-"Do you really want to do this?"
+msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr ""
-"Táto akcia vymaže tento iDevice.\n"
-"Skutočne to chcete urobiť?"
 
-#: exe/webui/block.py:237
+#: exe/webui/block.py:235
 msgid "Move Up"
 msgstr "Presunúť hore"
 
-#: exe/webui/block.py:244
+#: exe/webui/block.py:242
 msgid "Move Down"
 msgstr "Presunúť dole"
 
-#: exe/webui/block.py:246
+#: exe/webui/block.py:244
 msgid "---Move To---"
 msgstr "---Presunúť---"
 
-#: exe/webui/block.py:251 exe/webui/editorpane.py:376
+#: exe/webui/block.py:249 exe/webui/editorpane.py:376
 msgid "Pedagogical Help"
 msgstr "Pedagogický pomocník"
 
-#: exe/webui/block.py:256
+#: exe/webui/block.py:254
 msgid "Information"
 msgstr "Informácie"
 
-#: exe/webui/block.py:266
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:351
+#: exe/webui/common.py:352 exe/webui/editorpane.py:363
+#: exe/webui/editorpane.py:364 exe/webui/editorpane.py:384
+#: exe/webui/editorpane.py:385 exe/webui/element.py:2516
+#: exe/webui/element.py:2517 exe/webui/truefalseelement.py:152
+#: exe/webui/truefalseelement.py:153
+msgid "Close"
+msgstr "Zavrieť"
+
+#: exe/webui/block.py:264
 msgid "Purpose"
 msgstr "Účel"
 
-#: exe/webui/block.py:270
+#: exe/webui/block.py:268
 msgid "Tip:"
 msgstr "Tip:"
 
-#: exe/webui/block.py:299 exe/webui/eleccionmultiplefpdblock.py:164
+#: exe/webui/block.py:297 exe/webui/eleccionmultiplefpdblock.py:164
 #: exe/webui/galleryblock.py:349 exe/webui/genericblock.py:83
 #: exe/webui/genericblock.py:109 exe/webui/multichoiceblock.py:154
 msgid "IDevice Icon"
 msgstr "Ikona prostriedku iDevice"
 
-#: exe/webui/block.py:320
+#: exe/webui/block.py:318
 msgid "iDevice icon"
 msgstr "Ikona iDevice"
 
-#: exe/webui/block.py:335
+#: exe/webui/block.py:333
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "CHYBA: „Block.renderViewContent“ bol volaný priamo"
 
-#: exe/webui/block.py:344 exe/webui/editorpage.py:306
+#: exe/webui/block.py:342 exe/webui/editorpage.py:306
 #: exe/webui/editorpane.py:269
 msgid "Edit"
 msgstr "Upraviť"
@@ -4284,19 +4337,19 @@ msgid "Autoevaluacion"
 msgstr ""
 
 #: exe/webui/clozefpdblock.py:172 exe/webui/clozelangfpdblock.py:173
-#: exe/webui/element.py:2150 exe/webui/element.py:2544
+#: exe/webui/element.py:2152 exe/webui/element.py:2546
 #: exe/webui/questionelement.py:152
 #, fuzzy
 msgid "Solucion"
 msgstr "Kapitola"
 
 #: exe/webui/clozefpdblock.py:175 exe/webui/clozelangfpdblock.py:176
-#: exe/webui/element.py:2155 exe/webui/reflectionfpdblock.py:143
+#: exe/webui/element.py:2157 exe/webui/reflectionfpdblock.py:143
 msgid "Retroalimentacion"
 msgstr ""
 
 #: exe/webui/common.py:70 exe/webui/editorpage.py:242
-#: exe/webui/preferencespage.py:131 exe/webui/xliffexportpreferencespage.py:91
+#: exe/webui/preferencespage.py:132 exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"
@@ -4346,7 +4399,7 @@ msgstr "«nič»"
 msgid "Align:"
 msgstr "Zarovnať: "
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1581
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1583
 msgid "Select Flash Object"
 msgstr "Vyberte Flash objekt"
 
@@ -4491,15 +4544,9 @@ msgstr "Pridať pole"
 msgid "Actions"
 msgstr "Akcie"
 
-#: exe/webui/editorpane.py:267 exe/webui/element.py:1790
+#: exe/webui/editorpane.py:267 exe/webui/element.py:1792
 msgid "Preview"
 msgstr "Ukážka"
-
-#: exe/webui/editorpane.py:272 exe/webui/preferencespage.py:162
-#: exe/webui/xliffexportpreferencespage.py:143
-#: exe/webui/xliffimportpreferencespage.py:94
-msgid "Cancel"
-msgstr "Zrušiť"
 
 #: exe/webui/editorpane.py:332
 msgid "Pedagogical Tip"
@@ -4528,8 +4575,8 @@ msgstr "Ikony"
 msgid "Info"
 msgstr "Informácia"
 
-#: exe/webui/editorpane.py:427 exe/webui/element.py:1216
-#: exe/webui/element.py:1484
+#: exe/webui/editorpane.py:427 exe/webui/element.py:1217
+#: exe/webui/element.py:1486
 msgid "Submit"
 msgstr "Potvrdiť"
 
@@ -4574,7 +4621,7 @@ msgstr "CHYBA „Element.renderView“ bol priamo volaný triedou %s"
 msgid "Add Image"
 msgstr "Pridať obrázok"
 
-#: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1585
+#: exe/webui/element.py:521 exe/webui/element.py:935 exe/webui/element.py:1587
 msgid "Display as:"
 msgstr "Zobraziť ako: "
 
@@ -4598,120 +4645,142 @@ msgstr "Pridať obrázok JPEG"
 msgid "Select an image (JPG file)"
 msgstr "Vyberte obrázok (JPEG)"
 
-#: exe/webui/element.py:1098 exe/webui/element.py:1360
+#: exe/webui/element.py:1098 exe/webui/element.py:1361
 msgid "Cloze Text"
 msgstr "Doplňovací text"
 
-#: exe/webui/element.py:1106 exe/webui/element.py:1368
+#: exe/webui/element.py:1106 exe/webui/element.py:1369
 #: exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Skryť / Zobraziť slovo"
 
-#: exe/webui/element.py:1111 exe/webui/element.py:1373
+#: exe/webui/element.py:1111 exe/webui/element.py:1374
 msgid "Strict Marking?"
 msgstr "Presne dodržať označenie?"
 
-#: exe/webui/element.py:1116 exe/webui/element.py:1378
+#: exe/webui/element.py:1116 exe/webui/element.py:1379
 msgid "Check Caps?"
 msgstr "Overiť veľkosť písmen?"
 
-#: exe/webui/element.py:1121 exe/webui/element.py:1383
+#: exe/webui/element.py:1121 exe/webui/element.py:1384
 msgid "Instant Marking?"
 msgstr "Okamžité značkovanie?"
 
-#: exe/webui/element.py:1201 exe/webui/element.py:1469
+#: exe/webui/element.py:1151 exe/webui/element.py:1419
+#: exe/webui/listablock.py:288
+msgid "Your score is "
+msgstr ""
+
+#: exe/webui/element.py:1202 exe/webui/element.py:1471
 msgid "Get score"
 msgstr "Zobraz bodovanie"
 
-#: exe/webui/element.py:1207 exe/webui/element.py:1475
+#: exe/webui/element.py:1208 exe/webui/element.py:1477
 msgid "Show/Hide Feedback"
 msgstr "Zobraziť / Skryť spätnú väzbu"
 
-#: exe/webui/element.py:1212 exe/webui/element.py:1480
+#: exe/webui/element.py:1213 exe/webui/element.py:1482
 msgid "Show/Clear Answers"
 msgstr "Zobraziť / Vyčistiť odpovede"
 
-#: exe/webui/element.py:1221 exe/webui/element.py:1489
+#: exe/webui/element.py:1222 exe/webui/element.py:1491
 msgid "Restart"
 msgstr "Reštartovať"
 
-#: exe/webui/element.py:1228 exe/webui/element.py:1496
+#: exe/webui/element.py:1229 exe/webui/element.py:1498
 msgid "Show Answers"
 msgstr "Zobraziť odpovede"
 
-#: exe/webui/element.py:1263 exe/webui/element.py:1531
-#: exe/webui/listablock.py:308
+#: exe/webui/element.py:1264 exe/webui/element.py:1533
+#: exe/webui/listablock.py:312
 msgid "Answsers"
 msgstr "Odpovede"
 
-#: exe/webui/element.py:1388
+#: exe/webui/element.py:1389
 msgid "Show Score?"
 msgstr ""
 
-#: exe/webui/element.py:1647
+#: exe/webui/element.py:1649
 msgid "Please select a .flv file."
 msgstr "Vyberte prosím súbor .flv (Flash Video)."
 
-#: exe/webui/element.py:1663
+#: exe/webui/element.py:1665
 msgid "Select a flash video"
 msgstr "Vyberte Flash animáciu"
 
-#: exe/webui/element.py:1772
+#: exe/webui/element.py:1774
 msgid "text"
 msgstr "text"
 
-#: exe/webui/element.py:1773
+#: exe/webui/element.py:1775
 msgid "newline"
 msgstr "nový riadok"
 
-#: exe/webui/element.py:1776
+#: exe/webui/element.py:1778
 msgid "Select a font size: "
 msgstr "Zvoľte veľkosť písma"
 
-#: exe/webui/element.py:1886 exe/webui/element.py:2238
-#: exe/webui/element.py:2336 exe/webui/element.py:2363
+#: exe/webui/element.py:1888 exe/webui/element.py:2240
+#: exe/webui/element.py:2338 exe/webui/element.py:2365
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Správna voľba"
 
-#: exe/webui/element.py:1914 exe/webui/element.py:2266
+#: exe/webui/element.py:1916 exe/webui/element.py:2268
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Zmazať možnosť"
 
-#: exe/webui/element.py:1948 exe/webui/element.py:1958
+#: exe/webui/element.py:1950 exe/webui/element.py:1960
 msgid "Correct"
 msgstr "Správne"
 
-#: exe/webui/element.py:1950 exe/webui/element.py:1960
+#: exe/webui/element.py:1952 exe/webui/element.py:1962
 msgid "Incorrect"
 msgstr "Nesprávne"
 
-#: exe/webui/element.py:2043 exe/webui/element.py:2448
+#: exe/webui/element.py:2045 exe/webui/element.py:2450
 #: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Zmazať otázku"
 
-#: exe/webui/element.py:2076 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2078 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Pridať ďalšiu možnosť"
 
-#: exe/webui/element.py:2126 exe/webui/questionelement.py:130
+#: exe/webui/element.py:2128 exe/webui/listablock.py:280
+#: exe/webui/questionelement.py:130
 msgid "Show Feedback"
 msgstr "Zobraziť spätnú väzbu"
 
-#: exe/webui/element.py:2338 exe/webui/element.py:2365
+#: exe/webui/element.py:2340 exe/webui/element.py:2367
 msgid "Wrong"
 msgstr "Nesprávne"
 
-#: exe/webui/element.py:2463
+#: exe/webui/element.py:2465
 msgid "Add another option"
 msgstr "Pridať ďalšiu možnosť"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
 msgstr "URL:"
+
+#: exe/webui/externalurlblock.py:72
+msgid "small"
+msgstr ""
+
+#: exe/webui/externalurlblock.py:73
+msgid "medium"
+msgstr ""
+
+#: exe/webui/externalurlblock.py:74
+msgid "large"
+msgstr ""
+
+#: exe/webui/externalurlblock.py:75
+msgid "super-size"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:81
 msgid "Frame Height:"
@@ -4790,7 +4859,7 @@ msgstr "Veľkosť zväčšovacieho skla:"
 msgid "Other words"
 msgstr ""
 
-#: exe/webui/listablock.py:269 exe/webui/listablock.py:273
+#: exe/webui/listablock.py:275
 msgid "Check"
 msgstr ""
 
@@ -4811,27 +4880,27 @@ msgstr ""
 msgid "Para saber más"
 msgstr ""
 
-#: exe/webui/preferencespage.py:142
+#: exe/webui/preferencespage.py:143
 msgid "Select Language"
 msgstr "Zvoľte jazyk"
 
-#: exe/webui/preferencespage.py:147
+#: exe/webui/preferencespage.py:148
 msgid "Enable All Internal Linking"
 msgstr ""
 
-#: exe/webui/preferencespage.py:148
+#: exe/webui/preferencespage.py:149
 msgid "Disable Auto-Top Internal Linking"
 msgstr ""
 
-#: exe/webui/preferencespage.py:149
+#: exe/webui/preferencespage.py:150
 msgid "Disable All Internal Linking"
 msgstr ""
 
-#: exe/webui/preferencespage.py:150
+#: exe/webui/preferencespage.py:151
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr ""
 
-#: exe/webui/preferencespage.py:158 exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/preferencespage.py:159 exe/webui/xliffexportpreferencespage.py:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "OK"
@@ -5070,12 +5139,4 @@ msgstr ""
 "Buď váš idevice/generic.data súbor alebo balíček, ktorý načítavate, bol "
 "vytvorený novšou verziou eXe. Aktualizujte, prosím, vašu verziu eXe a "
 "skúste to znovu."
-
-#~ msgid ""
-#~ "<p>Si esta opci&oacute;n esta marcada se"
-#~ " muestra la puntuaci&oacute;n obtenida.</p>"
-#~ msgstr ""
-
-#~ msgid "Mostrar Puntuaci&oacute;n?"
-#~ msgstr ""
 

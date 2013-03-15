@@ -17,12 +17,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.engine.locationbuttons import LocationButtons
 
 """
 This is the main Javascript page.
 """
 
 import os
+import json
 import sys
 import logging
 import traceback
@@ -89,6 +91,7 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
         self.authoringPages = {}
+        self.location_buttons = LocationButtons()
 
     def child_authoring(self, ctx):
         """Returns the authoring page that corresponds to the url http://127.0.0.1:port/package_name/authoring"""
@@ -140,6 +143,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
         setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
+        setUpHandler(self.handleSetBrowser,  'setBrowser')
 
         #For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -149,7 +153,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleDemote, 'DemoteNode')
         setUpHandler(self.outlinePane.handleUp, 'UpNode')
         setUpHandler(self.outlinePane.handleDown, 'DownNode')
-        
+        setUpHandler(self.handleCreateDir, 'CreateDir')
+
         self.idevicePane.client = client
 
         if not self.webServer.monitoring:
@@ -159,6 +164,14 @@ class MainPage(RenderableLivePage):
     def render_authoring_src(self, ctx, data):
         return tags.script(type="text/javascript")[
            "var authoringIFrameSrc = '%s/authoring?clientHandleId=%s';" % ( self.package.name, IClientHandle(ctx).handleId) ]
+
+    def render_lastdir(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var lastDir = %s;" % json.dumps(G.application.config.lastDir) ]
+
+    def render_location_buttons(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var locationButtons = %s;" % json.dumps(self.location_buttons.buttons)]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
@@ -279,6 +292,7 @@ class MainPage(RenderableLivePage):
         G.application.config.locale = locale
         G.application.config.locales[locale].install(unicode=True)
         G.application.config.configParser.set('user', 'locale', locale)
+        self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
 
     def handleSetInternalAnchors(self, client, internalAnchors):
@@ -288,6 +302,14 @@ class MainPage(RenderableLivePage):
         G.application.config.internalAnchors = internalAnchors
         G.application.config.configParser.set('user', 'internalAnchors', internalAnchors)
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
+    
+    def handleSetBrowser(self, client, browser):
+        """
+        JR: Set Browser using Nevow instead of a POST
+        """
+        G.application.config.browser = browser
+        G.application.config.configParser.set('system', 'browser', browser)
+        client.sendScript('alert("%s");' % _(u"Changes take effect when you restart eXe"))
  
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """
@@ -518,14 +540,26 @@ class MainPage(RenderableLivePage):
             # safety measures against TinyMCE, otherwise it will 
             # later take ampersands and entity-escape them into '&amp;',
             # and filenames with hash signs will not be found, etc.:
-            unspaced_filename  = local_filename.replace(' ','_')
-            unhashed_filename  = unspaced_filename.replace('#', '_num_')
-            unamped_local_filename  = unhashed_filename.replace('&', '_and_')
+            #JR: Cambiamos el nombre del fichero para que lo acepte Agrega y no tenga cosas raras
+            #unspaced_filename  = local_filename.replace(' ','_')
+            #unhashed_filename  = unspaced_filename.replace('#', '_num_')
+            #unamped_local_filename  = unhashed_filename.replace('&', '_and_')
+            #log.debug("and setting new file basename as: " 
+            #        + unamped_local_filename);
+            #my_basename = os.path.basename(unamped_local_filename)
+            my_basename=os.path.basename(local_filename)
+            print(my_basename)
+            import unicodedata
+            import string
+            validFilenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
+            cleanedFilename = unicodedata.normalize('NFKD', my_basename).encode('ASCII', 'ignore')
+            my_basename = ''.join(c for c in cleanedFilename if c in validFilenameChars).replace(' ','_')
+            print(my_basename)
             log.debug("and setting new file basename as: " 
-                    + unamped_local_filename);
-            my_basename = os.path.basename(unamped_local_filename)
+                    + my_basename);
+            #JR
+            
             descrip_file.write((u"basename="+my_basename).encode('utf-8'))
-
             descrip_file.flush()
             descrip_file.close()
 
@@ -721,6 +755,7 @@ class MainPage(RenderableLivePage):
 
         if len(self.clientHandleFactory.clientHandles) <= 1:
             self.webServer.monitoring = False
+            G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
@@ -827,6 +862,20 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Package extracted to: %s') % filename)
+
+    def handleCreateDir(self, client, currentDir, newDir):
+        try:
+            d = Path(currentDir) / newDir
+            d.makedirs()
+            client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({ 
+                callback: function() {
+                    eXe.app.fireEvent( "dirchange", %s );
+                }
+            })""" % json.dumps(d))
+        except OSError:
+            client.alert(_(u"Directory exists"))
+        except:
+            log.exception("")
 
     # Public Methods
 

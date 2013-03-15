@@ -6,12 +6,12 @@ flash:"Flash (swf, flv, mp3)",
 quicktime:"QuickTime (mov, mp4, mpeg)",
 windowsmedia:"Windows Media (wmv, wma)",
 realmedia:"Real Media (ram)",
-selected_file : "Archivo seleccionado",
-html5_warning : "HTML5 no funciona en todos los navegadores",
+selected_file : "Ficheiro selecionado",
+html5_warning : "HTML5 n\u00E3o funciona em todos os navegadores",
 recommended_type : "Tipo recomendado",
-confirm_question : "\u00BFContinuar sin hacer cambios?",
-preview_error : "No se ha podido generar una previsualizaci\u00F3n",
-video_download_file_warning : "Si el navegador del usuario no puede reproducir el v\u00EDdeo se mostrar\u00E1 un enlace al archivo.",
-audio_download_file_warning : "Si el navegador del usuario no puede reproducir el audio se mostrar\u00E1 un enlace al archivo."
+confirm_question : "Continuar sem fazer qualquer mudan\u00E7a?",
+preview_error : "N\u00E3o foi poss\u00EDvel gerar uma pr\u00E9-visualiza\u00E7\u00E3o",
+video_download_file_warning : "Se o navegador do utilizador n\u00E3o conseguir reproduzir o v\u00EDdeo, ser\u00E1 mostrada uma liga\u00E7\u00E3o para o ficheiro.",
+audio_download_file_warning : "Se o navegador do utilizador n\u00E3o conseguir reproduzir o \u00E1udio, ser\u00E1 mostrada uma liga\u00E7\u00E3o para o ficheiro."
 // The New eXeLearning
 });

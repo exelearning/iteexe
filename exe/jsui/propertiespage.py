@@ -1,6 +1,6 @@
 # -- coding: utf-8 --
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
 #
 # This program is free software; you can redistribute it and/or modify
@@ -29,6 +29,7 @@ from twisted.web.resource import Resource
 from exe.engine.path import toUnicode, Path
 log = logging.getLogger(__name__)
 
+
 # ===========================================================================
 class PropertiesPage(Renderable, Resource):
     """
@@ -38,12 +39,12 @@ class PropertiesPage(Renderable, Resource):
 
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource')
 
-    imgFieldNames     = ('pp_backgroundImg')
+    imgFieldNames = ('pp_backgroundImg')
 
     def __init__(self, parent):
-        """ 
+        """
         Initialize
-        """ 
+        """
         Renderable.__init__(self, parent)
         if parent:
             self.parent.putChild(self.name, self)
@@ -67,7 +68,7 @@ class PropertiesPage(Renderable, Resource):
                 return obj, name
             else:
                 if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource']:
-                    setattr(obj,name, False)
+                    setattr(obj, name, False)
                     return obj, name
 
         raise ValueError("field id '%s' doesn't refer "
@@ -75,7 +76,7 @@ class PropertiesPage(Renderable, Resource):
 
     def render_GET(self, request=None):
         log.debug("render_GET")
-        
+
         data = {}
         try:
             for key in request.args.keys():
@@ -93,7 +94,7 @@ class PropertiesPage(Renderable, Resource):
 
     def render_POST(self, request=None):
         log.debug("render_POST")
-        
+
         data = {}
         try:
             for key, value in request.args.items():
@@ -106,11 +107,15 @@ class PropertiesPage(Renderable, Resource):
                         if path.isfile():
                             setattr(obj, name, toUnicode(value[0]))
                             data[key] = getattr(obj, name).basename()
+                        else:
+                            if getattr(obj, name):
+                                if getattr(obj, name).basename() != path:
+                                    setattr(obj, name, None)
                     else:
                         setattr(obj, name, toUnicode(value[0]))
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
         return json.dumps({'success': True, 'data': data})
-    
+
 # ===========================================================================

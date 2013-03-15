@@ -311,6 +311,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Preferences')
                             },
                             {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_browser',
+                                accesskey: 's',
+                                text: _('Select Browser')
+                            },
+                            {
                                 xtype: 'menuseparator'
                             },
                             {

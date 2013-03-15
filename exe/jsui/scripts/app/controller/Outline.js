@@ -76,6 +76,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 handler: function() {
 		    		 this.onNodeAdd();
 		    	 },
+		         ctrl: true,
 		    	 scope: this,
 		    	 defaultEventAction: "stopEvent"
 		     },
@@ -84,6 +85,7 @@ Ext.define('eXe.controller.Outline', {
 		    	 handler: function() {
 		    		 this.onNodeDel();
 		    	 },
+		         ctrl: true,
 		    	 scope: this,
 		    	 defaultEventAction: "stopEvent"
 		     },
@@ -232,8 +234,10 @@ Ext.define('eXe.controller.Outline', {
 			scope: this,
 			fn: function(button, text) {
 				if (button == "ok")	{
-					this.disableButtons();
-					nevow_clientToServerEvent('RenNode', this, '', nodeid, text);
+					if (text) {
+						this.disableButtons();
+						nevow_clientToServerEvent('RenNode', this, '', nodeid, text);
+					}
 		    	}
 			}
 		});

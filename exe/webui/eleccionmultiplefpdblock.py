@@ -92,7 +92,7 @@ class EleccionmultiplefpdBlock(Block):
                 if not isAnswered: 
                     self.idevice.edit = True
                     self.idevice.message = \
-                        x_("Please select a correct answer for each question.")
+                        _("Please select a correct answer for each question.")
                     break
  
         

@@ -28,6 +28,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
 
         Ext.applyIf(me, {
             autoScroll: true,
+            trackResetOnLoad: true,            
             items: [
                 {
                     xtype: 'fieldset',
@@ -38,11 +39,12 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
-	                            inputId: 'pp_scolinks',
-	                            boxLabel: _('Add Previous/Next links within SCOs?'),
+                                inputId: 'pp_scolinks',
+                                boxLabel: _('Add Previous/Next links within SCOs?'),
                                 inputValue: true,
                                 uncheckedValue: false,
-	                            tooltip: _('Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality.')
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality.')
                             },
                             flex: 0,
                             help: _('Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO.  This requires a non-standard extension to SCORM 1.2 and is only known to work with some versions of Moodle.')
@@ -50,11 +52,12 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
-	                            inputId: 'pp_scowsinglepage',
-	                            boxLabel: _('Include Single Page export file?'),
+                                inputId: 'pp_scowsinglepage',
+                                boxLabel: _('Include Single Page export file?'),
                                 inputValue: true,
                                 uncheckedValue: false,
-	                            tooltip: _('Checking this option the exported SCORM file will include a file named "singlepage_index.html" containing the result of exporting this eXe package as a single page.')
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option the exported SCORM file will include a file named "singlepage_index.html" containing the result of exporting this eXe package as a single page.')
                             },
                             flex: 0,
                             help: _('Checking this option the exported SCORM file will include a file named "singlepage_index.html" containing the result of exporting this eXe package as a single page.')
@@ -62,11 +65,12 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
-	                            inputId: 'pp_scowwebsite',
-	                            boxLabel: _('Include Web Site export files?'),
+                                inputId: 'pp_scowwebsite',
+                                boxLabel: _('Include Web Site export files?'),
                                 inputValue: true,
                                 uncheckedValue: false,
-	                            tooltip: _('Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the "website_" prefix to differentiate them from their SCORM equivalent.')
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the "website_" prefix to differentiate them from their SCORM equivalent.')
                             },
                             flex: 0,
                             help: _('Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the "website_" prefix to differentiate them from their SCORM equivalent.')
@@ -74,11 +78,12 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
-	                            inputId: 'pp_scowsource',
-	                            boxLabel: _('Create editable SCORM file?'),
+                                inputId: 'pp_scowsource',
+                                boxLabel: _('Create editable SCORM file?'),
                                 inputValue: true,
                                 uncheckedValue: false,
-	                            tooltip: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
                             },
                             flex: 0,
                             help: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
@@ -87,9 +92,9 @@ Ext.define('eXe.view.forms.ExportPanel', {
                 },
                 {
                     xtype: 'button',
-                    text: _('Apply'),
+                    text: _('Save'),
                     margin: 10,
-                    itemId: 'apply'
+                    itemId: 'save_properties'
                 }
             ]
         });
