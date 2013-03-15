@@ -229,30 +229,30 @@ class WikipediaBlock(Block):
             html += self.idevice.title
             html += u"</h2>\n"
             html += u"<div class=\"iDevice_inner\">\n"
-        html += content
         html += u"<br/>\n"
-        html += _(u"This article is licensed under the ")
-        html += u"<a "
-        html += u"href=\"javascript:window.open('fdl.html')\">"
-        html += u"%s</a>. " % _(u"GNU Free Documentation License")
-        html += _(u"It uses material from the ")
+        # licence notice:
+        lic = _(u"This article is licensed under the ")
+        lic += u"<a href=\"javascript:window.open('fdl.html')\">"
+        lic += u"%s</a>. " % _(u"GNU Free Documentation License")
+        lic += _(u"It uses material from the ")
         # UGLY UGLY UGLY KLUDGE for Wayne
         # "BIG please - Will you check that the Wikieducator url is changed for
         # the next release - not sure if we'll get the image thing sorted, but
         # this is pretty important strategically re the international growth of
         # eXe.  Not a new feature <smile> just a small change to a string."
         if self.idevice.site == u"http://wikieducator.org/":
-            html += u"<a href=\""+self.idevice.site
+            lic += u"<a href=\""+self.idevice.site
         else:
-            # html += u"<a href=\""+self.idevice.site+u"wiki/"
-            html += u"<a href=\""
-        html += self.idevice.articleName+u"\">"
-        html += _(u"article ") 
-        html += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
+            lic += u"<a href=\""+self.idevice.site+u"wiki/"
+        lic += self.idevice.articleName+u"\">"
+        lic += _(u"article ") 
+        lic += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
-            html += u"</div></div>\n"
+            lic += u"</div></div>\n"
         else:
-            html += u"</div>\n"
+            lic += u"</div>\n"
+        content = content + lic
+        html += content
         return html
     
 
