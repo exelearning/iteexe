@@ -232,7 +232,7 @@ class WikipediaBlock(Block):
         html += u"<br/>\n"
         # licence notice:
         lic = _(u"This article is licensed under the ")
-        lic += u"<a href=\"javascript:window.open('fdl.html')\">"
+        lic += u"<a href='fdl.html'>"
         lic += u"%s</a>. " % _(u"GNU Free Documentation License")
         lic += _(u"It uses material from the ")
         # UGLY UGLY UGLY KLUDGE for Wayne
