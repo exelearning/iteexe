@@ -123,6 +123,22 @@ class GalleryBlock(Block):
             # Add an image
             if action == 'addImage':
                 # Decode multiple filenames
+                #JR: Cambiamos para que solo anada la ultima imagen y no como lo hacia antes que siempre
+                #    anadia todas las imagenes otra vez
+                aux = params.split('&')
+                filename = aux[len(aux)-1]
+                match = self.unicodeRe.search(filename)
+                while match:
+                    start, end = match.span()
+                    if match.groups()[0]:
+                        numStart = start + 2 # '%u'
+                    else:
+                        numStart = start + 1 # '%'
+                    code = unichr(int(filename[numStart:end], 16))
+                    filename = filename[:start] + code + filename[end:]
+                    match = self.unicodeRe.search(filename)
+                self.idevice.addImage(filename)
+                """ JR: Esto es lo que habia antes
                 for filename in params.split('&'):
                     # Unquote normal and unicode chars
                     match = self.unicodeRe.search(filename)
@@ -135,7 +151,7 @@ class GalleryBlock(Block):
                         code = unichr(int(filename[numStart:end], 16))
                         filename = filename[:start] + code + filename[end:]
                         match = self.unicodeRe.search(filename)
-                    self.idevice.addImage(filename)
+                    self.idevice.addImage(filename)"""
                 # disable Undo following such an action:
                 self.idevice.undo = False
             # Edit/change an image
