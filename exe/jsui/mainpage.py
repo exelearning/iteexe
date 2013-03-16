@@ -540,24 +540,12 @@ class MainPage(RenderableLivePage):
             # safety measures against TinyMCE, otherwise it will 
             # later take ampersands and entity-escape them into '&amp;',
             # and filenames with hash signs will not be found, etc.:
-            #JR: Cambiamos el nombre del fichero para que lo acepte Agrega y no tenga cosas raras
-            #unspaced_filename  = local_filename.replace(' ','_')
-            #unhashed_filename  = unspaced_filename.replace('#', '_num_')
-            #unamped_local_filename  = unhashed_filename.replace('&', '_and_')
-            #log.debug("and setting new file basename as: " 
-            #        + unamped_local_filename);
-            #my_basename = os.path.basename(unamped_local_filename)
-            my_basename=os.path.basename(local_filename)
-            print(my_basename)
-            import unicodedata
-            import string
-            validFilenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
-            cleanedFilename = unicodedata.normalize('NFKD', my_basename).encode('ASCII', 'ignore')
-            my_basename = ''.join(c for c in cleanedFilename if c in validFilenameChars).replace(' ','_')
-            print(my_basename)
+            unspaced_filename  = local_filename.replace(' ','_')
+            unhashed_filename  = unspaced_filename.replace('#', '_num_')
+            unamped_local_filename  = unhashed_filename.replace('&', '_and_')
             log.debug("and setting new file basename as: " 
-                    + my_basename);
-            #JR
+                    + unamped_local_filename);
+            my_basename = os.path.basename(unamped_local_filename)
             
             descrip_file.write((u"basename="+my_basename).encode('utf-8'))
             descrip_file.flush()

@@ -293,18 +293,28 @@ class _Resource(Persistable):
         """
         Changes any filename to pure ascii, returns only the basename
         """     
-        nameBase, ext = Path(Path(filename).basename()).splitext()
+        #nameBase, ext = Path(Path(filename).basename()).splitext()
+        nameBase = Path(filename).basename()
         # Check if the filename is ascii so that twisted can serve it
-        try: nameBase.encode('ascii')
-        except UnicodeEncodeError:
-            nameBase = nameBase.encode('utf-8').encode('hex')
+        #JR: Convertimos el nombre del fichero a algunos caracteres ascii validos
+        import unicodedata
+        import string
+        validFilenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
+        cleanedFilename = unicodedata.normalize('NFKD', nameBase).encode('ASCII', 'ignore')
+        nameBase = ''.join(c for c in cleanedFilename if c in validFilenameChars).replace(' ','_')
+        #JR
+        #nameBase, ext = Path(Path(filename).basename()).splitext()
+        #try: nameBase.encode('ascii')
+        #except UnicodeEncodeError:
+        #    nameBase = nameBase.encode('utf-8').encode('hex')
         # Encode the extension separately so that you can keep file types a bit
         # at least
-        try:
-            ext = ext.encode('ascii')
-        except UnicodeEncodeError:
-            ext = ext.encode('utf8').encode('hex')
-        return str(nameBase + ext)
+        #try:
+        #    ext = ext.encode('ascii')
+        #except UnicodeEncodeError:
+        #    ext = ext.encode('utf8').encode('hex')
+        #return str(nameBase + ext)
+        return str(nameBase)
 
 
 class Resource(_Resource):
