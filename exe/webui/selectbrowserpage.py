@@ -16,7 +16,7 @@ class SelectBrowserPage(RenderableResource):
     """
     name = 'selectbrowser'
     browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links', 
-                     'elinks', 'lynx', 'w3m', 'windows-default', 'macosx')
+                     'elinks', 'lynx', 'w3m', 'windows-default', 'macosx', 'konqueror')
     browserNames = {
                     mywebbrowser.get_iexplorer(): "Internet Explorer",
                     "safari": "Safari",
