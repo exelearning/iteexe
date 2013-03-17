@@ -340,6 +340,11 @@ class Block(Renderable):
         html  = common.submitImage(u"edit", self.id, 
                                    u"/images/stock-edit.png", 
                                    _(u"Edit"), self.package.isChanged, True)
+        html += common.confirmThenSubmitImage(
+            _(u"This will delete this iDevice. Do you really want to do this?"),
+            u"delete",
+            self.id, u"/images/stock-cancel.png", 
+            _(u"Delete"), 1)
         return html
 
 # ===========================================================================
