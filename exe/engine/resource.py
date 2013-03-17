@@ -293,15 +293,21 @@ class _Resource(Persistable):
         """
         Changes any filename to pure ascii, returns only the basename
         """     
-        #nameBase, ext = Path(Path(filename).basename()).splitext()
-        nameBase = Path(filename).basename()
+        nameBase, ext = Path(Path(filename).basename()).splitext()
+        #nameBase = Path(filename).basename()
         # Check if the filename is ascii so that twisted can serve it
         #JR: Convertimos el nombre del fichero a algunos caracteres ascii validos
         import unicodedata
         import string
         validFilenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
-        cleanedFilename = unicodedata.normalize('NFKD', nameBase).encode('ASCII', 'ignore')
-        nameBase = ''.join(c for c in cleanedFilename if c in validFilenameChars).replace(' ','_')
+        cleanedBasename = unicodedata.normalize('NFKD', nameBase).encode('ASCII', 'ignore')
+        nameBase = ''.join(c for c in cleanedBasename if c in validFilenameChars).replace(' ','_')
+        cleanedExt = unicodedata.normalize('NFKD', ext).encode('ASCII', 'ignore')
+        ext = ''.join(c for c in cleanedExt if c in validFilenameChars).replace(' ','_')
+        if nameBase == "":
+            nameBase = cleanedBasename.encode('utf-8').encode('hex')
+        if ext == "":
+            ext = cleanedExt.encode('utf-8').encode('hex')
         #JR
         #nameBase, ext = Path(Path(filename).basename()).splitext()
         #try: nameBase.encode('ascii')
@@ -314,7 +320,7 @@ class _Resource(Persistable):
         #except UnicodeEncodeError:
         #    ext = ext.encode('utf8').encode('hex')
         #return str(nameBase + ext)
-        return str(nameBase)
+        return str(nameBase + ext)
 
 
 class Resource(_Resource):
