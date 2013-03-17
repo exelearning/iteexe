@@ -163,6 +163,8 @@ within Wikipedia.""")
             imageName = imageName.replace('%28', '(')
             imageName = imageName.replace('%29', ')')
             imageName = imageName.replace('%C3%A5', 'å')
+            #JR: decodificamos el nombre de la imagen
+            imageName = urllib.unquote(imageName)
             # Search if we've already got this image
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
