@@ -225,11 +225,15 @@ class QuizTestBlock(Block):
             calcRawScore();
             actualScore =  Math.round(rawScore / numQuestions * 100);
             document.getElementById("quizForm%s").submitB.disabled = true;
-            alert("Your score is " + actualScore + "%%")
+            """ % self.idevice.id
+        scriptStr += 'alert("'
+        scriptStr += _("Your score is ")
+        scriptStr += '" + actualScore + "%")'
+        scriptStr += """
            
         }
 //]]>    -->
-    </script>\n""" % self.idevice.id
+    </script>\n"""
 
         return scriptStr
 
@@ -242,7 +246,7 @@ class QuizTestBlock(Block):
         scriptStr += '<!-- //<![CDATA[\n'
         scriptStr += "var numQuestions = "
         scriptStr += unicode(len(self.questionElements))+";\n"
-        scriptStr += "var rawScore = 0;\n" 
+        scriptStr += "var rawScore = 0;\n"
         scriptStr += "var actualScore = 0;\n"
         answerStr  = """function getAnswer()
         {"""
@@ -251,28 +255,28 @@ class QuizTestBlock(Block):
         answers     = ""
         rawScoreStr = """}
         function calcRawScore(){\n"""
-        
+       
         for element in self.questionElements:
             i = element.index
             varStr    = "question" + unicode(i)
             keyStr    = "key" + unicode(i)
             quesId    = "key" + unicode(element.index) + "b" + self.id
             numOption = element.getNumOption()
-            answers  += "var key"  + unicode(i) + " = " 
+            answers  += "var key"  + unicode(i) + " = "
             answers  += unicode(element.question.correctAns) + ";\n"
             getEle    = 'document.getElementById("quizForm%s")' % \
                         self.idevice.id
             chk       = '%s.%s[i].checked'% (getEle, quesId)
             value     = '%s.%s[i].value' % (getEle, quesId)
             varStrs += "var " + varStr + ";\n"
-            keyStrs += "var key" + unicode(i)+ " = " 
-            keyStrs += unicode(element.question.correctAns) + ";\n"           
+            keyStrs += "var key" + unicode(i)+ " = "
+            keyStrs += unicode(element.question.correctAns) + ";\n"          
             answerStr += """
-            doLMSSetValue("cmi.interactions.%s.id","%s");
-            doLMSSetValue("cmi.interactions.%s.type","choice");
-            doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern",
+            scorm.SetInteractionValue("cmi.interactions.%s.id","%s");
+            scorm.SetInteractionValue("cmi.interactions.%s.type","choice");
+            scorm.SetInteractionValue("cmi.interactions.%s.correct_responses.0.pattern",
                           "%s");
-            """ % (unicode(i), quesId, unicode(i), unicode(i), 
+            """ % (unicode(i), quesId, unicode(i), unicode(i),
                    element.question.correctAns)
             answerStr += """
             for (var i=0; i < %s; i++)
@@ -280,29 +284,29 @@ class QuizTestBlock(Block):
                if (%s)
                {
                   %s = %s;
-                  doLMSSetValue("cmi.interactions.%s.student_response",%s);
+                  scorm.SetInteractionValue("cmi.interactions.%s.student_response",%s);
                   break;
                }
             }
-           """ % (numOption, chk, varStr, value, unicode(i), varStr)            
+           """ % (numOption, chk, varStr, value, unicode(i), varStr)           
             rawScoreStr += """
             if (%s == %s)
             {
-               doLMSSetValue("cmi.interactions.%s.result","correct");
+               scorm.SetInteractionValue("cmi.interactions.%s.result","correct");
                rawScore++;
             }
             else
             {
-               doLMSSetValue("cmi.interactions.%s.result","wrong");
+               scorm.SetInteractionValue("cmi.interactions.%s.result","wrong");
             }""" % (varStr, keyStr, unicode(i), unicode(i))
-            
-        scriptStr += varStrs       
+           
+        scriptStr += varStrs      
         scriptStr += keyStrs
-        scriptStr += answerStr 
-        scriptStr += rawScoreStr 
+        scriptStr += answerStr
+        scriptStr += rawScoreStr
         scriptStr += """
         }
-        
+       
         function calcScore2()
         {
            computeTime();  // the student has stopped here.
@@ -312,45 +316,46 @@ class QuizTestBlock(Block):
        """ % (self.idevice.id)
         scriptStr += """
            getAnswer();
-     
+    
            calcRawScore();
-           
+          
            actualScore = Math.round(rawScore / numQuestions * 100);
         """
-        scriptStr += 'alert("Your score is " + actualScore + "%")'
-        scriptStr += """   
-           
-           doLMSSetValue( "cmi.core.score.raw", actualScore+"" );
-           doLMSSetValue( "cmi.core.score.max", "100" );
-           
-           var mode = doLMSGetValue( "cmi.core.lesson_mode" );
-     
+        scriptStr += 'alert("'
+        scriptStr += _("Your score is ")
+        scriptStr += '" + actualScore + "%")'
+        scriptStr += """  
+          
+           scorm.SetScoreRaw(actualScore+"" );
+           scorm.SetScoreMax("100");
+          
+           var mode = scorm.GetMode();
+    
                if ( mode != "review"  &&  mode != "browse" ){
                  if ( actualScore < %s )
                  {
-                   doLMSSetValue( "cmi.core.lesson_status", "failed" );
+                   scorm.SetSuccessStatus("failed");
                  }
-                 else 
+                 else
                  {
-                   doLMSSetValue( "cmi.core.lesson_status", "passed" );
+                   scorm.SetSuccessStatus("passed");
                  }
-               
-                 doLMSSetValue( "cmi.core.exit", "" );
-                 } 
-     
+              
+                 scorm.SetExit("");
+                 }
+    
          exitPageStatus = true;
-     
-     
-         doLMSCommit();
-     
-         doLMSFinish();
-          
+    
+    
+         scorm.save();
+    
+         scorm.quit();
+         
         }
 //]]> -->
 </script>\n""" % self.idevice.passRate
 
         return scriptStr
-
 
     def renderPreview(self, style):
         """
@@ -373,7 +378,7 @@ class QuizTestBlock(Block):
         html += ' value="%s"/> ' % _("Submit Answer")
         
         if not self.idevice.score == -1:
-            message = "Your score is " + unicode(self.idevice.score) + "%"
+            message = _("Your score is ") + unicode(self.idevice.score) + "%"
             html += "<b>"+ message+ "</b><br/>"
 
         self.idevice.score = -1
