@@ -107,6 +107,7 @@ class AuthoringPage(RenderableResource):
         if "action" in request.args:
             if request.args['clientHandleId'][0] == "":
                 raise(Exception("Not clientHandleId defined"))
+            activeClient = None
             for client in self.parent.clientHandleFactory.clientHandles.values():
                 if request.args['clientHandleId'][0] != client.handleId:
                     if client.handleId in self.parent.authoringPages:
@@ -119,7 +120,10 @@ class AuthoringPage(RenderableResource):
                     activeClient = client
 
             if request.args["action"][0] == "done":
-                return "<body onload='location.replace(\"" + request.path + "?clientHandleId=" + activeClient.handleId + "\")'/>"
+                if activeClient:
+                    return "<body onload='location.replace(\"" + request.path + "?clientHandleId=" + activeClient.handleId + "\")'/>"
+                else:
+                    log.error("No active client")
 
         self.blocks = []
         self.__addBlocks(topNode)
