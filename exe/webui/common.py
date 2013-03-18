@@ -26,6 +26,7 @@ import logging
 from nevow      import tags as T
 from nevow.flat import flatten
 from exe                       import globals as G
+import re
 
 
 lastId = 0
@@ -296,7 +297,7 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     if title:
         html += u"title=\""+title+"\" "
     html += " href=\"#\" "
-    html += "onclick=\"confirmThenSubmitLink('"+message+"', '"+action+"', "
+    html += "onclick=\"confirmThenSubmitLink('"+re.escape(message)+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
     html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
     html += u'</a>\n' 

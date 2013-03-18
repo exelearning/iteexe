@@ -233,7 +233,7 @@ class GalleryBlock(Block):
 
                 def confirmThenSubmitLink(msg, method):
                     method = 'gallery.%s.%s' % (method, image.id)
-                    params = "'%s', '%s', %s, true" % (msg, method, self.id)
+                    params = "'%s', '%s', %s, true" % (re.escape(msg), method, self.id)
                     return "javascript:confirmThenSubmitLink(%s)" % params
                 changeGalleryImage = '\n'.join([
                         u'           <a title="%s"' % _(u'Change Image'),
