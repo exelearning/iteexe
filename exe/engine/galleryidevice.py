@@ -488,6 +488,15 @@ these in a gallery context rather then individually.</p>"""),
                 self._htmlResource.delete()
             self._htmlResource = None
 
+        #pedro_pena: Fix bug #1661
+        if hasattr(self, 'images'):
+            if type(self.images) == list:
+                images = self.images
+                from exe.engine.galleryidevice  import GalleryImages
+                self.images = GalleryImages(self)
+                while len(images) > 0:
+                    self.images.append(images.pop())
+
     def getResourcesField(self, this_resource):
         """
         implement the specific resource finding mechanism for this iDevice:
