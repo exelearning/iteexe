@@ -19,23 +19,21 @@ further modified by Philip Hutchison
 ======================================================================================== */
 
 
-var pipwerks = {};									//pipwerks 'namespace' helps ensure no conflicts with possible other "SCORM" variables
-pipwerks.UTILS = {};								//For holding UTILS functions
-pipwerks.debug = { isActive: true }; 				//Enable (true) or disable (false) for debug mode
+var pipwerks = {};			//pipwerks 'namespace' helps ensure no conflicts with possible other "SCORM" variables
+pipwerks.UTILS = {};			//For holding UTILS functions
+pipwerks.debug = { isActive: true }; 	//Enable (true) or disable (false) for debug mode
 
-pipwerks.SCORM = {									//Define the SCORM object
-    version:    null,              					//Store SCORM version.
-	handleCompletionStatus: true,					//Whether or not the wrapper should automatically handle the initial completion status
-	handleExitMode: true,							//Whether or not the wrapper should automatically handle the exit mode
-    API:        { handle: null, 
-				  isFound: false },					//Create API child object
-    connection: { isActive: false },				//Create connection child object
-    data:       { completionStatus: null,
-				  exitStatus: null },				//Create data child object
-    debug:      {}                 					//Create debug child object
+pipwerks.SCORM = {			//Define the SCORM object
+	version:    null,              	//Store SCORM version.
+	handleCompletionStatus: true,	//Whether or not the wrapper should automatically handle the initial completion status
+	handleExitMode: true,		//Whether or not the wrapper should automatically handle the exit mode
+	API:        { 	handle: null, 
+			isFound: false },	//Create API child object
+	connection: {	isActive: false },	//Create connection child object
+	data:       {	completionStatus: null,
+		  	exitStatus: null },	//Create data child object
+	debug:      {}	                 	//Create debug child object
 };
-
-
 
 /* --------------------------------------------------------------------------------
    pipwerks.SCORM.isAvailable
@@ -49,8 +47,6 @@ pipwerks.SCORM = {									//Define the SCORM object
 pipwerks.SCORM.isAvailable = function(){
 	return true;     
 };
-
-
 
 // ------------------------------------------------------------------------- //
 // --- SCORM.API functions ------------------------------------------------- //
@@ -81,72 +77,46 @@ pipwerks.SCORM.API.find = function(win){
 
                 findAttempts++; 
                 win = win.parent;
-
     }
 
-	if(scorm.version){											//If SCORM version is specified by user, look for specific API
-	
+	if(scorm.version){											//If SCORM version is specified by user, look for specific API	
 		switch(scorm.version){
-			
 			case "2004" : 
-			
 				if(win.API_1484_11){
-			
 					API = win.API_1484_11;
-				 
 				} else {
-					
 					trace(traceMsgPrefix +": SCORM version 2004 was specified by user, but API_1484_11 cannot be found.");
-					
 				}
 				
 				break;
 				
-			case "1.2" : 
-			
+			case "1.2" : 			
 				if(win.API){
-			
 					API = win.API;
-				 
 				} else {
-					
 					trace(traceMsgPrefix +": SCORM version 1.2 was specified by user, but API cannot be found.");
-					
 				}
 				
 				break;
-			
 		}
-		
 	} else {													//If SCORM version not specified by user, look for APIs
-		
 		if(win.API_1484_11) {									//SCORM 2004-specific API.
-	
 			scorm.version = "2004";								//Set version
 			API = win.API_1484_11;
-		 
 		} else if(win.API){										//SCORM 1.2-specific API
-			  
 			scorm.version = "1.2";								//Set version
 			API = win.API;
-		 
 		}
-
 	}
-
 	if(API){
-		
 		trace(traceMsgPrefix +": API found. Version: " +scorm.version);
 		trace("API: " +API);
 
 	} else {
-		
 		trace(traceMsgPrefix +": Error finding API. \nFind attempts: " +findAttempts +". \nFind attempt limit: " +findAttemptLimit);
-		
 	}
 	
     return API;
-
 };
 
 
@@ -161,36 +131,25 @@ pipwerks.SCORM.API.find = function(win){
 ---------------------------------------------------------------------------- */
 
 pipwerks.SCORM.API.get = function(){
-
     var API = null,
 		win = window,
 		find = pipwerks.SCORM.API.find,
 		trace = pipwerks.UTILS.trace; 
      
     if(win.parent && win.parent != win){ 
-    
         API = find(win.parent); 
-        
     } 
      
     if(!API && win.top.opener){ 
-    
         API = find(win.top.opener); 
-        
     } 
      
     if(API){  
-    
         pipwerks.SCORM.API.isFound = true;
-        
     } else {
-    
         trace("API.get failed: Can't find the API!");
-                               
     }
-     
     return API;
-
 };
           
 
@@ -202,18 +161,13 @@ pipwerks.SCORM.API.get = function(){
    Returns:     Object (the pipwerks.SCORM.API.handle variable).
 ---------------------------------------------------------------------------- */
 
-pipwerks.SCORM.API.getHandle = function() {
-	
+pipwerks.SCORM.API.getHandle = function() {	
 	var API = pipwerks.SCORM.API;
-     
-    if(!API.handle && !API.isFound){
-     
-        API.handle = API.get();
-     
-    }
-     
-    return API.handle;
 
+    if(!API.handle && !API.isFound){
+        API.handle = API.get();
+    }
+    return API.handle;
 };
      
 
@@ -232,7 +186,6 @@ pipwerks.SCORM.API.getHandle = function() {
 ---------------------------------------------------------------------------- */
 
 pipwerks.SCORM.connection.initialize = function(){
-               
     var success = false,
 		scorm = pipwerks.SCORM,
 		completionStatus = pipwerks.SCORM.data.completionStatus,
@@ -596,9 +549,7 @@ pipwerks.SCORM.data.save = function(){
 
 };
 
-
-pipwerks.SCORM.status = function (action, status){
-	
+pipwerks.SCORM.status = function (action, status){	
     var success = false,
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
@@ -620,11 +571,9 @@ pipwerks.SCORM.status = function (action, status){
 				
 							success = pipwerks.SCORM.data.set(cmi, status);
 							
-						} else {
-							
+						} else {							
 							success = false;
 							trace(traceMsgPrefix +": status was not specified.");
-							
 						}
 						
 						break;
@@ -707,14 +656,11 @@ pipwerks.SCORM.debug.getInfo = function(errorCode){
 			case "2004": result = API.GetErrorString(errorCode.toString()); break;
 		}
 		
-    } else {
-     
+    } else {     
         trace("SCORM.debug.getInfo failed: API is null.");
-
     }
      
     return String(result);
-
 };
 
 
@@ -735,20 +681,14 @@ pipwerks.SCORM.debug.getDiagnosticInfo = function(errorCode){
         result = "";
 		
     if(API){
-
 		switch(scorm.version){
 			case "1.2" : result = API.LMSGetDiagnostic(errorCode); break;
 			case "2004": result = API.GetDiagnostic(errorCode); break;
 		}
-		
     } else {
-     
         trace("SCORM.debug.getDiagnosticInfo failed: API is null.");
-
     }
-
     return String(result);
-
 };
 
 
@@ -757,7 +697,6 @@ pipwerks.SCORM.debug.getDiagnosticInfo = function(errorCode){
 // ------------------------------------------------------------------------- //
 
 // Because nobody likes typing verbose code.
-
 pipwerks.SCORM.init = pipwerks.SCORM.connection.initialize;
 pipwerks.SCORM.get  = pipwerks.SCORM.data.get;
 pipwerks.SCORM.set  = pipwerks.SCORM.data.set;
@@ -769,7 +708,6 @@ pipwerks.SCORM.quit = pipwerks.SCORM.connection.terminate;
 // ------------------------------------------------------------------------- //
 // --- pipwerks.UTILS functions -------------------------------------------- //
 // ------------------------------------------------------------------------- //
-
 
 /* -------------------------------------------------------------------------
    pipwerks.UTILS.StringToBoolean()
@@ -812,3 +750,621 @@ pipwerks.UTILS.trace = function(msg){
 		
      }
 };
+
+
+// ------------------------------------------------------------------------- //
+// --- SCORM.data wrapping functions --------------------------------------- //
+// --- developed for The new eXeLearning ----------------------------------- //
+// --- Author: José Miguel Andonegi: jm.andonegi@gmail.com     ------------- //
+// ------------------------------------------------------------------------- //
+
+// ------------------------------------------------------------------------- //
+// The functions are ordered alphabetichaly by element's name in 2004 API--- //
+// ------------------------------------------------------------------------- //
+
+/* --------------------------------------------------------------------------------
+// cmi._version: Represents the version of the data model. (read-only)
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetDataModelVersion
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetDataModelVersion = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+			result = scorm.get("cmi._version");
+	}
+	else {
+		trace("pipwerks.SCORM.GetDataModelVersion failed: API is null.");
+	}
+
+	return String(result);
+};
+
+// cmi.comments_from_learner: Contains text from the learner. (pending wrapper function developement)
+// cmi.comments_from_lms: Contains comments and annotations intended to be made available to the learner. (pending wrapper function developement)
+
+/* --------------------------------------------------------------------------------
+// cmi.completion_status: Indicates whether the learner has completed the SCO
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetStatus
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetCompletionStatus = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.lesson_status"); break;
+			case "2004": result = scorm.get("cmi.completion_status"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetCompletionStatus failed: API is null.");
+	}
+
+	return String(result);
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.completion_status: Indicates whether the learner has completed the SCO
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetCompletionStatus
+   Parameters: status (string)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+
+pipwerks.SCORM.SetCompletionStatus = function(status){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		// Check the value
+		switch(status){
+			case "completed" :break;
+			case "incomplete" :break;
+			case "not attempted" :break;
+			case "unknown" :if(scorm.version=="1.2"){status="not_attempted";}break; // "unknown" is only valid for 2004
+			case "browsed" :if(scorm.version=="2004"){status="incomplete";}break; // "browsed" is only valid for 1.2
+			default: trace("pipwerks.SCORM.SetCompletionStatus failed: status value is not valid.");return;
+ 		}
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.lesson_status",status); break;
+			case "2004": result = scorm.set("cmi.completion_status",status); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetCompletionStatus failed: API is null.");
+	}
+};
+
+
+// cmi.completion_threshold: Identifies a value against which the measure of the progress the learner has made toward completing the SCO can be compared to determine whether the SCO should be considered completed. (pending wrapper function developement)
+// cmi.credit: Indicates whether the learner will be credited for performance in this SCO. (pending wrapper function developement)
+// cmi.entry: Contains information that asserts whether the learner has previously accessed the SCO. (pending wrapper function developement)
+
+
+/* --------------------------------------------------------------------------------
+// cmi.exit: Indicates how or why the learner left the SCO.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetExit
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetExit = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.exit"); break;
+			case "2004": result = scorm.get("cmi.exit"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetExit failed: API is null.");
+	}
+
+	return String(result);
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.exit: Indicates how or why the learner left the SCO.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetExit
+   Parameters: status (string)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetExit = function(exit){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		// Check the value
+		switch(exit){
+			case "time-out" :break;
+			case "suspend" :break;
+			case "logout" :break;
+			case "" :break;
+			case "normal" :if(scorm.version=="1.2"){exit="";}break; // "normal" is only valid for 2004
+			default: trace("pipwerks.SCORM.SetExit failed: exit value is not valid.");return;
+ 		}
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.exit",exit); break;
+			case "2004": result = scorm.set("cmi.exit",exit); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetExit failed: API is null.");
+	}
+};
+
+
+/* --------------------------------------------------------------------------------
+// cmi.interactions: Defines information pertaining to an interaction for the purpose of measurement or assessment.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetInteractionValue
+   Parameters:	key (string): must be provided following 1.2 notation. Translation to 2004 notation will be performed if required
+				value (string): must be provided following 1.2 notation. Translation to 2004 notation will be performed if required
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetInteractionValue = function(key,value){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.exit"); break;
+			case "2004": result = scorm.get("cmi.exit"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.SetInteractionValue failed: API is null.");
+	}
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.interactions: Defines information pertaining to an interaction for the purpose of measurement or assessment.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetInteractionValue
+   Parameters:	key (string): must be provided following 1.2 notation. Translation to 2004 notation will be performed if required
+				value (string): must be provided following 1.2 notation. Translation to 2004 notation will be performed if required
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetInteractionValue = function(key,value){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.set(key,value); break;
+			case "2004":
+				// Just replace 
+				key = key.replace("student","learner");
+				result = scorm.set(key,value); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetInteractionValue failed: API is null.");
+	}
+};
+
+
+
+// cmi.launch_data: Provides data specific to a SCO that the SCO can use for initialization.
+
+/* --------------------------------------------------------------------------------
+// cmi.learner_id: Identifies the learner on behalf of whom the SCO instance was launched. (read-only)
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetLearnerId
+   Parameters: none
+   Returns:    Long interger
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetLearnerId = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.student_id"); break;
+			case "2004": result = scorm.get("cmi.learner_id"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetLearnerId failed: API is null.");
+	}
+
+	return result; // Value should be a long integer
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.learner_name: Represents the name of the learner. (read-only)
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetLearnerName
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetLearnerName = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.student_name"); break;
+			case "2004": result = scorm.get("cmi.learner_name"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetLearnerName failed: API is null.");
+	}
+
+	return String(result);
+};
+
+// cmi.learner_preference: Specifies learner preferences associated with the learner’s use of the SCO.
+// cmi.location: Represents a location in the SCO.
+// cmi.max_time_allowed: Indicates the amount of accumulated time the learner is allowed to use a SCO in the learner attempt.
+
+/* --------------------------------------------------------------------------------
+// cmi.mode: Identifies the modes in which the SCO may be presented to the learner.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetMode
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetMode = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.lesson_mode"); break;
+			case "2004": result = scorm.get("cmi.mode"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetMode failed: API is null.");
+	}
+
+	return String(result);
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.mode: Identifies the modes in which the SCO may be presented to the learner.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetMode
+   Parameters: mode (string)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetMode = function(mode){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		// Check the value
+		switch(mode){
+			case "browse" :break;
+			case "normal" :break;
+			case "review" :break;
+			default: trace("pipwerks.SCORM.SetMode failed: mode value is not valid.");return;
+ 		}
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.lesson_mode",mode); break;
+			case "2004": result = scorm.set("cmi.mode",mode); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetMode failed: API is null.");
+	}
+};
+
+// cmi.objectives: Specifies learning or performance objectives associated with a SCO. (pending wrapper function developement)
+// cmi.progress_measure: Identifies a measure of the progress the learner has made toward completing the SCO. (pending wrapper function developement)
+// cmi.scaled_passing_score: Identifies the scaled passing score for a SCO.
+
+/* --------------------------------------------------------------------------------
+// cmi.score.max: The max data model element is the maximum value in the range for the raw score
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetScoreMax
+   Parameters: none
+   Returns:    Real
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetScoreMax = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.score.max"); break;
+			case "2004": result = scorm.get("cmi.score.max"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetScoreMax failed: API is null.");
+	}
+
+	return result;
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.score.max: The max data model element is the maximum value in the range for the raw score
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetScoreMax
+   Parameters: max_score (real)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetScoreMax = function(max_score){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.score.max",max_score); break;
+			case "2004": result = scorm.set("cmi.score.max",max_score); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetScoreMax failed: API is null.");
+	}
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.score.min: The min data model element is the minimum value in the range for the raw score
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetScoreMin
+   Parameters: none
+   Returns:    Real
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetScoreMin = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.score.min"); break;
+			case "2004": result = scorm.get("cmi.score.min"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetScoreMin failed: API is null.");
+	}
+
+	return result;
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.score.min: The min data model element is the minimum value in the range for the raw score
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetScoreMin
+   Parameters: min_score (real)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetScoreMax = function(min_score){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.score.min",max_score); break;
+			case "2004": result = scorm.set("cmi.score.min",max_score); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetScoreMin failed: API is null.");
+	}
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.score.raw: Identifies the learner’s score for the SCO.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetScoreRaw
+   Parameters: none
+   Returns:    Real
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetScoreRaw = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.score.raw"); break;
+			case "2004": result = scorm.get("cmi.score.raw"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetScoreRaw failed: API is null.");
+	}
+
+	return result;
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.score.raw: Identifies the learner’s score for the SCO.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetScoreRaw
+   Parameters: score (real)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetScoreRaw = function(score){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.score.raw",score); break;
+			case "2004": result = scorm.set("cmi.score.raw",score); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetScoreRaw failed: API is null.");
+	}
+};
+
+// cmi.score.scaled: Identifies the learner’s score for the SCO. Only for 2004 (pending wrapper function developement)
+
+/* --------------------------------------------------------------------------------
+// cmi.session_time: Identifies the amount of time that the learner has spent in the current learner session for the SCO.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetSessionTime
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetSessionTime = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+	// Pending: check string format
+	if(API){
+
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.session_time"); break;
+			case "2004": result = scorm.get("cmi.session_time"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetSessionTime failed: API is null.");
+	}
+
+	return String(result);
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.session_time: Identifies the amount of time that the learner has spent in the current learner session for the SCO.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetSessionTime
+   Parameters: time (string)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetSessionTime = function(time){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	// Pending: check string format
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.set("cmi.core.session_time",time); break;
+			case "2004": result = scorm.set("cmi.session_time",time); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetSessionTime failed: API is null.");
+	}
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.success_status: Identifies the modes in which the SCO may be presented to the learner.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.GetSuccessStatus
+   Parameters: none
+   Returns:    String
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.GetSuccessStatus = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : result = scorm.get("cmi.core.completion_status"); break; // cmi.success_status only exists in 2004
+			case "2004": result = scorm.get("cmi.success_status"); break;
+		}
+	}
+	else {
+		trace("pipwerks.SCORM.GetSuccessStatus failed: API is null.");
+	}
+
+	return String(result);
+};
+
+/* --------------------------------------------------------------------------------
+// cmi.success_status: Identifies the modes in which the SCO may be presented to the learner.
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetSuccessStatus
+   Parameters: status (string)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+pipwerks.SCORM.SetSuccessStatus = function(status){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        	result = "";
+		
+	if(API){
+		// Check the value
+		switch(status){
+			case "passed" :break;
+			case "failed" :break;
+			case "unknown" :break;
+			default: trace("pipwerks.SCORM.SetSuccessStatus failed: " + status + " value is not valid.");return;
+ 		}
+		switch(scorm.version){
+			case "1.2" : // success_status doesn't exist in 1.2. Mapping values from 2004 to 12
+				switch(status){
+					case "passed": break;
+					case "failed": break;
+					case "unknown": status="not attempted"; break;
+					default: trace("pipwerks.SCORM.SetSuccessStatus failed: " + status + " value is not valid.");return;
+				}
+				
+				result = scorm.set("cmi.core.completion_status",status); 
+				break;
+			case "2004": result = scorm.set("cmi.success_status",status); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetSuccessStatus failed: API is null.");
+	}
+};
+
+// cmi.suspend_data: Provides information that may be created by a SCO as a result of a learner accessing or interacting with the SCO.
+// cmi.time_limit_action: Indicates what the SCO should do when the maximum time allowed is exceeded.
+// cmi.cmi.total_time: Identifies the sum of all of the learner’s learner session times accumulated in the current learner attempt prior to the current learner session.
+
+
