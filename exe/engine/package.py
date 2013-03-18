@@ -690,7 +690,8 @@ class Package(Persistable):
                     if len(res) < 1:
                         newPackage.resources.pop(key)
                     else:
-                        res[0].testForAndDeleteZombieResources()
+                        if (hasattr(res[0], 'testForAndDeleteZombieResources')):
+                            res[0].testForAndDeleteZombieResources()
 
             if newLoad: 
                 # provide newPackage to doUpgrade's versionUpgrade() to
