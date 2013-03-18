@@ -112,9 +112,9 @@ class Manifest(object):
         #JR: Cambio xulDir por webDir que es donde estaran ahora las templates.
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if self.metadataType == 'DC':
-                #JR: Por ahora dejo que coja la antigua plantila imslrm.xml
-                #templateFilename = self.config.webDir/'templates'/'imslrmdc.xml'
-                templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+                #JR: Si se quiere que coja la antigua plantila imslrm.xml se usara:
+                #templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+                templateFilename = self.config.webDir/'templates'/'imslrmdc.xml'
             elif self.metadataType == 'LOMES':
                 templateFilename = self.config.webDir/'templates'/'imslrmlomes.xml'
             elif self.metadataType == 'LOM':
@@ -296,7 +296,7 @@ class Manifest(object):
     <file href="base.css"/>
     <file href="content.css"/>
     <file href="popup_bg.gif"/>
-    <file href="APIWrapper.js"/>
+    <file href="SCORM_API_wrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         self.resStr += "\n"
         fileStr = ""
@@ -370,7 +370,7 @@ class ScormPage(Page):
             html += u"<body class=\"exe-scorm\">\n"
         else:
             html += u"<script type=\"text/javascript\" "
-            html += u"src=\"APIWrapper.js\"></script>\n" 
+            html += u"src=\"SCORM_API_wrapper.js\"></script>\n" 
             html += u"<script type=\"text/javascript\" "
             html += u"src=\"SCOFunctions.js\"></script>\n" 
             html += u"</head>\n"            
@@ -537,7 +537,7 @@ class ScormExport(object):
                                       'libot_drag.js',
                                       'common.js'), outputDir)     
         if self.scormType != "commoncartridge" and self.scormType != "scorm2004":
-            self.scriptsDir.copylist(('APIWrapper.js', 
+            self.scriptsDir.copylist(('SCORM_API_wrapper.js', 
                                       'SCOFunctions.js', 
                                       'libot_drag.js',
                                       'common.js'), outputDir)
