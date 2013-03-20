@@ -294,7 +294,7 @@ class Block(Renderable):
         html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
-                html += u'<img alt="%s" class="iDevice_icon" ' % _('IDevice Icon')
+                html += u'<img alt="" class="iDevice_icon" '
                 html += u" src=\"/style/"+style
                 html += "/icon_"+self.idevice.icon+".gif\"/>\n"
             html += u"<span class=\"iDeviceTitle\"><strong>"
@@ -315,7 +315,7 @@ class Block(Renderable):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
-                html += u'<img alt="%s" class="iDevice_icon" ' % _('iDevice icon')
+                html += u'<img alt="" class="iDevice_icon" '
                 html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
             html += u"<span class=\"iDeviceTitle\"><strong>"
             html += self.idevice.title
