@@ -716,10 +716,16 @@ class MainPage(RenderableLivePage):
             self.exportText(client, filename)
         elif exportType == 'scorm1.2':
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
+            if (len(metadataType) == 0):
+                self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
+            else: 
+                self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType)
         elif exportType == "scorm2004":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
+            if (len(metadataType) == 0):
+                self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
+            else: 
+                self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType)
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge", metadataType='DC')
