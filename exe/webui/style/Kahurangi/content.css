@@ -1,138 +1,40 @@
 /*
-===========================================================================
 eXe
 Copyright 2004-2005, University of Auckland
 style sheet for Maori theme by Derek Renata - renade@xtra.co.nz
-===========================================================================
+===========================
+Modified by eXeLearning.net
 */
-
-body, html {
-    color:#4d4d4d;
-    background: #DCE3FC url(main_bg.gif) repeat-x top;
-}
-
-div {
-    background-image:none;
-    background-color:transparent;
-}
-
-a {
-    color: #263264;
-    text-decoration: underline;
-}
-
-a:hover { 
-    color: #263264;
-    background-color: #fff;
-    text-decoration: none;
-}
-
-
-#nodeTitle { 
-    color: #006699;
-    font-size: 20px;
-    text-align: left;
-    display:inline;
-    font-weight:bold;
-}
-
-div#nodeDecoration {
-    padding: 2px;
-    border-bottom:0px;
-    text-align:left;
-    margin-bottom: 10px;
-}
-
-
-/* --- iDevice Styles -- */
-
-
-.emphasis0 {
-    padding-left: 0px;
-    margin: 0px 0px 5px;
-    vertical-align: middle;
-}
-
-.emphasis1 {
-    background-image:url(idevice_bg.gif);
-    background-repeat: repeat-x;
-    margin-bottom: 25px;
-    text-align:left;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    border-right-style: solid;
-    border-left-style: solid;
-    border-right-color: #000000;
-    border-left-color: #000000;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #000000;
-}
-
-.emphasis2 {
-    background-color: #E0DFD8;
-    border-bottom: 3px solid #9d9d9d;
-    background-image:url(body_top_bg.gif);
-    background-position:top left;
-    background-repeat:no-repeat;
-    margin-bottom: 10px;
-    text-align:left;
-}
-
-
-.iDevice p {
-    padding-left: 0px;
-    line-height: 115%
-    text-align:left;
-}
-
-.iDeviceTitle {
-    color: #003399;
-    font-size: 18px;
-    background: transparent; 
-	display:inline;
-} 
-
-.iDevice_icon {
-    margin-top: 7px;
-    padding-left: 0px;
-    margin-right: 5px;
-    margin-left: 10px;
-}
-
-input.feedbackbutton {
-    background: #B8DFFF;
-}
-
-p.reading_feedback {
-    border: 1px dashed #ADADAD;
-    background-color: #FFF;
-}
-
-.iDevice_inner {
-    color:#4d4d4d;
-    background-color:#f2f2ef;
-    padding: 10px 5px 5px 15px;
-    margin: 2px 0px 0px;
-    -moz-border-radius: 8px;
-}
-
-
-.iDevice_inner_free {
-    padding: 60px 20px 20px;
-    padding: 20px;
-    padding-top: 60px;
-}
-
-.iDevice li {
-	list-style-position: outside;
-}
-
-/* styles for image with text iDevice */
-
-.image_text { 
-    border: 1px solid #CCC;
-    background: #F9F9F9;
-    padding: 4px;
-    margin: 0px 20px 4px 4px;
-}
+html{padding:0}
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#4D4D4D;background:#DCE3FC url(_kahurangi_page_bg.gif) repeat-x 0 0}
+a{color:#069}
+a:hover,a:focus{color:#008FD6}
+#header,#emptyHeader{text-align:left;height:3em;padding-left:0;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #FFFFFF;border-bottom:1px solid #FFFFFF;border-top:1px solid #FFFFFF;color:#006699} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;padding:1em 0;margin-bottom:2em;background:#D5E5FD;text-shadow:1px 1px 1px #FFFFFF;border-bottom:1px solid #FFFFFF;border-top:1px solid #FFFFFF;color:#006699}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #FFFFFF;margin-top:1em}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline}
+h3{font-size:1.25em;color:#666}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{background:#F2F2EF url(_kahurangi_idevice_bg.gif) repeat-x 0 0;margin:2em 0;border-radius:5px;border:1px solid #000;padding-top:5px}
+.emphasis0{padding:0;background:none;border:none}
+.iDevice_icon{margin:0 5px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#039;line-height:3em} 
+.iDevice_inner{padding:10px 20px}
+.emphasis0 .iDevice_inner{background:none;padding:0}
+#siteFooter{color:#555;font-size:.95em}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#B8DFFF;margin-bottom:1em}

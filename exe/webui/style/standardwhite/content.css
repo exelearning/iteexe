@@ -1,97 +1,39 @@
-/*  =================================================
-     eXe
-     Copyright 2004-2005, University of Auckland
-
-     style for standardwhite.
-   ================================================== */
-
-
-body {
-    padding-left: 10px;
-    background: #FAFAFA;
-}
-
-a { 
-    color: #003366;
-    border: 0;
-}
-
-a:hover {
-    background-color: #F4F4F4;
-    text-decoration: none; 
-}
-
-#nodeTitle { 
-    color: #4D4D4D;
-    font-size: 18px;
-    font-weight: bold;
-    display: inline;
-}
-
-div#nodeDecoration {
-    border-top: 1px solid #B3B3B3;
-    border-bottom: 1px solid #B3B3B3;
-    background-image: url(nodeTitle_bg.jpg);
-    padding: 2px;
-}
-
-/* --- iDevice Styles --- */
-
-.emphasis0 {
-	padding-top: 10px;
-
-}
-
-.emphasis1 {
-    background-color: #FFF;
-    padding-left: 10px;
-    padding-bottom: 16px;
-    border-top: 1px solid #DDD;
-    margin: 10px;
-}
-
-
-input.feedbackbutton {
-	background: #FFFDB1;
-}
-
-.iDevice_inner {
-    margin-left: 55px;
-    margin-right: 12px;
-    border-bottom: 1px solid #DDD;
-}
-
-.iDevice p, .iDevice div.block {
-    padding-left: 0px;
-    line-height: 115%
-    text-align: left;
-}
-
-.iDeviceTitle {
-    color: #000;
-    font-size: 17px;
-    font-weight: normal;
-	display: inline;
-}    
-
-.iDevice_icon {
-    padding-top: 10px;
-}
-
-.iDevice li {
-	list-style-position: outside;
-}
-
-
-/* styles for image with text iDevice */
-
-.image_text { 
-	border: 1px solid #CCC;
-	background: #F9F9F9;
-	padding: 4px;
-	margin: 0px 20px 4px 4px;
-}
-
-p.reading_feedback {
-    font-style: italic;
-}
+/*
+eXe
+Copyright 2004-2005, University of Auckland
+style for standardwhite.
+Modified by eXeLearning.net
+*/
+html{padding:0}
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#000;background:#fafafa}
+a{color:#036}
+a:hover,a:focus{color:#3C5866}
+#header,#emptyHeader{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;text-align:left;height:3em;padding-left:15px;font-size:1.5em;line-height:3em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3;text-shadow:1px 1px 1px #fff} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;margin-bottom:1.5em;border-bottom:1px solid #B3B3B3;border-top:1px solid #B3B3B3}
+#nodeTitle,.nodeTitle{background:#fafafa url(_standardwhite_title_bg.gif) repeat-x bottom;font-size:1.5em;margin:0;font-weight:bold;text-align:right;color:#4D4D4D;text-shadow:1px 1px 1px #fff;padding:.3em 15px} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 15px .6em 0;border-bottom:1px solid #B3B3B3;margin-top:1em;text-align:right}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline;font-weight:normal}
+h3{font-size:1.25em}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice,.readingIdevice .iDevice{margin:2em 0;padding:10px;background:#fff;border-radius:5px;border:1px solid #ddd}
+.emphasis0{padding:0;background:none;border:none}
+.iDevice_icon{height:50px;width:auto;margin-right:8px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#3C5866;line-height:3em} 
+.iDevice_inner{padding:0 10px}
+.emphasis0 .iDevice_inner{padding:0}
+#siteFooter{color:#444;font-size:.95em}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#FFFDB1;margin-bottom:1em}

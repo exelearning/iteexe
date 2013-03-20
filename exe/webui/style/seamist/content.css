@@ -1,115 +1,40 @@
-/*  =================================================
-    eXe
-    Copyright 2004-2005, University of Auckland
-
-    style for seamist.
-    ================================================== */
-
-
-body {
-    padding: 10px 10px 10px 10px;
-    background: #FFFFFF;
-}
-
-a { 
-    color: #003366;
-    text-decoration: none;
-    border: 0;
-}
-
-a:hover {color: #3C5866;
-    text-decoration: underline; 
-}
-
-#main {
-    margin: 10px 10px 10px 10px;
-    padding: 18px;
-    margin: 10px 10px 10px 10px;
-    background-color: #EDEFF0;
-    line-height: 140%;
-
-    }
-
-
-form > #main {
-    margin: 10px 10px 10px 10px;
-    padding: 18px;
-    margin: 10px 10px 10px 10px;
-    background-color: #EDEFF0;
-    line-height: 140%;
-
-    } /* makes style apply to authoring in eXe environment by removing left indent */
-
-li {list-style-position: inside;}
-
-
-
-#header { 
-    color: #3C5866;
-    font-size: 18px;
-    text-align: center;
-}
-/* -- style the node title on each page -- */
-
-#nodeTitle { 
-    color: #3C5866;
-    font-size: 18px;
-    font-weight:bold;
-}
-
-div#nodeDecoration {
-    border-top: 1px solid #FFF;
-    border-bottom: 1px solid #FFF;
-}
-
-/* --- iDevice Styles --- */
-
-.emphasis0 {
-	padding-top: 10px;
-
-}
-
-.emphasis1 {
-    background-color: #B1C0C7;
-    padding-left: 10px;
-    border: 1px solid #3C5866;
-    margin: 10px;
-}
-
-
-.iDevice p, .iDevice div.block {
-    padding-left: 24px;
-    padding-right: 20px;
-    line-height: 115%
-    text-align: left;
-}
-
-.iDeviceTitle {
-    color: #3C5866;
-    font-size: 17px;
-    font-weight: normal;
-	display: inline;
-}  
-
-.iDevice li {
-	list-style-position: outside;
-}
-
-input.feedbackbutton {
-    background: #C6E2FA;
-    color: #3C5866;
-}
-
-
-/* styles for image with text iDevice */
-
-.image_text { 
-    border: 1px solid #3C5866;
-    background: #FFF;
-    padding: 4px;
-    margin: 0px 20px 4px 4px;
-}
-
-p.reading_feedback {
-    font-style: italic;
-}
+/*
+eXe
+Copyright 2004-2005, University of Auckland
+style for seamist.
+Modified by eXeLearning.net
+*/
+html{padding:0}
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#222;background:#fff}
+#main{background:#EDEFF0;padding:15px}
+a{color:#036}
+a:hover,a:focus{color:#3C5866}
+#header,#emptyHeader{text-align:left;height:3em;padding-left:0;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #fff;border-bottom:1px solid #fff;border-top:1px solid #fff;color:#3C5866} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;padding:.75em 0;margin-bottom:1.5em;text-shadow:1px 1px 1px #fff;border-bottom:1px solid #fff;border-top:1px solid #fff;color:#3C5866}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #fff;margin-top:1em;text-align:right;color:#3C5866;text-shadow:1px 1px 1px #fff}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline;font-weight:normal}
+h3{font-size:1.25em;color:#666}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice,.readingIdevice .iDevice{margin:2em 0;padding:10px;background:#B1C0C7;border-radius:5px;border:1px solid #3C5866}
+.emphasis0{padding:0;background:none;border:none}
+.iDevice_icon{height:50px;width:auto;margin-right:8px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#3C5866;line-height:3em} 
+.iDevice_inner{padding:0 10px}
+.emphasis0 .iDevice_inner{padding:0}
+#siteFooter{color:#666;font-size:.95em;margin-top:15px}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#C6E2FA;margin-bottom:1em}

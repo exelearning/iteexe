@@ -1,185 +1,39 @@
 /*
-===========================================================================
 eXe
 Copyright 2004-2005, University of Auckland
 style sheet for silver theme
-===========================================================================
+Modified by eXeLearning.net
 */
-
-body, html {
-   margin: 0px;
-   padding: 0px 10px 10px 10px;
-   font-family: arial, verdana, helvetica, sans-serif;
-   color:#4d4d4d;
-   font-size: 13px;
-   background: #E0DFD8;
-}
-
-div {
-   background-image:none;
-   background-color:transparent;
-}
-
-html * div {
-   background-image:none;
-   background-color:transparent;
-}
-
-a { color: #263264;
-    text-decoration: none;
-}
-
-a:hover { 
-    color: #263264;
-    background-color: #fff;
-}
-
-img {
-    border: 0;
-}
-
-
-#nodeTitle { 
-   color: #4d4d4d;
-   font-size: 32px;
-   font-weight: bold;
-   display: inline;
-   text-align:left;
-   padding-right: 15px;
-}
-
-div#nodeDecoration {
-   padding: 2px;
-   border-bottom:0px;
-   text-align:right;
-}
-
-
-/* --- iDevice Styles -- */
-
-
-.emphasis0 {
-    padding-left: 0px;
-    padding-top: 10px;
-    margin: 0px;
-}
-
-.emphasis1 {
-   background-color: #FFF;
-   background-image:url(idevice_bg.gif);
-   background-repeat: repeat-x;
-   border-bottom: 1px solid #E0DFD8;
-   margin-bottom: 10px;
-   text-align:left;
-}
-
-.emphasis2 {
-   background-color: #E0DFD8;
-   border-bottom: 3px solid #9d9d9d;
-   background-image:url(body_top_bg.gif);
-   background-position:top left;
-   background-repeat:no-repeat;
-   margin-bottom: 10px;
-   text-align:left;
-}
-
-
-.iDevice p {
-   padding-left: 0px;
-   line-height: 115%
-   text-align:left;
-}
-
-.iDeviceTitle {
-   color: #FFF;
-   font-size: 24px;
-   font-family: Arial, Helvetica, sans-serif;
-   font-weight:bold;
-   background: transparent; 
-   position: relative;
-   top: -18px;   /* aligns title up with middle of icon */
-   display:inline;
-} 
-
-.iDevice_icon {
-   margin-top: 10px;
-   padding-left: 10px;
-}
-
-.iDevice li {
-	list-style-position: outside;
-}
-
-p.reading_reference {
-   font-style: italic;        
-}
-
-p.reading_feedback {
-   border: 1px dashed #ADADAD;
-   margin: 20px;
-   padding: 8px;
-   background-color: #FFF;
-}
-
-.iDevice_inner {
-   color:#4d4d4d;
-   background-color:#f2f2ef;
-   padding: 10px;
-   margin: 10px;
-   -moz-border-radius: 8px;
-}
-
-
-.iDevice_inner_free {
-   padding: 20px;
-   padding-top: 60px;
-}
-
-.iDevice_inner_free {
-   padding: 20px;
-   padding-top: 60px;
-}
-
-input.feedbackbutton {
-margin-top: 10px;
-margin-bottom: 10px;
-background: #4D4D4D;
-color: #FFF;
-}
-
-
-/* styles for image with text iDevice */
-
-.image_text { 
-	border: 1px solid #CCC;
-	background: #F9F9F9;
-	padding: 4px;
-	margin: 0px 20px 4px 4px;
-}
-
-
-/* styles for 'tips for completion' and 'pedagogical help' */
-
-.popupDiv {
-   background-color: #EDEFF0;
-   border: 2px solid #607489;
-   padding: 0px 4px 4px 4px;
-   margin-left: 15px;
-   text-align:left;
-   z-index:99;
-   -moz-border-radius: 3px;
-}
-
-.popupDivLabel {
- text-align: center;
- font: message-box;
- font-weight: bold;
- color: #fff;
- cursor:move;
- margin: 0px -4px 0px -4px;
- background-image:url(popup_bg.gif);
-}
-
-.pre-code{
-	color:#FFF;	
-}
+html{padding:0}
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#444;background:#E0DFD8}
+a{color:#374990}
+a:hover,a:focus{color:#263264}
+#header,#emptyHeader{text-align:left;height:3em;padding-left:15px;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #444;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#fff} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;padding:1em 20px;margin-bottom:2em;background:#D9D9CE;text-shadow:1px 1px 1px #f9f9f9;border-bottom:2px solid #E5E4E0;border-top:2px solid #E5E4E0;color:#4D4D4D}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #E5E4E0;margin-top:1em;text-align:right}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline}
+h3{font-size:1.25em;color:#666}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:2em 0;padding:10px;background:#fff url(_silver_idevice_bg.gif) repeat-x 0 0;border-radius:5px}
+.emphasis0{padding:0;background:none}
+.iDevice_icon{width:32px;height:auto;margin-right:5px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#fff;text-shadow:1px 1px 1px #444;line-height:2em} 
+.iDevice_inner{background:#F2F2EF;border-radius:5px;padding:10px 20px}
+.emphasis0 .iDevice_inner{background:none;padding:0}
+#siteFooter{color:#555;font-size:.95em}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#4D4D4D;margin-bottom:1em;color:#fff}

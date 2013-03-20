@@ -1,102 +1,39 @@
-/*  =================================================
-     eXe
-     Copyright 2004-2005, eXelearning. 
-
-     style for  xxxxx
-   ================================================== */
-
-body {
-	margin: 0;
-	padding: 0;
-	color: #000;
-	background-color: #CAC3B5;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-}
-
-a { 
-    color: #003366;
-    border: 0;
-}
-
-#header {
-    height: auto;
-    padding-left: 0;
-    font-size: medium;
-    font-weight: normal;
-}
-
-li {
-    list-style-position:outside
-}
-
-#content {
-    background-color: #CAC3B5;
-}
-
-#nodeTitle { 
-    color: #514E4C;       /* styles for the title of the page/node */
-    font-size: 1.6em;
-    display: inline;
-    font-weight:bold;
-}
-
-div#nodeDecoration {      /* style for any decoration around title of page/node */
-    background: #CAC3B5; 
-    border-bottom: 4px solid #8A0A0A;
-    padding: 2px;
-    margin-bottom: 7px;
-}
-
-/* --- iDevice Styles --- */
-
-.emphasis1 {
-    background-color: #FFF;
-    padding-left: 10px;
-    padding-bottom: 16px;
-    margin: 10px;
-}
-
-
-input.feedbackbutton {
-	background: #FFFDB1;
-}
-
-.iDevice_inner {
-    margin-left: 55px;
-    margin-right: 12px;
-    border-bottom: 1px solid #DDD;
-}
-
-.iDevice p, .iDevice div.block {
-    padding-left: 24px;
-    line-height: 115%
-    text-align: left;
-}
-
-.iDeviceTitle {
-    color: #990000;
-    font-size: 1.2em;
-    font-weight: normal;
-	display: inline;
-}    
-
-.iDevice_icon {
-    padding-top: 10px;
-}
-
-.iDevice li {
-	list-style-position: outside;
-}
-
-/* styles for image with text iDevice */
-
-.image_text { 
-	border: 1px solid #CCC;
-	background: #F9F9F9;
-	padding: 4px;
-	margin: 0px 20px 4px 4px;
-}
-
-p.reading_feedback {
-    font-style: italic;
-}
+/*
+eXe
+Copyright 2004-2005, eXelearning. 
+style for  slate
+Modified by eXeLearning.net
+*/
+html{padding:0}
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#222;background:#CAC3B5}
+a{color:#004080}
+a:hover,a:focus{color:#036}
+#header,#emptyHeader{text-align:left;height:3em;padding-left:0;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #444;border-bottom:4px solid #8A0A0A;color:#fff} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;padding:.75em 0;margin-bottom:1.5em;text-shadow:1px 1px 1px #fff;border-bottom:4px solid #8A0A0A;color:#514E4C}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:4px solid #fff;margin-top:1em;text-align:right;color:#900;text-shadow:1px 1px 1px #fff}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline;font-weight:normal}
+h3{font-size:1.25em;color:#666}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice,.readingIdevice .iDevice{margin:2em 15px;background:#fff;padding:15px}
+.emphasis0{background:none;margin:2em auto;padding:0 15px}
+.iDevice_icon{height:50px;width:auto;margin-right:8px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#900;line-height:3em} 
+.iDevice_inner{margin-left:55px}
+#siteFooter{color:#000;font-size:.95em}
+#siteFooter a{color:#DB0B00}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#FFFDB1;margin-bottom:1em}

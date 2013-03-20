@@ -1,92 +1,39 @@
-/*  ===========================================================================
-    eXe
-    Copyright 2004-2005, University of Auckland
-
-    garden theme display styles.
-    =========================================================================== */
-
-body {
-    background: #F2FFBF;
-}
-
-a { color: #FF6600;
-    text-decoration: none;
-    border: 0;
-}
-
-a:hover {
-    color: #B34700;
-}
-
-#nodeTitle { 
-    color: #A1B386;
-    font-size: 20px;
-    font-weight: bolder;
-    display:inline;
-}
-
-div#nodeDecoration {
-    padding: 2px;
-    border-bottom: 2px solid #ACBF60;
-}
-
-
-/* --- iDevice Styles -- */
-
-.emphasis0 {
-padding-top: 10px;
-
-}
-
-.emphasis1 {
-    background-color: #FAFFE6;
-    padding-left: 10px;
-    border: 1px solid #ACBF60;
-    margin: 10px;
-}
-
-.iDevice p, .iDevice div.block {
-    padding-left: 24px;
-    line-height: 115%
-    text-align: left;
-}
-
-.iDevice li {
-	list-style-position: outside;
-}
-
-.iDeviceTitle {
-    color: #A1B386;
-    font-size: medium;
-    font-family: Arial, Helvetica, sans-serif;
-	display: inline;
-}    
-
-.iDevice_icon {
-    padding-top: 10px;
-}
-
-input.feedbackbutton {
-    background: #AACCB5;
-    color: #F2FFBF;
-}
-
-
-
-/* styles for image with text iDevice */
-
-p.reading_feedback {
-    border: 1px dashed #ADADAD;
-    background-color: #FFF;
-}
-
-.image_text { 
-    border: 1px solid #CCC; 
-    background: #F9F9F9;
-    padding: 4px;
-    margin: 0px 20px 4px 4px;
-}
-
-.pre-code{
-	color:#FFF;
-}
+/*
+eXe
+Copyright 2004-2005, University of Auckland
+garden theme display styles.
+Modified by eXeLearning.net
+*/
+html{padding:0}
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#222;background:#F2FFBF}
+a{color:#E65C00}
+a:hover,a:focus{color:#B34700}
+#header,#emptyHeader{text-align:left;height:3em;padding-left:0;font-size:1.5em;line-height:3em;text-shadow:1px 1px 1px #fff;border-bottom:2px solid #ACBF60;border-top:2px solid #ACBF60;color:#889F65} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+div#nodeDecoration{text-align:left;padding:1em 0;margin-bottom:2em;background:#F3FFC3;text-shadow:1px 1px 1px #fff;border-bottom:2px solid #ACBF60;border-top:2px solid #ACBF60;color:#889F65}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;text-align:right} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #ACBF60;margin-top:1em;text-align:right;color:#889F65;text-shadow:1px 1px 1px #fff}
+#main h2{font-size:1.4em}
+#main h2.iDeviceTitle{display:inline}
+h3{font-size:1.25em;color:#666}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice,.readingIdevice .iDevice{margin:2em 0;padding:10px;background:#FAFFE6;border-radius:5px;border:1px solid #ACBF60}
+.emphasis0{padding:0;background:none;border:none}
+.iDevice_icon{height:50px;width:auto;margin-right:8px}
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#A1B386;line-height:3em} 
+.iDevice_inner{background:#FAFFE6;border-radius:5px;padding:10px 20px}
+.emphasis0 .iDevice_inner{background:none;padding:0}
+#siteFooter{color:#444;font-size:.95em}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+#lbTopContainer, #lbBottomContainer{font-size:1em}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.feedbackbutton{background:#AACCB5;margin-bottom:1em}

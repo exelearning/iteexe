@@ -1,176 +1,39 @@
-/*  ------------------------------------------------------
-    Copyright eXelearning 2007
-    Created by Brent Simpson, brent@exelearning.org
-    ------------------------------------------------------ */
-
-
-
-/* HEADER */
-
-
-#header {
-    text-align: left;  
-    color: #FFF;
-    background-color: #CAC3B5;
-    height: 30px;
-    padding-left: 10px;
-    font-size: 2.2em;
-    font-weight: bold;
-}
-
-
-/* LEFT-HAND NAVIGATION */
-
-#navcontainer {
-	background-color: #696967;
-        border-top: 4px solid #8A0A0A;
-	width: 200px;
-	float: left;
-	margin-top: 24px;
-	}
-				
-#navcontainer ul {
-	margin-left: 0px;
-	padding-left: 0;
-	list-style-type: none;
-	font-family: Arial, Helvetica, sans-serif;
-	}
-
-#navcontainer a {
-	display: block;
-	padding: 3px 0 3px 6px;
-	width: 194px;
-	}
-
-#navcontainer a:hover {
-        background-color: #848484;
-} 
-
-#navcontainer a:link, #navlist a:visited {
-	color: #EAE0D1;
-	text-decoration: none;
-	}
-
-
-/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
- 
-* html #navcontainer {
-  margin-right: 10px;
-  }
- 
-* html p {
-  height: 1%;
-  margin-left: 0;
-  }
- 
-/* End hide from IE5/mac */
-
-#navcontainer #active {
-	padding: 3px 0 3px 6px;
-	width: 194px;
-	background-color: #8B8B89;
-	font-weight: bold;
-	color: #EAE0D1;
-	border-bottom: 1px solid #FFF;
-	border-top: 1px solid #FFF;
-	}
-
-div #subnav {
-	border-bottom: 1px solid #CCC;
-	}
-	
-#subnav a {
-	display: block;
-	border: 0 !important;
-	width: 188px;
-	padding: 3px 0 3px 12px;
-	font-size: x-small;
-	}
-
-#subnav #active {
-	background-color: #8B8B89;
-	width: 188px;
-	color: #DBD3C6;
-	padding: 3px 0 3px 12px;
-	font-size: x-small;
-	}	
-	
-#main {
-	margin: 0px 0px 0px 200px;
-	line-height: 140%;
-        background-color: #FFF;
-	}
-	
-/* ITE elements */
-
-#siteNav {
-	background-color: #696967;
-	border-top: 4px solid #8A0A0A;
-	width: 200px;
-	float: left;
-	padding:12px 0;
-	margin-top: 22px;
-}
-
-#siteNav ul,#siteNav li{
-	margin:0;
-	padding:0;
-	list-style:none;
-}
-
-#siteNav a {
-	display: block;
-	padding: 3px 3px 3px 6px;
-	color: #EAE0D1;
-	text-decoration: none;
-	width:191px;
-}
-
-#siteNav a:hover {
-	background-color: #848484;
-}
-
-#siteNav .active {
-	background-color: #8B8B89;
-	font-weight: bold;
-	color: #EAE0D1;
-	border-bottom: 1px solid #FFF;
-	border-top: 1px solid #FFF;
-}
-
-
-#siteNav ul ul{
-	border-bottom:1px solid #ccc;
-	font-size:11px;
-}
-
-#siteNav ul ul a{
-	width: 181px;
-	padding-left:16px;
-}
-
-#siteNav ul ul .active{
-	background-color: #8B8B89;
-	color: #DBD3C6;
-	font-weight:normal;
-}
-
-#siteNav .other-section{
-	display:none; /* Remove if you want all levels to be displayed */
-}
-
-* html #siteNav a,* html #siteNav ul ul a{ /* IE6 */
-	width:200px;
-}
-
-.pagination{
-	text-align:right;
-}
-
-/* Invisible content (visible for screen reader users) */
-#topPagination{
-	position:absolute;
-	overflow:hidden;
-	clip:rect(0,0,0,0);
-	height:0;
-}
+/*
+Copyright eXelearning 2007
+Created by Brent Simpson, brent@exelearning.org
+Modified by eXeLearning.net
+*/
+body{padding:0}
+#content{width:100%;position:relative;padding-bottom:10px;min-width:965px}
+#main{padding:20px;background:#fff;margin-left:230px;overflow:auto}
+#header,#emptyHeader{border-top:none;padding-left:15px}
+div#nodeDecoration{padding:0;margin:0;background:none;border:none}
+#nodeTitle{padding:0 0 .7em 0;border-bottom:4px solid #8B8B89}
+.iDevice,.readingIdevice .iDevice{margin:2em 0;padding:0}
+.emphasis0{padding:0}
+.iDevice_inner{margin-left:55px;border-bottom:1px solid #ddd;padding-bottom:20px}
+.emphasis0,.GalleryIdevice .iDevice{padding-bottom:15px;border-bottom:1px solid #ddd}
+/* Navigation */
+#siteNav{width:230px;float:left}
+#siteNav,#siteNav ul{border-color:#FAFFE6}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav a{display:block;padding:4px 0 4px 15px;color:#EAE0C6;border-bottom:1px solid #696967;border-top:1px solid #696967;background:#696967}
+#siteNav a:hover,#siteNav a:focus{background-color:#848484}
+* html #siteNav a{display:inline-block;width:100%} /* IE6 */
+#siteNav ul ul a{padding-left:30px;font-size:.95em}
+#siteNav .active,#siteNav .active:hover,#siteNav .active:focus{background:#8B8B89;border-color:#fff}
+#siteNav .other-section{display:none}
+#siteNav ul ul ul a{padding-left:45px}
+#siteFooter{color:#555}
+/* Pagination */
+.pagination{text-align:right;color:#fff}
+.pagination a{padding:0;margin:0 5px;color:#036}
+.pagination a:hover,.pagination a:focus{color:#3C5866}
+#topPagination{position:absolute;top:-2px;width:100%;right:20px}
+#topPagination .prev{margin-left:20px}
+#topPagination .pagination{border:none;color:#CAC3B5;padding-top:20px}
+/* Autoclear */
+#content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
+#content{display:inline-block}
+html[xmlns] #content{display:block}
+* html #content{height: 1%;overflow:visible}
