@@ -134,7 +134,6 @@ class ClozeBlock(Block):
         else:
             instruction_html = self.instructionElement.renderView()
         html = [
-            u'<script type="text/javascript" src="common.js"></script>\n',
             u'<div class="iDevice_inner">\n',
             instruction_html,
             clozeContent]

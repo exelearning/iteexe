@@ -151,8 +151,7 @@ class ClozelangfpdBlock(Block):
             instruction_html = self.instructionElement.renderPreview()
         else:
             instruction_html = self.instructionElement.renderView()
-        html = u'<script type="text/javascript" src="common.js"></script>\n'
-        html += u'<div class="iDevice_inner">\n'
+        html = u'<div class="iDevice_inner">\n'
         html += instruction_html
         html += clozeContent
         if self.feedbackElement.field.content: 

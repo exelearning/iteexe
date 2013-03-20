@@ -165,8 +165,7 @@ class VerdaderofalsofpdBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<script type="text/javascript" src="common.js"></script>\n'
-        html += u'<script type="text/javascript" src="libot_drag.js"></script>'
+        html = u'<script type="text/javascript" src="libot_drag.js"></script>'
         html += u"\n<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u'<img alt="" class="iDevice_icon" '

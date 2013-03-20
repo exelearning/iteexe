@@ -83,8 +83,7 @@ class CorreccionfpdBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = u'<script type="text/javascript" src="common.js"></script>\n'
-        html += u'<div class="iDevice_correccionfpd">\n'
+        html = u'<div class="iDevice_correccionfpd">\n'
     
         if self.previewing: 
             html += self.activityElement.renderPreview()
