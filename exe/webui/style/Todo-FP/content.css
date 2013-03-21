@@ -1,66 +1,48 @@
-/* ********************************************* */
-/* **** IM¡GENES UTILIZADAS ******************* */
-/* ******************************************* */
-
-/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como P·gina sola */
+/* Im√°genes utilizadas */
+/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como P√°gina sola */
 /* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
-/* my_ims_header.jpg - Imagen de fondo para el tÌtulo de cada p·gina en los IMS y en los documentos exportados como P·gina sola */
+/* my_ims_header.jpg - Imagen de fondo para el t√≠tulo de cada p√°gina en los IMS y en los documentos exportados como P√°gina sola */
 /* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
-/* my_nav_bg.jpg - Imagen de fondo del men˙ al exportar como Sitio web */
+/* my_nav_bg.jpg - Imagen de fondo del men√∫ al exportar como Sitio web */
 
-/* ********************************************* */
-/* **** TABLA DE COLORES ********************** */
-/* ******************************************* */
-
+/* Colores */
 body{
 	color:#000; /* Cuerpo de texto */
 	background:#ffffff; /* Color de fondo */
 }
-
 a{
 	color:#38565F; /* Enlaces */
 }
-
 #header{
-	color:#005F6F; /* TÌtulo del proyecto */	
+	color:#005F6F; /* T√≠tulo del proyecto */	
 }
-
 #nodeTitle{
-	color:#FFFFFF; /* TÌtulo de cada p·gina */
+	color:#FFFFFF; /* T√≠tulo de cada p√°gina */
 }
-
 #main #nodeDecoration{
-	border-color:#E7EBEE; /* Borde del tÌtulo de cada p·gina */
+	border-color:#E7EBEE; /* Borde del t√≠tulo de cada p√°gina */
 	background-color:#6D95A1; /* Color de fondo */
 	text-shadow:1px 1px 1px #466A76; /* Sombra del texto */
 }
-
 .iDeviceTitle{
-	color: #38565F; /* TÌtulos de los iDevices */
+	color: #38565F; /* T√≠tulos de los iDevices */
 }
-
 .iDevice_inner{
 	background-color:#F2F4EB; /* Fondo del cuerpo del iDevice */
 	color:#2C4E46; /* Texto de los iDevices */
 	border-color:#C7CFAB; /* Borde del cuerpo de los iDevices */
 }
-
 #pageFooter{
-	color:#38565F; /* Texto del pie de p·gina */
+	color:#38565F; /* Texto del pie de p√°gina */
 }
-
 #pageFooter a{
-	color:#6A3A4A; /* Enlaces del pie de p·gina */
+	color:#6A3A4A; /* Enlaces del pie de p√°gina */
 }
-
 .pre-code{
-	background:#243338; /* Color de fondo del cÛdigo de ordenador intertado desde TinyMCE */
+	background:#243338; /* Color de fondo del c√≥digo de ordenador intertado desde TinyMCE */
 }
 
-/* ********************************************* */
-/* **** OTRAS DEFINICIONES ******************** */
-/* ******************************************* */
-
+/* Otras definiciones */
 body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
 #nodeTitle{font-size:1.5em;margin:0;text-align:left;font-weight:bold}
 #main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg);text-align:left}
@@ -73,7 +55,8 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}
 .iDevice{margin:10px 0 20px 0}
-.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
+.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto}
+#main h2.iDeviceTitle{display:inline;font-size:1.2em}
 .iDevice_icon{width:30px;height:auto;margin-right:5px}
 .iDevice_inner{padding: 10px 20px;border-width:1px;border-style:solid;border-radius:10px}
 #pageFooter{font-size:.9em}
@@ -83,12 +66,7 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 input.feedbackbutton{margin:0}
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
 li{list-style-position:outside}
-
-/* ********************************************************* */
-/* **** DEFINICIONES especÌficas para el eXe del ITE ****** */
-/* ******************************************************* */ 
-
-#main h2.iDeviceTitle{display:inline;font-size:1.2em}
-
 /* To review */
 .question .answer p{margin:0}
+/* Image galleries */
+#lbBottomContainer{font-size:.95em}
