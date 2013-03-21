@@ -91,7 +91,7 @@ class GenericBlock(Block):
         html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderPreview()
-            html += u"<br/>\n"
+            #html += u"<br/>\n"
         html += u"</div>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
@@ -115,7 +115,7 @@ class GenericBlock(Block):
         html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderView()
-            html += u"<br/>\n"
+            #html += u"<br/>\n"
         html += u"</div>\n"
         html += u"</div>\n"
         return html
