@@ -45,8 +45,8 @@ body{
 }
 
 /* Otras definiciones */
-body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:center}
-#content{font-size:.75em;width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
+body{padding:0;text-align:center}
+#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
 #main{padding:10px 20px 11px 20px}
 #header,#emptyHeader{height:39px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 0 0 10px;font-size:1.5em}
 * html #header,* html #emptyHeader{height:100px} /* IE6 */
