@@ -1,0 +1,87 @@
+/* Wikipedia content imported into eXe. Taken from en.wikipedia.org. */
+table.floatleft{float:left;position:relative;margin:0 .5em .5em 0;border:0}
+div.floatleft p{font-style:italic}
+/* Thumbnails */
+div.thumb{margin-bottom:.5em}
+div.thumb div{border:1px solid #ccc;padding:3px !important;background-color:#f9f9f9;font-size:94%;text-align:center;overflow:hidden}
+div.thumb div a img{border:1px solid #ccc}
+div.thumb div div.thumbcaption{border:none;text-align:left;line-height:1.4em;padding:.3em 0 .1em 0}
+div.magnify{float:right;border:none !important;background:none !important}
+div.magnify a,div.magnify img{display:block;border:none !important;background:none !important}
+div.tright{clear:right;float:right;border-width:.5em 0 .8em 1.4em;margin-left:.5em}
+div.tleft{float:left;margin-right:.5em;border-width:.5em 1.4em .8em 0}
+/* Infobox template */
+.infobox{border:1px solid #aaa;background-color:#f9f9f9;color:#000;margin-bottom:0.7em;margin-left:1.2em;padding:0.2em;float:right;clear:right}
+.infobox td,.infobox th,.infobox_v2 td,.infobox_v2 th{vertical-align:top}
+.infobox caption{font-size:larger;margin-left:inherit}
+.infobox_v2{border:1px solid #B4BBC8;background-color:#f9f9f9;color:#000;margin:.5em 0 .7em 1.2em;padding:.4em;clear:right;float:right;font-size:90%;line-height:1.5em;width:22.5em}
+.infobox_v2 .cabecera{font-size:140%;font-weight:bolder;height:45px;line-height:1.2em;text-align:center;vertical-align:middle}
+.infobox_v2 .media{font-weight:bolder;height:35px;text-align:center;vertical-align:middle}
+.infobox.bordered{border-collapse:collapse}
+.infobox.bordered td,.infobox.bordered th{border:1px solid #B4BBC8}
+.infobox.bordered .borderless td,.infobox.bordered .borderless th{border:0}
+.infobox.sisterproject{width:20em;font-size:90%}
+/* wikipedia tables of contents */
+#toc,.toc{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;font-size:95%}
+#toc h2,.toc h2{display:inline;border:none;padding:0;font-size:100%;font-weight:bold}
+#toc #toctitle,.toc #toctitle,#toc .toctitle,.toc .toctitle{text-align:center}
+#toc ul,.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding-left:0;text-align:left}
+#toc ul ul,.toc ul ul{margin:0 0 0 2em}
+#toc .toctoggle,.toc .toctoggle{font-size:94%}
+/* Lists in tables */
+.mw-content-ltr ul,.mw-content-rtl .mw-content-ltr ul{margin:0.3em 0 0 1.6em;padding:0}
+.mw-content-rtl ul,.mw-content-ltr .mw-content-rtl ul{margin:0.3em 1.6em 0 0;padding:0}
+.mw-content-ltr ol,.mw-content-rtl .mw-content-ltr ol{margin:0.3em 0 0 3.2em;padding:0}
+.mw-content-rtl ol,.mw-content-ltr .mw-content-rtl ol{margin:0.3em 3.2em 0 0;padding:0}
+.mw-content-ltr dd,.mw-content-rtl .mw-content-ltr dd{margin-left:1.6em;margin-right:0}
+.mw-content-rtl dd,.mw-content-ltr .mw-content-rtl dd{margin-right:1.6em;margin-left:0}
+/* Menu lists */
+.hlist dl,.hlist ol,.hlist ul{margin:0;padding:0}
+.hlist dd,.hlist dt,.hlist li{margin:0;display:inline;white-space:nowrap}
+.hlist dl dl,.hlist dl ol,.hlist dl ul,.hlist ol dl,.hlist ol ol,.hlist ol ul,.hlist ul dl,.hlist ul ol,.hlist ul ul{display:inline;white-space:normal}
+.hlist dt:after{content:":"}
+.hlist dd:after,.hlist li:after{content:" ·";font-weight:bold}
+.hlist dd:last-child:after,.hlist dt:last-child:after,.hlist li:last-child:after{content:none}
+.hlist dd.hlist-last-child:after,.hlist dt.hlist-last-child:after,.hlist li.hlist-last-child:after{content:none}
+.hlist dd dd:first-child:before,.hlist dd dt:first-child:before,.hlist dd li:first-child:before,.hlist dt dd:first-child:before,.hlist dt dt:first-child:before,.hlist dt li:first-child:before,.hlist li dd:first-child:before,.hlist li dt:first-child:before,.hlist li li:first-child:before{content:"(";font-weight:normal}
+.hlist dd dd:last-child:after,.hlist dd dt:last-child:after,.hlist dd li:last-child:after,.hlist dt dd:last-child:after,.hlist dt dt:last-child:after,.hlist dt li:last-child:after,.hlist li dd:last-child:after,.hlist li dt:last-child:after,.hlist li li:last-child:after{content:")";font-weight:normal}
+.hlist dd dd.hlist-last-child:after,.hlist dd dt.hlist-last-child:after,.hlist dd li.hlist-last-child:after,.hlist dt dd.hlist-last-child:after,.hlist dt dt.hlist-last-child:after,.hlist dt li.hlist-last-child:after,.hlist li dd.hlist-last-child:after,.hlist li dt.hlist-last-child:after,.hlist li li.hlist-last-child:after{content:")";font-weight:normal}
+.hlist.hnum ol{counter-reset:list-item}
+.hlist.hnum ol>li{counter-increment:list-item}
+.hlist.hnum ol>li:before{content:counter(list-item) " "}
+.hlist.hnum dd ol>li:first-child:before,.hlist.hnum dt ol>li:first-child:before,.hlist.hnum li ol>li:first-child:before{content:"(" counter(list-item) " "}
+.plainlist ul{line-height:inherit;list-style:none none;margin:0}
+.plainlist ul li{margin-bottom:0}
+div.floatright{float:right;clear:right;position:relative;margin:0.2em 0 0.8em 1.4em}
+div.floatleft{float:left;clear:left;position:relative;margin:0.2em 1.4em 0.8em 0}
+table.navbox{border:1px solid #aaa;width:100%;margin:auto;clear:both;font-size:88%;text-align:center;padding:1px}
+table.navbox+table.navbox{margin-top:-1px}
+.navbox th,.navbox-title,.navbox-abovebelow{text-align:center;padding-left:1em;padding-right:1em}
+th.navbox-group{white-space:nowrap;text-align:right;background:#E7E7E7 !important}
+.navbox,.navbox-subgroup{background:#fdfdfd}
+.navbox-list{border-color:#fdfdfd}
+.navbox th,.navbox-title{background:#CFCFCF}
+.navbox-abovebelow,th.navbox-group,.navbox-subgroup .navbox-title{background:#DFDFDF}
+.navbox-subgroup .navbox-group,.navbox-subgroup .navbox-abovebelow{background:#E7E7E7}
+.navbox-even{background:#f7f7f7}
+.navbox-odd{background:transparent}
+.navbox .hlist td dl,.navbox .hlist td ol,.navbox .hlist td ul,.navbox td.hlist dl,.navbox td.hlist ol,.navbox td.hlist ul{padding:0.125em 0}
+.navbox .hlist dd,.navbox .hlist dt,.navbox .hlist li{white-space:nowrap;white-space:normal !ie}
+.navbox .hlist dd dl,.navbox .hlist dt dl,.navbox .hlist li ol,.navbox .hlist li ul{white-space:normal}
+ol+table.navbox,ul+table.navbox{margin-top:0.5em}
+.navbar{display:inline;font-size:88%;font-weight:normal}
+.navbar ul{display:inline;white-space:nowrap}
+.navbar li{word-spacing:-0.125em}
+.navbox .navbar{display:block;font-size:100%}
+.navbox-title .navbar{float:left;text-align:left;margin-right:0.5em;width:6em}
+/* Other elements */
+#siteNotice{display:none}
+.firstHeading,#firstHeading{margin-top:0;font-size:1.5em}
+#contentSub,#contentSub2{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#7d7d7d;width:auto}
+.rellink,.dablink{font-style:italic;padding-left:1.6em;margin-bottom:0.5em}
+.rellink i,.dablink i{font-style:normal}
+#wikipedia-content pre,#wikipedia-content code,#wikipedia-content tt,#wikipedia-content kbd,#wikipedia-content samp,.mw-code{font-family:monospace,Courier}
+#wikipedia-content code{background-color:#f9f9f9}
+#wikipedia-content pre,#wikipedia-content .mw-code{padding:1em;border:1px dashed #6A6A6A;color:#000;background-color:#f9f9f9}
+/* Screen reader */
+.mw-jump{position:absolute;left:-9999em;overflow:hidden}

@@ -167,13 +167,14 @@ class WebsiteExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasWikipedia      = False
         isBreak           = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -188,6 +189,9 @@ class WebsiteExport(object):
                 if not hasGallery:
                     if 'GalleryIdevice' == idevice.klass:
                         hasGallery = True
+                if not hasWikipedia:
+                    if 'WikipediaIdevice' == idevice.klass:
+                        hasWikipedia = True
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -205,7 +209,10 @@ class WebsiteExport(object):
             imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)        
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+        if hasWikipedia:
+            wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
+            wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

@@ -358,6 +358,8 @@ class ScormPage(Page):
         html += u" charset=utf-8\" />\n";
         html += u"<!-- Created using eXe: http://exelearning.net -->\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+        if common.hasWikipediaIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
@@ -584,13 +586,14 @@ class ScormExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasWikipedia      = False
         isBreak           = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -605,6 +608,9 @@ class ScormExport(object):
                 if not hasGallery:
                     if 'GalleryIdevice' == idevice.klass:
                         hasGallery = True
+                if not hasWikipedia:
+                    if 'WikipediaIdevice' == idevice.klass:
+                        hasWikipedia = True
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -623,6 +629,9 @@ class ScormExport(object):
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
             self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+        if hasWikipedia:
+            wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
+            wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if package.license == "GNU Free Documentation License":

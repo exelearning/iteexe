@@ -104,6 +104,15 @@ class SinglePage(Page):
             return hasGallery
         
         hasGallery = hasGalleryIdevice(self.node)
+        def hasWikipediaIdevice(node):
+            hasWikipedia = common.hasWikipediaIdevice(node)
+            if not hasWikipedia:
+                for child in node.children:
+                    if hasWikipediaIdevice(child):
+                        return True
+            return hasWikipedia
+        
+        hasWikipedia = hasWikipediaIdevice(self.node)
         html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
         html += u'Transitional//EN" '
@@ -112,6 +121,8 @@ class SinglePage(Page):
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+        if hasWikipedia:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"
         if hasGallery:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"

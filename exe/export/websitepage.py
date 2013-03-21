@@ -66,6 +66,8 @@ class WebsitePage(Page):
         html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<head>\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+        if common.hasWikipediaIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"        
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"

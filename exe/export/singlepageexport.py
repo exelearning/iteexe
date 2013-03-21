@@ -120,9 +120,10 @@ class SinglePageExport(object):
         hasMagnifier      = False
         hasXspfplayer     = False
         hasGallery        = False
+        hasWikipedia      = False
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -136,6 +137,9 @@ class SinglePageExport(object):
             if not hasGallery:
     			if 'GalleryIdevice' == idevice.klass:
     				hasGallery = True
+            if not hasWikipedia:
+    			if 'WikipediaIdevice' == idevice.klass:
+    				hasWikipedia = True
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -154,6 +158,9 @@ class SinglePageExport(object):
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
             self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), self.outputDir)
+        if hasWikipedia:
+            wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
+            wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')
             
         for child in node.children:
             self.compruebaReproductores(child)

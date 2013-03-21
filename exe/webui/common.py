@@ -663,6 +663,12 @@ def requestHasCancel(request):
     and request.args[u"action"][0]==u"cancel": 
         is_cancel = True
     return is_cancel
+    
+def hasWikipediaIdevice(node):
+    for idevice in node.idevices:
+        if idevice.klass == 'WikipediaIdevice':
+            return True
+    return False
 
 def hasGalleryIdevice(node):
     for idevice in node.idevices:

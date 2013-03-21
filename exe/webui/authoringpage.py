@@ -174,6 +174,7 @@ class AuthoringPage(RenderableResource):
         html += u'<head>\n'
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe_wikipedia.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
         if G.application.config.assumeMediaPlugins: 
             html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
