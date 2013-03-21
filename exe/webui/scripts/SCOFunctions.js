@@ -2,62 +2,102 @@
 ** 
 ** Filename: SCOFunctions.js
 **
-** File Description: This file contains several JavaScript functions that are 
-**                   used by the Sample SCOs contained in the Sample Course.
-**                   These functions encapsulate actions that are taken when the
-**                   user navigates between SCOs, or exits the Lesson.
+** File Description: adaption of SCOFunctions.js file from ADL Technical Team
+** SCOFunctions.js works with SCORM12 and SCOFunctions2004.js with SCORM2004
+** using SCORM_API_wrapper.js
 **
-** Author: ADL Technical Team
-**
-** Contract Number:
-** Company Name: CTC
-**
-** Design Issues:
-**
-** Implementation Issues:
-** Known Problems:
-** Side Effects:
-**
-** References: ADL SCORM
+** Author: José Miguel Andonegi jm.andonegi@gmail.com
 **
 ********************************************************************************
 **
-** Concurrent Technologies Corporation (CTC) grants you ("Licensee") a non-
-** exclusive, royalty free, license to use, modify and redistribute this
-** software in source and binary code form, provided that i) this copyright
-** notice and license appear on all copies of the software; and ii) Licensee
-** does not utilize the software in a manner which is disparaging to CTC.
-**
-** This software is provided "AS IS," without a warranty of any kind.  ALL
-** EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY
-** IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-
-** INFRINGEMENT, ARE HEREBY EXCLUDED.  CTC AND ITS LICENSORS SHALL NOT BE LIABLE
-** FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
-** DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES.  IN NO EVENT WILL CTC  OR ITS
-** LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT,
-** INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER
-** CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF
-** OR INABILITY TO USE SOFTWARE, EVEN IF CTC  HAS BEEN ADVISED OF THE
-** POSSIBILITY OF SUCH DAMAGES.
-**
-*******************************************************************************/
+This software is provided "AS IS," without a warranty of any kind.  
+ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING 
+ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR 
+NON-INFRINGEMENT, ARE HEREBY EXCLUDED.  ADL AND ITS LICENSORS SHALL NOT BE LIABLE 
+FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR 
+DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES.  IN NO EVENT WILL ADL OR ITS LICENSORS 
+BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, 
+CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE 
+THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF 
+ADL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+*****************************************************************************
+*SCOFunctions2004.js code is licensed under the Creative Commons
+Attribution-ShareAlike 3.0 Unported License.
+
+To view a copy of this license:
+
+     - Visit http://creativecommons.org/licenses/by-sa/3.0/ 
+     - Or send a letter to
+            Creative Commons, 444 Castro Street,  Suite 900, Mountain View,
+            California, 94041, USA.
+
+The following is a summary of the full license which is available at:
+
+      - http://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+*****************************************************************************
+
+Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+You are free to:
+
+     - Share : to copy, distribute and transmit the work
+     - Remix : to adapt the work
+
+Under the following conditions:
+
+     - Attribution: You must attribute the work in the manner specified by 
+       the author or licensor (but not in any way that suggests that they 
+       endorse you or your use of the work).
+
+     - Share Alike: If you alter, transform, or build upon this work, you 
+       may distribute the resulting work only under the same or similar 
+       license to this one.
+
+With the understanding that:
+
+     - Waiver: Any of the above conditions can be waived if you get permission 
+       from the copyright holder.
+
+     - Public Domain: Where the work or any of its elements is in the public 
+       domain under applicable law, that status is in no way affected by the license.
+
+     - Other Rights: In no way are any of the following rights affected by the license:
+
+           * Your fair dealing or fair use rights, or other applicable copyright 
+             exceptions and limitations;
+
+           * The author's moral rights;
+
+           * Rights other persons may have either in the work itself or in how the 
+             work is used, such as publicity or privacy rights.
+
+     - Notice: For any reuse or distribution, you must make clear to others the 
+               license terms of this work.
+
+****************************************************************************/
 var startDate;
 var exitPageStatus;
 
+//creating shortcut for less verbose code
+var scorm = pipwerks.SCORM;
+
+
 function loadPage()
 {
-   var result = doLMSInitialize();
+	var result = scorm.init();
+	
+	var status = scorm.GetCompletionStatus();
 
-   var status = doLMSGetValue( "cmi.core.lesson_status" );
+	if (status == "not attempted")
+	{
+		// the student is now attempting the lesson
+		scorm.SetCompletionStatus("unknown");
+	}
 
-   if (status == "not attempted")
-   {
-	  // the student is now attempting the lesson
-	  doLMSSetValue( "cmi.core.lesson_status", "incomplete" );
-   }
-
-   exitPageStatus = false;
-   startTimer();
+	exitPageStatus = false;
+	startTimer();
 }
 
 
@@ -76,72 +116,71 @@ function computeTime()
    }
    else
    {
+	//JM:pending: create a formatting wrapper function
       formattedTime = "00:00:00.0";
    }
 
-   doLMSSetValue( "cmi.core.session_time", formattedTime );
+   scorm.SetSessionTime(formattedTime);
 }
 
 function doBack()
 {
-   doLMSSetValue( "cmi.core.exit", "suspend" );
+   scorm.SetExit("suspend");
 
    computeTime();
    exitPageStatus = true;
    
    var result;
 
-   result = doLMSCommit();
+   result = scorm.save();
 
 	// NOTE: LMSFinish will unload the current SCO.  All processing
 	//       relative to the current page must be performed prior
 	//		 to calling LMSFinish.   
    
-   result = doLMSFinish();
-
+   result = scorm.quit();
 }
 
 function doContinue( status )
 {
-   // Reinitialize Exit to blank
-   doLMSSetValue( "cmi.core.exit", "" );
+	// Reinitialize Exit to blank
+	scorm.SetExit("");
 
-   var mode = doLMSGetValue( "cmi.core.lesson_mode" );
+	var mode = scorm.GetMode();
 
-   if ( mode != "review"  &&  mode != "browse" )
-   { 
-      doLMSSetValue( "cmi.core.lesson_status", status );
-   }
- 
-   computeTime();
-   exitPageStatus = true;
-   
-   var result;
-   result = doLMSCommit();
+	if ( mode != "review"  &&  mode != "browse" )
+	{ 
+		scorm.SetCompletionStatus(status);
+	}
+
+	computeTime();
+	exitPageStatus = true;
+
+	var result;
+	result = scorm.save();
 	// NOTE: LMSFinish will unload the current SCO.  All processing
 	//       relative to the current page must be performed prior
 	//		 to calling LMSFinish.   
 
-   result = doLMSFinish();
-
+	result = scorm.quit();
 }
 
 function doQuit()
 {
-   doLMSSetValue( "cmi.core.exit", "suspend" );
+	scorm.SetExit("suspend");
 
-   computeTime();
-   exitPageStatus = true;
-   
-   var result;
+	computeTime();
+	exitPageStatus = true;
 
-   result = doLMSCommit();
+	var result;
+
+	result = scorm.save();
 
 	// NOTE: LMSFinish will unload the current SCO.  All processing
 	//       relative to the current page must be performed prior
 	//		 to calling LMSFinish.   
 
-   result = doLMSFinish();
+	result = scorm.quit();
 }
 
 /*******************************************************************************
@@ -162,16 +201,17 @@ function doQuit()
 *******************************************************************************/
 function unloadPage()
 {
+	console.trace('exitPageStatus'+exitPageStatus);
+
 	if (exitPageStatus != true)
 	{
-		doLMSSetValue( "cmi.core.lesson_status", "completed" );
+		scorm.SetCompletionStatus("completed");
 		doQuit();
 	}
 
 	// NOTE:  don't return anything that resembles a javascript
 	//		  string from this function or IE will take the
 	//		  liberty of displaying a confirm message box.
-	
 }
 
 /*******************************************************************************
@@ -230,14 +270,13 @@ function convertTotalSeconds(ts)
 }
 
 function goBack() {
-doLMSSetValue('nav.event','previous');
-var coreSCOLocation = doLMSGetValue("cmi.core.lesson_location");
-window.location = coreSCOLocation;
+	scorm.set('nav.event','previous');
+	var coreSCOLocation = scorm.get("cmi.location");
+	window.location = coreSCOLocation;
 }
 
-
 function goForward() {
-doLMSSetValue('nav.event','continue');
-var coreSCOLocation = doLMSGetValue("cmi.core.lesson_location");
-window.location = coreSCOLocation;
+	doLMSSetValue('nav.event','continue');
+	var coreSCOLocation = scorm.get("cmi.location");
+	window.location = coreSCOLocation;
 }
