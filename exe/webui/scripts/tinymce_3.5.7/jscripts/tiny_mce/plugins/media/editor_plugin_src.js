@@ -127,7 +127,7 @@ function parse_media_html_attributes(c) {
 		// Required for al media:
         
 		// Remove http://127.0.0.1:51235/packageName/
-		var str3 = "http://"+window.location.host+"/"+exe_package_name+"/";
+		var str3 = "http://"+window.location.host+"/"+encodeURIComponent(exe_package_name)+"/";
 		var re3 = new RegExp(str3, "g");
 		new_c= new_c.replace(re3, "");      
         
