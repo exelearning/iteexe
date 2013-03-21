@@ -786,7 +786,7 @@ class Package(Persistable):
                 handler()
 
         G.application.afterUpgradeHandlers = []
-
+        
         num_zombies = len(G.application.afterUpgradeZombies2Delete)
         for i in range(num_zombies-1, -1, -1):
             zombie = G.application.afterUpgradeZombies2Delete[i]
@@ -799,7 +799,15 @@ class Package(Persistable):
             if zombie_is_node: 
                 zombie.delete(pruningZombies=True) 
             else:
-                zombie.delete() 
+                #JR: Eliminamos el recurso del idevice
+                posResource = -1
+                for i in range(0, len(zombie._idevice.userResources)-1):
+                    if zombie._idevice.userResources[i] == zombie:
+                        posResource = i
+                if posResource != -1:
+                    zombie._idevice.userResources.remove(zombie)
+                #JR: Esto ya no haria falta
+                #zombie.delete()
             del zombie
         G.application.afterUpgradeZombies2Delete = []
 
