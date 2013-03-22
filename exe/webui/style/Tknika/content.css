@@ -105,7 +105,7 @@ a:hover{text-decoration:underline}
 	margin-bottom:15px;
 	background-repeat:no-repeat;
 	background-position:right 0;
-	background-image:url(file:///C|/Users/Ikuspe/Desktop/my_ims_header.jpg);
+	background-image:url(my_ims_header.jpg);
 	border-top-width: 8px;
 	border-right-width: 8px;
 	border-bottom-width: 8px;
@@ -119,7 +119,7 @@ a:hover{text-decoration:underline}
 	height:35px;
 	background-repeat:no-repeat;
 	background-position:0 0;
-	background-image:url(file:///C|/Users/Ikuspe/Desktop/my_logo.jpg);
+	background-image:url(my_logo.jpg);
 	font-size:1.2em;
 	font-weight:bold;
 	color: #000;
@@ -135,7 +135,10 @@ a:hover{text-decoration:underline}
 	color: #000;
 	line-height: 1em;
 }
-#main ul li{width:auto;list-style-image:url(file:///C|/Users/Ikuspe/Desktop/my_list.gif);margin-bottom:0.2em}
+#main ul li{
+	width: auto;
+	list-style-image: url(my_list.gif); margin-bottom: 0.2em;
+}
 #main h2{font-size:1.4em}
 #main h3{font-size:1.3em}
 #main h4{font-size:1.2em}
@@ -186,7 +189,7 @@ a:hover{text-decoration:underline}
 	border-right-color: #c6d644;
 	border-bottom-color: #c6d644;
 	border-left-color: #000000;
-	background-image: url(file:///C|/Users/Ikuspe/Desktop/idevice_lateral.gif);
+	background-image: url(idevice_lateral.gif);
 	background-repeat: repeat-y;
 	background-position: 0px 0px;
 }
@@ -239,7 +242,7 @@ a:hover{text-decoration:underline}
 	
 .image_text .image
 {
-	background-image:url(file:///C|/Users/Ikuspe/Desktop/icon_magnifier.gif);
+	background-image:url(icon_magnifier.gif);
 	background-position: left top;
 	background-repeat: no-repeat;
 }
