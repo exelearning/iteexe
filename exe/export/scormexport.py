@@ -111,25 +111,25 @@ class Manifest(object):
         # now depending on metadataType, <metadata> content is diferent:
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004":
             if self.metadataType == 'DC':
-                # If old template is desired, choose imslrm.xml,
-                # anything else you should select:
+                # if old template is desired, select imslrm.xml file:
+                # anything else, yoy should select:
                 templateFilename = self.config.webDir/'templates'/'imslrmdc.xml'
             elif self.metadataType == 'LOMES':
                 templateFilename = self.config.webDir/'templates'/'imslrmlomes.xml'
             elif self.metadataType == 'LOM':
                 templateFilename = self.config.webDir/'templates'/'imslrmlom.xml'  
-            # now the real template file:   
+            # Now the file with metadatas. 
+            # Notice that its name is independent of metadataType:   
             template = open(templateFilename, 'rb').read()
             xml = self.createMetaData(template)
             out = open(self.outputDir/'imslrm.xml', 'wb')
             out.write(xml.encode('utf8'))
             out.close()
-            # notice that anyway we save the metadata file with the old name 
-            # imslrm.xml
+         
     
     def createXML(self):
         """
-        returning XLM string for manifest file, the whole one
+        returning XLM string for manifest file
         """
         manifestId = unicode(self.idGenerator.generate())
         orgId      = unicode(self.idGenerator.generate())
@@ -561,6 +561,7 @@ class ScormExport(object):
                                 'imsss_v1p0auxresource.xsd',
                                 'imsss_v1p0control.xsd',
                                 'imsss_v1p0delivery.xsd',
+                                'imsmd_rootv1p2p1.xsd',
                                 'imsss_v1p0limit.xsd',
                                 'imsss_v1p0objective.xsd',
                                 'imsss_v1p0random.xsd',
