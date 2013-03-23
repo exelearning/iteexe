@@ -801,9 +801,7 @@ class Package(Persistable):
             else:
                 #JR: Eliminamos el recurso del idevice
                 for i in range(len(zombie._idevice.userResources)-1, -1, -1):
-                    print zombie._idevice.userResources[i]
                     if zombie._idevice.userResources[i].storageName == zombie.storageName:
-                        print zombie._idevice.userResources[i]
                         aux = zombie._idevice.userResources[i]
                         zombie._idevice.userResources.remove(aux)
                         aux.delete
