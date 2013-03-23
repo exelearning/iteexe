@@ -276,7 +276,7 @@ function goBack() {
 }
 
 function goForward() {
-	doLMSSetValue('nav.event','continue');
+	scorm.set('nav.event','continue');
 	var coreSCOLocation = scorm.get("cmi.location");
 	window.location = coreSCOLocation;
 }
