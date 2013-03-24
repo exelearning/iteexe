@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
+FPD - Translation
 A multichoice Idevice is one built up from question and options
 """
 
@@ -194,7 +195,7 @@ class EjercicioresueltofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Ejercicio Resuelto"),
+                         x_(u"FPD - Translation"),
                          x_(u"University of Auckland"), 
                          x_(u"""A case study is a device that provides learners 
 with a simulation that has an educational basis. It takes a situation, generally 

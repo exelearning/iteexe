@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2006-07-28 15:40+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Sipho <siphomsi@webmail.co.za>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2006-07-28 15:40+1200\nLast-Translator: Jenny <jennylin_nz@yahoo.com>\nLanguage-Team: Sipho <siphomsi@webmail.co.za>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;\/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.&lt;\/li&gt;&lt;li&gtCabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;\/li&gt;&lt;\/ol&gt;", 
  "Title": "Isihloko:", 
  "Add JPEG Image": "Faka isithombe se-JPEG", 
@@ -117,7 +117,6 @@ translations = {
  "Kannada ": "Kannada. ", 
  "Interlingua ": "Interlingua. ", 
  "Select a file": "Khetha ifayela", 
- "IDevice Question Icon": "Isithonjana Sombuzo We-iDevice", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Hlela izinga lokuqala lokukhulisa \nlapho i-iDevice ilayisha, libe amaphesenti obungako bokuqala besithombe.", 
  "article ": "ukulandisa okubhaliwe", 
  "Tigrinya ": "Tigrinya.", 
@@ -273,7 +272,7 @@ translations = {
  "Move Image Left": "Yisa Isithombe Kwesokunxele", 
  "Attachment": "Isinamathiselo", 
  "Select the correct option by clicking \non the radio button.": "Khetha okufanele ngokucindezela \ninkinobho.", 
- "Preview": "Umboniso", 
+ "Select pass rate: ": "Khetha izinga lokuphumelela:", 
  "Chechen ": "Chechen.", 
  "Ndonga ": "Ndonga. ", 
  "Enter the available choices here. \nYou can add options by clicking the \"Add Another Option\" button. Delete options \nby clicking the red \"X\" next to the Option.": "Faka okukhona okungakhethwa lapha. \nUngongeza okukhethwayo ngokucindezela inkinobho \"Ongeza Ngokunye Okukhethwayo\".Cima okukhethwayo \nngokucindezela u \"X\" obomvu eceleni kwakho.", 
@@ -362,9 +361,8 @@ translations = {
  "Section": "iSigaba", 
  "Cloze": "Okuvalekile", 
  "Preknowledge": "Ulwazi lwangaphambili", 
- "Select pass rate: ": "Khetha izinga lokuphumelela:", 
+ "Preview": "Umboniso", 
  "Option": "Okukhethwayo", 
- "IDevice Icon": "Isithonjana Se-iDevice", 
  "Gallegan; Galician ": "Gallegan; Galician.", 
  "Text Box": "iBhokisi lokuBhaliwe", 
  "Sango; Sangro ": "Sango; Sangro.", 
@@ -451,6 +449,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "Umsebenzi ofundwayo, njengoba igama \nlisikisela, kumele umfundi acelwe ukuba enze umsebenzi othile. Lomsebenzi \nkumele uhambisane ngokuqondile nokubhaliwe umfundi acelwe ukuba akufunde. \nUmbono ngokwenziwe umfundi lapho kunesidingo, kunganika umfundi \nisiqondiso.&lt;\/p&gt;", 
  "Bengali; Bangla ": "Bengali; Bangla. ", 
  "Pali ": "Pali.", 
- "Package saved to: %s": "iPhakethe ligcinwe e: %s", 
- "iDevice icon": "Isithanjana se-iDevice"
+ "Package saved to: %s": "iPhakethe ligcinwe e: %s"
 };

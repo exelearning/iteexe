@@ -19,6 +19,7 @@
 # ===========================================================================
 
 """
+FPD - Free Text
 FreeTextIdevice: just has a block of text
 """
 
@@ -35,7 +36,7 @@ class FreeTextfpdIdevice(Idevice):
     persistenceVersion = 7
 
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"FPD - Texto Libre"), 
+        Idevice.__init__(self, x_(u"FPD - Free Text"), 
                          x_(u"University of Auckland"), 
                          x_(u"""The majority of a learning resource will be 
 establishing context, delivering instructions and providing general information.

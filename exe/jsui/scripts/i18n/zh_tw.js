@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-01-23 16:53+1300\nLast-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\nLanguage-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-01-23 16:53+1300\nLast-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\nLanguage-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u64ec\u5beb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u6709\u722d\u8b70\u6027\u7684\uff0c\u6216\u4e0d\u540c\u4eba\u7269\u548c\u74b0\u5883\u7684\u5834\u666f\uff0c\u4e26\u80fd\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4f86\u89e3\u6c7a\u554f\u984c\u3002", 
  "Title": "\u6a19\u984c", 
  "Add JPEG Image": "\u52a0\u5165JPEG\u5716\u7247", 
@@ -118,7 +118,6 @@ translations = {
  "Kannada ": "\u574e\u62ff\u9054\u8a9e", 
  "Interlingua ": "\u62c9\u4e01\u570b\u969b\u8a9e", 
  "Select a file": "\u9078\u64c7\u6587\u4ef6", 
- "IDevice Question Icon": "IDevice\u554f\u984c\u5716\u793a", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "\u8a2d\u5b9a\u521d\u59cb\u653e\u5927\u500d\u6578\uff0c\u70ba\u539f\u5716\u50cf\u5c3a\u5bf8\u7684\u767e\u5206\u6bd4\u3002", 
  "article ": "\u6587\u7ae0", 
  "Tigrinya ": "\u63d0\u683c\u91cc\u5c3c\u4e9e\u8a9e", 
@@ -369,7 +368,6 @@ translations = {
  "Preknowledge": "\u9810\u5099\u77e5\u8b58", 
  "Select pass rate: ": "\u9078\u64c7\u53ca\u683c\u7dda", 
  "Option": "\u9078\u9805", 
- "IDevice Icon": "iDevice \u5716\u793a", 
  "Gallegan; Galician ": "\u52a0\u5229\u897f\u4e9e\u8a9e", 
  "Text Box": "\u591a\u5217\u6587\u5b57", 
  "Sango; Sangro ": "\u6851\u6208\u8a9e", 
@@ -458,6 +456,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": " <P>\u6aa2\u8996\u4f5c\u7528\u4e2d\uff0c\u9867\u540d\u601d\u7fa9\u662f\u8981\u5b78\u751f\u5b8c\u6210\u4e00\u4e9b\u4efb\u52d9\u3002\u6b64\u4f5c\u7528\u4e2d\u9808\u8207\u6aa2\u8996\u5167\u5bb9\u76f4\u63a5\u76f8\u95dc\u3002\u53ef\u7d66\u5b78\u751f\u4e00\u4e9b\u76f8\u5c0d\u7684\u8a55\u8a9e\uff0c\u63d0\u4f9b\u56de\u7b54\u554f\u984c\u7684\u6307\u5f15.<\/P>", 
  "Bengali; Bangla ": "\u5b5f\u52a0\u62c9\u8a9e", 
  "Pali ": "\u5df4\u5229\u8a9e", 
- "Package saved to: %s": "\u6559\u6750\u5b58\u81f3: %s", 
- "iDevice icon": "iDevice \u5716\u793a"
+ "Package saved to: %s": "\u6559\u6750\u5b58\u81f3: %s"
 };

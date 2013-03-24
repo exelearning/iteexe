@@ -107,7 +107,7 @@ class EjercicioresueltofpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Ejercicio resuelto")
+		self.idevice.title = x_(u"Translation")
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.storyElement.renderEdit()
 

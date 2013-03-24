@@ -26,15 +26,15 @@ class DebesconocerfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Debes Conocer"),
+                         x_(u"FPD - You Should Know"),
                          x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje."""), u"", u"debesconocerfpd")
+                         x_(u"""You Should Know is an iDevice that helps the student widen her knowledge with core contents."""), u"", u"debesconocerfpd")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_debesconocerfpd"
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Debes conocer:'), 
+        self.activityTextArea = TextAreaField(x_(u'You Should Know Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -133,7 +133,7 @@ class DebesconocerfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Debes conocer:'), 
+        self.activityTextArea = TextAreaField(x_(u'You Should Know Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

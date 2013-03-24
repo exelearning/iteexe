@@ -19,6 +19,7 @@
 # ===========================================================================
 
 """
+FPD - Cloze Activity (Modified)
 Cloze Idevice. Shows a paragraph where the student must fill in the blanks
 """
 
@@ -43,7 +44,7 @@ class ClozelangfpdIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, x_(u"FPD - Actividad de Espacios en Blanco (Modificada)"),
+        Idevice.__init__(self, x_(u"FPD - Cloze Activity (Modified)"),
                          x_(u"University of Auckland"), 
                          x_(u"<p>Cloze exercises are texts or "
                              "sentences where students must fill in "

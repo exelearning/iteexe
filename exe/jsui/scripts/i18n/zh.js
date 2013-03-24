@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Add JPEG Image": "\u6dfb\u52a0JPEG\u56fe\u7247", 
@@ -147,7 +147,6 @@ translations = {
  "The majority of a learning resource will be \nestablishing context, delivering instructions and providing general information.\nThis provides the framework within which the learning activities are built and \ndelivered.": "\u5927\u591a\u6570\u8bfe\u4ef6\u90fd\u662f\u8981\u7f16\u5199\u8bfe\u6587\uff0c\u4f20\u6388\u77e5\u8bc6\u548c\u63d0\u4f9b\u57fa\u672c\u4fe1\u606f\u3002\u8fd9\u4e2aiDevice\u63d0\u4f9b\u4e86\u4e00\u4e2a\u6846\u67b6\u8ba9\u5b66\u4e60\u6d3b\u52a8\u5f97\u4ee5\u5efa\u7acb\u548c\u4f20\u6388\u3002", 
  "Interlingua ": "\u62c9\u4e01\u56fd\u9645\u8bed", 
  "Select a file": "\u9009\u62e9\u6587\u6863", 
- "IDevice Question Icon": "IDevice\u95ee\u9898\u56fe\u6807", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "\u8bbe\u7f6e\u521d\u59cb\u653e\u5927\u500d\u6570, \u4e3a\u539f\u56fe\u8c61\u5c3a\u5bf8\u7684\u767e\u5206\u6bd4.", 
  "article ": "\u6587\u7ae0", 
  "Sorry, wrong file format.": "\u5bf9\u4e0d\u8d77, \u6587\u4ef6\u683c\u5f0f\u9519\u8bef", 
@@ -447,7 +446,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "\u9009\u62e9\u53ca\u683c\u7ebf", 
  "Option": "\u9009\u9879", 
- "IDevice Icon": "iDevice \u56fe\u6807", 
  "Gallegan; Galician ": "\u52a0\u5229\u897f\u4e9a\u8bed", 
  "Text Box": "\u591a\u884c\u6587\u5b57", 
  "Sango; Sangro ": "\u6851\u6208\u8bed", 
@@ -551,6 +549,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": " <P>\u9605\u8bfb\u6d3b\u52a8, \u987e\u540d\u601d\u4e49\u662f\u8981\u5b66\u751f\u5b8c\u6210\u4e00\u4e9b\u4efb\u52a1. \u6b64\u6d3b\u52a8\u987b\u4e0e\u9605\u8bfb\u5185\u5bb9\u76f4\u63a5\u76f8\u5173. \u53ef\u7ed9\u5b66\u751f\u4e00\u4e9b\u76f8\u5e94\u7684\u8bc4\u8bed, \u63d0\u4f9b\u56de\u7b54\u95ee\u9898\u7684\u6307\u5bfc.<\/P>", 
  "Bengali; Bangla ": "\u5b5f\u52a0\u62c9\u8bed", 
  "Pali ": "\u5df4\u5229\u8bed", 
- "Package saved to: %s": "\u8bfe\u4ef6\u5b58\u81f3: %s", 
- "iDevice icon": "iDevice \u56fe\u6807"
+ "Package saved to: %s": "\u8bfe\u4ef6\u5b58\u81f3: %s"
 };

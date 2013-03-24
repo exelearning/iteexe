@@ -19,6 +19,7 @@
 # ===========================================================================
 
 """
+FPD - Think About It (with Feedback)
 A Reflection Idevice presents question/s for the student to think about
 before they look at the answer/s
 """
@@ -43,7 +44,7 @@ class ReflectionfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Reflexiona (con Retroalimentacion)"),
+                         x_(u"FPD - Think About It (with Feedback)"),
                          x_(u"University of Auckland"), 
                          x_(u"""Reflection is a teaching method often used to 
 connect theory to practice. Reflection tasks often provide learners with an 

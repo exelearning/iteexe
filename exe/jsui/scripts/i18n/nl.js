@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-11-18 12:33+1300\nLast-Translator: Jim Tittsler <jim@exelearning.org>\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: exe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-11-18 12:33+1300\nLast-Translator: Jim Tittsler <jim@exelearning.org>\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "Als u dit iDevice gebruikt, hou dan rekening met volgende overwegingen: <ol><li>1. Beperk het aantal verschillende soorten van activiteiten dat in het materiaal op een visuele manier wordt aangegeven. Meestal volstaan drie of vier verschillende types.<\/li><li>2. Uit visueel oogpunt bekeken is het beter niet twee iDevices onmiddellijk na elkaar te zetten die niet gescheiden zijn door tekst. Als dat het geval is, plaats dan twee vragen of activiteiten in eenzelfde iDevice<\/li><li>3.Ontwerp activiteiten waarvan het nut opweegt tegen de tijd en moeite die het kost om ze tot een goed einde te brengen. <\/li><\/ol>", 
  "Title": "Titel", 
  "Add JPEG Image": "JPEG-afbeelding toevoegen", 
@@ -156,7 +156,6 @@ translations = {
  "Promote node up in hierarchy": "Element verhogen in de hierarchie", 
  "Interlingua ": "Interlingua ", 
  "Select a file": "Kies een bestand", 
- "IDevice Question Icon": "iDevice Vraag-pictogram", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Stel de beginzoomwaarde in\nbij het openen van het iDevice, in percent van de originele afbeeldingsgrootte.", 
  "article ": "artikel", 
  "Sorry, wrong file format.": "Sorry, fout bestandsformaat", 
@@ -473,7 +472,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Kies slaagpercentage:", 
  "Option": "Alternatief", 
- "IDevice Icon": "iDevice-pictogram", 
  "Gallegan; Galician ": "Gallicisch", 
  "Text Box": "Tekstveld", 
  "Sango; Sangro ": "Sango; Sangro", 
@@ -580,6 +578,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>Zoals de naam aangeeft, moet de\nleesactiviteit rechtstreeks verband houden met de tekst die de leerling\nmoet lezen. Gepaste feedback kan de leerling helpen reflecteren over de tekst.<\/p>", 
  "Bengali; Bangla ": "Bengaals", 
  "Pali ": "Pali ", 
- "Package saved to: %s": "Pakket opgeslagen naar: %s", 
- "iDevice icon": "iDevice-pictogram"
+ "Package saved to: %s": "Pakket opgeslagen naar: %s"
 };

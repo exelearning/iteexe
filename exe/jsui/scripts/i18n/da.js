@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-09-15 16:08+0100\nLast-Translator: Dino Brun Pedersen <dbp@sensus.dk>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-09-15 16:08+0100\nLast-Translator: Dino Brun Pedersen <dbp@sensus.dk>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Undervisere skal v\u00e6re opm\u00e6rksomme p\u00e5 f\u00f8lgende, n\u00e5r iDevice anvendes: <\/p><ol><li>T\u00e6nk over antallet af forskellige typer af aktiviteter planlagt som vil blive vist visuelt  i indholdet. Undg\u00e5 at bruge for mange forskellige typer eller klassifikationer af aktiviteter, ellers vil den studerende blive forvirret. S\u00e6dvanligvis er tre eller fire forskellige typer mere end tilstr\u00e6kkelig for en undervisningsresurse<\/li><li>Fra et visuelt design perspektiv, undg\u00e5 at have to iDevices umiddelbart efter hinanden uden nogen tekst imellem. Hvis det er n\u00f8dvendigt, sammenl\u00e6g to sp\u00f8rgsm\u00e5l eller begivenheder i en iDevice. <\/li><li>Overvej aktiviteter, hvor man opfatter fordelen ved at udf\u00f8re aktiviteten  opvejer tiden og indsatsen, som det tager at fuldf\u00f8re aktiviteten. <\/li><\/ol>", 
  "Title": "Titel", 
  "Add JPEG Image": "Tilf\u00f8j JPEG billede", 
@@ -156,7 +156,6 @@ translations = {
  "Promote node up in hierarchy": "Flyt knuden op i hirakiet", 
  "Interlingua ": "Interlingua ", 
  "Select a file": "V\u00e6lg en fil", 
- "IDevice Question Icon": "IDevice sp\u00f8rgsm\u00e5l ikon", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Angiv graden af zoom, n\u00e5r iDevicen \u00e5bnes \nsom en procentdel af den oprindelige st\u00f8rrelse p\u00e5 billedet", 
  "article ": "artikel", 
  "Sorry, wrong file format.": "Forkert filformat", 
@@ -474,7 +473,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "V\u00e6lg gr\u00e6nse for best\u00e5et:", 
  "Option": "Alternativ", 
- "IDevice Icon": "IDevice ikon", 
  "Gallegan; Galician ": "Gallegan; Galisisk", 
  "Text Box": "Tekstfelt", 
  "Sango; Sangro ": "Sango; Sangro ", 
@@ -581,6 +579,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>L\u00e6se aktiviteten skal som navnet \nsiger bede den studerende om at udf\u00f8re en aktivitet. Denne aktivitet \nskal relatere sig til teksten som den studerende l\u00e6ser. \nTilbagemelding p\u00e5 teksten, hvor det er passende, kan give den studerende en \nreflekterende rettesnor.<\/p>", 
  "Bengali; Bangla ": "Bengalsk; Bangla ", 
  "Pali ": "Pali ", 
- "Package saved to: %s": "Pakken gemt: %s", 
- "iDevice icon": "iDevice ikon"
+ "Package saved to: %s": "Pakken gemt: %s"
 };

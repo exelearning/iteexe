@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (1.04.1)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-11 17:19+0100\n"
+"POT-Creation-Date: 2013-03-24 14:16+0100\n"
 "PO-Revision-Date: 2013-03-08 09:34+0100\n"
 "Last-Translator: José Miguel Andonegi <jmandonegi@ulhi.net>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -28,24 +28,24 @@ msgid "Java Applet"
 msgstr "Java appleta "
 
 #: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
-#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:47
-#: exe/engine/clozeidevice.py:47 exe/engine/clozelangfpdidevice.py:47
-#: exe/engine/ejercicioresueltofpdidevice.py:198
-#: exe/engine/eleccionmultiplefpdidevice.py:61
+#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:48
+#: exe/engine/clozeidevice.py:47 exe/engine/clozelangfpdidevice.py:48
+#: exe/engine/ejercicioresueltofpdidevice.py:199
+#: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
-#: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:39
+#: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
 #: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:568 exe/engine/idevicestore.py:596
 #: exe/engine/idevicestore.py:619 exe/engine/idevicestore.py:675
 #: exe/engine/idevicestore.py:703 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
-#: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:47
+#: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:47
 #: exe/engine/reflectionidevice.py:47
-#: exe/engine/seleccionmultiplefpdidevice.py:44
+#: exe/engine/seleccionmultiplefpdidevice.py:45
 #: exe/engine/truefalseidevice.py:145
-#: exe/engine/verdaderofalsofpdidevice.py:145 exe/engine/wikipediaidevice.py:54
+#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Aucklandeko Unibertsitatea"
@@ -219,13 +219,13 @@ msgid "Attachment %s has no parentNode"
 msgstr "%s atxikitako fitxategiak ez du guraso nodorik"
 
 #: exe/engine/casestudyidevice.py:63
-#: exe/engine/ejercicioresueltofpdidevice.py:63
+#: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 msgid "Image"
 msgstr "Irudia"
 
 #: exe/engine/casestudyidevice.py:64
-#: exe/engine/ejercicioresueltofpdidevice.py:64
+#: exe/engine/ejercicioresueltofpdidevice.py:65
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
@@ -238,7 +238,7 @@ msgid "Case Study"
 msgstr "Kasu azterketa"
 
 #: exe/engine/casestudyidevice.py:199
-#: exe/engine/ejercicioresueltofpdidevice.py:199
+#: exe/engine/ejercicioresueltofpdidevice.py:200
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -280,7 +280,7 @@ msgstr ""
 "hala, eztabaidagai gehiago agertuko dira.</li></ul>"
 
 #: exe/engine/casestudyidevice.py:216
-#: exe/engine/ejercicioresueltofpdidevice.py:217
+#: exe/engine/ejercicioresueltofpdidevice.py:218
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the "
@@ -296,13 +296,13 @@ msgstr ""
 "hainbat ekintza gauzatzeko aukera eman beharko luke."
 
 #: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
-#: exe/engine/ejercicioresueltofpdidevice.py:221
-#: exe/engine/ejercicioresueltofpdidevice.py:408
+#: exe/engine/ejercicioresueltofpdidevice.py:222
+#: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
 msgstr "Istorioa:"
 
 #: exe/engine/casestudyidevice.py:225
-#: exe/engine/ejercicioresueltofpdidevice.py:226
+#: exe/engine/ejercicioresueltofpdidevice.py:227
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -315,7 +315,7 @@ msgstr ""
 "ikasleak gatazka konpon dezan. "
 
 #: exe/engine/casestudyidevice.py:229
-#: exe/engine/ejercicioresueltofpdidevice.py:230
+#: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -323,71 +323,62 @@ msgstr ""
 "Eman egoerari buruzko feedback \n"
 "nabarmena."
 
-#: exe/engine/casopracticofpdidevice.py:29
-msgid "FPD - Caso Practico"
-msgstr "FPD - Kasu Praktikoa"
-
 #: exe/engine/casopracticofpdidevice.py:30
-#: exe/engine/citasparapensarfpdidevice.py:30
-#: exe/engine/correccionfpdidevice.py:30
+msgid "FPD - Situation"
+msgstr ""
+
+#: exe/engine/casopracticofpdidevice.py:31
+#: exe/engine/citasparapensarfpdidevice.py:33
 #: exe/engine/debesconocerfpdidevice.py:30 exe/engine/destacadofpdidevice.py:30
-#: exe/engine/orientacionesalumnadofpdidevice.py:30
-#: exe/engine/orientacionestutoriafpdidevice.py:30
-#: exe/engine/parasabermasfpdidevice.py:30
-#: exe/engine/recomendacionfpdidevice.py:30
+#: exe/engine/orientacionesalumnadofpdidevice.py:31
+#: exe/engine/orientacionestutoriafpdidevice.py:31
+#: exe/engine/parasabermasfpdidevice.py:31
+#: exe/engine/recomendacionfpdidevice.py:31
 msgid "Jose Ramon Jimenez Reyes"
 msgstr "Jose Ramon Jimenez Reyes"
 
-#: exe/engine/casopracticofpdidevice.py:31
+#: exe/engine/casopracticofpdidevice.py:32
 msgid ""
-"Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse "
-"en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
+"Situation is an iDevice that provides the student with a story that will "
+"guide her along the learning process."
 msgstr ""
-"Kasu praktikoa iDevicearen bidez, ikaslea bere ikasketa prozesuaren zehar"
-" gidatzeko balio duen istorio bat kontatu dezakezu."
 
-#: exe/engine/casopracticofpdidevice.py:34
-#: exe/engine/citasparapensarfpdidevice.py:34
-#: exe/engine/correccionfpdidevice.py:33
-#: exe/engine/debesconocerfpdidevice.py:34 exe/engine/destacadofpdidevice.py:33
-#: exe/engine/orientacionesalumnadofpdidevice.py:34
-#: exe/engine/orientacionestutoriafpdidevice.py:34
-#: exe/engine/parasabermasfpdidevice.py:34
-#: exe/engine/recomendacionfpdidevice.py:34
-msgid "Introduce el texto que aparecer&aacute; en este iDevice"
-msgstr "iDevice honetan agertuko den testua sartu"
-
-#: exe/engine/casopracticofpdidevice.py:37
-#: exe/engine/casopracticofpdidevice.py:135
-msgid "Texto Caso pr&aacute;ctico:"
-msgstr "Kasu praktikoaren testua:"
-
-#: exe/engine/citasparapensarfpdidevice.py:29
-msgid "FPD - Citas Para Pensar"
-msgstr "FPD - Hausnarketarako Aipua"
-
-#: exe/engine/citasparapensarfpdidevice.py:31
-msgid ""
-"Citas para pensar es un iDevice que permite al alumnado reflexionar sobre"
-" algunas citas propuestas."
-msgstr ""
-"Hausnarketarako aipua idevicearen bidez, ikaslearen hausnarketa sortarazi"
-" dezaketen aipuak proposatu ditzakezu."
-
+#: exe/engine/casopracticofpdidevice.py:35
 #: exe/engine/citasparapensarfpdidevice.py:37
-msgid "Texto Citas para pensar:"
-msgstr "Hausnarketarako aipuaren testua:"
+#: exe/engine/debesconocerfpdidevice.py:34 exe/engine/destacadofpdidevice.py:33
+#: exe/engine/orientacionesalumnadofpdidevice.py:35
+#: exe/engine/orientacionestutoriafpdidevice.py:35
+#: exe/engine/parasabermasfpdidevice.py:35
+#: exe/engine/recomendacionfpdidevice.py:35
+msgid "Enter the text that will appear on this iDevice"
+msgstr ""
 
-#: exe/engine/citasparapensarfpdidevice.py:136
-msgid "Texto para pensar:"
-msgstr "Hausnarketarako aipuaren testua:"
+#: exe/engine/casopracticofpdidevice.py:38
+#: exe/engine/casopracticofpdidevice.py:136
+msgid "Situation Text:"
+msgstr ""
 
-#: exe/engine/clozefpdidevice.py:46
-msgid "FPD - Actividad de Espacios en Blanco"
-msgstr "FPD - Hutsuneak Betetzeko Jarduera"
+#: exe/engine/citasparapensarfpdidevice.py:32
+msgid "FPD - Quotation"
+msgstr ""
 
-#: exe/engine/clozefpdidevice.py:48 exe/engine/clozeidevice.py:48
-#: exe/engine/clozelangfpdidevice.py:48
+#: exe/engine/citasparapensarfpdidevice.py:34
+msgid ""
+"Quotation is an iDevice that provides the students with quotations to "
+"reflect upon."
+msgstr ""
+
+#: exe/engine/citasparapensarfpdidevice.py:40
+#: exe/engine/citasparapensarfpdidevice.py:139
+msgid "Quotation Text:"
+msgstr ""
+
+#: exe/engine/clozefpdidevice.py:47
+msgid "FPD - Cloze Activity"
+msgstr ""
+
+#: exe/engine/clozefpdidevice.py:49 exe/engine/clozeidevice.py:48
+#: exe/engine/clozelangfpdidevice.py:49
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -405,8 +396,8 @@ msgstr ""
 "frogatzea.</li><li>Hiztegia zenbateraino ezagutzen den "
 "egiaztatzeko.</li><li>Hitz osaketa/gramatika ziurtatzeko. </li></ol>"
 
-#: exe/engine/clozefpdidevice.py:60 exe/engine/clozeidevice.py:60
-#: exe/engine/clozelangfpdidevice.py:60
+#: exe/engine/clozefpdidevice.py:61 exe/engine/clozeidevice.py:60
+#: exe/engine/clozelangfpdidevice.py:61
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -450,16 +441,16 @@ msgstr ""
 " ezberdina duten alternatibak. Egokia litzateke testua/ariketa lankide "
 "bati irakurtzeko ematea, sorpresarik egon ez dadin!  </p> </dd></dl>"
 
-#: exe/engine/clozefpdidevice.py:116 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:129
+#: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:116
+#: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:129
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
-#: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
+#: exe/engine/verdaderofalsofpdidevice.py:167
+#: exe/engine/verdaderofalsofpdidevice.py:395 exe/webui/common.py:337
 msgid "Instructions"
 msgstr "Argibideak"
 
-#: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:117
-#: exe/engine/clozelangfpdidevice.py:117
+#: exe/engine/clozefpdidevice.py:118 exe/engine/clozeidevice.py:117
+#: exe/engine/clozelangfpdidevice.py:118
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -468,12 +459,12 @@ msgstr ""
 "Eman hutsuneak betetzeko jarduera egiteko argibideak. \n"
 "Eremuan aldaketarik egiten ez bada, lehenetsitako testua txertatuko da.\n"
 
-#: exe/engine/clozefpdidevice.py:122 exe/engine/clozeidevice.py:123
+#: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:123
 msgid "Cloze"
 msgstr "Bete hutsuneak"
 
-#: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:124
-#: exe/engine/clozelangfpdidevice.py:123
+#: exe/engine/clozefpdidevice.py:124 exe/engine/clozeidevice.py:124
+#: exe/engine/clozelangfpdidevice.py:124
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -487,24 +478,25 @@ msgstr ""
 "beharreko hitzak aukeratzeko, klikatu bi aldiz hitzaren gainean\n"
 "eta klikatu beheko Ezkutatu/Erakutsi hitza botoia.</p>"
 
-#: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
+#: exe/engine/clozefpdidevice.py:129 exe/engine/clozefpdidevice.py:279
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
-#: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
+#: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozelangfpdidevice.py:284
 #: exe/engine/field.py:3611 exe/engine/field.py:3659
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:559
 #: exe/engine/idevicestore.py:668 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
-#: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
-#: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:165
-#: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
-#: exe/webui/common.py:252 exe/webui/editorelement.py:148
-#: exe/webui/editorpane.py:254 exe/webui/element.py:2271
-#: exe/webui/listablock.py:456 exe/webui/questionelement.py:104
+#: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
+#: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:164
+#: exe/webui/clozefpdblock.py:192 exe/webui/clozelangfpdblock.py:175
+#: exe/webui/clozelangfpdblock.py:193 exe/webui/common.py:253
+#: exe/webui/editorelement.py:148 exe/webui/editorpane.py:254
+#: exe/webui/element.py:2271 exe/webui/listablock.py:456
+#: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
 msgid "Feedback"
 msgstr "Feedbacka"
 
-#: exe/engine/clozefpdidevice.py:129 exe/engine/clozeidevice.py:130
-#: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:141
+#: exe/engine/clozefpdidevice.py:130 exe/engine/clozeidevice.py:130
+#: exe/engine/clozelangfpdidevice.py:130 exe/engine/listaidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -512,23 +504,23 @@ msgstr ""
 "Adierazi feedback eremuan ikasleei eman nahi diezun feedbacka. Eremua "
 "hutsik utz dezakezu."
 
-#: exe/engine/clozefpdidevice.py:274 exe/engine/clozeidevice.py:274
-#: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:290
+#: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:274
+#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
 msgstr "Ikasleentzako argibideak"
 
-#: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
-#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:291
+#: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:275
+#: exe/engine/clozelangfpdidevice.py:280 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
 msgstr "Sartu hemen ikasleentzako argibideak"
 
-#: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:276
-#: exe/engine/clozelangfpdidevice.py:280
+#: exe/engine/clozefpdidevice.py:277 exe/engine/clozeidevice.py:276
+#: exe/engine/clozelangfpdidevice.py:281
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Irakurri beheko paragrafoa eta bete hutsuneak"
 
-#: exe/engine/clozefpdidevice.py:287 exe/engine/clozeidevice.py:288
-#: exe/engine/clozelangfpdidevice.py:292
+#: exe/engine/clozefpdidevice.py:288 exe/engine/clozeidevice.py:288
+#: exe/engine/clozelangfpdidevice.py:293
 msgid "Allow auto completion when user filling the gaps."
 msgstr ""
 "Erabiltzailea hutsuneak betetzen ari denean, automatokiki osatzeko "
@@ -539,79 +531,58 @@ msgid "Cloze Activity"
 msgstr "Hutsuneak betetzeko jarduera"
 
 #: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
-#: exe/engine/verdaderofalsofpdidevice.py:397
+#: exe/engine/verdaderofalsofpdidevice.py:398
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Irakurri beheko paragrafoa eta bete hutsuneak."
 
-#: exe/engine/clozelangfpdidevice.py:46
-msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
-msgstr "FPD - Hutsuneak Betetzeko Jarduera (Eraldatua)"
+#: exe/engine/clozelangfpdidevice.py:47
+msgid "FPD - Cloze Activity (Modified)"
+msgstr ""
 
-#: exe/engine/clozelangfpdidevice.py:122
+#: exe/engine/clozelangfpdidevice.py:123
 msgid "Clozelang"
 msgstr "Bete hutsuneak"
 
-#: exe/engine/correccionfpdidevice.py:29
-msgid "FPD - Correccion"
-msgstr "FPD - Zuzenketa"
-
-#: exe/engine/correccionfpdidevice.py:31
-msgid ""
-"Correccion es un iDevice que permite resaltar texto para hacer "
-"correcciones a los autores."
-msgstr ""
-"Zuzenketa, iDevicearen bidez, testuak nabarmendu ditzakezu egileei "
-"zuzenketak egiteko."
-
-#: exe/engine/correccionfpdidevice.py:36
-msgid "Texto Correci&oacute;n:"
-msgstr "Zuzenkata testua:"
-
-#: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
-#: exe/engine/destacadofpdidevice.py:134
-msgid "Texto Destacado:"
-msgstr "Nabarmendutako testua:"
-
 #: exe/engine/debesconocerfpdidevice.py:29
-msgid "FPD - Debes Conocer"
-msgstr "FPD - Jakin  Behar Duzu"
+msgid "FPD - You Should Know"
+msgstr ""
 
 #: exe/engine/debesconocerfpdidevice.py:31
 msgid ""
-"Debes conocer es un iDevice que permite al alumnado ampliar "
-"conocimientos, siendo estos obligatorios para su aprendizaje."
+"You Should Know is an iDevice that helps the student widen her knowledge "
+"with core contents."
 msgstr ""
-"Jakin behar duzu iDevicearen bidez, ikaslearentzat derrigorrezkoak diren "
-"ezagutzak jorratzeko testuak sortu ditzakezu."
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
-msgid "Texto Debes conocer:"
-msgstr "Jakin behar duzunaren testua:"
+msgid "You Should Know Text:"
+msgstr ""
 
 #: exe/engine/destacadofpdidevice.py:29
-msgid "FPD - Destacado"
-msgstr "FPD - Nabarmendua"
+msgid "FPD - Highlighted"
+msgstr ""
 
 #: exe/engine/destacadofpdidevice.py:31
 msgid ""
-"Destacado es un iDevice que permite resaltar texto para llamar la "
-"atención del alumnado."
+"Highlighted is an iDevice that emphasizes text to catch the student's "
+"attention."
 msgstr ""
-"Nabarmendua iDevicearen bidez, ikaslearen arreta lortzeko testua "
-"nabarmendu dezakezu."
 
-#: exe/engine/ejercicioresueltofpdidevice.py:197
-msgid "FPD - Ejercicio Resuelto"
-msgstr "FPD - Ebatzitako Ariketa"
+#: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
+msgid "Highlighted Text:"
+msgstr ""
 
-#: exe/engine/eleccionmultiplefpdidevice.py:60
-msgid "FPD - Actividad de Eleccion Multiple"
-msgstr "FPD - Aukera anitzetako jarduera"
+#: exe/engine/ejercicioresueltofpdidevice.py:198
+msgid "FPD - Translation"
+msgstr ""
 
-#: exe/engine/eleccionmultiplefpdidevice.py:62
+#: exe/engine/eleccionmultiplefpdidevice.py:61
+msgid "FPD - Multi Choice Activity"
+msgstr ""
+
+#: exe/engine/eleccionmultiplefpdidevice.py:63
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
-#: exe/engine/seleccionmultiplefpdidevice.py:45
+#: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -642,9 +613,9 @@ msgstr ""
 "</li>\n"
 "</ul>"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:75
+#: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:58
-#: exe/engine/seleccionmultiplefpdidevice.py:58
+#: exe/engine/seleccionmultiplefpdidevice.py:59
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -673,7 +644,7 @@ msgstr ""
 "<li>Distraitzaileak sinesgarriak izan behar dira</li>\n"
 "</ul>\n"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:100
+#: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
 msgid ""
 "Enter a hint here. If you\n"
@@ -682,7 +653,7 @@ msgstr ""
 "Idatzi arrasto bat. Ez baduzu\n"
 "arrastorik eman nahi, hutsik utzi."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:102
+#: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
 #: exe/engine/quiztestidevice.py:194
 msgid ""
@@ -694,7 +665,7 @@ msgstr ""
 "Argia eta zalantza gabekoa izan behar du. Saihestu premisa negatiboak \n"
 "anbiguoak izan ohi baitira."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:105
+#: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Select the correct option by clicking \n"
@@ -703,7 +674,7 @@ msgstr ""
 "Aukera zuzena hautatzeko, \n"
 "markatu botoia."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:107
+#: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
 msgid ""
 "Enter the available choices here. \n"
@@ -716,7 +687,7 @@ msgstr ""
 "Aukerak ezabatzeko, klikatu aukera bakoitzaren ondoan dagoen \"X\" botoi "
 "gorria."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:110
+#: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
 msgid ""
 "Type in the feedback that you want the \n"
@@ -734,14 +705,14 @@ msgstr ""
 ",aukeratutakoa ondo badago, edo \"Erantzun okerra\" \n"
 ",beste erantzunetan."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
+#: exe/engine/eleccionmultiplefpdidevice.py:134 exe/engine/field.py:3682
 #: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:132
 #: exe/engine/multiselectidevice.py:80
-#: exe/engine/seleccionmultiplefpdidevice.py:81
+#: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
 msgstr "Galdera"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:287
+#: exe/engine/eleccionmultiplefpdidevice.py:288
 #: exe/engine/multichoiceidevice.py:286
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
@@ -895,8 +866,8 @@ msgstr "Aukera"
 
 #: exe/engine/field.py:3685 exe/engine/field.py:3751
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
-#: exe/engine/verdaderofalsofpdidevice.py:53
-#: exe/engine/verdaderofalsofpdidevice.py:128 exe/webui/element.py:2520
+#: exe/engine/verdaderofalsofpdidevice.py:54
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2520
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
 msgstr "Arrastoa"
@@ -921,8 +892,8 @@ msgstr ""
 #: exe/engine/field.py:3836 exe/engine/field.py:3917
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
-#: exe/engine/verdaderofalsofpdidevice.py:46
-#: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2040
+#: exe/engine/verdaderofalsofpdidevice.py:47
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2040
 msgid "Question:"
 msgstr "Galdera:"
 
@@ -955,7 +926,7 @@ msgstr ""
 "feedbacka."
 
 #: exe/engine/field.py:3850 exe/engine/field.py:3920
-#: exe/engine/reflectionfpdidevice.py:67 exe/engine/reflectionfpdidevice.py:202
+#: exe/engine/reflectionfpdidevice.py:68 exe/engine/reflectionfpdidevice.py:203
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
 msgstr "Feedbacka:"
@@ -1050,11 +1021,11 @@ msgstr ""
 "eta lerrokatzea zehaztu. \n"
 "Luzera eta zabalera proportzionalki aldatuko dira."
 
-#: exe/engine/freetextfpdidevice.py:38
-msgid "FPD - Texto Libre"
-msgstr "FPD - Testu Librea"
+#: exe/engine/freetextfpdidevice.py:39
+msgid "FPD - Free Text"
+msgstr ""
 
-#: exe/engine/freetextfpdidevice.py:40 exe/engine/freetextidevice.py:40
+#: exe/engine/freetextfpdidevice.py:41 exe/engine/freetextidevice.py:40
 msgid ""
 "The majority of a learning resource will be \n"
 "establishing context, delivering instructions and providing general "
@@ -1067,12 +1038,12 @@ msgstr ""
 "instrukzioak ezartzea eta informazio orokorra ematea da.\n"
 "Hala, ikasketa jarduerak sortzeko eta emateko markoa sortzen da."
 
-#: exe/engine/freetextfpdidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
 msgstr "Testu librea"
 
-#: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:46
+#: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
 "Use this field to enter text. This \n"
 "iDevice has no emphasis applied although limited formatting can be "
@@ -1083,7 +1054,7 @@ msgstr ""
 "ez du enfasirik, baina testuari formatu mugatua aplika dakioke,\n"
 "eremuari lotutako edizio botoiekin."
 
-#: exe/engine/freetextfpdidevice.py:121 exe/engine/freetextidevice.py:130
+#: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
 msgstr "Testu eremu librea da hau. Ikasgai orokorra idatz daiteke."
 
@@ -1710,45 +1681,41 @@ msgstr ""
 msgid "Multi-select"
 msgstr "Hautaketa askotakoa"
 
-#: exe/engine/orientacionesalumnadofpdidevice.py:29
-msgid "FPD - Orientaciones Alumnado"
-msgstr "FPD - Ikasle-Orientabideak"
-
-#: exe/engine/orientacionesalumnadofpdidevice.py:31
-msgid ""
-"Orientciones alumnado es un iDevice que permite al alumnado conocer los "
-"objetivos de su aprendizaje."
+#: exe/engine/orientacionesalumnadofpdidevice.py:30
+msgid "FPD - Guidelines Students"
 msgstr ""
-"Ikasle-orientabideak iDevicearen bidez ikasleak ezagutu ditzake bere "
-"ikasketaren helburuak."
 
-#: exe/engine/orientacionesalumnadofpdidevice.py:37
-msgid "Texto Orientaciones alumnado"
-msgstr "Ikasle-Orientabidearen testua"
-
-#: exe/engine/orientacionesalumnadofpdidevice.py:135
-msgid "Texto Orientaciones alumnado:"
-msgstr "Ikasle-orientabideen testua:"
-
-#: exe/engine/orientacionestutoriafpdidevice.py:29
-msgid "FPD - Orientaciones Tutoria"
-msgstr "FPD - Tutoretza-Orientabideak"
-
-#: exe/engine/orientacionestutoriafpdidevice.py:31
+#: exe/engine/orientacionesalumnadofpdidevice.py:32
 msgid ""
-"Orientaciones alumnado es un iDevice que permite al profesorado conocer "
-"los objetivos del aprendizje del alumnado."
+"Guidelines Students is an iDevice that permits students know the "
+"objectives of their learning."
 msgstr ""
-"Ikasle-orientabideak idevicearen bidez irakasleak ezagutuko ditu "
-"ikaslearen ikasketa-helburuak."
 
-#: exe/engine/orientacionestutoriafpdidevice.py:37
-msgid "Texto Orientaciones tutor&iacute;a"
-msgstr "Tutoretza-Orientabideen testuak"
+#: exe/engine/orientacionesalumnadofpdidevice.py:38
+msgid "Guidelines Students Text"
+msgstr ""
 
-#: exe/engine/orientacionestutoriafpdidevice.py:136
-msgid "Texto Orientaciones tutor&iacute;a:"
-msgstr "Tutoretza-orientabideen testua:"
+#: exe/engine/orientacionesalumnadofpdidevice.py:136
+msgid "Guidelines Students Text:"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:30
+msgid "FPD - Guidelines Teacher"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:32
+msgid ""
+"Guidelines Teacher is an iDevice that lets the teacher know the learning "
+"objectives of the students."
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:38
+msgid "Guidelines Teacher Text"
+msgstr ""
+
+#: exe/engine/orientacionestutoriafpdidevice.py:137
+msgid "Guidelines Teacher Text:"
+msgstr ""
 
 #: exe/engine/package.py:390
 msgid "Topic"
@@ -1779,30 +1746,25 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s da ondo gordetako azken elementua."
 
-#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:316
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:305
+#: exe/engine/package.py:874 exe/jsui/scripts/app/controller/Toolbar.js:334
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "iDevice Editor"
 msgstr "iDevice editorea"
 
-#: exe/engine/parasabermasfpdidevice.py:29
-msgid "FPD - Para Saber Mas"
-msgstr "FPD - Gehiago Jakiteko"
-
-#: exe/engine/parasabermasfpdidevice.py:31
-msgid ""
-"Para saber m&aacute;s es un iDevice que permite al alumnado ampliar "
-"conocimientos, siendo estos voluntarios para su aprendizaje."
+#: exe/engine/parasabermasfpdidevice.py:30
+msgid "FPD - A Step Ahead"
 msgstr ""
-"Gehiago jakiteko iDevicearen bidez, ikaslearentzat derrigorrezkoak ez "
-"diren ezagutzak jorratzeko testuak sortu ditzakezu."
 
-#: exe/engine/parasabermasfpdidevice.py:37
-msgid "Texto Para saber m&aacute;s"
-msgstr "Gehiago jakiteko testua"
+#: exe/engine/parasabermasfpdidevice.py:32
+msgid ""
+"A Step Ahead is an iDevice that permits students widen their knowledge "
+"with further contents."
+msgstr ""
 
-#: exe/engine/parasabermasfpdidevice.py:136
-msgid "Texto Para sabe m&aacute;s"
-msgstr "Gehiago jakiteko testua"
+#: exe/engine/parasabermasfpdidevice.py:38
+#: exe/engine/parasabermasfpdidevice.py:137
+msgid "A Step Ahead Text"
+msgstr ""
 
 #: exe/engine/path.py:639
 #, python-format
@@ -1851,28 +1813,26 @@ msgstr ""
 "Ariketa hau ikasleek informazioa ikasteko eta\n"
 "erabiltzeko denbora izan ondoren egiten da askotan."
 
-#: exe/engine/recomendacionfpdidevice.py:29
-msgid "FPD - Recomendacion"
-msgstr "FPD - Gomendioa"
-
-#: exe/engine/recomendacionfpdidevice.py:31
-msgid ""
-"Para saber m&aacute;s es un iDevice que permite al profesarado recomendar"
-" libros, películas, ... útiles para su formación."
+#: exe/engine/recomendacionfpdidevice.py:30
+msgid "FPD - A Piece of Advice"
 msgstr ""
-"Gehiago jakiteko iDevicearen bidez, irakaslearentzat proposatu ditzake "
-"prestakuntzarako baliagarriak diren liburuak, pelikulak, ..."
 
-#: exe/engine/recomendacionfpdidevice.py:37
-#: exe/engine/recomendacionfpdidevice.py:136
-msgid "Texto de la recomendaci&oacute;n:"
-msgstr "Gomendioaren testua:"
+#: exe/engine/recomendacionfpdidevice.py:32
+msgid ""
+"A Piece of Advice is an iDevice that permits the teacher give advice on "
+"interesting books, films..."
+msgstr ""
 
-#: exe/engine/reflectionfpdidevice.py:46
-msgid "FPD - Reflexiona (con Retroalimentacion)"
-msgstr "FPD - Hausnartu (Feedbackarekin)"
+#: exe/engine/recomendacionfpdidevice.py:38
+#: exe/engine/recomendacionfpdidevice.py:137
+msgid "A Piece of Advice Text:"
+msgstr ""
 
-#: exe/engine/reflectionfpdidevice.py:48
+#: exe/engine/reflectionfpdidevice.py:47
+msgid "FPD - Think About It (with Feedback)"
+msgstr ""
+
+#: exe/engine/reflectionfpdidevice.py:49
 #: exe/engine/reflectionfpdmodifidevice.py:48
 #: exe/engine/reflectionidevice.py:48
 msgid ""
@@ -1895,7 +1855,7 @@ msgstr ""
 "behaketa datuak biltzeko. Epigrafeak eta gidak feedback tresna \n"
 "eraginkorrak izan daitezke."
 
-#: exe/engine/reflectionfpdidevice.py:56
+#: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
 #: exe/engine/reflectionidevice.py:55
 msgid ""
@@ -1905,7 +1865,7 @@ msgstr ""
 "Idatzi ikasleak hausnartzera bultzatzeko \n"
 "galderaren bat."
 
-#: exe/engine/reflectionfpdidevice.py:58 exe/engine/reflectionidevice.py:57
+#: exe/engine/reflectionfpdidevice.py:59
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing"
@@ -1916,7 +1876,7 @@ msgstr ""
 "ariketa egin duten modua. (Epigrafeak erabilgarriak dira \n"
 "hausnarketaren feedbacka emateko.)"
 
-#: exe/engine/reflectionfpdidevice.py:63 exe/engine/reflectionfpdidevice.py:199
+#: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
@@ -1924,14 +1884,22 @@ msgid "Reflective question:"
 msgstr "Hausnartzeko galdera:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
-msgid "FPD - Reflexiona (sin Retroalimentacion)"
-msgstr "FPD - Hausnartu (Feedbackik gabe)"
+msgid "FPD - Think About It (without Feedback)"
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
 msgstr "Hausnarketa"
 
-#: exe/engine/resource.py:579
+#: exe/engine/reflectionidevice.py:57
+msgid ""
+"Describe how learners will assess how \n"
+"they have done in the exercise (rubrics are useful devices for providing"
+" \n"
+"reflective feedback)."
+msgstr ""
+
+#: exe/engine/resource.py:595
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -1998,16 +1966,16 @@ msgstr ""
 "Ezin da RSS feed-a %s-tik kargatu <br/> Mesedez, egiaztatu ortografia eta"
 " konexioa, eta berriz saiatu."
 
-#: exe/engine/seleccionmultiplefpdidevice.py:43
-msgid "FPD - Actividad de Seleccion Multiple"
-msgstr "FPD - Hautaketa Askotako Jarduera"
+#: exe/engine/seleccionmultiplefpdidevice.py:44
+msgid "FPD - Multi Select Activity"
+msgstr ""
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
 msgstr "Egia/gezurra galderak "
 
 #: exe/engine/truefalseidevice.py:146
-#: exe/engine/verdaderofalsofpdidevice.py:146
+#: exe/engine/verdaderofalsofpdidevice.py:147
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question "
@@ -2022,7 +1990,7 @@ msgstr ""
 "erantzunetarako."
 
 #: exe/engine/truefalseidevice.py:151
-#: exe/engine/verdaderofalsofpdidevice.py:152
+#: exe/engine/verdaderofalsofpdidevice.py:153
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -2031,7 +1999,7 @@ msgstr ""
 "galdera erantzuten laguntzeko."
 
 #: exe/engine/truefalseidevice.py:154
-#: exe/engine/verdaderofalsofpdidevice.py:155
+#: exe/engine/verdaderofalsofpdidevice.py:156
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can "
@@ -2043,7 +2011,7 @@ msgstr ""
 "anbiguoak izaten baitira."
 
 #: exe/engine/truefalseidevice.py:158
-#: exe/engine/verdaderofalsofpdidevice.py:159
+#: exe/engine/verdaderofalsofpdidevice.py:160
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank"
@@ -2055,15 +2023,15 @@ msgstr ""
 "lehenetsitakoa emango da."
 
 #: exe/engine/truefalseidevice.py:166 exe/engine/truefalseidevice.py:393
-#: exe/engine/verdaderofalsofpdidevice.py:167
-#: exe/engine/verdaderofalsofpdidevice.py:395
+#: exe/engine/verdaderofalsofpdidevice.py:168
+#: exe/engine/verdaderofalsofpdidevice.py:396
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr "Eman Egia/Gezurra galderak erantzuteko argibideak."
 
 #: exe/engine/truefalseidevice.py:373
-#: exe/engine/verdaderofalsofpdidevice.py:375
+#: exe/engine/verdaderofalsofpdidevice.py:376
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't "
@@ -2078,9 +2046,9 @@ msgstr ""
 " eXe-k automatikoki feedback hau jarriko du: \"Erantzun zuzena\"\n"
 "erantzuna zuzena bada; edo \"Erantzun okerra\" beste aukeretan."
 
-#: exe/engine/verdaderofalsofpdidevice.py:144
-msgid "FPD - Actividad de Verdadero/Falso"
-msgstr "FPD - Egia/Gezurra Moduko Jarduera "
+#: exe/engine/verdaderofalsofpdidevice.py:145
+msgid "FPD - True/False Activity"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
@@ -2115,7 +2083,7 @@ msgstr ""
 msgid "Article"
 msgstr "Artikulua"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:368
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:370
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -2123,7 +2091,7 @@ msgstr ""
 "Aukeratu Wikipediako hizkuntza, \n"
 "eta sartu bilatu beharreko terminoa."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:370
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:372
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -2140,7 +2108,7 @@ msgstr ""
 "Ezin izan da %s-etik deskargatu <br/>Mesedez, egiaztatu ortografia eta "
 "konexioa, eta berriz saiatu."
 
-#: exe/engine/wikipediaidevice.py:322
+#: exe/engine/wikipediaidevice.py:324
 msgid "http://en.wikipedia.org/"
 msgstr "http://eu.wikipedia.org/"
 
@@ -2282,9 +2250,9 @@ msgstr ""
 "exe_do: errorea: Ezin izan da inportatu '%s'.\n"
 "Errorea izan da:"
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:225
-#: exe/jsui/mainpage.py:823 exe/jsui/mainpage.py:967 exe/jsui/mainpage.py:1008
-#: exe/jsui/mainpage.py:1029
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:226
+#: exe/jsui/mainpage.py:838 exe/jsui/mainpage.py:982 exe/jsui/mainpage.py:1023
+#: exe/jsui/mainpage.py:1044
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2301,7 +2269,7 @@ msgstr "Sarrera paketea ez da baliagarria"
 msgid "Export format not implemented"
 msgstr "Esportazio formatua ez dago inplementatua"
 
-#: exe/export/imsexport.py:404 exe/export/scormexport.py:644
+#: exe/export/imsexport.py:414 exe/export/scormexport.py:657
 #: exe/export/websiteexport.py:90
 #, python-format
 msgid ""
@@ -2315,11 +2283,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Ondoko lizentziak babestua:"
 
-#: exe/export/scormexport.py:404 exe/export/websitepage.py:249
+#: exe/export/scormexport.py:405 exe/export/websitepage.py:252
 msgid "Previous"
 msgstr "Aurrekoa"
 
-#: exe/export/scormexport.py:405 exe/export/websitepage.py:255
+#: exe/export/scormexport.py:406 exe/export/websitepage.py:258
 msgid "Next"
 msgstr "Hurrengoa"
 
@@ -2385,19 +2353,19 @@ msgstr "Esteken sakontasuna kalkulatzen"
 msgid "Inserting %s"
 msgstr "%s sartzen"
 
-#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:682 exe/jsui/mainpage.py:815
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:691 exe/jsui/mainpage.py:830
 msgid "Cannot access directory named "
 msgstr "Ezin da izendatutako direktoriora sartu"
 
-#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:684 exe/jsui/mainpage.py:815
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:693 exe/jsui/mainpage.py:830
 msgid ". Please use ASCII names."
 msgstr ". Mesedez, ASCII izenak erabili."
 
-#: exe/jsui/mainpage.py:252
+#: exe/jsui/mainpage.py:253
 msgid "SAVE FAILED!"
 msgstr "EZ DA GORDE!"
 
-#: exe/jsui/mainpage.py:256 exe/jsui/mainpage.py:546 exe/jsui/mainpage.py:900
+#: exe/jsui/mainpage.py:257 exe/jsui/mainpage.py:555 exe/jsui/mainpage.py:915
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2406,22 +2374,26 @@ msgstr ""
 "EZ DA GORDE!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:260 exe/jsui/mainpage.py:265 exe/jsui/mainpage.py:268
+#: exe/jsui/mainpage.py:261 exe/jsui/mainpage.py:266 exe/jsui/mainpage.py:269
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Hurrengoan gordetako paketea: %s"
 
-#: exe/jsui/mainpage.py:468 exe/jsui/mainpage.py:574
+#: exe/jsui/mainpage.py:312
+msgid "Changes take effect when you restart eXe"
+msgstr ""
+
+#: exe/jsui/mainpage.py:477 exe/jsui/mainpage.py:583
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "%s direktorioaren aurrebista fitxategi bat da, eta ezin da ordeztu"
 
-#: exe/jsui/mainpage.py:488
+#: exe/jsui/mainpage.py:497
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "%s fitxategi lokala ez da aurkitu eta ezin da aurreikusi"
 
-#: exe/jsui/mainpage.py:616
+#: exe/jsui/mainpage.py:625
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -2430,29 +2402,29 @@ msgstr ""
 "Ezin izan da MimeTeX bildu!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:654
+#: exe/jsui/mainpage.py:663
 msgid "Importing HTML..."
 msgstr "HTMLa inportatzen"
 
-#: exe/jsui/mainpage.py:657
+#: exe/jsui/mainpage.py:666
 msgid "Error importing HTML:\n"
 msgstr "Errorea HTMLa  inportatzen:\n"
 
-#: exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:709 exe/jsui/mainpage.py:712
-#: exe/jsui/mainpage.py:715 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:951
+#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:724
+#: exe/jsui/mainpage.py:730 exe/jsui/mainpage.py:733 exe/jsui/mainpage.py:966
 msgid "EXPORT FAILED!"
 msgstr "EZ DA ESPORTATU!"
 
-#: exe/jsui/mainpage.py:784
+#: exe/jsui/mainpage.py:799
 msgid "Correct XLIFF import"
 msgstr "XLIFF inportazio zuzena"
 
-#: exe/jsui/mainpage.py:787
+#: exe/jsui/mainpage.py:802
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Errorea XLIFF inportatzen: %s"
 
-#: exe/jsui/mainpage.py:824 exe/jsui/mainpage.py:841
+#: exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:856
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2461,21 +2433,21 @@ msgstr ""
 "EZ DA ATERA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:843
+#: exe/jsui/mainpage.py:858
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Hurrengora ateratako paketea: %s"
 
-#: exe/jsui/mainpage.py:855
+#: exe/jsui/mainpage.py:870
 msgid "Directory exists"
 msgstr "Direktorioa jada existitzen da"
 
-#: exe/jsui/mainpage.py:886 exe/jsui/mainpage.py:928
+#: exe/jsui/mainpage.py:901 exe/jsui/mainpage.py:943
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "%s izeneko beste fitxategi bat dago, eta ezin da ordeztu"
 
-#: exe/jsui/mainpage.py:892 exe/jsui/mainpage.py:934
+#: exe/jsui/mainpage.py:907 exe/jsui/mainpage.py:949
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2484,10 +2456,10 @@ msgstr ""
 "Dagoeneko badago %s izeneko karpeta bat. Mesedez, beste izen bat aukeratu"
 " edo dagoena ezabatu, eta berriz saiatu."
 
-#: exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:955 exe/jsui/mainpage.py:968
-#: exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:992 exe/jsui/mainpage.py:1009
-#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1030
-#: exe/jsui/mainpage.py:1036
+#: exe/jsui/mainpage.py:956 exe/jsui/mainpage.py:970 exe/jsui/mainpage.py:983
+#: exe/jsui/mainpage.py:989 exe/jsui/mainpage.py:1007 exe/jsui/mainpage.py:1024
+#: exe/jsui/mainpage.py:1030 exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:1051
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2496,24 +2468,24 @@ msgstr ""
 "EZ DA ESPORTATU!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:957 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:994
-#: exe/jsui/mainpage.py:1017 exe/jsui/mainpage.py:1038
+#: exe/jsui/mainpage.py:972 exe/jsui/mainpage.py:991 exe/jsui/mainpage.py:1009
+#: exe/jsui/mainpage.py:1032 exe/jsui/mainpage.py:1053
 #, python-format
 msgid "Exported to %s"
 msgstr "%s-era esportatua"
 
-#: exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:1086
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "%s fitxategia ez dago edo ezin da irakurri."
 
-#: exe/jsui/mainpage.py:1075
+#: exe/jsui/mainpage.py:1090
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Ezin da fitxategia kargatu. Mesedez, bidali fitxategia "
 "bugs@exelearning.org helbidera"
 
-#: exe/jsui/mainpage.py:1078
+#: exe/jsui/mainpage.py:1093
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2522,7 +2494,7 @@ msgstr ""
 "Fitxategiaren formatua okerra da:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1080
+#: exe/jsui/mainpage.py:1095
 msgid "Sorry, wrong file format"
 msgstr "Fitxategiaren formatua okerra da"
 
@@ -2559,15 +2531,15 @@ msgid "Image Files"
 msgstr "Irudiak"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:156
-#: exe/jsui/scripts/app/controller/Toolbar.js:366
-#: exe/jsui/scripts/app/controller/Toolbar.js:387
-#: exe/jsui/scripts/app/controller/Toolbar.js:422
-#: exe/jsui/scripts/app/controller/Toolbar.js:487
-#: exe/jsui/scripts/app/controller/Toolbar.js:515
-#: exe/jsui/scripts/app/controller/Toolbar.js:557
-#: exe/jsui/scripts/app/controller/Toolbar.js:586
-#: exe/jsui/scripts/app/controller/Toolbar.js:706
-#: exe/jsui/scripts/app/controller/Toolbar.js:780
+#: exe/jsui/scripts/app/controller/Toolbar.js:384
+#: exe/jsui/scripts/app/controller/Toolbar.js:405
+#: exe/jsui/scripts/app/controller/Toolbar.js:440
+#: exe/jsui/scripts/app/controller/Toolbar.js:505
+#: exe/jsui/scripts/app/controller/Toolbar.js:533
+#: exe/jsui/scripts/app/controller/Toolbar.js:575
+#: exe/jsui/scripts/app/controller/Toolbar.js:604
+#: exe/jsui/scripts/app/controller/Toolbar.js:724
+#: exe/jsui/scripts/app/controller/Toolbar.js:798
 msgid "All Files"
 msgstr "Fitxategi guztiak"
 
@@ -2577,12 +2549,12 @@ msgid "Error"
 msgstr "Errorea"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
 msgid "Insert Package"
 msgstr "Sartu paketea"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
 msgid "Extract Package"
 msgstr "Atera paketea"
 
@@ -2591,7 +2563,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr "Borratu \"{node}\" nodoa eta bere menpeko guztiak?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:321
+#: exe/jsui/scripts/app/controller/Toolbar.js:339
 msgid "Confirm"
 msgstr "Baieztatu"
 
@@ -2603,16 +2575,21 @@ msgstr "\"{node}\" nodoa berrizendatu"
 msgid "Enter the new name:"
 msgstr "Sartu izen berria:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:270
+#: exe/jsui/scripts/app/controller/Toolbar.js:276
 msgid "About"
 msgstr "Honi buruz"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:303
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
+#: exe/jsui/scripts/app/controller/Toolbar.js:309
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
 msgid "Preferences"
 msgstr "Lehentasunak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:322
+#: exe/jsui/scripts/app/controller/Toolbar.js:321
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:323
+msgid "Select Browser"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:340
 msgid ""
 "If you have made changes and have not saved, they will be lost. Do you "
 "really want to quit?"
@@ -2620,142 +2597,142 @@ msgstr ""
 "Aldaketarik egin baduzu eta ez badituzu gorde, galduko dira. Benetan "
 "irten nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:354
+#: exe/jsui/scripts/app/controller/Toolbar.js:372
 msgid "Select package to insert"
 msgstr "Aukeratu txertatuko den paketea"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:359
+#: exe/jsui/scripts/app/controller/Toolbar.js:377
 msgid "Inserting package: {filename}"
 msgstr "Paketea txertatzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:365
-#: exe/jsui/scripts/app/controller/Toolbar.js:386
-#: exe/jsui/scripts/app/controller/Toolbar.js:705
-#: exe/jsui/scripts/app/controller/Toolbar.js:779
+#: exe/jsui/scripts/app/controller/Toolbar.js:383
+#: exe/jsui/scripts/app/controller/Toolbar.js:404
+#: exe/jsui/scripts/app/controller/Toolbar.js:723
+#: exe/jsui/scripts/app/controller/Toolbar.js:797
 msgid "eXe Package Files"
 msgstr "eXe fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:375
+#: exe/jsui/scripts/app/controller/Toolbar.js:393
 msgid "Save extracted package as"
 msgstr "Ateratako paketea honela gorde"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:380
+#: exe/jsui/scripts/app/controller/Toolbar.js:398
 msgid "Extracting package: {filename}"
 msgstr "Atera paketea: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:396
+#: exe/jsui/scripts/app/controller/Toolbar.js:414
 msgid "Select the parent folder for import."
 msgstr "Aukeratu karpeta nagusia inportaziorako."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:411
+#: exe/jsui/scripts/app/controller/Toolbar.js:429
 msgid "Select the entry point for import."
 msgstr "Inportazioaren sarbidea aukeratu."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:421
+#: exe/jsui/scripts/app/controller/Toolbar.js:439
 msgid "HTML Files"
 msgstr "HTML fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:436
+#: exe/jsui/scripts/app/controller/Toolbar.js:454
 msgid "Waiting progress..."
 msgstr "Itxarotearen aurreratzea... (aurrerapenaren egoera?)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:444
+#: exe/jsui/scripts/app/controller/Toolbar.js:462
 msgid "Cancel Import?"
 msgstr "Inportazioa bertan behera utzi?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:445
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Inportazio bat martxan dago. Deuseztatu nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:468
+#: exe/jsui/scripts/app/controller/Toolbar.js:486
 msgid "Select Xliff file to import"
 msgstr "Aukeratu XLIFF fitxategia inportatzeko"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:478
+#: exe/jsui/scripts/app/controller/Toolbar.js:496
 msgid "XLIFF Import Preferences"
 msgstr "XLIFF inportazioaren aukerak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:486
-#: exe/jsui/scripts/app/controller/Toolbar.js:514
+#: exe/jsui/scripts/app/controller/Toolbar.js:504
+#: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "XLIFF Files"
 msgstr "XLIFF fitxategiak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:496
+#: exe/jsui/scripts/app/controller/Toolbar.js:514
 msgid "Export to Xliff as"
 msgstr "XLIFF-era honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:506
+#: exe/jsui/scripts/app/controller/Toolbar.js:524
 msgid "XLIFF Export Preferences"
 msgstr "XLIFF esportazioaren aukerak"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:530
+#: exe/jsui/scripts/app/controller/Toolbar.js:548
 msgid "Select the parent folder for export."
 msgstr "Esportazioaren karpeta "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:547
+#: exe/jsui/scripts/app/controller/Toolbar.js:565
 msgid "Export text package as"
 msgstr "Testu paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:556
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
+#: exe/jsui/scripts/app/controller/Toolbar.js:574
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "Text File"
 msgstr "Testu fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:564
+#: exe/jsui/scripts/app/controller/Toolbar.js:582
 msgid "Export SCORM package as"
 msgstr "SCORM paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:584
 msgid "Export IMS package as"
 msgstr "IMS paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:568
+#: exe/jsui/scripts/app/controller/Toolbar.js:586
 msgid "Export Website package as"
 msgstr "Webgune paketea honela esportatu"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:588
 msgid "Export Common Cartridge as"
 msgstr "Common Cartridge-a honela esportatu (Common Cartridge-a)"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:572
+#: exe/jsui/scripts/app/controller/Toolbar.js:590
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "exportPackage-ari BALIO OKERRA EMAN ZAIO"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:585
+#: exe/jsui/scripts/app/controller/Toolbar.js:603
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/Zip fitxategia"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:696
 msgid "Loading package..."
 msgstr "Paketea kargatzen..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:694
+#: exe/jsui/scripts/app/controller/Toolbar.js:712
 msgid "Open File"
 msgstr "Fitxategia ireki"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:699
+#: exe/jsui/scripts/app/controller/Toolbar.js:717
 msgid "Loading package: {filename}"
 msgstr "Paketea kargatzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:718
+#: exe/jsui/scripts/app/controller/Toolbar.js:736
 msgid "Save Package first?"
 msgstr "Paketea gorde?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:719
+#: exe/jsui/scripts/app/controller/Toolbar.js:737
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr "Paketea aldatu da eta oraindik ez da gorde. Gorde nahi duzu?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:743
+#: exe/jsui/scripts/app/controller/Toolbar.js:761
 msgid "Saving package to: {filename}"
 msgstr "Paketea hemen gordetzen: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:759
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid "Select a File"
 msgstr "Aukeratu fitxategi bat"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:765
+#: exe/jsui/scripts/app/controller/Toolbar.js:783
 msgid "Saving package..."
 msgstr "Paketea gordetzen..."
 
@@ -2808,6 +2785,7 @@ msgstr "Aldatua"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:53
 #: exe/webui/editorpane.py:272 exe/webui/preferencespage.py:163
+#: exe/webui/selectbrowserpage.py:113
 #: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
@@ -2838,7 +2816,7 @@ msgstr "Dublín Core metadatuak"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:94
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:103
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:106
-#: exe/webui/galleryblock.py:193
+#: exe/webui/galleryblock.py:209
 msgid "Title"
 msgstr "Izenburua"
 
@@ -3303,7 +3281,7 @@ msgid "License"
 msgstr "Lizentzia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
-#: exe/webui/wikipediablock.py:237
+#: exe/webui/wikipediablock.py:236
 msgid "GNU Free Documentation License"
 msgstr "GNUren dokumentazio librearen lizentzia"
 
@@ -3441,11 +3419,12 @@ msgid "Add Page"
 msgstr "Gehitu orria"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:228
-#: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
-#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
-#: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
-#: exe/webui/editorelement.py:332 exe/webui/editorpage.py:258
-#: exe/webui/editorpage.py:261 exe/webui/galleryblock.py:280
+#: exe/webui/block.py:347 exe/webui/editorelement.py:78
+#: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
+#: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
+#: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
+#: exe/webui/editorpage.py:258 exe/webui/editorpage.py:261
+#: exe/webui/galleryblock.py:296
 msgid "Delete"
 msgstr "Ezabatu"
 
@@ -3518,78 +3497,82 @@ msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
+msgid "SCORM2004"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "IMS Content Package"
 msgstr "IMS eduki paketea"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "Web Site"
 msgstr "Webgunea"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "Self-contained Folder"
 msgstr "Auto-edukitako karpeta"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:236
 msgid "Zip File"
 msgstr "Fitxategi konprimitua"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Single Page"
 msgstr "Orri bakarra"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:260
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
 msgstr "Konbinatu"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:288 exe/webui/editorpage.py:285
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:285
 msgid "Quit"
 msgstr "Irten"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
 msgstr "Tresnak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:320
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:332
 msgid "Refresh Display"
 msgstr "Eguneratu bista"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:327
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:339
 msgid "Styles"
 msgstr "Estiloak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:349
 msgid "Help"
 msgstr "Laguntza"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:347
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "eXe Tutorial"
 msgstr "eXe-ren tutoriala"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "eXe Manual"
 msgstr "eXe-ren eskuliburua"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:371
 msgid "Release Notes"
 msgstr "Bertsioaren oharrak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:368
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "eXe Web Site"
 msgstr "eXe-ren webgunea"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
 msgid "Report an Issue"
 msgstr "Argitaratu gaia"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
 msgid "eXe Forums"
 msgstr "eXe-ren foroak"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:389
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
 msgid "About eXe"
 msgstr "eXe-ri buruz"
 
@@ -4371,7 +4354,7 @@ msgstr "Edizioak desegin"
 msgid "Can NOT Undo Edits"
 msgstr "Ezin da desegin editatutakoa"
 
-#: exe/webui/block.py:225
+#: exe/webui/block.py:225 exe/webui/block.py:344
 msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr "IDevice-a ezabatuko da. Ziur al zaude?"
 
@@ -4395,8 +4378,8 @@ msgstr "Laguntza pedagogikoa"
 msgid "Information"
 msgstr "Informazioa"
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:351
-#: exe/webui/common.py:352 exe/webui/editorpane.py:363
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:352
+#: exe/webui/common.py:353 exe/webui/editorpane.py:363
 #: exe/webui/editorpane.py:364 exe/webui/editorpane.py:384
 #: exe/webui/editorpane.py:385 exe/webui/element.py:2516
 #: exe/webui/element.py:2517 exe/webui/truefalseelement.py:152
@@ -4412,16 +4395,6 @@ msgstr "Asmoa"
 msgid "Tip:"
 msgstr "Aholkua:"
 
-#: exe/webui/block.py:297 exe/webui/eleccionmultiplefpdblock.py:164
-#: exe/webui/galleryblock.py:349 exe/webui/genericblock.py:83
-#: exe/webui/genericblock.py:109 exe/webui/multichoiceblock.py:154
-msgid "IDevice Icon"
-msgstr "IDevice ikonoa"
-
-#: exe/webui/block.py:318
-msgid "iDevice icon"
-msgstr "iDevice ikonoa"
-
 #: exe/webui/block.py:333
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROREA: Block.renderViewContent zuzenean deitu dute"
@@ -4436,42 +4409,45 @@ msgid "Add another activity"
 msgstr "Gehitu beste jarduera bat"
 
 #: exe/webui/casopracticofpdblock.py:64
-msgid "Caso práctico"
-msgstr "Kasu praktikoa"
+msgid "Situation"
+msgstr ""
 
 #: exe/webui/citasparapensarfpdblock.py:64
-msgid "Citas para pensar"
-msgstr "Hausnarketarako aipua"
+msgid "Quotation"
+msgstr ""
 
-#: exe/webui/clozefpdblock.py:104 exe/webui/clozelangfpdblock.py:105
-#: exe/webui/eleccionmultiplefpdblock.py:110
+#: exe/webui/clozefpdblock.py:104
 msgid "Autoevaluacion"
 msgstr "Autoebaluazioa"
 
-#: exe/webui/clozefpdblock.py:172 exe/webui/clozelangfpdblock.py:173
+#: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
 #: exe/webui/element.py:2152 exe/webui/element.py:2546
 #: exe/webui/questionelement.py:152
 msgid "Solucion"
 msgstr "Ebazpena"
 
-#: exe/webui/clozefpdblock.py:175 exe/webui/clozelangfpdblock.py:176
-#: exe/webui/element.py:2157 exe/webui/reflectionfpdblock.py:143
+#: exe/webui/clozefpdblock.py:174 exe/webui/element.py:2157
 msgid "Retroalimentacion"
 msgstr "Feedbacka"
 
-#: exe/webui/common.py:70 exe/webui/editorpage.py:242
-#: exe/webui/preferencespage.py:132 exe/webui/xliffexportpreferencespage.py:91
+#: exe/webui/clozelangfpdblock.py:105
+msgid "Now It's Your Turn"
+msgstr ""
+
+#: exe/webui/common.py:71 exe/webui/editorpage.py:242
+#: exe/webui/preferencespage.py:132 exe/webui/selectbrowserpage.py:90
+#: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: XHTML editorea urruneko hezkuntzarako"
 
-#: exe/webui/common.py:342 exe/webui/common.py:346
+#: exe/webui/common.py:343 exe/webui/common.py:347
 msgid "Click for completion instructions"
 msgstr "Klikatu argibideak osatzeko"
 
 #: exe/webui/debesconocerfpdblock.py:64
-msgid "Debes conocer"
-msgstr "Jakin  behar duzu"
+msgid "You Should Know"
+msgstr ""
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:250
 msgid "Text Line"
@@ -4695,22 +4671,24 @@ msgid "Check iDevices you want to display:"
 msgstr "Erakutsi nahi dituzun iDeviceak egiaztatu:"
 
 #: exe/webui/ejercicioresueltofpdblock.py:110
-msgid "Ejercicio resuelto"
-msgstr "Ebatzitako ariketa"
+msgid "Translation"
+msgstr ""
 
 #: exe/webui/eleccionmultiplefpdblock.py:95 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
 msgstr "Mesedez, aukeratu galdera bakoitzaren erantzun zuzena."
 
+#: exe/webui/eleccionmultiplefpdblock.py:110
+#: exe/webui/seleccionmultiplefpdblock.py:90
+#: exe/webui/verdaderofalsofpdblock.py:109
+msgid "Now it's your turn"
+msgstr ""
+
 #: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "Gehitu beste galdera bat"
-
-#: exe/webui/eleccionmultiplefpdblock.py:137 exe/webui/multichoiceblock.py:130
-msgid "IDevice Question Icon"
-msgstr "IDevice galderaren ikonoa"
 
 #: exe/webui/element.py:71
 #, python-format
@@ -4777,7 +4755,8 @@ msgid "Instant Marking?"
 msgstr "Oraintxe zuzendu nahi?"
 
 #: exe/webui/element.py:1151 exe/webui/element.py:1419
-#: exe/webui/listablock.py:288
+#: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:230
+#: exe/webui/quiztestblock.py:325 exe/webui/quiztestblock.py:381
 msgid "Your score is "
 msgstr "Zure puntu kopurua hau da "
 
@@ -4896,44 +4875,44 @@ msgstr "oso handia"
 msgid "Frame Height:"
 msgstr "Markoaren altuera:"
 
-#: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:284
-#: exe/webui/galleryblock.py:285
+#: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
+#: exe/webui/galleryblock.py:301
 msgid "Add images"
 msgstr "Gehitu irudiak"
 
-#: exe/webui/galleryblock.py:207 exe/webui/galleryblock.py:309
+#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:325
 msgid "No Images Loaded"
 msgstr "Ez da irudirik kargatu"
 
-#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:241
+#: exe/webui/galleryblock.py:239 exe/webui/galleryblock.py:257
 msgid "Change Image"
 msgstr "Aldatu irudia"
 
-#: exe/webui/galleryblock.py:248
+#: exe/webui/galleryblock.py:264
 msgid "Move Image Left"
 msgstr "Irudia ezkerrerantz mugitu"
 
-#: exe/webui/galleryblock.py:250
+#: exe/webui/galleryblock.py:266
 msgid "Go Back"
 msgstr "Atzera"
 
-#: exe/webui/galleryblock.py:262
+#: exe/webui/galleryblock.py:278
 msgid "Move Image Right"
 msgstr "Irudia eskuinerantz mugitu"
 
-#: exe/webui/galleryblock.py:264
+#: exe/webui/galleryblock.py:280
 msgid "Go Forward"
 msgstr "Aurrera"
 
-#: exe/webui/galleryblock.py:272
+#: exe/webui/galleryblock.py:288
 msgid "Go Forward (Not Available)"
 msgstr "Aurrera (ez dago eskuragarri)"
 
-#: exe/webui/galleryblock.py:277
+#: exe/webui/galleryblock.py:293
 msgid "Delete Image"
 msgstr "Ezabatu irudia"
 
-#: exe/webui/galleryblock.py:278
+#: exe/webui/galleryblock.py:294
 msgid "Delete this image?"
 msgstr "Ezabatu irudia?"
 
@@ -4979,16 +4958,16 @@ msgid "Add another Question"
 msgstr "Gehitu beste galdera bat"
 
 #: exe/webui/orientacionesalumnadofpdblock.py:64
-msgid "Orientaciones para el alumnado"
-msgstr "Ikasleentzako orientabideak"
+msgid "Guidelines for Students"
+msgstr ""
 
 #: exe/webui/orientacionestutoriafpdblock.py:64
-msgid "Orientaciones para la tutoría"
-msgstr "Tutoretzarako orientabideak"
+msgid "Guidelines for the Teacher"
+msgstr ""
 
 #: exe/webui/parasabermasfpdblock.py:64
-msgid "Para saber más"
-msgstr "Gehiago jakiteko"
+msgid "A Step Ahead"
+msgstr ""
 
 #: exe/webui/preferencespage.py:143
 msgid "Select Language"
@@ -5010,7 +4989,8 @@ msgstr "Barne esteka guztiak ezgaitu"
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr "Barne estekak (webguneak esportatzeko soilik)"
 
-#: exe/webui/preferencespage.py:159 exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/preferencespage.py:159 exe/webui/selectbrowserpage.py:110
+#: exe/webui/xliffexportpreferencespage.py:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "Ados"
@@ -5039,34 +5019,37 @@ msgstr "Aukeratu gainditze-koefizientea: "
 msgid "SUBMIT ANSWERS"
 msgstr "BIDALI ERANTZUNAK"
 
-#: exe/webui/quiztestblock.py:373
+#: exe/webui/quiztestblock.py:378
 msgid "Submit Answer"
 msgstr "Bidali erantzuna"
 
 #: exe/webui/recomendacionfpdblock.py:64
-msgid "Recomendación"
-msgstr "Gomendioa"
+msgid "A Piece of Advice"
+msgstr ""
 
-#: exe/webui/reflectionblock.py:117 exe/webui/reflectionfpdblock.py:125
+#: exe/webui/reflectionblock.py:116 exe/webui/reflectionfpdblock.py:124
 msgid "Click here"
 msgstr "Klikatu hemen"
 
-#: exe/webui/reflectionblock.py:121 exe/webui/reflectionfpdblock.py:129
+#: exe/webui/reflectionblock.py:120 exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Ezkutatu"
 
 #: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
-msgid "Reflexiona"
-msgstr "Hausnartu"
+msgid "Think About It"
+msgstr ""
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:154
 msgid "Load"
 msgstr "Kargatu"
 
-#: exe/webui/seleccionmultiplefpdblock.py:90
-#: exe/webui/verdaderofalsofpdblock.py:109
-msgid "Autoevaluación"
-msgstr "Autoebaluazioa"
+#: exe/webui/selectbrowserpage.py:59
+msgid "Default browser in your system"
+msgstr ""
+
+#: exe/webui/selectbrowserpage.py:104
+msgid "Browsers installed in your system"
+msgstr ""
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
 #: exe/webui/truefalseelement.py:275
@@ -5178,11 +5161,11 @@ msgstr "Nire gunea"
 msgid "This article is licensed under the "
 msgstr "Artikulu honek ondoko lizentzia du:"
 
-#: exe/webui/wikipediablock.py:238
+#: exe/webui/wikipediablock.py:237
 msgid "It uses material from the "
 msgstr "Ondokoaren materiala erabiltzen du:"
 
-#: exe/webui/wikipediablock.py:250
+#: exe/webui/wikipediablock.py:248
 msgid "article "
 msgstr "artikulua"
 

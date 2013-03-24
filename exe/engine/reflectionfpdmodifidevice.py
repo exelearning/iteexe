@@ -43,7 +43,7 @@ class ReflectionfpdmodifIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Reflexiona (sin Retroalimentacion)"),
+                         x_(u"FPD - Think About It (without Feedback)"),
                          x_(u"University of Auckland"), 
                          x_(u"""Reflection is a teaching method often used to 
 connect theory to practice. Reflection tasks often provide learners with an 

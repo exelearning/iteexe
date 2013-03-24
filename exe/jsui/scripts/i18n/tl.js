@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2006-12-06 20:36+1300\nLast-Translator: Roel Cantada <matangdilis@yahoo.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2006-12-06 20:36+1300\nLast-Translator: Roel Cantada <matangdilis@yahoo.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Dapat isaisip ng mga guro ang sumusunod kapag gumagamit ng iDevice na ito: <\/p><ol><li>Pag-isipan ninyo ang dami ng magkakaibang uri ng aktibidad na binabalak para sa rekurso, na ihahandog ng biswal sa nilalaman.  Iwasan ang paggamit ng napakaraming magkakaibang uri o klasipikasyon ng aktibidad, baka malito ang mag-aaral.  Kadalasan ay sapat na ang tatlo o apat na magkakaibang uri para sa isang rekursong panturo.<\/li><li>Sa pananaw ng pagdidisenyong biswal, iwasan ang magkadikit na iDevice na walang teksto sa pagitan.  Kung kailangan ito, pag-isahin na lamang ang dalawang tanong o pangyayari sa isang iDevice. <\/li><li>Mag-isip kayo ng mga aktibidad na ang inaasahang benepisyo sa paggawa ng aktibidad ay higit sa hirap at oras na gugugulin sa pagtapos ng aktibidad.  <\/li><\/ol>", 
  "Title": "Pamagat", 
  "Add JPEG Image": "Idagdag ang JPEG na Larawan", 
@@ -127,7 +127,6 @@ translations = {
  "Kannada ": "Kannada ", 
  "Interlingua ": "Interlingua ", 
  "Select a file": "Pumili ng sako", 
- "IDevice Question Icon": "Icon ng IDevice na Tanong", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Itakda ang unang antas ng zoom\nkapag ikinarga na ang IDevice, bilang bahagdan ng orihinal na laki ng larawan", 
  "article ": "artikulo ", 
  "Tigrinya ": "Tigrinya ", 
@@ -388,7 +387,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Pumili ng reyt ng pasado:", 
  "Option": "Opsiyon", 
- "IDevice Icon": "IDevice Icon", 
  "Gallegan; Galician ": "Gallegan; Galician ", 
  "Text Box": "Kahon ng Teksto", 
  "Sango; Sangro ": "Sango; Sangro ", 
@@ -481,6 +479,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>Ang aktibidad na babasahin, tulad ng ipinapahiwatig\nng pangalan, ay dapat hilingin ang mag-aaral na gumawa ng isang anyo ng \naktibidad. Dapat ay may kaugnayan ang aktibidad na ito nang direkta sa \nteksto na ipinabasa sa mag-aaral.  Ang pagbibigay puna sa aktibidad kung\nangkop, ay makapagbibigay ng gabay sa mag-aaral na magnilay.<\/p>", 
  "Bengali; Bangla ": "Bengali; Bangla ", 
  "Pali ": "Pali ", 
- "Package saved to: %s": "Isinilid ang pakete sa: %s", 
- "iDevice icon": "iDevice icon"
+ "Package saved to: %s": "Isinilid ang pakete sa: %s"
 };

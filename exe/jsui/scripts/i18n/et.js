@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXELearning 0.12\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-02-27 23:10+1300\nLast-Translator: Andres Mellik <andres@jukulab.ee>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: EXELearning 0.12\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-02-27 23:10+1300\nLast-Translator: Andres Mellik <andres@jukulab.ee>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>\u00d5petajad peaksid seda iDevice-i kasutades meeles pidama j\u00e4rgmist:<\/p><ol><li>P\u00f6\u00f6ra t\u00e4helepanu erinevatele \u00f5pperessursis sisalduvate tegevuste t\u00fc\u00fcpidele, mis on visuaalsed n\u00e4htavad. V\u00e4ltimaks \u00f5pilase segadusse viimist, \u00e4ra kasuta liiga palju erinevaid tegevuste t\u00fc\u00fcpe v\u00f5i klassifikatsioone. Tavaliselt piisab \u00fche \u00f5pperessursi jaoks 3-4 t\u00fc\u00fcbist t\u00e4ielikult.<\/li><li>Visuaalse disaini vaatenurgast v\u00e4ldi kahte j\u00e4rjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks k\u00fcsimust v\u00f5i s\u00fcndmust samasse iDevice-i.<\/li><li>M\u00f5tle selliste tegevuste peale, kus tegevuse l\u00e4bimise tajutav kasu kaalub \u00fcles sellele kuluva aja ja pingutuse.<\/li><\/ol>", 
  "Title": "Pealkiri", 
  "Add JPEG Image": "Lisa JPEG-pilt", 
@@ -153,7 +153,6 @@ translations = {
  "Promote node up in hierarchy": "Liiguta objekt hierarhias \u00fclespoole", 
  "Interlingua ": "Interlingua", 
  "Select a file": "Vali fail", 
- "IDevice Question Icon": "IDevice k\u00fcsimuse ikoon", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Seadista suurenduse algne tase \nIDevice-i laadimisel kui protsent \noriginaalpildi suurusest", 
  "article ": "artikkel", 
  "Sorry, wrong file format.": "Vabandust, vale failiformaat.", 
@@ -465,7 +464,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Vali l\u00e4bimise aste:", 
  "Option": "Valik", 
- "IDevice Icon": "iDevice ikoon", 
  "Gallegan; Galician ": "Galliitsia", 
  "Text Box": "Teksti kast", 
  "Sango; Sangro ": "Sango; Sangro", 
@@ -570,6 +568,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>Lugemis-tegevus, nagu ka nimi \u00fctleb,\n peaks \u00f5pilasel paluma t\u00e4ita mingi tegevuse.\nSee tegevus peaks olema otseselt seotud loetd tekstiga.\nTegevuse tagasiside, kus sobilik, v\u00f5ib \n\u00f5pilasele pakkuda reflektiivset suunamist.<\/p>", 
  "Bengali; Bangla ": "Bengaali", 
  "Pali ": "Pali", 
- "Package saved to: %s": "Pakett salvestatud siia: %s", 
- "iDevice icon": "iDevide ikoon"
+ "Package saved to: %s": "Pakett salvestatud siia: %s"
 };

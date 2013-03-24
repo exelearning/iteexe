@@ -4,6 +4,7 @@
 # iDevice Orientaciones tutoria creado para la FPD por José Ramón Jiménez Reyes
 # ===========================================================================
 """
+FPD - Guidelines Teacher
 Orientaciones tutoria iDevice
 """
 
@@ -26,15 +27,15 @@ class OrientacionestutoriafpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Orientaciones Tutoria"),
+                         x_(u"FPD - Guidelines Teacher"),
                          x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Orientaciones alumnado es un iDevice que permite al profesorado conocer los objetivos del aprendizje del alumnado."""), u"", u"orientacionesfpd")
+                         x_(u"""Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."""), u"", u"orientacionesfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_orientacionesfpd"
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Orientaciones tutor&iacute;a'), 
+        self.activityTextArea = TextAreaField(x_(u'Guidelines Teacher Text'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -133,7 +134,7 @@ class OrientacionestutoriafpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Orientaciones tutor&iacute;a:'), 
+        self.activityTextArea = TextAreaField(x_(u'Guidelines Teacher Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

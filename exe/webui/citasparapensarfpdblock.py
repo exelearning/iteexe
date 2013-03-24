@@ -5,7 +5,7 @@
 # José Ramón Jiménez Reyes
 # ===========================================================================
 """
-Para Saber mas bloque
+FPD - Quotation
 """
 
 import logging
@@ -61,7 +61,7 @@ class CitasparapensarfpdBlock(Block):
 	# JR
         # Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Citas para pensar")
+		self.idevice.title = x_(u"Quotation")
 
 	html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

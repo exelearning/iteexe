@@ -107,7 +107,7 @@ class EleccionmultiplefpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Autoevaluacion")
+		self.idevice.title = x_(u"Now it's your turn")
 
 #        html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
         html += common.textInput("title"+self.id, self.idevice.title)

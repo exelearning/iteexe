@@ -83,7 +83,7 @@ class ReflectionfpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Reflexiona")
+		self.idevice.title = x_(u"Think About It")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()
@@ -139,7 +139,7 @@ class ReflectionfpdBlock(Block):
         html += "</div>\n"
 # JR: Generamos el contenido que ira dentro de la etiqueta noscript
 	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Retroalimentacion") + ": </strong></p>\n"
+	html += "<p><strong>" + _("Feedback") + ": </strong></p>\n"
         if self.previewing: 
             	html  += self.answerElement.field.content_w_resourcePaths
         else: 

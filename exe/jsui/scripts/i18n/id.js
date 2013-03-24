@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2007-12-04 01:11+1300\nLast-Translator: Toha Mustofa <toha.mustofa@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2007-12-04 01:11+1300\nLast-Translator: Toha Mustofa <toha.mustofa@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Guru - guru sebaiknya tetap mengikuti langkah - langkah berikat ketika menggunakan \"iDevice\" ini: <\/p><ol><li>Pikirkan tentang jumlah aktivitas yang direncanakan untuk sumber daya anda yang akan ditampilkan secara visual sebagai isinya. Hindari menggunakan berbagai macam jenis atau klasifikasi dari aktivitas kalau tidak siswa akan menjadi bingung. Biasanya 3 atau 4 jenis yang berbeda sudah lebih dari cukup untuk sebuah sumber daya pengajaran.<\/li><li>Dari perspektiv desain visual, hindari 2 \"iDevices\" berurutan tanpa teks apapun diantaranya. Jka tidak bisa dihindari, lebih baik menggabungkan 2 pertanyaan atau kegiatan ke dalam satu \"iDevice\". <\/li><li>Pikirkan tentang aktivitas dimana keuntungan yang diperoleh akan lebih besar dari waktu dan usaha yang dikeluarkan untuk aktivitas tersebut. <\/li><\/ol>", 
  "Title": "Judul", 
  "Add JPEG Image": "Tambahkan Gambar JPEG", 
@@ -113,7 +113,6 @@ translations = {
  "Kannada ": "Kanada", 
  "The majority of a learning resource will be \nestablishing context, delivering instructions and providing general information.\nThis provides the framework within which the learning activities are built and \ndelivered.": "Kebanyakan dari sumber daya pelajaran akan berupa \nmembentuk konteks, menyampaikan instruksi dan menyediakan informasi umum.\nHal ini menyediakan bingkai kerja dimana aktivitas pembelajaran dibangun dan \ndisampaikan.", 
  "Select a file": "Pilih berkas", 
- "IDevice Question Icon": "\"iDevice\" Pertanyaan Ikon", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Tentukan tingkat awal pembesaran \nketika \"IDevice\" dipanggil, sebagai persentasi ukuran gambar", 
  "Icons": "Ikon", 
  "article ": "artikel", 
@@ -349,7 +348,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Pilih tingkat kelulusan", 
  "Option": "Opsi", 
- "IDevice Icon": "Ikon \"iDevice\"", 
  "Cannot access directory named ": "Tidak dapat mengakses direktori yang bernama", 
  "Text Box": "Kotak Teks", 
  "Maths": "Matematika", 
@@ -428,6 +426,5 @@ translations = {
  "Site": "Situs", 
  "<p>Where you have a number of images that relate \nto each other or to a particular learning exercise you may wish to display \nthese in a gallery context rather then individually.<\/p>": "<p>Dimana anda memiliki sejumlah gambar yang berhubungan \nsatu sama lain atau pada sebuah latihan yang khusus yang ingin anda tampilkan \npada sebuah konteks galeri daripada secara satu per satu.<\/p>", 
  "Kashmiri ": "Kasmir", 
- "Package saved to: %s": "Paket disimpan ke: %s", 
- "iDevice icon": "ikon \"iDevice\""
+ "Package saved to: %s": "Paket disimpan ke: %s"
 };

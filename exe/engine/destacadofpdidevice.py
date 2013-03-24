@@ -26,14 +26,14 @@ class DestacadofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Destacado"),
+                         x_(u"FPD - Highlighted"),
                          x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Destacado es un iDevice que permite resaltar texto para llamar la atención del alumnado."""), u"", u"destacadofpd")
+                         x_(u"""Highlighted is an iDevice that emphasizes text to catch the student's attention."""), u"", u"destacadofpd")
         self.emphasis         = Idevice.NoEmphasis
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Destacado:'), 
+        self.activityTextArea = TextAreaField(x_(u'Highlighted Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -131,7 +131,7 @@ class DestacadofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Destacado:'), 
+        self.activityTextArea = TextAreaField(x_(u'Highlighted Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2007-08-31 07:28+1200\nLast-Translator: Lechoslaw Hojnacki <lhojnacki@gmail.com>\nLanguage-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\nPlural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: exe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2007-08-31 07:28+1200\nLast-Translator: Lechoslaw Hojnacki <lhojnacki@gmail.com>\nLanguage-Team: SYSTEmEG <arek.felinczak@systemeg.pl>\nPlural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>Nauczyciele powinni u\u017cywaj\u0105c tego obiektu zwr\u00f3ci\u0107 uwag\u0119 na: <\/p><ol><li> Ilo\u015b\u0107 r\u00f3\u017cnych typ\u00f3w zada\u0144 planowanych w lekcji, kt\u00f3rych odpowiedzi zostan\u0105 uwidocznione. Unikaj u\u017cywania zbyt wielu r\u00f3\u017cnych typ\u00f3w zada\u0144 lub ich r\u00f3znego oceniania aby nie wprowadza\u0107 ucznia w b\u0142\u0105d. Zazwyczaj 3 lub 4 r\u00f3zne typy zada\u0144  s\u0105 wystarczaj\u0105ce do cel\u00f3w edukacyjnych.<\/li><li> Z perspektywy projektowania graficznego nale\u017cy unika\u0107 sytuacji kiedy dwa identyczne obiekty nast\u0119puj\u0105 po sobie bez rozdzielenia ich tekstem. Je\u015bli jest to niezb\u0119dne u\u017cy\u0107 do tego jednego obiektu.<\/li><li> U\u017cywaj takich zada\u0144, w kt\u00f3rych korzy\u015b\u0107 z rozwi\u0105zanaia  przewy\u017csza czas i wysi\u0142ek potrzebny do jego uko\u0144czenia.<\/li><\/ol>", 
  "Title": "Tytu\u0142", 
  "Add JPEG Image": "Dodaj obraz JPEG", 
@@ -144,7 +144,6 @@ translations = {
  "The majority of a learning resource will be \nestablishing context, delivering instructions and providing general information.\nThis provides the framework within which the learning activities are built and \ndelivered.": "Wiekszo\u015b\u0107 zasob\u00f3w edukacyjnych b\u0119dzie \nustala\u0107 kontekst, dostaraczaj\u0105c instrukcji i zapewniaj\u0105c podstawowe informacje.\nTo zapewnia szkielet konstrukcji lekcji, na kt\u00f3rym s\u0105 zbudowane i dostarczane \nzadania.", 
  "Interlingua ": "Interlingua ", 
  "Select a file": "Wybierz plik", 
- "IDevice Question Icon": "Ikona obiektu Pytanie", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Ustaw pocz\u0105tkowe powiekszenie \nkiedy obiekt zostanie za\u0142adowany, jako procent oryginalnego rozmiaru obrazu", 
  "article ": "artyku\u0142 ", 
  "Sorry, wrong file format.": "Niestety, z\u0142y format pliku.", 
@@ -437,7 +436,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Wybierz poziom zaliczenia:", 
  "Option": "Opcja", 
- "IDevice Icon": "Ikona obiekt\u00f3w", 
  "Gallegan; Galician ": "Gallegan; Galician ", 
  "Text Box": "Pole tekstowe", 
  "Sango; Sangro ": "Sango; Sangro ", 
@@ -537,6 +535,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>Materia\u0142y jak sama nazwa wskazuje, \n s\u0105 pro\u015bb\u0105 do ucznia o dokonanie pewnej formy aktywno\u015bci. Zadanie \npowinno by\u0107 bezpo\u015brednio powi\u0105zane z tekstem, kt\u00f3ry ucze\u0144 powinien przeczyta\u0107. \nPole informacji zwrotnej jest u\u017cywane do zapewnienia uczniowi informacji \ni wskaz\u00f3wek dotycz\u0105cych tekstu.<\/p>", 
  "Bengali; Bangla ": "Bengali; Bangla ", 
  "Pali ": "Pali ", 
- "Package saved to: %s": "Pakiet zapisany do:  %s", 
- "iDevice icon": "Ikona obiektu"
+ "Package saved to: %s": "Pakiet zapisany do:  %s"
 };

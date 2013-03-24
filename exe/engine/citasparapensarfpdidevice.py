@@ -1,10 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # ===========================================================================
-# iDevice Citas para pensar creado para la FPD por José Ramón Jiménez Reyes
+# iDevice «Citas para pensar» creado para la FPD por José Ramón Jiménez Reyes
+# FPD - Quotation
 # ===========================================================================
 """
-Para Saber mas iDevice
+FPD - Quotation
+Citas para pensar iDevice
 """
 
 import logging
@@ -18,6 +20,7 @@ log = logging.getLogger(__name__)
 class CitasparapensarfpdIdevice(Idevice):
     """
     El iDevice Citas para pensar permite al alumnado reflexionar sobre algunas citas propuestas
+    Quotations For Reflexion
     """
     persistenceVersion = 7
     
@@ -26,15 +29,15 @@ class CitasparapensarfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Citas Para Pensar"),
+                         x_(u"FPD - Quotation"),
                          x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Citas para pensar es un iDevice que permite al alumnado reflexionar sobre algunas citas propuestas."""), u"", u"citasparapensarfpd")
+                         x_(u"""Quotation is an iDevice that provides the students with quotations to reflect upon."""), u"", u"citasparapensarfpd")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_citasparapensarfpd"
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Citas para pensar:'), 
+        self.activityTextArea = TextAreaField(x_(u'Quotation Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -133,7 +136,7 @@ class CitasparapensarfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto para pensar:'), 
+        self.activityTextArea = TextAreaField(x_(u'Quotation Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-05-19 06:31+1200\nLast-Translator: Martin Struhar <modjo@atlas.sk>\nLanguage-Team: Slovak <rhorvath@truni.sk>\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-05-19 06:31+1200\nLast-Translator: Martin Struhar <modjo@atlas.sk>\nLanguage-Team: Slovak <rhorvath@truni.sk>\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>U\u010ditelia by mali pri pou\u017e\u00edvan\u00ed iDevice myslie\u0165 na n\u00e1sleduj\u00face: <\/p><ol><li> Prem\u00fd\u0161\u013eajte nad mno\u017estvom r\u00f4znych pl\u00e1novan\u00fdch aktiv\u00edt, ktor\u00e9 bud\u00fa v obsahu vizu\u00e1lne ozna\u010den\u00e9. Vyhnite sa pr\u00edli\u0161 ve\u013ek\u00e9mu mno\u017estvu r\u00f4znych typov \u010di trieden\u00ed aktiv\u00edt, preto\u017ee to m\u00f4\u017ee zmias\u0165 \u0161tudentov. Obvykle tri a\u017e \u0161tyri r\u00f4zne typy presahuj\u00fa adekv\u00e1tnos\u0165 v\u00fdukov\u00fdch zdrojov.<\/li><li> Z obrazov\u00e9ho h\u013eadiska sa vyvarujte dvom ihne\u010f po sebe nasleduj\u00facim iDevice bez vlo\u017een\u00e9ho textu medzi nimi. Pokia\u013e je to mo\u017en\u00e9, rad\u0161ej zhrnite dve ot\u00e1zky \u010di pr\u00edpady do jedn\u00e9ho iDevice.<\/li><li>Uva\u017eujte nad aktivitami, u ktor\u00fdch o\u010dak\u00e1van\u00fd pr\u00ednos prev\u00e1\u017ei nad \u010dasom a \u00fasil\u00edm nutn\u00fdm pre dokon\u010denie t\u00fdchto aktiv\u00edt.<\/li><\/ol>", 
  "Title": "N\u00e1zov", 
  "Add JPEG Image": "Prida\u0165 obr\u00e1zok JPEG", 
@@ -155,7 +155,6 @@ translations = {
  "Promote node up in hierarchy": "Uzol hore v \u0161trukt\u00fare", 
  "Interlingua ": "Interlingua ", 
  "Select a file": "Vyberte s\u00fabor", 
- "IDevice Question Icon": "Ikona ot\u00e1znika pros. iDevice", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Nastavte prvotn\u00fa \u00farove\u0148 zv\u00e4\u010d\u0161enia \nplatn\u00fa po nahrat\u00ed prostriedku iDevice, v percent\u00e1ch origin\u00e1lnej ve\u013ekosti obr\u00e1zka", 
  "article ": "\u010dl\u00e1nok", 
  "Sorry, wrong file format.": "Prep\u00e1\u010dte, nespr\u00e1vny form\u00e1t s\u00faboru.", 
@@ -470,7 +469,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Zvo\u013ete hranicu \u00faspe\u0161nosti:", 
  "Option": "Mo\u017enos\u0165 \u00abopt_01\u00bb", 
- "IDevice Icon": "Ikona prostriedku iDevice", 
  "Gallegan; Galician ": "Galicijsky ", 
  "Text Box": "Textov\u00e9 pole", 
  "Sango; Sangro ": "Sango\u0161sky ", 
@@ -577,6 +575,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p> \u010c\u00edtacia aktivita by mala, ako n\u00e1zov napoved\u00e1, \nvy\u017eadova\u0165 od \u0161tudenta predvedenie ur\u010ditej formy aktivity. T\u00e1to \u010dinnos\u0165 \nby mala ma\u0165 priamu s\u00favislos\u0165 s textom, ku ktor\u00e9ho pre\u010d\u00edtaniu bol \u0161tudent vyzvan\u00fd.\nSp\u00e4tn\u00e1 v\u00e4zba by mala tam, kde je to vhodn\u00e9,\n\u0161tudentovi poskytn\u00fa\u0165 ur\u010dit\u00fd n\u00e1vod.<\/p>", 
  "Bengali; Bangla ": "Beng\u00e1lsky ", 
  "Pali ": "Pali ", 
- "Package saved to: %s": "Bal\u00edk ulo\u017een\u00fd do: %s", 
- "iDevice icon": "Ikona iDevice"
+ "Package saved to: %s": "Bal\u00edk ulo\u017een\u00fd do: %s"
 };

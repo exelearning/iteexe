@@ -102,7 +102,7 @@ class ClozelangfpdBlock(Block):
 	# JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Autoevaluacion")
+		self.idevice.title = x_(u"Now It's Your Turn")
         html += common.textInput("title"+self.id, self.idevice.title)
 
 	html += "</div>"
@@ -172,7 +172,7 @@ class ClozelangfpdBlock(Block):
 	html += u"<strong>" + _("Solucion") + u": </strong><br/>\n"
 	html += cloze
 	if self.feedbackElement.field.content:
-		html += u"<br/><br/><strong>" + _("Retroalimentacion") + ": </strong><br/>\n"
+		html += u"<br/><br/><strong>" + _("Feedback") + ": </strong><br/>\n"
 		html += feedback
 	html += u"</div></noscript>"
 

@@ -61,7 +61,7 @@ class DebesconocerfpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Debes conocer")
+		self.idevice.title = x_(u"You Should Know")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2013-03-11 17:19+0100\n"
-"PO-Revision-Date: 2013-03-06 13:18+0100\n"
+"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"PO-Revision-Date: 2013-03-24 13:54+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -24,24 +24,24 @@ msgid "Java Applet"
 msgstr "Applet de java"
 
 #: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
-#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:47
-#: exe/engine/clozeidevice.py:47 exe/engine/clozelangfpdidevice.py:47
-#: exe/engine/ejercicioresueltofpdidevice.py:198
-#: exe/engine/eleccionmultiplefpdidevice.py:61
+#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:48
+#: exe/engine/clozeidevice.py:47 exe/engine/clozelangfpdidevice.py:48
+#: exe/engine/ejercicioresueltofpdidevice.py:199
+#: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
-#: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:39
+#: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
 #: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:510
 #: exe/engine/idevicestore.py:568 exe/engine/idevicestore.py:596
 #: exe/engine/idevicestore.py:619 exe/engine/idevicestore.py:675
 #: exe/engine/idevicestore.py:703 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
-#: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:47
+#: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:47
 #: exe/engine/reflectionidevice.py:47
-#: exe/engine/seleccionmultiplefpdidevice.py:44
+#: exe/engine/seleccionmultiplefpdidevice.py:45
 #: exe/engine/truefalseidevice.py:145
-#: exe/engine/verdaderofalsofpdidevice.py:145 exe/engine/wikipediaidevice.py:54
+#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
 #: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Universidad de Auckland"
@@ -215,13 +215,13 @@ msgid "Attachment %s has no parentNode"
 msgstr "EL fichero adjunto %s no tiene nodo padre"
 
 #: exe/engine/casestudyidevice.py:63
-#: exe/engine/ejercicioresueltofpdidevice.py:63
+#: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 msgid "Image"
 msgstr "Imagen"
 
 #: exe/engine/casestudyidevice.py:64
-#: exe/engine/ejercicioresueltofpdidevice.py:64
+#: exe/engine/ejercicioresueltofpdidevice.py:65
 msgid ""
 "Choose an optional image to be shown to the student on completion of this"
 " question"
@@ -234,7 +234,7 @@ msgid "Case Study"
 msgstr "Caso práctico"
 
 #: exe/engine/casestudyidevice.py:199
-#: exe/engine/ejercicioresueltofpdidevice.py:199
+#: exe/engine/ejercicioresueltofpdidevice.py:200
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, "
@@ -280,7 +280,7 @@ msgstr ""
 "llegar las ideas al resto de la clase</li></ul>"
 
 #: exe/engine/casestudyidevice.py:216
-#: exe/engine/ejercicioresueltofpdidevice.py:217
+#: exe/engine/ejercicioresueltofpdidevice.py:218
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the "
@@ -297,13 +297,13 @@ msgstr ""
 "para obtener la resolución de la situación."
 
 #: exe/engine/casestudyidevice.py:220 exe/engine/casestudyidevice.py:406
-#: exe/engine/ejercicioresueltofpdidevice.py:221
-#: exe/engine/ejercicioresueltofpdidevice.py:408
+#: exe/engine/ejercicioresueltofpdidevice.py:222
+#: exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
 msgstr "Historia:"
 
 #: exe/engine/casestudyidevice.py:225
-#: exe/engine/ejercicioresueltofpdidevice.py:226
+#: exe/engine/ejercicioresueltofpdidevice.py:227
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -318,7 +318,7 @@ msgstr ""
 "propuesto. "
 
 #: exe/engine/casestudyidevice.py:229
-#: exe/engine/ejercicioresueltofpdidevice.py:230
+#: exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -326,67 +326,66 @@ msgstr ""
 "Proporciona información de retroalimentación relevante para la \n"
 "situación."
 
-#: exe/engine/casopracticofpdidevice.py:29
-msgid "FPD - Caso Practico"
-msgstr "FPD - Caso Práctico"
-
 #: exe/engine/casopracticofpdidevice.py:30
-#: exe/engine/citasparapensarfpdidevice.py:30
-#: exe/engine/correccionfpdidevice.py:30
-#: exe/engine/debesconocerfpdidevice.py:30 exe/engine/destacadofpdidevice.py:30
-#: exe/engine/orientacionesalumnadofpdidevice.py:30
-#: exe/engine/orientacionestutoriafpdidevice.py:30
-#: exe/engine/parasabermasfpdidevice.py:30
-#: exe/engine/recomendacionfpdidevice.py:30
-msgid "Jose Ramon Jimenez Reyes"
-msgstr ""
+msgid "FPD - Situation"
+msgstr "FPD - Caso práctico"
 
 #: exe/engine/casopracticofpdidevice.py:31
-msgid ""
-"Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse "
-"en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."
-msgstr ""
+#: exe/engine/citasparapensarfpdidevice.py:33
+#: exe/engine/debesconocerfpdidevice.py:30 exe/engine/destacadofpdidevice.py:30
+#: exe/engine/orientacionesalumnadofpdidevice.py:31
+#: exe/engine/orientacionestutoriafpdidevice.py:31
+#: exe/engine/parasabermasfpdidevice.py:31
+#: exe/engine/recomendacionfpdidevice.py:31
+msgid "Jose Ramon Jimenez Reyes"
+msgstr "José Ramón Jiménez Reyes"
 
-#: exe/engine/casopracticofpdidevice.py:34
-#: exe/engine/citasparapensarfpdidevice.py:34
-#: exe/engine/correccionfpdidevice.py:33
+#: exe/engine/casopracticofpdidevice.py:32
+msgid ""
+"Situation is an iDevice that provides the student with a story that will "
+"guide her along the learning process."
+msgstr ""
+"Caso práctico es un iDevice que permite al alumnado introducirse en una "
+"historia que le guiará a través de su aprendizaje."
+
+#: exe/engine/casopracticofpdidevice.py:35
+#: exe/engine/citasparapensarfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:34 exe/engine/destacadofpdidevice.py:33
-#: exe/engine/orientacionesalumnadofpdidevice.py:34
-#: exe/engine/orientacionestutoriafpdidevice.py:34
-#: exe/engine/parasabermasfpdidevice.py:34
-#: exe/engine/recomendacionfpdidevice.py:34
-msgid "Introduce el texto que aparecer&aacute; en este iDevice"
-msgstr ""
+#: exe/engine/orientacionesalumnadofpdidevice.py:35
+#: exe/engine/orientacionestutoriafpdidevice.py:35
+#: exe/engine/parasabermasfpdidevice.py:35
+#: exe/engine/recomendacionfpdidevice.py:35
+msgid "Enter the text that will appear on this iDevice"
+msgstr "Introduzca el texto que aparecerá en este iDevice"
 
-#: exe/engine/casopracticofpdidevice.py:37
-#: exe/engine/casopracticofpdidevice.py:135
-msgid "Texto Caso pr&aacute;ctico:"
-msgstr ""
+#: exe/engine/casopracticofpdidevice.py:38
+#: exe/engine/casopracticofpdidevice.py:136
+msgid "Situation Text:"
+msgstr "Texto Caso práctico:"
 
-#: exe/engine/citasparapensarfpdidevice.py:29
-msgid "FPD - Citas Para Pensar"
-msgstr ""
+#: exe/engine/citasparapensarfpdidevice.py:32
+msgid "FPD - Quotation"
+msgstr "FPD - Citas para pensar"
 
-#: exe/engine/citasparapensarfpdidevice.py:31
+#: exe/engine/citasparapensarfpdidevice.py:34
 msgid ""
+"Quotation is an iDevice that provides the students with quotations to "
+"reflect upon."
+msgstr ""
 "Citas para pensar es un iDevice que permite al alumnado reflexionar sobre"
 " algunas citas propuestas."
-msgstr ""
 
-#: exe/engine/citasparapensarfpdidevice.py:37
-msgid "Texto Citas para pensar:"
-msgstr ""
+#: exe/engine/citasparapensarfpdidevice.py:40
+#: exe/engine/citasparapensarfpdidevice.py:139
+msgid "Quotation Text:"
+msgstr "Texto Citas para pensar:"
 
-#: exe/engine/citasparapensarfpdidevice.py:136
-msgid "Texto para pensar:"
-msgstr ""
+#: exe/engine/clozefpdidevice.py:47
+msgid "FPD - Cloze Activity"
+msgstr "FPD - Actividad de Espacios en Blanco"
 
-#: exe/engine/clozefpdidevice.py:46
-msgid "FPD - Actividad de Espacios en Blanco"
-msgstr ""
-
-#: exe/engine/clozefpdidevice.py:48 exe/engine/clozeidevice.py:48
-#: exe/engine/clozelangfpdidevice.py:48
+#: exe/engine/clozefpdidevice.py:49 exe/engine/clozeidevice.py:48
+#: exe/engine/clozelangfpdidevice.py:49
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -405,8 +404,8 @@ msgstr ""
 " de vocabulario.</li><li>Para comprobar la competencia morfológica o "
 "gramatical.</li></ol>"
 
-#: exe/engine/clozefpdidevice.py:60 exe/engine/clozeidevice.py:60
-#: exe/engine/clozelangfpdidevice.py:60
+#: exe/engine/clozefpdidevice.py:61 exe/engine/clozeidevice.py:60
+#: exe/engine/clozelangfpdidevice.py:61
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -454,16 +453,16 @@ msgstr ""
 " idea conseguir que un colega pruebe los ejercicios para asegurarse de "
 "que no haya sorpresas!  </p> </dd></dl>"
 
-#: exe/engine/clozefpdidevice.py:116 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:116 exe/engine/listaidevice.py:129
+#: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:116
+#: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:129
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
-#: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:336
+#: exe/engine/verdaderofalsofpdidevice.py:167
+#: exe/engine/verdaderofalsofpdidevice.py:395 exe/webui/common.py:337
 msgid "Instructions"
 msgstr "Instrucciones"
 
-#: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:117
-#: exe/engine/clozelangfpdidevice.py:117
+#: exe/engine/clozefpdidevice.py:118 exe/engine/clozeidevice.py:117
+#: exe/engine/clozelangfpdidevice.py:118
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -473,12 +472,12 @@ msgstr ""
 "actividad de rellenar huecos.\n"
 "Se insertará un texto por defecto si no hay cambios en este campo.\n"
 
-#: exe/engine/clozefpdidevice.py:122 exe/engine/clozeidevice.py:123
+#: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:123
 msgid "Cloze"
 msgstr "Rellenar huecos"
 
-#: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:124
-#: exe/engine/clozelangfpdidevice.py:123
+#: exe/engine/clozefpdidevice.py:124 exe/engine/clozeidevice.py:124
+#: exe/engine/clozelangfpdidevice.py:124
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -495,24 +494,25 @@ msgstr ""
 "palabra para seleccionarla,\n"
 "y pulse en el botón Esconder/Mostrar Palabra de abajo.</p>"
 
-#: exe/engine/clozefpdidevice.py:128 exe/engine/clozefpdidevice.py:278
+#: exe/engine/clozefpdidevice.py:129 exe/engine/clozefpdidevice.py:279
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
-#: exe/engine/clozelangfpdidevice.py:128 exe/engine/clozelangfpdidevice.py:283
+#: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozelangfpdidevice.py:284
 #: exe/engine/field.py:3611 exe/engine/field.py:3659
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:559
 #: exe/engine/idevicestore.py:668 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
-#: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:50
-#: exe/engine/verdaderofalsofpdidevice.py:125 exe/webui/clozeblock.py:165
-#: exe/webui/clozefpdblock.py:193 exe/webui/clozelangfpdblock.py:194
-#: exe/webui/common.py:252 exe/webui/editorelement.py:148
-#: exe/webui/editorpane.py:254 exe/webui/element.py:2271
-#: exe/webui/listablock.py:456 exe/webui/questionelement.py:104
+#: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
+#: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:164
+#: exe/webui/clozefpdblock.py:192 exe/webui/clozelangfpdblock.py:175
+#: exe/webui/clozelangfpdblock.py:193 exe/webui/common.py:253
+#: exe/webui/editorelement.py:148 exe/webui/editorpane.py:254
+#: exe/webui/element.py:2271 exe/webui/listablock.py:456
+#: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
 msgid "Feedback"
 msgstr "Retroalimentación"
 
-#: exe/engine/clozefpdidevice.py:129 exe/engine/clozeidevice.py:130
-#: exe/engine/clozelangfpdidevice.py:129 exe/engine/listaidevice.py:141
+#: exe/engine/clozefpdidevice.py:130 exe/engine/clozeidevice.py:130
+#: exe/engine/clozelangfpdidevice.py:130 exe/engine/listaidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -520,23 +520,23 @@ msgstr ""
 "Introduzca la retroalimentación que quiera que vean los estudiantes en el"
 " campo retroalimentación. Este campo se puede dejar vacío."
 
-#: exe/engine/clozefpdidevice.py:274 exe/engine/clozeidevice.py:274
-#: exe/engine/clozelangfpdidevice.py:278 exe/engine/listaidevice.py:290
+#: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:274
+#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
 msgstr "Instrucciones para los estudiantes"
 
-#: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:275
-#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:291
+#: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:275
+#: exe/engine/clozelangfpdidevice.py:280 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
 msgstr "Introduzca aquí las instrucciones para los estudiantes"
 
-#: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:276
-#: exe/engine/clozelangfpdidevice.py:280
+#: exe/engine/clozefpdidevice.py:277 exe/engine/clozeidevice.py:276
+#: exe/engine/clozelangfpdidevice.py:281
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Lea el párrafo que aparece abajo y rellene los espacios en blanco"
 
-#: exe/engine/clozefpdidevice.py:287 exe/engine/clozeidevice.py:288
-#: exe/engine/clozelangfpdidevice.py:292
+#: exe/engine/clozefpdidevice.py:288 exe/engine/clozeidevice.py:288
+#: exe/engine/clozelangfpdidevice.py:293
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Permitir auto-completar cuando el usuario está rellenando los huecos."
 
@@ -545,75 +545,62 @@ msgid "Cloze Activity"
 msgstr "Rellenar huecos"
 
 #: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:395
-#: exe/engine/verdaderofalsofpdidevice.py:397
+#: exe/engine/verdaderofalsofpdidevice.py:398
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Lea el párrafo que aparece abajo y complete las palabras que faltan."
 
-#: exe/engine/clozelangfpdidevice.py:46
-msgid "FPD - Actividad de Espacios en Blanco (Modificada)"
-msgstr ""
+#: exe/engine/clozelangfpdidevice.py:47
+msgid "FPD - Cloze Activity (Modified)"
+msgstr "FPD - Actividad de Espacios en Blanco (Modificada)"
 
-#: exe/engine/clozelangfpdidevice.py:122
+#: exe/engine/clozelangfpdidevice.py:123
 msgid "Clozelang"
-msgstr ""
-
-#: exe/engine/correccionfpdidevice.py:29
-msgid "FPD - Correccion"
-msgstr "FPD - Corrección"
-
-#: exe/engine/correccionfpdidevice.py:31
-msgid ""
-"Correccion es un iDevice que permite resaltar texto para hacer "
-"correcciones a los autores."
-msgstr ""
-"Corrección es un iDevice que permite resaltar texto para hacer "
-"correcciones a los autores."
-
-#: exe/engine/correccionfpdidevice.py:36
-msgid "Texto Correci&oacute;n:"
-msgstr ""
-
-#: exe/engine/correccionfpdidevice.py:134 exe/engine/destacadofpdidevice.py:36
-#: exe/engine/destacadofpdidevice.py:134
-msgid "Texto Destacado:"
-msgstr ""
+msgstr "Espacios en blanco (Modificado)"
 
 #: exe/engine/debesconocerfpdidevice.py:29
-msgid "FPD - Debes Conocer"
-msgstr ""
+msgid "FPD - You Should Know"
+msgstr "FPD - Debes conocer"
 
 #: exe/engine/debesconocerfpdidevice.py:31
 msgid ""
+"You Should Know is an iDevice that helps the student widen her knowledge "
+"with core contents."
+msgstr ""
 "Debes conocer es un iDevice que permite al alumnado ampliar "
 "conocimientos, siendo estos obligatorios para su aprendizaje."
-msgstr ""
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
-msgid "Texto Debes conocer:"
-msgstr ""
+msgid "You Should Know Text:"
+msgstr "Texto Debes conocer:"
 
 #: exe/engine/destacadofpdidevice.py:29
-msgid "FPD - Destacado"
-msgstr ""
+msgid "FPD - Highlighted"
+msgstr "FPD - Destacado"
 
 #: exe/engine/destacadofpdidevice.py:31
 msgid ""
+"Highlighted is an iDevice that emphasizes text to catch the student's "
+"attention."
+msgstr ""
 "Destacado es un iDevice que permite resaltar texto para llamar la "
 "atención del alumnado."
-msgstr ""
 
-#: exe/engine/ejercicioresueltofpdidevice.py:197
-msgid "FPD - Ejercicio Resuelto"
-msgstr ""
+#: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
+msgid "Highlighted Text:"
+msgstr "Texto Destacado:"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:60
-msgid "FPD - Actividad de Eleccion Multiple"
+#: exe/engine/ejercicioresueltofpdidevice.py:198
+msgid "FPD - Translation"
+msgstr "FPD - Ejercicio resuelto"
+
+#: exe/engine/eleccionmultiplefpdidevice.py:61
+msgid "FPD - Multi Choice Activity"
 msgstr "FPD - Actividad de Elección Múltiple"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:62
+#: exe/engine/eleccionmultiplefpdidevice.py:63
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
-#: exe/engine/seleccionmultiplefpdidevice.py:45
+#: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -650,9 +637,9 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/eleccionmultiplefpdidevice.py:75
+#: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:58
-#: exe/engine/seleccionmultiplefpdidevice.py:58
+#: exe/engine/seleccionmultiplefpdidevice.py:59
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -685,7 +672,7 @@ msgstr ""
 "<li>Las incorrectas deben ser lo más creíbles posible</li>\n"
 "</ul>\n"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:100
+#: exe/engine/eleccionmultiplefpdidevice.py:101
 #: exe/engine/multichoiceidevice.py:99
 msgid ""
 "Enter a hint here. If you\n"
@@ -694,7 +681,7 @@ msgstr ""
 "Introduzca aquí una pista.\n"
 "Si no quiere proporcionar una deje el campo en blanco."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:102
+#: exe/engine/eleccionmultiplefpdidevice.py:103
 #: exe/engine/multichoiceidevice.py:101 exe/engine/quiztestidevice.py:120
 #: exe/engine/quiztestidevice.py:194
 msgid ""
@@ -706,7 +693,7 @@ msgstr ""
 "La pregunta debe ser clara y no ambigua. Evite las premisas negativas \n"
 "ya que estas tienden a ser ambiguas."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:105
+#: exe/engine/eleccionmultiplefpdidevice.py:106
 #: exe/engine/multichoiceidevice.py:104
 msgid ""
 "Select the correct option by clicking \n"
@@ -715,7 +702,7 @@ msgstr ""
 "Seleccione la opción correcta pulsando\n"
 "en el botón de tipo radio."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:107
+#: exe/engine/eleccionmultiplefpdidevice.py:108
 #: exe/engine/multichoiceidevice.py:106
 msgid ""
 "Enter the available choices here. \n"
@@ -728,7 +715,7 @@ msgstr ""
 "Elimine opciones haciendo clic en la \"X\" que se encuentra a la derecha "
 "de cada opción."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:110
+#: exe/engine/eleccionmultiplefpdidevice.py:111
 #: exe/engine/multichoiceidevice.py:109
 msgid ""
 "Type in the feedback that you want the \n"
@@ -749,14 +736,14 @@ msgstr ""
 "correcta; o \n"
 "\"Respuesta equivocada\" para las otras alternativas."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
+#: exe/engine/eleccionmultiplefpdidevice.py:134 exe/engine/field.py:3682
 #: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:132
 #: exe/engine/multiselectidevice.py:80
-#: exe/engine/seleccionmultiplefpdidevice.py:81
+#: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
 msgstr "Pregunta"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:287
+#: exe/engine/eleccionmultiplefpdidevice.py:288
 #: exe/engine/multichoiceidevice.py:286
 msgid ""
 "Enter a hint here. If you do not want to provide a hint, leave this field"
@@ -920,8 +907,8 @@ msgstr "Opción"
 
 #: exe/engine/field.py:3685 exe/engine/field.py:3751
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
-#: exe/engine/verdaderofalsofpdidevice.py:53
-#: exe/engine/verdaderofalsofpdidevice.py:128 exe/webui/element.py:2520
+#: exe/engine/verdaderofalsofpdidevice.py:54
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2520
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
 msgstr "Sugerencia"
@@ -945,8 +932,8 @@ msgstr ""
 #: exe/engine/field.py:3836 exe/engine/field.py:3917
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
-#: exe/engine/verdaderofalsofpdidevice.py:46
-#: exe/engine/verdaderofalsofpdidevice.py:122 exe/webui/element.py:2040
+#: exe/engine/verdaderofalsofpdidevice.py:47
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2040
 msgid "Question:"
 msgstr "Pregunta:"
 
@@ -980,7 +967,7 @@ msgstr ""
 "proporcionar al estudiante."
 
 #: exe/engine/field.py:3850 exe/engine/field.py:3920
-#: exe/engine/reflectionfpdidevice.py:67 exe/engine/reflectionfpdidevice.py:202
+#: exe/engine/reflectionfpdidevice.py:68 exe/engine/reflectionfpdidevice.py:203
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:200
 msgid "Feedback:"
 msgstr "Retroalimentación:"
@@ -1081,11 +1068,11 @@ msgstr ""
 " (en píxeles) y determine su alineación en la pantalla. \n"
 "El largo y ancho se alterarán proporcionalmente."
 
-#: exe/engine/freetextfpdidevice.py:38
-msgid "FPD - Texto Libre"
-msgstr ""
+#: exe/engine/freetextfpdidevice.py:39
+msgid "FPD - Free Text"
+msgstr "FPD - Texto libre"
 
-#: exe/engine/freetextfpdidevice.py:40 exe/engine/freetextidevice.py:40
+#: exe/engine/freetextfpdidevice.py:41 exe/engine/freetextidevice.py:40
 msgid ""
 "The majority of a learning resource will be \n"
 "establishing context, delivering instructions and providing general "
@@ -1101,12 +1088,12 @@ msgstr ""
 "aprendizaje son construidas\n"
 "y proporcionadas."
 
-#: exe/engine/freetextfpdidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
 msgid "Free Text"
 msgstr "Texto libre"
 
-#: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:46
+#: exe/engine/freetextfpdidevice.py:47 exe/engine/freetextidevice.py:46
 msgid ""
 "Use this field to enter text. This \n"
 "iDevice has no emphasis applied although limited formatting can be "
@@ -1119,7 +1106,7 @@ msgstr ""
 "contenga por medio de los botones de edición de texto asociados con el "
 "campo."
 
-#: exe/engine/freetextfpdidevice.py:121 exe/engine/freetextidevice.py:130
+#: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
 msgid "This is a free text field general learning content can be entered."
 msgstr ""
 "Este es un campo de texto libre en el cuál se puede insertar el contenido"
@@ -1768,7 +1755,7 @@ msgstr ""
 "muestre el archivo.</li><li>Escriba un título opcional para su "
 "archivo.</li> <li>Asocie cualquier texto relevante al archivo MP3.</li> "
 "<li>Escoja el estilo con el que desea que se muestre el iDevice. Por "
-"ejemplo, 'Poco Énfasis' aplica un borde y un icono al contenido del "
+"ejemplo, 'Algo de énfasis' aplica un borde y un icono al contenido del "
 "iDevice mostrado.</li></ol>"
 
 #: exe/engine/multimediaidevice.py:74
@@ -1783,41 +1770,45 @@ msgstr ""
 msgid "Multi-select"
 msgstr "Pregunta de Selección Múltiple"
 
-#: exe/engine/orientacionesalumnadofpdidevice.py:29
-msgid "FPD - Orientaciones Alumnado"
-msgstr ""
+#: exe/engine/orientacionesalumnadofpdidevice.py:30
+msgid "FPD - Guidelines Students"
+msgstr "FPD - Orientaciones Alumnado"
 
-#: exe/engine/orientacionesalumnadofpdidevice.py:31
+#: exe/engine/orientacionesalumnadofpdidevice.py:32
 msgid ""
-"Orientciones alumnado es un iDevice que permite al alumnado conocer los "
-"objetivos de su aprendizaje."
+"Guidelines Students is an iDevice that permits students know the "
+"objectives of their learning."
 msgstr ""
+"Orientaciones para el alumnado es un iDevice que permite a los "
+"estudiantes conocer los objetivos de su aprendizaje."
 
-#: exe/engine/orientacionesalumnadofpdidevice.py:37
-msgid "Texto Orientaciones alumnado"
-msgstr ""
+#: exe/engine/orientacionesalumnadofpdidevice.py:38
+msgid "Guidelines Students Text"
+msgstr "Texto Orientaciones alumnado"
 
-#: exe/engine/orientacionesalumnadofpdidevice.py:135
-msgid "Texto Orientaciones alumnado:"
-msgstr ""
+#: exe/engine/orientacionesalumnadofpdidevice.py:136
+msgid "Guidelines Students Text:"
+msgstr "Texto Orientaciones alumnado:"
 
-#: exe/engine/orientacionestutoriafpdidevice.py:29
-msgid "FPD - Orientaciones Tutoria"
+#: exe/engine/orientacionestutoriafpdidevice.py:30
+msgid "FPD - Guidelines Teacher"
 msgstr "FPD - Orientaciones Tutoría"
 
-#: exe/engine/orientacionestutoriafpdidevice.py:31
+#: exe/engine/orientacionestutoriafpdidevice.py:32
 msgid ""
-"Orientaciones alumnado es un iDevice que permite al profesorado conocer "
-"los objetivos del aprendizje del alumnado."
+"Guidelines Teacher is an iDevice that lets the teacher know the learning "
+"objectives of the students."
 msgstr ""
+"Orientaciones Tutoría es un iDevice que permite al profesorado conocer "
+"los objetivos de aprendizaje del alumnado."
 
-#: exe/engine/orientacionestutoriafpdidevice.py:37
-msgid "Texto Orientaciones tutor&iacute;a"
-msgstr ""
+#: exe/engine/orientacionestutoriafpdidevice.py:38
+msgid "Guidelines Teacher Text"
+msgstr "Texto Orientaciones Tutoría"
 
-#: exe/engine/orientacionestutoriafpdidevice.py:136
-msgid "Texto Orientaciones tutor&iacute;a:"
-msgstr ""
+#: exe/engine/orientacionestutoriafpdidevice.py:137
+msgid "Guidelines Teacher Text:"
+msgstr "Texto Orientaciones Tutoría:"
 
 #: exe/engine/package.py:390
 msgid "Topic"
@@ -1848,28 +1839,27 @@ msgstr ""
 "ERROR AL GUARDAR\n"
 "La última salva correcta fue %s."
 
-#: exe/engine/package.py:862 exe/jsui/scripts/app/controller/Toolbar.js:316
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:305
+#: exe/engine/package.py:874 exe/jsui/scripts/app/controller/Toolbar.js:334
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
 msgid "iDevice Editor"
 msgstr "Editor de iDevices"
 
-#: exe/engine/parasabermasfpdidevice.py:29
-msgid "FPD - Para Saber Mas"
-msgstr "FPD - Para Saber Más"
+#: exe/engine/parasabermasfpdidevice.py:30
+msgid "FPD - A Step Ahead"
+msgstr "FPD - Para saber más"
 
-#: exe/engine/parasabermasfpdidevice.py:31
+#: exe/engine/parasabermasfpdidevice.py:32
 msgid ""
-"Para saber m&aacute;s es un iDevice que permite al alumnado ampliar "
+"A Step Ahead is an iDevice that permits students widen their knowledge "
+"with further contents."
+msgstr ""
+"Para saber más es un iDevice que permite al alumnado ampliar "
 "conocimientos, siendo estos voluntarios para su aprendizaje."
-msgstr ""
 
-#: exe/engine/parasabermasfpdidevice.py:37
-msgid "Texto Para saber m&aacute;s"
-msgstr ""
-
-#: exe/engine/parasabermasfpdidevice.py:136
-msgid "Texto Para sabe m&aacute;s"
-msgstr ""
+#: exe/engine/parasabermasfpdidevice.py:38
+#: exe/engine/parasabermasfpdidevice.py:137
+msgid "A Step Ahead Text"
+msgstr "Texto Para saber más"
 
 #: exe/engine/path.py:639
 #, python-format
@@ -1923,26 +1913,28 @@ msgstr ""
 "tiempo de aprender y practicar.\n"
 " "
 
-#: exe/engine/recomendacionfpdidevice.py:29
-msgid "FPD - Recomendacion"
+#: exe/engine/recomendacionfpdidevice.py:30
+msgid "FPD - A Piece of Advice"
 msgstr "FPD - Recomendación"
 
-#: exe/engine/recomendacionfpdidevice.py:31
+#: exe/engine/recomendacionfpdidevice.py:32
 msgid ""
-"Para saber m&aacute;s es un iDevice que permite al profesarado recomendar"
-" libros, películas, ... útiles para su formación."
+"A Piece of Advice is an iDevice that permits the teacher give advice on "
+"interesting books, films..."
 msgstr ""
+"Recomendación es un iDevice que permite al profesorado recomendar libros,"
+" películas... útiles para su formación."
 
-#: exe/engine/recomendacionfpdidevice.py:37
-#: exe/engine/recomendacionfpdidevice.py:136
-msgid "Texto de la recomendaci&oacute;n:"
-msgstr ""
+#: exe/engine/recomendacionfpdidevice.py:38
+#: exe/engine/recomendacionfpdidevice.py:137
+msgid "A Piece of Advice Text:"
+msgstr "Texto Recomendación:"
 
-#: exe/engine/reflectionfpdidevice.py:46
-msgid "FPD - Reflexiona (con Retroalimentacion)"
+#: exe/engine/reflectionfpdidevice.py:47
+msgid "FPD - Think About It (with Feedback)"
 msgstr "FPD - Reflexiona (con Retroalimentación)"
 
-#: exe/engine/reflectionfpdidevice.py:48
+#: exe/engine/reflectionfpdidevice.py:49
 #: exe/engine/reflectionfpdmodifidevice.py:48
 #: exe/engine/reflectionidevice.py:48
 msgid ""
@@ -1968,7 +1960,7 @@ msgstr ""
 "herramientas\n"
 "eficaces de la información."
 
-#: exe/engine/reflectionfpdidevice.py:56
+#: exe/engine/reflectionfpdidevice.py:57
 #: exe/engine/reflectionfpdmodifidevice.py:56
 #: exe/engine/reflectionidevice.py:55
 msgid ""
@@ -1978,7 +1970,7 @@ msgstr ""
 "Introduzca una pregunta para que los estudiantes \n"
 " reflexionen."
 
-#: exe/engine/reflectionfpdidevice.py:58 exe/engine/reflectionidevice.py:57
+#: exe/engine/reflectionfpdidevice.py:59
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing"
@@ -1990,7 +1982,7 @@ msgstr ""
 "útiles para proporcionar\n"
 "retroalimentación reflexiva.)"
 
-#: exe/engine/reflectionfpdidevice.py:63 exe/engine/reflectionfpdidevice.py:199
+#: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:197
@@ -1998,20 +1990,33 @@ msgid "Reflective question:"
 msgstr "Pregunta reflexiva:"
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
-msgid "FPD - Reflexiona (sin Retroalimentacion)"
+msgid "FPD - Think About It (without Feedback)"
 msgstr "FPD - Reflexiona (sin Retroalimentación)"
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
 msgstr "Reflexión"
 
-#: exe/engine/resource.py:579
+#: exe/engine/reflectionidevice.py:57
+msgid ""
+"Describe how learners will assess how \n"
+"they have done in the exercise (rubrics are useful devices for providing"
+" \n"
+"reflective feedback)."
+msgstr ""
+"Describe el modo en que los estudiantes evaluarán su rendimiento \n"
+"en el ejercicio (las rúbricas son herramientas muy útiles para "
+"proporcionar\n"
+"\n"
+"retroalimentación reflexiva)."
+
+#: exe/engine/resource.py:595
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
 msgstr ""
-"¡renombró un recurso de un iDevice Applet y no debería haberlo hecho en "
-"este momento!"
+"¡Ha renombrado un recurso de un iDevice Applet y no debería haberlo hecho"
+" en este momento!"
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
@@ -2072,16 +2077,16 @@ msgstr ""
 "No se pudo cargar la subscripción RSS de %s <br/> Por favor revise si la "
 "ha tecleado correctamente, y la conexión, e inténtelo de nuevo."
 
-#: exe/engine/seleccionmultiplefpdidevice.py:43
-msgid "FPD - Actividad de Seleccion Multiple"
-msgstr "FPD - Actividad de Selección Multiple"
+#: exe/engine/seleccionmultiplefpdidevice.py:44
+msgid "FPD - Multi Select Activity"
+msgstr "FPD - Actividad de Selección Múltiple"
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
 msgstr "Pregunta Verdadero-Falso"
 
 #: exe/engine/truefalseidevice.py:146
-#: exe/engine/verdaderofalsofpdidevice.py:146
+#: exe/engine/verdaderofalsofpdidevice.py:147
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question "
@@ -2098,7 +2103,7 @@ msgstr ""
 "otro..."
 
 #: exe/engine/truefalseidevice.py:151
-#: exe/engine/verdaderofalsofpdidevice.py:152
+#: exe/engine/verdaderofalsofpdidevice.py:153
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -2107,7 +2112,7 @@ msgstr ""
 "estudiante a responder la pregunta."
 
 #: exe/engine/truefalseidevice.py:154
-#: exe/engine/verdaderofalsofpdidevice.py:155
+#: exe/engine/verdaderofalsofpdidevice.py:156
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can "
@@ -2120,7 +2125,7 @@ msgstr ""
 "ser ambiguas."
 
 #: exe/engine/truefalseidevice.py:158
-#: exe/engine/verdaderofalsofpdidevice.py:159
+#: exe/engine/verdaderofalsofpdidevice.py:160
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank"
@@ -2134,8 +2139,8 @@ msgstr ""
 "retroalimentación por defecto."
 
 #: exe/engine/truefalseidevice.py:166 exe/engine/truefalseidevice.py:393
-#: exe/engine/verdaderofalsofpdidevice.py:167
-#: exe/engine/verdaderofalsofpdidevice.py:395
+#: exe/engine/verdaderofalsofpdidevice.py:168
+#: exe/engine/verdaderofalsofpdidevice.py:396
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -2144,7 +2149,7 @@ msgstr ""
 "Verdadero/Falso."
 
 #: exe/engine/truefalseidevice.py:373
-#: exe/engine/verdaderofalsofpdidevice.py:375
+#: exe/engine/verdaderofalsofpdidevice.py:376
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't "
@@ -2163,9 +2168,9 @@ msgstr ""
 "correcta; o \n"
 "\"Respuesta equivocada\" para las otras alternativas."
 
-#: exe/engine/verdaderofalsofpdidevice.py:144
-msgid "FPD - Actividad de Verdadero/Falso"
-msgstr ""
+#: exe/engine/verdaderofalsofpdidevice.py:145
+msgid "FPD - True/False Activity"
+msgstr "FPD - Actividad de Verdadero/Falso"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid "Wiki Article"
@@ -2201,7 +2206,7 @@ msgstr ""
 msgid "Article"
 msgstr "Artículo"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:368
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:370
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -2209,7 +2214,7 @@ msgstr ""
 "Seleccione el lenguaje de Wikipedia apropiado \n"
 "para introducir el término a buscar."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:370
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:372
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -2226,7 +2231,7 @@ msgstr ""
 "No se pudo descargar de %s <br/>Por favor revise si lo ha tecleado "
 "correctamente, y la conexión, e inténtelo de nuevo."
 
-#: exe/engine/wikipediaidevice.py:322
+#: exe/engine/wikipediaidevice.py:324
 msgid "http://en.wikipedia.org/"
 msgstr "http://es.wikipedia.org/"
 
@@ -2371,9 +2376,9 @@ msgstr ""
 "exe_do: error: no ha sido posible importar '%s'.\n"
 "El error es:"
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:225
-#: exe/jsui/mainpage.py:823 exe/jsui/mainpage.py:967 exe/jsui/mainpage.py:1008
-#: exe/jsui/mainpage.py:1029
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:226
+#: exe/jsui/mainpage.py:838 exe/jsui/mainpage.py:982 exe/jsui/mainpage.py:1023
+#: exe/jsui/mainpage.py:1044
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2390,7 +2395,7 @@ msgstr "Archivo de entrada no válido"
 msgid "Export format not implemented"
 msgstr "Formato de exportación no implementado"
 
-#: exe/export/imsexport.py:404 exe/export/scormexport.py:644
+#: exe/export/imsexport.py:414 exe/export/scormexport.py:657
 #: exe/export/websiteexport.py:90
 #, python-format
 msgid ""
@@ -2404,11 +2409,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Obra colocada bajo licencia"
 
-#: exe/export/scormexport.py:404 exe/export/websitepage.py:249
+#: exe/export/scormexport.py:405 exe/export/websitepage.py:252
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormexport.py:405 exe/export/websitepage.py:255
+#: exe/export/scormexport.py:406 exe/export/websitepage.py:258
 msgid "Next"
 msgstr "Siguiente"
 
@@ -2474,19 +2479,19 @@ msgstr "Calculando la profundidad de los enlaces"
 msgid "Inserting %s"
 msgstr "Insertando %s"
 
-#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:682 exe/jsui/mainpage.py:815
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:691 exe/jsui/mainpage.py:830
 msgid "Cannot access directory named "
 msgstr "No se puede acceder al directorio "
 
-#: exe/jsui/mainpage.py:243 exe/jsui/mainpage.py:684 exe/jsui/mainpage.py:815
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:693 exe/jsui/mainpage.py:830
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nombres en ASCII."
 
-#: exe/jsui/mainpage.py:252
+#: exe/jsui/mainpage.py:253
 msgid "SAVE FAILED!"
 msgstr "ERROR AL GUARDAR"
 
-#: exe/jsui/mainpage.py:256 exe/jsui/mainpage.py:546 exe/jsui/mainpage.py:900
+#: exe/jsui/mainpage.py:257 exe/jsui/mainpage.py:555 exe/jsui/mainpage.py:915
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2495,22 +2500,26 @@ msgstr ""
 "ERROR AL GUARDAR\n"
 "%s"
 
-#: exe/jsui/mainpage.py:260 exe/jsui/mainpage.py:265 exe/jsui/mainpage.py:268
+#: exe/jsui/mainpage.py:261 exe/jsui/mainpage.py:266 exe/jsui/mainpage.py:269
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paquete guardado en: %s"
 
-#: exe/jsui/mainpage.py:468 exe/jsui/mainpage.py:574
+#: exe/jsui/mainpage.py:312
+msgid "Changes take effect when you restart eXe"
+msgstr "Los cambios no serán efectivos hasta que no reinicie eXe"
+
+#: exe/jsui/mainpage.py:477 exe/jsui/mainpage.py:583
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "El directorio %s de vistas previas es un archivo, no se puede reemplazar"
 
-#: exe/jsui/mainpage.py:488
+#: exe/jsui/mainpage.py:497
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "El fichero local %s no existe, no se puede previsualizar"
 
-#: exe/jsui/mainpage.py:616
+#: exe/jsui/mainpage.py:625
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -2519,29 +2528,29 @@ msgstr ""
 "¡Falló la compilación de MimeTeX!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:654
+#: exe/jsui/mainpage.py:663
 msgid "Importing HTML..."
 msgstr "Importando HTML..."
 
-#: exe/jsui/mainpage.py:657
+#: exe/jsui/mainpage.py:666
 msgid "Error importing HTML:\n"
 msgstr "Error al importar HTML:\n"
 
-#: exe/jsui/mainpage.py:704 exe/jsui/mainpage.py:709 exe/jsui/mainpage.py:712
-#: exe/jsui/mainpage.py:715 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:951
+#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:724
+#: exe/jsui/mainpage.py:730 exe/jsui/mainpage.py:733 exe/jsui/mainpage.py:966
 msgid "EXPORT FAILED!"
 msgstr "ERROR EN LA EXPORTACIÓN"
 
-#: exe/jsui/mainpage.py:784
+#: exe/jsui/mainpage.py:799
 msgid "Correct XLIFF import"
 msgstr "Importación XLIFF correcta"
 
-#: exe/jsui/mainpage.py:787
+#: exe/jsui/mainpage.py:802
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Error al importar XLIFF: %s"
 
-#: exe/jsui/mainpage.py:824 exe/jsui/mainpage.py:841
+#: exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:856
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2550,21 +2559,21 @@ msgstr ""
 "ERROR EN LA EXTRACCIÓN\n"
 "%s"
 
-#: exe/jsui/mainpage.py:843
+#: exe/jsui/mainpage.py:858
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Paquete extraído en: %s"
 
-#: exe/jsui/mainpage.py:855
+#: exe/jsui/mainpage.py:870
 msgid "Directory exists"
 msgstr "El directorio ya existe"
 
-#: exe/jsui/mainpage.py:886 exe/jsui/mainpage.py:928
+#: exe/jsui/mainpage.py:901 exe/jsui/mainpage.py:943
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "El nombre de archivo %s ya existe, no se pudo reemplazar"
 
-#: exe/jsui/mainpage.py:892 exe/jsui/mainpage.py:934
+#: exe/jsui/mainpage.py:907 exe/jsui/mainpage.py:949
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2573,10 +2582,10 @@ msgstr ""
 "El nombre de carpeta %s ya existe. Por favor seleccione otro o elimine el"
 " existente e inténtelo de nuevo."
 
-#: exe/jsui/mainpage.py:941 exe/jsui/mainpage.py:955 exe/jsui/mainpage.py:968
-#: exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:992 exe/jsui/mainpage.py:1009
-#: exe/jsui/mainpage.py:1015 exe/jsui/mainpage.py:1030
-#: exe/jsui/mainpage.py:1036
+#: exe/jsui/mainpage.py:956 exe/jsui/mainpage.py:970 exe/jsui/mainpage.py:983
+#: exe/jsui/mainpage.py:989 exe/jsui/mainpage.py:1007 exe/jsui/mainpage.py:1024
+#: exe/jsui/mainpage.py:1030 exe/jsui/mainpage.py:1045
+#: exe/jsui/mainpage.py:1051
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2585,24 +2594,24 @@ msgstr ""
 "ERROR EN LA EXPORTACIÓN\n"
 "%s"
 
-#: exe/jsui/mainpage.py:957 exe/jsui/mainpage.py:976 exe/jsui/mainpage.py:994
-#: exe/jsui/mainpage.py:1017 exe/jsui/mainpage.py:1038
+#: exe/jsui/mainpage.py:972 exe/jsui/mainpage.py:991 exe/jsui/mainpage.py:1009
+#: exe/jsui/mainpage.py:1032 exe/jsui/mainpage.py:1053
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado a %s"
 
-#: exe/jsui/mainpage.py:1071
+#: exe/jsui/mainpage.py:1086
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "El archivo %s no existe o no es accesible."
 
-#: exe/jsui/mainpage.py:1075
+#: exe/jsui/mainpage.py:1090
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "No se puede cargar el archivo, por favor envíe el archivo a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1078
+#: exe/jsui/mainpage.py:1093
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2611,7 +2620,7 @@ msgstr ""
 "Formato de archivo incorrecto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1080
+#: exe/jsui/mainpage.py:1095
 msgid "Sorry, wrong file format"
 msgstr "Formato de archivo incorrecto"
 
@@ -2648,15 +2657,15 @@ msgid "Image Files"
 msgstr "Archivos de imagen"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:156
-#: exe/jsui/scripts/app/controller/Toolbar.js:366
-#: exe/jsui/scripts/app/controller/Toolbar.js:387
-#: exe/jsui/scripts/app/controller/Toolbar.js:422
-#: exe/jsui/scripts/app/controller/Toolbar.js:487
-#: exe/jsui/scripts/app/controller/Toolbar.js:515
-#: exe/jsui/scripts/app/controller/Toolbar.js:557
-#: exe/jsui/scripts/app/controller/Toolbar.js:586
-#: exe/jsui/scripts/app/controller/Toolbar.js:706
-#: exe/jsui/scripts/app/controller/Toolbar.js:780
+#: exe/jsui/scripts/app/controller/Toolbar.js:384
+#: exe/jsui/scripts/app/controller/Toolbar.js:405
+#: exe/jsui/scripts/app/controller/Toolbar.js:440
+#: exe/jsui/scripts/app/controller/Toolbar.js:505
+#: exe/jsui/scripts/app/controller/Toolbar.js:533
+#: exe/jsui/scripts/app/controller/Toolbar.js:575
+#: exe/jsui/scripts/app/controller/Toolbar.js:604
+#: exe/jsui/scripts/app/controller/Toolbar.js:724
+#: exe/jsui/scripts/app/controller/Toolbar.js:798
 msgid "All Files"
 msgstr "Todos los ficheros"
 
@@ -2666,12 +2675,12 @@ msgid "Error"
 msgstr "Error"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
 msgid "Insert Package"
 msgstr "Insertar paquete"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
 msgid "Extract Package"
 msgstr "Extraer paquete"
 
@@ -2680,7 +2689,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr "¿Borrar el nodo \"{node}\" y todos sus hijos?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:321
+#: exe/jsui/scripts/app/controller/Toolbar.js:339
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -2692,16 +2701,21 @@ msgstr "Renombrar el nodo \"{node}\""
 msgid "Enter the new name:"
 msgstr "Introduzca el nuevo nombre:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:270
+#: exe/jsui/scripts/app/controller/Toolbar.js:276
 msgid "About"
 msgstr "Acerca de"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:303
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
+#: exe/jsui/scripts/app/controller/Toolbar.js:309
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:322
+#: exe/jsui/scripts/app/controller/Toolbar.js:321
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:323
+msgid "Select Browser"
+msgstr "Seleccionar navegador"
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:340
 msgid ""
 "If you have made changes and have not saved, they will be lost. Do you "
 "really want to quit?"
@@ -2709,128 +2723,128 @@ msgstr ""
 "Si ha hecho cambios y no los ha guardado, se perderán. ¿Confirma que "
 "quiere cerrar la ventana?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:354
+#: exe/jsui/scripts/app/controller/Toolbar.js:372
 msgid "Select package to insert"
 msgstr "Seleccione qué paquete insertar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:359
+#: exe/jsui/scripts/app/controller/Toolbar.js:377
 msgid "Inserting package: {filename}"
 msgstr "Insertando paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:365
-#: exe/jsui/scripts/app/controller/Toolbar.js:386
-#: exe/jsui/scripts/app/controller/Toolbar.js:705
-#: exe/jsui/scripts/app/controller/Toolbar.js:779
+#: exe/jsui/scripts/app/controller/Toolbar.js:383
+#: exe/jsui/scripts/app/controller/Toolbar.js:404
+#: exe/jsui/scripts/app/controller/Toolbar.js:723
+#: exe/jsui/scripts/app/controller/Toolbar.js:797
 msgid "eXe Package Files"
 msgstr "Ficheros de paquete eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:375
+#: exe/jsui/scripts/app/controller/Toolbar.js:393
 msgid "Save extracted package as"
 msgstr "Guardar el paquete extraído como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:380
+#: exe/jsui/scripts/app/controller/Toolbar.js:398
 msgid "Extracting package: {filename}"
 msgstr "Extrayendo el paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:396
+#: exe/jsui/scripts/app/controller/Toolbar.js:414
 msgid "Select the parent folder for import."
 msgstr "Seleccione la carpeta padre para la importación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:411
+#: exe/jsui/scripts/app/controller/Toolbar.js:429
 msgid "Select the entry point for import."
 msgstr "Seleccione el punto de entrada para la importación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:421
+#: exe/jsui/scripts/app/controller/Toolbar.js:439
 msgid "HTML Files"
 msgstr "Ficheros HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:436
+#: exe/jsui/scripts/app/controller/Toolbar.js:454
 msgid "Waiting progress..."
 msgstr "Progreso de la espera..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:444
+#: exe/jsui/scripts/app/controller/Toolbar.js:462
 msgid "Cancel Import?"
 msgstr "¿Cancelar la importación?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:445
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Se está realizando una importación. ¿Desea cancelarla?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:468
+#: exe/jsui/scripts/app/controller/Toolbar.js:486
 msgid "Select Xliff file to import"
 msgstr "Seleccionar el archivo XLIFF que importar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:478
+#: exe/jsui/scripts/app/controller/Toolbar.js:496
 msgid "XLIFF Import Preferences"
 msgstr "Preferencias de importación de XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:486
-#: exe/jsui/scripts/app/controller/Toolbar.js:514
+#: exe/jsui/scripts/app/controller/Toolbar.js:504
+#: exe/jsui/scripts/app/controller/Toolbar.js:532
 msgid "XLIFF Files"
 msgstr "Ficheros XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:496
+#: exe/jsui/scripts/app/controller/Toolbar.js:514
 msgid "Export to Xliff as"
 msgstr "Exportado a XLIFF como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:506
+#: exe/jsui/scripts/app/controller/Toolbar.js:524
 msgid "XLIFF Export Preferences"
 msgstr "Preferencias de exportación a XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:530
+#: exe/jsui/scripts/app/controller/Toolbar.js:548
 msgid "Select the parent folder for export."
 msgstr "Seleccione la carpeta padre para la exportación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:547
+#: exe/jsui/scripts/app/controller/Toolbar.js:565
 msgid "Export text package as"
 msgstr "Exportar paquete de texto como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:556
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
+#: exe/jsui/scripts/app/controller/Toolbar.js:574
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "Text File"
 msgstr "Fichero de texto plano"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:564
+#: exe/jsui/scripts/app/controller/Toolbar.js:582
 msgid "Export SCORM package as"
 msgstr "Exportar paquete SCORM como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:584
 msgid "Export IMS package as"
 msgstr "Exportar el paquete IMS como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:568
+#: exe/jsui/scripts/app/controller/Toolbar.js:586
 msgid "Export Website package as"
 msgstr "Exportar paquete de sitio web como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:588
 msgid "Export Common Cartridge as"
 msgstr "Exportar paquete Common Cartridge como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:572
+#: exe/jsui/scripts/app/controller/Toolbar.js:590
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "VALOR INVÁLIDO PASADO A exportPackage"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:585
+#: exe/jsui/scripts/app/controller/Toolbar.js:603
 msgid "SCORM/IMS/ZipFile"
 msgstr "Fichero Zip SCORM/IMS"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:678
+#: exe/jsui/scripts/app/controller/Toolbar.js:696
 msgid "Loading package..."
 msgstr "Cargando el paquete..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:694
+#: exe/jsui/scripts/app/controller/Toolbar.js:712
 msgid "Open File"
 msgstr "Abrir un archivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:699
+#: exe/jsui/scripts/app/controller/Toolbar.js:717
 msgid "Loading package: {filename}"
 msgstr "Cargando paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:718
+#: exe/jsui/scripts/app/controller/Toolbar.js:736
 msgid "Save Package first?"
 msgstr "¿Guardar el paquete primero?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:719
+#: exe/jsui/scripts/app/controller/Toolbar.js:737
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -2838,15 +2852,15 @@ msgstr ""
 "El paquete actual ha sido modificado y aún no se ha guardado. ¿Desea "
 "guardarlo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:743
+#: exe/jsui/scripts/app/controller/Toolbar.js:761
 msgid "Saving package to: {filename}"
 msgstr "Guardando el paquete como: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:759
+#: exe/jsui/scripts/app/controller/Toolbar.js:777
 msgid "Select a File"
 msgstr "Seleccionar un archivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:765
+#: exe/jsui/scripts/app/controller/Toolbar.js:783
 msgid "Saving package..."
 msgstr "Guardando el paquete..."
 
@@ -2899,6 +2913,7 @@ msgstr "Modificado"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:53
 #: exe/webui/editorpane.py:272 exe/webui/preferencespage.py:163
+#: exe/webui/selectbrowserpage.py:113
 #: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 msgid "Cancel"
@@ -2929,7 +2944,7 @@ msgstr "Metadatos Dublin Core"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:94
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:103
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:106
-#: exe/webui/galleryblock.py:193
+#: exe/webui/galleryblock.py:209
 msgid "Title"
 msgstr "Título"
 
@@ -3395,7 +3410,7 @@ msgid "License"
 msgstr "Licencia"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
-#: exe/webui/wikipediablock.py:237
+#: exe/webui/wikipediablock.py:236
 msgid "GNU Free Documentation License"
 msgstr "Licencia GNU de Documentación Libre"
 
@@ -3537,11 +3552,12 @@ msgid "Add Page"
 msgstr "Añadir página"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:228
-#: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115
-#: exe/webui/editorelement.py:156 exe/webui/editorelement.py:196
-#: exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
-#: exe/webui/editorelement.py:332 exe/webui/editorpage.py:258
-#: exe/webui/editorpage.py:261 exe/webui/galleryblock.py:280
+#: exe/webui/block.py:347 exe/webui/editorelement.py:78
+#: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
+#: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
+#: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
+#: exe/webui/editorpage.py:258 exe/webui/editorpage.py:261
+#: exe/webui/galleryblock.py:296
 msgid "Delete"
 msgstr "Borrar"
 
@@ -3614,78 +3630,82 @@ msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
+msgid "SCORM2004"
+msgstr "SCORM2004"
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "IMS Content Package"
 msgstr "Paquete de Contenido IMS (IMS CP)"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "Web Site"
 msgstr "Sitio web"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "Self-contained Folder"
 msgstr "Carpeta auto-contenida"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:236
 msgid "Zip File"
 msgstr "Archivo comprimido Zip"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Single Page"
 msgstr "Página html única"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:260
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
 msgid "Merging"
 msgstr "Fusionar ELPs"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:288 exe/webui/editorpage.py:285
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:285
 msgid "Quit"
 msgstr "Salir"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "Tools"
 msgstr "Utilidades"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:320
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:332
 msgid "Refresh Display"
 msgstr "Actualizar pantalla"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:327
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:339
 msgid "Styles"
 msgstr "Estilos"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:337
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:349
 msgid "Help"
 msgstr "Ayuda"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:347
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "eXe Tutorial"
 msgstr "Tutorial de eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "eXe Manual"
 msgstr "Manual de eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:371
 msgid "Release Notes"
 msgstr "Notas de la versión"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:368
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
 msgid "eXe Web Site"
 msgstr "Sitio web de eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:374
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
 msgid "Report an Issue"
 msgstr "Informar de un problema"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:380
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
 msgid "eXe Forums"
 msgstr "Foros de eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:389
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
 msgid "About eXe"
 msgstr "Acerca de eXe"
 
@@ -4467,7 +4487,7 @@ msgstr "Revertir los cambios"
 msgid "Can NOT Undo Edits"
 msgstr "NO se pueden deshacer los cambios"
 
-#: exe/webui/block.py:225
+#: exe/webui/block.py:225 exe/webui/block.py:344
 msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr "Esto borrará este iDevice. ¿Confirma que desea hacerlo?"
 
@@ -4491,8 +4511,8 @@ msgstr "Ayuda pedagógica"
 msgid "Information"
 msgstr "Información"
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:351
-#: exe/webui/common.py:352 exe/webui/editorpane.py:363
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:352
+#: exe/webui/common.py:353 exe/webui/editorpane.py:363
 #: exe/webui/editorpane.py:364 exe/webui/editorpane.py:384
 #: exe/webui/editorpane.py:385 exe/webui/element.py:2516
 #: exe/webui/element.py:2517 exe/webui/truefalseelement.py:152
@@ -4508,16 +4528,6 @@ msgstr "Propósito"
 msgid "Tip:"
 msgstr "Consejo:"
 
-#: exe/webui/block.py:297 exe/webui/eleccionmultiplefpdblock.py:164
-#: exe/webui/galleryblock.py:349 exe/webui/genericblock.py:83
-#: exe/webui/genericblock.py:109 exe/webui/multichoiceblock.py:154
-msgid "IDevice Icon"
-msgstr "Icono de iDevice"
-
-#: exe/webui/block.py:318
-msgid "iDevice icon"
-msgstr "Icono de iDevice"
-
 #: exe/webui/block.py:333
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent llamado directamente"
@@ -4532,46 +4542,49 @@ msgid "Add another activity"
 msgstr "Agregar otra actividad"
 
 #: exe/webui/casopracticofpdblock.py:64
-msgid "Caso práctico"
-msgstr ""
+msgid "Situation"
+msgstr "Caso práctico"
 
 #: exe/webui/citasparapensarfpdblock.py:64
-msgid "Citas para pensar"
-msgstr ""
+msgid "Quotation"
+msgstr "Citas Para Pensar"
 
-#: exe/webui/clozefpdblock.py:104 exe/webui/clozelangfpdblock.py:105
-#: exe/webui/eleccionmultiplefpdblock.py:110
+#: exe/webui/clozefpdblock.py:104
 msgid "Autoevaluacion"
 msgstr "Autoevaluación"
 
-#: exe/webui/clozefpdblock.py:172 exe/webui/clozelangfpdblock.py:173
+#: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
 #: exe/webui/element.py:2152 exe/webui/element.py:2546
 #: exe/webui/questionelement.py:152
 msgid "Solucion"
 msgstr "Solución"
 
-#: exe/webui/clozefpdblock.py:175 exe/webui/clozelangfpdblock.py:176
-#: exe/webui/element.py:2157 exe/webui/reflectionfpdblock.py:143
+#: exe/webui/clozefpdblock.py:174 exe/webui/element.py:2157
 msgid "Retroalimentacion"
 msgstr "Retroalimentación"
 
-#: exe/webui/common.py:70 exe/webui/editorpage.py:242
-#: exe/webui/preferencespage.py:132 exe/webui/xliffexportpreferencespage.py:91
+#: exe/webui/clozelangfpdblock.py:105
+msgid "Now It's Your Turn"
+msgstr "Autoevaluación"
+
+#: exe/webui/common.py:71 exe/webui/editorpage.py:242
+#: exe/webui/preferencespage.py:132 exe/webui/selectbrowserpage.py:90
+#: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML para eLearning"
 
-#: exe/webui/common.py:342 exe/webui/common.py:346
+#: exe/webui/common.py:343 exe/webui/common.py:347
 msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
 #: exe/webui/debesconocerfpdblock.py:64
-msgid "Debes conocer"
-msgstr ""
+msgid "You Should Know"
+msgstr "Debes conocer"
 
 #: exe/webui/editorelement.py:74 exe/webui/editorpane.py:250
 msgid "Text Line"
-msgstr "Linea de texto"
+msgstr "Línea de texto"
 
 #: exe/webui/editorelement.py:111 exe/webui/editorpane.py:252
 msgid "Text Box"
@@ -4792,22 +4805,24 @@ msgid "Check iDevices you want to display:"
 msgstr "Marque los iDevices que desee hacer visibles:"
 
 #: exe/webui/ejercicioresueltofpdblock.py:110
-msgid "Ejercicio resuelto"
-msgstr ""
+msgid "Translation"
+msgstr "Ejercicio Resuelto"
 
 #: exe/webui/eleccionmultiplefpdblock.py:95 exe/webui/multichoiceblock.py:95
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
 msgstr "Por favor seleccione una respuesta correcta para cada pregunta."
 
+#: exe/webui/eleccionmultiplefpdblock.py:110
+#: exe/webui/seleccionmultiplefpdblock.py:90
+#: exe/webui/verdaderofalsofpdblock.py:109
+msgid "Now it's your turn"
+msgstr "Autoevaluación"
+
 #: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "Añadir otra pregunta"
-
-#: exe/webui/eleccionmultiplefpdblock.py:137 exe/webui/multichoiceblock.py:130
-msgid "IDevice Question Icon"
-msgstr "Icono de iDevice de pregunta"
 
 #: exe/webui/element.py:71
 #, python-format
@@ -4874,7 +4889,8 @@ msgid "Instant Marking?"
 msgstr "¿Calificación inmediata?"
 
 #: exe/webui/element.py:1151 exe/webui/element.py:1419
-#: exe/webui/listablock.py:288
+#: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:230
+#: exe/webui/quiztestblock.py:325 exe/webui/quiztestblock.py:381
 msgid "Your score is "
 msgstr "Su puntuación es "
 
@@ -4993,44 +5009,44 @@ msgstr "muy grande"
 msgid "Frame Height:"
 msgstr "Altura del marco:"
 
-#: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:284
-#: exe/webui/galleryblock.py:285
+#: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
+#: exe/webui/galleryblock.py:301
 msgid "Add images"
 msgstr "Añadir imágenes"
 
-#: exe/webui/galleryblock.py:207 exe/webui/galleryblock.py:309
+#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:325
 msgid "No Images Loaded"
 msgstr "No hay imágenes cargadas"
 
-#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:241
+#: exe/webui/galleryblock.py:239 exe/webui/galleryblock.py:257
 msgid "Change Image"
 msgstr "Cambiar imagen"
 
-#: exe/webui/galleryblock.py:248
+#: exe/webui/galleryblock.py:264
 msgid "Move Image Left"
 msgstr "Mover imagen hacia la izquierda"
 
-#: exe/webui/galleryblock.py:250
+#: exe/webui/galleryblock.py:266
 msgid "Go Back"
 msgstr "Atrás"
 
-#: exe/webui/galleryblock.py:262
+#: exe/webui/galleryblock.py:278
 msgid "Move Image Right"
 msgstr "Mover imagen a la derecha"
 
-#: exe/webui/galleryblock.py:264
+#: exe/webui/galleryblock.py:280
 msgid "Go Forward"
 msgstr "Adelante"
 
-#: exe/webui/galleryblock.py:272
+#: exe/webui/galleryblock.py:288
 msgid "Go Forward (Not Available)"
 msgstr "Adelante (No disponible)"
 
-#: exe/webui/galleryblock.py:277
+#: exe/webui/galleryblock.py:293
 msgid "Delete Image"
 msgstr "Eliminar la imagen"
 
-#: exe/webui/galleryblock.py:278
+#: exe/webui/galleryblock.py:294
 msgid "Delete this image?"
 msgstr "¿Borrar esta imagen?"
 
@@ -5076,16 +5092,16 @@ msgid "Add another Question"
 msgstr "Añadir otra pregunta"
 
 #: exe/webui/orientacionesalumnadofpdblock.py:64
-msgid "Orientaciones para el alumnado"
-msgstr ""
+msgid "Guidelines for Students"
+msgstr "Orientaciones para el alumnado"
 
 #: exe/webui/orientacionestutoriafpdblock.py:64
-msgid "Orientaciones para la tutoría"
-msgstr ""
+msgid "Guidelines for the Teacher"
+msgstr "Orientaciones para la tutoría"
 
 #: exe/webui/parasabermasfpdblock.py:64
-msgid "Para saber más"
-msgstr ""
+msgid "A Step Ahead"
+msgstr "Para saber más"
 
 #: exe/webui/preferencespage.py:143
 msgid "Select Language"
@@ -5107,7 +5123,8 @@ msgstr "Deshabilitar los enlaces internos"
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr "Enlaces Internos (únicamente para exportar a sitio web)"
 
-#: exe/webui/preferencespage.py:159 exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/preferencespage.py:159 exe/webui/selectbrowserpage.py:110
+#: exe/webui/xliffexportpreferencespage.py:136
 #: exe/webui/xliffimportpreferencespage.py:90
 msgid "OK"
 msgstr "OK"
@@ -5136,34 +5153,37 @@ msgstr "Seleccionar el coeficiente de aprobado: "
 msgid "SUBMIT ANSWERS"
 msgstr "ENVIAR RESPUESTAS"
 
-#: exe/webui/quiztestblock.py:373
+#: exe/webui/quiztestblock.py:378
 msgid "Submit Answer"
 msgstr "Enviar respuesta"
 
 #: exe/webui/recomendacionfpdblock.py:64
-msgid "Recomendación"
-msgstr ""
+msgid "A Piece of Advice"
+msgstr "Recomendación"
 
-#: exe/webui/reflectionblock.py:117 exe/webui/reflectionfpdblock.py:125
+#: exe/webui/reflectionblock.py:116 exe/webui/reflectionfpdblock.py:124
 msgid "Click here"
 msgstr "Pulse aquí"
 
-#: exe/webui/reflectionblock.py:121 exe/webui/reflectionfpdblock.py:129
+#: exe/webui/reflectionblock.py:120 exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Ocultar"
 
 #: exe/webui/reflectionfpdblock.py:86 exe/webui/reflectionfpdmodifblock.py:84
-msgid "Reflexiona"
-msgstr ""
+msgid "Think About It"
+msgstr "Reflexiona"
 
 #: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:154
 msgid "Load"
 msgstr "Cargar"
 
-#: exe/webui/seleccionmultiplefpdblock.py:90
-#: exe/webui/verdaderofalsofpdblock.py:109
-msgid "Autoevaluación"
-msgstr ""
+#: exe/webui/selectbrowserpage.py:59
+msgid "Default browser in your system"
+msgstr "Navegador predeterminado en su sistema"
+
+#: exe/webui/selectbrowserpage.py:104
+msgid "Browsers installed in your system"
+msgstr "Navegadores instalados en el sistema"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
 #: exe/webui/truefalseelement.py:275
@@ -5275,11 +5295,11 @@ msgstr "Sitio propio"
 msgid "This article is licensed under the "
 msgstr "Este artículo es colocado bajo la licencia "
 
-#: exe/webui/wikipediablock.py:238
+#: exe/webui/wikipediablock.py:237
 msgid "It uses material from the "
 msgstr "Usa material de "
 
-#: exe/webui/wikipediablock.py:250
+#: exe/webui/wikipediablock.py:248
 msgid "article "
 msgstr "artículo "
 

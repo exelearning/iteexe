@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Add JPEG Image": "JPEG resmi ekle", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
@@ -106,7 +106,6 @@ translations = {
  "Some emphasis": "Biraz vurgulu", 
  "Promote node up in hierarchy": "Se\u00e7imi hiyerar\u015fide \u00fcst basama\u011fa \u00e7\u0131kar", 
  "Select a file": "Bir dosya se\u00e7in", 
- "IDevice Question Icon": "IDevice Soru Simgesi", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "IDevice'\u0131n ilk y\u00fcklendi\u011fi anda \nkullanaca\u011f\u0131 yak\u0131nla\u015ft\u0131rma miktar\u0131n\u0131n, orijinal boyuta oran\u0131.", 
  "article ": "makale", 
  "Sorry, wrong file format.": "\u00dczg\u00fcn\u00fcm, yanl\u0131\u015f dosya format\u0131.", 
@@ -314,7 +313,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Ge\u00e7me y\u00fczdesini se\u00e7iniz:", 
  "Option": "Se\u00e7enek", 
- "IDevice Icon": "IDevice Simgesi", 
  "Text Box": "Yaz\u0131 Kutusu", 
  "Description:": "Tan\u0131m:", 
  "Question:": "Soru:", 
@@ -381,6 +379,5 @@ translations = {
  "No Thumbnail Available. Could not shrink original image.": "\u00d6nizleme Yok. Orijinal resim boyutland\u0131r\u0131lamad\u0131.", 
  "Select an image": "Bir resim se\u00e7in", 
  "Site": "Site", 
- "Package saved to: %s": "Paket \u015furaya kaydedildi: %s", 
- "iDevice icon": "iDevice simgesi"
+ "Package saved to: %s": "Paket \u015furaya kaydedildi: %s"
 };

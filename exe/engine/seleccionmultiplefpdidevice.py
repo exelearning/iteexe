@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
+FPD - Multi Select Activity
 A Multiple Select Idevice is one built up from Questions
 """
 
@@ -40,7 +41,7 @@ class SeleccionmultiplefpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Actividad de Seleccion Multiple"),
+                         x_(u"FPD - Multi Select Activity"),
                          x_(u"University of Auckland"),
                          x_(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  

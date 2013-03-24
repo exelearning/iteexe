@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
+FPD - True/False Activity
 A true false idevice is one built up from question and options
 """
 
@@ -141,7 +142,7 @@ class VerdaderofalsofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Actividad de Verdadero/Falso"),
+                         x_(u"FPD - True/False Activity"),
                          x_(u"University of Auckland"),
                          x_(u"""True/false questions present a statement where 
 the learner must decide if the statement is true. This type of question works 

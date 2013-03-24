@@ -5,6 +5,7 @@
 # José Ramón Jiménez Reyes
 # ===========================================================================
 """
+FPD - Highlighted
 Destacado bloque
 """
 
@@ -57,7 +58,7 @@ class DestacadofpdBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div class=\"iDevice\"><br/>\n"
-#        html += common.textInput("title"+self.id, "Destacado")
+#        html += common.textInput("title"+self.id, "Highlighted")
         html += self.activityElement.renderEdit()
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"

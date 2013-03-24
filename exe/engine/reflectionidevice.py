@@ -55,8 +55,8 @@ effective feedback tools."""), u"", u"reflection")
         self._activityInstruc = x_(u"""Enter a question for learners 
 to reflect upon.""")
         self._answerInstruc   = x_(u"""Describe how learners will assess how 
-they have done in the exercise. (Rubrics are useful devices for providing 
-reflective feedback.)""")
+they have done in the exercise (rubrics are useful devices for providing 
+reflective feedback).""")
         self.systemResources += ["common.js"]
         
         self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 

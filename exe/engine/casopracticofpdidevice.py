@@ -4,6 +4,7 @@
 # iDevice Caso práctico creado para la FPD por José Ramón Jiménez Reyes
 # ===========================================================================
 """
+FPD - Situation
 Caso practico mas iDevice
 """
 
@@ -26,15 +27,15 @@ class CasopracticofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Caso Practico"),
+                         x_(u"FPD - Situation"),
                          x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje."""), u"", u"casopracticofpd")
+                         x_(u"""Situation is an iDevice that provides the student with a story that will guide her along the learning process."""), u"", u"casopracticofpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_casopracticofpd"
-        self._activityInstruc = x_(u"""Introduce el texto que aparecer&aacute; en este iDevice""")
+        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Texto Caso pr&aacute;ctico:'), 
+        self.activityTextArea = TextAreaField(x_(u'Situation Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -132,7 +133,7 @@ class CasopracticofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Texto Caso pr&aacute;ctico:'), 
+        self.activityTextArea = TextAreaField(x_(u'Situation Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 # ===========================================================================

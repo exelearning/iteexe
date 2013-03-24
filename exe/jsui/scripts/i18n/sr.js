@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version:  exe_en\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2008-07-15 08:15+0200\nLast-Translator: vedran <vvucic@eunet.rs>\nLanguage-Team: serbiansr <en@li.org>\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version:  exe_en\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-07-15 08:15+0200\nLast-Translator: vedran <vvucic@eunet.rs>\nLanguage-Team: serbiansr <en@li.org>\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "<p>NAstavnici trebaju da imaju na umu dok koriste ovaj iUre\u0111aj: <\/p><ol><li> Razmislite o broju razli\u010ditih planiranih aktivnosti koji \u0107e biti vizualno signaliziranu va\u0161em sadr\u017eaju.  Izbegavajte da koristite previ\u0161e tipova ili kalsifikacija aktivnosti, jer to mo\u017ee da zbuni u\u010denika. Obi\u010dno su tri ili \u010detiri tipa vi\u0161e nego dovoljna za izvor informacija za u\u010denje.<\/li><li>Iz perspektive vizualnog oblikovanja, izbegavajte da dva iUre\u0111aja slede jedan drugi bez ikakvog teksta izme\u0111u njih.  AKo je to potrebno, bolje je da stavite dva pitanja ili doga\u0111aja u jedan iUre\u0111aj. <\/li><li>RAzmislite o aktivnosti gde opa\u017eena orist od u\u010destvovanja u aktivnosti ima ve\u0107u te\u017einu od vremena i napora potro\u0161enog za kompletiranje aktivnosti. <\/li><\/ol>", 
  "Title": "Naslov", 
  "Add JPEG Image": "Dodaj JPEG sliku", 
@@ -155,7 +155,6 @@ translations = {
  "Promote node up in hierarchy": "Promovi\u0161i ta\u010dku u hijerarhiji na vi\u0161e", 
  "Interlingua ": "Me\u0111ujezik", 
  "Select a file": "Odaberi datoteku", 
- "IDevice Question Icon": "Ikona Pitanja iUre\u0111aja", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Postavite po\u010detni nivo uve\u0107avanja \nprilikom u\u010ditavanja iUre\u0111aja, kao procenat originalne veli\u010dine slike", 
  "article ": "\u010dlanak", 
  "Sorry, wrong file format.": "\u017dao mi je, pogre\u0161an format datoteke", 
@@ -470,7 +469,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Odaberite procenat prolaznosti: ", 
  "Option": "Opcija", 
- "IDevice Icon": "Ikona iUre\u0111aja", 
  "Gallegan; Galician ": "Galeganski, Galicijski", 
  "Text Box": "Tekst kutija - polje", 
  "Sango; Sangro ": "Sango; Sangro ", 
@@ -577,6 +575,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>Aktivnost \u010ditanja, kao \u0161to ime \nsugeri\u0161e treba da zapita u\u010denika da izvede neki oblik aktivnosti.  Ova aktivnost \nmora biti u direktnom odnosu sa tekstom koji je u\u010denik bio zapitan da pro\u010dita. \nPovratna informacija na aktivnost kada je to potrebno, mo\u017ee da ponudi u\u010deniku \nrefleksivno vodstvo. <\/p>", 
  "Bengali; Bangla ": "Bengalski; Bangla", 
  "Pali ": "pali", 
- "Package saved to: %s": "Paket sa\u010duvan u : %s ", 
- "iDevice icon": "iUre\u0111aj ikona"
+ "Package saved to: %s": "Paket sa\u010duvan u : %s "
 };

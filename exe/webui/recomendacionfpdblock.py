@@ -61,7 +61,7 @@ class RecomendacionfpdBlock(Block):
         # JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Recomendación")
+		self.idevice.title = x_(u"A Piece of Advice")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

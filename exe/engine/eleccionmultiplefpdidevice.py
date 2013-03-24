@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
+FPD Multi Choice Activity
 A multichoice Idevice is one built up from question and options
 """
 
@@ -57,7 +58,7 @@ class EleccionmultiplefpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Actividad de Eleccion Multiple"),
+                         x_(u"FPD - Multi Choice Activity"),
                          x_(u"University of Auckland"),
                          x_(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  

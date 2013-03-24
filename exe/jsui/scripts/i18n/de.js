@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning Deutsch\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-11 17:19+0100\nPO-Revision-Date: 2009-01-31 06:24+1300\nLast-Translator: shannon <christoph@mussenbrock.de>\nLanguage-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXeLearning Deutsch\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2009-01-31 06:24+1300\nLast-Translator: shannon <christoph@mussenbrock.de>\nLanguage-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": "Trainer\/innen sollten folgende Hinweise beim Erstellen von iDevices beachten:<ol><li>Die verschiedenen Aktivit\u00e4ten werden durch eigene optische Strukturen auf der Seite gekennzeichnet. Zu viele verschiedene Aktivit\u00e4ten k\u00f6nnen bei den Teilnehmer\/innen zu Verwirrung f\u00fchren. Zumeist reichen drei oder vier verschiedene Arten von Aktivit\u00e4ten v\u00f6llig aus.<\/li><li>Vermeiden Sie mehrere iDevices direkt hintereinander ohne einen Informationstext dazwischen, der Orientierung gibt.<\/li><li>Achten Sie auf den Zeitaufwand zur Bearbeitung einer Aktivit\u00e4t. Er sollte in einem angemessenen Verh\u00e4ltnis zum Lerneffekt stehen.y\/li><\/ol>", 
  "Title": "Titel", 
  "Add JPEG Image": "JPEG-Bild hinzuf\u00fcgen", 
@@ -156,7 +156,6 @@ translations = {
  "Promote node up in hierarchy": "Um eine Ebene nach oben verschieben", 
  "Interlingua ": "Interlingua", 
  "Select a file": "Datei ausw\u00e4hlen", 
- "IDevice Question Icon": "IDevice Frageicon", 
  "Set the initial level of zoom \nwhen the IDevice loads, as a percentage of the original image size": "Legen Sie den anf\u00e4nglichen Vergr\u00f6\u00dferungsfaktor\nbeim Laden des iDevices fest (in Prozent\nder Original-Bildgr\u00f6\u00dfe)", 
  "article ": "Artikel ", 
  "Sorry, wrong file format.": "Sorry, falsches Dateiformat.", 
@@ -474,7 +473,6 @@ translations = {
  "MP3": "MP3", 
  "Select pass rate: ": "Wert f\u00fcr \"Bestanden\":", 
  "Option": "Antwort", 
- "IDevice Icon": "IDevice Icon", 
  "Gallegan; Galician ": "Galizisch", 
  "Text Box": "Textbox", 
  "Sango; Sangro ": "Sango; Sangro", 
@@ -581,6 +579,5 @@ translations = {
  "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>Diese Aktivit\u00e4t geh\u00f6rt direkt zu einem Text, den der\/die Teilnehmer\/innen\nlesen sollen. Der Feedbacktext kann noch einmal Anregungen zum Reflektieren \ngeben.<\/p>", 
  "Bengali; Bangla ": "Bengalisch", 
  "Pali ": "Pali", 
- "Package saved to: %s": "Paket zu %s gespeichert", 
- "iDevice icon": "iDevice Icon"
+ "Package saved to: %s": "Paket zu %s gespeichert"
 };
