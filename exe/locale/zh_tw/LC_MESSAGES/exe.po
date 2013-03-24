@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"POT-Creation-Date: 2013-03-24 21:59+0100\n"
 "PO-Revision-Date: 2008-01-23 16:53+1300\n"
 "Last-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -4279,9 +4279,8 @@ msgstr "顯示 答案"
 
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
-#, fuzzy
-msgid "Answsers"
-msgstr "顯示 答案"
+msgid "Answers"
+msgstr ""
 
 #: exe/webui/element.py:1389
 msgid "Show Score?"
@@ -4735,4 +4734,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+
+#~ msgid "Answsers"
+#~ msgstr "顯示 答案"
 

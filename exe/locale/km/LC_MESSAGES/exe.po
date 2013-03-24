@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"POT-Creation-Date: 2013-03-24 21:59+0100\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -4755,8 +4755,8 @@ msgstr "បង្ហាញ​ចម្លើយ"
 
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
-msgid "Answsers"
-msgstr "ចម្លើយ"
+msgid "Answers"
+msgstr ""
 
 #: exe/webui/element.py:1389
 msgid "Show Score?"
@@ -5204,4 +5204,7 @@ msgstr ""
 "ទាំង​ឯកសារ idevices/generic.data ឬ​កញ្ចប់​ដែល​អ្នក​កំពុង​ផ្ទុក "
 "គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ "
 "ហើយ​ព្យាយាម​ម្ដងទៀត ។"
+
+#~ msgid "Answsers"
+#~ msgstr "ចម្លើយ"
 

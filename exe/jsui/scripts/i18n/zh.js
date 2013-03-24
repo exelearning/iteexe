@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Add JPEG Image": "\u6dfb\u52a0JPEG\u56fe\u7247", 
@@ -507,7 +507,6 @@ translations = {
  "Allow auto completion when user filling the gaps.": "\u5f53\u5b66\u751f\u586b\u7a7a\u65f6, \u5141\u8bb8\u81ea\u52a8\u5b8c\u6210.", 
  "Image Gallery": "\u56fe\u8c61\u753b\u5eca", 
  "Close": "\u5173\u95ed", 
- "Answsers": "\u7b54\u6848", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "\u5728\u6b64\u8f93\u5165\u63d0\u793a, \u5982\u679c\u60a8\u4e0d\u60f3\u63d0\u4f9b\u63d0\u793a, \u5c31\u8ba9\u6b64\u680f\u7a7a\u767d.", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "\u8fd9\u4e2a iDevice\u53ea\u652f\u6301Flash Video\u6587\u6863(.FLV)\u683c\u5f0f, \u800c\u975e\u5176\u5b83\u89c6\u9891\u6587\u6863\u683c\u5f0f. ", 
  "Free Text": "\u81ea\u7531\u6587\u672c", 

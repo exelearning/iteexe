@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2013-02-07 12:36+0100\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2013-02-07 12:36+0100\nLast-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si marqueu esta opci\u00f3, el fitxer SCORM exportat es podr\u00e0 editar amb l'eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
@@ -805,7 +805,6 @@ translations = {
  "Image Gallery": "Galeria d'imatges", 
  "Creative Commons Attribution No Derivatives 3.0 License": "Llic\u00e8ncia Creative Commons 3.0 Reconeixement-Sense Obres Derivades", 
  "Close": "Tanca", 
- "Answsers": "Respostes", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Escriviu una pista ac\u00ed. Si no voleu donar \ncap pista, deixeu en blanc este camp.", 
  "Copy source also in target": "Copieu l'origen tamb\u00e9 en la destinaci\u00f3", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "Este iDevice sols admet v\u00eddeos en format Flash (.FLV), i no accepta\n altres formats de v\u00eddeo. No obstant aix\u00f2, podeu convertir altres formats de v\u00eddeo\n (p. ex. mov, wmf, etc.) al format .FLV utilitzant codificadors de v\u00eddeo de\n tercers (p. ex. en Linux: ffmpeg, winff). Estos codificadors no se subministren amb l'eXe.\n Els usuaris tamb\u00e9 han de baixar el reproductor de Flash 8 des d'http:\/\/www.macromedia.com\/ per a reproduir el v\u00eddeo.", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2013-03-07 21:05+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2013-03-07 21:05+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Con questa opzione, il file SCORM esportato sar\u00e0 modificabile con eXeLearning.", 
  "Web pages footer.": "Piede delle pagine web", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
@@ -805,7 +805,6 @@ translations = {
  "Image Gallery": "Galleria immagini", 
  "Creative Commons Attribution No Derivatives 3.0 License": "Licenza Creative Commons Attribution No Derivatives 3.0", 
  "Close": "Chiudere", 
- "Answsers": "Risposte", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Inserire un suggerimento. Se non\ndesiderate fornire un suggerimento, lasciare il campo vuoto.", 
  "Copy source also in target": "Copia la sorgente anche nella destinazione", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "Questo iDevice permette soltanto i formati dei file Flash Video (FLV) e non ne accetta altri.\nSi pu\u00f2 tuttavia convertire gli altri formati video (per esempio: mov, wmf, etc.) in formato Flash .FLV\nusando codificatori di terze parti. Questi codificatori non sono forniti con eXe. Agli\nutenti inoltre \u00e8 richiesto di effettuare il download di Flash Player 8 da http:\/\/www.macromedia.com\nper visualizzare i video.", 

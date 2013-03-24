@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2013-03-08 09:34+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2013-03-08 09:34+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Aukera hau markatzen baduzu, sortutako SCORM fitxategia eXeLearning-ekin editatu ahal izango duzu.", 
  "Web pages footer.": "Web orrien oina.", 
  "DropDown Activity": "Jarduera zabalgarria", 
@@ -805,7 +805,6 @@ translations = {
  "Image Gallery": "Irudien bilduma", 
  "Creative Commons Attribution No Derivatives 3.0 License": "Creative Commons Attribution-Derivatives 3.0 lizentzia", 
  "Close": "Itxi", 
- "Answsers": "Erantzunak", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Idatzi arrasto bat. Ez baduzu\narrastorik eman nahi, hutsik utzi.", 
  "Copy source also in target": "Jatorrizko testua xedean kopiatu", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "iDevice honek Flash Video File (.FLV) formatua onartzen du, eta\nez besterik. Dena den, beste bideo formatu batzuk\n(adib., mov, wmf) .FLV formatu bihur ditzakezu, hirugarrenen\nkodifikatzaileen bidez. Horiek ez datoz eXe-rekin batera. Bestalde,\nbideoak ikusteko 8 player deskargatu beharko dute erabiltzaileek,\nhemen: http:\/\/www.macromedia.com\/.", 

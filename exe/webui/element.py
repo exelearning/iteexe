@@ -1261,7 +1261,7 @@ class ClozeElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        html += "<p>%s: </p><p>"  % _(u"Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
@@ -1530,7 +1530,7 @@ class ClozelangElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        html += "<p>%s: </p><p>"  % _(u"Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:

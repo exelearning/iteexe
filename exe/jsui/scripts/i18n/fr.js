@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2013-03-08 10:00+0100\nLast-Translator: Caliban <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2013-03-08 10:00+0100\nLast-Translator: Caliban <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si vous activez cette option, le fichier SCORM export\u00e9 sera \u00e9ditable avec eXeLearning", 
  "Web pages footer.": "Pied de la page Web.", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
@@ -805,7 +805,6 @@ translations = {
  "Image Gallery": "Galerie d'images", 
  "Creative Commons Attribution No Derivatives 3.0 License": "Creative Commons Attribution-NoDerivs 3.0 License", 
  "Close": "Fermer", 
- "Answsers": "R\u00e9ponses", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "R\u00e9digez ici un indice. Si vous ne \n voulez pas donner d'indice, laissez ce champ en blanc.", 
  "Copy source also in target": "Copier \u00e9galement la source dans la cible", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "Cet outil n'autorise que le format Flash vid\u00e9o File (.flv) et n'accepte aucun autre format vid\u00e9o. Vous pouvez cependant convertir les autres formats (ex: mov, wmf,etc..) au format .flv \u00e0 l'aide d'outils de conversion. Ceux-ci ne sont pas int\u00e9gr\u00e9s dans eXe. Les utilisateurs doivent \u00e9galement disposer du lecteur Flash 8 (http:\/\/www.macromedia.com) sur le poste client pour lire la vid\u00e9o.", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2013-03-08 02:15+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: eXe Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2013-03-08 02:15+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: eXe Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Se marcar esta op\u00e7\u00e3o, o arquivo SCORM exportado ser\u00e1 edit\u00e1vel com eXeLearning.", 
  "Web pages footer.": "Rodap\u00e9 das p\u00e1ginas web", 
  "DropDown Activity": "Atividade drop-down", 
@@ -805,7 +805,6 @@ translations = {
  "Image Gallery": "Galeria de imagens", 
  "Creative Commons Attribution No Derivatives 3.0 License": "Licen\u00e7a Creative Commons Atribui\u00e7\u00e3o-SemDerivados 3.0", 
  "Close": "Fechar", 
- "Answsers": "Respostas", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Introduzir uma pista. Se n\u00e3o \nquiser fornecer pistas, deixe em branco este campo.", 
  "Copy source also in target": "Copiar tamb\u00e9m a fonte no destino", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "Este iDevice s\u00f3 suporta o formato de v\u00eddeo flash (.FLV) e n\u00e3o aceita \noutros formatos de v\u00eddeo. Pode converter outros formatos de v\u00eddeo \n(ex. mov, wmf, etc.) no formato .FLV usando codificadores de terceiros\nEstes n\u00e3o est\u00e3o inclu\u00eddos no eXe. Os utilizadores necessitam o reprodutor de Flash 8 \ndispon\u00edvel em http:\\www.macromedia.com\/ para ver o v\u00eddeo.", 

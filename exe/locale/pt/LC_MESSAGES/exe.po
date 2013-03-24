@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"POT-Creation-Date: 2013-03-24 21:59+0100\n"
 "PO-Revision-Date: 2013-03-08 02:15+0100\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.es>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -4873,8 +4873,8 @@ msgstr "Apresentar Respostas"
 
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
-msgid "Answsers"
-msgstr "Respostas"
+msgid "Answers"
+msgstr ""
 
 #: exe/webui/element.py:1389
 msgid "Show Score?"
@@ -5338,4 +5338,7 @@ msgstr ""
 "Ou o seu ficheiro idevices/generic.data ou o pacote que está a abrir "
 "foram criados com uma versão mais recente de eXe. Por favor, atualize eXe"
 " e tente de novo."
+
+#~ msgid "Answsers"
+#~ msgstr "Respostas"
 

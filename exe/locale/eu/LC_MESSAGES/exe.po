@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (1.04.1)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"POT-Creation-Date: 2013-03-24 21:59+0100\n"
 "PO-Revision-Date: 2013-03-08 09:34+0100\n"
 "Last-Translator: José Miguel Andonegi <jmandonegi@ulhi.net>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
@@ -4782,8 +4782,8 @@ msgstr "Erakutsi erantzunak"
 
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
-msgid "Answsers"
-msgstr "Erantzunak"
+msgid "Answers"
+msgstr ""
 
 #: exe/webui/element.py:1389
 msgid "Show Score?"
@@ -5244,4 +5244,7 @@ msgstr ""
 "Kargatzen ari zaren idevices/generic.data fitxategia edo paketea eXe-ren "
 "bertsio berriago batekin sortuta dago. Mesedez, eguneratu zure eXe-a eta "
 "berriz saiatu."
+
+#~ msgid "Answsers"
+#~ msgstr "Erantzunak"
 

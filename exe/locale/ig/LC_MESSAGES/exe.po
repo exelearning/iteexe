@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"POT-Creation-Date: 2013-03-24 21:59+0100\n"
 "PO-Revision-Date: 2006-09-22 10:21+1200\n"
 "Last-Translator: EXE Team <exe@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -4217,7 +4217,7 @@ msgstr ""
 
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
-msgid "Answsers"
+msgid "Answers"
 msgstr ""
 
 #: exe/webui/element.py:1389
@@ -4661,4 +4661,7 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+
+#~ msgid "Answsers"
+#~ msgstr ""
 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2013-03-07 20:03+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2013-03-07 20:03+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage-Team: catal\u00e0; valenci\u00e0 <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n!=1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si habiliteu aquesta opci\u00f3, el fitxer SCORM exportat ser\u00e0 editable amb eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat desplegable", 
@@ -805,7 +805,6 @@ translations = {
  "Image Gallery": "Galeria d'imatges", 
  "Creative Commons Attribution No Derivatives 3.0 License": "Llic\u00e8ncia Creative Commons 3.0 Reconeixement-Sense Obres Derivades.", 
  "Close": "Tanca", 
- "Answsers": "Respostes", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Escriviu una pista aqu\u00ed. Si no voleu  donar \n cap pista, deixeu en blanc aquest camp.", 
  "Copy source also in target": "Copieu la font tamb\u00e9 en destinaci\u00f3", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "Aquest iDevice sols suporta v\u00eddeos en format Flash (.FLV), i no suporta\n altres formats de v\u00eddeo. Podeu nogensmenys convertir aquests altres formats \n ( Ex: mov , wmf , etc.) al .FLV utilitzant codificadors de v\u00eddeo fets \n per qualsevol tercera part (Ex: en Linux: VLC, ffmpeg , winff ; en Windows: VLC). Aquests codificadors no s\u00f3n subministrats per eXe. \n Els usuaris tamb\u00e9 hauran de baixar-se Flash 8 des de http:\/\/www.macromedia.com\/ per executar el v\u00eddeo.", 

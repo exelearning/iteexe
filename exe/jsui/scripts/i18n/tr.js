@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 14:16+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Add JPEG Image": "JPEG resmi ekle", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
@@ -351,7 +351,6 @@ translations = {
  "Enter a title for the gallery": "Galeri i\u00e7in bir ba\u015fl\u0131k girin", 
  "Image Gallery": "Resim Galerisi", 
  "Close": "Kapat", 
- "Answsers": "Cevaplar", 
  "Enter a hint here. If you\ndo not want to provide a hint, leave this field blank.": "Buraya bir ipucu girin. E\u011fer\nipucu vermek istemiyorsan\u0131z bu alan\u0131 bo\u015f b\u0131rak\u0131n.", 
  "This iDevice only supports the Flash Video File (.FLV) format, and will not\naccept other video formats. You can however convert other movie formats\n(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\nare not supplied with eXe. Users will also need to download the Flash 8\nplayer from http:\/\/www.macromedia.com\/ to play the video.": "Bu iDevice sadece Flash Video Dosyas\u0131 (.FLV) format\u0131n\u0131 destekler ve di\u011fer\nvideo t\u00fcrlerini kabul etmez. Dilerseniz eXe taraf\u0131ndan desteklenmeyen di\u011fer\nformatlar\u0131 (\u00f6rn. mov, wmv gibi) harici ara\u00e7lar kullanarak .FLV dosyalar\u0131na\nd\u00f6n\u00fc\u015ft\u00fcrebilirsiniz. Ayr\u0131ca kullan\u0131c\u0131lar\u0131n bu videoyu oynatabilmek i\u00e7in Flash 8\noynat\u0131c\u0131s\u0131na sahip olmalar\u0131 gerekir. http:\/\/www.macromedia.com\/", 
  "Free Text": "Serbest Yaz\u0131", 

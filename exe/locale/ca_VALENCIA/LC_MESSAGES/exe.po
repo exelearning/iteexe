@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 14:16+0100\n"
+"POT-Creation-Date: 2013-03-24 21:59+0100\n"
 "PO-Revision-Date: 2013-02-07 12:36+0100\n"
 "Last-Translator: Angel Berlanas Vicente <angel.berlanas@gmail.com>\n"
 "Language-Team: LliureX\n"
@@ -4873,8 +4873,8 @@ msgstr "Mostra les respostes"
 
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
-msgid "Answsers"
-msgstr "Respostes"
+msgid "Answers"
+msgstr ""
 
 #: exe/webui/element.py:1389
 msgid "Show Score?"
@@ -5336,4 +5336,7 @@ msgstr ""
 "El fitxer d'iDevices/generic.data o el paquet que proveu de carregar s'ha"
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
+
+#~ msgid "Answsers"
+#~ msgstr "Respostes"
 
