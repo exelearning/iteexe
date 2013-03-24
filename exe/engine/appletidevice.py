@@ -60,7 +60,7 @@ class AppletIdevice(Idevice):
 
     def __init__(self, parentNode=None):
         """
-        Sets up the idevice title and instructions etc
+        Sets up the idevice title and instructions etc.
         """
         Idevice.__init__(self, 
                          x_(u"Java Applet"), 
@@ -277,7 +277,7 @@ you created in Geogebra.</p>""")
         only for DescartesApplet initially; three jobs:
         1 look for image and macros files in the URL indicated by the user,
         2 modify applet code for a correct exe detection of them after this,
-        3 download and store them into the exe project (absolutes urls are required).
+        3 download and store them into the exe project (absolute urls are required).
         Return the code modified.
         """
         from exe.engine.beautifulsoup import BeautifulSoup, BeautifulStoneSoup
@@ -521,7 +521,7 @@ you created in Geogebra.</p>""")
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeGeogebra("")
             self.message       = ""
-            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .ggb file and clic on Upload button after.""")
+            self._typeInstruc  = x_(u"""Click on the AddFiles button to select the .ggb file and then click on the Upload button.""")
         if self.type == "jclic":
             #from exe.application import application
             from exe import globals
@@ -531,7 +531,7 @@ you created in Geogebra.</p>""")
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeJClic("")
             self.message       = ""
-            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .jclic.zip file and clic on Upload button after.<p>The activity will be visible when the HTML file will be generated from eXe.""")
+            self._typeInstruc  = x_(u"""Click on the AddFiles button to select the .jclic.zip file and then click on the Upload button.<p>The activity will be visible when the HTML file will be generated from eXe.""")
         if self.type == "scratch":
             #from exe.application import application
             from exe import globals
@@ -541,7 +541,7 @@ you created in Geogebra.</p>""")
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeScratch("")
             self.message       = ""
-            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .sb or .scratch file and clic on Upload button after.""")
+            self._typeInstruc  = x_(u"""Click on the AddFiles button to select the .sb or .scratch file and then click on the Upload button.""")
         if self.type == "descartes":
             #from exe.application import application
             from exe import globals
@@ -552,9 +552,9 @@ you created in Geogebra.</p>""")
                 self.uploadFile(filename)
             self.appletCode = self.getAppletcodeDescartes("")
             self.message       = ""
-            self._typeInstruc  = x_(u"""Please write: scene number,URL (no spaces) that include it, eg: 3,http://example.com; clic on Upload button after.""")
+            self._typeInstruc  = x_(u"""Please enter: scene number,URL (no spaces) that include it, eg: 3,http://example.com; click on the Upload button afterwards.""")
         if self.type == "other":
-            self._typeInstruc  = x_(u"""Clic on AddFiles button for select the .html or .htm file and clic on Upload button after for getting its content.""")
+            self._typeInstruc  = x_(u"""Click on the AddFiles button to select the .html or .htm file and then click on the Upload button to get its content.""")
 
 
 
