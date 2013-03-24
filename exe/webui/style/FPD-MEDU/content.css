@@ -335,19 +335,23 @@ a.glosario span { padding: 0.5em 1em 0.8em 1em; }
 /*Evitamos que se monten los elementos flotantes en otro iDevice*/
 .iDevice{
     clear: both;
-    overflow: auto;
+    overflow-x: auto;
+	overflow-y: hidden;
 }
 
 .iDevice_inner{
-    overflow: auto;
+    overflow-x: auto;
+	overflow-y: hidden;
 }
 .iDevice emphasis0{
     clear: both;
-    overflow: auto;
+    overflow-x: auto;
+	overflow-y: hidden;
 }
 div.block{
     clear: both;
-    overflow: auto;
+    overflow-x: auto;
+	overflow-y: hidden;
 }
 .separador{clear:both;}
 
@@ -739,7 +743,7 @@ div.block{
 	background-color: #FBFCD7;
     color: #66521D;
     font-size: 2em;
-    margin: -29px 10px 0px 80px;
+    margin: -28px 10px 0px 80px;
     padding-left: 10px;
     border-radius: 0 1em 0 0;
     -moz-border-radius: 0 1em 0 0;
@@ -751,12 +755,12 @@ div.block{
 }
 
 .emphasis1 img.iDevice_icon[src="/style/FPD-MEDU/icon_gallery.gif"] {
-	background-image:url(/style/FPD-MEDU/icon_gallery.png);
+	/*background-image:url(/style/FPD-MEDU/icon_gallery.png);*/
 	background-color: #FBFCD7;
 	background-position: 15px 15px;
 	background-repeat: no-repeat;
 	margin: 0px 10px -12px 10px;
-	padding: 5px 10px 5px 10px;
+	padding: 5px 11px 5px 10px;
 	border-radius: 1em 0 0 0;
 	-moz-border-radius: 1em 0 0 0;
     -webkit-border-radius: 1em 0 0 0;
@@ -901,7 +905,7 @@ div.block{
     color: #236122;
     background-color: #E2F7D2;
 	font-size: 2em;
-    margin: -31px 10px 0px 80px;
+    margin: -30px 10px 0px 80px;
     padding-left: 10px;
     border-radius: 0 1em 0 0;
     -moz-border-radius: 0 1em 0 0;
@@ -918,7 +922,7 @@ div.block{
 	background-position: 15px 15px;
 	background-repeat: no-repeat;
 	margin: 0px 10px -12px 10px;
-	padding: 5px 10px 5px 10px;
+	padding: 4px 10px 5px 10px;
 	border-radius: 1em 0 0 0;
 	-moz-border-radius: 1em 0 0 0;
     -webkit-border-radius: 1em 0 0 0;
@@ -1195,7 +1199,7 @@ div.block{
     color: #592411;
     background-color: #F2E8B1;
 	font-size: 2em;
-    margin: -31px 10px 0px 80px;
+    margin: -30px 10px 0px 80px;
     padding-left: 10px;
     border-radius: 0 1em 0 0;
     -moz-border-radius: 0 1em 0 0;
@@ -1274,7 +1278,7 @@ div.block{
 }
 
 /* visualizar en exelearning*/
-.emphasis1 img.iDevice_icon[src="/style/FPD-MEDU/icon_reflection.gif"] + span.iDeviceTitle + script + div.iDevice_inner {
+.emphasis1 img.iDevice_icon[src="/style/FPD-MEDU/icon_reflection.gif"] + span.iDeviceTitle + div.iDevice_inner {
 	color: #660F0F;
 	background-color: #F0D3D3;
 	border-radius: 0 0 1em 1em;
