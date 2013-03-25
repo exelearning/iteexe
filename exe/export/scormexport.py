@@ -295,6 +295,7 @@ class Manifest(object):
     <file href="base.css"/>
     <file href="content.css"/>
     <file href="popup_bg.gif"/>
+    <file href="AC_RunActiveContent.js"/>
     <file href="SCORM_API_wrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         self.resStr += "\n"
@@ -538,7 +539,8 @@ class ScormExport(object):
                                       'libot_drag.js',
                                       'common.js'), outputDir)     
         if self.scormType != "commoncartridge" and self.scormType != "scorm2004":
-            self.scriptsDir.copylist(('SCORM_API_wrapper.js', 
+            self.scriptsDir.copylist(('AC_RunActiveContent.js',
+                                      'SCORM_API_wrapper.js', 
                                       'SCOFunctions.js', 
                                       'libot_drag.js',
                                       'common.js'), outputDir)
