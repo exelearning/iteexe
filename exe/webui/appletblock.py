@@ -93,7 +93,7 @@ class AppletBlock(Block):
                             self.idevice.uploadFile(filePath)
                             if self.idevice.uploadFile(filePath) == None:
                                 if self.idevice.appletCode == '':
-                                    self.idevice.message = _("eXe can not access any scene inside the indicated website. "
+                                    self.idevice.message = _("eXe cannot access any scene inside the indicated website. "
                                                             "Anyway you can access the desired scene in your regular browser, "
                                                             "click with right mouse button on it and in config > codigo is its "
                                                             "associated code. Copy and paste it directly into an Applet "
