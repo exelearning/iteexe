@@ -178,7 +178,7 @@ class Manifest(object):
             xmlStr += u'"> \n'
             xmlStr += u"<metadata> \n"
             xmlStr += u" <schema>ADL SCORM</schema> \n"
-            xmlStr += u" <schemaversion>2004 3rd Edition</schemaversion> \n"
+            xmlStr += u" <schemaversion>2004 4rd Edition</schemaversion> \n"
             xmlStr += u" <adlcp:location>imslrm.xml"
             xmlStr += u"</adlcp:location> \n"
             xmlStr += u"</metadata> \n"
@@ -277,7 +277,7 @@ class Manifest(object):
             self.dependencies["popup_bg.gif"] = True
         
         elif self.scormType == "scorm2004":
-            self.resStr += "adlcp:scormtype=\"sco\" "
+            self.resStr += "adlcp:scormType=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
             self.resStr += """\
     <file href="%s"/>
@@ -288,7 +288,7 @@ class Manifest(object):
     <file href="SCORM_API_wrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         else:
-            self.resStr += "adlcp:scormtype=\"sco\" "
+            self.resStr += "adlcp:scormType=\"sco\" "
             self.resStr += "href=\""+filename+"\"> \n"
             self.resStr += """\
     <file href="%s"/>
