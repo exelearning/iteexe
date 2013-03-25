@@ -37,7 +37,7 @@ from exe.export.singlepage         import SinglePage
 from exe.export.websiteexport      import WebsiteExport
 from exe.engine.persist            import encodeObject
 from exe.engine.persistxml         import encodeObjectToXML
-from exe                      	   import globals as G
+from exe                             import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -178,7 +178,7 @@ class Manifest(object):
             xmlStr += u'"> \n'
             xmlStr += u"<metadata> \n"
             xmlStr += u" <schema>ADL SCORM</schema> \n"
-            xmlStr += u" <schemaversion>2004 4rd Edition</schemaversion> \n"
+            xmlStr += u" <schemaversion>2004 3rd Edition</schemaversion> \n"
             xmlStr += u" <adlcp:location>imslrm.xml"
             xmlStr += u"</adlcp:location> \n"
             xmlStr += u"</metadata> \n"
@@ -248,11 +248,19 @@ class Manifest(object):
         resId    = "RES-"+unicode(self.idGenerator.generate())
         filename = page.name+".html"
             
-        
         self.itemStr += '<item identifier="'+itemId+'" '
         if self.scormType != "commoncartridge":
             self.itemStr += 'isvisible="true" '
-        self.itemStr += 'identifierref="'+resId+'">\n'
+
+        # The identifierref shall not be used on <item> elements that contain
+        # other <item> elements, and: 
+        # A leaf <item> shall contain an identifierref attribute, so:
+        if not page.node.children:
+            self.itemStr += 'identifierref="'+resId+'">\n'
+        else:
+            self.itemStr += ">\n"
+            
+        # going on:
         self.itemStr += "    <title>"
         self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
