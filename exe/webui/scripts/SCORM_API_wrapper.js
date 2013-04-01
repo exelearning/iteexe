@@ -34,6 +34,7 @@ pipwerks.SCORM = {			//Define the SCORM object
 		  	exitStatus: null },	//Create data child object
 	debug:      {}	                 	//Create debug child object
 };
+pipwerks.nav = {};			//For holding navigation functions (created for the new eXeLearning)
 
 /* --------------------------------------------------------------------------------
    pipwerks.SCORM.isAvailable
@@ -918,26 +919,30 @@ pipwerks.SCORM.SetExit = function(exit){
 /* --------------------------------------------------------------------------------
 // cmi.interactions: Defines information pertaining to an interaction for the purpose of measurement or assessment.
 /* --------------------------------------------------------------------------------
-   pipwerks.SCORM.SetInteractionValue
+   pipwerks.SCORM.GetInteractionValue
    Parameters:	key (string): must be provided following 1.2 notation. Translation to 2004 notation will be performed if required
-				value (string): must be provided following 1.2 notation. Translation to 2004 notation will be performed if required
    Returns:    String
 ----------------------------------------------------------------------------------- */
-pipwerks.SCORM.SetInteractionValue = function(key,value){
+pipwerks.SCORM.GetInteractionValue = function(key){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
-			case "1.2" : result = scorm.get("cmi.core.exit"); break;
-			case "2004": result = scorm.get("cmi.exit"); break;
+			case "1.2" : result = scorm.get(key); break;
+			case "2004": 
+				// Just replace 
+				key = key.replace("student","learner");
+				result = scorm.get(key); 
+				break;
 		}
 	}
 	else {
-		trace("pipwerks.SCORM.SetInteractionValue failed: API is null.");
+		trace("pipwerks.SCORM.GetInteractionValue failed: API is null.");
 	}
+	return String(result);
 };
 
 /* --------------------------------------------------------------------------------
@@ -967,7 +972,6 @@ pipwerks.SCORM.SetInteractionValue = function(key,value){
 	        trace("pipwerks.SCORM.SetInteractionValue failed: API is null.");
 	}
 };
-
 
 
 // cmi.launch_data: Provides data specific to a SCO that the SCO can use for initialization.
@@ -1175,7 +1179,7 @@ pipwerks.SCORM.GetScoreMin = function(){
    Parameters: min_score (real)
    Returns:    none
 ----------------------------------------------------------------------------------- */
-pipwerks.SCORM.SetScoreMax = function(min_score){
+pipwerks.SCORM.SetScoreMin = function(min_score){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
@@ -1183,8 +1187,8 @@ pipwerks.SCORM.SetScoreMax = function(min_score){
 		
 	if(API){
 		switch(scorm.version){
-			case "1.2" : result = scorm.set("cmi.core.score.min",max_score); break;
-			case "2004": result = scorm.set("cmi.score.min",max_score); break;
+			case "1.2" : result = scorm.set("cmi.core.score.min",min_score); break;
+			case "2004": result = scorm.set("cmi.score.min",min_score); break;
 		}
 	}
 	else {
@@ -1368,3 +1372,75 @@ pipwerks.SCORM.SetSuccessStatus = function(status){
 // cmi.cmi.total_time: Identifies the sum of all of the learner’s learner session times accumulated in the current learner attempt prior to the current learner session.
 
 
+// ------------------------------------------------------------------------- //
+// --- pipwerks.nav functions -------------------------------------------- //
+// ------------------------------------------------------------------------- //
+
+/* -------------------------------------------------------------------------
+   pipwerks.nav.goBack()
+   Moves to previous node.
+
+   Parameters: None  
+   Return:     None
+---------------------------------------------------------------------------- */
+
+pipwerks.nav.goBack = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+		coreSCOLocation;
+
+	if(API){
+		switch(scorm.version){
+			case "1.2" : 
+				// Non-standar code un eXeLearning. Only works in Moodle 1.9
+				scorm.set('nav.event','previous');
+				coreSCOLocation = scorm.get("cmi.core.lesson_location");
+				window.location = coreSCOLocation;
+				break;
+			case "2004": 
+				// Manifest must enable flow tipe navigation on every node
+				scorm.set('adl.nav.request','previous');
+				unloadPage();
+				break;
+		}
+	}
+	else {
+	        trace("pipwerks.nav.goBack failed: API is null.");
+	}
+};
+
+
+/* -------------------------------------------------------------------------
+   pipwerks.nav.goForward()
+   Moves to next node.
+
+   Parameters: None  
+   Return:     None
+---------------------------------------------------------------------------- */
+
+pipwerks.nav.goForward = function(){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+        coreSCOLocation;
+
+	if(API){
+		switch(scorm.version){
+			case "1.2" : 
+				// Non-standar code un eXeLearning. Only works in Moodle 1.9
+				scorm.set('nav.event','continue');
+				coreSCOLocation = scorm.get("cmi.core.lesson_location");
+				window.location = coreSCOLocation;
+				break;
+			case "2004": 
+				// Manifest must enable flow tipe navigation on every node
+				scorm.set('adl.nav.request','continue');
+				unloadPage();
+				break;
+		}
+	}
+	else {
+	        trace("pipwerks.nav.goForward failed: API is null.");
+	}
+};

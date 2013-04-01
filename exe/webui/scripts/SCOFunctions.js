@@ -201,7 +201,7 @@ function doQuit()
 *******************************************************************************/
 function unloadPage()
 {
-	console.trace('exitPageStatus'+exitPageStatus);
+	//console.trace('exitPageStatus'+exitPageStatus);
 
 	if (exitPageStatus != true)
 	{
@@ -270,13 +270,9 @@ function convertTotalSeconds(ts)
 }
 
 function goBack() {
-	scorm.set('nav.event','previous');
-	var coreSCOLocation = scorm.get("cmi.location");
-	window.location = coreSCOLocation;
+	pipwerks.nav.goBack();
 }
 
 function goForward() {
-	scorm.set('nav.event','continue');
-	var coreSCOLocation = scorm.get("cmi.location");
-	window.location = coreSCOLocation;
+	pipwerks.nav.goForward();
 }
