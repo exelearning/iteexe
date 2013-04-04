@@ -12,25 +12,6 @@ body{
 	background:#ffffff; /* Color de fondo del contenedor principal */
 }
 
-#navcontainer a{
-	color:#000000; /* Enlaces del menú */
-	border-color:#c6d644; /* Borde que separa a los enlaces  */
-}
-
-#navcontainer a:hover,#subnav div:first-child a:hover{
-	color:#4D4D4D; /* Enlaces al pasar sobre ellos */
-	background:#eee; /* Fondo de los enlaces al pasar sobre ellos */
-}
-
-#subnav a{
-	color:#555; /* Menú: enlaces de segundo nivel */
-}
-
-#navcontainer #active{
-	color:#c6d644; /* Enlace activo en el menú principal */
-	border-color:#c6d644;  /* Borde del enlace activo en el menú principal */
-}
-
 .noprt{
 	color:#fff; /* Color de texto del bloque Anterior/Siguiente: igual que el color de fondo de la página */
 	border-color:#999; /* Color de borde del bloque: borde superior */
@@ -98,20 +79,6 @@ body{
 
 body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:center}
 #content{font-size:.75em;width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
-
-#navcontainer {width: 200px;float: left;padding-right:20px}
-#navcontainer ul,#navcontainer li{margin:0;padding:0}
-#navcontainer a{display:block;padding:4px 0 4px 10px;border-width:0 0 1px 0;border-style:dotted}
-#navcontainer div:first-child,#navcontainer div:first-child a{font-weight:bold;font-variant:small-caps;letter-spacing:1px}
-#navcontainer div:first-child a:hover{text-decoration:underline;background:none}
-#subnav div:first-child,#subnav div:first-child a{font-weight:normal;font-variant:normal;letter-spacing:0}
-#navcontainer a:hover,#subnav div:first-child a:hover{text-decoration:none}
-#subnav{font-size:11px}
-/*#subnav a{color:#555}*/
-#navcontainer #active{font-weight:bold;padding:4px 0 4px 10px;border-style:dotted;border-width:0 0 1px 0}
-#subnav a,#subnav #active{padding:4px 0 4px 25px}
-
-
 
 /* #emptyHeader  (ver #header) */
 #siteNav{width:200px;float: left;padding-right:20px}
