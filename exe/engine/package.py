@@ -800,15 +800,18 @@ class Package(Persistable):
                 zombie.delete(pruningZombies=True) 
             else:
                 #JR: Eliminamos el recurso del idevice
-                for i in range(len(zombie._idevice.userResources)-1, -1, -1):
-                    if zombie._idevice.userResources[i].storageName == zombie.storageName:
-                        aux = zombie._idevice.userResources[i]
-                        zombie._idevice.userResources.remove(aux)
-                        aux.delete
+                if hasattr(zombie._idevice, 'userResources'):
+                    for i in range(len(zombie._idevice.userResources)-1, -1, -1):
+                        if hasattr(zombie._idevice.userResources[i], 'storageName'):
+                            if zombie._idevice.userResources[i].storageName == zombie.storageName:
+                                aux = zombie._idevice.userResources[i]
+                                zombie._idevice.userResources.remove(aux)
+                                aux.delete
                 #Eliminamos el recurso de los recursos del sistema
                 for resource in newPackage.resources.keys():
-                    if newPackage.resources[resource][0].storageName == zombie.storageName:
-                        del newPackage.resources[resource]
+                    if hasattr(newPackage.resources[resource][0], 'storageName'):
+                        if newPackage.resources[resource][0].storageName == zombie.storageName:
+                            del newPackage.resources[resource]
                 #JR: Esto ya no haria falta
                 #zombie.delete()
             del zombie
