@@ -815,6 +815,8 @@ class Package(Persistable):
                 #JR: Esto ya no haria falta
                 #zombie.delete()
             del zombie
+        #JR: Borramos recursos que no estan siendo utilizados
+        newPackage.cleanUpResources()
         G.application.afterUpgradeZombies2Delete = []
 
         newPackage.updateRecentDocuments(newPackage.filename)
