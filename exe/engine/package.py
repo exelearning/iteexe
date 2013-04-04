@@ -843,7 +843,12 @@ class Package(Persistable):
             return
 
         existingFiles = set([fn.basename() for fn in self.resourceDir.files()])
-        usedFiles = set([reses[0].storageName for reses in self.resources.values()])
+        #JR
+        usedFiles = set([])
+        for reses in self.resources.values():
+            if hasattr(reses[0], 'storageName'):
+                usedFiles.add(reses[0].storageName)
+        #usedFiles = set([reses[0].storageName for reses in self.resources.values()])
         for fn in existingFiles - usedFiles:
             (self.resourceDir/fn).remove()
 
