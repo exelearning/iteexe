@@ -303,7 +303,10 @@ class Manifest(object):
     <file href="SCORM_API_wrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         else:
-            self.resStr += "adlcp:scormType=\"sco\" "
+            if self.scormType == "scorm2004":
+                self.resStr += "adlcp:scormType=\"sco\" "
+            if self.scormType == "scorm1.2":
+                self.resStr += "adlcp:scormtype=\"sco\" "    
             self.resStr += "href=\""+filename+"\"> \n"
             self.resStr += """\
     <file href="%s"/>
