@@ -808,10 +808,10 @@ class Package(Persistable):
                                 zombie._idevice.userResources.remove(aux)
                                 aux.delete
                 #Eliminamos el recurso de los recursos del sistema
-                for resource in newPackage.resources.keys():
-                    if hasattr(newPackage.resources[resource][0], 'storageName'):
-                        if newPackage.resources[resource][0].storageName == zombie.storageName:
-                            del newPackage.resources[resource]
+                #for resource in newPackage.resources.keys():
+                #    if hasattr(newPackage.resources[resource][0], 'storageName'):
+                #        if newPackage.resources[resource][0].storageName == zombie.storageName:
+                #            del newPackage.resources[resource]
                 #JR: Esto ya no haria falta
                 #zombie.delete()
             del zombie
