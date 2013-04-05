@@ -250,7 +250,7 @@ class Manifest(object):
             
         self.itemStr += '<item identifier="'+itemId+'" '
         if self.scormType != "commoncartridge":
-            self.itemStr += 'isvisible="true" '
+            self.itemStr += 'isvisible="true"> '
 
         # If self.scormType == "scorm2004" the identifierref shall not 
         # be used on <item> elements that contain other <item> elements, 
