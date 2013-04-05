@@ -257,7 +257,7 @@ class Manifest(object):
         # so:
         if self.scormType == "scorm2004":
             if not page.node.children:
-                self.itemStr += 'identifierref="'+resId+'">\n'
+                self.itemStr += '<identifierref="'+resId+'">\n'
             else:
                 self.itemStr += ">\n"
         # for Agrega repository:
@@ -269,7 +269,7 @@ class Manifest(object):
         #
         # for SCORM1.2 this attribute is valid in any case -as Agrega-:
         if self.scormType == "scorm1.2":
-            self.itemStr += 'identifierref="'+resId+'">\n'    
+            self.itemStr += '<identifierref="'+resId+'">\n'    
                     
         # going on:
         self.itemStr += "    <title>"
