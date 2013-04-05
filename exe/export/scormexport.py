@@ -252,14 +252,21 @@ class Manifest(object):
         if self.scormType != "commoncartridge":
             self.itemStr += 'isvisible="true" '
 
-        # The identifierref shall not be used on <item> elements that contain
-        # other <item> elements, and: 
-        # A leaf <item> shall contain an identifierref attribute, so:
-        if not page.node.children:
-            self.itemStr += 'identifierref="'+resId+'">\n'
-        else:
-            self.itemStr += ">\n"
-            
+        # If self.scormType == "scorm2004" the identifierref shall not 
+        # be used on <item> elements that contain other <item> elements, 
+        # so:
+        if self.scormType == "scorm2004":
+            if not page.node.children:
+                self.itemStr += 'identifierref="'+resId+'">\n'
+            else:
+                self.itemStr += ">\n"
+        # except for Agrega repository:
+        # if user selects Agrega option at Properties / Export option, (look 
+        # at ExportPanel.js and propertiespage.py), ALL the items at 
+        # organizations must include identifierref attribute:
+        # so de code will be only:
+        # self.itemStr += 'identifierref="'+resId+'">\n'
+                    
         # going on:
         self.itemStr += "    <title>"
         self.itemStr += escape(page.node.titleShort)
@@ -296,7 +303,10 @@ class Manifest(object):
     <file href="SCORM_API_wrapper.js"/>
     <file href="SCOFunctions.js"/>""" % filename
         else:
-            self.resStr += "adlcp:scormType=\"sco\" "
+            if self.scormType == "scorm2004":
+                self.resStr += "adlcp:scormType=\"sco\" "
+            if self.scormType == "scorm1.2":
+                self.resStr += "adlcp:scormtype=\"sco\" "    
             self.resStr += "href=\""+filename+"\"> \n"
             self.resStr += """\
     <file href="%s"/>
