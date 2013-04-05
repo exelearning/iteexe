@@ -260,12 +260,16 @@ class Manifest(object):
                 self.itemStr += 'identifierref="'+resId+'">\n'
             else:
                 self.itemStr += ">\n"
-        # except for Agrega repository:
+        # for Agrega repository:
         # if user selects Agrega option at Properties / Export option, (look 
         # at ExportPanel.js and propertiespage.py), ALL the items at 
         # organizations must include identifierref attribute:
         # so de code will be only:
         # self.itemStr += 'identifierref="'+resId+'">\n'
+        #
+        # for SCORM1.2 this attribute is valid in any case -as Agrega-:
+        if self.scormType == "scorm1.2":
+            self.itemStr += 'identifierref="'+resId+'">\n'    
                     
         # going on:
         self.itemStr += "    <title>"
