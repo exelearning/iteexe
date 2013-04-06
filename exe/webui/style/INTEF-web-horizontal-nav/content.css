@@ -57,6 +57,7 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 #main h2.iDeviceTitle{display:inline;font-size:1.2em}
 .iDevice_icon{width:30px;height:auto;margin-right:5px}
 .iDevice_inner{padding: 10px 20px;border-width:1px 0 1px 0;border-style:dotted}
+.iDevice_content{overflow:hidden}
 #pageFooter{font-size:.9em}
 #pageFooter p{margin:3px 0}
 /* base.css */
