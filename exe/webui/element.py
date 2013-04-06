@@ -269,9 +269,9 @@ class TextAreaElement(ElementWithResources):
         Returns an XHTML string for viewing or previewing this element
         """
         if visible:
-            visible = 'style="display:block;position:relative"'
+            visible = 'iDevice_content'
         else:
-            visible = 'style="display:none"'
+            visible = 'iDevice_hidden_content'
         if content is None:
             if preview:
                 # render the resource content with resource paths: 
@@ -286,7 +286,7 @@ class TextAreaElement(ElementWithResources):
                     self.field.content_wo_resourcePaths = self.field.content
                 self.field.content = self.field.content_wo_resourcePaths
             content = self.field.content
-        return '<div id="ta%s" class="%s" %s>%s</div>' % (
+        return '<div id="ta%s" class="%s %s">%s</div>' % (
             self.id, class_, visible, content)
    
 
