@@ -250,14 +250,14 @@ class Manifest(object):
             
         self.itemStr += '<item identifier="'+itemId+'" '
         if self.scormType != "commoncartridge":
-            self.itemStr += 'isvisible="true"> '
+            self.itemStr += 'isvisible="true" '
 
         # If self.scormType == "scorm2004" the identifierref shall not 
         # be used on <item> elements that contain other <item> elements, 
         # so:
         if self.scormType == "scorm2004":
             if not page.node.children:
-                self.itemStr += '<identifierref="'+resId+'">\n'
+                self.itemStr += 'identifierref="'+resId+'">\n'
             else:
                 self.itemStr += ">\n"
         # for Agrega repository:
@@ -269,7 +269,7 @@ class Manifest(object):
         #
         # for SCORM1.2 this attribute is valid in any case -as Agrega-:
         if self.scormType == "scorm1.2":
-            self.itemStr += '<identifierref="'+resId+'">\n'    
+            self.itemStr += 'identifierref="'+resId+'">\n'    
                     
         # going on:
         self.itemStr += "    <title>"
