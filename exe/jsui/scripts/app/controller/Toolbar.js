@@ -80,6 +80,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_scorm2004': {
                 click: { fn: this.processExportEvent, exportType: "scorm2004" }
             },
+            '#file_export_agrega': {
+                click: { fn: this.processExportEvent, exportType: "agrega" }
+            },
             '#file_export_ims': {
                 click: { fn: this.processExportEvent, exportType: "ims" }
             },
@@ -118,9 +121,6 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#tools_preferences': {
                 click: this.toolsPreferences
-            },
-	    '#tools_browser': {
-                click: this.toolsBrowser
             },
             '#tools_refresh': {
                 click: this.toolsRefresh
@@ -310,18 +310,6 @@ Ext.define('eXe.controller.Toolbar', {
           html: '<iframe height="100%" width="100%" src="/preferences"></iframe>'
         });
         preferences.show();        
-	},
-    //JR: Lanzamos el selector de navegador
-    toolsBrowser: function() {
-        var selectbrowser = new Ext.Window ({
-          height: 170, 
-          width: 330, 
-          modal: true,
-          id: 'browserwin',
-          title: _("Select Browser"), 
-          html: '<iframe height="100%" width="100%" src="/selectbrowser"></iframe>'
-        });
-        selectbrowser.show();        
 	},
     
     // Launch the iDevice Editor Window
@@ -578,7 +566,7 @@ Ext.define('eXe.controller.Toolbar', {
                 fp.show();            
 	    } else {
             var title;
-	        if (exportType == "scorm1.2" || exportType == "scorm2004")
+	        if (exportType == "scorm1.2" || exportType == 'scorm2004'|| exportType == 'agrega')
 	            title = _("Export SCORM package as");
 	        else if (exportType == "ims")
 	            title = _("Export IMS package as");

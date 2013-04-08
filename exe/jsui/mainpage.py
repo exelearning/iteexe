@@ -680,7 +680,7 @@ class MainPage(RenderableLivePage):
         Called by js. 
         Exports the current package to one of the above formats
         'exportType' can be one of 'singlePage' 'webSite' 'zipFile' 
-                     'textFile' or 'scorm'
+                     'textFile' or 'scorm'            
         'filename' is a file for scorm pages, and a directory for websites
         """ 
         webDir     = Path(self.config.webDir)
@@ -716,7 +716,7 @@ class MainPage(RenderableLivePage):
             self.exportText(client, filename)
         elif exportType == 'scorm1.2':
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            # if (len(metadataType) == 0):
+            #if (len(metadataType) == 0):
             #    self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
             #else: 
             #    self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType)
@@ -728,6 +728,14 @@ class MainPage(RenderableLivePage):
             #else: 
             #    self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType)
             self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
+        elif exportType == "agrega":
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            #if (len(metadataType) == 0):
+            #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
+            #else: 
+            #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType)
+            self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
+        
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge", metadataType='DC')
@@ -1099,4 +1107,3 @@ class MainPage(RenderableLivePage):
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
-
