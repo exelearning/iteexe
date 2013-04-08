@@ -285,7 +285,8 @@ class Manifest(object):
                 
                 # create a leaf item with this resource one level beyond,
                 if control == itemId:
-                   self.itemStr += '        <item identifier="'+itemId+'" '
+                   itemIdleaf   = "ITEM-"+unicode(self.idGenerator.generate())
+                   self.itemStr += '        <item identifier="'+itemIdleaf+'" '
                    self.itemStr += 'identifierref="'+resId+'">\n'
                    self.itemStr += "            <title>"
                    self.itemStr += escape(page.node.titleShort)
