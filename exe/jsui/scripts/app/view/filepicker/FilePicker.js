@@ -39,8 +39,6 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	status: null,
 
 	file: {},
-	
-    files: [],
 
     initComponent: function() {
         var me = this,
@@ -67,6 +65,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     allowBlank: false
 	           }
             ];
+
+        me.files = [];
 
         switch (me.type) {
         	case eXe.view.filepicker.FilePicker.modeSave:

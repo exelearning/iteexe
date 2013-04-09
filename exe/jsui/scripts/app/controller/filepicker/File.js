@@ -189,28 +189,24 @@ Ext.define('eXe.controller.filepicker.File', {
                 var filelist = this.getFilesList();
 				if (place.rawValue) {
 	                record = store.findRecord("name", place.rawValue, 0, false, true, true);
-	                if (record)
+	                if (record) {
 		                if (record.get('type') == "directory") {
 		                    this.application.fireEvent( "dirchange" , record.get('realname') );
 		                }
 		                else {
-			                fp.status = eXe.view.filepicker.FilePicker.returnOk;
-							fp.files.push({ 'path': record.get('realname') });
-							fp.destroy();
-		                }
-				}
-				else {
-	                var selected = filelist.getSelectionModel().getSelection(), record;
-	                if (selected.length) {
-	                    fp.files = []
-	                    for (record in selected) {
-	                        if (selected[record].get('type') != "directory") {
-			                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
-			                    fp.files.push({ 'path': selected[record].get('realname') });
+			                var selected = filelist.getSelectionModel().getSelection(), record;
+			                if (selected.length) {
+			                    fp.files = []
+			                    for (record in selected) {
+			                        if (selected[record].get('type') != "directory") {
+					                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
+					                    fp.files.push({ 'path': selected[record].get('realname') });
+					                }
+			                    }
+			                    fp.destroy();
 			                }
-	                    }
-	                    fp.destroy();
-	                }
+                        }
+                    }
 				}
         }
         else {
