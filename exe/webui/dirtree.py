@@ -72,7 +72,7 @@ class DirTreePage(RenderableResource):
                 except:
                     pass
             elif request.args['sendWhat'][0] == 'both':
-                pathdir = Path(unquote(request.args['dir'][0]))
+                pathdir = Path(unquote(request.args['dir'][0].decode('utf-8')))
                 items = []
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():
@@ -103,7 +103,7 @@ class DirTreePage(RenderableResource):
             return json.dumps(l).encode('utf-8')
         elif "query" in request.args:
             query = request.args['query'][0]
-            pathdir = Path(unquote(request.args['dir'][0]))
+            pathdir = Path(unquote(request.args['dir'][0].decode('utf-8')))
             items = []
             if pathdir == '/' and sys.platform[:3] == "win":
                 for d in get_drives():
