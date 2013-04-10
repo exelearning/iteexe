@@ -51,20 +51,23 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 				{ xtype: 'button', text: _('Cancel'), itemId: 'filepicker_cancel' },
 				{ xtype: 'button', text: _('Open'), itemId: 'filepicker_open' }
 	    	],
-            filter = [
-	    		{ xtype: 'component', flex: 1 },
+            filter =
 	    		{
-	    			xtype: 'combo',
-	    			itemId: 'file_type_combo',
-	                width: 200,
-	    			queryMode: 'local',
-	            	store: ft,
-	            	displayField: 'typename',
+	                xtype: 'combo',
+	                itemId: 'file_type_combo',
+	                queryMode: 'local',
+	                store: ft,
+	                displayField: 'typename',
+                    fieldLabel: _('Type'),
+                    labelAlign: 'right',
 	            	valueField: 'regex',
+                    dock: 'bottom',
+                    ui: 'footer',
 	            	forceSelection: true,
-                    allowBlank: false
+                    allowBlank: false,
+                    padding: '0px 0px 10px 0px'
 	           }
-            ];
+            ;
 
         me.files = [];
 
@@ -85,7 +88,20 @@ Ext.define('eXe.view.filepicker.FilePicker', {
             layout:'border',
 			filetypes: ft,
 			dockedItems: [
-				{
+                {
+	                xtype: 'container',
+	                layout: 'hbox',
+	                dock: 'top',
+	                items: top_buttons,
+                    padding: '0px 0px 5px 0px'
+                },{
+	                xtype: 'container',
+	                layout: 'hbox',
+	                dock: 'bottom',
+	                ui: 'footer',
+	                items: buttons
+				},  filter
+                ,{
 	        		xtype: 'combo',
 	        		name: 'name',
                     hideTrigger:true,
@@ -97,31 +113,13 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     minChars: 1,
                     queryMode: 'remote',
                     queryDelay: 100,
-	        		fieldLabel: _('Place'),
-	        		dock: 'top',
+	                fieldLabel: _('Name'),
+                    labelAlign: 'right',
+	                dock: 'bottom',
+                    ui: 'footer',
 	        		itemId: 'file_place_field',
                     padding: '5px 0px 5px 0px'
-				},{
-	            	xtype: 'container',
-	                layout: 'hbox',
-	                dock: 'top',
-	                items: top_buttons,
-                    padding: '0px 0px 5px 0px'
-                },{
-	                xtype: 'container',
-	            	layout: 'hbox',
-	            	dock: 'bottom',
-	            	ui: 'footer',
-	            	items: buttons
-	            },{
-	            	xtype: 'container',
-	            	layout: 'hbox',
-	            	dock: 'bottom',
-	            	ui: 'footer',
-	            	items: filter,
-                    padding: '0px 0px 5px 0px'
-	            }
-	            
+                }
 			],
             fbar: [
 			],
