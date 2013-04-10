@@ -44,11 +44,13 @@ Ext.define('eXe.controller.filepicker.Directory', {
 			scope: this
 		});
 	},
-	loadDirectory: function(selection) {
+	loadDirectory: function(selection, clear) {
         var dirtree = this.getDirTree(),
             sep = '_RRR_', path;
 
-        this.getPlaceField().setValue("");
+        if (clear === true)
+            this.getPlaceField().setValue("");
+        this.getPlaceField().focus();
         if (selection[0] == "/")
 	        path = sep + '/' + selection.replace(/\//g, sep);
 	    else {
