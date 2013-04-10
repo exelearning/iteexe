@@ -762,7 +762,7 @@ Ext.define('eXe.controller.Toolbar', {
 	fileSaveAs: function(onDone) {
 		var f = Ext.create("eXe.view.filepicker.FilePicker", {
 			type: eXe.view.filepicker.FilePicker.modeSave,
-			title: _("Select a File"), 
+			title: _("Save file"),
 			modal: true,
 			scope: this,
 			callback: function(fp) {

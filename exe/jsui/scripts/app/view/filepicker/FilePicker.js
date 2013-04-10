@@ -84,6 +84,12 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                 top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
         }
+
+        top_buttons.unshift({
+            xtype: 'text',
+            text: _('Folders:'),
+            padding: '2px 15px 0px 0px'
+        });
         
         Ext.applyIf(me, {
         	width: 800,
@@ -131,21 +137,9 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 					xtype: "dirtree",
 					region: "west"			
 				},{
-						
-					region: "center",
-					xtype: "tabpanel",
-					itemId: "mainpanel",
-					enableTabScroll: true,
-					activeTab: 0,
-					layout: {
-			            type: 'border',
-			            padding: 5
-	       			},
-					items: [{
-						xtype: "filelist",
-                        multiSelect: me.type == eXe.view.filepicker.FilePicker.modeOpenMultiple? true : false,
-						region: "center"
-					}]
+					xtype: "filelist",
+                    multiSelect: me.type == eXe.view.filepicker.FilePicker.modeOpenMultiple? true : false,
+					region: "center"
 				}
 			],
 			listeners: {
