@@ -32,7 +32,6 @@ Ext.define('eXe.view.filepicker.DirectoryTree', {
 			selModel: { ignoreRightMouseSelection: false },
 			useArrows: true,
 			store: "filepicker.DirectoryTree",
-			title: _('Tree'), 
 			closable: false,
 			width: 230,
 			titlebar: true,

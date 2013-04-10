@@ -202,7 +202,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
-                                            text: _('SCORM 1.2'),
+                                            text: _('SCORM1.2'),
                                             accesskey: 's',
                                             itemId: 'file_export_scorm12'
                                         },
@@ -211,6 +211,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             text: _('SCORM2004'),
                                             accesskey: 'u',
                                             itemId: 'file_export_scorm2004'
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('Agrega'),
+                                            accesskey: 'g',
+                                            itemId: 'file_export_agrega'
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
@@ -315,12 +321,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'tools_preferences',
                                 accesskey: 'p',
                                 text: _('Preferences')
-                            },
-                            {
-                                xtype: 'accesskey_menuitem',
-                                itemId: 'tools_browser',
-                                accesskey: 's',
-                                text: _('Select Browser')
                             },
                             {
                                 xtype: 'menuseparator'

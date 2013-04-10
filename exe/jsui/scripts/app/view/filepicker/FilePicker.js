@@ -39,8 +39,6 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 	status: null,
 
 	file: {},
-	
-    files: [],
 
     initComponent: function() {
         var me = this,
@@ -53,20 +51,26 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 				{ xtype: 'button', text: _('Cancel'), itemId: 'filepicker_cancel' },
 				{ xtype: 'button', text: _('Open'), itemId: 'filepicker_open' }
 	    	],
-            filter = [
-	    		{ xtype: 'component', flex: 1 },
+            fieldlabel = _('Name'),
+            filter =
 	    		{
-	    			xtype: 'combo',
-	    			itemId: 'file_type_combo',
-	                width: 200,
-	    			queryMode: 'local',
-	            	store: ft,
-	            	displayField: 'typename',
+	                xtype: 'combo',
+	                itemId: 'file_type_combo',
+	                queryMode: 'local',
+	                store: ft,
+	                displayField: 'typename',
+                    fieldLabel: _('Type'),
+                    labelAlign: 'right',
 	            	valueField: 'regex',
+                    dock: 'bottom',
+                    ui: 'footer',
 	            	forceSelection: true,
-                    allowBlank: false
+                    allowBlank: false,
+                    padding: '0px 0px 10px 0px'
 	           }
-            ];
+            ;
+
+        me.files = [];
 
         switch (me.type) {
         	case eXe.view.filepicker.FilePicker.modeSave:
@@ -75,9 +79,17 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         		break;
         	case eXe.view.filepicker.FilePicker.modeGetFolder:
         		filter = [];
+                fieldlabel = _('Folder');
+                buttons[2] = { xtype: 'button', text: _('Select Folder'), itemId: 'filepicker_open' };
                 top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
         }
+
+        top_buttons.unshift({
+            xtype: 'text',
+            text: _('Folders:'),
+            padding: '2px 15px 0px 0px'
+        });
         
         Ext.applyIf(me, {
         	width: 800,
@@ -85,7 +97,20 @@ Ext.define('eXe.view.filepicker.FilePicker', {
             layout:'border',
 			filetypes: ft,
 			dockedItems: [
-				{
+                {
+	                xtype: 'container',
+	                layout: 'hbox',
+	                dock: 'top',
+	                items: top_buttons,
+                    padding: '0px 0px 5px 0px'
+                },{
+	                xtype: 'container',
+	                layout: 'hbox',
+	                dock: 'bottom',
+	                ui: 'footer',
+	                items: buttons
+				},  filter
+                ,{
 	        		xtype: 'combo',
 	        		name: 'name',
                     hideTrigger:true,
@@ -97,31 +122,13 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     minChars: 1,
                     queryMode: 'remote',
                     queryDelay: 100,
-	        		fieldLabel: _('Place'),
-	        		dock: 'top',
+	                fieldLabel: fieldlabel,
+                    labelAlign: 'right',
+	                dock: 'bottom',
+                    ui: 'footer',
 	        		itemId: 'file_place_field',
                     padding: '5px 0px 5px 0px'
-				},{
-	            	xtype: 'container',
-	                layout: 'hbox',
-	                dock: 'top',
-	                items: top_buttons,
-                    padding: '0px 0px 5px 0px'
-                },{
-	                xtype: 'container',
-	            	layout: 'hbox',
-	            	dock: 'bottom',
-	            	ui: 'footer',
-	            	items: buttons
-	            },{
-	            	xtype: 'container',
-	            	layout: 'hbox',
-	            	dock: 'bottom',
-	            	ui: 'footer',
-	            	items: filter,
-                    padding: '0px 0px 5px 0px'
-	            }
-	            
+                }
 			],
             fbar: [
 			],
@@ -130,21 +137,9 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 					xtype: "dirtree",
 					region: "west"			
 				},{
-						
-					region: "center",
-					xtype: "tabpanel",
-					itemId: "mainpanel",
-					enableTabScroll: true,
-					activeTab: 0,
-					layout: {
-			            type: 'border',
-			            padding: 5
-	       			},
-					items: [{
-						xtype: "filelist",
-                        multiSelect: me.type == eXe.view.filepicker.FilePicker.modeOpenMultiple? true : false,
-						region: "center"
-					}]
+					xtype: "filelist",
+                    multiSelect: me.type == eXe.view.filepicker.FilePicker.modeOpenMultiple? true : false,
+					region: "center"
 				}
 			],
 			listeners: {
