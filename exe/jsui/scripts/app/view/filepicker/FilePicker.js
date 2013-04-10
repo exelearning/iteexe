@@ -51,6 +51,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
 				{ xtype: 'button', text: _('Cancel'), itemId: 'filepicker_cancel' },
 				{ xtype: 'button', text: _('Open'), itemId: 'filepicker_open' }
 	    	],
+            fieldlabel = _('Name'),
             filter =
 	    		{
 	                xtype: 'combo',
@@ -78,6 +79,8 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         		break;
         	case eXe.view.filepicker.FilePicker.modeGetFolder:
         		filter = [];
+                fieldlabel = _('Folder');
+                buttons[2] = { xtype: 'button', text: _('Select Folder'), itemId: 'filepicker_open' };
                 top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
         }
@@ -113,7 +116,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                     minChars: 1,
                     queryMode: 'remote',
                     queryDelay: 100,
-	                fieldLabel: _('Name'),
+	                fieldLabel: fieldlabel,
                     labelAlign: 'right',
 	                dock: 'bottom',
                     ui: 'footer',
