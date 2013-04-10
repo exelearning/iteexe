@@ -386,6 +386,7 @@ class Package(Persistable):
     _author            = ''
     _description       = ''
     _backgroundImg     = ''
+    styledefault=u"INTEF"
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
 
@@ -410,8 +411,9 @@ class Package(Persistable):
 
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
-#        self.style         = u"default"
-        self.style         = u"INTEF"
+#        self.style         = u"default" 
+        #self.styledefault=u"INTEF"
+        self.style         = self.styledefault
         self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()
@@ -821,6 +823,13 @@ class Package(Persistable):
 
         newPackage.updateRecentDocuments(newPackage.filename)
         newPackage.isChanged = False
+        """
+        FM: en el futuro se utilizara la variable G.application.config.stylesDir , que guarda la ruta a la carpeta de estilos
+        nstyle=Path(G.application.config.stylesDir/newPackage.style)
+        """
+        nstyle=Path(G.application.config.webDir/'style'/newPackage.style)
+        if not nstyle.isdir():
+            newPackage.style=newPackage.styledefault        
         return newPackage
 
     def cleanUpResources(self):
