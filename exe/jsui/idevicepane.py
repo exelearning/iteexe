@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 from exe.webui.livepage import allSessionClients
+import locale
 """
 IdevicePane is responsible for creating the XHTML for iDevice links
 """
@@ -114,7 +115,8 @@ class IdevicePane(Renderable, Resource):
         prototypes = self.prototypes.values()
         def sortfunc(pt1, pt2):
             """Used to sort prototypes by title"""
-            return cmp(pt1.title, pt2.title)
+            return locale.strcoll(pt1.title, pt2.title)
+        locale.setlocale(locale.LC_ALL, "")
         prototypes.sort(sortfunc)
         for prototype in prototypes:
             if prototype._title.lower() not in G.application.config.hiddeniDevices \
