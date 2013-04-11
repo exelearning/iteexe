@@ -546,6 +546,13 @@ class Package(Persistable):
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
             raise AssertionError(u'No name passed when saving a new package')
+        #JR: Convertimos el nombre del paquete para evitar nombres problematicos
+        import string
+        validPackagenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
+        self.name = ''.join(c for c in self.name if c in validPackagenameChars).replace(' ','_')
+        #JR: Si por casualidad quedase vacio le damos un nombre por defecto
+        if self.name == "":
+            self.name = "invalidpackagename"
         # Store our new filename for next file|save, and save the package
         log.debug(u"Will save %s to: %s" % (self.name, filename))
         if tempFile:
@@ -699,7 +706,13 @@ class Package(Persistable):
                 # provide newPackage to doUpgrade's versionUpgrade() to
                 # correct old corrupt extracted packages by setting the
                 # any corrupt package references to the new package:
-
+                #JR: Convertimos el nombre del paquete para evitar nombres problematicos
+                import string
+                validPackagenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
+                newPackage._name = ''.join(c for c in newPackage._name if c in validPackagenameChars).replace(' ','_')
+                #JR: Si por casualidad quedase vacio le damos un nombre por defecto
+                if newPackage._name == "":
+                    newPackage._name = "invalidpackagename"
                 log.debug("load() about to doUpgrade newPackage \"" 
                         + newPackage._name + "\" " + repr(newPackage) )
                 if hasattr(newPackage, 'resourceDir'):
