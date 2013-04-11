@@ -72,6 +72,6 @@ Ext.define('eXe.controller.filepicker.Directory', {
         if (!selection[0].data.icon)
             this.application.fireEvent('dirchange', dir);
         else
-            this.application.fireEvent('error', _('No tiene permisos para mostrar la carpeta') + ' ' + dir);
+            this.application.fireEvent('error', _('You do not have the permissions to open folder') + ' ' + dir);
     }
 });

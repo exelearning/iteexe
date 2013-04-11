@@ -157,7 +157,7 @@ Ext.define('eXe.controller.filepicker.File', {
 
         if (mode == eXe.view.filepicker.FilePicker.modeGetFolder && !explore) {
             if (!writable) {
-                msg = _('No tiene permisos para escribir en la carpeta') + ' ' + record.get('realname');
+                msg = _('You do not have the permissions to write into folder') + ' ' + record.get('realname');
                 this.application.fireEvent('error', msg);
             }
             return writable;
@@ -165,9 +165,9 @@ Ext.define('eXe.controller.filepicker.File', {
         else {
 	        if (!readable) {
 		        if (dir)
-		            msg = _('No tiene permisos para mostrar la carpeta') + ' ' + record.get('realname');
+		            msg = _('You do not have the permissions to open folder') + ' ' + record.get('realname');
 		        else
-		            msg = _('No tiene permisos para acceder al fichero') + ' ' + record.get('realname');
+		            msg = _('You do not have the permissions to open the file') + ' ' + record.get('realname');
 		        this.application.fireEvent('error', msg);
 	        }
 	        return readable;
@@ -312,7 +312,7 @@ Ext.define('eXe.controller.filepicker.File', {
                 if (record.get('is_writable'))
 				    onReplaceOk( eXe.view.filepicker.FilePicker.returnOk );
                 else {
-                    msg = _('No tiene permisos para guardar en la carpeta') + ' ' + record.get('realname');
+                    msg = _('You do not have the permissions to  save into folder') + ' ' + record.get('realname');
                     this.application.fireEvent('error', msg);
                 }
             }
@@ -339,7 +339,7 @@ Ext.define('eXe.controller.filepicker.File', {
 			});
         }
         else {
-            msg = _('No tiene permisos para crear una carpeta en la carpeta') + ' ' + record.get('realname');
+            msg = _('You do not have the permissions to create a folder in folder') + ' ' + record.get('realname');
             this.application.fireEvent('error', msg);
         }
 	},
