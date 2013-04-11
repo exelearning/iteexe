@@ -79,6 +79,7 @@ Ext.define('eXe.controller.filepicker.File', {
 
 		this.application.on({
 			dirchange: this.onLoadFileList,
+            error: this.onError,
 			scope: this
 		});
 	},
@@ -120,6 +121,17 @@ Ext.define('eXe.controller.filepicker.File', {
 		Ext.state.Manager.set("filepicker-currentDir", directory);
 		fileStore.currentDir = directory;
 	},
+    onError: function ( msg ) {
+        new Ext.util.DelayedTask().delay(300, function() {
+	        Ext.Msg.show({
+		        msg: msg,
+		        icon: Ext.Msg.ERROR,
+		        buttons: Ext.Msg.OK,
+		        closable: true,
+		        modal: true
+		    });
+        });
+    },
     rowClickTask: new Ext.util.DelayedTask(this.onHandleRowClick2),
 	onHandleRowClick: function ( grid, record, el, rowIndex, e ) {
         this.rowClickTask.delay(200, this.onHandleRowClick2, this, [record]);
@@ -137,14 +149,42 @@ Ext.define('eXe.controller.filepicker.File', {
         this.getPlaceField().focus();
         
     },
+    validatePerms: function(mode, record, explore) {
+        var readable = record.get('is_readable'),
+            writable = record.get('is_writable'),
+            dir = record.get('type') == 'directory',
+            msg;
+
+        if (mode == eXe.view.filepicker.FilePicker.modeGetFolder && !explore) {
+            if (!writable) {
+                msg = _('No tiene permisos para escribir en la carpeta') + ' ' + record.get('realname');
+                this.application.fireEvent('error', msg);
+            }
+            return writable;
+        }
+        else {
+	        if (!readable) {
+		        if (dir)
+		            msg = _('No tiene permisos para mostrar la carpeta') + ' ' + record.get('realname');
+		        else
+		            msg = _('No tiene permisos para acceder al fichero') + ' ' + record.get('realname');
+		        this.application.fireEvent('error', msg);
+	        }
+	        return readable;
+        }
+    },
     onHandleRowDblClick: function( grid, record, el, rowIndex, e ) { 
 		var fp = this.getFilePicker();
         this.rowClickTask.cancel();
         if (fp.type == eXe.view.filepicker.FilePicker.modeGetFolder) {
+	        if (!this.validatePerms(fp.type, record, true))
+	            return;
             if( record.get('type') == "directory" )
                 this.application.fireEvent( "dirchange" , record.get('realname'), true );
         }
         else {
+            if (!this.validatePerms(fp.type, record))
+                return;
 			if( record.get('type') == "directory" )
 				this.application.fireEvent( "dirchange" , record.get('realname') );
 			else {
@@ -178,14 +218,16 @@ Ext.define('eXe.controller.filepicker.File', {
         if (fp.type == eXe.view.filepicker.FilePicker.modeGetFolder) {
             if (place.rawValue) {
                 record = store.findRecord("name", place.rawValue, 0, false, true, true);
-                if (record && record.get('type') == "directory") {
+                if (record && record.get('type') == "directory" && this.validatePerms(fp.type, record)) {
 	                this.application.fireEvent( "dirchange" , record.get('realname'), true );
                 }
             }
             else {
-                var filelist = this.getFilesList();
-                var selected = filelist.getSelectionModel().getSelection();
-                if (!selected.length || (selected.length && selected[0].get('type') != "directory")) {
+                var filelist = this.getFilesList(),
+                    selected = filelist.getSelectionModel().getSelection(),
+                    record = store.findRecord("name", ".", 0, false, true, true);
+                if ((!selected.length && this.validatePerms(fp.type, record)) ||
+                    (selected.length && selected[0].get('type') != "directory" && this.validatePerms(fp.type, selected[0]))) {
 	                fp.status = eXe.view.filepicker.FilePicker.returnOk;
 	                fp.file = { 'path': this.currentDir };
 	                fp.destroy();
@@ -198,7 +240,8 @@ Ext.define('eXe.controller.filepicker.File', {
 	                record = store.findRecord("name", place.rawValue, 0, false, true, true);
 	                if (record) {
 		                if (record.get('type') == "directory") {
-		                    this.application.fireEvent( "dirchange" , record.get('realname') );
+                            if (this.validatePerms(fp.type, record))
+                               this.application.fireEvent( "dirchange" , record.get('realname') );
 		                }
 		                else {
 			                var selected = filelist.getSelectionModel().getSelection(), record;
@@ -206,11 +249,16 @@ Ext.define('eXe.controller.filepicker.File', {
 			                    fp.files = []
 			                    for (record in selected) {
 			                        if (selected[record].get('type') != "directory") {
+                                        if (!this.validatePerms(fp.type, selected[record])) {
+                                            fp.status = eXe.view.filepicker.FilePicker.returnCancel;
+                                            break;
+                                        }
 					                    fp.status = eXe.view.filepicker.FilePicker.returnOk;
 					                    fp.files.push({ 'path': selected[record].get('realname') });
 					                }
 			                    }
-			                    fp.destroy();
+                                if (fp.files.length)
+                                    fp.destroy();
 			                }
                         }
                     }
@@ -219,9 +267,9 @@ Ext.define('eXe.controller.filepicker.File', {
         else {
 			if (place.rawValue) {
                 record = store.findRecord("name", place.rawValue, 0, false, true, true);
-                if (record)
+                if (record && this.validatePerms(fp.type, record))
 	                if (record.get('type') == "directory") {
-	                    this.application.fireEvent( "dirchange" , record.get('realname'), true );
+                        this.application.fireEvent( "dirchange" , record.get('realname'), true );
 	                }
 	                else {
 		                fp.status = eXe.view.filepicker.FilePicker.returnOk;
@@ -233,7 +281,8 @@ Ext.define('eXe.controller.filepicker.File', {
 				var filelist = this.getFilesList();
 				var	selected = filelist.getSelectionModel().getSelection();
 				if (selected.length && selected[0].get('type') == "directory")
-					this.application.fireEvent( "dirchange" , selected[0].get('realname') );
+                    if (this.validatePerms(fp.type, selected[0]))
+                        this.application.fireEvent( "dirchange" , selected[0].get('realname') );
 			}
         }
 	},
@@ -251,31 +300,48 @@ Ext.define('eXe.controller.filepicker.File', {
 		if (place.rawValue) {
             record = store.findRecord("name", place.rawValue, 0, false, true, true);
             if (record) {
-                if (record.get('type') != "directory")
-    				this.confirmReplace( onReplaceOk );
-                else
-                    this.application.fireEvent( "dirchange" , record.get('realname'), true );
+                if (this.validatePerms(fp.type, record)) {
+	                if (record.get('type') != "directory")
+                        this.confirmReplace( onReplaceOk );
+	                else
+	                    this.application.fireEvent( "dirchange" , record.get('realname'), true );
+                }
             }
-			else 
-				onReplaceOk( eXe.view.filepicker.FilePicker.returnOk );
+			else {
+                record = store.findRecord("name", ".", 0, false, true, true);
+                if (record.get('is_writable'))
+				    onReplaceOk( eXe.view.filepicker.FilePicker.returnOk );
+                else {
+                    msg = _('No tiene permisos para guardar en la carpeta') + ' ' + record.get('realname');
+                    this.application.fireEvent('error', msg);
+                }
+            }
 		}
 	},
 	onCreateDir: function() {
-		Ext.Msg.show({
-			prompt: true,
-			title: _('Create Directory'),
-			msg: _('Enter the new directory name:'),
-			buttons: Ext.Msg.OKCANCEL,
-			multiline: false,
-			scope: this,
-			fn: function(button, text) {
-				if (button == "ok")	{
-					if (text) {
-						nevow_clientToServerEvent('CreateDir', this, '', this.currentDir, text);
-					}
-		        }
-		    }
-		});
+        var store = this.getFilepickerFileStore(),
+            record = store.findRecord("name", ".", 0, false, true, true);
+        if (record.get('is_writable')) {
+			Ext.Msg.show({
+				prompt: true,
+				title: _('Create Folder'),
+				msg: _('Enter the new folder name:'),
+				buttons: Ext.Msg.OKCANCEL,
+				multiline: false,
+				scope: this,
+				fn: function(button, text) {
+					if (button == "ok")	{
+						if (text) {
+							nevow_clientToServerEvent('CreateDir', this, '', this.currentDir, text);
+						}
+			        }
+			    }
+			});
+        }
+        else {
+            msg = _('No tiene permisos para crear una carpeta en la carpeta') + ' ' + record.get('realname');
+            this.application.fireEvent('error', msg);
+        }
 	},
 	confirmReplace: function(onReplaceOk) {
 		Ext.Msg.show({
