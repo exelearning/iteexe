@@ -187,11 +187,10 @@ class WikipediaBlock(Block):
             html += u"</h2>\n"
             html += u"<div class=\"iDevice_inner\">\n"
         html += self.articleElement.renderPreview() 
-        html += u"<br/>\n"
         html += u"This article is licensed under the "
         html += u'<span style="text-decoration: underline;">'
         html += u"GNU Free Documentation License</span>. It uses material "
-        html += u'from the <span style="text-decoration: underline;">article '
+        html += u'from the article '
         html += u'"%s"</span>.<br/>\n' % self.idevice.articleName
         html += self.renderViewButtons()
         if self.idevice.emphasis != Idevice.NoEmphasis:
@@ -243,7 +242,7 @@ class WikipediaBlock(Block):
         if self.idevice.site == u"http://wikieducator.org/":
             lic += u"<a href=\""+self.idevice.site
         else:
-            lic += u"<a href=\""+self.idevice.site+u"wiki/"
+            lic += u"<a href=\""+self.idevice.site
         lic += self.idevice.articleName+u"\">"
         lic += _(u"article ") 
         lic += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
