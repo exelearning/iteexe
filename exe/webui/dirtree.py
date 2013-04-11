@@ -27,6 +27,7 @@ from exe import globals as G
 from urllib import unquote
 import json
 import mimetypes
+import os
 
 log = logging.getLogger(__name__)
 
@@ -61,16 +62,27 @@ class DirTreePage(RenderableResource):
             if request.args['sendWhat'][0] == 'dirs':
                 pathdir = Path(request.args['node'][0])
                 l = []
-                try:
-                    if pathdir == '/' and sys.platform[:3] == "win":
-                        for d in get_drives():
-                            l.append({"text": d, "id": d + '\\'})
-                    else:
-                        for d in pathdir.dirs():
+                if pathdir == '/' and sys.platform[:3] == "win":
+                    for d in get_drives():
+                        try:
+                            if Path(d).access(os.R_OK):
+                                icon = None
+                            else:
+                                icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
+                            l.append({"text": d, "id": d + '\\', "icon": icon})
+                        except:
+                            pass
+                else:
+                    for d in pathdir.dirs():
+                        try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
-                                l.append({"text": d.name, "id": d.abspath()})
-                except:
-                    pass
+                                if d.access(os.R_OK):
+                                    icon = None
+                                else:
+                                    icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
+                                l.append({"text": d.name, "id": d.abspath(), "icon": icon})
+                        except:
+                            pass
             elif request.args['sendWhat'][0] == 'both':
                 pathdir = Path(unquote(request.args['dir'][0].decode('utf-8')))
                 items = []
@@ -83,21 +95,31 @@ class DirTreePage(RenderableResource):
                         realname = '/'
                     else:
                         realname = parent.abspath()
-                    items.append({"name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime), "perms": parent.lstat().st_mode})
-                    try:
-                        for d in pathdir.listdir():
+                    items.append({"name": '.', "realname": pathdir.abspath(), "size": pathdir.size, "type": "directory", "modified": int(pathdir.mtime),
+                                  "is_readable": pathdir.access(os.R_OK),
+                                  "is_writable": pathdir.access(os.W_OK)})
+                    items.append({"name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime),
+                                  "is_readable": parent.access(os.R_OK),
+                                  "is_writable": parent.access(os.W_OK)})
+                    for d in pathdir.listdir():
+                        try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
                                 if d.isdir():
                                     pathtype = "directory"
                                 elif d.isfile():
-                                    pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                                    if d.access(os.R_OK):
+                                        pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                                    else:
+                                        pathtype = "file"
                                 elif d.islink():
                                     pathtype = "link"
                                 else:
                                     pathtype = "None"
-                                items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode})
-                    except:
-                        pass
+                                items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
+                                  "is_readable": d.access(os.R_OK),
+                                  "is_writable": d.access(os.W_OK)})
+                        except:
+                            pass
                     G.application.config.lastDir = pathdir
                 l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
@@ -115,16 +137,25 @@ class DirTreePage(RenderableResource):
                 else:
                     realname = parent.abspath()
                 for d in pathdir.listdir():
-                    if d.isdir():
-                        pathtype = "directory"
-                    elif d.isfile():
-                        pathtype = repr(mimetypes.guess_type(d.name, False)[0])
-                    elif d.islink():
-                        pathtype = "link"
-                    else:
-                        pathtype = "None"
-                    if d.name.startswith(query):
-                        items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime), "perms": d.lstat().st_mode})
+                    try:
+                        if d.isdir():
+                            pathtype = "directory"
+                        elif d.isfile():
+                            if d.access(os.R_OK):
+                                pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                            else:
+                                pathtype = "file"
+                        elif d.islink():
+                            pathtype = "link"
+                        else:
+                            pathtype = "None"
+                        if d.name.startswith(query):
+                            items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
+                                          "is_readable": d.access(os.R_OK),
+                                          "is_writable": d.access(os.W_OK)})
+                    except:
+                        pass
+
             l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         return ""

@@ -76,6 +76,11 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         	case eXe.view.filepicker.FilePicker.modeSave:
         		buttons[2] = { xtype: 'button', text: _('Save'), itemId: 'filepicker_save' };
                 top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
+		        top_buttons.unshift({
+		            xtype: 'text',
+		            text: _('Save in:'),
+		            padding: '2px 15px 0px 0px'
+		        });
         		break;
         	case eXe.view.filepicker.FilePicker.modeGetFolder:
         		filter = [];
@@ -84,12 +89,6 @@ Ext.define('eXe.view.filepicker.FilePicker', {
                 top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
         }
-
-        top_buttons.unshift({
-            xtype: 'text',
-            text: _('Folders:'),
-            padding: '2px 15px 0px 0px'
-        });
         
         Ext.applyIf(me, {
         	width: 800,

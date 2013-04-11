@@ -18,7 +18,10 @@
 //===========================================================================
 
 var ICON_MAP = {
-	"directory": "../jsui/extjs/resources/themes/images/gray/tree/folder.gif"
+	"directory": {
+        "true": "../jsui/extjs/resources/themes/images/gray/tree/folder.gif",
+        "false": "../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif"
+    }
 };
 var DEFAULT_ICON = "../jsui/extjs/resources/themes/images/gray/tree/leaf.gif";
 
@@ -48,9 +51,11 @@ Ext.define('eXe.view.filepicker.FileList', {
 			   sortable: true,
 	           renderer: function(value, p, record){
    			        var t = new Ext.Template("<img src=\"{0}\" alt=\"* \" align=\"absmiddle\" />&nbsp;<b>{1}</b>"),
+                        locked = record.get('is_readable'),
    			        	icon;
    			        
-   			        icon = ICON_MAP[record.get('type')];
+                    if (ICON_MAP[record.get('type')])
+                        icon = ICON_MAP[record.get('type')][locked];
 					if (!icon)
 						icon = DEFAULT_ICON;
 			        return t.apply([icon, value] );

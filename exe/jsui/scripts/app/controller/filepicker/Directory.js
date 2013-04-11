@@ -69,6 +69,9 @@ Ext.define('eXe.controller.filepicker.Directory', {
 	onDirSelect: function( selModel, selection ) {
         var dir = selection[0].data.id == "root"? "/": selection[0].data.id;
 
-		this.application.fireEvent('dirchange', dir);
+        if (!selection[0].data.icon)
+            this.application.fireEvent('dirchange', dir);
+        else
+            this.application.fireEvent('error', _('No tiene permisos para mostrar la carpeta') + ' ' + dir);
     }
 });
