@@ -65,7 +65,7 @@ class DirTreePage(RenderableResource):
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():
                         try:
-                            if d.access(os.R_OK):
+                            if Path(d).access(os.R_OK):
                                 icon = None
                             else:
                                 icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
