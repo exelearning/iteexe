@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:nevow="http://nevow.com/ns/nevow/0.1">
+<head>
+<script type="text/javascript">
+    if (document.documentMode && document.documentMode > 7) {
+        window.location="/quit"
+    }
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title nevow:render="title">eXe problem</title>
+<link rel="shortcut icon" href="images/eXe_icon.ico" type="image/x-icon" />
+<style type="text/css">
+html{height:100%}
+body{font:12px/1.5 Tahoma,Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;color:#555;background:#fff;text-align:center;height:100%}
+h1{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+p{margin:20px 0}
+#exe{width:720px;height:420px;margin:10px auto;position:absolute;margin:-230px 0 0 -360px;left:50%;top:50%}
+.a{background:url(../images/exe_logo.png) no-repeat 50% 0;padding-top:100px}
+</style>
+</head>
+<body>
+	<div id="exe">
+	  <div id="closed">
+        <h1 nevow:render="title">eXe problem</h1>
+        <p class="a" nevow:render="msg1cm">The Compatibility View of your browser (Internet Explorer) is turned on.</p>
+        <p nevow:render="msg2cm">Please click on the Compatibility View button to turn it off:</p>
+        <p><img src="../images/ie-compatibility-mode.png" width="152" height="30" alt="" /></p>
+        <p nevow:render="msg3cm">Then restart eXe.</p>
+	  </div>
+	</div>    
+</body>
+</html>
