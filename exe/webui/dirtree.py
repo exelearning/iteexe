@@ -87,8 +87,11 @@ class DirTreePage(RenderableResource):
                 pathdir = Path(unquote(request.args['dir'][0].decode('utf-8')))
                 items = []
                 if pathdir == '/' and sys.platform[:3] == "win":
-                    for d in get_drives():
-                        items.append({"name": d, "realname": d + '\\', "size": 0, "type": 'directory', "modified": 0})
+                    for drive in get_drives():
+                        d = Path(drive + '\\')
+                        items.append({"name": drive, "realname": drive + '\\', "size": 0, "type": 'directory', "modified": 0,
+                                      "is_readable": d.access(os.R_OK),
+                                      "is_writable": d.access(os.W_OK)})
                 else:
                     parent = pathdir.parent
                     if (parent == pathdir):
