@@ -45,6 +45,7 @@ from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.selectbrowserpage   import SelectBrowserPage
 from exe.webui.aboutpage           import AboutPage 
 from exe.webui.quitpage            import QuitPage
+from exe.webui.iecmwarning         import IECMWarningPage
 from exe.webui.renderable          import File
 from exe.webui.xliffexportpreferencespage import XliffExportPreferencesPage
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
@@ -77,6 +78,7 @@ class WebServer:
         self.dirtree     = DirTreePage(self.root)
         self.about       = AboutPage(self.root)
         self.quit        = QuitPage(self.root)
+        self.iecmwaring  = IECMWarningPage(self.root)
         self.monitoring  = False
 
 
