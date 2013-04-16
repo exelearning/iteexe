@@ -193,7 +193,7 @@ class Manifest(object):
             template = open(templateFilename, 'rb').read()
             xmlStr += self.createMetaData(template)
 
-        # Organization
+        # ORGANIZATION
 
         if self.scormType == "commoncartridge":
             xmlStr += u'''<organizations>
@@ -213,36 +213,52 @@ class Manifest(object):
         if self.scormType == "commoncartridge":
             # FIXME flatten hierarchy
             for page in self.pages:
-                self.genItemResStr(page)
-                self.itemStr += "    </item>\n"
+                self.genItemResStr(page)    
+                self.itemStr += "   </item>\n"
         else:
+            # initial depth: 
             depth = 0
-            for page in self.pages:
-
-                while depth > page.depth:
-                    self.itemStr += "    </item>\n"
-                    depth -= 1                             
-                self.genItemResStr(page)         
-
-                if self.scormType == "scorm2004":
-                    if not page.node.children:
+            depthold = 0
+            for page in self.pages:        
+                if self.scormType == "agrega" or self.scormType == "scorm1.2":
+                    while depth > page.depth:
                         self.itemStr += "    </item>\n"
-                        self.itemStr += u"    <imsss:sequencing>\n"
-                        self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                        self.itemStr += u"    </imsss:sequencing>\n"
-                depth = page.depth                     
-            while depth > 1:               
-                self.itemStr += "        </item>\n"                        
-                if self.scormType == "scorm2004":
-                    if not page.node.children:
-                        self.itemStr += u"    <imsss:sequencing>\n"
-                        self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                        self.itemStr += u"    </imsss:sequencing>\n"             
-                depth -= 1
-
+                        depth -= 1                             
+                    self.genItemResStr(page)
+                else:      
+                    # we will compare depth with the actual page.depth...
+                    # we look for decreasing depths -it means we are ending a branch: 
+                    if self.scormType == "scorm2004" and depthold - 1 == page.depth:                    
+                        if page.node.children:
+                            self.itemStr += u"    <imsss:sequencing>\n"
+                            self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
+                            self.itemStr += u"    </imsss:sequencing>\n"    
+                            self.itemStr += "   </item>\n"                                  
+                    # go on with the items:
+                    self.genItemResStr(page)
+                    # do not forget update depth before going on with the list:                                 
+                depthold = page.depth
+                depth = page.depth    
+            
+            if self.scormType != "scorm2004":
+                while depth > 1:               
+                    self.itemStr += "        </item>\n"                                 
+                    depth -= 1
+            
+            
+            
+            # finally the last page (leaf) must also include sequencing:
+            if self.scormType == "scorm2004" and not page.node.children:
+                self.itemStr += u"    <imsss:sequencing>\n"
+                self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
+                self.itemStr += u"    </imsss:sequencing>\n"    
+                self.itemStr += "   </item>\n"
+            # that's all for itemStr
+                    
         xmlStr += self.itemStr
         if self.scormType == "commoncartridge":
-            xmlStr += "    </item>\n"
+            xmlStr += "    </item>\n"      
+        
         xmlStr += "  </organization>\n"
         xmlStr += "</organizations>\n"
         xmlStr += "<resources>\n"
@@ -277,9 +293,11 @@ class Manifest(object):
                 self.itemStr += "            <title>"
                 self.itemStr += escape(page.node.titleShort)
                 self.itemStr += "</title>\n"
+                self.itemStr += "        </item>\n"
             else:
                 self.itemStr += ">\n"
                 self.itemStr += "            <title>"
+                # an innocent title by the moment:
                 self.itemStr += "->"
                 self.itemStr += "</title>\n"     
                 
@@ -291,10 +309,9 @@ class Manifest(object):
                    self.itemStr += "            <title>"
                    self.itemStr += escape(page.node.titleShort)
                    self.itemStr += "</title>\n"
-                   control = 0
-                       
-                self.itemStr += "        </item>\n"
-                
+                   self.itemStr += "        </item>\n" 
+                   control = 0                  
+        
         # if user selects Agrega export, ALL the items at organizations 
         # must include identifierref attribute (like SCORM1.2):
         if self.scormType == "scorm1.2" or self.scormType == "agrega":
