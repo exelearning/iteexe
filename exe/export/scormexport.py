@@ -243,16 +243,15 @@ class Manifest(object):
             if self.scormType != "scorm2004":
                 while depth > 1:               
                     self.itemStr += "        </item>\n"                                 
-                    depth -= 1
+                    depth -= 1   
             
-            
-            
-            # finally the last page (leaf) must also include sequencing:
+            # finally the last page (leaf) must also include sequencing:  
             if self.scormType == "scorm2004" and not page.node.children:
-                self.itemStr += u"    <imsss:sequencing>\n"
-                self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
-                self.itemStr += u"    </imsss:sequencing>\n"    
-                self.itemStr += "   </item>\n"
+                for x in range(1,page.depth):
+                    self.itemStr += u"    <imsss:sequencing>\n"
+                    self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
+                    self.itemStr += u"    </imsss:sequencing>\n"    
+                    self.itemStr += "   </item>\n"    
             # that's all for itemStr
                     
         xmlStr += self.itemStr
