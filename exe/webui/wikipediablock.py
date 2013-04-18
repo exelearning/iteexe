@@ -112,12 +112,13 @@ class WikipediaBlock(Block):
         html += common.textInput("title" + self.id, self.idevice.title) + "<br/><br/>"
 
         sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/wiki/"),
-                 (_(u"Euskara Wikipedia Article"), "http://eu.wikipedia.org/wiki/"),
+                 (_(u"Basque Wikipedia Article"), "http://eu.wikipedia.org/wiki/"),
                  (_(u"Catalan Wikipedia Article"), "http://ca.wikipedia.org/wiki/"),
                  (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/wiki/"),
                  (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/wiki/"),
                  (_(u"French Wikipedia Article"),  "http://fr.wikipedia.org/wiki/"),
                  (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/wiki/"),
+                 (_(u"Galician Wikipedia Article"),  "http://gl.wikipedia.org/wiki/"),    
                  (_(u"Greek Wikipedia Article"), "http://el.wikipedia.org/wiki/"),
                  (_(u"Italian Wikipedia Article"), "http://it.wikipedia.org/wiki/"),
                  (_(u"Japanese Wikipedia Article"),"http://ja.wikipedia.org/wiki/"),
