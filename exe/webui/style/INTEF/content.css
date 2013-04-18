@@ -3,6 +3,7 @@
 /* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
 /* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
 /* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
+/* Los iconos de los iDevices también se controlan mediante CSS (ver iDevice icons) */ 
 
 /* Colores */
 body{
@@ -55,7 +56,24 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 .iDevice{margin:10px 0 20px 0}
 .iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
 #main h2.iDeviceTitle{display:inline;font-size:1.2em}
-.iDevice_icon{width:30px;height:auto;margin-right:5px}
+
+/* iDevice icons */
+.iDevice_icon{width:30px;height:auto;margin-right:5px} /* Legacy: old iDevices */
+.iDevice_header{background-image:url(icon_generic.gif);padding:5px 0 5px 37px;margin-bottom:5px}
+.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
+.readingIdevice .iDevice_header{background-image:url(icon_reading.gif);padding-left:41px}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif);padding-left:39px}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+
 .iDevice_inner{padding: 10px 20px;border-width:1px 0 1px 0;border-style:dotted}
 .iDevice_content{overflow:auto}
 #pageFooter{font-size:.9em}
