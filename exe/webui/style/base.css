@@ -32,6 +32,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* Include these styles in the old themes */
 .pre-code{background:#112C4A;color:#E7ECF1;font-family:Monaco,Courier,monospace;border-radius:9px;font-size:12px;margin:2em 1em;overflow:auto;padding:20px}
 .iDevice_content{position:relative}
+.iDevice_header{background-position:0 50%;background-repeat:no-repeat}
 .iDevice_hidden_content{display:none}
 /* To review */
 .question .answer p{margin:0}
