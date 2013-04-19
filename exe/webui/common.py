@@ -59,21 +59,19 @@ def ideviceHeader(e, style, mode):
     iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
     if mode=="view":
         iconPath = 'icon_'+e.idevice.icon+'.gif'
-    h = '<div class="iDevice_header"'
-    if e.idevice.icon:
-        # Old themes HTML (themes with no xml file)
-        o = u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
-        if e.idevice.emphasis > 0:
-            o += u"<h2 class=\"iDeviceTitle\">"
-            o += e.idevice.title
-            o += u"</h2>\n" 
-        if (e.idevice.icon+"Idevice") != e.idevice.klass:
-            myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
-            if myIcon.exists():
-                h += ' style="background-image:url('+iconPath+')"'        
-    h += '>'
-    h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
-    h += '</div>\n'
+    if e.idevice.emphasis > 0:
+        o = ''
+        h = '<div class="iDevice_header"'
+        if e.idevice.icon:
+            if (e.idevice.icon+"Idevice") != e.idevice.klass:
+                myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
+                if myIcon.exists():
+                    o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
+                    h += ' style="background-image:url('+iconPath+')"'
+        o += u"<h2 class=\"iDeviceTitle\">"+e.idevice.title+"</h2>"
+        h += '>'
+        h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
+        h += '</div>\n'
     if themeHasXML:
         return h
     else:
