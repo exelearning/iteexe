@@ -289,16 +289,9 @@ class Block(Renderable):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        html = '<div class="'+self.idevice.klass+'">'
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            html += common.ideviceHeader(self, style, "preview")
+        html = common.ideviceHeader(self, style, "preview", False) # False = do not include iDevice_inner div
         html += self.renderViewContent()
-        html += self.renderViewButtons()
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "preview", False)
         return html
 
     
@@ -307,12 +300,9 @@ class Block(Renderable):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            html += common.ideviceHeader(self, style, "view")
+        html = common.ideviceHeader(self, style, "view", False) # False = do not include iDevice_inner div
         html += self.renderViewContent()
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view", False)
         return html
 
 

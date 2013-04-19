@@ -118,22 +118,14 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = '<div class="'+self.idevice.klass+'">'
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += common.ideviceHeader(self, style, "preview")
-        html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
         html += self.instructionElement.renderPreview()
         
         for element in self.questionElements:
             html += element.renderQuestionPreview()
             html += element.renderFeedbackPreview()
             
-        html += "</div>\n"    
-        html += self.renderViewButtons()
-        html += "</div>\n"
-        html += "</div>\n"
+        html += common.ideviceFooter(self, style, "preview", True)
 
         return html
 
@@ -143,10 +135,7 @@ class TrueFalseBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html = u'<script type="text/javascript" src="libot_drag.js"></script>'
-        html += u"\n<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += common.ideviceHeader(self, style, "view")
-        html += u"<div class=\"iDevice_inner\">\n"
+        html += common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
         html += self.instructionElement.renderView()
         
         for element in self.questionElements:
@@ -155,8 +144,7 @@ class TrueFalseBlock(Block):
             html += element.renderFeedbackView()
             html += "</div>\n"
             
-        html += u"</div>\n"    
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view", True)
 
         return html
     

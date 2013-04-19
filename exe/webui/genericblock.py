@@ -76,19 +76,10 @@ class GenericBlock(Block):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        html = '<div class="'+self.idevice.klass+'">'
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
-        if self.idevice.emphasis > 0:
-            html += common.ideviceHeader(self, style, "preview")
-	    html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
         for element in self.elements:
             html += element.renderPreview()
-        html += u"</div>\n"
-        html += self.renderViewButtons()
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "preview", True)
         return html
 
     
@@ -97,15 +88,11 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        if self.idevice.emphasis > 0:
-            html += common.ideviceHeader(self, style, "view")
+        html = common.ideviceHeader(self, style, "view", True)
         html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderView()
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view", True)
         return html
 
 from exe.engine.genericidevice import GenericIdevice

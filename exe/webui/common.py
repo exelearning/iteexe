@@ -50,7 +50,7 @@ def docType():
             u'Transitional//EN" '
             u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
             
-def ideviceHeader(e, style, mode):
+def ideviceHeader(e, style, mode, includeIdeviceInner):
     themePath = Path(G.application.config.webDir).joinpath("style", style)
     themeXMLFile = themePath.joinpath("config.xml")
     themeHasXML = False
@@ -59,23 +59,60 @@ def ideviceHeader(e, style, mode):
     iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
     if mode=="view":
         iconPath = 'icon_'+e.idevice.icon+'.gif'
+    
+    w = '' # Common wrapper
+    o = '' # Old HTML (themes with no config.xml file)
+    h = '' # New HTML
+    w2 = ''
+    if includeIdeviceInner:
+        w2 = '<div class="iDevice_inner">' # Content wrapper
+    
+    
+    if mode=="preview" and themeHasXML:
+        w += '<div class="'+e.idevice.klass+'">'
+    
+    w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
+    if mode=="preview":
+        w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
+    w += ">\n"
+    
     if e.idevice.emphasis > 0:
-        o = ''
-        h = '<div class="iDevice_header"'
+        h += '<div class="iDevice_header"'
         if e.idevice.icon:
+            myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
+            if myIcon.exists():
+                o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
             if (e.idevice.icon+"Idevice") != e.idevice.klass:
-                myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
                 if myIcon.exists():
-                    o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
                     h += ' style="background-image:url('+iconPath+')"'
         o += u"<h2 class=\"iDeviceTitle\">"+e.idevice.title+"</h2>"
         h += '>'
         h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
         h += '</div>\n'
+    
+    if e.idevice.emphasis <= 0:
+        h = ""
+        o = ""
     if themeHasXML:
-        return h
+        return w+h+w2
     else:
-        return o
+        return w+o+w2
+
+def ideviceFooter(e, style, mode, includeIdeviceInner):
+    themePath = Path(G.application.config.webDir).joinpath("style", style)
+    themeXMLFile = themePath.joinpath("config.xml")
+    themeHasXML = False
+    if themeXMLFile.exists():
+        themeHasXML = True
+    h = ''
+    if includeIdeviceInner:
+        h = "</div>" # Close iDevice_inner
+    if mode=="preview":
+        h += e.renderViewButtons()
+        if themeHasXML:
+            h += "</div>" # Close extra div (e.idevice.klass)
+    h += "</div>" # Close iDevice
+    return h
 
 def header(style=u'default'):
     """Generates the common header XHTML"""
