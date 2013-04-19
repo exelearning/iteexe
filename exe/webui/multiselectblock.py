@@ -103,14 +103,11 @@ class MultiSelectBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
+        html = '<div class="'+self.idevice.klass+'">'
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u'<img alt="" class="iDevice_icon" '
-        html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon
-        html += ".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"
+        html += common.ideviceHeader(self, style, "preview")
         html += u'<div class="iDevice_inner">\n'
 
         for element in self.questionElements:
@@ -118,6 +115,7 @@ class MultiSelectBlock(Block):
         
         html += u"</div>\n"
         html += self.renderViewButtons()
+        html += u"</div>\n"
         html += u"</div>\n"
         return html
     
@@ -128,10 +126,7 @@ class MultiSelectBlock(Block):
         """
         html  = u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
-        html += u'<img alt="" class="iDevice_icon" '
-        html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
-        html += u'<span class="iDeviceTitle"><strong>'
-        html += self.idevice.title+'</strong></span>\n'
+        html += common.ideviceHeader(self, style, "view")
         html += u'<div class="iDevice_inner">\n'
         for element in self.questionElements:
             html += element.renderView() + "<br/>"  

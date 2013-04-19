@@ -23,9 +23,10 @@ This module is for the common HTML used in all webpages.
 """
 
 import logging
-from nevow      import tags as T
-from nevow.flat import flatten
+from nevow                     import tags as T
+from nevow.flat                import flatten
 from exe                       import globals as G
+from exe.engine.path           import Path
 import re
 
 
@@ -48,7 +49,35 @@ def docType():
             u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
             u'Transitional//EN" '
             u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
-
+            
+def ideviceHeader(e, style, mode):
+    themePath = Path(G.application.config.webDir).joinpath("style", style)
+    themeXMLFile = themePath.joinpath("config.xml")
+    themeHasXML = False
+    if themeXMLFile.exists():
+        themeHasXML = True
+    iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
+    if mode=="view":
+        iconPath = 'icon_'+e.idevice.icon+'.gif'
+    h = '<div class="iDevice_header"'
+    if e.idevice.icon:
+        # Old themes HTML (themes with no xml file)
+        o = u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
+        if e.idevice.emphasis > 0:
+            o += u"<h2 class=\"iDeviceTitle\">"
+            o += e.idevice.title
+            o += u"</h2>\n" 
+        if (e.idevice.icon+"Idevice") != e.idevice.klass:
+            myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
+            if myIcon.exists():
+                h += ' style="background-image:url('+iconPath+')"'        
+    h += '>'
+    h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
+    h += '</div>\n'
+    if themeHasXML:
+        return h
+    else:
+        return o
 
 def header(style=u'default'):
     """Generates the common header XHTML"""

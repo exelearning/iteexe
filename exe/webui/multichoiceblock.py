@@ -126,11 +126,7 @@ class MultichoiceBlock(Block):
         html = u'<script type="text/javascript" src="libot_drag.js"></script>\n'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u'<img alt="" '
-        html += u'     class="iDevice_icon" '
-        html += "src=\"icon_question.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"
+        html += common.ideviceHeader(self, style, "view")
         html += "<div class=\"iDevice_inner\">\n"
         
         for element in self.questionElements:
@@ -147,14 +143,11 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
+        html = '<div class="'+self.idevice.klass+'">'
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u'<img alt="" '
-        html += u'     class="iDevice_icon" '
-        html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"
+        html += common.ideviceHeader(self, style, "preview")
         html += "<div class=\"iDevice_inner\">\n"
 
         for element in self.questionElements:
@@ -164,6 +157,7 @@ class MultichoiceBlock(Block):
             
         html += "</div>\n"    
         html += self.renderViewButtons()
+        html += "</div>\n"
         html += "</div>\n"
 
         return html

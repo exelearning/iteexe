@@ -24,8 +24,6 @@ import logging
 from exe.webui.block            import Block
 from exe.webui.elementfactory   import g_elementFactory
 from exe.webui                  import common
-from exe.engine.path            import Path
-from exe                        import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -78,53 +76,20 @@ class GenericBlock(Block):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        themePath = Path(G.application.config.webDir).joinpath("style", style)
         html = '<div class="'+self.idevice.klass+'">'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
-        if self.idevice.icon:
-            html += u'<img alt="" '
-            html += u'     class="iDevice_icon" '
-	    html += u"src=\"/style/"+style
-            html += u"/icon_"+self.idevice.icon+".gif\"/>\n"
-	if self.idevice.emphasis > 0:
-	    html += u"<h2 class=\"iDeviceTitle\">"
-	    html += self.idevice.title
-	    html += u"</h2>\n"
-        html += u"<div class=\"iDevice_inner\">\n"
+        if self.idevice.emphasis > 0:
+            html += common.ideviceHeader(self, style, "preview")
+	    html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderPreview()
         html += u"</div>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
         html += u"</div>\n"
-        newHTML = '<div class="'+self.idevice.klass+'">'
-        newHTML += u"<div class=\"iDevice "
-        newHTML += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        newHTML += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
-	if self.idevice.emphasis > 0:
-	    newHTML += '<div class="iDevice_header"'
-        if self.idevice.icon:
-            if (self.idevice.icon+"Idevice") != self.idevice.klass:
-                myIcon = themePath.joinpath("icon_" + self.idevice.icon + ".gif")
-                if myIcon.exists():
-                    newHTML += ' style="background-image:url(/style/'+style+'/icon_'+self.idevice.icon+'.gif)"'        
-        newHTML += '>'
-        newHTML += u'<h2 class="iDeviceTitle">'+self.idevice.title+'</h2>'
-        newHTML += '</div>\n'
-        newHTML += u"<div class=\"iDevice_inner\">\n"
-        for element in self.elements:
-            newHTML += element.renderPreview()
-        newHTML += u"</div>\n"
-        newHTML += self.renderViewButtons()
-        newHTML += u"</div>\n"
-        newHTML += u"</div>\n"
-        themeXMLFile = themePath.joinpath(style + ".xml")
-        if themeXMLFile.exists():
-            return newHTML
-        else:
-            return html
+        return html
 
     
     def renderView(self, style):
@@ -132,44 +97,16 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        themePath = Path(G.application.config.webDir).joinpath("style", style)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        if self.idevice.icon:
-            html += u'<img alt="" '
-            html += u'     class="iDevice_icon" '
-            html += u"src=\"icon_"+self.idevice.icon+".gif\"/>\n"
-        html += u"<h2 class=\"iDeviceTitle\">"
-        html += self.idevice.title
-        html += u"</h2>\n"
+        if self.idevice.emphasis > 0:
+            html += common.ideviceHeader(self, style, "view")
         html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderView()
         html += u"</div>\n"
         html += u"</div>\n"
-        newHTML  = u"<div class=\"iDevice "
-        newHTML += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        newHTML += '<div class="iDevice_header"'
-        if self.idevice.icon:
-            if (self.idevice.icon+"Idevice") != self.idevice.klass:
-                myIcon = themePath.joinpath("icon_" + self.idevice.icon + ".gif")
-                if myIcon.exists():
-                    newHTML += ' style="background-image:url(/style/'+style+'/icon_'+self.idevice.icon+'.gif)"' 
-        newHTML += '>'
-        newHTML += u"<h2 class=\"iDeviceTitle\">"
-        newHTML += self.idevice.title
-        newHTML += u"</h2>"
-        newHTML += '</div>\n'
-        newHTML += u"<div class=\"iDevice_inner\">\n"
-        for element in self.elements:
-            newHTML += element.renderView()
-        newHTML += u"</div>\n"
-        newHTML += u"</div>\n"
-        themeXMLFile = themePath.joinpath(style + ".xml")
-        if themeXMLFile.exists():
-            return newHTML
-        else:
-            return html
+        return html
 
 from exe.engine.genericidevice import GenericIdevice
 from exe.webui.blockfactory    import g_blockFactory

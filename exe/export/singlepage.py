@@ -81,8 +81,6 @@ class SinglePage(Page):
 	#JR: Cambio la ruta de los enlaces del glosario y el &
 	html = html.replace("../../../../../mod/glossary", "../../../../mod/glossary")
 	html = html.replace("&concept", "&amp;concept")
-	# iDevice icons path
-	html = html.replace('class="iDevice_header" style="background-image:url(/style/'+package.style+'/icon_', 'class="iDevice_header" style="background-image:url(icon_')
     # Remove "resources/" from data="resources/ and the url param
 	html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
 	html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")

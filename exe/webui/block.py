@@ -25,8 +25,6 @@ import sys
 from exe.webui import common
 from exe.webui.renderable import Renderable
 from exe.engine.idevice   import Idevice
-from exe.engine.path      import Path
-from exe                  import globals as G
 
 import logging
 log = logging.getLogger(__name__)
@@ -291,43 +289,17 @@ class Block(Renderable):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        themePath = Path(G.application.config.webDir).joinpath("style", style)
-        html  = u"<div class=\"iDevice "
+        html = '<div class="'+self.idevice.klass+'">'
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"/style/"+style
-                html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\"><strong>"
-            html += self.idevice.title
-            html += u"</strong></span>\n"
+            html += common.ideviceHeader(self, style, "preview")
         html += self.renderViewContent()
         html += self.renderViewButtons()
         html += u"</div>\n"
-        newHTML = '<div class="'+self.idevice.klass+'">'
-        newHTML += u"<div class=\"iDevice "
-        newHTML += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        newHTML += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            newHTML += '<div class="iDevice_header"'
-            if self.idevice.icon:
-                if (self.idevice.icon+"Idevice") != self.idevice.klass:
-                    myIcon = themePath.joinpath("icon_" + self.idevice.icon + ".gif")
-                    if myIcon.exists():
-                        newHTML += ' style="background-image:url(/style/'+style+'/icon_'+self.idevice.icon+'.gif)"'        
-            newHTML += '>'
-            newHTML += u'<h2 class="iDeviceTitle">'+self.idevice.title+'</h2>'
-            newHTML += '</div>\n'            
-        newHTML += self.renderViewContent()
-        newHTML += self.renderViewButtons()
-        newHTML += u"</div>\n"
-        themeXMLFile = themePath.joinpath(style + ".xml")
-        if themeXMLFile.exists():
-            return newHTML
-        else:
-            return html
+        html += u"</div>\n"
+        return html
 
     
     def renderView(self, style):
@@ -335,39 +307,13 @@ class Block(Renderable):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        themePath = Path(G.application.config.webDir).joinpath("style", style)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<span class=\"iDeviceTitle\"><strong>"
-            html += self.idevice.title
-            html += u"</strong></span>\n"
+            html += common.ideviceHeader(self, style, "view")
         html += self.renderViewContent()
         html += u"</div>\n"
-        newHTML = u"<div class=\"iDevice "
-        newHTML += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            newHTML += '<div class="iDevice_header"'
-            if self.idevice.icon:
-                if (self.idevice.icon+"Idevice") != self.idevice.klass:
-                    myIcon = themePath.joinpath("icon_" + self.idevice.icon + ".gif")
-                    if myIcon.exists():
-                        newHTML += ' style="background-image:url(/style/'+style+'/icon_'+self.idevice.icon+'.gif)"' 
-            newHTML += '>'
-            newHTML += u"<h2 class=\"iDeviceTitle\">"
-            newHTML += self.idevice.title
-            newHTML += u"</h2>"
-            newHTML += '</div>\n'
-        newHTML += self.renderViewContent()
-        newHTML += u"</div>\n"
-        themeXMLFile = themePath.joinpath(style + ".xml")
-        if themeXMLFile.exists():
-            return newHTML
-        else:
-            return html
+        return html
 
 
     def renderViewContent(self):
