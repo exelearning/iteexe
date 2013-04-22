@@ -65,7 +65,7 @@ msgid ""
 "applet \n"
 "code field."
 msgstr ""
-"\"Busque el archivo .txt (en el archivo del applet) \n"
+"Busque el archivo .txt (en el archivo del applet) \n"
 "y ábralo. Copie los contenidos de este archivo <ctrl A, ctrl C> en el "
 "campo de código \n"
 "del applet."
@@ -105,32 +105,32 @@ msgstr "Error, no se ha podido abrir la URL"
 msgid ""
 "Click on the AddFiles button to select the .ggb file and then click on "
 "the Upload button."
-msgstr "Pulse en el botón AñadirFichero para seleccionar el fichero .ggb y después pulse en el botón Enviar. "
+msgstr "Pulse en el botón Añadir archivos para seleccionar el fichero .ggb y después pulse en el botón Cargar."
 
 #: exe/engine/appletidevice.py:534
 msgid ""
 "Click on the AddFiles button to select the .jclic.zip file and then click"
 " on the Upload button.<p>The activity will be visible when the HTML file "
 "will be generated from eXe."
-msgstr "Pulse en el botón AñadirFicheros para seleccionar el archivo .jclic.zip y seguidamente pulse en el botón de Enviar.<p>La actividad será visible cuando eXe genere el fichero HTML."
+msgstr "Pulse en el botón Añadir archivos para seleccionar el archivo .jclic.zip y seguidamente pulse en el botón de Cargar.<p>La actividad será visible cuando exporte los ficheros a HTML."
 
 #: exe/engine/appletidevice.py:544
 msgid ""
 "Click on the AddFiles button to select the .sb or .scratch file and then "
 "click on the Upload button."
-msgstr "Pulse en el botón AñadirFicheros para seleccionar el fichero .sb o .scratch y seguidamente pulse en el botón Enviar."
+msgstr "Pulse en el botón Añadir archivos para seleccionar el fichero .sb o .scratch y seguidamente pulse en el botón Cargar."
 
 #: exe/engine/appletidevice.py:555
 msgid ""
 "Please enter: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; click on the Upload button afterwards."
-msgstr "Por favor introduzca: número_de_escena,ULR (sin espacios) que la incluye, p.ej.: 3,http://ejemplo.es; pulse en el botón Enviar seguidamente."
+msgstr "Por favor introduzca: número_de_escena,ULR (sin espacios) que la incluye, p.ej.: 3,http://ejemplo.es; después pulse en el botón Cargar."
 
 #: exe/engine/appletidevice.py:557
 msgid ""
 "Click on the AddFiles button to select the .html or .htm file and then "
 "click on the Upload button to get its content."
-msgstr "Pulse en el botón AñadirFicheros para seleccionar el fichero .html o .htm y seguidamente pulse en el botón Enviar para hacer disponible su contenido."
+msgstr "Pulse en el botón Añadir archivos para seleccionar el fichero .html o .htm y seguidamente pulse en el botón Cargar para tener disponible su contenido."
 
 #: exe/engine/appletidevice.py:568
 msgid ""
