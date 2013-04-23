@@ -149,7 +149,7 @@ class QuestionElement(object):
             html += "</div>\n"
 # JR: Generamos el contenido que ira dentro de la etiqueta noscript
 	    html += '<noscript><div class="feedback">\n'
-	    html += "<p><strong>" + _("Solucion") + ": </strong></p>\n"
+	    html += "<p><strong>" + _("Solution") + ": </strong></p>\n"
             if preview: 
             	html  += self.question_feedback.field.content_w_resourcePaths
             else: 

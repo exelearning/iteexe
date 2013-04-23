@@ -2147,14 +2147,14 @@ class SelectquestionElement(Element):
 
         html += '</div>'
 
-# JR: Generamos el contenido que ira dentro de la etiqueta noscript
+# JR: Generamos el contenido que irá dentro de la etiqueta noscript
 	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solucion") + ": </strong></p><ol>\n"
+	html += "<p><strong>" + _("Solution") + ": </strong></p><ol>\n"
 	for element in self.options:
 		html += element.renderNoscript(preview)
 	html += "</ol>"
 	if self.feedbackElement.field.content.strip():
-		html += "<p><strong>" + _("Retroalimentacion") + ": </strong></p>\n"
+		html += "<p><strong>" + _("Feedback") + ": </strong></p>\n"
         	if preview: 
             		html  += self.feedbackElement.field.content_w_resourcePaths
         	else: 
@@ -2541,9 +2541,9 @@ class QuizQuestionElement(Element):
         for element in self.options:
             html += element.renderFeedbackView(preview)
 
-# JR: Generamos el contenido que ira dentro de la etiqueta noscrip
+# JR: Generamos el contenido que irá dentro de la etiqueta noscript
 	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solucion") + ": </strong></p>\n"
+	html += "<p><strong>" + _("Solution") + ": </strong></p>\n"
 	html += "<ol>"
 	for element in self.options:
 		html += element.renderNoscript(preview)

@@ -168,10 +168,10 @@ class ClozefpdBlock(Block):
 		cloze = self.clozeElement.field.content_w_resourcePaths
 		feedback = self.feedbackElement.field.content_wo_resourcePaths
 	html += u'<noscript><div class="feedback">\n'
-	html += u"<strong>" + _("Solucion") + u": </strong><br/>\n"
+	html += u"<strong>" + _("Solution") + u": </strong><br/>\n"
 	html += cloze
 	if self.feedbackElement.field.content:
-		html += u"<br/><br/><strong>" + _("Retroalimentacion") + ": </strong><br/>\n"
+		html += u"<br/><br/><strong>" + _("Feedback") + ": </strong><br/>\n"
 		html += feedback
 	html += u"</div></noscript>"
 
