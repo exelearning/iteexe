@@ -374,7 +374,7 @@ class IMSExport(object):
                     if 'flowPlayer.swf' in idevice.systemResources:
                         hasFlowplayer = True
                 if not hasMagnifier:
-                    if 'magnifier.swf' in idevice.systemResources:
+                    if 'mojomagnify.js' in idevice.systemResources:
                         hasMagnifier = True
                 if not hasXspfplayer:
                     if 'xspf_player.swf' in idevice.systemResources:
@@ -392,8 +392,8 @@ class IMSExport(object):
             controlsfile = (self.templatesDir/'flowplayer.controls.swf')
             controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
-            videofile = (self.templatesDir/'magnifier.swf')
-            videofile.copyfile(outputDir/'magnifier.swf')
+            videofile = (self.templatesDir/'mojomagnify.js')
+            videofile.copyfile(outputDir/'mojomagnify.js')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')

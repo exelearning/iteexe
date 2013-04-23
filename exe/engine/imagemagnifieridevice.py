@@ -70,7 +70,7 @@ when the IDevice loads, as a percentage of the original image size""")
         self._maxZoomInstruc             = x_(u"""Set the maximum level of zoom, 
 as a percentage of the original image size""")
         self._glassSizeInstruc           = x_(u"""Select the size of the magnifying glass""")
-        self.systemResources            += ['magnifier.swf']
+        self.systemResources            += ['mojomagnify.js']
 
     # Properties
     captionInstruc     = lateTranslate('captionInstruc')

@@ -31,6 +31,7 @@ from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
+import os
 
 log = logging.getLogger(__name__)
 
@@ -54,7 +55,6 @@ class WebsiteExport(object):
         self.filename     = Path(filename)
         self.pages        = []
         self.prefix       = prefix
-
     def exportZip(self, package):
         """ 
         Export web site
@@ -139,21 +139,23 @@ class WebsiteExport(object):
         """
         Copy all the files used by the website.
         """
-        # Copy the style sheet files to the output dir
-        styleFiles  = [self.stylesDir/'..'/'base.css']
-        styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
-        styleFiles += self.stylesDir.files("*.css")
-        styleFiles += self.stylesDir.files("*.jpg")
-        styleFiles += self.stylesDir.files("*.gif")
-        styleFiles += self.stylesDir.files("*.png")
-        styleFiles += self.stylesDir.files("*.js")
-        styleFiles += self.stylesDir.files("*.html")
-        styleFiles += self.stylesDir.files("*.ico")
-        styleFiles += self.stylesDir.files("*.ttf")
-        styleFiles += self.stylesDir.files("*.eot")
-        styleFiles += self.stylesDir.files("*.otf")
-        styleFiles += self.stylesDir.files("*.woff")
-        self.stylesDir.copylist(styleFiles, outputDir)
+       
+        if os.path.isdir(self.stylesDir):
+            # Copy the style sheet files to the output dir
+            styleFiles  = [self.stylesDir/'..'/'base.css']
+            styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
+            styleFiles += self.stylesDir.files("*.css")
+            styleFiles += self.stylesDir.files("*.jpg")
+            styleFiles += self.stylesDir.files("*.gif")
+            styleFiles += self.stylesDir.files("*.png")
+            styleFiles += self.stylesDir.files("*.js")
+            styleFiles += self.stylesDir.files("*.html")
+            styleFiles += self.stylesDir.files("*.ico")
+            styleFiles += self.stylesDir.files("*.ttf")
+            styleFiles += self.stylesDir.files("*.eot")
+            styleFiles += self.stylesDir.files("*.otf")
+            styleFiles += self.stylesDir.files("*.woff")
+            self.stylesDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
@@ -181,7 +183,7 @@ class WebsiteExport(object):
                     if 'flowPlayer.swf' in idevice.systemResources:
                         hasFlowplayer = True
                 if not hasMagnifier:
-                    if 'magnifier.swf' in idevice.systemResources:
+                    if 'mojomagnify.js' in idevice.systemResources:
                         hasMagnifier = True
                 if not hasXspfplayer:
                     if 'xspf_player.swf' in idevice.systemResources:
@@ -199,8 +201,8 @@ class WebsiteExport(object):
             controlsfile = (self.templatesDir/'flowplayer.controls.swf')
             controlsfile.copyfile(outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
-            videofile = (self.templatesDir/'magnifier.swf')
-            videofile.copyfile(outputDir/'magnifier.swf')
+            videofile = (self.templatesDir/'mojomagnify.js')
+            videofile.copyfile(outputDir/'mojomagnify.js')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')

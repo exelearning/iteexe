@@ -1,1 +1,1239 @@
-var objBrowse=navigator.appName;function magnifierImageChanged(d){var f=d.currentTarget.getAttribute("id");var b=f.substring(3,f.length);var e=document.getElementById("img"+b);var c=document.getElementById("width"+b);var a=document.getElementById("height"+b);e.removeAttribute("height");if(e.width>700){e.width=600}if(e.width<=700&&e.width>300){e.width=e.width*0.7}if(e.height>270){c.value=e.width+84}else{c.value=e.width+144}a.value=e.height+24;if(c.value<180){c.value=180}if(a.value<160){a.value=160}}function imageChanged(d){var f=d.currentTarget.getAttribute("id");var b=f.substring(3,f.length);var e=document.getElementById("img"+b);var c=document.getElementById("width"+b);var a=document.getElementById("height"+b);c.value=e.width;a.value=e.height}function changeImageWidth(b){var d=document.getElementById("img"+b);var c=document.getElementById("width"+b);var a=document.getElementById("height"+b);d.removeAttribute("height");if(c.value){d.width=c.value}else{if(d.hasAttribute("src")){d.removeAttribute("width");c.value=d.width}else{c.value=""}}a.value=d.height}function changeImageHeight(b){var d=document.getElementById("img"+b);var c=document.getElementById("width"+b);var a=document.getElementById("height"+b);d.removeAttribute("width");if(a.value){d.height=a.value}else{if(d.hasAttribute("src")){d.removeAttribute("height");a.value=d.height}else{a.value=""}}c.value=d.width}function changeMagnifierImageWidth(b){var d=document.getElementById("img"+b);var c=document.getElementById("width"+b);var a=document.getElementById("height"+b);d.removeAttribute("height");if(c.value){d.width=c.value-84}else{d.removeAttribute("width")}if(d.width>600){d.removeAttribute("height");d.width=600}if(d.height>270){c.value=d.width+84}else{c.value=d.width+144}a.value=d.height+24;if(c.value<180){c.value=180}if(a.value<160){a.value=160}}function changeMagnifierImageHeight(b){var d=document.getElementById("img"+b);var c=document.getElementById("width"+b);var a=document.getElementById("height"+b);d.removeAttribute("width");if(a.value){d.height=a.value-24}else{d.removeAttribute("height")}if(d.width>600){d.removeAttribute("height");d.width=600}if(d.height>270){c.value=d.width+84}else{c.value=d.width+144}a.value=d.height+24;if(c.value<180){c.value=180}if(a.value<160){a.value=160}}function showMe(d,b,c){var e=document.getElementById("popupmessage");hideMe();if(!e||e.innerHTML!=document.getElementById(d).innerHTML){e=document.createElement("div");e.id="popupmessage";e.className="popupDiv";var a=(xpos+b>740)?Math.max(0,xpos-b-15):xpos;e.style.cssText="position:absolute; left: "+(a)+"px; top: "+(ypos-c/2)+"px; width: "+b+"px;";e.innerHTML=document.getElementById(d).innerHTML;document.body.appendChild(e);new dragElement("popupmessage")}}function hideMe(){var a=document.getElementById("popupmessage");if(a){a.parentNode.removeChild(a)}}function updateCoords(c){if(c.pageX==null&&c.clientX!=null){var a=document.body;c.pageX=c.clientX+(c&&c.scrollLeft||a.scrollLeft||0);c.pageY=c.clientY+(c&&c.scrollTop||a.scrollTop||0)}xpos=c.pageX;ypos=c.pageY}function getFeedback(c,f,a,d){var b,e;for(b=0;b<f;b++){if(d=="multi"){e="sa"+b+"b"+a}else{e="s"+b+"b"+a}if(b==c){document.getElementById(e).style.display="block"}else{document.getElementById(e).style.display="None"}}if(d=="truefalse"){document.getElementById("sfbk"+a).style.display="block"}}NOT_ATTEMPTED=0;WRONG=1;CORRECT=2;function onClozeChange(ele){var ident=getClozeIds(ele)[0];var instant=eval(document.getElementById("clozeFlag"+ident+".instantMarking").value);if(instant){checkAndMarkClozeWord(ele);var scorePara=document.getElementById("clozeScore"+ident);scorePara.innerHTML=""}}function clozeSubmit(a){showClozeScore(a,1);toggleElementVisible("submit"+a);toggleElementVisible("restart"+a);toggleElementVisible("showAnswersButton"+a);toggleClozeFeedback(a)}function clozeRestart(a){toggleClozeFeedback(a);toggleClozeAnswers(a,true);toggleElementVisible("restart"+a);toggleElementVisible("showAnswersButton"+a);toggleElementVisible("submit"+a)}function toggleClozeAnswers(g,a){var h=true;var b=getCloseInputs(g);if(!a){for(var d=0;d<b.length;d++){var c=b[d];if(getClozeMark(c)!=2){h=false;break}}}if(h){clearClozeInputs(g,b)}else{fillClozeInputs(g,b)}var e=document.getElementById("clozeScore"+g);e.innerHTML="";var f=document.getElementById("getScore"+g);if(f){f.disabled=!h}}function fillClozeInputs(d,a){if(!a){var a=getCloseInputs(d)}for(var c=0;c<a.length;c++){var b=a[c];b.value=getClozeAnswer(b);markClozeWord(b,CORRECT);b.setAttribute("readonly","readonly")}}function clearClozeInputs(d,a){if(!a){var a=getCloseInputs(d)}for(var c=0;c<a.length;c++){var b=a[c];b.value="";markClozeWord(b,NOT_ATTEMPTED);b.removeAttribute("readonly")}}function checkAndMarkClozeWord(b){var a=checkClozeWord(b);if(a!=""){markClozeWord(b,CORRECT);b.value=a;return CORRECT}else{if(!b.value){markClozeWord(b,NOT_ATTEMPTED);return NOT_ATTEMPTED}else{markClozeWord(b,WRONG);return WRONG}}}function markClozeWord(a,b){switch(b){case 0:a.style.backgroundColor="";break;case 1:a.style.backgroundColor="red";break;case 2:a.style.backgroundColor="forestgreen";break}return b}function getClozeMark(b){var a=checkClozeWord(b);if(a!=""){return CORRECT}else{if(!b.value){return NOT_ATTEMPTED}else{return WRONG}}}function getClozeAnswer(j){var f=getClozeIds(j);var c=f[0];var g=f[1];var e=document.getElementById("clozeAnswer"+c+"."+g);var a=e.innerHTML;a=decode64(a);a=unescape(a);result="";var h="X".charCodeAt(0);for(var d=0;d<a.length;d++){var b=a.charCodeAt(d);h^=b;result+=String.fromCharCode(h)}return result}function decode64(d){var b="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";var a="";var l,j,g;var k,h,f,e;var c=0;d=d.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{k=b.indexOf(d.charAt(c++));h=b.indexOf(d.charAt(c++));f=b.indexOf(d.charAt(c++));e=b.indexOf(d.charAt(c++));l=(k<<2)|(h>>4);j=((h&15)<<4)|(f>>2);g=((f&3)<<6)|e;a=a+String.fromCharCode(l);if(f!=64){a=a+String.fromCharCode(j)}if(e!=64){a=a+String.fromCharCode(g)}}while(c<d.length);return a}function checkClozeWord(ele){var guess=ele.value;var original=getClozeAnswer(ele);var answer=original;var guess=ele.value;var ident=getClozeIds(ele)[0];var strictMarking=eval(document.getElementById("clozeFlag"+ident+".strictMarking").value);var checkCaps=eval(document.getElementById("clozeFlag"+ident+".checkCaps").value);if(!checkCaps){guess=guess.toLowerCase();answer=original.toLowerCase()}if(guess==answer){return original}else{if(strictMarking||answer.length<=4){return""}else{var i=0;var j=0;var orders=[[answer,guess],[guess,answer]];var maxMisses=Math.floor(answer.length/6)+1;var misses=0;if(guess.length<=maxMisses){misses=Math.abs(guess.length-answer.length);for(i=0;i<guess.length;i++){if(answer.search(guess[i])==-1){misses+=1}}if(misses<=maxMisses){return answer}else{return""}}for(i=0;i<2;i++){var string1=orders[i][0];var string2=orders[i][1];while(string1){misses=Math.floor((Math.abs(string1.length-string2.length)+Math.abs(guess.length-answer.length))/2);var max=Math.min(string1.length,string2.length);for(j=0;j<max;j++){var a=string2.charAt(j);var b=string1.charAt(j);if(a!=b){misses+=1}if(misses>maxMisses){break}}if(misses<=maxMisses){return answer}string1=string1.substr(1)}}return""}}}function getClozeIds(d){var e=d.id.slice(10);var a=e.indexOf(".");var c=e.slice(0,a);var b=e.slice(e.indexOf(".")+1);return[c,b]}function showClozeScore(d,c){var b=0;var a=document.getElementById("cloze"+d);var f=getCloseInputs(d);for(var e=0;e<f.length;e++){var h=f[e];if(c){var j=checkAndMarkClozeWord(h)}else{var j=getClozeMark(h)}if(j==2){b++}}var g=document.getElementById("clozeScore"+d);g.innerHTML=YOUR_SCORE_IS+b+"/"+f.length+"."}function getCloseInputs(c){var b=new Array;var a=document.getElementById("cloze"+c);recurseFindClozeInputs(a,c,b);return b}function recurseFindClozeInputs(b,e,a){for(var c=0;c<b.childNodes.length;c++){var d=b.childNodes[c];if(d.id){if(d.id.search("clozeBlank"+e)==0){a.push(d);continue}}if(d.hasChildNodes()){recurseFindClozeInputs(d,e,a)}}}function toggleClozeFeedback(b){var a=document.getElementById("clozeVar"+b+".feedbackId");if(a){var c=a.value;toggleElementVisible(c)}}function toggleElementVisible(b){var a=document.getElementById(b);if(a){if(a.style.display!="none"){a.style.display="none"}else{a.style.display=""}}}function showAnswer(b,a){if(a==1){document.getElementById("s"+b).style.display="block";document.getElementById("hide"+b).style.display="block";document.getElementById("view"+b).style.display="none"}else{document.getElementById("s"+b).style.display="none";document.getElementById("hide"+b).style.display="none";document.getElementById("view"+b).style.display="block"}}function toggleFeedback(b){var a=document.getElementById("fb"+b);if(a.style.display=="block"){a.style.display="none"}else{a.style.display="block"}}function insertAtCursor(e,d,c){if(e.selectionStart||e.selectionStart=="0"){var b=e.selectionStart;var a=e.selectionEnd;e.value=e.value.substring(0,b)+d+e.value.substring(a,e.value.length);e.selectionStart=b+d.length-c}else{e.value+=d}e.selectionEnd=e.selectionStart;e.focus()}function insertSymbol(d,b,a){var c=document.getElementById(d);insertAtCursor(c,b,a)}function calcScore(b,f){var h=0,d,a;for(d=0;d<b;d++){var c=document.getElementById(f+d.toString());var e=document.getElementById("ans"+f+d.toString());a="False";if(c.checked==1){a="True"}if(a==c.value){h++;e.style.color="black"}else{e.style.color="red"}}var g=document.getElementById("f"+f);g.style.display="block";alert(YOUR_SCORE_IS+h+"/"+b)}function showFeedback(e,c){var d,f;for(d=0;d<e;d++){var j=document.getElementById("op"+c+d.toString());var h=document.getElementById("op"+c+d.toString()+"_0");var g=document.getElementById("op"+c+d.toString()+"_1");var a=document.getElementById("ans"+c+d.toString());f="False";if(j.checked==1){f="True"}if(f==j.value){g.style.display="block";h.style.display="none"}else{h.style.display="block";g.style.display="none"}}var b=document.getElementById("f"+c);b.style.display="block"}function detectQuickTime(){pluginFound=detectPlugin("QuickTime");return pluginFound}function detectReal(){pluginFound=detectPlugin("RealPlayer");return pluginFound}function detectFlash(){pluginFound=detectPlugin("Shockwave","Flash");return pluginFound}function detectDirector(){pluginFound=detectPlugin("Shockwave","Director");return pluginFound}function detectWindowsMedia(){pluginFound=detectPlugin("Windows Media");return pluginFound}function detectPlugin(){var d=detectPlugin.arguments;var c=false;if(navigator.plugins&&navigator.plugins.length>0){var b=navigator.plugins.length;for(var e=0;e<b;e++){var f=0;for(var a=0;a<d.length;a++){if((navigator.plugins[e].name.indexOf(d[a])>=0)||(navigator.plugins[e].description.indexOf(d[a])>=0)){f++}}if(f==d.length){c=true;break}}}return c}NOT_ATTEMPTED=0;WRONG=1;CORRECT=2;function onClozelangChange(ele){var ident=getClozelangIds(ele)[0];var instant=eval(document.getElementById("clozelangFlag"+ident+".instantMarking").value);if(instant){checkAndMarkClozelangWord(ele);var scorePara=document.getElementById("clozelangScore"+ident);scorePara.innerHTML=""}}function clozelangSubmit(a){showClozelangScore(a,1);toggleElementVisible("submit"+a);toggleClozelangFeedback(a)}function clozelangRestart(a){toggleClozelangFeedback(a);toggleClozelangAnswers(a,true);toggleElementVisible("restart"+a);toggleElementVisible("showAnswersButton"+a);toggleElementVisible("submit"+a)}function toggleClozelangAnswers(g,a){var h=true;var b=getCloseInputsCloze(g);if(!a){for(var d=0;d<b.length;d++){var c=b[d];if(getClozelangMark(c)!=2){h=false;break}}}if(h){clearClozelangInputs(g,b)}else{fillClozelangInputs(g,b)}var e=document.getElementById("clozelangScore"+g);e.innerHTML="";var f=document.getElementById("getScore"+g);if(f){f.disabled=!h}}function fillClozelangInputs(d,a){if(!a){var a=getCloseInputsCloze(d)}for(var c=0;c<a.length;c++){var b=a[c];b.value=getClozelangAnswer(b);markClozeWord(b,CORRECT);b.setAttribute("readonly","readonly")}}function clearClozelangInputs(d,a){if(!a){var a=getCloseInputsCloze(d)}for(var c=0;c<a.length;c++){var b=a[c];b.value="";markClozeWord(b,NOT_ATTEMPTED);b.removeAttribute("readonly")}}function checkAndMarkClozelangWord(b){var a=checkClozelangWord(b);if(a!=""){markClozelangWord(b,CORRECT);b.value=a;return CORRECT}else{if(!b.value){markClozelangWord(b,NOT_ATTEMPTED);return NOT_ATTEMPTED}else{markClozelangWord(b,WRONG);return WRONG}}}function markClozelangWord(a,b){switch(b){case 0:a.style.backgroundColor="";break;case 1:a.style.backgroundColor="red";break;case 2:a.style.backgroundColor="forestgreen";break}return b}function getClozelangMark(a){switch(a.style.backgroundColor){case"red":return 1;case"forestgreen":return 2;default:return 0}}function getClozelangAnswer(j){var f=getClozelangIds(j);var c=f[0];var g=f[1];var e=document.getElementById("clozelangAnswer"+c+"."+g);var a=e.innerHTML;a=decode64(a);a=unescape(a);result="";var h="X".charCodeAt(0);for(var d=0;d<a.length;d++){var b=a.charCodeAt(d);h^=b;result+=String.fromCharCode(h)}return result}function checkClozelangWord(ele){var guess=ele.value;var original=getClozelangAnswer(ele);var answer=original;var guess=ele.value;var ident=getClozelangIds(ele)[0];var strictMarking=eval(document.getElementById("clozelangFlag"+ident+".strictMarking").value);var checkCaps=eval(document.getElementById("clozelangFlag"+ident+".checkCaps").value);if(!checkCaps){guess=guess.toLowerCase();answer=original.toLowerCase()}if(guess==answer){return original}else{if(strictMarking||answer.length<=4){return""}else{var i=0;var j=0;var orders=[[answer,guess],[guess,answer]];var maxMisses=Math.floor(answer.length/6)+1;var misses=0;if(guess.length<=maxMisses){misses=Math.abs(guess.length-answer.length);for(i=0;i<guess.length;i++){if(answer.search(guess[i])==-1){misses+=1}}if(misses<=maxMisses){return answer}else{return""}}for(i=0;i<2;i++){var string1=orders[i][0];var string2=orders[i][1];while(string1){misses=Math.floor((Math.abs(string1.length-string2.length)+Math.abs(guess.length-answer.length))/2);var max=Math.min(string1.length,string2.length);for(j=0;j<max;j++){var a=string2.charAt(j);var b=string1.charAt(j);if(a!=b){misses+=1}if(misses>maxMisses){break}}if(misses<=maxMisses){return answer}string1=string1.substr(1)}}return""}}}function getClozelangIds(d){var e=d.id.slice(14);var a=e.indexOf(".");var c=e.slice(0,a);var b=e.slice(e.indexOf(".")+1);return[c,b]}function showClozelangScore(ident,mark){var showScore=eval(document.getElementById("clozelangFlag"+ident+".showScore").value);if(showScore){var score=0;var div=document.getElementById("clozelang"+ident);var inputs=getCloseInputsCloze(ident);for(var i=0;i<inputs.length;i++){var input=inputs[i];if(mark){var result=checkAndMarkClozelangWord(input)}else{var result=getClozelangMark(input)}if(result==2){score++}}var scorePara=document.getElementById("clozelangScore"+ident);scorePara.innerHTML=YOUR_SCORE_IS+score+"/"+inputs.length+"."}}function getCloseInputsCloze(c){var b=new Array;var a=document.getElementById("clozelang"+c);recurseFindClozelangInputs(a,c,b);return b}function recurseFindClozelangInputs(b,e,a){for(var c=0;c<b.childNodes.length;c++){var d=b.childNodes[c];if(d.id){if(d.id.search("clozelangBlank"+e)==0){a.push(d);continue}}if(d.hasChildNodes()){recurseFindClozelangInputs(d,e,a)}}}function toggleClozelangFeedback(b){var a=document.getElementById("clozelangVar"+b+".feedbackId");if(a){var c=a.value;toggleElementVisible(c)}}sfHover=function(){var c=document.getElementById("siteNav");if(c){var d=c.getElementsByTagName("LI");for(var a=0;a<d.length;a++){d[a].onmouseover=function(){this.className="sfhover"};d[a].onmouseout=function(){this.className="sfout"}}var b=c.getElementsByTagName("A");for(var a=0;a<b.length;a++){b[a].onfocus=function(){this.className+=(this.className.length>0?" ":"")+"sffocus";this.parentNode.className+=(this.parentNode.className.length>0?" ":"")+"sfhover";if(this.parentNode.parentNode.parentNode.nodeName=="LI"){this.parentNode.parentNode.parentNode.className+=(this.parentNode.parentNode.parentNode.className.length>0?" ":"")+"sfhover";if(this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="LI"){this.parentNode.parentNode.parentNode.parentNode.parentNode.className+=(this.parentNode.parentNode.parentNode.parentNode.parentNode.className.length>0?" ":"")+"sfhover"}}};b[a].onblur=function(){this.className=this.className.replace(new RegExp("( ?|^)sffocus\\b"),"");this.parentNode.className=this.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"),"");if(this.parentNode.parentNode.parentNode.nodeName=="LI"){this.parentNode.parentNode.parentNode.className=this.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"),"");if(this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="LI"){this.parentNode.parentNode.parentNode.parentNode.parentNode.className=this.parentNode.parentNode.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"),"")}}}}}};if(document.addEventListener){window.addEventListener("load",sfHover,false)}else{window.attachEvent("onload",sfHover)}var ie_media_replace=function(){var j=document.getElementsByTagName("OBJECT");var b=j.length;while(b--){if(j[b].type=="video/quicktime"||j[b].type=="audio/x-pn-realaudio-plugin"){if(typeof(j.classid)=="undefined"){j[b].style.display="none";var f="02BF25D5-8C17-4B23-BC80-D3488ABDDC6B";if(j[b].type=="audio/x-pn-realaudio-plugin"){f="CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA"}var d=j[b].height;var a=j[b].width;var c=j[b].data;var g=document.createElement("DIV");g.innerHTML='<object classid="clsid:'+f+'" data="'+c+'" width="'+a+'" height="'+d+'"><param name="controller" value="true" /><param name="src" value="'+c+'" /><param name="autoplay" value="false" /></object>';j[b].parentNode.insertBefore(g,j[b])}}}};if(navigator.appName=="Microsoft Internet Explorer"){if(document.addEventListener){window.addEventListener("load",ie_media_replace,false)}else{window.attachEvent("onload",ie_media_replace)}}var exe_idevices={imageGallery:{init:function(g){var f=document.getElementById(g);var a=f.getElementsByTagName("LI");var b=a.length;while(b--){var d=a[b].innerHTML;var c="rel=lightbox["+g+"]";if(d.indexOf(c)!=-1){nH=d.replace("rel=lightbox[",'class="lytebox" data-lyte-options="group:');nH=nH.replace("]",'"')}else{nH=d.replace('rel="lightbox[','class="lytebox" data-lyte-options="group:');nH=nH.replace("]","")}a[b].innerHTML=nH}}}};
+// ===========================================================================
+// eXe
+// Copyright 2004-2005, University of Auckland
+// Copyright 2004-2008 eXe Project, http://eXeLearning.org/
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+// ===========================================================================
+
+var objBrowse = navigator.appName;
+/*
+function magnifierImageChanged(event) {
+    var id = event.currentTarget.getAttribute('id');
+    var elementId = id.substring(3, id.length);
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('height');
+    if (image.width > 700){
+        image.width = 600        
+        }
+    if (image.width <= 700 && image.width > 300)
+        image.width = image.width * 0.7
+        
+    if (image.height > 270){
+        width.value = image.width + 84
+    }else{
+        width.value = image.width + 144
+    }
+    height.value = image.height + 24
+    if (width.value < 180)
+        width.value = 180
+    if (height.value < 160)
+        height.value = 160
+}
+*/
+function magnifierImageChanged(event) {
+    var id = event.currentTarget.getAttribute('id');
+    var elementId = id.substring(3, id.length);
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+	    image.removeAttribute('height');
+		image.removeAttribute('width');
+
+
+
+}
+function imageChanged(event) {
+    var id = event.currentTarget.getAttribute('id');
+    var elementId = id.substring(3, id.length);
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    width.value  = image.width;
+    height.value = image.height;
+}
+
+function changeImageWidth(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('height');
+    if (width.value) {
+        image.width  = width.value;
+    } else if (image.hasAttribute('src')) {
+        image.removeAttribute('width');
+        width.value = image.width;
+    } else {
+        width.value = "";
+    }
+    height.value = image.height;
+}
+
+function changeImageHeight(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('width');
+    if (height.value) {
+        image.height = height.value;
+    } else if (image.hasAttribute('src')) {
+        image.removeAttribute('height');
+        height.value = image.height;
+    } else {
+        height.value = "";
+    }
+    width.value  = image.width;
+}
+/*
+function changeMagnifierImageWidth(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('height');
+    if (width.value) {
+        image.width  = width.value - 84;
+    } else {
+        image.removeAttribute('width');
+    }
+    if (image.width > 600){
+        image.removeAttribute('height')
+        image.width = 600;
+    }
+    if (image.height > 270){
+        width.value = image.width + 84
+    }else{
+        width.value = image.width + 144
+    }
+    height.value = image.height + 24
+    if (width.value < 180)
+        width.value = 180
+    if (height.value < 160)
+        height.value = 160
+}
+
+
+function changeMagnifierImageHeight(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('width');
+    if (height.value) {
+        image.height = height.value - 24;
+    } else {
+        image.removeAttribute('height');
+    }
+    if (image.width > 600){
+        image.removeAttribute('height');
+        image.width = 600
+    }
+    if (image.height > 270){
+        width.value = image.width + 84
+    }else{
+        width.value = image.width + 144
+    }
+    height.value = image.height + 24
+    if (width.value < 180)
+        width.value = 180
+    if (height.value < 160)
+        height.value = 160
+}
+*/
+function changeMagnifierImageWidth(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('height');
+    if (width.value) {
+        image.width  = width.value;
+    } else {
+        image.removeAttribute('width');
+    }
+    
+}
+
+
+function changeMagnifierImageHeight(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('width');
+    if (height.value) {
+        image.height = height.value;
+    } else {
+        image.removeAttribute('height');
+    }
+    
+}
+
+function showMe(ident, w, h)
+{
+    var elmDiv = document.getElementById('popupmessage');
+    hideMe();
+        
+    if (!elmDiv || 
+        elmDiv.innerHTML != document.getElementById(ident).innerHTML){
+
+        elmDiv = document.createElement('div');
+        elmDiv.id = 'popupmessage';
+        elmDiv.className="popupDiv";
+	var xloc = (xpos+w > 740) ? Math.max(0, xpos-w-15) : xpos;
+        elmDiv.style.cssText = 'position:absolute; left: ' + 
+                               (xloc) + 'px; top: '+(ypos - h/2) + 
+                               'px; width: ' + w + 'px;';
+        elmDiv.innerHTML = document.getElementById(ident).innerHTML;
+        document.body.appendChild(elmDiv);
+        new dragElement('popupmessage');
+    }
+}
+
+function hideMe() {
+    var elmDiv = document.getElementById('popupmessage');
+    if (elmDiv) {
+        // removes the div from the document
+        elmDiv.parentNode.removeChild(elmDiv);
+    }
+}
+
+function updateCoords(e) {
+    if (e.pageX == null && e.clientX != null ) { //IE<9
+        var b = document.body;
+        e.pageX = e.clientX + (e && e.scrollLeft || b.scrollLeft || 0);
+        e.pageY = e.clientY + (e && e.scrollTop || b.scrollTop || 0);
+    }
+    xpos = e.pageX;
+    ypos = e.pageY;      
+}
+
+function getFeedback(optionId, optionsNum, ideviceId, mode) {
+    var i, id;
+    for (i = 0; i< optionsNum; i++) { 
+        if (mode == "multi")
+            id = "sa" + i + "b" +ideviceId
+        else
+            id = "s" + i + "b" +ideviceId
+        if(i == optionId)
+            document.getElementById(id).style.display = "block";
+        else
+            document.getElementById(id).style.display = "None";
+    }
+    if (mode == 'truefalse') {
+        document.getElementById("sfbk" + ideviceId).style.display = "block";
+    }
+}
+
+
+// Cloze Field Stuff /////////////////////////////////////////////////
+
+// Constants 
+NOT_ATTEMPTED = 0
+WRONG = 1
+CORRECT = 2
+
+// Functions 
+
+// Called when a learner types something into a cloze word space
+function onClozeChange(ele) {
+    var ident = getClozeIds(ele)[0];
+    var instant = eval(document.getElementById(
+        'clozeFlag'+ident+'.instantMarking').value);
+    if (instant) {
+        checkAndMarkClozeWord(ele);
+        // Hide the score paragraph if visible
+        var scorePara = document.getElementById('clozeScore' + ident);
+        scorePara.innerHTML = "";
+    }
+}
+
+// Recieves and marks answers from student
+function clozeSubmit(ident) {
+    // Mark all of the words
+    showClozeScore(ident, 1);
+    // Hide Submit
+    toggleElementVisible('submit'+ident);
+    // Show Restart
+    toggleElementVisible('restart'+ident);
+    // Show Show Answers Button
+    toggleElementVisible('showAnswersButton'+ident);
+    // Show feedback
+    toggleClozeFeedback(ident);
+}
+
+// Makes cloze idevice like new :)
+function clozeRestart(ident) {
+    // Hide Feedback
+    toggleClozeFeedback(ident);
+    // Clear the answers (Also hides score)
+    toggleClozeAnswers(ident, true);
+    // Hide Restart
+    toggleElementVisible('restart'+ident);
+    // Hide Show Answers Button
+    toggleElementVisible('showAnswersButton'+ident);
+    // Show Submit
+    toggleElementVisible('submit'+ident);
+}
+
+// Show/Hide all answers in the cloze idevice
+// 'clear' is an optional argument, that forces all the answers to be cleared
+// whether they are all finished and correct or not
+function toggleClozeAnswers(ident, clear){
+    // See if any have not been answered yet
+    var allCorrect = true;
+    var inputs = getCloseInputs(ident)
+    if (!clear) {
+        for (var i=0; i<inputs.length; i++) {
+            var input = inputs[i];
+            if (getClozeMark(input) != 2) {
+                allCorrect = false;
+                break;
+            }
+        }
+    }
+    if (allCorrect) {
+        // Clear all answers
+        clearClozeInputs(ident, inputs);
+    } else {
+        // Write all answers
+        fillClozeInputs(ident, inputs);
+    }
+    // Hide the score paragraph, irrelevant now
+    var scorePara = document.getElementById('clozeScore' + ident);
+    scorePara.innerHTML = "";
+    // If the get score button is visible and we just filled in all the right
+    // answers, disable it until they clear the scores again.
+    var getScoreButton = document.getElementById('getScore' + ident);
+    if (getScoreButton) {
+        getScoreButton.disabled = !allCorrect;
+    }
+}
+
+// Shows all answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function fillClozeInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputs(ident)
+    }
+    for (var i=0; i<inputs.length; i++) {
+        var input = inputs[i];
+        input.value = getClozeAnswer(input);
+        markClozeWord(input, CORRECT);
+        // Toggle the readonlyness of the answers also
+        input.setAttribute('readonly', 'readonly');
+    }
+}
+
+// Blanks all the answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function clearClozeInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputs(ident)
+    }
+    for (var i=0; i<inputs.length; i++) {
+        var input = inputs[i];
+        input.value="";
+        markClozeWord(input, NOT_ATTEMPTED);
+        // Toggle the readonlyness of the answers also
+        input.removeAttribute('readonly');
+    }
+}
+
+// Marks a cloze word in view mode.
+// Returns NOT_ATTEMPTED, CORRECT, or WRONG
+function checkAndMarkClozeWord(ele) {
+    var result = checkClozeWord(ele);
+    if (result != '') {
+        markClozeWord(ele, CORRECT);
+        ele.value = result;
+        return CORRECT;
+    } else if (!ele.value) {
+        markClozeWord(ele, NOT_ATTEMPTED);
+        return NOT_ATTEMPTED;
+    } else {
+        markClozeWord(ele, WRONG);
+        return WRONG;
+    }
+}
+
+// Marks a cloze question (at the moment just changes the color)
+// 'mark' should be 0=Not Answered, 1=Wrong, 2=Right
+function markClozeWord(ele, mark) {
+    switch (mark) {
+        case 0:
+            // Not attempted
+            ele.style.backgroundColor = "";
+            break;
+        case 1:
+            // Wrong
+            ele.style.backgroundColor = "red";
+            break;
+        case 2: 
+            // Correct
+            ele.style.backgroundColor = "forestgreen";
+            break;
+    }
+    return mark
+}
+
+// Return the last mark applied to a word
+function getClozeMark(ele) {
+    // JR: Esta función no funcionaba correctamente y ha sido reemplazada
+    var result = checkClozeWord(ele);
+    if (result != '') {
+        return CORRECT;
+    } else if (!ele.value) {
+        return NOT_ATTEMPTED;
+    } else {
+        return WRONG;
+    }
+}
+
+// Decrypts and returns the answer for a certain cloze field word
+function getClozeAnswer(ele) {
+    var idents = getClozeIds(ele)
+    var ident = idents[0]
+    var inputId = idents[1]
+    var answerSpan = document.getElementById('clozeAnswer'+ident+'.'+inputId);
+    var code = answerSpan.innerHTML;
+    code = decode64(code)
+    code = unescape(code)
+    // XOR "Decrypt"
+    result = '';
+    var key = 'X'.charCodeAt(0);
+    for (var i=0; i<code.length; i++) {
+        var letter = code.charCodeAt(i);
+        key ^= letter
+        result += String.fromCharCode(key);
+    }
+    return result
+}
+
+// Base64 Decode
+// Base64 code from Tyler Akins -- http://rumkin.com
+function decode64(input) {
+   var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+   var output = "";
+   var chr1, chr2, chr3;
+   var enc1, enc2, enc3, enc4;
+   var i = 0;
+   // Remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+   input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+   do {
+      enc1 = keyStr.indexOf(input.charAt(i++));
+      enc2 = keyStr.indexOf(input.charAt(i++));
+      enc3 = keyStr.indexOf(input.charAt(i++));
+      enc4 = keyStr.indexOf(input.charAt(i++));
+
+      chr1 = (enc1 << 2) | (enc2 >> 4);
+      chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+      chr3 = ((enc3 & 3) << 6) | enc4;
+
+      output = output + String.fromCharCode(chr1);
+
+      if (enc3 != 64) {
+         output = output + String.fromCharCode(chr2);
+      }
+      if (enc4 != 64) {
+         output = output + String.fromCharCode(chr3);
+      }
+   } while (i < input.length);
+   return output;
+}
+
+// Returns the corrected word or an empty string
+function checkClozeWord(ele) {
+    var guess = ele.value;
+    // Extract the idevice id and the input number out of the element's id
+    var original = getClozeAnswer(ele);
+    var answer = original;
+    var guess = ele.value
+    var ident = getClozeIds(ele)[0]
+    // Read the flags for checking answers
+    var strictMarking = eval(document.getElementById(
+        'clozeFlag'+ident+'.strictMarking').value);
+    var checkCaps = eval(document.getElementById(
+        'clozeFlag'+ident+'.checkCaps').value);
+    if (!checkCaps) {
+        guess = guess.toLowerCase();
+        answer = original.toLowerCase();
+    }
+    if (guess == answer)
+        // You are right!
+        return original
+    else if (strictMarking || answer.length <= 4)
+        // You are wrong!
+        return "";
+    else {
+        // Now use the similarity check algorythm
+        var i = 0;
+        var j = 0;
+        var orders = [[answer, guess], [guess, answer]];
+        var maxMisses = Math.floor(answer.length / 6) + 1;
+        var misses = 0;
+        if (guess.length <= maxMisses) {
+            misses = Math.abs(guess.length - answer.length);
+            for (i = 0; i < guess.length; i++ ) {
+                if (answer.search(guess[i]) == -1) {
+                    misses += 1;
+                }
+            }
+            if (misses <= maxMisses) {
+                return answer;
+            } else {
+                return "";
+            }
+        }
+        // Iterate through the different orders of checking
+        for (i = 0; i < 2; i++) {
+            var string1 = orders[i][0];
+            var string2 = orders[i][1];
+            while (string1) {
+                misses = Math.floor(
+                            (Math.abs(string1.length - string2.length) +
+                             Math.abs(guess.length - answer.length)) / 2)
+                var max = Math.min(string1.length, string2.length)
+                for (j = 0; j < max; j++) {
+                    var a = string2.charAt(j);
+                    var b = string1.charAt(j);
+                    if (a != b)
+                        misses += 1;
+                    if (misses > maxMisses)
+                        break;
+                }
+                if (misses <= maxMisses)
+                    // You are right
+                    return answer;
+                string1 = string1.substr(1);
+            }
+        }
+        // You are wrong!
+        return "";
+    }
+}
+
+// Extracts the idevice id and input id from a javascript element
+function getClozeIds(ele) {
+    // Extract the idevice id and the input number out of the element's id
+    // id is "clozeBlank%s.%s" % (idevice.id, input number)
+    var id = ele.id.slice(10); 
+    var dotindex = id.indexOf('.')
+    var ident = id.slice(0, dotindex)
+    var inputId = id.slice(id.indexOf('.')+1)
+    return [ident, inputId]
+}
+
+// Calculate the score for cloze idevice
+function showClozeScore(ident, mark) {
+    var score = 0
+    var div = document.getElementById('cloze' + ident)
+    var inputs = getCloseInputs(ident)
+    for (var i=0; i<inputs.length; i++) {
+        var input = inputs[i];
+        if (mark) {
+            var result = checkAndMarkClozeWord(input);
+        } else {
+            var result = getClozeMark(input);
+        }
+        if (result == 2) {
+            score++;
+        }
+    }
+    // Show it in a nice paragraph
+    var scorePara = document.getElementById('clozeScore' + ident);
+    scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + ".";
+}
+
+// Returns an array of input elements that are associated with a certain idevice
+function getCloseInputs(ident) {
+    var result = new Array;
+    var clozeDiv = document.getElementById('cloze'+ident)
+    recurseFindClozeInputs(clozeDiv, ident, result)
+    return result
+}
+
+// Adds any cloze inputs found to result, recurses down
+function recurseFindClozeInputs(dad, ident, result) {
+    for (var i=0; i<dad.childNodes.length; i++) {
+        var ele = dad.childNodes[i];
+        // See if it is a blank
+        if (ele.id) {
+            if (ele.id.search('clozeBlank'+ident) == 0) {
+                result.push(ele);
+                continue;
+            }
+        }
+        // See if it contains blanks
+        if (ele.hasChildNodes()) {
+            recurseFindClozeInputs(ele, ident, result);
+        }
+    }
+}
+    
+
+// Pass the cloze element's id, and the visible property of the feedback element
+// associated with it will be toggled. If there is no feedback field, does
+// nothing
+function toggleClozeFeedback(ident) {
+    var feedbackIdEle = document.getElementById(
+        'clozeVar'+ident+'.feedbackId');
+    if (feedbackIdEle) {
+        var feedbackId = feedbackIdEle.value;
+        toggleElementVisible(feedbackId);
+    }
+}
+
+// Toggle the visiblity of an element from it's id
+function toggleElementVisible(ident) {
+    // Toggle the visibility of an element
+    var element = document.getElementById(ident);
+    if (element) {
+        if (element.style.display != "none") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "";
+        }
+    }
+}
+
+// Reflection Idevice code ////////////////////////////////////////////////
+
+// Show or hide the feedback for reflection idevice
+function showAnswer(id,isShow) {
+    if (isShow==1) {
+        document.getElementById("s"+id).style.display = "block";
+        document.getElementById("hide"+id).style.display = "block";
+        document.getElementById("view"+id).style.display = "none";
+    } else {
+        document.getElementById("s"+id).style.display = "none";
+        document.getElementById("hide"+id).style.display = "none";
+        document.getElementById("view"+id).style.display = "block";
+    }
+}
+
+// show or hide the feedback for cloze idevice
+function toggleFeedback(id) {
+    var ele = document.getElementById('fb'+id);
+    if (ele.style.display == "block") {
+        ele.style.display = "none";
+    } else {
+        ele.style.display = "block";
+    }
+}
+
+// Call the function like this:
+//insertAtCursor(document.formName.fieldName, this value);
+function insertAtCursor(myField, myValue, num) {
+    //MOZILLA/NETSCAPE support
+   
+    if (myField.selectionStart || myField.selectionStart == '0') {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        myField.value = myField.value.substring(0, startPos)
+            + myValue
+            + myField.value.substring(endPos, myField.value.length);
+        myField.selectionStart = startPos + myValue.length - num
+    } else {
+        myField.value += myValue;
+    } 
+    myField.selectionEnd = myField.selectionStart
+    myField.focus();
+}
+
+//used by maths idevice
+function insertSymbol(id, string, num){
+    var ele = document.getElementById(id);
+    insertAtCursor(ele, string, num)
+}
+
+//used for multiple select idevice for calculating score and showing feedback.
+function calcScore(num, ident){
+    var score = 0, i, chk;
+    for(i=0; i<num; i++){
+        var chkele = document.getElementById(ident+i.toString());        
+        var ansele = document.getElementById("ans"+ident+i.toString())
+        chk = "False"
+        if (chkele.checked==1)
+            chk = "True"   
+        if (chk == chkele.value){
+            score++
+            ansele.style.color = "black"
+        }else{            
+            ansele.style.color = "red"
+        }
+    }
+    var fele = document.getElementById("f"+ident)
+    fele.style.display = "block"
+    alert(YOUR_SCORE_IS  + score + "/" + num)
+}
+
+// used to show question's feedback for multi-select idevice 
+function showFeedback(num, ident){
+    var i, chk;
+    for(i=0; i<num; i++){
+// JR añado 'op' a la hora de buscar por Id
+        var ele = document.getElementById("op"+ident+i.toString())
+        var ele0 = document.getElementById("op"+ident+i.toString()+"_0")
+        var ele1 = document.getElementById("op"+ident+i.toString()+"_1")
+        var ansele = document.getElementById("ans"+ident+i.toString())
+        chk = "False"
+        if (ele.checked==1)
+            chk = "True"   
+        if (chk == ele.value){
+            ele1.style.display = "block"
+			ele0.style.display = "none"
+//            ansele.style.color = "black"
+        }else{            
+            ele0.style.display = "block"
+			ele1.style.display = "none"
+//            ansele.style.color = "red"
+        }
+    }
+    var fele = document.getElementById("f"+ident)
+    fele.style.display = "block"
+}
+
+
+///////////////////////////////////////////////
+// Media plugin detection codes, modified from:
+// http://developer.apple.com/internet/webcontent/detectplugins.html
+function detectQuickTime() {
+    pluginFound = detectPlugin('QuickTime');
+    return pluginFound;
+}
+
+function detectReal() {
+    pluginFound = detectPlugin('RealPlayer');
+     return pluginFound;
+}
+
+function detectFlash() {
+    pluginFound = detectPlugin('Shockwave','Flash'); 
+     return pluginFound;
+}
+
+function detectDirector() { 
+    pluginFound = detectPlugin('Shockwave','Director'); 
+     return pluginFound;
+}
+
+
+function detectWindowsMedia() {
+    pluginFound = detectPlugin('Windows Media');
+      return pluginFound;
+}
+
+function detectPlugin() {
+    // allow for multiple checks in a single pass
+    var daPlugins = detectPlugin.arguments;
+    // consider pluginFound to be false until proven true
+    var pluginFound = false;
+    // if plugins array is there and not fake
+    if (navigator.plugins && navigator.plugins.length > 0) {
+	var pluginsArrayLength = navigator.plugins.length;
+	// for each plugin...
+	for (var pluginsArrayCounter=0; pluginsArrayCounter < pluginsArrayLength; pluginsArrayCounter++ ) {
+	    // loop through all desired names and check each against the current plugin name
+	    var numFound = 0;
+	    for(var namesCounter=0; namesCounter < daPlugins.length; namesCounter++) {
+		// if desired plugin name is found in either plugin name or description
+		if( (navigator.plugins[pluginsArrayCounter].name.indexOf(daPlugins[namesCounter]) >= 0) || 
+		    (navigator.plugins[pluginsArrayCounter].description.indexOf(daPlugins[namesCounter]) >= 0) ) {
+		    // this name was found
+		    numFound++;
+		}   
+	    }
+	    // now that we have checked all the required names against this one plugin,
+	    // if the number we found matches the total number provided then we were successful
+	    if(numFound == daPlugins.length) {
+		pluginFound = true;
+		// if we've found the plugin, we can stop looking through at the rest of the plugins
+		break;
+	    }
+	}
+    }
+    return pluginFound;
+} // detectPlugin
+///////////////////////////////////////////////
+
+// JR
+// Cloze Lang Field Stuff /////////////////////////////////////////////////
+
+// Constants 
+NOT_ATTEMPTED = 0
+WRONG = 1
+CORRECT = 2
+
+// Functions 
+
+// Called when a learner types something into a cloze word space
+function onClozelangChange(ele) {
+    var ident = getClozelangIds(ele)[0];
+    var instant = eval(document.getElementById(
+        'clozelangFlag'+ident+'.instantMarking').value);
+    if (instant) {
+        checkAndMarkClozelangWord(ele);
+        // Hide the score paragraph if visible
+        var scorePara = document.getElementById('clozelangScore' + ident);
+        scorePara.innerHTML = "";
+    }
+}
+
+// Recieves and marks answers from student
+function clozelangSubmit(ident) {
+    // Mark all of the words
+    showClozelangScore(ident, 1);
+    // Hide Submit
+    toggleElementVisible('submit'+ident);
+    // Show Restart
+    //toggleElementVisible('restart'+ident);
+    // Show Show Answers Button
+    //toggleElementVisible('showAnswersButton'+ident);
+    // Show feedback
+    toggleClozelangFeedback(ident);
+}
+
+// Makes cloze idevice like new :)
+function clozelangRestart(ident) {
+    // Hide Feedback
+    toggleClozelangFeedback(ident);
+    // Clear the answers (Also hides score)
+    toggleClozelangAnswers(ident, true);
+    // Hide Restart
+    toggleElementVisible('restart'+ident);
+    // Hide Show Answers Button
+    toggleElementVisible('showAnswersButton'+ident);
+    // Show Submit
+    toggleElementVisible('submit'+ident);
+}
+
+// Show/Hide all answers in the cloze idevice
+// 'clear' is an optional argument, that forces all the answers to be cleared
+// whether they are all finished and correct or not
+function toggleClozelangAnswers(ident, clear){
+    // See if any have not been answered yet
+    var allCorrect = true;
+    var inputs = getCloseInputsCloze(ident)
+    if (!clear) {
+        for (var i=0; i<inputs.length; i++) {
+            var input = inputs[i];
+            if (getClozelangMark(input) != 2) {
+                allCorrect = false;
+                break;
+            }
+        }
+    }
+    if (allCorrect) {
+        // Clear all answers
+        clearClozelangInputs(ident, inputs);
+    } else {
+        // Write all answers
+        fillClozelangInputs(ident, inputs);
+    }
+    // Hide the score paragraph, irrelevant now
+    var scorePara = document.getElementById('clozelangScore' + ident);
+    scorePara.innerHTML = "";
+    // If the get score button is visible and we just filled in all the right
+    // answers, disable it until they clear the scores again.
+    var getScoreButton = document.getElementById('getScore' + ident);
+    if (getScoreButton) {
+        getScoreButton.disabled = !allCorrect;
+    }
+}
+
+// Shows all answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function fillClozelangInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputsCloze(ident)
+    }
+    for (var i=0; i<inputs.length; i++) {
+        var input = inputs[i];
+        input.value = getClozelangAnswer(input);
+        markClozeWord(input, CORRECT);
+        // Toggle the readonlyness of the answers also
+        input.setAttribute('readonly', 'readonly');
+    }
+}
+
+// Blanks all the answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function clearClozelangInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputsCloze(ident)
+    }
+    for (var i=0; i<inputs.length; i++) {
+        var input = inputs[i];
+        input.value="";
+        markClozeWord(input, NOT_ATTEMPTED);
+        // Toggle the readonlyness of the answers also
+        input.removeAttribute('readonly');
+    }
+}
+
+// Marks a cloze word in view mode.
+// Returns NOT_ATTEMPTED, CORRECT, or WRONG
+function checkAndMarkClozelangWord(ele) {
+    var result = checkClozelangWord(ele);
+    if (result != '') {
+        markClozelangWord(ele, CORRECT);
+        ele.value = result;
+        return CORRECT;
+    } else if (!ele.value) {
+        markClozelangWord(ele, NOT_ATTEMPTED);
+        return NOT_ATTEMPTED;
+    } else {
+        markClozelangWord(ele, WRONG);
+        return WRONG;
+    }
+}
+
+// Marks a cloze question (at the moment just changes the color)
+// 'mark' should be 0=Not Answered, 1=Wrong, 2=Right
+function markClozelangWord(ele, mark) {
+    switch (mark) {
+        case 0:
+            // Not attempted
+            ele.style.backgroundColor = "";
+            break;
+        case 1:
+            // Wrong
+            ele.style.backgroundColor = "red";
+            break;
+        case 2: 
+            // Correct
+            ele.style.backgroundColor = "forestgreen";
+            break;
+    }
+    return mark
+}
+
+// Return the last mark applied to a word
+function getClozelangMark(ele) {
+    // Return last mark applied
+    switch (ele.style.backgroundColor) {
+        case 'red':   return 1; // Wrong
+        case 'forestgreen':  return 2; // Correct
+        default:      return 0; // Not attempted
+    }
+}
+
+// Decrypts and returns the answer for a certain cloze field word
+function getClozelangAnswer(ele) {
+    var idents = getClozelangIds(ele)
+    var ident = idents[0]
+    var inputId = idents[1]
+    var answerSpan = document.getElementById('clozelangAnswer'+ident+'.'+inputId);
+    var code = answerSpan.innerHTML;
+    code = decode64(code)
+    code = unescape(code)
+    // XOR "Decrypt"
+    result = '';
+    var key = 'X'.charCodeAt(0);
+    for (var i=0; i<code.length; i++) {
+        var letter = code.charCodeAt(i);
+        key ^= letter
+        result += String.fromCharCode(key);
+    }
+    return result
+}
+
+// Base64 Decode
+// Base64 code from Tyler Akins -- http://rumkin.com
+//function decode64(input) {
+//   var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+//   var output = "";
+//   var chr1, chr2, chr3;
+//   var enc1, enc2, enc3, enc4;
+//   var i = 0;
+//   // Remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+//   input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+//   do {
+//      enc1 = keyStr.indexOf(input.charAt(i++));
+//      enc2 = keyStr.indexOf(input.charAt(i++));
+//      enc3 = keyStr.indexOf(input.charAt(i++));
+//      enc4 = keyStr.indexOf(input.charAt(i++));
+//
+//      chr1 = (enc1 << 2) | (enc2 >> 4);
+//      chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+//      chr3 = ((enc3 & 3) << 6) | enc4;
+//
+//      output = output + String.fromCharCode(chr1);
+//
+//      if (enc3 != 64) {
+//         output = output + String.fromCharCode(chr2);
+//      }
+//      if (enc4 != 64) {
+//         output = output + String.fromCharCode(chr3);
+//      }
+//   } while (i < input.length);
+//   return output;
+//}
+
+// Returns the corrected word or an empty string
+function checkClozelangWord(ele) {
+    var guess = ele.value;
+    // Extract the idevice id and the input number out of the element's id
+    var original = getClozelangAnswer(ele);
+    var answer = original;
+    var guess = ele.value
+    var ident = getClozelangIds(ele)[0]
+    // Read the flags for checking answers
+    var strictMarking = eval(document.getElementById(
+        'clozelangFlag'+ident+'.strictMarking').value);
+    var checkCaps = eval(document.getElementById(
+        'clozelangFlag'+ident+'.checkCaps').value);
+    if (!checkCaps) {
+        guess = guess.toLowerCase();
+        answer = original.toLowerCase();
+    }
+    if (guess == answer)
+        // You are right!
+        return original
+    else if (strictMarking || answer.length <= 4)
+        // You are wrong!
+        return "";
+    else {
+        // Now use the similarity check algorythm
+        var i = 0;
+        var j = 0;
+        var orders = [[answer, guess], [guess, answer]];
+        var maxMisses = Math.floor(answer.length / 6) + 1;
+        var misses = 0;
+        if (guess.length <= maxMisses) {
+            misses = Math.abs(guess.length - answer.length);
+            for (i = 0; i < guess.length; i++ ) {
+                if (answer.search(guess[i]) == -1) {
+                    misses += 1;
+                }
+            }
+            if (misses <= maxMisses) {
+                return answer;
+            } else {
+                return "";
+            }
+        }
+        // Iterate through the different orders of checking
+        for (i = 0; i < 2; i++) {
+            var string1 = orders[i][0];
+            var string2 = orders[i][1];
+            while (string1) {
+                misses = Math.floor(
+                            (Math.abs(string1.length - string2.length) +
+                             Math.abs(guess.length - answer.length)) / 2)
+                var max = Math.min(string1.length, string2.length)
+                for (j = 0; j < max; j++) {
+                    var a = string2.charAt(j);
+                    var b = string1.charAt(j);
+                    if (a != b)
+                        misses += 1;
+                    if (misses > maxMisses)
+                        break;
+                }
+                if (misses <= maxMisses)
+                    // You are right
+                    return answer;
+                string1 = string1.substr(1);
+            }
+        }
+        // You are wrong!
+        return "";
+    }
+}
+
+// Extracts the idevice id and input id from a javascript element
+function getClozelangIds(ele) {
+    // Extract the idevice id and the input number out of the element's id
+    // id is "clozelangBlank%s.%s" % (idevice.id, input number)
+    var id = ele.id.slice(14); 
+    var dotindex = id.indexOf('.')
+    var ident = id.slice(0, dotindex)
+    var inputId = id.slice(id.indexOf('.')+1)
+    return [ident, inputId]
+}
+
+// Calculate the score for cloze idevice
+function showClozelangScore(ident, mark) {
+    var showScore = eval(document.getElementById(
+        'clozelangFlag'+ident+'.showScore').value);
+    if (showScore) {
+	    var score = 0
+	    var div = document.getElementById('clozelang' + ident)
+	    var inputs = getCloseInputsCloze(ident)
+	    for (var i=0; i<inputs.length; i++) {
+		var input = inputs[i];
+		if (mark) {
+		    var result = checkAndMarkClozelangWord(input);
+		} else {
+		    var result = getClozelangMark(input);
+		}
+		if (result == 2) {
+		    score++;
+		}
+	    }
+	    // Show it in a nice paragraph
+	    var scorePara = document.getElementById('clozelangScore' + ident);
+	    scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + ".";
+     }
+}
+
+// Returns an array of input elements that are associated with a certain idevice
+function getCloseInputsCloze(ident) {
+    var result = new Array;
+    var clozeDiv = document.getElementById('clozelang'+ident)
+    recurseFindClozelangInputs(clozeDiv, ident, result)
+    return result
+}
+
+// Adds any cloze inputs found to result, recurses down
+function recurseFindClozelangInputs(dad, ident, result) {
+    for (var i=0; i<dad.childNodes.length; i++) {
+        var ele = dad.childNodes[i];
+        // See if it is a blank
+        if (ele.id) {
+            if (ele.id.search('clozelangBlank'+ident) == 0) {
+                result.push(ele);
+                continue;
+            }
+        }
+        // See if it contains blanks
+        if (ele.hasChildNodes()) {
+            recurseFindClozelangInputs(ele, ident, result);
+        }
+    }
+}
+    
+
+// Pass the cloze element's id, and the visible property of the feedback element
+// associated with it will be toggled. If there is no feedback field, does
+// nothing
+function toggleClozelangFeedback(ident) {
+    var feedbackIdEle = document.getElementById(
+        'clozelangVar'+ident+'.feedbackId');
+    if (feedbackIdEle) {
+        var feedbackId = feedbackIdEle.value;
+        toggleElementVisible(feedbackId);
+    }
+}
+
+// Toggle the visiblity of an element from it's id
+//function toggleElementVisible(ident) {
+//    // Toggle the visibility of an element
+//    var element = document.getElementById(ident);
+//    if (element) {
+//        if (element.style.display != "none") {
+//            element.style.display = "none";
+//        } else {
+//            element.style.display = "";
+//        }
+//    }
+//}
+
+sfHover = function() {
+	var nav = document.getElementById("siteNav");
+	if (nav) {
+		var sfEls = nav.getElementsByTagName("LI");
+		for (var i=0; i<sfEls.length; i++) {
+			sfEls[i].onmouseover=function() {
+				this.className="sfhover";
+			}
+			sfEls[i].onmouseout=function() {
+				this.className="sfout";
+			}
+		}
+		//Enable Keyboard:
+		var mcEls = nav.getElementsByTagName("A");
+		for (var i=0; i<mcEls.length; i++) {
+			mcEls[i].onfocus=function() {
+				this.className+=(this.className.length>0? " ": "") + "sffocus"; //a:focus
+				this.parentNode.className+=(this.parentNode.className.length>0? " ": "") + "sfhover"; //li < a:focus
+				if(this.parentNode.parentNode.parentNode.nodeName == "LI") {
+					this.parentNode.parentNode.parentNode.className+=(this.parentNode.parentNode.parentNode.className.length>0? " ": "") + "sfhover"; //li < ul < li < a:focus
+					if(this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
+						this.parentNode.parentNode.parentNode.parentNode.parentNode.className+=(this.parentNode.parentNode.parentNode.parentNode.parentNode.className.length>0? " ": "") + "sfhover"; //li < ul < li < ul < li < a:focus
+					}
+				}
+			}
+			mcEls[i].onblur=function() {
+				this.className=this.className.replace(new RegExp("( ?|^)sffocus\\b"), "");
+				this.parentNode.className=this.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+				if(this.parentNode.parentNode.parentNode.nodeName == "LI") {
+					this.parentNode.parentNode.parentNode.className=this.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+					if(this.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "LI") {
+						this.parentNode.parentNode.parentNode.parentNode.parentNode.className=this.parentNode.parentNode.parentNode.parentNode.parentNode.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+					}
+				}
+			}
+		}
+	}
+}
+if (document.addEventListener){
+	window.addEventListener('load',sfHover,false);
+} else {
+	window.attachEvent('onload',sfHover);
+}
+
+/* Quicktime and Real Media for IE */
+var ie_media_replace = function() {
+	var objs = document.getElementsByTagName("OBJECT");
+	var i = objs.length;
+	while (i--) {
+		if(objs[i].type=="video/quicktime" || objs[i].type=="audio/x-pn-realaudio-plugin") {
+			if(typeof(objs.classid)=='undefined') {
+				objs[i].style.display="none";
+				var clsid = "02BF25D5-8C17-4B23-BC80-D3488ABDDC6B";
+				if (objs[i].type=="audio/x-pn-realaudio-plugin") clsid = "CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA";
+				var h = objs[i].height;
+				var w = objs[i].width;
+				var s = objs[i].data;
+				var e = document.createElement("DIV");
+				e.innerHTML = '<object classid="clsid:'+clsid+'" data="'+s+'" width="'+w+'" height="'+h+'"><param name="controller" value="true" /><param name="src" value="'+s+'" /><param name="autoplay" value="false" /></object>';
+				objs[i].parentNode.insertBefore(e,objs[i]);
+			}
+		}
+	}
+}
+if (navigator.appName=="Microsoft Internet Explorer") {
+	if (document.addEventListener){
+		window.addEventListener('load',ie_media_replace,false);
+	} else {
+		window.attachEvent('onload',ie_media_replace);
+	}	
+}
+
+var exe_idevices = {
+    imageGallery : {
+        init : function(id) {
+            var e = document.getElementById(id);
+            var lis = e.getElementsByTagName("LI");
+            var i = lis.length;
+            while (i--) {
+                var oH = lis[i].innerHTML;
+                var ie8_rel = 'rel=lightbox['+id+']';
+                if (oH.indexOf(ie8_rel)!=-1) { // Browsers that use no quotes for the attribute value (rel=lightbox)
+                    nH = oH.replace('rel=lightbox[','class="lytebox" data-lyte-options="group:');
+                    nH = nH.replace(']','"');
+                } else {
+                    nH = oH.replace('rel="lightbox[','class="lytebox" data-lyte-options="group:');
+                    nH = nH.replace(']','');
+                }
+                lis[i].innerHTML = nH;
+            }
+        }
+    }
+}

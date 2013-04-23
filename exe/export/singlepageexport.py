@@ -26,6 +26,7 @@ from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.singlepage    import SinglePage
+import os
 
 import logging
 log = logging.getLogger(__name__)
@@ -78,23 +79,25 @@ class SinglePageExport(object):
         """
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles  = [self.stylesDir/'..'/'base.css']
-	styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
-        styleFiles += self.stylesDir.files("*.css")
-        if "nav.css" in styleFiles:
-            styleFiles.remove("nav.css")
-        styleFiles += self.stylesDir.files("*.jpg")
-        styleFiles += self.stylesDir.files("*.gif")
-        styleFiles += self.stylesDir.files("*.png")
-        styleFiles += self.stylesDir.files("*.js")
-        styleFiles += self.stylesDir.files("*.html")
-        styleFiles += self.stylesDir.files("*.ico")
-        styleFiles += self.stylesDir.files("*.ttf")
-        styleFiles += self.stylesDir.files("*.eot")
-        styleFiles += self.stylesDir.files("*.otf")
-        styleFiles += self.stylesDir.files("*.woff")
-        self.stylesDir.copylist(styleFiles, self.outputDir)
-
+        if os.path.isdir(self.stylesDir):
+            # Copy the style sheet files to the output dir
+            styleFiles  = [self.stylesDir/'..'/'base.css']
+            styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
+            styleFiles += self.stylesDir.files("*.css")
+            if "nav.css" in styleFiles:
+                styleFiles.remove("nav.css")
+            styleFiles += self.stylesDir.files("*.jpg")
+            styleFiles += self.stylesDir.files("*.gif")
+            styleFiles += self.stylesDir.files("*.png")
+            styleFiles += self.stylesDir.files("*.js")
+            styleFiles += self.stylesDir.files("*.html")
+            styleFiles += self.stylesDir.files("*.ico")
+            styleFiles += self.stylesDir.files("*.ttf")
+            styleFiles += self.stylesDir.files("*.eot")
+            styleFiles += self.stylesDir.files("*.otf")
+            styleFiles += self.stylesDir.files("*.woff")
+            self.stylesDir.copylist(styleFiles, outputDir)
+            
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
 
@@ -129,7 +132,7 @@ class SinglePageExport(object):
     	    	if 'flowPlayer.swf' in idevice.systemResources:
     	    		hasFlowplayer = True
     	    if not hasMagnifier:
-    	    	if 'magnifier.swf' in idevice.systemResources:
+    	    	if 'mojomagnify.js' in idevice.systemResources:
     	    		hasMagnifier = True
     	    if not hasXspfplayer:
     		    if 'xspf_player.swf' in idevice.systemResources:
@@ -147,8 +150,8 @@ class SinglePageExport(object):
             controlsfile = (self.templatesDir/'flowplayer.controls.swf')
             controlsfile.copyfile(self.outputDir/'flowplayer.controls.swf')
         if hasMagnifier:
-            videofile = (self.templatesDir/'magnifier.swf')
-            videofile.copyfile(self.outputDir/'magnifier.swf')
+            videofile = (self.templatesDir/'mojomagnify.js')
+            videofile.copyfile(self.outputDir/'mojomagnify.js')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(self.outputDir/'xspf_player.swf')

@@ -960,12 +960,12 @@ class MagnifierElement(Element):
         """
         if not self.field.imageResource:
             self.field.setDefaultImage()
-
+        
         html = self.renderMagnifier(
                         '../%s/resources/%s' % (
                             self.field.idevice.parentNode.package.name,
                             self.field.imageResource.storageName),
-                        "../templates/magnifier.swf")
+                        "../templates/mojomagnify.js")
         return html
 
 
@@ -977,7 +977,7 @@ class MagnifierElement(Element):
             self.field.setDefaultImage()
 
         html = self.renderMagnifier(self.field.imageResource.storageName,                            
-                                   "magnifier.swf")
+                                   "mojomagnify.js")
 
 
         return html
@@ -988,6 +988,7 @@ class MagnifierElement(Element):
 
         """
         field = self.field
+        """
         flashVars = {
             'file': imageFile,
             'width': field.width,
@@ -1010,6 +1011,17 @@ class MagnifierElement(Element):
                 'salign': 'lt',
                 'bgcolor': '#888888',
                 'FlashVars': flashVars})
+        """
+        html=u'<script type="text/javascript" src="%s"></script>\n' % magnifierFile 
+        html +=u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"  width="%s" height="%s" data-size="%s"  data-zoom="%s" />'% (
+            self.id,
+            imageFile,
+            imageFile,
+            field.width,
+            field.height,
+            field.glassSize,
+            field.initialZSize)
+        return html;
         
 
 #============================================================================
@@ -2149,12 +2161,12 @@ class SelectquestionElement(Element):
 
 # JR: Generamos el contenido que ira dentro de la etiqueta noscript
 	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solucion") + ": </strong></p><ol>\n"
+	html += "<p><strong>" + _("Solution") + ": </strong></p><ol>\n"
 	for element in self.options:
 		html += element.renderNoscript(preview)
 	html += "</ol>"
 	if self.feedbackElement.field.content.strip():
-		html += "<p><strong>" + _("Retroalimentacion") + ": </strong></p>\n"
+		html += "<p><strong>" + _("Feedback") + ": </strong></p>\n"
         	if preview: 
             		html  += self.feedbackElement.field.content_w_resourcePaths
         	else: 
@@ -2541,9 +2553,9 @@ class QuizQuestionElement(Element):
         for element in self.options:
             html += element.renderFeedbackView(preview)
 
-# JR: Generamos el contenido que ira dentro de la etiqueta noscrip
+# JR: Generamos el contenido que ira dentro de la etiqueta noscript
 	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solucion") + ": </strong></p>\n"
+	html += "<p><strong>" + _("Solution") + ": </strong></p>\n"
 	html += "<ol>"
 	for element in self.options:
 		html += element.renderNoscript(preview)
