@@ -90,11 +90,6 @@ class Application:
 
         self.loadConfiguration()
 
-        # if a document was double clicked to launch on Win32,
-        #   make sure we have the long pathname
-        if sys.platform[:3] == "win" and self.packagePath is not None:
-            self.packagePath = self.config.getLongPathName(self.packagePath)
-
         installSafeTranslate()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
