@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-24 21:59+0100\n"
+"POT-Creation-Date: 2013-04-22 16:43+0200\n"
 "PO-Revision-Date: 2008-01-28 00:15+1300\n"
 "Last-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -95,33 +95,33 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:524
 msgid ""
-"Clic on AddFiles button for select the .ggb file and clic on Upload "
-"button after."
+"Click on the AddFiles button to select the .ggb file and then click on "
+"the Upload button."
 msgstr ""
 
 #: exe/engine/appletidevice.py:534
 msgid ""
-"Clic on AddFiles button for select the .jclic.zip file and clic on Upload"
-" button after.<p>The activity will be visible when the HTML file will be "
-"generated from eXe."
+"Click on the AddFiles button to select the .jclic.zip file and then click"
+" on the Upload button.<p>The activity will be visible when the HTML file "
+"will be generated from eXe."
 msgstr ""
 
 #: exe/engine/appletidevice.py:544
 msgid ""
-"Clic on AddFiles button for select the .sb or .scratch file and clic on "
-"Upload button after."
+"Click on the AddFiles button to select the .sb or .scratch file and then "
+"click on the Upload button."
 msgstr ""
 
 #: exe/engine/appletidevice.py:555
 msgid ""
-"Please write: scene number,URL (no spaces) that include it, eg: "
-"3,http://example.com; clic on Upload button after."
+"Please enter: scene number,URL (no spaces) that include it, eg: "
+"3,http://example.com; click on the Upload button afterwards."
 msgstr ""
 
 #: exe/engine/appletidevice.py:557
 msgid ""
-"Clic on AddFiles button for select the .html or .htm file and clic on "
-"Upload button after for getting its content."
+"Click on the AddFiles button to select the .html or .htm file and then "
+"click on the Upload button to get its content."
 msgstr ""
 
 #: exe/engine/appletidevice.py:568
@@ -357,7 +357,7 @@ msgstr ""
 #: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:129
 #: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
-#: exe/engine/verdaderofalsofpdidevice.py:395 exe/webui/common.py:337
+#: exe/engine/verdaderofalsofpdidevice.py:395 exe/webui/common.py:401
 msgid "Instructions"
 msgstr ""
 
@@ -398,7 +398,7 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:164
 #: exe/webui/clozefpdblock.py:192 exe/webui/clozelangfpdblock.py:175
-#: exe/webui/clozelangfpdblock.py:193 exe/webui/common.py:253
+#: exe/webui/clozelangfpdblock.py:193 exe/webui/common.py:317
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:254
 #: exe/webui/element.py:2271 exe/webui/listablock.py:456
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -1377,35 +1377,35 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:390
+#: exe/engine/package.py:391
 msgid "Topic"
 msgstr ""
 
-#: exe/engine/package.py:390
+#: exe/engine/package.py:391
 msgid "Section"
 msgstr ""
 
-#: exe/engine/package.py:390
+#: exe/engine/package.py:391
 msgid "Unit"
 msgstr ""
 
-#: exe/engine/package.py:411
+#: exe/engine/package.py:412
 msgid "Home"
 msgstr ""
 
-#: exe/engine/package.py:522
+#: exe/engine/package.py:524
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:553 exe/engine/package.py:560
+#: exe/engine/package.py:562 exe/engine/package.py:569
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
 
-#: exe/engine/package.py:874 exe/jsui/scripts/app/controller/Toolbar.js:334
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:311
+#: exe/engine/package.py:906 exe/jsui/scripts/app/controller/Toolbar.js:322
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
 msgid "iDevice Editor"
 msgstr ""
 
@@ -1820,8 +1820,8 @@ msgid ""
 msgstr ""
 
 #: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:226
-#: exe/jsui/mainpage.py:838 exe/jsui/mainpage.py:982 exe/jsui/mainpage.py:1023
-#: exe/jsui/mainpage.py:1044
+#: exe/jsui/mainpage.py:848 exe/jsui/mainpage.py:992 exe/jsui/mainpage.py:1033
+#: exe/jsui/mainpage.py:1054
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -1838,7 +1838,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/imsexport.py:414 exe/export/scormexport.py:657
+#: exe/export/imsexport.py:414 exe/export/scormexport.py:727
 #: exe/export/websiteexport.py:90
 #, python-format
 msgid ""
@@ -1852,11 +1852,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr ""
 
-#: exe/export/scormexport.py:405 exe/export/websitepage.py:252
+#: exe/export/scormexport.py:474 exe/export/websitepage.py:252
 msgid "Previous"
 msgstr ""
 
-#: exe/export/scormexport.py:406 exe/export/websitepage.py:258
+#: exe/export/scormexport.py:475 exe/export/websitepage.py:258
 msgid "Next"
 msgstr ""
 
@@ -1920,11 +1920,11 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:691 exe/jsui/mainpage.py:830
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:691 exe/jsui/mainpage.py:840
 msgid "Cannot access directory named "
 msgstr "En voi käyttää hakemistoa "
 
-#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:693 exe/jsui/mainpage.py:830
+#: exe/jsui/mainpage.py:244 exe/jsui/mainpage.py:693 exe/jsui/mainpage.py:840
 msgid ". Please use ASCII names."
 msgstr ". Käytä vain ASCII-merkkejä nimessä."
 
@@ -1932,7 +1932,7 @@ msgstr ". Käytä vain ASCII-merkkejä nimessä."
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/jsui/mainpage.py:257 exe/jsui/mainpage.py:555 exe/jsui/mainpage.py:915
+#: exe/jsui/mainpage.py:257 exe/jsui/mainpage.py:555 exe/jsui/mainpage.py:925
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1973,21 +1973,22 @@ msgstr ""
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:724
-#: exe/jsui/mainpage.py:730 exe/jsui/mainpage.py:733 exe/jsui/mainpage.py:966
+#: exe/jsui/mainpage.py:713 exe/jsui/mainpage.py:718 exe/jsui/mainpage.py:725
+#: exe/jsui/mainpage.py:732 exe/jsui/mainpage.py:740 exe/jsui/mainpage.py:743
+#: exe/jsui/mainpage.py:976
 msgid "EXPORT FAILED!"
 msgstr "VIENTI EPÄONNISTUI!"
 
-#: exe/jsui/mainpage.py:799
+#: exe/jsui/mainpage.py:809
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:802
+#: exe/jsui/mainpage.py:812
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:839 exe/jsui/mainpage.py:856
+#: exe/jsui/mainpage.py:849 exe/jsui/mainpage.py:866
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -1996,31 +1997,31 @@ msgstr ""
 "PURKU EPÄONNISTUI!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:858
+#: exe/jsui/mainpage.py:868
 #, python-format
 msgid "Package extracted to: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:870
+#: exe/jsui/mainpage.py:880
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:901 exe/jsui/mainpage.py:943
+#: exe/jsui/mainpage.py:911 exe/jsui/mainpage.py:953
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/jsui/mainpage.py:907 exe/jsui/mainpage.py:949
+#: exe/jsui/mainpage.py:917 exe/jsui/mainpage.py:959
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
 "existing one then try again."
 msgstr ""
 
-#: exe/jsui/mainpage.py:956 exe/jsui/mainpage.py:970 exe/jsui/mainpage.py:983
-#: exe/jsui/mainpage.py:989 exe/jsui/mainpage.py:1007 exe/jsui/mainpage.py:1024
-#: exe/jsui/mainpage.py:1030 exe/jsui/mainpage.py:1045
-#: exe/jsui/mainpage.py:1051
+#: exe/jsui/mainpage.py:966 exe/jsui/mainpage.py:980 exe/jsui/mainpage.py:993
+#: exe/jsui/mainpage.py:999 exe/jsui/mainpage.py:1017 exe/jsui/mainpage.py:1034
+#: exe/jsui/mainpage.py:1040 exe/jsui/mainpage.py:1055
+#: exe/jsui/mainpage.py:1061
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2029,31 +2030,31 @@ msgstr ""
 "VIENTI EPÄONNISTUI!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:972 exe/jsui/mainpage.py:991 exe/jsui/mainpage.py:1009
-#: exe/jsui/mainpage.py:1032 exe/jsui/mainpage.py:1053
+#: exe/jsui/mainpage.py:982 exe/jsui/mainpage.py:1001 exe/jsui/mainpage.py:1019
+#: exe/jsui/mainpage.py:1042 exe/jsui/mainpage.py:1063
 #, python-format
 msgid "Exported to %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1086
+#: exe/jsui/mainpage.py:1096
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/jsui/mainpage.py:1090
+#: exe/jsui/mainpage.py:1100
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Tiedostoa ei voitu ladata, voit lähettää sen tutkittavaksi osoitteella "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1093
+#: exe/jsui/mainpage.py:1103
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1095
+#: exe/jsui/mainpage.py:1105
 msgid "Sorry, wrong file format"
 msgstr ""
 
@@ -2090,15 +2091,15 @@ msgid "Image Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:156
-#: exe/jsui/scripts/app/controller/Toolbar.js:384
-#: exe/jsui/scripts/app/controller/Toolbar.js:405
-#: exe/jsui/scripts/app/controller/Toolbar.js:440
-#: exe/jsui/scripts/app/controller/Toolbar.js:505
-#: exe/jsui/scripts/app/controller/Toolbar.js:533
-#: exe/jsui/scripts/app/controller/Toolbar.js:575
-#: exe/jsui/scripts/app/controller/Toolbar.js:604
-#: exe/jsui/scripts/app/controller/Toolbar.js:724
-#: exe/jsui/scripts/app/controller/Toolbar.js:798
+#: exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/jsui/scripts/app/controller/Toolbar.js:393
+#: exe/jsui/scripts/app/controller/Toolbar.js:428
+#: exe/jsui/scripts/app/controller/Toolbar.js:493
+#: exe/jsui/scripts/app/controller/Toolbar.js:521
+#: exe/jsui/scripts/app/controller/Toolbar.js:563
+#: exe/jsui/scripts/app/controller/Toolbar.js:592
+#: exe/jsui/scripts/app/controller/Toolbar.js:712
+#: exe/jsui/scripts/app/controller/Toolbar.js:786
 msgid "All Files"
 msgstr ""
 
@@ -2108,12 +2109,12 @@ msgid "Error"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
 msgid "Insert Package"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:281
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:287
 msgid "Extract Package"
 msgstr ""
 
@@ -2122,7 +2123,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:339
+#: exe/jsui/scripts/app/controller/Toolbar.js:327
 msgid "Confirm"
 msgstr ""
 
@@ -2139,187 +2140,194 @@ msgid "About"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:309
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:317
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:323
 msgid "Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:321
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:323
-msgid "Select Browser"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:340
+#: exe/jsui/scripts/app/controller/Toolbar.js:328
 msgid ""
 "If you have made changes and have not saved, they will be lost. Do you "
 "really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/jsui/scripts/app/controller/Toolbar.js:360
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:377
+#: exe/jsui/scripts/app/controller/Toolbar.js:365
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:383
-#: exe/jsui/scripts/app/controller/Toolbar.js:404
-#: exe/jsui/scripts/app/controller/Toolbar.js:723
-#: exe/jsui/scripts/app/controller/Toolbar.js:797
+#: exe/jsui/scripts/app/controller/Toolbar.js:371
+#: exe/jsui/scripts/app/controller/Toolbar.js:392
+#: exe/jsui/scripts/app/controller/Toolbar.js:711
+#: exe/jsui/scripts/app/controller/Toolbar.js:785
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:393
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:398
+#: exe/jsui/scripts/app/controller/Toolbar.js:386
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:414
+#: exe/jsui/scripts/app/controller/Toolbar.js:402
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:429
+#: exe/jsui/scripts/app/controller/Toolbar.js:417
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:439
+#: exe/jsui/scripts/app/controller/Toolbar.js:427
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:454
+#: exe/jsui/scripts/app/controller/Toolbar.js:442
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:462
+#: exe/jsui/scripts/app/controller/Toolbar.js:450
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:451
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:486
+#: exe/jsui/scripts/app/controller/Toolbar.js:474
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:496
+#: exe/jsui/scripts/app/controller/Toolbar.js:484
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:504
-#: exe/jsui/scripts/app/controller/Toolbar.js:532
+#: exe/jsui/scripts/app/controller/Toolbar.js:492
+#: exe/jsui/scripts/app/controller/Toolbar.js:520
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:514
+#: exe/jsui/scripts/app/controller/Toolbar.js:502
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:524
+#: exe/jsui/scripts/app/controller/Toolbar.js:512
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:548
+#: exe/jsui/scripts/app/controller/Toolbar.js:536
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:565
+#: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:574
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
+#: exe/jsui/scripts/app/controller/Toolbar.js:562
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:582
+#: exe/jsui/scripts/app/controller/Toolbar.js:570
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:584
+#: exe/jsui/scripts/app/controller/Toolbar.js:572
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:586
+#: exe/jsui/scripts/app/controller/Toolbar.js:574
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:588
+#: exe/jsui/scripts/app/controller/Toolbar.js:576
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:590
+#: exe/jsui/scripts/app/controller/Toolbar.js:578
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:603
+#: exe/jsui/scripts/app/controller/Toolbar.js:591
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:696
+#: exe/jsui/scripts/app/controller/Toolbar.js:684
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:712
+#: exe/jsui/scripts/app/controller/Toolbar.js:700
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:717
+#: exe/jsui/scripts/app/controller/Toolbar.js:705
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:736
+#: exe/jsui/scripts/app/controller/Toolbar.js:724
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:737
+#: exe/jsui/scripts/app/controller/Toolbar.js:725
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:761
+#: exe/jsui/scripts/app/controller/Toolbar.js:749
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:777
-msgid "Select a File"
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
+msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:783
+#: exe/jsui/scripts/app/controller/Toolbar.js:771
 msgid "Saving package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:263
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:74
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
-msgid "Create Directory"
+#: exe/jsui/scripts/app/controller/filepicker/Directory.js:75
+#: exe/jsui/scripts/app/controller/filepicker/File.js:168
+msgid "You do not have the permissions to open folder"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:264
-msgid "Enter the new directory name:"
+#: exe/jsui/scripts/app/controller/filepicker/File.js:160
+msgid "You do not have the permissions to write into folder"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:279
+#: exe/jsui/scripts/app/controller/filepicker/File.js:170
+msgid "You do not have the permissions to open the file"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:315
+msgid "You do not have the permissions to  save into folder"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:327
+msgid "Create Folder"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:328
+msgid "Enter the new folder name:"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:342
+msgid "You do not have the permissions to create a folder in folder"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/filepicker/File.js:348
 msgid "Confirm?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:280
+#: exe/jsui/scripts/app/controller/filepicker/File.js:349
 msgid "The file already exists. Do you want to replace it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/DirectoryTree.js:35
-msgid "Tree"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:29
-msgid "Directory"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:46
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:48
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:54
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:301
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:303
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:306
@@ -2327,20 +2335,21 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:68
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:72
 msgid "Size"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:91
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:95
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 msgid "Type"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:96
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:100
 msgid "Modified"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:53
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/webui/editorpane.py:272 exe/webui/preferencespage.py:163
 #: exe/webui/selectbrowserpage.py:113
 #: exe/webui/xliffexportpreferencespage.py:143
@@ -2348,12 +2357,12 @@ msgstr ""
 msgid "Cancel"
 msgstr "Peruuta"
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:54
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:52
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:112
 msgid "Open"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:73
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:194
@@ -2361,8 +2370,21 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:100
-msgid "Place"
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:78
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:89
+msgid "Create Directory"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:81
+msgid "Save in:"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:87
+msgid "Folder"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/filepicker/FilePicker.js:88
+msgid "Select Folder"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
@@ -2939,7 +2961,7 @@ msgid "Add Page"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:228
-#: exe/webui/block.py:347 exe/webui/editorelement.py:78
+#: exe/webui/block.py:328 exe/webui/editorelement.py:78
 #: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
@@ -3013,7 +3035,7 @@ msgid "Common Cartridge"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
-msgid "SCORM 1.2"
+msgid "SCORM1.2"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
@@ -3021,38 +3043,42 @@ msgid "SCORM2004"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
-msgid "IMS Content Package"
+msgid "Agrega"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
+msgid "IMS Content Package"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:229
 msgid "Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:236
 msgid "Self-contained Folder"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:236
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:242
 msgid "Zip File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:251
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:257
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:263
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:266
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:272
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:294 exe/webui/editorpage.py:285
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:300 exe/webui/editorpage.py:285
 msgid "Quit"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "Tools"
 msgstr ""
 
@@ -3788,9 +3814,9 @@ msgstr ""
 
 #: exe/webui/appletblock.py:96
 msgid ""
-"eXe can not access any scene inside the indicated website. Anyway you can"
-" access the desired scene in your regular browser, click with right mouse"
-" button on it and in config > codigo is its associated code. Copy and "
+"eXe cannot access any scene inside the indicated website. Anyway you can "
+"access the desired scene in your regular browser, click with right mouse "
+"button on it and in config > codigo is its associated code. Copy and "
 "paste it directly into an Applet iDevice such as Other."
 msgstr ""
 
@@ -3810,7 +3836,7 @@ msgstr ""
 msgid "Scratch"
 msgstr ""
 
-#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:134
+#: exe/webui/appletblock.py:133 exe/webui/wikipediablock.py:135
 msgid "Other"
 msgstr ""
 
@@ -3867,7 +3893,7 @@ msgstr ""
 msgid "Can NOT Undo Edits"
 msgstr ""
 
-#: exe/webui/block.py:225 exe/webui/block.py:344
+#: exe/webui/block.py:225 exe/webui/block.py:325
 msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr ""
 
@@ -3891,8 +3917,8 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:352
-#: exe/webui/common.py:353 exe/webui/editorpane.py:363
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:416
+#: exe/webui/common.py:417 exe/webui/editorpane.py:363
 #: exe/webui/editorpane.py:364 exe/webui/editorpane.py:384
 #: exe/webui/editorpane.py:385 exe/webui/element.py:2516
 #: exe/webui/element.py:2517 exe/webui/truefalseelement.py:152
@@ -3908,11 +3934,11 @@ msgstr ""
 msgid "Tip:"
 msgstr ""
 
-#: exe/webui/block.py:333
+#: exe/webui/block.py:314
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "VIRHE: Block.renderViewContent called directly"
 
-#: exe/webui/block.py:342 exe/webui/editorpage.py:306
+#: exe/webui/block.py:323 exe/webui/editorpage.py:306
 #: exe/webui/editorpane.py:269
 msgid "Edit"
 msgstr "Muokkaa"
@@ -3947,14 +3973,14 @@ msgstr ""
 msgid "Now It's Your Turn"
 msgstr ""
 
-#: exe/webui/common.py:71 exe/webui/editorpage.py:242
+#: exe/webui/common.py:135 exe/webui/editorpage.py:242
 #: exe/webui/preferencespage.py:132 exe/webui/selectbrowserpage.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr ""
 
-#: exe/webui/common.py:343 exe/webui/common.py:347
+#: exe/webui/common.py:407 exe/webui/common.py:411
 msgid "Click for completion instructions"
 msgstr "Klikkaa saadaksesi täydennysohjeita"
 
@@ -4138,17 +4164,17 @@ msgid "Pedagogical Tip"
 msgstr ""
 
 #: exe/webui/editorpane.py:335 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:161
+#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:162
 msgid "Emphasis"
 msgstr "Korostus"
 
 #: exe/webui/editorpane.py:338 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:158
+#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:159
 msgid "No emphasis"
 msgstr ""
 
 #: exe/webui/editorpane.py:339 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:159
+#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:160
 msgid "Some emphasis"
 msgstr ""
 
@@ -4254,8 +4280,8 @@ msgid "Instant Marking?"
 msgstr ""
 
 #: exe/webui/element.py:1151 exe/webui/element.py:1419
-#: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:230
-#: exe/webui/quiztestblock.py:325 exe/webui/quiztestblock.py:381
+#: exe/webui/listablock.py:288 exe/webui/quiztestblock.py:224
+#: exe/webui/quiztestblock.py:319 exe/webui/quiztestblock.py:367
 msgid "Your score is "
 msgstr ""
 
@@ -4415,6 +4441,22 @@ msgstr "Poista kuva"
 msgid "Delete this image?"
 msgstr ""
 
+#: exe/webui/iecmwarning.py:42
+msgid "eXe problem"
+msgstr ""
+
+#: exe/webui/iecmwarning.py:46
+msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgstr ""
+
+#: exe/webui/iecmwarning.py:50
+msgid "Please click on the Compatibility View button to turn it off:"
+msgstr ""
+
+#: exe/webui/iecmwarning.py:54
+msgid "Then restart eXe.."
+msgstr ""
+
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
 msgstr ""
@@ -4514,11 +4556,11 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr ""
 
-#: exe/webui/quiztestblock.py:152
+#: exe/webui/quiztestblock.py:146
 msgid "SUBMIT ANSWERS"
 msgstr ""
 
-#: exe/webui/quiztestblock.py:378
+#: exe/webui/quiztestblock.py:364
 msgid "Submit Answer"
 msgstr ""
 
@@ -4538,7 +4580,7 @@ msgstr ""
 msgid "Think About It"
 msgstr ""
 
-#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:154
+#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:155
 msgid "Load"
 msgstr ""
 
@@ -4573,7 +4615,7 @@ msgid "English Wikipedia Article"
 msgstr "Englanninkielinen Wikipedia-artikkeli"
 
 #: exe/webui/wikipediablock.py:115
-msgid "Euskara Wikipedia Article"
+msgid "Basque Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:116
@@ -4597,62 +4639,66 @@ msgid "German Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:121
-msgid "Greek Wikipedia Article"
+msgid "Galician Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:122
-msgid "Italian Wikipedia Article"
+msgid "Greek Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:123
-msgid "Japanese Wikipedia Article"
+msgid "Italian Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:124
-msgid "Magyar Wikipedia Article"
+msgid "Japanese Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:125
-msgid "Polish Wikipedia Article"
+msgid "Magyar Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:126
-msgid "Portugese Wikipedia Article"
+msgid "Polish Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:127
-msgid "Slovenian Wikipedia Article"
+msgid "Portugese Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:128
-msgid "Spanish Wikipedia Article"
+msgid "Slovenian Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:129
-msgid "Swedish Wikipedia Article"
+msgid "Spanish Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:130
-msgid "Wikibooks Article"
+msgid "Swedish Wikipedia Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:131
-msgid "Wikiversity"
+msgid "Wikibooks Article"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:132
-msgid "Wiktionary"
+msgid "Wikiversity"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:133
+msgid "Wiktionary"
+msgstr ""
+
+#: exe/webui/wikipediablock.py:134
 msgid "Wikieducator Content"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:139
+#: exe/webui/wikipediablock.py:140
 msgid "Site"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:149
+#: exe/webui/wikipediablock.py:150
 msgid "Own site"
 msgstr ""
 
@@ -4726,6 +4772,73 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#~ msgid "Answsers"
-#~ msgstr "Vastaukset"
+#~ msgid ""
+#~ "Clic on AddFiles button for select "
+#~ "the .ggb file and clic on Upload"
+#~ " button after."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Clic on AddFiles button for select "
+#~ "the .jclic.zip file and clic on "
+#~ "Upload button after.<p>The activity will "
+#~ "be visible when the HTML file will"
+#~ " be generated from eXe."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Clic on AddFiles button for select "
+#~ "the .sb or .scratch file and clic"
+#~ " on Upload button after."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please write: scene number,URL (no "
+#~ "spaces) that include it, eg: "
+#~ "3,http://example.com; clic on Upload button"
+#~ " after."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Clic on AddFiles button for select "
+#~ "the .html or .htm file and clic"
+#~ " on Upload button after for getting"
+#~ " its content."
+#~ msgstr ""
+
+#~ msgid "Select Browser"
+#~ msgstr ""
+
+#~ msgid "Select a File"
+#~ msgstr ""
+
+#~ msgid "Enter the new directory name:"
+#~ msgstr ""
+
+#~ msgid "Tree"
+#~ msgstr ""
+
+#~ msgid "Directory"
+#~ msgstr ""
+
+#~ msgid "Place"
+#~ msgstr ""
+
+#~ msgid "SCORM 1.2"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "eXe can not access any scene "
+#~ "inside the indicated website. Anyway you"
+#~ " can access the desired scene in "
+#~ "your regular browser, click with right"
+#~ " mouse button on it and in "
+#~ "config > codigo is its associated "
+#~ "code. Copy and paste it directly "
+#~ "into an Applet iDevice such as "
+#~ "Other."
+#~ msgstr ""
+
+#~ msgid "Euskara Wikipedia Article"
+#~ msgstr ""
 

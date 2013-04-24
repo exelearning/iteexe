@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe trunk (pre-0.8)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-04-22 16:43+0200\nPO-Revision-Date: 2007-08-08 10:27+1200\nLast-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "<p>Teachers should keep the following in mind when using this iDevice: <\/p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.<\/li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. <\/li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. <\/li><\/ol>": " ", 
  "Title": "\u6807\u9898", 
  "Add JPEG Image": "\u6dfb\u52a0JPEG\u56fe\u7247", 
@@ -216,7 +216,6 @@ translations = {
  "No Thumbnail Available. Could not shrink image.": "No Thumbnail Available. Could not shrink image.", 
  "Add a flash video to your iDevice.": "\u6dfb\u52a0flash video.", 
  "Fijian; Fiji ": "\u6590\u6d4e\u8bed", 
- "SCORM 1.2": "SCORM 1.2", 
  "Describe the tasks the learners should complete.": "\u63cf\u8ff0\u5b66\u751f\u9700\u8981\u5b8c\u6210\u7684\u5b66\u4e60\u4efb\u52a1.", 
  "http:\/\/en.wikipedia.org\/": "http:\/\/en.wikipedia.org\/", 
  "Unable to download from %s <br\/>Please check the spelling and connection and try again.": "\u65e0\u6cd5\u4ece%s\u4e0b\u8f7d<br\/>\u8bf7\u68c0\u67e5\u62fc\u5199, \u7136\u540e\u518d\u8fde\u63a5.", 

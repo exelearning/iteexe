@@ -2553,9 +2553,9 @@ class QuizQuestionElement(Element):
         for element in self.options:
             html += element.renderFeedbackView(preview)
 
-# JR: Generamos el contenido que ira dentro de la etiqueta noscript
+
 	html += '<noscript><br/><div class="feedback">\n'
-	html += "<p><strong>" + _("Solution") + ": </strong></p>\n"
+
 	html += "<ol>"
 	for element in self.options:
 		html += element.renderNoscript(preview)

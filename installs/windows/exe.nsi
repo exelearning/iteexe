@@ -63,6 +63,16 @@ Function UninstallMSI
     pop $R1
 FunctionEnd
 
+Function .onInit
+   nsProcess::_FindProcess "exe.exe"
+   Pop $R0
+   IntCmp $R0 603 ok ko ko
+   ko:
+     MessageBox MB_OK|MB_ICONEXCLAMATION "eXe is running. Please close it first or reboot before install" /SD IDOK
+     Abort
+   ok:
+FunctionEnd
+
 Section "Remove Old Version" Section1
     ; Remove any previous nsis install...
     ; Read where the last nsis install was

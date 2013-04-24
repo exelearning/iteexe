@@ -60,7 +60,7 @@ class DirTreePage(RenderableResource):
     def render(self, request):
         if "sendWhat" in request.args:
             if request.args['sendWhat'][0] == 'dirs':
-                pathdir = Path(request.args['node'][0])
+                pathdir = Path(unquote(request.args['node'][0].decode('utf-8')))
                 l = []
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():

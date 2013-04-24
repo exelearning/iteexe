@@ -238,7 +238,7 @@ class MainPage(RenderableLivePage):
         (This is used where the user goes file|open when their 
         package is changed and needs saving)
         """
-        filename = Path(filename)
+        filename = Path(filename, 'utf-8')
         saveDir  = filename.dirname()
         if saveDir and not saveDir.isdir():
             client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
@@ -686,6 +686,7 @@ class MainPage(RenderableLivePage):
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
 
+        filename = Path(filename, 'utf-8')
         exportDir  = Path(filename).dirname()
         if exportDir and not exportDir.exists():
             client.alert(_(u'Cannot access directory named ') +
@@ -834,7 +835,7 @@ class MainPage(RenderableLivePage):
         Create a new package consisting of the current node and export
         'existOk' means the user has been informed of existance and ok'd it
         """
-        filename  = Path(filename)
+        filename  = Path(filename, 'utf-8')
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
             client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
@@ -869,7 +870,7 @@ class MainPage(RenderableLivePage):
 
     def handleCreateDir(self, client, currentDir, newDir):
         try:
-            d = Path(currentDir) / newDir
+            d = Path(currentDir, 'utf-8') / newDir
             d.makedirs()
             client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({ 
                 callback: function() {

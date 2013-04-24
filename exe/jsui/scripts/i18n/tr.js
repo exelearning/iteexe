@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-04-22 16:43+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Add JPEG Image": "JPEG resmi ekle", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
@@ -153,7 +153,6 @@ translations = {
  "No Thumbnail Available. Could not shrink image.": "\u00d6nizleme Yok. Resim boyutland\u0131r\u0131lamad\u0131.", 
  "Add a flash video to your iDevice.": "iDevice flash video y\u00fckle", 
  "Fijian; Fiji ": "Fiji Dili", 
- "SCORM 1.2": "SCORM 1.2", 
  "Describe the tasks the learners should complete.": "\u00d6\u011frencilerin tamamlamas\u0131 gereken ad\u0131mlar\u0131 a\u00e7\u0131klay\u0131n.", 
  "Cancel": "\u0130ptal", 
  "Swedish ": "\u0130sve\u00e7\u00e7e", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2008-01-23 16:53+1300\nLast-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\nLanguage-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-04-22 16:43+0200\nPO-Revision-Date: 2008-01-23 16:53+1300\nLast-Translator: Chang, Chia-hsiang <froggy0923@gmail.com>\nLanguage-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u64ec\u5beb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u6709\u722d\u8b70\u6027\u7684\uff0c\u6216\u4e0d\u540c\u4eba\u7269\u548c\u74b0\u5883\u7684\u5834\u666f\uff0c\u4e26\u80fd\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4f86\u89e3\u6c7a\u554f\u984c\u3002", 
  "Title": "\u6a19\u984c", 
  "Add JPEG Image": "\u52a0\u5165JPEG\u5716\u7247", 
@@ -176,7 +176,6 @@ translations = {
  "No Thumbnail Available. Could not shrink image.": "No Thumbnail Available\u3002Could not shrink image\u3002", 
  "Add a flash video to your iDevice.": "\u52a0\u5165Flash\u52d5\u756b", 
  "Fijian; Fiji ": "\u6590\u6fdf\u8a9e", 
- "SCORM 1.2": "SCORM 1.2", 
  "Describe the tasks the learners should complete.": "\u63cf\u8ff0\u5b78\u751f\u9700\u8981\u5b8c\u6210\u7684\u5b78\u7fd2\u4efb\u52d9\u3002", 
  "http:\/\/en.wikipedia.org\/": "http:\/\/en.wikipedia.org\/", 
  "Cancel": "\u53d6\u6d88", 

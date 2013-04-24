@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-03-24 21:59+0100\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-04-22 16:43+0200\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Tittel", 
  "Add JPEG Image": "Legg til JPEG bilde", 
  "Text Line": "Tekstlinje", 
@@ -174,7 +174,6 @@ translations = {
  "No Thumbnail Available. Could not shrink image.": "Miniatyrbilde er ikke tilgjengelig. Kunne ikke krympe bildet.", 
  "Add a flash video to your iDevice.": "Legg til en flash video i din iDevice.", 
  "Fijian; Fiji ": "Fijisk", 
- "SCORM 1.2": "SCORM 1.2", 
  "Cancel": "Avbryt", 
  "Swedish ": "Svensk", 
  "Information": "Informasjon", 
