@@ -48,6 +48,7 @@ class StandaloneConfig(Config):
             self.dataDir.makedirs()
         self.configDir     = exePath/'config'
         self.localeDir     = exePath/'locale'
+        self.stylesDir     = Path(exePath/'style').abspath()
         self.xulrunnerPath = exePath/'xulrunner/xulrunner'
         self.styles        = []
         self.lastDir       = exePath

@@ -33,7 +33,8 @@ import os
 import gettext
 import tempfile
 import twisted
-
+import shutil
+from exe                      import globals as G
 # ===========================================================================
 class Config:
     """
@@ -70,6 +71,10 @@ class Config:
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
         self.configDir   = Path(".")
+		#FM: New Styles Directory path
+        self.stylesDir =Path(self.configDir/'style').abspath()
+        #FM: Default Style name
+        self.defaultStyle= u"INTEF"
         # browser is the name of a predefined browser specified at http://docs.python.org/library/webbrowser.html.
         # None for system default
         self.browser = None
@@ -137,14 +142,15 @@ class Config:
         [Over]writes 'self.configPath' with a default config file 
         (auto write is on so we don't need to write the file at the end)
         """
-        for sectionName, optionNames in self.optionNames.items():
-            for optionName in optionNames:
-                defaultVal = getattr(self, optionName)
-                self.configParser.setdefault(sectionName, 
+        if not G.application.portable:
+            for sectionName, optionNames in self.optionNames.items():
+                for optionName in optionNames:
+                    defaultVal = getattr(self, optionName)
+                    self.configParser.setdefault(sectionName, 
                                              optionName, 
                                              defaultVal)
-        # Logging can't really be changed from inside the program at the moment...
-        self.configParser.setdefault('logging', 'root', 'INFO')
+                    # Logging can't really be changed from inside the program at the moment...
+            self.configParser.setdefault('logging', 'root', 'INFO')
 
 
     def __setConfigPath(self):
@@ -192,8 +198,10 @@ class Config:
             if system.has_option('appDataDir'):
                 # Older config files had configDir stored as appDataDir
                 self.configDir = Path(system.appDataDir)
+                self.stylesDir =Path(self.configDir)/'style'
                 # We'll just upgrade their config file for them for now...
                 system.configDir = self.configDir
+                system.stylesDir =Path(self.configDir)/'style'
                 del system.appDataDir
             if system.has_option('greDir'):
                 # No longer used, system should automatically support
@@ -216,13 +224,20 @@ class Config:
         # System Section
         if self.configParser.has_section('system'):
             system = self.configParser.system
-            self.webDir         = Path(system.webDir)
-            self.jsDir          = Path(system.jsDir)
-            self.localeDir      = Path(system.localeDir)
+
+            
             self.port           = int(system.port)
             self.browser        = None if system.browser == u"None" else system.browser
-            self.dataDir        = Path(system.dataDir)
-            self.configDir      = Path(system.configDir)
+            
+            
+            if not G.application.portable:
+                self.dataDir        = Path(system.dataDir)
+                self.configDir      = Path(system.configDir)
+                self.webDir         = Path(system.webDir)
+                self.stylesDir      = Path(self.configDir)/'style'
+                self.jsDir          = Path(system.jsDir)
+            else:
+                self.stylesDir      = Path(self.webDir/'style').abspath()
             
             self.assumeMediaPlugins = False;
             if self.configParser.has_option('system', \
@@ -241,6 +256,15 @@ class Config:
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
+		#FM: Copy styles
+        if not G.application.standalone:
+            if not self.stylesDir.exists():
+                #self.stylesDir.mkdir()
+                actstyle=self.webDir/'style'
+                if actstyle.exists():
+                    shutil.copytree(actstyle, self.stylesDir) 
+            
+            #copiar style
                 
         # Get the list of recently opened projects
         self.recentProjects = []
@@ -325,20 +349,20 @@ class Config:
                     logging.getLogger().setLevel(loggingLevels[level])
                 else:
                     logging.getLogger(logger).setLevel(loggingLevels[level])
-
-        log.info("************** eXe logging started **************")
-        log.info("configPath  = %s" % self.configPath)
-        log.info("exePath     = %s" % self.exePath)
-        log.info("libPath     = %s" % Path(twisted.__path__[0]).splitpath()[0])
-        log.info("browser     = %s" % self.browser)
-        log.info("webDir      = %s" % self.webDir)
-        log.info("jsDir      = %s" % self.jsDir)
-        log.info("localeDir   = %s" % self.localeDir)
-        log.info("port        = %d" % self.port)
-        log.info("dataDir     = %s" % self.dataDir)
-        log.info("configDir   = %s" % self.configDir)
-        log.info("locale      = %s" % self.locale)
-        log.info("internalAnchors = %s" % self.internalAnchors)
+        if not G.application.portable:
+            log.info("************** eXe logging started **************")
+            log.info("configPath  = %s" % self.configPath)
+            log.info("exePath     = %s" % self.exePath)
+            log.info("libPath     = %s" % Path(twisted.__path__[0]).splitpath()[0])
+            log.info("browser     = %s" % self.browser)
+            log.info("webDir      = %s" % self.webDir)
+            log.info("jsDir      = %s" % self.jsDir)
+            log.info("localeDir   = %s" % self.localeDir)
+            log.info("port        = %d" % self.port)
+            log.info("dataDir     = %s" % self.dataDir)
+            log.info("configDir   = %s" % self.configDir)
+            log.info("locale      = %s" % self.locale)
+            log.info("internalAnchors = %s" % self.internalAnchors)
                     
 
     def loadStyles(self):
@@ -347,7 +371,7 @@ class Config:
         """
         log = logging.getLogger()
         self.styles = []
-        styleDir    = self.webDir/"style"
+        styleDir    = self.stylesDir
 
         log.debug("loadStyles from %s" % styleDir)
 

@@ -145,6 +145,15 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#help_about': {
                 click: this.aboutPage
+            },
+			'#style_import': {
+            	click: this.importStyle
+            },
+            '#style_export': {
+            	click: this.exportStyle
+            },
+            '#style_delete': {
+            	click: this.deleteStyle
             }
         });
         
@@ -245,6 +254,33 @@ Ext.define('eXe.controller.Toolbar', {
 	            key: Ext.EventObject.F5,
 	            handler: function() {
 	                 this.toolsRefresh();
+	            },
+	            scope: this,
+	            defaultEventAction: "stopEvent"
+},
+            {
+	            key: Ext.EventObject.I,
+	            alt: true,
+	            handler: function() {
+	            	this.importStyle();
+	            },
+	            scope: this,
+	            defaultEventAction: "stopEvent"
+            },
+            {
+	            key: Ext.EventObject.E,
+	            alt: true,
+	            handler: function() {
+	            	this.exportStyle();
+	            },
+	            scope: this,
+	            defaultEventAction: "stopEvent"
+            },
+            {
+	            key: Ext.EventObject.D,
+	            alt: true,
+	            handler: function() {
+	            	this.deleteStyle();
 	            },
 	            scope: this,
 	            defaultEventAction: "stopEvent"
@@ -467,7 +503,67 @@ Ext.define('eXe.controller.Toolbar', {
     closeImportProgressWindow: function() {
         this.importProgress.destroy();
     },
+	importStyle:function(){
+    	var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeOpen,
+            title: _("Select ZIP Style file to import."),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+            	 if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
+                    nevow_clientToServerEvent('ImportStyle', this,'', 'zip', fp.file.path, fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                    
+                 }
+            }
+        });
+           fp.appendFilters([
+               { "typename": _("ZIP Style"), "extension": "*.zip", "regex": /.*\.zip$/ },
+               { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+           ]);
+           fp.show();	
+    	
+    	
+    },
+    exportStyle:function(){
+    	 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+	            type: eXe.view.filepicker.FilePicker.modeSave,
+	            title: _("Export to ZIP Style as"),
+	            modal: true,
+	            scope: this,
+	            callback: function(fp) {
+	                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+	                    nevow_clientToServerEvent('ExportStyle', this, '', 'zip', fp.file.path)
+	            }
+	        });
+	        fp.appendFilters([
+	            { "typename": _("ZipFile"), "extension": "*.zip", "regex": /.*\.zip$/ },
+	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+	            ]
+	        );
+	        fp.show();
+    },
+    deleteStyle:function(){
+    	Ext.Msg.show({
+			title: _("Delete style?"),
+			msg: _("Would you like delete selected style?"),
+			scope: this,
+			modal: true,
+			buttons: Ext.Msg.YESNOCANCEL,
+			fn: function(button, text, opt) {
+				if (button == "yes")
+					this.doDeletestyle();
+				
+			}
+		});
+	 
+     
+    },
+    doDeletestyle: function() {
     
+    		nevow_clientToServerEvent('DeleteStyle', this)	
+    	
+    },
+
 	importXliff: function() {
         var fp = Ext.create("eXe.view.filepicker.FilePicker", {
             type: eXe.view.filepicker.FilePicker.modeOpen,
@@ -675,6 +771,10 @@ Ext.define('eXe.controller.Toolbar', {
 		}
 		item.setChecked(true);
 		item.parentMenu.hide();
+		//provisional
+		//item.parentMenu.parentMenu.hide();
+		item.parentMenu.hide();
+		//
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);

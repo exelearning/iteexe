@@ -48,6 +48,7 @@ class WinConfig(Config):
         self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.lastDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
+        self.stylesDir     = Path(self.configDir)/'style'
 
     def _getConfigPathOptions(self):
         """

@@ -76,8 +76,10 @@ class Application:
         self.packagePath  = None
         self.webServer    = None
         self.standalone   = False # Used for the ready to run exe
+        self.portable   = False # FM: portable mode
         self.persistNonPersistants = False  
         self.tempWebDir   = mkdtemp('.eXe')
+        self.resourceDir=None
         self.afterUpgradeHandlers = []
         assert globals.application is None, "You tried to instantiate two Application objects"
         globals.application = self
@@ -110,7 +112,7 @@ class Application:
         """
         try:
             options, packages = getopt(sys.argv[1:], 
-                                       "hV", ["help", "version", "standalone"])
+                                       "hV", ["help", "version", "standalone","portable"])
         except GetoptError:
             self.usage()
             sys.exit(2)
@@ -131,6 +133,9 @@ class Application:
                 sys.exit()
             elif option[0].lower() == '--standalone':
                 self.standalone = True
+            elif option[0].lower() == '--portable':
+                self.standalone = True
+                self.portable = True
 
     
     def loadConfiguration(self):
@@ -200,6 +205,7 @@ class Application:
         print "  -V, --version    print version information and exit"
         print "  -h, --help       display this help and exit"
         print "  --standalone     Run totally from current directory"
+        print "  --portable     Run in portable mode"
         print "Settings are read from exe.conf "
         print "in $HOME/.exe on Linux/Unix or"
         print "in Documents and Settings/<user name>/Application Data/exe "

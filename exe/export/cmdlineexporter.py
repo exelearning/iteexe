@@ -78,7 +78,7 @@ with a different filename') % outputf
                 if not pkg:
                     error = _(u"Invalid input package")
                     raise Exception(error.encode(sys.stdout.encoding))
-                self.styles_dir = self.web_dir.joinpath('style', pkg.style)
+                self.styles_dir = self.config.stylesDir/pkg.style
                 LOG.debug("Styles dir: %s" % (self.styles_dir))
                 getattr(self, 'export_' + self.options["export"])(pkg, outputf)
                 return outputf

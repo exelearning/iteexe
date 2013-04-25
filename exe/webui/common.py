@@ -51,7 +51,8 @@ def docType():
             u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
             
 def ideviceHeader(e, style, mode, includeIdeviceInner):
-    themePath = Path(G.application.config.webDir).joinpath("style", style)
+    #themePath = Path(G.application.config.webDir).joinpath("style", style)
+    themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
     themeHasXML = False
     if themeXMLFile.exists():
@@ -99,7 +100,8 @@ def ideviceHeader(e, style, mode, includeIdeviceInner):
         return w+o+w2
 
 def ideviceFooter(e, style, mode, includeIdeviceInner):
-    themePath = Path(G.application.config.webDir).joinpath("style", style)
+    #themePath = Path(G.application.config.webDir).joinpath("style", style)
+    themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
     themeHasXML = False
     if themeXMLFile.exists():

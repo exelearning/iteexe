@@ -2753,8 +2753,8 @@ class MagnifierField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width         = "100"
-        self.height        = "100"
+        self.width         = ""
+        self.height        = ""
         self.imageResource = None
         self.defaultImage  = ""
         self.glassSize     = "2"

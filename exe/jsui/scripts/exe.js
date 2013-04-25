@@ -144,7 +144,11 @@ Ext.application({
                 return _("If you leave this page eXe application continues to run." +
                         " Please use the menu File->Quit if you really want to exit the application.");
         };
-
+		/*
+		window.onunload = function() {
+            nevow_clientToServerEvent('quit', '', '');
+        };
+		*/
         if (Ext.isGecko || Ext.isSafari)
         	window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
 
@@ -160,4 +164,6 @@ Ext.application({
     },
 
     appFolder: "jsui/app"
+
 });
+

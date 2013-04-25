@@ -56,7 +56,7 @@ from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
 from urllib                      import unquote
-
+import zipfile
 log = logging.getLogger(__name__)
 
 
@@ -77,6 +77,8 @@ class MainPage(RenderableLivePage):
         self.session = session
         RenderableLivePage.__init__(self, parent, package, config)
         self.putChild("resources", File(package.resourceDir))
+		#styles directory
+        #self.putChild("stylecss", File(self.config.stylesDir)
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
         self.docFactory  = loaders.htmlfile(mainjs)
@@ -91,7 +93,11 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
         self.authoringPages = {}
+
+        G.application.resourceDir=Path(package.resourceDir);
+
         self.location_buttons = LocationButtons()
+
 
     def child_authoring(self, ctx):
         """Returns the authoring page that corresponds to the url http://127.0.0.1:port/package_name/authoring"""
@@ -143,7 +149,11 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
         setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
+        setUpHandler(self.handleImportStyle,    'ImportStyle')
+        setUpHandler(self.handleExportStyle,    'ExportStyle')
+        setUpHandler(self.handleDeleteStyle,    'DeleteStyle')
         setUpHandler(self.handleSetBrowser,  'setBrowser')
+
 
         #For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -315,7 +325,7 @@ class MainPage(RenderableLivePage):
         """
         Removes a temporary directory and any contents therein
         (from the bottom up), and yup, that's all!
-        """
+        
         #
         # swiped from an example on:
         #     http://docs.python.org/lib/os-file-dir.html
@@ -325,6 +335,7 @@ class MainPage(RenderableLivePage):
         # assuming there are no symbolic links.
         # CAUTION:  This is dangerous!  For example, if top == '/', it
         # could delete all your disk files.
+        """
         for root, dirs, files in os.walk(top, topdown=False):
             for name in files:
                 os.remove(os.path.join(root, name))
@@ -334,7 +345,8 @@ class MainPage(RenderableLivePage):
         # and finally, go ahead and remove the top-level tempdir itself:
         if (int(rm_top_dir) != 0):
             os.rmdir(tempdir)
-
+      
+        
     def get_printdir_relative2web(self, exported_dir):
         """
         related to the following ClearParentTempPrintDirs(), return a
@@ -652,6 +664,20 @@ class MainPage(RenderableLivePage):
 #        data.close()
         self.importresources.insertNode([html.partition(dirname + os.sep)[2]])
         
+    def handleImportStyle(self, client, importType, dirname, html=None):
+            if importType == 'zip':
+                self._importstyle(dirname,client)
+            else:
+                client.alert(_(u'Incorrect style file : %s') % sfile, (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)      
+    
+    def handleExportStyle(self, client, importType,dirname, html=None):
+            stylesDirac  = self.config.stylesDir/self.package.style
+            self._exportstyle(stylesDirac,dirname,client)
+                   
+
+    def handleDeleteStyle(self, client):
+                self._deletestyle(self.package.style,client)
     def handleImport(self, client, importType, dirname, html=None):
         if importType == 'html':
             if (not html):
@@ -683,9 +709,9 @@ class MainPage(RenderableLivePage):
                      'textFile' or 'scorm'            
         'filename' is a file for scorm pages, and a directory for websites
         """ 
-        webDir     = Path(self.config.webDir)
-        stylesDir  = webDir.joinpath('style', self.package.style)
-
+        #webDir     = Path(self.config.webDir)
+        #stylesDir  = webDir.joinpath('style', self.package.style)
+        stylesDir  = self.config.stylesDir/self.package.style
         filename = Path(filename, 'utf-8')
         exportDir  = Path(filename).dirname()
         if exportDir and not exportDir.exists():
@@ -761,6 +787,11 @@ class MainPage(RenderableLivePage):
         if len(self.clientHandleFactory.clientHandles) <= 1:
             self.webServer.monitoring = False
             G.application.config.configParser.set('user', 'lastDir', G.application.config.lastDir)
+            try:
+                shutil.rmtree(G.application.tempWebDir, True)
+                shutil.rmtree(G.application.resourceDir, True)                
+            except:
+                log.debug('Don\'t delete temp directorys. ')
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
@@ -939,6 +970,7 @@ class MainPage(RenderableLivePage):
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
+
         try:
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
@@ -966,6 +998,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
+        client.alert(_(u'Exported to %s') % filename)
         # Show the newly exported web site in a new window
         self._startFile(filename)
 
@@ -1108,3 +1141,104 @@ class MainPage(RenderableLivePage):
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
+    def _importstyle(self, filename,client):
+            """
+            Importa estilo desde un fichero ZIP , el estilo debe estar en la raiz
+            Comprueba si es un estilo ( contiene content.css )
+            Crea una carpeta en el directorio de estilos con el nombre del archivo zip
+            Descomprime el estilo y lanza mensaje javascript
+            """
+
+            styleDir    = self.config.stylesDir
+            log.debug("_importstyle from %s" % filename)
+            imstyle=False
+            tempst=False
+            filenamei=filename.lower()           
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'utf-8'
+            filename2 = toUnicode(filenamei, encoding)
+            log.debug("filename and path" + filename2)
+            sfile=os.path.basename(filename2)
+            nafile=sfile[0:-4:]
+            ndir=styleDir/nafile
+            tmpdir=styleDir/'tmpstyle'
+            ffile=ndir/sfile
+            if os.path.isdir(tmpdir):shutil.rmtree(tmpdir)         
+            
+            try:
+                sourceZip = zipfile.ZipFile( filename2 ,  'r')
+                for name in sourceZip.namelist():
+                        if name=='content.css':
+                            imstyle=True
+                sourceZip.close()
+            except IOError:
+                filename2 = toUnicode(filenamei, 'utf-8')
+                try:                    
+                    sourceZip = zipfile.ZipFile( filename2 ,  'r')
+                    for name in sourceZip.namelist():
+                        if name=='content.css':
+                            imstyle=True
+                    sourceZip.close()                  
+                except IOError:
+                    client.alert(_(u'File %s does not exist or is not readable.') % filename2)
+                    return None
+            #change styles menu
+            if imstyle==True: 
+                if os.path.isdir(ndir):
+                    os.rename(ndir,tmpdir)
+                    tempst=True 
+                os.mkdir(ndir)
+                sourceZip = zipfile.ZipFile( filename2 ,  'r')
+                for name in sourceZip.namelist():
+                    sourceZip.extract(name, ndir )
+                sourceZip.close()
+                if tempst==True: shutil.rmtree(tmpdir)              
+                client.alert(_(u'Correct Style import : %s') % nafile, (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+            else:
+                client.alert(_(u'Incorrect style file : %s') % sfile, (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+            self.config.loadStyles()
+            log.debug("styles" + str(self.config.styles).strip('[]'))
+            #window style render ........
+    def _exportstyle(self,  dirstylename,filename,client):
+            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            sfile=os.path.basename(filename)
+            log.debug("export style %s" % dirstylename)
+            try:
+                zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
+                try:
+                    for contFile in dirstylename.files():
+                        zippedFile.write(unicode(contFile.normpath()),
+                        contFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
+                finally:
+                    zippedFile.close()
+                    client.alert(_(u'Correct ZIP Style exported : %s') % sfile, (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+            except IOError:
+                client.alert(_(u'can\'t export style : %s') % filename, (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+            
+    def _deletestyle(self,  stylename,client):
+
+        log.debug("delete style %s" % dirstylename)
+        dirstylename=self.config.stylesDir/stylename
+        if not G.application.config.defaultStyle == stylename:  
+            delstyle=False
+            if os.path.isdir(dirstylename):
+                try:
+                    shutil.rmtree(dirstylename)
+                    delstyle=True
+                except:
+                   log.debug("can\'t delete style %s" % dirstylename)
+            #change styles menu
+            if delstyle==True:                
+                client.alert(_(u'Style deleted ') , (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+            else:              
+                client.alert(_(u'can\'t delete style ') , (u'eXe.app.gotoUrl("/%s")' % \
+                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+            self.config.loadStyles()
+            log.debug("styles" + str(self.config.styles).strip('[]'))
+            #window style render .

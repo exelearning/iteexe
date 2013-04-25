@@ -36,6 +36,7 @@ from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.path           import Path
 from exe.engine.translate      import lateTranslate
+from exe                     import globals as G
 
 
 log = logging.getLogger(__name__)
@@ -414,7 +415,7 @@ data is entered into this field."""))
         """
         Return xhtml string for dispay all icons
         """
-        iconpath  = Path(self.webDir).joinpath("style", self.style)
+        iconpath  = Path(G.application.config.stylesDir/self.style)
         iconfiles = iconpath.files("icon_*")
         html = ""
         for iconfile in iconfiles:
