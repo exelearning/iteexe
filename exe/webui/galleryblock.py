@@ -359,17 +359,7 @@ class GalleryBlock(Block):
         cls = self.idevice.__class__
         cls.export()
         try:
-            html  = [u'<div class="iDevice emphasis%s" ' %
-                     unicode(self.idevice.emphasis),
-                     u'>',
-                     u'<img alt="" ',
-                     u'     class="iDevice_icon" ',
-                     u'src="icon_'+self.idevice.icon+'.gif" />'
-                     u'<h2 class="iDeviceTitle">',      
-                     self.idevice.title,
-                     '</h2>']
-            html += [self.renderViewContent()]
-            html += [u'</div>']
+            html  = [Block.renderView(self, style)]
             return u'\n    '.join(html)
         finally:
             # Put everything back into the default preview mode
