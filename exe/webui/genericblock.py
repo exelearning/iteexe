@@ -89,7 +89,6 @@ class GenericBlock(Block):
         i.e. when exported as a webpage or SCORM package
         """
         html = common.ideviceHeader(self, style, "view", True)
-        html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderView()
         html += common.ideviceFooter(self, style, "view", True)
