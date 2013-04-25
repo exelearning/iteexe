@@ -318,7 +318,8 @@ class Block(Renderable):
         """
         Returns an XHTML string for the view buttons
         """
-        html  = common.submitImage(u"edit", self.id, 
+        html = '<p class="exe-controls idevice-edition-buttons">'
+        html  += common.submitImage(u"edit", self.id, 
                                    u"/images/stock-edit.png", 
                                    _(u"Edit"), self.package.isChanged, True)
         html += common.confirmThenSubmitImage(
@@ -326,6 +327,7 @@ class Block(Renderable):
             u"delete",
             self.id, u"/images/stock-cancel.png", 
             _(u"Delete"), 1)
+        html += '</p>'
         return html
 
 # ===========================================================================
