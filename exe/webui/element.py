@@ -872,11 +872,14 @@ class MagnifierElement(Element):
         self.field.message = ""
         if "path"+self.id in request.args:
             path = request.args["path"+self.id][0]
+            """
             if path.lower().endswith(".jpg") or path.lower().endswith(".jpeg"):
                 self.field.setImage(request.args["path"+self.id][0])
             elif path <> "":
                 self.field.message = _(u"Please select a .jpg file.")
                 self.field.idevice.edit = True
+            """
+            self.field.setImage(request.args["path"+self.id][0])   
             # disabling Undo once an image has been added:
             self.field.idevice.undo = False
 
@@ -888,7 +891,7 @@ class MagnifierElement(Element):
         and not is_cancel:
             self.field.height = request.args["height"+self.id][0]
             
-        if "action" in request.args and request.args["action"][0]=="addJpgImage" and \
+        if "action" in request.args and request.args["action"][0]=="addImage" and \
            request.args["object"][0]==self.id:
             # disabling Undo once an image has been added:
             self.field.idevice.undo = False
@@ -910,9 +913,9 @@ class MagnifierElement(Element):
         html += common.elementInstruc(self.field.instruc)
         html += u"</div>\n"
         html += u'<div class="block">\n'
-        html += u'<img alt="%s" ' % _('Add JPEG Image')
+        html += u'<img alt="%s" ' % _('Add Image')
         html += u'id="img%s" ' % self.id
-        html += u"onclick=\"addJpgImage('"+self.id+"');\" "
+        html += u"onclick=\"addImage('"+self.id+"');\" "
         html += u'src="resources/%s" '%(self.field.imageResource.storageName)
         html += u"/>\n"
         html += u"</div>\n"
@@ -925,8 +928,8 @@ class MagnifierElement(Element):
         html += u'<div class="block">\n'
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" class="block" '
-        html += u' onclick="addJpgImage(\'%s\')"' % self.id
-        html += u' value="%s" />' % _(u"Select an image (JPG file)")
+        html += u' onclick="addImage(\'%s\')"' % self.id
+        html += u' value="%s" />' % _(u"Select an image")
         if self.field.imageResource and not self.field.isDefaultImage:
             html += '<p style="color: red;">'+ self.field.imageResource.storageName + '</P>'
         if self.field.message <> "":
