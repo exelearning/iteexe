@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-22 16:43+0200\n"
-"PO-Revision-Date: 2013-04-02 17:05+0200\n"
+"PO-Revision-Date: 2013-04-23 17:28+0200\n"
 "Last-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -102,31 +102,39 @@ msgid ""
 "Click on the AddFiles button to select the .ggb file and then click on "
 "the Upload button."
 msgstr ""
+"Klik op de knop \"Bestanden toevoegen\" om het .ggb bestand te kiezen. Klik "
+"daarna op de Upload knop."
 
 #: exe/engine/appletidevice.py:534
 msgid ""
 "Click on the AddFiles button to select the .jclic.zip file and then click"
 " on the Upload button.<p>The activity will be visible when the HTML file "
 "will be generated from eXe."
-msgstr ""
+msgstr "Klik op de knop \"Bestanden toevoegen\" om het .jclic.zip bestand te kiezen. Klik daarna op de Upload knop. <p>Een voortgangsindicator is zichtbaar als het HTML bestand wordt aangemaakt door eXe."
 
 #: exe/engine/appletidevice.py:544
 msgid ""
 "Click on the AddFiles button to select the .sb or .scratch file and then "
 "click on the Upload button."
 msgstr ""
+"Klik op de knop \"Bestanden toevoegen\" om het .sb of .scratch bestand te "
+"kiezen. Klik daarna op de Upload knop."
 
 #: exe/engine/appletidevice.py:555
 msgid ""
 "Please enter: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; click on the Upload button afterwards."
 msgstr ""
+"Voer svp in: Nummer van de scene, bijbehorende URL (geen spaties), bv: "
+"3,//voorbeeld.com; Klik daarna oop de Upload knop. "
 
 #: exe/engine/appletidevice.py:557
 msgid ""
 "Click on the AddFiles button to select the .html or .htm file and then "
 "click on the Upload button to get its content."
 msgstr ""
+"Klik op de knop \"Bestanden toevoegen\" om het .html of .htm bestand te "
+"kiezen. Klik daarna op de Upload knop om de inhoud te tonen."
 
 #: exe/engine/appletidevice.py:568
 msgid ""
@@ -521,9 +529,8 @@ msgid "FPD - Cloze Activity (Modified)"
 msgstr "FPD - Invuloefening (Aangepast)"
 
 #: exe/engine/clozelangfpdidevice.py:123
-#, fuzzy
 msgid "Clozelang"
-msgstr "Cloze"
+msgstr "Invuloefening"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -2767,7 +2774,7 @@ msgstr "Bestand opslaan als: (Bestandsnaam)"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:765
 msgid "Save file"
-msgstr ""
+msgstr "Sla bestand op"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:771
 msgid "Saving package..."
@@ -2776,31 +2783,31 @@ msgstr "Bestand opslaan"
 #: exe/jsui/scripts/app/controller/filepicker/Directory.js:75
 #: exe/jsui/scripts/app/controller/filepicker/File.js:168
 msgid "You do not have the permissions to open folder"
-msgstr ""
+msgstr "U hebt onvoldoende rechten om een map te opnenen"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:160
 msgid "You do not have the permissions to write into folder"
-msgstr ""
+msgstr "U hebt onvoldoende rechten om in de map een bestand aan te maken"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:170
 msgid "You do not have the permissions to open the file"
-msgstr ""
+msgstr "U hebt onvoldoende rechten om het bestand te opnene"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:315
 msgid "You do not have the permissions to  save into folder"
-msgstr ""
+msgstr "U hebt onvoldoende rechten om in de map een bestand op te slaan"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:327
 msgid "Create Folder"
-msgstr ""
+msgstr "Maar een map aan"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:328
 msgid "Enter the new folder name:"
-msgstr ""
+msgstr "Voer de nieuwe map-naam in"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:342
 msgid "You do not have the permissions to create a folder in folder"
-msgstr ""
+msgstr "U hebt onvoldoende rechten om een sub-map aan te maken"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:348
 msgid "Confirm?"
@@ -2861,15 +2868,15 @@ msgstr "Aanmaken map"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:81
 msgid "Save in:"
-msgstr ""
+msgstr "Sla op in:"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:87
 msgid "Folder"
-msgstr ""
+msgstr "Map"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:88
 msgid "Select Folder"
-msgstr ""
+msgstr "Kies een map"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
@@ -3570,7 +3577,7 @@ msgstr "Common Cartridge"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:205
 msgid "SCORM1.2"
-msgstr ""
+msgstr "SCORM1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:211
 msgid "SCORM2004"
@@ -3578,7 +3585,7 @@ msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
 msgid "Agrega"
-msgstr ""
+msgstr "Toevoegen"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:223
 msgid "IMS Content Package"
@@ -4354,7 +4361,7 @@ msgid ""
 "access the desired scene in your regular browser, click with right mouse "
 "button on it and in config > codigo is its associated code. Copy and "
 "paste it directly into an Applet iDevice such as Other."
-msgstr ""
+msgstr "eXe kan geen enkele scene in de aangegeven website bereiken. U kunt de gewenste scene echter bereiken d.m.v. uw gemone browser. Klik er met de rechter muisknop op, en in config > code staat de bijbehorende code. Kopieer en plak het direct in een iDevice Applet, zoals gebruikelijk."
 
 #: exe/webui/appletblock.py:129
 msgid "Descartes"
@@ -4498,9 +4505,8 @@ msgstr "Automatische evaluatie"
 #: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
 #: exe/webui/element.py:2152 exe/webui/element.py:2546
 #: exe/webui/questionelement.py:152
-#, fuzzy
 msgid "Solucion"
-msgstr "Sectie"
+msgstr "Oplossing"
 
 #: exe/webui/clozefpdblock.py:174 exe/webui/element.py:2157
 msgid "Retroalimentacion"
@@ -4858,7 +4864,7 @@ msgstr "Toon antwoorden"
 #: exe/webui/element.py:1264 exe/webui/element.py:1533
 #: exe/webui/listablock.py:312
 msgid "Answers"
-msgstr ""
+msgstr "AAntwoorden"
 
 #: exe/webui/element.py:1389
 msgid "Show Score?"
@@ -4993,19 +4999,19 @@ msgstr "Afbeelding verwijderen?"
 
 #: exe/webui/iecmwarning.py:42
 msgid "eXe problem"
-msgstr ""
+msgstr "eXe probleem"
 
 #: exe/webui/iecmwarning.py:46
 msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
-msgstr ""
+msgstr "De \"Compatibility Mode\" van je browser staat aan."
 
 #: exe/webui/iecmwarning.py:50
 msgid "Please click on the Compatibility View button to turn it off:"
-msgstr ""
+msgstr "Klik svp op de knop \"Compatibility Mode\" knop om dit uit te zetten"
 
 #: exe/webui/iecmwarning.py:54
 msgid "Then restart eXe.."
-msgstr ""
+msgstr "Start vervolgens eXe opnieuw"
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
@@ -5166,7 +5172,7 @@ msgstr "Engelstalig Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:115
 msgid "Basque Wikipedia Article"
-msgstr ""
+msgstr "Baskisch Wikipedia artikel"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
@@ -5190,7 +5196,7 @@ msgstr "Duits Wikipedia-artikel"
 
 #: exe/webui/wikipediablock.py:121
 msgid "Galician Wikipedia Article"
-msgstr ""
+msgstr "Galiciaans Wikipedia artikel"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Greek Wikipedia Article"

@@ -63,7 +63,7 @@ Function UninstallMSI
     pop $R1
 FunctionEnd
 
-Function .onInit
+Function CheckeXeRunning
    nsProcess::_FindProcess "exe.exe"
    Pop $R0
    IntCmp $R0 603 ok ko ko
@@ -71,6 +71,24 @@ Function .onInit
      MessageBox MB_OK|MB_ICONEXCLAMATION "eXe is running. Please close it first or reboot before install" /SD IDOK
      Abort
    ok:
+FunctionEnd
+
+Function un.CheckeXeRunning
+   nsProcess::_FindProcess "exe.exe"
+   Pop $R0
+   IntCmp $R0 603 ok ko ko
+   ko:
+     MessageBox MB_OK|MB_ICONEXCLAMATION "eXe is running. Please close it first or reboot before uninstall" /SD IDOK
+     Abort
+   ok:
+FunctionEnd
+
+Function .onInit
+   Call CheckeXeRunning
+FunctionEnd
+
+Function un.onInit
+   Call un.CheckeXeRunning
 FunctionEnd
 
 Section "Remove Old Version" Section1
