@@ -38,10 +38,16 @@ class LinuxConfig(Config):
         Setup with our default settings
         """
         # Override the default settings
+        """
         self.webDir      = Path("/usr/share/exe")
         self.jsDir      = Path("/usr/share/exe")
         self.localeDir   = Path("/usr/share/exe/locale")
         self.dataDir     = Path(os.environ['HOME'])
+        self.configDir   = Path(self.dataDir)/'.exe'
+        self.stylesDir =Path(self.configDir)/'style'
+        self.lastDir     = Path(os.environ['HOME'])
+        """
+        self.dataDir     = Path(os.environ['HOME'])    
         self.configDir   = Path(self.dataDir)/'.exe'
         self.stylesDir =Path(self.configDir)/'style'
         self.lastDir     = Path(os.environ['HOME'])
