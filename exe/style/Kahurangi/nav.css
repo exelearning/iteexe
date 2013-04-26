@@ -1,0 +1,37 @@
+/* 
+Copyright University of Auckland 2004
+Created by Brent Simpson, brent.simpson@auckland.ac.nz
+Centre for Flexible and Distance Learning
+Modified by eXeLearning.net
+*/
+#content{width:100%;position:relative;padding-bottom:10px;min-width:985px;border:1px solid #FFFFFF;border-radius:5px;background:url(_kahurangi_white.gif) repeat-y 229px 0}
+#main{padding:10px 20px 11px 250px}
+#header,#emptyHeader{border-top:none;background:url(_kahurangi_page_bg.gif) repeat-x 0 0;border-top-left-radius:5px;border-top-right-radius:5px;padding-left:15px}
+div#nodeDecoration{padding:0;margin:0;background:none;border:none}
+#nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #FFFFFF}
+/* Navigation */
+#siteNav{width:230px;float:left;padding-right:20px}
+#siteNav,#siteNav ul{border-color:#FFFFFF}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav a{display:block;padding:4px 0 4px 25px;color:#000;border-bottom:1px solid #FFF;border-right:1px solid #FFFFFF;background:#D4E4FD}
+#siteNav a:hover,#siteNav a:focus{background-color:#eee;color:#222}
+* html #siteNav a{display:inline-block;width:100%} /* IE6 */
+#siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
+#siteNav ul ul a{padding-left:35px;font-size:.95em}
+#siteNav .active,#siteNav .active:hover,#siteNav .active:focus{color:#fff;background:#9FABBC}
+#siteNav .other-section{display:none}
+#siteNav ul ul ul a{padding-left:45px}
+#siteNav .daddy {background-image:url(_kahurangi_collapse.gif);background-repeat: no-repeat;background-position: 5px 50%}
+#siteNav .daddy.active{background-image: url(_kahurangi_expand.gif);background-repeat: no-repeat;background-position:7px 50%}
+#content #siteNav ul ul a{background-image:none}
+/* Pagination */
+.pagination{border-top:1px solid #FFFFFF;padding-top:20px;text-align:right;color:#263264}
+.pagination a{padding:0;margin:0 5px;color:#263264}
+#topPagination{position:absolute;top:-2px;width:100%;right:20px}
+#topPagination .prev{margin-left:20px}
+#topPagination .pagination{border:none}
+/* Autoclear */
+#content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
+#content{display:inline-block}
+html[xmlns] #content{display:block}
+* html #content{height: 1%;overflow:visible}

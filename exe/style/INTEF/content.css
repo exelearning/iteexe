@@ -1,0 +1,86 @@
+/* Imágenes utilizadas */
+/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
+/* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
+/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
+/* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
+/* Los iconos de los iDevices también se controlan mediante CSS (ver iDevice icons) */ 
+
+/* Colores */
+body{
+	color:#333333; /* Cuerpo de texto */
+	background:#ffffff; /* Color de fondo */
+}
+a{
+	color:#004f96; /* Enlaces */
+}
+#header{
+	color:#666666; /* Título del proyecto */
+}
+#nodeTitle{
+	color:#004f96; /* Título de cada página */
+}
+#main #nodeDecoration{
+	border-color:#E7EBEE; /* Borde del título de cada página */
+	background-color:#DEE5EB; /* Color de fondo */
+}
+.iDeviceTitle{
+	color: #0066AB; /* Títulos de los iDevices */
+}
+.iDevice_inner{
+	background-color:#F6FCFE; /* Fondo del cuerpo del iDevice */
+	color:#4d4d4d; /* Texto de los iDevices */
+	border-color:#cccccc; /* Borde del cuerpo de los iDevices */
+}
+#pageFooter{
+	color:#666666; /* Texto del pie de página */
+}
+#pageFooter a{
+	color:#A7512B; /* Enlaces del pie de página */
+}
+input.feedbackbutton{
+	background-color: #DBE992; /* Color de fondo del botón de feedback */
+}
+
+/* Otras definiciones */
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
+#nodeTitle{font-size:1.5em;margin:0;text-align:left;font-weight:bold}
+#main #nodeDecoration{padding:20px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:1px;border-style:solid;background-image:url(my_ims_header.jpg);text-align:left}
+#header{height:54px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding-bottom:10px;padding-left:10px;font-size:1.1em;font-weight:bold}
+#header h1{margin:0;font-size:1em}
+#main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+#main h2{font-size:1.4em}
+#main h3{font-size:1.3em}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:10px 0 20px 0}
+.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
+#main h2.iDeviceTitle{display:inline;font-size:1.2em}
+
+/* iDevice icons */
+.iDevice_icon{width:30px;height:auto;margin-right:5px} /* Legacy: old iDevices */
+.iDevice_header{background-image:url(icon_generic.gif);padding:5px 0 5px 37px;margin-bottom:5px}
+.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
+.readingIdevice .iDevice_header{background-image:url(icon_reading.gif);padding-left:41px}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif);padding-left:39px}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+
+.iDevice_inner{padding: 10px 20px;border-width:1px 0 1px 0;border-style:dotted}
+.iDevice_content{overflow:auto}
+#pageFooter{font-size:.9em}
+#pageFooter p{margin:3px 0}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+/* Image galleries */
+#lbBottomContainer{font-size:.95em}

@@ -1,0 +1,72 @@
+/* Colores */
+body{
+	color:#333333; /* Cuerpo de texto */
+	background:#ffffff; /* Color de fondo */
+}
+#content{
+	border-color:#cccccc; /* Borde del contenedor principal */
+	background:#ffffff; /* Color de fondo del contenedor principal */
+}
+.pagination{
+	color:#fff; /* Color de texto del bloque Anterior/Siguiente: igual que el color de fondo de la página */
+	border-color:#999; /* Color de borde del bloque: borde superior */
+}
+.pagination a{
+	background-color:#e6e9ed; /* Color de fondo de los enlaces Anterior/Siguiente */
+	color:#A7512B; /* Color de texto de estos enlaces */
+}
+.pagination a:hover,.pagination a:focus{
+	background-color:#cfd9ea; /* Color de fondo de los enlaces Anterior/Siguiente al pasar sobre ellos */
+	color:#263264; /* Color de texto de estos enlaces al pasar sobre ellos */
+}
+#siteNav a{
+	color:#000000; /* Enlaces del menú */
+	border-color:#0460B3; /* Borde que separa a los enlaces */
+}
+#siteNav a:hover,#siteNav a:focus{
+	color:#4D4D4D; /* Enlaces al pasar sobre ellos */
+	background:#eee; /* Fondo de los enlaces al pasar sobre ellos */
+}
+#siteNav ul ul a{
+	color:#555; /* Menú: enlaces de segundo nivel */
+}
+#siteNav .active{
+	color:#0460B3; /* Enlace activo en el menú principal */
+	font-weight:bold; /* Peso fuente */
+	border-color:#0460B3;  /* Borde del enlace activo */
+}
+#siteNav .other-section{
+	display:none; /* Eliminar si se quiere que se muestren todos los niveles */
+}
+
+/* Otras definiciones */
+body{padding:0;text-align:center}
+#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
+#main{padding:10px 20px 11px 250px}
+#header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
+* html #header,* html #emptyHeader{height:110px} /* IE6 */
+#nodeTitle{position:absolute;top:55px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
+#main #nodeDecoration{background:none;padding:0 10px;border:none}
+/* Menú */
+#siteNav{width:230px;float: left;padding-right:20px}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav a{display:block;padding:4px 0 4px 10px;border-width:0 0 1px 0;border-style:dotted}
+* html #siteNav a{display:inline-block;width:100%} /* IE6 */
+#siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
+#siteNav a.main-node:hover{text-decoration:underline;background:none}
+#siteNav ul ul a{padding-left:25px;font-size:.95em}
+#siteNav ul ul ul a{font-size:1em;padding-left:50px}
+/* Pagination */
+.pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
+.pagination a{padding:3px;}
+.pagination a:hover,.pagination a:focus{text-decoration:none}
+#topPagination{position:absolute;top:0;right:20px}
+#topPagination .pagination{border:none}
+/* Pie de página e iDevices */
+#pageFooter{text-align:center;margin-left:-250px}
+.iDeviceTitle{vertical-align:top}
+/* Autoclear */
+#content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
+#content{display:inline-block}
+html[xmlns] #content{display:block}
+* html #content{height: 1%;overflow:visible}
