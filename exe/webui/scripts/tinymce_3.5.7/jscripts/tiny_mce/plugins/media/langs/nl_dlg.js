@@ -6,12 +6,12 @@ flash:"Flash (swf, flv, mp3)",
 quicktime:"QuickTime (mov, mp4, mpeg)",
 windowsmedia:"Windows Media (wmv, wma)",
 realmedia:"Real Media (ram)",
-selected_file : "Selected file",
-html5_warning : "HTML5 does not work in all browsers",
-recommended_type : "Recommended type",
-confirm_question : "Continue without changing your settings?",
-preview_error : "Could not generate preview",
-video_download_file_warning : "For Web browsers that do not support this video, a link to the video file will be displayed.",
-audio_download_file_warning : "For Web browsers that do not support this audio, a link to the audio file will be displayed."
+selected_file : "Gekozen bestand",
+html5_warning : "HTML5 werkt niet in alle browsers",
+recommended_type : "Aanbevolen type",
+confirm_question : "Doorgaan zondwer Uw instellingen aan te passen?",
+preview_error : "Kon geen voorbeeldweergave aanmaken",
+video_download_file_warning : "Voor browsers die dit type video niet ondersteunen zal een link naar de video worden getoond.",
+audio_download_file_warning : "Voor browsers die dit type audio niet ondersteunen zal een link naar de audio worden getoond."
 // The New eXeLearning
 });
