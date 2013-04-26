@@ -65,7 +65,7 @@ def ideviceHeader(e, style, mode, includeIdeviceInner):
     o = '' # Old HTML (themes with no config.xml file)
     h = '' # New HTML
     w2 = ''
-    if includeIdeviceInner:
+    if includeIdeviceInner and e.idevice.emphasis > 0:
         w2 = '<div class="iDevice_inner">' # Content wrapper
     
     
@@ -107,7 +107,7 @@ def ideviceFooter(e, style, mode, includeIdeviceInner):
     if themeXMLFile.exists():
         themeHasXML = True
     h = ''
-    if includeIdeviceInner:
+    if includeIdeviceInner and e.idevice.emphasis > 0:
         h = "</div>" # Close iDevice_inner
     if mode=="preview":
         h += e.renderViewButtons()
