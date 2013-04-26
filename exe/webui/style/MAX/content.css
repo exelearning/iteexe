@@ -1,0 +1,30 @@
+body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#ffffff}
+a{color:#CE2239}
+#header,#emptyHeader{text-align:left;height:75px;padding-left:250px;font-size:1.25em;line-height:101px;vertical-align:bottom;color:#000;background:#fff url(_max_cabecera.jpg) no-repeat 0 0;border-top:5px solid #000;border-bottom:5px solid #000}
+#header h1{margin:0;font-size:1em}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;text-align:left;font-weight:bold;color:#222;padding:.1em 0 .6em 0;border-bottom:5px solid #B50536} /* .nodeTitle when single page */
+#main .nodeTitle{margin-top:.6em;color:#222}
+#main h2{font-size:1.4em;color:#9A042F}
+#main h2.iDeviceTitle{display:inline;font-size:1.2em}
+#main h3{font-size:1.3em;color:#1E80B8}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:1.8em 0}
+.iDeviceTitle{font-size:1.2em;vertical-align:top;top:-2px;color:#666;line-height:2em}
+.iDevice_icon{width:23px;height:auto;margin-right:5px} /* Icons: "Iconic" (Creative Commons by-sa), by P. J. Onori (http://www.somerandomdude.com/work/iconic/) */
+.iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444;border-radius:5px}
+#siteFooter{color:#666666;font-size:.95em}
+#siteFooter a{color:#000}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+#lbOverlay{background-color:#f3f3f3}
+#lbOuterContainer{border-color:#ddd}
+.ExternalUrlIdevice iframe{border:none}
+/* base.css */
+div#nodeDecoration{padding:0;border:none;text-align:left}
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+/* Form buttons */
+.iDevice_inner input[type=submit],.iDevice_inner input[type=button],.feedbackbutton{background:#B50536;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
+.iDevice_inner input[type=submit]:hover,.iDevice_inner input[type=button]:hover,.feedbackbutton:hover{background:#000;color:#f3f3f3}
