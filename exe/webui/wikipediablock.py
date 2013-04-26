@@ -175,29 +175,12 @@ class WikipediaBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")    
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"/style/"+style
-                html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<h2 class=\"iDeviceTitle\">"
-            html += self.idevice.title
-            html += u"</h2>\n"
-            html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
         html += self.articleElement.renderPreview() 
-        html += u"This article is licensed under the "
-        html += u'<span style="text-decoration: underline;">'
-        html += u"GNU Free Documentation License</span>. It uses material "
-        html += u'from the article '
-        html += u'"%s"</span>.<br/>\n' % self.idevice.articleName
-        html += self.renderViewButtons()
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            html += u"</div></div>\n"
-        else:
-            html += u"</div>\n"
+        html += '<p class="article-license-warning">'
+        html += _(u"This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from")
+        html += ' "%s".</p>' % self.idevice.articleName
+        html += common.ideviceFooter(self, style, "preview", True)
         return html
     
 
@@ -212,29 +195,10 @@ class WikipediaBlock(Block):
         content = re.sub(r'src="/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\'/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\"/newPackage.*/resources/', 'src="', content)
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<div class=\"wiki_site\" value=\"" + self.idevice.site \
-                + "\"></div>"
-        html += u"<div class=\"article_name\" value=\"" + self.idevice.articleName \
-                + "\"></div>"
-        html += u"<div class=\"own_url\" value=\"" + self.idevice.ownUrl \
-                + "\"></div>\n"
-
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<h2 class=\"iDeviceTitle\">"
-            html += self.idevice.title
-            html += u"</h2>\n"
-            html += u"<div class=\"iDevice_inner\">\n"
-        html += u"<br/>\n"
         # licence notice:
-        lic = _(u"This article is licensed under the ")
-        lic += u"<a href='fdl.html'>"
-        lic += u"%s</a>. " % _(u"GNU Free Documentation License")
-        lic += _(u"It uses material from the ")
+        lic = '<p class="article-license-warning">'
+        lic += _(u"This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from")
+        lic += ' "'
         # UGLY UGLY UGLY KLUDGE for Wayne
         # "BIG please - Will you check that the Wikieducator url is changed for
         # the next release - not sure if we'll get the image thing sorted, but
@@ -245,14 +209,11 @@ class WikipediaBlock(Block):
         else:
             lic += u"<a href=\""+self.idevice.site
         lic += self.idevice.articleName+u"\">"
-        lic += _(u"article ") 
-        lic += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            lic += u"</div></div>\n"
-        else:
-            lic += u"</div>\n"
+        lic += u""+self.idevice.articleName+u"</a>\".</p>"   
         content = content + lic
-        html += content
+        html = common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html += content        
+        html += common.ideviceFooter(self, style, "view", True)
         return html
     
 

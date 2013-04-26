@@ -133,24 +133,9 @@ class RssBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"/style/"+style
-                html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<h2 class=\"iDeviceTitle\">"
-            html += self.idevice.title
-            html += u"</h2>\n"
-            html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
         html += self.rssElement.renderPreview()
-        html += self.renderViewButtons()
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            html += u"</div></div>\n"
-        else:
-            html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "preview", True)
         return html
     
 
@@ -161,26 +146,9 @@ class RssBlock(Block):
         log.debug("renderView")
         content = self.rssElement.renderView()
         content = re.sub(r'src="/.*?/resources/', 'src="', content)
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-
-        html += u"<div class=\"rss_url\" value=\"" + self.idevice.url \
-                + "\"></div>"
-
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<h2 class=\"iDeviceTitle\">"
-            html += self.idevice.title
-            html += u"</h2>\n"
-            html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
         html += content
-       
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            html += u"</div></div>\n"
-        else:
-            html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view", True)
         return html
     
 
