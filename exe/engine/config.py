@@ -262,7 +262,9 @@ class Config:
                 #self.stylesDir.mkdir()
                 actstyle=self.webDir/'style'
                 if actstyle.exists():
-                    shutil.copytree(actstyle, self.stylesDir) 
+                    shutil.copytree(actstyle, self.stylesDir)
+        else:
+            self.stylesDir     = Path(self.webDir/'style').abspath()
             
             #copiar style
                 
