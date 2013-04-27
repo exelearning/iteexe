@@ -76,7 +76,7 @@ body{
 body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 25px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;border-bottom-left-radius:10px;border-bottom-right-radius:10px}
 #main{padding:10px 20px 11px 250px}
-#header,#emptyHeader{height:29px;background:url(my_header.jpg) no-repeat 0 0;padding:80px 0 0 304px}
+#header,#emptyHeader{height:40px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 0 0 314px}
 * html #header,* html #emptyHeader{height:109px} /* IE6 */
 #nodeTitle{font-size:1.6em;margin:10px 10px 0 0}
 #main #nodeDecoration{background:none;padding:0;border:none}

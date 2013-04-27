@@ -12,26 +12,6 @@ body{
 	background:#ffffff; /* Color de fondo del contenedor principal */
 }
 
-#navcontainer a{
-	color:#627796; /* Enlaces del menú */
-	border-color:#627796; /* Borde que separa a los enlaces  */
-}
-
-#navcontainer a:hover,#subnav div:first-child a:hover{
-	color:#FFFFFF; /* Enlaces al pasar sobre ellos */
-	background:#627796; /* Fondo de los enlaces al pasar sobre ellos */
-}
-
-#subnav a{
-	color:#627796; /* Menú: enlaces de segundo nivel */
-}
-
-#navcontainer #active{
-	color:#0460B3; /* Enlace activo en el menú principal */
-	border-color:#0460B3;  /* Borde del enlace activo en el menú principal */
-	font-weight:bold;
-}
-
 .noprt{
 	color:#fff; /* Color de texto del bloque Anterior/Siguiente: igual que el color de fondo de la página */
 	border-color:#999; /* Color de borde del bloque: borde superior */
@@ -89,18 +69,6 @@ h1#nodeTitle {width:620px;margin-left:10px;padding-left:5px;}
 
 body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-align:center}
 #content{font-size:.75em;width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:0px;border-top:0}
-
-#navcontainer {width: 230px;float: left;padding-right:20px}
-#navcontainer ul,#navcontainer li{margin:0;padding:0}
-#navcontainer a{display:block;padding:4px 0 4px 10px;border-width:0 0 1px 0;border-style:dotted;border-color: #627796;}
-#navcontainer div:first-child,#navcontainer div:first-child a{font-weight:bold;font-variant:small-caps;letter-spacing:1px}
-#navcontainer div:first-child a:hover{text-decoration:underline;background:none}
-#subnav div:first-child,#subnav div:first-child a{font-weight:normal;font-variant:normal;letter-spacing:0}
-#navcontainer a:hover,#subnav div:first-child a:hover{text-decoration:none}
-#subnav{font-size:11px}
-/*#subnav a{color:#555}*/
-#navcontainer #active{font-weight:bold;padding:4px 0 4px 10px;border-style:dotted;border-width:0 0 1px 0;border-color: #627796;}
-#subnav a,#subnav #active{padding:4px 0 4px 25px}
 
 /* ********************************************************* */
 /* **** DEFINICIONES específicas para el eXe del ITE ****** */
