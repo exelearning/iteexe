@@ -836,11 +836,7 @@ class Package(Persistable):
 
         newPackage.updateRecentDocuments(newPackage.filename)
         newPackage.isChanged = False
-        """
-        FM: en el futuro se utilizara la variable G.application.config.stylesDir , que guarda la ruta a la carpeta de estilos
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
-        """
-        nstyle=Path(G.application.config.webDir/'style'/newPackage.style)
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
         return newPackage

@@ -151,7 +151,7 @@ class WebServer:
         self.root.putChild("images",      File(webDir+"/images"))
         self.root.putChild("css",         File(webDir+"/css"))
         self.root.putChild("scripts",     File(webDir+"/scripts"))
-        self.root.putChild("style",       File(webDir+"/style"))
+        self.root.putChild("style",       File(self.config.stylesDir))
         self.root.putChild("docs",        File(webDir+"/docs"))
         self.root.putChild("temp_print_dirs",
                               File(self.tempWebDir+"/temp_print_dirs"))
