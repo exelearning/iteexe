@@ -76,10 +76,10 @@ class GenericBlock(Block):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
         for element in self.elements:
             html += element.renderPreview()
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
         return html
 
     
@@ -88,10 +88,10 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        html = common.ideviceHeader(self, style, "view", True)
+        html = common.ideviceHeader(self, style, "view")
         for element in self.elements:
             html += element.renderView()
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
         return html
 
 from exe.engine.genericidevice import GenericIdevice

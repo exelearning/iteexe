@@ -133,9 +133,9 @@ class RssBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
         html += self.rssElement.renderPreview()
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
         return html
     
 
@@ -146,9 +146,9 @@ class RssBlock(Block):
         log.debug("renderView")
         content = self.rssElement.renderView()
         content = re.sub(r'src="/.*?/resources/', 'src="', content)
-        html = common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "view")
         html += content
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
         return html
     
 

@@ -115,28 +115,12 @@ class MultimediaBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"\n<!-- MP3 iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u" src=\"/style/"+style
-                html += "/icon_"+self.idevice.icon+".gif\"/>\n"
-            html += u"<h2 class=\"iDeviceTitle\">"
-            html += self.idevice.title
-            html += u"</h2>\n"
-        html += u"<div class=\"iDevice_inner\"> "
-        html += u"<div class=\"media\">\n"
-        html += self.mediaElement.renderPreview()+ "</div>\n"
-       # html += u"<br />" + self.idevice.media.caption + "</div>\n"
+        html = common.ideviceHeader(self, style, "preview")
+        html += u"<div class=\"media\">"
+        html += self.mediaElement.renderPreview()
+        html += "</div>"
         html += self.textElement.renderPreview()
-        html += u"<br/>\n"        
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div></div>\n"
-        html += self.renderViewButtons()
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "preview")        
         return html
     
 
@@ -145,24 +129,12 @@ class MultimediaBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"\n<!-- MP3 iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        if self.idevice.emphasis != Idevice.NoEmphasis:
-            if self.idevice.icon:
-                html += u'<img alt="" class="iDevice_icon" '
-                html += u' src="icon_'+self.idevice.icon+'.gif"/>\n'
-            html += u"<h2 class=\"iDeviceTitle\">"
-            html += self.idevice.title
-            html += u"</h2>\n"
-        html += u"<div class=\"iDevice_inner\"> "
-        html += u"<div class=\"media\">\n" + "</div>"
+        html = common.ideviceHeader(self, style, "view")
+        html += u"<div class=\"media\">"
         html += self.mediaElement.renderView()
-       # html += u"<br/>" + self.idevice.media.caption + "</div>"
+        html += "</div>"
         html += self.textElement.renderView()
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div></div>\n"
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view")
         return html
     
 

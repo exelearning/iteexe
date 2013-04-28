@@ -134,7 +134,7 @@ class QuizTestBlock(Block):
         html  = u'<form name="quizForm%s" id="quizForm%s" ' % (
                 self.idevice.id, self.idevice.id)
         html += u'action="javascript:calcScore2();">\n'
-        html += common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html += common.ideviceHeader(self, style, "view")
         html += u'<div class="passrate" value="%s"></div>\n' % self.idevice.passRate
         for element in self.questionElements:
             if preview: 
@@ -144,7 +144,7 @@ class QuizTestBlock(Block):
         
         html += '<input type="submit" name="submitB" '
         html += 'value="%s"/>\n' % _(u"SUBMIT ANSWERS")
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
         html += '</form>\n'
 
         return html
@@ -355,7 +355,7 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
 
         for element in self.questionElements:
             html += element.renderPreview() + "<br/>"
@@ -369,7 +369,7 @@ class QuizTestBlock(Block):
 
         self.idevice.score = -1
         
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
         return html
     
 

@@ -289,9 +289,9 @@ class Block(Renderable):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        html = common.ideviceHeader(self, style, "preview", False) # False = do not include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
         html += self.renderViewContent()
-        html += common.ideviceFooter(self, style, "preview", False)
+        html += common.ideviceFooter(self, style, "preview")
         return html
 
     
@@ -300,9 +300,9 @@ class Block(Renderable):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        html = common.ideviceHeader(self, style, "view", False) # False = do not include iDevice_inner div
+        html = common.ideviceHeader(self, style, "view")
         html += self.renderViewContent()
-        html += common.ideviceFooter(self, style, "view", False)
+        html += common.ideviceFooter(self, style, "view")
         return html
 
 

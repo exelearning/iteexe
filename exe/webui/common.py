@@ -50,7 +50,7 @@ def docType():
             u'Transitional//EN" '
             u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
             
-def ideviceHeader(e, style, mode, includeIdeviceInner):
+def ideviceHeader(e, style, mode):
     #themePath = Path(G.application.config.webDir).joinpath("style", style)
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
@@ -65,7 +65,7 @@ def ideviceHeader(e, style, mode, includeIdeviceInner):
     o = '' # Old HTML (themes with no config.xml file)
     h = '' # New HTML
     w2 = ''
-    if includeIdeviceInner and e.idevice.emphasis > 0:
+    if e.idevice.emphasis > 0:
         w2 = '<div class="iDevice_inner">' # Content wrapper
     
     
@@ -75,7 +75,7 @@ def ideviceHeader(e, style, mode, includeIdeviceInner):
     w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
         w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
-    w += ">\n"
+    w += ">"
     
     if e.idevice.emphasis > 0:
         h += '<div class="iDevice_header"'
@@ -89,7 +89,7 @@ def ideviceHeader(e, style, mode, includeIdeviceInner):
         o += u"<h2 class=\"iDeviceTitle\">"+e.idevice.title+"</h2>"
         h += '>'
         h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
-        h += '</div>\n'
+        h += '</div>'
     
     if e.idevice.emphasis <= 0:
         h = ""
@@ -99,7 +99,7 @@ def ideviceHeader(e, style, mode, includeIdeviceInner):
     else:
         return w+o+w2
 
-def ideviceFooter(e, style, mode, includeIdeviceInner):
+def ideviceFooter(e, style, mode):
     #themePath = Path(G.application.config.webDir).joinpath("style", style)
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
@@ -107,7 +107,7 @@ def ideviceFooter(e, style, mode, includeIdeviceInner):
     if themeXMLFile.exists():
         themeHasXML = True
     h = ''
-    if includeIdeviceInner and e.idevice.emphasis > 0:
+    if e.idevice.emphasis > 0:
         h = "</div>" # Close iDevice_inner
     if mode=="preview":
         h += e.renderViewButtons()

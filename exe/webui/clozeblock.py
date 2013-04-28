@@ -93,7 +93,7 @@ class ClozeBlock(Block):
             self.renderEditButtons(),
             u'</div>'
             ]
-        return u'\n    '.join(html)
+        return u'\n'.join(html)
     
     def renderPreview(self, style):
         """ 
@@ -134,7 +134,6 @@ class ClozeBlock(Block):
         else:
             instruction_html = self.instructionElement.renderView()
         html = [
-            u'<div class="iDevice_inner">\n',
             instruction_html,
             clozeContent]
         if self.feedbackElement.field.content: 
@@ -144,9 +143,6 @@ class ClozeBlock(Block):
             else:
                 html.append(self.feedbackElement.renderView(False, 
                                                      class_="feedback"))
-        html += [
-            u'</div>\n',
-            ]
         return u'\n    '.join(html)
 
     def renderText(self): 

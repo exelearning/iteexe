@@ -175,12 +175,12 @@ class WikipediaBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")    
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
         html += self.articleElement.renderPreview() 
         html += '<p class="article-license-warning">'
         html += _(u"This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from")
         html += ' "%s".</p>' % self.idevice.articleName
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
         return html
     
 
@@ -211,9 +211,9 @@ class WikipediaBlock(Block):
         lic += self.idevice.articleName+u"\">"
         lic += u""+self.idevice.articleName+u"</a>\".</p>"   
         content = content + lic
-        html = common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "view")
         html += content        
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
         return html
     
 

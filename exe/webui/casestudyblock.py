@@ -138,7 +138,7 @@ class CasestudyBlock(Block):
         """
         log.debug("renderViewContent called with previewing mode = " + str(self.previewing))
 
-        html  = u"<div class=\"iDevice_inner\">\n"
+        html  = u""
 
         if self.previewing:
             html += self.storyElement.renderPreview()
@@ -150,8 +150,6 @@ class CasestudyBlock(Block):
             html + u"<br/>\n"
             for element in self.questionElements:
                 html += element.renderView()
-
-        html += u"</div>\n"
 
         return html
 
