@@ -118,14 +118,14 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
         html += self.instructionElement.renderPreview()
         
         for element in self.questionElements:
             html += element.renderQuestionPreview()
             html += element.renderFeedbackPreview()
             
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
 
         return html
 
@@ -135,7 +135,7 @@ class TrueFalseBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html = u'<script type="text/javascript" src="libot_drag.js"></script>'
-        html += common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html += common.ideviceHeader(self, style, "view")
         html += self.instructionElement.renderView()
         
         for element in self.questionElements:
@@ -144,7 +144,7 @@ class TrueFalseBlock(Block):
             html += element.renderFeedbackView()
             html += "</div>\n"
             
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
 
         return html
     

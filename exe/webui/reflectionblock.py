@@ -105,7 +105,7 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html = u'<div class="iDevice_inner">\n'
+        html = u''
     
         if self.previewing: 
             html += self.activityElement.renderPreview()
@@ -128,7 +128,6 @@ class ReflectionBlock(Block):
         else:
             html += self.answerElement.renderView()
 
-        html += "</div>\n"
         html += "</div>\n"
         return html
     

@@ -103,11 +103,11 @@ class MultiSelectBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
         for element in self.questionElements:
             html += element.renderPreview() + "<br/>"
         
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
         return html
     
     
@@ -115,11 +115,11 @@ class MultiSelectBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "view")
         for element in self.questionElements:
             html += element.renderView() + "<br/>"  
 
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
         return html
     
 

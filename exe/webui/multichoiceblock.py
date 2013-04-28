@@ -124,13 +124,13 @@ class MultichoiceBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html = u'<script type="text/javascript" src="libot_drag.js"></script>\n'
-        html += common.ideviceHeader(self, style, "view", True) # True = include iDevice_inner div
+        html += common.ideviceHeader(self, style, "view")
         
         for element in self.questionElements:
             html += element.renderView("panel-amusements.png","stock-stop.png")  
             html += "<br/>"
             
-        html += common.ideviceFooter(self, style, "view", True)
+        html += common.ideviceFooter(self, style, "view")
 
         return html
     
@@ -139,14 +139,14 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = common.ideviceHeader(self, style, "preview", True) # True = include iDevice_inner div
+        html = common.ideviceHeader(self, style, "preview")
 
         for element in self.questionElements:
             html += element.renderPreview("/images/panel-amusements.png", 
                                           "/images/stock-stop.png") 
-            html += "<br/>"
+            html += "<br />"
             
-        html += common.ideviceFooter(self, style, "preview", True)
+        html += common.ideviceFooter(self, style, "preview")
 
         return html
 

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<theme>
+    <name>INTEF con menú horizontal</name>
+    <version>2.0</version>
+    <compatibility>7+</compatibility>
+    <author>eXeLearning</author>
+    <author-url>http://www.exelearning.net</author-url>
+	<license>Creative Commons by-nc-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-nc-sa/3.0/</license-url>
+	<description>Plantilla originalmente creada para el Instituto Nacional de Tecnologías Educativas y de Formación (Ministerio de Educación, Cultura y Deporte). Diseño original de Aurelio Lorenzo. Adaptación: Ignacio Gros.</description>
+    <langs lang="en">
+        <name>INTEF with horizontal menu</name>
+		<description>This theme was originally created for INTEF (Instituto Nacional de Tecnologías Educativas y de Formación), Ministerio de Educación, Cultura y Deporte (Spanish Government). Original design by Aurelio Lorenzo. Adapted by Ignacio Gros.</description>
+	</langs>
+</theme>
