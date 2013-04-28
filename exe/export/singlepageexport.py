@@ -96,7 +96,7 @@ class SinglePageExport(object):
             styleFiles += self.stylesDir.files("*.eot")
             styleFiles += self.stylesDir.files("*.otf")
             styleFiles += self.stylesDir.files("*.woff")
-            self.stylesDir.copylist(styleFiles, outputDir)
+            self.stylesDir.copylist(styleFiles, self.outputDir)
             
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)

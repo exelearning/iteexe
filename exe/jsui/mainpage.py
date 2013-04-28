@@ -709,7 +709,7 @@ class MainPage(RenderableLivePage):
                      'textFile' or 'scorm'            
         'filename' is a file for scorm pages, and a directory for websites
         """ 
-        #webDir     = Path(self.config.webDir)
+        webDir     = Path(self.config.webDir)
         #stylesDir  = webDir.joinpath('style', self.package.style)
         stylesDir  = self.config.stylesDir/self.package.style
         filename = Path(filename, 'utf-8')
