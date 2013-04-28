@@ -601,10 +601,10 @@ function toggleElementVisible(ident) {
     // Toggle the visibility of an element
     var element = document.getElementById(ident);
     if (element) {
-        if (element.style.display != "none") {
-            element.style.display = "none";
+    	if ((element.style.display == "none")||(element.style.display == "")) {
+            element.style.display = "block";
         } else {
-            element.style.display = "";
+            element.style.display = "none";
         }
     }
 }
