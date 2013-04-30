@@ -16,6 +16,42 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
        background: transparent;
 }
 
+.classnote{
+border: 2px solid #A9A9A9;
+-webkit-border-radius: 10px;
+-webkit-border-bottom-left-radius: 40px;
+-moz-border-radius: 10px;
+-moz-border-radius-bottomright: 40px;
+border-radius: 10px;
+border-bottom-left-radius: 40px;
+background: #FFFACD;
+padding-left:10px;
+padding-right:10px;
+padding-top:5px;
+margin-top:5px;
+margin-bottom:20px;
+width:25%;
+margin-left:72%;
+}
+.notetitle{
+font: bold 14px verdana;
+}
+.notetitleex{
+font: bold 14px verdana;
+border-bottom: 3px solid #cccccc;
+cursor:pointer;
+padding-left:5px;
+padding-bottom:5px;
+}
+.notebtn{
+border: 1px solid #cccccc;
+cursor:pointer;
+margin-top:5px;
+width:100%;
+}
+.notearea{
+display:none;
+}
 
 /* styles for iDevice Editor */
 

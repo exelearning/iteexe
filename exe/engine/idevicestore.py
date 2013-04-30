@@ -231,6 +231,7 @@ class IdeviceStore:
         from exe.engine.orientacionesalumnadofpdidevice import OrientacionesalumnadofpdIdevice
         from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
         from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
+		
         
         idevices_FPD = []
         idevices_FPD.append(ReflectionfpdIdevice())
@@ -284,6 +285,7 @@ class IdeviceStore:
         from exe.engine.flashmovieidevice import FlashMovieIdevice
         from exe.engine.quiztestidevice import QuizTestIdevice
         from exe.engine.listaidevice import ListaIdevice
+        from exe.engine.notaidevice import NotaIdevice
         # JR
         # Necesarios para la FPD
         from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
@@ -338,6 +340,7 @@ class IdeviceStore:
         #factoryExtendedIdevices.append(FlashMovieIdevice())
         factoryExtendedIdevices.append(QuizTestIdevice())
         factoryExtendedIdevices.append(ListaIdevice())
+        factoryExtendedIdevices.append(NotaIdevice())
         # JR
         # iDevices para la FPD
         factoryExtendedIdevices.append(ReflectionfpdIdevice())

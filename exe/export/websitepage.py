@@ -130,18 +130,19 @@ class WebsitePage(Page):
         html += '</h1></div>\n'
 
         for idevice in self.node.idevices:
-            html += u'<div class="%s" id="id%s">\n' %  (idevice.klass,
+            if idevice.klass != 'NotaIdevice':
+                html += u'<div class="%s" id="id%s">\n' %  (idevice.klass,
                     idevice.id)
-            block = g_blockFactory.createBlock(None, idevice)
-            if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
-            if hasattr(idevice, "isQuiz"):
-                html += block.renderJavascriptForWeb()
-            if idevice.title != "Forum Discussion":
-                html += self.processInternalLinks(self.node.package,
+                block = g_blockFactory.createBlock(None, idevice)
+                if not block:
+                    log.critical("Unable to render iDevice.")
+                    raise Error("Unable to render iDevice.")
+                if hasattr(idevice, "isQuiz"):
+                    html += block.renderJavascriptForWeb()
+                if idevice.title != "Forum Discussion":
+                    html += self.processInternalLinks(self.node.package,
                         block.renderView(style))
-            html += u'</div>\n'     # iDevice div
+                html += u'</div>\n'     # iDevice div
         
         html += "<div id='bottomPagination'>"
         html += self.getNavigationLink(prevPage, nextPage)

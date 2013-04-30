@@ -161,17 +161,18 @@ class SinglePage(Page):
         style = self.node.package.style
 
         for idevice in node.idevices:
-            html += u'  <div class="%s" id="id%s">\n' % (idevice.klass,
+            if idevice.klass != 'NotaIdevice':
+                html += u'  <div class="%s" id="id%s">\n' % (idevice.klass,
                     idevice.id)
-            block = g_blockFactory.createBlock(None, idevice)
-            if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
-            if hasattr(idevice, "isQuiz"):
-                html += block.renderJavascriptForWeb()
-            html += self.processInternalLinks(block.renderView(style))
-            html = html.replace('href="#auto_top"', 'href="#"')
-            html += u'  </div>\n'     # iDevice div
+                block = g_blockFactory.createBlock(None, idevice)
+                if not block:
+                    log.critical("Unable to render iDevice.")
+                    raise Error("Unable to render iDevice.")
+                if hasattr(idevice, "isQuiz"):
+                    html += block.renderJavascriptForWeb()
+                html += self.processInternalLinks(block.renderView(style))
+                html = html.replace('href="#auto_top"', 'href="#"')
+                html += u'  </div>\n'     # iDevice div
 
         html += '</div>\n'          # node div
 

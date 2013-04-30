@@ -44,6 +44,7 @@ from exe.webui.appletblock            import AppletBlock
 from exe.webui.flashmovieblock        import FlashMovieBlock
 from exe.webui.quiztestblock          import QuizTestBlock
 from exe.webui.listablock             import ListaBlock
+from exe.webui.notablock             import NotaBlock
 
 # JR
 # Necesarios para la FPD

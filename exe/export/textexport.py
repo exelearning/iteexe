@@ -68,14 +68,15 @@ class TextExport(object):
 
 
         for idevice in node.idevices:
-            block = g_blockFactory.createBlock(None, idevice)
-            if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
-            if hasattr(idevice, 'isCloze'):
-                self.html += block.renderText()
-            else:
-                self.html += block.renderView('default')
+            if idevice.klass != 'NotaIdevice':
+                block = g_blockFactory.createBlock(None, idevice)
+                if not block:
+                    log.critical("Unable to render iDevice.")
+                    raise Error("Unable to render iDevice.")
+                if hasattr(idevice, 'isCloze'):
+                    self.html += block.renderText()
+                else:
+                    self.html += block.renderView('default')
 
         for child in node.children:
             self.renderNode(child)
