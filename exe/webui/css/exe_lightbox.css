@@ -1,11 +1,4 @@
-.exeImageGallery:after {content:".";display:block;height:0;clear:both;visibility:hidden}
-.exeImageGallery {display: block}
-/* Hides from IE-mac \*/
-* html .exeImageGallery {height: 1%}
-.exeImageGallery {display: block}
-/* End hide from IE-mac */
-
-.exeImageGallery{margin:1em 0 0 15px;padding:0;width:100%}
+.exeImageGallery{margin:1em 0 0 15px;padding:0;overflow:auto}
 .exeImageGallery li{margin:0;padding:15px 15px 15px 0;display:block;float:left;list-style:none}
 .exeImageGallery a img{border:none}
 .exeImageGallery .tit{display:none}
