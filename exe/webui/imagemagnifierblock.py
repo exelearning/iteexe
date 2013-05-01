@@ -194,7 +194,7 @@ class ImageMagnifierBlock(Block):
             html += text
         else:
             html += '&nbsp;'
-        html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
+        html += u'\n<div style="overflow:auto"></div>\n'
         html += self.renderViewButtons()
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
