@@ -19,7 +19,6 @@
 
 Ext.define('eXe.store.filepicker.DirectoryTree', {
     extend: 'Ext.data.TreeStore',
-    model: 'eXe.model.filepicker.Directory',
     sorters: [
     	{
     		sorterFn: function(o1, o2){
@@ -39,8 +38,10 @@ Ext.define('eXe.store.filepicker.DirectoryTree', {
 			totalProperty: "totalCount"
 		}
     },
+    fields: [{ name: 'realtext' }, { name: 'text' }],
    	root: {
-        text: '/'
+        text: '/',
+        realtext: '/'
     },
     listeners: {
         beforeload: {

@@ -60,6 +60,14 @@ def get_drives():
     return drives
 
 
+def getname(d):
+    if sys.platform[:3] == "win":
+        from win32com.shell.shell import SHGetFileInfo
+
+        return Path(SHGetFileInfo(d.abspath(), 0, 0x200)[1][3])
+    return d.name
+
+
 class DirTreePage(RenderableResource):
     name = "dirtree"
 
@@ -83,7 +91,7 @@ class DirTreePage(RenderableResource):
                                 icon = None
                             else:
                                 icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
-                            l.append({"text": d, "id": d + '\\', "icon": icon})
+                            l.append({"realtext": d, "text": d, "id": d + '\\', "icon": icon})
                         except:
                             pass
                 else:
@@ -95,7 +103,7 @@ class DirTreePage(RenderableResource):
                                         icon = None
                                     else:
                                         icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
-                                    l.append({"text": d.name, "id": d.abspath(), "icon": icon})
+                                    l.append({"realtext": d.name, "text": getname(d), "id": d.abspath(), "icon": icon})
                         except:
                             pass
             elif request.args['sendWhat'][0] == 'both':
@@ -134,7 +142,7 @@ class DirTreePage(RenderableResource):
                                         pathtype = "link"
                                     else:
                                         pathtype = "None"
-                                    items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
+                                    items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
                                       "is_readable": d.access(os.R_OK),
                                       "is_writable": d.access(os.W_OK)})
                         except:
@@ -169,7 +177,7 @@ class DirTreePage(RenderableResource):
                         else:
                             pathtype = "None"
                         if d.name.startswith(query):
-                            items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
+                            items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
                                           "is_readable": d.access(os.R_OK),
                                           "is_writable": d.access(os.W_OK)})
                     except:

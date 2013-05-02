@@ -96,7 +96,6 @@ Ext.application({
     ],
 
     models: [
-    	'filepicker.Directory',
     	'filepicker.File'
     ],
     
