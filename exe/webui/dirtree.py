@@ -31,6 +31,20 @@ import os
 
 log = logging.getLogger(__name__)
 
+FILE_ATTRIBUTE_DIRECTORY = 16
+FILE_ATTRIBUTE_REPARSE_POINT = 1024
+REPARSE_FOLDER = (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)
+
+
+def iswinlink(fpath):
+    if sys.platform[:3] == "win":
+        from win32file import GetFileAttributes
+
+        if GetFileAttributes(fpath) & REPARSE_FOLDER == REPARSE_FOLDER:
+            return True
+
+    return False
+
 
 def get_drives():
     import string
@@ -76,11 +90,12 @@ class DirTreePage(RenderableResource):
                     for d in pathdir.dirs():
                         try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
-                                if d.access(os.R_OK):
-                                    icon = None
-                                else:
-                                    icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
-                                l.append({"text": d.name, "id": d.abspath(), "icon": icon})
+                                if not iswinlink(d.abspath()):
+                                    if d.access(os.R_OK):
+                                        icon = None
+                                    else:
+                                        icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
+                                    l.append({"text": d.name, "id": d.abspath(), "icon": icon})
                         except:
                             pass
             elif request.args['sendWhat'][0] == 'both':
@@ -107,20 +122,21 @@ class DirTreePage(RenderableResource):
                     for d in pathdir.listdir():
                         try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
-                                if d.isdir():
-                                    pathtype = "directory"
-                                elif d.isfile():
-                                    if d.access(os.R_OK):
-                                        pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                                if not iswinlink(d.abspath()):
+                                    if d.isdir():
+                                        pathtype = "directory"
+                                    elif d.isfile():
+                                        if d.access(os.R_OK):
+                                            pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                                        else:
+                                            pathtype = "file"
+                                    elif d.islink():
+                                        pathtype = "link"
                                     else:
-                                        pathtype = "file"
-                                elif d.islink():
-                                    pathtype = "link"
-                                else:
-                                    pathtype = "None"
-                                items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
-                                  "is_readable": d.access(os.R_OK),
-                                  "is_writable": d.access(os.W_OK)})
+                                        pathtype = "None"
+                                    items.append({"name": d.name, "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
+                                      "is_readable": d.access(os.R_OK),
+                                      "is_writable": d.access(os.W_OK)})
                         except:
                             pass
                     G.application.config.lastDir = pathdir
