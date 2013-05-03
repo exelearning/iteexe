@@ -67,6 +67,27 @@ def getname(d):
     return d.name
 
 
+def is_readable(d):
+    if sys.platform[:3] == "win" and d.isdir():
+        try:
+            d.listdir()
+        except:
+            return False
+        return True
+    return d.access(os.R_OK)
+
+
+def is_writable(d):
+    if sys.platform[:3] == "win" and d.isdir():
+        import tempfile
+        try:
+            tempfile.TemporaryFile(dir=d.abspath())
+        except:
+            return False
+        return True
+    return d.access(os.W_OK)
+
+
 class DirTreePage(RenderableResource):
     name = "dirtree"
 
@@ -86,7 +107,7 @@ class DirTreePage(RenderableResource):
                 if pathdir == '/' and sys.platform[:3] == "win":
                     for d in get_drives():
                         try:
-                            if Path(d).access(os.R_OK):
+                            if is_readable(Path(d)):
                                 icon = None
                             else:
                                 icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
@@ -98,7 +119,7 @@ class DirTreePage(RenderableResource):
                         try:
                             if not d.name.startswith('.') or sys.platform[:3] == "win":
                                 if not iswinlink(d.abspath()):
-                                    if d.access(os.R_OK):
+                                    if is_readable(d):
                                         icon = None
                                     else:
                                         icon = '../jsui/extjs/resources/themes/images/gray/grid/hmenu-lock.gif'
@@ -112,8 +133,8 @@ class DirTreePage(RenderableResource):
                     for drive in get_drives():
                         d = Path(drive + '\\')
                         items.append({"name": drive, "realname": drive + '\\', "size": 0, "type": 'directory', "modified": 0,
-                                      "is_readable": d.access(os.R_OK),
-                                      "is_writable": d.access(os.W_OK)})
+                                      "is_readable": is_readable(d),
+                                      "is_writable": is_writable(d)})
                 else:
                     parent = pathdir.parent
                     if (parent == pathdir):
@@ -121,11 +142,11 @@ class DirTreePage(RenderableResource):
                     else:
                         realname = parent.abspath()
                     items.append({"name": '.', "realname": pathdir.abspath(), "size": pathdir.size, "type": "directory", "modified": int(pathdir.mtime),
-                                  "is_readable": pathdir.access(os.R_OK),
-                                  "is_writable": pathdir.access(os.W_OK)})
+                                  "is_readable": is_readable(pathdir),
+                                  "is_writable": is_writable(pathdir)})
                     items.append({"name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime),
-                                  "is_readable": parent.access(os.R_OK),
-                                  "is_writable": parent.access(os.W_OK)})
+                                  "is_readable": is_readable(parent),
+                                  "is_writable": is_writable(parent)})
                     try:
                         for d in pathdir.listdir():
                             try:
@@ -134,7 +155,7 @@ class DirTreePage(RenderableResource):
                                         if d.isdir():
                                             pathtype = "directory"
                                         elif d.isfile():
-                                            if d.access(os.R_OK):
+                                            if is_readable(d):
                                                 pathtype = repr(mimetypes.guess_type(d.name, False)[0])
                                             else:
                                                 pathtype = "file"
@@ -143,8 +164,8 @@ class DirTreePage(RenderableResource):
                                         else:
                                             pathtype = "None"
                                         items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
-                                          "is_readable": d.access(os.R_OK),
-                                          "is_writable": d.access(os.W_OK)})
+                                          "is_readable": is_readable(d),
+                                          "is_writable": is_writable(d)})
                             except:
                                 pass
                         G.application.config.lastDir = pathdir
@@ -170,7 +191,7 @@ class DirTreePage(RenderableResource):
                         if d.isdir():
                             pathtype = "directory"
                         elif d.isfile():
-                            if d.access(os.R_OK):
+                            if is_readable(d):
                                 pathtype = repr(mimetypes.guess_type(d.name, False)[0])
                             else:
                                 pathtype = "file"
@@ -180,8 +201,8 @@ class DirTreePage(RenderableResource):
                             pathtype = "None"
                         if d.name.startswith(query):
                             items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
-                                          "is_readable": d.access(os.R_OK),
-                                          "is_writable": d.access(os.W_OK)})
+                                          "is_readable": is_readable(d),
+                                          "is_writable": is_writable(d)})
                     except:
                         pass
 
