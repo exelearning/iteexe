@@ -30,7 +30,7 @@ Icon "..\..\dist\eXe_icon.ico"
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "..\..\dist\exeLicense.txt"
-!insertmacro MUI_PAGE_DIRECTORY
+;!insertmacro MUI_PAGE_DIRECTORY
 ;Page custom IdevicePage
 !insertmacro MUI_PAGE_INSTFILES 
 !insertmacro MUI_PAGE_FINISH
