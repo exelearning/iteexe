@@ -61,7 +61,7 @@ def get_drives():
 
 
 def getname(d):
-    if sys.platform[:3] == "win":
+    if sys.platform[:3] == "win" and d.isdir():
         from win32com.shell.shell import SHGetFileInfo
 
         return Path(SHGetFileInfo(d.abspath(), 0, 0x200)[1][3])
