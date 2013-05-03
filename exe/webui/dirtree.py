@@ -127,27 +127,30 @@ class DirTreePage(RenderableResource):
                     items.append({"name": '..', "realname": realname, "size": parent.size, "type": "directory", "modified": int(parent.mtime),
                                   "is_readable": parent.access(os.R_OK),
                                   "is_writable": parent.access(os.W_OK)})
-                    for d in pathdir.listdir():
-                        try:
-                            if not d.name.startswith('.') or sys.platform[:3] == "win":
-                                if not iswinlink(d.abspath()):
-                                    if d.isdir():
-                                        pathtype = "directory"
-                                    elif d.isfile():
-                                        if d.access(os.R_OK):
-                                            pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                    try:
+                        for d in pathdir.listdir():
+                            try:
+                                if not d.name.startswith('.') or sys.platform[:3] == "win":
+                                    if not iswinlink(d.abspath()):
+                                        if d.isdir():
+                                            pathtype = "directory"
+                                        elif d.isfile():
+                                            if d.access(os.R_OK):
+                                                pathtype = repr(mimetypes.guess_type(d.name, False)[0])
+                                            else:
+                                                pathtype = "file"
+                                        elif d.islink():
+                                            pathtype = "link"
                                         else:
-                                            pathtype = "file"
-                                    elif d.islink():
-                                        pathtype = "link"
-                                    else:
-                                        pathtype = "None"
-                                    items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
-                                      "is_readable": d.access(os.R_OK),
-                                      "is_writable": d.access(os.W_OK)})
-                        except:
-                            pass
-                    G.application.config.lastDir = pathdir
+                                            pathtype = "None"
+                                        items.append({"name": getname(d), "realname": d.abspath(), "size": d.size, "type": pathtype, "modified": int(d.mtime),
+                                          "is_readable": d.access(os.R_OK),
+                                          "is_writable": d.access(os.W_OK)})
+                            except:
+                                pass
+                        G.application.config.lastDir = pathdir
+                    except:
+                        pass
                 l = {"totalCount": len(items), 'results': len(items), 'items': items}
             return json.dumps(l).encode('utf-8')
         elif "query" in request.args:
