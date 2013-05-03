@@ -31,15 +31,17 @@ import os
 
 log = logging.getLogger(__name__)
 
-FILE_ATTRIBUTE_DIRECTORY = 16
-FILE_ATTRIBUTE_REPARSE_POINT = 1024
-REPARSE_FOLDER = (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)
+if sys.platform[:3] == "win":
+    FILE_ATTRIBUTE_DIRECTORY = 16
+    FILE_ATTRIBUTE_REPARSE_POINT = 1024
+    REPARSE_FOLDER = (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)
+    import string
+    from ctypes import windll
+    from win32file import GetFileAttributes
 
 
 def iswinlink(fpath):
     if sys.platform[:3] == "win":
-        from win32file import GetFileAttributes
-
         if GetFileAttributes(fpath) & REPARSE_FOLDER == REPARSE_FOLDER:
             return True
 
@@ -47,9 +49,6 @@ def iswinlink(fpath):
 
 
 def get_drives():
-    import string
-    from ctypes import windll
-
     drives = []
     bitmask = windll.kernel32.GetLogicalDrives()
     for letter in string.uppercase:
