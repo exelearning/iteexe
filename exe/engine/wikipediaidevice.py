@@ -189,7 +189,7 @@ within Wikipedia.""")
                 self.userResources.append(new_resource)
             # We have to use absolute URLs if we want the images to
             # show up in edit mode inside FCKEditor
-            imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
+            imageTag['src'] = (u"/resources/" + imageName)
             # imageTag['src'] = (imageName) # problems in editor mode
         self.article.content = self.reformatArticle(netloc, unicode(content))
         # now that these are supporting images, any direct manipulation
