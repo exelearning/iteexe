@@ -82,7 +82,6 @@ within Wikipedia.""")
         """
         Load the article from Wikipedia
         """
-        self.userResources = []
         self.articleName = name
         url = ""
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
@@ -186,11 +185,7 @@ within Wikipedia.""")
                     # so reset the imageName accordingly for the content:
                     imageName = new_resource._storageName
                 self.images[imageName] = True
-                self.userResources.append(new_resource)
-            # We have to use absolute URLs if we want the images to
-            # show up in edit mode inside FCKEditor
-            imageTag['src'] = (u"/resources/" + imageName)
-            # imageTag['src'] = (imageName) # problems in editor mode
+            imageTag['src'] = (u"resources/" + imageName)
         self.article.content = self.reformatArticle(netloc, unicode(content))
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
@@ -204,7 +199,6 @@ within Wikipedia.""")
         from exe import globals as G
         licenseFile = G.application.config.webDir/'templates/fdl.html'
         license = Resource(self, licenseFile)
-        self.userResources.append(license)
 
 
     def reformatArticle(self, netloc, content):
