@@ -59,7 +59,17 @@ Ext.define('eXe.view.ui.MainTabPanel', {
 		                            xtype: 'dublincoredata',
                                     itemId: 'dublincoredata_properties',
 	                                title: _('Dublin Core')
-	                            }
+	                            },
+                                {
+                                    xtype: 'lomdata',
+                                    itemId: 'lomdata_properties',
+                                    title: _('LOM')
+                                },
+                                {
+                                    xtype: 'lomdata',
+                                    itemId: 'lomesdata_properties',
+                                    title: _('LOM.es')
+                                }
                             ]
                         },
                         {
