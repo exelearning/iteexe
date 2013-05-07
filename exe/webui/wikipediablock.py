@@ -177,11 +177,9 @@ class WikipediaBlock(Block):
         log.debug("renderPreview")    
         html = common.ideviceHeader(self, style, "preview")
         html += self.articleElement.renderPreview() 
-        html += u"This article is licensed under the "
-        html += u'<span style="text-decoration: underline;">'
-        html += u"GNU Free Documentation License</span>. It uses material "
-        html += u'from the article '
-        html += u'"%s"</span>.<br/>\n' % self.idevice.articleName
+        html += '<p class="article-license-warning">'
+        html += _(u"This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from")
+        html += ' "%s".</p>' % self.idevice.articleName
         html += common.ideviceFooter(self, style, "preview")
         return html
     
