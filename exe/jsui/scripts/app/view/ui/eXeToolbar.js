@@ -263,6 +263,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             text: _('XLIFF'),
                                             accesskey: 'x',
                                             itemId: 'file_export_xliff'
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+                                            text: _('EPUB3'),
+                                            accesskey: '3',
+                                            itemId: 'file_export_epub3'
                                         }
                                     ]
                                 }

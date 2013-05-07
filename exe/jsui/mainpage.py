@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 from exe.engine.locationbuttons import LocationButtons
+from exe.export.epub3export import Epub3Export
 
 """
 This is the main Javascript page.
@@ -762,7 +763,9 @@ class MainPage(RenderableLivePage):
             #else: 
             #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType)
             self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
-        
+        elif exportType == 'epub3':
+            filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
+            self.exportEpub3(client, filename, stylesDir)
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge", metadataType='DC')
@@ -1072,6 +1075,20 @@ class MainPage(RenderableLivePage):
             scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
+            raise
+        client.alert(_(u'Exported to %s') % filename)
+
+    def exportEpub3(self, client, filename, stylesDir):
+        try:
+            log.debug(u"exportEpub3, filename=%s" % filename)
+            filename = Path(filename)
+            # Do the export
+            filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
+            epub3Export = Epub3Export(self.config, stylesDir, filename)
+            epub3Export.export(self.package)
+            # epub3Export.exportZip(self.package)
+        except Exception, e:
+            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
         client.alert(_(u'Exported to %s') % filename)
 

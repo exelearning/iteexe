@@ -98,6 +98,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_text': {
                 click: { fn: this.processExportEvent, exportType: "textFile" }
             },
+            '#file_export_epub3': {
+                click: { fn: this.processExportEvent, exportType: "epub3" }
+            },
             '#file_export_xliff': {
                 click: this.exportXliff
             },
@@ -660,6 +663,23 @@ Ext.define('eXe.controller.Toolbar', {
 		            ]
 		        );
                 fp.show();            
+        } else if(exportType == "epub3"){
+                var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+                    type: eXe.view.filepicker.FilePicker.modeSave,
+                    title: _("Export EPUB3 package as"),
+                    modal: true,
+                    scope: this,
+                    callback: function(fp) {
+                        if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+                    }
+                });
+                fp.appendFilters([
+                    { "typename": _("EPUB3 File"), "extension": "*.epub", "regex": /.*\.epub$/ },
+                    { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+                    ]
+                );
+                fp.show();
 	    } else {
             var title;
 	        if (exportType == "scorm1.2" || exportType == 'scorm2004'|| exportType == 'agrega')
