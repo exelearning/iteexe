@@ -29,7 +29,7 @@ import shutil
 
 from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
-if os.name == 'posix':
+if os.name == 'posix' and not ('--standalone' in sys.argv or '--portable' in sys.argv):
     sys.path.insert(0, '/usr/share/exe')
 from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
