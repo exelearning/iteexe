@@ -1513,7 +1513,7 @@ pipwerks.SCORM.GetSuccessStatus = function(){
 		
 	if(API){
 		switch(scorm.version){
-			case "1.2" : result = scorm.get("cmi.core.completion_status"); break; // cmi.success_status only exists in 2004
+			case "1.2" : result = scorm.get("cmi.core.lesson_status"); break; // cmi.success_status only exists in 2004
 			case "2004": result = scorm.get("cmi.success_status"); break;
 		}
 	}
@@ -1554,7 +1554,7 @@ pipwerks.SCORM.SetSuccessStatus = function(status){
 					default: trace("pipwerks.SCORM.SetSuccessStatus failed: " + status + " value is not valid.");return;
 				}
 				
-				result = scorm.set("cmi.core.completion_status",status); 
+				result = scorm.set("cmi.core.lesson_status",status); 
 				break;
 			case "2004": result = scorm.set("cmi.success_status",status); break;
 		}
