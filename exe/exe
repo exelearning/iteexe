@@ -25,21 +25,27 @@ The eXe main script
 
 import os
 import sys
-
-# Try to work even with no python path
-try:
+if '--portable' in sys.argv:
+    exePath = os.path.abspath(sys.argv[0])
+    exeDir  = os.path.dirname(exePath)
+    pythonPath = os.path.split(exeDir)[0]
+    sys.path.insert(0, pythonPath)
     from exe.application import Application
-except ImportError, error:
-    if str(error) == "No module named exe.application":
-        exePath = os.path.abspath(sys.argv[0])
-        exeDir  = os.path.dirname(exePath)
-        pythonPath = os.path.split(exeDir)[0]
-        sys.path.insert(0, pythonPath)
-        from exe.application import Application
-    else:
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
+else:
+    # Try to work even with no python path
+    try:
+       from exe.application import Application
+    except ImportError, error:
+       if str(error) == "No module named exe.application":
+           exePath = os.path.abspath(sys.argv[0])
+           exeDir  = os.path.dirname(exePath)
+           pythonPath = os.path.split(exeDir)[0]
+           sys.path.insert(0, pythonPath)
+           from exe.application import Application
+       else:
+           import traceback
+           traceback.print_exc()
+           sys.exit(1)
 
 def main():
     application = Application()
