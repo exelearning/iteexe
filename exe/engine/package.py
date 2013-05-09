@@ -830,8 +830,9 @@ class Package(Persistable):
                 #JR: Esto ya no haria falta
                 #zombie.delete()
             del zombie
+        userResourcesFiles = newPackage.getUserResourcesFiles(newPackage.root)
         #JR: Borramos recursos que no estan siendo utilizados
-        newPackage.cleanUpResources()
+        newPackage.cleanUpResources(userResourcesFiles)
         G.application.afterUpgradeZombies2Delete = []
 
         newPackage.updateRecentDocuments(newPackage.filename)
@@ -841,7 +842,18 @@ class Package(Persistable):
             newPackage.style=G.application.config.defaultStyle       
         return newPackage
 
-    def cleanUpResources(self):
+    def getUserResourcesFiles(self, node):
+        resourceFiles = set()
+        for idevice in node.idevices:
+            if hasattr(idevice, 'userResources'):
+                for i in range(len(idevice.userResources) - 1, -1, -1):
+                    if hasattr(idevice.userResources[i], 'storageName'):
+                        resourceFiles.add(idevice.userResources[i].storageName)
+        for child in node.children:
+            resourceFiles = resourceFiles | self.getUserResourcesFiles(child)
+        return resourceFiles
+
+    def cleanUpResources(self, userResourcesFiles=set()):
         """
         Removes duplicate resource files
         """
@@ -867,7 +879,7 @@ class Package(Persistable):
             if hasattr(reses[0], 'storageName'):
                 usedFiles.add(reses[0].storageName)
         #usedFiles = set([reses[0].storageName for reses in self.resources.values()])
-        for fn in existingFiles - usedFiles:
+        for fn in existingFiles - usedFiles - userResourcesFiles:
             (self.resourceDir/fn).remove()
 
     def findResourceByName(self, queryName):
