@@ -89,16 +89,18 @@ def ideviceHeader(e, style, mode):
             if (k=='ListaIdevice' and i=='question') or (k=='CasestudyIdevice' and i=='casestudy') or (k=='GalleryIdevice' and i=='gallery') or (k=='ClozeIdevice' and i=='question') or (k=='ReflectionIdevice' and i=='reflection') or (k=='QuizTestIdevice' and i=='question') or (k=='TrueFalseIdevice' and i=='question') or (k=='MultiSelectIdevice' and i=='question') or (k=='MultichoiceIdevice' and i=='question'):
                 displayIcon = False
             # /end
+            
             myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
             if myIcon.exists():
                 o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
-            if (e.idevice.icon+"Idevice") != e.idevice.klass:
-                if myIcon.exists() and displayIcon:
-                    h += ' style="background-image:url('+iconPath+')"'
+            if  not e.idevice.icon == e.idevice.originalicon:
+                if myIcon.exists():
+                    h += ' style="background-image:url('+iconPath+')">'
+            else:
+                h += '>'
         o += u"<h2 class=\"iDeviceTitle\">"+e.idevice.title+"</h2>"
-        h += '>'
         h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
-        h += '</div>'
+        h += '</div>\n'        
     
     if e.idevice.emphasis <= 0:
         h = ""
