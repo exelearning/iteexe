@@ -65,6 +65,7 @@ class Idevice(Persistable):
             self.systemResources = ["icon_"+self.icon+".gif"]
         else:
             self.systemResources = []
+        self.originalicon= icon
 
     # Properties
     def get_title(self):

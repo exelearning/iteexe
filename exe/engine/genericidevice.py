@@ -51,6 +51,7 @@ class GenericIdevice(Idevice):
         Idevice.__init__(self, title, author, purpose, tip, icon)
         self.class_  = class_
         self.icon    = icon
+        self.originalicon=icon
         self.fields  = []
         self.nextFieldId = 0
         self.systemResources.append('common.js')
