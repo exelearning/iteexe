@@ -60,8 +60,7 @@ def ideviceHeader(e, style, mode):
     iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
     if mode=="view":
         iconPath = 'icon_'+e.idevice.icon+'.gif'
-    if not e.idevice.originalicon:
-        e.idevice.originalicon=e.idevice.icon
+    
     w = '' # Common wrapper
     o = '' # Old HTML (themes with no config.xml file)
     h = '' # New HTML
@@ -78,12 +77,17 @@ def ideviceHeader(e, style, mode):
     if mode=="preview":
         w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
     w += ">"
-    w += '<!-- Icono original: '+e.idevice.originalicon+'||  Icono actual: '+e.idevice.icon+' -->'
+    
     if e.idevice.emphasis > 0:
         h += '<div class="iDevice_header"'
         if e.idevice.icon:
             displayIcon = True
             # The following lines should be replaced by something like:
+            '''
+            if hasattr(e.idevice, 'originalicon'):
+                if e.idevice.icon==e.idevice.originalicon:
+                    displayIcon = False
+            '''
             k = e.idevice.klass
             i = e.idevice.icon
             if (k=='ListaIdevice' and i=='question') or (k=='CasestudyIdevice' and i=='casestudy') or (k=='GalleryIdevice' and i=='gallery') or (k=='ClozeIdevice' and i=='question') or (k=='ReflectionIdevice' and i=='reflection') or (k=='QuizTestIdevice' and i=='question') or (k=='TrueFalseIdevice' and i=='question') or (k=='MultiSelectIdevice' and i=='question') or (k=='MultichoiceIdevice' and i=='question'):
