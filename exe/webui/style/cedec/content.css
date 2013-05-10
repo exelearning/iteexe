@@ -30,7 +30,6 @@ p {
 	margin:.7em 0;
 }
 
-/* Estilo para los enlaces */
 a:link,
 a:active,
 a:visited {
@@ -38,13 +37,11 @@ a:visited {
 	text-decoration:none;
 }
 
-/*Estilo para los enlaces cuando tenemos el cursos sobre ellos*/
 a:hover {
 	color:#598AC3;
 	text-decoration:underline;
 }
 
-/* Imágenes*/
 img {
 	margin:0 5px -3px 5px;
 }
@@ -112,7 +109,8 @@ div#nodeDecoration{
 /* Cabecera para cuando exportemos a web sola para imprimir */
 #header{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px;font-size:1.7em}
 
-/* iDEVICES */
+/* IDEVICES */
+
 .iDeviceTitle{top:0}
 .iDevice_header{background-position:0 0}
 
@@ -156,13 +154,14 @@ div#nodeDecoration{
 .readingIdevice .iDevice_header{
     background:url(icon_reading.gif) no-repeat 0 0;
     color:#646464;
-    margin-left:-6px
+    margin-left:-6px;
+    padding-top:35px
 }
 .readingIdevice .iDevice{
-    background:url(sup_der_reading.gif) no-repeat right 0;
+    background:#E7EDCE url(sup_der_reading.gif) no-repeat right 0;
 }
 .readingIdevice .iDevice_inner{
-    background:#E7EDCE url(inf_der_reading.gif) no-repeat right bottom;
+    background:url(inf_der_reading.gif) no-repeat right bottom;
 }
 .readingIdevice .iDevice_content_wrapper{
     background:url(inf_izq_reading.gif) no-repeat 0 bottom;
@@ -172,13 +171,14 @@ div#nodeDecoration{
 .preknowledgeIdevice .iDevice_header{
     background:url(icon_preknowledge.gif) no-repeat 0 0;
     color:#646464;
-    margin-left:-6px
+    margin-left:-6px;
+    padding-top:30px
 }
 .preknowledgeIdevice .iDevice{
-    background:url(sup_der_preknowledge.gif) no-repeat right 0;
+    background:#FEE8F8 url(sup_der_preknowledge.gif) no-repeat right 0;
 }
 .preknowledgeIdevice .iDevice_inner{
-    background:#FEE8F8 url(inf_der_preknowledge.gif) no-repeat right bottom;
+    background:url(inf_der_preknowledge.gif) no-repeat right bottom;
 }
 .preknowledgeIdevice .iDevice_content_wrapper{
     background:url(inf_izq_preknowledge.gif) no-repeat 0 bottom;
@@ -188,13 +188,14 @@ div#nodeDecoration{
 .objectivesIdevice .iDevice_header{
     background:url(icon_objectives.gif) no-repeat 0 0;
     color:#646464;
-    margin-left:-5px
+    margin-left:-5px;
+    padding-top:32px
 }
 .objectivesIdevice .iDevice{
-    background:url(sup_der_objectives.gif) no-repeat right 0;
+    background:#EFEBDC url(sup_der_objectives.gif) no-repeat right 0;
 }
 .objectivesIdevice .iDevice_inner{
-    background:#EFEBDC url(inf_der_objectives.gif) no-repeat right bottom;
+    background:url(inf_der_objectives.gif) no-repeat right bottom;
 }
 .objectivesIdevice .iDevice_content_wrapper{
     background:url(inf_izq_objectives.gif) no-repeat 0 bottom;
@@ -204,13 +205,14 @@ div#nodeDecoration{
 .CasestudyIdevice .iDevice_header{
     background:url(icon_casestudy.gif) no-repeat 0 0;
     color:#646464;
-    margin-left:-6px
+    margin-left:-6px;
+    padding-top:30px
 }
 .CasestudyIdevice .iDevice{
-    background:url(sup_der_casestudy.gif) no-repeat right 0;
+    background:#E2DFF0 url(sup_der_casestudy.gif) no-repeat right 0;
 }
 .CasestudyIdevice .iDevice_inner{
-    background:#E2DFF0 url(inf_der_casestudy.gif) no-repeat right bottom;
+    background:url(inf_der_casestudy.gif) no-repeat right bottom;
 }
 .CasestudyIdevice .iDevice_content_wrapper{
     background:url(inf_izq_casestudy.gif) no-repeat 0 bottom;
@@ -261,7 +263,7 @@ div#nodeDecoration{
     font-family:Verdana,Arial, Helvetica, sans-serif;
 	height:auto !important;
 	*height:auto !important;
-	*height:0px;
+	*height:0;
 	margin-bottom:5px;
 	overflow-y:auto;
 }
