@@ -10,1193 +10,293 @@
      
    ================================================== */
 
-/* base.css */
-.iDeviceTitle {
-    display:inline
-}
-   
-/*Reseteo generico de estilos */
-
-/** {
-	padding: 0;
-    margin: 0; 
-	font-family: Verdana,Arial, Helvetica, sans-serif !important;
-}*/
-
-/* Estilo general del cuerpo de los contenidos */
-body, html 
-{
-  	background-color: #ffffff;
-	color: #646464;
-	font-family: Verdana,Arial, Helvetica, sans-serif !important;
-	line-height: 120%;
+body,html  {
+    background-color:#fff;
+    color:#646464;
+    font-family:Verdana,Arial, Helvetica, sans-serif !important;
+    line-height:120%;
 }
 
-body
-{
+body {
     font-size:0.8em;
-	font-family: Verdana,Arial, Helvetica, sans-serif !important;
 }
 
-h1, h2, h3, h4, h5
-{
-	margin:0px;
-	padding:0px;
+h1, h2, h3, h4, h5 {
+	margin:0;
+	padding:0;
 }
 
-/* Separación entre párrafos*/
-p
-{
-	margin: 0;
-	margin-top: 0.7em
+p {
+	margin:.7em 0;
 }
 
 /* Estilo para los enlaces */
 a:link,
 a:active,
-a:visited
-{
-	color: #598AC3;
-	text-decoration: none;
+a:visited {
+	color:#598AC3;
+	text-decoration:none;
 }
 
 /*Estilo para los enlaces cuando tenemos el cursos sobre ellos*/
-a:hover
-{
-	color: #598AC3;
+a:hover {
+	color:#598AC3;
 	text-decoration:underline;
 }
 
 /* Imágenes*/
-img
-{
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 0px;
-	margin-bottom: -3px;
-	border: 0px;
-	padding: 0px;
+img {
+	margin:0 5px -3px 5px;
 }
 
-a img
-{
-	border: 0px;
-	margin: 0px;
-	padding: 0px;
+a img {
+	border:0;
+	margin:0
 }
 
 /*Tablas*/
-table
-{
-	margin: 10px;
-	
-	border-color: inherit;
-	border-collapse: collapse;
-	padding: 3px;
+table {
+	margin:10px;
+	border-collapse:collapse;
+	padding:3px;
 }
 
-table[align="center"]
-{
+table[align="center"] {
 	margin-left:auto;
 	margin-right:auto;
 }
 
-td
-{
-	border: 0px solid;
-	border-color: inherit;
-	border-collapse: collapse;
-	padding: 3px;
+td {
+	border:0 solid;
+	border-color:inherit;
+	border-collapse:collapse;
+	padding:3px;
 }
 
 /* PARA QUE AL EXPORTAR SE QUITEN LOS BORDES DE LAS PREGUNTAS */
-.question table
-{
-	border: 0;
+.question table {
+	border:0;
 }
 
-.question td
-{
-	border: 0;
+.question td {
+	border:0;
 }
 
 /* Formato para las listas */
-/* Para que haya indexación en las listas anidadas */
-ol,ul
-{
-
-}
 /* Cambio el icono para las listas si numerar */
-ul li
-{
-	list-style-image: url(bullet.gif);
+ul li {
+	list-style-image:url(bullet.gif);
 }
 
 /* Estilo para el título del NODO, que es cada una de las entradas
 de la jerarquía de contenidos que crearemos con eXe */
 #main {
-	position: relative;
-}
-div#nodeDecoration
-{
-	text-align: left;
+	position:relative;
 }
 
-#nodeTitle
-{
-	
-	
-	background-position: right center;
-	background-repeat: no-repeat;
-	color: #598AC3;
-	background-color: #ffffff;
-	font-weight: bold;
-	font-size: 20px;
-	line-height: 30px;
-/*	border-top: 0px double #CCCCCC;  */
-	border-bottom: 3px solid #BD4949;
-	padding-top: 1px;
-	padding-bottom: 5px;
-	margin-top: 0px;
+#nodeTitle {
+	color:#598AC3;
+	background-color:#fff;
+	font-weight:bold;
+	font-size:20px;
+	line-height:30px;
+	border-bottom:3px solid #BD4949;
+	padding-top:1px;
+	padding-bottom:5px
+}
+
+div#nodeDecoration{
+    text-align:left;
 }
 
 /* Cabecera para cuando exportemos a web sola para imprimir */
 #header{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px;font-size:1.7em}
-/*=====================================================
-			ESTILOS COMUNES PARA TODOS LOS iDEVICES
-========================================================*/
 
+/* iDEVICES */
+.iDeviceTitle{top:0}
+.iDevice_header{background-position:0 0}
 
-/*
-Estilos generales para los iDevice
-A menos que un estilo particular diga otra cosa, todos
-los iDevice heredarán lo que aquí pone
-*/
-.iDevice
-{
-	/* Simplemente lo separo un poquito del resto de iDevices
-	y separo los contenidos del borde */
-	padding: 0px;
+/* SCORM y otros comparten apariencia: esta es la apariencia por defecto */
+.emphasis1 .iDevice_header{
+    background:url(icon_question.gif) no-repeat 0 0;
+    padding:25px 25px 25px 100px;
+    color:#BE4D4C
 }
-
-.iDevice_icon
-{
-	border: 0px;
-	position: relative;
-}
-
-.iDevice_inner
-{
-	margin: 0;
-    width: 100%;
-	height: auto !important;
-	*height: auto !important;
-	*height: 0px;
-    position: relative;
-	overflow-y: auto;
-}
-
-.emphasis1
-{
-	margin:0px;
-}
-
-.emphasis0
-{
-	width: auto;
-	height: auto !important;
-	*height: auto !important;
-	*height: 0px;
-	margin-bottom: 5px;
-	overflow-y: auto;
-}
-
-/*
-Idevice Actividad. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.activityIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-	background: #ffffff url('inf_der_activity.gif') no-repeat bottom right;
-	border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.activityIdevice .emphasis1
-{
-	background: transparent url('inf_izq_activity.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-	width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.activityIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_activity.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -8px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.activityIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_activity.gif"] + .iDeviceTitle
-{
-	display: block;
-	background: #ffffff url('sup_der_activity.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-	color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-	height: 40px;       /* Tiene que tener el alto del icono */
-	position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-	z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 100px;
-   font-size: 14pt        /* z-index inferior al del icono, para que quede tapado */
-}
-
-
-.activityIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_activity.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -40px;
-}
-
-/*
-Idevice Reflexión. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.ReflectionIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #ffffff url('inf_der_reflection.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.ReflectionIdevice .emphasis1
-{
-   background: transparent url('inf_izq_reflection.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.ReflectionIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_reflection.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -12px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.ReflectionIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_reflection.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_reflection.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #0b6e70;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 90px;
-   font-size: 14pt
-}
-
-.ReflectionIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_reflection.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-
-
-/*
-Idevice Objetivo. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.objectivesIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #efebdc url('inf_der_objectives.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.objectivesIdevice .emphasis1
-{
-   background: transparent url('inf_izq_objectives.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.objectivesIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_objectives.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -12px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.objectivesIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_objectives.gif"] + .iDeviceTitle
-{
-	display: block;
-	background: #efebdc url('sup_der_objectives.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-	color: #646464;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-	height: 40px;       /* Tiene que tener el alto del icono */
-	position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-	z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-	padding: 35px 0 0 90px;
-   font-size: 14pt        /* z-index inferior al del icono, para que quede tapado */
-}
-
-
-.objectivesIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_objectives.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-/*
-Idevice Caso de estudio. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.CasestudyIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #e2dff0 url('inf_der_casestudy.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.CasestudyIdevice .emphasis1
-{
-   background: transparent url('inf_izq_casestudy.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.CasestudyIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_casestudy.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -12px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.CasestudyIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_casestudy.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #e2dff0 url('sup_der_casestudy.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #646464;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 35px 0 0 120px;
-   font-size: 14pt            /* z-index inferior al del icono, para que quede tapado */
-}
-
-
-.CasestudyIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_casestudy.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-
-
-/*
-Idevice Actividad de lectura. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.readingIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #e7edce url('inf_der_reading.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.readingIdevice .emphasis1
-{
-   background: transparent url('inf_izq_reading.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.readingIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_reading.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -12px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.readingIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_reading.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #e7edce url('sup_der_reading.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #646464;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 35px 0 0 90px;
-   font-size: 14pt         /* z-index inferior al del icono, para que quede tapado */
-}
-
-
-.readingIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_reading.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-
-
-
-/*
-Idevice Preconocimiento. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.preknowledgeIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-	background: #ffe7f7 url('inf_der_preknowledge.gif') no-repeat bottom right;
-	border: none;
-	overflow: visible;
+.iDevice.emphasis1{
+    background:url(sup_der_hojas.gif) no-repeat right 0;
+    margin:20px auto;
+    width:95%;
 }
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.preknowledgeIdevice .emphasis1
-{
-	background: transparent url('inf_izq_preknowledge.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-	width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.preknowledgeIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_preknowledge.gif"] 
-{
-	border: 0px;
-	position: relative;
-	left: -12px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.preknowledgeIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_preknowledge.gif"] + .iDeviceTitle
-{
-	display: block;
-	background: #ffe7f7 url('sup_der_preknowledge.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-	color: #646464;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-	height: 40px;       /* Tiene que tener el alto del icono */
-	position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-	z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-	padding: 35px 0 0 110px;
-	font-size: 14pt/* z-index inferior al del icono, para que quede tapado */
-}
-
-
-.preknowledgeIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_preknowledge.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-
-/*
-Idevice Multiopción. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.MultichoiceIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.MultichoiceIdevice .emphasis1
-{
-	background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.MultichoiceIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.MultichoiceIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 90px;
-   font-size: 14pt
-}
-
-
-.MultichoiceIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-
-/*
-Idevice Cloze. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.ClozeIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.ClozeIdevice .emphasis1
-{
-   background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
-}
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.ClozeIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
-}
-
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.ClozeIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 90px;
-   font-size: 14pt
-}
-
-
-.ClozeIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
-}
-/*
-Idevice Desplegable. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.ListaIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
-}
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.ListaIdevice .emphasis1
-{
-   background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
+.emphasis1 .iDevice_inner{
+    background:#fff url(inf_der_hojas.gif) no-repeat right bottom;
 }
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.ListaIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
+.emphasis1 .iDevice_content_wrapper{
+    background:url(inf_izq_hojas.gif) no-repeat 0 bottom;
+    padding:20px 30px 55px 30px;
 }
-
 
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.ListaIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 90px;
-   font-size: 14pt
+/* Actividad */
+.activityIdevice .iDevice_header{
+    background:url(icon_activity.gif) no-repeat 0 0;
+    padding:25px 25px 25px 100px;
+    margin-left:-3px
 }
-
-
-.ListaIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
+.activityIdevice .iDevice{
+    background:url(sup_der_activity.gif) no-repeat right 0;
 }
-
-/*
-Idevice Verdadero falso. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.TrueFalseIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-	background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
-	border: none;
-	overflow: visible;
+.activityIdevice .iDevice_inner{
+    background:#fff url(inf_der_activity.gif) no-repeat right bottom;
 }
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.TrueFalseIdevice .emphasis1
-{
-	background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-	width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
+.activityIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_activity.gif) no-repeat 0 bottom;
+    padding:20px 30px 55px 30px;
 }
 
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.TrueFalseIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
-{
-	border: 0px;
-	position: relative;
-	left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
+/* Actividad de lectura */
+.readingIdevice .iDevice_header{
+    background:url(icon_reading.gif) no-repeat 0 0;
+    color:#646464;
+    margin-left:-6px
 }
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.TrueFalseIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
-{
-	display: block;
-	background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-	color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-	height: 40px;       /* Tiene que tener el alto del icono */
-	position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-	z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-	padding: 25px 0 0 90px;
-	font-size: 14pt
+.readingIdevice .iDevice{
+    background:url(sup_der_reading.gif) no-repeat right 0;
 }
-
-
-.TrueFalseIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
+.readingIdevice .iDevice_inner{
+    background:#E7EDCE url(inf_der_reading.gif) no-repeat right bottom;
 }
-
-
-/*
-Idevice Multiselección. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.MultiSelectIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
+.readingIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_reading.gif) no-repeat 0 bottom;
 }
 
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.MultiSelectIdevice .emphasis1
-{
-   background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
+/* Conocimiento previo */
+.preknowledgeIdevice .iDevice_header{
+    background:url(icon_preknowledge.gif) no-repeat 0 0;
+    color:#646464;
+    margin-left:-6px
 }
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.MultiSelectIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
+.preknowledgeIdevice .iDevice{
+    background:url(sup_der_preknowledge.gif) no-repeat right 0;
 }
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.MultiSelectIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 90px;
-   font-size: 14pt
+.preknowledgeIdevice .iDevice_inner{
+    background:#FEE8F8 url(inf_der_preknowledge.gif) no-repeat right bottom;
 }
-
-
-.MultiSelectIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
+.preknowledgeIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_preknowledge.gif) no-repeat 0 bottom;
 }
 
-/*
-Idevice Examen scorm. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.QuizTestIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 95%;
-   background: #ffffff url('inf_der_hojas.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
+/* Objetivos */
+.objectivesIdevice .iDevice_header{
+    background:url(icon_objectives.gif) no-repeat 0 0;
+    color:#646464;
+    margin-left:-5px
 }
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.QuizTestIdevice .emphasis1
-{
-   background: transparent url('inf_izq_hojas.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
+.objectivesIdevice .iDevice{
+    background:url(sup_der_objectives.gif) no-repeat right 0;
 }
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.QuizTestIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
+.objectivesIdevice .iDevice_inner{
+    background:#EFEBDC url(inf_der_objectives.gif) no-repeat right bottom;
 }
-
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.QuizTestIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_hojas.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #be4d4c;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-   z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 90px;
-   font-size: 14pt
+.objectivesIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_objectives.gif) no-repeat 0 bottom;
 }
 
-
-.QuizTestIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_question.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
+/* Caso práctico */
+.CasestudyIdevice .iDevice_header{
+    background:url(icon_casestudy.gif) no-repeat 0 0;
+    color:#646464;
+    margin-left:-6px
 }
-
-
-
-/* Estilo para las retroalimentaciones */
-.feedback
-{
-	border: 1px dashed #4E4E4E;
-	color: #4E4E4E;
-	background-color: #FFFFFF;
-	padding: 5px;
-	margin: 5px;
-	font-family: Verdana,Arial, Helvetica, sans-serif !important;
-	font-size:1em;	
-	height: auto !important;
-	*height: auto !important;
-	*height: 0px;
-	margin-bottom: 5px;
-	overflow-y: auto;
+.CasestudyIdevice .iDevice{
+    background:url(sup_der_casestudy.gif) no-repeat right 0;
 }
-
-/* Estilo para los formularios y botones*/
-input
-{
-	font-weight: bold;
-	color: inherit;
-	border-color: inherit;
-	border-style: solid;
-	border-width: 1px;
+.CasestudyIdevice .iDevice_inner{
+    background:#E2DFF0 url(inf_der_casestudy.gif) no-repeat right bottom;
 }
-
-select
-{
-	font-weight: bold;
-	color: inherit;
-	border-color: inherit;
-	border-style: solid;
-	border-width: 1px;
+.CasestudyIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_casestudy.gif) no-repeat 0 bottom;
 }
 
-/* Estilo para las sugerencias y ayudas pedag�gicas */
-.popupDiv
-{
-	background-color: #FFFFFF;
-	border: 2px solid #607489;
-	padding: 4px;
-	margin-left: 15px;
-	text-align: left;
+/* Galería */
+.GalleryIdevice .iDevice{
+    width:100%
 }
-
-.popupDivLabel
-{
-	text-align: center;
-	font: message-box;
-	font-weight: bold;
-	color: #bd4949;
-	margin: 4px;
-	background-color: #FF0000;
+.GalleryIdevice .iDevice_header{
+    background:url(icon_gallery.gif) no-repeat 0 0;
+    color:#2C8384;
 }
-
-
-/*
-Idevice Galería de imágenes --> Galería de imágenes. En la capa contenedora de iDevice, se pone el efecto de la esquina inferior derecha
-*/
-.GalleryIdevice {
-	position: relative;
-	margin: 20px auto;
-	width: 110%;
-   background: #ffffff url('inf_der_gallery.gif') no-repeat bottom right;
-   border: none;
-	overflow: visible;
+.GalleryIdevice .iDevice{
+    background:url(sup_der_gallery.gif) no-repeat right 0;
 }
-
-/*
-La capa interior, se utiliza para el efecto inferior izquierdo
-*/
-.GalleryIdevice .emphasis1
-{
-   background: transparent url('inf_izq_galeria.gif') no-repeat bottom left;
-	margin: 0;      /* No se puede poner margen, tiene que rellenar todo el iDevice */
-   width: 100%;    /* de izquierda a derecha y hasta ahajo del todo */
-	overflow-y: auto;
-	overflow: visible;
+.GalleryIdevice .iDevice_inner{
+    background:#E2DFF0 url(inf_der_gallery.gif) no-repeat right bottom;
 }
-
-/*
-El icono se utiliza para el efecto superior izquierdo
-*/
-.GalleryIdevice .iDevice_icon,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_gallery.gif"] 
-{
-	border: 0px;
-	position: relative;
-   left: -5px;  /* Si tiene alguna sombra o efecto que sobresalga hacia la izquierda,
-	                 hay que desplazarlo tantos píxeles como sobresalga el efecto */
-	z-index: 6;   /* z-index superior al del título, para que lo tape */
+.GalleryIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_galeria.gif) no-repeat 0 bottom;
 }
 
-/*
-El título se utiliza para el efecto superior derecho
-*/
-.GalleryIdevice .iDeviceTitle,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_gallery.gif"] + .iDeviceTitle
-{
-	display: block;
-   background: #ffffff url('sup_der_gallery.gif') no-repeat top right;  /* Efecto de la esquina sup-der */
-   color: #2c8384;     /* Mismo color que la imagen de fondo, para que no se vea el texto */
-   height: 40px;       /* Tiene que tener el alto del icono */
-   position: relative; /* Se desplaza hacia arriba tantos píxeles como el icono tenga de alto */
-	top: -67px;         /* para que quede alineado con este */
-	z-index: 5;         /* z-index inferior al del icono, para que quede tapado */
-   padding: 25px 0 0 80px;
-   font-size: 14pt
+/* Reflexión */
+.ReflectionIdevice .iDevice_header{
+    background:url(icon_reflection.gif) no-repeat 0 0;
+    color:#2C8384;
+    margin-left:-6px
 }
-
-
-.GalleryIdevice .iDevice_inner,
-.emphasis1 img.iDevice_icon[src="/style/cedec/icon_gallery.gif"] + .iDeviceTitle + .iDevice_inner
-{
-	background: transparent;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	top: -55px;
+.ReflectionIdevice .iDevice{
+    background:url(sup_der_reflection.gif) no-repeat right 0;
 }
-
-/* Caracter�sticas para cada una de las fotos de la galer�a */
-img.gallery
-{
-	margin-left: 30px;
-	border: 2px solid #2C8384;
-	padding: 10px;
-	margin-top: 10px !important;
-	*margin-top: 60px !important; 
-	*margin-top: 60px;
+.ReflectionIdevice .iDevice_inner{
+    background:#E2DFF0 url(inf_der_reflection.gif) no-repeat right bottom;
 }
-
-/* Caracter�sticas del t�tulo de las fotos de la galer�a */
-.caption
-{
-	font-weight: normal;
-	margin-left: 5px !important;
-	*margin-left: 30px !important;
-	*margin-left: 50px;
-	padding: 10px;
-	margin-bottom: 50px;
-	text-align: center;
+.ReflectionIdevice .iDevice_content_wrapper{
+    background:url(inf_izq_reflection.gif) no-repeat 0 bottom;
 }
 
-/* IDEVICE IMAGEN AMPLIADA */
-.image_text
-{
-	padding-left: 20px;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
+/* Retroalimentaciones */
+.feedback {
+	border:1px dashed #4E4E4E;
 	color:#4E4E4E;
-	background-image:url(fondoev_bn.gif);
-	background-position: left top;
-	background-repeat: repeat-y;
-	background-color: #FCFCFC;
-	border: 1px solid #000000;
+	background-color:#fff;
+	padding:5px;
+	margin:5px;
+	font-size:1em;	
+    font-family:Verdana,Arial, Helvetica, sans-serif;
+	height:auto !important;
+	*height:auto !important;
+	*height:0px;
+	margin-bottom:5px;
+	overflow-y:auto;
 }
 
-.image_text .image
-{
-	background-image:url(icon_zoom.gif);
-	background-position: left top;
-	background-repeat: no-repeat;
+/* Formularios y botones*/
+input {
+	font-weight:bold;
+	color:inherit;
+	border-color:inherit;
+	border-style:solid;
+	border-width:1px;
 }
 
-.image object
-{
-	margin: 0px;
-	padding: 0px;
-	margin-top: 55px;	
-}
-.image_text + .block
-{
-	float:left;
-	margin: 5px;
-	margin-right: -15px;
-	color: #4E4E4E;
+select {
+	font-weight:bold;
+	color:inherit;
+	border-color:inherit;
+	border-style:solid;
+	border-width:1px;
 }
 
-/* IDEVICE SITIO EXTERNO SITIO WEB */
-iframe
-{
-	padding: 2px;
-}
-/* CAMBIOS DE TIPO DE LETRAS EN SITIOS DETERMINADOS
- * SOBRECARGANDO EL BASE.CSS DE LA APLICACIÓN
- */
-.reading_reference
-{
-	font-family: Verdana,Arial, Helvetica, sans-serif !important;	
+/* Sugerencias y ayudas pedagógicas */
+.popupDiv {
+	background-color:#fff;
+	border:2px solid #607489;
+	padding:4px;
+	margin-left:15px;
+	text-align:left;
 }
 
-
-
-
-/* ESTILOS PARA IMPRIMIR */
-
-img
-{
-	page-break-inside:avoid;
+.popupDivLabel {
+	text-align:center;
+	font:message-box;
+	font-weight:bold;
+	color:#bd4949;
+	margin:4px;
+	background-color:#F00;
 }
