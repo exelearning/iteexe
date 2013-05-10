@@ -36,8 +36,9 @@ if sys.platform[:3] == "win":
     FILE_ATTRIBUTE_REPARSE_POINT = 1024
     REPARSE_FOLDER = (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)
     import string
-    from ctypes import windll
-    from win32file import GetFileAttributes
+    from win32api import SetErrorMode
+    SetErrorMode(1)
+    from win32file import GetFileAttributes, GetLogicalDrives, GetDriveType
 
 
 def iswinlink(fpath):
@@ -50,7 +51,7 @@ def iswinlink(fpath):
 
 def get_drives():
     drives = []
-    bitmask = windll.kernel32.GetLogicalDrives()
+    bitmask = GetLogicalDrives()
     for letter in string.uppercase:
         if bitmask & 1:
             drives.append(letter + ":")
