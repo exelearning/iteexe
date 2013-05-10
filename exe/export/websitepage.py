@@ -131,8 +131,10 @@ class WebsitePage(Page):
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
-                html += u'<div class="%s" id="id%s">\n' %  (idevice.klass,
-                    idevice.id)
+                e=" em_iDevice"
+                if unicode(idevice.emphasis)=='0':
+                    e=""
+                html += u'<div class="iDevice_wrapper %s%s" id="id%s">' %  (idevice.klass, e, idevice.id)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")

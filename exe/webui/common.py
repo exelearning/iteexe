@@ -65,13 +65,15 @@ def ideviceHeader(e, style, mode):
     o = '' # Old HTML (themes with no config.xml file)
     h = '' # New HTML
     w2 = ''
+    eEm = ''
     if e.idevice.emphasis > 0:
         w2 = '<div class="iDevice_inner">'
         w2 += '<div class="iDevice_content_wrapper">'
+        eEm = ' em_iDevice'
     
     
     if mode=="preview" and themeHasXML:
-        w += '<div class="'+e.idevice.klass+'">'
+        w += '<div class="iDevice_wrapper '+e.idevice.klass+eEm+'">'
     
     w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
