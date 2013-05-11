@@ -13,11 +13,18 @@
  <img id="..." src="..." data-magnifysrc="..."  width="n" height="n" data-size="n"  data-zoom="n" />
  */
 var MojoMagnify = (function () {
+var dfstyle=' background: #FFF0FF;width: 80px;padding: 3px;font-size: 16px;border: 1px solid #ccc;height: 28px;margin:5px;';
+var zommstl=false;
 function withStyle(name){
-        var  cssstyle,clcss;
+        var  cssstyle;
 		var valor=false;
-        for( cssstyle=document.styleSheets.length-1; cssstyle>=0; cssstyle-- ){
-            clcss= document.styleSheets[cssstyle].rules || document.styleSheets[cssstyle].cssRules;
+		var cssstyle;
+for (cssstyle = 0; cssstyle < document.styleSheets.length; cssstyle++) {
+			var clcss = new Array();
+if (document.styleSheets[cssstyle].cssRules)
+	clcss = document.styleSheets[cssstyle].cssRules
+else if (document.styleSheets[cssstyle].rules)
+	clcss = document.styleSheets[cssstyle].rules
             for(var t=0;t<clcss.length;t++) {if(clcss[t].selectorText===name) {valor=true}}
         }
         return valor;
@@ -187,13 +194,16 @@ function withStyle(name){
         var w = img.offsetWidth ? img.offsetWidth : img.naturalWidth;
         var h = img.offsetHeight ? img.offsetHeight : img.naturalHeight;
         var oldParent = img.parentNode;
+		
         if (oldParent.nodeName.toLowerCase() != "a") {
-            var linkParent = dc("a");
+            var linkParent = dc("div");
             oldParent.replaceChild(linkParent, img);
             linkParent.appendChild(img);
         } else {
             var linkParent = oldParent;
+			
         }
+		
         linkParent.style.position = "relative";
         linkParent.style.display = "block";
         linkParent.style.width = w + "px";
@@ -215,6 +225,7 @@ function withStyle(name){
         zoom.style.borderRadius = (zoSize / 2) + "px"
 		}else{
         zoom.className = "zoomglass";
+		zommstl=true;
 		}
         zoom.style.left = "-9999px";
         var parent = img.parentNode;
@@ -267,24 +278,34 @@ function withStyle(name){
         dvselect.style.border = "1px solid #cccccc";
         var modzoom = document.createElement("select");
         modzoom.onclick = changezoom;
+		if (withStyle('.selectzoomglass')==false){
+		 modzoom.setAttribute('style',dfstyle);
+		}else{
 		modzoom.className='selectzoomglass';
+		}
         var stZoom = new Array("x1", "x1.5", "x2", "x2.5", "x3", "x4", "x6");
         var valZoom = new Array( 1, 1.5, 2, 2.5, 3, 4, 6);
         
         for (var i = 0; i < valZoom.length; ++i) {
             modzoom[modzoom.length] = new Option(stZoom[i], valZoom[i]);
         }
-		modzoom[modzoom.length] = new Option("x" + zoZoom, zoZoom,"defaultSelected");
+		modzoom[i] = new Option("x" + zoZoom, zoZoom);
+		modzoom[i].setAttribute("selected","selected");
         var sizeGlass = document.createElement("select");
         sizeGlass.onclick = changeglass;
+		if (withStyle('.selectsizeglass')==false){
+		 sizeGlass.setAttribute('style',dfstyle);
+		}else{
 		sizeGlass.className='selectsizeglass';
+		}
         var valGlass = new Array(50, 100, 150, 200, 250, 300, 400);
 		var stzoSize=zoSize.toString();
         for (var i = 0; i < valGlass.length; ++i) {
 		if (valGlass[i]==stzoSize){		
-			sizeGlass[sizeGlass.length] = new Option(valGlass[i], valGlass[i],"defaultSelected");            
+			sizeGlass[i] = new Option(valGlass[i], valGlass[i]);  
+			sizeGlass[i].setAttribute("selected","selected");			
 			}else{
-			sizeGlass[sizeGlass.length] = new Option(valGlass[i], valGlass[i]);
+			sizeGlass[i] = new Option(valGlass[i], valGlass[i]);
 			}
         }
         dvselect.appendChild(modzoom);
@@ -301,6 +322,7 @@ function withStyle(name){
         function changeglass(e) {
             zoom.style.width = sizeGlass.value + "px";
             zoom.style.height = sizeGlass.value + "px";
+			if (zommstl==false) zoom.style.borderRadius = (sizeGlass.value / 2) + "px"
         }
 
         function onMouseOut(e) {

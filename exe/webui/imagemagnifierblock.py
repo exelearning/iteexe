@@ -166,7 +166,7 @@ class ImageMagnifierBlock(Block):
                                  self.idevice.glassSizeInstruc,
                                  glassSizeArr, 
                                  self.idevice.imageMagnifier.glassSize)
-            
+ 
         html += self.renderEditButtons(undo=self.idevice.undo)
         html += u"</div>\n"
         return html
@@ -190,12 +190,15 @@ class ImageMagnifierBlock(Block):
         html += u"    </div> <!-- class=\"image\" -->\n" 
         html += u"  </div> <!-- class=\"image_text\" -->\n" 
         text = self.textElement.renderPreview()
+        text = self.textElement.renderView()
         if text:
-            html += text
+            html +='<div style="float: left;margin-left:25px">'+text+'</div>'
         else:
             html += '&nbsp;'
-        html += u'\n<div style="overflow:auto"></div>\n'
+        html += u'\n<div style="clear: both;overflow:auto"></div>\n'
+        html += u'<p style="margin-top:40px;"></p>'
         html += self.renderViewButtons()
+        html += u''
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
     
@@ -218,10 +221,10 @@ class ImageMagnifierBlock(Block):
         html += u"  </div> <!-- class=\"image_text\" -->\n" 
         text = self.textElement.renderView()
         if text:
-            html += text
+            html +='<div style="float: left;margin-left:25px">'+text+'</div>'
         else:
             html += '&nbsp;'
-        html += u'\n<div style="overflow:auto"></div>\n'
+        html += u'\n<div style="clear: both;overflow:auto"></div>\n'
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
     
