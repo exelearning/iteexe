@@ -912,7 +912,7 @@ class MagnifierElement(Element):
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
         html += u"</div>\n"
-        html += u'<div class="block">\n'
+        html += u'<div class="block" style="padding:5px">\n'
         html += u'<img alt="%s" ' % _('Add Image')
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addImage('"+self.id+"');\" "
@@ -1015,15 +1015,13 @@ class MagnifierElement(Element):
                 'bgcolor': '#888888',
                 'FlashVars': flashVars})
         """
-        html=u'<script type="text/javascript" src="%s"></script>\n' % magnifierFile 
-        html +=u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"  width="%s" height="%s" data-size="%s"  data-zoom="%s" />'% (
-            self.id,
-            imageFile,
-            imageFile,
-            field.width,
-            field.height,
-            field.glassSize,
-            field.initialZSize)
+        html=u'<script type="text/javascript" src="%s"></script>\n' % magnifierFile
+        html +=u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
+        if field.width!="":
+            html +=u' width="'+field.width+'"'
+        if field.height!="":
+            html +=u' height="'+field.height+'"'            
+        html +=u' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
         return html;
         
 
