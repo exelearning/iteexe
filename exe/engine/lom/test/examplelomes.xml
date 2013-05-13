@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <lom xmlns:lomes="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd">
+            <lomes:general uniqueElementName="general">
+                <lomes:identifier>
+                    <lomes:catalog uniqueElementName="catalog">Plataforma Agrega</lomes:catalog>
+                    <lomes:entry uniqueElementName="entry">ODE-baa78a92-fd6d-311d-84a6-4eae460cce84</lomes:entry>
+                </lomes:identifier>
+                <lomes:identifier>
+                    <lomes:catalog uniqueElementName="catalog">Cat</lomes:catalog>
+                    <lomes:entry uniqueElementName="entry">es_2013030412_9152054</lomes:entry>
+                </lomes:identifier>
+                <lomes:title uniqueElementName="title">
+                    <lomes:string language="es">Padres...y educadores</lomes:string>
+                </lomes:title>
+                <lomes:language>es</lomes:language>
+                <lomes:description>
+                    <lomes:string language="es">Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.</lomes:string>
+                </lomes:description>
+                <lomes:keyword>
+                    <lomes:string language="es">cedec, rea, padres, estudiar, alumnos, familia, fracaso escolar, escuela, orientación, estudios</lomes:string>
+                </lomes:keyword>
+                <lomes:aggregationLevel uniqueElementName="aggregationLevel">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">2</lomes:value>
+                </lomes:aggregationLevel>
+            </lomes:general>
+            <lomes:lifeCycle uniqueElementName="lifeCycle">
+                <lomes:version uniqueElementName="version">
+                    <lomes:string language="es">Final</lomes:string>
+                </lomes:version>
+                <lomes:status uniqueElementName="status">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">final</lomes:value>
+                </lomes:status>
+                <lomes:contribute>
+                    <lomes:role uniqueElementName="role">
+                        <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                        <lomes:value uniqueElementName="value">publisher</lomes:value>
+                    </lomes:role>
+                    <lomes:entity>BEGIN:VCARD VERSION:3.0 FN: mfuente EMAIL;TYPE=INTERNET:  ORG: Plataforma Agrega</lomes:entity>
+                    <lomes:date uniqueElementName="date">
+                        <lomes:dateTime uniqueElementName="dateTime">2013-03-04T15:20:56.212Z</lomes:dateTime>
+                        <lomes:description>
+                            <lomes:string>Fecha de publicación en Agrega</lomes:string>
+                        </lomes:description>
+                    </lomes:date>
+                </lomes:contribute>
+                <lomes:contribute>
+                    <lomes:role uniqueElementName="role">
+                        <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                        <lomes:value uniqueElementName="value">author</lomes:value>
+                    </lomes:role>
+                    <lomes:entity>BEGIN:VCARD VERSION:3.0 FN:Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) EMAIL;TYPE=INTERNET:cedec@ite.educacion.es ORG:CeDeC END:VCARD</lomes:entity>
+                    <lomes:entity>BEGIN:VCARD VERSION:3.0 FN:IES "Enrique Díez-Canedo" EMAIL;TYPE=INTERNET:ies.enriquediezcanedo@juntaextremadura.net ORG:IES "Enrique Díez-Canedo" END:VCARD</lomes:entity>
+                    <lomes:date uniqueElementName="date">
+                        <lomes:dateTime uniqueElementName="dateTime">2013-03-04</lomes:dateTime>
+                        <lomes:description>
+                            <lomes:string language="es">Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.</lomes:string>
+                        </lomes:description>
+                    </lomes:date>
+                </lomes:contribute>
+            </lomes:lifeCycle>
+            <lomes:metaMetadata uniqueElementName="metaMetadata">
+                <lomes:identifier>
+                    <lomes:catalog uniqueElementName="catalog">Plataforma Agrega</lomes:catalog>
+                    <lomes:entry uniqueElementName="entry">ODE-baa78a92-fd6d-311d-84a6-4eae460cce84</lomes:entry>
+                </lomes:identifier>
+                <lomes:contribute>
+                    <lomes:role uniqueElementName="role">
+                        <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                        <lomes:value uniqueElementName="value">creator</lomes:value>
+                    </lomes:role>
+                    <lomes:entity>BEGIN:VCARD VERSION:3.0 FN:Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) EMAIL;TYPE=INTERNET:cedec@ite.educacion.es ORG:CeDeC END:VCARD</lomes:entity>
+                    <lomes:entity>BEGIN:VCARD VERSION:3.0 FN:IES "Enrique Díez-Canedo" EMAIL;TYPE=INTERNET:ies.enriquediezcanedo@juntaextremadura.net ORG:IES "Enrique Díez-Canedo" END:VCARD</lomes:entity>
+                    <lomes:date uniqueElementName="date">
+                        <lomes:dateTime uniqueElementName="dateTime">2013-03-04</lomes:dateTime>
+                        <lomes:description>
+                            <lomes:string language="es">Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.</lomes:string>
+                        </lomes:description>
+                    </lomes:date>
+                </lomes:contribute>
+                <lomes:metadataSchema>LOM-ESv1.0</lomes:metadataSchema>
+                <lomes:language>es</lomes:language>
+            </lomes:metaMetadata>
+            <lomes:technical uniqueElementName="technical">
+                <lomes:format>text/html</lomes:format>
+                <lomes:location>http://agrega.educacion.es/ODE/es/es_2013030412_9152054</lomes:location>
+                <lomes:requirement>
+                    <lomes:orComposite>
+                        <lomes:type uniqueElementName="type">
+                            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                            <lomes:value uniqueElementName="value">browser</lomes:value>
+                        </lomes:type>
+                        <lomes:name uniqueElementName="name">
+                            <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                            <lomes:value uniqueElementName="value">any</lomes:value>
+                        </lomes:name>
+                    </lomes:orComposite>
+                </lomes:requirement>
+            </lomes:technical>
+            <lomes:educational>
+                <lomes:interactivityType uniqueElementName="interactivityType">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">mixed</lomes:value>
+                </lomes:interactivityType>
+                <lomes:learningResourceType>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">individual/cooperative/collaborative learning/working management tool</lomes:value>
+                </lomes:learningResourceType>
+                <lomes:interactivityLevel uniqueElementName="interactivityLevel">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">medium</lomes:value>
+                </lomes:interactivityLevel>
+                <lomes:intendedEndUserRole>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">family</lomes:value>
+                </lomes:intendedEndUserRole>
+                <lomes:intendedEndUserRole>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">learner</lomes:value>
+                </lomes:intendedEndUserRole>
+                <lomes:intendedEndUserRole>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">subject matter expert</lomes:value>
+                </lomes:intendedEndUserRole>
+                <lomes:intendedEndUserRole>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">general public</lomes:value>
+                </lomes:intendedEndUserRole>
+                <lomes:intendedEndUserRole>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">tutor</lomes:value>
+                </lomes:intendedEndUserRole>
+                <lomes:intendedEndUserRole>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">teacher</lomes:value>
+                </lomes:intendedEndUserRole>
+                <lomes:context>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">teacher</lomes:value>
+                </lomes:context>
+                <lomes:context>
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">home</lomes:value>
+                </lomes:context>
+                <lomes:typicalAgeRange>
+                    <lomes:string language="es">35</lomes:string>
+                </lomes:typicalAgeRange>
+                <lomes:difficulty uniqueElementName="difficulty">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">medium</lomes:value>
+                </lomes:difficulty>
+                <lomes:language>es</lomes:language>
+            </lomes:educational>
+            <lomes:rights uniqueElementName="rights">
+                <lomes:cost uniqueElementName="cost">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">no</lomes:value>
+                </lomes:cost>
+                <lomes:copyrightAndOtherRestrictions uniqueElementName="copyrightAndOtherRestrictions">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">other free software licenses</lomes:value>
+                </lomes:copyrightAndOtherRestrictions>
+                <lomes:description>
+                    <lomes:string language="es">Licencia Creative Commons Reconocimiento Compartir Igual (by sa)</lomes:string>
+                </lomes:description>
+                <lomes:access uniqueElementName="access">
+                    <lomes:accessType uniqueElementName="accessType">
+                        <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                        <lomes:value uniqueElementName="value">universal</lomes:value>
+                    </lomes:accessType>
+                    <lomes:description>
+                        <lomes:string>es_cnice_20080623,es_{nodo}_20080923,es_clm_20091103121523455,es_murcia_20080422121523455,es_castillayleon_201002241811,es_baleares_200907131205,es_na_90348943,es_canarias_20090114,es_aragon_20080930,es_larioja_20081107,es_cantabria_20081215,es_valencia_201101241416,galicia20091006,es_euskadi_20100423,es_extremadura_20111222,es_andalucia_20090324</lomes:string>
+                    </lomes:description>
+                </lomes:access>
+            </lomes:rights>
+            <lomes:relation>
+                <lomes:kind uniqueElementName="kind">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">ispartof</lomes:value>
+                </lomes:kind>
+                <lomes:resource uniqueElementName="resource">
+                    <lomes:identifier>
+                        <lomes:catalog uniqueElementName="catalog">Plataforma Agrega</lomes:catalog>
+                        <lomes:entry uniqueElementName="entry">ODE-baa78a92-fd6d-311d-84a6-4eae460cce84</lomes:entry>
+                    </lomes:identifier>
+                    <lomes:description>
+                        <lomes:string language="es">Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.</lomes:string>
+                    </lomes:description>
+                </lomes:resource>
+            </lomes:relation>
+            <lomes:annotation>
+                <lomes:entity>BEGIN:VCARD VERSION:3.0 FN:Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) EMAIL;TYPE=INTERNET:cedec@ite.educacion.es ORG:CeDeC END:VCARD</lomes:entity>
+                <lomes:date uniqueElementName="date">
+                    <lomes:dateTime uniqueElementName="dateTime">2013-03-04</lomes:dateTime>
+                    <lomes:description>
+                        <lomes:string language="es">Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.</lomes:string>
+                    </lomes:description>
+                </lomes:date>
+                <lomes:description>
+                    <lomes:string language="es">Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.</lomes:string>
+                </lomes:description>
+            </lomes:annotation>
+            <lomes:classification>
+                <lomes:purpose uniqueElementName="purpose">
+                    <lomes:source uniqueElementName="source">LOM-ESv1.0</lomes:source>
+                    <lomes:value uniqueElementName="value">educational level</lomes:value>
+                </lomes:purpose>
+                <lomes:taxonPath>
+                    <lomes:source uniqueElementName="source">
+                        <lomes:string language="es">Nivel educativo LOM-ESv1.0</lomes:string>
+                    </lomes:source>
+                    <lomes:taxon>
+                        <lomes:id uniqueElementName="id">3</lomes:id>
+                        <lomes:entry>
+                            <lomes:string language="es">Educación Primaria</lomes:string>
+                        </lomes:entry>
+                    </lomes:taxon>
+                </lomes:taxonPath>
+                <lomes:taxonPath>
+                    <lomes:source uniqueElementName="source">
+                        <lomes:string language="es">Nivel educativo LOM-ESv1.0</lomes:string>
+                    </lomes:source>
+                    <lomes:taxon>
+                        <lomes:id uniqueElementName="id">4</lomes:id>
+                        <lomes:entry>
+                            <lomes:string language="es">Educación Secundaria Obligatoria</lomes:string>
+                        </lomes:entry>
+                    </lomes:taxon>
+                </lomes:taxonPath>
+                <lomes:taxonPath>
+                    <lomes:source uniqueElementName="source">
+                        <lomes:string language="es">Nivel educativo LOM-ESv1.0</lomes:string>
+                    </lomes:source>
+                    <lomes:taxon>
+                        <lomes:id uniqueElementName="id">8</lomes:id>
+                        <lomes:entry>
+                            <lomes:string language="es">Formación Profesional</lomes:string>
+                        </lomes:entry>
+                    </lomes:taxon>
+                </lomes:taxonPath>
+                <lomes:keyword>
+                    <lomes:string language="es">cedec, rea, padres, estudiar, alumnos, familia, fracaso escolar, escuela, orientación, estudios</lomes:string>
+                </lomes:keyword>
+            </lomes:classification>
+        </lom>
