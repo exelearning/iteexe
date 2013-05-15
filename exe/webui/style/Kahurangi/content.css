@@ -21,7 +21,24 @@ h3{font-size:1.25em;color:#666}
 #main h5{font-size:1.1em}
 .iDevice{background:#F2F2EF url(_kahurangi_idevice_bg.gif) repeat-x 0 0;margin:2em 0;border-radius:5px;border:1px solid #000;padding-top:5px}
 .emphasis0{padding:0;background:none;border:none}
+
+/* iDevice icons */
 .iDevice_icon{margin:0 5px}
+.iDevice_header{background:url(icon_generic.gif) no-repeat 5px 0;padding-left:58px}
+.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
+.readingIdevice .iDevice_header{background-image:url(icon_reading.gif)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif)}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+
 .iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#039;line-height:3em} 
 .iDevice_inner{padding:10px 20px}
 .emphasis0 .iDevice_inner{background:none;padding:0}
