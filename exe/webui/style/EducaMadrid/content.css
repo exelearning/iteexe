@@ -13,6 +13,23 @@ h3{font-size:1.25em;color:#777}
 #main h5{font-size:1.1em}
 .iDevice{margin:2em 0}
 .iDevice_icon{width:23px;height:auto;margin-right:5px} /* Icons: "Iconic" (Creative Commons by-sa), by P. J. Onori (http://www.somerandomdude.com/work/iconic/) */
+
+/* iDevice icons */
+.iDevice_header{background:url(icon_generic.gif) no-repeat 0 0;padding-left:30px}
+.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
+.readingIdevice .iDevice_header{background-image:url(icon_reading.gif)}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+
 .iDeviceTitle{font-size:1.2em;vertical-align:top;top:-2px;color:#666;line-height:2em} 
 .iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444;border-radius:5px}
 #siteFooter{color:#666;font-size:.95em}
@@ -32,30 +49,3 @@ li{list-style-position:outside}
 /* Form buttons */
 .iDevice_inner input[type=submit],.feedbackbutton{background:#888;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
 .iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#555;color:#f3f3f3;box-shadow:none}
-/* Color squemes */
-/* Blue */
-.blue a{color:#44A7E9}
-.blue #header,.blue #emptyHeader{background:#f8fdff url(_em_logo_azul.png) no-repeat 0 0;color:#1367A0}
-.blue #nodeTitle,.blue .nodeTitle{color:#105989}
-.blue .iDevice_inner{background:#fbfeff}
-.blue #siteFooter a{color:#A04B13}
-.blue #header,.blue #emptyHeader{border-color:#e3e7ea}
-.blue #nodeTitle{border-color:#eef1f2}
-.blue .iDevice_inner input[type=submit],.blue .iDevice_inner input[type=button],.blue .feedbackbutton{background:#777}
-.blue .iDevice_inner input[type=submit]:hover,.blue .iDevice_inner input[type=button]:hover,.blue .feedbackbutton:hover{background:#105989}
-/* Green */
-.green a{color:#949100}
-.green #header,.green #emptyHeader{background:#f7faf4 url(_em_logo_verde.png) no-repeat 0 0;color:#407a00}
-.green #nodeTitle,.green .nodeTitle{color:#4c8400}
-.green .iDevice_inner{background:#FBFCF8}
-.green #siteFooter a{color:#944700}
-.green #header,.green #emptyHeader{border-color:#e9ece5}
-.green #nodeTitle{border-color:#eef1f2}
-.green .iDevice_inner input[type=submit],.green .feedbackbutton{background:#777}
-.green .iDevice_inner input[type=submit]:hover,.green .feedbackbutton:hover{background:#4c8400}
-/* White */
-.white #header,.white #emptyHeader{background:#fff url(_em_logo_blanco.png) no-repeat 0 0}
-div#nodeDecoration{border-color:#f0f0f0}
-.white .iDevice_inner{background:#fbfbfb}
-.white .iDevice_inner input[type=submit],.white .feedbackbutton{background:#999}
-.white .iDevice_inner input[type=submit]:hover,.white .feedbackbutton:hover{background:#777}
