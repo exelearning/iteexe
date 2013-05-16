@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 #
 # Generated Fri May 10 13:36:48 2013 by generateDS.py version 2.9a.
@@ -129,7 +130,81 @@ supermod.DurationValue.subclass = DurationValueSub
 
 class lomSub(supermod.lom):
     def __init__(self, general=None, lifeCycle=None, metaMetadata=None, technical=None, educational=None, rights=None, relation=None, annotation=None, classification=None):
+        self.oldchild = None
         super(lomSub, self).__init__(general, lifeCycle, metaMetadata, technical, educational, rights, relation, annotation, classification, )
+
+    def getFieldClass(self, key, parentObj):
+        sub = 'Sub'
+        clsname = parentObj.__class__.__name__
+        if key == 'string':
+            cls = 'LangString'
+        elif key == 'language':
+            cls = 'LanguageId'
+        elif key == 'description':
+            cls = 'LanguageString'
+        elif key == 'entity':
+            cls = 'VCard'
+        elif key == 'source':
+            if clsname.rstrip(sub) != 'taxonPath':
+                cls = key + 'Value'
+            else:
+                cls = key
+        elif key == 'entry':
+            if clsname.rstrip(sub) == 'taxon':
+                cls = 'entryTaxon'
+            else:
+                cls = key
+        elif key == 'duration':
+            if clsname.rstrip(sub) in ['duration', 'typicalLearningTime']:
+                cls = 'DurationValue'
+            else:
+                cls = key
+        elif key == 'contribute':
+            if clsname.rstrip(sub) == 'metaMetadata':
+                cls = 'contributeMeta'
+            else:
+                cls = key
+        elif key == 'dateTime':
+            cls = 'DateTimeValue'
+        elif key == 'type':
+            cls = 'type_'
+        elif key == 'value':
+            cls = clsname.rstrip(sub)
+            cls = cls.rstrip('_')
+            cls = cls + 'Value'
+        else:
+            cls = key
+        return eval(cls + sub)
+
+    def addChilds(self, rootNode, rootObj=None):
+        if not rootObj:
+            rootObj = self
+
+        if not  isinstance(rootNode, dict):
+            rootObj.set_valueOf_(rootNode)
+            return True
+
+        if 'valueOf_' in rootNode.keys():
+            for key, value in rootNode.iteritems():
+                getattr(rootObj, 'set_' + key)(value)
+            return True
+
+        for key, value in rootNode.iteritems():
+            childclass = self.getFieldClass(key, rootObj)
+            if isinstance(value, list):
+                for v in value:
+                    child = childclass.factory()
+                    if hasattr(child, 'uniqueElementName'):
+                        child.set_uniqueElementName(key)
+                    getattr(rootObj, 'add_' + key)(child)
+                    self.addChilds(v, child)
+            else:
+                child = childclass.factory()
+                if hasattr(child, 'uniqueElementName'):
+                    child.set_uniqueElementName(key)
+                getattr(rootObj, 'set_' + key)(child)
+                self.addChilds(value, child)
+
 supermod.lom.subclass = lomSub
 # end class lomSub
 

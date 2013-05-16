@@ -3918,8 +3918,8 @@ class otherPlatformRequirements(LanguageString):
 class duration(Duration):
     subclass = None
     superclass = Duration
-    def __init__(self, duration=None, description=None, uniqueElementName=None, valueOf_=None):
-        super(duration, self).__init__(duration, description, )
+    def __init__(self, durationf=None, description=None, uniqueElementName=None, valueOf_=None):
+        super(duration, self).__init__(durationf, description, )
         self.uniqueElementName = _cast(None, uniqueElementName)
         self.valueOf_ = valueOf_
     def factory(*args_, **kwargs_):
