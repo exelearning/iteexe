@@ -20,7 +20,24 @@ h3{font-size:1.25em;color:#666}
 #main h5{font-size:1.1em}
 .iDevice,.readingIdevice .iDevice{margin:2em 15px;background:#fff;padding:15px}
 .emphasis0{background:none;margin:2em auto;padding:0 15px}
-.iDevice_icon{height:50px;width:auto;margin-right:8px}
+
+/* iDevice icons */
+.iDevice_icon{height:48px;width:auto;margin-right:8px}
+.iDevice_header{background:url(icon_generic.gif) no-repeat 0 0;padding-left:56px}
+.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
+.readingIdevice .iDevice_header{background-image:url(icon_reading.gif)}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+
 .iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#900;line-height:3em} 
 .iDevice_inner{margin-left:55px}
 #siteFooter{color:#000;font-size:.95em}
