@@ -74,6 +74,9 @@ class PropertiesPage(Renderable, Resource):
         raise ValueError("field id '%s' doesn't refer "
                          "to a valid object attribute" % fieldId)
 
+    def processLom(self, args):
+        pass
+
     def render_GET(self, request=None):
         log.debug("render_GET")
 
@@ -97,22 +100,27 @@ class PropertiesPage(Renderable, Resource):
 
         data = {}
         try:
-            for key, value in request.args.items():
-                obj, name = self.fieldId2obj(key)
-                if key in self.booleanFieldNames:
-                    setattr(obj, name, value[0] == 'true')
-                else:
-                    if key in self.imgFieldNames:
-                        path = Path(value[0])
-                        if path.isfile():
-                            setattr(obj, name, toUnicode(value[0]))
-                            data[key] = getattr(obj, name).basename()
-                        else:
-                            if getattr(obj, name):
-                                if getattr(obj, name).basename() != path:
-                                    setattr(obj, name, None)
+            if 'lom_general_title_string1' in request.args:
+                self.processLom(request.args)
+            elif 'lomes_general_title_string1' in request.args:
+                self.processLom(request.args)
+            else:
+                for key, value in request.args.items():
+                    obj, name = self.fieldId2obj(key)
+                    if key in self.booleanFieldNames:
+                        setattr(obj, name, value[0] == 'true')
                     else:
-                        setattr(obj, name, toUnicode(value[0]))
+                        if key in self.imgFieldNames:
+                            path = Path(value[0])
+                            if path.isfile():
+                                setattr(obj, name, toUnicode(value[0]))
+                                data[key] = getattr(obj, name).basename()
+                            else:
+                                if getattr(obj, name):
+                                    if getattr(obj, name).basename() != path:
+                                        setattr(obj, name, None)
+                        else:
+                            setattr(obj, name, toUnicode(value[0]))
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})

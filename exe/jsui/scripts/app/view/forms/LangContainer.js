@@ -26,7 +26,7 @@ Ext.define('eXe.view.forms.LangContainer', {
 
         while (!item.inputId)
             item = item.item;
-        return item.inputId + "_lang";
+        return item.inputId + "_language";
     },
 
     initComponent: function() {
