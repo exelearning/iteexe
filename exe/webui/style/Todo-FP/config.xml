@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<theme>
+    <name>Todo FP</name>
+    <version>2.0</version>
+    <compatibility>8+</compatibility>
+    <author>eXeLearning</author>
+    <author-url>http://www.exelearning.net</author-url>
+	<license>Creative Commons by-nc-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-nc-sa/3.0/</license-url>
+	<description>Plantilla originalmente creada para la "Formación Profesional a través de internet y online" del Ministerio de Educación, Cultura y Deporte. Adaptación del diseño: Ignacio Gros.</description>
+    <langs lang="en">
+		<description>This theme was originally created for "Formación Profesional a través de internet y online", Ministerio de Educación, Cultura y Deporte (Spanish Government). Adapted by Ignacio Gros.</description>
+	</langs>
+</theme>
