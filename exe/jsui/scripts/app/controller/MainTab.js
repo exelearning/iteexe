@@ -59,6 +59,18 @@ Ext.define('eXe.controller.MainTab', {
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
+            '#lomdata_properties': {
+                render: this.onRender,
+                show: this.onRender,
+                beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete
+            },
+            '#lomesdata_properties': {
+                render: this.onRender,
+                show: this.onRender,
+                beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete
+            },
             '#save_properties': {
                 click: this.onClickSave
             },
