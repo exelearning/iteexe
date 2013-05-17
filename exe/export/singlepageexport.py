@@ -26,6 +26,7 @@ from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.singlepage    import SinglePage
+from exe.webui                import common
 import os
 
 import logging
@@ -124,6 +125,7 @@ class SinglePageExport(object):
         hasXspfplayer     = False
         hasGallery        = False
         hasWikipedia      = False
+        hasInstructions   = False
 
     	for idevice in node.idevices:
     	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
@@ -143,6 +145,9 @@ class SinglePageExport(object):
             if not hasWikipedia:
     			if 'WikipediaIdevice' == idevice.klass:
     				hasWikipedia = True
+            if not hasInstructions:
+    			if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
+    				hasInstructions = True
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -164,6 +169,9 @@ class SinglePageExport(object):
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')
+        if hasInstructions:
+            common.copyFileIfNotInStyle('panel-amusements.png', self, self.outputDir)
+            common.copyFileIfNotInStyle('stock-stop.png', self, self.outputDir)
             
         for child in node.children:
             self.compruebaReproductores(child)

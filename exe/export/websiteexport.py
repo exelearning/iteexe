@@ -31,6 +31,7 @@ from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
+from exe.webui                import common
 import os
 
 log = logging.getLogger(__name__)
@@ -171,6 +172,7 @@ class WebsiteExport(object):
         hasGallery        = False
         hasWikipedia      = False
         isBreak           = False
+        hasInstructions   = False
         
         for page in self.pages:
             if isBreak:
@@ -194,6 +196,9 @@ class WebsiteExport(object):
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
+                if not hasInstructions:
+                    if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
+                        hasInstructions = True
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -215,6 +220,9 @@ class WebsiteExport(object):
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')
+        if hasInstructions:
+            common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
+            common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

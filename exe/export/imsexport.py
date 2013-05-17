@@ -364,6 +364,7 @@ class IMSExport(object):
         hasGallery        = False
         hasWikipedia      = False
         isBreak           = False
+        hasInstructions   = False
         
         for page in self.pages:
             if isBreak:
@@ -387,6 +388,9 @@ class IMSExport(object):
                 if not hasWikipedia:
                     if 'WikipediaIdevice' == idevice.klass:
                         hasWikipedia = True
+                if not hasInstructions:
+                    if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
+                        hasInstructions = True
                         
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -408,6 +412,9 @@ class IMSExport(object):
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')
+        if hasInstructions:
+            common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
+            common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence
