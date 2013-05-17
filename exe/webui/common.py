@@ -43,6 +43,11 @@ def newId():
     
 log = logging.getLogger(__name__)
 
+def copyFileIfNotInStyle(file, e, outputDir):
+    f = (e.imagesDir/file)
+    if not (outputDir/file).exists():
+        f.copyfile(outputDir/file)
+
 def docType():
     """Generates the documentation type string"""
     return (u'<?xml version="1.0" encoding="UTF-8"?>\n'
