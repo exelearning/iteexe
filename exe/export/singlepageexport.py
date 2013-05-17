@@ -103,8 +103,8 @@ class SinglePageExport(object):
         package.resourceDir.copyfiles(self.outputDir)
 
         # copy script files.
-        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
-                                     self.outputDir)
+        jsFile = (self.scriptsDir/'common.js')
+        jsFile.copyfile(self.outputDir/'common.js')
 
         #JR Metemos los reproductores necesarios
         self.compruebaReproductores(self.page.node)

@@ -123,8 +123,7 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = u'<script type="text/javascript" src="libot_drag.js"></script>\n'
-        html += common.ideviceHeader(self, style, "view")
+        html = common.ideviceHeader(self, style, "view")
         
         for element in self.questionElements:
             html += element.renderView("panel-amusements.png","stock-stop.png")  

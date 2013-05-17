@@ -159,8 +159,7 @@ be ambiguous.""")
 to the learner. This field may be left blank. if this field is left blank 
 default feedback will be provided.""")
         self.questions.append(TrueFalseQuestion(self))
-        self.systemResources += ["common.js", "libot_drag.js",
-                                 "panel-amusements.png", "stock-stop.png"]
+        self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
         self.instructionsForLearners = TextAreaField(
             x_(u'Instructions'),
             x_(u"""Provide instruction on how the True/False Question should be 
@@ -381,8 +380,7 @@ this box, eXe will automatically provide default feedback as follows:
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()        
-        self.systemResources += ["common.js", "libot_drag.js",
-                                 "panel-amusements.png", "stock-stop.png"]
+        self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
         
     def upgradeToVersion8(self):
         """

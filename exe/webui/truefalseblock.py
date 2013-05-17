@@ -134,8 +134,7 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = u'<script type="text/javascript" src="libot_drag.js"></script>'
-        html += common.ideviceHeader(self, style, "view")
+        html = common.ideviceHeader(self, style, "view")
         html += self.instructionElement.renderView()
         
         for element in self.questionElements:

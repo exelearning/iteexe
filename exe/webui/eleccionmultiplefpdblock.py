@@ -130,8 +130,7 @@ class EleccionmultiplefpdBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = u'<script type="text/javascript" src="libot_drag.js"></script>\n'
-        html += u"<div class=\"iDevice "
+        html = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u'<img alt="" '
         html += u'     class="iDevice_icon" '

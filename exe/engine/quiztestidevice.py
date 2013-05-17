@@ -255,7 +255,7 @@ time to learn and practice using the information or skill.
         self.passRate   = "50"
         self.questions  = []
         self.addQuestion()
-        self.systemResources += ["common.js", "libot_drag.js"]
+        self.systemResources += ["common.js"]
         
 
     def addQuestion(self):
@@ -398,7 +398,7 @@ time to learn and practice using the information or skill.
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()      
-        self.systemResources += ["common.js", "libot_drag.js"]
+        self.systemResources += ["common.js"]
 
 
     def upgradeToVersion7(self):

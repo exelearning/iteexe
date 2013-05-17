@@ -350,8 +350,8 @@ class IMSExport(object):
         manifest.save()
         
         # Copy the scripts
-        self.scriptsDir.copylist(('libot_drag.js',
-                                  'common.js'), outputDir)
+        jsFile = (self.scriptsDir/'common.js')
+        jsFile.copyfile(outputDir/'common.js')
         
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',

@@ -162,8 +162,8 @@ class WebsiteExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # copy script files.
-        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
-                                  outputDir)
+        jsFile = (self.scriptsDir/'common.js')
+        jsFile.copyfile(outputDir/'common.js')
 
         # copy players for media idevices.                
         hasFlowplayer     = False

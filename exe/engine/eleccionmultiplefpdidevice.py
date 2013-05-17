@@ -113,8 +113,7 @@ student to see when selecting the particular option. If you don't complete this
 box, eXe will automatically provide default feedback as follows: "Correct 
 answer" as indicated by the selection for the correct answer; or "Wrong answer"
 for the other options.""")
-        self.systemResources += ["common.js", "libot_drag.js",
-                                 "panel-amusements.png", "stock-stop.png"]
+        self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
         self.message          = ""
 
         self.addQuestion()
@@ -332,8 +331,7 @@ for the other options.""")
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()
-        self.systemResources += ["common.js", "libot_drag.js",
-                                 "panel-amusements.png", "stock-stop.png"]
+        self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
         
     def upgradeToVersion7(self):
         """

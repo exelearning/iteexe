@@ -601,19 +601,17 @@ class ScormExport(object):
 
         # Copy the scripts
         if self.scormType == "commoncartridge":
-            self.scriptsDir.copylist(('libot_drag.js',
-                                      'common.js'), outputDir)
+            jsFile = (self.scriptsDir/'common.js')
+            jsFile.copyfile(outputDir/'common.js')
         if self.scormType == "scorm2004" or self.scormType == "agrega":
             self.scriptsDir.copylist(('AC_RunActiveContent.js',
                                       'SCORM_API_wrapper.js',
                                       'SCOFunctions.js', 
-                                      'libot_drag.js',
                                       'common.js'), outputDir)     
         if self.scormType != "commoncartridge" and self.scormType != "scorm2004" and self.scormType != "agrega":
             self.scriptsDir.copylist(('AC_RunActiveContent.js',
                                       'SCORM_API_wrapper.js', 
                                       'SCOFunctions.js', 
-                                      'libot_drag.js',
                                       'common.js'), outputDir)
         schemasDir = ""
         if self.scormType == "scorm1.2":
