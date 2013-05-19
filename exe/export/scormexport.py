@@ -434,6 +434,8 @@ class ScormPage(Page):
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
+        if common.hasMagnifier(self.node):
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>\n'
         #html += u"</head>\n"
         if self.scormType == 'commoncartridge':
             html += u"</head>\n"

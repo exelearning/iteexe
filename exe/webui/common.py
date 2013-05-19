@@ -760,3 +760,9 @@ def hasGalleryIdevice(node):
         if idevice.klass == 'GalleryIdevice':
             return True
     return False
+
+def hasMagnifier(node):
+    for idevice in node.idevices:
+        if idevice.klass == 'ImageMagnifierIdevice':
+            return True
+    return False

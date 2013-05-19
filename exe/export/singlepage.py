@@ -134,6 +134,8 @@ class SinglePage(Page):
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
+        if common.hasMagnifier(self.node):
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>\n'
         if for_print:
             # include extra print-script for onload bit 
             html += u'<script type="text/javascript">\n'

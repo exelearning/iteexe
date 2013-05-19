@@ -963,8 +963,8 @@ class MagnifierElement(Element):
         """
         if not self.field.imageResource:
             self.field.setDefaultImage()
-        
-        html = self.renderMagnifier(
+        html=u'<script type="text/javascript" src="../templates/mojomagnify.js"></script>\n'
+        html += self.renderMagnifier(
                         '../%s/resources/%s' % (
                             self.field.idevice.parentNode.package.name,
                             self.field.imageResource.storageName),
@@ -1015,8 +1015,7 @@ class MagnifierElement(Element):
                 'bgcolor': '#888888',
                 'FlashVars': flashVars})
         """
-        html=u'<script type="text/javascript" src="%s"></script>\n' % magnifierFile
-        html +=u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
+        html =u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
         if field.width!="":
             html +=u' width="'+field.width+'"'
         if field.height!="":

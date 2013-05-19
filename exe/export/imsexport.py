@@ -229,6 +229,8 @@ class IMSPage(Page):
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
+        if common.hasMagnifier(self.node):
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>\n'
         html += u"</head>\n"
         html += u"<body class=\"exe-ims\">\n"
         html += u"<div id=\"outer\">\n"
