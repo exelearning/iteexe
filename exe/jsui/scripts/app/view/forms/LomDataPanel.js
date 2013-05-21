@@ -206,7 +206,7 @@ lifecycle_section_items = [
 	    helpfield( _('Name'), 'lom_lifeCycle_contribute1_entity1_name', null, null, true ),
 	    helpfield( _('Organization'), 'lom_lifeCycle_contribute1_entity1_organization', null, null, true ),
 	    helpfield( _('Email'), 'lom_lifeCycle_contribute1_entity1_email', null, null, true ),
-	    helpdate( _('Date'), 'lom_lifeCycle_contribute1_date_dateTime', null, null, true)
+	    helpdate( _('Date'), 'lom_lifeCycle_contribute1_date', null, null, true)
     ])
 ];
 
@@ -226,7 +226,7 @@ metadata_section_items = [
         helpfield( _('Name'), 'lom_metaMetadata_contribute1_entity1_name', null, null, true ),
         helpfield( _('Organization'), 'lom_metaMetadata_contribute1_entity1_organization', null, null, true ),
         helpfield( _('Email'), 'lom_metaMetadata_contribute1_entity1_email', null, null, true ),
-        helpdate( _('Date'), 'lom_metaMetadata_contribute1_date_dateTime', null, null, true)
+        helpdate( _('Date'), 'lom_metaMetadata_contribute1_date', null, null, true)
     ])
 ]
 
@@ -236,13 +236,13 @@ technical_section_items = [
     field( _('Location'), true, false, helpfield( null, 'lom_technical_location1', _('Location'), null, true)),
     field( _('Requirement'), true, false, [
         helpcombo( _('Type'), 'lom_technical_requirement1_orComposite1_type_value', null, null, true),
-        helpcombo( _('Name'), 'lom_technical_requirement1_orComposite1_name', null, null, true),
+        helpcombo( _('Name'), 'lom_technical_requirement1_orComposite1_name_value', null, null, true),
         helpfield( _('Minimum Version'), 'lom_technical_requirement1_orComposite1_minimumVersion', null, null, true),
         helpfield( _('Maximum Version'), 'lom_technical_requirement1_orComposite1_maximumVersion', null, null, true)
     ]),
     field( _('Installation Remarks'), true, false, langfield( helpfield( null, 'lom_technical_installationRemarks_string1', _('Installation Remarks'), null, true))),
     field( _('Other Platform Requirements'), true, false, langfield( helpfield( null, 'lom_technical_otherPlatformRequirements1', _('Other Platform Requirements'), null, true))),
-    durationfield(_('Duration'), false, false, 'lom_technical_duration_duration')
+    durationfield(_('Duration'), false, false, 'lom_technical_duration')
 ]
 
 educational_section_items = [
@@ -254,7 +254,7 @@ educational_section_items = [
     field( _('Context'), true, false, helpcombo( null, 'lom_educational1_context1_value', _('Context'), null, true)),
     field( _('Typical Age Range'), true, false, langfield( helpfield( null, 'lom_educational1_typicalAgeRange1_string1', _('Typical Age Range'), null, true))),
     field( _('Difficulty'), false, false, helpcombo( null, 'lom_educational1_difficulty_value', _('Difficulty'), null, true)),
-    durationfield(_('Typical Learning Time'), false, false, 'lom_educational1_typicalLearningTime_duration'),
+    durationfield(_('Typical Learning Time'), false, false, 'lom_educational1_typicalLearningTime'),
     field( _('Description'), true, false, langfield( helpfield( null, 'lom_educational1_description_string1', _('Description'), null, true))),
     field( _('Language'), true, true, helpcombo( null, 'lom_educational1_language1', _('Language'))),
     field( _('Cognitive Process'), true, false, helpcombo( null, 'lom_educational1_cognitiveProcess1_value', _('Cognitive Process'), null, true))
@@ -281,7 +281,7 @@ annotation_section_items = [
         helpfield( _('Organization'), 'lom_annotation1_entity_organization', null, null, true ),
         helpfield( _('Email'), 'lom_annotation1_entity_email', null, null, true )
     ]),
-    field( _('Date'), false, false, helpdate( null, 'lom_annotation1_date_dateTime', _('Date'), null, true)),
+    field( _('Date'), false, false, helpdate( null, 'lom_annotation1_date', _('Date'), null, true)),
     field( _('Description'), false, false, langfield( helparea( null, 'lom_annotation1_description_string1', _('Description'), null, true)))
 ]
 

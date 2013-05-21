@@ -186,10 +186,13 @@ class lomSub(supermod.lom):
 
         if 'valueOf_' in rootNode.keys():
             for key, value in rootNode.iteritems():
-                getattr(rootObj, 'set_' + key)(value)
+                if key != '__numberid__':
+                    getattr(rootObj, 'set_' + key)(value)
             return True
 
         for key, value in rootNode.iteritems():
+            if key == '__numberid__':
+                continue
             childclass = self.getFieldClass(key, rootObj)
             if isinstance(value, list):
                 for v in value:

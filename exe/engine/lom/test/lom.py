@@ -3,15 +3,180 @@
 import unittest
 import sys
 from exe.engine.lom import lomsubs
+import exe.jsui.propertiespage as pp
 
 
 class TestLOM(unittest.TestCase):
 
-    def setUp(self):
-        self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
+#    def setUp(self):
+#        self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
+
+    def test_getNameNum(self):
+        msg = 'Fail'
+        n, m = pp.get_nameNum('string1')
+        self.assertEqual(n, 'string', msg)
+        self.assertEqual(m, '1', msg)
+        n, m = pp.get_nameNum('string')
+        self.assertEqual(n, 'string', msg)
+        self.assertEqual(m, False, msg)
+        n, m = pp.get_nameNum('string12345')
+        self.assertEqual(n, 'string', msg)
+        self.assertEqual(m, '12345', msg)
+        n, m = pp.get_nameNum('12345')
+        self.assertEqual(n, False, msg)
+        self.assertEqual(m, '12345', msg)
+        n, m = pp.get_nameNum('')
+        self.assertEqual(n, False, msg)
+        self.assertEqual(m, False, msg)
+
+    def test_generateLom(self):
+        fields = {
+        # General
+        'lom_general_title_string1': ['Padres...y educadores'],
+        'lom_general_title_string1_language': ['es'],
+        'lom_general_title_string2': ['title 2'],
+        'lom_general_title_string2_language': ['en'],
+        'lom_general_identifier1_catalog': ['Plataforma Agrega'],
+        'lom_general_identifier1_entry': ['ODE-baa78a92-fd6d-311d-84a6-4eae460cce84'],
+        'lom_general_identifier2_catalog': ['Cat'],
+        'lom_general_identifier2_entry': ['es_2013030412_9152054'],
+        'lom_general_structure_value': ['4'],
+        'lom_general_aggregationLevel_value': ['2'],
+        #'lom_general_structure_source': ['LOM-ESv1.0'],
+        'lom_general_language1': ['es'],
+        'lom_general_language2': ['en'],
+        'lom_general_description1_string1': ['Descripcion 1'],
+        'lom_general_description1_string1_language': ['es'],
+        'lom_general_keyword1_string1': ['cedec, rea, padres, estudiar, alumnos, familia, fracaso escolar, escuela, orientación, estudios'],
+        'lom_general_keyword1_string1_language': ['es'],
+        #LifeCycle
+        'lom_lifeCycle_version_string1': ['Final'],
+        'lom_lifeCycle_status_value': ['final'],                  
+        'lom_lifeCycle_contribute1_role_value': ['publisher'],
+        'lom_lifeCycle_contribute1_entity1_name': ['mfuente'],
+        'lom_lifeCycle_contribute1_entity1_email': [' '],
+        'lom_lifeCycle_contribute1_entity1_organization': ['Plataforma Agrega'],
+        'lom_lifeCycle_contribute1_date': ['2013-03-04T15:20:56.212Z'],
+        'lom_lifeCycle_contribute1_date_description_string1': ['Fecha de publicación en Agrega'],
+        'lom_lifeCycle_contribute2_role_value': ['author'],
+        'lom_lifeCycle_contribute2_entity1_name': ['Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) '],
+        'lom_lifeCycle_contribute2_entity1_email': ['cedec@ite.educacion.es'],
+        'lom_lifeCycle_contribute2_entity1_organization': ['CeDeC'],
+        'lom_lifeCycle_contribute2_entity2_name': ['IES "Enrique Díez-Canedo"'],
+        'lom_lifeCycle_contribute2_entity2_email': ['ies.enriquediezcanedo@juntaextremadura.net'],
+        'lom_lifeCycle_contribute2_entity2_organization': ['IES "Enrique Díez-Canedo"'],
+        'lom_lifeCycle_contribute2_date': ['2013-03-04'],
+        'lom_lifeCycle_contribute2_date_description_string1': ['Fecha de publicación en Agrega'],
+        #MetaMetadata
+        'lom_metaMetadata_identifier1_entry': ['ODE-baa78a92-fd6d-311d-84a6-4eae460cce84'],
+        'lom_metaMetadata_identifier1_catalog': ['Plataforma Agrega'],
+        'lom_metaMetadata_metadataSchema1': ['LOM-ESv1.0'],
+        'lom_metaMetadata_language': ['es'],
+        'lom_metaMetadata_contribute2_role_value': ['creator'],
+        'lom_metaMetadata_contribute2_entity1_name': ['Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) '],
+        'lom_metaMetadata_contribute2_entity1_email': ['cedec@ite.educacion.es'],
+        'lom_metaMetadata_contribute2_entity1_organization': ['CeDeC'],
+        'lom_metaMetadata_contribute2_entity2_name': ['IES "Enrique Díez-Canedo"'],
+        'lom_metaMetadata_contribute2_entity2_email': ['ies.enriquediezcanedo@juntaextremadura.net'],
+        'lom_metaMetadata_contribute2_entity2_organization': ['IES "Enrique Díez-Canedo"'],
+        'lom_metaMetadata_contribute2_date': ['2013-03-04'],
+        'lom_metaMetadata_contribute2_date_description_string1': ['Fecha de publicación en Agrega'],
+        #Technical
+        'lom_technical_format1': ['text/html'],
+        'lom_technical_location1': ['http://agrega.educacion.es/ODE/es/es_2013030412_9152054'],
+        'lom_technical_requirement1_orComposite1_type_value': ['browser'],
+        'lom_technical_requirement1_orComposite1_name_value': ['any'],
+        'lom_technical_duration_years': ['1'],
+        'lom_technical_duration_months': ['2'],
+        'lom_technical_duration_days': ['3'],
+        'lom_technical_duration_hours': ['4'],
+        'lom_technical_duration_minutes': ['5'],
+        'lom_technical_duration_seconds': ['6'],                  
+        'lom_technical_duration_description_string1': ['duration time description'],
+        'lom_technical_duration_description_string1_language': ['es'],
+        #Educational
+        'lom_educational1_interactivityType_value': ['mixed'],
+        'lom_educational1_learningResourceType1_value': ['individual/cooperative/collaborative learning/working management tool'],
+        'lom_educational1_interactivityLevel_value': ['medium'],
+        'lom_educational1_intendedEndUserRole1_value': ['family'],
+        'lom_educational1_intendedEndUserRole2_value': ['learner'],
+        'lom_educational1_intendedEndUserRole3_value': ['subject matter expert'],
+        'lom_educational1_intendedEndUserRole4_value': ['general public'],
+        'lom_educational1_intendedEndUserRole5_value': ['tutor'],
+        'lom_educational1_intendedEndUserRole6_value': ['teacher'],
+        'lom_educational1_context1_value': ['teacher'],
+        'lom_educational1_context2_value': ['home'],
+        'lom_educational1_typicalAgeRange1_string1': ['35'],
+        'lom_educational1_typicalAgeRange1_string1_language': ['es'],
+        'lom_educational1_typicalLearningTime_description_string1': ['duration time description'],
+        'lom_educational1_typicalLearningTime_description_string1_language': ['es'],
+        'lom_educational1_typicalLearningTime_years': ['1'],
+        'lom_educational1_typicalLearningTime_months': ['2'],
+        'lom_educational1_typicalLearningTime_days': ['3'],
+        'lom_educational1_typicalLearningTime_hours': ['4'],
+        'lom_educational1_typicalLearningTime_minutes': ['5'],
+        'lom_educational1_typicalLearningTime_seconds': ['6'],
+        'lom_educational1_difficulty_value': ['medium'],
+        'lom_educational1_language1': ['es'],
+        'lom_educational1_language2': ['al'],
+        #Rights
+        'lom_rights_cost_value': ['no'],
+        'lom_rights_copyrightAndOtherRestrictions_value': ['other free software licenses'],
+        'lom_rights_description_string1': ['Licencia Creative Commons Reconocimiento Compartir Igual (by sa)'],
+        'lom_rights_description_string1_language': ['es'],                    
+        'lom_rights_access_accessType_value': ['universal'],
+        'lom_rights_access_description_string1': ['es_cnice_20080623,es_{nodo}_20080923,es_clm_20091103121523455,es_murcia_20080422121523455,es_castillayleon_201002241811,es_baleares_200907131205,es_na_90348943,es_canarias_20090114,es_aragon_20080930,es_larioja_20081107,es_cantabria_20081215,es_valencia_201101241416,galicia20091006,es_euskadi_20100423,es_extremadura_20111222,es_andalucia_20090324'],
+        'lom_rights_access_description_string1_language': [''],
+        #Relation
+        'lom_relation1_kind_value': ['ispartof'],
+        'lom_relation1_resource_identifier_catalog': ['Plataforma Agrega'],
+        'lom_relation1_resource_identifier_entry': ['ODE-baa78a92-fd6d-311d-84a6-4eae460cce84'],
+        'lom_relation1_resource_description1_string1_language': ['es'],
+        'lom_relation1_resource_description1_string1': ['Licencia Creative Commons Reconocimiento Compartir Igual (by sa)'],
+        'lom_relation2_kind_value': ['ispartof 2'],
+        'lom_relation2_resource_identifier_catalog': ['Plataforma Agrega 2'],
+        'lom_relation2_resource_identifier_entry': ['ODE-baa78a92-fd6d-311d-84a6-4eae460cce84 2'],
+        'lom_relation2_resource_description1_string1_language': ['es 2'],
+        'lom_relation2_resource_description1_string1': ['Licencia Creative Commons Reconocimiento Compartir Igual (by sa) 2'],
+        #Annotation
+        'lom_annotation1_entity_name': ['Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC)'],
+        'lom_annotation1_entity_email': ['cedec@ite.educacion.es'],
+        'lom_annotation1_entity_organization': ['CeDeC'],
+        'lom_annotation1_date': ['2013-03-04'],
+        'lom_annotation1_date_description_string1_language': ['es'],
+        'lom_annotation1_date_description_string1': ['Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.'],
+        'lom_annotation1_description_string1_language': ['es'],
+        'lom_annotation1_description_string1': ['Recurso educativo abierto (REA) que ofrece a los padres orientaciones para apoyar a sus hijos en el estudio. Se incluyen contenidos, recursos de la Red y testimonios de padres, alumnos y profesores de la comunidad educativa del IES "Enrique Díez-Canedo". Este REA forma parte del proyecto "Saber estudiar", desarrollado por el CeDeC.'],
+        #Classification
+        'lom_classification1_purpose_value': ['educational level'],
+        'lom_classification1_keyword1_string1_language': ['es'],
+        'lom_classification1_keyword1_string1': ['cedec, rea, padres, estudiar, alumnos, familia, fracaso escolar, escuela, orientación, estudios'],
+        'lom_classification1_taxonPath1_source_string1_language': ['es'],
+        'lom_classification1_taxonPath1_source_string1': ['Nivel educativo LOM-ESv1.0'],
+        'lom_classification1_taxonPath1_taxon1_id': ['3'],
+        'lom_classification1_taxonPath1_taxon1_entry_string1_language': ['es'],
+        'lom_classification1_taxonPath1_taxon1_entry_string1': ['Educación Primaria'],
+        'lom_classification1_taxonPath2_source_string1_language': ['es'],
+        'lom_classification1_taxonPath2_source_string1': ['Nivel educativo LOM-ESv1.0'],
+        'lom_classification1_taxonPath2_taxon1_id': ['4'],
+        'lom_classification1_taxonPath2_taxon1_entry_string1_language': ['es'],
+        'lom_classification1_taxonPath2_taxon1_entry_string1': ['Educación Secundaria Obligatoria'],
+        'lom_classification1_taxonPath3_source_string1_language': ['es'],
+        'lom_classification1_taxonPath3_source_string1': ['Nivel educativo LOM-ESv1.0'],
+        'lom_classification1_taxonPath3_taxon1_id': ['8'],
+        'lom_classification1_taxonPath3_taxon1_entry_string1_language': ['es'],
+        'lom_classification1_taxonPath3_taxon1_entry_string1': ['Formación Profesional'],                   
+    	}
+        lom = pp.processLom(fields)
+        rootLom = lomsubs.lomSub.factory()
+        rootLom.addChilds(lom)        
+        rootLom.export(sys.stdout, 0)       
+        #print lom
+
 
     def test_encode_decode(self):
         from exe.engine.persistxml import encodeObjectToXML, decodeObjectFromXML
+        self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
         xml = encodeObjectToXML(self.root)
         root, success = decodeObjectFromXML(xml)
         self.assertTrue(success)
@@ -38,8 +203,9 @@ class TestLOM(unittest.TestCase):
                                                         ]
                                       },
                            'metaMetadata': {'identifier': [{'catalog': 'Plataforma Agrega', 'entry': 'ODE-baa78a92-fd6d-311d-84a6-4eae460cce84'}],
-                                            'contribute': [{'role': {'source' :'LOM-ESv1.0', 'value': 'creator'}, 'entity': ['BEGIN:VCARD VERSION:3.0 FN:Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) EMAIL;TYPE=INTERNET:cedec@ite.educacion.es ORG:CeDeC END:VCARD',
-                                                                                                          'BEGIN:VCARD VERSION:3.0 FN:IES "Enrique Díez-Canedo" EMAIL;TYPE=INTERNET:ies.enriquediezcanedo@juntaextremadura.net ORG:IES "Enrique Díez-Canedo" END:VCARD'], 
+                                            'contribute': [{'role': {'source' :'LOM-ESv1.0', 'value': 'creator'},
+                                                            'entity': ['BEGIN:VCARD VERSION:3.0 FN:Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) EMAIL;TYPE=INTERNET:cedec@ite.educacion.es ORG:CeDeC END:VCARD',
+                                                                       'BEGIN:VCARD VERSION:3.0 FN:IES "Enrique Díez-Canedo" EMAIL;TYPE=INTERNET:ies.enriquediezcanedo@juntaextremadura.net ORG:IES "Enrique Díez-Canedo" END:VCARD'], 
                                                            'date': {'dateTime': '2013-03-04', 'description': {'string': [{'language': 'es','valueOf_':'Fecha de publicación en Agrega'}]}}}],
                                             'metadataSchema': ['LOM-ESv1.0'],
                                             'language': 'es',                       
@@ -99,7 +265,6 @@ class TestLOM(unittest.TestCase):
                           })        
         rootLom.export(sys.stdout, 0)
         
-
 
 if __name__ == '__main__':
     unittest.main()
