@@ -167,7 +167,7 @@ class TestLOM(unittest.TestCase):
         'lom_classification1_taxonPath3_taxon1_entry_string1_language': ['es'],
         'lom_classification1_taxonPath3_taxon1_entry_string1': ['Formación Profesional'],                   
     	}
-        lom = pp.processLom(fields)
+        lom = pp.processForm2Lom(fields)
         rootLom = lomsubs.lomSub.factory()
         rootLom.addChilds(lom)        
         rootLom.export(sys.stdout, 0)       

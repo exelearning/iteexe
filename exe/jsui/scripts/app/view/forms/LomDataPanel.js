@@ -241,7 +241,7 @@ technical_section_items = [
         helpfield( _('Maximum Version'), 'lom_technical_requirement1_orComposite1_maximumVersion', null, null, true)
     ]),
     field( _('Installation Remarks'), true, false, langfield( helpfield( null, 'lom_technical_installationRemarks_string1', _('Installation Remarks'), null, true))),
-    field( _('Other Platform Requirements'), true, false, langfield( helpfield( null, 'lom_technical_otherPlatformRequirements1', _('Other Platform Requirements'), null, true))),
+    field( _('Other Platform Requirements'), true, false, langfield( helpfield( null, 'lom_technical_otherPlatformRequirements_string1', _('Other Platform Requirements'), null, true))),
     durationfield(_('Duration'), false, false, 'lom_technical_duration')
 ]
 

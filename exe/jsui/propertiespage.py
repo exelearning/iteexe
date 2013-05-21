@@ -64,7 +64,7 @@ def get_nameNum(name):
     return n, num
 
 
-def processLom(fields):
+def processForm2Lom(fields):
     import re
     lomdict = {}
     for field, val in fields.iteritems():
@@ -185,6 +185,11 @@ def processLom(fields):
     return lomdict
 
 
+def processLom2Form(form, lom):
+    data = {}
+    return data
+
+
 # ===========================================================================
 class PropertiesPage(Renderable, Resource):
     """
@@ -230,14 +235,14 @@ class PropertiesPage(Renderable, Resource):
                          "to a valid object attribute" % fieldId)
 
     def setLom(self, fields):
-        lom = processLom(fields)
+        lom = processForm2Lom(fields)
         rootLom = lomsubs.lomSub.factory()
         rootLom.addChilds(lom)
         self.package.lom = rootLom
         return True
 
     def setLomes(self, fields):
-        lom = processLom(fields)
+        lom = processForm2Lom(fields)
         rootLom = lomsubs.lomSub.factory()
         rootLom.addChilds(lom)
         self.package.lomes = rootLom
@@ -248,14 +253,17 @@ class PropertiesPage(Renderable, Resource):
 
         data = {}
         try:
-            for key in request.args.keys():
-                if key != "_dc":
-                    obj, name = self.fieldId2obj(key)
-                    if key in self.imgFieldNames:
-                        if getattr(obj, name):
-                            data[key] = getattr(obj, name).basename()
-                    else:
-                        data[key] = getattr(obj, name)
+            if 'lom_general_title_string1' in request.args.keys():
+                data = processLom2Form(request.args.keys(), self.package.lom)
+            else:
+                for key in request.args.keys():
+                    if key != "_dc":
+                        obj, name = self.fieldId2obj(key)
+                        if key in self.imgFieldNames:
+                            if getattr(obj, name):
+                                data[key] = getattr(obj, name).basename()
+                        else:
+                            data[key] = getattr(obj, name)
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get properties")})

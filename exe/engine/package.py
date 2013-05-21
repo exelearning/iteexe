@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+
 """
 Package represents the collection of resources the user is editing
 i.e. the "package".
@@ -39,6 +40,7 @@ from twisted.spread.jelly      import Jellyable, Unjellyable
 from exe.engine.beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
+from exe.engine.lom import lomsubs
 
 log = logging.getLogger(__name__)
 
@@ -418,7 +420,7 @@ class Package(Persistable):
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self.lomEs         = LomES()
-        self.lom           = Lom()
+        self.lom           = lomsubs.lomSub.factory()
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
