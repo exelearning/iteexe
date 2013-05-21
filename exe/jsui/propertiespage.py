@@ -45,21 +45,24 @@ def get_nameNum(name):
     i = len(name) - 1
     while c and i >= 0:
         c = name[i].isdigit()
-        if c and i >0: i -= 1
-        else: c = False
-    if i==0:
+        if c and i > 0:
+            i -= 1
+        else:
+            c = False
+    if i == 0:
         n = False
     else:
-        n = name[:i+1]
+        n = name[:i + 1]
     if i == 0:
         num = name
-    elif i < len(name) - 1:        
-        num = name[i+1:]
+    elif i < len(name) - 1:
+        num = name[i + 1:]
     else:
         num = False
     if n == '':
         n = False
     return n, num
+
 
 def processLom(fields):
     import re
@@ -76,23 +79,23 @@ def processLom(fields):
             index = False
             parentindex = False
             value = {}
-            if node[-1].isdigit():                
+            if node[-1].isdigit():
                 name, num = get_nameNum(node)
                 node = name
                 if name not in rootvalue:
-                    value={'__numberid__': num}
+                    value = {'__numberid__': num}
                     index = 0
                 else:
                     index = get_nodeFromList(rootvalue[name], num)
-                    if  isinstance(index, bool):                
+                    if  isinstance(index, bool):
                         value = {'__numberid__': num}
-                        index = len(rootvalue)                    
+                        index = len(rootvalue)
             else:
                 value = {}
             if isinstance(rootvalue, list):
-                name, num = get_nameNum(nodes[i-1])
+                name, num = get_nameNum(nodes[i - 1])
                 parentindex = get_nodeFromList(rootvalue, num)
-                rootparentparent = rootparent               
+                rootparentparent = rootparent
                 rootparent = rootvalue
                 if not isinstance(index, bool):
                     if node not in rootvalue[parentindex]:
@@ -101,11 +104,11 @@ def processLom(fields):
                     else:
                         if '__numberid__' in value:
                             b = get_nodeFromList(rootvalue[parentindex][node], value['__numberid__'])
-                            if isinstance(b, bool):                                                             
-                                rootvalue[parentindex][node].append(value)                    
+                            if isinstance(b, bool):
+                                rootvalue[parentindex][node].append(value)
                 else:
-                    if node not in rootvalue[parentindex]:                
-                        rootvalue[parentindex][node] = value                
+                    if node not in rootvalue[parentindex]:
+                        rootvalue[parentindex][node] = value
                 rootvalue = rootvalue[parentindex][node]
             else:
                 if not isinstance(index, bool):
@@ -115,23 +118,23 @@ def processLom(fields):
                     else:
                         if '__numberid__' in value:
                             b = get_nodeFromList(rootvalue[node], value['__numberid__'])
-                            if isinstance(b, bool):                                                             
-                                rootvalue[node].append(value)                    
+                            if isinstance(b, bool):
+                                rootvalue[node].append(value)
                 else:
                     if node not in rootvalue:
                         rootvalue[node] = value
-                rootparentparent = rootparent                        
+                rootparentparent = rootparent
                 rootparent = rootvalue
-                rootvalue = rootvalue[node]                
-            i += 1           
-            
+                rootvalue = rootvalue[node]
+            i += 1
+
         pnodes = [node]
-        if node == 'value':            
+        if node == 'value':
             pnodes.append('source')
-        for node in pnodes:               
+        for node in pnodes:
             if node == 'source':
-                val = 'LOM-ESv1.0'    
-            if  isinstance(rootvalue, list):                    
+                val = 'LOM-ESv1.0'
+            if  isinstance(rootvalue, list):
                 if node.startswith('string'):
                     rootvalue = rootvalue[index]
                     rootvalue['valueOf_'] = val
@@ -145,28 +148,28 @@ def processLom(fields):
                         rootparent[node].append(val)
                         for e in rootparent[node]:
                             if isinstance(e, dict):
-                                rootparent[node].remove(e)                    
+                                rootparent[node].remove(e)
             else:
-                if isinstance(rootparent, list):                    
+                if isinstance(rootparent, list):
                     if re.findall("_date$", field):
-                        rootparent[parentindex][node]['dateTime'] = val 
+                        rootparent[parentindex][node]['dateTime'] = val
                     elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
                         rootparent[parentindex][node] = val
                         if 'name' in rootparent[parentindex] and 'organization' in rootparent[parentindex] and 'email' in rootparent[parentindex]:
                             val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
-                            %(rootparent[parentindex]['name'], rootparent[parentindex]['email'], rootparent[parentindex]['organization'])
-                            rootparent.pop(parentindex)                            
+                            % (rootparent[parentindex]['name'], rootparent[parentindex]['email'], rootparent[parentindex]['organization'])
+                            rootparent.pop(parentindex)
                             rootparent.append(val2)
                     else:
                         rootparent[parentindex][node] = val
-                else:                    
+                else:
                     if re.findall("_date$", field):
                         rootparent[node]['dateTime'] = val
                     elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
                         rootparent[node] = val
                         if 'name' in rootparent and 'organization' in rootparent and 'email' in rootparent:
                             val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
-                            %(rootparent['name'], rootparent['email'], rootparent['organization'])
+                            % (rootparent['name'], rootparent['email'], rootparent['organization'])
                             rootparentparent[parentindex]['entity'] = val2
                     elif re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
                         rootparent[node] = val
@@ -179,10 +182,7 @@ def processLom(fields):
                                 del rootparent[key]
                     else:
                         rootparent[node] = val
-                            
     return lomdict
-
-
 
 
 # ===========================================================================
