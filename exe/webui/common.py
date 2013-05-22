@@ -47,16 +47,34 @@ def copyFileIfNotInStyle(file, e, outputDir):
     f = (e.imagesDir/file)
     if not (outputDir/file).exists():
         f.copyfile(outputDir/file)
+        
+def getExportDocType():
+    return "XHTML"
 
 def docType():
+    dT = getExportDocType()
     """Generates the documentation type string"""
-    return (u'<?xml version="1.0" encoding="UTF-8"?>\n'
-            u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-            u'Transitional//EN" '
-            u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
+    if dT == "HTML5":
+        return '<!doctype html>'
+    else:
+        return (u'<?xml version="1.0" encoding="UTF-8"?>'
+                u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
+                u'Transitional//EN" '
+                u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">')
             
 def ideviceHeader(e, style, mode):
-    #themePath = Path(G.application.config.webDir).joinpath("style", style)
+    dT = getExportDocType()
+    #Default HTML tags:
+    sectionTag = "div"
+    articleTag = "div"
+    headerTag = "div"
+    titleTag = "h2"   
+    if dT == "HTML5":
+        sectionTag = "section"
+        articleTag = "article"
+        headerTag = "header"
+        titleTag = "h1"
+        
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
     themeHasXML = False
@@ -72,21 +90,20 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
     if e.idevice.emphasis > 0:
-        w2 = '<div class="iDevice_inner">'
-        w2 += '<div class="iDevice_content_wrapper">'
+        w2 = '<'+sectionTag+' class="iDevice_inner">'
+        w2 += '<'+sectionTag+' class="iDevice_content_wrapper">'
         eEm = ' em_iDevice'
     
-    
     if mode=="preview" and themeHasXML:
-        w += '<div class="iDevice_wrapper '+e.idevice.klass+eEm+'">'
+        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'">'
     
-    w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
+    w += u"<"+articleTag+" class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
         w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
     w += ">"
     
     if e.idevice.emphasis > 0:
-        h += '<div class="iDevice_header"'
+        h += '<'+headerTag+' class="iDevice_header"'
         if e.idevice.icon:
             displayIcon = True
             # The following lines should be replaced by something like:
@@ -106,10 +123,10 @@ def ideviceHeader(e, style, mode):
             if (e.idevice.icon+"Idevice") != e.idevice.klass:
                 if myIcon.exists() and displayIcon:
                     h += ' style="background-image:url('+iconPath+')"'
-        o += u"<h2 class=\"iDeviceTitle\">"+e.idevice.title+"</h2>"
+        o += u"<"+titleTag+" class=\"iDeviceTitle\">"+e.idevice.title+"</"+titleTag+">"
         h += '>'
-        h += u'<h2 class="iDeviceTitle">'+e.idevice.title+'</h2>'
-        h += '</div>'
+        h += u'<'+titleTag+' class="iDeviceTitle">'+e.idevice.title+'</'+titleTag+'>'
+        h += '</'+headerTag+'>'
     
     if e.idevice.emphasis <= 0:
         h = ""
@@ -120,7 +137,13 @@ def ideviceHeader(e, style, mode):
         return w+o+w2
 
 def ideviceFooter(e, style, mode):
-    #themePath = Path(G.application.config.webDir).joinpath("style", style)
+    dT = getExportDocType()
+    #Default HTML tags:
+    sectionTag = "div"
+    articleTag = "div"
+    if dT == "HTML5":
+        sectionTag = "section"
+        articleTag = "article"
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
     themeHasXML = False
@@ -128,13 +151,13 @@ def ideviceFooter(e, style, mode):
         themeHasXML = True
     h = ''
     if e.idevice.emphasis > 0:
-        h = "</div>" # Close iDevice_content_wrapper
-        h += "</div>" # Close iDevice_inner
+        h = "</"+sectionTag+">" # Close iDevice_content_wrapper
+        h += "</"+sectionTag+">" # Close iDevice_inner
     if mode=="preview":
         h += e.renderViewButtons()
         if themeHasXML:
-            h += "</div>" # Close extra div (e.idevice.klass)
-    h += "</div>" # Close iDevice
+            h += "</"+sectionTag+">" # Close extra div (e.idevice.klass)
+    h += "</"+articleTag+">" # Close iDevice
     return h
 
 def header(style=u'default'):

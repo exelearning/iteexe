@@ -55,15 +55,16 @@ class WebsitePage(Page):
         """
         Returns an XHTML string rendering this page.
         """
-    
-        html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-        html += u'Transitional//EN" '
-        html += u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
-        #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            html = '<!doctype html>'
+            sectionTag = "section"
+        else:
+            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
         lenguaje = G.application.config.locale
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<head>\n"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         if common.hasWikipediaIdevice(self.node):
@@ -87,6 +88,7 @@ class WebsitePage(Page):
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />\n'
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
@@ -110,7 +112,7 @@ class WebsitePage(Page):
                     html += "background-repeat: no-repeat;"
 
                 html += u"\""
-            html += u">\n"
+            html += u">"
             html += escape(self.node.package.title)
             html += u"</div>\n"
         else:
@@ -136,7 +138,7 @@ class WebsitePage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<div class="iDevice_wrapper %s%s" id="id%s">' %  (idevice.klass, e, idevice.id)
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">' %  (idevice.klass, e, idevice.id)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -146,7 +148,7 @@ class WebsitePage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(self.node.package,
                         block.renderView(style))
-                html += u'</div>\n'     # iDevice div
+                html += u'</'+sectionTag+'>\n' # iDevice div
         
         html += "<div id='bottomPagination'>"
         html += self.getNavigationLink(prevPage, nextPage)

@@ -404,6 +404,10 @@ class ScormPage(Page):
         """
         Returns an XHTML string rendering this page.
         """
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
         html  = common.docType()
         #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         lenguaje = G.application.config.locale
@@ -460,7 +464,7 @@ class ScormPage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<div class="iDevice_wrapper %s%s" id="id%s">\n' % (idevice.klass,
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">\n' % (idevice.klass,
                     idevice.id)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
@@ -470,7 +474,7 @@ class ScormPage(Page):
                     html += block.renderJavascriptForScorm()
                 html += self.processInternalLinks(
                     block.renderView(self.node.package.style))
-                html += u'</div>\n'     # iDevice div
+                html += u'</'+sectionTag+'>\n' # iDevice div
 
         html += u"</div>\n"
         html += u"</div>\n"

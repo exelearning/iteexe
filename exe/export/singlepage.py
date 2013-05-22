@@ -112,10 +112,12 @@ class SinglePage(Page):
             return hasWikipedia
         
         hasWikipedia = hasWikipediaIdevice(self.node)
-        html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-        html += u'Transitional//EN" '
-        html += u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
+        dT = common.getExportDocType()
+        if dT == "HTML5":
+            html = '<!doctype html>'
+        else:
+            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
         lenguaje = G.application.config.locale
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
@@ -131,6 +133,7 @@ class SinglePage(Page):
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />\n'
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
@@ -152,6 +155,11 @@ class SinglePage(Page):
         """
         Returns an XHTML string for this node and recurse for the children
         """
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+        
         html = ""
         html += '<div class="node">\n'
         html += '  <div class=\"nodeDecoration\">'
@@ -166,7 +174,7 @@ class SinglePage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""            
-                html += u'<div class="iDevice_wrapper %s%s" id="id%s">' % (idevice.klass, e, (idevice.id+"-"+node.id))
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">' % (idevice.klass, e, (idevice.id+"-"+node.id))
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -175,9 +183,9 @@ class SinglePage(Page):
                     html += block.renderJavascriptForWeb()
                 html += self.processInternalLinks(block.renderView(style))
                 html = html.replace('href="#auto_top"', 'href="#"')
-                html += u'</div>\n'     # iDevice div
+                html += u'</'+sectionTag+'>\n' # iDevice div
 
-        html += '</div>\n'          # node div
+        html += '</div>\n' # node div
 
         for child in node.children:
             html += self.renderNode(child, nivel+1)

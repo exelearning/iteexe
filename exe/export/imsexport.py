@@ -200,6 +200,10 @@ class IMSPage(Page):
         """
         Returns an XHTML string rendering this page.
         """
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"        
         html  = common.docType()
         #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         lenguaje = G.application.config.locale
@@ -246,7 +250,7 @@ class IMSPage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<div class="iDevice_wrapper %s%s" id="id%s">\n' % (idevice.klass, e, idevice.id)
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">\n' % (idevice.klass, e, idevice.id)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -256,7 +260,7 @@ class IMSPage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(
                         block.renderView(self.node.package.style))
-            html += u'</div>\n'     # iDevice div
+            html += u'</'+sectionTag+'>\n' # iDevice div
 
         html += u"</div>\n"
         html += self.renderLicense()
