@@ -55,7 +55,9 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
     extend: 'eXe.view.forms.PreserveScrollFieldSet',
     alias: 'widget.insertdelfieldset',
     
-    lastId: 1,
+    statics: {
+        lastId: 2
+    },
 
     initComponent: function() {
         var me = this,
@@ -89,18 +91,21 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                                             listeners: {
                                                 afterrender: function(c) {
                                                     c.el.on('click', function(a) {
-                                                        var item = this.item, i;
+                                                        var item = this.item, i, re = new RegExp('\\{1\\}');
                                                         if (item.xtype === "container") {
                                                             for (i = 0; i < item.items.length; i++)
-                                                                item.items[i].item.inputId = item.items[i].item.inputId + String(this.lastId++);
+                                                                item.items[i].item.inputId = item.items[i].item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId));
+                                                            eXe.view.forms.InsertDeleteFieldSet.lastId++;
                                                         }
                                                         else if (Ext.isArray(item)) {
                                                             for (i = 0; i<item.length; i++)
-                                                                item[i].item.inputId = item[i].item.inputId + String(this.lastId++);
+                                                                item[i].item.inputId = item[i].item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId));
+                                                                eXe.view.forms.InsertDeleteFieldSet.lastId++;
                                                         }
+                                                        else if (item.xtype === "langcontainer")
+                                                            item.item.item.inputId = item.item.item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId++));
                                                         else
-                                                            item.item.inputId = item.item.inputId + String(this.lastId++);
-                                                        items[0].items[0].items[0].items = item;
+                                                            item.item.inputId = item.item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId++));
                                                         this.preserveScroll();
                                                         this.add(items);
                                                         this.restoreScroll();
