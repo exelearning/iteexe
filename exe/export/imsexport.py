@@ -170,6 +170,10 @@ class Manifest(object):
     <file href="content.css"/>""" % filename
         self.resStr += "\n"
         fileStr = ""
+        
+        dT = common.getExportDocType()
+        if dT == "HTML5":
+            self.resStr += '    <file href="exe_html5.js"/>\n'
 
         for resource in page.node.getResources():
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
