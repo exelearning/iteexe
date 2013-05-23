@@ -55,17 +55,22 @@ class WebsitePage(Page):
         """
         Returns an XHTML string rendering this page.
         """
+        lenguaje = G.application.config.locale
         dT = common.getExportDocType()
         sectionTag = "div"
+        headerTag = "div"
+        navTag = "div"
         if dT == "HTML5":
             html = '<!doctype html>'
+            html += '<html lang="'+lenguaje+'">'
             sectionTag = "section"
+            headerTag = "header"
+            navTag = "nav"
         else:
-            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
-        lenguaje = G.application.config.locale
-        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
+            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+        html += u"<head>"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"        
@@ -84,24 +89,24 @@ class WebsitePage(Page):
                 html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>\n" 
-        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />\n"
+        html += u" </title>" 
+        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
-        html += u" charset=utf-8\" />\n";
-        html += '<meta name="generator" content="eXeLearning - exelearning.net" />\n'
+        html += u" charset=utf-8\" />";
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
         if dT == "HTML5":
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->\n'
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'
         if common.hasGalleryIdevice(self.node):
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'
+        html += u'<script type="text/javascript" src="common.js"></script>'
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>\n'
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'
         html += u"</head>\n"
-        html += u"<body>\n"
-        html += u"<div id=\"content\">\n"
+        html += u"<body>"
+        html += u"<"+sectionTag+" id=\"content\">"
 
         if self.node.package.backgroundImg or self.node.package.title:
-            html += u"<div id=\"header\" "
+            html += u"<"+headerTag+" id=\"header\" "
 
             if self.node.package.backgroundImg:
                 html += u" style=\"background-image: url("
@@ -116,24 +121,24 @@ class WebsitePage(Page):
                 html += u"\""
             html += u">"
             html += escape(self.node.package.title)
-            html += u"</div>\n"
+            html += u"</"+headerTag+">"
         else:
-            html += "<div id=\"emptyHeader\"></div>"
+            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"
         
         # add left navigation html
-        html += u"<div id=\"siteNav\">\n"
+        html += u"<"+navTag+" id=\"siteNav\">"
         html += self.leftNavigationBar(pages)
-        html += u"</div>\n"
-        html += "<div id='topPagination'>"
+        html += u"</"+navTag+">"
+        html += "<"+sectionTag+" id='topPagination'>"
         html += self.getNavigationLink(prevPage, nextPage)
-        html += "</div>"
-        html += u"<div id=\"main\">\n"
+        html += "</"+sectionTag+">"
+        html += u"<"+sectionTag+" id=\"main\">"
 
         style = self.node.package.style
-        html += '<div id=\"nodeDecoration\">'
+        html += '<'+headerTag+' id=\"nodeDecoration\">'
         html += '<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
-        html += '</h1></div>\n'
+        html += '</h1></'+headerTag+'>'
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
@@ -150,17 +155,17 @@ class WebsitePage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(self.node.package,
                         block.renderView(style))
-                html += u'</'+sectionTag+'>\n' # iDevice div
+                html += u'</'+sectionTag+'>' # iDevice div
         
-        html += "<div id='bottomPagination'>"
+        html += "<"+sectionTag+" id='bottomPagination'>"
         html += self.getNavigationLink(prevPage, nextPage)
-        html += "</div>"
+        html += "</"+sectionTag+">"
         # writes the footer for each page 
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</div>\n"
-        html += u"</div>\n"
-        html += u"</body></html>\n"
+        html += u"</"+sectionTag+">" # /main
+        html += u"</"+sectionTag+">" # /content
+        html += u"</body></html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
@@ -187,7 +192,7 @@ class WebsitePage(Page):
             depth = 0
         nodePath = [None] + list(self.node.ancestors()) + [self.node]
 
-        html = "<ul>\n"
+        html = "<ul>"
         
         for page in pages:
             if page.node.parent == None and not inSameLevelTitle:
@@ -200,11 +205,11 @@ class WebsitePage(Page):
 
                 if page.node.parent not in nodePath:
                     html += " class=\"other-section\""
-                html += ">\n"
+                html += ">"
                 depth += 1
 
             while depth > page.depth:
-                html += "</ul>\n</li>\n"
+                html += "</ul></li>"
                 depth -= 1
             
             if page.node == self.node:
@@ -239,12 +244,12 @@ class WebsitePage(Page):
                 html += "</li>"
 
             if not page.node.children and page.node.id!="0":
-                html += "</li>\n"
+                html += "</li>"
 
         if excludeTitle or inSameLevelTitle:
-            html += "</ul>\n"
+            html += "</ul>"
         else:
-            html += "</ul></li></ul>\n"
+            html += "</ul></li></ul>"
         
         return html
         
@@ -253,7 +258,11 @@ class WebsitePage(Page):
         """
         return the next link url of this page
         """
-        html = "<div class=\"pagination noprt\">"
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+        html = "<"+sectionTag+" class=\"pagination noprt\">"
 
         if prevPage:
             html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
@@ -265,7 +274,7 @@ class WebsitePage(Page):
             html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
             html += " %s<span> &raquo;</span></a>" % _('Next')
             
-        html += "</div>\n"
+        html += "</"+sectionTag+">"
         return html
 
 

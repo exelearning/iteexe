@@ -23,6 +23,7 @@ Export Pages functions
 
 import logging
 from urllib                   import quote
+from exe.webui                import common
 
 
 log = logging.getLogger(__name__)
@@ -89,10 +90,15 @@ class Page(object):
         """
         Returns an XHTML string rendering the footer.
         """
+        dT = common.getExportDocType()
+        footerTag = "div"
+        if dT == "HTML5":
+            footerTag = "footer"       
+        
         html = ""
         if self.node.package.footer <> "":
-            html += '<div id="siteFooter">'
-            html += self.node.package.footer + "</div>"
+            html += '<'+footerTag+' id="siteFooter">'
+            html += self.node.package.footer + "</"+footerTag+">"
             
         return html
 
