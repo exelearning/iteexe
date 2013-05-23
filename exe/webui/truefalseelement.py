@@ -245,11 +245,11 @@ class TrueFalseElement(object):
 	else:
 		aux = self.question_feedback.field.content_wo_resourcePaths
 #        html += u'display: none;" even_steven="%s">' % (str(to_even1))
-	html += u'style="display: none;"><strong>'
+	html += u' style="display:none"><strong>'
         html += feedbackStr1 + '</strong> ' + aux + '</div>\n'
         html += u'<div id="s%s" class="feedback"' % feedbackId2
 #        html += u'display: none;" even_steven="%s">' % (str(to_even2))
-	html += u'style="display: none;"><strong>'
+	html += u' style="display:none"><strong>'
         html += feedbackStr2 + '</strong> ' + aux + '</div>\n'
 
 #        html += u'<div id="sfbk%s" class="feedback"' % self.id
