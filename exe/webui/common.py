@@ -49,6 +49,7 @@ def copyFileIfNotInStyle(file, e, outputDir):
         f.copyfile(outputDir/file)
         
 def getExportDocType():
+    # If HTML5 webui/scripts/exe_html5.js has to be in the package resources list
     return "XHTML"
 
 def docType():

@@ -230,6 +230,8 @@ class IMSPage(Page):
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
+        if dT == "HTML5":
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->\n'        
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
@@ -358,6 +360,10 @@ class IMSExport(object):
         # Copy the scripts
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
+        dT = common.getExportDocType()
+        if dT == "HTML5":
+            jsFile = (self.scriptsDir/'exe_html5.js')
+            jsFile.copyfile(outputDir/'exe_html5.js')
         
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',

@@ -435,6 +435,8 @@ class ScormPage(Page):
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
+        if dT == "HTML5":
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->\n'
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="common.js"></script>\n'
@@ -606,6 +608,10 @@ class ScormExport(object):
         self.styleDir.copylist(styleFiles, outputDir)
 
         # Copy the scripts
+        dT = common.getExportDocType()
+        if dT == "HTML5":
+            jsFile = (self.scriptsDir/'exe_html5.js')
+            jsFile.copyfile(outputDir/'exe_html5.js')
         if self.scormType == "commoncartridge":
             jsFile = (self.scriptsDir/'common.js')
             jsFile.copyfile(outputDir/'common.js')

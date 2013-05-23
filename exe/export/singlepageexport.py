@@ -105,6 +105,10 @@ class SinglePageExport(object):
         # copy script files.
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(self.outputDir/'common.js')
+        dT = common.getExportDocType()
+        if dT == "HTML5":
+            jsFile = (self.scriptsDir/'exe_html5.js')
+            jsFile.copyfile(self.outputDir/'exe_html5.js')
 
         #JR Metemos los reproductores necesarios
         self.compruebaReproductores(self.page.node)
