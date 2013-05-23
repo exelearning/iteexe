@@ -19,6 +19,7 @@
 # ===========================================================================
 from exe.engine.lom import lomsubs
 
+
 """
 PropertiesPage maps properties forms to Package options
 """
@@ -68,125 +69,134 @@ def processForm2Lom(fields):
     import re
     lomdict = {}
     for field, val in fields.iteritems():
-        val = val[0]
-        nodes = field.split('_')
-        nodes.remove('lom')
-        rootvalue = lomdict
-        i = 0
-        rootparentparent = False
-        rootparent = False
-        for node in nodes:
-            index = False
-            parentindex = False
-            value = {}
-            if node[-1].isdigit():
-                name, num = get_nameNum(node)
-                node = name
-                if name not in rootvalue:
-                    value = {'__numberid__': num}
-                    index = 0
-                else:
-                    index = get_nodeFromList(rootvalue[name], num)
-                    if  isinstance(index, bool):
-                        value = {'__numberid__': num}
-                        index = len(rootvalue)
-            else:
+        #print field
+        if not field.startswith('lom_'):
+            continue
+        else:
+            val = val[0]
+            nodes = field.split('_')
+            nodes.remove('lom')
+            rootvalue = lomdict
+            i = 0
+            rootparentparent = False
+            rootparent = False
+            for node in nodes:
+                index = False
+                parentindex = False
                 value = {}
-            if isinstance(rootvalue, list):
-                name, num = get_nameNum(nodes[i - 1])
-                parentindex = get_nodeFromList(rootvalue, num)
-                rootparentparent = rootparent
-                rootparent = rootvalue
-                if not isinstance(index, bool):
-                    if node not in rootvalue[parentindex]:
-                        rootvalue[parentindex][node] = []
-                        rootvalue[parentindex][node].append(value)
+                if node[-1].isdigit():
+                    name, num = get_nameNum(node)
+                    node = name
+                    if name not in rootvalue:
+                        value = {'__numberid__': num}
+                        index = 0
                     else:
-                        if '__numberid__' in value:
-                            b = get_nodeFromList(rootvalue[parentindex][node], value['__numberid__'])
-                            if isinstance(b, bool):
-                                rootvalue[parentindex][node].append(value)
+                        index = get_nodeFromList(rootvalue[name], num)
+                        if  isinstance(index, bool):
+                            value = {'__numberid__': num}
+                            index = len(rootvalue)
                 else:
-                    if node not in rootvalue[parentindex]:
-                        rootvalue[parentindex][node] = value
-                rootvalue = rootvalue[parentindex][node]
-            else:
-                if not isinstance(index, bool):
-                    if node not in rootvalue:
-                        rootvalue[node] = []
-                        rootvalue[node].append(value)
+                    value = {}
+                if isinstance(rootvalue, list):
+                    name, num = get_nameNum(nodes[i - 1])
+                    parentindex = get_nodeFromList(rootvalue, num)
+                    rootparentparent = rootparent
+                    rootparent = rootvalue
+                    if not isinstance(index, bool):
+                        if node not in rootvalue[parentindex]:
+                            rootvalue[parentindex][node] = []
+                            rootvalue[parentindex][node].append(value)
+                        else:
+                            if '__numberid__' in value:
+                                b = get_nodeFromList(rootvalue[parentindex][node], value['__numberid__'])
+                                if isinstance(b, bool):
+                                    rootvalue[parentindex][node].append(value)
                     else:
-                        if '__numberid__' in value:
-                            b = get_nodeFromList(rootvalue[node], value['__numberid__'])
-                            if isinstance(b, bool):
-                                rootvalue[node].append(value)
+                        if node not in rootvalue[parentindex]:
+                            rootvalue[parentindex][node] = value
+                    rootvalue = rootvalue[parentindex][node]
                 else:
-                    if node not in rootvalue:
-                        rootvalue[node] = value
-                rootparentparent = rootparent
-                rootparent = rootvalue
-                rootvalue = rootvalue[node]
-            i += 1
+                    if not isinstance(index, bool):
+                        if node not in rootvalue:
+                            rootvalue[node] = []
+                            rootvalue[node].append(value)
+                        else:
+                            if '__numberid__' in value:
+                                b = get_nodeFromList(rootvalue[node], value['__numberid__'])
+                                if isinstance(b, bool):
+                                    rootvalue[node].append(value)
+                    else:
+                        if node not in rootvalue:
+                            rootvalue[node] = value
+                    rootparentparent = rootparent
+                    rootparent = rootvalue
+                    rootvalue = rootvalue[node]
+                i += 1
 
-        pnodes = [node]
-        if node == 'value':
-            pnodes.append('source')
-        for node in pnodes:
-            if node == 'source':
-                val = 'LOM-ESv1.0'
-            if  isinstance(rootvalue, list):
-                if node.startswith('string'):
-                    rootvalue = rootvalue[index]
-                    rootvalue['valueOf_'] = val
+            pnodes = [node]
+            if node == 'value':
+                pnodes.append('source')
+            for node in pnodes:
+                if node == 'source':
+                    val = 'LOM-ESv1.0'
+                if  isinstance(rootvalue, list):
+                    if node.startswith('string'):
+                        rootvalue = rootvalue[index]
+                        rootvalue['valueOf_'] = val
+                    else:
+                        if isinstance(rootparent, list):
+                            rootparent[parentindex][node].append(val)
+                            for e in rootparent[parentindex][node]:
+                                if isinstance(e, dict):
+                                    rootparent[parentindex][node].remove(e)
+                        else:
+                            rootparent[node].append(val)
+                            for e in rootparent[node]:
+                                if isinstance(e, dict):
+                                    rootparent[node].remove(e)
                 else:
                     if isinstance(rootparent, list):
-                        rootparent[parentindex][node].append(val)
-                        for e in rootparent[parentindex][node]:
-                            if isinstance(e, dict):
-                                rootparent[parentindex][node].remove(e)
+                        if re.findall("_date$", field):
+                            rootparent[parentindex][node]['dateTime'] = val
+                        elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
+                            rootparent[parentindex][node] = val
+                            if 'name' in rootparent[parentindex] and 'organization' in rootparent[parentindex] and \
+                            'email' in rootparent[parentindex]:
+                                val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
+                                % (rootparent[parentindex]['name'], rootparent[parentindex]['email'],
+                                   rootparent[parentindex]['organization'])
+                                rootparent.pop(parentindex)
+                                rootparent.append(val2)
+                        else:
+                            rootparent[parentindex][node] = val
                     else:
-                        rootparent[node].append(val)
-                        for e in rootparent[node]:
-                            if isinstance(e, dict):
-                                rootparent[node].remove(e)
-            else:
-                if isinstance(rootparent, list):
-                    if re.findall("_date$", field):
-                        rootparent[parentindex][node]['dateTime'] = val
-                    elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
-                        rootparent[parentindex][node] = val
-                        if 'name' in rootparent[parentindex] and 'organization' in rootparent[parentindex] and 'email' in rootparent[parentindex]:
-                            val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
-                            % (rootparent[parentindex]['name'], rootparent[parentindex]['email'], rootparent[parentindex]['organization'])
-                            rootparent.pop(parentindex)
-                            rootparent.append(val2)
-                    else:
-                        rootparent[parentindex][node] = val
-                else:
-                    if re.findall("_date$", field):
-                        rootparent[node]['dateTime'] = val
-                    elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
-                        rootparent[node] = val
-                        if 'name' in rootparent and 'organization' in rootparent and 'email' in rootparent:
-                            val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
-                            % (rootparent['name'], rootparent['email'], rootparent['organization'])
-                            rootparentparent[parentindex]['entity'] = val2
-                    elif re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
-                        rootparent[node] = val
-                        if 'years' in rootparent and 'months' in rootparent and 'days' in rootparent\
-                        and 'hours' in rootparent and 'minutes' in rootparent and 'seconds' in rootparent:
-                            val2 = '%sY%sM%sD%sH%sm%sS' % (rootparent['years'], rootparent['months'], rootparent['days'],\
-                                                         rootparent['hours'], rootparent['minutes'], rootparent['seconds'])
-                            rootparent['duration'] = val2
-                            for key in ['years', 'months', 'days', 'hours', 'minutes', 'seconds']:
-                                del rootparent[key]
-                    else:
-                        rootparent[node] = val
+                        if re.findall("_date$", field):
+                            rootparent[node]['dateTime'] = val
+                        elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
+                            rootparent[node] = val
+                            if 'name' in rootparent and 'organization' in rootparent and 'email' in rootparent:
+                                val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
+                                % (rootparent['name'], rootparent['email'], rootparent['organization'])
+                                rootparentparent[parentindex]['entity'] = val2
+                        elif re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
+                            rootparent[node] = val
+                            if 'years' in rootparent and 'months' in rootparent and 'days' in rootparent\
+                            and 'hours' in rootparent and 'minutes' in rootparent and 'seconds' in rootparent:
+                                val2 = 'P%sY%sM%sDT%sH%sM%sS' % (rootparent['years'] or '0', rootparent['months'] or '0', rootparent['days'] or '0',\
+                                                             rootparent['hours'] or '0', rootparent['minutes'] or '0', rootparent['seconds'] or '0')
+                                rootparent['duration'] = val2
+                                for key in ['years', 'months', 'days', 'hours', 'minutes', 'seconds']:
+                                    del rootparent[key]
+                        else:
+                            rootparent[node] = val
     return lomdict
 
 
-def processLom2Form(form, lom):
+def processLom2Form2(form, lom):
     data = {}
+    for field in form:
+        if field.startswith('lom'):
+            data[field] = lom.getval(field)
     return data
 
 
@@ -250,11 +260,10 @@ class PropertiesPage(Renderable, Resource):
 
     def render_GET(self, request=None):
         log.debug("render_GET")
-
         data = {}
         try:
             if 'lom_general_title_string1' in request.args.keys():
-                data = processLom2Form(request.args.keys(), self.package.lom)
+                self.package.lom.genForm('lom', self.package.lom, data)
             else:
                 for key in request.args.keys():
                     if key != "_dc":

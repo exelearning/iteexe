@@ -103,7 +103,7 @@
                     </lomes:orComposite>
                 </lomes:requirement>
                 <lomes:duration uniqueElementName="duration">
-                	<lomes:duration uniqueElementName="duration">12H54M</lomes:duration>                		
+                	<lomes:duration uniqueElementName="duration">PT12H54M</lomes:duration>                		
                 	<lomes:description>
                 		<lomes:string language="es">duration time description</lomes:string>                		
                 	</lomes:description>
@@ -164,7 +164,7 @@
                 <lomes:language>es</lomes:language>
                 <lomes:language>al</lomes:language>
                 <lomes:typicalLearningTime uniqueElementName="duration">
-                	<lomes:duration uniqueElementName="duration">12H54M</lomes:duration>                		
+                	<lomes:duration uniqueElementName="duration">P5Y23MT12H54M</lomes:duration>                		
                 	<lomes:description>
                 		<lomes:string language="es">duration time description</lomes:string>                		
                 	</lomes:description>

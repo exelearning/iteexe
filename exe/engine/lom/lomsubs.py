@@ -6,8 +6,11 @@
 #
 
 import sys
+import re
+
 
 import lom as supermod
+import inspect
 
 etree_ = None
 Verbose_import_ = False
@@ -127,10 +130,19 @@ class DurationValueSub(supermod.DurationValue):
 supermod.DurationValue.subclass = DurationValueSub
 # end class DurationValueSub
 
+internalkeys = [
+                'subclass',
+                'superclass',
+                'tzof_pattern',
+                'uniqueElementName',
+                'valueOf_'
+             ]
+
 
 class lomSub(supermod.lom):
     def __init__(self, general=None, lifeCycle=None, metaMetadata=None, technical=None, educational=None, rights=None, relation=None, annotation=None, classification=None):
-        self.oldchild = None
+        self.__oldchild__ = None
+        self.__index__ = {}
         super(lomSub, self).__init__(general, lifeCycle, metaMetadata, technical, educational, rights, relation, annotation, classification, )
 
     def getFieldClass(self, key, parentObj):
@@ -207,6 +219,133 @@ class lomSub(supermod.lom):
                     child.set_uniqueElementName(key)
                 getattr(rootObj, 'set_' + key)(child)
                 self.addChilds(value, child)
+
+    def isAttrib(self, key):
+        ret = False
+        if not re.findall("^__.*__$", key) and\
+            key not in internalkeys:
+            ret = True
+        return ret
+
+    def genForm(self, base=None, rootObj=None, form={}):
+        if not rootObj:
+            rootObj = self
+        if not base:
+            base = 'lom'
+
+        if isinstance(rootObj, str):
+            form[base] = rootObj
+            return True
+
+        elif hasattr(rootObj, 'get_valueOf_'):
+            if base.endswith('_dateTime'):
+                form[base[:-9]] = rootObj.get_valueOf_()
+            elif base.endswith('_source'):
+                pass
+            elif re.findall("_entity[0-9]*$", base):
+                v = rootObj.get_valueOf_()
+                if re.findall('^BEGIN\:VCARD VERSION\:3\.0 FN\:.*\ EMAIL\;TYPE\=INTERNET\:.*\ ORG\:.*END\:VCARD$', v):
+                    sep = []
+                    sep.append(v.find(' FN:') + 4)
+                    sep.append(v.find(' EMAIL;TYPE=INTERNET:'))
+                    sep.append(v.find(' ORG:'))
+                    sep.append(v.find(' END:VCARD'))
+                    form[base + '_name'] = v[sep[0]:sep[1]]
+                    form[base + '_email'] = v[sep[1] + 21:sep[2]]
+                    form[base + '_organization'] = v[sep[2] + 5:sep[3]]
+                else:
+                    print 'Entity VCARD structure error'
+            elif base.endswith('_duration'):
+                base2 = base[:-9]
+                v = rootObj.get_valueOf_()
+                d = re.findall('^P([0-9]+Y){0,1}([0-9]+M){0,1}([0-9]+D){0,1}(T([0-9]+H){0,1}([0-9]+M){0,1}([0-9]+(\.[0-9]+){0,1}S){0,1}){0,1}$', v)
+                if d:
+                    form[base2 + '_years'] = d[0][0].rstrip('Y')
+                    form[base2 + '_months'] = d[0][1].rstrip('M')
+                    form[base2 + '_days'] = d[0][2].rstrip('D')
+                    form[base2 + '_hours'] = d[0][4].rstrip('H')
+                    form[base2 + '_minutes'] = d[0][5].rstrip('M')
+                    form[base2 + '_seconds'] = d[0][6].rstrip('S')
+                else:
+                    print 'Duration structure error'
+            else:
+                form[base] = rootObj.get_valueOf_()
+
+        for key, value  in vars(rootObj).iteritems():
+            if self.isAttrib(key):
+                base2 = base + '_' + key
+                #print key + ' -- ' + str(value)
+                if isinstance(value, list):
+                    i = 1
+                    for v in value:
+                        rootObj = v
+                        if rootObj:
+                            self.genForm(base2 + str(i), rootObj, form)
+                        else:
+                            continue
+                        i += 1
+                else:
+                    rootObj = value
+                    if rootObj:
+                        self.genForm(base2, rootObj, form)
+                    else:
+                        continue
+        return form
+
+    def resetindex(self):
+        self.__index__ = {}
+
+    def getindex(self, field):
+        num = re.findall("[0-9]+$", field)
+        ret = -1
+        if num:
+            num = num[0]
+            name = field[: -len(num)]
+            if not name in self.__index__.keys():
+                self.__index__[name] = {}
+            if not num in self.__index__[name]:
+                self.__index__[name][num] = len(self.__index__[name].keys())
+            ret = self.__index__[name][num]
+        return ret
+
+    def getfname(self, node):
+        num = re.findall("[0-9]+$", node)
+        if num:
+            num = num[0]
+            name = node[: -len(num)]
+        else:
+            name = node
+        return name
+
+    def getval(self, field):
+        val = ''
+        nodes = field.split('_')
+        index = -1
+        obj = self
+        if field.startswith('lom_'):
+            base = 'lom'
+            nodes.remove('lom')
+            for node in nodes:
+                base += '_' + node
+                if node[-1].isdigit():
+                    name = self.getfname(node)
+                    index = self.getindex(base)
+                else:
+                    index = -1
+                    name = node
+                if obj:
+                    if index > -1:
+                        obj = getattr(obj, name)[index]
+                    else:
+                        obj = getattr(obj, name)
+                else:
+                    break
+            if isinstance(obj, str):
+                val = obj
+            else:
+                if obj:
+                    val = obj.get_valueOf_()
+        return val
 
 supermod.lom.subclass = lomSub
 # end class lomSub

@@ -8,8 +8,8 @@ import exe.jsui.propertiespage as pp
 
 class TestLOM(unittest.TestCase):
 
-#    def setUp(self):
-#        self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
+    def setUp(self):
+        self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
 
     def test_getNameNum(self):
         msg = 'Fail'
@@ -29,7 +29,7 @@ class TestLOM(unittest.TestCase):
         self.assertEqual(n, False, msg)
         self.assertEqual(m, False, msg)
 
-    def test_generateLom(self):
+    def test_processForm2Lom(self):
         fields = {
         # General
         'lom_general_title_string1': ['Padres...y educadores'],
@@ -169,14 +169,87 @@ class TestLOM(unittest.TestCase):
     	}
         lom = pp.processForm2Lom(fields)
         rootLom = lomsubs.lomSub.factory()
-        rootLom.addChilds(lom)        
+        rootLom.addChilds(lom)
         rootLom.export(sys.stdout, 0)       
         #print lom
+        
+    def test_processLom2Form1(self):
+        form = [
+        #General
+        'lom_general_title_string1',
+        'lom_general_title_string1_language',
+#        'lom_general_title_string2',
+#        'lom_general_title_string2_language',
+        'lom_general_identifier1_catalog',
+        'lom_general_identifier1_entry',
+        'lom_general_identifier2_catalog',
+        'lom_general_identifier2_entry',
+        'lom_general_structure_value',
+        'lom_general_aggregationLevel_value',
+        'lom_general_language1',
+        'lom_general_language2',
+        'lom_general_description1_string1',
+        'lom_general_description1_string1_language',
+        'lom_general_keyword1_string1',
+        'lom_general_keyword1_string1_language',
+        #LifeCycle
+        
+         ]
+#        val =[]
+#        val.append(self.root.getval('lom_general_title_string1'))
+#        val.append(self.root.getval('lom_general_title_string1_language'))
+#        print val
+        value = pp.processLom2Form2(form, self.root)
+        print value
 
 
+    def test_proccessLom2Form2(self):
+#        fields = {
+        # General
+#        'lom_general_title_string1': ['Padres...y educadores'],
+#        'lom_general_title_string1_language': ['es'],
+#        'lom_general_title_string2': ['title 2'],
+#        'lom_general_title_string2_language': ['en'],
+#        'lom_general_identifier1_catalog': ['Plataforma Agrega'],
+#        'lom_general_identifier1_entry': ['ODE-baa78a92-fd6d-311d-84a6-4eae460cce84'],
+#        'lom_general_identifier2_catalog': ['Cat'],
+#        'lom_general_identifier2_entry': ['es_2013030412_9152054'],
+#        'lom_general_structure_value': ['4'],
+#        'lom_general_aggregationLevel_value': ['2'],
+#        'lom_general_language1': ['es'],
+#        'lom_general_language2': ['en'],
+#        'lom_general_description1_string1': ['Descripcion 1'],
+#        'lom_general_description1_string1_language': ['es'],
+#        'lom_general_keyword1_string1': ['cedec, rea, padres, estudiar, alumnos, familia, fracaso escolar, escuela, orientación, estudios'],
+#        'lom_general_keyword1_string1_language': ['es'],
+#        'lom_lifeCycle_contribute2_date': ['2013-03-04'],
+#        'lom_lifeCycle_contribute2_date_description_string1': ['Fecha de publicación en Agrega'],
+#        'lom_metaMetadata_contribute2_entity1_name': ['Centro Nacional de Desarrollo Curricular en Sistemas no Propietarios (CeDeC) '],
+#        'lom_metaMetadata_contribute2_entity1_email': ['cedec@ite.educacion.es'],
+#        'lom_metaMetadata_contribute2_entity1_organization': ['CeDeC'],
+#        'lom_metaMetadata_contribute2_entity2_name': ['IES "Enrique Díez-Canedo"'],
+#        'lom_metaMetadata_contribute2_entity2_email': ['ies.enriquediezcanedo@juntaextremadura.net'],
+#        'lom_metaMetadata_contribute2_entity2_organization': ['IES "Enrique Díez-Canedo"'],
+#        'lom_technical_duration_years': ['1'],
+#        'lom_technical_duration_months': ['2'],
+#        'lom_technical_duration_days': ['3'],
+#        'lom_technical_duration_hours': ['4'],
+#        'lom_technical_duration_minutes': ['5'],
+#        'lom_technical_duration_seconds': ['6.5'],                  
+#        'lom_technical_duration_description_string1': ['duration time description'],
+#        'lom_technical_duration_description_string1_language': ['es'],
+#        }
+#        lom = pp.processForm2Lom(fields)
+#        rootLom = lomsubs.lomSub.factory()
+#        rootLom.addChilds(lom)
+        a = {}
+        self.root.genForm('lom', self.root, a)
+        print a
+        
+                
     def test_encode_decode(self):
         from exe.engine.persistxml import encodeObjectToXML, decodeObjectFromXML
-        self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
+        #self.root = lomsubs.parse('exe/engine/lom/test/examplelomes.xml')
         xml = encodeObjectToXML(self.root)
         root, success = decodeObjectFromXML(xml)
         self.assertTrue(success)
@@ -213,7 +286,7 @@ class TestLOM(unittest.TestCase):
                            'technical': {'format': ['text/html'],
                                          'location': ['http://agrega.educacion.es/ODE/es/es_2013030412_9152054'],
                                          'requirement': [{'orComposite': [{'type': {'source' :'LOM-ESv1.0', 'value': 'browser'}, 'name': {'source' :'LOM-ESv1.0', 'value': 'any'}}]}],
-                                         'duration': {'duration': '12H54M', 'description': {'string': [{'language': 'es','valueOf_':'duration time description'}]}}
+                                         'duration': {'duration': 'PT12H54M', 'description': {'string': [{'language': 'es','valueOf_':'duration time description'}]}}
                                          },
                            'educational': [{'interactivityType': {'source' :'LOM-ESv1.0', 'value': 'mixed'},
                                             'learningResourceType': [{'source' :'LOM-ESv1.0', 'value': 'individual/cooperative/collaborative learning/working management tool'}],
@@ -228,7 +301,7 @@ class TestLOM(unittest.TestCase):
                                             'typicalAgeRange': [{'string': [{'language': 'es', 'valueOf_': '35'}]}],
                                             'difficulty': {'source' :'LOM-ESv1.0', 'value': 'medium'},
                                             'language': ['es', 'al'],
-                                            'typicalLearningTime': {'duration': '12H54M', 'description': {'string': [{'language': 'es','valueOf_':'duration time description'}]}}                                            
+                                            'typicalLearningTime': {'duration': 'P5YT12H54M', 'description': {'string': [{'language': 'es','valueOf_':'duration time description'}]}}                                            
                                           }],
                            'rights': {'cost': {'source' :'LOM-ESv1.0', 'value': 'no'},
                                       'copyrightAndOtherRestrictions': {'source' :'LOM-ESv1.0', 'value': 'other free software licenses'},
