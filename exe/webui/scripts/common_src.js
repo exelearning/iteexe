@@ -73,7 +73,8 @@ function getFeedback(optionId, optionsNum, ideviceId, mode) {
             document.getElementById(id).style.display = "None";
     }
     if (mode == 'truefalse') {
-        document.getElementById("sfbk" + ideviceId).style.display = "block";
+        var sfbk = document.getElementById("sfbk" + ideviceId);
+        if (sfbk) sfbk.style.display = "block";
     }
 }
 
