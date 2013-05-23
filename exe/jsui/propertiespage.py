@@ -74,6 +74,8 @@ def processForm2Lom(fields, label, source):
             continue
         else:
             val = val[0]
+            if val.strip() == '':
+                continue
             nodes = field.split('_')
             nodes.remove(label)
             rootvalue = lomdict

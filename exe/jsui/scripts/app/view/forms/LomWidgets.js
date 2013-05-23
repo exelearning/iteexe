@@ -26,12 +26,13 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		optional: function(msg) {
 		    return msg + ' (' + _('Optional') + ')';
 		},
-        textfield: function(label, id, tooltip, optional, margin) {
+        textfield: function(label, id, tooltip, optional, margin, value) {
+            var item;
 		    if (!tooltip)
 		        tooltip = label;
 		    if (!margin)
 		        margin = '0 0 0 0';
-		    return {
+		    item = {
 		        xtype: 'textfield',
 		        allowBlank: optional,
 		        margin: margin,
@@ -43,8 +44,13 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        validateOnChange: false,
 		        anchor: '100%'
 		    }
+            if (value) {
+                item.value = value;
+                item.readOnly = true;
+            }
+            return item;
 		},
-		helpfield: function(label, id, tooltip, help, optional, margin, helpmargin) {
+		helpfield: function(label, id, tooltip, help, optional, margin, helpmargin, value) {
 		    if (!help)
 		        if (label)
 		            help = label;
@@ -55,7 +61,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    return {
 		        xtype: 'helpcontainer',
 		        flex: 1,
-		        item: this.textfield(label, id, tooltip, optional, margin),
+		        item: this.textfield(label, id, tooltip, optional, margin, value),
 		        help: help,
 		        helpmargin: helpmargin
 		    }

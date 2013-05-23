@@ -33,6 +33,7 @@ Ext.define('eXe.view.forms.LomSections', {
     statics: {
         vocab: lomVocab,
         prefix: 'lom_',
+        metaname: 'LOMv1.0',
         items: function() {
             return {
 	        'general': [
@@ -48,7 +49,7 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field(_('Language'), true, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'general_language{1}', _('Language') ) ),
 	            eXe.view.forms.LomWidgets.field(_('Description'), true, true, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'general_description{1}_string1', _('Description') ) ) ),
 	            eXe.view.forms.LomWidgets.field(_('Keyword'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'general_keyword{1}_string1', _('Keyword'), null, true) ) ),
-	            eXe.view.forms.LomWidgets.field(_('Coverage'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'general_coverage_string{1}', _('Coverage'), null, true) ) ),
+	            eXe.view.forms.LomWidgets.field(_('Coverage'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'general_coverage{1}_string1', _('Coverage'), null, true) ) ),
 	            eXe.view.forms.LomWidgets.field(_('Structure'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'general_structure_value', _('Structure'), null, true) ),
 	            eXe.view.forms.LomWidgets.field(_('Agregation Level'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'general_aggregationLevel_value', _('Agregation Level')) )
 	        ],
@@ -72,7 +73,7 @@ Ext.define('eXe.view.forms.LomSections', {
 	                    eXe.view.forms.LomWidgets.helpfield( _('Entry'), this.prefix + 'metaMetadata_identifier{1}_entry', null, null, true, '0 0 0 20', '0 0 20 40')
 	                ]
 	            }),
-	            eXe.view.forms.LomWidgets.field(_('Metadata Schema'), false, true, eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'metaMetadata_metadataSchema{1}', _('Metadata Schema') ) ),
+	            eXe.view.forms.LomWidgets.field(_('Metadata Schema'), false, true, eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'metaMetadata_metadataSchema{1}', _('Metadata Schema'), null, null, null, null, this.metaname ) ),
 	            eXe.view.forms.LomWidgets.field(_('Language'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'metaMetadata_language', _('Language') ) ),
 	            eXe.view.forms.LomWidgets.field(_('Contribution'), true, false, [
 	                eXe.view.forms.LomWidgets.helpcombo( _('Role'), this.prefix + 'metaMetadata_contribute{1}_role_value', null, null, true ),
@@ -106,7 +107,7 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field( _('Typical Age Range'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'educational_typicalAgeRange{1}_string1', _('Typical Age Range'), null, true))),
 	            eXe.view.forms.LomWidgets.field( _('Difficulty'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_difficulty_value', _('Difficulty'), null, true)),
 	            eXe.view.forms.LomWidgets.durationfield(_('Typical Learning Time'), false, false, this.prefix + 'educational_typicalLearningTime'),
-	            eXe.view.forms.LomWidgets.field( _('Description'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'educational_description_string{1}', _('Description'), null, true))),
+	            eXe.view.forms.LomWidgets.field( _('Description'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'educational_description{1}_string1', _('Description'), null, true))),
 	            eXe.view.forms.LomWidgets.field( _('Language'), true, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_language{1}', _('Language'))),
 	            eXe.view.forms.LomWidgets.field( _('Cognitive Process'), true, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_cognitiveProcess{1}_value', _('Cognitive Process'), null, true))
 	        ],
@@ -158,6 +159,7 @@ Ext.define('eXe.view.forms.LomesSections', {
     statics: {
         vocab: lomesVocab,
         prefix: 'lomes_',
+        metaname: 'LOM-ESv1.0',
         items: function() {
             return this.callParent();
         }
