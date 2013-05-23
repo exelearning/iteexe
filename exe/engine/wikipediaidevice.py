@@ -73,6 +73,7 @@ of Wikipedia to search and enter search term.""")
         self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
         self.ownUrl               = ""
+        self.systemResources += ['exe_wikipedia.css']
         
     # Properties
     langInstruc      = lateTranslate('langInstruc')

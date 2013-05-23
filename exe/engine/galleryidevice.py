@@ -473,6 +473,10 @@ these in a gallery context rather then individually.</p>"""),
                                     u"below where you will be able to label "
                                     u"it. It's always good practice to put "
                                     u"the file size in the label.")
+        self.systemResources += ['exe_lightbox.css']
+        self.systemResources += ['exe_lightbox.js']
+        self.systemResources += ['exeGallery_actions.png']
+        self.systemResources += ['exeGallery_loading.gif']
 
     # Properties
     addImageInstr = lateTranslate('addImageInstr')
