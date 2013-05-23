@@ -32,7 +32,32 @@ Ext.define('eXe.view.forms.ExportPanel', {
             items: [
                 {
                     xtype: 'fieldset',
-                    title: _('SCORM 1.2 Options'),
+                    title: _('Global Options'),
+                    margin: 10,
+                    items: [
+                        {
+                            xtype: 'helpcontainer',
+                            item: {
+	                            xtype: 'combobox',
+	                            inputId: 'pp_exportMetadataType',
+	                            fieldLabel: _('Metadata Type'),
+	                            store: [
+	                                  ["DC", _("Dublin Core")],
+	                                  ["LOM", _("LOM v1.0")],
+	                                  ["LOMES", _("LOM-ES v1.0")]
+	                            ],
+                                dirtyCls: 'property-form-dirty',
+	                            tooltip: _('Metadata Type'),
+	                            anchor: '100%'
+                            },
+                            flex: 0,
+                            help: _('Metadata Type')
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldset',
+                    title: _('SCORM Options (1.2, 2004 and Agrega)'),
                     margin: 10,
                     items: [
                         {

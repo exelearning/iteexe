@@ -744,31 +744,19 @@ class MainPage(RenderableLivePage):
             self.exportText(client, filename)
         elif exportType == 'scorm1.2':
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            #if (len(metadataType) == 0):
-            #    self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
-            #else: 
-            #    self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType)
-            self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "scorm1.2")
         elif exportType == "scorm2004":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            #if (len(metadataType) == 0):
-            #    self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
-            #else: 
-            #    self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType)
-            self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "scorm2004")
         elif exportType == "agrega":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            #if (len(metadataType) == 0):
-            #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
-            #else: 
-            #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType)
-            self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "agrega")
         elif exportType == 'epub3':
             filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
             self.exportEpub3(client, filename, stylesDir)
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "commoncartridge", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "commoncartridge")
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
@@ -1056,7 +1044,7 @@ class MainPage(RenderableLivePage):
         client.alert(_(u'Exported to %s') % filename)
 
 
-    def exportScorm(self, client, filename, stylesDir, scormType, metadataType):
+    def exportScorm(self, client, filename, stylesDir, scormType):
         """
         Exports this package to a scorm package file
         """
@@ -1071,7 +1059,7 @@ class MainPage(RenderableLivePage):
                     client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
-            scormExport = ScormExport(self.config, stylesDir, filename, scormType, metadataType='DC')
+            scormExport = ScormExport(self.config, stylesDir, filename, scormType)
             scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))

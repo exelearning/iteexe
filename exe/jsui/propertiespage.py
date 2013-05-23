@@ -65,17 +65,17 @@ def get_nameNum(name):
     return n, num
 
 
-def processForm2Lom(fields):
+def processForm2Lom(fields, label, source):
     import re
     lomdict = {}
     for field, val in fields.iteritems():
         #print field
-        if not field.startswith('lom_'):
+        if not field.startswith('%s_' % label):
             continue
         else:
             val = val[0]
             nodes = field.split('_')
-            nodes.remove('lom')
+            nodes.remove(label)
             rootvalue = lomdict
             i = 0
             rootparentparent = False
@@ -138,7 +138,7 @@ def processForm2Lom(fields):
                 pnodes.append('source')
             for node in pnodes:
                 if node == 'source':
-                    val = 'LOM-ESv1.0'
+                    val = source
                 if  isinstance(rootvalue, list):
                     if node.startswith('string'):
                         rootvalue = rootvalue[index]
@@ -245,17 +245,17 @@ class PropertiesPage(Renderable, Resource):
                          "to a valid object attribute" % fieldId)
 
     def setLom(self, fields):
-        lom = processForm2Lom(fields)
+        lom = processForm2Lom(fields, 'lom', 'LOMv1.0')
         rootLom = lomsubs.lomSub.factory()
         rootLom.addChilds(lom)
         self.package.lom = rootLom
         return True
 
     def setLomes(self, fields):
-        lom = processForm2Lom(fields)
+        lom = processForm2Lom(fields, 'lomes', 'LOM-ESv1.0')
         rootLom = lomsubs.lomSub.factory()
         rootLom.addChilds(lom)
-        self.package.lomes = rootLom
+        self.package.lomEs = rootLom
         return True
 
     def render_GET(self, request=None):
@@ -264,6 +264,8 @@ class PropertiesPage(Renderable, Resource):
         try:
             if 'lom_general_title_string1' in request.args.keys():
                 self.package.lom.genForm('lom', self.package.lom, data)
+            elif 'lomes_general_title_string1' in request.args.keys():
+                self.package.lom.genForm('lomes', self.package.lomEs, data)
             else:
                 for key in request.args.keys():
                     if key != "_dc":

@@ -272,113 +272,13 @@ class DublinCore(Jellyable, Unjellyable):
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
 
-
-class LomES(Jellyable, Unjellyable):
-    """
-    Holds LOM-ES info
-    """
-
-    def __init__(self):
-        self.identifier = ''
-        self.title = ''
-        self.description = ''
-        self.keyword = ''
-        self.coverage = ''
-        self.structure = ''
-        self.aggregationlevel = ''
-        self.version = ''
-        self.status = ''
-        self.role = ''
-        self.entity = ''
-        self.date = ''
-        self.metadataSchema = ''
-        self.language = ''
-        self.format = ''
-        self.size = ''
-        self.location = ''
-        self.type = ''
-        self.name = ''
-        self.installationremarks = ''
-        self.otherplatformrequirements = ''
-        self.duration = ''
-        self.interactivitytype = ''
-        self.learningresourcetype = ''
-        self.interactivitylevel = ''
-        self.semanticdensity = ''
-        self.intendedenduserrole = ''
-        self.context = ''
-        self.typicalagerange = ''
-        self.difficulty = ''
-        self.cognitiveprocess = ''
-        self.cost = ''
-        self.copyrightandotherrestrictions = ''
-        self.access = ''
-        self.kind = ''
-        self.purpose = ''
-        self.taxonpath = ''
-        self.id = ''
-        self.taxon = ''
-
-    def __setattr__(self, name, value):
-        self.__dict__[name] = toUnicode(value)  
-        
-
-class Lom(Jellyable, Unjellyable):
-    """
-    Holds LOM info
-    """
-
-    def __init__(self):
-        self.catalog = ''
-        self.identifier = ''
-        self.title = ''
-        self.description = ''
-        self.keyword = ''
-        self.coverage = ''
-        self.structure = ''
-        self.aggregationlevel = ''
-        self.version = ''
-        self.status = ''
-        self.role = ''
-        self.entity = ''
-        self.date = ''
-        self.metadataSchema = ''
-        self.language = ''
-        self.format = ''
-        self.size = ''
-        self.location = ''
-        self.type = ''
-        self.name = ''
-        self.installationremarks = ''
-        self.otherplatformrequirements = ''
-        self.duration = ''
-        self.interactivitytype = ''
-        self.learningresourcetype = ''
-        self.interactivitylevel = ''
-        self.semanticdensity = ''
-        self.intendedenduserrole = ''
-        self.context = ''
-        self.typicalagerange = ''
-        self.difficulty = ''
-        self.cost = ''
-        self.copyrightandotherrestrictions = ''
-        self.kind = ''
-        self.purpose = ''
-        self.taxonpath = ''
-        self.id = ''
-        self.taxon = ''
-        
-    def __setattr__(self, name, value):
-        self.__dict__[name] = toUnicode(value)         
-        
-
          
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -419,12 +319,13 @@ class Package(Persistable):
         self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()
-        self.lomEs         = LomES()
+        self.lomEs         = lomsubs.lomSub.factory()
         self.lom           = lomsubs.lomSub.factory()
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
         self.scowsource    = False
+        self.exportMetadataType = "DC"
         self.license       = "None"
         self.footer        = ""
 
@@ -1032,5 +933,22 @@ class Package(Persistable):
             # first and they also set this attribute on the package
             self.resources = {}
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
+
+    def upgradeToVersion10(self):
+        """
+        For version >= intef8
+        """
+        if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
+            self.lomEs = lomsubs.lomSub.factory()
+        if not hasattr(self, 'lom') or not isinstance(self.lom, lomsubs.lomSub):
+            self.lom = lomsubs.lomSub.factory()
+        if not hasattr(self, 'scowsinglepage'):
+            self.scowsinglepage = False
+        if not hasattr(self, 'scowwebsite'):
+            self.scowwebsite = False
+        if not hasattr(self, 'scowsource'):
+            self.scowsource = False
+        if not hasattr(self, 'exportMetadataType'):
+            self.exportMetadataType = "DC"
 
 # ===========================================================================
