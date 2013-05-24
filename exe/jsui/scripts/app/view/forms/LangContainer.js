@@ -59,6 +59,8 @@ Ext.define('eXe.view.forms.LangContainer', {
                                     labelWidth: 60,
                                     tooltip: _('Language of the field'),
                                     store: langsStore,
+                                    validateOnBlur: false,
+                                    validateOnChange: false,
                                     margin: '0 0 0 4',
                                     anchor: '100%'
                                 }

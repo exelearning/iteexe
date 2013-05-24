@@ -184,6 +184,10 @@ class MainPage(RenderableLivePage):
         return tags.script(type="text/javascript")[
            "var locationButtons = %s;" % json.dumps(self.location_buttons.buttons)]
 
+    def render_lang(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var lang = %s;" % json.dumps(G.application.config.locale.split('_')[0])]
+
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
 

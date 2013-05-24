@@ -203,6 +203,8 @@ Ext.define('eXe.controller.MainTab', {
 	            }
 	        });
 	    }
+        else
+            Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'))
     },
     
     onRender: function(formpanel) {

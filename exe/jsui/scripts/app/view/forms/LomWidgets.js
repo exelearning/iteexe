@@ -76,6 +76,8 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	        storeName = storeName.slice(storeName.lastIndexOf('_') + 1) + 'Values';
 		    combo.item.xtype = 'combobox';
 		    combo.item.store = Ext.ClassManager.getByAlias(ids[0]).vocab[storeName];
+            combo.item.forceSelection = !optional;
+            combo.item.queryMode = 'local';
 		    return combo;
 		},
 		helparea: function(label, id, tooltip, help, optional, margin, helpmargin) {
@@ -168,6 +170,24 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    ])
 		},
 		langfield: function(item) {
+            item.listeners = {
+                change: {
+                    fn: function(event, input, eOpts) {
+                        var field = Ext.ComponentQuery.query('field[inputId=' + input.name + '_language]')[0];
+						if (Ext.String.trim(input.value) == '') {
+						  field.forceSelection = false;
+                          field.allowBlank = true;
+						}
+						else {
+						  field.forceSelection = true;
+                          field.allowBlank = false;
+                          if (!field.getValue())
+                            field.setValue(lang);
+						}
+                    },
+                    element: 'el'
+                }
+            };
 		    return {
 		        xtype: 'langcontainer',
 		        item: item
@@ -217,7 +237,6 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	            },
 	            collapsible: mandatory,
 	            checkboxToggle: !mandatory,
-	            checkboxName: id,
 	            collapsed: !mandatory,
 	            title: title,
 	            items: {

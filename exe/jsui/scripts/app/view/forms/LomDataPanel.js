@@ -35,6 +35,7 @@ Ext.define('eXe.view.forms.LomDataPanel', {
 
         Ext.applyIf(me, {
             autoScroll: true,
+            trackResetOnLoad: true,
             defaults: {
                 margin: 10
             },
