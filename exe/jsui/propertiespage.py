@@ -311,6 +311,7 @@ class PropertiesPage(Renderable, Resource):
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
+        self.package.isChanged = True
         return json.dumps({'success': True, 'data': data})
 
 # ===========================================================================
