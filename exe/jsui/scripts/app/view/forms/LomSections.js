@@ -115,9 +115,9 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field( _('Cost'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'rights_cost_value', _('Cost'), null, true)),
 	            eXe.view.forms.LomWidgets.field( _('Copyright And Other Restrictions'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'rights_copyrightAndOtherRestrictions_value', _('Copyright And Other Restrictions'))),
 	            eXe.view.forms.LomWidgets.field( _('Description'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'rights_description_string{1}', _('Description'), null, true))),
-	            eXe.view.forms.LomWidgets.field( _('Access'), false, false, [
-	                eXe.view.forms.LomWidgets.helpcombo( _('Access Type'), this.prefix + 'rights_access_accessType_value', _('Access Type'), null, true),
-	                eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.textfield( _('Description'), this.prefix + 'rights_access_description_string{1}', _('Description'), true))
+	            eXe.view.forms.LomWidgets.field( _('Access'), false, true, [
+	                eXe.view.forms.LomWidgets.helpcombo( _('Access Type'), this.prefix + 'rights_access_accessType_value', _('Access Type')),
+	                eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.textfield( _('Description'), this.prefix + 'rights_access_description_string{1}', _('Description')))
 	            ])
 	        ],
 	        'relation': [

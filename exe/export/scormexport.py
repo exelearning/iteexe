@@ -73,15 +73,17 @@ class Manifest(object):
         if they did not supply a package title, use the package name
         if they did not supply a date, use today
         """
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'
         # depending on (user desired) the metadata type:
         if self.metadataType == 'LOMES':
             output = StringIO.StringIO()
-            self.package.lomEs.export(output, 0, namespacedef_='', pretty_print=True)
-            xml = output.getvalue()
+            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=True)
+            xml += output.getvalue()
         if self.metadataType == 'LOM':
             output = StringIO.StringIO()
-            self.package.lom.export(output, 0, namespacedef_='', pretty_print=True)
-            xml = output.getvalue()
+            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=True)
+            xml += output.getvalue()
         if self.metadataType == 'DC':
             lrm = self.package.dublinCore.__dict__.copy()
             # use package values in absentia:
