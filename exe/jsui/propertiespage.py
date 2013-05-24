@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 from exe.engine.lom import lomsubs
+import re
 
 
 """
@@ -65,8 +66,42 @@ def get_nameNum(name):
     return n, num
 
 
+def _pass_field(fields, field, val):
+    """
+    @return:
+        True: not process field (continue)
+        False:  process field
+    """
+    ret = False
+    if val.strip() == '':
+        #Entity Control
+        if re.findall("_entity[0-9]*_[name,organization,email]+$", field):
+            field2 = field
+            cnt = False
+            for r in ['name', 'email', 'organization']:
+                a = re.sub('[name,organization,email]+$', r, field2)
+                if a in fields.keys() and fields[a][0].strip() != '':
+                    cnt = True
+            if not cnt:
+                ret = True
+        else:
+            #Duration Control
+            if re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
+                field2 = field
+                cnt = False
+                for r in ['years', 'months', 'days', 'hours', 'minutes', 'seconds']:
+                    a = re.sub('[years,months,days,hours,minutes,seconds]+$', r, field2)
+                    if a in fields.keys() and fields[a][0].strip() != '':
+                        cnt = True
+                if not cnt:
+                    ret = True
+            else:
+                # Other fields with value ''
+                ret = True
+    return ret
+
+
 def processForm2Lom(fields, label, source):
-    import re
     lomdict = {}
     for field, val in fields.iteritems():
         #print field
@@ -74,7 +109,7 @@ def processForm2Lom(fields, label, source):
             continue
         else:
             val = val[0]
-            if val.strip() == '':
+            if _pass_field(fields, field, val):
                 continue
             nodes = field.split('_')
             nodes.remove(label)
