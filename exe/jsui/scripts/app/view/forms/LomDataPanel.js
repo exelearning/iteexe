@@ -37,7 +37,7 @@ Ext.define('eXe.view.forms.LomDataPanel', {
             autoScroll: true,
             trackResetOnLoad: true,
             defaults: {
-                margin: 10
+                margin: 20
             },
             items: [
                 widgets.section(_('General'), this.prefix + 'general', false, true, true ),

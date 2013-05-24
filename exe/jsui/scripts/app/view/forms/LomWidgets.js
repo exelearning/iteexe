@@ -122,10 +122,14 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		field: function(label, appendable, mandatory, item) {
 		    var title, field, xtype = 'preservescrollfieldset';
 
-		    if (mandatory)
-		        title = this.required(label);
-		    else
-		        title = this.optional(label);
+            if (label) {
+			    if (mandatory)
+			        title = this.required(label);
+			    else
+			        title = this.optional(label);
+            }
+            else
+                title = label;
 		    if (appendable)
 		        xtype = 'insertdelfieldset';
 		    field = {
@@ -227,9 +231,11 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	        if (mandatory)
 	            title = this.required(label);
 	        else
-	            title = this.optional(label);
+	            title = '<i>' + this.optional(label) + '</i>';
+            title = '<bold>' + title + '</bold>';
 	        field = {
 	            xtype: 'preservescrollfieldset',
+                border: 3,
 	            defaults: {
 	                collapsible: true,
 	                validateOnBlur: false,
