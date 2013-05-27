@@ -22,64 +22,59 @@ Ext.define('eXe.view.forms.HelpContainer', {
     alias: 'widget.helpcontainer',
     
     initComponent: function() {
-        var me = this;
-        
+        var me = this,
+            items;
+
+        this.item.flex = this.flex !== undefined? this.flex : 1;
+
+        items = [
+            {
+                xtype: 'container',
+                layout: 'hbox',
+                anchor: '100%',
+                defaults: {
+                    flex: 0
+                },
+                items: [
+                    this.item,
+                    {
+                        xtype: 'image',
+                        src: '/images/info.png',
+                        margin: '2 0 0 2',
+                        height: 20,
+                        width: 20,
+                        listeners: {
+                            afterrender: function(c) {
+                                c.el.on('click', function(a) {
+                                    var help = this.items.items[1],
+                                        formpanel;
+                                    formpanel = this.up();
+                                    while (! formpanel.form)
+                                        formpanel = formpanel.up();
+                                    var restoreScroll = formpanel.el.cacheScrollValues();
+                                    if (help.isVisible())
+                                        help.hide();
+                                    else
+                                        help.show();
+                                    restoreScroll();
+                                }, me);
+                            }
+                        }
+                    }
+                ]
+            },{
+                xtype: 'component',
+                html: this.help,
+                margin: this.helpmargin !== undefined? this.helpmargin : '0 0 20 120',
+                hidden: true,
+                anchor: '100%'
+            }
+        ];
+
         Ext.applyIf(me, {
             xtype: 'container',
             layout: 'anchor',
-            items: [
-                {
-                    xtype: 'container',
-                    layout: 'hbox',
-                    anchor: '100%',
-                    items: [
-                        {
-                            xtype: 'container',
-                            layout: 'anchor',
-                            flex: this.flex !== undefined? this.flex : 1,
-                            items: this.item
-                        },
-                        {
-                            xtype: 'container',
-                            layout: 'anchor',
-                            flex: 0,
-                            items: [
-                                {
-                                    xtype: 'image',
-                                    src: '/images/info.png',
-                                    margin: '2 0 0 2',
-                                    height: 20,
-                                    width: 20,
-                                    anchor: '100%',
-                                    listeners: {
-                                        afterrender: function(c) {
-                                            c.el.on('click', function(a) {
-                                                var help = this.items.items[1],
-                                                    formpanel;
-                                                formpanel = this.up();
-                                                while (! formpanel.form)
-                                                    formpanel = formpanel.up();
-                                                var restoreScroll = formpanel.el.cacheScrollValues();
-                                                if (help.isVisible())
-                                                    help.hide();
-                                                else
-                                                    help.show();
-                                                restoreScroll();
-                                            }, me);
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },{
-                    xtype: 'component',
-                    html: this.help,
-                    margin: this.helpmargin !== undefined? this.helpmargin : '0 0 20 120',
-                    hidden: true,
-                    anchor: '100%'
-                }
-            ]
+            items: items
         });
         
         me.callParent(arguments);

@@ -38,7 +38,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        margin: margin,
 		        fieldLabel: label,
 		        tooltip: tooltip,
-		        inputId: id.replace(/\{1\}/, '1'),
+		        inputId: id.replace(/\{[1-9]\}/g, '1'),
                 templateId: id,
 		        validateOnBlur: false,
 		        validateOnChange: false,
@@ -69,7 +69,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		helpcombo: function(label, id, tooltip, help, optional, margin, helpmargin) {
 		    var combo = this.helpfield(label, id, tooltip, help, optional, margin, helpmargin),
 		        storeName = id, ids = id.split('_');
-            storeName = storeName.replace(/\{1\}/g, '');
+            storeName = storeName.replace(/\{[1-9]\}/g, '');
 	        storeName = storeName.replace(/[1-9]*/g, '');
 	        storeName = storeName.replace(/_string$/, '');
 	        storeName = storeName.replace(/_value$/, '');
@@ -86,38 +86,6 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    area.item.xtype = 'textarea';
 		    area.item.height = 60
 		    return area;
-		},
-		helpdate: function(label, id, tooltip, help, optional, margin, helpmargin) {
-		    if (!tooltip)
-		        tooltip = label;
-		    if (!help)
-		        if (label)
-		            help = label;
-		        else
-		            help = tooltip;
-		    if (!margin)
-		        margin = '0 0 0 0';
-		    if (!helpmargin)
-		        helpmargin = '0 0 20 20';
-		    return {
-		        xtype: 'helpcontainer',
-		        item: {
-		            xtype: 'datefield',
-		            fieldLabel: label,
-		            allowBlank: optional,
-		            format: 'Y-m-d',
-		            validateOnBlur: false,
-		            validateOnChange: false,
-		            pickerAlign: 'tr-br',
-		            inputId: id.replace(/\{1\}/, '1'),
-                    templateId: id,
-		            tooltip: tooltip,
-		            margin: margin,
-		            anchor: '100%'
-		        },
-		        help: help,
-		        helpmargin: helpmargin
-		    }
 		},
 		field: function(label, appendable, mandatory, item) {
 		    var title, field, xtype = 'preservescrollfieldset';
@@ -150,6 +118,61 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        field.items = item;
 		    return field
 		},
+		datefield: function(embedded, label, id, tooltip, help, optional, margin, helpmargin) {
+		    if (!tooltip)
+		        tooltip = label;
+		    if (!help)
+		        if (label)
+		            help = label;
+		        else
+		            help = tooltip;
+		    if (!margin)
+		        margin = '0 0 0 0';
+		    if (!helpmargin)
+		        helpmargin = '0 0 20 20';
+            var descriptionfield = null, fieldLabel, field;
+
+            descriptionfield = this.field( null, true, true, this.langfield( this.helparea( _('Description'), id + '_description_string{2}', _('Description'), null, true)));
+            descriptionfield.border = false;
+            descriptionfield.collapsible = false;
+            if (!embedded) {
+                fieldLabel = null
+            }
+            else {
+                fieldLabel = label;
+                label = null;
+            }
+		    field = this.field( label, false, !optional, [
+	            {
+			        xtype: 'helpcontainer',
+			        item: {
+			            xtype: 'datefield',
+			            allowBlank: optional,
+			            format: 'Y-m-d',
+                        fieldLabel: fieldLabel,
+			            validateOnBlur: false,
+			            validateOnChange: false,
+			            pickerAlign: 'tr-br',
+			            inputId: id.replace(/\{[1-9]\}/g, '1'),
+	                    templateId: id,
+			            tooltip: tooltip,
+			            margin: margin,
+			            anchor: '100%'
+			        },
+			        help: help,
+			        helpmargin: helpmargin
+	            },
+                descriptionfield
+	        ])
+            if (embedded) {
+                field.border = false;
+                field.collapsible = false;
+                field.checkboxToggle = false;
+                field.collapsed = false;
+                field.margin = -10;
+            }
+            return field;
+		},
 		durationfield: function(label, appendable, mandatory, id) {
 		    return this.field( label, appendable, mandatory, [
 		        {
@@ -170,7 +193,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		                { xtype: 'container', layout: 'anchor', flex: 1, items: this.textfield( _('Seconds'), id + '_seconds', null, true)}
 		            ]
 		        },
-		        this.field( _('Description'), true, false, this.langfield( this.helparea( null, id + '_description_string1', _('Description'), null, true)))
+		        this.field( _('Description'), true, false, this.langfield( this.helparea( null, id + '_description_string{1}', _('Description'), null, true)))
 		    ])
 		},
 		langfield: function(item) {

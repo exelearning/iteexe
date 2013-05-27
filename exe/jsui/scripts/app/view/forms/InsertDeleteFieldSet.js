@@ -55,93 +55,101 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
     extend: 'eXe.view.forms.PreserveScrollFieldSet',
     alias: 'widget.insertdelfieldset',
     
-    statics: {
-        lastId: 2
-    },
+    lastId: 2,
 
     initComponent: function() {
         var me = this,
-            items = [
-                {
-                    xtype: 'container',
-                    layout: 'anchor',
-                    items: [
-                        {
-                            xtype: 'container',
-                            layout: 'hbox',
-                            anchor: '100%',
-                            items: [
-                                {
-                                    xtype: 'container',
-                                    layout: 'anchor',
-                                    flex: this.flex !== undefined? this.flex : 1,
-                                    items: this.item
-                                },
-                                {
-                                    xtype: 'container',
-                                    layout: 'anchor',
-                                    flex: 0,
-                                    items: [
-                                        {
-                                            xtype: 'image',
-                                            src: '/images/plusbutton.png',
-                                            height: 24,
-                                            width: 24,
-                                            anchor: '100%',
-                                            listeners: {
-                                                afterrender: function(c) {
-                                                    c.el.on('click', function(a) {
-                                                        var item = this.item, i, re = new RegExp('\\{1\\}');
-                                                        if (item.xtype === "container") {
-                                                            for (i = 0; i < item.items.length; i++)
-                                                                item.items[i].item.inputId = item.items[i].item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId));
-                                                            eXe.view.forms.InsertDeleteFieldSet.lastId++;
-                                                        }
-                                                        else if (Ext.isArray(item)) {
-                                                            for (i = 0; i<item.length; i++)
-                                                                item[i].item.inputId = item[i].item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId));
-                                                                eXe.view.forms.InsertDeleteFieldSet.lastId++;
-                                                        }
-                                                        else if (item.xtype === "langcontainer")
-                                                            item.item.item.inputId = item.item.item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId++));
-                                                        else
-                                                            item.item.inputId = item.item.templateId.replace(re, String(eXe.view.forms.InsertDeleteFieldSet.lastId++));
-                                                        this.preserveScroll();
-                                                        this.add(items);
-                                                        this.restoreScroll();
-                                                    }, me);
-                                                }
-                                            }
-                                        },
-                                        {
-                                            xtype: 'image',
-                                            src: '/images/minusbutton.png',
-                                            height: 24,
-                                            width: 24,
-                                            anchor: '100%',
-                                            listeners: {
-                                                afterrender: function(c) {
-                                                    c.el.on('click', function(a) {
-                                                        var items = this.up().up().up(),
-                                                            fieldset = items.up();
-                                                        if (fieldset.items.length > 1) {
-                                                            fieldset.preserveScroll();
-                                                            fieldset.remove(items,true);
-                                                            fieldset.restoreScroll();
-                                                        }
-                                                    }, c);
-                                                }
-                                            }
+            items;
+
+        this.item.flex = this.flex !== undefined? this.flex : 1;
+
+        items = [
+            {
+                xtype: 'container',
+                layout: 'hbox',
+                anchor: '100%',
+                defaults: {
+                    flex: 0
+                },
+                items: [
+                    this.item,
+                    {
+                        xtype: 'image',
+                        src: '/images/plusbutton.png',
+                        height: 24,
+                        width: 24,
+                        listeners: {
+                            afterrender: function(c) {
+                                c.el.on('click', function(a) {
+                                    var i,
+                                        re,
+                                        id = [],
+                                        item = this,
+                                        depth = 0;
+
+                                    while (item.xtype != 'lomdata') {
+                                        if (item.xtype == 'insertdelfieldset') {
+                                            id[depth] = item.lastId-1;
+                                            depth++;
                                         }
-                                    ]
-                                }
-                            ]
+                                        item = item.up();
+                                    }
+                                    id[0] = this.lastId++;
+
+
+                                    function updater(key, value, object) {
+						                if (key === 'inputId') {
+                                            object.inputId = object.templateId;
+                                            for (i = 0; i < depth; i++) {
+			                                    re = new RegExp('\\{' + (depth-i) + '\\}');
+                                                object.inputId = object.inputId.replace(re, String(id[i]));
+                                            }
+                                            object.inputId = object.inputId.replace(/\{[1-9]\}/g, '1');
+						                }
+						                if (key === 'item') {
+						                    Ext.iterate(object.item, updater);
+						                    return false;
+						                }
+						                if (key === 'items') {
+						                    Ext.iterate(object.items, updater);
+						                    return false;
+						                }
+						                if (Ext.isObject(key))
+						                    Ext.iterate(key, updater);
+						            }
+						            Ext.iterate(this.item, updater);
+                                    this.preserveScroll();
+                                    this.add(items);
+                                    this.restoreScroll();
+                                }, me);
+                            }
                         }
-                    ]
-                }
-            ];
+                    },
+                    {
+                        xtype: 'image',
+                        src: '/images/minusbutton.png',
+                        height: 24,
+                        width: 24,
+                        listeners: {
+                            afterrender: function(c) {
+                                c.el.on('click', function(a) {
+                                    var items = this.up(),
+                                        fieldset = items.up();
+                                    if (fieldset.items.length > 1) {
+                                        fieldset.preserveScroll();
+                                        fieldset.remove(items,true);
+                                        fieldset.restoreScroll();
+                                    }
+                                }, c);
+                            }
+                        }
+                    }
+                ]
+            }
+        ];
         
         Ext.applyIf(me, {
+            layout: 'anchor',
             items: items
         });
         
