@@ -220,10 +220,8 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        item: item
 		    }
 		},
-        lastId: 1,
-        updated: function(items, label) {
-            var newitems = Ext.clone(items),
-                id = this.lastId++;
+        updated: function(items, label, id) {
+            var newitems = Ext.clone(items);
 
             function updater(key, value, object) {
                 if (key === 'inputId') {
@@ -247,7 +245,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
             return newitems;
         },
 	    section: function(label, id, appendable, mandatory, onlyone) {
-	        var title, field, items, ids = id.split('_');
+	        var title, field, items, ids = id.split('_'), lastId = 1;
 
             items = Ext.ClassManager.getByAlias(ids[0]).items()[ids[1]];
 
@@ -274,7 +272,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	            }
 	        }
 	        if (appendable && !onlyone) {
-                field.items.items = this.updated(items, id);
+                field.items.items = this.updated(items, id, lastId);
 	            field.items.items.push({
 	                xtype: 'container',
 	                layout: 'hbox',
@@ -289,7 +287,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	                                fieldset.preserveScroll();
 	                                fieldset.add({
 	                                    xtype: 'container',
-	                                    items: this.updated(field.items.items, id)
+	                                    items: this.updated(field.items.items, id, ++lastId)
 	                                });
 	                                fieldset.restoreScroll();
 	                            },
