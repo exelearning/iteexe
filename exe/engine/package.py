@@ -26,6 +26,7 @@ i.e. the "package".
 import logging
 import time
 import zipfile 
+import uuid
 import re
 from xml.dom                   import minidom
 from exe.engine.path           import Path, TempDirPath, toUnicode
@@ -321,6 +322,9 @@ class Package(Persistable):
         self.dublinCore    = DublinCore()
         self.lomEs         = lomsubs.lomSub.factory()
         self.lom           = lomsubs.lomSub.factory()
+        identifier = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': str(uuid.uuid4())}]}}
+        self.lom.addChilds(identifier)
+        self.lomEs.addChilds(identifier)
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
@@ -938,10 +942,13 @@ class Package(Persistable):
         """
         For version >= intef8
         """
+        identifier = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': str(uuid.uuid4())}]}}
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
             self.lomEs = lomsubs.lomSub.factory()
+            self.lomEs.addChilds(identifier)
         if not hasattr(self, 'lom') or not isinstance(self.lom, lomsubs.lomSub):
             self.lom = lomsubs.lomSub.factory()
+            self.lom.addChilds(identifier)
         if not hasattr(self, 'scowsinglepage'):
             self.scowsinglepage = False
         if not hasattr(self, 'scowwebsite'):
