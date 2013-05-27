@@ -628,6 +628,10 @@ langsStore = [
         _("Uzbek ")
     ],
     [
+        "va",
+        _("Valencian ")
+    ],
+    [
         "vi",
         _("Vietnamese ")
     ],
