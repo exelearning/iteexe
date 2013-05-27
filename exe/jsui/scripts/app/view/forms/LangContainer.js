@@ -54,6 +54,7 @@ Ext.define('eXe.view.forms.LangContainer', {
                         store: langsStore,
                         validateOnBlur: false,
                         validateOnChange: false,
+                        dirtyCls: 'property-form-dirty',
                         margin: '0 0 0 4'
                     }
                 ]

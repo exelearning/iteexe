@@ -42,7 +42,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
                 templateId: id,
 		        validateOnBlur: false,
 		        validateOnChange: false,
-		        anchor: '100%'
+                hideEmptyLabel: false,
+                labelWidth: label? 100: 0,
+                dirtyCls: 'property-form-dirty'
 		    }
             if (value) {
                 item.value = value;
@@ -157,7 +159,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	                    templateId: id,
 			            tooltip: tooltip,
 			            margin: margin,
-			            anchor: '100%'
+                        hideEmptyLabel: false,
+                        labelWidth: fieldLabel? 100: 0,
+			            dirtyCls: 'property-form-dirty'
 			        },
 			        help: help,
 			        helpmargin: helpmargin
@@ -174,6 +178,10 @@ Ext.define('eXe.view.forms.LomWidgets', {
             return field;
 		},
 		durationfield: function(label, appendable, mandatory, id) {
+            var descriptionfield = this.field( null, true, true, this.langfield( this.helparea( _('Description'), id + '_description_string{1}', _('Description'), null, true)));
+            descriptionfield.border = false;
+            descriptionfield.collapsible = false;
+
 		    return this.field( label, appendable, mandatory, [
 		        {
 		            xtype: 'container',
@@ -193,7 +201,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		                { xtype: 'container', layout: 'anchor', flex: 1, items: this.textfield( _('Seconds'), id + '_seconds', null, true)}
 		            ]
 		        },
-		        this.field( _('Description'), true, false, this.langfield( this.helparea( null, id + '_description_string{1}', _('Description'), null, true)))
+		        descriptionfield
 		    ])
 		},
 		langfield: function(item) {
