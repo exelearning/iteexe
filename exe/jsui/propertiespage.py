@@ -108,7 +108,7 @@ def processForm2Lom(fields, label, source):
         if not field.startswith('%s_' % label):
             continue
         else:
-            val = val[0]
+            val = val[0].strip()
             if _pass_field(fields, field, val):
                 continue
             nodes = field.split('_')
