@@ -161,7 +161,12 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			            margin: margin,
                         hideEmptyLabel: false,
                         labelWidth: fieldLabel? 100: 0,
-			            dirtyCls: 'property-form-dirty'
+			            dirtyCls: 'property-form-dirty',
+                        listeners: {
+                            blur: {
+                                fn: this.updateMandatoryField
+                            }
+                        }
 			        },
 			        help: help,
 			        helpmargin: helpmargin
@@ -186,6 +191,14 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        {
 		            xtype: 'container',
 		            layout: 'hbox',
+                    defaults: {
+                        listeners: {
+                            change: {
+                                fn: this.updateMandatoryField,
+                                element: 'el'
+                            }
+                        }
+                    },
 		            items: [
 		                { xtype: 'container', layout: 'anchor', flex: 1, items: this.textfield( _('Years'), id + '_years', null, true, '0 20 0 0')},
 		                { xtype: 'container', layout: 'anchor', flex: 1, items: this.textfield( _('Months'), id + '_months', null, true, '0 20 0 0')},
@@ -195,6 +208,14 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        {
 		            xtype: 'container',
 		            layout: 'hbox',
+                    defaults: {
+                        listeners: {
+			                change: {
+			                    fn: this.updateMandatoryField,
+			                    element: 'el'
+                            }
+                        }
+                    },
 		            items: [
 		                { xtype: 'container', layout: 'anchor', flex: 1, items: this.textfield( _('Hours'), id + '_hours', null, true, '0 20 0 0')},
 		                { xtype: 'container', layout: 'anchor', flex: 1, items: this.textfield( _('Minutes'), id + '_minutes', null, true, '0 20 0 0')},
@@ -204,22 +225,47 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        descriptionfield
 		    ])
 		},
+        updateMandatoryField: function(event, input, eOpts) {
+            var field;
+            if (!input) {
+                field = event;
+                input = { value: field.rawValue };
+            }
+            else
+                field = Ext.ComponentQuery.query('field[inputId=' + input.name + ']')[0];
+            field = field.up().up().nextSibling();
+
+            if (field.nextSibling())
+                field = field.nextSibling();
+
+            function updater(key, value, object) {
+                if (key === 'inputId') {
+                    if (Ext.String.trim(input.value) == '') {
+					  object.forceSelection = false;
+					  object.allowBlank = true;
+					}
+					else {
+					  object.forceSelection = true;
+					  object.allowBlank = false;
+                      if (value.indexOf('_language', value.length - 9) !== -1)
+						  if (!object.getValue())
+						    object.setValue(lang);
+					}
+                }
+                if (key === 'items') {
+                    Ext.iterate(object.items.items, updater);
+                }
+                if (Ext.isObject(key)) {
+                    Ext.iterate(key, updater);
+                    return false;
+                }
+            }
+            Ext.iterate(field, updater);
+        },
 		langfield: function(item) {
             item.listeners = {
                 change: {
-                    fn: function(event, input, eOpts) {
-                        var field = Ext.ComponentQuery.query('field[inputId=' + input.name + '_language]')[0];
-						if (Ext.String.trim(input.value) == '') {
-						  field.forceSelection = false;
-                          field.allowBlank = true;
-						}
-						else {
-						  field.forceSelection = true;
-                          field.allowBlank = false;
-                          if (!field.getValue())
-                            field.setValue(lang);
-						}
-                    },
+                    fn: this.updateMandatoryField,
                     element: 'el'
                 }
             };
