@@ -431,8 +431,8 @@ class ScormPage(Page):
                 html += escape(self.node.titleLong)
         html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
-        html += u" charset=utf-8\" />\n";
-        html += u"<!-- Created using eXe: http://exelearning.net -->\n"
+        html += u" charset=utf-8\" />";
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"

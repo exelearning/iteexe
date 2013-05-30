@@ -214,8 +214,8 @@ class IMSPage(Page):
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<meta http-equiv=\"Content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />\n";
-        # html += u"<title>"+_("eXe")+"</title>\n"
+        html += u" charset=utf-8\" />";
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
