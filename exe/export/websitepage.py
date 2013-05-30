@@ -56,6 +56,9 @@ class WebsitePage(Page):
         Returns an XHTML string rendering this page.
         """
         lenguaje = G.application.config.locale
+        if self.node.package.dublinCore.language!="":
+            lenguaje = self.node.package.dublinCore.language
+        
         dT = common.getExportDocType()
         sectionTag = "div"
         headerTag = "div"
@@ -91,9 +94,16 @@ class WebsitePage(Page):
                 html += escape(self.node.titleLong)
         html += u" </title>" 
         html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
-        html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=utf-8\" />";
+        if dT != "HTML5" and self.node.package.dublinCore.language!="":
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'
+        if self.node.package.author!="":
+            html += '<meta name="author" content="'+self.node.package.author+'" />'
         html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
+        if self.node.id=='0':
+            if self.node.package.description!="":
+                html += '<meta name="description" content="'+self.node.package.description+'" />'
         if dT == "HTML5":
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'
         if common.hasGalleryIdevice(self.node):

@@ -209,13 +209,11 @@ class IMSPage(Page):
         if dT == "HTML5":
             sectionTag = "section"        
         html  = common.docType()
-        #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         lenguaje = G.application.config.locale
-        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
-        html += u"<meta http-equiv=\"Content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />";
-        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
+        if self.node.package.dublinCore.language!="":
+            lenguaje = self.node.package.dublinCore.language
+        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+        html += u"<head>"
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
@@ -227,7 +225,17 @@ class IMSPage(Page):
                 html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>\n" 
+        html += u" </title>"        
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=utf-8\" />";
+        if dT != "HTML5" and self.node.package.dublinCore.language!="":
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'
+        if self.node.package.author!="":
+            html += '<meta name="author" content="'+self.node.package.author+'" />'
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
+        if self.node.id=='0':
+            if self.node.package.description!="":
+                html += '<meta name="description" content="'+self.node.package.description+'" />'
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"        
@@ -235,28 +243,28 @@ class IMSPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         if dT == "HTML5":
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->\n'        
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'        
         if common.hasGalleryIdevice(self.node):
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'
+        html += u'<script type="text/javascript" src="common.js"></script>'
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>\n'
-        html += u"</head>\n"
-        html += u"<body class=\"exe-ims\">\n"
-        html += u"<div id=\"outer\">\n"
-        html += u"<div id=\"main\">\n"
-        html += u"<div id=\"nodeDecoration\">\n"
-        html += u'<h1 id=\"nodeTitle\">\n'
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'
+        html += u"</head>"
+        html += u"<body class=\"exe-ims\">"
+        html += u"<div id=\"outer\">"
+        html += u"<div id=\"main\">"
+        html += u"<div id=\"nodeDecoration\">"
+        html += u'<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
-        html += u'</h1>\n'
-        html += u"</div>\n"
+        html += u'</h1>'
+        html += u"</div>"
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">\n' % (idevice.klass, e, idevice.id)
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">' % (idevice.klass, e, idevice.id)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -266,13 +274,13 @@ class IMSPage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(
                         block.renderView(self.node.package.style))
-            html += u'</'+sectionTag+'>\n' # iDevice div
+            html += u'</'+sectionTag+'>' # iDevice div
 
-        html += u"</div>\n"
+        html += u"</div>"
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</div>\n"
-        html += u"</body></html>\n"
+        html += u"</div>"
+        html += u"</body></html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")

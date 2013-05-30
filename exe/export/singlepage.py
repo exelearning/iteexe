@@ -119,6 +119,8 @@ class SinglePage(Page):
         
         hasWikipedia = hasWikipediaIdevice(self.node)
         lenguaje = G.application.config.locale
+        if self.node.package.dublinCore.language!="":
+            lenguaje = self.node.package.dublinCore.language
         dT = common.getExportDocType()
         if dT == "HTML5":
             html = '<!doctype html>'
@@ -128,19 +130,25 @@ class SinglePage(Page):
             html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
             html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"
         html += u"<head>"
+        html += u"<title>"
+        html += name
+        html += "</title>"
+        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=utf-8\" />";
+        if dT != "HTML5" and self.node.package.dublinCore.language!="":
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'
+        if self.node.package.author!="":
+            html += '<meta name="author" content="'+self.node.package.author+'" />'
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'        
+        if self.node.package.description!="":
+            html += '<meta name="description" content="'+self.node.package.description+'" />'
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         if hasWikipedia:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"
         if hasGallery:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
-        html += u"<title>"
-        html += name
-        html += "</title>"
-        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
-        html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
-        html += u" charset=utf-8\" />";
-        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
         if dT == "HTML5":
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'
         if hasGallery:

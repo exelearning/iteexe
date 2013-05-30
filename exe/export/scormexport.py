@@ -413,11 +413,11 @@ class ScormPage(Page):
         if dT == "HTML5":
             sectionTag = "section"        
         html  = common.docType()
-        #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         lenguaje = G.application.config.locale
-        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
-        # html += u"<title>"+_("eXe")+"</title>\n"
+        if self.node.package.dublinCore.language!="":
+            lenguaje = self.node.package.dublinCore.language
+        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+        html += u"<head>"
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
@@ -429,10 +429,17 @@ class ScormPage(Page):
                 html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>\n" 
-        html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
+        html += u" </title>" 
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=utf-8\" />";
+        if dT != "HTML5" and self.node.package.dublinCore.language!="":
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'
+        if self.node.package.author!="":
+            html += '<meta name="author" content="'+self.node.package.author+'" />'
         html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
+        if self.node.id=='0':
+            if self.node.package.description!="":
+                html += '<meta name="description" content="'+self.node.package.description+'" />'
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
         if common.hasWikipediaIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"
@@ -440,37 +447,37 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
         if dT == "HTML5":
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->\n'
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'
         if common.hasGalleryIdevice(self.node):
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>\n'
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'
+        html += u'<script type="text/javascript" src="common.js"></script>'
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>\n'
-        #html += u"</head>\n"
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'
+        #html += u"</head>"
         if self.scormType == 'commoncartridge':
-            html += u"</head>\n"
-            html += u"<body class=\"exe-scorm\">\n"
+            html += u"</head>"
+            html += u"<body class=\"exe-scorm\">"
         else:
             html += u"<script type=\"text/javascript\" "
-            html += u"src=\"SCORM_API_wrapper.js\"></script>\n" 
+            html += u"src=\"SCORM_API_wrapper.js\"></script>" 
             html += u"<script type=\"text/javascript\" "
-            html += u"src=\"SCOFunctions.js\"></script>\n" 
-            html += u"</head>\n"            
+            html += u"src=\"SCOFunctions.js\"></script>" 
+            html += u"</head>"            
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
             html += u'onunload="unloadPage()">'
-        html += u"<div id=\"outer\">\n"
-        html += u"<div id=\"main\">\n"
-        html += u"<div id=\"nodeDecoration\">\n"
-        html += u"<h1 id=\"nodeTitle\">\n"
+        html += u"<div id=\"outer\">"
+        html += u"<div id=\"main\">"
+        html += u"<div id=\"nodeDecoration\">"
+        html += u"<h1 id=\"nodeTitle\">"
         html += escape(self.node.titleLong)
-        html += u'</h1></div>\n'
+        html += u'</h1></div>'
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">\n' % (idevice.klass,
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">' % (idevice.klass,
                     idevice.id)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
@@ -480,10 +487,10 @@ class ScormPage(Page):
                     html += block.renderJavascriptForScorm()
                 html += self.processInternalLinks(
                     block.renderView(self.node.package.style))
-                html += u'</'+sectionTag+'>\n' # iDevice div
+                html += u'</'+sectionTag+'>' # iDevice div
 
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += u"</div>"
+        html += u"</div>"
         if self.node.package.scolinks:
             html += u'<div class="previousnext">'
             html += u'<a class="previouslink" '
@@ -492,7 +499,7 @@ class ScormPage(Page):
             html += u'</div>'
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</body></html>\n"
+        html += u"</body></html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
