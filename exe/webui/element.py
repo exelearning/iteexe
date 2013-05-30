@@ -286,8 +286,12 @@ class TextAreaElement(ElementWithResources):
                     self.field.content_wo_resourcePaths = self.field.content
                 self.field.content = self.field.content_wo_resourcePaths
             content = self.field.content
-        return '<div id="ta%s" class="%s %s">%s</div>' % (
-            self.id, class_, visible, content)
+        dT = common.getExportDocType()
+        sectionTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"         
+        return '<%s id="ta%s" class="%s %s">%s</%s>' % (
+            sectionTag, self.id, class_, visible, content, sectionTag)
    
 
 
