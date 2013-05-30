@@ -167,7 +167,7 @@ class TestLOM(unittest.TestCase):
         'lom_classification1_taxonPath3_taxon1_entry_string1_language': ['es'],
         'lom_classification1_taxonPath3_taxon1_entry_string1': ['Formación Profesional'],                   
     	}
-        lom = pp.processForm2Lom(fields)
+        lom = pp.processForm2Lom(fields, 'lom', 'LOMv1.0')
         rootLom = lomsubs.lomSub.factory()
         rootLom.addChilds(lom)
         rootLom.export(sys.stdout, 0)       
@@ -204,7 +204,7 @@ class TestLOM(unittest.TestCase):
 
 
     def test_proccessLom2Form2(self):
-#        fields = {
+        fields = {
         # General
 #        'lom_general_title_string1': ['Padres...y educadores'],
 #        'lom_general_title_string1_language': ['es'],
@@ -238,8 +238,10 @@ class TestLOM(unittest.TestCase):
 #        'lom_technical_duration_seconds': ['6.5'],                  
 #        'lom_technical_duration_description_string1': ['duration time description'],
 #        'lom_technical_duration_description_string1_language': ['es'],
-#        }
-#        lom = pp.processForm2Lom(fields)
+        'lom_technical_requirement1_orComposite1_type_value': ['browser'],
+        'lom_technical_requirement1_orComposite1_name_value': ['any'],
+        }
+#        lom = pp.processForm2Lom(fields, 'lom', 'LOMv1.0')
 #        rootLom = lomsubs.lomSub.factory()
 #        rootLom.addChilds(lom)
         a = {}

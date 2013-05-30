@@ -78,8 +78,40 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                         src: '/images/plusbutton.png',
                         height: 24,
                         width: 24,
+                        itemId: 'addbutton',
                         listeners: {
-                            afterrender: function(c) {
+                            afterrender: function(c) {                            	
+                                function updater(key, value, object) {
+					                if (key === 'inputId') {
+                                        var sid = object.templateId;
+                                        sid = value;
+                                        vid = sid.split('_');
+                                        //console.log(sid);                                        
+                                        if (! me.itemId){                                        	                                        	
+                                            if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(sid)){
+                                            	me.itemId = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
+                                            	
+                                            }else{
+                                            	me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');	
+                                            }
+                                            //console.log('ADD ITEMID  ' +me.itemId);
+                                        }                                     
+					                }
+					                if (key === 'item') {
+					                    Ext.iterate(object.item, updater);
+					                    return false;
+					                }
+					                if (key === 'items') {
+					                    Ext.iterate(object.items, updater);
+					                    return false;
+					                }
+					                if (Ext.isObject(key))
+					                    Ext.iterate(key, updater);
+					            }
+					            Ext.iterate(me.item, updater);
+                            	
+                            	
+                            	
                                 c.el.on('click', function(a) {
                                     var i,
                                         re,

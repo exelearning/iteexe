@@ -111,6 +111,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        },
 		        collapsible: mandatory,
 		        checkboxToggle: !mandatory,
+		        //checkboxName: 
 		        collapsed: !mandatory,
 		        title: title
 		    }
@@ -335,6 +336,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	                    {
 	                        xtype: 'button',
 	                        text: _('Append Section'),
+	                        itemId: 'button_' + id,
 	                        listeners: {
 	                            click: function(button) {
 	                                var fieldset = button.up().up().up();

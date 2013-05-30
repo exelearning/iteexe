@@ -273,7 +273,7 @@ class lomSub(supermod.lom):
 
         for key, value  in vars(rootObj).iteritems():
             if self.isAttrib(key):
-                base2 = base + '_' + key
+                base2 = base + '_' + key.rstrip('_')
                 #print key + ' -- ' + str(value)
                 if isinstance(value, list):
                     i = 1

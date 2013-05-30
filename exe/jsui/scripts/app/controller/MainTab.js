@@ -61,13 +61,13 @@ Ext.define('eXe.controller.MainTab', {
             },
             '#lomdata_properties': {
                 render: this.onRender,
-                show: this.onRender,
+                show: this.onShow,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
             '#lomesdata_properties': {
                 render: this.onRender,
-                show: this.onRender,
+                show: this.onShow,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
@@ -95,8 +95,7 @@ Ext.define('eXe.controller.MainTab', {
                 scope: this
             }
         });
-    },
-    
+    },   
     actionComplete: function(form, action) {
         if (action.method != "GET") {
         	form.setValues(form.getFieldValues(true));
@@ -207,6 +206,49 @@ Ext.define('eXe.controller.MainTab', {
             Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'))
     },
     
+    getInsertDelField: function(key){
+    	vid = key.split('_');                                        
+    	var field = false, fieldkey = false;
+        if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(key)){        
+         	fieldkey = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
+        }else{
+          	fieldkey = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');	
+        }
+        field = Ext.ComponentQuery.query('#' + fieldkey)[0];
+        return field;
+                                             
+    	
+    },    
+    getAddSectionButton: function(key){
+    	var vid = key.split('_'), s;
+    	s = vid[0] + '_' + vid[1].replace(/[0-9]+/g, '');    
+    	return Ext.ComponentQuery.query('#button_' + s )[0];
+    },
+    getAddFieldButton: function(key){
+    	var field = this.getInsertDelField(key);
+    	if  (field){
+    		return field.down('#addbutton');
+    	}    	
+    	return false;
+    },
+    getSection: function(key){
+    	var vid = key.split('_');
+    	return vid[0] + '_'+ vid[1];
+    },
+    existSection: function(form, key){
+    	var vid2;
+    	var section = this.getSection(key), fsection, fk ;
+    	for(var i=0, items = form.getFields().items; i< items.length; i++){
+    		//console.log(items[i].getName())
+    		fk = items[i].getName();
+    		fsection = this.getSection(fk);
+    		if (section == fsection){
+    			return true;
+    		}   		
+    	};    	
+    	return false;    	
+    },
+    
     onRender: function(formpanel) {
         formpanel.load({ 
             method: "GET", 
@@ -215,6 +257,7 @@ Ext.define('eXe.controller.MainTab', {
             success: function(form, action) {
                 var imgfield = form.findField('pp_backgroundImg'),
                     showbutton = this.getHeaderBackgroundShowButton();
+                var lom = action.result.data.lom_general_title_string1;
                 if (imgfield && imgfield.value) {
                     var img = this.getHeaderBackgroundImg();
                     img.setSrc(location.pathname + '/resources/' + imgfield.value);
@@ -222,8 +265,92 @@ Ext.define('eXe.controller.MainTab', {
                     showbutton.setText(_('Hide Image'));
                     showbutton.show();
                 }
-                else
-                    showbutton.hide();
+                else if (lom){
+                	var field, r, v, key, but;                	
+                	for (key in action.result.data){
+                		field = form.findField(key);
+                		v = action.result.data[key];
+                		if (field){
+                			field.setValue(v);
+                			//console.log('OK:      ' + key );
+                		}else{
+                			//console.log('PROCESS: ' + key );
+                			if (action.result.data[key] !== ''){//            					
+            					if (! this.existSection(form, key)){
+            						console.log('ADD Section: ' + key);
+            						but = this.getAddSectionButton(key);
+            						but.fireEvent('click', but);
+            						r = form.findField(key);
+            						if (r){
+                    					if (r){
+//                    						console.log('Set Field for key ' + key);
+                    						r.setValue(v);
+                    					}
+            						}else{
+            							console.log('ERROR: Set Field for key ' + key);
+            						}                						
+            					}else{
+            						console.log('ADD New Field for key: ' + key);
+            						field = this.getInsertDelField(key);
+            						if (field){
+            							field.expand();
+            							if (/contribute$/.exec(field.getItemId())){
+            								but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
+            							}else{
+            								but = field.down('#addbutton');	
+            							}
+            							
+            							if (but){
+            								but.el.dom.click();
+                							r = form.findField(key);
+                    						if (r){
+//                            						console.log('Set Field for key ' + key);
+                            						r.setValue(v);
+                            				}else{
+                    							console.log('ERROR: Set Field for key ' + key);
+                    						}            								
+            							}            							
+            						}
+            						else{
+            							console.log('ERROR: Field not found: ' + key);
+            						}
+            					}
+                			}
+                		}         		
+                	}
+                	showbutton.hide();
+                }
+                else{
+                	showbutton.hide();
+                }                    
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert(_('Error'), action.result.errorMessage);
+            }
+        });
+    },
+    
+    beforeAction: function(form, action, eOpts) {
+        form.url = location.pathname + "/properties";
+    },
+    onShow: function(formpanel) {
+        formpanel.load({ 
+            method: "GET", 
+            params: formpanel.getForm().getFieldValues(),
+            scope: this,
+            success: function(form, action) {
+                var imgfield = form.findField('pp_backgroundImg'),
+                    showbutton = this.getHeaderBackgroundShowButton();                
+                if (imgfield && imgfield.value) {
+                    var img = this.getHeaderBackgroundImg();
+                    img.setSrc(location.pathname + '/resources/' + imgfield.value);
+                    img.show();
+                    showbutton.setText(_('Hide Image'));
+                    showbutton.show();
+                }
+                else{
+                	showbutton.hide();
+                }                    
             },
             failure: function(form, action) {
                 Ext.Msg.alert(_('Error'), action.result.errorMessage);
