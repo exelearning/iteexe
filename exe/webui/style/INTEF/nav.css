@@ -42,7 +42,8 @@ body{
 /* Otras definiciones */
 body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
-#main{padding:10px 20px 11px 250px}
+#main{padding:10px 20px 0 250px}
+#content{padding-bottom:11px}
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
 * html #header,* html #emptyHeader{height:110px} /* IE6 */
 #nodeTitle{position:absolute;top:55px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
@@ -56,6 +57,7 @@ body{padding:0;text-align:center}
 #siteNav a.main-node:hover{text-decoration:underline;background:none}
 #siteNav ul ul a{padding-left:25px;font-size:.95em}
 #siteNav ul ul ul a{font-size:1em;padding-left:50px}
+#siteFooter{padding-left:250px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
 .pagination a{padding:3px;}

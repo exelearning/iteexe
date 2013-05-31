@@ -6,7 +6,8 @@ Modified by eXeLearning.net
 */
 body{background:#DBDAD2}
 #content{background:#E0DFD8 url(_silver_side_bg.gif) repeat-y;width:100%;position:relative;padding-bottom:10px;min-width:985px;border:2px solid #E5E4E0;border-radius:5px}
-#main{padding:10px 20px 11px 250px}
+#main{padding:10px 20px 0 250px}
+#content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none;background:#D9D9CE}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #E5E4E0}
@@ -24,6 +25,7 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #siteNav ul ul ul .active,#siteNav ul ul ul .active:hover,#siteNav ul ul ul .active:focus{background-position:35px 50%}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:45px}
+#siteFooter{padding-left:250px}
 /* Pagination */
 .pagination{border-top:2px solid #E5E4E0;padding-top:20px;text-align:right;color:#E0DFD8}
 .pagination a{padding:3px 5px;border-radius:5px;margin-left:5px;color:#263264}

@@ -63,6 +63,14 @@ def docType():
                 u'Transitional//EN" '
                 u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">')
             
+def themeHasConfigXML(style):
+    themePath = Path(G.application.config.stylesDir/style)
+    themeXMLFile = themePath.joinpath("config.xml")
+    themeHasXML = False
+    if themeXMLFile.exists():
+        themeHasXML = True
+    return themeHasXML
+            
 def ideviceHeader(e, style, mode):
     dT = getExportDocType()
     #Default HTML tags:
@@ -78,9 +86,7 @@ def ideviceHeader(e, style, mode):
         
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
-    themeHasXML = False
-    if themeXMLFile.exists():
-        themeHasXML = True
+    themeHasXML = themeHasConfigXML(style)
     iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
     if mode=="view":
         iconPath = 'icon_'+e.idevice.icon+'.gif'
@@ -145,11 +151,7 @@ def ideviceFooter(e, style, mode):
     if dT == "HTML5":
         sectionTag = "section"
         articleTag = "article"
-    themePath = Path(G.application.config.stylesDir/style)
-    themeXMLFile = themePath.joinpath("config.xml")
-    themeHasXML = False
-    if themeXMLFile.exists():
-        themeHasXML = True
+    themeHasXML = themeHasConfigXML(style)
     h = ''
     if e.idevice.emphasis > 0:
         h = "</"+sectionTag+">" # Close iDevice_content_wrapper

@@ -1,7 +1,8 @@
 body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #lbOverlay{background:#000}
 #content{width:97%;margin:20px auto;text-align:left;position:relative;padding-bottom:10px;min-width:965px;background:#fff url(_max_columna_izquierda.gif) repeat-y 0 0;border:5px solid #000;box-shadow:0 0 10px 0 #666;border-radius:5px}
-#main{padding:10px 20px 11px 250px}
+#main{padding:10px 20px 0 250px}
+#content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none}
 /* Navigation */
 #siteNav{width:230px;float:left;padding-right:20px}
@@ -18,6 +19,7 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #siteNav .active{color:#1E80B8;font-weight:bold}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{font-size:1em;padding-left:50px}
+#siteFooter{padding-left:250px}
 /* Pagination */
 .pagination{border-top:5px solid #B50536;padding-top:20px;text-align:right;color:#fff}
 .pagination a{padding:5px 8px;border-radius:10px;background:#f2f2f2;margin:0 5px;border:1px solid #f1f1f1;color:#000;box-shadow:0 0 3px 0 #ccc}

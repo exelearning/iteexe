@@ -172,8 +172,12 @@ class WebsitePage(Page):
         html += "</"+sectionTag+">"
         # writes the footer for each page 
         html += self.renderLicense()
-        html += self.renderFooter()
+        themeHasXML = common.themeHasConfigXML(style)
+        if not themeHasXML:
+            html += self.renderFooter()
         html += u"</"+sectionTag+">" # /main
+        if themeHasXML:
+            html += self.renderFooter()
         html += u"</"+sectionTag+">" # /content
         html += u"</body></html>"
         html = html.encode('utf8')
