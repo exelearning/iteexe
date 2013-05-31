@@ -206,8 +206,10 @@ class IMSPage(Page):
         """
         dT = common.getExportDocType()
         sectionTag = "div"
+        headerTag = "div"
         if dT == "HTML5":
             sectionTag = "section"        
+            headerTag = "header"
         html  = common.docType()
         lenguaje = G.application.config.locale
         if self.node.package.dublinCore.language!="":
@@ -251,13 +253,13 @@ class IMSPage(Page):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'
         html += u"</head>"
         html += u"<body class=\"exe-ims\">"
-        html += u"<div id=\"outer\">"
-        html += u"<div id=\"main\">"
-        html += u"<div id=\"nodeDecoration\">"
+        html += u"<"+sectionTag+" id=\"outer\">"
+        html += u"<"+sectionTag+" id=\"main\">"
+        html += u"<"+headerTag+" id=\"nodeDecoration\">"
         html += u'<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
         html += u'</h1>'
-        html += u"</div>"
+        html += u"</"+headerTag+">"
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
@@ -276,10 +278,10 @@ class IMSPage(Page):
                         block.renderView(self.node.package.style))
             html += u'</'+sectionTag+'>' # iDevice div
 
-        html += u"</div>"
+        html += u"</"+sectionTag+">" # /#main
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</div>"
+        html += u"</"+sectionTag+">" # /#outer
         html += u"</body></html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones

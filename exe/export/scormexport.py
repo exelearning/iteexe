@@ -410,8 +410,10 @@ class ScormPage(Page):
         """
         dT = common.getExportDocType()
         sectionTag = "div"
+        headerTag = "div"
         if dT == "HTML5":
-            sectionTag = "section"        
+            sectionTag = "section"
+            headerTag = "header"
         html  = common.docType()
         lenguaje = G.application.config.locale
         if self.node.package.dublinCore.language!="":
@@ -465,12 +467,12 @@ class ScormPage(Page):
             html += u"</head>"            
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
             html += u'onunload="unloadPage()">'
-        html += u"<div id=\"outer\">"
-        html += u"<div id=\"main\">"
-        html += u"<div id=\"nodeDecoration\">"
+        html += u"<"+sectionTag+" id=\"outer\">"
+        html += u"<"+sectionTag+" id=\"main\">"
+        html += u"<"+headerTag+" id=\"nodeDecoration\">"
         html += u"<h1 id=\"nodeTitle\">"
         html += escape(self.node.titleLong)
-        html += u'</h1></div>'
+        html += u'</h1></'+headerTag+'>'
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
@@ -489,16 +491,21 @@ class ScormPage(Page):
                     block.renderView(self.node.package.style))
                 html += u'</'+sectionTag+'>' # iDevice div
 
-        html += u"</div>"
-        html += u"</div>"
+        html += u"</"+sectionTag+">" # /#main
+        themeHasXML = common.themeHasConfigXML(self.node.package.style)
+        if themeHasXML:
+            html += self.renderLicense()
+            html += self.renderFooter()
+        html += u"</"+sectionTag+">" # /#outer
         if self.node.package.scolinks:
-            html += u'<div class="previousnext">'
+            html += u'<'+sectionTag+' class="previousnext">'
             html += u'<a class="previouslink" '
-            html += u'href="javascript: goBack();">%s</a> | <a class="nextlink" ' % _('Previous')
-            html += u'href="javascript: goForward();">%s</a>' % _('Next')
-            html += u'</div>'
-        html += self.renderLicense()
-        html += self.renderFooter()
+            html += u'href="javascript:goBack();">%s</a> | <a class="nextlink" ' % _('Previous')
+            html += u'href="javascript:goForward();">%s</a>' % _('Next')
+            html += u'</'+sectionTag+'>'
+        if not themeHasXML:
+            html += self.renderLicense()
+            html += self.renderFooter()
         html += u"</body></html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
