@@ -226,6 +226,16 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        descriptionfield
 		    ])
 		},
+        taxonfield: function(label, id, tooltip, help, optional, margin, helpmargin) {
+            var field = this.field( null, true, true, this.helpcombo( label, id, tooltip, help, optional, margin, helpmargin));
+
+            field.border = false;
+            field.collapsible = false;
+            field.checkboxToggle = false;
+            field.collapsed = false;
+            field.margin = -10;
+            return field;
+        },
         updateMandatoryField: function(event, input, eOpts) {
             var field;
             if (!input) {
