@@ -23,6 +23,9 @@ StyleMenu provides a list of Styles used in eXe and handle related client events
 """
 
 import logging
+from xml.dom.minidom import parse
+from exe                       import globals as G
+from exe.engine.path           import Path
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 log = logging.getLogger(__name__)
@@ -52,18 +55,27 @@ class StyleMenu(Renderable, Resource):
             log.debug("changing style to "+request.args["object"][0])
             self.package.style = request.args["object"][0]
             
-            
+    def stylename(self,direc): 
+        #FM: load style name 
+        themePath = G.application.config.stylesDir.joinpath(direc)
+        themeXMLFile = Path(themePath/"config.xml")
+        if themeXMLFile.isfile():
+             xmldom = parse(themeXMLFile)
+             rf = xmldom.getElementsByTagName('name')[0].firstChild.nodeValue   
+        else:
+            rf=direc.capitalize()
+        return rf
+          
     def render(self, request=None):
         """
         Returns a JSON string with the styles
         """
         log.debug("render")
 
-        l = []
-        printableStyles = [(x.capitalize(), x) for x in self.config.styles]
+        l = []       
+        printableStyles = [(self.stylename(x), x) for x in self.config.styles]        
         for printableStyle, style in sorted(printableStyles, key=lambda x: x[0]):
             l.append({ "label": printableStyle, "style": style, "selected": True if style == self.package.style else False})
-        return json.dumps(l).encode('utf-8')
-        
+        return json.dumps(l).encode('utf-8')     
     
 # ===========================================================================
