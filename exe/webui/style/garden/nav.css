@@ -5,7 +5,8 @@ Centre for Flexible and Distance Learning
 Modified by eXeLearning.net
 */
 #content{width:100%;position:relative;padding-bottom:10px;min-width:985px;border-top:2px solid #ACBF60}
-#main{padding:10px 0 11px 250px}
+#main{padding:10px 0 0 250px}
+#content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #ACBF60}
@@ -21,6 +22,7 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #siteNav .active,#siteNav .active:hover,#siteNav .active:focus{color:#fff;background:#94A975}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:45px}
+#siteFooter{padding-left:250px}
 /* Pagination */
 .pagination{border-top:2px solid #ACBF60;padding-top:20px;text-align:right;color:#F5FFCF}
 .pagination a{padding:0;margin:0 5px;color:#B34700}

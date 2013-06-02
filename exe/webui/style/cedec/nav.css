@@ -22,15 +22,14 @@ Centre for Flexible and Distance Learning
 #topPagination .pagination{border:none}
 
 #main {
-	padding:18px;
-	padding-top:0;
-	margin:0 10px 10px 180px;
+	padding:0 18px;
+	margin:0 10px 0 180px;
 	margin-left:220px;
 	margin-top:10px;
 	text-align:left;
 	width:76%;
 }
-#content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0}
+#content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0;padding-bottom:28px}
 #siteNav{
 	z-index:1000;
 	width:220px;
@@ -90,3 +89,4 @@ Centre for Flexible and Distance Learning
 #siteNav .other-section{
 	display:none; /* Remove if you want all levels to be displayed */
 }
+#siteFooter{padding-left:238px}

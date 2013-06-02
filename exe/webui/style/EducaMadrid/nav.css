@@ -1,10 +1,12 @@
 body{padding:0;text-align:center;background:#fafafa url(_em_fondo_pagina.gif)}
 #lbOverlay{background:#f3f3f3 url(_em_fondo_pagina.gif)}
 #content{width:985px;margin:20px auto;text-align:left;position:relative;border-style:solid;border-width:1px;padding-bottom:10px;max-width:100%;background:#fff url(_em_columna_izquierda.gif) repeat-y 0 0;border-color:#e3e3e3;box-shadow:0 0 10px 0 #666;border-radius:5px}
-#main{padding:10px 20px 11px 250px}
+#main{padding:10px 20px 0 250px}
+#content{padding-bottom:21px}
 #header,#emptyHeader{border-top-left-radius:5px;border-top-right-radius:5px;border-top:none}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #f3f3f3}
+#siteFooter{padding-left:250px}
 /* Navigation */
 #siteNav{width:230px;float:left;padding-right:20px}
 #siteNav,#siteNav ul{background:#fff;border-color:#f0f0f0}
@@ -32,75 +34,3 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #content{display:inline-block}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
-
-/* Color schemes */
-/* Blue */
-body.blue,.blue #lbOverlay{background-image:url(_em_fondo_pagina_azul.gif)}
-.blue #siteNav .active{color:#A04B13}
-#topPagination .pagination{color:#f8fdff}
-.blue .pagination a{color:#A04B13;background:#f5fafc}
-.blue .pagination a:hover,.blue .pagination a:focus,.blue #topPagination .pagination a:hover,.blue #topPagination .pagination a:focus{background-color:#A04B13;color:#fff}
-.blue #content{background-image:url(_em_columna_izquierda_azul.gif)}
-.blue #content{border-color:#e3e7ea}
-.blue #siteNav a{border-color:#e3e7ea #f5f7f7}
-.blue #siteNav a:hover,.blue #siteNav a:focus,.blue #siteNav li:hover,.blue #siteNav li.sfhover{background:#f5fafc}
-.blue .pagination{border-color:#eef1f2}
-.blue #topPagination .pagination{color:#f8fdff} /* Hidden */
-/* Green */
-body.green,.green #lbOverlay{background-image:url(_em_fondo_pagina_verde.gif)}
-.green #siteNav .active{color:#944700}
-#topPagination .pagination{color:#eef3e7}
-.green .pagination a{color:#944700;background:#f1f5eb}
-.green .pagination a:hover,.green .pagination a:focus,.green #topPagination .pagination a:hover,.green #topPagination .pagination a:focus{background-color:#944700;color:#fff}
-.green #content{background-image:url(_em_columna_izquierda_verde.gif)}
-.green #content{border-color:#e9ece5}
-.green #siteNav a{border-color:#e9ece5 #f3f5f1}
-.green #siteNav a:hover,.green #siteNav a:focus,.green #siteNav li:hover,.green #siteNav li.sfhover{background:#f1f5eb}
-.green .pagination{border-color:#eef1f2}
-.green #topPagination .pagination{color:#f7faf4} /* Hidden */
-/* White */
-body.white,.white #lbOverlay{background:#fff}
-.white #content{background-image:url(_em_columna_izquierda_blanco.gif)}
-.white #topPagination a,.white .pagination a{background:#fff;background:none;box-shadow:none}
-.white #topPagination .pagination{color:#fff} /* Hidden */
-.white #siteNav a:hover,.white #siteNav a:focus,.white #siteNav li:hover,.white #siteNav li.sfhover{background:#f9f9f9}
-
-/* Presentation schemes */
-/* Horizontal navigation */
-.h-nav #main{padding-left:20px}
-.h-nav #content{background:#fff}
-.h-nav #nodeTitle,.h-nav .pagination{border-width:2px}
-.h-nav #siteNav .other-section{display:block}
-.h-nav #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
-.h-nav #siteNav,.h-nav #siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;margin:0;line-height:1.3em}
-.h-nav #siteNav ul ul{line-height:1.1em}
-.h-nav #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
-.h-nav #siteNav a{display:block;text-decoration:none;padding:.4em 10px;border:none}
-.h-nav #siteNav ul ul .daddy{background:url(_em_flecha_nav.gif) no-repeat right 50%}
-.h-nav #siteNav li{float:left}
-.h-nav #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
-.h-nav * html #siteNav li ul{width:13em}
-.h-nav #siteNav li li{padding-right:1em;width:13em}
-.h-nav #siteNav li ul a{font-size:.95em;padding:.45em 10px}
-.h-nav #siteNav li ul ul{margin:-2.15em 0 0 14em}
-* html .h-nav #siteNav li ul ul{margin-left:13em}
-.h-nav #siteNav li:hover ul ul,.h-nav #siteNav li:hover ul ul ul,.h-nav #siteNav li.sfhover ul ul,.h-nav #siteNav li.sfhover ul ul ul{left:-999em}
-.h-nav #siteNav li:hover ul,.h-nav #siteNav li li:hover ul,.h-nav #siteNav li li li:hover ul,.h-nav #siteNav li.sfhover ul,.h-nav #siteNav li li.sfhover ul,.h-nav #siteNav li li li.sfhover ul{left:auto}
-/* Fullscreen mode */
-.fullscreen #content{width:97%;min-width:985px;margin:0 auto;border-radius:0}
-.fullscreen #header,.fullscreen #emptyHeader{border-radius:0}
-/* Presentation */
-.presentation #main{padding-left:20px}
-.presentation #content{background:#fff}
-.presentation .pagination,.presentation #siteNav{display:none}
-.presentation #nodeTitle{border-width:1px}
-.presentation #topPagination{top:5px}
-.presentation #topPagination .pagination{display:block}
-.presentation .pagination a{box-shadow:none}
-.presentation .pagination{position:absolute;top:0;right:0;width:100%;padding:0;color:#f3f3f3}
-.presentation .pagination .prev{float:left}
-.presentation .pagination .next{float:right}
-.presentation #header{line-height:2.5em;height:2.5em;text-align:center}
-/* Fullscreen + Presentation */
-.fullscreen.presentation{background:#fff}
-.fullscreen.presentation #content{width:100%;border:none;box-shadow:none}

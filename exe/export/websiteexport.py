@@ -164,6 +164,10 @@ class WebsiteExport(object):
         # copy script files.
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
+        dT = common.getExportDocType()
+        if dT == "HTML5":
+            jsFile = (self.scriptsDir/'exe_html5.js')
+            jsFile.copyfile(outputDir/'exe_html5.js')
 
         # copy players for media idevices.                
         hasFlowplayer     = False

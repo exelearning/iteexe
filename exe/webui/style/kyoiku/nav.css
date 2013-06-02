@@ -49,7 +49,8 @@ body{
 }
 
 /* OTRAS DEFINICIONES */
-#main{padding:10px 20px 11px 260px}
+#main{padding:10px 20px 0 260px}
+#content{padding-bottom:21px}
 #header,#emptyHeader{position:absolute;left:-9999em;overflow:hidden}
 * html #header,* html #emptyHeader{display:none;} /* IE6 */
 #nodeTitle{position:absolute;top:10px;left:250px;font-size:1.6em;margin:20px 10px 0 0}
@@ -67,6 +68,8 @@ body{font:100%/1.5 Arial,Verdana,Helvetica,sans-serif;padding:0;margin:0;text-al
 #siteNav a.main-node:hover{text-decoration:underline;background:#627796}
 #siteNav ul ul a{padding-left:25px;font-size:.95em}
 #siteNav ul ul ul a{font-size:1em;padding-left:50px}
+
+#siteFooter{padding-left:260px}
 
 /* Pagination */
 .pagination,.noprt{border-style:dashed;border-width:1px 0 0 0;padding-top:10px;text-align:right; border-color: #627796;}

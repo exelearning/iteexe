@@ -4,7 +4,7 @@ Created by Brent Simpson, brent@exelearning.org
 Modified by eXeLearning.net
 */
 body{padding:0}
-#content{width:100%;position:relative;padding-bottom:10px;min-width:965px}
+#content{width:100%;position:relative;min-width:965px}
 #main{padding:20px;background:#fff;margin-left:230px;overflow:auto}
 #header,#emptyHeader{border-top:none;padding-left:15px}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
@@ -24,7 +24,7 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #siteNav .active,#siteNav .active:hover,#siteNav .active:focus{background:#8B8B89;border-color:#fff}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:45px}
-#siteFooter{color:#555}
+#siteFooter{color:#555;margin-left:230px;background:#fff;padding:0 0 20px 20px;margin-top:-20px}
 /* Pagination */
 .pagination{text-align:right;color:#fff}
 .pagination a{padding:0;margin:0 5px;color:#036}

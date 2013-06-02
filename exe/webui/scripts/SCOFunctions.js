@@ -202,9 +202,15 @@ function unloadPage()
 {
 	//console.trace('exitPageStatus'+exitPageStatus);
 
+	var status;
 	if (exitPageStatus != true)
 	{
-		scorm.SetCompletionStatus("completed");
+		status = scorm.GetCompletionStatus();
+		// In SCORM12, information about completion and success is stored in the same place (cmi.core.lesson_status)
+		if (status!="passed" && status!="failed")
+		{
+			scorm.SetCompletionStatus("completed");
+		}
 		doQuit();
 	}
 

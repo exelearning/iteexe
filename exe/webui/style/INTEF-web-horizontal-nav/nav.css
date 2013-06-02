@@ -47,7 +47,8 @@ body{
 /* Otras definiciones */
 body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
-#main{padding:10px 20px 11px 20px}
+#main{padding:10px 20px 0 20px}
+#content{padding-bottom:11px}
 #header,#emptyHeader{height:39px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 0 0 10px;font-size:1.5em}
 * html #header,* html #emptyHeader{height:100px} /* IE6 */
 #nodeTitle{font-size:1.5em}
@@ -67,6 +68,7 @@ body{padding:0;text-align:center}
 * html #siteNav li ul ul{margin-left:13em}
 #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
 #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+#siteFooter{padding-left:20px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
 .pagination a{padding:3px;}
