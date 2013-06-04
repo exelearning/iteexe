@@ -214,6 +214,8 @@ def processForm2Lom(fields, label, source):
                             if 'name' in rootparent and 'organization' in rootparent and 'email' in rootparent:
                                 val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
                                 % (rootparent['name'], rootparent['email'], rootparent['organization'])
+                                name, num = get_nameNum(nodes[len(nodes) - 3])
+                                parentindex = get_nodeFromList(rootparentparent, num)
                                 rootparentparent[parentindex]['entity'] = val2
                         elif re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
                             rootparent[node] = val

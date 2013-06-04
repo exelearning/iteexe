@@ -54,7 +54,7 @@ Ext.define('eXe.controller.MainTab', {
                 actioncomplete: this.actionComplete
             },
             '#export_properties': {
-                render: this.onRender,
+                render: this.onRender,                
                 show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
@@ -62,6 +62,10 @@ Ext.define('eXe.controller.MainTab', {
             '#lomdata_properties': {
                 render: this.onRender,
                 show: this.onShow,
+//                afterrender: this.onAfterRender,
+//                beforerender: this.onBeforeRender,
+//                beforeshow: this.onBeforeShow,
+//                afterlayout: this.onAfterLayout,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
@@ -95,11 +99,39 @@ Ext.define('eXe.controller.MainTab', {
                 scope: this
             }
         });
-    },   
+    },
+//    msg: false,
+//    onAfterRender: function(a, b){
+//      	console.log('afterRender');
+//      	if (this.msg){
+//            this.msg.close();
+//      	}
+
+//    },
+//    onBeforeRender: function(a, b){
+//    	//this.msg = Ext.Msg.alert('Status', 'Loading data ...');
+//    	console.log('beforeRender');
+//    },
+//    onBeforeShow: function(a, b){
+//    	console.log('beforeShow');
+//    },
+//    onAfterLayout: function(a, b){
+//    	console.log('afterLayout');
+//    },
+//    beforeAction: function(a, b){
+//    	console.log('beforeaction');
+//    },
     actionComplete: function(form, action) {
         if (action.method != "GET") {
         	form.setValues(form.getFieldValues(true));
             Ext.MessageBox.alert("", _('Settings Saved'));
+//        }else{
+//        	console.log('actioncomplete');
+//        	var lom = action.result.data.lom_general_title_string1;
+//            if (lom){
+//            	//this.on('afterrender', this.extendForm, this, [form, action]);
+//            	this.extendForm(form, action);            
+//            }
         }
     },
 
@@ -248,79 +280,110 @@ Ext.define('eXe.controller.MainTab', {
     	};    	
     	return false;    	
     },
+    expandParents: function(field){
+    	var comp = field;
+    	while (comp.xtype !== 'lomdata'){
+    		if ((comp.xtype == 'insertdelfieldset' || comp.xtype == 'preservescrollfieldset') && comp.collapsed){
+    			comp.expand();
+    		}
+    		comp = comp.up();
+    	}
+    	return true;
+    },
+    extendForm: function(form, action){
+		//console.log('EXTENDFORM');		
+		//var lform = form.owner;
+    	//var vp = Ext.ComponentQuery.query('#eXeViewport')[0];    	   	
+    	//lform.suspendLayouts(true);
+    	Ext.suspendLayouts();
+    	var field,fields = [], r, v, key, but;
+    	for (key in action.result.data){
+    		fields.push(key);
+    	}
+    	fields.sort();
+    	for (var i = 0, len = fields.length; i < len; i++){
+    		key = fields[i];
+    		field = form.findField(key);
+    		v = action.result.data[key];
+    		if (field){
+    			field.setValue(v);
+    			this.expandParents(field);
+    			//console.log('OK:      ' + key );
+    		}else{
+    			//console.log('PROCESS: ' + key );
+    			if (action.result.data[key] !== ''){//            					
+					if (! this.existSection(form, key)){
+						console.log('ADD Section: ' + key);
+						but = this.getAddSectionButton(key);
+						but.fireEvent('click', but);
+						r = form.findField(key);
+						if (r){
+        					if (r){
+//        						console.log('Set Field for key ' + key);
+        						r.setValue(v);
+        					}
+						}else{
+							console.log('ERROR: Set Field for key ' + key);
+						}                						
+					}else{
+						//console.log('ADD New Field for key: ' + key);
+						field = this.getInsertDelField(key);
+						if (field){
+							field.expand();
+							if (/contribute$/.exec(field.getItemId())){
+								but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
+							}else{
+								but = field.down('#addbutton');	
+							}
+							
+							if (but){
+								but.el.dom.click();
+    							r = form.findField(key);
+        						if (r){
+//                						console.log('Set Field for key ' + key);
+                						r.setValue(v);
+                				}else{
+        							console.log('ERROR: Set Field for key ' + key);
+        						}            								
+							}            							
+						}
+						else{
+							console.log('ERROR: Field not found: ' + key);
+						}
+					}
+    			}
+    		}         		
+    	}
+    	Ext.resumeLayouts(true);
+//    	msg.close();
+//    	vp.setLoading(true);
+//    	vp.doLayout();
+//    	vp.setLoading(false);
+    },
     
     onRender: function(formpanel) {
+//    	console.log('render');
         formpanel.load({ 
             method: "GET", 
             params: formpanel.getForm().getFieldValues(),
             scope: this,
             success: function(form, action) {
                 var imgfield = form.findField('pp_backgroundImg'),
-                    showbutton = this.getHeaderBackgroundShowButton();
-                var lom = action.result.data.lom_general_title_string1;
+                    showbutton = this.getHeaderBackgroundShowButton();                
                 if (imgfield && imgfield.value) {
                     var img = this.getHeaderBackgroundImg();
                     img.setSrc(location.pathname + '/resources/' + imgfield.value);
                     img.show();
                     showbutton.setText(_('Hide Image'));
                     showbutton.show();
-                }
-                else if (lom){
-                	var field, r, v, key, but;                	
-                	for (key in action.result.data){
-                		field = form.findField(key);
-                		v = action.result.data[key];
-                		if (field){
-                			field.setValue(v);
-                			//console.log('OK:      ' + key );
-                		}else{
-                			//console.log('PROCESS: ' + key );
-                			if (action.result.data[key] !== ''){//            					
-            					if (! this.existSection(form, key)){
-            						console.log('ADD Section: ' + key);
-            						but = this.getAddSectionButton(key);
-            						but.fireEvent('click', but);
-            						r = form.findField(key);
-            						if (r){
-                    					if (r){
-//                    						console.log('Set Field for key ' + key);
-                    						r.setValue(v);
-                    					}
-            						}else{
-            							console.log('ERROR: Set Field for key ' + key);
-            						}                						
-            					}else{
-            						console.log('ADD New Field for key: ' + key);
-            						field = this.getInsertDelField(key);
-            						if (field){
-            							field.expand();
-            							if (/contribute$/.exec(field.getItemId())){
-            								but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
-            							}else{
-            								but = field.down('#addbutton');	
-            							}
-            							
-            							if (but){
-            								but.el.dom.click();
-                							r = form.findField(key);
-                    						if (r){
-//                            						console.log('Set Field for key ' + key);
-                            						r.setValue(v);
-                            				}else{
-                    							console.log('ERROR: Set Field for key ' + key);
-                    						}            								
-            							}            							
-            						}
-            						else{
-            							console.log('ERROR: Field not found: ' + key);
-            						}
-            					}
-                			}
-                		}         		
-                	}
-                	showbutton.hide();
-                }
+                }          
                 else{
+                	var lom = action.result.data.lom_general_title_string1;
+                    if (lom){
+                    	//this.on('afterrender', this.extendForm, this, [form, action]);                    	
+                    	this.extendForm(form, action);
+                    	//console.log('ExtendForm end');
+                    }
                 	showbutton.hide();
                 }                    
             },
@@ -328,12 +391,14 @@ Ext.define('eXe.controller.MainTab', {
                 Ext.Msg.alert(_('Error'), action.result.errorMessage);
             }
         });
+//        console.log('render end');
     },
     
     beforeAction: function(form, action, eOpts) {
         form.url = location.pathname + "/properties";
     },
     onShow: function(formpanel) {
+//    	console.log('show');
         formpanel.load({ 
             method: "GET", 
             params: formpanel.getForm().getFieldValues(),
@@ -359,6 +424,7 @@ Ext.define('eXe.controller.MainTab', {
     },
     
     beforeAction: function(form, action, eOpts) {
+//    	console.log('beforeaction');
         form.url = location.pathname + "/properties";
     },
 
