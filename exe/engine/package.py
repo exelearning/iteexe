@@ -329,7 +329,7 @@ class Package(Persistable):
         self.scowsinglepage= False
         self.scowwebsite   = False
         self.scowsource    = False
-        self.exportMetadataType = "DC"
+        self.exportMetadataType = "LOMES"
         self.license       = "None"
         self.footer        = ""
 
@@ -956,6 +956,6 @@ class Package(Persistable):
         if not hasattr(self, 'scowsource'):
             self.scowsource = False
         if not hasattr(self, 'exportMetadataType'):
-            self.exportMetadataType = "DC"
+            self.exportMetadataType = "LOMES"
 
 # ===========================================================================
