@@ -70,7 +70,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                                     xtype: 'lomdata',
                                     prefix: 'lomes_',
                                     itemId: 'lomesdata_properties',
-                                    title: _('LOM.es')
+                                    title: _('LOM-ES')
                                 }
                             ]
                         },

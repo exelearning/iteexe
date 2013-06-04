@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.engine.locationbuttons import LocationButtons
-from exe.export.epub3export import Epub3Export
 
 """
 This is the main Javascript page.
@@ -57,6 +55,9 @@ from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
 from urllib                      import unquote
+from exe.engine.locationbuttons import LocationButtons
+from exe.export.epub3export import Epub3Export
+from exe.engine.lom import lomsubs
 import zipfile
 log = logging.getLogger(__name__)
 
@@ -682,17 +683,24 @@ class MainPage(RenderableLivePage):
                    
 
     def handleDeleteStyle(self, client):
-                self._deletestyle(self.package.style,client)
-    def handleImport(self, client, importType, dirname, html=None):
+        self._deletestyle(self.package.style,client)
+
+    def handleImport(self, client, importType, path, html=None):
         if importType == 'html':
             if (not html):
-                client.call('eXe.app.getController("Toolbar").importHtml2', dirname)
+                client.call('eXe.app.getController("Toolbar").importHtml2', path)
             else:
-                d = threads.deferToThread(self.getResources, dirname, html, client)
-                d.addCallback(self.handleImportCallback,client)
-                d.addErrback(self.handleImportErrback,client)
-                client.call('eXe.app.getController("Toolbar").initImportProgressWindow',_(u'Importing HTML...'))
-    
+                d = threads.deferToThread(self.getResources, path, html, client)
+                d.addCallback(self.handleImportCallback, client)
+                d.addErrback(self.handleImportErrback, client)
+                client.call('eXe.app.getController("Toolbar").initImportProgressWindow', _(u'Importing HTML...'))
+        if importType.startswith('lom'):
+            try:
+                setattr(self.package, importType, lomsubs.parse(path))
+                client.alert(_('LOM Metadata import success!'))
+            except Exception, e:
+                client.alert(_('LOM Metadata import FAILED!\n%s') % str(e))
+
     def handleImportErrback(self, failure, client):
         client.alert(_(u'Error importing HTML:\n') + unicode(failure.getBriefTraceback()), \
                      (u'eXe.app.gotoUrl("/%s")' % self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
