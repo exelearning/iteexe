@@ -267,8 +267,7 @@ Ext.define('eXe.controller.MainTab', {
     	var vid = key.split('_');
     	return vid[0] + '_'+ vid[1];
     },
-    existSection: function(form, key){
-    	var vid2;
+    existSection: function(form, key){    	
     	var section = this.getSection(key), fsection, fk ;
     	for(var i=0, items = form.getFields().items; i< items.length; i++){
     		//console.log(items[i].getName())
@@ -313,7 +312,7 @@ Ext.define('eXe.controller.MainTab', {
     			//console.log('PROCESS: ' + key );
     			if (action.result.data[key] !== ''){//            					
 					if (! this.existSection(form, key)){
-						console.log('ADD Section: ' + key);
+//						console.log('ADD Section: ' + key);
 						but = this.getAddSectionButton(key);
 						but.fireEvent('click', but);
 						r = form.findField(key);
@@ -379,7 +378,8 @@ Ext.define('eXe.controller.MainTab', {
                 }          
                 else{
                 	var lom = action.result.data.lom_general_title_string1;
-                    if (lom){
+                	var lomes = action.result.data.lomes_general_title_string1;
+                    if (lom || lomes){
                     	//this.on('afterrender', this.extendForm, this, [form, action]);                    	
                     	this.extendForm(form, action);
                     	//console.log('ExtendForm end');
