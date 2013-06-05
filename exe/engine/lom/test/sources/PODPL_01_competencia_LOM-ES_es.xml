@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Larraitz Eizmendi (Indra) -->
+<vdex orderSignificant="true" profileType="hierarchicalTokenTerms" language="es" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdexv1p0 imsvdex_v1p0.xsd" xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<vocabName>
+		<langstring>Competencia</langstring>
+	</vocabName>
+	<term>
+		<termIdentifier>1</termIdentifier>
+		<caption>
+			<langstring>Competencias Generales y Personales</langstring>
+		</caption>
+		<term>
+			<termIdentifier>1.1</termIdentifier>
+			<caption>
+				<langstring>Actitud positiva al cambio</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.2</termIdentifier>
+			<caption>
+				<langstring>Afectividad</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.3</termIdentifier>
+			<caption>
+				<langstring>Autoaprendizaje a lo largo de la vida</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.4</termIdentifier>
+			<caption>
+				<langstring>Autoestima</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.5</termIdentifier>
+			<caption>
+				<langstring>Autorreflexión y autoevaluación</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.6</termIdentifier>
+			<caption>
+				<langstring>Búsqueda de empleo</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.7</termIdentifier>
+			<caption>
+				<langstring>Búsqueda de información relevante</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.8</termIdentifier>
+			<caption>
+				<langstring>Comunicación en lengua materna (escuchar, hablar, leer y escribir).</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.9</termIdentifier>
+			<caption>
+				<langstring>Conocimiento de los principios básicos de la naturaleza</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.10</termIdentifier>
+			<caption>
+				<langstring>Conocimiento y aprecio por la cultura y lengua de las Comunidades Autónomas</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.11</termIdentifier>
+			<caption>
+				<langstring>Conocimiento y práctica deportiva</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.12</termIdentifier>
+			<caption>
+				<langstring>Espíritu de empresa</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.13</termIdentifier>
+			<caption>
+				<langstring>Expresión y compresión básica de lengua extranjera</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.14</termIdentifier>
+			<caption>
+				<langstring>Formulación de preguntas pertinentes</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.15</termIdentifier>
+			<caption>
+				<langstring>Honestidad y ética personal</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.16</termIdentifier>
+			<caption>
+				<langstring>Iniciativa personal</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.17</termIdentifier>
+			<caption>
+				<langstring>Interés por la expresión cultural (literatura, música, artes escénicas y plásticas)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.18</termIdentifier>
+			<caption>
+				<langstring>Invención y creación</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.19</termIdentifier>
+			<caption>
+				<langstring>Motivación intrínseca</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.20</termIdentifier>
+			<caption>
+				<langstring>Pensamiento crítico</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.21</termIdentifier>
+			<caption>
+				<langstring>Perseverancia</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.22</termIdentifier>
+			<caption>
+				<langstring>Planificación y gestión de recursos propios (tiempo, dinero,...)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.23</termIdentifier>
+			<caption>
+				<langstring>Realización de juicios informados</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.24</termIdentifier>
+			<caption>
+				<langstring>Reconocimiento y respeto a las diferencias individuales</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.25</termIdentifier>
+			<caption>
+				<langstring>Resistencia a la ambigüedad</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.26</termIdentifier>
+			<caption>
+				<langstring>Resistencia al fracaso</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.27</termIdentifier>
+			<caption>
+				<langstring>Responsabilidad</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.28</termIdentifier>
+			<caption>
+				<langstring>Solución de problemas</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.29</termIdentifier>
+			<caption>
+				<langstring>Uso eficiente de la información</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>1.30</termIdentifier>
+			<caption>
+				<langstring>Uso básico de las TIC</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>2</termIdentifier>
+		<caption>
+			<langstring>Competencias Académicas</langstring>
+		</caption>
+		<term>
+			<termIdentifier>2.1</termIdentifier>
+			<caption>
+				<langstring>Acceder y aplicar el conocimiento desde diferentes disciplinas (arte, ciencias sociales, filosofía,
+ciencias naturales, ...)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.2</termIdentifier>
+			<caption>
+				<langstring>Análisis de datos</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.3</termIdentifier>
+			<caption>
+				<langstring>Aprender a aprender</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.4</termIdentifier>
+			<caption>
+				<langstring>Comprender correctamente en el lenguaje de su disciplina</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.5</termIdentifier>
+			<caption>
+				<langstring>Conocimiento de los métodos científicos</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.6</termIdentifier>
+			<caption>
+				<langstring>Conocimiento de los productos y procesos tecnológicos.</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.7</termIdentifier>
+			<caption>
+				<langstring>Escuchar para entender y aprender</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.8</termIdentifier>
+			<caption>
+				<langstring>Evaluar situaciones</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.9</termIdentifier>
+			<caption>
+				<langstring>Expresarse correctamente en el lenguaje de su disciplina (oral y escrito)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.10</termIdentifier>
+			<caption>
+				<langstring>Interpretar y utilizar diferentes materiales escritos (gráficos, esquemas, cuadros, ...)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.11</termIdentifier>
+			<caption>
+				<langstring>Operaciones básicas de lecto-escritura</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.12</termIdentifier>
+			<caption>
+				<langstring>Operaciones básicas lógico-matemáticas</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.13</termIdentifier>
+			<caption>
+				<langstring>Pensar críticamente</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.14</termIdentifier>
+			<caption>
+				<langstring>Presentación de trabajos o conclusiones escritas de forma eficiente</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.15</termIdentifier>
+			<caption>
+				<langstring>Presentación de trabajos o conclusiones orales de forma eficiente</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.16</termIdentifier>
+			<caption>
+				<langstring>Realización de observaciones exactas e investigaciones</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.17</termIdentifier>
+			<caption>
+				<langstring>Resolver problemas complejos (cerrados y abiertos)</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.18</termIdentifier>
+			<caption>
+				<langstring>Sentido artístico</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.19</termIdentifier>
+			<caption>
+				<langstring>Tomar decisiones</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>2.20</termIdentifier>
+			<caption>
+				<langstring>Utilizar las TIC de manera segura y crítica</langstring>
+			</caption>
+		</term>
+	</term>
+	<term>
+		<termIdentifier>3</termIdentifier>
+		<caption>
+			<langstring>Competencias Sociales y de Trabajo en Equipo</langstring>
+		</caption>
+		<term>
+			<termIdentifier>3.1</termIdentifier>
+			<caption>
+				<langstring>Animar al grupo para conseguir los mejores resultados</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.2</termIdentifier>
+			<caption>
+				<langstring>Comprender y contribuir a la organización de los objetivos del grupo</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.3</termIdentifier>
+			<caption>
+				<langstring>Comprender y trabajar dentro de la cultura del grupo</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.4</termIdentifier>
+			<caption>
+				<langstring>Dirigir discusiones de grupo</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.5</termIdentifier>
+			<caption>
+				<langstring>Ejercitar la ayuda entre los miembros del grupo para alcanzar los resultados</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.6</termIdentifier>
+			<caption>
+				<langstring>Persuadir</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.7</termIdentifier>
+			<caption>
+				<langstring>Respetar las maneras de pensar y las opiniones de los integrantes del grupo</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.8</termIdentifier>
+			<caption>
+				<langstring>Tomar decisiones y planificar en grupo</langstring>
+			</caption>
+		</term>
+		<term>
+			<termIdentifier>3.9</termIdentifier>
+			<caption>
+				<langstring>Trabajar y/o aprender con otros</langstring>
+			</caption>
+		</term>
+	</term>
+</vdex>
