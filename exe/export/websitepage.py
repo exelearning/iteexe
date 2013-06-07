@@ -60,27 +60,28 @@ class WebsitePage(Page):
             lenguaje = self.node.package.dublinCore.language
         
         dT = common.getExportDocType()
+        lb = "\n" #Line breaks
         sectionTag = "div"
         headerTag = "div"
         navTag = "div"
         if dT == "HTML5":
-            html = '<!doctype html>'
-            html += '<html lang="'+lenguaje+'">'
+            html = '<!doctype html>'+lb
+            html += '<html lang="'+lenguaje+'">'+lb
             sectionTag = "section"
             headerTag = "header"
             navTag = "nav"
         else:
-            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
-            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"
-        html += u"<head>"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"+lb
+            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
+            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
+        html += u"<head>"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"        
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"     
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
         html += u"<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
@@ -92,28 +93,28 @@ class WebsitePage(Page):
                 html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>" 
-        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
+        html += u" </title>"+lb
+        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />";
+        html += u" charset=utf-8\" />"+lb
         if dT != "HTML5" and self.node.package.dublinCore.language!="":
-            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
-            html += '<meta name="author" content="'+self.node.package.author+'" />'
-        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'
+            html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
-                html += '<meta name="description" content="'+self.node.package.description+'" />'
+                html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
         if dT == "HTML5":
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         if common.hasGalleryIdevice(self.node):
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'
-        html += u'<script type="text/javascript" src="common.js"></script>'
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'
-        html += u"</head>\n"
-        html += u"<body>"
-        html += u"<"+sectionTag+" id=\"content\">"
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
+        html += u"</head>"+lb
+        html += u"<body>"+lb
+        html += u"<"+sectionTag+" id=\"content\">"+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
             html += u"<"+headerTag+" id=\"header\" "
@@ -131,31 +132,32 @@ class WebsitePage(Page):
                 html += u"\""
             html += u">"
             html += escape(self.node.package.title)
-            html += u"</"+headerTag+">"
+            html += u"</"+headerTag+">"+lb
         else:
-            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"
+            html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb
         
         # add left navigation html
-        html += u"<"+navTag+" id=\"siteNav\">"
+        html += u"<"+navTag+" id=\"siteNav\">"+lb
         html += self.leftNavigationBar(pages)
-        html += u"</"+navTag+">"
-        html += "<"+sectionTag+" id='topPagination'>"
+        html += u"</"+navTag+">"+lb
+        html += "<"+sectionTag+" id='topPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage)
-        html += "</"+sectionTag+">"
-        html += u"<"+sectionTag+" id=\"main\">"
+        html += "</"+sectionTag+">"+lb
+        html += u"<"+sectionTag+" id=\"main\">"+lb
 
         style = self.node.package.style
         html += '<'+headerTag+' id=\"nodeDecoration\">'
         html += '<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
-        html += '</h1></'+headerTag+'>'
+        html += '</h1>'
+        html += '</'+headerTag+'>'+lb
 
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">' %  (idevice.klass, e, idevice.id)
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' %  (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -165,21 +167,22 @@ class WebsitePage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(self.node.package,
                         block.renderView(style))
-                html += u'</'+sectionTag+'>' # iDevice div
+                html += u'</'+sectionTag+'>'+lb # iDevice div
         
-        html += "<"+sectionTag+" id='bottomPagination'>"
+        html += "<"+sectionTag+" id='bottomPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage)
-        html += "</"+sectionTag+">"
+        html += "</"+sectionTag+">"+lb
         # writes the footer for each page 
         html += self.renderLicense()
         themeHasXML = common.themeHasConfigXML(style)
         if not themeHasXML:
             html += self.renderFooter()
-        html += u"</"+sectionTag+">" # /main
+        html += u"</"+sectionTag+">"+lb # /main
         if themeHasXML:
             html += self.renderFooter()
-        html += u"</"+sectionTag+">" # /content
-        html += u"</body></html>"
+        html += u"</"+sectionTag+">"+lb # /content
+        html += u"</body>"+lb
+        html += "</html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
@@ -200,13 +203,14 @@ class WebsitePage(Page):
         """
         Generate the left navigation string for this page
         """
+        lb = "\n" #Line breaks
         if inSameLevelTitle:
             depth = 1
         else:
             depth = 0
         nodePath = [None] + list(self.node.ancestors()) + [self.node]
 
-        html = "<ul>"
+        html = "<ul>"+lb
         
         for page in pages:
             if page.node.parent == None and not inSameLevelTitle:
@@ -215,15 +219,15 @@ class WebsitePage(Page):
                 depth = 1
                 continue
             while depth < page.depth:
-                html += "<ul"
+                html += lb+"<ul"
 
                 if page.node.parent not in nodePath:
                     html += " class=\"other-section\""
-                html += ">"
+                html += ">"+lb
                 depth += 1
 
             while depth > page.depth:
-                html += "</ul></li>"
+                html += "</ul>"+lb+"</li>"+lb
                 depth -= 1
             
             if page.node == self.node:
@@ -255,15 +259,15 @@ class WebsitePage(Page):
             html += "</a>"
 
             if inSameLevelTitle and page.node.id=="0":
-                html += "</li>"
+                html += "</li>"+lb
 
             if not page.node.children and page.node.id!="0":
-                html += "</li>"
+                html += "</li>"+lb
 
         if excludeTitle or inSameLevelTitle:
-            html += "</ul>"
+            html += "</ul>"+lb
         else:
-            html += "</ul></li></ul>"
+            html += "</ul>"+lb+"</li>"+lb+"</ul>"+lb
         
         return html
         
@@ -273,10 +277,11 @@ class WebsitePage(Page):
         return the next link url of this page
         """
         dT = common.getExportDocType()
+        lb = "\n" #Line breaks
         sectionTag = "div"
         if dT == "HTML5":
             sectionTag = "section"
-        html = "<"+sectionTag+" class=\"pagination noprt\">"
+        html = "<"+sectionTag+" class=\"pagination noprt\">"+lb
 
         if prevPage:
             html += "<a href=\""+quote(prevPage.name)+".html\" class=\"prev\">"
@@ -288,7 +293,7 @@ class WebsitePage(Page):
             html += "<a href=\""+quote(nextPage.name)+".html\" class=\"next\">"
             html += " %s<span> &raquo;</span></a>" % _('Next')
             
-        html += "</"+sectionTag+">"
+        html += lb+"</"+sectionTag+">"+lb
         return html
 
 
