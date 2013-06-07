@@ -322,9 +322,15 @@ class Package(Persistable):
         self.dublinCore    = DublinCore()
         self.lomEs         = lomsubs.lomSub.factory()
         self.lom           = lomsubs.lomSub.factory()
-        identifier = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': str(uuid.uuid4())}]}}
-        self.lom.addChilds(identifier)
-        self.lomEs.addChilds(identifier)
+        childs = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': str(uuid.uuid4())}],
+                              'aggregationLevel': {'source': 'LOMv1.0', 'value': '3'}
+                             },
+                  'metaMetadata': {'metadataSchema': ['LOMv1.0']},
+                 }
+        self.lom.addChilds(childs)
+        childs['general']['aggregationLevel']['source'] = 'LOM-ESv1.0'
+        childs['metaMetadata']['metadataSchema'] = ['LOM-ESv1.0']
+        self.lomEs.addChilds(childs)
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
@@ -332,21 +338,115 @@ class Package(Persistable):
         self.exportMetadataType = "LOMES"
         self.license       = "None"
         self.footer        = ""
+        self._lang = G.application.config.locale.split('_')[0]
+        self._objectives = u''
+        self._preknowledge = u''
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
 
-
     # Property Handlers
 
     def set_name(self, value):
         self._name = toUnicode(value)
+
     def set_title(self, value):
+        if self.dublinCore.title == self._title:
+            self.dublinCore.title = value
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            title = metadata.get_general().get_title()
+            if title:
+                for string in title.get_string():
+                    if string.get_valueOf_() == self._title.encode('utf-8'):
+                        if value:
+                            string.set_language(lang_str)
+                            string.set_valueOf_(value_str)
+                        else:
+                            title.string.remove(string)
+            else:
+                if value:
+                    title = lomsubs.titleSub([lomsubs.LangStringSub(lang_str, value_str)])
+                    metadata.get_general().set_title(title)
         self._title = toUnicode(value)
+
+    def set_lang(self, value):
+        if self.dublinCore.language in [self._lang, '']:
+            self.dublinCore.language = value
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            language = metadata.get_general().get_language()
+            if language:
+                for LanguageId in language:
+                    if LanguageId.get_valueOf_() == self._lang.encode('utf-8'):
+                        LanguageId.set_valueOf_(value_str)
+            else:
+                language = [lomsubs.LanguageIdSub(value_str)]
+                metadata.get_general().set_language(language)
+
+            metametadata = metadata.get_metaMetadata()
+            if metametadata:
+                language = metametadata.get_language()
+                if language:
+                    if language.get_valueOf_() == self._lang.encode('utf-8'):
+                        language.set_valueOf_(value_str)
+                else:
+                    language = lomsubs.LanguageIdSub(value_str)
+                    metametadata.set_language(language)
+            else:
+                language = lomsubs.LanguageIdSub(value_str)
+                metametadata = lomsubs.metaMetadataSub(language=language)
+                metadata.set_metaMetadata(metametadata)
+
+            educationals = metadata.get_educational()
+            if educationals:
+                for educational in educationals:
+                    language = educational.get_language()
+                    if language:
+                        for LanguageId in language:
+                            if LanguageId.get_valueOf_() == self._lang.encode('utf-8'):
+                                LanguageId.set_valueOf_(value_str)
+            else:
+                language = lomsubs.LanguageIdSub(value_str)
+                educational = [lomsubs.educationalSub(language=[language])]
+                metadata.set_educational(educational)
+        self._lang = toUnicode(value)
+
     def set_author(self, value):
+        if self.dublinCore.creator == self._author:
+            self.dublinCore.creator = value
         self._author = toUnicode(value)
+
     def set_description(self, value):
+        if self.dublinCore.description == self._description:
+            self.dublinCore.description = value
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            description = metadata.get_general().get_description()
+            if description:
+                description_found = False
+                for desc in description:
+                    for string in desc.get_string():
+                        if string.get_valueOf_() == self._description.encode('utf-8'):
+                            description_found = True
+                            if value:
+                                string.set_language(lang_str)
+                                string.set_valueOf_(value_str)
+                            else:
+                                desc.string.remove(string)
+                                description.remove(desc)
+                if not description_found:
+                    if value:
+                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+                        metadata.get_general().add_description(description)
+
+            else:
+                if value:
+                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
+                    metadata.get_general().set_description(description)
         self._description = toUnicode(value)
 
     def get_backgroundImg(self):
@@ -372,33 +472,90 @@ class Package(Persistable):
 
     def get_level1(self):
         return self.levelName(0)
+
     def set_level1(self, value):
         if value != '':
-            self._levelNames[0] = value 
+            self._levelNames[0] = value
         else:
             self._levelNames[0] = self.defaultLevelNames[0]
 
     def get_level2(self):
         return self.levelName(1)
+
     def set_level2(self, value):
         if value != '':
-            self._levelNames[1] = value 
+            self._levelNames[1] = value
         else:
             self._levelNames[1] = self.defaultLevelNames[1]
 
     def get_level3(self):
         return self.levelName(2)
+
     def set_level3(self, value):
         if value != '':
-            self._levelNames[2] = value 
+            self._levelNames[2] = value
         else:
             self._levelNames[2] = self.defaultLevelNames[2]
 
+    def set_objectives(self, value):
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            description = metadata.get_general().get_description()
+            if description:
+                description_found = False
+                for desc in description:
+                    for string in desc.get_string():
+                        if string.get_valueOf_() == self._objectives.encode('utf-8'):
+                            description_found = True
+                            if value:
+                                string.set_language(lang_str)
+                                string.set_valueOf_(value_str)
+                            else:
+                                desc.string.remove(string)
+                                description.remove(desc)
+                if not description_found:
+                    if value:
+                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+                        metadata.get_general().add_description(description)
+            else:
+                if value:
+                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
+                    metadata.get_general().set_description(description)
+        self._objectives = toUnicode(value)
+
+    def set_preknowledge(self, value):
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            description = metadata.get_general().get_description()
+            if description:
+                description_found = False
+                for desc in description:
+                    for string in desc.get_string():
+                        if string.get_valueOf_() == self._preknowledge.encode('utf-8'):
+                            description_found = True
+                            if value:
+                                string.set_language(lang_str)
+                                string.set_valueOf_(value_str)
+                            else:
+                                desc.string.remove(string)
+                                description.remove(desc)
+                if not description_found:
+                    if value:
+                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+                        metadata.get_general().add_description(description)
+            else:
+                if value:
+                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
+                    metadata.get_general().set_description(description)
+        self._preknowledge = toUnicode(value)
 
     # Properties
 
     name          = property(lambda self:self._name, set_name)
     title         = property(lambda self:self._title, set_title)
+    lang          = property(lambda self: self._lang, set_lang)
     author        = property(lambda self:self._author, set_author)
     description   = property(lambda self:self._description, set_description)
 
@@ -407,6 +564,9 @@ class Package(Persistable):
     level1 = property(get_level1, set_level1)
     level2 = property(get_level2, set_level2)
     level3 = property(get_level3, set_level3)
+
+    objectives = property(lambda self: self._objectives, set_objectives)
+    preknowledge = property(lambda self: self._preknowledge, set_preknowledge)
 
     def findNode(self, nodeId):
         """
@@ -957,5 +1117,11 @@ class Package(Persistable):
             self.scowsource = False
         if not hasattr(self, 'exportMetadataType'):
             self.exportMetadataType = "LOMES"
+        if not hasattr(self, 'lang'):
+            self._lang = G.application.config.locale.split('_')[0]
+        if not hasattr(self, 'objectives'):
+            self._objectives = u''
+        if not hasattr(self, 'preknowledge'):
+            self._preknowledge = u''
 
 # ===========================================================================

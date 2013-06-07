@@ -54,7 +54,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             margin: '0 0 10 0',
                             item: {
                                 xtype: 'combobox',
-                                inputId: 'dc_language',
+                                inputId: 'pp_lang',
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('Language'),
                                 store: langsStore,
@@ -125,167 +125,200 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             margin: '0 0 10 0',
                             item: {
                                 xtype: 'combobox',
-                                inputId: 'cat_learningResourceType',
+                                inputId: 'pp_license',
+                                fieldLabel: _('License'),
+                                store: [
+                                      ["None", "None"],
+                                      ["GNU Free Documentation License", _("GNU Free Documentation License")],
+                                      ["Creative Commons Attribution 3.0 License", _("Creative Commons Attribution 3.0 License")],
+                                      ["Creative Commons Attribution Share Alike 3.0 License", _("Creative Commons Attribution Share Alike 3.0 License")],
+                                      ["Creative Commons Attribution No Derivatives 3.0 License", _("Creative Commons Attribution No Derivatives 3.0 License")],
+                                      ["Creative Commons Attribution Non-commercial 3.0 License", _("Creative Commons Attribution Non-commercial 3.0 License")],
+                                      ["Creative Commons Attribution Non-commercial Share Alike 3.0 License", _("Creative Commons Attribution Non-commercial Share Alike 3.0 License")],
+                                      ["Creative Commons Attribution Non-commercial No Derivatives 3.0 License", _("Creative Commons Attribution Non-commercial No Derivatives 3.0 License")],
+                                      ["Creative Commons Attribution 2.5 License", _("Creative Commons Attribution 2.5 License")],
+                                      ["Creative Commons Attribution-ShareAlike 2.5 License", _("Creative Commons Attribution-ShareAlike 2.5 License")],
+                                      ["Creative Commons Attribution-NoDerivs 2.5 License", _("Creative Commons Attribution-NoDerivs 2.5 License")],
+                                      ["Creative Commons Attribution-NonCommercial 2.5 License", _("Creative Commons Attribution-NonCommercial 2.5 License")],
+                                      ["Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License", _("Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License")],
+                                      ["Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License", _("Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License")],
+                                      ["Developing Nations 2.0", _("Developing Nations 2.0")]
+                                ],
+                                tooltip: _('Select a license.'),
+                                anchor: '100%'
+                            },
+                            help: _('Select a license.')
+                        },
+                        {
+                            xtype: 'helpcontainer',
+                            margin: '0 0 10 0',
+                            item: {
+                                xtype: 'combobox',
+                                inputId: 'pp_learningResourceType',
                                 dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('Learning Resource Type'),
-                                store: lomesVocab.learningResourceTypeValues,
+                                store: lomesVocab.learningResourceTypeValues.slice(39),
                                 tooltip: _('Learning Resource Type'),
                                 anchor: '100%'
                             },
                             help: _('Learning Resource Type')
                         },
                         {
-                            xtype: 'helpcontainer',
-                            margin: '0 0 10 0',
-                            item: {
-	                            xtype: 'fieldcontainer',
-	                            fieldLabel: _('Intended End User Role'),
-	                            tooltip: _('Intended End User Role'),
-	                            defaults: {
-	                                defaults: {
-	                                    width: 150
-	                                }
-	                            },
-	                            items: [
-	                                {
-	                                    xtype: 'container',
-	                                    layout: 'hbox',
-	                                    items: [
-			                                {
-				                                xtype: 'radio',
-			                                    boxLabel: 'Aprendiz: Alumno',
-				                                name: 'cat_intendedEndUserRole'
-			                                },
-			                                {
-			                                    xtype: 'checkbox',
-			                                    boxLabel: 'NEE',
-			                                    inputId: 'cat_intendedEndUserRole_1_1'
-			                                },
-			                                {
-			                                    xtype: 'checkbox',
-			                                    boxLabel: 'Altas capacidades',
-			                                    inputId: 'cat_intendedEndUserRole_1_2'
-			                                }
-	                                    ]
-	                                },
-	                                {
-	                                    xtype: 'container',
-	                                    layout: 'hbox',
-	                                    items: [
-	                                        {
-			                                    xtype: 'radio',
-			                                    boxLabel: 'Agrupación: Individual',
-			                                    name: 'cat_intendedEndUserRole'
-			                                },
-			                                {
-			                                    xtype: 'checkbox',
-			                                    boxLabel: 'Grupo',
-			                                    inputId: 'cat_intendedEndUserRole_2'
-			                                }
-	                                    ]
-	                                },
-	                                {
-	                                    xtype: 'container',
-	                                    layout: 'hbox',
-	                                    items: [
-	                                        {
-			                                    xtype: 'radio',
-			                                    boxLabel: 'Educador: Docente',
-			                                    name: 'cat_intendedEndUserRole'
-			                                },
-			                                {
-			                                    xtype: 'checkbox',
-			                                    boxLabel: 'Tutor',
-			                                    inputId: 'cat_intendedEndUserRole_3'
-			                                }
-	                                    ]
-	                                }
-	                            ]
-	                        },
-                            help: _('Intended End User Role')
-                        },
-                        {
-                            xtype: 'helpcontainer',
-                            margin: '0 0 10 0',
-                            item: {
-                                xtype: 'fieldcontainer',
-                                fieldLabel: _('Context'),
-                                tooltip: _('Context'),
-                                defaults: {
-                                    defaults: {
-                                        width: 150
-                                    }
-                                },
-                                items: [
-                                    {
-                                        xtype: 'container',
-                                        layout: 'hbox',
+                            xtype: 'fieldset',
+                            title: _('Especificaciones de utilización'),
+                            items: [
+                                {
+		                            xtype: 'helpcontainer',
+		                            margin: '0 0 10 0',
+		                            item: {
+                                        xtype: 'fieldcontainer',
                                         items: [
                                             {
-                                                xtype: 'radio',
-                                                boxLabel: 'Lugar: Aula',
-                                                name: 'cat_context'
-                                            },
+					                            xtype: 'radiogroup',
+					                            fieldLabel: _('Tipo de alumno'),
+					                            tooltip: _('Tipo de alumno'),
+		                                        columns: [150, 150, 150],
+					                            items: [
+					                                {
+						                                xtype: 'radio',
+					                                    boxLabel: 'Alumno Estándar',
+						                                name: 'pp_intendedEndUserRole',
+		                                                inputValue: 'learner',
+		                                                checked: true
+					                                },
+					                                {
+					                                    xtype: 'radio',
+					                                    boxLabel: 'Necesidades (NEAE)',
+		                                                name: 'pp_intendedEndUserRole',
+		                                                inputValue: 'special needs learner'
+					                                },
+					                                {
+					                                    xtype: 'radio',
+					                                    boxLabel: 'Altas capacidades',
+		                                                name: 'pp_intendedEndUserRole',
+		                                                inputValue: 'gifted learner'
+					                                }
+			                                    ]
+                                            }
+                                        ]
+	                                },
+	                                help: _('Tipo de alumno')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        fieldLabel: _('Para trabajar en grupo'),
+                                        tooltip: _('Para trabajar en grupo'),
+                                        items: [
                                             {
-                                                xtype: 'checkbox',
-                                                boxLabel: 'Fuera del centro',
-                                                inputId: 'cat_context_1'
+                                                xtype: 'container',
+                                                layout: 'hbox',
+                                                items: [
+                                                    {
+                                                        xtype: 'checkbox',
+                                                        inputId: 'pp_intendedEndUserRoleGroup',
+                                                        inputValue: 'group'
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
-                                    {
-                                        xtype: 'container',
-                                        layout: 'hbox',
+                                    help: _('Para trabajar en grupo')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        fieldLabel: _('Para trabajar en tutoría'),
+                                        tooltip: _('Para trabajar en tutoría'),
                                         items: [
                                             {
-                                                xtype: 'radio',
-                                                boxLabel: 'Modalidad: Presencial',
-                                                name: 'cat_context'
-                                            },
-                                            {
-                                                xtype: 'checkbox',
-                                                boxLabel: 'Distancia',
-                                                inputId: 'cat_context_2_1'
-                                            },
-                                            {
-                                                xtype: 'checkbox',
-                                                boxLabel: 'Semipresencial',
-                                                inputId: 'cat_context_2_2'
+                                                xtype: 'container',
+                                                layout: 'hbox',
+                                                items: [
+                                                    {
+                                                        xtype: 'checkbox',
+                                                        inputId: 'pp_intendedEndUserRoleTutor',
+                                                        inputValue: 'tutor'
+                                                    }
+                                                ]
                                             }
                                         ]
-                                    }
-                                ]
-                            },
-                            help: _('Context')
-                        },
-                        {
-                            xtype: 'helpcontainer',
-                            margin: '0 0 10 0',
-                            item: {
-	                            xtype: 'combobox',
-	                            inputId: 'pp_license',
-	                            fieldLabel: _('License'),
-	                            store: [
-	                                  ["None", "None"],
-	                                  ["GNU Free Documentation License", _("GNU Free Documentation License")],
-	                                  ["Creative Commons Attribution 3.0 License", _("Creative Commons Attribution 3.0 License")],
-	                                  ["Creative Commons Attribution Share Alike 3.0 License", _("Creative Commons Attribution Share Alike 3.0 License")],
-	                                  ["Creative Commons Attribution No Derivatives 3.0 License", _("Creative Commons Attribution No Derivatives 3.0 License")],
-	                                  ["Creative Commons Attribution Non-commercial 3.0 License", _("Creative Commons Attribution Non-commercial 3.0 License")],
-	                                  ["Creative Commons Attribution Non-commercial Share Alike 3.0 License", _("Creative Commons Attribution Non-commercial Share Alike 3.0 License")],
-	                                  ["Creative Commons Attribution Non-commercial No Derivatives 3.0 License", _("Creative Commons Attribution Non-commercial No Derivatives 3.0 License")],
-	                                  ["Creative Commons Attribution 2.5 License", _("Creative Commons Attribution 2.5 License")],
-	                                  ["Creative Commons Attribution-ShareAlike 2.5 License", _("Creative Commons Attribution-ShareAlike 2.5 License")],
-	                                  ["Creative Commons Attribution-NoDerivs 2.5 License", _("Creative Commons Attribution-NoDerivs 2.5 License")],
-	                                  ["Creative Commons Attribution-NonCommercial 2.5 License", _("Creative Commons Attribution-NonCommercial 2.5 License")],
-	                                  ["Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License", _("Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License")],
-	                                  ["Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License", _("Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License")],
-	                                  ["Developing Nations 2.0", _("Developing Nations 2.0")]
-	                            ],
-	                            tooltip: _('Select a license.'),
-	                            anchor: '100%'
-	                        },
-                            help: _('Select a license.')
+                                    },
+                                    help: _('Para trabajar en tutoría')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        items: [
+                                            {
+		                                        xtype: 'radiogroup',
+		                                        fieldLabel: _('Lugar de utilización'),
+		                                        tooltip: _('Lugar de utilización'),
+		                                        columns: [150, 150, 150],
+		                                        items: [
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Aula',
+		                                                name: 'pp_context1',
+		                                                inputValue: 'classroom',
+		                                                checked: true
+		                                            },
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Fuera del centro',
+		                                                name: 'pp_context1',
+		                                                inputValue: 'real environment'
+		                                            }
+		                                        ]
+                                            }
+                                        ]
+                                    },
+                                    help: _('Lugar de utilización')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        items: [
+                                            {
+		                                        xtype: 'radiogroup',
+		                                        fieldLabel: _('Modalidad de uso'),
+		                                        tooltip: _('Modalidad de uso'),
+		                                        columns: [150, 150, 150],
+		                                        items: [
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Presencial',
+		                                                name: 'pp_context2',
+		                                                inputValue: 'face to face',
+		                                                checked: true
+		                                            },
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Semipresencial',
+		                                                name: 'pp_context2',
+		                                                inputValue: 'blended'
+		                                            },
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Distancia',
+		                                                name: 'pp_context2',
+		                                                inputValue: 'distance'
+		                                            }
+		                                        ]
+                                            }
+                                        ]
+                                    },
+                                    help: _('Modalidad de uso')
+                                }
+                            ]
                         }
                     ]
                 },

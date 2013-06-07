@@ -328,7 +328,13 @@ class PropertiesPage(Renderable, Resource):
             elif 'lomes_general_title_string1' in request.args:
                 self.setLomes(request.args)
             else:
-                for key, value in request.args.items():
+                items = request.args.items()
+                if 'pp_lang' in request.args:
+                    value = request.args['pp_lang']
+                    item = ('pp_lang', value)
+                    items.remove(item)
+                    items.insert(0, item)
+                for key, value in items:
                     obj, name = self.fieldId2obj(key)
                     if key in self.booleanFieldNames:
                         setattr(obj, name, value[0] == 'true')
