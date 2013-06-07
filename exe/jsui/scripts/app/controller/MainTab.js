@@ -239,8 +239,8 @@ Ext.define('eXe.controller.MainTab', {
     },
     
     getInsertDelField: function(key){
-    	vid = key.split('_');                                        
-    	var field = false, fieldkey = false;
+        var vid = key.split('_'),
+            field = false, fieldkey = false;
         if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(key)){        
          	fieldkey = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
         }else{
@@ -431,7 +431,7 @@ Ext.define('eXe.controller.MainTab', {
     updateAuthoring: function(action, object, isChanged, currentNode, destNode) {
         if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext" || action == "ChangeStyle")) {
 		    var outlineTreePanel = this.getOutlineTreePanel(),
-	            selmodel = outlineTreePanel.getSelectionModel();
+	            selmodel = outlineTreePanel.getSelectionModel(),
                 selectednode = selmodel.getSelection()[0].get('id');
             if (currentNode == selectednode || (action == "move" && selectednode == destNode) || action == "ChangeStyle") {
 		        var authoring = Ext.ComponentQuery.query('#authoring')[0];
