@@ -17,9 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.engine.lom import lomsubs
-import re
-
 
 """
 PropertiesPage maps properties forms to Package options
@@ -30,6 +27,8 @@ import json
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.engine.path import toUnicode, Path
+from exe.engine.lom import lomsubs
+import re
 log = logging.getLogger(__name__)
 
 
@@ -348,7 +347,10 @@ class PropertiesPage(Renderable, Resource):
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save properties")})
-        self.package.isChanged = True
+        if self.package.filename == u'':
+            self.package.isChanged = True
+        else:
+            self.package.save()
         return json.dumps({'success': True, 'data': data})
 
 # ===========================================================================
