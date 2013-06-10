@@ -167,8 +167,12 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                             afterrender: function(c) {
                                 c.el.on('click', function(a) {
                                     var items = this.up(),
-                                        fieldset = items.up();
-                                    if (fieldset.items.length > 1) {
+                                        fieldset = items.up()
+                                        readonly = false;
+                                    if (fieldset.addButton === false) {
+                                        readonly = items.items.items[0].items.items[0].items.items[0].readOnly;
+                                    }
+                                    if (fieldset.items.length > 1 && !readonly) {
                                         fieldset.preserveScroll();
                                         fieldset.remove(items,true);
                                         fieldset.restoreScroll();
