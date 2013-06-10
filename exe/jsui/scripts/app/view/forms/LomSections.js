@@ -159,7 +159,7 @@ Ext.define('eXe.view.forms.LomSections', {
                     xtype: 'container',
                     layout: 'anchor',
                     items: [
-                        eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpcombo( _('Source'), this.prefix + 'classification_taxonPath{1}_source', _('Source'), null, true)),
+                        eXe.view.forms.LomWidgets.helpcombo( _('Source'), this.prefix + 'classification_taxonPath{1}_source', _('Source'), null, true),
                         eXe.view.forms.LomWidgets.taxonfield( _('Taxon'), this.prefix + 'classification_taxonPath{1}_taxon{2}', _('Taxon'), null, true)
                     ]
                 }),
