@@ -59,10 +59,94 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
 
     initComponent: function() {
         var me = this,
-            items;
+            items,
+            addButton = null;
 
         this.item.flex = this.flex !== undefined? this.flex : 1;
 
+        if (this.addButton != false) {
+            addButton = {
+                xtype: 'image',
+                src: '/images/plusbutton.png',
+                height: 24,
+                width: 24,
+                itemId: 'addbutton',
+                listeners: {
+                    afterrender: function(c) {
+                        function updater(key, value, object) {
+                            if (key === 'inputId') {
+                                var sid = object.templateId;
+                                sid = value;
+                                vid = sid.split('_');
+                                //console.log(sid);
+                                if (! me.itemId){
+                                    if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(sid)){
+                                        me.itemId = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
+                                    }else{
+                                        me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');
+                                    }
+                                    //console.log('ADD ITEMID  ' +me.itemId);
+                                }
+                            }
+                            if (key === 'item') {
+                                Ext.iterate(object.item, updater);
+                                return false;
+                            }
+                            if (key === 'items') {
+                                Ext.iterate(object.items, updater);
+                                return false;
+                            }
+                            if (Ext.isObject(key))
+                                Ext.iterate(key, updater);
+                        }
+                        Ext.iterate(me.item, updater);
+
+                        c.el.on('click', function(a) {
+                            var i,
+                                re,
+                                id = [],
+                                item = this,
+                                depth = 0;
+
+                            while (item.xtype != 'lomdata') {
+                                if (item.xtype == 'insertdelfieldset') {
+                                    id[depth] = item.lastId-1;
+                                    depth++;
+                                }
+                                item = item.up();
+                            }
+                            id[0] = this.lastId++;
+
+
+                            function updater(key, value, object) {
+                                if (key === 'inputId') {
+                                    object.inputId = object.templateId;
+                                    for (i = 0; i < depth; i++) {
+                                        re = new RegExp('\\{' + (depth-i) + '\\}');
+                                        object.inputId = object.inputId.replace(re, String(id[i]));
+                                    }
+                                    object.inputId = object.inputId.replace(/\{[1-9]\}/g, '1');
+                                }
+                                if (key === 'item') {
+                                    Ext.iterate(object.item, updater);
+                                    return false;
+                                }
+                                if (key === 'items') {
+                                    Ext.iterate(object.items, updater);
+                                    return false;
+                                }
+                                if (Ext.isObject(key))
+                                    Ext.iterate(key, updater);
+                            }
+                            Ext.iterate(this.item, updater);
+                            this.preserveScroll();
+                            this.add(items);
+                            this.restoreScroll();
+                        }, me);
+                    }
+                }
+            }
+        }
         items = [
             {
                 xtype: 'container',
@@ -73,90 +157,7 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                 },
                 items: [
                     this.item,
-                    {
-                        xtype: 'image',
-                        src: '/images/plusbutton.png',
-                        height: 24,
-                        width: 24,
-                        itemId: 'addbutton',
-                        listeners: {
-                            afterrender: function(c) {                            	
-                                function updater(key, value, object) {
-					                if (key === 'inputId') {
-                                        var sid = object.templateId;
-                                        sid = value;
-                                        vid = sid.split('_');
-                                        //console.log(sid);                                        
-                                        if (! me.itemId){                                        	                                        	
-                                            if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(sid)){
-                                            	me.itemId = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
-                                            	
-                                            }else{
-                                            	me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');	
-                                            }
-                                            //console.log('ADD ITEMID  ' +me.itemId);
-                                        }                                     
-					                }
-					                if (key === 'item') {
-					                    Ext.iterate(object.item, updater);
-					                    return false;
-					                }
-					                if (key === 'items') {
-					                    Ext.iterate(object.items, updater);
-					                    return false;
-					                }
-					                if (Ext.isObject(key))
-					                    Ext.iterate(key, updater);
-					            }
-					            Ext.iterate(me.item, updater);
-                            	
-                            	
-                            	
-                                c.el.on('click', function(a) {
-                                    var i,
-                                        re,
-                                        id = [],
-                                        item = this,
-                                        depth = 0;
-
-                                    while (item.xtype != 'lomdata') {
-                                        if (item.xtype == 'insertdelfieldset') {
-                                            id[depth] = item.lastId-1;
-                                            depth++;
-                                        }
-                                        item = item.up();
-                                    }
-                                    id[0] = this.lastId++;
-
-
-                                    function updater(key, value, object) {
-						                if (key === 'inputId') {
-                                            object.inputId = object.templateId;
-                                            for (i = 0; i < depth; i++) {
-			                                    re = new RegExp('\\{' + (depth-i) + '\\}');
-                                                object.inputId = object.inputId.replace(re, String(id[i]));
-                                            }
-                                            object.inputId = object.inputId.replace(/\{[1-9]\}/g, '1');
-						                }
-						                if (key === 'item') {
-						                    Ext.iterate(object.item, updater);
-						                    return false;
-						                }
-						                if (key === 'items') {
-						                    Ext.iterate(object.items, updater);
-						                    return false;
-						                }
-						                if (Ext.isObject(key))
-						                    Ext.iterate(key, updater);
-						            }
-						            Ext.iterate(this.item, updater);
-                                    this.preserveScroll();
-                                    this.add(items);
-                                    this.restoreScroll();
-                                }, me);
-                            }
-                        }
-                    },
+                    addButton,
                     {
                         xtype: 'image',
                         src: '/images/minusbutton.png',

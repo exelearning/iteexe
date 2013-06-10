@@ -234,6 +234,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
             field.checkboxToggle = false;
             field.collapsed = false;
             field.margin = -10;
+            field.addButton = false;
             return field;
         },
         updateMandatoryField: function(event, input, eOpts) {
