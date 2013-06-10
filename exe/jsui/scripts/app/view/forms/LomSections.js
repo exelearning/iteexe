@@ -155,12 +155,12 @@ Ext.define('eXe.view.forms.LomSections', {
 	        ],
 	        'classification': [
 	            eXe.view.forms.LomWidgets.field( _('Purpose'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'classification_purpose_value', _('Purpose'), null, true)),
-	            eXe.view.forms.LomWidgets.field( _('Taxon Path'), false, true, {
+	            eXe.view.forms.LomWidgets.field( _('Taxon Path'), true, true, {
                     xtype: 'container',
                     layout: 'anchor',
                     items: [
                         eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpcombo( _('Source'), this.prefix + 'classification_taxonPath{1}_source', _('Source'), null, true)),
-                        eXe.view.forms.LomWidgets.taxonfield( _('Taxon'), this.prefix + 'classification_taxonPath{1}_taxon', _('Taxon'), null, true)
+                        eXe.view.forms.LomWidgets.taxonfield( _('Taxon'), this.prefix + 'classification_taxonPath{1}_taxon{2}', _('Taxon'), null, true)
                     ]
                 }),
 	            eXe.view.forms.LomWidgets.field( _('Description'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'classification_description_string{1}', _('Description'), null, true))),

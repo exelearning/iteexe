@@ -233,7 +233,6 @@ Ext.define('eXe.view.forms.LomWidgets', {
             field.collapsible = false;
             field.checkboxToggle = false;
             field.collapsed = false;
-            field.margin = -10;
             field.addButton = false;
             return field;
         },
