@@ -101,16 +101,18 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                         }
                         Ext.iterate(me.item, updater);
 
+                        c.up().actualId = me.lastId-1;
+
                         c.el.on('click', function(a) {
                             var i,
                                 re,
                                 id = [],
                                 item = this,
-                                depth = 0;
+                                depth = 1;
 
                             while (item.xtype != 'lomdata') {
-                                if (item.xtype == 'insertdelfieldset') {
-                                    id[depth] = item.lastId-1;
+                                if (item.actualId) {
+                                    id[depth] = item.actualId;
                                     depth++;
                                 }
                                 item = item.up();

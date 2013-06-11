@@ -290,7 +290,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 
             function updater(key, value, object) {
                 if (key === 'inputId') {
-                    object.inputId = object.inputId.replace(new RegExp(label + '.*?_'), label + id + '_');
+                    object.inputId = object.inputId.replace(/[0-9]+/g, '1').replace(new RegExp(label + '.*?_'), label + id + '_');
                 }
                 if (key === 'templateId') {
                     object.templateId = object.templateId.replace(new RegExp(label + '.*?_'), label + id + '_');
