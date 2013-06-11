@@ -652,7 +652,29 @@ lomVocab = {
             "very difficult", 
             _("very difficult")
         ]
-    ]
+    ],
+	"taxonpathSourceValues": [
+		  [
+		   "Accesibilidad LOM-ESv1.0",
+		   _("Accesibilidad LOM-ESv1.0")
+		  ],
+		  [
+		   "Nivel educativo LOM-ESv1.0",
+		   _("Nivel educativo LOM-ESv1.0")
+		  ],
+		  [
+		   "Competencia LOM-ESv1.0",
+		   _("Competencia LOM-ESv1.0")
+		  ],
+		  [
+		   "Árbol curricular LOE 2006",
+		   _("Árbol curricular LOE 2006")
+		  ],
+		  [
+		   "ETB-LRE MEC-CCAA V1.0",
+		   _("ETB-LRE MEC-CCAA V1.0")
+		  ]
+	]	                      
 };
 
 lomesVocab = {
@@ -1612,6 +1634,28 @@ lomesVocab = {
         [
             "very difficult", 
             _("very difficult")
+        ]
+    ],
+	"taxonpathSourceValues": [
+        [
+         "Accesibilidad LOM-ESv1.0",
+         _("Accesibilidad LOM-ESv1.0")
+        ],
+        [
+         "Nivel educativo LOM-ESv1.0",
+         _("Nivel educativo LOM-ESv1.0")
+        ],
+        [
+         "Competencia LOM-ESv1.0",
+         _("Competencia LOM-ESv1.0")
+        ],
+        [
+         "Árbol curricular LOE 2006",
+         _("Árbol curricular LOE 2006")
+        ],
+        [
+         "ETB-LRE MEC-CCAA V1.0",
+         _("ETB-LRE MEC-CCAA V1.0")
         ]
     ]
 };

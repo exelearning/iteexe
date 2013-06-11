@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
 Created on 04/06/2013
 
@@ -11,15 +13,37 @@ class Classification(object):
     classdocs
     '''
 
-    def __init__(self, xmlfile):
+    def __init__(self, xmlfile=False):
         '''
         Constructor
         '''
-        self.file = xmlfile
-        try:
-            self.dom = parse(xmlfile)
-        except:
-            raise Exception('Can not create dom object')
+        self.file = None
+        self.dom = None
+        if xmlfile:
+            self.file = xmlfile
+            self.setDom()
+
+    def setDom(self):
+        if self.file:
+            try:
+                self.dom = parse(self.file)
+            except:
+                raise Exception('Can not create dom object')
+
+    def setSource(self, source):
+        if source == u"Accesibilidad LOM-ESv1.0":
+            self.file = 'exe/engine/lom/test/sources/PODPL_02_accesibilidad_LOM-ES_es.xml'
+        elif source == u"Nivel educativo LOM-ESv1.0":
+            self.file = 'exe/engine/lom/test/sources/PODPL_01_nivel_educativo_LOM-ES_es.xml'
+        elif source == u"Competencia LOM-ESv1.0":
+            self.file = 'exe/engine/lom/test/sources/PODPL_01_competencia_LOM-ES_es.xml'
+        elif source == u"Árbol curricular LOE 2006":
+            self.file = 'exe/engine/lom/test/sources/PODPL_02_Arbol_curricular_LOE_2006_es.xml'
+        elif source == u"ETB-LRE MEC-CCAA V1.0":
+            pass
+        else:
+            raise Exception('Can not set source')
+        self.setDom()
 
     def getChildNodeByName(self, node, name):
         for n in node.childNodes:
@@ -61,4 +85,11 @@ class Classification(object):
                     termidentifier, caption = self.getChildCaptionIdentifier(node)
                     if termidentifier:
                         data[termidentifier] = caption
+        return data
+
+    def getDataByIdentifier(self, identifier=False):
+        data = []
+        for key, value in self.getElementsByIdentifier(identifier).iteritems():
+            reg = {'text': value, 'identifier': key}
+            data.append(reg)
         return data

@@ -68,14 +68,56 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        helpmargin: helpmargin
 		    }
 		},
+		selectSelectionPurpose: function(combo, records, eOpts){
+			console.log('Select Purpose');
+		},
+		selectSelectionSource: function(combo, records, eOpts){
+			console.log('Select Source');			
+			var nextCombo = combo.nextNode('combo[name='+combo.getName().replace(/source$/, 'taxon')+']');
+			var store = Ext.create('Ext.data.Store', {			    
+			    proxy: {
+			        type: 'ajax',
+			        url: location.pathname + '/taxon',			        
+			        reader: {
+			        	idProperty: 'identifier',
+			        	successProperty: 'success',
+			            root: 'data',
+			            type: 'json'
+			        }
+			    },
+			    autoLoad: false,
+			    autoSync: false,			    
+			    fields: [ 'identifier', 'text' ]
+			});
+			store.load({params: {source: combo.getValue(), identifier: false}});					
+			nextCombo.bindStore(store);
+			//combo.disable();		 
+		},
 		helpcombo: function(label, id, tooltip, help, optional, margin, helpmargin) {
 		    var combo = this.helpfield(label, id, tooltip, help, optional, margin, helpmargin),
-		        storeName = id, ids = id.split('_');
-            storeName = storeName.replace(/\{[1-9]\}/g, '');
+		        storeName = id, ids = id.split('_'), selectOp;
+		    storeName = storeName.replace(/\{[1-9]\}/g, '');
 	        storeName = storeName.replace(/[1-9]*/g, '');
 	        storeName = storeName.replace(/_string$/, '');
 	        storeName = storeName.replace(/_value$/, '');
 	        storeName = storeName.slice(storeName.lastIndexOf('_') + 1) + 'Values';
+		    if (/^(lom|lomes)+_classification[0-9]*/.exec(id)){
+		    	//console.log('HelpCombo: ' + storeName);
+		    	if (/purpose_value$/.exec(id)){
+		    		combo.item.listeners = {
+			            	 scope: this,
+			                'select': this.selectSelectionPurpose
+			           };		    		
+		    	}else if (/_source$/.exec(id)){
+		    		combo.item.listeners = {
+			            	 scope: this,
+			                'select': this.selectSelectionSource
+			           };
+		    		storeName = "taxonpathSourceValues";
+		    	}		    	
+			}            
+            
+	        //console.log('POST: ' + storeName);
 		    combo.item.xtype = 'combobox';
 		    combo.item.store = Ext.ClassManager.getByAlias(ids[0]).vocab[storeName];
             combo.item.forceSelection = !optional;
@@ -226,6 +268,57 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        descriptionfield
 		    ])
 		},
+		addDelEvent: function (e, t, eOpts){
+			var	scope = this.scope, 
+				combo = this.combo;		    
+			var items = combo.nextNode('image#delbutton').up(),
+				fieldset = items.up();
+			var preCombo = combo.previousNode('combo');
+			if (fieldset.items.length > 1) {
+				fieldset.preserveScroll();
+				fieldset.remove(items,true);
+				fieldset.restoreScroll();
+			}
+			var v = preCombo.getValue();
+			preCombo.setReadOnly(false);				
+			//console.log('NewClic Event');
+			var scp = {'scope': scope, 'combo': preCombo};			
+			var preButdel = preCombo.nextNode('image#delbutton');			
+			preButdel.getEl().addListener( 'click', scope.addDelEvent, scp);
+		},
+		selectTaxon: function(combo, records, eOpts){
+			console.log('Select Taxon');
+			var butadd = combo.nextNode('image#addbutton');
+			butadd.getEl().dom.click();
+			var nextCombo = combo.nextNode('combo');
+			//var store = ['Menu 1.1', 'Menu 1.2','Menu 1.3','Menu 1.4']
+			var store = Ext.create('Ext.data.Store', {			    
+			    proxy: {
+			        type: 'ajax',
+			        url: location.pathname + '/taxon',
+			        reader: {
+			        	idProperty: 'identifier',
+			        	successProperty: 'success',
+			            root: 'data',
+			            type: 'json'
+			        }
+			    },
+			    autoLoad: false,
+			    autoSync: false,
+			    fields: [ 'identifier', 'text' ]
+			});
+			var sourcev = combo.up('preservescrollfieldset').up('preservescrollfieldset').down('combo').getValue();
+			store.load({params: {source: sourcev, identifier: records[0].data.identifier}});					
+			nextCombo.bindStore(store);
+			combo.setReadOnly(true);
+			var butdel = combo.nextNode('image#delbutton');
+			var scp = {'scope': this, 'combo': nextCombo};
+			butdel.getEl().removeAllListeners();
+			nextButdel = nextCombo.nextNode('image#delbutton');
+			nextButdel.getEl().removeAllListeners();
+			nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
+			
+		},
         taxonfield: function(label, id, tooltip, help, optional, margin, helpmargin) {
             var field = this.field( null, true, true, this.helpcombo( label, id, tooltip, help, optional, margin, helpmargin));
 
@@ -234,6 +327,16 @@ Ext.define('eXe.view.forms.LomWidgets', {
             field.checkboxToggle = false;
             field.collapsed = false;
             field.addButton = false;
+            field.margin = -10;
+            field.cls = 'taxon';
+            console.log('TaxonField: ' + id);
+            field.item.item.listeners = {
+            	 scope: this,
+                'select': this.selectTaxon
+            };
+            field.item.item.displayField = 'text';
+            field.item.item.valueField = 'text';
+            //field.item.item.queryMode = 'remote';            
             return field;
         },
         updateMandatoryField: function(event, input, eOpts) {

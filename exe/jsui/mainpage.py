@@ -58,6 +58,7 @@ from urllib                      import unquote
 from exe.engine.locationbuttons import LocationButtons
 from exe.export.epub3export import Epub3Export
 from exe.engine.lom import lomsubs
+from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
 
@@ -112,6 +113,21 @@ class MainPage(RenderableLivePage):
             return self.authoringPages[clientid]
         else:
             raise Exception('No clientHandleId in request')
+
+    def child_taxon(self, ctx):
+        """
+        Doc
+        """
+        data = []
+        if 'source' in ctx.args and 'identifier' in ctx.args:
+            source = ctx.args['source'][0]
+            identifier = ctx.args['identifier'][0]
+            classif = Classification()
+            classif.setSource(source)
+            if identifier == 'false':
+                identifier = False
+            data = classif.getDataByIdentifier(identifier)
+        return json.dumps({'success': True, 'data': data})    
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
