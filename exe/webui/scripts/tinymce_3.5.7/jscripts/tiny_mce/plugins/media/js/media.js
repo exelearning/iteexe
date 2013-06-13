@@ -298,7 +298,7 @@
 					}
 				}
 				
-				var cssClass = "exe-figure exe-image";
+				var cssClass = "exe-figure exe-media";
                 if (groupPosition!="left") cssClass += " position-"+groupPosition;
                 if (groupFloat!="none") cssClass += " float-"+groupFloat;
                 if (captionLicense!="") cssClass += " license-"+captionLicense;
