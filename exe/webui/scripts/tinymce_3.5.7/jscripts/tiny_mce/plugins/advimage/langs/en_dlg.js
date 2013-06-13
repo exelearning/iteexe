@@ -1,1 +1,29 @@
-tinyMCE.addI18n('en.advimage_dlg',{"image_list":"Image List","align_right":"Right","align_left":"Left","align_textbottom":"Text Bottom","align_texttop":"Text Top","align_bottom":"Bottom","align_middle":"Middle","align_top":"Top","align_baseline":"Baseline",align:"Alignment",hspace:"Horizontal Space",vspace:"Vertical Space",dimensions:"Dimensions",border:"Border",list:"Image List",alt:"Image Description",src:"Image URL","dialog_title":"Insert/Edit Image","missing_alt":"Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off.","example_img":"Appearance Preview Image",misc:"Miscellaneous",mouseout:"For Mouse Out",mouseover:"For Mouse Over","alt_image":"Alternative Image","swap_image":"Swap Image",map:"Image Map",id:"ID",rtl:"Right to Left",ltr:"Left to Right",classes:"Classes",style:"Style","long_desc":"Long Description Link",langcode:"Language Code",langdir:"Language Direction","constrain_proportions":"Constrain Proportions",preview:"Preview",title:"Title",general:"General","tab_advanced":"Advanced","tab_appearance":"Appearance","tab_general":"General",width:"Width",height:"Height"});
+tinyMCE.addI18n('en.advimage_dlg',{"image_list":"Image List","align_right":"Right","align_left":"Left","align_textbottom":"Text Bottom","align_texttop":"Text Top","align_bottom":"Bottom","align_middle":"Middle","align_top":"Top","align_baseline":"Baseline",align:"Alignment",hspace:"Horizontal Space",vspace:"Vertical Space",dimensions:"Dimensions",border:"Border",list:"Image List",alt:"Image Description",src:"Image URL","dialog_title":"Insert/Edit Image","missing_alt":"Are you sure you want to continue without including an Image Description? Without it the image may not be accessible to some users with disabilities, or to those using a text browser, or browsing the Web with images turned off.","example_img":"Appearance Preview Image",misc:"Miscellaneous",mouseout:"For Mouse Out",mouseover:"For Mouse Over","alt_image":"Alternative Image","swap_image":"Swap Image",map:"Image Map",id:"ID",rtl:"Right to Left",ltr:"Left to Right",classes:"Classes",style:"Style","long_desc":"Long Description Link",langcode:"Language Code",langdir:"Language Direction","constrain_proportions":"Constrain Proportions",preview:"Preview",title:"Title",general:"General","tab_advanced":"Advanced","tab_appearance":"Appearance","tab_general":"General",width:"Width",height:"Height",
+// The New eXeLearning
+"tab_caption":"Header and caption",
+"recognition":"Title and attribution",
+"header":"Header",
+"image_title":"Image title",
+"image_title_link":"Title link",
+"author_name":"Source/author",
+"author_name_link":"Source/author link",
+"caption_license":"License",
+"caption_select_license":"Choose a license...",
+"public_domain":"Public domain",
+"all_rights_reserved":"All rights reserved",
+"block_presentation":"Presentation",
+"text_align":"Text align",
+"align_left":"Left",
+"align_center":"Center",
+"align_right":"Right",
+"image_and_caption_position":"Group position",
+"position_center":"Center",
+"position_normal":"None",
+"image_and_caption_float":"Float",
+"position_left":"Left",
+"position_right":"Right",
+"image_and_caption_margin":"Group margin",
+"caption_explanation":"You would not be able to edit the header and the caption from this dialog.",
+"caption_warning":"The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself."
+// The New eXeLearning
+});

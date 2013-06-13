@@ -18,6 +18,9 @@
 				<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#advimage_dlg.tab_general}</a></span></li>
 				<li id="appearance_tab" aria-controls="appearance_panel"><span><a href="javascript:mcTabs.displayTab('appearance_tab','appearance_panel');" onmousedown="return false;">{#advimage_dlg.tab_appearance}</a></span></li>
 				<li id="advanced_tab" aria-controls="advanced_panel"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');" onmousedown="return false;">{#advimage_dlg.tab_advanced}</a></span></li>
+                <!-- /* The New eXeLearning */ -->
+                <li id="caption_tab" aria-controls="caption_panel"><span><a href="javascript:mcTabs.displayTab('caption_tab','caption_panel');" onmousedown="return false;">{#advimage_dlg.tab_caption}</a></span></li>
+                <!-- /* /The New eXeLearning */ -->                
 			</ul>
 		</div>
 
@@ -224,6 +227,95 @@
 					</table>
 				</fieldset>
 			</div>
+            <!-- /* The New eXeLearning */ -->
+			<div id="caption_panel" class="panel">
+				<fieldset id="caption_panel-fieldset-1">
+						<legend>{#advimage_dlg.recognition}</legend>
+						<table role="presentation" class="properties">
+                            <tr>
+								<td class="column1"><label for="header">{#advimage_dlg.header}</label></td>
+								<td colspan="2"><input id="header" name="header" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="imagetitle">{#advimage_dlg.image_title}</label></td>
+								<td colspan="2"><input id="imagetitle" name="imagetitle" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="imagetitlelink">{#advimage_dlg.image_title_link}</label></td>
+								<td colspan="2"><input id="imagetitlelink" name="imagetitlelink" type="text" value="" /></td>
+							</tr>
+							<tr>
+								<td class="column1"><label for="authorname">{#advimage_dlg.author_name}</label></td>
+								<td colspan="2"><input id="authorname" name="authorname" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="authornamelink">{#advimage_dlg.author_name_link}</label></td>
+								<td colspan="2"><input id="authornamelink" name="authornamelink" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="captionlicense">{#advimage_dlg.caption_license}</label></td>
+								<td colspan="2">
+                                	<select name="captionlicense" id="captionlicense">
+                                    	<option value="">{#advimage_dlg.caption_select_license}</option>
+                                        <option value="pd">{#advimage_dlg.public_domain}</option>
+                                        <option value="gnu-gpl">GNU/GPL</option>
+                                        <option value="CC0">Creative Commons ({#advimage_dlg.public_domain})</option>
+                                        <option value="CC-BY">Creative Commons BY</option>
+                                        <option value="CC-BY-SA">Creative Commons BY-SA</option>
+                                        <option value="CC-BY-ND">Creative Commons BY-ND</option>
+                                        <option value="CC-BY-NC">Creative Commons BY-NC</option>
+                                        <option value="CC-BY-NC-SA">Creative Commons BY-NC-SA</option>
+                                        <option value="CC-BY-NC-ND">Creative Commons BY-NC-ND</option>
+                                        <option value="copyright">Copyright ({#advimage_dlg.all_rights_reserved})</option>                                   
+                                    </select>
+                                </td>
+							</tr>
+						</table>                        
+				</fieldset>
+                <fieldset id="caption_panel-fieldset-2">
+						<legend>{#advimage_dlg.block_presentation}</legend>
+						<table role="presentation" class="properties">
+                            <tr>
+								<td class="column1"><label for="groupposition">{#advimage_dlg.image_and_caption_position}</label></td>
+								<td colspan="2">
+                                	<select name="groupposition" id="groupposition" style="width:180px">
+                                    	<option value="left">{#advimage_dlg.align_left}</option>
+                                        <option value="center">{#advimage_dlg.align_center}</option>
+                                        <option value="right">{#advimage_dlg.align_right}</option>
+                                    </select>
+                                </td>
+							</tr>                        
+							<tr>
+								<td class="column1"><label for="textalign">{#advimage_dlg.text_align}</label></td>
+								<td colspan="2">
+                                	<select name="textalign" id="textalign" style="width:180px">
+                                    	<option value="left">{#advimage_dlg.align_left}</option>
+                                        <option value="center">{#advimage_dlg.align_center}</option>
+                                        <option value="right">{#advimage_dlg.align_right}</option>
+                                    </select>
+                                </td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="groupfloat">{#advimage_dlg.image_and_caption_float}</label></td>
+								<td colspan="2">
+                                	<select name="groupfloat" id="groupfloat" style="width:180px">
+                                    	<option value="none">{#advimage_dlg.position_normal}</option>
+                                        <option value="left">{#advimage_dlg.position_left}</option>
+                                        <option value="right">{#advimage_dlg.position_right}</option>
+                                    </select>
+                                </td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="groupmargin">{#advimage_dlg.image_and_caption_margin}</label></td>
+								<td colspan="2">
+                                	<input id="groupmargin" name="groupmargin" type="text" style="width:30px" maxlength="3" value="" /> px
+                                </td>
+							</tr>                           
+						</table>                        
+				</fieldset>
+                <p id="caption_panel-explanation">{#advimage_dlg.caption_explanation}</p>
+			</div>            
+			<!-- /* /The New eXeLearning */ -->            
 		</div>
 
 		<div class="mceActionPanel">

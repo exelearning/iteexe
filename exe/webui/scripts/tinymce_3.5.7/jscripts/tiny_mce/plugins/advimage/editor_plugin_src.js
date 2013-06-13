@@ -32,6 +32,13 @@
 				title : 'advimage.image_desc',
 				cmd : 'mceAdvImage'
 			});
+            
+			// The New eXeLearning
+            ed.onInit.add(function() {
+				ed.dom.loadCSS(url + "/css/content.css");
+			});
+            // /The New eXeLearning            
+            
 		},
 
 		getInfo : function() {

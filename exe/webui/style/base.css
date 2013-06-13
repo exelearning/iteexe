@@ -34,5 +34,15 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .iDevice_content{position:relative}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
 .iDevice_hidden_content{display:none}
+/* TinyMCE: Images and media */
+.position-center{margin:0 auto}
+.position-right{margin:0 0 0 auto}
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-right{text-align:right}
+.float-left{float:left}
+.float-right{float:right}
+.figcaption{padding-top:.2em}
+.figcaption.header{padding-top:0;padding-bottom:.2em}
 /* To review */
 .question .answer p{margin:0}
