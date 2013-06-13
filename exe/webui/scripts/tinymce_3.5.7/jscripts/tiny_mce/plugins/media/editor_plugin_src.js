@@ -393,11 +393,15 @@ function parse_media_html_attributes(c) {
 				cm.setActive('media', isMediaImg(node));
 			});
 			
-			/* The New ExeLearning */
+			// The New eXeLearning
 			ed.onSaveContent.add(function(ed, o) {
 				o.content = parse_media_html_attributes(o.content);
 			});
-			/* The New ExeLearning */			
+			
+            ed.onInit.add(function() {
+				ed.dom.loadCSS(url + "/css/content.css");
+			});
+            // /The New eXeLearning         
 			
 		},
 

@@ -17,6 +17,9 @@
 				<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');Media.formToData();" onmousedown="return false;">{#media_dlg.general}</a></span></li>
 				<li id="advanced_tab" aria-controls="advanced_panel"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');Media.formToData();" onmousedown="return false;">{#media_dlg.advanced}</a></span></li>
 				<li id="source_tab" aria-controls="source_panel"><span><a href="javascript:mcTabs.displayTab('source_tab','source_panel');Media.formToData('source');" onmousedown="return false;">{#media_dlg.source}</a></span></li>
+                <!-- /* The New eXeLearning */ -->
+                <li id="caption_tab" aria-controls="caption_panel"><span><a href="javascript:mcTabs.displayTab('caption_tab','caption_panel');" onmousedown="return false;">{#media_dlg.tab_caption}</a></span></li>
+                <!-- /* /The New eXeLearning */ -->                
 			</ul>
 		</div>
 
@@ -911,6 +914,97 @@
 					<textarea id="source" style="width: 99%; height: 390px"></textarea>
 				</fieldset>
 			</div>
+            
+            <!-- /* The New eXeLearning */ -->
+			<div id="caption_panel" class="panel">
+				<fieldset id="caption_panel-fieldset-1">
+						<legend>{#media_dlg.recognition}</legend>
+						<table role="presentation" class="properties">
+                            <tr>
+								<td class="column1"><label for="header">{#media_dlg.header}</label></td>
+								<td colspan="2"><input id="header" name="header" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="imagetitle">{#media_dlg.media_title}</label></td>
+								<td colspan="2"><input id="imagetitle" name="imagetitle" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="imagetitlelink">{#media_dlg.media_title_link}</label></td>
+								<td colspan="2"><input id="imagetitlelink" name="imagetitlelink" type="text" value="" /></td>
+							</tr>
+							<tr>
+								<td class="column1"><label for="authorname">{#media_dlg.author_name}</label></td>
+								<td colspan="2"><input id="authorname" name="authorname" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="authornamelink">{#media_dlg.author_name_link}</label></td>
+								<td colspan="2"><input id="authornamelink" name="authornamelink" type="text" value="" /></td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="captionlicense">{#media_dlg.caption_license}</label></td>
+								<td colspan="2">
+                                	<select name="captionlicense" id="captionlicense">
+                                    	<option value="">{#media_dlg.caption_select_license}</option>
+                                        <option value="pd">{#media_dlg.public_domain}</option>
+                                        <option value="gnu-gpl">GNU/GPL</option>
+                                        <option value="CC0">Creative Commons ({#media_dlg.public_domain})</option>
+                                        <option value="CC-BY">Creative Commons BY</option>
+                                        <option value="CC-BY-SA">Creative Commons BY-SA</option>
+                                        <option value="CC-BY-ND">Creative Commons BY-ND</option>
+                                        <option value="CC-BY-NC">Creative Commons BY-NC</option>
+                                        <option value="CC-BY-NC-SA">Creative Commons BY-NC-SA</option>
+                                        <option value="CC-BY-NC-ND">Creative Commons BY-NC-ND</option>
+                                        <option value="copyright">Copyright ({#media_dlg.all_rights_reserved})</option>                                   
+                                    </select>
+                                </td>
+							</tr>
+						</table>                        
+				</fieldset>
+                <fieldset id="caption_panel-fieldset-2">
+						<legend>{#media_dlg.block_presentation}</legend>
+						<table role="presentation" class="properties">
+                            <tr>
+								<td class="column1"><label for="groupposition">{#media_dlg.image_and_caption_position}</label></td>
+								<td colspan="2">
+                                	<select name="groupposition" id="groupposition" style="width:180px">
+                                    	<option value="left">{#media_dlg.align_left}</option>
+                                        <option value="center">{#media_dlg.align_center}</option>
+                                        <option value="right">{#media_dlg.align_right}</option>
+                                    </select>
+                                </td>
+							</tr>                        
+							<tr>
+								<td class="column1"><label for="textalign">{#media_dlg.text_align}</label></td>
+								<td colspan="2">
+                                	<select name="textalign" id="textalign" style="width:180px">
+                                    	<option value="left">{#media_dlg.align_left}</option>
+                                        <option value="center">{#media_dlg.align_center}</option>
+                                        <option value="right">{#media_dlg.align_right}</option>
+                                    </select>
+                                </td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="groupfloat">{#media_dlg.image_and_caption_float}</label></td>
+								<td colspan="2">
+                                	<select name="groupfloat" id="groupfloat" style="width:180px">
+                                    	<option value="none">{#media_dlg.position_normal}</option>
+                                        <option value="left">{#media_dlg.position_left}</option>
+                                        <option value="right">{#media_dlg.position_right}</option>
+                                    </select>
+                                </td>
+							</tr>
+                            <tr>
+								<td class="column1"><label for="groupmargin">{#media_dlg.image_and_caption_margin}</label></td>
+								<td colspan="2">
+                                	<input id="groupmargin" name="groupmargin" type="text" style="width:30px" maxlength="3" value="" /> px
+                                </td>
+							</tr>                           
+						</table>                        
+				</fieldset>
+                <p id="caption_panel-explanation">{#media_dlg.caption_explanation}</p>
+			</div>            
+			<!-- /* /The New eXeLearning */ -->
+            
 		</div>
 
 		<div class="mceActionPanel">
