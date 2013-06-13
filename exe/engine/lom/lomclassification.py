@@ -17,6 +17,7 @@ class Classification(object):
         '''
         Constructor
         '''
+        self.configPath = 'classification_sources'
         self.file = None
         self.dom = None
         if xmlfile:
@@ -30,20 +31,43 @@ class Classification(object):
             except:
                 raise Exception('Can not create dom object')
 
-    def setSource(self, source):
-        if source == u"Accesibilidad LOM-ESv1.0":
-            self.file = 'exe/engine/lom/test/sources/PODPL_02_accesibilidad_LOM-ES_es.xml'
-        elif source == u"Nivel educativo LOM-ESv1.0":
-            self.file = 'exe/engine/lom/test/sources/PODPL_01_nivel_educativo_LOM-ES_es.xml'
-        elif source == u"Competencia LOM-ESv1.0":
-            self.file = 'exe/engine/lom/test/sources/PODPL_01_competencia_LOM-ES_es.xml'
-        elif source == u"Árbol curricular LOE 2006":
-            self.file = 'exe/engine/lom/test/sources/PODPL_02_Arbol_curricular_LOE_2006_es.xml'
-        elif source == u"ETB-LRE MEC-CCAA V1.0":
-            pass
-        else:
-            raise Exception('Can not set source')
-        self.setDom()
+    def setSource(self, source, configDir):
+        p1 = source[:-3]
+        p2 = source[-2:]
+        path = configDir / self.configPath / p1 / p2
+        files = path.files()
+        if files:
+            xmlfile = str(files[0].abspath())
+            self.file = xmlfile
+            self.setDom()
+
+    def getSources(self, source, configDir):
+        sources = []
+        dirs = ['accesibilidad_LOM-ES', 'nivel_educativo_LOM-ES', 'competencia_LOM-ES', 'etb-lre_mec-ccaa_V.1.0', 'arbol_curricular_LOE_2006']
+        path = configDir / self.configPath
+        paths = []
+        if source == 'accessibility restrictions':
+            path = path / dirs[0]
+            paths.append(path)
+        elif source == 'educational level':
+            path = path / dirs[1]
+            paths.append(path)
+        elif source == "competency":
+            path = path / dirs[2]
+            paths.append(path)
+        elif source == "discipline":
+            path1 = path / dirs[3]
+            path2 = path / dirs[4]
+            paths.append(path1)
+            paths.append(path2)
+#        elif source == '':
+#            for v in dirs:
+#                paths.append(path / v)
+        for p in paths:
+            for sp in p.dirs():
+                reg = {'text': str(p.basename()) + '_' + str(sp.basename()), 'id': str(p.basename()) + '_' + str(sp.basename())}
+                sources.append(reg)
+        return sources
 
     def getChildNodeByName(self, node, name):
         for n in node.childNodes:

@@ -96,6 +96,7 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
         self.authoringPages = {}
+        self.classificationSources = {}
 
         G.application.resourceDir=Path(package.resourceDir);
 
@@ -119,15 +120,22 @@ class MainPage(RenderableLivePage):
         Doc
         """
         data = []
-        if 'source' in ctx.args and 'identifier' in ctx.args:
-            source = ctx.args['source'][0]
-            identifier = ctx.args['identifier'][0]
-            classif = Classification()
-            classif.setSource(source)
-            if identifier == 'false':
-                identifier = False
-            data = classif.getDataByIdentifier(identifier)
-        return json.dumps({'success': True, 'data': data})    
+        if 'source' in ctx.args:
+            if 'identifier' in ctx.args:
+                source = ctx.args['source'][0]
+                if source:
+                    if not source in self.classificationSources:
+                        self.classificationSources[source] = Classification()
+                        self.classificationSources[source].setSource(source, self.config.configDir)
+                    identifier = ctx.args['identifier'][0]
+                    if identifier == 'false':
+                        identifier = False
+                    data = self.classificationSources[source].getDataByIdentifier(identifier)
+            elif 'getsources' in ctx.args and ctx.args['getsources']:
+                classif = Classification()
+                source = ctx.args['source'][0]
+                data = classif.getSources(source, self.config.configDir)
+        return json.dumps({'success': True, 'data': data})
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
