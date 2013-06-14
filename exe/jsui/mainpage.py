@@ -54,7 +54,7 @@ from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
-from urllib                      import unquote
+from urllib                      import unquote, urlretrieve
 from exe.engine.locationbuttons import LocationButtons
 from exe.export.epub3export import Epub3Export
 from exe.engine.lom import lomsubs
@@ -179,6 +179,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleExportStyle,    'ExportStyle')
         setUpHandler(self.handleDeleteStyle,    'DeleteStyle')
         setUpHandler(self.handleSetBrowser,  'setBrowser')
+        setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
 
 
         #For the new ExtJS 4.0 interface
@@ -324,6 +325,36 @@ class MainPage(RenderableLivePage):
         filename = self.config.webDir.joinpath("docs")\
                 .joinpath("eXe-tutorial.elp")
         self.handleLoadPackage(client, filename)
+
+    def progressDownload(self, numblocks, blocksize, filesize, client):
+        try:
+            percent = min((numblocks * blocksize * 100) / filesize, 100)
+        except:
+            percent = 100
+        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "Downloading...")' % (float(percent) / 100, percent))
+        log.info('%3d' % (percent))
+
+    def handleSourcesDownload(self, client):
+        """
+        Download taxon sources from url and deploy in $HOME/.exe/classification_sources
+        """
+        url = 'https://dl.dropboxusercontent.com/u/22015602/classification_sources.zip'
+        client.sendScript('Ext.MessageBox.progress("Sources Download", "Connecting to classification sources repository...")')
+        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+
+        def successDownload(result):
+            filename = result[0]
+            if not zipfile.is_zipfile(filename):
+                return None
+
+            zipFile = zipfile.ZipFile(filename, "r")
+            try:
+                zipFile.extractall(G.application.config.configDir)
+                client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+            finally:
+                Path(filename).remove()
+
+        d.addCallback(successDownload)
 
     def handleSetLocale(self, client, locale):
         """

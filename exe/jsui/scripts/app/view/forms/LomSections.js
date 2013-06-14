@@ -155,6 +155,12 @@ Ext.define('eXe.view.forms.LomSections', {
 	        ],
 	        'classification': [
 	            eXe.view.forms.LomWidgets.field( _('Purpose'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'classification_purpose_value', _('Purpose'), null, true)),
+                {
+                    xtype: 'button',
+                    itemId: 'sources_download',
+                    text: _('Download Classification Sources'),
+                    margin: '0 10 10 10'
+                },
 	            eXe.view.forms.LomWidgets.field( _('Taxon Path'), true, true, {
                     xtype: 'container',
                     layout: 'anchor',

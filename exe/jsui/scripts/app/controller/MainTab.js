@@ -97,6 +97,9 @@ Ext.define('eXe.controller.MainTab', {
             '#update_tree': {
                 click: this.updateTree,
                 scope: this
+            },
+            '#sources_download': {
+                click: this.sourcesDownload
             }
         });
     },
@@ -438,5 +441,9 @@ Ext.define('eXe.controller.MainTab', {
 		        authoring.load(location.pathname + '/authoring?clientHandleId=' + nevow_clientHandleId + "&currentNode=" + selectednode);
             }
         }
+    },
+
+    sourcesDownload: function() {
+        nevow_clientToServerEvent('sourcesDownload', this, '');
     }
 });
