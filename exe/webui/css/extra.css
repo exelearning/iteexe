@@ -9,3 +9,16 @@ span[size='4']{font-size:medium}
 span[size='5']{font-size:large}
 span[size='6']{font-size:x-large}
 span[size='7']{font-size:xx-large}
+
+.exe-layout-2-cols,.exe-layout-3-cols{width:100%}
+.exe-layout-2-cols .exe-col{float:left;width:49%}
+.exe-layout-2-cols .exe-col-1{padding-right:1%}
+.exe-layout-2-cols .exe-col-2{padding-left:1%}
+.exe-layout-2-30-70 .exe-col{width:69%}
+.exe-layout-2-30-70 .exe-col-1{width:29%}
+.exe-layout-2-70-30 .exe-col{width:29%}
+.exe-layout-2-70-30 .exe-col-1{width:69%}
+.exe-layout-3-cols .exe-col{float:left;width:32%}
+.exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
+
+.exe-clear {overflow:auto}
