@@ -12,6 +12,9 @@ class Classification(object):
     '''
     classdocs
     '''
+    TREE = 1
+    GRAPH = 2
+    LEVEL0 = 'TE0'
 
     def __init__(self, xmlfile=False):
         '''
@@ -20,6 +23,7 @@ class Classification(object):
         self.configPath = 'classification_sources'
         self.file = None
         self.dom = None
+        self.sourceType = self.TREE
         if xmlfile:
             self.file = xmlfile
             self.setDom()
@@ -96,24 +100,62 @@ class Classification(object):
                 return cnode.parentNode
         return rootNode
 
-    def getElementsByIdentifier(self, identifier=False):
+    def getLevelGraph(self, dom, identifier):
+        """
+        <relationship>
+        <sourceTerm>M170</sourceTerm>
+        <targetTerm>835</targetTerm>
+        <relationshipType source="ETB-LRE MEC-CCAA">TE0</relationshipType>
+        </relationship>
+        """
         data = {}
-        rootNode = None
-        if not identifier:  # Level 0 root elements
-            rootNode = self.getChildNodeByName(self.dom, 'vdex')
+        if not identifier:
+            for rsnode in dom.getElementsByTagName('relationship'):
+                typeNodes = rsnode.getElementsByTagName('relationshipType')
+                if typeNodes and typeNodes[0].firstChild.nodeValue == self.LEVEL0:
+                    sourceNodes = rsnode.getElementsByTagName('sourceTerm')
+                    if sourceNodes:
+                        val = sourceNodes[0].firstChild.nodeValue
+                        if not val in data:
+                            data[val] = ''
         else:
-            rootNode = self.getNodeIdentifier(self.dom, identifier)
-        if rootNode:
-            for node in rootNode.childNodes:
-                if node.nodeName == 'term':
-                    termidentifier, caption = self.getChildCaptionIdentifier(node)
-                    if termidentifier:
-                        data[termidentifier] = caption
+            for sourceTerm in dom.getElementsByTagName('sourceTerm'):
+                if sourceTerm.firstChild.nodeValue == identifier:
+                    targets = sourceTerm.parentNode.getElementsByTagName('targetTerm')
+                    if targets:
+                        val = targets[0].firstChild.nodeValue
+                        if not val in data:
+                            data[val] = ''
+        if data:
+            for termNode in dom.getElementsByTagName('term'):
+                termidentifier, caption = self.getChildCaptionIdentifier(termNode)
+                if termidentifier in data:
+                    data[termidentifier] = caption
         return data
 
-    def getDataByIdentifier(self, identifier=False):
+    def getElementsByIdentifier(self, identifier=False, stype=False):
+        data = {}
+        rootNode = None
+        if stype:
+            self.sourceType = stype
+        if self.sourceType == self.TREE:
+            if not identifier:  # Level 0 root elements
+                rootNode = self.getChildNodeByName(self.dom, 'vdex')
+            else:
+                rootNode = self.getNodeIdentifier(self.dom, identifier)
+            if rootNode:
+                for node in rootNode.childNodes:
+                    if node.nodeName == 'term':
+                        termidentifier, caption = self.getChildCaptionIdentifier(node)
+                        if termidentifier:
+                            data[termidentifier] = caption
+        else:
+            data = self.getLevelGraph(self.dom, identifier)
+        return data
+
+    def getDataByIdentifier(self, identifier=False, stype=False):
         data = []
-        for key, value in self.getElementsByIdentifier(identifier).iteritems():
+        for key, value in self.getElementsByIdentifier(identifier, stype).iteritems():
             reg = {'text': value, 'identifier': key}
             data.append(reg)
         return data

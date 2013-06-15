@@ -125,12 +125,18 @@ class MainPage(RenderableLivePage):
                 source = ctx.args['source'][0]
                 if source:
                     if not source in self.classificationSources:
+
                         self.classificationSources[source] = Classification()
                         self.classificationSources[source].setSource(source, self.config.configDir)
                     identifier = ctx.args['identifier'][0]
                     if identifier == 'false':
                         identifier = False
-                    data = self.classificationSources[source].getDataByIdentifier(identifier)
+                    if source.startswith("etb-lre_mec-ccaa"):
+                        stype = 2
+                    else:
+                        stype = 1
+                    data = self.classificationSources[source].getDataByIdentifier(identifier, stype=stype)
+
             elif 'getsources' in ctx.args and ctx.args['getsources']:
                 classif = Classification()
                 source = ctx.args['source'][0]

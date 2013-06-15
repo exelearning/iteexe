@@ -50,7 +50,9 @@ class TestLOM(unittest.TestCase):
             self.assertEqual(data, results[i])
             i += 1
             print data
-
+            
+# Para que funciones los siguientes test de deben incluir los ficheros de fuentes en el directorio 
+#'exe/engine/lom/test/sources/ y descomentarlos
 #    def test_lomClassificationNivelEducativo(self):
 #        cl = Classification('exe/engine/lom/test/sources/PODPL_01_nivel_educativo_LOM-ES_es.xml')
 #        rootLevel = cl.getElementsByIdentifier()
@@ -66,6 +68,15 @@ class TestLOM(unittest.TestCase):
 #        for v in ['1', '1.1', '1.1.1', False, 0, 1, '1.6', '1.x.y.z']:
 #            data = cl.getElementsByIdentifier(v)
 #            print data
+
+#    def test_lomClassificationDisciplinaETBLRE(self):
+#        cl = Classification('exe/engine/lom/test/sources/ETB-LRE MEC-CCAA V.1.0_es.xml')
+#        rootLevel = cl.getElementsByIdentifier(stype=2)
+#        print rootLevel
+#        m50 = cl.getElementsByIdentifier('M50', stype=2)
+#        print m50
+#        s1277 = cl.getElementsByIdentifier('1277', stype=2)
+#        print s1277
 
 if __name__ == '__main__':
     unittest.main()

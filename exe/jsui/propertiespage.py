@@ -102,8 +102,9 @@ def _pass_field(fields, field, val):
 
 def processForm2Lom(fields, label, source):
     lomdict = {}
-    for field, val in fields.iteritems():
+    for field in sorted(fields.iterkeys()):
         #print field
+        val = fields[field]
         if not field.startswith('%s_' % label):
             continue
         else:
