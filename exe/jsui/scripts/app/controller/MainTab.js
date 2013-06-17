@@ -246,7 +246,10 @@ Ext.define('eXe.controller.MainTab', {
             field = false, fieldkey = false;
         if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(key)){        
          	fieldkey = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
-        }else{
+        }else if (/taxon[0-9]*_entry_string[0-9]*$/.exec(key)){
+        	fieldkey = vid[0] +  '_' + vid[1] +  '_' + vid[2] + '_' + vid[3].replace(/[0-9]+/g, '');
+        }
+        else{
           	fieldkey = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');	
         }
         field = Ext.ComponentQuery.query('#' + fieldkey)[0];
@@ -298,22 +301,45 @@ Ext.define('eXe.controller.MainTab', {
     	//var vp = Ext.ComponentQuery.query('#eXeViewport')[0];    	   	
     	//lform.suspendLayouts(true);
     	Ext.suspendLayouts();
-    	var field,fields = [], r, v, key, but;
+    	var field, fields = [], r, v, key, but, rLayout, lasttaxons = {}, k, vid, nv, finaltaxonKeys = {};
     	for (key in action.result.data){
     		fields.push(key);
+    		if(/_taxon[0-9]*_entry_string1$/.exec(key)){
+    			vid =key.split('_');
+    			k = vid[0] + '_' + vid[1] + '_' + vid[2]
+    			nv = parseInt(/[0-9]*$/.exec(key.split('_')[3])[0]);
+				if (!lasttaxons[k]){
+					lasttaxons[k] = nv;
+				}else if (nv > lasttaxons[k]){
+					lasttaxons[k] = nv;
+				}
+			}
     	}
+    	Ext.define('taxonModel', {
+    	    extend: 'Ext.data.Model',
+    	    fields: [ 'identifier', 'text']
+    	});
+    	
+    	Ext.iterate(lasttaxons, function(key, value){
+    		finaltaxonKeys[key + '_taxon' + String(value) + '_entry_string1'] = true;
+    	});
     	fields.sort();
-    	for (var i = 0, len = fields.length; i < len; i++){
+    	
+    	for (var i = 0, len = fields.length; i < len; i++){    		
     		key = fields[i];
+    		//console.log(key);
+    		rLayout = false;
     		field = form.findField(key);
     		v = action.result.data[key];
+    		r = false;
     		if (field){
     			field.setValue(v);
     			this.expandParents(field);
+    			r = field;
     			//console.log('OK:      ' + key );
     		}else{
     			//console.log('PROCESS: ' + key );
-    			if (action.result.data[key] !== ''){//            					
+    			if (action.result.data[key] !== ''){//
 					if (! this.existSection(form, key)){
 //						console.log('ADD Section: ' + key);
 						but = this.getAddSectionButton(key);
@@ -334,19 +360,32 @@ Ext.define('eXe.controller.MainTab', {
 							field.expand();
 							if (/contribute$/.exec(field.getItemId())){
 								but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
-							}else{
-								but = field.down('#addbutton');	
 							}
-							
+							else{								
+								if (field.addButtonObj){
+									but = field.addButtonObj;
+								}else{
+									console.log('Can not get de button: ' + key);
+								}								
+							}							
 							if (but){
+								if (! but.el){
+									Ext.resumeLayouts(true);
+									rLayout = true;
+									//console.log(key);
+								}
 								but.el.dom.click();
+								
     							r = form.findField(key);
         						if (r){
 //                						console.log('Set Field for key ' + key);
                 						r.setValue(v);
                 				}else{
         							console.log('ERROR: Set Field for key ' + key);
-        						}            								
+        						}
+        						if (rLayout){
+        							Ext.suspendLayouts();
+        						}
 							}            							
 						}
 						else{
@@ -354,8 +393,27 @@ Ext.define('eXe.controller.MainTab', {
 						}
 					}
     			}
-    		}         		
+    		}
+    		if(/_taxon[0-9]*_entry_string1$/.exec(key)){    			
+    			if (finaltaxonKeys[key]){
+    				field.addButtonObj.el.dom.click();
+    				finaltaxonKeys[key] = r;
+				
+    			}
+    		}    		
     	}
+    	Ext.resumeLayouts(true);
+    	Ext.suspendLayouts();
+    	Ext.iterate(finaltaxonKeys, function(key, r){
+    		if (r){    				
+				var	scp, nextCombo, nextbutdel;
+				nextCombo = r.nextNode('combo');
+				nextbutdel = nextCombo.nextNode('image#delbutton');
+				scp= {'scope': eXe.view.forms.LomWidgets, 'combo': nextCombo},
+				nextbutdel.getEl().removeAllListeners();
+				nextbutdel.getEl().addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
+			}    		
+    	});
     	Ext.resumeLayouts(true);
 //    	msg.close();
 //    	vp.setLoading(true);

@@ -155,9 +155,14 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field( _('Taxon Path'), true, true, {
                     xtype: 'container',
                     layout: 'anchor',
-                    items: [
-                        eXe.view.forms.LomWidgets.helpcombo( _('Source'), this.prefix + 'classification_taxonPath{1}_source', _('Source'), null, true),
-                        eXe.view.forms.LomWidgets.taxonfield( _('Taxon'), this.prefix + 'classification_taxonPath{1}_taxon{2}', _('Taxon'), null, true)
+                    items: [{
+                    		xtype: 'container',
+                    		layout: 'hbox',
+                    		items: [ eXe.view.forms.LomWidgets.helpcombo( _('Source'), this.prefix + 'classification_taxonPath{1}_source_string1', _('Source'), null, true),
+                    		         eXe.view.forms.LomWidgets.textfield(false , this.prefix + 'classification_taxonPath{1}_source_string1_language', null, null, null, null, true)]                    
+                    		},
+                        
+                    		eXe.view.forms.LomWidgets.taxonfield( _('Taxon'), this.prefix + 'classification_taxonPath{1}_taxon{2}_entry_string1', _('Taxon'), null, true),                                                
                     ]
                 }),
 	            eXe.view.forms.LomWidgets.field( _('Description'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'classification_description_string{1}', _('Description'), null, true))),

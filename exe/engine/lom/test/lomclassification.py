@@ -50,7 +50,7 @@ class TestLOM(unittest.TestCase):
             self.assertEqual(data, results[i])
             i += 1
             print data
-            
+
 # Para que funciones los siguientes test de deben incluir los ficheros de fuentes en el directorio 
 #'exe/engine/lom/test/sources/ y descomentarlos
 #    def test_lomClassificationNivelEducativo(self):

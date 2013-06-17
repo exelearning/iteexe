@@ -56,16 +56,46 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
     alias: 'widget.insertdelfieldset',
     
     lastId: 2,
-
+    listeners: {
+       	    scope: this,
+           'add': function(container, component, index, eOpts ){
+        	   //console.log('ADD EVENT, componet: '+ component.getId());        	   
+        	   if (container.getXType() == 'insertdelfieldset'){
+        		   var me = container;
+        		   var sid = component.inputId, sid;
+        		   while (component){
+        			  if (component.inputId){
+        				   sid = component.inputId,
+        				   vid = sid.split('_');
+		                  if (! me.itemId){
+		                      if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(sid)){
+		                          me.itemId = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
+		                      }else if (/taxon[0-9]*_entry_string[0-9]*$/.exec(sid)){
+		                      	me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2] + '_' + vid[3].replace(/[0-9]+/g, '');
+		                      }
+		                      else{
+		                          me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');                                        
+		                      }
+		                      me.addButtonObj = me.items.items[0].items.items[1];
+		                      //console.log(me.itemId);
+		                  }        				   
+        			   }
+        			   if (component.down){
+        				   component = component.down();   
+        			   }else{
+        				   component = false;
+        			   }        			   
+        		   }
+        	   }         	     
+           },           
+     },
     initComponent: function() {
         var me = this,
             items,
             addButton = null;
         	addButtonHide = false;
-        	
 
         this.item.flex = this.flex !== undefined? this.flex : 1;
-
         if (this.addButton != false) {
             addButton = {
                 xtype: 'image',
@@ -76,35 +106,7 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                 itemId: 'addbutton',
                 listeners: {
                     afterrender: function(c) {
-                        function updater(key, value, object) {
-                            if (key === 'inputId') {
-                                var sid = object.templateId;
-                                sid = value;
-                                vid = sid.split('_');
-
-                                if (! me.itemId){
-                                    if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(sid)){
-                                        me.itemId = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
-                                    }else{
-                                        me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');
-                                    }
-                                }
-                            }
-                            if (key === 'item') {
-                                Ext.iterate(object.item, updater);
-                                return false;
-                            }
-                            if (key === 'items') {
-                                Ext.iterate(object.items, updater);
-                                return false;
-                            }
-                            if (Ext.isObject(key))
-                                Ext.iterate(key, updater);
-                        }
-                        Ext.iterate(me.item, updater);
-
                         c.up().actualId = me.lastId-1;
-
                         c.el.on('click', function(a) {
                             var i,
                                 re,

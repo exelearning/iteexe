@@ -26,12 +26,14 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		optional: function(msg) {
 		    return msg + ' (' + _('Optional') + ')';
 		},
-        textfield: function(label, id, tooltip, optional, margin, value) {
+        textfield: function(label, id, tooltip, optional, margin, value, hidden) {
             var item;
 		    if (!tooltip)
 		        tooltip = label;
 		    if (!margin)
 		        margin = '0 0 0 0';
+		    if (!hidden)
+		    	hidden = false;
 		    item = {
 		        xtype: 'textfield',
 		        allowBlank: optional,
@@ -44,7 +46,8 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        validateOnChange: false,
                 hideEmptyLabel: false,
                 labelWidth: label? 100: 0,
-                dirtyCls: 'property-form-dirty'
+                dirtyCls: 'property-form-dirty',
+                hidden: hidden
 		    }
             if (value) {
                 item.value = value;
@@ -90,11 +93,13 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		onSelectSource: function(combo, records, eOpts){
 			var nextCombo = combo.nextNode('combo');
 			var store = this.getSelectStore();
-			store.load({params: {source: combo.getValue(), identifier: false}});
+			var val = combo.getValue()
+			combo.nextNode('textfield').setValue(val.substr(val.length-2));
+			store.load({params: {source: val, identifier: false}});
 			nextCombo.bindStore(store);
 		},
 		beforeSelectSource: function(combo, eOpts){			
-			var purposeCombo = Ext.ComponentQuery.query('combo[name='+combo.getName().replace(/taxonPath[0-9]*_source$/, 'purpose_value')+']')[0];
+			var purposeCombo = Ext.ComponentQuery.query('combo[name='+combo.getName().replace(/taxonPath[0-9]*_source_string1$/, 'purpose_value')+']')[0];
 			var store = this.getSelectStore();			
 			store.load({params: {source: purposeCombo.getValue(), getsources: true}});	
 			combo.bindStore(store);
@@ -112,7 +117,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
 				var nextCombo = combo.nextNode('combo');
 				var scp = {'scope': this, 'combo': nextCombo};
 				var sourcev = nextCombo.up('preservescrollfieldset').up('preservescrollfieldset').down('combo').getValue();
-				nextCombo.setValue('');				
+				nextCombo.setValue('');
+				nextCombo.nextNode('textfield[cls=taxon-entry-language]').setValue('');
+				nextCombo.nextNode('textfield[cls=taxon-id]').setValue('');
 				nextCombo.store.load({params: {source: sourcev, identifier: false}});
 				nextButdel = nextCombo.nextNode('image#delbutton');
 				nextButdel.getEl().removeAllListeners();
@@ -122,6 +129,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			if (oldValue && oldValue != newValue){
 				if (newValue === ''){
 					this.deleteTaxonChilds(combo, newValue, oldValue);
+					combo.nextNode('textfield').setValue('');
 				}else{
 					combo.suspendEvents(true);
 					Ext.Msg.show({
@@ -174,9 +182,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
         					newValue = opt.config.newValue,
         					oldValue = opt.config.oldValue;        					
         				if (btn == 'yes'){
-        					var sources = Ext.ComponentQuery.query('combobox[cls=taxonpath-source]')
-        	        		var vid = combo.getName().split('_'), vid2;
-        	        		var initStart = vid[0] + '_' + vid[1], sourceStart;
+        					var sources = Ext.ComponentQuery.query('combobox[cls=taxonpath-source]'),
+        	        			vid = combo.getName().split('_'), vid2,
+        	        			initStart = vid[0] + '_' + vid[1], sourceStart;
         	        		for (var i = 0, len = sources.length; i < len; i++){
         	        			vid2 = sources[i].getName().split('_');
         	            		sourceStart = vid2[0] + '_' + vid2[1];
@@ -203,7 +211,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	        storeName = storeName.replace(/_value$/, '');
 	        storeName = storeName.slice(storeName.lastIndexOf('_') + 1) + 'Values';
 		    if (/^(lom|lomes)+_classification[0-9]*/.exec(id)){
-		    	if (/_source$/.exec(id)){
+		    	if (/_source_string1$/.exec(id)){
 		    		combo.item.listeners = {
 			            	 scope: this,
 			                'select': this.onSelectSource,
@@ -388,12 +396,76 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			var preButdel = preCombo.nextNode('image#delbutton');			
 			preButdel.getEl().addListener( 'click', scope.addDelEvent, scp);
 		},
+		
+//		selectTaxon: function(combo, newValue, oldValue, options){
+//			//console.log('Select Taxon');
+//			var butadd = combo.nextNode('image#addbutton');
+//			butadd.getEl().dom.click();
+//			var nextCombo = combo.nextNode('combo');			
+//			
+//			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue();
+//			var identifier = newValue;
+//			combo.nextNode('textfield[cls=taxon-entry-language]').setValue(sourcev.substr(sourcev.length-2));
+//			combo.nextNode('textfield[cls=taxon-id]').setValue(identifier);
+//			nextCombo.getStore().load({params: {source: sourcev, identifier: identifier}});
+//			//nextCombo.bindStore(store);
+//			combo.setReadOnly(true);
+//			var butdel = combo.nextNode('image#delbutton');
+//			var scp = {'scope': this, 'combo': nextCombo};
+//			butdel.getEl().removeAllListeners();
+//			nextButdel = nextCombo.nextNode('image#delbutton');
+//			nextButdel.getEl().removeAllListeners();
+//			nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
+//			
+//		},
+		
 		selectTaxon: function(combo, records, eOpts){
 			//console.log('Select Taxon');
 			var butadd = combo.nextNode('image#addbutton');
 			butadd.getEl().dom.click();
-			var nextCombo = combo.nextNode('combo');
-			var store = Ext.create('Ext.data.Store', {			    
+			var nextCombo = combo.nextNode('combo');			
+			
+			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue();
+			var identifier = records[0].data.identifier;
+			combo.nextNode('textfield[cls=taxon-entry-language]').setValue(sourcev.substr(sourcev.length-2));
+			combo.nextNode('textfield[cls=taxon-id]').setValue(identifier);
+			nextCombo.getStore().load({params: {source: sourcev, identifier: identifier}});
+			//nextCombo.bindStore(store);
+			//combo.setReadOnly(true);
+			var butdel = combo.nextNode('image#delbutton');
+			var scp = {'scope': this, 'combo': nextCombo};
+			butdel.getEl().removeAllListeners();
+			nextButdel = nextCombo.nextNode('image#delbutton');
+			nextButdel.getEl().removeAllListeners();
+			nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
+			
+		},
+		changeTaxon: function(combo, newValue, oldValue, options){
+			combo.setReadOnly(true);			
+		},
+		beforeSelectTaxon: function(combo, eOpts){			
+			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue(),
+				identifier;				
+			if (combo.up('insertdelfieldset').items.length == 1)
+				indentfier = false;
+			else
+				identifier = combo.previousNode('textfield[cls=taxon-id]').getValue();		
+			combo.getStore().load({params: {source: sourcev, identifier: identifier}});				
+			
+		},
+        taxonfield: function(label, id, tooltip, help, optional, margin, helpmargin) {
+        	var taxonEntryCombo = this.helpcombo( label, id, tooltip, help, optional, margin, helpmargin);
+        	var taxonEntryLanguage = this.textfield(false , id.replace(/_entry_string1$/, '_entry_string1_language'), tooltip, optional, margin, helpmargin);
+        	var taxonId = this.textfield(false , id.replace(/_entry_string1$/, '_id'), tooltip, optional, margin, helpmargin);
+        	taxonEntryLanguage.cls = 'taxon-entry-language';
+        	taxonId.cls = 'taxon-id';
+        	taxonEntryCombo.item.listeners = {
+               	 scope: this,
+                 'select': this.selectTaxon,
+                 'focus': this.beforeSelectTaxon,
+	             'change': this.changeTaxon,
+             };
+        	var store = Ext.create('Ext.data.Store', {			    
 			    proxy: {
 			        type: 'ajax',
 			        url: location.pathname + '/taxon',
@@ -409,21 +481,21 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			    autoSync: false,
 			    fields: [ 'identifier', 'text' ]
 			});
-			var sourcev = combo.up('preservescrollfieldset').up('preservescrollfieldset').down('combo').getValue();
-			store.load({params: {source: sourcev, identifier: records[0].data.identifier}});					
-			nextCombo.bindStore(store);
-			combo.setReadOnly(true);
-			var butdel = combo.nextNode('image#delbutton');
-			var scp = {'scope': this, 'combo': nextCombo};
-			butdel.getEl().removeAllListeners();
-			nextButdel = nextCombo.nextNode('image#delbutton');
-			nextButdel.getEl().removeAllListeners();
-			nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
-			
-		},
-        taxonfield: function(label, id, tooltip, help, optional, margin, helpmargin) {
-            var field = this.field( null, true, true, this.helpcombo( label, id, tooltip, help, optional, margin, helpmargin));
-
+        	taxonEntryCombo.item.store = store;
+        	taxonEntryCombo.item.displayField = 'text';
+        	taxonEntryCombo.item.valueField = 'text';
+        	//taxonEntryCombo.item.queryMode = 'remote';         
+        	
+            var field = this.field( null, true, true, {
+	            xtype: 'container',
+	            layout: 'hbox',
+	            items: [
+	                { xtype: 'container', layout: 'anchor', flex: 6, items: taxonEntryCombo},
+	                { xtype: 'container', layout: 'anchor', flex: 1, items: taxonEntryLanguage, 'hidden': true},
+	                { xtype: 'container', layout: 'anchor', flex: 1, items: taxonId, 'hidden': true}
+	            ]
+	        });
+            //var field = this.field( null, true, true, [taxonEntryCombo, ]);
             field.border = false;
             field.collapsible = false;
             field.checkboxToggle = false;
@@ -431,14 +503,6 @@ Ext.define('eXe.view.forms.LomWidgets', {
             field.addButtonHide = true;
             field.margin = -10;
             field.cls = 'taxon';
-            //console.log('TaxonField: ' + id);
-            field.item.item.listeners = {
-            	 scope: this,
-                'select': this.selectTaxon
-            };
-            field.item.item.displayField = 'text';
-            field.item.item.valueField = 'text';
-            //field.item.item.queryMode = 'remote';            
             return field;
         },
         updateMandatoryField: function(event, input, eOpts) {
