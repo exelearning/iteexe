@@ -120,21 +120,12 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field( _('Difficulty'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_difficulty_value', _('Difficulty'), null, true)),
 	            eXe.view.forms.LomWidgets.durationfield(_('Typical Learning Time'), false, false, this.prefix + 'educational_typicalLearningTime'),
 	            eXe.view.forms.LomWidgets.field( _('Description'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'educational_description{1}_string1', _('Description'), null, true))),
-	            eXe.view.forms.LomWidgets.field( _('Language'), true, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_language{1}', _('Language'))),
-	            eXe.view.forms.LomWidgets.field( _('Cognitive Process'), true, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_cognitiveProcess{1}_value', _('Cognitive Process'), null, true))
+	            eXe.view.forms.LomWidgets.field( _('Language'), true, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_language{1}', _('Language')))
 	        ],
 	        'rights': [
 	            eXe.view.forms.LomWidgets.field( _('Cost'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'rights_cost_value', _('Cost'), null, true)),
 	            eXe.view.forms.LomWidgets.field( _('Copyright And Other Restrictions'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'rights_copyrightAndOtherRestrictions_value', _('Copyright And Other Restrictions'))),
-	            eXe.view.forms.LomWidgets.field( _('Description'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'rights_description_string{1}', _('Description'), null, true))),
-	            eXe.view.forms.LomWidgets.field( _('Access'), false, true, {
-                    xtype: 'container',
-                    layout: 'anchor',
-                    items: [
-		                eXe.view.forms.LomWidgets.helpcombo( _('Access Type'), this.prefix + 'rights_access_accessType_value', _('Access Type')),
-		                eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.textfield( _('Description'), this.prefix + 'rights_access_description_string{1}', _('Description')))
-                    ]
-                })
+	            eXe.view.forms.LomWidgets.field( _('Description'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'rights_description_string{1}', _('Description'), null, true)))
 	        ],
 	        'relation': [
 	            eXe.view.forms.LomWidgets.field( _('Kind'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'relation_kind', _('Kind'), null, true)),
@@ -194,7 +185,18 @@ Ext.define('eXe.view.forms.LomesSections', {
         prefix: 'lomes_',
         metaname: 'LOM-ESv1.0',
         items: function() {
-            return this.callParent();
+            var items = this.callParent();
+
+            items.educational.push(eXe.view.forms.LomWidgets.field( _('Cognitive Process'), true, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'educational_cognitiveProcess{1}_value', _('Cognitive Process'), null, true)));
+            items.rights.push(eXe.view.forms.LomWidgets.field( _('Access'), false, true, {
+                    xtype: 'container',
+                    layout: 'anchor',
+                    items: [
+                        eXe.view.forms.LomWidgets.helpcombo( _('Access Type'), this.prefix + 'rights_access_accessType_value', _('Access Type')),
+                        eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.textfield( _('Description'), this.prefix + 'rights_access_description_string{1}', _('Description')))
+                    ]
+                }));
+            return items;
         }
     }
 });
