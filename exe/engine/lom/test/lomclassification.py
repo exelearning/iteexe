@@ -68,13 +68,15 @@ class TestLOM(unittest.TestCase):
 #        for v in ['1', '1.1', '1.1.1', False, 0, 1, '1.6', '1.x.y.z']:
 #            data = cl.getElementsByIdentifier(v)
 #            print data
-
+#
 #    def test_lomClassificationDisciplinaETBLRE(self):
 #        cl = Classification('exe/engine/lom/test/sources/ETB-LRE MEC-CCAA V.1.0_es.xml')
 #        rootLevel = cl.getElementsByIdentifier(stype=2)
 #        print rootLevel
 #        m50 = cl.getElementsByIdentifier('M50', stype=2)
 #        print m50
+#        m70 = cl.getElementsByIdentifier('M70', stype=2)
+#        print m70
 #        s1277 = cl.getElementsByIdentifier('1277', stype=2)
 #        print s1277
 

@@ -441,7 +441,9 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			
 		},
 		changeTaxon: function(combo, newValue, oldValue, options){
-			combo.setReadOnly(true);			
+			if (newValue !== '' ){
+				combo.setReadOnly(true);
+			}						
 		},
 		beforeSelectTaxon: function(combo, eOpts){			
 			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue(),

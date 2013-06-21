@@ -14,7 +14,7 @@ class Classification(object):
     '''
     TREE = 1
     GRAPH = 2
-    LEVEL0 = 'TE0'
+    LEVEL0 = ['TE0', 'TE']
 
     def __init__(self, xmlfile=False):
         '''
@@ -100,6 +100,17 @@ class Classification(object):
                 return cnode.parentNode
         return rootNode
 
+    def appendVal(self, data, val):
+        if val not in data:
+            return True
+        return False
+
+    def removeElements(self, data, removeData):
+        for key in removeData:
+            if key in data.keys():
+                del data[key]
+        return True
+
     def getLevelGraph(self, dom, identifier):
         """
         <relationship>
@@ -109,15 +120,20 @@ class Classification(object):
         </relationship>
         """
         data = {}
+        removeData = []
         if not identifier:
             for rsnode in dom.getElementsByTagName('relationship'):
                 typeNodes = rsnode.getElementsByTagName('relationshipType')
-                if typeNodes and typeNodes[0].firstChild.nodeValue == self.LEVEL0:
+                if typeNodes and typeNodes[0].firstChild.nodeValue in self.LEVEL0:
+                    if typeNodes[0].firstChild.nodeValue == self.LEVEL0[1]:
+                        targetNodes = rsnode.getElementsByTagName('targetTerm')
+                        removeData.append(targetNodes[0].firstChild.nodeValue)
                     sourceNodes = rsnode.getElementsByTagName('sourceTerm')
                     if sourceNodes:
                         val = sourceNodes[0].firstChild.nodeValue
-                        if not val in data:
+                        if self.appendVal(data, val):
                             data[val] = ''
+            self.removeElements(data, removeData)
         else:
             for sourceTerm in dom.getElementsByTagName('sourceTerm'):
                 if sourceTerm.firstChild.nodeValue == identifier:
