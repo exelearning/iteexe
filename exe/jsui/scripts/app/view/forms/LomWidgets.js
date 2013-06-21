@@ -383,14 +383,14 @@ Ext.define('eXe.view.forms.LomWidgets', {
 				combo = this.combo;		    
 			var items = combo.nextNode('image#delbutton').up(),
 				fieldset = items.up();
+			//var v = preCombo.getValue();
 			var preCombo = combo.previousNode('combo');
 			if (fieldset.items.length > 1) {
 				fieldset.preserveScroll();
 				fieldset.remove(items,true);
+				preCombo.setReadOnly(false);
 				fieldset.restoreScroll();
-			}
-			var v = preCombo.getValue();
-			preCombo.setReadOnly(false);				
+			}				
 			//console.log('NewClic Event');
 			var scp = {'scope': scope, 'combo': preCombo};			
 			var preButdel = preCombo.nextNode('image#delbutton');			
