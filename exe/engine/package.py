@@ -321,22 +321,16 @@ class Package(Persistable):
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self.lomEs         = lomsubs.lomSub.factory()
+        entry = str(uuid.uuid4())
+        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'))
         self.lom           = lomsubs.lomSub.factory()
-        childs = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': str(uuid.uuid4())}],
-                              'aggregationLevel': {'source': 'LOMv1.0', 'value': '3'}
-                             },
-                  'metaMetadata': {'metadataSchema': ['LOMv1.0']},
-                 }
-        self.lom.addChilds(childs)
-        childs['general']['aggregationLevel']['source'] = 'LOM-ESv1.0'
-        childs['metaMetadata']['metadataSchema'] = ['LOM-ESv1.0']
-        self.lomEs.addChilds(childs)
+        self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
         self.scowsource    = False
         self.exportMetadataType = "LOMES"
-        self.license       = "None"
+        self.license       = u''
         self.footer        = ""
         self._lang = G.application.config.locale.split('_')[0]
         self._objectives = u''
@@ -417,6 +411,40 @@ class Package(Persistable):
     def set_author(self, value):
         if self.dublinCore.creator == self._author:
             self.dublinCore.creator = value
+        value_str = value.encode('utf-8')
+        author_vcard = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET: ORG: END:VCARD' % value_str
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            src = lomsubs.sourceValueSub()
+            src.set_valueOf_(source)
+            src.set_uniqueElementName('source')
+            val = lomsubs.roleValueSub()
+            val.set_valueOf_('author')
+            val.set_uniqueElementName('value')
+            role = lomsubs.roleSub()
+            role.set_source(src)
+            role.set_value(val)
+            role.set_uniqueElementName('role')
+            entity = lomsubs.entitySub(author_vcard)
+
+            lifeCycle = metadata.get_lifeCycle()
+            if lifeCycle:
+                pass
+            else:
+                if value:
+                    contribute = lomsubs.contributeSub(role, [entity])
+                    lifeCycle = lomsubs.lifeCycleSub(contribute=[contribute])
+                    metadata.set_lifeCycle(lifeCycle)
+
+            metaMetadata = metadata.get_metaMetadata()
+            if metaMetadata:
+                contributes = metaMetadata.get_contribute()
+                if contributes:
+                    for contribute in contributes:
+                        pass
+                else:
+                    if value:
+                        contribute = lomsubs.contributeMetaSub(role, [entity])
+                        metaMetadata.set_contribute([contribute])
         self._author = toUnicode(value)
 
     def set_description(self, value):
@@ -551,6 +579,85 @@ class Package(Persistable):
                     metadata.get_general().set_description(description)
         self._preknowledge = toUnicode(value)
 
+    def license_map(self, source, value):
+        if source == 'LOM-ESv1.0':
+            return value
+        elif source == 'LOMv1.0':
+            if value == 'not appropriate':
+                return 'no'
+            else:
+                return 'yes'
+
+    def set_license(self, value):
+        value_str = value.encode('utf-8')
+        if self.dublinCore.rights == self.license:
+            self.dublinCore.rights = value
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            rights = metadata.get_rights()
+            if not rights:
+                metadata.set_rights(lomsubs.rightsSub())
+            copyrightAndOtherRestrictions = metadata.get_rights().get_copyrightAndOtherRestrictions()
+            if copyrightAndOtherRestrictions:
+                if copyrightAndOtherRestrictions.get_value().get_valueOf_() == self.license_map(source, self.license.encode('utf-8')):
+                    if value:
+                        copyrightAndOtherRestrictions.get_value().set_valueOf_(self.license_map(source, value_str))
+                    else:
+                        copyrightAndOtherRestrictions = None
+            else:
+                if value:
+                    src = lomsubs.sourceValueSub()
+                    src.set_valueOf_(source)
+                    src.set_uniqueElementName('source')
+                    val = lomsubs.copyrightAndOtherRestrictionsValueSub()
+                    val.set_valueOf_(self.license_map(source, value_str))
+                    val.set_uniqueElementName('value')
+                    copyrightAndOtherRestrictions = lomsubs.copyrightAndOtherRestrictionsSub()
+                    copyrightAndOtherRestrictions.set_source(src)
+                    copyrightAndOtherRestrictions.set_value(val)
+                    copyrightAndOtherRestrictions.set_uniqueElementName('copyrightAndOtherRestrictions')
+                    metadata.get_rights().set_copyrightAndOtherRestrictions(copyrightAndOtherRestrictions)
+        self.license = toUnicode(value)
+
+    def get_learningResourceType(self):
+        pass
+
+    def set_learningResourceType(self, value):
+        value_str = value.encode('utf-8')
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            educationals = metadata.get_educational()
+            if educationals:
+                for educational in educationals:
+                    language = educational.get_language()
+                    if language:
+                        for LanguageId in language:
+                            if LanguageId.get_valueOf_() == self._lang.encode('utf-8'):
+                                LanguageId.set_valueOf_(value_str)
+            else:
+                if value:
+                    src = lomsubs.sourceValueSub()
+                    src.set_valueOf_(source)
+                    src.set_uniqueElementName('source')
+                    val = lomsubs.learningResourceTypeValueSub()
+                    val.set_valueOf_(value_str)
+                    val.set_uniqueElementName('value')
+                    learningResourceType = lomsubs.learningResourceTypeSub(value_str)
+                    learningResourceType.set_source(src)
+                    learningResourceType.set_value(val)
+                    educational = [lomsubs.educationalSub(learningResourceType=[learningResourceType])]
+                    metadata.set_educational(educational)
+
+    def get_intendedEndUserRole(self, forwork=False):
+        pass
+
+    def set_intendedEndUserRole(self, value, forwork=False):
+        pass
+
+    def get_context(self, modality=False):
+        pass
+
+    def set_context(self, value, modality=False):
+        pass
+
     # Properties
 
     name          = property(lambda self:self._name, set_name)
@@ -558,6 +665,7 @@ class Package(Persistable):
     lang          = property(lambda self: self._lang, set_lang)
     author        = property(lambda self:self._author, set_author)
     description   = property(lambda self:self._description, set_description)
+    newlicense       = property(lambda self:self.license, set_license)
 
     backgroundImg = property(get_backgroundImg, set_backgroundImg)
 
@@ -567,6 +675,12 @@ class Package(Persistable):
 
     objectives = property(lambda self: self._objectives, set_objectives)
     preknowledge = property(lambda self: self._preknowledge, set_preknowledge)
+    learningResourceType = property(get_learningResourceType, set_learningResourceType)
+    intendedEndUserRole = property(get_intendedEndUserRole, set_intendedEndUserRole)
+    intendedEndUserRoleGroup = property(lambda self: self.get_intendedEndUserRole('Group'), lambda self, value: self.set_intendedEndUserRole(value, 'Group'))
+    intendedEndUserRoleTutor = property(lambda self: self.get_intendedEndUserRole('Tutor'), lambda self, value: self.set_intendedEndUserRole(value, 'Tutor'))
+    context1 = property(get_context, set_context)
+    context2 = property(lambda self: self.get_context(True), lambda self, value: self.set_context(value, True))
 
     def findNode(self, nodeId):
         """
@@ -1098,17 +1212,41 @@ class Package(Persistable):
             self.resources = {}
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
 
+    def lomDefaults(self, entry, schema):
+        return {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': entry}],
+                              'aggregationLevel': {'source': schema, 'value': '3'}
+                             },
+                  'metaMetadata': {'metadataSchema': [schema]},
+                 }
+
+    oldLicenseMap = {"None": "None",
+                  "GNU Free Documentation License": u"license GFDL",
+                  "Creative Commons Attribution 3.0 License": u"creative commons: attribution",
+                  "Creative Commons Attribution Share Alike 3.0 License": u"creative commons: attribution - share alike",
+                  "Creative Commons Attribution No Derivatives 3.0 License": u"creative commons: attribution - non derived work",
+                  "Creative Commons Attribution Non-commercial 3.0 License": u"creative commons: attribution - non commercial",
+                  "Creative Commons Attribution Non-commercial Share Alike 3.0 License": u"creative commons: attribution - non commercial - share alike",
+                  "Creative Commons Attribution Non-commercial No Derivatives 3.0 License": u"creative commons: attribution - non derived work - non commercial",
+                  "Creative Commons Attribution 2.5 License": u"creative commons: attribution",
+                  "Creative Commons Attribution-ShareAlike 2.5 License": u"creative commons: attribution - share alike",
+                  "Creative Commons Attribution-NoDerivs 2.5 License": u"creative commons: attribution - non derived work",
+                  "Creative Commons Attribution-NonCommercial 2.5 License": u"creative commons: attribution - non commercial",
+                  "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License": u"creative commons: attribution - non commercial - share alike",
+                  "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License": u"creative commons: attribution - non derived work - non commercial",
+                  "Developing Nations 2.0": u""
+                 }
+
     def upgradeToVersion10(self):
         """
         For version >= intef8
         """
-        identifier = {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': str(uuid.uuid4())}]}}
+        entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
             self.lomEs = lomsubs.lomSub.factory()
-            self.lomEs.addChilds(identifier)
+            self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'))
         if not hasattr(self, 'lom') or not isinstance(self.lom, lomsubs.lomSub):
             self.lom = lomsubs.lomSub.factory()
-            self.lom.addChilds(identifier)
+            self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
         if not hasattr(self, 'scowsinglepage'):
             self.scowsinglepage = False
         if not hasattr(self, 'scowwebsite'):
@@ -1123,5 +1261,9 @@ class Package(Persistable):
             self._objectives = u''
         if not hasattr(self, 'preknowledge'):
             self._preknowledge = u''
+        try:
+            self.newlicense = self.oldLicenseMap[self.license]
+        except:
+            self.license = u''
 
 # ===========================================================================

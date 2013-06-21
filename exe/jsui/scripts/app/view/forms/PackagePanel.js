@@ -125,25 +125,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             margin: '0 0 10 0',
                             item: {
                                 xtype: 'combobox',
-                                inputId: 'pp_license',
+                                inputId: 'pp_newlicense',
                                 fieldLabel: _('License'),
-                                store: [
-                                      ["None", "None"],
-                                      ["GNU Free Documentation License", _("GNU Free Documentation License")],
-                                      ["Creative Commons Attribution 3.0 License", _("Creative Commons Attribution 3.0 License")],
-                                      ["Creative Commons Attribution Share Alike 3.0 License", _("Creative Commons Attribution Share Alike 3.0 License")],
-                                      ["Creative Commons Attribution No Derivatives 3.0 License", _("Creative Commons Attribution No Derivatives 3.0 License")],
-                                      ["Creative Commons Attribution Non-commercial 3.0 License", _("Creative Commons Attribution Non-commercial 3.0 License")],
-                                      ["Creative Commons Attribution Non-commercial Share Alike 3.0 License", _("Creative Commons Attribution Non-commercial Share Alike 3.0 License")],
-                                      ["Creative Commons Attribution Non-commercial No Derivatives 3.0 License", _("Creative Commons Attribution Non-commercial No Derivatives 3.0 License")],
-                                      ["Creative Commons Attribution 2.5 License", _("Creative Commons Attribution 2.5 License")],
-                                      ["Creative Commons Attribution-ShareAlike 2.5 License", _("Creative Commons Attribution-ShareAlike 2.5 License")],
-                                      ["Creative Commons Attribution-NoDerivs 2.5 License", _("Creative Commons Attribution-NoDerivs 2.5 License")],
-                                      ["Creative Commons Attribution-NonCommercial 2.5 License", _("Creative Commons Attribution-NonCommercial 2.5 License")],
-                                      ["Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License", _("Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License")],
-                                      ["Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License", _("Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License")],
-                                      ["Developing Nations 2.0", _("Developing Nations 2.0")]
-                                ],
+                                store: lomesVocab.copyrightAndOtherRestrictionsValues,
                                 tooltip: _('Select a license.'),
                                 anchor: '100%'
                             },
