@@ -106,14 +106,16 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		},
 		deleteTaxonChilds: function(combo, newValue, oldValue){
 			var taxonset = combo.nextNode('insertdelfieldset'), taxon;
+				taxonset.preserveScroll();
+				Ext.suspendLayouts();
 				for (var i = 0, len = taxonset.items.length; i < len; i++){
 					taxon = taxonset.items.items[0];
-					if (taxonset.items.length > 1 ) {
-	                     taxonset.preserveScroll();
-	                     taxonset.remove(taxon,true);
-	                     taxonset.restoreScroll();
+					if (taxonset.items.length > 1 ) {	                     
+	                     taxonset.remove(taxon,true);	            
 	                 }					
-				}
+				}		        
+				Ext.resumeLayouts(true);
+				taxonset.restoreScroll();
 				var nextCombo = combo.nextNode('combo');
 				var scp = {'scope': this, 'combo': nextCombo};
 				var sourcev = nextCombo.up('preservescrollfieldset').up('preservescrollfieldset').down('combo').getValue();

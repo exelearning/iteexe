@@ -336,7 +336,8 @@ Ext.define('eXe.controller.MainTab', {
     			field.setValue(v);
     			this.expandParents(field);
     			r = field;
-    			//console.log('OK:      ' + key );
+    			field = this.getInsertDelField(key);
+//    			console.log('OK:      ' + key );
     		}else{
     			//console.log('PROCESS: ' + key );
     			if (action.result.data[key] !== ''){//
@@ -354,7 +355,7 @@ Ext.define('eXe.controller.MainTab', {
 							console.log('ERROR: Set Field for key ' + key);
 						}                						
 					}else{
-						//console.log('ADD New Field for key: ' + key);
+//						console.log('ADD New Field for key: ' + key);
 						field = this.getInsertDelField(key);
 						if (field){
 							field.expand();
@@ -372,7 +373,7 @@ Ext.define('eXe.controller.MainTab', {
 								if (! but.el){
 									Ext.resumeLayouts(true);
 									rLayout = true;
-									//console.log(key);
+//									console.log(key);
 								}
 								but.el.dom.click();
 								
@@ -398,7 +399,6 @@ Ext.define('eXe.controller.MainTab', {
     			if (finaltaxonKeys[key]){
     				field.addButtonObj.el.dom.click();
     				finaltaxonKeys[key] = r;
-				
     			}
     		}    		
     	}

@@ -59,7 +59,7 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
     listeners: {
        	    scope: this,
            'add': function(container, component, index, eOpts ){
-        	   //console.log('ADD EVENT, componet: '+ component.getId());        	   
+//        	   console.log('ADD EVENT, componet: '+ component.getId());        	   
         	   if (container.getXType() == 'insertdelfieldset'){
         		   var me = container;
         		   var sid = component.inputId, sid;
@@ -77,7 +77,7 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
 		                          me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');                                        
 		                      }
 		                      me.addButtonObj = me.items.items[0].items.items[1];
-		                      //console.log(me.itemId);
+//		                      console.log(me.itemId);
 		                  }        				   
         			   }
         			   if (component.down){
