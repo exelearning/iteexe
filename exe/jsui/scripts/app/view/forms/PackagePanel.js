@@ -165,27 +165,29 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 					                            xtype: 'radiogroup',
 					                            fieldLabel: _('Tipo de alumno'),
-                                                dirtyCls: 'property-form-dirty',
 					                            tooltip: _('Tipo de alumno'),
 		                                        columns: [150, 150, 150],
 					                            items: [
 					                                {
 						                                xtype: 'radio',
 					                                    boxLabel: 'Alumno Estándar',
-						                                name: 'pp_intendedEndUserRole',
+                                                        dirtyCls: 'property-form-dirty',
+						                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'learner',
 		                                                checked: true
 					                                },
 					                                {
 					                                    xtype: 'radio',
 					                                    boxLabel: 'Necesidades (NEAE)',
-		                                                name: 'pp_intendedEndUserRole',
+                                                        dirtyCls: 'property-form-dirty',
+		                                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'special needs learner'
 					                                },
 					                                {
 					                                    xtype: 'radio',
 					                                    boxLabel: 'Altas capacidades',
-		                                                name: 'pp_intendedEndUserRole',
+                                                        dirtyCls: 'property-form-dirty',
+		                                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'gifted learner'
 					                                }
 			                                    ]
@@ -200,7 +202,6 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'fieldcontainer',
                                         fieldLabel: _('Para trabajar en grupo'),
-                                        dirtyCls: 'property-form-dirty',
                                         tooltip: _('Para trabajar en grupo'),
                                         items: [
                                             {
@@ -210,7 +211,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                                     {
                                                         xtype: 'checkbox',
                                                         inputId: 'pp_intendedEndUserRoleGroup',
-                                                        inputValue: 'group'
+                                                        dirtyCls: 'property-form-dirty',
+                                                        inputValue: true,
+                                                        uncheckedValue: false
                                                     }
                                                 ]
                                             }
@@ -224,7 +227,6 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'fieldcontainer',
                                         fieldLabel: _('Para trabajar en tutoría'),
-                                        dirtyCls: 'property-form-dirty',
                                         tooltip: _('Para trabajar en tutoría'),
                                         items: [
                                             {
@@ -234,7 +236,9 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                                     {
                                                         xtype: 'checkbox',
                                                         inputId: 'pp_intendedEndUserRoleTutor',
-                                                        inputValue: 'tutor'
+                                                        dirtyCls: 'property-form-dirty',
+                                                        inputValue: true,
+                                                        uncheckedValue: false
                                                     }
                                                 ]
                                             }
@@ -251,22 +255,23 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 		                                        xtype: 'radiogroup',
 		                                        fieldLabel: _('Lugar de utilización'),
-                                                dirtyCls: 'property-form-dirty',
 		                                        tooltip: _('Lugar de utilización'),
 		                                        columns: [150, 150, 150],
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
 		                                                boxLabel: 'Aula',
-		                                                name: 'pp_context1',
+		                                                name: 'pp_contextPlace',
 		                                                inputValue: 'classroom',
+                                                        dirtyCls: 'property-form-dirty',
 		                                                checked: true
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
 		                                                boxLabel: 'Fuera del centro',
-		                                                name: 'pp_context1',
-		                                                inputValue: 'real environment'
+		                                                name: 'pp_contextPlace',
+		                                                inputValue: 'real environment',
+                                                        dirtyCls: 'property-form-dirty'
 		                                            }
 		                                        ]
                                             }
@@ -283,28 +288,30 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 		                                        xtype: 'radiogroup',
 		                                        fieldLabel: _('Modalidad de uso'),
-                                                dirtyCls: 'property-form-dirty',
 		                                        tooltip: _('Modalidad de uso'),
 		                                        columns: [150, 150, 150],
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
 		                                                boxLabel: 'Presencial',
-		                                                name: 'pp_context2',
+		                                                name: 'pp_contextMode',
 		                                                inputValue: 'face to face',
+                                                        dirtyCls: 'property-form-dirty',
 		                                                checked: true
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
 		                                                boxLabel: 'Semipresencial',
-		                                                name: 'pp_context2',
-		                                                inputValue: 'blended'
+		                                                name: 'pp_contextMode',
+		                                                inputValue: 'blended',
+                                                        dirtyCls: 'property-form-dirty'
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
 		                                                boxLabel: 'Distancia',
-		                                                name: 'pp_context2',
-		                                                inputValue: 'distance'
+		                                                name: 'pp_contextMode',
+		                                                inputValue: 'distance',
+                                                        dirtyCls: 'property-form-dirty'
 		                                            }
 		                                        ]
                                             }

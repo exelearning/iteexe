@@ -519,7 +519,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
                 field = Ext.ComponentQuery.query('field[inputId=' + input.name + ']')[0];
             field = field.up().up().nextSibling();
 
-            if (field.nextSibling())
+            if (field && field.nextSibling())
                 field = field.nextSibling();
 
             function updater(key, value, object) {

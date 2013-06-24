@@ -335,6 +335,12 @@ class Package(Persistable):
         self._lang = G.application.config.locale.split('_')[0]
         self._objectives = u''
         self._preknowledge = u''
+        self._learningResourceType = u''
+        self._intendedEndUserRoleType = u''
+        self._intendedEndUserRoleGroup = False
+        self._intendedEndUserRoleTutor = False
+        self._contextPlace = u''
+        self._contextMode = u''
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -618,20 +624,43 @@ class Package(Persistable):
                     metadata.get_rights().set_copyrightAndOtherRestrictions(copyrightAndOtherRestrictions)
         self.license = toUnicode(value)
 
-    def get_learningResourceType(self):
-        pass
-
     def set_learningResourceType(self, value):
         value_str = value.encode('utf-8')
         for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
             educationals = metadata.get_educational()
             if educationals:
                 for educational in educationals:
-                    language = educational.get_language()
-                    if language:
-                        for LanguageId in language:
-                            if LanguageId.get_valueOf_() == self._lang.encode('utf-8'):
-                                LanguageId.set_valueOf_(value_str)
+                    learningResourceTypes = educational.get_learningResourceType()
+                    found = False
+                    if learningResourceTypes:
+                        for learningResourceType in learningResourceTypes:
+                            if learningResourceType.get_value().get_valueOf_() == self.learningResourceType.encode('utf-8'):
+                                found = True
+                                if value:
+                                    src = lomsubs.sourceValueSub()
+                                    src.set_valueOf_(source)
+                                    src.set_uniqueElementName('source')
+                                    val = lomsubs.learningResourceTypeValueSub()
+                                    val.set_valueOf_(value_str)
+                                    val.set_uniqueElementName('value')
+                                    index = learningResourceTypes.index(learningResourceType)
+                                    learningResourceType = lomsubs.learningResourceTypeSub(value_str)
+                                    learningResourceType.set_source(src)
+                                    learningResourceType.set_value(val)
+                                    educational.insert_learningResourceType(index, learningResourceType)
+                                else:
+                                    learningResourceType = None
+                    if not found and value:
+                        src = lomsubs.sourceValueSub()
+                        src.set_valueOf_(source)
+                        src.set_uniqueElementName('source')
+                        val = lomsubs.learningResourceTypeValueSub()
+                        val.set_valueOf_(value_str)
+                        val.set_uniqueElementName('value')
+                        learningResourceType = lomsubs.learningResourceTypeSub(value_str)
+                        learningResourceType.set_source(src)
+                        learningResourceType.set_value(val)
+                        educational.add_learningResourceType(learningResourceType)
             else:
                 if value:
                     src = lomsubs.sourceValueSub()
@@ -645,18 +674,22 @@ class Package(Persistable):
                     learningResourceType.set_value(val)
                     educational = [lomsubs.educationalSub(learningResourceType=[learningResourceType])]
                     metadata.set_educational(educational)
+        self._learningResourceType = toUnicode(value)
 
-    def get_intendedEndUserRole(self, forwork=False):
-        pass
+    def set_intendedEndUserRoleType(self, value):
+        self._intendedEndUserRoleType = toUnicode(value)
 
-    def set_intendedEndUserRole(self, value, forwork=False):
-        pass
+    def set_intendedEndUserRoleGroup(self, value):
+        self._intendedEndUserRoleGroup = value
 
-    def get_context(self, modality=False):
-        pass
+    def set_intendedEndUserRoleTutor(self, value):
+        self._intendedEndUserRoleTutor = value
 
-    def set_context(self, value, modality=False):
-        pass
+    def set_contextPlace(self, value):
+        self._contextPlace = toUnicode(value)
+
+    def set_contextMode(self, value):
+        self._contextMode = toUnicode(value)
 
     # Properties
 
@@ -665,7 +698,7 @@ class Package(Persistable):
     lang          = property(lambda self: self._lang, set_lang)
     author        = property(lambda self:self._author, set_author)
     description   = property(lambda self:self._description, set_description)
-    newlicense       = property(lambda self:self.license, set_license)
+    newlicense    = property(lambda self:self.license, set_license)
 
     backgroundImg = property(get_backgroundImg, set_backgroundImg)
 
@@ -675,12 +708,12 @@ class Package(Persistable):
 
     objectives = property(lambda self: self._objectives, set_objectives)
     preknowledge = property(lambda self: self._preknowledge, set_preknowledge)
-    learningResourceType = property(get_learningResourceType, set_learningResourceType)
-    intendedEndUserRole = property(get_intendedEndUserRole, set_intendedEndUserRole)
-    intendedEndUserRoleGroup = property(lambda self: self.get_intendedEndUserRole('Group'), lambda self, value: self.set_intendedEndUserRole(value, 'Group'))
-    intendedEndUserRoleTutor = property(lambda self: self.get_intendedEndUserRole('Tutor'), lambda self, value: self.set_intendedEndUserRole(value, 'Tutor'))
-    context1 = property(get_context, set_context)
-    context2 = property(lambda self: self.get_context(True), lambda self, value: self.set_context(value, True))
+    learningResourceType = property(lambda self: self._learningResourceType, set_learningResourceType)
+    intendedEndUserRoleType = property(lambda self: self._intendedEndUserRoleType, set_intendedEndUserRoleType)
+    intendedEndUserRoleGroup = property(lambda self: self._intendedEndUserRoleGroup, set_intendedEndUserRoleGroup)
+    intendedEndUserRoleTutor = property(lambda self: self._intendedEndUserRoleTutor, set_intendedEndUserRoleTutor)
+    contextPlace = property(lambda self: self._contextPlace, set_contextPlace)
+    contextMode = property(lambda self: self._contextMode, set_contextMode)
 
     def findNode(self, nodeId):
         """
@@ -1261,6 +1294,18 @@ class Package(Persistable):
             self._objectives = u''
         if not hasattr(self, 'preknowledge'):
             self._preknowledge = u''
+        if not hasattr(self, 'learningResourceType'):
+            self._learningResourceType = u''
+        if not hasattr(self, 'intendedEndUserRoleType'):
+            self._intendedEndUserRoleType = u''
+        if not hasattr(self, 'intendedEndUserRoleGroup'):
+            self._intendedEndUserRoleGroup = False
+        if not hasattr(self, 'intendedEndUserRoleTutor'):
+            self._intendedEndUserRoleTutor = False
+        if not hasattr(self, 'contextPlace'):
+            self._contextPlace = u''
+        if not hasattr(self, 'contextMode'):
+            self._contextMode = u''
         try:
             self.newlicense = self.oldLicenseMap[self.license]
         except:
