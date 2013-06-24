@@ -40,38 +40,33 @@ Ext.define('eXe.controller.MainTab', {
 
     init: function() {
         this.control({
+            '#main_tab': {
+                tabchange: this.onTabChange
+            },
+            '#metadata_tab': {
+                tabchange: this.onTabChange
+            },
+            '#properties_tab': {
+                tabchange: this.onTabChange
+            },
             '#package_properties': {
-                render: this.onRender,
-                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete,
                 scope: this
             },
             '#dublincoredata_properties': {
-                render: this.onRender,
-                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
             '#export_properties': {
-                render: this.onRender,                
-                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
             '#lomdata_properties': {
-                render: this.onRender,
-                show: this.onShow,
-//                afterrender: this.onAfterRender,
-//                beforerender: this.onBeforeRender,
-//                beforeshow: this.onBeforeShow,
-//                afterlayout: this.onAfterLayout,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
             '#lomesdata_properties': {
-                render: this.onRender,
-                show: this.onShow,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
@@ -421,8 +416,8 @@ Ext.define('eXe.controller.MainTab', {
 //    	vp.setLoading(false);
     },
     
-    onRender: function(formpanel) {
-//    	console.log('render');
+    loadForm: function(formpanel) {
+//      console.log('render ' + formpanel.itemId);
         formpanel.load({ 
             method: "GET", 
             params: formpanel.getForm().getFieldValues(),
@@ -458,31 +453,6 @@ Ext.define('eXe.controller.MainTab', {
     beforeAction: function(form, action, eOpts) {
         form.url = location.pathname + "/properties";
     },
-    onShow: function(formpanel) {
-//    	console.log('show');
-        formpanel.load({ 
-            method: "GET", 
-            params: formpanel.getForm().getFieldValues(),
-            scope: this,
-            success: function(form, action) {
-                var imgfield = form.findField('pp_backgroundImg'),
-                    showbutton = this.getHeaderBackgroundShowButton();                
-                if (imgfield && imgfield.value) {
-                    var img = this.getHeaderBackgroundImg();
-                    img.setSrc(location.pathname + '/resources/' + imgfield.value);
-                    img.show();
-                    showbutton.setText(_('Hide Image'));
-                    showbutton.show();
-                }
-                else{
-                	showbutton.hide();
-                }                    
-            },
-            failure: function(form, action) {
-                Ext.Msg.alert(_('Error'), action.result.errorMessage);
-            }
-        });
-    },
     
     beforeAction: function(form, action, eOpts) {
 //    	console.log('beforeaction');
@@ -503,5 +473,12 @@ Ext.define('eXe.controller.MainTab', {
 
     sourcesDownload: function() {
         nevow_clientToServerEvent('sourcesDownload', this, '');
+    },
+
+    onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
+        if (newCard.getActiveTab)
+            this.loadForm(newCard.getActiveTab());
+        else if (newCard.getForm)
+            this.loadForm(newCard);
     }
 });
