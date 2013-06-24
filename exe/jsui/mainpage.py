@@ -119,16 +119,17 @@ class MainPage(RenderableLivePage):
         """
         Doc
         """
+        request = inevow.IRequest(ctx)
         data = []
-        if 'source' in ctx.args:
-            if 'identifier' in ctx.args:
-                source = ctx.args['source'][0]
+        if 'source' in request.args:
+            if 'identifier' in request.args:
+                source = request.args['source'][0]
                 if source:
                     if not source in self.classificationSources:
 
                         self.classificationSources[source] = Classification()
                         self.classificationSources[source].setSource(source, self.config.configDir)
-                    identifier = ctx.args['identifier'][0]
+                    identifier = request.args['identifier'][0]
                     if identifier == 'false':
                         identifier = False
                     if source.startswith("etb-lre_mec-ccaa"):
@@ -137,9 +138,9 @@ class MainPage(RenderableLivePage):
                         stype = 1
                     data = self.classificationSources[source].getDataByIdentifier(identifier, stype=stype)
 
-            elif 'getsources' in ctx.args and ctx.args['getsources']:
+            elif 'getsources' in request.args and request.args['getsources']:
                 classif = Classification()
-                source = ctx.args['source'][0]
+                source = request.args['source'][0]
                 data = classif.getSources(source, self.config.configDir)
         return json.dumps({'success': True, 'data': data})
 
