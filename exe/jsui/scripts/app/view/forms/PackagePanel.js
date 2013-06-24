@@ -73,6 +73,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                            item: {
 			                            xtype: 'textarea',
 			                            inputId: 'pp_description',
+                                        dirtyCls: 'property-form-dirty',
 			                            fieldLabel: _('General'),
 			                            tooltip: _('An account of the content of the resource.'),
 			                            height: 60,
@@ -86,6 +87,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'textarea',
                                         inputId: 'pp_objectives',
+                                        dirtyCls: 'property-form-dirty',
                                         fieldLabel: _('Objectives'),
                                         tooltip: _('Objectives.'),
                                         height: 60,
@@ -99,6 +101,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'textarea',
                                         inputId: 'pp_preknowledge',
+                                        dirtyCls: 'property-form-dirty',
                                         fieldLabel: _('Preknowledge'),
                                         tooltip: _('Preknowledge.'),
                                         height: 60,
@@ -114,6 +117,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             item: {
 	                            xtype: 'textfield',
 	                            inputId: 'pp_author',
+                                dirtyCls: 'property-form-dirty',
 	                            fieldLabel: _('Author'),
 	                            tooltip: _('Primary author of the resource.'),
 	                            anchor: '100%'
@@ -126,6 +130,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             item: {
                                 xtype: 'combobox',
                                 inputId: 'pp_newlicense',
+                                dirtyCls: 'property-form-dirty',
                                 fieldLabel: _('License'),
                                 store: lomesVocab.copyrightAndOtherRestrictionsValues,
                                 tooltip: _('Select a license.'),
@@ -160,6 +165,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 					                            xtype: 'radiogroup',
 					                            fieldLabel: _('Tipo de alumno'),
+                                                dirtyCls: 'property-form-dirty',
 					                            tooltip: _('Tipo de alumno'),
 		                                        columns: [150, 150, 150],
 					                            items: [
@@ -194,6 +200,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'fieldcontainer',
                                         fieldLabel: _('Para trabajar en grupo'),
+                                        dirtyCls: 'property-form-dirty',
                                         tooltip: _('Para trabajar en grupo'),
                                         items: [
                                             {
@@ -217,6 +224,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     item: {
                                         xtype: 'fieldcontainer',
                                         fieldLabel: _('Para trabajar en tutoría'),
+                                        dirtyCls: 'property-form-dirty',
                                         tooltip: _('Para trabajar en tutoría'),
                                         items: [
                                             {
@@ -243,6 +251,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 		                                        xtype: 'radiogroup',
 		                                        fieldLabel: _('Lugar de utilización'),
+                                                dirtyCls: 'property-form-dirty',
 		                                        tooltip: _('Lugar de utilización'),
 		                                        columns: [150, 150, 150],
 		                                        items: [
@@ -274,6 +283,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             {
 		                                        xtype: 'radiogroup',
 		                                        fieldLabel: _('Modalidad de uso'),
+                                                dirtyCls: 'property-form-dirty',
 		                                        tooltip: _('Modalidad de uso'),
 		                                        columns: [150, 150, 150],
 		                                        items: [
