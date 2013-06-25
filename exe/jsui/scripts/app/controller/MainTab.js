@@ -290,6 +290,24 @@ Ext.define('eXe.controller.MainTab', {
     	}
     	return true;
     },
+    collapseForm: function() {
+        var insertdelfieldset = Ext.ComponentQuery.query('insertdelfieldset'),
+            i, j;
+
+        Ext.suspendLayouts();
+        for (i=0; i < insertdelfieldset.length; i++) {
+            var delbutton = Ext.ComponentQuery.query('#' + insertdelfieldset[i].itemId + ' #delbutton');
+
+            if (delbutton.length > 1) {
+                for (j=1; j < delbutton.length; j++) {
+                    if (delbutton[j].el)
+                        delbutton[j].el.dom.click();
+                }
+            }
+            insertdelfieldset[i].lastId = 2;
+        }
+        Ext.resumeLayouts(true);
+    },
     extendForm: function(form, action){
 		//console.log('EXTENDFORM');		
 		//var lform = form.owner;
@@ -329,6 +347,7 @@ Ext.define('eXe.controller.MainTab', {
     		r = false;
     		if (field){
     			field.setValue(v);
+                field.resetOriginalValue();
     			this.expandParents(field);
     			r = field;
     			field = this.getInsertDelField(key);
@@ -345,6 +364,7 @@ Ext.define('eXe.controller.MainTab', {
         					if (r){
 //        						console.log('Set Field for key ' + key);
         						r.setValue(v);
+                                r.resetOriginalValue();
         					}
 						}else{
 							console.log('ERROR: Set Field for key ' + key);
@@ -376,6 +396,7 @@ Ext.define('eXe.controller.MainTab', {
         						if (r){
 //                						console.log('Set Field for key ' + key);
                 						r.setValue(v);
+                                        r.resetOriginalValue();
                 				}else{
         							console.log('ERROR: Set Field for key ' + key);
         						}
@@ -437,6 +458,7 @@ Ext.define('eXe.controller.MainTab', {
                 	var lomes = action.result.data.lomes_general_title_string1;
                     if (lom || lomes){
                     	//this.on('afterrender', this.extendForm, this, [form, action]);                    	
+                        this.collapseForm();
                     	this.extendForm(form, action);
                     	//console.log('ExtendForm end');
                     }
