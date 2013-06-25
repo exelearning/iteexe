@@ -749,7 +749,8 @@ class Package(Persistable):
                                     index = intendedEndUserRoles.index(i)
                                     educational.insert_intendedEndUserRole(index, intendedEndUserRole)
                                 else:
-                                    educational.intendedEndUserRole.remove(i)
+                                    if source != 'LOMv1.0' or valueOf != 'group':
+                                        educational.intendedEndUserRole.remove(i)
                     if not found and value:
                         educational.add_intendedEndUserRole(intendedEndUserRole)
             else:
