@@ -360,13 +360,18 @@ class Package(Persistable):
         for metadata in [self.lom, self.lomEs]:
             title = metadata.get_general().get_title()
             if title:
+                found = False
                 for string in title.get_string():
                     if string.get_valueOf_() == self._title.encode('utf-8'):
+                        found = True
                         if value:
                             string.set_language(lang_str)
                             string.set_valueOf_(value_str)
                         else:
                             title.string.remove(string)
+                if not found:
+                    if value:
+                        title.add_string(lomsubs.LangStringSub(lang_str, value_str))
             else:
                 if value:
                     title = lomsubs.titleSub([lomsubs.LangStringSub(lang_str, value_str)])
@@ -419,7 +424,7 @@ class Package(Persistable):
         if self.dublinCore.creator == self._author:
             self.dublinCore.creator = value
         value_str = value.encode('utf-8')
-        author_vcard = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET: ORG: END:VCARD' % value_str
+        vcard = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET: ORG: END:VCARD'
         for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
             src = lomsubs.sourceValueSub()
             src.set_valueOf_(source)
@@ -431,11 +436,31 @@ class Package(Persistable):
             role.set_source(src)
             role.set_value(val)
             role.set_uniqueElementName('role')
-            entity = lomsubs.entitySub(author_vcard)
+            entity = lomsubs.entitySub(vcard % value_str)
 
             lifeCycle = metadata.get_lifeCycle()
             if lifeCycle:
-                pass
+                contributes = lifeCycle.get_contribute()
+                found = False
+                for contribute in contributes:
+                    entitys = contribute.get_entity()
+                    rol = contribute.get_role()
+                    if rol:
+                        rolval = rol.get_value()
+                        if rolval:
+                            if rolval.get_valueOf_() == 'author':
+                                for ent in entitys:
+                                    if ent.get_valueOf_() == vcard % self.author.encode('utf-8'):
+                                        found = True
+                                        if value:
+                                            ent.set_valueOf_(vcard % value_str)
+                                        else:
+                                            contribute.entity.remove(ent)
+                                            if not contribute.entity:
+                                                contributes.remove(contribute)
+                if not found:
+                    contribute = lomsubs.contributeSub(role, [entity])
+                    lifeCycle.add_contribute(contribute)
             else:
                 if value:
                     contribute = lomsubs.contributeSub(role, [entity])
@@ -445,13 +470,30 @@ class Package(Persistable):
             metaMetadata = metadata.get_metaMetadata()
             if metaMetadata:
                 contributes = metaMetadata.get_contribute()
-                if contributes:
-                    for contribute in contributes:
-                        pass
-                else:
-                    if value:
-                        contribute = lomsubs.contributeMetaSub(role, [entity])
-                        metaMetadata.set_contribute([contribute])
+                found = False
+                for contribute in contributes:
+                    entitys = contribute.get_entity()
+                    rol = contribute.get_role()
+                    if rol:
+                        rolval = rol.get_value()
+                        if rolval:
+                            if rolval.get_valueOf_() == 'author':
+                                for ent in entitys:
+                                    if ent.get_valueOf_() == vcard % self.author.encode('utf-8'):
+                                        found = True
+                                        if value:
+                                            ent.set_valueOf_(vcard % value_str)
+                                        else:
+                                            contribute.entity.remove(ent)
+                                            if not contribute.entity:
+                                                contributes.remove(contribute)
+                if not found:
+                    contribute = lomsubs.contributeMetaSub(role, [entity])
+                    metaMetadata.add_contribute(contribute)
+            else:
+                if value:
+                    contribute = lomsubs.contributeMetaSub(role, [entity])
+                    metaMetadata.set_contribute([contribute])
         self._author = toUnicode(value)
 
     def set_description(self, value):
