@@ -35,6 +35,8 @@ import tempfile
 import twisted
 import shutil
 from exe                      import globals as G
+from xml.dom                   import minidom
+from exe.engine.style       import Style
 # ===========================================================================
 class Config:
     """
@@ -376,14 +378,14 @@ class Config:
         styleDir    = self.stylesDir
 
         log.debug("loadStyles from %s" % styleDir)
-
         for subDir in styleDir.dirs():
-            styleSheet = subDir/'content.css'
-            log.debug(" checking %s" % styleSheet)
-            if styleSheet.exists():
-                style = subDir.basename()
-                log.debug(" loading style %s" % style)
-                self.styles.append(style)
+            style = Style(subDir)
+            if style.isValid():
+                log.debug(" loading style %s" % style.get_name())
+                self.styles.append(style.get_style_dir().basename())
+                #print style
+            else:
+                log.debug(" style %s is not valid")
 
 
     def loadLocales(self):
