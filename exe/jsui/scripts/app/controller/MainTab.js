@@ -290,24 +290,31 @@ Ext.define('eXe.controller.MainTab', {
     	}
     	return true;
     },
-    collapseForm: function() {
-        var insertdelfieldset = Ext.ComponentQuery.query('insertdelfieldset'),
-            i, j;
-
-        Ext.suspendLayouts();
-        for (i=0; i < insertdelfieldset.length; i++) {
-            var delbutton = Ext.ComponentQuery.query('#' + insertdelfieldset[i].itemId + ' #delbutton');
-
-            if (delbutton.length > 1) {
-                for (j=1; j < delbutton.length; j++) {
-                    if (delbutton[j].el)
-                        delbutton[j].el.dom.click();
-                }
-            }
-            insertdelfieldset[i].lastId = 2;
-        }
-        Ext.resumeLayouts(true);
-    },
+//    collapseForm: function(form) {
+//        var insertdelfieldset = Ext.ComponentQuery.query('insertdelfieldset'),
+//            i, j,
+//            fields = form.getFields().items,
+//            fLen   = fields.length;
+//
+//        Ext.suspendLayouts();
+//        for (i = 0; i < fLen; i++) {
+//            fields[i].setValue();
+//            fields[i].resetOriginalValue();
+//        }
+//
+//        for (i=0; i < insertdelfieldset.length; i++) {
+//            var delbutton = Ext.ComponentQuery.query('#' + insertdelfieldset[i].itemId + ' #delbutton');
+//
+//            if (delbutton.length > 1) {
+//                for (j=1; j < delbutton.length; j++) {
+//                    if (delbutton[j].el)
+//                        delbutton[j].el.dom.click();
+//                }
+//            }
+//            insertdelfieldset[i].lastId = 2;
+//        }
+//        Ext.resumeLayouts(true);
+//    },
     extendForm: function(form, action){
 		//console.log('EXTENDFORM');		
 		//var lform = form.owner;
@@ -443,6 +450,7 @@ Ext.define('eXe.controller.MainTab', {
             method: "GET", 
             params: formpanel.getForm().getFieldValues(),
             scope: this,
+            formpanel: formpanel,
             success: function(form, action) {
                 var imgfield = form.findField('pp_backgroundImg'),
                     showbutton = this.getHeaderBackgroundShowButton();                
@@ -454,11 +462,8 @@ Ext.define('eXe.controller.MainTab', {
                     showbutton.show();
                 }          
                 else{
-                	var lom = action.result.data.lom_general_title_string1;
-                	var lomes = action.result.data.lomes_general_title_string1;
-                    if (lom || lomes){
+                    if (formpanel.xtype == 'lomdata'){
                     	//this.on('afterrender', this.extendForm, this, [form, action]);                    	
-                        this.collapseForm();
                     	this.extendForm(form, action);
                     	//console.log('ExtendForm end');
                     }
@@ -498,9 +503,25 @@ Ext.define('eXe.controller.MainTab', {
     },
 
     onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
-        if (newCard.getActiveTab)
-            this.loadForm(newCard.getActiveTab());
-        else if (newCard.getForm)
-            this.loadForm(newCard);
+        var newformpanel, oldformpanel, widgets = eXe.view.forms.LomWidgets;
+
+        while (newCard.getActiveTab)
+            newCard = newCard.getActiveTab();
+        if (newCard.getForm)
+            newformpanel = newCard;
+
+        while (oldCard.getActiveTab)
+            oldCard = oldCard.getActiveTab();
+        if (oldCard.getForm)
+            oldformpanel = oldCard;
+
+        if (oldformpanel) {
+            if (oldformpanel.xtype == 'lomdata')
+                oldformpanel.clear();
+        }
+
+        if (newformpanel) {
+            this.loadForm(newformpanel);
+        }
     }
 });

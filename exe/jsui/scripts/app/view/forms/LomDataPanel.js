@@ -29,6 +29,30 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         'eXe.view.forms.LomWidgets'
     ],
 
+    clear: function() {
+        var widgets = eXe.view.forms.LomWidgets, removed;
+
+        Ext.suspendLayouts();
+        Ext.destroy(this.removeAll(true));
+        this.add([
+            widgets.section(_('General'), this.prefix + 'general', false, true, true ),
+            widgets.section(_('Life Cycle'), this.prefix + 'lifeCycle', false, false, true),
+            widgets.section(_('Meta-Metadata'), this.prefix + 'metaMetadata', false, true, true),
+            widgets.section(_('Technical'), this.prefix + 'technical', false, false, true),
+            widgets.section(_('Educational'), this.prefix + 'educational', true, true, false),
+            widgets.section(_('Rights'), this.prefix + 'rights', false, true, true),
+            widgets.section(_('Relation'), this.prefix + 'relation', true, false, false),
+            widgets.section(_('Annotation'), this.prefix + 'annotation', true, false, false),
+            widgets.section(_('Classification'), this.prefix + 'classification', true, false, false),
+            {
+                xtype: 'button',
+                text: _('Save'),
+                itemId: 'save_properties'
+            }
+        ]);
+        Ext.resumeLayouts(true);
+    },
+
     initComponent: function() {
         var me = this,
             widgets = eXe.view.forms.LomWidgets;
