@@ -78,11 +78,11 @@ class Manifest(object):
         # depending on (user desired) the metadata type:
         if self.metadataType == 'LOMES':
             output = StringIO.StringIO()
-            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=True)
+            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
             xml += output.getvalue()
         if self.metadataType == 'LOM':
             output = StringIO.StringIO()
-            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=True)
+            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
             xml += output.getvalue()
         if self.metadataType == 'DC':
             lrm = self.package.dublinCore.__dict__.copy()
