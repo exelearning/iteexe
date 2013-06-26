@@ -759,7 +759,7 @@ class MainPage(RenderableLivePage):
         if importType.startswith('lom'):
             try:
                 setattr(self.package, importType, lomsubs.parse(path))
-                client.alert(_('LOM Metadata import success!'))
+                client.call('eXe.app.getController("MainTab").lomImportSuccess', importType)
             except Exception, e:
                 client.alert(_('LOM Metadata import FAILED!\n%s') % str(e))
 
