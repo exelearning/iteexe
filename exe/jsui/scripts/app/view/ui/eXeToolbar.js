@@ -322,6 +322,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'i',
                                 text: _('iDevice Editor')
                             },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_stylemanager',
+                                accesskey: 's',
+                                text: _('Style Manager')
+                            },
                             {	                        	
                                 xtype: 'accesskey_menuitem',
                                 text: _('Styles manage'),

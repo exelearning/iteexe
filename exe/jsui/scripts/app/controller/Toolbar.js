@@ -122,6 +122,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_idevice': {
                 click: this.toolsIdeviceEditor
             },
+            '#tools_stylemanager': {
+                click: this.toolsStyleManager
+            },
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
@@ -359,7 +362,7 @@ Ext.define('eXe.controller.Toolbar', {
           modal: true,
           id: 'ideviceeditorwin',
           title: _("iDevice Editor"), 
-          html: '<iframe height="100%" width="100%" src="/editor"></iframe>',
+          html: '<iframe height="' + eXe.app.getMaxHeight(700) + '" width="100%" src="/editor"></iframe>',
           listeners: {
             'beforeclose': function(win) {
                 Ext.Msg.show( {
@@ -379,6 +382,19 @@ Ext.define('eXe.controller.Toolbar', {
           }
         });
         editor.show();        
+	},
+	
+	// JR: Launch the Style Manager Window
+	toolsStyleManager: function() {
+        var stylemanager = new Ext.Window ({
+          height: eXe.app.getMaxHeight(650), 
+          width: 650, 
+          modal: true,
+          id: 'stylemanagerwin',
+          title: _("Style Manager"), 
+          html: '<iframe height="' + eXe.app.getMaxHeight(650) + '" width="100%" src="/stylemanager"></iframe>',
+        });
+        stylemanager.show();        
 	},
 
     fileQuit: function() {

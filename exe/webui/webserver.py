@@ -41,6 +41,7 @@ finally:
     sys.stdout = oldStdOut
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
+from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.selectbrowserpage   import SelectBrowserPage
 from exe.webui.aboutpage           import AboutPage 
@@ -71,6 +72,7 @@ class WebServer:
         self.tempWebDir  = application.tempWebDir
         self.root        = PackageRedirectPage(self, packagePath)   
         self.editor      = EditorPage(self.root)
+        self.stylemanager = StyleManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)
         self.selectbrowser = SelectBrowserPage(self.root)
         self.xliffexportpreferences = XliffExportPreferencesPage(self.root)
