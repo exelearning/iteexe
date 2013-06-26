@@ -6,6 +6,7 @@ recommended_type : "Recommended type",
 confirm_question : "Continue without changing your settings?",
 preview_error : "Could not generate preview",
 video_download_file_warning : "For Web browsers that do not support this video, a link to the video file will be displayed.",
-audio_download_file_warning : "For Web browsers that do not support this audio, a link to the audio file will be displayed."
+audio_download_file_warning : "For Web browsers that do not support this audio, a link to the audio file will be displayed.",
+use_mediaelement : "Use MediaElement.js audio and video player"
 // The New eXeLearning
 }); 

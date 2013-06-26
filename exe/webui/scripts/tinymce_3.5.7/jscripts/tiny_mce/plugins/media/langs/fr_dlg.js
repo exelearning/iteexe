@@ -6,6 +6,7 @@ recommended_type : "Type recommand\u00E9",
 confirm_question : "Continuer sans changement?",
 preview_error : "L\'aper\u00E7u n\'a pas pu \u00EAtre compl\u00E9t\u00E9",
 video_download_file_warning : "Si le navigateur de l\'utilisateur ne peut pas lire la vid\u00E9o, un lien vers le fichier sera affich\u00E9.",
-audio_download_file_warning : "Si le navigateur de l\'utilisateur ne peut pas lire l\'audio, un lien vers le fichier sera affich\u00E9."
+audio_download_file_warning : "Si le navigateur de l\'utilisateur ne peut pas lire l\'audio, un lien vers le fichier sera affich\u00E9.",
+use_mediaelement : "Use MediaElement.js audio and video player"
 // The New eXeLearning
 });

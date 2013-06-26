@@ -6,6 +6,7 @@ recommended_type : "Gomendatutako mota",
 confirm_question : "Aldaketarik gabe jarraitu?",
 preview_error : "Aurrebista ezin izan da sortu",
 video_download_file_warning : "Erabiltzailearen nabigatzaileak ezin badu bideoa erreproduzitu, fitxategiaren esteka bistaratuko da.",
-audio_download_file_warning : "Erabiltzailearen nabigatzaileak ezin badu audioa erreproduzitu, fitxategiaren esteka bistaratuko da."
+audio_download_file_warning : "Erabiltzailearen nabigatzaileak ezin badu audioa erreproduzitu, fitxategiaren esteka bistaratuko da.",
+use_mediaelement : "Use MediaElement.js audio and video player"
 // The New eXeLearning
 });

@@ -6,6 +6,7 @@ recommended_type : "Tipo recomendado",
 confirm_question : "Continuar sen facer cambios?",
 preview_error : "Non se puido xerar unha previsualizaci\u00F3n",
 video_download_file_warning : "Se o navegador do usuario non pode reproducilo v\u00EDdeo amosarase un enlace ao arquivo.",
-audio_download_file_warning : "Se o navegador do usuario non pode reproducilo audio amosarase un enlace ao arquivo."
+audio_download_file_warning : "Se o navegador do usuario non pode reproducilo audio amosarase un enlace ao arquivo.",
+use_mediaelement : "Use MediaElement.js audio and video player"
 // The New eXeLearning
 });

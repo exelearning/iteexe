@@ -666,11 +666,13 @@ function parse_media_html_attributes(c) {
 					video.append(source);
 				}
 
-				// Create flash fallback for video if we have a mp4 source
-				if (mp4Source) {
-					addPlayer(mp4Source, posterSrc);
-					typeItem = self.getType('flash');
-				} else
+                // The New eXeLearning
+//				// Create flash fallback for video if we have a mp4 source
+//				if (mp4Source) {
+//					addPlayer(mp4Source, posterSrc);
+//					typeItem = self.getType('flash');
+//				} else
+                // /The New eXeLearning
 					data.params.src = '';
 			}
 

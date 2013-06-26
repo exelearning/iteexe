@@ -6,6 +6,7 @@ recommended_type : "Tipo raccomandato",
 confirm_question : "Continuare senza modifiche?",
 preview_error : "Impossibile generare un\'anteprima",
 video_download_file_warning : "Se il browser dell\'utente non pu\u00F2 riprodurre il video, verr\u00E0 proposto un link al file.",
-audio_download_file_warning : "Se il browser dell\'utente non pu\u00F2 riprodurre l\'audio, verr\u00E0 proposto un link al file."
+audio_download_file_warning : "Se il browser dell\'utente non pu\u00F2 riprodurre l\'audio, verr\u00E0 proposto un link al file.",
+use_mediaelement : "Use MediaElement.js audio and video player"
 // The New eXeLearning
 });

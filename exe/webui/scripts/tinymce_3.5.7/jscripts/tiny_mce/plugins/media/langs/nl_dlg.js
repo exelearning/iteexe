@@ -12,6 +12,7 @@ recommended_type : "Aanbevolen type",
 confirm_question : "Doorgaan zondwer Uw instellingen aan te passen?",
 preview_error : "Kon geen voorbeeldweergave aanmaken",
 video_download_file_warning : "Voor browsers die dit type video niet ondersteunen zal een link naar de video worden getoond.",
-audio_download_file_warning : "Voor browsers die dit type audio niet ondersteunen zal een link naar de audio worden getoond."
+audio_download_file_warning : "Voor browsers die dit type audio niet ondersteunen zal een link naar de audio worden getoond.",
+use_mediaelement : "Use MediaElement.js audio and video player"
 // The New eXeLearning
 });

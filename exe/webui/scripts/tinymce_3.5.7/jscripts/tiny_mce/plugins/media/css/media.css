@@ -17,4 +17,5 @@
 iframe {border: 1px solid gray}
 /* The New eXeLearning */
 #video_options, #audio_options, #quicktime_options { display:none !important }
+#use_mediaelement { display:none }
 /* /The New eXeLearning */
