@@ -35,6 +35,9 @@ import tempfile
 import twisted
 import shutil
 from exe                      import globals as G
+from xml.dom                   import minidom
+from exe.engine.style       import Style
+from exe.engine.stylestore  import StyleStore
 # ===========================================================================
 class Config:
     """
@@ -371,19 +374,11 @@ class Config:
         """
         Scans the eXe style directory and builds a list of styles
         """
-        log = logging.getLogger()
-        self.styles = []
-        styleDir    = self.stylesDir
-
-        log.debug("loadStyles from %s" % styleDir)
-
-        for subDir in styleDir.dirs():
-            styleSheet = subDir/'content.css'
-            log.debug(" checking %s" % styleSheet)
-            if styleSheet.exists():
-                style = subDir.basename()
-                log.debug(" loading style %s" % style)
-                self.styles.append(style)
+        self.styleStore = StyleStore(self)
+        listStyles = self.styleStore.getStyles()
+        for style in listStyles:
+            self.styles.append(style)
+            #print style
 
 
     def loadLocales(self):

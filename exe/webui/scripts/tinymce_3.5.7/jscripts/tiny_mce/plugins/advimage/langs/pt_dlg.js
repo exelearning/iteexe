@@ -1,1 +1,29 @@
-tinyMCE.addI18n('pt.advimage_dlg',{"image_list":"Lista de imagens","align_right":"Direita","align_left":"Esquerda","align_textbottom":"Base do texto","align_texttop":"Topo do texto","align_bottom":"Abaixo","align_middle":"Meio","align_top":"Topo","align_baseline":"Sobre a linha de texto",align:"Alinhamento",hspace:"Espa\u00e7o horizontal",vspace:"Espa\u00e7o vertical",dimensions:"Dimens\u00f5es",border:"Limite",list:"Lista de imagens",alt:"Descri\u00e7\u00e3o da imagem",src:"Endere\u00e7o da imagem","dialog_title":"Inserir/editar imagem","missing_alt":"Tem certeza que deseja continuar sem acrescentar uma descri\u00e7\u00e3o \u00e0 imagem? (Isto pode gerar problemas de acessibilidade em alguns navegadores)","example_img":"Pr\u00e9-Visualiza\u00e7\u00e3o",misc:"Misto",mouseout:"mouseout",mouseover:"mouseover","alt_image":"Imagem alternativa","swap_image":"Trocar imagem",map:"Mapa de imagem",id:"Id",rtl:"Da direita para a esquerda",ltr:"Da esquerda para a direita",classes:"Classes",style:"Estilo","long_desc":"Descri\u00e7\u00e3o extensa",langcode:"C\u00f3digo do idioma",langdir:"Dire\u00e7\u00e3o do texto","constrain_proportions":"Manter propor\u00e7\u00f5es",preview:"Pr\u00e9-Visualiza\u00e7\u00e3o",title:"T\u00edtulo",general:"Geral","tab_advanced":"Avan\u00e7ado","tab_appearance":"Apar\u00eancia","tab_general":"Geral",width:"Largura",height:"Altura"});
+tinyMCE.addI18n('pt.advimage_dlg',{"image_list":"Lista de imagens","align_right":"Direita","align_left":"Esquerda","align_textbottom":"Base do texto","align_texttop":"Topo do texto","align_bottom":"Abaixo","align_middle":"Meio","align_top":"Topo","align_baseline":"Sobre a linha de texto",align:"Alinhamento",hspace:"Espa\u00e7o horizontal",vspace:"Espa\u00e7o vertical",dimensions:"Dimens\u00f5es",border:"Limite",list:"Lista de imagens",alt:"Descri\u00e7\u00e3o da imagem",src:"Endere\u00e7o da imagem","dialog_title":"Inserir/editar imagem","missing_alt":"Tem certeza que deseja continuar sem acrescentar uma descri\u00e7\u00e3o \u00e0 imagem? (Isto pode gerar problemas de acessibilidade em alguns navegadores)","example_img":"Pr\u00e9-Visualiza\u00e7\u00e3o",misc:"Misto",mouseout:"mouseout",mouseover:"mouseover","alt_image":"Imagem alternativa","swap_image":"Trocar imagem",map:"Mapa de imagem",id:"Id",rtl:"Da direita para a esquerda",ltr:"Da esquerda para a direita",classes:"Classes",style:"Estilo","long_desc":"Descri\u00e7\u00e3o extensa",langcode:"C\u00f3digo do idioma",langdir:"Dire\u00e7\u00e3o do texto","constrain_proportions":"Manter propor\u00e7\u00f5es",preview:"Pr\u00e9-Visualiza\u00e7\u00e3o",title:"T\u00edtulo",general:"Geral","tab_advanced":"Avan\u00e7ado","tab_appearance":"Apar\u00eancia","tab_general":"Geral",width:"Largura",height:"Altura",
+// The New eXeLearning
+"tab_caption":"Encabezado y pie de foto",
+"recognition":"T\u00EDtulo y reconocimiento",
+"header":"Encabezado",
+"image_title":"T\u00EDtulo de la imagen",
+"image_title_link":"Enlace del t\u00EDtulo",
+"author_name":"Origen/autor",
+"author_name_link":"Enlace origen/autor",
+"caption_license":"Licencia",
+"caption_select_license":"Seleccionar...",
+"public_domain":"Dominio p\u00FAblico",
+"all_rights_reserved":"Todos los derechos reservados",
+"block_presentation":"Presentaci\u00F3n",
+"text_align":"Alineaci\u00F3n del texto",
+"align_left":"Izquierda",
+"align_center":"Centro",
+"align_right":"Derecha",
+"image_and_caption_position":"Posici\u00F3n del conjunto",
+"position_center":"Centro",
+"position_normal":"Normal",
+"image_and_caption_float":"Comportamiento",
+"position_left":"A la izquierda del texto",
+"position_right":"A la derecha del texto",
+"image_and_caption_margin":"Margen del conjunto",
+"caption_explanation":"El encabezado y el pie de foto no ser\u00E1n editables desde este di\u00E1logo.",
+"caption_warning":"El encabezado y el pie de foto no se pueden editar desde este di\u00E1logo. Puede modificarlos o borrarlos editando su texto."
+// The New eXeLearning
+});

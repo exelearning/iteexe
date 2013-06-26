@@ -34,5 +34,28 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .iDevice_content{position:relative}
 .iDevice_header{background-position:0 50%;background-repeat:no-repeat}
 .iDevice_hidden_content{display:none}
+/* TinyMCE: Images and media */
+.position-center{margin:0 auto}
+.position-right{margin:0 0 0 auto}
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-right{text-align:right}
+.float-left{float:left}
+.float-right{float:right}
+.figcaption{padding-top:.2em}
+.figcaption.header{padding-top:0;padding-bottom:.2em}
+/* TinyMCE templates */
+.exe-layout-2-cols,.exe-layout-3-cols{width:100%}
+.exe-layout-2-cols .exe-col{float:left;width:49%}
+.exe-layout-2-cols .exe-col-1{padding-right:1%}
+.exe-layout-2-cols .exe-col-2{padding-left:1%}
+.exe-layout-2-30-70 .exe-col{width:69%}
+.exe-layout-2-30-70 .exe-col-1{width:29%}
+.exe-layout-2-70-30 .exe-col{width:29%}
+.exe-layout-2-70-30 .exe-col-1{width:69%}
+.exe-layout-3-cols .exe-col{float:left;width:32%}
+.exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
+/* Autoclear */
+.exe-clear{overflow:auto}
 /* To review */
 .question .answer p{margin:0}

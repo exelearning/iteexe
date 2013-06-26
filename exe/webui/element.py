@@ -268,6 +268,7 @@ class TextAreaElement(ElementWithResources):
         """
         Returns an XHTML string for viewing or previewing this element
         """
+        lb = "\n" #Line breaks
         if visible:
             visible = 'iDevice_content'
         else:
@@ -290,8 +291,8 @@ class TextAreaElement(ElementWithResources):
         sectionTag = "div"
         if dT == "HTML5":
             sectionTag = "section"         
-        return '<%s id="ta%s" class="%s %s">%s</%s>' % (
-            sectionTag, self.id, class_, visible, content, sectionTag)
+        return '<%s id="ta%s" class="%s %s">%s%s%s</%s>%s' % (
+            sectionTag, self.id, class_, visible, lb, content, lb, sectionTag, lb)
    
 
 

@@ -100,6 +100,7 @@ class SinglePage(Page):
         """
         Returns an XHTML string for the header of this page.
         """
+        lb = "\n" #Line breaks
         def hasGalleryIdevice(node):
             hasGallery = common.hasGalleryIdevice(node)
             if not hasGallery:
@@ -123,48 +124,42 @@ class SinglePage(Page):
             lenguaje = self.node.package.dublinCore.language
         dT = common.getExportDocType()
         if dT == "HTML5":
-            html = '<!doctype html>'
-            html += '<html lang="'+lenguaje+'">'
+            html = '<!doctype html>'+lb
+            html += '<html lang="'+lenguaje+'">'+lb
         else:
-            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
-            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"
-        html += u"<head>"
+            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"+lb
+            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
+            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
+        html += u"<head>"+lb
         html += u"<title>"
         html += name
         html += "</title>"
-        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />";
+        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
         if dT != "HTML5" and self.node.package.dublinCore.language!="":
-            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
-            html += '<meta name="author" content="'+self.node.package.author+'" />'
-        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'        
+            html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'+lb     
         if self.node.package.description!="":
-            html += '<meta name="description" content="'+self.node.package.description+'" />'
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"
+            html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if hasWikipedia:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if hasGallery:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5":
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         if hasGallery:
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'
-        html += u'<script type="text/javascript" src="common.js"></script>'
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if for_print:
             # include extra print-script for onload bit 
-            html += u'<script type="text/javascript">'
-            html += u'function print_page() {'
-            html += u'     window.print();'
-            html += u'     window.close();'
-            html += u'}'
-            html += u'</script>'
-        html += u"</head>"
+            html += u'<script type="text/javascript">function print_page(){window.print();window.close();}</script>'+lb
+        html += u"</head>"+lb
         return html
     
     #JR: modifico esta funcion para que ponga hX en cada nodo
@@ -173,6 +168,7 @@ class SinglePage(Page):
         Returns an XHTML string for this node and recurse for the children
         """
         dT = common.getExportDocType()
+        lb = "\n" #Line breaks
         sectionTag = "div"
         headerTag = "div"
         articleTag = "div"
@@ -183,11 +179,11 @@ class SinglePage(Page):
             nivel = 1
         
         html = ""
-        html += '<'+articleTag+' class="node">'
+        html += '<'+articleTag+' class="node">'+lb
         html += '<'+headerTag+' class=\"nodeDecoration\">'
         html += '<h' + str(nivel) + ' class=\"nodeTitle\">'
         html += escape(node.titleLong)
-        html += '</h' + str(nivel) + '></'+headerTag+'>'
+        html += '</h' + str(nivel) + '></'+headerTag+'>'+lb
         
         style = self.node.package.style
 
@@ -196,7 +192,7 @@ class SinglePage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""            
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">' % (idevice.klass, e, (idevice.id+"-"+node.id))
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, (idevice.id+"-"+node.id), lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -205,9 +201,9 @@ class SinglePage(Page):
                     html += block.renderJavascriptForWeb()
                 html += self.processInternalLinks(block.renderView(style))
                 html = html.replace('href="#auto_top"', 'href="#"')
-                html += u'</'+sectionTag+'>' # iDevice div
+                html += u'</'+sectionTag+'>'+lb # iDevice div
 
-        html += '</'+articleTag+'>' # node div
+        html += '</'+articleTag+'>'+lb # node div
 
         for child in node.children:
             html += self.renderNode(child, nivel+1)

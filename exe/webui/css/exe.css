@@ -73,12 +73,44 @@ width: 100px;
 padding: 0.25em;
 margin: 4px;
 background-color: #FFFFFF;
-background-image: url(../style/standardwhite/nodeTitle_bg.jpg);
+background-image: url(../style/standardwhite/_standardwhite_title_bg.gif);
 background-repeat: repeat-x;
 color: #333333;
 font-size: 75%;
 font-weight: bold;
 font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+#editorButtons input.button[disabled] {
+	background-color: #dddddd;
+	background-image: none;
+}
+
+/* styles for Style Manager Editor */
+#styleManagerWorkspace {
+	margin-left: 150px;
+}
+
+#styleManagerButtons {
+	 float: left;
+     position: fixed;
+}
+
+#styleManagerButtons input.button
+{
+	border: 3px double #999999;
+	border-top-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	width: 100px;
+	padding: 0.25em;
+	margin: 2px;
+	background-color: #FFFFFF;
+	background-image: url(../style/standardwhite/_standardwhite_title_bg.gif);
+	background-repeat: repeat-x;
+	color: #333333;
+	font-size: 75%;
+	font-weight: bold;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
 #editorButtons input.button[disabled] {

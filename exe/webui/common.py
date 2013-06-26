@@ -54,14 +54,12 @@ def getExportDocType():
 
 def docType():
     dT = getExportDocType()
+    lb = "\n" #Line breaks
     """Generates the documentation type string"""
     if dT == "HTML5":
-        return '<!doctype html>'
+        return '<!doctype html>'+lb
     else:
-        return (u'<?xml version="1.0" encoding="UTF-8"?>'
-                u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-                u'Transitional//EN" '
-                u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">')
+        return (u'<?xml version="1.0" encoding="UTF-8"?>'+lb+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
             
 def themeHasConfigXML(style):
     themePath = Path(G.application.config.stylesDir/style)
@@ -73,6 +71,7 @@ def themeHasConfigXML(style):
             
 def ideviceHeader(e, style, mode):
     dT = getExportDocType()
+    lb = "\n" #Line breaks
     #Default HTML tags:
     sectionTag = "div"
     articleTag = "div"
@@ -97,17 +96,17 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
     if e.idevice.emphasis > 0:
-        w2 = '<'+sectionTag+' class="iDevice_inner">'
-        w2 += '<'+sectionTag+' class="iDevice_content_wrapper">'
+        w2 = '<'+sectionTag+' class="iDevice_inner">'+lb
+        w2 += '<'+sectionTag+' class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
     
     if mode=="preview" and themeHasXML:
-        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'">'
+        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'">'+lb
     
     w += u"<"+articleTag+" class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
         w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
-    w += ">"
+    w += ">"+lb
     
     if e.idevice.emphasis > 0:
         h += '<'+headerTag+' class="iDevice_header"'
@@ -133,7 +132,7 @@ def ideviceHeader(e, style, mode):
         o += u"<"+titleTag+" class=\"iDeviceTitle\">"+e.idevice.title+"</"+titleTag+">"
         h += '>'
         h += u'<'+titleTag+' class="iDeviceTitle">'+e.idevice.title+'</'+titleTag+'>'
-        h += '</'+headerTag+'>'
+        h += '</'+headerTag+'>'+lb
     
     if e.idevice.emphasis <= 0:
         h = ""
@@ -145,6 +144,7 @@ def ideviceHeader(e, style, mode):
 
 def ideviceFooter(e, style, mode):
     dT = getExportDocType()
+    lb = "\n" #Line breaks
     #Default HTML tags:
     sectionTag = "div"
     articleTag = "div"
@@ -154,13 +154,13 @@ def ideviceFooter(e, style, mode):
     themeHasXML = themeHasConfigXML(style)
     h = ''
     if e.idevice.emphasis > 0:
-        h = "</"+sectionTag+">" # Close iDevice_content_wrapper
-        h += "</"+sectionTag+">" # Close iDevice_inner
+        h = "</"+sectionTag+">"+lb # Close iDevice_content_wrapper
+        h += "</"+sectionTag+">"+lb # Close iDevice_inner
     if mode=="preview":
         h += e.renderViewButtons()
         if themeHasXML:
-            h += "</"+sectionTag+">" # Close extra div (e.idevice.klass)
-    h += "</"+articleTag+">" # Close iDevice
+            h += "</"+sectionTag+">"+lb # Close extra div (e.idevice.klass)
+    h += "</"+articleTag+">"+lb # Close iDevice
     return h
 
 def header(style=u'default'):

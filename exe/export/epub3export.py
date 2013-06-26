@@ -274,26 +274,37 @@ class Epub3Page(Page):
         """
         Returns an XHTML string rendering this page.
         """
-
-        html = u'<?xml version="1.0" encoding="UTF-8"?>'
+        lb = "\n" #Line breaks
+        html = u'<?xml version="1.0" encoding="UTF-8"?>'+lb
         html += u'<!DOCTYPE html>'
         lenguaje = G.application.config.locale
-        html += u"<html lang=\"" + lenguaje + u"\" xml:lang=\"" + lenguaje + u"\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
-        html += u"<title>" + _("eXe") + "</title>\n"
-        html += u"<meta charset=\"UTF-8\" />\n";
-        html += u"<!-- Created using eXe: http://exelearning.org -->\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(base.css);\n"
-        html += u"@import url(content.css);\n"
-        html += u"</style>\n"
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
+        if self.node.package.dublinCore.language!="":
+            lenguaje = self.node.package.dublinCore.language        
+        html += u"<html lang=\"" + lenguaje + u"\" xml:lang=\"" + lenguaje + u"\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
+        html += u"<head>"+lb
+        html += u"<title>"
+        if self.node.id=='0':
+            if self.node.package.title!='':
+                html += escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        else:
+            if self.node.package.title!='':
+                html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
+            else:
+                html += escape(self.node.titleLong)
+        html += u" </title>"+lb        
+        html += u"<meta charset=\"UTF-8\" />"+lb
+        html += u"<!-- Created using eXe: http://exelearning.net -->"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
+        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
+        html += u'<script type="text/javascript" src="common.js"></script>'+lb
 
-        html += u"</head>\n"
-        html += u"<body>"
+        html += u"</head>"+lb
+        html += u"<body>"+lb
 
-        html += u"<div id=\"outer\">\n"
-        html += u"<div id=\"main\">\n"
+        html += u"<div id=\"outer\">"+lb
+        html += u"<div id=\"main\">"+lb
 
         if self.node.package.backgroundImg:
             html += u"<div id=\"nodeDecoration\" style=\"background-image: url(" + self.node.package.backgroundImg.basename() + u"); "
@@ -302,17 +313,18 @@ class Epub3Page(Page):
                 html += u"background-repeat: repeat-x;"
             else:
                 html += u"background-repeat: no-repeat;"
-            html += u"\">"
+            html += u"\">"+lb
         else:
-            html += u"<div id=\"nodeDecoration\">\n"
+            html += u"<div id=\"nodeDecoration\">"+lb
 
-        html += u"<h1 id=\"nodeTitle\">\n"
+        html += u"<h1 id=\"nodeTitle\">"
         html += escape(self.node.titleLong)
-        html += u'</h1></div>\n'
+        html += u'</h1>'
+        html += '</div>'+lb
 
         for idevice in self.node.idevices:
-            html += u'<div class="%s" id="id%s">\n' % (idevice.klass,
-                    idevice.id)
+            html += u'<div class="%s" id="id%s">%s' % (idevice.klass,
+                    idevice.id, lb)
             block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
@@ -325,14 +337,14 @@ class Epub3Page(Page):
             if hasattr(idevice, "isQuiz"):
                 html += u"<b>tu resultado es X</b>"
             
-            html += u'</div>\n'     # iDevice div
+            html += u'</div>'+lb # iDevice div
 
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += u"</div>"+lb
+        html += u"</div>"+lb
 
         html += self.renderLicense()
         html += self.renderFooter()
-        html += u"</body></html>\n"
+        html += u"</body>"+lb+"</html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile(u"exe_math_latex=\"[^\"]*\"")

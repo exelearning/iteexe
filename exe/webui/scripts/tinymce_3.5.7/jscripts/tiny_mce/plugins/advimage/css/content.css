@@ -1,0 +1,11 @@
+/* The New eXeLearning */
+.position-center{margin:0 auto}
+.position-right{margin:0 0 0 auto}
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-right{text-align:right}
+.float-left{float:left}
+.float-right{float:right}
+.figcaption{padding-top:.2em}
+.figcaption.header{padding-top:0;padding-bottom:.2em}
+/* /The New eXeLearning */

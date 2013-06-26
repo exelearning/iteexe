@@ -18,7 +18,13 @@ var ImageDialog = {
 		this.fillFileList('out_list', fl);
 		TinyMCE_EditableSelects.init();
 
-		if (n.nodeName == 'IMG') {
+		if (n.nodeName == 'IMG') {        
+            // The New eXeLearning 
+            document.getElementById("caption_panel-fieldset-1").style.display="none";
+            document.getElementById("caption_panel-fieldset-2").style.display="none";
+            document.getElementById("caption_panel-explanation").innerHTML=tinyMCEPopup.getLang("advimage_dlg.caption_warning");
+            document.getElementById("caption_panel").style.height="294px";
+            // /The New eXeLearning
 			nl.src.value = dom.getAttrib(n, 'src');
 			nl.width.value = dom.getAttrib(n, 'width');
 			nl.height.value = dom.getAttrib(n, 'height');
@@ -177,7 +183,132 @@ var ImageDialog = {
 				}
 			});
 
-			ed.execCommand('mceInsertContent', false, tinyMCEPopup.editor.dom.createHTML('img', args), {skip_undo : 1});
+			//ed.execCommand('mceInsertContent', false, tinyMCEPopup.editor.dom.createHTML('img', args), {skip_undo : 1});
+            // The New eXeLearning
+			//This replaces the previous line: ed.execCommand('mceInsertContent', false, tinyMCEPopup.editor.dom.createHTML('img', args), {skip_undo : 1});
+			
+			var c = tinyMCEPopup.editor.dom.createHTML('img', args);
+			
+			var imageHeader = nl.header.value;
+            var imageTitle = nl.imagetitle.value;
+            var imageTitleLink = nl.imagetitlelink.value;
+            var authorName = nl.authorname.value;
+			var authorNameLink = nl.authornamelink.value;
+			var captionLicense = nl.captionlicense.value;
+			var groupPosition = nl.groupposition.value;
+            var textAlign = nl.textalign.value;
+            var groupFloat = nl.groupfloat.value;
+            var groupMargin = nl.groupmargin.value;
+			
+			if (imageHeader!="" || imageTitle!="" || imageTitleLink!="" || authorName!="" || authorNameLink!="" || captionLicense!="") {
+				var hText = "";
+                var cText = "";
+				var license = "";
+				
+				//Header
+                if (imageHeader!="") {
+                    hText = "<div class='figcaption header'><strong>"+imageHeader+"</strong></div>";
+                }
+                
+                //Author and link
+				if (authorName!="") {
+					if (authorNameLink!="") {
+						cText+="<a href='"+authorNameLink+"' target='_blank' class='author'>"+authorName+"</a>";
+					} else {
+						cText+="<span class='author'>"+authorName+"</span>";
+					}
+				} else {
+					if (authorNameLink!="") {
+						cText+="<a href='"+authorNameLink+"' target='_blank' class='author'>"+authorNameLink+"</a>";
+					}
+				}
+                
+                //Title and link
+				if (imageTitle!="") {
+                    if (cText!="") cText+=". ";
+					if (imageTitleLink!="") {
+						cText+="<a href='"+imageTitleLink+"' target='_blank' class='title'><em>"+imageTitle+"</em></a>";
+					} else {
+						cText+="<span class='title'><em>"+imageTitle+"</em></span>";
+					}
+				} else {
+                    if (imageTitleLink!="") {
+                        if (cText!="") cText+=" - ";
+						cText+="<a href='"+imageTitleLink+"' target='_blank' class='title'><em>"+imageTitleLink+"</em></a>";
+					}
+				}
+				
+				//License:
+                var licenseLang = "en";
+                var ccLink = "http://creativecommons.org/licenses/";
+                var w = window.opener;
+                if (!w) w = window.parent;
+                if (w && w.document.getElementsByTagName) {
+                    var lang = w.document.getElementsByTagName("HTML")[0].lang;
+                    if (lang && lang != "") licenseLang = lang;
+                    if (lang!="en") ccLink += "?lang="+lang;
+                }                
+				if (captionLicense!="") {
+                    if (captionLicense=="pd") {
+						license = "<span>"+tinyMCEPopup.getLang("advimage_dlg.public_domain")+"</span>";
+					} else if (captionLicense=="gnu-gpl") {
+						license = "<a href='http://www.gnu.org/licenses/gpl.html' rel='license nofollow' target='_blank'>GNU/GPL</a>";
+					} else if (captionLicense=="CC0") {
+						license = "<a href='http://creativecommons.org/publicdomain/zero/1.0/deed."+licenseLang+"' rel='license nofollow' target='_blank'>CC0</a>";
+					} else if (captionLicense=="copyright") {
+						license = "<span>"+tinyMCEPopup.getLang("advimage_dlg.all_rights_reserved")+"</span>";
+					} else {
+						license = "<a href='"+ccLink+"' rel='license nofollow' target='_blank'>"+captionLicense.replace("CC-","CC ")+"</a>";
+					}
+					
+					if (cText!="") {
+						license = ' <span class="license"><span class="sep">(</span>'+license+'<span class="sep">)</span></span>';
+					} else {
+						license = '<span class="license"><span class="tit">'+tinyMCEPopup.getLang("advimage_dlg.caption_license")+": </span>"+license+"</span>";
+					}
+				}
+				
+				var cssClass = "exe-figure exe-image";
+                if (groupPosition!="left") cssClass += " position-"+groupPosition;
+                if (groupFloat!="none") cssClass += " float-"+groupFloat;
+                if (captionLicense!="") cssClass += " license-"+captionLicense;
+                cssClass +=" text-"+textAlign;
+                var extraStyle = "";
+                
+                if (groupPosition=="left") {
+                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0;";
+                    //if (textAlign=='right' || textAlign=='center') extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
+                    if (textAlign=='right' || textAlign=='center') extraStyle+="width:"+nl.width.value+"px;";
+                } else if (groupPosition=="center") {
+                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px auto;";
+                    //else extraStyle+="margin:0 auto;";
+                    //extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
+                    extraStyle+="width:"+nl.width.value+"px;";
+                } else {
+                    if (groupMargin!='') extraStyle+="margin:"+groupMargin+"px 0 "+groupMargin+"px auto;";
+                    //else extraStyle+="margin:0 0 0 auto;";
+                    //extraStyle+="width:"+nl.width.value+"px;text-align:"+textAlign+";";
+                    extraStyle+="width:"+nl.width.value+"px;";
+                }
+
+                if (groupFloat=="left") {
+                    if (groupMargin=="") groupMargin=15;
+                    //extraStyle = "float:left;width:"+nl.width.value+"px;text-align:"+textAlign+";";
+                    extraStyle = "width:"+nl.width.value+"px;";
+                    extraStyle+="margin:0 "+groupMargin+"px "+groupMargin+"px 0;";
+                } else if (groupFloat=="right") {
+                    if (groupMargin=="") groupMargin=15;
+                    //extraStyle = "float:right;width:"+nl.width.value+"px;text-align:"+textAlign+";";
+                    extraStyle = "width:"+nl.width.value+"px;";
+                    extraStyle+="margin:0 0 "+groupMargin+"px "+groupMargin+"px;";
+                }
+                
+                c = "<div class='"+cssClass+"' style='"+extraStyle+"'>"+hText+c+"<div class='figcaption'>"+cText+license+"</div></div>";
+			}
+			
+			ed.execCommand('mceInsertContent', false, c, {skip_undo : 1});
+			
+			// /The New eXeLearning            
 			ed.undoManager.add();
 		}
 

@@ -1,1 +1,29 @@
-tinyMCE.addI18n('fr.advimage_dlg',{"image_list":"Liste d\'images","align_right":"Droite (flottant)","align_left":"Gauche (flottant)","align_textbottom":"Texte en bas","align_texttop":"Texte en haut","align_bottom":"En bas","align_middle":"Au milieu","align_top":"En haut","align_baseline":"Normal",align:"Alignement",hspace:"Espacement horizontal",vspace:"Espacement vertical",dimensions:"Dimensions",border:"Bordure",list:"Liste d\'images",alt:"Description de l\'image",src:"URL de l\'image","dialog_title":"Ins\u00e9rer / \u00e9diter une image","missing_alt":"\u00cates-vous s\u00fbr de vouloir continuer sans d\u00e9finir de description pour l\'image ? Sans elle, l\'image peut ne pas \u00eatre accessible \u00e0 certains utilisateurs handicap\u00e9s, ceux utilisant un navigateur texte ou ceux qui naviguent sans affichage des images.","example_img":"Apparence de l\'image",misc:"Divers",mouseout:"\u00e0 la sortie de la souris",mouseover:"au survol de la souris","alt_image":"Image alternative","swap_image":"Image de remplacement",map:"Image cliquable",id:"Id",rtl:"De droite \u00e0 gauche",ltr:"De gauche \u00e0 droite",classes:"Classes",style:"Style","long_desc":"Description longue du lien",langcode:"Code de la langue",langdir:"Sens de lecture","constrain_proportions":"Conserver les proportions",preview:"Pr\u00e9visualisation",title:"Titre",general:"G\u00e9n\u00e9ral","tab_advanced":"Avanc\u00e9","tab_appearance":"Apparence","tab_general":"G\u00e9n\u00e9ral",width:"Largeur",height:"Hauteur"});
+tinyMCE.addI18n('fr.advimage_dlg',{"image_list":"Liste d\'images","align_right":"Droite (flottant)","align_left":"Gauche (flottant)","align_textbottom":"Texte en bas","align_texttop":"Texte en haut","align_bottom":"En bas","align_middle":"Au milieu","align_top":"En haut","align_baseline":"Normal",align:"Alignement",hspace:"Espacement horizontal",vspace:"Espacement vertical",dimensions:"Dimensions",border:"Bordure",list:"Liste d\'images",alt:"Description de l\'image",src:"URL de l\'image","dialog_title":"Ins\u00e9rer / \u00e9diter une image","missing_alt":"\u00cates-vous s\u00fbr de vouloir continuer sans d\u00e9finir de description pour l\'image ? Sans elle, l\'image peut ne pas \u00eatre accessible \u00e0 certains utilisateurs handicap\u00e9s, ceux utilisant un navigateur texte ou ceux qui naviguent sans affichage des images.","example_img":"Apparence de l\'image",misc:"Divers",mouseout:"\u00e0 la sortie de la souris",mouseover:"au survol de la souris","alt_image":"Image alternative","swap_image":"Image de remplacement",map:"Image cliquable",id:"Id",rtl:"De droite \u00e0 gauche",ltr:"De gauche \u00e0 droite",classes:"Classes",style:"Style","long_desc":"Description longue du lien",langcode:"Code de la langue",langdir:"Sens de lecture","constrain_proportions":"Conserver les proportions",preview:"Pr\u00e9visualisation",title:"Titre",general:"G\u00e9n\u00e9ral","tab_advanced":"Avanc\u00e9","tab_appearance":"Apparence","tab_general":"G\u00e9n\u00e9ral",width:"Largeur",height:"Hauteur",
+// The New eXeLearning
+"tab_caption":"Header and caption",
+"recognition":"Title and attribution",
+"header":"Header",
+"image_title":"Image title",
+"image_title_link":"Title link",
+"author_name":"Source/author",
+"author_name_link":"Source/author link",
+"caption_license":"License",
+"caption_select_license":"Choose a license...",
+"public_domain":"Public domain",
+"all_rights_reserved":"All rights reserved",
+"block_presentation":"Presentation",
+"text_align":"Text align",
+"align_left":"Left",
+"align_center":"Center",
+"align_right":"Right",
+"image_and_caption_position":"Group position",
+"position_center":"Center",
+"position_normal":"None",
+"image_and_caption_float":"Float",
+"position_left":"Left",
+"position_right":"Right",
+"image_and_caption_margin":"Group margin",
+"caption_explanation":"You would not be able to edit the header and the caption from this dialog.",
+"caption_warning":"The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself."
+// The New eXeLearning
+});
