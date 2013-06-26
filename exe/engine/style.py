@@ -23,6 +23,7 @@ class Style(Persistable):
         log.debug("Creating iDevice")
         self._styleDir      = styleDir
         self._name          = styleDir.basename()
+        self._dirname       = styleDir.basename()
         self._version       = '0.0'
         self._compatibility = '7.1'
         self._author        = ''
@@ -66,7 +67,7 @@ class Style(Persistable):
         return self._valid
     
     
-    def isValidConfig(self):
+    def hasValidConfig(self):
         return self._validConfig
     
     
@@ -76,6 +77,9 @@ class Style(Persistable):
     
     def get_name(self):
         return self._name
+    
+    def get_dirname(self):
+        return self._dirname
 
 
     def get_version(self):
@@ -105,6 +109,13 @@ class Style(Persistable):
     def get_description(self):
         return self._description
     
+    def renderPropertiesHTML(self):
+        html = ''
+        for attribute in self._attributes:
+            if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
+                html += '<p><strong>' + attribute + ': </strong>' + getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
+        return html
+    
     
     def __str__(self):
         string = ''
@@ -112,6 +123,9 @@ class Style(Persistable):
             if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
                 string += attribute + ': ' + getattr(self, '_'+attribute.replace('-', '_')) + '\n'
         return string
+    
+    def __cmp__(self, other):
+        return cmp(self._name, other._name)
 
 
 # ===========================================================================

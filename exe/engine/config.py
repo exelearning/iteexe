@@ -37,6 +37,7 @@ import shutil
 from exe                      import globals as G
 from xml.dom                   import minidom
 from exe.engine.style       import Style
+from exe.engine.stylestore  import StyleStore
 # ===========================================================================
 class Config:
     """
@@ -373,19 +374,11 @@ class Config:
         """
         Scans the eXe style directory and builds a list of styles
         """
-        log = logging.getLogger()
-        self.styles = []
-        styleDir    = self.stylesDir
-
-        log.debug("loadStyles from %s" % styleDir)
-        for subDir in styleDir.dirs():
-            style = Style(subDir)
-            if style.isValid():
-                log.debug(" loading style %s" % style.get_name())
-                self.styles.append(style.get_style_dir().basename())
-                #print style
-            else:
-                log.debug(" style %s is not valid")
+        self.styleStore = StyleStore(self)
+        listStyles = self.styleStore.getStyles()
+        for style in listStyles:
+            self.styles.append(style)
+            #print style
 
 
     def loadLocales(self):

@@ -55,6 +55,7 @@ class StyleMenu(Renderable, Resource):
             log.debug("changing style to "+request.args["object"][0])
             self.package.style = request.args["object"][0]
             
+    """    
     def stylename(self,direc): 
         #FM: load style name 
         themePath = G.application.config.stylesDir.joinpath(direc)
@@ -65,6 +66,7 @@ class StyleMenu(Renderable, Resource):
         else:
             rf=direc.capitalize()
         return rf
+        """
           
     def render(self, request=None):
         """
@@ -73,7 +75,7 @@ class StyleMenu(Renderable, Resource):
         log.debug("render")
 
         l = []       
-        printableStyles = [(self.stylename(x), x) for x in self.config.styles]        
+        printableStyles = [(x.get_name(), x.get_dirname()) for x in self.config.styleStore.getStyles()]        
         for printableStyle, style in sorted(printableStyles, key=lambda x: x[0]):
             l.append({ "label": printableStyle, "style": style, "selected": True if style == self.package.style else False})
         return json.dumps(l).encode('utf-8')     
