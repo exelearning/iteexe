@@ -74,6 +74,8 @@ class SinglePage(Page):
         html += u"<"+sectionTag+" id=\"main\">"
         html += self.renderNode(package.root, 1)
         html += u"</"+sectionTag+">"
+        if self.hasMediaelement:
+            html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         html += self.renderLicense()
         html += self.renderFooter()
         html += u"</"+sectionTag+">"
@@ -119,6 +121,17 @@ class SinglePage(Page):
             return hasWikipedia
         
         hasWikipedia = hasWikipediaIdevice(self.node)
+
+        def nodeHasMediaelement(node):
+            hasMediaelement = common.nodeHasMediaelement(node)
+            if not hasMediaelement:
+                for child in node.children:
+                    if nodeHasMediaelement(child):
+                        return True
+            return hasMediaelement
+
+        self.hasMediaelement = nodeHasMediaelement(self.node)
+
         lenguaje = G.application.config.locale
         if self.node.package.dublinCore.language!="":
             lenguaje = self.node.package.dublinCore.language
@@ -148,11 +161,16 @@ class SinglePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if hasGallery:
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if self.hasMediaelement:
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"mediaelementplayer.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5":
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+        if self.hasMediaelement:
+            html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
+            html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
