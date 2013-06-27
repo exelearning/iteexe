@@ -177,12 +177,13 @@ class WebsiteExport(object):
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
+        hasMediaelement   = False
         
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -203,7 +204,9 @@ class WebsiteExport(object):
                 if not hasInstructions:
                     if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
                         hasInstructions = True
-                        
+                if not hasMediaelement:
+                    hasMediaelement = common.ideviceHasMediaelement(idevice)
+
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
@@ -227,6 +230,11 @@ class WebsiteExport(object):
         if hasInstructions:
             common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
+        if hasMediaelement:
+            jquery = (self.scriptsDir/'jquery.js')
+            jquery.copyfile(outputDir/'jquery.js')
+            mediaelement = (self.scriptsDir/'mediaelement')
+            mediaelement.copyfiles(outputDir)
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence
