@@ -141,10 +141,6 @@ class MainPage(RenderableLivePage):
                     except:
                         pass
 
-            elif 'getsources' in request.args and request.args['getsources']:
-                classif = Classification()
-                source = request.args['source'][0]
-                data = classif.getSources(source, self.config.configDir)
         return json.dumps({'success': True, 'data': data})
 
     def goingLive(self, ctx, client):

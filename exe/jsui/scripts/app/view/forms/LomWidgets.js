@@ -71,38 +71,15 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		        helpmargin: helpmargin
 		    }
 		},
-		getSelectStore: function(){
-			var store = Ext.create('Ext.data.Store', {			    
-			    proxy: {
-			        type: 'ajax',
-			        url: location.pathname + '/taxon',			        
-			        reader: {
-			        	idProperty: 'identifier',
-			        	successProperty: 'success',
-			            root: 'data',
-			            type: 'json'
-			        }
-			    },
-			    sorters: ['text'],
-			    autoLoad: false,
-			    autoSync: false,			    
-			    fields: ['identifier', 'text']
-			});
-			return store;
-		},
-		onSelectSource: function(combo, records, eOpts){
-			var nextCombo = combo.nextNode('combo');
-			var store = this.getSelectStore();
+        onSelectSource: function(combo, records, eOpts){
 			var val = combo.getValue()
 			combo.nextNode('textfield').setValue(val.substr(val.length-2));
-			store.load({params: {source: val, identifier: false}});
-			nextCombo.bindStore(store);
 		},
 		beforeSelectSource: function(combo, eOpts){			
-			var purposeCombo = Ext.ComponentQuery.query('combo[name='+combo.getName().replace(/taxonPath[0-9]*_source_string1$/, 'purpose_value')+']')[0];
-			var store = this.getSelectStore();			
-			store.load({params: {source: purposeCombo.getValue(), getsources: true}});	
-			combo.bindStore(store);
+			var purposeCombo = Ext.ComponentQuery.query('combo[name='+combo.getName().replace(/taxonPath[0-9]*_source_string1$/, 'purpose_value')+']')[0],
+			    store = combo.getStore();
+            store.clearFilter(true);
+			store.filter('purpose', purposeCombo.getValue());
 		},
 		deleteTaxonChilds: function(combo, newValue, oldValue){
 			var taxonset = combo.nextNode('insertdelfieldset'), taxon;
@@ -216,14 +193,14 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    	if (/_source_string1$/.exec(id)){
 		    		combo.item.listeners = {
 			            	 scope: this,
-			                'select': this.onSelectSource,
+                            'select': this.onSelectSource,
 			                'focus': this.beforeSelectSource,
-			                'change': this.changeSelectSource,
+			                'change': this.changeSelectSource
 			           };		    		
-		    		//storeName = "taxonpathSourceValues";
-		    		storeName = "";	
+                    storeName = "taxonpathSourceValues";
 		    		combo.item.cls = 'taxonpath-source';
                     combo.item.valueField = 'id';
+                    combo.item.displayField = 'text';
                     combo.item.getSubmitValue = function() {
                         var value = this.processRawValue(this.getRawValue());
                         return value.substr(0, value.length-3);
@@ -231,7 +208,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    	}else if (/_purpose_value$/.exec(id)){
 		    		combo.item.listeners = {
 			            	 scope: this,			                
-			                'change': this.changePurpose,
+			                'change': this.changePurpose
 			           };
 		    	}
 			}

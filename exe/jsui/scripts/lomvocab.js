@@ -654,26 +654,6 @@ lomVocab = {
         ]
     ],
 	"taxonpathSourceValues": [
-		  [
-		   "Accesibilidad LOM-ESv1.0",
-		   _("Accesibilidad LOM-ESv1.0")
-		  ],
-		  [
-		   "Nivel educativo LOM-ESv1.0",
-		   _("Nivel educativo LOM-ESv1.0")
-		  ],
-		  [
-		   "Competencia LOM-ESv1.0",
-		   _("Competencia LOM-ESv1.0")
-		  ],
-		  [
-		   "Árbol curricular LOE 2006",
-		   _("Árbol curricular LOE 2006")
-		  ],
-		  [
-		   "ETB-LRE MEC-CCAA V1.0",
-		   _("ETB-LRE MEC-CCAA V1.0")
-		  ]
 	]	                      
 };
 
@@ -1636,27 +1616,130 @@ lomesVocab = {
             _("very difficult")
         ]
     ],
-	"taxonpathSourceValues": [
-        [
-         "Accesibilidad LOM-ESv1.0",
-         _("Accesibilidad LOM-ESv1.0")
-        ],
-        [
-         "Nivel educativo LOM-ESv1.0",
-         _("Nivel educativo LOM-ESv1.0")
-        ],
-        [
-         "Competencia LOM-ESv1.0",
-         _("Competencia LOM-ESv1.0")
-        ],
-        [
-         "Árbol curricular LOE 2006",
-         _("Árbol curricular LOE 2006")
-        ],
-        [
-         "ETB-LRE MEC-CCAA V1.0",
-         _("ETB-LRE MEC-CCAA V1.0")
-        ]
-    ]
+	"taxonpathSourceValues": Ext.create('Ext.data.Store', {
+	    fields: ['id', 'text', 'purpose'],
+	    data : [
+	        { "id": "accesibilidad_LOM-ES_ca",
+	          "text": "Accesibilidad LOM-ESv1.0 ca",
+	          "purpose": "accessibility restrictions"
+	        },
+	        { "id": "accesibilidad_LOM-ES_en",
+	          "text": "Accesibilidad LOM-ESv1.0 en",
+	          "purpose": "accessibility restrictions"
+	        },
+	        { "id": "accesibilidad_LOM-ES_es",
+	          "text": "Accesibilidad LOM-ESv1.0 es",
+	          "purpose": "accessibility restrictions"
+	        },
+	        { "id": "accesibilidad_LOM-ES_eu",
+	          "text": "Accesibilidad LOM-ESv1.0 eu",
+	          "purpose": "accessibility restrictions"
+	        },
+	        { "id": "accesibilidad_LOM-ES_gl",
+	          "text": "Accesibilidad LOM-ESv1.0 gl",
+	          "purpose": "accessibility restrictions"
+	        },
+	        { "id": "accesibilidad_LOM-ES_va",
+	          "text": "Accesibilidad LOM-ESv1.0 va",
+	          "purpose": "accessibility restrictions"
+	        },
+	        { "id": "nivel_educativo_LOM-ES_ca",
+	          "text": "Nivel educativo LOM-ESv1.0 ca",
+	          "purpose": "educational level"
+	        },
+	        { "id": "nivel_educativo_LOM-ES_en",
+	          "text": "Nivel educativo LOM-ESv1.0 en",
+	          "purpose": "educational level"
+	        },
+	        { "id": "nivel_educativo_LOM-ES_es",
+	          "text": "Nivel educativo LOM-ESv1.0 es",
+	          "purpose": "educational level"
+	        },
+	        { "id": "nivel_educativo_LOM-ES_eu",
+	          "text": "Nivel educativo LOM-ESv1.0 eu",
+	          "purpose": "educational level"
+	        },
+	        { "id": "nivel_educativo_LOM-ES_gl",
+	          "text": "Nivel educativo LOM-ESv1.0 gl",
+	          "purpose": "educational level"
+	        },
+	        { "id": "nivel_educativo_LOM-ES_va",
+	          "text": "Nivel educativo LOM-ESv1.0 va",
+	          "purpose": "educational level"
+	        },
+	        { "id": "competencia_LOM-ES_ca",
+	          "text": "Competencia LOM-ESv1.0 ca",
+	          "purpose": "competency"
+	        },
+	        { "id": "competencia_LOM-ES_en",
+	          "text": "Competencia LOM-ESv1.0 en",
+	          "purpose": "competency"
+	        },
+	        { "id": "competencia_LOM-ES_es",
+	          "text": "Competencia LOM-ESv1.0 es",
+	          "purpose": "competency"
+	        },
+	        { "id": "competencia_LOM-ES_eu",
+	          "text": "Competencia LOM-ESv1.0 eu",
+	          "purpose": "competency"
+	        },
+	        { "id": "competencia_LOM-ES_gl",
+	          "text": "Competencia LOM-ESv1.0 gl",
+	          "purpose": "competency"
+	        },
+	        { "id": "competencia_LOM-ES_va",
+	          "text": "Competencia LOM-ESv1.0 va",
+	          "purpose": "competency"
+	        },
+	        { "id": "arbol_curricular_LOE_2006_ca",
+	          "text": "Árbol curricular LOE 2006 ca",
+	          "purpose": "discipline"
+	        },
+	        { "id": "arbol_curricular_LOE_2006_en",
+	          "text": "Árbol curricular LOE 2006 en",
+	          "purpose": "discipline"
+	        },
+	        { "id": "arbol_curricular_LOE_2006_es",
+	          "text": "Árbol curricular LOE 2006 es",
+	          "purpose": "discipline"
+	        },
+	        { "id": "arbol_curricular_LOE_2006_eu",
+	          "text": "Árbol curricular LOE 2006 eu",
+	          "purpose": "discipline"
+	        },
+	        { "id": "arbol_curricular_LOE_2006_gl",
+	          "text": "Árbol curricular LOE 2006 gl",
+	          "purpose": "discipline"
+	        },
+	        { "id": "arbol_curricular_LOE_2006_va",
+	          "text": "Árbol curricular LOE 2006 va",
+	          "purpose": "discipline"
+	        },
+	        { "id": "etb-lre_mec-ccaa_V.1.0_ca",
+	          "text": "ETB-LRE MEC-CCAA V1.0 ca",
+	          "purpose": "discipline"
+	        },
+	        { "id": "etb-lre_mec-ccaa_V.1.0_en",
+	          "text": "ETB-LRE MEC-CCAA V1.0 en",
+	          "purpose": "discipline"
+	        },
+	        { "id": "etb-lre_mec-ccaa_V.1.0_es",
+	          "text": "ETB-LRE MEC-CCAA V1.0 es",
+	          "purpose": "discipline"
+	        },
+	        { "id": "etb-lre_mec-ccaa_V.1.0_eu",
+	          "text": "ETB-LRE MEC-CCAA V1.0 eu",
+	          "purpose": "discipline"
+	        },
+	        { "id": "etb-lre_mec-ccaa_V.1.0_gl",
+	          "text": "ETB-LRE MEC-CCAA V1.0 gl",
+	          "purpose": "discipline"
+	        },
+	        { "id": "etb-lre_mec-ccaa_V.1.0_va",
+	          "text": "ETB-LRE MEC-CCAA V1.0 va",
+	          "purpose": "discipline"
+	        }
+	    ]
+    })
 };
 

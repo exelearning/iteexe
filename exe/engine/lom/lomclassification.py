@@ -45,35 +45,6 @@ class Classification(object):
             self.file = xmlfile
             self.setDom()
 
-    sourceMap = {'accessibility restrictions': [{'path': 'accesibilidad_LOM-ES',
-                                                 'text': 'Accesibilidad LOM-ESv1.0'
-                                                }],
-                  'educational level': [{'path': 'nivel_educativo_LOM-ES',
-                                        'text': 'Nivel educativo LOM-ESv1.0'
-                                       }],
-                  'competency': [{'path': 'competencia_LOM-ES',
-                                  'text': 'Competencia LOM-ESv1.0'
-                                }],
-                  'discipline': [{'path': 'arbol_curricular_LOE_2006',
-                                  'text': 'Árbol curricular LOE 2006'
-                                },
-                                 {'path': 'etb-lre_mec-ccaa_V.1.0',
-                                  'text': 'ETB-LRE MEC-CCAA V1.0'
-                                }]
-                 }
-
-    def getSources(self, source, configDir):
-        sources = []
-        path = configDir / self.configPath
-#        elif source == '':
-#            for v in dirs:
-#                paths.append(path / v)
-        for source in self.sourceMap[source]:
-            for lang in (path / source['path']).dirs():
-                reg = {'text': source['text'] + ' ' + str(lang.basename()), 'id': source['path'] + '_' + str(lang.basename())}
-                sources.append(reg)
-        return sources
-
     def getChildNodeByName(self, node, name):
         for n in node.childNodes:
             if n.nodeName == name:
