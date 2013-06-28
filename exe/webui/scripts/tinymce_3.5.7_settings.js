@@ -1,7 +1,7 @@
 /*******************************************/	
 /********** Available languages **********/
 /***************************************/
-var tinyMCE_languages=["es","eu","ca","gl","fr","it","pt","nl"];
+var tinyMCE_languages=["ca","es","eu","fr","gl","it","nl","pt","ru"];
 var tinyMCE_language = getTinyMCELang(document.getElementsByTagName("HTML")[0].lang);
 /*******************************************/	
 /*****************************************/
