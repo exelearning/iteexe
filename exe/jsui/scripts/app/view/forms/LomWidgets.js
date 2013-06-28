@@ -223,6 +223,11 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    		//storeName = "taxonpathSourceValues";
 		    		storeName = "";	
 		    		combo.item.cls = 'taxonpath-source';
+                    combo.item.valueField = 'id';
+                    combo.item.getSubmitValue = function() {
+                        var value = this.processRawValue(this.getRawValue());
+                        return value.substr(0, value.length-3);
+                    }
 		    	}else if (/_purpose_value$/.exec(id)){
 		    		combo.item.listeners = {
 			            	 scope: this,			                

@@ -136,7 +136,10 @@ class MainPage(RenderableLivePage):
                         stype = 2
                     else:
                         stype = 1
-                    data = self.classificationSources[source].getDataByIdentifier(identifier, stype=stype)
+                    try:
+                        data = self.classificationSources[source].getDataByIdentifier(identifier, stype=stype)
+                    except:
+                        pass
 
             elif 'getsources' in request.args and request.args['getsources']:
                 classif = Classification()

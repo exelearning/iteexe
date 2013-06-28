@@ -191,7 +191,10 @@ Ext.define('eXe.view.forms.LomDataPanel', {
             }
             if(/_taxon[0-9]*_entry_string1$/.exec(key)){
                 if (finaltaxonKeys[key]){
-                    field.addButtonObj.el.dom.click();
+                    if (field.addButtonObj.el)
+                        field.addButtonObj.el.dom.click();
+                    else
+                        console.log('ERROR: no element for field ' + field.itemId);
                     finaltaxonKeys[key] = r;
                 }
             }

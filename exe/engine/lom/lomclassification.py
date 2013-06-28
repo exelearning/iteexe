@@ -45,31 +45,32 @@ class Classification(object):
             self.file = xmlfile
             self.setDom()
 
+    sourceMap = {'accessibility restrictions': [{'path': 'accesibilidad_LOM-ES',
+                                                 'text': 'Accesibilidad LOM-ESv1.0'
+                                                }],
+                  'educational level': [{'path': 'nivel_educativo_LOM-ES',
+                                        'text': 'Nivel educativo LOM-ESv1.0'
+                                       }],
+                  'competency': [{'path': 'competencia_LOM-ES',
+                                  'text': 'Competencia LOM-ESv1.0'
+                                }],
+                  'discipline': [{'path': 'arbol_curricular_LOE_2006',
+                                  'text': 'Árbol curricular LOE 2006'
+                                },
+                                 {'path': 'etb-lre_mec-ccaa_V.1.0',
+                                  'text': 'ETB-LRE MEC-CCAA V1.0'
+                                }]
+                 }
+
     def getSources(self, source, configDir):
         sources = []
-        dirs = ['accesibilidad_LOM-ES', 'nivel_educativo_LOM-ES', 'competencia_LOM-ES', 'etb-lre_mec-ccaa_V.1.0', 'arbol_curricular_LOE_2006']
         path = configDir / self.configPath
-        paths = []
-        if source == 'accessibility restrictions':
-            path = path / dirs[0]
-            paths.append(path)
-        elif source == 'educational level':
-            path = path / dirs[1]
-            paths.append(path)
-        elif source == "competency":
-            path = path / dirs[2]
-            paths.append(path)
-        elif source == "discipline":
-            path1 = path / dirs[3]
-            path2 = path / dirs[4]
-            paths.append(path1)
-            paths.append(path2)
 #        elif source == '':
 #            for v in dirs:
 #                paths.append(path / v)
-        for p in paths:
-            for sp in p.dirs():
-                reg = {'text': str(p.basename()) + '_' + str(sp.basename()), 'id': str(p.basename()) + '_' + str(sp.basename())}
+        for source in self.sourceMap[source]:
+            for lang in (path / source['path']).dirs():
+                reg = {'text': source['text'] + ' ' + str(lang.basename()), 'id': source['path'] + '_' + str(lang.basename())}
                 sources.append(reg)
         return sources
 

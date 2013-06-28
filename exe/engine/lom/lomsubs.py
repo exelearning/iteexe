@@ -140,6 +140,14 @@ internalkeys = [
 
 
 class lomSub(supermod.lom):
+    sourceMap = {
+                 'Accesibilidad LOM-ESv1.0': 'accesibilidad_LOM-ES',
+                 'Nivel educativo LOM-ESv1.0': 'nivel_educativo_LOM-ES',
+                 'Competencia LOM-ESv1.0': 'competencia_LOM-ES',
+                 'Árbol curricular LOE 2006': 'arbol_curricular_LOE_2006',
+                 'ETB-LRE MEC-CCAA V1.0': 'etb-lre_mec-ccaa_V.1.0'
+                }
+
     def __init__(self, general=None, lifeCycle=None, metaMetadata=None, technical=None, educational=None, rights=None, relation=None, annotation=None, classification=None):
         self.__oldchild__ = None
         self.__index__ = {}
@@ -268,6 +276,11 @@ class lomSub(supermod.lom):
                     form[base2 + '_seconds'] = d[0][6].rstrip('S')
                 else:
                     print 'Duration structure error'
+            elif re.findall("taxonPath[0-9]+_source", base):
+                try:
+                    form[base] = self.sourceMap[rootObj.get_valueOf_().encode('utf-8')] + '_%s' % rootObj.language
+                except:
+                    form[base] = _('Invalid source: %s') % rootObj.get_valueOf_()
             else:
                 form[base] = rootObj.get_valueOf_()
 
