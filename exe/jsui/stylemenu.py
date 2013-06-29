@@ -28,6 +28,7 @@ from exe                       import globals as G
 from exe.engine.path           import Path
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
+from exe.webui.livepage import allSessionClients
 log = logging.getLogger(__name__)
 import json
 
@@ -46,6 +47,8 @@ class StyleMenu(Renderable, Resource):
         if parent:
             self.parent.putChild(self.name, self)
         Resource.__init__(self)
+        self.client = None
+        self.config.styleStore.register(self)
 
     def process(self, request):
         log.debug("process")
@@ -79,5 +82,17 @@ class StyleMenu(Renderable, Resource):
         for printableStyle, style in sorted(printableStyles, key=lambda x: x[0]):
             l.append({ "label": printableStyle, "style": style, "selected": True if style == self.package.style else False})
         return json.dumps(l).encode('utf-8')     
+    
+    def addStyle(self, style):
+        """
+        Adds an Style to the list
+        """
+        self.client.sendScript('eXe.app.getController("Toolbar").stylesRender()', filter_func=allSessionClients)
+    
+    def delStyle(self, style):
+        """
+        Delete an Style to the list
+        """
+        self.client.sendScript('eXe.app.getController("Toolbar").stylesRender()', filter_func=allSessionClients)
     
 # ===========================================================================

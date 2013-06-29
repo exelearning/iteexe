@@ -52,14 +52,17 @@ class StyleStore:
         if (style not in self._styles):
             self._styles.append(style)
             for listener in self._listeners:
-                listener.addStyle(style)  
+                listener.addStyle(style) 
+            return True
+        else:
+            return False 
     
     
     def register(self, listener):
         """
-        Registra un escuchador interesado en informar de los cambios producidos en StyleStore
+        Registra un escuchador interesado en ser informado de los cambios producidos en StyleStore
         """
-        self.listeners.append(listener)
+        self._listeners.append(listener)
   
 
     def __load(self):

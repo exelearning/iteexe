@@ -392,7 +392,7 @@ Ext.define('eXe.controller.Toolbar', {
           modal: true,
           id: 'stylemanagerwin',
           title: _("Style Manager"), 
-          html: '<iframe height="' + eXe.app.getMaxHeight(650) + '" width="100%" src="/stylemanager"></iframe>',
+          html: '<iframe height="' + eXe.app.getMaxHeight(650) + '" width="100%" src="/stylemanager"></iframe>'
         });
         stylemanager.show();        
 	},
@@ -776,6 +776,8 @@ Ext.define('eXe.controller.Toolbar', {
     		success: function(response) {
 				var styles = Ext.JSON.decode(response.responseText),
 					menu = this.getStylesMenu(), i, item;
+					//JR: Primero los borro
+					menu.removeAll();
     			for (i = styles.length-1; i >= 0; i--) {
                     item = Ext.create('Ext.menu.CheckItem', { text: styles[i].label, itemId: styles[i].style, checked: styles[i].selected });
     				menu.insert(0, item);

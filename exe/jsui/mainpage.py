@@ -167,6 +167,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleCreateDir, 'CreateDir')
 
         self.idevicePane.client = client
+        self.styleMenu.client = client
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True

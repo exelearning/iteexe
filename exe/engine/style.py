@@ -16,11 +16,20 @@ class Style(Persistable):
     """
 
     # Atributos
-    _attributes = ('name', 'version', 'compatibility', 'author', 'author-url', 'license', 'license-url', 'description')
+    _attributes = {
+                   'name': 'Name',
+                   'version': 'Version', 
+                   'compatibility': 'Compatibility', 
+                   'author': 'Author', 
+                   'author-url': 'Author URL', 
+                   'license': 'License', 
+                   'license-url': 'License URL', 
+                   'description': 'Description'
+                   }
 
     def __init__(self, styleDir):
-        """Initialize a new iDevice, setting a unique id"""
-        log.debug("Creating iDevice")
+        """Initialize a new Style"""
+        log.debug("Creating Style")
         self._styleDir      = styleDir
         self._name          = styleDir.basename()
         self._dirname       = styleDir.basename()
@@ -44,7 +53,7 @@ class Style(Persistable):
         
                 theme = xmldoc.getElementsByTagName('theme')
                 if (len(theme) > 0):
-                    for attribute in self._attributes:
+                    for attribute in self._attributes.keys():
                         attr = theme[0].getElementsByTagName(attribute)
                         if (len(attr) > 0):
                             attrName = attr[0].nodeName
@@ -111,17 +120,17 @@ class Style(Persistable):
     
     def renderPropertiesHTML(self):
         html = ''
-        for attribute in self._attributes:
+        for attribute in self._attributes.keys():
             if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
-                html += '<p><strong>' + attribute + ': </strong>' + getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
+                html += '<p><strong>' + _(self._attributes[attribute]) + ': </strong>' + getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
         return html
     
     
     def __str__(self):
         string = ''
-        for attribute in self._attributes:
+        for attribute in self._attributes.keys():
             if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
-                string += attribute + ': ' + getattr(self, '_'+attribute.replace('-', '_')) + '\n'
+                string += _(self._attributes[attribute]) + ': ' + getattr(self, '_'+attribute.replace('-', '_')) + '\n'
         return string
     
     def __cmp__(self, other):
