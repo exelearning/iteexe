@@ -195,34 +195,44 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     xtype: 'menu',
                                     items: [
                                         {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('Common Cartridge'),
-                                            accesskey: 'c',
-                                            itemId: 'file_export_cc'
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('SCORM1.2'),
-                                            accesskey: 's',
-                                            itemId: 'file_export_scorm12'
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('SCORM2004'),
-                                            accesskey: 'u',
-                                            itemId: 'file_export_scorm2004'
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('Agrega'),
-                                            accesskey: 'g',
-                                            itemId: 'file_export_agrega'
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('IMS Content Package'),
-                                            accesskey: 'i',
-                                            itemId: 'file_export_ims'
+                                	    xtype: 'accesskey_menuitem',
+                                            text: _('Educational Standard'),
+                                            accesskey: 'e',
+                                            menu: {
+                                                xtype: 'menu',
+                                                items: [ 
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        text: _('Common Cartridge'),
+                                                        accesskey: 'c',
+                                                        itemId: 'file_export_cc'
+                                                    },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        text: _('SCORM1.2'),
+                                                        accesskey: 's',
+                                                        itemId: 'file_export_scorm12'
+                                                    },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        text: _('SCORM2004'),
+                                                        accesskey: 'o',
+                                                        itemId: 'file_export_scorm2004'
+                                                    },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        text: _('Agrega SCORM2004'),
+                                                        accesskey: 'g',
+                                                        itemId: 'file_export_agrega'
+                                                    },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        text: _('IMS Content Package'),
+                                                        accesskey: 'i',
+                                                        itemId: 'file_export_ims'
+                                                    },
+                                                ]
+                                            }
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
@@ -242,15 +252,15 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                         text: _('Zip File'),
                                                         accesskey: 'z',
                                                         itemId: 'file_export_zip'
-                                                    }
+                                                    },
+                                                    {
+                                            		xtype: 'accesskey_menuitem',
+                                            		text: _('Single Page'),
+                                            		accesskey: 'p',
+                                            		itemId: 'file_export_singlepage'
+                                        	    },
                                                 ]
                                             }
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            text: _('Single Page'),
-                                            accesskey: 'p',
-                                            itemId: 'file_export_singlepage'
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',

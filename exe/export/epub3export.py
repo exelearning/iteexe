@@ -238,7 +238,7 @@ class NavEpub3(object):
         """
 
         for page in self.pages:
-            xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", page.name)
+            xmlStr += u"<li><a href=\"%s\">%s</a></li>\n" % (page.name + ".xhtml", page.node.title)
 
         xmlStr += u"""
                         </ol>
