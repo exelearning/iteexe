@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-06-30 19:09+0200\n"
-"PO-Revision-Date: 2013-04-22 17:09+0200\n"
+"PO-Revision-Date: 2013-06-30 19:35+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -1775,15 +1775,15 @@ msgstr "Pregunta de Selección Múltiple"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: exe/engine/notaidevice.py:45
 msgid "exelearning.net"
-msgstr ""
+msgstr "exelearning.net"
 
 #: exe/engine/notaidevice.py:53
 msgid "Comment:"
-msgstr ""
+msgstr "Comentario:"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:30
 msgid "FPD - Guidelines Students"
@@ -2546,7 +2546,7 @@ msgstr ""
 #: exe/jsui/mainpage.py:673 exe/jsui/mainpage.py:1218
 #, python-format
 msgid "Incorrect style file : %s"
-msgstr ""
+msgstr "Archivo de estilo incorrecto: %s"
 
 #: exe/jsui/mainpage.py:691
 msgid "Importing HTML..."
@@ -2653,25 +2653,25 @@ msgstr "Formato de archivo incorrecto"
 #: exe/jsui/mainpage.py:1215
 #, python-format
 msgid "Correct Style import : %s"
-msgstr ""
+msgstr "Importación de estilo correcta: %s"
 
 #: exe/jsui/mainpage.py:1235
 #, python-format
 msgid "Correct ZIP Style exported : %s"
-msgstr ""
+msgstr "Exportado correctamente estilo como paquete ZIP: %s"
 
 #: exe/jsui/mainpage.py:1238
 #, python-format
 msgid "can't export style : %s"
-msgstr ""
+msgstr "Error al exportar el estilo: %s"
 
 #: exe/jsui/mainpage.py:1255
 msgid "Style deleted "
-msgstr ""
+msgstr "Borrado estilo "
 
 #: exe/jsui/mainpage.py:1258
 msgid "can't delete style "
-msgstr ""
+msgstr "Fallo al borrar estilo "
 
 #: exe/jsui/propertiespage.py:92
 msgid "Failed to get properties"
@@ -2770,12 +2770,12 @@ msgstr "Preferencias"
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
-msgstr ""
+msgstr "Si ha hecho cambios, y no los ha guardado, se perderán. ¿Confirma que desea salir?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:394
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:339
 msgid "Style Manager"
-msgstr ""
+msgstr "Administrador de estilos"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:415
 msgid "Select package to insert"
@@ -2826,27 +2826,27 @@ msgstr "Se está realizando una importación. ¿Desea cancelarla?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:528
 msgid "Select ZIP Style file to import."
-msgstr ""
+msgstr "Seleccione el fichero ZIP de estilo que desea importar."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:539
 msgid "ZIP Style"
-msgstr ""
+msgstr "Paquete ZIP de estilo"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:549
 msgid "Export to ZIP Style as"
-msgstr ""
+msgstr "Exportar a paquete ZIP de estilo"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:558
 msgid "ZipFile"
-msgstr ""
+msgstr "Fichero ZIP"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:566
 msgid "Delete style?"
-msgstr ""
+msgstr "¿Borrar el estilo?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid "Do you want to delete the selected style?"
-msgstr ""
+msgstr "¿Desea borrar el estilo seleccionado?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:589
 msgid "Select Xliff file to import"
@@ -2884,11 +2884,11 @@ msgstr "Fichero de texto plano"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:685
 msgid "Export EPUB3 package as"
-msgstr ""
+msgstr "Exportar como paquete EPUB3"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:694
 msgid "EPUB3 File"
-msgstr ""
+msgstr "Fichero EPUB3"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:702
 msgid "Export SCORM package as"
@@ -3656,11 +3656,11 @@ msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
 msgid "LOM.es"
-msgstr ""
+msgstr "LOM.es"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
@@ -3745,7 +3745,7 @@ msgstr "Archivo XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
 msgid "Educational Standard"
-msgstr ""
+msgstr "Estándar educativo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:206
 msgid "Common Cartridge"
@@ -3761,7 +3761,7 @@ msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
 msgid "Agrega SCORM2004"
-msgstr ""
+msgstr "Agrega SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
 msgid "IMS Content Package"
@@ -3789,7 +3789,7 @@ msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:279
 msgid "EPUB3"
-msgstr ""
+msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:288
 msgid "Merging"
@@ -3806,15 +3806,15 @@ msgstr "Utilidades"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
 msgid "Styles manage"
-msgstr ""
+msgstr "Administrador de estilos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
 msgid "Export current style"
-msgstr ""
+msgstr "Exportar el estilo actual"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "Delete current style"
-msgstr ""
+msgstr "Borrar el estilo actual"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
 msgid "Refresh Display"
@@ -4705,7 +4705,7 @@ msgstr "Autoevaluación"
 #: exe/webui/element.py:2169 exe/webui/element.py:2563
 #: exe/webui/questionelement.py:152
 msgid "Solution"
-msgstr ""
+msgstr "Solución"
 
 #: exe/webui/clozelangfpdblock.py:105
 msgid "Now It's Your Turn"
@@ -5340,72 +5340,72 @@ msgstr "Navegadores instalados en el sistema"
 
 #: exe/webui/stylemanagerpage.py:107
 msgid "Import Style"
-msgstr ""
+msgstr "Importar estilo"
 
 #: exe/webui/stylemanagerpage.py:109
 msgid "Export Style"
-msgstr ""
+msgstr "Exportar estilo"
 
 #: exe/webui/stylemanagerpage.py:111
 msgid "Delete Style"
-msgstr ""
+msgstr "Borrar estilo"
 
 #: exe/webui/stylemanagerpage.py:142
 msgid "List of styles in your system:"
-msgstr ""
+msgstr "Lista de los estilos de su sistema:"
 
 #: exe/webui/stylemanagerpage.py:159
 msgid "Choose the style to export:"
-msgstr ""
+msgstr "Seleccione el estilo que desea exportar:"
 
 #: exe/webui/stylemanagerpage.py:181
 msgid "Choose the style to delete:"
-msgstr ""
+msgstr "Seleccione el estil oque desea borrar:"
 
 #: exe/webui/stylemanagerpage.py:202 exe/webui/stylemanagerpage.py:206
 msgid "Click to view the details of this style"
-msgstr ""
+msgstr "Pulse para ver los detalles de este estilo"
 
 #: exe/webui/stylemanagerpage.py:245
 #, python-format
 msgid "Style directory already exists: %s"
-msgstr ""
+msgstr "El directorio de estilos ya existe: %s"
 
 #: exe/webui/stylemanagerpage.py:255
 #, python-format
 msgid "The style name already exists: %s"
-msgstr ""
+msgstr "El nombre del estilo ya existe: %s"
 
 #: exe/webui/stylemanagerpage.py:257
 msgid "Success"
-msgstr ""
+msgstr "Éxito"
 
 #: exe/webui/stylemanagerpage.py:257
 #, python-format
 msgid "Successfully imported style: %s"
-msgstr ""
+msgstr "Estilo importado con éxito: %s"
 
 #: exe/webui/stylemanagerpage.py:260
 msgid "Incorrect style format (does not include content.css)"
-msgstr ""
+msgstr "Formato de estilo incorrecto (no incluye content.css)"
 
 #: exe/webui/stylemanagerpage.py:279
 #, python-format
 msgid "Style exported correctly: %s"
-msgstr ""
+msgstr "Estilo exportado correctamente: %s"
 
 #: exe/webui/stylemanagerpage.py:281
 #, python-format
 msgid "Could not export style : %s"
-msgstr ""
+msgstr "Error al exportar el estilo: %s"
 
 #: exe/webui/stylemanagerpage.py:294
 msgid "Styles deleted correctly"
-msgstr ""
+msgstr "Estilos borrados correctamente"
 
 #: exe/webui/stylemanagerpage.py:296
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Se ha producido un error inesperado"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:193
 #: exe/webui/truefalseelement.py:275
@@ -5521,7 +5521,7 @@ msgstr "Sitio propio"
 msgid ""
 "This article is licensed under the Creative Commons Attribution-"
 "ShareAlike License. It uses material from"
-msgstr ""
+msgstr "Este artículo está licenciado bajo la licencia CreativeCommons Reconocimiento-Compartir igual. Usa material procedente de"
 
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
