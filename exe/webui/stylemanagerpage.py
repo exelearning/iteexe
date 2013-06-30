@@ -257,7 +257,7 @@ class StyleManagerPage(RenderableResource):
                     self.alert(_(u'Success'), _(u'Successfully imported style: %s') % targetDir)  
             else:
                 absoluteTargetDir.rmtree()
-                self.alert(_(u'Error'), _(u'Incorrect style format (not include content.css)'))
+                self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
         self.action = ""
 
     def __exportStyle(self,  dirstylename, filename):
@@ -278,7 +278,7 @@ class StyleManagerPage(RenderableResource):
                 zippedFile.close()
                 self.alert(_(u'Correct'), _(u'Style exported correctly: %s') % sfile.encode('utf8'))
         except IOError:
-            self.alert(_(u'Error'), _(u'Can\'t export style : %s') % filename)
+            self.alert(_(u'Error'), _(u'Could not export style : %s') % filename)
         self.action = ""
             
  

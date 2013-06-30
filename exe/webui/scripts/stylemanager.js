@@ -95,7 +95,7 @@ function doDelete(){
 	else {
 		Ext.Msg.show({
 			title: _("Delete styles?"),
-			msg: _("Would you like delete selected styles?"),
+			msg: _("Do you want to delete the selected styles?"),
 			scope: this,
 			modal: true,
 			buttons: Ext.Msg.YESNOCANCEL,

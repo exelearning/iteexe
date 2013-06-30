@@ -367,7 +367,7 @@ Ext.define('eXe.controller.Toolbar', {
             'beforeclose': function(win) {
                 Ext.Msg.show( {
                     title: _('Confirm'),
-                    msg: _('If you have made changes and have not saved, they will be lost. Do you really want to quit?'),
+                    msg: _('If you have made changes and have not saved them, they will be lost. Do you really want to quit?'),
                     //scope: this,
                     //modal: true,
                     buttons: Ext.Msg.YESNO,
@@ -564,7 +564,7 @@ Ext.define('eXe.controller.Toolbar', {
     deleteStyle:function(){
     	Ext.Msg.show({
 			title: _("Delete style?"),
-			msg: _("Would you like delete selected style?"),
+			msg: _("Do you want to delete the selected style?"),
 			scope: this,
 			modal: true,
 			buttons: Ext.Msg.YESNOCANCEL,
