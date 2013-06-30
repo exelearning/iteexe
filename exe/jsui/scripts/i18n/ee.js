@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-04-22 16:43+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-06-30 19:09+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Frame Height:": "Ada\u014budede  \u0192e \u0256o\u0192e", 
  "Reflective question:": "\u014bugblede biabiawo ", 
  "Text Line": "Nu\u014b\u0254\u014bl\u0254m\u0254nu", 
@@ -49,7 +49,6 @@ translations = {
  "Delete": "\u00d0ee\u0256a", 
  "Objectives describe the expected outcomes of the learning and should\ndefine what the learners will be able to do when they have completed the\nlearning tasks.": "Elebe ta\u0256odzinua na\u0256\u0254 nus\u0254sr\u0254a metsonuwo eye woagbl\u0254 nu si wodi tso nusrolawo si ne wowu nus\u0254sr\u0254a nu", 
  "Incorrect!": "egble", 
- "It uses material from the ": "ez\u00e3na d\u0254w\u0254nuwo tsoa ", 
  "Reading Activity 0.11": "Nuxexle  \u0192e d\u0254wo", 
  "Home": "N\u0254\u0192e", 
  "No Images Loaded": "n\u0254n\u0254metata  mele edzi o ", 
@@ -84,7 +83,6 @@ translations = {
  "Reading Activity": "Nuxexle", 
  "No emphasis": "Megate gbe \u0256e edzi o", 
  "Information": "Gbedeasi", 
- "Select an image (JPG file)": "Tia n\u0254n\u0254metata a\u0256e (JPG file)", 
  "Hint": "Tok\u0254dzi", 
  "Japanese Wikipedia Article": "Dzapanit\u0254wo \u0192e  Wikipedia Nyadu ", 
  "Instant Marking?": "d\u0254a me toto enumake", 
