@@ -255,7 +255,6 @@ class Epub3Page(Page):
     This class transforms an eXe node into a SCO
     """
     def __init__(self, name, depth, node):
-        self.scormType = "scorm1.2"
         super(Epub3Page, self).__init__(name, depth, node)
 
     def save(self, outputDirPage):
@@ -274,13 +273,18 @@ class Epub3Page(Page):
         """
         Returns an XHTML string rendering this page.
         """
+        dT = common.getExportDocType()
         lb = "\n" #Line breaks
-        html = u'<?xml version="1.0" encoding="UTF-8"?>'+lb
-        html += u'<!DOCTYPE html>'
+        sectionTag = "div"
+        headerTag = "div"
+        if dT == "HTML5":
+            sectionTag = "section"
+            headerTag = "header"
+        html  = common.docType()
         lenguaje = G.application.config.locale
         if self.node.package.dublinCore.language!="":
-            lenguaje = self.node.package.dublinCore.language        
-        html += u"<html lang=\"" + lenguaje + u"\" xml:lang=\"" + lenguaje + u"\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
+            lenguaje = self.node.package.dublinCore.language
+        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
         html += u"<head>"+lb
         html += u"<title>"
         if self.node.id=='0':
@@ -293,69 +297,81 @@ class Epub3Page(Page):
                 html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>"+lb        
-        html += u"<meta charset=\"UTF-8\" />"+lb
-        html += u"<!-- Created using eXe: http://exelearning.net -->"+lb
+        html += u" </title>"+lb
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />"+lb
+        if dT != "HTML5" and self.node.package.dublinCore.language!="":
+            html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
+        if self.node.package.author!="":
+            html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
+        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'+lb
+        if self.node.id=='0':
+            if self.node.package.description!="":
+                html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
+        if common.hasWikipediaIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
+        if common.hasGalleryIdevice(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.nodeHasMediaelement(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"mediaelementplayer.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
+        if dT == "HTML5":
+            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
+        if common.hasGalleryIdevice(self.node):
+            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
-
+        if common.hasMagnifier(self.node):
+            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
+        if common.nodeHasMediaelement(self.node):
+            html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
+            html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
         html += u"</head>"+lb
-        html += u"<body>"+lb
-
-        html += u"<div id=\"outer\">"+lb
-        html += u"<div id=\"main\">"+lb
-
-        if self.node.package.backgroundImg:
-            html += u"<div id=\"nodeDecoration\" style=\"background-image: url(" + self.node.package.backgroundImg.basename() + u"); "
-
-            if self.node.package.backgroundImgTile:
-                html += u"background-repeat: repeat-x;"
-            else:
-                html += u"background-repeat: no-repeat;"
-            html += u"\">"+lb
-        else:
-            html += u"<div id=\"nodeDecoration\">"+lb
-
-        html += u"<h1 id=\"nodeTitle\">"
+        html += u"<body class=\"exe-epub3\">"+lb
+        html += u"<"+sectionTag+" id=\"outer\">"+lb
+        html += u"<"+sectionTag+" id=\"main\">"+lb
+        html += u"<"+headerTag+" id=\"nodeDecoration\">"
+        html += u'<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
         html += u'</h1>'
-        html += '</div>'+lb
+        html += u"</"+headerTag+">"+lb
 
         for idevice in self.node.idevices:
-            html += u'<div class="%s" id="id%s">%s' % (idevice.klass,
-                    idevice.id, lb)
-            block = g_blockFactory.createBlock(None, idevice)
-            if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
-            if hasattr(idevice, "isQuiz"):
-                html += block.renderJavascriptForWeb()
-            html += self.processInternalLinks(
-                    block.renderView(self.node.package.style))
-            
-            if hasattr(idevice, "isQuiz"):
-                html += u"<b>tu resultado es X</b>"
-            
-            html += u'</div>'+lb # iDevice div
+            if idevice.klass != 'NotaIdevice':
+                e=" em_iDevice"
+                if unicode(idevice.emphasis)=='0':
+                    e=""
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
+                block = g_blockFactory.createBlock(None, idevice)
+                if not block:
+                    log.critical("Unable to render iDevice.")
+                    raise Error("Unable to render iDevice.")
+                if hasattr(idevice, "isQuiz"):
+                    html += block.renderJavascriptForWeb()
+                if idevice.title != "Forum Discussion":
+                    html += self.processInternalLinks(
+                        block.renderView(self.node.package.style))
+            html += u'</'+sectionTag+'>'+lb # iDevice div
 
-        html += u"</div>"+lb
-        html += u"</div>"+lb
-
+        html += u"</"+sectionTag+">"+lb # /#main
+        if common.nodeHasMediaelement(self.node):
+           html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         html += self.renderLicense()
         html += self.renderFooter()
+        html += u"</"+sectionTag+">"+lb # /#outer
         html += u"</body>"+lb+"</html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
-        aux = re.compile(u"exe_math_latex=\"[^\"]*\"")
+        aux = re.compile("exe_math_latex=\"[^\"]*\"")
         html = aux.sub("", html)
-        aux = re.compile(u"exe_math_size=\"[^\"]*\"")
+        aux = re.compile("exe_math_size=\"[^\"]*\"")
         html = aux.sub("", html)
         #JR: Cambio el & en los enlaces del glosario
         html = html.replace("&concept", "&amp;concept")
-        html = html.replace("&nbsp;", "&#160;")
-        #JR: Cambiamos las anclas por enlaces a archivos
-        html = html.replace('href="#', 'href="')
+        # Remove "resources/" from data="resources/ and the url param
+        html = html.replace("video/quicktime\" data=\"resources/", "video/quicktime\" data=\"")
+        html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
+        html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
+        html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
         return html
 
     def processInternalLinks(self, html):
@@ -366,7 +382,7 @@ class Epub3Page(Page):
         leaving only its text, since such links are not to be in the LMS.
         """
         return common.removeInternalLinks(html)
-        
+
 
 class Epub3Export(object):
     """
@@ -386,27 +402,27 @@ class Epub3Export(object):
         self.config       = config
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
+        self.cssDir       = config.webDir/"css"
         self.templatesDir = config.webDir/"templates"
-        self.schemasDir   = config.webDir/"schemas"
+        self.schemasDir   = config.webDir/"schemas/ims"
         self.styleDir     = Path(styleDir)
         self.filename     = Path(filename)
         self.pages        = []
-        self.scormType    = "scorm1.2"
-       
+
     def export(self, package):
-        """ 
+        """
         Export epub 3 package
         """
         # First do the export to a temporary directory
         outputDir = TempDirPath()
-        
+
         '''
         fileDir = outputDir/"META-INF"
         fileDir.mkdir()
         fileDir = outputDir/"Content"
         fileDir.mkdir()
         '''
-        
+
         metainfPages = Path(outputDir.abspath() + '/META-INF')
         #metainfPages = outputDir/'META-INF'
         metainfPages.mkdir()
@@ -415,7 +431,7 @@ class Epub3Export(object):
         contentPages.mkdir()
         #print contentPages.abspath()
         # print outputDir.abspath()
-        
+
         # Export the package content
         self.pages = [Epub3Page("cover", 1, package.root)]
 
@@ -435,12 +451,16 @@ class Epub3Export(object):
         styleFiles = [self.styleDir/'..'/'base.css']
         styleFiles += [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += [f for f in self.styleDir.files("*.css")
-                if f.basename() != "nav.css"]
+                if f.basename() <> "nav.css"]
         styleFiles += self.styleDir.files("*.jpg")
         styleFiles += self.styleDir.files("*.gif")
         styleFiles += self.styleDir.files("*.png")
         styleFiles += self.styleDir.files("*.js")
         styleFiles += self.styleDir.files("*.html")
+        styleFiles += self.styleDir.files("*.ttf")
+        styleFiles += self.styleDir.files("*.eot")
+        styleFiles += self.styleDir.files("*.otf")
+        styleFiles += self.styleDir.files("*.woff")
         # FIXME for now, only copy files referenced in Common Cartridge
         # this really should apply to all exports, but without a manifest
         # of the files needed by an included stylesheet it is too restrictive
@@ -451,11 +471,15 @@ class Epub3Export(object):
         self.scriptsDir.copylist(('common.js',), contentPages)
 
         # copy players for media idevices.
-        hasFlowplayer = False
-        hasMagnifier = False
-        hasXspfplayer = False
-        isBreak = False
-        
+        hasFlowplayer     = False
+        hasMagnifier      = False
+        hasXspfplayer     = False
+        hasGallery        = False
+        hasWikipedia      = False
+        isBreak           = False
+        hasInstructions   = False
+        hasMediaelement   = False
+
         for page in self.pages:
             if isBreak:
                 break
@@ -472,19 +496,67 @@ class Epub3Export(object):
                 if not hasXspfplayer:
                     if 'xspf_player.swf' in idevice.systemResources:
                         hasXspfplayer = True
-                        
+
+        for page in self.pages:
+            if isBreak:
+                break
+            for idevice in page.node.idevices:
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
+                    isBreak = True
+                    break
+                if not hasFlowplayer:
+                    if 'flowPlayer.swf' in idevice.systemResources:
+                        hasFlowplayer = True
+                if not hasMagnifier:
+                    if 'mojomagnify.js' in idevice.systemResources:
+                        hasMagnifier = True
+                if not hasXspfplayer:
+                    if 'xspf_player.swf' in idevice.systemResources:
+                        hasXspfplayer = True
+                if not hasGallery:
+                    if 'GalleryIdevice' == idevice.klass:
+                        hasGallery = True
+                if not hasWikipedia:
+                    if 'WikipediaIdevice' == idevice.klass:
+                        hasWikipedia = True
+                if not hasInstructions:
+                    if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
+                        hasInstructions = True
+                if not hasMediaelement:
+                    hasMediaelement = common.ideviceHasMediaelement(idevice)
+
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(contentPages/'flowPlayer.swf')
-        # JR: anadimos los controles
-	    controlsfile = (self.templatesDir/'flowplayer.controls.swf')
-	    controlsfile.copyfile(contentPages/'flowplayer.controls.swf')
+            controlsfile = (self.templatesDir/'flowplayer.controls.swf')
+            controlsfile.copyfile(contentPages/'flowplayer.controls.swf')
         if hasMagnifier:
-            videofile = (self.templatesDir/'magnifier.swf')
-            videofile.copyfile(contentPages/'magnifier.swf')
+            videofile = (self.templatesDir/'mojomagnify.js')
+            videofile.copyfile(contentPages/'mojomagnify.js')
         if hasXspfplayer:
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(contentPages/'xspf_player.swf')
+        if hasGallery:
+            imageGalleryCSS = (self.cssDir/'exe_lightbox.css')
+            imageGalleryCSS.copyfile(contentPages/'exe_lightbox.css')
+            imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
+            imageGalleryJS.copyfile(contentPages/'exe_lightbox.js')
+            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), contentPages)
+        if hasWikipedia:
+            wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
+            wikipediaCSS.copyfile(contentPages/'exe_wikipedia.css')
+        if hasInstructions:
+            common.copyFileIfNotInStyle('panel-amusements.png', self, contentPages)
+            common.copyFileIfNotInStyle('stock-stop.png', self, contentPages)
+        if hasMediaelement:
+            jquery = (self.scriptsDir/'jquery.js')
+            jquery.copyfile(contentPages/'jquery.js')
+            mediaelement = (self.scriptsDir/'mediaelement')
+            mediaelement.copyfiles(contentPages)
+
+        if package.license == "GNU Free Documentation License":
+            # include a copy of the GNU Free Documentation Licence
+            (self.templatesDir/'fdl.html').copyfile(contentPages/'fdl.html')
 
         # Create the nav.xhtml file
         container = NavEpub3(self.pages, contentPages)
@@ -501,14 +573,13 @@ class Epub3Export(object):
         # Zip it up!
         self.filename.safeSave(self.doZip, _(u'EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
-        
+
         outputDir.rmtree()
 
     def doZip(self, fileObj, outputDir):
         """
         Actually does the zipping of the file. Called by 'Path.safeSave'
         """
-        # Zip up the scorm package
         zipped = ZipFile(fileObj, "w")
 
         mimetype = outputDir/"mimetype"
@@ -522,7 +593,7 @@ class Epub3Export(object):
             while (outputDir.basename() != parentdir.basename()):
                 relativePath = parentdir.basename()/relativePath
                 parentdir = parentdir.splitpath()[0]
-            
+
             zipped.write(epubFile,
                              relativePath.encode('utf8'),
                              compress_type=ZIP_DEFLATED)
