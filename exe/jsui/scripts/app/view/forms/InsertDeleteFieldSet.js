@@ -55,88 +55,147 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
     extend: 'eXe.view.forms.PreserveScrollFieldSet',
     alias: 'widget.insertdelfieldset',
     
-    lastId: 1,
-
+    lastId: 2,
+    listeners: {
+       	    scope: this,
+           'add': function(container, component, index, eOpts ){
+//        	   console.log('ADD EVENT, componet: '+ component.getId());        	   
+        	   if (container.getXType() == 'insertdelfieldset'){
+        		   var me = container;
+        		   var sid = component.inputId, sid;
+        		   while (component){
+        			  if (component.inputId){
+        				   sid = component.inputId,
+        				   vid = sid.split('_');
+		                  if (! me.itemId){
+		                      if (/contribute[0-9]$/.exec(vid[2]) && /.*date_description_string[0-9]*/.exec(sid)){
+		                          me.itemId = vid[0] +  '_' + vid[1] + '_' + vid[2] +'_date';
+		                      }else if (/taxon[0-9]*_entry_string[0-9]*$/.exec(sid)){
+		                      	me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2] + '_' + vid[3].replace(/[0-9]+/g, '');
+		                      }
+		                      else{
+		                          me.itemId = vid[0] +  '_' + vid[1] +  '_' + vid[2].replace(/[0-9]+/g, '');                                        
+		                      }
+		                      me.addButtonObj = me.items.items[0].items.items[1];
+//		                      console.log(me.itemId);
+		                  }        				   
+        			   }
+        			   if (component.down){
+        				   component = component.down();   
+        			   }else{
+        				   component = false;
+        			   }        			   
+        		   }
+        	   }         	     
+           },           
+     },
     initComponent: function() {
         var me = this,
-            items = [
-                {
-                    xtype: 'container',
-                    layout: 'anchor',
-                    items: [
-                        {
-                            xtype: 'container',
-                            layout: 'hbox',
-                            anchor: '100%',
-                            items: [
-                                {
-                                    xtype: 'container',
-                                    layout: 'anchor',
-                                    flex: this.flex !== undefined? this.flex : 1,
-                                    items: this.item
-                                },
-                                {
-                                    xtype: 'container',
-                                    layout: 'anchor',
-                                    flex: 0,
-                                    items: [
-                                        {
-                                            xtype: 'image',
-                                            src: '/images/plusbutton.png',
-                                            height: 24,
-                                            width: 24,
-                                            anchor: '100%',
-                                            listeners: {
-                                                afterrender: function(c) {
-                                                    c.el.on('click', function(a) {
-                                                        var item = this.item, i;
-                                                        if (item.xtype === "container") {
-                                                            for (i = 0; i < item.items.length; i++)
-                                                                item.items[i].item.inputId = item.items[i].item.inputId + String(this.lastId++);
-                                                        }
-                                                        else if (Ext.isArray(item)) {
-                                                            for (i = 0; i<item.length; i++)
-                                                                item[i].item.inputId = item[i].item.inputId + String(this.lastId++);
-                                                        }
-                                                        else
-                                                            item.item.inputId = item.item.inputId + String(this.lastId++);
-                                                        items[0].items[0].items[0].items = item;
-                                                        this.preserveScroll();
-                                                        this.add(items);
-                                                        this.restoreScroll();
-                                                    }, me);
-                                                }
-                                            }
-                                        },
-                                        {
-                                            xtype: 'image',
-                                            src: '/images/minusbutton.png',
-                                            height: 24,
-                                            width: 24,
-                                            anchor: '100%',
-                                            listeners: {
-                                                afterrender: function(c) {
-                                                    c.el.on('click', function(a) {
-                                                        var items = this.up().up().up(),
-                                                            fieldset = items.up();
-                                                        if (fieldset.items.length > 1) {
-                                                            fieldset.preserveScroll();
-                                                            fieldset.remove(items,true);
-                                                            fieldset.restoreScroll();
-                                                        }
-                                                    }, c);
-                                                }
-                                            }
-                                        }
-                                    ]
+            items,
+            addButton = null;
+        	addButtonHide = false;
+
+        this.item.flex = this.flex !== undefined? this.flex : 1;
+        if (this.addButton != false) {
+            addButton = {
+                xtype: 'image',
+                src: '/images/plusbutton.png',
+                height: 24,
+                width: 24,
+                hidden: this.addButtonHide,
+                itemId: 'addbutton',
+                listeners: {
+                    afterrender: function(c) {
+                        c.up().actualId = me.lastId-1;
+                        c.el.on('click', function(a) {
+                            var i,
+                                re,
+                                id = [],
+                                item = this,
+                                depth = 1;
+
+                            while (item.xtype != 'lomdata') {
+                                if (item.actualId) {
+                                    id[depth] = item.actualId;
+                                    depth++;
                                 }
-                            ]
-                        }
-                    ]
+                                item = item.up();
+                            }
+                            id[0] = this.lastId++;
+
+
+                            function updater(key, value, object) {
+                                if (key === 'inputId') {
+                                    object.inputId = object.templateId;
+                                    for (i = 0; i < depth; i++) {
+                                        re = new RegExp('\\{' + (depth-i) + '\\}');
+                                        object.inputId = object.inputId.replace(re, String(id[i]));
+                                    }
+                                    object.inputId = object.inputId.replace(/\{[1-9]\}/g, '1');
+                                }
+                                if (key === 'item') {
+                                    Ext.iterate(object.item, updater);
+                                    return false;
+                                }
+                                if (key === 'items') {
+                                    Ext.iterate(object.items, updater);
+                                    return false;
+                                }
+                                if (Ext.isObject(key))
+                                    Ext.iterate(key, updater);
+                            }
+                            Ext.iterate(this.item, updater);
+                            this.preserveScroll();
+                            this.add(items);
+                            this.restoreScroll();
+                        }, me);
+                    }
                 }
-            ];
+            }
+        }
+        items = [
+            {
+                xtype: 'container',
+                layout: 'hbox',
+                anchor: '100%',
+                defaults: {
+                    flex: 0
+                },
+                items: [
+                    this.item,
+                    addButton,                 
+                    {
+                        xtype: 'image',
+                        src: '/images/minusbutton.png',
+                        itemId: 'delbutton',
+                        height: 24,
+                        width: 24,
+                        listeners: {
+                            afterrender: function(c) {
+                                c.el.on('click', function(a) {
+                                    var items = this.up(),
+                                        fieldset = items.up()
+                                        readonly = items.down("[readOnly=true]");
+//                                        readonly = false
+//                                    if (fieldset.addButton === false) {
+//                                        readonly = items.items.items[0].items.items[0].items.items[0].readOnly;
+//                                    }
+                                    
+                                    if (fieldset.items.length > 1 && !readonly) {
+                                        fieldset.preserveScroll();
+                                        fieldset.remove(items,true);
+                                        fieldset.restoreScroll();
+                                    }
+                                }, c);
+                            }
+                        }
+                    }
+                ]
+            }
+        ];
         
         Ext.applyIf(me, {
+            layout: 'anchor',
             items: items
         });
         

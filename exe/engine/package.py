@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
@@ -17,6 +18,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+
 """
 Package represents the collection of resources the user is editing
 i.e. the "package".
@@ -25,6 +27,7 @@ i.e. the "package".
 import logging
 import time
 import zipfile 
+import uuid
 import re
 from xml.dom                   import minidom
 from exe.engine.path           import Path, TempDirPath, toUnicode
@@ -39,6 +42,7 @@ from twisted.spread.jelly      import Jellyable, Unjellyable
 from exe.engine.beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
+from exe.engine.lom import lomsubs
 
 log = logging.getLogger(__name__)
 
@@ -270,113 +274,13 @@ class DublinCore(Jellyable, Unjellyable):
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
 
-
-class LomES(Jellyable, Unjellyable):
-    """
-    Holds LOM-ES info
-    """
-
-    def __init__(self):
-        self.identifier = ''
-        self.title = ''
-        self.description = ''
-        self.keyword = ''
-        self.coverage = ''
-        self.structure = ''
-        self.aggregationlevel = ''
-        self.version = ''
-        self.status = ''
-        self.role = ''
-        self.entity = ''
-        self.date = ''
-        self.metadataSchema = ''
-        self.language = ''
-        self.format = ''
-        self.size = ''
-        self.location = ''
-        self.type = ''
-        self.name = ''
-        self.installationremarks = ''
-        self.otherplatformrequirements = ''
-        self.duration = ''
-        self.interactivitytype = ''
-        self.learningresourcetype = ''
-        self.interactivitylevel = ''
-        self.semanticdensity = ''
-        self.intendedenduserrole = ''
-        self.context = ''
-        self.typicalagerange = ''
-        self.difficulty = ''
-        self.cognitiveprocess = ''
-        self.cost = ''
-        self.copyrightandotherrestrictions = ''
-        self.access = ''
-        self.kind = ''
-        self.purpose = ''
-        self.taxonpath = ''
-        self.id = ''
-        self.taxon = ''
-
-    def __setattr__(self, name, value):
-        self.__dict__[name] = toUnicode(value)  
-        
-
-class Lom(Jellyable, Unjellyable):
-    """
-    Holds LOM info
-    """
-
-    def __init__(self):
-        self.catalog = ''
-        self.identifier = ''
-        self.title = ''
-        self.description = ''
-        self.keyword = ''
-        self.coverage = ''
-        self.structure = ''
-        self.aggregationlevel = ''
-        self.version = ''
-        self.status = ''
-        self.role = ''
-        self.entity = ''
-        self.date = ''
-        self.metadataSchema = ''
-        self.language = ''
-        self.format = ''
-        self.size = ''
-        self.location = ''
-        self.type = ''
-        self.name = ''
-        self.installationremarks = ''
-        self.otherplatformrequirements = ''
-        self.duration = ''
-        self.interactivitytype = ''
-        self.learningresourcetype = ''
-        self.interactivitylevel = ''
-        self.semanticdensity = ''
-        self.intendedenduserrole = ''
-        self.context = ''
-        self.typicalagerange = ''
-        self.difficulty = ''
-        self.cost = ''
-        self.copyrightandotherrestrictions = ''
-        self.kind = ''
-        self.purpose = ''
-        self.taxonpath = ''
-        self.id = ''
-        self.taxon = ''
-        
-    def __setattr__(self, name, value):
-        self.__dict__[name] = toUnicode(value)         
-        
-
          
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -417,29 +321,209 @@ class Package(Persistable):
         self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()
-        self.lomEs         = LomES()
-        self.lom           = Lom()
+        self.lomEs         = lomsubs.lomSub.factory()
+        entry = str(uuid.uuid4())
+        self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'))
+        self.lom           = lomsubs.lomSub.factory()
+        self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
         self.scowsource    = False
-        self.license       = "None"
+        self.exportMetadataType = "LOMES"
+        self.license       = u''
         self.footer        = ""
+        self._lang = G.application.config.locale.split('_')[0]
+        self._objectives = u''
+        self._preknowledge = u''
+        self._learningResourceType = u''
+        self._intendedEndUserRoleType = u''
+        self._intendedEndUserRoleGroup = False
+        self._intendedEndUserRoleTutor = False
+        self._contextPlace = u''
+        self._contextMode = u''
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
         self.resources = {} # Checksum-[_Resource(),..]
 
-
     # Property Handlers
 
     def set_name(self, value):
         self._name = toUnicode(value)
+
     def set_title(self, value):
+        if self.dublinCore.title == self._title:
+            self.dublinCore.title = value
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            title = metadata.get_general().get_title()
+            if title:
+                found = False
+                for string in title.get_string():
+                    if string.get_valueOf_() == self._title.encode('utf-8'):
+                        found = True
+                        if value:
+                            string.set_language(lang_str)
+                            string.set_valueOf_(value_str)
+                        else:
+                            title.string.remove(string)
+                if not found:
+                    if value:
+                        title.add_string(lomsubs.LangStringSub(lang_str, value_str))
+            else:
+                if value:
+                    title = lomsubs.titleSub([lomsubs.LangStringSub(lang_str, value_str)])
+                    metadata.get_general().set_title(title)
         self._title = toUnicode(value)
+
+    def set_lang(self, value):
+        if self.dublinCore.language in [self._lang, '']:
+            self.dublinCore.language = value
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            language = metadata.get_general().get_language()
+            if language:
+                for LanguageId in language:
+                    if LanguageId.get_valueOf_() == self._lang.encode('utf-8'):
+                        LanguageId.set_valueOf_(value_str)
+            else:
+                language = [lomsubs.LanguageIdSub(value_str)]
+                metadata.get_general().set_language(language)
+
+            metametadata = metadata.get_metaMetadata()
+            if metametadata:
+                language = metametadata.get_language()
+                if language:
+                    if language.get_valueOf_() == self._lang.encode('utf-8'):
+                        language.set_valueOf_(value_str)
+                else:
+                    language = lomsubs.LanguageIdSub(value_str)
+                    metametadata.set_language(language)
+            else:
+                language = lomsubs.LanguageIdSub(value_str)
+                metametadata = lomsubs.metaMetadataSub(language=language)
+                metadata.set_metaMetadata(metametadata)
+
+            educationals = metadata.get_educational()
+            if educationals:
+                for educational in educationals:
+                    language = educational.get_language()
+                    if language:
+                        for LanguageId in language:
+                            if LanguageId.get_valueOf_() == self._lang.encode('utf-8'):
+                                LanguageId.set_valueOf_(value_str)
+            else:
+                language = lomsubs.LanguageIdSub(value_str)
+                educational = [lomsubs.educationalSub(language=[language])]
+                metadata.set_educational(educational)
+        self._lang = toUnicode(value)
+
     def set_author(self, value):
+        if self.dublinCore.creator == self._author:
+            self.dublinCore.creator = value
+        value_str = value.encode('utf-8')
+        vcard = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET: ORG: END:VCARD'
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            src = lomsubs.sourceValueSub()
+            src.set_valueOf_(source)
+            src.set_uniqueElementName('source')
+            val = lomsubs.roleValueSub()
+            val.set_valueOf_('author')
+            val.set_uniqueElementName('value')
+            role = lomsubs.roleSub()
+            role.set_source(src)
+            role.set_value(val)
+            role.set_uniqueElementName('role')
+            entity = lomsubs.entitySub(vcard % value_str)
+
+            lifeCycle = metadata.get_lifeCycle()
+            if lifeCycle:
+                contributes = lifeCycle.get_contribute()
+                found = False
+                for contribute in contributes:
+                    entitys = contribute.get_entity()
+                    rol = contribute.get_role()
+                    if rol:
+                        rolval = rol.get_value()
+                        if rolval:
+                            if rolval.get_valueOf_() == 'author':
+                                for ent in entitys:
+                                    if ent.get_valueOf_() == vcard % self.author.encode('utf-8'):
+                                        found = True
+                                        if value:
+                                            ent.set_valueOf_(vcard % value_str)
+                                        else:
+                                            contribute.entity.remove(ent)
+                                            if not contribute.entity:
+                                                contributes.remove(contribute)
+                if not found:
+                    contribute = lomsubs.contributeSub(role, [entity])
+                    lifeCycle.add_contribute(contribute)
+            else:
+                if value:
+                    contribute = lomsubs.contributeSub(role, [entity])
+                    lifeCycle = lomsubs.lifeCycleSub(contribute=[contribute])
+                    metadata.set_lifeCycle(lifeCycle)
+
+            metaMetadata = metadata.get_metaMetadata()
+            if metaMetadata:
+                contributes = metaMetadata.get_contribute()
+                found = False
+                for contribute in contributes:
+                    entitys = contribute.get_entity()
+                    rol = contribute.get_role()
+                    if rol:
+                        rolval = rol.get_value()
+                        if rolval:
+                            if rolval.get_valueOf_() == 'author':
+                                for ent in entitys:
+                                    if ent.get_valueOf_() == vcard % self.author.encode('utf-8'):
+                                        found = True
+                                        if value:
+                                            ent.set_valueOf_(vcard % value_str)
+                                        else:
+                                            contribute.entity.remove(ent)
+                                            if not contribute.entity:
+                                                contributes.remove(contribute)
+                if not found:
+                    contribute = lomsubs.contributeMetaSub(role, [entity])
+                    metaMetadata.add_contribute(contribute)
+            else:
+                if value:
+                    contribute = lomsubs.contributeMetaSub(role, [entity])
+                    metaMetadata.set_contribute([contribute])
         self._author = toUnicode(value)
+
     def set_description(self, value):
+        if self.dublinCore.description == self._description:
+            self.dublinCore.description = value
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            description = metadata.get_general().get_description()
+            if description:
+                description_found = False
+                for desc in description:
+                    for string in desc.get_string():
+                        if string.get_valueOf_() == self._description.encode('utf-8'):
+                            description_found = True
+                            if value:
+                                string.set_language(lang_str)
+                                string.set_valueOf_(value_str)
+                            else:
+                                desc.string.remove(string)
+                                description.remove(desc)
+                if not description_found:
+                    if value:
+                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+                        metadata.get_general().add_description(description)
+
+            else:
+                if value:
+                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
+                    metadata.get_general().set_description(description)
         self._description = toUnicode(value)
 
     def get_backgroundImg(self):
@@ -465,41 +549,341 @@ class Package(Persistable):
 
     def get_level1(self):
         return self.levelName(0)
+
     def set_level1(self, value):
         if value != '':
-            self._levelNames[0] = value 
+            self._levelNames[0] = value
         else:
             self._levelNames[0] = self.defaultLevelNames[0]
 
     def get_level2(self):
         return self.levelName(1)
+
     def set_level2(self, value):
         if value != '':
-            self._levelNames[1] = value 
+            self._levelNames[1] = value
         else:
             self._levelNames[1] = self.defaultLevelNames[1]
 
     def get_level3(self):
         return self.levelName(2)
+
     def set_level3(self, value):
         if value != '':
-            self._levelNames[2] = value 
+            self._levelNames[2] = value
         else:
             self._levelNames[2] = self.defaultLevelNames[2]
 
+    def set_objectives(self, value):
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            description = metadata.get_general().get_description()
+            if description:
+                description_found = False
+                for desc in description:
+                    for string in desc.get_string():
+                        if string.get_valueOf_() == self._objectives.encode('utf-8'):
+                            description_found = True
+                            if value:
+                                string.set_language(lang_str)
+                                string.set_valueOf_(value_str)
+                            else:
+                                desc.string.remove(string)
+                                description.remove(desc)
+                if not description_found:
+                    if value:
+                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+                        metadata.get_general().add_description(description)
+            else:
+                if value:
+                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
+                    metadata.get_general().set_description(description)
+        self._objectives = toUnicode(value)
+
+    def set_preknowledge(self, value):
+        lang_str = self.lang.encode('utf-8')
+        value_str = value.encode('utf-8')
+        for metadata in [self.lom, self.lomEs]:
+            description = metadata.get_general().get_description()
+            if description:
+                description_found = False
+                for desc in description:
+                    for string in desc.get_string():
+                        if string.get_valueOf_() == self._preknowledge.encode('utf-8'):
+                            description_found = True
+                            if value:
+                                string.set_language(lang_str)
+                                string.set_valueOf_(value_str)
+                            else:
+                                desc.string.remove(string)
+                                description.remove(desc)
+                if not description_found:
+                    if value:
+                        description = lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])
+                        metadata.get_general().add_description(description)
+            else:
+                if value:
+                    description = [lomsubs.descriptionSub([lomsubs.LangStringSub(lang_str, value_str)])]
+                    metadata.get_general().set_description(description)
+        self._preknowledge = toUnicode(value)
+
+    def license_map(self, source, value):
+        '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
+        if source == 'LOM-ESv1.0':
+            return value
+        elif source == 'LOMv1.0':
+            if value == 'not appropriate' or value == 'public domain':
+                return 'no'
+            else:
+                return 'yes'
+
+    def set_license(self, value):
+        value_str = value.encode('utf-8')
+        if self.dublinCore.rights == self.license:
+            self.dublinCore.rights = value
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            rights = metadata.get_rights()
+            if not rights:
+                metadata.set_rights(lomsubs.rightsSub())
+            copyrightAndOtherRestrictions = metadata.get_rights().get_copyrightAndOtherRestrictions()
+            if copyrightAndOtherRestrictions:
+                if copyrightAndOtherRestrictions.get_value().get_valueOf_() == self.license_map(source, self.license.encode('utf-8')):
+                    if value:
+                        copyrightAndOtherRestrictions.get_value().set_valueOf_(self.license_map(source, value_str))
+                    else:
+                        copyrightAndOtherRestrictions = None
+            else:
+                if value:
+                    src = lomsubs.sourceValueSub()
+                    src.set_valueOf_(source)
+                    src.set_uniqueElementName('source')
+                    val = lomsubs.copyrightAndOtherRestrictionsValueSub()
+                    val.set_valueOf_(self.license_map(source, value_str))
+                    val.set_uniqueElementName('value')
+                    copyrightAndOtherRestrictions = lomsubs.copyrightAndOtherRestrictionsSub()
+                    copyrightAndOtherRestrictions.set_source(src)
+                    copyrightAndOtherRestrictions.set_value(val)
+                    copyrightAndOtherRestrictions.set_uniqueElementName('copyrightAndOtherRestrictions')
+                    metadata.get_rights().set_copyrightAndOtherRestrictions(copyrightAndOtherRestrictions)
+        self.license = toUnicode(value)
+
+    def learningResourceType_map(self, source, value):
+        '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
+        if source == 'LOM-ESv1.0':
+            return value
+        elif source == 'LOMv1.0':
+            lomMap = {
+                "guided reading": "narrative text",
+                "master class": "lecture",
+                "textual-image analysis": "exercise",
+                "discussion activity": "problem statement",
+                "closed exercise or problem": "exercise",
+                "contextualized case problem": "exercise",
+                "open problem": "problem statement",
+                "real or virtual learning environment": "simulation",
+                "didactic game": "exercise",
+                "webquest": "problem statement",
+                "experiment": "experiment",
+                "real project": "simulation",
+                "simulation": "simulation",
+                "questionnaire": "questionnaire",
+                "exam": "exam",
+                "self assessment": "self assessment",
+                "": ""
+            }
+            return lomMap[value]
+
+    def set_learningResourceType(self, value):
+        value_str = value.encode('utf-8')
+        if value:
+            for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+                educationals = metadata.get_educational()
+                src = lomsubs.sourceValueSub()
+                src.set_valueOf_(source)
+                src.set_uniqueElementName('source')
+                val = lomsubs.learningResourceTypeValueSub()
+                val.set_valueOf_(self.learningResourceType_map(source, value_str))
+                val.set_uniqueElementName('value')
+                learningResourceType = lomsubs.learningResourceTypeSub(self.learningResourceType_map(source, value_str))
+                learningResourceType.set_source(src)
+                learningResourceType.set_value(val)
+                if educationals:
+                    for educational in educationals:
+                        learningResourceTypes = educational.get_learningResourceType()
+                        found = False
+                        if learningResourceTypes:
+                            for i in learningResourceTypes:
+                                if i.get_value().get_valueOf_() == self.learningResourceType_map(source, self.learningResourceType.encode('utf-8')):
+                                    found = True
+                                    index = learningResourceTypes.index(i)
+                                    educational.insert_learningResourceType(index, learningResourceType)
+                        if not found:
+                            educational.add_learningResourceType(learningResourceType)
+                else:
+                    educational = [lomsubs.educationalSub(learningResourceType=[learningResourceType])]
+                    metadata.set_educational(educational)
+        self._learningResourceType = toUnicode(value)
+
+    def intendedEndUserRole_map(self, source, value):
+        '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
+        if source == 'LOM-ESv1.0':
+            return value
+        elif source == 'LOMv1.0':
+            if not value or value == 'tutor':
+                return value
+            else:
+                return 'learner'
+
+    def set_intendedEndUserRoleType(self, value):
+        value_str = value.encode('utf-8')
+        if value:
+            for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+                educationals = metadata.get_educational()
+                src = lomsubs.sourceValueSub()
+                src.set_valueOf_(source)
+                src.set_uniqueElementName('source')
+                val = lomsubs.intendedEndUserRoleValueSub()
+                val.set_valueOf_(self.intendedEndUserRole_map(source, value_str))
+                val.set_uniqueElementName('value')
+                intendedEndUserRole = lomsubs.intendedEndUserRoleSub(self.intendedEndUserRole_map(source, value_str))
+                intendedEndUserRole.set_source(src)
+                intendedEndUserRole.set_value(val)
+                if educationals:
+                    for educational in educationals:
+                        intendedEndUserRoles = educational.get_intendedEndUserRole()
+                        found = False
+                        if intendedEndUserRoles:
+                            for i in intendedEndUserRoles:
+                                if i.get_value().get_valueOf_() == self.intendedEndUserRole_map(source, self.intendedEndUserRoleType.encode('utf-8')):
+                                    found = True
+                                    index = intendedEndUserRoles.index(i)
+                                    educational.insert_intendedEndUserRole(index, intendedEndUserRole)
+                        if not found:
+                            educational.add_intendedEndUserRole(intendedEndUserRole)
+                else:
+                    educational = [lomsubs.educationalSub(intendedEndUserRole=[intendedEndUserRole])]
+                    metadata.set_educational(educational)
+        self._intendedEndUserRoleType = toUnicode(value)
+
+    def set_intendedEndUserRole(self, value, valueOf):
+        for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+            educationals = metadata.get_educational()
+            src = lomsubs.sourceValueSub()
+            src.set_valueOf_(source)
+            src.set_uniqueElementName('source')
+            val = lomsubs.intendedEndUserRoleValueSub()
+            mappedValueOf = self.intendedEndUserRole_map(source, valueOf)
+            val.set_valueOf_(mappedValueOf)
+            val.set_uniqueElementName('value')
+            intendedEndUserRole = lomsubs.intendedEndUserRoleSub(mappedValueOf)
+            intendedEndUserRole.set_source(src)
+            intendedEndUserRole.set_value(val)
+            if educationals:
+                for educational in educationals:
+                    intendedEndUserRoles = educational.get_intendedEndUserRole()
+                    found = False
+                    if intendedEndUserRoles:
+                        for i in intendedEndUserRoles:
+                            if i.get_value().get_valueOf_() == mappedValueOf:
+                                found = True
+                                if value:
+                                    index = intendedEndUserRoles.index(i)
+                                    educational.insert_intendedEndUserRole(index, intendedEndUserRole)
+                                else:
+                                    if source != 'LOMv1.0' or valueOf != 'group':
+                                        educational.intendedEndUserRole.remove(i)
+                    if not found and value:
+                        educational.add_intendedEndUserRole(intendedEndUserRole)
+            else:
+                if value:
+                    educational = [lomsubs.educationalSub(intendedEndUserRole=[intendedEndUserRole])]
+                    metadata.set_educational(educational)
+
+    def set_intendedEndUserRoleGroup(self, value):
+        self.set_intendedEndUserRole(value, 'group')
+        self._intendedEndUserRoleGroup = value
+
+    def set_intendedEndUserRoleTutor(self, value):
+        self.set_intendedEndUserRole(value, 'tutor')
+        self._intendedEndUserRoleTutor = value
+
+    def context_map(self, source, value):
+        '''From document "ANEXO XIII ANÁLISIS DE MAPEABILIDAD LOM/LOM-ES V1.0"'''
+        if source == 'LOM-ESv1.0':
+            return value
+        elif source == 'LOMv1.0':
+            lomMap = {
+                "classroom": "school",
+                "real environment": "training",
+                "face to face": "other",
+                "blended": "other",
+                "distance": "other",
+                "": ""
+            }
+            return lomMap[value]
+
+    def set_context(self, value, valueOf):
+        value_str = value.encode('utf-8')
+        if value:
+            for metadata, source in [(self.lom, 'LOMv1.0'), (self.lomEs, 'LOM-ESv1.0')]:
+                educationals = metadata.get_educational()
+                src = lomsubs.sourceValueSub()
+                src.set_valueOf_(source)
+                src.set_uniqueElementName('source')
+                val = lomsubs.contextValueSub()
+                val.set_valueOf_(self.context_map(source, value_str))
+                val.set_uniqueElementName('value')
+                context = lomsubs.contextSub(self.context_map(source, value_str))
+                context.set_source(src)
+                context.set_value(val)
+                if educationals:
+                    for educational in educationals:
+                        contexts = educational.get_context()
+                        found = False
+                        if contexts:
+                            for i in contexts:
+                                if i.get_value().get_valueOf_() == self.context_map(source, valueOf.encode('utf-8')):
+                                    found = True
+                                    index = contexts.index(i)
+                                    educational.insert_context(index, context)
+                        if not found:
+                            educational.add_context(context)
+                else:
+                    educational = [lomsubs.educationalSub(context=[context])]
+                    metadata.set_educational(educational)
+
+    def set_contextPlace(self, value):
+        self.set_context(value, self._contextPlace)
+        self._contextPlace = toUnicode(value)
+
+    def set_contextMode(self, value):
+        self.set_context(value, self._contextMode)
+        self._contextMode = toUnicode(value)
 
     # Properties
 
     name          = property(lambda self:self._name, set_name)
     title         = property(lambda self:self._title, set_title)
+    lang          = property(lambda self: self._lang, set_lang)
     author        = property(lambda self:self._author, set_author)
     description   = property(lambda self:self._description, set_description)
+    newlicense    = property(lambda self:self.license, set_license)
 
     backgroundImg = property(get_backgroundImg, set_backgroundImg)
 
     level1 = property(get_level1, set_level1)
     level2 = property(get_level2, set_level2)
     level3 = property(get_level3, set_level3)
+
+    objectives = property(lambda self: self._objectives, set_objectives)
+    preknowledge = property(lambda self: self._preknowledge, set_preknowledge)
+    learningResourceType = property(lambda self: self._learningResourceType, set_learningResourceType)
+    intendedEndUserRoleType = property(lambda self: self._intendedEndUserRoleType, set_intendedEndUserRoleType)
+    intendedEndUserRoleGroup = property(lambda self: self._intendedEndUserRoleGroup, set_intendedEndUserRoleGroup)
+    intendedEndUserRoleTutor = property(lambda self: self._intendedEndUserRoleTutor, set_intendedEndUserRoleTutor)
+    contextPlace = property(lambda self: self._contextPlace, set_contextPlace)
+    contextMode = property(lambda self: self._contextMode, set_contextMode)
 
     def findNode(self, nodeId):
         """
@@ -1030,5 +1414,71 @@ class Package(Persistable):
             # first and they also set this attribute on the package
             self.resources = {}
         G.application.afterUpgradeHandlers.append(self.cleanUpResources)
+
+    def lomDefaults(self, entry, schema):
+        return {'general': {'identifier': [{'catalog': _('My Catalog'), 'entry': entry}],
+                              'aggregationLevel': {'source': schema, 'value': '3'}
+                             },
+                  'metaMetadata': {'metadataSchema': [schema]},
+                 }
+
+    oldLicenseMap = {"None": "None",
+                  "GNU Free Documentation License": u"license GFDL",
+                  "Creative Commons Attribution 3.0 License": u"creative commons: attribution",
+                  "Creative Commons Attribution Share Alike 3.0 License": u"creative commons: attribution - share alike",
+                  "Creative Commons Attribution No Derivatives 3.0 License": u"creative commons: attribution - non derived work",
+                  "Creative Commons Attribution Non-commercial 3.0 License": u"creative commons: attribution - non commercial",
+                  "Creative Commons Attribution Non-commercial Share Alike 3.0 License": u"creative commons: attribution - non commercial - share alike",
+                  "Creative Commons Attribution Non-commercial No Derivatives 3.0 License": u"creative commons: attribution - non derived work - non commercial",
+                  "Creative Commons Attribution 2.5 License": u"creative commons: attribution",
+                  "Creative Commons Attribution-ShareAlike 2.5 License": u"creative commons: attribution - share alike",
+                  "Creative Commons Attribution-NoDerivs 2.5 License": u"creative commons: attribution - non derived work",
+                  "Creative Commons Attribution-NonCommercial 2.5 License": u"creative commons: attribution - non commercial",
+                  "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License": u"creative commons: attribution - non commercial - share alike",
+                  "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License": u"creative commons: attribution - non derived work - non commercial",
+                  "Developing Nations 2.0": u""
+                 }
+
+    def upgradeToVersion10(self):
+        """
+        For version >= intef8
+        """
+        entry = str(uuid.uuid4())
+        if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
+            self.lomEs = lomsubs.lomSub.factory()
+            self.lomEs.addChilds(self.lomDefaults(entry, 'LOM-ESv1.0'))
+        if not hasattr(self, 'lom') or not isinstance(self.lom, lomsubs.lomSub):
+            self.lom = lomsubs.lomSub.factory()
+            self.lom.addChilds(self.lomDefaults(entry, 'LOMv1.0'))
+        if not hasattr(self, 'scowsinglepage'):
+            self.scowsinglepage = False
+        if not hasattr(self, 'scowwebsite'):
+            self.scowwebsite = False
+        if not hasattr(self, 'scowsource'):
+            self.scowsource = False
+        if not hasattr(self, 'exportMetadataType'):
+            self.exportMetadataType = "LOMES"
+        if not hasattr(self, 'lang'):
+            self._lang = G.application.config.locale.split('_')[0]
+        if not hasattr(self, 'objectives'):
+            self._objectives = u''
+        if not hasattr(self, 'preknowledge'):
+            self._preknowledge = u''
+        if not hasattr(self, 'learningResourceType'):
+            self._learningResourceType = u''
+        if not hasattr(self, 'intendedEndUserRoleType'):
+            self._intendedEndUserRoleType = u''
+        if not hasattr(self, 'intendedEndUserRoleGroup'):
+            self._intendedEndUserRoleGroup = False
+        if not hasattr(self, 'intendedEndUserRoleTutor'):
+            self._intendedEndUserRoleTutor = False
+        if not hasattr(self, 'contextPlace'):
+            self._contextPlace = u''
+        if not hasattr(self, 'contextMode'):
+            self._contextMode = u''
+        try:
+            self.newlicense = self.oldLicenseMap[self.license]
+        except:
+            self.license = u''
 
 # ===========================================================================

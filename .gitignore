@@ -21,3 +21,7 @@ exe/webui/docs/manual
 exe/config
 
 dist/
+#lomes taxon Sources
+PODPL_01_nivel_educativo_LOM-ES_es.xml
+PODPL_02_Arbol_curricular_LOE_2006_es.xml
+ETB-LRE MEC-CCAA V.1.0_es.xml

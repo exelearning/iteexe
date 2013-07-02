@@ -180,6 +180,28 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             itemId: 'file_import_xliff',
                                             accesskey: 'x',
                                             text: _('XLIFF File')
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
+			                                text: _('Metadata'),
+			                                accesskey: 'm',
+                                            menu: {
+                                                xtype: 'menu',
+                                                items: [
+			                                        {
+			                                            xtype: 'accesskey_menuitem',
+			                                            itemId: 'file_import_lom',
+			                                            accesskey: 'l',
+			                                            text: _('LOM')
+			                                        },
+                                                    {
+                                                        xtype: 'accesskey_menuitem',
+                                                        itemId: 'file_import_lomes',
+                                                        accesskey: 'e',
+                                                        text: _('LOM-ES')
+                                                    }
+                                                ]
+                                            }
                                         }
                                     ]
                                 }

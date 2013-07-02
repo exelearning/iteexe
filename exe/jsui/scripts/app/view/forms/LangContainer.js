@@ -26,47 +26,45 @@ Ext.define('eXe.view.forms.LangContainer', {
 
         while (!item.inputId)
             item = item.item;
-        return item.inputId + "_lang";
+        return item.inputId + "_language";
     },
 
     initComponent: function() {
-        var me = this;
+        var me = this,
+            items;
+
+        this.item.flex = this.flex !== undefined? this.flex : 1;
         
+        items = [
+            {
+                xtype: 'container',
+                layout: 'hbox',
+                anchor: '100%',
+                defaults: {
+                    flex: 0
+                },
+                items: [
+                    this.item,
+                    {
+                        xtype: 'combobox',
+                        inputId: this.getLangInputId(),
+                        fieldLabel: _('Language'),
+                        labelWidth: 60,
+                        tooltip: _('Language of the field'),
+                        store: langsStore,
+                        validateOnBlur: false,
+                        validateOnChange: false,
+                        dirtyCls: 'property-form-dirty',
+                        margin: '0 0 0 4'
+                    }
+                ]
+            }
+        ];
+
         Ext.applyIf(me, {
             xtype: 'container',
             layout: 'anchor',
-            items: [
-                {
-                    xtype: 'container',
-                    layout: 'hbox',
-                    anchor: '100%',
-                    items: [
-                        {
-                            xtype: 'container',
-                            layout: 'anchor',
-                            flex: this.flex !== undefined? this.flex : 1,
-                            items: this.item
-                        },
-                        {
-                            xtype: 'container',
-                            layout: 'anchor',
-                            flex: 0,
-                            items: [
-                                {
-                                    xtype: 'combobox',
-                                    inputId: this.getLangInputId(),
-                                    fieldLabel: _('Language'),
-                                    labelWidth: 60,
-                                    tooltip: _('Language of the field'),
-                                    store: langsStore,
-                                    margin: '0 0 0 4',
-                                    anchor: '100%'
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            items: items
         });
         
         me.callParent(arguments);

@@ -25,6 +25,7 @@ import logging
 import re
 import time
 import os
+import StringIO
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
@@ -72,31 +73,37 @@ class Manifest(object):
         if they did not supply a package title, use the package name
         if they did not supply a date, use today
         """
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        namespace = 'xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lomCustom.xsd"'
         # depending on (user desired) the metadata type:
+        if self.metadataType == 'LOMES':
+            output = StringIO.StringIO()
+            self.package.lomEs.export(output, 0, namespacedef_=namespace, pretty_print=False)
+            xml += output.getvalue()
+        if self.metadataType == 'LOM':
+            output = StringIO.StringIO()
+            self.package.lom.export(output, 0, namespacedef_=namespace, pretty_print=False)
+            xml += output.getvalue()
         if self.metadataType == 'DC':
             lrm = self.package.dublinCore.__dict__.copy()
-        if self.metadataType == 'LOMES':
-            lrm = self.package.lomEs.__dict__.copy()
-        if self.metadataType == 'LOM':
-            lrm = self.package.lom.__dict__.copy()
-        # use package values in absentia:   
-        if lrm.get('title', '') == '':
-            lrm['title'] = self.package.title
-        if lrm['title'] == '':
-            lrm['title'] = self.package.name
-        if lrm.get('description', '') == '':
-            lrm['description'] = self.package.description
-        if lrm['description'] == '':
-            lrm['description'] = self.package.name
-        if lrm.get('creator', '') == '':
-            lrm['creator'] = self.package.author
-        if lrm['date'] == '':
-            lrm['date'] = time.strftime('%Y-%m-%d')
-        # if they don't look like VCARD entries, coerce to fn:
-        for f in ('creator', 'publisher', 'contributors'):
-            if re.match('.*[:;]', lrm[f]) == None:
-                lrm[f] = u'FN:' + lrm[f]
-        xml = template % lrm
+            # use package values in absentia:
+            if lrm.get('title', '') == '':
+                lrm['title'] = self.package.title
+            if lrm['title'] == '':
+                lrm['title'] = self.package.name
+            if lrm.get('description', '') == '':
+                lrm['description'] = self.package.description
+            if lrm['description'] == '':
+                lrm['description'] = self.package.name
+            if lrm.get('creator', '') == '':
+                lrm['creator'] = self.package.author
+            if lrm['date'] == '':
+                lrm['date'] = time.strftime('%Y-%m-%d')
+            # if they don't look like VCARD entries, coerce to fn:
+            for f in ('creator', 'publisher', 'contributors'):
+                if re.match('.*[:;]', lrm[f]) == None:
+                    lrm[f] = u'FN:' + lrm[f]
+            xml = template % lrm
         return xml
 
     def save(self, filename):
@@ -113,14 +120,14 @@ class Manifest(object):
             if self.metadataType == 'DC':
                 # if old template is desired, select imslrm.xml file:
                 # anything else, yoy should select:
-                templateFilename = self.config.webDir/'templates'/'imslrmdc.xml'
+                templateFilename = self.config.webDir/'templates'/'imslrm.xml'
+                template = open(templateFilename, 'rb').read()
             elif self.metadataType == 'LOMES':
-                templateFilename = self.config.webDir/'templates'/'imslrmlomes.xml'
+                template = None
             elif self.metadataType == 'LOM':
-                templateFilename = self.config.webDir/'templates'/'imslrmlom.xml'  
+                template = None
             # Now the file with metadatas. 
             # Notice that its name is independent of metadataType:   
-            template = open(templateFilename, 'rb').read()
             xml = self.createMetaData(template)
             out = open(self.outputDir/'imslrm.xml', 'wb')
             out.write(xml.encode('utf8'))
@@ -548,7 +555,7 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self, config, styleDir, filename, scormType, metadataType='DC'):
+    def __init__(self, config, styleDir, filename, scormType):
         """ 
         Initialize
         'styleDir' is the directory from which we will copy our style sheets
@@ -565,7 +572,6 @@ class ScormExport(object):
         self.pages        = []
         self.hasForum     = False
         self.scormType    = scormType
-        self.metadataType = metadataType
 
 
     def export(self, package):
@@ -574,6 +580,8 @@ class ScormExport(object):
         """
         # First do the export to a temporary directory
         outputDir = TempDirPath()
+
+        self.metadataType = package.exportMetadataType
 
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)

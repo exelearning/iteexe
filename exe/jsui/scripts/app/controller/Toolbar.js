@@ -110,6 +110,12 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_import_html': {
                 click: this.importHtml
             },
+            '#file_import_lom': {
+                click: { fn: this.importLom, metadataType: "lom" }
+            },
+            '#file_import_lomes': {
+                click: { fn: this.importLom, metadataType: "lomEs" }
+            },
             '#file_insert': {
                 click: this.insertPackage
             },
@@ -480,6 +486,25 @@ Ext.define('eXe.controller.Toolbar', {
         });
         fp.appendFilters([
             { "typename": _("HTML Files"), "extension": "*.html", "regex": /.*\.htm[l]*$/i },
+            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+        ]);
+        fp.show();
+    },
+
+    importLom: function(menu, item, e) {
+        var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+            type: eXe.view.filepicker.FilePicker.modeOpen,
+            title: _("Select LOM Metadata file to import."),
+            modal: true,
+            scope: this,
+            callback: function(fp) {
+                if (fp.status == eXe.view.filepicker.FilePicker.returnOk) {
+                    nevow_clientToServerEvent('importPackage', this, '', e.metadataType, fp.file.path);
+                }
+            }
+        });
+        fp.appendFilters([
+            { "typename": _("XML Files"), "extension": "*.xml", "regex": /.*\.xml$/i },
             { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
         ]);
         fp.show();

@@ -30,19 +30,307 @@ Ext.define('eXe.view.forms.PackagePanel', {
             items: [
                 {
                     xtype: 'fieldset',
-                    title: _('Project Properties'),
+                    title: _('Cataloguing'),
                     margin: 10,
                     defaults: {
                         dirtyCls: 'property-form-dirty'
                     },
                     items: [
                         {
-                            xtype: 'textfield',
-                            inputId: 'pp_title',
-                            fieldLabel: _('Project Title'),
-                            tooltip: _("The project's title."),
-                            anchor: '100%'
+                            xtype: 'helpcontainer',
+                            margin: '0 0 10 0',
+                            item: {
+                                xtype: 'textfield',
+                                inputId: 'pp_title',
+                                dirtyCls: 'property-form-dirty',
+                                fieldLabel: _('Title'),
+                                tooltip: _('The name given to the resource.'),
+                                anchor: '100%'
+                            },
+                            help: _('The name given to the resource.')
                         },
+                        {
+                            xtype: 'helpcontainer',
+                            margin: '0 0 10 0',
+                            item: {
+                                xtype: 'combobox',
+                                inputId: 'pp_lang',
+                                dirtyCls: 'property-form-dirty',
+                                fieldLabel: _('Language'),
+                                store: langsStore,
+                                tooltip: _('Select a language.'),
+                                anchor: '100%'
+                            },
+                            help: _('Select a language.')
+                        },
+                        {
+                            xtype: 'fieldset',
+		                    title: _('Description'),
+                            items: [
+                                {
+                                    xtype: 'helpcontainer',
+		                            margin: '0 0 10 0',
+		                            item: {
+			                            xtype: 'textarea',
+			                            inputId: 'pp_description',
+                                        dirtyCls: 'property-form-dirty',
+			                            fieldLabel: _('General'),
+			                            tooltip: _('An account of the content of the resource.'),
+			                            height: 60,
+			                            anchor: '100%'
+                                    },
+                                    help: _('An account of the content of the resource.')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'textarea',
+                                        inputId: 'pp_objectives',
+                                        dirtyCls: 'property-form-dirty',
+                                        fieldLabel: _('Objectives'),
+                                        tooltip: _('Objectives.'),
+                                        height: 60,
+                                        anchor: '100%'
+                                    },
+                                    help: _('Objectives.')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'textarea',
+                                        inputId: 'pp_preknowledge',
+                                        dirtyCls: 'property-form-dirty',
+                                        fieldLabel: _('Preknowledge'),
+                                        tooltip: _('Preknowledge.'),
+                                        height: 60,
+                                        anchor: '100%'
+                                    },
+                                    help: _('Preknowledge.')
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'helpcontainer',
+                            margin: '0 0 10 0',
+                            item: {
+	                            xtype: 'textfield',
+	                            inputId: 'pp_author',
+                                dirtyCls: 'property-form-dirty',
+	                            fieldLabel: _('Author'),
+	                            tooltip: _('Primary author of the resource.'),
+	                            anchor: '100%'
+                            },
+                            help: _('Primary author of the resource.')
+                        },
+                        {
+                            xtype: 'helpcontainer',
+                            margin: '0 0 10 0',
+                            item: {
+                                xtype: 'combobox',
+                                inputId: 'pp_newlicense',
+                                dirtyCls: 'property-form-dirty',
+                                fieldLabel: _('License'),
+                                store: lomesVocab.copyrightAndOtherRestrictionsValues,
+                                tooltip: _('Select a license.'),
+                                anchor: '100%'
+                            },
+                            help: _('Select a license.')
+                        },
+                        {
+                            xtype: 'helpcontainer',
+                            margin: '0 0 10 0',
+                            item: {
+                                xtype: 'combobox',
+                                inputId: 'pp_learningResourceType',
+                                dirtyCls: 'property-form-dirty',
+                                fieldLabel: _('Learning Resource Type'),
+                                store: lomesVocab.learningResourceTypeValues.slice(39),
+                                tooltip: _('Learning Resource Type'),
+                                anchor: '100%'
+                            },
+                            help: _('Learning Resource Type')
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: _('Especificaciones de utilización'),
+                            items: [
+                                {
+		                            xtype: 'helpcontainer',
+		                            margin: '0 0 10 0',
+		                            item: {
+                                        xtype: 'fieldcontainer',
+                                        items: [
+                                            {
+					                            xtype: 'radiogroup',
+					                            fieldLabel: _('Tipo de alumno'),
+					                            tooltip: _('Tipo de alumno'),
+		                                        columns: [150, 150, 150],
+					                            items: [
+					                                {
+						                                xtype: 'radio',
+					                                    boxLabel: 'Alumno Estándar',
+                                                        dirtyCls: 'property-form-dirty',
+						                                name: 'pp_intendedEndUserRoleType',
+		                                                inputValue: 'learner',
+		                                                checked: true
+					                                },
+					                                {
+					                                    xtype: 'radio',
+					                                    boxLabel: 'Necesidades (NEAE)',
+                                                        dirtyCls: 'property-form-dirty',
+		                                                name: 'pp_intendedEndUserRoleType',
+		                                                inputValue: 'special needs learner'
+					                                },
+					                                {
+					                                    xtype: 'radio',
+					                                    boxLabel: 'Altas capacidades',
+                                                        dirtyCls: 'property-form-dirty',
+		                                                name: 'pp_intendedEndUserRoleType',
+		                                                inputValue: 'gifted learner'
+					                                }
+			                                    ]
+                                            }
+                                        ]
+	                                },
+	                                help: _('Tipo de alumno')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        fieldLabel: _('Para trabajar en grupo'),
+                                        tooltip: _('Para trabajar en grupo'),
+                                        items: [
+                                            {
+                                                xtype: 'container',
+                                                layout: 'hbox',
+                                                items: [
+                                                    {
+                                                        xtype: 'checkbox',
+                                                        inputId: 'pp_intendedEndUserRoleGroup',
+                                                        dirtyCls: 'property-form-dirty',
+                                                        inputValue: true,
+                                                        uncheckedValue: false
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    help: _('Para trabajar en grupo')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        fieldLabel: _('Para trabajar en tutoría'),
+                                        tooltip: _('Para trabajar en tutoría'),
+                                        items: [
+                                            {
+                                                xtype: 'container',
+                                                layout: 'hbox',
+                                                items: [
+                                                    {
+                                                        xtype: 'checkbox',
+                                                        inputId: 'pp_intendedEndUserRoleTutor',
+                                                        dirtyCls: 'property-form-dirty',
+                                                        inputValue: true,
+                                                        uncheckedValue: false
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    help: _('Para trabajar en tutoría')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        items: [
+                                            {
+		                                        xtype: 'radiogroup',
+		                                        fieldLabel: _('Lugar de utilización'),
+		                                        tooltip: _('Lugar de utilización'),
+		                                        columns: [150, 150, 150],
+		                                        items: [
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Aula',
+		                                                name: 'pp_contextPlace',
+		                                                inputValue: 'classroom',
+                                                        dirtyCls: 'property-form-dirty',
+		                                                checked: true
+		                                            },
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Fuera del centro',
+		                                                name: 'pp_contextPlace',
+		                                                inputValue: 'real environment',
+                                                        dirtyCls: 'property-form-dirty'
+		                                            }
+		                                        ]
+                                            }
+                                        ]
+                                    },
+                                    help: _('Lugar de utilización')
+                                },
+                                {
+                                    xtype: 'helpcontainer',
+                                    margin: '0 0 10 0',
+                                    item: {
+                                        xtype: 'fieldcontainer',
+                                        items: [
+                                            {
+		                                        xtype: 'radiogroup',
+		                                        fieldLabel: _('Modalidad de uso'),
+		                                        tooltip: _('Modalidad de uso'),
+		                                        columns: [150, 150, 150],
+		                                        items: [
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Presencial',
+		                                                name: 'pp_contextMode',
+		                                                inputValue: 'face to face',
+                                                        dirtyCls: 'property-form-dirty',
+		                                                checked: true
+		                                            },
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Semipresencial',
+		                                                name: 'pp_contextMode',
+		                                                inputValue: 'blended',
+                                                        dirtyCls: 'property-form-dirty'
+		                                            },
+		                                            {
+		                                                xtype: 'radio',
+		                                                boxLabel: 'Distancia',
+		                                                name: 'pp_contextMode',
+		                                                inputValue: 'distance',
+                                                        dirtyCls: 'property-form-dirty'
+		                                            }
+		                                        ]
+                                            }
+                                        ]
+                                    },
+                                    help: _('Modalidad de uso')
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldset',
+                    title: _('Project Properties'),
+                    margin: 10,
+                    defaults: {
+                        dirtyCls: 'property-form-dirty'
+                    },
+                    items: [
                         {
                             xtype: 'container',
                             layout: 'hbox',
@@ -105,49 +393,10 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             ]
                         },
                         {
-                            xtype: 'textfield',
-                            inputId: 'pp_author',
-                            fieldLabel: _('Author'),
-                            tooltip: _('Primary author of the resource.'),
-                            anchor: '100%'
-                        },
-                        {
-                            xtype: 'combobox',
-                            inputId: 'pp_license',
-                            fieldLabel: _('License'),
-                            store: [
-                                  ["None", "None"],
-                                  ["GNU Free Documentation License", _("GNU Free Documentation License")],
-                                  ["Creative Commons Attribution 3.0 License", _("Creative Commons Attribution 3.0 License")],
-                                  ["Creative Commons Attribution Share Alike 3.0 License", _("Creative Commons Attribution Share Alike 3.0 License")],
-                                  ["Creative Commons Attribution No Derivatives 3.0 License", _("Creative Commons Attribution No Derivatives 3.0 License")],
-                                  ["Creative Commons Attribution Non-commercial 3.0 License", _("Creative Commons Attribution Non-commercial 3.0 License")],
-                                  ["Creative Commons Attribution Non-commercial Share Alike 3.0 License", _("Creative Commons Attribution Non-commercial Share Alike 3.0 License")],
-                                  ["Creative Commons Attribution Non-commercial No Derivatives 3.0 License", _("Creative Commons Attribution Non-commercial No Derivatives 3.0 License")],
-                                  ["Creative Commons Attribution 2.5 License", _("Creative Commons Attribution 2.5 License")],
-                                  ["Creative Commons Attribution-ShareAlike 2.5 License", _("Creative Commons Attribution-ShareAlike 2.5 License")],
-                                  ["Creative Commons Attribution-NoDerivs 2.5 License", _("Creative Commons Attribution-NoDerivs 2.5 License")],
-                                  ["Creative Commons Attribution-NonCommercial 2.5 License", _("Creative Commons Attribution-NonCommercial 2.5 License")],
-                                  ["Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License", _("Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License")],
-                                  ["Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License", _("Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License")],
-                                  ["Developing Nations 2.0", _("Developing Nations 2.0")]
-                            ],
-                            tooltip: _('Select a license.'),
-                            anchor: '100%'
-                        },                        
-                        {
                             xtype: 'textarea',
                             inputId: 'pp_footer',
                             fieldLabel: _('Footer'),
                             tooltip: _('Web pages footer.'),
-                            height: 80,
-                            anchor: '100%'
-                        },
-                        {
-                            xtype: 'textarea',
-                            inputId: 'pp_description',
-                            fieldLabel: _('Description'),
-                            tooltip: _('An account of the content of the resource.'),
                             height: 80,
                             anchor: '100%'
                         }

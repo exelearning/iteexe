@@ -40,22 +40,33 @@ Ext.define('eXe.controller.MainTab', {
 
     init: function() {
         this.control({
+            '#main_tab': {
+                tabchange: this.onTabChange
+            },
+            '#metadata_tab': {
+                tabchange: this.onTabChange
+            },
+            '#properties_tab': {
+                tabchange: this.onTabChange
+            },
             '#package_properties': {
-                render: this.onRender,
-                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete,
                 scope: this
             },
             '#dublincoredata_properties': {
-                render: this.onRender,
-                show: this.onRender,
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
             '#export_properties': {
-                render: this.onRender,
-                show: this.onRender,
+                beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete
+            },
+            '#lomdata_properties': {
+                beforeaction: this.beforeAction,
+                actioncomplete: this.actionComplete
+            },
+            '#lomesdata_properties': {
                 beforeaction: this.beforeAction,
                 actioncomplete: this.actionComplete
             },
@@ -81,14 +92,43 @@ Ext.define('eXe.controller.MainTab', {
             '#update_tree': {
                 click: this.updateTree,
                 scope: this
+            },
+            '#sources_download': {
+                click: this.sourcesDownload
             }
         });
     },
-    
+//    msg: false,
+//    onAfterRender: function(a, b){
+//      	console.log('afterRender');
+//      	if (this.msg){
+//            this.msg.close();
+//      	}
+
+//    },
+//    onBeforeRender: function(a, b){
+//    	//this.msg = Ext.Msg.alert('Status', 'Loading data ...');
+//    	console.log('beforeRender');
+//    },
+//    onBeforeShow: function(a, b){
+//    	console.log('beforeShow');
+//    },
+//    onAfterLayout: function(a, b){
+//    	console.log('afterLayout');
+//    },
+//    beforeAction: function(a, b){
+//    	console.log('beforeaction');
+//    },
     actionComplete: function(form, action) {
         if (action.method != "GET") {
         	form.setValues(form.getFieldValues(true));
-            Ext.MessageBox.alert("", _('Settings Saved'));
+//        }else{
+//        	console.log('actioncomplete');
+//        	var lom = action.result.data.lom_general_title_string1;
+//            if (lom){
+//            	//this.on('afterrender', this.extendForm, this, [form, action]);
+//            	this.extendForm(form, action);            
+//            }
         }
     },
 
@@ -183,53 +223,117 @@ Ext.define('eXe.controller.MainTab', {
     },
     
     onClickSave: function(button) {
-	    var form = button.up('form').getForm();
+	    var formpanel = button.up('form'),
+            form = formpanel.getForm();
 	    if (form.isValid()) {
 	        form.submit({ 
+                success: function(form, action) {
+                    Ext.MessageBox.alert("", _('Settings Saved'));
+                    if (formpanel.itemId == 'package_properties') {
+                        var formclear = function(formpanel) {
+                            formpanel.clear()
+                        };
+                        Ext.iterate(formpanel.up().query('lomdata'), formclear);
+                    }
+                },
 	            failure: function(form, action) {
 	                Ext.Msg.alert(_('Error'), action.result.errorMessage);
 	            }
 	        });
 	    }
+        else
+            Ext.Msg.alert(_('Error'), _('The form contains invalid fields. Please check back.'))
     },
     
-    onRender: function(formpanel) {
+    
+    loadForm: function(formpanel) {
+//      console.log('render ' + formpanel.itemId);
         formpanel.load({ 
             method: "GET", 
             params: formpanel.getForm().getFieldValues(),
             scope: this,
+            formpanel: formpanel,
             success: function(form, action) {
                 var imgfield = form.findField('pp_backgroundImg'),
-                    showbutton = this.getHeaderBackgroundShowButton();
+                    showbutton = this.getHeaderBackgroundShowButton();                
                 if (imgfield && imgfield.value) {
                     var img = this.getHeaderBackgroundImg();
                     img.setSrc(location.pathname + '/resources/' + imgfield.value);
                     img.show();
                     showbutton.setText(_('Hide Image'));
                     showbutton.show();
-                }
-                else
-                    showbutton.hide();
+                }          
+                else{
+                    if (formpanel.xtype == 'lomdata'){
+                    	//this.on('afterrender', this.extendForm, this, [form, action]);                    	
+                        formpanel.extendForm(form, action);
+                    	//console.log('ExtendForm end');
+                    }
+                	showbutton.hide();
+                }                    
             },
             failure: function(form, action) {
                 Ext.Msg.alert(_('Error'), action.result.errorMessage);
             }
         });
+//        console.log('render end');
     },
     
     beforeAction: function(form, action, eOpts) {
+        form.url = location.pathname + "/properties";
+    },
+    
+    beforeAction: function(form, action, eOpts) {
+//    	console.log('beforeaction');
         form.url = location.pathname + "/properties";
     },
 
     updateAuthoring: function(action, object, isChanged, currentNode, destNode) {
         if (action && (action == "done" || action == "move" || action == "delete" || action == "movePrev" || action == "moveNext" || action == "ChangeStyle")) {
 		    var outlineTreePanel = this.getOutlineTreePanel(),
-	            selmodel = outlineTreePanel.getSelectionModel();
+	            selmodel = outlineTreePanel.getSelectionModel(),
                 selectednode = selmodel.getSelection()[0].get('id');
             if (currentNode == selectednode || (action == "move" && selectednode == destNode) || action == "ChangeStyle") {
 		        var authoring = Ext.ComponentQuery.query('#authoring')[0];
 		        authoring.load(location.pathname + '/authoring?clientHandleId=' + nevow_clientHandleId + "&currentNode=" + selectednode);
             }
         }
-    }
+    },
+
+    sourcesDownload: function() {
+        nevow_clientToServerEvent('sourcesDownload', this, '');
+    },
+
+    onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
+        var newformpanel, oldformpanel, widgets = eXe.view.forms.LomWidgets;
+
+        while (newCard.getActiveTab)
+            newCard = newCard.getActiveTab();
+        if (newCard.getForm)
+            newformpanel = newCard;
+
+        while (oldCard.getActiveTab)
+            oldCard = oldCard.getActiveTab();
+        if (oldCard.getForm)
+            oldformpanel = oldCard;
+
+        if (newformpanel) {
+            this.loadForm(newformpanel);
+        }
+    },
+
+    lomImportSuccess: function(prefix) {
+            Ext.Msg.alert('', _('LOM Metadata import success!'));
+            var formpanel = Ext.ComponentQuery.query('lomdata'), i;
+
+            prefix = prefix.toLowerCase() + '_';
+            for (i = 0; i < formpanel.length; i++) {
+                if (formpanel[i].prefix == prefix) {
+                    formpanel[i].clear();
+                    if (formpanel[i].isVisible)
+                        this.loadForm(formpanel[i]);
+                }
+            }
+        }
+
 });

@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.engine.locationbuttons import LocationButtons
-from exe.export.epub3export import Epub3Export
 
 """
 This is the main Javascript page.
@@ -56,7 +54,11 @@ from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
 from exe.engine.mimetex          import compile
-from urllib                      import unquote
+from urllib                      import unquote, urlretrieve
+from exe.engine.locationbuttons import LocationButtons
+from exe.export.epub3export import Epub3Export
+from exe.engine.lom import lomsubs
+from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
 
@@ -94,6 +96,7 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
         self.authoringPages = {}
+        self.classificationSources = {}
 
         G.application.resourceDir=Path(package.resourceDir);
 
@@ -111,6 +114,34 @@ class MainPage(RenderableLivePage):
             return self.authoringPages[clientid]
         else:
             raise Exception('No clientHandleId in request')
+
+    def child_taxon(self, ctx):
+        """
+        Doc
+        """
+        request = inevow.IRequest(ctx)
+        data = []
+        if 'source' in request.args:
+            if 'identifier' in request.args:
+                source = request.args['source'][0]
+                if source:
+                    if not source in self.classificationSources:
+
+                        self.classificationSources[source] = Classification()
+                        self.classificationSources[source].setSource(source, self.config.configDir)
+                    identifier = request.args['identifier'][0]
+                    if identifier == 'false':
+                        identifier = False
+                    if source.startswith("etb-lre_mec-ccaa"):
+                        stype = 2
+                    else:
+                        stype = 1
+                    try:
+                        data = self.classificationSources[source].getDataByIdentifier(identifier, stype=stype)
+                    except:
+                        pass
+
+        return json.dumps({'success': True, 'data': data})
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
@@ -154,6 +185,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleExportStyle,    'ExportStyle')
         setUpHandler(self.handleDeleteStyle,    'DeleteStyle')
         setUpHandler(self.handleSetBrowser,  'setBrowser')
+        setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
 
 
         #For the new ExtJS 4.0 interface
@@ -184,6 +216,10 @@ class MainPage(RenderableLivePage):
     def render_location_buttons(self, ctx, data):
         return tags.script(type="text/javascript")[
            "var locationButtons = %s;" % json.dumps(self.location_buttons.buttons)]
+
+    def render_lang(self, ctx, data):
+        return tags.script(type="text/javascript")[
+           "var lang = %s;" % json.dumps(G.application.config.locale.split('_')[0])]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
@@ -296,6 +332,36 @@ class MainPage(RenderableLivePage):
         filename = self.config.webDir.joinpath("docs")\
                 .joinpath("eXe-tutorial.elp")
         self.handleLoadPackage(client, filename)
+
+    def progressDownload(self, numblocks, blocksize, filesize, client):
+        try:
+            percent = min((numblocks * blocksize * 100) / filesize, 100)
+        except:
+            percent = 100
+        client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "Downloading...")' % (float(percent) / 100, percent))
+        log.info('%3d' % (percent))
+
+    def handleSourcesDownload(self, client):
+        """
+        Download taxon sources from url and deploy in $HOME/.exe/classification_sources
+        """
+        url = 'https://dl.dropboxusercontent.com/u/22015602/classification_sources.zip'
+        client.sendScript('Ext.MessageBox.progress("Sources Download", "Connecting to classification sources repository...")')
+        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+
+        def successDownload(result):
+            filename = result[0]
+            if not zipfile.is_zipfile(filename):
+                return None
+
+            zipFile = zipfile.ZipFile(filename, "r")
+            try:
+                zipFile.extractall(G.application.config.configDir)
+                client.sendScript('Ext.MessageBox.updateProgress(1, "100%", "Success!")')
+            finally:
+                Path(filename).remove()
+
+        d.addCallback(successDownload)
 
     def handleSetLocale(self, client, locale):
         """
@@ -679,17 +745,24 @@ class MainPage(RenderableLivePage):
                    
 
     def handleDeleteStyle(self, client):
-                self._deletestyle(self.package.style,client)
-    def handleImport(self, client, importType, dirname, html=None):
+        self._deletestyle(self.package.style,client)
+
+    def handleImport(self, client, importType, path, html=None):
         if importType == 'html':
             if (not html):
-                client.call('eXe.app.getController("Toolbar").importHtml2', dirname)
+                client.call('eXe.app.getController("Toolbar").importHtml2', path)
             else:
-                d = threads.deferToThread(self.getResources, dirname, html, client)
-                d.addCallback(self.handleImportCallback,client)
-                d.addErrback(self.handleImportErrback,client)
-                client.call('eXe.app.getController("Toolbar").initImportProgressWindow',_(u'Importing HTML...'))
-    
+                d = threads.deferToThread(self.getResources, path, html, client)
+                d.addCallback(self.handleImportCallback, client)
+                d.addErrback(self.handleImportErrback, client)
+                client.call('eXe.app.getController("Toolbar").initImportProgressWindow', _(u'Importing HTML...'))
+        if importType.startswith('lom'):
+            try:
+                setattr(self.package, importType, lomsubs.parse(path))
+                client.call('eXe.app.getController("MainTab").lomImportSuccess', importType)
+            except Exception, e:
+                client.alert(_('LOM Metadata import FAILED!\n%s') % str(e))
+
     def handleImportErrback(self, failure, client):
         client.alert(_(u'Error importing HTML:\n') + unicode(failure.getBriefTraceback()), \
                      (u'eXe.app.gotoUrl("/%s")' % self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
@@ -745,31 +818,19 @@ class MainPage(RenderableLivePage):
             self.exportText(client, filename)
         elif exportType == 'scorm1.2':
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            #if (len(metadataType) == 0):
-            #    self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
-            #else: 
-            #    self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType)
-            self.exportScorm(client, filename, stylesDir, "scorm1.2", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "scorm1.2")
         elif exportType == "scorm2004":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            #if (len(metadataType) == 0):
-            #    self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
-            #else: 
-            #    self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType)
-            self.exportScorm(client, filename, stylesDir, "scorm2004", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "scorm2004")
         elif exportType == "agrega":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            #if (len(metadataType) == 0):
-            #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
-            #else: 
-            #    self.exportScorm(client, filename, stylesDir, "agrega", metadataType)
-            self.exportScorm(client, filename, stylesDir, "agrega", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "agrega")
         elif exportType == 'epub3':
             filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
             self.exportEpub3(client, filename, stylesDir)
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            self.exportScorm(client, filename, stylesDir, "commoncartridge", metadataType='DC')
+            self.exportScorm(client, filename, stylesDir, "commoncartridge")
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
@@ -1057,7 +1118,7 @@ class MainPage(RenderableLivePage):
         client.alert(_(u'Exported to %s') % filename)
 
 
-    def exportScorm(self, client, filename, stylesDir, scormType, metadataType):
+    def exportScorm(self, client, filename, stylesDir, scormType):
         """
         Exports this package to a scorm package file
         """
@@ -1072,7 +1133,7 @@ class MainPage(RenderableLivePage):
                     client.alert(_(u'EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
-            scormExport = ScormExport(self.config, stylesDir, filename, scormType, metadataType='DC')
+            scormExport = ScormExport(self.config, stylesDir, filename, scormType)
             scormExport.export(self.package)
         except Exception, e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))

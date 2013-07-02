@@ -33,6 +33,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
         var me = this;
 
         Ext.applyIf(me, {
+            itemId: 'main_tab',
             items: [
                 {
                     xtype: 'uxiframe',
@@ -44,6 +45,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                 {
                     xtype: 'tabpanel',
                     title: _('Properties'),
+                    itemId: 'properties_tab',
                     activeTab: 0,
                     items: [
                         {
@@ -54,6 +56,7 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                         {
                             xtype: 'tabpanel',
                             title: _('Metadata'),
+                            itemId: 'metadata_tab',
                             items: [
 	                            {
 		                            xtype: 'dublincoredata',
@@ -62,13 +65,15 @@ Ext.define('eXe.view.ui.MainTabPanel', {
 	                            },
                                 {
                                     xtype: 'lomdata',
+                                    prefix: 'lom_',
                                     itemId: 'lomdata_properties',
                                     title: _('LOM')
                                 },
                                 {
                                     xtype: 'lomdata',
+                                    prefix: 'lomes_',
                                     itemId: 'lomesdata_properties',
-                                    title: _('LOM.es')
+                                    title: _('LOM-ES')
                                 }
                             ]
                         },
