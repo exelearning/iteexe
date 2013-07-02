@@ -27,6 +27,8 @@ from nevow                     import tags as T
 from nevow.flat                import flatten
 from exe                       import globals as G
 from exe.engine.path           import Path
+from exe.webui.blockfactory    import g_blockFactory
+from exe.engine.error          import Error
 import re
 
 
@@ -790,5 +792,23 @@ def hasGalleryIdevice(node):
 def hasMagnifier(node):
     for idevice in node.idevices:
         if idevice.klass == 'ImageMagnifierIdevice':
+            return True
+    return False
+
+
+def ideviceHasMediaelement(idevice):
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search('<(video|audio) .*class=[\'"]mediaelement', content):
+        return True
+    return False
+
+
+def nodeHasMediaelement(node):
+    for idevice in node.idevices:
+        if ideviceHasMediaelement(idevice):
             return True
     return False

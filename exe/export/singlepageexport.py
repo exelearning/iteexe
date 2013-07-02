@@ -130,9 +130,10 @@ class SinglePageExport(object):
         hasGallery        = False
         hasWikipedia      = False
         hasInstructions   = False
+        hasMediaelement   = False
 
     	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
+    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
     	    	break
     	    if not hasFlowplayer:
     	    	if 'flowPlayer.swf' in idevice.systemResources:
@@ -152,6 +153,8 @@ class SinglePageExport(object):
             if not hasInstructions:
     			if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
     				hasInstructions = True
+            if not hasMediaelement:
+                    hasMediaelement = common.ideviceHasMediaelement(idevice)
                             
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
@@ -176,7 +179,12 @@ class SinglePageExport(object):
         if hasInstructions:
             common.copyFileIfNotInStyle('panel-amusements.png', self, self.outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, self.outputDir)
-            
+        if hasMediaelement:
+            jquery = (self.scriptsDir/'jquery.js')
+            jquery.copyfile(self.outputDir/'jquery.js')
+            mediaelement = (self.scriptsDir/'mediaelement')
+            mediaelement.copyfiles(self.outputDir)
+
         for child in node.children:
             self.compruebaReproductores(child)
 

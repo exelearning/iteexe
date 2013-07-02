@@ -373,7 +373,11 @@ class Manifest(object):
         if dT == "HTML5":
             self.resStr += '    <file href="exe_html5.js"/>\n'
 
-        for resource in page.node.getResources():            
+        resources = page.node.getResources()
+        if common.nodeHasMediaelement(page.node):
+            resources = resources + [u'jquery.js'] + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+
+        for resource in resources:            
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
             self.dependencies[resource] = True
 
@@ -447,6 +451,8 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.nodeHasMediaelement(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"mediaelementplayer.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5":
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
@@ -455,6 +461,9 @@ class ScormPage(Page):
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
+        if common.nodeHasMediaelement(self.node):
+            html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
+            html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
         #html += u"</head>"
         if self.scormType == 'commoncartridge':
             html += u"</head>"+lb
@@ -479,8 +488,7 @@ class ScormPage(Page):
                 e=" em_iDevice"
                 if unicode(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass,
-                    idevice.id, lb)
+                html += u'<'+sectionTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -492,6 +500,8 @@ class ScormPage(Page):
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
         html += u"</"+sectionTag+">"+lb # /#main
+        if common.nodeHasMediaelement(self.node):
+           html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
         if themeHasXML:
             html += self.renderLicense()
@@ -693,12 +703,13 @@ class ScormExport(object):
         hasWikipedia      = False
         isBreak           = False
         hasInstructions   = False
-        
+        hasMediaelement   = False
+
         for page in self.pages:
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasWikipedia and hasInstructions and hasMediaelement):
                     isBreak = True
                     break
                 if not hasFlowplayer:
@@ -719,7 +730,9 @@ class ScormExport(object):
                 if not hasInstructions:
                     if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
                         hasInstructions = True
-                        
+                if not hasMediaelement:
+                    hasMediaelement = common.ideviceHasMediaelement(idevice)
+
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')
             videofile.copyfile(outputDir/'flowPlayer.swf')
@@ -743,6 +756,11 @@ class ScormExport(object):
         if hasInstructions:
             common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
+        if hasMediaelement:
+            jquery = (self.scriptsDir/'jquery.js')
+            jquery.copyfile(outputDir/'jquery.js')
+            mediaelement = (self.scriptsDir/'mediaelement')
+            mediaelement.copyfiles(outputDir)
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004" or self.scormType == "agrega":
             if package.license == "GNU Free Documentation License":

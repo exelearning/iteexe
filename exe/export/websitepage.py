@@ -80,6 +80,8 @@ class WebsitePage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb    
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+        if common.nodeHasMediaelement(self.node):
+            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"mediaelementplayer.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
         html += u"<title>"
@@ -112,6 +114,9 @@ class WebsitePage(Page):
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
+        if common.nodeHasMediaelement(self.node):
+            html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
+            html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
         html += u"</head>"+lb
         html += u"<body>"+lb
         html += u"<"+sectionTag+" id=\"content\">"+lb
@@ -168,7 +173,9 @@ class WebsitePage(Page):
                     html += self.processInternalLinks(self.node.package,
                         block.renderView(style))
                 html += u'</'+sectionTag+'>'+lb # iDevice div
-        
+
+        if common.nodeHasMediaelement(self.node):
+            html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         html += "<"+sectionTag+" id='bottomPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage)
         html += "</"+sectionTag+">"+lb

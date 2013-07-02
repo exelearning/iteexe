@@ -158,8 +158,11 @@
 					if (!confirm(msg)) {
 						return false;
 					} else {
-						var html5MediaCode= '';
-							html5MediaCode += '<'+t+' src="'+file_src+'" width="'+mW+'" height="'+mH+'" controls="controls">';
+						var mediaelement = '',
+                            html5MediaCode= '';
+                        if (get("mediaelement").checked)
+                            mediaelement = ' class="mediaelement"';
+							html5MediaCode += '<'+t+mediaelement+' src="'+file_src+'" width="'+mW+'" height="'+mH+'" controls="controls">';
 							html5MediaCode += '<a href="'+src+'">'+link_text+'</a>';
 							html5MediaCode += '</'+t+'>';
 						//tinyMCEPopup.editor.execCommand('mceInsertContent', false, html5MediaCode);
@@ -489,6 +492,10 @@
 			} else {
 				get('advanced_tab').style.display = 'block';
 			}
+            if (data.type == 'video' || data.type == 'audio')
+                get('use_mediaelement').style.display = 'table-row';
+            else
+                get('use_mediaelement').style.display = 'none';
 			// /The New eXeLearning			
 
 			setOptions('flash', 'play,loop,menu,swliveconnect,quality,scale,salign,wmode,base,flashvars');
@@ -503,7 +510,7 @@
 
 			if (to_form) {
 				if (data.type == 'video') {
-					if (data.video.sources[0])
+                    if (data.video.sources[0])
 						setVal('src', data.video.sources[0].src);
 
 					src = data.video.sources[1];
@@ -513,6 +520,11 @@
 					src = data.video.sources[2];
 					if (src)
 						setVal('video_altsource2', src.src);
+
+                    if (data.video.attrs.class && data.video.attrs.class == 'mediaelement')
+                        setVal('mediaelement', true);
+                    else
+                        setVal('mediaelement', false);
                 } else if (data.type == 'audio') {
                     if (data.video.sources[0])
                         setVal('src', data.video.sources[0].src);
@@ -524,6 +536,11 @@
                     src = data.video.sources[2];
                     if (src)
                         setVal('audio_altsource2', src.src);
+
+                    if (data.video.attrs.class && data.video.attrs.class == 'mediaelement')
+                        setVal('mediaelement', true);
+                    else
+                        setVal('mediaelement', false);
 				} else {
 					// Check flash vars
 					if (data.type == 'flash') {
@@ -608,7 +625,7 @@
 					if (!data.video.sources)
 						data.video.sources = [];
 
-					data.video.sources[0] = {src : src};
+					data.video.sources[0] = {src : src, class: 'mediaelement'};
 
 					src = getVal("video_altsource1");
 					if (src)
@@ -715,6 +732,10 @@
 				else {
 					get('advanced_tab').style.display='block';					
 				}
+                if (get('media_type').value == 'video' || get('media_type').value == 'audio')
+	                get('use_mediaelement').style.display = 'table-row';
+	            else
+	                get('use_mediaelement').style.display = 'none';
 			}
 			// /The New eXeLearning			
 		},

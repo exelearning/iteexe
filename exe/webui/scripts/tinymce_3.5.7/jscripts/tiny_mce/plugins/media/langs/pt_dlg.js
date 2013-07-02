@@ -14,6 +14,7 @@ preview_error : "N\u00E3o foi poss\u00EDvel gerar uma pr\u00E9-visualiza\u00E7\u
 video_download_file_warning : "Se o navegador do utilizador n\u00E3o conseguir reproduzir o v\u00EDdeo, ser\u00E1 mostrada uma liga\u00E7\u00E3o para o ficheiro.",
 audio_download_file_warning : "Se o navegador do utilizador n\u00E3o conseguir reproduzir o \u00E1udio, ser\u00E1 mostrada uma liga\u00E7\u00E3o para o ficheiro.",
 "tab_caption":"Encabezado y pie",
+use_mediaelement : "Use MediaElement.js audio and video player",
 "recognition":"T\u00EDtulo y reconocimiento",
 "header":"Encabezado",
 "media_title":"T\u00EDtulo de la obra",
