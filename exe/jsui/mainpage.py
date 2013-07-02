@@ -40,6 +40,7 @@ from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
+from exe.webui.previewpage       import PreviewPage
 from exe.webui.renderable        import File
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
@@ -49,7 +50,7 @@ from exe.export.imsexport        import IMSExport
 from exe.export.xliffexport      import XliffExport
 from exe.importers.xliffimport   import XliffImport
 from exe.importers.scanresources import Resources
-from exe.engine.path             import Path, toUnicode
+from exe.engine.path             import Path, toUnicode, TempDirPath
 from exe.engine.package          import Package
 from exe                         import globals as G
 from tempfile                    import mkdtemp
@@ -95,6 +96,7 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.propertiesPage = PropertiesPage(self)
         self.authoringPage = None
+        self.previewDir = None
         self.authoringPages = {}
         self.classificationSources = {}
 
@@ -114,6 +116,16 @@ class MainPage(RenderableLivePage):
             return self.authoringPages[clientid]
         else:
             raise Exception('No clientHandleId in request')
+
+    def child_preview(self, ctx):
+        if not self.previewDir or self.package.isChanged:
+            if self.package.filename != u'':
+                self.package.save()
+            stylesDir = self.config.stylesDir / self.package.style
+            self.previewDir = TempDirPath()
+            self.exportWebSite(None, self.previewDir, stylesDir)
+            self.previewPage = File(self.previewDir / self.package.name)
+        return self.previewPage
 
     def child_taxon(self, ctx):
         """
@@ -1048,24 +1060,28 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert(_(u'Filename %s is a file, cannot replace it') % 
+                if client:
+                    client.alert(_(u'Filename %s is a file, cannot replace it') % 
                              filename)
                 log.error("Couldn't export web page: "+
                           "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
-                client.alert(_(u'Folder name %s already exists. '
+                if client:
+                    client.alert(_(u'Folder name %s already exists. '
                                 'Please choose another one or delete existing one then try again.') % filename)           
                 return 
             # Now do the export
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.export(self.package)
         except Exception, e:
-            client.alert(_('EXPORT FAILED!\n%s') % str(e))
+            if client:
+                client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
-        # Show the newly exported web site in a new window
-        self._startFile(filename)
+        if client:
+            client.alert(_(u'Exported to %s') % filename)
+            # Show the newly exported web site in a new window
+            self._startFile(filename)
 
     def exportWebZip(self, client, filename, stylesDir):
         try:

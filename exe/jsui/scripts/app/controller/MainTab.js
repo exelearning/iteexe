@@ -305,8 +305,16 @@ Ext.define('eXe.controller.MainTab', {
     },
 
     onTabChange: function(tabPanel, newCard, oldCard, eOpts) {
-        var newformpanel, oldformpanel, widgets = eXe.view.forms.LomWidgets;
+        var newformpanel, oldformpanel;
 
+        if (tabPanel.xtype == 'maintabpanel') {
+            var leftpanel = Ext.ComponentQuery.query('leftpanel')[0];
+
+            if (newCard.itemId == 'preview')
+                leftpanel.hide();
+            else
+                leftpanel.show();
+        }
         while (newCard.getActiveTab)
             newCard = newCard.getActiveTab();
         if (newCard.getForm)
