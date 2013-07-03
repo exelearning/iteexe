@@ -40,7 +40,6 @@ from exe.jsui.recentmenu         import RecentMenu
 from exe.jsui.stylemenu          import StyleMenu
 from exe.jsui.propertiespage     import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
-from exe.webui.previewpage       import PreviewPage
 from exe.webui.renderable        import File
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.textexport       import TextExport
