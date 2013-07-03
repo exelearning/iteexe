@@ -74,22 +74,22 @@ def _pass_field(fields, field, val):
     ret = False
     if val.strip() == '':
         #Entity Control
-        if re.findall("_entity[0-9]*_[name,organization,email]+$", field):
+        if re.findall("_entity[0-9]*_(name,organization,email)+$", field):
             field2 = field
             cnt = False
             for r in ['name', 'email', 'organization']:
-                a = re.sub('[name,organization,email]+$', r, field2)
+                a = re.sub('(name,organization,email)+$', r, field2)
                 if a in fields.keys() and fields[a][0].strip() != '':
                     cnt = True
             if not cnt:
                 ret = True
         else:
             #Duration Control
-            if re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
+            if re.findall("_(duration,typicalLearningTime)+_(years,months,days,hours,minutes,seconds)+$", field):
                 field2 = field
                 cnt = False
                 for r in ['years', 'months', 'days', 'hours', 'minutes', 'seconds']:
-                    a = re.sub('[years,months,days,hours,minutes,seconds]+$', r, field2)
+                    a = re.sub('(years,months,days,hours,minutes,seconds)+$', r, field2)
                     if a in fields.keys() and fields[a][0].strip() != '':
                         cnt = True
                 if not cnt:
@@ -195,7 +195,7 @@ def processForm2Lom(fields, label, source):
                     if isinstance(rootparent, list):
                         if re.findall("_date$", field):
                             rootparent[parentindex][node]['dateTime'] = val
-                        elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
+                        elif re.findall("_entity[0-9]*_(name,organization,email)+$", field):
                             rootparent[parentindex][node] = val
                             if 'name' in rootparent[parentindex] and 'organization' in rootparent[parentindex] and \
                             'email' in rootparent[parentindex]:
@@ -209,7 +209,7 @@ def processForm2Lom(fields, label, source):
                     else:
                         if re.findall("_date$", field):
                             rootparent[node]['dateTime'] = val
-                        elif re.findall("_entity[0-9]*_[name,organization,email]+$", field):
+                        elif re.findall("_entity[0-9]*_(name,organization,email)+$", field):
                             rootparent[node] = val
                             if 'name' in rootparent and 'organization' in rootparent and 'email' in rootparent:
                                 val2 = 'BEGIN:VCARD VERSION:3.0 FN:%s EMAIL;TYPE=INTERNET:%s ORG:%s END:VCARD' \
@@ -217,7 +217,7 @@ def processForm2Lom(fields, label, source):
                                 name, num = get_nameNum(nodes[len(nodes) - 3])
                                 parentindex = get_nodeFromList(rootparentparent, num)
                                 rootparentparent[parentindex]['entity'] = val2
-                        elif re.findall("_[duration,typicalLearningTime]+_[years,months,days,hours,minutes,seconds]+$", field):
+                        elif re.findall("_(duration,typicalLearningTime)+_(years,months,days,hours,minutes,seconds)+$", field):
                             rootparent[node] = val
                             if 'years' in rootparent and 'months' in rootparent and 'days' in rootparent\
                             and 'hours' in rootparent and 'minutes' in rootparent and 'seconds' in rootparent:
