@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-06-30 19:09+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-07-04 14:28+0200\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Frame Height:": "Ada\u014budede  \u0192e \u0256o\u0192e", 
  "Reflective question:": "\u014bugblede biabiawo ", 
  "Text Line": "Nu\u014b\u0254\u014bl\u0254m\u0254nu", 
@@ -12,7 +12,6 @@ translations = {
  "Polish Wikipedia Article": "Polisit\u0254wo \u0192e  Wikipedia Nyadu", 
  "Provide a caption for the flash you \n                                  have just inserted.": "Tia tanya na \n(flash  )si nede eme fifia la.", 
  "Move Up": "Yi dzi", 
- "GNU Free Documentation License": "GNU \u0192e nu\u014bl\u0254\u0256i\u014buti\u014buse \u0192e abl\u0254\u0256e", 
  "Select a flash video": "Tia flash video", 
  "Large": "G\u00e3", 
  "Pedagogical Help": "Nufiam\u0254nu \u0192e kpekpe\u0256e\u014bu", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-06-30 19:09+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-07-04 14:28+0200\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
@@ -174,7 +174,6 @@ translations = {
  "Package": "Paket", 
  "Swedish Wikipedia Article": "\u0130sve\u00e7\u00e7e Wikipedia Makalesi", 
  "New iDevice": "Yeni iDevice", 
- "Apply": "Uygula", 
  "Submit Answer": "Cevab\u0131 G\u00f6nder", 
  "German ": "Almanca", 
  "Actions": "Eylemler", 
@@ -285,7 +284,6 @@ translations = {
  "What to read": "Okunacak b\u00f6l\u00fcm", 
  "Provide a caption for the flash you \n                                  have just inserted.": "\u015eu anda ekledi\u011finiz flash i\u00e7in \n                                  bir isim girin.", 
  "Zulu ": "Zulu Dili", 
- "GNU Free Documentation License": "GNU \u00d6zg\u00fcr D\u00f6k\u00fcman Lisans\u0131", 
  "Enter an answer option. Provide \na range of plausible distractors (usually 3-4) as well as the correct answer. \nClick on the &lt;Add another option&gt; button to add another answer.": "Buraya bir cevap se\u00e7ene\u011fi girin. Se\u00e7ilebilecek\ndo\u011fru \u015f\u0131k ile beraber birka\u00e7 \u015f\u0131k (genellikle 3-4) girin.\nBa\u015fka bir cevap eklemek i\u00e7in &lt;Ba\u015fka Se\u00e7enek Ekle&gt; butonuna t\u0131klay\u0131n.", 
  "Magyar Wikipedia Article": "Macarca Wikipedia Makalesi", 
  "Georgian ": "G\u00fcrc\u00fc Dili", 

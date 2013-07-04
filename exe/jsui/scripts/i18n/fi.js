@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-06-30 19:09+0200\nPO-Revision-Date: 2008-01-28 00:15+1300\nLast-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-07-04 14:28+0200\nPO-Revision-Date: 2008-01-28 00:15+1300\nLast-Translator: Pekka Henttonen <pekka.henttonen@uta.fi>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Click for completion instructions": "Klikkaa saadaksesi t\u00e4ydennysohjeita", 
  "Click \non the picture below or the \"Add Image\" button to select an image file to be \nmagnified.": "Klikkaa \nallaolevaa kuvaa tai \"Lis\u00e4\u00e4 kuva\" -painiketta valitaksesi \nsuurennettavan kuvan.", 
  "Emphasis": "Korostus", 

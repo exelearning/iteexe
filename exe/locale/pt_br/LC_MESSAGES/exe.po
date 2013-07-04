@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-30 19:09+0200\n"
+"POT-Creation-Date: 2013-07-04 14:28+0200\n"
 "PO-Revision-Date: 2007-12-07 18:03+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe Team <exe@exelearning.org>\n"
@@ -428,7 +428,7 @@ msgstr ""
 #: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:129
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:448
+#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:450
 msgid "Instructions"
 msgstr "Instruções"
 
@@ -474,7 +474,7 @@ msgstr ""
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:160
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:364 exe/webui/editorelement.py:148
+#: exe/webui/common.py:366 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2174
 #: exe/webui/element.py:2288 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -968,10 +968,15 @@ msgstr ""
 
 #: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:52
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:70
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:129
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:139
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:142
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:149
+#: exe/jsui/scripts/app/view/forms/LomSections.js:50
+#: exe/jsui/scripts/app/view/forms/LomSections.js:122
+#: exe/jsui/scripts/app/view/forms/LomSections.js:128
+#: exe/jsui/scripts/app/view/forms/LomSections.js:145
+#: exe/jsui/scripts/app/view/forms/LomSections.js:168
+#: exe/jsui/scripts/app/view/forms/LomSections.js:201
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:274
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:323
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:68
 msgid "Description"
 msgstr "Descrição"
 
@@ -1218,6 +1223,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:569 exe/engine/idevicestore.py:578
 #: exe/engine/idevicestore.py:676 exe/engine/idevicestore.py:685
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Objectives"
 msgstr "Objectivos"
 
@@ -1236,6 +1242,7 @@ msgstr "Introduzir o objecto de aprendizagem para este recurso."
 
 #: exe/engine/idevicestore.py:582 exe/engine/idevicestore.py:592
 #: exe/engine/idevicestore.py:689 exe/engine/idevicestore.py:699
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Preknowledge"
 msgstr "Pré-requisitos  "
 
@@ -1599,6 +1606,11 @@ msgstr ""
 msgid "Documents"
 msgstr ""
 
+#: exe/engine/lom/lomsubs.py:283
+#, python-format
+msgid "Invalid source: %s"
+msgstr ""
+
 #: exe/engine/mathidevice.py:41 exe/engine/mathidevice.py:54
 #, fuzzy
 msgid "Maths"
@@ -1741,27 +1753,27 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:391
+#: exe/engine/package.py:295
 msgid "Topic"
 msgstr "Tópico"
 
-#: exe/engine/package.py:391
+#: exe/engine/package.py:295
 msgid "Section"
 msgstr "Secção"
 
-#: exe/engine/package.py:391
+#: exe/engine/package.py:295
 msgid "Unit"
 msgstr "Unidade"
 
-#: exe/engine/package.py:412
+#: exe/engine/package.py:316
 msgid "Home"
 msgstr "Início"
 
-#: exe/engine/package.py:524
+#: exe/engine/package.py:908
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:562 exe/engine/package.py:569
+#: exe/engine/package.py:946 exe/engine/package.py:953
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1770,10 +1782,14 @@ msgstr ""
 "GUARDAR FALHOU!\n"
 "Última gravação correcta é %s."
 
-#: exe/engine/package.py:914 exe/jsui/scripts/app/controller/Toolbar.js:364
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
+#: exe/engine/package.py:1298 exe/jsui/scripts/app/controller/Toolbar.js:370
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Editor iDevice"
+
+#: exe/engine/package.py:1419
+msgid "My Catalog"
+msgstr ""
 
 #: exe/engine/parasabermasfpdidevice.py:30
 msgid "FPD - A Step Ahead"
@@ -2271,9 +2287,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:238
-#: exe/jsui/mainpage.py:884 exe/jsui/mainpage.py:1030 exe/jsui/mainpage.py:1071
-#: exe/jsui/mainpage.py:1106
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:285
+#: exe/jsui/mainpage.py:956 exe/jsui/mainpage.py:1106 exe/jsui/mainpage.py:1147
+#: exe/jsui/mainpage.py:1182
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2291,8 +2307,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:502 exe/export/imsexport.py:449
-#: exe/export/scormexport.py:765 exe/export/websiteexport.py:91
+#: exe/export/epub3export.py:574 exe/export/imsexport.py:468
+#: exe/export/scormexport.py:791 exe/export/websiteexport.py:91
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2306,11 +2322,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Este artigo está licenciado segundo"
 
-#: exe/export/scormexport.py:503 exe/export/websitepage.py:288
+#: exe/export/scormexport.py:520 exe/export/websitepage.py:295
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormexport.py:504 exe/export/websitepage.py:294
+#: exe/export/scormexport.py:521 exe/export/websitepage.py:301
 msgid "Next"
 msgstr "Próximo"
 
@@ -2376,19 +2392,19 @@ msgstr ""
 msgid "Inserting %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:256 exe/jsui/mainpage.py:720 exe/jsui/mainpage.py:876
+#: exe/jsui/mainpage.py:303 exe/jsui/mainpage.py:804 exe/jsui/mainpage.py:948
 msgid "Cannot access directory named "
 msgstr "Não é permitido o acesso ao nome do directório"
 
-#: exe/jsui/mainpage.py:256 exe/jsui/mainpage.py:722 exe/jsui/mainpage.py:876
+#: exe/jsui/mainpage.py:303 exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:948
 msgid ". Please use ASCII names."
 msgstr ". Por favor use nomes ASCII."
 
-#: exe/jsui/mainpage.py:265
+#: exe/jsui/mainpage.py:312
 msgid "SAVE FAILED!"
 msgstr "FICHEIRO GUARDADO"
 
-#: exe/jsui/mainpage.py:269 exe/jsui/mainpage.py:569 exe/jsui/mainpage.py:961
+#: exe/jsui/mainpage.py:316 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1033
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2397,62 +2413,69 @@ msgstr ""
 "OPERAÇÃO DE GUARDAR FALHADA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:273 exe/jsui/mainpage.py:278 exe/jsui/mainpage.py:281
+#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:325 exe/jsui/mainpage.py:328
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Módulo guardado para: %s"
 
-#: exe/jsui/mainpage.py:324
+#: exe/jsui/mainpage.py:401
 msgid "Changes take effect when you restart eXe"
 msgstr ""
 
-#: exe/jsui/mainpage.py:491 exe/jsui/mainpage.py:597
+#: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:674
 #, fuzzy, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
 
-#: exe/jsui/mainpage.py:511
+#: exe/jsui/mainpage.py:588
 #, fuzzy, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
 
-#: exe/jsui/mainpage.py:639
+#: exe/jsui/mainpage.py:716
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:673 exe/jsui/mainpage.py:1218
+#: exe/jsui/mainpage.py:750 exe/jsui/mainpage.py:1294
 #, python-format
 msgid "Incorrect style file : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:691
+#: exe/jsui/mainpage.py:769
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:694
+#: exe/jsui/mainpage.py:775
+#, python-format
+msgid ""
+"LOM Metadata import FAILED!\n"
+"%s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:778
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:742 exe/jsui/mainpage.py:747 exe/jsui/mainpage.py:754
-#: exe/jsui/mainpage.py:761 exe/jsui/mainpage.py:768 exe/jsui/mainpage.py:771
-#: exe/jsui/mainpage.py:774 exe/jsui/mainpage.py:1014 exe/jsui/mainpage.py:1087
-#: exe/jsui/mainpage.py:1224
+#: exe/jsui/mainpage.py:826 exe/jsui/mainpage.py:831 exe/jsui/mainpage.py:834
+#: exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:840 exe/jsui/mainpage.py:843
+#: exe/jsui/mainpage.py:846 exe/jsui/mainpage.py:1090 exe/jsui/mainpage.py:1163
+#: exe/jsui/mainpage.py:1300
 msgid "EXPORT FAILED!"
 msgstr "FALHOU EXPORTAÇÃO"
 
-#: exe/jsui/mainpage.py:845
+#: exe/jsui/mainpage.py:917
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:848
+#: exe/jsui/mainpage.py:920
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:885 exe/jsui/mainpage.py:902
+#: exe/jsui/mainpage.py:957 exe/jsui/mainpage.py:974
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2461,21 +2484,21 @@ msgstr ""
 "EXTRAÇÃO FALHADA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:904
+#: exe/jsui/mainpage.py:976
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Módulo guardado para: %s"
 
-#: exe/jsui/mainpage.py:916
+#: exe/jsui/mainpage.py:988
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:947 exe/jsui/mainpage.py:990
+#: exe/jsui/mainpage.py:1019 exe/jsui/mainpage.py:1063
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Nome do ficheiro %s não pode ser alterado"
 
-#: exe/jsui/mainpage.py:953 exe/jsui/mainpage.py:996
+#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1070
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2484,11 +2507,11 @@ msgstr ""
 "Noma da pasta %s já existe. Por favor escolher outro ou eliminar o "
 "existente e tentar novamente."
 
-#: exe/jsui/mainpage.py:1003 exe/jsui/mainpage.py:1018
-#: exe/jsui/mainpage.py:1031 exe/jsui/mainpage.py:1037
-#: exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1072
-#: exe/jsui/mainpage.py:1078 exe/jsui/mainpage.py:1092
+#: exe/jsui/mainpage.py:1078 exe/jsui/mainpage.py:1094
 #: exe/jsui/mainpage.py:1107 exe/jsui/mainpage.py:1113
+#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1168
+#: exe/jsui/mainpage.py:1183 exe/jsui/mainpage.py:1189
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2497,27 +2520,27 @@ msgstr ""
 "EXPORTAÇÃO FALHOU!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1005 exe/jsui/mainpage.py:1020
-#: exe/jsui/mainpage.py:1039 exe/jsui/mainpage.py:1057
-#: exe/jsui/mainpage.py:1080 exe/jsui/mainpage.py:1094
-#: exe/jsui/mainpage.py:1115
+#: exe/jsui/mainpage.py:1081 exe/jsui/mainpage.py:1096
+#: exe/jsui/mainpage.py:1115 exe/jsui/mainpage.py:1133
+#: exe/jsui/mainpage.py:1156 exe/jsui/mainpage.py:1170
+#: exe/jsui/mainpage.py:1191
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado para %s"
 
-#: exe/jsui/mainpage.py:1148 exe/jsui/mainpage.py:1202
+#: exe/jsui/mainpage.py:1224 exe/jsui/mainpage.py:1278
 #: exe/webui/stylemanagerpage.py:242
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Ficheiro %s não existe ou indecifrado."
 
-#: exe/jsui/mainpage.py:1152
+#: exe/jsui/mainpage.py:1228
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Não consigo carregar o ficheiro, por favor, enviar ficheiro para "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1155
+#: exe/jsui/mainpage.py:1231
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2526,97 +2549,107 @@ msgstr ""
 "Desculpe, formato de ficheiro incorrecto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1157
+#: exe/jsui/mainpage.py:1233
 msgid "Sorry, wrong file format"
 msgstr "Desculpe, formato de ficheiro incorrecto"
 
-#: exe/jsui/mainpage.py:1215
+#: exe/jsui/mainpage.py:1291
 #, python-format
 msgid "Correct Style import : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1235
+#: exe/jsui/mainpage.py:1311
 #, python-format
 msgid "Correct ZIP Style exported : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1238
+#: exe/jsui/mainpage.py:1314
 #, python-format
 msgid "can't export style : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1255
+#: exe/jsui/mainpage.py:1331
 msgid "Style deleted "
 msgstr ""
 
-#: exe/jsui/mainpage.py:1258
+#: exe/jsui/mainpage.py:1334
 msgid "can't delete style "
 msgstr ""
 
-#: exe/jsui/propertiespage.py:92
+#: exe/jsui/propertiespage.py:320
 msgid "Failed to get properties"
 msgstr ""
 
-#: exe/jsui/propertiespage.py:118
+#: exe/jsui/propertiespage.py:357
 msgid "Failed to save properties"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:91
-msgid "Settings Saved"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/MainTab.js:119
-#: exe/jsui/scripts/app/controller/MainTab.js:176
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
+#: exe/jsui/scripts/app/controller/MainTab.js:159
+#: exe/jsui/scripts/app/controller/MainTab.js:216
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:371
 msgid "Show Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:129 exe/webui/element.py:523
+#: exe/jsui/scripts/app/controller/MainTab.js:169 exe/webui/element.py:523
 #: exe/webui/element.py:937
 msgid "Select an image"
 msgstr "Seleccionar uma imagem"
 
-#: exe/jsui/scripts/app/controller/MainTab.js:146
-#: exe/jsui/scripts/app/controller/MainTab.js:180
-#: exe/jsui/scripts/app/controller/MainTab.js:208
+#: exe/jsui/scripts/app/controller/MainTab.js:186
+#: exe/jsui/scripts/app/controller/MainTab.js:220
+#: exe/jsui/scripts/app/controller/MainTab.js:263
 msgid "Hide Image"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:155
+#: exe/jsui/scripts/app/controller/MainTab.js:195
 msgid "Image Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:156
-#: exe/jsui/scripts/app/controller/Toolbar.js:427
-#: exe/jsui/scripts/app/controller/Toolbar.js:448
-#: exe/jsui/scripts/app/controller/Toolbar.js:483
-#: exe/jsui/scripts/app/controller/Toolbar.js:540
-#: exe/jsui/scripts/app/controller/Toolbar.js:559
-#: exe/jsui/scripts/app/controller/Toolbar.js:608
-#: exe/jsui/scripts/app/controller/Toolbar.js:636
-#: exe/jsui/scripts/app/controller/Toolbar.js:678
-#: exe/jsui/scripts/app/controller/Toolbar.js:695
-#: exe/jsui/scripts/app/controller/Toolbar.js:724
-#: exe/jsui/scripts/app/controller/Toolbar.js:850
-#: exe/jsui/scripts/app/controller/Toolbar.js:924
+#: exe/jsui/scripts/app/controller/MainTab.js:196
+#: exe/jsui/scripts/app/controller/Toolbar.js:433
+#: exe/jsui/scripts/app/controller/Toolbar.js:454
+#: exe/jsui/scripts/app/controller/Toolbar.js:489
+#: exe/jsui/scripts/app/controller/Toolbar.js:508
+#: exe/jsui/scripts/app/controller/Toolbar.js:565
+#: exe/jsui/scripts/app/controller/Toolbar.js:584
+#: exe/jsui/scripts/app/controller/Toolbar.js:633
+#: exe/jsui/scripts/app/controller/Toolbar.js:661
+#: exe/jsui/scripts/app/controller/Toolbar.js:703
+#: exe/jsui/scripts/app/controller/Toolbar.js:720
+#: exe/jsui/scripts/app/controller/Toolbar.js:749
+#: exe/jsui/scripts/app/controller/Toolbar.js:875
+#: exe/jsui/scripts/app/controller/Toolbar.js:949
 msgid "All Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/MainTab.js:190
-#: exe/jsui/scripts/app/controller/MainTab.js:215
+#: exe/jsui/scripts/app/controller/MainTab.js:231
+msgid "Settings Saved"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/MainTab.js:240
+#: exe/jsui/scripts/app/controller/MainTab.js:245
+#: exe/jsui/scripts/app/controller/MainTab.js:276
 #: exe/webui/stylemanagerpage.py:242 exe/webui/stylemanagerpage.py:245
 #: exe/webui/stylemanagerpage.py:255 exe/webui/stylemanagerpage.py:260
 #: exe/webui/stylemanagerpage.py:281 exe/webui/stylemanagerpage.py:296
 msgid "Error"
 msgstr ""
 
+#: exe/jsui/scripts/app/controller/MainTab.js:245
+msgid "The form contains invalid fields. Please check back."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/MainTab.js:334
+msgid "LOM Metadata import success!"
+msgstr ""
+
 #: exe/jsui/scripts/app/controller/Outline.js:146
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:297
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "Insert Package"
 msgstr "Inserir Pacote"
 
 #: exe/jsui/scripts/app/controller/Outline.js:149
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:303
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
 msgid "Extract Package"
 msgstr "Extrair pacote"
 
@@ -2625,7 +2658,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:369
+#: exe/jsui/scripts/app/controller/Toolbar.js:375
 msgid "Confirm"
 msgstr ""
 
@@ -2637,194 +2670,202 @@ msgstr ""
 msgid "Enter the new name:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:318
+#: exe/jsui/scripts/app/controller/Toolbar.js:324
 msgid "About"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:351
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:375
+#: exe/jsui/scripts/app/controller/Toolbar.js:357
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
 msgid "Preferences"
 msgstr "Preferências"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:370
+#: exe/jsui/scripts/app/controller/Toolbar.js:376
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:394
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:339
+#: exe/jsui/scripts/app/controller/Toolbar.js:400
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:415
+#: exe/jsui/scripts/app/controller/Toolbar.js:421
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:420
+#: exe/jsui/scripts/app/controller/Toolbar.js:426
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:426
-#: exe/jsui/scripts/app/controller/Toolbar.js:447
-#: exe/jsui/scripts/app/controller/Toolbar.js:849
-#: exe/jsui/scripts/app/controller/Toolbar.js:923
+#: exe/jsui/scripts/app/controller/Toolbar.js:432
+#: exe/jsui/scripts/app/controller/Toolbar.js:453
+#: exe/jsui/scripts/app/controller/Toolbar.js:874
+#: exe/jsui/scripts/app/controller/Toolbar.js:948
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:436
+#: exe/jsui/scripts/app/controller/Toolbar.js:442
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:441
+#: exe/jsui/scripts/app/controller/Toolbar.js:447
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:457
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:472
+#: exe/jsui/scripts/app/controller/Toolbar.js:478
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:482
+#: exe/jsui/scripts/app/controller/Toolbar.js:488
 msgid "HTML Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:497
+msgid "Select LOM Metadata file to import."
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:507
+msgid "XML Files"
+msgstr ""
+
+#: exe/jsui/scripts/app/controller/Toolbar.js:522
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:505
+#: exe/jsui/scripts/app/controller/Toolbar.js:530
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:506
+#: exe/jsui/scripts/app/controller/Toolbar.js:531
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:528
+#: exe/jsui/scripts/app/controller/Toolbar.js:553
 msgid "Select ZIP Style file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:539
+#: exe/jsui/scripts/app/controller/Toolbar.js:564
 msgid "ZIP Style"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:549
+#: exe/jsui/scripts/app/controller/Toolbar.js:574
 msgid "Export to ZIP Style as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:558
+#: exe/jsui/scripts/app/controller/Toolbar.js:583
 msgid "ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:566
+#: exe/jsui/scripts/app/controller/Toolbar.js:591
 msgid "Delete style?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/controller/Toolbar.js:592
 msgid "Do you want to delete the selected style?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:589
+#: exe/jsui/scripts/app/controller/Toolbar.js:614
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:599
+#: exe/jsui/scripts/app/controller/Toolbar.js:624
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:607
-#: exe/jsui/scripts/app/controller/Toolbar.js:635
+#: exe/jsui/scripts/app/controller/Toolbar.js:632
+#: exe/jsui/scripts/app/controller/Toolbar.js:660
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:617
+#: exe/jsui/scripts/app/controller/Toolbar.js:642
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:627
+#: exe/jsui/scripts/app/controller/Toolbar.js:652
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:651
+#: exe/jsui/scripts/app/controller/Toolbar.js:676
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:668
+#: exe/jsui/scripts/app/controller/Toolbar.js:693
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:677
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:267
+#: exe/jsui/scripts/app/controller/Toolbar.js:702
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:685
+#: exe/jsui/scripts/app/controller/Toolbar.js:710
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:694
+#: exe/jsui/scripts/app/controller/Toolbar.js:719
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:702
+#: exe/jsui/scripts/app/controller/Toolbar.js:727
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:704
+#: exe/jsui/scripts/app/controller/Toolbar.js:729
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:706
+#: exe/jsui/scripts/app/controller/Toolbar.js:731
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:708
+#: exe/jsui/scripts/app/controller/Toolbar.js:733
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:710
+#: exe/jsui/scripts/app/controller/Toolbar.js:735
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:723
+#: exe/jsui/scripts/app/controller/Toolbar.js:748
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:822
+#: exe/jsui/scripts/app/controller/Toolbar.js:847
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:838
+#: exe/jsui/scripts/app/controller/Toolbar.js:863
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:843
+#: exe/jsui/scripts/app/controller/Toolbar.js:868
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:862
+#: exe/jsui/scripts/app/controller/Toolbar.js:887
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:863
+#: exe/jsui/scripts/app/controller/Toolbar.js:888
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:887
+#: exe/jsui/scripts/app/controller/Toolbar.js:912
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
+#: exe/jsui/scripts/app/controller/Toolbar.js:928
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:909
+#: exe/jsui/scripts/app/controller/Toolbar.js:934
 msgid "Saving package..."
 msgstr ""
 
@@ -2867,20 +2908,23 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:48
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:54
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:301
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:303
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:306
+#: exe/jsui/scripts/app/view/forms/LomSections.js:64
+#: exe/jsui/scripts/app/view/forms/LomSections.js:87
+#: exe/jsui/scripts/app/view/forms/LomSections.js:103
+#: exe/jsui/scripts/app/view/forms/LomSections.js:139
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:86 exe/webui/editorpane.py:327
 msgid "Name"
 msgstr "Nome"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:72
+#: exe/jsui/scripts/app/view/forms/LomSections.js:96
 msgid "Size"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
+#: exe/jsui/scripts/app/view/forms/LomSections.js:102
 msgid "Type"
 msgstr ""
 
@@ -2904,8 +2948,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:77
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:183
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:95
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:194
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:120
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:242
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:272
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:265
 msgid "Save"
 msgstr "Guardar"
@@ -2932,14 +2978,15 @@ msgid "Dublin Core Metadata"
 msgstr "Núcleo Dublin Metadata "
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:94
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:103
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:106
+#: exe/jsui/scripts/app/view/forms/LomSections.js:48
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
 #: exe/webui/galleryblock.py:209
 msgid "Title"
 msgstr "Título"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:45
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:47
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:50
 #, fuzzy
 msgid "The name given to the resource."
 msgstr "Introduzir o objecto de aprendizagem para este recurso."
@@ -2969,7 +3016,8 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:71
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:78
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:82
 msgid "An account of the content of the resource."
 msgstr ""
 
@@ -2992,9 +3040,9 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:100
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:334
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:340
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:344
+#: exe/jsui/scripts/app/view/forms/LomSections.js:67
+#: exe/jsui/scripts/app/view/forms/LomSections.js:90
+#: exe/jsui/scripts/app/view/forms/LomSections.js:144
 msgid "Date"
 msgstr ""
 
@@ -3025,6 +3073,7 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
+#: exe/jsui/scripts/app/view/forms/LomSections.js:95
 msgid "Format"
 msgstr ""
 
@@ -3034,7 +3083,8 @@ msgid "Select a Format."
 msgstr "Seleccionar Formato"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:56
+#: exe/jsui/scripts/app/view/forms/LomSections.js:40
+#: exe/jsui/scripts/app/view/forms/LomSections.js:72
 msgid "Identifier"
 msgstr ""
 
@@ -3043,6 +3093,7 @@ msgid "An unambiguous reference to the resource within a given context."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
+#: exe/jsui/scripts/app/view/forms/LomSections.js:161
 msgid "Source"
 msgstr ""
 
@@ -3051,20 +3102,24 @@ msgid "A Reference to a resource from which the present resource is derived."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:148
-#: exe/jsui/scripts/app/view/forms/LangContainer.js:58
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:113
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:120
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:123
+#: exe/jsui/scripts/app/view/forms/LangContainer.js:51
+#: exe/jsui/scripts/app/view/forms/LomSections.js:49
+#: exe/jsui/scripts/app/view/forms/LomSections.js:81
+#: exe/jsui/scripts/app/view/forms/LomSections.js:123
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
 msgid "Language"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:150
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:61
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:64
 #, fuzzy
 msgid "Select a language."
 msgstr "Seleccionar Língua"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:156
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:370
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:237
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:267
 msgid "Relation"
 msgstr ""
 
@@ -3073,9 +3128,7 @@ msgid "A reference to a related resource."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:163
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:168
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:177
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:180
+#: exe/jsui/scripts/app/view/forms/LomSections.js:52
 msgid "Coverage"
 msgstr ""
 
@@ -3084,7 +3137,8 @@ msgid "The extent or scope of the content of the resource."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:172
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:365
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:236
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:266
 msgid "Rights"
 msgstr ""
 
@@ -3109,366 +3163,511 @@ msgstr ""
 "estes direitos no recurso em causa."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
-msgid "SCORM 1.2 Options"
+msgid "Global Options"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:43
-msgid "Add Previous/Next links within SCOs?"
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:50
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:54
+msgid "Metadata Type"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:45
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
+msgid "Dublin Core"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:46
+msgid "LOM v1.0"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
+msgid "LOM-ES v1.0"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:60
+msgid "SCORM Options (1.2, 2004 and Agrega)"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:68
+msgid "Add Previous/Next links within SCOs?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:72
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO. The LMS will also still add this kind "
 "of functionality."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:50
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:75
 msgid ""
 "Checking this box will cause eXe to add Previous and Next links to "
 "individual pages within your SCO.  This requires a non-standard extension"
 " to SCORM 1.2 and is only known to work with some versions of Moodle."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:56
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
 msgid "Include Single Page export file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:60
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:63
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:85
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:88
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe "
 "package as a single page."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:69
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:94
 msgid "Include Web Site export files?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:73
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:76
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:98
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:101
 msgid ""
 "Checking this option the exported SCORM file will include the result of "
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:107
 msgid "Create editable SCORM file?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:86
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:89
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:111
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:114
 msgid ""
 "Checking this option, the exported SCORM file will be editable with "
 "eXeLearning."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LangContainer.js:60
+#: exe/jsui/scripts/app/view/forms/LangContainer.js:53
 msgid "Language of the field"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:31
-msgid "Required"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:34
-msgid "Optional"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:48
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:231
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:261
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:77
 msgid "General"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:67
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:69
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:72
-msgid "Catalog"
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:232
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:262
+msgid "Life Cycle"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:81
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:83
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:86
-msgid "Entry"
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:233
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
+msgid "Meta-Metadata"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:149
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:158
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:161
-msgid "Keyword"
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:234
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:264
+msgid "Technical"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:187
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:194
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:204
-msgid "Structure"
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:235
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:265
+msgid "Educational"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:197
-msgid "atomic"
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:238
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
+msgid "Annotation"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:198
-msgid "collection"
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:239
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:269
+msgid "Classification"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:199
-msgid "networked"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:200
-msgid "hierarchical"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:201
-msgid "linear"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:210
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:226
-msgid "Agregation Level"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
+#: exe/jsui/scripts/app/view/forms/LomSections.js:23
+#: exe/jsui/scripts/app/view/forms/LomSections.js:179
 msgid "smallest level of aggregation"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:221
+#: exe/jsui/scripts/app/view/forms/LomSections.js:24
+#: exe/jsui/scripts/app/view/forms/LomSections.js:180
 msgid ""
 "collection of atoms, e.g. an HTML document with some embedded pictures or"
 " a lesson"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:222
+#: exe/jsui/scripts/app/view/forms/LomSections.js:25
+#: exe/jsui/scripts/app/view/forms/LomSections.js:181
 msgid "collection of level 1 resources"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:223
+#: exe/jsui/scripts/app/view/forms/LomSections.js:26
+#: exe/jsui/scripts/app/view/forms/LomSections.js:182
 msgid "largest level of granularity, e.g. a course"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:235
-msgid "Life Cycle"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:44
+#: exe/jsui/scripts/app/view/forms/LomSections.js:76
+msgid "Catalog"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:243
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:253
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:256
+#: exe/jsui/scripts/app/view/forms/LomSections.js:45
+#: exe/jsui/scripts/app/view/forms/LomSections.js:77
+msgid "Entry"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:51
+#: exe/jsui/scripts/app/view/forms/LomSections.js:169
+msgid "Keyword"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:53
+msgid "Structure"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:54
+msgid "Agregation Level"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:57
 msgid "Version"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:263
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:270
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:279
+#: exe/jsui/scripts/app/view/forms/LomSections.js:58
 msgid "Status"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:273
-msgid "draft"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:274
-msgid "final"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:275
-msgid "unavailable"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:276
-msgid "revised"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:284
+#: exe/jsui/scripts/app/view/forms/LomSections.js:59
+#: exe/jsui/scripts/app/view/forms/LomSections.js:82
 msgid "Contribution"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:290
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:292
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:295
+#: exe/jsui/scripts/app/view/forms/LomSections.js:63
+#: exe/jsui/scripts/app/view/forms/LomSections.js:86
 msgid "Role"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:312
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:314
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:317
+#: exe/jsui/scripts/app/view/forms/LomSections.js:65
+#: exe/jsui/scripts/app/view/forms/LomSections.js:88
+#: exe/jsui/scripts/app/view/forms/LomSections.js:140
 msgid "Organization"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:323
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:325
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:328
+#: exe/jsui/scripts/app/view/forms/LomSections.js:66
+#: exe/jsui/scripts/app/view/forms/LomSections.js:89
+#: exe/jsui/scripts/app/view/forms/LomSections.js:141
 msgid "Email"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:352
-msgid "Meta-Metadata"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:80
+msgid "Metadata Schema"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:357
-msgid "Technical"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:97
+msgid "Location"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:361
-msgid "Educational"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:98
+msgid "Requirement"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:375
-msgid "Annotation"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:104
+msgid "Minimum Version"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:380
-msgid "Classification"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:105
+msgid "Maximum Version"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:384
-#, fuzzy
-msgid "Apply"
-msgstr "Código Applet:"
+#: exe/jsui/scripts/app/view/forms/LomSections.js:108
+msgid "Installation Remarks"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:109
+msgid "Other Platform Requirements"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:110
+msgid "Duration"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:113
+msgid "Interactivity Type"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:114
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:148
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:153
+msgid "Learning Resource Type"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:115
+msgid "Interactivity Level"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:116
+msgid "Semantic Density"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:117
+msgid "Intended End User Role"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:118
+msgid "Context"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:119
+msgid "Typical Age Range"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:120
+msgid "Difficulty"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:121
+msgid "Typical Learning Time"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:126
+msgid "Cost"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:127
+msgid "Copyright And Other Restrictions"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:131
+msgid "Kind"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:132
+msgid "Resource"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:135
+msgid "Entity"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:148 exe/webui/block.py:264
+msgid "Purpose"
+msgstr "Finalidade"
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:152
+msgid "Download Classification Sources"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:155
+msgid "Taxon Path"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:165
+msgid "Taxon"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:195
+msgid "Cognitive Process"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:196
+msgid "Access"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomSections.js:200
+msgid "Access Type"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:24
+msgid "Required"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:27
+msgid "Optional"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:115
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:148
+msgid "Warning!"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:116
+msgid ""
+"You will loss all taxon config for this source. Would you like to "
+"continue?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:149
+msgid ""
+"You will loss all taxon config in this section. Would you like to "
+"continue?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:340
+msgid "Years"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:341
+msgid "Months"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:342
+msgid "Days"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:357
+msgid "Hours"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:358
+msgid "Minutes"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:359
+msgid "Seconds"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:603
+msgid "Append Section"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:620
+msgid "Delete Section"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:634
+msgid "Notice"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:634
+msgid "Should be at least one section of this type"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
-msgid "Project Properties"
+msgid "Cataloguing"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:42
-msgid "Project Title"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:43
-msgid "The project's title."
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:54
-msgid "Header Background"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:58
-msgid "Background image for a header (an image 100px high is recommended)."
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:76
-msgid "Load Image"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:89
-msgid "Clear Image"
-msgstr ""
-
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:92
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
-msgid "Tile background image?"
+msgid "Objectives."
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:106
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
+msgid "Preknowledge."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 msgid "Author"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Primary author of the resource."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:117
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:134
 msgid "License"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:120
-msgid "GNU Free Documentation License"
-msgstr "GNU Licença de Documentação Livre"
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
-msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
-msgid "Creative Commons Attribution Share Alike 3.0 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
-msgid "Creative Commons Attribution No Derivatives 3.0 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:124
-msgid "Creative Commons Attribution Non-commercial 3.0 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
-msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:126
-msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
-msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:128
-msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
-msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:130
-msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
-msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:132
-msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:133
-msgid "Developing Nations 2.0"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:135
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:139
 msgid "Select a license."
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:141
-msgid "Footer"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:142
-msgid "Web pages footer."
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:158
-msgid "Taxonomy"
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
+msgid "Especificaciones de utilización"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
+msgid "Tipo de alumno"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
+msgid "Para trabajar en grupo"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
+msgid "Para trabajar en tutoría"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
+msgid "Lugar de utilización"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
+msgid "Modalidad de uso"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
+msgid "Project Properties"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:342
+msgid "Header Background"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:346
+msgid "Background image for a header (an image 100px high is recommended)."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:364
+msgid "Load Image"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:377
+msgid "Clear Image"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:384
+msgid "Tile background image?"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:398
+msgid "Footer"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:399
+msgid "Web pages footer."
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
+msgid "Taxonomy"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:416
 msgid "Level 1"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:417
 msgid "Default name for level 1 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:174
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:423
 msgid "Level 2"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:175
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:424
 msgid "Default name for level 2 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:430
 msgid "Level 3"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:182
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:431
 msgid "Default name for level 3 nodes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:187
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:436
 msgid "Update Tree"
 msgstr ""
 
@@ -3481,36 +3680,40 @@ msgstr "Diagrama"
 msgid "iDevices"
 msgstr "Novo iDevice"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:42
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
 msgstr "Autor"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:46
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:50 exe/webui/editorpane.py:268
+#: exe/webui/element.py:1809
+msgid "Preview"
+msgstr "Previsão"
+
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
 msgid "Properties"
 msgstr "Propriedades"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:52
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:61
 msgid "Package"
 msgstr "Pacote"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:56
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:65
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Metadata"
 msgstr "Metadata"
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:61
-msgid "Dublin Core"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:66
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:77
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
 msgid "LOM"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
-msgid "LOM.es"
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
+msgid "LOM-ES"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:78
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:192
+#: exe/jsui/scripts/app/view/ui/MainTabPanel.js:90
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
 #: exe/webui/stylemanagerpage.py:170
 msgid "Export"
 msgstr "Exportar"
@@ -3580,7 +3783,7 @@ msgid "Print"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:353
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:375
 msgid "Import"
 msgstr ""
 
@@ -3592,117 +3795,117 @@ msgstr ""
 msgid "XLIFF File"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:199
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:221
 msgid "Educational Standard"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:206
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
 msgid "Common Cartridge"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:212
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
 msgid "SCORM1.2"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:218
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
 msgid "SCORM2004"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:224
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
 msgid "Agrega SCORM2004"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:230
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:239
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:261
 msgid "Web Site"
 msgstr "Sítio Web"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:268
 msgid "Self-contained Folder"
 msgstr "Pasta de conteúdo"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
 msgid "Zip File"
 msgstr "Ficheiro zip"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:258
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Single Page"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:273
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "XLIFF"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:279
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "EPUB3"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:288
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:310
 msgid "Merging"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316 exe/webui/editorpage.py:283
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:283
 #: exe/webui/stylemanagerpage.py:114
 #, fuzzy
 msgid "Quit"
 msgstr "Submeter"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:323
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:345
 msgid "Tools"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
 msgid "Styles manage"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:359
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:381
 msgid "Export current style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:387
 msgid "Delete current style"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:384
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:391
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:423
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:411
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:433
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:417
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:439
 msgid "eXe Manual"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:423
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:432
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:454
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:438
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:460
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:444
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:466
 msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:453
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:475
 msgid "About eXe"
 msgstr ""
 
@@ -4342,45 +4545,980 @@ msgid "Uzbek "
 msgstr "Uzurbaquistão"
 
 #: exe/jsui/scripts/langs.js:632
+msgid "Valencian "
+msgstr ""
+
+#: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
 msgstr "Vietnamita"
 
-#: exe/jsui/scripts/langs.js:636
+#: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
 msgstr "Volapük; Volapuk "
 
-#: exe/jsui/scripts/langs.js:640
+#: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
 msgstr "Walloon "
 
-#: exe/jsui/scripts/langs.js:644
+#: exe/jsui/scripts/langs.js:648
 msgid "Wolof "
 msgstr "Wolof "
 
-#: exe/jsui/scripts/langs.js:648
+#: exe/jsui/scripts/langs.js:652
 msgid "Xhosa "
 msgstr "Xhosa "
 
-#: exe/jsui/scripts/langs.js:652
+#: exe/jsui/scripts/langs.js:656
 msgid "Yiddish (formerly ji) "
 msgstr "Yiddish (formerly ji) "
 
-#: exe/jsui/scripts/langs.js:656
+#: exe/jsui/scripts/langs.js:660
 msgid "Yoruba "
 msgstr "Yoruba "
 
-#: exe/jsui/scripts/langs.js:660
+#: exe/jsui/scripts/langs.js:664
 msgid "Zhuang "
 msgstr "Zhuang "
 
-#: exe/jsui/scripts/langs.js:664
+#: exe/jsui/scripts/langs.js:668
 msgid "Chinese "
 msgstr "Chinês"
 
-#: exe/jsui/scripts/langs.js:668
+#: exe/jsui/scripts/langs.js:672
 #, fuzzy
 msgid "Zulu "
 msgstr "Zulu."
+
+#: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
+msgid "active"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:9 exe/jsui/scripts/lomvocab.js:668
+msgid "expositive"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
+#: exe/jsui/scripts/lomvocab.js:1216
+msgid "mixed"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:19
+msgid "exercise"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:23 exe/jsui/scripts/lomvocab.js:882
+msgid "simulation"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:27 exe/jsui/scripts/lomvocab.js:886
+msgid "questionnaire"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:31
+msgid "diagram"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:35
+msgid "figure"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:39 exe/jsui/scripts/lomvocab.js:734
+msgid "graph"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:43
+msgid "index"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:47
+msgid "slide"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:51 exe/jsui/scripts/lomvocab.js:730
+msgid "table"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:55 exe/jsui/scripts/lomvocab.js:710
+msgid "narrative text"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:59 exe/jsui/scripts/lomvocab.js:890
+msgid "exam"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:63 exe/jsui/scripts/lomvocab.js:874
+msgid "experiment"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:67
+msgid "problem statement"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:71 exe/jsui/scripts/lomvocab.js:281
+#: exe/jsui/scripts/lomvocab.js:894 exe/jsui/scripts/lomvocab.js:1096
+msgid "self assessment"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:75
+msgid "lecture"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:81 exe/jsui/scripts/lomvocab.js:900
+msgid "1"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:85 exe/jsui/scripts/lomvocab.js:904
+msgid "2"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:89 exe/jsui/scripts/lomvocab.js:908
+msgid "3"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:93 exe/jsui/scripts/lomvocab.js:912
+msgid "4"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:99 exe/jsui/scripts/lomvocab.js:918
+msgid "discipline"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:103 exe/jsui/scripts/lomvocab.js:922
+msgid "idea"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:107 exe/jsui/scripts/lomvocab.js:926
+msgid "prerequisite"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:111 exe/jsui/scripts/lomvocab.js:930
+msgid "educational objective"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:115 exe/jsui/scripts/lomvocab.js:934
+msgid "accessibility restrictions"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:119 exe/jsui/scripts/lomvocab.js:938
+msgid "educational level"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:123 exe/jsui/scripts/lomvocab.js:942
+msgid "skill level"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:127 exe/jsui/scripts/lomvocab.js:946
+msgid "security level"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:131 exe/jsui/scripts/lomvocab.js:950
+msgid "competency"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:137 exe/jsui/scripts/lomvocab.js:956
+msgid "creator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:141 exe/jsui/scripts/lomvocab.js:167
+#: exe/jsui/scripts/lomvocab.js:960 exe/jsui/scripts/lomvocab.js:982
+msgid "validator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:147 exe/jsui/scripts/lomvocab.js:613
+#: exe/jsui/scripts/lomvocab.js:966
+msgid "author"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:151 exe/jsui/scripts/lomvocab.js:970
+msgid "publisher"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:155
+msgid "unknown"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:159 exe/jsui/scripts/lomvocab.js:974
+msgid "initiator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:163 exe/jsui/scripts/lomvocab.js:978
+msgid "terminator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:171 exe/jsui/scripts/lomvocab.js:986
+msgid "editor"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:175 exe/jsui/scripts/lomvocab.js:990
+msgid "graphical designer"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:179 exe/jsui/scripts/lomvocab.js:994
+msgid "technical implementer"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:183 exe/jsui/scripts/lomvocab.js:998
+msgid "content provider"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:187 exe/jsui/scripts/lomvocab.js:1002
+msgid "technical validator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:191 exe/jsui/scripts/lomvocab.js:1006
+msgid "educational validator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:195 exe/jsui/scripts/lomvocab.js:1010
+msgid "script writer"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:199 exe/jsui/scripts/lomvocab.js:1014
+msgid "instructional designer"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
+#: exe/jsui/scripts/lomvocab.js:1584
+msgid "subject matter expert"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:209 exe/jsui/scripts/lomvocab.js:1024
+msgid "analyse"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:213 exe/jsui/scripts/lomvocab.js:1028
+msgid "implement"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:217 exe/jsui/scripts/lomvocab.js:1032
+msgid "collaborate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:221 exe/jsui/scripts/lomvocab.js:1036
+msgid "compare"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:225 exe/jsui/scripts/lomvocab.js:1040
+msgid "share"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:229 exe/jsui/scripts/lomvocab.js:1044
+msgid "compete"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:233 exe/jsui/scripts/lomvocab.js:1048
+msgid "understand"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:237 exe/jsui/scripts/lomvocab.js:1052
+msgid "prove"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:241 exe/jsui/scripts/lomvocab.js:1056
+msgid "communicate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:245 exe/jsui/scripts/lomvocab.js:1060
+msgid "contextualize"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:249 exe/jsui/scripts/lomvocab.js:1064
+msgid "control"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:253 exe/jsui/scripts/lomvocab.js:1068
+msgid "cooperate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:257 exe/jsui/scripts/lomvocab.js:1072
+msgid "create"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:261 exe/jsui/scripts/lomvocab.js:1076
+msgid "decide"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:265 exe/jsui/scripts/lomvocab.js:1080
+msgid "define"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:269 exe/jsui/scripts/lomvocab.js:1084
+msgid "describe"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:273 exe/jsui/scripts/lomvocab.js:1088
+msgid "discuss"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:277 exe/jsui/scripts/lomvocab.js:1092
+msgid "design"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:285 exe/jsui/scripts/lomvocab.js:1100
+msgid "explain"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:289 exe/jsui/scripts/lomvocab.js:1104
+msgid "extrapolate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:293 exe/jsui/scripts/lomvocab.js:1108
+msgid "innovate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:297 exe/jsui/scripts/lomvocab.js:1112
+msgid "investigate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:301 exe/jsui/scripts/lomvocab.js:1116
+msgid "judge"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:305 exe/jsui/scripts/lomvocab.js:1120
+msgid "motivate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:309 exe/jsui/scripts/lomvocab.js:1124
+msgid "observe"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:313 exe/jsui/scripts/lomvocab.js:1128
+msgid "organize"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:317 exe/jsui/scripts/lomvocab.js:1132
+msgid "organize oneself"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:321 exe/jsui/scripts/lomvocab.js:1136
+msgid "plan"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:325 exe/jsui/scripts/lomvocab.js:1140
+msgid "practise"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:329 exe/jsui/scripts/lomvocab.js:1144
+msgid "produce"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:333 exe/jsui/scripts/lomvocab.js:1148
+msgid "recognize"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:337 exe/jsui/scripts/lomvocab.js:1152
+msgid "remember"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:341 exe/jsui/scripts/lomvocab.js:1156
+msgid "write up"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:345 exe/jsui/scripts/lomvocab.js:1160
+msgid "consider"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:349 exe/jsui/scripts/lomvocab.js:1164
+msgid "connect"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:353 exe/jsui/scripts/lomvocab.js:1168
+msgid "represent"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:357 exe/jsui/scripts/lomvocab.js:1172
+msgid "solve"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:361 exe/jsui/scripts/lomvocab.js:1176
+msgid "simulate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:365 exe/jsui/scripts/lomvocab.js:1180
+msgid "summarize"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:369 exe/jsui/scripts/lomvocab.js:1184
+msgid "value"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:375 exe/jsui/scripts/lomvocab.js:413
+#: exe/jsui/scripts/lomvocab.js:1190
+msgid "yes"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:379 exe/jsui/scripts/lomvocab.js:417
+#: exe/jsui/scripts/lomvocab.js:1194
+msgid "no"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:385
+msgid "school"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:389
+msgid "higher education"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:393
+msgid "training"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:397
+msgid "other"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1258
+msgid "operating system"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1262
+msgid "browser"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1330
+msgid "ispartof"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1334
+msgid "haspart"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1338
+msgid "isversionof"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1342
+msgid "hasversion"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1346
+msgid "isformatof"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1350
+msgid "hasformat"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1354
+msgid "references"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1358
+msgid "isreferencedby"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1362
+msgid "isbasedon"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1366
+msgid "isbasisfor"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1370
+msgid "requires"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1374
+msgid "isrequiredby"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
+#: exe/jsui/scripts/lomvocab.js:1380 exe/jsui/scripts/lomvocab.js:1448
+msgid "very low"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
+#: exe/jsui/scripts/lomvocab.js:1384 exe/jsui/scripts/lomvocab.js:1452
+msgid "low"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
+#: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1388
+#: exe/jsui/scripts/lomvocab.js:1456 exe/jsui/scripts/lomvocab.js:1608
+#: exe/webui/externalurlblock.py:73
+msgid "medium"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
+#: exe/jsui/scripts/lomvocab.js:1392 exe/jsui/scripts/lomvocab.js:1460
+msgid "high"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
+#: exe/jsui/scripts/lomvocab.js:1396 exe/jsui/scripts/lomvocab.js:1464
+msgid "very high"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1402
+msgid "draft"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:499 exe/jsui/scripts/lomvocab.js:1406
+msgid "final"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:503 exe/jsui/scripts/lomvocab.js:1410
+msgid "revised"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:507 exe/jsui/scripts/lomvocab.js:1414
+msgid "unavailable"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:513
+msgid "LOMv1.0"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1426
+msgid "atomic"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:523 exe/jsui/scripts/lomvocab.js:1430
+msgid "collection"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:527 exe/jsui/scripts/lomvocab.js:1434
+msgid "networked"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:531 exe/jsui/scripts/lomvocab.js:1438
+msgid "hierarchical"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:535 exe/jsui/scripts/lomvocab.js:1442
+msgid "linear"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1470
+msgid "pc-dos"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1474
+msgid "ms-windows"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1478
+msgid "macos"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1486
+msgid "unix"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1490
+msgid "multi-os"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1494
+msgid "none"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1498
+msgid "any"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1506
+msgid "netscape communicator"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1510
+msgid "ms-internet explorer"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1514
+msgid "opera"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1518
+msgid "amaya"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
+#: exe/jsui/scripts/lomvocab.js:1556
+msgid "teacher"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1524
+msgid "learner"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1576
+msgid "manager"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1590
+msgid "universal"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1594
+msgid "non-universal"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1600
+msgid "very easy"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1604
+msgid "easy"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1612
+msgid "difficult"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1616
+msgid "very difficult"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:678
+msgid "photograph"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:682
+msgid "illustration"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:686
+msgid "video"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:690
+msgid "animation"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:694
+msgid "music"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:698
+msgid "sound effect"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:702
+msgid "voice-over"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:706
+msgid "compound audio"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:714
+msgid "hypertext"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:718
+msgid "computer graphics"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:722
+msgid "integrated media"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:726
+msgid "database"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:738
+msgid "conceptual map"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:742
+msgid "navigation map"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:746
+msgid "multimedia presentation"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:750
+msgid "tutorial"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:754
+msgid "digital dictionary"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:758
+msgid "digital encyclopaedia"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:762
+msgid "digital periodical publication"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:766
+msgid "thematic or corporate webs/web portals"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:770
+msgid "wiki"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:774
+msgid "weblog"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:778
+msgid "multimedia creation/edition tool"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:782
+msgid "web design tool"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:786
+msgid "office tool"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:790
+msgid "programming tool"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:794
+msgid "information/knowledgeanalysis/organization tool"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:798
+msgid "process/procedure supporting tools"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:802
+msgid "individual/cooperative/collaborative learning/working management tool"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:806
+msgid "multimedia creation/edition service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:810
+msgid "web design service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:814
+msgid "office service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:818
+msgid "programming service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:822
+msgid "information/knowledgeanalysis/organization service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:826
+msgid "process/procedure supporting service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:830
+msgid "individual/cooperative/collaborative learning/working management service"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:834
+msgid "guided reading"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:838
+msgid "master class"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:842
+msgid "textual-image analysis"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:846
+msgid "discussion activity"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:850
+msgid "closed exercise or problem"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:854
+msgid "contextualized case problem"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:858
+msgid "open problem"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:862
+msgid "real or virtual learning environment"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:866
+msgid "didactic game"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:870
+msgid "webquest"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:878
+msgid "real project"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1200
+msgid "classroom"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1204
+msgid "laboratory"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1208
+msgid "real environment"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1212
+msgid "home"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1564
+msgid "family"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1560
+msgid "tutor"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1232
+msgid "schoolmate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1236
+msgid "independent"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1240
+msgid "blended"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1244
+msgid "presencial"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1248
+msgid "face to face"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1252
+msgid "distance"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1268
+msgid "propietary license"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1272
+msgid "free software license EUPL"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1276
+msgid "free software license GPL"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1280
+msgid "dual free content license GPL and EUPL"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1284
+msgid "other free software licenses"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1288
+msgid "public domain"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1292
+msgid "not appropriate"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1296
+msgid "intellectual property license"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1300
+msgid "creative commons: attribution"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1304
+msgid "creative commons: attribution - non derived work"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1308
+msgid "creative commons: attribution - non derived work - non commercial"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1312
+msgid "creative commons: attribution - non commercial"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1316
+msgid "creative commons: attribution - non commercial - share alike"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1320
+msgid "creative commons: attribution - share alike"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1324
+msgid "license GFDL"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1420
+msgid "LOM-ESv1.0"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1482
+msgid "linux"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1502
+msgid "mozilla firefox"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1528
+msgid "special needs learner"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1532
+msgid "gifted learner"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1536
+msgid "learners late integration into the education system"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1540
+msgid "learner with other specific educational support needs"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1544
+msgid "general public"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1548
+msgid "individual"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1552
+msgid "group"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1568
+msgid "information scientist"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1572
+msgid "computer scientist"
+msgstr ""
+
+#: exe/jsui/scripts/lomvocab.js:1580
+msgid "education expert"
+msgstr ""
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
@@ -4506,8 +5644,8 @@ msgstr "Ajuda Pedagógica"
 msgid "Information"
 msgstr "Informação"
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:463
-#: exe/webui/common.py:464 exe/webui/editorpane.py:364
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:465
+#: exe/webui/common.py:466 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2533
 #: exe/webui/element.py:2534 exe/webui/stylemanagerpage.py:211
@@ -4515,10 +5653,6 @@ msgstr "Informação"
 #: exe/webui/truefalseelement.py:153
 msgid "Close"
 msgstr "Fechar"
-
-#: exe/webui/block.py:264
-msgid "Purpose"
-msgstr "Finalidade"
 
 #: exe/webui/block.py:268
 msgid "Tip:"
@@ -4560,7 +5694,7 @@ msgstr ""
 msgid "Now It's Your Turn"
 msgstr ""
 
-#: exe/webui/common.py:182 exe/webui/editorpage.py:240
+#: exe/webui/common.py:184 exe/webui/editorpage.py:240
 #: exe/webui/preferencespage.py:132 exe/webui/selectbrowserpage.py:90
 #: exe/webui/selectbrowserpage_ru.py:90 exe/webui/stylemanagerpage.py:96
 #: exe/webui/xliffexportpreferencespage.py:91
@@ -4568,7 +5702,7 @@ msgstr ""
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning editor XHTML"
 
-#: exe/webui/common.py:454 exe/webui/common.py:458
+#: exe/webui/common.py:456 exe/webui/common.py:460
 msgid "Click for completion instructions"
 msgstr "Clicar para instruções completas"
 
@@ -4771,10 +5905,6 @@ msgstr "Adicionar ficheiros"
 #: exe/webui/editorpane.py:265
 msgid "Actions"
 msgstr "Acções"
-
-#: exe/webui/editorpane.py:268 exe/webui/element.py:1809
-msgid "Preview"
-msgstr "Previsão"
 
 #: exe/webui/editorpane.py:333
 msgid "Pedagogical Tip"
@@ -4996,10 +6126,6 @@ msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:72
 msgid "small"
-msgstr ""
-
-#: exe/webui/externalurlblock.py:73
-msgid "medium"
 msgstr ""
 
 #: exe/webui/externalurlblock.py:74
@@ -5454,36 +6580,60 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#~ msgid ""
-#~ "If you have made changes and have"
-#~ " not saved, they will be lost. "
-#~ "Do you really want to quit?"
+#~ msgid "SCORM 1.2 Options"
 #~ msgstr ""
 
-#~ msgid "Agrega"
+#~ msgid "Apply"
+#~ msgstr "Código Applet:"
+
+#~ msgid "Project Title"
 #~ msgstr ""
 
-#~ msgid "Solucion"
-#~ msgstr "Secção"
-
-#~ msgid "Retroalimentacion"
+#~ msgid "The project's title."
 #~ msgstr ""
 
-#~ msgid "Please select a .jpg file."
-#~ msgstr "Por favor escolher um forum."
+#~ msgid "GNU Free Documentation License"
+#~ msgstr "GNU Licença de Documentação Livre"
 
-#~ msgid "Add JPEG Image"
-#~ msgstr "Adicionar imagem JPEG "
+#~ msgid "Creative Commons Attribution 3.0 License"
+#~ msgstr ""
 
-#~ msgid "Select an image (JPG file)"
-#~ msgstr "Seleccionar uma imagem (ficheiro JPG)"
+#~ msgid "Creative Commons Attribution Share Alike 3.0 License"
+#~ msgstr ""
 
-#~ msgid "This article is licensed under the "
-#~ msgstr "Este artigo está licenciado segundo"
+#~ msgid "Creative Commons Attribution No Derivatives 3.0 License"
+#~ msgstr ""
 
-#~ msgid "It uses material from the "
-#~ msgstr "Usa material do "
+#~ msgid "Creative Commons Attribution Non-commercial 3.0 License"
+#~ msgstr ""
 
-#~ msgid "article "
-#~ msgstr "artigo"
+#~ msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution 2.5 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+#~ msgstr ""
+
+#~ msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+#~ msgstr ""
+
+#~ msgid "Developing Nations 2.0"
+#~ msgstr ""
+
+#~ msgid "LOM.es"
+#~ msgstr ""
 

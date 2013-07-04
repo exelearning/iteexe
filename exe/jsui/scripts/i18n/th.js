@@ -1,6 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-06-30 19:09+0200\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
- "Put instructions for learners here": "\u0e43\u0e2a\u0e48 \u0e04\u0e33\u0e2a\u0e31\u0e48\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e40\u0e23\u0e35\u0e22\u0e19 \u0e17\u0e35\u0e48\u0e19\u0e35\u0e48", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-07-04 14:28+0200\nPO-Revision-Date: 2007-09-12 06:29+1200\nLast-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Hide": "\u0e0b\u0e48\u0e2d\u0e19", 
  "Title": "\u0e0a\u0e37\u0e48\u0e2d\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07", 
  "iDevice Editor": "\u0e15\u0e31\u0e27\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07 iDevice", 
@@ -213,7 +212,7 @@ translations = {
  "Case Study": "\u0e01\u0e23\u0e13\u0e35\u0e28\u0e36\u0e01\u0e29\u0e32", 
  "Tip:": "\u0e40\u0e04\u0e25\u0e47\u0e14\u0e25\u0e31\u0e1a:", 
  "Export": "\u0e2a\u0e48\u0e07\u0e2d\u0e2d\u0e01", 
- "Apply": "\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49", 
+ "Put instructions for learners here": "\u0e43\u0e2a\u0e48 \u0e04\u0e33\u0e2a\u0e31\u0e48\u0e07 \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e1c\u0e39\u0e49\u0e40\u0e23\u0e35\u0e22\u0e19 \u0e17\u0e35\u0e48\u0e19\u0e35\u0e48", 
  "Package saved to: %s": "\u0e41\u0e1e\u0e04\u0e40\u0e01\u0e08\u0e16\u0e39\u0e01 \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01 (Save) \u0e17\u0e35\u0e48 : %s", 
  "Use this Idevice if you have a lot of images to show.": "\u0e43\u0e0a\u0e49 IDevice \u0e19\u0e35\u0e49 \u0e16\u0e49\u0e32\u0e04\u0e38\u0e13\u0e21\u0e35\u0e23\u0e39\u0e1b\u0e20\u0e32\u0e1e\u0e08\u0e33\u0e19\u0e27\u0e19\u0e21\u0e32\u0e01\u0e17\u0e35\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e41\u0e2a\u0e14\u0e07"
 };
