@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<theme>
+<theme >
     <name>INTEF</name>
     <version>2.0</version>
     <compatibility>8+</compatibility>
@@ -8,6 +8,10 @@
 	<license>Creative Commons by-nc-sa</license>
 	<license-url>http://creativecommons.org/licenses/by-nc-sa/3.0/</license-url>
 	<description>Plantilla originalmente creada para el Instituto Nacional de Tecnologías Educativas y de Formación (Ministerio de Educación, Cultura y Deporte). Diseño original de Aurelio Lorenzo. Adaptación: Ignacio Gros.</description>
+	<extra-head><![CDATA[
+	    <script type="text/javascript">alert('Funciona');</script>
+	    <script type="text/javascript">alert('Funciona2');</script>
+	]]></extra-head>
     <langs lang="en">
 		<description>This theme was originally created for INTEF (Instituto Nacional de Tecnologías Educativas y de Formación), Ministerio de Educación, Cultura y Deporte (Spanish Government). Original design by Aurelio Lorenzo. Adapted by Ignacio Gros.</description>
 	</langs>

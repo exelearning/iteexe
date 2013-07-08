@@ -117,6 +117,10 @@ class WebsitePage(Page):
         if common.nodeHasMediaelement(self.node):
             html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
             html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
+        #JR: Vemos si el estilo tiene config.xml para agregar el atributo extra-head
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
+        if style.hasValidConfig:
+            html += style.get_extra_head()
         html += u"</head>"+lb
         html += u"<body>"+lb
         html += u"<"+sectionTag+" id=\"content\">"+lb

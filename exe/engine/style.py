@@ -24,8 +24,11 @@ class Style(Persistable):
                    'author-url': 'Author URL', 
                    'license': 'License', 
                    'license-url': 'License URL', 
-                   'description': 'Description'
+                   'description': 'Description',
+                   'extra-head': 'Extra head'
                    }
+    
+    _attributesCode = ['extra-head']
 
     def __init__(self, styleDir):
         """Initialize a new Style"""
@@ -40,6 +43,7 @@ class Style(Persistable):
         self._license       = ''
         self._license_url   = ''
         self._description   = ''
+        self._extra_head    = ''
         self._validConfig   = False
         self._valid         = False
         self._checkValid()
@@ -118,11 +122,19 @@ class Style(Persistable):
     def get_description(self):
         return self._description
     
+    def get_extra_head(self):
+        return self._extra_head
+    
+    
     def renderPropertiesHTML(self):
         html = ''
         for attribute in self._attributes.keys():
             if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
-                html += '<p><strong>' + _(self._attributes[attribute]) + ': </strong>' + getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
+                html += '<p><strong>' + _(self._attributes[attribute]) + ': </strong>'
+                if attribute in self._attributesCode:
+                    html += '<code>' + getattr(self, '_'+attribute.replace('-', '_')).replace('<', '&lt') + '</code>' + '</p>'
+                else:
+                    html += getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
         return html
     
     
