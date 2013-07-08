@@ -157,15 +157,6 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#help_about': {
                 click: this.aboutPage
-            },
-			'#style_import': {
-            	click: this.importStyle
-            },
-            '#style_export': {
-            	click: this.exportStyle
-            },
-            '#style_delete': {
-            	click: this.deleteStyle
             }
         });
         
@@ -393,12 +384,12 @@ Ext.define('eXe.controller.Toolbar', {
 	// JR: Launch the Style Manager Window
 	toolsStyleManager: function() {
         var stylemanager = new Ext.Window ({
-          height: eXe.app.getMaxHeight(650), 
-          width: 650, 
+          height: eXe.app.getMaxHeight(600), 
+          width: 450, 
           modal: true,
           id: 'stylemanagerwin',
           title: _("Style Manager"), 
-          html: '<iframe height="' + eXe.app.getMaxHeight(650) + '" width="100%" src="/stylemanager"></iframe>'
+          html: '<iframe height="' + eXe.app.getMaxHeight(600) + '" width="100%" src="/stylemanager"></iframe>'
         });
         stylemanager.show();        
 	},
@@ -546,66 +537,6 @@ Ext.define('eXe.controller.Toolbar', {
     
     closeImportProgressWindow: function() {
         this.importProgress.destroy();
-    },
-	importStyle:function(){
-    	var fp = Ext.create("eXe.view.filepicker.FilePicker", {
-            type: eXe.view.filepicker.FilePicker.modeOpen,
-            title: _("Select ZIP Style file to import."),
-            modal: true,
-            scope: this,
-            callback: function(fp) {
-            	 if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace) {
-                    nevow_clientToServerEvent('ImportStyle', this,'', 'zip', fp.file.path, fp.status == eXe.view.filepicker.FilePicker.returnReplace)
-                    
-                 }
-            }
-        });
-           fp.appendFilters([
-               { "typename": _("ZIP Style"), "extension": "*.zip", "regex": /.*\.zip$/ },
-               { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
-           ]);
-           fp.show();	
-    	
-    	
-    },
-    exportStyle:function(){
-    	 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
-	            type: eXe.view.filepicker.FilePicker.modeSave,
-	            title: _("Export to ZIP Style as"),
-	            modal: true,
-	            scope: this,
-	            callback: function(fp) {
-	                if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
-	                    nevow_clientToServerEvent('ExportStyle', this, '', 'zip', fp.file.path)
-	            }
-	        });
-	        fp.appendFilters([
-	            { "typename": _("ZipFile"), "extension": "*.zip", "regex": /.*\.zip$/ },
-	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
-	            ]
-	        );
-	        fp.show();
-    },
-    deleteStyle:function(){
-    	Ext.Msg.show({
-			title: _("Delete style?"),
-			msg: _("Do you want to delete the selected style?"),
-			scope: this,
-			modal: true,
-			buttons: Ext.Msg.YESNOCANCEL,
-			fn: function(button, text, opt) {
-				if (button == "yes")
-					this.doDeletestyle();
-				
-			}
-		});
-	 
-     
-    },
-    doDeletestyle: function() {
-    
-    		nevow_clientToServerEvent('DeleteStyle', this)	
-    	
     },
 
 	importXliff: function() {

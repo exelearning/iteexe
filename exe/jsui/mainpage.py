@@ -192,9 +192,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleSetLocale,       'setLocale')
         setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
-        setUpHandler(self.handleImportStyle,    'ImportStyle')
-        setUpHandler(self.handleExportStyle,    'ExportStyle')
-        setUpHandler(self.handleDeleteStyle,    'DeleteStyle')
         setUpHandler(self.handleSetBrowser,  'setBrowser')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
 
@@ -743,20 +740,6 @@ class MainPage(RenderableLivePage):
 #        data.close()
         self.importresources.insertNode([html.partition(dirname + os.sep)[2]])
         
-    def handleImportStyle(self, client, importType, dirname, html=None):
-            if importType == 'zip':
-                self._importstyle(dirname,client)
-            else:
-                client.alert(_(u'Incorrect style file : %s') % sfile, (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)      
-    
-    def handleExportStyle(self, client, importType,dirname, html=None):
-            stylesDirac  = self.config.stylesDir/self.package.style
-            self._exportstyle(stylesDirac,dirname,client)
-                   
-
-    def handleDeleteStyle(self, client):
-        self._deletestyle(self.package.style,client)
 
     def handleImport(self, client, importType, path, html=None):
         if importType == 'html':

@@ -360,36 +360,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 's',
                                 text: _('Style Manager')
                             },
-                            {	                        	
-                                xtype: 'accesskey_menuitem',
-                                text: _('Styles manage'),
-                                accesskey: 'm',
-                                menu: {
-                                    xtype: 'menu',
-                                    items: [
-                                       
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'style_import',
-                                            accesskey: 'i',
-                                            text: _('Import')
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'style_export',
-                                            accesskey: 'e',
-                                            text: _('Export current style')
-                                        },
-                                        {
-                                            xtype: 'accesskey_menuitem',
-                                            itemId: 'style_delete',
-                                            accesskey: 'd',
-                                            text: _('Delete current style')
-                                        }
-                                    ]
-                                }
-                            	
-                        },
+                            
                             {
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'tools_preferences',

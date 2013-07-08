@@ -12,6 +12,15 @@ function doCancel() {
     theForm.submit();
 }
 
+function doProperties(styleDirname) {
+	var theForm = document.getElementById('contentForm');
+	var style = document.getElementById('style');
+	style.value = styleDirname;
+	theForm.action.value = "doProperties";
+    theForm.submit();
+}
+
+
 function importStyle(){
 	var theForm = document.getElementById('contentForm');
 	var fp = Ext.create("eXe.view.filepicker.FilePicker", {
@@ -35,21 +44,10 @@ function importStyle(){
     fp.show();		
 }
 
-function exportStyle(){
+function doExport(styleDirname){
 	var theForm = document.getElementById('contentForm');
-	theForm.action.value = "exportStyle";
-    theForm.submit();
-}
-
-function doExport(){
-	var theForm = document.getElementById('contentForm');
-	var stylesExport = document.getElementsByName('styleExport');
-	var style = document.getElementById('styleExport');
-	for (var i = 0; i < stylesExport.length; i++) {
-	    if (stylesExport[i].checked) {
-	        style = stylesExport[i].value;  
-	    }
-	}
+	var style = document.getElementById('style');
+	style.value = styleDirname;
 	var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 		type: eXe.view.filepicker.FilePicker.modeSave,
 		title: _("Export to ZIP Style as"),
@@ -71,45 +69,26 @@ function doExport(){
 
 }
 
-function deleteStyles(){
+function doDelete(styleDirname){
 	var theForm = document.getElementById('contentForm');
-	theForm.action.value = "deleteStyles";
-    theForm.submit();
-}
-
-function doDelete(){
-	var theForm = document.getElementById('contentForm');
-	var styles = document.getElementsByTagName('input');
-	var empty = true;
-	for (var i = 0; i < styles.length; i++) {
-	    if (styles[i].type == "checkbox" && styles[i].checked) {
-	    	empty = false;
-	    	break;
-	    }
-	}
-	if (empty) {
-		Ext.Msg.alert(_('Error'), _('You must select at least one style'));
-		theForm.action.value = "";
-		theForm.submit();
-	}
-	else {
-		Ext.Msg.show({
-			title: _("Delete styles?"),
-			msg: _("Do you want to delete the selected styles?"),
-			scope: this,
-			modal: true,
-			buttons: Ext.Msg.YESNOCANCEL,
-			fn: function(button, text, opt) {
-				if (button == "yes") {
-			    	theForm.action.value = "doDelete";
-			        theForm.submit();
-			    }
-			    else {
-			    	theForm.action.value = "";
-			    	theForm.submit();
-			    }
-			}
-		});
-	}
+	var style = document.getElementById('style');
+	style.value = styleDirname;
+	Ext.Msg.show({
+		title: _("Delete style?"),
+		msg: _("Do you want to delete the selected style?"),
+		scope: this,
+		modal: true,
+		buttons: Ext.Msg.YESNOCANCEL,
+		fn: function(button, text, opt) {
+			if (button == "yes") {
+		    	theForm.action.value = "doDelete";
+		        theForm.submit();
+		    }
+		    else {
+		    	theForm.action.value = "";
+		    	theForm.submit();
+		    }
+		}
+	});
 }
 

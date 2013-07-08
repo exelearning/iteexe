@@ -41,28 +41,22 @@ class StyleManagerPage(RenderableResource):
         """
         log.debug("process " + repr(request.args))
                    
-        if ("action" in request.args and request.args["action"][0] == "exportStyle"): 
-            stylename = request.args["filename"][0] 
-            self.action = 'exportStyle'
-        elif ("action" in request.args and request.args["action"][0] == "importStyle"):
+        if ("action" in request.args and request.args["action"][0] == "importStyle"):
             stylename = request.args["filename"][0] 
             self.__importStyle(stylename)
-        elif ("action" in request.args and request.args["action"][0] == "deleteStyles"):
-            self.action = 'deleteStyles'
         elif ("action" in request.args and request.args["action"][0] == "doExport"):
-            styleValue = request.args["styleExport"][1]
+            styleValue = request.args["style"][0]
             filenameTarget = request.args["filename"][0]
             styleDir    = self.config.stylesDir
             style = Style(styleDir/styleValue)
             self.__exportStyle(style.get_style_dir(), filenameTarget)
         elif ("action" in request.args and request.args["action"][0] == "doDelete"):
-            stylesDelete = []
+            styleDelete = request.args["style"][0]
             styleDir    = self.config.stylesDir
-            for i in request.args.keys():
-                if (request.args[i] == ['on']):
-                    style = Style(styleDir/i)
-                    stylesDelete.append(style)
-            self.__deleteStyles(stylesDelete)
+            styleDelete = Style(styleDir/request.args["style"][0])
+            self.__deleteStyle(styleDelete)
+        elif ("action" in request.args and request.args["action"][0] == "doProperties"):
+            self.action = 'doProperties'
         elif ("action" in request.args and request.args["action"][0] == "doCancel"):
             self.action = ""
             self.alertHTML = ""
@@ -78,10 +72,6 @@ class StyleManagerPage(RenderableResource):
         log.debug("render_GET")
         self.process(request)
         # Rendering
-        if self.action != "":
-            disabled = 'disabled="disabled"' 
-        else:
-            disabled = ''
         html  = common.docType()
         html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += "<head>\n"
@@ -102,26 +92,17 @@ class StyleManagerPage(RenderableResource):
         html += "<form method=\"post\" action=\""+self.url+"\" "
         html += "id=\"contentForm\" >"  
         html += common.hiddenField("action")
-        html += "<div id=\"styleManagerButtons\"> \n"     
-        html += '<br/><input class="button" type="button" name="import" '
-        html += ' onclick="importStyle()" value="%s" %s />'  % (_("Import Style"), disabled)
-        html += '<br/><input class="button" type="button" name="export" '
-        html += 'onclick="exportStyle()" value="%s" %s />'  % (_("Export Style"), disabled)
-        html += '<br/><input class="button" type="button" name="delete" '
-        html += 'onclick="deleteStyles()" value="%s" %s />'  % (_("Delete Style"), disabled)
-        html += '<br/><input class="button" type="button" name="quit" '
-        html += 'onclick="quitDialog()"'  
-        html += ' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("filename")
-        html += common.hiddenField("styleExport")
-        html += "</fieldset>"
-        html += "</div>\n"
-        if self.action == 'exportStyle':
-            html += self.renderExport()   
-        elif self.action == 'deleteStyles':
-            html += self.renderDelete()
+        html += common.hiddenField("style")
+        if self.action == 'doProperties' and "style" in request.args:
+            styleDirname = request.args["style"][0]
+            style = self.config.styleStore.getStyle(styleDirname)
+            html += self.__styleProperties(style)
         else:
             html += self.renderListStyles()
+            html += '<br/><input class="button" type="button" name="import" style="float:center" '
+            html += ' onclick="importStyle()" value="%s" />'  % _("Import Style")
+        html += "</div>\n"
         html += "</div>\n"
         html += "<br/></form>\n"
         html += self.alertHTML
@@ -139,80 +120,39 @@ class StyleManagerPage(RenderableResource):
         Muestra los estilos y sus propiedades
         """
         html = "<div id=\"styleManagerWorkspace\">\n"
-        html += "<br/><strong>%s</strong>\n" % _("List of styles in your system:")
+        html += "<br/><h2><strong>%s</strong></h2>\n" % _("List of styles in your system:")
         html += "<ul style=\"list-style:none;\">\n"
         styles_sort = sorted(self.config.styleStore.getStyles())
         for style in styles_sort:
-            html += "<li style='line-height:2em;'>%s" % style.get_name()
-            if (style.hasValidConfig()):
-                html += self._styleProperties(style)
+            html += "<li style='line-height:2em;'>%s &nbsp;&nbsp;" % style.get_name()
+            html += self.__renderButtons(style)
             html += "</li>\n" 
         html += "</ul>"
-        html += "</div>"
+        
         return html
     
-    def renderExport(self):
-        """
-        Muestra una lista de radio botones con los estilos para elegir el estilo a exportar
-        """
+    def __renderButtons(self, style):
+        html = '<a title="%s" href="#" onclick="doExport(\'%s\');">\n' % (_("Export Style"), style.get_dirname())
+        html += '<img alt="%s" class="submit" style="vertical-align:middle;" src="/images/stock-save.png">\n' % _("Export Style")
+        html += '</a>&nbsp;\n'
+        if (style.get_dirname() != 'INTEF' and style.get_dirname() != "standardwhite"):
+            html += '<a title="%s" href="#" onclick="doDelete(\'%s\');">\n' % (_("Delete Style"), style.get_dirname())
+            html += '<img alt="%s" class="submit" style="vertical-align:middle;" src="/images/stock-delete.png">\n' % _("Delete Style")
+            html += '</a>&nbsp;\n'
+        if (style.hasValidConfig()):
+            html += '<a title="%s" href="#" onclick="doProperties(\'%s\');">\n' % (_("Style Properties"), style.get_dirname())
+            html += '<img alt="%s" class="submit" style="vertical-align:middle;" src="/images/info.png">\n' % _("Style Properties")
+            html += '</a>&nbsp;\n'
+        return html
+    
+    def __styleProperties(self, style):
+        """Muestra las propiedades de un estilo"""
         html = "<div id=\"styleManagerWorkspace\">\n"
-        html += "<br/><strong>%s</strong>\n" % _("Choose the style to export:")
-        html += "<ul style=\"list-style:none;\">\n"
-        styles_sort = sorted(self.config.styleStore.getStyles())
-        for style in styles_sort:
-            if (style.get_name() == 'INTEF'):
-                html += "<li style='line-height:2em;'><input type='radio' name='styleExport' value='%s' checked='checked'>%s" % (style.get_dirname(), style.get_name())
-            else:
-                html += "<li style='line-height:2em;'><input type='radio' name='styleExport' value='%s'>%s" % (style.get_dirname(), style.get_name())
-            html += "</li>\n" 
-        html += "</ul>"
-        html += u'<br/><input class="button" type="button" name="Export" '
-        html += u'onclick="doExport()" value="%s" />'  % _("Export")
-        html += u'<input class="button" type="button" name="Cancel" '
-        html += u'onclick="doCancel()" value="%s" />'  % _("Cancel")
-        html += "</div>"
-        return html
-    
-    def renderDelete(self):
-        """
-        Muestra una lista de check botones con los estilos para elegir los estilos a borrar
-        """
-        html = "<div id=\"styleManagerWorkspace\">\n"
-        html += "<br/><strong>%s</strong>\n" % _("Choose the style to delete:")
-        html += "<ul style=\"list-style:none;\">\n"
-        styles_sort = sorted(self.config.styleStore.getStyles())
-        for style in styles_sort:
-            if (style.get_dirname() == 'INTEF' or style.get_dirname() == "standardwhite"):
-                html += "<li style='line-height:2em;'><input id='style' type=checkbox name='%s\' disabled='disabled'>%s</input>\n" % (style.get_dirname(), style.get_name())
-            else:
-                html += "<li style='line-height:2em;'><input id='style' type=checkbox name='%s\'>%s</input>\n" % (style.get_dirname(), style.get_name())
-            html += "</li>\n" 
-        html += "</ul>"
-        html += u'<br/><input class="button" type="button" name="Delete" '
-        html += u'onclick="doDelete()" value="%s" />'  % _("Delete")
-        html += u'<input class="button" type="button" name="Cancel" '
-        html += u'onclick="doCancel()" value="%s" />'  % _("Cancel")
-        html += "</div>"
-        return html
-    
-    def _styleProperties(self, style):
-        """Anade tooltip de propiedades"""
-        id_ = common.newId()
-        html  = u'<a onmousedown="Javascript:updateCoords(event);" '
-        html += u' title="%s" ' % _(u'Click to view the details of this style')
-        html += u'onclick="Javascript:showMe(\'i%s\', 300, 100);" ' % id_
-        html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
-        html += u'<img class="help" alt="%s" ' \
-                % _(u'Click to view the details of this style')
-        html += u'src="/images/help.gif" style="vertical-align:middle;"/>'
-        html += u'</a>\n'
-        html += u'<div id="i%s" style="display:none;">' % id_
-        html += u'<div style="float:right;" >'
-        html += u'<img alt="%s" ' % _("Close")
-        html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
-        html += u' onmousedown="Javascript:hideMe();"/></div>'
-        html += u'<div class="popupDivLabel">%s</div>%s' % (style.get_name(), style.renderPropertiesHTML())
-        html += u'</div>\n'
+        html += "<h2><strong>%s:</strong></h2>" % _("This style properties")
+        html += '%s' % style.renderPropertiesHTML()
+        html += u'<input class="button" type="button" name="Back" '
+        html += u'onclick="doCancel()" value="%s" />'  % _("Back")
+        html += '</div>\n'
         return html
     
     
@@ -283,17 +223,16 @@ class StyleManagerPage(RenderableResource):
             
  
     
-    def __deleteStyles(self,  styles):
-        """Borra una lista de estilos pasados por parametro"""
-        log.debug("delete styles")
-        for style in styles:
-            try:
-                shutil.rmtree(style.get_style_dir())
-                self.config.styleStore.delStyle(style)
-                log.debug("delete style: %s" % style.get_name())
-                self.alert(_(u'Correct'), _(u'Styles deleted correctly'))
-            except:
-                self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
+    def __deleteStyle(self,  style):
+        """Borra un estilo pasado por parametro"""
+        log.debug("delete style")
+        try:
+            shutil.rmtree(style.get_style_dir())
+            self.config.styleStore.delStyle(style)
+            log.debug("delete style: %s" % style.get_name())
+            self.alert(_(u'Correct'), _(u'Style deleted correctly'))
+        except:
+            self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
         self.action = ""
 
     
