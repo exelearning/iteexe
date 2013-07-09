@@ -190,8 +190,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTinyMCEimageChoice,   'previewTinyMCEimage')
         setUpHandler(self.handleTinyMCEmath,     'generateTinyMCEmath')
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
-        setUpHandler(self.handleSetLocale,       'setLocale')
-        setUpHandler(self.handleSetInternalAnchors,  'setInternalAnchors')
+        setUpHandler(self.handleReload,       'reload')
         setUpHandler(self.handleSetBrowser,  'setBrowser')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
 
@@ -371,24 +370,10 @@ class MainPage(RenderableLivePage):
 
         d.addCallback(successDownload)
 
-    def handleSetLocale(self, client, locale):
-        """
-        Set locale using Nevow instead of a POST
-        """
-        G.application.config.locale = locale
-        G.application.config.locales[locale].install(unicode=True)
-        G.application.config.configParser.set('user', 'locale', locale)
+    def handleReload(self, client):
         self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
 
-    def handleSetInternalAnchors(self, client, internalAnchors):
-        """
-        Set locale using Nevow instead of a POST
-        """
-        G.application.config.internalAnchors = internalAnchors
-        G.application.config.configParser.set('user', 'internalAnchors', internalAnchors)
-        client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
-    
     def handleSetBrowser(self, client, browser):
         """
         JR: Set Browser using Nevow instead of a POST

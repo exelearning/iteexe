@@ -1,7 +1,9 @@
+# -- coding: utf-8 --
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
 # Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2013, Pedro Peña Pérez, Open Phoenix IT
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,8 +25,8 @@ The PreferencesPage is responsible for managing eXe preferences
 """
 
 import logging
+import json
 from twisted.web.resource      import Resource
-from exe.webui                 import common
 from exe.webui.renderable      import RenderableResource
 
 log = logging.getLogger(__name__)
@@ -60,7 +62,7 @@ langNames = {
     'tl': 'Tagalog',
     'th': '\xe0\xb8\xa0\xe0\xb8\xb2\xe0\xb8\xa9\xe0\xb8\xb2\xe0\xb9\x84\xe0\xb8\x97\xe0\xb8\xa2',
     'ca': 'Catal\xc3\xa0',
-    'ca_VALENCIA': 'Valenci\xc3\xa0', 
+    'ca_VALENCIA': 'Valenci\xc3\xa0',
     'pl': 'J\xc4\x99zyk Polski, polszczyzna',
     'fr': 'Fran\xc3\xa7ais',
     'bg': 'Bulgarian',
@@ -79,6 +81,7 @@ langNames = {
     'sl': 'Sloven\xc5\xa1\xc4\x8dina'
 }
 
+
 class PreferencesPage(RenderableResource):
     """
     The PreferencesPage is responsible for managing eXe preferences
@@ -90,16 +93,15 @@ class PreferencesPage(RenderableResource):
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.localeNames  = []
-        
+        self.localeNames = []
+
         for locale in self.config.locales.keys():
-            localeName  = locale + ": " 
+            localeName = locale + ": "
             langName = langNames.get(locale)
             localeName += langName
-            self.localeNames.append((localeName, locale))
+            self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
 
-        
     def getChild(self, name, request):
         """
         Try and find the child for the name given
@@ -109,85 +111,39 @@ class PreferencesPage(RenderableResource):
         else:
             return Resource.getChild(self, name, request)
 
-
     def render_GET(self, request):
         """Render the preferences"""
         log.debug("render_GET")
-        
-        # Rendering
-        html  = common.docType()
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(/css/exe.css);\n"
-        html += u'@import url(/style/base.css);\n'
-        html += u"@import url(/style/standardwhite/content.css);</style>\n"
-        html += u'''<script language="javascript" type="text/javascript">
-            function setLocaleAndAnchors(l,anchors) {
-                parent.nevow_clientToServerEvent('setLocale', this, '', l)
-                parent.nevow_clientToServerEvent('setInternalAnchors', this, '', anchors)
-                parent.Ext.getCmp('preferenceswin').close()
-            }
-        </script>'''
-        html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=UTF-8\"></meta>\n";
-        html += u"</head>\n"
-        html += u"<body>\n"
-        html += u"<div id=\"main\"> \n"     
-        html += u"<form method=\"post\" action=\"\" "
-        html += u"id=\"contentForm\" >"  
-
-        # package not needed for the preferences, only for rich-text fields:
-        this_package = None
-        html += common.formField('select', this_package, _(u"Select Language"),
-                                 'locale',
-                                 options = self.localeNames,
-                                 selection = self.config.locale)
-
-        internal_anchor_options = [(_(u"Enable All Internal Linking"), "enable_all"),
-                                   (_(u"Disable Auto-Top Internal Linking"), "disable_autotop"),
-                                   (_(u"Disable All Internal Linking"), "disable_all")]
-        html += common.formField('select', this_package, _(u"Internal Linking (for Web Site Exports only)"),
-                                 'internalAnchors', 
-                                 '', # TODO: Instructions
-                                 options = internal_anchor_options,
-                                 selection = self.config.internalAnchors)
-
-        html += u"<div id=\"editorButtons\"> \n"     
-        html += u"<br/>" 
-        html += common.button("ok", _("OK"), enabled=True,
-                _class="button",
-                onClick="setLocaleAndAnchors(document.forms.contentForm.locale.value,"
-                    "document.forms.contentForm.internalAnchors.value)")
-        html += common.button("cancel", _("Cancel"), enabled=True,
-                _class="button", onClick="parent.Ext.getCmp('preferenceswin').close()")
-        html += u"</div>\n"
-        html += u"</div>\n"
-        html += u"<br/></form>\n"
-        html += u"</body>\n"
-        html += u"</html>\n"
-        return html.encode('utf8')
-
+        data = {}
+        try:
+            data['locale'] = self.config.locale
+            data['internalAnchors'] = self.config.internalAnchors
+        except Exception as e:
+            log.exception(e)
+            return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
+        return json.dumps({'success': True, 'data': data, 'locales': self.localeNames})
 
     def render_POST(self, request):
         """
         function replaced by nevow_clientToServerEvent to avoid POST message
         """
         log.debug("render_POST " + repr(request.args))
-        
-        # should not be invoked, but if it is... refresh
-        html  = common.docType()
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head></head>\n"
-        html += u"<body onload=\"opener.location.reload(); "
-        html += u"self.close();\"></body>\n"
-        html += u"</html>\n"
-        return html.encode('utf8')
+        data = {}
+        try:
+            locale = request.args['locale'][0]
+            self.config.locale = locale
+            self.config.locales[locale].install(unicode=True)
+            self.config.configParser.set('user', 'locale', locale)
+            internalAnchors = request.args['internalAnchors'][0]
+            self.config.internalAnchors = internalAnchors
+            self.config.configParser.set('user', 'internalAnchors', internalAnchors)
+        except Exception as e:
+            log.exception(e)
+            return json.dumps({'success': False, 'errorMessage': _("Failed to save preferences")})
+        return json.dumps({'success': True, 'data': data})
 
     def getSelectedLanguage(self):
         """
         It would be the TinyMCE lang
         """
         return self.config.locale
-		

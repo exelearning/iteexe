@@ -19,6 +19,7 @@
 
 Ext.define('eXe.controller.Toolbar', {
     extend: 'Ext.app.Controller',
+    requires: ['eXe.view.forms.PreferencesPanel'],
 	refs: [{
         ref: 'recentMenu',
         selector: '#file_recent_menu'
@@ -344,13 +345,18 @@ Ext.define('eXe.controller.Toolbar', {
 
     toolsPreferences: function() {
         var preferences = new Ext.Window ({
-          height: 220, 
-          width: 500, 
-          modal: true,
-          id: 'preferenceswin',
-          title: _("Preferences"), 
-          html: '<iframe height="100%" width="100%" src="/preferences"></iframe>'
-        });
+	          height: 220, 
+	          width: 500, 
+	          modal: true,
+	          id: 'preferenceswin',
+	          title: _("Preferences"),
+	          layout: 'fit',
+	          items: [{
+                xtype: 'preferences'
+              }]
+	        }),
+            formpanel = preferences.down('form');
+        formpanel.load({url: 'preferences', method: 'GET'});
         preferences.show();        
 	},
 	//JR: Lanzamos el selector de navegador
