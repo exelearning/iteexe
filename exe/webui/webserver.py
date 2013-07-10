@@ -43,7 +43,6 @@ from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
-from exe.webui.selectbrowserpage   import SelectBrowserPage
 from exe.webui.aboutpage           import AboutPage 
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
@@ -74,7 +73,6 @@ class WebServer:
         self.editor      = EditorPage(self.root)
         self.stylemanager = StyleManagerPage(self.root)
         self.preferences = PreferencesPage(self.root)
-        self.selectbrowser = SelectBrowserPage(self.root)
         self.xliffexportpreferences = XliffExportPreferencesPage(self.root)
         self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
         self.dirtree     = DirTreePage(self.root)

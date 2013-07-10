@@ -135,9 +135,6 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
-            '#tools_browser': {
-            	click: this.toolsBrowser
-            },
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
@@ -358,18 +355,6 @@ Ext.define('eXe.controller.Toolbar', {
             formpanel = preferences.down('form');
         formpanel.load({url: 'preferences', method: 'GET'});
         preferences.show();        
-	},
-	//JR: Lanzamos el selector de navegador
-	toolsBrowser: function() {
-		var selectbrowser = new Ext.Window ({
-			//height: 150, 
-			width: 300, 
-			modal: true,
-			id: 'browserwin',
-			title: _("Select Browser"), 
-			html: '<iframe height="100%" width="100%" src="/selectbrowser"></iframe>'
-		});
-		selectbrowser.show();        
 	},
 	
     // Launch the iDevice Editor Window

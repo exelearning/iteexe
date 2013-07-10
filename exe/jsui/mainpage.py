@@ -191,7 +191,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTinyMCEmath,     'generateTinyMCEmath')
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleReload,       'reload')
-        setUpHandler(self.handleSetBrowser,  'setBrowser')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
 
 
@@ -373,14 +372,6 @@ class MainPage(RenderableLivePage):
     def handleReload(self, client):
         self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)
-
-    def handleSetBrowser(self, client, browser):
-        """
-        JR: Set Browser using Nevow instead of a POST
-        """
-        G.application.config.browser = browser
-        G.application.config.configParser.set('system', 'browser', browser)
-        client.sendScript('alert("%s");' % _(u"Changes take effect when you restart eXe"))
  
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """
