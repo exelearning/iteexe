@@ -28,6 +28,7 @@ import logging
 import json
 from twisted.web.resource      import Resource
 from exe.webui.renderable      import RenderableResource
+import mywebbrowser
 
 log = logging.getLogger(__name__)
 
@@ -81,12 +82,44 @@ langNames = {
     'sl': 'Sloven\xc5\xa1\xc4\x8dina'
 }
 
+browsersHidden = ('xdg-open', 'gvfs-open', 'x-www-browser', 'gnome-open', 'kfmclient', 'www-browser', 'links', 
+                     'elinks', 'lynx', 'w3m', 'windows-default', 'macosx', 'konqueror')
+browserNames = {
+                mywebbrowser.get_iexplorer(): "Internet Explorer",
+                "safari": "Safari",
+                "opera": "Opera",
+                "chrome": "Google Chrome",
+                "google-chrome": "Google Chrome",
+                "chromium": "Chromium",
+                "chromium-browser": "Chromium",
+                "grail": "Grail",
+                "skipstone": "Skipstone",
+                "galeon": "Galeon",
+                "epiphany": "Epiphany",
+                "mosaic": "Mosaic",
+                "kfm": "Kfm",
+                "konqueror": "Konqueror",
+                "firefox": "Mozilla Firefox",
+                "mozilla-firefox": "Mozilla Firefox",
+                "firebird": "Mozilla Firebird",
+                "mozilla-firebird": "Mozilla Firebird",
+                "iceweasel": "Iceweasel",
+                "iceape": "Iceape",
+                "seamonkey": "Seamonkey",
+                "mozilla": "Mozilla",
+                "netscape": "Netscape",
+                "None": "default"
+        }
+
 
 class PreferencesPage(RenderableResource):
     """
     The PreferencesPage is responsible for managing eXe preferences
     """
     name = 'preferences'
+    
+    
+    browsersAvalaibles = []
 
     def __init__(self, parent):
         """
@@ -94,6 +127,7 @@ class PreferencesPage(RenderableResource):
         """
         RenderableResource.__init__(self, parent)
         self.localeNames = []
+        self.browsers = []
 
         for locale in self.config.locales.keys():
             localeName = locale + ": "
@@ -101,6 +135,14 @@ class PreferencesPage(RenderableResource):
             localeName += langName
             self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
+        for browser in mywebbrowser._tryorder:
+            if (browser not in browsersHidden):
+                self.browsersAvalaibles.append((browserNames[browser], browser))
+        self.browsersAvalaibles.sort()
+        self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
+        for browser in self.browsersAvalaibles:
+            self.browsers.append({'browser': browser[1], 'text': browser[0]})
+            
 
     def getChild(self, name, request):
         """
@@ -118,10 +160,15 @@ class PreferencesPage(RenderableResource):
         try:
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
+            if (self.config.browser in browserNames):
+                browserSelected = self.config.browser
+            else:
+                browserSelected = "None"
+            data['browser'] = browserSelected
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
-        return json.dumps({'success': True, 'data': data, 'locales': self.localeNames})
+        return json.dumps({'success': True, 'data': data, 'locales': self.localeNames, 'browsers': self.browsers})
 
     def render_POST(self, request):
         """
@@ -137,6 +184,9 @@ class PreferencesPage(RenderableResource):
             internalAnchors = request.args['internalAnchors'][0]
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
+            browser = request.args['browser'][0]
+            self.config.browser = browser
+            self.config.configParser.set('system', 'browser', browser)
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save preferences")})

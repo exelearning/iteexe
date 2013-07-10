@@ -67,6 +67,26 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                 ["disable_autotop", _("Disable Auto-Top Internal Linking")],
                                 ["disable_all", _("Disable All Internal Linking")]
                            ]
+		                },{
+		                    xtype: 'combobox',
+		                    inputId: 'browser',
+		                    dirtyCls: 'property-form-dirty',
+		                    fieldLabel: _("Select Browser"),
+			                queryModel: 'local',
+	                        displayField: 'text',
+	                        valueField: 'browser',
+		                    store: {
+	                            fields: ['browser', 'text'],
+	                            proxy: {
+	                                type: 'ajax',
+							        url: 'preferences',
+	                                reader: {
+										type: 'json',
+										root: 'browsers'
+									}
+							    },
+	                            autoLoad: true
+	                        }
 		                }
                     ]
                 },

@@ -362,12 +362,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
-                                itemId: 'tools_browser',
-                                accesskey: 'w',
-                                text: _('Select Browser')
-                            },
-                            {
-                                xtype: 'accesskey_menuitem',
                                 itemId: 'tools_preferences',
                                 accesskey: 'p',
                                 text: _('Preferences')
