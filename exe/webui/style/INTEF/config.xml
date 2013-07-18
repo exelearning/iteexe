@@ -5,8 +5,8 @@
     <compatibility>8+</compatibility>
     <author>eXeLearning</author>
     <author-url>http://www.exelearning.net</author-url>
-	<license>Creative Commons by-nc-sa</license>
-	<license-url>http://creativecommons.org/licenses/by-nc-sa/3.0/</license-url>
+	<license>Creative Commons by</license>
+	<license-url>http://creativecommons.org/licenses/by/3.0/</license-url>
 	<description>Plantilla originalmente creada para el Instituto Nacional de Tecnologías Educativas y de Formación (Ministerio de Educación, Cultura y Deporte). Diseño original de Aurelio Lorenzo. Adaptación: Ignacio Gros.</description>
 	<extra-head><![CDATA[
 	    <!-- JS files -->
