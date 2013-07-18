@@ -8,7 +8,7 @@ preview_error : "Aurrebista ezin izan da sortu",
 video_download_file_warning : "Erabiltzailearen nabigatzaileak ezin badu bideoa erreproduzitu, fitxategiaren esteka bistaratuko da.",
 audio_download_file_warning : "Erabiltzailearen nabigatzaileak ezin badu audioa erreproduzitu, fitxategiaren esteka bistaratuko da.",
 use_mediaelement : "Use MediaElement.js audio and video player",
-"tab_caption":"Argazkiaren goiburua eta oina",
+"tab_caption":"Goiburua eta oina",
 "recognition":"Izenburua eta egiletza",
 "header":"Goiburua",
 "media_title":"Lanaren titulua",
@@ -31,7 +31,7 @@ use_mediaelement : "Use MediaElement.js audio and video player",
 "position_left":"Testuaren ezkerrean",
 "position_right":"Testuaren eskuinean",
 "image_and_caption_margin":"Multzoaren marjina",
-"caption_explanation":"Irudiaren goiburua eta oina ezingo dira editatu elkarrizketa-koadro honetatik.",
-"caption_warning":"Irudiaren goiburua eta oina ezingo dira editatu elkarrizketa-koadro honetatik. Sortutako testura jo editatzeko edo borratzeko."
+"caption_explanation":"Goiburua eta oina ezingo dira editatu elkarrizketa-koadro honetatik.",
+"caption_warning":"Goiburua eta oina ezingo dira editatu elkarrizketa-koadro honetatik. Sortutako testura jo editatzeko edo borratzeko."
 // The New eXeLearning
 });
