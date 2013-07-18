@@ -4,7 +4,7 @@ tinyMCE.addI18n('pt.advimage_dlg',{"image_list":"Lista de imagens","align_right"
 "recognition":"T\u00EDtulo e reconhecimento da autoria",
 "header":"Cabe\u00E7alho",
 "image_title":"T\u00EDtulo da imagem",
-"image_title_link":"Liga\u00E7\u00E3o da t\u00EDtulo",
+"image_title_link":"Liga\u00E7\u00E3o do t\u00EDtulo",
 "author_name":"Fonte / Autoria",
 "author_name_link":"Liga\u00E7\u00E3o \u00E0 fonte / autoria",
 "caption_license":"Licen\u00E7a",
