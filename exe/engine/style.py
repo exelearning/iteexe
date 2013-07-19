@@ -25,7 +25,8 @@ class Style(Persistable):
                    'license': 'License', 
                    'license-url': 'License URL', 
                    'description': 'Description',
-                   'extra-head': 'Extra head'
+                   'extra-head': 'Extra head',
+                   'extra-body': 'Extra body'
                    }
     
     _attributesCode = ['extra-head']
@@ -44,6 +45,7 @@ class Style(Persistable):
         self._license_url   = ''
         self._description   = ''
         self._extra_head    = ''
+        self._extra_body    = ''
         self._validConfig   = False
         self._valid         = False
         self._checkValid()
@@ -124,6 +126,9 @@ class Style(Persistable):
     
     def get_extra_head(self):
         return self._extra_head
+        
+    def get_extra_body(self):
+        return self._extra_body
     
     
     def renderPropertiesHTML(self):

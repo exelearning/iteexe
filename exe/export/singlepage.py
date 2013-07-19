@@ -64,9 +64,9 @@ class SinglePage(Page):
         html  = self.renderHeader(package.title, for_print)
         if for_print:
             # include extra onload bit:
-            html += u'<body onload="print_page()">'
+            html += u'<body class="exe-single-page" onload="print_page()">'
         else:
-            html += u"<body>"
+            html += u'<body class="exe-single-page">'
         html += u"<"+sectionTag+" id=\"content\">"
         html += u"<"+headerTag+" id=\"header\">"
         html += "<h1>"+escape(package.title)+"</h1>"
@@ -79,6 +79,10 @@ class SinglePage(Page):
         html += self.renderLicense()
         html += self.renderFooter()
         html += u"</"+sectionTag+">"
+        # Some styles might have their own JavaScript files (see their config.xml file)
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
+        if style.hasValidConfig:
+            html += style.get_extra_body()        
         html += u"</body></html>"
         
         # JR: Eliminamos los atributos de las ecuaciones
@@ -177,6 +181,9 @@ class SinglePage(Page):
         if for_print:
             # include extra print-script for onload bit 
             html += u'<script type="text/javascript">function print_page(){window.print();window.close();}</script>'+lb
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
+        if style.hasValidConfig:
+            html += style.get_extra_head()        
         html += u"</head>"+lb
         return html
     

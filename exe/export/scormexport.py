@@ -428,6 +428,7 @@ class ScormPage(Page):
             headerTag = "header"
         html  = common.docType()
         lenguaje = G.application.config.locale
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
         if self.node.package.dublinCore.language!="":
             lenguaje = self.node.package.dublinCore.language
         html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
@@ -473,13 +474,17 @@ class ScormPage(Page):
             html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
         #html += u"</head>"
         if self.scormType == 'commoncartridge':
+            if style.hasValidConfig:
+                html += style.get_extra_head()        
             html += u"</head>"+lb
             html += u"<body class=\"exe-scorm\">"+lb
         else:
             html += u"<script type=\"text/javascript\" "
-            html += u"src=\"SCORM_API_wrapper.js\"></script>" 
+            html += u"src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" "
-            html += u"src=\"SCOFunctions.js\"></script>"+lb 
+            html += u"src=\"SCOFunctions.js\"></script>"+lb
+            if style.hasValidConfig:
+                html += style.get_extra_head()
             html += u"</head>"+lb            
             html += u'<body class=\"exe-scorm\" onload="loadPage()" '
             html += u'onunload="unloadPage()">'+lb
@@ -511,6 +516,7 @@ class ScormPage(Page):
            html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
         if themeHasXML:
+        #if style.hasValidConfig:
             html += self.renderLicense()
             html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /#outer
@@ -521,8 +527,11 @@ class ScormPage(Page):
             html += u'href="javascript:goForward();">%s</a>' % _('Next')
             html += u'</'+sectionTag+'>'+lb
         if not themeHasXML:
+        #if not style.hasValidConfig:
             html += self.renderLicense()
             html += self.renderFooter()
+        else:
+            html += style.get_extra_body()
         html += u"</body>"+lb+"</html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones

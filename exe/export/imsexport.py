@@ -260,6 +260,10 @@ class IMSPage(Page):
         if common.nodeHasMediaelement(self.node):
             html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
             html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
+        # Some styles might have their own JavaScript files (see their config.xml file)
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
+        if style.hasValidConfig:
+            html += style.get_extra_head()
         html += u"</head>"+lb
         html += u"<body class=\"exe-ims\">"+lb
         html += u"<"+sectionTag+" id=\"outer\">"+lb
@@ -293,6 +297,8 @@ class IMSPage(Page):
         html += self.renderLicense()
         html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /#outer
+        if style.hasValidConfig:
+            html += style.get_extra_body() 
         html += u"</body>"+lb+"</html>"
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones

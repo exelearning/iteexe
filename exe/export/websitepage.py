@@ -117,12 +117,13 @@ class WebsitePage(Page):
         if common.nodeHasMediaelement(self.node):
             html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
             html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
-        #JR: Vemos si el estilo tiene config.xml para agregar el atributo extra-head
+        # Some styles might have their own JavaScript files (see their config.xml file)
+        # style = self.node.package.style
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb
-        html += u"<body>"+lb
+        html += u'<body class="exe-web-site">'+lb
         html += u"<"+sectionTag+" id=\"content\">"+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
@@ -154,7 +155,6 @@ class WebsitePage(Page):
         html += "</"+sectionTag+">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
 
-        style = self.node.package.style
         html += '<'+headerTag+' id=\"nodeDecoration\">'
         html += '<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
@@ -175,7 +175,7 @@ class WebsitePage(Page):
                     html += block.renderJavascriptForWeb()
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(self.node.package,
-                        block.renderView(style))
+                        block.renderView(self.node.package.style))
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
         if common.nodeHasMediaelement(self.node):
@@ -185,13 +185,18 @@ class WebsitePage(Page):
         html += "</"+sectionTag+">"+lb
         # writes the footer for each page 
         html += self.renderLicense()
-        themeHasXML = common.themeHasConfigXML(style)
+        themeHasXML = common.themeHasConfigXML(self.node.package.style)
         if not themeHasXML:
+        #if not style.hasValidConfig:
             html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /main
         if themeHasXML:
+        #if style.hasValidConfig:
             html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /content
+        if themeHasXML:
+        #if style.hasValidConfig:
+            html += style.get_extra_body()        
         html += u"</body>"+lb
         html += "</html>"
         html = html.encode('utf8')
