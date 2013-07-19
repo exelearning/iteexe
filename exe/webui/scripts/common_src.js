@@ -222,11 +222,11 @@ function markClozeWord(ele, mark) {
             break;
         case 1:
             // Wrong
-            ele.style.backgroundColor = "red";
+            ele.style.backgroundColor = "#FF9999";
             break;
         case 2: 
             // Correct
-            ele.style.backgroundColor = "forestgreen";
+            ele.style.backgroundColor = "#CCFF99";
             break;
     }
     return mark
@@ -761,11 +761,11 @@ function markClozelangWord(ele, mark) {
             break;
         case 1:
             // Wrong
-            ele.style.backgroundColor = "red";
+            ele.style.backgroundColor = "#FF9999";
             break;
         case 2: 
             // Correct
-            ele.style.backgroundColor = "forestgreen";
+            ele.style.backgroundColor = "#CCFF99";
             break;
     }
     return mark
@@ -775,8 +775,8 @@ function markClozelangWord(ele, mark) {
 function getClozelangMark(ele) {
     // Return last mark applied
     switch (ele.style.backgroundColor) {
-        case 'red':   return 1; // Wrong
-        case 'forestgreen':  return 2; // Correct
+        case '#FF9999':   return 1; // Wrong
+        case '#CCFF99':  return 2; // Correct
         default:      return 0; // Not attempted
     }
 }
