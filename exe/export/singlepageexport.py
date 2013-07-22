@@ -180,10 +180,14 @@ class SinglePageExport(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, self.outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, self.outputDir)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'jquery.js')
-            jquery.copyfile(self.outputDir/'jquery.js')
+            jquery = (self.scriptsDir/'exe_jquery.js')
+            jquery.copyfile(self.outputDir/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(self.outputDir)
+            dT = common.getExportDocType()
+            if dT != "HTML5":
+                jsFile = (self.scriptsDir/'exe_html5.js')
+                jsFile.copyfile(self.outputDir/'exe_html5.js')
 
         for child in node.children:
             self.compruebaReproductores(child)

@@ -312,19 +312,14 @@ class Epub3Page(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
-        if common.nodeHasMediaelement(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"mediaelementplayer.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
-        if dT == "HTML5":
+        if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
-        if common.nodeHasMediaelement(self.node):
-            html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
-            html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
@@ -357,14 +352,12 @@ class Epub3Page(Page):
             html += u'</'+sectionTag+'>'+lb # iDevice div
 
         html += u"</"+sectionTag+">"+lb # /#main
-        if common.nodeHasMediaelement(self.node):
-           html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         html += self.renderLicense()
         html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /#outer
         if style.hasValidConfig:
             html += style.get_extra_body() 
-        html += u"</body>"+lb+"</html>"
+        html += u'<script type="text/javascript">$exe.domReady();</script></body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
@@ -555,8 +548,8 @@ class Epub3Export(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, contentPages)
             common.copyFileIfNotInStyle('stock-stop.png', self, contentPages)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'jquery.js')
-            jquery.copyfile(contentPages/'jquery.js')
+            jquery = (self.scriptsDir/'exe_jquery.js')
+            jquery.copyfile(contentPages/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(contentPages)
 

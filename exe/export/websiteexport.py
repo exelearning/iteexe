@@ -231,10 +231,14 @@ class WebsiteExport(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'jquery.js')
-            jquery.copyfile(outputDir/'jquery.js')
+            jquery = (self.scriptsDir/'exe_jquery.js')
+            jquery.copyfile(outputDir/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(outputDir)
+            dT = common.getExportDocType()
+            if dT != "HTML5":
+                jsFile = (self.scriptsDir/'exe_html5.js')
+                jsFile.copyfile(outputDir/'exe_html5.js')
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

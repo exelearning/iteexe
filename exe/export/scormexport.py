@@ -377,12 +377,12 @@ class Manifest(object):
                 fileStr = ""
 
         dT = common.getExportDocType()
-        if dT == "HTML5":
+        if dT == "HTML5" or common.nodeHasMediaelement(page.node):
             self.resStr += '    <file href="exe_html5.js"/>\n'
 
         resources = page.node.getResources()
         if common.nodeHasMediaelement(page.node):
-            resources = resources + [u'jquery.js'] + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+            resources = resources + [u'exe_jquery.js'] + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
 
         for resource in resources:            
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
@@ -459,20 +459,14 @@ class ScormPage(Page):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if common.hasGalleryIdevice(self.node):
             html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
-        if common.nodeHasMediaelement(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"mediaelementplayer.css\" />"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
-        if dT == "HTML5":
+        if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
-        if common.nodeHasMediaelement(self.node):
-            html += u'<script type="text/javascript" src="jquery.js"></script>'+lb
-            html += u'<script type="text/javascript" src="mediaelement-and-player.min.js"></script>'+lb
-        #html += u"</head>"
         if self.scormType == 'commoncartridge':
             if style.hasValidConfig:
                 html += style.get_extra_head()        
@@ -512,8 +506,6 @@ class ScormPage(Page):
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
         html += u"</"+sectionTag+">"+lb # /#main
-        if common.nodeHasMediaelement(self.node):
-           html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         themeHasXML = common.themeHasConfigXML(self.node.package.style)
         if themeHasXML:
         #if style.hasValidConfig:
@@ -532,7 +524,7 @@ class ScormPage(Page):
             html += self.renderFooter()
         else:
             html += style.get_extra_body()
-        html += u"</body>"+lb+"</html>"
+        html += u'<script type="text/javascript">$exe.domReady();</script></body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
@@ -774,10 +766,13 @@ class ScormExport(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'jquery.js')
-            jquery.copyfile(outputDir/'jquery.js')
+            jquery = (self.scriptsDir/'exe_jquery.js')
+            jquery.copyfile(outputDir/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(outputDir)
+            if dT != "HTML5":
+                jsFile = (self.scriptsDir/'exe_html5.js')
+                jsFile.copyfile(outputDir/'exe_html5.js')
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004" or self.scormType == "agrega":
             if package.license == "GNU Free Documentation License":

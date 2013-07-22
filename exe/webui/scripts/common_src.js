@@ -1132,3 +1132,58 @@ document.onmousemove=trckM;
 window.onresize=function(){
 if(dO.ns4)setTimeout('history.go(0)',300);
 }
+
+var $exe = {
+    domReady : function(){
+        var h = document.body.innerHTML;
+        if (h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(' class=mediaelement')!=-1) {
+            $exe.loadMediaPlayer.getjQuery();
+        }
+    },
+    loadMediaPlayer : {
+        getjQuery : function(){
+            if (typeof(jQuery)=='undefined') {
+                $exe.loadScript("exe_jquery.js","$exe.loadMediaPlayer.getPlayer()");
+            } else {
+                $exe.loadMediaPlayer.getPlayer();
+            }
+        },
+        getPlayer : function(){
+            $("VIDEO").hide();
+            $exe.loadScript("exe_media.js","$exe.loadMediaPlayer.getCSS()");
+        },
+        getCSS : function(){
+            $exe.loadScript("exe_media.css","$exe.loadMediaPlayer.init()");
+        },
+        init : function(){
+            $('.mediaelement').mediaelementplayer();
+        }
+    },
+    loadScript : function(url, callback){
+        var script;
+        if (url.split('.').pop()=="css") {
+            script = document.createElement("link")
+            script.type = "text/css";
+            script.rel = "stylesheet";
+            script.href = url;	
+        } else {
+            script = document.createElement("script")
+            script.type = "text/javascript";
+            script.src = url;
+        }
+        if (script.readyState){  //IE
+            script.onreadystatechange = function(){
+                if (script.readyState == "loaded" ||
+                        script.readyState == "complete"){
+                    script.onreadystatechange = null;
+                    if (callback) eval(callback);
+                }
+            };
+        } else {  //Others
+            script.onload = function(){
+                if (callback) eval(callback);
+            };
+        }
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+}
