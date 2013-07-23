@@ -32,6 +32,7 @@ from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
+from exe                      import globals as G
 import os
 
 log = logging.getLogger(__name__)
@@ -162,6 +163,11 @@ class WebsiteExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # copy script files.
+        my_style = G.application.config.styleStore.getStyle(package.style)
+        if my_style.hasValidConfig:
+            if my_style.get_jquery():
+                jsFile = (self.scriptsDir/'exe_jquery.js')
+                jsFile.copyfile(outputDir/'exe_jquery.js')
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
         dT = common.getExportDocType()

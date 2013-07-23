@@ -315,13 +315,17 @@ class Epub3Page(Page):
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
+        # Some styles might include eXe's jQuery
+        if style.hasValidConfig:
+            if style.get_jquery():
+                html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
-        style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
             html += style.get_extra_head()
         html += u"</head>"+lb
@@ -552,6 +556,12 @@ class Epub3Export(object):
             jquery.copyfile(contentPages/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(contentPages)
+        else:
+            my_style = G.application.config.styleStore.getStyle(package.style)
+            if my_style.hasValidConfig:
+                if my_style.get_jquery():
+                    jsFile = (self.scriptsDir/'exe_jquery.js')
+                    jsFile.copyfile(contentPages/'exe_jquery.js')
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

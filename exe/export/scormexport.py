@@ -38,7 +38,7 @@ from exe.export.singlepage         import SinglePage
 from exe.export.websiteexport      import WebsiteExport
 from exe.engine.persist            import encodeObject
 from exe.engine.persistxml         import encodeObjectToXML
-from exe                             import globals as G
+from exe                           import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -337,6 +337,7 @@ class Manifest(object):
         # because it isn't a "resource" so we can't tell which
         # pages will use it from content.css
         if self.scormType == "commoncartridge":
+            fileStr = ""
             self.resStr += """href="%s">
     <file href="%s"/>
     <file href="base.css"/>
@@ -381,8 +382,13 @@ class Manifest(object):
             self.resStr += '    <file href="exe_html5.js"/>\n'
 
         resources = page.node.getResources()
+        my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if common.nodeHasMediaelement(page.node):
             resources = resources + [u'exe_jquery.js'] + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+        else:
+            if my_style.hasValidConfig:
+                if my_style.get_jquery():
+                    self.resStr += '    <file href="exe_jquery.js"/>\n'
 
         for resource in resources:            
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
@@ -462,6 +468,10 @@ class ScormPage(Page):
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
+        # Some styles might include eXe's jQuery
+        if style.hasValidConfig:
+            if style.get_jquery():
+                html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
@@ -473,10 +483,8 @@ class ScormPage(Page):
             html += u"</head>"+lb
             html += u"<body class=\"exe-scorm\">"+lb
         else:
-            html += u"<script type=\"text/javascript\" "
-            html += u"src=\"SCORM_API_wrapper.js\"></script>"+lb
-            html += u"<script type=\"text/javascript\" "
-            html += u"src=\"SCOFunctions.js\"></script>"+lb
+            html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
+            html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()
             html += u"</head>"+lb            
@@ -772,7 +780,12 @@ class ScormExport(object):
             mediaelement.copyfiles(outputDir)
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
-                jsFile.copyfile(outputDir/'exe_html5.js')
+        else:
+            my_style = G.application.config.styleStore.getStyle(package.style)
+            if my_style.hasValidConfig:
+                if my_style.get_jquery():
+                    jsFile = (self.scriptsDir/'exe_jquery.js')
+                    jsFile.copyfile(outputDir/'exe_jquery.js')
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004" or self.scormType == "agrega":
             if package.license == "GNU Free Documentation License":

@@ -27,6 +27,7 @@ from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.singlepage    import SinglePage
 from exe.webui                import common
+from exe                      import globals as G
 import os
 
 import logging
@@ -103,6 +104,11 @@ class SinglePageExport(object):
         package.resourceDir.copyfiles(self.outputDir)
 
         # copy script files.
+        my_style = G.application.config.styleStore.getStyle(package.style)
+        if my_style.hasValidConfig:
+            if my_style.get_jquery():
+                jsFile = (self.scriptsDir/'exe_jquery.js')
+                jsFile.copyfile(self.outputDir/'exe_jquery.js')
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(self.outputDir/'common.js')
         dT = common.getExportDocType()

@@ -166,6 +166,11 @@ class SinglePage(Page):
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
         if dT == "HTML5" or self.hasMediaelement:
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
+        style = G.application.config.styleStore.getStyle(self.node.package.style)
+        # Some styles might include eXe's jQuery
+        if style.hasValidConfig:
+            if style.get_jquery():
+                html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
         if hasGallery:
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
@@ -174,7 +179,6 @@ class SinglePage(Page):
         if for_print:
             # include extra print-script for onload bit 
             html += u'<script type="text/javascript">function print_page(){window.print();window.close();}</script>'+lb
-        style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
             html += style.get_extra_head()        
         html += u"</head>"+lb
