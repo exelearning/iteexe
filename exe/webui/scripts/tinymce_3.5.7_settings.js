@@ -1,8 +1,4 @@
-/*******************************************/	
-/********** Available languages **********/
-/***************************************/
-var tinyMCE_languages=["ca","es","eu","fr","gl","it","nl","pt","ru"];
-var tinyMCE_language = getTinyMCELang(document.getElementsByTagName("HTML")[0].lang);
+_ = parent._;
 /*******************************************/	
 /*****************************************/
 /****************************************/
@@ -12,7 +8,7 @@ tinyMCE.init({
 	editor_selector: "mceEditor",	
 	theme : "advanced",
 	convert_urls : false,
-	language : tinyMCE_language,
+	language : 'en',
 	// The New eXeLearning
 	content_css : "/css/extra.css," + exe_style,
     height : "250",
@@ -31,7 +27,7 @@ tinyMCE.init({
 	theme_advanced_statusbar_location : "bottom",
 	theme_advanced_resizing : true,	
 	
-    template_external_list_url : "/scripts/tinymce_templates/lang/"+tinyMCE_language+".js",
+    template_external_list_url : "/scripts/tinymce_templates/lang/en.js",
     // Spell check
     init_instance_callback : function() {
         if (tinyMCE.activeEditor.execCommands.mceSpellCheck) tinymce.execCommand('mceSpellCheck', true);

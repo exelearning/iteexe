@@ -1,14 +1,9 @@
-# EXELearning Galician PO file
-# Copyright (C) 2008-2013 eXeLearning.org
-# This file is distributed under the same license as the EXE package.
-# eXe Project <exe@exelearning.org>
-# Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>, 2012, 2013.
-#
+
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-04 14:28+0200\n"
+"POT-Creation-Date: 2013-07-24 17:04+0200\n"
 "PO-Revision-Date: 2013-04-22 17:49+0200\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language-Team: TAGEN ATA <localizacion@tagenata.net>\n"
@@ -155,6 +150,7 @@ msgstr ""
 "programa."
 
 #: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
 msgstr "Anexo"
 
@@ -914,6 +910,7 @@ msgstr "Suxestión"
 
 #: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2080
 #: exe/webui/testquestionelement.py:110
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Opcións"
 
@@ -1014,6 +1011,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:274
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:323
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:68
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Description"
 msgstr "Descrición"
 
@@ -1416,6 +1415,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:168
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Text"
 msgstr "Texto"
 
@@ -1859,7 +1859,7 @@ msgstr ""
 "FALLOU AO GARDAR!\n"
 "A última operación válida foi %s."
 
-#: exe/engine/package.py:1298 exe/jsui/scripts/app/controller/Toolbar.js:370
+#: exe/engine/package.py:1298 exe/jsui/scripts/app/controller/Toolbar.js:367
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "Editor de iDevice"
@@ -2395,9 +2395,9 @@ msgstr ""
 "exe_do: erro: Non se pode importar a '%s'.\n"
 "O erro foi:"
 
-#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:285
-#: exe/jsui/mainpage.py:956 exe/jsui/mainpage.py:1106 exe/jsui/mainpage.py:1147
-#: exe/jsui/mainpage.py:1182
+#: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:280
+#: exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1065 exe/jsui/mainpage.py:1106
+#: exe/jsui/mainpage.py:1141
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2414,8 +2414,8 @@ msgstr "Paquete de entrada non valido"
 msgid "Export format not implemented"
 msgstr "Formato de exportación non implementado"
 
-#: exe/export/epub3export.py:574 exe/export/imsexport.py:468
-#: exe/export/scormexport.py:791 exe/export/websiteexport.py:91
+#: exe/export/epub3export.py:573 exe/export/imsexport.py:470
+#: exe/export/scormexport.py:795 exe/export/websiteexport.py:91
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2428,11 +2428,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Licenciado baixo a"
 
-#: exe/export/scormexport.py:520 exe/export/websitepage.py:295
+#: exe/export/scormexport.py:518 exe/export/websitepage.py:296
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormexport.py:521 exe/export/websitepage.py:301
+#: exe/export/scormexport.py:519 exe/export/websitepage.py:302
 msgid "Next"
 msgstr "Seguinte"
 
@@ -2498,19 +2498,19 @@ msgstr "Calculando profundidade dos vínculos"
 msgid "Inserting %s"
 msgstr "Insertando %s"
 
-#: exe/jsui/mainpage.py:303 exe/jsui/mainpage.py:804 exe/jsui/mainpage.py:948
+#: exe/jsui/mainpage.py:298 exe/jsui/mainpage.py:763 exe/jsui/mainpage.py:907
 msgid "Cannot access directory named "
 msgstr "Non se pode acceder ao directorio nomeado "
 
-#: exe/jsui/mainpage.py:303 exe/jsui/mainpage.py:806 exe/jsui/mainpage.py:948
+#: exe/jsui/mainpage.py:298 exe/jsui/mainpage.py:765 exe/jsui/mainpage.py:907
 msgid ". Please use ASCII names."
 msgstr ". Use nomes ASCII."
 
-#: exe/jsui/mainpage.py:312
+#: exe/jsui/mainpage.py:307
 msgid "SAVE FAILED!"
 msgstr "FALLOU AO GARDAR!"
 
-#: exe/jsui/mainpage.py:316 exe/jsui/mainpage.py:646 exe/jsui/mainpage.py:1033
+#: exe/jsui/mainpage.py:311 exe/jsui/mainpage.py:619 exe/jsui/mainpage.py:992
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2519,26 +2519,22 @@ msgstr ""
 "FALLOU AO GARDAR!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:325 exe/jsui/mainpage.py:328
+#: exe/jsui/mainpage.py:315 exe/jsui/mainpage.py:320 exe/jsui/mainpage.py:323
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paquete gardado en: %s"
 
-#: exe/jsui/mainpage.py:401
-msgid "Changes take effect when you restart eXe"
-msgstr "Os cambios aplicaranse cando reinicie eXe"
-
-#: exe/jsui/mainpage.py:568 exe/jsui/mainpage.py:674
+#: exe/jsui/mainpage.py:541 exe/jsui/mainpage.py:647
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "O directorio de previsualización %s é un  ficheiro, non se pode substituír"
 
-#: exe/jsui/mainpage.py:588
+#: exe/jsui/mainpage.py:561
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Non se encontrou o ficheiro local %s, non se pode previsualizar"
 
-#: exe/jsui/mainpage.py:716
+#: exe/jsui/mainpage.py:689
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -2547,43 +2543,38 @@ msgstr ""
 "Fallou a compilación de MimeTeX!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:750 exe/jsui/mainpage.py:1294
-#, python-format
-msgid "Incorrect style file : %s"
-msgstr ""
-
-#: exe/jsui/mainpage.py:769
+#: exe/jsui/mainpage.py:728
 msgid "Importing HTML..."
 msgstr "Importando HTML..."
 
-#: exe/jsui/mainpage.py:775
+#: exe/jsui/mainpage.py:734
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:778
+#: exe/jsui/mainpage.py:737
 msgid "Error importing HTML:\n"
 msgstr "Erro na importación HTML:\n"
 
-#: exe/jsui/mainpage.py:826 exe/jsui/mainpage.py:831 exe/jsui/mainpage.py:834
-#: exe/jsui/mainpage.py:837 exe/jsui/mainpage.py:840 exe/jsui/mainpage.py:843
-#: exe/jsui/mainpage.py:846 exe/jsui/mainpage.py:1090 exe/jsui/mainpage.py:1163
-#: exe/jsui/mainpage.py:1300
+#: exe/jsui/mainpage.py:785 exe/jsui/mainpage.py:790 exe/jsui/mainpage.py:793
+#: exe/jsui/mainpage.py:796 exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:802
+#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1122
+#: exe/jsui/mainpage.py:1259
 msgid "EXPORT FAILED!"
 msgstr "FALLOU A EXPORTACIÓN!"
 
-#: exe/jsui/mainpage.py:917
+#: exe/jsui/mainpage.py:876
 msgid "Correct XLIFF import"
 msgstr "Importación XLIFF correcta"
 
-#: exe/jsui/mainpage.py:920
+#: exe/jsui/mainpage.py:879
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Erro na importación XLIFF: %s"
 
-#: exe/jsui/mainpage.py:957 exe/jsui/mainpage.py:974
+#: exe/jsui/mainpage.py:916 exe/jsui/mainpage.py:933
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -2592,21 +2583,21 @@ msgstr ""
 "FALLOU A EXTRACCIÓN!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:976
+#: exe/jsui/mainpage.py:935
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "O paquete foi extraído en: %s"
 
-#: exe/jsui/mainpage.py:988
+#: exe/jsui/mainpage.py:947
 msgid "Directory exists"
 msgstr "Existe o directorio"
 
-#: exe/jsui/mainpage.py:1019 exe/jsui/mainpage.py:1063
+#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1022
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "O nome do ficheiro %s é un ficheiro, non se pode substituír"
 
-#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1070
+#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1029
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2615,11 +2606,11 @@ msgstr ""
 "O nome de cartafol %s xa existe. Escolla outro nome ou elimine a "
 "existente e ténteo de novo."
 
-#: exe/jsui/mainpage.py:1078 exe/jsui/mainpage.py:1094
-#: exe/jsui/mainpage.py:1107 exe/jsui/mainpage.py:1113
-#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1148
-#: exe/jsui/mainpage.py:1154 exe/jsui/mainpage.py:1168
-#: exe/jsui/mainpage.py:1183 exe/jsui/mainpage.py:1189
+#: exe/jsui/mainpage.py:1037 exe/jsui/mainpage.py:1053
+#: exe/jsui/mainpage.py:1066 exe/jsui/mainpage.py:1072
+#: exe/jsui/mainpage.py:1090 exe/jsui/mainpage.py:1107
+#: exe/jsui/mainpage.py:1113 exe/jsui/mainpage.py:1127
+#: exe/jsui/mainpage.py:1142 exe/jsui/mainpage.py:1148
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2628,27 +2619,27 @@ msgstr ""
 "FALLOU A EXPORTACIÓN!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1081 exe/jsui/mainpage.py:1096
-#: exe/jsui/mainpage.py:1115 exe/jsui/mainpage.py:1133
-#: exe/jsui/mainpage.py:1156 exe/jsui/mainpage.py:1170
-#: exe/jsui/mainpage.py:1191
+#: exe/jsui/mainpage.py:1040 exe/jsui/mainpage.py:1055
+#: exe/jsui/mainpage.py:1074 exe/jsui/mainpage.py:1092
+#: exe/jsui/mainpage.py:1115 exe/jsui/mainpage.py:1129
+#: exe/jsui/mainpage.py:1150
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado a %s"
 
-#: exe/jsui/mainpage.py:1224 exe/jsui/mainpage.py:1278
-#: exe/webui/stylemanagerpage.py:242
+#: exe/jsui/mainpage.py:1183 exe/jsui/mainpage.py:1237
+#: exe/webui/stylemanagerpage.py:182
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "O ficheiro %s non existe ou non é lexíbel."
 
-#: exe/jsui/mainpage.py:1228
+#: exe/jsui/mainpage.py:1187
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Non se puido cargar o ficheiro, envíe un correo electrónico a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1231
+#: exe/jsui/mainpage.py:1190
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2657,30 +2648,35 @@ msgstr ""
 "O formato de ficheiro non é correcto:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1233
+#: exe/jsui/mainpage.py:1192
 msgid "Sorry, wrong file format"
 msgstr "O formato de ficheiro non é correcto"
 
-#: exe/jsui/mainpage.py:1291
+#: exe/jsui/mainpage.py:1250
 #, python-format
 msgid "Correct Style import : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1311
+#: exe/jsui/mainpage.py:1253
+#, python-format
+msgid "Incorrect style file : %s"
+msgstr ""
+
+#: exe/jsui/mainpage.py:1270
 #, python-format
 msgid "Correct ZIP Style exported : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1314
+#: exe/jsui/mainpage.py:1273
 #, python-format
 msgid "can't export style : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1331
+#: exe/jsui/mainpage.py:1290
 msgid "Style deleted "
 msgstr ""
 
-#: exe/jsui/mainpage.py:1334
+#: exe/jsui/mainpage.py:1293
 msgid "can't delete style "
 msgstr ""
 
@@ -2714,19 +2710,17 @@ msgid "Image Files"
 msgstr "Arquivos de imaxe"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:196
-#: exe/jsui/scripts/app/controller/Toolbar.js:433
-#: exe/jsui/scripts/app/controller/Toolbar.js:454
-#: exe/jsui/scripts/app/controller/Toolbar.js:489
-#: exe/jsui/scripts/app/controller/Toolbar.js:508
-#: exe/jsui/scripts/app/controller/Toolbar.js:565
-#: exe/jsui/scripts/app/controller/Toolbar.js:584
-#: exe/jsui/scripts/app/controller/Toolbar.js:633
-#: exe/jsui/scripts/app/controller/Toolbar.js:661
-#: exe/jsui/scripts/app/controller/Toolbar.js:703
-#: exe/jsui/scripts/app/controller/Toolbar.js:720
-#: exe/jsui/scripts/app/controller/Toolbar.js:749
-#: exe/jsui/scripts/app/controller/Toolbar.js:875
-#: exe/jsui/scripts/app/controller/Toolbar.js:949
+#: exe/jsui/scripts/app/controller/Toolbar.js:430
+#: exe/jsui/scripts/app/controller/Toolbar.js:451
+#: exe/jsui/scripts/app/controller/Toolbar.js:486
+#: exe/jsui/scripts/app/controller/Toolbar.js:505
+#: exe/jsui/scripts/app/controller/Toolbar.js:570
+#: exe/jsui/scripts/app/controller/Toolbar.js:598
+#: exe/jsui/scripts/app/controller/Toolbar.js:640
+#: exe/jsui/scripts/app/controller/Toolbar.js:657
+#: exe/jsui/scripts/app/controller/Toolbar.js:686
+#: exe/jsui/scripts/app/controller/Toolbar.js:812
+#: exe/jsui/scripts/app/controller/Toolbar.js:886
 msgid "All Files"
 msgstr "Todos os arquivos"
 
@@ -2737,9 +2731,10 @@ msgstr "Configuración gardada"
 #: exe/jsui/scripts/app/controller/MainTab.js:240
 #: exe/jsui/scripts/app/controller/MainTab.js:245
 #: exe/jsui/scripts/app/controller/MainTab.js:276
-#: exe/webui/stylemanagerpage.py:242 exe/webui/stylemanagerpage.py:245
-#: exe/webui/stylemanagerpage.py:255 exe/webui/stylemanagerpage.py:260
-#: exe/webui/stylemanagerpage.py:281 exe/webui/stylemanagerpage.py:296
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:106
+#: exe/webui/stylemanagerpage.py:182 exe/webui/stylemanagerpage.py:185
+#: exe/webui/stylemanagerpage.py:195 exe/webui/stylemanagerpage.py:200
+#: exe/webui/stylemanagerpage.py:221 exe/webui/stylemanagerpage.py:235
 msgid "Error"
 msgstr "Erro"
 
@@ -2766,7 +2761,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr "Eliminar \"{node}\" páxina e todas as súas fillas?"
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:375
+#: exe/jsui/scripts/app/controller/Toolbar.js:372
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -2778,188 +2773,165 @@ msgstr "Renomear \"{node}\" páxina"
 msgid "Enter the new name:"
 msgstr "Introduza o novo nome:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:324
+#: exe/jsui/scripts/app/controller/Toolbar.js:316
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr "Acerca de"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:357
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:397
+#: exe/jsui/scripts/app/controller/Toolbar.js:349
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:376
+#: exe/jsui/scripts/app/controller/Toolbar.js:373
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:400
+#: exe/jsui/scripts/app/controller/Toolbar.js:397
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:421
+#: exe/jsui/scripts/app/controller/Toolbar.js:418
 msgid "Select package to insert"
 msgstr "Seleccione o paquete a inserir"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:426
+#: exe/jsui/scripts/app/controller/Toolbar.js:423
 msgid "Inserting package: {filename}"
 msgstr "Inserindo paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:432
-#: exe/jsui/scripts/app/controller/Toolbar.js:453
-#: exe/jsui/scripts/app/controller/Toolbar.js:874
-#: exe/jsui/scripts/app/controller/Toolbar.js:948
+#: exe/jsui/scripts/app/controller/Toolbar.js:429
+#: exe/jsui/scripts/app/controller/Toolbar.js:450
+#: exe/jsui/scripts/app/controller/Toolbar.js:811
+#: exe/jsui/scripts/app/controller/Toolbar.js:885
 msgid "eXe Package Files"
 msgstr "Paquetes eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:442
+#: exe/jsui/scripts/app/controller/Toolbar.js:439
 msgid "Save extracted package as"
 msgstr "Gardar paquete extraído como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:447
+#: exe/jsui/scripts/app/controller/Toolbar.js:444
 msgid "Extracting package: {filename}"
 msgstr "Extraendo paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:460
 msgid "Select the parent folder for import."
 msgstr "Seleccione a carpeta principal para a importación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:478
+#: exe/jsui/scripts/app/controller/Toolbar.js:475
 msgid "Select the entry point for import."
 msgstr "Seleccione o punto de entrada para a importación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:488
+#: exe/jsui/scripts/app/controller/Toolbar.js:485
 msgid "HTML Files"
 msgstr "Arquivos HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:497
+#: exe/jsui/scripts/app/controller/Toolbar.js:494
 msgid "Select LOM Metadata file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:507
+#: exe/jsui/scripts/app/controller/Toolbar.js:504
 msgid "XML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:522
+#: exe/jsui/scripts/app/controller/Toolbar.js:519
 msgid "Waiting progress..."
 msgstr "Esperando o progreso..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:530
+#: exe/jsui/scripts/app/controller/Toolbar.js:527
 msgid "Cancel Import?"
 msgstr "Cancelar importación?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:531
+#: exe/jsui/scripts/app/controller/Toolbar.js:528
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Hai unha importación en curso. Queres cancelala?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:553
-msgid "Select ZIP Style file to import."
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:564
-msgid "ZIP Style"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:574
-msgid "Export to ZIP Style as"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:583
-msgid "ZipFile"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:591
-msgid "Delete style?"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:592
-msgid "Do you want to delete the selected style?"
-msgstr ""
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:614
+#: exe/jsui/scripts/app/controller/Toolbar.js:551
 msgid "Select Xliff file to import"
 msgstr "Sleccionar arquivo XLIFF a importar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:624
+#: exe/jsui/scripts/app/controller/Toolbar.js:561
 msgid "XLIFF Import Preferences"
 msgstr "Opcións de importación dende XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:632
-#: exe/jsui/scripts/app/controller/Toolbar.js:660
+#: exe/jsui/scripts/app/controller/Toolbar.js:569
+#: exe/jsui/scripts/app/controller/Toolbar.js:597
 msgid "XLIFF Files"
 msgstr "Arquivos XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:642
+#: exe/jsui/scripts/app/controller/Toolbar.js:579
 msgid "Export to Xliff as"
 msgstr "Exportar a XLIFF como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:652
+#: exe/jsui/scripts/app/controller/Toolbar.js:589
 msgid "XLIFF Export Preferences"
 msgstr "Opcións de exportación XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:676
+#: exe/jsui/scripts/app/controller/Toolbar.js:613
 msgid "Select the parent folder for export."
 msgstr "Seleccione o directorio principal para a exportación."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:693
+#: exe/jsui/scripts/app/controller/Toolbar.js:630
 msgid "Export text package as"
 msgstr "Exportar paquete de texto como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:702
+#: exe/jsui/scripts/app/controller/Toolbar.js:639
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Text File"
 msgstr "Arquivo de texto"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:710
+#: exe/jsui/scripts/app/controller/Toolbar.js:647
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:719
+#: exe/jsui/scripts/app/controller/Toolbar.js:656
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
+#: exe/jsui/scripts/app/controller/Toolbar.js:664
 msgid "Export SCORM package as"
 msgstr "Exportar paquete SCORM como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:729
+#: exe/jsui/scripts/app/controller/Toolbar.js:666
 msgid "Export IMS package as"
 msgstr "Exportar paquete IMS como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:731
+#: exe/jsui/scripts/app/controller/Toolbar.js:668
 msgid "Export Website package as"
 msgstr "Exportar Sitio Web como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:733
+#: exe/jsui/scripts/app/controller/Toolbar.js:670
 msgid "Export Common Cartridge as"
 msgstr "Exportar Common Cartridge como"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:735
+#: exe/jsui/scripts/app/controller/Toolbar.js:672
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "Valor transferido a paquete exportado NON VÁLIDO"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:748
+#: exe/jsui/scripts/app/controller/Toolbar.js:685
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/ArquivoZIP"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:847
+#: exe/jsui/scripts/app/controller/Toolbar.js:784
 msgid "Loading package..."
 msgstr "Cargando paquete..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:863
+#: exe/jsui/scripts/app/controller/Toolbar.js:800
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:868
+#: exe/jsui/scripts/app/controller/Toolbar.js:805
 msgid "Loading package: {filename}"
 msgstr "Cargando paquete: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:887
+#: exe/jsui/scripts/app/controller/Toolbar.js:824
 msgid "Save Package first?"
 msgstr "Gardar o paquete primeiro?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:888
+#: exe/jsui/scripts/app/controller/Toolbar.js:825
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -2967,15 +2939,15 @@ msgstr ""
 "O paquete actual non se modificou e non se gardou aínda. Gustaríache "
 "gardalo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:912
+#: exe/jsui/scripts/app/controller/Toolbar.js:849
 msgid "Saving package to: {filename}"
 msgstr "Gardando paquete como: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:928
+#: exe/jsui/scripts/app/controller/Toolbar.js:865
 msgid "Save file"
 msgstr "Gardar arquivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:934
+#: exe/jsui/scripts/app/controller/Toolbar.js:871
 msgid "Saving package..."
 msgstr "Gardando paquete..."
 
@@ -3023,11 +2995,15 @@ msgstr "O ficheiro xa existe. Quere substituílo?"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:103
 #: exe/jsui/scripts/app/view/forms/LomSections.js:139
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:86 exe/webui/editorpane.py:327
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
 msgstr "Nome"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:72
 #: exe/jsui/scripts/app/view/forms/LomSections.js:96
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Size"
 msgstr "Tamaño"
 
@@ -3035,6 +3011,9 @@ msgstr "Tamaño"
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:111
 #: exe/jsui/scripts/app/view/forms/LomSections.js:102
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Type"
 msgstr "Tipo"
 
@@ -3043,11 +3022,9 @@ msgid "Modified"
 msgstr "Modificado"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/preferencespage.py:163
-#: exe/webui/selectbrowserpage.py:113 exe/webui/selectbrowserpage_ru.py:113
-#: exe/webui/stylemanagerpage.py:172 exe/webui/stylemanagerpage.py:194
-#: exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -3062,7 +3039,9 @@ msgstr "Abrir"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:242
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:272
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:95
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:265
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Save"
 msgstr "Gardar"
 
@@ -3091,6 +3070,12 @@ msgstr "Metadatos Dublin Core"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
 #: exe/webui/galleryblock.py:209
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Title"
 msgstr "Título"
 
@@ -3198,6 +3183,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Format"
 msgstr "Formato"
 
@@ -3217,6 +3203,8 @@ msgstr "Unha referencia inequívoca para o recurso dentro dun contexto dado."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:141
 #: exe/jsui/scripts/app/view/forms/LomSections.js:161
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Source"
 msgstr "Fonte"
 
@@ -3230,6 +3218,8 @@ msgstr "Unha referencia a un recurso do que o presente recurso se deriva."
 #: exe/jsui/scripts/app/view/forms/LomSections.js:81
 #: exe/jsui/scripts/app/view/forms/LomSections.js:123
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Language"
 msgstr "Idioma"
 
@@ -3388,6 +3378,14 @@ msgstr "Idioma do campo"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:231
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:261
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:77
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:64
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:67
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "General"
 msgstr "Xeral"
 
@@ -3469,6 +3467,7 @@ msgid "Agregation Level"
 msgstr "Nivel de agregación"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:57
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Version"
 msgstr "Versión"
 
@@ -3697,6 +3696,8 @@ msgid "Preknowledge."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Author"
 msgstr "Autor"
 
@@ -3706,6 +3707,9 @@ msgid "Primary author of the resource."
 msgstr "Autor principal do recurso."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:134
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "License"
 msgstr "Licenza"
 
@@ -3775,6 +3779,7 @@ msgid "Tile background image?"
 msgstr "Quere colocar en mosaico a imaxe de fondo?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:398
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Footer"
 msgstr "Pé de páxina"
 
@@ -3814,6 +3819,30 @@ msgstr "Nome por defecto para os nodos de nivel 3"
 msgid "Update Tree"
 msgstr "Actualizar a árbore"
 
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
+msgid "Select Language"
+msgstr "Seleccionar lingua"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:64
+msgid "Internal Linking (for Web Site Exports only)"
+msgstr "Enlaces internos (só para exportar a sitios web)"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:66
+msgid "Enable All Internal Linking"
+msgstr "Activar todos os enlaces internos"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:67
+msgid "Disable Auto-Top Internal Linking"
+msgstr "Desactivar o enlazado interno cara arriba automático"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:68
+msgid "Disable All Internal Linking"
+msgstr "Desactivar todos os enlaces internos"
+
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:74
+msgid "Select Browser"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
 msgid "Outline"
 msgstr "Resumo"
@@ -3828,10 +3857,17 @@ msgstr "Autor"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:50 exe/webui/editorpane.py:268
 #: exe/webui/element.py:1809
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:10
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:62
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Preview"
 msgstr "Previsualización"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:54
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Properties"
 msgstr "Propiedades"
 
@@ -3856,7 +3892,6 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:90
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
-#: exe/webui/stylemanagerpage.py:170
 msgid "Export"
 msgstr "Exportar"
 
@@ -3870,7 +3905,7 @@ msgstr "Engadir páxina"
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
 #: exe/webui/editorpage.py:256 exe/webui/editorpage.py:259
-#: exe/webui/galleryblock.py:296 exe/webui/stylemanagerpage.py:192
+#: exe/webui/galleryblock.py:296
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -3919,11 +3954,11 @@ msgid "Save As..."
 msgstr "Gardar como..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:157
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Print"
 msgstr "Imprimir"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:375
 msgid "Import"
 msgstr "Importar"
 
@@ -3988,7 +4023,6 @@ msgid "Merging"
 msgstr "Fusionando"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:338 exe/webui/editorpage.py:283
-#: exe/webui/stylemanagerpage.py:114
 msgid "Quit"
 msgstr "Saír"
 
@@ -3996,55 +4030,46 @@ msgstr "Saír"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:365
-msgid "Styles manage"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:381
-msgid "Export current style"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:387
-msgid "Delete current style"
-msgstr ""
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:406
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:376
 msgid "Refresh Display"
 msgstr "Actualizar interface"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:413
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:383
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr "Estilos"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:423
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:393
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr "Axuda"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:433
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:403
 msgid "eXe Tutorial"
 msgstr "Tutorial eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:439
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:409
 msgid "eXe Manual"
 msgstr "Manual eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:415
 msgid "Release Notes"
 msgstr "Notas da versión"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:454
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:424
 msgid "eXe Web Site"
 msgstr "Sitio Web"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:460
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:430
 msgid "Report an Issue"
 msgstr "Informar dun problema"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:466
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:436
 msgid "eXe Forums"
 msgstr "Foros eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:475
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
 msgid "About eXe"
 msgstr "Acerca de eXe"
 
@@ -5251,6 +5276,7 @@ msgid "multi-os"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1494
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
 msgstr ""
 
@@ -5781,6 +5807,7 @@ msgid "Pedagogical Help"
 msgstr "Axuda pedagóxica"
 
 #: exe/webui/block.py:254
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Information"
 msgstr "Información"
 
@@ -5788,9 +5815,9 @@ msgstr "Información"
 #: exe/webui/common.py:466 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2533
-#: exe/webui/element.py:2534 exe/webui/stylemanagerpage.py:211
-#: exe/webui/stylemanagerpage.py:212 exe/webui/truefalseelement.py:152
+#: exe/webui/element.py:2534 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
 msgstr "Pechar"
 
@@ -5834,9 +5861,7 @@ msgid "Now It's Your Turn"
 msgstr "Non é o teu turno"
 
 #: exe/webui/common.py:184 exe/webui/editorpage.py:240
-#: exe/webui/preferencespage.py:132 exe/webui/selectbrowserpage.py:90
-#: exe/webui/selectbrowserpage_ru.py:90 exe/webui/stylemanagerpage.py:96
-#: exe/webui/xliffexportpreferencespage.py:91
+#: exe/webui/stylemanagerpage.py:86 exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML editor"
@@ -5864,18 +5889,43 @@ msgstr "Lenda do botón"
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
 #: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:16
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:23
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:29
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:24
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:31
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Left"
 msgstr "Esquerda"
 
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
 #: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:18
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:24
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:28
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:26
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:32
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Right"
 msgstr "Dereita"
 
 #: exe/webui/editorelement.py:225 exe/webui/flashmovieblock.py:83
 #: exe/webui/flashwithtextblock.py:83 exe/webui/imagemagnifierblock.py:109
 #: exe/webui/imagewithtextblock.py:83 exe/webui/multimediablock.py:87
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:21
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:29
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "None"
 msgstr "Ningún"
 
@@ -6206,7 +6256,7 @@ msgid "Delete option"
 msgstr "Eliminar opción"
 
 #: exe/webui/element.py:1967 exe/webui/element.py:1977
-#: exe/webui/stylemanagerpage.py:279 exe/webui/stylemanagerpage.py:294
+#: exe/webui/stylemanagerpage.py:219 exe/webui/stylemanagerpage.py:233
 msgid "Correct"
 msgstr "Selección correcta."
 
@@ -6369,32 +6419,17 @@ msgstr "Guía para o docente"
 msgid "A Step Ahead"
 msgstr "Un paso adiante"
 
-#: exe/webui/preferencespage.py:143
-msgid "Select Language"
-msgstr "Seleccionar lingua"
+#: exe/webui/preferencespage.py:142
+msgid "Default browser in your system"
+msgstr "Navegador predeterminado no seu sistema"
 
-#: exe/webui/preferencespage.py:148
-msgid "Enable All Internal Linking"
-msgstr "Activar todos os enlaces internos"
+#: exe/webui/preferencespage.py:170
+msgid "Failed to get preferences"
+msgstr ""
 
-#: exe/webui/preferencespage.py:149
-msgid "Disable Auto-Top Internal Linking"
-msgstr "Desactivar o enlazado interno cara arriba automático"
-
-#: exe/webui/preferencespage.py:150
-msgid "Disable All Internal Linking"
-msgstr "Desactivar todos os enlaces internos"
-
-#: exe/webui/preferencespage.py:151
-msgid "Internal Linking (for Web Site Exports only)"
-msgstr "Enlaces internos (só para exportar a sitios web)"
-
-#: exe/webui/preferencespage.py:159 exe/webui/selectbrowserpage.py:110
-#: exe/webui/selectbrowserpage_ru.py:110
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "Aceptar"
+#: exe/webui/preferencespage.py:192
+msgid "Failed to save preferences"
+msgstr ""
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
@@ -6444,80 +6479,2827 @@ msgstr "Pense niso"
 msgid "Load"
 msgstr "Cargar"
 
-#: exe/webui/selectbrowserpage.py:59 exe/webui/selectbrowserpage_ru.py:59
-msgid "Default browser in your system"
-msgstr "Navegador predeterminado no seu sistema"
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Error: Invalid values entered, these are marked in red."
+msgstr "Error: Introducidos valores non válidos, están marcados en vermello."
 
-#: exe/webui/selectbrowserpage.py:104 exe/webui/selectbrowserpage_ru.py:104
-msgid "Browsers installed in your system"
-msgstr "Navegadores instalados no seu sistema"
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid ""
+"Sorry, but we have noticed that your popup-blocker has disabled a window "
+"that provides application functionality. You will need to disable popup "
+"blocking on this site in order to fully utilize this tool."
+msgstr ""
+"O seu bloqueador de ventás emerxentes deshabilitou unha ventá que precisa"
+" pra o funcionamento da aplicación. Precisa deshabilita-lo bloqueo de "
+"`popups` neste sitio pra utilizar ó máximo esta ferramenta."
 
-#: exe/webui/stylemanagerpage.py:107
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgstr "O seu navegador non soporta estas funcións, use os atallos de teclado."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "-- Not Set --"
+msgstr "-- Ningún --"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Browse"
+msgstr "Examinar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Update"
+msgstr "Actualizar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert"
+msgstr "Insertar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Do you want to use the WYSIWYG mode for this textarea?"
+msgstr "¿Desexa utiliza-lo modo WYSIWYG pra esta caixa de texto?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "{#field} must be a number"
+msgstr "{#field} debe ser un número"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "{#field} must be a number greater than {#min}"
+msgstr "{#field} debe ser un número maior que {#min}"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "{#field} must be a number or percentage"
+msgstr "{#field} debe ser un número ou porcentaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "(value)"
+msgstr "(valor)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Full"
+msgstr "Xustificado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Time"
+msgstr "Insertar hora"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Date"
+msgstr "Insertar data"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "%H:%M:%S"
+msgstr "%H:%M:%S"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#, python-format
+msgid "%Y-%m-%d"
+msgstr "%d-%m-%Y"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Direction Right to Left"
+msgstr "Dirección dereita a esquerda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Direction Left to Right"
+msgstr "Dirección esquerda a dereita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "New layer..."
+msgstr "Nova capa..."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Toggle Absolute Positioning"
+msgstr "Posición absoluta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Move Backward"
+msgstr "Recuar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Move Forward"
+msgstr "Avanzar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert New Layer"
+msgstr "Insertar nova capa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Cancel All Changes"
+msgstr "Cancelar todo-los cambios"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Non-Breaking Space Character"
+msgstr "Insertar espacio non colapsable"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "ieSpell not detected. Do you want to install it now?"
+msgstr "Non se detectou 'ieSpell'. ¿Desexa instala-lo agora?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Check Spelling"
+msgstr "Corrector ortográfico"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insertion"
+msgstr "Inserción"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Deletion"
+msgstr "Borrado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Acronym"
+msgstr "Acrónimo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Abbreviation"
+msgstr "Abreviatura"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Citation"
+msgstr "Cita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid ""
+"Paste is now in plain text mode. Click again to toggle back to regular "
+"paste mode."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid ""
+"Paste is now in plain text mode. Click again to toggle back to regular "
+"paste mode. After you paste something you will be returned to regular "
+"paste mode."
+msgstr ""
+"Pegar agora está en modo texto sen formato. Clique outra vez para "
+"cambialo a modo pegar normal."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Select All"
+msgstr "Seleccionar todo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Paste from Word"
+msgstr "Pegar desde Word"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Paste as Plain Text"
+msgstr "Pegar como texto simple"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Cell"
+msgstr "Celda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Column"
+msgstr "Columna"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Row"
+msgstr "Fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Delete Table"
+msgstr "Eliminar táboa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Copy Table Row"
+msgstr "Copiar fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Cut Table Row"
+msgstr "Cortar fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Paste Table Row After"
+msgstr "Pegar filas (despóis)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Paste Table Row Before"
+msgstr "Pegar filas (antes)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Table Properties"
+msgstr "Propiedades da táboa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Split Merged Table Cells"
+msgstr "Dividir celdas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Delete Column"
+msgstr "Suprimir columna"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Column After"
+msgstr "Insertar columna (despóis)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Column Before"
+msgstr "Insertar columna (antes)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Delete Row"
+msgstr "Suprimir fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Row After"
+msgstr "Insertar fila (despóis)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Row Before"
+msgstr "Insertar fila (antes)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Restore auto-saved content."
+msgstr "Restore auto-saved content."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "Os cambios realizados perderanse se sae desta páxina."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Toggle Full Screen Mode"
+msgstr "Cambiar a modo Pantalla Completa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Edit Embedded Media"
+msgstr "Editar medio embebido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Show/Hide Visual Control Characters"
+msgstr "Caracteres de control ON/OFF."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Toggle Spell Checker"
+msgstr "Conmutar corrector ortográfico"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Spell Checker Settings"
+msgstr "Configuración de corrector ortográfico"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Ignore Word"
+msgstr "Ignorar palabra"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Ignore All"
+msgstr "Ignorar todo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Languages"
+msgstr "Idiomas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Please wait..."
+msgstr "Agarde..."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Suggestions"
+msgstr "Suxestións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "No Suggestions"
+msgstr "Sen suxestións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "No misspellings found."
+msgstr "Non se atoparon erros."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Learn word"
+msgstr "Aprender palabra"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Insert Page Break for Printing"
+msgstr "Insertar fin de páxina"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Types"
+msgstr "Tipos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Alpha"
+msgstr "Alfa baixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Greek"
+msgstr "Grego baixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Lower Roman"
+msgstr "Romano baixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Upper Alpha"
+msgstr "Alfa alto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Upper Roman"
+msgstr "Romano alto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Circle"
+msgstr "Cículo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Disc"
+msgstr "Disco"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Square"
+msgstr "Cadrado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Dark olive"
+msgstr "Verde oliva oscuro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Burnt orange"
+msgstr "Laranxa queimado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Black"
+msgstr "Negro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Dark green"
+msgstr "Verde escuro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Dark azure"
+msgstr "Azul oscuro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Navy Blue"
+msgstr "Azul mariño"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Indigo"
+msgstr "Indigo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Very dark gray"
+msgstr "Gris moi oscuro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Maroon"
+msgstr "Granate"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Orange"
+msgstr "Laranxa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Olive"
+msgstr "Verde oliva"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Green"
+msgstr "Verde"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Teal"
+msgstr "Azul verdoso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Blue"
+msgstr "Azul"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Grayish blue"
+msgstr "Azul grisáceo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Gray"
+msgstr "Gris"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Red"
+msgstr "Vermello"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Amber"
+msgstr "Ámbar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Yellow green"
+msgstr "Amarelo verdoso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Sea green"
+msgstr "Verde océano"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Turquoise"
+msgstr "Turquesa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Royal blue"
+msgstr "Azul real"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Purple"
+msgstr "Púrpura"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Medium gray"
+msgstr "Gris claro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Magenta"
+msgstr "Maxenta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Gold"
+msgstr "Dourado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Yellow"
+msgstr "Amarelo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Lime"
+msgstr "Lima"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Aqua"
+msgstr "Auga"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Sky blue"
+msgstr "Azul ceo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Brown"
+msgstr "Marrón"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Silver"
+msgstr "Prateado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Pink"
+msgstr "Rosa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Peach"
+msgstr "Melocotón"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Light yellow"
+msgstr "Amarelo claro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Pale green"
+msgstr "Verde claro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Pale cyan"
+msgstr "Cian claro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Light sky blue"
+msgstr "Azul ceo brillante"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Plum"
+msgstr "Ciruela"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "White"
+msgstr "Branco"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Words:"
+msgstr "Palabras:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+msgid "Show/hide block elements"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:36
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Alignment"
+msgstr "Aliñamento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:44
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Insert/Edit Image"
+msgstr "Insertar/editar imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:17
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:20
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:25
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:28
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Center"
+msgstr "Centrado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Insert/Edit Link"
+msgstr "Insertar/editar hipervínculo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:3
+msgid ""
+"If you restore the saved content, you will lose all the content that is "
+"currently in the editor.\n"
+"\n"
+"Are you sure you want to restore the saved content?"
+msgstr ""
+"If you restore the saved content, you will lose all the content that is "
+"currently in the editor.\n"
+"\n"
+"Are you sure you want to restore the saved content?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Emotions"
+msgstr "Emoticones"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Document Properties"
+msgstr "Propiedades do documento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Insert/Edit Embedded Media"
+msgstr "Insertar/editar medio embebido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Class"
+msgstr "Clase"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js:1
+msgid "Use Ctrl+V on your keyboard to paste the text into the window."
+msgstr "Use CTRL+V no teclado pra pega-lo texto na ventá."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js:1
+msgid "Keep Linebreaks"
+msgstr "Manter salto de liñas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Find/Replace"
+msgstr "Buscar/Reemplazar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Find"
+msgstr "Buscar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Apply"
+msgstr "Apricar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Edit CSS Style"
+msgstr "Editar Estilo CSS"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Table Cell Properties"
+msgstr "Propiedades da celda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Table Row Properties"
+msgstr "Propiedades da fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Merge Table Cells"
+msgstr "Vincular celdas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Insert/Edit Table"
+msgstr "Inserta unha nova táboa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Default"
+msgstr "Por defecto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Sun,Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+msgstr "Dom,Lun,Mar,Mér,Xov,Ver,Sáb,Dom"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday"
+msgstr "Domingo,Luns,Martes,Mércores,Xoves,Venres,Sábado,Domingo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+msgstr "Xan,Feb,Mar,Abr,Mai,Xuñ,Xul,Ago,Set,Out,Nov,Dec"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "January,February,March,April,May,June,July,August,September,October,November,December"
+msgstr "Xaneito,Febreiro,Marzo,Abril,Maio,Xuño,Xullo,Agosto,Setembro,Outubro,Novembro,Decembro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Insert Predefined Template Content"
+msgstr "Insertar contido de plantilla predefinida"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Insert/Edit Attributes"
+msgstr "Insertar/Editar atributos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "More Colors..."
+msgstr "Mais cores"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid ""
+"Copy/Cut/Paste is not available in Mozilla and Firefox.\n"
+"Do you want more information about this issue?"
+msgstr ""
+"Copiar/Cortar/Pegar non está disponible en Mozilla e Firefox.\n"
+"¿Desexa obter mais información sobre de este asunto?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Insert Horizontal Line"
+msgstr "Regra horizontal"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Rich Text Area"
+msgstr "Area de texto enriquecido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
+msgid "No Shadow"
+msgstr "Sen sombra"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
+msgid "Normal"
+msgstr "Normal"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
+msgid "Units"
+msgstr "Unidades"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:68
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Width"
+msgstr "Ancho"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:69
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Height"
+msgstr "Alto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:22
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:57
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Style"
+msgstr "Estilo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:53
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "ID"
+msgstr "Id"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:54
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Right to Left"
+msgstr "Dereita a esquerda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:55
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Left to Right"
+msgstr "Esquerda a dereita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:56
+msgid "Classes"
+msgstr "Clases"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:59
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Language Code"
+msgstr "Código da lenguaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:60
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Language Direction"
+msgstr "Dirección da lenguaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:65
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:27
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:41
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Image List"
+msgstr "Lista de imaxes"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:30
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Text Bottom"
+msgstr "Texto abaixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:31
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Text Top"
+msgstr "Texto arriba"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:32
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Bottom"
+msgstr "Abaixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:33
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Middle"
+msgstr "Medio"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:34
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Top"
+msgstr "Arriba"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:35
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Baseline"
+msgstr "Liña base"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:37
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Horizontal Space"
+msgstr "Espacio horizontal"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:38
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Vertical Space"
+msgstr "Espacio vertical"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:39
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Dimensions"
+msgstr "Dimensións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:40
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Border"
+msgstr "Borde"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:42
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Image Description"
+msgstr "Descripción da imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:43
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Image URL"
+msgstr "URL da imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
+msgid ""
+"Are you sure you want to continue without including an Image Description?"
+" Without it the image may not be accessible to some users with "
+"disabilities, or to those using a text browser, or browsing the Web with "
+"images turned off."
+msgstr ""
+"¿Esta seguro de continuar sen introducir unha descripción á imaxe? Sen "
+"ela pode non ser accesible pra usuarios con discapacidades, ou pra "
+"aqueles que usen navegadores de modo texto, ou teñan deshabilitadas as "
+"imaxes da páxina."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:46
+msgid "Appearance Preview Image"
+msgstr "Vista previa da imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:47
+msgid "Miscellaneous"
+msgstr "Misceláneo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:48
+msgid "For Mouse Out"
+msgstr "pra mouseout"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:49
+msgid "For Mouse Over"
+msgstr "pra mouseover"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:50
+msgid "Alternative Image"
+msgstr "Imaxe alternativa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:51
+msgid "Swap Image"
+msgstr "Intercambiar imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:52
+msgid "Image Map"
+msgstr "Mapa de imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:58
+msgid "Long Description Link"
+msgstr "Vínculo pra descripción larga"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:61
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Constrain Proportions"
+msgstr "Bloquear proporcións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:66
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Appearance"
+msgstr "Apariencia"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:3
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:11
+msgid "Header and Caption"
+msgstr "Encabezamento e pé de foto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
+msgid "Title and Attribution"
+msgstr "Título e recoñecemento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:5
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:13
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Header"
+msgstr "Encabezamento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:6
+msgid "Image Title"
+msgstr "Título da imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:7
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:15
+msgid "Title Link"
+msgstr "Ligazón ao título"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:8
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:16
+msgid "Source/Author"
+msgstr "Orixe/autor"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:9
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:17
+msgid "Source/Author Link"
+msgstr "Ligazón orixe/autor"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:11
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
+msgid "Choose a license..."
+msgstr "Seleccionar..."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:12
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:20
+msgid "Public Domain"
+msgstr "Dominio público"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:13
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:21
+msgid "All Rights Reserved"
+msgstr "Tódolos dereitos reservados"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
+msgid "Presentation"
+msgstr "Presentación"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
+msgid "Text Alignment"
+msgstr "Aliñación do texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:19
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:27
+msgid "Group Position"
+msgstr "Posición do conxunto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:22
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Float"
+msgstr "Comportamento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:25
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:33
+msgid "Group Margin"
+msgstr "Marxe do conxunto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:26
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:34
+msgid "You will not be able to edit the header or the caption from this dialog."
+msgstr "O encabezamento e o pé de foto non serán editables neste diálogo."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:27
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:35
+msgid ""
+"The header and the caption can't be edited from this dialog. You can "
+"change or remove them editing the text itself."
+msgstr ""
+"O encabezamento e o pé de foto non se poden editar dende este diálogo. "
+"Pode modificalos ou eliminalos editando o seu texto."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Target Name"
+msgstr "Nome do obxetivo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Position (X/Y)"
+msgstr "Posición (X/Y)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Dependent (Mozilla/Firefox Only)"
+msgstr "Dependentes (sólo Mozilla/Firefox)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Make Window Resizable"
+msgstr "Permitir cambia-lo tamaño da ventá"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Show Location Bar"
+msgstr "Barra de localización"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Show Menu Bar"
+msgstr "Barra de menú"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Show Toolbars"
+msgstr "Barra de ferramentas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Show Status Bar"
+msgstr "Barra de estado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Show Scrollbars"
+msgstr "Barras de desprazamento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Insert 'return false'"
+msgstr "Insertar 'return false'"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Window Name"
+msgstr "Nome da ventá"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Popup URL"
+msgstr "URL da ventá emerxente"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "JavaScript Popup"
+msgstr "Javascript popup"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Open in New Window"
+msgstr "Abrir en ventá nova"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Open in Top Frame (Replaces All Frames)"
+msgstr "Abrir no marco superior (reemplaza todo-los marcos)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Open in Parent Window/Frame"
+msgstr "Abrir na ventá / marco padre"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Open in This Window/Frame"
+msgstr "Abrir nesta ventá / marco"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Anchors"
+msgstr "Áncoras"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Popup Properties"
+msgstr "Propiedades de ventás emerxentes"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Popup"
+msgstr "Ventana emerxente"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Relationship Target to Page"
+msgstr "Relación obxetivo a páxina"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Relationship Page to Target"
+msgstr "Relación páxina a obxetivo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Target Character Encoding"
+msgstr "Codificación de caracteres do obxetivo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+msgid "Target Language"
+msgstr "Lenguaxe do obxetivo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Target"
+msgstr "Destino"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Advanced Properties"
+msgstr "Propiedades avanzadas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "General Properties"
+msgstr "Propiedades xerales"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Target MIME Type"
+msgstr "Tipo MIME do obxetivo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Events"
+msgstr "Eventos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "AccessKey"
+msgstr "Tecla de acceso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "TabIndex"
+msgstr "Índice de tabulación"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Link List"
+msgstr "Lista de vínculos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid ""
+"The URL you entered seems to be an external link. Do you want to add the "
+"required http:// prefix?"
+msgstr ""
+"A URL introducida semella ser un vínculo externo, ¿Desexa engadi-lo "
+"prefixo necesario http://?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid ""
+"The URL you entered seems to be an email address. Do you want to add the "
+"required mailto: prefix?"
+msgstr ""
+"A URL introducida semella ser un enderezo de e-mail, ¿Desexa engadi-lo "
+"prefixo necesario mailto:?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Link URL"
+msgstr "URL do hipervínculo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
+msgid "Anchors and nodes"
+msgstr "Áncoras e nodos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:4
+msgid "Node"
+msgstr "Nodos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
+msgid "Restore auto-saved content"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Cry"
+msgstr "Chora"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Cool"
+msgstr "Guay"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Insert Emotion"
+msgstr "Insertar emoticon"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Yell"
+msgstr "Anoxado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Wink"
+msgstr "Guiño"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Undecided"
+msgstr "Indeciso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Tongue Out"
+msgstr "Canso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Surprised"
+msgstr "Sorprendido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Smile"
+msgstr "Sorriso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Sealed"
+msgstr "Selado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Money Mouth"
+msgstr "Cartos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Laughing"
+msgstr "Risa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Kiss"
+msgstr "Beso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Innocent"
+msgstr "Inocente"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Frown"
+msgstr "Triste"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Foot in Mouth"
+msgstr "A que dixen"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+msgid "Embarassed"
+msgstr "Vergoña"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Use left and right arrows to navigate."
+msgstr "Use as frechas esquerda e dereita para navegar."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en.js:2
+msgid "This is just a template button"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en_dlg.js:2
+msgid "This is just a example title"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:4
+msgid "LaTeX to Math for eXe"
+msgstr "LaTeX a Math"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:5
+msgid "LaTeX Math Image properties"
+msgstr "Propiedades da imaxe LaTeX Math"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:6
+msgid "eXe LaTeX Math Image"
+msgstr "Imaxe LaTeX Math para eXe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:7
+msgid "Select a font size:"
+msgstr "Seleccione tamaño da fonte:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:8
+msgid "Font size:"
+msgstr "Tamaño da fonte:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:9
+msgid "Preview Math Image"
+msgstr "Previsualizar imaxe Math"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:11
+msgid "Input LaTeX source:"
+msgstr "Introducir código LaTeX:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:12
+msgid "generated Math Image"
+msgstr "Imaxe Math xerada"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:13
+msgid "Math Image description<br>(optional ALT tag):"
+msgstr "Texto alternativo da imaxe:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:14
+msgid "eXe Math: Generate"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:15
+msgid "eXe Math: Image Appearance"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:16
+msgid "verbatim text"
+msgstr "Contido textual"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:17
+msgid "new line"
+msgstr "Nova liña"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:18
+msgid "Click below to insert LaTeX for any of the following symbols:"
+msgstr "Clique para insertar o código LaTeX dos símbolos:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:20
+msgid "And, add your own LaTeX directly into the following:"
+msgstr "Engadir o propio código LaTeX:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:21
+msgid "Constrain proportions"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:23
+msgid "Appearance&nbsp;preview&nbsp;image"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:24
+msgid "Create the image by clicking \"Preview\" before saving"
+msgstr "Xera a imaxe premendo en \"Previsualizar\" antes de gardar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:25
+msgid "The plugin \"inlinepopups\" must be enabled"
+msgstr "O plugin \"inlinepopus\" debe estar activado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:70
+msgid "No source code found."
+msgstr "Non se atopou o código fonte."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Meta Information"
+msgstr "Información Meta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Language and Encoding"
+msgstr "Lenguaxe e codificación"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Keywords"
+msgstr "Verbas chave"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Robots"
+msgstr "Robots"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Doctype"
+msgstr "Tipo de doc."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "XML Declaration"
+msgstr "Declaración XML"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Character Encoding"
+msgstr "Codificación de caracteres"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Background Properties"
+msgstr "Propiedades do fondo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Body Margins"
+msgstr "Marxes"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Link Colors"
+msgstr "Cores do vínculo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Text Properties"
+msgstr "Propiedades de texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Left Margin"
+msgstr "Marxe esquerdo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Right Margin"
+msgstr "Marxe dereito"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Top Margin"
+msgstr "Marxe superior"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Bottom Margin"
+msgstr "Marxe inferior"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Text Color"
+msgstr "Cor do texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Font Face"
+msgstr "Fonte"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Link Color"
+msgstr "Cor de vínculo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Hover Color"
+msgstr "Cor rato encima"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Visited Color"
+msgstr "Cor visitado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Active Color"
+msgstr "Cor activo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Index and Follow the Links"
+msgstr "Indexar e segui-los vínculos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Index and Don't Follow the Links"
+msgstr "Indexar e non segui-los vínculos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Do Not Index but Follow the Links"
+msgstr "Non indexar pero seguir vínculos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Do Not Index and Don't Follow the Links"
+msgstr "Non indexar e non seguir vínculos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Stylesheet and Style Properties"
+msgstr "Propiedades de folla de estilos e estilo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Stylesheet"
+msgstr "Folla de estilo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Copyright"
+msgstr "Copyright"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Add New Element"
+msgstr "Agregar novo elemento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Remove Selected Element"
+msgstr "Eliminar elemento seleccionado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Move Selected Element Up"
+msgstr "Mover elemento seleccionado arriba"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Move Selected Element Down"
+msgstr "Mover elemento seleccionado abaixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Head Elements"
+msgstr "Elementos Head"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Title Element"
+msgstr "Elemento Title"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Meta Element"
+msgstr "Elemento Meta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Script Element"
+msgstr "Elemento Script"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Style Element"
+msgstr "Elemento Style"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Link Element"
+msgstr "Elemento Link"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Base Element"
+msgstr "Elemento Base"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Comment Node"
+msgstr "Nodo Comment"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Comment"
+msgstr "Comentario"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Charset"
+msgstr "Charset"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Defer"
+msgstr "Defer"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Media"
+msgstr "Medio"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Value"
+msgstr "Valor"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Content"
+msgstr "Contido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Rel"
+msgstr "Rel"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "Rev"
+msgstr "Rev"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+msgid "HREF Lang"
+msgstr "Href lang"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "HREF"
+msgstr "Href"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Color"
+msgstr "Cor"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Background Color"
+msgstr "Cor de fondo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Background Image"
+msgstr "Imaxe de fondo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Font Size"
+msgstr "Tamaño de fonte"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Font Family"
+msgstr "Fonte"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "File/URL"
+msgstr "Arquivo/URL"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Top Left"
+msgstr "Arriba Izda."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid ""
+"Streamed RTSP resources should be added to the QT Source field under the "
+"Advanced tab.\n"
+"You should also add a non-streamed version to the Source field."
+msgstr ""
+"Os recursos rtsp de Streaming deberían engadirse no campo QT Src da "
+"pestaña avanzada.\n"
+"Ademáis debería engadir unha versión no Streaming no campo Src."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "QT Source"
+msgstr "QT Src"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Progress"
+msgstr "Progreso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Sound"
+msgstr "Son"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Stretch V-Align"
+msgstr "Esturar aliñ. V."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Stretch H-Align"
+msgstr "Estirar aliñ. H."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Stretch Style"
+msgstr "Estilo estiramento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Script Callbacks"
+msgstr "Script callbacks"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Top Right"
+msgstr "Arriba Dta."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "UI Mode"
+msgstr "Modo UI"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Rate"
+msgstr "Relación"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Play Count"
+msgstr "Cantas reproduccións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Default Frame"
+msgstr "Frame predet."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Current Position"
+msgstr "Posición actual"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Current Marker"
+msgstr "Marcador actual"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Captioning ID"
+msgstr "Id de lenda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Base URL"
+msgstr "URL Base"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Balance"
+msgstr "Balance"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Windowless Video"
+msgstr "Video sen ventá"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Stretch to Fit"
+msgstr "Estirar pra axustar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Mute"
+msgstr "Silencio"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Invoke URLs"
+msgstr "Invocar URLs"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Full Screen"
+msgstr "Pantalla Completa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Auto Start"
+msgstr "Comezo Automático"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Volume"
+msgstr "Volume"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Choke Speed"
+msgstr "Vel. de choque"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "End Time"
+msgstr "Fin"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Start Time"
+msgstr "Inicio"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Enable JavaScript"
+msgstr "Habilitar JavaScript"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "No Correction"
+msgstr "Sen correción"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Target Cache"
+msgstr "Obxetivo cache"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Play Every Frame"
+msgstr "Reproducir tódolos frames"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Kiosk Mode"
+msgstr "Modo kiosco"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Controller"
+msgstr "Controller"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Show Menu"
+msgstr "Mostrar Menú"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Loop"
+msgstr "Repetitivo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Auto Play"
+msgstr "Comezo Automático"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "H-Space"
+msgstr "Espacio H."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "V-Space"
+msgstr "Espacio V."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Controls"
+msgstr "Controis"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Num Loops"
+msgstr "Núm. repeticións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Console"
+msgstr "Consola"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Cache"
+msgstr "Caché"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Auto HREF"
+msgstr "AutoHREF"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "SWLiveConnect"
+msgstr "SWLiveConnect"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Flash Vars"
+msgstr "Flashvars"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Base"
+msgstr "Base"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "WMode"
+msgstr "WMode"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "SAlign"
+msgstr "SAlign"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Align"
+msgstr "Aliñación"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Scale"
+msgstr "Escala"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Quality"
+msgstr "Calidade"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Shuffle"
+msgstr "Aleatorio"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Prefetch"
+msgstr "PreBusca"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "No Java"
+msgstr "No java"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Maintain Aspect"
+msgstr "Manter aspecto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Image Status"
+msgstr "Estado de imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Auto Goto URL"
+msgstr "Ir a URL automát."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Shockwave Options"
+msgstr "Opcións Shockwave"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Real Media Player Options"
+msgstr "Opcións Real media player"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Windows Media Player Options"
+msgstr "Opcións Windows media player"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "QuickTime Options"
+msgstr "Opcións Quicktime"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Flash Options"
+msgstr "Opcións Flash"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Hidden"
+msgstr "Oculto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Bottom Left"
+msgstr "Abaixo Izda."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Bottom Right"
+msgstr "Abaixo Dta."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "HTML5 Video Options"
+msgstr "Opcións HTML5 de vídeo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Alternative source 1"
+msgstr "Fonte alternativa 1"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Alternative source 2"
+msgstr "Fonte alternativa 2"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Preload"
+msgstr "Precarga"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Poster"
+msgstr "Póster"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Audio Options"
+msgstr "Opcións de audio"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Don't Preload"
+msgstr "Non precarga"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Preload video metadata"
+msgstr "Precargar metadatos de vídeo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Let user's browser decide"
+msgstr "Permitir que decida o navegador do usuario"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Embedded Audio Options"
+msgstr "Opcións de audio embebido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "HTML5 video (ogv/ogg, webm)"
+msgstr "HTML5 video (ogv/ogg, webm)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "HTML5 audio (ogg)"
+msgstr "HTML5 audio (ogg)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Flash (swf, flv, mp3)"
+msgstr "Flash (swf, flv, mp3)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "QuickTime (mov, mp4, mpeg)"
+msgstr "QuickTime (mov, mp4, mpeg)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Shockwave"
+msgstr "shockwave"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Windows Media (wmv, wma)"
+msgstr "Windows Media (wmv, wma)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Real Media (ram)"
+msgstr "Real Media (ram)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Iframe"
+msgstr "iframe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Embedded Audio"
+msgstr "Audio embebido"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "List"
+msgstr "Lista"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Background"
+msgstr "Fondo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:3
+msgid "Selected file"
+msgstr "Arquivo seleccionado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:4
+msgid "HTML5 does not work in all browsers"
+msgstr "HTML5 non funciona en tódolos navegadores"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
+msgid "Recommended type"
+msgstr "Tipo recomendado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:6
+msgid "Continue without changing your settings?"
+msgstr "Continuar sen facer cambios?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:7
+msgid "Could not generate preview"
+msgstr "Non se puido xerar unha previsualización"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:8
+msgid ""
+"For Web browsers that do not support this video, a link to the video file"
+" will be displayed."
+msgstr ""
+"Se o navegador do usuario non pode reproducilo vídeo amosarase un enlace "
+"ao arquivo."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:9
+msgid ""
+"For Web browsers that do not support this audio, a link to the audio file"
+" will be displayed."
+msgstr ""
+"Se o navegador do usuario non pode reproducilo audio amosarase un enlace "
+"ao arquivo."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
+msgid "Use JavaScript player"
+msgstr "Usar reproductor JavaScript"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:14
+msgid "Media Title"
+msgstr "Título da obra"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
+msgid "Insert HTML code as text"
+msgstr "Inserir HTML como texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:6
+msgid "Use CTRL+V on your keyboard to paste the code into the window."
+msgstr "Utilice CTRL-V para pegalo código na ventá."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:5
+msgid "Paste HTML fragment (embed code)"
+msgstr "Pegar anaco de HTML (código embebido)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
+msgid "Include wrapper (improves presentation)"
+msgstr "Incluir contedor (mellora a presentación)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Find What"
+msgstr "Localizar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Replace with"
+msgstr "Reemplazar por"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Direction"
+msgstr "Dirección"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Up"
+msgstr "Arriba"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Down"
+msgstr "Abaixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Match Case"
+msgstr "Minús./Maiús."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Find Next"
+msgstr "Buscar seginte"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "All occurrences of the search string were replaced."
+msgstr "Tóda-las coincidencias do texto buscado foron reemplazadas."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Find Again"
+msgstr "Buscar outra vez"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "The search has been completed. The search string could not be found."
+msgstr "A busca rematou. No se atopou o texto buscado."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Replace All"
+msgstr "Reemplazar todo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
+msgid "Replace"
+msgstr "Reemplazar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Line Height"
+msgstr "Ancho da fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Variant"
+msgstr "Variante"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Weight"
+msgstr "Peso"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Font"
+msgstr "Tipo de letra"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Positioning"
+msgstr "Posición"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Box"
+msgstr "Caixa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Block"
+msgstr "Bloque"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Insert span at selection"
+msgstr "Inserir span en selección"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Clip"
+msgstr "Clip"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Placement"
+msgstr "Colocación"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Overflow"
+msgstr "Desbordamento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Z-index"
+msgstr "Índize Z"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Visibility"
+msgstr "Visibilidade"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Position"
+msgstr "Posición"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Bullet Image"
+msgstr "Imaxe da viñeta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Margin"
+msgstr "Marxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Same for All"
+msgstr "O mesmo en todos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Padding"
+msgstr "Recheo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Clear"
+msgstr "Limpar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Display"
+msgstr "Display"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Whitespace"
+msgstr "Espacio en branco"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Text Indent"
+msgstr "Sangría"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Text Align"
+msgstr "Alineación do texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Letter Spacing"
+msgstr "Espazo entre letras"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Word Spacing"
+msgstr "Espazo entre palabras"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Vertical Position"
+msgstr "Posición vertical"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Horizontal Position"
+msgstr "Posición horizontal"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Repeat"
+msgstr "Repetir"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Blink"
+msgstr "Parpadeo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Case"
+msgstr "Minús./Maiús."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Underline"
+msgstr "Suliñado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Overline"
+msgstr "Liña superior"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Decoration"
+msgstr "Decorativos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Vertical Alignment"
+msgstr "Aliñación vertical"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Strikethrough"
+msgstr "Tachado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "border"
+msgstr "borde"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "box"
+msgstr "box"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "vsides"
+msgstr "vsides"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "rhs"
+msgstr "rhs"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "lhs"
+msgstr "lhs"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "hsides"
+msgstr "hsides"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "below"
+msgstr "debaixo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "above"
+msgstr "encima"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "void"
+msgstr "vacío"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Rules"
+msgstr "Regras"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "all"
+msgstr "todos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "cols"
+msgstr "columnas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "rows"
+msgstr "filas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "groups"
+msgstr "grupos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Frame"
+msgstr "Recadro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Table Caption"
+msgstr "Subtítulo da táboa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid ""
+"Are you sure you want to continue without specifying a scope for this "
+"table header cell. Without it, it may be difficult for some users with "
+"disabilities to understand the content or data displayed of the table."
+msgstr ""
+"¿Está seguro que desexa continuar sen especifica-lo ámbito do encabezado "
+"de celda? Sen él podría ser dificultoso pra algunos usuarios entende-lo "
+"contido ou os datos mostrados na táboa."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "You've exceeded the maximum number of cells of {$cells}."
+msgstr "Superóu o número máximo de celdas: {$cells}."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "You've exceeded the maximum number of rows of {$rows}."
+msgstr "Superóu o número máximo de filas: {$rows}."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "You've exceeded the maximum number of columns of {$cols}."
+msgstr "Superóu o número máximo de columnas: {$cols}."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Col Group"
+msgstr "Grupo de columnas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Row Group"
+msgstr "Grupo de filas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Scope"
+msgstr "Ámbito"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Body"
+msgstr "Corpo da táboa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update All Rows in Table"
+msgstr "Actualizar todalas filas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update Even Rows in Table"
+msgstr "Actualizar filas pares"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update Odd Rows in Table"
+msgstr "Actualizar filas impares"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update Current Row"
+msgstr "Actualizar fila actual"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update All Cells in Table"
+msgstr "Actualizar todalas celdas na táboa"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update All Cells in Row"
+msgstr "Actualizar todalas celdas na fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update Current Cell"
+msgstr "Actualizar celda actual"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Data"
+msgstr "Datos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Summary"
+msgstr "Resumen"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Border Color"
+msgstr "Cor do borde"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Type"
+msgstr "Tipo de celda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Padding"
+msgstr "Relleno de celda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Spacing"
+msgstr "Espaciado de celda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Rows"
+msgstr "Filas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Columns"
+msgstr "Cols"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Row Type"
+msgstr "Tipo de fila"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Update all cells in column"
+msgstr "Actualizar tódalas celdas da columna"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Templates"
+msgstr "Plantillas"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Template"
+msgstr "Plantilla"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Select a Template"
+msgstr "Seleccionar plantilla"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+msgid "Warning: Updating a template with a different one may cause data loss."
+msgstr "Coidado: Actualizar unha plantilla con outra pode causar pérdida de datos."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
+#, python-format
+msgid "%Y-%m-%d %H:%M:%S"
+msgstr "%d-%m-%Y %H:%M:%S"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Insert Current Date/Time"
+msgstr "Insertar data/hora actuais"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Remove"
+msgstr "Suprimir"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Citation Element"
+msgstr "Cita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Abbreviation Element"
+msgstr "Abreviatura"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Acronym Element"
+msgstr "Acrónimo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Deletion Element"
+msgstr "Borrar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Insertion Element"
+msgstr "Insertar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Element Events"
+msgstr "Evento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Element Attributes"
+msgstr "Atributos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "General Settings"
+msgstr "Configuración xeral"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Attributes"
+msgstr "Atributos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Text Direction"
+msgstr "Dirección de texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Date/Time"
+msgstr "Data/Hora"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Cite"
+msgstr "Cita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Definition Description"
+msgstr "Descripción de definición"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Definition Term "
+msgstr "Termo de definición"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Code Sample"
+msgstr "Mostra de código"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Code"
+msgstr "Código"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Block Quote"
+msgstr "Cita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 6"
+msgstr "Encabezamento 6"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 5"
+msgstr "Encabezamento 5"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 4"
+msgstr "Encabezamento 4"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 3"
+msgstr "Encabezamento 3"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 2"
+msgstr "Encabezamento 2"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Heading 1"
+msgstr "Encabezamento 1"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Preformatted"
+msgstr "Pre-formateado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Address"
+msgstr "Enderezo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "DIV"
+msgstr "Div"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Paragraph"
+msgstr "Párrafo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid ""
+"Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element "
+"path - Alt-X"
+msgstr ""
+"Ir ós botóns de ferramentas - Alt+Q, Ir ó editor - Alt-Z, Ir á ruta do "
+"elemento - Alt-X"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Are you sure you want clear all contents?"
+msgstr "¿Seguro que desexa limpar todo o contido?"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Path"
+msgstr "Ruta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "New Document"
+msgstr "Novo documento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Image Properties"
+msgstr "Propiedades de imaxe"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Paste (Ctrl+V)"
+msgstr "Pegar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Copy (Ctrl+C)"
+msgstr "Copiar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Cut (Ctrl+X)"
+msgstr "Cortar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "show/Hide Guidelines/Invisible Elements"
+msgstr "Mostrar/ocultar liña de guía/elementos invisibres"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Insert Special Character"
+msgstr "Insertar caracteres persoalizados"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Select Background Color"
+msgstr "Seleccionar cor do fondo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Select Text Color"
+msgstr "Seleccionar cor do texto"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Your Custom Description Here"
+msgstr "A súa descripción persoal aquí"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Remove Formatting"
+msgstr "quitar formato"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Superscript"
+msgstr "Superíndice"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Subscript"
+msgstr "Subíndice"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Edit HTML Source"
+msgstr "Editar código HTML"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Unlink"
+msgstr "Quitar hipervínculo"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Increase Indent"
+msgstr "Aumentar sangría"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Decrease Indent"
+msgstr "Reducir sangría"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Full"
+msgstr "Xustificar"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Right"
+msgstr "Aliñar á dereita"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Center"
+msgstr "Aliñar ó centro"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Align Left"
+msgstr "Aliñar á esquerda"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Press ALT-F10 for toolbar. Press ALT-0 for help"
+msgstr "Presione ALT F10 para a barra de ferramentas. Presione Alt 0 para axuda."
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Accessability Help"
+msgstr "Axuda de accesibilidade"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+msgid "Toolbar"
+msgstr "Utilice o cursor para seleccionar funcións"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Insert/Edit Anchor"
+msgstr "Insertar/editar áncora"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Underline (Ctrl+U)"
+msgstr "Suliñado (Ctrl+U)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Italic (Ctrl+I)"
+msgstr "Cursiva (Ctrl+I)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Bold (Ctrl+B)"
+msgstr "Negriña (Ctrl+B)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Cleanup Messy Code"
+msgstr "Limpar lixo no código"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Redo (Ctrl+Y)"
+msgstr "Re-facer (Ctrl+Y)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Undo (Ctrl+Z)"
+msgstr "Desfacer (Ctrl+Z)"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Insert/Remove Numbered List"
+msgstr "Lista ordenada"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
+msgid "Insert/Remove Bulleted List"
+msgstr "Lista desordenada"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Open Link in a New Window"
+msgstr "Abrir vínculo nunha ventá nova"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Open Link in the Same Window"
+msgstr "Abrir vínculo na mesma ventá"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Select Special Character"
+msgstr "Seleccionar caracter personalizado"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Name:"
+msgstr "Nome:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Color:"
+msgstr "Cor:"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Named Colors"
+msgstr "Cores nomeados"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Named"
+msgstr "Nomeados"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Palette Colors"
+msgstr "Paleta de cores"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Palette"
+msgstr "Paleta"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Color Picker"
+msgstr "Selector de cores"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Picker"
+msgstr "Selector"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Select a Color"
+msgstr "Seleccionar cor"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Word Wrap"
+msgstr "Cortar liñas automáticamente"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "HTML Source Editor"
+msgstr "Editor HTML"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Anchor Name"
+msgstr "Nome da áncora"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Loaded Plugins"
+msgstr "Comprementos cargados"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Plugin"
+msgstr "Compremento"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Plugins"
+msgstr "Comprementos"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "About TinyMCE"
+msgstr "Sobre TinyMCE"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Please specify a valid anchor name."
+msgstr "Por favor especifique un nome válido para a áncora"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Accessibility Help"
+msgstr "Axuda de accesibilidade"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "General Usage"
+msgstr "Uso xeral"
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Invalid color value"
+msgstr "Valor de cor inválida"
+
+#: exe/webui/stylemanagerpage.py:104
 msgid "Import Style"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:109
-msgid "Export Style"
-msgstr ""
-
-#: exe/webui/stylemanagerpage.py:111
-msgid "Delete Style"
-msgstr ""
-
-#: exe/webui/stylemanagerpage.py:142
+#: exe/webui/stylemanagerpage.py:123
 msgid "List of styles in your system:"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:159
-msgid "Choose the style to export:"
+#: exe/webui/stylemanagerpage.py:135 exe/webui/stylemanagerpage.py:136
+msgid "Export Style"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:181
-msgid "Choose the style to delete:"
+#: exe/webui/stylemanagerpage.py:139 exe/webui/stylemanagerpage.py:140
+msgid "Delete Style"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:202 exe/webui/stylemanagerpage.py:206
-msgid "Click to view the details of this style"
+#: exe/webui/stylemanagerpage.py:143 exe/webui/stylemanagerpage.py:144
+msgid "Style Properties"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:245
+#: exe/webui/stylemanagerpage.py:151
+msgid "This style properties"
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:154
+msgid "Back"
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:185
 #, python-format
 msgid "Style directory already exists: %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:255
+#: exe/webui/stylemanagerpage.py:195
 #, python-format
 msgid "The style name already exists: %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:257
+#: exe/webui/stylemanagerpage.py:197
 msgid "Success"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:257
+#: exe/webui/stylemanagerpage.py:197
 #, python-format
 msgid "Successfully imported style: %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:260
+#: exe/webui/stylemanagerpage.py:200
 msgid "Incorrect style format (does not include content.css)"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:279
+#: exe/webui/stylemanagerpage.py:219
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:281
+#: exe/webui/stylemanagerpage.py:221
 #, python-format
 msgid "Could not export style : %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:294
-msgid "Styles deleted correctly"
+#: exe/webui/stylemanagerpage.py:233
+msgid "Style deleted correctly"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:296
+#: exe/webui/stylemanagerpage.py:235
 msgid "An unexpected error has occurred"
 msgstr ""
 
@@ -6677,6 +9459,11 @@ msgstr ""
 "unha boa opción se quere usar unha ferramenta tipo Rainbow antes de "
 "utiliar un software de tradución."
 
+#: exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "Aceptar"
+
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
@@ -6712,60 +9499,51 @@ msgstr ""
 "O seu ficheiro idevices/generic.data ou o paquete que está a cargar foi "
 "creado cunha versión máis nova do eXe. Actualice o eXe e ténteo de novo."
 
-#~ msgid "SCORM 1.2 Options"
-#~ msgstr "Opcións de SCORM 1.2"
+#~ msgid "Changes take effect when you restart eXe"
+#~ msgstr "Os cambios aplicaranse cando reinicie eXe"
 
-#~ msgid "Apply"
-#~ msgstr "Aplicar"
-
-#~ msgid "Project Title"
-#~ msgstr "Título do proxecto"
-
-#~ msgid "The project's title."
-#~ msgstr "O título do proxecto."
-
-#~ msgid "GNU Free Documentation License"
-#~ msgstr "GNU Free Documentation License"
-
-#~ msgid "Creative Commons Attribution 3.0 License"
-#~ msgstr "Licenza Creative Commons Attribution 3.0"
-
-#~ msgid "Creative Commons Attribution Share Alike 3.0 License"
-#~ msgstr "Licenza Creative Commons Attribution-ShareAlike 3.0"
-
-#~ msgid "Creative Commons Attribution No Derivatives 3.0 License"
-#~ msgstr "Licenza Creative Commons Attribution-NoDerivs 3.0"
-
-#~ msgid "Creative Commons Attribution Non-commercial 3.0 License"
-#~ msgstr "Licenza Creative Commons Attribution Non-commercial 3.0"
-
-#~ msgid "Creative Commons Attribution Non-commercial Share Alike 3.0 License"
-#~ msgstr "Licenza Creative Commons Attribution-NonCommercial-ShareAlike 3.0"
-
-#~ msgid "Creative Commons Attribution Non-commercial No Derivatives 3.0 License"
-#~ msgstr "Licenza Creative Commons Attribution-NonCommercial-NoDerivs 3.0"
-
-#~ msgid "Creative Commons Attribution 2.5 License"
-#~ msgstr "Licenza Creative Commons Attribution 2.5"
-
-#~ msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-#~ msgstr "Licenza Creative Commons Attribution-ShareAlike 2.5"
-
-#~ msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-#~ msgstr "Licenza Creative Commons Attribution-NoDerivs 2.5"
-
-#~ msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-#~ msgstr "Licenza Creative Commons Attribution-NonCommercial 2.5"
-
-#~ msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-#~ msgstr "Licenza Creative Commons Attribution-NonCommercial-ShareAlike 2.5"
-
-#~ msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-#~ msgstr "Licenza Creative Commons Attribution-NonCommercial-NoDerivs 2.5"
-
-#~ msgid "Developing Nations 2.0"
-#~ msgstr "Developing Nations 2.0"
-
-#~ msgid "LOM.es"
+#~ msgid "Select ZIP Style file to import."
 #~ msgstr ""
+
+#~ msgid "ZIP Style"
+#~ msgstr ""
+
+#~ msgid "Export to ZIP Style as"
+#~ msgstr ""
+
+#~ msgid "ZipFile"
+#~ msgstr ""
+
+#~ msgid "Delete style?"
+#~ msgstr ""
+
+#~ msgid "Do you want to delete the selected style?"
+#~ msgstr ""
+
+#~ msgid "Styles manage"
+#~ msgstr ""
+
+#~ msgid "Export current style"
+#~ msgstr ""
+
+#~ msgid "Delete current style"
+#~ msgstr ""
+
+#~ msgid "Browsers installed in your system"
+#~ msgstr "Navegadores instalados no seu sistema"
+
+#~ msgid "Choose the style to export:"
+#~ msgstr ""
+
+#~ msgid "Choose the style to delete:"
+#~ msgstr ""
+
+#~ msgid "Click to view the details of this style"
+#~ msgstr ""
+
+#~ msgid "Styles deleted correctly"
+#~ msgstr ""
+
+#~ msgid " "
+#~ msgstr " "
 

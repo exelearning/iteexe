@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-07-04 14:28+0200\nPO-Revision-Date: 2013-04-24 13:18+0100\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-07-24 17:04+0200\nPO-Revision-Date: 2013-04-24 13:18+0100\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Si marqueu esta opci\u00f3, el fitxer SCORM exportat es podr\u00e0 editar amb l'eXeLearning.", 
  "Web pages footer.": "Peu de les p\u00e0gines web.", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
@@ -275,7 +275,6 @@ translations = {
  "Help": "Ajuda", 
  "Welsh ": "Gal\u00b7l\u00e9s ", 
  "Show Answers": "Mostra les respostes", 
- "Changes take effect when you restart eXe": "Els canvis tindran efecte quan reinicieu l'eXe", 
  "Display as:": "Mostra en:", 
  "You do not have the permissions to create a folder in folder": "No teniu perm\u00eds per a crear una carpeta en la carpeta", 
  "Enter an RSS URL for the RSS feed you \nwant to attach to your content. Feeds are often identified by a small graphic\n icon (often like this <img src=\"\/images\/feed-icon.png\" \/>) or the text \"RSS\". Clicking on the \n icon or text label will display an RSS feed right in your browser. You can copy and paste the\nURL into this field. Alternately, right clicking on the link or graphic will open a menu box;\nclick on COPY LINK LOCATION or Copy Shortcut. Back in eXe open the RSS bookmark iDevice and Paste the URL \ninto the RSS URL field and click the LOAD button. This will extract the titles from your feed and\ndisplay them as links in your content. From here you can edit the bookmarks and add\n instructions or additional learning information.": "Escriviu un URL d'RSS per al canal RSS que voleu \nafegir als continguts. Sovint els canals estan identificats per icones gr\u00e0fiques (molt sovint semblants a \n<img src=\"\/images\/feed-icon.png\" \/>) o pel text \u00abRSS\u00bb. Quan feu clic en la icona o el text \nes mostrar\u00e0 un canal RSS al vostre navegador. Podeu copiar i apegar l'URL dins d'este camp. \nAlternativament, quan feu clic amb el bot\u00f3 dret del ratol\u00ed en l'enlla\u00e7 o el gr\u00e0fic, s'obrir\u00e0 un quadre de men\u00fa;\nfeu clic en COPIA L'ENLLA\u00c7 o copieu la drecera. Torneu a l'eXe, obriu l'iDevice d'adreces d'inter\u00e9s d'RSS \ni apegueu l'URL dins del camp d'URL d'RSS i feu clic en el bot\u00f3 CARREGA. A\u00e7\u00f2 extraur\u00e0 els t\u00edtols des del \nvostre canal i els mostrar\u00e0 com a enlla\u00e7os en el contingut. Des d'ac\u00ed podeu editar les adreces d'inter\u00e9s i afegir \ninstruccions o informaci\u00f3 addicional per a l'aprenentatge.", 
@@ -333,7 +332,7 @@ translations = {
  "Loading package: {filename}": "S'est\u00e0 carregant el paquet: {filename}", 
  "Slovenian ": "Eslov\u00e9  ", 
  "Contributors": "Col\u00b7laboradors", 
- "Browsers installed in your system": "Navegadors instal\u00b7lats al sistema", 
+ "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>L'activitat de lectura, com el seu nom \nsuggerix, sol demanar a l'alumnat un esfor\u00e7 per a fer l'activitat. Esta activitat \nha d'estar relacionada directament amb el contingut del text llegit. \nLa retroacci\u00f3 de l'activitat \u00e9s molt apropiada ja que proporciona una guia per a reflexionar.<\/p>", 
  "Wolof ": "W\u00f2lof ", 
  "JClic": "JClic", 
  "Objectives describe the expected outcomes of the learning and should\ndefine what the learners will be able to do when they have completed the\nlearning tasks.": "Els objectius descriuen els resultats esperats de l'aprenentatge \n i han de definir all\u00f2 que l'alumnat ser\u00e0 capa\u00e7 de fer \n quan haja completat les tasques d'aprenentatge.", 
@@ -894,7 +893,6 @@ translations = {
  "Site": "Lloc web", 
  "<p>Where you have a number of images that relate \nto each other or to a particular learning exercise you may wish to display \nthese in a gallery context rather then individually.<\/p>": "<p>Quan teniu un nombre d'imatges que es relacionen \nentre si o amb un exercici d'aprenentatge espec\u00edfic podeu preferir \nmostrar-les en una galeria en comptes d'individualment.<\/p>", 
  "Kashmiri ": "Caixmiri ", 
- "<p>The reading activity, as the name \nsuggests, should ask the learner to perform some form of activity. This activity \nshould be directly related to the text the learner has been asked to read. \nFeedback to the activity where appropriate, can provide the learner with some \nreflective guidance.<\/p>": "<p>L'activitat de lectura, com el seu nom \nsuggerix, sol demanar a l'alumnat un esfor\u00e7 per a fer l'activitat. Esta activitat \nha d'estar relacionada directament amb el contingut del text llegit. \nLa retroacci\u00f3 de l'activitat \u00e9s molt apropiada ja que proporciona una guia per a reflexionar.<\/p>", 
  "Bengali; Bangla ": "Bengal\u00ed; Bangla ", 
  "Pali ": "Pali ", 
  "Package saved to: %s": "El paquet s'ha guardat a: %s"
