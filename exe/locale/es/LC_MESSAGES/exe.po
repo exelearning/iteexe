@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-07-24 17:04+0200\n"
-"PO-Revision-Date: 2013-07-05 14:33+0200\n"
+"PO-Revision-Date: 2013-07-26 13:21+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -3609,7 +3609,7 @@ msgstr "Propósito"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:152
 #, fuzzy
 msgid "Download Classification Sources"
-msgstr "Descargar las fuentes de la clasificación"
+msgstr "Descargar las fuentes de la taxonomía"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:155
 msgid "Taxon Path"
@@ -3735,7 +3735,7 @@ msgstr "Licencia"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:136
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:139
 msgid "Select a license."
-msgstr "Seleccionar Licencia."
+msgstr "Seleccionar licencia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
 msgid "Especificaciones de utilización"
@@ -3858,7 +3858,7 @@ msgstr "Deshabilitar los enlaces internos"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:74
 msgid "Select Browser"
-msgstr ""
+msgstr "Elegir navegador"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:52
 msgid "Outline"
@@ -6447,11 +6447,11 @@ msgstr "Navegador predeterminado en su sistema"
 
 #: exe/webui/preferencespage.py:170
 msgid "Failed to get preferences"
-msgstr ""
+msgstr "Error al abrir las preferencias"
 
 #: exe/webui/preferencespage.py:192
 msgid "Failed to save preferences"
-msgstr ""
+msgstr "Error al guardar las preferencias"
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
@@ -6646,7 +6646,7 @@ msgstr "Cita"
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode."
-msgstr ""
+msgstr "Pegar está ahora en modo texto plano. Pulse de nuevo para volver al modo de pegado normal."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
@@ -6999,7 +6999,7 @@ msgstr "Palabras:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Show/hide block elements"
-msgstr ""
+msgstr "Mostrar/ocultar los elementos de bloque"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -7691,7 +7691,7 @@ msgstr "Nodo"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
-msgstr ""
+msgstr "Recuperar el contenido guardado automáticamente"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -7768,11 +7768,11 @@ msgstr "Use las flechas para navegar"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en.js:2
 msgid "This is just a template button"
-msgstr ""
+msgstr "Este es sólo un botón de plantilla"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en_dlg.js:2
 msgid "This is just a example title"
-msgstr ""
+msgstr "Este es sólo un título de ejemplo"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:4
 msgid "LaTeX to Math for eXe"
@@ -7812,11 +7812,11 @@ msgstr "Texto alternativo de la imagen:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:14
 msgid "eXe Math: Generate"
-msgstr ""
+msgstr "eXe Math: Generar"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:15
 msgid "eXe Math: Image Appearance"
-msgstr ""
+msgstr "eXe Math: Apariencia de la imagen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:16
 msgid "verbatim text"
@@ -7828,19 +7828,19 @@ msgstr "Nueva línea"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:18
 msgid "Click below to insert LaTeX for any of the following symbols:"
-msgstr "Pinche para insertar el código LaTeX de los símbolos:"
+msgstr "Pinche para insertar el código LaTeX de cualquiera de los siguientes símbolos:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:20
 msgid "And, add your own LaTeX directly into the following:"
-msgstr "Añadir su propio código LaTeX:"
+msgstr "Y añada su propio código LaTeX directamente:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:21
 msgid "Constrain proportions"
-msgstr ""
+msgstr "Limitar las proporciones"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:23
 msgid "Appearance&nbsp;preview&nbsp;image"
-msgstr ""
+msgstr "Apariencia&nbsp;vista previa&nbsp;imagen"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:24
 msgid "Create the image by clicking \"Preview\" before saving"
@@ -9278,15 +9278,15 @@ msgstr "Borrar estilo"
 
 #: exe/webui/stylemanagerpage.py:143 exe/webui/stylemanagerpage.py:144
 msgid "Style Properties"
-msgstr ""
+msgstr "Propiedades de los estilos"
 
 #: exe/webui/stylemanagerpage.py:151
 msgid "This style properties"
-msgstr ""
+msgstr "Propiedades de este estilo"
 
 #: exe/webui/stylemanagerpage.py:154
 msgid "Back"
-msgstr ""
+msgstr "Volver atrás"
 
 #: exe/webui/stylemanagerpage.py:185
 #, python-format
@@ -9323,7 +9323,7 @@ msgstr "Error al exportar el estilo: %s"
 
 #: exe/webui/stylemanagerpage.py:233
 msgid "Style deleted correctly"
-msgstr ""
+msgstr "Estilo borrado correctamente"
 
 #: exe/webui/stylemanagerpage.py:235
 msgid "An unexpected error has occurred"

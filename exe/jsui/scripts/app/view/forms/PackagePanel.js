@@ -154,7 +154,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                         },
                         {
                             xtype: 'fieldset',
-                            title: _('Especificaciones de utilización'),
+                            title: _('Usage'),
                             items: [
                                 {
 		                            xtype: 'helpcontainer',
@@ -164,13 +164,13 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                         items: [
                                             {
 					                            xtype: 'radiogroup',
-					                            fieldLabel: _('Tipo de alumno'),
-					                            tooltip: _('Tipo de alumno'),
+					                            fieldLabel: _('Intended End User'),
+					                            tooltip: _('Intended End User'),
 		                                        columns: [150, 150, 150],
 					                            items: [
 					                                {
 						                                xtype: 'radio',
-					                                    boxLabel: 'Alumno Estándar',
+					                                    boxLabel: 'Ordinary Learner',
                                                         dirtyCls: 'property-form-dirty',
 						                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'learner',
@@ -178,14 +178,14 @@ Ext.define('eXe.view.forms.PackagePanel', {
 					                                },
 					                                {
 					                                    xtype: 'radio',
-					                                    boxLabel: 'Necesidades (NEAE)',
+					                                    boxLabel: 'Special Needs Learner',
                                                         dirtyCls: 'property-form-dirty',
 		                                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'special needs learner'
 					                                },
 					                                {
 					                                    xtype: 'radio',
-					                                    boxLabel: 'Altas capacidades',
+					                                    boxLabel: 'Gifted Learner',
                                                         dirtyCls: 'property-form-dirty',
 		                                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'gifted learner'
@@ -201,8 +201,8 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     margin: '0 0 10 0',
                                     item: {
                                         xtype: 'fieldcontainer',
-                                        fieldLabel: _('Para trabajar en grupo'),
-                                        tooltip: _('Para trabajar en grupo'),
+                                        fieldLabel: _('For Group Work'),
+                                        tooltip: _('For Group Work'),
                                         items: [
                                             {
                                                 xtype: 'container',
@@ -219,15 +219,15 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
                                     },
-                                    help: _('Para trabajar en grupo')
+                                    help: _('For group work')
                                 },
                                 {
                                     xtype: 'helpcontainer',
                                     margin: '0 0 10 0',
                                     item: {
                                         xtype: 'fieldcontainer',
-                                        fieldLabel: _('Para trabajar en tutoría'),
-                                        tooltip: _('Para trabajar en tutoría'),
+                                        fieldLabel: _('For Individual Tuition'),
+                                        tooltip: _('For Individual Tuition'),
                                         items: [
                                             {
                                                 xtype: 'container',
@@ -244,7 +244,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
                                     },
-                                    help: _('Para trabajar en tutoría')
+                                    help: _('For individual tuition')
                                 },
                                 {
                                     xtype: 'helpcontainer',
@@ -254,13 +254,13 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                         items: [
                                             {
 		                                        xtype: 'radiogroup',
-		                                        fieldLabel: _('Lugar de utilización'),
-		                                        tooltip: _('Lugar de utilización'),
+		                                        fieldLabel: _('Context'),
+		                                        tooltip: _('Context'),
 		                                        columns: [150, 150, 150],
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Aula',
+		                                                boxLabel: 'Classroom',
 		                                                name: 'pp_contextPlace',
 		                                                inputValue: 'classroom',
                                                         dirtyCls: 'property-form-dirty',
@@ -268,7 +268,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Fuera del centro',
+		                                                boxLabel: 'Real Environment',
 		                                                name: 'pp_contextPlace',
 		                                                inputValue: 'real environment',
                                                         dirtyCls: 'property-form-dirty'
@@ -277,7 +277,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
                                     },
-                                    help: _('Lugar de utilización')
+                                    help: _('Context')
                                 },
                                 {
                                     xtype: 'helpcontainer',
@@ -287,13 +287,13 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                         items: [
                                             {
 		                                        xtype: 'radiogroup',
-		                                        fieldLabel: _('Modalidad de uso'),
-		                                        tooltip: _('Modalidad de uso'),
+		                                        fieldLabel: _('Modality'),
+		                                        tooltip: _('Modality'),
 		                                        columns: [150, 150, 150],
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Presencial',
+		                                                boxLabel: 'Face to Face',
 		                                                name: 'pp_contextMode',
 		                                                inputValue: 'face to face',
                                                         dirtyCls: 'property-form-dirty',
@@ -301,14 +301,14 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Semipresencial',
+		                                                boxLabel: 'Blended',
 		                                                name: 'pp_contextMode',
 		                                                inputValue: 'blended',
                                                         dirtyCls: 'property-form-dirty'
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Distancia',
+		                                                boxLabel: 'Distance',
 		                                                name: 'pp_contextMode',
 		                                                inputValue: 'distance',
                                                         dirtyCls: 'property-form-dirty'
@@ -317,7 +317,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
                                     },
-                                    help: _('Modalidad de uso')
+                                    help: _('Modality')
                                 }
                             ]
                         }
