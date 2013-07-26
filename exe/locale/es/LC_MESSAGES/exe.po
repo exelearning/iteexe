@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-07-26 13:26+0200\n"
-"PO-Revision-Date: 2013-07-26 13:21+0200\n"
+"PO-Revision-Date: 2013-07-26 13:37+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -3743,12 +3743,12 @@ msgstr "Seleccionar licencia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
 msgid "Usage"
-msgstr ""
+msgstr "Especificaciones de utilización"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 msgid "Intended End User"
-msgstr ""
+msgstr "Tipo de alumno"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
 msgid "Tipo de alumno"
@@ -3757,26 +3757,26 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 msgid "For Group Work"
-msgstr ""
+msgstr "Para trabajar en grupo"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
 msgid "For group work"
-msgstr ""
+msgstr "Para trabajar en grupo"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 msgid "For Individual Tuition"
-msgstr ""
+msgstr "Para trabajar en tutoría"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
 msgid "For individual tuition"
-msgstr ""
+msgstr "Para trabajar en tutoría"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
-msgstr ""
+msgstr "Modalidad de uso"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
 msgid "Project Properties"
@@ -9274,7 +9274,7 @@ msgstr "valor invalido de color"
 
 #: exe/webui/selectbrowserpage_ru.py:104
 msgid "Browsers installed in your system"
-msgstr ""
+msgstr "Navegadores instalados en su sistema"
 
 #: exe/webui/selectbrowserpage_ru.py:110
 #: exe/webui/xliffexportpreferencespage.py:136

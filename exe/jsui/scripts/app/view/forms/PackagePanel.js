@@ -194,7 +194,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
 	                                },
-	                                help: _('Tipo de alumno')
+	                                help: _('Intended End User')
                                 },
                                 {
                                     xtype: 'helpcontainer',
@@ -219,7 +219,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
                                     },
-                                    help: _('For group work')
+                                    help: _('For Group Work')
                                 },
                                 {
                                     xtype: 'helpcontainer',
@@ -244,7 +244,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                             }
                                         ]
                                     },
-                                    help: _('For individual tuition')
+                                    help: _('For Individual Tuition')
                                 },
                                 {
                                     xtype: 'helpcontainer',
