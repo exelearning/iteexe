@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-07-26 13:26+0200\n"
+"POT-Creation-Date: 2013-07-26 13:42+0200\n"
 "PO-Revision-Date: 2013-07-10 20:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
@@ -3236,29 +3236,20 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
-msgid "Intended End User"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
-msgid "Tipo de alumno"
+msgid "Intended End User"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
-msgid "For Group Work"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
-msgid "For group work"
+msgid "For Group Work"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
-msgid "For Individual Tuition"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
-msgid "For individual tuition"
+msgid "For Individual Tuition"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
@@ -9005,18 +8996,12 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#~ msgid "Especificaciones de utilización"
+#~ msgid "Tipo de alumno"
 #~ msgstr ""
 
-#~ msgid "Para trabajar en grupo"
+#~ msgid "For group work"
 #~ msgstr ""
 
-#~ msgid "Para trabajar en tutoría"
-#~ msgstr ""
-
-#~ msgid "Lugar de utilización"
-#~ msgstr ""
-
-#~ msgid "Modalidad de uso"
+#~ msgid "For individual tuition"
 #~ msgstr ""
 

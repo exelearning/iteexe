@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-07-26 13:26+0200\nPO-Revision-Date: 2013-07-26 13:37+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-07-26 13:42+0200\nPO-Revision-Date: 2013-07-26 13:37+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Marcando esta opci\u00f3n, el archivo SCORM exportado ser\u00e1 editable con eXeLearning.", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
@@ -684,7 +684,6 @@ translations = {
  "V-Space": "V-Space", 
  "Location": "Localizaci\u00f3n", 
  "The URL you entered seems to be an external link. Do you want to add the required http:\/\/ prefix?": "La URL que ha introducido parece ser un v\u00ednculo externo,  \u00bfdesea agregar el prefijo http:\/\/ necesario?", 
- "For group work": "Para trabajar en grupo", 
  "presencial": "presencial", 
  "Force overwrite of <output_file>": "Forzar sobreescritura de  <output_file>", 
  "Guarani ": "Guaran\u00ed ", 
@@ -1204,7 +1203,6 @@ translations = {
  "Export IMS package as": "Exportar el paquete IMS como", 
  "Catalan Wikipedia Article": "Art\u00edculo de la wikipedia en catal\u00e1n", 
  "Text Alignment": "Alineaci\u00f3n del texto", 
- "For individual tuition": "Para trabajar en tutor\u00eda", 
  "Properties": "Propiedades", 
  "4": "4", 
  "Image Magnifier": "Lupa", 

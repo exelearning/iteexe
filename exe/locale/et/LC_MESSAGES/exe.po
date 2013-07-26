@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-26 13:26+0200\n"
+"POT-Creation-Date: 2013-07-26 13:42+0200\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -3499,29 +3499,20 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
-msgid "Intended End User"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
-msgid "Tipo de alumno"
+msgid "Intended End User"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
-msgid "For Group Work"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
-msgid "For group work"
+msgid "For Group Work"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
-msgid "For Individual Tuition"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
-msgid "For individual tuition"
+msgid "For Individual Tuition"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
@@ -9227,18 +9218,12 @@ msgstr ""
 "Kas iDevice/generic.data fail või sinu laetav pakett loodi uuema eXe "
 "versioonia. Palun uuenda eXe versiooni ja proovi uuesti."
 
-#~ msgid "Especificaciones de utilización"
+#~ msgid "Tipo de alumno"
 #~ msgstr ""
 
-#~ msgid "Para trabajar en grupo"
+#~ msgid "For group work"
 #~ msgstr ""
 
-#~ msgid "Para trabajar en tutoría"
-#~ msgstr ""
-
-#~ msgid "Lugar de utilización"
-#~ msgstr ""
-
-#~ msgid "Modalidad de uso"
+#~ msgid "For individual tuition"
 #~ msgstr ""
 
