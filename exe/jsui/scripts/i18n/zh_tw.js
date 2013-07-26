@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-07-24 17:04+0200\nPO-Revision-Date: 2013-07-10 20:36+0800\nLast-Translator: \nLanguage-Team: Chinese Traditional <kde-tw@googlegroups.com>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-07-26 13:26+0200\nPO-Revision-Date: 2013-07-10 20:36+0800\nLast-Translator: \nLanguage-Team: Chinese Traditional <kde-tw@googlegroups.com>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "\u52fe\u9078\u6b64\u9078\u9805\u7684\u8a71\uff0c\u532f\u51fa\u7684 SCORM \u6a94\u53ef\u4ee5\u7528 eXeLearning \u7de8\u8f2f\u3002", 
  "Web pages footer.": "\u7db2\u9801\u7684\u8a3b\u8173\u3002", 
  "Include Single Page export file?": "\u8981\u5f15\u5165\u55ae\u4e00\u9801\u9762\u532f\u51fa\u6a94\u55ce\uff1f", 

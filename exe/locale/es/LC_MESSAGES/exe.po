@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2013-07-24 17:04+0200\n"
+"POT-Creation-Date: 2013-07-26 13:26+0200\n"
 "PO-Revision-Date: 2013-07-26 13:21+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
@@ -2426,8 +2426,8 @@ msgstr "Archivo de entrada no válido"
 msgid "Export format not implemented"
 msgstr "Formato de exportación no implementado"
 
-#: exe/export/epub3export.py:573 exe/export/imsexport.py:470
-#: exe/export/scormexport.py:795 exe/export/websiteexport.py:91
+#: exe/export/epub3export.py:583 exe/export/imsexport.py:485
+#: exe/export/scormexport.py:808 exe/export/websiteexport.py:92
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2440,11 +2440,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Obra colocada bajo licencia"
 
-#: exe/export/scormexport.py:518 exe/export/websitepage.py:296
+#: exe/export/scormexport.py:526 exe/export/websitepage.py:299
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/export/scormexport.py:519 exe/export/websitepage.py:302
+#: exe/export/scormexport.py:527 exe/export/websitepage.py:305
 msgid "Next"
 msgstr "Siguiente"
 
@@ -3038,7 +3038,8 @@ msgid "Modified"
 msgstr "Modificado"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/editorpane.py:273 exe/webui/selectbrowserpage_ru.py:113
+#: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
@@ -3567,6 +3568,9 @@ msgid "Intended End User Role"
 msgstr "Destinatario"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:118
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
 msgid "Context"
 msgstr "Contexto"
 
@@ -3738,37 +3742,40 @@ msgid "Select a license."
 msgstr "Seleccionar licencia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
-msgid "Especificaciones de utilización"
+msgid "Usage"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
+msgid "Intended End User"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
 msgid "Tipo de alumno"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
+msgid "For Group Work"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
-msgid "Para trabajar en grupo"
+msgid "For group work"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
-msgid "Para trabajar en tutoría"
+msgid "For Individual Tuition"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
-msgid "Lugar de utilización"
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
+msgid "For individual tuition"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
-msgid "Modalidad de uso"
+msgid "Modality"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
@@ -5883,7 +5890,8 @@ msgid "Now It's Your Turn"
 msgstr "Autoevaluación"
 
 #: exe/webui/common.py:184 exe/webui/editorpage.py:240
-#: exe/webui/stylemanagerpage.py:86 exe/webui/xliffexportpreferencespage.py:91
+#: exe/webui/selectbrowserpage_ru.py:90 exe/webui/stylemanagerpage.py:86
+#: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML para eLearning"
@@ -6441,7 +6449,7 @@ msgstr "Orientaciones para la tutoría"
 msgid "A Step Ahead"
 msgstr "Para saber más"
 
-#: exe/webui/preferencespage.py:142
+#: exe/webui/preferencespage.py:142 exe/webui/selectbrowserpage_ru.py:59
 msgid "Default browser in your system"
 msgstr "Navegador predeterminado en su sistema"
 
@@ -6646,7 +6654,9 @@ msgstr "Cita"
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode."
-msgstr "Pegar está ahora en modo texto plano. Pulse de nuevo para volver al modo de pegado normal."
+msgstr ""
+"Pegar está ahora en modo texto plano. Pulse de nuevo para volver al modo "
+"de pegado normal."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
@@ -7828,7 +7838,9 @@ msgstr "Nueva línea"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:18
 msgid "Click below to insert LaTeX for any of the following symbols:"
-msgstr "Pinche para insertar el código LaTeX de cualquiera de los siguientes símbolos:"
+msgstr ""
+"Pinche para insertar el código LaTeX de cualquiera de los siguientes "
+"símbolos:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:20
 msgid "And, add your own LaTeX directly into the following:"
@@ -9260,6 +9272,16 @@ msgstr "Uso General"
 msgid "Invalid color value"
 msgstr "valor invalido de color"
 
+#: exe/webui/selectbrowserpage_ru.py:104
+msgid "Browsers installed in your system"
+msgstr ""
+
+#: exe/webui/selectbrowserpage_ru.py:110
+#: exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "OK"
+
 #: exe/webui/stylemanagerpage.py:104
 msgid "Import Style"
 msgstr "Importar estilo"
@@ -9488,11 +9510,6 @@ msgstr ""
 "pueden ser un buena opción si va a pre-procesar los campos (p.e.: con "
 "Rainbow) antes de utilizar el software de traducción."
 
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "OK"
-
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
@@ -9529,51 +9546,18 @@ msgstr ""
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
 
-#~ msgid "Changes take effect when you restart eXe"
-#~ msgstr "Los cambios no serán efectivos hasta que no reinicie eXe"
+#~ msgid "Especificaciones de utilización"
+#~ msgstr ""
 
-#~ msgid "Select ZIP Style file to import."
-#~ msgstr "Seleccione el fichero ZIP de estilo que desea importar."
+#~ msgid "Para trabajar en grupo"
+#~ msgstr ""
 
-#~ msgid "ZIP Style"
-#~ msgstr "Paquete ZIP de estilo"
+#~ msgid "Para trabajar en tutoría"
+#~ msgstr ""
 
-#~ msgid "Export to ZIP Style as"
-#~ msgstr "Exportar a paquete ZIP de estilo"
+#~ msgid "Lugar de utilización"
+#~ msgstr ""
 
-#~ msgid "ZipFile"
-#~ msgstr "Fichero ZIP"
-
-#~ msgid "Delete style?"
-#~ msgstr "¿Borrar el estilo?"
-
-#~ msgid "Do you want to delete the selected style?"
-#~ msgstr "¿Desea borrar el estilo seleccionado?"
-
-#~ msgid "Styles manage"
-#~ msgstr "Administrador de estilos"
-
-#~ msgid "Export current style"
-#~ msgstr "Exportar el estilo actual"
-
-#~ msgid "Delete current style"
-#~ msgstr "Borrar el estilo actual"
-
-#~ msgid "Browsers installed in your system"
-#~ msgstr "Navegadores instalados en el sistema"
-
-#~ msgid "Choose the style to export:"
-#~ msgstr "Seleccione el estilo que desea exportar:"
-
-#~ msgid "Choose the style to delete:"
-#~ msgstr "Seleccione el estil oque desea borrar:"
-
-#~ msgid "Click to view the details of this style"
-#~ msgstr "Pulse para ver los detalles de este estilo"
-
-#~ msgid "Styles deleted correctly"
-#~ msgstr "Estilos borrados correctamente"
-
-#~ msgid " "
-#~ msgstr " "
+#~ msgid "Modalidad de uso"
+#~ msgstr ""
 
