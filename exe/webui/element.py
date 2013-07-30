@@ -1944,7 +1944,7 @@ class SelectOptionElement(Element):
         ident = self.field.question.id + str(self.index)
 # JR Maquetamos con div en vez de con tabla
 #        html  = '<tr><td>'  
-	html = '<div style="display: table-row; clear: both;">\n'
+	html = '<div style="display: table-row; clear: both;" class="answer">\n'
 	html += '<div style="float: left; display: table-cell; margin-left: 0.2em;">\n'
 #JR Anado op al identificador para no empiece por un numero    
         html += u'<input type="checkbox" id="op%s"' % ident

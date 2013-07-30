@@ -58,4 +58,4 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* Autoclear */
 .exe-clear{overflow:auto}
 /* To review */
-.question .answer p{margin:0}
+.question .answer p{margin:0 0 .7em 0}
