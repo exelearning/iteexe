@@ -83,7 +83,7 @@ any Learning Management System.
       license="GPL",
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
-                      "exe.engine", "exe.export", "exe.importers"],
+                      "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],
       data_files=g_files.items(),
       doc_files=["NEWS", "Changelog", "COPYING", "README"]
      )
