@@ -197,21 +197,29 @@ class AppletBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
+
         appletcode = self.idevice.appletCode
+	# appletcode.encode('raw_unicode_escape').decode('utf-8')
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
-        appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('\xC2\x82','&#130')
         appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
-        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"') 
-        appletcode = appletcode.replace('activitypack\" value=\"', 'activitypack\" value=\"\"')
+        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"')
+
+	if self.idevice.type == "jclic":
+            appletcode = appletcode.replace('activitypack\" value=\"', 'activitypack\" value=\"/resources/')
+        
+        if self.idevice.type == "geogebra":
+            # according to self.port (config.py)
+            appletcode = appletcode.replace('filename\" value=\"', 'filename\" value=\"http://127.0.0.1:51235/newPackage/resources/')
+
         html  = u"<!-- applet iDevice -->\n"
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += appletcode
-        html += u"<br/>"
+        html += u"<br/>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
 
