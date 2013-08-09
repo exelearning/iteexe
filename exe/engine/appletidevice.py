@@ -190,11 +190,11 @@ you created in Geogebra.</p>""")
                 self.message = ""
                 Resource(self, resourceFile)
                 if self.type == "geogebra":
-                    self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename())
+                    self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename().replace(' ','_'))
                 if self.type == "jclic":
-                    self.appletCode = self.getAppletcodeJClic(resourceFile.basename())
+                    self.appletCode = self.getAppletcodeJClic(resourceFile.basename().replace(' ','_'))
                 if self.type == "scratch":
-                    self.appletCode = self.getAppletcodeScratch(resourceFile.basename())
+                    self.appletCode = self.getAppletcodeScratch(resourceFile.basename().replace(' ','_'))
                 if self.type == "descartes":
                     self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
                 ## next code should be used to load in the editor the HTML code of the html file:
