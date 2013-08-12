@@ -313,8 +313,12 @@ Ext.define('eXe.controller.Toolbar', {
           modal: true,
           resizable: false,
           id: 'aboutwin',
-          title: _("About"), 
-          html: '<iframe height="100%" width="100%" src="/about"></iframe>'
+          title: _("About"),
+          items: {
+              xtype: 'uxiframe',
+              src: '/about',
+              height: '100%'
+          }
         });
         about.show();
 	},
@@ -365,7 +369,11 @@ Ext.define('eXe.controller.Toolbar', {
           modal: true,
           id: 'ideviceeditorwin',
           title: _("iDevice Editor"), 
-          html: '<iframe height="' + eXe.app.getMaxHeight(700) + '" width="100%" src="/editor"></iframe>',
+          items: {
+              xtype: 'uxiframe',
+              src: '/editor',
+              height: '100%'
+          },
           listeners: {
             'beforeclose': function(win) {
                 Ext.Msg.show( {
@@ -390,12 +398,16 @@ Ext.define('eXe.controller.Toolbar', {
 	// JR: Launch the Style Manager Window
 	toolsStyleManager: function() {
         var stylemanager = new Ext.Window ({
-          height: eXe.app.getMaxHeight(600), 
+          height: eXe.app.getMaxHeight(620), 
           width: 450, 
           modal: true,
           id: 'stylemanagerwin',
-          title: _("Style Manager"), 
-          html: '<iframe height="' + eXe.app.getMaxHeight(600) + '" width="100%" src="/stylemanager"></iframe>'
+          title: _("Style Manager"),
+          items: {
+              xtype: 'uxiframe',
+              src: '/stylemanager',
+              height: '100%'
+          }
         });
         stylemanager.show();        
 	},
@@ -558,8 +570,12 @@ Ext.define('eXe.controller.Toolbar', {
                       width: 650, 
                       modal: true,
                       id: 'xliffimportwin',
-                      title: _("XLIFF Import Preferences"), 
-                      html: '<iframe height="100%" width="100%" src="/xliffimportpreferences?path=' + fp.file.path +'"></iframe>'
+                      title: _("XLIFF Import Preferences"),
+                      items: {
+                          xtype: 'uxiframe',
+                          src: '/xliffimportpreferences?path=' + fp.file.path,
+                          height: '100%'
+                      }
                     });
                     preferences.show();
                 }
@@ -586,8 +602,12 @@ Ext.define('eXe.controller.Toolbar', {
 					  width: 650, 
                       modal: true,
                       id: 'xliffexportwin',
-					  title: _("XLIFF Export Preferences"), 
-					  html: '<iframe height="100%" width="100%" src="/xliffexportpreferences?path=' + fp.file.path +'"></iframe>'
+					  title: _("XLIFF Export Preferences"),
+					  items: {
+                          xtype: 'uxiframe',
+                          src: '/xliffexportpreferences?path=' + fp.file.path,
+                          height: '100%'
+                      }
 					});
                     preferences.show();
                 }
