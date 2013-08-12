@@ -993,7 +993,10 @@ class MainPage(RenderableLivePage):
             raise
         # Show the newly exported web site in a new window
         if not printFlag:
-           self._startFile(filename)
+            self._startFile(filename)
+            if client:
+                client.alert(_(u'Exported to %s') % filename)
+
         # and return a string of the actual directory name, 
         # in case the package name was added, etc.:
         return filename.abspath().encode('utf-8')
