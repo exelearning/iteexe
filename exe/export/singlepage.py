@@ -178,9 +178,27 @@ class SinglePage(Page):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if for_print:
             # include extra print-script for onload bit 
-            html += u'<script type="text/javascript">function print_page(){window.print();window.close();}</script>'+lb
+            html += u'<script type="text/javascript">' + lb
+            html += u'var interval;' + lb
+            html += u'function checkClose() {' + lb
+            html += u'    if (document.hasFocus()) {' + lb
+            html += u'        alert("' + _("You can close this window") + '");' + lb
+            html += u'        clearInterval(interval);' + lb
+#             html += u'        window.close();' + lb
+            html += u'    }' + lb
+            html += u'}' + lb
+            html += u'function print_page() {' + lb
+            html += u'     if(typeof document.hasFocus === "undefined") {' + lb
+            html += u'         document.hasFocus = function () {' + lb
+            html += u'             return document.visibilityState == "visible";' + lb
+            html += u'         }' + lb
+            html += u'     }' + lb
+            html += u'     window.print();' + lb
+            html += u'     interval = setInterval(checkClose, 300);' + lb
+            html += u'}' + lb
+            html += u'</script>' + lb
         if style.hasValidConfig:
-            html += style.get_extra_head()        
+            html += style.get_extra_head()
         html += u"</head>"+lb
         return html
     
