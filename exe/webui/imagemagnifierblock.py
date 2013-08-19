@@ -171,7 +171,7 @@ class ImageMagnifierBlock(Block):
         html += u"</div>\n"
         return html
 
-
+    '''
     def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
@@ -181,7 +181,7 @@ class ImageMagnifierBlock(Block):
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"  <div class=\"image_text\" style=\""
+        html += u"  <div class=\"image_texto\" style=\""
         html += u"width:" + str(self.idevice.imageMagnifier.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
         html += u"    <div class=\"image\">\n"
@@ -190,9 +190,8 @@ class ImageMagnifierBlock(Block):
         html += u"    </div> <!-- class=\"image\" -->\n" 
         html += u"  </div> <!-- class=\"image_text\" -->\n" 
         text = self.textElement.renderPreview()
-        text = self.textElement.renderView()
         if text:
-            html +='<div style="float: left;margin-left:25px">'+text+'</div>'
+            html +='<div style="float: '+self.idevice.float +';padding:10px">'+text+'</div>'  
         else:
             html += '&nbsp;'
         html += u'\n<div style="clear: both;overflow:auto"></div>\n'
@@ -227,7 +226,62 @@ class ImageMagnifierBlock(Block):
         html += u'\n<div style="clear: both;overflow:auto"></div>\n'
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
+
+    '''
+    def renderPreview(self, style):
+        """
+        Returns an XHTML string for previewing this block
+        """
+        log.debug("renderPreview")
+        html  = u"\n<!-- image with text iDevice -->\n"
+        html += u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html += u"  <div class=\"image_text\" style=\""
+        html += u"width:" + str(self.idevice.imageMagnifier.width) + "px;padding:10px; "
+        html += u"float:%s;\">\n" % self.idevice.float
+        html += u"    <div class=\"image\" >\n"
+        html += self.imageMagnifierElement.renderPreview()
+        html += u"" + self.idevice.caption
+        html += u"    </div> <!-- class=\"image\" -->\n" 
+        html += u"  </div> <!-- class=\"image_text\" -->\n" 
+        text = self.textElement.renderPreview()
+        if text:
+            html += text
+        else:
+            html += '&nbsp;'
+        html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
+        html += self.renderViewButtons()
+        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
+        return html
     
+
+    def renderView(self, style):
+        """
+        Returns an XHTML string for viewing this block
+        """        
+        log.debug("renderView")
+        html  = u"\n<!-- image with text iDevice -->\n"
+        html += u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html += u"  <div class=\"image_text\" style=\""
+        html += u"width:" + str(self.idevice.imageMagnifier.width) + "px;padding:10px; "
+        html += u"float:%s;\">\n" % self.idevice.float
+        html += u"    <div class=\"image\">\n"
+        html += self.imageMagnifierElement.renderView()
+        html += u"" + self.idevice.caption
+        html += u"    </div> <!-- class=\"image\" -->\n" 
+        html += u"  </div> <!-- class=\"image_text\" -->\n" 
+        text = self.textElement.renderView()
+        if text:
+            html += text
+        else:
+            html += '&nbsp;'
+        html += u'\n<div style="clear: both;overflow:auto"></div>\n'
+        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
+        return html
+  
 
 from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
 from exe.webui.blockfactory           import g_blockFactory
