@@ -72,8 +72,8 @@ class PriorizedDOMJellier(DOMJellier):
             return node
         elif objType is types.UnicodeType:
             node = self.document.createElement("unicode")
-            obj = obj.encode('utf-8')
-            s = obj.replace("\n", "\\n").replace("\t", "\\t")
+            obj = obj.replace("\n", "\\n").replace("\t", "\\t")
+            s = obj.encode('utf-8')
             node.setAttribute("value", s)
             return node
         else:
