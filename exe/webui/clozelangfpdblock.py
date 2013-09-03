@@ -166,7 +166,7 @@ class ClozelangfpdBlock(Block):
 		cloze = self.clozelangElement.field.content_w_resourcePaths
 		feedback = self.feedbackElement.field.content_w_resourcePaths
 	else:
-		cloze = self.clozelangElement.field.content_w_resourcePaths
+		cloze = self.clozelangElement.field.content_wo_resourcePaths
 		feedback = self.feedbackElement.field.content_wo_resourcePaths
 	html += u'<noscript><div class="feedback">\n'
 	html += u"<strong>" + _("Solution") + u": </strong><br/>\n"
