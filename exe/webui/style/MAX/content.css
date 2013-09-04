@@ -29,6 +29,7 @@ a{color:#CE2239}
 .objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
 .ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
 
+.iDevice_content{overflow:auto}
 .iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444;border-radius:5px}
 #siteFooter{color:#666666;font-size:.95em}
 #siteFooter a{color:#000}

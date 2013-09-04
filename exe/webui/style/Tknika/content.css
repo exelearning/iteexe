@@ -171,6 +171,9 @@ a:hover{text-decoration:underline}
 	height:auto;
 	margin-right:5px
 }
+.iDevice_content{
+    overflow:auto
+}
 .iDevice_inner{
 	margin-top: 15px;
 	padding-top: 10px;

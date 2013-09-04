@@ -25,6 +25,7 @@ h3{font-size:1.25em;color:#666}
 .emphasis0{padding:0;background:none}
 .iDevice_icon{width:32px;height:auto;margin-right:5px} /* Legacy: old iDevices */
 .iDevice_header{background-image:url(icon_generic.gif);padding-left:37px;margin-bottom:1px}
+.iDevice_content{overflow:auto}
 .activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
 .readingIdevice .iDevice_header{background-image:url(icon_reading.gif);padding-left:41px}
 .ListaIdevice .iDevice_header,

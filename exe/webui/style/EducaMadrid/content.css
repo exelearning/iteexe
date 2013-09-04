@@ -30,7 +30,8 @@ h3{font-size:1.25em;color:#777}
 .objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
 .ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
 
-.iDeviceTitle{font-size:1.2em;vertical-align:top;top:-2px;color:#666;line-height:2em} 
+.iDeviceTitle{font-size:1.2em;vertical-align:top;top:-2px;color:#666;line-height:2em}
+.iDevice_content{overflow:auto}
 .iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444;border-radius:5px}
 #siteFooter{color:#666;font-size:.95em}
 #siteFooter a{color:#DB0B00}

@@ -38,7 +38,8 @@ h3{font-size:1.25em;color:#666}
 .objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
 .ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
 
-.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#900;line-height:3em} 
+.iDeviceTitle{font-size:1.3em;vertical-align:top;top:0;color:#900;line-height:3em}
+.iDevice_content{overflow:auto}
 .iDevice_inner{margin-left:55px}
 #siteFooter{color:#000;font-size:.95em}
 #siteFooter a{color:#DB0B00}
