@@ -990,7 +990,7 @@ class Package(Persistable):
             zinfo.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo, encodeObject(self))
 
-            zinfo2 = zipfile.ZipInfo(filename='contentv2.xml',
+            zinfo2 = zipfile.ZipInfo(filename='contentv3.xml',
                     date_time=time.localtime()[0:6])
             zinfo2.external_attr = 0100644<<16L
             zinfo2.compress_type = zipfile.ZIP_DEFLATED
@@ -1027,7 +1027,7 @@ class Package(Persistable):
         xml = None
         
         try:
-            xml = zippedFile.read(u"contentv2.xml")
+            xml = zippedFile.read(u"contentv3.xml")
         except:
             pass
         
@@ -1049,7 +1049,7 @@ class Package(Persistable):
 
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"content.xsd" ]:
+            if unicode(fn, 'utf8') not in [u"content.data", u"content.xml", u"contentv2.xml", u"contentv3.xml", u"content.xsd" ]:
                 #JR: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
                     dir = fn[:fn.index("/")]
@@ -1068,7 +1068,7 @@ class Package(Persistable):
             if fromxml:
                 newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
-                xmlinfo = zippedFile.getinfo(u"contentv2.xml")
+                xmlinfo = zippedFile.getinfo(u"contentv3.xml")
                 datainfo = zippedFile.getinfo(u"content.data")
                 if xmlinfo.date_time >= datainfo.date_time:
                     newPackage, validxml = decodeObjectFromXML(xml)

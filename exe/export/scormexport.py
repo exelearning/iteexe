@@ -802,7 +802,7 @@ class ScormExport(object):
         if hasattr(package, 'scowsource') and package.scowsource:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
-            (outputDir/'contentv2.xml').write_bytes(encodeObjectToXML(package))
+            (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
 
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)

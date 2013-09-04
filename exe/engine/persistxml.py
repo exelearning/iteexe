@@ -72,7 +72,6 @@ class PriorizedDOMJellier(DOMJellier):
             return node
         elif objType is types.UnicodeType:
             node = self.document.createElement("unicode")
-            obj = obj.replace("\n", "\\n").replace("\t", "\\t")
             s = obj.encode('utf-8')
             node.setAttribute("value", s)
             return node
@@ -85,12 +84,12 @@ class PriorizedDOMJellier(DOMJellier):
 class UTF8DOMUnjellier(DOMUnjellier):
     def unjellyNode(self, node):
         if node.tagName == "unicode":
-            return unicode(str(node.getAttribute("value")).replace("\\n", "\n").replace("\\t", "\t"), "utf-8")
+            return unicode(str(node.getAttribute("value")), "utf-8")
         else:
             return DOMUnjellier.unjellyNode(self, node)
 
 class ContentXMLElement(Element):
-    version = "0.2"
+    version = "0.3"
     def writexml(self, stream, indent='', addindent='', newl='', strip=0, nsprefixes={}, namespace='', first=False):
         # this should never be necessary unless people start
         # changing .tagName on the fly(?)
