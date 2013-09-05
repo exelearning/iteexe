@@ -27,7 +27,7 @@
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
-	enableAnchors, gotoAnchor, preventEscKey, loadKeymap, hideObjectTags];
+	enableAnchors, gotoAnchor, preventEscKey, preventHistoryBack, loadKeymap, hideObjectTags];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load
@@ -531,6 +531,11 @@ function gotoAnchor() {
 function preventEscKey() {
         if (parent.Ext.isGecko || parent.Ext.isSafari)
             window.addEventListener('keydown', function(e) {(e.keyCode == 27 && e.preventDefault())});
+}
+
+function preventHistoryBack() {
+	for (var i=0; i<=20; i++)
+    	History.pushState(null, null, '?state=' + i);
 }
 
 function loadKeymap() {
