@@ -164,10 +164,15 @@ class WebsiteExport(object):
             
         # copy script files.
         my_style = G.application.config.styleStore.getStyle(package.style)
+        # jQuery
         if my_style.hasValidConfig:
-            if my_style.get_jquery():
+            if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')
+        else:
+            jsFile = (self.scriptsDir/'exe_jquery.js')
+            jsFile.copyfile(outputDir/'exe_jquery.js')
+            
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
         dT = common.getExportDocType()
@@ -237,8 +242,6 @@ class WebsiteExport(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'exe_jquery.js')
-            jquery.copyfile(outputDir/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(outputDir)
             dT = common.getExportDocType()

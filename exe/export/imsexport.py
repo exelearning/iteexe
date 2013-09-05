@@ -178,11 +178,12 @@ class Manifest(object):
         resources = page.node.getResources()
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if common.nodeHasMediaelement(page.node):
-            resources = resources + [u'exe_jquery.js'] + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+            resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+        if my_style.hasValidConfig:
+            if my_style.get_jquery() == True:
+                self.resStr += '    <file href="exe_jquery.js"/>\n'
         else:
-            if my_style.hasValidConfig:
-                if my_style.get_jquery():
-                    self.resStr += '    <file href="exe_jquery.js"/>\n'
+            self.resStr += '    <file href="exe_jquery.js"/>\n'
 
         for resource in resources:
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
@@ -256,10 +257,16 @@ class IMSPage(Page):
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
-        # Some styles might include eXe's jQuery
+        
+        # jQuery
         if style.hasValidConfig:
-            if style.get_jquery():
+            if style.get_jquery() == True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+            else:
+                html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
+        else:
+            html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+        
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
@@ -391,6 +398,17 @@ class IMSExport(object):
         manifest.save()
         
         # Copy the scripts
+        
+        # jQuery
+        my_style = G.application.config.styleStore.getStyle(page.node.package.style)
+        if my_style.hasValidConfig:
+            if my_style.get_jquery() == True:
+                jsFile = (self.scriptsDir/'exe_jquery.js')
+                jsFile.copyfile(outputDir/'exe_jquery.js')
+        else:
+            jsFile = (self.scriptsDir/'exe_jquery.js')
+            jsFile.copyfile(outputDir/'exe_jquery.js')                
+        
         jsFile = (self.scriptsDir/'common.js')
         jsFile.copyfile(outputDir/'common.js')
         dT = common.getExportDocType()
@@ -464,19 +482,11 @@ class IMSExport(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, outputDir)
             common.copyFileIfNotInStyle('stock-stop.png', self, outputDir)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'exe_jquery.js')
-            jquery.copyfile(outputDir/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(outputDir)
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
-        else:
-            my_style = G.application.config.styleStore.getStyle(package.style)
-            if my_style.hasValidConfig:
-                if my_style.get_jquery():
-                    jsFile = (self.scriptsDir/'exe_jquery.js')
-                    jsFile.copyfile(outputDir/'exe_jquery.js')
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

@@ -26,7 +26,7 @@ class Style(Persistable):
                    'license-url': 'License URL', 
                    'description': 'Description',
                    'extra-head': 'Extra head',
-                   'jquery': 'Include eXe\'s jQuery',
+                   'jquery': 'Path to jQuery (if different)',
                    'extra-body': 'Extra body'
                    }
     
@@ -46,7 +46,7 @@ class Style(Persistable):
         self._license_url   = ''
         self._description   = ''
         self._extra_head    = ''
-        self._jquery    = False
+        self._jquery    = True
         self._extra_body    = ''
         self._validConfig   = False
         self._valid         = False

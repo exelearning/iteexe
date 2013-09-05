@@ -108,10 +108,16 @@ class WebsitePage(Page):
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
-        # Some styles might include eXe's jQuery
+        
+        # jQuery
         if style.hasValidConfig:
-            if style.get_jquery():
+            if style.get_jquery()==True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+            else:
+                html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
+        else:
+            html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+        
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb

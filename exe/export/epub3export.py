@@ -316,10 +316,16 @@ class Epub3Page(Page):
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
-        # Some styles might include eXe's jQuery
+        
+        # jQuery
         if style.hasValidConfig:
-            if style.get_jquery():
+            if style.get_jquery() == True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+            else:
+                html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
+        else:
+            html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+            
         if common.hasGalleryIdevice(self.node):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
@@ -552,16 +558,17 @@ class Epub3Export(object):
             common.copyFileIfNotInStyle('panel-amusements.png', self, contentPages)
             common.copyFileIfNotInStyle('stock-stop.png', self, contentPages)
         if hasMediaelement:
-            jquery = (self.scriptsDir/'exe_jquery.js')
-            jquery.copyfile(contentPages/'exe_jquery.js')
             mediaelement = (self.scriptsDir/'mediaelement')
             mediaelement.copyfiles(contentPages)
+        
+        my_style = G.application.config.styleStore.getStyle(package.style)
+        if my_style.hasValidConfig:
+            if my_style.get_jquery() == True:
+                jsFile = (self.scriptsDir/'exe_jquery.js')
+                jsFile.copyfile(contentPages/'exe_jquery.js')
         else:
-            my_style = G.application.config.styleStore.getStyle(package.style)
-            if my_style.hasValidConfig:
-                if my_style.get_jquery():
-                    jsFile = (self.scriptsDir/'exe_jquery.js')
-                    jsFile.copyfile(contentPages/'exe_jquery.js')
+            jsFile = (self.scriptsDir/'exe_jquery.js')
+            jsFile.copyfile(contentPages/'exe_jquery.js')        
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence
