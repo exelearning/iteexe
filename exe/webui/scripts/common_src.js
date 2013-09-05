@@ -1134,20 +1134,7 @@ if(dO.ns4)setTimeout('history.go(0)',300);
 }
 
 var $exe = {
-    domReady : function(){
-        var h = document.body.innerHTML;
-        if (h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(' class=mediaelement')!=-1) {
-            $exe.loadMediaPlayer.getjQuery();
-        }
-    },
     loadMediaPlayer : {
-        getjQuery : function(){
-            if (typeof(jQuery)=='undefined') {
-                $exe.loadScript("exe_jquery.js","$exe.loadMediaPlayer.getPlayer()");
-            } else {
-                $exe.loadMediaPlayer.getPlayer();
-            }
-        },
         getPlayer : function(){
             $("VIDEO").hide();
             $exe.loadScript("exe_media.js","$exe.loadMediaPlayer.getCSS()");
@@ -1160,30 +1147,37 @@ var $exe = {
         }
     },
     loadScript : function(url, callback){
-        var script;
+        var s;
         if (url.split('.').pop()=="css") {
-            script = document.createElement("link")
-            script.type = "text/css";
-            script.rel = "stylesheet";
-            script.href = url;	
+            s = document.createElement("link");
+            s.type = "text/css";
+            s.rel = "stylesheet";
+            s.href = url;	
         } else {
-            script = document.createElement("script")
-            script.type = "text/javascript";
-            script.src = url;
+            s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = url;
         }
-        if (script.readyState){  //IE
-            script.onreadystatechange = function(){
-                if (script.readyState == "loaded" ||
-                        script.readyState == "complete"){
-                    script.onreadystatechange = null;
+        if (s.readyState){  //IE
+            s.onreadystatechange = function(){
+                if (s.readyState == "loaded" ||
+                        s.readyState == "complete"){
+                    s.onreadystatechange = null;
                     if (callback) eval(callback);
                 }
             };
         } else {  //Others
-            script.onload = function(){
+            s.onload = function(){
                 if (callback) eval(callback);
             };
         }
-        document.getElementsByTagName("head")[0].appendChild(script);
+        document.getElementsByTagName("head")[0].appendChild(s);
     }
 }
+
+$(function(){
+    var h=document.body.innerHTML;
+    if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(' class=mediaelement')!=-1){
+        $exe.loadMediaPlayer.getPlayer()
+    }
+});

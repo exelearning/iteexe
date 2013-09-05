@@ -81,7 +81,7 @@ class SinglePage(Page):
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig:
             html += style.get_extra_body()        
-        html += u'<script type="text/javascript">$exe.domReady();</script></body></html>'
+        html += u'</body></html>'
         
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")

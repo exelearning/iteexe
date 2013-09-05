@@ -540,7 +540,7 @@ class ScormPage(Page):
             html += self.renderFooter()
         else:
             html += style.get_extra_body()
-        html += u'<script type="text/javascript">$exe.domReady();</script></body></html>'
+        html += u'</body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
