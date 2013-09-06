@@ -88,11 +88,9 @@ class Application:
         """
         Main function, starts eXe
         """
-        self.processArgs()
-
         self.loadConfiguration()
-
         installSafeTranslate()
+        self.processArgs()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
@@ -201,14 +199,13 @@ class Application:
         """
         Print usage info
         """
-        print "Usage: "+os.path.basename(sys.argv[0])+" [OPTION] [PACKAGE]"
-        print "  -V, --version    print version information and exit"
-        print "  -h, --help       display this help and exit"
-        print "  --standalone     Run totally from current directory"
-        print "  --portable     Run in portable mode"
-        print "Settings are read from exe.conf "
-        print "in $HOME/.exe on Linux/Unix or"
-        print "in Documents and Settings/<user name>/Application Data/exe "
-        print "on Windows"
+        print _("""Usage: %s [OPTION] [PACKAGE]
+  -V, --version    print version information and exit
+  -h, --help       display this help and exit
+  --standalone     Run totally from current directory
+  --portable       Run in portable mode
+Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or
+in Documents and Settings/<user name>/Application Data/exe on Windows XP or
+Users/<user name>/AppData/Roaming/exe on Windows 7""") % os.path.basename(sys.argv[0])
 
 # ===========================================================================
