@@ -64,6 +64,7 @@ body{padding:0;text-align:center}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
+.js #bottomPagination{margin-top:15px}
 /* Pie de página e iDevices */
 #pageFooter{text-align:center;margin-left:-250px}
 .iDeviceTitle{vertical-align:top}
