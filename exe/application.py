@@ -88,9 +88,9 @@ class Application:
         """
         Main function, starts eXe
         """
+        self.processArgs()
         self.loadConfiguration()
         installSafeTranslate()
-        self.processArgs()
         self.preLaunch()
         # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
@@ -199,6 +199,7 @@ class Application:
         """
         Print usage info
         """
+        self.loadConfiguration()
         print _("""Usage: %s [OPTION] [PACKAGE]
   -V, --version    print version information and exit
   -h, --help       display this help and exit
