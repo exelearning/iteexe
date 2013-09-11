@@ -152,7 +152,8 @@ class AuthoringPage(RenderableResource):
         for block in self.blocks:
             html += block.render(self.package.style)
 
-        html += u'</div><script type="text/javascript">$exeAuthoring.ready()</script>\n'
+        html += u'</div>'
+        html += '<script type="text/javascript">$exeAuthoring.ready()</script>\n'
         html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         html += common.footer()
 
