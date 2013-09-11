@@ -121,9 +121,9 @@ class XliffExport(object):
 
             
             for field in idevice.getRichTextFields():
-                content += TRANS_UNIT % {'content': safe_unicode(escape_content(field.content)),
+                content += TRANS_UNIT % {'content': safe_unicode(escape_content(field.content_w_resourcePaths)),
                                          'id': '%s-idev%s-field%s' % (id, idevice.id, field.id),
-                                         'target': self.source_copied_in_target and safe_unicode(escape_content(field.content)) or escape_content(u''),
+                                         'target': self.source_copied_in_target and safe_unicode(escape_content(field.content_w_resourcePaths)) or escape_content(u''),
                                          'cdata_begin': self.wrap_cdata and CDATA_BEGIN or escape_content(u''),
                                          'cdata_end': self.wrap_cdata and CDATA_END or escape_content(u''),
                                          'source_lang': self.source_lang,

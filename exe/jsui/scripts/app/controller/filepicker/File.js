@@ -296,7 +296,6 @@ Ext.define('eXe.controller.filepicker.File', {
 				fp.file = { 'path': this.currentDir + '/' + place.rawValue };
 				fp.destroy();
 			};
-		fp.status = eXe.view.filepicker.FilePicker.returnOk;
 		if (place.rawValue) {
             record = store.findRecord("name", place.rawValue, 0, false, true, true);
             if (record) {

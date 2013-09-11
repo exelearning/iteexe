@@ -387,15 +387,14 @@ class FieldWithResources(Field):
                     # i.e., most normal search strings, look for terminating ":
                     end_pos = content.find('\"', found_pos+len(search_str)) 
                 else:
-                    # the xspf_player src search strings should end on the 
+                    # the xspf_player src search strings should end on the
                     # next parameter, &song_title=:
-                    end_pos = content.find('&song_title=', 
-                            found_pos+len(search_str)) 
-                    if end_pos <= 0:
-                        # since TinyMCE can turn & into &amp;, also look for:
-                        end_pos = content.find('&amp;song_title=', 
-                            found_pos+len(search_str)) 
-                # assume well-formed with matching quote: 
+                    end_pos = content.find('song_title=', found_pos + len(search_str))
+                    if content[end_pos - 1] == '&':
+                        end_pos = end_pos - 1
+                    else:
+                        end_pos = end_pos - 5
+                # assume well-formed with matching quote:
                 if end_pos > 0: 
                     # extract the actual resource name, after src=\"resources:
                     resource_str = content[found_pos+len(search_str):end_pos]
@@ -2753,8 +2752,8 @@ class MagnifierField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width         = ""
-        self.height        = ""
+        self.width         = "100"
+        self.height        = "100"
         self.imageResource = None
         self.defaultImage  = ""
         self.glassSize     = "2"
