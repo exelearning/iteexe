@@ -8,7 +8,6 @@ tinyMCE.init({
 	editor_selector: "mceEditor",	
 	theme : "advanced",
 	convert_urls : false,
-	language : 'en',
 	// The New eXeLearning
 	content_css : "/css/extra.css," + exe_style,
     height : "250",
