@@ -7,10 +7,12 @@
     <author-url>http://www.exelearning.net</author-url>
 	<license>Creative Commons by</license>
 	<license-url>http://creativecommons.org/licenses/by/3.0/</license-url>
-	<description>Plantilla originalmente creada para el Instituto Nacional de Tecnologías Educativas y de Formación (Ministerio de Educación, Cultura y Deporte). Diseño original de Aurelio Lorenzo. Adaptación: Ignacio Gros.</description>
+	<description>Plantilla originalmente creada para el Instituto Nacional de Tecnologías Educativas y de Formación (Ministerio de Educación, Cultura y Deporte). Diseño original de Aurelio Lorenzo. Adaptación: Ignacio Gros. Tiene navegación horizontal (menú desplegable), permite ocultar/mostrar los iDevices y la presentación se adapta a la resolución de pantalla, incluso en dispositivos móviles.</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+]]></extra-head>
     <extra-body><![CDATA[<script type="text/javascript" src="my_js.js"></script>]]></extra-body>
     <langs lang="en">
         <name>INTEF with horizontal menu</name>
-		<description>This theme was originally created for INTEF (Instituto Nacional de Tecnologías Educativas y de Formación), Ministerio de Educación, Cultura y Deporte (Spanish Government). Original design by Aurelio Lorenzo. Adapted by Ignacio Gros.</description>
+		<description>This theme was originally created for INTEF (Instituto Nacional de Tecnologías Educativas y de Formación), Ministerio de Educación, Cultura y Deporte (Spanish Government). Original design by Aurelio Lorenzo. Adapted by Ignacio Gros. Features: Horizontal drop-down menu, hide/show iDevices, responsive design.</description>
 	</langs>
 </theme>
