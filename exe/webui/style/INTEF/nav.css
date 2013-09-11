@@ -73,3 +73,47 @@ body{padding:0;text-align:center}
 #content{display:inline-block}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
+
+@media screen and (min-width: 701px) and (max-width: 1015px) {
+    /* Fullsreen mode */
+    #content{border:none;width:100%}
+    #header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
+    /* Horizontal navigation */
+    #main{padding-left:20px;padding-top:0;clear:both}
+    #nodeTitle{left:20px}
+    #header{text-align:right;padding-right:20px}
+    #siteFooter{padding-left:20px}
+    #siteNav li:hover,#siteNav li.sfhover{background:#eee}
+    #siteNav .other-section{display:block}
+    #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
+    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#eee;margin:0;line-height:1.3em;background:#fff}
+    #siteNav ul ul{line-height:1.1em}
+    #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
+    #siteNav a{display:block;text-decoration:none;padding:.4em 20px;border:none}
+    #siteNav ul ul .daddy{background:url(my_nav_arrow.gif) no-repeat right 50%}
+    #siteNav li{float:left}
+    #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
+    * html #siteNav li ul{width:13em}
+    #siteNav li li{padding-right:1em;width:13em}
+    #siteNav li ul a{padding:.45em 15px}
+    #siteNav li ul ul{margin:-1.95em 0 0 14em}
+    * html #siteNav li ul ul{margin-left:13em}
+    #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
+    #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+}
+
+@media all and (max-width: 700px) {
+    #content{width:100%;border:0}
+    #userOptionsBar,#topPagination{display:none}
+    #siteNav{float:none;width:100%;padding:0}
+    #main{padding:0 10px}
+    #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px}
+    #nodeTitle{position:absolute;top:1px;left:10px}
+    #header{text-align:right;padding-right:10px}
+    #siteFooter{padding-left:10px}
+    #content .exe-col{float:none;width:100%;padding:0}
+    iframe{max-width:100%}
+    .pagination{text-align:center;height:35px;position:relative}
+    .pagination .prev{position:absolute;left:0}
+    .pagination .next{position:absolute;right:0}
+}
