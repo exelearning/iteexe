@@ -554,8 +554,15 @@ var eXeLearning_settings = {
 }
 
 // browse the specified URL in system browser
-function browseURL(url) {
-    window.parent.nevow_clientToServerEvent('browseURL', this, '', url);
+function browseURL(e) {
+    /* Links with rel="lightbox" */
+    if (typeof(e)=='object') {
+        if (typeof(e.rel)=='string' && e.rel.indexOf('lightbox')==0) {
+            return false;
+        }
+        e = e.href;
+    }
+    window.parent.nevow_clientToServerEvent('browseURL', this, '', e);
 }
 
 //TinyMCE
