@@ -157,8 +157,7 @@ class SinglePageExport(object):
     		    if 'xspf_player.swf' in idevice.systemResources:
     			    hasXspfplayer = True
             if not hasGallery:
-    			if 'GalleryIdevice' == idevice.klass:
-    				hasGallery = True
+                hasGallery = common.ideviceHasGallery(idevice)
             if not hasWikipedia:
     			if 'WikipediaIdevice' == idevice.klass:
     				hasWikipedia = True

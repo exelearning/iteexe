@@ -783,9 +783,21 @@ def hasWikipediaIdevice(node):
             return True
     return False
 
+def ideviceHasGallery(idevice):
+    if idevice.klass == 'GalleryIdevice':
+        return True
+    block = g_blockFactory.createBlock(None, idevice)
+    if not block:
+        log.critical("Unable to render iDevice.")
+        raise Error("Unable to render iDevice.")
+    content = block.renderView('default')
+    if re.search(' rel=[\'"]lightbox', content):
+        return True
+    return False
+
 def hasGalleryIdevice(node):
     for idevice in node.idevices:
-        if idevice.klass == 'GalleryIdevice':
+        if ideviceHasGallery(idevice):
             return True
     return False
 
