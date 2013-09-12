@@ -128,7 +128,7 @@ class AuthoringPage(RenderableResource):
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
-        html += u'<body onload="onLoadHandler();">\n'
+        html += u'<body onload="onLoadHandler();" class="exe-authoring-page">\n'
         html += u"<form method=\"post\" "
 
         if request is None:
@@ -186,8 +186,8 @@ class AuthoringPage(RenderableResource):
         html += u"<script type=\"text/javascript\">var exe_package_name='"+self.package.name+"';</script>\n"			
         html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
+        html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/mediaelement/exe_media.js"></script>\n'
         html += u'<link rel="stylesheet" type="text/css" href="/scripts/mediaelement/exe_media.css" />\n'
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'

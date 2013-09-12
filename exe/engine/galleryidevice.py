@@ -475,8 +475,10 @@ these in a gallery context rather then individually.</p>"""),
                                     u"the file size in the label.")
         self.systemResources += ['exe_lightbox.css']
         self.systemResources += ['exe_lightbox.js']
-        self.systemResources += ['exeGallery_actions.png']
-        self.systemResources += ['exeGallery_loading.gif']
+        self.systemResources += ['exe_lightbox_close.png']
+        self.systemResources += ['exe_lightbox_loading.gif']
+        self.systemResources += ['exe_lightbox_next.png']
+        self.systemResources += ['exe_lightbox_prev.png']
 
     # Properties
     addImageInstr = lateTranslate('addImageInstr')

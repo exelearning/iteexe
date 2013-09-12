@@ -1,42 +1,35 @@
+/* Lightbox */
 .exeImageGallery{margin:1em 0 0 15px;padding:0;overflow:auto}
 .exeImageGallery li{margin:0;padding:15px 15px 15px 0;display:block;float:left;list-style:none}
 .exeImageGallery a img{border:none}
 .exeImageGallery .tit{display:none}
-
-#lbOverlay{position:fixed; top:0; left:0; z-index:99997; width:100%; height:100%; background-color:#000}
-body.exe-ims #lbOverlay,body.exe-scorm #lbOverlay{background-color:#fff}
-
-#lbMain{position:absolute; left:0; width:100%; z-index:99998; text-align:center; line-height:0; display:-moz-inline-stack}
-#lbMain a img{border:1px solid #fff}
-
-#lbOuterContainer{position:relative; background-color:#fff; width:200px; height:200px; margin:0 auto; border:1px solid #888}
-body.exe-ims #lbOuterContainer,body.exe-scorm #lbOuterContainer{border-color:#ccc}
-
-#lbTopContainer, #lbBottomContainer{background-color:#fff; width:100%; line-height:1.4em; font-size:0.75em; overflow:hidden; margin:0 auto; padding:0; position:relative; z-index:14; display:none}
-#lbTopContainer{overflow:hidden; margin-top:5px}
-
-#lbImage{border:1px solid #fff}
-#lbImageContainer{padding:10px; z-index:12}
-#lbLoading{height:100%; width:100%; margin-top:-10px; background:url(exeGallery_loading.gif) center no-repeat}
-
-#lbHoverNav{position:absolute; top:0; left:0; height:100%; width:100%; z-index:10}
-#lbImageContainer>#lbHoverNav{left:0}
-#lbHoverNav a{outline:none}
-
-#lbPrev, #lbPrevTop, #lbNext, #lbNextTop, #lbClose, #lbCloseTop, #lbPrint, #lbPrintTop{width:26px; height:28px; float:right; margin:0 0 1px 8px; border:none !important;background-image:url(exeGallery_actions.png);background-repeat:no-repeat;background-position:0 0}
-#lbPrev.exeOff, #lbPrevTop.exeOff{background-position:0 -28px}
-#lbNext, #lbNextTop{background-position:-26px 0}
-#lbNext.exeOff, #lbNextTop.exeOff{background-position:-26px -28px}
-#lbClose, #lbCloseTop{background-position:-52px 0}
-#lbPrint, #lbPrintTop{background-position:-52px -28px}
-
-#lbTopData, #lbBottomData{float:left; text-align:left; padding-left:10px}
-#lbBottomData{padding-bottom:0.5em}
-#lbBottomData, #lbTopData{color:#333}
-
-#lbTopNav, #lbBottomNav{float:right; text-align:right; padding-right:10px}
-#lbNumTop, #lbNumBottom{font-style:italic}
-#lbDescBottom{display:block}
-#lbTitleTop, #lbTopNav{margin-top:0.3em}
-#lbTitleTop, #lbTitleBottom{display:block; font-weight:bold}
-#lbClose, #lbPrint, #lbPlay, #lbPause{margin:0 0 6px 8px}
+/* Lightbox 2 by Lokesh Dhakar | [lokeshdhakar.com](http://www.lokeshdhakar.com) | Licensed under the Creative Commons Attribution 2.5 License - http://creativecommons.org/licenses/by/2.5/ */
+body:after{content:url(exe_lightbox_close.png) url(exe_lightbox_loading.gif) url(exe_lightbox_prev.png) url(exe_lightbox_next.png);display:none}
+.lightboxOverlay{position:absolute;top:0;left:0;z-index:9999;background-color:black;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);opacity:0.8;display:none}
+.lightbox{position:absolute;left:0;width:100%;z-index:10000;text-align:center;line-height:0;font-weight:normal}
+.lightbox .lb-image{display:block;height:auto;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px}
+.lightbox a img{border:none}
+.lb-outerContainer{position:relative;background-color:white;*zoom:1;width:250px;height:250px;margin:0 auto;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px}
+.lb-outerContainer:after{content:"";display:table;clear:both}
+.lb-container{padding:4px}
+.lb-loader{position:absolute;top:43%;left:0%;height:25%;width:100%;text-align:center;line-height:0}
+.lb-cancel{display:block;width:32px;height:32px;margin:0 auto;background:url(exe_lightbox_loading.gif) no-repeat}
+.lb-nav{position:absolute;top:0;left:0;height:100%;width:100%;z-index:10}
+.lb-container>.nav{left:0}
+.lb-nav a{outline:none}
+.lb-prev,.lb-next{width:49%;height:100%;cursor:pointer;display:block}
+.lb-prev{left:0;float:left}
+.lb-prev:hover{background:url(exe_lightbox_prev.png) left 48% no-repeat}
+.lb-next{right:0;float:right}
+.lb-next:hover{background:url(exe_lightbox_next.png) right 48% no-repeat}
+.lb-dataContainer{margin:0 auto;padding-top:5px;*zoom:1;width:100%;-moz-border-radius-bottomleft:4px;-webkit-border-bottom-left-radius:4px;border-bottom-left-radius:4px;-moz-border-radius-bottomright:4px;-webkit-border-bottom-right-radius:4px;border-bottom-right-radius:4px}
+.lb-dataContainer:after{content:"";display:table;clear:both}
+.lb-data{padding:0 4px;color:#bbbbbb}
+.lb-data .lb-details{width:85%;float:left;text-align:left;line-height:1.1em}
+.lb-data .lb-caption{font-size:13px;font-weight:bold;line-height:1em}
+.lb-data .lb-number{display:block;clear:left;padding-bottom:1em;font-size:12px;color:#999999}
+.lb-data .lb-close{display:block;float:right;width:30px;height:30px;background:url(exe_lightbox_close.png) top right no-repeat;text-align:right;outline:none;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);opacity:0.7}
+.lb-data .lb-close:hover{cursor:pointer;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1}
+.exe-ims .lightboxOverlay,.exe-scorm .lightboxOverlay{background-color:#fff}
+.exe-ims .lb-data,.exe-scorm .lb-data{color:#333}
+.exe-ims .lb-data .lb-number,.exe-scorm .lb-data .lb-number{color:#444}

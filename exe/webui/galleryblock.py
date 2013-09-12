@@ -71,7 +71,7 @@ class GalleryBlock(Block):
             html += ['<li>']
             html += perCell(image, i-1, self.idevice.id)
             html += ['</li>']
-        html += [u'</ul><script type="text/javascript">exe_idevices.imageGallery.init(\'exeImageGallery%s\')</script>' % self.idevice.id]
+        html += ['</ul>']
         return html
 
     # Public Methods

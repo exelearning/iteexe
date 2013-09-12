@@ -551,7 +551,7 @@ class Epub3Export(object):
             imageGalleryCSS.copyfile(contentPages/'exe_lightbox.css')
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(contentPages/'exe_lightbox.js')
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), contentPages)
+            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), contentPages)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(contentPages/'exe_wikipedia.css')

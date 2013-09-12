@@ -1032,28 +1032,6 @@ if (navigator.appName=="Microsoft Internet Explorer") {
 	}	
 }
 
-var exe_idevices = {
-    imageGallery : {
-        init : function(id) {
-            var e = document.getElementById(id);
-            var lis = e.getElementsByTagName("LI");
-            var i = lis.length;
-            while (i--) {
-                var oH = lis[i].innerHTML;
-                var ie8_rel = 'rel=lightbox['+id+']';
-                if (oH.indexOf(ie8_rel)!=-1) { // Browsers that use no quotes for the attribute value (rel=lightbox)
-                    nH = oH.replace('rel=lightbox[','class="lytebox" data-lyte-options="group:');
-                    nH = nH.replace(']','"');
-                } else {
-                    nH = oH.replace('rel="lightbox[','class="lytebox" data-lyte-options="group:');
-                    nH = nH.replace(']','');
-                }
-                lis[i].innerHTML = nH;
-            }
-        }
-    }
-}
-
 /* libot_drag.js */
 var dO=new Object();
 dO.snapthresh=20;    // THIS VALUE IS THE SNAPTO INCREMENT.

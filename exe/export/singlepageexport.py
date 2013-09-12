@@ -184,7 +184,7 @@ class SinglePageExport(object):
             imageGalleryCSS.copyfile(self.outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(self.outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), self.outputDir)
+            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), self.outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(self.outputDir/'exe_wikipedia.css')

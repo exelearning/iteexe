@@ -179,6 +179,13 @@ class Manifest(object):
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
         if common.nodeHasMediaelement(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+        if common.hasGalleryIdevice(page.node):
+            self.resStr += '    <file href="exe_lightbox.js"/>\n'
+            self.resStr += '    <file href="exe_lightbox.css"/>\n'
+            self.resStr += '    <file href="exe_lightbox_close.png"/>\n'
+            self.resStr += '    <file href="exe_lightbox_loading.gif"/>\n'
+            self.resStr += '    <file href="exe_lightbox_next.png"/>\n'
+            self.resStr += '    <file href="exe_lightbox_prev.png"/>\n'
         if my_style.hasValidConfig:
             if my_style.get_jquery() == True:
                 self.resStr += '    <file href="exe_jquery.js"/>\n'
@@ -475,7 +482,7 @@ class IMSExport(object):
             imageGalleryCSS.copyfile(outputDir/'exe_lightbox.css') 
             imageGalleryJS = (self.scriptsDir/'exe_lightbox.js')
             imageGalleryJS.copyfile(outputDir/'exe_lightbox.js') 
-            self.imagesDir.copylist(('exeGallery_actions.png', 'exeGallery_loading.gif'), outputDir)
+            self.imagesDir.copylist(('exe_lightbox_close.png', 'exe_lightbox_loading.gif', 'exe_lightbox_next.png', 'exe_lightbox_prev.png'), outputDir)
         if hasWikipedia:
             wikipediaCSS = (self.cssDir/'exe_wikipedia.css')
             wikipediaCSS.copyfile(outputDir/'exe_wikipedia.css')

@@ -48,7 +48,6 @@ input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1
 .ExternalUrlIdevice iframe{border:none}
 /* Lightbox */
 .exeImageGallery{width:100%}
-#lbTopContainer, #lbBottomContainer{font-size:1em}
 /* base.css */
 .block,.feedback{padding:0}
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
