@@ -1,18 +1,24 @@
-
+# eXeLearning Spanish PO file
+# Copyright (C) 2004-2013 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# eXe Project <exe@exelearning.org>
+# Asociacion Cultural Reggae <acreggae@acreggae.com>\n", 2009.
+# Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>, 2011-2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-09-13 18:20+0200\n"
-"PO-Revision-Date: 2013-07-26 13:37+0200\n"
-"Last-Translator: Juan Rafael Fernández "
-"<juanrafael.fernandez@hispalinux.es>\n"
+"PO-Revision-Date: 2013-09-13 19:01+0200\n"
+"Last-Translator: Juan Rafael Fernández <juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
 
 #: exe/application.py:203
 #, python-format
@@ -27,6 +33,15 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"Uso: %s [OPCIÓN] [PAQUETE]\n"
+"    -V, --version   imprimir la versión y salir\n"
+"    -h, --help      mostrar este texto de ayuda y salir\n"
+"    --standalone    Ejecutar totalmente desde el directorio actual\n"
+"    --portable      Ejecutar en modo portable\n"
+"La configuración se lee del exe.conf presente en $HOME/.exe en GNU Linux/Unix/Mac,\n"
+"en Documents and Settings/<user name>/Application Data/exe en Windows XP \n"
+"o en\n"
+"Users/<user name>/AppData/Roaming/exe en Windows 7"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -2471,7 +2486,7 @@ msgstr "Siguiente"
 
 #: exe/export/singlepage.py:192
 msgid "You can close this window"
-msgstr ""
+msgstr "Puede cerrar esta ventana"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"

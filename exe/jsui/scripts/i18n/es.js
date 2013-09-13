@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-09-13 18:20+0200\nPO-Revision-Date: 2013-07-26 13:37+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-09-13 18:20+0200\nPO-Revision-Date: 2013-09-13 19:01+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Checking this option, the exported SCORM file will be editable with eXeLearning.": "Marcando esta opci\u00f3n, el archivo SCORM exportado ser\u00e1 editable con eXeLearning.", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
@@ -702,6 +702,7 @@ translations = {
  "Cell Padding": "Relleno de celda", 
  "Cloze Activity": "Rellenar huecos", 
  "Kurdish ": "Kurdo ", 
+ "Usage: %s [OPTION] [PACKAGE]\n  -V, --version    print version information and exit\n  -h, --help       display this help and exit\n  --standalone     Run totally from current directory\n  --portable       Run in portable mode\nSettings are read from exe.conf in $HOME\/.exe on Linux\/Unix\/Mac OS or\nin Documents and Settings\/<user name>\/Application Data\/exe on Windows XP or\nUsers\/<user name>\/AppData\/Roaming\/exe on Windows 7": "Uso: %s [OPCI\u00d3N] [PAQUETE]\n    -V, --version   imprimir la versi\u00f3n y salir\n    -h, --help      mostrar este texto de ayuda y salir\n    --standalone    Ejecutar totalmente desde el directorio actual\n    --portable      Ejecutar en modo portable\nLa configuraci\u00f3n se lee del exe.conf presente en $HOME\/.exe en GNU Linux\/Unix\/Mac,\nen Documents and Settings\/<user name>\/Application Data\/exe en Windows XP \no en\nUsers\/<user name>\/AppData\/Roaming\/exe en Windows 7", 
  "Enter the label here": "Introduzca aqu\u00ed la etiqueta", 
  "Note": "Nota", 
  "higher education": "educaci\u00f3n superior", 
@@ -1238,6 +1239,7 @@ translations = {
  "About": "Acerca de", 
  "You can close it safely.": "Puede cerrarla sin peligro de perder datos.", 
  "free software license EUPL": "licencia libre EUPL", 
+ "You can close this window": "Puede cerrar esta ventana", 
  "isrequiredby": "es requerido por", 
  "Select the appropriate language version \nof Wikipedia to search and enter search term.": "Seleccione el lenguaje de Wikipedia apropiado \npara introducir el t\u00e9rmino a buscar.", 
  "Feedback button will not appear if no \ndata is entered into this field.": "El bot\u00f3n de retroalimentaci\u00f3n no aparecer\u00e1 si no \nse insertan datos en este campo.", 
