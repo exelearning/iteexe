@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-26 13:42+0200\n"
+"POT-Creation-Date: 2013-09-13 18:20+0200\n"
 "PO-Revision-Date: 2009-01-31 06:24+1300\n"
 "Last-Translator: shannon <christoph@mussenbrock.de>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft "
@@ -16,6 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: exe/application.py:203
+#, python-format
+msgid ""
+"Usage: %s [OPTION] [PACKAGE]\n"
+"  -V, --version    print version information and exit\n"
+"  -h, --help       display this help and exit\n"
+"  --standalone     Run totally from current directory\n"
+"  --portable       Run in portable mode\n"
+"Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or\n"
+"in Documents and Settings/<user name>/Application Data/exe on Windows XP "
+"or\n"
+"Users/<user name>/AppData/Roaming/exe on Windows 7"
+msgstr ""
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -458,7 +472,7 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:129 exe/engine/clozefpdidevice.py:279
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozelangfpdidevice.py:284
-#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/field.py:3610 exe/engine/field.py:3658
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:562
 #: exe/engine/idevicestore.py:671 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
@@ -691,8 +705,8 @@ msgstr ""
 "wenn sie die Option wählen. Felder, die Sie leer lassen füllt \n"
 "eXe automatisch mit Hinweisen auf richtige oder falsche Antworten aus."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
-#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:131
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
+#: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:80
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
@@ -735,11 +749,11 @@ msgstr ""
 "Geben Sie die URL ein, die angezeigt werden soll\n"
 "und wählen Sie die Größe des Bereichs in dem sie angezeigt werden soll."
 
-#: exe/engine/field.py:2631
+#: exe/engine/field.py:2630
 msgid "Click Here"
 msgstr "Feedback"
 
-#: exe/engine/field.py:2826 exe/engine/field.py:2873
+#: exe/engine/field.py:2825 exe/engine/field.py:2872
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
@@ -748,7 +762,7 @@ msgstr ""
 "Geben Sie eine Bezeichnung für die\n"
 "MP3-Datei ein. Sie wird im Titelverzeichnis angezeigt. "
 
-#: exe/engine/field.py:3018 exe/engine/field.py:3252
+#: exe/engine/field.py:3017 exe/engine/field.py:3251
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -780,7 +794,7 @@ msgstr ""
 "\"Groß-/Keinschreibung\" nicht aktiv ist, wird \"elephant\" als richtig "
 "gewertet.</p>"
 
-#: exe/engine/field.py:3039 exe/engine/field.py:3273
+#: exe/engine/field.py:3038 exe/engine/field.py:3272
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -788,7 +802,7 @@ msgstr ""
 "<p> Wenn Sie die Funktion aktivieren wird die Groß- und Kleinschreibung "
 "bei der Bewertung berücksichtigt.</p>"
 
-#: exe/engine/field.py:3044 exe/engine/field.py:3278
+#: exe/engine/field.py:3043 exe/engine/field.py:3277
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -797,7 +811,7 @@ msgstr ""
 "<p>Wenn Sie diese Option aktivieren, wird jedes einzelne Wort direkt \n"
 "nach der Eingabe korrigiert und nicht erst am Ende der Übung. </p>"
 
-#: exe/engine/field.py:3082 exe/engine/field.py:3320
+#: exe/engine/field.py:3081 exe/engine/field.py:3319
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
@@ -806,11 +820,11 @@ msgstr ""
 "Automatisches Vervollständigen zulassen \n"
 " wenn Teilnehmer/innen die Lücken ausfüllen."
 
-#: exe/engine/field.py:3283
+#: exe/engine/field.py:3282
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3362 exe/engine/field.py:3406
+#: exe/engine/field.py:3361 exe/engine/field.py:3405
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -818,7 +832,7 @@ msgstr ""
 "Für dieses iDevice bitte nur .swf (Flash-Objekte)\n"
 "auswählen."
 
-#: exe/engine/field.py:3426 exe/engine/field.py:3490
+#: exe/engine/field.py:3425 exe/engine/field.py:3489
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -826,11 +840,11 @@ msgstr ""
 "Für dieses iDevice bitte nur .flv (Flash-Video-Dateien)\n"
 "auswählen."
 
-#: exe/engine/field.py:3502
+#: exe/engine/field.py:3501
 msgid "Type a discussion topic here."
 msgstr "Diskussionsthema hier eingeben:"
 
-#: exe/engine/field.py:3531
+#: exe/engine/field.py:3530
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -840,7 +854,7 @@ msgstr ""
 "Erstellung mathematischer Formeln verwenden. Eine Vorschau auf die LATEX-"
 "Formlen wird über den &lt;Vorschau&gt; Button erzeugt.</p>"
 
-#: exe/engine/field.py:3539
+#: exe/engine/field.py:3538
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -848,14 +862,14 @@ msgstr ""
 "Klicken Sie auf den Vorschau-Button,\n"
 "um den LATEX-Code in ein Bild umzuwandeln."
 
-#: exe/engine/field.py:3607 exe/engine/field.py:3656
+#: exe/engine/field.py:3606 exe/engine/field.py:3655
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
 #: exe/webui/element.py:1900 exe/webui/element.py:2252
 #: exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Antwort"
 
-#: exe/engine/field.py:3685 exe/engine/field.py:3751
+#: exe/engine/field.py:3684 exe/engine/field.py:3750
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
 #: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2537
@@ -863,13 +877,13 @@ msgstr "Antwort"
 msgid "Hint"
 msgstr "Hinweis"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2080
+#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2080
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Antworten"
 
-#: exe/engine/field.py:3833
+#: exe/engine/field.py:3832
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -880,7 +894,7 @@ msgstr ""
 "Die Frage sollte klar und eindeutig sein. Vermeiden Sie \n"
 "Verneinungen, weil sie missverstanden werden können. "
 
-#: exe/engine/field.py:3836 exe/engine/field.py:3917
+#: exe/engine/field.py:3835 exe/engine/field.py:3916
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
@@ -888,7 +902,7 @@ msgstr ""
 msgid "Question:"
 msgstr "Frage:"
 
-#: exe/engine/field.py:3841
+#: exe/engine/field.py:3840
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -902,7 +916,7 @@ msgstr ""
 "Sie können Optionen durch einen Klick auf das \"x\" \n"
 "neben der Option löschen."
 
-#: exe/engine/field.py:3845
+#: exe/engine/field.py:3844
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -910,7 +924,7 @@ msgstr ""
 "Wählen Sie alle richtigen Antworten durch Klick \n"
 " auf den Radiobutton aus."
 
-#: exe/engine/field.py:3848
+#: exe/engine/field.py:3847
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -918,7 +932,7 @@ msgstr ""
 "Geben Sie den Feedback-Text ein\n"
 "den Sie den Teilnehmer/innen mitgeben wollen."
 
-#: exe/engine/field.py:3850 exe/engine/field.py:3920
+#: exe/engine/field.py:3849 exe/engine/field.py:3919
 #: exe/engine/notaidevice.py:165 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -1757,7 +1771,7 @@ msgstr ""
 "Speichern gescheitert\n"
 "Letzte erfolgreiche Speicherung ist %s"
 
-#: exe/engine/package.py:1298 exe/jsui/scripts/app/controller/Toolbar.js:367
+#: exe/engine/package.py:1298 exe/jsui/scripts/app/controller/Toolbar.js:371
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:355
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
@@ -2243,8 +2257,8 @@ msgid ""
 msgstr ""
 
 #: exe/export/cmdlineexporter.py:65 exe/jsui/mainpage.py:280
-#: exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1065 exe/jsui/mainpage.py:1106
-#: exe/jsui/mainpage.py:1141
+#: exe/jsui/mainpage.py:915 exe/jsui/mainpage.py:1068 exe/jsui/mainpage.py:1109
+#: exe/jsui/mainpage.py:1144
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2261,8 +2275,15 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:583 exe/export/imsexport.py:485
-#: exe/export/scormexport.py:808 exe/export/websiteexport.py:92
+#: exe/export/epub3export.py:331 exe/export/imsexport.py:279
+#: exe/export/scormexport.py:492 exe/export/singlepage.py:182
+#: exe/export/websitepage.py:123 exe/webui/editorpage.py:277
+#: exe/webui/editorpage.py:279
+msgid "Show/Hide"
+msgstr ""
+
+#: exe/export/epub3export.py:590 exe/export/imsexport.py:502
+#: exe/export/scormexport.py:826 exe/export/websiteexport.py:92
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2275,13 +2296,17 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Lizenziert unter "
 
-#: exe/export/scormexport.py:526 exe/export/websitepage.py:299
+#: exe/export/scormexport.py:542 exe/export/websitepage.py:306
 msgid "Previous"
 msgstr "Vorheriges"
 
-#: exe/export/scormexport.py:527 exe/export/websitepage.py:305
+#: exe/export/scormexport.py:543 exe/export/websitepage.py:312
 msgid "Next"
 msgstr "Nächste"
+
+#: exe/export/singlepage.py:192
+msgid "You can close this window"
+msgstr ""
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -2407,8 +2432,8 @@ msgstr ""
 
 #: exe/jsui/mainpage.py:785 exe/jsui/mainpage.py:790 exe/jsui/mainpage.py:793
 #: exe/jsui/mainpage.py:796 exe/jsui/mainpage.py:799 exe/jsui/mainpage.py:802
-#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:1049 exe/jsui/mainpage.py:1122
-#: exe/jsui/mainpage.py:1259
+#: exe/jsui/mainpage.py:805 exe/jsui/mainpage.py:1052 exe/jsui/mainpage.py:1125
+#: exe/jsui/mainpage.py:1262
 msgid "EXPORT FAILED!"
 msgstr "Export gescheitert!"
 
@@ -2439,12 +2464,12 @@ msgstr "Paket nach %s entpackt"
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1022
+#: exe/jsui/mainpage.py:978 exe/jsui/mainpage.py:1025
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Dateiname %s ist eine Datei, sie kann nicht ersetzt werden."
 
-#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1029
+#: exe/jsui/mainpage.py:984 exe/jsui/mainpage.py:1032
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -2453,11 +2478,19 @@ msgstr ""
 "Der Dateiname %s besteht bereits. Wählen Sie einen anderen Namen oder "
 "löschen Sie den bestehenden zuerst. "
 
-#: exe/jsui/mainpage.py:1037 exe/jsui/mainpage.py:1053
-#: exe/jsui/mainpage.py:1066 exe/jsui/mainpage.py:1072
-#: exe/jsui/mainpage.py:1090 exe/jsui/mainpage.py:1107
-#: exe/jsui/mainpage.py:1113 exe/jsui/mainpage.py:1127
-#: exe/jsui/mainpage.py:1142 exe/jsui/mainpage.py:1148
+#: exe/jsui/mainpage.py:998 exe/jsui/mainpage.py:1043 exe/jsui/mainpage.py:1058
+#: exe/jsui/mainpage.py:1077 exe/jsui/mainpage.py:1095
+#: exe/jsui/mainpage.py:1118 exe/jsui/mainpage.py:1132
+#: exe/jsui/mainpage.py:1153
+#, python-format
+msgid "Exported to %s"
+msgstr "%s exportiert"
+
+#: exe/jsui/mainpage.py:1040 exe/jsui/mainpage.py:1056
+#: exe/jsui/mainpage.py:1069 exe/jsui/mainpage.py:1075
+#: exe/jsui/mainpage.py:1093 exe/jsui/mainpage.py:1110
+#: exe/jsui/mainpage.py:1116 exe/jsui/mainpage.py:1130
+#: exe/jsui/mainpage.py:1145 exe/jsui/mainpage.py:1151
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2466,27 +2499,19 @@ msgstr ""
 "Export gescheitert!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1040 exe/jsui/mainpage.py:1055
-#: exe/jsui/mainpage.py:1074 exe/jsui/mainpage.py:1092
-#: exe/jsui/mainpage.py:1115 exe/jsui/mainpage.py:1129
-#: exe/jsui/mainpage.py:1150
-#, python-format
-msgid "Exported to %s"
-msgstr "%s exportiert"
-
-#: exe/jsui/mainpage.py:1183 exe/jsui/mainpage.py:1237
+#: exe/jsui/mainpage.py:1186 exe/jsui/mainpage.py:1240
 #: exe/webui/stylemanagerpage.py:182
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Datei %s existiert nicht oder ist nicht lesbar."
 
-#: exe/jsui/mainpage.py:1187
+#: exe/jsui/mainpage.py:1190
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Die Datei konnte nicht geladen werden. Schicken Sie per E-Mail eine "
 "Fehlermeldung an bugs@exelearning.org (englischsprachig)."
 
-#: exe/jsui/mainpage.py:1190
+#: exe/jsui/mainpage.py:1193
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -2495,35 +2520,35 @@ msgstr ""
 "Sorry, falsches Dateiformat \n"
 "%s"
 
-#: exe/jsui/mainpage.py:1192
+#: exe/jsui/mainpage.py:1195
 msgid "Sorry, wrong file format"
 msgstr "Sorry, falsches Dateiformat"
 
-#: exe/jsui/mainpage.py:1250
+#: exe/jsui/mainpage.py:1253
 #, python-format
 msgid "Correct Style import : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1253
+#: exe/jsui/mainpage.py:1256
 #, python-format
 msgid "Incorrect style file : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1270
+#: exe/jsui/mainpage.py:1273
 #, python-format
 msgid "Correct ZIP Style exported : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1273
+#: exe/jsui/mainpage.py:1276
 #, python-format
 msgid "can't export style : %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1290
+#: exe/jsui/mainpage.py:1293
 msgid "Style deleted "
 msgstr ""
 
-#: exe/jsui/mainpage.py:1293
+#: exe/jsui/mainpage.py:1296
 msgid "can't delete style "
 msgstr ""
 
@@ -2557,17 +2582,17 @@ msgid "Image Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:196
-#: exe/jsui/scripts/app/controller/Toolbar.js:430
-#: exe/jsui/scripts/app/controller/Toolbar.js:451
-#: exe/jsui/scripts/app/controller/Toolbar.js:486
-#: exe/jsui/scripts/app/controller/Toolbar.js:505
-#: exe/jsui/scripts/app/controller/Toolbar.js:570
-#: exe/jsui/scripts/app/controller/Toolbar.js:598
-#: exe/jsui/scripts/app/controller/Toolbar.js:640
-#: exe/jsui/scripts/app/controller/Toolbar.js:657
-#: exe/jsui/scripts/app/controller/Toolbar.js:686
-#: exe/jsui/scripts/app/controller/Toolbar.js:812
-#: exe/jsui/scripts/app/controller/Toolbar.js:886
+#: exe/jsui/scripts/app/controller/Toolbar.js:442
+#: exe/jsui/scripts/app/controller/Toolbar.js:463
+#: exe/jsui/scripts/app/controller/Toolbar.js:498
+#: exe/jsui/scripts/app/controller/Toolbar.js:517
+#: exe/jsui/scripts/app/controller/Toolbar.js:586
+#: exe/jsui/scripts/app/controller/Toolbar.js:618
+#: exe/jsui/scripts/app/controller/Toolbar.js:660
+#: exe/jsui/scripts/app/controller/Toolbar.js:677
+#: exe/jsui/scripts/app/controller/Toolbar.js:706
+#: exe/jsui/scripts/app/controller/Toolbar.js:832
+#: exe/jsui/scripts/app/controller/Toolbar.js:906
 msgid "All Files"
 msgstr ""
 
@@ -2608,7 +2633,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/jsui/scripts/app/controller/Toolbar.js:380
 msgid "Confirm"
 msgstr ""
 
@@ -2625,174 +2650,174 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:349
+#: exe/jsui/scripts/app/controller/Toolbar.js:353
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Preferences"
 msgstr "Präferenzen"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:373
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:397
+#: exe/jsui/scripts/app/controller/Toolbar.js:405
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:418
+#: exe/jsui/scripts/app/controller/Toolbar.js:430
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:423
+#: exe/jsui/scripts/app/controller/Toolbar.js:435
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:429
-#: exe/jsui/scripts/app/controller/Toolbar.js:450
-#: exe/jsui/scripts/app/controller/Toolbar.js:811
-#: exe/jsui/scripts/app/controller/Toolbar.js:885
+#: exe/jsui/scripts/app/controller/Toolbar.js:441
+#: exe/jsui/scripts/app/controller/Toolbar.js:462
+#: exe/jsui/scripts/app/controller/Toolbar.js:831
+#: exe/jsui/scripts/app/controller/Toolbar.js:905
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:439
+#: exe/jsui/scripts/app/controller/Toolbar.js:451
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:444
+#: exe/jsui/scripts/app/controller/Toolbar.js:456
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:460
+#: exe/jsui/scripts/app/controller/Toolbar.js:472
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:475
+#: exe/jsui/scripts/app/controller/Toolbar.js:487
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:485
+#: exe/jsui/scripts/app/controller/Toolbar.js:497
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:494
+#: exe/jsui/scripts/app/controller/Toolbar.js:506
 msgid "Select LOM Metadata file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:504
+#: exe/jsui/scripts/app/controller/Toolbar.js:516
 msgid "XML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:519
+#: exe/jsui/scripts/app/controller/Toolbar.js:531
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:527
+#: exe/jsui/scripts/app/controller/Toolbar.js:539
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:528
+#: exe/jsui/scripts/app/controller/Toolbar.js:540
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:551
+#: exe/jsui/scripts/app/controller/Toolbar.js:563
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:561
+#: exe/jsui/scripts/app/controller/Toolbar.js:573
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:569
-#: exe/jsui/scripts/app/controller/Toolbar.js:597
+#: exe/jsui/scripts/app/controller/Toolbar.js:585
+#: exe/jsui/scripts/app/controller/Toolbar.js:617
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:579
+#: exe/jsui/scripts/app/controller/Toolbar.js:595
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:589
+#: exe/jsui/scripts/app/controller/Toolbar.js:605
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:613
+#: exe/jsui/scripts/app/controller/Toolbar.js:633
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:630
+#: exe/jsui/scripts/app/controller/Toolbar.js:650
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:639
+#: exe/jsui/scripts/app/controller/Toolbar.js:659
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:647
+#: exe/jsui/scripts/app/controller/Toolbar.js:667
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:656
+#: exe/jsui/scripts/app/controller/Toolbar.js:676
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:664
+#: exe/jsui/scripts/app/controller/Toolbar.js:684
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:666
+#: exe/jsui/scripts/app/controller/Toolbar.js:686
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:668
+#: exe/jsui/scripts/app/controller/Toolbar.js:688
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:670
+#: exe/jsui/scripts/app/controller/Toolbar.js:690
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:672
+#: exe/jsui/scripts/app/controller/Toolbar.js:692
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:685
+#: exe/jsui/scripts/app/controller/Toolbar.js:705
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:784
+#: exe/jsui/scripts/app/controller/Toolbar.js:804
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:800
+#: exe/jsui/scripts/app/controller/Toolbar.js:820
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:805
+#: exe/jsui/scripts/app/controller/Toolbar.js:825
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:824
+#: exe/jsui/scripts/app/controller/Toolbar.js:844
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:825
+#: exe/jsui/scripts/app/controller/Toolbar.js:845
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:849
+#: exe/jsui/scripts/app/controller/Toolbar.js:869
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:865
+#: exe/jsui/scripts/app/controller/Toolbar.js:885
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:871
+#: exe/jsui/scripts/app/controller/Toolbar.js:891
 msgid "Saving package..."
 msgstr ""
 
@@ -2809,27 +2834,27 @@ msgstr ""
 msgid "You do not have the permissions to open the file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:315
+#: exe/jsui/scripts/app/controller/filepicker/File.js:314
 msgid "You do not have the permissions to  save into folder"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:327
+#: exe/jsui/scripts/app/controller/filepicker/File.js:326
 msgid "Create Folder"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:328
+#: exe/jsui/scripts/app/controller/filepicker/File.js:327
 msgid "Enter the new folder name:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:342
+#: exe/jsui/scripts/app/controller/filepicker/File.js:341
 msgid "You do not have the permissions to create a folder in folder"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:348
+#: exe/jsui/scripts/app/controller/filepicker/File.js:347
 msgid "Confirm?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/filepicker/File.js:349
+#: exe/jsui/scripts/app/controller/filepicker/File.js:348
 msgid "The file already exists. Do you want to replace it?"
 msgstr ""
 
@@ -5769,10 +5794,6 @@ msgstr "iDevice importieren"
 #: exe/webui/editorpage.py:274
 msgid "Export iDevice"
 msgstr "iDevice exportieren"
-
-#: exe/webui/editorpage.py:277 exe/webui/editorpage.py:279
-msgid "Show/Hide"
-msgstr ""
 
 #: exe/webui/editorpage.py:313
 msgid "New iDevice"
@@ -9258,13 +9279,4 @@ msgstr ""
 "Die idevice/generic.data Datei oder das von Ihnen geladene Paket wurde "
 "mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie "
 "Ihre eXe Version und versuchen Sie es dann noch einmal. "
-
-#~ msgid "Tipo de alumno"
-#~ msgstr ""
-
-#~ msgid "For group work"
-#~ msgstr ""
-
-#~ msgid "For individual tuition"
-#~ msgstr ""
 
