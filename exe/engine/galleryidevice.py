@@ -473,12 +473,12 @@ these in a gallery context rather then individually.</p>"""),
                                     u"below where you will be able to label "
                                     u"it. It's always good practice to put "
                                     u"the file size in the label.")
+        '''
         self.systemResources += ['exe_lightbox.css']
-        self.systemResources += ['exe_lightbox.js']
-        self.systemResources += ['exe_lightbox_close.png']
-        self.systemResources += ['exe_lightbox_loading.gif']
-        self.systemResources += ['exe_lightbox_next.png']
-        self.systemResources += ['exe_lightbox_prev.png']
+            etc.
+            See scormexport.py and imsexport.py (if common.hasGalleryIdevice(page.node): ...)
+            Those files can now be required even if an Image Gallery is not present.
+        '''
 
     # Properties
     addImageInstr = lateTranslate('addImageInstr')
