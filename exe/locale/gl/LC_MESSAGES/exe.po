@@ -1,4 +1,9 @@
-
+# EXELearning Galician PO file
+# Copyright (C) 2008-2013 eXeLearning.org
+# This file is distributed under the same license as the EXE package.
+# eXe Project <exe@exelearning.org>
+# Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>, 2012, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk\n"

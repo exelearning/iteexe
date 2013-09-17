@@ -1,4 +1,10 @@
-
+# EXELearning Italian PO file
+# Copyright (C) 2004-2013 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# eXe Project <exe@exelearning.org>
+# Prof. Carlo Gandolfi <crgand@users.sourceforge.net>, 2008.
+# Andrea Primiani <primiani@dag.it>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"

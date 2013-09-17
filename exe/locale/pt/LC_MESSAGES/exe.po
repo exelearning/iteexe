@@ -1,4 +1,12 @@
-
+# EXELearning Portuguese PO file
+# Copyright (C) 2004-2008 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+#
+# Current translator:
+#    - Dionisio Martínez Soler <dmsoler@edu.xunta.es>, 2013
+#
+# TODO: Harmonizar terminologia interna e externamente; rever lista de nomes de línguas.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
