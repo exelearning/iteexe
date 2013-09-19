@@ -197,6 +197,7 @@ class RenderableResource(_RenderablePage, Resource):
         request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
         request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
         request.setHeader("Pragma", "no-cache")
+        request.setHeader("X-XSS-Protection", "0")
         return Resource.render(self, request)
 
 class File(static.File):
