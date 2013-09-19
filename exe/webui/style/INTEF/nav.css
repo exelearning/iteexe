@@ -57,7 +57,7 @@ body{padding:0;text-align:center}
 #siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
 #siteNav a.main-node:hover{text-decoration:underline;background:none}
 #siteNav ul ul a{padding-left:25px;font-size:.95em}
-#siteNav ul ul ul a{font-size:1em;padding-left:50px}
+#siteNav ul ul ul a{padding-left:50px}
 #siteFooter{padding-left:250px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
@@ -96,7 +96,7 @@ html[xmlns] #content{display:block}
     #siteNav li ul{position:absolute;left:-999em;height:auto;width:14.4em;w\idth:13.9em;border-width:0.25em}
     * html #siteNav li ul{width:13em}
     #siteNav li li{padding-right:1em;width:13em}
-    #siteNav li ul a{padding:.45em 15px}
+    #siteNav li ul a,#siteNav li ul ul a{padding:.45em 15px}
     #siteNav li ul ul{margin:-1.95em 0 0 14em}
     * html #siteNav li ul ul{margin-left:13em}
     #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}

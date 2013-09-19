@@ -83,8 +83,7 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 li{list-style-position:outside}
 
 /* Hide/Show iDevice */
-.toggle-idevice{margin:0;text-align:right}
-.hidden-idevice .image_text{display:none} /* To review. Required for Magnifier */
+.toggle-idevice{display:block;margin:0;text-align:right}
 .iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(my_hide_show.png) no-repeat 0 -16px}
 .toggle-idevice .show-idevice{background-position:0 0}

@@ -1112,6 +1112,80 @@ if(dO.ns4)setTimeout('history.go(0)',300);
 }
 
 var $exe = {
+    init : function(){
+        var d = document.body.className;
+        d += ' js';
+        //iDevice Toggler
+        if (d!='exe-single-page js') {
+            var ie_v = $exe.isIE();
+            if (ie_v) {
+                if (ie_v>7) $exe.iDeviceToggler.init();
+            } else $exe.iDeviceToggler.init();
+        }
+        //Load exe_media.js
+        var h=document.body.innerHTML;
+        if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(" class='mediaelement")!=-1){
+            $exe.loadMediaPlayer.getPlayer()
+        }         
+    },
+    isIE :function() {
+        var n = navigator.userAgent.toLowerCase();
+        return (n.indexOf('msie') != -1) ? parseInt(n.split('msie')[1]) : false;
+    },
+    iDeviceToggler : {
+        init : function(){
+            var t = $exe_i18n.showHide;
+            var t = t.split("/");
+            if (t.length!=2) return false;
+            $exe.iDeviceToggler.t1 = t[0];
+            $exe.iDeviceToggler.t2 = t[1];
+            var em1 = $(".iDevice_header");
+            var em0 = $(".iDevice.emphasis0");
+            if ((em1.length+em0.length)>1) {
+                em1.each(function(){
+                    var t = $exe.iDeviceToggler.t2;
+                    var e = $(this);
+                    var iDeviceID = e.parent().parent().attr("id");
+                    if (!iDeviceID) return false;
+                    var l = '<p class="toggle-idevice toggle-em1"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em1\')" title="'+t+'"><span>'+t+'</span></a></p>';
+                    var h = e.html();
+                    e.html(h+l);
+                });
+                em0.each(function(){
+                    var t = $exe.iDeviceToggler.t2;
+                    var e = $(this);
+                    var iDeviceID = e.parent().attr("id");
+                    if (!iDeviceID) return false;
+                    var l = '<p class="toggle-idevice toggle-em0"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em0\')" title="'+t+'"><span>'+t+'</span></a></p>';
+                    var h = e.html();
+                    e.before(l);
+                });
+            }
+        },
+        toggle : function(e,id,em) {
+            var t = $exe.iDeviceToggler.t2;
+            var i = $("#"+id);
+            var sel = ".iDevice_content";
+            if (em=="em1") sel = ".iDevice_inner";
+            var iC = $(sel,i);
+            var c = i.attr("class");
+            if (c.indexOf(" hidden-idevice")==-1) {
+                t = $exe.iDeviceToggler.t1;
+                c += " hidden-idevice";
+                iC.slideUp("fast");
+                e.className = "show-idevice";
+                e.title = t;
+                e.innerHTML = "<span>"+t+"</span>";
+            } else {
+                c = c.replace(" hidden-idevice","");
+                iC.slideDown("fast");
+                e.className = "hide-idevice";
+                e.title = t;
+                e.innerHTML = "<span>"+t+"</span>";
+            }
+            i.attr("class",c);
+        }
+    },
     loadMediaPlayer : {
         getPlayer : function(){
             $("VIDEO").hide();
@@ -1154,8 +1228,5 @@ var $exe = {
 }
 
 $(function(){
-    var h=document.body.innerHTML;
-    if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(' class=mediaelement')!=-1){
-        $exe.loadMediaPlayer.getPlayer()
-    }
+    $exe.init();
 });

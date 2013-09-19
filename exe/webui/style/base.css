@@ -55,7 +55,10 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-layout-2-70-30 .exe-col-1{width:69%}
 .exe-layout-3-cols .exe-col{float:left;width:32%}
 .exe-layout-3-cols .exe-col-1,.exe-layout-3-cols .exe-col-2{padding-right:2%}
+/* iDevice Toggler */
+.toggle-idevice{display:none}
 /* Autoclear */
 .exe-clear{overflow:auto}
 /* To review */
 .question .answer p{margin:0 0 .7em 0}
+.hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
