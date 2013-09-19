@@ -252,15 +252,18 @@ class lomSub(supermod.lom):
                 pass
             elif re.findall("_entity[0-9]*$", base):
                 v = rootObj.get_valueOf_()
-                if re.findall('^BEGIN\:VCARD VERSION\:3\.0 FN\:.*\ EMAIL\;TYPE\=INTERNET\:.*\ ORG\:.*END\:VCARD$', v):
-                    sep = []
-                    sep.append(v.find(' FN:') + 4)
-                    sep.append(v.find(' EMAIL;TYPE=INTERNET:'))
-                    sep.append(v.find(' ORG:'))
-                    sep.append(v.find(' END:VCARD'))
-                    form[base + '_name'] = v[sep[0]:sep[1]]
-                    form[base + '_email'] = v[sep[1] + 21:sep[2]]
-                    form[base + '_organization'] = v[sep[2] + 5:sep[3]]
+                if v.startswith('BEGIN:VCARD'):
+                    if not v.endswith(' END:VCARD'):
+                        v = v + ' END:VCARD'
+                    if re.findall('^BEGIN\:VCARD VERSION\:3\.0 FN\:.*\ EMAIL\;TYPE\=INTERNET\:.*\ ORG\:.*END\:VCARD$', v):
+                        sep = []
+                        sep.append(v.find(' FN:') + 4)
+                        sep.append(v.find(' EMAIL;TYPE=INTERNET:'))
+                        sep.append(v.find(' ORG:'))
+                        sep.append(v.find(' END:VCARD'))
+                        form[base + '_name'] = v[sep[0]:sep[1]]
+                        form[base + '_email'] = v[sep[1] + 21:sep[2]]
+                        form[base + '_organization'] = v[sep[2] + 5:sep[3]]
                 else:
                     print 'Entity VCARD structure error'
             elif base.endswith('_duration'):
