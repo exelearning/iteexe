@@ -27,6 +27,7 @@ var INTEF = {
                     var t = INTEF.iDeviceToggler.t2;
                     var e = $(this);
                     var iDeviceID = e.parent().parent().attr("id");
+                    if (!iDeviceID) return false;
                     var l = '<p class="toggle-idevice toggle-em1"><a href="#" onclick="INTEF.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em1\')" title="'+t+'"><span>'+t+'</span></a></p>';
                     var h = e.html();
                     e.html(h+l);
@@ -35,6 +36,7 @@ var INTEF = {
                     var t = INTEF.iDeviceToggler.t2;
                     var e = $(this);
                     var iDeviceID = e.parent().attr("id");
+                    if (!iDeviceID) return false;
                     var l = '<p class="toggle-idevice toggle-em0"><a href="#" onclick="INTEF.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em0\')" title="'+t+'"><span>'+t+'</span></a></p>';
                     var h = e.html();
                     e.before(l);
