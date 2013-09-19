@@ -51,3 +51,6 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 /* Form buttons */
 .feedbackbutton{background:#AACCB5;margin-bottom:1em}
+/* Hide/Show iDevice */
+.toggle-idevice{margin:12px 0 0;text-align:right;display:block}
+.iDevice_header .toggle-idevice{float:right;margin:0}

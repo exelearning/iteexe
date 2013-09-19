@@ -54,3 +54,9 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 /* Form buttons */
 .feedbackbutton{background:#4D4D4D;margin-bottom:1em;color:#fff}
+/* Hide/Show iDevice */
+.toggle-idevice{margin:12px 0 0;text-align:right;display:block}
+.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
+.toggle-idevice a{display:inline-block;width:14px;height:14px;background:url(_silver_hide_show.png) no-repeat 0 -14px}
+.toggle-idevice .show-idevice{background-position:0 0}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
