@@ -197,22 +197,21 @@ class AppletBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-
+        resources = "http://127.0.0.1:%s/%s/resources" % (self.config.port, self.package.name)
         appletcode = self.idevice.appletCode
-	# appletcode.encode('raw_unicode_escape').decode('utf-8')
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('\xC2\x82','&#130')
-        appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
-        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"')
+        appletcode = appletcode.replace('<applet','<applet codebase="%s"' % resources)
+        appletcode = appletcode.replace('<APPLET','<applet codebase="%s"' % resources)
 
-	if self.idevice.type == "jclic":
-            appletcode = appletcode.replace('activitypack\" value=\"', 'activitypack\" value=\"/resources/')
-        
+        if self.idevice.type == "jclic":
+            appletcode = appletcode.replace('activitypack" value="', 'activitypack" value="%s/' % resources)
+
         if self.idevice.type == "geogebra":
             # according to self.port (config.py)
-            appletcode = appletcode.replace('filename\" value=\"', 'filename\" value=\"http://127.0.0.1:51235/newPackage/resources/')
+            appletcode = appletcode.replace('filename" value="', 'filename" value="%s/' % resources)
 
         html  = u"<!-- applet iDevice -->\n"
         html  = u"<div class=\"iDevice "
