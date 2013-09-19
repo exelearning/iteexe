@@ -88,4 +88,4 @@ li{list-style-position:outside}
 .iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
 .toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(my_hide_show.png) no-repeat 0 -16px}
 .toggle-idevice .show-idevice{background-position:0 0}
-.toggle-idevice span{position:absolute!important;clip:rect(1px 1px 1px 1px);/* IE6, IE7 */clip:rect(1px,1px,1px,1px)}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
