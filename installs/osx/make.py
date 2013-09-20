@@ -56,6 +56,7 @@ shutil.rmtree('NEWS.txt', True)
 shutil.copy(os.path.join(WDIR, 'NEWS'), 'NEWS.txt')
 shutil.rmtree('changelog_eXe_ITE.txt', True)
 shutil.copy(os.path.join(WDIR, 'changelog_eXe_ITE.txt'), 'changelog_eXe_ITE.txt')
+os.chmod('exe.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0755)
 os.chdir(WDIR)
 
 # detatch the disk image template
