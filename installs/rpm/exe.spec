@@ -2,6 +2,8 @@
 
 %define pyver  %(%{__python} -c 'import sys ; print sys.version[:3]')
 
+%define debug_package %{nil}
+
 Summary: eXe eLearning XHTML editor
 Name: exe
 Version: %{?clversion}%{!?clversion:%{ver}}
@@ -14,7 +16,7 @@ Vendor: The eXeLearning Project <exe@exelearning.org>
 Url: http://exelearning.org/
 BuildRoot: %{_tmppath}/exe-buildroot
 Prefix: %{_prefix}
-ExclusiveArch: i386
+ExclusiveArch: i686
 BuildRequires: python-devel
 BuildRequires: python >= 2.6
 Requires: python >= 2.6, python-imaging, python-zope-interface, python-chardet
