@@ -1,3 +1,74 @@
+python-exe (2:2.0beta1) lucid; urgency=low
+
+  [Pedro Peña]
+  * Preparing changelog for next release
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 23 Sep 2013 09:15:29 +0200
+
+python-exe (2:1.04.1.3605intef7.2) lucid; urgency=low
+
+  [Antonio Moreno]
+  * Fix bug #1390: "Espacios en blanco en el nombre del fichero que se carga"
+    (java applet idevice)
+  * Java applets correctly previewed. With revision/help/completion of
+    Pedro Peña.
+
+  [Pedro Peña]
+  * Fix iframe bug in Chrome/Chromium in about, preferences, xliff... pages
+  * Fix bug #1836: "Single page export: No alert after finishing"
+  * Changed policy when printing: no autoclose temporary printing document,
+    ask user to close
+  * Fix bug #1799, disabling browser history
+  * Fix bug #1851: "Problem with mp3 audio when exporting"
+  * Fix bug #1871: "Failure to save as (save undefined.elp)"
+  * Fix bug #1624: "XLIFF export fails with cloze activity idevice"
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Fri, 20 Sep 2013 11:04:38 +0200
+
+python-exe (2:1.04.1.3605intef7.1) lucid; urgency=low
+
+  [Antonio Moreno]
+  * Corregido bug #1657: "Accesibilidad a la licencia relacionada con las descargas de la wikipedia"
+  * Corregido bug #1630: "Artículo Wikipedia: faltan varias imágenes (error 404)". Con ayuda de Ignacio Gros y Pedro Peña
+
+  [Francisco Macías]
+  * Añadido botón para borrar idevice sin necesidad de editar
+
+  [Gaizka Bilbao]
+  * Revisión del estilo Tknika
+
+  [Ignacio Gros]
+  * Corregido bug #1576: "Pérdida de swf"
+  * Revisión de los estilos por defecto, Intef, Cedec, Carm y Todo-FP
+  * Aviso de vista de compatibilidad de Internet Explorer activada. Con ayuda de Pedro Peña
+  * Corregido bug #1723: "Mala visión Galería de imágenes y Lupa en determinadas ocasiones"
+  * Añadidos nuevos estilos MAX y Educamadrid aportados por la Consejería de Educación de la Comunidad de Madrid
+
+  [Juan Rafael Fernández]
+  * Mejoras en algunas cadenas y textos originales
+  * Traducidas al inglés cadenas en español que quedaban en el código fuente
+  * Coordinación de la actualización de traducciones
+
+  [José Ramón Jiménez]
+  * Corregido bug #1560: "Agrega no acepta el caracter ':' en los nombres de fichero incluidos en un zip a importar"
+  * Corregido bug #1662: "Error autopublicación Agrega"
+  * Corregido bug #1687: "No se elimina archivo flv"
+  * Revisión de estilo FPD-MEDU
+  * Corregido bug #1693: "elp con espacio en blanco al final"
+
+  [Pedro Peña]
+  * Corregido bug #1616: "Problemas con ELPs anteriores a Intef6"
+  * Corregido bug #1661: "Error al mover imágenes de la galería de imágenes"
+  * Corregido bug #1658: "crased con frecuencia en MAC OsX"
+  * Corregido bug #1643: "Fallo en traducción impide eliminar iDevice en francés"
+  * Corregido bug #1663: "Nombre carpetas con tilde"
+  * Corregido bug #1655: "Incorrecto funcionamiento galería de imágenes"
+  * Mejoras en filepicker de eXe para parecerese más al filepicker del sistema Windows
+  * Comprobación de permisos y otras mejoras en filepicker
+  * Comprobación de que eXe no se esté ejecutando al instalar y desinstalar
+
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Tue, 14 May 2013 13:41:21 +0200
+
 python-exe (2:1.04.1.3605intef7) lucid; urgency=low
 
   [Pedro Peña]
