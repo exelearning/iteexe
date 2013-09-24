@@ -273,7 +273,8 @@ Ext.define('eXe.controller.MainTab', {
                 }                    
             },
             failure: function(form, action) {
-                Ext.Msg.alert(_('Error'), action.result.errorMessage);
+            	if (action.result)
+            		Ext.Msg.alert(_('Error'), action.result.errorMessage);
             }
         });
 //        console.log('render end');
@@ -338,7 +339,7 @@ Ext.define('eXe.controller.MainTab', {
             for (i = 0; i < formpanel.length; i++) {
                 if (formpanel[i].prefix == prefix) {
                     formpanel[i].clear();
-                    if (formpanel[i].isVisible)
+                    if (formpanel[i].getVisibilityEl())
                         this.loadForm(formpanel[i]);
                 }
             }

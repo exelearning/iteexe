@@ -168,7 +168,10 @@ Ext.define('eXe.view.forms.LomDataPanel', {
                                     rLayout = true;
 //                                  console.log(key);
                                 }
-                                but.el.dom.click();
+                                if (!but.el)
+                                	console.log('ERROR: no element for add button of ' + key);
+                                else
+                                	but.el.dom.click();
 
                                 r = form.findField(key);
                                 if (r){
@@ -203,12 +206,15 @@ Ext.define('eXe.view.forms.LomDataPanel', {
         Ext.suspendLayouts();
         Ext.iterate(finaltaxonKeys, function(key, r){
             if (r){
-                var scp, nextCombo, nextbutdel;
+                var scp, nextCombo, nextbutdel, el;
                 nextCombo = r.nextNode('combo');
                 nextbutdel = nextCombo.nextNode('image#delbutton');
                 scp= {'scope': eXe.view.forms.LomWidgets, 'combo': nextCombo},
-                nextbutdel.getEl().removeAllListeners();
-                nextbutdel.getEl().addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
+                el = nextbutdel.getEl()
+                if (el) {
+                	el.removeAllListeners();
+                	el.addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
+                }
             }
         });
         Ext.resumeLayouts(true);

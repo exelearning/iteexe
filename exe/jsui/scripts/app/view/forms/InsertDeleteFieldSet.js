@@ -31,7 +31,8 @@ Ext.define('eXe.view.forms.PreserveScrollFieldSet', {
         if (formpanel) {
             while (!formpanel.form)
                 formpanel = formpanel.up();
-            this.restoreScrollFunction = formpanel.el.cacheScrollValues();
+            if (formpanel.el)
+            	this.restoreScrollFunction = formpanel.el.cacheScrollValues();
         }
     },
 
