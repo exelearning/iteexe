@@ -128,8 +128,22 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field( _('Description'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'rights_description_string{1}', _('Description'), null, true)))
 	        ],
 	        'relation': [
-	            eXe.view.forms.LomWidgets.field( _('Kind'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'relation_kind', _('Kind'), null, true)),
-	            eXe.view.forms.LomWidgets.field( _('Resource'), false, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'relation_resource_description{1}_string1', _('Resource'), null, true)))
+	            eXe.view.forms.LomWidgets.field( _('Kind'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'relation_kind_value', _('Kind'), null, true)),
+	            eXe.view.forms.LomWidgets.field( _('Resource'), false, false, {
+	            	xtype: 'container',
+                    layout: 'anchor',
+                    items: [
+						{
+						    xtype: 'container',
+						    layout: 'hbox',
+						    items: [
+						        eXe.view.forms.LomWidgets.helpfield( _('Catalog'), this.prefix + 'relation_resource_identifier_catalog'),
+						        eXe.view.forms.LomWidgets.helpfield( _('Entry'), this.prefix + 'relation_resource_identifier_entry', null, null, false, '0 0 20 20', '0 0 20 40')
+						    ]
+						},
+                        eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'relation_resource_description{1}_string1', _('Resource'), null, true))
+                    ]
+	            })
 	        ],
 	        'annotation': [
 	            eXe.view.forms.LomWidgets.field( _('Entity'), false, false, {
