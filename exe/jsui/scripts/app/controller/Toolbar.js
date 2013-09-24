@@ -308,8 +308,8 @@ Ext.define('eXe.controller.Toolbar', {
 
 	aboutPage: function() {
         var about = new Ext.Window ({
-          height: eXe.app.getMaxHeight(670),
-          width: 360,
+          height: eXe.app.getMaxHeight(700),
+          width: 420,
           modal: true,
           resizable: false,
           id: 'aboutwin',

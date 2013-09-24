@@ -23,11 +23,28 @@
 Version Information
 """
 
-project        = "exe"
-release        = "2.0"
-revision       = "beta1"
+project = "exe"
+pkg_version = None
+try:
+    line = open('debian/changelog').readline()
+    release = line.split(':')[1].split(')')[0]
+except:
+    try:
+        import pkg_resources
+        pkg_version = pkg_resources.require(project)[0].version
+        release = pkg_version[0:-42]
+    except:
+        pass
 
-version = release + "." + revision
+try:
+    import git
+
+    repo = git.Repo()
+    revision = repo.head.commit.hexsha
+except:
+    revision = pkg_version[-40:] if pkg_version else ''
+
+version = release + "-r" + revision if revision else release
 
 if __name__ == '__main__':
     print project, version

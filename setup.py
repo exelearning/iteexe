@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 # setup.py
-import os
 from setuptools                 import setup
 #from distutils.core            import setup
 
@@ -69,8 +68,9 @@ dataFiles(["exe/jsui/scripts",
            "exe/jsui/templates"])
 
 setup(name=version.project,
-      version=version.release,
+      version=version.version,
       description="eLearning XHTML editor",
+      setup_requires=['gitpython'],
       long_description="""\
 The eXe project is an authoring environment to enable teachers
 to publish web content without the need to become proficient in

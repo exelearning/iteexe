@@ -9,7 +9,8 @@ import getopt
 import shutil
 import subprocess
 
-os.chdir('../..'); WDIR = os.getcwd()
+os.chdir('../..')
+WDIR = os.getcwd()
 TEMPLATE = os.path.join(WDIR, 'installs/osx', 'exe.dmg')
 VOL = '/Volumes/exe'
 OUTPUT = os.path.join(WDIR, 'installs/osx')
@@ -30,18 +31,17 @@ shutil.rmtree('build', True)
 shutil.rmtree('dist', True)
 
 # make the app
-subprocess.check_call('python mac-setup.py py2app', shell = True, cwd = WDIR)
+subprocess.check_call('python mac-setup.py py2app', shell=True, cwd=WDIR)
 
 if not do_make_image:
     sys.exit()
 
 sys.path.insert(0, WDIR)
 from exe.engine import version
-outpathn = os.path.join(OUTPUT, 'iteexe-%s.dmg' %
-        version.version.replace(':', '.'))
+outpathn = os.path.join(OUTPUT, 'iteexe-%s.dmg' % version.release)
 
 # attach the disk image template
-subprocess.check_call('hdiutil attach %s' % TEMPLATE, shell = True)
+subprocess.check_call('hdiutil attach %s' % TEMPLATE, shell=True)
 
 # copy the app to the template
 os.chdir(VOL)
@@ -54,16 +54,15 @@ shutil.rmtree('README.txt', True)
 shutil.copy(os.path.join(WDIR, 'README'), 'README.txt')
 shutil.rmtree('NEWS.txt', True)
 shutil.copy(os.path.join(WDIR, 'NEWS'), 'NEWS.txt')
-shutil.rmtree('changelog_eXe_ITE.txt', True)
-shutil.copy(os.path.join(WDIR, 'changelog_eXe_ITE.txt'), 'changelog_eXe_ITE.txt')
+shutil.rmtree('Changelog.txt', True)
+shutil.copy(os.path.join(WDIR, 'debian/changelog'), 'Changelog.txt')
 os.chmod('exe.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0755)
 os.chdir(WDIR)
 
 # detatch the disk image template
-subprocess.check_call('hdiutil detach %s' % VOL, shell = True)
+subprocess.check_call('hdiutil detach %s' % VOL, shell=True)
 
 # build a compressed image
 subprocess.check_call('hdiutil convert -ov -format UDZO -o %s %s' %
         (outpathn, TEMPLATE),
-        shell = True)
-
+        shell=True)

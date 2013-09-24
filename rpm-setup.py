@@ -53,7 +53,8 @@ opts = {
  }
 }
 setup(name=version.project,
-      version=version.release,
+      version=version.version,
+      setup_requires=['gitpython'],
       description="eLearning XHTML editor",
       long_description="""\
 The eXe project is an authoring environment to enable teachers to publish

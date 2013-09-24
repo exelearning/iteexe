@@ -27,23 +27,7 @@ except ImportError:
 from distutils.core import setup
 import py2exe
 
-# update the svn revision number
-REVISION_FILE = 'exe/engine/version_svn.py'
-
-try:
-    os.unlink(REVISION_FILE)
-except OSError:
-    pass
-
 from exe.engine import version
-
-try:
-    line = open('debian/changelog').readline()
-    build = line.split(':')[1].split(')')[0]
-    revision = build.split(version.release + ".")[1]
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-except OSError:
-    print "*** Warning: 'svnversion' tool not available to update revision number"
 
 g_files = {'.': ["README",
                   "COPYING",
@@ -103,7 +87,9 @@ opts = {
 
 setup(windows=["exe/exe"],
       console=["exe/exe_do"],
-      version=build,
+      setup_requires=['gitpython'],
+      name=version.project,
+      version=version.version,
       packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.jsui", "exe.engine.lom"],
       description="eLearning XHTML editor",
       url="http://exelearning.org",

@@ -26,6 +26,7 @@ O/S specific config classes are derieved from here
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
 from exe.engine.locales import chooseDefaultLocale
+from exe.engine import version
 import logging
 from logging.handlers import RotatingFileHandler
 import sys
@@ -356,12 +357,13 @@ class Config:
                     logging.getLogger(logger).setLevel(loggingLevels[level])
         if not G.application.portable:
             log.info("************** eXe logging started **************")
+            log.info("version     = %s" % version.version)
             log.info("configPath  = %s" % self.configPath)
             log.info("exePath     = %s" % self.exePath)
             log.info("libPath     = %s" % Path(twisted.__path__[0]).splitpath()[0])
             log.info("browser     = %s" % self.browser)
             log.info("webDir      = %s" % self.webDir)
-            log.info("jsDir      = %s" % self.jsDir)
+            log.info("jsDir       = %s" % self.jsDir)
             log.info("localeDir   = %s" % self.localeDir)
             log.info("port        = %d" % self.port)
             log.info("dataDir     = %s" % self.dataDir)

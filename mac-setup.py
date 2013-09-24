@@ -5,31 +5,8 @@ import os
 import time
 from distutils.core            import setup
 from exe.engine.path           import Path
-import py2app
-
-# update the svn revision number
-REVISION_FILE = 'exe/engine/version_svn.py'
-
-try:
-    os.unlink(REVISION_FILE)
-except OSError:
-    pass
-
-from exe.engine import version
-revision = None
-try:
-    line = open('debian/changelog').readline()
-    build = line.split(':')[1].split(')')[0]
-    revision = build.split(version.release + ".")[1]
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-except OSError:
-    print "*** Warning: 'svnversion' tool not available to update revision number"
-finally:
-    if revision is None or revision == 'exported':
-        revision = time.strftime('%Y%m%d%H%M')
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
-
 from exe.engine                import version
+import py2app
 
 # Make main.py if it doesn't exist
 if not Path('exe/main.py').exists():
@@ -105,7 +82,8 @@ py2appParams = {
   'iconfile': 'exe.icns'}
 
 setup(name=version.project,
-      version=version.release,
+      version=version.version,
+      setup_requires=['gitpython'],
       description="eLearning XHTML editor",
       long_description="""\
 The eXe project is an authoring environment to enable teachers to publish

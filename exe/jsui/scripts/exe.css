@@ -15,15 +15,15 @@
   padding:  2px;
   z-index:  20001;
   height:   auto;
-  margin:   -45px 0 0 -78px;
+  margin:   -85px 0 0 -170px;
   text-align: center;
   font:       bold 13px tahoma,arial,helvetica;
   color:      #555;
 }
 
 #loading .loading-indicator {
-  background: url(../images/exe_logo.png) no-repeat;
-  padding:    0px 137px 90px 0px;
+  background: url(../images/exe_logo.png) no-repeat center;
+  padding:    0px 0px 90px 0px;
   margin:     0;
   height:     auto;
 }

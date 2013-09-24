@@ -13,15 +13,18 @@ import sys
 import os
 import shutil
 import subprocess
-import Image, ImageFont, ImageDraw
+import Image
+import ImageFont
+import ImageDraw
 
 # clean out the build and dist dirs
-os.chdir('../..'); WDIR = os.getcwd()
+os.chdir('../..')
+WDIR = os.getcwd()
 shutil.rmtree('build', True)
 shutil.rmtree('dist', True)
 
 # build the executable
-subprocess.check_call('C:\Python27\python win-setup.py py2exe', shell = True, cwd = WDIR)
+subprocess.check_call('C:\Python27\python win-setup.py py2exe', shell=True, cwd=WDIR)
 
 # get the version
 sys.path.insert(0, WDIR)
@@ -38,7 +41,7 @@ im = Image.open("splash1.jpg")
 draw = ImageDraw.Draw(im)
 draw.text((150, 102), "Version: " + version.release, font=font,
         fill=fontcolor)
-draw.text((150, 102+h), "Revision: " + version.revision,
+draw.text((150, 102 + h), "Revision: " + version.revision,
         font=font, fill=fontcolor)
 del draw
 im.save(BRANDED_JPG)

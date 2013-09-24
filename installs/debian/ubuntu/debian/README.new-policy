@@ -1,6 +1,0 @@
-The control.new-policy and rules.new-policy files use python-support
-to make a single package that is byte compiled at install time by
-the default Python, meeting the new Debian/Ubuntu policy.
-
-2007-05-24 Jim Tittsler <jim@eXeLearning.org>
-
