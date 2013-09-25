@@ -18,8 +18,8 @@ BuildRoot: %{_tmppath}/exe-buildroot
 Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
-BuildRequires: python >= 2.6, GitPython
-Requires: python >= 2.6, python-imaging, python-zope-interface, python-chardet, python-lxml
+BuildRequires: python >= %{pyver}, GitPython
+Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml
 Obsoletes: exe-twisted
 
 %description
@@ -62,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/exe
 %{_bindir}/exe_do
 %{_libdir}/python%{pyver}/site-packages/exe
+%{_libdir}/python%{pyver}/site-packages/exe-%{version}-py%{pyver}.egg-info
 %{_datadir}/exe
 %{_datadir}/icons/hicolor/48x48/apps/exe.png
 %config %{_datadir}/mime/packages/exe.xml
