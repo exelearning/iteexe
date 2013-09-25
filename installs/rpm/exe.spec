@@ -18,8 +18,8 @@ BuildRoot: %{_tmppath}/exe-buildroot
 Prefix: %{_prefix}
 ExclusiveArch: i686
 BuildRequires: python-devel
-BuildRequires: python >= 2.6
-Requires: python >= 2.6, python-imaging, python-zope-interface, python-chardet
+BuildRequires: python >= 2.6, GitPython
+Requires: python >= 2.6, python-imaging, python-zope-interface, python-chardet, python-lxml
 Obsoletes: exe-twisted
 
 %description
