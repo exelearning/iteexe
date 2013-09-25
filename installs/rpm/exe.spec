@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/exe
 %{_bindir}/exe_do
 %{_libdir}/python%{pyver}/site-packages/exe
-%{_libdir}/python%{pyver}/site-packages/exe-%{version}-py%{pyver}.egg-info
+%{_libdir}/python%{pyver}/site-packages/exe-%{version}*-py%{pyver}.egg-info
 %{_datadir}/exe
 %{_datadir}/icons/hicolor/48x48/apps/exe.png
 %config %{_datadir}/mime/packages/exe.xml
