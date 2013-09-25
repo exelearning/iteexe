@@ -17,7 +17,6 @@ SRCDIR = os.path.abspath('../../..')
 
 # this is done in a way consistent with the other builds...
 #   even though we have the info without doing the import
-REVISION_FILE = os.path.join(SRCDIR, 'exe/exe/engine/version_svn.py')
 os.chdir(os.path.join(SRCDIR, 'exe'))
 
 sys.path.insert(0, os.path.join(SRCDIR, 'exe'))
@@ -30,7 +29,7 @@ print "Making version: %s release: %s" % (version.version, clrelease)
 os.chdir(SRCDIR)
 tarball = os.path.join(TOPDIR, 'SOURCES', 'exe-' + version.release + '-source.tgz')
 try:
-    ret = subprocess.call('tar -czf %s --wildcards-match-slash --exclude=".git" --exclude="*.svn*" --exclude "*.pyc" --exclude="*.tmp" --exclude="*~" --exclude="dist/*" --exclude="build/*" --exclude="pyxpcom/*" exe' %
+    ret = subprocess.call('tar -czf %s --wildcards-match-slash --exclude="*.svn*" --exclude "*.pyc" --exclude="*.tmp" --exclude="*~" --exclude="dist/*" --exclude="build/*" --exclude="pyxpcom/*" exe' %
                               tarball, shell=True)
     if ret < 0:
         print >>sys.stderr, "Unable to make tarball signal", -ret
