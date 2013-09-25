@@ -17,11 +17,7 @@
 SetCompressor /SOLID /FINAL lzma
 Name "${APPNAMEANDVERSION}"
 Icon "..\..\dist\eXe_icon.ico"
-!ifndef EXE_REVISION
-  OutFile "exe-ready2run-${EXE_VERSION}.exe"
-!else
-  OutFile "exe-ready2run-${EXE_VERSION}.${EXE_REVISION}.exe"
-!endif
+OutFile "exe-ready2run-${EXE_VERSION}.exe"
 
 # Cool progress bar
 Subcaption 3 " "

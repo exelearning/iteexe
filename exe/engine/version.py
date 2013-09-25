@@ -34,7 +34,10 @@ except:
         pkg_version = pkg_resources.require(project)[0].version
         release = pkg_version[0:-42]
     except:
-        pass
+        import sys
+        if sys.platform[:3] == "win":
+            pkg_version = open(sys.prefix + '/version').readline()
+            release = pkg_version[0:-42]
 
 try:
     import git

@@ -36,7 +36,6 @@ g_files = {'.': ["README",
                   "ChangeLog",
                   "exe/webui/images/eXe_icon.ico",
                   "exe/webui/mr_x.gif",
-                  "exe/msvcr71.dll",
                   "installs/windows/exeLicense.txt",
                   ]}
 g_oldBase = "exe/webui"
