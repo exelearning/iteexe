@@ -26,7 +26,8 @@ except ImportError:
     pass
 from distutils.core import setup
 import py2exe
-
+import pkg_resources
+pkg_resources.require('gitpython>=0.3.2.RC1')
 from exe.engine import version
 
 g_files = {'.': ["README",
@@ -87,7 +88,6 @@ opts = {
 
 setup(windows=["exe/exe"],
       console=["exe/exe_do"],
-      setup_requires=['gitpython'],
       name=version.project,
       version=version.version,
       packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.importers", "exe.jsui", "exe.engine.lom"],

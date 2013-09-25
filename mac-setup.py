@@ -5,6 +5,8 @@ import os
 import time
 from distutils.core            import setup
 from exe.engine.path           import Path
+import pkg_resources
+pkg_resources.require('gitpython>=0.3.2.RC1')
 from exe.engine                import version
 import py2app
 
@@ -83,7 +85,6 @@ py2appParams = {
 
 setup(name=version.project,
       version=version.version,
-      setup_requires=['gitpython'],
       description="eLearning XHTML editor",
       long_description="""\
 The eXe project is an authoring environment to enable teachers to publish

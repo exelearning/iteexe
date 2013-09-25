@@ -1,12 +1,11 @@
 #!/usr/bin/python
 
 # setup.py
-from setuptools                 import setup
-#from distutils.core            import setup
-
-#from distutils.command.install import install
-from exe.engine                import version
-from exe.engine.path           import Path
+from setuptools import setup
+import pkg_resources
+pkg_resources.require('gitpython>=0.3.2.RC1')
+from exe.engine import version
+from exe.engine.path import Path
 
 # Before we install, make sure all the mimetex binaries are executable
 Path('exe/webui/templates/mimetex.cgi').chmod(0755)
@@ -70,7 +69,6 @@ dataFiles(["exe/jsui/scripts",
 setup(name=version.project,
       version=version.version,
       description="eLearning XHTML editor",
-      setup_requires=['gitpython'],
       long_description="""\
 The eXe project is an authoring environment to enable teachers
 to publish web content without the need to become proficient in
@@ -84,6 +82,5 @@ any Learning Management System.
       scripts=["exe/exe", "exe/exe_do"],
       packages=["exe", "exe.webui", "exe.jsui",
                       "exe.engine", "exe.export", "exe.importers", "exe.engine.lom"],
-      data_files=g_files.items(),
-      doc_files=["NEWS", "Changelog", "COPYING", "README"]
+      data_files=g_files.items()
      )
