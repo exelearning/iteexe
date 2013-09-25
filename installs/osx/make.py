@@ -57,6 +57,7 @@ shutil.copy(os.path.join(WDIR, 'NEWS'), 'NEWS.txt')
 shutil.rmtree('Changelog.txt', True)
 shutil.copy(os.path.join(WDIR, 'debian/changelog'), 'Changelog.txt')
 os.chmod('exe.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0755)
+open('exe.app/Contents/Resources/exe/version', 'w').write(version.version)
 os.chdir(WDIR)
 
 # detatch the disk image template
