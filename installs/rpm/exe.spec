@@ -51,7 +51,6 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 cp exe.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages/
-rm -f $RPM_BUILD_ROOT%{_libdir}/python%{pyver}/site-packages/exe-*.egg-info
 
 %clean
 rm -rf $RPM_BUILD_ROOT
