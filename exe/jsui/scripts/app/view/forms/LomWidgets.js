@@ -376,9 +376,11 @@ Ext.define('eXe.view.forms.LomWidgets', {
 				fieldset.restoreScroll();
 			}				
 			//console.log('NewClic Event');
-			var scp = {'scope': scope, 'combo': preCombo};			
-			var preButdel = preCombo.nextNode('image#delbutton');			
-			preButdel.getEl().addListener( 'click', scope.addDelEvent, scp);
+			var scp = {'scope': scope, 'combo': preCombo},			
+				preButdel = preCombo.nextNode('image#delbutton'),
+				el = preButdel.getEl();
+			el.removeAllListeners();
+			el.addListener( 'click', scope.addDelEvent, scp);
 		},
 		
 //		selectTaxon: function(combo, newValue, oldValue, options){
