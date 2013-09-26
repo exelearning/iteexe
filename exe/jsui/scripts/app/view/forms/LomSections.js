@@ -137,8 +137,8 @@ Ext.define('eXe.view.forms.LomSections', {
 						    xtype: 'container',
 						    layout: 'hbox',
 						    items: [
-						        eXe.view.forms.LomWidgets.helpfield( _('Catalog'), this.prefix + 'relation_resource_identifier_catalog'),
-						        eXe.view.forms.LomWidgets.helpfield( _('Entry'), this.prefix + 'relation_resource_identifier_entry', null, null, false, '0 0 20 20', '0 0 20 40')
+						        eXe.view.forms.LomWidgets.helpfield( _('Catalog'), this.prefix + 'relation_resource_identifier_catalog', null, null, true),
+						        eXe.view.forms.LomWidgets.helpfield( _('Entry'), this.prefix + 'relation_resource_identifier_entry', null, null, true, '0 0 20 20', '0 0 20 40')
 						    ]
 						},
                         eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helparea( null, this.prefix + 'relation_resource_description{1}_string1', _('Resource'), null, true))
