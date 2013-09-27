@@ -72,16 +72,21 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		    }
 		},
         onSelectSource: function(combo, records, eOpts){
-			var val = combo.getValue()
-			combo.nextNode('textfield').setValue(val.substr(val.length-2));
+        	if (!combo.custom) {
+        		var val = combo.getValue()
+        		combo.nextNode('textfield').setValue(val.substr(val.length-2));
+        	}
 		},
-		beforeSelectSource: function(combo, eOpts){			
-			var purposeCombo = Ext.ComponentQuery.query('combo[name='+combo.getName().replace(/taxonPath[0-9]*_source_string1$/, 'purpose_value')+']')[0],
+		beforeSelectSource: function(combo, eOpts){
+			//console.log("Before Select Source");
+			var purposeCombo = combo.up().up().up().up().up().up().up().down('combobox'),
 			    store = combo.getStore();
             store.clearFilter(true);
 			store.filter('purpose', purposeCombo.getValue());
+			combo.custom = !store.getCount();
 		},
 		deleteTaxonChilds: function(combo, newValue, oldValue){
+			//console.log("Delete Taxon Childs");
 			var taxonset = combo.nextNode('insertdelfieldset'), taxon;
 				taxonset.preserveScroll();
 				Ext.suspendLayouts();
@@ -99,86 +104,80 @@ Ext.define('eXe.view.forms.LomWidgets', {
 				nextCombo.setValue('');
 				nextCombo.nextNode('textfield[cls=taxon-entry-language]').setValue('');
 				nextCombo.nextNode('textfield[cls=taxon-id]').setValue('');
-				nextCombo.store.load({params: {source: sourcev, identifier: false}});
 				nextButdel = nextCombo.nextNode('image#delbutton');
 				nextButdel.getEl().removeAllListeners();
 				nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);			
 		},
 		changeSelectSource: function (combo, newValue, oldValue, options) {
+			//console.log('Change Select Source');
+			var purposeCombo = combo.up().up().up().up().up().up().up().down('combobox'),
+		    	store = combo.getStore();
+	        store.clearFilter(true);
+			store.filter('purpose', purposeCombo.getValue());
+			combo.custom = !store.getCount();
 			if (oldValue && oldValue != newValue){
 				if (newValue === ''){
 					this.deleteTaxonChilds(combo, newValue, oldValue);
 					combo.nextNode('textfield').setValue('');
 				}else{
-					combo.suspendEvents(true);
-					Ext.Msg.show({
-	       		     title:_('Warning!'),
-	       		     msg: _('You will loss all taxon config for this source. Would you like to continue?'),
-	       		     buttons: Ext.Msg.YESNO,
-	       		     icon: Ext.Msg.QUESTION,
-	       		     closable: false,
-	       		     modal: true,
-	       		     config : {
-	       		    	 combo : combo,
-	       		    	 newValue: newValue,
-	       		    	 oldValue: oldValue,
-	       		    	 scope: this,
-	       		    	 },
-	       			 fn: function(btn, text, opt){
-	       				var combo = opt.config.combo,
-	       					newValue = opt.config.newValue,
-	       					oldValue = opt.config.oldValue,
-	       					scope = opt.config.scope;
-	       				if (btn == 'yes'){
-	       					scope.deleteTaxonChilds(combo, newValue, oldValue);       					
-	       				}else{
-	       					combo.suspendEvents(false);
-	       					combo.setValue(oldValue);       					
-	       				}
-	       				combo.resumeEvents();
-	       			},
-	       		});					
-				}						
-		    }            
+					if (!combo.custom) {
+						var taxons = combo.up().up().up().up().query('combobox[fieldLabel=' + _('Taxon') + ']'),
+						taxons_empty = taxons.filter(function(taxon){
+							return taxon.getValue();
+						});
+						if (taxons_empty.length) {
+							combo.suspendEvents(true);
+							Ext.Msg.show({
+								title:_('Warning!'),
+								msg: _('You will loss all taxon config for this source. Would you like to continue?'),
+								buttons: Ext.Msg.YESNO,
+								icon: Ext.Msg.QUESTION,
+								closable: false,
+								modal: true,
+								fn: function(btn, text, opt){
+									if (btn == 'yes'){
+										eXe.view.forms.LomWidgets.deleteTaxonChilds(combo, newValue, oldValue);
+									}else{
+										combo.suspendEvents(false);
+										combo.setValue(oldValue);
+									}
+									combo.resumeEvents();
+								},
+							});
+						}
+					}
+				}
+			}
         },
         changePurpose: function (combo, newValue, oldValue, options) {
+        	//console.log("Change Purpose");
         	if (oldValue && oldValue != newValue){
-        		combo.suspendEvents(true);
-        		Ext.Msg.show({
-        		     title:_('Warning!'),
-        		     msg: _('You will loss all taxon config in this section. Would you like to continue?'),
-        		     buttons: Ext.Msg.YESNO,
-        		     icon: Ext.Msg.QUESTION,
-        		     closable: false,
-        		     modal: true,
-        		     config : {
-        		    	 combo : combo,
-        		    	 newValue: newValue,
-        		    	 oldValue: oldValue,        		    	 
-        		    	 },
-        			 fn: function(btn, text, opt){
-        				var combo = opt.config.combo,
-        					newValue = opt.config.newValue,
-        					oldValue = opt.config.oldValue;        					
-        				if (btn == 'yes'){
-        					var sources = Ext.ComponentQuery.query('combobox[cls=taxonpath-source]'),
-        	        			vid = combo.getName().split('_'), vid2,
-        	        			initStart = vid[0] + '_' + vid[1], sourceStart;
-        	        		for (var i = 0, len = sources.length; i < len; i++){
-        	        			vid2 = sources[i].getName().split('_');
-        	            		sourceStart = vid2[0] + '_' + vid2[1];
-        	        			if (initStart == sourceStart){        	        				
-        	        				sources[i].setValue('');
-        	        			}        				
-        	        		}
-        				}else{
-        					combo.suspendEvents(false);
-        					combo.setValue(oldValue);        					
-        				}
-        				combo.resumeEvents();
-        			},
-        		});
-        		
+        		var sources = combo.up().up().up().up().query('combobox[cls=taxonpath-source]'),
+        			sources_empty = sources.filter(function(source){
+            			return source.getValue();
+            		});
+        		if (sources_empty.length) {
+        			combo.suspendEvents(true);
+        			Ext.Msg.show({
+        				title:_('Warning!'),
+        				msg: _('You will loss all taxon config in this section. Would you like to continue?'),
+        				buttons: Ext.Msg.YESNO,
+        				icon: Ext.Msg.QUESTION,
+        				closable: false,
+        				modal: true,
+        				fn: function(btn, text, opt){
+        					if (btn == 'yes'){
+        						sources.forEach(function(source){
+        							source.setValue('');
+        						});
+        					}else{
+        						combo.suspendEvents(false);
+        						combo.setValue(oldValue);
+        					}
+        					combo.resumeEvents();
+        				},
+        			});
+        		}
         	}
         },
 		helpcombo: function(label, id, tooltip, help, optional, margin, helpmargin) {
@@ -203,7 +202,10 @@ Ext.define('eXe.view.forms.LomWidgets', {
                     combo.item.displayField = 'text';
                     combo.item.getSubmitValue = function() {
                         var value = this.processRawValue(this.getRawValue());
-                        return value.substr(0, value.length-3);
+                        if (this.custom)
+                        	return value;
+                        else
+                        	return value.substr(0, value.length-3);
                     }
 		    	}else if (/_purpose_value$/.exec(id)){
 		    		combo.item.listeners = {
@@ -367,12 +369,10 @@ Ext.define('eXe.view.forms.LomWidgets', {
 				combo = this.combo;		    
 			var items = combo.nextNode('image#delbutton').up(),
 				fieldset = items.up();
-			//var v = preCombo.getValue();
 			var preCombo = combo.previousNode('combo');
 			if (fieldset.items.length > 1) {
 				fieldset.preserveScroll();
 				fieldset.remove(items,true);
-				preCombo.setReadOnly(false);
 				fieldset.restoreScroll();
 			}				
 			//console.log('NewClic Event');
@@ -383,77 +383,103 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			el.addListener( 'click', scope.addDelEvent, scp);
 		},
 		
-//		selectTaxon: function(combo, newValue, oldValue, options){
-//			//console.log('Select Taxon');
-//			var butadd = combo.nextNode('image#addbutton');
-//			butadd.getEl().dom.click();
-//			var nextCombo = combo.nextNode('combo');			
-//			
-//			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue();
-//			var identifier = newValue;
-//			combo.nextNode('textfield[cls=taxon-entry-language]').setValue(sourcev.substr(sourcev.length-2));
-//			combo.nextNode('textfield[cls=taxon-id]').setValue(identifier);
-//			nextCombo.getStore().load({params: {source: sourcev, identifier: identifier}});
-//			//nextCombo.bindStore(store);
-//			combo.setReadOnly(true);
-//			var butdel = combo.nextNode('image#delbutton');
-//			var scp = {'scope': this, 'combo': nextCombo};
-//			butdel.getEl().removeAllListeners();
-//			nextButdel = nextCombo.nextNode('image#delbutton');
-//			nextButdel.getEl().removeAllListeners();
-//			nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
-//			
-//		},
-		
 		selectTaxon: function(combo, records, eOpts){
-			//console.log('Select Taxon');
-			var butadd = combo.nextNode('image#addbutton');
-			butadd.getEl().dom.click();
-			var nextCombo = combo.nextNode('combo');			
-			
-			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue();
-			var identifier = records[0].data.identifier;
-			combo.nextNode('textfield[cls=taxon-entry-language]').setValue(sourcev.substr(sourcev.length-2));
-			combo.nextNode('textfield[cls=taxon-id]').setValue(identifier);
-			nextCombo.getStore().load({params: {source: sourcev, identifier: identifier}});
-			//nextCombo.bindStore(store);
-			//combo.setReadOnly(true);
-			var butdel = combo.nextNode('image#delbutton');
-			var scp = {'scope': this, 'combo': nextCombo};
-			butdel.getEl().removeAllListeners();
-			nextButdel = nextCombo.nextNode('image#delbutton');
-			nextButdel.getEl().removeAllListeners();
-			nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
+			var source = combo.previousNode('combobox[cls=taxonpath-source]'),
+				identifier = records[0].data.identifier;
+			if (!source.custom) {
+				combo.nextNode('textfield[cls=taxon-entry-language]').setValue(source.getValue().substr(source.getValue().length-2));
+				combo.nextNode('textfield[cls=taxon-id]').setValue(identifier);
+			}
+			var nextTaxon = combo.nextNode('combobox[fieldLabel=' + _('Taxon') + ']');
+			if (!nextTaxon || nextTaxon.up('insertdelfieldset') != combo.up('insertdelfieldset')) {
+				//console.log('Last taxon');
+				var butadd = combo.nextNode('image#addbutton');
+				butadd.getEl().dom.click();
+				var nextCombo = combo.nextNode('combo');			
+				var butdel = combo.nextNode('image#delbutton');
+				var scp = {'scope': this, 'combo': nextCombo};
+				butdel.getEl().removeAllListeners();
+				nextButdel = nextCombo.nextNode('image#delbutton');
+				nextButdel.getEl().removeAllListeners();
+				nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
+			}
+			else {
+				while (nextTaxon.up('insertdelfieldset') == combo.up('insertdelfieldset')) {
+					nextTaxon.setValue('');
+					nextTaxon.nextNode('textfield[cls=taxon-entry-language]').setValue('');
+					nextTaxon.nextNode('textfield[cls=taxon-id]').setValue('');
+					nextTaxon = nextTaxon.nextNode('combobox[fieldLabel=' + _('Taxon') + ']');
+				}
+			}
 			
 		},
 		changeTaxon: function(combo, newValue, oldValue, options){
-			if (newValue !== '' ){
-				combo.setReadOnly(true);
-			}						
+			//console.log('Change Taxon');
+			var nextTaxon = combo.nextNode('combobox[fieldLabel=' + _('Taxon') + ']'),
+				lang = combo.nextNode('textfield[cls=taxon-entry-language]'),
+				id = combo.nextNode('textfield[cls=taxon-id]'),
+				source = combo.previousNode('combobox[cls=taxonpath-source]');
+			if (source.custom) {
+				if (lang.up().getEl())
+					lang.up().show();
+				lang.setReadOnly(false);
+				if (id.up().getEl())
+					id.up().show();
+				id.setReadOnly(false)
+				if (newValue !== '' ){
+					if (!nextTaxon || nextTaxon.up('insertdelfieldset') != combo.up('insertdelfieldset')) {
+						//console.log('Last taxon');
+						var butadd = combo.nextNode('image#addbutton');
+						if (butadd.getEl()) {
+							butadd.getEl().dom.click();
+							var nextCombo = combo.nextNode('combo');			
+							var butdel = combo.nextNode('image#delbutton');
+							var scp = {'scope': this, 'combo': nextCombo};
+							if (butdel.getEl())
+								butdel.getEl().removeAllListeners();
+							nextButdel = nextCombo.nextNode('image#delbutton');
+							if (nextButdel.getEl()) {
+								nextButdel.getEl().removeAllListeners();
+								nextButdel.getEl().addListener( 'click', this.addDelEvent, scp);
+							}
+						}
+					}
+				}
+			}
+			else {
+				lang.setReadOnly(true);
+				id.setReadOnly(true);
+			}
 		},
-		beforeSelectTaxon: function(combo, eOpts){			
-			var sourcev = combo.previousNode('combobox[cls=taxonpath-source]').getValue(),
-				identifier;				
-			if (combo.up('insertdelfieldset').items.length == 1)
-				indentfier = false;
-			else
-				identifier = combo.previousNode('textfield[cls=taxon-id]').getValue();		
-			combo.getStore().load({params: {source: sourcev, identifier: identifier}});				
-			
+		beforeSelectTaxon: function(combo, eOpts){
+			//console.log('Before select taxon');
+			var source = combo.previousNode('combobox[cls=taxonpath-source]');
+			if (!source.custom) {
+				var identifier,
+					prevTaxonId = combo.previousNode('textfield[cls=taxon-id]');
+				if (prevTaxonId.up('insertdelfieldset') == combo.up('insertdelfieldset'))
+					identifier = combo.previousNode('textfield[cls=taxon-id]').getValue();
+				else
+					identifier = false;
+				combo.getStore().load({params: {source: source.getValue(), identifier: identifier}});
+			}
 		},
         taxonfield: function(label, id, tooltip, help, optional, margin, helpmargin) {
         	var taxonEntryCombo = this.helpcombo( label, id, tooltip, help, optional, margin, helpmargin);
-        	var taxonEntryLanguage = this.textfield(false , id.replace(/_entry_string1$/, '_entry_string1_language'), tooltip, optional, margin, helpmargin);
-        	var taxonId = this.textfield(false , id.replace(/_entry_string1$/, '_id'), tooltip, optional, margin, helpmargin);
+        	var taxonEntryLanguage = this.textfield( _('Language'), id.replace(/_entry_string1$/, '_entry_string1_language'), tooltip, optional, margin, helpmargin);
+        	var taxonId = this.textfield( _('Id'), id.replace(/_entry_string1$/, '_id'), tooltip, optional, margin, helpmargin);
         	taxonEntryLanguage.cls = 'taxon-entry-language';
         	taxonId.cls = 'taxon-id';
+        	taxonId.labelWidth = 50;
+        	taxonEntryLanguage.labelAlign = taxonId.labelAlign = 'right';
+        	
         	taxonEntryCombo.item.listeners = {
                	 scope: this,
                  'select': this.selectTaxon,
                  'focus': this.beforeSelectTaxon,
 	             'change': this.changeTaxon,
              };
-        	var store = Ext.create('Ext.data.Store', {			    
+        	var store = {			    
 			    proxy: {
 			        type: 'ajax',
 			        url: location.pathname + '/taxon',
@@ -468,19 +494,19 @@ Ext.define('eXe.view.forms.LomWidgets', {
 			    autoLoad: false,
 			    autoSync: false,
 			    fields: [ 'identifier', 'text' ]
-			});
+			};
         	taxonEntryCombo.item.store = store;
         	taxonEntryCombo.item.displayField = 'text';
         	taxonEntryCombo.item.valueField = 'text';
-        	//taxonEntryCombo.item.queryMode = 'remote';         
+        	taxonEntryCombo.item.queryMode = 'local';         
         	
             var field = this.field( null, true, true, {
 	            xtype: 'container',
 	            layout: 'hbox',
 	            items: [
-	                { xtype: 'container', layout: 'anchor', flex: 6, items: taxonEntryCombo},
-	                { xtype: 'container', layout: 'anchor', flex: 1, items: taxonEntryLanguage, 'hidden': true},
-	                { xtype: 'container', layout: 'anchor', flex: 1, items: taxonId, 'hidden': true}
+	                { xtype: 'container', layout: 'anchor', flex: 4, items: taxonEntryCombo},
+	                { xtype: 'container', layout: 'anchor', flex: 1, items: taxonEntryLanguage},
+	                { xtype: 'container', layout: 'anchor', flex: 1, items: taxonId}
 	            ]
 	        });
             //var field = this.field( null, true, true, [taxonEntryCombo, ]);

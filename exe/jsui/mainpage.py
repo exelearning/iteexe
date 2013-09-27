@@ -139,7 +139,10 @@ class MainPage(RenderableLivePage):
                     if not source in self.classificationSources:
 
                         self.classificationSources[source] = Classification()
-                        self.classificationSources[source].setSource(source, self.config.configDir)
+                        try:
+                            self.classificationSources[source].setSource(source, self.config.configDir)
+                        except:
+                            pass
                     identifier = request.args['identifier'][0]
                     if identifier == 'false':
                         identifier = False

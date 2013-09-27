@@ -283,7 +283,7 @@ class lomSub(supermod.lom):
                 try:
                     form[base] = self.sourceMap[rootObj.get_valueOf_().encode('utf-8')] + '_%s' % rootObj.language
                 except:
-                    form[base] = _('Invalid source: %s') % rootObj.get_valueOf_()
+                    form[base] = rootObj.get_valueOf_()
             else:
                 form[base] = rootObj.get_valueOf_()
 
