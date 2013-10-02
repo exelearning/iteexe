@@ -420,11 +420,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 				id = combo.nextNode('textfield[cls=taxon-id]'),
 				source = combo.previousNode('combobox[cls=taxonpath-source]');
 			if (source.custom) {
-				if (lang.up().getEl())
-					lang.up().show();
 				lang.setReadOnly(false);
-				if (id.up().getEl())
-					id.up().show();
 				id.setReadOnly(false)
 				if (newValue !== '' ){
 					if (!nextTaxon || nextTaxon.up('insertdelfieldset') != combo.up('insertdelfieldset')) {

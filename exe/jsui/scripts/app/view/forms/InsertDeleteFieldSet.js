@@ -105,51 +105,54 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                 width: 24,
                 hidden: this.addButtonHide,
                 itemId: 'addbutton',
+                addFieldSetItems: function() {
+                	var i,
+	                	re,
+	                	id = [],
+	                	item = this,
+	                	depth = 1;
+                	
+                	while (item.xtype != 'lomdata') {
+                		if (item.actualId) {
+                			id[depth] = item.actualId;
+                			depth++;
+                		}
+                		item = item.up();
+                	}
+                	id[0] = this.lastId++;
+                	
+                	
+                	function updater(key, value, object) {
+                		if (key === 'inputId') {
+                			object.inputId = object.templateId;
+                			for (i = 0; i < depth; i++) {
+                				re = new RegExp('\\{' + (depth-i) + '\\}');
+                				object.inputId = object.inputId.replace(re, String(id[i]));
+                			}
+                			object.inputId = object.inputId.replace(/\{[1-9]\}/g, '1');
+                		}
+                		if (key === 'item') {
+                			Ext.iterate(object.item, updater);
+                			return false;
+                		}
+                		if (key === 'items') {
+                			Ext.iterate(object.items, updater);
+                			return false;
+                		}
+                		if (Ext.isObject(key))
+                			Ext.iterate(key, updater);
+                	}
+                	Ext.iterate(this.item, updater);
+                	this.preserveScroll();
+                	this.add(items);
+                	this.restoreScroll();
+                },
                 listeners: {
+                	added: function(c) {
+                		c.up().actualId = me.lastId-1;
+                	},
                     afterrender: function(c) {
-                        c.up().actualId = me.lastId-1;
-                        c.el.on('click', function(a) {
-                            var i,
-                                re,
-                                id = [],
-                                item = this,
-                                depth = 1;
-
-                            while (item.xtype != 'lomdata') {
-                                if (item.actualId) {
-                                    id[depth] = item.actualId;
-                                    depth++;
-                                }
-                                item = item.up();
-                            }
-                            id[0] = this.lastId++;
-
-
-                            function updater(key, value, object) {
-                                if (key === 'inputId') {
-                                    object.inputId = object.templateId;
-                                    for (i = 0; i < depth; i++) {
-                                        re = new RegExp('\\{' + (depth-i) + '\\}');
-                                        object.inputId = object.inputId.replace(re, String(id[i]));
-                                    }
-                                    object.inputId = object.inputId.replace(/\{[1-9]\}/g, '1');
-                                }
-                                if (key === 'item') {
-                                    Ext.iterate(object.item, updater);
-                                    return false;
-                                }
-                                if (key === 'items') {
-                                    Ext.iterate(object.items, updater);
-                                    return false;
-                                }
-                                if (Ext.isObject(key))
-                                    Ext.iterate(key, updater);
-                            }
-                            Ext.iterate(this.item, updater);
-                            this.preserveScroll();
-                            this.add(items);
-                            this.restoreScroll();
-                        }, me);
+                        c.el.on('click', c.addFieldSetItems, me);
                     }
                 }
             }
@@ -171,23 +174,20 @@ Ext.define('eXe.view.forms.InsertDeleteFieldSet', {
                         itemId: 'delbutton',
                         height: 24,
                         width: 24,
+                        removeFieldSetItems: function() {
+                        	var items = this.up(),
+	                        	fieldset = items.up(),
+	                        	readonly = items.down("[readOnly=true]");
+                        	
+                        	if (fieldset.items.length > 1 && !readonly) {
+                        		fieldset.preserveScroll();
+                        		fieldset.remove(items,true);
+                        		fieldset.restoreScroll();
+                        	}
+                        },
                         listeners: {
                             afterrender: function(c) {
-                                c.el.on('click', function(a) {
-                                    var items = this.up(),
-                                        fieldset = items.up()
-                                        readonly = items.down("[readOnly=true]");
-//                                        readonly = false
-//                                    if (fieldset.addButton === false) {
-//                                        readonly = items.items.items[0].items.items[0].items.items[0].readOnly;
-//                                    }
-                                    
-                                    if (fieldset.items.length > 1 && !readonly) {
-                                        fieldset.preserveScroll();
-                                        fieldset.remove(items,true);
-                                        fieldset.restoreScroll();
-                                    }
-                                }, c);
+                                c.el.on('click', c.removeFieldSetItems, c);
                             }
                         }
                     }

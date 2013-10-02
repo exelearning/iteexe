@@ -87,141 +87,90 @@ Ext.define('eXe.view.forms.LomDataPanel', {
     extendForm: function(form, action){
         if (!this.needsExtend)
             return;
-//        console.log('EXTENDFORM');
-//        var lform = form.owner;
-//        var vp = Ext.ComponentQuery.query('#eXeViewport')[0];
-//        lform.suspendLayouts(true);
         Ext.suspendLayouts();
-        var field, fields = [], r, v, key, but, rLayout, lasttaxons = {}, k, vid, nv, finaltaxonKeys = {};
+        var field, fields = [], keys_not_found = [], v, key, but;
         for (key in action.result.data){
             fields.push(key);
-            if(/_taxon[0-9]*_entry_string1$/.exec(key)){
-                vid =key.split('_');
-                k = vid[0] + '_' + vid[1] + '_' + vid[2]
-                nv = parseInt(/[0-9]*$/.exec(key.split('_')[3])[0]);
-                if (!lasttaxons[k]){
-                    lasttaxons[k] = nv;
-                }else if (nv > lasttaxons[k]){
-                    lasttaxons[k] = nv;
-                }
-            }
         }
-        Ext.define('taxonModel', {
-            extend: 'Ext.data.Model',
-            fields: [ 'identifier', 'text']
-        });
 
-        Ext.iterate(lasttaxons, function(key, value){
-            finaltaxonKeys[key + '_taxon' + String(value) + '_entry_string1'] = true;
-        });
         fields.sort();
 
         for (var i = 0, len = fields.length; i < len; i++){
             key = fields[i];
-            //console.log(key);
-            rLayout = false;
             field = form.findField(key);
-            v = action.result.data[key];
-            r = false;
-            if (field){
-                field.setValue(v);
-                field.resetOriginalValue();
-                this.expandParents(field);
-                r = field;
-                field = this.getInsertDelField(key);
-//              console.log('OK:      ' + key );
-            }else{
-                //console.log('PROCESS: ' + key );
+//            console.log(key + ': ' + v);
+            if (!field){
+//                console.log('PROCESS: ' + key );
                 if (action.result.data[key] !== ''){//
                     if (! this.existSection(form, key)){
 //                      console.log('ADD Section: ' + key);
                         but = this.getAddSectionButton(key);
                         but.fireEvent('click', but);
-                        r = form.findField(key);
-                        if (r){
-                            if (r){
-//                              console.log('Set Field for key ' + key);
-                                r.setValue(v);
-                                r.resetOriginalValue();
-                            }
-                        }else{
-                            console.log('ERROR: Set Field for key ' + key);
-                        }
                     }else{
-//                      console.log('ADD New Field for key: ' + key);
                         field = this.getInsertDelField(key);
                         if (field){
-                            field.expand();
-                            if (/contribute$/.exec(field.getItemId())){
-                                but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
-                            }
-                            else{
-                                if (field.addButtonObj){
-                                    but = field.addButtonObj;
-                                }else{
-                                    console.log('Can not get de button: ' + key);
-                                }
-                            }
-                            if (but){
-                                if (! but.el){
-                                    Ext.resumeLayouts(true);
-                                    rLayout = true;
-//                                  console.log(key);
-                                }
-                                if (!but.el)
-                                	console.log('ERROR: no element for add button of ' + key);
-                                else
-                                	but.el.dom.click();
-
-                                r = form.findField(key);
-                                if (r){
-//                                      console.log('Set Field for key ' + key);
-                                        r.setValue(v);
-                                        r.resetOriginalValue();
-                                }else{
-                                    console.log('ERROR: Set Field for key ' + key);
-                                }
-                                if (rLayout){
-                                    Ext.suspendLayouts();
-                                }
-                            }
-                        }
-                        else{
-                            console.log('ERROR: Field not found: ' + key);
+                        		if (/contribute$/.exec(field.getItemId())){
+                        			but = Ext.ComponentQuery.query('#' + field.getItemId() + ' #addbutton')[1];
+                        		}
+                        		else{
+                        			if (field.addButtonObj){
+                        				but = field.addButtonObj;
+                        			}else{
+                        				console.log('ERROR: Can not get the button: ' + key);
+                        			}
+                        		}
+                        		if (but){
+                    				Ext.bind(but.addFieldSetItems, field)();
+                        		}
+                        		else
+                        			console.log('ERROR: no button for key: ' + key);
                         }
                     }
                 }
             }
-            if(/_taxon[0-9]*_entry_string1$/.exec(key)){
-                if (finaltaxonKeys[key]){
-                    if (field.addButtonObj.el)
-                        field.addButtonObj.el.dom.click();
-                    else
-                        console.log('ERROR: no element for field ' + field.itemId);
-                    finaltaxonKeys[key] = r;
-                }
+        }
+        Ext.iterate(Ext.ComponentQuery.query('lomdata combobox[fieldLabel=' + _('Taxon') + ']'), function(taxon) {
+          var scp, nextbutdel, el, nextTaxon = taxon.nextNode('combobox[fieldLabel=' + _('Taxon') + ']');
+
+          nextbutdel = taxon.nextNode('image#delbutton');
+          scp= {'scope': eXe.view.forms.LomWidgets, 'combo': taxon},
+          el = nextbutdel.getEl()
+          if (el) {
+          	el.removeAllListeners();
+          	el.addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
+          }
+          if (!nextTaxon || nextTaxon.up('insertdelfieldset') != taxon.up('insertdelfieldset')) {
+        	  var field = taxon.up('insertdelfieldset');
+        	  Ext.bind(field.addButtonObj.addFieldSetItems, field)();
+          }
+        });
+        for (var i = 0, len = fields.length; i < len; i++){
+            key = fields[i];
+            field = form.findField(key);
+            v = action.result.data[key];
+            if (field){
+                field.setValue(v);
+                field.resetOriginalValue();
+                this.expandParents(field);
+            }
+            else {
+            	keys_not_found.push(key);
+            	console.log('ERROR: Field not found: ' + key);
             }
         }
         Ext.resumeLayouts(true);
-        Ext.suspendLayouts();
-        Ext.iterate(finaltaxonKeys, function(key, r){
-            if (r){
-                var scp, nextCombo, nextbutdel, el;
-                nextCombo = r.nextNode('combo');
-                nextbutdel = nextCombo.nextNode('image#delbutton');
-                scp= {'scope': eXe.view.forms.LomWidgets, 'combo': nextCombo},
-                el = nextbutdel.getEl()
-                if (el) {
-                	el.removeAllListeners();
-                	el.addListener( 'click', eXe.view.forms.LomWidgets.addDelEvent, scp);
-                }
-            }
-        });
-        Ext.resumeLayouts(true);
-//      msg.close();
-//      vp.setLoading(true);
-//      vp.doLayout();
-//      vp.setLoading(false);
+        while (key = keys_not_found.pop()) {
+        	field = form.findField(key);
+        	v = action.result.data[key];
+        	if (field){
+        		field.setValue(v);
+        		field.resetOriginalValue();
+        		this.expandParents(field);
+        	}
+        	else {
+        		console.log('ERROR: Field not found: ' + key);
+        	}
+        }
         this.needsExtend = false;
     },
 
