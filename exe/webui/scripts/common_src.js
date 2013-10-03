@@ -1116,7 +1116,7 @@ var $exe = {
         var d = document.body.className;
         d += ' js';
         //iDevice Toggler
-        if (d!='exe-single-page js' && d!='exe-authoring-page js') {
+        if (d!='exe-single-page js') {
             var ie_v = $exe.isIE();
             if (ie_v) {
                 if (ie_v>7) $exe.iDeviceToggler.init();
@@ -1145,8 +1145,10 @@ var $exe = {
                 em1.each(function(){
                     var t = $exe.iDeviceToggler.t2;
                     var e = $(this);
-                    var iDeviceID = e.parent().parent().attr("id");
+                    var eP = e.parent().parent();
+                    var iDeviceID = eP.attr("id");
                     if (!iDeviceID) return false;
+                    if (eP.attr("class").indexOf("iDevice_wrapper")!=0) return false;
                     var l = '<p class="toggle-idevice toggle-em1"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em1\')" title="'+t+'"><span>'+t+'</span></a></p>';
                     var h = e.html();
                     e.html(h+l);
@@ -1154,8 +1156,10 @@ var $exe = {
                 em0.each(function(){
                     var t = $exe.iDeviceToggler.t2;
                     var e = $(this);
-                    var iDeviceID = e.parent().attr("id");
+                    var eP = e.parent();
+                    var iDeviceID = eP.attr("id");
                     if (!iDeviceID) return false;
+                    if (eP.attr("class").indexOf("iDevice_wrapper")!=0) return false;
                     var l = '<p class="toggle-idevice toggle-em0"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em0\')" title="'+t+'"><span>'+t+'</span></a></p>';
                     var h = e.html();
                     e.before(l);
@@ -1169,6 +1173,7 @@ var $exe = {
             if (em=="em1") sel = ".iDevice_inner";
             var iC = $(sel,i);
             var c = i.attr("class");
+            if (typeof(c)=='undefined') return false;
             if (c.indexOf(" hidden-idevice")==-1) {
                 t = $exe.iDeviceToggler.t1;
                 c += " hidden-idevice";

@@ -103,7 +103,7 @@ def ideviceHeader(e, style, mode):
         eEm = ' em_iDevice'
     
     if mode=="preview" and themeHasXML:
-        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'">'+lb
+        w += '<'+sectionTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
     
     w += u"<"+articleTag+" class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
