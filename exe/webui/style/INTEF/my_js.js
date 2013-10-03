@@ -3,8 +3,7 @@ var myTheme = {
         $(window).resize(function() {
             myTheme.reset();
         });    
-        var t = $exe_i18n.showHide;
-        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu()" class="hide-nav" id="toggle-nav"><span>'+t+'</span></a></p>');
+        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu()" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         $("#siteNav").before(l);
         var url = window.location.href;
         url = url.split("?");
@@ -22,13 +21,13 @@ var myTheme = {
         }          
         $("#main").css({"width":"auto","padding-left":p,"float":"none"});
         myTheme.params("add");
-        $("#toggle-nav").attr("class","show-nav");
+        $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
     },
     toggleMenu : function(){
         var c = $("#main");
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {       
-            l.attr("class","show-nav");
+            l.attr("class","show-nav").attr("title",$exe_i18n.show);
             $("#siteNav").slideUp(400,function(){
                 var p = "20px"; //Padding
                 if ($(window).width()<700) {
@@ -38,7 +37,7 @@ var myTheme = {
             }); 
             myTheme.params("add");
         } else {
-            l.attr("class","hide-nav");
+            l.attr("class","hide-nav").attr("title",$exe_i18n.hide);
             var w = "715px"; //Width
             var f = "right"; //Float
             var p = "0"; //Padding
@@ -80,7 +79,7 @@ var myTheme = {
         });
     },
     reset : function() {
-        $("#toggle-nav").attr("class","show-nav");
+        $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
         myTheme.toggleMenu();        
     }    
 }

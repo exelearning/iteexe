@@ -166,7 +166,13 @@ def ideviceFooter(e, style, mode):
     return h
     
 def getJavaScriptStrings():
-    return '<script type="text/javascript">$exe_i18n={showHide:"'+_("Show/Hide")+'"}</script>'
+    s = '<script type="text/javascript">$exe_i18n={'
+    s += 'show:"'+_("Show")+'",'
+    s += 'hide:"'+_("Hide")+'",'
+    s += 'menu:"'+_("Menu")+'"'
+    s += '}</script>'
+    
+    return s
 
 def header(style=u'default'):
     """Generates the common header XHTML"""

@@ -1134,16 +1134,11 @@ var $exe = {
     },
     iDeviceToggler : {
         init : function(){
-            var t = $exe_i18n.showHide;
-            var t = t.split("/");
-            if (t.length!=2) return false;
-            $exe.iDeviceToggler.t1 = t[0];
-            $exe.iDeviceToggler.t2 = t[1];
             var em1 = $(".iDevice_header");
             var em0 = $(".iDevice.emphasis0");
             if ((em1.length+em0.length)>1) {
                 em1.each(function(){
-                    var t = $exe.iDeviceToggler.t2;
+                    var t = $exe_i18n.hide;
                     var e = $(this);
                     var eP = e.parent().parent();
                     var iDeviceID = eP.attr("id");
@@ -1154,7 +1149,7 @@ var $exe = {
                     e.html(h+l);
                 });
                 em0.each(function(){
-                    var t = $exe.iDeviceToggler.t2;
+                    var t = $exe_i18n.hide;
                     var e = $(this);
                     var eP = e.parent();
                     var iDeviceID = eP.attr("id");
@@ -1167,7 +1162,7 @@ var $exe = {
             }
         },
         toggle : function(e,id,em) {
-            var t = $exe.iDeviceToggler.t2;
+            var t = $exe_i18n.hide;
             var i = $("#"+id);
             var sel = ".iDevice_content";
             if (em=="em1") sel = ".iDevice_inner";
@@ -1175,7 +1170,7 @@ var $exe = {
             var c = i.attr("class");
             if (typeof(c)=='undefined') return false;
             if (c.indexOf(" hidden-idevice")==-1) {
-                t = $exe.iDeviceToggler.t1;
+                t = $exe_i18n.show;
                 c += " hidden-idevice";
                 iC.slideUp("fast");
                 e.className = "show-idevice";
