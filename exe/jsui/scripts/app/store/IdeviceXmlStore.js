@@ -47,9 +47,11 @@ Ext.define('eXe.store.IdeviceXmlStore', {
                 	name: 'category'
                 },
                 {
-                	name: 'visible'
+                	name: 'visible',
+                	type: 'boolean'
                 }
-            ]
+            ],
+            filters: [{property: 'visible', value: true}]
         }, cfg)]);
     },
     

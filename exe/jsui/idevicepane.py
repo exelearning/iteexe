@@ -122,8 +122,11 @@ class IdevicePane(Renderable, Resource):
             lower_title = prototype._title.lower()
             visible = lower_title not in G.application.config.hiddeniDevices
             if lower_title not in G.application.config.deprecatediDevices:
-                for category in G.application.config.idevicesCategories[lower_title]:
-                    xml += self.__renderPrototype(prototype, category, visible)
+                if lower_title in G.application.config.idevicesCategories:
+                    for category in G.application.config.idevicesCategories[lower_title]:
+                        xml += self.__renderPrototype(prototype, category, visible)
+                else:
+                    xml += self.__renderPrototype(prototype, _('My iDevices'), visible)
 
         xml += u"</idevices>\n"
         xml += u"<!-- IDevice Pane End -->\n"
@@ -142,7 +145,7 @@ class IdevicePane(Renderable, Resource):
         xml += u"   <label>" + prototype.title + "</label>\n"
         xml += u"   <id>" + prototype.id + "</id>\n"
         xml += u"   <category>" + _(category) + "</category>\n"
-        xml += u"   <visible>" + str(visible) + "</visible>\n"
+        xml += u"   <visible>" + str(visible).lower() + "</visible>\n"
         xml += u"  </idevice>\n"
         return xml
         
