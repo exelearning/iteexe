@@ -89,13 +89,9 @@ class FreeTextBlock(Block):
         """
         if hasattr(self.idevice, 'parent') and self.idevice.parent and not self.idevice.parent.edit:
             return u""
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"style=\"position: relative\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html = common.ideviceHeader(self, style, "preview")
         html += self.contentElement.renderPreview()
-        html += self.renderViewButtons()
-        html += "</div>\n"
+        html += common.ideviceFooter(self, style, "preview")                
         return html
 
 
