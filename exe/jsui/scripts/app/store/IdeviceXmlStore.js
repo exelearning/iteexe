@@ -35,12 +35,19 @@ Ext.define('eXe.store.IdeviceXmlStore', {
                     record: 'idevice'
                 }
             },
+            groupField: 'category',
             fields: [
                 {
                     name: 'label'
                 },
                 {
                     name: 'id'
+                },
+                {
+                	name: 'category'
+                },
+                {
+                	name: 'visible'
                 }
             ]
         }, cfg)]);

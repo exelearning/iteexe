@@ -69,9 +69,45 @@ Ext.define('eXe.view.ui.LeftPanel', {
                     itemId: 'idevice_panel',
                     height: 150,
                     autoScroll: true,
-                    title: _('iDevices'),
                     store: 'IdeviceXmlStore',
                     flex: 1,
+                    features: [{
+                       ftype: 'grouping',
+                	   startCollapsed: true,
+                	   groupHeaderTpl: '{name}',
+                	   
+                    }],
+                    listeners: {
+             		   mouseover: {
+             			   fn: function(e, target) {
+             				   var feature = Ext.ComponentQuery.query("#idevice_panel gridview")[0].features[0];
+             				   feature.collapseAll();
+             				   feature.expand(Ext.fly(target).down('div').dom.textContent);
+             			   },
+             			   delegate: '.x-grid-group-hd',
+             			   element: 'body'
+             		   }
+             	    },
+             	    tbar: [
+             	        {
+             	        	xtype: 'button',
+             	        	text: _('Ungroup'),
+             	        	handler: function(button) {
+             	        		if (button.getText() == _('Ungroup')) {
+             	        			button.up("#idevice_panel").view.features[0].disable();
+             	        			button.setText(_('Group'));
+             	        		}
+             	        		else {
+             	        			button.up("#idevice_panel").view.features[0].enable();
+             	        			button.setText(_('Ungroup'));
+             	        		}
+             	        	}
+             	        },
+             	        {
+             	        	xtype: 'button',
+             	        	text: _('Edit')
+             	        }
+             	    ],
                     region: 'south',
                     split: true,
                     columns: [
@@ -83,7 +119,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             flex: 1,
                             hideable: false,
                             menuDisabled: true,
-                            text: _('Name')
+                            text: _('iDevices')
                         }
                     ]
                 }

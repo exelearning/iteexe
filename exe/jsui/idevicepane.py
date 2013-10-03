@@ -119,26 +119,30 @@ class IdevicePane(Renderable, Resource):
         locale.setlocale(locale.LC_ALL, "")
         prototypes.sort(sortfunc)
         for prototype in prototypes:
-            if prototype._title.lower() not in G.application.config.hiddeniDevices \
-            and prototype._title.lower() \
-            not in G.application.config.deprecatediDevices:
-                xml += self.__renderPrototype(prototype)
+            lower_title = prototype._title.lower()
+            visible = lower_title not in G.application.config.hiddeniDevices
+            if lower_title not in G.application.config.deprecatediDevices:
+                for category in G.application.config.idevicesCategories[lower_title]:
+                    xml += self.__renderPrototype(prototype, category, visible)
 
         xml += u"</idevices>\n"
         xml += u"<!-- IDevice Pane End -->\n"
         return xml.encode('utf8')
 
 
-    def __renderPrototype(self, prototype):
+    def __renderPrototype(self, prototype, category, visible):
         """
         Add the list item for an iDevice prototype in the iDevice pane
         """
         log.debug("Render "+prototype.title)
         log.debug("_title "+prototype._title)
         log.debug("of type "+repr(type(prototype.title)))
+        log.info(prototype._title.lower())
         xml  = u"  <idevice>\n"
         xml += u"   <label>" + prototype.title + "</label>\n"
         xml += u"   <id>" + prototype.id + "</id>\n"
+        xml += u"   <category>" + _(category) + "</category>\n"
+        xml += u"   <visible>" + str(visible) + "</visible>\n"
         xml += u"  </idevice>\n"
         return xml
         
