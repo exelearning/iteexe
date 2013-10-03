@@ -164,6 +164,9 @@ def ideviceFooter(e, style, mode):
             h += "</"+sectionTag+">"+lb # Close extra div (e.idevice.klass)
     h += "</"+articleTag+">"+lb # Close iDevice
     return h
+    
+def getJavaScriptStrings():
+    return '<script type="text/javascript">$exe_i18n={showHide:"'+_("Show/Hide")+'"}</script>'
 
 def header(style=u'default'):
     """Generates the common header XHTML"""
