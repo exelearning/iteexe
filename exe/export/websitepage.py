@@ -28,6 +28,7 @@ from urllib                   import quote
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
+from exe.engine.version       import release
 from exe.export.pages         import Page, uniquifyNames
 from exe.webui                import common 
 from exe                      import globals as G
@@ -101,7 +102,7 @@ class WebsitePage(Page):
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
             html += '<meta name="author" content="'+self.node.package.author+'" />'+lb
-        html += '<meta name="generator" content="eXeLearning - exelearning.net" />'+lb
+        html += '<meta name="generator" content="eXeLearning '+release+' - exelearning.net" />'+lb
         if self.node.id=='0':
             if self.node.package.description!="":
                 html += '<meta name="description" content="'+self.node.package.description+'" />'+lb
