@@ -1116,7 +1116,7 @@ var $exe = {
         var d = document.body.className;
         d += ' js';
         //iDevice Toggler
-        if (d!='exe-single-page js') {
+        if (d!='exe-single-page js' && d!='exe-authoring-page js') {
             var ie_v = $exe.isIE();
             if (ie_v) {
                 if (ie_v>7) $exe.iDeviceToggler.init();
