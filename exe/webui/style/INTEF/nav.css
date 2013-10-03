@@ -43,7 +43,7 @@ body{
 /* Otras definiciones */
 body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
-#main{padding:10px 20px 0 250px}
+#main{padding:10px 20px 10px 0;width:715px;float:right}
 #content{padding-bottom:11px}
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
 * html #header,* html #emptyHeader{height:110px} /* IE6 */
@@ -80,7 +80,7 @@ html[xmlns] #content{display:block}
     #content{border:none;width:100%}
     #header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
     /* Horizontal navigation */
-    #main{padding-left:20px;padding-top:0;clear:both}
+    #main{padding-left:20px;padding-top:0;clear:both;width:auto}
     #nodeTitle{left:20px}
     #header{text-align:right;padding-right:20px}
     #siteFooter{padding-left:20px}
@@ -107,7 +107,7 @@ html[xmlns] #content{display:block}
     #content{width:100%;border:0}
     #userOptionsBar,#topPagination{display:none}
     #siteNav{float:none;width:100%;padding:0}
-    #main{padding:0 10px}
+    #main{padding:0 10px;width:auto}
     #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px}
     #nodeTitle{position:absolute;top:1px;left:10px}
     #header{text-align:right;padding-right:10px}
