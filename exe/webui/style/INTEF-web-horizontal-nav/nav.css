@@ -86,6 +86,11 @@ body{padding:0;text-align:center}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
+/* Hide/Show navigation */
+#nav-toggler{margin:0;position:absolute;top:10px;left:10px;display:none}
+#nav-toggler a{background:#e6e9ed;color:#A7512B;padding:3px}
+#nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
+
 @media all and (max-width: 700px) {
     #content{width:100%;border:0}
     #userOptionsBar,#topPagination{display:none}
@@ -99,6 +104,8 @@ html[xmlns] #content{display:block}
     * html #siteNav li ul,#siteNav li li{width:auto}
     #siteNav a{border-bottom:1px dotted #0460B3;color:#000;padding:4px 0 4px 10px}
     #siteNav ul ul a{padding-left:25px;font-size:.95em}
+    #siteNav li ul ul{margin:0;font-size:.95em}
+    #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:auto}
     #siteNav ul ul ul a{font-size:1em;padding-left:50px}
     #siteNav a:hover,#siteNav a:focus{color:#4D4D4D;background:#eee}
     #siteNav ul ul a{color:#555}
@@ -115,4 +122,6 @@ html[xmlns] #content{display:block}
     .pagination{text-align:center;height:35px;position:relative}
     .pagination .prev{position:absolute;left:0}
     .pagination .next{position:absolute;right:0}
+    #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center;display:block}
+    #nav-toggler a{width:100%;display:block}    
 }

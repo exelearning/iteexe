@@ -75,6 +75,11 @@ body{padding:0;text-align:center}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
+/* Hide/Show navigation */
+#nav-toggler{margin:0;position:absolute;top:10px;left:10px}
+#nav-toggler a{background:#e6e9ed;color:#A7512B;padding:3px}
+#nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
+
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */
     #content{border:none;width:100%}
@@ -101,6 +106,7 @@ html[xmlns] #content{display:block}
     * html #siteNav li ul ul{margin-left:13em}
     #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
     #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
+    #toggle-nav{display:none}
 }
 
 @media all and (max-width: 700px) {
@@ -117,4 +123,6 @@ html[xmlns] #content{display:block}
     .pagination{text-align:center;height:35px;position:relative}
     .pagination .prev{position:absolute;left:0}
     .pagination .next{position:absolute;right:0}
+    #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
+    #nav-toggler a{width:100%;display:block}    
 }
