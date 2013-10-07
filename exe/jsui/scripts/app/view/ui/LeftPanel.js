@@ -156,7 +156,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             sortable: false,
                             dataIndex: 'category',
                             fixed: true,
-                            flex: 0,
+                            flex: 1,
                             hideable: false,
                             menuDisabled: true,
                             text: _('Category'),
