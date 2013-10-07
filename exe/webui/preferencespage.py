@@ -160,8 +160,8 @@ class PreferencesPage(RenderableResource):
         try:
             data['locale'] = self.config.locale
             data['internalAnchors'] = self.config.internalAnchors
-            if (self.config.browser in browserNames):
-                browserSelected = self.config.browser
+            if (self.config.browser.basename in browserNames):
+                browserSelected = self.config.browser.basename
             else:
                 browserSelected = "None"
             data['browser'] = browserSelected
@@ -186,7 +186,10 @@ class PreferencesPage(RenderableResource):
             self.config.internalAnchors = internalAnchors
             self.config.configParser.set('user', 'internalAnchors', internalAnchors)
             browser = request.args['browser'][0]
-            self.config.browser = browser
+            try:
+                self.config.browser = mywebbrowser.get(browser)
+            except:
+                self.config.browser = mywebbrowser.get(None)
             self.config.configParser.set('system', 'browser', browser)
             showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
             self.config.showPreferencesOnStart = showPreferencesOnStart
