@@ -135,6 +135,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
+            '#tools_preview': {
+                click: { fn: this.processBrowseEvent, url: location.href + '/preview' }
+            },
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
