@@ -163,7 +163,7 @@ Ext.application({
 		    Ext.get('loading-mask').fadeOut();
 		  }, 250);
         
-        if (eXe.app.config.showPreferencesOnStart == '1')
+        if (eXe.app.config.showPreferences)
         	eXe.app.getController('Toolbar').toolsPreferences();
     },
 

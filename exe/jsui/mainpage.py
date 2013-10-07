@@ -218,9 +218,10 @@ class MainPage(RenderableLivePage):
         config = {'lastDir': G.application.config.lastDir,
                   'locationButtons': self.location_buttons.buttons,
                   'lang': G.application.config.locale.split('_')[0],
-                  'showPreferencesOnStart': G.application.config.showPreferencesOnStart,
+                  'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
                   'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId)
                  }
+        G.application.preferencesShowed = True
         return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
 
     def render_jsuilang(self, ctx, data):
