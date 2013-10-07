@@ -165,6 +165,7 @@ class PreferencesPage(RenderableResource):
             else:
                 browserSelected = "None"
             data['browser'] = browserSelected
+            data['showPreferencesOnStart'] = self.config.showPreferencesOnStart
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to get preferences")})
@@ -187,6 +188,9 @@ class PreferencesPage(RenderableResource):
             browser = request.args['browser'][0]
             self.config.browser = browser
             self.config.configParser.set('system', 'browser', browser)
+            showPreferencesOnStart = request.args['showPreferencesOnStart'][0]
+            self.config.showPreferencesOnStart = showPreferencesOnStart
+            self.config.configParser.set('user', 'showPreferencesOnStart', showPreferencesOnStart)
         except Exception as e:
             log.exception(e)
             return json.dumps({'success': False, 'errorMessage': _("Failed to save preferences")})

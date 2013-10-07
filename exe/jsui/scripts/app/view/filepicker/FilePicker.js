@@ -43,7 +43,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
     initComponent: function() {
         var me = this,
             ft = Ext.create("Ext.data.Store",{ fields: ['typename', 'extension', 'regex'] }),
-            top_buttons = locationButtons.concat([
+            top_buttons = eXe.app.config.locationButtons.concat([
                 { xtype: 'component', flex: 1 }
 	        ]),
     		buttons = [
@@ -75,7 +75,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         switch (me.type) {
         	case eXe.view.filepicker.FilePicker.modeSave:
         		buttons[2] = { xtype: 'button', text: _('Save'), itemId: 'filepicker_save' };
-                top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
+                top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
 		        top_buttons.unshift({
 		            xtype: 'text',
 		            text: _('Save in:'),
@@ -86,7 +86,7 @@ Ext.define('eXe.view.filepicker.FilePicker', {
         		filter = [];
                 fieldlabel = _('Folder');
                 buttons[2] = { xtype: 'button', text: _('Select Folder'), itemId: 'filepicker_open' };
-                top_buttons[locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
+                top_buttons[eXe.app.config.locationButtons.length + 1] = { xtype: 'button', text: _('Create Directory'), itemId: 'filepicker_createdir' };
         		break;
         }
         

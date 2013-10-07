@@ -134,9 +134,11 @@ Ext.application({
             Ext.state.Manager.setProvider(new Ext.state.CookieProvider({expires: null}));
         }
         
-        Ext.state.Manager.set('filepicker-currentDir', lastDir);
-
         eXe.app = this;
+        
+        eXe.app.config = config;
+        
+        Ext.state.Manager.set('filepicker-currentDir', eXe.app.config.lastDir);
 
         window.onbeforeunload = function() {
             if (eXe.app.quitWarningEnabled)
@@ -160,6 +162,9 @@ Ext.application({
 		    Ext.get('loading').hide();
 		    Ext.get('loading-mask').fadeOut();
 		  }, 250);
+        
+        if (eXe.app.config.showPreferencesOnStart == '1')
+        	eXe.app.getController('Toolbar').toolsPreferences();
     },
 
     appFolder: "jsui/app"

@@ -38,14 +38,14 @@ Ext.define('eXe.view.ui.MainTabPanel', {
                 {
                     xtype: 'uxiframe',
                     itemId: 'authoring',
-                    src: authoringIFrameSrc,
+                    src: eXe.app.config.authoringIFrameSrc,
                     id: 'authoringIFrame1',
                     title: _('Authoring')
                 },
                 {
                     xtype: 'uxiframe',
                     itemId: 'preview',
-                    src: authoringIFrameSrc.replace('authoring', 'preview'),
+                    src: eXe.app.config.authoringIFrameSrc.replace('authoring', 'preview'),
                     id: 'previewIFrame1',
                     title: _('Preview')
                 },

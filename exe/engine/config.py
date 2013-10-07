@@ -50,7 +50,7 @@ class Config:
     optionNames = {
         'system': ('webDir', 'jsDir', 'port', 'dataDir',
                    'configDir', 'localeDir', 'browser'),
-        'user': ('locale', 'lastDir'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart'),
     }
 
     idevicesCategories = {
@@ -129,6 +129,7 @@ class Config:
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
         self.lastDir = None
+        self.showPreferencesOnStart = "1"
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
@@ -349,6 +350,8 @@ class Config:
                 self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('lastDir'):
                 self.lastDir = self.configParser.user.lastDir
+            if self.configParser.user.has_option('showPreferencesOnStart'):
+                self.showPreferencesOnStart = self.configParser.user.showPreferencesOnStart
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return
