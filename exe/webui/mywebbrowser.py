@@ -588,6 +588,7 @@ if sys.platform == 'darwin':
         """
         def __init__(self, name):
             self.name = name
+            self.basename = name
 
         def open(self, url, new=0, autoraise=True):
             assert "'" not in url
@@ -625,6 +626,7 @@ if sys.platform == 'darwin':
     class MacOSXOSAScript(BaseBrowser):
         def __init__(self, name):
             self._name = name
+            self.basename = name
 
         def open(self, url, new=0, autoraise=True):
             if self._name == 'default':
