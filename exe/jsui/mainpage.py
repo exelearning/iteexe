@@ -209,6 +209,8 @@ class MainPage(RenderableLivePage):
 
         self.idevicePane.client = client
         self.styleMenu.client = client
+        self.webServer.stylemanager.client = client
+        
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True
@@ -365,7 +367,7 @@ class MainPage(RenderableLivePage):
                 Path(filename).remove()
 
         d.addCallback(successDownload)
-
+        
     def handleReload(self, client):
         self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)

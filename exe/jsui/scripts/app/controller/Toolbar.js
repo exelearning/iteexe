@@ -19,7 +19,7 @@
 
 Ext.define('eXe.controller.Toolbar', {
     extend: 'Ext.app.Controller',
-    requires: ['eXe.view.forms.PreferencesPanel'],
+    requires: ['eXe.view.forms.PreferencesPanel', 'eXe.view.forms.StyleManagerPanel'],
 	refs: [{
         ref: 'recentMenu',
         selector: '#file_recent_menu'
@@ -401,15 +401,16 @@ Ext.define('eXe.controller.Toolbar', {
 	// JR: Launch the Style Manager Window
 	toolsStyleManager: function() {
         var stylemanager = new Ext.Window ({
-          height: eXe.app.getMaxHeight(620), 
-          width: 450, 
+          maxHeight: eXe.app.getMaxHeight(800), 
+          width: 500, 
           modal: true,
+          autoShow: true,
+          autoScroll: true,
           id: 'stylemanagerwin',
           title: _("Style Manager"),
+          laoyout: 'fit',
           items: {
-              xtype: 'uxiframe',
-              src: '/stylemanager',
-              height: '100%'
+              xtype: 'stylemanager'
           }
         });
         stylemanager.show();        
