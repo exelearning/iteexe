@@ -111,14 +111,24 @@ Ext.define('eXe.view.ui.LeftPanel', {
              	        			gbutton.disable();
              	        		}
              	        		else {
-             	        			panel.editing = false;
-             	        			panel.columns[1].hide();
-             	        			panel.columns[2].hide();
-             	        			panel.store.filter('visible', true);
-             	        			button.setText(_('Edit iDevices'));
-             	        			gbutton.enable();
-             	        			if (gbutton.getText() == _('Ungroup iDevices'))
-             	        				panel.view.features[0].enable();
+             	        			panel.store.each(function(record){
+             	        			    record.setDirty();
+             	        			});
+             	        			panel.store.sync({
+             	        				callback: function() {
+             	        					panel.editing = false;
+             	        					panel.columns[1].hide();
+             	        					panel.columns[2].hide();
+             	        					button.setText(_('Edit iDevices'));
+             	        					gbutton.enable();
+             	        					if (gbutton.getText() == _('Ungroup iDevices'))
+             	        						panel.view.features[0].enable();
+             	        					panel.store.each(function(record){
+                     	        			    record.commit();
+                     	        			});
+             	        					panel.store.filter('visible', true);
+             	        				}
+             	        			});
              	        		}
              	        	}
              	        }
