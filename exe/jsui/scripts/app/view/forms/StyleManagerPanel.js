@@ -177,7 +177,6 @@ function createPanelStyles(styles) {
 		xtype: 'fieldset',
 		title: _("List of styles in your system"),
 		margin: 10,
-		width: 450,
 		items: itemsShow
 	} ,	{
     	xtype: 'button',
@@ -328,8 +327,8 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
     alias: 'widget.stylemanager',
 
     initComponent: function() {		
-        var me = this;
-        panel = createPanel();
+        var me = this,
+        	panel = createPanel();
         Ext.applyIf(me, {
             autoScroll: true,
             trackResetOnLoad: true,
@@ -346,12 +345,7 @@ Ext.define('eXe.view.forms.StyleManagerPanel', {
     	formpanel = stylemanager.down('form');
 	    formpanel.removeAll();
 	    panel = createPanel();
-	    formpanel.add({
-	        autoScroll: true,
-	        trackResetOnLoad: true,
-	        url: 'stylemanager',
-	        items: panel
-	    });
+	    formpanel.add(panel);
 	    me.doLayout();
     }
 });

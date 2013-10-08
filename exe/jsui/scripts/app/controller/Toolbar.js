@@ -408,7 +408,7 @@ Ext.define('eXe.controller.Toolbar', {
           autoScroll: true,
           id: 'stylemanagerwin',
           title: _("Style Manager"),
-          laoyout: 'fit',
+          layout: 'fit',
           items: {
               xtype: 'stylemanager'
           }
