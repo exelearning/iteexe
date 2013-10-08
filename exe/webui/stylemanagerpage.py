@@ -12,9 +12,9 @@ import json
 from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
 from exe.webui.renderable      import RenderableResource
-from exe.engine.path           import toUnicode, Path
-from exe.webui                 import common
+from exe.engine.path           import toUnicode
 from exe.engine.style          import Style
+import locale
 
 
 log = logging.getLogger(__name__)
@@ -84,7 +84,12 @@ class StyleManagerPage(RenderableResource):
         Devuelve una respuesta JSON con la lista de estilos y los botones asociados
         """
         styles = []
-        styles_sort = sorted(self.config.styleStore.getStyles())
+        styles_sort = self.config.styleStore.getStyles()
+
+        def sortfunc(s1, s2):
+            return locale.strcoll(s1.get_name(), s2.get_name())
+        locale.setlocale(locale.LC_ALL, "")
+        styles_sort.sort(sortfunc)
         for style in styles_sort:
             export = True
             delete = False
