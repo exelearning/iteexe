@@ -79,17 +79,6 @@ Ext.define('eXe.view.ui.LeftPanel', {
                 	   groupHeaderTpl: '{name}',
                 	   
                     }],
-                    listeners: {
-             		   mouseover: {
-             			   fn: function(e, target) {
-             				   var feature = Ext.ComponentQuery.query("#idevice_panel gridview")[0].features[0];
-             				   feature.collapseAll();
-             				   feature.expand(Ext.fly(target).down('div').dom.textContent);
-             			   },
-             			   delegate: '.x-grid-group-hd',
-             			   element: 'body'
-             		   }
-             	    },
              	    tbar: [
              	        {
              	        	xtype: 'button',
