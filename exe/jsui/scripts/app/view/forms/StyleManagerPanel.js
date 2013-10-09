@@ -131,7 +131,7 @@ function createPanelStyles(styles) {
         	xtype: 'label',
         	width: 320,
         	margin: '5 5 5 20',
-			style:"font-size:120%",
+			style:"font-size:105%",
         	text: styles[i].name
 		};
 		if (styles[i].exportButton) {
@@ -143,12 +143,21 @@ function createPanelStyles(styles) {
 		if (styles[i].propertiesButton) {
 			style.push(createButtonProperties(styles[i].name, styles[i].style));
 		}
+		var estilo = "";
+		if (i%2 == 0) {
+			estilo = 'padding-top:5px; background-color: #FFF;'
+		} 
+		else {
+			estilo = 'padding-top:5px; background-color: #FAFAFA; border-color: gray;'
+		}
+		
+		
 		var item =
 		{ 
            	xtype: 'container',
             layout: 'hbox',
             margin: '0 0 5 0',
-			style: 'padding-top:5px; background-color: #CEF6EC;',
+			style: estilo,
             items: style         
         }
 		itemsShow[i] = item;
