@@ -11,6 +11,7 @@ function createButtonExport(name, style) {
     	icon: '/images/stock-export.png',
         itemId: 'export_style'+style,
         name: 'export_style'+style,
+		style:"margin-right:4px;",
         value: style,
         handler: function(button) {
 			var formpanel = button.up('form'),
@@ -57,6 +58,7 @@ function createButtonDelete(name, style) {
     	icon: '/images/stock-delete.png',
         itemId: 'delete_style'+style,
 		name: 'delete_style'+style,
+		style:"margin-right:4px;",
         value: style,
         handler: function(button) {
 			var formpanel = button.up('form'),
@@ -126,9 +128,10 @@ function createPanelStyles(styles) {
 		var style=[];
 		style[0] = 
 		{ 
-        	xtype: 'label', 
-        	labelWidth: 'auto',
-        	margin: '5 5 5 5',
+        	xtype: 'label',
+        	width: 320,
+        	margin: '5 5 5 20',
+			style:"font-size:120%",
         	text: styles[i].name
 		};
 		if (styles[i].exportButton) {
@@ -145,6 +148,7 @@ function createPanelStyles(styles) {
            	xtype: 'container',
             layout: 'hbox',
             margin: '0 0 5 0',
+			style: 'padding-top:5px; background-color: #CEF6EC;',
             items: style         
         }
 		itemsShow[i] = item;
@@ -173,18 +177,15 @@ function createPanelStyles(styles) {
         name: 'style'
 	}
 	itemsShow.push(style);
-	panel = [{
-		xtype: 'fieldset',
-		title: _("List of styles in your system"),
-		margin: 10,
-		items: itemsShow
-	} ,	{
+	panel = [
+		{
     	xtype: 'button',
 		tooltip: _('Import style to the system '),
 		icon: '/images/stock-import.png',
 	    itemId: 'import_style',
 		name: 'import_style',
 	    text: 'Import style',
+		style:'float:right;',
 	    margin: 10,
 	    handler: function(button) {
 			var formpanel = button.up('form'),
@@ -217,7 +218,14 @@ function createPanelStyles(styles) {
 		    ]);
 		    fp.show();	
 		}
-	}];
+		},
+	{
+		xtype: 'fieldset',
+		title: _("List of styles in your system"),
+		margin: 10,
+		items: itemsShow
+	} 
+	];
 	return panel
 }
 
