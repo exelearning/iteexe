@@ -62,3 +62,6 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* To review */
 .question .answer p{margin:0 0 .7em 0}
 .hidden-idevice .image_text{display:none} /* iDevice Toggler : Required for Magnifier */
+#skipNav{margin:0}
+#skipNav a{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#skipNav a:hover,#skipNav a:focus{overflow:visible;clip:auto;height:auto;z-index:100;background:#333;color:#fff;padding:.5em .85em}

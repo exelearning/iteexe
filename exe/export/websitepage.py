@@ -131,6 +131,7 @@ class WebsitePage(Page):
         html += u"</head>"+lb
         html += u'<body class="exe-web-site">'+lb
         html += u"<"+sectionTag+" id=\"content\">"+lb
+        html += '<p id="skipNav"><a href="#main">'+_('Skip navigation')+'</a></p>'
 
         if self.node.package.backgroundImg or self.node.package.title:
             html += u"<"+headerTag+" id=\"header\" "
@@ -159,7 +160,7 @@ class WebsitePage(Page):
         html += "<"+sectionTag+" id='topPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage)
         html += "</"+sectionTag+">"+lb
-        html += u"<"+sectionTag+" id=\"main\">"+lb
+        html += u"<"+sectionTag+" id=\"main\"><a name=\"main\"></a>"+lb
 
         html += '<'+headerTag+' id=\"nodeDecoration\">'
         html += '<h1 id=\"nodeTitle\">'
