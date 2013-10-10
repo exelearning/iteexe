@@ -241,18 +241,18 @@ data is entered into this field."""))
                           field.__class__.__name__)
         
             
-    def renderButtons(self, request, showHide):
+    def renderButtons(self, request):
         """
         Render the idevice being edited
         """
         html = "<font color=\"red\"><b>"+self.message+"</b></font>"
         
         html += "<fieldset><legend><b>" + _("Add Field")+ "</b></legend>"
-        html += common.submitButton("addText", _("Text Line"), not showHide)
+        html += common.submitButton("addText", _("Text Line"))
         html += common.elementInstruc(self.lineInstruc) + "<br/>"
-        html += common.submitButton("addTextArea", _("Text Box"), not showHide)
+        html += common.submitButton("addTextArea", _("Text Box"))
         html += common.elementInstruc(self.textBoxInstruc) + "<br/>"
-        html += common.submitButton("addFeedback", _("Feedback"), not showHide)
+        html += common.submitButton("addFeedback", _("Feedback"))
         html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
         #  Attachments are now embeddable:
         #html += common.submitButton("addAttachment", _("Attachment"))
@@ -265,9 +265,9 @@ data is entered into this field."""))
         html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"
 
         if self.idevice.edit:
-            html += common.submitButton("preview", _("Preview"), not (showHide or self.parent.isGeneric))
+            html += common.submitButton("preview", _("Preview"), not self.parent.isGeneric)
         else:
-            html += common.submitButton("edit", _("Edit"), not showHide)
+            html += common.submitButton("edit", _("Edit"))
 
         html += "<br/>"
         html += common.submitButton("cancel", _("Cancel"))
@@ -429,29 +429,4 @@ data is entered into this field."""))
             html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % icon
             html += u'<br/>%s.gif</div>\n' % icon
         return html
-    
-    def renderShowHideiDevices(self, idevices):
-        """
-        JR: Funcion que muestra la lista de idevices para mostrarlos y ocultarlos
-        """
-        html = "<div id=\"editorWorkspace\">\n"
-        html += "<br/><br/><strong>%s</strong>\n" % _("Check iDevices you want to display:")
-        html += "<ul style=\"list-style:none;\">\n"
-        idevices_sort = sorted(idevices, key=lambda idevice: idevice.title)
-        idevices_show = self.ideviceStore.generic + self.ideviceStore.extended
-        for idevice in idevices_sort:
-            html += "<li>\n"
-            html += "<input type=checkbox name=\"%s\"" % idevice.title
-            checked = False
-            for i in idevices_show:
-                if (i.title == idevice.title):
-                    checked = True
-            if checked:
-                html += " checked=\"checked\" "
-            html += ">%s</input>\n" % idevice.title
-            html += "</li>\n" 
-        html += "</ul>"
-        html += "</div>"
-        return html
-    
 # ===========================================================================
