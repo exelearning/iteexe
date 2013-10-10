@@ -62,7 +62,7 @@ body{padding:0;text-align:center}
 .no-nav #siteFooter{padding-left:20px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
-.pagination a{padding:3px;}
+.pagination a{padding:3px}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
@@ -76,10 +76,11 @@ body{padding:0;text-align:center}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
-/* Hide/Show navigation */
+/* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:10px;left:10px}
-#nav-toggler a{background:#e6e9ed;color:#A7512B;padding:3px}
+#nav-toggler a,#skipNav a{background:#e6e9ed;color:#A7512B;padding:3px}
 #nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
+#skipNav{z-index:100px;padding-top:10px;text-align:center}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */

@@ -86,10 +86,11 @@ body{padding:0;text-align:center}
 html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
-/* Hide/Show navigation */
+/* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:10px;left:10px;display:none}
-#nav-toggler a{background:#e6e9ed;color:#A7512B;padding:3px}
+#nav-toggler a,#skipNav a{background:#e6e9ed;color:#A7512B;padding:3px}
 #nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
+#skipNav{z-index:100px;padding-top:10px;text-align:center}
 
 @media all and (max-width: 700px) {
     #content{width:100%;border:0}

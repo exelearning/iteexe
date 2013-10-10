@@ -47,6 +47,10 @@ body{
 	color:#005F6F; /* Título de cada página */
 }
 
+#skipNav a{
+    background:#436974;
+}
+
 #siteNav a{
 	background:#f0f0f0; /* Color fondo menú */
 	color:#0F5E87; /* Enlaces del menú */

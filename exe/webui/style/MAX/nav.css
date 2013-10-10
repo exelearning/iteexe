@@ -5,6 +5,8 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #main{padding:10px 20px 0 250px}
 #header,#emptyHeader{border-top:none}
 /* Navigation */
+#skipNav{width:50%;padding:10px}
+#skipNav a{background:#9A042F}
 #siteNav{width:230px;float:left;padding-right:20px}
 #siteNav,#siteNav ul{background:#fff;border-color:#f1f1f1}
 #siteNav li:hover,#siteNav li.sfhover{background:#f1f1f1}
@@ -67,6 +69,8 @@ html[xmlns] #content{display:block}
     body{background:#fff}
 	#header, #emptyHeader{background:#fff;padding-left:10px;height:3.8em;line-height:3.8em;font-size:1.3em}
 	#content{width:100%;min-width:0;background:#fff;border:none;box-shadow:none;margin:0}
+    #skipNav{width:100%;padding:10px 0;text-align:right}
+    #skipNav a{border-right:10px solid #fff}
     #siteNav{float:none;width:100%;padding:0}
 	#siteNav a{border-right:0}
     #main{padding:0 10px}

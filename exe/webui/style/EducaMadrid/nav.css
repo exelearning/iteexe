@@ -9,6 +9,8 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #siteFooter{padding-left:250px}
 .no-nav #siteFooter{padding-left:20px}
 /* Navigation */
+#skipNav{text-align:center;padding-top:25px}
+#skipNav a{border-radius:5px;padding:2px 6px 3px 6px;box-shadow:0 0 3px 0 #ccc;background:#DB0B00}
 #siteNav{width:230px;float:left;padding-right:20px}
 #siteNav,#siteNav ul{background:#fff;border-color:#f0f0f0}
 #siteNav li:hover,#siteNav li.sfhover{background:#f0f0f0}

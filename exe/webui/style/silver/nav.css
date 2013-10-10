@@ -12,6 +12,8 @@ body{background:#DBDAD2}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:2px solid #E5E4E0}
 /* Navigation */
+#skipNav{text-align:center;padding-top:18px}
+#skipNav a{background:#706F61}
 #siteNav{width:230px;float:left;padding-right:20px}
 #siteNav,#siteNav ul{border-color:#E5E4E0}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
