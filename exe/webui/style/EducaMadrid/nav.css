@@ -1,9 +1,8 @@
 body{padding:0;text-align:center;background:#fafafa url(_em_fondo_pagina.gif)}
 #lbOverlay{background:#f3f3f3 url(_em_fondo_pagina.gif)}
-#content{width:985px;margin:20px auto;text-align:left;position:relative;border-style:solid;border-width:1px;padding-bottom:10px;max-width:100%;background:#fff url(_em_columna_izquierda.gif) repeat-y 0 0;border-color:#e3e3e3;box-shadow:0 0 10px 0 #666;border-radius:5px}
+#content{width:985px;margin:20px auto;text-align:left;position:relative;border-style:solid;border-width:1px;padding-bottom:21px;max-width:100%;background:#fff url(_em_columna_izquierda.gif) repeat-y 0 0;border-color:#e3e3e3;box-shadow:0 0 10px 0 #666;border-radius:5px}
 .no-nav #content{background:#fff}
 #main{padding:10px 20px 0 250px}
-#content{padding-bottom:21px}
 #header,#emptyHeader{border-top-left-radius:5px;border-top-right-radius:5px;border-top:none}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #f3f3f3}
