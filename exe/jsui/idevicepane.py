@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from exe.webui.livepage import allSessionClients
-import locale
 """
 IdevicePane is responsible for creating the XHTML for iDevice links
 """
@@ -27,6 +25,9 @@ import logging
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe import globals as G
+from exe.webui.livepage import allSessionClients
+import locale
+import json
 
 log = logging.getLogger(__name__)
 
@@ -92,7 +93,7 @@ class IdevicePane(Renderable, Resource):
         self.client.sendScript('eXe.app.getController("Idevice").reload()', filter_func=allSessionClients)
 
         
-    def render(self, request=None):
+    def render_GET(self, request=None):
         """
         Returns an xml string for load the client Idevices store
         """
@@ -119,26 +120,48 @@ class IdevicePane(Renderable, Resource):
         locale.setlocale(locale.LC_ALL, "")
         prototypes.sort(sortfunc)
         for prototype in prototypes:
-            if prototype._title.lower() not in G.application.config.hiddeniDevices \
-            and prototype._title.lower() \
-            not in G.application.config.deprecatediDevices:
-                xml += self.__renderPrototype(prototype)
+            lower_title = prototype._title.lower()
+            visible = lower_title not in self.config.hiddeniDevices
+            if lower_title not in self.config.deprecatediDevices:
+                if lower_title in self.config.idevicesCategories:
+                    for category in self.config.idevicesCategories[lower_title]:
+                        xml += self.__renderPrototype(prototype, category, visible)
+                else:
+                    xml += self.__renderPrototype(prototype, _('My iDevices'), visible)
 
         xml += u"</idevices>\n"
         xml += u"<!-- IDevice Pane End -->\n"
         return xml.encode('utf8')
 
+    def render_POST(self, request=None):
+        idevices = json.loads(request.args['idevices'][0])
+        for idevice in idevices:
+            prototype = self.prototypes[idevice['id']]
+            visible = idevice['visible']
+            lower_title = prototype._title.lower()
+            try:
+                self.config.hiddeniDevices.remove(lower_title)
+                self.config.configParser.delete('idevices', lower_title)
+            except:
+                pass
+            if not visible:
+                self.config.hiddeniDevices.append(lower_title)
+                self.config.configParser.set('idevices', lower_title, '0')
+        return json.dumps({'success': True})
 
-    def __renderPrototype(self, prototype):
+    def __renderPrototype(self, prototype, category, visible):
         """
         Add the list item for an iDevice prototype in the iDevice pane
         """
         log.debug("Render "+prototype.title)
         log.debug("_title "+prototype._title)
         log.debug("of type "+repr(type(prototype.title)))
+        log.info(prototype._title.lower())
         xml  = u"  <idevice>\n"
         xml += u"   <label>" + prototype.title + "</label>\n"
         xml += u"   <id>" + prototype.id + "</id>\n"
+        xml += u"   <category>" + _(category) + "</category>\n"
+        xml += u"   <visible>" + str(visible).lower() + "</visible>\n"
         xml += u"  </idevice>\n"
         return xml
         

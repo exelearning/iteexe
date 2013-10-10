@@ -8,10 +8,13 @@ import os
 import sys
 import shutil
 import zipfile
-from exe.engine.path           import toUnicode, Path
-from exe.webui                 import common
+import json
+from twisted.web.resource import Resource
+from exe.webui.livepage import allSessionClients
 from exe.webui.renderable      import RenderableResource
+from exe.engine.path           import toUnicode
 from exe.engine.style          import Style
+import locale
 
 
 log = logging.getLogger(__name__)
@@ -30,133 +33,76 @@ class StyleManagerPage(RenderableResource):
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.url          = ""
-        self.alertHTML    = ""
-        self.action        = ""
+        self.action       = ""
+        self.properties   = ""
+        self.style        = ""
+        self.client       = None
 
-
-    def process(self, request=None):
+    def getChild(self, name, request):
         """
-        Process current package 
+        Try and find the child for the name given
         """
-        log.debug("process " + repr(request.args))
-                   
-        if ("action" in request.args and request.args["action"][0] == "importStyle"):
-            stylename = request.args["filename"][0] 
-            self.__importStyle(stylename)
-        elif ("action" in request.args and request.args["action"][0] == "doExport"):
-            styleValue = request.args["style"][0]
-            filenameTarget = request.args["filename"][0]
-            styleDir    = self.config.stylesDir
-            style = Style(styleDir/styleValue)
-            self.__exportStyle(style.get_style_dir(), filenameTarget)
-        elif ("action" in request.args and request.args["action"][0] == "doDelete"):
-            styleDelete = request.args["style"][0]
-            styleDir    = self.config.stylesDir
-            styleDelete = Style(styleDir/request.args["style"][0])
-            self.__deleteStyle(styleDelete)
-        elif ("action" in request.args and request.args["action"][0] == "doProperties"):
-            self.action = 'doProperties'
-        elif ("action" in request.args and request.args["action"][0] == "doCancel"):
-            self.action = ""
-            self.alertHTML = ""
+        if name == "":
+            return self
         else:
-            self.alertHTML = ''
-        
+            return Resource.getChild(self, name, request)
         
     def render_GET(self, request):
         """Called for all requests to this object"""
-        
-        # Processing 
-        if self.action == "": self.alertHTML = ""
-        log.debug("render_GET")
-        self.process(request)
-        # Rendering
-        html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(/css/exe.css);\n"
-        html += '@import url(/style/base.css);\n'
-        html += "@import url(/style/standardwhite/content.css);</style>\n"
-        html += '<script type="text/javascript" src="/scripts/common.js">'
-        html += '</script>\n'
-        html += '<script type="text/javascript" src="/scripts/stylemanager.js">'
-        html += '</script>\n'
-        html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\"></meta>\n";
-        html += "</head>\n"
-        html += "<body>\n"
-        html += "<div id=\"main\"> \n"     
-        html += "<form method=\"post\" action=\""+self.url+"\" "
-        html += "id=\"contentForm\" >"  
-        html += common.hiddenField("action")
-        html += common.hiddenField("filename")
-        html += common.hiddenField("style")
-        if self.action == 'doProperties' and "style" in request.args:
-            styleDirname = request.args["style"][0]
-            style = self.config.styleStore.getStyle(styleDirname)
-            html += self.__styleProperties(style)
+ 
+        if (self.action == 'Properties'):
+            return json.dumps({'success': True, 'properties': self.properties, 'style': self.style, 'action': 'Properties'})
         else:
-            html += self.renderListStyles()
-            html += '<br/><input class="button" type="button" name="import" style="float:center" '
-            html += ' onclick="importStyle()" value="%s" />'  % _("Import Style")
-        html += "</div>\n"
-        html += "</div>\n"
-        html += "<br/></form>\n"
-        html += self.alertHTML
-        html += "</body>\n"
-        html += "</html>\n"
-        return html.encode('utf8')
+            return json.dumps({'success': True, 'styles': self.renderListStyles(), 'action': 'List'})
     
-    render_POST = render_GET
+    def render_POST(self, request):
+
+        self.reloadPanel()
+        
+        if (request.args['action'][0] == 'doExport'):
+            self.doExportStyle(request.args['style'][0], request.args['filename'][0])
+        elif (request.args['action'][0] == 'doDelete'):
+            self.doDeleteStyle(request.args['style'][0])
+        elif (request.args['action'][0] == 'doImport'):
+            self.doImportStyle(request.args['filename'][0])
+        elif (request.args['action'][0] == 'doProperties'):
+            self.doPropertiesStyle(request.args['style'][0])
+        elif (request.args['action'][0] == 'doList'):
+            self.doList()
     
-    def alert(self,title, mesg):
-        self.alertHTML = '<script type="text/javascript">Ext.Msg.alert("' +title+'", "'+mesg+'");</script>'
+        return self.render_GET(None)
+    
+    def reloadPanel(self):
+        self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").reload()', filter_func=allSessionClients)
+        
+    def alert(self, title, mesg):
+        self.client.sendScript("Ext.Msg.alert('%s','%s')" % (title, mesg), filter_func=allSessionClients)
+        
     
     def renderListStyles(self):
         """
-        Muestra los estilos y sus propiedades
+        Devuelve una respuesta JSON con la lista de estilos y los botones asociados
         """
-        html = "<div id=\"styleManagerWorkspace\">\n"
-        html += "<br/><h2><strong>%s</strong></h2>\n" % _("List of styles in your system:")
-        html += "<ul style=\"list-style:none;\">\n"
-        styles_sort = sorted(self.config.styleStore.getStyles())
+        styles = []
+        styles_sort = self.config.styleStore.getStyles()
+
+        def sortfunc(s1, s2):
+            return locale.strcoll(s1.get_name(), s2.get_name())
+        locale.setlocale(locale.LC_ALL, "")
+        styles_sort.sort(sortfunc)
         for style in styles_sort:
-            html += "<li style='line-height:2em;'>%s &nbsp;&nbsp;" % style.get_name()
-            html += self.__renderButtons(style)
-            html += "</li>\n" 
-        html += "</ul>"
-        
-        return html
-    
-    def __renderButtons(self, style):
-        html = '<a title="%s" href="#" onclick="doExport(\'%s\');">\n' % (_("Export Style"), style.get_dirname())
-        html += '<img alt="%s" class="submit" style="vertical-align:middle;" src="/images/stock-save.png">\n' % _("Export Style")
-        html += '</a>&nbsp;\n'
-        if (style.get_dirname() != 'INTEF' and style.get_dirname() != "standardwhite"):
-            html += '<a title="%s" href="#" onclick="doDelete(\'%s\');">\n' % (_("Delete Style"), style.get_dirname())
-            html += '<img alt="%s" class="submit" style="vertical-align:middle;" src="/images/stock-delete.png">\n' % _("Delete Style")
-            html += '</a>&nbsp;\n'
-        if (style.hasValidConfig()):
-            html += '<a title="%s" href="#" onclick="doProperties(\'%s\');">\n' % (_("Style Properties"), style.get_dirname())
-            html += '<img alt="%s" class="submit" style="vertical-align:middle;" src="/images/info.png">\n' % _("Style Properties")
-            html += '</a>&nbsp;\n'
-        return html
-    
-    def __styleProperties(self, style):
-        """Muestra las propiedades de un estilo"""
-        html = "<div id=\"styleManagerWorkspace\">\n"
-        html += "<h2><strong>%s:</strong></h2>" % _("This style properties")
-        html += '%s' % style.renderPropertiesHTML()
-        html += u'<input class="button" type="button" name="Back" '
-        html += u'onclick="doCancel()" value="%s" />'  % _("Back")
-        html += '</div>\n'
-        return html
+            export = True
+            delete = False
+            properties = False
+            if (style.get_dirname() != 'INTEF' and style.get_dirname() != "standardwhite"):
+                delete = True
+            if (style.hasValidConfig()):
+                properties = True
+            styles.append({'style': style.get_dirname(), 'name': style.get_name(), 'exportButton': export, 'deleteButton': delete, 'propertiesButton': properties})
+        return styles
     
     
-    def __importStyle(self, filename):
+    def doImportStyle(self, filename):
         """
         Importa un estilo desde un fichero ZIP
         Comprueba si es un estilo valido (contiene content.css), 
@@ -200,7 +146,13 @@ class StyleManagerPage(RenderableResource):
                 self.alert(_(u'Error'), _(u'Incorrect style format (does not include content.css)'))
         self.action = ""
 
-    def __exportStyle(self,  dirstylename, filename):
+    def doExportStyle(self, stylename, filename):
+        if filename != '':
+            styleDir    = self.config.stylesDir
+            style = Style(styleDir/stylename)
+            self.__exportStyle(style.get_style_dir(), filename)
+        
+    def __exportStyle(self, dirstylename, filename):
         """
         Exporta un estilo a un archivo ZIP
         """
@@ -217,11 +169,15 @@ class StyleManagerPage(RenderableResource):
             finally:
                 zippedFile.close()
                 self.alert(_(u'Correct'), _(u'Style exported correctly: %s') % sfile.encode('utf8'))
+
         except IOError:
             self.alert(_(u'Error'), _(u'Could not export style : %s') % filename)
         self.action = ""
             
- 
+    def doDeleteStyle(self, style):
+        styleDir    = self.config.stylesDir
+        styleDelete = Style(styleDir/style)
+        self.__deleteStyle(styleDelete)
     
     def __deleteStyle(self,  style):
         """Borra un estilo pasado por parametro"""
@@ -231,8 +187,20 @@ class StyleManagerPage(RenderableResource):
             self.config.styleStore.delStyle(style)
             log.debug("delete style: %s" % style.get_name())
             self.alert(_(u'Correct'), _(u'Style deleted correctly'))
+            self.reloadPanel()
         except:
             self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
         self.action = ""
+        
+    def doPropertiesStyle(self, style):
+        styleDir        = self.config.stylesDir
+        styleProperties = Style(styleDir/style)
+        self.properties = styleProperties.renderPropertiesJSON()
+        self.action     = 'Properties'
+        self.style      = styleProperties.get_name()
+        
+    def doList(self):
+        self.action     = 'List'
+        self.style      = ''
 
     

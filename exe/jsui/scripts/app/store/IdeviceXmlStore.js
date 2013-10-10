@@ -33,16 +33,31 @@ Ext.define('eXe.store.IdeviceXmlStore', {
                     type: 'xml',
                     root: 'idevices',
                     record: 'idevice'
+                },
+                writer: {
+                	type: 'json',
+                	root: 'idevices',
+                	encode: true
                 }
             },
+            remoteSort: true,
+            groupField: 'category',
             fields: [
                 {
                     name: 'label'
                 },
                 {
                     name: 'id'
+                },
+                {
+                	name: 'category'
+                },
+                {
+                	name: 'visible',
+                	type: 'boolean'
                 }
-            ]
+            ],
+            filters: [{property: 'visible', value: true}]
         }, cfg)]);
     },
     

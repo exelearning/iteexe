@@ -81,6 +81,7 @@ class Application:
         self.tempWebDir   = mkdtemp('.eXe')
         self.resourceDir=None
         self.afterUpgradeHandlers = []
+        self.preferencesShowed = False
         assert globals.application is None, "You tried to instantiate two Application objects"
         globals.application = self
 

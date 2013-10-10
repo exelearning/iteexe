@@ -22,7 +22,8 @@ Ext.define('eXe.view.ui.LeftPanel', {
     alias: 'widget.leftpanel',
     requires: [
         'eXe.view.ui.OutlineToolbar1',
-        'eXe.view.ui.OutlineToolbar2'
+        'eXe.view.ui.OutlineToolbar2',
+        'Ext.ux.CheckColumn'
     ],
 
     layout: {
@@ -69,9 +70,72 @@ Ext.define('eXe.view.ui.LeftPanel', {
                     itemId: 'idevice_panel',
                     height: 150,
                     autoScroll: true,
-                    title: _('iDevices'),
                     store: 'IdeviceXmlStore',
                     flex: 1,
+                    plugins: [{ptype: 'cellediting', clicksToEdit: 1}],
+                    features: [{
+                       ftype: 'grouping',
+                	   startCollapsed: true,
+                	   groupHeaderTpl: '{name}',
+                	   
+                    }],
+             	    tbar: [
+             	        {
+             	        	xtype: 'button',
+             	        	text: _('Ungroup iDevices'),
+             	        	handler: function(button) {
+             	        		var panel = button.up("#idevice_panel");
+             	        		if (button.getText() == _('Ungroup iDevices')) {
+             	        			panel.view.features[0].disable();
+             	        			button.setText(_('Group iDevices'));
+             	        		}
+             	        		else {
+             	        			panel.view.features[0].enable();
+             	        			button.setText(_('Ungroup iDevices'));
+             	        		}
+             	        	}
+             	        },
+             	        {
+             	        	xtype: 'button',
+             	        	text: _('Edit iDevices'),
+             	        	handler: function(button) {
+             	        		var panel = button.up("#idevice_panel"),
+             	        			gbutton = button.prev("button");
+             	        		if (button.getText() == _('Edit iDevices')) {
+             	        			panel.editing = true;
+             	        			panel.columns[1].show();
+             	        			panel.columns[2].show();
+             	        			panel.store.clearFilter();
+             	        			button.setText(_('Save iDevices'));
+             	        			panel.view.features[0].disable();
+             	        			gbutton.disable();
+             	        		}
+             	        		else {
+             	        			panel.store.each(function(record){
+             	        			    record.setDirty();
+             	        			});
+             	        			panel.store.sync({
+             	        				callback: function() {
+             	        					panel.editing = false;
+             	        					panel.columns[1].hide();
+             	        					panel.columns[2].hide();
+             	        					button.setText(_('Edit iDevices'));
+             	        					gbutton.enable();
+             	        					if (gbutton.getText() == _('Ungroup iDevices'))
+             	        						panel.view.features[0].enable();
+             	        					panel.store.each(function(record){
+                     	        			    record.commit();
+                     	        			});
+             	        					panel.store.filter('visible', true);
+             	        				}
+             	        			});
+             	        		}
+             	        	}
+             	        }
+             	    ],
+					selModel: {
+					    selType: 'cellmodel'
+					},
                     region: 'south',
                     split: true,
                     columns: [
@@ -83,7 +147,36 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             flex: 1,
                             hideable: false,
                             menuDisabled: true,
-                            text: _('Name')
+                            text: _('iDevices')
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            hidden: true,
+                            sortable: false,
+                            dataIndex: 'category',
+                            fixed: true,
+                            flex: 1,
+                            hideable: false,
+                            menuDisabled: true,
+                            text: _('Category'),
+                            editor: {
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            xtype: 'checkcolumn',
+                            width: 50,
+                            hidden: true,
+                            sortable: false,
+                            dataIndex: 'visible',
+                            fixed: true,
+                            flex: 0,
+                            hideable: false,
+                            menuDisabled: true,
+                            text: _('Visible'),
+                            editor: {
+                                xtype: 'checkbox'
+                            }
                         }
                     ]
                 }

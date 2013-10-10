@@ -539,7 +539,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 					  object.allowBlank = false;
                       if (value.indexOf('_language', value.length - 9) !== -1)
 						  if (!object.getValue())
-						    object.setValue(lang);
+						    object.setValue(eXe.app.config.lang);
 					}
                 }
                 if (key === 'items') {

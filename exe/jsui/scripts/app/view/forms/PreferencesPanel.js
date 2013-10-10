@@ -91,23 +91,43 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                     ]
                 },
                 {
-                    xtype: 'button',
-                    text: _('Save'),
-                    margin: 10,
-                    handler: function(button) {
-                        var formpanel = button.up('form'),
-                            form = formpanel.getForm();
-			            form.submit({
-                            success: function() {
-//                                formpanel.up('window').close();
-                                nevow_clientToServerEvent('reload');
-                            },
-			                failure: function(form, action) {
-			                    Ext.Msg.alert(_('Error'), action.result.errorMessage);
-			                }
-			            });
-                    },
-                    itemId: 'save_preferences'
+                	xtype: 'container',
+                	layout: 'hbox',
+                	margin: 10,
+                	items: [
+            	        {
+            	        	xtype: 'button',
+            	        	text: _('Save'),
+            	        	margin: 10,
+            	        	handler: function(button) {
+            	        		var formpanel = button.up('form'),
+            	        		form = formpanel.getForm();
+            	        		form.submit({
+            	        			success: function() {
+            	        				nevow_clientToServerEvent('reload');
+            	        			},
+            	        			failure: function(form, action) {
+            	        				Ext.Msg.alert(_('Error'), action.result.errorMessage);
+            	        			}
+            	        		});
+            	        	},
+            	        	itemId: 'save_preferences'
+            	        },
+            	        {
+            	        	xtype: 'component',
+            	        	flex: 1
+            	        },
+            	        {
+            	        	xtype: 'checkboxfield',
+            	        	margin: 10,
+            	        	inputId: 'showPreferencesOnStart',
+            	        	inputValue: '1',
+                            uncheckedValue: '0',
+                            dirtyCls: 'property-form-dirty',
+            	        	boxLabelAlign: 'before',
+            	        	boxLabel: _('Show this window on eXe start')
+            	        }
+        	        ]
                 }
             ]
         });

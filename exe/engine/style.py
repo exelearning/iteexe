@@ -30,7 +30,7 @@ class Style(Persistable):
                    'extra-body': 'Extra body'
                    }
     
-    _attributesCode = ['extra-head']
+    _attributesCode = ['extra-head', 'extra-body']
 
     def __init__(self, styleDir):
         """Initialize a new Style"""
@@ -147,6 +147,16 @@ class Style(Persistable):
                     html += getattr(self, '_'+attribute.replace('-', '_')).replace('\n','<br/>') + '</p>'
         return html
     
+    def renderPropertiesJSON(self):
+        properties = []
+        for attribute in self._attributes.keys():
+            if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
+                if attribute in self._attributesCode:
+                    value = getattr(self, '_'+attribute.replace('-', '_')).replace('"',"'")
+                else:
+                    value = getattr(self, '_'+attribute.replace('-', '_'))
+                properties.append({'name': _(self._attributes[attribute]), 'value': value})
+        return properties  
     
     def __str__(self):
         string = ''

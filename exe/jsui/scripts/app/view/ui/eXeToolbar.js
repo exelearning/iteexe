@@ -367,6 +367,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 text: _('Preferences')
                             },
                             {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_preview',
+                                accesskey: 'v',
+                                text: _('Preview')
+                            },
+                            {
                                 xtype: 'menuseparator'
                             },
                             {

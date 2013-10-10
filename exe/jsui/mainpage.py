@@ -209,26 +209,22 @@ class MainPage(RenderableLivePage):
 
         self.idevicePane.client = client
         self.styleMenu.client = client
+        self.webServer.stylemanager.client = client
+        
 
         if not self.webServer.monitoring:
             self.webServer.monitoring = True
             self.webServer.monitor()
 
-    def render_authoring_src(self, ctx, data):
-        return tags.script(type="text/javascript")[
-           "var authoringIFrameSrc = '%s/authoring?clientHandleId=%s';" % ( self.package.name, IClientHandle(ctx).handleId) ]
-
-    def render_lastdir(self, ctx, data):
-        return tags.script(type="text/javascript")[
-           "var lastDir = %s;" % json.dumps(G.application.config.lastDir) ]
-
-    def render_location_buttons(self, ctx, data):
-        return tags.script(type="text/javascript")[
-           "var locationButtons = %s;" % json.dumps(self.location_buttons.buttons)]
-
-    def render_lang(self, ctx, data):
-        return tags.script(type="text/javascript")[
-           "var lang = %s;" % json.dumps(G.application.config.locale.split('_')[0])]
+    def render_config(self, ctx, data):
+        config = {'lastDir': G.application.config.lastDir,
+                  'locationButtons': self.location_buttons.buttons,
+                  'lang': G.application.config.locale.split('_')[0],
+                  'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
+                  'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId)
+                 }
+        G.application.preferencesShowed = True
+        return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
 
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
@@ -371,7 +367,7 @@ class MainPage(RenderableLivePage):
                 Path(filename).remove()
 
         d.addCallback(successDownload)
-
+        
     def handleReload(self, client):
         self.location_buttons.updateText()
         client.sendScript('eXe.app.gotoUrl()', filter_func=allSessionClients)

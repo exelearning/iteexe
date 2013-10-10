@@ -31,6 +31,7 @@ from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
 log = logging.getLogger(__name__)
 import json
+import locale
 
 # ===========================================================================
 class StyleMenu(Renderable, Resource):
@@ -78,8 +79,13 @@ class StyleMenu(Renderable, Resource):
         log.debug("render")
 
         l = []       
-        printableStyles = [(x.get_name(), x.get_dirname()) for x in self.config.styleStore.getStyles()]        
-        for printableStyle, style in sorted(printableStyles, key=lambda x: x[0]):
+        printableStyles = [(x.get_name(), x.get_dirname()) for x in self.config.styleStore.getStyles()]
+
+        def sortfunc(s1, s2):
+            return locale.strcoll(s1[0], s2[0])
+        locale.setlocale(locale.LC_ALL, "")
+        printableStyles.sort(sortfunc)
+        for printableStyle, style in printableStyles:
             l.append({ "label": printableStyle, "style": style, "selected": True if style == self.package.style else False})
         return json.dumps(l).encode('utf-8')     
     

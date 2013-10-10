@@ -208,7 +208,7 @@ else if (document.styleSheets[cssstyle].rules)
         linkParent.style.display = "block";
         linkParent.style.width = w + "px";
         linkParent.style.height = h + "px";
-        linkParent.style.marginBottom = "40px"
+        linkParent.style.marginBottom = "40px";
         var imgLeft = img.offsetLeft;
         var imgTop = img.offsetTop;
         var zoom = dc("div");
@@ -258,6 +258,7 @@ else if (document.styleSheets[cssstyle].rules)
             height = h + "px";
             overflow = "hidden";
             display = "block";
+			
         }
         ctr.appendChild(zoom);
         parent.appendChild(ctr);
@@ -311,7 +312,11 @@ else if (document.styleSheets[cssstyle].rules)
         dvselect.appendChild(modzoom);
         dvselect.appendChild(sizeGlass);
         linkParent.appendChild(dvselect);
-
+		if (linkParent.offsetWidth<190){
+linkParent.style.marginBottom = "90px";
+}else{
+linkParent.style.marginBottom = "50px";
+}
         function changezoom(e) {
             var imgW = img.offsetWidth * this.value;
             var imgH = img.offsetHeight * this.value;

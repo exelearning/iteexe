@@ -155,7 +155,8 @@ for page in soup('dd'):
         if not link.has_key('class'):
             if link.has_key('name'):
                 continue
-            link['href'] = fix_link(link['href'])
+            if link.has_key('href'):
+                link['href'] = fix_link(link['href'])
         elif link['class'].find('external') > -1:
             link['target'] = '_blank'
         elif link['class'].find('image') > -1:

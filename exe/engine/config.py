@@ -36,10 +36,11 @@ import tempfile
 import twisted
 import shutil
 from exe                      import globals as G
-from xml.dom                   import minidom
-from exe.engine.style       import Style
 from exe.engine.stylestore  import StyleStore
-# ===========================================================================
+
+x_ = lambda s: s
+
+
 class Config:
     """
     The Config class contains the configuration information for eXe.
@@ -47,9 +48,49 @@ class Config:
 
     # Class attributes
     optionNames = {
-        'system': ('webDir', 'jsDir', 'port', 'dataDir', 
+        'system': ('webDir', 'jsDir', 'port', 'dataDir',
                    'configDir', 'localeDir', 'browser'),
-        'user': ('locale', 'lastDir'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart'),
+    }
+
+    idevicesCategories = {
+        'activity': [x_('Non-Interactive Activities')],
+        'reading activity': [x_('Non-Interactive Activities')],
+        'dropdown activity': [x_('Interactive Activities')],
+        'java applet': [x_('Non-Textual Information')],
+        'wiki article': [x_('Non-Textual Information')],
+        'case study': [x_('Non-Interactive Activities')],
+        'preknowledge': [x_('Textual Information')],
+        'scorm quiz': [x_('Interactive Activities')],
+        'fpd - multi choice activity': [x_('FPD')],
+        'fpd - cloze activity': [x_('FPD')],
+        'fpd - cloze activity (modified)': [x_('FPD')],
+        'fpd - multi select activity': [x_('FPD')],
+        'fpd - true/false activity': [x_('FPD')],
+        'fpd - situation': [x_('FPD')],
+        'fpd - quotation': [x_('FPD')],
+        'fpd - you should know': [x_('FPD')],
+        'fpd - highlighted': [x_('FPD')],
+        'fpd - translation': [x_('FPD')],
+        'fpd - guidelines students': [x_('FPD')],
+        'fpd - guidelines teacher': [x_('FPD')],
+        'fpd - a step ahead': [x_('FPD')],
+        'fpd - a piece of advice': [x_('FPD')],
+        'fpd - think about it (with feedback)': [x_('FPD')],
+        'fpd - think about it (without feedback)': [x_('FPD')],
+        'fpd - free text': [x_('FPD')],
+        'image gallery': [x_('Non-Textual Information')],
+        'image magnifier': [x_('Non-Textual Information')],
+        'note': [x_('Textual Information')],
+        'objectives': [x_('Textual Information')],
+        'multi-choice': [x_('Interactive Activities')],
+        'multi-select': [x_('Interactive Activities')],
+        'true-false question': [x_('Interactive Activities')],
+        'reflection': [x_('Non-Interactive Activities')],
+        'cloze activity': [x_('Interactive Activities')],
+        'rss': [x_('Non-Textual Information')],
+        'external web site': [x_('Non-Textual Information')],
+        'free text': [x_('Textual Information')]
     }
 
     def __init__(self):
@@ -88,6 +129,7 @@ class Config:
         # available values = "enable_all", "disable_autotop", or "disable_all"
         self.internalAnchors = "enable_all"
         self.lastDir = None
+        self.showPreferencesOnStart = "1"
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
@@ -308,6 +350,8 @@ class Config:
                 self.internalAnchors = self.configParser.user.internalAnchors
             if self.configParser.user.has_option('lastDir'):
                 self.lastDir = self.configParser.user.lastDir
+            if self.configParser.user.has_option('showPreferencesOnStart'):
+                self.showPreferencesOnStart = self.configParser.user.showPreferencesOnStart
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return
