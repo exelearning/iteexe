@@ -48,6 +48,7 @@ class IdevicePane(Renderable, Resource):
         self.client = None
         log.debug("Load appropriate iDevices")
         self.prototypes = {}
+        self.translateOldHidingIdevicesMechanism()
         self.ideviceStore.register(self)
         for prototype in self.ideviceStore.getIdevices():
             log.debug("add " + prototype.title)
@@ -55,6 +56,19 @@ class IdevicePane(Renderable, Resource):
                 raise Exception("duplicated device id %s" % prototype.id)
             self.prototypes[prototype.id] = prototype
 
+    def translateOldHidingIdevicesMechanism(self):
+        idevices = self.ideviceStore.getIdevices()
+        factoryIdevices = self.ideviceStore.getFactoryIdevices()
+        modified = False
+        for idevice in factoryIdevices:
+            if idevice not in idevices:
+                modified = True
+                lower_title = idevice._title.lower()
+                self.config.hiddeniDevices.append(lower_title)
+                self.config.configParser.set('idevices', lower_title, '0')
+                self.ideviceStore.addIdevice(idevice)
+        if modified:
+            self.ideviceStore.save()
 
     def process(self, request):
         """ 
