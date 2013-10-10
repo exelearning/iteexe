@@ -59,6 +59,7 @@ body{padding:0;text-align:center}
 #siteNav ul ul a{padding-left:25px;font-size:.95em}
 #siteNav ul ul ul a{padding-left:50px}
 #siteFooter{padding-left:250px}
+.no-nav #siteFooter{padding-left:20px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
 .pagination a{padding:3px;}
@@ -117,7 +118,7 @@ html[xmlns] #content{display:block}
     #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px}
     #nodeTitle{position:absolute;top:1px;left:10px}
     #header{text-align:right;padding-right:10px}
-    #siteFooter{padding-left:10px}
+    #siteFooter,.no-nav #siteFooter{padding-left:10px}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe{max-width:100%}
     .pagination{text-align:center;height:35px;position:relative}

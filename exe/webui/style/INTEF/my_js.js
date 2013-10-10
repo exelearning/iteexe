@@ -1,5 +1,7 @@
 var myTheme = {
     init : function(){
+		var ie_v = $exe.isIE();
+		if (ie_v && ie_v<8) return false;		
         $(window).resize(function() {
             myTheme.reset();
         });    
@@ -20,6 +22,7 @@ var myTheme = {
             p = "10px";
         }          
         $("#main").css({"width":"auto","padding-left":p,"float":"none"});
+		$(document.body).addClass("no-nav");
         myTheme.params("add");
         $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
     },
@@ -28,12 +31,15 @@ var myTheme = {
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {       
             l.attr("class","show-nav").attr("title",$exe_i18n.show);
-            $("#siteNav").slideUp(400,function(){
+			$(document.body).addClass("no-nav");
+            $("#siteFooter").hide();
+			$("#siteNav").slideUp(400,function(){
                 var p = "20px"; //Padding
                 if ($(window).width()<700) {
                     p = "10px";
                 }                
                 $("#main").css({"width":"auto","padding-left":p,"float":"none"});
+				$("#siteFooter").show();
             }); 
             myTheme.params("add");
         } else {
@@ -52,7 +58,8 @@ var myTheme = {
                 p = "10px";
             }
             $("#main").css({"width":w,"padding-left":p,"float":f});
-            $("#siteNav").slideDown();
+            $(document.body).removeClass("no-nav");
+			$("#siteNav").slideDown();
             myTheme.params("delete");            
         }
     },
