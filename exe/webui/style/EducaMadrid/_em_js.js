@@ -1,11 +1,12 @@
 var myTheme = {
     init : function(){
 		var ie_v = $exe.isIE();
-		if (ie_v && ie_v<8) return false;		
+		if (ie_v && ie_v<8) return false;
         $(window).resize(function() {
             myTheme.reset();
-        });    
-        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu()" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
+        });
+		var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
+        var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu()" class="hide-nav" id="toggle-nav" title="'+tit+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         $("#siteNav").before(l);
         var url = window.location.href;
         url = url.split("?");
@@ -24,15 +25,17 @@ var myTheme = {
         $("#main").css({"width":"auto","padding-left":p,"float":"none"});
 		$(document.body).addClass("no-nav");
         myTheme.params("add");
-        $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
+		var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
+        $("#toggle-nav").attr("class","show-nav").attr("title",tit);
     },
     toggleMenu : function(){
         var c = $("#main");
         var l = $("#toggle-nav");
-        if (l.attr("class")=='hide-nav') {       
-            l.attr("class","show-nav").attr("title",$exe_i18n.show);
-			$(document.body).addClass("no-nav");
-            $("#siteFooter").hide();
+        if (l.attr("class")=='hide-nav') {  
+			var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
+            l.attr("class","show-nav").attr("title",tit);
+            $(document.body).addClass("no-nav");
+			$("#siteFooter").hide();
 			$("#siteNav").slideUp(400,function(){
                 var p = "20px"; //Padding
                 if ($(window).width()<700) {
@@ -43,7 +46,8 @@ var myTheme = {
             }); 
             myTheme.params("add");
         } else {
-            l.attr("class","hide-nav").attr("title",$exe_i18n.hide);
+            var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
+			l.attr("class","hide-nav").attr("title",tit);
             var w = "715px"; //Width
             var f = "right"; //Float
             var p = "0"; //Padding
@@ -86,7 +90,8 @@ var myTheme = {
         });
     },
     reset : function() {
-        $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
+        var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
+		$("#toggle-nav").attr("class","show-nav").attr("title",tit);
         myTheme.toggleMenu();        
     }    
 }

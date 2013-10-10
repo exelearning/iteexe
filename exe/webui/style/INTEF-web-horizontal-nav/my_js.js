@@ -1,5 +1,7 @@
 var myTheme = {
     init : function(){
+		var ie_v = $exe.isIE();
+		if (ie_v && ie_v<8) return false;		
         $(window).resize(function() {
             myTheme.reset();
         });    
