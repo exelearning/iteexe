@@ -53,7 +53,6 @@ class EditorPage(RenderableResource):
         self.url          = ""
         self.elements     = []
         self.isNewIdevice = True
-        self.showHide     = False
         #JR: Anado esta variable para que los genericos no se puedan previsualizar
         self.isGeneric    = False
         self.message      = ""
@@ -152,11 +151,6 @@ class EditorPage(RenderableResource):
              request.args["action"][0] == "import"):
             filename = request.args["pathpackage"][0]
             self.__importIdevice(filename)
-        if ("action" in request.args and 
-             request.args["action"][0] == "saveSH" and self.showHide == True):
-            self.__saveSHiDevices(request)
-        if ("showHide" in request.args):
-            self.showHide = True
 
             
     def __createNewIdevice(self, request):
@@ -169,7 +163,6 @@ class EditorPage(RenderableResource):
         self.editorPane.setIdevice(idevice)
         self.editorPane.process(request, "new")      
         self.isNewIdevice = True
-        self.showHide = False
           
     def __saveChanges(self, idevice, copyIdevice):
         """
@@ -251,7 +244,7 @@ class EditorPage(RenderableResource):
         html += "<font color=\"red\"><b>"+self.message+"</b></font>"
         html += "<div id=\"editorButtons\"> \n"     
         html += self.renderList()
-        html += self.editorPane.renderButtons(request, self.showHide)
+        html += self.editorPane.renderButtons(request)
         if self.isNewIdevice:
             html += "<br/>" + common.submitButton("delete", _("Delete"), 
                                                         False)
@@ -264,19 +257,10 @@ class EditorPage(RenderableResource):
             title = title.replace(" ", "+")
         html += 'onclick=saveIdevice("%s") value="%s"/>' % (escape(title), _("Save"))
         html += u'<br/><input class="button" type="button" name="import" ' 
-        if self.showHide:
-            html += ' disabled="disabled" '
         html += u' onclick="importPackage(\'package\')" value="%s" />'  % _("Import iDevice")
         html += u'<br/><input class="button" type="button" name="export" '
-        if self.showHide:
-            html += ' disabled="disabled" '
         html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
         html += u' value="%s" />'  % _("Export iDevice")
-        #JR: anado un boton que permite mostrar u ocultar iDevices
-        if self.showHide:
-            html += "<br/>" + common.submitButton("showHide", _("Show/Hide"), False)
-        else:
-            html += "<br/>" + common.submitButton("showHide", _("Show/Hide"))
         html += u'<br/><input class="button" type="button" name="quit" '
         #html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'        
         html += u'onclick="quitDialog()"'  
@@ -284,11 +268,7 @@ class EditorPage(RenderableResource):
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"
-        #if ("showHide" in request.args):
-        if self.showHide:  
-            html += self.editorPane.renderShowHideiDevices(self.ideviceStore.getFactoryIdevices())
-        else:
-            html += self.editorPane.renderIdevice(request)
+        html += self.editorPane.renderIdevice(request)
         html += "</div>\n"
         html += "<br/></form>\n"
         html += "</body>\n"
@@ -302,11 +282,7 @@ class EditorPage(RenderableResource):
         Render the list of generic iDevice
         """
         html  = "<fieldset><legend><b>" + _("Edit")+ "</b></legend>"
-        #JR: Desabilitamos el select si estamos mostrando/ocultando iDevices
-        if self.showHide:
-            html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect" disabled="disabled">\n'
-        else:
-            html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect">\n'
+        html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect">\n'
         html += "<option value = \"newIdevice\" "
         if self.isNewIdevice:
             html += "selected "
@@ -324,32 +300,3 @@ class EditorPage(RenderableResource):
         html += "</fieldset>\n"
         self.message = ""
         return html
-
-    def __saveSHiDevices(self, request):
-        """
-        JR: Esta funcion procesa los iDevices que se quieren mostrar
-        """
-        idt_checked = []
-        for i in request.args.keys():
-            if (request.args[i] == ['on']):
-                idt_checked.append(i)
-        for i in self.ideviceStore.getFactoryIdevices():
-            if i.title in idt_checked:
-                self.ideviceStore.addIdevice(i)
-            else:
-                self.ideviceStore.delIdevice(i)
-        """for i in request.args.keys():
-            if (request.args[i] == ['on']):
-                lista_idevices = self.ideviceStore.getIdevices()
-                generic = self.ideviceStore.generic
-                extended = self.ideviceStore.extended
-                for idevice in lista_idevices:
-                    if (idevice.title == i):
-                        if (idevice in generic):
-                            self.ideviceStore.__delGenericIdevice(idevice)
-                        else:
-                            self.ideviceStore.delExtendedIdevice(idevice)"""
-        self.ideviceStore.save()
-        self.showHide = False
-        self.__createNewIdevice(request)
-

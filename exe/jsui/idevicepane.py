@@ -24,7 +24,6 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 import logging
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
-from exe import globals as G
 from exe.webui.livepage import allSessionClients
 import locale
 import json
@@ -49,6 +48,7 @@ class IdevicePane(Renderable, Resource):
         self.client = None
         log.debug("Load appropriate iDevices")
         self.prototypes = {}
+        self.translateOldHidingIdevicesMechanism()
         self.ideviceStore.register(self)
         for prototype in self.ideviceStore.getIdevices():
             log.debug("add " + prototype.title)
@@ -56,6 +56,19 @@ class IdevicePane(Renderable, Resource):
                 raise Exception("duplicated device id %s" % prototype.id)
             self.prototypes[prototype.id] = prototype
 
+    def translateOldHidingIdevicesMechanism(self):
+        idevices = self.ideviceStore.getIdevices()
+        factoryIdevices = self.ideviceStore.getFactoryIdevices()
+        modified = False
+        for idevice in factoryIdevices:
+            if idevice not in idevices:
+                modified = True
+                lower_title = idevice._title.lower()
+                self.config.hiddeniDevices.append(lower_title)
+                self.config.configParser.set('idevices', lower_title, '0')
+                self.ideviceStore.addIdevice(idevice)
+        if modified:
+            self.ideviceStore.save()
 
     def process(self, request):
         """ 
@@ -92,49 +105,55 @@ class IdevicePane(Renderable, Resource):
         self.prototypes.pop(idevice.id)
         self.client.sendScript('eXe.app.getController("Idevice").reload()', filter_func=allSessionClients)
 
-        
     def render_GET(self, request=None):
         """
         Returns an xml string for load the client Idevices store
         """
-        # Create a scecial server side func that the 
-        # Idevice editor js can call
-        #addHandler = handler(self.handleAddIdevice,
-        #                     identifier='outlinePane.handleAddIdevice')
-        # The below call stores the handler so we can call it
-        # as a server 
-        #addHandler(ctx, data) 
 
         # Now do the rendering
         log.debug("Render")
 
         request.setHeader('content-type', 'application/xml')
-        xml  = u'<?xml version="1.0" encoding="UTF-8"?>'
+        xml = u'<?xml version="1.0" encoding="UTF-8"?>'
         xml += u"<!-- IDevice Pane Start -->\n"
         xml += u"<idevices>\n"
 
         prototypes = self.prototypes.values()
-        def sortfunc(pt1, pt2):
-            """Used to sort prototypes by title"""
-            return locale.strcoll(pt1.title, pt2.title)
-        locale.setlocale(locale.LC_ALL, "")
-        prototypes.sort(sortfunc)
+
+        prototypesToRender = []
         for prototype in prototypes:
             lower_title = prototype._title.lower()
             visible = lower_title not in self.config.hiddeniDevices
             if lower_title not in self.config.deprecatediDevices:
                 if lower_title in self.config.idevicesCategories:
                     for category in self.config.idevicesCategories[lower_title]:
-                        xml += self.__renderPrototype(prototype, category, visible)
+                        prototypesToRender.append((prototype, category, visible))
                 else:
-                    xml += self.__renderPrototype(prototype, _('My iDevices'), visible)
+                    prototypesToRender.append((prototype, _('My iDevices'), visible))
 
+        def sortfunc(t1, t2):
+            return locale.strcoll(t1[0].title, t2[0].title)
+
+        def groupsortfunc(t1, t2):
+            if t1[1] == t2[1]:
+                return locale.strcoll(t1[0].title, t2[0].title)
+            return locale.strcoll(t1[1], t2[1])
+
+        locale.setlocale(locale.LC_ALL, "")
+        if 'group' in request.args:
+            prototypesToRender.sort(groupsortfunc)
+        else:
+            prototypesToRender.sort(sortfunc)
+        for prototype, category, visible in prototypesToRender:
+            xml += self.__renderPrototype(prototype, category, visible)
         xml += u"</idevices>\n"
         xml += u"<!-- IDevice Pane End -->\n"
         return xml.encode('utf8')
 
     def render_POST(self, request=None):
         idevices = json.loads(request.args['idevices'][0])
+        if isinstance(idevices, dict):
+            idevices = [idevices]
         for idevice in idevices:
             prototype = self.prototypes[idevice['id']]
             visible = idevice['visible']

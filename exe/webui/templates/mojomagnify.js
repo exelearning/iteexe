@@ -276,7 +276,7 @@ else if (document.styleSheets[cssstyle].rules)
         img.__mojoMagnifyBorder = zoomBorder;
         var isInImage = false;
         var dvselect = document.createElement("div");
-        dvselect.style.border = "1px solid #cccccc";
+        dvselect.setAttribute('style','border:1px solid #cccccc;margin-top:5px;margin-left:4px;');
         var modzoom = document.createElement("select");
         modzoom.onclick = changezoom;
 		if (withStyle('.selectzoomglass')==false){
