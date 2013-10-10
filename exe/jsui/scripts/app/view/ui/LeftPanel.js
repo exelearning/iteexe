@@ -100,8 +100,12 @@ Ext.define('eXe.view.ui.LeftPanel', {
              	        	text: _('Edit iDevices'),
              	        	handler: function(button) {
              	        		var panel = button.up("#idevice_panel"),
-             	        			gbutton = button.prev("button");
-             	        		if (button.getText() == _('Edit iDevices')) {
+	             	        		leftpanel = panel.up("leftpanel"),
+	          	        			gbutton = button.prev("button");
+	          	        		if (button.getText() == _('Edit iDevices')) {
+             	        			button.leftPanelSize = leftpanel.getWidth();
+             	        			if (button.leftPanelSize < 350)
+             	        				leftpanel.setWidth(350);
              	        			panel.editing = true;
              	        			panel.columns[1].show();
              	        			panel.columns[2].show();
@@ -111,24 +115,25 @@ Ext.define('eXe.view.ui.LeftPanel', {
              	        			gbutton.disable();
              	        		}
              	        		else {
-             	        			panel.store.each(function(record){
-             	        			    record.setDirty();
-             	        			});
-             	        			panel.store.sync({
-             	        				callback: function() {
-             	        					panel.editing = false;
-             	        					panel.columns[1].hide();
-             	        					panel.columns[2].hide();
-             	        					button.setText(_('Edit iDevices'));
-             	        					gbutton.enable();
-             	        					if (gbutton.getText() == _('Ungroup iDevices'))
-             	        						panel.view.features[0].enable();
-             	        					panel.store.each(function(record){
-                     	        			    record.commit();
-                     	        			});
-             	        					panel.store.filter('visible', true);
-             	        				}
-             	        			});
+             	        			var restore = function() {
+	         	        				panel.editing = false;
+	         	        				panel.columns[1].hide();
+	         	        				panel.columns[2].hide();
+	         	        				leftpanel.setWidth(button.leftPanelSize);
+	         	        				button.setText(_('Edit iDevices'));
+	         	        				gbutton.enable();
+	         	        				if (gbutton.getText() == _('Ungroup iDevices'))
+	         	        					panel.view.features[0].enable();
+	         	        				panel.store.filter('visible', true);
+             	        			};
+             	        			if (panel.store.getModifiedRecords().length) {
+             	        				panel.store.sync({
+             	        					callback: restore
+             	        				});
+             	        			}
+             	        			else {
+             	        				restore();
+             	        			}
              	        		}
              	        	}
              	        }
@@ -158,10 +163,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                             flex: 1,
                             hideable: false,
                             menuDisabled: true,
-                            text: _('Category'),
-                            editor: {
-                                allowBlank: false
-                            }
+                            text: _('Category')
                         },
                         {
                             xtype: 'checkcolumn',

@@ -152,6 +152,8 @@ class IdevicePane(Renderable, Resource):
 
     def render_POST(self, request=None):
         idevices = json.loads(request.args['idevices'][0])
+        if isinstance(idevices, dict):
+            idevices = [idevices]
         for idevice in idevices:
             prototype = self.prototypes[idevice['id']]
             visible = idevice['visible']
