@@ -46,7 +46,8 @@ class CmdlineExporter(object):
                   'webzip': '.zip',
                   'singlepage': '',
                   'xliff': '.xlf',
-                  'epub3': '.epub'
+                  'epub3': '.epub',
+                  'report': '.csv'
                   }
 
     def __init__(self, config, options):
@@ -147,3 +148,7 @@ with a different filename') % outputf
     def export_epub3(self, pkg, outputf):
         epub3Export = Epub3Export(self.config, self.styles_dir, outputf)
         epub3Export.export(pkg)
+
+    def export_report(self, pkg, outputf):
+        websiteExport = WebsiteExport(self.config, self.styles_dir, outputf, report=True)
+        websiteExport.export(pkg)

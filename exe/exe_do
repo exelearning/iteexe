@@ -82,6 +82,11 @@ help:\n%prog -h").encode(sys.stdout.encoding)
 
     parser.add_option_group(group)
 
+    parser.add_option("-r", "--report",
+                      action="store_true", dest='report',
+                      help=_(u"Generates resource info report to text <output_file> \
+from <input_file> elp package").encode(sys.stdout.encoding))
+
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm12', 'scorm2004', 'agrega',
@@ -162,8 +167,8 @@ if __name__ == "__main__":
     if options.x and options.i:
         parser.error(_(u'Options --export and --import are mutually \
 exclusive.').encode(sys.stdout.encoding))
-    if not options.x and not options.i and not options.set_options:
-        parser.error(_(u'No --export or --import option supplied.')\
+    if not options.x and not options.i and not options.set_options and not options.report:
+        parser.error(_(u'No --export, --import, --set or --report option supplied.')\
 .encode(sys.stdout.encoding))
 
     if not args:
@@ -205,6 +210,9 @@ exclusive.').encode(sys.stdout.encoding))
 error was:") % (path)
             print sys.exc_value
             exit()
+
+    if options.report:
+        options.x = 'report'
 
     if options.x:
         x = CmdlineExporter(application.config, {"export": options.x,
