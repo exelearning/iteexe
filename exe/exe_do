@@ -54,9 +54,9 @@ class CustomOptionParser(optparse.OptionParser):
     def set_usage(self, usage):
         self.usage = usage
 
-    def print_help(self, file=None):
-        if file is None:
-            file = sys.stdout
+    def print_help(self, f=None):
+        if f is None:
+            f = sys.stdout
         file.write(self.format_help())
 
 
@@ -66,26 +66,33 @@ help:\n%prog -h").encode(sys.stdout.encoding)
     parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
-                  choices=['xml', 'scorm', 'ims', 'website', 'webzip',
-'singlepage', 'xliff'],
+                  choices=['xml', 'scorm12', 'scorm2004', 'agrega',
+                           'ims', 'website', 'webzip', 'singlepage',
+                           'xliff', 'epub3'],
                   help=_(u"Export <input_file> elp package to optional \
-<output_file> on one of the given formats: xml, scorm, ims, website, webzip \
-, singlepage or xliff.").encode(sys.stdout.encoding))
+<output_file> on one of the given formats: xml, scorm12, scorm2004, agrega, ims, \
+website, webzip, singlepage, xliff or epub3.").encode(sys.stdout.encoding))
     parser.add_option("-i", "--import",
                   action="store", dest="i", metavar="format",
-                  choices=['xml','xliff'],
+                  choices=['xml', 'xliff'],
                   help=_(u"Import to <output_file> elp package, <input_file> \
 in one of the given formats: xml or xliff.")\
 .encode(sys.stdout.encoding))
     parser.add_option("-f", "--force",
                   action="store_true", dest="f",
                   help=_(u"Force overwrite of <output_file>").encode(sys.stdout.encoding))
-    
+    parser.add_option("--editable",
+                     action="store_true",
+                     dest="editable",
+                     help=_(u"Add the required files to generate a export editable by \
+eXeLearning").encode(sys.stdout.encoding),
+                     default=False)
+
     group = optparse.OptionGroup(parser,
-                        _(u"XLIFF export options").encode(sys.stdout.encoding), 
+                        _(u"XLIFF export options").encode(sys.stdout.encoding),
                         _(u"Once you have chosen XLIFF export option using '-x xliff' or \
 '--export xliff', it's possible to configure the following export options:").encode(sys.stdout.encoding))
-    group.add_option("--no-copy-source", 
+    group.add_option("--no-copy-source",
                      action="store_false",
                      dest="copy",
                      help=_(u"Don't copy source in target").encode(sys.stdout.encoding),
@@ -96,7 +103,7 @@ in one of the given formats: xml or xliff.")\
                      help=_(u"Wrap fields in CDATA").encode(sys.stdout.encoding),
                      default=False)
     parser.add_option_group(group)
-    
+
     group = optparse.OptionGroup(parser,
                         _(u"XLIFF import options").encode(sys.stdout.encoding),
                         _(u"Once you have chosen XLIFF import option using  '-i xliff' \
@@ -107,11 +114,11 @@ or '--import xliff', it's possible to configure the following import options:").
                      help=_(u"Import from source language").encode(sys.stdout.encoding),
                      default=False)
     parser.add_option_group(group)
-    
+
     group = optparse.OptionGroup(parser,
                         _(u"SCORM export options").encode(sys.stdout.encoding),
-                        _(u"Once you have chosen SCORM export option using '-x scorm' or \
-'--export scorm', it's possible to configure the following export options:").encode(sys.stdout.encoding))
+                        _(u"Once you have chosen one SCORM export option using '-x scorm12' or \
+'-x scorm2004' or 'x agrega', it's possible to configure the following export options:").encode(sys.stdout.encoding))
     group.add_option("--single-page",
                      action="store_true",
                      dest="single",
@@ -121,12 +128,6 @@ or '--import xliff', it's possible to configure the following import options:").
                      action="store_true",
                      dest="website",
                      help=_(u"Include Web Site export files").encode(sys.stdout.encoding),
-                     default=False)
-    group.add_option("--editable",
-                     action="store_true",
-                     dest="editable",
-                     help=_(u"Add the required files to generate a SCORM package editable by \
-eXeLearning").encode(sys.stdout.encoding),
                      default=False)
     parser.add_option_group(group)
 
@@ -160,7 +161,7 @@ exclusive.').encode(sys.stdout.encoding))
         parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
 
     if options.x:
-        x = CmdlineExporter(application.config, {"export": options.x, 
+        x = CmdlineExporter(application.config, {"export": options.x,
                                                  "overwrite": options.f,
                                                  "copy-source": options.copy,
                                                  "wrap-cdata": options.wrap,

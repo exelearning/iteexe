@@ -31,18 +31,22 @@ from exe.export.imsexport import IMSExport
 from exe.export.websiteexport import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.xliffexport import XliffExport
+from exe.export.epub3export import Epub3Export
 
 LOG = logging.getLogger(__name__)
 
 
 class CmdlineExporter(object):
     extensions = {'xml': '.xml',
-                  'scorm': '.zip',
+                  'scorm12': '.zip',
+                  'scorm2004': '.zip',
+                  'agrega': '.zip',
                   'ims': '.zip',
                   'website': '',
                   'webzip': '.zip',
                   'singlepage': '',
-                  'xliff': '.xlf'
+                  'xliff': '.xlf',
+                  'epub3': '.epub'
                   }
 
     def __init__(self, config, options):
@@ -78,8 +82,9 @@ with a different filename') % outputf
                 if not pkg:
                     error = _(u"Invalid input package")
                     raise Exception(error.encode(sys.stdout.encoding))
-                self.styles_dir = self.config.stylesDir/pkg.style
+                self.styles_dir = self.config.stylesDir / pkg.style
                 LOG.debug("Styles dir: %s" % (self.styles_dir))
+                pkg.exportSource = self.options['editable']
                 getattr(self, 'export_' + self.options["export"])(pkg, outputf)
                 return outputf
         else:
@@ -94,7 +99,6 @@ with a different filename') % outputf
 'scorm1.2')
         pkg.scowsinglepage = self.options['single-page']
         pkg.scowwebsite = self.options['website']
-        pkg.scowsource = self.options['editable']
         scormExport.export(pkg)
 
     def export_scorm2004(self, pkg, outputf):
@@ -102,15 +106,13 @@ with a different filename') % outputf
 'scorm2004')
         pkg.scowsinglepage = self.options['single-page']
         pkg.scowwebsite = self.options['website']
-        pkg.scowsource = self.options['editable']
         scormExport.export(pkg)
-        
+
     def export_agrega(self, pkg, outputf):
         scormExport = ScormExport(self.config, self.styles_dir, outputf,
 'agrega')
         pkg.scowsinglepage = self.options['single-page']
         pkg.scowwebsite = self.options['website']
-        pkg.scowsource = self.options['editable']
         scormExport.export(pkg)
 
     def export_ims(self, pkg, outputf):
@@ -141,3 +143,7 @@ with a different filename') % outputf
                             source_copied_in_target=self.options["copy-source"], \
                             wrap_cdata=self.options["wrap-cdata"])
         xliff.export(pkg)
+
+    def export_epub3(self, pkg, outputf):
+        epub3Export = Epub3Export(self.config, self.styles_dir, outputf)
+        epub3Export.export(pkg)
