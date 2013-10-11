@@ -40,6 +40,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             item: {
 	                            xtype: 'combobox',
 	                            inputId: 'pp_exportMetadataType',
+	                            labelWidth: 150,
 	                            fieldLabel: _('Metadata Type'),
 	                            store: [
 	                                  ["DC", _("Dublin Core")],
@@ -52,6 +53,19 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             },
                             flex: 0,
                             help: _('Metadata Type')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+                                inputId: 'pp_exportSource',
+                                boxLabel: _('Create editable export?'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option, the exported component will be editable with eXeLearning.')
+                            },
+                            flex: 0,
+                            help: _('Checking this option, the exported component will be editable with eXeLearning.')
                         }
                     ]
                 },
@@ -99,19 +113,6 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             },
                             flex: 0,
                             help: _('Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the "website_" prefix to differentiate them from their SCORM equivalent.')
-                        },{
-                            xtype: 'helpcontainer',
-                            item: {
-                                xtype: 'checkboxfield',
-                                inputId: 'pp_scowsource',
-                                boxLabel: _('Create editable SCORM file?'),
-                                inputValue: true,
-                                uncheckedValue: false,
-                                dirtyCls: 'property-form-dirty',
-                                tooltip: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
-                            },
-                            flex: 0,
-                            help: _('Checking this option, the exported SCORM file will be editable with eXeLearning.')
                         }
                     ]
                 },

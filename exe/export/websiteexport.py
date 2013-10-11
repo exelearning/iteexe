@@ -24,9 +24,6 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import re
 import imp
-from cgi                      import escape
-from exe.webui.blockfactory   import g_blockFactory
-from exe.engine.error         import Error
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
@@ -34,6 +31,8 @@ from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
 from exe                      import globals as G
 import os
+from exe.engine.persist import encodeObject
+from exe.engine.persistxml import encodeObjectToXML
 
 log = logging.getLogger(__name__)
 
@@ -247,6 +246,11 @@ class WebsiteExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
+
+        if hasattr(package, 'exportSource') and package.exportSource:
+            (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
+            (outputDir/'content.data').write_bytes(encodeObject(package))
+            (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

@@ -329,7 +329,7 @@ class Package(Persistable):
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
-        self.scowsource    = False
+        self.exportSource    = True
         self.exportMetadataType = "LOMES"
         self.license       = u''
         self.footer        = ""
@@ -1454,8 +1454,8 @@ class Package(Persistable):
             self.scowsinglepage = False
         if not hasattr(self, 'scowwebsite'):
             self.scowwebsite = False
-        if not hasattr(self, 'scowsource'):
-            self.scowsource = False
+        if not hasattr(self, 'exportSource'):
+            self.exportSource = True
         if not hasattr(self, 'exportMetadataType'):
             self.exportMetadataType = "LOMES"
         if not hasattr(self, 'lang'):
@@ -1476,6 +1476,8 @@ class Package(Persistable):
             self._contextPlace = u''
         if not hasattr(self, 'contextMode'):
             self._contextMode = u''
+        if hasattr(self, 'scowsource'):
+            del self.scowsource
         try:
             self.newlicense = self.oldLicenseMap[self.license]
         except:

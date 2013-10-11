@@ -33,6 +33,8 @@ from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe                      	   import globals as G
+from exe.engine.persist import encodeObject
+from exe.engine.persistxml import encodeObjectToXML
 
 log = logging.getLogger(__name__)
 
@@ -495,6 +497,11 @@ class IMSExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
+        if hasattr(package, 'exportSource') and package.exportSource:
+            (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
+            (outputDir/'content.data').write_bytes(encodeObject(package))
+            (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
+
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence
