@@ -175,7 +175,7 @@ class IdevicePane(Renderable, Resource):
         log.debug("Render "+prototype.title)
         log.debug("_title "+prototype._title)
         log.debug("of type "+repr(type(prototype.title)))
-        log.info(prototype._title.lower())
+        log.debug(prototype._title.lower())
         xml  = u"  <idevice>\n"
         xml += u"   <label>" + prototype.title + "</label>\n"
         xml += u"   <id>" + prototype.id + "</id>\n"
