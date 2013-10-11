@@ -1134,32 +1134,23 @@ var $exe = {
     },
     iDeviceToggler : {
         init : function(){
-            var em1 = $(".iDevice_header");
-            var em0 = $(".iDevice.emphasis0");
-            if ((em1.length+em0.length)>1) {
-                em1.each(function(){
+            var em = $(".iDevice_header,.iDevice.emphasis0");
+                em.each(function(){
                     var t = $exe_i18n.hide;
-                    var e = $(this);
-                    var eP = e.parent().parent();
-                    var iDeviceID = eP.attr("id");
-                    if (!iDeviceID) return false;
-                    if (eP.attr("class").indexOf("iDevice_wrapper")!=0) return false;
-                    var l = '<p class="toggle-idevice toggle-em1"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em1\')" title="'+t+'"><span>'+t+'</span></a></p>';
-                    var h = e.html();
-                    e.html(h+l);
+                    	e = $(this),
+                    	c = e.hasClass('iDevice_header')? 'em1': 'em0',
+                    	eP = e.parents('.iDevice_wrapper');
+                    if (eP.length) {
+                    	
+                    	var l = '<p class="toggle-idevice toggle-' + c + '"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+eP.attr('id')+'\',\'' + c + '\')" title="'+t+'"><span>'+t+'</span></a></p>';
+                    	if (c == 'em1') {
+                    		var h = e.html();
+                    		e.html(h+l);
+                    	}
+                    	else
+                    		e.before(l);
+                    }
                 });
-                em0.each(function(){
-                    var t = $exe_i18n.hide;
-                    var e = $(this);
-                    var eP = e.parent();
-                    var iDeviceID = eP.attr("id");
-                    if (!iDeviceID) return false;
-                    if (eP.attr("class").indexOf("iDevice_wrapper")!=0) return false;
-                    var l = '<p class="toggle-idevice toggle-em0"><a href="#" onclick="$exe.iDeviceToggler.toggle(this,\''+iDeviceID+'\',\'em0\')" title="'+t+'"><span>'+t+'</span></a></p>';
-                    var h = e.html();
-                    e.before(l);
-                });
-            }
         },
         toggle : function(e,id,em) {
             var t = $exe_i18n.hide;
