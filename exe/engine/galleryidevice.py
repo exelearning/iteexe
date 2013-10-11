@@ -106,8 +106,6 @@ class GalleryImage(_ShowsResources):
         setting 'originalImagePath' to None, will just recreate the
         thumbnail resources from the existing image resource.
         """       
-        package = self.parent.parentNode.package
-        
         # protect against corrupt elps with images/resources which have 
         # somehow gone missing (appears to have been due to faulty Extracts)
         if originalImagePath is not None:

@@ -43,6 +43,7 @@ from exe.engine.beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
+from exe.engine.checker import Checker
 
 log = logging.getLogger(__name__)
 
@@ -1224,6 +1225,11 @@ class Package(Persistable):
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
+
+        checker = Checker(newPackage)
+        inconsistencies = checker.check()
+        for inconsistency in inconsistencies:
+            inconsistency.fix()
         return newPackage
 
     def getUserResourcesFiles(self, node):
