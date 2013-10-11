@@ -7,7 +7,6 @@ tinyMCE.init({
 	mode : "specific_textareas",
 	editor_selector: "mceEditor",	
 	theme : "advanced",
-	skin : "o2k7",
 	convert_urls : false,
 	// The New eXeLearning
 	content_css : "/css/extra.css," + exe_style,

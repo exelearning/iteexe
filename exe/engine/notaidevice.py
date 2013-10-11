@@ -88,33 +88,12 @@ class NotaIdevice(Idevice):
 
         return fields_list
 
-    def burstHTML(self, i):
-        """
-        takes a BeautifulSoup fragment (i) and bursts its contents to 
-        import this idevice from a CommonCartridge export
-        """
-        # Reflection Idevice:
-        title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
-        self.title = title.renderContents().decode('utf-8')
-
-        reflections = i.findAll(name='div', attrs={'id' : re.compile('^ta') })
-        # should be exactly two of these:
-        # 1st = field[0] == Activity
-        self.commentTextArea.content_wo_resourcePaths = \
-					reflections[1].renderContents().decode('utf-8')
-		# and add the LOCAL resource paths back in:
-        self.commentTextArea.content_w_resourcePaths = \
-					self.commentTextArea.MassageResourceDirsIntoContent( \
-					self.commentTextArea.content_wo_resourcePaths)
-        self.commentTextArea.content = \
-                    self.commentTextArea.content_w_resourcePaths
-
     def upgradeToVersion1(self):
         """
         Upgrades the node from version 0 to 1.
         """
         log.debug(u"Upgrading iDevice")
-        self.icon       = u"reflection"
+
 
 
     def upgradeToVersion2(self):

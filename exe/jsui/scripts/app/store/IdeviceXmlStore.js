@@ -42,6 +42,7 @@ Ext.define('eXe.store.IdeviceXmlStore', {
             },
             remoteSort: true,
             groupField: 'category',
+            sorters: 'label',
             fields: [
                 {
                     name: 'label'

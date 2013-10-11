@@ -13,7 +13,7 @@ import codecs
 exSection = re.compile('\[(?P<sectionname>(\w|\s)+)\]\s*')
 exOption = re.compile("""\s*                # Ignore white space at the beginning
                          (?P<optionname>
-                          (\s*(\w|[\_\-])+)+) # This matches multiple words
+                          (\s*(\w|[\_\-\(\)/])+)+) # This matches multiple words
                          #(\s*\w+)+)        # This matches multiple words
                          (?P<operator>\s*[:=]\s*)       # = or : with optional white space around it
                          (?P<value>.*?)              # Multiple words

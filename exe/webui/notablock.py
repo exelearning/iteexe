@@ -16,9 +16,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-"""
-ReflectionBlock can render and process ReflectionIdevices as XHTML
-"""
 
 import logging
 from exe.webui.block               import Block
@@ -30,9 +27,7 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class NotaBlock(Block):
-    """
-    ReflectionBlock can render and process ReflectionIdevices as XHTML
-    """
+
     def __init__(self, parent, idevice):
         """
         Initialize a new Block object
@@ -40,8 +35,7 @@ class NotaBlock(Block):
         Block.__init__(self, parent, idevice)
         self.commentInstruc   = idevice.commentInstruc
 
-        # to compensate for the strange unpickling timing when objects are 
-        # loaded from an elp, ensure that proper idevices are set:
+
 
         if idevice.commentTextArea.idevice is None: 
             idevice.commentTextArea.idevice = idevice
@@ -107,7 +101,7 @@ class NotaBlock(Block):
         """
         html = u'<div class="classnote">\n'
         if  self.commentElement.field.content:
-            html += '<div class="notetitleex" onclick="toggleFeedback(\'%s\')">' % self.id 
+            html += '<div class="notetitleex" onclick="toggleFeedback(\'%s\')" title="%s">' % (self.id , _(u"Show/Hide"))
         else:
             html += '<div class="notetitle">'
         html +='%s</div>' % self.idevice.title

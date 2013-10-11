@@ -148,7 +148,7 @@ function createPanelStyles(styles) {
 			estilo = 'padding-top:5px; background-color: #FFF;'
 		} 
 		else {
-			estilo = 'padding-top:5px; background-color: #FAFAFA; border-color: gray;'
+			estilo = 'padding-top:5px; background-color: #FAFAFA; border-top-color: #B5B8C8; border-bottom-color: #B5B8C8; border-top-style:solid; border-bottom-style: solid; border-top-width:1px; border-bottom-width: 1px;'
 		}
 		
 		
