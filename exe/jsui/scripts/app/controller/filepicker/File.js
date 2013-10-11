@@ -219,7 +219,17 @@ Ext.define('eXe.controller.filepicker.File', {
             if (place.rawValue) {
                 record = store.findRecord("name", place.rawValue, 0, false, true, true);
                 if (record && record.get('type') == "directory" && this.validatePerms(fp.type, record)) {
-	                this.application.fireEvent( "dirchange" , record.get('realname'), true );
+                	fp.status = eXe.view.filepicker.FilePicker.returnOk;
+	                fp.file = { 'path': record.get('realname') };
+	                fp.destroy();
+                }
+                if (!record) {
+                	record = store.findRecord("name", ".", 0, false, true, true);
+                	if (this.validatePerms(fp.type, record)) {
+						fp.status = eXe.view.filepicker.FilePicker.returnOk;
+					    fp.file = { 'path': this.currentDir + '/' + place.rawValue };
+					    fp.destroy();
+					}
                 }
             }
             else {
