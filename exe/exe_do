@@ -43,6 +43,8 @@ except ImportError, error:
         sys.exit(1)
 from exe.export.cmdlineexporter import CmdlineExporter
 from exe.importers.cmdlineimporter import CmdlineImporter
+from exe.engine.package import Package
+from exe.engine.path import Path, TempDirPath
 
 
 class CustomHelpFormatter(optparse.IndentedHelpFormatter):
@@ -57,13 +59,29 @@ class CustomOptionParser(optparse.OptionParser):
     def print_help(self, f=None):
         if f is None:
             f = sys.stdout
-        file.write(self.format_help())
+        f.write(self.format_help())
 
 
 def prepareParser():
     usage = _(u"Usage: %prog [options] input_file [output_file]\n\nTo show \
 help:\n%prog -h").encode(sys.stdout.encoding)
     parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
+
+    parser.add_option("-s", "--set",
+                      action="store", type='string', dest='set_options', metavar='field=value,<field=value>...',
+                      help=_(u"Set ELP field values. Example: -s style=Default,root.title='Root Node'").encode(sys.stdout.encoding))
+
+    group = optparse.OptionGroup(parser,
+                     _(u"Set ELP field values options").encode(sys.stdout.encoding),
+                     _(u"Once you have chosen Set ELP field values option using '-s <values>' or \
+    '--set <values>', it's possible to configure the following options:").encode(sys.stdout.encoding))
+
+    group.add_option("-w", "--write_package",
+                    action="store_true", dest="set_options_write",
+                    help=_(u"Write field values to ELP").encode(sys.stdout.encoding))
+
+    parser.add_option_group(group)
+
     parser.add_option("-x", "--export",
                   action="store", dest="x", metavar="format",
                   choices=['xml', 'scorm12', 'scorm2004', 'agrega',
@@ -144,7 +162,7 @@ if __name__ == "__main__":
     if options.x and options.i:
         parser.error(_(u'Options --export and --import are mutually \
 exclusive.').encode(sys.stdout.encoding))
-    if not options.x and not options.i:
+    if not options.x and not options.i and not options.set_options:
         parser.error(_(u'No --export or --import option supplied.')\
 .encode(sys.stdout.encoding))
 
@@ -159,6 +177,34 @@ exclusive.').encode(sys.stdout.encoding))
 
     if len(args) > 2:
         parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+
+    tempdir = TempDirPath()
+    if options.set_options:
+        try:
+            path = Path(inputf)
+            path.copy(tempdir)
+            inputf = tempdir / path.basename()
+            pkg = Package.load(inputf)
+            if not pkg:
+                error = _(u"Invalid input package")
+                raise Exception(error.encode(sys.stdout.encoding))
+            set_options = options.set_options.split(',')
+            for set_option in set_options:
+                name, value = set_option.split('=')
+                names = name.split('.')
+                obj = pkg
+                for name in names[:-1]:
+                    obj = getattr(obj, name)
+                name = names[-1]
+                setattr(obj, name, value)
+            pkg.save()
+            if options.set_options_write:
+                inputf.move(path)
+        except:
+            print _(u"exe_do: error: Unable to set values from '%s'.\nThe \
+error was:") % (path)
+            print sys.exc_value
+            exit()
 
     if options.x:
         x = CmdlineExporter(application.config, {"export": options.x,
