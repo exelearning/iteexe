@@ -368,6 +368,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             },
                             {
                                 xtype: 'accesskey_menuitem',
+                                itemId: 'tools_resourcesreport',
+                                accesskey: 'r',
+                                text: _('Resources Report')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
                                 itemId: 'tools_preview',
                                 accesskey: 'v',
                                 text: _('Preview')

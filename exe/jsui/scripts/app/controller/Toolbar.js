@@ -135,6 +135,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_preferences': {
                 click: this.toolsPreferences
             },
+            '#tools_resourcesreport': {
+            	click: { fn: this.processExportEvent, exportType: "csvReport" }
+            },
             '#tools_preview': {
                 click: { fn: this.processBrowseEvent, url: location.href + '/preview' }
             },
@@ -664,7 +667,24 @@ Ext.define('eXe.controller.Toolbar', {
 		            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
 		            ]
 		        );
-                fp.show();            
+                fp.show();
+	    } else if(exportType == "csvReport"){
+            var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+                type: eXe.view.filepicker.FilePicker.modeSave,
+                title: _("Save package resources report as"),
+                modal: true,
+                scope: this,
+                callback: function(fp) {
+                    if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                        nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+                }
+            });
+	        fp.appendFilters([
+	            { "typename": _("CSV File"), "extension": "*.csv", "regex": /.*\.csv$/ },
+	            { "typename": _("All Files"), "extension": "*.*", "regex": /.*$/ }
+	            ]
+	        );
+            fp.show();
         } else if(exportType == "epub3"){
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                     type: eXe.view.filepicker.FilePicker.modeSave,
