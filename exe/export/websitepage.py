@@ -131,7 +131,7 @@ class WebsitePage(Page):
         html += u"</head>"+lb
         html += u'<body class="exe-web-site">'+lb
         html += u"<"+sectionTag+" id=\"content\">"+lb
-        html += '<p id="skipNav"><a href="#main">'+_('Skip navigation')+'</a></p>'
+        #html += '<p id="skipNav"><a href="#main">'+_('Skip navigation')+'</a></p>'+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
             html += u"<"+headerTag+" id=\"header\" "
