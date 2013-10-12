@@ -46,6 +46,8 @@ from exe.webui.quiztestblock          import QuizTestBlock
 from exe.webui.listablock             import ListaBlock
 from exe.webui.notablock             import NotaBlock
 
+from exe.webui.sortblock import SortBlockInc
+
 # JR
 # Necesarios para la FPD
 from exe.webui.clozefpdblock		import ClozefpdBlock

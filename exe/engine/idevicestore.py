@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.engine.sortidevice import SortIdeviceInc
 """
 The collection of iDevices available
 """
@@ -309,6 +310,7 @@ class IdeviceStore:
         
         factoryExtendedIdevices = []
         
+        factoryExtendedIdevices.append(SortIdeviceInc())
         factoryExtendedIdevices.append(FreeTextIdevice())
         factoryExtendedIdevices.append(MultichoiceIdevice())
         factoryExtendedIdevices.append(ReflectionIdevice())
@@ -357,6 +359,7 @@ class IdeviceStore:
         factoryExtendedIdevices.append(CasopracticofpdIdevice())
         factoryExtendedIdevices.append(EjercicioresueltofpdIdevice())
         factoryExtendedIdevices.append(DestacadofpdIdevice()) 
+        
         #factoryExtendedIdevices.append(CorreccionfpdIdevice())
         factoryExtendedIdevices.append(OrientacionesalumnadofpdIdevice())
         factoryExtendedIdevices.append(OrientacionestutoriafpdIdevice())
