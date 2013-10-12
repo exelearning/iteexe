@@ -131,7 +131,7 @@ class WebsitePage(Page):
         html += u"</head>"+lb
         html += u'<body class="exe-web-site">'+lb
         html += u"<"+sectionTag+" id=\"content\">"+lb
-        #html += '<p id="skipNav"><a href="#main">'+_('Skip navigation')+'</a></p>'+lb
+        html += '<p id="skipNav"><a href="#main">'+_('Skip navigation')+'</a></p>'+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
             html += u"<"+headerTag+" id=\"header\" "
@@ -160,6 +160,7 @@ class WebsitePage(Page):
         html += "<"+sectionTag+" id='topPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage)
         html += "</"+sectionTag+">"+lb
+        html += u"<"+sectionTag+" id=\"main-wrapper\">"+lb
         html += u"<"+sectionTag+" id=\"main\"><a name=\"main\"></a>"+lb
 
         html += '<'+headerTag+' id=\"nodeDecoration\">'
@@ -195,6 +196,7 @@ class WebsitePage(Page):
         #if not style.hasValidConfig:
             html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /main
+        html += u"</"+sectionTag+">"+lb # /main-wrapper
         if themeHasXML:
         #if style.hasValidConfig:
             html += self.renderFooter()
