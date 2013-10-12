@@ -47,6 +47,7 @@ from exe.webui.listablock             import ListaBlock
 from exe.webui.notablock             import NotaBlock
 
 from exe.webui.sortblock import SortBlockInc
+from exe.webui.hangmanblock import HangmanBlockInc
 
 # JR
 # Necesarios para la FPD
