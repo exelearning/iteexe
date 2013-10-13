@@ -291,6 +291,7 @@ class IdeviceStore:
         from exe.engine.clickinorderidevice import ClickInOrderIdeviceInc
         from exe.engine.memorymatchidevice import MemoryMatchIdeviceInc
         from exe.engine.placetheobjectsidevice import PlaceTheObjectsIdeviceInc
+        from exe.engine.fileattachidevice import FileAttachIdeviceInc
 
         # JR
         # Necesarios para la FPD
@@ -321,6 +322,7 @@ class IdeviceStore:
         factoryExtendedIdevices.append(ClickInOrderIdeviceInc())
         factoryExtendedIdevices.append(MemoryMatchIdeviceInc())
         factoryExtendedIdevices.append(PlaceTheObjectsIdeviceInc())
+        factoryExtendedIdevices.append(FileAttachIdeviceInc())
         
         factoryExtendedIdevices.append(FreeTextIdevice())
         factoryExtendedIdevices.append(MultichoiceIdevice())
