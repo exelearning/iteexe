@@ -5,7 +5,8 @@ Centre for Flexible and Distance Learning
 Modified by eXeLearning.net
 */
 #content{width:100%;position:relative;padding-bottom:10px;min-width:985px;border:1px solid #FFFFFF;border-radius:5px;background:url(_kahurangi_white.gif) repeat-y 229px 0}
-#main{padding:10px 20px 0 250px}
+#main-wrapper{padding:10px 20px 0 250px}
+#main{width:100%}
 #content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none;background:url(_kahurangi_page_bg.gif) repeat-x 0 0;border-top-left-radius:5px;border-top-right-radius:5px;padding-left:15px}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}

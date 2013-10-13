@@ -6,7 +6,8 @@ Modified by eXeLearning.net
 */
 body{padding:15px 20px}
 #content{width:100%;position:relative;padding-bottom:10px;min-width:965px;}
-#main{padding:0 20px 0 250px;background:none}
+#main-wrapper{padding:0 20px 0 250px;background:none}
+#main{width:100%}
 #content{padding-bottom:21px}
 #header,#emptyHeader{border:none;background:none;padding:0}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}

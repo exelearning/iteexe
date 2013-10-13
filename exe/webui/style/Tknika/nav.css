@@ -60,11 +60,14 @@ body{
 /* ******************************************* */
 
 
-#main{
+#main-wrapper{
 	padding-top: 60px;
 	padding-right: 20px;
 	padding-bottom: 11px;
 	padding-left: 220px;
+}
+#main{
+    width:100%;
 }
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
 * html #header,* html #emptyHeader{height:110px} /* IE6 */

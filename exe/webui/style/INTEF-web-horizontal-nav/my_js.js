@@ -21,12 +21,12 @@ var myTheme = {
         if ($(window).width()<700) {
             p = "10px";
         }          
-        $("#main").css({"padding-left":p});
+        $("#main-wrapper").css({"padding-left":p});
         myTheme.params("add");
         $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
     },
     toggleMenu : function(){
-        var c = $("#main");
+        var c = $("#main-wrapper");
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {       
             l.attr("class","show-nav").attr("title",$exe_i18n.show);
@@ -35,7 +35,7 @@ var myTheme = {
                 if ($(window).width()<700) {
                     p = "10px";
                 }                
-                $("#main").css({"padding-left":p});
+                $("#main-wrapper").css({"padding-left":p});
             }); 
             myTheme.params("add");
         } else {
@@ -44,7 +44,7 @@ var myTheme = {
             if ($(window).width()<700) {
                 p = "10px";
             }
-            $("#main").css({"padding-left":p});
+            $("#main-wrapper").css({"padding-left":p});
             $("#siteNav").slideDown();
             myTheme.params("delete");            
         }

@@ -48,7 +48,8 @@ body{
 /* Otras definiciones */
 body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
-#main{padding:10px 20px 0 20px}
+#main-wrapper{padding:10px 20px 0 20px}
+#main{width:100%}
 #content{padding-bottom:11px}
 #header,#emptyHeader{height:39px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 0 0 10px;font-size:1.5em}
 * html #header,* html #emptyHeader{height:100px} /* IE6 */
@@ -113,7 +114,7 @@ html[xmlns] #content{display:block}
     #siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
     #siteNav a.main-node:hover{text-decoration:underline;background:none}
     #siteNav .active{color:#0460B3;font-weight:bold;border-color:#0460B3}
-    #main{padding:0 10px}
+    #main-wrapper{padding:0 10px}
     #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;height:49px;font-size:1.1em}
     #nodeTitle{position:absolute;top:1px;left:10px;margin:20px 10px 0 0;font-size:1.6em}
     #header{text-align:right;padding-right:10px}

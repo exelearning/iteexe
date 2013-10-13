@@ -6,7 +6,8 @@ Modified by eXeLearning.net
 */
 body{background:#DBDAD2}
 #content{background:#E0DFD8 url(_default_side_bg.gif) repeat-y;width:100%;position:relative;padding-bottom:10px;min-width:985px;border:2px solid #E5E4E0;border-radius:5px}
-#main{padding:10px 20px 0 250px}
+#main-wrapper{padding:10px 20px 0 250px}
+#main{width:100%}
 #content{padding-bottom:21px}
 #header,#emptyHeader{border-top:none;background:#D9D9CE}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}

@@ -4,13 +4,17 @@
 
 }
 
-#main {
+#main-wrapper{
 	margin-left: 260px;
 	margin-top: 0px;
 	margin-right: 20px;
 	padding-bottom: 20px;
 	/*position: absolute;*/
-	text-align:left;
+	text-align:left;    
+}
+
+#main{
+    width:100%;
 }
 
 /* ITE elements */

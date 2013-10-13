@@ -2,7 +2,8 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 #lbOverlay{background:#000}
 #content{width:97%;margin:20px auto;text-align:left;position:relative;padding-bottom:21px;min-width:965px;background:#fff url(_max_columna_izquierda.gif) repeat-y 0 0;border:5px solid #000;box-shadow:0 0 10px 0 #666;border-radius:5px}
 .no-nav #content{background:#fff}
-#main{padding:10px 20px 0 250px}
+#main-wrapper{padding:10px 20px 0 250px}
+#main{width:100%}
 #header,#emptyHeader{border-top:none}
 /* Navigation */
 #skipNav{width:50%;padding:10px}
@@ -41,7 +42,7 @@ html[xmlns] #content{display:block}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
 	body{background:#fff}
-	#main,#siteFooter{padding-left:20px}
+	#main-wrapper,#siteFooter{padding-left:20px}
 	#content{width:100%;min-width:0;background:#fff;border:none;box-shadow:none;margin:0}
 	#nodeTitle,.pagination{border-width:2px}
 	#bottomPagination{margin-bottom:15px}
@@ -73,7 +74,7 @@ html[xmlns] #content{display:block}
     #skipNav a{border-right:10px solid #fff}
     #siteNav{float:none;width:100%;padding:0}
 	#siteNav a{border-right:0}
-    #main{padding:0 10px}
+    #main-wrapper{padding:0 10px}
     #nodeTitle{margin-top:.5em}
 	#siteFooter,.no-nav #siteFooter{padding:15px 10px 0 10px}
     #content .exe-col{float:none;width:100%;padding:0}
