@@ -50,6 +50,7 @@ from exe.webui.sortblock import SortBlockInc
 from exe.webui.hangmanblock import HangmanBlockInc
 from exe.webui.clickinorderblock import ClickInOrderBlockInc
 from exe.webui.memorymatchblock import MemoryMatchBlockInc
+from exe.webui.placetheobjectsblock import PlaceTheObjectsBlockInc
 
 # JR
 # Necesarios para la FPD
