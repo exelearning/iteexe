@@ -1,0 +1,10 @@
+<idevice type='memorymatch' id='${ideviceid}'>
+	
+	<memmatch rows="${rows}" cols="${cols}" cellwidth="${cellwidth}"
+		covertile="${coverImg_imgsrc}" cellbackimg="${cellbackImg_imgsrc}"
+		backgroundimg="${revealedBackground_imgsrc}" splitpairs="${splitPairs}">
+	
+		<negativefeedback><![CDATA[${feedbacknegative}]]></negativefeedback>
+		
+		<positivefeedback><![CDATA[${feedbackpositive}]]></positivefeedback>
+	

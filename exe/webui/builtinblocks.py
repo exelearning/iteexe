@@ -49,6 +49,7 @@ from exe.webui.notablock             import NotaBlock
 from exe.webui.sortblock import SortBlockInc
 from exe.webui.hangmanblock import HangmanBlockInc
 from exe.webui.clickinorderblock import ClickInOrderBlockInc
+from exe.webui.memorymatchblock import MemoryMatchBlockInc
 
 # JR
 # Necesarios para la FPD

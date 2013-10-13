@@ -289,6 +289,7 @@ class IdeviceStore:
         from exe.engine.sortidevice import SortIdeviceInc
         from exe.engine.hangmanidevice import HangmanIdeviceInc
         from exe.engine.clickinorderidevice import ClickInOrderIdeviceInc
+        from exe.engine.memorymatchidevice import MemoryMatchIdeviceInc
 
         # JR
         # Necesarios para la FPD
@@ -311,11 +312,13 @@ class IdeviceStore:
         from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
         from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
         
+        
         factoryExtendedIdevices = []
         
         factoryExtendedIdevices.append(SortIdeviceInc())
         factoryExtendedIdevices.append(HangmanIdeviceInc())
         factoryExtendedIdevices.append(ClickInOrderIdeviceInc())
+        factoryExtendedIdevices.append(MemoryMatchIdeviceInc())
         
         factoryExtendedIdevices.append(FreeTextIdevice())
         factoryExtendedIdevices.append(MultichoiceIdevice())
