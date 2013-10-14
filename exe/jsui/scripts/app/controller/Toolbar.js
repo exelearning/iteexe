@@ -99,6 +99,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#file_export_text': {
                 click: { fn: this.processExportEvent, exportType: "textFile" }
             },
+            '#file_export_mxml': {
+                click: { fn: this.processExportEvent, exportType: "mxml" }
+             },
             '#file_export_epub3': {
                 click: { fn: this.processExportEvent, exportType: "epub3" }
             },
@@ -633,7 +636,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
     
 	exportPackage: function(exportType, exportDir) {
-	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' ) {
+	    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' || exportType == 'mxml' ) {
 	        if (exportDir == '') {
                 var fp = Ext.create("eXe.view.filepicker.FilePicker", {
 		            type: eXe.view.filepicker.FilePicker.modeGetFolder,

@@ -164,6 +164,20 @@ class TextElement(Element):
 # ===========================================================================
 
 class TextAreaElement(ElementWithResources):
+    
+    """
+    Strings that dont count against length for xml deciding if this is 
+    html content or just video /images with audio
+    """
+    dontCountStrs = ["<br>", "<br/>", "\\s", "<brr.*>", "</div>", "<p>", "</p>", "&nbsp;"]
+    
+    #This text area really just has media and blank space
+    MEDIA_ONLY_SLIDE = 1
+    
+    #This text area has real text in it
+    HTML_SLIDE = 2
+    
+    
     """
     TextAreaElement is responsible for a block of text
     """
@@ -262,6 +276,139 @@ class TextAreaElement(ElementWithResources):
                 self.field.content)
         return self.renderView(content=content, visible=visible, \
                                class_=class_, preview=True)
+
+    """
+    Run Media Adaptation as required
+    
+    Then strip out spaces etc.
+    mediaParams - dict of params that can be used to control media processing
+    e.g. by idevices etc. actually doing the export
+    
+    """
+    def getMediaAdaptedStrippedHTML(self, htmlContent, mediaParams = {}):
+        from exe.export.exportmediaconverter import ExportMediaConverter
+        mediaConverter = ExportMediaConverter.getInstance()
+        htmlContentMediaAdapted = htmlContent
+        
+        if mediaConverter is not None:
+            htmlContentMediaAdapted = mediaConverter.handleAudioVideoTags(htmlContent, mediaParams)
+            mediaConverter.handleImageVersions(htmlContentMediaAdapted, mediaParams)
+        
+        for strToRemove in self.dontCountStrs:
+            htmlContentMediaAdapted = htmlContentMediaAdapted.replace(strToRemove, "")
+        
+        htmlContentMediaAdapted = re.sub(re.compile('<div(.)*?>', re.MULTILINE), '\1', htmlContentMediaAdapted)
+        
+        htmlContentMediaAdapted = htmlContentMediaAdapted.replace("\n", "")
+        htmlContentMediaAdapted = htmlContentMediaAdapted.replace("\r", "")
+        
+        htmlContentMediaAdapted = htmlContentMediaAdapted.strip()
+        
+        return htmlContentMediaAdapted
+    
+    
+    def getMediaAdaptedHTML(self):
+        from exe.export.exportmediaconverter import ExportMediaConverter
+        mediaConverter = ExportMediaConverter.getInstance()
+        
+        if mediaConverter is not None:
+            htmlContentMediaAdapted = mediaConverter.handleAudioVideoTags(self.renderView())
+            htmlContentMediaAdapted = mediaConverter.handleImageVersions(htmlContentMediaAdapted)
+            return htmlContentMediaAdapted
+        else:
+            return self.renderView()
+        
+    
+
+    """
+    Will determine the type - either has meaningful text and HTML content or 
+    is really just being used as a placeholder for media
+    """
+    def getXMLType(self):
+        htmlContent = self.renderView()
+        
+        # stop this from being used to run a resize
+        htmlContentMediaAdapted = self.getMediaAdaptedStrippedHTML(htmlContent, {"noresize" : True})
+        
+        imgChars = self._countTagLength(htmlContentMediaAdapted, "img")
+        audioChars = self._countTagLength(htmlContentMediaAdapted, "audio", True)
+        videoChars = self._countTagLength(htmlContentMediaAdapted, "video", True)
+        
+        threshHold = 10
+        
+        "TODO: Make sure that we also look for the audio ..."
+        remainingChars = len(htmlContentMediaAdapted) - imgChars - audioChars - videoChars
+        
+        if remainingChars < threshHold:
+            return self.MEDIA_ONLY_SLIDE
+        else:
+            return self.HTML_SLIDE
+        
+    """
+    Internal helper to count the length of a tag to see if this makes up all
+    the content etc. etc.
+    """
+    def _countTagLength(self, htmlContent, tagName, endingTag = False):
+        htmlContent = htmlContent.lower()
+        tagStartIndex = htmlContent.find("<" + tagName)
+        if tagStartIndex == -1:
+            return 0
+        
+        tagEndIndex = -1
+        if endingTag == False:
+            tagEndIndex = htmlContent.find(">", tagStartIndex + 1)
+        else:
+            endingTagStr = "</" + tagName + ">"
+            tagEndIndex = htmlContent.find(endingTagStr) + len(endingTagStr)
+        
+        return (tagEndIndex - tagStartIndex)
+    
+
+
+
+    def renderXML(self, style, elementToMake = "block", myId = "", title="", icon=""):
+        from exe.export.exportmediaconverter import ExportMediaConverter
+        from exe.export.xmlpage import XMLPage
+        
+        xml = u""
+        
+        if myId == "":
+            myId = self.field.idevice.id
+        
+        XMLPage.lastIdeviceID = myId
+        
+        xmlType = self.getXMLType()
+        
+        #if we are using force media slide option
+        if ExportMediaConverter.autoMediaOnly == True or ExportMediaConverter.autoMediaOnly == "true":
+            xmlType = self.MEDIA_ONLY_SLIDE
+        
+        if xmlType == self.MEDIA_ONLY_SLIDE:
+            xml += u"<%s type='mediaslide' id='%s'>\n" % (elementToMake, myId)
+            htmlContentInc = self.getMediaAdaptedStrippedHTML(self.renderView(), {"resizemethod" : "stretch"} )
+            scriptStart = htmlContentInc.find("<script")
+            if scriptStart != -1:
+                scriptEnd = htmlContentInc.find("</script>", scriptStart) + len("</script>")
+                htmlContentInc = htmlContentInc[:scriptStart] + htmlContentInc[scriptEnd:]
+            
+            xml += htmlContentInc
+            xml += "</%s>\n" % elementToMake
+        else: 
+            mediaAdaptedHTML = self.getMediaAdaptedHTML()
+            audioStr = ExportMediaConverter.getInstance().makeAudioAttrs(mediaAdaptedHTML)
+            xml += u"<%s type='html' id='%s' %s>\n" % (elementToMake, myId, audioStr)
+            xml += "<![CDATA["
+            if icon != "":
+                xml += "<img src='icon_" + icon + ".gif' /> "
+            if title != "":
+                xml += "<strong>"  + title + "</strong><br/>"
+            
+            xml += mediaAdaptedHTML
+            xml += "]]>"
+            xml += "</%s>\n" % elementToMake
+        
+        
+        return xml
 
     def renderView(self, visible=True, class_="block", content=None, 
                     preview=False):
@@ -1151,6 +1298,78 @@ class ClozeElement(ElementWithResources):
         # set up the content for preview mode:
         preview = True
         return self.renderView(feedbackId, preview)
+
+    def renderXML(self):
+        from exe.export.exportmediaconverter import ExportMediaConverter
+        
+        missingWordCount = 0
+        
+        #array True if numeric only, false otherwise - hint for phone input
+        missingWordNumOnly = []
+        
+        xml =u""
+        xml += "<cloze>"
+        xml += "<formhtml><![CDATA["
+        breakCount = 0
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if text:
+                #remove table formatting... makes midlet life difficult
+                text = text.replace("</td>", "<br/>")
+                text = text.replace("</tr>", "<br/>----<br/>")
+                
+                xml += ExportMediaConverter.removeHTMLTags(text, ["table", "tbody", "tr", "td", "th"])
+                breakCount += 1
+            if missingWord:
+                #NOTE: To make the midlet's life easier - value MUST come after id
+                #if breakCount > 0:
+                #    xml += "<br/>"
+                
+                #check and see if we have a numeric only word
+                numbers = u"0123456789\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9"
+                numOnly = True
+                for i in range(0, len(missingWord)):
+                    currentChar = missingWord[i : i + 1]
+                    if numbers.find(currentChar) == -1:
+                        #there is something thats not a number
+                        numOnly = False
+                        break
+                
+                missingWordNumOnly.append(numOnly)
+                
+                inputStyle = ""
+                
+                
+                xml += ' <input type="text" size="%s" ' % str(len(missingWord) + 2) \
+                    + '        id="clozeBlank%s" ' % str(missingWordCount) \
+                    + ' value="clozeBlank%s" ' % str(missingWordCount) \
+                    + '    />'
+                missingWordCount = missingWordCount + 1
+                breakCount = 0
+        
+        xml += "<a href='#'>Check</a>"
+        xml += "]]></formhtml>"
+        xml += "<words>"
+        missingWordCount = 0
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if missingWord:
+                xml += "<word id='%(id)s' value='%(ans)s'/>\n" % \
+                    {"id": str(missingWordCount), "ans" : missingWord}
+                missingWordCount = missingWordCount + 1
+        
+        xml += "</words>"
+        xml += "<format>"
+        for i in range(missingWordCount):
+            formatStr = "ABC,abc,123"
+            if missingWordNumOnly[i] == True:
+                formatStr = "123"
+                
+            xml += "<wordformat id='%(id)s' value='%(format)s'/>" \
+                % {"id" : str(i), "format" : formatStr }
+        xml += "</format>"
+        
+        xml += "</cloze>"
+        
+        return xml
 
     def renderView(self, feedbackId=None, preview=False):
         """
@@ -2307,6 +2526,26 @@ class QuizOptionElement(Element):
 
         return html
     
+    def renderXML(self):
+        from exe.export.xmlexport import remove_html_tags
+        from exe.export.exportmediaconverter import ExportMediaConverter
+        xml = "<answer iscorrect='%s'> " % str(self.field.isCorrect).lower()
+        xml += "\n<![CDATA[\n"
+        xml += self.answerElement.renderView()
+        xml += "\n]]>\n"
+        
+        #convert any audio tags etc. that have been found for the current profile
+        feedbackMediaAdapted = ExportMediaConverter.getInstance().handleAudioVideoTags(\
+                               self.feedbackElement.renderView())
+        audioStr = ExportMediaConverter.getInstance().makeAudioAttrs(feedbackMediaAdapted)
+        xml += "<feedback %s>\n<![CDATA[\n" % audioStr
+        xml += ExportMediaConverter.trimHTMLWhiteSpace(self.feedbackElement.renderView())
+        xml += "]]></feedback>\n"
+        xml += "</answer>\n\n"
+        
+        return xml
+
+    
     def renderAnswerView(self, preview=False):
         """
         Returns an XHTML string for viewing and previewing this option element
@@ -2495,6 +2734,35 @@ class QuizQuestionElement(Element):
         html += "</div>\n" 
         return html
 
+
+    def renderXML(self):
+        from exe.export.xmlexport import remove_html_tags
+        from exe.export.exportmediaconverter import ExportMediaConverter
+        
+        questionStr = self.questionElement.renderView()
+        questionMediaAdjusted = ExportMediaConverter.getInstance().handleAudioVideoTags(questionStr)
+        
+        #this causes a formatting problem with LWUIT HTMLComponent for some reason
+        questionMediaAdjusted = questionMediaAdjusted.replace("align=\"right\"", "")
+        
+        
+        audioStr = ""
+        audioURL = ExportMediaConverter.getInstance().findAutoAudio(questionMediaAdjusted)
+        if audioURL is not None:
+            audioStr = " audio='%s' " % audioURL
+        
+        
+        xml = u"<question %s>" % audioStr
+        xml += "<![CDATA["
+        xml += questionMediaAdjusted
+        xml += "]]>\n"
+        for element in self.options:
+            xml += element.renderXML() + "\n"
+            
+        
+        xml += "</question>"
+        return xml
+    
 
     def renderPreview(self, img1=None, img2=None):
         """ 

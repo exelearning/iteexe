@@ -57,6 +57,8 @@ from exe.engine.mimetex          import compile
 from urllib                      import unquote, urlretrieve
 from exe.engine.locationbuttons import LocationButtons
 from exe.export.epub3export import Epub3Export
+from exe.export.xmlexport import XMLExport
+
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
@@ -801,6 +803,8 @@ class MainPage(RenderableLivePage):
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
+        elif exportType == 'mxml':
+            self.exportXML(client, filename, stylesDir)
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
@@ -949,6 +953,17 @@ class MainPage(RenderableLivePage):
             log.exception("")
 
     # Public Methods
+
+    """
+    Exports to Ustad Mobile XML
+    """
+    def exportXML(self, client, filename, stylesDir):
+        try:
+            xmlExport = XMLExport(self.config, stylesDir, filename)
+            xmlExport.export(self.package)        
+        except Exception, e:
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
+            raise
 
     def exportSinglePage(self, client, filename, webDir, stylesDir, \
                          printFlag):

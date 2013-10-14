@@ -159,6 +159,42 @@ class TrueFalseElement(object):
             html += u"</div>\n"
         
         return html
+
+    """
+    Will render this for XML - is actually designed to change this into
+    an MCQ (because I'm lazy at the moment to make more J2ME)
+    """
+    def renderQuestionXML(self):
+        questionFormatted = self.question_question.renderView()
+        questionFormatted = questionFormatted.replace("align=\"right\"", "")
+        xml = u"<question><![CDATA["
+        xml += questionFormatted
+        xml += "]]>"
+        
+        options = [True, False]
+        
+        for currentOption in options:
+            answerCorrectStr = "false"
+            if currentOption == self.question.isCorrect:
+                answerCorrectStr = "true"
+                
+            xml += "<answer iscorrect='%s'><![CDATA[\n" % answerCorrectStr
+            xml += "<span class='exe_tfmob'>" + str(currentOption) + "</span>"
+            xml += "]]><feedback>\n<![CDATA["
+            if currentOption == self.question.isCorrect:
+                #this is a correct answer
+                xml += "<img src='icon_mobile_stockcorrect.png'/>"
+            else:
+                xml += "<img src='icon_mobile_stockwrong.png'/>"
+                            
+            xml += "]]></feedback>\n"
+            xml += "</answer>\n"
+            
+        xml += "</question>\n"
+        
+        return xml
+
+
     
     def renderQuestionPreview(self):
         #TODO merge renderQuestionView and renderQuestionPreview

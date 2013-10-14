@@ -220,6 +220,9 @@ class XMLExport(WebsiteExport):
         styleFiles = self.stylesDir.files("icon_*.png")
         self.stylesDir.copylist(styleFiles, outputDir)
         
+        styleFiles = self.stylesDir.parent.files("icon_*.png")
+        self.stylesDir.copylist(styleFiles, outputDir)
+        
         styleFiles = self.stylesDir.files("icon_*.gif")
         self.stylesDir.copylist(styleFiles, outputDir)
         

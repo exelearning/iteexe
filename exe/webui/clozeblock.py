@@ -95,6 +95,19 @@ class ClozeBlock(Block):
             ]
         return u'\n'.join(html)
     
+    def renderXML(self, style):
+        """
+        Makes an XML representation of this object
+        """
+        xml = u"<idevice type='cloze' id='%s'>" % self.idevice.id
+        xml += "<scoretext>Your score is:</scoretext>"
+        xml += "<instructions><![CDATA[ %s ]]></instructions>" \
+            % self.instructionElement.renderView()
+        
+        xml += self.clozeElement.renderXML()
+        xml += "</idevice>"
+        return xml
+
     def renderPreview(self, style):
         """ 
         Remembers if we're previewing or not, 

@@ -343,6 +343,17 @@ class Package(Persistable):
         self._intendedEndUserRoleTutor = False
         self._contextPlace = u''
         self._contextMode = u''
+        
+        #for export to Sugar (e.g. OLPC)
+        self.sugaractivityname = ""
+        self.sugarservicename = ""
+        
+        #for export to Ustad Mobile
+        self.mxmlprofilelist = ""
+        self.mxmlheight = ""
+        self.mxmlwidth = ""
+        self.mxmlforcemediaonly = False
+        
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -1488,5 +1499,14 @@ class Package(Persistable):
             self.newlicense = self.oldLicenseMap[self.license]
         except:
             self.license = u''
+        if not hasattr(self, 'mxmlprofilelist'):
+            self.mxmlprofilelist = ""
+        if not hasattr(self, 'mxmlforcemediaonly'):
+            self.mxmlforcemediaonly = False
+        if not hasattr(self, 'mxmlheight'):
+            self.mxmlheight = ""
+        if not hasattr(self, 'mxmlwidth'):
+            self.mxmlwidth = ""
+
 
 # ===========================================================================
