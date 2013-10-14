@@ -8,7 +8,7 @@ DEB_PYTHON_SYSTEM=pysupport
 
 PYDEF=$(shell pyversions -d)
 PYVERS=$(shell pyversions -r)
-EXEPKG=python-exe
+EXEPKG=python-intef-exe
 
 build: build-stamp
 build-stamp:
