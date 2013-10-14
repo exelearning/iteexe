@@ -13,7 +13,7 @@ Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
 Icon "..\..\dist\eXe_icon.ico"
-OutFile "eXe-install-${EXE_VERSION}.exe"
+OutFile "INTEF-eXe-install-${EXE_VERSION}.exe"
 
 ; Modern interface settings
 !include "MUI.nsh"

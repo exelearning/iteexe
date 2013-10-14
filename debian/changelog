@@ -1,9 +1,9 @@
-python-exe (2:2.0beta1) lucid; urgency=low
+python-intef-exe (2:2.0beta1) lucid; urgency=low
 
   [Pedro Peña]
   * Preparing changelog for next release
 
- -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 23 Sep 2013 09:15:29 +0200
+ -- Pedro Peña Pérez <pedro.pena@open-phoenix.com>  Mon, 14 Oct 2013 18:50:50 +0200
 
 python-exe (2:1.04.1.3605intef7.2) lucid; urgency=low
 
