@@ -417,6 +417,10 @@ class IdeviceStore:
                     idevice.systemResources = []
                     break
 
+        for idevice in self.factoryiDevices:
+            if 'Toughra' in idevice.author or 'PAIWASTOON' in idevice.author:
+                self.addIdevice(idevice)
+
     def __loadUserExtended(self):
         """
         Load the user-created extended iDevices which are in the idevices

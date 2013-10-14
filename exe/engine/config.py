@@ -90,7 +90,13 @@ class Config:
         'cloze activity': [x_('Interactive Activities')],
         'rss': [x_('Non-Textual Information')],
         'external web site': [x_('Non-Textual Information')],
-        'free text': [x_('Textual Information')]
+        'free text': [x_('Textual Information')],
+        'click in order game': [x_('Unclassified')],
+        'file attachments': [x_('Unclassified')],
+        'hangman game': [x_('Unclassified')],
+        'memory match game': [x_('Unclassified')],
+        'place the objects': [x_('Unclassified')],
+        'sort items': [x_('Unclassified')]
     }
 
     def __init__(self):

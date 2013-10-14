@@ -122,7 +122,7 @@ class HangmanIdeviceInc(Idevice):
         import os,sys
             
         scriptSrcFilename = globals.application.config.webDir/"templates"/"hangman.js"
-        print "Script filename = " + scriptSrcFilename
+        log.debug("Script filename = " + scriptSrcFilename)
         
         #assert(self.parentNode,
         #       'Image '+self.id+' has no parentNode')
@@ -131,7 +131,7 @@ class HangmanIdeviceInc(Idevice):
 
         gameScriptFile = Path(scriptSrcFilename)
         if gameScriptFile.isfile():
-            print "adding script\n"
+            log.debug("adding script\n")
             Resource(self, gameScriptFile)
 
 
