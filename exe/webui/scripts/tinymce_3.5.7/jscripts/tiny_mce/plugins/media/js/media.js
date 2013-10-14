@@ -158,11 +158,24 @@
 					if (!confirm(msg)) {
 						return false;
 					} else {
-						var mediaelement = '',
-                            html5MediaCode= '';
-                        if (get("mediaelement").checked)
+						var mediaelement = '';
+						var autoplayelement = '';
+                        var html5MediaCode= '';
+                        var controlsElement = ''; 
+                        
+                        if (get("mediaelement").checked) {
                             mediaelement = ' class="mediaelement"';
-							html5MediaCode += '<'+t+mediaelement+' src="'+file_src+'" width="'+mW+'" height="'+mH+'" controls="controls">';
+                        }
+                        
+                        if(get("autoplayelement").checked) {
+                            autoplayelement = ' autoplay="autoplay"';
+                            
+                        }
+                        
+                        if(get('controlselement').checked) {
+                            controlselement = ' controls="controls" ';
+                        }
+							html5MediaCode += '<'+t+mediaelement+ ' ' + autoplayelement +' src="'+file_src+'" width="'+mW+'" height="'+mH+'" ' + controlselement + '>';
 							html5MediaCode += '<a href="'+src+'">'+link_text+'</a>';
 							html5MediaCode += '</'+t+'>';
 						//tinyMCEPopup.editor.execCommand('mceInsertContent', false, html5MediaCode);
@@ -492,10 +505,15 @@
 			} else {
 				get('advanced_tab').style.display = 'block';
 			}
-            if (data.type == 'video' || data.type == 'audio')
+            if (data.type == 'video' || data.type == 'audio') {
                 get('use_mediaelement').style.display = 'table-row';
-            else
+                get('use_autoplayelement').style.display = 'table-row';
+                get('use_controlselement').style.display = 'table-row';
+            }else {
                 get('use_mediaelement').style.display = 'none';
+                get('use_autoplayelement').style.display = 'none'
+                get('use_controlselement').style.display = 'none';
+            }
 			// /The New eXeLearning			
 
 			setOptions('flash', 'play,loop,menu,swliveconnect,quality,scale,salign,wmode,base,flashvars');
@@ -525,6 +543,16 @@
                         setVal('mediaelement', true);
                     else
                         setVal('mediaelement', false);
+                        
+                    if (data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay')
+                        setVal('autoplayelement', true);
+                    else
+                        setVal('autoplayelement', false);
+                        
+                    if (data.video.attrs.controls && data.video.attrs.controls == 'controls')
+                        setVal('controlselement', true);
+                    else
+                        setVal('controlselement', false);
                 } else if (data.type == 'audio') {
                     if (data.video.sources[0])
                         setVal('src', data.video.sources[0].src);
@@ -541,6 +569,16 @@
                         setVal('mediaelement', true);
                     else
                         setVal('mediaelement', false);
+                        
+                    if (data.video.attrs.autoplay && data.video.attrs.autoplay == 'autoplay')
+                        setVal('autoplayelement', true);
+                    else
+                        setVal('autoplayelement', false);
+                        
+                    if (data.video.attrs.controls && data.video.attrs.controls == 'controls')
+                        setVal('controlselement', true);
+                    else
+                        setVal('controlselement', false);
 				} else {
 					// Check flash vars
 					if (data.type == 'flash') {
@@ -732,10 +770,16 @@
 				else {
 					get('advanced_tab').style.display='block';					
 				}
-                if (get('media_type').value == 'video' || get('media_type').value == 'audio')
+                if (get('media_type').value == 'video' || get('media_type').value == 'audio') {
 	                get('use_mediaelement').style.display = 'table-row';
-	            else
+	                get('use_autoplayelement').style.display = 'table-row';
+	                get('use_controlselement').style.display = 'table-row';
+	            }else {
 	                get('use_mediaelement').style.display = 'none';
+	                get('use_autoplayelement').style.display = 'none';
+	                get('use_controlselement').style.display = 'none';
+                }
+	                
 			}
 			// /The New eXeLearning			
 		},
