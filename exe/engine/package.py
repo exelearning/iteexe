@@ -282,7 +282,7 @@ class Package(Persistable):
     i.e. the "package".
     """
     persistenceVersion = 10
-    nonpersistant      = ['resourceDir', 'filename']
+    nonpersistant      = ['resourceDir', 'filename', 'compatibleWithVersion9']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
     tempFile           = False # This is set when the package is saved as a temp copy file
@@ -343,6 +343,7 @@ class Package(Persistable):
         self._intendedEndUserRoleTutor = False
         self._contextPlace = u''
         self._contextMode = u''
+        self.compatibleWithVersion9 = False
         
         #for export to Sugar (e.g. OLPC)
         self.sugaractivityname = ""
@@ -990,6 +991,8 @@ class Package(Persistable):
         """
         Actually performs the save to 'fileObj'.
         """
+        if self.compatibleWithVersion9:
+            self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
             for resourceFile in self.resourceDir.files():
@@ -1458,7 +1461,7 @@ class Package(Persistable):
 
     def upgradeToVersion10(self):
         """
-        For version >= intef8
+        For version >= 2.0
         """
         entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
@@ -1507,6 +1510,19 @@ class Package(Persistable):
             self.mxmlheight = ""
         if not hasattr(self, 'mxmlwidth'):
             self.mxmlwidth = ""
+        if not hasattr(self, 'compatibleWithVersion9'):
+            self.compatibleWithVersion9 = False
 
-
+    def downgradeToVersion9(self):
+        for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
+                     'exportSource', 'exportMetadataType', '_lang',
+                     '_objectives', '_preknowledge', '_learningResourceType',
+                     '_intendedEndUserRoleType', '_intendedEndUserRoleGroup',
+                     '_intendedEndUserRoleTutor', '_contextPlace',
+                     '_contextMode', 'scowsource', 'mxmlprofilelist',
+                     'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth']:
+            if hasattr(self, attr):
+                delattr(self, attr)
+        self.license = u''
+        self.persistenceVersion = 9
 # ===========================================================================
