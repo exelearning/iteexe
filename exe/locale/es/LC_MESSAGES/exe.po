@@ -9,10 +9,11 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-10-15 18:05+0200\n"
-"PO-Revision-Date: 2013-09-13 19:01+0200\n"
+"PO-Revision-Date: 2013-10-15 18:53+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -601,22 +602,22 @@ msgstr "Espacios en blanco (Modificado)"
 #: exe/engine/config.py:62 exe/engine/config.py:63 exe/engine/config.py:67
 #: exe/engine/config.py:94
 msgid "Non-Interactive Activities"
-msgstr ""
+msgstr "Actividades no-interactivas"
 
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 msgid "Interactive Activities"
-msgstr ""
+msgstr "Actividades interactivas"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
 msgid "Non-Textual Information"
-msgstr ""
+msgstr "Información no-textual"
 
 #: exe/engine/config.py:68 exe/engine/config.py:89 exe/engine/config.py:90
 #: exe/engine/config.py:98
 msgid "Textual Information"
-msgstr ""
+msgstr "Información textual"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:72
 #: exe/engine/config.py:73 exe/engine/config.py:74 exe/engine/config.py:75
@@ -625,12 +626,12 @@ msgstr ""
 #: exe/engine/config.py:82 exe/engine/config.py:83 exe/engine/config.py:84
 #: exe/engine/config.py:85 exe/engine/config.py:86
 msgid "FPD"
-msgstr ""
+msgstr "FPD"
 
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
 #: exe/engine/config.py:102 exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Unclassified"
-msgstr ""
+msgstr "Sin clasificar"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -2522,42 +2523,40 @@ msgstr ""
 
 #: exe/exe_do:72
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
-msgstr ""
+msgstr "Determinar los valores de los campos del ELP. Ejemplo: -s style=Default,root.title='Nodo raíz'"
 
 #: exe/exe_do:75
 msgid "Set ELP field values options"
-msgstr ""
+msgstr "Determinar las opciones de los valores de los campos del ELP"
 
 #: exe/exe_do:76
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
-msgstr ""
+msgstr "Una vez que ha seleccionado la opción Determinar los valores de los campos del ELP, mediante '-s <valores>' o '--set <valores>', es posible configurar las siguientes opciones:"
 
 #: exe/exe_do:81
 msgid "Write field values to ELP"
-msgstr ""
+msgstr "Escribir los valores de los campos en el ELP"
 
 #: exe/exe_do:87
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
-msgstr ""
+msgstr "Genera un informe con los datos de los recursos en el texto <fichero_de_salida> a partir del paquete ELP <fichero_de_entrada>"
 
 #: exe/exe_do:95
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
 "singlepage, xliff or epub3."
-msgstr ""
+msgstr "Exporta el paquete ELP <fichero_de_entrada> en el <fichero_de_salida> opcional en uno de los siguientes formatos: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff o epub3."
 
 #: exe/exe_do:101
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
-msgstr ""
-"Importar el archivo <input_file> al paquete elp <output_file> en alguno "
-"de los siguientes formatos: xml o xliff."
+msgstr "Importar el archivo <fichero_de_entrada> al paquete ELP <fichero_de_salida> en alguno de los siguientes formatos: xml o xliff."
 
 #: exe/exe_do:106
 msgid "Force overwrite of <output_file>"
@@ -2565,7 +2564,7 @@ msgstr "Forzar sobreescritura de  <output_file>"
 
 #: exe/exe_do:110
 msgid "Add the required files to generate a export editable by eXeLearning"
-msgstr ""
+msgstr "Añadir los archivos necesarios para generar una exportación editable por eXeLearning"
 
 #: exe/exe_do:115
 msgid "XLIFF export options"
@@ -2614,7 +2613,7 @@ msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
-msgstr ""
+msgstr "Una vez que haya seleccionado una opción de exportación SCORM mediante '-x scorm12', '-x scorm2004' o '-x agrega', es posible configurar las siguientes opciones de la exportación:"
 
 #: exe/exe_do:148
 msgid "Include Single Page export file"
@@ -2630,7 +2629,7 @@ msgstr "Las opciones --import y --export son mutuamente excluyentes."
 
 #: exe/exe_do:171
 msgid "No --export, --import, --set or --report option supplied."
-msgstr ""
+msgstr "No ha proporcionado ninguna opción --export, --import, --set ni --report."
 
 #: exe/exe_do:175
 msgid "No file input supplied."
@@ -2650,6 +2649,8 @@ msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The error was:"
 msgstr ""
+"exe_do: error: Fallo al determinar valores a partir de '%s'.\n"
+"El error fue:"
 
 #: exe/exe_do:227
 #, python-format
@@ -2722,7 +2723,7 @@ msgstr "Puede cerrar esta ventana"
 
 #: exe/export/websitepage.py:134
 msgid "Skip navigation"
-msgstr ""
+msgstr "Saltar la navegación"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -2784,7 +2785,7 @@ msgstr "Insertando %s"
 
 #: exe/jsui/idevicepane.py:132
 msgid "My iDevices"
-msgstr ""
+msgstr "Mis iDevices"
 
 #: exe/jsui/mainpage.py:299 exe/jsui/mainpage.py:764 exe/jsui/mainpage.py:911
 msgid "Cannot access directory named "
@@ -3187,11 +3188,11 @@ msgstr "Fichero de texto plano"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:677
 msgid "Save package resources report as"
-msgstr ""
+msgstr "Guardar el informe sobre los recursos del paquete como"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:686
 msgid "CSV File"
-msgstr ""
+msgstr "Fichero CSV"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:694
 msgid "Export EPUB3 package as"
@@ -3598,14 +3599,14 @@ msgstr "LOM-ES v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:61
 msgid "Create editable export?"
-msgstr ""
+msgstr "¿Crear un exportado editable?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:65
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:68
 msgid ""
 "Checking this option, the exported component will be editable with "
 "eXeLearning."
-msgstr ""
+msgstr "Si marca esta opción, el componente exportado será editable con eXeLearning."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2, 2004 and Agrega)"
@@ -3979,7 +3980,7 @@ msgstr "Segundos"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:466
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:627
 msgid "Append Section"
@@ -4129,16 +4130,16 @@ msgstr "Actualizar árbol"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
 msgid "Advanced Options"
-msgstr ""
+msgstr "Opciones avanzadas"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:456
 msgid "Create package compatible with old eXe versions?"
-msgstr ""
+msgstr "¿Crear un paquete compatible con las versiones antiguas de eXe?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
 msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr ""
+msgstr "Si marca esta opción, el paquete guardado podrá ser abierto con eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
 msgid "Select Language"
@@ -4166,59 +4167,59 @@ msgstr "Elegir navegador"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:128
 msgid "Show this window on eXe start"
-msgstr ""
+msgstr "Mostrar esta ventana cuando se inicia eXe"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
 msgid "Export style: "
-msgstr ""
+msgstr "Exportar el estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
 msgid "Export to ZIP Style as"
-msgstr ""
+msgstr "Exportar el estilo comprimido en ZIP como"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
 msgid "ZipFile"
-msgstr ""
+msgstr "Fichero ZIP"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
 msgid "Delete style: "
-msgstr ""
+msgstr "Borrar el estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
 msgid "Delete style?"
-msgstr ""
+msgstr "¿Borrar el estilo?"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
 msgid "Do you want to delete this style?"
-msgstr ""
+msgstr "¿Desea borrar este estilo?"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
 msgid "Show properties of style: "
-msgstr ""
+msgstr "Mostrar las propiedades del estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
 msgid "Import style to the system "
-msgstr ""
+msgstr "Importar el estilo al sistema "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Select ZIP Style file to import."
-msgstr ""
+msgstr "Seleccionar el archivo ZIP de estilo que importar."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
 msgid "ZIP Style"
-msgstr ""
+msgstr "Estilo comprimido en ZIP"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
 msgid "List of styles in your system"
-msgstr ""
+msgstr "Listar los estilos de su sistema"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 msgid "Properties of style: "
-msgstr ""
+msgstr "Propiedades del estilo: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
 msgid "Return to style manager"
-msgstr ""
+msgstr "Volver al gestor de estilos"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -4229,21 +4230,21 @@ msgstr "Estructura"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:125
 msgid "Ungroup iDevices"
-msgstr ""
+msgstr "Desagrupar los iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
-msgstr ""
+msgstr "Agrupar los iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:100
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:105
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
 msgid "Edit iDevices"
-msgstr ""
+msgstr "Editar los iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:113
 msgid "Save iDevices"
-msgstr ""
+msgstr "Guardar los iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
@@ -4251,11 +4252,11 @@ msgstr "iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:178
 msgid "Visible"
-msgstr ""
+msgstr "Visible"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
@@ -4399,7 +4400,7 @@ msgstr "Carpeta auto-contenida"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:274
 msgid "Zip File"
-msgstr "Archivo comprimido Zip"
+msgstr "Archivo comprimido ZIP"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:280
 msgid "Single Page"
@@ -4431,7 +4432,7 @@ msgstr "Utilidades"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Resources Report"
-msgstr ""
+msgstr "Informe sobre recursos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
@@ -6277,7 +6278,7 @@ msgstr "Autoevaluación"
 
 #: exe/webui/common.py:170
 msgid "Show"
-msgstr ""
+msgstr "Mostrar"
 
 #: exe/webui/common.py:171 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
@@ -6286,7 +6287,7 @@ msgstr "Ocultar"
 
 #: exe/webui/common.py:172
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: exe/webui/common.py:193 exe/webui/editorpage.py:233
 #: exe/webui/selectbrowserpage_ru.py:90
