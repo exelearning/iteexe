@@ -69,7 +69,7 @@ dataFiles(["exe/webui/style",
 
 g_oldBase = "exe"
 g_newBase = "."
-dataFiles(["exe/locale"])
+dataFiles(["exe/locale", "exe/mediaprofiles"])
 
 g_oldBase = "exe/jsui"
 g_newBase = "."
