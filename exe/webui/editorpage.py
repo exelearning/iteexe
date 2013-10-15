@@ -168,10 +168,10 @@ class EditorPage(RenderableResource):
         """
         Save changes to generic idevice list.
         """
-        idevice.title    = copyIdevice.title
-        idevice.author   = copyIdevice.author
-        idevice.purpose  = copyIdevice.purpose
-        idevice.tip      = copyIdevice.tip
+        idevice.title    = copyIdevice._title
+        idevice.author   = copyIdevice._author
+        idevice.purpose  = copyIdevice._purpose
+        idevice.tip      = copyIdevice._tip
         idevice.fields   = copyIdevice.fields
         idevice.emphasis = copyIdevice.emphasis
         idevice.icon     = copyIdevice.icon
