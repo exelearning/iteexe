@@ -1458,6 +1458,8 @@ var $exe = {
     }
 }
 
-$(function(){
-    $exe.init();
-});
+if (typeof jQuery != 'undefined') {
+	$(function(){
+		$exe.init();
+	});
+}
