@@ -96,12 +96,9 @@ Section main
     ; Check if exe exists in the temp dir
     IfFileExists "$TEMP\exe\exe.exe" 0 Extract
     ; Get its version
-    GetDLLVersion "$TEMP\exe\exe.exe" $R0 $R1
-    IntOp $R2 $R0 / 0x00010000 ; $R2 major version
-    IntOp $R3 $R0 & 0x0000FFFF ; $R3 minor version
-    IntOp $R4 $R1 / 0x00010000 ; $R4 local version
-    IntOp $R5 $R1 & 0x0000FFFF ; $R5 build (svn revision)
-    StrCpy "$0" "$R2.$R3.$R4.$R5"
+    FileOpen $R0 "$TEMP\exe\version" r
+    FileRead $R0 $0
+    FileClose $R0
     ; If its version is ok
     StrCmp "$0" ${EXE_BUILD} Splash CleanUp
   CleanUp:

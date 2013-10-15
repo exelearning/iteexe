@@ -31,8 +31,8 @@ subprocess.check_call('C:\Python27\python win-setup.py py2exe', shell=True, cwd=
 # get the version
 sys.path.insert(0, WDIR)
 from exe.engine import version
-versions = "/DEXE_VERSION=%s /DEXE_REVISION=%s /DEXE_SPLASH=%s" \
-        % (version.release, version.revision, BRANDED_JPG)
+versions = "/DEXE_VERSION=%s /DEXE_REVISION=%s /DEXE_BUILD=%s /DEXE_SPLASH=%s" \
+        % (version.release, version.revision, version.version, BRANDED_JPG)
 open('dist/version', 'w').write(version.version)
 
 # brand the splash screen
