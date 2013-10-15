@@ -49,6 +49,14 @@ class WinConfig(Config):
         self.lastDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
         self.stylesDir     = Path(self.configDir)/'style'
+        
+        self.videoMediaConverter_ogv = ""
+        self.videoMediaConverter_3gp = 'ffmpeg -i %(infile)s -s qcif -vcodec h263 -acodec libvo_aacenc -ac 1 -ar 8000 -r 25 -ab 32 -y %(outfile)s'
+        self.videoMediaConverter_mpg = "ffmpeg -i %(infile)s -s qcif -vcodec mpeg1 -acodec wav -ac 1 -ar 8000 -r 25 -ab 32 -y %(outfile)s"
+        self.audioMediaConverter_au = "sox %(infile)s %(outfile)s"
+        self.audioMediaConverter_wav = "sox %(infile)s %(outfile)s"
+        self.audioMediaConverter_mp3 = "sox %(infile)s -t wav - | lame -b 32 - %(outfile)s"
+        self.ffmpegPath = "ffmpeg"
 
     def _getConfigPathOptions(self):
         """
