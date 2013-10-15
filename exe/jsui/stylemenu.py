@@ -58,6 +58,7 @@ class StyleMenu(Renderable, Resource):
             request.args["action"][0] == "ChangeStyle"):
             log.debug("changing style to "+request.args["object"][0])
             self.package.style = request.args["object"][0]
+            self.package.isChanged = True
             
     """    
     def stylename(self,direc): 
