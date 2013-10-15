@@ -96,12 +96,12 @@ class Config:
         'rss': [x_('Non-Textual Information')],
         'external web site': [x_('Non-Textual Information')],
         'free text': [x_('Textual Information')],
-        'click in order game': [x_('Unclassified')],
-        'file attachments': [x_('Unclassified')],
-        'hangman game': [x_('Unclassified')],
-        'memory match game': [x_('Unclassified')],
-        'place the objects': [x_('Unclassified')],
-        'sort items': [x_('Unclassified')]
+        'click in order game': [x_('Interactive Activities')],
+        'hangman game': [x_('Interactive Activities')],
+        'place the objects': [x_('Interactive Activities')],
+        'memory match game': [x_('Interactive Activities')],
+        'file attachments': [x_('Non-Textual Information')],
+        'sort items': [x_('Non-Textual Information')]
     }
 
     def __init__(self):
