@@ -8,6 +8,7 @@ nsis = 'c:\Program Files\NSIS\makensis.exe'
 
 # name used for temporary file that contains branded splash screen
 BRANDED_JPG = 'splashb.jpg'
+VCREDIST = 'http://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x86.exe'
 
 import sys
 import os
@@ -16,6 +17,7 @@ import subprocess
 import Image
 import ImageFont
 import ImageDraw
+import urllib
 
 # clean out the build and dist dirs
 os.chdir('../..')
@@ -46,6 +48,8 @@ draw.text((150, 102 + h), "Revision: " + version.revision,
         font=font, fill=fontcolor)
 del draw
 im.save(BRANDED_JPG)
+
+urllib.urlretrieve(VCREDIST, 'vcredist2008_x86.exe')
 
 # make the installers
 for installer in ('exe.nsi', 'exe.standalone.nsi'):
