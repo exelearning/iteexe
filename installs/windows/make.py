@@ -25,6 +25,8 @@ WDIR = os.getcwd()
 shutil.rmtree('build', True)
 shutil.rmtree('dist', True)
 
+shutil.copytree('exe/webui/mediaconverters', 'dist/mediaconverters')
+
 # build the executable
 subprocess.check_call('C:\Python27\python win-setup.py py2exe', shell=True, cwd=WDIR)
 
