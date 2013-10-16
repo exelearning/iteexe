@@ -104,9 +104,9 @@ class VerdaderofalsofpdBlock(Block):
         html  = u"<div class=\"iDevice\"><br/>\n"
 
         # JR
-	# Quitamos el prefijo "FPD -"
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Now it's your turn")
+        # Quitamos el prefijo "FPD -"
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_(u"Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
@@ -127,36 +127,27 @@ class VerdaderofalsofpdBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u'<img alt="" class="iDevice_icon" '
-        html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"     
-        html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "preview")
 # JR: Si hay instrucciones añadimos un &nbsp;
-	aux =self.instructionElement.renderView()
-	if re.search(">[\n|\r|\t]*</div>", aux):
-		html += aux
-	else:
-		html += aux + "&nbsp;"
+        aux =self.instructionElement.renderView()
+        if re.search(">[\n|\r|\t]*</div>", aux):
+            html += aux
+        else:
+            html += aux + "&nbsp;"
 
 #       html += self.instructionElement.renderPreview()
 # JR: si es la última pregunta no añadimos br        
         for element in self.questionElements:
             html += "<div class=\"question\">\n"
             html += element.renderQuestion(True)
-	    html += element.renderFeedbackView(True)
-	    html += element.renderNoscript(True)
-	    if element == self.questionElements[len(self.questionElements) - 1]:
-		html += "</div>\n"
-	    else:
-		html += "</div><div>&nbsp;</div>\n"
+        html += element.renderFeedbackView(True)
+        html += element.renderNoscript(True)
+        if element == self.questionElements[len(self.questionElements) - 1]:
+            html += "</div>\n"
+        else:
+            html += "</div><div>&nbsp;</div>\n"
             
-        html += "</div>\n"    
-        html += self.renderViewButtons()
-        html += "</div>\n"
+        html += common.ideviceFooter(self, style, "preview")
 
         return html
 
@@ -165,35 +156,28 @@ class VerdaderofalsofpdBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = u"\n<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u'<img alt="" class="iDevice_icon" '
-        html += u"src=\"icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"
-        html += u"<div class=\"iDevice_inner\">\n"
+        html = common.ideviceHeader(self, style, "view")
 # JR: Si hay instrucciones añadimos un &nbsp;
-	aux =self.instructionElement.renderView()
-
-	if re.search(">[\n|\r|\t]*</div>", aux):
-		html += aux
-	else:
-		html += aux + "&nbsp;"
+        aux =self.instructionElement.renderView()
+        
+        if re.search(">[\n|\r|\t]*</div>", aux):
+            html += aux
+        else:
+            html += aux + "&nbsp;"
 
 #       html += self.instructionElement.renderPreview()
 # JR: si es la última pregunta no añadimos br        
         for element in self.questionElements:
             html += "<div class=\"question\">\n"
             html += element.renderQuestion(False)
-	    html += element.renderFeedbackView(False)
-	    html += element.renderNoscript(False)
-	    if element == self.questionElements[len(self.questionElements) - 1]:
-		html += "</div>\n"
-	    else:
-		html += "</div><div>&nbsp;</div>\n"
+        html += element.renderFeedbackView(False)
+        html += element.renderNoscript(False)
+        if element == self.questionElements[len(self.questionElements) - 1]:
+            html += "</div>\n"
+        else:
+            html += "</div><div>&nbsp;</div>\n"
             
-        html += u"</div>\n"    
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view")
 
         return html
     
