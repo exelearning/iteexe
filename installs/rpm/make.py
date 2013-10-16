@@ -21,10 +21,10 @@ clrelease = 1
 print "Making version: %s release: %s" % (version.version, clrelease)
 
 # create the source tarball
-tarball = os.path.join(TOPDIR, 'SOURCES', 'intef-exe-' + version.release + '-source.tgz')
+os.chdir('..')
+tarball = os.path.join(TOPDIR, 'SOURCES', 'exe-' + version.release + '-source.tgz')
 try:
-    ret = subprocess.call('tar -czf %s --wildcards-match-slash --exclude=".git" --exclude="*.svn*" --exclude "*.pyc" --exclude="*.tmp" --exclude="*~" --exclude="dist/*" --exclude="build/*" --exclude="pyxpcom/*" .' %
-                              tarball, shell=True)
+    ret = subprocess.call('tar -czf %s -h --wildcards-match-slash --exclude=".git" --exclude="*.svn*" --exclude "*.pyc" --exclude="*.tmp" --exclude="*~" --exclude="dist/*" --exclude="build/*" --exclude="pyxpcom/*" exe' % tarball, shell=True)
     if ret < 0:
         print >>sys.stderr, "Unable to make tarball signal", -ret
         sys.exit(ret)
