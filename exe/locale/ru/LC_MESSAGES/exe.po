@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-15 18:05+0200\n"
-"PO-Revision-Date: 2013-06-13 13:22+0300\n"
+"POT-Creation-Date: 2013-10-16 23:03+0400\n"
+"PO-Revision-Date: 2013-10-16 22:47+0200\n"
 "Last-Translator: AlexL <loginov.alex.valer@gmail.com>\n"
+"Language:ru\n"
 "Language-Team: EXE Team <exe@exelearning.net>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -31,6 +32,15 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"Использование: %s [ОПЦИИ] [ПАКЕТ]\n"
+"  -V, --version    напечатать информацию о версии и выйти\n"
+"  -h, --help       отобразить эту справку и выйти\n"
+"  --standalone     Запустить полностью из текущей директории\n"
+"  --portable       Запустить в портативном режиме\n"
+"Настройки читаются из exe.conf в $HOME/.exe в Linux/Unix/Mac OS или\n"
+"в Documents and Settings/<user name>/Application Data/exe в Windows XP "
+"или\n"
+"Users/<user name>/AppData/Roaming/exe в Windows 7"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -389,15 +399,15 @@ msgstr "Цитируемый текст:"
 
 #: exe/engine/clickinorderidevice.py:47
 msgid "Click In Order Game"
-msgstr ""
+msgstr "Щёлкните, чтобы играть"
 
 #: exe/engine/clickinorderidevice.py:48
 msgid "PAIWASTOON Networking Services Ltd."
-msgstr ""
+msgstr "PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/clickinorderidevice.py:49
 msgid "Click in Order according to the hint on the map."
-msgstr ""
+msgstr "Щёлкните в соответствии с подсказкой на карте."
 
 #: exe/engine/clozefpdidevice.py:47
 msgid "FPD - Cloze Activity"
@@ -579,22 +589,22 @@ msgstr "Clozelang"
 #: exe/engine/config.py:62 exe/engine/config.py:63 exe/engine/config.py:67
 #: exe/engine/config.py:94
 msgid "Non-Interactive Activities"
-msgstr ""
+msgstr "Неинтерактивные деятельности"
 
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 msgid "Interactive Activities"
-msgstr ""
+msgstr "Интерактивные деятельности"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
 msgid "Non-Textual Information"
-msgstr ""
+msgstr "Нетекстовая информация"
 
 #: exe/engine/config.py:68 exe/engine/config.py:89 exe/engine/config.py:90
 #: exe/engine/config.py:98
 msgid "Textual Information"
-msgstr ""
+msgstr "Текстовая информация"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:72
 #: exe/engine/config.py:73 exe/engine/config.py:74 exe/engine/config.py:75
@@ -603,12 +613,12 @@ msgstr ""
 #: exe/engine/config.py:82 exe/engine/config.py:83 exe/engine/config.py:84
 #: exe/engine/config.py:85 exe/engine/config.py:86
 msgid "FPD"
-msgstr ""
+msgstr "FPD"
 
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
 #: exe/engine/config.py:102 exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Unclassified"
-msgstr ""
+msgstr "Неклассифицирован"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -1043,16 +1053,16 @@ msgstr "Обратная связь:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
-msgstr ""
+msgstr "Прикреплённые файлы"
 
 #: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:42
 #: exe/engine/sortidevice.py:46
 msgid "Toughra Technologies FZ LLC."
-msgstr ""
+msgstr "Toughra Technologies FZ LLC."
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
-msgstr ""
+msgstr "Прикреплённые файлы Idevice."
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
@@ -1259,15 +1269,15 @@ msgstr "Актив. чтение"
 
 #: exe/engine/hangmanidevice.py:51
 msgid "Hangman Game"
-msgstr ""
+msgstr "Игра Виселица"
 
 #: exe/engine/hangmanidevice.py:52
 msgid "Mike Dawson, Toughra Technologies FZ LLC"
-msgstr ""
+msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr ""
+msgstr "Стиль игры Виселицы с возможности настройки изображений."
 
 #: exe/engine/hangmanidevice.py:57
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
@@ -1285,7 +1295,7 @@ msgstr "Заголовок"
 
 #: exe/engine/hangmanidevice.py:58
 msgid "Title of Game."
-msgstr ""
+msgstr "Заголовок игры."
 
 #: exe/engine/idevicestore.py:534
 msgid ""
@@ -1836,11 +1846,11 @@ msgstr "Вы можете использовать тулбар или введ�
 
 #: exe/engine/memorymatchidevice.py:41
 msgid "Memory Match Game"
-msgstr ""
+msgstr "Игра на развитие памяти"
 
 #: exe/engine/memorymatchidevice.py:43
 msgid "Memory Match Game Maker."
-msgstr ""
+msgstr "Сделавший игру на развитие памяти."
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
@@ -1898,15 +1908,15 @@ msgstr "В закрытой форме (множественный выбор)"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
-msgstr ""
+msgstr "Заметка"
 
 #: exe/engine/notaidevice.py:45
 msgid "exelearning.net"
-msgstr ""
+msgstr "exelearning.net"
 
 #: exe/engine/notaidevice.py:53
 msgid "Comment:"
-msgstr ""
+msgstr "Комментарий:"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:30
 msgid "FPD - Guidelines Students"
@@ -1984,7 +1994,7 @@ msgstr "Редактор iDevice"
 
 #: exe/engine/package.py:1439
 msgid "My Catalog"
-msgstr ""
+msgstr "Мой каталог"
 
 #: exe/engine/parasabermasfpdidevice.py:30
 msgid "FPD - A Step Ahead"
@@ -2014,15 +2024,15 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:45
 msgid "Place The Objects"
-msgstr ""
+msgstr "Разместить объекты"
 
 #: exe/engine/placetheobjectsidevice.py:46
 msgid "Mike Dawson / PAIWASTOON Networking Services Ltd."
-msgstr ""
+msgstr "Mike Dawson / PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/placetheobjectsidevice.py:47
 msgid "User has to place various objects in the correct place."
-msgstr ""
+msgstr "Пользователь размещает различные объекты в правильном месте."
 
 #: exe/engine/placetheobjectsidevice.py:50 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
@@ -2030,79 +2040,79 @@ msgstr "Это поле для \"простого текста\"."
 
 #: exe/engine/placetheobjectsidevice.py:55
 msgid "Main Area"
-msgstr ""
+msgstr "Главная площать"
 
 #: exe/engine/placetheobjectsidevice.py:56
 msgid "This is the main image where the user will drag / drop items to"
-msgstr ""
+msgstr "Это главное изображение, где пользователь перетаскивает/опускает элементы"
 
 #: exe/engine/placetheobjectsidevice.py:60
 msgid "Time Limit (mm:ss)"
-msgstr ""
+msgstr "Лимит времени (мин:сек)"
 
 #: exe/engine/placetheobjectsidevice.py:60
 msgid "(Optional) Game Time Limit"
-msgstr ""
+msgstr "(Опционально) Лимит времени на игру"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "Show Timer"
-msgstr ""
+msgstr "Показать таймер"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "Even if there is no time limit, show the timer..."
-msgstr ""
+msgstr "Даже если нет лимита времени, показать таймер..."
 
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Positive Response"
-msgstr ""
+msgstr "Положительный ответ"
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Placable Object"
-msgstr ""
+msgstr "Благодушный объект"
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Object to be put in place"
-msgstr ""
+msgstr "Объект, положенный в место"
 
 #: exe/engine/placetheobjectsidevice.py:118
 msgid "Correct Location (x)"
-msgstr ""
+msgstr "Правильное расположение (x)"
 
 #: exe/engine/placetheobjectsidevice.py:118
 msgid "Where this object belongs in the main area x coordinate"
-msgstr ""
+msgstr "Где этот объект принадлежит главной площади x координат"
 
 #: exe/engine/placetheobjectsidevice.py:121
 msgid "Correct Location (y)"
-msgstr ""
+msgstr "Правильное расположение (y)"
 
 #: exe/engine/placetheobjectsidevice.py:121
 msgid "Where this object belongs in the main area y coordinate"
-msgstr ""
+msgstr "Где этот объект принадлежит главной площади y координат"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Width (pixels)"
-msgstr ""
+msgstr "Ширина (пикселей)"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Width of object"
-msgstr ""
+msgstr "Ширина объекта"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Height (pixels)"
-msgstr ""
+msgstr "Высота (пикселей)"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Height of object"
-msgstr ""
+msgstr "Высота объекта"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Tolerance (pixels)"
-msgstr ""
+msgstr "Допустимость (пикселей)"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Tolerance when dropping num of pixels"
-msgstr ""
+msgstr "Допустимость при перетаскивании, кол-во пикселей"
 
 #: exe/engine/quiztestidevice.py:123 exe/engine/quiztestidevice.py:186
 msgid ""
@@ -2314,11 +2324,11 @@ msgstr "FPD - выбор нескольких активностей"
 
 #: exe/engine/sortidevice.py:45
 msgid "Sort Items"
-msgstr ""
+msgstr "Сортировать элементы"
 
 #: exe/engine/sortidevice.py:47
 msgid "Sortable list of items."
-msgstr ""
+msgstr "Сортируемый список элементов."
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
@@ -2486,26 +2496,33 @@ msgstr ""
 #: exe/exe_do:72
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
 msgstr ""
+"Установить значения поля ELP. Например: -s style=Default,root.title='Root"
+" Node'"
 
 #: exe/exe_do:75
 msgid "Set ELP field values options"
-msgstr ""
+msgstr "Опции установки значения поля ELP."
 
 #: exe/exe_do:76
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
 msgstr ""
+"С тех пор, как вы выбрали опцию установки значений поля ELP, используя "
+"'-s <values>' или     '--set <values>', возможно конфигурировать со "
+"следующими опциями:"
 
 #: exe/exe_do:81
 msgid "Write field values to ELP"
-msgstr ""
+msgstr "Записать значения поля в ELP"
 
 #: exe/exe_do:87
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
 msgstr ""
+"Генерировать отчёт информации ресурса в текст <выходной_файл> из "
+"<входной_фпйл> elp пакет"
 
 #: exe/exe_do:95
 msgid ""
@@ -2513,6 +2530,9 @@ msgid ""
 "given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
 "singlepage, xliff or epub3."
 msgstr ""
+"Экспортировать <входной_файл> elp пакет в опциональный <выходной_файл> в "
+"один из данных форматов: xml, scorm12, scorm2004, agrega, ims, website, "
+"webzip, singlepage, xliff или epub3."
 
 #: exe/exe_do:101
 msgid ""
@@ -2529,6 +2549,8 @@ msgstr "Принудительно переписать <выход_файл>"
 #: exe/exe_do:110
 msgid "Add the required files to generate a export editable by eXeLearning"
 msgstr ""
+"Добавить требуемые файлы чтобы сгенерировать редактируемый экспорт "
+"eXeLearning"
 
 #: exe/exe_do:115
 msgid "XLIFF export options"
@@ -2576,6 +2598,9 @@ msgid ""
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
 msgstr ""
+"С тех пор как вы выбрали одну опцию SCORM экспорта, используя '-x "
+"scorm12' или '-x scorm2004' или 'x agrega', возможно сконфигурировать со "
+"следующими опциями экспорта:"
 
 #: exe/exe_do:148
 msgid "Include Single Page export file"
@@ -2591,7 +2616,7 @@ msgstr "Параметры --export и --import являются взаимои�
 
 #: exe/exe_do:171
 msgid "No --export, --import, --set or --report option supplied."
-msgstr ""
+msgstr "Не поставлено опции --export, --import, --set или --report."
 
 #: exe/exe_do:175
 msgid "No file input supplied."
@@ -2611,6 +2636,8 @@ msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The error was:"
 msgstr ""
+"exe_do: ошибка: Невозможно установить значения из '%s'.\n"
+"Была ошибка:"
 
 #: exe/exe_do:227
 #, python-format
@@ -2679,11 +2706,11 @@ msgstr "Следующий"
 
 #: exe/export/singlepage.py:193
 msgid "You can close this window"
-msgstr ""
+msgstr "Вы можете закрыть это окно"
 
 #: exe/export/websitepage.py:134
 msgid "Skip navigation"
-msgstr ""
+msgstr "Пропустить навигацию"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -2745,7 +2772,7 @@ msgstr "Вставка %s"
 
 #: exe/jsui/idevicepane.py:132
 msgid "My iDevices"
-msgstr ""
+msgstr "Мои iDevice'ы"
 
 #: exe/jsui/mainpage.py:299 exe/jsui/mainpage.py:764 exe/jsui/mainpage.py:911
 msgid "Cannot access directory named "
@@ -2804,6 +2831,8 @@ msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
 msgstr ""
+"Неудача импорта метаданных LOM!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:738
 msgid "Error importing HTML:\n"
@@ -2908,30 +2937,30 @@ msgstr "Извините, неправильный формат файла"
 #: exe/jsui/mainpage.py:1289
 #, python-format
 msgid "Correct Style import : %s"
-msgstr ""
+msgstr "Правильный импорт стиля : %s"
 
 #: exe/jsui/mainpage.py:1292
 #, python-format
 msgid "Incorrect style file : %s"
-msgstr ""
+msgstr "Неверный файл стиля : %s"
 
 #: exe/jsui/mainpage.py:1309
 #, python-format
 msgid "Correct ZIP Style exported : %s"
-msgstr ""
+msgstr "Корректный ZIP стиль экспортирован : %s"
 
 #: exe/jsui/mainpage.py:1312
 #, python-format
 msgid "can't export style : %s"
-msgstr ""
+msgstr "нет возможности экспортировать стиль : %s"
 
 #: exe/jsui/mainpage.py:1329
 msgid "Style deleted "
-msgstr ""
+msgstr "Стиль удалён"
 
 #: exe/jsui/mainpage.py:1332
 msgid "can't delete style "
-msgstr ""
+msgstr "нет возможности удалить стиль"
 
 #: exe/jsui/propertiespage.py:320
 msgid "Failed to get properties"
@@ -3001,11 +3030,11 @@ msgstr "Ошибка"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:245
 msgid "The form contains invalid fields. Please check back."
-msgstr ""
+msgstr "Форма содержит некорректные поля. Пожалуйста, проверьте ещё раз."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:327
 msgid "LOM Metadata import success!"
-msgstr ""
+msgstr "Успешный импорт метаданных LOM!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
@@ -3049,11 +3078,13 @@ msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
+"Если вы сделали изменения и не сохранили их, то они будут потеряны. Вы "
+"действительно хотите выйти?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:416
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Style Manager"
-msgstr ""
+msgstr "Менеджер стилей"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:440
 msgid "Select package to insert"
@@ -3092,11 +3123,11 @@ msgstr "Файлы HTML"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:516
 msgid "Select LOM Metadata file to import."
-msgstr ""
+msgstr "Выбрать файл метаданных LOM для импорта."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:526
 msgid "XML Files"
-msgstr ""
+msgstr "XML файлы"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:541
 msgid "Waiting progress..."
@@ -3146,19 +3177,19 @@ msgstr "Текстовый файл"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:677
 msgid "Save package resources report as"
-msgstr ""
+msgstr "Сохранить отчёт ресурсов пакета как"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:686
 msgid "CSV File"
-msgstr ""
+msgstr "CSV файл"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:694
 msgid "Export EPUB3 package as"
-msgstr ""
+msgstr "Экспортировать EPUB3 пакет как"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:703
 msgid "EPUB3 File"
-msgstr ""
+msgstr "EPUB3 файл"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:711
 msgid "Export SCORM package as"
@@ -3289,8 +3320,7 @@ msgid "Modified"
 msgstr "Изменён"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/selectbrowserpage_ru.py:113
-#: exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
@@ -3531,13 +3561,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
-msgstr ""
+msgstr "Глобальные опции"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:44
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:51
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:55
 msgid "Metadata Type"
-msgstr ""
+msgstr "Тип метаданных"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:46
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:64
@@ -3546,15 +3576,15 @@ msgstr "Ядро Dublin"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
 msgid "LOM v1.0"
-msgstr ""
+msgstr "LOM v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid "LOM-ES v1.0"
-msgstr ""
+msgstr "LOM-ES v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:61
 msgid "Create editable export?"
-msgstr ""
+msgstr "Создать редактиркемый экспорт?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:65
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:68
@@ -3562,10 +3592,12 @@ msgid ""
 "Checking this option, the exported component will be editable with "
 "eXeLearning."
 msgstr ""
+"Идёт проверка этой опции, экспортируемый компонент будет редактируемым "
+"через eXeLearning."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2, 2004 and Agrega)"
-msgstr ""
+msgstr "Опции SCORM (1.2, 2004 и Agrega)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Add Previous/Next links within SCOs?"
@@ -3635,7 +3667,7 @@ msgstr "Язык поля"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:411
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:418
 msgid "Taxon"
-msgstr ""
+msgstr "Таксон"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:186
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:216
@@ -3763,98 +3795,98 @@ msgstr "Email"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:80
 msgid "Metadata Schema"
-msgstr ""
+msgstr "Схема метаданных"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:97
 msgid "Location"
-msgstr ""
+msgstr "Расположение"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:98
 msgid "Requirement"
-msgstr ""
+msgstr "Требование"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:104
 msgid "Minimum Version"
-msgstr ""
+msgstr "Минимальная версия"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:105
 msgid "Maximum Version"
-msgstr ""
+msgstr "Максимальная версия"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:108
 msgid "Installation Remarks"
-msgstr ""
+msgstr "Пометки установки"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:109
 msgid "Other Platform Requirements"
-msgstr ""
+msgstr "Другие требования для платформы"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
 msgid "Duration"
-msgstr ""
+msgstr "Продолжительность"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:113
 msgid "Interactivity Type"
-msgstr ""
+msgstr "Тип интерактивности"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:114
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:148
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:153
 msgid "Learning Resource Type"
-msgstr ""
+msgstr "Тип ресурсов обучения"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:115
 msgid "Interactivity Level"
-msgstr ""
+msgstr "Интерактивный уровень"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:116
 msgid "Semantic Density"
-msgstr ""
+msgstr "Семантическая плотность"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:117
 msgid "Intended End User Role"
-msgstr ""
+msgstr "Предназначенную роль конечного пользователя"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:118
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
 msgid "Context"
-msgstr ""
+msgstr "Контекст"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:119
 msgid "Typical Age Range"
-msgstr ""
+msgstr "Типовые возрастные рамки"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:120
 msgid "Difficulty"
-msgstr ""
+msgstr "Трудность"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:121
 msgid "Typical Learning Time"
-msgstr ""
+msgstr "Типовое время обучения"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:126
 msgid "Cost"
-msgstr ""
+msgstr "Цена"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:127
 msgid "Copyright And Other Restrictions"
-msgstr ""
+msgstr "Авторские права и другие ограничения"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:131
 msgid "Kind"
-msgstr ""
+msgstr "Вид"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:132
 #: exe/jsui/scripts/app/view/forms/LomSections.js:144
 msgid "Resource"
-msgstr ""
+msgstr "Ресурс"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:149
 msgid "Entity"
-msgstr ""
+msgstr "Сущность"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:264
 msgid "Purpose"
@@ -3862,23 +3894,23 @@ msgstr "Причина"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
-msgstr ""
+msgstr "Загрузить классифицированные исходники"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:169
 msgid "Taxon Path"
-msgstr ""
+msgstr "Путь таксона"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:209
 msgid "Cognitive Process"
-msgstr ""
+msgstr "Познавательный процесс"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:210
 msgid "Access"
-msgstr ""
+msgstr "Доступ"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:214
 msgid "Access Type"
-msgstr ""
+msgstr "Тип доступа"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:24
 msgid "Required"
@@ -3891,77 +3923,81 @@ msgstr "Опционально"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:131
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:162
 msgid "Warning!"
-msgstr ""
+msgstr "Предупреждение!"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:132
 msgid ""
 "You will loss all taxon config for this source. Would you like to "
 "continue?"
 msgstr ""
+"Вы можете потерять весь конфиг таксона для этого исходника. Вы точно "
+"хотите продолжить?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:163
 msgid ""
 "You will loss all taxon config in this section. Would you like to "
 "continue?"
 msgstr ""
+"Вы можете потерять весь конфиг таксона для этой сессии. Вы точно хотите "
+"продолжить?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:342
 msgid "Years"
-msgstr ""
+msgstr "Годы"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:343
 msgid "Months"
-msgstr ""
+msgstr "Месяцы"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:344
 msgid "Days"
-msgstr ""
+msgstr "Дни"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:359
 msgid "Hours"
-msgstr ""
+msgstr "Часы"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:360
 msgid "Minutes"
-msgstr ""
+msgstr "Минуты"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:361
 msgid "Seconds"
-msgstr ""
+msgstr "Секунды"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:466
 msgid "Id"
-msgstr ""
+msgstr "Идентификатор"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:627
 msgid "Append Section"
-msgstr ""
+msgstr "Добавить секцию"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:644
 msgid "Delete Section"
-msgstr ""
+msgstr "Удалить секцию"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
 msgid "Notice"
-msgstr ""
+msgstr "Замечание"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
 msgid "Should be at least one section of this type"
-msgstr ""
+msgstr "Должен быть хотя бы один раздел этого типа"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
 msgid "Cataloguing"
-msgstr ""
+msgstr "Каталогизация"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:92
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
 msgid "Objectives."
-msgstr ""
+msgstr "Цели."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:106
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
 msgid "Preknowledge."
-msgstr ""
+msgstr "Предзнание."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -3988,31 +4024,31 @@ msgstr "Выбрать лицензию."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
 msgid "Usage"
-msgstr ""
+msgstr "Использование"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
 msgid "Intended End User"
-msgstr ""
+msgstr "Предназначен конечному пользователю"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
 msgid "For Group Work"
-msgstr ""
+msgstr "Для групповой работы"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
 msgid "For Individual Tuition"
-msgstr ""
+msgstr "Для индивидуального обучения"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
-msgstr ""
+msgstr "Модальность"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
 msgid "Project Properties"
@@ -4083,16 +4119,18 @@ msgstr "Обновить дерево"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
 msgid "Advanced Options"
-msgstr ""
+msgstr "Расширенные опции"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:456
 msgid "Create package compatible with old eXe versions?"
-msgstr ""
+msgstr "Создать ли пакет, совместимый со старыми версиями eXe?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
 msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
 msgstr ""
+"Идёт проверка этой опции, сохранённый пакет может быть открыт через eXe "
+">= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
 msgid "Select Language"
@@ -4116,63 +4154,63 @@ msgstr "Отключить внутреннее связывание"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:74
 msgid "Select Browser"
-msgstr ""
+msgstr "Выбрать браузер"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:128
 msgid "Show this window on eXe start"
-msgstr ""
+msgstr "Показывать это окно при старте eXe"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
 msgid "Export style: "
-msgstr ""
+msgstr "Стиль экспорта:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
 msgid "Export to ZIP Style as"
-msgstr ""
+msgstr "Экспортировать в стиль ZIP как"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
 msgid "ZipFile"
-msgstr ""
+msgstr "ZIP файл"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
 msgid "Delete style: "
-msgstr ""
+msgstr "Удалить стиль:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
 msgid "Delete style?"
-msgstr ""
+msgstr "Удалить стиль?"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
 msgid "Do you want to delete this style?"
-msgstr ""
+msgstr "Вы хотите удалить этот стиль?"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
 msgid "Show properties of style: "
-msgstr ""
+msgstr "Показать свойства стиля:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
 msgid "Import style to the system "
-msgstr ""
+msgstr "Импортировать стиль в систему"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Select ZIP Style file to import."
-msgstr ""
+msgstr "Выбрать стиль ZIP файла для импорта."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
 msgid "ZIP Style"
-msgstr ""
+msgstr "ZIP стиль"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
 msgid "List of styles in your system"
-msgstr ""
+msgstr "Список стилей в вашей системе"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 msgid "Properties of style: "
-msgstr ""
+msgstr "Свойства стиля:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
 msgid "Return to style manager"
-msgstr ""
+msgstr "Возвратиться к менеджеру стилей"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -4183,21 +4221,21 @@ msgstr "Очертание"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:125
 msgid "Ungroup iDevices"
-msgstr ""
+msgstr "Разгруппировать iDevice'ы"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
-msgstr ""
+msgstr "Сгруппировать iDevice'ы"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:100
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:105
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
 msgid "Edit iDevices"
-msgstr ""
+msgstr "Править iDevice'ы"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:113
 msgid "Save iDevices"
-msgstr ""
+msgstr "Сохранить iDevice'ы"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
@@ -4205,11 +4243,11 @@ msgstr "iDevice'ы"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:178
 msgid "Visible"
-msgstr ""
+msgstr "Видимость"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
@@ -4232,12 +4270,12 @@ msgstr "Метаданные"
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:76
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
-msgstr ""
+msgstr "LOM-ES"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
@@ -4321,7 +4359,7 @@ msgstr "Файл XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:221
 msgid "Educational Standard"
-msgstr ""
+msgstr "Образовательный стандарт"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
 msgid "Common Cartridge"
@@ -4337,7 +4375,7 @@ msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
 msgid "Agrega SCORM2004"
-msgstr ""
+msgstr "Agrega SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
@@ -4361,7 +4399,7 @@ msgstr "Простая страница"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "Ustad Mobile"
-msgstr ""
+msgstr "Мобильный Ustad"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "XLIFF"
@@ -4369,7 +4407,7 @@ msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "EPUB3"
-msgstr ""
+msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316
 msgid "Merging"
@@ -4385,7 +4423,7 @@ msgstr "Утилиты"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Resources Report"
-msgstr ""
+msgstr "Отчёт по ресурсам"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
@@ -5080,7 +5118,7 @@ msgstr "Узбекский "
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
-msgstr ""
+msgstr "Валенсия"
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
@@ -5124,448 +5162,448 @@ msgstr "Зулуский"
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
-msgstr ""
+msgstr "активный"
 
 #: exe/jsui/scripts/lomvocab.js:9 exe/jsui/scripts/lomvocab.js:668
 msgid "expositive"
-msgstr ""
+msgstr "описательный"
 
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
 #: exe/jsui/scripts/lomvocab.js:1216
 msgid "mixed"
-msgstr ""
+msgstr "перемешанный"
 
 #: exe/jsui/scripts/lomvocab.js:19
 msgid "exercise"
-msgstr ""
+msgstr "упражнение"
 
 #: exe/jsui/scripts/lomvocab.js:23 exe/jsui/scripts/lomvocab.js:882
 msgid "simulation"
-msgstr ""
+msgstr "моделирование"
 
 #: exe/jsui/scripts/lomvocab.js:27 exe/jsui/scripts/lomvocab.js:886
 msgid "questionnaire"
-msgstr ""
+msgstr "вопросник"
 
 #: exe/jsui/scripts/lomvocab.js:31
 msgid "diagram"
-msgstr ""
+msgstr "диаграмма"
 
 #: exe/jsui/scripts/lomvocab.js:35
 msgid "figure"
-msgstr ""
+msgstr "вигура"
 
 #: exe/jsui/scripts/lomvocab.js:39 exe/jsui/scripts/lomvocab.js:734
 msgid "graph"
-msgstr ""
+msgstr "график"
 
 #: exe/jsui/scripts/lomvocab.js:43
 msgid "index"
-msgstr ""
+msgstr "индекс"
 
 #: exe/jsui/scripts/lomvocab.js:47
 msgid "slide"
-msgstr ""
+msgstr "слайд"
 
 #: exe/jsui/scripts/lomvocab.js:51 exe/jsui/scripts/lomvocab.js:730
 msgid "table"
-msgstr ""
+msgstr "таблица"
 
 #: exe/jsui/scripts/lomvocab.js:55 exe/jsui/scripts/lomvocab.js:710
 msgid "narrative text"
-msgstr ""
+msgstr "повествовательный текст"
 
 #: exe/jsui/scripts/lomvocab.js:59 exe/jsui/scripts/lomvocab.js:890
 msgid "exam"
-msgstr ""
+msgstr "экзамен"
 
 #: exe/jsui/scripts/lomvocab.js:63 exe/jsui/scripts/lomvocab.js:874
 msgid "experiment"
-msgstr ""
+msgstr "эксперимент"
 
 #: exe/jsui/scripts/lomvocab.js:67
 msgid "problem statement"
-msgstr ""
+msgstr "постановка проблемы"
 
 #: exe/jsui/scripts/lomvocab.js:71 exe/jsui/scripts/lomvocab.js:281
 #: exe/jsui/scripts/lomvocab.js:894 exe/jsui/scripts/lomvocab.js:1096
 msgid "self assessment"
-msgstr ""
+msgstr "самооценка"
 
 #: exe/jsui/scripts/lomvocab.js:75
 msgid "lecture"
-msgstr ""
+msgstr "лекция"
 
 #: exe/jsui/scripts/lomvocab.js:81 exe/jsui/scripts/lomvocab.js:900
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: exe/jsui/scripts/lomvocab.js:85 exe/jsui/scripts/lomvocab.js:904
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: exe/jsui/scripts/lomvocab.js:89 exe/jsui/scripts/lomvocab.js:908
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: exe/jsui/scripts/lomvocab.js:93 exe/jsui/scripts/lomvocab.js:912
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: exe/jsui/scripts/lomvocab.js:99 exe/jsui/scripts/lomvocab.js:918
 msgid "discipline"
-msgstr ""
+msgstr "дисциплина"
 
 #: exe/jsui/scripts/lomvocab.js:103 exe/jsui/scripts/lomvocab.js:922
 msgid "idea"
-msgstr ""
+msgstr "идея"
 
 #: exe/jsui/scripts/lomvocab.js:107 exe/jsui/scripts/lomvocab.js:926
 msgid "prerequisite"
-msgstr ""
+msgstr "предпосылка"
 
 #: exe/jsui/scripts/lomvocab.js:111 exe/jsui/scripts/lomvocab.js:930
 msgid "educational objective"
-msgstr ""
+msgstr "образовательные цели"
 
 #: exe/jsui/scripts/lomvocab.js:115 exe/jsui/scripts/lomvocab.js:934
 msgid "accessibility restrictions"
-msgstr ""
+msgstr "ограничения доступа"
 
 #: exe/jsui/scripts/lomvocab.js:119 exe/jsui/scripts/lomvocab.js:938
 msgid "educational level"
-msgstr ""
+msgstr "уровень образования"
 
 #: exe/jsui/scripts/lomvocab.js:123 exe/jsui/scripts/lomvocab.js:942
 msgid "skill level"
-msgstr ""
+msgstr "уровень квалификации"
 
 #: exe/jsui/scripts/lomvocab.js:127 exe/jsui/scripts/lomvocab.js:946
 msgid "security level"
-msgstr ""
+msgstr "уровень секретности"
 
 #: exe/jsui/scripts/lomvocab.js:131 exe/jsui/scripts/lomvocab.js:950
 msgid "competency"
-msgstr ""
+msgstr "компетенция"
 
 #: exe/jsui/scripts/lomvocab.js:137 exe/jsui/scripts/lomvocab.js:956
 msgid "creator"
-msgstr ""
+msgstr "создатель"
 
 #: exe/jsui/scripts/lomvocab.js:141 exe/jsui/scripts/lomvocab.js:167
 #: exe/jsui/scripts/lomvocab.js:960 exe/jsui/scripts/lomvocab.js:982
 msgid "validator"
-msgstr ""
+msgstr "валидатор"
 
 #: exe/jsui/scripts/lomvocab.js:147 exe/jsui/scripts/lomvocab.js:613
 #: exe/jsui/scripts/lomvocab.js:966
 msgid "author"
-msgstr ""
+msgstr "автор"
 
 #: exe/jsui/scripts/lomvocab.js:151 exe/jsui/scripts/lomvocab.js:970
 msgid "publisher"
-msgstr ""
+msgstr "издатель"
 
 #: exe/jsui/scripts/lomvocab.js:155
 msgid "unknown"
-msgstr ""
+msgstr "неизвестно"
 
 #: exe/jsui/scripts/lomvocab.js:159 exe/jsui/scripts/lomvocab.js:974
 msgid "initiator"
-msgstr ""
+msgstr "инициатор"
 
 #: exe/jsui/scripts/lomvocab.js:163 exe/jsui/scripts/lomvocab.js:978
 msgid "terminator"
-msgstr ""
+msgstr "прерыватель"
 
 #: exe/jsui/scripts/lomvocab.js:171 exe/jsui/scripts/lomvocab.js:986
 msgid "editor"
-msgstr ""
+msgstr "редактор"
 
 #: exe/jsui/scripts/lomvocab.js:175 exe/jsui/scripts/lomvocab.js:990
 msgid "graphical designer"
-msgstr ""
+msgstr "графический дизайнер"
 
 #: exe/jsui/scripts/lomvocab.js:179 exe/jsui/scripts/lomvocab.js:994
 msgid "technical implementer"
-msgstr ""
+msgstr "технический исполнитель"
 
 #: exe/jsui/scripts/lomvocab.js:183 exe/jsui/scripts/lomvocab.js:998
 msgid "content provider"
-msgstr ""
+msgstr "поставщик контента"
 
 #: exe/jsui/scripts/lomvocab.js:187 exe/jsui/scripts/lomvocab.js:1002
 msgid "technical validator"
-msgstr ""
+msgstr "технический валидатор"
 
 #: exe/jsui/scripts/lomvocab.js:191 exe/jsui/scripts/lomvocab.js:1006
 msgid "educational validator"
-msgstr ""
+msgstr "образовательный валидатор"
 
 #: exe/jsui/scripts/lomvocab.js:195 exe/jsui/scripts/lomvocab.js:1010
 msgid "script writer"
-msgstr ""
+msgstr "скриптописатель"
 
 #: exe/jsui/scripts/lomvocab.js:199 exe/jsui/scripts/lomvocab.js:1014
 msgid "instructional designer"
-msgstr ""
+msgstr "дизайнер учебного процесса"
 
 #: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
 #: exe/jsui/scripts/lomvocab.js:1584
 msgid "subject matter expert"
-msgstr ""
+msgstr "эксперт по предмету"
 
 #: exe/jsui/scripts/lomvocab.js:209 exe/jsui/scripts/lomvocab.js:1024
 msgid "analyse"
-msgstr ""
+msgstr "анализировать"
 
 #: exe/jsui/scripts/lomvocab.js:213 exe/jsui/scripts/lomvocab.js:1028
 msgid "implement"
-msgstr ""
+msgstr "реализовывать"
 
 #: exe/jsui/scripts/lomvocab.js:217 exe/jsui/scripts/lomvocab.js:1032
 msgid "collaborate"
-msgstr ""
+msgstr "сотрудничать"
 
 #: exe/jsui/scripts/lomvocab.js:221 exe/jsui/scripts/lomvocab.js:1036
 msgid "compare"
-msgstr ""
+msgstr "сравнивать"
 
 #: exe/jsui/scripts/lomvocab.js:225 exe/jsui/scripts/lomvocab.js:1040
 msgid "share"
-msgstr ""
+msgstr "расшаривать"
 
 #: exe/jsui/scripts/lomvocab.js:229 exe/jsui/scripts/lomvocab.js:1044
 msgid "compete"
-msgstr ""
+msgstr "завершать"
 
 #: exe/jsui/scripts/lomvocab.js:233 exe/jsui/scripts/lomvocab.js:1048
 msgid "understand"
-msgstr ""
+msgstr "понимать"
 
 #: exe/jsui/scripts/lomvocab.js:237 exe/jsui/scripts/lomvocab.js:1052
 msgid "prove"
-msgstr ""
+msgstr "доказывать"
 
 #: exe/jsui/scripts/lomvocab.js:241 exe/jsui/scripts/lomvocab.js:1056
 msgid "communicate"
-msgstr ""
+msgstr "общаться"
 
 #: exe/jsui/scripts/lomvocab.js:245 exe/jsui/scripts/lomvocab.js:1060
 msgid "contextualize"
-msgstr ""
+msgstr "контекстуализировать"
 
 #: exe/jsui/scripts/lomvocab.js:249 exe/jsui/scripts/lomvocab.js:1064
 msgid "control"
-msgstr ""
+msgstr "контролировать"
 
 #: exe/jsui/scripts/lomvocab.js:253 exe/jsui/scripts/lomvocab.js:1068
 msgid "cooperate"
-msgstr ""
+msgstr "кооперировать"
 
 #: exe/jsui/scripts/lomvocab.js:257 exe/jsui/scripts/lomvocab.js:1072
 msgid "create"
-msgstr ""
+msgstr "создать"
 
 #: exe/jsui/scripts/lomvocab.js:261 exe/jsui/scripts/lomvocab.js:1076
 msgid "decide"
-msgstr ""
+msgstr "решить"
 
 #: exe/jsui/scripts/lomvocab.js:265 exe/jsui/scripts/lomvocab.js:1080
 msgid "define"
-msgstr ""
+msgstr "определить"
 
 #: exe/jsui/scripts/lomvocab.js:269 exe/jsui/scripts/lomvocab.js:1084
 msgid "describe"
-msgstr ""
+msgstr "описать"
 
 #: exe/jsui/scripts/lomvocab.js:273 exe/jsui/scripts/lomvocab.js:1088
 msgid "discuss"
-msgstr ""
+msgstr "спорить"
 
 #: exe/jsui/scripts/lomvocab.js:277 exe/jsui/scripts/lomvocab.js:1092
 msgid "design"
-msgstr ""
+msgstr "дизайн"
 
 #: exe/jsui/scripts/lomvocab.js:285 exe/jsui/scripts/lomvocab.js:1100
 msgid "explain"
-msgstr ""
+msgstr "объяснять"
 
 #: exe/jsui/scripts/lomvocab.js:289 exe/jsui/scripts/lomvocab.js:1104
 msgid "extrapolate"
-msgstr ""
+msgstr "экстраполировать"
 
 #: exe/jsui/scripts/lomvocab.js:293 exe/jsui/scripts/lomvocab.js:1108
 msgid "innovate"
-msgstr ""
+msgstr "вводить новшества"
 
 #: exe/jsui/scripts/lomvocab.js:297 exe/jsui/scripts/lomvocab.js:1112
 msgid "investigate"
-msgstr ""
+msgstr "исследовать"
 
 #: exe/jsui/scripts/lomvocab.js:301 exe/jsui/scripts/lomvocab.js:1116
 msgid "judge"
-msgstr ""
+msgstr "судить"
 
 #: exe/jsui/scripts/lomvocab.js:305 exe/jsui/scripts/lomvocab.js:1120
 msgid "motivate"
-msgstr ""
+msgstr "мотивировать"
 
 #: exe/jsui/scripts/lomvocab.js:309 exe/jsui/scripts/lomvocab.js:1124
 msgid "observe"
-msgstr ""
+msgstr "наблюдать"
 
 #: exe/jsui/scripts/lomvocab.js:313 exe/jsui/scripts/lomvocab.js:1128
 msgid "organize"
-msgstr ""
+msgstr "организовать"
 
 #: exe/jsui/scripts/lomvocab.js:317 exe/jsui/scripts/lomvocab.js:1132
 msgid "organize oneself"
-msgstr ""
+msgstr "организовать себя"
 
 #: exe/jsui/scripts/lomvocab.js:321 exe/jsui/scripts/lomvocab.js:1136
 msgid "plan"
-msgstr ""
+msgstr "планировать"
 
 #: exe/jsui/scripts/lomvocab.js:325 exe/jsui/scripts/lomvocab.js:1140
 msgid "practise"
-msgstr ""
+msgstr "практиковать"
 
 #: exe/jsui/scripts/lomvocab.js:329 exe/jsui/scripts/lomvocab.js:1144
 msgid "produce"
-msgstr ""
+msgstr "производить"
 
 #: exe/jsui/scripts/lomvocab.js:333 exe/jsui/scripts/lomvocab.js:1148
 msgid "recognize"
-msgstr ""
+msgstr "признавать"
 
 #: exe/jsui/scripts/lomvocab.js:337 exe/jsui/scripts/lomvocab.js:1152
 msgid "remember"
-msgstr ""
+msgstr "помнить"
 
 #: exe/jsui/scripts/lomvocab.js:341 exe/jsui/scripts/lomvocab.js:1156
 msgid "write up"
-msgstr ""
+msgstr "описать"
 
 #: exe/jsui/scripts/lomvocab.js:345 exe/jsui/scripts/lomvocab.js:1160
 msgid "consider"
-msgstr ""
+msgstr "считать"
 
 #: exe/jsui/scripts/lomvocab.js:349 exe/jsui/scripts/lomvocab.js:1164
 msgid "connect"
-msgstr ""
+msgstr "соединять"
 
 #: exe/jsui/scripts/lomvocab.js:353 exe/jsui/scripts/lomvocab.js:1168
 msgid "represent"
-msgstr ""
+msgstr "представлять"
 
 #: exe/jsui/scripts/lomvocab.js:357 exe/jsui/scripts/lomvocab.js:1172
 msgid "solve"
-msgstr ""
+msgstr "решать"
 
 #: exe/jsui/scripts/lomvocab.js:361 exe/jsui/scripts/lomvocab.js:1176
 msgid "simulate"
-msgstr ""
+msgstr "симулировать"
 
 #: exe/jsui/scripts/lomvocab.js:365 exe/jsui/scripts/lomvocab.js:1180
 msgid "summarize"
-msgstr ""
+msgstr "суммировать"
 
 #: exe/jsui/scripts/lomvocab.js:369 exe/jsui/scripts/lomvocab.js:1184
 msgid "value"
-msgstr ""
+msgstr "значение"
 
 #: exe/jsui/scripts/lomvocab.js:375 exe/jsui/scripts/lomvocab.js:413
 #: exe/jsui/scripts/lomvocab.js:1190
 msgid "yes"
-msgstr ""
+msgstr "да"
 
 #: exe/jsui/scripts/lomvocab.js:379 exe/jsui/scripts/lomvocab.js:417
 #: exe/jsui/scripts/lomvocab.js:1194
 msgid "no"
-msgstr ""
+msgstr "нет"
 
 #: exe/jsui/scripts/lomvocab.js:385
 msgid "school"
-msgstr ""
+msgstr "школа"
 
 #: exe/jsui/scripts/lomvocab.js:389
 msgid "higher education"
-msgstr ""
+msgstr "высшее образование"
 
 #: exe/jsui/scripts/lomvocab.js:393
 msgid "training"
-msgstr ""
+msgstr "тренировка"
 
 #: exe/jsui/scripts/lomvocab.js:397
 msgid "other"
-msgstr ""
+msgstr "другое"
 
 #: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1258
 msgid "operating system"
-msgstr ""
+msgstr "операционная система"
 
 #: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1262
 msgid "browser"
-msgstr ""
+msgstr "браузер"
 
 #: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1330
 msgid "ispartof"
-msgstr ""
+msgstr "является частью"
 
 #: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1334
 msgid "haspart"
-msgstr ""
+msgstr "имеет часть"
 
 #: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1338
 msgid "isversionof"
-msgstr ""
+msgstr "несоответствие версии"
 
 #: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1342
 msgid "hasversion"
-msgstr ""
+msgstr "соответствие версии"
 
 #: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1346
 msgid "isformatof"
-msgstr ""
+msgstr "несоответствие формату"
 
 #: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1350
 msgid "hasformat"
-msgstr ""
+msgstr "имеет формат"
 
 #: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1354
 msgid "references"
-msgstr ""
+msgstr "ссылки"
 
 #: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1358
 msgid "isreferencedby"
-msgstr ""
+msgstr "чем отослано"
 
 #: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1362
 msgid "isbasedon"
-msgstr ""
+msgstr "основано на"
 
 #: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1366
 msgid "isbasisfor"
-msgstr ""
+msgstr "базис для"
 
 #: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1370
 msgid "requires"
-msgstr ""
+msgstr "зависимости"
 
 #: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1374
 msgid "isrequiredby"
-msgstr ""
+msgstr "чем зависимо"
 
 #: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
 #: exe/jsui/scripts/lomvocab.js:1380 exe/jsui/scripts/lomvocab.js:1448
 msgid "very low"
-msgstr ""
+msgstr "очень низко"
 
 #: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
 #: exe/jsui/scripts/lomvocab.js:1384 exe/jsui/scripts/lomvocab.js:1452
 msgid "low"
-msgstr ""
+msgstr "низко"
 
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
 #: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1388
@@ -5577,12 +5615,12 @@ msgstr "Средний"
 #: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
 #: exe/jsui/scripts/lomvocab.js:1392 exe/jsui/scripts/lomvocab.js:1460
 msgid "high"
-msgstr ""
+msgstr "высоко"
 
 #: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
 #: exe/jsui/scripts/lomvocab.js:1396 exe/jsui/scripts/lomvocab.js:1464
 msgid "very high"
-msgstr ""
+msgstr "очень высоко"
 
 #: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1402
 msgid "draft"
@@ -5602,7 +5640,7 @@ msgstr "недоступно"
 
 #: exe/jsui/scripts/lomvocab.js:513
 msgid "LOMv1.0"
-msgstr ""
+msgstr "LOMv1.0"
 
 #: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1426
 msgid "atomic"
@@ -5626,433 +5664,437 @@ msgstr "линейный"
 
 #: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1470
 msgid "pc-dos"
-msgstr ""
+msgstr "pc-dos"
 
 #: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1474
 msgid "ms-windows"
-msgstr ""
+msgstr "ms-windows"
 
 #: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1478
 msgid "macos"
-msgstr ""
+msgstr "macos"
 
 #: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1486
 msgid "unix"
-msgstr ""
+msgstr "unix"
 
 #: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1490
 msgid "multi-os"
-msgstr ""
+msgstr "multi-os"
 
 #: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1494
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
-msgstr ""
+msgstr "нету"
 
 #: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1498
 msgid "any"
-msgstr ""
+msgstr "любой"
 
 #: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1506
 msgid "netscape communicator"
-msgstr ""
+msgstr "браузер netscape"
 
 #: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1510
 msgid "ms-internet explorer"
-msgstr ""
+msgstr "ms-internet explorer"
 
 #: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1514
 msgid "opera"
-msgstr ""
+msgstr "opera"
 
 #: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1518
 msgid "amaya"
-msgstr ""
+msgstr "amaya"
 
 #: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
 #: exe/jsui/scripts/lomvocab.js:1556
 msgid "teacher"
-msgstr ""
+msgstr "учитель"
 
 #: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1524
 msgid "learner"
-msgstr ""
+msgstr "обучающийся"
 
 #: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1576
 msgid "manager"
-msgstr ""
+msgstr "управляющий"
 
 #: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1590
 msgid "universal"
-msgstr ""
+msgstr "универсальный"
 
 #: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1594
 msgid "non-universal"
-msgstr ""
+msgstr "неуниверсальный"
 
 #: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1600
 msgid "very easy"
-msgstr ""
+msgstr "очень легко"
 
 #: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1604
 msgid "easy"
-msgstr ""
+msgstr "легко"
 
 #: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1612
 msgid "difficult"
-msgstr ""
+msgstr "трудно"
 
 #: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1616
 msgid "very difficult"
-msgstr ""
+msgstr "очень трудно"
 
 #: exe/jsui/scripts/lomvocab.js:678
 msgid "photograph"
-msgstr ""
+msgstr "фотограф"
 
 #: exe/jsui/scripts/lomvocab.js:682
 msgid "illustration"
-msgstr ""
+msgstr "иллюстрация"
 
 #: exe/jsui/scripts/lomvocab.js:686
 msgid "video"
-msgstr ""
+msgstr "видео"
 
 #: exe/jsui/scripts/lomvocab.js:690
 msgid "animation"
-msgstr ""
+msgstr "анимация"
 
 #: exe/jsui/scripts/lomvocab.js:694
 msgid "music"
-msgstr ""
+msgstr "музыка"
 
 #: exe/jsui/scripts/lomvocab.js:698
 msgid "sound effect"
-msgstr ""
+msgstr "звуковой эффект"
 
 #: exe/jsui/scripts/lomvocab.js:702
 msgid "voice-over"
-msgstr ""
+msgstr "голос за кадром"
 
 #: exe/jsui/scripts/lomvocab.js:706
 msgid "compound audio"
-msgstr ""
+msgstr "составное аудио"
 
 #: exe/jsui/scripts/lomvocab.js:714
 msgid "hypertext"
-msgstr ""
+msgstr "гипертекст"
 
 #: exe/jsui/scripts/lomvocab.js:718
 msgid "computer graphics"
-msgstr ""
+msgstr "компьютерная графика"
 
 #: exe/jsui/scripts/lomvocab.js:722
 msgid "integrated media"
-msgstr ""
+msgstr "интегрированные медиа"
 
 #: exe/jsui/scripts/lomvocab.js:726
 msgid "database"
-msgstr ""
+msgstr "база данных"
 
 #: exe/jsui/scripts/lomvocab.js:738
 msgid "conceptual map"
-msgstr ""
+msgstr "концептуальная карта"
 
 #: exe/jsui/scripts/lomvocab.js:742
 msgid "navigation map"
-msgstr ""
+msgstr "навигационная карта"
 
 #: exe/jsui/scripts/lomvocab.js:746
 msgid "multimedia presentation"
-msgstr ""
+msgstr "мультимедийная презентация"
 
 #: exe/jsui/scripts/lomvocab.js:750
 msgid "tutorial"
-msgstr ""
+msgstr "учебник"
 
 #: exe/jsui/scripts/lomvocab.js:754
 msgid "digital dictionary"
-msgstr ""
+msgstr "цифровой словарь"
 
 #: exe/jsui/scripts/lomvocab.js:758
 msgid "digital encyclopaedia"
-msgstr ""
+msgstr "цифровая энциклопедия"
 
 #: exe/jsui/scripts/lomvocab.js:762
 msgid "digital periodical publication"
-msgstr ""
+msgstr "цифровая переодическая публикация"
 
 #: exe/jsui/scripts/lomvocab.js:766
 msgid "thematic or corporate webs/web portals"
-msgstr ""
+msgstr "тематические или корпоративные веб-порталы"
 
 #: exe/jsui/scripts/lomvocab.js:770
 msgid "wiki"
-msgstr ""
+msgstr "вики"
 
 #: exe/jsui/scripts/lomvocab.js:774
 msgid "weblog"
-msgstr ""
+msgstr "веб-блог"
 
 #: exe/jsui/scripts/lomvocab.js:778
 msgid "multimedia creation/edition tool"
-msgstr ""
+msgstr "утилита создания/редактирования мультимедиа"
 
 #: exe/jsui/scripts/lomvocab.js:782
 msgid "web design tool"
-msgstr ""
+msgstr "утилита веб дизайна"
 
 #: exe/jsui/scripts/lomvocab.js:786
 msgid "office tool"
-msgstr ""
+msgstr "офисная утилита"
 
 #: exe/jsui/scripts/lomvocab.js:790
 msgid "programming tool"
-msgstr ""
+msgstr "утилита программирования"
 
 #: exe/jsui/scripts/lomvocab.js:794
 msgid "information/knowledgeanalysis/organization tool"
-msgstr ""
+msgstr "утилита информации/анализа знаний/организации"
 
 #: exe/jsui/scripts/lomvocab.js:798
 msgid "process/procedure supporting tools"
-msgstr ""
+msgstr "утилиты поддержки процесса/процедуры"
 
 #: exe/jsui/scripts/lomvocab.js:802
 msgid "individual/cooperative/collaborative learning/working management tool"
 msgstr ""
+"утилита управления индивидуальным/кооперативным/совместным "
+"обучением/работой"
 
 #: exe/jsui/scripts/lomvocab.js:806
 msgid "multimedia creation/edition service"
-msgstr ""
+msgstr "сервис создания/редактирования мультимедиа"
 
 #: exe/jsui/scripts/lomvocab.js:810
 msgid "web design service"
-msgstr ""
+msgstr "сервис веб дизайна"
 
 #: exe/jsui/scripts/lomvocab.js:814
 msgid "office service"
-msgstr ""
+msgstr "офисный сервис"
 
 #: exe/jsui/scripts/lomvocab.js:818
 msgid "programming service"
-msgstr ""
+msgstr "сервис программирования"
 
 #: exe/jsui/scripts/lomvocab.js:822
 msgid "information/knowledgeanalysis/organization service"
-msgstr ""
+msgstr "сервис информации/анализа знаний/организации"
 
 #: exe/jsui/scripts/lomvocab.js:826
 msgid "process/procedure supporting service"
-msgstr ""
+msgstr "сервис поддержки процесса/процедуры"
 
 #: exe/jsui/scripts/lomvocab.js:830
 msgid "individual/cooperative/collaborative learning/working management service"
 msgstr ""
+"сервис управления индивидуальным/кооперативным/совместным "
+"обучением/работой"
 
 #: exe/jsui/scripts/lomvocab.js:834
 msgid "guided reading"
-msgstr ""
+msgstr "чтение под руководством учителя"
 
 #: exe/jsui/scripts/lomvocab.js:838
 msgid "master class"
-msgstr ""
+msgstr "мастер класс"
 
 #: exe/jsui/scripts/lomvocab.js:842
 msgid "textual-image analysis"
-msgstr ""
+msgstr "текстово-графический анализ"
 
 #: exe/jsui/scripts/lomvocab.js:846
 msgid "discussion activity"
-msgstr ""
+msgstr "активность дискуссии"
 
 #: exe/jsui/scripts/lomvocab.js:850
 msgid "closed exercise or problem"
-msgstr ""
+msgstr "закрытое упражнение или проблема"
 
 #: exe/jsui/scripts/lomvocab.js:854
 msgid "contextualized case problem"
-msgstr ""
+msgstr "проблема выбора контекста"
 
 #: exe/jsui/scripts/lomvocab.js:858
 msgid "open problem"
-msgstr ""
+msgstr "открытая проблема"
 
 #: exe/jsui/scripts/lomvocab.js:862
 msgid "real or virtual learning environment"
-msgstr ""
+msgstr "реальное или виртуальное обучающее окружение"
 
 #: exe/jsui/scripts/lomvocab.js:866
 msgid "didactic game"
-msgstr ""
+msgstr "дидактическая игра"
 
 #: exe/jsui/scripts/lomvocab.js:870
 msgid "webquest"
-msgstr ""
+msgstr "Веб-квест"
 
 #: exe/jsui/scripts/lomvocab.js:878
 msgid "real project"
-msgstr ""
+msgstr "реальный проект"
 
 #: exe/jsui/scripts/lomvocab.js:1200
 msgid "classroom"
-msgstr ""
+msgstr "классная комната"
 
 #: exe/jsui/scripts/lomvocab.js:1204
 msgid "laboratory"
-msgstr ""
+msgstr "лаборатория"
 
 #: exe/jsui/scripts/lomvocab.js:1208
 msgid "real environment"
-msgstr ""
+msgstr "реальное окружение"
 
 #: exe/jsui/scripts/lomvocab.js:1212
 msgid "home"
-msgstr ""
+msgstr "дом"
 
 #: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1564
 msgid "family"
-msgstr ""
+msgstr "семья"
 
 #: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1560
 msgid "tutor"
-msgstr ""
+msgstr "репетитор"
 
 #: exe/jsui/scripts/lomvocab.js:1232
 msgid "schoolmate"
-msgstr ""
+msgstr "одноклассник"
 
 #: exe/jsui/scripts/lomvocab.js:1236
 msgid "independent"
-msgstr ""
+msgstr "независимый"
 
 #: exe/jsui/scripts/lomvocab.js:1240
 msgid "blended"
-msgstr ""
+msgstr "гармоничный"
 
 #: exe/jsui/scripts/lomvocab.js:1244
 msgid "presencial"
-msgstr ""
+msgstr "лицо"
 
 #: exe/jsui/scripts/lomvocab.js:1248
 msgid "face to face"
-msgstr ""
+msgstr "лицо к лицу"
 
 #: exe/jsui/scripts/lomvocab.js:1252
 msgid "distance"
-msgstr ""
+msgstr "дистанция"
 
 #: exe/jsui/scripts/lomvocab.js:1268
 msgid "propietary license"
-msgstr ""
+msgstr "проприетарная лицензия"
 
 #: exe/jsui/scripts/lomvocab.js:1272
 msgid "free software license EUPL"
-msgstr ""
+msgstr "Лицензия EUPL на свободное ПО"
 
 #: exe/jsui/scripts/lomvocab.js:1276
 msgid "free software license GPL"
-msgstr ""
+msgstr "Лицензия GPL на свободное ПО"
 
 #: exe/jsui/scripts/lomvocab.js:1280
 msgid "dual free content license GPL and EUPL"
-msgstr ""
+msgstr "двойная лицензия GPL и EUPL на свободное ПО"
 
 #: exe/jsui/scripts/lomvocab.js:1284
 msgid "other free software licenses"
-msgstr ""
+msgstr "Другая лицензия на свободное ПО"
 
 #: exe/jsui/scripts/lomvocab.js:1288
 msgid "public domain"
-msgstr ""
+msgstr "публичный домен"
 
 #: exe/jsui/scripts/lomvocab.js:1292
 msgid "not appropriate"
-msgstr ""
+msgstr "не соответствует"
 
 #: exe/jsui/scripts/lomvocab.js:1296
 msgid "intellectual property license"
-msgstr ""
+msgstr "лицензия на интеллектуальную собственность"
 
 #: exe/jsui/scripts/lomvocab.js:1300
 msgid "creative commons: attribution"
-msgstr ""
+msgstr "creative commons: атрибуция"
 
 #: exe/jsui/scripts/lomvocab.js:1304
 msgid "creative commons: attribution - non derived work"
-msgstr ""
+msgstr "creative commons: атрибуция - непроизведённая работа"
 
 #: exe/jsui/scripts/lomvocab.js:1308
 msgid "creative commons: attribution - non derived work - non commercial"
-msgstr ""
+msgstr "creative commons: атрибуция - непроизведённая работа - некоммерческий"
 
 #: exe/jsui/scripts/lomvocab.js:1312
 msgid "creative commons: attribution - non commercial"
-msgstr ""
+msgstr "creative commons: атрибуция - некоммерческий"
 
 #: exe/jsui/scripts/lomvocab.js:1316
 msgid "creative commons: attribution - non commercial - share alike"
-msgstr ""
+msgstr "creative commons: атрибуция - некоммерческий - распространение такое же"
 
 #: exe/jsui/scripts/lomvocab.js:1320
 msgid "creative commons: attribution - share alike"
-msgstr ""
+msgstr "creative commons: атрибуция - распространение такое же"
 
 #: exe/jsui/scripts/lomvocab.js:1324
 msgid "license GFDL"
-msgstr ""
+msgstr "лицензия GFDL"
 
 #: exe/jsui/scripts/lomvocab.js:1420
 msgid "LOM-ESv1.0"
-msgstr ""
+msgstr "LOM-ESv1.0"
 
 #: exe/jsui/scripts/lomvocab.js:1482
 msgid "linux"
-msgstr ""
+msgstr "linux"
 
 #: exe/jsui/scripts/lomvocab.js:1502
 msgid "mozilla firefox"
-msgstr ""
+msgstr "mozilla firefox"
 
 #: exe/jsui/scripts/lomvocab.js:1528
 msgid "special needs learner"
-msgstr ""
+msgstr "специальные потребности учащегося"
 
 #: exe/jsui/scripts/lomvocab.js:1532
 msgid "gifted learner"
-msgstr ""
+msgstr "одарённый ученик"
 
 #: exe/jsui/scripts/lomvocab.js:1536
 msgid "learners late integration into the education system"
-msgstr ""
+msgstr "учащиеся, поздно интегрированные в систему образования"
 
 #: exe/jsui/scripts/lomvocab.js:1540
 msgid "learner with other specific educational support needs"
-msgstr ""
+msgstr "учащийся, требующий поддержки в другом специфическом образовании"
 
 #: exe/jsui/scripts/lomvocab.js:1544
 msgid "general public"
-msgstr ""
+msgstr "общий публичный"
 
 #: exe/jsui/scripts/lomvocab.js:1548
 msgid "individual"
-msgstr ""
+msgstr "индивидуальный"
 
 #: exe/jsui/scripts/lomvocab.js:1552
 msgid "group"
-msgstr ""
+msgstr "групповой"
 
 #: exe/jsui/scripts/lomvocab.js:1568
 msgid "information scientist"
-msgstr ""
+msgstr "информационный учёный"
 
 #: exe/jsui/scripts/lomvocab.js:1572
 msgid "computer scientist"
-msgstr ""
+msgstr "компьютерный учёный"
 
 #: exe/jsui/scripts/lomvocab.js:1580
 msgid "education expert"
-msgstr ""
+msgstr "образовательный эксперт"
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
@@ -6212,7 +6254,7 @@ msgstr "Цитата"
 
 #: exe/webui/clickinorderblock.py:377
 msgid "Delete Clickable Area"
-msgstr ""
+msgstr "Удалить кликабельную зону"
 
 #: exe/webui/clozefpdblock.py:104
 msgid "Autoevaluacion"
@@ -6222,7 +6264,7 @@ msgstr "Самооценка"
 #: exe/webui/element.py:2388 exe/webui/element.py:2831
 #: exe/webui/questionelement.py:152
 msgid "Solution"
-msgstr ""
+msgstr "Решение"
 
 #: exe/webui/clozelangfpdblock.py:105
 msgid "Now It's Your Turn"
@@ -6230,7 +6272,7 @@ msgstr "Теперь ваша очередь"
 
 #: exe/webui/common.py:170
 msgid "Show"
-msgstr ""
+msgstr "Показать"
 
 #: exe/webui/common.py:171 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
@@ -6239,10 +6281,9 @@ msgstr "Скрыть"
 
 #: exe/webui/common.py:172
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: exe/webui/common.py:193 exe/webui/editorpage.py:233
-#: exe/webui/selectbrowserpage_ru.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
@@ -6683,7 +6724,7 @@ msgstr "Высота фрэйма:"
 
 #: exe/webui/fileattachblock.py:121
 msgid "IDevice Icon"
-msgstr ""
+msgstr "Иконка IDevice"
 
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
@@ -6728,19 +6769,19 @@ msgstr "Удалить это изображение?"
 
 #: exe/webui/hangmanblock.py:325
 msgid "Remove This Life"
-msgstr ""
+msgstr "Удалить эту жизнь"
 
 #: exe/webui/hangmanblock.py:327
 msgid "Add Chance"
-msgstr ""
+msgstr "Добавить шанс"
 
 #: exe/webui/hangmanblock.py:341
 msgid "Remove This Word"
-msgstr ""
+msgstr "Удалить этот мир"
 
 #: exe/webui/hangmanblock.py:343
 msgid "Add Word"
-msgstr ""
+msgstr "Добавить мир"
 
 #: exe/webui/iecmwarning.py:42
 msgid "eXe problem"
@@ -6819,17 +6860,17 @@ msgstr "Руководство для учителя"
 msgid "A Step Ahead"
 msgstr "На шаг впереди"
 
-#: exe/webui/preferencespage.py:142 exe/webui/selectbrowserpage_ru.py:59
+#: exe/webui/preferencespage.py:142
 msgid "Default browser in your system"
 msgstr "Браузер по умолчанию в вашей системе"
 
 #: exe/webui/preferencespage.py:171
 msgid "Failed to get preferences"
-msgstr ""
+msgstr "Не удалось получить свойства"
 
 #: exe/webui/preferencespage.py:199
 msgid "Failed to save preferences"
-msgstr ""
+msgstr "Не удалось сохранить свойства"
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
@@ -7016,6 +7057,8 @@ msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode."
 msgstr ""
+"Вставка теперь есть в режиме обычного текста. Нажмите кнопку для "
+"переключения в обычный режим вставки."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
@@ -7368,7 +7411,7 @@ msgstr "Слов:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Show/hide block elements"
-msgstr ""
+msgstr "Показать/скрыть блочные элементы"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -8058,7 +8101,7 @@ msgstr "Узлы"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
-msgstr ""
+msgstr "Восстановить автосохранённое содержимое"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -8135,11 +8178,11 @@ msgstr "Используйте клавиши \"Влево\" и \"Вправо\"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en.js:2
 msgid "This is just a template button"
-msgstr ""
+msgstr "Это всего лишь шаблон кнопки"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en_dlg.js:2
 msgid "This is just a example title"
-msgstr ""
+msgstr "Это всего лишь пример заголовка"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:4
 msgid "LaTeX to Math for eXe"
@@ -8179,11 +8222,11 @@ msgstr "Описание изображения Math<br />(опциональн�
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:14
 msgid "eXe Math: Generate"
-msgstr ""
+msgstr "eXe математика: генерировать"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:15
 msgid "eXe Math: Image Appearance"
-msgstr ""
+msgstr "eXe математика: образ и облик"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:16
 msgid "verbatim text"
@@ -8203,11 +8246,11 @@ msgstr "И добавьте Ваш собственный LaTeX прямо в:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:21
 msgid "Constrain proportions"
-msgstr ""
+msgstr "Сохранение пропорций"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:23
 msgid "Appearance&nbsp;preview&nbsp;image"
-msgstr ""
+msgstr "Образ&nbsp;предпросмотр&nbsp;облик"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:24
 msgid "Create the image by clicking \"Preview\" before saving"
@@ -8951,7 +8994,7 @@ msgstr "Блок"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Insert span at selection"
-msgstr ""
+msgstr "Вставить диапазон при выборе"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clip"
@@ -9619,56 +9662,46 @@ msgstr "Общее использование"
 msgid "Invalid color value"
 msgstr "Недействительное значние цвета"
 
-#: exe/webui/selectbrowserpage_ru.py:104
-msgid "Browsers installed in your system"
-msgstr ""
-
-#: exe/webui/selectbrowserpage_ru.py:110
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "ОК"
-
 #: exe/webui/stylemanagerpage.py:131
 #, python-format
 msgid "Style directory already exists: %s"
-msgstr ""
+msgstr "Директория стиля уже существует: %s"
 
 #: exe/webui/stylemanagerpage.py:141
 #, python-format
 msgid "The style name already exists: %s"
-msgstr ""
+msgstr "Имя стиля уже существует: %s"
 
 #: exe/webui/stylemanagerpage.py:143
 msgid "Success"
-msgstr ""
+msgstr "Успешно"
 
 #: exe/webui/stylemanagerpage.py:143
 #, python-format
 msgid "Successfully imported style: %s"
-msgstr ""
+msgstr "Успешно импортированный стиль: %s"
 
 #: exe/webui/stylemanagerpage.py:146
 msgid "Incorrect style format (does not include content.css)"
-msgstr ""
+msgstr "Неверный формат стиля (не включает content.css)"
 
 #: exe/webui/stylemanagerpage.py:171
 #, python-format
 msgid "Style exported correctly: %s"
-msgstr ""
+msgstr "Стиль экспортирован корректно: %s"
 
 #: exe/webui/stylemanagerpage.py:174
 #, python-format
 msgid "Could not export style : %s"
-msgstr ""
+msgstr "Не получилось экспортировать стиль : %s"
 
 #: exe/webui/stylemanagerpage.py:189
 msgid "Style deleted correctly"
-msgstr ""
+msgstr "Стиль удалён корректно"
 
 #: exe/webui/stylemanagerpage.py:192
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Произошла непредвиденная ошибка"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:229
 #: exe/webui/truefalseelement.py:311
@@ -9785,6 +9818,8 @@ msgid ""
 "This article is licensed under the Creative Commons Attribution-"
 "ShareAlike License. It uses material from"
 msgstr ""
+"Эта статья лицензирована под лицензией Creative Commons Attribution-"
+"ShareAlike. Она использует материалы из"
 
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
@@ -9827,6 +9862,11 @@ msgstr ""
 "инструментов (i.g.: Rainbow) перед использованием системы "
 "автоматизированного перевода программного обеспечения."
 
+#: exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "ОК"
+
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
@@ -9863,4 +9903,3 @@ msgstr ""
 "Или Ваш idevices / generic.data файл или пакет, который вы загружаете "
 "было создано с помощью новой версии eXe. Пожалуйста, обновите eXe и "
 "повторите попытку."
-
