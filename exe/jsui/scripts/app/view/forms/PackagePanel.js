@@ -439,6 +439,32 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     ]
                 },
                 {
+					xtype: 'preservescrollfieldset',
+					title: _('Advanced Options'),
+					margin: 10,
+                    defaults: {
+                        dirtyCls: 'property-form-dirty'
+                    },
+                    collapsible: true,
+                    collapsed: true,
+                    items: [
+                        {
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+                                inputId: 'pp_compatibleWithVersion9',
+                                boxLabel: _('Create package compatible with old eXe versions?'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option, the saved package may be opened with eXe >= 0.20.4')
+                            },
+                            flex: 0,
+                            help: _('Checking this option, the saved package may be opened with eXe >= 0.20.4')
+                        }
+                    ]
+                },
+                {
                     xtype: 'button',
                     text: _('Save'),
                     itemId: 'save_properties',

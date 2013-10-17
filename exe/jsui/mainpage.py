@@ -57,6 +57,8 @@ from exe.engine.mimetex          import compile
 from urllib                      import unquote, urlretrieve
 from exe.engine.locationbuttons import LocationButtons
 from exe.export.epub3export import Epub3Export
+from exe.export.xmlexport import XMLExport
+
 from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
@@ -779,7 +781,8 @@ class MainPage(RenderableLivePage):
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
-            
+        elif exportType == 'csvReport':
+            self.exportReport(client, filename, stylesDir)
         elif exportType == 'zipFile':
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportWebZip(client, filename, stylesDir)
@@ -800,6 +803,8 @@ class MainPage(RenderableLivePage):
         elif exportType == "commoncartridge":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
+        elif exportType == 'mxml':
+            self.exportXML(client, filename, stylesDir)
         else:
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
@@ -948,6 +953,17 @@ class MainPage(RenderableLivePage):
             log.exception("")
 
     # Public Methods
+
+    """
+    Exports to Ustad Mobile XML
+    """
+    def exportXML(self, client, filename, stylesDir):
+        try:
+            xmlExport = XMLExport(self.config, stylesDir, filename)
+            xmlExport.export(self.package)        
+        except Exception, e:
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
+            raise
 
     def exportSinglePage(self, client, filename, webDir, stylesDir, \
                          printFlag):
@@ -1129,6 +1145,27 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
         client.alert(_(u'Exported to %s') % filename)
+
+    def exportReport(self, client, filename, stylesDir):
+        """
+        Generates this package report to a file
+        """
+        try:
+            log.debug(u"exportReport")
+            # Append an extension if required
+            if not filename.lower().endswith('.csv'):
+                filename += '.csv'
+                if Path(filename).exists():
+                    msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
+                    client.alert(_(u'EXPORT FAILED!\n%s' % msg))
+                    return
+            # Do the export
+            websiteExport = WebsiteExport(self.config, stylesDir, filename, report=True)
+            websiteExport.export(self.package)
+        except Exception, e:
+            client.alert(_('EXPORT FAILED!\n%s' % str(e)))
+            raise
+        client.alert(_(u'Exported to %s' % filename))
 
     def exportIMS(self, client, filename, stylesDir):
         """

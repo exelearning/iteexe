@@ -240,17 +240,16 @@ class ImageMagnifierBlock(Block):
         html += u"  <div class=\"image_text\" style=\""
         html += u"width:" + str(self.idevice.imageMagnifier.width) + "px;padding:10px; "
         html += u"float:%s;\">\n" % self.idevice.float
-        html += u"    <div class=\"image\" style=\"height:50px;\"></div>\n<!-- class=\"image\" -->\n"
+        html += u"    <div class=\"image\" >\n"
         html += self.imageMagnifierElement.renderPreview()
         html += u"" + self.idevice.caption
+        html += u"    </div> <!-- class=\"image\" -->\n" 
         html += u"  </div> <!-- class=\"image_text\" -->\n" 
-        html += u"<div style=\"display:inline-block\">\n"
         text = self.textElement.renderPreview()
         if text:
             html += text
         else:
             html += '&nbsp;'
-        html += u"</div>"
         html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
         html += self.renderViewButtons()
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
@@ -264,21 +263,21 @@ class ImageMagnifierBlock(Block):
         log.debug("renderView")
         html  = u"\n<!-- image with text iDevice -->\n"
         html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" >\n"
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"  <div class=\"image_text\" style=\""
         html += u"width:" + str(self.idevice.imageMagnifier.width) + "px;padding:10px; "
         html += u"float:%s;\">\n" % self.idevice.float
-        html += u"    <div class=\"image\" style=\"height:50px;\"></div>\n<!-- class=\"image\" -->\n"
+        html += u"    <div class=\"image\">\n"
         html += self.imageMagnifierElement.renderView()
         html += u"" + self.idevice.caption
+        html += u"    </div> <!-- class=\"image\" -->\n" 
         html += u"  </div> <!-- class=\"image_text\" -->\n" 
-        html += u"<div style=\"display:inline-block\">\n"
         text = self.textElement.renderView()
         if text:
             html += text
         else:
             html += '&nbsp;'
-        html += u"</div>"
         html += u'\n<div style="clear: both;overflow:auto"></div>\n'
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html

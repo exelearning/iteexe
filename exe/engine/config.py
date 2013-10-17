@@ -49,7 +49,12 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'jsDir', 'port', 'dataDir',
-                   'configDir', 'localeDir', 'browser'),
+                   'configDir', 'localeDir', 'browser', 'mediaProfilePath',
+                   'videoMediaConverter_ogv', 'videoMediaConverter_3gp',
+                   'videoMediaConverter_mpg',
+                   'videoMediaConverter_avi', 'audioMediaConverter_ogg',
+                   'audioMediaConverter_au', 'audioMediaConverter_mp3',
+                   'audioMediaConverter_wav', 'ffmpegPath'),
         'user': ('locale', 'lastDir', 'showPreferencesOnStart'),
     }
 
@@ -90,7 +95,13 @@ class Config:
         'cloze activity': [x_('Interactive Activities')],
         'rss': [x_('Non-Textual Information')],
         'external web site': [x_('Non-Textual Information')],
-        'free text': [x_('Textual Information')]
+        'free text': [x_('Textual Information')],
+        'click in order game': [x_('Unclassified')],
+        'file attachments': [x_('Unclassified')],
+        'hangman game': [x_('Unclassified')],
+        'memory match game': [x_('Unclassified')],
+        'place the objects': [x_('Unclassified')],
+        'sort items': [x_('Unclassified')]
     }
 
     def __init__(self):
@@ -136,6 +147,18 @@ class Config:
         self.recentProjects = []
         # canonical (English) names of iDevices not to show in the iDevice pane
         self.hiddeniDevices = []
+        #Media conversion programs used for XML export system
+        self.videoMediaConverter_ogv = ""
+        self.videoMediaConverter_3gp = ""
+        self.videoMediaConverter_avi = ""
+        self.videoMediaConverter_mpg = ""
+        self.audioMediaConverter_ogg = ""
+        self.audioMediaConverter_au = ""
+        self.audioMediaConverter_mp3 = ""
+        self.audioMediaConverter_wav = ""
+        self.ffmpegPath = ""
+        self.mediaProfilePath = self.exePath.dirname()/'mediaprofiles'
+        
         # likewise, a canonical (English) names of iDevices not to show in the
         # iDevice pane but, contrary to the hiddens, these are ones that the 
         # configuration can specify to turn ON:
@@ -249,6 +272,19 @@ class Config:
                 system.configDir = self.configDir
                 system.stylesDir =Path(self.configDir)/'style'
                 del system.appDataDir
+                
+                self.audioMediaConverter_au = system.audioMediaConverter_au
+                self.audioMediaConverter_wav = system.audioMediaConverter_wav
+                self.videoMediaConverter_ogv = system.videoMediaConverter_ogv
+                self.videoMediaConverter_3gp = system.videoMediaConverter_3gp
+                self.videoMediaConverter_avi = system.videoMediaConverter_avi
+                self.videoMediaConverter_mpg = system.videoMediaConverter_mpg
+                self.audioMediaConverter_ogg = system.audioMediaConverter_ogg
+                self.audioMediaConverter_mp3 = system.audioMediaConverter_mp3
+                self.ffmpegPath = system.ffmpegPath
+            
+            self.mediaProfilePath = system.mediaProfilePath
+                
             if system.has_option('greDir'):
                 # No longer used, system should automatically support
                 del system.greDir

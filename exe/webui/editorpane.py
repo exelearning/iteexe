@@ -54,7 +54,7 @@ class EditorPane(object):
         """
         self.ideviceStore     = webServer.application.ideviceStore
         self.webDir           = webServer.application.config.webDir
-        self.styles           = webServer.application.config.styles
+        self.styles           = webServer.application.config.styleStore.getStyles()
         self.elements         = []
         self.idevice          = GenericIdevice("", "", "", "", "")
         self.idevice.id       = self.ideviceStore.getNewIdeviceId()
@@ -92,7 +92,7 @@ class EditorPane(object):
         self._mp3Instruc      = x_(u"Add an mp3 file to your iDevice.")
         self._attachInstruc   = x_(u"Add an attachment file to your iDevice.")
 
-        self.style            = "default"
+        self.style            = self.styles[0]
    
     # Properties
     
@@ -210,7 +210,7 @@ data is entered into this field."""))
             
         if ("action" in request.args and 
             request.args["action"][0] == "changeStyle"):
-            self.style = request.args["object"][0]
+            self.style = self.styles[int(request.args["object"][0])]
             
         self.__buildElements()  
             
@@ -357,7 +357,7 @@ data is entered into this field."""))
                 icon = self.idevice.icon
                 if icon != "":
                     html += '<img align="middle" '
-                    html += 'src="/style/%s/icon_%s' % (self.style, icon)
+                    html += 'src="/style/%s/icon_%s' % (self.style.get_dirname(), icon)
                     html += '.gif"/><br/>'
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'
                 html += u'<div style="float:right;" >\n'
@@ -402,11 +402,13 @@ data is entered into this field."""))
         Return xhtml string for rendering styles select
         """
         html  = '<select onchange="submitStyle();" name="styleSelect">\n'
+        idx = 0
         for style in self.styles:
-            html += "<option value=\""+style+"\" "
-            if self.style == style:
+            html += "<option value='%d' " % idx
+            if self.style.get_name() == style.get_name():
                 html += "selected "
-            html += ">" + style + "</option>\n"
+            html += ">" + style.get_name() + "</option>\n"
+            idx = idx + 1
         html += "</select> \n"
         
         return html
@@ -415,13 +417,13 @@ data is entered into this field."""))
         """
         Return xhtml string for dispay all icons
         """
-        iconpath  = Path(G.application.config.stylesDir/self.style)
+        iconpath  = self.style.get_style_dir()
         iconfiles = iconpath.files("icon_*")
         html = ""
         for iconfile in iconfiles:
             iconname = iconfile.namebase
             icon     = iconname.split("_", 1)[1]
-            filename = "/style/%s/%s.gif" % (self.style, iconname)
+            filename = "/style/%s/%s.gif" % (self.style.get_dirname(), iconname)
             html += u'<div style="float:left; text-align:center; width:80px;\n'
             html += u'margin-right:10px; margin-bottom:10px" > '
             html += u'<img src="%s" \n' % filename

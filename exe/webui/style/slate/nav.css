@@ -14,6 +14,8 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 .iDevice_inner{margin-left:55px;border-bottom:1px solid #ddd;padding-bottom:20px}
 .emphasis0,.GalleryIdevice .iDevice{padding-bottom:15px;border-bottom:1px solid #ddd}
 /* Navigation */
+#skipNav{text-align:center;padding-top:18px}
+#skipNav a{background:#8A0A0A}
 #siteNav{width:230px;float:left}
 #siteNav,#siteNav ul{border-color:#FAFFE6}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}

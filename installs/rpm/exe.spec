@@ -5,7 +5,7 @@
 %define debug_package %{nil}
 
 Summary: eXe eLearning XHTML editor
-Name: exe
+Name: intef-exe
 Version: %{?clversion}%{!?clversion:%{ver}}
 Release: %{?clrelease}%{?dist:%{dist}}%{!?clrelease:1%{?dist:%{dist}}}
 Epoch: 1
@@ -20,7 +20,7 @@ ExclusiveArch: i686
 BuildRequires: python-devel
 BuildRequires: python >= %{pyver}, GitPython
 Requires: python >= %{pyver}, python-setuptools, python-imaging, python-zope-interface, python-chardet, python-lxml
-Obsoletes: exe-twisted
+Obsoletes: exe-twisted, exe
 
 %description
 eXe, the eLearning XHTML editor, is an authoring environment which enables

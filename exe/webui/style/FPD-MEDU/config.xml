@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<theme>
+    <name>FPD-MEDU</name>
+    <version>2.0</version>
+    <compatibility>8+</compatibility>
+    <author>José Ramón Jiménez Reyes</author>
+    <author-url>http://www.exelearning.net</author-url>	
+    <description>Estilo realizado por José Ramón Jiménez Reyes para el proyecto TodoFP del Ministerio de Educación en el que se elaboraban materiales de Ciclos Formativos de Formación Profesional.</description>
+    <license>Creative Commons by-sa</license>
+    <license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url></theme>

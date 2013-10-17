@@ -105,6 +105,18 @@ class FreeTextBlock(Block):
         html += u"</div>\n"
         return html
     
+    def renderXML(self, style):
+        xml = u""
+        
+        """
+        If we are effectively just one large image then make just an img tag and sound
+        tag if appropriate.  If not output all the html 
+        """
+        
+        xmlStr = self.contentElement.renderXML(None, "idevice", self.idevice.id) 
+        return xmlStr
+    
+    
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.blockfactory     import g_blockFactory
 g_blockFactory.registerBlockType(FreeTextBlock, FreeTextIdevice)    

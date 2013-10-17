@@ -292,6 +292,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                         {
                                             xtype: 'accesskey_menuitem',
+                                            text: _('Ustad Mobile'),
+                                            accesskey: 'x',
+                                            itemId: 'file_export_mxml'
+                                        },
+                                        {
+                                            xtype: 'accesskey_menuitem',
                                             text: _('XLIFF'),
                                             accesskey: 'x',
                                             itemId: 'file_export_xliff'
@@ -365,6 +371,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'tools_preferences',
                                 accesskey: 'p',
                                 text: _('Preferences')
+                            },
+                            {
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_resourcesreport',
+                                accesskey: 'r',
+                                text: _('Resources Report')
                             },
                             {
                                 xtype: 'accesskey_menuitem',

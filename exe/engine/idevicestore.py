@@ -286,6 +286,13 @@ class IdeviceStore:
         from exe.engine.quiztestidevice import QuizTestIdevice
         from exe.engine.listaidevice import ListaIdevice
         from exe.engine.notaidevice import NotaIdevice
+        from exe.engine.sortidevice import SortIdeviceInc
+        from exe.engine.hangmanidevice import HangmanIdeviceInc
+        from exe.engine.clickinorderidevice import ClickInOrderIdeviceInc
+        from exe.engine.memorymatchidevice import MemoryMatchIdeviceInc
+        from exe.engine.placetheobjectsidevice import PlaceTheObjectsIdeviceInc
+        from exe.engine.fileattachidevice import FileAttachIdeviceInc
+
         # JR
         # Necesarios para la FPD
         from exe.engine.reflectionfpdidevice import ReflectionfpdIdevice
@@ -307,7 +314,15 @@ class IdeviceStore:
         from exe.engine.orientacionestutoriafpdidevice import OrientacionestutoriafpdIdevice
         from exe.engine.freetextfpdidevice import FreeTextfpdIdevice
         
+        
         factoryExtendedIdevices = []
+        
+        factoryExtendedIdevices.append(SortIdeviceInc())
+        factoryExtendedIdevices.append(HangmanIdeviceInc())
+        factoryExtendedIdevices.append(ClickInOrderIdeviceInc())
+        factoryExtendedIdevices.append(MemoryMatchIdeviceInc())
+        factoryExtendedIdevices.append(PlaceTheObjectsIdeviceInc())
+        factoryExtendedIdevices.append(FileAttachIdeviceInc())
         
         factoryExtendedIdevices.append(FreeTextIdevice())
         factoryExtendedIdevices.append(MultichoiceIdevice())
@@ -357,6 +372,7 @@ class IdeviceStore:
         factoryExtendedIdevices.append(CasopracticofpdIdevice())
         factoryExtendedIdevices.append(EjercicioresueltofpdIdevice())
         factoryExtendedIdevices.append(DestacadofpdIdevice()) 
+        
         #factoryExtendedIdevices.append(CorreccionfpdIdevice())
         factoryExtendedIdevices.append(OrientacionesalumnadofpdIdevice())
         factoryExtendedIdevices.append(OrientacionestutoriafpdIdevice())
@@ -400,6 +416,10 @@ class IdeviceStore:
                 if hasattr(idevice, 'systemResources'):
                     idevice.systemResources = []
                     break
+
+        for idevice in self.factoryiDevices:
+            if 'Toughra' in idevice.author or 'PAIWASTOON' in idevice.author:
+                self.addIdevice(idevice)
 
     def __loadUserExtended(self):
         """

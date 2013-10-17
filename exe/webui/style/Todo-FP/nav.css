@@ -47,6 +47,10 @@ body{
 	color:#005F6F; /* Título de cada página */
 }
 
+#skipNav a{
+    background:#436974;
+}
+
 #siteNav a{
 	background:#f0f0f0; /* Color fondo menú */
 	color:#0F5E87; /* Enlaces del menú */
@@ -75,7 +79,8 @@ body{
 /* Otras definiciones */
 body{padding:0;text-align:center}
 #content{width:985px;margin:0 auto 25px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;border-bottom-left-radius:10px;border-bottom-right-radius:10px}
-#main{padding:10px 20px 0 250px}
+#main-wrapper{padding:10px 20px 0 250px}
+#main{width:100%}
 #content{padding-bottom:11px}
 #header,#emptyHeader{height:40px;background:url(my_header.jpg) no-repeat 0 0;padding:69px 0 0 314px}
 * html #header,* html #emptyHeader{height:109px} /* IE6 */

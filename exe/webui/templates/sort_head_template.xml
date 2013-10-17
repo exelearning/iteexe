@@ -1,0 +1,10 @@
+<idevice id="${ideviceid}" type="sort">
+	<sortoptions orientation="horizontal" dir="${sortorder}" checkbuttontext="${checkbuttontext}"/>
+	
+	<instructions><![CDATA[${instructions}]]></instructions>
+
+	<positivefeedback><![CDATA[${correctoverlay}]]></positivefeedback>
+	
+	<negativefeedback><![CDATA[${wrongoverlay}]]></negativefeedback>
+	
+	

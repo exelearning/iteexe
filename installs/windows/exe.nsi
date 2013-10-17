@@ -13,7 +13,7 @@ Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
 Icon "..\..\dist\eXe_icon.ico"
-OutFile "eXe-install-${EXE_VERSION}.exe"
+OutFile "INTEF-eXe-install-${EXE_VERSION}.exe"
 
 ; Modern interface settings
 !include "MUI.nsh"
@@ -87,6 +87,39 @@ Function un.onInit
    Call un.CheckeXeRunning
 FunctionEnd
 
+Function vcredist2008installer
+  ;Check if VC++ 2008 runtimes are already installed.
+  ;NOTE Both the UID in the registry key and the DisplayName string must be updated here (and below)
+  ;whenever the Redistributable package is upgraded:
+  ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+  StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_done vcredist2008_check_wow6432node
+  ;On x64 systems we need to check the Wow6432Node registry key instead
+  vcredist2008_check_wow6432node:
+    ReadRegStr $0 HKLM "SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+    StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_done vcredist2008_silent_install
+  ;If VC++ 2008 runtimes are not installed...
+  vcredist2008_silent_install:
+    DetailPrint "Installing Microsoft Visual C++ 2008 Redistributable"
+    File vcredist2008_x86.exe
+    ExecWait '"$INSTDIR\vcredist2008_x86.exe" /q' $0
+    ;Check for successful installation of our 2008 version of vcredist_x86.exe...
+    ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+    StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_success vcredist2008_not_present_check_wow6432node
+    vcredist2008_not_present_check_wow6432node:
+      ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+      StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_success vcredist2008_not_present
+    vcredist2008_not_present:
+      DetailPrint "Microsoft Visual C++ 2008 Redistributable failed to install"
+      IfSilent vcredist2008_done vcredist2008_messagebox
+      vcredist2008_messagebox:
+        MessageBox MB_OK "Microsoft Visual C++ 2008 Redistributable Package (x86) failed to install ($INSTDIR\vcredist2008_x86.exe). Please ensure your system meets the minimum requirements before running the installer again."
+        Goto vcredist2008_done
+    vcredist2008_success:
+      Delete "$INSTDIR\vcredist2008_x86.exe" 
+      DetailPrint "Microsoft Visual C++ 2008 Redistributable was successfully installed"
+  vcredist2008_done:
+FunctionEnd
+
 Section "Remove Old Version" Section1
     ; Remove any previous nsis install...
     ; Read where the last nsis install was
@@ -152,7 +185,7 @@ Section "exe" Section2
     IfFileExists "$APPDATA\exe\exe.conf" 0 NoIniUpdate
         WriteINIStr "$APPDATA\exe\exe.conf" system webDir "$INSTDIR"
     NoIniUpdate:
-
+	Call vcredist2008installer
 SectionEnd
 
 

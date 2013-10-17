@@ -43,6 +43,7 @@ from exe.engine.beautifulsoup  import BeautifulSoup
 from exe.engine.field          import Field
 from exe.engine.persistxml     import encodeObjectToXML, decodeObjectFromXML
 from exe.engine.lom import lomsubs
+from exe.engine.checker import Checker
 
 log = logging.getLogger(__name__)
 
@@ -329,7 +330,7 @@ class Package(Persistable):
         self.scolinks      = False
         self.scowsinglepage= False
         self.scowwebsite   = False
-        self.scowsource    = False
+        self.exportSource    = True
         self.exportMetadataType = "LOMES"
         self.license       = u''
         self.footer        = ""
@@ -342,6 +343,18 @@ class Package(Persistable):
         self._intendedEndUserRoleTutor = False
         self._contextPlace = u''
         self._contextMode = u''
+        self.compatibleWithVersion9 = False
+        
+        #for export to Sugar (e.g. OLPC)
+        self.sugaractivityname = ""
+        self.sugarservicename = ""
+        
+        #for export to Ustad Mobile
+        self.mxmlprofilelist = ""
+        self.mxmlheight = ""
+        self.mxmlwidth = ""
+        self.mxmlforcemediaonly = False
+        
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -978,6 +991,8 @@ class Package(Persistable):
         """
         Actually performs the save to 'fileObj'.
         """
+        if self.compatibleWithVersion9:
+            self.downgradeToVersion9()
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
             for resourceFile in self.resourceDir.files():
@@ -1224,6 +1239,11 @@ class Package(Persistable):
         nstyle=Path(G.application.config.stylesDir/newPackage.style)
         if not nstyle.isdir():
             newPackage.style=G.application.config.defaultStyle       
+
+        checker = Checker(newPackage)
+        inconsistencies = checker.check()
+        for inconsistency in inconsistencies:
+            inconsistency.fix()
         return newPackage
 
     def getUserResourcesFiles(self, node):
@@ -1441,7 +1461,7 @@ class Package(Persistable):
 
     def upgradeToVersion10(self):
         """
-        For version >= intef8
+        For version >= 2.0
         """
         entry = str(uuid.uuid4())
         if not hasattr(self, 'lomEs') or not isinstance(self.lomEs, lomsubs.lomSub):
@@ -1454,8 +1474,8 @@ class Package(Persistable):
             self.scowsinglepage = False
         if not hasattr(self, 'scowwebsite'):
             self.scowwebsite = False
-        if not hasattr(self, 'scowsource'):
-            self.scowsource = False
+        if not hasattr(self, 'exportSource'):
+            self.exportSource = True
         if not hasattr(self, 'exportMetadataType'):
             self.exportMetadataType = "LOMES"
         if not hasattr(self, 'lang'):
@@ -1476,9 +1496,33 @@ class Package(Persistable):
             self._contextPlace = u''
         if not hasattr(self, 'contextMode'):
             self._contextMode = u''
+        if hasattr(self, 'scowsource'):
+            del self.scowsource
         try:
             self.newlicense = self.oldLicenseMap[self.license]
         except:
             self.license = u''
+        if not hasattr(self, 'mxmlprofilelist'):
+            self.mxmlprofilelist = ""
+        if not hasattr(self, 'mxmlforcemediaonly'):
+            self.mxmlforcemediaonly = False
+        if not hasattr(self, 'mxmlheight'):
+            self.mxmlheight = ""
+        if not hasattr(self, 'mxmlwidth'):
+            self.mxmlwidth = ""
+        if not hasattr(self, 'compatibleWithVersion9'):
+            self.compatibleWithVersion9 = False
 
+    def downgradeToVersion9(self):
+        for attr in ['lomEs', 'lom', 'scowsinglepage', 'scowwebsite',
+                     'exportSource', 'exportMetadataType', '_lang',
+                     '_objectives', '_preknowledge', '_learningResourceType',
+                     '_intendedEndUserRoleType', '_intendedEndUserRoleGroup',
+                     '_intendedEndUserRoleTutor', '_contextPlace',
+                     '_contextMode', 'scowsource', 'mxmlprofilelist',
+                     'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth']:
+            if hasattr(self, attr):
+                delattr(self, attr)
+        self.license = u''
+        self.persistenceVersion = 9
 # ===========================================================================

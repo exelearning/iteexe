@@ -82,6 +82,14 @@ class GenericBlock(Block):
         html += common.ideviceFooter(self, style, "preview")
         return html
 
+    def renderXML(self, style):
+        aTitle = self.idevice.title
+        aIcon = self.idevice.icon
+        xml = ""
+        if len(self.elements) > 0:
+            return self.elements[0].renderXML(None, "idevice", self.idevice.id, title=aTitle, icon=aIcon)
+        return xml
+
     
     def renderView(self, style):
         """

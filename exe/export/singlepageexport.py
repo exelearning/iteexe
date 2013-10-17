@@ -21,14 +21,13 @@
 SinglePageExport will export a package as a website of HTML pages
 """
 
-from cgi                      import escape
-from exe.webui.blockfactory   import g_blockFactory
-from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.singlepage    import SinglePage
 from exe.webui                import common
 from exe                      import globals as G
 import os
+from exe.engine.persist import encodeObject
+from exe.engine.persistxml import encodeObjectToXML
 
 import logging
 log = logging.getLogger(__name__)
@@ -66,13 +65,17 @@ class SinglePageExport(object):
         Export web site
         Cleans up the previous packages pages and performs the export
         """
-        self.style = package.style       
-	
-	self.page = SinglePage("index", 1, package.root)
+        self.style = package.style
+
+        self.page = SinglePage("index", 1, package.root)
 
         self.page.save(self.outputDir/"index.html", for_print)
-	
-	self.copyFiles(package)
+        if hasattr(package, 'exportSource') and package.exportSource and not for_print:
+            (G.application.config.webDir/'templates'/'content.xsd').copyfile(self.outputDir/'content.xsd')
+            (self.outputDir/'content.data').write_bytes(encodeObject(package))
+            (self.outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
+
+        self.copyFiles(package)
 
 
     def copyFiles(self, package):

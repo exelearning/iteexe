@@ -47,6 +47,14 @@ margin-left: 0;
 }
 #content{width:985px;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0;border-top:0}
 /* ITE elements */
+#skipNav{
+    text-align:center;
+    font-size:.9em;
+}
+
+#skipNav a{
+    background:#598AC3;
+}
 
 #siteNav{
 	z-index:1000;
@@ -121,4 +129,3 @@ margin-left: 0;
 #siteNav .other-section{
 	display:none; /* Remove if you want all levels to be displayed */
 }
-

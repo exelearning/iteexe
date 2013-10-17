@@ -1,0 +1,29 @@
+
+${instructions}
+
+
+<script src="${RESPATH}jquery-ui-1.10.3.custom.min.js" type='text/javascript'> </script>
+<script type="text/javascript">
+
+	var sortmeItemIds${ideviceid} = new Array();
+
+	//correct
+	var sortMeEffect${ideviceid} = "${correcteffect}";
+
+	//wrong
+	var sortMeEffectWrong${ideviceid} = "${wrongeffect}";
+	
+	var sortMeStyle${ideviceid} = "${sortableitemstyle}";
+</script>
+<script src="${RESPATH}sortItems.js" type='text/javascript'> </script>
+
+<div id="sortmecorrectoverlay${ideviceid}" style="position: absolute; z-index: 3;">
+	${correctoverlay}
+</div>
+<div id="sortmewrongoverlay${ideviceid}" style="position: absolute; z-index: 3">
+	${wrongoverlay}
+</div>
+
+<!-- home of contents before being sorted  will be randomized first -->
+<div id="sortmeitemcontainer${ideviceid}" class='sortitemcontainer' style='display: none; z-index: 1'>
+

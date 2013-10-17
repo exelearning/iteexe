@@ -35,7 +35,8 @@ def lateTranslate(propName):
         Used to write the property
         """
         #return lambda self, value: setattr(self, propName, value)
-        setattr(self, propName, value)
+        if not hasattr(self, propName) or _(getattr(self, propName)) != value:
+            setattr(self, propName, value)
     def get_prop(self):
         """
         Translates a property value on the fly

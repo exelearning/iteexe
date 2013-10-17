@@ -46,6 +46,12 @@ from exe.webui.quiztestblock          import QuizTestBlock
 from exe.webui.listablock             import ListaBlock
 from exe.webui.notablock             import NotaBlock
 
+from exe.webui.sortblock import SortBlockInc
+from exe.webui.hangmanblock import HangmanBlockInc
+from exe.webui.clickinorderblock import ClickInOrderBlockInc
+from exe.webui.memorymatchblock import MemoryMatchBlockInc
+from exe.webui.placetheobjectsblock import PlaceTheObjectsBlockInc
+from exe.webui.fileattachblock import FileAttachBlockInc
 # JR
 # Necesarios para la FPD
 from exe.webui.clozefpdblock		import ClozefpdBlock

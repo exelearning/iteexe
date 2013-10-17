@@ -17,7 +17,7 @@
 SetCompressor /SOLID /FINAL lzma
 Name "${APPNAMEANDVERSION}"
 Icon "..\..\dist\eXe_icon.ico"
-OutFile "exe-ready2run-${EXE_VERSION}.exe"
+OutFile "INTEF-exe-ready2run-${EXE_VERSION}.exe"
 
 # Cool progress bar
 Subcaption 3 " "
@@ -55,6 +55,39 @@ Function repositionWindow
 	System::Call "User32::SetWindowPos(i, i, i, i, i, i, i) b ($HWNDPARENT, 0, $0, $1, 0, 0, 0x201)"
 FunctionEnd
 
+Function vcredist2008installer
+  ;Check if VC++ 2008 runtimes are already installed.
+  ;NOTE Both the UID in the registry key and the DisplayName string must be updated here (and below)
+  ;whenever the Redistributable package is upgraded:
+  ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+  StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_done vcredist2008_check_wow6432node
+  ;On x64 systems we need to check the Wow6432Node registry key instead
+  vcredist2008_check_wow6432node:
+    ReadRegStr $0 HKLM "SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+    StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_done vcredist2008_silent_install
+  ;If VC++ 2008 runtimes are not installed...
+  vcredist2008_silent_install:
+    DetailPrint "Installing Microsoft Visual C++ 2008 Redistributable"
+    File vcredist2008_x86.exe
+    ExecWait '"$TEMP\exe\vcredist2008_x86.exe" /q' $0
+    ;Check for successful installation of our 2008 version of vcredist_x86.exe...
+    ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+    StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_success vcredist2008_not_present_check_wow6432node
+    vcredist2008_not_present_check_wow6432node:
+      ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9BE518E6-ECC6-35A9-88E4-87755C07200F}" "DisplayName"
+      StrCmp $0 "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vcredist2008_success vcredist2008_not_present
+    vcredist2008_not_present:
+      DetailPrint "Microsoft Visual C++ 2008 Redistributable failed to install"
+      IfSilent vcredist2008_done vcredist2008_messagebox
+      vcredist2008_messagebox:
+        MessageBox MB_OK "Microsoft Visual C++ 2008 Redistributable Package (x86) failed to install ($INSTDIR\vcredist2008_x86.exe). Please ensure your system meets the minimum requirements before running the installer again."
+        Goto vcredist2008_done
+    vcredist2008_success:
+      Delete "$INSTDIR\vcredist2008_x86.exe" 
+      DetailPrint "Microsoft Visual C++ 2008 Redistributable was successfully installed"
+  vcredist2008_done:
+FunctionEnd
+
 Section main
     InitPluginsDir
     Call repositionWindow
@@ -63,12 +96,9 @@ Section main
     ; Check if exe exists in the temp dir
     IfFileExists "$TEMP\exe\exe.exe" 0 Extract
     ; Get its version
-    GetDLLVersion "$TEMP\exe\exe.exe" $R0 $R1
-    IntOp $R2 $R0 / 0x00010000 ; $R2 major version
-    IntOp $R3 $R0 & 0x0000FFFF ; $R3 minor version
-    IntOp $R4 $R1 / 0x00010000 ; $R4 local version
-    IntOp $R5 $R1 & 0x0000FFFF ; $R5 build (svn revision)
-    StrCpy "$0" "$R2.$R3.$R4.$R5"
+    FileOpen $R0 "$TEMP\exe\version" r
+    FileRead $R0 $0
+    FileClose $R0
     ; If its version is ok
     StrCmp "$0" ${EXE_BUILD} Splash CleanUp
   CleanUp:
@@ -80,6 +110,7 @@ Section main
     newadvsplash::show /NOUNLOAD 99999 1 1 -1 /BANNER /NOCANCEL "$TEMP\exe\${EXE_SPLASH}"
     ; Decompress the stuff
     File /R "..\..\dist\*.*"
+    Call vcredist2008installer
     SetOutPath "$TEMP\exe\config\idevices"
     File "..\..\exe\idevices\*.*"
     ; Remove the splash screen

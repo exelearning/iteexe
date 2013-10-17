@@ -1,0 +1,43 @@
+<div id='mem_feedbackcontainer${ideviceid}' style='position: absolute; z-index: 100; ${feedbackstyle}'>
+
+	<div id='memfeedbackpositive${ideviceid}' style='position: absolute'>
+		${feedbackpositive}
+	</div>
+
+	<div id='memfeedbacknegative${ideviceid}' style='position: absolute'>
+		${feedbacknegative}
+	</div>
+</div>
+
+<script type='text/javascript'>
+
+memMatchGame${ideviceid}.gridRows = ${rows};
+memMatchGame${ideviceid}.gridCols = ${cols};
+memMatchGame${ideviceid}.cellWidth = ${cellwidth};
+memMatchGame${ideviceid}.cellHeight = ${cellheight};
+memMatchGame${ideviceid}.splitPairs = ${splitPairs};
+
+memMatchGame${ideviceid}.coverImg = "${coverImg_imgsrc}";
+memMatchGame${ideviceid}.cellbackImg = "${cellbackImg_imgsrc}";
+memMatchGame${ideviceid}.backgroundImg = "${revealedBackground_imgsrc}";
+memMatchGame${ideviceid}.feedbackEffects['positive'] = "${positivefeedbackeffect}";
+memMatchGame${ideviceid}.feedbackEffects['negative'] = "${negativefeedbackeffect}";
+memMatchGame${ideviceid}.hideAfterMatch = ${hideAfterMatch};
+memMatchGame${ideviceid}.useTimer = ${useTimer};
+memMatchGame${ideviceid}.cellStyle = "${cellstyle}";
+memMatchGame${ideviceid}.cellPadding = "${cellpadding}";
+memMatchGame${ideviceid}.cellSpacing = "${cellspacing}";
+memMatchGame${ideviceid}.hideAfterMatchEffect = "${hideAfterMatchEffect}";
+document.writeln(memMatchGame${ideviceid}.generateGrid());
+
+</script>
+<br/>
+<span id='memgame_timelabel${ideviceid}'> ${timertext} </span>
+<input id='memgame_timer${ideviceid}' style='${timerstyle}'/>
+
+
+
+<script type='text/javascript'>
+memMatchGame${ideviceid}.init();
+</script>
+

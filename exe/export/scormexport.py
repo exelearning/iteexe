@@ -818,7 +818,7 @@ class ScormExport(object):
             website = WebsiteExport(self.config, self.styleDir, outputDir, "website_")
             website.export(package)
             (self.styleDir/'nav.css').copyfile(outputDir/'nav.css')
-        if hasattr(package, 'scowsource') and package.scowsource:
+        if hasattr(package, 'exportSource') and package.exportSource:
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))

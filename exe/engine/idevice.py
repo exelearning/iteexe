@@ -88,7 +88,8 @@ class Idevice(Persistable):
         """
         Sets self._title
         """
-        self._title = value
+        if _(self._title) != value:
+            self._title = value
 
     title    = property(get_title, set_title)
     rawTitle = lateTranslate('title')

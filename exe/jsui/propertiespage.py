@@ -246,7 +246,7 @@ class PropertiesPage(Renderable, Resource):
     """
     name = 'properties'
 
-    booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource',
+    booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource',
                          'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor')
 
     imgFieldNames = ('pp_backgroundImg')
@@ -277,7 +277,7 @@ class PropertiesPage(Renderable, Resource):
             if hasattr(obj, name):
                 return obj, name
             else:
-                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_scowsource']:
+                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource']:
                     setattr(obj, name, False)
                     return obj, name
 

@@ -49,7 +49,8 @@ body{
 }
 
 /* OTRAS DEFINICIONES */
-#main{padding:10px 20px 0 260px}
+#main-wrapper{padding:10px 20px 0 260px}
+#main{width:100%}
 #content{padding-bottom:21px}
 #header,#emptyHeader{position:absolute;left:-9999em;overflow:hidden}
 * html #header,* html #emptyHeader{display:none;} /* IE6 */

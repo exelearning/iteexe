@@ -129,6 +129,16 @@ class TrueFalseBlock(Block):
 
         return html
 
+    """
+    Render XML for Ustad Mobile for feature phones
+    """
+    def renderXML(self, style):
+        xml = "<idevice type='multichoice' id ='%s'>\n" % self.id
+        for element in self.questionElements:
+            xml += element.renderQuestionXML()
+        xml += "</idevice>"
+        
+        return xml
     
     def renderView(self, style):
         """

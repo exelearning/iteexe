@@ -105,9 +105,9 @@ class EleccionmultiplefpdBlock(Block):
             html += common.editModeHeading(self.idevice.message)
 
         # JR
-	# Quitamos el prefijo "FPD -"
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Now it's your turn")
+        # Quitamos el prefijo "FPD -"
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_(u"Now it's your turn")
 
 #        html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
         html += common.textInput("title"+self.id, self.idevice.title)
@@ -130,24 +130,17 @@ class EleccionmultiplefpdBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u'<img alt="" '
-        html += u'     class="iDevice_icon" '
-        html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
-        html += "<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"
-        html += "<div class=\"iDevice_inner\">\n"
-	aux = self.questionElements[len(self.questionElements) - 1]
+        
+        html = common.ideviceHeader(self, style, "view")
+        
+        aux = self.questionElements[len(self.questionElements) - 1]
         for element in self.questionElements:
-		if element == aux:
-			html += element.renderView("panel-amusements.png","stock-stop.png") 
-		else:
-			html += element.renderView("panel-amusements.png","stock-stop.png")  + "<br/>"        
-
+            if element == aux:
+                html += element.renderView("panel-amusements.png","stock-stop.png")
+            else:
+                html += element.renderView("panel-amusements.png","stock-stop.png")  + "<br/>"        
             
-        html += "</div>\n"
-        html += "</div>\n"
+        html += common.ideviceFooter(self, style, "view")
 
         return html
     
@@ -156,26 +149,17 @@ class EleccionmultiplefpdBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u'<img alt="" '
-        html += u'     class="iDevice_icon" '
-        html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\"><strong>"       
-        html += self.idevice.title+"</strong></span>\n"
-        html += "<div class=\"iDevice_inner\">\n"
-	aux = self.questionElements[len(self.questionElements) - 1]
+        html = common.ideviceHeader(self, style, "preview")
+        
+        aux = self.questionElements[len(self.questionElements) - 1]
         for element in self.questionElements:
-		if element == aux:
-			html += element.renderPreview("/images/panel-amusements.png", "/images/stock-stop.png") 
-		else:
-			html += element.renderPreview("/images/panel-amusements.png", "/images/stock-stop.png")  + "<br/>"
+            if element == aux:
+                html += element.renderPreview("/images/panel-amusements.png", "/images/stock-stop.png")
+            else:
+                html += element.renderPreview("/images/panel-amusements.png", "/images/stock-stop.png")  + "<br/>"
 
             
-        html += "</div>\n"    
-        html += self.renderViewButtons()
-        html += "</div>\n"
+        html += common.ideviceFooter(self, style, "preview")
 
         return html
 

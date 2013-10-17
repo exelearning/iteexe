@@ -132,6 +132,19 @@ class MultichoiceBlock(Block):
         html += common.ideviceFooter(self, style, "view")
 
         return html
+
+
+    def renderXML(self, style):
+        """
+        Returns XML for the XML Export method to provide further compatibility...
+        """
+        xml = u"<idevice type='multichoice' id='%s'>\n" % self.id
+        for element in self.questionElements:
+            xml += element.renderXML()
+            
+        xml += "</idevice>\n"
+        
+        return xml
     
 
     def renderPreview(self, style):

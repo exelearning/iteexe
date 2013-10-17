@@ -20,14 +20,13 @@ var myTheme = {
         $("#siteNav").hide();
         var p = "20px";
         if ($(window).width()<700) p = "10px";
-        $("#main").css({"padding-left":p});
+        $("#main-wrapper").css({"padding-left":p});
 		$(document.body).addClass("no-nav");
         myTheme.params("add");
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
         $("#toggle-nav").attr("class","show-nav").attr("title",tit);
     },
     toggleMenu : function(){
-        var c = $("#main");
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {  
 			var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
@@ -39,7 +38,7 @@ var myTheme = {
                 if ($(window).width()<700) {
                     p = "10px";
                 }                
-                $("#main").css({"padding-left":p});
+                $("#main-wrapper").css({"padding-left":p});
 				$("#siteFooter").show();
             }); 
             myTheme.params("add");
@@ -50,7 +49,7 @@ var myTheme = {
             var p = "250px";
 			if(ww>700 && ww<1015) p = "20px";         
             else if (ww<700) p = "10px";
-            $("#main").css({"padding-left":p});
+            $("#main-wrapper").css({"padding-left":p});
             $(document.body).removeClass("no-nav");
 			$("#siteNav").slideDown();
             myTheme.params("delete");            

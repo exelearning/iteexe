@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+from exe.engine.resource import Resource
 """
 WebsiteExport will export a package as a website of HTML pages
 """
@@ -24,9 +25,6 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import re
 import imp
-from cgi                      import escape
-from exe.webui.blockfactory   import g_blockFactory
-from exe.engine.error         import Error
 from exe.engine.path          import Path, TempDirPath
 from exe.export.pages         import uniquifyNames
 from exe.export.websitepage   import WebsitePage
@@ -34,6 +32,8 @@ from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
 from exe                      import globals as G
 import os
+from exe.engine.persist import encodeObject
+from exe.engine.persistxml import encodeObjectToXML
 
 log = logging.getLogger(__name__)
 
@@ -42,7 +42,7 @@ class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
     """
-    def __init__(self, config, styleDir, filename, prefix=""):
+    def __init__(self, config, styleDir, filename, prefix="", report=False):
         """
         'stylesDir' is the directory where we can copy the stylesheets from
         'outputDir' is the directory that will be [over]written
@@ -57,6 +57,8 @@ class WebsiteExport(object):
         self.filename     = Path(filename)
         self.pages        = []
         self.prefix       = prefix
+        self.report       = report
+
     def exportZip(self, package):
         """ 
         Export web site
@@ -73,7 +75,7 @@ class WebsiteExport(object):
                                      self.stylesDir/"websitepage.py")
             WebsitePage = module.WebsitePage
 
-        self.pages = [ WebsitePage("index", 1, package.root) ]
+        self.pages = [ WebsitePage("index", 0, package.root) ]
         self.generatePages(package.root, 1)
         uniquifyNames(self.pages)
 
@@ -101,16 +103,25 @@ class WebsiteExport(object):
         for scormFile in outputDir.files():
             zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
         zipped.close()
-        
+
+    def appendPageReport(self, page):
+        for idevice in page.node.idevices:
+            for resource in idevice.userResources:
+                if type(resource) == Resource:
+                    self.report += u'"%s",%d,"%s","%s","%s","%s","%s","%s","%s"\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum)
+                else:
+                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,\n' % (page.node.title, page.depth, page.name + '.html', idevice.klass, idevice.title, resource)
+
     def export(self, package):
         """ 
         Export web site
         Cleans up the previous packages pages and performs the export
         """
-        outputDir = self.filename
-        if not outputDir.exists(): 
-            outputDir.mkdir()
-        
+        if not self.report:
+            outputDir = self.filename
+            if not outputDir.exists():
+                outputDir.mkdir()
+
         # Import the Website Page class.  If the style has it's own page class
         # use that, else use the default one.
         if (self.stylesDir/"websitepage.py").exists():
@@ -119,22 +130,31 @@ class WebsiteExport(object):
                                      self.stylesDir/"websitepage.py")
             WebsitePage = module.WebsitePage
 
-        self.pages = [ WebsitePage(self.prefix + "index", 1, package.root) ]
+        self.pages = [ WebsitePage(self.prefix + "index", 0, package.root) ]
         self.generatePages(package.root, 1)
         uniquifyNames(self.pages)
 
         prevPage = None
         thisPage = self.pages[0]
+        if self.report:
+            self.report = u'"%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum')
+            self.appendPageReport(thisPage)
 
         for nextPage in self.pages[1:]:
-            thisPage.save(outputDir, prevPage, nextPage, self.pages)
+            if self.report:
+                self.appendPageReport(nextPage)
+            else:
+                thisPage.save(outputDir, prevPage, nextPage, self.pages)
             prevPage = thisPage
             thisPage = nextPage
 
-        thisPage.save(outputDir, prevPage, None, self.pages)
-        
-        if self.prefix == "":
-            self.copyFiles(package, outputDir)
+        if not self.report:
+            thisPage.save(outputDir, prevPage, None, self.pages)
+
+            if self.prefix == "":
+                self.copyFiles(package, outputDir)
+        else:
+            self.filename.write_text(self.report, 'utf-8')
 
 
     def copyFiles(self, package, outputDir):
@@ -247,6 +267,11 @@ class WebsiteExport(object):
             if dT != "HTML5":
                 jsFile = (self.scriptsDir/'exe_html5.js')
                 jsFile.copyfile(outputDir/'exe_html5.js')
+
+        if hasattr(package, 'exportSource') and package.exportSource:
+            (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
+            (outputDir/'content.data').write_bytes(encodeObject(package))
+            (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

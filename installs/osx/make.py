@@ -38,7 +38,7 @@ if not do_make_image:
 
 sys.path.insert(0, WDIR)
 from exe.engine import version
-outpathn = os.path.join(OUTPUT, 'iteexe-%s.dmg' % version.release)
+outpathn = os.path.join(OUTPUT, 'INTEF-exe-%s.dmg' % version.release)
 
 # attach the disk image template
 subprocess.check_call('hdiutil attach %s' % TEMPLATE, shell=True)

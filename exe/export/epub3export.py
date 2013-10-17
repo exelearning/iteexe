@@ -22,7 +22,6 @@ Exports an eXe package as a Epub3 package
 
 import logging
 import re
-import time
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED, ZIP_STORED
 from exe.webui                     import common
@@ -33,6 +32,8 @@ from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from exe                      	   import globals as G
+from exe.engine.persist import encodeObject
+from exe.engine.persistxml import encodeObjectToXML
 
 log = logging.getLogger(__name__)
 
@@ -570,6 +571,11 @@ class Epub3Export(object):
         else:
             jsFile = (self.scriptsDir/'exe_jquery.js')
             jsFile.copyfile(contentPages/'exe_jquery.js')        
+
+        if hasattr(package, 'exportSource') and package.exportSource:
+            (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
+            (outputDir/'content.data').write_bytes(encodeObject(package))
+            (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
 
         if package.license == "GNU Free Documentation License":
             # include a copy of the GNU Free Documentation Licence

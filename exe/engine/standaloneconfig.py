@@ -43,13 +43,9 @@ class StandaloneConfig(Config):
         exePath = self.exePath
         # Override the default settings
         self.webDir        = exePath
-        self.dataDir       = exePath/'packages'
-        if not self.dataDir.exists():
-            self.dataDir.makedirs()
         self.configDir     = exePath/'config'
         self.localeDir     = exePath/'locale'
         self.stylesDir     = Path(exePath/'style').abspath()
-        self.xulrunnerPath = exePath/'xulrunner/xulrunner'
         self.styles        = []
         self.lastDir       = exePath
 

@@ -36,8 +36,8 @@ except:
     except:
         import sys
         if sys.platform[:3] == "win":
-            #pkg_version = open(sys.prefix + '/version').readline()
-            release = '1'
+            pkg_version = open(sys.prefix + '/version').readline()
+            release = pkg_version[0:-42]
         else:
             pkg_version = open('../Resources/exe/version').readline()
             release = pkg_version[0:-42]
