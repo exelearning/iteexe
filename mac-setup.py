@@ -6,7 +6,7 @@ import time
 from distutils.core            import setup
 from exe.engine.path           import Path
 import pkg_resources
-pkg_resources.require('gitpython>=0.3.2.RC1')
+pkg_resources.require('gitpython>=0.3.1')
 from exe.engine                import version
 import py2app
 
