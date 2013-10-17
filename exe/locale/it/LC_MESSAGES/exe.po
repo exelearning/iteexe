@@ -171,7 +171,7 @@ msgstr "L'iDevice di Allegato è usato per collegare i files esistenti al conten
 
 #: exe/engine/attachmentidevice.py:57
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr "Inserire il testo che si desidera associare con il file scaricato. &Egrave; necessario fornire le istruzioni su quello che si richiede di fare, allo studente, con il file scaricato o come il materiale dovrebbe essere utilizzato."
+msgstr "Inserire il testo che si desidera associare con il file scaricato. É necessario fornire le istruzioni su quello che si richiede di fare, allo studente, con il file scaricato o come il materiale dovrebbe essere utilizzato."
 
 #: exe/engine/attachmentidevice.py:64
 #: exe/engine/attachmentidevice.py:185
@@ -184,7 +184,7 @@ msgstr "Clic <strong>Seleziona un file</strong>, raggiungere il file che si vuol
 
 #: exe/engine/attachmentidevice.py:71
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr "<p>Assegnare una etichetta per l'allegato. &Egrave; preferibile includere file del tipo pdf, ppt, etc.</p><p>L'indicazione delle dimensioni è raccomandata in modo che, quando un pacchetto viene esportato su in sito web, l'utente abbia una idea di quanto ci sarà da scaricare.</p><p>Per esempio: <code>File Forecast.doc (500kb)</code></p>"
+msgstr "<p>Assegnare una etichetta per l'allegato. É preferibile includere file del tipo pdf, ppt, etc.</p><p>L'indicazione delle dimensioni è raccomandata in modo che, quando un pacchetto viene esportato su in sito web, l'utente abbia una idea di quanto ci sarà da scaricare.</p><p>Per esempio: <code>File Forecast.doc (500kb)</code></p>"
 
 #: exe/engine/attachmentidevice.py:104
 #, python-format
@@ -351,7 +351,7 @@ msgstr "<p>Gli esercizi cloze sono testi o frasi in cui gli studenti devono inse
 #: exe/engine/clozeidevice.py:60
 #: exe/engine/clozelangfpdidevice.py:61
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Se il tuo obiettivo è provare la conoscenza di concetti base o la comprensione del testo  </dt>  <dd>    <p>  Scrivere un sommario di concetti o un testo abbastanza lungo per testare gli obiettivi della conoscenza, ma non eccessivamente lungo da indurre pesantezza. Meno di una pagina scritta è probabilmente adeguata, ma probabilmente troppo per studenti giovani o per principianti.    </p>    <p>Evidenziare le parole del testo che sono parole chiavi per la conoscenza dei concetti. Questi dovrebbero essere probabilmente verbi, nomi e avverbi. Scegliere le alternative con una risposta non ambigua.    </p>  </dd>  <dt>Se l'obiettivo è provare  la conoscenza di un vocabolario  </dt>  <dd><p>Scrivere un testo usando le parole obiettivo del vocabolario. Questo testo dovrebbe essere coerente e conciso, e di adeguata lunghezza. Evidenziare le parole obiettivo nel testo. Scegliere le alternative con una risposta non ambigua.</p>  </dd>  <dt>Se l'obiettivo è verificare la costruzione di parole o la grammatica:  </dt>  <dd>  <p>Scrivere un testo usando le forme oggetto di verifica. Questo testo dovrebbe essere coerente, conciso e di adeguata lunghezza. Ricordare che se l'obiettivo non è la conoscenza di un vocabolario di parole, il significato delle parole chiave dovrebbe essere già  noto agli studenti.  </p>  <p>Evidenziare le parole chiave nel testo. Fornire alternative con lo stesso insieme di parole, ma con differente struttura. &Egrave; una buona idea far provare il test ad un/a collega per essere sicuri/e che non ci saranno sorprese!  </p>  </dd></dl>"
+msgstr "<dl>  <dt>Se il tuo obiettivo è provare la conoscenza di concetti base o la comprensione del testo  </dt>  <dd>    <p>  Scrivere un sommario di concetti o un testo abbastanza lungo per testare gli obiettivi della conoscenza, ma non eccessivamente lungo da indurre pesantezza. Meno di una pagina scritta è probabilmente adeguata, ma probabilmente troppo per studenti giovani o per principianti.    </p>    <p>Evidenziare le parole del testo che sono parole chiavi per la conoscenza dei concetti. Questi dovrebbero essere probabilmente verbi, nomi e avverbi. Scegliere le alternative con una risposta non ambigua.    </p>  </dd>  <dt>Se l'obiettivo è provare  la conoscenza di un vocabolario  </dt>  <dd><p>Scrivere un testo usando le parole obiettivo del vocabolario. Questo testo dovrebbe essere coerente e conciso, e di adeguata lunghezza. Evidenziare le parole obiettivo nel testo. Scegliere le alternative con una risposta non ambigua.</p>  </dd>  <dt>Se l'obiettivo è verificare la costruzione di parole o la grammatica:  </dt>  <dd>  <p>Scrivere un testo usando le forme oggetto di verifica. Questo testo dovrebbe essere coerente, conciso e di adeguata lunghezza. Ricordare che se l'obiettivo non è la conoscenza di un vocabolario di parole, il significato delle parole chiave dovrebbe essere già  noto agli studenti.  </p>  <p>Evidenziare le parole chiave nel testo. Fornire alternative con lo stesso insieme di parole, ma con differente struttura. É una buona idea far provare il test ad un/a collega per essere sicuri/e che non ci saranno sorprese!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:117
 #: exe/engine/clozeidevice.py:116
@@ -940,7 +940,7 @@ msgstr "Toughra Technologies FZ LLC."
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
-msgstr "IDevice File allegati"
+msgstr "IDevice File allegati."
 
 #: exe/engine/flashmovieidevice.py:39
 #: exe/engine/flashmovieidevice.py:50
@@ -1494,7 +1494,7 @@ msgstr "Gli esercizi Lista a discesa sono testi o frasi in cui gli studenti devo
 
 #: exe/engine/listaidevice.py:80
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Choose words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl><dt>Se l'obiettivo è verificare la comprensione di concetti chiave o la comprensione della lettura </dt> <dd> <p> Scrivere un riassunto dei concetti o una lettura abbastanza lunga da verificare adeguatamente le conoscenze in oggetto, ma abbastanza corta da non affaticare. Meno di una cartella stampata è probabimente sufficiente, ma molto di meno per studenti giovani o principianti.  </p>  <p>Scegliere per il testo parole che siano fondamentali per la comprensione dei concetti. Saranno probabilmente verbi, nomi e avverbi chiave. Scegliere le alternative con una risposta chiaramente corretta.   </p> </dd> <dt>Se l'obiettivo è di verificare la comprensione lessicale </dt>  <dt>Se l'obiettivo è di verificare la produzione/grammatica:  </dt> <dd> <p>Scrivere un testo usando le forme oggetto di verifica. Il testo dovrebbe essere coerente e di lunghezza appropriata. Ricordare che l'obiettivo non è la conoscenza lessicale e quindi i significati dei concetti usati nelle parole chiave dovrebbe essere ben noto agli studenti. </p> <p>Evidenziare le parole chiave nel testo. Fornire alternative con la stessa radice ma con suffissi diversi. &Egrave; una buona idea chiedere ad un/una collega di provare la verifica per assicurarsi che non ci siano sorprese! </p> </dd></dl>"
+msgstr "<dl><dt>Se l'obiettivo è verificare la comprensione di concetti chiave o la comprensione della lettura </dt> <dd> <p> Scrivere un riassunto dei concetti o una lettura abbastanza lunga da verificare adeguatamente le conoscenze in oggetto, ma abbastanza corta da non affaticare. Meno di una cartella stampata è probabimente sufficiente, ma molto di meno per studenti giovani o principianti.  </p>  <p>Scegliere per il testo parole che siano fondamentali per la comprensione dei concetti. Saranno probabilmente verbi, nomi e avverbi chiave. Scegliere le alternative con una risposta chiaramente corretta.   </p> </dd> <dt>Se l'obiettivo è di verificare la comprensione lessicale </dt>  <dt>Se l'obiettivo è di verificare la produzione/grammatica:  </dt> <dd> <p>Scrivere un testo usando le forme oggetto di verifica. Il testo dovrebbe essere coerente e di lunghezza appropriata. Ricordare che l'obiettivo non è la conoscenza lessicale e quindi i significati dei concetti usati nelle parole chiave dovrebbe essere ben noto agli studenti. </p> <p>Evidenziare le parole chiave nel testo. Fornire alternative con la stessa radice ma con suffissi diversi. É una buona idea chiedere ad un/una collega di provare la verifica per assicurarsi che non ci siano sorprese! </p> </dd></dl>"
 
 #: exe/engine/listaidevice.py:130
 msgid "Provide instruction on how the dropdown activity should be completed."
@@ -1567,7 +1567,7 @@ msgid ""
 msgstr ""
 "Il linguaggio matematico LaTeX è stato \n"
 "                        usato per permettere la creazione di formule matematiche \n"
-"                        all'interno dei contenuti. &Egrave; fatto trasformando il linguaggio\n"
+"                        all'interno dei contenuti. É fatto trasformando il linguaggio\n"
 "                        LaTeX in immagini grafiche che sono poi mostrate\n"
 "                        all'interno dei contenuti eXe. Si raccomanda l'uso \n"
 "                        dell'iDevice testo libero per fornire \n"
@@ -1602,7 +1602,7 @@ msgstr "Auckland University of Technology"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr "L'iDevice MP3 permette di allegare un file MP3 al contenuto con un testo di istruzioni rilevanti per apprendimento"
+msgstr "L'iDevice MP3 permette di allegare un file MP3 al contenuto con un testo di istruzioni rilevanti per apprendimento."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
@@ -1642,7 +1642,7 @@ msgstr "FPD - Linee guida studenti"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:32
 msgid "Guidelines Students is an iDevice that permits students know the objectives of their learning."
-msgstr "Linee guida studenti è un iDevice che fa conoscere agli studenti gli obiettivi del loro apprendimento"
+msgstr "Linee guida studenti è un iDevice che fa conoscere agli studenti gli obiettivi del loro apprendimento."
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:38
 msgid "Guidelines Students Text"
@@ -1866,12 +1866,12 @@ msgstr "FPD - Un consiglio"
 
 #: exe/engine/recomendacionfpdidevice.py:32
 msgid "A Piece of Advice is an iDevice that permits the teacher give advice on interesting books, films..."
-msgstr "Un consiglio è un iDevice che permette al docente di dare consigli su libri, film e altre cose interessanti"
+msgstr "Un consiglio è un iDevice che permette al docente di dare consigli su libri, film e altre cose interessanti..."
 
 #: exe/engine/recomendacionfpdidevice.py:38
 #: exe/engine/recomendacionfpdidevice.py:137
 msgid "A Piece of Advice Text:"
-msgstr "Testo Un consiglio"
+msgstr "Testo Un consiglio:"
 
 #: exe/engine/reflectionfpdidevice.py:47
 msgid "FPD - Think About It (with Feedback)"
@@ -2230,7 +2230,7 @@ msgstr "Includi file di esportazione in formato Sito Web"
 
 #: exe/exe_do:168
 msgid "Options --export and --import are mutually exclusive."
-msgstr "Le opzioni --export e --import sono mutuamente esclusive"
+msgstr "Le opzioni --export e --import sono mutuamente esclusive."
 
 #: exe/exe_do:171
 msgid "No --export, --import, --set or --report option supplied."
@@ -2261,7 +2261,7 @@ msgstr ""
 #: exe/exe_do:227
 #, python-format
 msgid "Successfully exported '%s' from '%s'."
-msgstr "Esportazione effettuata da '%s' a '%s'"
+msgstr "Esportazione effettuata da '%s' a '%s'."
 
 #: exe/exe_do:230
 #, python-format
@@ -2790,7 +2790,7 @@ msgstr "Annulla l'importazione?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:550
 msgid "There is an ongoing import. Do you want to cancel?"
-msgstr "&Egrave; in corso un'importazione. Vuoi annullarla?"
+msgstr "É in corso un'importazione. Vuoi annullarla?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:573
 msgid "Select Xliff file to import"
@@ -3077,7 +3077,7 @@ msgstr "Una data di un evento nel ciclo di vita delle risorse."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:104
 msgid "Typically, Date will be associated with the creation or availability of the resource. Recommended best practice for encoding the date value is defined in a profile called <em>ISO 8601</em> <a href=\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> and includes (among others) dates of the form YYYY-MM-DD."
-msgstr "Solitamente, la data sarà associata con la creazione o la disponibilità della risorsa. La soluzione raccomandata per la codifica del valore data è definita in un profilo chiamato <em>ISO 8601</em><a href=\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> e include (oltre ad altri) le date in formato AAAA-MM-GG.\""
+msgstr "Solitamente, la data sarà associata con la creazione o la disponibilità della risorsa. La soluzione raccomandata per la codifica del valore data è definita in un profilo chiamato <em>ISO 8601</em><a href=\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> e include (oltre ad altri) le date in formato AAAA-MM-GG."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
@@ -3095,7 +3095,7 @@ msgstr "Formato"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:128
 msgid "Select a Format."
-msgstr "Selezionare formato"
+msgstr "Selezionare formato."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:134
 #: exe/jsui/scripts/app/view/forms/LomSections.js:40
@@ -3577,7 +3577,7 @@ msgstr "Autore"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:122
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 msgid "Primary author of the resource."
-msgstr "Autore principale della risorsa"
+msgstr "Autore principale della risorsa."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:134
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
@@ -3650,7 +3650,7 @@ msgstr "Pié di pagina"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:399
 msgid "Web pages footer."
-msgstr "Piede delle pagine web"
+msgstr "Piede delle pagine web."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:407
 msgid "Taxonomy"
@@ -3727,7 +3727,7 @@ msgstr "Mostra questa finestra all'avvio di eXe"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
 msgid "Export style: "
-msgstr "Esporta stile:"
+msgstr "Esporta stile: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
 msgid "Export to ZIP Style as"
@@ -4694,7 +4694,7 @@ msgstr "Vietnamese "
 
 #: exe/jsui/scripts/langs.js:640
 msgid "Volapük; Volapuk "
-msgstr "Volap&ugrave;k; Volapuk "
+msgstr "Volapúk; Volapuk "
 
 #: exe/jsui/scripts/langs.js:644
 msgid "Walloon "
@@ -5801,15 +5801,15 @@ msgstr "esperto di educazione"
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
-msgstr "Carica un file .ggb"
+msgstr "Carica un file .ggb."
 
 #: exe/webui/appletblock.py:86
 msgid "Please upload a .jclic.zip file."
-msgstr "Carica un file .jclic.zip"
+msgstr "Carica un file .jclic.zip."
 
 #: exe/webui/appletblock.py:88
 msgid "Please upload a .sb or .scratch file."
-msgstr "Carica un file .sb o .scratch"
+msgstr "Carica un file .sb o .scratch."
 
 #: exe/webui/appletblock.py:90
 msgid "Please type or paste a valid URL."
@@ -5817,7 +5817,7 @@ msgstr "Inserisci o incolla un URL valido."
 
 #: exe/webui/appletblock.py:96
 msgid "eXe cannot access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other."
-msgstr "eXe non riesce a reperire nessuna scena nel sito indicato. &Egrave; comunque possibile accedere alla scena desiderata nel browser, cliccare col destro e copiare il codice associato. Incollare direttamente in un iDevice come Altro."
+msgstr "eXe non riesce a reperire nessuna scena nel sito indicato. É comunque possibile accedere alla scena desiderata nel browser, cliccare col destro e copiare il codice associato. Incollare direttamente in un iDevice come Altro."
 
 #: exe/webui/appletblock.py:129
 msgid "Descartes"
@@ -6109,7 +6109,7 @@ msgstr "Inserire il nome di un iDevice."
 #: exe/webui/editorpage.py:188
 #: exe/webui/editorpage.py:200
 msgid "Sorry, wrong file format."
-msgstr "Formato errato del file"
+msgstr "Formato errato del file."
 
 #: exe/webui/editorpage.py:260
 msgid "Import iDevice"
@@ -6374,7 +6374,7 @@ msgstr "Mostra punteggio?"
 
 #: exe/webui/element.py:1885
 msgid "Please select a .flv file."
-msgstr "Seleziona un file FLV"
+msgstr "Seleziona un file FLV."
 
 #: exe/webui/element.py:1901
 msgid "Select a flash video"
@@ -6879,7 +6879,7 @@ msgstr "Inserisci riga prima"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Restore auto-saved content."
-msgstr "Ripristina i dati salvati automaticamente"
+msgstr "Ripristina i dati salvati automaticamente."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "The changes you made will be lost if you navigate away from this page."
