@@ -31,4 +31,4 @@ try:
         sys.exit(ret)
 except OSError, e:
     print >>sys.stderr, "Execution of rpmbuild failed:", e
-subprocess.check_call('mv %s $HOME/rpmbuild/RPMS/i686/intef-exe-%s-%s.*.rpm installs/rpm' % (tarball, version.release, clrelease), shell=True)
+subprocess.check_call('mv %s $HOME/rpmbuild/RPMS/i686/intef-exe-%s-%s.*.rpm exe/installs/rpm' % (tarball, version.release, clrelease), shell=True)
