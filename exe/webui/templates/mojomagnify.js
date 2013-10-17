@@ -4,7 +4,7 @@
  * Licensed under the MPL License [http://www.nihilogic.dk/licenses/mpl-license.txt]
  * Modified  by Fran Macías 2013 for exelearning.net
  */
- /*
+/*
  optional css:
  .selectsizeglass{...}
  .selectzoomglass{...}
@@ -13,19 +13,24 @@
  <img id="..." src="..." data-magnifysrc="..."  width="n" height="n" data-size="n"  data-zoom="n" />
  */
 var MojoMagnify = (function () {
-var dfstyle=' background: #FFF0FF;width: 80px;padding: 3px;font-size: 16px;border: 1px solid #ccc;height: 28px;margin:5px;';
-var zommstl=false;
-function withStyle(name){
-        var  cssstyle;
-		var valor=false;
-		var cssstyle;
-for (cssstyle = 0; cssstyle < document.styleSheets.length; cssstyle++) {
-			var clcss = new Array();
-if (document.styleSheets[cssstyle].cssRules)
-	clcss = document.styleSheets[cssstyle].cssRules
-else if (document.styleSheets[cssstyle].rules)
-	clcss = document.styleSheets[cssstyle].rules
-            for(var t=0;t<clcss.length;t++) {if(clcss[t].selectorText===name) {valor=true}}
+    var dfstyle = ' background: #FFF0FF;width: 80px;padding: 3px;font-size: 16px;border: 1px solid #ccc;height: 28px;margin:5px;';
+    var zommstl = false;
+
+    function withStyle(name) {
+        var cssstyle;
+        var valor = false;
+        var cssstyle;
+        for (cssstyle = 0; cssstyle < document.styleSheets.length; cssstyle++) {
+            var clcss = new Array();
+            if (document.styleSheets[cssstyle].cssRules)
+                clcss = document.styleSheets[cssstyle].cssRules
+            else if (document.styleSheets[cssstyle].rules)
+                clcss = document.styleSheets[cssstyle].rules
+            for (var t = 0; t < clcss.length; t++) {
+                if (clcss[t].selectorText === name) {
+                    valor = true
+                }
+            }
         }
         return valor;
     };
@@ -194,16 +199,16 @@ else if (document.styleSheets[cssstyle].rules)
         var w = img.offsetWidth ? img.offsetWidth : img.naturalWidth;
         var h = img.offsetHeight ? img.offsetHeight : img.naturalHeight;
         var oldParent = img.parentNode;
-		
+
         if (oldParent.nodeName.toLowerCase() != "a") {
             var linkParent = dc("div");
             oldParent.replaceChild(linkParent, img);
             linkParent.appendChild(img);
         } else {
             var linkParent = oldParent;
-			
+
         }
-		
+
         linkParent.style.position = "relative";
         linkParent.style.display = "block";
         linkParent.style.width = w + "px";
@@ -216,27 +221,27 @@ else if (document.styleSheets[cssstyle].rules)
         zoom.style.width = zoSize + "px";
         zoom.style.height = zoSize + "px";
         zoom.style.overflow = "hidden";
-		if (withStyle('.zoomglass')==false){
-        zoom.style.cursor = "none";
-        zoom.style.borderWidth = "2px";
-        zoom.style.borderStyle = "solid";
-        zoom.style.borderColor = "#cccccc";
-		zoom.style.boxShadow="5px 5px 10px #333333";
-        zoom.style.borderRadius = (zoSize / 2) + "px"
-		}else{
-        zoom.className = "zoomglass";
-		zommstl=true;
-		}
+        if (withStyle('.zoomglass') == false) {
+            zoom.style.cursor = "none";
+            zoom.style.borderWidth = "2px";
+            zoom.style.borderStyle = "solid";
+            zoom.style.borderColor = "#cccccc";
+            zoom.style.boxShadow = "5px 5px 10px #333333";
+            zoom.style.borderRadius = (zoSize / 2) + "px"
+        } else {
+            zoom.className = "zoomglass";
+            zommstl = true;
+        }
         zoom.style.left = "-9999px";
         var parent = img.parentNode;
         var zoomImg = dc("img");
         zoomImg.style.position = "absolute";
         zoomImg.style.maxWidth = "none";
         zoomImg.style.maxHeight = "none";
-            var imgW = img.offsetWidth * zoZoom;
-            var imgH = img.offsetHeight * zoZoom;
-            zoomImg.style.width = imgW + "px";
-            zoomImg.style.height = imgH + "px";
+        var imgW = img.offsetWidth * zoZoom;
+        var imgH = img.offsetHeight * zoZoom;
+        zoomImg.style.width = imgW + "px";
+        zoomImg.style.height = imgH + "px";
 
         if (isIE) {
             var zoomLink = dc("a");
@@ -258,7 +263,7 @@ else if (document.styleSheets[cssstyle].rules)
             height = h + "px";
             overflow = "hidden";
             display = "block";
-			
+
         }
         ctr.appendChild(zoom);
         parent.appendChild(ctr);
@@ -276,47 +281,48 @@ else if (document.styleSheets[cssstyle].rules)
         img.__mojoMagnifyBorder = zoomBorder;
         var isInImage = false;
         var dvselect = document.createElement("div");
-        dvselect.style.border = "1px solid #cccccc";
+        dvselect.setAttribute('style', 'border:1px solid #cccccc;margin-top:5px;margin-left:4px;');
         var modzoom = document.createElement("select");
         modzoom.onclick = changezoom;
-		if (withStyle('.selectzoomglass')==false){
-		 modzoom.setAttribute('style',dfstyle);
-		}else{
-		modzoom.className='selectzoomglass';
-		}
+        if (withStyle('.selectzoomglass') == false) {
+            modzoom.setAttribute('style', dfstyle);
+        } else {
+            modzoom.className = 'selectzoomglass';
+        }
         var stZoom = new Array("x1", "x1.5", "x2", "x2.5", "x3", "x4", "x6");
-        var valZoom = new Array( 1, 1.5, 2, 2.5, 3, 4, 6);
-        
+        var valZoom = new Array(1, 1.5, 2, 2.5, 3, 4, 6);
+
         for (var i = 0; i < valZoom.length; ++i) {
             modzoom[modzoom.length] = new Option(stZoom[i], valZoom[i]);
         }
-		modzoom[i] = new Option("x" + zoZoom, zoZoom);
-		modzoom[i].setAttribute("selected","selected");
+        modzoom[i] = new Option("x" + zoZoom, zoZoom);
+        modzoom[i].setAttribute("selected", "selected");
         var sizeGlass = document.createElement("select");
         sizeGlass.onclick = changeglass;
-		if (withStyle('.selectsizeglass')==false){
-		 sizeGlass.setAttribute('style',dfstyle);
-		}else{
-		sizeGlass.className='selectsizeglass';
-		}
+        if (withStyle('.selectsizeglass') == false) {
+            sizeGlass.setAttribute('style', dfstyle);
+        } else {
+            sizeGlass.className = 'selectsizeglass';
+        }
         var valGlass = new Array(50, 100, 150, 200, 250, 300, 400);
-		var stzoSize=zoSize.toString();
+        var stzoSize = zoSize.toString();
         for (var i = 0; i < valGlass.length; ++i) {
-		if (valGlass[i]==stzoSize){		
-			sizeGlass[i] = new Option(valGlass[i], valGlass[i]);  
-			sizeGlass[i].setAttribute("selected","selected");			
-			}else{
-			sizeGlass[i] = new Option(valGlass[i], valGlass[i]);
-			}
+            if (valGlass[i] == stzoSize) {
+                sizeGlass[i] = new Option(valGlass[i], valGlass[i]);
+                sizeGlass[i].setAttribute("selected", "selected");
+            } else {
+                sizeGlass[i] = new Option(valGlass[i], valGlass[i]);
+            }
         }
         dvselect.appendChild(modzoom);
         dvselect.appendChild(sizeGlass);
         linkParent.appendChild(dvselect);
-		if (linkParent.offsetWidth<190){
-linkParent.style.marginBottom = "90px";
-}else{
-linkParent.style.marginBottom = "50px";
-}
+        if (linkParent.offsetWidth < 190) {
+            linkParent.style.marginBottom = "90px";
+        } else {
+            linkParent.style.marginBottom = "50px";
+        }
+
         function changezoom(e) {
             var imgW = img.offsetWidth * this.value;
             var imgH = img.offsetHeight * this.value;
@@ -327,7 +333,7 @@ linkParent.style.marginBottom = "50px";
         function changeglass(e) {
             zoom.style.width = sizeGlass.value + "px";
             zoom.style.height = sizeGlass.value + "px";
-			if (zommstl==false) zoom.style.borderRadius = (sizeGlass.value / 2) + "px"
+            if (zommstl == false) zoom.style.borderRadius = (sizeGlass.value / 2) + "px"
         }
 
         function onMouseOut(e) {
@@ -375,12 +381,12 @@ linkParent.style.marginBottom = "50px";
             if (isIE) {
                 addEvent(document.body, "mouseover",
 
-                function (e) {
-                    e = e || window.event;
-                    if (isInImage && e.toElement != zoomImg) {
-                        ctr.style.display = "none";
-                    }
-                });
+                    function (e) {
+                        e = e || window.event;
+                        if (isInImage && e.toElement != zoomImg) {
+                            ctr.style.display = "none";
+                        }
+                    });
             }
             // try removing the event first so we don't get multiple handlers firing
             removeEvent(zoomInput, "mousemove", onMouseMove);
