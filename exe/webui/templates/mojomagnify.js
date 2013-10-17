@@ -40,8 +40,24 @@ var MojoMagnify = (function () {
     var dc = function (tag) {
         return document.createElement(tag);
     };
+
+    function isIE8() {
+        var vernav = 8;
+        var resul = false;
+        if (navigator.appName == 'Microsoft Internet Explorer') {
+            var data = navigator.userAgent;
+            var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(data) != null)
+                vernav = parseFloat(RegExp.$1);
+            if (vernav > 7) resul = true;
+        }
+        return resul;
+    }
+
     var isIE = !! document.all && !! window.attachEvent && !window.opera;
-    var isIE9 = isIE && (navigator.userAgent.indexOf("Trident/5.0") > -1);
+
+    var isIE9 = isIE && isIE8();
+
     var isIE9CompatibilityMode = isIE9 && (navigator.userAgent.indexOf("MSIE 7.0;") > -1);
 
     function addEvent(element, ev, handler) {
@@ -314,7 +330,13 @@ var MojoMagnify = (function () {
                 sizeGlass[i] = new Option(valGlass[i], valGlass[i]);
             }
         }
+        var imax = document.createElement("img");
+        imax.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH3QoRFDoBieBoSQAAAZ1JREFUOMuFk71qVFEUhb91zj1z70xiMhi9RIIEJJBHsBTEQhEJPoIYJNhplSalnYKtaXwEfQEbsdPGFFaKICRjHH8y6HCdSe7ZFqOJzJ2fVW7Y39l7rX3EkJY21vJ7Kzf2m6GBMV3JcKHd6+jCzCJ5bR4bizCimQGqAPK02X//q/WqHTrlMEDAYSxDnjZXz6ZzCyMnyNP5gw/d1tXUhcq7Xs5etHdO319Z2wauAST5nevux2GXU0mmM7W5ePPcRdvavNsdt3N663ImiMce3F6+srmYNX1R9rPPvYPnWztPXk8yLTgvkBMQMZLzjYUHq7NL/Dz6jZNrsff2DYwPoO6DNLADIVwiT3AJXg4v16czObbUBaEBAMCdBGMAkf3J8Wc+6G8g1TsQRPYmTxBccA6Ff0McAwZ3ceLuOM36tNwtvu/24tFHw/onAECaDshc+Pql19koYt+XFv9fwTCbDnj5aNskdSseeHnqvnbp8cOnmaSRzZ+K9jdJzyqfyQxmfGrLjXy9tLg+qllAUfbeARWAgUmS6r42eX+fFMO1P2nzhjk/kyDRAAAAAElFTkSuQmCC";
+        imax.setAttribute('style', 'margin-left:4px;margin-right:-3px;');
         dvselect.appendChild(modzoom);
+        dvselect.appendChild(imax);
+
+
         dvselect.appendChild(sizeGlass);
         linkParent.appendChild(dvselect);
         if (linkParent.offsetWidth < 190) {
@@ -361,6 +383,7 @@ var MojoMagnify = (function () {
                 isInImage = true;
                 ctr.style.display = "block";
                 var pos = getEventMousePos(zoomInput, e);
+
                 if (e.srcElement && isIE && (!isIE9 || isIE9CompatibilityMode)) {
                     if (e.srcElement == zoom) return;
                     if (e.srcElement != zoomInput) {
