@@ -247,7 +247,7 @@ class PropertiesPage(Renderable, Resource):
     name = 'properties'
 
     booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile', 'pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource',
-                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor')
+                         'pp_intendedEndUserRoleGroup', 'pp_intendedEndUserRoleTutor', 'pp_compatibleWithVersion9')
 
     imgFieldNames = ('pp_backgroundImg')
 
