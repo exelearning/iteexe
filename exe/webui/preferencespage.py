@@ -136,13 +136,12 @@ class PreferencesPage(RenderableResource):
             self.localeNames.append({'locale': locale, 'text': localeName})
         self.localeNames.sort()
         for browser in mywebbrowser._tryorder:
-            if (browser not in browsersHidden):
+            if (browser not in browsersHidden) and (browser in browserNames):
                 self.browsersAvalaibles.append((browserNames[browser], browser))
         self.browsersAvalaibles.sort()
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
-            
 
     def getChild(self, name, request):
         """
