@@ -186,30 +186,38 @@ class IdeviceStore:
                 self.generic.append(idevice)
                 idevice.edit = True
                 for listener in self.listeners:
-                    listener.addIdevice(idevice)    
-          
+                    listener.addIdevice(idevice)
 
     def load(self):
         """
         Load iDevices from the generic iDevices and the extended ones
         """
         log.debug("load iDevices")
-        idevicesDir = self.config.configDir/'idevices'
+        idevicesDir = self.config.configDir / 'idevices'
         if not idevicesDir.exists():
             idevicesDir.mkdir()
         self.__loadExtended()
         self.__loadGeneric()
-        #JR: Vemos cual sera el proximo id
-        nextId = 0
         for idevice in self.getFactoryIdevices():
-            if int(idevice.id) > nextId:
-                nextId = int(idevice.id)
-        self._nextIdeviceId = nextId
+            idevice.id = self.getNewIdeviceId()
+
+        for idevice in self.extended:
+            for factoryiDevice in self.factoryiDevices:
+                if factoryiDevice._title == idevice._title:
+                    idevice.id = factoryiDevice.id
+                    break
+
+        for idevice in self.generic:
+            for factoryiDevice in self.factoryiDevices:
+                if factoryiDevice._title == idevice._title:
+                    idevice.id = factoryiDevice.id
+                    break
+
         #JR: comunicamos a los listener los iDevices extendidos
         for listener in self.listeners:
             for idevice in self.getIdevices():
                 listener.addIdevice(idevice)
-    
+
     def __getIdevicesFPD(self):
         """
         JR: Esta funcion devuelve los iDevices de FPD
@@ -402,12 +410,6 @@ class IdeviceStore:
             for idevice in self.__getIdevicesFPD():
                 self.delIdevice(idevice)
 
-        for idevice in self.extended:
-            for factoryiDevice in self.factoryiDevices:
-                if factoryiDevice.title == idevice.title:
-                    idevice.id = factoryiDevice.id
-                    break
-
     def __upgradeExtended(self):
         from exe.engine.galleryidevice import GalleryIdevice
 
@@ -468,12 +470,6 @@ class IdeviceStore:
             self.factoryiDevices = self.factoryiDevices + self.generic
             from exe.engine.listaidevice import ListaIdevice
             self.addIdevice(ListaIdevice())
-
-        for factoryiDevice in self.factoryiDevices:
-            for idevice in self.generic:
-                if factoryiDevice.title == idevice.title:
-                    idevice.id = factoryiDevice.id
-                    break
 
     def __upgradeGeneric(self):
         """
