@@ -17,12 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-from exe.engine.idevice      import Idevice
 from exe.engine.idevicestore import IdeviceStore
-from exe.engine.path         import Path
 import unittest
-import os
 import utils
+import os
 
 
 # ===========================================================================
@@ -33,11 +31,26 @@ class TestIdeviceStore(utils.SuperTestCase):
         """
         Tests that idevices can be loaded
         """
-        store = IdeviceStore(self.app.config)
-        store.load()
-        self.assert_(os.path.exists("tmp/idevices/generic.data"))
-        os.remove("tmp/idevices/generic.data")
+        self.assert_(isinstance(self.app.ideviceStore, IdeviceStore))
+        self.assert_(os.path.exists("tmp/idevices/allgeneric.data"))
+        self.assert_(os.path.exists("tmp/idevices/extended.data"))
+        self.assert_(os.path.exists("tmp/idevices/showgeneric.data"))
 
+    def testLangsWithoutDuplicateIdeviceTitles(self):
+        langsWithDuplicateIdeviceTitles = {}
+        for lang, locale in self.app.config.locales.items():
+            lang = str(lang)
+            locale.install(unicode=True)
+            titles = set()
+            for idevice in self.app.ideviceStore.getIdevices():
+                if idevice.title in titles:
+                    if lang in langsWithDuplicateIdeviceTitles:
+                        langsWithDuplicateIdeviceTitles[lang].append(idevice._title)
+                    else:
+                        langsWithDuplicateIdeviceTitles[lang] = [idevice._title]
+                titles.add(idevice.title)
+        if langsWithDuplicateIdeviceTitles:
+            raise Exception(langsWithDuplicateIdeviceTitles)
 
 if __name__ == "__main__":
     suite = unittest.TestSuite()

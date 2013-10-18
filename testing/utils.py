@@ -17,9 +17,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import logging
-from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
-import os, sys, unittest
+import os
+import sys
+import unittest
+import shutil
+import random
 
 # Make it easy to import exe stuff
 if '..' not in sys.path:
@@ -42,11 +44,12 @@ else:
     from exe.engine.linuxconfig import LinuxConfig
     Config = LinuxConfig
 
+
 class FakeClient(object):
     """Pretends to be a webnow client object"""
 
     def __init__(self):
-        self.calls = [] # All methods called on this object
+        self.calls = []  # All methods called on this object
 
     def logCall(self, _name_, *args, **kwargs):
         self.calls.append((_name_, args, kwargs))
@@ -55,12 +58,17 @@ class FakeClient(object):
         """Always returns a callable"""
         return lambda *args, **kwargs: self.logCall(name, *args, **kwargs)
 
+    def sendScript(self, script, filter_func=None):
+        pass
+
+class FakeSession(object):
+    uid = random.randint(1,100)
 
 class FakeRequest(object):
     """
     Allows you to make a fake request, Just pass it keyword args that will be
     put into self.args and stuck in lists as appropriate for reading.
-    """ 
+    """
 
     def __init__(self, method='POST', path='/temp', **kwargs):
         """
@@ -73,7 +81,7 @@ class FakeRequest(object):
         for key, value in kwargs.items():
             self.args[key] = [value]
         self.method = method
-        self.path   = path
+        self.path = path
 
 
 class SuperTestCase(unittest.TestCase):
@@ -83,12 +91,13 @@ class SuperTestCase(unittest.TestCase):
 
     def setUp(self):
         """
-        Creates an application and 
+        Creates an application and
         almost launches it.
         """
         # Make whatever config class that application uses only look for our
         # Set up our customised config file
         logFileName = Path('tmp/app data/test.conf')
+        sys.argv[0] = 'exe/exe'
         Config._getConfigPathOptions = lambda s: [logFileName]
         if not logFileName.dirname().exists():
             logFileName.dirname().makedirs()
@@ -101,8 +110,10 @@ class SuperTestCase(unittest.TestCase):
         self.app.preLaunch()
         self.client = FakeClient()
         self.package = Package('temp')
-        self.app.webServer.root.bindNewPackage(self.package)
-        self.mainpage = self.app.webServer.root.children['temp']
+        self.session = FakeSession()
+        self.app.webServer.root.bindNewPackage(self.package, self.session)
+        self.mainpage = self.app.webServer.root.mainpages[self.session.uid]['temp']
+        self.mainpage.idevicePane.client = self.client
 
     def tearDown(self):
         """
@@ -110,6 +121,7 @@ class SuperTestCase(unittest.TestCase):
         """
         from exe import globals
         globals.application = None
+        shutil.rmtree('tmp')
 
     def _setupConfigFile(self, configParser):
         """
@@ -118,15 +130,17 @@ class SuperTestCase(unittest.TestCase):
         """
         # Set up the system section
         system = configParser.addSection('system')
-        system.exePath = '../exe/exe'
-        system.exeDir = '../exe'
-        system.webDir = '../exe/webui'
-        system.localeDir = '../exe/locale'
+        system.exePath = 'exe/exe'
+        system.exeDir = 'exe'
+        system.webDir = 'exe/webui'
+        system.localeDir = 'exe/locale'
+        system.configDir = 'tmp'
         system.port = 8081
         # Make a temporary dir where we can save packages and exports etc
         tmpDir = Path('tmp')
-        if not tmpDir.exists(): tmpDir.mkdir()
-        dataDir = tmpDir/'data'
+        if not tmpDir.exists():
+            tmpDir.mkdir()
+        dataDir = tmpDir / 'data'
         if not dataDir.exists():
             dataDir.mkdir()
         system.dataDir = dataDir
@@ -155,7 +169,7 @@ class HTMLChecker(object):
         filter them out of the list of warnings/errors
         """
         self.resToIgnore = resToIgnore
-        
+
     def check(self, html, wrap, addForm):
         """
         Actually runs xmllint to check the html
@@ -190,24 +204,24 @@ class HTMLChecker(object):
         if ret == 0:
             # Perfect!
             return True
-        elif ret in (1, 3,4):
+        elif ret in (1, 3, 4):
             # Here we have errors and must filter some out before returning
             return self.filterErrors(err, ret)
         else:
-            raise ValueError('Unknown return code returned by xmllint: %d' % ret) 
+            raise ValueError('Unknown return code returned by xmllint: %d' % ret)
 
     def filterErrors(self, stderr, returnCode):
         """
         Takes the stderr output of xmllint and filters it against our
         regularExpressions, prints the result and raises
-        an assertion error if 
+        an assertion error if
         """
         # Each error consists of one or more lines, the first line can be told
         # because it starts with "tmp.html:\d+:"
         stderr = stderr.split('\n')
         if stderr[-1] == '':
             # Ignore last two lines of rubbish :)
-            del stderr[-2:] 
+            del stderr[-2:]
         errors = {}
         for line in stderr:
             if line.startswith('tmp.html:'):
@@ -229,9 +243,10 @@ class HTMLChecker(object):
         # Now if there are any left print them out and fail the test
         if errors:
             errorFile = open('tmp.html.errors', 'w')
+
             def output(line=''):
                 print line
-                errorFile.write(line+'\n')
+                errorFile.write(line + '\n')
             keys = errors.keys()
             keys.sort()
             if returnCode == 1:
@@ -250,7 +265,7 @@ class HTMLChecker(object):
         else:
             return True
 
-        
+
 class TestSuperTestCase(SuperTestCase):
     """
     Just provides a simple test to check that the initialisation code is running
