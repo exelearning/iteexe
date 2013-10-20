@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-10-15 18:05+0200\nPO-Revision-Date: 2013-10-16 23:09+0200\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-10-15 18:05+0200\nPO-Revision-Date: 2013-10-19 17:54+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creare uno studio di un caso. Un buon caso \u00e8 quello \nche descrive una controversia o un insieme di situazioni mediante la descrizione \ndelle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \nuna qualche azione per la risoluzione della situazione.", 
  "Xhosa ": "Xhosa ", 
@@ -1224,7 +1224,7 @@ translations = {
  "propietary license": "licenza proprietaria", 
  "creator": "creatore", 
  "Show Image": "Mostra immagine", 
- "FPD - Multi Select Activity": "FPD - Attivit\u00e0 scelta multipla", 
+ "FPD - Multi Select Activity": "FPD - Attivit\u00e0 selezione multipla", 
  "Prerequisite knowledge refers to the knowledge learners should already\nhave in order to be able to effectively complete the learning. Examples of\npre-knowledge can be: <ul>\n<li>        Learners must have level 4 English <\/li>\n<li>        Learners must be able to assemble standard power tools <\/li><\/ul>\n": "Prerequisiti di conoscenza che gli studenti dovrebbero avere\nper essere in grado di completare l'apprendimento. Esempi di\npre-conoscenze potrebbero essere: <ul>\n<li>        Gli studenti devono avere un livello 4 in inglese <\/li>\n<li>        Gli studenti devono essere capaci di montare utensili standard <\/li><\/ul>\n", 
  "information\/knowledgeanalysis\/organization service": "servizio di organizzazione\/analisi di informazioni e conoscenze", 
  "January,February,March,April,May,June,July,August,September,October,November,December": "Gennaio,Febbraio,Marzo,Aprile,Maggio,Giugno,Luglio,Agosto,Settembre,Ottobre,Novembre,Dicembre", 

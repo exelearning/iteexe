@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-15 18:05+0200\n"
-"PO-Revision-Date: 2013-10-16 23:09+0200\n"
+"PO-Revision-Date: 2013-10-19 17:54+0100\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
-"Language:it\n"
+"Language: it\n"
 "Language-Team: Italian <primiani@dag.it>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
@@ -1992,7 +1992,7 @@ msgstr "Impossibile scaricare RSS da %s <br/>Controlla il collegamento e la conn
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
-msgstr "FPD - Attività scelta multipla"
+msgstr "FPD - Attività selezione multipla"
 
 #: exe/engine/sortidevice.py:45
 msgid "Sort Items"
@@ -9566,3 +9566,4 @@ msgstr "Impossibile fondere: il nome di una o più Applet Java esiste già (comp
 #: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "Il file idevices/generic.data oppure il pacchetto che si sta caricando è stato creato con una versione più recente di eXe. Aggiornare eXe e riprovare."
+
