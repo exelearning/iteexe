@@ -49,7 +49,7 @@ var MojoMagnify = (function () {
             var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
             if (re.exec(data) != null)
                 vernav = parseFloat(RegExp.$1);
-            if (vernav > 7) resul = true;
+            if (vernav > 8) resul = true;
         }
         return resul;
     }
