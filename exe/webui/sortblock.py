@@ -71,15 +71,8 @@ class SortBlockInc(Block):
         
         self.idevice.title = self.mainElements['title'].renderView()
         
-        try:
-            widthInt = int(self.mainElements['itemwidth'].renderView())
-            heightInt = int(self.mainElements['itemheight'].renderView())
-        except ValueError:
-            errorMsg = _("Please check that width and height are valid integers (under advanced options)")
-            self.idevice.edit = True
-            self.idevice.message = errorMsg
-             
-
+        field_engine_check_fields_are_ints(self.mainElements, ['itemwidth', 'itemheight'], thisIdevice = self.idevice)
+        
 
 
 
@@ -88,8 +81,7 @@ class SortBlockInc(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = u"<div>\n"
-        if self.idevice.message<>"":
-            html += common.editModeHeading(self.idevice.message)
+        html += common.ideviceShowEditMessage(self)
         
         html += self.idevice.mainFieldSet.renderEditInOrder(self.mainElements)
         for sortableElement in self.sortableItemElements:

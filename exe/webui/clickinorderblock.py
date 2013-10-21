@@ -26,7 +26,8 @@ from exe.webui.element          import TextAreaElement
 from exe.webui.element          import TextElement
 from exe.webui.element          import Element
 from exe.webui          	import common
-from exe.engine.extendedfieldengine        import ChoiceElement
+from exe.engine.extendedfieldengine        import ChoiceElement,\
+    field_engine_check_fields_are_ints
 
 log = logging.getLogger(__name__)
 
@@ -43,6 +44,7 @@ class ClickInOrderBlockInc(Block):
         self.clickableAreaElements = []
         self.questionOrderChoiceElement = ChoiceElement(idevice.questionOrderChoiceField)
         self.timerChoiceElement = ChoiceElement(idevice.timerChoiceField)
+        self.titleElement = TextElement(idevice.titleField)
 
         for textAreaFieldName, textAreaFieldVals in idevice.textAreaFieldNames.iteritems():
             self.mainTextAreaElements[textAreaFieldName] = TextAreaElement(idevice.textAreaFields[textAreaFieldName])
@@ -60,7 +62,10 @@ class ClickInOrderBlockInc(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
+        self.idevice.message = ""
         Block.process(self, request)
+        
+        self.titleElement.process(request)
 
         self.questionOrderChoiceElement.process(request)
         self.timerChoiceElement.process(request)
@@ -80,7 +85,12 @@ class ClickInOrderBlockInc(Block):
 
         for clickableAreaElement in self.clickableAreaElements:
             clickableAreaElement.process(request)
-
+            
+            
+        #validate integer fields are actually integers
+        field_engine_check_fields_are_ints(self.mainTextElements, \
+                            ["width", "height", "hintWidth", "hintHeight"], thisIdevice=self.idevice)
+        
 
     def renderXML(self, style):
         previewMode = False
@@ -123,7 +133,8 @@ class ClickInOrderBlockInc(Block):
             previewMode = True
             resourcePath = "resources/"
 
-        html = ""
+        html = common.ideviceHeader(self, style, mode)
+        
         html += \
         """
         <script src="%(resourcePath)sjquery-ui-1.10.3.custom.min.js" type="text/javascript"> </script>
@@ -271,6 +282,8 @@ class ClickInOrderBlockInc(Block):
         
         html += "<script type=\"text/javascript\">clickInOrderGame%(gameId)s.init();</script>\n" % { 'gameId': str(self.id) }
         
+        html += common.ideviceFooter(self, style, mode)
+        
         return html
 
     def renderEdit(self, style):
@@ -278,8 +291,10 @@ class ClickInOrderBlockInc(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = u"<div>\n"
+        html += common.ideviceShowEditMessage(self)
+            
         html += \
-        """
+        _("""
         <h2>Click The Elements in Order Game</h2>
         <p>
                 This builds a Javascript game where the player has to click on a certain place on the main area according to the hint.  
@@ -288,22 +303,40 @@ class ClickInOrderBlockInc(Block):
                 can be set to make the item disappear if desired after a delay.
         </p>
 
-        """
+        """)
+        html += self.titleElement.renderEdit()
+        
         for textAreaFieldName, textAreaElement in self.mainTextAreaElements.iteritems():
             html += textAreaElement.renderEdit()
 
-        for textFieldName, textElement in self.mainTextElements.iteritems():
-            html += textElement.renderEdit()
+        #for textFieldName, textElement in self.mainTextElements.iteritems():
+        #    html += textElement.renderEdit()
+        for textFieldName in self.idevice.textFieldsBasic:
+            html += self.mainTextElements[textFieldName].renderEdit()
+        
+        divId = "fieldtype_advanced"  + self.id
+        html += "<input name='showbox" + divId + "' type='checkbox' onchange='$(\"#" + divId + "\").toggle()'/>"
+        
+        html += _("Show") + " Advanced " + _("options") + "<br/>"
+        html += "<div id='" + divId + "' style='display: none' "
+        html += ">"
+            
+            
+        for textFieldName in self.idevice.textFieldsAdvanced:
+            html += self.mainTextElements[textFieldName].renderEdit()
+        
+        html += "</div>"
+        html += "<br/>"
 
         html += self.questionOrderChoiceElement.renderEdit()
         html += self.timerChoiceElement.renderEdit()
 
-        html += "<h2>Clickable Areas</h2>"
+        html += _("<h2>Clickable Areas</h2>")
         for clickableAreaElement in self.clickableAreaElements:
             html += clickableAreaElement.renderEdit()
 
         html += "<br/>"
-        html += common.submitButton("addClickableArea"+unicode(self.id), "Add Placable Object")
+        html += common.submitButton("addClickableArea"+unicode(self.id), _("Add Clickable Area"))
         html += "<br/>"
 
         html += self.renderEditButtons()
@@ -315,12 +348,8 @@ class ClickInOrderBlockInc(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html = ""
         html += self._renderGame(style, "preview")
-        html += self.renderViewButtons()
-        html += "</div>\n"
         return html
 
 
@@ -328,10 +357,8 @@ class ClickInOrderBlockInc(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html = ""
         html += self._renderGame(style, "view")
-        html += u"</div>\n"
         return html
 
 class ClickInOrderClickableAreaElement(Element):
@@ -351,6 +378,8 @@ class ClickInOrderClickableAreaElement(Element):
 
     def process(self, request):
         #see if its time to delete ourselves
+        self.field.message = ""
+        
         if "action" in request.args and request.args["action"][0] == self.id:
             self.field.idevice.clickableAreaFields.remove(self.field)
             
@@ -358,10 +387,14 @@ class ClickInOrderClickableAreaElement(Element):
             textElement.process(request)
         for textAreaElementName, textAreaElement in self.textAreaElements.iteritems():
             textAreaElement.process(request)
+        
+        errMsg = field_engine_check_fields_are_ints(self.textElements, \
+                    ['top', 'left', 'width', 'height', 'hideDelay'], None, self.field.idevice, self.field)
+            
    
     def renderEdit(self):
         html = "<div stlye='border: 1px solid green; padding-top: 20px;'>"
-        
+        html += common.fieldShowEditMessageEle(self)
         textElementItems = ["left", "top", "width", "height", "hideDelay"]
         textAreaItems = ["Hint", "ShowMe"]
         

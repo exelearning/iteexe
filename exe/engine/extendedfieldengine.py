@@ -509,3 +509,39 @@ def field_engine_apply_template_to_element_arr(templateString, elementArr, field
     retVal = template.safe_substitute(ourDict)
     return retVal
 
+"""
+Validates to see if a given list of elements are actually integers
+
+Return blank if all are OK, message otherwise for display to user
+elementDict : Dictionary in the form of key -> element
+elementToCheckArr: List of the element names to be checked
+elementNameDict: If not None this will be used to look up a user friendly name for this field
+Idevice - the idevice we are working with
+Field - if a specific field that can take its own message (eg. a collection of fields itself)
+"""
+def field_engine_check_fields_are_ints(elementDict, elementToCheckArr, elementNamesDict = None, thisIdevice = None, messageField = None):
+    errMsg = ""
+    for fieldName in elementToCheckArr:
+        try:
+            val = int(elementDict[fieldName].renderView())
+        except ValueError:
+            fieldNameFriendly = fieldName
+            if elementNamesDict is not None and fieldName in elementNamesDict:
+                fieldNameFriendly = elementNamesDict[fieldName]
+            
+            errMsg += fieldNameFriendly + " " + _("is not a valid number - please try again<br/>")
+    
+    if errMsg != "" and thisIdevice is not None:
+        thisIdevice.edit = True
+        if messageField is None:
+            thisIdevice.message += errMsg
+        else:
+            messageField.message += errMsg
+    
+    return errMsg 
+            
+            
+
+
+
+

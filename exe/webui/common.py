@@ -164,6 +164,17 @@ def ideviceFooter(e, style, mode):
             h += "</"+sectionTag+">"+lb # Close extra div (e.idevice.klass)
     h += "</"+articleTag+">"+lb # Close iDevice
     return h
+
+def ideviceShowEditMessage(block):
+    if block.idevice.message<>"":
+       return editModeHeading(block.idevice.message)
+    else:
+        return ""
+def fieldShowEditMessageEle(element):
+    if element.field.message<> "":
+        return editModeHeading(element.field.message)
+    else:
+        return ""
     
 def getJavaScriptStrings():
     s = '<script type="text/javascript">$exe_i18n={'

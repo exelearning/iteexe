@@ -18,9 +18,8 @@
 # ===========================================================================
 
 """
-This is an example of a user created iDevice plugin.  If it is copied
-into the user's ~/.exe/idevices dircectory it will be loaded along with
-the system idevices.
+Click In Order makes an activity where the user has to click a given
+area according to a hint that gets shown
 """
 
 import logging
@@ -40,6 +39,9 @@ INDEX_DEFAULTVALUEFIELD = 2
 
 # ===========================================================================
 class ClickInOrderIdeviceInc(Idevice):
+    
+    persistenceVersion = 2
+    
     """
     Click in order according to the hint game...
     """
@@ -47,17 +49,21 @@ class ClickInOrderIdeviceInc(Idevice):
         Idevice.__init__(self, _(u"Click In Order Game"), 
                          _(u"PAIWASTOON Networking Services Ltd."), 
                          _(u"""Click in Order according to the hint on the map."""), "", "")
-        self.emphasis = Idevice.NoEmphasis
+        self.emphasis = Idevice.SomeEmphasis
+        self.message = ""
+        
+        self.titleField = TextField(_("Title"), _("Title"))
+        
         """
         List of the text area fields that are here Id which will be generated mapped to the title and help in an array
         """
         self.textAreaFieldNames = {\
-                'Instructions' : ['Game Instructions', 'Instructions to show in leading paragraph'],\
-                'CompleteFeedback' : ['Game Won Feedback Overlay', 'Shown over when the game is won'],\
-                'PositiveFeedback' : ['Correct Answer Feedback Overlay', 'Shown over game when correct answer given'],\
-                'NegativeFeedback' : ['Wrong Answer Feedback Overlay', 'Shown over game when wrong answer is given'],\
-                'MainArea' : ['Main Area To Show', 'The Main Game Area on which to locate items'],\
-                'ClickToStartArea' : ['Area shown before the game starts', 'User will click on this to start the game']\
+                'Instructions' : [_('Game Instructions'), _('Instructions to show in leading paragraph')],\
+                'CompleteFeedback' : [_('Game Won Feedback Overlay'), _('Shown over when the game is won')],\
+                'PositiveFeedback' : [_('Correct Answer Feedback Overlay'), _('Shown over game when correct answer given')],\
+                'NegativeFeedback' : [_('Wrong Answer Feedback Overlay'), _('Shown over game when wrong answer is given')],\
+                'MainArea' : [_('Main Area To Show'), _('The Main Game Area on which to locate items')],\
+                'ClickToStartArea' : [_('Area shown before the game starts'), _('User will click on this to start the game')]\
                 }
         self.textAreaFields = {}
         for textAreaFieldName, textAreaDesc in self.textAreaFieldNames.iteritems():
@@ -65,14 +71,17 @@ class ClickInOrderIdeviceInc(Idevice):
                 textAreaDesc[INDEX_INSTRUCTIONFIELD], "")
             self.textAreaFields[textAreaFieldName].idevice = self
 
+        self.textFieldsBasic = ["width", "height"]
+        self.textFieldsAdvanced = ["elementCounterStyle", "hintWidth", "hintHeight", "hintAreaStyle", "timerStyle"]
+        
         self.textFieldNames = {\
-                'width' : ['Game Width', 'Width of game area (in pixels)', '300'],\
-                'height' : ['Game Height', 'Height of game area (in pixels)', '300'],\
-                'elementCounterStyle' : ['Style of Element Counter', 'Use CSS to style element that counts number items found'],\
-                'hintWidth' : [ 'Hint Width', 'Width (px) of hint area', '300'],\
-                'hintHeight' : [ 'Hint Height', 'Height (px) of hint area', '50'],\
-                'hintAreaStyle' : ['Hint Area Style', 'Style of Hint Area'],\
-                'timerStyle' : ['Style of timer Element', 'Style of timer (CSS)']
+                'width' : [_('Game Width'), _('Width of game area (in pixels)'), '300'],\
+                'height' : [_('Game Height'), _('Height of game area (in pixels)'), '300'],\
+                'elementCounterStyle' : [_('Style of Element Counter'), _('Use CSS to style element that counts number items found')],\
+                'hintWidth' : [ _('Hint Width'), _('Width (px) of hint area'), '300'],\
+                'hintHeight' : [ _('Hint Height'), _('Height (px) of hint area'), '50'],\
+                'hintAreaStyle' : [_('Hint Area Style'), _('Style of Hint Area')],\
+                'timerStyle' : [_('Style of timer Element'), _('Style of timer (CSS)')]
                 }
         self.textFields = {}
         for textFieldName, textFieldDesc in self.textFieldNames.iteritems():
@@ -87,16 +96,23 @@ class ClickInOrderIdeviceInc(Idevice):
 
         #Game Mode Choice
         gameModeChoice = [ ['0', 'Dont Shuffle'], ['1', 'Shuffle'] ]
+        #so these are seen for localization
+        _("Dont Shuffle")
+        _("Shuffle")
+        
         timerModeChoice = [ ['0', 'No Timer'], ['1', 'Stopwatch Mode'] ]
-        self.questionOrderChoiceField = ChoiceField(self, gameModeChoice, "Shuffle Questions", "Randomize question order or not")
-        self.timerChoiceField = ChoiceField(self, timerModeChoice, "Use Timer?", "Use a Timer")
+        _("No Timer")
+        _("Stopwatch Mode")
+        
+        self.questionOrderChoiceField = ChoiceField(self, gameModeChoice, _("Shuffle Questions"), _("Randomize question order or not"))
+        self.timerChoiceField = ChoiceField(self, timerModeChoice, _("Use Timer?"), _("Use a Timer"))
         
         #these are the areas that can actually be clicked on
         self.clickableAreaFields = []
         self.addClickableField()
 
     def addClickableField(self):
-        newClickableArea = ClickInOrderClickableAreaField("Clickable Area", self)
+        newClickableArea = ClickInOrderClickableAreaField(_("Clickable Area"), self)
         self.clickableAreaFields.append(newClickableArea)
 
     """
@@ -116,6 +132,8 @@ class ClickInOrderIdeviceInc(Idevice):
             if gameScriptFile.isfile():
                 Resource(self, gameScriptFile)
 
+    def upgradeToVersion2(self):
+        self.message = ""
 
 
 """
@@ -124,17 +142,18 @@ a hide delay, a hint and a showme item
 """
 class ClickInOrderClickableAreaField(Field):
     
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self, name, idevice, instruction="A place to click on in the main area", content=""):
         Field.__init__(self, name, instruction)
         self.idevice = idevice
+        self.message = ""
         self.textFieldNames = {\
-                'top' : ['Top (Y) Coord', 'Top CSS top property'],\
-                'left' : ['Left (X) Coord', 'Left CSS left property'],\
-                'width' : ['Width (px)', 'Width of clickable area'],\
-                'height' : ['Height (px)', 'Height of clickable area'],\
-                'hideDelay' : ['Delay (ms) to hide revealed contents', 'After delay ms hide the content prev revealed']\
+                'top' : [_('Top (Y) Coord'), _('Top CSS top property')],\
+                'left' : [_('Left (X) Coord'), _('Left CSS left property')],\
+                'width' : [_('Width (px)'), _('Width of clickable area')],\
+                'height' : [_('Height (px)'), _('Height of clickable area')],\
+                'hideDelay' : [_('Delay (ms) to hide revealed contents'), _('After delay ms hide the content prev revealed')]\
                 }
         self.textFields = {}
 
@@ -144,8 +163,8 @@ class ClickInOrderClickableAreaField(Field):
             self.textFields[textFieldName].idevice = self.idevice
         
         self.textAreaFieldNames = {\
-                'Hint' : ['Hint to Show for this item', 'The hint that will appear under the map for this item'],\
-                'ShowMe' : ['Item Revealed', 'The Item that will be revealed in place']\
+                'Hint' : [_('Hint to Show for this item'), _('The hint that will appear under the map for this item')],\
+                'ShowMe' : [_('Item Revealed'), _('The Item that will be revealed in place')]\
         }
 
         self.textAreaFields = {}
@@ -155,6 +174,8 @@ class ClickInOrderClickableAreaField(Field):
                 textAreaFieldDetails[INDEX_INSTRUCTIONFIELD], "")
             self.textAreaFields[textAreaFieldName].idevice = self.idevice
 
+    def upgradeToVersion4(self):
+        self.message = ""
 # ===========================================================================
 def register(ideviceStore):
     """Register with the ideviceStore"""
