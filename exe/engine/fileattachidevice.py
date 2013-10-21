@@ -44,8 +44,10 @@ class FileAttachIdeviceInc(Idevice):
         
         self.showDesc = ChoiceField(self, [["yes" , "Yes"], ["no" , "No"]],\
                                     "Show description and link", "Show Description")
-        self.introHTML = TextAreaField("Intro Text")
+        self.showDesc.idevice = self
         
+        self.introHTML = TextAreaField("Intro Text", "Intro Text")
+        self.introHTML.idevice = self
         self.addFileAttachmentField()
         
         #because it looks like a paperclip :)

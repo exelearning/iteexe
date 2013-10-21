@@ -86,12 +86,12 @@ class FileAttachBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
-        html += "<h2>File Attachment</h2>"
-        html += "<p>Here you can attach arbitary files to the package that will be included with the export</p>"
-        html += "<p>You can choose to display links or not below</p>"
+        html  = _(u"<div>\n")
+        html += _("<h2>File Attachment</h2>")
+        html += _("<p>Here you can attach arbitary files to the package that will be included with the export</p>")
+        html += _("<p>You can choose to display links or not below</p>")
         
-        html += "<strong>Title:</strong><br/>"
+        html += _("<strong>Title:</strong><br/>")
         html += common.textInput("title"+self.id, self.idevice.title)
         html += "<br/>"
         html += self.showDescBlock.renderEdit()
@@ -101,7 +101,7 @@ class FileAttachBlockInc(Block):
         for fileElement in self.fileAttachmentElements:
             html += fileElement.renderEdit()
             
-        html += common.submitButton("addFileAttachment"+unicode(self.id), "Add Another File Attachment")
+        html += common.submitButton("addFileAttachment"+unicode(self.id), _("Add Another File Attachment"))
         html += "<br/>"
         html += self.renderEditButtons()
         html += u"</div>\n"
