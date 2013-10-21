@@ -31,7 +31,7 @@ log = logging.getLogger(__name__)
 EXEFIELDINFO_TYPE = 0
 EXEFIELDINFO_DESC = 1
 EXEFIELDINFO_HELP = 2
-EXEFIELDINFO_EXTAINFODICT = 3
+EXEFIELDINFO_EXTRAINFODICT = 3
 
 EXEFIELD_JQUERYUI_EFFECTLIST = [ ["blind" , "Blind"], ["bounce" , "Bounce"], \
     ["drop" , "Drop"], ["explode", "Explode"], ["fold", "Fold"], ["highlight", "Highlight"], ["puff", "Puff"], \
@@ -70,12 +70,50 @@ class ExtendedFieldSet(Field):
         elementDict = field_engine_build_elements_on_block(self.fieldInfoDict, self.fields, self.idevice)
         return elementDict
 
-    def renderEditInOrder(self, elementDict):
+    def renderEditInOrder(self, elementDict, request = None):
         html = ""
+        #when field has a "type" go and render those types with a show/hide option to simplify editing
+        otherFieldTypeDict = {}
         for fieldId in self.fieldOrder:
             currentElement = elementDict[fieldId]
-            html += currentElement.renderEdit()
-
+            isOtherType = False
+            if len(self.fieldInfoDict[fieldId]) > EXEFIELDINFO_EXTRAINFODICT:
+                if "type" in self.fieldInfoDict[fieldId][EXEFIELDINFO_EXTRAINFODICT]:
+                    isOtherType = True
+            
+            if isOtherType is False:        
+                html += currentElement.renderEdit()
+            else:
+                fieldType = self.fieldInfoDict[fieldId][EXEFIELDINFO_EXTRAINFODICT]['type']
+                if not fieldType in otherFieldTypeDict:
+                    otherFieldTypeDict[fieldType] = []
+                
+                otherFieldTypeDict[fieldType].append(fieldId)
+        
+        for fieldType in otherFieldTypeDict:
+            divId = "fieldtype_" + fieldType + self.id
+            sectionChecked = False
+            if request is not None:
+                if "showbox" + divId in request.args:
+                    sectionChecked = True
+            
+            
+            html += "<input name='showbox" + divId + "' type='checkbox' onchange='$(\"#" + divId + "\").toggle()'"
+            if sectionChecked is True:
+                html += " checked='checked' "
+            html += "/>"
+            
+            html += _("Show") + " " +  fieldType + " " + _("options")
+            html += "<div id='" + divId + "' "
+            if sectionChecked is False:
+                html += " style='display: none' "
+            html += ">"
+            
+            for fieldId in otherFieldTypeDict[fieldType]:
+                currentElement = elementDict[fieldId]
+                html += currentElement.renderEdit()
+            html += "</div>"
+        
         return html
 
     def getRenderDictionary(self, elementDict, keyPrefix, previewMode):
@@ -141,7 +179,7 @@ class ChoiceElement(Element):
                 selectStr = " selected='selected' "
 
             html += "<option value='%(elementval)s' %(selectstr)s >%(elementdesc)s</option>\n" \
-                % {'elementval' : currentOption[0], 'elementdesc' : currentOption[1], 'selectstr' : selectStr }
+                % {'elementval' : currentOption[0], 'elementdesc' : _(currentOption[1]), 'selectstr' : selectStr }
         html += "</select><br/><br/>"
         return html
 
@@ -332,9 +370,9 @@ def field_engine_process_all_elements(elementDict, request):
         element.process(request)
 
 def getFieldDefaultVal(fieldId, fieldInfoDict):
-    if len(fieldInfoDict[fieldId]) > EXEFIELDINFO_EXTAINFODICT:
-        if "defaultval" in fieldInfoDict[fieldId][EXEFIELDINFO_EXTAINFODICT]:
-            return fieldInfoDict[fieldId][EXEFIELDINFO_EXTAINFODICT]['defaultval']
+    if len(fieldInfoDict[fieldId]) > EXEFIELDINFO_EXTRAINFODICT:
+        if "defaultval" in fieldInfoDict[fieldId][EXEFIELDINFO_EXTRAINFODICT]:
+            return fieldInfoDict[fieldId][EXEFIELDINFO_EXTRAINFODICT]['defaultval']
         
     return None
 
@@ -360,7 +398,7 @@ def field_engine_check_field(fieldId, fieldInfoDict, fieldDict, idevice):
     elif fieldTypeName == 'textarea':
         newField = TextAreaField(fieldInfoDict[fieldId][EXEFIELDINFO_DESC], fieldInfoDict[fieldId][EXEFIELDINFO_HELP])
     elif fieldTypeName == 'choice':
-        newField = ChoiceField(idevice, fieldInfoDict[fieldId][EXEFIELDINFO_EXTAINFODICT]['choices'], fieldInfoDict[fieldId][EXEFIELDINFO_DESC], fieldInfoDict[fieldId][EXEFIELDINFO_HELP])
+        newField = ChoiceField(idevice, fieldInfoDict[fieldId][EXEFIELDINFO_EXTRAINFODICT]['choices'], fieldInfoDict[fieldId][EXEFIELDINFO_DESC], fieldInfoDict[fieldId][EXEFIELDINFO_HELP])
 
     newField.idevice = idevice
     

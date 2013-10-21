@@ -25,6 +25,7 @@ import logging
 from exe.webui.block            import Block
 from exe.webui.element          import TextAreaElement
 from exe.engine.extendedfieldengine import *
+from exe.webui import common
 log = logging.getLogger(__name__)
 
 
@@ -48,6 +49,7 @@ class SortBlockInc(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
+        self.idevice.message = ""
         Block.process(self, request)
         for sortableElement in self.sortableItemElements:
             sortableElement.process(request)
@@ -55,14 +57,29 @@ class SortBlockInc(Block):
             field_engine_check_delete(sortableElement, request, self.idevice.itemsToSort)
                 
         self.idevice.uploadNeededScripts()
-
+        
+        errorMsg = ""
+        
         if "addSortableItem" + unicode(self.id) in request.args: 
             self.idevice.addItemToSort()
             self.idevice.edit = True
             self.idevice.undo = False
+        
             
         
         field_engine_process_all_elements(self.mainElements, request)
+        
+        self.idevice.title = self.mainElements['title'].renderView()
+        
+        try:
+            widthInt = int(self.mainElements['itemwidth'].renderView())
+            heightInt = int(self.mainElements['itemheight'].renderView())
+        except ValueError:
+            errorMsg = _("Please check that width and height are valid integers (under advanced options)")
+            self.idevice.edit = True
+            self.idevice.message = errorMsg
+             
+
 
 
 
@@ -71,13 +88,16 @@ class SortBlockInc(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = u"<div>\n"
+        if self.idevice.message<>"":
+            html += common.editModeHeading(self.idevice.message)
+        
         html += self.idevice.mainFieldSet.renderEditInOrder(self.mainElements)
         for sortableElement in self.sortableItemElements:
             html += sortableElement.renderEdit()
             html += field_engine_make_delete_button(sortableElement)
             html += "<br/>"
             
-        html += common.submitButton("addSortableItem"+unicode(self.id), "Add Another Item to be Sorted")
+        html += common.submitButton("addSortableItem"+unicode(self.id), _("Add Another Item to be Sorted"))
         html += "<br/>"
         html += self.renderEditButtons()
         html += u"</div>\n"
@@ -88,12 +108,14 @@ class SortBlockInc(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        #html  = u"<div class=\"iDevice "
+        #html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        #html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html = common.ideviceHeader(self, style, "preview")
         html += self._renderGame(True)
-        html += self.renderViewButtons()
-        html += "</div>\n"
+        #html += self.renderViewButtons()
+        #html += "</div>\n"
+        html += common.ideviceFooter(self, style, "preview")
         return html
 
     def renderXML(self, style, previewMode = False):
@@ -169,10 +191,11 @@ class SortBlockInc(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        #html  = u"<div class=\"iDevice "
+        #html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html = common.ideviceHeader(self, style, "view")
         html += self._renderGame(False)
-        html += u"</div>\n"
+        html += common.ideviceFooter(self, style, "view")
         return html
     
 
