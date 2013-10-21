@@ -10,14 +10,16 @@ msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-10-15 18:05+0200\n"
-"PO-Revision-Date: 2013-07-10 20:36+0800\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
+"PO-Revision-Date: 2013-10-21 13:10+0800\n"
+"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: zh_TW\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: exe/application.py:204
 #, python-format
@@ -32,6 +34,14 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"用法：%s [選項] [套件]\n"
+"  -V, --version    印出版本資訊並離開\n"
+"  -h, --help    顯示此說明頁面並離開\n"
+"  --standalone  完全從目前的目錄執行\n"
+"  --portable  以可攜模式執行\n"
+"設定會從 $HOME/.exe（Linux/Unix/Mac OS）或是 Documents and Settings/<username>"
+"/Application Data/exe（Windows XP） 或是 Users/<username>"
+"/AppData/Roaming/exe（Windows 7）裡的 exe.conf 檔中讀取。"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -103,36 +113,31 @@ msgid "Sorry, this URL is unreachable"
 msgstr "抱歉，此網址無法連線"
 
 #: exe/engine/appletidevice.py:524
-#, fuzzy
 msgid ""
 "Click on the AddFiles button to select the .ggb file and then click on "
 "the Upload button."
 msgstr "點擊「新增檔案」按鍵，選擇 .ggb 檔並點擊「上傳」。"
 
 #: exe/engine/appletidevice.py:534
-#, fuzzy
 msgid ""
 "Click on the AddFiles button to select the .jclic.zip file and then click"
 " on the Upload button.<p>The activity will be visible when the HTML file "
 "will be generated from eXe."
-msgstr "點擊「新增檔案」按鍵，選擇 .jclic 檔並點擊「上傳」。<p>此活動會在 eXe 產生 HTML 檔時出現。"
+msgstr "點擊「新增檔案」按鍵，選擇 .jclic.zip 檔並點擊「上傳」。<p>此活動會在 eXe 產生 HTML 檔時出現。"
 
 #: exe/engine/appletidevice.py:544
-#, fuzzy
 msgid ""
 "Click on the AddFiles button to select the .sb or .scratch file and then "
 "click on the Upload button."
 msgstr "點擊「新增檔案」按鍵，選擇 .sb 或 .scratch 檔並點擊「上傳」。"
 
 #: exe/engine/appletidevice.py:555
-#, fuzzy
 msgid ""
 "Please enter: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; click on the Upload button afterwards."
 msgstr "請寫下：場景編號，它的網址（無空白），例如：3,http://example.com；然後點擊「上傳」。"
 
 #: exe/engine/appletidevice.py:557
-#, fuzzy
 msgid ""
 "Click on the AddFiles button to select the .html or .htm file and then "
 "click on the Upload button to get its content."
@@ -237,7 +242,8 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
+"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允"
+"許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
 "\n"
 "<ul> \n"
 "<li>\t在這個故事情境中您所要傳達的教學要點</li>\n"
@@ -336,7 +342,7 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:48
 msgid "PAIWASTOON Networking Services Ltd."
-msgstr ""
+msgstr "PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/clickinorderidevice.py:49
 msgid "Click in Order according to the hint on the map."
@@ -358,7 +364,9 @@ msgid ""
 " </li></ol>"
 msgstr ""
 "<p>克漏字 (Cloze) "
-"練習是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>確認單字的組成與文法的完成度。</li></ol>"
+"練習是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>"
+"確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>"
+"確認單字的組成與文法的完成度。</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:61 exe/engine/clozeidevice.py:60
 #: exe/engine/clozelangfpdidevice.py:61
@@ -415,7 +423,9 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select"
 " it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p>"
+msgstr ""
+"<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>"
+"要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p>"
 
 #: exe/engine/clozefpdidevice.py:129 exe/engine/clozefpdidevice.py:279
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
@@ -482,12 +492,12 @@ msgstr "克漏字語言"
 #: exe/engine/config.py:62 exe/engine/config.py:63 exe/engine/config.py:67
 #: exe/engine/config.py:94
 msgid "Non-Interactive Activities"
-msgstr ""
+msgstr "非互動式活動"
 
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 msgid "Interactive Activities"
-msgstr ""
+msgstr "互動式活動"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
@@ -506,12 +516,12 @@ msgstr ""
 #: exe/engine/config.py:82 exe/engine/config.py:83 exe/engine/config.py:84
 #: exe/engine/config.py:85 exe/engine/config.py:86
 msgid "FPD"
-msgstr ""
+msgstr "FPD"
 
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
 #: exe/engine/config.py:102 exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Unclassified"
-msgstr ""
+msgstr "未分類"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -655,7 +665,8 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong"
 " answer\"\n"
 "for the other options."
-msgstr "輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
+msgstr ""
+"輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
 #: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
@@ -674,12 +685,12 @@ msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。
 #: exe/engine/extendedfieldengine.py:231
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
-msgstr ""
+msgstr "瀏覽"
 
 #: exe/engine/extendedfieldengine.py:233
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
-msgstr ""
+msgstr "取代"
 
 #: exe/engine/extendedfieldengine.py:235 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
@@ -786,7 +797,8 @@ msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
-msgstr "<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
+msgstr ""
+"<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
 
 #: exe/engine/field.py:3538
 msgid ""
@@ -864,16 +876,16 @@ msgstr "回饋意見："
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
-msgstr ""
+msgstr "檔案附件"
 
 #: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:42
 #: exe/engine/sortidevice.py:46
 msgid "Toughra Technologies FZ LLC."
-msgstr ""
+msgstr "Toughra Technologies FZ LLC."
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
-msgstr ""
+msgstr "檔案附件 idevice。"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
@@ -1048,11 +1060,11 @@ msgstr "閱讀活動"
 
 #: exe/engine/hangmanidevice.py:51
 msgid "Hangman Game"
-msgstr ""
+msgstr "劊子手（hangman）遊戲"
 
 #: exe/engine/hangmanidevice.py:52
 msgid "Mike Dawson, Toughra Technologies FZ LLC"
-msgstr ""
+msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
@@ -1074,7 +1086,7 @@ msgstr "標題"
 
 #: exe/engine/hangmanidevice.py:58
 msgid "Title of Game."
-msgstr ""
+msgstr "遊戲標題。"
 
 #: exe/engine/idevicestore.py:534
 msgid ""
@@ -1086,7 +1098,8 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical"
 " task \n"
 "based on the reading.</p>"
-msgstr "<p>「閱讀活動」主要是用於測試學生對特定文字的閱讀理解能力。可以用詢問學生關於閱讀內容的問題，或是讓學生們根據閱讀的內容執行某些工作。</p>"
+msgstr ""
+"<p>「閱讀活動」主要是用於測試學生對特定文字的閱讀理解能力。可以用詢問學生關於閱讀內容的問題，或是讓學生們根據閱讀的內容執行某些工作。</p>"
 
 #: exe/engine/idevicestore.py:539
 msgid ""
@@ -1414,7 +1427,7 @@ msgstr ""
 
 #: exe/engine/listaidevice.py:292
 msgid "Read the paragraph below and choose the correct words"
-msgstr ""
+msgstr "閱讀底下的段落，並選取正確的單字"
 
 #: exe/engine/listaidevice.py:345
 msgid ""
@@ -1466,11 +1479,11 @@ msgstr "您可以用工具列，或是手動輸入 latex 指令到文字編輯�
 
 #: exe/engine/memorymatchidevice.py:41
 msgid "Memory Match Game"
-msgstr ""
+msgstr "記憶遊戲"
 
 #: exe/engine/memorymatchidevice.py:43
 msgid "Memory Match Game Maker."
-msgstr ""
+msgstr "記憶遊戲產生器。"
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
@@ -1517,15 +1530,15 @@ msgstr "多重選擇"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
-msgstr ""
+msgstr "備註"
 
 #: exe/engine/notaidevice.py:45
 msgid "exelearning.net"
-msgstr ""
+msgstr "exelearning.net"
 
 #: exe/engine/notaidevice.py:53
 msgid "Comment:"
-msgstr ""
+msgstr "註解："
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:30
 msgid "FPD - Guidelines Students"
@@ -1598,9 +1611,8 @@ msgid "iDevice Editor"
 msgstr "iDevice 編輯器"
 
 #: exe/engine/package.py:1439
-#, fuzzy
 msgid "My Catalog"
-msgstr "目錄"
+msgstr "我的目錄"
 
 #: exe/engine/parasabermasfpdidevice.py:30
 msgid "FPD - A Step Ahead"
@@ -1628,15 +1640,15 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:45
 msgid "Place The Objects"
-msgstr ""
+msgstr "放置物件"
 
 #: exe/engine/placetheobjectsidevice.py:46
 msgid "Mike Dawson / PAIWASTOON Networking Services Ltd."
-msgstr ""
+msgstr "Mike Dawson / PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/placetheobjectsidevice.py:47
 msgid "User has to place various objects in the correct place."
-msgstr ""
+msgstr "使用者必須將不同的物件放在正確的位置上。"
 
 #: exe/engine/placetheobjectsidevice.py:50 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
@@ -1644,7 +1656,7 @@ msgstr "這是一個自由文字欄位。"
 
 #: exe/engine/placetheobjectsidevice.py:55
 msgid "Main Area"
-msgstr ""
+msgstr "主要區域"
 
 #: exe/engine/placetheobjectsidevice.py:56
 msgid "This is the main image where the user will drag / drop items to"
@@ -1652,71 +1664,71 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:60
 msgid "Time Limit (mm:ss)"
-msgstr ""
+msgstr "時間限制（分：秒）"
 
 #: exe/engine/placetheobjectsidevice.py:60
 msgid "(Optional) Game Time Limit"
-msgstr ""
+msgstr "（選擇性的）遊戲時間限制"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "Show Timer"
-msgstr ""
+msgstr "顯示計時器"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "Even if there is no time limit, show the timer..."
-msgstr ""
+msgstr "即使沒有時間限制也顯示計時器。"
 
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Positive Response"
-msgstr ""
+msgstr "正向回應"
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Placable Object"
-msgstr ""
+msgstr "可放置物件"
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Object to be put in place"
-msgstr ""
+msgstr "要放的物件"
 
 #: exe/engine/placetheobjectsidevice.py:118
 msgid "Correct Location (x)"
-msgstr ""
+msgstr "正確位置 (x)"
 
 #: exe/engine/placetheobjectsidevice.py:118
 msgid "Where this object belongs in the main area x coordinate"
-msgstr ""
+msgstr "物件要擺放在主要區域中的位置的 x 座標"
 
 #: exe/engine/placetheobjectsidevice.py:121
 msgid "Correct Location (y)"
-msgstr ""
+msgstr "正確位置 (y)"
 
 #: exe/engine/placetheobjectsidevice.py:121
 msgid "Where this object belongs in the main area y coordinate"
-msgstr ""
+msgstr "物件要擺放在主要區域中的位置的 y 座標"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Width (pixels)"
-msgstr ""
+msgstr "寬度 (像素)"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Width of object"
-msgstr ""
+msgstr "物件寬度"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Height (pixels)"
-msgstr ""
+msgstr "高度 (像素)"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Height of object"
-msgstr ""
+msgstr "物件高度"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Tolerance (pixels)"
-msgstr ""
+msgstr "容忍度 (像素)"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Tolerance when dropping num of pixels"
-msgstr ""
+msgstr "放下時允許多少像素的誤差"
 
 #: exe/engine/quiztestidevice.py:123 exe/engine/quiztestidevice.py:186
 msgid ""
@@ -1889,11 +1901,11 @@ msgstr "FPD - 多重選擇活動"
 
 #: exe/engine/sortidevice.py:45
 msgid "Sort Items"
-msgstr ""
+msgstr "項目排序"
 
 #: exe/engine/sortidevice.py:47
 msgid "Sortable list of items."
-msgstr ""
+msgstr "項目的可排序清單。"
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
@@ -2054,6 +2066,8 @@ msgid ""
 "given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
 "singlepage, xliff or epub3."
 msgstr ""
+"將 <輸入檔> elp 套件利用以下格式之一匯出到 <輸出檔>：xml, scorm12, scorm2004, agrega, ims, 網站, "
+"webzip, 單一頁面, xliff 或 epub3。"
 
 #: exe/exe_do:101
 msgid ""
@@ -2067,7 +2081,7 @@ msgstr "強制覆寫 <輸出檔>"
 
 #: exe/exe_do:110
 msgid "Add the required files to generate a export editable by eXeLearning"
-msgstr ""
+msgstr "新增需要的檔案來產生匯出套件，以便讓 eXeLearning 可編輯"
 
 #: exe/exe_do:115
 msgid "XLIFF export options"
@@ -2110,7 +2124,7 @@ msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
-msgstr ""
+msgstr "您用 '-x scorm12', '-x scorm2004', 或 '-x agrega' 選擇 SCORM 後，可以設定以下的匯出選項："
 
 #: exe/exe_do:148
 msgid "Include Single Page export file"
@@ -2126,7 +2140,7 @@ msgstr "不能同時指定 --export 與 --import 選項。"
 
 #: exe/exe_do:171
 msgid "No --export, --import, --set or --report option supplied."
-msgstr ""
+msgstr "未提供 --export, --import, --set 或 --report 選項。"
 
 #: exe/exe_do:175
 msgid "No file input supplied."
@@ -2146,6 +2160,8 @@ msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The error was:"
 msgstr ""
+"exe_do: 錯誤：無法從 '%s' 設定值。\n"
+"錯誤為："
 
 #: exe/exe_do:227
 #, python-format
@@ -2214,11 +2230,11 @@ msgstr "下一頁"
 
 #: exe/export/singlepage.py:193
 msgid "You can close this window"
-msgstr ""
+msgstr "您可以關閉此視窗"
 
 #: exe/export/websitepage.py:134
 msgid "Skip navigation"
-msgstr ""
+msgstr "跳過導覽"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -2278,7 +2294,7 @@ msgstr "插入 %s 中"
 
 #: exe/jsui/idevicepane.py:132
 msgid "My iDevices"
-msgstr ""
+msgstr "我的 iDevice"
 
 #: exe/jsui/mainpage.py:299 exe/jsui/mainpage.py:764 exe/jsui/mainpage.py:911
 msgid "Cannot access directory named "
@@ -2335,6 +2351,8 @@ msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
 msgstr ""
+"LOM 中繼資料匯入失敗。\n"
+"%s"
 
 #: exe/jsui/mainpage.py:738
 msgid "Error importing HTML:\n"
@@ -2433,32 +2451,32 @@ msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 
 #: exe/jsui/mainpage.py:1289
-#, fuzzy, python-format
+#, python-format
 msgid "Correct Style import : %s"
-msgstr "正確的 XLIFF 匯入"
+msgstr "正確的 Style 匯入：%s"
 
 #: exe/jsui/mainpage.py:1292
 #, python-format
 msgid "Incorrect style file : %s"
-msgstr ""
+msgstr "不正確的 style 檔：%s"
 
 #: exe/jsui/mainpage.py:1309
 #, python-format
 msgid "Correct ZIP Style exported : %s"
-msgstr ""
+msgstr "已正確匯出 ZIP 樣式：%s"
 
 #: exe/jsui/mainpage.py:1312
 #, python-format
 msgid "can't export style : %s"
-msgstr ""
+msgstr "無法匯出樣式：%s"
 
 #: exe/jsui/mainpage.py:1329
 msgid "Style deleted "
-msgstr ""
+msgstr "樣式已刪除"
 
 #: exe/jsui/mainpage.py:1332
 msgid "can't delete style "
-msgstr ""
+msgstr "無法刪除樣式"
 
 #: exe/jsui/propertiespage.py:320
 msgid "Failed to get properties"
@@ -2528,11 +2546,11 @@ msgstr "錯誤"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:245
 msgid "The form contains invalid fields. Please check back."
-msgstr ""
+msgstr "此表單中包含不合法的欄位。請檢查。"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:327
 msgid "LOM Metadata import success!"
-msgstr ""
+msgstr "LOM 中繼資料匯入成功。"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
@@ -2572,7 +2590,6 @@ msgid "Preferences"
 msgstr "喜好設定"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:390
-#, fuzzy
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -2581,7 +2598,7 @@ msgstr "若您已做了變更但尚未儲存，變更的部份會遺失。您確
 #: exe/jsui/scripts/app/controller/Toolbar.js:416
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Style Manager"
-msgstr ""
+msgstr "樣式管理員"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:440
 msgid "Select package to insert"
@@ -2619,14 +2636,12 @@ msgid "HTML Files"
 msgstr "HTML 檔"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:516
-#, fuzzy
 msgid "Select LOM Metadata file to import."
-msgstr "選擇要匯入的 Xliff 檔"
+msgstr "選擇要匯入的 LOM 中繼資料檔"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:526
-#, fuzzy
 msgid "XML Files"
-msgstr "HTML 檔"
+msgstr "XML 檔"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:541
 msgid "Waiting progress..."
@@ -2676,20 +2691,19 @@ msgstr "文字檔"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:677
 msgid "Save package resources report as"
-msgstr ""
+msgstr "將套件資源報告另存為"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:686
 msgid "CSV File"
-msgstr ""
+msgstr "CSV 檔"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:694
-#, fuzzy
 msgid "Export EPUB3 package as"
-msgstr "將 IMS 套件匯出為"
+msgstr "將 EPUB3 套件匯出為"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:703
 msgid "EPUB3 File"
-msgstr ""
+msgstr "EPUB3 檔"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:711
 msgid "Export SCORM package as"
@@ -2742,9 +2756,8 @@ msgid "Saving package to: {filename}"
 msgstr "正在儲存套件到：{filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:912
-#, fuzzy
 msgid "Save file"
-msgstr "選擇檔案"
+msgstr "儲存檔案"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:918
 msgid "Saving package..."
@@ -2753,33 +2766,31 @@ msgstr "儲存套件中..."
 #: exe/jsui/scripts/app/controller/filepicker/Directory.js:75
 #: exe/jsui/scripts/app/controller/filepicker/File.js:168
 msgid "You do not have the permissions to open folder"
-msgstr ""
+msgstr "您沒有開啟資料夾的權限"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:160
 msgid "You do not have the permissions to write into folder"
-msgstr ""
+msgstr "您沒有寫入資料夾的權限"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:170
 msgid "You do not have the permissions to open the file"
-msgstr ""
+msgstr "您沒有開啟檔案的權限"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:324
 msgid "You do not have the permissions to  save into folder"
-msgstr ""
+msgstr "您沒有儲存資料夾的權限"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:336
-#, fuzzy
 msgid "Create Folder"
-msgstr "建立者"
+msgstr "建立資料夾"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:337
-#, fuzzy
 msgid "Enter the new folder name:"
-msgstr "輸入新名稱："
+msgstr "輸入新資料夾名稱："
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:351
 msgid "You do not have the permissions to create a folder in folder"
-msgstr ""
+msgstr "您沒有在資料夾中建立子資料夾的權限"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:357
 msgid "Confirm?"
@@ -2853,19 +2864,16 @@ msgid "Create Directory"
 msgstr "建立目錄"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:81
-#, fuzzy
 msgid "Save in:"
-msgstr "儲存"
+msgstr "儲存於："
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:87
-#, fuzzy
 msgid "Folder"
-msgstr "家目錄"
+msgstr "資料夾"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:88
-#, fuzzy
 msgid "Select Folder"
-msgstr "選擇檔案"
+msgstr "選擇資料夾"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
@@ -3049,16 +3057,14 @@ msgid ""
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
-#, fuzzy
 msgid "Global Options"
-msgstr "選項"
+msgstr "全域選項"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:44
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:51
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:55
-#, fuzzy
 msgid "Metadata Type"
-msgstr "中繼資料"
+msgstr "中繼資料型態"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:46
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:64
@@ -3067,26 +3073,26 @@ msgstr "都柏林核心集"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
 msgid "LOM v1.0"
-msgstr ""
+msgstr "LOM v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid "LOM-ES v1.0"
-msgstr ""
+msgstr "LOM-ES v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:61
 msgid "Create editable export?"
-msgstr ""
+msgstr "要建立可編輯的匯出嗎？"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:65
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:68
 msgid ""
 "Checking this option, the exported component will be editable with "
 "eXeLearning."
-msgstr ""
+msgstr "勾選此選項，匯出的組件可以用 eXeLearning 來編輯。"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2, 2004 and Agrega)"
-msgstr ""
+msgstr "SCORM 選項（1.2, 2004 與 Agrega）"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Add Previous/Next links within SCOs?"
@@ -3147,9 +3153,8 @@ msgstr "欄位語言"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:393
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:411
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:418
-#, fuzzy
 msgid "Taxon"
-msgstr "分類法"
+msgstr "Taxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:186
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:216
@@ -3274,135 +3279,123 @@ msgid "Email"
 msgstr "電子郵件"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:80
-#, fuzzy
 msgid "Metadata Schema"
-msgstr "中繼資料"
+msgstr "中繼資料機制"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:97
-#, fuzzy
 msgid "Location"
-msgstr "註記"
+msgstr "位置"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:98
-#, fuzzy
 msgid "Requirement"
-msgstr "需要的"
+msgstr "需求"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:104
-#, fuzzy
 msgid "Minimum Version"
-msgstr "版本"
+msgstr "最小版本"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:105
-#, fuzzy
 msgid "Maximum Version"
-msgstr "最大放大倍數"
+msgstr "最大版本"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:108
 msgid "Installation Remarks"
-msgstr ""
+msgstr "安裝標記"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:109
 msgid "Other Platform Requirements"
-msgstr ""
+msgstr "其他平台需求"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
-#, fuzzy
 msgid "Duration"
-msgstr "情境"
+msgstr "期間"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:113
-#, fuzzy
 msgid "Interactivity Type"
-msgstr "加入活動"
+msgstr "互動型態"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:114
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:148
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:153
 msgid "Learning Resource Type"
-msgstr ""
+msgstr "學習資源型態"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:115
-#, fuzzy
 msgid "Interactivity Level"
-msgstr "加入活動"
+msgstr "互動等級"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:116
 msgid "Semantic Density"
-msgstr ""
+msgstr "語意密度"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:117
 msgid "Intended End User Role"
-msgstr ""
+msgstr "特定終端用戶角色"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:118
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
-#, fuzzy
 msgid "Context"
-msgstr "文字"
+msgstr "情境"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:119
 msgid "Typical Age Range"
-msgstr ""
+msgstr "典型年齡範圍"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:120
 msgid "Difficulty"
-msgstr ""
+msgstr "困難度"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:121
 msgid "Typical Learning Time"
-msgstr ""
+msgstr "典型學習時間"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:126
 msgid "Cost"
-msgstr ""
+msgstr "成本"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:127
 msgid "Copyright And Other Restrictions"
-msgstr ""
+msgstr "版權與其他限制"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:131
 msgid "Kind"
-msgstr ""
+msgstr "種類"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:132
 #: exe/jsui/scripts/app/view/forms/LomSections.js:144
-#, fuzzy
 msgid "Resource"
-msgstr "來源"
+msgstr "資源"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:149
 msgid "Entity"
-msgstr ""
+msgstr "實體"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:264
 msgid "Purpose"
 msgstr "用途"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
-#, fuzzy
 msgid "Download Classification Sources"
-msgstr "分類"
+msgstr "下載分類來源"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:169
 msgid "Taxon Path"
-msgstr ""
+msgstr "Taxon 路徑"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:209
 msgid "Cognitive Process"
-msgstr ""
+msgstr "認知進程"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:210
 msgid "Access"
-msgstr ""
+msgstr "存取"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:214
-#, fuzzy
 msgid "Access Type"
-msgstr "小程式型態"
+msgstr "存取型態"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:24
 msgid "Required"
@@ -3415,81 +3408,75 @@ msgstr "選擇性的"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:131
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:162
 msgid "Warning!"
-msgstr ""
+msgstr "警告！"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:132
 msgid ""
 "You will loss all taxon config for this source. Would you like to "
 "continue?"
-msgstr ""
+msgstr "您會失去此來源所有的 taxon 設定。您要繼續嗎？"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:163
 msgid ""
 "You will loss all taxon config in this section. Would you like to "
 "continue?"
-msgstr ""
+msgstr "您會失去此章節中所有的 taxon 設定。您要繼續嗎？"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:342
 msgid "Years"
-msgstr ""
+msgstr "年"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:343
 msgid "Months"
-msgstr ""
+msgstr "月"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:344
 msgid "Days"
-msgstr ""
+msgstr "日"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:359
-#, fuzzy
 msgid "Hours"
-msgstr "HTML 課程"
+msgstr "小時"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:360
 msgid "Minutes"
-msgstr ""
+msgstr "分鐘"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:361
 msgid "Seconds"
-msgstr ""
+msgstr "秒"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:466
 msgid "Id"
-msgstr ""
+msgstr "代碼"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:627
-#, fuzzy
 msgid "Append Section"
-msgstr "章節"
+msgstr "附加章節"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:644
-#, fuzzy
 msgid "Delete Section"
-msgstr "刪除問題"
+msgstr "刪除章節"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
 msgid "Notice"
-msgstr ""
+msgstr "注意"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
 msgid "Should be at least one section of this type"
-msgstr ""
+msgstr "此型態至少要一個章節"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
-#, fuzzy
 msgid "Cataloguing"
 msgstr "目錄"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:92
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
-#, fuzzy
 msgid "Objectives."
 msgstr "目的"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:106
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
-#, fuzzy
 msgid "Preknowledge."
 msgstr "預備知識"
 
@@ -3518,19 +3505,19 @@ msgstr "選擇授權方式。"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
 msgid "Intended End User"
-msgstr ""
+msgstr "特定終端用戶"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
 msgid "For Group Work"
-msgstr ""
+msgstr "團隊工作"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
@@ -3542,7 +3529,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
-msgstr ""
+msgstr "形式"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
 msgid "Project Properties"
@@ -3611,16 +3598,17 @@ msgstr "更新樹狀圖"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
 msgid "Advanced Options"
-msgstr ""
+msgstr "進階選項"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:456
 msgid "Create package compatible with old eXe versions?"
-msgstr ""
+msgstr "要建立與舊的 eXe 版本相容的套件嗎？"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
-msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr ""
+msgid ""
+"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgstr "勾選此選項的話，儲存的套件可能可以用 eXe 0.20.4 版以上開啟。"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
 msgid "Select Language"
@@ -3644,63 +3632,63 @@ msgstr "關閉所有內部連結"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:74
 msgid "Select Browser"
-msgstr ""
+msgstr "選擇瀏覽器"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:128
 msgid "Show this window on eXe start"
-msgstr ""
+msgstr "eXe 啟動時顯示此視窗"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
 msgid "Export style: "
-msgstr ""
+msgstr "匯出樣式："
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
 msgid "Export to ZIP Style as"
-msgstr ""
+msgstr "匯出 ZIP 樣式為"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
 msgid "ZipFile"
-msgstr ""
+msgstr "Zip 檔"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
 msgid "Delete style: "
-msgstr ""
+msgstr "刪除樣式："
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
 msgid "Delete style?"
-msgstr ""
+msgstr "要刪除樣式嗎？"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
 msgid "Do you want to delete this style?"
-msgstr ""
+msgstr "您要刪除此樣式嗎？"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
 msgid "Show properties of style: "
-msgstr ""
+msgstr "顯示樣式屬性："
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
 msgid "Import style to the system "
-msgstr ""
+msgstr "將樣式匯入系統"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Select ZIP Style file to import."
-msgstr ""
+msgstr "選擇要匯入的 ZIP 樣式檔。"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
 msgid "ZIP Style"
-msgstr ""
+msgstr "ZIP 樣式"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
 msgid "List of styles in your system"
-msgstr ""
+msgstr "您系統中的樣式列表"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 msgid "Properties of style: "
-msgstr ""
+msgstr "樣式屬性："
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
 msgid "Return to style manager"
-msgstr ""
+msgstr "回到樣式管理員"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -3711,21 +3699,21 @@ msgstr "概述"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:125
 msgid "Ungroup iDevices"
-msgstr ""
+msgstr "取消 iDevices 群組"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
-msgstr ""
+msgstr "群組 iDevice"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:100
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:105
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
 msgid "Edit iDevices"
-msgstr ""
+msgstr "編輯 iDevice"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:113
 msgid "Save iDevices"
-msgstr ""
+msgstr "儲存 iDevice"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
@@ -3733,11 +3721,11 @@ msgstr "iDevice"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
-msgstr ""
+msgstr "類別"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:178
 msgid "Visible"
-msgstr ""
+msgstr "可見"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
@@ -3760,12 +3748,12 @@ msgstr "中繼資料"
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:76
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
-msgstr ""
+msgstr "LOM-ES"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
@@ -3848,27 +3836,24 @@ msgid "XLIFF File"
 msgstr "XLIFF 檔"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:221
-#, fuzzy
 msgid "Educational Standard"
-msgstr "教育"
+msgstr "教育標準"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
 msgid "Common Cartridge"
 msgstr "共用卡匣"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
-#, fuzzy
 msgid "SCORM1.2"
-msgstr "SCORM 1.2"
+msgstr "SCORM1.2"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
 msgid "SCORM2004"
 msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
-#, fuzzy
 msgid "Agrega SCORM2004"
-msgstr "SCORM2004"
+msgstr "Agrega SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
@@ -3892,7 +3877,7 @@ msgstr "單一頁面"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "Ustad Mobile"
-msgstr ""
+msgstr "Ustad Mobile"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "XLIFF"
@@ -3900,7 +3885,7 @@ msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "EPUB3"
-msgstr ""
+msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316
 msgid "Merging"
@@ -3916,7 +3901,7 @@ msgstr "工具"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Resources Report"
-msgstr ""
+msgstr "資源報告"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
@@ -4607,9 +4592,8 @@ msgid "Uzbek "
 msgstr "烏茲別克語"
 
 #: exe/jsui/scripts/langs.js:632
-#, fuzzy
 msgid "Valencian "
-msgstr "斯洛文尼亞語"
+msgstr "瓦倫西亞語"
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
@@ -4652,204 +4636,192 @@ msgid "Zulu "
 msgstr "祖魯語"
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
-#, fuzzy
 msgid "active"
-msgstr "目的"
+msgstr "作用中"
 
 #: exe/jsui/scripts/lomvocab.js:9 exe/jsui/scripts/lomvocab.js:668
 msgid "expositive"
-msgstr ""
+msgstr "評論"
 
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
 #: exe/jsui/scripts/lomvocab.js:1216
 msgid "mixed"
-msgstr ""
+msgstr "混合"
 
 #: exe/jsui/scripts/lomvocab.js:19
 msgid "exercise"
-msgstr ""
+msgstr "練習"
 
 #: exe/jsui/scripts/lomvocab.js:23 exe/jsui/scripts/lomvocab.js:882
-#, fuzzy
 msgid "simulation"
-msgstr "情境"
+msgstr "模擬"
 
 #: exe/jsui/scripts/lomvocab.js:27 exe/jsui/scripts/lomvocab.js:886
-#, fuzzy
 msgid "questionnaire"
-msgstr "問題"
+msgstr "問卷"
 
 #: exe/jsui/scripts/lomvocab.js:31
 msgid "diagram"
-msgstr ""
+msgstr "圖表"
 
 #: exe/jsui/scripts/lomvocab.js:35
 msgid "figure"
-msgstr ""
+msgstr "圖片"
 
 #: exe/jsui/scripts/lomvocab.js:39 exe/jsui/scripts/lomvocab.js:734
 msgid "graph"
-msgstr ""
+msgstr "圖形"
 
 #: exe/jsui/scripts/lomvocab.js:43
 msgid "index"
-msgstr ""
+msgstr "索引"
 
 #: exe/jsui/scripts/lomvocab.js:47
 msgid "slide"
-msgstr ""
+msgstr "投影片"
 
 #: exe/jsui/scripts/lomvocab.js:51 exe/jsui/scripts/lomvocab.js:730
 msgid "table"
-msgstr ""
+msgstr "表格"
 
 #: exe/jsui/scripts/lomvocab.js:55 exe/jsui/scripts/lomvocab.js:710
 msgid "narrative text"
-msgstr ""
+msgstr "記敘文"
 
 #: exe/jsui/scripts/lomvocab.js:59 exe/jsui/scripts/lomvocab.js:890
 msgid "exam"
-msgstr ""
+msgstr "測驗"
 
 #: exe/jsui/scripts/lomvocab.js:63 exe/jsui/scripts/lomvocab.js:874
 msgid "experiment"
-msgstr ""
+msgstr "實驗"
 
 #: exe/jsui/scripts/lomvocab.js:67
 msgid "problem statement"
-msgstr ""
+msgstr "問題敘述"
 
 #: exe/jsui/scripts/lomvocab.js:71 exe/jsui/scripts/lomvocab.js:281
 #: exe/jsui/scripts/lomvocab.js:894 exe/jsui/scripts/lomvocab.js:1096
 msgid "self assessment"
-msgstr ""
+msgstr "自我評價"
 
 #: exe/jsui/scripts/lomvocab.js:75
-#, fuzzy
 msgid "lecture"
-msgstr "結構"
+msgstr "課程"
 
 #: exe/jsui/scripts/lomvocab.js:81 exe/jsui/scripts/lomvocab.js:900
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: exe/jsui/scripts/lomvocab.js:85 exe/jsui/scripts/lomvocab.js:904
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: exe/jsui/scripts/lomvocab.js:89 exe/jsui/scripts/lomvocab.js:908
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: exe/jsui/scripts/lomvocab.js:93 exe/jsui/scripts/lomvocab.js:912
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: exe/jsui/scripts/lomvocab.js:99 exe/jsui/scripts/lomvocab.js:918
 msgid "discipline"
-msgstr ""
+msgstr "紀律"
 
 #: exe/jsui/scripts/lomvocab.js:103 exe/jsui/scripts/lomvocab.js:922
 msgid "idea"
-msgstr ""
+msgstr "構想"
 
 #: exe/jsui/scripts/lomvocab.js:107 exe/jsui/scripts/lomvocab.js:926
 msgid "prerequisite"
-msgstr ""
+msgstr "先修"
 
 #: exe/jsui/scripts/lomvocab.js:111 exe/jsui/scripts/lomvocab.js:930
-#, fuzzy
 msgid "educational objective"
-msgstr "教育"
+msgstr "教育目的"
 
 #: exe/jsui/scripts/lomvocab.js:115 exe/jsui/scripts/lomvocab.js:934
 msgid "accessibility restrictions"
-msgstr ""
+msgstr "存取限制"
 
 #: exe/jsui/scripts/lomvocab.js:119 exe/jsui/scripts/lomvocab.js:938
-#, fuzzy
 msgid "educational level"
-msgstr "教育"
+msgstr "教育等級"
 
 #: exe/jsui/scripts/lomvocab.js:123 exe/jsui/scripts/lomvocab.js:942
 msgid "skill level"
-msgstr ""
+msgstr "技能等級"
 
 #: exe/jsui/scripts/lomvocab.js:127 exe/jsui/scripts/lomvocab.js:946
 msgid "security level"
-msgstr ""
+msgstr "安全性等級"
 
 #: exe/jsui/scripts/lomvocab.js:131 exe/jsui/scripts/lomvocab.js:950
 msgid "competency"
-msgstr ""
+msgstr "競爭度"
 
 #: exe/jsui/scripts/lomvocab.js:137 exe/jsui/scripts/lomvocab.js:956
-#, fuzzy
 msgid "creator"
 msgstr "建立者"
 
 #: exe/jsui/scripts/lomvocab.js:141 exe/jsui/scripts/lomvocab.js:167
 #: exe/jsui/scripts/lomvocab.js:960 exe/jsui/scripts/lomvocab.js:982
 msgid "validator"
-msgstr ""
+msgstr "驗證者"
 
 #: exe/jsui/scripts/lomvocab.js:147 exe/jsui/scripts/lomvocab.js:613
 #: exe/jsui/scripts/lomvocab.js:966
-#, fuzzy
 msgid "author"
 msgstr "作者"
 
 #: exe/jsui/scripts/lomvocab.js:151 exe/jsui/scripts/lomvocab.js:970
-#, fuzzy
 msgid "publisher"
 msgstr "發布者"
 
 #: exe/jsui/scripts/lomvocab.js:155
 msgid "unknown"
-msgstr ""
+msgstr "未知"
 
 #: exe/jsui/scripts/lomvocab.js:159 exe/jsui/scripts/lomvocab.js:974
 msgid "initiator"
-msgstr ""
+msgstr "發起者"
 
 #: exe/jsui/scripts/lomvocab.js:163 exe/jsui/scripts/lomvocab.js:978
 msgid "terminator"
-msgstr ""
+msgstr "終結者"
 
 #: exe/jsui/scripts/lomvocab.js:171 exe/jsui/scripts/lomvocab.js:986
-#, fuzzy
 msgid "editor"
-msgstr "iDevice 編輯器"
+msgstr "編輯者"
 
 #: exe/jsui/scripts/lomvocab.js:175 exe/jsui/scripts/lomvocab.js:990
 msgid "graphical designer"
-msgstr ""
+msgstr "美工設計者"
 
 #: exe/jsui/scripts/lomvocab.js:179 exe/jsui/scripts/lomvocab.js:994
 msgid "technical implementer"
-msgstr ""
+msgstr "技術實作者"
 
 #: exe/jsui/scripts/lomvocab.js:183 exe/jsui/scripts/lomvocab.js:998
 msgid "content provider"
-msgstr ""
+msgstr "內容提供者"
 
 #: exe/jsui/scripts/lomvocab.js:187 exe/jsui/scripts/lomvocab.js:1002
 msgid "technical validator"
-msgstr ""
+msgstr "技術檢驗者"
 
 #: exe/jsui/scripts/lomvocab.js:191 exe/jsui/scripts/lomvocab.js:1006
-#, fuzzy
 msgid "educational validator"
-msgstr "教育"
+msgstr "教育驗證者"
 
 #: exe/jsui/scripts/lomvocab.js:195 exe/jsui/scripts/lomvocab.js:1010
 msgid "script writer"
-msgstr ""
+msgstr "文稿撰寫者"
 
 #: exe/jsui/scripts/lomvocab.js:199 exe/jsui/scripts/lomvocab.js:1014
-#, fuzzy
 msgid "instructional designer"
-msgstr "說明"
+msgstr "說明設計者"
 
 #: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
 #: exe/jsui/scripts/lomvocab.js:1584
@@ -4858,272 +4830,255 @@ msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:209 exe/jsui/scripts/lomvocab.js:1024
 msgid "analyse"
-msgstr ""
+msgstr "分析"
 
 #: exe/jsui/scripts/lomvocab.js:213 exe/jsui/scripts/lomvocab.js:1028
 msgid "implement"
-msgstr ""
+msgstr "實作"
 
 #: exe/jsui/scripts/lomvocab.js:217 exe/jsui/scripts/lomvocab.js:1032
 msgid "collaborate"
-msgstr ""
+msgstr "協作"
 
 #: exe/jsui/scripts/lomvocab.js:221 exe/jsui/scripts/lomvocab.js:1036
 msgid "compare"
-msgstr ""
+msgstr "比較"
 
 #: exe/jsui/scripts/lomvocab.js:225 exe/jsui/scripts/lomvocab.js:1040
 msgid "share"
-msgstr ""
+msgstr "分享"
 
 #: exe/jsui/scripts/lomvocab.js:229 exe/jsui/scripts/lomvocab.js:1044
 msgid "compete"
-msgstr ""
+msgstr "競爭"
 
 #: exe/jsui/scripts/lomvocab.js:233 exe/jsui/scripts/lomvocab.js:1048
 msgid "understand"
-msgstr ""
+msgstr "理解"
 
 #: exe/jsui/scripts/lomvocab.js:237 exe/jsui/scripts/lomvocab.js:1052
 msgid "prove"
-msgstr ""
+msgstr "證明"
 
 #: exe/jsui/scripts/lomvocab.js:241 exe/jsui/scripts/lomvocab.js:1056
 msgid "communicate"
-msgstr ""
+msgstr "溝通"
 
 #: exe/jsui/scripts/lomvocab.js:245 exe/jsui/scripts/lomvocab.js:1060
 msgid "contextualize"
-msgstr ""
+msgstr "考慮語意"
 
 #: exe/jsui/scripts/lomvocab.js:249 exe/jsui/scripts/lomvocab.js:1064
 msgid "control"
-msgstr ""
+msgstr "控制"
 
 #: exe/jsui/scripts/lomvocab.js:253 exe/jsui/scripts/lomvocab.js:1068
-#, fuzzy
 msgid "cooperate"
-msgstr "屬性"
+msgstr "合作"
 
 #: exe/jsui/scripts/lomvocab.js:257 exe/jsui/scripts/lomvocab.js:1072
-#, fuzzy
 msgid "create"
-msgstr "建立者"
+msgstr "建立"
 
 #: exe/jsui/scripts/lomvocab.js:261 exe/jsui/scripts/lomvocab.js:1076
 msgid "decide"
-msgstr ""
+msgstr "決定"
 
 #: exe/jsui/scripts/lomvocab.js:265 exe/jsui/scripts/lomvocab.js:1080
 msgid "define"
-msgstr ""
+msgstr "定義"
 
 #: exe/jsui/scripts/lomvocab.js:269 exe/jsui/scripts/lomvocab.js:1084
 msgid "describe"
-msgstr ""
+msgstr "描述"
 
 #: exe/jsui/scripts/lomvocab.js:273 exe/jsui/scripts/lomvocab.js:1088
 msgid "discuss"
-msgstr ""
+msgstr "討論"
 
 #: exe/jsui/scripts/lomvocab.js:277 exe/jsui/scripts/lomvocab.js:1092
 msgid "design"
-msgstr ""
+msgstr "設計"
 
 #: exe/jsui/scripts/lomvocab.js:285 exe/jsui/scripts/lomvocab.js:1100
 msgid "explain"
-msgstr ""
+msgstr "解釋"
 
 #: exe/jsui/scripts/lomvocab.js:289 exe/jsui/scripts/lomvocab.js:1104
-#, fuzzy
 msgid "extrapolate"
-msgstr "特大"
+msgstr "推論"
 
 #: exe/jsui/scripts/lomvocab.js:293 exe/jsui/scripts/lomvocab.js:1108
 msgid "innovate"
-msgstr ""
+msgstr "創新"
 
 #: exe/jsui/scripts/lomvocab.js:297 exe/jsui/scripts/lomvocab.js:1112
 msgid "investigate"
-msgstr ""
+msgstr "調查"
 
 #: exe/jsui/scripts/lomvocab.js:301 exe/jsui/scripts/lomvocab.js:1116
 msgid "judge"
-msgstr ""
+msgstr "判斷"
 
 #: exe/jsui/scripts/lomvocab.js:305 exe/jsui/scripts/lomvocab.js:1120
 msgid "motivate"
-msgstr ""
+msgstr "激發"
 
 #: exe/jsui/scripts/lomvocab.js:309 exe/jsui/scripts/lomvocab.js:1124
 msgid "observe"
-msgstr ""
+msgstr "觀察"
 
 #: exe/jsui/scripts/lomvocab.js:313 exe/jsui/scripts/lomvocab.js:1128
-#, fuzzy
 msgid "organize"
 msgstr "組織"
 
 #: exe/jsui/scripts/lomvocab.js:317 exe/jsui/scripts/lomvocab.js:1132
 msgid "organize oneself"
-msgstr ""
+msgstr "組織自己"
 
 #: exe/jsui/scripts/lomvocab.js:321 exe/jsui/scripts/lomvocab.js:1136
 msgid "plan"
-msgstr ""
+msgstr "計畫"
 
 #: exe/jsui/scripts/lomvocab.js:325 exe/jsui/scripts/lomvocab.js:1140
 msgid "practise"
-msgstr ""
+msgstr "練習"
 
 #: exe/jsui/scripts/lomvocab.js:329 exe/jsui/scripts/lomvocab.js:1144
 msgid "produce"
-msgstr ""
+msgstr "產生"
 
 #: exe/jsui/scripts/lomvocab.js:333 exe/jsui/scripts/lomvocab.js:1148
 msgid "recognize"
-msgstr ""
+msgstr "辨認"
 
 #: exe/jsui/scripts/lomvocab.js:337 exe/jsui/scripts/lomvocab.js:1152
 msgid "remember"
-msgstr ""
+msgstr "記住"
 
 #: exe/jsui/scripts/lomvocab.js:341 exe/jsui/scripts/lomvocab.js:1156
 msgid "write up"
-msgstr ""
+msgstr "寫下"
 
 #: exe/jsui/scripts/lomvocab.js:345 exe/jsui/scripts/lomvocab.js:1160
-#, fuzzy
 msgid "consider"
-msgstr "圖示"
+msgstr "考慮"
 
 #: exe/jsui/scripts/lomvocab.js:349 exe/jsui/scripts/lomvocab.js:1164
 msgid "connect"
-msgstr ""
+msgstr "連接"
 
 #: exe/jsui/scripts/lomvocab.js:353 exe/jsui/scripts/lomvocab.js:1168
 msgid "represent"
-msgstr ""
+msgstr "表達"
 
 #: exe/jsui/scripts/lomvocab.js:357 exe/jsui/scripts/lomvocab.js:1172
 msgid "solve"
-msgstr ""
+msgstr "解決"
 
 #: exe/jsui/scripts/lomvocab.js:361 exe/jsui/scripts/lomvocab.js:1176
 msgid "simulate"
-msgstr ""
+msgstr "模擬"
 
 #: exe/jsui/scripts/lomvocab.js:365 exe/jsui/scripts/lomvocab.js:1180
 msgid "summarize"
-msgstr ""
+msgstr "總結"
 
 #: exe/jsui/scripts/lomvocab.js:369 exe/jsui/scripts/lomvocab.js:1184
 msgid "value"
-msgstr ""
+msgstr "數值"
 
 #: exe/jsui/scripts/lomvocab.js:375 exe/jsui/scripts/lomvocab.js:413
 #: exe/jsui/scripts/lomvocab.js:1190
-#, fuzzy
 msgid "yes"
-msgstr "樣式"
+msgstr "是"
 
 #: exe/jsui/scripts/lomvocab.js:379 exe/jsui/scripts/lomvocab.js:417
 #: exe/jsui/scripts/lomvocab.js:1194
-#, fuzzy
 msgid "no"
-msgstr "資訊"
+msgstr "否"
 
 #: exe/jsui/scripts/lomvocab.js:385
 msgid "school"
-msgstr ""
+msgstr "學校"
 
 #: exe/jsui/scripts/lomvocab.js:389
 msgid "higher education"
-msgstr ""
+msgstr "高等教育"
 
 #: exe/jsui/scripts/lomvocab.js:393
-#, fuzzy
 msgid "training"
-msgstr "烏克蘭語"
+msgstr "訓練"
 
 #: exe/jsui/scripts/lomvocab.js:397
-#, fuzzy
 msgid "other"
 msgstr "其他"
 
 #: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1258
 msgid "operating system"
-msgstr ""
+msgstr "作業系統"
 
 #: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1262
 msgid "browser"
-msgstr ""
+msgstr "瀏覽器"
 
 #: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1330
 msgid "ispartof"
-msgstr ""
+msgstr "為誰的部件："
 
 #: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1334
 msgid "haspart"
-msgstr ""
+msgstr "有部件："
 
 #: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1338
-#, fuzzy
 msgid "isversionof"
-msgstr "版本"
+msgstr "為版本"
 
 #: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1342
-#, fuzzy
 msgid "hasversion"
-msgstr "版本"
+msgstr "有版本"
 
 #: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1346
-#, fuzzy
 msgid "isformatof"
-msgstr "資訊"
+msgstr "為誰的格式："
 
 #: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1350
-#, fuzzy
 msgid "hasformat"
-msgstr "格式"
+msgstr "有格式"
 
 #: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1354
-#, fuzzy
 msgid "references"
-msgstr "喜好設定"
+msgstr "參考"
 
 #: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1358
-#, fuzzy
 msgid "isreferencedby"
-msgstr "喜好設定"
+msgstr "被誰參考："
 
 #: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1362
 msgid "isbasedon"
-msgstr ""
+msgstr "基於誰："
 
 #: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1366
 msgid "isbasisfor"
-msgstr ""
+msgstr "是誰的基本："
 
 #: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1370
-#, fuzzy
 msgid "requires"
-msgstr "需要的"
+msgstr "需要"
 
 #: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1374
-#, fuzzy
 msgid "isrequiredby"
-msgstr "需要的"
+msgstr "被需要"
 
 #: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
 #: exe/jsui/scripts/lomvocab.js:1380 exe/jsui/scripts/lomvocab.js:1448
 msgid "very low"
-msgstr ""
+msgstr "非常低"
 
 #: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
 #: exe/jsui/scripts/lomvocab.js:1384 exe/jsui/scripts/lomvocab.js:1452
 msgid "low"
-msgstr ""
+msgstr "低"
 
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
 #: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1388
@@ -5135,12 +5090,12 @@ msgstr "中"
 #: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
 #: exe/jsui/scripts/lomvocab.js:1392 exe/jsui/scripts/lomvocab.js:1460
 msgid "high"
-msgstr ""
+msgstr "高"
 
 #: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
 #: exe/jsui/scripts/lomvocab.js:1396 exe/jsui/scripts/lomvocab.js:1464
 msgid "very high"
-msgstr ""
+msgstr "非常高"
 
 #: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1402
 msgid "draft"
@@ -5160,7 +5115,7 @@ msgstr "無法使用"
 
 #: exe/jsui/scripts/lomvocab.js:513
 msgid "LOMv1.0"
-msgstr ""
+msgstr "LOMv1.0"
 
 #: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1426
 msgid "atomic"
@@ -5184,113 +5139,109 @@ msgstr "線性"
 
 #: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1470
 msgid "pc-dos"
-msgstr ""
+msgstr "pc-dos"
 
 #: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1474
-#, fuzzy
 msgid "ms-windows"
-msgstr "新視窗"
+msgstr "ms-windows"
 
 #: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1478
 msgid "macos"
-msgstr ""
+msgstr "macos"
 
 #: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1486
 msgid "unix"
-msgstr ""
+msgstr "unix"
 
 #: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1490
-#, fuzzy
 msgid "multi-os"
-msgstr "多重選擇"
+msgstr "多重作業系統"
 
 #: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1494
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
-msgstr ""
+msgstr "無"
 
 #: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1498
 msgid "any"
-msgstr ""
+msgstr "任何"
 
 #: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1506
 msgid "netscape communicator"
-msgstr ""
+msgstr "網景瀏覽器"
 
 #: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1510
 msgid "ms-internet explorer"
-msgstr ""
+msgstr "微軟 ie"
 
 #: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1514
 msgid "opera"
-msgstr ""
+msgstr "opera"
 
 #: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1518
 msgid "amaya"
-msgstr ""
+msgstr "amaya"
 
 #: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
 #: exe/jsui/scripts/lomvocab.js:1556
 msgid "teacher"
-msgstr ""
+msgstr "老師"
 
 #: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1524
 msgid "learner"
-msgstr ""
+msgstr "學生"
 
 #: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1576
 msgid "manager"
-msgstr ""
+msgstr "管理者"
 
 #: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1590
 msgid "universal"
-msgstr ""
+msgstr "通用"
 
 #: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1594
 msgid "non-universal"
-msgstr ""
+msgstr "非通用"
 
 #: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1600
 msgid "very easy"
-msgstr ""
+msgstr "非常簡單"
 
 #: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1604
 msgid "easy"
-msgstr ""
+msgstr "簡單"
 
 #: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1612
 msgid "difficult"
-msgstr ""
+msgstr "困難"
 
 #: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1616
 msgid "very difficult"
-msgstr ""
+msgstr "非常困難"
 
 #: exe/jsui/scripts/lomvocab.js:678
 msgid "photograph"
-msgstr ""
+msgstr "相片"
 
 #: exe/jsui/scripts/lomvocab.js:682
-#, fuzzy
 msgid "illustration"
-msgstr "情境"
+msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:686
 msgid "video"
-msgstr ""
+msgstr "影像"
 
 #: exe/jsui/scripts/lomvocab.js:690
-#, fuzzy
 msgid "animation"
-msgstr "組織"
+msgstr "動畫"
 
 #: exe/jsui/scripts/lomvocab.js:694
 msgid "music"
-msgstr ""
+msgstr "音樂"
 
 #: exe/jsui/scripts/lomvocab.js:698
 msgid "sound effect"
-msgstr ""
+msgstr "音效"
 
 #: exe/jsui/scripts/lomvocab.js:702
 msgid "voice-over"
@@ -5298,45 +5249,43 @@ msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:706
 msgid "compound audio"
-msgstr ""
+msgstr "組合音效"
 
 #: exe/jsui/scripts/lomvocab.js:714
-#, fuzzy
 msgid "hypertext"
-msgstr "文字"
+msgstr "超文字"
 
 #: exe/jsui/scripts/lomvocab.js:718
 msgid "computer graphics"
-msgstr ""
+msgstr "電腦圖形"
 
 #: exe/jsui/scripts/lomvocab.js:722
 msgid "integrated media"
-msgstr ""
+msgstr "整合媒體"
 
 #: exe/jsui/scripts/lomvocab.js:726
 msgid "database"
-msgstr ""
+msgstr "資料庫"
 
 #: exe/jsui/scripts/lomvocab.js:738
 msgid "conceptual map"
-msgstr ""
+msgstr "觀念圖"
 
 #: exe/jsui/scripts/lomvocab.js:742
 msgid "navigation map"
-msgstr ""
+msgstr "導覽圖"
 
 #: exe/jsui/scripts/lomvocab.js:746
 msgid "multimedia presentation"
-msgstr ""
+msgstr "多媒體呈現"
 
 #: exe/jsui/scripts/lomvocab.js:750
-#, fuzzy
 msgid "tutorial"
-msgstr "eXe 教學"
+msgstr "教學"
 
 #: exe/jsui/scripts/lomvocab.js:754
 msgid "digital dictionary"
-msgstr ""
+msgstr "數位字典"
 
 #: exe/jsui/scripts/lomvocab.js:758
 msgid "digital encyclopaedia"
@@ -5352,71 +5301,72 @@ msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:770
 msgid "wiki"
-msgstr ""
+msgstr "wiki"
 
 #: exe/jsui/scripts/lomvocab.js:774
 msgid "weblog"
-msgstr ""
+msgstr "網誌"
 
 #: exe/jsui/scripts/lomvocab.js:778
 msgid "multimedia creation/edition tool"
-msgstr ""
+msgstr "多媒體建立/編輯工具"
 
 #: exe/jsui/scripts/lomvocab.js:782
 msgid "web design tool"
-msgstr ""
+msgstr "網頁設計工具"
 
 #: exe/jsui/scripts/lomvocab.js:786
 msgid "office tool"
-msgstr ""
+msgstr "辦公室工具"
 
 #: exe/jsui/scripts/lomvocab.js:790
 msgid "programming tool"
-msgstr ""
+msgstr "程式工具"
 
 #: exe/jsui/scripts/lomvocab.js:794
 msgid "information/knowledgeanalysis/organization tool"
-msgstr ""
+msgstr "資訊/智識分析/組織工具"
 
 #: exe/jsui/scripts/lomvocab.js:798
 msgid "process/procedure supporting tools"
-msgstr ""
+msgstr "處理/程序支援工具"
 
 #: exe/jsui/scripts/lomvocab.js:802
 msgid "individual/cooperative/collaborative learning/working management tool"
-msgstr ""
+msgstr "個別/協作/協同學習/工作管理工具"
 
 #: exe/jsui/scripts/lomvocab.js:806
 msgid "multimedia creation/edition service"
-msgstr ""
+msgstr "多媒體建立/編輯服務"
 
 #: exe/jsui/scripts/lomvocab.js:810
 msgid "web design service"
-msgstr ""
+msgstr "網頁設計服務"
 
 #: exe/jsui/scripts/lomvocab.js:814
 msgid "office service"
-msgstr ""
+msgstr "辦公服務"
 
 #: exe/jsui/scripts/lomvocab.js:818
 msgid "programming service"
-msgstr ""
+msgstr "程式服務"
 
 #: exe/jsui/scripts/lomvocab.js:822
 msgid "information/knowledgeanalysis/organization service"
-msgstr ""
+msgstr "資訊/智識分析/組織服務"
 
 #: exe/jsui/scripts/lomvocab.js:826
 msgid "process/procedure supporting service"
-msgstr ""
+msgstr "處理/程序支援服務"
 
 #: exe/jsui/scripts/lomvocab.js:830
-msgid "individual/cooperative/collaborative learning/working management service"
-msgstr ""
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
+msgstr "個別/協作/協同學習/工作管理服務"
 
 #: exe/jsui/scripts/lomvocab.js:834
 msgid "guided reading"
-msgstr ""
+msgstr "引導閱讀"
 
 #: exe/jsui/scripts/lomvocab.js:838
 msgid "master class"
@@ -5427,13 +5377,12 @@ msgid "textual-image analysis"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:846
-#, fuzzy
 msgid "discussion activity"
-msgstr "閱讀活動"
+msgstr "討論活動"
 
 #: exe/jsui/scripts/lomvocab.js:850
 msgid "closed exercise or problem"
-msgstr ""
+msgstr "封閉式練習或題目"
 
 #: exe/jsui/scripts/lomvocab.js:854
 msgid "contextualized case problem"
@@ -5441,11 +5390,11 @@ msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:858
 msgid "open problem"
-msgstr ""
+msgstr "開放式問題"
 
 #: exe/jsui/scripts/lomvocab.js:862
 msgid "real or virtual learning environment"
-msgstr ""
+msgstr "實際或虛擬學習環境"
 
 #: exe/jsui/scripts/lomvocab.js:866
 msgid "didactic game"
@@ -5456,42 +5405,40 @@ msgid "webquest"
 msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:878
-#, fuzzy
 msgid "real project"
-msgstr "eXe 專案"
+msgstr "實際專案"
 
 #: exe/jsui/scripts/lomvocab.js:1200
 msgid "classroom"
-msgstr ""
+msgstr "教室"
 
 #: exe/jsui/scripts/lomvocab.js:1204
 msgid "laboratory"
-msgstr ""
+msgstr "實驗室"
 
 #: exe/jsui/scripts/lomvocab.js:1208
 msgid "real environment"
-msgstr ""
+msgstr "實際環境"
 
 #: exe/jsui/scripts/lomvocab.js:1212
 msgid "home"
-msgstr ""
+msgstr "家"
 
 #: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1564
-#, fuzzy
 msgid "family"
-msgstr "泰米爾語"
+msgstr "家庭"
 
 #: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1560
 msgid "tutor"
-msgstr ""
+msgstr "教學"
 
 #: exe/jsui/scripts/lomvocab.js:1232
 msgid "schoolmate"
-msgstr ""
+msgstr "學伴"
 
 #: exe/jsui/scripts/lomvocab.js:1236
 msgid "independent"
-msgstr ""
+msgstr "獨立"
 
 #: exe/jsui/scripts/lomvocab.js:1240
 msgid "blended"
@@ -5503,134 +5450,123 @@ msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:1248
 msgid "face to face"
-msgstr ""
+msgstr "面對面"
 
 #: exe/jsui/scripts/lomvocab.js:1252
 msgid "distance"
-msgstr ""
+msgstr "距離"
 
 #: exe/jsui/scripts/lomvocab.js:1268
-#, fuzzy
 msgid "propietary license"
-msgstr "選擇授權方式。"
+msgstr "私有授權"
 
 #: exe/jsui/scripts/lomvocab.js:1272
 msgid "free software license EUPL"
-msgstr ""
+msgstr "自由軟體授權 EUPL"
 
 #: exe/jsui/scripts/lomvocab.js:1276
 msgid "free software license GPL"
-msgstr ""
+msgstr "自由軟體授權 GPL"
 
 #: exe/jsui/scripts/lomvocab.js:1280
 msgid "dual free content license GPL and EUPL"
-msgstr ""
+msgstr "雙重自由內容授權 GPL 與 EUPL"
 
 #: exe/jsui/scripts/lomvocab.js:1284
 msgid "other free software licenses"
-msgstr ""
+msgstr "其他自由軟體授權"
 
 #: exe/jsui/scripts/lomvocab.js:1288
 msgid "public domain"
-msgstr ""
+msgstr "公共領域"
 
 #: exe/jsui/scripts/lomvocab.js:1292
 msgid "not appropriate"
-msgstr ""
+msgstr "不合適"
 
 #: exe/jsui/scripts/lomvocab.js:1296
-#, fuzzy
 msgid "intellectual property license"
-msgstr "選擇授權方式。"
+msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:1300
-#, fuzzy
 msgid "creative commons: attribution"
-msgstr "創用 CC 姓名標示 3.0 (CC Attribution 3.0)"
+msgstr "創用 CC：Attribution"
 
 #: exe/jsui/scripts/lomvocab.js:1304
-#, fuzzy
 msgid "creative commons: attribution - non derived work"
-msgstr "創用 CC 姓名標示-無衍生 3.0 (CC Attribution No Derivatives 3.0) "
+msgstr "創用 CC：Attribution  -  非衍生作品"
 
 #: exe/jsui/scripts/lomvocab.js:1308
-#, fuzzy
 msgid "creative commons: attribution - non derived work - non commercial"
-msgstr "創用 CC 姓名標示-非商業使用 3.0 (CC Attribution Non-commercial 3.0)"
+msgstr "創用 CC：Attribution  -  非衍生作品  -  非商業使用"
 
 #: exe/jsui/scripts/lomvocab.js:1312
-#, fuzzy
 msgid "creative commons: attribution - non commercial"
-msgstr "創用 CC 姓名標示-非商業使用 3.0 (CC Attribution Non-commercial 3.0)"
+msgstr "創用 CC：Attribution  -  非商業使用"
 
 #: exe/jsui/scripts/lomvocab.js:1316
-#, fuzzy
 msgid "creative commons: attribution - non commercial - share alike"
-msgstr "創用 CC 姓名標示-非商業-相同方式分享 3.0 (CC Attribution Non-commercial Share Alike 3.0)"
+msgstr "創用 CC：Attribution  -  非商業使用  -  相同方式分享 (share alike)"
 
 #: exe/jsui/scripts/lomvocab.js:1320
-#, fuzzy
 msgid "creative commons: attribution - share alike"
-msgstr "創用 CC 姓名標示-相同方式分享 3.0 (CC Attribution-Share Alike 3.0)"
+msgstr "創用 CC：Attribution  -  相同方式分享 (share alike)"
 
 #: exe/jsui/scripts/lomvocab.js:1324
-#, fuzzy
 msgid "license GFDL"
-msgstr "授權條款"
+msgstr "授權 GFDL"
 
 #: exe/jsui/scripts/lomvocab.js:1420
 msgid "LOM-ESv1.0"
-msgstr ""
+msgstr "LOM-ESv1.0"
 
 #: exe/jsui/scripts/lomvocab.js:1482
 msgid "linux"
-msgstr ""
+msgstr "linux"
 
 #: exe/jsui/scripts/lomvocab.js:1502
 msgid "mozilla firefox"
-msgstr ""
+msgstr "mozilla firefox"
 
 #: exe/jsui/scripts/lomvocab.js:1528
 msgid "special needs learner"
-msgstr ""
+msgstr "特殊需求學生"
 
 #: exe/jsui/scripts/lomvocab.js:1532
 msgid "gifted learner"
-msgstr ""
+msgstr "天才學生"
 
 #: exe/jsui/scripts/lomvocab.js:1536
 msgid "learners late integration into the education system"
-msgstr ""
+msgstr "較慢進入教育系統的學生"
 
 #: exe/jsui/scripts/lomvocab.js:1540
 msgid "learner with other specific educational support needs"
-msgstr ""
+msgstr "有其他特別教育支援需求的學生"
 
 #: exe/jsui/scripts/lomvocab.js:1544
 msgid "general public"
-msgstr ""
+msgstr "通用公共"
 
 #: exe/jsui/scripts/lomvocab.js:1548
 msgid "individual"
-msgstr ""
+msgstr "個別"
 
 #: exe/jsui/scripts/lomvocab.js:1552
 msgid "group"
-msgstr ""
+msgstr "群組"
 
 #: exe/jsui/scripts/lomvocab.js:1568
-#, fuzzy
 msgid "information scientist"
-msgstr "資訊"
+msgstr "資訊科學家"
 
 #: exe/jsui/scripts/lomvocab.js:1572
 msgid "computer scientist"
-msgstr ""
+msgstr "電腦科學家"
 
 #: exe/jsui/scripts/lomvocab.js:1580
-#, fuzzy
 msgid "education expert"
-msgstr "情境文字："
+msgstr "教育專家"
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
@@ -5783,18 +5719,17 @@ msgstr ""
 
 #: exe/webui/clickinorderblock.py:377
 msgid "Delete Clickable Area"
-msgstr ""
+msgstr "刪除可點擊區域"
 
 #: exe/webui/clozefpdblock.py:104
 msgid "Autoevaluacion"
-msgstr ""
+msgstr "自動計算"
 
 #: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
 #: exe/webui/element.py:2388 exe/webui/element.py:2831
 #: exe/webui/questionelement.py:152
-#, fuzzy
 msgid "Solution"
-msgstr "解答"
+msgstr "答案"
 
 #: exe/webui/clozelangfpdblock.py:105
 msgid "Now It's Your Turn"
@@ -5802,7 +5737,7 @@ msgstr "輪到您了"
 
 #: exe/webui/common.py:170
 msgid "Show"
-msgstr ""
+msgstr "顯示"
 
 #: exe/webui/common.py:171 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
@@ -5811,7 +5746,7 @@ msgstr "隱藏"
 
 #: exe/webui/common.py:172
 msgid "Menu"
-msgstr ""
+msgstr "選單"
 
 #: exe/webui/common.py:193 exe/webui/editorpage.py:233
 #: exe/webui/selectbrowserpage_ru.py:90
@@ -6238,7 +6173,7 @@ msgstr "框架高度："
 
 #: exe/webui/fileattachblock.py:121
 msgid "IDevice Icon"
-msgstr ""
+msgstr "IDevice 圖示"
 
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
@@ -6283,36 +6218,36 @@ msgstr "要刪除此影像嗎？"
 
 #: exe/webui/hangmanblock.py:325
 msgid "Remove This Life"
-msgstr ""
+msgstr "移除此生命"
 
 #: exe/webui/hangmanblock.py:327
 msgid "Add Chance"
-msgstr ""
+msgstr "新增機會"
 
 #: exe/webui/hangmanblock.py:341
 msgid "Remove This Word"
-msgstr ""
+msgstr "移除此單字"
 
 #: exe/webui/hangmanblock.py:343
 msgid "Add Word"
-msgstr ""
+msgstr "新增單字"
 
 #: exe/webui/iecmwarning.py:42
-#, fuzzy
 msgid "eXe problem"
-msgstr "eXe 專案"
+msgstr "eXe 問題"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
-msgstr ""
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
+msgstr "您的瀏覽器 (ie) 的相容檢視已打開。"
 
 #: exe/webui/iecmwarning.py:50
 msgid "Please click on the Compatibility View button to turn it off:"
-msgstr ""
+msgstr "請點擊「相容檢視」鍵將它關掉。"
 
 #: exe/webui/iecmwarning.py:54
 msgid "Then restart eXe.."
-msgstr ""
+msgstr "然後重新啟動 eXe.."
 
 #: exe/webui/imagemagnifierblock.py:146
 msgid "Initial Zoom"
@@ -6377,11 +6312,11 @@ msgstr "您系統中的預設瀏覽器"
 
 #: exe/webui/preferencespage.py:171
 msgid "Failed to get preferences"
-msgstr ""
+msgstr "取得喜好設定失敗"
 
 #: exe/webui/preferencespage.py:199
 msgid "Failed to save preferences"
-msgstr ""
+msgstr "儲存喜好設定失敗"
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
@@ -6429,492 +6364,493 @@ msgstr "載入"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Error: Invalid values entered, these are marked in red."
-msgstr ""
+msgstr "錯誤：輸入了不正確的值，那些值已標記為紅色。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Sorry, but we have noticed that your popup-blocker has disabled a window "
 "that provides application functionality. You will need to disable popup "
 "blocking on this site in order to fully utilize this tool."
-msgstr ""
+msgstr "抱歉，您的瀏覽器阻擋了彈出式視窗，但有些功能是用彈出式視窗提供的。您需要關閉阻擋功能，才能完整使用這個工具。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
-msgstr ""
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
+msgstr "目前您的瀏覽器並未支援，請改用鍵盤捷徑。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "-- Not Set --"
-msgstr ""
+msgstr "-- 未設定 --"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert"
-msgstr ""
+msgstr "插入"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Do you want to use the WYSIWYG mode for this textarea?"
-msgstr ""
+msgstr "您要在此文字區域使用「所見即所得」編輯模式嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number"
-msgstr ""
+msgstr "{#field} 必須是數字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number greater than {#min}"
-msgstr ""
+msgstr "{#field} 必須是大於 {#min} 的數字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "{#field} must be a number or percentage"
-msgstr ""
+msgstr "{#field} 必須是個數字或百分比"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "(value)"
-msgstr ""
+msgstr "(值)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Full"
-msgstr ""
+msgstr "完整"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Time"
-msgstr ""
+msgstr "插入時間"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Date"
-msgstr ""
+msgstr "插入日期"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "%H:%M:%S"
-msgstr ""
+msgstr "%H:%M:%S"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #, python-format
 msgid "%Y-%m-%d"
-msgstr ""
+msgstr "%Y-%m-%d"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Direction Right to Left"
-msgstr ""
+msgstr "方向右到左"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Direction Left to Right"
-msgstr ""
+msgstr "方向左到右"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "New layer..."
-msgstr ""
+msgstr "新圖層..."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Absolute Positioning"
-msgstr ""
+msgstr "切換絕對位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Move Backward"
-msgstr ""
+msgstr "往後返回"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Move Forward"
-msgstr ""
+msgstr "往前移動"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert New Layer"
-msgstr ""
+msgstr "插入新圖層"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel All Changes"
-msgstr ""
+msgstr "取消所有變更"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Non-Breaking Space Character"
-msgstr ""
+msgstr "插入非中斷空白字元"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "ieSpell not detected. Do you want to install it now?"
-msgstr ""
+msgstr "未偵測到 ieSpell 。您要現在安裝嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Check Spelling"
-msgstr ""
+msgstr "拼字檢查"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insertion"
-msgstr ""
+msgstr "插入"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Deletion"
-msgstr ""
+msgstr "刪除"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Acronym"
-msgstr ""
+msgstr "首字母縮寫"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Abbreviation"
-msgstr ""
+msgstr "縮寫"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Citation"
-msgstr ""
+msgstr "引用"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode."
-msgstr ""
+msgstr "「貼上」目前是在純文字模式。再次點擊可以切換回正常模式。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular "
 "paste mode. After you paste something you will be returned to regular "
 "paste mode."
-msgstr ""
+msgstr "「貼上」目前是在純文字模式。再次點擊可以切換回正常模式。貼上後會回到正常模式。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Select All"
-msgstr ""
+msgstr "全部選取"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste from Word"
-msgstr ""
+msgstr "從單字貼上"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste as Plain Text"
-msgstr ""
+msgstr "以純文字貼上"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cell"
-msgstr ""
+msgstr "儲存格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Column"
-msgstr ""
+msgstr "欄"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Row"
-msgstr ""
+msgstr "列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Table"
-msgstr ""
+msgstr "刪除表格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Copy Table Row"
-msgstr ""
+msgstr "複製表格列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cut Table Row"
-msgstr ""
+msgstr "剪下表格列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste Table Row After"
-msgstr ""
+msgstr "在後面貼上表格列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Paste Table Row Before"
-msgstr ""
+msgstr "在前面貼上表格列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Table Properties"
-msgstr ""
+msgstr "表格屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Split Merged Table Cells"
-msgstr ""
+msgstr "將合併的表格儲存格分離"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Column"
-msgstr ""
+msgstr "刪除欄"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Column After"
-msgstr ""
+msgstr "在後面插入欄"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Column Before"
-msgstr ""
+msgstr "在前面插入欄"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Delete Row"
-msgstr ""
+msgstr "刪除列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Row After"
-msgstr ""
+msgstr "在後面插入列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Row Before"
-msgstr ""
+msgstr "在前面插入列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Restore auto-saved content."
-msgstr ""
+msgstr "回復自動儲存的內容。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "The changes you made will be lost if you navigate away from this page."
-msgstr ""
+msgstr "若是離開這個頁面，您所做的變更會遺失。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Full Screen Mode"
-msgstr ""
+msgstr "切換全螢幕模式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Edit Embedded Media"
-msgstr ""
+msgstr "編輯嵌入式媒體"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Show/Hide Visual Control Characters"
-msgstr ""
+msgstr "顯示/隱藏可見控制字元"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Toggle Spell Checker"
-msgstr ""
+msgstr "切換拼字檢查器"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Spell Checker Settings"
-msgstr ""
+msgstr "拼字檢查器設定"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Ignore Word"
-msgstr ""
+msgstr "忽略單字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Ignore All"
-msgstr ""
+msgstr "全部忽略"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Languages"
-msgstr ""
+msgstr "語言"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Please wait..."
-msgstr ""
+msgstr "請稍候..."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Suggestions"
-msgstr ""
+msgstr "建議"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "No Suggestions"
-msgstr ""
+msgstr "沒有建議"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "No misspellings found."
-msgstr ""
+msgstr "沒有找到拼錯的單字。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Learn word"
-msgstr ""
+msgstr "學習單字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Insert Page Break for Printing"
-msgstr ""
+msgstr "插入頁面中斷以便列印"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Types"
-msgstr ""
+msgstr "類型"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Lower Alpha"
-msgstr ""
+msgstr "小寫 Alpha"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Lower Greek"
-msgstr ""
+msgstr "小寫希臘字母"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Lower Roman"
-msgstr ""
+msgstr "小寫羅馬字母"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Upper Alpha"
-msgstr ""
+msgstr "大寫 Alpha"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Upper Roman"
-msgstr ""
+msgstr "大寫羅馬字母"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Circle"
-msgstr ""
+msgstr "圓形"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Disc"
-msgstr ""
+msgstr "碟形"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Square"
-msgstr ""
+msgstr "方形"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Dark olive"
-msgstr ""
+msgstr "暗棕櫚色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Burnt orange"
-msgstr ""
+msgstr "焦橘色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Black"
-msgstr ""
+msgstr "黑色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Dark green"
-msgstr ""
+msgstr "暗綠色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Dark azure"
-msgstr ""
+msgstr "暗天藍白"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Navy Blue"
-msgstr ""
+msgstr "海軍藍"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Indigo"
-msgstr ""
+msgstr "靛青色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Very dark gray"
-msgstr ""
+msgstr "非常暗的灰色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Maroon"
-msgstr ""
+msgstr "褐紅色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Orange"
-msgstr ""
+msgstr "橘色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Olive"
-msgstr ""
+msgstr "棕櫚色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Green"
-msgstr ""
+msgstr "綠色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Teal"
-msgstr ""
+msgstr "藍綠色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Blue"
-msgstr ""
+msgstr "藍色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Grayish blue"
-msgstr ""
+msgstr "灰藍色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Gray"
-msgstr ""
+msgstr "灰色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Red"
-msgstr ""
+msgstr "紅色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Amber"
-msgstr ""
+msgstr "琥珀色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Yellow green"
-msgstr ""
+msgstr "黃綠色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Sea green"
-msgstr ""
+msgstr "深海綠"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Turquoise"
-msgstr ""
+msgstr "藍玉綠"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Royal blue"
-msgstr ""
+msgstr "皇家藍"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Purple"
-msgstr ""
+msgstr "紫色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Medium gray"
-msgstr ""
+msgstr "中性灰"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Magenta"
-msgstr ""
+msgstr "紫紅色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Gold"
-msgstr ""
+msgstr "金色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Yellow"
-msgstr ""
+msgstr "黃色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Lime"
-msgstr ""
+msgstr "萊姆色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Aqua"
-msgstr ""
+msgstr "水藍色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Sky blue"
-msgstr ""
+msgstr "天藍色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Brown"
-msgstr ""
+msgstr "棕色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Silver"
-msgstr ""
+msgstr "銀色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Pink"
-msgstr ""
+msgstr "粉紅色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Peach"
-msgstr ""
+msgstr "蜜桃色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Light yellow"
-msgstr ""
+msgstr "淺黃色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Pale green"
-msgstr ""
+msgstr "灰綠色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Pale cyan"
-msgstr ""
+msgstr "灰青色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Light sky blue"
-msgstr ""
+msgstr "淡天藍色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Plum"
-msgstr ""
+msgstr "梅紅色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "White"
-msgstr ""
+msgstr "白色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Words:"
-msgstr ""
+msgstr "單字："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Show/hide block elements"
-msgstr ""
+msgstr "顯示/隱藏區塊元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -6922,7 +6858,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Alignment"
-msgstr ""
+msgstr "對齊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -6930,7 +6866,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Insert/Edit Image"
-msgstr ""
+msgstr "插入/編輯影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:17
@@ -6940,14 +6876,14 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:28
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Center"
-msgstr ""
+msgstr "置中"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Insert/Edit Link"
-msgstr ""
+msgstr "插入/編輯連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:3
@@ -6961,113 +6897,115 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Emotions"
-msgstr ""
+msgstr "情緒"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Document Properties"
-msgstr ""
+msgstr "文件屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Insert/Edit Embedded Media"
-msgstr ""
+msgstr "插入/編輯嵌入式媒體"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Class"
-msgstr ""
+msgstr "類別"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js:1
 msgid "Use Ctrl+V on your keyboard to paste the text into the window."
-msgstr ""
+msgstr "用 Ctrl+V 來將文字貼上視窗。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js:1
 msgid "Keep Linebreaks"
-msgstr ""
+msgstr "保留斷行"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find/Replace"
-msgstr ""
+msgstr "尋找/取代"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find"
-msgstr ""
+msgstr "尋找"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Apply"
-msgstr ""
+msgstr "套用"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Edit CSS Style"
-msgstr ""
+msgstr "編輯 CSS 樣式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Table Cell Properties"
-msgstr ""
+msgstr "表格儲存格屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Table Row Properties"
-msgstr ""
+msgstr "表格列屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Merge Table Cells"
-msgstr ""
+msgstr "合併表格儲存格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Insert/Edit Table"
-msgstr ""
+msgstr "插入/編輯表格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Default"
-msgstr ""
+msgstr "預設"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Sun,Mon,Tue,Wed,Thu,Fri,Sat,Sun"
-msgstr ""
+msgstr "日,一,二,三,四,五,六,日"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday"
-msgstr ""
+msgstr "週日,週一,週二,週三,週四,週五,週六,週日"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
-msgstr ""
+msgstr "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid "January,February,March,April,May,June,July,August,September,October,November,December"
-msgstr ""
+msgid ""
+"January,February,March,April,May,June,July,August,September,October,November,D"
+"ecember"
+msgstr "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Insert Predefined Template Content"
-msgstr ""
+msgstr "插入預定義樣本內容"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Insert/Edit Attributes"
-msgstr ""
+msgstr "插入/編輯屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "More Colors..."
-msgstr ""
+msgstr "更多顏色..."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
@@ -7075,28 +7013,30 @@ msgid ""
 "Copy/Cut/Paste is not available in Mozilla and Firefox.\n"
 "Do you want more information about this issue?"
 msgstr ""
+"在 Mozilla 與 Firefox 中無法使用複製/剪下/貼上。\n"
+"您要看更多關於此問題的資訊嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Insert Horizontal Line"
-msgstr ""
+msgstr "插入水平線"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Rich Text Area"
-msgstr ""
+msgstr "Rich Text 區域"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "No Shadow"
-msgstr ""
+msgstr "無陰影"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "Normal"
-msgstr ""
+msgstr "一般"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 msgid "Units"
-msgstr ""
+msgstr "單位"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -7105,7 +7045,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Width"
-msgstr ""
+msgstr "寬度"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -7114,7 +7054,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Height"
-msgstr ""
+msgstr "高度"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7125,7 +7065,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Style"
-msgstr ""
+msgstr "樣式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7134,7 +7074,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "ID"
-msgstr ""
+msgstr "代碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7143,7 +7083,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Right to Left"
-msgstr ""
+msgstr "右到左"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7152,13 +7092,13 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Left to Right"
-msgstr ""
+msgstr "左到右"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:56
 msgid "Classes"
-msgstr ""
+msgstr "類別"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7166,7 +7106,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Language Code"
-msgstr ""
+msgstr "語言代碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7174,7 +7114,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Language Direction"
-msgstr ""
+msgstr "語言方向"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7183,26 +7123,26 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Advanced"
-msgstr ""
+msgstr "進階"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:27
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:41
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Image List"
-msgstr ""
+msgstr "影像列表"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Text Bottom"
-msgstr ""
+msgstr "文字底端"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:31
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Text Top"
-msgstr ""
+msgstr "文字頂端"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:32
@@ -7211,13 +7151,13 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Bottom"
-msgstr ""
+msgstr "底端"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:33
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Middle"
-msgstr ""
+msgstr "中間"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:34
@@ -7226,32 +7166,32 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Top"
-msgstr ""
+msgstr "頂端"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:35
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Baseline"
-msgstr ""
+msgstr "基線"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:37
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Horizontal Space"
-msgstr ""
+msgstr "水平間隔"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:38
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Vertical Space"
-msgstr ""
+msgstr "垂直間隔"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:39
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Dimensions"
-msgstr ""
+msgstr "尺寸"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:40
@@ -7259,19 +7199,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Border"
-msgstr ""
+msgstr "邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:42
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Image Description"
-msgstr ""
+msgstr "影像描述"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:43
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Image URL"
-msgstr ""
+msgstr "影像網址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
@@ -7286,371 +7226,372 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:46
 msgid "Appearance Preview Image"
-msgstr ""
+msgstr "外觀預覽影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:47
 msgid "Miscellaneous"
-msgstr ""
+msgstr "雜項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:48
 msgid "For Mouse Out"
-msgstr ""
+msgstr "移出滑鼠時"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:49
 msgid "For Mouse Over"
-msgstr ""
+msgstr "滑鼠置於其上時"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:50
 msgid "Alternative Image"
-msgstr ""
+msgstr "替代影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:51
 msgid "Swap Image"
-msgstr ""
+msgstr "交換影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:52
 msgid "Image Map"
-msgstr ""
+msgstr "影像映射"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:58
 msgid "Long Description Link"
-msgstr ""
+msgstr "長描述連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:61
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Constrain Proportions"
-msgstr ""
+msgstr "維持比例"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:66
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Appearance"
-msgstr ""
+msgstr "外觀"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:3
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:11
 msgid "Header and Caption"
-msgstr ""
+msgstr "標頭與標題"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
 msgid "Title and Attribution"
-msgstr ""
+msgstr "標題與屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:5
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:13
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Header"
-msgstr ""
+msgstr "標頭"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:6
 msgid "Image Title"
-msgstr ""
+msgstr "影像標題"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:7
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:15
 msgid "Title Link"
-msgstr ""
+msgstr "標題連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:8
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:16
 msgid "Source/Author"
-msgstr ""
+msgstr "來源/作者"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:9
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:17
 msgid "Source/Author Link"
-msgstr ""
+msgstr "來源/作者連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
 msgid "Choose a license..."
-msgstr ""
+msgstr "選擇授權條款..."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:12
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:20
 msgid "Public Domain"
-msgstr ""
+msgstr "公共領域"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:13
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:21
 msgid "All Rights Reserved"
-msgstr ""
+msgstr "保留所有權利"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:14
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:22
 msgid "Presentation"
-msgstr ""
+msgstr "展示"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:15
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:23
 msgid "Text Alignment"
-msgstr ""
+msgstr "文字排列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:19
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:27
 msgid "Group Position"
-msgstr ""
+msgstr "群組位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:22
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Float"
-msgstr ""
+msgstr "浮動"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:25
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:33
 msgid "Group Margin"
-msgstr ""
+msgstr "群組邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:26
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:34
-msgid "You will not be able to edit the header or the caption from this dialog."
-msgstr ""
+msgid ""
+"You will not be able to edit the header or the caption from this dialog."
+msgstr "您無法從此對話框編輯標頭或標題。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:27
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:35
 msgid ""
 "The header and the caption can't be edited from this dialog. You can "
 "change or remove them editing the text itself."
-msgstr ""
+msgstr "標頭與標題不能在此對話框中編輯，您可以編輯文字本身來變更或移除它們。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Name"
-msgstr ""
+msgstr "目標名稱"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Position (X/Y)"
-msgstr ""
+msgstr "位置 (X/Y)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Dependent (Mozilla/Firefox Only)"
-msgstr ""
+msgstr "相依性（只對 Mozilla/Firefox）"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Make Window Resizable"
-msgstr ""
+msgstr "讓視窗可調整大小"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Location Bar"
-msgstr ""
+msgstr "顯示位置列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Menu Bar"
-msgstr ""
+msgstr "顯示選單列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Toolbars"
-msgstr ""
+msgstr "顯示工具列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Status Bar"
-msgstr ""
+msgstr "顯示狀態列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Show Scrollbars"
-msgstr ""
+msgstr "顯示捲軸列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Insert 'return false'"
-msgstr ""
+msgstr "插入'return false'"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Window Name"
-msgstr ""
+msgstr "視窗名稱"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup URL"
-msgstr ""
+msgstr "彈出式網址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "JavaScript Popup"
-msgstr ""
+msgstr "Javascript 彈出視窗"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in New Window"
-msgstr ""
+msgstr "在新視窗開啟"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in Top Frame (Replaces All Frames)"
-msgstr ""
+msgstr "在頂層框架開啟（取代所有框架）"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in Parent Window/Frame"
-msgstr ""
+msgstr "在父視窗/父框架開啟"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Open in This Window/Frame"
-msgstr ""
+msgstr "在此視窗/此框架開啟"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Anchors"
-msgstr ""
+msgstr "定錨"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup Properties"
-msgstr ""
+msgstr "彈出式屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Popup"
-msgstr ""
+msgstr "彈出式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Relationship Target to Page"
-msgstr ""
+msgstr "目標到頁面的關係"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Relationship Page to Target"
-msgstr ""
+msgstr "頁面到目標的關係"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Character Encoding"
-msgstr ""
+msgstr "目標字元編碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Target Language"
-msgstr ""
+msgstr "目標語言"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Advanced Properties"
-msgstr ""
+msgstr "進階屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "General Properties"
-msgstr ""
+msgstr "一般屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Target MIME Type"
-msgstr ""
+msgstr "目標 MIME 型態"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "AccessKey"
-msgstr ""
+msgstr "存取金鑰"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "TabIndex"
-msgstr ""
+msgstr "表格索引"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Link List"
-msgstr ""
+msgstr "連結清單"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid ""
 "The URL you entered seems to be an external link. Do you want to add the "
 "required http:// prefix?"
-msgstr ""
+msgstr "您輸入的網址似乎是外部連結。您要加個 http:// 在前面嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid ""
 "The URL you entered seems to be an email address. Do you want to add the "
 "required mailto: prefix?"
-msgstr ""
+msgstr "您輸入的網址似乎是個電子郵件地址。您要加個 mailto: 在前面嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Link URL"
-msgstr ""
+msgstr "連結網址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:3
 msgid "Anchors and nodes"
-msgstr ""
+msgstr "定錨與節點"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:4
 msgid "Node"
-msgstr ""
+msgstr "節點"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
-msgstr ""
+msgstr "回復自動儲存的內容"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
-msgstr ""
+msgstr "哭泣"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cool"
-msgstr ""
+msgstr "酷"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Insert Emotion"
-msgstr ""
+msgstr "插入情緒"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Yell"
-msgstr ""
+msgstr "喊叫"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Wink"
-msgstr ""
+msgstr "眨眼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Undecided"
-msgstr ""
+msgstr "未決定"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Tongue Out"
-msgstr ""
+msgstr "吐舌"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Surprised"
-msgstr ""
+msgstr "驚訝"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Smile"
-msgstr ""
+msgstr "微笑"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Sealed"
-msgstr ""
+msgstr "密封"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Money Mouth"
-msgstr ""
+msgstr "金錢嘴"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Laughing"
-msgstr ""
+msgstr "大笑"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Kiss"
-msgstr ""
+msgstr "親吻"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Innocent"
-msgstr ""
+msgstr "無辜"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Frown"
-msgstr ""
+msgstr "皺眉"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Foot in Mouth"
@@ -7658,164 +7599,164 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Embarassed"
-msgstr ""
+msgstr "尷尬"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Use left and right arrows to navigate."
-msgstr ""
+msgstr "用左右方向鍵來導覽。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en.js:2
 msgid "This is just a template button"
-msgstr ""
+msgstr "這只是樣本按鍵"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en_dlg.js:2
 msgid "This is just a example title"
-msgstr ""
+msgstr "這只是範例標題"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:4
 msgid "LaTeX to Math for eXe"
-msgstr ""
+msgstr "eXe 的 LaTeX 轉數學式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:5
 msgid "LaTeX Math Image properties"
-msgstr ""
+msgstr "LaTeX 數學影像屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:6
 msgid "eXe LaTeX Math Image"
-msgstr ""
+msgstr "eXe LaTeX 數學影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:7
 msgid "Select a font size:"
-msgstr ""
+msgstr "選擇字型大小："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:8
 msgid "Font size:"
-msgstr ""
+msgstr "字型大小："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:9
 msgid "Preview Math Image"
-msgstr ""
+msgstr "預覽數學影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:11
 msgid "Input LaTeX source:"
-msgstr ""
+msgstr "輸入 LaTeX 源碼："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:12
 msgid "generated Math Image"
-msgstr ""
+msgstr "產生數學影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:13
 msgid "Math Image description<br>(optional ALT tag):"
-msgstr ""
+msgstr "數學影像描述<br>（選擇性的替代標籤）："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:14
 msgid "eXe Math: Generate"
-msgstr ""
+msgstr "eXe 數學：產生"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:15
 msgid "eXe Math: Image Appearance"
-msgstr ""
+msgstr "eXe 數學：影像外觀"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:16
 msgid "verbatim text"
-msgstr ""
+msgstr "逐字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:17
 msgid "new line"
-msgstr ""
+msgstr "新行"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:18
 msgid "Click below to insert LaTeX for any of the following symbols:"
-msgstr ""
+msgstr "點擊下面以插入 LaTeX 的符號："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:20
 msgid "And, add your own LaTeX directly into the following:"
-msgstr ""
+msgstr "並且加入您自己的 LaTeX 語法："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:21
 msgid "Constrain proportions"
-msgstr ""
+msgstr "維持比例"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:23
 msgid "Appearance&nbsp;preview&nbsp;image"
-msgstr ""
+msgstr "外觀預覽影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:24
 msgid "Create the image by clicking \"Preview\" before saving"
-msgstr ""
+msgstr "點擊「預覽」在儲存前先看影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:25
 msgid "The plugin \"inlinepopups\" must be enabled"
-msgstr ""
+msgstr "外掛程式 \"inlinkepopups\" 必須開啟"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:70
 msgid "No source code found."
-msgstr ""
+msgstr "找不到程式源碼。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Meta Information"
-msgstr ""
+msgstr "中繼資訊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Language and Encoding"
-msgstr ""
+msgstr "語言與編碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Keywords"
-msgstr ""
+msgstr "關鍵字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Robots"
-msgstr ""
+msgstr "Robots"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Doctype"
-msgstr ""
+msgstr "Doctype"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "XML Declaration"
-msgstr ""
+msgstr "XML 宣告"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Character Encoding"
-msgstr ""
+msgstr "字元編碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Background Properties"
-msgstr ""
+msgstr "背景屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Body Margins"
-msgstr ""
+msgstr "本體邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Link Colors"
-msgstr ""
+msgstr "連結顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Text Properties"
-msgstr ""
+msgstr "文字屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Left Margin"
-msgstr ""
+msgstr "左邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Right Margin"
-msgstr ""
+msgstr "右邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Top Margin"
-msgstr ""
+msgstr "上邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Bottom Margin"
-msgstr ""
+msgstr "下邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Text Color"
-msgstr ""
+msgstr "文字顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Font Face"
@@ -7823,7 +7764,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Link Color"
-msgstr ""
+msgstr "連結顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Hover Color"
@@ -7831,111 +7772,111 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Visited Color"
-msgstr ""
+msgstr "已用過顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Active Color"
-msgstr ""
+msgstr "作用中顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Index and Follow the Links"
-msgstr ""
+msgstr "建索引，並且跟隨連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Index and Don't Follow the Links"
-msgstr ""
+msgstr "建索引，但不要跟隨連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Do Not Index but Follow the Links"
-msgstr ""
+msgstr "不要建索引但是要跟隨連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Do Not Index and Don't Follow the Links"
-msgstr ""
+msgstr "不要建索引，不要跟隨連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Stylesheet and Style Properties"
-msgstr ""
+msgstr "樣式表與樣式屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Stylesheet"
-msgstr ""
+msgstr "樣式表"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Copyright"
-msgstr ""
+msgstr "版權"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Add New Element"
-msgstr ""
+msgstr "新增元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Remove Selected Element"
-msgstr ""
+msgstr "移除選取的元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Move Selected Element Up"
-msgstr ""
+msgstr "將選取的元素上移"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Move Selected Element Down"
-msgstr ""
+msgstr "將選取的元素下移"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Head Elements"
-msgstr ""
+msgstr "標頭元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Title Element"
-msgstr ""
+msgstr "標題元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Meta Element"
-msgstr ""
+msgstr "中繼資料元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Script Element"
-msgstr ""
+msgstr "文稿元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Style Element"
-msgstr ""
+msgstr "樣式元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Link Element"
-msgstr ""
+msgstr "連結元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Base Element"
-msgstr ""
+msgstr "基礎元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Comment Node"
-msgstr ""
+msgstr "註解節點"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Comment"
-msgstr ""
+msgstr "註解"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Charset"
-msgstr ""
+msgstr "字元集"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Defer"
-msgstr ""
+msgstr "推遲"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Media"
-msgstr ""
+msgstr "媒體"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Value"
-msgstr ""
+msgstr "數值"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Content"
-msgstr ""
+msgstr "內容"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Rel"
@@ -7943,51 +7884,51 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Rev"
-msgstr ""
+msgstr "版號"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "HREF Lang"
-msgstr ""
+msgstr "HREF Lang"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HREF"
-msgstr ""
+msgstr "HREF"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Color"
-msgstr ""
+msgstr "顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Background Color"
-msgstr ""
+msgstr "背景顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Background Image"
-msgstr ""
+msgstr "背景影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Font Size"
-msgstr ""
+msgstr "字型大小"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Font Family"
-msgstr ""
+msgstr "字型家族"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "File/URL"
-msgstr ""
+msgstr "檔案/網址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Top Left"
-msgstr ""
+msgstr "左上方"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid ""
@@ -7998,15 +7939,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "QT Source"
-msgstr ""
+msgstr "QT 源碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Progress"
-msgstr ""
+msgstr "進度"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Sound"
-msgstr ""
+msgstr "音效"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Stretch V-Align"
@@ -8026,31 +7967,31 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Top Right"
-msgstr ""
+msgstr "右上方"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "UI Mode"
-msgstr ""
+msgstr "使用者介面模式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Rate"
-msgstr ""
+msgstr "評分"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Play Count"
-msgstr ""
+msgstr "播放次數"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Default Frame"
-msgstr ""
+msgstr "預設影格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Current Position"
-msgstr ""
+msgstr "目前位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Current Marker"
-msgstr ""
+msgstr "目前標記"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Captioning ID"
@@ -8058,15 +7999,15 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Base URL"
-msgstr ""
+msgstr "基礎網址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Balance"
-msgstr ""
+msgstr "平衡"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Windowless Video"
-msgstr ""
+msgstr "無視窗影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Stretch to Fit"
@@ -8074,7 +8015,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Mute"
-msgstr ""
+msgstr "靜音"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Invoke URLs"
@@ -8082,19 +8023,19 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Full Screen"
-msgstr ""
+msgstr "全螢幕"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Enabled"
-msgstr ""
+msgstr "已開啟"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Auto Start"
-msgstr ""
+msgstr "自動開始"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Volume"
-msgstr ""
+msgstr "音量"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Choke Speed"
@@ -8102,47 +8043,47 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "End Time"
-msgstr ""
+msgstr "結束時間"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Start Time"
-msgstr ""
+msgstr "開始時間"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "啟用 JavaScript"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "No Correction"
-msgstr ""
+msgstr "不修正"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Target Cache"
-msgstr ""
+msgstr "目標快取"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Play Every Frame"
-msgstr ""
+msgstr "播放每一影格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Kiosk Mode"
-msgstr ""
+msgstr "Kiosk 模式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Controller"
-msgstr ""
+msgstr "控制器"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Show Menu"
-msgstr ""
+msgstr "顯示選單"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Loop"
-msgstr ""
+msgstr "迴圈"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Auto Play"
-msgstr ""
+msgstr "自動播放"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "H-Space"
@@ -8154,7 +8095,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Controls"
-msgstr ""
+msgstr "控制"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Num Loops"
@@ -8162,11 +8103,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Console"
-msgstr ""
+msgstr "主控台"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Cache"
-msgstr ""
+msgstr "快取"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Auto HREF"
@@ -8182,7 +8123,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Base"
-msgstr ""
+msgstr "基底"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "WMode"
@@ -8194,139 +8135,139 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Align"
-msgstr ""
+msgstr "對齊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Scale"
-msgstr ""
+msgstr "調整大小"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Quality"
-msgstr ""
+msgstr "品質"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shuffle"
-msgstr ""
+msgstr "隨機播放"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Prefetch"
-msgstr ""
+msgstr "預先取得"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "No Java"
-msgstr ""
+msgstr "無 Java"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Maintain Aspect"
-msgstr ""
+msgstr "維持比例"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Image Status"
-msgstr ""
+msgstr "影像狀態"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Auto Goto URL"
-msgstr ""
+msgstr "自動跳到網址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shockwave Options"
-msgstr ""
+msgstr "Shockwave 選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Real Media Player Options"
-msgstr ""
+msgstr "Real Media Player 選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Windows Media Player Options"
-msgstr ""
+msgstr "Windows Media Player 選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "QuickTime Options"
-msgstr ""
+msgstr "QuickTime 選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash Options"
-msgstr ""
+msgstr "Flash 選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Hidden"
-msgstr ""
+msgstr "隱藏"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Bottom Left"
-msgstr ""
+msgstr "左下方"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Bottom Right"
-msgstr ""
+msgstr "右下方"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 Video Options"
-msgstr ""
+msgstr "HTML5 影像選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Alternative source 1"
-msgstr ""
+msgstr "替代來源 1"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Alternative source 2"
-msgstr ""
+msgstr "替代來源 2"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Preload"
-msgstr ""
+msgstr "預先載入"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Poster"
-msgstr ""
+msgstr "海報"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Audio Options"
-msgstr ""
+msgstr "音效選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Don't Preload"
-msgstr ""
+msgstr "不要預先載入"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Preload video metadata"
-msgstr ""
+msgstr "預先載入影像中繼資料"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Let user's browser decide"
-msgstr ""
+msgstr "讓使用者的瀏覽器決定"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Embedded Audio Options"
-msgstr ""
+msgstr "嵌入式音效選項"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 video (ogv/ogg, webm)"
-msgstr ""
+msgstr "HTML5 影像 (ogv/ogg, webm)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 audio (ogg)"
-msgstr ""
+msgstr "HTML5 音效 (ogg)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Flash (swf, flv, mp3)"
-msgstr ""
+msgstr "Flash (swf, flv, mp3)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "QuickTime (mov, mp4, mpeg)"
-msgstr ""
+msgstr "QuickTime (mov, mp4, mpeg)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shockwave"
-msgstr ""
+msgstr "Shockwave"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Windows Media (wmv, wma)"
-msgstr ""
+msgstr "Windows 媒體 (wmv, wma)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Real Media (ram)"
-msgstr ""
+msgstr "Real 媒體 (ram)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Iframe"
@@ -8334,37 +8275,37 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Embedded Audio"
-msgstr ""
+msgstr "嵌入式音效"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "List"
-msgstr ""
+msgstr "清單"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Background"
-msgstr ""
+msgstr "背景"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:3
 msgid "Selected file"
-msgstr ""
+msgstr "已選取檔案"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:4
 msgid "HTML5 does not work in all browsers"
-msgstr ""
+msgstr "HTML5 無法在所有瀏覽器下運作"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:5
 msgid "Recommended type"
-msgstr ""
+msgstr "建議的類型"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:6
 msgid "Continue without changing your settings?"
-msgstr ""
+msgstr "要繼續而不變更您的設定嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:7
 msgid "Could not generate preview"
-msgstr ""
+msgstr "無法產生預覽"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:8
 msgid ""
@@ -8380,24 +8321,24 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:10
 msgid "Use JavaScript player"
-msgstr ""
+msgstr "用 JavaScript 播放器"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:14
 msgid "Media Title"
-msgstr ""
+msgstr "媒體標題"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:3
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "將 HTML 程式碼貼成文字"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:6
 msgid "Use CTRL+V on your keyboard to paste the code into the window."
-msgstr ""
+msgstr "用 Ctrl+V 來將程式碼貼上視窗。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:5
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "貼上 HTML 片段（嵌入碼）"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:7
 msgid "Include wrapper (improves presentation)"
@@ -8405,75 +8346,75 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find What"
-msgstr ""
+msgstr "尋找什麼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace with"
-msgstr ""
+msgstr "取代為"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Direction"
-msgstr ""
+msgstr "方向"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Up"
-msgstr ""
+msgstr "上"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Down"
-msgstr ""
+msgstr "下"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Match Case"
-msgstr ""
+msgstr "符合大小寫"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find Next"
-msgstr ""
+msgstr "尋找下一個"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "All occurrences of the search string were replaced."
-msgstr ""
+msgstr "所有出現的搜尋字串均已被取代。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Find Again"
-msgstr ""
+msgstr "再次尋找"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "The search has been completed. The search string could not be found."
-msgstr ""
+msgstr "此搜尋已完成。找不到要搜尋的字串。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace All"
-msgstr ""
+msgstr "全部取代"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Line Height"
-msgstr ""
+msgstr "行高度"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Variant"
-msgstr ""
+msgstr "變異"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Weight"
-msgstr ""
+msgstr "重量"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Font"
-msgstr ""
+msgstr "字型"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Positioning"
-msgstr ""
+msgstr "位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Box"
-msgstr ""
+msgstr "方塊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Block"
-msgstr ""
+msgstr "區塊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Insert span at selection"
@@ -8481,87 +8422,87 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clip"
-msgstr ""
+msgstr "素材"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Placement"
-msgstr ""
+msgstr "放置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Overflow"
-msgstr ""
+msgstr "溢位"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Z-index"
-msgstr ""
+msgstr "Z-索引"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Visibility"
-msgstr ""
+msgstr "可見"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Position"
-msgstr ""
+msgstr "位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Bullet Image"
-msgstr ""
+msgstr "圓鈕影像"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Margin"
-msgstr ""
+msgstr "邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Same for All"
-msgstr ""
+msgstr "全部相同"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Padding"
-msgstr ""
+msgstr "補齊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Display"
-msgstr ""
+msgstr "顯示"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Whitespace"
-msgstr ""
+msgstr "空白"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Text Indent"
-msgstr ""
+msgstr "文字縮排"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Text Align"
-msgstr ""
+msgstr "文字對齊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Letter Spacing"
-msgstr ""
+msgstr "字母間隔"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Word Spacing"
-msgstr ""
+msgstr "單字間隔"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Vertical Position"
-msgstr ""
+msgstr "垂直位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Horizontal Position"
-msgstr ""
+msgstr "水平位置"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Repeat"
-msgstr ""
+msgstr "重覆"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Blink"
-msgstr ""
+msgstr "閃爍"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Case"
@@ -8569,34 +8510,34 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Underline"
-msgstr ""
+msgstr "底線"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Overline"
-msgstr ""
+msgstr "上線"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Decoration"
-msgstr ""
+msgstr "裝飾"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Vertical Alignment"
-msgstr ""
+msgstr "垂直對齊"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Strikethrough"
-msgstr ""
+msgstr "刪除線"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "border"
-msgstr ""
+msgstr "邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "box"
-msgstr ""
+msgstr "盒狀"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "vsides"
@@ -8616,43 +8557,43 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "below"
-msgstr ""
+msgstr "下方"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "above"
-msgstr ""
+msgstr "上方"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "void"
-msgstr ""
+msgstr "無"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Rules"
-msgstr ""
+msgstr "規則"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "all"
-msgstr ""
+msgstr "全部"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "cols"
-msgstr ""
+msgstr "欄"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "rows"
-msgstr ""
+msgstr "列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "groups"
-msgstr ""
+msgstr "群組"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Frame"
-msgstr ""
+msgstr "框架"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Table Caption"
-msgstr ""
+msgstr "表格標題"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid ""
@@ -8663,318 +8604,318 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of cells of {$cells}."
-msgstr ""
+msgstr "您已超過最大儲存格數量 {$cells}。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of rows of {$rows}."
-msgstr ""
+msgstr "您已超過最大列數量 {$rows}。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "You've exceeded the maximum number of columns of {$cols}."
-msgstr ""
+msgstr "您已超過最大欄數量 {$cols}。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Col Group"
-msgstr ""
+msgstr "欄群組"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Row Group"
-msgstr ""
+msgstr "列群組"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Scope"
-msgstr ""
+msgstr "範圍"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Body"
-msgstr ""
+msgstr "本體"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update All Rows in Table"
-msgstr ""
+msgstr "更新表格中的所有列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update Even Rows in Table"
-msgstr ""
+msgstr "更新表格中的偶數列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update Odd Rows in Table"
-msgstr ""
+msgstr "更新表格中的奇數列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update Current Row"
-msgstr ""
+msgstr "更新目前列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update All Cells in Table"
-msgstr ""
+msgstr "更新表格中所有儲存格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update All Cells in Row"
-msgstr ""
+msgstr "更新列中所有儲存格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update Current Cell"
-msgstr ""
+msgstr "更新目前儲存格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Data"
-msgstr ""
+msgstr "資料"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Summary"
-msgstr ""
+msgstr "摘要"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Border Color"
-msgstr ""
+msgstr "邊框顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Cell Type"
-msgstr ""
+msgstr "儲存格型態"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Cell Padding"
-msgstr ""
+msgstr "儲存格填充"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Cell Spacing"
-msgstr ""
+msgstr "儲存格間隔"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Rows"
-msgstr ""
+msgstr "列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Columns"
-msgstr ""
+msgstr "欄"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Row Type"
-msgstr ""
+msgstr "列型態"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Update all cells in column"
-msgstr ""
+msgstr "更新欄位中所有儲存格"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Templates"
-msgstr ""
+msgstr "樣本"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Template"
-msgstr ""
+msgstr "樣本"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Select a Template"
-msgstr ""
+msgstr "選擇樣本"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 msgid "Warning: Updating a template with a different one may cause data loss."
-msgstr ""
+msgstr "警告：更新為不同的樣本可能造成資料損失。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 #, python-format
 msgid "%Y-%m-%d %H:%M:%S"
-msgstr ""
+msgstr "%Y-%m-%d %H:%M:%S"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Insert Current Date/Time"
-msgstr ""
+msgstr "插入目前的時間與日期"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Citation Element"
-msgstr ""
+msgstr "引用元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Abbreviation Element"
-msgstr ""
+msgstr "縮寫元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Acronym Element"
-msgstr ""
+msgstr "首字母縮寫元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Deletion Element"
-msgstr ""
+msgstr "刪除元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Insertion Element"
-msgstr ""
+msgstr "插入元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Element Events"
-msgstr ""
+msgstr "元素事件"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Element Attributes"
-msgstr ""
+msgstr "元素屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "General Settings"
-msgstr ""
+msgstr "一般設定"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Attributes"
-msgstr ""
+msgstr "屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Text Direction"
-msgstr ""
+msgstr "文字方向"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Date/Time"
-msgstr ""
+msgstr "日期/時間"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "Cite"
-msgstr ""
+msgstr "引用"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Definition Description"
-msgstr ""
+msgstr "定義描述"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Definition Term "
-msgstr ""
+msgstr "定義名詞 "
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Code Sample"
-msgstr ""
+msgstr "代碼範例"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Code"
-msgstr ""
+msgstr "代碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Block Quote"
-msgstr ""
+msgstr "區塊引言"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Heading 6"
-msgstr ""
+msgstr "標頭 6"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Heading 5"
-msgstr ""
+msgstr "標頭 5"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Heading 4"
-msgstr ""
+msgstr "標頭 4"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Heading 3"
-msgstr ""
+msgstr "標頭 3"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Heading 2"
-msgstr ""
+msgstr "標頭 2"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Heading 1"
-msgstr ""
+msgstr "標頭 1"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Preformatted"
-msgstr ""
+msgstr "預格式化"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Address"
-msgstr ""
+msgstr "地址"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "DIV"
-msgstr ""
+msgstr "DIV"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Paragraph"
-msgstr ""
+msgstr "段落"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid ""
 "Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element "
 "path - Alt-X"
-msgstr ""
+msgstr "跳到工具鈕 - Alt+Q，跳到編輯器 - Alt+Z，跳到元素路徑 - Alt_X"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Are you sure you want clear all contents?"
-msgstr ""
+msgstr "您確定要清除所有內容嗎？"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Path"
-msgstr ""
+msgstr "路徑"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "New Document"
-msgstr ""
+msgstr "新文件"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Image Properties"
-msgstr ""
+msgstr "影像屬性"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Paste (Ctrl+V)"
-msgstr ""
+msgstr "貼上 (Ctrl+V)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Copy (Ctrl+C)"
-msgstr ""
+msgstr "複製 (Ctrl+C)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Cut (Ctrl+X)"
-msgstr ""
+msgstr "剪下 (Ctrl+X)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "show/Hide Guidelines/Invisible Elements"
-msgstr ""
+msgstr "顯示/隱藏導覽/不可見元素"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Insert Special Character"
-msgstr ""
+msgstr "插入特殊字元"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Select Background Color"
-msgstr ""
+msgstr "選擇背景顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Select Text Color"
-msgstr ""
+msgstr "選擇文字顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Your Custom Description Here"
-msgstr ""
+msgstr "在此輸入您自訂的描述"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Remove Formatting"
-msgstr ""
+msgstr "移除格式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Superscript"
-msgstr ""
+msgstr "上標"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Subscript"
-msgstr ""
+msgstr "下標"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Edit HTML Source"
-msgstr ""
+msgstr "編輯 HTML 源碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Unlink"
-msgstr ""
+msgstr "解除連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Increase Indent"
-msgstr ""
+msgstr "遞增縮排"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Decrease Indent"
-msgstr ""
+msgstr "遞減縮排"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Align Full"
@@ -8982,168 +8923,168 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Align Right"
-msgstr ""
+msgstr "置右"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Align Center"
-msgstr ""
+msgstr "置中"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Align Left"
-msgstr ""
+msgstr "置左"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Press ALT-F10 for toolbar. Press ALT-0 for help"
-msgstr ""
+msgstr "按下 ALT-F10 開啟工具列。ALT-0 開啟說明"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Accessability Help"
-msgstr ""
+msgstr "無障礙說明"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Toolbar"
-msgstr ""
+msgstr "工具列"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Insert/Edit Anchor"
-msgstr ""
+msgstr "插入/編輯定錨"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Underline (Ctrl+U)"
-msgstr ""
+msgstr "底線（Ctrl+U）"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Italic (Ctrl+I)"
-msgstr ""
+msgstr "斜體（Ctrl+I）"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Bold (Ctrl+B)"
-msgstr ""
+msgstr "粗體（Ctrl+B）"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Cleanup Messy Code"
-msgstr ""
+msgstr "清除亂七八糟的代碼"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Redo (Ctrl+Y)"
-msgstr ""
+msgstr "重做 (Ctrl+Y)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "復原 (Ctrl+Z)"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Insert/Remove Numbered List"
-msgstr ""
+msgstr "插入/移除編號列表"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/simple/langs/en.js:1
 msgid "Insert/Remove Bulleted List"
-msgstr ""
+msgstr "插入/移除圓點列表"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Open Link in a New Window"
-msgstr ""
+msgstr "在新視窗開啟連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Open Link in the Same Window"
-msgstr ""
+msgstr "在同一個視窗裡開啟連結"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Select Special Character"
-msgstr ""
+msgstr "選擇特殊字元"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Name:"
-msgstr ""
+msgstr "名稱："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Color:"
-msgstr ""
+msgstr "顏色："
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Named Colors"
-msgstr ""
+msgstr "已命名顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Named"
-msgstr ""
+msgstr "已命名"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Palette Colors"
-msgstr ""
+msgstr "調色盤顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Palette"
-msgstr ""
+msgstr "調色盤"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Color Picker"
-msgstr ""
+msgstr "顏色挑選器"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Picker"
-msgstr ""
+msgstr "挑選器"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Select a Color"
-msgstr ""
+msgstr "選擇顏色"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Word Wrap"
-msgstr ""
+msgstr "文字折行"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "HTML Source Editor"
-msgstr ""
+msgstr "HTML 源碼編輯器"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Anchor Name"
-msgstr ""
+msgstr "定錨名稱"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Loaded Plugins"
-msgstr ""
+msgstr "已載入的外掛程式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Plugin"
-msgstr ""
+msgstr "外掛程式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Plugins"
-msgstr ""
+msgstr "外掛程式"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About TinyMCE"
-msgstr ""
+msgstr "關於 TinyMCE"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Please specify a valid anchor name."
-msgstr ""
+msgstr "請指定合法的定錨名稱。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Accessibility Help"
-msgstr ""
+msgstr "無障礙說明"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "General Usage"
-msgstr ""
+msgstr "一般用法"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Invalid color value"
-msgstr ""
+msgstr "不合法的顏色值"
 
 #: exe/webui/selectbrowserpage_ru.py:104
 msgid "Browsers installed in your system"
-msgstr ""
+msgstr "已安裝於您系統的瀏覽器"
 
 #: exe/webui/selectbrowserpage_ru.py:110
 #: exe/webui/xliffexportpreferencespage.py:136
@@ -9152,45 +9093,45 @@ msgid "OK"
 msgstr "確定"
 
 #: exe/webui/stylemanagerpage.py:131
-#, fuzzy, python-format
+#, python-format
 msgid "Style directory already exists: %s"
-msgstr "目錄已存在"
+msgstr "樣式目錄已存在：%s"
 
 #: exe/webui/stylemanagerpage.py:141
 #, python-format
 msgid "The style name already exists: %s"
-msgstr ""
+msgstr "樣式名稱已存在：%s"
 
 #: exe/webui/stylemanagerpage.py:143
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #: exe/webui/stylemanagerpage.py:143
-#, fuzzy, python-format
+#, python-format
 msgid "Successfully imported style: %s"
-msgstr "成功匯出 '%s'（從 '%s'）"
+msgstr "成功匯入樣式：%s"
 
 #: exe/webui/stylemanagerpage.py:146
 msgid "Incorrect style format (does not include content.css)"
-msgstr ""
+msgstr "不正確的樣式格式（未包含 content.css）"
 
 #: exe/webui/stylemanagerpage.py:171
 #, python-format
 msgid "Style exported correctly: %s"
-msgstr ""
+msgstr "樣式已正確匯出：%s"
 
 #: exe/webui/stylemanagerpage.py:174
 #, python-format
 msgid "Could not export style : %s"
-msgstr ""
+msgstr "無法匯出樣式：%s"
 
 #: exe/webui/stylemanagerpage.py:189
 msgid "Style deleted correctly"
-msgstr ""
+msgstr "樣式已正確刪除"
 
 #: exe/webui/stylemanagerpage.py:192
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "發生未知的錯誤"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:229
 #: exe/webui/truefalseelement.py:311
@@ -9215,9 +9156,8 @@ msgid "English Wikipedia Article"
 msgstr "英文維基百科文章"
 
 #: exe/webui/wikipediablock.py:115
-#, fuzzy
 msgid "Basque Wikipedia Article"
-msgstr "日文維基百科文章"
+msgstr "巴斯克維基百科文章"
 
 #: exe/webui/wikipediablock.py:116
 msgid "Catalan Wikipedia Article"
@@ -9240,9 +9180,8 @@ msgid "German Wikipedia Article"
 msgstr "德文維基百科文章"
 
 #: exe/webui/wikipediablock.py:121
-#, fuzzy
 msgid "Galician Wikipedia Article"
-msgstr "義大利文維基百科文章"
+msgstr "加里西亞維基百科文章"
 
 #: exe/webui/wikipediablock.py:122
 msgid "Greek Wikipedia Article"
@@ -9305,11 +9244,10 @@ msgid "Own site"
 msgstr "自己的站台"
 
 #: exe/webui/wikipediablock.py:181 exe/webui/wikipediablock.py:200
-#, fuzzy
 msgid ""
 "This article is licensed under the Creative Commons Attribution-"
 "ShareAlike License. It uses material from"
-msgstr "創用 CC 姓名標示-相同方式分享 2.5 (CC Attribution-Share Alike 2.5)"
+msgstr "此文章以創用 CC 屬性-相同方式分享 (CC Attribution-Share Alike)。它的素材來自"
 
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
@@ -9368,4 +9306,5 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
+
 
