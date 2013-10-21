@@ -37,44 +37,49 @@ class MemoryMatchIdeviceInc(Idevice):
     into the user's ~/.exe/idevices dircectory it will be loaded along with
     the system idevices.
     """
+    
+    persistenceVersion = 2
+    
     def __init__(self, content=""):
         Idevice.__init__(self, _(u"Memory Match Game"), 
                          _(u"Toughra Technologies FZ LLC."),
                          _(u"""Memory Match Game Maker."""), "", "")
-
-        mainFieldOrder = ['instructions', 'rows', 'cols', 'splitPairs', 'feedbackpositive', 'feedbacknegative', 'feedbackstyle', 'cellwidth', 'cellheight', \
+        self.message = ""
+        
+        mainFieldOrder = ['title', 'instructions', 'rows', 'cols', 'splitPairs', 'feedbackpositive', 'feedbacknegative', 'feedbackstyle', 'cellwidth', 'cellheight', \
                             'hidetime', 'coverImg', 'cellbackImg', 'revealedBackground', 'positivefeedbackeffect', \
                             'negativefeedbackeffect', 'useTimer', 'timertext', 'timerstyle', 'hideAfterMatch', 'hideAfterMatchEffect', 'cellpadding',\
                             'cellspacing', 'cellstyle']
 
-        mainFieldsInfo = {  'instructions' : ['textarea', 'Instructions to show', 'Instructions'],\
-                            'rows' : ['text', 'Number of Rows', 'Number of Rows', {'defaultval' : '2'}],\
-                            'cols' : ['text', 'Number of Columns', 'Number of Columns', {'defaultval' : '2'}],\
-                            'splitPairs' : ['choice', 'Split Question/Answer Pairs', 'Split Question/Answer Pairs',\
+        mainFieldsInfo = {  'title' : ['text', _('Title'), _('Title')], \
+                            'instructions' : ['textarea', _('Instructions to show'), _('Instructions')],\
+                            'rows' : ['text', _('Number of Rows'), _('Number of Rows'), {'defaultval' : '2'}],\
+                            'cols' : ['text', _('Number of Columns'), _('Number of Columns'), {'defaultval' : '2'}],\
+                            'splitPairs' : ['choice', _('Split Question/Answer Pairs'), _('Split Question/Answer Pairs'),\
                                 {'choices' : [['true', 'Yes'], ['false', 'No']] }],\
-                            'feedbackpositive' : ['textarea', 'Feedback to show on correct match', 'Positive Feedback'],\
-                            'feedbacknegative' : ['textarea', 'Feedback to show on incorrect pair', 'Negative Feedback'],\
-                            'feedbackstyle' : ['text', 'Style of Feedback Area (CSS)', 'CSS style for feedback area'],\
-                            'cellwidth' : ['text', 'Width of Cells (in pixels)', 'Cell Width px', {'defaultval' : '100'}],\
-                            'cellheight' : ['text', 'Height of Cells (in pixels)', 'Cell Height px', {'defaultval' : '100'}],\
-                            'hidetime' : ['text', 'Time after which to re-hide incorrect match (ms)', 'Time to hide', {'defaultval' : '1000'}],\
-                            'coverImg' : ['image', 'Cover Image for cells (shown before selected)', 'Cover Img'],\
-                            'cellbackImg' : ['image', 'Background Image for cells (shown after selected)', 'Back Img'],\
-                            'revealedBackground' : ['image', 'Background image behind cells shown as cells are hidden', 'Bg Img'],\
-                            'positivefeedbackeffect' : ['choice', 'Effect for showing positive feedback', 'Positive Feedback Effect',\
+                            'feedbackpositive' : ['textarea', _('Feedback to show on correct match'), _('Positive Feedback')],\
+                            'feedbacknegative' : ['textarea', _('Feedback to show on incorrect pair'), _('Negative Feedback')],\
+                            'feedbackstyle' : ['text', _('Style of Feedback Area (CSS)'), _('CSS style for feedback area'), {'type': 'advanced'}],\
+                            'cellwidth' : ['text', _('Width of Cells (in pixels)'), _('Cell Width px'), {'defaultval' : '100'}],\
+                            'cellheight' : ['text', _('Height of Cells (in pixels)'), _('Cell Height px'), {'defaultval' : '100'}],\
+                            'hidetime' : ['text', _('Time after which to re-hide incorrect match (ms)'), _('Time to hide'), {'defaultval' : '1000', 'type': 'advanced'}],\
+                            'coverImg' : ['image', _('Cover Image for cells (shown before selected)'), _('Cover Img')],\
+                            'cellbackImg' : ['image', _('Background Image for cells (shown after selected)'), _('Back Img')],\
+                            'revealedBackground' : ['image', _('Background image behind cells shown as cells are hidden'), _('Bg Img')],\
+                            'positivefeedbackeffect' : ['choice', _('Effect for showing positive feedback'), _('Positive Feedback Effect'),\
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
-                            'negativefeedbackeffect' : ['choice', 'Effect for showing negative feedback', 'Negative Feedback Effect',\
+                            'negativefeedbackeffect' : ['choice', _('Effect for showing negative feedback'), _('Negative Feedback Effect'),\
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
-                            'useTimer' : ['choice', 'Show / Use a timer?', 'Use Timer?', {'choices' : [['true', 'Yes'], ['false', 'No']]} ],\
-                            'hideAfterMatch' : ['choice', 'Hide Cells after match made?', 'Hide after match', \
+                            'useTimer' : ['choice', _('Show / Use a timer?'), _('Use Timer?'), {'choices' : [['true', 'Yes'], ['false', 'No']]} ],\
+                            'hideAfterMatch' : ['choice', _('Hide Cells after match made?'), _('Hide after match'), \
                                 {'choices' : [['true', 'Yes'], ['false', 'No']]} ],\
-                            'hideAfterMatchEffect' : ['choice', 'Effect when hiding cells after match', 'Hide after match effect', \
+                            'hideAfterMatchEffect' : ['choice', _('Effect when hiding cells after match'), _('Hide after match effect'), \
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
-                            'cellpadding' : ['text', 'Cell Padding in table', 'Cell Padding', {'defaultval' : '0'}],\
-                            'cellspacing' : ['text', 'Cell Spacing of table', 'Cell Spacing', {'defaultval' : '0'}],\
-                            'cellstyle' : ['text', 'Cell Default Style (CSS)', 'Cell Style CSS', {'defaultval' : 'text-align: center; font: 18pt bold'}],\
-                            'timertext' : ['text', 'Text of Timer Label', 'Timer Text'],\
-                            'timerstyle' : ['text', 'CSS of Timer Field', 'Timer CSS']\
+                            'cellpadding' : ['text', _('Cell Padding in table'), _('Cell Padding'), {'defaultval' : '0','type': 'advanced'}],\
+                            'cellspacing' : ['text', _('Cell Spacing of table'), _('Cell Spacing'), {'defaultval' : '0','type': 'advanced'}],\
+                            'cellstyle' : ['text', _('Cell Default Style (CSS)'), _('Cell Style CSS'), {'defaultval' : 'text-align: center; font: 18pt bold','type': 'advanced'}],\
+                            'timertext' : ['text', _('Text of Timer Label'), _('Timer Text'), {'type': 'advanced'}],\
+                            'timerstyle' : ['text', _('CSS of Timer Field'), _('Timer CSS'), {'type': 'advanced'}]\
                         }
         self.mainFieldSet = ExtendedFieldSet(self, mainFieldOrder, mainFieldsInfo)
         self.mainFieldSet.makeFields()
@@ -82,7 +87,7 @@ class MemoryMatchIdeviceInc(Idevice):
         #the pairs of matching items
         self.matchPairFields = []
 
-        self.emphasis = Idevice.NoEmphasis
+        self.emphasis = Idevice.SomeEmphasis
         
     """
     Game requires jquery (modified slower refresh rate) and jqueryui scripts - these should be in the same
@@ -101,6 +106,12 @@ class MemoryMatchIdeviceInc(Idevice):
             if gameScriptFile.isfile():
                 Resource(self, gameScriptFile)
 
+    def upradeToVersion2(self):
+        self.message = ""
+        self.emphasis = Idevice.SomeEmphasis
+        self.mainFieldSet.fieldOrder.insert(0, "title")
+        self.mainFieldSet.fieldInfoDict['title'] = ['text', _('Title'), _('Title')]
+        self.mainFieldSet.makeFields()
     
     def setNumMatchingPairs(self):
         numRows = int(self.mainFieldSet.fields['rows'].content)
@@ -132,8 +143,8 @@ class MemoryMatchPairField(Field):
         self.idevice = idevice
         
         mainFieldOrder  = ['match1', 'match2']
-        mainFieldsInfo = {'match1' : ['textarea', 'Match Tile 1', 'Match Tile1'],\
-                                'match2' : ['textarea', 'Match Tile 2', 'Match Tile2'] }
+        mainFieldsInfo = {'match1' : ['textarea', _('Match Tile 1'), _('Match Tile1')],\
+                                'match2' : ['textarea', _('Match Tile 2'), _('Match Tile2')] }
                                 
         self.mainFields = ExtendedFieldSet(self.idevice, mainFieldOrder, mainFieldsInfo)
 

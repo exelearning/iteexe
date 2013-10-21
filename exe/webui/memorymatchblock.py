@@ -51,6 +51,7 @@ class MemoryMatchBlockInc(Block):
         Process the request arguments from the web server to see if any
         apply to this block
         """
+        self.idevice.message = ""
         Block.process(self, request)
         
         self.idevice.uploadNeededScripts()
@@ -67,6 +68,25 @@ class MemoryMatchBlockInc(Block):
             self.idevice.setNumMatchingPairs()
             self.idevice.edit = True
             self.idevice.undo = False
+            
+        field_engine_check_fields_are_ints(self.mainElements,\
+                        ['cellwidth', 'cellheight', 'rows', 'cols'], None, thisIdevice=self.idevice)
+        
+        try: 
+            numRows = int(self.idevice.mainFieldSet.fields['rows'].content)
+            numCols = int(self.idevice.mainFieldSet.fields['cols'].content)
+            numCells = numRows * numCols
+            if numCells % 2 == 1:
+                self.idevice.edit = True
+                self.idevice.message += _("Number of rows x Number of cols must be an even number<br/>")
+            
+            numPairsExisting = len(self.idevice.matchPairFields)
+            if numPairsExisting != (numCells / 2):
+                self.idevice.edit = True
+                self.idevice.message += _("After you set the number of rows/cols please click Create/Trim pairs button at the bottom and enter in the matching pairs for the game")
+        except:
+            #only here in case there is an invalid integer, in which case would be caught beforehand
+            pass
 
     
     def renderXML(self, style):
@@ -103,8 +123,14 @@ class MemoryMatchBlockInc(Block):
         return xml
 
 
-    def _renderGame(self, previewMode):
+    def _renderGame(self, style, previewMode):
         html = ""
+        viewModeName = "view"
+        if previewMode is True:
+            viewModeName = "preview"
+            
+        html += common.ideviceHeader(self, style, viewModeName)
+        
         mainDict = self.idevice.mainFieldSet.getRenderDictionary(self.mainElements, "", previewMode)
         firstFrag = self.idevice.mainFieldSet.applyFileTemplateToDict(mainDict, \
             "memmatch_template_head.html", previewMode)
@@ -129,6 +155,7 @@ class MemoryMatchBlockInc(Block):
         footerFrag = self.idevice.mainFieldSet.applyFileTemplateToDict(mainDict, \
             "memmatch_template_footer.html", previewMode)
         html += footerFrag
+        html += common.ideviceFooter(self, style, viewModeName)
         
         return html
         
@@ -140,14 +167,15 @@ class MemoryMatchBlockInc(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = u"<div>\n"
+        html += common.ideviceShowEditMessage(self)
         html += self.idevice.mainFieldSet.renderEditInOrder(self.mainElements)
         for memoryMatchElement in self.memoryMatchElements:
             html += memoryMatchElement.renderEdit()
         
-        html += """<p>Click the button below to create the matching pairs or 
-                trim in case you reduced the number of rows / columns</p>\n"""
-        html += common.submitButton("calcPairs"+unicode(self.id), "Create / Trim Pairs")
-        
+        html += _("""<p>Click the button below to create the matching pairs or 
+                trim in case you reduced the number of rows / columns</p>\n""")
+        html += common.submitButton("calcPairs"+unicode(self.id), _("Create / Trim Pairs"))
+        html += "<br/>"
         html += self.renderEditButtons()
         
         
@@ -163,8 +191,7 @@ class MemoryMatchBlockInc(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += self._renderGame(True)
-        html += self.renderViewButtons()
+        html += self._renderGame(style, True)
         html += "</div>\n"
         return html
 
@@ -175,7 +202,7 @@ class MemoryMatchBlockInc(Block):
         """
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += self._renderGame(False)
+        html += self._renderGame(style, False)
         html += u"</div>\n"
         return html
     
