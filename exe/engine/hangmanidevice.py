@@ -45,17 +45,20 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class HangmanIdeviceInc(Idevice):
     
-    persistenceVersion = 2
+    persistenceVersion = 3
     
     def __init__(self, content=""):
         Idevice.__init__(self, _(u"Hangman Game"), 
                          _(u"Mike Dawson, Toughra Technologies FZ LLC"), 
                          _(u"""Hangman style word game with customizable images."""), "", "")
-        self.emphasis = Idevice.NoEmphasis
+        self.emphasis = Idevice.SomeEmphasis
+        self.message = ""
+        
+        self.titleField = TextField(_("Title"), _("Title"))
 
         self.chanceImageFields = []
-        self.content  = TextAreaField(_(u"Title"), 
-                                      _(u"Title of Game."), 
+        self.content  = TextAreaField(_(u"Instructions"), 
+                                      _(u"Instructions for Game."), 
                                       content)
         self.content.idevice = self
 
@@ -70,49 +73,49 @@ class HangmanIdeviceInc(Idevice):
         self.addWord()
 
         #the alphabet (available letters)
-        self.alphabet = TextField(u"Alphabet to Select From", u"Alphabet to show players", \
-                                  "abcdefghijklmnopqrstuvwxyz")
+        self.alphabet = TextField(_(u"Alphabet to Select From"), _(u"Alphabet to show players"), \
+                                  _("abcdefghijklmnopqrstuvwxyz"))
         self.alphabet.idevice = self
 
         #messages for the player
         self._initNewAlerts()
         
-        self.letterButtonStyle = TextField("Letter Button Style", \
-                "Style of button to start with", "color: white; background-color: blue;")
+        self.letterButtonStyle = TextField(_("Letter Button Style"), \
+                _("Style of button to start with"), "color: white; background-color: blue;")
         self.letterButtonStyle.idevice = self
 
-        self.wrongLetterButtonStyle = TextField("Letter Button Style Wrong Guess", \
-                "Style of letter button after wrong guess", "color: white; background-color: red;")
+        self.wrongLetterButtonStyle = TextField(_("Letter Button Style Wrong Guess"), \
+                _("Style of letter button after wrong guess"), "color: white; background-color: red;")
         self.wrongLetterButtonStyle.idevice = self
 
-        self.rightLetterButtonStyle = TextField("Letter Button Style Right Guess", \
-                "Style of letter button after correct guess", "color: white; background-color : green;")
+        self.rightLetterButtonStyle = TextField(_("Letter Button Style Right Guess"), \
+                _("Style of letter button after correct guess"), "color: white; background-color : green;")
         self.rightLetterButtonStyle.idevice = self
         
-        self.hintFieldStyle = TextField("Style of Hint Text Field", "Hint Text Field CSS")
+        self.hintFieldStyle = TextField(_("Style of Hint Text Field"), _("Hint Text Field CSS"))
         self.hintFieldStyle.idevice = self
 
-        self.wordAreaStyle = TextField("Style of Word Display Field", "Word Display CSS")
+        self.wordAreaStyle = TextField(_("Style of Word Display Field"), _("Word Display CSS"))
         self.wordAreaStyle.idevice = self
 
-        self.resetButtonText = TextField("Restart Level Button Text", "Text for reset button", "Restart")
+        self.resetButtonText = TextField(_("Restart Level Button Text"), _("Text for reset button"), _("Restart"))
         self.resetButtonText.idevice = self
 
-        self.resetButtonStyle = TextField("Restart Level Button Style (CSS)", "Style of Reset Button", "background-color: blue; color: white;")  
+        self.resetButtonStyle = TextField(_("Restart Level Button Style (CSS)"), _("Style of Reset Button"), "background-color: blue; color: white;")  
         self.resetButtonStyle.idevice = self
 
     def _initNewAlerts(self):
-        self.wrongGuessMessageField = TextAreaField(u"Wrong Guess Message", \
-                u"Player will see this message when they guess a letter wrong", "")
+        self.wrongGuessMessageField = TextAreaField(_(u"Wrong Guess Message"), \
+                _(u"Player will see this message when they guess a letter wrong"), "")
         self.wrongGuessMessageField.idevice = self
-        self.lostLevelMessageField = TextAreaField(u"Lost Level Message", \
-                u"Player will see this message when they loose the level", "")
+        self.lostLevelMessageField = TextAreaField(_(u"Lost Level Message"), \
+                _(u"Player will see this message when they loose the level"), "")
         self.lostLevelMessageField.idevice = self
-        self.levelPasssedMessageField = TextAreaField(u"Level Passed Message", \
-                u"Player will see this message when they guess the word correctly", "")
+        self.levelPasssedMessageField = TextAreaField(_(u"Level Passed Message"), \
+                _(u"Player will see this message when they guess the word correctly"), "")
         self.levelPasssedMessageField.idevice = self
-        self.gameWonMessageField = TextAreaField(u"Game Won Message", \
-                u"Player will see this message when they guess all words correctly", "")
+        self.gameWonMessageField = TextAreaField(_(u"Game Won Message"), \
+                _(u"Player will see this message when they guess all words correctly"), "")
         self.gameWonMessageField.idevice = self
 
 
@@ -131,7 +134,6 @@ class HangmanIdeviceInc(Idevice):
 
         gameScriptFile = Path(scriptSrcFilename)
         if gameScriptFile.isfile():
-            log.debug("adding script\n")
             Resource(self, gameScriptFile)
 
 
@@ -143,9 +145,9 @@ class HangmanIdeviceInc(Idevice):
 
     #adds a word to the list of those to guess
     def addWord(self):
-        newWordTextField = TextField(u"Word to Guess", u"Word To Guess", "")
+        newWordTextField = TextField(_(u"Word to Guess"), _(u"Word To Guess"), "")
         newWordTextField.idevice = self
-        newWordHintField = TextField(u"Hint to Show User", u"Hint for Word", "")
+        newWordHintField = TextField(_(u"Hint to Show User"), _(u"Hint for Word"), "")
         newWordHintField.idevice = self
         self.wordTextFields.append(newWordTextField)
         self.hintTextFields.append(newWordHintField)
@@ -153,22 +155,25 @@ class HangmanIdeviceInc(Idevice):
     #some nasty hard coded backward compatibility to archive files
     #used for Afghan literacy project.  Will not effect anyone else    
     def upgradeToVersion2(self):
-        self.lostLevelMessageField = TextAreaField(u"Lost Level Message", \
-                u"Player will see this message when they loose the level", "<img src='smallcross.png'/>")
+        self.lostLevelMessageField = TextAreaField(_(u"Lost Level Message"), \
+                _("Player will see this message when they loose the level"), "<img src='smallcross.png'/>")
         self.lostLevelMessageField.idevice = self
         
-        self.levelPasssedMessageField = TextAreaField(u"Level Passed Message", \
-                u"Player will see this message when they guess the word correctly", "<img src='smallcheck.png'/>")
+        self.levelPasssedMessageField = TextAreaField(_(u"Level Passed Message"), \
+                _(u"Player will see this message when they guess the word correctly"), "<img src='smallcheck.png'/>")
         self.levelPasssedMessageField.idevice = self
         
-        self.gameWonMessageField = TextAreaField(u"Game Won Message", \
-                u"Player will see this message when they guess all words correctly", "<img src='smallcheck.png'/>")
+        self.gameWonMessageField = TextAreaField(_(u"Game Won Message"), \
+            _(u"Player will see this message when they guess all words correctly"), "<img src='smallcheck.png'/>")
         self.gameWonMessageField.idevice = self
         
-        self.wrongGuessMessageField = TextAreaField(u"Wrong Guess Message", \
-                u"Player will see this message when they guess a letter wrong",  "<img src='smallcross.png'/>")
+        self.wrongGuessMessageField = TextAreaField(_(u"Wrong Guess Message"), \
+                _(u"Player will see this message when they guess a letter wrong"),  "<img src='smallcross.png'/>")
         self.wrongGuessMessageField.idevice = self
 
+    def upgradeToVersion3(self):
+        self.message = ""
+        self.titleField = TextField(_("Title"), _("Title"))
 # ===========================================================================
 def register(ideviceStore):
     """Register with the ideviceStore"""

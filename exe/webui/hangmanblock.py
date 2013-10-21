@@ -42,6 +42,7 @@ class HangmanBlockInc(Block):
     """
     def __init__(self, parent, idevice):
         Block.__init__(self, parent, idevice)
+        self.titleElement = TextElement(idevice.titleField)
         self.contentElement = TextAreaElement(idevice.content)
         self.contentElement.height = 250
         self.chanceImageElements = []
@@ -88,12 +89,14 @@ class HangmanBlockInc(Block):
         
         #Make sure that we don't do anything when it's time to die...
         Block.process(self, request)
+        self.idevice.message = ""
         
         if field_engine_is_delete_request(request):
             return
         
         self.idevice.addGameScript()
 
+        self.titleElement.process(request)
         self.alphabetElement.process(request)
         self.wrongGuessTextElement.process(request)
         self.lostLevelTextElement.process(request)
@@ -110,8 +113,16 @@ class HangmanBlockInc(Block):
         self.resetButtonStyleElement.process(request)
         
         #see if we need to delete a word
+        blankWords = False
+        for wordIndex in range(0, len(self.wordElements)):
+            if self.wordElements[wordIndex].renderView() == "":
+                blankWords = True
+            elif self.hintElements[wordIndex].renderView() == "":
+                blankWords = True
         
-        
+        if blankWords is True:
+            self.idevice.message = _("One or more words or hints are blank.  Please do not have any blank hints or words - you can delete unused ones.")
+            self.idevice.edit = True
         
         
         #see if we need to add another chance
@@ -169,7 +180,7 @@ class HangmanBlockInc(Block):
     # This will generate the HTML elements and javascript that will be required
     # for this to be shown as a Javascript game in the web browser
     # 
-    def _renderGame(self, mode = "normal"):
+    def _renderGame(self, style, mode = "view"):
         hangmanGameId = "hangman" + self.id
         
         resPath = ""
@@ -177,7 +188,7 @@ class HangmanBlockInc(Block):
             resPath = "resources/"       
         
         html = u"<script src='" + resPath + "hangman.js' type='text/javascript'></script>\n"
-        
+        html += common.ideviceHeader(self, style, mode)
         html += "<div id='hangman%(gameId)smessageStore' style='display: none'>" % {"gameId" : hangmanGameId}
         html += self._renderHTMLElement(mode, self.wrongGuessTextElement, "hmwrong" + hangmanGameId)
         html += self._renderHTMLElement(mode, self.lostLevelTextElement, "hmlost" + hangmanGameId)
@@ -296,6 +307,10 @@ class HangmanBlockInc(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = u"<div>\n"
+        html += common.ideviceShowEditMessage(self)
+        
+        
+        html += self.titleElement.renderEdit()
         html += self.contentElement.renderEdit()
         html += self.alphabetElement.renderEdit()
 
@@ -304,7 +319,15 @@ class HangmanBlockInc(Block):
         html += self.lostLevelTextElement.renderEdit()
         html += self.levelPassedTextElement.renderEdit()
         html += self.gameWonTextElement.renderEdit()
+        html += self.resetButtonTextElement.renderEdit()
 
+        divId = "fieldtype_advanced"  + self.id
+        html += "<input name='showbox" + divId + "' type='checkbox' onchange='$(\"#" + divId + "\").toggle()'/>"
+        
+        html += _("Show") + _(" Advanced ") + _("options") + "<br/>"
+        html += "<div id='" + divId + "' style='display: none' "
+        html += ">"
+        
         #styles for buttons
         html += self.letterButtonStyleElement.renderEdit()
         html += self.wrongLetterButtonStyleElement.renderEdit()
@@ -315,8 +338,8 @@ class HangmanBlockInc(Block):
         html += self.wordAreaStyleElement.renderEdit()
 
         html += self.resetButtonStyleElement.renderEdit()
-        html += self.resetButtonTextElement.renderEdit()
-
+        html += "</div>"
+        
         #render edit of these images
         for imgElement in self.chanceImageElements:
             html += imgElement.renderEdit()
@@ -329,7 +352,7 @@ class HangmanBlockInc(Block):
         html += "<br/>"
 
         #show words to be guessed
-        html += "<h2>Words to Guess</h2>"
+        html += _("<h2>Words to Guess</h2>")
         for wordIndex in range(0, len(self.wordElements)):
             word = self.wordElements[wordIndex]
             html += word.renderEdit()
@@ -341,7 +364,7 @@ class HangmanBlockInc(Block):
                                    _("Remove This Word")) + "<br/>"
         
         html += common.submitButton("addWord"+unicode(self.id), _("Add Word"))        
-        
+        html += "<br/>"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -355,7 +378,7 @@ class HangmanBlockInc(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderView()
-        html += self._renderGame(mode = "preview")
+        html += self._renderGame(style, mode = "preview")
 
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -408,7 +431,7 @@ class HangmanBlockInc(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
-        html += self._renderGame(mode = "normal")
+        html += self._renderGame(style, mode = "view")
         html += u"</div>\n"
         return html
     
