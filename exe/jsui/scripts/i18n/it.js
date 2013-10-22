@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-10-15 18:05+0200\nPO-Revision-Date: 2013-10-19 17:54+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-10-22 20:43+0200\nPO-Revision-Date: 2013-10-19 17:54+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creare uno studio di un caso. Un buon caso \u00e8 quello \nche descrive una controversia o un insieme di situazioni mediante la descrizione \ndelle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \nuna qualche azione per la risoluzione della situazione.", 
  "Xhosa ": "Xhosa ", 
@@ -1405,7 +1405,6 @@ translations = {
  "Chamorro ": "Chamorro ", 
  "Intended End User Role": "Ruolo previsto per l'utente finale", 
  "Metadata Schema": "Schema metadati", 
- "Unclassified": "Non classificato", 
  "Update All Cells in Row": "Aggiorna tutte le celle della riga", 
  "The style name already exists: %s": "Il nome di stile esiste gi\u00e0: %s", 
  "Analizing directory %d of %d: %s": "Analisi cartella %d di %d: %s", 
@@ -1883,7 +1882,6 @@ translations = {
  "operating system": "sistema operativo", 
  "Gold": "Oro", 
  "below": "sotto", 
- "Title of Game.": "Titolo del gioco.", 
  "skill level": "livello di competenza", 
  "Use this field to enter text. This \niDevice has no emphasis applied although limited formatting can be applied to \ntext through the text editing buttons associated with the field.": "Usare questo campo per inserire il testo. Questo \niDevice  non ha posibilit\u00e0\u00a0di enfasi sebbene possano essere applicate formattazioni \ndi testo utilizzando i pulsanti di modifica associati al campo.", 
  "Insert Page Break for Printing": "Inserisci interruzione di pagina per la stampa", 

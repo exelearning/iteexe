@@ -8,12 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2013-10-15 18:05+0200\n"
+"POT-Creation-Date: 2013-10-22 20:43+0200\n"
 "PO-Revision-Date: 2013-10-15 19:14+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -56,10 +55,10 @@ msgstr "Applet de java"
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:533
-#: exe/engine/idevicestore.py:591 exe/engine/idevicestore.py:619
-#: exe/engine/idevicestore.py:642 exe/engine/idevicestore.py:698
-#: exe/engine/idevicestore.py:726 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:529
+#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:615
+#: exe/engine/idevicestore.py:638 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:722 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
@@ -408,16 +407,229 @@ msgstr ""
 msgid "Quotation Text:"
 msgstr "Texto Citas para pensar:"
 
-#: exe/engine/clickinorderidevice.py:47
+#: exe/engine/clickinorderidevice.py:49
 msgid "Click In Order Game"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:48
+#: exe/engine/clickinorderidevice.py:50
 msgid "PAIWASTOON Networking Services Ltd."
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:49
+#: exe/engine/clickinorderidevice.py:51
 msgid "Click in Order according to the hint on the map."
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
+#: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
+#: exe/engine/memorymatchidevice.py:113 exe/engine/sortidevice.py:52
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
+#: exe/jsui/scripts/app/view/forms/LomSections.js:48
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
+#: exe/webui/galleryblock.py:209
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Title"
+msgstr "Título"
+
+#: exe/engine/clickinorderidevice.py:61
+msgid "Game Instructions"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:61
+msgid "Instructions to show in leading paragraph"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:62
+msgid "Game Won Feedback Overlay"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:62
+msgid "Shown over when the game is won"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:63
+msgid "Correct Answer Feedback Overlay"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:63
+msgid "Shown over game when correct answer given"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:64
+msgid "Wrong Answer Feedback Overlay"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:64
+msgid "Shown over game when wrong answer is given"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:65
+msgid "Main Area To Show"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:65
+msgid "The Main Game Area on which to locate items"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:66
+msgid "Area shown before the game starts"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:66
+msgid "User will click on this to start the game"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:78
+msgid "Game Width"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:78
+msgid "Width of game area (in pixels)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:79
+msgid "Game Height"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:79
+msgid "Height of game area (in pixels)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:80
+msgid "Style of Element Counter"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:80
+msgid "Use CSS to style element that counts number items found"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:81
+msgid "Hint Width"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:81
+msgid "Width (px) of hint area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:82
+msgid "Hint Height"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:82
+msgid "Height (px) of hint area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:83
+msgid "Hint Area Style"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:83
+msgid "Style of Hint Area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:84
+msgid "Style of timer Element"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:84
+msgid "Style of timer (CSS)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:100
+msgid "Dont Shuffle"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:101
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Shuffle"
+msgstr "Aleatorio"
+
+#: exe/engine/clickinorderidevice.py:104
+msgid "No Timer"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:105
+msgid "Stopwatch Mode"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:107
+msgid "Shuffle Questions"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:107
+msgid "Randomize question order or not"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:108
+msgid "Use a Timer"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:108 exe/engine/memorymatchidevice.py:73
+msgid "Use Timer?"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:115
+msgid "Clickable Area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:152
+msgid "Top (Y) Coord"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:152
+msgid "Top CSS top property"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:153
+msgid "Left (X) Coord"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:153
+msgid "Left CSS left property"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:154
+msgid "Width (px)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:154
+msgid "Width of clickable area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:155
+msgid "Height (px)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:155
+msgid "Height of clickable area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:156
+msgid "Delay (ms) to hide revealed contents"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:156
+msgid "After delay ms hide the content prev revealed"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:166
+msgid "Hint to Show for this item"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:166
+msgid "The hint that will appear under the map for this item"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:167
+msgid "Item Revealed"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:167
+msgid "The Item that will be revealed in place"
 msgstr ""
 
 #: exe/engine/clozefpdidevice.py:47
@@ -494,11 +706,12 @@ msgstr ""
 "que no haya sorpresas!  </p> </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:129
-#: exe/engine/placetheobjectsidevice.py:49 exe/engine/truefalseidevice.py:164
-#: exe/engine/truefalseidevice.py:390
+#: exe/engine/clozelangfpdidevice.py:117 exe/engine/hangmanidevice.py:60
+#: exe/engine/listaidevice.py:129 exe/engine/memorymatchidevice.py:55
+#: exe/engine/placetheobjectsidevice.py:49 exe/engine/sortidevice.py:53
+#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:459
+#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:470
 msgid "Instructions"
 msgstr "Instrucciones"
 
@@ -539,14 +752,14 @@ msgstr ""
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozelangfpdidevice.py:284
 #: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:582
-#: exe/engine/idevicestore.py:691 exe/engine/listaidevice.py:140
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:578
+#: exe/engine/idevicestore.py:687 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:375 exe/webui/editorelement.py:148
+#: exe/webui/common.py:386 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2393
 #: exe/webui/element.py:2507 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -606,11 +819,14 @@ msgstr "Actividades no-interactivas"
 
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
+#: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
+#: exe/engine/config.py:102
 msgid "Interactive Activities"
 msgstr "Actividades interactivas"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
+#: exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Non-Textual Information"
 msgstr "Información no-textual"
 
@@ -627,11 +843,6 @@ msgstr "Información textual"
 #: exe/engine/config.py:85 exe/engine/config.py:86
 msgid "FPD"
 msgstr "FPD"
-
-#: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102 exe/engine/config.py:103 exe/engine/config.py:104
-msgid "Unclassified"
-msgstr "Sin clasificar"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -828,24 +1039,38 @@ msgstr ""
 "Introduzca aquí una pista. Si no quiere ofrecer una sugerencia deje este "
 "campo en blanco."
 
-#: exe/engine/extendedfieldengine.py:231
+#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
+#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
+msgid "Show"
+msgstr "Mostrar"
+
+#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
+#: exe/webui/hangmanblock.py:327
+msgid "options"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:269
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "Examinar"
 
-#: exe/engine/extendedfieldengine.py:233
+#: exe/engine/extendedfieldengine.py:271
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "Reemplazar"
 
-#: exe/engine/extendedfieldengine.py:235 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:273 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Cargar"
 
-#: exe/engine/extendedfieldengine.py:250 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Borrar el archivo"
+
+#: exe/engine/extendedfieldengine.py:532
+msgid "is not a valid number - please try again<br/>"
+msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
@@ -1073,7 +1298,7 @@ msgstr "Retroalimentación:"
 msgid "File Attachments"
 msgstr ""
 
-#: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:42
+#: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:45
 #: exe/engine/sortidevice.py:46
 msgid "Toughra Technologies FZ LLC."
 msgstr ""
@@ -1279,12 +1504,12 @@ msgstr ""
 "etiquetarla. Es una buena práctica indicar el tamaño en la etiqueta de la"
 " imagen."
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:640
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:636
 msgid "Reading Activity 0.11"
 msgstr "Actividad de lectura 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:490
-#: exe/engine/idevicestore.py:531
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:486
+#: exe/engine/idevicestore.py:527
 msgid "Reading Activity"
 msgstr "Actividad de lectura"
 
@@ -1300,25 +1525,132 @@ msgstr ""
 msgid "Hangman style word game with customizable images."
 msgstr ""
 
-#: exe/engine/hangmanidevice.py:57
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
-#: exe/jsui/scripts/app/view/forms/LomSections.js:48
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
-#: exe/webui/galleryblock.py:209
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-msgid "Title"
-msgstr "Título"
-
-#: exe/engine/hangmanidevice.py:58
-msgid "Title of Game."
+#: exe/engine/hangmanidevice.py:61
+msgid "Instructions for Game."
 msgstr ""
 
-#: exe/engine/idevicestore.py:534
+#: exe/engine/hangmanidevice.py:76
+msgid "Alphabet to Select From"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:76
+msgid "Alphabet to show players"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:77
+msgid "abcdefghijklmnopqrstuvwxyz"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:83
+msgid "Letter Button Style"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:84
+msgid "Style of button to start with"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:87
+msgid "Letter Button Style Wrong Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:88
+msgid "Style of letter button after wrong guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:91
+msgid "Letter Button Style Right Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:92
+msgid "Style of letter button after correct guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:95
+msgid "Style of Hint Text Field"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:95
+msgid "Hint Text Field CSS"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:98
+msgid "Style of Word Display Field"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:98
+msgid "Word Display CSS"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:101
+msgid "Restart Level Button Text"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:101
+msgid "Text for reset button"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1458
+#: exe/webui/element.py:1727
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: exe/engine/hangmanidevice.py:104
+msgid "Restart Level Button Style (CSS)"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:104
+msgid "Style of Reset Button"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:108 exe/engine/hangmanidevice.py:170
+msgid "Wrong Guess Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:109 exe/engine/hangmanidevice.py:171
+msgid "Player will see this message when they guess a letter wrong"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:111 exe/engine/hangmanidevice.py:158
+msgid "Lost Level Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:112 exe/engine/hangmanidevice.py:159
+msgid "Player will see this message when they loose the level"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:114 exe/engine/hangmanidevice.py:162
+msgid "Level Passed Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
+msgid "Player will see this message when they guess the word correctly"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
+msgid "Game Won Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
+msgid "Player will see this message when they guess all words correctly"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:148
+msgid "Word to Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:148
+msgid "Word To Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:150
+msgid "Hint to Show User"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:150
+msgid "Hint for Word"
+msgstr ""
+
+#: exe/engine/idevicestore.py:530
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1338,7 +1670,7 @@ msgstr ""
 "carácter más físico, \n"
 "basada en la lectura.</p>"
 
-#: exe/engine/idevicestore.py:539
+#: exe/engine/idevicestore.py:535
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1365,11 +1697,11 @@ msgstr ""
 "completar la actividad supere al costo en tiempo y esfuerzo de "
 "completarla.</li></ol>"
 
-#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:683
+#: exe/engine/idevicestore.py:570 exe/engine/idevicestore.py:679
 msgid "What to read"
 msgstr "Qué leer"
 
-#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
+#: exe/engine/idevicestore.py:571 exe/engine/idevicestore.py:680
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1380,14 +1712,14 @@ msgstr ""
 "facultad \n"
 "o departamento."
 
-#: exe/engine/idevicestore.py:578 exe/engine/idevicestore.py:617
-#: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:687
-#: exe/engine/idevicestore.py:724 exe/engine/idevicestore.py:732
+#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:613
+#: exe/engine/idevicestore.py:621 exe/engine/idevicestore.py:683
+#: exe/engine/idevicestore.py:720 exe/engine/idevicestore.py:728
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Actividad"
 
-#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
+#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -1396,7 +1728,7 @@ msgstr ""
 " llevar a cabo. \n"
 "Esto ayuda a mostrar lo importante a los estudiantes."
 
-#: exe/engine/idevicestore.py:583 exe/engine/idevicestore.py:692
+#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1409,13 +1741,13 @@ msgstr ""
 "pregunta\n"
 "o proporcionando una declaración a empezar el debate."
 
-#: exe/engine/idevicestore.py:589 exe/engine/idevicestore.py:598
-#: exe/engine/idevicestore.py:696 exe/engine/idevicestore.py:705
+#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:594
+#: exe/engine/idevicestore.py:692 exe/engine/idevicestore.py:701
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Objectives"
 msgstr "Objetivos"
 
-#: exe/engine/idevicestore.py:592 exe/engine/idevicestore.py:699
+#: exe/engine/idevicestore.py:588 exe/engine/idevicestore.py:695
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1425,17 +1757,17 @@ msgstr ""
 "definir qué serán capaces de hacer los estudiantes al acabar las\n"
 "tareas de aprendizaje."
 
-#: exe/engine/idevicestore.py:599 exe/engine/idevicestore.py:706
+#: exe/engine/idevicestore.py:595 exe/engine/idevicestore.py:702
 msgid "Type the learning objectives for this resource."
 msgstr "Escriba los objetivos de aprendizaje para este recurso."
 
-#: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:612
-#: exe/engine/idevicestore.py:709 exe/engine/idevicestore.py:719
+#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:608
+#: exe/engine/idevicestore.py:705 exe/engine/idevicestore.py:715
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Preknowledge"
 msgstr "Conocimiento previo"
 
-#: exe/engine/idevicestore.py:605 exe/engine/idevicestore.py:712
+#: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:708
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1453,7 +1785,7 @@ msgstr ""
 "<li>        Los estudiantes deben ser capaces de ensamblar las "
 "herramientas estándar de alimentación </li></ul>\n"
 
-#: exe/engine/idevicestore.py:613 exe/engine/idevicestore.py:720
+#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:716
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1461,7 +1793,7 @@ msgstr ""
 "Describa los conocimientos previos que deberían tener los estudiantes\n"
 "para un completo aprendizaje efectivo."
 
-#: exe/engine/idevicestore.py:620 exe/engine/idevicestore.py:727
+#: exe/engine/idevicestore.py:616 exe/engine/idevicestore.py:723
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1474,11 +1806,11 @@ msgstr ""
 "cualquier condición\n"
 "que pueda ayudar o impedir al estudiante en el funcionamiento de la tarea."
 
-#: exe/engine/idevicestore.py:626 exe/engine/idevicestore.py:733
+#: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Describe the tasks the learners should complete."
 msgstr "Describa las tareas que los estudiantes deben completar."
 
-#: exe/engine/idevicestore.py:643
+#: exe/engine/idevicestore.py:639
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1497,7 +1829,7 @@ msgstr ""
 "estudiante alguna\n"
 "reflexión guiada.</p>"
 
-#: exe/engine/idevicestore.py:648
+#: exe/engine/idevicestore.py:644
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -1865,12 +2197,194 @@ msgstr ""
 "Puede usar la barra de herramientas o introducir LATEX manualmente dentro"
 " del cuadro de texto. "
 
-#: exe/engine/memorymatchidevice.py:41
+#: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:43
+#: exe/engine/memorymatchidevice.py:46
 msgid "Memory Match Game Maker."
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:55
+msgid "Instructions to show"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:56
+msgid "Number of Rows"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:57
+msgid "Number of Columns"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:58
+msgid "Split Question/Answer Pairs"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:60
+msgid "Feedback to show on correct match"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:60
+msgid "Positive Feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:61
+msgid "Feedback to show on incorrect pair"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:61
+msgid "Negative Feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:62
+msgid "Style of Feedback Area (CSS)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:62
+msgid "CSS style for feedback area"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:63
+msgid "Width of Cells (in pixels)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:63
+msgid "Cell Width px"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:64
+msgid "Height of Cells (in pixels)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:64
+msgid "Cell Height px"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:65
+msgid "Time after which to re-hide incorrect match (ms)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:65
+msgid "Time to hide"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:66
+msgid "Cover Image for cells (shown before selected)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:66
+msgid "Cover Img"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:67
+msgid "Background Image for cells (shown after selected)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:67
+msgid "Back Img"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:68
+msgid "Background image behind cells shown as cells are hidden"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:68
+msgid "Bg Img"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:69
+msgid "Effect for showing positive feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:69
+msgid "Positive Feedback Effect"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:71
+msgid "Effect for showing negative feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:71
+msgid "Negative Feedback Effect"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:73
+msgid "Show / Use a timer?"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:74
+msgid "Hide Cells after match made?"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:74
+msgid "Hide after match"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:76
+msgid "Effect when hiding cells after match"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:76
+msgid "Hide after match effect"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:78
+msgid "Cell Padding in table"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:78
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Padding"
+msgstr "Relleno de celda"
+
+#: exe/engine/memorymatchidevice.py:79
+msgid "Cell Spacing of table"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:79
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Spacing"
+msgstr "Espaciado de celda"
+
+#: exe/engine/memorymatchidevice.py:80
+msgid "Cell Default Style (CSS)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:80
+msgid "Cell Style CSS"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:81
+msgid "Text of Timer Label"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:81
+msgid "Timer Text"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:82
+msgid "CSS of Timer Field"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:82
+msgid "Timer CSS"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:146
+msgid "Match Tile 1"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:146
+msgid "Match Tile1"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:147
+msgid "Match Tile 2"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:147
+msgid "Match Tile2"
 msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
@@ -2355,6 +2869,122 @@ msgstr ""
 msgid "Sortable list of items."
 msgstr ""
 
+#: exe/engine/sortidevice.py:52
+msgid "Title to show"
+msgstr ""
+
+#: exe/engine/sortidevice.py:53
+msgid "Instructions before sortable list"
+msgstr ""
+
+#: exe/engine/sortidevice.py:54
+msgid "Correctly Sorted Overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:54
+msgid "Shown when check is clicked and correct"
+msgstr ""
+
+#: exe/engine/sortidevice.py:55
+msgid "Wrongly Sorted Overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:55
+msgid "Shown when check is clicked and wrong"
+msgstr ""
+
+#: exe/engine/sortidevice.py:56
+msgid "Effect for showing correct overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:56
+msgid "Effect showing correct overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:58
+msgid "Effect showing wrong answer overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:58
+msgid "Effect for showing wrong overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:60
+msgid "Text for Check Button"
+msgstr ""
+
+#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:275
+msgid "Check"
+msgstr "Comprobar respuesta"
+
+#: exe/engine/sortidevice.py:62
+msgid "Check Button Style (CSS)"
+msgstr ""
+
+#: exe/engine/sortidevice.py:62
+msgid "CSS for check button"
+msgstr ""
+
+#: exe/engine/sortidevice.py:63
+msgid "Width of an item in the list (px)"
+msgstr ""
+
+#: exe/engine/sortidevice.py:63
+msgid "width"
+msgstr ""
+
+#: exe/engine/sortidevice.py:64
+msgid "Height of an item in the list (px)"
+msgstr ""
+
+#: exe/engine/sortidevice.py:64
+msgid "height"
+msgstr ""
+
+#: exe/engine/sortidevice.py:65
+msgid "Style (CSS) for sortable items"
+msgstr ""
+
+#: exe/engine/sortidevice.py:65
+msgid "Sortable Item CSS"
+msgstr ""
+
+#: exe/engine/sortidevice.py:66
+msgid "Sort Direction"
+msgstr ""
+
+#: exe/engine/sortidevice.py:76
+msgid "Top To Bottom"
+msgstr ""
+
+#: exe/engine/sortidevice.py:77
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:55
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Left to Right"
+msgstr "Izquierda a derecha"
+
+#: exe/engine/sortidevice.py:78
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:54
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Right to Left"
+msgstr "Derecha a izquierda"
+
+#: exe/engine/sortidevice.py:92
+msgid "Sortable Item"
+msgstr ""
+
+#: exe/engine/sortidevice.py:92
+msgid "Text / Content of sortable item"
+msgstr ""
+
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
 msgstr "Pregunta Verdadero-Falso"
@@ -2523,7 +3153,9 @@ msgstr ""
 
 #: exe/exe_do:72
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
-msgstr "Determinar los valores de los campos del ELP. Ejemplo: -s style=Default,root.title='Nodo raíz'"
+msgstr ""
+"Determinar los valores de los campos del ELP. Ejemplo: -s "
+"style=Default,root.title='Nodo raíz'"
 
 #: exe/exe_do:75
 msgid "Set ELP field values options"
@@ -2533,7 +3165,10 @@ msgstr "Determinar las opciones de los valores de los campos del ELP"
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or"
 "     '--set <values>', it's possible to configure the following options:"
-msgstr "Una vez que ha seleccionado la opción Determinar los valores de los campos del ELP, mediante '-s <valores>' o '--set <valores>', es posible configurar las siguientes opciones:"
+msgstr ""
+"Una vez que ha seleccionado la opción Determinar los valores de los "
+"campos del ELP, mediante '-s <valores>' o '--set <valores>', es posible "
+"configurar las siguientes opciones:"
 
 #: exe/exe_do:81
 msgid "Write field values to ELP"
@@ -2543,20 +3178,27 @@ msgstr "Escribir los valores de los campos en el ELP"
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> "
 "elp package"
-msgstr "Genera un informe con los datos de los recursos en el texto <fichero_de_salida> a partir del paquete ELP <fichero_de_entrada>"
+msgstr ""
+"Genera un informe con los datos de los recursos en el texto "
+"<fichero_de_salida> a partir del paquete ELP <fichero_de_entrada>"
 
 #: exe/exe_do:95
 msgid ""
 "Export <input_file> elp package to optional <output_file> on one of the "
 "given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
 "singlepage, xliff or epub3."
-msgstr "Exporta el paquete ELP <fichero_de_entrada> en el <fichero_de_salida> opcional en uno de los siguientes formatos: xml, scorm12, scorm2004, agrega, ims, website, webzip, singlepage, xliff o epub3."
+msgstr ""
+"Exporta el paquete ELP <fichero_de_entrada> en el <fichero_de_salida> "
+"opcional en uno de los siguientes formatos: xml, scorm12, scorm2004, "
+"agrega, ims, website, webzip, singlepage, xliff o epub3."
 
 #: exe/exe_do:101
 msgid ""
 "Import to <output_file> elp package, <input_file> in one of the given "
 "formats: xml or xliff."
-msgstr "Importar el archivo <fichero_de_entrada> al paquete ELP <fichero_de_salida> en alguno de los siguientes formatos: xml o xliff."
+msgstr ""
+"Importar el archivo <fichero_de_entrada> al paquete ELP "
+"<fichero_de_salida> en alguno de los siguientes formatos: xml o xliff."
 
 #: exe/exe_do:106
 msgid "Force overwrite of <output_file>"
@@ -2564,7 +3206,9 @@ msgstr "Forzar sobreescritura de  <output_file>"
 
 #: exe/exe_do:110
 msgid "Add the required files to generate a export editable by eXeLearning"
-msgstr "Añadir los archivos necesarios para generar una exportación editable por eXeLearning"
+msgstr ""
+"Añadir los archivos necesarios para generar una exportación editable por "
+"eXeLearning"
 
 #: exe/exe_do:115
 msgid "XLIFF export options"
@@ -2613,7 +3257,10 @@ msgid ""
 "Once you have chosen one SCORM export option using '-x scorm12' or '-x "
 "scorm2004' or 'x agrega', it's possible to configure the following export"
 " options:"
-msgstr "Una vez que haya seleccionado una opción de exportación SCORM mediante '-x scorm12', '-x scorm2004' o '-x agrega', es posible configurar las siguientes opciones de la exportación:"
+msgstr ""
+"Una vez que haya seleccionado una opción de exportación SCORM mediante "
+"'-x scorm12', '-x scorm2004' o '-x agrega', es posible configurar las "
+"siguientes opciones de la exportación:"
 
 #: exe/exe_do:148
 msgid "Include Single Page export file"
@@ -3606,7 +4253,9 @@ msgstr "¿Crear un exportado editable?"
 msgid ""
 "Checking this option, the exported component will be editable with "
 "eXeLearning."
-msgstr "Si marca esta opción, el componente exportado será editable con eXeLearning."
+msgstr ""
+"Si marca esta opción, el componente exportado será editable con "
+"eXeLearning."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2, 2004 and Agrega)"
@@ -4139,7 +4788,9 @@ msgstr "¿Crear un paquete compatible con las versiones antiguas de eXe?"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
 msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
-msgstr "Si marca esta opción, el paquete guardado podrá ser abierto con eXe >= 0.20.4"
+msgstr ""
+"Si marca esta opción, el paquete guardado podrá ser abierto con eXe >= "
+"0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
 msgid "Select Language"
@@ -6223,8 +6874,8 @@ msgstr "Ayuda pedagógica"
 msgid "Information"
 msgstr "Información"
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:474
-#: exe/webui/common.py:475 exe/webui/editorpane.py:364
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:485
+#: exe/webui/common.py:486 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2801
 #: exe/webui/element.py:2802 exe/webui/truefalseelement.py:152
@@ -6258,7 +6909,33 @@ msgstr "Caso práctico"
 msgid "Quotation"
 msgstr "Citas Para Pensar"
 
-#: exe/webui/clickinorderblock.py:377
+#: exe/webui/clickinorderblock.py:297
+msgid ""
+"\n"
+"        <h2>Click The Elements in Order Game</h2>\n"
+"        <p>\n"
+"                This builds a Javascript game where the player has to "
+"click on a certain place on the main area according to the hint.  \n"
+"                When they click correctly the positive feedback will come"
+" and the game will advance.  When they click the wrong\n"
+"                area negative feedback will be shown.  When they click on"
+" the correct area an item can be revealed there.  A delay\n"
+"                can be set to make the item disappear if desired after a "
+"delay.\n"
+"        </p>\n"
+"\n"
+"        "
+msgstr ""
+
+#: exe/webui/clickinorderblock.py:334
+msgid "<h2>Clickable Areas</h2>"
+msgstr ""
+
+#: exe/webui/clickinorderblock.py:339
+msgid "Add Clickable Area"
+msgstr ""
+
+#: exe/webui/clickinorderblock.py:410
 msgid "Delete Clickable Area"
 msgstr ""
 
@@ -6276,27 +6953,23 @@ msgstr "Solución"
 msgid "Now It's Your Turn"
 msgstr "Autoevaluación"
 
-#: exe/webui/common.py:170
-msgid "Show"
-msgstr "Mostrar"
-
-#: exe/webui/common.py:171 exe/webui/reflectionblock.py:120
+#: exe/webui/common.py:182 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/common.py:172
+#: exe/webui/common.py:183
 msgid "Menu"
 msgstr "Menú"
 
-#: exe/webui/common.py:193 exe/webui/editorpage.py:233
+#: exe/webui/common.py:204 exe/webui/editorpage.py:233
 #: exe/webui/selectbrowserpage_ru.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML para eLearning"
 
-#: exe/webui/common.py:465 exe/webui/common.py:469
+#: exe/webui/common.py:476 exe/webui/common.py:480
 msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
@@ -6629,10 +7302,6 @@ msgstr "Mostrar/Ocultar retroalimentación"
 msgid "Show/Clear Answers"
 msgstr "Mostrar/Ocultar las respuestas"
 
-#: exe/webui/element.py:1458 exe/webui/element.py:1727
-msgid "Restart"
-msgstr "Reiniciar"
-
 #: exe/webui/element.py:1465 exe/webui/element.py:1734
 msgid "Show Answers"
 msgstr "Mostrar las respuestas"
@@ -6729,6 +7398,32 @@ msgstr "muy grande"
 msgid "Frame Height:"
 msgstr "Altura del marco:"
 
+#: exe/webui/fileattachblock.py:89
+msgid "<div>\n"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:90
+msgid "<h2>File Attachment</h2>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:91
+msgid ""
+"<p>Here you can attach arbitary files to the package that will be "
+"included with the export</p>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:92
+msgid "<p>You can choose to display links or not below</p>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:94
+msgid "<strong>Title:</strong><br/>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:104
+msgid "Add Another File Attachment"
+msgstr ""
+
 #: exe/webui/fileattachblock.py:121
 msgid "IDevice Icon"
 msgstr ""
@@ -6774,19 +7469,33 @@ msgstr "Eliminar la imagen"
 msgid "Delete this image?"
 msgstr "¿Borrar esta imagen?"
 
-#: exe/webui/hangmanblock.py:325
-msgid "Remove This Life"
+#: exe/webui/hangmanblock.py:124
+msgid ""
+"One or more words or hints are blank.  Please do not have any blank hints"
+" or words - you can delete unused ones."
 msgstr ""
 
 #: exe/webui/hangmanblock.py:327
+msgid " Advanced "
+msgstr ""
+
+#: exe/webui/hangmanblock.py:348
+msgid "Remove This Life"
+msgstr ""
+
+#: exe/webui/hangmanblock.py:350
 msgid "Add Chance"
 msgstr ""
 
-#: exe/webui/hangmanblock.py:341
+#: exe/webui/hangmanblock.py:355
+msgid "<h2>Words to Guess</h2>"
+msgstr ""
+
+#: exe/webui/hangmanblock.py:364
 msgid "Remove This Word"
 msgstr ""
 
-#: exe/webui/hangmanblock.py:343
+#: exe/webui/hangmanblock.py:366
 msgid "Add Word"
 msgstr ""
 
@@ -6840,9 +7549,26 @@ msgstr "Tamaño de la lupa: "
 msgid "Other words"
 msgstr "Otras palabras"
 
-#: exe/webui/listablock.py:275
-msgid "Check"
-msgstr "Comprobar respuesta"
+#: exe/webui/memorymatchblock.py:81
+msgid "Number of rows x Number of cols must be an even number<br/>"
+msgstr ""
+
+#: exe/webui/memorymatchblock.py:86
+msgid ""
+"After you set the number of rows/cols please click Create/Trim pairs "
+"button at the bottom and enter in the matching pairs for the game"
+msgstr ""
+
+#: exe/webui/memorymatchblock.py:175
+msgid ""
+"<p>Click the button below to create the matching pairs or \n"
+"                trim in case you reduced the number of rows / columns</p>"
+"\n"
+msgstr ""
+
+#: exe/webui/memorymatchblock.py:177
+msgid "Create / Trim Pairs"
+msgstr ""
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
@@ -6869,11 +7595,11 @@ msgstr "Para saber más"
 msgid "Default browser in your system"
 msgstr "Navegador predeterminado en su sistema"
 
-#: exe/webui/preferencespage.py:171
+#: exe/webui/preferencespage.py:170
 msgid "Failed to get preferences"
 msgstr "Error al abrir las preferencias"
 
-#: exe/webui/preferencespage.py:199
+#: exe/webui/preferencespage.py:198
 msgid "Failed to save preferences"
 msgstr "Error al guardar las preferencias"
 
@@ -7644,24 +8370,6 @@ msgstr "Estilo"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "ID"
 msgstr "Id"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:54
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-msgid "Right to Left"
-msgstr "Derecha a izquierda"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:55
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-msgid "Left to Right"
-msgstr "Izquierda a derecha"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -8729,10 +9437,6 @@ msgid "Quality"
 msgstr "Calidad"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Shuffle"
-msgstr "Aleatorio"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Prefetch"
 msgstr "Prebúsqueda"
 
@@ -9265,14 +9969,6 @@ msgid "Cell Type"
 msgstr "Tipo de celda"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Cell Padding"
-msgstr "Relleno de celda"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Cell Spacing"
-msgstr "Espaciado de celda"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Rows"
 msgstr "Filas"
 
@@ -9686,6 +10382,10 @@ msgstr "Navegadores instalados en su sistema"
 msgid "OK"
 msgstr "OK"
 
+#: exe/webui/sortblock.py:92
+msgid "Add Another Item to be Sorted"
+msgstr ""
+
 #: exe/webui/stylemanagerpage.py:131
 #, python-format
 msgid "Style directory already exists: %s"
@@ -9921,4 +10621,10 @@ msgstr ""
 "O su fichero de iDevices/generic.data o el paquete que está intentando "
 "cargar fue creado con una versión más nueva de eXeLearning. Por favor "
 "actualice eXe e inténtelo otra vez."
+
+#~ msgid "Unclassified"
+#~ msgstr "Sin clasificar"
+
+#~ msgid "Title of Game."
+#~ msgstr ""
 

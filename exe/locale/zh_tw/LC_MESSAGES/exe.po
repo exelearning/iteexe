@@ -9,17 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-15 18:05+0200\n"
+"POT-Creation-Date: 2013-10-22 20:43+0200\n"
 "PO-Revision-Date: 2013-10-21 13:10+0800\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
-"Language: zh_TW\n"
-"X-Generator: Lokalize 1.5\n"
 
 #: exe/application.py:204
 #, python-format
@@ -39,9 +37,9 @@ msgstr ""
 "  -h, --help    顯示此說明頁面並離開\n"
 "  --standalone  完全從目前的目錄執行\n"
 "  --portable  以可攜模式執行\n"
-"設定會從 $HOME/.exe（Linux/Unix/Mac OS）或是 Documents and Settings/<username>"
-"/Application Data/exe（Windows XP） 或是 Users/<username>"
-"/AppData/Roaming/exe（Windows 7）裡的 exe.conf 檔中讀取。"
+"設定會從 $HOME/.exe（Linux/Unix/Mac OS）或是 Documents and "
+"Settings/<username>/Application Data/exe（Windows XP） 或是 "
+"Users/<username>/AppData/Roaming/exe（Windows 7）裡的 exe.conf 檔中讀取。"
 
 #: exe/engine/appletidevice.py:66
 msgid "Java Applet"
@@ -54,10 +52,10 @@ msgstr "Java Applet"
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:533
-#: exe/engine/idevicestore.py:591 exe/engine/idevicestore.py:619
-#: exe/engine/idevicestore.py:642 exe/engine/idevicestore.py:698
-#: exe/engine/idevicestore.py:726 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:529
+#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:615
+#: exe/engine/idevicestore.py:638 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:722 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
@@ -242,8 +240,7 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允"
-"許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
+"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
 "\n"
 "<ul> \n"
 "<li>\t在這個故事情境中您所要傳達的教學要點</li>\n"
@@ -336,16 +333,229 @@ msgstr ""
 msgid "Quotation Text:"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:47
+#: exe/engine/clickinorderidevice.py:49
 msgid "Click In Order Game"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:48
+#: exe/engine/clickinorderidevice.py:50
 msgid "PAIWASTOON Networking Services Ltd."
 msgstr "PAIWASTOON Networking Services Ltd."
 
-#: exe/engine/clickinorderidevice.py:49
+#: exe/engine/clickinorderidevice.py:51
 msgid "Click in Order according to the hint on the map."
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
+#: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
+#: exe/engine/memorymatchidevice.py:113 exe/engine/sortidevice.py:52
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
+#: exe/jsui/scripts/app/view/forms/LomSections.js:48
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
+#: exe/webui/galleryblock.py:209
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
+msgid "Title"
+msgstr "標題"
+
+#: exe/engine/clickinorderidevice.py:61
+msgid "Game Instructions"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:61
+msgid "Instructions to show in leading paragraph"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:62
+msgid "Game Won Feedback Overlay"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:62
+msgid "Shown over when the game is won"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:63
+msgid "Correct Answer Feedback Overlay"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:63
+msgid "Shown over game when correct answer given"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:64
+msgid "Wrong Answer Feedback Overlay"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:64
+msgid "Shown over game when wrong answer is given"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:65
+msgid "Main Area To Show"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:65
+msgid "The Main Game Area on which to locate items"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:66
+msgid "Area shown before the game starts"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:66
+msgid "User will click on this to start the game"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:78
+msgid "Game Width"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:78
+msgid "Width of game area (in pixels)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:79
+msgid "Game Height"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:79
+msgid "Height of game area (in pixels)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:80
+msgid "Style of Element Counter"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:80
+msgid "Use CSS to style element that counts number items found"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:81
+msgid "Hint Width"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:81
+msgid "Width (px) of hint area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:82
+msgid "Hint Height"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:82
+msgid "Height (px) of hint area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:83
+msgid "Hint Area Style"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:83
+msgid "Style of Hint Area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:84
+msgid "Style of timer Element"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:84
+msgid "Style of timer (CSS)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:100
+msgid "Dont Shuffle"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:101
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Shuffle"
+msgstr "隨機播放"
+
+#: exe/engine/clickinorderidevice.py:104
+msgid "No Timer"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:105
+msgid "Stopwatch Mode"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:107
+msgid "Shuffle Questions"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:107
+msgid "Randomize question order or not"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:108
+msgid "Use a Timer"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:108 exe/engine/memorymatchidevice.py:73
+msgid "Use Timer?"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:115
+msgid "Clickable Area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:152
+msgid "Top (Y) Coord"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:152
+msgid "Top CSS top property"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:153
+msgid "Left (X) Coord"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:153
+msgid "Left CSS left property"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:154
+msgid "Width (px)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:154
+msgid "Width of clickable area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:155
+msgid "Height (px)"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:155
+msgid "Height of clickable area"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:156
+msgid "Delay (ms) to hide revealed contents"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:156
+msgid "After delay ms hide the content prev revealed"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:166
+msgid "Hint to Show for this item"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:166
+msgid "The hint that will appear under the map for this item"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:167
+msgid "Item Revealed"
+msgstr ""
+
+#: exe/engine/clickinorderidevice.py:167
+msgid "The Item that will be revealed in place"
 msgstr ""
 
 #: exe/engine/clozefpdidevice.py:47
@@ -364,9 +574,7 @@ msgid ""
 " </li></ol>"
 msgstr ""
 "<p>克漏字 (Cloze) "
-"練習是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>"
-"確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>"
-"確認單字的組成與文法的完成度。</li></ol>"
+"練習是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>確認單字的組成與文法的完成度。</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:61 exe/engine/clozeidevice.py:60
 #: exe/engine/clozelangfpdidevice.py:61
@@ -394,11 +602,12 @@ msgid ""
 msgstr ""
 
 #: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:117 exe/engine/listaidevice.py:129
-#: exe/engine/placetheobjectsidevice.py:49 exe/engine/truefalseidevice.py:164
-#: exe/engine/truefalseidevice.py:390
+#: exe/engine/clozelangfpdidevice.py:117 exe/engine/hangmanidevice.py:60
+#: exe/engine/listaidevice.py:129 exe/engine/memorymatchidevice.py:55
+#: exe/engine/placetheobjectsidevice.py:49 exe/engine/sortidevice.py:53
+#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:459
+#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:470
 msgid "Instructions"
 msgstr "說明"
 
@@ -423,22 +632,20 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select"
 " it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr ""
-"<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>"
-"要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p>"
+msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p>"
 
 #: exe/engine/clozefpdidevice.py:129 exe/engine/clozefpdidevice.py:279
 #: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozelangfpdidevice.py:284
 #: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:582
-#: exe/engine/idevicestore.py:691 exe/engine/listaidevice.py:140
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:578
+#: exe/engine/idevicestore.py:687 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
-#: exe/webui/common.py:375 exe/webui/editorelement.py:148
+#: exe/webui/common.py:386 exe/webui/editorelement.py:148
 #: exe/webui/editorpane.py:255 exe/webui/element.py:2393
 #: exe/webui/element.py:2507 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
@@ -496,11 +703,14 @@ msgstr "非互動式活動"
 
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
+#: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
+#: exe/engine/config.py:102
 msgid "Interactive Activities"
 msgstr "互動式活動"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
+#: exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Non-Textual Information"
 msgstr ""
 
@@ -517,11 +727,6 @@ msgstr ""
 #: exe/engine/config.py:85 exe/engine/config.py:86
 msgid "FPD"
 msgstr "FPD"
-
-#: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102 exe/engine/config.py:103 exe/engine/config.py:104
-msgid "Unclassified"
-msgstr "未分類"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -665,8 +870,7 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong"
 " answer\"\n"
 "for the other options."
-msgstr ""
-"輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
+msgstr "輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
 #: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
@@ -682,24 +886,38 @@ msgid ""
 " blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
-#: exe/engine/extendedfieldengine.py:231
+#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
+#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
+msgid "Show"
+msgstr "顯示"
+
+#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
+#: exe/webui/hangmanblock.py:327
+msgid "options"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:269
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "瀏覽"
 
-#: exe/engine/extendedfieldengine.py:233
+#: exe/engine/extendedfieldengine.py:271
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "取代"
 
-#: exe/engine/extendedfieldengine.py:235 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:273 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "上傳"
 
-#: exe/engine/extendedfieldengine.py:250 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "刪除檔案"
+
+#: exe/engine/extendedfieldengine.py:532
+msgid "is not a valid number - please try again<br/>"
+msgstr ""
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
@@ -797,8 +1015,7 @@ msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
-msgstr ""
-"<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
+msgstr "<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
 
 #: exe/engine/field.py:3538
 msgid ""
@@ -878,7 +1095,7 @@ msgstr "回饋意見："
 msgid "File Attachments"
 msgstr "檔案附件"
 
-#: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:42
+#: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:45
 #: exe/engine/sortidevice.py:46
 msgid "Toughra Technologies FZ LLC."
 msgstr "Toughra Technologies FZ LLC."
@@ -1049,12 +1266,12 @@ msgid ""
 "practice to put the file size in the label."
 msgstr "點擊 \"新增影像\" 按鈕來選擇影像檔。所選的影像將顯示在下面，您可為其加上標籤。最好在標籤上加上檔案大小等資訊。"
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:640
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:636
 msgid "Reading Activity 0.11"
 msgstr "閱讀活動 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:490
-#: exe/engine/idevicestore.py:531
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:486
+#: exe/engine/idevicestore.py:527
 msgid "Reading Activity"
 msgstr "閱讀活動"
 
@@ -1070,25 +1287,132 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 msgid "Hangman style word game with customizable images."
 msgstr ""
 
-#: exe/engine/hangmanidevice.py:57
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
-#: exe/jsui/scripts/app/view/forms/LomSections.js:48
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
-#: exe/webui/galleryblock.py:209
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:63
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-msgid "Title"
-msgstr "標題"
+#: exe/engine/hangmanidevice.py:61
+msgid "Instructions for Game."
+msgstr ""
 
-#: exe/engine/hangmanidevice.py:58
-msgid "Title of Game."
-msgstr "遊戲標題。"
+#: exe/engine/hangmanidevice.py:76
+msgid "Alphabet to Select From"
+msgstr ""
 
-#: exe/engine/idevicestore.py:534
+#: exe/engine/hangmanidevice.py:76
+msgid "Alphabet to show players"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:77
+msgid "abcdefghijklmnopqrstuvwxyz"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:83
+msgid "Letter Button Style"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:84
+msgid "Style of button to start with"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:87
+msgid "Letter Button Style Wrong Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:88
+msgid "Style of letter button after wrong guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:91
+msgid "Letter Button Style Right Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:92
+msgid "Style of letter button after correct guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:95
+msgid "Style of Hint Text Field"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:95
+msgid "Hint Text Field CSS"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:98
+msgid "Style of Word Display Field"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:98
+msgid "Word Display CSS"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:101
+msgid "Restart Level Button Text"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:101
+msgid "Text for reset button"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1458
+#: exe/webui/element.py:1727
+msgid "Restart"
+msgstr "重新開始"
+
+#: exe/engine/hangmanidevice.py:104
+msgid "Restart Level Button Style (CSS)"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:104
+msgid "Style of Reset Button"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:108 exe/engine/hangmanidevice.py:170
+msgid "Wrong Guess Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:109 exe/engine/hangmanidevice.py:171
+msgid "Player will see this message when they guess a letter wrong"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:111 exe/engine/hangmanidevice.py:158
+msgid "Lost Level Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:112 exe/engine/hangmanidevice.py:159
+msgid "Player will see this message when they loose the level"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:114 exe/engine/hangmanidevice.py:162
+msgid "Level Passed Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
+msgid "Player will see this message when they guess the word correctly"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
+msgid "Game Won Message"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
+msgid "Player will see this message when they guess all words correctly"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:148
+msgid "Word to Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:148
+msgid "Word To Guess"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:150
+msgid "Hint to Show User"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:150
+msgid "Hint for Word"
+msgstr ""
+
+#: exe/engine/idevicestore.py:530
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1098,10 +1422,9 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical"
 " task \n"
 "based on the reading.</p>"
-msgstr ""
-"<p>「閱讀活動」主要是用於測試學生對特定文字的閱讀理解能力。可以用詢問學生關於閱讀內容的問題，或是讓學生們根據閱讀的內容執行某些工作。</p>"
+msgstr "<p>「閱讀活動」主要是用於測試學生對特定文字的閱讀理解能力。可以用詢問學生關於閱讀內容的問題，或是讓學生們根據閱讀的內容執行某些工作。</p>"
 
-#: exe/engine/idevicestore.py:539
+#: exe/engine/idevicestore.py:535
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1116,31 +1439,31 @@ msgid ""
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
 
-#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:683
+#: exe/engine/idevicestore.py:570 exe/engine/idevicestore.py:679
 msgid "What to read"
 msgstr "要閱讀的內容"
 
-#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
+#: exe/engine/idevicestore.py:571 exe/engine/idevicestore.py:680
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr "輸入閱讀內容的詳情，包括參考資料詳情。使用的參考樣式會根據您的技能或知識範圍。"
 
-#: exe/engine/idevicestore.py:578 exe/engine/idevicestore.py:617
-#: exe/engine/idevicestore.py:625 exe/engine/idevicestore.py:687
-#: exe/engine/idevicestore.py:724 exe/engine/idevicestore.py:732
+#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:613
+#: exe/engine/idevicestore.py:621 exe/engine/idevicestore.py:683
+#: exe/engine/idevicestore.py:720 exe/engine/idevicestore.py:728
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "學習活動"
 
-#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
+#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "描述學生應完成的工作。展示其中的關聯給學生看。"
 
-#: exe/engine/idevicestore.py:583 exe/engine/idevicestore.py:692
+#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1148,30 +1471,30 @@ msgid ""
 "or providing a statement to begin a debate."
 msgstr ""
 
-#: exe/engine/idevicestore.py:589 exe/engine/idevicestore.py:598
-#: exe/engine/idevicestore.py:696 exe/engine/idevicestore.py:705
+#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:594
+#: exe/engine/idevicestore.py:692 exe/engine/idevicestore.py:701
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:592 exe/engine/idevicestore.py:699
+#: exe/engine/idevicestore.py:588 exe/engine/idevicestore.py:695
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr "「目的」描述這個教材應該學習到什麼，並定義學生在完成學習後應該可以做什麼。"
 
-#: exe/engine/idevicestore.py:599 exe/engine/idevicestore.py:706
+#: exe/engine/idevicestore.py:595 exe/engine/idevicestore.py:702
 msgid "Type the learning objectives for this resource."
 msgstr "輸入學習此教材的目的"
 
-#: exe/engine/idevicestore.py:602 exe/engine/idevicestore.py:612
-#: exe/engine/idevicestore.py:709 exe/engine/idevicestore.py:719
+#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:608
+#: exe/engine/idevicestore.py:705 exe/engine/idevicestore.py:715
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Preknowledge"
 msgstr "預備知識"
 
-#: exe/engine/idevicestore.py:605 exe/engine/idevicestore.py:712
+#: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:708
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1186,13 +1509,13 @@ msgstr ""
 "<li>學生必須能組合基本的電源工具</li>\n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:613 exe/engine/idevicestore.py:720
+#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:716
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "描述學生要有效率地學習此教材所應具備的知識。"
 
-#: exe/engine/idevicestore.py:620 exe/engine/idevicestore.py:727
+#: exe/engine/idevicestore.py:616 exe/engine/idevicestore.py:723
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1202,11 +1525,11 @@ msgstr ""
 "學習活動可被定義為學生必須完成的一個或一組任務。\n"
 "請提供清晰明確的任務指示，並考慮任何會協助或阻礙學生完成任務的條件與因素。"
 
-#: exe/engine/idevicestore.py:626 exe/engine/idevicestore.py:733
+#: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
 msgid "Describe the tasks the learners should complete."
 msgstr "描述學生需要完成的學習任務。"
 
-#: exe/engine/idevicestore.py:643
+#: exe/engine/idevicestore.py:639
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1220,7 +1543,7 @@ msgstr ""
 " <P>閱讀活動，顧名思義是要學生完成一些任務。此活動必須與學生閱讀\n"
 "的內容直接相關。在適當的地方給學生一些回饋，可以給學生一些指引。</P>"
 
-#: exe/engine/idevicestore.py:648
+#: exe/engine/idevicestore.py:644
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -1477,13 +1800,195 @@ msgstr ""
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr "您可以用工具列，或是手動輸入 latex 指令到文字編輯區。"
 
-#: exe/engine/memorymatchidevice.py:41
+#: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
 msgstr "記憶遊戲"
 
-#: exe/engine/memorymatchidevice.py:43
+#: exe/engine/memorymatchidevice.py:46
 msgid "Memory Match Game Maker."
 msgstr "記憶遊戲產生器。"
+
+#: exe/engine/memorymatchidevice.py:55
+msgid "Instructions to show"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:56
+msgid "Number of Rows"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:57
+msgid "Number of Columns"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:58
+msgid "Split Question/Answer Pairs"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:60
+msgid "Feedback to show on correct match"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:60
+msgid "Positive Feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:61
+msgid "Feedback to show on incorrect pair"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:61
+msgid "Negative Feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:62
+msgid "Style of Feedback Area (CSS)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:62
+msgid "CSS style for feedback area"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:63
+msgid "Width of Cells (in pixels)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:63
+msgid "Cell Width px"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:64
+msgid "Height of Cells (in pixels)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:64
+msgid "Cell Height px"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:65
+msgid "Time after which to re-hide incorrect match (ms)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:65
+msgid "Time to hide"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:66
+msgid "Cover Image for cells (shown before selected)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:66
+msgid "Cover Img"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:67
+msgid "Background Image for cells (shown after selected)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:67
+msgid "Back Img"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:68
+msgid "Background image behind cells shown as cells are hidden"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:68
+msgid "Bg Img"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:69
+msgid "Effect for showing positive feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:69
+msgid "Positive Feedback Effect"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:71
+msgid "Effect for showing negative feedback"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:71
+msgid "Negative Feedback Effect"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:73
+msgid "Show / Use a timer?"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:74
+msgid "Hide Cells after match made?"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:74
+msgid "Hide after match"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:76
+msgid "Effect when hiding cells after match"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:76
+msgid "Hide after match effect"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:78
+msgid "Cell Padding in table"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:78
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Padding"
+msgstr "儲存格填充"
+
+#: exe/engine/memorymatchidevice.py:79
+msgid "Cell Spacing of table"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:79
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+msgid "Cell Spacing"
+msgstr "儲存格間隔"
+
+#: exe/engine/memorymatchidevice.py:80
+msgid "Cell Default Style (CSS)"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:80
+msgid "Cell Style CSS"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:81
+msgid "Text of Timer Label"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:81
+msgid "Timer Text"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:82
+msgid "CSS of Timer Field"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:82
+msgid "Timer CSS"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:146
+msgid "Match Tile 1"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:146
+msgid "Match Tile1"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:147
+msgid "Match Tile 2"
+msgstr ""
+
+#: exe/engine/memorymatchidevice.py:147
+msgid "Match Tile2"
+msgstr ""
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
@@ -1907,6 +2412,122 @@ msgstr "項目排序"
 msgid "Sortable list of items."
 msgstr "項目的可排序清單。"
 
+#: exe/engine/sortidevice.py:52
+msgid "Title to show"
+msgstr ""
+
+#: exe/engine/sortidevice.py:53
+msgid "Instructions before sortable list"
+msgstr ""
+
+#: exe/engine/sortidevice.py:54
+msgid "Correctly Sorted Overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:54
+msgid "Shown when check is clicked and correct"
+msgstr ""
+
+#: exe/engine/sortidevice.py:55
+msgid "Wrongly Sorted Overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:55
+msgid "Shown when check is clicked and wrong"
+msgstr ""
+
+#: exe/engine/sortidevice.py:56
+msgid "Effect for showing correct overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:56
+msgid "Effect showing correct overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:58
+msgid "Effect showing wrong answer overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:58
+msgid "Effect for showing wrong overlay"
+msgstr ""
+
+#: exe/engine/sortidevice.py:60
+msgid "Text for Check Button"
+msgstr ""
+
+#: exe/engine/sortidevice.py:61 exe/webui/listablock.py:275
+msgid "Check"
+msgstr "勾選"
+
+#: exe/engine/sortidevice.py:62
+msgid "Check Button Style (CSS)"
+msgstr ""
+
+#: exe/engine/sortidevice.py:62
+msgid "CSS for check button"
+msgstr ""
+
+#: exe/engine/sortidevice.py:63
+msgid "Width of an item in the list (px)"
+msgstr ""
+
+#: exe/engine/sortidevice.py:63
+msgid "width"
+msgstr ""
+
+#: exe/engine/sortidevice.py:64
+msgid "Height of an item in the list (px)"
+msgstr ""
+
+#: exe/engine/sortidevice.py:64
+msgid "height"
+msgstr ""
+
+#: exe/engine/sortidevice.py:65
+msgid "Style (CSS) for sortable items"
+msgstr ""
+
+#: exe/engine/sortidevice.py:65
+msgid "Sortable Item CSS"
+msgstr ""
+
+#: exe/engine/sortidevice.py:66
+msgid "Sort Direction"
+msgstr ""
+
+#: exe/engine/sortidevice.py:76
+msgid "Top To Bottom"
+msgstr ""
+
+#: exe/engine/sortidevice.py:77
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:55
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Left to Right"
+msgstr "左到右"
+
+#: exe/engine/sortidevice.py:78
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:54
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
+msgid "Right to Left"
+msgstr "右到左"
+
+#: exe/engine/sortidevice.py:92
+msgid "Sortable Item"
+msgstr ""
+
+#: exe/engine/sortidevice.py:92
+msgid "Text / Content of sortable item"
+msgstr ""
+
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
 msgstr "是非題"
@@ -2066,8 +2687,8 @@ msgid ""
 "given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
 "singlepage, xliff or epub3."
 msgstr ""
-"將 <輸入檔> elp 套件利用以下格式之一匯出到 <輸出檔>：xml, scorm12, scorm2004, agrega, ims, 網站, "
-"webzip, 單一頁面, xliff 或 epub3。"
+"將 <輸入檔> elp 套件利用以下格式之一匯出到 <輸出檔>：xml, scorm12, scorm2004, agrega, ims, 網站,"
+" webzip, 單一頁面, xliff 或 epub3。"
 
 #: exe/exe_do:101
 msgid ""
@@ -3606,8 +4227,7 @@ msgstr "要建立與舊的 eXe 版本相容的套件嗎？"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
-msgid ""
-"Checking this option, the saved package may be opened with eXe >= 0.20.4"
+msgid "Checking this option, the saved package may be opened with eXe >= 0.20.4"
 msgstr "勾選此選項的話，儲存的套件可能可以用 eXe 0.20.4 版以上開啟。"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
@@ -5360,8 +5980,7 @@ msgid "process/procedure supporting service"
 msgstr "處理/程序支援服務"
 
 #: exe/jsui/scripts/lomvocab.js:830
-msgid ""
-"individual/cooperative/collaborative learning/working management service"
+msgid "individual/cooperative/collaborative learning/working management service"
 msgstr "個別/協作/協同學習/工作管理服務"
 
 #: exe/jsui/scripts/lomvocab.js:834
@@ -5682,8 +6301,8 @@ msgstr "教學輔助"
 msgid "Information"
 msgstr "資訊"
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:474
-#: exe/webui/common.py:475 exe/webui/editorpane.py:364
+#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:485
+#: exe/webui/common.py:486 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2801
 #: exe/webui/element.py:2802 exe/webui/truefalseelement.py:152
@@ -5717,7 +6336,33 @@ msgstr "情境"
 msgid "Quotation"
 msgstr ""
 
-#: exe/webui/clickinorderblock.py:377
+#: exe/webui/clickinorderblock.py:297
+msgid ""
+"\n"
+"        <h2>Click The Elements in Order Game</h2>\n"
+"        <p>\n"
+"                This builds a Javascript game where the player has to "
+"click on a certain place on the main area according to the hint.  \n"
+"                When they click correctly the positive feedback will come"
+" and the game will advance.  When they click the wrong\n"
+"                area negative feedback will be shown.  When they click on"
+" the correct area an item can be revealed there.  A delay\n"
+"                can be set to make the item disappear if desired after a "
+"delay.\n"
+"        </p>\n"
+"\n"
+"        "
+msgstr ""
+
+#: exe/webui/clickinorderblock.py:334
+msgid "<h2>Clickable Areas</h2>"
+msgstr ""
+
+#: exe/webui/clickinorderblock.py:339
+msgid "Add Clickable Area"
+msgstr ""
+
+#: exe/webui/clickinorderblock.py:410
 msgid "Delete Clickable Area"
 msgstr "刪除可點擊區域"
 
@@ -5735,27 +6380,23 @@ msgstr "答案"
 msgid "Now It's Your Turn"
 msgstr "輪到您了"
 
-#: exe/webui/common.py:170
-msgid "Show"
-msgstr "顯示"
-
-#: exe/webui/common.py:171 exe/webui/reflectionblock.py:120
+#: exe/webui/common.py:182 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
 msgid "Hide"
 msgstr "隱藏"
 
-#: exe/webui/common.py:172
+#: exe/webui/common.py:183
 msgid "Menu"
 msgstr "選單"
 
-#: exe/webui/common.py:193 exe/webui/editorpage.py:233
+#: exe/webui/common.py:204 exe/webui/editorpage.py:233
 #: exe/webui/selectbrowserpage_ru.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 編輯器"
 
-#: exe/webui/common.py:465 exe/webui/common.py:469
+#: exe/webui/common.py:476 exe/webui/common.py:480
 msgid "Click for completion instructions"
 msgstr "點擊看完成說明。"
 
@@ -6071,10 +6712,6 @@ msgstr "顯示/隱藏意見回饋"
 msgid "Show/Clear Answers"
 msgstr "顯示/清除答案"
 
-#: exe/webui/element.py:1458 exe/webui/element.py:1727
-msgid "Restart"
-msgstr "重新開始"
-
 #: exe/webui/element.py:1465 exe/webui/element.py:1734
 msgid "Show Answers"
 msgstr "顯示答案"
@@ -6171,6 +6808,32 @@ msgstr "超大"
 msgid "Frame Height:"
 msgstr "框架高度："
 
+#: exe/webui/fileattachblock.py:89
+msgid "<div>\n"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:90
+msgid "<h2>File Attachment</h2>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:91
+msgid ""
+"<p>Here you can attach arbitary files to the package that will be "
+"included with the export</p>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:92
+msgid "<p>You can choose to display links or not below</p>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:94
+msgid "<strong>Title:</strong><br/>"
+msgstr ""
+
+#: exe/webui/fileattachblock.py:104
+msgid "Add Another File Attachment"
+msgstr ""
+
 #: exe/webui/fileattachblock.py:121
 msgid "IDevice Icon"
 msgstr "IDevice 圖示"
@@ -6216,19 +6879,33 @@ msgstr "刪除影像"
 msgid "Delete this image?"
 msgstr "要刪除此影像嗎？"
 
-#: exe/webui/hangmanblock.py:325
+#: exe/webui/hangmanblock.py:124
+msgid ""
+"One or more words or hints are blank.  Please do not have any blank hints"
+" or words - you can delete unused ones."
+msgstr ""
+
+#: exe/webui/hangmanblock.py:327
+msgid " Advanced "
+msgstr ""
+
+#: exe/webui/hangmanblock.py:348
 msgid "Remove This Life"
 msgstr "移除此生命"
 
-#: exe/webui/hangmanblock.py:327
+#: exe/webui/hangmanblock.py:350
 msgid "Add Chance"
 msgstr "新增機會"
 
-#: exe/webui/hangmanblock.py:341
+#: exe/webui/hangmanblock.py:355
+msgid "<h2>Words to Guess</h2>"
+msgstr ""
+
+#: exe/webui/hangmanblock.py:364
 msgid "Remove This Word"
 msgstr "移除此單字"
 
-#: exe/webui/hangmanblock.py:343
+#: exe/webui/hangmanblock.py:366
 msgid "Add Word"
 msgstr "新增單字"
 
@@ -6237,8 +6914,7 @@ msgid "eXe problem"
 msgstr "eXe 問題"
 
 #: exe/webui/iecmwarning.py:46
-msgid ""
-"The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr "您的瀏覽器 (ie) 的相容檢視已打開。"
 
 #: exe/webui/iecmwarning.py:50
@@ -6281,9 +6957,26 @@ msgstr "放大鏡尺寸："
 msgid "Other words"
 msgstr "其他單字"
 
-#: exe/webui/listablock.py:275
-msgid "Check"
-msgstr "勾選"
+#: exe/webui/memorymatchblock.py:81
+msgid "Number of rows x Number of cols must be an even number<br/>"
+msgstr ""
+
+#: exe/webui/memorymatchblock.py:86
+msgid ""
+"After you set the number of rows/cols please click Create/Trim pairs "
+"button at the bottom and enter in the matching pairs for the game"
+msgstr ""
+
+#: exe/webui/memorymatchblock.py:175
+msgid ""
+"<p>Click the button below to create the matching pairs or \n"
+"                trim in case you reduced the number of rows / columns</p>"
+"\n"
+msgstr ""
+
+#: exe/webui/memorymatchblock.py:177
+msgid "Create / Trim Pairs"
+msgstr ""
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
@@ -6310,11 +7003,11 @@ msgstr "領先一步"
 msgid "Default browser in your system"
 msgstr "您系統中的預設瀏覽器"
 
-#: exe/webui/preferencespage.py:171
+#: exe/webui/preferencespage.py:170
 msgid "Failed to get preferences"
 msgstr "取得喜好設定失敗"
 
-#: exe/webui/preferencespage.py:199
+#: exe/webui/preferencespage.py:198
 msgid "Failed to save preferences"
 msgstr "儲存喜好設定失敗"
 
@@ -6374,8 +7067,7 @@ msgid ""
 msgstr "抱歉，您的瀏覽器阻擋了彈出式視窗，但有些功能是用彈出式視窗提供的。您需要關閉阻擋功能，才能完整使用這個工具。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
-msgid ""
-"Currently not supported by your browser, use keyboard shortcuts instead."
+msgid "Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr "目前您的瀏覽器並未支援，請改用鍵盤捷徑。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -6987,9 +7679,7 @@ msgstr "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,�
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
-msgid ""
-"January,February,March,April,May,June,July,August,September,October,November,D"
-"ecember"
+msgid "January,February,March,April,May,June,July,August,September,October,November,December"
 msgstr "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -7075,24 +7765,6 @@ msgstr "樣式"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "ID"
 msgstr "代碼"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:54
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-msgid "Right to Left"
-msgstr "右到左"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:55
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
-msgid "Left to Right"
-msgstr "左到右"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -7353,8 +8025,7 @@ msgstr "群組邊界"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:26
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:34
-msgid ""
-"You will not be able to edit the header or the caption from this dialog."
+msgid "You will not be able to edit the header or the caption from this dialog."
 msgstr "您無法從此對話框編輯標頭或標題。"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:27
@@ -8146,10 +8817,6 @@ msgid "Quality"
 msgstr "品質"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Shuffle"
-msgstr "隨機播放"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Prefetch"
 msgstr "預先取得"
 
@@ -8675,14 +9342,6 @@ msgid "Cell Type"
 msgstr "儲存格型態"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Cell Padding"
-msgstr "儲存格填充"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
-msgid "Cell Spacing"
-msgstr "儲存格間隔"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "Rows"
 msgstr "列"
 
@@ -9092,6 +9751,10 @@ msgstr "已安裝於您系統的瀏覽器"
 msgid "OK"
 msgstr "確定"
 
+#: exe/webui/sortblock.py:92
+msgid "Add Another Item to be Sorted"
+msgstr ""
+
 #: exe/webui/stylemanagerpage.py:131
 #, python-format
 msgid "Style directory already exists: %s"
@@ -9307,4 +9970,9 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
+#~ msgid "Unclassified"
+#~ msgstr "未分類"
+
+#~ msgid "Title of Game."
+#~ msgstr "遊戲標題。"
 

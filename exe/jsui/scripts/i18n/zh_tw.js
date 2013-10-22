@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-10-15 18:05+0200\nPO-Revision-Date: 2013-10-21 13:10+0800\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <kde-i18n-doc@kde.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
+ "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-10-22 20:43+0200\nPO-Revision-Date: 2013-10-21 13:10+0800\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <kde-i18n-doc@kde.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 0.9.6\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
  "Xhosa ": "\u79d1\u85a9\u8a9e", 
  "Metadata": "\u4e2d\u7e7c\u8cc7\u6599", 
@@ -1330,7 +1330,6 @@ translations = {
  "Chamorro ": "\u67e5\u83ab\u7f85\u8a9e", 
  "Intended End User Role": "\u7279\u5b9a\u7d42\u7aef\u7528\u6236\u89d2\u8272", 
  "Metadata Schema": "\u4e2d\u7e7c\u8cc7\u6599\u6a5f\u5236", 
- "Unclassified": "\u672a\u5206\u985e", 
  "Update All Cells in Row": "\u66f4\u65b0\u5217\u4e2d\u6240\u6709\u5132\u5b58\u683c", 
  "The style name already exists: %s": "\u6a23\u5f0f\u540d\u7a31\u5df2\u5b58\u5728\uff1a%s", 
  "Analizing directory %d of %d: %s": "\u5206\u6790\u76ee\u9304\u4e2d\uff0c\u7b2c %d \u500b\uff0c\u5171 %d \u500b\uff1a%s", 
@@ -1788,7 +1787,6 @@ translations = {
  "operating system": "\u4f5c\u696d\u7cfb\u7d71", 
  "Gold": "\u91d1\u8272", 
  "below": "\u4e0b\u65b9", 
- "Title of Game.": "\u904a\u6232\u6a19\u984c\u3002", 
  "skill level": "\u6280\u80fd\u7b49\u7d1a", 
  "Use this field to enter text. This \niDevice has no emphasis applied although limited formatting can be applied to \ntext through the text editing buttons associated with the field.": "\u5728\u6b64\u6b04\u4f4d\u8f38\u5165\u6587\u5b57\u3002\u6b64 iDevice \u6c92\u6709\u7a81\u986f\u91cd\u9ede\u7684\u529f\u80fd\uff0c\n\u4e0d\u904e\u9084\u662f\u53ef\u4ee5\u900f\u904e\u6587\u5b57\u7de8\u8f2f\u6309\u9375\u4f86\u5957\u7528\u4e00\u4e9b\u4e9b\u683c\u5f0f\u3002", 
  "Insert Page Break for Printing": "\u63d2\u5165\u9801\u9762\u4e2d\u65b7\u4ee5\u4fbf\u5217\u5370", 
