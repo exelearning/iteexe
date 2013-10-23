@@ -43,9 +43,9 @@ class NotaIdevice(Idevice):
         Idevice.__init__(self, 
                          x_(u"Note"),
                          x_(u"exelearning.net"), 
-                         x_(u""""""), u"Note", u"note")
+                         u"", u"Note", u"note")
         self.emphasis         = Idevice.SomeEmphasis
-        self._commentInstruc   = x_(u"""""")
+        self._commentInstruc   = u""
         self.systemResources += ["common.js"]
         
 

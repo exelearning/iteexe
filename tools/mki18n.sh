@@ -19,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #===========================================================================
 
-#Tested with Pybabel 0.9.6
+#Use python Babel 1.3 patched to include Language header (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
 
 echo -e " *** Extracting messages from python exe files and jsui javascript files ***\n"
 pybabel extract --keyword=x_ --project "eXe Learning" --version "1.04.1" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
