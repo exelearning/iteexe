@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-22 20:43+0200\n"
+"POT-Creation-Date: 2013-10-23 13:44+0200\n"
 "PO-Revision-Date: 2008-12-12 16:43+1300\n"
 "Last-Translator: Jun IWATA <j_iwata@med.shimane-u.ac.jp>\n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -4233,6 +4233,18 @@ msgstr ""
 msgid "Intended End User"
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+msgid "Ordinary Learner"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
+msgid "Special Needs Learner"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:188
+msgid "Gifted Learner"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
@@ -4245,10 +4257,30 @@ msgstr ""
 msgid "For Individual Tuition"
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
+msgid "Classroom"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:271
+msgid "Real Environment"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:296
+msgid "Face to Face"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:304
+msgid "Blended"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:311
+msgid "Distance"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
@@ -6288,6 +6320,10 @@ msgstr ""
 
 #: exe/jsui/scripts/lomvocab.js:1580
 msgid "education expert"
+msgstr ""
+
+#: exe/jsui/stylemenu.py:37
+msgid "INTEF with horizontal menu"
 msgstr ""
 
 #: exe/webui/appletblock.py:84
@@ -10088,10 +10124,4 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
-#~ msgid "Unclassified"
-#~ msgstr ""
-
-#~ msgid "Title of Game."
-#~ msgstr ""
 

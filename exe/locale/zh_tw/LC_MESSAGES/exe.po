@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-22 20:43+0200\n"
+"POT-Creation-Date: 2013-10-23 13:44+0200\n"
 "PO-Revision-Date: 2013-10-21 13:10+0800\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
@@ -4134,6 +4134,18 @@ msgstr "用法"
 msgid "Intended End User"
 msgstr "特定終端用戶"
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+msgid "Ordinary Learner"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
+msgid "Special Needs Learner"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:188
+msgid "Gifted Learner"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
@@ -4146,11 +4158,31 @@ msgstr "團隊工作"
 msgid "For Individual Tuition"
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
+msgid "Classroom"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:271
+msgid "Real Environment"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
 msgstr "形式"
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:296
+msgid "Face to Face"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:304
+msgid "Blended"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:311
+msgid "Distance"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
 msgid "Project Properties"
@@ -6186,6 +6218,10 @@ msgstr "電腦科學家"
 #: exe/jsui/scripts/lomvocab.js:1580
 msgid "education expert"
 msgstr "教育專家"
+
+#: exe/jsui/stylemenu.py:37
+msgid "INTEF with horizontal menu"
+msgstr ""
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
@@ -9969,10 +10005,4 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
-#~ msgid "Unclassified"
-#~ msgstr "未分類"
-
-#~ msgid "Title of Game."
-#~ msgstr "遊戲標題。"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-22 20:43+0200\n"
+"POT-Creation-Date: 2013-10-23 13:44+0200\n"
 "PO-Revision-Date: 2013-10-19 17:54+0100\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language-Team: Italian <primiani@dag.it>\n"
@@ -4676,6 +4676,18 @@ msgstr "Uso"
 msgid "Intended End User"
 msgstr "Utente finale previsto"
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
+msgid "Ordinary Learner"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
+msgid "Special Needs Learner"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:188
+msgid "Gifted Learner"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
@@ -4688,11 +4700,31 @@ msgstr "Per lavoro di gruppo"
 msgid "For Individual Tuition"
 msgstr "Per fruizione individuale"
 
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
+msgid "Classroom"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:271
+msgid "Real Environment"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
 msgstr "Modalità"
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:296
+msgid "Face to Face"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:304
+msgid "Blended"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:311
+msgid "Distance"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
 msgid "Project Properties"
@@ -6738,6 +6770,10 @@ msgstr "studioso di computer"
 #: exe/jsui/scripts/lomvocab.js:1580
 msgid "education expert"
 msgstr "esperto di educazione"
+
+#: exe/jsui/stylemenu.py:37
+msgid "INTEF with horizontal menu"
+msgstr ""
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
@@ -10601,10 +10637,4 @@ msgstr ""
 "Il file idevices/generic.data oppure il pacchetto che si sta caricando è "
 "stato creato con una versione più recente di eXe. Aggiornare eXe e "
 "riprovare."
-
-#~ msgid "Unclassified"
-#~ msgstr "Non classificato"
-
-#~ msgid "Title of Game."
-#~ msgstr "Titolo del gioco."
 
