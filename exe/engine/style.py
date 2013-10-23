@@ -93,7 +93,7 @@ class Style(Persistable):
     
     
     def get_name(self):
-        return self._name
+        return _(self._name)
     
     def get_dirname(self):
         return self._dirname

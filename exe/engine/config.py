@@ -187,8 +187,8 @@ class Config:
         # Now we are ready to serve the application
         self.loadSettings()
         self.setupLogging()
-        self.loadStyles()
         self.loadLocales()
+        self.loadStyles()
 
 
     def _overrideDefaultVals(self):

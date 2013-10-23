@@ -170,7 +170,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 					                            items: [
 					                                {
 						                                xtype: 'radio',
-					                                    boxLabel: 'Ordinary Learner',
+					                                    boxLabel: _('Ordinary Learner'),
                                                         dirtyCls: 'property-form-dirty',
 						                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'learner',
@@ -178,14 +178,14 @@ Ext.define('eXe.view.forms.PackagePanel', {
 					                                },
 					                                {
 					                                    xtype: 'radio',
-					                                    boxLabel: 'Special Needs Learner',
+					                                    boxLabel: _('Special Needs Learner'),
                                                         dirtyCls: 'property-form-dirty',
 		                                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'special needs learner'
 					                                },
 					                                {
 					                                    xtype: 'radio',
-					                                    boxLabel: 'Gifted Learner',
+					                                    boxLabel: _('Gifted Learner'),
                                                         dirtyCls: 'property-form-dirty',
 		                                                name: 'pp_intendedEndUserRoleType',
 		                                                inputValue: 'gifted learner'
@@ -260,7 +260,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Classroom',
+		                                                boxLabel: _('Classroom'),
 		                                                name: 'pp_contextPlace',
 		                                                inputValue: 'classroom',
                                                         dirtyCls: 'property-form-dirty',
@@ -268,7 +268,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Real Environment',
+		                                                boxLabel: _('Real Environment'),
 		                                                name: 'pp_contextPlace',
 		                                                inputValue: 'real environment',
                                                         dirtyCls: 'property-form-dirty'
@@ -293,7 +293,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                        items: [
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Face to Face',
+		                                                boxLabel: _('Face to Face'),
 		                                                name: 'pp_contextMode',
 		                                                inputValue: 'face to face',
                                                         dirtyCls: 'property-form-dirty',
@@ -301,14 +301,14 @@ Ext.define('eXe.view.forms.PackagePanel', {
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Blended',
+		                                                boxLabel: _('Blended'),
 		                                                name: 'pp_contextMode',
 		                                                inputValue: 'blended',
                                                         dirtyCls: 'property-form-dirty'
 		                                            },
 		                                            {
 		                                                xtype: 'radio',
-		                                                boxLabel: 'Distance',
+		                                                boxLabel: _('Distance'),
 		                                                name: 'pp_contextMode',
 		                                                inputValue: 'distance',
                                                         dirtyCls: 'property-form-dirty'

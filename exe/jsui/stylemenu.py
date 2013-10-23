@@ -33,6 +33,9 @@ log = logging.getLogger(__name__)
 import json
 import locale
 
+x_ = lambda s: s
+fakeTranslate = [x_('INTEF with horizontal menu')]  # Unused var to add translatable style menu strings to pybabel
+
 # ===========================================================================
 class StyleMenu(Renderable, Resource):
     """
