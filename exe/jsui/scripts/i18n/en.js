@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-10-23 19:24+0200\nPO-Revision-Date: 2011-10-10 16:32+0100\nLast-Translator: Jos\u00e9 Ram\u00f3n Jim\u00e9nez Reyes <jrjimenezr@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: en\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-10-24 13:30+0200\nPO-Revision-Date: 2011-10-10 16:32+0100\nLast-Translator: Jos\u00e9 Ram\u00f3n Jim\u00e9nez Reyes <jrjimenezr@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: en\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Incorrect": "Incorrect selection.", 
  "False": "False.", 
  "?????": "?????", 

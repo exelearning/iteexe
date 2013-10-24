@@ -17,12 +17,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+# Changes
+# -------
+# 2013-10:
+# 	* Usage of Babel1.3
+#	* Changed --version from '1.04.1' to '2.0' (JRF)
 #===========================================================================
 
-#Use python Babel 1.3 patched to include Language header (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
+# Use python Babel 1.3 patched to include 'Language' header (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
+# as discussed here: 
+# https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
 
 echo -e " *** Extracting messages from python exe files and jsui javascript files ***\n"
-pybabel extract --keyword=x_ --project "eXe Learning" --version "1.04.1" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+pybabel extract --keyword=x_ --project "eXeLearning" --version "2.0" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
 sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ -N

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 19:24+0200\n"
+"POT-Creation-Date: 2013-10-24 13:30+0200\n"
 "PO-Revision-Date: 2013-04-27 21:16+0100\n"
 "Last-Translator: Jesús Miguel Domínguez <miguelcaliban@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -3246,19 +3246,19 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Régi par la licence"
 
-#: exe/export/scormexport.py:543 exe/export/websitepage.py:310
+#: exe/export/scormexport.py:543 exe/export/websitepage.py:309
 msgid "Previous"
 msgstr "Précédent"
 
-#: exe/export/scormexport.py:544 exe/export/websitepage.py:316
+#: exe/export/scormexport.py:544 exe/export/websitepage.py:315
 msgid "Next"
 msgstr "Suivant"
 
-#: exe/export/singlepage.py:193
+#: exe/export/singlepage.py:192
 msgid "You can close this window"
 msgstr ""
 
-#: exe/export/websitepage.py:134
+#: exe/export/websitepage.py:133
 msgid "Skip navigation"
 msgstr ""
 
@@ -3870,7 +3870,8 @@ msgid "Modified"
 msgstr "Modifié"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/editorpane.py:273 exe/webui/selectbrowserpage_ru.py:113
+#: exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
@@ -6877,6 +6878,7 @@ msgid "Menu"
 msgstr ""
 
 #: exe/webui/common.py:204 exe/webui/editorpage.py:233
+#: exe/webui/selectbrowserpage_ru.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
@@ -7504,7 +7506,7 @@ msgstr "Conseils pour les professeurs"
 msgid "A Step Ahead"
 msgstr "Pour en savoir plus"
 
-#: exe/webui/preferencespage.py:143
+#: exe/webui/preferencespage.py:143 exe/webui/selectbrowserpage_ru.py:59
 msgid "Default browser in your system"
 msgstr "Navigateur prédéterminé de votre système"
 
@@ -10290,6 +10292,16 @@ msgstr "Usage général"
 msgid "Invalid color value"
 msgstr "Valeur de couleur invalide"
 
+#: exe/webui/selectbrowserpage_ru.py:104
+msgid "Browsers installed in your system"
+msgstr ""
+
+#: exe/webui/selectbrowserpage_ru.py:110
+#: exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "oui"
+
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr ""
@@ -10491,11 +10503,6 @@ msgstr ""
 "mais il peut s'agir d'une option correcte si vous voulez utiliser un "
 "outil pré-processus (p.ex. Rainbow) avant d'utiliser le logiciel de "
 "traduction assistée par ordinateur."
-
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "oui"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
