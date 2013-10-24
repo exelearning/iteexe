@@ -1374,6 +1374,7 @@ var $exe = {
     },
     iDeviceToggler : {
         init : function(){
+            if ($(".iDevice").length<2) return false;
             var em = $(".iDevice_header,.iDevice.emphasis0");
                 em.each(function(){
                     var t = $exe_i18n.hide;
