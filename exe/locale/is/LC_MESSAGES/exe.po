@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-24 13:30+0200\n"
+"POT-Creation-Date: 2013-10-24 13:41+0200\n"
 "PO-Revision-Date: 2006-07-28 15:29+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: <sfj@fb.is>\n"
@@ -3591,8 +3591,7 @@ msgid "Modified"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/selectbrowserpage_ru.py:113
-#: exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
@@ -6645,7 +6644,6 @@ msgid "Menu"
 msgstr ""
 
 #: exe/webui/common.py:204 exe/webui/editorpage.py:233
-#: exe/webui/selectbrowserpage_ru.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
@@ -7299,15 +7297,15 @@ msgstr ""
 msgid "A Step Ahead"
 msgstr ""
 
-#: exe/webui/preferencespage.py:143 exe/webui/selectbrowserpage_ru.py:59
+#: exe/webui/preferencespage.py:145
 msgid "Default browser in your system"
 msgstr ""
 
-#: exe/webui/preferencespage.py:171
+#: exe/webui/preferencespage.py:173
 msgid "Failed to get preferences"
 msgstr ""
 
-#: exe/webui/preferencespage.py:199
+#: exe/webui/preferencespage.py:201
 msgid "Failed to save preferences"
 msgstr ""
 
@@ -10040,16 +10038,6 @@ msgstr ""
 msgid "Invalid color value"
 msgstr ""
 
-#: exe/webui/selectbrowserpage_ru.py:104
-msgid "Browsers installed in your system"
-msgstr ""
-
-#: exe/webui/selectbrowserpage_ru.py:110
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "OK"
-
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr ""
@@ -10247,6 +10235,11 @@ msgid ""
 "good option if you want to use a pre-process tool (i.g.: Rainbow) before "
 "using the Computer Aided Translation software."
 msgstr ""
+
+#: exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "OK"
 
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""

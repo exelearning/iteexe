@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2013-10-24 13:30+0200\n"
+"POT-Creation-Date: 2013-10-24 13:41+0200\n"
 "PO-Revision-Date: 2013-10-15 19:14+0200\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
@@ -3981,8 +3981,7 @@ msgid "Modified"
 msgstr "Modificado"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
-#: exe/webui/editorpane.py:273 exe/webui/selectbrowserpage_ru.py:113
-#: exe/webui/xliffexportpreferencespage.py:143
+#: exe/webui/editorpane.py:273 exe/webui/xliffexportpreferencespage.py:143
 #: exe/webui/xliffimportpreferencespage.py:94
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Cancel"
@@ -7000,7 +6999,6 @@ msgid "Menu"
 msgstr "Menú"
 
 #: exe/webui/common.py:204 exe/webui/editorpage.py:233
-#: exe/webui/selectbrowserpage_ru.py:90
 #: exe/webui/xliffexportpreferencespage.py:91
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
@@ -7628,15 +7626,15 @@ msgstr "Orientaciones para la tutoría"
 msgid "A Step Ahead"
 msgstr "Para saber más"
 
-#: exe/webui/preferencespage.py:143 exe/webui/selectbrowserpage_ru.py:59
+#: exe/webui/preferencespage.py:145
 msgid "Default browser in your system"
 msgstr "Navegador predeterminado en su sistema"
 
-#: exe/webui/preferencespage.py:171
+#: exe/webui/preferencespage.py:173
 msgid "Failed to get preferences"
 msgstr "Error al abrir las preferencias"
 
-#: exe/webui/preferencespage.py:199
+#: exe/webui/preferencespage.py:201
 msgid "Failed to save preferences"
 msgstr "Error al guardar las preferencias"
 
@@ -10409,16 +10407,6 @@ msgstr "Uso General"
 msgid "Invalid color value"
 msgstr "Valor inválido de color"
 
-#: exe/webui/selectbrowserpage_ru.py:104
-msgid "Browsers installed in your system"
-msgstr ""
-
-#: exe/webui/selectbrowserpage_ru.py:110
-#: exe/webui/xliffexportpreferencespage.py:136
-#: exe/webui/xliffimportpreferencespage.py:90
-msgid "OK"
-msgstr "OK"
-
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
 msgstr ""
@@ -10623,6 +10611,11 @@ msgstr ""
 "pueden ser un buena opción si va a pre-procesar los campos (p.e.: con "
 "Rainbow) antes de utilizar el software de traducción."
 
+#: exe/webui/xliffexportpreferencespage.py:136
+#: exe/webui/xliffimportpreferencespage.py:90
+msgid "OK"
+msgstr "OK"
+
 #: exe/webui/xliffimportpreferencespage.py:84
 msgid ""
 "If you choose this option, the import process will take the texts from "
@@ -10660,5 +10653,5 @@ msgstr ""
 "actualice eXe e inténtelo otra vez."
 
 #~ msgid "Browsers installed in your system"
-#~ msgstr "Navegadores instalados en su sistema"
+#~ msgstr ""
 

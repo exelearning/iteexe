@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-10-24 13:30+0200\nPO-Revision-Date: 2013-10-23 22:26+0800\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_Hant_TW\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: exe 0.15\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2013-10-24 13:41+0200\nPO-Revision-Date: 2013-10-23 22:26+0800\nLast-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\nLanguage-Team: Chinese Traditional <zh-l10n@linux.org.tw>\nLanguage: zh_TW@Hant\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
  "Xhosa ": "\u79d1\u85a9\u8a9e", 
  "Metadata": "\u4e2d\u7e7c\u8cc7\u6599", 
@@ -172,7 +172,6 @@ translations = {
  "Height of an item in the list (px)": "\u5217\u8868\u4e2d\u9805\u76ee\u7684\u9ad8\u5ea6\uff08\u50cf\u7d20\uff09", 
  "Slovenian ": "\u65af\u6d1b\u6587\u5c3c\u4e9e\u8a9e", 
  "Contributors": "\u8ca2\u737b\u8005", 
- "Browsers installed in your system": "\u5df2\u5b89\u88dd\u65bc\u60a8\u7cfb\u7d71\u7684\u700f\u89bd\u5668", 
  "Appearance Preview Image": "\u5916\u89c0\u9810\u89bd\u5f71\u50cf", 
  "Visible": "\u53ef\u898b", 
  "Other Platform Requirements": "\u5176\u4ed6\u5e73\u53f0\u9700\u6c42", 
