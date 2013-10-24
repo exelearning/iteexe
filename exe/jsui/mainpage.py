@@ -233,7 +233,12 @@ class MainPage(RenderableLivePage):
 
     def render_extjslang(self, ctx, data):
         return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + unicode(G.application.config.locale) + ".js")
-    
+
+    def render_htmllang(self, ctx, data):
+        lang = G.application.config.locale.replace('_', '-').split('@')[0]
+        attribs = {'lang': unicode(lang), 'xml:lang': unicode(lang), 'xmlns': 'http://www.w3.org/1999/xhtml'}
+        return ctx.tag(**attribs)
+
     def render_version(self, ctx, data):
         return [tags.p()["Version: %s" % release],tags.p()["Revision: %s" % revision]] 
 
