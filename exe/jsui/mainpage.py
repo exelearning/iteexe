@@ -120,8 +120,6 @@ class MainPage(RenderableLivePage):
 
     def child_preview(self, ctx):
         if not self.previewDir or self.package.isChanged:
-            if self.package.filename != u'':
-                self.package.save()
             stylesDir = self.config.stylesDir / self.package.style
             self.previewDir = TempDirPath()
             self.exportWebSite(None, self.previewDir, stylesDir)
