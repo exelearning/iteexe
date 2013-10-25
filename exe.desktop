@@ -3,6 +3,7 @@ Type=Application
 Encoding=UTF-8
 Name=eXe
 Comment=eLearning XHTML editor
+Comment[ru]=Редактор электронного обучения XHTML
 Exec=exe %f
 Icon=exe.png
 Terminal=false
