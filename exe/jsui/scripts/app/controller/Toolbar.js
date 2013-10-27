@@ -147,6 +147,9 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
+			'#tools_deletenotes': {
+                click: this.toolsDeleteNotes
+            },
             '#help_tutorial': {
                 click: this.fileOpenTutorial
             },
@@ -271,33 +274,14 @@ Ext.define('eXe.controller.Toolbar', {
 	            scope: this,
 	            defaultEventAction: "stopEvent"
 },
-            {
-	            key: Ext.EventObject.I,
-	            alt: true,
-	            handler: function() {
-	            	this.importStyle();
-	            },
-	            scope: this,
-	            defaultEventAction: "stopEvent"
-            },
-            {
-	            key: Ext.EventObject.E,
-	            alt: true,
-	            handler: function() {
-	            	this.exportStyle();
-	            },
-	            scope: this,
-	            defaultEventAction: "stopEvent"
-            },
-            {
+{
 	            key: Ext.EventObject.D,
-	            alt: true,
 	            handler: function() {
-	            	this.deleteStyle();
+	                 this.toolsDeleteNotes();
 	            },
 	            scope: this,
 	            defaultEventAction: "stopEvent"
-            }
+}
         ];
         var keymap = new Ext.util.KeyMap(Ext.getBody(), this.keymap_config);
     },
@@ -421,7 +405,22 @@ Ext.define('eXe.controller.Toolbar', {
         });
         stylemanager.show();        
 	},
-
+	//FM: Delete all notes
+	toolsDeleteNotes:function()
+	{
+			Ext.Msg.show({
+			title: _("Delete all notes?"),
+			msg: _("Would you delete all notes?"),
+			scope: this,
+			modal: true,
+			buttons: Ext.Msg.YESNO,
+			fn: function(button, text, opt) {
+				if (button == "yes")
+					nevow_clientToServerEvent('deleteNotes', this);				
+			}
+		});
+	
+	},
     fileQuit: function() {
 	    this.saveWorkInProgress();
 	    this.askDirty("eXe.app.getController('Toolbar').doQuit()", "quit");
@@ -934,7 +933,8 @@ Ext.define('eXe.controller.Toolbar', {
 			]
 		);
 		f.show();
-	},	
+	},
+	
 	// Submit any open iDevices
 	saveWorkInProgress: function() {
 	    // Do a submit so any editing is saved to the server

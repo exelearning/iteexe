@@ -392,7 +392,14 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'tools_refresh',
                                 accesskey: 'r',
                                 text: _('Refresh Display')
+                            },
+							{
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_deletenotes',
+                                accesskey: 'd',
+                                text: _('Delete Notes')
                             }
+							
                         ]
                     }
                 },

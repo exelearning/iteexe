@@ -1525,4 +1525,13 @@ class Package(Persistable):
                 delattr(self, attr)
         self.license = u''
         self.persistenceVersion = 9
+    def delNotes(self, node):
+        """
+        Delete all notes
+        """
+        for idevice in node.idevices:
+            if idevice.klass == 'NotaIdevice':
+                idevice.delete()            
+        for child in node.children:
+            self.delNotes(child)
 # ===========================================================================

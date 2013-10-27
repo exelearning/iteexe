@@ -195,6 +195,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
         setUpHandler(self.handleReload,       'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
+        
+        setUpHandler(self.handleDeleteNotes,  'deleteNotes')
 
 
         #For the new ExtJS 4.0 interface
@@ -1236,104 +1238,11 @@ class MainPage(RenderableLivePage):
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
-    def _importstyle(self, filename,client):
-            """
-            Importa estilo desde un fichero ZIP , el estilo debe estar en la raiz
-            Comprueba si es un estilo ( contiene content.css )
-            Crea una carpeta en el directorio de estilos con el nombre del archivo zip
-            Descomprime el estilo y lanza mensaje javascript
-            """
-
-            styleDir    = self.config.stylesDir
-            log.debug("_importstyle from %s" % filename)
-            imstyle=False
-            tempst=False
-            filenamei=filename.lower()           
-            encoding = sys.getfilesystemencoding()
-            if encoding is None:
-                encoding = 'utf-8'
-            filename2 = toUnicode(filenamei, encoding)
-            log.debug("filename and path" + filename2)
-            sfile=os.path.basename(filename2)
-            nafile=sfile[0:-4:]
-            ndir=styleDir/nafile
-            tmpdir=styleDir/'tmpstyle'
-            ffile=ndir/sfile
-            if os.path.isdir(tmpdir):shutil.rmtree(tmpdir)         
-            
-            try:
-                sourceZip = zipfile.ZipFile( filename2 ,  'r')
-                for name in sourceZip.namelist():
-                        if name=='content.css':
-                            imstyle=True
-                sourceZip.close()
-            except IOError:
-                filename2 = toUnicode(filenamei, 'utf-8')
-                try:                    
-                    sourceZip = zipfile.ZipFile( filename2 ,  'r')
-                    for name in sourceZip.namelist():
-                        if name=='content.css':
-                            imstyle=True
-                    sourceZip.close()                  
-                except IOError:
-                    client.alert(_(u'File %s does not exist or is not readable.') % filename2)
-                    return None
-            #change styles menu
-            if imstyle==True: 
-                if os.path.isdir(ndir):
-                    os.rename(ndir,tmpdir)
-                    tempst=True 
-                os.mkdir(ndir)
-                sourceZip = zipfile.ZipFile( filename2 ,  'r')
-                for name in sourceZip.namelist():
-                    sourceZip.extract(name, ndir )
-                sourceZip.close()
-                if tempst==True: shutil.rmtree(tmpdir)              
-                client.alert(_(u'Correct Style import : %s') % nafile, (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-            else:
-                client.alert(_(u'Incorrect style file : %s') % sfile, (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-            self.config.loadStyles()
-            log.debug("styles" + str(self.config.styles).strip('[]'))
-            #window style render ........
-    def _exportstyle(self,  dirstylename,filename,client):
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
-            sfile=os.path.basename(filename)
-            log.debug("export style %s" % dirstylename)
-            try:
-                zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
-                try:
-                    for contFile in dirstylename.files():
-                        zippedFile.write(unicode(contFile.normpath()),
-                        contFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
-                finally:
-                    zippedFile.close()
-                    client.alert(_(u'Correct ZIP Style exported : %s') % sfile, (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-            except IOError:
-                client.alert(_(u'can\'t export style : %s') % filename, (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-            
-    def _deletestyle(self,  stylename,client):
-
-        log.debug("delete style %s" % dirstylename)
-        dirstylename=self.config.stylesDir/stylename
-        if not G.application.config.defaultStyle == stylename:  
-            delstyle=False
-            if os.path.isdir(dirstylename):
-                try:
-                    shutil.rmtree(dirstylename)
-                    delstyle=True
-                except:
-                   log.debug("can\'t delete style %s" % dirstylename)
-            #change styles menu
-            if delstyle==True:                
-                client.alert(_(u'Style deleted ') , (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-            else:              
-                client.alert(_(u'can\'t delete style ') , (u'eXe.app.gotoUrl("/%s")' % \
-                           self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-            self.config.loadStyles()
-            log.debug("styles" + str(self.config.styles).strip('[]'))
-            #window style render .
+    
+    def handleDeleteNotes(self,client):
+        '''
+        Deletes all notes
+        '''
+        self.package.delNotes(self.package.root)
+        client.call('eXe.app.getController("Outline").loadNodeOnAuthoringPage', self.package.currentNode.id)
+    
