@@ -93,6 +93,9 @@ class Block(Renderable):
 
             elif request.args[u"action"][0] == u"cancel":
                 self.idevice.edit = False
+                
+            elif request.args[u"action"][0] == u"deleteallnotes":
+                self.processDeleteallNotes(request)
         
         else:
             self.idevice.lastIdevice = False
@@ -122,7 +125,13 @@ class Block(Renderable):
         """
         log.debug(u"processDelete id="+self.id)
         self.idevice.delete()
-
+        
+    def processDeleteallNotes(self, request):
+        """
+        Delete all notes 
+        """
+        log.debug(u"processDeleteallNotes")
+        self.package.delNotes(self.package.root)
 
     def processMove(self, request):
         """
@@ -329,5 +338,4 @@ class Block(Renderable):
             _(u"Delete"), 1)
         html += '</p>'
         return html
-
 # ===========================================================================

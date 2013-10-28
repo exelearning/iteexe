@@ -119,7 +119,8 @@ class NotaBlock(Block):
 
             html += "</div>\n"
         if self.previewing:
-            html+=Block.renderViewButtons(self)
+            html +=Block.renderViewButtons(self)
+            html +="<a title=\""+_(u"Delete all notes")+"\" href=\"#\" onclick=\"confirmThenSubmitLink('"+_(u"Would you delete all notes?")+"', '"+u'deleteallnotes'+"', '"+self.id+"', 1);\" style=\"float:right;margin-top:-20px;\"><img alt=\""+_(u"Delete all notes")+"\" class=\"submit\" src=\"/images/stock-delete.png\"></a>"
         html += "</div>\n"
 
         

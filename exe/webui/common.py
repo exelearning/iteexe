@@ -436,6 +436,22 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += u'</a>\n' 
     return html
 
+def confirmDeleteNotes(message, action, object_, imageFile, 
+                           title=u"", isChanged=1):
+    """
+    Adds an image link which will trigger the javascript needed to
+    post a form with the action and object passed in the args
+    """
+    html  = u"<a "
+    if title:
+        html += u"title=\""+title+"\" "
+    html += " href=\"#\" "
+    html += "onclick=\"confirmThenSubmitLink('"+re.escape(message)+"', '"+action+"', "
+    html += "'"+object_+"', "+unicode(isChanged)+");\" >"
+    html += u'<img alt="%s" class="submit" src="%s"/>' % (title, imageFile)
+    html += u'</a>\n' 
+    return html
+
 
 def option(name, checked, value):
     """Add a option input"""
