@@ -276,6 +276,7 @@ Ext.define('eXe.controller.Toolbar', {
 },
 {
 	            key: Ext.EventObject.D,
+				alt: true,
 	            handler: function() {
 	                 this.toolsDeleteNotes();
 	            },
