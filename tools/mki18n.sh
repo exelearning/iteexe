@@ -2,7 +2,7 @@
 
 # ===========================================================================
 # eXe
-# Copyright 2012, Pedro Peña Pérez, Open Phoenix IT
+# Copyright 2012-2013, Pedro Peña Pérez, Open Phoenix IT
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,12 +22,13 @@
 # -------
 # 2013-10:
 # 	* Usage of Babel1.3
+# 		Uses python Babel 1.3 patched to include 'Language' header 
+#		(https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
+# 		as discussed here: 
+# 		https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
 #	* Changed --version from '1.04.1' to '2.0' (JRF)
 #===========================================================================
 
-# Use python Babel 1.3 patched to include 'Language' header (https://dl.dropboxusercontent.com/s/k1i7ph2m2g4s7kx/Babel-1.3.tar.gz)
-# as discussed here: 
-# https://forja.cenatic.es/tracker/index.php?func=detail&aid=1905&group_id=197&atid=883
 
 echo -e " *** Extracting messages from python exe files and jsui javascript files ***\n"
 pybabel extract --keyword=x_ --project "eXeLearning" --version "2.0" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
