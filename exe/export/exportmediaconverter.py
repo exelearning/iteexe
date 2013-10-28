@@ -5,7 +5,7 @@ from exe.engine.config import Config
 from exe.engine.path import Path
 from subprocess import call
 import ConfigParser
-import Image
+from PIL import Image
 
 '''
 This class is designed to go over through a given exported object

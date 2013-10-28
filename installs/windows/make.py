@@ -14,9 +14,7 @@ import sys
 import os
 import shutil
 import subprocess
-import Image
-import ImageFont
-import ImageDraw
+from PIL import Image, ImageFont, ImageDraw
 import urllib
 
 # clean out the build and dist dirs
