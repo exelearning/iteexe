@@ -384,6 +384,12 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'v',
                                 text: _('Preview')
                             },
+							{
+                                xtype: 'accesskey_menuitem',
+                                itemId: 'tools_deletenotes',
+                                accesskey: 'd',
+                                text: _('Delete all notes')
+                            },
                             {
                                 xtype: 'menuseparator'
                             },
@@ -392,12 +398,6 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 itemId: 'tools_refresh',
                                 accesskey: 'r',
                                 text: _('Refresh Display')
-                            },
-							{
-                                xtype: 'accesskey_menuitem',
-                                itemId: 'tools_deletenotes',
-                                accesskey: 'd',
-                                text: _('Delete Notes')
                             }
 							
                         ]
