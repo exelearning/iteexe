@@ -1254,6 +1254,7 @@ class Package(Persistable):
         inconsistencies = checker.check()
         for inconsistency in inconsistencies:
             inconsistency.fix()
+        newPackage.cleanUpResources()
         return newPackage
 
     def getUserResourcesFiles(self, node):
@@ -1294,6 +1295,7 @@ class Package(Persistable):
                 usedFiles.add(reses[0].storageName)
         #usedFiles = set([reses[0].storageName for reses in self.resources.values()])
         for fn in existingFiles - usedFiles - userResourcesFiles:
+            log.debug('Removing unused resource %s' % fn)
             (self.resourceDir/fn).remove()
 
     def findResourceByName(self, queryName):
