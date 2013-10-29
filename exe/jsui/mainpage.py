@@ -197,7 +197,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleReload,       'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
         
-        setUpHandler(self.handleDeleteNotes,  'deleteNotes')
+        
 
 
         #For the new ExtJS 4.0 interface
@@ -1246,10 +1246,5 @@ class MainPage(RenderableLivePage):
             raise
         return package
     
-    def handleDeleteNotes(self,client):
-        '''
-        Deletes all notes
-        '''
-        self.package.delNotes(self.package.root)
-        client.call('eXe.app.getController("Outline").loadNodeOnAuthoringPage', self.package.currentNode.id)
+
     
