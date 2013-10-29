@@ -28,7 +28,10 @@ from exe.engine.idevice import Idevice
 from exe.engine.path    import Path
 from exe.engine.field   import ClozeField, TextAreaField
 from exe.engine.persist import Persistable
-from PIL import Image
+try:
+    from PIL import Image
+except:
+    import Image
 import re
 log = logging.getLogger(__name__)
 

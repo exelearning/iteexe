@@ -22,7 +22,11 @@
 Gallery Idevice. Enables you to easily manage a bunch of images and thumbnails
 """
 
-from PIL import Image, ImageDraw
+try:
+    from PIL import Image, ImageDraw
+except:
+    import Image
+    import ImageDraw
 from twisted.persisted.styles import requireUpgrade
 from copy import copy, deepcopy
 import logging

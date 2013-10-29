@@ -5,7 +5,10 @@ from exe.engine.config import Config
 from exe.engine.path import Path
 from subprocess import call
 import ConfigParser
-from PIL import Image
+try:
+    from PIL import Image
+except:
+    import Image
 
 '''
 This class is designed to go over through a given exported object
