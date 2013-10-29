@@ -300,7 +300,7 @@ function createPanelProperties(properties, style) {
 		value: 'return',
 		margin: 10,
 		//cls: 'x-btn-text-icon',
-        text: 'Return',
+        text: _('Return'),
 		handler: function(button) {
 			var formpanel = button.up('form'),
             form = formpanel.getForm();
