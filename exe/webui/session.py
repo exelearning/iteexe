@@ -65,7 +65,7 @@ class eXeRequest(appserver.NevowRequest):
         self.locale = None
 
     def gotPageContext(self, pageContext):
-        request = inevow.IRequest(pageContext)
+#         request = inevow.IRequest(pageContext)
 #        self.locale = setLocaleFromRequest(request)
         appserver.NevowRequest.gotPageContext(self, pageContext)
 

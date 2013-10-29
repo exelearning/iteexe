@@ -24,9 +24,10 @@ Package represents the collection of resources the user is editing
 i.e. the "package".
 """
 
+import shutil
 import logging
 import time
-import zipfile 
+import zipfile
 import uuid
 import re
 from xml.dom                   import minidom
@@ -282,7 +283,7 @@ class Package(Persistable):
     i.e. the "package".
     """
     persistenceVersion = 10
-    nonpersistant      = ['resourceDir', 'filename']
+    nonpersistant      = ['resourceDir', 'filename', 'previewDir']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
     tempFile           = False # This is set when the package is saved as a temp copy file
@@ -319,7 +320,8 @@ class Package(Persistable):
 #        self.style         = u"default" 
         #self.styledefault=u"INTEF"
         self.style         = G.application.config.defaultStyle
-        self.isChanged     = False
+        self._isChanged    = False
+        self.previewDir    = None
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self.lomEs         = lomsubs.lomSub.factory()
@@ -874,8 +876,16 @@ class Package(Persistable):
         self.set_context(value, self._contextMode)
         self._contextMode = toUnicode(value)
 
-    # Properties
+    def set_changed(self, changed):
+        self._isChanged = changed
+        if changed:
+            if hasattr(self, 'previewDir'):
+                if self.previewDir:
+                    shutil.rmtree(self.previewDir, True)
+        self.previewDir = None
 
+    # Properties
+    isChanged     = property(lambda self: self._isChanged, set_changed)
     name          = property(lambda self:self._name, set_name)
     title         = property(lambda self:self._title, set_title)
     lang          = property(lambda self: self._lang, set_lang)

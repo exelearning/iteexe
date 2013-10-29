@@ -119,11 +119,11 @@ class MainPage(RenderableLivePage):
             raise Exception('No clientHandleId in request')
 
     def child_preview(self, ctx):
-        if not self.previewDir or self.package.isChanged:
+        if not self.package.previewDir:
             stylesDir = self.config.stylesDir / self.package.style
-            self.previewDir = TempDirPath()
-            self.exportWebSite(None, self.previewDir, stylesDir)
-            self.previewPage = File(self.previewDir / self.package.name)
+            self.package.previewDir = TempDirPath()
+            self.exportWebSite(None, self.package.previewDir, stylesDir)
+            self.previewPage = File(self.package.previewDir / self.package.name)
         return self.previewPage
 
     def child_taxon(self, ctx):
@@ -387,13 +387,13 @@ class MainPage(RenderableLivePage):
         #
         # swiped from an example on:
         #     http://docs.python.org/lib/os-file-dir.html
-        top = tempdir
         ################################################################
         # Delete everything reachable from the directory named in 'top',
         # assuming there are no symbolic links.
         # CAUTION:  This is dangerous!  For example, if top == '/', it
         # could delete all your disk files.
         """
+        top = tempdir
         for root, dirs, files in os.walk(top, topdown=False):
             for name in files:
                 os.remove(os.path.join(root, name))
