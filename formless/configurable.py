@@ -1,16 +1,15 @@
 # Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from zope.interface import implements, providedBy
-
 from formless.iformless import IConfigurable, IActionableType, IBinding
-from formless.annotate import Argument, ElementBinding, GroupBinding, Object, TypedInterface
+from formless.annotate import TypedInterface, Argument
 
 from nevow import inevow
+from nevow import compy
 from nevow.context import WovenContext
 
 class Configurable(object):
-    implements(IConfigurable)
+    __implements__ = IConfigurable,
 
     bindingDict = None
 
@@ -20,7 +19,7 @@ class Configurable(object):
 
     def getBindingNames(self, context):
         ## Todo: remove this getattr
-        ifs = providedBy(getattr(self, 'boundTo', self))
+        ifs = compy.getInterfaces(getattr(self, 'boundTo', self))
         ifs = [
             x for x in ifs if x is not IConfigurable and x is not TypedInterface
         ]
@@ -33,7 +32,7 @@ class Configurable(object):
                 bindingDict[binding.name] = binding
                 if binding.name not in bindingNames:
                     bindingNames.append(binding.name)
-                if IActionableType.providedBy(binding.typedValue):
+                if compy.implements(binding.typedValue, IActionableType):
                     acts = binding.typedValue.actions
                     if acts is None:
                         acts = []
@@ -123,6 +122,7 @@ class Configurable(object):
 
     postLocation = None
 
+
 class NotFoundConfigurable(Configurable):
     def getBinding(self, context, name):
         raise RuntimeError, self.original
@@ -162,7 +162,7 @@ class GroupConfigurable(TypedInterfaceConfigurable):
             bindingDict[binding.name] = binding
             if binding.name not in bindingNames:
                 bindingNames.append(binding.name)
-            if IActionableType.providedBy(binding.typedValue):
+            if compy.implements(binding.typedValue, IActionableType):
                 acts = binding.typedValue.actions
                 if acts is None:
                     acts = []

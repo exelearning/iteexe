@@ -2,12 +2,10 @@
 # See LICENSE for details.
 
 import warnings
-from zope.interface import implements
-
-from twisted.python import components
 
 from nevow.util import Deferred, DeferredList, getPOSTCharset
 
+from nevow import compy
 from nevow.tags import *
 from nevow import inevow
 from nevow.context import WovenContext
@@ -33,12 +31,12 @@ def exceptblock(f, handler, exception, *a, **kw):
         return result
 
     
-class ProcessGroupBinding(components.Adapter):
-    implements(iformless.IInputProcessor)
+class ProcessGroupBinding(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data):
-        ## THE SPEC: self.original.typedValue.iface.__spec__
-        spec = self.original.typedValue.iface.__spec__
+        ## THE SPEC: self.original.typedValue.interface.__spec__
+        spec = self.original.typedValue.interface.__spec__
         resultList = [None] * len(spec)
         message = ''
         results = {}
@@ -80,8 +78,9 @@ class ProcessGroupBinding(components.Adapter):
                 raise formless.ValidateError(failures, 'Error:', results)
         return DeferredList(waiters).addBoth(_finish)
 
-class ProcessMethodBinding(components.Adapter):
-    implements(iformless.IInputProcessor)
+
+class ProcessMethodBinding(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data, autoConfigure = True):
         """Knows how to process a dictionary of lists
@@ -118,8 +117,9 @@ class ProcessMethodBinding(components.Adapter):
                                boundTo, results)
         return results
 
-class ProcessPropertyBinding(components.Adapter):
-    implements(iformless.IInputProcessor)
+
+class ProcessPropertyBinding(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data, autoConfigure = True):
         """Knows how to process a dictionary of lists
@@ -143,8 +143,9 @@ class ProcessPropertyBinding(components.Adapter):
                 raise formless.ValidateError({binding.name: e.reason}, e.reason, result)
         return result
 
-class ProcessTyped(components.Adapter):
-    implements(iformless.IInputProcessor)
+
+class ProcessTyped(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data):
         """data is a list of strings at this point
@@ -169,8 +170,9 @@ class ProcessTyped(components.Adapter):
             warnings.warn('Typed.coerce takes two values now, the value to coerce and the configurable in whose context the coerce is taking place. %s %s' % (typed.__class__, typed))
             return typed.coerce(val)
 
-class ProcessPassword(components.Adapter):
-    implements(iformless.IInputProcessor)
+
+class ProcessPassword(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data):
         """Password needs to look at two passwords in the data,
@@ -202,22 +204,23 @@ class ProcessPassword(components.Adapter):
             warnings.warn('Typed.coerce takes two values now, the value to coerce and the configurable in whose context the coerce is taking place. %s %s' % (typed.__class__, typed))
             return typed.coerce(data[0])
 
-class ProcessRequest(components.Adapter):
-    implements(iformless.IInputProcessor)
+
+class ProcessRequest(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data):
         return context.locate(inevow.IRequest)
 
 
-class ProcessContext(components.Adapter):
-    implements(iformless.IInputProcessor)
+class ProcessContext(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data):
         return context
 
 
-class ProcessUpload(components.Adapter):
-    implements(iformless.IInputProcessor)
+class ProcessUpload(compy.Adapter):
+    __implements__ = iformless.IInputProcessor,
 
     def process(self, context, boundTo, data):
 

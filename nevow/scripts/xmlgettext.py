@@ -36,6 +36,11 @@ class GettextOptions(usage.Options):
         self['files'] = files
 
 def runApp(config):
+    print '''msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\\n"
+
+'''
     for filename in config['files']:
         process(filename)
 

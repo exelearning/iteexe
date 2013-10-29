@@ -1,40 +1,39 @@
-# -*- test-case-name: nevow.test -*-
-# Copyright (c) 2004-2005 Divmod, Inc.
+# Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from zope.interface import Attribute
-from zope.interface.interface import InterfaceClass, Interface
+from nevow.compy import Interface, implements
+
 
 class ITyped(Interface):
     """Typeds correspond roughly to <input> tags in HTML, or
     with a complex type, more than one <input> tag whose input
     is processed and coerced as a unit.
     """
-    def coerce(val, configurable):
-        """Coerce the input 'val' from a string into a value suitable
-        for the type described by the implementor. If coercion fails,
-        coerce should raise InputError with a suitable error message
+    def coerce(self, val, configurable):
+        """Coerce the input 'val' from a string into a value suitable 
+        for the type described by the implementor. If coercion fails, 
+        coerce should raise InputError with a suitable error message 
         to be shown to the user. 'configurable' is the configurable object
         in whose context the coercion is taking place.
-
+        
         May return a Deferred.
         """
 
-    label = Attribute("""The short label which will describe this
+    label = property(doc="""The short label which will describe this
         parameter/properties purpose to the user.""")
-
-    description = Attribute("""A long description which further describes the sort
+    
+    description = property(doc="""A long description which further describes the sort
         of input the user is expected to provide.""")
-
-    default = Attribute("""A default value that may be used as an initial value in
+    
+    default = property(doc="""A default value that may be used as an initial value in
         the form.""")
 
-    complexType = Attribute("""Whether or not this Typed
+    complexType = property(doc="""Whether or not this Typed
         is a "simple" type and the infrastructure should render label,
         description, and error UI automatically, or this type is
         "complex" in which case it will be required to render all UI
         including UI which is normally common to all Typed UI.
-
+        
         This MAY BE DEPRECATED if a better implementation is
         devised.
         """)
@@ -47,35 +46,35 @@ class IBinding(Interface):
     instance. At the most basic level, Binding instances represent named
     python properties and methods.
     """
-    def getArgs():
+    def getArgs(self):
         """Return a copy of this bindings Typed instances; if this binding is a
         Property binding, it will be a list of one Typed istance; if this binding is a
         MethodBinding, it will be a list of all the Typed instances describing
         the method's arguments.
-
-        These copies are used during the duration of a form post (initial
-        rendering, form posting, error handling and error correction) to
+        
+        These copies are used during the duration of a form post (initial 
+        rendering, form posting, error handling and error correction) to 
         store the user-entered values temporarily in the case of an error
         in one or more input values.
         """
 
-    def getViewName():
+    def getViewName(self):
         """Todo: remove?
         """
 
-    def configure(boundTo, results):
+    def configure(self, boundTo, results):
         """Configure the object "boundTo" in the manner appropriate
         to this Binding; if this binding represents a property, set the
         property; if this binding represents a method, call the method.
         """
 
-    def coerce(val, configurable):
+    def coerce(self, val, configurable):
         """TODO This is dumb. remove it and leave it on ITyped
-
+        
         Make the code that calls coerce call it on the typed directly
         """
 
-    default = Attribute("""The default value for this binding.""")
+    default = property(doc="""The default value for this binding.""")
 
 
 
@@ -83,7 +82,7 @@ class IBinding(Interface):
 class IInputProcessor(Interface):
     """handle a post for a given binding
     """
-    def process(context, boundTo, data):
+    def process(self, context, boundTo, data):
         """do something to boundTo in response to some data
 
         Raise a formless.InputError if there is a problem
@@ -100,7 +99,7 @@ class IConfigurableFactory(Interface):
        about the types of objects needed to allow the user to change
        the object as long as the input is validated
     """
-    def locateConfigurable(context, name):
+    def locateConfigurable(self, context, name):
         """Return the configurable that responds to the name.
         """
 
@@ -113,33 +112,33 @@ class IConfigurableKey(Interface):
 class IFormDefaults(Interface):
     """Default values for the current form
     """
-    def setDefault(key, value, context=None):
+    def setDefault(self, key, value, context=None):
         """Sets the 'key' parameter to the default 'value'
         """
 
-    def getDefault(key, context=None):
+    def getDefault(self, key, context=None):
         """Gets the default value from the parameter 'key'
         """
 
-    def getAllDefaults(key):
+    def getAllDefaults(self, key):
         """Gets the defaults dict for the 'key' autocallable
-
+        
         >>> class IMyForm(annotate.TypedInterface):
-        ...     def doSomething(name=annotate.String()):
+        ...     def doSomething(self, name=annotate.String()):
         ...         pass
         ...     doSomething = annotate.autocallable(doSomething)
         >>> class Page(rend.Page):
-        ...     implements(IMyForm)
+        ...     __implements__ = rend.Page.__implements__, IMyForm
         ...     docFactory = loaders.stan(t.html[t.head[t.title['foo']],t.body[render_forms]])
-        ...
+        ...     
         ...     def render_forms(self, ctx, data):
         ...         defaults_dict = iformless.IFormDefaults(ctx).getAllDefaults('doSomething')
         ...         defaults_dict['name'] = 'fooo'
         ...         return webform.renderForms()
         """
 
-    def clearAll():
-        """Clears all the default values
+    def clearAll(self):
+        """Clears all the default values 
         """
 
 class IFormErrors(Interface):
@@ -195,71 +194,54 @@ class IRedirectAfterPost(Interface):
 
 class IAutomaticConfigurable(Interface):
     """An object is said to implement IAutomaticConfigurable if
-    it implements any TypedInterfaces. When this object
+    it __implements__ any TypedInterfaces. When this object
     is configured, discovering binding names, discovering bindings,
     and posting forms along with calling methods in response to
     form posts and setting properties in response to form posts.
     """
 
-_notag = object()
 
-class _MetaConfigurable(InterfaceClass):
-    """XXX this is an unpleasant implementation detail; phase it out completely
-    as we move towards zope.interface.
-    """
-
-    def __call__(self, other, default=_notag):
-        """ XXX use TypedInterfaceConfigurable as a fallback if this interface doesn't
-        work for some reason
-        """
-
-        result = InterfaceClass.__call__(self, other, _notag)
-        if result is not _notag:
-            return result
-
-        from formless.annotate import TypedInterface
-        if TypedInterface.providedBy(other):
-            from formless.configurable import TypedInterfaceConfigurable
-            return TypedInterfaceConfigurable(other)
-        if default is _notag:
-            raise TypeError('Could not adapt', other, self)
-        return default
-
-_BaseMetaConfigurable = _MetaConfigurable('_BaseMetaConfigurable', (), {})
-
-class IConfigurable(_BaseMetaConfigurable):
+class IConfigurable(Interface):
     """An adapter which implements TypedInterfaces for an object
     of the type for which it is registered, provides properties
     which will get and set properties of the adaptee, and methods
     which will perform operations on the adaptee when called.
-
+    
     Web Specific Note: When you implement this interface, you should
     subclass freeform.Configurable instead of implementing directly,
     since it contains convenience functionality which eases implementing
     IConfigurable.
     """
-    def getBindingNames(context):
+    def getBindingNames(self, context):
         """Return a list of binding names which are the names of all
         the forms which will be rendered for this object when this
         object is configured.
         """
 
-    def getBinding(context, name):
+    def getBinding(self, context, name):
         """Return a Binding instance which contains Typed instances
         which describe how to render a form which will gather input
         for the 'name' binding (either a property or a method)
         """
 
-    def postForm(context, bindingName, arguments):
+    def postForm(self, context, bindingName, arguments):
         """Handle a form post which configures something about this
         object.
         """
 
-    postLocation = Attribute("""The location of this object in the
+    postLocation = property(doc="""The location of this object in the
     URL. Forms described by bindings returned from getBindingNames
     will be posted to postLocation + '/freeform_post!' + bindingName
     """)
 
+    def __adapt__(other, default=None):
+        from formless.annotate import TypedInterface
+        if implements(other, TypedInterface):
+            from formless.configurable import TypedInterfaceConfigurable
+            return TypedInterfaceConfigurable(other)
+        if hasattr(Interface, '__adapt__'):
+            return Interface.__class__.__adapt__(IConfigurable, other)
+        return default
 
 
 
@@ -271,12 +253,13 @@ class IActionableType(Interface):
     """A type which can have action methods associated with it.
     Currently only List. Probably can be extended to more things.
     """
-    def attachActionBindings(possibleActions):
+    def attachActionBindings(self, possibleActions):
         """Attach some MethodBinding instances if they are actions
         for this ActionableType.
         """
 
-    def getActionBindings():
+    def getActionBindings(self):
         """Return a list of the MethodBinding instances which represent
         actions which may be taken on this ActionableType.
         """
+

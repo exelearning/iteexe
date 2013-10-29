@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html nevow:render="htmllang" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html nevow:render="htmllang" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:nevow="http://nevow.com/ns/nevow/0.1">
 <head>
     <!--[if lt IE 8]><script type="text/javascript">if (document.documentMode && document.documentMode <= 7) {window.location="ie-cm-warning"} </script><![endif]-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,7 +23,7 @@
 	<div id="loading">
 	  <div class="loading-indicator">
 	  </div>
-	  <p>eXe Learning Authoring</p>
+	  <p nevow:render="i18n">eXe Learning Authoring</p>
 	  <nevow:invisible nevow:render="version"/>
 	</div>
 </body>

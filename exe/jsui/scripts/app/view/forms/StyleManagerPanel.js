@@ -193,7 +193,7 @@ function createPanelStyles(styles) {
 		icon: '/images/stock-import.png',
 	    itemId: 'import_style',
 		name: 'import_style',
-	    text: 'Import style',
+	    text: _('Import style'),
 		style:'float:right;',
 	    margin: 10,
 	    handler: function(button) {

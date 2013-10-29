@@ -33,6 +33,7 @@ template to do your rendering, even if you're part of a bigger block.
 from twisted.web.resource import Resource
 from nevow import loaders
 from twisted.web import static
+from nevow.i18n import render as render_i18n
 
 import logging
 log = logging.getLogger(__name__)
@@ -59,6 +60,9 @@ class Renderable(object):
 
     # Default attribute values
     docFactory = None
+
+    # Translates messages in templates with nevow:render="i18n" attrib
+    render_i18n = render_i18n()
 
     def __init__(self, parent, package=None, webServer=None, name=None):
         """

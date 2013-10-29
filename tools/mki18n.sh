@@ -30,8 +30,11 @@
 #===========================================================================
 
 
-echo -e " *** Extracting messages from python exe files and jsui javascript files ***\n"
+export PYTHONPATH=.
+echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
 pybabel extract --keyword=x_ --project "eXeLearning" --version "2.0" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+#tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
+#rm exe/locale/messages.pot.tmp
 sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ -N

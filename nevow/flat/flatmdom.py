@@ -4,8 +4,7 @@
 from __future__ import generators
 
 from nevow.flat import serialize, precompile
-from nevow import inevow
-from nevow.stan import Tag, xml, directive, slot, invisible, cdata
+from nevow.stan import Tag, xml, directive, slot, cdata
 from nevow import util
 
 
@@ -53,10 +52,17 @@ def MicroDomElementSerializer(element, context):
     directives = directiveMapping
     for k, v in attrs.items():
         # I know, this is totally not the way to do xml namespaces but who cares right now
-        ## I'll fix it later
-        if not k.startswith('nevow:'):
+        ## I'll fix it later -dp
+        ### no you won't *I'll* fix it later -glyph
+        if isinstance(k, tuple):
+            if k[0] != 'http://nevow.com/ns/nevow/0.1':
+                continue
+            else:
+                nons = k[1]
+        elif not k.startswith('nevow:'):
             continue
-        _, nons = k.split(':')
+        else:
+            _, nons = k.split(':')
         if nons in directives:
             ## clean this up by making the names more consistent
             specials[directives[nons]] = directive(v)

@@ -33,7 +33,6 @@ sys.stdout, oldStdOut = StringIO(), sys.stdout
 try:
     from twisted.internet              import reactor
     from twisted.internet.error        import CannotListenError
-    from nevow                         import compy
 finally:
     print sys.stderr
     sys.stderr = oldStdErr
