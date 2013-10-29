@@ -28,6 +28,7 @@ import sys
 import logging
 import traceback
 import shutil
+import tempfile
 from exe.engine.version import release, revision
 from twisted.internet            import threads, reactor
 from exe.webui.livepage          import RenderableLivePage,\
@@ -893,14 +894,20 @@ class MainPage(RenderableLivePage):
         """
         Load the package and insert in current node
         """
-        loadedPackage = self._loadPackage(client, filename, newLoad=False,
+        package = self._loadPackage(client, filename, newLoad=True)
+        tmpfile = Path(tempfile.mktemp())
+        package.save(tmpfile)
+        loadedPackage = self._loadPackage(client, tmpfile, newLoad=False,
                                           destinationPackage=self.package)
         newNode = loadedPackage.root.copyToPackage(self.package, 
                                                    self.package.currentNode)
         # trigger a rename of all of the internal nodes and links,
         # and to add any such anchors into the dest package via isMerge:
         newNode.RenamedNodePath(isMerge=True)
-
+        try:
+            tmpfile.remove()
+        except:
+            pass
         client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
                           self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
 
