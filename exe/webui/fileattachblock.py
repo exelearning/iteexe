@@ -115,26 +115,19 @@ class FileAttachBlockInc(Block):
             showDesc = True
         
         html = u""
+        viewMode = "view"
+        if previewMode == True:
+            viewMode = "preview"
+        
         
         if showDesc == True:
-            if self.idevice.icon:
-                html += u'<img alt="%s" ' % _(u'IDevice Icon')
-                html += u'     class="iDevice_icon" '
-                html += u"src=\"/style/"+style
-                html += u"/icon_"+self.idevice.icon+".gif\"/>\n"
-            if self.idevice.emphasis > 0:
-                html += u"<span class=\"iDeviceTitle\">"
-                html += self.idevice.title
-                html += u"</span>\n"
-                html += u"<div class=\"iDevice_inner\">\n"
-        
-        if showDesc == True:
+            html = common.ideviceHeader(self, style, viewMode)
             if previewMode == True:
                 html += self.introHTMLElement.renderPreview()
             else:
                 html += self.introHTMLElement.renderView()
             
-                html += "<ul class='exe_filelist_ul'>"    
+            html += "<ul class='exe_filelist_ul'>"    
         
         prefix = ""
         if previewMode == True:
@@ -158,13 +151,9 @@ class FileAttachBlockInc(Block):
             html += "</ul>"
         
         
-        if previewMode == True:
-            html += self.renderViewButtons()
-        
-        
         if showDesc == True:
             """End decoration"""
-            html += u"</div>\n"
+            html += common.ideviceFooter(self, style, viewMode)
         
         return html
 
@@ -172,14 +161,10 @@ class FileAttachBlockInc(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         
-        html += self._renderMain(style, True)
+        html = self._renderMain(style, True)
         
         #end of idevice
-        html += "</div>\n"
         
         
         
@@ -191,12 +176,9 @@ class FileAttachBlockInc(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html = self._renderMain(style, False)
         
-        html += self._renderMain(style, False)
         
-        html += u"</div>\n"
         return html
     
 
