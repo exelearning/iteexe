@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-24 13:41+0200\n"
+"POT-Creation-Date: 2013-10-30 17:18+0100\n"
 "PO-Revision-Date: 2008-10-24 00:19+1300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
@@ -32,13 +32,13 @@ msgid ""
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
 
-#: exe/engine/appletidevice.py:66
+#: exe/engine/appletidevice.py:70
 msgid "Java Applet"
 msgstr "Μικροεφαρμογή Java"
 
-#: exe/engine/appletidevice.py:67 exe/engine/attachmentidevice.py:44
-#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:48
-#: exe/engine/clozeidevice.py:47 exe/engine/clozelangfpdidevice.py:48
+#: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:44
+#: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:51
+#: exe/engine/clozeidevice.py:50 exe/engine/clozelangfpdidevice.py:51
 #: exe/engine/ejercicioresueltofpdidevice.py:199
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
@@ -59,7 +59,7 @@ msgstr "Μικροεφαρμογή Java"
 msgid "University of Auckland"
 msgstr "Πανεπιστήμιο του Auckland"
 
-#: exe/engine/appletidevice.py:75
+#: exe/engine/appletidevice.py:79
 msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload "
@@ -73,7 +73,7 @@ msgstr ""
 "Τα αρχεία αυτά, μόλις φορτωθούν, θα εμφανιστούν κάτω από το πεδίο κώδικα\n"
 "της μικροεφαρμογής."
 
-#: exe/engine/appletidevice.py:78
+#: exe/engine/appletidevice.py:82
 msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the "
@@ -85,7 +85,7 @@ msgstr ""
 "πεδίο κώδικα\n"
 "της μικρoεφαρμογής."
 
-#: exe/engine/appletidevice.py:81
+#: exe/engine/appletidevice.py:85
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -103,52 +103,52 @@ msgstr ""
 "το αρχείο .ggb που \n"
 "δημιουργήσατε στο Geogebra.</p>"
 
-#: exe/engine/appletidevice.py:186
+#: exe/engine/appletidevice.py:190
 #, python-format
 msgid "file %s has no parentNode"
 msgstr "το αρχείο %s δεν έχει πατρικό κόμβο"
 
-#: exe/engine/appletidevice.py:188 exe/engine/attachmentidevice.py:106
+#: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:106
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "Η ε-Μηχανή %s δεν έχει πακέτο"
 
-#: exe/engine/appletidevice.py:439
+#: exe/engine/appletidevice.py:443
 msgid "Sorry, this URL is unreachable"
 msgstr ""
 
-#: exe/engine/appletidevice.py:524
+#: exe/engine/appletidevice.py:528
 msgid ""
 "Click on the AddFiles button to select the .ggb file and then click on "
 "the Upload button."
 msgstr ""
 
-#: exe/engine/appletidevice.py:534
+#: exe/engine/appletidevice.py:538
 msgid ""
 "Click on the AddFiles button to select the .jclic.zip file and then click"
 " on the Upload button.<p>The activity will be visible when the HTML file "
 "will be generated from eXe."
 msgstr ""
 
-#: exe/engine/appletidevice.py:544
+#: exe/engine/appletidevice.py:548
 msgid ""
 "Click on the AddFiles button to select the .sb or .scratch file and then "
 "click on the Upload button."
 msgstr ""
 
-#: exe/engine/appletidevice.py:555
+#: exe/engine/appletidevice.py:559
 msgid ""
 "Please enter: scene number,URL (no spaces) that include it, eg: "
 "3,http://example.com; click on the Upload button afterwards."
 msgstr ""
 
-#: exe/engine/appletidevice.py:557
+#: exe/engine/appletidevice.py:561
 msgid ""
 "Click on the AddFiles button to select the .html or .htm file and then "
 "click on the Upload button to get its content."
 msgstr ""
 
-#: exe/engine/appletidevice.py:568
+#: exe/engine/appletidevice.py:572
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -607,12 +607,12 @@ msgstr ""
 msgid "The Item that will be revealed in place"
 msgstr ""
 
-#: exe/engine/clozefpdidevice.py:47
+#: exe/engine/clozefpdidevice.py:50
 msgid "FPD - Cloze Activity"
 msgstr ""
 
-#: exe/engine/clozefpdidevice.py:49 exe/engine/clozeidevice.py:48
-#: exe/engine/clozelangfpdidevice.py:49
+#: exe/engine/clozefpdidevice.py:52 exe/engine/clozeidevice.py:51
+#: exe/engine/clozelangfpdidevice.py:52
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -630,8 +630,8 @@ msgstr ""
 "λόγου.</li><li>Έλεγχος γνώσης λεξιλογίου.</li><li>Έλεγχος μορφολογίας "
 "λέξεων ή/και γραμματικής. </li></ol>"
 
-#: exe/engine/clozefpdidevice.py:61 exe/engine/clozeidevice.py:60
-#: exe/engine/clozelangfpdidevice.py:61
+#: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
+#: exe/engine/clozelangfpdidevice.py:64
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -678,18 +678,18 @@ msgstr ""
 "προσφύματα. Είναι καλή ιδέα να εξετάσει ένας συνάδελφος τη δραστηριότητα,"
 " ώστε να σιγουρευτείτε ότι δεν υπάρχουν εκπλήξεις!  </p>  </dd></dl>"
 
-#: exe/engine/clozefpdidevice.py:117 exe/engine/clozeidevice.py:116
-#: exe/engine/clozelangfpdidevice.py:117 exe/engine/hangmanidevice.py:60
+#: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
+#: exe/engine/clozelangfpdidevice.py:120 exe/engine/hangmanidevice.py:60
 #: exe/engine/listaidevice.py:129 exe/engine/memorymatchidevice.py:55
 #: exe/engine/placetheobjectsidevice.py:49 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:470
+#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:469
 msgid "Instructions"
 msgstr "Οδηγίες"
 
-#: exe/engine/clozefpdidevice.py:118 exe/engine/clozeidevice.py:117
-#: exe/engine/clozelangfpdidevice.py:118
+#: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
+#: exe/engine/clozelangfpdidevice.py:121
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -699,12 +699,12 @@ msgstr ""
 "κενών. Αν δεν υπάρξουν αλλαγές σ' αυτό το πεδίο, θα εισαχθεί "
 "προεπιλεγμένο κείμενο.\n"
 
-#: exe/engine/clozefpdidevice.py:123 exe/engine/clozeidevice.py:123
+#: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
 msgid "Cloze"
 msgstr "Συμπλήρωση κενών"
 
-#: exe/engine/clozefpdidevice.py:124 exe/engine/clozeidevice.py:124
-#: exe/engine/clozelangfpdidevice.py:124
+#: exe/engine/clozefpdidevice.py:127 exe/engine/clozeidevice.py:127
+#: exe/engine/clozelangfpdidevice.py:127
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly "
@@ -720,9 +720,9 @@ msgstr ""
 "κλικ στη λέξη για να την επιλέξετε και στη συνέχεια κλικ στο πλήκτρο\n"
 "Εμφάνιση/Απόκρυψη Λέξης.</p>"
 
-#: exe/engine/clozefpdidevice.py:129 exe/engine/clozefpdidevice.py:279
-#: exe/engine/clozeidevice.py:129 exe/engine/clozeidevice.py:279
-#: exe/engine/clozelangfpdidevice.py:129 exe/engine/clozelangfpdidevice.py:284
+#: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
+#: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
+#: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
 #: exe/engine/field.py:3610 exe/engine/field.py:3658
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:578
 #: exe/engine/idevicestore.py:687 exe/engine/listaidevice.py:140
@@ -738,8 +738,8 @@ msgstr ""
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
-#: exe/engine/clozefpdidevice.py:130 exe/engine/clozeidevice.py:130
-#: exe/engine/clozelangfpdidevice.py:130 exe/engine/listaidevice.py:141
+#: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
+#: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -747,44 +747,44 @@ msgstr ""
 "Εισάγετε όποια ανατροφοδότηση επιθυμείτε να παρέχετε στον μαθητή στο "
 "πεδίο ανατροφοδότησης. Το πεδίο αυτό μπορεί να μείνει κενό."
 
-#: exe/engine/clozefpdidevice.py:275 exe/engine/clozeidevice.py:274
-#: exe/engine/clozelangfpdidevice.py:279 exe/engine/listaidevice.py:290
+#: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
+#: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
 msgid "Instructions For Learners"
 msgstr "Οδηγίες για τους Μαθητές"
 
-#: exe/engine/clozefpdidevice.py:276 exe/engine/clozeidevice.py:275
-#: exe/engine/clozelangfpdidevice.py:280 exe/engine/listaidevice.py:291
+#: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
+#: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
 msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 
-#: exe/engine/clozefpdidevice.py:277 exe/engine/clozeidevice.py:276
-#: exe/engine/clozelangfpdidevice.py:281
+#: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
+#: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
 msgstr ""
 "Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που "
 "λείπουν"
 
-#: exe/engine/clozefpdidevice.py:288 exe/engine/clozeidevice.py:288
-#: exe/engine/clozelangfpdidevice.py:293
+#: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
+#: exe/engine/clozelangfpdidevice.py:296
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Επιτρέψτε την αυτόματη συμπλήρωση καθώς ο μαθητής συμπληρώνει τα κενά."
 
-#: exe/engine/clozeidevice.py:46
+#: exe/engine/clozeidevice.py:49
 msgid "Cloze Activity"
 msgstr "Συμπλήρωσης Κενών"
 
-#: exe/engine/clozeidevice.py:120 exe/engine/truefalseidevice.py:393
+#: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:393
 #: exe/engine/verdaderofalsofpdidevice.py:396
 msgid "Read the paragraph below and fill in the missing words."
 msgstr ""
 "Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που "
 "λείπουν."
 
-#: exe/engine/clozelangfpdidevice.py:47
+#: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
 msgstr ""
 
-#: exe/engine/clozelangfpdidevice.py:123
+#: exe/engine/clozelangfpdidevice.py:126
 #, fuzzy
 msgid "Clozelang"
 msgstr "Συμπλήρωση κενών"
@@ -797,13 +797,13 @@ msgstr ""
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102
+#: exe/engine/config.py:102 exe/engine/config.py:104
 msgid "Interactive Activities"
 msgstr ""
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
-#: exe/engine/config.py:103 exe/engine/config.py:104
+#: exe/engine/config.py:103
 msgid "Non-Textual Information"
 msgstr ""
 
@@ -1016,26 +1016,26 @@ msgstr ""
 msgid "options"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:269
+#: exe/engine/extendedfieldengine.py:265
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:271
+#: exe/engine/extendedfieldengine.py:267
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:273 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:269 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Αποφόρτωση"
 
-#: exe/engine/extendedfieldengine.py:288 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:284 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Διαγραφή Αρχείου"
 
-#: exe/engine/extendedfieldengine.py:532
+#: exe/engine/extendedfieldengine.py:535
 msgid "is not a valid number - please try again<br/>"
 msgstr ""
 
@@ -1424,29 +1424,29 @@ msgstr ""
 "Αυτό είναι ένα πεδίο ελεύθερου κειμένου, όπου μπορεί να εισαχθεί "
 "μαθησιακό περιεχόμενο γενικής φύσης."
 
-#: exe/engine/galleryidevice.py:136 exe/engine/galleryidevice.py:187
+#: exe/engine/galleryidevice.py:140 exe/engine/galleryidevice.py:191
 msgid "No Thumbnail Available. Could not load original image."
 msgstr "Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία φόρτωσης της αρχικής εικόνας."
 
-#: exe/engine/galleryidevice.py:144 exe/engine/galleryidevice.py:194
+#: exe/engine/galleryidevice.py:148 exe/engine/galleryidevice.py:198
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr ""
 "Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία σμίκρυνσης της αρχικής "
 "εικόνας."
 
-#: exe/engine/galleryidevice.py:217
+#: exe/engine/galleryidevice.py:221
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Δεν υπάρχει διαθέσιμη μικρογραφία. Αποτυχία σμίκρυνσης εικόνας."
 
-#: exe/engine/galleryidevice.py:454
+#: exe/engine/galleryidevice.py:458
 msgid "Image Gallery"
 msgstr "Γκαλερί εικόνων"
 
-#: exe/engine/galleryidevice.py:455
+#: exe/engine/galleryidevice.py:459
 msgid "eXe Project"
 msgstr "Έργο eXe"
 
-#: exe/engine/galleryidevice.py:456
+#: exe/engine/galleryidevice.py:460
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to "
@@ -1457,15 +1457,15 @@ msgstr ""
 "μεταξύ τους ή με μια συγκεκριμένη δραστηριότητα, μπορεί \n"
 "να θέλετε να τις εμφανίσετε σε μια γκαλερί και όχι καθεμιά ξεχωριστά.</p>"
 
-#: exe/engine/galleryidevice.py:459
+#: exe/engine/galleryidevice.py:463
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Χρησιμοποιήστε αυτή την ε-Μηχανή αν έχετε να δείξετε πολλές εικόνες."
 
-#: exe/engine/galleryidevice.py:468
+#: exe/engine/galleryidevice.py:472
 msgid "Enter a title for the gallery"
 msgstr "Εισάγετε έναν τίτλο για τη γκαλερί"
 
-#: exe/engine/galleryidevice.py:469
+#: exe/engine/galleryidevice.py:473
 msgid ""
 "Click on the Add images button to select an image file. The image will "
 "appear below where you will be able to label it. It's always good "
@@ -2310,19 +2310,19 @@ msgstr ""
 msgid "Timer CSS"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:146
+#: exe/engine/memorymatchidevice.py:150
 msgid "Match Tile 1"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:146
+#: exe/engine/memorymatchidevice.py:150
 msgid "Match Tile1"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:147
+#: exe/engine/memorymatchidevice.py:151
 msgid "Match Tile 2"
 msgstr ""
 
-#: exe/engine/memorymatchidevice.py:147
+#: exe/engine/memorymatchidevice.py:151
 msgid "Match Tile2"
 msgstr ""
 
@@ -2430,27 +2430,27 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:296
+#: exe/engine/package.py:297
 msgid "Topic"
 msgstr "Κεφάλαιο"
 
-#: exe/engine/package.py:296
+#: exe/engine/package.py:297
 msgid "Section"
 msgstr "Ενότητα"
 
-#: exe/engine/package.py:296
+#: exe/engine/package.py:297
 msgid "Unit"
 msgstr "Παράγραφος"
 
-#: exe/engine/package.py:317
+#: exe/engine/package.py:318
 msgid "Home"
 msgstr "Αρχή"
 
-#: exe/engine/package.py:921
+#: exe/engine/package.py:931
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:959 exe/engine/package.py:966
+#: exe/engine/package.py:969 exe/engine/package.py:976
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2459,12 +2459,12 @@ msgstr ""
 "Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!\n"
 "Η τελευταία επιτυχημένη αποθήκευση είναι %s."
 
-#: exe/engine/package.py:1318 exe/jsui/scripts/app/controller/Toolbar.js:399
+#: exe/engine/package.py:1330 exe/jsui/scripts/app/controller/Toolbar.js:372
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής ε-Μηχανής"
 
-#: exe/engine/package.py:1439
+#: exe/engine/package.py:1451
 msgid "My Catalog"
 msgstr ""
 
@@ -3223,9 +3223,9 @@ msgid ""
 "The error was:"
 msgstr ""
 
-#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:281
-#: exe/jsui/mainpage.py:919 exe/jsui/mainpage.py:1083 exe/jsui/mainpage.py:1124
-#: exe/jsui/mainpage.py:1159 exe/jsui/mainpage.py:1180
+#: exe/export/cmdlineexporter.py:70 exe/jsui/mainpage.py:287
+#: exe/jsui/mainpage.py:931 exe/jsui/mainpage.py:1095 exe/jsui/mainpage.py:1136
+#: exe/jsui/mainpage.py:1171 exe/jsui/mainpage.py:1192
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3330,19 +3330,19 @@ msgstr ""
 msgid "My iDevices"
 msgstr ""
 
-#: exe/jsui/mainpage.py:299 exe/jsui/mainpage.py:764 exe/jsui/mainpage.py:911
+#: exe/jsui/mainpage.py:305 exe/jsui/mainpage.py:770 exe/jsui/mainpage.py:923
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση του επώνυμου καταλόγου"
 
-#: exe/jsui/mainpage.py:299 exe/jsui/mainpage.py:766 exe/jsui/mainpage.py:911
+#: exe/jsui/mainpage.py:305 exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:923
 msgid ". Please use ASCII names."
 msgstr ". Παρακαλώ, χρησιμοποιήστε ονόματα ASCII."
 
-#: exe/jsui/mainpage.py:308
+#: exe/jsui/mainpage.py:314
 msgid "SAVE FAILED!"
 msgstr "Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!"
 
-#: exe/jsui/mainpage.py:312 exe/jsui/mainpage.py:620 exe/jsui/mainpage.py:1007
+#: exe/jsui/mainpage.py:318 exe/jsui/mainpage.py:626 exe/jsui/mainpage.py:1019
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3351,24 +3351,24 @@ msgstr ""
 "Η ΑΠΟΘΗΚΕΥΣΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:316 exe/jsui/mainpage.py:321 exe/jsui/mainpage.py:324
+#: exe/jsui/mainpage.py:322 exe/jsui/mainpage.py:327 exe/jsui/mainpage.py:330
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
 
-#: exe/jsui/mainpage.py:542 exe/jsui/mainpage.py:648
+#: exe/jsui/mainpage.py:548 exe/jsui/mainpage.py:654
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr ""
 "Ο φάκελος προεπισκόπησης %s είναι ένα αρχείο και δεν μπορεί να "
 "αντικατασταθεί"
 
-#: exe/jsui/mainpage.py:562
+#: exe/jsui/mainpage.py:568
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "Το τοπικό αρχείο %s δεν βρέθηκε και δεν μπορεί να γίνει προεπισκόπησή του."
 
-#: exe/jsui/mainpage.py:690
+#: exe/jsui/mainpage.py:696
 #, python-format
 msgid ""
 "MimeTeX compile failed!\n"
@@ -3377,38 +3377,37 @@ msgstr ""
 "Η μεταγλώττιση του Mime TeX απέτυχε!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:729
+#: exe/jsui/mainpage.py:735
 msgid "Importing HTML..."
 msgstr ""
 
-#: exe/jsui/mainpage.py:735
+#: exe/jsui/mainpage.py:741
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:738
+#: exe/jsui/mainpage.py:744
 msgid "Error importing HTML:\n"
 msgstr ""
 
-#: exe/jsui/mainpage.py:787 exe/jsui/mainpage.py:792 exe/jsui/mainpage.py:795
-#: exe/jsui/mainpage.py:798 exe/jsui/mainpage.py:801 exe/jsui/mainpage.py:804
-#: exe/jsui/mainpage.py:809 exe/jsui/mainpage.py:1067 exe/jsui/mainpage.py:1140
-#: exe/jsui/mainpage.py:1298
+#: exe/jsui/mainpage.py:793 exe/jsui/mainpage.py:798 exe/jsui/mainpage.py:801
+#: exe/jsui/mainpage.py:804 exe/jsui/mainpage.py:807 exe/jsui/mainpage.py:810
+#: exe/jsui/mainpage.py:815 exe/jsui/mainpage.py:1079 exe/jsui/mainpage.py:1152
 msgid "EXPORT FAILED!"
 msgstr "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!"
 
-#: exe/jsui/mainpage.py:880
+#: exe/jsui/mainpage.py:886
 msgid "Correct XLIFF import"
 msgstr ""
 
-#: exe/jsui/mainpage.py:883
+#: exe/jsui/mainpage.py:889
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:920 exe/jsui/mainpage.py:937
+#: exe/jsui/mainpage.py:932 exe/jsui/mainpage.py:949
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -3417,21 +3416,21 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:939
+#: exe/jsui/mainpage.py:951
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Το πακέτο έχει εξαχθεί στο: %s"
 
-#: exe/jsui/mainpage.py:951
+#: exe/jsui/mainpage.py:963
 msgid "Directory exists"
 msgstr ""
 
-#: exe/jsui/mainpage.py:965 exe/jsui/mainpage.py:1055 exe/jsui/mainpage.py:1071
-#: exe/jsui/mainpage.py:1084 exe/jsui/mainpage.py:1090
-#: exe/jsui/mainpage.py:1108 exe/jsui/mainpage.py:1125
-#: exe/jsui/mainpage.py:1131 exe/jsui/mainpage.py:1145
-#: exe/jsui/mainpage.py:1160 exe/jsui/mainpage.py:1166
-#: exe/jsui/mainpage.py:1181 exe/jsui/mainpage.py:1187
+#: exe/jsui/mainpage.py:977 exe/jsui/mainpage.py:1067 exe/jsui/mainpage.py:1083
+#: exe/jsui/mainpage.py:1096 exe/jsui/mainpage.py:1102
+#: exe/jsui/mainpage.py:1120 exe/jsui/mainpage.py:1137
+#: exe/jsui/mainpage.py:1143 exe/jsui/mainpage.py:1157
+#: exe/jsui/mainpage.py:1172 exe/jsui/mainpage.py:1178
+#: exe/jsui/mainpage.py:1193 exe/jsui/mainpage.py:1199
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3440,12 +3439,12 @@ msgstr ""
 "Η ΕΞΑΓΩΓΗ ΑΠΕΤΥΧΕ!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:993 exe/jsui/mainpage.py:1040
+#: exe/jsui/mainpage.py:1005 exe/jsui/mainpage.py:1052
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το όνομα αρχείου %s είναι αρχείο και δεν μπορεί να αντικατασταθεί"
 
-#: exe/jsui/mainpage.py:999 exe/jsui/mainpage.py:1047
+#: exe/jsui/mainpage.py:1011 exe/jsui/mainpage.py:1059
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -3454,28 +3453,27 @@ msgstr ""
 "Το όνομα αρχείου %s υπάρχει ήδη. Παρακαλώ επιλέξτε άλλο όνομα ή διαγράψτε"
 " το υπάρχον και ξαναπροσπαθήστε."
 
-#: exe/jsui/mainpage.py:1013 exe/jsui/mainpage.py:1058
-#: exe/jsui/mainpage.py:1073 exe/jsui/mainpage.py:1092
-#: exe/jsui/mainpage.py:1110 exe/jsui/mainpage.py:1133
-#: exe/jsui/mainpage.py:1147 exe/jsui/mainpage.py:1168
-#: exe/jsui/mainpage.py:1189
+#: exe/jsui/mainpage.py:1025 exe/jsui/mainpage.py:1070
+#: exe/jsui/mainpage.py:1085 exe/jsui/mainpage.py:1104
+#: exe/jsui/mainpage.py:1122 exe/jsui/mainpage.py:1145
+#: exe/jsui/mainpage.py:1159 exe/jsui/mainpage.py:1180
+#: exe/jsui/mainpage.py:1201
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωγή στο %s"
 
-#: exe/jsui/mainpage.py:1222 exe/jsui/mainpage.py:1276
-#: exe/webui/stylemanagerpage.py:128
+#: exe/jsui/mainpage.py:1234 exe/webui/stylemanagerpage.py:128
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "Το αρχείο %s δεν υπάρχει ή δεν είναι αναγνώσιμο."
 
-#: exe/jsui/mainpage.py:1226
+#: exe/jsui/mainpage.py:1238
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "Αδύνατη η φόρτωση του αρχείου. Παρακαλώ στείλτε το αρχείο στο "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1229
+#: exe/jsui/mainpage.py:1241
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -3484,37 +3482,9 @@ msgstr ""
 "Συγνώμη, λανθασμένη μορφή αρχείου:\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1231
+#: exe/jsui/mainpage.py:1243
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λανθασμένη μορφή αρχείου."
-
-#: exe/jsui/mainpage.py:1289
-#, python-format
-msgid "Correct Style import : %s"
-msgstr ""
-
-#: exe/jsui/mainpage.py:1292
-#, python-format
-msgid "Incorrect style file : %s"
-msgstr ""
-
-#: exe/jsui/mainpage.py:1309
-#, python-format
-msgid "Correct ZIP Style exported : %s"
-msgstr ""
-
-#: exe/jsui/mainpage.py:1312
-#, python-format
-msgid "can't export style : %s"
-msgstr ""
-
-#: exe/jsui/mainpage.py:1329
-msgid "Style deleted "
-msgstr ""
-
-#: exe/jsui/mainpage.py:1332
-msgid "can't delete style "
-msgstr ""
 
 #: exe/jsui/propertiespage.py:320
 msgid "Failed to get properties"
@@ -3546,18 +3516,18 @@ msgid "Image Files"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/MainTab.js:196
-#: exe/jsui/scripts/app/controller/Toolbar.js:474
-#: exe/jsui/scripts/app/controller/Toolbar.js:495
-#: exe/jsui/scripts/app/controller/Toolbar.js:530
-#: exe/jsui/scripts/app/controller/Toolbar.js:549
-#: exe/jsui/scripts/app/controller/Toolbar.js:618
-#: exe/jsui/scripts/app/controller/Toolbar.js:650
-#: exe/jsui/scripts/app/controller/Toolbar.js:693
-#: exe/jsui/scripts/app/controller/Toolbar.js:710
-#: exe/jsui/scripts/app/controller/Toolbar.js:727
-#: exe/jsui/scripts/app/controller/Toolbar.js:756
-#: exe/jsui/scripts/app/controller/Toolbar.js:892
-#: exe/jsui/scripts/app/controller/Toolbar.js:971
+#: exe/jsui/scripts/app/controller/Toolbar.js:446
+#: exe/jsui/scripts/app/controller/Toolbar.js:467
+#: exe/jsui/scripts/app/controller/Toolbar.js:502
+#: exe/jsui/scripts/app/controller/Toolbar.js:521
+#: exe/jsui/scripts/app/controller/Toolbar.js:590
+#: exe/jsui/scripts/app/controller/Toolbar.js:622
+#: exe/jsui/scripts/app/controller/Toolbar.js:665
+#: exe/jsui/scripts/app/controller/Toolbar.js:682
+#: exe/jsui/scripts/app/controller/Toolbar.js:699
+#: exe/jsui/scripts/app/controller/Toolbar.js:728
+#: exe/jsui/scripts/app/controller/Toolbar.js:864
+#: exe/jsui/scripts/app/controller/Toolbar.js:943
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:44
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:226
 msgid "All Files"
@@ -3605,7 +3575,7 @@ msgid "Delete \"{node}\" node and all its children?"
 msgstr ""
 
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:408
+#: exe/jsui/scripts/app/controller/Toolbar.js:381
 msgid "Confirm"
 msgstr ""
 
@@ -3617,187 +3587,187 @@ msgstr ""
 msgid "Enter the new name:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:343
+#: exe/jsui/scripts/app/controller/Toolbar.js:316
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "About"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:380
+#: exe/jsui/scripts/app/controller/Toolbar.js:353
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:373
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:409
+#: exe/jsui/scripts/app/controller/Toolbar.js:382
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:438
+#: exe/jsui/scripts/app/controller/Toolbar.js:411
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Style Manager"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:462
+#: exe/jsui/scripts/app/controller/Toolbar.js:434
 msgid "Select package to insert"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:467
+#: exe/jsui/scripts/app/controller/Toolbar.js:439
 msgid "Inserting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:473
-#: exe/jsui/scripts/app/controller/Toolbar.js:494
-#: exe/jsui/scripts/app/controller/Toolbar.js:891
-#: exe/jsui/scripts/app/controller/Toolbar.js:970
+#: exe/jsui/scripts/app/controller/Toolbar.js:445
+#: exe/jsui/scripts/app/controller/Toolbar.js:466
+#: exe/jsui/scripts/app/controller/Toolbar.js:863
+#: exe/jsui/scripts/app/controller/Toolbar.js:942
 msgid "eXe Package Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:483
+#: exe/jsui/scripts/app/controller/Toolbar.js:455
 msgid "Save extracted package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:488
+#: exe/jsui/scripts/app/controller/Toolbar.js:460
 msgid "Extracting package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:504
+#: exe/jsui/scripts/app/controller/Toolbar.js:476
 msgid "Select the parent folder for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:519
+#: exe/jsui/scripts/app/controller/Toolbar.js:491
 msgid "Select the entry point for import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:529
+#: exe/jsui/scripts/app/controller/Toolbar.js:501
 msgid "HTML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:538
+#: exe/jsui/scripts/app/controller/Toolbar.js:510
 msgid "Select LOM Metadata file to import."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:548
+#: exe/jsui/scripts/app/controller/Toolbar.js:520
 msgid "XML Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:563
+#: exe/jsui/scripts/app/controller/Toolbar.js:535
 msgid "Waiting progress..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:571
+#: exe/jsui/scripts/app/controller/Toolbar.js:543
 msgid "Cancel Import?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:572
+#: exe/jsui/scripts/app/controller/Toolbar.js:544
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:595
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
 msgid "Select Xliff file to import"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:605
+#: exe/jsui/scripts/app/controller/Toolbar.js:577
 msgid "XLIFF Import Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:617
-#: exe/jsui/scripts/app/controller/Toolbar.js:649
+#: exe/jsui/scripts/app/controller/Toolbar.js:589
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
 msgid "XLIFF Files"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:627
+#: exe/jsui/scripts/app/controller/Toolbar.js:599
 msgid "Export to Xliff as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:637
+#: exe/jsui/scripts/app/controller/Toolbar.js:609
 msgid "XLIFF Export Preferences"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:665
+#: exe/jsui/scripts/app/controller/Toolbar.js:637
 msgid "Select the parent folder for export."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:683
+#: exe/jsui/scripts/app/controller/Toolbar.js:655
 msgid "Export text package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:692
+#: exe/jsui/scripts/app/controller/Toolbar.js:664
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:289
 msgid "Text File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:700
+#: exe/jsui/scripts/app/controller/Toolbar.js:672
 msgid "Save package resources report as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:709
+#: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid "CSV File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:717
+#: exe/jsui/scripts/app/controller/Toolbar.js:689
 msgid "Export EPUB3 package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:726
+#: exe/jsui/scripts/app/controller/Toolbar.js:698
 msgid "EPUB3 File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:734
+#: exe/jsui/scripts/app/controller/Toolbar.js:706
 msgid "Export SCORM package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:736
+#: exe/jsui/scripts/app/controller/Toolbar.js:708
 msgid "Export IMS package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:738
+#: exe/jsui/scripts/app/controller/Toolbar.js:710
 msgid "Export Website package as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:740
+#: exe/jsui/scripts/app/controller/Toolbar.js:712
 msgid "Export Common Cartridge as"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:742
+#: exe/jsui/scripts/app/controller/Toolbar.js:714
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:755
+#: exe/jsui/scripts/app/controller/Toolbar.js:727
 msgid "SCORM/IMS/ZipFile"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:863
+#: exe/jsui/scripts/app/controller/Toolbar.js:835
 msgid "Loading package..."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:880
+#: exe/jsui/scripts/app/controller/Toolbar.js:852
 msgid "Open File"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:885
+#: exe/jsui/scripts/app/controller/Toolbar.js:857
 msgid "Loading package: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:904
+#: exe/jsui/scripts/app/controller/Toolbar.js:876
 msgid "Save Package first?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:905
+#: exe/jsui/scripts/app/controller/Toolbar.js:877
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:931
+#: exe/jsui/scripts/app/controller/Toolbar.js:903
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:950
+#: exe/jsui/scripts/app/controller/Toolbar.js:922
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:956
+#: exe/jsui/scripts/app/controller/Toolbar.js:928
 msgid "Saving package..."
 msgstr ""
 
@@ -4417,7 +4387,7 @@ msgstr ""
 msgid "Entity"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:264
+#: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:273
 msgid "Purpose"
 msgstr "Σκοπός"
 
@@ -4745,6 +4715,10 @@ msgstr ""
 msgid "Import style to the system "
 msgstr ""
 
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
+msgid "Import style"
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Select ZIP Style file to import."
 msgstr ""
@@ -4763,6 +4737,10 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
 msgid "Return to style manager"
+msgstr ""
+
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:303
+msgid "Return"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
@@ -4839,8 +4817,8 @@ msgstr "Εξαγωγή"
 msgid "Add Page"
 msgstr "Προσθήκη σελίδας"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:228
-#: exe/webui/block.py:329 exe/webui/editorelement.py:78
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:38 exe/webui/block.py:237
+#: exe/webui/block.py:338 exe/webui/editorelement.py:78
 #: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
@@ -4993,42 +4971,42 @@ msgstr "Προεπισκόπιση"
 msgid "Refresh Display"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:401
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:402
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 msgid "Styles"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:411
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:412
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Help"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:421
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:422
 msgid "eXe Tutorial"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:427
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:428
 msgid "eXe Manual"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:433
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:434
 msgid "Release Notes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:442
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:443
 msgid "eXe Web Site"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:448
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:449
 msgid "Report an Issue"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:454
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
 msgid "eXe Forums"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:463
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:464
 msgid "About eXe"
 msgstr ""
 
@@ -6719,49 +6697,49 @@ msgstr "Επιλογή αρχείου"
 msgid "Label:"
 msgstr "Ετικέτα:"
 
-#: exe/webui/block.py:175
+#: exe/webui/block.py:184
 msgid "IDevice broken"
 msgstr "Κατεστραμμένη ε-Μηχανή"
 
-#: exe/webui/block.py:213
+#: exe/webui/block.py:222
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
-#: exe/webui/block.py:218
+#: exe/webui/block.py:227
 msgid "Undo Edits"
 msgstr "Αναίρεση ενεργειών επεξεργασίας"
 
-#: exe/webui/block.py:222
+#: exe/webui/block.py:231
 msgid "Can NOT Undo Edits"
 msgstr "Δεν επιτρέπεται η Αναίρεση ενεργειών επεξεργασίας"
 
-#: exe/webui/block.py:225 exe/webui/block.py:326
+#: exe/webui/block.py:234 exe/webui/block.py:335
 msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr ""
 
-#: exe/webui/block.py:235
+#: exe/webui/block.py:244
 msgid "Move Up"
 msgstr "Μετακίνηση πάνω"
 
-#: exe/webui/block.py:242
+#: exe/webui/block.py:251
 msgid "Move Down"
 msgstr "Μετακίνηση κάτω"
 
-#: exe/webui/block.py:244
+#: exe/webui/block.py:253
 msgid "---Move To---"
 msgstr "---Μετακίνηση σε---"
 
-#: exe/webui/block.py:249 exe/webui/editorpane.py:377
+#: exe/webui/block.py:258 exe/webui/editorpane.py:377
 msgid "Pedagogical Help"
 msgstr "Παιδαγωγική βοήθεια"
 
-#: exe/webui/block.py:254
+#: exe/webui/block.py:263
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: exe/webui/block.py:258 exe/webui/block.py:259 exe/webui/common.py:485
-#: exe/webui/common.py:486 exe/webui/editorpane.py:364
+#: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:484
+#: exe/webui/common.py:485 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
 #: exe/webui/editorpane.py:386 exe/webui/element.py:2801
 #: exe/webui/element.py:2802 exe/webui/truefalseelement.py:152
@@ -6770,15 +6748,15 @@ msgstr "Πληροφορίες"
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: exe/webui/block.py:268
+#: exe/webui/block.py:277
 msgid "Tip:"
 msgstr "Συμβουλή:"
 
-#: exe/webui/block.py:314
+#: exe/webui/block.py:323
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ΣΦΑΛΜΑ:  Άμεση κλήση του block.renderViewContent"
 
-#: exe/webui/block.py:324 exe/webui/editorpage.py:284
+#: exe/webui/block.py:333 exe/webui/editorpage.py:284
 #: exe/webui/editorpane.py:270
 msgid "Edit"
 msgstr "Επεξεργασία"
@@ -6854,7 +6832,7 @@ msgstr ""
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : συντάκτης XHTML για την εξ' αποστάσεως μάθηση"
 
-#: exe/webui/common.py:476 exe/webui/common.py:480
+#: exe/webui/common.py:475 exe/webui/common.py:479
 msgid "Click for completion instructions"
 msgstr "Κλικ για οδηγίες συμπλήρωσης"
 
@@ -7311,10 +7289,6 @@ msgstr ""
 msgid "Add Another File Attachment"
 msgstr ""
 
-#: exe/webui/fileattachblock.py:121
-msgid "IDevice Icon"
-msgstr ""
-
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
 msgid "Add images"
@@ -7462,6 +7436,14 @@ msgstr "Προσθήκη άλλης Eρώτησης"
 
 #: exe/webui/notablock.py:104
 msgid "Show/Hide"
+msgstr ""
+
+#: exe/webui/notablock.py:123
+msgid "Delete all notes"
+msgstr ""
+
+#: exe/webui/notablock.py:123
+msgid "Would you delete all notes?"
 msgstr ""
 
 #: exe/webui/orientacionesalumnadofpdblock.py:64
@@ -9469,6 +9451,14 @@ msgstr ""
 msgid "Media Title"
 msgstr ""
 
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:37
+msgid "Use Autoplay"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:38
+msgid "Use Controls"
+msgstr ""
+
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 msgid "Insert HTML code as text"
 msgstr ""
@@ -10447,5 +10437,26 @@ msgstr ""
 "Παρακαλώ αναβαθμίστε το eXe και προσπαθήστε πάλι."
 
 #~ msgid "Browsers installed in your system"
+#~ msgstr ""
+
+#~ msgid "Correct Style import : %s"
+#~ msgstr ""
+
+#~ msgid "Incorrect style file : %s"
+#~ msgstr ""
+
+#~ msgid "Correct ZIP Style exported : %s"
+#~ msgstr ""
+
+#~ msgid "can't export style : %s"
+#~ msgstr ""
+
+#~ msgid "Style deleted "
+#~ msgstr ""
+
+#~ msgid "can't delete style "
+#~ msgstr ""
+
+#~ msgid "IDevice Icon"
 #~ msgstr ""
 
