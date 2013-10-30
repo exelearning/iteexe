@@ -101,7 +101,7 @@ class Config:
         'place the objects': [x_('Interactive Activities')],
         'memory match game': [x_('Interactive Activities')],
         'file attachments': [x_('Non-Textual Information')],
-        'sort items': [x_('Non-Textual Information')]
+        'sort items': [x_('Interactive Activities')]
     }
 
     def __init__(self):
