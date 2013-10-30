@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-10-30 17:18+0100\n"
-"PO-Revision-Date: 2013-10-30 17:23+0100\n"
+"PO-Revision-Date: 2013-10-30 17:35+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -2210,7 +2210,7 @@ msgstr "Constructor del juego de emparejamientos de memoria."
 
 #: exe/engine/memorymatchidevice.py:55
 msgid "Instructions to show"
-msgstr "Instrucciones que mostrar"
+msgstr "Instrucciones"
 
 #: exe/engine/memorymatchidevice.py:56
 msgid "Number of Rows"
@@ -2226,7 +2226,7 @@ msgstr "Separar las parejas de Preguntas/Respuestas"
 
 #: exe/engine/memorymatchidevice.py:60
 msgid "Feedback to show on correct match"
-msgstr "Retroalimentación que se muestra ante un emparejamiento correcto"
+msgstr "Retroalimentación que mostrar ante un emparejamiento correcto"
 
 #: exe/engine/memorymatchidevice.py:60
 msgid "Positive Feedback"
@@ -2234,7 +2234,7 @@ msgstr "Retroalimentación positiva"
 
 #: exe/engine/memorymatchidevice.py:61
 msgid "Feedback to show on incorrect pair"
-msgstr "Retroalimentación que se muestra ante un emparejamiento incorrecto"
+msgstr "Retroalimentación que mostrar ante un emparejamiento incorrecto"
 
 #: exe/engine/memorymatchidevice.py:61
 msgid "Negative Feedback"
@@ -2284,11 +2284,11 @@ msgstr "Imagen de la parte delantera"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Background Image for cells (shown after selected)"
-msgstr "Imagen de la parte de atrás de las celdas (se muestra tras seleccionarlas)"
+msgstr "Imagen de la parte oculta de las celdas (se muestra tras seleccionarlas)"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Back Img"
-msgstr "Imagen de la parte trasera"
+msgstr "Imagen de la parte oculta"
 
 #: exe/engine/memorymatchidevice.py:68
 msgid "Background image behind cells shown as cells are hidden"
@@ -2320,7 +2320,7 @@ msgstr "¿Mostrar / Usar un cronómetro?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide Cells after match made?"
-msgstr "¿Ocultar las celdas después de que ha realizado un emparejamiento?"
+msgstr "¿Ocultar las celdas después de que se ha realizado un emparejamiento?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide after match"
@@ -2336,7 +2336,7 @@ msgstr "Efecto para ocultar tras emparejamiento"
 
 #: exe/engine/memorymatchidevice.py:78
 msgid "Cell Padding in table"
-msgstr "Margen de la celda en la tabla"
+msgstr "Margen de la celda en el recuadro"
 
 #: exe/engine/memorymatchidevice.py:78
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2345,7 +2345,7 @@ msgstr "Margen de celda"
 
 #: exe/engine/memorymatchidevice.py:79
 msgid "Cell Spacing of table"
-msgstr "Espaciado de la celda en la tabla"
+msgstr "Espaciado de la celda en el recuadro"
 
 #: exe/engine/memorymatchidevice.py:79
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -7602,10 +7602,8 @@ msgid ""
 "                trim in case you reduced the number of rows / columns</p>"
 "\n"
 msgstr ""
-"<p>Pulse en el botón de abajo para crear las parejas que habrá que buscar"
-" or \n"
-"                eliminar en caso de que haya reducido el número de filas "
-"o columnas</p>\n"
+"<p>Pulse en el botón de abajo para crear las parejas que habrá que buscar o \n"
+"                eliminar en caso de que haya reducido el número de filas o columnas</p>\n"
 
 #: exe/webui/memorymatchblock.py:177
 msgid "Create / Trim Pairs"
