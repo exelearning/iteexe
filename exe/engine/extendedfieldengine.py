@@ -120,15 +120,11 @@ class ExtendedFieldSet(Field):
         ourDict = make_dictionary_from_element_dict(keyPrefix, elementDict, \
                 self.fieldInfoDict, self, previewMode)
         return ourDict
+    
         
     def applyFileTemplateToDict(self, dictToApply, templateFileName, pathIsAbsolute = False):
         #see if it is in our base directory (e.g. ~/.exe/idevices)
-        templateLoadFileBaseName1 = os.path.dirname(__file__) + "/" + templateFileName
-        if os.path.isfile(templateLoadFileBaseName1):
-           templateLoadFileName = templateLoadFileBaseName1
-        else:
-            templateLoadFileName = globals.application.config.webDir/"templates"/templateFileName
-        
+        templateLoadFileName = field_engine_get_template_absolute_path(templateFileName)
         
         templateFile = open(templateLoadFileName)
         
@@ -390,6 +386,13 @@ def field_engine_check_field(fieldId, fieldInfoDict, fieldDict, idevice):
     newField = 0
     if fieldTypeName == 'image':
         newField = ImageField(fieldInfoDict[fieldId][EXEFIELDINFO_DESC], fieldInfoDict[fieldId][EXEFIELDINFO_HELP])
+        #must do this before attempting to set default value
+        newField.idevice = idevice
+        if defaultVal is not None:
+            #right about here do setImage
+            newField.defaultImage = str(field_engine_get_template_absolute_path(defaultVal))
+            pass
+        
     elif fieldTypeName == 'text':
         newField = TextField(fieldInfoDict[fieldId][EXEFIELDINFO_DESC], fieldInfoDict[fieldId][EXEFIELDINFO_HELP])
         if defaultVal is not None:
@@ -540,6 +543,18 @@ def field_engine_check_fields_are_ints(elementDict, elementToCheckArr, elementNa
     
     return errMsg 
             
+"""
+Will get the absolute path either from the current directory where 
+this file lives or if that fails then using the templates folder 
+"""
+def field_engine_get_template_absolute_path(templateFileName):
+    templateLoadFileBaseName1 = os.path.dirname(__file__) + "/" + templateFileName
+    if os.path.isfile(templateLoadFileBaseName1):
+       templateLoadFileName = templateLoadFileBaseName1
+    else:
+        templateLoadFileName = globals.application.config.webDir/"templates"/templateFileName
+    
+    return templateLoadFileName
             
 
 

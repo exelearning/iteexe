@@ -38,7 +38,7 @@ class MemoryMatchIdeviceInc(Idevice):
     the system idevices.
     """
     
-    persistenceVersion = 2
+    persistenceVersion = 3
     
     def __init__(self, content=""):
         Idevice.__init__(self, _(u"Memory Match Game"), 
@@ -63,8 +63,8 @@ class MemoryMatchIdeviceInc(Idevice):
                             'cellwidth' : ['text', _('Width of Cells (in pixels)'), _('Cell Width px'), {'defaultval' : '100'}],\
                             'cellheight' : ['text', _('Height of Cells (in pixels)'), _('Cell Height px'), {'defaultval' : '100'}],\
                             'hidetime' : ['text', _('Time after which to re-hide incorrect match (ms)'), _('Time to hide'), {'defaultval' : '1000', 'type': 'advanced'}],\
-                            'coverImg' : ['image', _('Cover Image for cells (shown before selected)'), _('Cover Img')],\
-                            'cellbackImg' : ['image', _('Background Image for cells (shown after selected)'), _('Back Img')],\
+                            'coverImg' : ['image', _('Cover Image for cells (shown before selected)'), _('Cover Img'), {'defaultval' : 'memmatch_covercelldefault.png'}],\
+                            'cellbackImg' : ['image', _('Background Image for cells (shown after selected)'), _('Back Img'), {'defaultval' : 'memmatch_showcelldefaultbg.png'}],\
                             'revealedBackground' : ['image', _('Background image behind cells shown as cells are hidden'), _('Bg Img')],\
                             'positivefeedbackeffect' : ['choice', _('Effect for showing positive feedback'), _('Positive Feedback Effect'),\
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
@@ -112,6 +112,10 @@ class MemoryMatchIdeviceInc(Idevice):
         self.mainFieldSet.fieldOrder.insert(0, "title")
         self.mainFieldSet.fieldInfoDict['title'] = ['text', _('Title'), _('Title')]
         self.mainFieldSet.makeFields()
+        
+    def upgradeToVersion3(self):
+        self.mainFieldSet.fieldInfoDict['coverImg'][3] = {'defaultval' : 'memmatch_covercelldefault.png'}
+        self.mainFieldSet.fieldInfoDict['cellbackImg'][3] = {'defaultval' : 'memmatch_showcelldefaultbg.png'}
     
     def setNumMatchingPairs(self):
         numRows = int(self.mainFieldSet.fields['rows'].content)
