@@ -32,6 +32,8 @@ use_mediaelement : _("Use JavaScript player"),
 "position_right":_("Right"),
 "image_and_caption_margin":_("Group Margin"),
 "caption_explanation":_("You will not be able to edit the header or the caption from this dialog."),
-"caption_warning":_("The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself.")
+"caption_warning":_("The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself."),
+"use_autoplay": _("Use Autoplay"),
+"use_controls": _("Use Controls")
 // The New eXeLearning
 }); 
