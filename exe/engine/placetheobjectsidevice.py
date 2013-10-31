@@ -42,35 +42,35 @@ class PlaceTheObjectsIdeviceInc(Idevice):
     the system idevices.
     """
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"Place The Objects"), 
-                         _(u"Mike Dawson / PAIWASTOON Networking Services Ltd."), 
-                         _(u"""User has to place various objects in the correct place."""), "", "")
+        Idevice.__init__(self, x_(u"Place The Objects"), 
+                         x_(u"Mike Dawson / PAIWASTOON Networking Services Ltd."), 
+                         x_(u"""User has to place various objects in the correct place."""), "", "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = TextAreaField(_(u"Instructions"), 
-                                      _(u"This is a free text field."), 
+        self.content  = TextAreaField(x_(u"Instructions"), 
+                                      x_(u"This is a free text field."), 
                                       content)
         self.content.idevice = self
 
         #This is the main field where objects will be dragged to
-        self.mainArea = TextAreaField(_(u"Main Area"),
-                                        _(u"This is the main image where the user will drag / drop items to"),
+        self.mainArea = TextAreaField(x_(u"Main Area"),
+                                        x_(u"This is the main image where the user will drag / drop items to"),
                                         "")
         self.mainArea.idevice = self
 
-        self.gameTimeLimit = TextField(_(u"Time Limit (mm:ss)"), _(u"(Optional) Game Time Limit"), "")
+        self.gameTimeLimit = TextField(x_(u"Time Limit (mm:ss)"), x_(u"(Optional) Game Time Limit"), "")
         self.gameTimeLimit.idevice = self
-        self.gameTimerShown = TextField(_(u"Show Timer"), _(u"Even if there is no time limit, show the timer..."), "")
+        self.gameTimerShown = TextField(x_(u"Show Timer"), x_(u"Even if there is no time limit, show the timer..."), "")
         self.gameTimerShown.idevice = self
 
         #these are shown when there is a right / wrong response
-        self.clickToStartGameArea = TextAreaField(u"Message to click game to start", u"This will when clicked start the game", "")
+        self.clickToStartGameArea = TextAreaField(x_(u"Message to click game to start"), x_(u"This will when clicked start the game"), "")
         self.clickToStartGameArea.idevice = self
-        self.positiveResponseArea = TextAreaField(_(u"Positive Response"), u"Overlays main area when player correctly places object", "")
+        self.positiveResponseArea = TextAreaField(x_(u"Positive Response"), x_(u"Overlays main area when player correctly places object"), "")
         self.positiveResponseArea.idevice = self
-        self.negativeResponseArea = TextAreaField(u"Negative Response", u"Overlays main area when player guesses wrong", "")
+        self.negativeResponseArea = TextAreaField(x_(u"Negative Response"), x_(u"Overlays main area when player guesses wrong"), "")
         self.negativeResponseArea.idevice = self
 
-        self.partbinNumCols = TextField("Number of Columns in part bin", "Columns part bin")
+        self.partbinNumCols = TextField(x_("Number of Columns in part bin"), x_("Columns part bin"))
         self.partbinNumCols.idevice = self
 
         #This is a list of objects to place
@@ -81,7 +81,7 @@ class PlaceTheObjectsIdeviceInc(Idevice):
     This will add a new placable object to the list
     """
     def addPlacableObject(self):
-        newPlacableObject = PlacableObjectField("Object to Place", self)
+        newPlacableObject = PlacableObjectField(x_("Object to Place"), self)
         self.objectsToPlace.append(newPlacableObject)
 
 
@@ -109,25 +109,25 @@ class PlacableObjectField(Field):
     """
     persistenceVersion = 3
 
-    def __init__(self, name, idevice, instruction="An object that has a correct place in the main area", content=""):
-        Field.__init__(self, name, instruction)
-        self.mainContentField = TextAreaField(_(u"Placable Object"), _(u"Object to be put in place"), "")
+    def __init_x_(self, name, idevice, instruction=x_("An object that has a correct place in the main area"), content=""):
+        Field.__init_x_(self, name, instruction)
+        self.mainContentField = TextAreaField(x_(u"Placable Object"), x_(u"Object to be put in place"), "")
         self.idevice = idevice
         self.mainContentField.idevice = idevice
         
-        self.targetX = TextField(_(u"Correct Location (x)"), _(u"Where this object belongs in the main area x coordinate"), "0")
+        self.targetX = TextField(x_(u"Correct Location (x)"), x_(u"Where this object belongs in the main area x coordinate"), "0")
         self.targetX.idevice = idevice
 
-        self.targetY = TextField(_(u"Correct Location (y)"), _(u"Where this object belongs in the main area y coordinate"), "0")
+        self.targetY = TextField(x_(u"Correct Location (y)"), x_(u"Where this object belongs in the main area y coordinate"), "0")
         self.targetY.idevice = idevice
 
-        self.width = TextField(_(u"Width (pixels)"), _(u"Width of object"), "100")
+        self.width = TextField(x_(u"Width (pixels)"), x_(u"Width of object"), "100")
         self.width.idevice = idevice
 
-        self.height = TextField(_(u"Height (pixels)"), _(u"Height of object"), "100")
+        self.height = TextField(x_(u"Height (pixels)"), x_(u"Height of object"), "100")
         self.height.idevice = idevice
 
-        self.tolerance = TextField(_(u"Tolerance (pixels)"), _(u"Tolerance when dropping num of pixels"), "20")
+        self.tolerance = TextField(x_(u"Tolerance (pixels)"), x_(u"Tolerance when dropping num of pixels"), "20")
         self.tolerance.idevice = idevice
     
 

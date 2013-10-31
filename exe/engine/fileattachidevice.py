@@ -34,19 +34,19 @@ class FileAttachIdeviceInc(Idevice):
     persistenceVersion = 2
     
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"File Attachments"), 
-                         _(u"Toughra Technologies FZ LLC."), 
-                         _(u"""File Attachments Idevice."""), "", "")
+        Idevice.__init__(self, x_(u"File Attachments"), 
+                         x_(u"Toughra Technologies FZ LLC."), 
+                         x_(u"""File Attachments Idevice."""), "", "")
         self.emphasis = Idevice.SomeEmphasis
         
         self.fileAttachmentFields = []
         self.fileAttachmentsDesc = []
         
-        self.showDesc = ChoiceField(self, [["yes" , "Yes"], ["no" , "No"]],\
-                                    "Show description and link", "Show Description")
+        self.showDesc = ChoiceField(self, [["yes" , x_("Yes")], ["no" , x_("No")]],\
+                                    x_("Show description and link"), x_("Show Description"))
         self.showDesc.idevice = self
         
-        self.introHTML = TextAreaField("Intro Text", "Intro Text")
+        self.introHTML = TextAreaField(x_("Instructions"), x_("Instructions"))
         self.introHTML.idevice = self
         self.addFileAttachmentField()
         
@@ -63,10 +63,10 @@ class FileAttachIdeviceInc(Idevice):
     def upgradeToVersion2(self):
         self.emphasis = Idevice.SomeEmphasis
         self.fileAttachmentsDesc = []
-        self.showDesc = ChoiceField(self, [["yes" , "Yes"], ["no" , "No"]],\
-                                    "Show description and link", "Show Description")
+        self.showDesc = ChoiceField(self, [["yes" , x_("Yes")], ["no" , x_("No")]],\
+                                    x_("Show description and link"), x_("Show Description"))
         self.showDesc.content = "no"
-        self.introHTML = TextAreaField("Intro Text")
+        self.introHTML = TextAreaField(x_("Intro Text"))
         self.icon = "assignment"
 
 # ===========================================================================

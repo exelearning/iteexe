@@ -41,9 +41,9 @@ class MemoryMatchIdeviceInc(Idevice):
     persistenceVersion = 3
     
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"Memory Match Game"), 
-                         _(u"Toughra Technologies FZ LLC."),
-                         _(u"""Memory Match Game Maker."""), "", "")
+        Idevice.__init__(self, x_(u"Memory Match Game"), 
+                         x_(u"Toughra Technologies FZ LLC."),
+                         x_(u"""Memory Match Game Maker."""), "", "")
         self.message = ""
         
         mainFieldOrder = ['title', 'instructions', 'rows', 'cols', 'splitPairs', 'feedbackpositive', 'feedbacknegative', 'feedbackstyle', 'cellwidth', 'cellheight', \
@@ -51,35 +51,35 @@ class MemoryMatchIdeviceInc(Idevice):
                             'negativefeedbackeffect', 'useTimer', 'timertext', 'timerstyle', 'hideAfterMatch', 'hideAfterMatchEffect', 'cellpadding',\
                             'cellspacing', 'cellstyle']
 
-        mainFieldsInfo = {  'title' : ['text', _('Title'), _('Title')], \
-                            'instructions' : ['textarea', _('Instructions to show'), _('Instructions')],\
-                            'rows' : ['text', _('Number of Rows'), _('Number of Rows'), {'defaultval' : '2'}],\
-                            'cols' : ['text', _('Number of Columns'), _('Number of Columns'), {'defaultval' : '2'}],\
-                            'splitPairs' : ['choice', _('Split Question/Answer Pairs'), _('Split Question/Answer Pairs'),\
-                                {'choices' : [['true', 'Yes'], ['false', 'No']] }],\
-                            'feedbackpositive' : ['textarea', _('Feedback to show on correct match'), _('Positive Feedback')],\
-                            'feedbacknegative' : ['textarea', _('Feedback to show on incorrect pair'), _('Negative Feedback')],\
-                            'feedbackstyle' : ['text', _('Style of Feedback Area (CSS)'), _('CSS style for feedback area'), {'type': 'advanced'}],\
-                            'cellwidth' : ['text', _('Width of Cells (in pixels)'), _('Cell Width px'), {'defaultval' : '100'}],\
-                            'cellheight' : ['text', _('Height of Cells (in pixels)'), _('Cell Height px'), {'defaultval' : '100'}],\
-                            'hidetime' : ['text', _('Time after which to re-hide incorrect match (ms)'), _('Time to hide'), {'defaultval' : '1000', 'type': 'advanced'}],\
-                            'coverImg' : ['image', _('Cover Image for cells (shown before selected)'), _('Cover Img'), {'defaultval' : 'memmatch_covercelldefault.png'}],\
-                            'cellbackImg' : ['image', _('Background Image for cells (shown after selected)'), _('Back Img'), {'defaultval' : 'memmatch_showcelldefaultbg.png'}],\
-                            'revealedBackground' : ['image', _('Background image behind cells shown as cells are hidden'), _('Bg Img')],\
-                            'positivefeedbackeffect' : ['choice', _('Effect for showing positive feedback'), _('Positive Feedback Effect'),\
+        mainFieldsInfo = {  'title' : ['text', x_('Title'), x_('Title')], \
+                            'instructions' : ['textarea', x_('Instructions to show'), x_('Instructions')],\
+                            'rows' : ['text', x_('Number of Rows'), x_('Number of Rows'), {'defaultval' : '2'}],\
+                            'cols' : ['text', x_('Number of Columns'), x_('Number of Columns'), {'defaultval' : '2'}],\
+                            'splitPairs' : ['choice', x_('Split Question/Answer Pairs'), x_('Split Question/Answer Pairs'),\
+                                {'choices' : [['true', x_('Yes')], ['false', x_('No')]] }],\
+                            'feedbackpositive' : ['textarea', x_('Feedback to show on correct match'), x_('Positive Feedback')],\
+                            'feedbacknegative' : ['textarea', x_('Feedback to show on incorrect pair'), x_('Negative Feedback')],\
+                            'feedbackstyle' : ['text', x_('Style of Feedback Area (CSS)'), x_('CSS style for feedback area'), {'type': 'advanced'}],\
+                            'cellwidth' : ['text', x_('Width of Cells (in pixels)'), x_('Cell Width px'), {'defaultval' : '100'}],\
+                            'cellheight' : ['text', x_('Height of Cells (in pixels)'), x_('Cell Height px'), {'defaultval' : '100'}],\
+                            'hidetime' : ['text', x_('Time after which to re-hide incorrect match (ms)'), x_('Time to hide'), {'defaultval' : '1000', 'type': 'advanced'}],\
+                            'coverImg' : ['image', x_('Cover Image for cells (shown before selected)'), x_('Cover Img'), {'defaultval' : 'memmatch_covercelldefault.png'}],\
+                            'cellbackImg' : ['image', x_('Background Image for cells (shown after selected)'), x_('Back Img'), {'defaultval' : 'memmatch_showcelldefaultbg.png'}],\
+                            'revealedBackground' : ['image', x_('Background image behind cells shown as cells are hidden'), x_('Bg Img')],\
+                            'positivefeedbackeffect' : ['choice', x_('Effect for showing positive feedback'), x_('Positive Feedback Effect'),\
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
-                            'negativefeedbackeffect' : ['choice', _('Effect for showing negative feedback'), _('Negative Feedback Effect'),\
+                            'negativefeedbackeffect' : ['choice', x_('Effect for showing negative feedback'), x_('Negative Feedback Effect'),\
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
-                            'useTimer' : ['choice', _('Show / Use a timer?'), _('Use Timer?'), {'choices' : [['true', 'Yes'], ['false', 'No']]} ],\
-                            'hideAfterMatch' : ['choice', _('Hide Cells after match made?'), _('Hide after match'), \
-                                {'choices' : [['true', 'Yes'], ['false', 'No']]} ],\
-                            'hideAfterMatchEffect' : ['choice', _('Effect when hiding cells after match'), _('Hide after match effect'), \
+                            'useTimer' : ['choice', x_('Show / Use a timer?'), x_('Use Timer?'), {'choices' : [['true', 'Yes'], ['false', 'No']]} ],\
+                            'hideAfterMatch' : ['choice', x_('Hide Cells after match made?'), x_('Hide after match'), \
+                                {'choices' : [['true', x_('Yes')], ['false', x_('No')]]} ],\
+                            'hideAfterMatchEffect' : ['choice', x_('Effect when hiding cells after match'), x_('Hide after match effect'), \
                                 {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ],\
-                            'cellpadding' : ['text', _('Cell Padding in table'), _('Cell Padding'), {'defaultval' : '0','type': 'advanced'}],\
-                            'cellspacing' : ['text', _('Cell Spacing of table'), _('Cell Spacing'), {'defaultval' : '0','type': 'advanced'}],\
-                            'cellstyle' : ['text', _('Cell Default Style (CSS)'), _('Cell Style CSS'), {'defaultval' : 'text-align: center; font: 18pt bold','type': 'advanced'}],\
-                            'timertext' : ['text', _('Text of Timer Label'), _('Timer Text'), {'type': 'advanced'}],\
-                            'timerstyle' : ['text', _('CSS of Timer Field'), _('Timer CSS'), {'type': 'advanced'}]\
+                            'cellpadding' : ['text', x_('Cell Padding in table'), x_('Cell Padding'), {'defaultval' : '0','type': 'advanced'}],\
+                            'cellspacing' : ['text', x_('Cell Spacing of table'), x_('Cell Spacing'), {'defaultval' : '0','type': 'advanced'}],\
+                            'cellstyle' : ['text', x_('Cell Default Style (CSS)'), x_('Cell Style CSS'), {'defaultval' : 'text-align: center; font: 18pt bold','type': 'advanced'}],\
+                            'timertext' : ['text', x_('Text of Timer Label'), x_('Timer Text'), {'type': 'advanced'}],\
+                            'timerstyle' : ['text', x_('CSS of Timer Field'), x_('Timer CSS'), {'type': 'advanced'}]\
                         }
         self.mainFieldSet = ExtendedFieldSet(self, mainFieldOrder, mainFieldsInfo)
         self.mainFieldSet.makeFields()
@@ -110,7 +110,7 @@ class MemoryMatchIdeviceInc(Idevice):
         self.message = ""
         self.emphasis = Idevice.SomeEmphasis
         self.mainFieldSet.fieldOrder.insert(0, "title")
-        self.mainFieldSet.fieldInfoDict['title'] = ['text', _('Title'), _('Title')]
+        self.mainFieldSet.fieldInfoDict['title'] = ['text', x_('Title'), x_('Title')]
         self.mainFieldSet.makeFields()
         
     def upgradeToVersion3(self):
@@ -142,13 +142,13 @@ class MemoryMatchPairField(Field):
     
     persistenceVersion = 3
     
-    def __init__(self, idevice, desc="Memory Match Pair Field", help="Memory Match Pair Field"):
+    def __init__(self, idevice, desc=x_("Memory Match Pair Field"), help=x_("Memory Match Pair Field")):
         Field.__init__(self, desc, help)
         self.idevice = idevice
         
         mainFieldOrder  = ['match1', 'match2']
-        mainFieldsInfo = {'match1' : ['textarea', _('Match Tile 1'), _('Match Tile1')],\
-                                'match2' : ['textarea', _('Match Tile 2'), _('Match Tile2')] }
+        mainFieldsInfo = {'match1' : ['textarea', x_('Match Tile 1'), x_('Match Tile1')],\
+                                'match2' : ['textarea', x_('Match Tile 2'), x_('Match Tile2')] }
                                 
         self.mainFields = ExtendedFieldSet(self.idevice, mainFieldOrder, mainFieldsInfo)
 
