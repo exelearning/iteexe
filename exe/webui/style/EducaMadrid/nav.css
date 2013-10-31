@@ -33,6 +33,8 @@ div#nodeDecoration{padding:0;margin:0;background:none;border:none}
 #topPagination a{background:#fff;box-shadow:0 0 3px 0 #ddd}
 #topPagination .prev{margin-left:20px}
 #topPagination .pagination{border:none;color:#f3f3f3} /* Hidden */
+#bottomPagination{padding:0 20px 0 250px}
+.no-nav #bottomPagination{padding-left:20px}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
@@ -49,7 +51,7 @@ html[xmlns] #content{display:block}
 	#main-wrapper,#siteFooter{padding-left:20px}
 	#content{width:100%;background:#fff;border:none;box-shadow:none;margin:0}
 	#nodeTitle,.pagination{border-width:2px}
-	#bottomPagination{margin-bottom:15px}
+	#bottomPagination{margin-bottom:15px;padding-left:20px}
 	/* Horizontal navigation */
 	#siteNav .other-section{display:block}
 	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
@@ -74,6 +76,7 @@ html[xmlns] #content{display:block}
     body{background:#fff}
 	#content{width:100%;background:#fff;border:none;box-shadow:none;margin:0}
     #topPagination{display:none}
+    #bottomPagination,.no-nav #bottomPagination{padding:0 10px}
     #siteNav{float:none;width:100%;padding:0}
     #main-wrapper{padding:0 10px}
     #nodeTitle{margin-top:.5em}

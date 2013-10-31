@@ -61,6 +61,7 @@ class WebsitePage(Page):
             lenguaje = self.node.package.dublinCore.language
         
         dT = common.getExportDocType()
+        themeHasXML = common.themeHasConfigXML(self.node.package.style)
         lb = "\n" #Line breaks
         sectionTag = "div"
         headerTag = "div"
@@ -185,12 +186,12 @@ class WebsitePage(Page):
                         block.renderView(self.node.package.style))
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
-        html += "<"+sectionTag+" id='bottomPagination'>"+lb
-        html += self.getNavigationLink(prevPage, nextPage)
-        html += "</"+sectionTag+">"+lb
+        if not themeHasXML:
+            html += "<"+sectionTag+" id='bottomPagination'>"+lb
+            html += self.getNavigationLink(prevPage, nextPage)
+            html += "</"+sectionTag+">"+lb
         # writes the footer for each page 
         html += self.renderLicense()
-        themeHasXML = common.themeHasConfigXML(self.node.package.style)
         if not themeHasXML:
         #if not style.hasValidConfig:
             html += self.renderFooter()
@@ -198,6 +199,9 @@ class WebsitePage(Page):
         html += u"</"+sectionTag+">"+lb # /main-wrapper
         if themeHasXML:
         #if style.hasValidConfig:
+            html += "<"+sectionTag+" id='bottomPagination'>"+lb
+            html += self.getNavigationLink(prevPage, nextPage)
+            html += "</"+sectionTag+">"+lb        
             html += self.renderFooter()
         html += u"</"+sectionTag+">"+lb # /content
         if themeHasXML:

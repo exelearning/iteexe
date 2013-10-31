@@ -29,6 +29,8 @@ body{padding:0;text-align:center;background:#fff url(_max_fondo_pagina.gif)}
 .pagination a:hover,.pagination a:focus,#topPagination .pagination a:hover,#topPagination .pagination a:focus{text-decoration:none;background-color:#9A042F;color:#fff;border-color:#9A042F}
 #topPagination{position:absolute;top:0;width:100%;right:20px}
 #topPagination .pagination{border:none;background:none}
+#bottomPagination{padding:0 20px 0 250px}
+.no-nav #bottomPagination{padding-left:20px}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
@@ -45,7 +47,7 @@ html[xmlns] #content{display:block}
 	#main-wrapper,#siteFooter{padding-left:20px}
 	#content{width:100%;min-width:0;background:#fff;border:none;box-shadow:none;margin:0}
 	#nodeTitle,.pagination{border-width:2px}
-	#bottomPagination{margin-bottom:15px}
+	#bottomPagination{margin-bottom:15px;padding-left:20px}
 	/* Horizontal navigation */
 	#siteNav .other-section{display:block}
 	#siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
@@ -80,6 +82,7 @@ html[xmlns] #content{display:block}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe{max-width:100%}
 	#topPagination{display:none}
+    #bottomPagination,.no-nav #bottomPagination{padding:0 10px}
 	.pagination a{padding:3px 8px;margin:0}
     .pagination{text-align:center;height:35px;position:relative}
     .pagination .prev{position:absolute;left:0}
