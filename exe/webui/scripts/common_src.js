@@ -1420,14 +1420,27 @@ var $exe = {
     },
     loadMediaPlayer : {
         getPlayer : function(){
-            $("VIDEO").hide();
-            $exe.loadScript("exe_media.js","$exe.loadMediaPlayer.getCSS()");
+        	$('.mediaelement').hide();
+        	var file = 'exe_media.js';
+        	if (typeof eXe != 'undefined') {
+        		file = '../scripts/mediaelement/' + file;
+        	}
+            $exe.loadScript(file,"$exe.loadMediaPlayer.getCSS()");
         },
         getCSS : function(){
-            $exe.loadScript("exe_media.css","$exe.loadMediaPlayer.init()");
+        	var file = 'exe_media.css';
+        	if (typeof eXe != 'undefined') {
+        		file = '../scripts/mediaelement/' + file;
+        	}
+            $exe.loadScript(file,"$exe.loadMediaPlayer.init()");
         },
         init : function(){
+        	if (typeof eXe != 'undefined') {
+        		mejs.MediaElementDefaults.flashName = '../scripts/mediaelement/' + mejs.MediaElementDefaults.flashName;
+        		mejs.MediaElementDefaults.silverlightName = '../scripts/mediaelement/' + mejs.MediaElementDefaults.silverlightName;
+        	}
             $('.mediaelement').mediaelementplayer();
+            $('.mediaelement').show();
         }
     },
     loadScript : function(url, callback){

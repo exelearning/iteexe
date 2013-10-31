@@ -154,7 +154,6 @@ class AuthoringPage(RenderableResource):
 
         html += u'</div>'
         html += '<script type="text/javascript">$exeAuthoring.ready()</script>\n'
-        html += u"<script>$('.mediaelement').mediaelementplayer();</script>"
         html += common.footer()
 
         html = html.encode('utf8')
@@ -189,8 +188,6 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/mediaelement/exe_media.js"></script>\n'
-        html += u'<link rel="stylesheet" type="text/css" href="/scripts/mediaelement/exe_media.css" />\n'
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
