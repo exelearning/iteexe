@@ -11,32 +11,31 @@ body{
 	background:#ffffff; /* Color de fondo */
 }
 a{
-	color:#0055A6; /* Enlaces */
+	color:#004f96; /* Enlaces */
 }
 #header{
 	color:#666666; /* Título del proyecto */
 }
 #nodeTitle{
-	color:#008F75; /* Título de cada página */
-    text-shadow:1px 1px 1px #ffffff; /* Sombra  */
+	color:#004f96; /* Título de cada página */
 }
 #main #nodeDecoration{
 	border-color:#E7EBEE; /* Borde del título de cada página */
 	background-color:#DEE5EB; /* Color de fondo */
 }
 .iDeviceTitle{
-	color: #8A5F31; /* Títulos de los iDevices */
+	color: #0066AB; /* Títulos de los iDevices */
 }
 .iDevice_inner{
-	background-color:#FAF8F2; /* Fondo del cuerpo del iDevice */
+	background-color:#F6FCFE; /* Fondo del cuerpo del iDevice */
 	color:#4d4d4d; /* Texto de los iDevices */
-	border-color:#EBE3CC; /* Borde del cuerpo de los iDevices */
+	border-color:#cccccc; /* Borde del cuerpo de los iDevices */
 }
-#siteFooter{
+#pageFooter{
 	color:#666666; /* Texto del pie de página */
 }
-#siteFooter a{
-	color:#8A5F31; /* Enlaces del pie de página */
+#pageFooter a{
+	color:#A7512B; /* Enlaces del pie de página */
 }
 input.feedbackbutton{
 	background-color: #DBE992; /* Color de fondo del botón de feedback */
@@ -81,6 +80,8 @@ body{font:.75em/1.5 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;tex
 html[xmlns] .iDevice_content{display:block}
 * html .iDevice_content{height: 1%;overflow:visible}
 
+#pageFooter{font-size:.9em}
+#pageFooter p{margin:3px 0}
 /* base.css */
 .block,.feedback{padding:0}
 .feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}

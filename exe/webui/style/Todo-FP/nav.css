@@ -103,7 +103,7 @@ body{padding:0;text-align:center}
 #topPagination .pagination{border:none}
 #topPagination a{padding:0 5px;background:none}
 #topPagination a:hover{text-decoration:underline}
-#bottomPagination{padding:0 20px 0 250px}
+#pageFooter{text-align:center;margin-left:-250px}
 .iDeviceTitle{vertical-align:top}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
