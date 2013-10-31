@@ -14,7 +14,7 @@ body{
 }
 .pagination a{
 	background-color:#e6e9ed; /* Color de fondo de los enlaces Anterior/Siguiente */
-	color:#A7512B; /* Color de texto de estos enlaces */
+	color:#008F75; /* Color de texto de estos enlaces */
 }
 .pagination a:hover,.pagination a:focus{
 	background-color:#cfd9ea; /* Color de fondo de los enlaces Anterior/Siguiente al pasar sobre ellos */
@@ -26,15 +26,14 @@ body{
 }
 #siteNav a:hover,#siteNav a:focus{
 	color:#4D4D4D; /* Enlaces al pasar sobre ellos */
-	background:#eee; /* Fondo de los enlaces al pasar sobre ellos */
+	background:#E2E6E9; /* Fondo de los enlaces al pasar sobre ellos */
 }
 #siteNav ul ul a{
 	color:#555; /* Menú: enlaces de segundo nivel */
 }
 #siteNav .active{
-	color:#0460B3; /* Enlace activo en el menú principal */
+	color:#FF1E00; /* Enlace activo en el menú principal */
 	font-weight:bold; /* Peso fuente */
-	border-color:#0460B3;  /* Borde del enlace activo */
 }
 #siteNav .other-section{
 	display:none; /* Eliminar si se quiere que se muestren todos los niveles */
@@ -42,8 +41,8 @@ body{
 
 /* Otras definiciones */
 body{padding:0;text-align:center}
-#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
-#main{padding:10px 20px 10px 0;width:715px;float:right}
+#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;box-shadow:0 0 10px 0 #999;border-bottom-right-radius:8px;border-bottom-left-radius:8px}
+#main{padding:10px 20px 0 0;width:715px;float:right}
 #content{padding-bottom:11px}
 #header,#emptyHeader{height:49px;background:url(my_header.jpg) no-repeat 0 0;padding:59px 0 0 10px}
 * html #header,* html #emptyHeader{height:110px} /* IE6 */
@@ -58,17 +57,16 @@ body{padding:0;text-align:center}
 #siteNav a.main-node:hover{text-decoration:underline;background:none}
 #siteNav ul ul a{padding-left:25px;font-size:.95em}
 #siteNav ul ul ul a{padding-left:50px}
-#siteFooter{padding-left:250px}
-.no-nav #siteFooter{padding-left:20px}
+#siteFooter{padding-left:20px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
-.pagination a{padding:3px}
+.pagination a{padding:4px 7px;border-radius:5px}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
+#bottomPagination{padding:0 20px;clear:both}
 .js #bottomPagination{margin-top:15px}
 /* Pie de página e iDevices */
-#pageFooter{text-align:center;margin-left:-250px}
 .iDeviceTitle{vertical-align:top}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
@@ -78,23 +76,23 @@ html[xmlns] #content{display:block}
 
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:10px;left:10px}
-#nav-toggler a,#skipNav a{background:#e6e9ed;color:#A7512B;padding:3px}
+#nav-toggler a,#skipNav a{background:#e6e9ed;color:#FF1E00;padding:4px 7px;border-radius:5px}
 #nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
 #skipNav{z-index:100px;padding-top:10px;text-align:center}
 
 @media screen and (min-width: 701px) and (max-width: 1015px) {
     /* Fullsreen mode */
-    #content{border:none;width:100%}
+    #content{border:none;width:100%;box-shadow:none}
     #header,#emptyHeader{background-image:url(my_header_fullscreen.jpg)}
     /* Horizontal navigation */
     #main{padding-left:20px;padding-top:0;clear:both;width:auto}
     #nodeTitle{left:20px}
     #header{text-align:right;padding-right:20px}
     #siteFooter{padding-left:20px}
-    #siteNav li:hover,#siteNav li.sfhover{background:#eee}
+    #siteNav li:hover,#siteNav li.sfhover{background:#E2E6E9}
     #siteNav .other-section{display:block}
     #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
-    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#eee;margin:0;line-height:1.3em;background:#fff}
+    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#E2E6E9;margin:0;line-height:1.3em;background:#fff}
     #siteNav ul ul{line-height:1.1em}
     #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
     #siteNav a{display:block;text-decoration:none;padding:.4em 20px;border:none}
@@ -112,19 +110,20 @@ html[xmlns] #content{display:block}
 }
 
 @media all and (max-width: 700px) {
-    #content{width:100%;border:0}
+    #content{width:100%;border:0;box-shadow:none}
     #userOptionsBar,#topPagination{display:none}
     #siteNav{float:none;width:100%;padding:0}
     #main{padding:0 10px;width:auto}
     #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px}
     #nodeTitle{position:absolute;top:1px;left:10px}
     #header{text-align:right;padding-right:10px}
-    #siteFooter,.no-nav #siteFooter{padding-left:10px}
+    #siteFooter{padding-left:10px}
+    #bottomPagination{padding:0 10px}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe{max-width:100%}
     .pagination{text-align:center;height:35px;position:relative}
     .pagination .prev{position:absolute;left:0}
     .pagination .next{position:absolute;right:0}
     #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center}
-    #nav-toggler a{width:100%;display:block}    
+    #nav-toggler a{width:100%;display:block;padding:4px 0}    
 }
