@@ -70,7 +70,7 @@ class PlaceTheObjectsIdeviceInc(Idevice):
         self.negativeResponseArea = TextAreaField(x_(u"Negative Response"), x_(u"Overlays main area when player guesses wrong"), "")
         self.negativeResponseArea.idevice = self
 
-        self.partbinNumCols = TextField(x_("Number of Columns in part bin"), x_("Columns part bin"))
+        self.partbinNumCols = TextField(x_("Number of Columns in part bin"), x_("Columns part bin"), "2")
         self.partbinNumCols.idevice = self
 
         #This is a list of objects to place
@@ -109,8 +109,8 @@ class PlacableObjectField(Field):
     """
     persistenceVersion = 3
 
-    def __init_x_(self, name, idevice, instruction=x_("An object that has a correct place in the main area"), content=""):
-        Field.__init_x_(self, name, instruction)
+    def __init__(self, name, idevice, instruction=x_("An object that has a correct place in the main area"), content=""):
+        Field.__init__(self, name, instruction)
         self.mainContentField = TextAreaField(x_(u"Placable Object"), x_(u"Object to be put in place"), "")
         self.idevice = idevice
         self.mainContentField.idevice = idevice

@@ -144,8 +144,8 @@ class ClickInOrderClickableAreaField(Field):
     
     persistenceVersion = 4
 
-    def __init_x_(self, name, idevice, instruction="A place to click on in the main area", content=""):
-        Field.__init_x_(self, name, instruction)
+    def __init__(self, name, idevice, instruction="A place to click on in the main area", content=""):
+        Field.__init__(self, name, instruction)
         self.idevice = idevice
         self.message = ""
         self.textFieldNames = {\
