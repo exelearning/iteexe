@@ -33,10 +33,13 @@ EXEFIELDINFO_DESC = 1
 EXEFIELDINFO_HELP = 2
 EXEFIELDINFO_EXTRAINFODICT = 3
 
-EXEFIELD_JQUERYUI_EFFECTLIST = [ ["blind" , "Blind"], ["bounce" , "Bounce"], \
-    ["drop" , "Drop"], ["explode", "Explode"], ["fold", "Fold"], ["highlight", "Highlight"], ["puff", "Puff"], \
-    ["pulsate", "Pulsate"], ["scale", "Scale"], ["shake", "Shake"], ["size", "Size"], ["slide", "Slide"], \
-    ["transfer",  "Transfer"] ]
+EXEFIELD_JQUERYUI_EFFECTLIST = [ ["blind" , x_("Blind")], ["bounce" , x_("Bounce")], \
+    ["drop" , x_("Drop")], ["explode", x_("Explode")], ["fold", x_("Fold")], ["highlight", x_("Highlight")], ["puff", x_("Puff")], \
+    ["pulsate", x_("Pulsate")], ["scale", x_("Scale")], ["shake", x_("Shake")], ["size", x_("Size")], ["slide", x_("Slide")], \
+    ["transfer",  x_("Transfer")] ]
+
+"""Common field type name 'advanced' - make sure that we pick up this string"""
+x_("advanced")
 
 """
 Field that contains a bunch of fields with utility methods
@@ -103,7 +106,7 @@ class ExtendedFieldSet(Field):
                 html += " checked='checked' "
             html += "/>"
             
-            html += _("Show") + " " +  fieldType + " " + _("options")
+            html += _("Show") + " " +  _(fieldType) + " " + _("options")
             html += "<div id='" + divId + "' "
             if sectionChecked is False:
                 html += " style='display: none' "
