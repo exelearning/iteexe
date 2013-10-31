@@ -8,7 +8,6 @@
 	margin-left: 260px;
 	margin-top: 0px;
 	margin-right: 20px;
-	padding-bottom: 20px;
 	/*position: absolute;
 	text-align:left;*/    
 }
@@ -121,4 +120,9 @@
 	overflow:hidden;
 	clip:rect(0,0,0,0);
 	height:0;
+}
+
+#bottomPagination{
+    padding:0 20px 20px 0;
+    color:#fff;
 }

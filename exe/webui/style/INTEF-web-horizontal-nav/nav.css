@@ -77,6 +77,7 @@ body{padding:0;text-align:center}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
+#bottomPagination{padding:0 20px}
 .js #bottomPagination{margin-top:15px}
 /* Pie de página e iDevices */
 #pageFooter{text-align:center;margin-left:-250px}
@@ -118,6 +119,7 @@ html[xmlns] #content{display:block}
     #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;height:49px;font-size:1.1em}
     #nodeTitle{position:absolute;top:1px;left:10px;margin:20px 10px 0 0;font-size:1.6em}
     #header{text-align:right;padding-right:10px}
+    #bottomPagination{padding:0 10px}
     #siteFooter{padding-left:10px}
     #content .exe-col{float:none;width:100%;padding:0}
     iframe{max-width:100%}
