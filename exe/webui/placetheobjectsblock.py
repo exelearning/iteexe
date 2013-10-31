@@ -266,7 +266,7 @@ class PlaceTheObjectsBlockInc(Block):
         html += self.contentElement.renderEdit()
         html += self.mainAreaElement.renderEdit()
 
-        html +=u"<strong>Game Options</strong>"
+        html +=u"<strong>"+_("Game Options") +"</strong>"
         
         html += self.clickToStartElement.renderEdit()
         html += self.positiveResponseElement.renderEdit()
@@ -277,14 +277,14 @@ class PlaceTheObjectsBlockInc(Block):
         """
         html += "<input type='hidden' name='checktimer%s' value='true'/>" % self.id
         html += common.checkbox("enabletimer%s" % self.id, self.idevice.gameTimerShown.content, \
-                title="Enable Timer", instruction="Enable showing the timer in the game")
+                title=_("Enable Timer"), instruction=_("Enable showing the timer in the game"))
         html += self.gameTimeLimit.renderEdit()
 
         for placableObjectElement in self.placableObjectElements:
             html += placableObjectElement.renderEdit()
         
         html += "<br/>"
-        html += common.submitButton("addPlacableObject"+unicode(self.id), "Add Placable Object")
+        html += common.submitButton("addPlacableObject"+unicode(self.id), _("Add Placable Object"))
         html += "<br/>"
         
         
