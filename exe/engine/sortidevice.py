@@ -42,28 +42,28 @@ class SortIdeviceInc(Idevice):
     persistenceVersion = 3
     
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"Sort Items"), 
-                         _(u"Toughra Technologies FZ LLC."), 
-                         _(u"""Sortable list of items."""), "", "")
+        Idevice.__init__(self, x_(u"Sort Items"), 
+                         x_(u"Toughra Technologies FZ LLC."), 
+                         x_(u"""Sortable list of items."""), "", "")
         mainFieldOrder = ['title', 'instructions', 'sortorder', 'correctoverlay', 'wrongoverlay', 'correcteffect', 'wrongeffect', 'checkbuttontext', \
                          'itemwidth', 'itemheight', 'checkbuttonstyle', 'sortableitemstyle' ]
         
         mainFieldInfo = { \
-                 'title' : ['text', _('Title'), _('Title to show')], \
-                'instructions' : ['textarea', _('Instructions'), _('Instructions before sortable list')], \
-                'correctoverlay' : ['textarea', _('Correctly Sorted Overlay'), _('Shown when check is clicked and correct')], \
-                'wrongoverlay' : ['textarea', _('Wrongly Sorted Overlay'), _('Shown when check is clicked and wrong')], \
-                'correcteffect' : ['choice', _('Effect for showing correct overlay'), _('Effect showing correct overlay'), \
+                 'title' : ['text', x_('Title'), x_('Title to show')], \
+                'instructions' : ['textarea', x_('Instructions'), x_('Instructions before sortable list')], \
+                'correctoverlay' : ['textarea', x_('Correctly Sorted Overlay'), x_('Shown when check is clicked and correct')], \
+                'wrongoverlay' : ['textarea', x_('Wrongly Sorted Overlay'), x_('Shown when check is clicked and wrong')], \
+                'correcteffect' : ['choice', x_('Effect for showing correct overlay'), x_('Effect showing correct overlay'), \
                         {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ], \
-                'wrongeffect' : ['choice', _('Effect showing wrong answer overlay'), _('Effect for showing wrong overlay'), \
+                'wrongeffect' : ['choice', x_('Effect showing wrong answer overlay'), x_('Effect for showing wrong overlay'), \
                         {'choices' : EXEFIELD_JQUERYUI_EFFECTLIST } ], \
-                'checkbuttontext' : ['text', _('Text for Check Button'), _('Text for Check Button'),\
-                                     {"defaultval" : _("Check")} ], \
-                'checkbuttonstyle' : ['text', _('Check Button Style (CSS)'), _('CSS for check button'), {"defaultval":"color: white; background-color: green;", "type" : "advanced"}], \
-                'itemwidth' : ['text', _('Width of an item in the list (px)'), _('width'), {"defaultval":"300", "type" : "advanced"}], \
-                'itemheight' : ['text', _('Height of an item in the list (px)'), _('height'), {"defaultval":"80", "type" : "advanced"}], \
-                'sortableitemstyle' : ['text', _('Style (CSS) for sortable items'), _('Sortable Item CSS'), {"defaultval":"background-color: green; color: white; margin: 10px; padding: 5px;", "type" : "advanced"}],\
-                'sortorder' : ['choice', _('Sort Direction'), _('Sort Direction'),\
+                'checkbuttontext' : ['text', x_('Text for Check Button'), x_('Text for Check Button'),\
+                                     {"defaultval" : x_("Check")} ], \
+                'checkbuttonstyle' : ['text', x_('Check Button Style (CSS)'), x_('CSS for check button'), {"defaultval":"color: white; background-color: green;", "type" : "advanced"}], \
+                'itemwidth' : ['text', x_('Width of an item in the list (px)'), x_('width'), {"defaultval":"300", "type" : "advanced"}], \
+                'itemheight' : ['text', x_('Height of an item in the list (px)'), x_('height'), {"defaultval":"80", "type" : "advanced"}], \
+                'sortableitemstyle' : ['text', x_('Style (CSS) for sortable items'), x_('Sortable Item CSS'), {"defaultval":"background-color: green; color: white; margin: 10px; padding: 5px;", "type" : "advanced"}],\
+                'sortorder' : ['choice', x_('Sort Direction'), x_('Sort Direction'),\
                                {'choices' : [["ttb", "Top To Bottom"], ["ltr", "Left to Right"], ["rtl" , "Right to Left"]] } ] \
                 }
         
@@ -73,9 +73,9 @@ class SortIdeviceInc(Idevice):
         copies this from a machine running in one language to another the output
         of the dropdown menu will be localized at the time of rendering 
         """  
-        _("Top To Bottom")
-        _("Left to Right")
-        _("Right to Left")
+        x_("Top To Bottom")
+        x_("Left to Right")
+        x_("Right to Left")
 
 
         self.mainFieldSet = ExtendedFieldSet(self, mainFieldOrder, mainFieldInfo)
@@ -89,7 +89,7 @@ class SortIdeviceInc(Idevice):
         self.message = ""
 
     def addItemToSort(self):
-        newTextAreaField = TextAreaField(_("Sortable Item"), _("Text / Content of sortable item"))
+        newTextAreaField = TextAreaField(x_("Sortable Item"), x_("Text / Content of sortable item"))
         newTextAreaField.idevice = self
         self.itemsToSort.append(newTextAreaField)
         
@@ -114,8 +114,8 @@ class SortIdeviceInc(Idevice):
             
 
     def upgradeToVersion1(self):
-        self.mainFieldSet.fieldInfoDict['sortorder'] = ['choice', 'Sort Direction', 'Sort Direction',\
-                               {'choices' : [["ttb", "Top To Bottom"], ["ltr", "Left to Right"], ["rtl" , "Right to Left"]] } ]
+        self.mainFieldSet.fieldInfoDict['sortorder'] = ['choice', x_('Sort Direction'), x_('Sort Direction'),\
+                               {'choices' : [["ttb", x_("Top To Bottom")], ["ltr", x_("Left to Right")], ["rtl" , x_("Right to Left")]] } ]
         self.mainFieldSet.fieldOrder =['instructions', 'sortorder', 'correctoverlay', 'wrongoverlay', 'correcteffect', 'wrongeffect', 'checkbuttontext', \
                          'itemwidth', 'itemheight', 'checkbuttonstyle', 'sortableitemstyle' ]
         self.mainFieldSet.makeFields()
@@ -131,7 +131,7 @@ class SortIdeviceInc(Idevice):
     Added title field, changed emphasis
     """
     def upgradeToVersion3(self):
-        self.mainFieldSet.fieldInfoDict['title'] =  ['text', 'Title', 'Title to show']
+        self.mainFieldSet.fieldInfoDict['title'] =  ['text', x_('Title'), x_('Title to show')]
         self.mainFieldSet.fieldOrder.insert(0, "title")
         self.emphasis = Idevice.SomeEmphasis
 
