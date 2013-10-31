@@ -14,19 +14,19 @@ body{
 }
 .pagination a{
 	background-color:#e6e9ed; /* Color de fondo de los enlaces Anterior/Siguiente */
-	color:#A7512B; /* Color de texto de estos enlaces */
+	color:#008F75; /* Color de texto de estos enlaces */
 }
 .pagination a:hover,.pagination a:focus{
 	background-color:#cfd9ea; /* Color de fondo de los enlaces Anterior/Siguiente al pasar sobre ellos */
 	color:#263264; /* Color de texto de estos enlaces al pasar sobre ellos */
 }
 #header{
-	color:#555; /* Color del texto */
+	color:#0055A6; /* Color del texto */
 	text-shadow:1px 1px 1px #fff; /* Sombra del texto */
 }
 /* Menú */
 #siteNav, #siteNav ul {
-	border-color:#eee; /* Color de los bordes */	
+	border-color:#E2E6E9; /* Color de los bordes */	
 	background:#fff; /* Color de fondo */	
 }
 #siteNav a {
@@ -36,10 +36,10 @@ body{
 	color:#0460B3; /* Color de los enlaces del menú al pasar sobre ellos */
 }
 #siteNav .active{
-	color:#0460B3; /* Enlace activo en el menú principal */
+	color:#FF1E00; /* Enlace activo en el menú principal */
 }
 #siteNav li:hover, #siteNav li.sfhover {
-	background:#eee; /* Color de fondo de los elementos del menú al pasar sobre ellos o sus hijos */
+	background:#E2E6E9; /* Color de fondo de los elementos del menú al pasar sobre ellos o sus hijos */
 }
 #siteNav ul ul .daddy {
 	background-image:url(my_nav_arrow.gif); /* Imagen de los elementos de segundo nivel con hijos (flecha) */
@@ -47,7 +47,7 @@ body{
 
 /* Otras definiciones */
 body{padding:0;text-align:center}
-#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0}
+#content{width:985px;margin:0 auto 10px auto;text-align:left;position:relative;border-style:solid;border-width:1px;border-top:0;box-shadow:0 0 10px 0 #999;border-bottom-right-radius:8px;border-bottom-left-radius:8px}
 #main-wrapper{padding:10px 20px 0 20px}
 #main{width:100%}
 #content{padding-bottom:11px}
@@ -73,7 +73,7 @@ body{padding:0;text-align:center}
 #siteFooter{padding-left:20px}
 /* Pagination */
 .pagination{border-style:dotted;border-width:1px 0 0 0;padding-top:10px;text-align:right}
-.pagination a{padding:3px;}
+.pagination a{padding:4px 7px;border-radius:5px}
 .pagination a:hover,.pagination a:focus{text-decoration:none}
 #topPagination{position:absolute;top:0;right:20px}
 #topPagination .pagination{border:none}
@@ -89,12 +89,13 @@ html[xmlns] #content{display:block}
 
 /* Hide/Show/Skip navigation */
 #nav-toggler{margin:0;position:absolute;top:10px;left:10px;display:none}
-#nav-toggler a,#skipNav a{background:#e6e9ed;color:#A7512B;padding:3px}
+#nav-toggler a,#skipNav a{background:#e6e9ed;color:#FF1E00;padding:4px 7px;border-radius:5px}
 #nav-toggler a:hover,#nav-toggler a:focus{background-color:#cfd9ea;color:#263264;text-decoration:none}
 #skipNav{z-index:100px;padding-top:10px;text-align:center}
 
 @media all and (max-width: 700px) {
-    #content{width:100%;border:0}
+    #header{color:#666}
+    #content{width:100%;border:0;box-shadow:none}
     #userOptionsBar,#topPagination{display:none}
     #siteNav .other-section{display:none}
     #siteNav,#siteNav ul{float:none;width:100%;margin:0;line-height:1.5em}
@@ -109,7 +110,7 @@ html[xmlns] #content{display:block}
     #siteNav li ul ul{margin:0;font-size:.95em}
     #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:auto}
     #siteNav ul ul ul a{font-size:1em;padding-left:50px}
-    #siteNav a:hover,#siteNav a:focus{color:#4D4D4D;background:#eee}
+    #siteNav a:hover,#siteNav a:focus{color:#4D4D4D;background:#E2E6E9}
     #siteNav ul ul a{color:#555}
     #siteNav .main-node{font-weight:bold;font-variant:small-caps;letter-spacing:1px;font-size:1.1em}
     #siteNav a.main-node:hover{text-decoration:underline;background:none}
@@ -126,5 +127,5 @@ html[xmlns] #content{display:block}
     .pagination .prev{position:absolute;left:0}
     .pagination .next{position:absolute;right:0}
     #nav-toggler{position:relative;top:0;left:0;margin:10px 10px 5px 10px;text-align:center;display:block}
-    #nav-toggler a{width:100%;display:block}    
+    #nav-toggler a{width:100%;display:block;padding:4px 0}
 }

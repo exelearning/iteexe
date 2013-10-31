@@ -11,31 +11,32 @@ body{
 	background:#ffffff; /* Color de fondo */
 }
 a{
-	color:#004f96; /* Enlaces */
+	color:#0055A6; /* Enlaces */
 }
 #header{
 	color:#666666; /* Título del proyecto */
 }
 #nodeTitle{
-	color:#004f96; /* Título de cada página */
+	color:#008F75; /* Título de cada página */
+    text-shadow:1px 1px 1px #ffffff; /* Sombra  */
 }
 #main #nodeDecoration{
 	border-color:#E7EBEE; /* Borde del título de cada página */
 	background-color:#DEE5EB; /* Color de fondo */
 }
 .iDeviceTitle{
-	color: #0066AB; /* Títulos de los iDevices */
+	color: #8A5F31; /* Títulos de los iDevices */
 }
 .iDevice_inner{
-	background-color:#F6FCFE; /* Fondo del cuerpo del iDevice */
+	background-color:#FAF8F2; /* Fondo del cuerpo del iDevice */
 	color:#4d4d4d; /* Texto de los iDevices */
-	border-color:#cccccc; /* Borde del cuerpo de los iDevices */
+	border-color:#EBE3CC; /* Borde del cuerpo de los iDevices */
 }
 #siteFooter{
 	color:#666666; /* Texto del pie de página */
 }
 #siteFooter a{
-	color:#A7512B; /* Enlaces del pie de página */
+	color:#FF4C33; /* Enlaces del pie de página */
 }
 input.feedbackbutton{
 	background-color: #DBE992; /* Color de fondo del botón de feedback */
