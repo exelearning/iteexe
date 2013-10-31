@@ -677,7 +677,7 @@ class ImageElement(Element):
         html += u"value=\"%s\" " % self.field.width
         html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
         html += u"size=\"4\"/>px "
-        html += u"<b>by</b> \n"
+        html += u"<b>" + _("by") + "</b> \n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" "
         html += u"name=\"height"+self.id+"\" "
