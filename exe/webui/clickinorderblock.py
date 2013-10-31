@@ -317,7 +317,7 @@ class ClickInOrderBlockInc(Block):
         divId = "fieldtype_advanced"  + self.id
         html += "<input name='showbox" + divId + "' type='checkbox' onchange='$(\"#" + divId + "\").toggle()'/>"
         
-        html += _("Show") + " Advanced " + _("options") + "<br/>"
+        html += _("Show advanced options") + "<br/>"
         html += "<div id='" + divId + "' style='display: none' "
         html += ">"
             

@@ -106,7 +106,7 @@ class ExtendedFieldSet(Field):
                 html += " checked='checked' "
             html += "/>"
             
-            html += _("Show") + " " +  _(fieldType) + " " + _("options")
+            html += _("Show %s options") % _(fieldType) 
             html += "<div id='" + divId + "' "
             if sectionChecked is False:
                 html += " style='display: none' "
