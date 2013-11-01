@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  exe_el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-30 17:18+0100\n"
+"POT-Creation-Date: 2013-11-01 19:32+0100\n"
 "PO-Revision-Date: 2008-10-24 00:19+1300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language-Team: <en@li.org>\n"
@@ -397,6 +397,7 @@ msgstr ""
 #: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
 #: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
 #: exe/engine/memorymatchidevice.py:113 exe/engine/sortidevice.py:52
+#: exe/engine/sortidevice.py:134
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
@@ -514,20 +515,20 @@ msgstr ""
 msgid "Style of timer (CSS)"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:100
+#: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:100
 msgid "Dont Shuffle"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:101
+#: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:101
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shuffle"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:104
+#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
 msgid "No Timer"
 msgstr ""
 
-#: exe/engine/clickinorderidevice.py:105
+#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
 msgstr ""
 
@@ -679,10 +680,11 @@ msgstr ""
 " ώστε να σιγουρευτείτε ότι δεν υπάρχουν εκπλήξεις!  </p>  </dd></dl>"
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
-#: exe/engine/clozelangfpdidevice.py:120 exe/engine/hangmanidevice.py:60
-#: exe/engine/listaidevice.py:129 exe/engine/memorymatchidevice.py:55
-#: exe/engine/placetheobjectsidevice.py:49 exe/engine/sortidevice.py:53
-#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
+#: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
+#: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
+#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:49
+#: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
+#: exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:469
 msgid "Instructions"
@@ -1006,36 +1008,92 @@ msgid ""
 " blank."
 msgstr "Δώστε μια συμβουλή εδώ. Αν δεν θέλετε, αφήστε το πεδίο κενό."
 
-#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
-#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
-msgid "Show"
+#: exe/engine/extendedfieldengine.py:36
+msgid "Blind"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
-#: exe/webui/hangmanblock.py:327
-msgid "options"
+#: exe/engine/extendedfieldengine.py:36
+msgid "Bounce"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:265
+#: exe/engine/extendedfieldengine.py:37
+msgid "Drop"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Explode"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Fold"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Highlight"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Puff"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+msgid "Pulsate"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+msgid "Shake"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+msgid "Slide"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:72
+#: exe/jsui/scripts/app/view/forms/LomSections.js:96
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Size"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Scale"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:39
+msgid "Transfer"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:42
+msgid "advanced"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:109
+#, python-format
+msgid "Show %s options"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:268
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:267
+#: exe/engine/extendedfieldengine.py:270
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:269 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:272 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Αποφόρτωση"
 
-#: exe/engine/extendedfieldengine.py:284 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:287 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Διαγραφή Αρχείου"
 
-#: exe/engine/extendedfieldengine.py:535
+#: exe/engine/extendedfieldengine.py:538
 msgid "is not a valid number - please try again<br/>"
 msgstr ""
 
@@ -1276,6 +1334,28 @@ msgstr ""
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
+#: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
+msgid "Yes"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
+#: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
+msgid "No"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
+msgid "Show description and link"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
+msgid "Show Description"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:69
+msgid "Intro Text"
 msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
@@ -1604,6 +1684,10 @@ msgstr ""
 
 #: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
 msgid "Player will see this message when they guess all words correctly"
+msgstr ""
+
+#: exe/engine/hangmanidevice.py:142
+msgid "chance"
 msgstr ""
 
 #: exe/engine/hangmanidevice.py:148
@@ -2310,6 +2394,10 @@ msgstr ""
 msgid "Timer CSS"
 msgstr ""
 
+#: exe/engine/memorymatchidevice.py:145
+msgid "Memory Match Pair Field"
+msgstr ""
+
 #: exe/engine/memorymatchidevice.py:150
 msgid "Match Tile 1"
 msgstr ""
@@ -2530,8 +2618,44 @@ msgstr ""
 msgid "Even if there is no time limit, show the timer..."
 msgstr ""
 
+#: exe/engine/placetheobjectsidevice.py:66
+msgid "Message to click game to start"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:66
+msgid "This will when clicked start the game"
+msgstr ""
+
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Positive Response"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:68
+msgid "Overlays main area when player correctly places object"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:70
+msgid "Negative Response"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:70
+msgid "Overlays main area when player guesses wrong"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:73
+msgid "Number of Columns in part bin"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:73
+msgid "Columns part bin"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:84
+msgid "Object to Place"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:112
+msgid "An object that has a correct place in the main area"
 msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:114
@@ -2800,7 +2924,7 @@ msgstr ""
 msgid "Sortable list of items."
 msgstr ""
 
-#: exe/engine/sortidevice.py:52
+#: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 msgid "Title to show"
 msgstr ""
 
@@ -2880,15 +3004,15 @@ msgstr ""
 msgid "Sortable Item CSS"
 msgstr ""
 
-#: exe/engine/sortidevice.py:66
+#: exe/engine/sortidevice.py:66 exe/engine/sortidevice.py:117
 msgid "Sort Direction"
 msgstr ""
 
-#: exe/engine/sortidevice.py:76
+#: exe/engine/sortidevice.py:76 exe/engine/sortidevice.py:118
 msgid "Top To Bottom"
 msgstr ""
 
-#: exe/engine/sortidevice.py:77
+#: exe/engine/sortidevice.py:77 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:57
@@ -2898,7 +3022,7 @@ msgstr ""
 msgid "Left to Right"
 msgstr ""
 
-#: exe/engine/sortidevice.py:78
+#: exe/engine/sortidevice.py:78 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:56
@@ -3238,7 +3362,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:597 exe/export/imsexport.py:510
+#: exe/export/epub3export.py:575 exe/export/imsexport.py:510
 #: exe/export/scormexport.py:827 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
@@ -3252,11 +3376,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "Αδειοδοτημένο υπό τους όρους"
 
-#: exe/export/scormexport.py:543 exe/export/websitepage.py:309
+#: exe/export/scormexport.py:543 exe/export/websitepage.py:313
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: exe/export/scormexport.py:544 exe/export/websitepage.py:315
+#: exe/export/scormexport.py:544 exe/export/websitepage.py:319
 msgid "Next"
 msgstr "Επόμενο"
 
@@ -3264,7 +3388,7 @@ msgstr "Επόμενο"
 msgid "You can close this window"
 msgstr ""
 
-#: exe/export/websitepage.py:133
+#: exe/export/websitepage.py:134
 msgid "Skip navigation"
 msgstr ""
 
@@ -3819,13 +3943,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
 msgstr "Όνομα"
-
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:72
-#: exe/jsui/scripts/app/view/forms/LomSections.js:96
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Size"
-msgstr ""
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -6791,6 +6908,10 @@ msgid ""
 "        "
 msgstr ""
 
+#: exe/webui/clickinorderblock.py:320
+msgid "Show advanced options"
+msgstr ""
+
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
 msgstr ""
@@ -6815,6 +6936,10 @@ msgstr ""
 
 #: exe/webui/clozelangfpdblock.py:105
 msgid "Now It's Your Turn"
+msgstr ""
+
+#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
+msgid "Show"
 msgstr ""
 
 #: exe/webui/common.py:182 exe/webui/reflectionblock.py:120
@@ -7120,6 +7245,10 @@ msgstr "Προσθήκη εικόνας"
 msgid "Display as:"
 msgstr "Εμφάνιση ως:"
 
+#: exe/webui/element.py:680
+msgid "by"
+msgstr ""
+
 #: exe/webui/element.py:687 exe/webui/element.py:1106
 msgid "blank for original size"
 msgstr "κενό για το αρχικό μέγεθος"
@@ -7340,6 +7469,10 @@ msgstr ""
 msgid " Advanced "
 msgstr ""
 
+#: exe/webui/hangmanblock.py:327
+msgid "options"
+msgstr ""
+
 #: exe/webui/hangmanblock.py:348
 msgid "Remove This Life"
 msgstr ""
@@ -7456,6 +7589,22 @@ msgstr ""
 
 #: exe/webui/parasabermasfpdblock.py:64
 msgid "A Step Ahead"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:269
+msgid "Game Options"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:280
+msgid "Enable Timer"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:280
+msgid "Enable showing the timer in the game"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:287
+msgid "Add Placable Object"
 msgstr ""
 
 #: exe/webui/preferencespage.py:145
@@ -9263,10 +9412,6 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Align"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Scale"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1

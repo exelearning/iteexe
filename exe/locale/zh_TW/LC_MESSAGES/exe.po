@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-30 17:18+0100\n"
+"POT-Creation-Date: 2013-11-01 19:32+0100\n"
 "PO-Revision-Date: 2013-10-23 22:26+0800\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -349,6 +349,7 @@ msgstr ""
 #: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
 #: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
 #: exe/engine/memorymatchidevice.py:113 exe/engine/sortidevice.py:52
+#: exe/engine/sortidevice.py:134
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
@@ -466,20 +467,20 @@ msgstr "計時器元素樣式"
 msgid "Style of timer (CSS)"
 msgstr "計時器樣式（CSS）"
 
-#: exe/engine/clickinorderidevice.py:100
+#: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:100
 msgid "Dont Shuffle"
 msgstr "不要隨機播放"
 
-#: exe/engine/clickinorderidevice.py:101
+#: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:101
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Shuffle"
 msgstr "隨機播放"
 
-#: exe/engine/clickinorderidevice.py:104
+#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
 msgid "No Timer"
 msgstr "沒有計時器"
 
-#: exe/engine/clickinorderidevice.py:105
+#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
 msgstr ""
 
@@ -603,10 +604,11 @@ msgid ""
 msgstr ""
 
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
-#: exe/engine/clozelangfpdidevice.py:120 exe/engine/hangmanidevice.py:60
-#: exe/engine/listaidevice.py:129 exe/engine/memorymatchidevice.py:55
-#: exe/engine/placetheobjectsidevice.py:49 exe/engine/sortidevice.py:53
-#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
+#: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
+#: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
+#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:49
+#: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
+#: exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:469
 msgid "Instructions"
@@ -887,36 +889,92 @@ msgid ""
 " blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
-#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
-#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
-msgid "Show"
-msgstr "顯示"
+#: exe/engine/extendedfieldengine.py:36
+msgid "Blind"
+msgstr ""
 
-#: exe/engine/extendedfieldengine.py:106 exe/webui/clickinorderblock.py:320
-#: exe/webui/hangmanblock.py:327
-msgid "options"
-msgstr "選項"
+#: exe/engine/extendedfieldengine.py:36
+msgid "Bounce"
+msgstr ""
 
-#: exe/engine/extendedfieldengine.py:265
+#: exe/engine/extendedfieldengine.py:37
+msgid "Drop"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Explode"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Fold"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Highlight"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:37
+msgid "Puff"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+msgid "Pulsate"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+msgid "Shake"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+msgid "Slide"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:38
+#: exe/jsui/scripts/app/view/filepicker/FileList.js:72
+#: exe/jsui/scripts/app/view/forms/LomSections.js:96
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "Size"
+msgstr "大小"
+
+#: exe/engine/extendedfieldengine.py:38
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
+msgid "Scale"
+msgstr "調整大小"
+
+#: exe/engine/extendedfieldengine.py:39
+msgid "Transfer"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:42
+msgid "advanced"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:109
+#, python-format
+msgid "Show %s options"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:268
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "瀏覽"
 
-#: exe/engine/extendedfieldengine.py:267
+#: exe/engine/extendedfieldengine.py:270
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "取代"
 
-#: exe/engine/extendedfieldengine.py:269 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:272 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "上傳"
 
-#: exe/engine/extendedfieldengine.py:284 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:287 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "刪除檔案"
 
-#: exe/engine/extendedfieldengine.py:535
+#: exe/engine/extendedfieldengine.py:538
 msgid "is not a valid number - please try again<br/>"
 msgstr "不是正確的數字 - 請再試一次<br/>"
 
@@ -1104,6 +1162,28 @@ msgstr "Toughra Technologies FZ LLC."
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
 msgstr "檔案附件 idevice。"
+
+#: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
+#: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
+msgid "Yes"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
+#: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
+msgid "No"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
+msgid "Show description and link"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
+msgid "Show Description"
+msgstr ""
+
+#: exe/engine/fileattachidevice.py:69
+msgid "Intro Text"
+msgstr ""
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
@@ -1396,6 +1476,10 @@ msgstr "遊戲贏了的訊息"
 #: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
 msgid "Player will see this message when they guess all words correctly"
 msgstr "玩家猜對所有單字時會看到的訊息"
+
+#: exe/engine/hangmanidevice.py:142
+msgid "chance"
+msgstr ""
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word to Guess"
@@ -1975,6 +2059,10 @@ msgstr "計時器欄位 CSS"
 msgid "Timer CSS"
 msgstr "計時器 CSS"
 
+#: exe/engine/memorymatchidevice.py:145
+msgid "Memory Match Pair Field"
+msgstr ""
+
 #: exe/engine/memorymatchidevice.py:150
 msgid "Match Tile 1"
 msgstr "配對牌 1"
@@ -2184,9 +2272,45 @@ msgstr "顯示計時器"
 msgid "Even if there is no time limit, show the timer..."
 msgstr "即使沒有時間限制也顯示計時器。"
 
+#: exe/engine/placetheobjectsidevice.py:66
+msgid "Message to click game to start"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:66
+msgid "This will when clicked start the game"
+msgstr ""
+
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Positive Response"
 msgstr "正向回應"
+
+#: exe/engine/placetheobjectsidevice.py:68
+msgid "Overlays main area when player correctly places object"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:70
+msgid "Negative Response"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:70
+msgid "Overlays main area when player guesses wrong"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:73
+msgid "Number of Columns in part bin"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:73
+msgid "Columns part bin"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:84
+msgid "Object to Place"
+msgstr ""
+
+#: exe/engine/placetheobjectsidevice.py:112
+msgid "An object that has a correct place in the main area"
+msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Placable Object"
@@ -2413,7 +2537,7 @@ msgstr "項目排序"
 msgid "Sortable list of items."
 msgstr "項目的可排序清單。"
 
-#: exe/engine/sortidevice.py:52
+#: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 msgid "Title to show"
 msgstr "要顯示的標題"
 
@@ -2493,15 +2617,15 @@ msgstr "可排序項目的樣式（CSS）"
 msgid "Sortable Item CSS"
 msgstr "可排序項目 CSS"
 
-#: exe/engine/sortidevice.py:66
+#: exe/engine/sortidevice.py:66 exe/engine/sortidevice.py:117
 msgid "Sort Direction"
 msgstr "排序方向"
 
-#: exe/engine/sortidevice.py:76
+#: exe/engine/sortidevice.py:76 exe/engine/sortidevice.py:118
 msgid "Top To Bottom"
 msgstr "上到下"
 
-#: exe/engine/sortidevice.py:77
+#: exe/engine/sortidevice.py:77 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:57
@@ -2511,7 +2635,7 @@ msgstr "上到下"
 msgid "Left to Right"
 msgstr "左到右"
 
-#: exe/engine/sortidevice.py:78
+#: exe/engine/sortidevice.py:78 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:56
@@ -2828,7 +2952,7 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
-#: exe/export/epub3export.py:597 exe/export/imsexport.py:510
+#: exe/export/epub3export.py:575 exe/export/imsexport.py:510
 #: exe/export/scormexport.py:827 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
@@ -2842,11 +2966,11 @@ msgstr ""
 msgid "Licensed under the"
 msgstr "授權條款："
 
-#: exe/export/scormexport.py:543 exe/export/websitepage.py:309
+#: exe/export/scormexport.py:543 exe/export/websitepage.py:313
 msgid "Previous"
 msgstr "前一頁"
 
-#: exe/export/scormexport.py:544 exe/export/websitepage.py:315
+#: exe/export/scormexport.py:544 exe/export/websitepage.py:319
 msgid "Next"
 msgstr "下一頁"
 
@@ -2854,7 +2978,7 @@ msgstr "下一頁"
 msgid "You can close this window"
 msgstr "您可以關閉此視窗"
 
-#: exe/export/websitepage.py:133
+#: exe/export/websitepage.py:134
 msgid "Skip navigation"
 msgstr "跳過導覽"
 
@@ -3403,13 +3527,6 @@ msgstr "檔案已存在。您要取代它嗎？"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Name"
 msgstr "名稱"
-
-#: exe/jsui/scripts/app/view/filepicker/FileList.js:72
-#: exe/jsui/scripts/app/view/forms/LomSections.js:96
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "Size"
-msgstr "大小"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:95
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:62
@@ -6368,6 +6485,10 @@ msgid ""
 "        "
 msgstr ""
 
+#: exe/webui/clickinorderblock.py:320
+msgid "Show advanced options"
+msgstr ""
+
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
 msgstr "<h2>可點擊區域</h2>"
@@ -6393,6 +6514,10 @@ msgstr "答案"
 #: exe/webui/clozelangfpdblock.py:105
 msgid "Now It's Your Turn"
 msgstr "輪到您了"
+
+#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
+msgid "Show"
+msgstr "顯示"
 
 #: exe/webui/common.py:182 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
@@ -6678,6 +6803,10 @@ msgstr "新增影像"
 msgid "Display as:"
 msgstr "顯示為："
 
+#: exe/webui/element.py:680
+msgid "by"
+msgstr ""
+
 #: exe/webui/element.py:687 exe/webui/element.py:1106
 msgid "blank for original size"
 msgstr "原來大小的空白"
@@ -6898,6 +7027,10 @@ msgstr ""
 msgid " Advanced "
 msgstr " 進階 "
 
+#: exe/webui/hangmanblock.py:327
+msgid "options"
+msgstr "選項"
+
 #: exe/webui/hangmanblock.py:348
 msgid "Remove This Life"
 msgstr "移除此生命"
@@ -7015,6 +7148,22 @@ msgstr "老師指導方針"
 #: exe/webui/parasabermasfpdblock.py:64
 msgid "A Step Ahead"
 msgstr "領先一步"
+
+#: exe/webui/placetheobjectsblock.py:269
+msgid "Game Options"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:280
+msgid "Enable Timer"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:280
+msgid "Enable showing the timer in the game"
+msgstr ""
+
+#: exe/webui/placetheobjectsblock.py:287
+msgid "Add Placable Object"
+msgstr ""
 
 #: exe/webui/preferencespage.py:145
 msgid "Default browser in your system"
@@ -8824,10 +8973,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Align"
 msgstr "對齊"
-
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
-msgid "Scale"
-msgstr "調整大小"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Quality"
