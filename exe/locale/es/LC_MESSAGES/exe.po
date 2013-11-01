@@ -1,5 +1,6 @@
 # eXeLearning Spanish PO file
-# Copyright (C) 2004-2013 EXELearning.org
+# Copyright (C) 2004-2011 EXELearning.org
+# Copyright (C) 2001-2013 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>\n", 2009.
@@ -9,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 19:32+0100\n"
-"PO-Revision-Date: 2013-10-30 17:35+0100\n"
+"PO-Revision-Date: 2013-11-01 20:03+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -1046,27 +1047,27 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
-msgstr ""
+msgstr "Cortinilla"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Bounce"
-msgstr ""
+msgstr "Rebote"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Drop"
-msgstr ""
+msgstr "En caída"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Explode"
-msgstr ""
+msgstr "Explosión"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Fold"
-msgstr ""
+msgstr "Doblez"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Highlight"
-msgstr ""
+msgstr "Foco"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Puff"
@@ -1074,15 +1075,15 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Pulsate"
-msgstr ""
+msgstr "Pulsación"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Shake"
-msgstr ""
+msgstr "Sacudida"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Slide"
-msgstr ""
+msgstr "Deslizamiento"
 
 #: exe/engine/extendedfieldengine.py:38
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:72
@@ -1099,16 +1100,16 @@ msgstr "Escalar"
 
 #: exe/engine/extendedfieldengine.py:39
 msgid "Transfer"
-msgstr ""
+msgstr "Transferencia"
 
 #: exe/engine/extendedfieldengine.py:42
 msgid "advanced"
-msgstr ""
+msgstr "avanzado"
 
 #: exe/engine/extendedfieldengine.py:109
 #, python-format
 msgid "Show %s options"
-msgstr ""
+msgstr "Mostrar opciones %s"
 
 #: exe/engine/extendedfieldengine.py:268
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -1371,24 +1372,24 @@ msgstr "iDevice Ficheros adjuntos."
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
 msgid "Show description and link"
-msgstr ""
+msgstr "Mostrar la descripción y el enlace"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
 msgid "Show Description"
-msgstr ""
+msgstr "Mostrar la descripción"
 
 #: exe/engine/fileattachidevice.py:69
 msgid "Intro Text"
-msgstr ""
+msgstr "Texto introductorio"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
@@ -2462,7 +2463,7 @@ msgstr "CSS del cronómetro"
 
 #: exe/engine/memorymatchidevice.py:145
 msgid "Memory Match Pair Field"
-msgstr ""
+msgstr "Campo de las parejas del emparejamiento de memoria"
 
 #: exe/engine/memorymatchidevice.py:150
 msgid "Match Tile 1"
@@ -2695,11 +2696,11 @@ msgstr "Aunque no hay límite de tiempo, mostrar el cronómetro..."
 
 #: exe/engine/placetheobjectsidevice.py:66
 msgid "Message to click game to start"
-msgstr ""
+msgstr "Mensaje sobre el que pulsar para empezar el juego"
 
 #: exe/engine/placetheobjectsidevice.py:66
 msgid "This will when clicked start the game"
-msgstr ""
+msgstr "Cuando se haga clic sobre éste, se iniciará el juego"
 
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Positive Response"
@@ -2707,15 +2708,15 @@ msgstr "Respuesta positiva"
 
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Overlays main area when player correctly places object"
-msgstr ""
+msgstr "Cubre el área principal cuando el jugador sitúa el objeto correctamente"
 
 #: exe/engine/placetheobjectsidevice.py:70
 msgid "Negative Response"
-msgstr ""
+msgstr "Respuesta negativa"
 
 #: exe/engine/placetheobjectsidevice.py:70
 msgid "Overlays main area when player guesses wrong"
-msgstr ""
+msgstr "Cubre el área principal cuando el jugador se equivoca en su intento"
 
 #: exe/engine/placetheobjectsidevice.py:73
 msgid "Number of Columns in part bin"
@@ -2727,15 +2728,15 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:84
 msgid "Object to Place"
-msgstr ""
+msgstr "Objeto que situar"
 
 #: exe/engine/placetheobjectsidevice.py:112
 msgid "An object that has a correct place in the main area"
-msgstr ""
+msgstr "Un objeto que ocupa su sitio correcto en el área principal"
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Placable Object"
-msgstr "Objeto situable"
+msgstr "Objeto que hay que situar"
 
 #: exe/engine/placetheobjectsidevice.py:114
 msgid "Object to be put in place"
@@ -7079,7 +7080,7 @@ msgstr ""
 
 #: exe/webui/clickinorderblock.py:320
 msgid "Show advanced options"
-msgstr ""
+msgstr "Mostrar las opciones avanzadas"
 
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
@@ -7414,7 +7415,7 @@ msgstr "Mostrar como:"
 
 #: exe/webui/element.py:680
 msgid "by"
-msgstr ""
+msgstr "por"
 
 #: exe/webui/element.py:687 exe/webui/element.py:1106
 msgid "blank for original size"
@@ -7775,19 +7776,19 @@ msgstr "Para saber más"
 
 #: exe/webui/placetheobjectsblock.py:269
 msgid "Game Options"
-msgstr ""
+msgstr "Opciones del juego"
 
 #: exe/webui/placetheobjectsblock.py:280
 msgid "Enable Timer"
-msgstr ""
+msgstr "Usar cronómetro"
 
 #: exe/webui/placetheobjectsblock.py:280
 msgid "Enable showing the timer in the game"
-msgstr ""
+msgstr "Mostrar el cronómetro en el juego"
 
 #: exe/webui/placetheobjectsblock.py:287
 msgid "Add Placable Object"
-msgstr ""
+msgstr "Añadir un objeto que situar"
 
 #: exe/webui/preferencespage.py:145
 msgid "Default browser in your system"
@@ -10842,4 +10843,3 @@ msgstr ""
 
 #~ msgid "IDevice Icon"
 #~ msgstr "Icono del iDevice"
-
