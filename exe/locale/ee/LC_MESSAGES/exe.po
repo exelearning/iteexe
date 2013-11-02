@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 19:32+0100\n"
+"POT-Creation-Date: 2013-11-02 23:59+0100\n"
 "PO-Revision-Date: 2006-08-13 00:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: GOUNH KPODO <Dicta5@yahoo.com>\n"
@@ -931,36 +931,31 @@ msgstr ""
 msgid "Transfer"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:42
-msgid "advanced"
+#: exe/engine/extendedfieldengine.py:45
+msgid "Show Advanced Options"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:109
-#, python-format
-msgid "Show %s options"
-msgstr ""
-
-#: exe/engine/extendedfieldengine.py:268
+#: exe/engine/extendedfieldengine.py:273
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:270
+#: exe/engine/extendedfieldengine.py:275
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:272 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:277 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 #, fuzzy
 msgid "Upload"
 msgstr "Doe  ɖe dzi"
 
-#: exe/engine/extendedfieldengine.py:287 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:292 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Delete Nuwodzraɖoƒe"
 
-#: exe/engine/extendedfieldengine.py:538
+#: exe/engine/extendedfieldengine.py:543
 msgid "is not a valid number - please try again<br/>"
 msgstr ""
 
@@ -10197,5 +10192,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "IDevice Icon"
+#~ msgstr ""
+
+#~ msgid "advanced"
+#~ msgstr ""
+
+#~ msgid "Show %s options"
 #~ msgstr ""
 

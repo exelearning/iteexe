@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2013-11-01 19:32+0100\n"
+"POT-Creation-Date: 2013-11-02 23:59+0100\n"
 "PO-Revision-Date: 2013-11-02 19:44+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
@@ -1102,35 +1102,30 @@ msgstr "Escalar"
 msgid "Transfer"
 msgstr "Transferencia"
 
-#: exe/engine/extendedfieldengine.py:42
-msgid "advanced"
-msgstr "avanzadas"
+#: exe/engine/extendedfieldengine.py:45
+msgid "Show Advanced Options"
+msgstr ""
 
-#: exe/engine/extendedfieldengine.py:109
-#, python-format
-msgid "Show %s options"
-msgstr "Mostrar opciones %s"
-
-#: exe/engine/extendedfieldengine.py:268
+#: exe/engine/extendedfieldengine.py:273
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "Examinar"
 
-#: exe/engine/extendedfieldengine.py:270
+#: exe/engine/extendedfieldengine.py:275
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "Reemplazar"
 
-#: exe/engine/extendedfieldengine.py:272 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:277 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Cargar"
 
-#: exe/engine/extendedfieldengine.py:287 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:292 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Borrar el archivo"
 
-#: exe/engine/extendedfieldengine.py:538
+#: exe/engine/extendedfieldengine.py:543
 msgid "is not a valid number - please try again<br/>"
 msgstr "no es un número válido - por favor vuelva a intentarlo<br/>"
 
@@ -3230,9 +3225,12 @@ msgstr ""
 "<p>El iDevice Wikipedia permite que usted encuentre \n"
 "contenido existente en Wikipedia y descargue este contenido a eXe. \n"
 "El iDevice artículo de la wikipedia toma una copia del contenido del \n"
-" artículo. Los cambios posteriores que se produzcan en la Wikipedia no se reflejarán automáticamente en la copia \n"
-" del artículo en eXe, será necesario realizar una nueva copia del artículo. Asímismo, \n"
-"los cambios realizados en eXe no producirán efectos en los artículos de la Wikipedia. </p> <p>El Contenido de Wikipedia \n"
+" artículo. Los cambios posteriores que se produzcan en la Wikipedia no se"
+" reflejarán automáticamente en la copia \n"
+" del artículo en eXe, será necesario realizar una nueva copia del "
+"artículo. Asímismo, \n"
+"los cambios realizados en eXe no producirán efectos en los artículos de "
+"la Wikipedia. </p> <p>El Contenido de Wikipedia \n"
 "esta protegido por la licencia de documentación libre de GNU.</p>"
 
 #: exe/engine/wikipediaidevice.py:65
@@ -10840,3 +10838,10 @@ msgstr ""
 
 #~ msgid "IDevice Icon"
 #~ msgstr "Icono del iDevice"
+
+#~ msgid "advanced"
+#~ msgstr "avanzadas"
+
+#~ msgid "Show %s options"
+#~ msgstr "Mostrar opciones %s"
+

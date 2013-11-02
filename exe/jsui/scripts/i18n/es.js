@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-11-01 19:32+0100\nPO-Revision-Date: 2013-11-02 19:44+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-11-02 19:44+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Xhosa ": "Xhosa ", 
@@ -250,7 +250,6 @@ translations = {
  "Inserting %s": "Insertando %s", 
  "Scratch": "Scratch", 
  "Float": "Imagen flotante", 
- "Show %s options": "Mostrar opciones %s", 
  "Autoevaluacion": "Autoevaluaci\u00f3n", 
  "No Shadow": "Sin sombra", 
  "This is the main image where the user will drag \/ drop items to": "Esta es la imagen principal a la que el usuario arrastrar\u00e1 o sobre la que soltar\u00e1 objetos", 
@@ -393,7 +392,6 @@ translations = {
  "Wink": "Gui\u00f1o", 
  "Situation is an iDevice that provides the student with a story that will guide her along the learning process.": "Caso pr\u00e1ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar\u00e1 a trav\u00e9s de su aprendizaje.", 
  "Sorry, this URL is unreachable": "Error, no se ha podido abrir la URL", 
- "advanced": "avanzadas", 
  "Cut (Ctrl+X)": "Cortar", 
  "Topic": "Tema", 
  "Do you want to use the WYSIWYG mode for this textarea?": " \u00bfDesea utilizar el modo WYSIWYG para esta caja de texto?", 

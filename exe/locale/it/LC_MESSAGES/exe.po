@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 19:32+0100\n"
+"POT-Creation-Date: 2013-11-02 23:59+0100\n"
 "PO-Revision-Date: 2013-10-19 17:54+0100\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language-Team: Italian <primiani@dag.it>\n"
@@ -1094,35 +1094,30 @@ msgstr "Scala"
 msgid "Transfer"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:42
-msgid "advanced"
+#: exe/engine/extendedfieldengine.py:45
+msgid "Show Advanced Options"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:109
-#, python-format
-msgid "Show %s options"
-msgstr ""
-
-#: exe/engine/extendedfieldengine.py:268
+#: exe/engine/extendedfieldengine.py:273
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "Sfoglia"
 
-#: exe/engine/extendedfieldengine.py:270
+#: exe/engine/extendedfieldengine.py:275
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "Sostituisci"
 
-#: exe/engine/extendedfieldengine.py:272 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:277 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Carica"
 
-#: exe/engine/extendedfieldengine.py:287 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:292 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Elimina file"
 
-#: exe/engine/extendedfieldengine.py:538
+#: exe/engine/extendedfieldengine.py:543
 msgid "is not a valid number - please try again<br/>"
 msgstr ""
 
@@ -10790,4 +10785,10 @@ msgstr ""
 
 #~ msgid "IDevice Icon"
 #~ msgstr "Icona iDevice"
+
+#~ msgid "advanced"
+#~ msgstr ""
+
+#~ msgid "Show %s options"
+#~ msgstr ""
 
