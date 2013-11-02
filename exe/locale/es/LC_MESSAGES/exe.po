@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 19:32+0100\n"
-"PO-Revision-Date: 2013-11-01 20:03+0100\n"
+"PO-Revision-Date: 2013-11-02 19:44+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -563,11 +563,11 @@ msgstr "Modo cronómetro"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Shuffle Questions"
-msgstr "Aleatorizar el orden de las preguntas"
+msgstr "Hacer aleatorio el orden de las preguntas"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Randomize question order or not"
-msgstr "Aleatorizar o no el orden de las preguntas"
+msgstr "Hacer o no aleatorio el orden de las preguntas"
 
 #: exe/engine/clickinorderidevice.py:108
 msgid "Use a Timer"
@@ -1071,7 +1071,7 @@ msgstr "Foco"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Puff"
-msgstr ""
+msgstr "Reventón"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Pulsate"
@@ -1104,7 +1104,7 @@ msgstr "Transferencia"
 
 #: exe/engine/extendedfieldengine.py:42
 msgid "advanced"
-msgstr "avanzado"
+msgstr "avanzadas"
 
 #: exe/engine/extendedfieldengine.py:109
 #, python-format
@@ -1720,7 +1720,7 @@ msgstr "El jugador verá este mensaje cuando acierte al adivinar todas las palab
 
 #: exe/engine/hangmanidevice.py:142
 msgid "chance"
-msgstr ""
+msgstr "intento"
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word to Guess"
@@ -2720,11 +2720,11 @@ msgstr "Cubre el área principal cuando el jugador se equivoca en su intento"
 
 #: exe/engine/placetheobjectsidevice.py:73
 msgid "Number of Columns in part bin"
-msgstr ""
+msgstr "Nḿero de columnas en la caja de piezas"
 
 #: exe/engine/placetheobjectsidevice.py:73
 msgid "Columns part bin"
-msgstr ""
+msgstr "Columnas de la caja de piezas"
 
 #: exe/engine/placetheobjectsidevice.py:84
 msgid "Object to Place"
@@ -3228,14 +3228,11 @@ msgid ""
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
 "<p>El iDevice Wikipedia permite que usted encuentre \n"
-"contenido existente en Wikipedia y descargue este contenido a Exe. \n"
+"contenido existente en Wikipedia y descargue este contenido a eXe. \n"
 "El iDevice artículo de la wikipedia toma una copia del contenido del \n"
-" artículo. Cambios generados en Wikipedia no son automáticamente "
-"actualizados cuando se copia \n"
-" el artículo en eXe, una nueva copia de ese artículo debe ser tomada. "
-"Asimismo, \n"
-"cambios realizados en eXe no producirán efectos en los artículos de "
-"Wikipedia. </p> <p>El Contenido de Wikipedia \n"
+" artículo. Los cambios posteriores que se produzcan en la Wikipedia no se reflejarán automáticamente en la copia \n"
+" del artículo en eXe, será necesario realizar una nueva copia del artículo. Asímismo, \n"
+"los cambios realizados en eXe no producirán efectos en los artículos de la Wikipedia. </p> <p>El Contenido de Wikipedia \n"
 "esta protegido por la licencia de documentación libre de GNU.</p>"
 
 #: exe/engine/wikipediaidevice.py:65
@@ -7651,7 +7648,7 @@ msgstr "Quitar esta vida"
 
 #: exe/webui/hangmanblock.py:350
 msgid "Add Chance"
-msgstr "Añadir suerte"
+msgstr "Añadir otro intento"
 
 #: exe/webui/hangmanblock.py:355
 msgid "<h2>Words to Guess</h2>"
