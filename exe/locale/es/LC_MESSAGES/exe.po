@@ -603,7 +603,7 @@ msgstr "Ancho (px)"
 
 #: exe/engine/clickinorderidevice.py:154
 msgid "Width of clickable area"
-msgstr "Ancho del área donde hacer clic"
+msgstr "Ancho del área donde pulsar"
 
 #: exe/engine/clickinorderidevice.py:155
 msgid "Height (px)"
@@ -1100,11 +1100,11 @@ msgstr "Escalar"
 
 #: exe/engine/extendedfieldengine.py:39
 msgid "Transfer"
-msgstr "Transferencia"
+msgstr "Translación"
 
 #: exe/engine/extendedfieldengine.py:45
 msgid "Show Advanced Options"
-msgstr "Mostrar las opciones avanzadas"
+msgstr "Mostrar opciones avanzadas"
 
 #: exe/engine/extendedfieldengine.py:273
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -6999,7 +6999,7 @@ msgstr "---Mover A---"
 
 #: exe/webui/block.py:258 exe/webui/editorpane.py:377
 msgid "Pedagogical Help"
-msgstr "Ayuda pedagógica"
+msgstr "Sugerencia pedagógica"
 
 #: exe/webui/block.py:263
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -7075,7 +7075,7 @@ msgstr ""
 
 #: exe/webui/clickinorderblock.py:320
 msgid "Show advanced options"
-msgstr "Mostrar las opciones avanzadas"
+msgstr "Mostrar opciones avanzadas"
 
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
@@ -7083,11 +7083,11 @@ msgstr "<h2>Áreas donde hacer clic</h2>"
 
 #: exe/webui/clickinorderblock.py:339
 msgid "Add Clickable Area"
-msgstr "Añadir un área donde hacer clic"
+msgstr "Añadir un área donde pulsar"
 
 #: exe/webui/clickinorderblock.py:410
 msgid "Delete Clickable Area"
-msgstr "Eliminar un área donde hacer clic"
+msgstr "Eliminar un área donde pulsar"
 
 #: exe/webui/clozefpdblock.py:104
 msgid "Autoevaluacion"
