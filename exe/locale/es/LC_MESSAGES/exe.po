@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-02 23:59+0100\n"
-"PO-Revision-Date: 2013-11-02 19:44+0100\n"
+"PO-Revision-Date: 2013-11-03 00:04+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -1104,7 +1104,7 @@ msgstr "Transferencia"
 
 #: exe/engine/extendedfieldengine.py:45
 msgid "Show Advanced Options"
-msgstr ""
+msgstr "Mostrar las opciones avanzadas"
 
 #: exe/engine/extendedfieldengine.py:273
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -10844,4 +10844,3 @@ msgstr ""
 
 #~ msgid "Show %s options"
 #~ msgstr "Mostrar opciones %s"
-
