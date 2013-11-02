@@ -38,8 +38,11 @@ EXEFIELD_JQUERYUI_EFFECTLIST = [ ["blind" , x_("Blind")], ["bounce" , x_("Bounce
     ["pulsate", x_("Pulsate")], ["scale", x_("Scale")], ["shake", x_("Shake")], ["size", x_("Size")], ["slide", x_("Slide")], \
     ["transfer",  x_("Transfer")] ]
 
-"""Common field type name 'advanced' - make sure that we pick up this string"""
-x_("advanced")
+"""
+For different field types that we can show/hide have the complete string
+so that it can be translated without gender/word etc. difficulties
+"""
+SHOWHIDEFIELDOPTIONNAMES = {"advanced" : x_("Show Advanced Options")}
 
 """
 Field that contains a bunch of fields with utility methods
@@ -106,7 +109,9 @@ class ExtendedFieldSet(Field):
                 html += " checked='checked' "
             html += "/>"
             
-            html += _("Show %s options") % _(fieldType) 
+            labelForType = SHOWHIDEFIELDOPTIONNAMES[fieldType]
+            
+            html += _(labelForType) 
             html += "<div id='" + divId + "' "
             if sectionChecked is False:
                 html += " style='display: none' "
