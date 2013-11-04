@@ -42,7 +42,7 @@ class FileAttachBlockInc(Block):
         Block.__init__(self, parent, idevice)
         self.fileAttachmentElements = []
         for fileField in self.idevice.fileAttachmentFields:
-            fileElement = FileElement(fileField)
+            fileElement = FileElement(fileField, False)
             self.fileAttachmentElements.append(fileElement)
         
         self.showDescBlock = ChoiceElement(idevice.showDesc)
@@ -71,6 +71,9 @@ class FileAttachBlockInc(Block):
         
         for fileElement in self.fileAttachmentElements:
             fileElement.process(request)
+            if field_engine_is_delete(fileElement, request, self.idevice.fileAttachmentFields):
+                fileElement.field.deleteFile()
+                field_engine_check_delete(fileElement, request, self.idevice.fileAttachmentFields)
             
         if "addFileAttachment" + unicode(self.id) in request.args:
             self.idevice.addFileAttachmentField()            
@@ -100,7 +103,9 @@ class FileAttachBlockInc(Block):
         
         for fileElement in self.fileAttachmentElements:
             html += fileElement.renderEdit()
-            
+            html += "<hr/>"
+        
+        html += "<br/>"    
         html += common.submitButton("addFileAttachment"+unicode(self.id), _("Add Another File Attachment"))
         html += "<br/>"
         html += self.renderEditButtons()
@@ -137,6 +142,7 @@ class FileAttachBlockInc(Block):
         for fileElement in self.fileAttachmentElements:
             if showDesc == False:
                 if previewMode == True:
+                    html += "<strong> " + _("File List (this list shows only in preview mode):") + "</strong><br/>"
                     html += fileElement.renderPreview()
                 else:
                     html += fileElement.renderView()
@@ -154,6 +160,8 @@ class FileAttachBlockInc(Block):
         if showDesc == True:
             """End decoration"""
             html += common.ideviceFooter(self, style, viewMode)
+        elif showDesc == False and previewMode == True:
+            html += self.renderViewButtons()
         
         return html
 

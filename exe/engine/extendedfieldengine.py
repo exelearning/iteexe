@@ -213,7 +213,7 @@ class FileField(Field):
     def uploadFile(self, filePath):
         if self.fileResource is not None:
             self.fileResource.delete()
-        
+            
         finalName = str(filePath)
         if self.alwaysNameTo is not None:
             from os.path import dirname
@@ -221,6 +221,9 @@ class FileField(Field):
             dirName = dirname(filePath)
             finalName = dirName + "/" + self.alwaysNameTo
             copyfile(filePath, finalName)
+        
+        if self.fileDescription.content == "":
+            self.fileDescription.content = os.path.basename(filePath)
             
         resourceFile = Path(finalName)
         if resourceFile.isfile():
@@ -237,9 +240,10 @@ class FileField(Field):
 
 class FileElement(Element):
     
-    def __init__(self, field):
+    def __init__(self, field, showDelFileButton = True):
         Element.__init__(self, field)
         self.fileDescriptionElement = TextElement(field.fileDescription)
+        self.showDelFile = showDelFileButton
     
         
     
@@ -257,10 +261,11 @@ class FileElement(Element):
                 self.field.idevice.edit = True    
                 self.field.idevice.undo = False
                 
-        if "action" in request.args and request.args["action"][0] == self.id:
+        if "action" in request.args and request.args["action"][0] == "delfile"+self.id:
             self.field.deleteFile()
             self.field.idevice.edit = True
             self.field.idevice.undo = False
+            
                 
     
     def renderEdit(self):
@@ -284,16 +289,19 @@ class FileElement(Element):
         
         if self.field.fileResource is not None:
             html += "<div class='block'><strong>"
-            html += "File %s " % self.field.fileResource.storageName
-            html += "</strong></div>"
+            html += _("File") + ": %s " % self.field.fileResource.storageName
             
-            html += common.submitImage(self.id, self.field.fileResource.storageName,
-                                           "/images/stock-cancel.png",
-                                           _("Delete File"))
-            html += "<hr/>"    
+            if self.showDelFile:
+                html += common.submitImage("delfile" + self.id, self.field.fileResource.storageName,
+                                            "/images/stock-cancel.png",
+                                            _("Delete File"))
+            html += "</strong></div>"
         else:
-            html += "<i>No File Uploaded Currently</i>"
+            html += "<i>"+_("No File Uploaded Currently") + "</i>"
         html += "<br/></div>"
+        
+        html += field_engine_make_delete_button(self)
+        
         return html
         
         
@@ -471,6 +479,16 @@ def make_dictionary_from_element_dict(dictkeyPrefix, elementDict, fieldInfoDict,
     return ourDict
 
 """
+For use with field_engine_check_delete
+
+"""
+def field_engine_is_delete(element, request, fieldList):
+    if "action" in request.args and request.args["action"][0] == element.id:
+        return True
+    
+    return False
+
+"""
 Check and see if there is a reques to delete this element given by
 common.submitButton with teh element id
 
@@ -478,10 +496,13 @@ If there is delete it from the given field list that would be associated
 with the idevice
 """
 def field_engine_check_delete(element, request, fieldList):
-    if "action" in request.args and request.args["action"][0] == element.id:
+    if field_engine_is_delete(element, request, fieldList):
         fieldList.remove(element.field)
         element.field.idevice.undo = False
         element.field.idevice.edit = True
+        return True
+    
+    return False
 
 """
 Go through all the elements in the given list and check to see
@@ -495,9 +516,9 @@ def field_engine_check_delete_all(elementList, request, fieldList):
 Utility method to make a delete button for elements in an idevice to remove
 them from a list - works together with field_engine_check_delete
 """
-def field_engine_make_delete_button(element, imgAltText = "Delete Item"):
+def field_engine_make_delete_button(element, imgAltText = "Delete Item", prefix = ""):
     html = ""
-    html += common.submitImage(element.id, element.field.idevice.id, 
+    html += common.submitImage(prefix + element.id, element.field.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _(imgAltText))
     return html
