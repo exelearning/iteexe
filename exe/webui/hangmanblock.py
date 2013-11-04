@@ -97,6 +97,7 @@ class HangmanBlockInc(Block):
         self.idevice.addGameScript()
 
         self.titleElement.process(request)
+        self.idevice.title = self.titleElement.renderView()
         self.alphabetElement.process(request)
         self.wrongGuessTextElement.process(request)
         self.lostLevelTextElement.process(request)
@@ -324,7 +325,7 @@ class HangmanBlockInc(Block):
         divId = "fieldtype_advanced"  + self.id
         html += "<input name='showbox" + divId + "' type='checkbox' onchange='$(\"#" + divId + "\").toggle()'/>"
         
-        html += _("Show") + _(" Advanced ") + _("options") + "<br/>"
+        html += _("Show Advanced Options") + "<br/>"
         html += "<div id='" + divId + "' style='display: none' "
         html += ">"
         
