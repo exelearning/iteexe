@@ -38,13 +38,14 @@ class AttachmentIdevice(Idevice):
     """
     persistenceVersion = 4
     
+    # 2013-11-04, JRF: added .odp examples to the .ppt references
     def __init__(self):
         Idevice.__init__(self, 
                          x_(u"Attachment"), 
                          x_(u"University of Auckland"), 
                          x_(u"The attachment iDevice is used to attach "
                              "existing files to your .elp content. For example, "
-                             "you might have a PDF file or a PPT presentation "
+                             "you might have a PDF file or a PPT or .ODP presentation "
                              "file that you wish the learners to have access "
                              "to, these can be attached and labeled to indicate "
                              "what the attachment is and how large the file is. "
@@ -71,7 +72,7 @@ class AttachmentIdevice(Idevice):
         self._labelInstruc      = x_(u"<p>"
                                     "Assign a label for the attachment. It "
                                     "is useful to include the type of file. "
-                                    "Eg. pdf, ppt, etc."
+                                    "Eg. pdf, ppt, .odp, etc."
                                     "</p>"
                                     "<p>"
                                     "Including the size is also recommended so "
