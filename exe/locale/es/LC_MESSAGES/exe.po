@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-04 15:12+0100\n"
-"PO-Revision-Date: 2013-11-03 00:04+0100\n"
+"PO-Revision-Date: 2013-11-04 15:25+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -195,7 +195,7 @@ msgid ""
 " be attached and labeled to indicate what the attachment is and how large"
 " the file is. Learners can click on the attachment link and can download "
 "the attachment."
-msgstr ""
+msgstr "El iDevice Adjunto se usa para adjuntar ficheros existentes al contenido de su ELP. Por ejemplo, quizás tenga un fichero PDF o una presentación en PPT o ODP a los que quiera que tengan acceso sus estudiantes, estos pueden ser adjuntados y etiquetados para indicar en qué consiste el adjunto y qué tamaño tiene el fichero. Los estudiantes pueden pulsar en el enlace al adjunto y pueden descargar dicho adjunto."
 
 #: exe/engine/attachmentidevice.py:58
 msgid ""
@@ -227,7 +227,7 @@ msgid ""
 "will have an idea how long it would take to download this "
 "attachment.</p><p>For example: <code>Sales Forecast.doc "
 "(500kb)</code></p>"
-msgstr ""
+msgstr "<p>Asigne una atiqueta al adjunto. Es útil incluir el tipo de fichero, p. ej.  pdf, ppt, odp, etc.</p><p>También se recomienda incluir el tamaño para que, cuando exporte su paquete a un sitio web, la gente pueda hacerse una idea de lo que tardaría descargar este adjunto.</p><p>Por ejemplo: <code>Previsión de ventas.odt (500kb)</code></p>"
 
 #: exe/engine/attachmentidevice.py:105
 #, python-format
@@ -1123,7 +1123,7 @@ msgstr "Borrar el archivo"
 
 #: exe/engine/extendedfieldengine.py:300
 msgid "No File Uploaded Currently"
-msgstr ""
+msgstr "Es este momento no se ha subido ningún fichero"
 
 #: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
@@ -7582,7 +7582,7 @@ msgstr "Añadir otro fichero adjunto"
 
 #: exe/webui/fileattachblock.py:143
 msgid "File List (this list shows only in preview mode):"
-msgstr ""
+msgstr "Lista de ficheros (esta lista sólo se muestra en el modo previsualización):"
 
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
@@ -10892,4 +10892,3 @@ msgstr ""
 
 #~ msgid "options"
 #~ msgstr "opciones"
-
