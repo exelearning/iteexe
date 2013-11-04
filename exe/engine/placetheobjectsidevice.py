@@ -41,16 +41,22 @@ class PlaceTheObjectsIdeviceInc(Idevice):
     into the user's ~/.exe/idevices dircectory it will be loaded along with
     the system idevices.
     """
+    
+    persistenceVersion = 2
+    
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"Place The Objects"), 
                          x_(u"Mike Dawson / PAIWASTOON Networking Services Ltd."), 
                          x_(u"""User has to place various objects in the correct place."""), "", "")
-        self.emphasis = Idevice.NoEmphasis
+        self.emphasis = Idevice.SomeEmphasis
         self.content  = TextAreaField(x_(u"Instructions"), 
                                       x_(u"This is a free text field."), 
                                       content)
         self.content.idevice = self
 
+        self.titleField = TextField(x_("Title"), x_("Title"))
+        self.titleField.idevice = self
+        
         #This is the main field where objects will be dragged to
         self.mainArea = TextAreaField(x_(u"Main Area"),
                                         x_(u"This is the main image where the user will drag / drop items to"),

@@ -41,6 +41,7 @@ class PlaceTheObjectsBlockInc(Block):
         Block.__init__(self, parent, idevice)
         self.contentElement = TextAreaElement(idevice.content)
         self.contentElement.height = 250
+        self.titleElement = TextElement(idevice.titleField)
 
         self.mainAreaElement = TextAreaElement(idevice.mainArea)
         self.mainAreaElement.height = 200
@@ -77,6 +78,8 @@ class PlaceTheObjectsBlockInc(Block):
             else:
                 self.idevice.gameTimerShown.content = False
 
+        self.titleElement.process(request)
+        self.idevice.title = self.titleElement.renderView()
         self.contentElement.process(request)
         self.mainAreaElement.process(request)
         self.positiveResponseElement.process(request)
@@ -99,17 +102,21 @@ class PlaceTheObjectsBlockInc(Block):
         objectdivid = "placetheobjects" + self.id + "_" + elementTypeName + placeableObjectElement.id
         return objectdivid
 
-    def _renderForGame(self, previewMode = False):
+    def _renderForGame(self, style, previewMode = False):
         """
         Renders the block as the script and XHTML elements that will be needed in order
         to make this run as a game
         """
+        viewModeStr = "view"
         scriptPrefix = ""
         if previewMode == True:
             scriptPrefix = "resources/"
+            viewModeStr = "preview"
 
         html = "<script src='%sjquery-ui-1.10.3.custom.min.js' type='text/javascript'></script>\n" % scriptPrefix
         html += "<script src='%splacetheobjects.js' type='text/javascript'></script>\n" % scriptPrefix
+        
+        html += common.ideviceHeader(self, style, viewModeStr)
         
         #this shows the instructions
         html += self.contentElement.renderView()
@@ -255,6 +262,7 @@ class PlaceTheObjectsBlockInc(Block):
             html += perItemCode
 
         html += "</script>\n"
+        html += common.ideviceFooter(self, style, viewModeStr)
         return html
 
 
@@ -263,6 +271,7 @@ class PlaceTheObjectsBlockInc(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = u"<div>\n"
+        html += self.titleElement.renderEdit()
         html += self.contentElement.renderEdit()
         html += self.mainAreaElement.renderEdit()
 
@@ -297,14 +306,9 @@ class PlaceTheObjectsBlockInc(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        
+        html = self._renderForGame(style, True)
 
-        html += self._renderForGame(True)
-
-        html += self.renderViewButtons()
-        html += "</div>\n"
         return html
 
 
@@ -312,12 +316,9 @@ class PlaceTheObjectsBlockInc(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        
+        html = self._renderForGame()
 
-        html += self._renderForGame()
-
-        html += u"</div>\n"
         return html
 
 class PlacableObjectElement(Element):

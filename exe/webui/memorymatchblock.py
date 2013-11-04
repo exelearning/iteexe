@@ -61,6 +61,8 @@ class MemoryMatchBlockInc(Block):
         
         field_engine_process_all_elements(self.mainElements, request)
         
+        self.idevice.title = self.mainElements['title'].renderView()
+        
         for memoryMatchElement in self.memoryMatchElements:
             memoryMatchElement.process(request)
         
