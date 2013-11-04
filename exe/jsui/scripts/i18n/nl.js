@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-11-01 18:57+0100\nLast-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-11-01 18:57+0100\nLast-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Xhosa ": "Xhosa", 
@@ -19,7 +19,6 @@ translations = {
  "Default name for level 2 nodes": "Standaard naam voor nodes op niveau 2", 
  "school": "school", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>Geef de bijlage een naam. Het is handig om het bestandstype te vermelden, bijv. pdf, ppt enz.<\/p><p>Best geeft u ook de omvang van de bijlage aan: het geeft een idee van de tijd die nodig is om ze te downloaden.<\/p><p>Voorbeeld: <code>Verkoopsverwachtingen.doc (500kb)<\/code><\/p>", 
  "Correct!": "Juist!", 
  "Windows Media Player Options": "Windows Media Player Opties", 
  "Text Properties": "Teksteigenschappen", 
@@ -1563,7 +1562,6 @@ translations = {
  "webquest": "webquest", 
  "Apply": "Toepassen", 
  "iDevices": "iDevices", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "Het iDevice \"Bijlage\" dient om bestanden toe te voegen aan .elp-materiaal. Dit kan bijv. een PDF- of PPT-bestand zijn dat de studenten moeten kunnen openen. U kan dit toevoegen als bijlage en in het bijschrift aangeven wat de inhoud en de omvang van het bestand is. Studenten kunnen het bestand openen door de link aan te klikken.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Als deze optie is geselecteerd zal de score worden getoond.<\/p> ", 
  "Kannada ": "Kannada(Indi\u00eb)", 
  "Constrain proportions": "Afmetingsverhoudingen behouden", 

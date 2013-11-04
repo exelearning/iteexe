@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: tr\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2008-11-24 21:02+1300\nLast-Translator: G\u00fcrkan G\u00fcr <seqizz@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: tr\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Title": "Ba\u015fl\u0131k", 
  "Text Line": "Yaz\u0131 Sat\u0131r\u0131", 
  "Quit": "\u00c7\u0131k", 
@@ -101,7 +101,6 @@ translations = {
  "Use this Idevice if you have a lot of images to show.": "Bir\u00e7ok resim g\u00f6stermek isterseniz bu iDevice'\u0131 kullan\u0131n.", 
  "RSS": "RSS", 
  "Hide": "Gizle", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "Ek dosya iDevice'\u0131 sayesinde .elp dosyalar\u0131n\u0131za harici dosyalar da ekleyebilirsiniz. \u00d6rne\u011fin, \u00f6\u011frencilere ula\u015ft\u0131rmak istedi\u011finiz bir PPT veya PDF dosyas\u0131n\u0131 boyutu ve ad\u0131 ile etiketleyerek dosyaya ekleyebilirsiniz. \u00d6\u011frenciler ek dosyan\u0131n k\u0131sayoluna t\u0131klayarak dosyay\u0131 indirebilirler.", 
  "Some emphasis": "Biraz vurgulu", 
  "Promote node up in hierarchy": "Se\u00e7imi hiyerar\u015fide \u00fcst basama\u011fa \u00e7\u0131kar", 
  "Select a file": "Bir dosya se\u00e7in", 

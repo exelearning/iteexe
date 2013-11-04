@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-10-19 17:54+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nLanguage: it\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe 1.04\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-10-19 17:54+0100\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage-Team: Italian <primiani@dag.it>\nLanguage: it\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creare uno studio di un caso. Un buon caso \u00e8 quello \nche descrive una controversia o un insieme di situazioni mediante la descrizione \ndelle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \nuna qualche azione per la risoluzione della situazione.", 
  "Xhosa ": "Xhosa ", 
@@ -19,7 +19,6 @@ translations = {
  "Default name for level 2 nodes": "Nome predefinito per i nodi di livello 2", 
  "school": "scuola", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>Assegnare una etichetta per l'allegato. \u00c9 preferibile includere file del tipo pdf, ppt, etc.<\/p><p>L'indicazione delle dimensioni \u00e8 raccomandata in modo che, quando un pacchetto viene esportato su in sito web, l'utente abbia una idea di quanto ci sar\u00e0 da scaricare.<\/p><p>Per esempio: <code>File Forecast.doc (500kb)<\/code><\/p>", 
  "Correct!": "Corretto!", 
  "Windows Media Player Options": "Opzioni Windows media player", 
  "Text Properties": "Propriet\u00e0 testo", 
@@ -1563,7 +1562,6 @@ translations = {
  "webquest": "webquest", 
  "Apply": "Applica", 
  "iDevices": "iDevices", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "L'iDevice di Allegato \u00e8 usato per collegare i files esistenti al contenuto del file .elp di eXe. Per esempio, potreste avere la necessit\u00e0 che un file PDF o una presentazione PPT sia accessibile agli studenti, questi files  possono essere collegati ed etichettati opportunamente per indicare a cosa servono e quanto grandi sono le loro dimensioni. Gli studenti possono premere sul collegamento dell'allegato ed effettuare lo scaricamento.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Con questa opzione verr\u00e0 visualizzato il punteggio.<\/p>", 
  "Kannada ": "Kannada ", 
  "Constrain proportions": "Mantieni le proporzioni", 

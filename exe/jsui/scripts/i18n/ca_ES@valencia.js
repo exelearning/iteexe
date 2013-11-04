@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-10-23 14:52+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-10-23 14:52+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
  "Xhosa ": "Xosa ", 
@@ -19,7 +19,6 @@ translations = {
  "Default name for level 2 nodes": "Nom per defecte per als nodes del nivell 2", 
  "school": "escola", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>Assigneu una etiqueta a cada fitxer adjunt. \u00c9s \u00fatil incloure el tipus de fitxer. Ex.: pdf, doc (odt), ppt (odp), etc.<\/p> <p> Tamb\u00e9 \u00e9s molt recomanable incloure'n la mida per tal que quan s'exporte el fitxer a un lloc web, es tinga una idea del temps que tardar\u00e0 en baixar el fitxer adjunt.<\/p> <p> Per exemple: <code>Vendes.odt (500 kb)<\/code> <\/p>", 
  "Correct!": "Correcte!", 
  "Windows Media Player Options": "Opcions del Windows Media Player", 
  "Text Properties": "Propietats del text", 
@@ -1563,7 +1562,6 @@ translations = {
  "webquest": "webquest", 
  "Apply": "Aplica", 
  "iDevices": "iDevices", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "L'iDevice Adjunt s'utilitza per a adjuntar fitxers al vostre contingut .elp. Per exemple, si teniu un fitxer PDF o un fitxer de presentaci\u00f3 PPT (ODP) que voleu que l'alumnat mire, este fitxer es pot adjuntar i etiquetar per a indicar qu\u00e8 \u00e9s i la mida que t\u00e9. L'alumnat pot fer clic en l'enlla\u00e7 de l'adjunt i baixar-lo.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Si es marca esta opci\u00f3, es mostrar\u00e0 la puntuaci\u00f3<\/p>", 
  "Kannada ": "Kanar\u00e9s ", 
  "Constrain proportions": "Constreny les proporcions", 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-02 23:59+0100\n"
+"POT-Creation-Date: 2013-11-04 15:12+0100\n"
 "PO-Revision-Date: 2013-10-31 20:03+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Java Applet"
 msgstr "Aplicació de Java"
 
-#: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:44
+#: exe/engine/appletidevice.py:71 exe/engine/attachmentidevice.py:45
 #: exe/engine/casestudyidevice.py:198 exe/engine/clozefpdidevice.py:51
 #: exe/engine/clozeidevice.py:50 exe/engine/clozelangfpdidevice.py:51
 #: exe/engine/ejercicioresueltofpdidevice.py:199
@@ -115,7 +115,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "el fitxer %s no té node pare"
 
-#: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:106
+#: exe/engine/appletidevice.py:192 exe/engine/attachmentidevice.py:107
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no té paquet"
@@ -176,27 +176,23 @@ msgstr ""
 " per un dels programes de la pestanya de sota,  seleccioneu-lo, \n"
 "després afegiu el fitxer de dades generat pel vostre programa."
 
-#: exe/engine/attachmentidevice.py:43 exe/webui/editorelement.py:328
+#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:330
+#: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:328
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
 msgstr "Fitxer adjunt"
 
-#: exe/engine/attachmentidevice.py:45
+#: exe/engine/attachmentidevice.py:46
 msgid ""
 "The attachment iDevice is used to attach existing files to your .elp "
-"content. For example, you might have a PDF file or a PPT presentation "
-"file that you wish the learners to have access to, these can be attached "
-"and labeled to indicate what the attachment is and how large the file is."
-" Learners can click on the attachment link and can download the "
-"attachment."
+"content. For example, you might have a PDF file or a PPT or .ODP "
+"presentation file that you wish the learners to have access to, these can"
+" be attached and labeled to indicate what the attachment is and how large"
+" the file is. Learners can click on the attachment link and can download "
+"the attachment."
 msgstr ""
-"L'iDevice fitxer adjunt és utilitzat per adjuntar un fitxer al vostre "
-"fitxer .elp. Per exemple: podries tenir un fitxer PDF o un fitxer "
-"presentació PPT ( ODP ) que voleu que els alumnes mirin, aquest fitxer "
-"pot ser adjuntat i etiquetat per indicar la mida que té. Els alumnes "
-"poden prémer sobre l'enllaç i baixar-se'l."
 
-#: exe/engine/attachmentidevice.py:57
+#: exe/engine/attachmentidevice.py:58
 msgid ""
 "Enter the text you wish to associate with the downloaded file. You might "
 "want to provide instructions on what you require the learner to do once "
@@ -206,11 +202,11 @@ msgstr ""
 " instruccions sobre que fer amb el fitxer  baixat o com utilitzar el "
 "material."
 
-#: exe/engine/attachmentidevice.py:64 exe/engine/attachmentidevice.py:185
+#: exe/engine/attachmentidevice.py:65 exe/engine/attachmentidevice.py:186
 msgid "Description:"
 msgstr "Descripció:"
 
-#: exe/engine/attachmentidevice.py:68
+#: exe/engine/attachmentidevice.py:69
 msgid ""
 "Click <strong>Select a file</strong>, browse to the file you want to "
 "attach and select it."
@@ -218,22 +214,17 @@ msgstr ""
 "Premeu <strong>Seleccioneu un fitxer</strong>, navegueu fins aquest "
 "fitxer que voleu adjuntar i seleccioneu-lo."
 
-#: exe/engine/attachmentidevice.py:71
+#: exe/engine/attachmentidevice.py:72
 msgid ""
 "<p>Assign a label for the attachment. It is useful to include the type of"
-" file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so"
-" that after your package is exported to a web site, people will have an "
-"idea how long it would take to download this attachment.</p><p>For "
-"example: <code>Sales Forecast.doc (500kb)</code></p>"
+" file. Eg. pdf, ppt, .odp, etc.</p><p>Including the size is also "
+"recommended so that after your package is exported to a web site, people "
+"will have an idea how long it would take to download this "
+"attachment.</p><p>For example: <code>Sales Forecast.doc "
+"(500kb)</code></p>"
 msgstr ""
-"<p>Assigneu una etiqueta per cada fitxer enviat. És útil incloure el "
-"tipus de fitxer. Ex: pdf, doc (odt) , ppt (odp ) etc.</p> <p> Incloure la"
-" mida és molt recomanable per tal que quan siga exportat el vostre fitxer"
-" a un lloc web , la gent tinga una idea del temps que tardarà a baixar-se"
-" el vostre fitxer adjunt.</p> <p> Per exemple: <code> Vendes.odt (500kb) "
-"</code> </p>"
 
-#: exe/engine/attachmentidevice.py:104
+#: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Adjunció %s no té node pare."
@@ -1075,30 +1066,49 @@ msgstr "Escala"
 msgid "Transfer"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:45
+#: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:328
 msgid "Show Advanced Options"
 msgstr ""
 
-#: exe/engine/extendedfieldengine.py:273
+#: exe/engine/extendedfieldengine.py:278
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Browse"
 msgstr "Explora"
 
-#: exe/engine/extendedfieldengine.py:275
+#: exe/engine/extendedfieldengine.py:280
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js:1
 msgid "Replace"
 msgstr "Reemplaça"
 
-#: exe/engine/extendedfieldengine.py:277 exe/webui/appletblock.py:157
+#: exe/engine/extendedfieldengine.py:282 exe/webui/appletblock.py:157
 #: exe/webui/appletblock.py:167
 msgid "Upload"
 msgstr "Carrega"
 
-#: exe/engine/extendedfieldengine.py:292 exe/webui/appletblock.py:184
+#: exe/engine/extendedfieldengine.py:292
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
+msgid "File"
+msgstr "Fitxer"
+
+#: exe/engine/extendedfieldengine.py:297 exe/webui/appletblock.py:184
 msgid "Delete File"
 msgstr "Suprimeix el fitxer"
 
-#: exe/engine/extendedfieldengine.py:543
+#: exe/engine/extendedfieldengine.py:300
+msgid "No File Uploaded Currently"
+msgstr ""
+
+#: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:225
+#: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
+#: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
+#: exe/webui/multimediablock.py:87
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:21
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
+#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
+msgid "None"
+msgstr "Cap"
+
+#: exe/engine/extendedfieldengine.py:564
 msgid "is not a valid number - please try again<br/>"
 msgstr "si no és un nombre vàlid - torneu a intentar-ho<br/>"
 
@@ -5046,10 +5056,6 @@ msgstr "Mou node amunt"
 msgid "Move node down"
 msgstr "Mou  node  avall"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:90
-msgid "File"
-msgstr "Fitxer"
-
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:98
 msgid "New"
 msgstr "Nou"
@@ -7045,7 +7051,7 @@ msgstr "Solució"
 msgid "Now It's Your Turn"
 msgstr "Autoavaluació"
 
-#: exe/webui/common.py:181 exe/webui/hangmanblock.py:327
+#: exe/webui/common.py:181
 msgid "Show"
 msgstr "Mostra"
 
@@ -7117,15 +7123,6 @@ msgstr "Esquerre"
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Right"
 msgstr "Dreta"
-
-#: exe/webui/editorelement.py:225 exe/webui/flashmovieblock.py:83
-#: exe/webui/flashwithtextblock.py:83 exe/webui/imagemagnifierblock.py:109
-#: exe/webui/imagewithtextblock.py:83 exe/webui/multimediablock.py:87
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:21
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:30
-#: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
-msgid "None"
-msgstr "Cap"
 
 #: exe/webui/editorelement.py:228 exe/webui/flashmovieblock.py:87
 #: exe/webui/flashwithtextblock.py:88 exe/webui/imagemagnifierblock.py:134
@@ -7497,15 +7494,15 @@ msgstr "molt gran"
 msgid "Frame Height:"
 msgstr "Alçada del Marc:"
 
-#: exe/webui/fileattachblock.py:89
+#: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
 msgstr "<div>\n"
 
-#: exe/webui/fileattachblock.py:90
+#: exe/webui/fileattachblock.py:93
 msgid "<h2>File Attachment</h2>"
 msgstr "<h2>Fitxer adjunt</h2>"
 
-#: exe/webui/fileattachblock.py:91
+#: exe/webui/fileattachblock.py:94
 msgid ""
 "<p>Here you can attach arbitary files to the package that will be "
 "included with the export</p>"
@@ -7513,17 +7510,21 @@ msgstr ""
 "<p> Aquí podeu adjuntar fitxers al paquet que seran inclosos amb "
 "l'exportació</p>"
 
-#: exe/webui/fileattachblock.py:92
+#: exe/webui/fileattachblock.py:95
 msgid "<p>You can choose to display links or not below</p>"
 msgstr "<p>Podeu triar mostrar o no els enllaços a sota</p>"
 
-#: exe/webui/fileattachblock.py:94
+#: exe/webui/fileattachblock.py:97
 msgid "<strong>Title:</strong><br/>"
 msgstr "<strong>Títol:</strong><br/>"
 
-#: exe/webui/fileattachblock.py:104
+#: exe/webui/fileattachblock.py:109
 msgid "Add Another File Attachment"
 msgstr "Afegeix un altre fitxer adjunt"
+
+#: exe/webui/fileattachblock.py:143
+msgid "File List (this list shows only in preview mode):"
+msgstr ""
 
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
@@ -7566,7 +7567,7 @@ msgstr "Esborra Imatge"
 msgid "Delete this image?"
 msgstr "Vols suprimir aquesta imatge ?"
 
-#: exe/webui/hangmanblock.py:124
+#: exe/webui/hangmanblock.py:125
 msgid ""
 "One or more words or hints are blank.  Please do not have any blank hints"
 " or words - you can delete unused ones."
@@ -7574,31 +7575,23 @@ msgstr ""
 "Una o més paraules o pistes estan en blanc. No deixeu pistes en blanc ni "
 "paraules en blanc doncs podeu eliminar les no utilitzades."
 
-#: exe/webui/hangmanblock.py:327
-msgid " Advanced "
-msgstr "Avançat"
-
-#: exe/webui/hangmanblock.py:327
-msgid "options"
-msgstr "Opcions"
-
-#: exe/webui/hangmanblock.py:348
+#: exe/webui/hangmanblock.py:349
 msgid "Remove This Life"
 msgstr "Suprimeix aquesta vida"
 
-#: exe/webui/hangmanblock.py:350
+#: exe/webui/hangmanblock.py:351
 msgid "Add Chance"
 msgstr "Afegeix probabilitat"
 
-#: exe/webui/hangmanblock.py:355
+#: exe/webui/hangmanblock.py:356
 msgid "<h2>Words to Guess</h2>"
 msgstr "<h2>Paraules per endevinar</h2>"
 
-#: exe/webui/hangmanblock.py:364
+#: exe/webui/hangmanblock.py:365
 msgid "Remove This Word"
 msgstr "Suprimeix aquesta paraula"
 
-#: exe/webui/hangmanblock.py:366
+#: exe/webui/hangmanblock.py:367
 msgid "Add Word"
 msgstr "Afegeix paraula"
 
@@ -10796,4 +10789,58 @@ msgstr ""
 
 #~ msgid "Show %s options"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "The attachment iDevice is used to "
+#~ "attach existing files to your .elp "
+#~ "content. For example, you might have "
+#~ "a PDF file or a PPT presentation"
+#~ " file that you wish the learners "
+#~ "to have access to, these can be"
+#~ " attached and labeled to indicate "
+#~ "what the attachment is and how "
+#~ "large the file is. Learners can "
+#~ "click on the attachment link and "
+#~ "can download the attachment."
+#~ msgstr ""
+#~ "L'iDevice fitxer adjunt és utilitzat per"
+#~ " adjuntar un fitxer al vostre fitxer"
+#~ " .elp. Per exemple: podries tenir un"
+#~ " fitxer PDF o un fitxer presentació"
+#~ " PPT ( ODP ) que voleu que "
+#~ "els alumnes mirin, aquest fitxer pot "
+#~ "ser adjuntat i etiquetat per indicar "
+#~ "la mida que té. Els alumnes poden"
+#~ " prémer sobre l'enllaç i baixar-se'l."
+
+#~ msgid ""
+#~ "<p>Assign a label for the attachment."
+#~ " It is useful to include the "
+#~ "type of file. Eg. pdf, ppt, "
+#~ "etc.</p><p>Including the size is also "
+#~ "recommended so that after your package"
+#~ " is exported to a web site, "
+#~ "people will have an idea how long"
+#~ " it would take to download this "
+#~ "attachment.</p><p>For example: <code>Sales "
+#~ "Forecast.doc (500kb)</code></p>"
+#~ msgstr ""
+#~ "<p>Assigneu una etiqueta per cada fitxer"
+#~ " enviat. És útil incloure el tipus"
+#~ " de fitxer. Ex: pdf, doc (odt) "
+#~ ", ppt (odp ) etc.</p> <p> Incloure"
+#~ " la mida és molt recomanable per "
+#~ "tal que quan siga exportat el "
+#~ "vostre fitxer a un lloc web , "
+#~ "la gent tinga una idea del temps"
+#~ " que tardarà a baixar-se el "
+#~ "vostre fitxer adjunt.</p> <p> Per "
+#~ "exemple: <code> Vendes.odt (500kb) </code> "
+#~ "</p>"
+
+#~ msgid " Advanced "
+#~ msgstr "Avançat"
+
+#~ msgid "options"
+#~ msgstr "Opcions"
 

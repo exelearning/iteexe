@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-04-30 18:51+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: eXe Team <exe@exelearning.org>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-04-30 18:51+0100\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.es>\nLanguage-Team: eXe Team <exe@exelearning.org>\nLanguage: pt\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.  ", 
  "Xhosa ": "Xhosa ", 
@@ -16,7 +16,6 @@ translations = {
  "Tongan  ": "Tongan\u00eas", 
  "Default name for level 2 nodes": "Nome por omiss\u00e3o para as p\u00e1ginas do n\u00edvel 2", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>Atribuir um t\u00edtulo ao anexo. \u00c9 \u00fatil incluir o tipo de ficheiro. Ex. pdf, ppt, etc.<\/p><p> Incluir o tamanho \u00e9 tamb\u00e9m recomend\u00e1vel, de maneira que quando o seu pacote estiver exportado para um s\u00edtio web, os utilizadores saibam quanto tempo vai demorar a descarregar este anexo.<\/p><p>Por exemplo: <code>vendas.doc (500kb)<\/code><\/p>", 
  "Correct!": "Correto!", 
  "Windows Media Player Options": "Op\u00e7\u00f5es Windows Media Player", 
  "The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself.": "N\u00e3o \u00e9 poss\u00edvel editar o cabe\u00e7alho e a legenda da imagem neste di\u00e1logo. Para os modificar ou apagar, edite o texto.", 
@@ -1221,7 +1220,6 @@ translations = {
  "Recommended type": "Tipo recomendado", 
  "Apply": "Aplicar", 
  "iDevices": "iDevices", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "O iDevice Anexo \u00e9 utilizado para adicionar ficheiros pr\u00e9-existentes ao conte\u00fado do arquivo .elp. Por exemplo, pode ter um ficheiro PDF ou uma apresenta\u00e7\u00e3o PPT que pretende fazer acess\u00edvel para os estudantes. Estes ficheiros podem ser anexados e rotulados para indicar a natureza do anexo e o tamanho do ficheiro. Os estudantes podem clicar na liga\u00e7\u00e3o do anexo e descarreg\u00e1-lo.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Se esta op\u00e7\u00e3o estiver marcada, ir\u00e1 ser mostrada a pontua\u00e7\u00e3o.<\/p>", 
  "Kannada ": "Canar\u00eas", 
  "Update all cells in column": "Atualizar todas as c\u00e9lulas na coluna", 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: nb\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2008-02-25 11:27+1300\nLast-Translator: H\u00e5vard Holte Os <havard.holte.os@froya.kommune.no>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: nb\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Title": "Tittel", 
  "Text Line": "Tekstlinje", 
  "Xhosa ": "Xhosa", 
@@ -114,7 +114,6 @@ translations = {
  "iDevices": "iDevices", 
  "RSS": "RSS", 
  "Hide": "Skjul", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "Vedleggs iDevicen brukes for i legge eksisterende filer inn i din .elp-fils innhold. For eksempel har du kanskje en PDF-fil eller en PPT-presentasjonsfil du \u00f8nsker \u00e5 gi brukerne tilgang til. Disse kan legges inn og merkes for \u00e5 anngi hva vedlegget er og hvor stor filen er. Brukerne kan klikke p\u00e5 den vedlagte linken og laste ned vedlegget.", 
  "Some emphasis": "Noe uthevet", 
  "Kannada ": "Kannada", 
  "Promote node up in hierarchy": "Flytt noden opp i hierarkiet", 

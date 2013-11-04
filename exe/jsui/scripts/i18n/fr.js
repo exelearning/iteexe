@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-04-27 21:16+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fr\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: EXE Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-04-27 21:16+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage-Team: EXE Team <exe@exelearning.org>\nLanguage: fr\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cr\u00e9ez le sc\u00e9nario du \"cas d'\u00e9tude. Un bon \"cas d'\u00e9tude\" pr\u00e9sente une controverse ou expose un probl\u00e8me en d\u00e9crivant les \u00e9l\u00e9ments d'une probl\u00e9matique. Il peut \u00e9galement proposer diff\u00e9rentes actions qui permettraient de r\u00e9soudre le probl\u00e8me.", 
  "Xhosa ": "Xhosa", 
@@ -16,7 +16,6 @@ translations = {
  "Tongan  ": "Tongan", 
  "Default name for level 2 nodes": "Nom par d\u00e9faut pour les noeuds de niveau 2", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p> Donnez un nom et une extension au fichier attach\u00e9. Il est utile d'inclure l'extension correspondant au type de fichier. par exemple ppt, pdf, doc, etc.<\/p> <p> Il est \u00e9galement recommand\u00e9 d'indiquer la taille du fichier, de telle mani\u00e8re que, lorsque ce fichier est accessible depuis un site web, l'apprenant puisse estimer la dur\u00e9e du t\u00e9l\u00e9chargement \u00e9ventuel. <\/p> <p> Par exemple: <code>prevision_meteo.pdf (1.2Mo)<\/code> <\/p>", 
  "Correct!": "Correcte.", 
  "Windows Media Player Options": "Windows media player options", 
  "The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself.": "L'en-t\u00eate et la l\u00e9gende de l'image ne sont pas editables \u00e0 partir de ce dialogue. Vous pouvez les modifier ou les \u00e9liminer en \u00e9ditant le texte.", 
@@ -1221,7 +1220,6 @@ translations = {
  "Recommended type": "Type recommand\u00e9", 
  "Apply": "Appliquer", 
  "iDevices": "Outils p\u00e9dagogiques", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "L'outil p\u00e9dagogique \"fichier attach\u00e9\" vous est utile pour lier des fichiers existants \u00e0 votre contenu de projet .elp. Par exemple, si vous souhaitez donner acc\u00e8s \u00e0 vos apprenants \u00e0 une ressource sous format .pdf ou \u00e0 une pr\u00e9sentation .ppt, vous pouvez les attacher et indiquer leurs nom et extension ainsi que la taille du fichier. Les apprenants peuvent alors cliquer sur le lien et t\u00e9l\u00e9charger la ressource.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Si cette option est activ\u00e9e, le r\u00e9sultat sera montr\u00e9<\/p>", 
  "Kannada ": "Kannada", 
  "Update all cells in column": "Mettre \u00e0 jour toutes les cellules de la colonne", 

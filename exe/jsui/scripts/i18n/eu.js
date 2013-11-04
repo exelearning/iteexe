@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-04-26 16:31+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe trunk (1.04.1)\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-04-26 16:31+0100\nLast-Translator: Jos\u00e9 Miguel Andonegi <jmandonegi@ulhi.net>\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nLanguage: eu\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Jarduera zabalgarria", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Sortu kasuaren istorioa. Kasuak, ona izateko, \ngatazka bat deskribatu beharko luke, edo pertsonaien bidez egoera azaldu. \nGainera, gatazka konpondu ahal izateko \nhainbat ekintza gauzatzeko aukera eman beharko luke.", 
  "Xhosa ": "Xhosera", 
@@ -16,7 +16,6 @@ translations = {
  "Tongan  ": "Tongera", 
  "Default name for level 2 nodes": "2. mailako nodoen izen lehenetsia", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>Esleitu etiketa bat atxikitako fitxategiari. Lagungarria da zer fitxategi mota den adierazteko (pdf, ppt, etab.)<\/p><p>Komenigarria da neurria zehaztea ere, webgune batera esportatzean ikasleek deskargatzeko zenbat denbora beharko duten jakin dezaten.<\/p><p>Adibidez:<\/p><code>Salmenten Forecast.doc (500kb)<\/code><\/p>", 
  "Correct!": "Zuzena.", 
  "Windows Media Player Options": "Windows media player aukerak", 
  "The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself.": "Irudiaren goiburua eta oina ezingo dira editatu elkarrizketa-koadro honetatik. Sortutako testura jo editatzeko edo borratzeko.", 
@@ -1221,7 +1220,6 @@ translations = {
  "Recommended type": "Gomendatutako mota", 
  "Put instructions for learners here": "Sartu hemen ikasleentzako argibideak", 
  "iDevices": "IDevice-ak", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "Atxikipenen iDevice hau zure .elp edukian aurretik dauden fitxategiak atxikitzeko erabiltzen da. Adibidez, posible da ikasleei erakutsi nahi diezun PDF fitxategi bat edo PPT aurkezpen bat izatea. Horiek atxiki egin daitezke, eta etiketak jar dakizkieke, zer diren eta zer tamaina duten adierazteko. Ikasleek atxikipenaren esteka klikatuz deskargatu ahal izango dute fitxategia.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Aukera hau gaitzen baduzu, puntuazioa erakutsiko da.<\/p>", 
  "Kannada ": "Kannada", 
  "Update all cells in column": "Eguneratu zutabeko gelaxka guztiak", 

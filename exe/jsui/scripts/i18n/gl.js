@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2013-04-22 17:49+0200\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nLanguage: gl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe trunk\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-04-22 17:49+0200\nLast-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\nLanguage-Team: TAGEN ATA <localizacion@tagenata.net>\nLanguage: gl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividade despregable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Elabore o a historia do caso. Un bo caso \u00e9 aquel \nque describe unha controversia ou define a escena describindo os personaxes \nque fan parte da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n \nno sentido de obter a resoluci\u00f3n da situaci\u00f3n.", 
  "Xhosa ": "Xhosa ", 
@@ -16,7 +16,6 @@ translations = {
  "Tongan  ": "Tongan ", 
  "Default name for level 2 nodes": "Nome por defecto para os nodos de nivel 2", 
  "WMode": "WMode", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "<p>As\u00edgnelle unha etiqueta ao anexo. \u00c9 \u00fatil inclu\u00edr o tipo de ficheiro. Por exemplo pdf, ppt etc.<\/p><p>Inclu\u00edr o tama\u00f1o \u00e9 tam\u00e9n recomend\u00e1bel para que despois de exportar o seu paquete a un sitio web, as persoas te\u00f1an unha idea de canto tempo lles levar\u00eda descargar o anexo.<\/p><p>Por exemplo: <code>Prevision_vendas.odt (500kb)<\/code><\/p>", 
  "Correct!": "Correcto.", 
  "Windows Media Player Options": "Opci\u00f3ns Windows media player", 
  "The header and the caption can't be edited from this dialog. You can change or remove them editing the text itself.": "O encabezamento e o p\u00e9 de foto non se poden editar dende este di\u00e1logo. Pode modificalos ou eliminalos editando o seu texto.", 
@@ -1222,7 +1221,6 @@ translations = {
  "Recommended type": "Tipo recomendado", 
  "Apply": "Apricar", 
  "iDevices": "iDevices", 
- "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment.": "O anexo de iDevice \u00fasase para anexar ficheiros existentes ao contido do ficheiro .elp. Por exemplo, poder\u00eda ter un ficheiro PDF ou unha presentaci\u00f3n PPT \u00e1 que quere que os alumnos te\u00f1an acceso, eles poden ser anexados e etiquetados para indicar de que anexo se trata e o tama\u00f1o do mesmo. Os alumnos poden premer na ligaz\u00f3n do anexo e descargalo.", 
  "<p>If this option is set, the score will be shown.<\/p>": "<p>Se esta opci\u00f3n est\u00e1 seleccionada amosarase a puntuaci\u00f3n.<\/p>", 
  "Kannada ": "Kannada ", 
  "Update all cells in column": "Actualizar t\u00f3dalas celdas da columna", 

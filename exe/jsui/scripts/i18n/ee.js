@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-02 23:59+0100\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nLanguage: ee\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXe Learning\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2006-08-13 00:29+1200\nLast-Translator: \nLanguage-Team: GOUNH KPODO <Dicta5@yahoo.com>\nLanguage: ee\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "Frame Height:": "Ada\u014budede  \u0192e \u0256o\u0192e", 
  "Reflective question:": "\u014bugblede biabiawo ", 
  "Text Line": "Nu\u014b\u0254\u014bl\u0254m\u0254nu", 
@@ -22,7 +22,6 @@ translations = {
  "Example": "kp\u0254\u0256e\u014bu", 
  "Show Answers": "Fia \u014bu\u0256o\u0256owo", 
  "Provide a caption for the \nimage to be magnified.": "Tia tanya na \n n\u0254n\u0254metata si woa keke  \u0256e enu. ", 
- "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.<\/p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.<\/p><p>For example: <code>Sales Forecast.doc (500kb)<\/code><\/p>": "Na dsesi t\u0254x\u025b a\u0256e nan\u0254 nusi nets\u0254 kpe \u0256e e\u014bu la \u014bu. ele vevie be na\u0256e nudzra\u0256o\u0192e sue si t\u0254gbe nez\u00e3 la \u0256e go. kp\u0254\u0256e\u014bu pdf, ppt, etc.<\/p><p> Ah\u0129a be woanya nya agb\u0254s\u0254s\u0254 si le nudzra\u0256o\u0192e g\u00e3t\u0254 la, amewo anya \u0263eyi\u0263i si woax\u0254 hafi woa\u0256e nya sia tso nudzra\u0256o\u0192ea. <\/p><p>Le kp\u0254\u0256e\u014bu me, <code> Adz\u0254nuwo me toto.doc (500kb)<\/code><\/p>", 
  "Only select .flv (Flash Video Files) for \nthis iDevice.": "Tia .flv (Flash Video Files) ko na\n A\u0256a\u014bunu sia", 
  "Previous": "Do \u014bg\u0254", 
  "Select Flash Object": "Tia nu kekle a\u0256e", 
