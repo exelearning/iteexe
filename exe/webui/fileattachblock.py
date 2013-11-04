@@ -138,11 +138,14 @@ class FileAttachBlockInc(Block):
         if previewMode == True:
             prefix = "resources/" 
         
-            
+
+        if showDesc == False and previewMode == True:
+            html += "<strong> " + _("File List (this list shows only in preview mode):") + "</strong><br/>"
+        
+                    
         for fileElement in self.fileAttachmentElements:
             if showDesc == False:
                 if previewMode == True:
-                    html += "<strong> " + _("File List (this list shows only in preview mode):") + "</strong><br/>"
                     html += fileElement.renderPreview()
                 else:
                     html += fileElement.renderView()

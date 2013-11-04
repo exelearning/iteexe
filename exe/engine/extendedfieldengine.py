@@ -327,9 +327,9 @@ class FileElement(Element):
     def renderPreview(self):
         html = ""
         if self.field.fileResource is not None:
-            html += "Attachment: %s " % self.field.fileResource.storageName
+            html += _("Attachment") + ": %s " % self.field.fileResource.storageName
         else:
-            html += "Attachment: <i>Empty</i>"
+            html += _("Attachment") +" :  <i>" + _("None") + "</i>"
         html += "<br/>"
         return html
 """
