@@ -116,7 +116,7 @@ class ScormDropDownIdevice(Idevice):
             x_(u'Instructions'),
 #translated
 #            x_(u"""Hier k&ouml;nnen Sie eine Aufgabenstellung eingeben oder die Standardanweisung &uuml;bernehmen."""),
-            x_(u"""Provide instruction how to complete the excercise or take the default text."""),
+            x_(u"""Provide instruction how to complete the exercise or take the default text."""),
 #            x_(u"""W&auml;hle im folgenden Abschnitt die richtigen Antworten aus!"""))
 			x_(u'Choose the correct answers in the paragraph below.'))
         self.instructionsForLearners.idevice = self
@@ -124,7 +124,7 @@ class ScormDropDownIdevice(Idevice):
             x_(u"""<p>To create a gap with answer options, write the correct answer and then separated by
                 '|' the wrong answers:
                 true|false|false|false ...
-                Mark all answer options and click on the Hide/Show Word button below.
+                Mark all answer options and click on the 'Hide/Show Word' button below.
                 Hint: answers may contain spaces.</p>"""))
 #            x_(u"""<p>Um eine L&uuml;cke mit Antwortm&ouml;glichkeiten zu erzeugen,
 #                schreiben sie zuerst die richtige Antwort und dann getrennt

@@ -123,14 +123,14 @@ completed. Default text will be entered if there are no changes to this field.
                'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
         self._content = ClozeField(x_(u'Cloze'), 
-            x_(u"""<p>Enter the text for the cloze excercise in the editor window.
+            x_(u"""<p>Enter the text for the cloze exercise in the editor window.
                If you copy text from another source, you should use the button 'Paste as plain text'
                to paste it into the editor window. To select words to hide, mark them and click on the 
-               Hide/Show Word button below.
+               'Hide/Show Word' button below.
                To create a gap with multiple answer options, write the answers separated by '|'.
-               Mark all answer options and click on the Hide/Show Word button below.
+               Mark all answer options and click on the 'Hide/Show Word' button below.
                Hint: The answers may contain spaces. If you want to provide the answer options to the learners,
-               sort them alphabetically and write them at the beginning or the end of the cloze excercise.</p>"""))
+               sort them alphabetically and write them at the beginning or the end of the cloze exercise.</p>"""))
         self._content.idevice = self
         self.feedback = TextAreaField(x_(u'Feedback'),
             x_(u'Enter any feedback you wish to provide the learner '
