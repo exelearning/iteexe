@@ -189,7 +189,6 @@ class WebsitePage(Page):
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
         if not themeHasXML:
-            html += "<"+sectionTag+" id=\"lmsubmit\"></"+sectionTag+"><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"+lb
             html += "<"+sectionTag+" id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage)
             html += "</"+sectionTag+">"+lb
@@ -198,11 +197,11 @@ class WebsitePage(Page):
         if not themeHasXML:
         #if not style.hasValidConfig:
             html += self.renderFooter()
+        html += "<"+sectionTag+" id=\"lmsubmit\"></"+sectionTag+"><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"+lb
         html += u"</"+sectionTag+">"+lb # /main
         html += u"</"+sectionTag+">"+lb # /main-wrapper
         if themeHasXML:
         #if style.hasValidConfig:
-            html += "<"+sectionTag+" id=\"lmsubmit\"></"+sectionTag+"><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"+lb
             html += "<"+sectionTag+" id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage)
             html += "</"+sectionTag+">"+lb        
