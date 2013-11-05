@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-05 20:16+0100\n"
+"POT-Creation-Date: 2013-11-05 23:31+0100\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -2864,9 +2864,7 @@ msgid "SCORM Test Dropdown"
 msgstr ""
 
 #: exe/engine/scormdropdownidevice.py:119
-msgid ""
-"Provide instruction how to complete the excercise or take the default "
-"text."
+msgid "Provide instruction how to complete the exercise or take the default text."
 msgstr ""
 
 #: exe/engine/scormdropdownidevice.py:121
@@ -2879,8 +2877,8 @@ msgid ""
 " separated by\n"
 "                '|' the wrong answers:\n"
 "                true|false|false|false ...\n"
-"                Mark all answer options and click on the Hide/Show Word "
-"button below.\n"
+"                Mark all answer options and click on the 'Hide/Show Word'"
+" button below.\n"
 "                Hint: answers may contain spaces.</p>"
 msgstr ""
 
@@ -2890,20 +2888,20 @@ msgstr ""
 
 #: exe/engine/scormmulticlozeidevice.py:126
 msgid ""
-"<p>Enter the text for the cloze excercise in the editor window.\n"
+"<p>Enter the text for the cloze exercise in the editor window.\n"
 "               If you copy text from another source, you should use the "
 "button 'Paste as plain text'\n"
 "               to paste it into the editor window. To select words to "
 "hide, mark them and click on the \n"
-"               Hide/Show Word button below.\n"
+"               'Hide/Show Word' button below.\n"
 "               To create a gap with multiple answer options, write the "
 "answers separated by '|'.\n"
-"               Mark all answer options and click on the Hide/Show Word "
+"               Mark all answer options and click on the 'Hide/Show Word' "
 "button below.\n"
 "               Hint: The answers may contain spaces. If you want to "
 "provide the answer options to the learners,\n"
 "               sort them alphabetically and write them at the beginning "
-"or the end of the cloze excercise.</p>"
+"or the end of the cloze exercise.</p>"
 msgstr ""
 
 #: exe/engine/scormmultiselectidevice.py:41
@@ -7290,7 +7288,8 @@ msgid "Show Answers"
 msgstr "Bonisa iziMpendulo"
 
 #: exe/webui/element.py:1500 exe/webui/element.py:1769
-#: exe/webui/listablock.py:312
+#: exe/webui/element.py:3081 exe/webui/element.py:3290
+#: exe/webui/element.py:3914 exe/webui/listablock.py:312
 msgid "Answers"
 msgstr ""
 
@@ -7377,11 +7376,6 @@ msgstr ""
 
 #: exe/webui/element.py:2961 exe/webui/element.py:3783
 msgid "Use fixed length?"
-msgstr ""
-
-#: exe/webui/element.py:3081 exe/webui/element.py:3290
-#: exe/webui/element.py:3914
-msgid "Answsers"
 msgstr ""
 
 #: exe/webui/externalurlblock.py:67
@@ -10624,8 +10618,47 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "This article is licensed under the "
-#~ "Creative Commons Attribution-ShareAlike "
-#~ "License. It uses material from"
+#~ "Provide instruction how to complete the"
+#~ " excercise or take the default text."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>To create a gap with answer "
+#~ "options, write the correct answer and"
+#~ " then separated by\n"
+#~ "                '|' the wrong answers:\n"
+#~ "                true|false|false|false ...\n"
+#~ "                Mark all answer options "
+#~ "and click on the Hide/Show Word "
+#~ "button below.\n"
+#~ "                Hint: answers may contain spaces.</p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Enter the text for the cloze excercise in the editor window.\n"
+#~ "               If you copy text from "
+#~ "another source, you should use the "
+#~ "button 'Paste as plain text'\n"
+#~ "               to paste it into the "
+#~ "editor window. To select words to "
+#~ "hide, mark them and click on the"
+#~ " \n"
+#~ "               Hide/Show Word button below.\n"
+#~ "               To create a gap with "
+#~ "multiple answer options, write the "
+#~ "answers separated by '|'.\n"
+#~ "               Mark all answer options "
+#~ "and click on the Hide/Show Word "
+#~ "button below.\n"
+#~ "               Hint: The answers may "
+#~ "contain spaces. If you want to "
+#~ "provide the answer options to the "
+#~ "learners,\n"
+#~ "               sort them alphabetically and"
+#~ " write them at the beginning or "
+#~ "the end of the cloze excercise.</p>"
+#~ msgstr ""
+
+#~ msgid "Answsers"
 #~ msgstr ""
 
