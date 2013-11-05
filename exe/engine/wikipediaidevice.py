@@ -67,7 +67,7 @@ is covered by the GNU free documentation license.</p>"""),
         self.images           = {}
         self.site             = defaultSite
         self.icon             = u"inter"
-        self.systemResources += ["fdl.html"]
+        # self.systemResources += []
         self._langInstruc      = x_(u"""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
         self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
@@ -195,11 +195,6 @@ within Wikipedia.""")
         #  such that these extra set's are not necessary, but for now, here:)
         self.article.content_w_resourcePaths = self.article.content
         self.article.content_wo_resourcePaths = self.article.content
-        
-        # Include wikipedia's license document as resourceFile in self.userResources: 
-        from exe import globals as G
-        licenseFile = G.application.config.webDir/'templates/fdl.html'
-        license = Resource(self, licenseFile)
 
 
     def reformatArticle(self, netloc, content):
@@ -352,8 +347,8 @@ within Wikipedia.""")
         """
         Upgrades to v0.12
         """
-        self._upgradeIdeviceToVersion2()
-        self.systemResources += ["fdl.html"]
+        #self._upgradeIdeviceToVersion2()
+        #self.systemResources += ["fdl.html"]
         if self.images and self.parentNode:
             for image in self.images:
                 imageResource = Resource(self, Path(image))

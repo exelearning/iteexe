@@ -177,9 +177,6 @@ class WikipediaBlock(Block):
         log.debug("renderPreview")    
         html = common.ideviceHeader(self, style, "preview")
         html += self.articleElement.renderPreview() 
-        html += '<p class="article-license-warning">'
-        html += _(u"This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from")
-        html += ' "%s".</p>' % self.idevice.articleName
         html += common.ideviceFooter(self, style, "preview")
         return html
     
@@ -195,22 +192,6 @@ class WikipediaBlock(Block):
         content = re.sub(r'src="/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\'/newPackage.*/resources/', 'src="', content)
         content = re.sub(r'src=\"/newPackage.*/resources/', 'src="', content)
-        # licence notice:
-        lic = '<p class="article-license-warning">'
-        lic += _(u"This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from")
-        lic += ' "'
-        # UGLY UGLY UGLY KLUDGE for Wayne
-        # "BIG please - Will you check that the Wikieducator url is changed for
-        # the next release - not sure if we'll get the image thing sorted, but
-        # this is pretty important strategically re the international growth of
-        # eXe.  Not a new feature <smile> just a small change to a string."
-        if self.idevice.site == u"http://wikieducator.org/":
-            lic += u"<a href=\""+self.idevice.site
-        else:
-            lic += u"<a href=\""+self.idevice.site
-        lic += self.idevice.articleName+u"\">"
-        lic += u""+self.idevice.articleName+u"</a>\".</p>"   
-        content = content + lic
         html = common.ideviceHeader(self, style, "view")
         html += content        
         html += common.ideviceFooter(self, style, "view")
