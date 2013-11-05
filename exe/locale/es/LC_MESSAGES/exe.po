@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-05 23:31+0100\n"
-"PO-Revision-Date: 2013-11-05 20:44+0100\n"
+"PO-Revision-Date: 2013-11-05 23:43+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -3070,7 +3070,7 @@ msgstr "Examen SCORM  Desplegable"
 
 #: exe/engine/scormdropdownidevice.py:119
 msgid "Provide instruction how to complete the exercise or take the default text."
-msgstr ""
+msgstr "Proporcione instrucciones sobre cómo completar el ejercicio o acepte el texto predeterminado."
 
 #: exe/engine/scormdropdownidevice.py:121
 msgid "Choose the correct answers in the paragraph below."
@@ -3086,6 +3086,12 @@ msgid ""
 " button below.\n"
 "                Hint: answers may contain spaces.</p>"
 msgstr ""
+"<p>Para crear un hueco con opciones de respuesta, escriba la respuesta correcta y a continuación, separada por\n"
+"\n"
+"                 '|', las respuestas equivocadas:\n"
+"                 verdadera|falsa|falsa|falsa...\n"
+"                 Marque todas las opciones de respuesta y pulse en el botón de 'Ocultar/Mostrar palabras' de abajo.\n"
+"                 Ayuda: las respuestas pueden contener espacios.</p>"
 
 #: exe/engine/scormmulticlozeidevice.py:46
 msgid "SCORM Test Cloze (multiple options)"
@@ -3108,6 +3114,15 @@ msgid ""
 "               sort them alphabetically and write them at the beginning "
 "or the end of the cloze exercise.</p>"
 msgstr ""
+"\"<p>Introduzca el texto del ejercicio de rellenar huecos en la ventana del editor.\n"
+"               Si copia texto de otra fuente, debe usar el botón 'Copiar como texto plano'\n"
+"               para pegarlo en la ventana del editor. Para seleccionar qué palabras ocultar, márquelas y pulse \n"
+"en el\n"
+"               botón 'Ocultar/Mostrar palabras' de abajo.\n"
+"               Para crear un hueco con múltiples opciones de respuesta, escriba las respuestas separadas por '|'.\n"
+"               Marque todas las opciones de respuesta y pulse en el botón de 'Ocultar/Mostrar palabras' de abajo.\n"
+"               Ayuda: Las respuestas pueden contener espacios. Si desea proporcionar las opciones de respuesta a los estudiantes,\n"
+"               ordénelas alfabéticamente y escríbalas al comienzo o al fin del ejercicio de rellenar huecos.</p>"
 
 #: exe/engine/scormmultiselectidevice.py:41
 msgid "SCORM Test Multiple Choice"
@@ -10980,9 +10995,6 @@ msgstr ""
 #~ msgstr "por"
 
 #~ msgid ""
-#~ msgstr ""
-
-#~ msgid ""
 #~ "Provide instruction how to complete the"
 #~ " excercise or take the default text."
 #~ msgstr ""
@@ -11065,4 +11077,3 @@ msgstr ""
 
 #~ msgid "Answsers"
 #~ msgstr "Respuestas"
-
