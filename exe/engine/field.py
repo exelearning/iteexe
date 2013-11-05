@@ -2950,19 +2950,20 @@ class ClozeHTMLParser(HTMLParser):
         """
         # Tidy up and possibly split the gap
         gapString = self.lastGap.strip()
-        gapWords = self.whiteSpaceRe.split(gapString)
-        gapSpacers = self.whiteSpaceRe.findall(gapString)
-        if len(gapWords) > len(gapSpacers):
-            gapSpacers.append(None)
-        gaps = zip(gapWords, gapSpacers)
+        #gapWords = self.whiteSpaceRe.split(gapString)
+        #gapSpacers = self.whiteSpaceRe.findall(gapString)
+        #if len(gapWords) > len(gapSpacers):
+        #    gapSpacers.append(None)
+        #gaps = zip(gapWords, gapSpacers)
         lastText = self.lastText
         # Split gaps up on whitespace
-        for gap, text in gaps:
-            if gap == '<br/>':
-                self.result.append((lastText, None))
-            else:
-                self.result.append((lastText, gap))
-            lastText = text
+        #for gap, text in gaps:
+        #    if gap == '<br/>':
+        #        self.result.append((lastText, None))
+        #    else:
+        #        self.result.append((lastText, gap))
+        #    lastText = text
+        self.result.append((lastText, gapString))
         self.lastGap = ''
         self.lastText = ''
 

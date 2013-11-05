@@ -362,6 +362,7 @@ class Manifest(object):
     <file href="popup_bg.gif"/>
     <file href="AC_RunActiveContent.js"/>
     <file href="SCORM_API_wrapper.js"/>
+    <file href="lernmodule_net.js"/>
     <file href="SCOFunctions.js"/>""" % filename
                 self.resStr += "\n"
                 fileStr = ""
@@ -374,6 +375,7 @@ class Manifest(object):
     <file href="content.css"/>
     <file href="popup_bg.gif"/>
     <file href="SCORM_API_wrapper.js"/>
+    <file href="lernmodule_net.js"/>
     <file href="SCOFunctions.js"/>""" % filename
                 self.resStr += "\n"
                 fileStr = ""
@@ -495,6 +497,7 @@ class ScormPage(Page):
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if self.scormType == 'commoncartridge':
+            html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()        
             html += u"</head>"+lb
@@ -502,6 +505,7 @@ class ScormPage(Page):
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
+            html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
             if style.hasValidConfig:
                 html += style.get_extra_head()
             html += u"</head>"+lb            
@@ -549,6 +553,7 @@ class ScormPage(Page):
             html += self.renderFooter()
         else:
             html += style.get_extra_body()
+        html += u'<'+sectionTag+' id="lmsubmit"></'+sectionTag+'><script type="text/javascript" language="javascript">doStart();</script>'+lb
         html += u'</body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
@@ -692,11 +697,13 @@ class ScormExport(object):
             self.scriptsDir.copylist(('AC_RunActiveContent.js',
                                       'SCORM_API_wrapper.js',
                                       'SCOFunctions.js', 
+                                      'lernmodule_net.js',
                                       'common.js'), outputDir)     
         if self.scormType != "commoncartridge" and self.scormType != "scorm2004" and self.scormType != "agrega":
             self.scriptsDir.copylist(('AC_RunActiveContent.js',
                                       'SCORM_API_wrapper.js', 
                                       'SCOFunctions.js', 
+                                      'lernmodule_net.js',
                                       'common.js'), outputDir)
         schemasDir = ""
         if self.scormType == "scorm1.2":

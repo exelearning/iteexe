@@ -29,6 +29,9 @@ from exe.engine.path import Path
 from exe             import globals as G
 from urllib import quote
 
+#added by lernmodule.net
+from random          import *
+#end added
 log = logging.getLogger(__name__)
 
 def replaceLinks(matchobj, package_name):
@@ -677,7 +680,7 @@ class ImageElement(Element):
         html += u"value=\"%s\" " % self.field.width
         html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
         html += u"size=\"4\"/>px "
-        html += u"<b>" + _("by") + "</b> \n"
+        html += u"<b>by</b> \n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" "
         html += u"name=\"height"+self.id+"\" "
@@ -2175,9 +2178,11 @@ class SelectOptionElement(Element):
 	html += '<div style="float: left; display: table-cell; margin-left: 0.5em; width: 93%;">\n'
 	html += '<div id="%s">\n' % ansIdent
         if preview: 
-            html += self.answerElement.renderPreview()
+            #special eXelearningPlus
+            htmlpre = self.answerElement.renderPreview()
         else:
-            html += self.answerElement.renderView()
+            htmlpre = self.answerElement.renderView()
+        html += htmlpre.replace("position:relative\"><p>","position:relative;padding-top:0\"><p style=\"display:inline\">",1)
 #        html += "</div></td></tr><tr><td></td><td>\n"
 	html += "</div></div>\n</div>\n"
 	html += '<div style="display: table-row; clear: both;">'
@@ -2566,9 +2571,13 @@ class QuizOptionElement(Element):
 	html += '</div>\n'
 	html += '<div style="float: left; display: table-cell; margin-left: 0.5em; width: 93%;">\n'
         if preview:
-            html += self.answerElement.renderPreview()
+            #special eXelearningPlus
+            htmlpre = self.answerElement.renderPreview()
         else:
-            html += self.answerElement.renderView()
+            htmlpre = self.answerElement.renderView()
+        html += htmlpre.replace("position:relative\"><p>","position:relative\"><p style=\"display:inline\">",1)
+            #html += self.answerElement.renderView()
+            #end special eXelearningPlus
 #        html += "</td></tr>\n"
 	html += "</div>\n</div>"
        
@@ -2836,3 +2845,1085 @@ class QuizQuestionElement(Element):
 	html += "</div></noscript>"
 
         return html
+
+
+#Addendums by lernmodule.net until end of file
+#============================================================================
+class ScormClozeElement(ElementWithResources):
+    """
+    Allows the user to enter a passage of text and declare that some words
+    should be added later by the student; nearly equal to ClozeElement
+    """
+
+    # Properties
+
+    @property
+    def editorId(self):
+        """
+        Returns the id string for our midas editor
+        """
+        return 'editorArea%s' % self.id
+
+    @property
+    def editorJs(self):
+        """
+        Returns the js that gets the editor document
+        """
+        return "document.getElementById('%s').contentWindow.document" % \
+            self.editorId
+
+    @property
+    def hiddenFieldJs(self):
+        """
+        Returns the js that gets the hiddenField document
+        """
+        return "document.getElementById('ScormCloze%s')" % self.id
+
+    # Public Methods
+
+    def process(self, request):
+        """
+        Sets the encodedContent of our field
+        """
+        is_cancel = common.requestHasCancel(request)
+        if is_cancel:
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+                self.field.idevice.edit = True
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.idevice.edit = True
+            return
+
+        if self.editorId in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+
+            self.field.content_w_resourcePaths = \
+                self.field.ProcessPreviewed(request.args[self.editorId][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                  self.field.MassageContentForRenderView(\
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+
+            self.field.strictMarking = \
+                'strictMarking%s' % self.id in request.args
+            self.field.checkCaps = \
+                'checkCaps%s' % self.id in request.args
+            self.field.instantMarking = \
+                'instantMarking%s' % self.id in request.args
+
+    def renderEdit(self):
+        """
+        Enables the user to set up their passage of text
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.encodedContent = self.field.content_w_resourcePaths
+
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+
+        # note use instantMarkingInstruc and not new instruc for fixedLength to can import eXe-Package also in older eXelearningPlus-Version!
+        # note also: title for instantMarking changed
+        self.field.instantMarkingInstruc = \
+            x_(u"""<p>If this option is set, all gaps will have the length of the longest answer option</p>""")
+
+        html = [
+            # Render the iframe box
+            common.formField('richTextArea', this_package, _('Cloze Text'),'',
+                             self.editorId, self.field.instruc,
+                             self.field.encodedContent),
+            # Render our toolbar
+            u'<table style="width: 100%;">',
+            u'<tbody>',
+            u'<tr>',
+            u'<td>',
+            u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
+#changed ktlm for tinymce 3.5.4.1
+#            ur"""onclick="tinyMCE.execInstanceCommand('mce_editor_1','Underline', false);"/>"""
+            ur"""onclick="tinyMCE.execCommand('Underline', false);"/>"""
+#END changed ktlm for tinymce 3.5.4.1
+            u'</td><td>',
+            common.checkbox('strictMarking%s' % self.id,
+                            self.field.strictMarking,
+                            title=_(u'Strict Marking?'),
+                            instruction=self.field.strictMarkingInstruc),
+            u'</td><td>',
+            common.checkbox('checkCaps%s' % self.id,
+                            self.field.checkCaps,
+                            title=_(u'Check Caps?'),
+                            instruction=self.field.checkCapsInstruc),
+            u'</td><td>',
+            common.checkbox('instantMarking%s' % self.id,
+                            self.field.instantMarking,
+                            title=_(u'Use fixed length?'),
+                            instruction=self.field.instantMarkingInstruc),
+            u'</td>',
+            u'</tr>',
+            u'</tbody>',
+            u'</table>',
+            ]
+        return '\n    '.join(html)
+
+    def renderPreview(self, feedbackId=None, preview=True):
+        """
+        Just a front-end wrapper around renderView..
+        """
+        # set up the content for preview mode:
+        preview = True
+        return self.renderView(feedbackId, preview)
+
+    def renderView(self, feedbackId=None, preview=False):
+        """
+        Shows the text with inputs for the missing parts
+        """
+
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.encodedContent = self.field.content_wo_resourcePaths
+
+        html = ['<div id="ScormCloze%s" class="ScormCloze">' % self.id]
+        # Store our args in some hidden fields
+        def storeValue(name):
+            value = str(bool(getattr(self.field, name))).lower()
+            return common.hiddenField('ScormClozeFlag%s.%s' % (self.id, name), value)
+        html.append(storeValue('strictMarking'))
+        html.append(storeValue('checkCaps'))
+        html.append(storeValue('instantMarking'))
+# #####
+        if feedbackId:
+            html.append(common.hiddenField('ScormClozeVar%s.feedbackId' % self.id,
+                                           'ta'+feedbackId))
+        # Mix the parts together
+        words = ""
+        def encrypt(word):
+            """
+            Simple XOR encryptions
+            """
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            return output.encode('base64')
+#added ktlm 130104 for fixed length of gap inputs
+        fixedLength = self.field.instantMarking
+        if fixedLength == True:
+            globalLength = 0
+            for i, (text, missingWord) in enumerate(self.field.parts):
+                if missingWord:
+                    word_len = len (missingWord)
+                    if word_len > globalLength:
+                        globalLength = word_len
+#END added ktlm 130104 for fixed length of gap inputs        
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if text:
+                html.append(text)
+            if missingWord:
+                words += "'" + missingWord + "',"
+                # The edit box for the user to type into
+#added ktlm for fixed width gaps
+#added ktlm 130104 to use fixed length of longest word
+                inputWidth = len (missingWord)
+                if fixedLength == True:
+                    inputWidth = globalLength
+#END added ktlm 130104 to use fixed length of longest word
+                inputHtml = [
+                    ' <input type="text" value="" ',
+                    '        id="ScormClozeBlank%s.%s"' % (self.id, i),
+                    '    autocomplete="off"',
+#changed kthamm 130104 for gaps with fixed length
+#                    '    style="width:%sem"/>\n' % len(missingWord)]
+                    '    style="width:%sem"/>\n' % inputWidth]
+#END changed kthamm 130104 for gaps with fixed length
+                #if self.field.instantMarking:
+                #    inputHtml.insert(2, '  onKeyUp="onClozeChange(this)"')
+                html += inputHtml
+                # Hidden span with correct answer
+                html += [
+                    '<span style="display: none;" ',
+                    'id="ScormClozeAnswer%s.%s">%s</span>' % (
+                        self.id, i, encrypt(missingWord))]
+
+        # Score string
+        html += ['<p id="ScormClozeScore%s"></p>' % self.id]
+        return '\n'.join(html) + '</div>'
+    
+    def renderText(self):
+        """
+        Shows the text with gaps for text file export
+        """
+        html = ""
+        for text, missingWord in self.field.parts:
+            if text:
+                html += text
+            if missingWord:
+                for x in missingWord:
+                    html += "_"
+                    
+        return html
+    
+    def renderAnswers(self):        
+        """
+        Shows the answers for text file export
+        """
+        html = ""
+
+        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        answers = ""
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if missingWord:
+                answers += str(i+1) + '.' + missingWord + ' '
+        if answers <> "":        
+            html += answers +'</p>'
+        else:
+            html = ""
+                
+        return html
+
+#============================================================================
+class ScormDropDownElement(ElementWithResources):
+    """
+    Allows the user to enter a passage of text and declare that some words
+    should be added later by the student - similar to Cloze
+    """
+
+    # Properties
+
+    @property
+    def editorId(self):
+        """
+        Returns the id string for our midas editor
+        """
+        return 'editorArea%s' % self.id
+
+    @property
+    def editorJs(self):
+        """
+        Returns the js that gets the editor document
+        """
+        return "document.getElementById('%s').contentWindow.document" % \
+            self.editorId
+
+    @property
+    def hiddenFieldJs(self):
+        """
+        Returns the js that gets the hiddenField document
+        """
+        return "document.getElementById('cloze%s')" % self.id
+
+    # Public Methods
+
+    def process(self, request):
+        """
+        Sets the encodedContent of our field
+        """
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+                self.field.idevice.edit = True
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.idevice.edit = True
+            return
+
+        if self.editorId in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+
+            self.field.content_w_resourcePaths = \
+                self.field.ProcessPreviewed(request.args[self.editorId][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                  self.field.MassageContentForRenderView(\
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+
+            self.field.strictMarking = \
+                'strictMarking%s' % self.id in request.args
+            self.field.checkCaps = \
+                'checkCaps%s' % self.id in request.args
+            self.field.instantMarking = \
+                'instantMarking%s' % self.id in request.args
+
+    def renderEdit(self):
+        """
+        Enables the user to set up their passage of text
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.encodedContent = self.field.content_w_resourcePaths
+
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+
+        html = [
+            # Render the iframe box
+            common.formField('richTextArea', this_package, _('Cloze Text'),'',
+                             self.editorId, self.field.instruc,
+                             self.field.encodedContent),
+            # Render our toolbar
+            u'<table style="width: 100%;">',
+            u'<tbody>',
+            u'<tr>',
+            u'<td>',
+            u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
+#changed ktlm for tinymce 3.5.4.1
+#            ur"""onclick="tinyMCE.execInstanceCommand('mce_editor_1','Underline', false);"/>"""
+            ur"""onclick="tinyMCE.execCommand('Underline', false);"/>"""
+#END changed ktlm for tinymce 3.5.4.1
+            u'</td>',
+            u'</tr>',
+            u'</tbody>',
+            u'</table>',
+            ]
+        return '\n    '.join(html)
+
+    def renderPreview(self, feedbackId=None, preview=True):
+        """
+        Just a front-end wrapper around renderView..
+        """
+        # set up the content for preview mode:
+        preview = True
+        return self.renderView(feedbackId, preview)
+
+    def renderView(self, feedbackId=None, preview=False):
+        """
+        Shows the text with inputs for the missing parts
+        """
+
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.encodedContent = self.field.content_wo_resourcePaths
+
+        html = ['<div id="FillIn%s" class="FillIn">' % self.id]
+        # Store our args in some hidden fields
+        def storeValue(name):
+            value = str(bool(getattr(self.field, name))).lower()
+            return common.hiddenField('FillInFlag%s.%s' % (self.id, name), value)
+        html.append(storeValue('strictMarking'))
+        html.append(storeValue('checkCaps'))
+        html.append(storeValue('instantMarking'))
+        if feedbackId:
+            html.append(common.hiddenField('FillInVar%s.feedbackId' % self.id,
+                                           'ta'+feedbackId))
+        # Mix the parts together
+        words = ""
+        def encrypt(word):
+            """
+            Simple XOR encryptions
+            """
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            return output.encode('base64')
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if text:
+                html.append(text)
+            if missingWord:
+                words += "'" + missingWord + "',"
+                #kt
+                answers = missingWord.split('|');
+                #kt
+                # The edit box for the user to type into
+
+                shuffle(answers)
+                inputHtml = ['<select id="FillInBlank%s.%s" class="FillInBlank"><option style="background-color:white;" selected>?</option>' % (self.id, i)]
+                for j in range(1,len(answers)+1):
+#                    answers[j-1] = re.sub(r'\n','',answers[j-1])
+                    inputHtml.append('<option style="background-color:white;">' + answers[j-1] + '</option>')
+                inputHtml.append('</select>')
+                html += inputHtml
+                # Hidden span with correct answer
+                html += [
+                    '<span style="display: none;" ',
+                    'id="FillInAnswer%s.%s">%s</span>' % (
+                        self.id, i, encrypt(missingWord))]
+
+        # Score string
+        html += ['<p id="FillInScore%s"></p>' % self.id]
+        return '\n'.join(html) + '</div>'
+    
+    def renderText(self):
+        """
+        Shows the text with gaps for text file export
+        """
+        html = ""
+        for text, missingWord in self.field.parts:
+            if text:
+                html += text
+            if missingWord:
+                for x in missingWord:
+                    html += "_"
+                    
+        return html
+    
+    def renderAnswers(self):        
+        """
+        Shows the answers for text file export
+        """
+        html = ""
+
+        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        answers = ""
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if missingWord:
+                answers += str(i+1) + '.' + missingWord + ' '
+        if answers <> "":        
+            html += answers +'</p>'
+        else:
+            html = ""
+                
+        return html
+
+# ===========================================================================
+class ScormSelectOptionElement(Element):
+    """
+    ScormSelectOptionElement is responsible for a block of option.  Used by
+    SelectQuestionElement.
+    Which is used as part of the Multi-Select iDevice.
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        self.index = 0
+
+        # to compensate for the strange unpickling timing when objects are
+        # loaded from an elp, ensure that proper idevices are set:
+        if field.answerTextArea.idevice is None:
+            field.answerTextArea.idevice = idevice
+        self.answerElement = TextAreaElementWithSpan(field.answerTextArea)
+        self.answerId = "ans"+self.id
+        self.answerElement.id = self.answerId
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        Return any which apply to this element.
+        """
+        log.debug("process " + repr(request.args))
+
+        if self.answerId in request.args:
+            self.answerElement.process(request)
+
+        if "c"+self.id in request.args:
+            self.field.isCorrect = True
+            log.debug("option " + repr(self.field.isCorrect))
+        elif "ans"+self.id in request.args:
+            self.field.isCorrect = False
+
+        if "action" in request.args and \
+           request.args["action"][0] == "del"+self.id:
+            self.field.question.options.remove(self.field)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string for editing this option element
+        code is pretty much straight from the Multi-Option aka QuizOption
+        """
+        html  = u"<tr><td colspan=\"3\" align=\"left\"><b>%s</b>" % _("Option")
+        html += common.elementInstruc("Enter the option here. More options can be added by clicking &quot;Add another Option&quot;.<br> Options can be deleted by clicking on the red X next to the option.<br>Hints: Use several wrong responses.<br>The wrong responses should be formulated approximately equal<br>in length and clarity as the right responses.<br> The wrong responses should seem plausible.")
+# translated
+#        html += common.elementInstruc("Geben Sie hier die Antwort ein. Weitere Antworten k&ouml;nnen erg&auml;nzt werden durch Klick auf 'Eine weitere Antwort hinzuf&uuml;gen'. Antworten k&ouml;nnen gel&ouml;scht werden durch Klick auf das rote X neben der Antwort.<br>Hinweise:<br>Verwenden Sie mehrere falsche Antworten. Die falsche Antworten sollten Sie etwa gleich lang und klar wie die richtige(n) Atwort(en) formulieren. Die falschen Antworten m&uuml;ssen plausibel erscheinen.")
+
+        html += u"</td></tr><tr><td align=\"left\">\n"
+        html += common.checkbox("c"+self.id,
+                              self.field.isCorrect, self.index)
+#        html += "&nbsp;Richtig<br /><br /><br /><br />\n"
+        html += "&nbsp;Correct<br /><br /><br /><br />\n"
+        html += common.submitImage("del"+self.id, self.field.idevice.id,
+                                   "/images/stock-cancel.png",
+                                   _(u"Delete option"))
+        html += "</td><td colspan=\"2\">\n"
+        # rather than using answerElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format
+        # (in a table, with an extra delete-option X to the right)
+        html += common.richTextArea("ans"+self.id,
+                          self.answerElement.field.content_w_resourcePaths)
+
+        html += "</td></tr>\n"
+
+        return html
+
+
+    def renderView(self, preview=False):
+        def encrypt(word):
+            """
+            Simple XOR encryptions
+            """
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            return output.encode('base64')
+        """
+        Returns an XHTML string for viewing this option element
+        """
+        log.debug("renderView called with preview = " + str(preview))
+        ident = self.field.question.id + str(self.index)
+        html = u'<input type="checkbox" id="%s"' % ident
+        if self.field.isCorrect == True :
+            html += u' value="%s" />\n' %str(encrypt(str(randint(0,10000) * 2)))
+        else :
+            html += u' value="%s" />\n' %str(encrypt(str(randint(0,10000) * 2 + 1)))
+        ansIdent = "ans" + self.field.question.id + str(self.index)
+        html += '<span id="%s" style="color:black">\n' % ansIdent
+        if preview:
+            html += self.answerElement.renderPreview()
+        else:
+            html += self.answerElement.renderView()
+        html += "</span>&nbsp;&nbsp;<br />\n"
+        return html
+
+
+# ===========================================================================
+class ScormSelectquestionElement(Element):
+    """
+    ScormSelectQuestionElement is responsible for a block of question.
+    Used by QuizTestBlock
+    Which is used as part of the Multi-Select iDevice.
+    """
+
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+        # to compensate for the strange unpickling timing when objects are
+        # loaded from an elp, ensure that proper idevices are set:
+        if field.questionTextArea.idevice is None:
+            field.questionTextArea.idevice = idevice
+        if field.feedbackTextArea.idevice is None:
+            field.feedbackTextArea.idevice = idevice
+
+        self.questionElement = TextAreaElement(field.questionTextArea)
+        self.questionId = "question"+self.id
+        self.questionElement.id = self.questionId
+        self.feedbackElement = TextAreaElement(field.feedbackTextArea)
+        self.feedbackId = "feedback"+self.id
+        self.feedbackElement.id = self.feedbackId
+
+        self.options    = []
+        i = 0
+        for option in self.field.options:
+            ele = ScormSelectOptionElement(option)
+            ele.index = i
+            self.options.append(ele)
+            i += 1
+
+    def process(self, request):
+        """
+        Process the request arguments from the web server
+        """
+        log.info("process " + repr(request.args))
+
+        if self.questionId in request.args:
+            self.questionElement.process(request)
+
+        if ("addOption"+unicode(self.id)) in request.args:
+            self.field.addOption()
+            self.field.idevice.edit = True
+
+        if self.feedbackId in request.args:
+            self.feedbackElement.process(request)
+
+        if "action" in request.args and \
+           request.args["action"][0] == "del" + self.id:
+            self.field.idevice.questions.remove(self.field)
+
+        for element in self.options:
+            element.process(request)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this element
+        """
+        html  = u"<div class=\"iDevice\">\n"
+        html += u"<b>" + _("Question:") + " </b>"
+#        html += common.elementInstruc(self.field.questionInstruc)
+# translated
+#        html += common.elementInstruc("Geben Sie hier die Aufgabenstellung ein.<br>Formulieren Sie klar und eindeutig.<br>Formulieren Sie positiv und vermeiden Sie Verneinungen, da Lernende sonst verwirrt werden k&ouml;nnten.<br>Bevorzugen Sie &quot;Warum&quot; und &quot;Wie&quot;-Fragen. &quot;Wer&quot;, &quot;Wann&quot; und &quot;Wo&quot;-Fragen k&ouml;nnen oberfl&auml;chlich sein.<br>Testen Sie auf Erfolg, nicht auf Versagen!")
+        html += common.elementInstruc("Enter the task here.<br>Formulate clearly and unambiguous.<br><Prefer questions with &quot;why&quot; and &quot;how&quot;.<br>Questions with &quot;who&quot;, &quot;when&quot; and &quot;where&quot; can be perfunctory.<br>Test for success, not for failure.")
+#        html += u" " + common.submitImage("del" + self.id,
+#                                   self.field.idevice.id,
+#                                   "/images/stock-cancel.png",
+#                                   _("Delete question"))
+        # rather than using questionElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format
+        # (an extra delete-question X to the right of the question-mark)
+        html += common.richTextArea("question"+self.id,
+                       self.questionElement.field.content_w_resourcePaths)
+
+        html += u"<table width =\"100%%\">"
+#        html += u"<thead>"
+#        html += u"<tr>"
+#        html += u"<th>%s " % _("Options")
+#        html += common.elementInstruc(self.field.optionInstruc)
+#        html += u"</th>"
+#        html += u"</tr>"
+#        html += u"</thead>"
+#        html += u"<tbody>"
+
+        for element in self.options:
+            html += element.renderEdit()
+
+#        html += u"</tbody>"
+        html += u"</table>\n"
+
+        value = _(u"Add another Option")
+        html += common.submitButton("addOption"+self.id, value)
+        html += u"<br />"
+
+        #html += self.feedbackElement.renderEdit()
+
+        html += u"</div>\n"
+
+        return html
+
+    def renderView(self,img=None):
+        """
+        Returns an XHTML string for viewing this question element
+        """
+        return self.doRender(img, preview=False)
+
+    def renderPreview(self,img=None):
+        """
+        Returns an XHTML string for viewing this question element
+        """
+        return self.doRender(img, preview=True)
+
+
+    def doRender(self, img, preview=False):
+        """
+        Returns an XHTML string for viewing this element
+        """
+
+        if preview:
+            html  = self.questionElement.renderPreview()
+        else:
+            html  = self.questionElement.renderView()
+
+        html += '<div id="ScormMultiSelect%s" class="ScormMultiSelect">' %(self.field.id)
+        for element in self.options:
+            html += element.renderView(preview)
+        #html += '<!--if you want to use eXelearningPlus for free as Open Source you are not allowed to hide or delete the following text.-->\n'
+        #html += '<!--If you want to hide or delete, you have to contact lernmodule.net-->\n'
+        #html += '<p id="scorediv%s" class="block" style="display:block">' %(self.field.id)
+        #html += '<span style="font-size:70%">created with <a style="color:gray" href="http://www.exelearningplus.de" target="_blank">eXelearningPlus</a> provided by <a style="color:gray" href="http://www.lernmodule.net" target="_blank">lernmodule.net</a></span></p>'
+        html += '<p id="scorediv%s" class="block" style="display:block"></p>' %(self.field.id)
+        html += "</div><br />"
+        return html
+
+# ===========================================================================
+
+class TextAreaElementWithSpan(ElementWithResources):
+    """
+    TextAreaElementWithSpan is responsible for a block of text; here it is the same as TextAreaElement except: span instead of div and in renderview inline instead of block
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        ElementWithResources.__init__(self, field)
+
+        self.width  = "100%"
+        if (hasattr(field.idevice, 'class_') and
+            field.idevice.class_ in \
+                    ("activity", "objectives", "preknowledge")):
+            self.height = 250
+        else:
+            self.height = 100
+
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.content = self.field.content_wo_resourcePaths
+            return
+
+        if self.id in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+
+            self.field.content_w_resourcePaths \
+                = self.field.ProcessPreviewed(request.args[self.id][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths \
+                    = self.field.MassageContentForRenderView( \
+                                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.content = self.field.content_w_resourcePaths
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.content = self.field.content_w_resourcePaths
+
+        log.debug("renderEdit content="+self.field.content+
+                  ", height="+unicode(self.height))
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+        html = common.formField('richTextArea', this_package, 
+                                self.field.name,'',
+                                self.id, self.field.instruc,
+                                self.field.content,
+                                str(self.width), str(self.height))
+        return html
+
+    def renderPreview(self, visible=True, class_="block"):
+        """
+        Returns an XHTML string for previewing this element
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.content = self.field.content_w_resourcePaths
+
+        content = re.sub(r'(?i)<\s*a[^>]+>',
+                lambda mo: replaceLinks(mo, self.field.idevice.parentNode.package.name),
+                self.field.content)
+        return self.renderView(content=content, visible=visible, \
+                               class_=class_, preview=True)
+
+    def renderView(self, visible=True, class_="block", content=None, 
+                    preview=False):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        if visible:
+            visible = 'style="display:inline"'
+        else:
+            visible = 'style="display:none"'
+        if content is None:
+            if preview:
+                # render the resource content with resource paths: 
+                if not hasattr(self.field, 'content_w_resourcePaths'):
+                    # safety measure, in case not yet set.  could set to "" or:
+                    self.field.content_w_resourcePaths = self.field.content
+                self.field.content = self.field.content_w_resourcePaths
+            else:
+                # render with the flattened content, withOUT resource paths: 
+                if not hasattr(self.field, 'content_wo_resourcePaths'):
+                    # safety measure, in case not yet set.  could set to "" or:
+                    self.field.content_wo_resourcePaths = self.field.content
+                self.field.content = self.field.content_wo_resourcePaths
+            content = self.field.content
+        #special eXelearningPlus
+        if content.startswith('<p>'):
+            return '<span id="ta%s" class="%s" %s>%s</span>' % (
+                self.id, class_, visible, content.replace("<p>","<p style=\"display:inline\">",1))
+        #end special eXelearningPlus
+        return '<span id="ta%s" class="%s" %s>%s</span>' % (
+            self.id, class_, visible, content)
+   
+# ===========================================================================
+#==================== ScormMultiClozeElement ================================
+class ScormMultiClozeElement(ElementWithResources):
+    """
+    Allows the user to enter a passage of text and declare that some words
+    should be added later by the student; nearly equal to ClozeElement
+    """
+
+    # Properties
+
+    @property
+    def editorId(self):
+        """
+        Returns the id string for our midas editor
+        """
+        return 'editorArea%s' % self.id
+
+    @property
+    def editorJs(self):
+        """
+        Returns the js that gets the editor document
+        """
+        return "document.getElementById('%s').contentWindow.document" % \
+            self.editorId
+
+    @property
+    def hiddenFieldJs(self):
+        """
+        Returns the js that gets the hiddenField document
+        """
+        return "document.getElementById('ScormMultiCloze%s')" % self.id
+
+    # Public Methods
+
+    def process(self, request):
+        """
+        Sets the encodedContent of our field
+        """
+        is_cancel = common.requestHasCancel(request)
+
+        if is_cancel:
+            self.field.idevice.edit = False
+            # but double-check for first-edits, and ensure proper attributes:
+            if not hasattr(self.field, 'content_w_resourcePaths'):
+                self.field.content_w_resourcePaths = ""
+                self.field.idevice.edit = True
+            if not hasattr(self.field, 'content_wo_resourcePaths'):
+                self.field.content_wo_resourcePaths = ""
+                self.field.idevice.edit = True
+            return
+
+        if self.editorId in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+
+            self.field.content_w_resourcePaths = \
+                self.field.ProcessPreviewed(request.args[self.editorId][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                  self.field.MassageContentForRenderView(\
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+
+            self.field.strictMarking = \
+                'strictMarking%s' % self.id in request.args
+            self.field.checkCaps = \
+                'checkCaps%s' % self.id in request.args
+            self.field.instantMarking = \
+                'instantMarking%s' % self.id in request.args
+
+    def renderEdit(self):
+        """
+        Enables the user to set up their passage of text
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.encodedContent = self.field.content_w_resourcePaths
+
+        this_package = None
+        if self.field_idevice is not None \
+        and self.field_idevice.parentNode is not None:
+            this_package = self.field_idevice.parentNode.package
+
+        # note use instantMarkingInstruc and not new instruc for fixedLength to can import eXe-Package also in older eXelearningPlus-Version!
+        # note also: title for instantMarking changed
+        self.field.instantMarkingInstruc = \
+            x_(u"""<p>If this option is set, all gaps will have the length of the longest answer option</p>""")
+
+        html = [
+            # Render the iframe box
+            common.formField('richTextArea', this_package, _('Cloze Text'),'',
+                             self.editorId, self.field.instruc,
+                             self.field.encodedContent),
+            # Render our toolbar
+            u'<table style="width: 100%;">',
+            u'<tbody>',
+            u'<tr>',
+            u'<td>',
+            u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
+#changed ktlm for tinymce 3.5.4.1
+#            ur"""onclick="tinyMCE.execInstanceCommand('mce_editor_1','Underline', false);"/>"""
+            ur"""onclick="tinyMCE.execCommand('Underline', false);"/>"""
+#END changed ktlm for tinymce 3.5.4.1
+            u'</td><td>',
+#removed ktlm no strict marking with multiple cloze options
+#            common.checkbox('strictMarking%s' % self.id,
+#                            self.field.strictMarking,
+#                            title=_(u'Strict Marking?'),
+#                            instruction=self.field.strictMarkingInstruc),
+#            u'</td><td>',
+#END removed ktlm no strict marking with multiple cloze options
+            common.checkbox('checkCaps%s' % self.id,
+                            self.field.checkCaps,
+                            title=_(u'Check Caps?'),
+                            instruction=self.field.checkCapsInstruc),
+            u'</td><td>',
+            common.checkbox('instantMarking%s' % self.id,
+                            self.field.instantMarking,
+                            title=_(u'Use fixed length?'),
+                            instruction=self.field.instantMarkingInstruc),
+            u'</td>',
+            u'</tr>',
+            u'</tbody>',
+            u'</table>',
+            ]
+        return '\n    '.join(html)
+
+    def renderPreview(self, feedbackId=None, preview=True):
+        """
+        Just a front-end wrapper around renderView..
+        """
+        # set up the content for preview mode:
+        preview = True
+        return self.renderView(feedbackId, preview)
+
+    def renderView(self, feedbackId=None, preview=False):
+        """
+        Shows the text with inputs for the missing parts
+        """
+
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.encodedContent = self.field.content_wo_resourcePaths
+
+        html = ['<div id="ScormMultiCloze%s" class="ScormMultiCloze">' % self.id]
+        # Store our args in some hidden fields
+        def storeValue(name):
+            value = str(bool(getattr(self.field, name))).lower()
+            return common.hiddenField('ScormMultiClozeFlag%s.%s' % (self.id, name), value)
+        html.append(storeValue('strictMarking'))
+        html.append(storeValue('checkCaps'))
+        html.append(storeValue('instantMarking'))
+        if feedbackId:
+            html.append(common.hiddenField('ScormMultiClozeVar%s.feedbackId' % self.id,
+                                           'ta'+feedbackId))
+        # Mix the parts together
+        words = ""
+        def encrypt(word):
+            """
+            Simple XOR encryptions
+            """
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            return output.encode('base64')
+#added ktlm 130104 for fixed length of gap inputs  
+        fixedLength = self.field.instantMarking
+        if fixedLength == True:
+            globalLength = 0
+            for i, (text, missingWord) in enumerate(self.field.parts):
+                if missingWord: 
+                    maxlen = 0
+                    options = missingWord.split('|');
+                    for option in options:
+                        if len (option) > maxlen:
+                            maxlen = len (option)
+                    if maxlen > globalLength:
+                        globalLength = maxlen
+#END added ktlm 130104 for fixed length of gap inputs        
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if text:
+                html.append(text)
+            if missingWord:
+                words += "'" + missingWord + "',"
+#added ktlm 121214 gap should have length of longest option
+                maxlen = 0
+                options = missingWord.split('|');
+                for option in options:
+                    if len (option) > maxlen:
+                        maxlen = len (option)
+#END added ktlm
+#added ktlm 130104 to use fixed length of longest word
+                if fixedLength == True:
+                    maxlen = globalLength
+#END added ktlm 130104 to use fixed length of longest word
+                # The edit box for the user to type into
+                inputHtml = [
+                    ' <input type="text" value="" ',
+                    '        id="ScormMultiClozeBlank%s.%s"' % (self.id, i),
+                    '    autocomplete="off"',
+#changed ktlm 121214 use maxlen
+#                    '    style="width:%sem"/>\n' % len(missingWord)]
+                    '    style="width:%sem"/>\n' % maxlen]
+#END changed ktlm
+                #if self.field.instantMarking:
+                #    inputHtml.insert(2, '  onKeyUp="onClozeChange(this)"')
+                html += inputHtml
+                # Hidden span with correct answer
+                html += [
+                    '<span style="display: none;" ',
+                    'id="ScormMultiClozeAnswer%s.%s">%s</span>' % (
+                        self.id, i, encrypt(missingWord))]
+
+        # Score string
+        #html += ['<!--if you want to use eXelearningPlus for free as Open Source you are not allowed to hide or delete the following text.-->\n']
+        #html += ['<!--If you want to hide or delete, you have to contact lernmodule.net-->']
+        #html += ['<p id="ScormClozeScore%s"><span style="font-size:70%%">created with <a style="color:gray" href="http://www.exelearningplus.de" target="_blank">eXelearningPlus</a> provided by <a style="color:gray" href="http://www.lernmodule.net" target="_blank">lernmodule.net</a></span></p>' % self.id]
+        html += ['<p id="ScormMultiClozeScore%s"></p>' % self.id]
+        return '\n'.join(html) + '</div>'
+    
+    def renderText(self):
+        """
+        Shows the text with gaps for text file export
+        """
+        html = ""
+        for text, missingWord in self.field.parts:
+            if text:
+                html += text
+            if missingWord:
+                for x in missingWord:
+                    html += "_"
+                    
+        return html
+    
+    def renderAnswers(self):        
+        """
+        Shows the answers for text file export
+        """
+        html = ""
+
+        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        answers = ""
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if missingWord:
+                answers += str(i+1) + '.' + missingWord + ' '
+        if answers <> "":        
+            html += answers +'</p>'
+        else:
+            html = ""
+                
+        return html
+
+#==================== ScormMultiClozeElement END ============================

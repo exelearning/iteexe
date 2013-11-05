@@ -26,7 +26,7 @@ pipwerks.debug = { isActive: true }; 	//Enable (true) or disable (false) for deb
 pipwerks.SCORM = {			//Define the SCORM object
 	version:    null,              	//Store SCORM version.
 	handleCompletionStatus: true,	//Whether or not the wrapper should automatically handle the initial completion status
-	handleExitMode: true,		//Whether or not the wrapper should automatically handle the exit mode
+	handleExitMode: false,		//Whether or not the wrapper should automatically handle the exit mode - Kohnle changed to false
 	API:        { 	handle: null, 
 			isFound: false },	//Create API child object
 	connection: {	isActive: false },	//Create connection child object
@@ -402,9 +402,9 @@ pipwerks.SCORM.data.get = function(parameter){
             errorCode = debug.getCode();
                
             //GetValue returns an empty string on errors
-            //Double-check errorCode to make sure empty string
-            //is really an error and not field value
-            if(value !== "" && errorCode === 0){
+            //If value is an empty string, check errorCode to make sure there are no errors
+
+            if(value !== "" || errorCode === 0){
 			   
 				switch(parameter){
 					
@@ -720,12 +720,18 @@ pipwerks.SCORM.quit = pipwerks.SCORM.connection.terminate;
    Returns:    Boolean
 ---------------------------------------------------------------------------- */
 
-pipwerks.UTILS.StringToBoolean = function(string){
-     switch(string.toLowerCase()) {
-          case "true": case "yes": case "1": return true;
-          case "false": case "no": case "0": case null: return false; 
-          default: return Boolean(string);
-     }     
+pipwerks.UTILS.StringToBoolean = function(value){
+    var t = typeof value;
+    switch(t){
+       //typeof new String("true") === "object", so handle objects as string via fall-through. 
+	   //See https://github.com/pipwerks/scorm-api-wrapper/issues/3
+	   case "object":  
+       case "string": return (/(true|1)/i).test(value);
+       case "number": return !!value;
+       case "boolean": return value;
+       case "undefined": return null;
+       default: return false;
+    }     
 };
 
 
@@ -1513,7 +1519,7 @@ pipwerks.SCORM.GetSuccessStatus = function(){
 		
 	if(API){
 		switch(scorm.version){
-			case "1.2" : result = scorm.get("cmi.core.completion_status"); break; // cmi.success_status only exists in 2004
+			case "1.2" : result = scorm.get("cmi.core.lesson_status"); break; // cmi.success_status only exists in 2004
 			case "2004": result = scorm.get("cmi.success_status"); break;
 		}
 	}

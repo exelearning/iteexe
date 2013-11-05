@@ -151,6 +151,12 @@ class CasestudyBlock(Block):
             for element in self.questionElements:
                 html += element.renderView()
 
+        #added lernmodule.net
+        htmplus = '<div class="CaseStudy" id="Casestudy%s">' % (self.id)
+        htmplus += '<textarea id="CaseStudyText%s" class="CaseStudyText" name="CaseStudyText%s"'  % (self.id, self.id)
+        htmplus += ' rows=5 style="width:99%"></textarea></div><div id="view'
+        html = html.replace("<div id=\"view",htmplus,1)
+
         return html
 
 from exe.engine.casestudyidevice import CasestudyIdevice

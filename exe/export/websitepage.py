@@ -73,7 +73,8 @@ class WebsitePage(Page):
             headerTag = "header"
             navTag = "nav"
         else:
-            html = u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
+            html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"+lb
+            html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
             html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
         html += u"<head>"+lb
         html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
@@ -123,6 +124,7 @@ class WebsitePage(Page):
             html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         html += common.getJavaScriptStrings()+lb
         html += u'<script type="text/javascript" src="common.js"></script>'+lb
+        html += u'<script type="text/javascript" src="lernmodule_net.js"></script>'+lb
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
@@ -187,6 +189,7 @@ class WebsitePage(Page):
                 html += u'</'+sectionTag+'>'+lb # iDevice div
 
         if not themeHasXML:
+            html += "<"+sectionTag+" id=\"lmsubmit\"></"+sectionTag+"><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"+lb
             html += "<"+sectionTag+" id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage)
             html += "</"+sectionTag+">"+lb
@@ -199,6 +202,7 @@ class WebsitePage(Page):
         html += u"</"+sectionTag+">"+lb # /main-wrapper
         if themeHasXML:
         #if style.hasValidConfig:
+            html += "<"+sectionTag+" id=\"lmsubmit\"></"+sectionTag+"><script type=\"text/javascript\" language=\"javascript\">doStart();</script>"+lb
             html += "<"+sectionTag+" id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage)
             html += "</"+sectionTag+">"+lb        
