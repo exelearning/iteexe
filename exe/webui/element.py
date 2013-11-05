@@ -20,7 +20,6 @@
 """
 Classes to XHTML elements.  Used by GenericBlock
 """
-import os 
 import logging
 import re
 import urllib
@@ -28,10 +27,8 @@ from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
 from urllib import quote
+import random
 
-#added by lernmodule.net
-from random          import *
-#end added
 log = logging.getLogger(__name__)
 
 def replaceLinks(matchobj, package_name):
@@ -3253,7 +3250,7 @@ class ScormDropDownElement(ElementWithResources):
                 #kt
                 # The edit box for the user to type into
 
-                shuffle(answers)
+                random.shuffle(answers)
                 inputHtml = ['<select id="FillInBlank%s.%s" class="FillInBlank"><option style="background-color:white;" selected>?</option>' % (self.id, i)]
                 for j in range(1,len(answers)+1):
 #                    answers[j-1] = re.sub(r'\n','',answers[j-1])
@@ -3398,9 +3395,9 @@ class ScormSelectOptionElement(Element):
         ident = self.field.question.id + str(self.index)
         html = u'<input type="checkbox" id="%s"' % ident
         if self.field.isCorrect == True :
-            html += u' value="%s" />\n' %str(encrypt(str(randint(0,10000) * 2)))
+            html += u' value="%s" />\n' %str(encrypt(str(random.randint(0,10000) * 2)))
         else :
-            html += u' value="%s" />\n' %str(encrypt(str(randint(0,10000) * 2 + 1)))
+            html += u' value="%s" />\n' %str(encrypt(str(random.randint(0,10000) * 2 + 1)))
         ansIdent = "ans" + self.field.question.id + str(self.index)
         html += '<span id="%s" style="color:black">\n' % ansIdent
         if preview:
