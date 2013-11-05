@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-10-23 14:52+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-05 20:16+0100\nPO-Revision-Date: 2013-10-23 14:52+0200\nLast-Translator: Pilar Embid Giner <embid_mar@gva.es>\nLanguage-Team: LliureX\nLanguage: ca_ES\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crea la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
  "Xhosa ": "Xosa ", 
@@ -1325,7 +1325,6 @@ translations = {
  "Aymara ": "Aimara ", 
  "XLIFF export options": "Opcions d'exportaci\u00f3 en XLIFF", 
  "discipline": "disciplina", 
- "This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from": "Este article s'ha publicat sota la llic\u00e8ncia Creative Commons Reconeixement - Compartir igual. Utilitza material procedent de", 
  "Corsican ": "Cors ", 
  "Update Odd Rows in Table": "Actualitza les files senars de la taula", 
  "The mathematical language LATEX has been \n                        used to enable your to insert mathematical formula \n                        into your content. It does this by translating \n                        LATEX into an image which is then displayed\n                         within your eXe content. We would recommend that \n                        you use the Free Text iDevice to provide \n                        explanatory notes and learning instruction around \n                        this graphic.": "El llenguatge matem\u00e0tic LaTeX s'ha habilitat \n               per a permetre-vos inserir f\u00f3rmules matem\u00e0tiques en les vostres activitats. \n               Ha calgut traduir el LaTeX a imatges que es mostren a l'interior del contingut eXe. \n               Recomanem que utilitzeu l'iDevice Text lliure per a proporcionar explicacions i \n               instruccions en este gr\u00e0fic.", 

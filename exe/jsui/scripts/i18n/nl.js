@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-11-01 18:57+0100\nLast-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2013-11-05 20:16+0100\nPO-Revision-Date: 2013-11-01 18:57+0100\nLast-Translator: Karel Werschkull <k.werschkull@summacollege.nl>\nLanguage-Team: Dutch <exe@exelearning.org>\nLanguage: nl\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Xhosa ": "Xhosa", 
@@ -1325,7 +1325,6 @@ translations = {
  "Aymara ": "Aymara ", 
  "XLIFF export options": "XLIFF export opties", 
  "discipline": "studierichting", 
- "This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from": "Het gebruik van dit artikel valt onder de CReative Commons Attribuut-gelijk delen licentie. het gebruikt materiaal van", 
  "Corsican ": "Corsicaans", 
  "Update Odd Rows in Table": "Oneven rijen bijwerken", 
  "The mathematical language LATEX has been \n                        used to enable your to insert mathematical formula \n                        into your content. It does this by translating \n                        LATEX into an image which is then displayed\n                         within your eXe content. We would recommend that \n                        you use the Free Text iDevice to provide \n                        explanatory notes and learning instruction around \n                        this graphic.": "De wiskundetaal LATEX wordt \ngebruikt om het invoegen van wiskundige formules\nmogelijk te maken. Dit gebeurt door formules om te zetten\nnaar een afbeelding die dan in eXe weergegeven\nwordt. We raden aan om \nhet iDevice vrije tekst te gebruiken om meer uitleg\\bij de afbeelding te plaatsen.", 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-04 15:12+0100\n"
+"POT-Creation-Date: 2013-11-05 20:16+0100\n"
 "PO-Revision-Date: 2013-10-23 22:26+0800\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
@@ -53,15 +53,18 @@ msgstr "Java Applet"
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:529
-#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:615
-#: exe/engine/idevicestore.py:638 exe/engine/idevicestore.py:694
-#: exe/engine/idevicestore.py:722 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:540
+#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:626
+#: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:705
+#: exe/engine/idevicestore.py:733 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:47
-#: exe/engine/reflectionidevice.py:47
+#: exe/engine/reflectionidevice.py:47 exe/engine/scormclozeidevice.py:47
+#: exe/engine/scormdropdownidevice.py:47
+#: exe/engine/scormmulticlozeidevice.py:47
+#: exe/engine/scormmultiselectidevice.py:42
 #: exe/engine/seleccionmultiplefpdidevice.py:45
 #: exe/engine/truefalseidevice.py:145
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
@@ -345,8 +348,8 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
 #: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
-#: exe/engine/memorymatchidevice.py:113 exe/engine/sortidevice.py:52
-#: exe/engine/sortidevice.py:134
+#: exe/engine/memorymatchidevice.py:113 exe/engine/placetheobjectsidevice.py:57
+#: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
@@ -562,7 +565,9 @@ msgid "FPD - Cloze Activity"
 msgstr "FPD - 克漏字練習"
 
 #: exe/engine/clozefpdidevice.py:52 exe/engine/clozeidevice.py:51
-#: exe/engine/clozelangfpdidevice.py:52
+#: exe/engine/clozelangfpdidevice.py:52 exe/engine/scormclozeidevice.py:48
+#: exe/engine/scormdropdownidevice.py:48
+#: exe/engine/scormmulticlozeidevice.py:48
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -576,7 +581,9 @@ msgstr ""
 "練習是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>確認單字的組成與文法的完成度。</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
-#: exe/engine/clozelangfpdidevice.py:64
+#: exe/engine/clozelangfpdidevice.py:64 exe/engine/scormclozeidevice.py:60
+#: exe/engine/scormdropdownidevice.py:60
+#: exe/engine/scormmulticlozeidevice.py:60
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -603,16 +610,18 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
 #: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
-#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:49
-#: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
-#: exe/engine/truefalseidevice.py:390
+#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
+#: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
+#: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
+#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:469
 msgid "Instructions"
 msgstr "說明"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
-#: exe/engine/clozelangfpdidevice.py:121
+#: exe/engine/clozelangfpdidevice.py:121 exe/engine/scormclozeidevice.py:117
+#: exe/engine/scormmulticlozeidevice.py:117
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -620,6 +629,8 @@ msgid ""
 msgstr "提供怎樣完成克漏字填空的說明。若是不變更此欄位，則會提供預設的文字。\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
+#: exe/engine/scormclozeidevice.py:123 exe/engine/scormdropdownidevice.py:123
+#: exe/engine/scormmulticlozeidevice.py:125
 msgid "Cloze"
 msgstr "克漏字"
 
@@ -637,23 +648,29 @@ msgstr "<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:578
-#: exe/engine/idevicestore.py:687 exe/engine/listaidevice.py:140
-#: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
+#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
+#: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
+#: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
+#: exe/engine/scormclozeidevice.py:281 exe/engine/scormdropdownidevice.py:142
+#: exe/engine/scormdropdownidevice.py:292
+#: exe/engine/scormmulticlozeidevice.py:135
+#: exe/engine/scormmulticlozeidevice.py:285 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
 #: exe/webui/common.py:386 exe/webui/editorelement.py:148
-#: exe/webui/editorpane.py:255 exe/webui/element.py:2393
-#: exe/webui/element.py:2507 exe/webui/listablock.py:452
+#: exe/webui/editorpane.py:255 exe/webui/element.py:2395
+#: exe/webui/element.py:2509 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
 msgid "Feedback"
 msgstr "回饋意見"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
+#: exe/engine/scormclozeidevice.py:132 exe/engine/scormdropdownidevice.py:143
+#: exe/engine/scormmulticlozeidevice.py:136
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -661,21 +678,29 @@ msgstr "輸入您希望提供給學生的回饋意見。此欄位可以空白。
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
+#: exe/engine/scormclozeidevice.py:276 exe/engine/scormdropdownidevice.py:287
+#: exe/engine/scormmulticlozeidevice.py:280
 msgid "Instructions For Learners"
 msgstr "給學生的指示"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
+#: exe/engine/scormclozeidevice.py:277 exe/engine/scormdropdownidevice.py:288
+#: exe/engine/scormmulticlozeidevice.py:281
 msgid "Put instructions for learners here"
 msgstr "將給學生的指示放在這裡"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
-#: exe/engine/clozelangfpdidevice.py:284
+#: exe/engine/clozelangfpdidevice.py:284 exe/engine/scormclozeidevice.py:278
+#: exe/engine/scormdropdownidevice.py:289
+#: exe/engine/scormmulticlozeidevice.py:282
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "閱讀底下的段落，並填上缺少的單字"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
-#: exe/engine/clozelangfpdidevice.py:296
+#: exe/engine/clozelangfpdidevice.py:296 exe/engine/scormclozeidevice.py:290
+#: exe/engine/scormdropdownidevice.py:301
+#: exe/engine/scormmulticlozeidevice.py:294
 msgid "Allow auto completion when user filling the gaps."
 msgstr "當學生填寫時允許自動完成。"
 
@@ -683,7 +708,8 @@ msgstr "當學生填寫時允許自動完成。"
 msgid "Cloze Activity"
 msgstr "克漏字練習"
 
-#: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:393
+#: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
+#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:393
 #: exe/engine/verdaderofalsofpdidevice.py:396
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "檢視以下段落並填空。"
@@ -704,13 +730,14 @@ msgstr "非互動式活動"
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102 exe/engine/config.py:104
+#: exe/engine/config.py:102 exe/engine/config.py:105 exe/engine/config.py:106
+#: exe/engine/config.py:107 exe/engine/config.py:108
 msgid "Interactive Activities"
 msgstr "互動式活動"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
-#: exe/engine/config.py:103
+#: exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Non-Textual Information"
 msgstr ""
 
@@ -767,6 +794,7 @@ msgstr "FPD - 多重選擇測驗"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:63
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
+#: exe/engine/scormmultiselectidevice.py:43
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid ""
 "Although more often used in formal testing \n"
@@ -799,6 +827,7 @@ msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:58
+#: exe/engine/scormmultiselectidevice.py:56
 #: exe/engine/seleccionmultiplefpdidevice.py:59
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
@@ -872,9 +901,9 @@ msgid ""
 "for the other options."
 msgstr "輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
-#: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
-#: exe/engine/multiselectidevice.py:80
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
+#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:131
+#: exe/engine/multiselectidevice.py:80 exe/engine/scormmultiselectidevice.py:78
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
 msgstr "問題"
@@ -1023,7 +1052,7 @@ msgid ""
 "MP3 file. This will appear in the players title bar as well."
 msgstr "提供 MP3 檔的標題。也會出現在播放器的標題列。"
 
-#: exe/engine/field.py:3017 exe/engine/field.py:3251
+#: exe/engine/field.py:3018 exe/engine/field.py:3252
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1040,81 +1069,81 @@ msgid ""
 "will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3272
+#: exe/engine/field.py:3039 exe/engine/field.py:3273
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
 msgstr "<p>若勾選此選項，則提交的答案大小寫不符則會視為不正確。</p>"
 
-#: exe/engine/field.py:3043 exe/engine/field.py:3277
+#: exe/engine/field.py:3044 exe/engine/field.py:3278
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr "<p>若設定此選項，則學生輸入每個單字時就會標記，而不會等測驗完畢後才全部標記。</p>"
 
-#: exe/engine/field.py:3081 exe/engine/field.py:3319
+#: exe/engine/field.py:3082 exe/engine/field.py:3320
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr "當學生填空時，允許自動完成。"
 
-#: exe/engine/field.py:3282
+#: exe/engine/field.py:3283
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr "<p>若是設定此選項，則會顯示分數。</p>"
 
-#: exe/engine/field.py:3361 exe/engine/field.py:3405
+#: exe/engine/field.py:3362 exe/engine/field.py:3406
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "此 iDevice 只能選用 .swf (Flash 物件)。"
 
-#: exe/engine/field.py:3425 exe/engine/field.py:3489
+#: exe/engine/field.py:3426 exe/engine/field.py:3490
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "此 iDevice 只能選用 .flv (Flash 影像檔)。"
 
-#: exe/engine/field.py:3501
+#: exe/engine/field.py:3502
 msgid "Type a discussion topic here."
 msgstr "在此輸入討論主題。"
 
-#: exe/engine/field.py:3530
+#: exe/engine/field.py:3531
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
 msgstr "<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
 
-#: exe/engine/field.py:3538
+#: exe/engine/field.py:3539
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr "點擊「預覽」鍵將 latex 轉換成影像。"
 
-#: exe/engine/field.py:3606 exe/engine/field.py:3655
+#: exe/engine/field.py:3607 exe/engine/field.py:3656
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2119 exe/webui/element.py:2471
-#: exe/webui/testoptionelement.py:106
+#: exe/webui/element.py:2119 exe/webui/element.py:2473
+#: exe/webui/element.py:3350 exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "選項"
 
-#: exe/engine/field.py:3684 exe/engine/field.py:3750
+#: exe/engine/field.py:3685 exe/engine/field.py:3751
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2805
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2811
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
 msgstr "提示"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2299
+#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "選項"
 
-#: exe/engine/field.py:3832
+#: exe/engine/field.py:3833
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1124,15 +1153,16 @@ msgstr ""
 "輸入問題。\n"
 "問題的陳述要清晰而不含糊。避免負面的假設，因為可能會造成學生混淆。"
 
-#: exe/engine/field.py:3835 exe/engine/field.py:3916
+#: exe/engine/field.py:3836 exe/engine/field.py:3917
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2276
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2278
+#: exe/webui/element.py:3476
 msgid "Question:"
 msgstr "問題："
 
-#: exe/engine/field.py:3840
+#: exe/engine/field.py:3841
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1142,19 +1172,19 @@ msgstr ""
 "在此輸入多重選擇的選項。\n"
 "點擊「新增其它選項」按鈕來增加選項。點擊選項旁邊的\"X\" 可刪除這個選項。"
 
-#: exe/engine/field.py:3844
+#: exe/engine/field.py:3845
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr "在選項旁的勾選盒選擇您認為正確的答案。"
 
-#: exe/engine/field.py:3847
+#: exe/engine/field.py:3848
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr "輸入您要提供給學生的回饋意見。"
 
-#: exe/engine/field.py:3849 exe/engine/field.py:3919
+#: exe/engine/field.py:3850 exe/engine/field.py:3920
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -1358,12 +1388,12 @@ msgid ""
 "practice to put the file size in the label."
 msgstr "點擊 \"新增影像\" 按鈕來選擇影像檔。所選的影像將顯示在下面，您可為其加上標籤。最好在標籤上加上檔案大小等資訊。"
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:636
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:647
 msgid "Reading Activity 0.11"
 msgstr "閱讀活動 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:486
-#: exe/engine/idevicestore.py:527
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:497
+#: exe/engine/idevicestore.py:538
 msgid "Reading Activity"
 msgstr "閱讀活動"
 
@@ -1508,7 +1538,7 @@ msgstr "顯示給使用者看的提示"
 msgid "Hint for Word"
 msgstr "單字的提示"
 
-#: exe/engine/idevicestore.py:530
+#: exe/engine/idevicestore.py:541
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1520,7 +1550,7 @@ msgid ""
 "based on the reading.</p>"
 msgstr "<p>「閱讀活動」主要是用於測試學生對特定文字的閱讀理解能力。可以用詢問學生關於閱讀內容的問題，或是讓學生們根據閱讀的內容執行某些工作。</p>"
 
-#: exe/engine/idevicestore.py:535
+#: exe/engine/idevicestore.py:546
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1535,31 +1565,31 @@ msgid ""
 "effort it will take to complete the activity. </li></ol>"
 msgstr ""
 
-#: exe/engine/idevicestore.py:570 exe/engine/idevicestore.py:679
+#: exe/engine/idevicestore.py:581 exe/engine/idevicestore.py:690
 msgid "What to read"
 msgstr "要閱讀的內容"
 
-#: exe/engine/idevicestore.py:571 exe/engine/idevicestore.py:680
+#: exe/engine/idevicestore.py:582 exe/engine/idevicestore.py:691
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr "輸入閱讀內容的詳情，包括參考資料詳情。使用的參考樣式會根據您的技能或知識範圍。"
 
-#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:613
-#: exe/engine/idevicestore.py:621 exe/engine/idevicestore.py:683
-#: exe/engine/idevicestore.py:720 exe/engine/idevicestore.py:728
+#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:624
+#: exe/engine/idevicestore.py:632 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:731 exe/engine/idevicestore.py:739
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "學習活動"
 
-#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
+#: exe/engine/idevicestore.py:586 exe/engine/idevicestore.py:695
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "描述學生應完成的工作。展示其中的關聯給學生看。"
 
-#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
+#: exe/engine/idevicestore.py:590 exe/engine/idevicestore.py:699
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1567,30 +1597,30 @@ msgid ""
 "or providing a statement to begin a debate."
 msgstr ""
 
-#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:594
-#: exe/engine/idevicestore.py:692 exe/engine/idevicestore.py:701
+#: exe/engine/idevicestore.py:596 exe/engine/idevicestore.py:605
+#: exe/engine/idevicestore.py:703 exe/engine/idevicestore.py:712
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:588 exe/engine/idevicestore.py:695
+#: exe/engine/idevicestore.py:599 exe/engine/idevicestore.py:706
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr "「目的」描述這個教材應該學習到什麼，並定義學生在完成學習後應該可以做什麼。"
 
-#: exe/engine/idevicestore.py:595 exe/engine/idevicestore.py:702
+#: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:713
 msgid "Type the learning objectives for this resource."
 msgstr "輸入學習此教材的目的"
 
-#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:608
-#: exe/engine/idevicestore.py:705 exe/engine/idevicestore.py:715
+#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:619
+#: exe/engine/idevicestore.py:716 exe/engine/idevicestore.py:726
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Preknowledge"
 msgstr "預備知識"
 
-#: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:708
+#: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:719
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1605,13 +1635,13 @@ msgstr ""
 "<li>學生必須能組合基本的電源工具</li>\n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:716
+#: exe/engine/idevicestore.py:620 exe/engine/idevicestore.py:727
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "描述學生要有效率地學習此教材所應具備的知識。"
 
-#: exe/engine/idevicestore.py:616 exe/engine/idevicestore.py:723
+#: exe/engine/idevicestore.py:627 exe/engine/idevicestore.py:734
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1621,11 +1651,11 @@ msgstr ""
 "學習活動可被定義為學生必須完成的一個或一組任務。\n"
 "請提供清晰明確的任務指示，並考慮任何會協助或阻礙學生完成任務的條件與因素。"
 
-#: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
+#: exe/engine/idevicestore.py:633 exe/engine/idevicestore.py:740
 msgid "Describe the tasks the learners should complete."
 msgstr "描述學生需要完成的學習任務。"
 
-#: exe/engine/idevicestore.py:639
+#: exe/engine/idevicestore.py:650
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1639,7 +1669,7 @@ msgstr ""
 " <P>閱讀活動，顧名思義是要學生完成一些任務。此活動必須與學生閱讀\n"
 "的內容直接相關。在適當的地方給學生一些回饋，可以給學生一些指引。</P>"
 
-#: exe/engine/idevicestore.py:644
+#: exe/engine/idevicestore.py:655
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -2243,131 +2273,131 @@ msgstr ""
 "%s\n"
 "%s 未變更"
 
-#: exe/engine/placetheobjectsidevice.py:45
+#: exe/engine/placetheobjectsidevice.py:48
 msgid "Place The Objects"
 msgstr "放置物件"
 
-#: exe/engine/placetheobjectsidevice.py:46
+#: exe/engine/placetheobjectsidevice.py:49
 msgid "Mike Dawson / PAIWASTOON Networking Services Ltd."
 msgstr "Mike Dawson / PAIWASTOON Networking Services Ltd."
 
-#: exe/engine/placetheobjectsidevice.py:47
+#: exe/engine/placetheobjectsidevice.py:50
 msgid "User has to place various objects in the correct place."
 msgstr "使用者必須將不同的物件放在正確的位置上。"
 
-#: exe/engine/placetheobjectsidevice.py:50 exe/idevices/exampleidevice.py:45
+#: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
 msgstr "這是一個自由文字欄位。"
 
-#: exe/engine/placetheobjectsidevice.py:55
+#: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
 msgstr "主要區域"
 
-#: exe/engine/placetheobjectsidevice.py:56
+#: exe/engine/placetheobjectsidevice.py:62
 msgid "This is the main image where the user will drag / drop items to"
 msgstr "使用者會拖放項目的主影像"
 
-#: exe/engine/placetheobjectsidevice.py:60
+#: exe/engine/placetheobjectsidevice.py:66
 msgid "Time Limit (mm:ss)"
 msgstr "時間限制（分：秒）"
 
-#: exe/engine/placetheobjectsidevice.py:60
+#: exe/engine/placetheobjectsidevice.py:66
 msgid "(Optional) Game Time Limit"
 msgstr "（選擇性的）遊戲時間限制"
 
-#: exe/engine/placetheobjectsidevice.py:62
+#: exe/engine/placetheobjectsidevice.py:68
 msgid "Show Timer"
 msgstr "顯示計時器"
 
-#: exe/engine/placetheobjectsidevice.py:62
+#: exe/engine/placetheobjectsidevice.py:68
 msgid "Even if there is no time limit, show the timer..."
 msgstr "即使沒有時間限制也顯示計時器。"
 
-#: exe/engine/placetheobjectsidevice.py:66
+#: exe/engine/placetheobjectsidevice.py:72
 msgid "Message to click game to start"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:66
+#: exe/engine/placetheobjectsidevice.py:72
 msgid "This will when clicked start the game"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:68
+#: exe/engine/placetheobjectsidevice.py:74
 msgid "Positive Response"
 msgstr "正向回應"
 
-#: exe/engine/placetheobjectsidevice.py:68
+#: exe/engine/placetheobjectsidevice.py:74
 msgid "Overlays main area when player correctly places object"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:70
+#: exe/engine/placetheobjectsidevice.py:76
 msgid "Negative Response"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:70
+#: exe/engine/placetheobjectsidevice.py:76
 msgid "Overlays main area when player guesses wrong"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:73
+#: exe/engine/placetheobjectsidevice.py:79
 msgid "Number of Columns in part bin"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:73
+#: exe/engine/placetheobjectsidevice.py:79
 msgid "Columns part bin"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:84
+#: exe/engine/placetheobjectsidevice.py:90
 msgid "Object to Place"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:112
+#: exe/engine/placetheobjectsidevice.py:118
 msgid "An object that has a correct place in the main area"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:114
+#: exe/engine/placetheobjectsidevice.py:120
 msgid "Placable Object"
 msgstr "可放置物件"
 
-#: exe/engine/placetheobjectsidevice.py:114
+#: exe/engine/placetheobjectsidevice.py:120
 msgid "Object to be put in place"
 msgstr "要放的物件"
 
-#: exe/engine/placetheobjectsidevice.py:118
+#: exe/engine/placetheobjectsidevice.py:124
 msgid "Correct Location (x)"
 msgstr "正確位置 (x)"
 
-#: exe/engine/placetheobjectsidevice.py:118
+#: exe/engine/placetheobjectsidevice.py:124
 msgid "Where this object belongs in the main area x coordinate"
 msgstr "物件要擺放在主要區域中的位置的 x 座標"
 
-#: exe/engine/placetheobjectsidevice.py:121
+#: exe/engine/placetheobjectsidevice.py:127
 msgid "Correct Location (y)"
 msgstr "正確位置 (y)"
 
-#: exe/engine/placetheobjectsidevice.py:121
+#: exe/engine/placetheobjectsidevice.py:127
 msgid "Where this object belongs in the main area y coordinate"
 msgstr "物件要擺放在主要區域中的位置的 y 座標"
 
-#: exe/engine/placetheobjectsidevice.py:124
+#: exe/engine/placetheobjectsidevice.py:130
 msgid "Width (pixels)"
 msgstr "寬度 (像素)"
 
-#: exe/engine/placetheobjectsidevice.py:124
+#: exe/engine/placetheobjectsidevice.py:130
 msgid "Width of object"
 msgstr "物件寬度"
 
-#: exe/engine/placetheobjectsidevice.py:127
+#: exe/engine/placetheobjectsidevice.py:133
 msgid "Height (pixels)"
 msgstr "高度 (像素)"
 
-#: exe/engine/placetheobjectsidevice.py:127
+#: exe/engine/placetheobjectsidevice.py:133
 msgid "Height of object"
 msgstr "物件高度"
 
-#: exe/engine/placetheobjectsidevice.py:130
+#: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance (pixels)"
 msgstr "容忍度 (像素)"
 
-#: exe/engine/placetheobjectsidevice.py:130
+#: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance when dropping num of pixels"
 msgstr "放下時允許多少像素的誤差"
 
@@ -2535,6 +2565,75 @@ msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
 "connection and try again."
 msgstr "無法從 %s 載入 RSS feed<br/>請檢查拼字與連線，然後再試一次。"
+
+#: exe/engine/scormclozeidevice.py:46
+msgid "SCORM Test Cloze"
+msgstr ""
+
+#: exe/engine/scormclozeidevice.py:124
+msgid ""
+"<p>Enter the text for the cloze excercise in the editor window.\n"
+"               If you copy text from another source, you should use the "
+"button 'Paste as plain text'\n"
+"               to paste it into the editor window. To select words to "
+"hide, mark them and click on the \n"
+"               Hide/Show Word button below.\n"
+"               Hint: The answers may contain spaces. If you want to "
+"provide the answer options to the learners,\n"
+"               sort them alphabetically and write them at the beginning "
+"or the end of the cloze excercise.</p>"
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:46
+msgid "SCORM Test Dropdown"
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:119
+msgid ""
+"Provide instruction how to complete the excercise or take the default "
+"text."
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:121
+msgid "Choose the correct answers in the paragraph below."
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:124
+msgid ""
+"<p>To create a gap with answer options, write the correct answer and then"
+" separated by\n"
+"                '|' the wrong answers:\n"
+"                true|false|false|false ...\n"
+"                Mark all answer options and click on the Hide/Show Word "
+"button below.\n"
+"                Hint: answers may contain spaces.</p>"
+msgstr ""
+
+#: exe/engine/scormmulticlozeidevice.py:46
+msgid "SCORM Test Cloze (multiple options)"
+msgstr ""
+
+#: exe/engine/scormmulticlozeidevice.py:126
+msgid ""
+"<p>Enter the text for the cloze excercise in the editor window.\n"
+"               If you copy text from another source, you should use the "
+"button 'Paste as plain text'\n"
+"               to paste it into the editor window. To select words to "
+"hide, mark them and click on the \n"
+"               Hide/Show Word button below.\n"
+"               To create a gap with multiple answer options, write the "
+"answers separated by '|'.\n"
+"               Mark all answer options and click on the Hide/Show Word "
+"button below.\n"
+"               Hint: The answers may contain spaces. If you want to "
+"provide the answer options to the learners,\n"
+"               sort them alphabetically and write them at the beginning "
+"or the end of the cloze excercise.</p>"
+msgstr ""
+
+#: exe/engine/scormmultiselectidevice.py:41
+msgid "SCORM Test Multiple Choice"
+msgstr ""
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
@@ -2758,13 +2857,13 @@ msgstr ""
 msgid "Article"
 msgstr "文章"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:365
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:360
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr "選擇適當的維基百科語言版本來搜尋，並輸入搜尋字串。"
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:367
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:362
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -2777,7 +2876,7 @@ msgid ""
 "and try again."
 msgstr "無法從 %s 下載<br/>請檢查拼字與連線，然後再試一次。"
 
-#: exe/engine/wikipediaidevice.py:319
+#: exe/engine/wikipediaidevice.py:314
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -2963,8 +3062,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "匯出格式未實作"
 
-#: exe/export/epub3export.py:575 exe/export/imsexport.py:510
-#: exe/export/scormexport.py:827 exe/export/websiteexport.py:94
+#: exe/export/epub3export.py:575 exe/export/imsexport.py:514
+#: exe/export/scormexport.py:834 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -2973,23 +3072,27 @@ msgstr ""
 "匯出失敗。\n"
 "上次的成功匯出為 %s。"
 
-#: exe/export/pages.py:84 exe/export/textexport.py:54
+#: exe/export/pages.py:75 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "授權條款："
 
-#: exe/export/scormexport.py:543 exe/export/websitepage.py:313
+#: exe/export/pages.py:78
+msgid "Local Version"
+msgstr ""
+
+#: exe/export/scormexport.py:547 exe/export/websitepage.py:316
 msgid "Previous"
 msgstr "前一頁"
 
-#: exe/export/scormexport.py:544 exe/export/websitepage.py:319
+#: exe/export/scormexport.py:548 exe/export/websitepage.py:322
 msgid "Next"
 msgstr "下一頁"
 
-#: exe/export/singlepage.py:192
+#: exe/export/singlepage.py:195
 msgid "You can close this window"
 msgstr "您可以關閉此視窗"
 
-#: exe/export/websitepage.py:134
+#: exe/export/websitepage.py:136
 msgid "Skip navigation"
 msgstr "跳過導覽"
 
@@ -6442,8 +6545,8 @@ msgstr "資訊"
 #: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:484
 #: exe/webui/common.py:485 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
-#: exe/webui/editorpane.py:386 exe/webui/element.py:2801
-#: exe/webui/element.py:2802 exe/webui/truefalseelement.py:152
+#: exe/webui/editorpane.py:386 exe/webui/element.py:2807
+#: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
@@ -6513,7 +6616,7 @@ msgid "Autoevaluacion"
 msgstr "自動計算"
 
 #: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
-#: exe/webui/element.py:2388 exe/webui/element.py:2831
+#: exe/webui/element.py:2390 exe/webui/element.py:2837
 #: exe/webui/questionelement.py:152
 msgid "Solution"
 msgstr "答案"
@@ -6801,10 +6904,6 @@ msgstr "新增影像"
 msgid "Display as:"
 msgstr "顯示為："
 
-#: exe/webui/element.py:680
-msgid "by"
-msgstr ""
-
 #: exe/webui/element.py:687 exe/webui/element.py:1106
 msgid "blank for original size"
 msgstr "原來大小的空白"
@@ -6814,19 +6913,24 @@ msgid "Select an MP3"
 msgstr "選擇 MP3 檔案"
 
 #: exe/webui/element.py:1262 exe/webui/element.py:1597
+#: exe/webui/element.py:2935 exe/webui/element.py:3176
+#: exe/webui/element.py:3755
 msgid "Cloze Text"
 msgstr "克漏字填空文字"
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1605
-#: exe/webui/listablock.py:173
+#: exe/webui/element.py:2943 exe/webui/element.py:3184
+#: exe/webui/element.py:3763 exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "隱藏/顯示單字"
 
 #: exe/webui/element.py:1275 exe/webui/element.py:1610
+#: exe/webui/element.py:2951
 msgid "Strict Marking?"
 msgstr "要嚴格評分嗎？"
 
 #: exe/webui/element.py:1280 exe/webui/element.py:1615
+#: exe/webui/element.py:2956 exe/webui/element.py:3778
 msgid "Check Caps?"
 msgstr "要檢查大小寫嗎？"
 
@@ -6885,48 +6989,64 @@ msgstr "新行"
 msgid "Select a font size: "
 msgstr "選擇字型大小："
 
-#: exe/webui/element.py:2124 exe/webui/element.py:2476
-#: exe/webui/element.py:2594 exe/webui/element.py:2621
+#: exe/webui/element.py:2124 exe/webui/element.py:2478
+#: exe/webui/element.py:2600 exe/webui/element.py:2627
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "正確選項"
 
-#: exe/webui/element.py:2152 exe/webui/element.py:2504
-#: exe/webui/testoptionelement.py:139
+#: exe/webui/element.py:2152 exe/webui/element.py:2506
+#: exe/webui/element.py:3362 exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "刪除選項"
 
-#: exe/webui/element.py:2186 exe/webui/element.py:2196
+#: exe/webui/element.py:2188 exe/webui/element.py:2198
 #: exe/webui/stylemanagerpage.py:171 exe/webui/stylemanagerpage.py:189
 msgid "Correct"
 msgstr "正確"
 
-#: exe/webui/element.py:2188 exe/webui/element.py:2198
+#: exe/webui/element.py:2190 exe/webui/element.py:2200
 msgid "Incorrect"
 msgstr "不正確"
 
-#: exe/webui/element.py:2281 exe/webui/element.py:2706
+#: exe/webui/element.py:2283 exe/webui/element.py:2712
 #: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "刪除問題"
 
-#: exe/webui/element.py:2314 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2316 exe/webui/element.py:3508
+#: exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "新增其他選項"
 
-#: exe/webui/element.py:2364 exe/webui/listablock.py:280
+#: exe/webui/element.py:2366 exe/webui/listablock.py:280
 #: exe/webui/questionelement.py:130
 msgid "Show Feedback"
 msgstr "顯示意見回饋"
 
-#: exe/webui/element.py:2596 exe/webui/element.py:2623
+#: exe/webui/element.py:2602 exe/webui/element.py:2629
 msgid "Wrong"
 msgstr "錯誤"
 
-#: exe/webui/element.py:2721
+#: exe/webui/element.py:2727
 msgid "Add another option"
 msgstr "新增其他選項"
+
+#: exe/webui/element.py:2931 exe/webui/element.py:3751
+msgid ""
+"<p>If this option is set, all gaps will have the length of the longest "
+"answer option</p>"
+msgstr ""
+
+#: exe/webui/element.py:2961 exe/webui/element.py:3783
+msgid "Use fixed length?"
+msgstr ""
+
+#: exe/webui/element.py:3081 exe/webui/element.py:3290
+#: exe/webui/element.py:3914
+msgid "Answsers"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7093,24 +7213,24 @@ msgstr "放大鏡尺寸："
 msgid "Other words"
 msgstr "其他單字"
 
-#: exe/webui/memorymatchblock.py:81
+#: exe/webui/memorymatchblock.py:83
 msgid "Number of rows x Number of cols must be an even number<br/>"
 msgstr "列數乘上行數的值必須是雙數"
 
-#: exe/webui/memorymatchblock.py:86
+#: exe/webui/memorymatchblock.py:88
 msgid ""
 "After you set the number of rows/cols please click Create/Trim pairs "
 "button at the bottom and enter in the matching pairs for the game"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:175
+#: exe/webui/memorymatchblock.py:177
 msgid ""
 "<p>Click the button below to create the matching pairs or \n"
 "                trim in case you reduced the number of rows / columns</p>"
 "\n"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:177
+#: exe/webui/memorymatchblock.py:179
 msgid "Create / Trim Pairs"
 msgstr ""
 
@@ -7143,19 +7263,19 @@ msgstr "老師指導方針"
 msgid "A Step Ahead"
 msgstr "領先一步"
 
-#: exe/webui/placetheobjectsblock.py:269
+#: exe/webui/placetheobjectsblock.py:278
 msgid "Game Options"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:280
+#: exe/webui/placetheobjectsblock.py:289
 msgid "Enable Timer"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:280
+#: exe/webui/placetheobjectsblock.py:289
 msgid "Enable showing the timer in the game"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:287
+#: exe/webui/placetheobjectsblock.py:296
 msgid "Add Placable Object"
 msgstr ""
 
@@ -10060,12 +10180,6 @@ msgstr "站台"
 msgid "Own site"
 msgstr "自己的站台"
 
-#: exe/webui/wikipediablock.py:181 exe/webui/wikipediablock.py:200
-msgid ""
-"This article is licensed under the Creative Commons Attribution-"
-"ShareAlike License. It uses material from"
-msgstr "此文章以創用 CC 屬性-相同方式分享 (CC Attribution-Share Alike)。它的素材來自"
-
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
 msgstr "標籤"
@@ -10160,41 +10274,20 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The attachment iDevice is used to "
-#~ "attach existing files to your .elp "
-#~ "content. For example, you might have "
-#~ "a PDF file or a PPT presentation"
-#~ " file that you wish the learners "
-#~ "to have access to, these can be"
-#~ " attached and labeled to indicate "
-#~ "what the attachment is and how "
-#~ "large the file is. Learners can "
-#~ "click on the attachment link and "
-#~ "can download the attachment."
 #~ msgstr ""
-#~ "這個附件 iDevice 用於附上現有的檔案在您的 .elp 教材中。例如，您可能有個"
-#~ " PDF 檔或 PPT "
-#~ "投影片檔要加入教材，就可以將它們附上並加上標籤，並指出檔案大小。學生們可以點擊附件連結並下載該附件。"
-
-#~ msgid ""
-#~ "<p>Assign a label for the attachment."
-#~ " It is useful to include the "
-#~ "type of file. Eg. pdf, ppt, "
-#~ "etc.</p><p>Including the size is also "
-#~ "recommended so that after your package"
-#~ " is exported to a web site, "
-#~ "people will have an idea how long"
-#~ " it would take to download this "
-#~ "attachment.</p><p>For example: <code>Sales "
-#~ "Forecast.doc (500kb)</code></p>"
-#~ msgstr ""
-#~ "<p>指定附件的標籤。通常加入檔案的型態很有用，例如 pdf、ppt "
-#~ "等。</p><p>另外也建議加入檔案大小，這樣當您的套件匯出到網站上時，大家會知道下載該附件可能要多久。</p><p>例如：<code>Sales"
-#~ " Forecast.doc (500kb)</code></p>"
 
 #~ msgid " Advanced "
 #~ msgstr " 進階 "
 
 #~ msgid "options"
 #~ msgstr "選項"
+
+#~ msgid "by"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This article is licensed under the "
+#~ "Creative Commons Attribution-ShareAlike "
+#~ "License. It uses material from"
+#~ msgstr "此文章以創用 CC 屬性-相同方式分享 (CC Attribution-Share Alike)。它的素材來自"
 

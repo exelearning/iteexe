@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-11-04 15:12+0100\nPO-Revision-Date: 2013-11-04 15:25+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
+ "": "Project-Id-Version: eXeLearning 2.0\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2013-11-05 20:16+0100\nPO-Revision-Date: 2013-11-04 15:25+0100\nLast-Translator: Juan Rafael Fern\u00e1ndez <juanrafael.fernandez@hispalinux.es>\nLanguage-Team: Spanish <jrfern@gmail.com>\nLanguage: es\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 1.3\n", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
  "Xhosa ": "Xhosa ", 
@@ -1472,7 +1472,6 @@ translations = {
  "XLIFF export options": "Opciones de exportaci\u00f3n a XLIFF", 
  "discipline": "disciplina", 
  "Shown when check is clicked and wrong": "\"Se muestra cuando se ha pulsado en Comprobar y es incorrecto", 
- "This article is licensed under the Creative Commons Attribution-ShareAlike License. It uses material from": "Este art\u00edculo est\u00e1 licenciado bajo la licencia CreativeCommons Reconocimiento-Compartir igual. Usa material procedente de", 
  "Corsican ": "Corso ", 
  "Update Odd Rows in Table": "Actualizar filas impares", 
  "Use Controls": "Mostrar los controles", 
@@ -1521,7 +1520,6 @@ translations = {
  "Base URL": "URL Base", 
  "free software license GPL": "licencia libre GPL", 
  "isversionof": "es versi\u00f3n de", 
- "by": "por", 
  "Loop": "Repetitivo", 
  "Width of Cells (in pixels)": "Ancho de las celdas (en p\u00edxeles)", 
  "Comment": "Comentario", 

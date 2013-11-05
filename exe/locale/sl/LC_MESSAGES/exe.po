@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-04 15:12+0100\n"
+"POT-Creation-Date: 2013-11-05 20:16+0100\n"
 "PO-Revision-Date: 2008-05-15 11:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Institut OKO, Iztok Osredkar, Mira Cvar <okoinfo@institut-"
@@ -43,15 +43,18 @@ msgstr "Java apleti"
 #: exe/engine/eleccionmultiplefpdidevice.py:62
 #: exe/engine/externalurlidevice.py:39 exe/engine/flashmovieidevice.py:40
 #: exe/engine/flashwithtextidevice.py:44 exe/engine/freetextfpdidevice.py:40
-#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:529
-#: exe/engine/idevicestore.py:587 exe/engine/idevicestore.py:615
-#: exe/engine/idevicestore.py:638 exe/engine/idevicestore.py:694
-#: exe/engine/idevicestore.py:722 exe/engine/imagemagnifieridevice.py:42
+#: exe/engine/freetextidevice.py:39 exe/engine/idevicestore.py:540
+#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:626
+#: exe/engine/idevicestore.py:649 exe/engine/idevicestore.py:705
+#: exe/engine/idevicestore.py:733 exe/engine/imagemagnifieridevice.py:42
 #: exe/engine/imagewithtextidevice.py:44 exe/engine/mathidevice.py:42
 #: exe/engine/multichoiceidevice.py:61 exe/engine/multiselectidevice.py:44
 #: exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:47
-#: exe/engine/reflectionidevice.py:47
+#: exe/engine/reflectionidevice.py:47 exe/engine/scormclozeidevice.py:47
+#: exe/engine/scormdropdownidevice.py:47
+#: exe/engine/scormmulticlozeidevice.py:47
+#: exe/engine/scormmultiselectidevice.py:42
 #: exe/engine/seleccionmultiplefpdidevice.py:45
 #: exe/engine/truefalseidevice.py:145
 #: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:54
@@ -367,8 +370,8 @@ msgstr ""
 
 #: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
 #: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
-#: exe/engine/memorymatchidevice.py:113 exe/engine/sortidevice.py:52
-#: exe/engine/sortidevice.py:134
+#: exe/engine/memorymatchidevice.py:113 exe/engine/placetheobjectsidevice.py:57
+#: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:48
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:46
@@ -584,7 +587,9 @@ msgid "FPD - Cloze Activity"
 msgstr ""
 
 #: exe/engine/clozefpdidevice.py:52 exe/engine/clozeidevice.py:51
-#: exe/engine/clozelangfpdidevice.py:52
+#: exe/engine/clozelangfpdidevice.py:52 exe/engine/scormclozeidevice.py:48
+#: exe/engine/scormdropdownidevice.py:48
+#: exe/engine/scormmulticlozeidevice.py:48
 msgid ""
 "<p>Cloze exercises are texts or sentences where students must fill in "
 "missing words. They are often used for the following "
@@ -602,7 +607,9 @@ msgstr ""
 "slovnice.</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
-#: exe/engine/clozelangfpdidevice.py:64
+#: exe/engine/clozelangfpdidevice.py:64 exe/engine/scormclozeidevice.py:60
+#: exe/engine/scormdropdownidevice.py:60
+#: exe/engine/scormmulticlozeidevice.py:60
 msgid ""
 "<dl>  <dt>If your goal is to test understanding of core concepts or "
 "reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept"
@@ -649,16 +656,18 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
 #: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
-#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:49
-#: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
-#: exe/engine/truefalseidevice.py:390
+#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
+#: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
+#: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
+#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
 #: exe/engine/verdaderofalsofpdidevice.py:166
 #: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:469
 msgid "Instructions"
 msgstr "Navodila"
 
 #: exe/engine/clozefpdidevice.py:121 exe/engine/clozeidevice.py:120
-#: exe/engine/clozelangfpdidevice.py:121
+#: exe/engine/clozelangfpdidevice.py:121 exe/engine/scormclozeidevice.py:117
+#: exe/engine/scormmulticlozeidevice.py:117
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this "
@@ -668,6 +677,8 @@ msgstr ""
 "V primeru, da ni določenega besedila, bo uporabljeno privzeto besedilo.\n"
 
 #: exe/engine/clozefpdidevice.py:126 exe/engine/clozeidevice.py:126
+#: exe/engine/scormclozeidevice.py:123 exe/engine/scormdropdownidevice.py:123
+#: exe/engine/scormmulticlozeidevice.py:125
 msgid "Cloze"
 msgstr "Dopolnilna naloga"
 
@@ -689,23 +700,29 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
 #: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3610 exe/engine/field.py:3658
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:578
-#: exe/engine/idevicestore.py:687 exe/engine/listaidevice.py:140
-#: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
+#: exe/engine/field.py:3611 exe/engine/field.py:3659
+#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
+#: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
+#: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
+#: exe/engine/scormclozeidevice.py:281 exe/engine/scormdropdownidevice.py:142
+#: exe/engine/scormdropdownidevice.py:292
+#: exe/engine/scormmulticlozeidevice.py:135
+#: exe/engine/scormmulticlozeidevice.py:285 exe/engine/truefalseidevice.py:50
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:173
 #: exe/webui/clozefpdblock.py:174 exe/webui/clozefpdblock.py:192
 #: exe/webui/clozelangfpdblock.py:175 exe/webui/clozelangfpdblock.py:193
 #: exe/webui/common.py:386 exe/webui/editorelement.py:148
-#: exe/webui/editorpane.py:255 exe/webui/element.py:2393
-#: exe/webui/element.py:2507 exe/webui/listablock.py:452
+#: exe/webui/editorpane.py:255 exe/webui/element.py:2395
+#: exe/webui/element.py:2509 exe/webui/listablock.py:452
 #: exe/webui/questionelement.py:104 exe/webui/reflectionfpdblock.py:142
 msgid "Feedback"
 msgstr "Odziv"
 
 #: exe/engine/clozefpdidevice.py:133 exe/engine/clozeidevice.py:133
 #: exe/engine/clozelangfpdidevice.py:133 exe/engine/listaidevice.py:141
+#: exe/engine/scormclozeidevice.py:132 exe/engine/scormdropdownidevice.py:143
+#: exe/engine/scormmulticlozeidevice.py:136
 msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
@@ -715,21 +732,29 @@ msgstr ""
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
+#: exe/engine/scormclozeidevice.py:276 exe/engine/scormdropdownidevice.py:287
+#: exe/engine/scormmulticlozeidevice.py:280
 msgid "Instructions For Learners"
 msgstr "Navodila za učence"
 
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
+#: exe/engine/scormclozeidevice.py:277 exe/engine/scormdropdownidevice.py:288
+#: exe/engine/scormmulticlozeidevice.py:281
 msgid "Put instructions for learners here"
 msgstr "Tukaj vnesite navodila za učence"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
-#: exe/engine/clozelangfpdidevice.py:284
+#: exe/engine/clozelangfpdidevice.py:284 exe/engine/scormclozeidevice.py:278
+#: exe/engine/scormdropdownidevice.py:289
+#: exe/engine/scormmulticlozeidevice.py:282
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Preberite spodnji odstavek in dopolnite manjkajoče besede "
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
-#: exe/engine/clozelangfpdidevice.py:296
+#: exe/engine/clozelangfpdidevice.py:296 exe/engine/scormclozeidevice.py:290
+#: exe/engine/scormdropdownidevice.py:301
+#: exe/engine/scormmulticlozeidevice.py:294
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Omogoči samodejno zaključevanje kadar uporabnik izpolnjuje prazna mesta."
 
@@ -737,7 +762,8 @@ msgstr "Omogoči samodejno zaključevanje kadar uporabnik izpolnjuje prazna mest
 msgid "Cloze Activity"
 msgstr "Dopolnjevanje"
 
-#: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:393
+#: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
+#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:393
 #: exe/engine/verdaderofalsofpdidevice.py:396
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Preberite spodnji odstavek in dopolnite manjkajoče besede."
@@ -759,13 +785,14 @@ msgstr ""
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
 #: exe/engine/config.py:99 exe/engine/config.py:100 exe/engine/config.py:101
-#: exe/engine/config.py:102 exe/engine/config.py:104
+#: exe/engine/config.py:102 exe/engine/config.py:105 exe/engine/config.py:106
+#: exe/engine/config.py:107 exe/engine/config.py:108
 msgid "Interactive Activities"
 msgstr ""
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
-#: exe/engine/config.py:103
+#: exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Non-Textual Information"
 msgstr ""
 
@@ -822,6 +849,7 @@ msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:63
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
+#: exe/engine/scormmultiselectidevice.py:43
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid ""
 "Although more often used in formal testing \n"
@@ -857,6 +885,7 @@ msgstr ""
 
 #: exe/engine/eleccionmultiplefpdidevice.py:76
 #: exe/engine/multichoiceidevice.py:75 exe/engine/multiselectidevice.py:58
+#: exe/engine/scormmultiselectidevice.py:56
 #: exe/engine/seleccionmultiplefpdidevice.py:59
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
@@ -952,9 +981,9 @@ msgstr ""
 "odgovor\"\n"
 "za vse ostale možnosti."
 
-#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3681
-#: exe/engine/field.py:3746 exe/engine/multichoiceidevice.py:131
-#: exe/engine/multiselectidevice.py:80
+#: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3682
+#: exe/engine/field.py:3747 exe/engine/multichoiceidevice.py:131
+#: exe/engine/multiselectidevice.py:80 exe/engine/scormmultiselectidevice.py:78
 #: exe/engine/seleccionmultiplefpdidevice.py:82
 msgid "Question"
 msgstr "Vprašanje"
@@ -1113,7 +1142,7 @@ msgstr ""
 "Vnesite naslov MP3 datoteke\n"
 "Naslov bo prikazan v naslovni vrstici predvajalnika."
 
-#: exe/engine/field.py:3017 exe/engine/field.py:3251
+#: exe/engine/field.py:3018 exe/engine/field.py:3252
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors"
 " will be accepted. If checked only an exact match in spelling and "
@@ -1142,7 +1171,7 @@ msgstr ""
 "možnosti \"Strogo označevanje\" in \"Preverjanje velikosti črk\", je "
 "edini pravilni odgovor \"Čebela\".</p>"
 
-#: exe/engine/field.py:3038 exe/engine/field.py:3272
+#: exe/engine/field.py:3039 exe/engine/field.py:3273
 msgid ""
 "<p>If this option is checked, submitted answers with different "
 "capitalization will be marked as incorrect.</p>"
@@ -1150,7 +1179,7 @@ msgstr ""
 "<p>Izbrana možnost omogoča, da se bodo predloženi odgovori z različnimi "
 "velikimi črkami označili kot pravilni.</p>"
 
-#: exe/engine/field.py:3043 exe/engine/field.py:3277
+#: exe/engine/field.py:3044 exe/engine/field.py:3278
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -1161,7 +1190,7 @@ msgstr ""
 "besede\n"
 "izbrane vaje.</p> "
 
-#: exe/engine/field.py:3081 exe/engine/field.py:3319
+#: exe/engine/field.py:3082 exe/engine/field.py:3320
 #: exe/engine/listaidevice.py:392
 msgid ""
 "Allow auto completion when \n"
@@ -1170,11 +1199,11 @@ msgstr ""
 "Omogoči samodejno zaključevanje besedila kadar \n"
 "                                    uporabnik izpolnjuje prazna mesta."
 
-#: exe/engine/field.py:3282
+#: exe/engine/field.py:3283
 msgid "<p>If this option is set, the score will be shown.</p>"
 msgstr ""
 
-#: exe/engine/field.py:3361 exe/engine/field.py:3405
+#: exe/engine/field.py:3362 exe/engine/field.py:3406
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1182,7 +1211,7 @@ msgstr ""
 "Izberite samo .swf (Flash predmeti) za \n"
 "to poučevalno enoto."
 
-#: exe/engine/field.py:3425 exe/engine/field.py:3489
+#: exe/engine/field.py:3426 exe/engine/field.py:3490
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1190,11 +1219,11 @@ msgstr ""
 "Izberite samo .flv (Flash video datoteke) za \n"
 "to poučevalno enoto."
 
-#: exe/engine/field.py:3501
+#: exe/engine/field.py:3502
 msgid "Type a discussion topic here."
 msgstr "Tukaj vpišite naslov vsebine za razpravo."
 
-#: exe/engine/field.py:3530
+#: exe/engine/field.py:3531
 msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
@@ -1204,7 +1233,7 @@ msgstr ""
 "LATEX ukaze za zapis matematične enačbe. Za predogled, kako je vaša LATEX"
 " enačba videti, pritisnite spodnji gumb &lt;Predogled&gt;.</p>"
 
-#: exe/engine/field.py:3538
+#: exe/engine/field.py:3539
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -1212,28 +1241,28 @@ msgstr ""
 "S klikom na gumb predogleda\n"
 "                                         pretvorite latex v sliko."
 
-#: exe/engine/field.py:3606 exe/engine/field.py:3655
+#: exe/engine/field.py:3607 exe/engine/field.py:3656
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2119 exe/webui/element.py:2471
-#: exe/webui/testoptionelement.py:106
+#: exe/webui/element.py:2119 exe/webui/element.py:2473
+#: exe/webui/element.py:3350 exe/webui/testoptionelement.py:106
 msgid "Option"
 msgstr "Možnost"
 
-#: exe/engine/field.py:3684 exe/engine/field.py:3750
+#: exe/engine/field.py:3685 exe/engine/field.py:3751
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2805
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/element.py:2811
 #: exe/webui/truefalseelement.py:146 exe/webui/truefalseelement.py:156
 msgid "Hint"
 msgstr "Namig"
 
-#: exe/engine/field.py:3772 exe/engine/field.py:3809 exe/webui/element.py:2299
+#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
 #: exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Možnosti"
 
-#: exe/engine/field.py:3832
+#: exe/engine/field.py:3833
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as "
@@ -1244,15 +1273,16 @@ msgstr ""
 "Vprašanje mora biti jasno in nedvoumno. Izogibajte se negativnim osnovam\n"
 "vprašanj, saj te povzročajo nejasnosti."
 
-#: exe/engine/field.py:3835 exe/engine/field.py:3916
+#: exe/engine/field.py:3836 exe/engine/field.py:3917
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2276
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2278
+#: exe/webui/element.py:3476
 msgid "Question:"
 msgstr "Vprašanje:"
 
-#: exe/engine/field.py:3840
+#: exe/engine/field.py:3841
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete"
@@ -1264,7 +1294,7 @@ msgstr ""
 "lahko izbrišete\n"
 "s klikom na rdeči \"X\" ob vneseni možnostih."
 
-#: exe/engine/field.py:3844
+#: exe/engine/field.py:3845
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1272,7 +1302,7 @@ msgstr ""
 "Izberite ustrezno število pravilnih možnosti s klikom\n"
 "na izbirne gumbe."
 
-#: exe/engine/field.py:3847
+#: exe/engine/field.py:3848
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1280,7 +1310,7 @@ msgstr ""
 "Vpišite odziv na odgovor, ki ga želite\n"
 "pokazati učencem."
 
-#: exe/engine/field.py:3849 exe/engine/field.py:3919
+#: exe/engine/field.py:3850 exe/engine/field.py:3920
 #: exe/engine/notaidevice.py:144 exe/engine/reflectionfpdidevice.py:68
 #: exe/engine/reflectionfpdidevice.py:203 exe/engine/reflectionidevice.py:66
 #: exe/engine/reflectionidevice.py:200
@@ -1508,12 +1538,12 @@ msgstr ""
 " bo prikazala pod kazalnikom za vpis oznake. Vedno je dobro, da v oznako "
 "vnesete tudi velikost datoteke."
 
-#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:636
+#: exe/engine/genericidevice.py:302 exe/engine/idevicestore.py:647
 msgid "Reading Activity 0.11"
 msgstr "Bralne dejavnosti 0.11"
 
-#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:486
-#: exe/engine/idevicestore.py:527
+#: exe/engine/genericidevice.py:304 exe/engine/idevicestore.py:497
+#: exe/engine/idevicestore.py:538
 msgid "Reading Activity"
 msgstr "Bralne dejavnosti"
 
@@ -1658,7 +1688,7 @@ msgstr ""
 msgid "Hint for Word"
 msgstr ""
 
-#: exe/engine/idevicestore.py:530
+#: exe/engine/idevicestore.py:541
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be "
@@ -1675,7 +1705,7 @@ msgstr ""
 "oziroma jih dopolni z neko drugo, mogoče bolj konkretno nalogo\n"
 "na osnovi branja besedila.</p>"
 
-#: exe/engine/idevicestore.py:535
+#: exe/engine/idevicestore.py:546
 msgid ""
 "<p>Teachers should keep the following in mind when using this iDevice: "
 "</p><ol><li>Think about the number of different types of activity planned"
@@ -1702,11 +1732,11 @@ msgstr ""
 "dejavnosti odtehta čas in napor, ki ju reševanje dejavnosti "
 "zahteva.</li></ol>"
 
-#: exe/engine/idevicestore.py:570 exe/engine/idevicestore.py:679
+#: exe/engine/idevicestore.py:581 exe/engine/idevicestore.py:690
 msgid "What to read"
 msgstr "Kaj prebrati"
 
-#: exe/engine/idevicestore.py:571 exe/engine/idevicestore.py:680
+#: exe/engine/idevicestore.py:582 exe/engine/idevicestore.py:691
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -1716,14 +1746,14 @@ msgstr ""
 "priporočili. Priporočeni uporabljen slog je odvisen \n"
 "od vaše zasnove."
 
-#: exe/engine/idevicestore.py:574 exe/engine/idevicestore.py:613
-#: exe/engine/idevicestore.py:621 exe/engine/idevicestore.py:683
-#: exe/engine/idevicestore.py:720 exe/engine/idevicestore.py:728
+#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:624
+#: exe/engine/idevicestore.py:632 exe/engine/idevicestore.py:694
+#: exe/engine/idevicestore.py:731 exe/engine/idevicestore.py:739
 #: exe/webui/questionelement.py:100
 msgid "Activity"
 msgstr "Dejavnost"
 
-#: exe/engine/idevicestore.py:575 exe/engine/idevicestore.py:684
+#: exe/engine/idevicestore.py:586 exe/engine/idevicestore.py:695
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -1731,7 +1761,7 @@ msgstr ""
 "Opišite bralne naloge, ki naj bi jih učenci reševali.\n"
 "To pomaga predstaviti učencem bistvo."
 
-#: exe/engine/idevicestore.py:579 exe/engine/idevicestore.py:688
+#: exe/engine/idevicestore.py:590 exe/engine/idevicestore.py:699
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a "
@@ -1742,13 +1772,13 @@ msgstr ""
 "ali kot izhodišče za nadaljnjo analizo branja s postavljanjem vprašanj \n"
 "ali podajanjem trditev za začetek razprave."
 
-#: exe/engine/idevicestore.py:585 exe/engine/idevicestore.py:594
-#: exe/engine/idevicestore.py:692 exe/engine/idevicestore.py:701
+#: exe/engine/idevicestore.py:596 exe/engine/idevicestore.py:605
+#: exe/engine/idevicestore.py:703 exe/engine/idevicestore.py:712
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 msgid "Objectives"
 msgstr "Cilji"
 
-#: exe/engine/idevicestore.py:588 exe/engine/idevicestore.py:695
+#: exe/engine/idevicestore.py:599 exe/engine/idevicestore.py:706
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1758,17 +1788,17 @@ msgstr ""
 "opredeliti, kaj naj bi bili učenci sposobni narediti, \n"
 "ko bodo zaključili z reševanjem nalog. "
 
-#: exe/engine/idevicestore.py:595 exe/engine/idevicestore.py:702
+#: exe/engine/idevicestore.py:606 exe/engine/idevicestore.py:713
 msgid "Type the learning objectives for this resource."
 msgstr "Vpišite učne cilje za ta vir. "
 
-#: exe/engine/idevicestore.py:598 exe/engine/idevicestore.py:608
-#: exe/engine/idevicestore.py:705 exe/engine/idevicestore.py:715
+#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:619
+#: exe/engine/idevicestore.py:716 exe/engine/idevicestore.py:726
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 msgid "Preknowledge"
 msgstr "Predznanje"
 
-#: exe/engine/idevicestore.py:601 exe/engine/idevicestore.py:708
+#: exe/engine/idevicestore.py:612 exe/engine/idevicestore.py:719
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples "
@@ -1786,7 +1816,7 @@ msgstr ""
 "<li>        Učenci morajo biti sposobni uporabljati običajne "
 "pripomočke</li></ul>\n"
 
-#: exe/engine/idevicestore.py:609 exe/engine/idevicestore.py:716
+#: exe/engine/idevicestore.py:620 exe/engine/idevicestore.py:727
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -1794,7 +1824,7 @@ msgstr ""
 "Opišite zahtevano predhodno znanje učencev, da bi uspešno\n"
 "zaključili enoto."
 
-#: exe/engine/idevicestore.py:616 exe/engine/idevicestore.py:723
+#: exe/engine/idevicestore.py:627 exe/engine/idevicestore.py:734
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any "
@@ -1805,11 +1835,11 @@ msgstr ""
 "učenec izpolniti. Nalogo morate podati razumljivo, razmislite pa tudi o\n"
 "pogojih, ki lahko ovirajo učenca pri izvajanju."
 
-#: exe/engine/idevicestore.py:622 exe/engine/idevicestore.py:729
+#: exe/engine/idevicestore.py:633 exe/engine/idevicestore.py:740
 msgid "Describe the tasks the learners should complete."
 msgstr "Opišite naloge, ki naj bi jih učenci rešili."
 
-#: exe/engine/idevicestore.py:639
+#: exe/engine/idevicestore.py:650
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This "
@@ -1826,7 +1856,7 @@ msgstr ""
 "Odziv za dejavnost lahko nudi\n"
 "smernice za nadaljnje razmišljanje.</p>"
 
-#: exe/engine/idevicestore.py:644
+#: exe/engine/idevicestore.py:655
 msgid ""
 "Teachers should keep the following in mind when using this iDevice: "
 "<ol><li>Think about the number of different types of activity planned for"
@@ -2506,131 +2536,131 @@ msgid ""
 "%s unchanged"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:45
+#: exe/engine/placetheobjectsidevice.py:48
 msgid "Place The Objects"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:46
+#: exe/engine/placetheobjectsidevice.py:49
 msgid "Mike Dawson / PAIWASTOON Networking Services Ltd."
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:47
+#: exe/engine/placetheobjectsidevice.py:50
 msgid "User has to place various objects in the correct place."
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:50 exe/idevices/exampleidevice.py:45
+#: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
 msgstr "To je prosto besedno polje."
 
-#: exe/engine/placetheobjectsidevice.py:55
+#: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:56
+#: exe/engine/placetheobjectsidevice.py:62
 msgid "This is the main image where the user will drag / drop items to"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:60
+#: exe/engine/placetheobjectsidevice.py:66
 msgid "Time Limit (mm:ss)"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:60
+#: exe/engine/placetheobjectsidevice.py:66
 msgid "(Optional) Game Time Limit"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:62
+#: exe/engine/placetheobjectsidevice.py:68
 msgid "Show Timer"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:62
+#: exe/engine/placetheobjectsidevice.py:68
 msgid "Even if there is no time limit, show the timer..."
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:66
+#: exe/engine/placetheobjectsidevice.py:72
 msgid "Message to click game to start"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:66
+#: exe/engine/placetheobjectsidevice.py:72
 msgid "This will when clicked start the game"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:68
+#: exe/engine/placetheobjectsidevice.py:74
 msgid "Positive Response"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:68
+#: exe/engine/placetheobjectsidevice.py:74
 msgid "Overlays main area when player correctly places object"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:70
+#: exe/engine/placetheobjectsidevice.py:76
 msgid "Negative Response"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:70
+#: exe/engine/placetheobjectsidevice.py:76
 msgid "Overlays main area when player guesses wrong"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:73
+#: exe/engine/placetheobjectsidevice.py:79
 msgid "Number of Columns in part bin"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:73
+#: exe/engine/placetheobjectsidevice.py:79
 msgid "Columns part bin"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:84
+#: exe/engine/placetheobjectsidevice.py:90
 msgid "Object to Place"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:112
+#: exe/engine/placetheobjectsidevice.py:118
 msgid "An object that has a correct place in the main area"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:114
+#: exe/engine/placetheobjectsidevice.py:120
 msgid "Placable Object"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:114
+#: exe/engine/placetheobjectsidevice.py:120
 msgid "Object to be put in place"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:118
+#: exe/engine/placetheobjectsidevice.py:124
 msgid "Correct Location (x)"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:118
+#: exe/engine/placetheobjectsidevice.py:124
 msgid "Where this object belongs in the main area x coordinate"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:121
+#: exe/engine/placetheobjectsidevice.py:127
 msgid "Correct Location (y)"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:121
+#: exe/engine/placetheobjectsidevice.py:127
 msgid "Where this object belongs in the main area y coordinate"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:124
+#: exe/engine/placetheobjectsidevice.py:130
 msgid "Width (pixels)"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:124
+#: exe/engine/placetheobjectsidevice.py:130
 msgid "Width of object"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:127
+#: exe/engine/placetheobjectsidevice.py:133
 msgid "Height (pixels)"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:127
+#: exe/engine/placetheobjectsidevice.py:133
 msgid "Height of object"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:130
+#: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance (pixels)"
 msgstr ""
 
-#: exe/engine/placetheobjectsidevice.py:130
+#: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance when dropping num of pixels"
 msgstr ""
 
@@ -2823,6 +2853,75 @@ msgid ""
 msgstr ""
 "Ni mogoče naložiti RSS vira preko %s <br/>Prosimo, preverite črkovanje in"
 " povezavo ter poskusite znova."
+
+#: exe/engine/scormclozeidevice.py:46
+msgid "SCORM Test Cloze"
+msgstr ""
+
+#: exe/engine/scormclozeidevice.py:124
+msgid ""
+"<p>Enter the text for the cloze excercise in the editor window.\n"
+"               If you copy text from another source, you should use the "
+"button 'Paste as plain text'\n"
+"               to paste it into the editor window. To select words to "
+"hide, mark them and click on the \n"
+"               Hide/Show Word button below.\n"
+"               Hint: The answers may contain spaces. If you want to "
+"provide the answer options to the learners,\n"
+"               sort them alphabetically and write them at the beginning "
+"or the end of the cloze excercise.</p>"
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:46
+msgid "SCORM Test Dropdown"
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:119
+msgid ""
+"Provide instruction how to complete the excercise or take the default "
+"text."
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:121
+msgid "Choose the correct answers in the paragraph below."
+msgstr ""
+
+#: exe/engine/scormdropdownidevice.py:124
+msgid ""
+"<p>To create a gap with answer options, write the correct answer and then"
+" separated by\n"
+"                '|' the wrong answers:\n"
+"                true|false|false|false ...\n"
+"                Mark all answer options and click on the Hide/Show Word "
+"button below.\n"
+"                Hint: answers may contain spaces.</p>"
+msgstr ""
+
+#: exe/engine/scormmulticlozeidevice.py:46
+msgid "SCORM Test Cloze (multiple options)"
+msgstr ""
+
+#: exe/engine/scormmulticlozeidevice.py:126
+msgid ""
+"<p>Enter the text for the cloze excercise in the editor window.\n"
+"               If you copy text from another source, you should use the "
+"button 'Paste as plain text'\n"
+"               to paste it into the editor window. To select words to "
+"hide, mark them and click on the \n"
+"               Hide/Show Word button below.\n"
+"               To create a gap with multiple answer options, write the "
+"answers separated by '|'.\n"
+"               Mark all answer options and click on the Hide/Show Word "
+"button below.\n"
+"               Hint: The answers may contain spaces. If you want to "
+"provide the answer options to the learners,\n"
+"               sort them alphabetically and write them at the beginning "
+"or the end of the cloze excercise.</p>"
+msgstr ""
+
+#: exe/engine/scormmultiselectidevice.py:41
+msgid "SCORM Test Multiple Choice"
+msgstr ""
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
@@ -3069,7 +3168,7 @@ msgstr ""
 msgid "Article"
 msgstr "Članek"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:365
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:360
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -3077,7 +3176,7 @@ msgstr ""
 "Izberite ustrezno jezikovno različico Wikipedije \n"
 "za iskanje in vnesite iskalne pogoje."
 
-#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:367
+#: exe/engine/wikipediaidevice.py:73 exe/engine/wikipediaidevice.py:362
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -3094,7 +3193,7 @@ msgstr ""
 "Ni mogoče prenesti datoteke preko %s<br/>Prosim, preverite črkovanje in "
 "povezavo ter poskusite znova."
 
-#: exe/engine/wikipediaidevice.py:319
+#: exe/engine/wikipediaidevice.py:314
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -3268,8 +3367,8 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr ""
 
-#: exe/export/epub3export.py:575 exe/export/imsexport.py:510
-#: exe/export/scormexport.py:827 exe/export/websiteexport.py:94
+#: exe/export/epub3export.py:575 exe/export/imsexport.py:514
+#: exe/export/scormexport.py:834 exe/export/websiteexport.py:94
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -3278,23 +3377,27 @@ msgstr ""
 "Napaka med izvozom!\n"
 "Zadnji uspešni izvoz je %s"
 
-#: exe/export/pages.py:84 exe/export/textexport.py:54
+#: exe/export/pages.py:75 exe/export/textexport.py:54
 msgid "Licensed under the"
 msgstr "Pod licenco"
 
-#: exe/export/scormexport.py:543 exe/export/websitepage.py:313
+#: exe/export/pages.py:78
+msgid "Local Version"
+msgstr ""
+
+#: exe/export/scormexport.py:547 exe/export/websitepage.py:316
 msgid "Previous"
 msgstr "Predhodni"
 
-#: exe/export/scormexport.py:544 exe/export/websitepage.py:319
+#: exe/export/scormexport.py:548 exe/export/websitepage.py:322
 msgid "Next"
 msgstr "Naprej"
 
-#: exe/export/singlepage.py:192
+#: exe/export/singlepage.py:195
 msgid "You can close this window"
 msgstr ""
 
-#: exe/export/websitepage.py:134
+#: exe/export/websitepage.py:136
 msgid "Skip navigation"
 msgstr ""
 
@@ -6752,8 +6855,8 @@ msgstr "Podrobnosti"
 #: exe/webui/block.py:267 exe/webui/block.py:268 exe/webui/common.py:484
 #: exe/webui/common.py:485 exe/webui/editorpane.py:364
 #: exe/webui/editorpane.py:365 exe/webui/editorpane.py:385
-#: exe/webui/editorpane.py:386 exe/webui/element.py:2801
-#: exe/webui/element.py:2802 exe/webui/truefalseelement.py:152
+#: exe/webui/editorpane.py:386 exe/webui/element.py:2807
+#: exe/webui/element.py:2808 exe/webui/truefalseelement.py:152
 #: exe/webui/truefalseelement.py:153
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Close"
@@ -6823,7 +6926,7 @@ msgid "Autoevaluacion"
 msgstr ""
 
 #: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
-#: exe/webui/element.py:2388 exe/webui/element.py:2831
+#: exe/webui/element.py:2390 exe/webui/element.py:2837
 #: exe/webui/questionelement.py:152
 msgid "Solution"
 msgstr ""
@@ -7121,10 +7224,6 @@ msgstr "Dodaj sliko"
 msgid "Display as:"
 msgstr "Prikaži kot:"
 
-#: exe/webui/element.py:680
-msgid "by"
-msgstr ""
-
 #: exe/webui/element.py:687 exe/webui/element.py:1106
 msgid "blank for original size"
 msgstr "prazno za polno velikost"
@@ -7134,19 +7233,24 @@ msgid "Select an MP3"
 msgstr "Izbor MP3"
 
 #: exe/webui/element.py:1262 exe/webui/element.py:1597
+#: exe/webui/element.py:2935 exe/webui/element.py:3176
+#: exe/webui/element.py:3755
 msgid "Cloze Text"
 msgstr "Besedilo dopolnjevanja"
 
 #: exe/webui/element.py:1270 exe/webui/element.py:1605
-#: exe/webui/listablock.py:173
+#: exe/webui/element.py:2943 exe/webui/element.py:3184
+#: exe/webui/element.py:3763 exe/webui/listablock.py:173
 msgid "Hide/Show Word"
 msgstr "Skrij/prikaži besedo"
 
 #: exe/webui/element.py:1275 exe/webui/element.py:1610
+#: exe/webui/element.py:2951
 msgid "Strict Marking?"
 msgstr "Natančno označevanje?"
 
 #: exe/webui/element.py:1280 exe/webui/element.py:1615
+#: exe/webui/element.py:2956 exe/webui/element.py:3778
 msgid "Check Caps?"
 msgstr "So črke samo velike?"
 
@@ -7205,48 +7309,64 @@ msgstr "nova vrstica"
 msgid "Select a font size: "
 msgstr "Izbor velikosti pisave:"
 
-#: exe/webui/element.py:2124 exe/webui/element.py:2476
-#: exe/webui/element.py:2594 exe/webui/element.py:2621
+#: exe/webui/element.py:2124 exe/webui/element.py:2478
+#: exe/webui/element.py:2600 exe/webui/element.py:2627
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Pravilna izbira"
 
-#: exe/webui/element.py:2152 exe/webui/element.py:2504
-#: exe/webui/testoptionelement.py:139
+#: exe/webui/element.py:2152 exe/webui/element.py:2506
+#: exe/webui/element.py:3362 exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Izbrišite možnost"
 
-#: exe/webui/element.py:2186 exe/webui/element.py:2196
+#: exe/webui/element.py:2188 exe/webui/element.py:2198
 #: exe/webui/stylemanagerpage.py:171 exe/webui/stylemanagerpage.py:189
 msgid "Correct"
 msgstr "Pravilno"
 
-#: exe/webui/element.py:2188 exe/webui/element.py:2198
+#: exe/webui/element.py:2190 exe/webui/element.py:2200
 msgid "Incorrect"
 msgstr "Nepravilno"
 
-#: exe/webui/element.py:2281 exe/webui/element.py:2706
+#: exe/webui/element.py:2283 exe/webui/element.py:2712
 #: exe/webui/questionelement.py:111 exe/webui/testquestionelement.py:104
 #: exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Izbrišite vprašanje"
 
-#: exe/webui/element.py:2314 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2316 exe/webui/element.py:3508
+#: exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Dodaj novo možnost"
 
-#: exe/webui/element.py:2364 exe/webui/listablock.py:280
+#: exe/webui/element.py:2366 exe/webui/listablock.py:280
 #: exe/webui/questionelement.py:130
 msgid "Show Feedback"
 msgstr "Prikaži odzive"
 
-#: exe/webui/element.py:2596 exe/webui/element.py:2623
+#: exe/webui/element.py:2602 exe/webui/element.py:2629
 msgid "Wrong"
 msgstr "Napačno"
 
-#: exe/webui/element.py:2721
+#: exe/webui/element.py:2727
 msgid "Add another option"
 msgstr "Dodaj novo možnost"
+
+#: exe/webui/element.py:2931 exe/webui/element.py:3751
+msgid ""
+"<p>If this option is set, all gaps will have the length of the longest "
+"answer option</p>"
+msgstr ""
+
+#: exe/webui/element.py:2961 exe/webui/element.py:3783
+msgid "Use fixed length?"
+msgstr ""
+
+#: exe/webui/element.py:3081 exe/webui/element.py:3290
+#: exe/webui/element.py:3914
+msgid "Answsers"
+msgstr ""
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7413,24 +7533,24 @@ msgstr "Velikost povečevala: "
 msgid "Other words"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:81
+#: exe/webui/memorymatchblock.py:83
 msgid "Number of rows x Number of cols must be an even number<br/>"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:86
+#: exe/webui/memorymatchblock.py:88
 msgid ""
 "After you set the number of rows/cols please click Create/Trim pairs "
 "button at the bottom and enter in the matching pairs for the game"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:175
+#: exe/webui/memorymatchblock.py:177
 msgid ""
 "<p>Click the button below to create the matching pairs or \n"
 "                trim in case you reduced the number of rows / columns</p>"
 "\n"
 msgstr ""
 
-#: exe/webui/memorymatchblock.py:177
+#: exe/webui/memorymatchblock.py:179
 msgid "Create / Trim Pairs"
 msgstr ""
 
@@ -7463,19 +7583,19 @@ msgstr ""
 msgid "A Step Ahead"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:269
+#: exe/webui/placetheobjectsblock.py:278
 msgid "Game Options"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:280
+#: exe/webui/placetheobjectsblock.py:289
 msgid "Enable Timer"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:280
+#: exe/webui/placetheobjectsblock.py:289
 msgid "Enable showing the timer in the game"
 msgstr ""
 
-#: exe/webui/placetheobjectsblock.py:287
+#: exe/webui/placetheobjectsblock.py:296
 msgid "Add Placable Object"
 msgstr ""
 
@@ -10378,12 +10498,6 @@ msgstr "Stran"
 msgid "Own site"
 msgstr "Lastna stran"
 
-#: exe/webui/wikipediablock.py:181 exe/webui/wikipediablock.py:200
-msgid ""
-"This article is licensed under the Creative Commons Attribution-"
-"ShareAlike License. It uses material from"
-msgstr ""
-
 #: exe/webui/xliffexportpreferencespage.py:54
 msgid "label"
 msgstr "oznaka"
@@ -10483,55 +10597,20 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The attachment iDevice is used to "
-#~ "attach existing files to your .elp "
-#~ "content. For example, you might have "
-#~ "a PDF file or a PPT presentation"
-#~ " file that you wish the learners "
-#~ "to have access to, these can be"
-#~ " attached and labeled to indicate "
-#~ "what the attachment is and how "
-#~ "large the file is. Learners can "
-#~ "click on the attachment link and "
-#~ "can download the attachment."
 #~ msgstr ""
-#~ "Priponka poučevalne enote je uporabljena "
-#~ "za pripenjanje že obstoječe datoteke "
-#~ "vaše vsebine pomoči. Na primer, lahko"
-#~ " imate PDF datoteko ali PPT "
-#~ "predstavitveno datoteko, za katero vi "
-#~ "želite, da imajo učenci dostop, ta "
-#~ "je lahko pripeta in označena, da "
-#~ "nakaže kaj priponka je in kako "
-#~ "velika je datoteka. Slušatelji lahko "
-#~ "kliknejo na povezavo priponke in jo "
-#~ "prenesejo."
-
-#~ msgid ""
-#~ "<p>Assign a label for the attachment."
-#~ " It is useful to include the "
-#~ "type of file. Eg. pdf, ppt, "
-#~ "etc.</p><p>Including the size is also "
-#~ "recommended so that after your package"
-#~ " is exported to a web site, "
-#~ "people will have an idea how long"
-#~ " it would take to download this "
-#~ "attachment.</p><p>For example: <code>Sales "
-#~ "Forecast.doc (500kb)</code></p>"
-#~ msgstr ""
-#~ "<p>Določite oznako priponke. Koristno je "
-#~ "vključiti določene vrste datoteke (primer; "
-#~ "pdf, ppt, itd.).</p><p>Priporočeno je tudi "
-#~ "vpisovanje velikosti datoteke, da se "
-#~ "kasneje, ko je vaš paket objavljen "
-#~ "na spletni strani, uporabniki lažje "
-#~ "odločijo bodo kako velike priponke bodo"
-#~ " pretočili. </p><p>Primer: "
-#~ "<code>naravoslovje_v_šoli.ppt (485kb)</code></p>"
 
 #~ msgid " Advanced "
 #~ msgstr ""
 
 #~ msgid "options"
+#~ msgstr ""
+
+#~ msgid "by"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This article is licensed under the "
+#~ "Creative Commons Attribution-ShareAlike "
+#~ "License. It uses material from"
 #~ msgstr ""
 
