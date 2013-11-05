@@ -131,7 +131,7 @@ class SinglePageExport(object):
         self.compruebaReproductores(self.page.node)
 
 
-        if package.license == "GNU Free Documentation License":
+        if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
 

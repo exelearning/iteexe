@@ -1,5 +1,5 @@
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2005, University of Auckland
 # Copyright 2004-2008 eXe Project, http://eXeLearning.org/
 #
@@ -22,8 +22,8 @@ Export Pages functions
 """
 
 import logging
-from urllib                   import quote
-from exe.webui                import common
+from urllib import quote
+from exe.webui import common
 
 
 log = logging.getLogger(__name__)
@@ -39,53 +39,47 @@ class Page(object):
         """
         Initialize
         """
-        self.name  = name
+        self.name = name
         self.depth = depth
-        self.node  = node
-        
+        self.node = node
+
     def renderLicense(self):
         """
         Returns an XHTML string rendering the license.
         """
-        licenses = {"GNU Free Documentation License":
-                     "http://www.gnu.org/copyleft/fdl.html", 
-                     "Creative Commons Attribution 3.0 License":
-                     "http://creativecommons.org/licenses/by/3.0/",
-                     "Creative Commons Attribution Share Alike 3.0 License":
-                     "http://creativecommons.org/licenses/by-sa/3.0/",
-                     "Creative Commons Attribution No Derivatives 3.0 License":
-                     "http://creativecommons.org/licenses/by-nd/3.0/",
-                     "Creative Commons Attribution Non-commercial 3.0 License":
-                     "http://creativecommons.org/licenses/by-nc/3.0/",
-                     "Creative Commons Attribution Non-commercial Share Alike 3.0 License":
-                     "http://creativecommons.org/licenses/by-nc-sa/3.0/",
-                     "Creative Commons Attribution Non-commercial No Derivatives 3.0 License":
-                     "http://creativecommons.org/licenses/by-nc-nd/3.0/",
-                     "Creative Commons Attribution 2.5 License":
-                     "http://creativecommons.org/licenses/by/2.5/",
-                     "Creative Commons Attribution-ShareAlike 2.5 License":
-                     "http://creativecommons.org/licenses/by-sa/2.5/",
-                     "Creative Commons Attribution-NoDerivs 2.5 License":
-                     "http://creativecommons.org/licenses/by-nd/2.5/",
-                     "Creative Commons Attribution-NonCommercial 2.5 License":
-                     "http://creativecommons.org/licenses/by-nc/2.5/",
-                     "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License":
-                     "http://creativecommons.org/licenses/by-nc-sa/2.5/",
-                     "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License":
-                     "http://creativecommons.org/licenses/by-nc-nd/2.5/",
-                     "Developing Nations 2.0":
-                     "http://creativecommons.org/licenses/devnations/2.0/"}
+        licenses = {"license GFDL": "http://www.gnu.org/copyleft/fdl.html",
+                    "creative commons: attribution": "http://creativecommons.org/licenses/by/3.0/",
+                    "creative commons: attribution - share alike": "http://creativecommons.org/licenses/by-sa/3.0/",
+                    "creative commons: attribution - non derived work": "http://creativecommons.org/licenses/by-nd/3.0/",
+                    "creative commons: attribution - non commercial": "http://creativecommons.org/licenses/by-nc/3.0/",
+                    "creative commons: attribution - non commercial - share alike": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+                    "creative commons: attribution - non derived work - non commercial": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+                    "free software license GPL": "http://www.gnu.org/copyleft/gpl.html"
+                   }
+        licenses_names = {"license GFDL": "GNU Free Documentation License",
+                          "creative commons: attribution": "Creative Commons Attribution License",
+                          "creative commons: attribution - share alike": "Creative Commons Attribution Share Alike License",
+                          "creative commons: attribution - non derived work": "Creative Commons Attribution No Derivatives License",
+                          "creative commons: attribution - non commercial": "Creative Commons Attribution Non-commercial License",
+                          "creative commons: attribution - non commercial - share alike": "Creative Commons Attribution Non-commercial Share Alike License",
+                          "creative commons: attribution - non derived work - non commercial": "Creative Commons Attribution Non-commercial No Derivatives License",
+                          "free software license GPL": "GNU General Public License"
+                         }
+
         html = ""
-        
-        license = self.node.package.license
-        
-        if license <> "None" and licenses.has_key(license):
+
+        plicense = self.node.package.license
+
+        if plicense in licenses:
             html += '<p align="center">'
             html += _("Licensed under the")
-            html += ' <a rel="license" href="%s">%s</a></p>' % (licenses[license], license)
-            
+            html += ' <a rel="license" href="%s">%s</a>' % (licenses[plicense], licenses_names[plicense])
+            if plicense == 'license GFDL':
+                html += ' <a href="fdl.html">(%s)</a>' % _('Local Version')
+            html += '</p>'
+
         return html
-    
+
     def renderFooter(self):
         """
         Returns an XHTML string rendering the footer.
@@ -93,15 +87,14 @@ class Page(object):
         dT = common.getExportDocType()
         footerTag = "div"
         if dT == "HTML5":
-            footerTag = "footer"       
-        
-        html = ""
-        if self.node.package.footer <> "":
-            html += '<'+footerTag+' id="siteFooter">'
-            html += self.node.package.footer + "</"+footerTag+">"
-            
-        return html
+            footerTag = "footer"
 
+        html = ""
+        if self.node.package.footer != "":
+            html += '<' + footerTag + ' id="siteFooter">'
+            html += self.node.package.footer + "</" + footerTag + ">"
+
+        return html
 
 
 # ===========================================================================
@@ -125,7 +118,6 @@ def uniquifyNames(pages):
             pageNames[page.name] = uniquifier + 1
             page.name += unicode(uniquifier)
         # for export, temporarily set this unique name on the node itself,
-        # such that any links to it can use the proper target; also 
+        # such that any links to it can use the proper target; also
         # including the quote() & ".html", as per WebsitePage's:
-        page.node.tmp_export_filename = quote(page.name)+".html"
-
+        page.node.tmp_export_filename = quote(page.name) + ".html"

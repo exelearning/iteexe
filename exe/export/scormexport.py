@@ -814,7 +814,7 @@ class ScormExport(object):
                 jsFile = (self.scriptsDir/'exe_html5.js')
 
         if self.scormType == "scorm1.2" or self.scormType == "scorm2004" or self.scormType == "agrega":
-            if package.license == "GNU Free Documentation License":
+            if package.license == "license GFDL":
                 # include a copy of the GNU Free Documentation Licence
                 (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
         

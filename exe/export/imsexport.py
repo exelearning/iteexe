@@ -507,7 +507,7 @@ class IMSExport(object):
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
 
 
-        if package.license == "GNU Free Documentation License":
+        if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
             (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
         # Zip it up!
