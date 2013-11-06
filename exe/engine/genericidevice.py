@@ -38,7 +38,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -279,7 +279,7 @@ class GenericIdevice(Idevice):
         for field in self.fields:
             field._upgradeFieldToVersion2()
 
-        self.systemResources += ["common.js"]
+        self.systemResources += ["common.js", "libot_drag.js"]
 
     def upgradeToVersion7(self):
         """
@@ -343,5 +343,9 @@ class GenericIdevice(Idevice):
                         field.content = field.feedback 
                         field.content_w_resourcePaths = field.feedback 
                         field.content_wo_resourcePaths = field.feedback
+
+    def upgradeToVersion10(self):
+        if "libot_drag.js" in self.systemResources:
+            self.systemResources.remove("libot_drag.js")
 
 # ===========================================================================

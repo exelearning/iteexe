@@ -134,7 +134,7 @@ class TrueFalseIdevice(Idevice):
     """
     A TrueFalse Idevice is one built up from question and options
     """
-    persistenceVersion = 9
+    persistenceVersion = 10
 
     def __init__(self):
         """
@@ -380,7 +380,8 @@ this box, eXe will automatically provide default feedback as follows:
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()        
-        self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
+        self.systemResources += ["common.js", "libot_drag.js",
+                                 "panel-amusements.png", "stock-stop.png"]
         
     def upgradeToVersion8(self):
         """
@@ -403,5 +404,9 @@ completed."""),
         """
         for question in self.questions: 
             question.upgrade_setIdevice(self)
+
+    def upgradeToVersion10(self):
+        if "libot_drag.js" in self.systemResources:
+            self.systemResources.remove("libot_drag.js")
 
 # ===========================================================================

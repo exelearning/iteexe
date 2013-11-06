@@ -50,7 +50,7 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
 
     def __init__(self, question=""):
         """
@@ -328,7 +328,8 @@ for the other options.""")
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()
-        self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
+        self.systemResources += ["common.js", "libot_drag.js",
+                                 "panel-amusements.png", "stock-stop.png"]
         
     def upgradeToVersion7(self):
         """
@@ -432,5 +433,8 @@ for the other options.""")
         # So, put this as an afterUpgradeHandler:
         G.application.afterUpgradeHandlers.append(self.upgradeTo8SafetyCheck)
 
+    def upgradeToVersion8(self):
+        if "libot_drag.js" in self.systemResources:
+            self.systemResources.remove("libot_drag.js")
 
 # ===========================================================================
