@@ -580,62 +580,67 @@ class Resource(_Resource):
             new_path = Path(preMergePackage.resourceDir)\
                     .joinpath(new_name)
             newFullFileName = Path(old_path).rename(new_path)
-            # and update the renamed storage naem:
-            self._storageName = new_name
 
-            # And also update references to this resource
-            # in its content, according to the specific _idevice
-            from exe.engine.appletidevice    import AppletIdevice
-            from exe.engine.galleryidevice   import GalleryIdevice
+            def updateIdevice(self):
+                from exe.engine.appletidevice    import AppletIdevice
+                from exe.engine.galleryidevice   import GalleryIdevice
 
-            if isinstance(self._idevice, AppletIdevice):
-                # note that it COULD make it this far IF an AppletIdevice
-                # has the same resource, but by a different storageName, as
-                # another iDevice in the destination package:
-                raise Exception(_(u"renamed a Resource for an Applet Idevice, and it should not have even made it this far!"))
+                if isinstance(self._idevice, AppletIdevice):
+                    # note that it COULD make it this far IF an AppletIdevice
+                    # has the same resource, but by a different storageName, as
+                    # another iDevice in the destination package:
+                    raise Exception(_(u"renamed a Resource for an Applet Idevice, and it should not have even made it this far!"))
 
-            elif isinstance(self._idevice, GalleryIdevice):
-                # Re-generate the GalleryIdevice popupHTML,
-                # but it's best to re-generate as an AfterUpgradeHandler,
-                # since its OTHER resources (some of which might themselves
-                # be renamed with the merge) might not have been updated yet!
-                if self._idevice._createHTMLPopupFile not in \
-                G.application.afterUpgradeHandlers:
-                    G.application.afterUpgradeHandlers.append(
-                        self._idevice._createHTMLPopupFile)
+                elif isinstance(self._idevice, GalleryIdevice):
+                    # Re-generate the GalleryIdevice popupHTML,
+                    # but it's best to re-generate as an AfterUpgradeHandler,
+                    # since its OTHER resources (some of which might themselves
+                    # be renamed with the merge) might not have been updated yet!
+                    if self._idevice._createHTMLPopupFile not in \
+                    G.application.afterUpgradeHandlers:
+                        G.application.afterUpgradeHandlers.append(
+                            self._idevice._createHTMLPopupFile)
 
-            else:
-                # if this is one of the many iDevices (generic or otherwise)
-                # which uses a FieldWithResources field, then the content
-                # will need to be changed directly.
-
-                this_field = self._idevice.getResourcesField(self)
-                from exe.engine.field            import FieldWithResources
-                if this_field is not None\
-                and isinstance(this_field, FieldWithResources):
-                    # 1. just change .content_w_resourcePaths directly:
-                    old_resource_path = "resources/" + old_name
-                    new_resource_path = "resources/" + new_name
-                    this_field.content_w_resourcePaths = \
-                        this_field.content_w_resourcePaths.replace(
-                            old_resource_path, new_resource_path)
-                    # 2. copy .content_w_resourcePaths  directly into .content
-                    # ONLY IF .content is already defined!
-                    if hasattr(this_field, 'content'):
-                        this_field.content = this_field.content_w_resourcePaths
-                    # 3. re-create .content_wo_resourcePaths through Massage*()
-                    # ONLY IF .content_wo_resourcePaths is already defined!
-                    if hasattr(this_field, 'content_wo_resourcePaths'):
-                        this_field.content_wo_resourcePaths = \
-                                this_field.MassageContentForRenderView()
                 else:
-                    # Any other iDevice is assumed to simply have a direct
-                    # link to the resource and need nothing else done.
-                    # ==> nothing else to do, eh?
-                    log.warn("Unaware of any other specific resource-renaming "
-                            + "activities necessary for this type of idevice: "
-                            + repr(self._idevice))
+                    # if this is one of the many iDevices (generic or otherwise)
+                    # which uses a FieldWithResources field, then the content
+                    # will need to be changed directly.
 
+                    this_field = self._idevice.getResourcesField(self)
+                    from exe.engine.field            import FieldWithResources
+                    if this_field is not None\
+                    and isinstance(this_field, FieldWithResources):
+                        # 1. just change .content_w_resourcePaths directly:
+                        old_resource_path = "resources/" + old_name
+                        new_resource_path = "resources/" + new_name
+                        this_field.content_w_resourcePaths = \
+                            this_field.content_w_resourcePaths.replace(
+                                old_resource_path, new_resource_path)
+                        # 2. copy .content_w_resourcePaths  directly into .content
+                        # ONLY IF .content is already defined!
+                        if hasattr(this_field, 'content'):
+                            this_field.content = this_field.content_w_resourcePaths
+                        # 3. re-create .content_wo_resourcePaths through Massage*()
+                        # ONLY IF .content_wo_resourcePaths is already defined!
+                        if hasattr(this_field, 'content_wo_resourcePaths'):
+                            this_field.content_wo_resourcePaths = \
+                                    this_field.MassageContentForRenderView()
+                    else:
+                        # Any other iDevice is assumed to simply have a direct
+                        # link to the resource and need nothing else done.
+                        # ==> nothing else to do, eh?
+                        log.warn("Unaware of any other specific resource-renaming "
+                                + "activities necessary for this type of idevice: "
+                                + repr(self._idevice))
+
+            # and update the renamed storage name:
+            old_name = self._storageName
+            for resource in preMergePackage.resources[self.checksum]:
+                if resource._storageName == old_name:
+                    resource._storageName = new_name
+                    # And also update references to this resource
+                    # in its content, according to the specific _idevice
+                    updateIdevice(resource)
 
     def launch_testForZombies(self):
         """
