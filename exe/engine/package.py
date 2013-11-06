@@ -482,6 +482,9 @@ class Package(Persistable):
                     lifeCycle = lomsubs.lifeCycleSub(contribute=[contribute])
                     metadata.set_lifeCycle(lifeCycle)
 
+            val.set_valueOf_('creator')
+            role.set_value(val)
+
             metaMetadata = metadata.get_metaMetadata()
             if metaMetadata:
                 contributes = metaMetadata.get_contribute()
@@ -492,7 +495,7 @@ class Package(Persistable):
                     if rol:
                         rolval = rol.get_value()
                         if rolval:
-                            if rolval.get_valueOf_() == 'author':
+                            if rolval.get_valueOf_() == 'creator':
                                 for ent in entitys:
                                     if ent.get_valueOf_() == vcard % self.author.encode('utf-8'):
                                         found = True

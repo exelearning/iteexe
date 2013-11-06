@@ -26,6 +26,19 @@ Ext.define('eXe.view.forms.LomWidgets', {
 		optional: function(msg) {
 		    return msg + ' (' + _('Optional') + ')';
 		},
+		checkTextValidity: function(v) {
+			if (this.inputId.indexOf('contribute') !== -1) {
+				if (this.inputId.indexOf('date') == this.inputId.length - 4) {
+					var role = this.up().up().up().up().down('combobox');
+					return !role.value || !!v || this.blankText;
+				}
+				if (this.inputId.indexOf('description') !== -1) {
+					var date = this.up('insertdelfieldset').up().down('datefield');
+					return !date.value || !!v || this.blankText;
+				}
+			}
+			return true;
+		},
         textfield: function(label, id, tooltip, optional, margin, value, hidden) {
             var item;
 		    if (!tooltip)
@@ -47,7 +60,8 @@ Ext.define('eXe.view.forms.LomWidgets', {
                 hideEmptyLabel: false,
                 labelWidth: label? 100: 0,
                 dirtyCls: 'property-form-dirty',
-                hidden: hidden
+                hidden: hidden,
+                validator: eXe.view.forms.LomWidgets.checkTextValidity
 		    }
             if (value) {
                 item.value = value;
@@ -188,6 +202,8 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	        storeName = storeName.replace(/_string$/, '');
 	        storeName = storeName.replace(/_value$/, '');
 	        storeName = storeName.slice(storeName.lastIndexOf('_') + 1) + 'Values';
+	        if (storeName == 'roleValues' && id.indexOf('metaMetadata') !== -1)
+	        	storeName = 'roleMetaValues';
 		    if (/^(lom|lomes)+_classification[0-9]*/.exec(id)){
 		    	if (/_source_string1$/.exec(id)){
 		    		combo.item.listeners = {
@@ -301,11 +317,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
                         hideEmptyLabel: false,
                         labelWidth: fieldLabel? 100: 0,
 			            dirtyCls: 'property-form-dirty',
-                        listeners: {
-                            blur: {
-                                fn: this.updateMandatoryField
-                            }
-                        }
+			            validator: eXe.view.forms.LomWidgets.checkTextValidity
 			        },
 			        help: help,
 			        helpmargin: helpmargin
