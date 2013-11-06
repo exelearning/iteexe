@@ -24,6 +24,7 @@ Package represents the collection of resources the user is editing
 i.e. the "package".
 """
 
+import datetime
 import shutil
 import logging
 import time
@@ -452,6 +453,13 @@ class Package(Persistable):
             role.set_value(val)
             role.set_uniqueElementName('role')
             entity = lomsubs.entitySub(vcard % value_str)
+            dateTime = lomsubs.DateTimeValueSub()
+            dateTime.set_valueOf_(datetime.datetime.now().strftime('%Y-%m-%d'))
+            dateTime.set_uniqueElementName('dateTime')
+            lang_str = self.lang.encode('utf-8')
+            value_str = u'Metadata creation'.encode('utf-8')
+            dateDescription = lomsubs.LanguageStringSub([lomsubs.LangStringSub(lang_str, value_str)])
+            date = lomsubs.dateSub(dateTime, dateDescription)
 
             lifeCycle = metadata.get_lifeCycle()
             if lifeCycle:
@@ -474,16 +482,21 @@ class Package(Persistable):
                                             if not contribute.entity:
                                                 contributes.remove(contribute)
                 if not found:
-                    contribute = lomsubs.contributeSub(role, [entity])
+                    contribute = lomsubs.contributeSub(role, [entity], date)
                     lifeCycle.add_contribute(contribute)
             else:
                 if value:
-                    contribute = lomsubs.contributeSub(role, [entity])
+                    contribute = lomsubs.contributeSub(role, [entity], date)
                     lifeCycle = lomsubs.lifeCycleSub(contribute=[contribute])
                     metadata.set_lifeCycle(lifeCycle)
 
+            val = lomsubs.roleValueSub()
             val.set_valueOf_('creator')
+            val.set_uniqueElementName('value')
+            role = lomsubs.roleSub()
+            role.set_source(src)
             role.set_value(val)
+            role.set_uniqueElementName('role')
 
             metaMetadata = metadata.get_metaMetadata()
             if metaMetadata:
@@ -506,11 +519,11 @@ class Package(Persistable):
                                             if not contribute.entity:
                                                 contributes.remove(contribute)
                 if not found:
-                    contribute = lomsubs.contributeMetaSub(role, [entity])
+                    contribute = lomsubs.contributeMetaSub(role, [entity], date)
                     metaMetadata.add_contribute(contribute)
             else:
                 if value:
-                    contribute = lomsubs.contributeMetaSub(role, [entity])
+                    contribute = lomsubs.contributeMetaSub(role, [entity], date)
                     metaMetadata.set_contribute([contribute])
         self._author = toUnicode(value)
 
