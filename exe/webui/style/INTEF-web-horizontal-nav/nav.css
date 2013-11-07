@@ -56,7 +56,7 @@ body{padding:0;text-align:center}
 #nodeTitle{font-size:1.5em}
 #main #nodeDecoration{background:none;padding:0;border:none}
 /* Menú desplegable */
-#siteNav,#siteNav ul{float:left;width:100%;list-style:none;line-height:1;padding:0;border-style:solid;border-width:1px 0;margin:0}
+#siteNav,#siteNav ul{float:left;width:100%;list-style:none;line-height:1.2em;padding:0;border-style:solid;border-width:1px 0;margin:0}
 #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
 #siteNav a{display:block;text-decoration:none;padding:.4em 10px}
 #siteNav a:hover{color:#0460B3}
@@ -66,7 +66,7 @@ body{padding:0;text-align:center}
 * html #siteNav li ul{width:13em}
 #siteNav li li{padding-right:1em;width:13em}
 #siteNav li ul a{font-size:.9em;padding:.45em 10px}
-#siteNav li ul ul{margin:-1.75em 0 0 14em}
+#siteNav li ul ul{margin:-1.95em 0 0 14em}
 * html #siteNav li ul ul{margin-left:13em}
 #siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul{left:-999em}
 #siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul{left:auto}
@@ -116,8 +116,8 @@ html[xmlns] #content{display:block}
     #siteNav a.main-node:hover{text-decoration:underline;background:none}
     #siteNav .active{color:#0460B3;font-weight:bold;border-color:#0460B3}
     #main-wrapper{padding:0 10px}
-    #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;height:49px;font-size:1.1em}
-    #nodeTitle{position:absolute;top:1px;left:10px;margin:20px 10px 0 0;font-size:1.6em}
+    #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;height:49px;font-size:1em}
+    #nodeTitle{position:absolute;top:1px;left:10px;margin:20px 10px 0 0;font-size:1.4em}
     #header{text-align:right;padding-right:10px}
     #bottomPagination{padding:0 10px}
     #siteFooter{padding-left:10px}

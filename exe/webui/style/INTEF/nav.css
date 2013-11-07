@@ -92,7 +92,7 @@ html[xmlns] #content{display:block}
     #siteNav li:hover,#siteNav li.sfhover{background:#E2E6E9}
     #siteNav .other-section{display:block}
     #siteNav .main-node{font-weight:normal;font-variant:normal;letter-spacing:0;font-size:1em}
-    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#E2E6E9;margin:0;line-height:1.3em;background:#fff}
+    #siteNav,#siteNav ul{float:left;width:100%;list-style:none;padding:0;border-style:solid;border-width:1px 0;border-color:#E2E6E9;margin:0;line-height:1.2em;background:#fff}
     #siteNav ul ul{line-height:1.1em}
     #siteNav{margin-bottom:20px;position:relative;z-index:999;border-top:none}
     #siteNav a{display:block;text-decoration:none;padding:.4em 20px;border:none}
@@ -113,9 +113,10 @@ html[xmlns] #content{display:block}
     #content{width:100%;border:0;box-shadow:none}
     #userOptionsBar,#topPagination{display:none}
     #siteNav{float:none;width:100%;padding:0}
+    #siteNav{line-height:1.5em}
     #main{padding:0 10px;width:auto}
-    #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px}
-    #nodeTitle{position:absolute;top:1px;left:10px}
+    #header,#emptyHeader{background-position:0 -54px;padding:4px 0 0 10px;font-size:1em}
+    #nodeTitle{position:absolute;top:1px;left:10px;font-size:1.4em}
     #header{text-align:right;padding-right:10px}
     #siteFooter{padding-left:10px}
     #bottomPagination{padding:0 10px}
