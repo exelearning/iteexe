@@ -1040,6 +1040,9 @@ class Package(Persistable):
             zippedFile.write(G.application.config.webDir/'templates'/'content.xsd', 'content.xsd', zipfile.ZIP_DEFLATED)
         finally:
             zippedFile.close()
+        if self.compatibleWithVersion9:
+            self.upgradeToVersion10()
+            Package.persistenceVersion = 10
 
     def extractNode(self):
         """
@@ -1552,7 +1555,8 @@ class Package(Persistable):
             if hasattr(self, attr):
                 delattr(self, attr)
         self.license = u''
-        self.persistenceVersion = 9
+        Package.persistenceVersion = 9
+
     def delNotes(self, node):
         """
         Delete all notes
