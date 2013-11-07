@@ -1,4 +1,4 @@
-Programadores CSS
+﻿Programadores CSS
 
 Mercedes Cotelo Lois
 Antonio Monje Fernández - antonio.monje@ite.educacion.es
@@ -28,10 +28,4 @@ Usted es libre de:
 Bajo las condiciones siguientes:
 
      1.- Reconocimiento. Debe reconocer los créditos de la obra de la manera especificada por el autor o el licenciador (pero no de una manera que sugiera que tiene su apoyo o apoyan el uso que hace de su obra).
-     2.- Compartir bajo la misma licencia. Si altera o transforma esta obra, o genera una obra derivada, sólo puede distribuir la obra generada bajo una licencia idéntica a ésta. 
-
-Los iconos usados se han adaptado de un trabajo de 
-      Bruno Maia, IconTexto
-      http://www.icontexto.com
-
-Bajo licencia Creative Commons by-nc (http://creativecommons.org/licenses/by-nc/3.0/es/)
+     2.- Compartir bajo la misma licencia. Si altera o transforma esta obra, o genera una obra derivada, sólo puede distribuir la obra generada bajo una licencia idéntica a ésta.
