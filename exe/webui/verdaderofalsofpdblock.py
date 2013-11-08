@@ -129,7 +129,7 @@ class VerdaderofalsofpdBlock(Block):
         """
         html = common.ideviceHeader(self, style, "preview")
 # JR: Si hay instrucciones añadimos un &nbsp;
-        aux =self.instructionElement.renderView()
+        aux =self.instructionElement.renderPreview()
         if re.search(">[\n|\r|\t]*</div>", aux):
             html += aux
         else:
