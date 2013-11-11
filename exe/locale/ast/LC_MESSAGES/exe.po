@@ -10131,9 +10131,6 @@ msgstr ""
 #~ msgid "Show %s options"
 #~ msgstr ""
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid " Advanced "
 #~ msgstr ""
 
