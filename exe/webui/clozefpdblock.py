@@ -86,7 +86,7 @@ class ClozefpdBlock(Block):
             u'<div class="iDevice">',
             u'<div class="block">',
 #            common.textInput("title"+self.id, self.idevice.title),
-            common.textInput("title"+self.id, "Autoevaluaci&oacute;n"),
+            common.textInput("title"+self.id, x_(u"Now it's your turn")),
             u'</div>',
             self.instructionElement.renderEdit(),
             self.clozeElement.renderEdit(),
@@ -101,7 +101,7 @@ class ClozefpdBlock(Block):
 	# JR
 	# Quitamos el prefijo "FPD -"
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Autoevaluacion")
+		self.idevice.title = x_(u"Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
 	html += "</div>"

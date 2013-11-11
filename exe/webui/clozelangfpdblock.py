@@ -86,7 +86,7 @@ class ClozelangfpdBlock(Block):
             u'<div class="iDevice">',
             u'<div class="block">',
 #            common.textInput("title"+self.id, self.idevice.title),
-            common.textInput("title"+self.id, "Autoevaluaci&oacute;n"),
+            common.textInput("title"+self.id, x_(u"Now it's your turn")),
             u'</div>',
             self.instructionElement.renderEdit(),
             self.clozelangElement.renderEdit(),
