@@ -1,17 +1,28 @@
+# Basque EXELearning PO file
+# Copyright (C) 2004-2011 EXELearning.org
+# Copyright (C) 2001-2013 EXELearning.net
+# This file is distributed under the same license as the EXE package.
+# eXe Project <exe@exelearning.org>
+# Asmoz fundazioa, 2009
+# http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
+# Malen <mjareno@asmoz.org>
+# ULHI, 2012-2013 Joxemi Andonegi <jmandonegi@ulhi.net> 
+# Mila esker Andoni Tolosari bere laguntzagatik
 msgid ""
 msgstr ""
-"Project-Id-Version: eXe trunk (1.04.1)\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: eXeLearning 2.0\n"
+"Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-05 23:31+0100\n"
-"PO-Revision-Date: 2013-04-26 16:31+0100\n"
-"Last-Translator: José Miguel Andonegi <jmandonegi@ulhi.net>\n"
+"PO-Revision-Date: 2013-11-08 17:58+0100\n"
+"Last-Translator: Andoni <andoni-t@aek.org>\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
-"Language: \n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Generated-By: Babel 0.9.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 1.3\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: exe/application.py:204
 #, python-format
@@ -25,6 +36,16 @@ msgid ""
 "in Documents and Settings/<user name>/Application Data/exe on Windows XP or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7"
 msgstr ""
+"Erabilera: %s [OPTION] [PACKAGE]\n"
+"  -V, --version    bertsioari buruzko informazioa idatzi eta irten\n"
+"  -h, --help       laguntza hau erakutsi eta irten\n"
+"  --standalone     Erabat oraingo karpetatik exekutatu\n"
+"  --portable       Modu eramangarrian exekutatu\n"
+"Ezarpenak exe.conf-etik irakurriko dira; Linux/Unix/Mac OS sistema "
+"eragileetan, $HOME/.exe karpetan;\n"
+" Windows XP-n, Documents and Settings/<user name>/Application Data/exe "
+"karpetan;\n"
+"Windows 7-n Users/<user name>/AppData/Roaming/exe karpetan"
 
 #: exe/engine/appletidevice.py:70
 msgid "Java Applet"
@@ -384,15 +405,15 @@ msgstr "Hausnarketarako aipuaren testua:"
 
 #: exe/engine/clickinorderidevice.py:49
 msgid "Click In Order Game"
-msgstr ""
+msgstr "Jokoaren hurrenkeran klikatu"
 
 #: exe/engine/clickinorderidevice.py:50
 msgid "PAIWASTOON Networking Services Ltd."
-msgstr ""
+msgstr "PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/clickinorderidevice.py:51
 msgid "Click in Order according to the hint on the map."
-msgstr ""
+msgstr "Hurrenkeran klikatu maparen  arrastoa jarraituz "
 
 #: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
 #: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
@@ -413,121 +434,120 @@ msgid "Title"
 msgstr "Izenburua"
 
 #: exe/engine/clickinorderidevice.py:61
-#, fuzzy
 msgid "Game Instructions"
-msgstr "Argibideak"
+msgstr "Jokoaren arauak"
 
 #: exe/engine/clickinorderidevice.py:61
 msgid "Instructions to show in leading paragraph"
-msgstr ""
+msgstr "Paragrafo nagusian erakutsiko diren argibideak "
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Game Won Feedback Overlay"
-msgstr ""
+msgstr "Jokoa irabaztean erakutsiko den feedbackerako geruza"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Shown over when the game is won"
-msgstr ""
+msgstr "Jokoa irabazitakoan erakutsiko da"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Correct Answer Feedback Overlay"
-msgstr ""
+msgstr "Erantzun zuzenen feedbackarako geruza"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Shown over game when correct answer given"
 msgstr ""
+"Erantzuna asmatzen denean jokoaren gainean erakutsiko da (joko gehiago "
+"erakutsiko da erantzunak asmatu ahala)"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Wrong Answer Feedback Overlay"
-msgstr ""
+msgstr "Erantzun okerren feedbackarako geruza"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Shown over game when wrong answer is given"
 msgstr ""
+"Erantzuna okerrak ematen direnean jokoaren gainean erakutsiko da (joko "
+"gehiago erakutsiko daerantzun okerrak eman ahala)"
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "Main Area To Show"
-msgstr ""
+msgstr "Erakutsiko den joko-eremu nagusia"
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "The Main Game Area on which to locate items"
-msgstr ""
+msgstr "Joko-eremu nagusia; elementuak kokatuko dira bertan "
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "Area shown before the game starts"
-msgstr ""
+msgstr "Hasi aurretik erakutsiko den joko-eremua"
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "User will click on this to start the game"
-msgstr ""
+msgstr "Erabiltzaileak hemen egingo du klik jokoa hasteko"
 
 #: exe/engine/clickinorderidevice.py:78
-#, fuzzy
 msgid "Game Width"
-msgstr "Width"
+msgstr "Jokoaren zabalera"
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Width of game area (in pixels)"
-msgstr ""
+msgstr "Joko-eremuaren zabalera (pixeletan)"
 
 #: exe/engine/clickinorderidevice.py:79
-#, fuzzy
 msgid "Game Height"
-msgstr "Markoaren altuera:"
+msgstr "Jokoaren altuera"
 
 #: exe/engine/clickinorderidevice.py:79
 msgid "Height of game area (in pixels)"
-msgstr ""
+msgstr "Joko-eremuaren altuera (pixeletan)"
 
 #: exe/engine/clickinorderidevice.py:80
-#, fuzzy
 msgid "Style of Element Counter"
-msgstr "Style elementua"
+msgstr "Elementu zenbatzailearen estiloa"
 
 #: exe/engine/clickinorderidevice.py:80
 msgid "Use CSS to style element that counts number items found"
 msgstr ""
+"CSSa erabili  topatu den item kopurua zenbatzen duen itemari estiloa emateko"
 
+# Hint: pista -> arrastoa?
+# Antzeko kasuetan arrastoa erabili da. Ondo dago?
 #: exe/engine/clickinorderidevice.py:81
-#, fuzzy
 msgid "Hint Width"
-msgstr "Width"
+msgstr "Arrastoaren zabalera"
 
 #: exe/engine/clickinorderidevice.py:81
 msgid "Width (px) of hint area"
-msgstr ""
+msgstr "Arrasto-eremuaren zabalera (px)"
 
 #: exe/engine/clickinorderidevice.py:82
-#, fuzzy
 msgid "Hint Height"
-msgstr "Lerro garaiera"
+msgstr "Arrastoaren altuera"
 
 #: exe/engine/clickinorderidevice.py:82
 msgid "Height (px) of hint area"
-msgstr ""
+msgstr "Arrasto-eremuaren altuera (px)"
 
 #: exe/engine/clickinorderidevice.py:83
-#, fuzzy
 msgid "Hint Area Style"
-msgstr "Stretch style"
+msgstr "Arrasto-eremuaren estiloa"
 
+# Ez diot ezberdintasunik ikusten aurrekoarekin...
 #: exe/engine/clickinorderidevice.py:83
 msgid "Style of Hint Area"
-msgstr ""
+msgstr "Arrasto-eremuaren  estiloa"
 
 #: exe/engine/clickinorderidevice.py:84
-#, fuzzy
 msgid "Style of timer Element"
-msgstr "Style elementua"
+msgstr "Kronometroaren estiloa"
 
 #: exe/engine/clickinorderidevice.py:84
 msgid "Style of timer (CSS)"
-msgstr ""
+msgstr "Kronometroaren estiloa (CSS)"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:100
-#, fuzzy
 msgid "Dont Shuffle"
-msgstr "Shuffle"
+msgstr "Ez nahastu"
 
 #: exe/engine/clickinorderidevice.py:98 exe/engine/clickinorderidevice.py:101
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
@@ -535,96 +555,88 @@ msgid "Shuffle"
 msgstr "Shuffle"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
-#, fuzzy
 msgid "No Timer"
-msgstr "Noiz bukatu"
+msgstr "Kronometrorik ez"
 
 #: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
-msgstr ""
+msgstr "Erlojua gelditzeko modua"
 
 #: exe/engine/clickinorderidevice.py:107
-#, fuzzy
 msgid "Shuffle Questions"
-msgstr "Egia/gezurra galderak "
+msgstr "Galderak nahastu"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Randomize question order or not"
-msgstr ""
+msgstr "Galderen ausazko ordena indarrean jarri, ala ez"
 
 #: exe/engine/clickinorderidevice.py:108
-#, fuzzy
 msgid "Use a Timer"
-msgstr "Ordua txertatu"
+msgstr "Kronometroa erabili"
 
 #: exe/engine/clickinorderidevice.py:108 exe/engine/memorymatchidevice.py:73
-#, fuzzy
 msgid "Use Timer?"
-msgstr "Ordua txertatu"
+msgstr "Kronometroa erabili?"
 
 #: exe/engine/clickinorderidevice.py:115
-#, fuzzy
 msgid "Clickable Area"
-msgstr "Klikatu hemen"
+msgstr "Eremu klikagarria"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top (Y) Coord"
-msgstr ""
+msgstr "Goiko (Y) coord"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top CSS top property"
-msgstr ""
+msgstr "Goiko CSS top ezaugarria"
 
 #: exe/engine/clickinorderidevice.py:153
 msgid "Left (X) Coord"
-msgstr ""
+msgstr "Ezkerreko (X) coord"
 
 #: exe/engine/clickinorderidevice.py:153
 msgid "Left CSS left property"
-msgstr ""
+msgstr "Ezkerreko CSS left ezaugarria"
 
 #: exe/engine/clickinorderidevice.py:154
-#, fuzzy
 msgid "Width (px)"
-msgstr "Width"
+msgstr "Zabalera (px)"
 
 #: exe/engine/clickinorderidevice.py:154
 msgid "Width of clickable area"
-msgstr ""
+msgstr "Eremu klikagarriaren zabalera"
 
 #: exe/engine/clickinorderidevice.py:155
-#, fuzzy
 msgid "Height (px)"
-msgstr "Height"
+msgstr "Altuera (px)"
 
 #: exe/engine/clickinorderidevice.py:155
 msgid "Height of clickable area"
-msgstr ""
+msgstr "Eremu klikagarriaren altuera"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "Delay (ms) to hide revealed contents"
-msgstr ""
+msgstr "Ageriko edukiak ezkutatzeko atzerapena (ms)"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "After delay ms hide the content prev revealed"
-msgstr ""
+msgstr "Ageriko edukiak ezkutatu zehaztutako ms pasa ondoren"
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "Hint to Show for this item"
-msgstr ""
+msgstr "Elementu honetan erakutsi beharreko arrastoa"
 
 #: exe/engine/clickinorderidevice.py:166
-#, fuzzy
 msgid "The hint that will appear under the map for this item"
-msgstr "iDevice honetan agertuko den testua sartu"
+msgstr "Elementu honentzat maparen azpian agertuko den arrastoa"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "Item Revealed"
-msgstr ""
+msgstr "Erakutsiko den elementua"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "The Item that will be revealed in place"
-msgstr ""
+msgstr "Dagokion lekuan erakutsiko den elementua"
 
 #: exe/engine/clozefpdidevice.py:50
 msgid "FPD - Cloze Activity"
@@ -824,7 +836,7 @@ msgstr "Bete hutsuneak"
 #: exe/engine/config.py:62 exe/engine/config.py:63 exe/engine/config.py:67
 #: exe/engine/config.py:94
 msgid "Non-Interactive Activities"
-msgstr ""
+msgstr "Jarduera ez interaktiboak"
 
 #: exe/engine/config.py:64 exe/engine/config.py:69 exe/engine/config.py:91
 #: exe/engine/config.py:92 exe/engine/config.py:93 exe/engine/config.py:95
@@ -832,18 +844,18 @@ msgstr ""
 #: exe/engine/config.py:102 exe/engine/config.py:105 exe/engine/config.py:106
 #: exe/engine/config.py:107 exe/engine/config.py:108
 msgid "Interactive Activities"
-msgstr ""
+msgstr "Jarduera interaktiboak"
 
 #: exe/engine/config.py:65 exe/engine/config.py:66 exe/engine/config.py:87
 #: exe/engine/config.py:88 exe/engine/config.py:96 exe/engine/config.py:97
 #: exe/engine/config.py:103 exe/engine/config.py:104
 msgid "Non-Textual Information"
-msgstr ""
+msgstr "Informazio ez testuala"
 
 #: exe/engine/config.py:68 exe/engine/config.py:89 exe/engine/config.py:90
 #: exe/engine/config.py:98
 msgid "Textual Information"
-msgstr ""
+msgstr "Testu-informazioa"
 
 #: exe/engine/config.py:70 exe/engine/config.py:71 exe/engine/config.py:72
 #: exe/engine/config.py:73 exe/engine/config.py:74 exe/engine/config.py:75
@@ -852,7 +864,7 @@ msgstr ""
 #: exe/engine/config.py:82 exe/engine/config.py:83 exe/engine/config.py:84
 #: exe/engine/config.py:85 exe/engine/config.py:86
 msgid "FPD"
-msgstr ""
+msgstr "FPD"
 
 #: exe/engine/debesconocerfpdidevice.py:29
 msgid "FPD - You Should Know"
@@ -1075,8 +1087,9 @@ msgid "Shake"
 msgstr ""
 
 #: exe/engine/extendedfieldengine.py:38
+#, fuzzy
 msgid "Slide"
-msgstr ""
+msgstr "diapositiba"
 
 #: exe/engine/extendedfieldengine.py:38
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:72
@@ -1098,7 +1111,7 @@ msgstr ""
 #: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:328
 #, fuzzy
 msgid "Show Advanced Options"
-msgstr "Shockwave aukerak"
+msgstr "Aukera aurreratuak"
 
 #: exe/engine/extendedfieldengine.py:278
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -1140,7 +1153,7 @@ msgstr "Bat ere ez"
 
 #: exe/engine/extendedfieldengine.py:564
 msgid "is not a valid number - please try again<br/>"
-msgstr ""
+msgstr "ez da zenbaki onargarria; mesedez, berriro saiatu<br/> "
 
 #: exe/engine/externalurlidevice.py:38
 msgid "External Web Site"
@@ -1357,27 +1370,28 @@ msgstr "Feedbacka:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
-msgstr ""
+msgstr "Atxikitutako fitxategiak"
 
 #: exe/engine/fileattachidevice.py:38 exe/engine/memorymatchidevice.py:45
 #: exe/engine/sortidevice.py:46
 msgid "Toughra Technologies FZ LLC."
-msgstr ""
+msgstr "Toughra Technologies FZ LLC."
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
-msgstr ""
+msgstr "Atxikitutako fitxategiak Idevicea"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
+#, fuzzy
 msgid "Yes"
-msgstr ""
+msgstr "Urteak"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
 #, fuzzy
 msgid "No"
-msgstr "Bat ere ez"
+msgstr "Oharra"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
 #, fuzzy
@@ -1585,81 +1599,81 @@ msgstr "Irakurtzeko jarduera"
 
 #: exe/engine/hangmanidevice.py:51
 msgid "Hangman Game"
-msgstr ""
+msgstr "Urkatuaren jokoa"
 
 #: exe/engine/hangmanidevice.py:52
 msgid "Mike Dawson, Toughra Technologies FZ LLC"
-msgstr ""
+msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr ""
+msgstr "Urkatu estiloko hitz jokoa; irudiak pertsonalizatu daitezke."
 
 #: exe/engine/hangmanidevice.py:61
-#, fuzzy
 msgid "Instructions for Game."
-msgstr "Ikasleentzako argibideak"
+msgstr "Jokoaren argibideak"
 
 #: exe/engine/hangmanidevice.py:76
 msgid "Alphabet to Select From"
-msgstr ""
+msgstr "Hautaketak egiteko alfabetoa"
 
 #: exe/engine/hangmanidevice.py:76
 msgid "Alphabet to show players"
-msgstr ""
+msgstr "Jokalariei erakutsiko zaien alfabetoa"
 
+# ñ-a sartu dut.
+# Mantenduko dugu c?
 #: exe/engine/hangmanidevice.py:77
 msgid "abcdefghijklmnopqrstuvwxyz"
-msgstr ""
+msgstr "abcdefghijklmnñopqrstuvwxyz"
 
 #: exe/engine/hangmanidevice.py:83
 msgid "Letter Button Style"
-msgstr ""
+msgstr "Letra botoiaren estiloa"
 
 #: exe/engine/hangmanidevice.py:84
 msgid "Style of button to start with"
-msgstr ""
+msgstr "Hasteko botoiaren estiloa"
 
 #: exe/engine/hangmanidevice.py:87
 msgid "Letter Button Style Wrong Guess"
-msgstr ""
+msgstr "Letra botoiaren estiloa; asmatu ez denean"
 
 #: exe/engine/hangmanidevice.py:88
 msgid "Style of letter button after wrong guess"
-msgstr ""
+msgstr "Asmatu ez denean letra botoiari emango zaion estiloa"
 
 #: exe/engine/hangmanidevice.py:91
 msgid "Letter Button Style Right Guess"
-msgstr ""
+msgstr "Letra botoiaren estiloa; asmatu denean"
 
 #: exe/engine/hangmanidevice.py:92
 msgid "Style of letter button after correct guess"
-msgstr ""
+msgstr "Asmatu denean letra botoiari emango zaion estiloa"
 
 #: exe/engine/hangmanidevice.py:95
 msgid "Style of Hint Text Field"
-msgstr ""
+msgstr "Arrasto testu-eremuaren estiloa"
 
 #: exe/engine/hangmanidevice.py:95
 msgid "Hint Text Field CSS"
-msgstr ""
+msgstr "Arrasto testu-eremuaren CSSa"
 
 #: exe/engine/hangmanidevice.py:98
 msgid "Style of Word Display Field"
-msgstr ""
+msgstr "Hitzaren bistaratze-eremuaren estiloa"
 
 #: exe/engine/hangmanidevice.py:98
-#, fuzzy
 msgid "Word Display CSS"
-msgstr "Erakutsi"
+msgstr "Hitzen bistaratze-CSSa"
 
 #: exe/engine/hangmanidevice.py:101
 msgid "Restart Level Button Text"
-msgstr ""
+msgstr "Berrabiarazi botoiaren testu-maila"
 
 #: exe/engine/hangmanidevice.py:101
 msgid "Text for reset button"
-msgstr ""
+msgstr "Berrarabiazi botoiaren testua"
 
 #: exe/engine/hangmanidevice.py:101 exe/webui/element.py:1458
 #: exe/webui/element.py:1727
@@ -1668,43 +1682,43 @@ msgstr "Berriz hasi"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Restart Level Button Style (CSS)"
-msgstr ""
+msgstr "Berrabiarazi maila-botoiaren estiloa (CSS)"
 
 #: exe/engine/hangmanidevice.py:104
 msgid "Style of Reset Button"
-msgstr ""
+msgstr "Berrarabiazi botoiaren estiloa"
 
 #: exe/engine/hangmanidevice.py:108 exe/engine/hangmanidevice.py:170
 msgid "Wrong Guess Message"
-msgstr ""
+msgstr "Asmatu ez denerako mezua"
 
 #: exe/engine/hangmanidevice.py:109 exe/engine/hangmanidevice.py:171
 msgid "Player will see this message when they guess a letter wrong"
-msgstr ""
+msgstr "Jokalariak mezu hau ikusiko du letra bat asmatzen ez duenean"
 
 #: exe/engine/hangmanidevice.py:111 exe/engine/hangmanidevice.py:158
 msgid "Lost Level Message"
-msgstr ""
+msgstr "Maila galtzen denerako mezua"
 
 #: exe/engine/hangmanidevice.py:112 exe/engine/hangmanidevice.py:159
 msgid "Player will see this message when they loose the level"
-msgstr ""
+msgstr "Jokalariak mezu hau ikusiko du maila galtzen duenean"
 
 #: exe/engine/hangmanidevice.py:114 exe/engine/hangmanidevice.py:162
 msgid "Level Passed Message"
-msgstr ""
+msgstr "Maila gainditzen denerako mezua"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr ""
+msgstr "Jokalariak mezu hau ikusiko du hitz guztiak asmatzen dituenean"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
-msgstr ""
+msgstr "Jokoa irabazten denerako mezua"
 
 #: exe/engine/hangmanidevice.py:118 exe/engine/hangmanidevice.py:167
 msgid "Player will see this message when they guess all words correctly"
-msgstr ""
+msgstr "Jokalariak mezu hau ikusiko du hitz guztiak asmatzen dituenean"
 
 #: exe/engine/hangmanidevice.py:142
 #, fuzzy
@@ -1713,20 +1727,19 @@ msgstr "Ezeztatu"
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word to Guess"
-msgstr ""
+msgstr "Asmatu beharreko hitza"
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word To Guess"
-msgstr ""
+msgstr "Asmatu beharreko hitza"
 
 #: exe/engine/hangmanidevice.py:150
 msgid "Hint to Show User"
-msgstr ""
+msgstr "Erabiltzaileari erakutsiko zaion arrastoa"
 
 #: exe/engine/hangmanidevice.py:150
-#, fuzzy
 msgid "Hint for Word"
-msgstr "Ezikusi hitza"
+msgstr "Hitzaren arrastoa"
 
 #: exe/engine/idevicestore.py:541
 msgid ""
@@ -2224,146 +2237,139 @@ msgstr "Testu barra erabili edota latexa eskuz sar dezakezu testu koadroan."
 
 #: exe/engine/memorymatchidevice.py:44
 msgid "Memory Match Game"
-msgstr ""
+msgstr "Buruz parekatu motako jokoa"
 
 #: exe/engine/memorymatchidevice.py:46
 msgid "Memory Match Game Maker."
-msgstr ""
+msgstr "Buruz parekatu motako jokoen sortze tresna"
 
 #: exe/engine/memorymatchidevice.py:55
-#, fuzzy
 msgid "Instructions to show"
-msgstr "Argibideak"
+msgstr "Erakutsi beharreko azalpenak"
 
 #: exe/engine/memorymatchidevice.py:56
 msgid "Number of Rows"
-msgstr ""
+msgstr "Lerro kopurua"
 
 #: exe/engine/memorymatchidevice.py:57
 msgid "Number of Columns"
-msgstr ""
+msgstr "Zutabe kopurua"
 
 #: exe/engine/memorymatchidevice.py:58
 msgid "Split Question/Answer Pairs"
-msgstr ""
+msgstr "Galdera/erantzuna bikoteak banatu"
 
 #: exe/engine/memorymatchidevice.py:60
 msgid "Feedback to show on correct match"
-msgstr ""
+msgstr "Parekatze zuzenetan erakutsiko den feedbacka"
 
 #: exe/engine/memorymatchidevice.py:60
-#, fuzzy
 msgid "Positive Feedback"
-msgstr "Ezkutatu feedbacka"
+msgstr "Feedback positiboa"
 
 #: exe/engine/memorymatchidevice.py:61
 msgid "Feedback to show on incorrect pair"
-msgstr ""
+msgstr "Parekatze okerretan erakutsiko den feedbacka"
 
 #: exe/engine/memorymatchidevice.py:61
-#, fuzzy
 msgid "Negative Feedback"
-msgstr "Ezkutatu feedbacka"
+msgstr "Feedback negatiboa"
 
 #: exe/engine/memorymatchidevice.py:62
 msgid "Style of Feedback Area (CSS)"
-msgstr ""
+msgstr "Feedback-eremuaren estiloa (CSS)"
 
 #: exe/engine/memorymatchidevice.py:62
 msgid "CSS style for feedback area"
-msgstr ""
+msgstr "Feedback-eremuko CSS estiloa"
 
 #: exe/engine/memorymatchidevice.py:63
 msgid "Width of Cells (in pixels)"
-msgstr ""
+msgstr "Gelaxken zabalera (pixeletan)"
 
 #: exe/engine/memorymatchidevice.py:63
 msgid "Cell Width px"
-msgstr ""
+msgstr "Gelaxkaren zabalera px"
 
 #: exe/engine/memorymatchidevice.py:64
 msgid "Height of Cells (in pixels)"
-msgstr ""
+msgstr "Gelaxken altuera (pixeletan)"
 
 #: exe/engine/memorymatchidevice.py:64
-#, fuzzy
 msgid "Cell Height px"
-msgstr "Lerro garaiera"
+msgstr "Gelaxkaren altuera px"
 
 #: exe/engine/memorymatchidevice.py:65
 msgid "Time after which to re-hide incorrect match (ms)"
-msgstr ""
+msgstr "Parekatze okerrak ezkutatzeko denbora (ms)"
 
 #: exe/engine/memorymatchidevice.py:65
 msgid "Time to hide"
-msgstr ""
+msgstr "Ezkutatzeko denbora"
 
 #: exe/engine/memorymatchidevice.py:66
 msgid "Cover Image for cells (shown before selected)"
-msgstr ""
+msgstr "Gelaxken azal-irudia (hautatu aurretik erakusten da)"
 
 #: exe/engine/memorymatchidevice.py:66
-#, fuzzy
 msgid "Cover Img"
-msgstr "Estaldura"
+msgstr "Azal-irudia"
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Background Image for cells (shown after selected)"
-msgstr ""
+msgstr "Gelaxken atzealdeko irudia (hautatu ondoren erakusten da)"
 
 #: exe/engine/memorymatchidevice.py:67
-#, fuzzy
 msgid "Back Img"
-msgstr "Atzeko irudia"
+msgstr "Atzealdeko irudia"
 
 #: exe/engine/memorymatchidevice.py:68
 msgid "Background image behind cells shown as cells are hidden"
-msgstr ""
+msgstr "Atzealdeko irudia erakutsiko da gelaxkak ezkutatzen direnean"
 
 #: exe/engine/memorymatchidevice.py:68
 msgid "Bg Img"
-msgstr ""
+msgstr "Atz irud"
 
 #: exe/engine/memorymatchidevice.py:69
 msgid "Effect for showing positive feedback"
-msgstr ""
+msgstr "Feedback positiboa erakusteko efektua"
 
 #: exe/engine/memorymatchidevice.py:69
 msgid "Positive Feedback Effect"
-msgstr ""
+msgstr "Feedback positiborako efektua"
 
 #: exe/engine/memorymatchidevice.py:71
 msgid "Effect for showing negative feedback"
-msgstr ""
+msgstr "Feedback negatiboa erakusteko efektua"
 
 #: exe/engine/memorymatchidevice.py:71
 msgid "Negative Feedback Effect"
-msgstr ""
+msgstr "Feedback negatiborako efektua"
 
 #: exe/engine/memorymatchidevice.py:73
 msgid "Show / Use a timer?"
-msgstr ""
+msgstr "Kronometroa erakutsi / erabili?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide Cells after match made?"
-msgstr ""
+msgstr "Ezkutatu gelaxkak parekatu ondoren?"
 
 #: exe/engine/memorymatchidevice.py:74
 msgid "Hide after match"
-msgstr ""
+msgstr "Ezkutatu parekatu ondoren"
 
 #: exe/engine/memorymatchidevice.py:76
 msgid "Effect when hiding cells after match"
-msgstr ""
+msgstr "Parekatu ondoren gelaxkak ezkutatzean aplikatutako efektua"
 
 #: exe/engine/memorymatchidevice.py:76
 msgid "Hide after match effect"
-msgstr ""
+msgstr "Parekatu ondoren ezkutatzeko efektua"
 
 #: exe/engine/memorymatchidevice.py:78
-#, fuzzy
 msgid "Cell Padding in table"
-msgstr "Gelaxkaren betegarria"
+msgstr "Taulako gelaxken betegarria (padding)"
 
 #: exe/engine/memorymatchidevice.py:78
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2371,9 +2377,8 @@ msgid "Cell Padding"
 msgstr "Gelaxkaren betegarria"
 
 #: exe/engine/memorymatchidevice.py:79
-#, fuzzy
 msgid "Cell Spacing of table"
-msgstr "Gelaxkaren tartea"
+msgstr "Taulako gelaxken arteko tartea (spacing)"
 
 #: exe/engine/memorymatchidevice.py:79
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -2382,53 +2387,48 @@ msgstr "Gelaxkaren tartea"
 
 #: exe/engine/memorymatchidevice.py:80
 msgid "Cell Default Style (CSS)"
-msgstr ""
+msgstr "Gelaxka estilo lehenetsia (CSS)"
 
 #: exe/engine/memorymatchidevice.py:80
-#, fuzzy
 msgid "Cell Style CSS"
-msgstr "Gelaxka mota"
+msgstr "Gelaxken CSS estiloa"
 
 #: exe/engine/memorymatchidevice.py:81
 msgid "Text of Timer Label"
-msgstr ""
+msgstr "Kronometro-etiketaren testua"
 
 #: exe/engine/memorymatchidevice.py:81
-#, fuzzy
 msgid "Timer Text"
-msgstr "Testu librea"
+msgstr "Kronometroaren testua"
 
 #: exe/engine/memorymatchidevice.py:82
 msgid "CSS of Timer Field"
-msgstr ""
+msgstr "Kronometro-eremuaren CSSa"
 
 #: exe/engine/memorymatchidevice.py:82
 msgid "Timer CSS"
-msgstr ""
+msgstr "Kronometroaren CSSa"
 
 #: exe/engine/memorymatchidevice.py:145
+#, fuzzy
 msgid "Memory Match Pair Field"
-msgstr ""
+msgstr "Buruz parekatu motako jokoa"
 
 #: exe/engine/memorymatchidevice.py:150
-#, fuzzy
 msgid "Match Tile 1"
-msgstr "Maiuskulak eta minuskulak kontuan hartu"
+msgstr "1. parekatze-mosaikoa"
 
 #: exe/engine/memorymatchidevice.py:150
-#, fuzzy
 msgid "Match Tile1"
-msgstr "Maiuskulak eta minuskulak kontuan hartu"
+msgstr "Parekatze mosaikoa1"
 
 #: exe/engine/memorymatchidevice.py:151
-#, fuzzy
 msgid "Match Tile 2"
-msgstr "Maiuskulak eta minuskulak kontuan hartu"
+msgstr "2. parekatze-mosaikoa"
 
 #: exe/engine/memorymatchidevice.py:151
-#, fuzzy
 msgid "Match Tile2"
-msgstr "Maiuskulak eta minuskulak kontuan hartu"
+msgstr "Parekatze mosaikoa2"
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
@@ -2485,15 +2485,15 @@ msgstr "Hautaketa askotakoa"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
-msgstr ""
+msgstr "Oharra"
 
 #: exe/engine/notaidevice.py:45
 msgid "exelearning.net"
-msgstr ""
+msgstr "exelearning.net"
 
 #: exe/engine/notaidevice.py:53
 msgid "Comment:"
-msgstr ""
+msgstr "Iruzkina:"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:30
 msgid "FPD - Guidelines Students"
@@ -2571,7 +2571,7 @@ msgstr "iDevice editorea"
 
 #: exe/engine/package.py:1451
 msgid "My Catalog"
-msgstr ""
+msgstr "Nire katalogoa"
 
 #: exe/engine/parasabermasfpdidevice.py:30
 msgid "FPD - A Step Ahead"
@@ -2601,15 +2601,15 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:48
 msgid "Place The Objects"
-msgstr ""
+msgstr "Objektuak kokatu"
 
 #: exe/engine/placetheobjectsidevice.py:49
 msgid "Mike Dawson / PAIWASTOON Networking Services Ltd."
-msgstr ""
+msgstr "Mike Dawson / PAIWASTOON Networking Services Ltd."
 
 #: exe/engine/placetheobjectsidevice.py:50
 msgid "User has to place various objects in the correct place."
-msgstr ""
+msgstr "Erabiltzaileak objektuak jarri behar ditu leku egokian."
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
@@ -2617,55 +2617,59 @@ msgstr "Honako hau testu eremu librea da."
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
-msgstr ""
+msgstr "Joko-eremu nagusia"
 
 #: exe/engine/placetheobjectsidevice.py:62
 msgid "This is the main image where the user will drag / drop items to"
 msgstr ""
+"Hau da irudi nagusia; erabiltzaileak elementuak hartu eta hona ekarriko ditu"
 
 #: exe/engine/placetheobjectsidevice.py:66
 msgid "Time Limit (mm:ss)"
-msgstr ""
+msgstr "Denbora-muga (mm:ss), edo bestela epea"
 
 #: exe/engine/placetheobjectsidevice.py:66
 msgid "(Optional) Game Time Limit"
-msgstr ""
+msgstr "(Hautazkoa) Jokoaren denbora-muga"
 
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Show Timer"
-msgstr ""
+msgstr "Kronometroa erakutsi"
 
 #: exe/engine/placetheobjectsidevice.py:68
 msgid "Even if there is no time limit, show the timer..."
-msgstr ""
+msgstr "Nahiz eta epemugarik ez egon, kronometroa erakutsi..."
 
 #: exe/engine/placetheobjectsidevice.py:72
 msgid "Message to click game to start"
 msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:72
+#, fuzzy
 msgid "This will when clicked start the game"
-msgstr ""
+msgstr "Erabiltzaileak hemen egingo du klik jokoa hasteko"
 
 #: exe/engine/placetheobjectsidevice.py:74
 msgid "Positive Response"
-msgstr ""
+msgstr "Erantzun positiboa (baiezko erantzuna?)"
 
 #: exe/engine/placetheobjectsidevice.py:74
 msgid "Overlays main area when player correctly places object"
 msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:76
+#, fuzzy
 msgid "Negative Response"
-msgstr ""
+msgstr "Erantzun positiboa (baiezko erantzuna?)"
 
 #: exe/engine/placetheobjectsidevice.py:76
 msgid "Overlays main area when player guesses wrong"
 msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:79
+#, fuzzy
 msgid "Number of Columns in part bin"
-msgstr ""
+msgstr "Zutabe kopurua"
 
 #: exe/engine/placetheobjectsidevice.py:79
 #, fuzzy
@@ -2673,8 +2677,9 @@ msgid "Columns part bin"
 msgstr "Zutabeak"
 
 #: exe/engine/placetheobjectsidevice.py:90
+#, fuzzy
 msgid "Object to Place"
-msgstr ""
+msgstr "Kokatu behar den objektua"
 
 #: exe/engine/placetheobjectsidevice.py:118
 msgid "An object that has a correct place in the main area"
@@ -2682,51 +2687,52 @@ msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:120
 msgid "Placable Object"
-msgstr ""
+msgstr "Objektu kokagarria"
 
 #: exe/engine/placetheobjectsidevice.py:120
 msgid "Object to be put in place"
-msgstr ""
+msgstr "Kokatu behar den objektua"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Correct Location (x)"
-msgstr ""
+msgstr "Kokaleku zuzena (x)"
 
 #: exe/engine/placetheobjectsidevice.py:124
 msgid "Where this object belongs in the main area x coordinate"
-msgstr ""
+msgstr "Objektuaren kokalekua joko-eremu nagusiaren x ardatzean"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Correct Location (y)"
-msgstr ""
+msgstr "Kokaleku zuzena (y)"
 
 #: exe/engine/placetheobjectsidevice.py:127
 msgid "Where this object belongs in the main area y coordinate"
-msgstr ""
+msgstr "Objektuaren kokalekua joko-eremu nagusiaren y ardatzean"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Width (pixels)"
-msgstr ""
+msgstr "Zabalera (pixeletan)"
 
 #: exe/engine/placetheobjectsidevice.py:130
 msgid "Width of object"
-msgstr ""
+msgstr "Objektuaren zabalera"
 
 #: exe/engine/placetheobjectsidevice.py:133
 msgid "Height (pixels)"
-msgstr ""
+msgstr "Altuera (pixeletan)"
 
 #: exe/engine/placetheobjectsidevice.py:133
 msgid "Height of object"
-msgstr ""
+msgstr "Objektuaren altuera"
 
 #: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance (pixels)"
-msgstr ""
+msgstr "Perdoia (pixeletan)"
 
+# Egia esan, ez dakit oso ondo dagoen ingelesez
 #: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance when dropping num of pixels"
-msgstr ""
+msgstr "Arrastaka eramaterakoan aplikatuko den perdoi pixel kopurua"
 
 #: exe/engine/quiztestidevice.py:123 exe/engine/quiztestidevice.py:186
 msgid ""
@@ -2998,57 +3004,57 @@ msgstr "FPD - Hautaketa Askotako Jarduera"
 
 #: exe/engine/sortidevice.py:45
 msgid "Sort Items"
-msgstr ""
+msgstr "Elementuak ordenatu"
 
 #: exe/engine/sortidevice.py:47
 msgid "Sortable list of items."
-msgstr ""
+msgstr "Ordenatu behar den elementu zerrenda."
 
 #: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 msgid "Title to show"
-msgstr ""
+msgstr "Erakutsiko den izenburua"
 
 #: exe/engine/sortidevice.py:53
-#, fuzzy
 msgid "Instructions before sortable list"
-msgstr "Ikasleentzako argibideak"
+msgstr "Ordenatu behar den zerrendaren aurreko argibideak"
 
 #: exe/engine/sortidevice.py:54
 msgid "Correctly Sorted Overlay"
-msgstr ""
+msgstr "Ordena zuzenerako gardenkia"
 
+# Itzulpen zuzenak ez du zentzu handirik
+# ordena hitza nik asmatu dut
 #: exe/engine/sortidevice.py:54
 msgid "Shown when check is clicked and correct"
-msgstr ""
+msgstr "Kontrola klikatua dagoenean eta ordena zuzena denean erakutsiko da"
 
 #: exe/engine/sortidevice.py:55
 msgid "Wrongly Sorted Overlay"
-msgstr ""
+msgstr "Ordena okerrerako gardenkia"
 
 #: exe/engine/sortidevice.py:55
 msgid "Shown when check is clicked and wrong"
-msgstr ""
+msgstr "Egiaztatu klikatua dagoenean eta ordena okerra denean erakutsiko da"
 
 #: exe/engine/sortidevice.py:56
 msgid "Effect for showing correct overlay"
-msgstr ""
+msgstr "Gardenki zuzena erakusteko efektua"
 
 #: exe/engine/sortidevice.py:56
 msgid "Effect showing correct overlay"
-msgstr ""
+msgstr "Gardenki zuzena erakusteko efektua"
 
 #: exe/engine/sortidevice.py:58
 msgid "Effect showing wrong answer overlay"
-msgstr ""
+msgstr "Gardenki okerra erakusteko efektua"
 
 #: exe/engine/sortidevice.py:58
 msgid "Effect for showing wrong overlay"
-msgstr ""
+msgstr "Gardenki okerra erakusteko efektua"
 
 #: exe/engine/sortidevice.py:60
-#, fuzzy
 msgid "Text for Check Button"
-msgstr "Testuaren norabidea"
+msgstr "Egiaztatu botoiaren testua"
 
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:275
 msgid "Check"
@@ -3056,47 +3062,43 @@ msgstr "Egiaztatu"
 
 #: exe/engine/sortidevice.py:62
 msgid "Check Button Style (CSS)"
-msgstr ""
+msgstr "Egiaztatu botoiaren estiloa (CSS)"
 
 #: exe/engine/sortidevice.py:62
 msgid "CSS for check button"
-msgstr ""
+msgstr "Egiaztatu botoiarentzako CSSa"
 
 #: exe/engine/sortidevice.py:63
 msgid "Width of an item in the list (px)"
-msgstr ""
+msgstr "Zerrendako elementu baten zabalera (px)"
 
 #: exe/engine/sortidevice.py:63
-#, fuzzy
 msgid "width"
-msgstr "Width"
+msgstr "zabalera"
 
 #: exe/engine/sortidevice.py:64
 msgid "Height of an item in the list (px)"
-msgstr ""
+msgstr "Zerrendako elementu baten altuera (px)"
 
 #: exe/engine/sortidevice.py:64
-#, fuzzy
 msgid "height"
-msgstr "Height"
+msgstr "altuera"
 
 #: exe/engine/sortidevice.py:65
 msgid "Style (CSS) for sortable items"
-msgstr ""
+msgstr "Ordenatu behar diren elementuen estiloa (CSS)"
 
 #: exe/engine/sortidevice.py:65
 msgid "Sortable Item CSS"
-msgstr ""
+msgstr "Ordenatu behar diren elementuen CSSa"
 
 #: exe/engine/sortidevice.py:66 exe/engine/sortidevice.py:117
-#, fuzzy
 msgid "Sort Direction"
-msgstr "Testuaren norabidea"
+msgstr "Norabidea ordenatu"
 
 #: exe/engine/sortidevice.py:76 exe/engine/sortidevice.py:118
-#, fuzzy
 msgid "Top To Bottom"
-msgstr "Testua behean"
+msgstr "Goitik behera"
 
 #: exe/engine/sortidevice.py:77 exe/engine/sortidevice.py:118
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -3120,11 +3122,11 @@ msgstr "Eskuinetik ezkerrera"
 
 #: exe/engine/sortidevice.py:92
 msgid "Sortable Item"
-msgstr ""
+msgstr "Ordenatu behar den elementua"
 
 #: exe/engine/sortidevice.py:92
 msgid "Text / Content of sortable item"
-msgstr ""
+msgstr "Ordenatu behar den elementuaren testua / edukia"
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
@@ -3281,26 +3283,32 @@ msgstr ""
 #: exe/exe_do:72
 msgid "Set ELP field values. Example: -s style=Default,root.title='Root Node'"
 msgstr ""
+"Eman balioak ELParen eremuei. Adibidea: -s style=Default,root.title='Root "
+"Node'"
 
 #: exe/exe_do:75
 msgid "Set ELP field values options"
-msgstr ""
+msgstr "ELParen eremuei balioak emateko aukerak"
 
 #: exe/exe_do:76
 msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or     "
 "'--set <values>', it's possible to configure the following options:"
 msgstr ""
+"Behin aukeratu duzula 'Eman balioak ELP-aren eremuei' tresna '-s <values>' "
+"edo '--set <values>' bitartez, aukera hauek konfiguratu ditzakezu:"
 
 #: exe/exe_do:81
 msgid "Write field values to ELP"
-msgstr ""
+msgstr "Eremuen balioak ELPan idatzi"
 
 #: exe/exe_do:87
 msgid ""
 "Generates resource info report to text <output_file> from <input_file> elp "
 "package"
 msgstr ""
+"Elp paketetik baliabide txostena sortzen du <output_file> testu fitxategian "
+"<input_file> "
 
 #: exe/exe_do:95
 msgid ""
@@ -3308,6 +3316,9 @@ msgid ""
 "given formats: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
 "singlepage, xliff or epub3."
 msgstr ""
+"<input_file> elp paketea esportatu hautazko <output_file>-ra  formatu "
+"hauetako batean: xml, scorm12, scorm2004, agrega, ims, website, webzip, "
+"singlepage, xliff edo epub3"
 
 #: exe/exe_do:101
 msgid ""
@@ -3324,6 +3335,8 @@ msgstr "<output_file>-ren berridazketa behartu"
 #: exe/exe_do:110
 msgid "Add the required files to generate a export editable by eXeLearning"
 msgstr ""
+"Sortutako esportazioa eXeLearning-ek editatu ahal izateko beharrezkoak diren "
+"fitxategiak gehitu"
 
 #: exe/exe_do:115
 msgid "XLIFF export options"
@@ -3371,6 +3384,9 @@ msgid ""
 "scorm2004' or 'x agrega', it's possible to configure the following export "
 "options:"
 msgstr ""
+"Behin aukeratu duzula SCORM formatura esportatzea  '-x scorm12', '-x "
+"scorm2004' edo 'x agrega' bitartez, ondoko esportazio aukerak erabili "
+"ditzakezu:\""
 
 #: exe/exe_do:148
 msgid "Include Single Page export file"
@@ -3386,7 +3402,7 @@ msgstr "--export eta --import aukerak kontraesa sortzen dute."
 
 #: exe/exe_do:171
 msgid "No --export, --import, --set or --report option supplied."
-msgstr ""
+msgstr "Ez duzu adierazi --export, --import edo --report aukera."
 
 #: exe/exe_do:175
 msgid "No file input supplied."
@@ -3406,6 +3422,8 @@ msgid ""
 "exe_do: error: Unable to set values from '%s'.\n"
 "The error was:"
 msgstr ""
+"exe_do: errorea: Ezin izan da esportatu '%s'-tik.\n"
+"Errorea izan da:"
 
 #: exe/exe_do:227
 #, python-format
@@ -3480,11 +3498,11 @@ msgstr "Hurrengoa"
 
 #: exe/export/singlepage.py:195
 msgid "You can close this window"
-msgstr ""
+msgstr "Leiho hau itxi dezakezu"
 
 #: exe/export/websitepage.py:136
 msgid "Skip navigation"
-msgstr ""
+msgstr "Saltatu nabigazioa"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -3546,7 +3564,7 @@ msgstr "%s sartzen"
 
 #: exe/jsui/idevicepane.py:132
 msgid "My iDevices"
-msgstr ""
+msgstr "Nire iDeviceak"
 
 #: exe/jsui/mainpage.py:305 exe/jsui/mainpage.py:770 exe/jsui/mainpage.py:923
 msgid "Cannot access directory named "
@@ -3603,6 +3621,8 @@ msgid ""
 "LOM Metadata import FAILED!\n"
 "%s"
 msgstr ""
+"ERROREA LOM metadatuen inportazioa egiterakoan!\n"
+"%s"
 
 #: exe/jsui/mainpage.py:744
 msgid "Error importing HTML:\n"
@@ -3772,11 +3792,11 @@ msgstr "Errorea"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:245
 msgid "The form contains invalid fields. Please check back."
-msgstr ""
+msgstr "Formularioaren eremu batzuk ez dira baliagarriak. Mesedez, berrikusi."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:327
 msgid "LOM Metadata import success!"
-msgstr ""
+msgstr "LOM metadatuen inportazio zuzena!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:146
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:325
@@ -3820,11 +3840,13 @@ msgid ""
 "If you have made changes and have not saved them, they will be lost. Do you "
 "really want to quit?"
 msgstr ""
+"Aldaketak egin badituzu eta ez badituzu gorde, galduko dira. Benetan atera "
+"nahi duzu?"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:411
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:367
 msgid "Style Manager"
-msgstr ""
+msgstr "Estiloen kudeatzailea"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:434
 msgid "Select package to insert"
@@ -3863,11 +3885,11 @@ msgstr "HTML fitxategiak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:510
 msgid "Select LOM Metadata file to import."
-msgstr ""
+msgstr "Inportatuko den LOM metadatuen fitxategia aukeratu."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:520
 msgid "XML Files"
-msgstr ""
+msgstr "XML fitxategiak"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:535
 msgid "Waiting progress..."
@@ -3917,19 +3939,19 @@ msgstr "Testu fitxategia"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:672
 msgid "Save package resources report as"
-msgstr ""
+msgstr "Honela gorde paketearen baliabide txostena "
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:681
 msgid "CSV File"
-msgstr ""
+msgstr "CSV fitxategia"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:689
 msgid "Export EPUB3 package as"
-msgstr ""
+msgstr "Esportatu EPUB paketea honela"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:698
 msgid "EPUB3 File"
-msgstr ""
+msgstr "EPUB3 fitxategia"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:706
 msgid "Export SCORM package as"
@@ -4293,13 +4315,13 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
-msgstr ""
+msgstr "Aukera orokorrak"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:44
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:51
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:55
 msgid "Metadata Type"
-msgstr ""
+msgstr "Metadatu mota"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:46
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:64
@@ -4308,15 +4330,15 @@ msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
 msgid "LOM v1.0"
-msgstr ""
+msgstr "LOM v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid "LOM-ES v1.0"
-msgstr ""
+msgstr "LOM-ES v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:61
 msgid "Create editable export?"
-msgstr ""
+msgstr "Esportazio editagarria sortu?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:65
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:68
@@ -4324,10 +4346,12 @@ msgid ""
 "Checking this option, the exported component will be editable with "
 "eXeLearning."
 msgstr ""
+"Aukera hau klikatuz gero, esportatutako edukiak eXeLearning-ekin editatu "
+"ahal izango dira."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "SCORM Options (1.2, 2004 and Agrega)"
-msgstr ""
+msgstr "SCORM aukerak (1.2, 2004 eta Agrega)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:82
 msgid "Add Previous/Next links within SCOs?"
@@ -4395,7 +4419,7 @@ msgstr "Eremuaren hizkuntza"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:411
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:418
 msgid "Taxon"
-msgstr ""
+msgstr "Taxona"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:186
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:216
@@ -4522,98 +4546,98 @@ msgstr "Posta elektronikoa"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:80
 msgid "Metadata Schema"
-msgstr ""
+msgstr "Metadatuen eskema"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:97
 msgid "Location"
-msgstr ""
+msgstr "Lokalizazioa"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:98
 msgid "Requirement"
-msgstr ""
+msgstr "Baldintza"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:104
 msgid "Minimum Version"
-msgstr ""
+msgstr "Gutxieneko bertsioa"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:105
 msgid "Maximum Version"
-msgstr ""
+msgstr "Gehieneko bertsioa"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:108
 msgid "Installation Remarks"
-msgstr ""
+msgstr "Instalaziorako oharrak"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:109
 msgid "Other Platform Requirements"
-msgstr ""
+msgstr "Plataformarako bestelako eskakizunak"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
 msgid "Duration"
-msgstr ""
+msgstr "Iraupena"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:113
 msgid "Interactivity Type"
-msgstr ""
+msgstr "Elkarreragin mota"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:114
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:148
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:150
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:153
 msgid "Learning Resource Type"
-msgstr ""
+msgstr " Hezkuntzako Errekurtso mota"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:115
 msgid "Interactivity Level"
-msgstr ""
+msgstr "Elkarreragin maila"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:116
 msgid "Semantic Density"
-msgstr ""
+msgstr "Dentsitate semantikoa"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:117
 msgid "Intended End User Role"
-msgstr ""
+msgstr "Hartzailearen rola"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:118
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:257
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:258
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:280
 msgid "Context"
-msgstr ""
+msgstr "Testuingurua"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:119
 msgid "Typical Age Range"
-msgstr ""
+msgstr "Hartzailearen ohiko adina"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:120
 msgid "Difficulty"
-msgstr ""
+msgstr "Zailtasuna"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:121
 msgid "Typical Learning Time"
-msgstr ""
+msgstr "Ohiko ikaskuntzaren denbora"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:126
 msgid "Cost"
-msgstr ""
+msgstr "Kostua"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:127
 msgid "Copyright And Other Restrictions"
-msgstr ""
+msgstr "Copyright eta bestelako murrizketak"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:131
 msgid "Kind"
-msgstr ""
+msgstr "Mota"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:132
 #: exe/jsui/scripts/app/view/forms/LomSections.js:144
 msgid "Resource"
-msgstr ""
+msgstr "Baliabidea"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:149
 msgid "Entity"
-msgstr ""
+msgstr "Entitatea"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:273
 msgid "Purpose"
@@ -4621,23 +4645,23 @@ msgstr "Asmoa"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
-msgstr ""
+msgstr "Sailkapen iturriak jaitsi"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:169
 msgid "Taxon Path"
-msgstr ""
+msgstr "Taxonaren bidea"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:209
 msgid "Cognitive Process"
-msgstr ""
+msgstr "Prozesu kognitiboa:"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:210
 msgid "Access"
-msgstr ""
+msgstr "Sarbidea"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:214
 msgid "Access Type"
-msgstr ""
+msgstr "Sarbide mota"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:24
 msgid "Required"
@@ -4650,75 +4674,78 @@ msgstr "Aukerakoa"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:131
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:162
 msgid "Warning!"
-msgstr ""
+msgstr "Kontuz!"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:132
 msgid ""
 "You will loss all taxon config for this source. Would you like to continue?"
 msgstr ""
+"Iturri honentzako taxon konfigurazio guztiak galduko  dira. Jarraitu nahi "
+"duzu?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:163
 msgid ""
 "You will loss all taxon config in this section. Would you like to continue?"
 msgstr ""
+"Atal honentzako taxon konfigurazio guztiak galduko  dira. Jarraitu nahi duzu?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:342
 msgid "Years"
-msgstr ""
+msgstr "Urteak"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:343
 msgid "Months"
-msgstr ""
+msgstr "Hilabeteak"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:344
 msgid "Days"
-msgstr ""
+msgstr "Egunak"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:359
 msgid "Hours"
-msgstr ""
+msgstr "Orduak"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:360
 msgid "Minutes"
-msgstr ""
+msgstr "Minutuak"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:361
 msgid "Seconds"
-msgstr ""
+msgstr "Segundoak"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:466
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:627
 msgid "Append Section"
-msgstr ""
+msgstr "Atala erantsi"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:644
 msgid "Delete Section"
-msgstr ""
+msgstr "Atala ezabatu"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
 msgid "Notice"
-msgstr ""
+msgstr "Oharra"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
 msgid "Should be at least one section of this type"
-msgstr ""
+msgstr "Gutxienez mota honetako atal bat beharko litzateke"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:33
 msgid "Cataloguing"
-msgstr ""
+msgstr "Katalogazioa"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:92
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:96
 msgid "Objectives."
-msgstr ""
+msgstr "Helburuak."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:106
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:110
 msgid "Preknowledge."
-msgstr ""
+msgstr "Aurretiazko ezagutza."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:121
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
@@ -4745,65 +4772,63 @@ msgstr "Aukeratu lizentzia."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:157
 msgid "Usage"
-msgstr ""
+msgstr "Erabilera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:168
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:197
 msgid "Intended End User"
-msgstr ""
+msgstr "Hartzailea"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:173
 msgid "Ordinary Learner"
-msgstr ""
+msgstr "Ikasle arrunta (Ohiko ikaslea?)"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
 msgid "Special Needs Learner"
-msgstr ""
+msgstr "Behar bereziak dituen ikaslea"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:188
 msgid "Gifted Learner"
-msgstr ""
+msgstr "Gaitasun altuko ikaslea"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:205
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:222
 msgid "For Group Work"
-msgstr ""
+msgstr "Talde lanerako"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:229
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:230
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:247
 msgid "For Individual Tuition"
-msgstr ""
+msgstr "Banaka lantzeko"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
-#, fuzzy
 msgid "Classroom"
-msgstr "Klasea"
+msgstr "Ikasgela"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:271
 msgid "Real Environment"
-msgstr ""
+msgstr "Benetako ingurunea"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:290
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:320
 msgid "Modality"
-msgstr ""
+msgstr "Modalitatea"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:296
-#, fuzzy
 msgid "Face to Face"
-msgstr "Letra mota"
+msgstr "Aurrez aurrekoa"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:304
 msgid "Blended"
-msgstr ""
+msgstr "Erdizuzenekoa"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:311
 msgid "Distance"
-msgstr ""
+msgstr "Urrutikoa"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:328
 msgid "Project Properties"
@@ -4873,17 +4898,18 @@ msgstr "Eguneratu zuhaitza"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:443
 msgid "Advanced Options"
-msgstr ""
+msgstr "Aukera aurreratuak"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:456
 msgid "Create package compatible with old eXe versions?"
-msgstr ""
+msgstr "eXeren bertsio zaharrekin bateragarria den paketea sortu?"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:460
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:463
 msgid ""
 "Checking this option, the saved package may be opened with eXe >= 0.20.4"
 msgstr ""
+"Aukera hau gaituz gero, gordetako paketea ireki ahal izango da eXe >= 0.20.4"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:44
 msgid "Select Language"
@@ -4907,68 +4933,68 @@ msgstr "Barne esteka guztiak ezgaitu"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:74
 msgid "Select Browser"
-msgstr ""
+msgstr "Nabigatzailea aukeratu"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:128
 msgid "Show this window on eXe start"
-msgstr ""
+msgstr "Leiho hau erakutsi eXe hasterakoan"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:10
 msgid "Export style: "
-msgstr ""
+msgstr "Estiloa esportatu:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:26
 msgid "Export to ZIP Style as"
-msgstr ""
+msgstr "Estiloa  honela esportatu ZIP batera"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:43
 msgid "ZipFile"
-msgstr ""
+msgstr "Zip fitxategia"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:57
 msgid "Delete style: "
-msgstr ""
+msgstr "Estiloa ezabatu:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:71
 msgid "Delete style?"
-msgstr ""
+msgstr "Ezabatu estiloa?"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:72
 msgid "Do you want to delete this style?"
-msgstr ""
+msgstr "Estilo hau ezabatu nahi duzu?"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:98
 msgid "Show properties of style: "
-msgstr ""
+msgstr "Estiloaren ezaugarriak erakutsi:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:192
 msgid "Import style to the system "
-msgstr ""
+msgstr "Estiloa sistemara inportatu"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
 #, fuzzy
 msgid "Import style"
-msgstr "Inportatu"
+msgstr "Estiloa esportatu:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Select ZIP Style file to import."
-msgstr ""
+msgstr "Inportatzeko ZIP estilo fitxategia aukeratu."
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:225
 msgid "ZIP Style"
-msgstr ""
+msgstr "ZIP estiloa"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:233
 msgid "List of styles in your system"
-msgstr ""
+msgstr "Zure sisteman dauden estiloen zerrenda"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:291
 msgid "Properties of style: "
-msgstr ""
+msgstr "Estiloaren ezaugarriak:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:296
 msgid "Return to style manager"
-msgstr ""
+msgstr "Estiloen kudeatzailera itzuli"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:303
 msgid "Return"
@@ -4983,21 +5009,21 @@ msgstr "Ingurua"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:94
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:125
 msgid "Ungroup iDevices"
-msgstr ""
+msgstr "iDevice taldeak desegin"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:90
 msgid "Group iDevices"
-msgstr ""
+msgstr "iDeviceak taldekatu"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:100
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:105
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
 msgid "Edit iDevices"
-msgstr ""
+msgstr "iDeviceak editatu"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:113
 msgid "Save iDevices"
-msgstr ""
+msgstr "iDeviceak gorde"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "iDevices"
@@ -5005,11 +5031,11 @@ msgstr "IDevice-ak"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:166
 msgid "Category"
-msgstr ""
+msgstr "Kategoria"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:178
 msgid "Visible"
-msgstr ""
+msgstr "Ikusgai"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:43
 msgid "Authoring"
@@ -5032,12 +5058,12 @@ msgstr "Metadatuak"
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:70
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:195
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:76
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "LOM-ES"
-msgstr ""
+msgstr "LOM-ES"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:83
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:214
@@ -5117,7 +5143,7 @@ msgstr "XLIFF fitxategia"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:221
 msgid "Educational Standard"
-msgstr ""
+msgstr "Hezkuntzarako estandarra"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
 msgid "Common Cartridge"
@@ -5133,7 +5159,7 @@ msgstr "SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
 msgid "Agrega SCORM2004"
-msgstr ""
+msgstr "Agregarako SCORM2004"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
@@ -5157,7 +5183,7 @@ msgstr "Orri bakarra"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:295
 msgid "Ustad Mobile"
-msgstr ""
+msgstr "Ustad Mobile"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:301
 msgid "XLIFF"
@@ -5165,7 +5191,7 @@ msgstr "XLIFF"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:307
 msgid "EPUB3"
-msgstr ""
+msgstr "EPUB3"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:316
 msgid "Merging"
@@ -5181,7 +5207,7 @@ msgstr "Tresnak"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:379
 msgid "Resources Report"
-msgstr ""
+msgstr "Baliabideen txostena"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:385 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2028
@@ -5875,7 +5901,7 @@ msgstr "Uzbekera"
 
 #: exe/jsui/scripts/langs.js:632
 msgid "Valencian "
-msgstr ""
+msgstr "Valentziera"
 
 #: exe/jsui/scripts/langs.js:636
 msgid "Vietnamese "
@@ -5919,448 +5945,451 @@ msgstr "Zuluera"
 
 #: exe/jsui/scripts/lomvocab.js:5 exe/jsui/scripts/lomvocab.js:664
 msgid "active"
-msgstr ""
+msgstr "aktiboa"
 
 #: exe/jsui/scripts/lomvocab.js:9 exe/jsui/scripts/lomvocab.js:668
 msgid "expositive"
-msgstr ""
+msgstr "azalpenekoa"
 
 #: exe/jsui/scripts/lomvocab.js:13 exe/jsui/scripts/lomvocab.js:672
 #: exe/jsui/scripts/lomvocab.js:1216
 msgid "mixed"
-msgstr ""
+msgstr "konbinatua"
 
+# Hau ez dago vocabLOMES_en.xml fitxategian
 #: exe/jsui/scripts/lomvocab.js:19
 msgid "exercise"
-msgstr ""
+msgstr "ariketa"
 
 #: exe/jsui/scripts/lomvocab.js:23 exe/jsui/scripts/lomvocab.js:882
 msgid "simulation"
-msgstr ""
+msgstr "simulazioa"
 
 #: exe/jsui/scripts/lomvocab.js:27 exe/jsui/scripts/lomvocab.js:886
 msgid "questionnaire"
-msgstr ""
+msgstr "galdetegia"
 
+# Hau ez dago vocabLOMES_en.xml fitxategian
 #: exe/jsui/scripts/lomvocab.js:31
 msgid "diagram"
-msgstr ""
+msgstr "diagrama"
 
+# Hau ez dago vocabLOMES_en.xml fitxategian
 #: exe/jsui/scripts/lomvocab.js:35
 msgid "figure"
-msgstr ""
+msgstr "zenbakia"
 
 #: exe/jsui/scripts/lomvocab.js:39 exe/jsui/scripts/lomvocab.js:734
 msgid "graph"
-msgstr ""
+msgstr "grafikoa"
 
 #: exe/jsui/scripts/lomvocab.js:43
 msgid "index"
-msgstr ""
+msgstr "indizea"
 
 #: exe/jsui/scripts/lomvocab.js:47
 msgid "slide"
-msgstr ""
+msgstr "diapositiba"
 
 #: exe/jsui/scripts/lomvocab.js:51 exe/jsui/scripts/lomvocab.js:730
 msgid "table"
-msgstr ""
+msgstr "taula"
 
 #: exe/jsui/scripts/lomvocab.js:55 exe/jsui/scripts/lomvocab.js:710
 msgid "narrative text"
-msgstr ""
+msgstr "narrazio testua"
 
 #: exe/jsui/scripts/lomvocab.js:59 exe/jsui/scripts/lomvocab.js:890
 msgid "exam"
-msgstr ""
+msgstr "azterketa"
 
 #: exe/jsui/scripts/lomvocab.js:63 exe/jsui/scripts/lomvocab.js:874
 msgid "experiment"
-msgstr ""
+msgstr "esperimentua"
 
 #: exe/jsui/scripts/lomvocab.js:67
 msgid "problem statement"
-msgstr ""
+msgstr "problemaren enuntziatua"
 
 #: exe/jsui/scripts/lomvocab.js:71 exe/jsui/scripts/lomvocab.js:281
 #: exe/jsui/scripts/lomvocab.js:894 exe/jsui/scripts/lomvocab.js:1096
 msgid "self assessment"
-msgstr ""
+msgstr "autoebaluazioa"
 
 #: exe/jsui/scripts/lomvocab.js:75
 msgid "lecture"
-msgstr ""
+msgstr "hitzaldia"
 
 #: exe/jsui/scripts/lomvocab.js:81 exe/jsui/scripts/lomvocab.js:900
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: exe/jsui/scripts/lomvocab.js:85 exe/jsui/scripts/lomvocab.js:904
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: exe/jsui/scripts/lomvocab.js:89 exe/jsui/scripts/lomvocab.js:908
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: exe/jsui/scripts/lomvocab.js:93 exe/jsui/scripts/lomvocab.js:912
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: exe/jsui/scripts/lomvocab.js:99 exe/jsui/scripts/lomvocab.js:918
 msgid "discipline"
-msgstr ""
+msgstr "diziplina"
 
 #: exe/jsui/scripts/lomvocab.js:103 exe/jsui/scripts/lomvocab.js:922
 msgid "idea"
-msgstr ""
+msgstr "ideia"
 
 #: exe/jsui/scripts/lomvocab.js:107 exe/jsui/scripts/lomvocab.js:926
 msgid "prerequisite"
-msgstr ""
+msgstr "aurrebaldintza"
 
 #: exe/jsui/scripts/lomvocab.js:111 exe/jsui/scripts/lomvocab.js:930
 msgid "educational objective"
-msgstr ""
+msgstr "hezkuntzako helburua"
 
 #: exe/jsui/scripts/lomvocab.js:115 exe/jsui/scripts/lomvocab.js:934
 msgid "accessibility restrictions"
-msgstr ""
+msgstr "erabilerraztasuneko mugak"
 
 #: exe/jsui/scripts/lomvocab.js:119 exe/jsui/scripts/lomvocab.js:938
 msgid "educational level"
-msgstr ""
+msgstr "hezkuntzako maila"
 
 #: exe/jsui/scripts/lomvocab.js:123 exe/jsui/scripts/lomvocab.js:942
 msgid "skill level"
-msgstr ""
+msgstr "trebetasun maila"
 
 #: exe/jsui/scripts/lomvocab.js:127 exe/jsui/scripts/lomvocab.js:946
 msgid "security level"
-msgstr ""
+msgstr "segurtasun maila"
 
 #: exe/jsui/scripts/lomvocab.js:131 exe/jsui/scripts/lomvocab.js:950
 msgid "competency"
-msgstr ""
+msgstr "eskumena"
 
 #: exe/jsui/scripts/lomvocab.js:137 exe/jsui/scripts/lomvocab.js:956
 msgid "creator"
-msgstr ""
+msgstr "sortzailea"
 
 #: exe/jsui/scripts/lomvocab.js:141 exe/jsui/scripts/lomvocab.js:167
 #: exe/jsui/scripts/lomvocab.js:960 exe/jsui/scripts/lomvocab.js:982
 msgid "validator"
-msgstr ""
+msgstr "berrikuslea"
 
 #: exe/jsui/scripts/lomvocab.js:147 exe/jsui/scripts/lomvocab.js:613
 #: exe/jsui/scripts/lomvocab.js:966
 msgid "author"
-msgstr ""
+msgstr "autorea"
 
 #: exe/jsui/scripts/lomvocab.js:151 exe/jsui/scripts/lomvocab.js:970
 msgid "publisher"
-msgstr ""
+msgstr "argitalpenaren editorea"
 
 #: exe/jsui/scripts/lomvocab.js:155
 msgid "unknown"
-msgstr ""
+msgstr "ezezaguna"
 
 #: exe/jsui/scripts/lomvocab.js:159 exe/jsui/scripts/lomvocab.js:974
 msgid "initiator"
-msgstr ""
+msgstr "abiarazlea"
 
 #: exe/jsui/scripts/lomvocab.js:163 exe/jsui/scripts/lomvocab.js:978
 msgid "terminator"
-msgstr ""
+msgstr "akabatzailea"
 
 #: exe/jsui/scripts/lomvocab.js:171 exe/jsui/scripts/lomvocab.js:986
 msgid "editor"
-msgstr ""
+msgstr "edukiaren editorea"
 
 #: exe/jsui/scripts/lomvocab.js:175 exe/jsui/scripts/lomvocab.js:990
 msgid "graphical designer"
-msgstr ""
+msgstr "diseinatzaile grafikoa"
 
 #: exe/jsui/scripts/lomvocab.js:179 exe/jsui/scripts/lomvocab.js:994
 msgid "technical implementer"
-msgstr ""
+msgstr "garatzaile teknikoa"
 
 #: exe/jsui/scripts/lomvocab.js:183 exe/jsui/scripts/lomvocab.js:998
 msgid "content provider"
-msgstr ""
+msgstr "edukien hornitzailea"
 
 #: exe/jsui/scripts/lomvocab.js:187 exe/jsui/scripts/lomvocab.js:1002
 msgid "technical validator"
-msgstr ""
+msgstr "berrikusle teknikoa"
 
 #: exe/jsui/scripts/lomvocab.js:191 exe/jsui/scripts/lomvocab.js:1006
 msgid "educational validator"
-msgstr ""
+msgstr "hezkuntzako berrikuslea"
 
 #: exe/jsui/scripts/lomvocab.js:195 exe/jsui/scripts/lomvocab.js:1010
 msgid "script writer"
-msgstr ""
+msgstr "gidoilaria"
 
 #: exe/jsui/scripts/lomvocab.js:199 exe/jsui/scripts/lomvocab.js:1014
 msgid "instructional designer"
-msgstr ""
+msgstr "hezkuntzako diseinatzailea"
 
 #: exe/jsui/scripts/lomvocab.js:203 exe/jsui/scripts/lomvocab.js:1018
 #: exe/jsui/scripts/lomvocab.js:1584
 msgid "subject matter expert"
-msgstr ""
+msgstr "materian aditua"
 
 #: exe/jsui/scripts/lomvocab.js:209 exe/jsui/scripts/lomvocab.js:1024
 msgid "analyse"
-msgstr ""
+msgstr "analizatu"
 
 #: exe/jsui/scripts/lomvocab.js:213 exe/jsui/scripts/lomvocab.js:1028
 msgid "implement"
-msgstr ""
+msgstr "aplikatu"
 
 #: exe/jsui/scripts/lomvocab.js:217 exe/jsui/scripts/lomvocab.js:1032
 msgid "collaborate"
-msgstr ""
+msgstr "lagundu"
 
 #: exe/jsui/scripts/lomvocab.js:221 exe/jsui/scripts/lomvocab.js:1036
 msgid "compare"
-msgstr ""
+msgstr "konparatu"
 
 #: exe/jsui/scripts/lomvocab.js:225 exe/jsui/scripts/lomvocab.js:1040
 msgid "share"
-msgstr ""
+msgstr "konpartitu"
 
 #: exe/jsui/scripts/lomvocab.js:229 exe/jsui/scripts/lomvocab.js:1044
 msgid "compete"
-msgstr ""
+msgstr "lehiatu"
 
 #: exe/jsui/scripts/lomvocab.js:233 exe/jsui/scripts/lomvocab.js:1048
 msgid "understand"
-msgstr ""
+msgstr "ulertu"
 
 #: exe/jsui/scripts/lomvocab.js:237 exe/jsui/scripts/lomvocab.js:1052
 msgid "prove"
-msgstr ""
+msgstr "egiaztatu"
 
 #: exe/jsui/scripts/lomvocab.js:241 exe/jsui/scripts/lomvocab.js:1056
 msgid "communicate"
-msgstr ""
+msgstr "komunikatu"
 
 #: exe/jsui/scripts/lomvocab.js:245 exe/jsui/scripts/lomvocab.js:1060
 msgid "contextualize"
-msgstr ""
+msgstr "testuinguratu"
 
 #: exe/jsui/scripts/lomvocab.js:249 exe/jsui/scripts/lomvocab.js:1064
 msgid "control"
-msgstr ""
+msgstr "kontrolatu"
 
 #: exe/jsui/scripts/lomvocab.js:253 exe/jsui/scripts/lomvocab.js:1068
 msgid "cooperate"
-msgstr ""
+msgstr "kooperatu"
 
 #: exe/jsui/scripts/lomvocab.js:257 exe/jsui/scripts/lomvocab.js:1072
 msgid "create"
-msgstr ""
+msgstr "sortu"
 
 #: exe/jsui/scripts/lomvocab.js:261 exe/jsui/scripts/lomvocab.js:1076
 msgid "decide"
-msgstr ""
+msgstr "erabaki"
 
 #: exe/jsui/scripts/lomvocab.js:265 exe/jsui/scripts/lomvocab.js:1080
 msgid "define"
-msgstr ""
+msgstr "zehaztu"
 
 #: exe/jsui/scripts/lomvocab.js:269 exe/jsui/scripts/lomvocab.js:1084
 msgid "describe"
-msgstr ""
+msgstr "deskribatu"
 
 #: exe/jsui/scripts/lomvocab.js:273 exe/jsui/scripts/lomvocab.js:1088
 msgid "discuss"
-msgstr ""
+msgstr "eztabaidatu"
 
 #: exe/jsui/scripts/lomvocab.js:277 exe/jsui/scripts/lomvocab.js:1092
 msgid "design"
-msgstr ""
+msgstr "diseinatu"
 
 #: exe/jsui/scripts/lomvocab.js:285 exe/jsui/scripts/lomvocab.js:1100
 msgid "explain"
-msgstr ""
+msgstr "azaldu"
 
 #: exe/jsui/scripts/lomvocab.js:289 exe/jsui/scripts/lomvocab.js:1104
 msgid "extrapolate"
-msgstr ""
+msgstr "estrapolatu"
 
 #: exe/jsui/scripts/lomvocab.js:293 exe/jsui/scripts/lomvocab.js:1108
 msgid "innovate"
-msgstr ""
+msgstr "berritu"
 
 #: exe/jsui/scripts/lomvocab.js:297 exe/jsui/scripts/lomvocab.js:1112
 msgid "investigate"
-msgstr ""
+msgstr "ikertu"
 
 #: exe/jsui/scripts/lomvocab.js:301 exe/jsui/scripts/lomvocab.js:1116
 msgid "judge"
-msgstr ""
+msgstr "epaitu"
 
 #: exe/jsui/scripts/lomvocab.js:305 exe/jsui/scripts/lomvocab.js:1120
 msgid "motivate"
-msgstr ""
+msgstr "motibatu"
 
 #: exe/jsui/scripts/lomvocab.js:309 exe/jsui/scripts/lomvocab.js:1124
 msgid "observe"
-msgstr ""
+msgstr "begiratu"
 
 #: exe/jsui/scripts/lomvocab.js:313 exe/jsui/scripts/lomvocab.js:1128
 msgid "organize"
-msgstr ""
+msgstr "antolatu"
 
 #: exe/jsui/scripts/lomvocab.js:317 exe/jsui/scripts/lomvocab.js:1132
 msgid "organize oneself"
-msgstr ""
+msgstr "norberak bere burua antolatu"
 
 #: exe/jsui/scripts/lomvocab.js:321 exe/jsui/scripts/lomvocab.js:1136
 msgid "plan"
-msgstr ""
+msgstr "planifikatu"
 
 #: exe/jsui/scripts/lomvocab.js:325 exe/jsui/scripts/lomvocab.js:1140
 msgid "practise"
-msgstr ""
+msgstr "praktikatu"
 
 #: exe/jsui/scripts/lomvocab.js:329 exe/jsui/scripts/lomvocab.js:1144
 msgid "produce"
-msgstr ""
+msgstr "produzitu"
 
 #: exe/jsui/scripts/lomvocab.js:333 exe/jsui/scripts/lomvocab.js:1148
 msgid "recognize"
-msgstr ""
+msgstr "ezagutu"
 
 #: exe/jsui/scripts/lomvocab.js:337 exe/jsui/scripts/lomvocab.js:1152
 msgid "remember"
-msgstr ""
+msgstr "gogoratu"
 
 #: exe/jsui/scripts/lomvocab.js:341 exe/jsui/scripts/lomvocab.js:1156
 msgid "write up"
-msgstr ""
+msgstr "idatzi"
 
 #: exe/jsui/scripts/lomvocab.js:345 exe/jsui/scripts/lomvocab.js:1160
 msgid "consider"
-msgstr ""
+msgstr "hausnartu"
 
 #: exe/jsui/scripts/lomvocab.js:349 exe/jsui/scripts/lomvocab.js:1164
 msgid "connect"
-msgstr ""
+msgstr "harremanak egin"
 
 #: exe/jsui/scripts/lomvocab.js:353 exe/jsui/scripts/lomvocab.js:1168
 msgid "represent"
-msgstr ""
+msgstr "ordezkatu"
 
 #: exe/jsui/scripts/lomvocab.js:357 exe/jsui/scripts/lomvocab.js:1172
 msgid "solve"
-msgstr ""
+msgstr "ebatzi"
 
 #: exe/jsui/scripts/lomvocab.js:361 exe/jsui/scripts/lomvocab.js:1176
 msgid "simulate"
-msgstr ""
+msgstr "simulatu"
 
 #: exe/jsui/scripts/lomvocab.js:365 exe/jsui/scripts/lomvocab.js:1180
 msgid "summarize"
-msgstr ""
+msgstr "sintetizatu"
 
 #: exe/jsui/scripts/lomvocab.js:369 exe/jsui/scripts/lomvocab.js:1184
 msgid "value"
-msgstr ""
+msgstr "baloratu"
 
 #: exe/jsui/scripts/lomvocab.js:375 exe/jsui/scripts/lomvocab.js:413
 #: exe/jsui/scripts/lomvocab.js:1190
 msgid "yes"
-msgstr ""
+msgstr "bai"
 
 #: exe/jsui/scripts/lomvocab.js:379 exe/jsui/scripts/lomvocab.js:417
 #: exe/jsui/scripts/lomvocab.js:1194
 msgid "no"
-msgstr ""
+msgstr "ez"
 
 #: exe/jsui/scripts/lomvocab.js:385
 msgid "school"
-msgstr ""
+msgstr "eskola"
 
 #: exe/jsui/scripts/lomvocab.js:389
 msgid "higher education"
-msgstr ""
+msgstr "goi-mailako hezkuntza"
 
 #: exe/jsui/scripts/lomvocab.js:393
 msgid "training"
-msgstr ""
+msgstr "prestakuntza"
 
 #: exe/jsui/scripts/lomvocab.js:397
 msgid "other"
-msgstr ""
+msgstr "bestelakoak"
 
 #: exe/jsui/scripts/lomvocab.js:403 exe/jsui/scripts/lomvocab.js:1258
 msgid "operating system"
-msgstr ""
+msgstr "sistema eragilea"
 
 #: exe/jsui/scripts/lomvocab.js:407 exe/jsui/scripts/lomvocab.js:1262
 msgid "browser"
-msgstr ""
+msgstr "nabigatzailea"
 
 #: exe/jsui/scripts/lomvocab.js:423 exe/jsui/scripts/lomvocab.js:1330
 msgid "ispartof"
-msgstr ""
+msgstr "horren parte da"
 
 #: exe/jsui/scripts/lomvocab.js:427 exe/jsui/scripts/lomvocab.js:1334
 msgid "haspart"
-msgstr ""
+msgstr "parte du"
 
 #: exe/jsui/scripts/lomvocab.js:431 exe/jsui/scripts/lomvocab.js:1338
 msgid "isversionof"
-msgstr ""
+msgstr "horren bertsioa da"
 
 #: exe/jsui/scripts/lomvocab.js:435 exe/jsui/scripts/lomvocab.js:1342
 msgid "hasversion"
-msgstr ""
+msgstr "bertsioa du"
 
 #: exe/jsui/scripts/lomvocab.js:439 exe/jsui/scripts/lomvocab.js:1346
 msgid "isformatof"
-msgstr ""
+msgstr "horren formatua da"
 
 #: exe/jsui/scripts/lomvocab.js:443 exe/jsui/scripts/lomvocab.js:1350
 msgid "hasformat"
-msgstr ""
+msgstr "formatua du"
 
 #: exe/jsui/scripts/lomvocab.js:447 exe/jsui/scripts/lomvocab.js:1354
 msgid "references"
-msgstr ""
+msgstr "erreferentzia"
 
 #: exe/jsui/scripts/lomvocab.js:451 exe/jsui/scripts/lomvocab.js:1358
 msgid "isreferencedby"
-msgstr ""
+msgstr "horrek erreferentziatua da"
 
 #: exe/jsui/scripts/lomvocab.js:455 exe/jsui/scripts/lomvocab.js:1362
 msgid "isbasedon"
-msgstr ""
+msgstr "oinarritzen da"
 
 #: exe/jsui/scripts/lomvocab.js:459 exe/jsui/scripts/lomvocab.js:1366
 msgid "isbasisfor"
-msgstr ""
+msgstr "oinarria da"
 
 #: exe/jsui/scripts/lomvocab.js:463 exe/jsui/scripts/lomvocab.js:1370
 msgid "requires"
-msgstr ""
+msgstr "eskatzen du"
 
 #: exe/jsui/scripts/lomvocab.js:467 exe/jsui/scripts/lomvocab.js:1374
 msgid "isrequiredby"
-msgstr ""
+msgstr "eskatua da"
 
 #: exe/jsui/scripts/lomvocab.js:473 exe/jsui/scripts/lomvocab.js:541
 #: exe/jsui/scripts/lomvocab.js:1380 exe/jsui/scripts/lomvocab.js:1448
 msgid "very low"
-msgstr ""
+msgstr "oso baxua"
 
 #: exe/jsui/scripts/lomvocab.js:477 exe/jsui/scripts/lomvocab.js:545
 #: exe/jsui/scripts/lomvocab.js:1384 exe/jsui/scripts/lomvocab.js:1452
 msgid "low"
-msgstr ""
+msgstr "baxua"
 
 #: exe/jsui/scripts/lomvocab.js:481 exe/jsui/scripts/lomvocab.js:549
 #: exe/jsui/scripts/lomvocab.js:645 exe/jsui/scripts/lomvocab.js:1388
@@ -6372,12 +6401,12 @@ msgstr "ertaina"
 #: exe/jsui/scripts/lomvocab.js:485 exe/jsui/scripts/lomvocab.js:553
 #: exe/jsui/scripts/lomvocab.js:1392 exe/jsui/scripts/lomvocab.js:1460
 msgid "high"
-msgstr ""
+msgstr "altua"
 
 #: exe/jsui/scripts/lomvocab.js:489 exe/jsui/scripts/lomvocab.js:557
 #: exe/jsui/scripts/lomvocab.js:1396 exe/jsui/scripts/lomvocab.js:1464
 msgid "very high"
-msgstr ""
+msgstr "oso altua"
 
 #: exe/jsui/scripts/lomvocab.js:495 exe/jsui/scripts/lomvocab.js:1402
 msgid "draft"
@@ -6397,7 +6426,7 @@ msgstr "ez eskuragarri"
 
 #: exe/jsui/scripts/lomvocab.js:513
 msgid "LOMv1.0"
-msgstr ""
+msgstr "LOMv1.0"
 
 #: exe/jsui/scripts/lomvocab.js:519 exe/jsui/scripts/lomvocab.js:1426
 msgid "atomic"
@@ -6421,438 +6450,438 @@ msgstr "lineala"
 
 #: exe/jsui/scripts/lomvocab.js:563 exe/jsui/scripts/lomvocab.js:1470
 msgid "pc-dos"
-msgstr ""
+msgstr "pc-dos"
 
 #: exe/jsui/scripts/lomvocab.js:567 exe/jsui/scripts/lomvocab.js:1474
 msgid "ms-windows"
-msgstr ""
+msgstr "ms-windows"
 
 #: exe/jsui/scripts/lomvocab.js:571 exe/jsui/scripts/lomvocab.js:1478
 msgid "macos"
-msgstr ""
+msgstr "macos"
 
 #: exe/jsui/scripts/lomvocab.js:575 exe/jsui/scripts/lomvocab.js:1486
 msgid "unix"
-msgstr ""
+msgstr "unix"
 
 #: exe/jsui/scripts/lomvocab.js:579 exe/jsui/scripts/lomvocab.js:1490
 msgid "multi-os"
-msgstr ""
+msgstr "multi-os"
 
 #: exe/jsui/scripts/lomvocab.js:583 exe/jsui/scripts/lomvocab.js:1494
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 msgid "none"
-msgstr ""
+msgstr "batere ez"
 
 #: exe/jsui/scripts/lomvocab.js:587 exe/jsui/scripts/lomvocab.js:1498
 msgid "any"
-msgstr ""
+msgstr "edozein"
 
 #: exe/jsui/scripts/lomvocab.js:591 exe/jsui/scripts/lomvocab.js:1506
 msgid "netscape communicator"
-msgstr ""
+msgstr "netscape communicator"
 
 #: exe/jsui/scripts/lomvocab.js:595 exe/jsui/scripts/lomvocab.js:1510
 msgid "ms-internet explorer"
-msgstr ""
+msgstr "ms-internet explorer"
 
 #: exe/jsui/scripts/lomvocab.js:599 exe/jsui/scripts/lomvocab.js:1514
 msgid "opera"
-msgstr ""
+msgstr "opera"
 
 #: exe/jsui/scripts/lomvocab.js:603 exe/jsui/scripts/lomvocab.js:1518
 msgid "amaya"
-msgstr ""
+msgstr "amaya"
 
 #: exe/jsui/scripts/lomvocab.js:609 exe/jsui/scripts/lomvocab.js:1220
 #: exe/jsui/scripts/lomvocab.js:1556
 msgid "teacher"
-msgstr ""
+msgstr "irakaslea"
 
 #: exe/jsui/scripts/lomvocab.js:617 exe/jsui/scripts/lomvocab.js:1524
 msgid "learner"
-msgstr ""
+msgstr "ikaslea"
 
 #: exe/jsui/scripts/lomvocab.js:621 exe/jsui/scripts/lomvocab.js:1576
 msgid "manager"
-msgstr ""
+msgstr "administratzailea"
 
 #: exe/jsui/scripts/lomvocab.js:627 exe/jsui/scripts/lomvocab.js:1590
 msgid "universal"
-msgstr ""
+msgstr "unibertsala"
 
 #: exe/jsui/scripts/lomvocab.js:631 exe/jsui/scripts/lomvocab.js:1594
 msgid "non-universal"
-msgstr ""
+msgstr "ez unibertsala"
 
 #: exe/jsui/scripts/lomvocab.js:637 exe/jsui/scripts/lomvocab.js:1600
 msgid "very easy"
-msgstr ""
+msgstr "oso erraza"
 
 #: exe/jsui/scripts/lomvocab.js:641 exe/jsui/scripts/lomvocab.js:1604
 msgid "easy"
-msgstr ""
+msgstr "erraza"
 
 #: exe/jsui/scripts/lomvocab.js:649 exe/jsui/scripts/lomvocab.js:1612
 msgid "difficult"
-msgstr ""
+msgstr "zaila"
 
 #: exe/jsui/scripts/lomvocab.js:653 exe/jsui/scripts/lomvocab.js:1616
 msgid "very difficult"
-msgstr ""
+msgstr "oso zaila"
 
 #: exe/jsui/scripts/lomvocab.js:678
 msgid "photograph"
-msgstr ""
+msgstr "argazkia"
 
 #: exe/jsui/scripts/lomvocab.js:682
 msgid "illustration"
-msgstr ""
+msgstr "ilustrazioa"
 
 #: exe/jsui/scripts/lomvocab.js:686
 msgid "video"
-msgstr ""
+msgstr "bideoa"
 
 #: exe/jsui/scripts/lomvocab.js:690
 msgid "animation"
-msgstr ""
+msgstr "animazioa"
 
 #: exe/jsui/scripts/lomvocab.js:694
 msgid "music"
-msgstr ""
+msgstr "musika"
 
 #: exe/jsui/scripts/lomvocab.js:698
 msgid "sound effect"
-msgstr ""
+msgstr "soinu-efektua"
 
 #: exe/jsui/scripts/lomvocab.js:702
 msgid "voice-over"
-msgstr ""
+msgstr "lokuzioa"
 
 #: exe/jsui/scripts/lomvocab.js:706
 msgid "compound audio"
-msgstr ""
+msgstr "audio konposatua"
 
 #: exe/jsui/scripts/lomvocab.js:714
 msgid "hypertext"
-msgstr ""
+msgstr "hipertestua"
 
 #: exe/jsui/scripts/lomvocab.js:718
 msgid "computer graphics"
-msgstr ""
+msgstr "grafismoa"
 
 #: exe/jsui/scripts/lomvocab.js:722
 msgid "integrated media"
-msgstr ""
+msgstr "media integratua"
 
 #: exe/jsui/scripts/lomvocab.js:726
 msgid "database"
-msgstr ""
+msgstr "datu-basea"
 
 #: exe/jsui/scripts/lomvocab.js:738
 msgid "conceptual map"
-msgstr ""
+msgstr "mapa kontzeptuala"
 
 #: exe/jsui/scripts/lomvocab.js:742
 msgid "navigation map"
-msgstr ""
+msgstr "nabigaziorako mapa"
 
 #: exe/jsui/scripts/lomvocab.js:746
 msgid "multimedia presentation"
-msgstr ""
+msgstr "multimedia aurkezpena"
 
 #: exe/jsui/scripts/lomvocab.js:750
 msgid "tutorial"
-msgstr ""
+msgstr "tutoriala"
 
 #: exe/jsui/scripts/lomvocab.js:754
 msgid "digital dictionary"
-msgstr ""
+msgstr "hiztegi digitala"
 
 #: exe/jsui/scripts/lomvocab.js:758
 msgid "digital encyclopaedia"
-msgstr ""
+msgstr "entziklopedia digitala"
 
 #: exe/jsui/scripts/lomvocab.js:762
 msgid "digital periodical publication"
-msgstr ""
+msgstr "aldizkako argitalpen digitala"
 
 #: exe/jsui/scripts/lomvocab.js:766
 msgid "thematic or corporate webs/web portals"
-msgstr ""
+msgstr "web/atari tematikoa edo korporatiboa"
 
 #: exe/jsui/scripts/lomvocab.js:770
 msgid "wiki"
-msgstr ""
+msgstr "wiki"
 
 #: exe/jsui/scripts/lomvocab.js:774
 msgid "weblog"
-msgstr ""
+msgstr "weblog"
 
 #: exe/jsui/scripts/lomvocab.js:778
 msgid "multimedia creation/edition tool"
-msgstr ""
+msgstr "multimedia sortzeko/editatzeko tresna "
 
 #: exe/jsui/scripts/lomvocab.js:782
 msgid "web design tool"
-msgstr ""
+msgstr "web sortzeko/editatzeko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:786
 msgid "office tool"
-msgstr ""
+msgstr "ofimatikako tresna"
 
 #: exe/jsui/scripts/lomvocab.js:790
 msgid "programming tool"
-msgstr ""
+msgstr "programazioko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:794
 msgid "information/knowledgeanalysis/organization tool"
-msgstr ""
+msgstr "informazioa/ezagupena analizatzeko/antolatzeko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:798
 msgid "process/procedure supporting tools"
-msgstr ""
+msgstr "prozesu/prozedurak laguntzeko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:802
 msgid "individual/cooperative/collaborative learning/working management tool"
-msgstr ""
+msgstr "ikaskuntza/norbere lana/kooperatiboa/laguntzakoa kudeatzeko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:806
 msgid "multimedia creation/edition service"
-msgstr ""
+msgstr "multimedia sortzeko/editatzeko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:810
 msgid "web design service"
-msgstr ""
+msgstr "web sortzeko/editatzeko tresna"
 
 #: exe/jsui/scripts/lomvocab.js:814
 msgid "office service"
-msgstr ""
+msgstr "ofimatikako zerbitzua"
 
 #: exe/jsui/scripts/lomvocab.js:818
 msgid "programming service"
-msgstr ""
+msgstr "programazioko zerbitzua"
 
 #: exe/jsui/scripts/lomvocab.js:822
 msgid "information/knowledgeanalysis/organization service"
-msgstr ""
+msgstr "informazioa/ezagupena analizatzeko/antolatzeko zerbitzuak"
 
 #: exe/jsui/scripts/lomvocab.js:826
 msgid "process/procedure supporting service"
-msgstr ""
+msgstr "prozesu/prozedurak laguntzeko zerbitzuak"
 
 #: exe/jsui/scripts/lomvocab.js:830
 msgid ""
 "individual/cooperative/collaborative learning/working management service"
-msgstr ""
+msgstr "ikaskuntza/norbere lana/kooperatiboa/laguntzakoa kudeaketa-zerbitzua"
 
 #: exe/jsui/scripts/lomvocab.js:834
 msgid "guided reading"
-msgstr ""
+msgstr "gidatutako irakurketak"
 
 #: exe/jsui/scripts/lomvocab.js:838
 msgid "master class"
-msgstr ""
+msgstr "ikasgai magistrala"
 
 #: exe/jsui/scripts/lomvocab.js:842
 msgid "textual-image analysis"
-msgstr ""
+msgstr "testu-irudien iruzkinak"
 
 #: exe/jsui/scripts/lomvocab.js:846
 msgid "discussion activity"
-msgstr ""
+msgstr "eztabaidak"
 
 #: exe/jsui/scripts/lomvocab.js:850
 msgid "closed exercise or problem"
-msgstr ""
+msgstr "itxitako ariketa edo problema"
 
 #: exe/jsui/scripts/lomvocab.js:854
 msgid "contextualized case problem"
-msgstr ""
+msgstr "testuingurututako kasua"
 
 #: exe/jsui/scripts/lomvocab.js:858
 msgid "open problem"
-msgstr ""
+msgstr "problema irekia"
 
 #: exe/jsui/scripts/lomvocab.js:862
 msgid "real or virtual learning environment"
-msgstr ""
+msgstr "ikaskuntzako eszenatoki erreala edo birtuala"
 
 #: exe/jsui/scripts/lomvocab.js:866
 msgid "didactic game"
-msgstr ""
+msgstr "joku didaktikoa"
 
 #: exe/jsui/scripts/lomvocab.js:870
 msgid "webquest"
-msgstr ""
+msgstr "webquest"
 
 #: exe/jsui/scripts/lomvocab.js:878
 msgid "real project"
-msgstr ""
+msgstr "benetako proiektua"
 
 #: exe/jsui/scripts/lomvocab.js:1200
 msgid "classroom"
-msgstr ""
+msgstr "ikasgela"
 
 #: exe/jsui/scripts/lomvocab.js:1204
 msgid "laboratory"
-msgstr ""
+msgstr "laborategia"
 
 #: exe/jsui/scripts/lomvocab.js:1208
 msgid "real environment"
-msgstr ""
+msgstr "benetako ingurunea"
 
 #: exe/jsui/scripts/lomvocab.js:1212
 msgid "home"
-msgstr ""
+msgstr "bizilekua"
 
 #: exe/jsui/scripts/lomvocab.js:1224 exe/jsui/scripts/lomvocab.js:1564
 msgid "family"
-msgstr ""
+msgstr "familia"
 
 #: exe/jsui/scripts/lomvocab.js:1228 exe/jsui/scripts/lomvocab.js:1560
 msgid "tutor"
-msgstr ""
+msgstr "tutorea"
 
 #: exe/jsui/scripts/lomvocab.js:1232
 msgid "schoolmate"
-msgstr ""
+msgstr "kidea"
 
 #: exe/jsui/scripts/lomvocab.js:1236
 msgid "independent"
-msgstr ""
+msgstr "independientea"
 
 #: exe/jsui/scripts/lomvocab.js:1240
 msgid "blended"
-msgstr ""
+msgstr "asistentzia mistoa"
 
 #: exe/jsui/scripts/lomvocab.js:1244
 msgid "presencial"
-msgstr ""
+msgstr "zuzenekoa"
 
 #: exe/jsui/scripts/lomvocab.js:1248
 msgid "face to face"
-msgstr ""
+msgstr "erdizuzenekoa"
 
 #: exe/jsui/scripts/lomvocab.js:1252
 msgid "distance"
-msgstr ""
+msgstr "urrutikoa"
 
 #: exe/jsui/scripts/lomvocab.js:1268
 msgid "propietary license"
-msgstr ""
+msgstr "jabego-lizentzia"
 
 #: exe/jsui/scripts/lomvocab.js:1272
 msgid "free software license EUPL"
-msgstr ""
+msgstr "EUPL lizentzia askea"
 
 #: exe/jsui/scripts/lomvocab.js:1276
 msgid "free software license GPL"
-msgstr ""
+msgstr "GPL lizentzia askea"
 
 #: exe/jsui/scripts/lomvocab.js:1280
 msgid "dual free content license GPL and EUPL"
-msgstr ""
+msgstr "GPL eta EUPL lizentzia aske bikoitza"
 
 #: exe/jsui/scripts/lomvocab.js:1284
 msgid "other free software licenses"
-msgstr ""
+msgstr "bestelako lizentzia askeak"
 
 #: exe/jsui/scripts/lomvocab.js:1288
 msgid "public domain"
-msgstr ""
+msgstr "jabari publikoa"
 
 #: exe/jsui/scripts/lomvocab.js:1292
 msgid "not appropriate"
-msgstr ""
+msgstr "ez dagokio"
 
 #: exe/jsui/scripts/lomvocab.js:1296
 msgid "intellectual property license"
-msgstr ""
+msgstr "jabego intelektualaren lizentzia"
 
 #: exe/jsui/scripts/lomvocab.js:1300
 msgid "creative commons: attribution"
-msgstr ""
+msgstr "creative commons: ezagupena"
 
 #: exe/jsui/scripts/lomvocab.js:1304
 msgid "creative commons: attribution - non derived work"
-msgstr ""
+msgstr "creative commons: ezagupena - deribatutako lanik gabe"
 
 #: exe/jsui/scripts/lomvocab.js:1308
 msgid "creative commons: attribution - non derived work - non commercial"
-msgstr ""
+msgstr "creative commons: ezagupena - deribatutako lanik gabe - ez komertziala"
 
 #: exe/jsui/scripts/lomvocab.js:1312
 msgid "creative commons: attribution - non commercial"
-msgstr ""
+msgstr "creative commons: ezagupena - ez komertziala"
 
 #: exe/jsui/scripts/lomvocab.js:1316
 msgid "creative commons: attribution - non commercial - share alike"
-msgstr ""
+msgstr "creative commons: ezagupena - ez komertziala - berdin konpartitu"
 
 #: exe/jsui/scripts/lomvocab.js:1320
 msgid "creative commons: attribution - share alike"
-msgstr ""
+msgstr "creative commons: ezagupena - berdin konpartitu"
 
 #: exe/jsui/scripts/lomvocab.js:1324
 msgid "license GFDL"
-msgstr ""
+msgstr "GFDL lizentzia"
 
 #: exe/jsui/scripts/lomvocab.js:1420
 msgid "LOM-ESv1.0"
-msgstr ""
+msgstr "LOM-ESv1.0"
 
 #: exe/jsui/scripts/lomvocab.js:1482
 msgid "linux"
-msgstr ""
+msgstr "linux"
 
 #: exe/jsui/scripts/lomvocab.js:1502
 msgid "mozilla firefox"
-msgstr ""
+msgstr "mozilla firefox"
 
 #: exe/jsui/scripts/lomvocab.js:1528
 msgid "special needs learner"
-msgstr ""
+msgstr "hezkuntzako behar bereziak dituen ikaslea"
 
 #: exe/jsui/scripts/lomvocab.js:1532
 msgid "gifted learner"
-msgstr ""
+msgstr "gaitasun intelektual altuko ikaslea"
 
 #: exe/jsui/scripts/lomvocab.js:1536
 msgid "learners late integration into the education system"
-msgstr ""
+msgstr "hezkuntzako sisteman berandu sartu den ikaslea"
 
 #: exe/jsui/scripts/lomvocab.js:1540
 msgid "learner with other specific educational support needs"
-msgstr ""
+msgstr "hezkuntza-laguntza bereziko beharrak dituen ikaslea"
 
 #: exe/jsui/scripts/lomvocab.js:1544
 msgid "general public"
-msgstr ""
+msgstr "publikoa oro har"
 
 #: exe/jsui/scripts/lomvocab.js:1548
 msgid "individual"
-msgstr ""
+msgstr "indibiduala"
 
 #: exe/jsui/scripts/lomvocab.js:1552
 msgid "group"
-msgstr ""
+msgstr "taldekoa"
 
 #: exe/jsui/scripts/lomvocab.js:1568
 msgid "information scientist"
-msgstr ""
+msgstr "dokumentalista"
 
 #: exe/jsui/scripts/lomvocab.js:1572
 msgid "computer scientist"
-msgstr ""
+msgstr "informatikaria"
 
 #: exe/jsui/scripts/lomvocab.js:1580
 msgid "education expert"
-msgstr ""
+msgstr "hezkuntzan aditua"
 
 #: exe/jsui/stylemenu.py:37
 msgid "INTEF with horizontal menu"
-msgstr ""
+msgstr "INTEF menu horizontalduna"
 
 #: exe/webui/appletblock.py:84
 msgid "Please upload a .ggb file."
@@ -7025,23 +7054,37 @@ msgid ""
 "\n"
 "        "
 msgstr ""
+"\n"
+"        <h2>Elementuak hurrenkeran klikatzeko jokoa</h2>\n"
+"        <p>\n"
+"                Javascript joko honetan, jokalariak klik egin behar du joko-"
+"eremu nagusiaren leku jakin batzuetan arrastoak adierazitakoa\n"
+"                 jarraituz. Klik zuzena eginez gero, feedback positiboa  "
+"erakutsiko da eta jokoak aurrera egingo du. Klik okerra eginez gero,\n"
+"                feedback negatiboa erakutsiko da. Zuzenketa eremuan klikatuz "
+"gero,  elementu bat erakutsi daiteke hor. Elementuak \n"
+"                desagertu behar badu, ezkutatzearen atzerapen-denbora ezarri "
+"daiteke.\n"
+"        </p>\n"
+"\n"
+"        "
 
 #: exe/webui/clickinorderblock.py:320
 #, fuzzy
 msgid "Show advanced options"
-msgstr "Shockwave aukerak"
+msgstr "Aukera aurreratuak"
 
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
-msgstr ""
+msgstr "<h2>Eremu klikagarriak</h2>"
 
 #: exe/webui/clickinorderblock.py:339
 msgid "Add Clickable Area"
-msgstr ""
+msgstr "Eremu klikagarria gehitu"
 
 #: exe/webui/clickinorderblock.py:410
 msgid "Delete Clickable Area"
-msgstr ""
+msgstr "Eremu klikagarria ezabatu"
 
 #: exe/webui/clozefpdblock.py:104
 msgid "Autoevaluacion"
@@ -7051,7 +7094,7 @@ msgstr "Autoebaluazioa"
 #: exe/webui/element.py:2390 exe/webui/element.py:2837
 #: exe/webui/questionelement.py:152
 msgid "Solution"
-msgstr ""
+msgstr "Soluzioa"
 
 #: exe/webui/clozelangfpdblock.py:105
 msgid "Now It's Your Turn"
@@ -7059,7 +7102,7 @@ msgstr "Autoebaluazioa"
 
 #: exe/webui/common.py:181
 msgid "Show"
-msgstr ""
+msgstr "Erakutsi"
 
 #: exe/webui/common.py:182 exe/webui/reflectionblock.py:120
 #: exe/webui/reflectionfpdblock.py:128
@@ -7068,7 +7111,7 @@ msgstr "Ezkutatu"
 
 #: exe/webui/common.py:183
 msgid "Menu"
-msgstr ""
+msgstr "Menua"
 
 #: exe/webui/common.py:204 exe/webui/editorpage.py:233
 #: exe/webui/xliffexportpreferencespage.py:91
@@ -7515,29 +7558,31 @@ msgstr "Markoaren altuera:"
 
 #: exe/webui/fileattachblock.py:92
 msgid "<div>\n"
-msgstr ""
+msgstr "<div>\n"
 
 #: exe/webui/fileattachblock.py:93
 msgid "<h2>File Attachment</h2>"
-msgstr ""
+msgstr "<h2>Atxikitutako fitxategia</h2>"
 
 #: exe/webui/fileattachblock.py:94
 msgid ""
 "<p>Here you can attach arbitary files to the package that will be included "
 "with the export</p>"
 msgstr ""
+"<p>Honen bidez, fitxategiak atxikitu ditzakezu paketera, eta esportazioan "
+"sartu</p>"
 
 #: exe/webui/fileattachblock.py:95
 msgid "<p>You can choose to display links or not below</p>"
-msgstr ""
+msgstr "<p>Estekak beheko aldean erakutsiko diren ala ez aukera dezakezu</p>"
 
 #: exe/webui/fileattachblock.py:97
 msgid "<strong>Title:</strong><br/>"
-msgstr ""
+msgstr "<strong>Izenburua:</strong><br/>"
 
 #: exe/webui/fileattachblock.py:109
 msgid "Add Another File Attachment"
-msgstr ""
+msgstr "Beste fitxategi bat atxikitu"
 
 #: exe/webui/fileattachblock.py:143
 msgid "File List (this list shows only in preview mode):"
@@ -7589,26 +7634,28 @@ msgid ""
 "One or more words or hints are blank.  Please do not have any blank hints or "
 "words - you can delete unused ones."
 msgstr ""
+"Hitz edo arrasto bat edo gehiago hutsik dago. Mesedez, ez utzi hitzik edo "
+"arrastorik hutsik - erabiliko ez direnak ezaba ditzakezu."
 
 #: exe/webui/hangmanblock.py:349
 msgid "Remove This Life"
-msgstr ""
+msgstr "Bizitza hau ezabatu"
 
 #: exe/webui/hangmanblock.py:351
 msgid "Add Chance"
-msgstr ""
+msgstr "Saiakera gehitu"
 
 #: exe/webui/hangmanblock.py:356
 msgid "<h2>Words to Guess</h2>"
-msgstr ""
+msgstr "<h2>Asmatu beharreko hitzak</h2>"
 
 #: exe/webui/hangmanblock.py:365
 msgid "Remove This Word"
-msgstr ""
+msgstr "Hitz hau ezabatu"
 
 #: exe/webui/hangmanblock.py:367
 msgid "Add Word"
-msgstr ""
+msgstr "Hitza gehitu"
 
 #: exe/webui/iecmwarning.py:42
 msgid "eXe problem"
@@ -7663,23 +7710,27 @@ msgstr "Beste hitzak"
 
 #: exe/webui/memorymatchblock.py:83
 msgid "Number of rows x Number of cols must be an even number<br/>"
-msgstr ""
+msgstr "Lerro kopurua x Zutabe kopurua zenbaki bakoitia izan behar du<br/>"
 
 #: exe/webui/memorymatchblock.py:88
 msgid ""
 "After you set the number of rows/cols please click Create/Trim pairs button "
 "at the bottom and enter in the matching pairs for the game"
 msgstr ""
+"Lerro/zutabe kopurua ezarri ondoren, mesedez, klikatu beheko aldeko Bikoteak "
+"Sortu/Moztu botoian, eta sartu jokoaren bikoteak"
 
 #: exe/webui/memorymatchblock.py:177
 msgid ""
 "<p>Click the button below to create the matching pairs or \n"
 "                trim in case you reduced the number of rows / columns</p>\n"
 msgstr ""
+"<p>Beheko botoian klikatu bikoteak sortzeko edo,\n"
+"                lerro / zutabe kopurua murriztu nahi baduzu, moztu</p>\n"
 
 #: exe/webui/memorymatchblock.py:179
 msgid "Create / Trim Pairs"
-msgstr ""
+msgstr "Bikoteak Sortu/Moztu"
 
 #: exe/webui/multiselectblock.py:91 exe/webui/quiztestblock.py:112
 #: exe/webui/seleccionmultiplefpdblock.py:99
@@ -7714,7 +7765,7 @@ msgstr "Gehiago jakiteko"
 #: exe/webui/placetheobjectsblock.py:278
 #, fuzzy
 msgid "Game Options"
-msgstr "Aukerak"
+msgstr "Aukera orokorrak"
 
 #: exe/webui/placetheobjectsblock.py:289
 #, fuzzy
@@ -7726,8 +7777,9 @@ msgid "Enable showing the timer in the game"
 msgstr ""
 
 #: exe/webui/placetheobjectsblock.py:296
+#, fuzzy
 msgid "Add Placable Object"
-msgstr ""
+msgstr "Objektu kokagarria"
 
 #: exe/webui/preferencespage.py:145
 msgid "Default browser in your system"
@@ -7735,11 +7787,11 @@ msgstr "Zure sisteman lehenetsitako nabigatzailea"
 
 #: exe/webui/preferencespage.py:173
 msgid "Failed to get preferences"
-msgstr ""
+msgstr "Ezin izan dira irakurri lehenespenak"
 
 #: exe/webui/preferencespage.py:201
 msgid "Failed to save preferences"
-msgstr ""
+msgstr "Ezin izan dira gorde lehenespenak"
 
 #: exe/webui/questionelement.py:135
 msgid "Hide Feedback"
@@ -7926,13 +7978,16 @@ msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular paste "
 "mode."
 msgstr ""
+"Itsasteko aukera testu moduan dago orain. Egin klik itsasketa arruntera "
+"itzultzeko."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid ""
 "Paste is now in plain text mode. Click again to toggle back to regular paste "
 "mode. After you paste something you will be returned to regular paste mode."
 msgstr ""
-"Itsasketa testu moduan dago orain. Egin klik itsasketa arruntera itzultzeko."
+"Itsasteko aukera testu moduan dago orain. Egin klik itsasketa arruntera "
+"itzultzeko. Edozer itsatsi ondoren itsasketa arruntera itzuliko zara."
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Select All"
@@ -8278,7 +8333,7 @@ msgstr "Words"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Show/hide block elements"
-msgstr ""
+msgstr "Bloke elementuak Erakutsi/Ezkutatu"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
@@ -8957,7 +9012,7 @@ msgstr "Nodoa"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/autosave/langs/en.js:2
 msgid "Restore auto-saved content"
-msgstr ""
+msgstr "Automatikoki gordetako edukia berreskuratu"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js:1
 msgid "Cry"
@@ -9034,11 +9089,11 @@ msgstr "Nabigatzeko, erabili geziak"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en.js:2
 msgid "This is just a template button"
-msgstr ""
+msgstr "Hau txantiloi botoi bat besterik ez da"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/example/langs/en_dlg.js:2
 msgid "This is just a example title"
-msgstr ""
+msgstr "Hau adibide moduko izenburu bat besterik ez da"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:5
 msgid "LaTeX to Math for eXe"
@@ -9078,11 +9133,11 @@ msgstr "Irudiaren deskribapena:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:15
 msgid "eXe Math: Generate"
-msgstr ""
+msgstr "eXe Math: Sortu"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:16
 msgid "eXe Math: Image Appearance"
-msgstr ""
+msgstr "eXe Math: irudiaren itxura"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:17
 msgid "verbatim text"
@@ -9102,11 +9157,11 @@ msgstr "Latex kodea erantsi:"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:22
 msgid "Constrain proportions"
-msgstr ""
+msgstr "Proportzioak mantendu"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:24
 msgid "Appearance&nbsp;preview&nbsp;image"
-msgstr ""
+msgstr "Irudiaren&nbsp;itxura&nbsp;aurreikusi"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/exemath/langs/en.js:25
 msgid "Create the image by clicking \"Preview\" before saving"
@@ -9660,7 +9715,7 @@ msgstr "Nabitzaileari erabakitzen utzi"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Embedded Audio Options"
-msgstr ""
+msgstr "Ahokatutako audioaren ezarpenak"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "HTML5 video (ogv/ogg, webm)"
@@ -9696,7 +9751,7 @@ msgstr "iframe"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 msgid "Embedded Audio"
-msgstr ""
+msgstr "Ahokatutako audioa"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
@@ -10514,52 +10569,52 @@ msgstr "Erabilera orokorra"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 msgid "Invalid color value"
-msgstr ""
+msgstr "Kolore balio ez onargarria (balio/baliagarria....)"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
-msgstr ""
+msgstr "Ordenatu beharreko elementua gehitu"
 
 #: exe/webui/stylemanagerpage.py:131
 #, python-format
 msgid "Style directory already exists: %s"
-msgstr ""
+msgstr "Estiloaren karpeta existitzen da dagoeneko: %s"
 
 #: exe/webui/stylemanagerpage.py:141
 #, python-format
 msgid "The style name already exists: %s"
-msgstr ""
+msgstr "Estiloaren izena existitzen da dagoeneko: %s"
 
 #: exe/webui/stylemanagerpage.py:143
 msgid "Success"
-msgstr ""
+msgstr "Ondo joan da"
 
 #: exe/webui/stylemanagerpage.py:143
 #, python-format
 msgid "Successfully imported style: %s"
-msgstr ""
+msgstr "Estiloa ondo inportatu da: %s"
 
 #: exe/webui/stylemanagerpage.py:146
 msgid "Incorrect style format (does not include content.css)"
-msgstr ""
+msgstr "Estilo formatu okerra (ez dauka content.css fitxategia)"
 
 #: exe/webui/stylemanagerpage.py:171
 #, python-format
 msgid "Style exported correctly: %s"
-msgstr ""
+msgstr "Estiloa ondo esportatu da: %s"
 
 #: exe/webui/stylemanagerpage.py:174
 #, python-format
 msgid "Could not export style : %s"
-msgstr ""
+msgstr "Ezin izan da esportatu estiloa: %s"
 
 #: exe/webui/stylemanagerpage.py:189
 msgid "Style deleted correctly"
-msgstr ""
+msgstr "Estiloa ondo ezabatu da"
 
 #: exe/webui/stylemanagerpage.py:192
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Espero ez zen errorea gertatu da"
 
 #: exe/webui/truefalseelement.py:116 exe/webui/truefalseelement.py:229
 #: exe/webui/truefalseelement.py:311
@@ -10785,6 +10840,31 @@ msgid ""
 msgstr ""
 
 #, fuzzy
+#~ msgid "Browsers installed in your system"
+#~ msgstr "Zure sisteman dauden estiloen zerrenda"
+
+#~ msgid "Correct Style import : %s"
+#~ msgstr "Estiloaren inportazio zuzena: %s"
+
+#~ msgid "Incorrect style file : %s"
+#~ msgstr "Estilo fitxategi okerra:%s"
+
+#~ msgid "Correct ZIP Style exported : %s"
+#~ msgstr "Estiloaren esportazio zuzena: %s"
+
+#~ msgid "can't export style : %s"
+#~ msgstr "Ezin izan da esportatu estiloa: %s"
+
+#~ msgid "Style deleted "
+#~ msgstr "Ezabatutako estiloa"
+
+#~ msgid "can't delete style "
+#~ msgstr "Ezin izan da ezabatu estiloa"
+
+#~ msgid "IDevice Icon"
+#~ msgstr "Idevicearen ikonoa"
+
+#, fuzzy
 #~ msgid "advanced"
 #~ msgstr "Gehigarriak"
 
@@ -10792,14 +10872,20 @@ msgstr ""
 #~ msgid "Show %s options"
 #~ msgstr "Shockwave aukerak"
 
-#, fuzzy
 #~ msgid " Advanced "
-#~ msgstr "Gehigarriak"
+#~ msgstr "Aurreratua"
 
-#, fuzzy
 #~ msgid "options"
-#~ msgstr "Aukerak"
+#~ msgstr "aukerak"
 
 #, fuzzy
 #~ msgid "Answsers"
 #~ msgstr "Erantzunak"
+
+#~ msgid ""
+#~ "This article is licensed under the Creative Commons Attribution-"
+#~ "ShareAlike License. It uses material from"
+#~ msgstr ""
+#~ "Artikulu hau \"Creative Commons Ezagupena - Berdin konpartitu\" "
+#~ "lizentziapean argitaratu da. Hemendik hartutako (hemengo) materiala "
+#~ "erabiltzen du"
