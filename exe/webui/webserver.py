@@ -33,12 +33,10 @@ sys.stdout, oldStdOut = StringIO(), sys.stdout
 try:
     from twisted.internet              import reactor
     from twisted.internet.error        import CannotListenError
+    from exe.webui.packageredirectpage import PackageRedirectPage
 finally:
-    print sys.stderr
     sys.stderr = oldStdErr
-    print sys.stdout
     sys.stdout = oldStdOut
-from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
