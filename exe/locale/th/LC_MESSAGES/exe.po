@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 13:25+0100\n"
+"POT-Creation-Date: 2013-11-13 19:28+0100\n"
 "PO-Revision-Date: 2007-09-12 06:29+1200\n"
 "Last-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -10161,9 +10161,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Show %s options"
-#~ msgstr ""
-
-#~ msgid ""
 #~ msgstr ""
 
 #~ msgid " Advanced "

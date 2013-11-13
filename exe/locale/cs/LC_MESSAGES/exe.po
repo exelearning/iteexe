@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 13:25+0100\n"
+"POT-Creation-Date: 2013-11-13 19:28+0100\n"
 "PO-Revision-Date: 2008-07-17 19:59+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team: <cs@li.org>\n"
@@ -10587,7 +10587,6 @@ msgstr ""
 
 #~ msgid "Show %s options"
 #~ msgstr ""
-
 
 #~ msgid " Advanced "
 #~ msgstr ""

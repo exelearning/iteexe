@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 13:25+0100\n"
+"POT-Creation-Date: 2013-11-13 19:28+0100\n"
 "PO-Revision-Date: 2013-11-10 19:17+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "Language-Team: EXE Team <jrfern@gmail.com>\n"
@@ -10137,9 +10137,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "by"
-#~ msgstr ""
-
-#~ msgid ""
 #~ msgstr ""
 
 #~ msgid "Answsers"

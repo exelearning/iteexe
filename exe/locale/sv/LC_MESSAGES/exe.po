@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 13:25+0100\n"
+"POT-Creation-Date: 2013-11-13 19:28+0100\n"
 "PO-Revision-Date: 2006-07-28 15:37+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Fredrik Paulsson <frepa@frepa.org>\n"
@@ -10445,7 +10445,6 @@ msgstr ""
 
 #~ msgid "Show %s options"
 #~ msgstr ""
-
 
 #~ msgid " Advanced "
 #~ msgstr ""
