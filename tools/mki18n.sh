@@ -40,9 +40,10 @@ pybabel extract --keyword=x_ --project "$project" --version "$version" -F pybabe
 sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ -N
-find exe -name exe.po | xargs sed -i 'N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong fuzzy msgids
 find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/' # Set correct Project-Id-Version
 echo -e "\n\n\n *** Compiling *.mo files ***\n"
 pybabel compile -D exe -d exe/locale/ --statistics
+find exe -name exe.po | xargs sed -i 'N;N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
+find exe -name exe.po | xargs sed -i '1!N;1!N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong commented msgids
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
 python tools/po2json.py --domain exe --directory exe/locale --output-dir exe/jsui/scripts/i18n
