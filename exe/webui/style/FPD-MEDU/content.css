@@ -154,12 +154,15 @@ pre {
 	font-family: "DejaVu Sans Mono"; 
 	line-height: 20px;	
 }
-p code {
+* code {
 	font-size: 12px;
 	font-family: "DejaVu Sans Mono"; 
 	font-weight: bold;	
 }
 
+pre code {
+    font-weight: normal;
+}
 
 /*Tablas*/
 table {
@@ -557,7 +560,22 @@ div.block{
     margin: 1em;
     clear:both;
 }
-
+.destacado_inline {
+    background: #C3DCF7;
+    color: #153152;
+    border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    padding: 0.15em 0.5em 0.15em 0.5em;
+}
+.resaltado_inline { 
+    background-color: #004781; 
+    border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    color: #FFFFFF;
+    padding: 0.15em 0.5em 0.15em 0.5em; 
+}
 
 /* Estilo para las retroalimentaciones */
 .feedback
