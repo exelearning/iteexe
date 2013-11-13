@@ -29,6 +29,7 @@ import json
 from twisted.web.resource      import Resource
 from exe.webui.renderable      import RenderableResource
 import mywebbrowser
+import os
 
 log = logging.getLogger(__name__)
 
@@ -131,7 +132,7 @@ class PreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.localeNames = []
         self.browsers = []
-
+        
         for locale in self.config.locales.keys():
             localeName = locale + ": "
             langName = langNames.get(locale)
@@ -142,7 +143,13 @@ class PreferencesPage(RenderableResource):
             if (browser not in browsersHidden) and (browser in browserNames):
                 self.browsersAvalaibles.append((browserNames[browser], browser))
         self.browsersAvalaibles.sort()
+        if self.config.browser!=None:
+                    if os.path.exists(self.config.browser):
+                        nmbrw=os.path.splitext(os.path.basename(self.config.browser))[0]    
+                        self.browsers.append({'browser': self.config.browser, 'text': '* '+nmbrw})
+        
         self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
+        
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
 

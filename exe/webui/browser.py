@@ -28,6 +28,8 @@ Browser module
 import logging
 from urllib import quote
 import mywebbrowser
+import webbrowser
+import os.path
 
 log = logging.getLogger(__name__)
 
@@ -36,13 +38,26 @@ def launchBrowser(config, packageName):
     """
     Launch the configured webbrowser for this platform
     """
-    config.browser = mywebbrowser.get(config.browser)
-    if hasattr(config.browser, "basename"):
-        log.info(u"Defined Browser: " + config.browser.basename)
     url = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url " + url)
-
-    config.browser.open(url)
+    dfbrw=webbrowser.get()
+    withdefaultbrowser=True
+    if config.browser!=None:
+        if os.path.exists(config.browser):
+            absopath=os.path.abspath(config.browser)
+            log.info(u"path browser " + absopath)
+            webbrowser.register('exebrowser' , None, webbrowser.BackgroundBrowser(absopath), -1)
+            config.browser = webbrowser.get('exebrowser')        
+            if config.browser.open(url)== False:
+                log.info(u"error " + absopath)
+                withdefaultbrowser=True
+            else:
+                withdefaultbrowser=False   
+    if withdefaultbrowser:
+        config.browser = dfbrw
+        config.browser.open(url, new=0, autoraise=True)
+    if hasattr(config.browser, "basename"):
+        log.info(u"Defined Browser: " + config.browser.basename)
     
 
 

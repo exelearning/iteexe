@@ -68,26 +68,89 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                 ["disable_all", _("Disable All Internal Linking")]
                            ]
 		                },{
-		                    xtype: 'combobox',
-		                    inputId: 'browser',
-		                    dirtyCls: 'property-form-dirty',
-		                    fieldLabel: _("Select Browser"),
-			                queryModel: 'local',
-	                        displayField: 'text',
-	                        valueField: 'browser',
-		                    store: {
-	                            fields: ['browser', 'text'],
-	                            proxy: {
-	                                type: 'ajax',
-							        url: 'preferences',
-	                                reader: {
-										type: 'json',
-										root: 'browsers'
-									}
-							    },
-	                            autoLoad: true
-	                        }
-		                }
+                        xtype: 'container',
+                        layout: 'hbox',
+                        margin: 10,
+
+                        items: [{
+                                xtype: 'combobox',
+                                inputId: 'browser',
+                                id: 'browsersel',
+                                dirtyCls: 'property-form-dirty',
+                                fieldLabel: _("Select Browser"),
+                                queryModel: 'local',
+                                displayField: 'text',
+                                valueField: 'browser',
+                                width: 370,
+                                store: {
+                                    fields: ['browser', 'text'],
+                                    proxy: {
+                                        type: 'ajax',
+                                        url: 'preferences',
+                                        reader: {
+                                            type: 'json',
+                                            root: 'browsers'
+                                        }
+                                    },
+                                    listeners: {
+                                        load: function (ds, records, o) {
+                                            var objbrw = Ext.getCmp('browsersel');
+                                            objbrw.select(records[0].data.browser);
+                                            objbrw.onTriggerClick();
+                                        }
+
+                                    },
+                                    autoLoad: true
+                                }
+
+                            }, {
+                                xtype: 'button',
+                                text: '...',
+                                margins: {
+                                    left: 5
+                                },
+                                handler: function (button) {
+                                    var formpanel = button.up('form'),
+                                        form = formpanel.getForm();
+                                    var action = form.findField('action');
+                                    var filename = form.findField('filename');
+                                    var fp = Ext.create("eXe.view.filepicker.FilePicker", {
+                                        type: eXe.view.filepicker.FilePicker.modeLoad,
+                                        title: "",
+                                        modal: true,
+                                        scope: this,
+                                        callback: function (fp) {
+                                            if (fp.status == eXe.view.filepicker.FilePicker.returnOk || fp.status == eXe.view.filepicker.FilePicker.returnReplace)
+                                                form.submit({
+                                                    success: function () {
+                                                        var datnew = {
+                                                            browser: fp.file.path,
+                                                            text: '* ' + fp.file.path
+                                                        };
+                                                        var objbrw = Ext.getCmp('browsersel');
+                                                        var numdat = objbrw.store.getCount();
+                                                        objbrw.store.insert(numdat, datnew);
+                                                        objbrw.select(objbrw.store.getAt(numdat));
+                                                        objbrw.doQuery();
+                                                    },
+                                                    failure: function (form, action) {
+                                                        Ext.Msg.alert(_('Error'), action.result.errorMessage);
+                                                    }
+                                                });
+                                        }
+                                    });
+                                    fp.appendFilters([{
+                                        "typename": _("All Files"),
+                                        "extension": "*.*",
+                                        "regex": /.*$/
+                                    }]);
+                                    fp.show();
+                                },
+                                itemId: 'openbrowser'
+                            }
+
+                        ]
+                    }
                     ]
                 },
                 {
