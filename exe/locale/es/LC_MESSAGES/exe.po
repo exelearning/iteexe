@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2013-11-13 13:25+0100\n"
-"PO-Revision-Date: 2013-11-05 23:43+0100\n"
+"PO-Revision-Date: 2013-11-13 13:38+0100\n"
 "Last-Translator: Juan Rafael Fernández "
 "<juanrafael.fernandez@hispalinux.es>\n"
 "Language-Team: Spanish <jrfern@gmail.com>\n"
@@ -11002,13 +11002,3 @@ msgstr ""
 
 #~ msgid "by"
 #~ msgstr "por"
-
-#~ msgid ""
-#~ msgstr ""
-
-#~ msgid "Answsers"
-#~ msgstr "Respuestas"
-
-#~ msgid "Autoevaluacion"
-#~ msgstr "Autoevaluación"
-
