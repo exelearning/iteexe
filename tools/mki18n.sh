@@ -31,13 +31,17 @@
 
 
 export PYTHONPATH=.
+project="eXeLearning"
+version="2.0"
 echo -e " *** Extracting messages from python exe files, jsui javascript and html template files ***\n"
-pybabel extract --keyword=x_ --project "eXeLearning" --version "2.0" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
+pybabel extract --keyword=x_ --project "$project" --version "$version" -F pybabel.conf --sort-by-file . > exe/locale/messages.pot
 #tools/nevow-xmlgettext exe/jsui/templates/mainpage.html exe/webui/templates/about.html | msgcat exe/locale/messages.pot.tmp - -o exe/locale/messages.pot
 #rm exe/locale/messages.pot.tmp
 sed -i "s/^#, fuzzy\$//" exe/locale/messages.pot
 echo -e "\n\n\n *** Updating *.po files ***\n"
 pybabel update -D exe -i exe/locale/messages.pot -d exe/locale/ -N
+find exe -name exe.po | xargs sed -i 'N;/#~ msgid ""\n#~ msgstr ""/d' # Clean wrong fuzzy msgids
+find exe -name exe.po | xargs sed -i 's/Project-Id-Version:.*/Project-Id-Version: '"$project $version"'\\n"/' # Set correct Project-Id-Version
 echo -e "\n\n\n *** Compiling *.mo files ***\n"
 pybabel compile -D exe -d exe/locale/ --statistics
 echo -e "\n\n\n *** Compiling javascript for jsui files ***\n"
