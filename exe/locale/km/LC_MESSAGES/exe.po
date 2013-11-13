@@ -7,9 +7,9 @@
 # This file is distributed under the same license as the EXE package.
 msgid ""
 msgstr ""
-"Project-Id-Version:  exe_km\n"
+"Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-05 23:31+0100\n"
+"POT-Creation-Date: 2013-11-13 13:25+0100\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -681,9 +681,9 @@ msgstr ""
 #: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
 #: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
-#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:390
+#: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:393 exe/webui/common.py:469
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:469
 msgid "Instructions"
 msgstr "សេចក្ដី​ណែនាំ"
 
@@ -788,8 +788,8 @@ msgid "Cloze Activity"
 msgstr "សកម្មភាព Cloze"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
-#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:393
-#: exe/engine/verdaderofalsofpdidevice.py:396
+#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:394
+#: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "អាន​កថាខណ្ឌ​ខាងក្រោម និង​បំពេញ​ពាក្យ​ដែល​បាត់ ។"
 
@@ -1427,8 +1427,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomSections.js:159
 #: exe/jsui/scripts/app/view/forms/LomSections.js:182
 #: exe/jsui/scripts/app/view/forms/LomSections.js:215
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:276
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:325
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:292
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:337
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:68
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
@@ -2529,27 +2529,27 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:297
+#: exe/engine/package.py:298
 msgid "Topic"
 msgstr "ប្រធាន​បទ"
 
-#: exe/engine/package.py:297
+#: exe/engine/package.py:298
 msgid "Section"
 msgstr "ផ្នែក"
 
-#: exe/engine/package.py:297
+#: exe/engine/package.py:298
 msgid "Unit"
 msgstr "ឯកតា"
 
-#: exe/engine/package.py:318
+#: exe/engine/package.py:319
 msgid "Home"
 msgstr "ដើម"
 
-#: exe/engine/package.py:931
+#: exe/engine/package.py:947
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:969 exe/engine/package.py:976
+#: exe/engine/package.py:985 exe/engine/package.py:992
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2558,12 +2558,12 @@ msgstr ""
 "ការ​រក្សាទុក​បាន​បរាជ័យ !\n"
 "ការ​រក្សាទុក​បាន​ជោគជ័យ​ចុងក្រោយ​គឺ %s ។"
 
-#: exe/engine/package.py:1330 exe/jsui/scripts/app/controller/Toolbar.js:372
+#: exe/engine/package.py:1349 exe/jsui/scripts/app/controller/Toolbar.js:372
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:361
 msgid "iDevice Editor"
 msgstr "កម្មវិធី​និពន្ធ iDevice"
 
-#: exe/engine/package.py:1451
+#: exe/engine/package.py:1470
 msgid "My Catalog"
 msgstr ""
 
@@ -2847,7 +2847,7 @@ msgid ""
 "reflective feedback)."
 msgstr ""
 
-#: exe/engine/resource.py:595
+#: exe/engine/resource.py:592
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -3165,9 +3165,9 @@ msgstr ""
 "អ្នក​សិក្សា ។ វាល​នេះ​គឺ​អាច​ទុក​ឲ្យ​នៅ​ទទេ ។ ប្រសិន​បើ​វាល​នេះ​នៅ​ទទេ \n"
 "នោះ​មតិអ្នក​ប្រើ​នឹង​ត្រូវបាន​ផ្ដល់ ។"
 
-#: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:391
+#: exe/engine/truefalseidevice.py:165 exe/engine/truefalseidevice.py:392
 #: exe/engine/verdaderofalsofpdidevice.py:167
-#: exe/engine/verdaderofalsofpdidevice.py:394
+#: exe/engine/verdaderofalsofpdidevice.py:395
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -3721,6 +3721,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:728
 #: exe/jsui/scripts/app/controller/Toolbar.js:864
 #: exe/jsui/scripts/app/controller/Toolbar.js:943
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:143
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:44
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:226
 msgid "All Files"
@@ -3733,7 +3734,8 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/MainTab.js:240
 #: exe/jsui/scripts/app/controller/MainTab.js:245
 #: exe/jsui/scripts/app/controller/MainTab.js:277
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:110
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:137
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:173
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:37
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:83
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:115
@@ -4045,7 +4047,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:197
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:227
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:469
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:100
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:163
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:141 exe/webui/editorpage.py:258
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
 msgid "Save"
@@ -4195,7 +4197,7 @@ msgstr "សេចក្ដីយោង​ទៅ​ធនធាន​​ពី​
 #: exe/jsui/scripts/app/view/forms/LomSections.js:49
 #: exe/jsui/scripts/app/view/forms/LomSections.js:81
 #: exe/jsui/scripts/app/view/forms/LomSections.js:123
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:465
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:477
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:59
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
@@ -4340,10 +4342,10 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:132
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:133
 #: exe/jsui/scripts/app/view/forms/LomSections.js:179
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:124
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:393
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:411
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:418
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:138
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:405
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:423
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:430
 msgid "Taxon"
 msgstr ""
 
@@ -4596,64 +4598,64 @@ msgstr ""
 msgid "Optional"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:131
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:162
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:145
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:176
 msgid "Warning!"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:132
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:146
 msgid ""
 "You will loss all taxon config for this source. Would you like to "
 "continue?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:163
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:177
 msgid ""
 "You will loss all taxon config in this section. Would you like to "
 "continue?"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:342
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:354
 msgid "Years"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:343
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:355
 msgid "Months"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:344
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:356
 msgid "Days"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:359
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:371
 msgid "Hours"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:360
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:372
 msgid "Minutes"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:361
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:373
 msgid "Seconds"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:466
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:478
 msgid "Id"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:627
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:639
 msgid "Append Section"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:644
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:656
 msgid "Delete Section"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:670
 msgid "Notice"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomWidgets.js:658
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:670
 msgid "Should be at least one section of this type"
 msgstr ""
 
@@ -4852,11 +4854,11 @@ msgstr "បិទ​ការ​តភ្ជាប់​ខាង​ក្នុ
 msgid "Disable All Internal Linking"
 msgstr "បិទ​ការ​តភ្ជាប់​ខាងក្នុង​ទាំង​អស់"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:74
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:80
 msgid "Select Browser"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:128
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:191
 msgid "Show this window on eXe start"
 msgstr ""
 
@@ -6980,8 +6982,10 @@ msgstr ""
 msgid "Delete Clickable Area"
 msgstr ""
 
-#: exe/webui/clozefpdblock.py:104
-msgid "Autoevaluacion"
+#: exe/webui/clozefpdblock.py:104 exe/webui/eleccionmultiplefpdblock.py:110
+#: exe/webui/seleccionmultiplefpdblock.py:90
+#: exe/webui/verdaderofalsofpdblock.py:109
+msgid "Now it's your turn"
 msgstr ""
 
 #: exe/webui/clozefpdblock.py:171 exe/webui/clozelangfpdblock.py:172
@@ -7256,12 +7260,6 @@ msgstr ""
 #: exe/webui/quiztestblock.py:104
 msgid "Please select a correct answer for each question."
 msgstr "សូម​ជ្រើស​ចម្លើយ​ត្រឹមត្រូវ សម្រាប់​សំណួរ​នីមួយៗ ។"
-
-#: exe/webui/eleccionmultiplefpdblock.py:110
-#: exe/webui/seleccionmultiplefpdblock.py:90
-#: exe/webui/verdaderofalsofpdblock.py:109
-msgid "Now it's your turn"
-msgstr ""
 
 #: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
 #: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
@@ -7662,15 +7660,15 @@ msgstr ""
 msgid "Add Placable Object"
 msgstr ""
 
-#: exe/webui/preferencespage.py:145
+#: exe/webui/preferencespage.py:151
 msgid "Default browser in your system"
 msgstr ""
 
-#: exe/webui/preferencespage.py:173
+#: exe/webui/preferencespage.py:180
 msgid "Failed to get preferences"
 msgstr ""
 
-#: exe/webui/preferencespage.py:201
+#: exe/webui/preferencespage.py:208
 msgid "Failed to save preferences"
 msgstr ""
 
@@ -10671,48 +10669,9 @@ msgstr ""
 #~ msgid "by"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Provide instruction how to complete the"
-#~ " excercise or take the default text."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<p>To create a gap with answer "
-#~ "options, write the correct answer and"
-#~ " then separated by\n"
-#~ "                '|' the wrong answers:\n"
-#~ "                true|false|false|false ...\n"
-#~ "                Mark all answer options "
-#~ "and click on the Hide/Show Word "
-#~ "button below.\n"
-#~ "                Hint: answers may contain spaces.</p>"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<p>Enter the text for the cloze excercise in the editor window.\n"
-#~ "               If you copy text from "
-#~ "another source, you should use the "
-#~ "button 'Paste as plain text'\n"
-#~ "               to paste it into the "
-#~ "editor window. To select words to "
-#~ "hide, mark them and click on the"
-#~ " \n"
-#~ "               Hide/Show Word button below.\n"
-#~ "               To create a gap with "
-#~ "multiple answer options, write the "
-#~ "answers separated by '|'.\n"
-#~ "               Mark all answer options "
-#~ "and click on the Hide/Show Word "
-#~ "button below.\n"
-#~ "               Hint: The answers may "
-#~ "contain spaces. If you want to "
-#~ "provide the answer options to the "
-#~ "learners,\n"
-#~ "               sort them alphabetically and"
-#~ " write them at the beginning or "
-#~ "the end of the cloze excercise.</p>"
-#~ msgstr ""
-
 #~ msgid "Answsers"
+#~ msgstr ""
+
+#~ msgid "Autoevaluacion"
 #~ msgstr ""
 
