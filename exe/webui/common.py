@@ -88,9 +88,6 @@ def ideviceHeader(e, style, mode):
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")
     themeHasXML = themeHasConfigXML(style)
-    iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
-    if mode=="view":
-        iconPath = 'icon_'+e.idevice.icon+'.gif'
     
     w = '' # Common wrapper
     o = '' # Old HTML (themes with no config.xml file)
@@ -125,12 +122,17 @@ def ideviceHeader(e, style, mode):
             if (k=='ListaIdevice' and i=='question') or (k=='CasestudyIdevice' and i=='casestudy') or (k=='GalleryIdevice' and i=='gallery') or (k=='ClozeIdevice' and i=='question') or (k=='ReflectionIdevice' and i=='reflection') or (k=='QuizTestIdevice' and i=='question') or (k=='TrueFalseIdevice' and i=='question') or (k=='MultiSelectIdevice' and i=='question') or (k=='MultichoiceIdevice' and i=='question'):
                 displayIcon = False
             # /end
+            iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.gif'
+            if mode=="view":
+                iconPath = 'icon_'+e.idevice.icon+'.gif'
             myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".gif")
             if myIcon.exists():
                 o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
             if (e.idevice.icon+"Idevice") != e.idevice.klass:
                 if myIcon.exists() and displayIcon:
                     h += ' style="background-image:url('+iconPath+')"'
+        else:
+            log.debug("Idevice %s at node %s has no icon" % (e.idevice._title, e.idevice.parentNode._title))
         o += u"<"+titleTag+" class=\"iDeviceTitle\">"+e.idevice.title+"</"+titleTag+">"
         h += '>'
         h += u'<'+titleTag+' class="iDeviceTitle">'+e.idevice.title+'</'+titleTag+'>'
