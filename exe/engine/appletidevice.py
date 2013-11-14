@@ -194,11 +194,11 @@ you created in Geogebra.</p>""")
                 self.message = ""
                 Resource(self, resourceFile)
                 if self.type == "geogebra":
-                    self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename().replace(' ','_'))
+                    self.appletCode = self.getAppletcodeGeogebra(resourceFile.basename().replace(' ','_').replace(')','').replace('(',''))
                 if self.type == "jclic":
-                    self.appletCode = self.getAppletcodeJClic(resourceFile.basename().replace(' ','_'))
+                    self.appletCode = self.getAppletcodeJClic(resourceFile.basename().replace(' ','_').replace(')','').replace('(',''))
                 if self.type == "scratch":
-                    self.appletCode = self.getAppletcodeScratch(resourceFile.basename().replace(' ','_'))
+                    self.appletCode = self.getAppletcodeScratch(resourceFile.basename().replace(' ','_').replace(')','').replace('(',''))
                 if self.type == "descartes":
                     self.appletCode = self.getAppletcodeDescartes(resourceFile.basename())
                 ## next code should be used to load in the editor the HTML code of the html file:
