@@ -18,50 +18,25 @@ var myTheme = {
     },
     hideMenu : function(){
         $("#siteNav").hide();
-        var p = "20px"; //Padding
-        if ($(window).width()<700) {
-            p = "10px";
-        }          
-        $("#main-wrapper").css({"width":"auto","padding-left":p,"float":"none"});
-		$(document.body).addClass("no-nav");
+        $(document.body).addClass("no-nav");
         myTheme.params("add");
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
         $("#toggle-nav").attr("class","show-nav").attr("title",tit);
     },
     toggleMenu : function(){
-        var c = $("#main-wrapper");
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {  
 			var tit = $exe_i18n.menu+" ("+$exe_i18n.show.toLowerCase()+")";
             l.attr("class","show-nav").attr("title",tit);
-            $(document.body).addClass("no-nav");
-			$("#siteFooter").hide();
+            $("#siteFooter").hide();
 			$("#siteNav").slideUp(400,function(){
-                var p = "20px"; //Padding
-                if ($(window).width()<700) {
-                    p = "10px";
-                }                
-                $("#main-wrapper").css({"width":"auto","padding-left":p,"float":"none"});
-				$("#siteFooter").show();
+                $(document.body).addClass("no-nav");
+                $("#siteFooter").show();
             }); 
             myTheme.params("add");
         } else {
             var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
 			l.attr("class","hide-nav").attr("title",tit);
-            var w = "715px"; //Width
-            var f = "right"; //Float
-            var p = "0"; //Padding
-            var ww = $(window).width();
-            if(ww>700 && ww<1015) {
-                w = "auto";
-                f = "none";
-                p = "20px";         
-            } else if (ww<700) {
-                w = "auto";
-                f = "none";
-                p = "10px";
-            }
-            $("#main-wrapper").css({"width":w,"padding-left":p,"float":f});
             $(document.body).removeClass("no-nav");
 			$("#siteNav").slideDown();
             myTheme.params("delete");            

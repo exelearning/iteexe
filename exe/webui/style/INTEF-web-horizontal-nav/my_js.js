@@ -17,34 +17,21 @@ var myTheme = {
     },
     hideMenu : function(){
         $("#siteNav").hide();
-        var p = "20px"; //Padding
-        if ($(window).width()<700) {
-            p = "10px";
-        }          
-        $("#main-wrapper").css({"padding-left":p});
+        $(document.body).addClass("no-nav");
         myTheme.params("add");
         $("#toggle-nav").attr("class","show-nav").attr("title",$exe_i18n.show);
     },
     toggleMenu : function(){
-        var c = $("#main-wrapper");
         var l = $("#toggle-nav");
         if (l.attr("class")=='hide-nav') {       
             l.attr("class","show-nav").attr("title",$exe_i18n.show);
             $("#siteNav").slideUp(400,function(){
-                var p = "20px"; //Padding
-                if ($(window).width()<700) {
-                    p = "10px";
-                }                
-                $("#main-wrapper").css({"padding-left":p});
+                $(document.body).addClass("no-nav");
             }); 
             myTheme.params("add");
         } else {
             l.attr("class","hide-nav").attr("title",$exe_i18n.hide);
-            var p = "20px"; //Padding
-            if ($(window).width()<700) {
-                p = "10px";
-            }
-            $("#main-wrapper").css({"padding-left":p});
+            $(document.body).removeClass("no-nav");
             $("#siteNav").slideDown();
             myTheme.params("delete");            
         }

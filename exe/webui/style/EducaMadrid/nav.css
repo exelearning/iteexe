@@ -3,6 +3,7 @@ body{padding:0;text-align:center;background:#fafafa url(_em_fondo_pagina.gif)}
 #content{width:985px;margin:20px auto;text-align:left;position:relative;border-style:solid;border-width:1px;padding-bottom:21px;max-width:100%;background:#fff url(_em_columna_izquierda.gif) repeat-y 0 0;border-color:#e3e3e3;box-shadow:0 0 10px 0 #666;border-radius:5px}
 .no-nav #content{background:#fff}
 #main-wrapper{padding:10px 20px 0 250px}
+.no-nav #main-wrapper{padding-left:20px}
 #main{width:100%}
 #header,#emptyHeader{border-top-left-radius:5px;border-top-right-radius:5px;border-top:none}
 div#nodeDecoration{padding:0;margin:0;background:none;border:none}
@@ -78,7 +79,7 @@ html[xmlns] #content{display:block}
     #topPagination{display:none}
     #bottomPagination,.no-nav #bottomPagination{padding:0 10px}
     #siteNav{float:none;width:100%;padding:0}
-    #main-wrapper{padding:0 10px}
+    #main-wrapper,.no-nav #main-wrapper{padding:0 10px}
     #nodeTitle{margin-top:.5em}
 	#siteFooter,.no-nav #siteFooter{padding:15px 10px 0 10px}
     #content .exe-col{float:none;width:100%;padding:0}
