@@ -226,6 +226,13 @@ class WebsitePage(Page):
 	html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
         return html
 
+    def indent(self,level):
+        i = 0
+        indent_text = ""
+        while i < level:
+            indent_text += "   "
+            i+=1
+        return indent_text
         
     def leftNavigationBar(self, pages, inSameLevelTitle = True, excludeTitle = False):
         """
@@ -238,28 +245,31 @@ class WebsitePage(Page):
             depth = 0
         nodePath = [None] + list(self.node.ancestors()) + [self.node]
 
-        html = "<ul>"+lb
+        html = "<ul>"
+        max_depth = depth
         
         for page in pages:
+            if page.depth > max_depth:
+                max_depth = page.depth
             if page.node.parent == None and not inSameLevelTitle:
                 page.depth = 0
             if page.node.parent == None and excludeTitle:
                 depth = 1
                 continue
             while depth < page.depth:
-                html += lb+"<ul"
+                html += lb+self.indent(depth)+"<ul"
 
                 if page.node.parent not in nodePath:
                     html += " class=\"other-section\""
-                html += ">"+lb
+                html += ">"
                 depth += 1
 
-            while depth > page.depth:
-                html += "</ul>"+lb+"</li>"+lb
+            while depth > page.depth and page.depth > 0:
+                html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"
                 depth -= 1
             
             if page.node == self.node:
-                html += "<li id=\"active\"><a href=\""+quote(page.name)+".html\" "
+                html += lb+self.indent(depth)+"<li id=\"active\"><a href=\""+quote(page.name)+".html\" "
 
                 if page.node.children:
                     html += "class=\"active daddy"
@@ -267,36 +277,41 @@ class WebsitePage(Page):
                     html += "class=\"active no-ch"
 
             elif page.node in nodePath and page.node.parent != None:
-                html += "<li class=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
+                html += lb+self.indent(depth)+"<li class=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
 
                 if page.node.children:
                     html += "class=\"current-page-parent daddy"
 
             else:
-                html += "<li><a href=\""+quote(page.name)+".html\" class=\""
+                html += lb+self.indent(depth)+"<li><a href=\""+quote(page.name)+".html\" class=\""
                 if page.node.children:
                     html += "daddy"
                 else:
                     html += "no-ch"
 
-            if page.node.id=="0":
+            if page.depth==0:
                 html += " main-node"
 
             html += "\">"
             html += escape(page.node.titleShort)
             html += "</a>"
 
-            if inSameLevelTitle and page.node.id=="0":
-                html += "</li>"+lb
+            if inSameLevelTitle and page.depth==0:
+                html += "</li>"
 
-            if not page.node.children and page.node.id!="0":
-                html += "</li>"+lb
+            if not page.node.children and page.depth!=0:
+                html += "</li>"
+
+
+        while depth > 1:
+            html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"
+            depth -= 1
 
         if excludeTitle or inSameLevelTitle:
-            html += "</ul>"+lb
+            html += lb+self.indent(depth-1)+"</ul>"+lb
         else:
-            html += "</ul>"+lb+"</li>"+lb+"</ul>"+lb
-        
+            html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"+lb+self.indent(depth-1)+"</ul>"+lb
+
         return html
         
         
