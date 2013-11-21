@@ -91,11 +91,12 @@ class ExternalUrlBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = ""
+        html = '<div class="iDevice_content">\n'
         if self.idevice.url:
             html += u"<iframe src=\""+self.idevice.url+"\"\n"
             html += u"width=\"100%\""
             html += u" height=\""+self.idevice.height+"px\"></iframe>\n" 
+        html += '</div>\n'
         return html
 
 
