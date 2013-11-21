@@ -106,6 +106,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                             }, {
                                 xtype: 'button',
                                 text: '...',
+								tooltip: _("Select Browser"),
                                 margins: {
                                     left: 5
                                 },

@@ -43,16 +43,21 @@ def launchBrowser(config, packageName):
     dfbrw=webbrowser.get()
     withdefaultbrowser=True
     if config.browser!=None:
-        if os.path.exists(config.browser):
-            absopath=os.path.abspath(config.browser)
-            log.info(u"path browser " + absopath)
-            webbrowser.register('exebrowser' , None, webbrowser.BackgroundBrowser(absopath), -1)
-            config.browser = webbrowser.get('exebrowser')        
-            if config.browser.open(url)== False:
-                log.info(u"error " + absopath)
-                withdefaultbrowser=True
-            else:
-                withdefaultbrowser=False   
+        try:
+            config.browser = mywebbrowser.get(config.browser)
+            config.browser.open(url)
+            withdefaultbrowser=False
+        except:
+            if os.path.exists(config.browser):
+                absopath=config.browser
+                log.info(u"path browser " + absopath)
+                webbrowser.register('exebrowser' , None, webbrowser.BackgroundBrowser(absopath), -1)
+                config.browser = webbrowser.get('exebrowser')        
+                if config.browser.open(url)== False:
+                    log.info(u"error " + absopath)
+                    withdefaultbrowser=True
+                else:
+                    withdefaultbrowser=False   
     if withdefaultbrowser:
         config.browser = dfbrw
         config.browser.open(url, new=0, autoraise=True)
