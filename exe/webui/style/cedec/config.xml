@@ -2,7 +2,7 @@
 <theme>
     <name>CEDEC</name>
     <version>2.0</version>
-    <compatibility>8+</compatibility>
+    <compatibility>2.0+</compatibility>
     <author>Varios autores</author>
     <license>Creative Commons by-sa</license>
 	<license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>

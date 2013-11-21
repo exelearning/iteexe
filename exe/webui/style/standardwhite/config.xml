@@ -2,7 +2,7 @@
 <theme>
     <name>Standard White</name>
     <version>2.0</version>
-    <compatibility>8+</compatibility>
+    <compatibility>2.0+</compatibility>
     <author>eXeLearning.org</author>
     <author-url>http://www.exelearning.org</author-url>
     <description>See content.css and nav.css for details.</description>
