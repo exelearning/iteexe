@@ -819,7 +819,7 @@ msgstr "FPD - 翻譯"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:61
 msgid "FPD - Multi Choice Activity"
-msgstr "FPD - 多重選擇測驗"
+msgstr "FPD - 選擇題測驗"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:63
 #: exe/engine/multichoiceidevice.py:62 exe/engine/multiselectidevice.py:45
@@ -841,10 +841,10 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"雖然通常比較常用在正式的考試，多重選擇測驗也可以做為一個刺激學生想法，促進討"
-"論的測驗工具。\n"
+"雖然通常比較常用在正式的考試，選擇題測驗也可以做為一個刺激學生想法，促進討論"
+"的測驗工具。\n"
 "\n"
-"設計多重選擇測驗時應考慮以下因素：\n"
+"設計選擇題測驗時應考慮以下因素：\n"
 "<ul>\n"
 "<li>透過這些測驗希望學生得到什麼</li>\n"
 "<li>要測試的是哪些知識技能</li>\n"
@@ -874,7 +874,7 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"當設計多重選擇測驗題時，應考慮以下因素： <ul>\n"
+"當設計選擇題測驗題時，應考慮以下因素： <ul>\n"
 "<li>使用學生熟悉，並且在學習中會遇到的片語敘述</li>\n"
 "<li>回應要簡明扼要</li>\n"
 "<li>問題與回應要有相當的一致性</li>\n"
@@ -915,7 +915,7 @@ msgid ""
 "options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
-"在此輸入多重選擇的選項。\n"
+"在此輸入選擇題的選項。\n"
 "點擊「新增其它選項」按鈕來增加選項。點擊選項旁邊的\"X\" 可刪除這個選項。"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:111
@@ -1205,7 +1205,7 @@ msgid ""
 "options by \n"
 "clicking the red X next to the option."
 msgstr ""
-"在此輸入多重選擇的選項。\n"
+"在此輸入選擇題的選項。\n"
 "點擊「新增其它選項」按鈕來增加選項。點擊選項旁邊的\"X\" 可刪除這個選項。"
 
 #: exe/engine/field.py:3845
@@ -2155,7 +2155,7 @@ msgstr "配對牌 2"
 
 #: exe/engine/multichoiceidevice.py:60
 msgid "Multi-choice"
-msgstr "多重選擇"
+msgstr "選擇題"
 
 #: exe/engine/multimediaidevice.py:40 exe/webui/editorelement.py:285
 msgid "MP3"
@@ -2194,7 +2194,7 @@ msgstr "對齊可用於選擇媒體播放器要顯示在螢幕的哪個位置。
 
 #: exe/engine/multiselectidevice.py:43
 msgid "Multi-select"
-msgstr "多重選擇"
+msgstr "多重選擇題"
 
 #: exe/engine/notaidevice.py:44
 msgid "Note"
@@ -2464,7 +2464,7 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
-"與多重選擇測驗不同，共享內容物件參考模型（Shareable Content Object Reference "
+"與選擇題測驗不同，共享內容物件參考模型（Shareable Content Object Reference "
 "Model，SCORM）測驗用於在不提供學生回饋或正確答案的狀況下，測試學生對某個主題"
 "的知識。通常這種測驗會在學生有足夠的時間學習並練習此技能時使用。"
 
@@ -2646,7 +2646,7 @@ msgstr ""
 
 #: exe/engine/scormmulticlozeidevice.py:46
 msgid "SCORM Test Cloze (multiple options)"
-msgstr "SCORM 克漏字測驗（多重選擇）"
+msgstr "SCORM 克漏字測驗（選擇題）"
 
 #: exe/engine/scormmulticlozeidevice.py:126
 msgid ""
@@ -2668,11 +2668,11 @@ msgstr ""
 
 #: exe/engine/scormmultiselectidevice.py:41
 msgid "SCORM Test Multiple Choice"
-msgstr "SCORM 多重選擇測驗"
+msgstr "SCORM 選擇題測驗"
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
-msgstr "FPD - 多重選擇活動"
+msgstr "FPD - 多重選擇題"
 
 #: exe/engine/sortidevice.py:45
 msgid "Sort Items"
