@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 19:28+0100\n"
-"PO-Revision-Date: 2013-11-24 22:09+0100\n"
+"PO-Revision-Date: 2013-11-25 18:18+0100\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language-Team: Italian <primiani@dag.it>\n"
 "Language: it\n"
@@ -186,7 +186,6 @@ msgid "Attachment"
 msgstr "Allegato"
 
 #: exe/engine/attachmentidevice.py:46
-#, fuzzy
 msgid ""
 "The attachment iDevice is used to attach existing files to your .elp "
 "content. For example, you might have a PDF file or a PPT or .ODP "
@@ -195,12 +194,12 @@ msgid ""
 "file is. Learners can click on the attachment link and can download the "
 "attachment."
 msgstr ""
-"L'iDevice di Allegato è usato per collegare i files esistenti al contenuto "
-"del file .elp di eXe. Per esempio, potreste avere la necessità che un file "
-"PDF o una presentazione PPT sia accessibile agli studenti; questi file "
-"possono essere collegati ed etichettati opportunamente per indicare a cosa "
-"servono e quali sono le loro dimensioni. Gli studenti possono cliccare sul "
-"collegamento dell'allegato ed effettuare lo scaricamento."
+"L'iDevice Allegato è usato per collegare file esistenti al contenuto del "
+"file .elp. Per esempio, potresti avere la necessità che un file PDF o una "
+"presentazione PPT o ODP sia accessibile agli studenti; questi file possono "
+"essere collegati ed etichettati opportunamente per indicare a cosa servono e "
+"quali sono le loro dimensioni. Gli studenti possono cliccare sul "
+"collegamento dell'allegato ed scaricarlo."
 
 #: exe/engine/attachmentidevice.py:58
 msgid ""
@@ -225,7 +224,6 @@ msgstr ""
 "e selezionalo."
 
 #: exe/engine/attachmentidevice.py:72
-#, fuzzy
 msgid ""
 "<p>Assign a label for the attachment. It is useful to include the type of "
 "file. Eg. pdf, ppt, .odp, etc.</p><p>Including the size is also recommended "
@@ -233,9 +231,9 @@ msgid ""
 "idea how long it would take to download this attachment.</p><p>For example: "
 "<code>Sales Forecast.doc (500kb)</code></p>"
 msgstr ""
-"<p>Assegna un'etichetta per l'allegato. É preferibile specificare il tipo "
-"del file: pdf, ppt, ecc.</p><p>L'indicazione delle dimensioni è raccomandata "
-"in modo che, quando un pacchetto viene esportato su in sito web, l'utente "
+"<p>Assegna un'etichetta per l'allegato. É preferibile specificare il tipo di "
+"file: pdf, ppt, odp ecc.</p><p>L'indicazione delle dimensioni è raccomandata "
+"in modo che, quando un pacchetto viene esportato su un sito web, l'utente "
 "abbia una idea di quanto ci sarà da scaricare.</p><p>Per esempio: <code>File "
 "Forecast.doc (500kb)</code></p>"
 
@@ -448,7 +446,7 @@ msgstr "Istruzioni da visualizzare nel primo paragrafo"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Game Won Feedback Overlay"
-msgstr "Sovraimpressione per partita vinta"
+msgstr "Sovrimpressione per partita vinta"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Shown over when the game is won"
@@ -456,7 +454,7 @@ msgstr "Viene mostrata quando si vince il gioco"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Correct Answer Feedback Overlay"
-msgstr "Sovraimpressione per risposta esatta"
+msgstr "Sovrimpressione per risposta esatta"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Shown over game when correct answer given"
@@ -464,7 +462,7 @@ msgstr "Viene mostrata quando si dà la risposta giusta"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Wrong Answer Feedback Overlay"
-msgstr "Sovraimpressione per risposta errata"
+msgstr "Sovrimpressione per risposta errata"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Shown over game when wrong answer is given"
@@ -553,11 +551,13 @@ msgstr "Non mescolare"
 msgid "Shuffle"
 msgstr "Casuale"
 
-#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:104
+#: exe/engine/clickinorderidevice.py:103
+#: exe/engine/clickinorderidevice.py:104
 msgid "No Timer"
 msgstr "No contatore"
 
-#: exe/engine/clickinorderidevice.py:103 exe/engine/clickinorderidevice.py:105
+#: exe/engine/clickinorderidevice.py:103
+#: exe/engine/clickinorderidevice.py:105
 msgid "Stopwatch Mode"
 msgstr "Modo cronometro"
 
@@ -713,7 +713,8 @@ msgstr ""
 #: exe/engine/clozefpdidevice.py:120 exe/engine/clozeidevice.py:119
 #: exe/engine/clozelangfpdidevice.py:120 exe/engine/fileattachidevice.py:49
 #: exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
-#: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52
+#: exe/engine/memorymatchidevice.py:55
+#: exe/engine/placetheobjectsidevice.py:52
 #: exe/engine/scormclozeidevice.py:116 exe/engine/scormdropdownidevice.py:116
 #: exe/engine/scormmulticlozeidevice.py:116 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
@@ -760,12 +761,13 @@ msgstr ""
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
 #: exe/engine/clozeidevice.py:132 exe/engine/clozeidevice.py:282
-#: exe/engine/clozelangfpdidevice.py:132 exe/engine/clozelangfpdidevice.py:287
-#: exe/engine/field.py:3611 exe/engine/field.py:3659
-#: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:589
-#: exe/engine/idevicestore.py:698 exe/engine/listaidevice.py:140
-#: exe/engine/listaidevice.py:295 exe/engine/scormclozeidevice.py:131
-#: exe/engine/scormclozeidevice.py:281 exe/engine/scormdropdownidevice.py:142
+#: exe/engine/clozelangfpdidevice.py:132
+#: exe/engine/clozelangfpdidevice.py:287 exe/engine/field.py:3611
+#: exe/engine/field.py:3659 exe/engine/genericidevice.py:294
+#: exe/engine/idevicestore.py:589 exe/engine/idevicestore.py:698
+#: exe/engine/listaidevice.py:140 exe/engine/listaidevice.py:295
+#: exe/engine/scormclozeidevice.py:131 exe/engine/scormclozeidevice.py:281
+#: exe/engine/scormdropdownidevice.py:142
 #: exe/engine/scormdropdownidevice.py:292
 #: exe/engine/scormmulticlozeidevice.py:135
 #: exe/engine/scormmulticlozeidevice.py:285 exe/engine/truefalseidevice.py:50
@@ -826,7 +828,8 @@ msgid "Cloze Activity"
 msgstr "Attività Cloze"
 
 #: exe/engine/clozeidevice.py:123 exe/engine/scormclozeidevice.py:120
-#: exe/engine/scormmulticlozeidevice.py:122 exe/engine/truefalseidevice.py:394
+#: exe/engine/scormmulticlozeidevice.py:122
+#: exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Leggi il paragrafo seguente e inserisci le parole mancanti."
@@ -1062,49 +1065,44 @@ msgstr ""
 "il campo vuoto."
 
 #: exe/engine/extendedfieldengine.py:36
-#, fuzzy
 msgid "Blind"
-msgstr "Lampeggiante"
+msgstr "Oscura"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Bounce"
-msgstr ""
+msgstr "Rimbalzo"
 
 #: exe/engine/extendedfieldengine.py:37
-#, fuzzy
 msgid "Drop"
-msgstr "Lista a discesa"
+msgstr "Cade"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Explode"
-msgstr ""
+msgstr "Esplosione"
 
 #: exe/engine/extendedfieldengine.py:37
-#, fuzzy
 msgid "Fold"
-msgstr "Cartella"
+msgstr "Ripiega"
 
 #: exe/engine/extendedfieldengine.py:37
-#, fuzzy
 msgid "Highlight"
-msgstr "FPD - Evidenziato"
+msgstr "Evidenzia"
 
 #: exe/engine/extendedfieldengine.py:37
 msgid "Puff"
-msgstr ""
+msgstr "Soffio"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Pulsate"
-msgstr ""
+msgstr "Pulsazione"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Shake"
-msgstr ""
+msgstr "Scossa"
 
 #: exe/engine/extendedfieldengine.py:38
-#, fuzzy
 msgid "Slide"
-msgstr "diapo"
+msgstr "Diapo"
 
 #: exe/engine/extendedfieldengine.py:38
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:72
@@ -1121,12 +1119,11 @@ msgstr "Scala"
 
 #: exe/engine/extendedfieldengine.py:39
 msgid "Transfer"
-msgstr ""
+msgstr "Trasferisci"
 
 #: exe/engine/extendedfieldengine.py:45 exe/webui/hangmanblock.py:328
-#, fuzzy
 msgid "Show Advanced Options"
-msgstr "Opzioni avanzate"
+msgstr "Mostra opzioni avanzate"
 
 #: exe/engine/extendedfieldengine.py:278
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/langs/en.js:1
@@ -1154,7 +1151,7 @@ msgstr "Elimina file"
 
 #: exe/engine/extendedfieldengine.py:300
 msgid "No File Uploaded Currently"
-msgstr ""
+msgstr "Nessun file ancora inviato"
 
 #: exe/engine/extendedfieldengine.py:332 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
@@ -1326,8 +1323,8 @@ msgstr "Opzione"
 msgid "Hint"
 msgstr "Suggerimento"
 
-#: exe/engine/field.py:3773 exe/engine/field.py:3810 exe/webui/element.py:2301
-#: exe/webui/testquestionelement.py:110
+#: exe/engine/field.py:3773 exe/engine/field.py:3810
+#: exe/webui/element.py:2301 exe/webui/testquestionelement.py:110
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
 msgid "Options"
 msgstr "Opzioni"
@@ -1402,30 +1399,25 @@ msgstr "IDevice File allegati."
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#, fuzzy
 msgid "Yes"
-msgstr "Anni"
+msgstr "Sì"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#, fuzzy
 msgid "No"
-msgstr "Nota"
+msgstr "No"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
-#, fuzzy
 msgid "Show description and link"
-msgstr "Descrizione del collegamento"
+msgstr "Mostra descrizione e collegamento"
 
 #: exe/engine/fileattachidevice.py:46 exe/engine/fileattachidevice.py:67
-#, fuzzy
 msgid "Show Description"
-msgstr "Descrizione"
+msgstr "Mostra descrizione"
 
 #: exe/engine/fileattachidevice.py:69
-#, fuzzy
 msgid "Intro Text"
-msgstr "Testo libero"
+msgstr "Testo introduttivo"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
@@ -1481,7 +1473,8 @@ msgstr ""
 "Fornisci un'intestazione per il video Flash \n"
 "che è stato appena inserito."
 
-#: exe/engine/flashwithtextidevice.py:43 exe/engine/flashwithtextidevice.py:50
+#: exe/engine/flashwithtextidevice.py:43
+#: exe/engine/flashwithtextidevice.py:50
 msgid "Flash with Text"
 msgstr "Flash con testo"
 
@@ -1752,9 +1745,8 @@ msgid "Player will see this message when they guess all words correctly"
 msgstr "Il giocatore vedrà questo messaggio quando indovina tutte le parole"
 
 #: exe/engine/hangmanidevice.py:142
-#, fuzzy
 msgid "chance"
-msgstr "Annulla"
+msgstr "tentativo"
 
 #: exe/engine/hangmanidevice.py:148
 msgid "Word to Guess"
@@ -2470,9 +2462,8 @@ msgid "Timer CSS"
 msgstr "CSS contatore"
 
 #: exe/engine/memorymatchidevice.py:145
-#, fuzzy
 msgid "Memory Match Pair Field"
-msgstr "Gioco Memoria"
+msgstr "Campo per gioco Memoria"
 
 #: exe/engine/memorymatchidevice.py:150
 msgid "Match Tile 1"
@@ -2702,10 +2693,9 @@ msgstr "Anche se non c'è limite di tempo, mostra il contatore..."
 
 #: exe/engine/placetheobjectsidevice.py:72
 msgid "Message to click game to start"
-msgstr ""
+msgstr "Messaggio per l'avvio del gioco"
 
 #: exe/engine/placetheobjectsidevice.py:72
-#, fuzzy
 msgid "This will when clicked start the game"
 msgstr "L'utente cliccherà in questa per avviare il gioco"
 
@@ -2715,35 +2705,31 @@ msgstr "Risposta positiva"
 
 #: exe/engine/placetheobjectsidevice.py:74
 msgid "Overlays main area when player correctly places object"
-msgstr ""
+msgstr "Sovrimpressione dell'area principale con oggetto inserito giusto"
 
 #: exe/engine/placetheobjectsidevice.py:76
-#, fuzzy
 msgid "Negative Response"
-msgstr "Risposta positiva"
+msgstr "Risposta negativa"
 
 #: exe/engine/placetheobjectsidevice.py:76
 msgid "Overlays main area when player guesses wrong"
-msgstr ""
+msgstr "Sovrimpressione dell'area principale con tentativo sbagliato"
 
 #: exe/engine/placetheobjectsidevice.py:79
-#, fuzzy
 msgid "Number of Columns in part bin"
-msgstr "Numero colonne"
+msgstr "Numero colonne in part bin"
 
 #: exe/engine/placetheobjectsidevice.py:79
-#, fuzzy
 msgid "Columns part bin"
-msgstr "Colonne"
+msgstr "Colonne part bin"
 
 #: exe/engine/placetheobjectsidevice.py:90
-#, fuzzy
 msgid "Object to Place"
 msgstr "L'oggetto da mettere a posto"
 
 #: exe/engine/placetheobjectsidevice.py:118
 msgid "An object that has a correct place in the main area"
-msgstr ""
+msgstr "Un oggetto al posto giusto nell'area principale"
 
 #: exe/engine/placetheobjectsidevice.py:120
 msgid "Placable Object"
@@ -2997,7 +2983,7 @@ msgstr ""
 
 #: exe/engine/scormclozeidevice.py:46
 msgid "SCORM Test Cloze"
-msgstr ""
+msgstr "Test Cloze SCORM"
 
 #: exe/engine/scormclozeidevice.py:124
 msgid ""
@@ -3012,20 +2998,31 @@ msgid ""
 "               sort them alphabetically and write them at the beginning or "
 "the end of the cloze excercise.</p>"
 msgstr ""
+"<p>Inserisci il testo per l'esercizio cloze nella finestra di modifica.\n"
+"                   Se si copia il testo da un'altra fonte, usare il bottone "
+"'Incolla come solo testo'\n"
+"                   per inserirlo nel riquadro. Per selezionare le parole da "
+"nascondere, evidenziare e poi\n"
+"                   clic sul bottone Mostra/nascondi in basso.\n"
+"                   Nota: le risposte possono contenere spazi. Per fornire le "
+"opzioni di risposta agli\n"
+"                   studenti, ordinarle alfabeticamente e inserirle "
+"all'inizio o alla fine dell'esercizio.</p>"
 
 #: exe/engine/scormdropdownidevice.py:46
-#, fuzzy
 msgid "SCORM Test Dropdown"
-msgstr "Opzioni di esportazione SCORM"
+msgstr "Test Lista a discesa SCORM"
 
 #: exe/engine/scormdropdownidevice.py:119
 msgid ""
 "Provide instruction how to complete the exercise or take the default text."
 msgstr ""
+"Fornisci istruzioni su come completare l'esercizio, oppure lascia il testo "
+"già definito."
 
 #: exe/engine/scormdropdownidevice.py:121
 msgid "Choose the correct answers in the paragraph below."
-msgstr ""
+msgstr "Scegli le risposte giuste in questo testo."
 
 #: exe/engine/scormdropdownidevice.py:124
 msgid ""
@@ -3037,11 +3034,17 @@ msgid ""
 "button below.\n"
 "                Hint: answers may contain spaces.</p>"
 msgstr ""
+"<p>Per creare uno spazio con opzioni di risposta, scrivere la risposta "
+"giusta e le risposte sbagliate\n"
+"         separate da '|':         giusta|sbagliata1|sbagliata2|"
+"sbagliata3...\n"
+"         Evidenziare tutte le risposte e cliccare sul bottone Mostra/"
+"nascondi in basso.\n"
+"         Nota: le risposte possono contenere spazi.</p>"
 
 #: exe/engine/scormmulticlozeidevice.py:46
-#, fuzzy
 msgid "SCORM Test Cloze (multiple options)"
-msgstr "Opzioni di esportazione SCORM"
+msgstr "Test Cloze SCORM (opzioni multiple)"
 
 #: exe/engine/scormmulticlozeidevice.py:126
 msgid ""
@@ -3060,10 +3063,24 @@ msgid ""
 "               sort them alphabetically and write them at the beginning or "
 "the end of the cloze exercise.</p>"
 msgstr ""
+"\"<p>Inserisci il testo per l'esercizio cloze nella finestra di modifica.\n"
+"                   Se si copia il testo da un'altra fonte, usare il bottone "
+"'Incolla come solo testo'\n"
+"                   per inserirlo nel riquadro. Per selezionare le parole da "
+"nascondere, evidenziare e poi\n"
+"                   clic sul bottone Mostra/nascondi in basso.\n"
+"                   Per creare uno spazio con diverse opzioni di risposta, "
+"scrivere le risposte separate da '|'\n"
+"                   Segnare tutte le risposte e cliccare sul bottone Mostra/"
+"nascondi in basso.\n"
+"                   Nota: Le risposte possono contenere spazi. Per fornire le "
+"opzioni di risposta\n"
+"                   agli studenti, ordinarle alfabeticamente e inserirle "
+"all'inizio o alla fine dell'esercizio.</p>"
 
 #: exe/engine/scormmultiselectidevice.py:41
 msgid "SCORM Test Multiple Choice"
-msgstr ""
+msgstr "Test Scelta multipla SCORM"
 
 #: exe/engine/seleccionmultiplefpdidevice.py:44
 msgid "FPD - Multi Select Activity"
@@ -3557,9 +3574,8 @@ msgid "Licensed under the"
 msgstr "Questo articolo è sotto la licenza"
 
 #: exe/export/pages.py:78
-#, fuzzy
 msgid "Local Version"
-msgstr "Versione"
+msgstr "Versione locale"
 
 #: exe/export/scormexport.py:547 exe/export/websitepage.py:316
 msgid "Previous"
@@ -3651,7 +3667,8 @@ msgstr ". Usa nomi in formato ASCII."
 msgid "SAVE FAILED!"
 msgstr "SALVATAGGIO FALLITO!"
 
-#: exe/jsui/mainpage.py:318 exe/jsui/mainpage.py:626 exe/jsui/mainpage.py:1019
+#: exe/jsui/mainpage.py:318 exe/jsui/mainpage.py:626
+#: exe/jsui/mainpage.py:1019
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -5049,9 +5066,8 @@ msgid "Import style to the system "
 msgstr "Importa stile nel sistema "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:196
-#, fuzzy
 msgid "Import style"
-msgstr "Esporta stile: "
+msgstr "Importa stile: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:207
 msgid "Select ZIP Style file to import."
@@ -5075,7 +5091,7 @@ msgstr "Torna alla gestione stili"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:303
 msgid "Return"
-msgstr ""
+msgstr "Torna"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:53
 msgid "Outline"
@@ -7146,9 +7162,8 @@ msgstr ""
 "        "
 
 #: exe/webui/clickinorderblock.py:320
-#, fuzzy
 msgid "Show advanced options"
-msgstr "Opzioni avanzate"
+msgstr "Mostra opzioni avanzate"
 
 #: exe/webui/clickinorderblock.py:334
 msgid "<h2>Clickable Areas</h2>"
@@ -7439,8 +7454,9 @@ msgstr "Traduzione"
 msgid "Please select a correct answer for each question."
 msgstr "Seleziona la risposta corretta per ogni domanda."
 
-#: exe/webui/eleccionmultiplefpdblock.py:120 exe/webui/multichoiceblock.py:113
-#: exe/webui/truefalseblock.py:109 exe/webui/verdaderofalsofpdblock.py:118
+#: exe/webui/eleccionmultiplefpdblock.py:120
+#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseblock.py:109
+#: exe/webui/verdaderofalsofpdblock.py:118
 msgid "Add another question"
 msgstr "Aggiungi un'altra domanda"
 
@@ -7599,15 +7615,16 @@ msgid "Add another option"
 msgstr "Aggiungi un'altra opzione"
 
 #: exe/webui/element.py:2931 exe/webui/element.py:3751
-#, fuzzy
 msgid ""
 "<p>If this option is set, all gaps will have the length of the longest "
 "answer option</p>"
-msgstr "<p>Con questa opzione verrà visualizzato il punteggio.</p>"
+msgstr ""
+"<p>Con questa opzione, tutti gli spazi avranno la lunghezza della risposta "
+"più lunga.</p>"
 
 #: exe/webui/element.py:2961 exe/webui/element.py:3783
 msgid "Use fixed length?"
-msgstr ""
+msgstr "Usa lunghezza fissa?"
 
 #: exe/webui/externalurlblock.py:67
 msgid "URL:"
@@ -7659,7 +7676,7 @@ msgstr "Aggiungi altro file allegato"
 
 #: exe/webui/fileattachblock.py:143
 msgid "File List (this list shows only in preview mode):"
-msgstr ""
+msgstr "Elenco file (si vede solo nell'anteprima):"
 
 #: exe/webui/galleryblock.py:216 exe/webui/galleryblock.py:300
 #: exe/webui/galleryblock.py:301
@@ -7815,13 +7832,12 @@ msgid "Show/Hide"
 msgstr "Mostra/nascondi"
 
 #: exe/webui/notablock.py:123
-#, fuzzy
 msgid "Delete all notes"
-msgstr "Elimina tabella"
+msgstr "Cancella tutte le note"
 
 #: exe/webui/notablock.py:123
 msgid "Would you delete all notes?"
-msgstr ""
+msgstr "Cancellare tutte le note?"
 
 #: exe/webui/orientacionesalumnadofpdblock.py:64
 msgid "Guidelines for Students"
@@ -7836,21 +7852,18 @@ msgid "A Step Ahead"
 msgstr "Un passo avanti"
 
 #: exe/webui/placetheobjectsblock.py:278
-#, fuzzy
 msgid "Game Options"
-msgstr "Opzioni globali"
+msgstr "Opzioni gioco"
 
 #: exe/webui/placetheobjectsblock.py:289
-#, fuzzy
 msgid "Enable Timer"
-msgstr "Ora fine"
+msgstr "Abilita contatore"
 
 #: exe/webui/placetheobjectsblock.py:289
 msgid "Enable showing the timer in the game"
-msgstr ""
+msgstr "Abilita contatore nel gioco"
 
 #: exe/webui/placetheobjectsblock.py:296
-#, fuzzy
 msgid "Add Placable Object"
 msgstr "Oggetto da spostare"
 
@@ -9882,14 +9895,12 @@ msgid "Media Title"
 msgstr "Titolo dell'opera"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:37
-#, fuzzy
 msgid "Use Autoplay"
-msgstr "Esecuzione automatica"
+msgstr "Usa esecuzione automatica"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:38
-#, fuzzy
 msgid "Use Controls"
-msgstr "Controlli"
+msgstr "Usa controlli"
 
 #: exe/webui/scripts/tinymce_3.5.7/jscripts/tiny_mce/plugins/pastecode/langs/en.js:4
 msgid "Insert HTML code as text"
@@ -10880,7 +10891,7 @@ msgstr ""
 "creato con una versione più recente di eXe. Aggiorna eXe e riprova."
 
 msgid "by"
-msgstr ""
+msgstr "di"
 
 #~ msgid "Correct Style import : %s"
 #~ msgstr "Importazione corretta stile: %s"
