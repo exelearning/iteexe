@@ -132,7 +132,7 @@ class PreferencesPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.localeNames = []
         self.browsers = []
-        
+        lngdefbrowser=_(u"Default browser in your system")
         for locale in self.config.locales.keys():
             localeName = locale + ": "
             langName = langNames.get(locale)
@@ -144,11 +144,12 @@ class PreferencesPage(RenderableResource):
                 self.browsersAvalaibles.append((browserNames[browser], browser))
         self.browsersAvalaibles.sort()
         if self.config.browser!=None:
-                    if os.path.exists(self.config.browser):
-                        nmbrw=os.path.splitext(os.path.basename(self.config.browser))[0]    
-                        self.browsers.append({'browser': self.config.browser, 'text': '* '+nmbrw})
-        
-        self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
+            if os.path.exists(self.config.browser):
+                nmbrw=os.path.splitext(os.path.basename(self.config.browser))[0]    
+                self.browsers.append({'browser': self.config.browser, 'text': '* '+nmbrw})
+            self.browsersAvalaibles.append((lngdefbrowser, "None"))
+        else:
+            self.browsers.append({'browser': "None", 'text':lngdefbrowser})
         
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
