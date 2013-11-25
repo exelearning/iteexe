@@ -233,28 +233,19 @@ class WebsitePage(Page):
             i+=1
         return indent_text
         
-    def leftNavigationBar(self, pages, inSameLevelTitle = True, excludeTitle = False):
+    def leftNavigationBar(self, pages):
         """
         Generate the left navigation string for this page
         """
         lb = "\n" #Line breaks
-        if inSameLevelTitle:
-            depth = 1
-        else:
-            depth = 0
+        depth = 1
         nodePath = [None] + list(self.node.ancestors()) + [self.node]
 
+        # Open the main ul
         html = "<ul>"
-        max_depth = depth
         
         for page in pages:
-            if page.depth > max_depth:
-                max_depth = page.depth
-            if page.node.parent == None and not inSameLevelTitle:
-                page.depth = 0
-            if page.node.parent == None and excludeTitle:
-                depth = 1
-                continue
+            # If this node is deeper than the previous one, we must open a new list 
             while depth < page.depth:
                 html += lb+self.indent(depth)+"<ul"
 
@@ -263,10 +254,12 @@ class WebsitePage(Page):
                 html += ">"
                 depth += 1
 
+            # If this node is higher than the previous one, we must close the list (unless we are in the first level) 
             while depth > page.depth and page.depth > 0:
                 html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"
                 depth -= 1
             
+            # The active node must have a special style
             if page.node == self.node:
                 html += lb+self.indent(depth)+"<li id=\"active\"><a href=\""+quote(page.name)+".html\" "
 
@@ -275,6 +268,7 @@ class WebsitePage(Page):
                 else:
                     html += "class=\"active no-ch"
 
+            # A node in the path of the active node (but not the main one) 
             elif page.node in nodePath and page.node.parent != None:
                 html += lb+self.indent(depth)+"<li class=\"current-page-parent\"><a href=\""+quote(page.name)+".html\" "
 
@@ -295,24 +289,23 @@ class WebsitePage(Page):
             html += escape(page.node.titleShort)
             html += "</a>"
 
-            if inSameLevelTitle and page.depth==0:
+            # Closing the main node is just closing a li because we want to place first level children as 'brothers' of the main node
+            if page.depth==0:
                 html += "</li>"
 
+            # Closing a node without children
             if not page.node.children and page.depth!=0:
                 html += "</li>"
 
-
+        # If last node is not in the first level, some lists must be closed (as many as unclosed levels)
         while depth > 1:
             html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"
             depth -= 1
 
-        if excludeTitle or inSameLevelTitle:
-            html += lb+self.indent(depth-1)+"</ul>"+lb
-        else:
-            html += lb+self.indent(depth-1)+"</ul>"+lb+self.indent(depth-1)+"</li>"+lb+self.indent(depth-1)+"</ul>"+lb
+        # Just close the main ul
+        html += lb+self.indent(depth-1)+"</ul>"+lb
 
         return html
-        
         
     def getNavigationLink(self, prevPage, nextPage):
         """
