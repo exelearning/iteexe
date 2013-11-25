@@ -23,7 +23,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 
     initComponent: function() {
         var me = this;
-
+		var lngsel=_("Select Browser");
         Ext.applyIf(me, {
             autoScroll: true,
             trackResetOnLoad: true,
@@ -68,6 +68,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                 ["disable_all", _("Disable All Internal Linking")]
                            ]
 		                },{
+						
                         xtype: 'container',
                         layout: 'hbox',
                         margin: 10,
@@ -77,7 +78,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                 inputId: 'browser',
                                 id: 'browsersel',
                                 dirtyCls: 'property-form-dirty',
-                                fieldLabel: _("Select Browser"),
+                                fieldLabel: lngsel,
                                 queryModel: 'local',
                                 displayField: 'text',
                                 valueField: 'browser',
@@ -106,7 +107,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                             }, {
                                 xtype: 'button',
                                 text: '...',
-								tooltip: _("Select Browser"),
+								tooltip: lngsel,
                                 margins: {
                                     left: 5
                                 },
@@ -117,7 +118,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
                                     var filename = form.findField('filename');
                                     var fp = Ext.create("eXe.view.filepicker.FilePicker", {
                                         type: eXe.view.filepicker.FilePicker.modeLoad,
-                                        title: "",
+                                        title: lngsel,
                                         modal: true,
                                         scope: this,
                                         callback: function (fp) {
