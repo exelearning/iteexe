@@ -49,11 +49,11 @@ class ExternalUrlBlock(Block):
         if "url"+self.id in request.args \
         and not is_cancel:
             self.idevice.url = request.args["url"+self.id][0]
-            if (self.idevice.url and 
-                not self.idevice.url.startswith("http://") and 
-                not self.idevice.url.startswith("https://") and
-                not self.idevice.url.startswith("ftp://")):
-                self.idevice.url = "http://" + self.idevice.url
+            #if (self.idevice.url and 
+            #    not self.idevice.url.startswith("http://") and 
+            #    not self.idevice.url.startswith("https://") and
+            #    not self.idevice.url.startswith("ftp://")):
+            #    self.idevice.url = "http://" + self.idevice.url
 
         if "height"+self.id in request.args \
         and not is_cancel:
