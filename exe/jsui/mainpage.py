@@ -224,6 +224,7 @@ class MainPage(RenderableLivePage):
                   'locationButtons': self.location_buttons.buttons,
                   'lang': G.application.config.locale.split('_')[0],
                   'showPreferences': G.application.config.showPreferencesOnStart == '1' and not G.application.preferencesShowed,
+                  'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
                   'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId)
                  }
         G.application.preferencesShowed = True

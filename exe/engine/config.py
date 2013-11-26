@@ -55,7 +55,7 @@ class Config:
                    'videoMediaConverter_avi', 'audioMediaConverter_ogg',
                    'audioMediaConverter_au', 'audioMediaConverter_mp3',
                    'audioMediaConverter_wav', 'ffmpegPath'),
-        'user': ('locale', 'lastDir', 'showPreferencesOnStart'),
+        'user': ('locale', 'lastDir', 'showPreferencesOnStart', 'showIdevicesGrouped'),
     }
 
     idevicesCategories = {
@@ -145,6 +145,7 @@ class Config:
         self.internalAnchors = "enable_all"
         self.lastDir = None
         self.showPreferencesOnStart = "1"
+        self.showIdevicesGrouped = "1"
         # styles is the list of style names available for loading
         self.styles      = []
         # The documents that we've recently looked at
@@ -392,6 +393,8 @@ class Config:
                 self.lastDir = self.configParser.user.lastDir
             if self.configParser.user.has_option('showPreferencesOnStart'):
                 self.showPreferencesOnStart = self.configParser.user.showPreferencesOnStart
+            if self.configParser.user.has_option('showIdevicesGrouped'):
+                self.showIdevicesGrouped = self.configParser.user.showIdevicesGrouped
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
                 return

@@ -142,8 +142,10 @@ class IdevicePane(Renderable, Resource):
         locale.setlocale(locale.LC_ALL, "")
         if 'group' in request.args:
             prototypesToRender.sort(groupsortfunc)
+            self.config.configParser.set('user', 'showIdevicesGrouped', '1')
         else:
             prototypesToRender.sort(sortfunc)
+            self.config.configParser.set('user', 'showIdevicesGrouped', '0')
         for prototype, category, visible in prototypesToRender:
             xml += self.__renderPrototype(prototype, category, visible)
         xml += u"</idevices>\n"
