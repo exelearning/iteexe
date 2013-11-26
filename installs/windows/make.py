@@ -40,15 +40,29 @@ open('dist/version', 'w').write(version.version)
 
 # brand the splash screen
 os.chdir(os.path.join(WDIR, 'installs/windows'))
-font = ImageFont.truetype("arial.ttf", 12)
-fontcolor = '#808080'
-(w, h) = font.getsize("Version:")
+
+#Because some versions of Python Imaging library come
+#without support for libfreetype.
+font = None
+fontcolor = None
+candrawfont = False
+try:
+	font = ImageFont.truetype("arial.ttf", 12)
+	fontcolor = '#808080'
+	(w, h) = font.getsize("Version:")
+	candrawfont = True
+except ImportError:
+	print "Could not add version number to image", sys.exc_info()[0]
+	
 im = Image.open("splash1.jpg")
 draw = ImageDraw.Draw(im)
-draw.text((150, 102), "Version: " + version.release, font=font,
+
+if candrawfont:
+	draw.text((150, 102), "Version: " + version.release, font=font,
         fill=fontcolor)
-draw.text((150, 102 + h), "Revision: " + version.revision,
+	draw.text((150, 102 + h), "Revision: " + version.revision,
         font=font, fill=fontcolor)
+
 del draw
 im.save(BRANDED_JPG)
 
