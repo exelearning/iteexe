@@ -236,7 +236,9 @@ class Manifest(object):
                 else:      
                     # we will compare depth with the actual page.depth...
                     # we look for decreasing depths -it means we are ending a branch: 
-                    if self.scormType == "scorm2004" and depthold - 1 == page.depth:                    
+                    if self.scormType == "scorm2004" and depthold - 1 == page.depth:                                     
+                        if not page.node.children:
+                            self.itemStr += "    </item>\n"                                             
                         if page.node.children:
                             self.itemStr += u"    <imsss:sequencing>\n"
                             self.itemStr += u"        <imsss:controlMode flow=\"true\"/>\n"
@@ -268,15 +270,39 @@ class Manifest(object):
         
         xmlStr += "  </organization>\n"
         xmlStr += "</organizations>\n"
+ 
+        # RESOURCES
+ 
         xmlStr += "<resources>\n"
         xmlStr += self.resStr
+
+        # finally, special resource with all the common files, as binded with de active style ones:    
+        if self.scormType == "scorm1.2":
+            xmlStr += """  <resource identifier="COMMON_FILES" adlcp:scormtype="asset">\n"""
+        else:
+            xmlStr += """  <resource identifier="COMMON_FILES" adlcp:scormType="asset">\n"""
+        directory = Path(self.config.webDir).joinpath('style', self.package.style.encode('utf-8'))
+        liststylesfiles = os.listdir(directory)
+        for x in liststylesfiles:
+            if os.path.isfile(directory + '/' + x):
+                xmlStr += """    <file href="%s"/>\n""" % x 
+        # we do want base.css and (for short time), popup_bg.gif, also:    
+        xmlStr += """    <file href="base.css"/>\n"""
+        xmlStr += """    <file href="popup_bg.gif"/>\n"""
+        # now the javascript files:
+        xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
+        xmlStr += """    <file href="SCOFunctions.js"/>\n"""
+            
+        xmlStr += "  </resource>\n"
+       
+        # no more resources:
         xmlStr += "</resources>\n"
         xmlStr += "</manifest>\n"
         return xmlStr
         
-            
+             
     def genItemResStr(self, page):
-        """
+"""
         Returning xml string for items and resources
         Notice, please: items AND resources 
         """
@@ -353,32 +379,14 @@ class Manifest(object):
         else:
             if self.scormType == "scorm2004" or self.scormType == "agrega":
                 self.resStr += "adlcp:scormType=\"sco\" "
-                #
                 self.resStr += "href=\""+filename+"\"> \n"
-                self.resStr += """\
-    <file href="%s"/>
-    <file href="base.css"/>
-    <file href="content.css"/>
-    <file href="popup_bg.gif"/>
-    <file href="AC_RunActiveContent.js"/>
-    <file href="SCORM_API_wrapper.js"/>
-    <file href="lernmodule_net.js"/>
-    <file href="SCOFunctions.js"/>""" % filename
-                self.resStr += "\n"
                 fileStr = ""
             if self.scormType == "scorm1.2":
                 self.resStr += "adlcp:scormtype=\"sco\" "    
-                self.resStr += "href=\""+filename+"\"> \n"
-                self.resStr += """\
-    <file href="%s"/>
-    <file href="base.css"/>
-    <file href="content.css"/>
-    <file href="popup_bg.gif"/>
-    <file href="SCORM_API_wrapper.js"/>
-    <file href="lernmodule_net.js"/>
-    <file href="SCOFunctions.js"/>""" % filename
-                self.resStr += "\n"
+                self.resStr += "href=\""+filename+"\"> \n"              
+                self.resStr += "    <file href=\""+filename+"\"/> \n"
                 fileStr = ""
+
 
         dT = common.getExportDocType()
         if dT == "HTML5" or common.nodeHasMediaelement(page.node):
@@ -386,8 +394,10 @@ class Manifest(object):
 
         resources = page.node.getResources()
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
+        
         if common.nodeHasMediaelement(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'mediaelement').files()]
+        
         if common.hasGalleryIdevice(page.node):
             self.resStr += '    <file href="exe_lightbox.js"/>\n'
             self.resStr += '    <file href="exe_lightbox.css"/>\n'
@@ -407,6 +417,11 @@ class Manifest(object):
             self.dependencies[resource] = True
 
         self.resStr += fileStr
+
+        # adding the dependency with the common files collected:
+        self.resStr += """    <dependency identifierref="COMMON_FILES"/>"""
+        # and no more:
+
         self.resStr += "  </resource>\n"
 
 
