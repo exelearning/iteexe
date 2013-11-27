@@ -1363,10 +1363,12 @@ var $exe = {
             } else $exe.iDeviceToggler.init();
         }
         //Load exe_media.js
-        var h=document.body.innerHTML;
-        if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(" class='mediaelement")!=-1){
-            $exe.loadMediaPlayer.getPlayer()
-        }         
+        if (document.body.getAttribute('class') != "exe-epub3") {
+        	var h=document.body.innerHTML;
+        	if(h.indexOf(' class="mediaelement"')!=-1 || h.indexOf(" class='mediaelement")!=-1){
+        		$exe.loadMediaPlayer.getPlayer()
+        	}         
+        }
     },
     isIE :function() {
         var n = navigator.userAgent.toLowerCase();
