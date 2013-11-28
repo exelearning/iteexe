@@ -302,7 +302,7 @@ class Manifest(object):
         
              
     def genItemResStr(self, page):
-"""
+        """
         Returning xml string for items and resources
         Notice, please: items AND resources 
         """
